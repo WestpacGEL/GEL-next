@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['@westpac/eslint-config'],
+  extends: ['next/core-web-vitals', '../index.js'],
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
@@ -8,7 +8,7 @@ module.exports = {
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
-        project: ['packages/*/tsconfig.json', 'apps/*/tsconfig.json'],
+        project: ['apps/*/tsconfig.json', 'packages/*/tsconfig.json', './ts-config.json'],
       },
     },
   },

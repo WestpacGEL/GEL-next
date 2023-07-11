@@ -1,8 +1,8 @@
 import { Button } from '@westpac/ui';
 
-const HomePage = () => {
+export default function Home() {
   return (
-    <div>
+    <>
       <h1 className="bg-primary-50 p-3">Playground 1</h1>
       <h1 className="bg-primary-100 p-3">Playground 1</h1>
       <h1 className="bg-primary-200 p-3">Playground 2</h1>
@@ -24,8 +24,6 @@ const HomePage = () => {
         at nam.
       </p>
       <Button />
-    </div>
+    </>
   );
-};
-
-export default HomePage;
+}

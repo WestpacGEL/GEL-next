@@ -2,8 +2,8 @@ import { type BrandKey } from '@westpac/theme';
 import { DocumentProps, Head, Html, Main, NextScript } from 'next/document';
 
 const WOFF2_TYPE = 'font/woff2';
-const getFontFilesPerBrand = (brandkey: BrandKey) => {
-  switch (brandkey) {
+const getFontFilesPerBrand = (brandKey: BrandKey) => {
+  switch (brandKey) {
     case 'bom':
       return [
         { href: '/fonts/lineto-brown-pro-bold.woff2', type: WOFF2_TYPE },

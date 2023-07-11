@@ -3,7 +3,7 @@ const fs = require('fs');
 const readline = require('readline');
 
 const destinationPrefix = './packages/';
-const packageNamePrefix = '@westpac-x/';
+const packageNamePrefix = '@westpac/';
 
 const rl = readline.createInterface({
   input: process.stdin,
