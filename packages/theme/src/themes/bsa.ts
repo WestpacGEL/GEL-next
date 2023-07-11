@@ -18,6 +18,6 @@ export const theme: BrandConfig = {
     primary: '#D81B2B',
     text: '#333',
   }),
-  brandFont: 'brandFontBSA',
+  brandFont: 'Aller',
   name: 'BankSA',
 };

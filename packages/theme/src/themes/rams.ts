@@ -18,6 +18,6 @@ export const theme: BrandConfig = {
     primary: '#047DBC',
     text: '#333',
   }),
-  brandFont: 'brandFontRAMS',
+  brandFont: 'Source Sans Pro',
   name: 'RAMS',
 };

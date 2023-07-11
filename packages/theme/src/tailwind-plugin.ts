@@ -7,9 +7,15 @@ import { THEMES } from './themes/index.js';
 import { theme as WBCTheme } from './themes/wbc.js';
 import { createFontSizes } from './utils/index.js';
 
-// Export plugins
+/**
+ * Base Plugin responsible for default theming and adding the typography components
+ */
 export const WestpacUIKitBasePlugin = plugin(
-  ({ addComponents, theme }) => {
+  // Adding the typography components
+  ({ addComponents, addBase, theme }) => {
+    addBase({
+      html: { color: theme('colors.text.DEFAULT') },
+    });
     const fontComponents = Object.entries(FONT_SIZES).reduce((acc, [size, value]) => {
       return {
         ...acc,
@@ -57,6 +63,9 @@ export const WestpacUIKitBasePlugin = plugin(
   },
 );
 
+/**
+ * Multiple Theme plugin with all the brands variation
+ */
 export const WestpacUIKitThemesPlugin = createThemes({
   defaultTheme: {
     extend: {

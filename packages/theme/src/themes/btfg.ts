@@ -18,6 +18,6 @@ export const theme: BrandConfig = {
     primary: '#9E005D',
     text: '#333',
   }),
-  brandFont: 'brandFontBTFG',
+  brandFont: 'Georgia, "Times New Roman", Times, serif',
   name: 'BT Financial Group',
 };

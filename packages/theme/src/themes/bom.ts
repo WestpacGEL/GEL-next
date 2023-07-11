@@ -18,6 +18,6 @@ export const theme: BrandConfig = {
     primary: '#D13900',
     text: '#20024E',
   }),
-  brandFont: 'brandFontBOM',
+  brandFont: 'Brown Pro',
   name: 'Bank of Melbourne',
 };

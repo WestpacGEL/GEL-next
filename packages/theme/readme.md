@@ -18,7 +18,7 @@ import { Head, Html, Main, NextScript } from 'next/document';
 export default function Document() {
   return (
     // e.g: in this case theme-wbc is applied
-    <Html lang="en" className="theme-wbc">
+    <Html lang="en" data-theme="wbc">
       <Head />
       <body>
         <Main />
@@ -34,7 +34,8 @@ export default function Document() {
 import { WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin } from '@westpac/theme';
 
 const config: any = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  relative: true,
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
   plugins: [WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin],
 };
 

@@ -18,6 +18,6 @@ export const theme: BrandConfig = {
     primary: '#DA1710',
     text: '#000',
   }),
-  brandFont: 'brandFontWBG',
+  brandFont: 'Montserrat',
   name: 'Westpac Group',
 };

@@ -18,6 +18,6 @@ export const theme: BrandConfig = {
     primary: '#E30000',
     text: '#004833',
   }),
-  brandFont: 'brandFontSTG',
+  brandFont: 'Dragon Bold',
   name: 'St.George',
 };
