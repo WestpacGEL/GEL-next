@@ -30,6 +30,7 @@ This turborepo has some additional tools already setup for you:
 - [Husky](https://typicode.github.io/husky/) for git hooks
 
 ### Packages
+
 - [themes](packages/theme/README.md): Tailwind plugin to apply multiple brand theming
 - [ui](packages/ui/README.md): UI components build on top of the themes and Tailwind
 
