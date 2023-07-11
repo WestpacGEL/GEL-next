@@ -105,24 +105,6 @@ importers:
 
   packages/theme:
     dependencies:
-      '@westpac/bom':
-        specifier: ~2.3.0
-        version: 2.3.0
-      '@westpac/bsa':
-        specifier: ~2.3.0
-        version: 2.3.0
-      '@westpac/btfg':
-        specifier: ~2.3.0
-        version: 2.3.0
-      '@westpac/rams':
-        specifier: ~2.3.0
-        version: 2.3.0
-      '@westpac/stg':
-        specifier: ~2.3.0
-        version: 2.3.0
-      '@westpac/wbg':
-        specifier: ~2.5.0
-        version: 2.5.0
       csstype:
         specifier: ^3.1.2
         version: 3.1.2
@@ -220,27 +202,6 @@ importers:
       '@westpac-x/ts-config':
         specifier: ^0.0.1
         version: 0.0.1
-      '@westpac/alert':
-        specifier: ~2.2.2
-        version: 2.2.2(@emotion/react@11.11.1)(@react-spring/web@9.7.3)(react@18.2.0)
-      '@westpac/button':
-        specifier: ~3.1.0
-        version: 3.1.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/heading':
-        specifier: ~2.3.2
-        version: 2.3.2(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/icon':
-        specifier: ~2.3.0
-        version: 2.3.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/input-field':
-        specifier: ~1.0.0
-        version: 1.0.0(@emotion/react@11.11.1)(@react-spring/web@9.7.3)(@westpac/button@3.1.0)(@westpac/icon@2.3.0)(@westpac/text-input@2.4.0)(react@18.2.0)
-      '@westpac/modal':
-        specifier: ~2.3.0
-        version: 2.3.0(@emotion/react@11.11.1)(@react-spring/web@9.7.3)(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0)
-      '@westpac/symbol':
-        specifier: ~2.1.1
-        version: 2.1.1(@emotion/react@11.11.1)(react@18.2.0)
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
@@ -308,18 +269,9 @@ importers:
       '@vitest/coverage-c8':
         specifier: ^0.31.0
         version: 0.31.0(vitest@0.30.1)
-      '@westpac/core':
-        specifier: ~3.2.1
-        version: 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/flexi-cell':
-        specifier: ~1.0.0
-        version: 1.0.0(@emotion/react@11.11.1)(react@18.2.0)
       '@westpac/theme':
         specifier: workspace:~
         version: link:../theme
-      '@westpac/wbc':
-        specifier: ~3.2.0
-        version: 3.2.0
       chokidar:
         specifier: ^3.5.3
         version: 3.5.3
@@ -399,6 +351,7 @@ packages:
     resolution: {integrity: sha1-9K1DWqJj25NbjxDyxVLSP7cWpj8=}
     dependencies:
       '@babel/highlight': 7.22.5
+    dev: true
 
   /@babel/code-frame@7.22.5:
     resolution: {integrity: sha1-I02Y4VUZYGBPEkbmR1iRpXCtVlg=}
@@ -2980,6 +2933,7 @@ packages:
       find-root: 1.1.0
       source-map: 0.5.7
       stylis: 4.2.0
+    dev: false
 
   /@emotion/cache@11.11.0:
     resolution: {integrity: sha1-gJsz7mscsaYl/vekW8VozNm48/8=}
@@ -2989,9 +2943,11 @@ packages:
       '@emotion/utils': 1.2.1
       '@emotion/weak-memoize': 0.3.1
       stylis: 4.2.0
+    dev: false
 
   /@emotion/hash@0.9.1:
     resolution: {integrity: sha1-T/sAVffvZ268OlqR+2ITkylOL0M=}
+    dev: false
 
   /@emotion/is-prop-valid@0.8.8:
     resolution: {integrity: sha1-2yixxDaKJZtgqXMR1qlS1P0BrBo=}
@@ -3008,6 +2964,7 @@ packages:
 
   /@emotion/memoize@0.8.1:
     resolution: {integrity: sha1-wd2wQEKcbSHTjMlF/nXIGM+2jhc=}
+    dev: false
 
   /@emotion/react@11.11.1(@types/react@18.0.28)(react@18.2.0):
     resolution: {integrity: sha1-ssNq+slbGE9zsI2owhT9+GH6QVc=}
@@ -3028,6 +2985,7 @@ packages:
       '@types/react': 18.0.28
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
+    dev: false
 
   /@emotion/serialize@1.1.2:
     resolution: {integrity: sha1-AXpuTJuKgDvVdv89UqDqb6WmK1E=}
@@ -3037,12 +2995,15 @@ packages:
       '@emotion/unitless': 0.8.1
       '@emotion/utils': 1.2.1
       csstype: 3.1.2
+    dev: false
 
   /@emotion/sheet@1.2.2:
     resolution: {integrity: sha1-1Y54juJyZ6FDQjA+Grs9UIttD+w=}
+    dev: false
 
   /@emotion/unitless@0.8.1:
     resolution: {integrity: sha1-GCtaRwTvitkb3pP3qGCoj9kseaM=}
+    dev: false
 
   /@emotion/use-insertion-effect-with-fallbacks@1.0.1(react@18.2.0):
     resolution: {integrity: sha1-CN559U6zQG+dqvd8duNTE9qWOWM=}
@@ -3053,12 +3014,15 @@ packages:
 
   /@emotion/utils@1.2.1:
     resolution: {integrity: sha1-u6tYRlc40xrkyz27b8AKWZH3VeQ=}
+    dev: false
 
   /@emotion/weak-memoize@0.2.5:
     resolution: {integrity: sha1-ju2YLi7m9/TkTCU+EpYpgHke/UY=}
+    dev: false
 
   /@emotion/weak-memoize@0.3.1:
     resolution: {integrity: sha1-0Pzl0HsGIMqigrUTHCl7tg+dh+Y=}
+    dev: false
 
   /@esbuild/android-arm64@0.17.19:
     resolution: {integrity: sha1-uvt1I0pdPRtpDnwpVqWZNF6Eov0=}
@@ -3292,6 +3256,7 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /@eslint/eslintrc@1.4.1:
     resolution: {integrity: sha1-r1h3IBmi0nG34tTCP/Tdy6PM+z4=}
@@ -3366,6 +3331,7 @@ packages:
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /@humanwhocodes/module-importer@1.0.1:
     resolution: {integrity: sha1-r1smkaIrRL6EewyoFkHF+2rQFyw=}
@@ -4373,54 +4339,6 @@ packages:
       '@swc/helpers': 0.5.1
       clsx: 1.2.1
       react: 18.2.0
-    dev: false
-
-  /@react-spring/animated@9.7.3(react@18.2.0):
-    resolution: {integrity: sha1-QhGxptSNoP9HShJek8D0YP+Bbg8=}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@react-spring/shared': 9.7.3(react@18.2.0)
-      '@react-spring/types': 9.7.3
-      react: 18.2.0
-    dev: false
-
-  /@react-spring/core@9.7.3(react@18.2.0):
-    resolution: {integrity: sha1-YAVryzl/LE83HGyaX4gtt3rpAJU=}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@react-spring/animated': 9.7.3(react@18.2.0)
-      '@react-spring/shared': 9.7.3(react@18.2.0)
-      '@react-spring/types': 9.7.3
-      react: 18.2.0
-    dev: false
-
-  /@react-spring/shared@9.7.3(react@18.2.0):
-    resolution: {integrity: sha1-TPKXl4R8aJkSrsTmLjTJmk1dnlM=}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@react-spring/types': 9.7.3
-      react: 18.2.0
-    dev: false
-
-  /@react-spring/types@9.7.3:
-    resolution: {integrity: sha1-6nj9RHy8JhLB9dVYUuPDMegXKgs=}
-    dev: false
-
-  /@react-spring/web@9.7.3(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha1-2fThf+wlnx1lSVoZUCraT1tX+j0=}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@react-spring/animated': 9.7.3(react@18.2.0)
-      '@react-spring/core': 9.7.3(react@18.2.0)
-      '@react-spring/shared': 9.7.3(react@18.2.0)
-      '@react-spring/types': 9.7.3
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@react-stately/calendar@3.3.0(react@18.2.0):
@@ -6609,16 +6527,19 @@ packages:
     resolution: {integrity: sha1-HqY9i5Rwn2vJ4jHyUrMUQKvjEs8=}
     dependencies:
       '@types/lodash': 4.14.194
+    dev: false
 
   /@types/lodash.mergewith@4.6.7:
     resolution: {integrity: sha1-6qZapYcqvdKC8nHq5EexFbJ1chI=}
     dependencies:
       '@types/lodash': 4.14.194
+    dev: false
 
   /@types/lodash.set@4.3.7:
     resolution: {integrity: sha1-eE/M6j++9NCUnRiXp4D1ktpwCUI=}
     dependencies:
       '@types/lodash': 4.14.194
+    dev: false
 
   /@types/lodash@4.14.194:
     resolution: {integrity: sha1-tx6296D/Eb/1n8mHE0oJMCklinY=}
@@ -6679,6 +6600,7 @@ packages:
 
   /@types/parse-json@4.0.0:
     resolution: {integrity: sha1-L4u0QUNNFjs1+4/9zNcTiSf/uMA=}
+    dev: false
 
   /@types/pretty-hrtime@1.0.1:
     resolution: {integrity: sha1-cqJhAdxWew1o/ZVs9CMUVW5C1gE=}
@@ -6705,6 +6627,7 @@ packages:
     resolution: {integrity: sha1-PMzQKFH396dbIdbpItomvH+PRK0=}
     dependencies:
       '@types/react': 17.0.62
+    dev: false
 
   /@types/react@17.0.62:
     resolution: {integrity: sha1-Lv6N34UzUA7ESxM03RqXyqL4YOM=}
@@ -6712,6 +6635,7 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
       csstype: 3.1.2
+    dev: false
 
   /@types/react@18.0.28:
     resolution: {integrity: sha1-rMrri4b0kIBXrWKaJmNf5kFIAGU=}
@@ -6792,7 +6716,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.51.0(eslint@7.32.0)(typescript@5.1.6)
+      '@typescript-eslint/parser': 5.51.0(eslint@8.33.0)(typescript@5.1.6)
       '@typescript-eslint/scope-manager': 5.51.0
       '@typescript-eslint/type-utils': 5.51.0(eslint@8.33.0)(typescript@5.1.6)
       '@typescript-eslint/utils': 5.51.0(eslint@8.33.0)(typescript@5.1.6)
@@ -6819,25 +6743,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
-
-  /@typescript-eslint/parser@5.51.0(eslint@7.32.0)(typescript@5.1.6):
-    resolution: {integrity: sha1-LXRiZlIJbZZu8Qf0S5R58C9R8nE=}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@typescript-eslint/scope-manager': 5.51.0
-      '@typescript-eslint/types': 5.51.0
-      '@typescript-eslint/typescript-estree': 5.51.0(typescript@5.1.6)
-      debug: 4.3.4
-      eslint: 7.32.0
-      typescript: 5.1.6
-    transitivePeerDependencies:
-      - supports-color
 
   /@typescript-eslint/parser@5.51.0(eslint@8.33.0)(typescript@5.1.6):
     resolution: {integrity: sha1-LXRiZlIJbZZu8Qf0S5R58C9R8nE=}
@@ -7201,7 +7106,7 @@ packages:
     dependencies:
       '@rushstack/eslint-patch': 1.2.0
       '@typescript-eslint/eslint-plugin': 5.51.0(@typescript-eslint/parser@5.51.0)(eslint@8.33.0)(typescript@5.1.6)
-      '@typescript-eslint/parser': 5.51.0(eslint@7.32.0)(typescript@5.1.6)
+      '@typescript-eslint/parser': 5.51.0(eslint@8.33.0)(typescript@5.1.6)
       eslint: 8.33.0
       eslint-config-next: 13.3.0(eslint@8.33.0)(typescript@5.1.6)
       eslint-config-prettier: 8.6.0(eslint@8.33.0)
@@ -7209,9 +7114,9 @@ packages:
       eslint-config-turbo: 0.0.7(eslint@8.33.0)
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.51.0)(eslint-import-resolver-node@0.3.7)(eslint-plugin-import@2.27.5)(eslint@8.33.0)
       eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.51.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.33.0)
-      eslint-plugin-n: 15.6.1(eslint@7.32.0)
+      eslint-plugin-n: 15.6.1(eslint@8.33.0)
       eslint-plugin-prettier: 4.2.1(eslint-config-prettier@8.6.0)(eslint@8.33.0)(prettier@2.8.4)
-      eslint-plugin-promise: 6.1.1(eslint@7.32.0)
+      eslint-plugin-promise: 6.1.1(eslint@8.33.0)
       eslint-plugin-sonarjs: 0.18.0(eslint@8.33.0)
       eslint-plugin-tailwindcss: 3.13.0(tailwindcss@3.3.2)
       eslint-plugin-typescript-sort-keys: 2.1.0(@typescript-eslint/parser@5.51.0)(eslint@8.33.0)(typescript@5.1.6)
@@ -7229,83 +7134,6 @@ packages:
   /@westpac-x/ts-config@0.0.1:
     resolution: {integrity: sha1-Vj7aDV7o+I9MLo+D6ycupSUWsFU=}
 
-  /@westpac/a11y@2.2.1(@emotion/react@11.11.1)(react@18.2.0):
-    resolution: {integrity: sha1-LD2Q/HCjyHZL0edT3T3J+0L+Nzs=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
-  /@westpac/alert@2.2.2(@emotion/react@11.11.1)(@react-spring/web@9.7.3)(react@18.2.0):
-    resolution: {integrity: sha1-yVI/9EKMhHif9VYRf6xzvMylGME=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      '@react-spring/web': ^9.2.4
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@react-spring/web': 9.7.3(react-dom@18.2.0)(react@18.2.0)
-      '@westpac/body': 2.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/button': 3.1.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/heading': 2.3.2(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/icon': 2.3.0(@emotion/react@11.11.1)(react@18.2.0)
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
-  /@westpac/body@2.2.1(@emotion/react@11.11.1)(react@18.2.0):
-    resolution: {integrity: sha1-2EvblDo9xsrqS5N9m8ztBO3BBf0=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
-  /@westpac/bom@2.3.0:
-    resolution: {integrity: sha1-428Ljd4SEocQAC2wus1L0Rp20Is=}
-    dependencies:
-      '@babel/runtime': 7.22.6
-    dev: false
-
-  /@westpac/bsa@2.3.0:
-    resolution: {integrity: sha1-YaSRZxAhbpgg8UZAhx69wSNE/Pg=}
-    dependencies:
-      '@babel/runtime': 7.22.6
-    dev: false
-
-  /@westpac/btfg@2.3.0:
-    resolution: {integrity: sha1-lrBncHnU3voSHmgAVXOitgxx89Y=}
-    dependencies:
-      '@babel/runtime': 7.22.6
-    dev: false
-
-  /@westpac/button-group@2.2.2(@emotion/react@11.11.1)(react@18.2.0):
-    resolution: {integrity: sha1-L+C978Ucgp9iWVmBxqbFXD9EVsA=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@westpac/button': 3.1.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
   /@westpac/button@3.1.0(@emotion/react@11.11.1)(react@18.2.0):
     resolution: {integrity: sha1-+GPhcWMOGRWOvgLbLxQkJdKAArE=}
     peerDependencies:
@@ -7319,19 +7147,7 @@ packages:
       '@westpac/icon': 2.3.0(@emotion/react@11.11.1)(react@18.2.0)
       prop-types: 15.8.1
       react: 18.2.0
-
-  /@westpac/circle@1.2.0(@emotion/react@11.11.1)(react@18.2.0):
-    resolution: {integrity: sha1-PuyzW8oB3opDc4hEcT1aSlJvnOA=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: true
+    dev: false
 
   /@westpac/core@3.2.1(@emotion/react@11.11.1)(react@18.2.0):
     resolution: {integrity: sha1-Qae8LFrlUQGiwFgLdj4M0YBbdPY=}
@@ -7356,70 +7172,6 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-is: 18.2.0
-
-  /@westpac/flexi-cell@1.0.0(@emotion/react@11.11.1)(react@18.2.0):
-    resolution: {integrity: sha1-+TGel9O/7xMLSWSi246nnKTu28Y=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@westpac/button': 3.1.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/circle': 1.2.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/icon': 2.3.0(@emotion/react@11.11.1)(react@18.2.0)
-      classnames: 2.3.2
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: true
-
-  /@westpac/fork@2.2.1(@emotion/react@11.11.1)(react@18.2.0):
-    resolution: {integrity: sha1-fY2GgmmZqw9USK9UPfQMP2jsWik=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@westpac/button-group': 2.2.2(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
-  /@westpac/form@3.4.0(@emotion/react@11.11.1)(@react-spring/web@9.7.3)(react@18.2.0):
-    resolution: {integrity: sha1-vY2FKfqtMvlEm8XlYlIE7GyzwXQ=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@westpac/a11y': 2.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/fork': 2.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/icon': 2.3.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/repeater': 2.4.0(@emotion/react@11.11.1)(@react-spring/web@9.7.3)(react@18.2.0)
-      '@westpac/text-input': 2.4.0(@emotion/react@11.11.1)(react@18.2.0)
-      prop-types: 15.8.1
-      react: 18.2.0
-      shortid: 2.2.16
-    transitivePeerDependencies:
-      - '@react-spring/web'
-    dev: false
-
-  /@westpac/heading@2.3.2(@emotion/react@11.11.1)(react@18.2.0):
-    resolution: {integrity: sha1-JJ4Xm5XxN1xjcmIco8nxXsllNcs=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      prop-types: 15.8.1
-      react: 18.2.0
     dev: false
 
   /@westpac/hooks@3.1.1(@emotion/react@11.11.1)(react@18.2.0):
@@ -7434,6 +7186,7 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       resize-observer-polyfill: 1.5.1
+    dev: false
 
   /@westpac/icon@2.2.0(@emotion/react@11.11.1)(react@18.2.0):
     resolution: {integrity: sha1-X7LnMJzaNklqVa1Ek03CIyfXZVI=}
@@ -7459,130 +7212,19 @@ packages:
       '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
       prop-types: 15.8.1
       react: 18.2.0
-
-  /@westpac/input-field@1.0.0(@emotion/react@11.11.1)(@react-spring/web@9.7.3)(@westpac/button@3.1.0)(@westpac/icon@2.3.0)(@westpac/text-input@2.4.0)(react@18.2.0):
-    resolution: {integrity: sha1-LKnuX86GFNcfgiQRbNCAooOhf8k=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      '@westpac/button': ^3.1.0
-      '@westpac/icon': ^2.3.0
-      '@westpac/text-input': ^2.4.0
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@westpac/button': 3.1.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/form': 3.4.0(@emotion/react@11.11.1)(@react-spring/web@9.7.3)(react@18.2.0)
-      '@westpac/icon': 2.3.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/text-input': 2.4.0(@emotion/react@11.11.1)(react@18.2.0)
-      prop-types: 15.8.1
-      react: 18.2.0
-    transitivePeerDependencies:
-      - '@react-spring/web'
-    dev: false
-
-  /@westpac/modal@2.3.0(@emotion/react@11.11.1)(@react-spring/web@9.7.3)(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha1-27LEJ3cadakWDNY2sWWceQCXiCU=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      '@react-spring/web': ^9.2.4
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@react-spring/web': 9.7.3(react-dom@18.2.0)(react@18.2.0)
-      '@westpac/body': 2.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/button': 3.1.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/heading': 2.3.2(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/hooks': 3.1.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/icon': 2.3.0(@emotion/react@11.11.1)(react@18.2.0)
-      bezier-easing: 2.1.0
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-focus-on: 3.8.2(@types/react@18.0.28)(react@18.2.0)
-      react-merge-refs: 1.1.0
-    transitivePeerDependencies:
-      - '@types/react'
-    dev: false
-
-  /@westpac/rams@2.3.0:
-    resolution: {integrity: sha1-CkzHmQrZks9VmIggchlzyJDD3z8=}
-    dependencies:
-      '@babel/runtime': 7.22.6
-    dev: false
-
-  /@westpac/repeater@2.4.0(@emotion/react@11.11.1)(@react-spring/web@9.7.3)(react@18.2.0):
-    resolution: {integrity: sha1-uBGZKZv3SRXirbc4fplZdL3pXuU=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      '@react-spring/web': ^9.2.4
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@react-spring/web': 9.7.3(react-dom@18.2.0)(react@18.2.0)
-      '@westpac/a11y': 2.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/button': 3.1.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/icon': 2.3.0(@emotion/react@11.11.1)(react@18.2.0)
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
-  /@westpac/stg@2.3.0:
-    resolution: {integrity: sha1-T1/fxExWbASIR/WHvjAnTIhXkyc=}
-    dependencies:
-      '@babel/runtime': 7.22.6
-    dev: false
-
-  /@westpac/symbol@2.1.1(@emotion/react@11.11.1)(react@18.2.0):
-    resolution: {integrity: sha1-cSv5OlnX9OqSbs3W/05YQCCtpqw=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
-  /@westpac/text-input@2.4.0(@emotion/react@11.11.1)(react@18.2.0):
-    resolution: {integrity: sha1-8EZQ3dbcV62B8AmikDWqELCs3gA=}
-    peerDependencies:
-      '@emotion/react': ^11.10.6
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@emotion/react': 11.11.1(@types/react@18.0.28)(react@18.2.0)
-      '@westpac/button': 3.1.0(@emotion/react@11.11.1)(react@18.2.0)
-      '@westpac/core': 3.2.1(@emotion/react@11.11.1)(react@18.2.0)
-      mini-svg-data-uri: 1.4.4
-      prop-types: 15.8.1
-      react: 18.2.0
     dev: false
 
   /@westpac/wbc@3.2.0:
     resolution: {integrity: sha1-SSBKS/7KcJR4kVvtq96VqFIiW1Q=}
     dependencies:
       '@babel/runtime': 7.22.6
+    dev: false
 
   /@westpac/wbc@3.3.0:
     resolution: {integrity: sha1-CFyMYNDWYY/MHevRFqlmHzS4zmo=}
     dependencies:
       '@babel/runtime': 7.22.6
     dev: true
-
-  /@westpac/wbg@2.5.0:
-    resolution: {integrity: sha1-YcqpMyjDbOA40WytDh6NuvwOo3E=}
-    dependencies:
-      '@babel/runtime': 7.22.6
-    dev: false
 
   /@xtuc/ieee754@1.2.0:
     resolution: {integrity: sha1-7vAUoxRa5Hehy8AM0eVSM23Ot5A=}
@@ -7628,6 +7270,7 @@ packages:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       acorn: 7.4.1
+    dev: true
 
   /acorn-jsx@5.3.2(acorn@8.9.0):
     resolution: {integrity: sha1-ftW7VZCLOy8bxVxq8WU7rafweTc=}
@@ -7650,6 +7293,7 @@ packages:
     resolution: {integrity: sha1-/q7SVZc9LndVW4PbwIhRpsY1IPo=}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
 
   /acorn@8.9.0:
     resolution: {integrity: sha1-eKFuOyvMGYwQgieG+mZ54kXbW1k=}
@@ -7714,6 +7358,7 @@ packages:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
       uri-js: 4.4.1
+    dev: true
 
   /ansi-align@3.0.1:
     resolution: {integrity: sha1-DN8S4RGs53OobpofrRIlxDyxmlk=}
@@ -7724,6 +7369,7 @@ packages:
   /ansi-colors@4.1.3:
     resolution: {integrity: sha1-N2ETQOsiQ+cMxgTK011jJw1IeBs=}
     engines: {node: '>=6'}
+    dev: true
 
   /ansi-regex@5.0.1:
     resolution: {integrity: sha1-CCyyyJyf6GWaMRpTvWpNxTAdswQ=}
@@ -7783,16 +7429,10 @@ packages:
     resolution: {integrity: sha1-vNZ5HqWuCXJeF+WtmIE0zUCz2RE=}
     dependencies:
       sprintf-js: 1.0.3
+    dev: true
 
   /argparse@2.0.1:
     resolution: {integrity: sha1-JG9Q88p4oyQPbJl+ipvR6sSeSzg=}
-
-  /aria-hidden@1.2.3:
-    resolution: {integrity: sha1-FK63+2kru3LWm+v6RyecH9cl6VQ=}
-    engines: {node: '>=10'}
-    dependencies:
-      tslib: 2.6.0
-    dev: false
 
   /aria-query@5.1.3:
     resolution: {integrity: sha1-GdsnzRARUnc2MTlvepWjtYwiw14=}
@@ -7901,6 +7541,7 @@ packages:
   /astral-regex@2.0.0:
     resolution: {integrity: sha1-SDFDxWeu7UeFdZwIZXhtx319LjE=}
     engines: {node: '>=8'}
+    dev: true
 
   /async-limiter@1.0.1:
     resolution: {integrity: sha1-3TeelPDbgxCwgpH51kwyCXZmF/0=}
@@ -7971,6 +7612,7 @@ packages:
       '@babel/runtime': 7.22.6
       cosmiconfig: 7.1.0
       resolve: 1.22.2
+    dev: false
 
   /babel-plugin-polyfill-corejs2@0.3.3(@babel/core@7.21.8):
     resolution: {integrity: sha1-XRvTg20KGeG4S78tlkDMtvlRwSI=}
@@ -8064,10 +7706,6 @@ packages:
     dependencies:
       is-windows: 1.0.2
     dev: true
-
-  /bezier-easing@2.1.0:
-    resolution: {integrity: sha1-wE3+i5JtbsrKGBPWn/F5t8ICXYY=}
-    dev: false
 
   /big-integer@1.6.51:
     resolution: {integrity: sha1-DfkqXZiAVg0/8tX9ICRciJ0TBoY=}
@@ -8409,6 +8047,7 @@ packages:
 
   /classnames@2.3.2:
     resolution: {integrity: sha1-NR2BO/ATf8xqdqFriCCNJWCg2SQ=}
+    dev: false
 
   /clean-stack@2.2.0:
     resolution: {integrity: sha1-7oRy27Ep5yezHooQpCfe6d/kAIs=}
@@ -8669,6 +8308,7 @@ packages:
       parse-json: 5.2.0
       path-type: 4.0.0
       yaml: 1.10.2
+    dev: false
 
   /cosmiconfig@8.2.0:
     resolution: {integrity: sha1-99F8VqWQhWzR587phzTconKw2P0=}
@@ -8961,10 +8601,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /detect-node-es@1.1.0:
-    resolution: {integrity: sha1-FjrN9kMzDKoLTNfCHn7ndV1vpJM=}
-    dev: false
-
   /detect-package-manager@2.0.1:
     resolution: {integrity: sha1-axguOuXhgmdSv+8d6ae4KM/6UNg=}
     engines: {node: '>=12'}
@@ -9059,6 +8695,7 @@ packages:
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha1-6Bj9ac5cz8tARZT4QpY79TFkzDc=}
+    dev: true
 
   /emoji-regex@9.2.2:
     resolution: {integrity: sha1-hAyIA7DYBH9P8M+WMXazLU7z7XI=}
@@ -9091,6 +8728,7 @@ packages:
     engines: {node: '>=8.6'}
     dependencies:
       ansi-colors: 4.1.3
+    dev: true
 
   /entities@4.5.0:
     resolution: {integrity: sha1-XSaOpecRPsdMTQM7eepaNaSI+0g=}
@@ -9354,8 +8992,8 @@ packages:
     dependencies:
       eslint: 8.33.0
       eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.51.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.33.0)
-      eslint-plugin-n: 15.6.1(eslint@7.32.0)
-      eslint-plugin-promise: 6.1.1(eslint@7.32.0)
+      eslint-plugin-n: 15.6.1(eslint@8.33.0)
+      eslint-plugin-promise: 6.1.1(eslint@8.33.0)
 
   /eslint-config-turbo@0.0.7(eslint@8.33.0):
     resolution: {integrity: sha1-Gk73so30D7FoppXjTVjR0lR3qrM=}
@@ -9418,7 +9056,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.51.0(eslint@7.32.0)(typescript@5.1.6)
+      '@typescript-eslint/parser': 5.51.0(eslint@8.33.0)(typescript@5.1.6)
       debug: 3.2.7
       eslint: 8.33.0
       eslint-import-resolver-node: 0.3.7
@@ -9426,13 +9064,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /eslint-plugin-es@4.1.0(eslint@7.32.0):
+  /eslint-plugin-es@4.1.0(eslint@8.33.0):
     resolution: {integrity: sha1-8IIvDBilNal8PnFOifiFhqdkHsk=}
     engines: {node: '>=8.10.0'}
     peerDependencies:
       eslint: '>=4.19.1'
     dependencies:
-      eslint: 7.32.0
+      eslint: 8.33.0
       eslint-utils: 2.1.0
       regexpp: 3.2.0
 
@@ -9446,7 +9084,7 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.51.0(eslint@7.32.0)(typescript@5.1.6)
+      '@typescript-eslint/parser': 5.51.0(eslint@8.33.0)(typescript@5.1.6)
       array-includes: 3.1.6
       array.prototype.flat: 1.3.1
       array.prototype.flatmap: 1.3.1
@@ -9492,16 +9130,16 @@ packages:
       object.fromentries: 2.0.6
       semver: 6.3.0
 
-  /eslint-plugin-n@15.6.1(eslint@7.32.0):
+  /eslint-plugin-n@15.6.1(eslint@8.33.0):
     resolution: {integrity: sha1-9+d/JKu5KlUBFc8R4paV2hIsOYw=}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
       builtins: 5.0.1
-      eslint: 7.32.0
-      eslint-plugin-es: 4.1.0(eslint@7.32.0)
-      eslint-utils: 3.0.0(eslint@7.32.0)
+      eslint: 8.33.0
+      eslint-plugin-es: 4.1.0(eslint@8.33.0)
+      eslint-utils: 3.0.0(eslint@8.33.0)
       ignore: 5.2.4
       is-core-module: 2.12.1
       minimatch: 3.1.2
@@ -9524,13 +9162,13 @@ packages:
       prettier: 2.8.4
       prettier-linter-helpers: 1.0.0
 
-  /eslint-plugin-promise@6.1.1(eslint@7.32.0):
+  /eslint-plugin-promise@6.1.1(eslint@8.33.0):
     resolution: {integrity: sha1-Jpo+J3L2KHVmEiBjG9Ta/LQIOBY=}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0
     dependencies:
-      eslint: 7.32.0
+      eslint: 8.33.0
 
   /eslint-plugin-react-hooks@4.6.0(eslint@8.33.0):
     resolution: {integrity: sha1-TD5petlbd+k/hkaqoWMMG6YH7dM=}
@@ -9613,7 +9251,7 @@ packages:
       typescript: ^3 || ^4
     dependencies:
       '@typescript-eslint/experimental-utils': 5.61.0(eslint@8.33.0)(typescript@5.1.6)
-      '@typescript-eslint/parser': 5.51.0(eslint@7.32.0)(typescript@5.1.6)
+      '@typescript-eslint/parser': 5.51.0(eslint@8.33.0)(typescript@5.1.6)
       eslint: 8.33.0
       json-schema: 0.4.0
       natural-compare-lite: 1.4.0
@@ -9640,15 +9278,6 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       eslint-visitor-keys: 1.3.0
-
-  /eslint-utils@3.0.0(eslint@7.32.0):
-    resolution: {integrity: sha1-iuuvrOc0W7M1WdsKHxOh0tSMNnI=}
-    engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
-    peerDependencies:
-      eslint: '>=5'
-    dependencies:
-      eslint: 7.32.0
-      eslint-visitor-keys: 2.1.0
 
   /eslint-utils@3.0.0(eslint@8.33.0):
     resolution: {integrity: sha1-iuuvrOc0W7M1WdsKHxOh0tSMNnI=}
@@ -9718,6 +9347,7 @@ packages:
       v8-compile-cache: 2.3.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /eslint@8.33.0:
     resolution: {integrity: sha1-AvEQ8ymYy1mMZGHyT00wbkHKM9c=}
@@ -9773,6 +9403,7 @@ packages:
       acorn: 7.4.1
       acorn-jsx: 5.3.2(acorn@7.4.1)
       eslint-visitor-keys: 1.3.0
+    dev: true
 
   /espree@9.6.0:
     resolution: {integrity: sha1-gIaXVLHGVg8y47aSkZSj/gfFuC8=}
@@ -9786,6 +9417,7 @@ packages:
     resolution: {integrity: sha1-E7BM2z5sXRnfkatph6hpVhmwqnE=}
     engines: {node: '>=4'}
     hasBin: true
+    dev: true
 
   /esquery@1.5.0:
     resolution: {integrity: sha1-bOF3ON6Fd2lO3XNhxXGCrIyw2ws=}
@@ -9981,6 +9613,7 @@ packages:
 
   /facepaint@1.2.1:
     resolution: {integrity: sha1-iZKeYBsVInJ4xTxRb3ZPxGKwnDM=}
+    dev: false
 
   /fast-deep-equal@3.1.3:
     resolution: {integrity: sha1-On1WtVnWy8PrUSMlJE5hmmXGxSU=}
@@ -10115,6 +9748,7 @@ packages:
 
   /find-root@1.1.0:
     resolution: {integrity: sha1-q8/Iunb3CMQql7PWhbfpRQv7nOQ=}
+    dev: false
 
   /find-up@3.0.0:
     resolution: {integrity: sha1-SRafHXmTQwZG2mHsxa41XCHJe3M=}
@@ -10166,13 +9800,6 @@ packages:
     resolution: {integrity: sha1-cQx9q9/hFJQ3fc75plYC6MRF41o=}
     engines: {node: '>=0.4.0'}
     dev: true
-
-  /focus-lock@0.11.6:
-    resolution: {integrity: sha1-6IIeIdIY8D4QD33Ce3M/nE9h5oM=}
-    engines: {node: '>=10'}
-    dependencies:
-      tslib: 2.6.0
-    dev: false
 
   /for-each@0.3.3:
     resolution: {integrity: sha1-abRH6IoKXTLD5whPPxcQA0shN24=}
@@ -10299,6 +9926,7 @@ packages:
 
   /functional-red-black-tree@1.0.1:
     resolution: {integrity: sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=}
+    dev: true
 
   /functions-have-names@1.2.3:
     resolution: {integrity: sha1-BAT+TuK6L2B/Dg7DyAuumUEzuDQ=}
@@ -10339,11 +9967,6 @@ packages:
       has: 1.0.3
       has-proto: 1.0.1
       has-symbols: 1.0.3
-
-  /get-nonce@1.0.1:
-    resolution: {integrity: sha1-/fPwJ4Bzgg0s6UJsGPB0gbHgzfM=}
-    engines: {node: '>=6'}
-    dev: false
 
   /get-npm-tarball-url@2.0.3:
     resolution: {integrity: sha1-Z9/5CNaZ6eIYJTCubpOak+X439s=}
@@ -10632,6 +10255,7 @@ packages:
     resolution: {integrity: sha1-7OCsr3HWLClpwuxZ/v9CpLGoW0U=}
     dependencies:
       react-is: 16.13.1
+    dev: false
 
   /hosted-git-info@2.8.9:
     resolution: {integrity: sha1-3/wL+aIcAiCQkPKqaUKeFBTa8/k=}
@@ -10755,6 +10379,7 @@ packages:
   /ignore@4.0.6:
     resolution: {integrity: sha1-dQ49tYYgh7RzfrrIIH/9HvJ7Jfw=}
     engines: {node: '>= 4'}
+    dev: true
 
   /ignore@5.2.4:
     resolution: {integrity: sha1-opHAxheP8blgvv5H/N7DAWdKYyQ=}
@@ -10813,12 +10438,6 @@ packages:
       '@formatjs/fast-memoize': 2.2.0
       '@formatjs/icu-messageformat-parser': 2.6.0
       tslib: 2.6.0
-    dev: false
-
-  /invariant@2.2.4:
-    resolution: {integrity: sha1-YQ88ksk1nOHbYW5TgAjSP/NRWOY=}
-    dependencies:
-      loose-envify: 1.4.0
     dev: false
 
   /ip@2.0.0:
@@ -10917,6 +10536,7 @@ packages:
   /is-fullwidth-code-point@3.0.0:
     resolution: {integrity: sha1-8Rb4Bk/pCz94RKOJl8C3UFEmnx0=}
     engines: {node: '>=8'}
+    dev: true
 
   /is-generator-function@1.0.10:
     resolution: {integrity: sha1-8VWLrxrBfg3up8BBXEODUf8rPHI=}
@@ -11293,6 +10913,7 @@ packages:
     dependencies:
       argparse: 1.0.10
       esprima: 4.0.1
+    dev: true
 
   /js-yaml@4.1.0:
     resolution: {integrity: sha1-wftl+PUBeQHN0slRhkuhhFihBgI=}
@@ -11420,6 +11041,7 @@ packages:
 
   /json-schema-traverse@1.0.0:
     resolution: {integrity: sha1-rnvLNlard6c7pcSb9lTzjmtoYOI=}
+    dev: true
 
   /json-schema@0.4.0:
     resolution: {integrity: sha1-995M9u+rg4666zI2R0y7paGTCrU=}
@@ -11622,6 +11244,7 @@ packages:
 
   /lodash.get@4.4.2:
     resolution: {integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=}
+    dev: false
 
   /lodash.merge@4.6.2:
     resolution: {integrity: sha1-VYqlO0O2YeGSWgr9+japoQhf5Xo=}
@@ -11631,6 +11254,7 @@ packages:
 
   /lodash.set@4.3.2:
     resolution: {integrity: sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=}
+    dev: false
 
   /lodash.startcase@4.4.0:
     resolution: {integrity: sha1-lDbjTtJgk+1/+uGTYUQ1CRXZrdg=}
@@ -11638,6 +11262,7 @@ packages:
 
   /lodash.truncate@4.4.2:
     resolution: {integrity: sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=}
+    dev: true
 
   /lodash@4.17.21:
     resolution: {integrity: sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=}
@@ -11864,11 +11489,6 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /mini-svg-data-uri@1.4.4:
-    resolution: {integrity: sha1-irCqvN+MKa1Wk8pZWvGd0urQmTk=}
-    hasBin: true
-    dev: false
-
   /minimatch@3.1.2:
     resolution: {integrity: sha1-Gc0ZS/0+Qo8EmnCBfAONiatL41s=}
     dependencies:
@@ -11976,10 +11596,6 @@ packages:
       any-promise: 1.3.0
       object-assign: 4.1.1
       thenify-all: 1.6.0
-
-  /nanoid@2.1.11:
-    resolution: {integrity: sha1-7CS4p1jVkVYVMbQXagHjq08PAoA=}
-    dev: false
 
   /nanoid@3.3.6:
     resolution: {integrity: sha1-RDOAyFbW6fmCQmfZYLQjatWD6kw=}
@@ -12766,6 +12382,7 @@ packages:
   /progress@2.0.3:
     resolution: {integrity: sha1-foz42PW48jnBvGi+tOt4Vn1XLvg=}
     engines: {node: '>=0.4.0'}
+    dev: true
 
   /prompts@2.4.2:
     resolution: {integrity: sha1-e1fnOzpIAprRDr1E90sBcipMsGk=}
@@ -12959,15 +12576,6 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /react-clientside-effect@1.2.6(react@18.2.0):
-    resolution: {integrity: sha1-KfmxTpRKN2sD+2UO7Sp1TdEo6jo=}
-    peerDependencies:
-      react: ^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@babel/runtime': 7.22.6
-      react: 18.2.0
-    dev: false
-
   /react-colorful@5.6.1(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha1-fcKu0tfHL6yJaU6DTReeMvPaVjs=}
     peerDependencies:
@@ -13027,46 +12635,6 @@ packages:
       react-is: 18.1.0
     dev: true
 
-  /react-focus-lock@2.9.4(@types/react@18.0.28)(react@18.2.0):
-    resolution: {integrity: sha1-R1P23NFnw5BQydhPnGPHGz/4Ri4=}
-    peerDependencies:
-      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.22.6
-      '@types/react': 18.0.28
-      focus-lock: 0.11.6
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-clientside-effect: 1.2.6(react@18.2.0)
-      use-callback-ref: 1.3.0(@types/react@18.0.28)(react@18.2.0)
-      use-sidecar: 1.1.2(@types/react@18.0.28)(react@18.2.0)
-    dev: false
-
-  /react-focus-on@3.8.2(@types/react@18.0.28)(react@18.2.0):
-    resolution: {integrity: sha1-9ixo+wqbyb3lYJwts43/o6EJZSk=}
-    engines: {node: '>=8.5.0'}
-    peerDependencies:
-      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@types/react': 18.0.28
-      aria-hidden: 1.2.3
-      react: 18.2.0
-      react-focus-lock: 2.9.4(@types/react@18.0.28)(react@18.2.0)
-      react-remove-scroll: 2.5.6(@types/react@18.0.28)(react@18.2.0)
-      react-style-singleton: 2.2.1(@types/react@18.0.28)(react@18.2.0)
-      tslib: 2.6.0
-      use-callback-ref: 1.3.0(@types/react@18.0.28)(react@18.2.0)
-      use-sidecar: 1.1.2(@types/react@18.0.28)(react@18.2.0)
-    dev: false
-
   /react-inspector@6.0.2(react@18.2.0):
     resolution: {integrity: sha1-qjAogDVQy229c0SBbVyAvznQfp0=}
     peerDependencies:
@@ -13089,49 +12657,10 @@ packages:
   /react-is@18.2.0:
     resolution: {integrity: sha1-GZQx7qqi4J+GQn77tPFHPttHYJs=}
 
-  /react-merge-refs@1.1.0:
-    resolution: {integrity: sha1-c9iLiSxsaMu3pm4IAPqjdPTDiwY=}
-    dev: false
-
   /react-refresh@0.14.0:
     resolution: {integrity: sha1-TgKCU3il8icHlVTUKEiJNU5fVT4=}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /react-remove-scroll-bar@2.3.4(@types/react@18.0.28)(react@18.2.0):
-    resolution: {integrity: sha1-U+Jy16XLgkKZDH8UTETYvYq1r9k=}
-    engines: {node: '>=10'}
-    peerDependencies:
-      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@types/react': 18.0.28
-      react: 18.2.0
-      react-style-singleton: 2.2.1(@types/react@18.0.28)(react@18.2.0)
-      tslib: 2.6.0
-    dev: false
-
-  /react-remove-scroll@2.5.6(@types/react@18.0.28)(react@18.2.0):
-    resolution: {integrity: sha1-dRC4B56cfuvgDmWjPaqjqimhAzY=}
-    engines: {node: '>=10'}
-    peerDependencies:
-      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@types/react': 18.0.28
-      react: 18.2.0
-      react-remove-scroll-bar: 2.3.4(@types/react@18.0.28)(react@18.2.0)
-      react-style-singleton: 2.2.1(@types/react@18.0.28)(react@18.2.0)
-      tslib: 2.6.0
-      use-callback-ref: 1.3.0(@types/react@18.0.28)(react@18.2.0)
-      use-sidecar: 1.1.2(@types/react@18.0.28)(react@18.2.0)
-    dev: false
 
   /react-stately@3.23.0(react@18.2.0):
     resolution: {integrity: sha1-nw6/zlEqsdZf2OUNvTqq5KPc174=}
@@ -13161,23 +12690,6 @@ packages:
       '@react-stately/tree': 3.7.0(react@18.2.0)
       '@react-types/shared': 3.18.1(react@18.2.0)
       react: 18.2.0
-    dev: false
-
-  /react-style-singleton@2.2.1(@types/react@18.0.28)(react@18.2.0):
-    resolution: {integrity: sha1-+Z5CBJKy2PNNODCP9mC2DQsSBbQ=}
-    engines: {node: '>=10'}
-    peerDependencies:
-      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@types/react': 18.0.28
-      get-nonce: 1.0.1
-      invariant: 2.2.4
-      react: 18.2.0
-      tslib: 2.6.0
     dev: false
 
   /react@18.2.0:
@@ -13371,6 +12883,7 @@ packages:
   /require-from-string@2.0.2:
     resolution: {integrity: sha1-iaf92TgmEmcxjq/hT5wy5ZjDaQk=}
     engines: {node: '>=0.10.0'}
+    dev: true
 
   /require-main-filename@2.0.0:
     resolution: {integrity: sha1-0LMp7MfMD2Fkn2IhW+aa9UqomJs=}
@@ -13387,6 +12900,7 @@ packages:
 
   /resize-observer-polyfill@1.5.1:
     resolution: {integrity: sha1-DpAg3T0hAkRY1OvSfiPkAmmBBGQ=}
+    dev: false
 
   /resolve-alpn@1.2.1:
     resolution: {integrity: sha1-t629rDVGqq7CC0Xn2CZZJwcnJvk=}
@@ -13693,12 +13207,6 @@ packages:
       rechoir: 0.6.2
     dev: true
 
-  /shortid@2.2.16:
-    resolution: {integrity: sha1-t0K48MuWQG/Tkcdr/Bimelf+Vgg=}
-    dependencies:
-      nanoid: 2.1.11
-    dev: false
-
   /shx@0.3.4:
     resolution: {integrity: sha1-dCiSMLS2Y5eRZ/lOGTWQFAbkDwI=}
     engines: {node: '>=6'}
@@ -13758,6 +13266,7 @@ packages:
       ansi-styles: 4.3.0
       astral-regex: 2.0.0
       is-fullwidth-code-point: 3.0.0
+    dev: true
 
   /smartwrap@2.0.2:
     resolution: {integrity: sha1-fiXT3Vi1HGykq6Op45FlDqYmmKQ=}
@@ -13846,6 +13355,7 @@ packages:
 
   /sprintf-js@1.0.3:
     resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=}
+    dev: true
 
   /stack-utils@2.0.6:
     resolution: {integrity: sha1-qvB0gWnAL8M8gjKrzPkz9Uocw08=}
@@ -13912,6 +13422,7 @@ packages:
       emoji-regex: 8.0.0
       is-fullwidth-code-point: 3.0.0
       strip-ansi: 6.0.1
+    dev: true
 
   /string.prototype.matchall@4.0.8:
     resolution: {integrity: sha1-O/hXIgIYFtzRvzi7cUkViHynn9M=}
@@ -14041,6 +13552,7 @@ packages:
 
   /stylis@4.2.0:
     resolution: {integrity: sha1-edruAgiWTI/mlaQvz/ysYzohGlE=}
+    dev: false
 
   /sucrase@3.32.0:
     resolution: {integrity: sha1-xKleDx4YtoRxJyWKdc82C8Vo1Kc=}
@@ -14102,6 +13614,7 @@ packages:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+    dev: true
 
   /tailwindcss-themer@3.1.0(tailwindcss@3.3.2):
     resolution: {integrity: sha1-REDWLX7cVPjwqu80BLtxhE+lVtY=}
@@ -14676,21 +14189,6 @@ packages:
       requires-port: 1.0.0
     dev: true
 
-  /use-callback-ref@1.3.0(@types/react@18.0.28)(react@18.2.0):
-    resolution: {integrity: sha1-dyGZiZucmlBSb+3EmT/H+h9+MtU=}
-    engines: {node: '>=10'}
-    peerDependencies:
-      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@types/react': 18.0.28
-      react: 18.2.0
-      tslib: 2.6.0
-    dev: false
-
   /use-resize-observer@9.1.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha1-FHNSNc8yaFacHqRo+KkMV4n8XGw=}
     peerDependencies:
@@ -14701,22 +14199,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: true
-
-  /use-sidecar@1.1.2(@types/react@18.0.28)(react@18.2.0):
-    resolution: {integrity: sha1-L0MSa6LX1+EXqlhV5djwJ23+c8I=}
-    engines: {node: '>=10'}
-    peerDependencies:
-      '@types/react': ^16.9.0 || ^17.0.0 || ^18.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@types/react': 18.0.28
-      detect-node-es: 1.1.0
-      react: 18.2.0
-      tslib: 2.6.0
-    dev: false
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
@@ -14743,6 +14225,7 @@ packages:
 
   /v8-compile-cache@2.3.0:
     resolution: {integrity: sha1-LeGWGMZtwkfc+2+ZM4A12CRaLO4=}
+    dev: true
 
   /v8-to-istanbul@9.1.0:
     resolution: {integrity: sha1-G4PtTjl/WMhcJmpXD8JVi1/rkmU=}
@@ -15193,6 +14676,7 @@ packages:
   /yaml@1.10.2:
     resolution: {integrity: sha1-IwHF/78StGfejaIzOkWeKeeSDks=}
     engines: {node: '>= 6'}
+    dev: false
 
   /yaml@2.3.1:
     resolution: {integrity: sha1-Av4JddI81EEkKqcgTgn8KKwqwzs=}

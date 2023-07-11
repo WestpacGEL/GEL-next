@@ -66,13 +66,5 @@
   "peerDependencies": {
     "csstype": "^3.1.2",
     "lodash-es": "^4.17.21"
-  },
-  "dependencies": {
-    "@westpac/bom": "~2.3.0",
-    "@westpac/bsa": "~2.3.0",
-    "@westpac/btfg": "~2.3.0",
-    "@westpac/rams": "~2.3.0",
-    "@westpac/stg": "~2.3.0",
-    "@westpac/wbg": "~2.5.0"
   }
 }
