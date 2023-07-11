@@ -1,0 +1,3 @@
+{
+  "extends": "@westpac-x/ts-config/base.json"
+}

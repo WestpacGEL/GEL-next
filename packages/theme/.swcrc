@@ -1,0 +1,15 @@
+{
+	"jsc": {
+		"parser": {
+			"syntax": "typescript"
+		},
+		"target": "es2018",
+		"loose": false,
+		"minify": {
+			"compress": false,
+			"mangle": false
+		}
+	},
+	"minify": false,
+	"isModule": true
+}

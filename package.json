@@ -1,0 +1,43 @@
+{
+  "name": "GEL-next",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build --filter=./packages/* --no-daemon",
+    "build:watch": "turbo run build:watch --filter=./packages/* --no-daemon",
+    "check-types": "turbo run check-types --filter=./packages/* --no-daemon",
+    "dev": "turbo run dev --parallel --no-daemon",
+    "format": "prettier --check \"**/{.vscode/*,*.ts,*.tsx,*.js,*.json,*.md}\"",
+    "format:fix": "prettier --write \"**/{.vscode/*,*.ts,*.tsx,*.js,*.json,*.md}\"",
+    "lint": "turbo run lint --no-daemon",
+    "lint:fix": "turbo run lint:fix --no-daemon",
+    "new:package": "node ./helpers/create-package/index.js",
+    "nuke": "pnpm nuke:node_modules && pnpm nuke:dist",
+    "nuke:node_modules": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
+    "nuke:dist": "find . -name 'dist' -type d -prune -print -exec rm -rf '{}' \\;",
+    "prepare": "husky install",
+    "test": "turbo run test --filter=./packages/* --no-daemon",
+    "ci:build": "pnpm install --frozen-lockfile && pnpm format && pnpm build && pnpm lint && pnpm check-types && pnpm test",
+    "ci:publish": "pnpm install --frozen-lockfile && pnpm build && pnpm publish --json --recursive --filter=./packages/*"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.25.2",
+    "@westpac-x/eslint-config": "~0.1.0",
+    "@westpac-x/ts-config": "^0.0.1",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.4",
+    "shx": "^0.3.4",
+    "turbo": "^1.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@8.2.0",
+  "dependencies": {
+    "typescript": "~5.1.6"
+  }
+}

@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "pnpm install started"
+pnpm install --frozen-lockfile
+echo "pnpm ended ended"
+
+echo "pnpm format started"
+pnpm format
+echo "pnpm format ended"
+
+echo "pnpm lint started"
+pnpm lint
+echo "pnpm lint ended"
+
+echo "pnpm check-types started"
+pnpm check-types
+echo "pnpm check-types ended"
+
+echo "pnpm test started"
+pnpm test
+echo "pnpm test ended"
