@@ -1,17 +1,22 @@
 {
   "name": "@westpac/_PACKAGE_NAME_",
   "version": "0.0.1",
+  "license": "MIT",
   "private": true,
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
+  "type": "module",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/*/index.d.ts"
+      ]
     }
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js"
+    }
+  },
   "files": [
     "*",
     "!coverage",
@@ -33,7 +38,7 @@
     "dev": "pnpm build:watch",
     "clean": "shx rm -rf dist",
     "build:types": "tsc --project tsconfig.build.json",
-    "build:esm": "swc ./src -d dist --no-swcrc --config-file .build.swcrc",
+    "build:esm": "swc ./src -d dist --no-swcrc --config-file .swcrc",
     "build:watch": "pnpm clean && pnpm build:types && pnpm build:esm -w",
     "build": "pnpm clean && pnpm build:types && pnpm build:esm",
     "lint": "eslint \"./src/**\"",
