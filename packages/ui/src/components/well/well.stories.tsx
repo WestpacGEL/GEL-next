@@ -38,7 +38,6 @@ export const NestedUsage: Story = {
     children: (
       <>
         I am outside
-        <span className="text-primary">BLABLABAL</span>
         <Well bgClass="bg-white">I am inside</Well>
       </>
     ),
