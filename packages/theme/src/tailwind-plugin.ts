@@ -2,10 +2,10 @@ import plugin from 'tailwindcss/plugin.js';
 import createThemes from 'tailwindcss-themer';
 
 import { BREAKPOINTS } from './constants/breakpoints.js';
-import { COLORS, DEFAULT_BODY_TYPOGRAPHY, FONT_SIZES, FONT_TYPES, SPACING } from './constants/index.js';
+import { COLORS, DEFAULT_BODY_TYPOGRAPHY, FONT_TYPES, SPACING } from './constants/index.js';
 import { THEMES } from './themes/index.js';
 import { theme as WBCTheme } from './themes/wbc.js';
-import { createFontSizes } from './utils/index.js';
+import { createFontSizes, generateFontComponents, generateIconComponents } from './utils/index.js';
 
 /**
  * Base Plugin responsible for default theming and adding the typography components
@@ -16,38 +16,8 @@ export const WestpacUIKitBasePlugin = plugin(
     addBase({
       html: { color: theme('colors.text.DEFAULT') },
     });
-    const fontComponents = Object.entries(FONT_SIZES).reduce((acc, [size, value]) => {
-      return {
-        ...acc,
-        [`.typography-body-${size}`]: {
-          fontSize: theme(`fontSize.body-${size}`),
-          lineHeight: theme(`lineHeight.${value.lineHeight}`),
-          fontFamily: theme(`fontFamily.sans`),
-        },
-        [`.typography-brand-${size}`]: {
-          fontSize: theme(`fontSize.brand-${size}`),
-          lineHeight: theme(`lineHeight.${value.lineHeight}`),
-          fontFamily: theme(`fontFamily.brand`),
-        },
-      };
-    }, {} as Record<string, any>);
-    addComponents(fontComponents);
-
-    const iconSizes: Record<string, string> = theme('iconSizes');
-    const defaultIconSize = {
-      '.icon': {
-        [`@apply ${iconSizes.medium}`]: {},
-      },
-    };
-    const iconComponents = Object.entries(iconSizes).reduce((acc, [size, value]) => {
-      return {
-        ...acc,
-        [`.icon-size-${size}`]: {
-          [`@apply ${value}`]: {},
-        },
-      };
-    }, defaultIconSize);
-    addComponents(iconComponents);
+    addComponents(generateFontComponents(theme('typographySizes'), theme));
+    addComponents(generateIconComponents(theme('iconSizes')));
   },
   {
     theme: {
@@ -81,6 +51,48 @@ export const WestpacUIKitBasePlugin = plugin(
         medium: 'w-4 h-4',
         large: 'w-6 h-6',
         xlarge: 'w-8 h-8',
+      },
+      typographySizes: {
+        1: {
+          fontSize: '3.75rem',
+          lineHeight: 'tight',
+        },
+        2: {
+          fontSize: '3.375rem',
+          lineHeight: 'tight',
+        },
+        3: {
+          fontSize: '3rem',
+          lineHeight: 'tight',
+        },
+        4: {
+          fontSize: '2.625rem',
+          lineHeight: 'tight',
+        },
+        5: {
+          fontSize: '2.25rem',
+          lineHeight: 'tight',
+        },
+        6: {
+          fontSize: '1.875rem',
+          lineHeight: 'tight',
+        },
+        7: {
+          fontSize: '1.5rem',
+          lineHeight: 'tight',
+        },
+        8: {
+          fontSize: '1.125rem',
+          lineHeight: 'normal',
+        },
+        9: {
+          fontSize: '1rem',
+          lineHeight: 'normal',
+        },
+        10: {
+          fontSize: '0.875rem',
+          lineHeight: 'normal',
+        },
       },
     },
   },
