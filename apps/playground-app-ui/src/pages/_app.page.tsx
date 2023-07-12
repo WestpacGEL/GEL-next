@@ -7,6 +7,9 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 
 App.getInitialProps = async (appContext: AppContext) => {
-  const appProps = await NextApp.getInitialProps(appContext);
-  return { ...appProps, brand: 'rams' };
+  const ctx = await NextApp.getInitialProps(appContext);
+  const brandParam = appContext.ctx.query?.brand || '';
+  const brandsList = ['bom', 'bsa', 'stg', 'wbc', 'wbg', 'rams'];
+  const brand = brandsList.find(b => b.toLowerCase() === brandParam) || 'wbc';
+  return { ...ctx, brand };
 };

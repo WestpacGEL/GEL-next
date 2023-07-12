@@ -1,1 +1,1 @@
-# @westpac-x/ui
+# @westpac/ui

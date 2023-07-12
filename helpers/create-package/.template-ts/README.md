@@ -15,17 +15,17 @@ This project is a simple demo project to show how a `package` can consume other 
 
 > This project is simulating an internal project on this monorepo, exactly as it is.
 
-Observe that this project uses the following pachages:
+Observe that this project uses the following packages:
 
-- @westpac-x/eslint-config
-- @westpac-x/ts-config
+- @westpac/eslint-config
+- @westpac/ts-config
 
 All of them have their versions handled by the `"workspace:~` protocol in the`package.json` file.
 
 Example:
 
 ```
-"@westpac-x/eslint-config": "workspace:~"
+"@westpac/eslint-config": "workspace:~"
 ```
 
 pnpm can replace that protocol by the expected version. For more, please see [publishing workspace packages](https://pnpm.io/workspaces#publishing-workspace-packages)

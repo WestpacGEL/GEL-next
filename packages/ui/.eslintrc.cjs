@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['@westpac-x/eslint-config'],
+  extends: ['@westpac/eslint-config'],
   overrides: [
     {
       files: ['**/*.stories.tsx', '**/*.stories.ts'],

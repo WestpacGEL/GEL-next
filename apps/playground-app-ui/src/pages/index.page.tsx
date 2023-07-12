@@ -1,4 +1,6 @@
 import { Button } from '@westpac/ui';
+import { useRouter } from 'next/router';
+import { ChangeEvent, useCallback, useMemo } from 'react';
 
 const COLORS = {
   background: [
@@ -237,9 +239,24 @@ const COLORS = {
   ],
 };
 const SHADES = ['DEFAULT', 50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+const BRANDS = ['bom', 'bsa', 'stg', 'wbc', 'wbg', 'rams'];
+
 const HomePage = () => {
+  const router = useRouter();
+  const selectedBrand = useMemo(() => router.query.brand ?? 'wbc', [router.query]);
+  const handleChange = useCallback((ev: ChangeEvent<HTMLSelectElement>) => {
+    router.push({ pathname: '/', query: { brand: ev.target.value } });
+  }, []);
+
   return (
-    <div className="mx-auto flex max-w-screen-xl flex-col items-center p-4">
+    <div className="mx-auto flex max-w-screen-xl flex-col items-center p-4" data-theme={selectedBrand}>
+      <select value={selectedBrand} onChange={handleChange} className="border border-border p-2 pr-4">
+        {BRANDS.map(brand => (
+          <option key={brand} value={brand}>
+            {brand}
+          </option>
+        ))}
+      </select>
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">
           <div className="w-22" />
@@ -255,16 +272,21 @@ const HomePage = () => {
               <h3 className="text-right">{color}:</h3>
             </div>
             {shades.map(shade => {
-              return <div key={shade} className={`${shade} flex h-7 w-12 items-center justify-center rounded`} />;
+              return (
+                <div
+                  key={shade}
+                  className={`${shade} flex h-7 w-12 items-center justify-center rounded transition-colors`}
+                />
+              );
             })}
           </div>
         ))}
       </div>
-      <p className="typography-body-1 text-primary">Typography body 1</p>
-      <p className="typography-brand-1 font-normal text-primary">Typography brand 1: Normal</p>
-      <p className="typography-brand-1 font-semibold text-primary">Typography brand 1: Semi-Bold</p>
-      <p className="typography-brand-1 font-bold text-primary">Typography brand: Bold</p>
-      <p className="typography-brand-9 text-primary">Brand</p>
+      <p className="typography-body-1 text-primary transition-colors">Typography body 1</p>
+      <p className="typography-brand-1 font-normal text-primary transition-colors">Typography brand 1: Normal</p>
+      <p className="typography-brand-1 font-semibold text-primary transition-colors">Typography brand 1: Semi-Bold</p>
+      <p className="typography-brand-1 font-bold text-primary transition-colors">Typography brand: Bold</p>
+      <p className="typography-brand-9 text-primary transition-colors">Brand</p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias dolorum dolor excepturi ab magnam sint soluta
         aliquam, recusandae assumenda blanditiis dolorem ratione cupiditate eligendi mollitia provident officia deleniti
@@ -274,5 +296,4 @@ const HomePage = () => {
     </div>
   );
 };
-
 export default HomePage;

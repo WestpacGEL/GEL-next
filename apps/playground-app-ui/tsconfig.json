@@ -1,5 +1,5 @@
 {
-  "extends": "@westpac-x/ts-config/nextjs.json",
+  "extends": "@westpac/ts-config/nextjs.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js", "postcss.config.js"],
   "exclude": ["node_modules"],
   "compilerOptions": {
