@@ -33,7 +33,7 @@
     "build:css": "shx mkdir -p dist/css && NPM_ENV=development postcss src/css/global.css  > dist/css/westpac-ui.css",
     "build:css:all": "pnpm build:css && pnpm build:css:min",
     "build:types": "tsc --project tsconfig.build.json",
-    "build:esm": "swc ./src -d dist --no-swcrc --config-file .build.swcrc",
+    "build:esm": "swc ./src -d dist --no-swcrc --config-file .swcrc",
     "build:watch": "pnpm clean && pnpm build:types && pnpm build:css:all && pnpm build:esm -w",
     "build": "pnpm clean && pnpm build:types && pnpm build:esm && pnpm build:css:all",
     "check-types": "tsc --noemit --emitDeclarationOnly false",

@@ -2,7 +2,7 @@
 	"jsc": {
 		"parser": {
 			"syntax": "typescript"
-		},
+		}, 
 		"target": "es2018",
 		"loose": false,
 		"minify": {
@@ -11,5 +11,6 @@
 		}
 	},
 	"minify": false,
-	"isModule": true
+	"isModule": true,
+	"exclude": [".*\\.spec|test\\.(j|t)s$"]
 }

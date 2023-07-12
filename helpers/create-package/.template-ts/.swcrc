@@ -4,7 +4,7 @@
       "syntax": "typescript",
       "tsx": true
     },
-    "target": "es2017",
+    "target": "es2018",
     "loose": false,
     "minify": {
       "compress": false,
@@ -12,5 +12,6 @@
     }
   },
   "minify": false,
-  "isModule": true
+  "isModule": true,
+  "exclude": [".*\\.spec|test\\.(j|t)s$"]
 }
