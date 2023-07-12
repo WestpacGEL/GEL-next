@@ -1,4 +1,4 @@
-import { Button } from '@westpac/ui';
+import { AccessibilityIcon, Button } from '@westpac/ui';
 import { useRouter } from 'next/router';
 import { ChangeEvent, useCallback, useMemo } from 'react';
 
@@ -250,6 +250,8 @@ const HomePage = () => {
 
   return (
     <div className="mx-auto flex max-w-screen-xl flex-col items-center p-4" data-theme={selectedBrand}>
+      <AccessibilityIcon className="icon-size-xsmall text-primary md:icon-size-medium" />
+      <AccessibilityIcon className="icon-size-xlarge text-success" />
       <select value={selectedBrand} onChange={handleChange} className="border border-border p-2 pr-4">
         {BRANDS.map(brand => (
           <option key={brand} value={brand}>

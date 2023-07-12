@@ -32,6 +32,22 @@ export const WestpacUIKitBasePlugin = plugin(
       };
     }, {} as Record<string, any>);
     addComponents(fontComponents);
+
+    const iconSizes: Record<string, string> = theme('iconSizes');
+    const defaultIconSize = {
+      '.icon': {
+        [`@apply ${iconSizes.medium}`]: {},
+      },
+    };
+    const iconComponents = Object.entries(iconSizes).reduce((acc, [size, value]) => {
+      return {
+        ...acc,
+        [`.icon-size-${size}`]: {
+          [`@apply ${value}`]: {},
+        },
+      };
+    }, defaultIconSize);
+    addComponents(iconComponents);
   },
   {
     theme: {
@@ -58,6 +74,13 @@ export const WestpacUIKitBasePlugin = plugin(
         animation: {
           fadeIn: 'fadeIn 0.2s ease',
         },
+      },
+      iconSizes: {
+        xsmall: 'w-2 h-2',
+        small: 'w-3 h-3',
+        medium: 'w-4 h-4',
+        large: 'w-6 h-6',
+        xlarge: 'w-8 h-8',
       },
     },
   },
