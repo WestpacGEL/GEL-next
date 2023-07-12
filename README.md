@@ -1,4 +1,4 @@
-# Core Library Web repository
+# GEL Next repository
 
 This repository provides tools (packages) to help developers build web apps.
 
@@ -31,12 +31,8 @@ This turborepo has some additional tools already setup for you:
 
 ### Packages
 
-- [eslint-config-westpac-x-lint](packages/eslint-config-westpac-x-lint/README.md): Westpac `eslint` configuration.
-- [test-config](packages/test-config/README.md): default configs for `jest` and `vitest` (testing libraries).
-- [ts-config](packages/ts-config/README.md): default `TypeScript` configuration files.
-- [fetcher](packages/fetcher/README.md): http wrapper for `Fetch API`
-- [app-dynamics](packages/app-dynamics/README.md): wrapper for `App Dynamics`
-- [analytics](packages/analytics/README.md): wrapper for `Adobe Analytics`
+- [themes](packages/theme/README.md): Tailwind plugin to apply multiple brand theming
+- [ui](packages/ui/README.md): UI components build on top of the themes and Tailwind
 
 ### Git Hooks
 

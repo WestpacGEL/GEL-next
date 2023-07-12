@@ -6,8 +6,9 @@ type ColorConfig = BrandConfig['colors'];
 export const generateColorShades = (color: Record<string, string>): ColorConfig => {
   return Object.entries(color).reduce((acc, [colorKey, colorValue]) => {
     const colorShades = new Values(colorValue)
-      .all(20)
-      .slice(0, -1)
+      .all(16.6666)
+      .slice(0, -2)
+      .slice(1)
       .reduce(
         (acc2, shade, index) => {
           const shadeKey = index === 0 ? 50 : index * 100;

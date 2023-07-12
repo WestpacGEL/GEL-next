@@ -14,11 +14,7 @@ const preview: Preview = {
   },
   decorators: [
     story => {
-      return (
-        <div className="theme-wbc">
-          {story()}
-        </div>
-      );
+      return <div className="theme-wbc">{story()}</div>;
     },
   ],
 };

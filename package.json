@@ -1,5 +1,5 @@
 {
-  "name": "GEL-next",
+  "name": "gel-next",
   "version": "0.0.1",
   "private": true,
   "workspaces": [
@@ -26,8 +26,8 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.25.2",
-    "@westpac-x/eslint-config": "~0.1.0",
-    "@westpac-x/ts-config": "^0.0.1",
+    "@westpac/eslint-config": "workspace:~",
+    "@westpac/ts-config": "workspace:~",
     "husky": "^8.0.3",
     "prettier": "^2.8.4",
     "shx": "^0.3.4",

@@ -1,5 +1,5 @@
 {
-  "extends": "@westpac-x/ts-config/base.json",
+  "extends": "@westpac/ts-config/base.json",
   "compilerOptions": {
     "module": "NodeNext",
     "moduleResolution": "NodeNext",

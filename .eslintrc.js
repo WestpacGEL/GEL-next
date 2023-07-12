@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ['@westpac-x/eslint-config'],
+  extends: ['@westpac/eslint-config'],
 };

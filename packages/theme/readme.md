@@ -9,6 +9,7 @@ Refer to the [TailwindCSS](https://tailwindcss.com/) website for full documentat
 Following example is to use the `wbc` theme.
 
 1. Import the Plugins in the `tailwind.config.ts`
+
 ```tsx
 // tailwind.config.ts
 import { WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin } from '@westpac/theme';
@@ -32,7 +33,8 @@ export default config;
 
 /* WBC fonts */
 @font-face {
-  src: url('/path-to-the-font/Westpac-Bold-v2.007.woff2') format('woff2'), url('/path-to-the-font/Westpac-Bold-v2.007.woff') format('woff');
+  src: url('/path-to-the-font/Westpac-Bold-v2.007.woff2') format('woff2'), url('/path-to-the-font/Westpac-Bold-v2.007.woff')
+      format('woff');
   font-family: 'Westpac';
   font-weight: 400;
   font-style: normal;
