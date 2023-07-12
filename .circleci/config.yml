@@ -28,6 +28,9 @@ jobs:
           paths:
             - node_modules
       - run:
+          name: Run build
+          command: pnpm build
+      - run:
           name: Run tests
           command: pnpm ci:test
 
