@@ -26,7 +26,7 @@
     "dev": "pnpm build:watch",
     "clean": "shx rm -rf dist",
     "build:types": "tsc --project tsconfig.build.json",
-    "build:esm": "swc ./src -d dist --no-swcrc --config-file .build.swcrc",
+    "build:esm": "swc ./src -d dist --no-swcrc --config-file .swcrc",
     "build:watch": "pnpm clean && pnpm build:types && pnpm build:esm -w",
     "build": "pnpm clean && pnpm build:types && pnpm build:esm",
     "check-types": "tsc --noemit --emitDeclarationOnly false",
