@@ -92,3 +92,41 @@ export const EXPECTED_COLORS = {
     DEFAULT: '#0F0',
   },
 };
+
+export const EXPECTED_ICONS = {
+  '.icon': {
+    '@apply w-4 h-4': {},
+  },
+  '.icon-size-medium': {
+    '@apply w-4 h-4': {},
+  },
+  '.icon-size-small': {
+    '@apply w-3 h-3': {},
+  },
+  '.icon-size-xsmall': {
+    '@apply w-2 h-2': {},
+  },
+};
+
+export const EXPECTED_TYPOGRAPHY = {
+  '.typography-body-1': {
+    fontFamily: 'MOCK',
+    fontSize: 'MOCK',
+    lineHeight: 'MOCK',
+  },
+  '.typography-body-2': {
+    fontFamily: 'MOCK',
+    fontSize: 'MOCK',
+    lineHeight: 'MOCK',
+  },
+  '.typography-brand-1': {
+    fontFamily: 'MOCK',
+    fontSize: 'MOCK',
+    lineHeight: 'MOCK',
+  },
+  '.typography-brand-2': {
+    fontFamily: 'MOCK',
+    fontSize: 'MOCK',
+    lineHeight: 'MOCK',
+  },
+};
