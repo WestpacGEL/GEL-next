@@ -3,7 +3,7 @@ import React from 'react';
 
 import { type IconProps } from './icon.types.js';
 
-export const Icon = ({
+export function Icon({
   copyrightYear = '',
   xmlns = 'http://www.w3.org/2000/svg',
   viewBox = '0 0 24 24',
@@ -12,7 +12,7 @@ export const Icon = ({
   children,
   className,
   ...props
-}: IconProps) => {
+}: IconProps) {
   return (
     <svg
       xmlns={xmlns}
@@ -28,4 +28,4 @@ export const Icon = ({
       {children}
     </svg>
   );
-};
+}
