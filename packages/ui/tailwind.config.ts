@@ -5,6 +5,17 @@ const config: any = {
   relative: true,
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   plugins: [WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin],
+  safelist: [
+    {
+      pattern: /bg-+/, // 👈  This includes bg of all colors and shades
+    },
+    {
+      pattern: /text-+/,
+    },
+    {
+      pattern: /icon-+/,
+    },
+  ],
 };
 
 export default config;
