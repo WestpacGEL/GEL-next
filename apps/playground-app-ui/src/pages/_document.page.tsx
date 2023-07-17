@@ -1,4 +1,4 @@
-import { type BrandKey } from '@westpac/theme';
+import { type BrandKey } from '@westpac/ui/plugins';
 import { DocumentProps, Head, Html, Main, NextScript } from 'next/document';
 
 const WOFF2_TYPE = 'font/woff2';

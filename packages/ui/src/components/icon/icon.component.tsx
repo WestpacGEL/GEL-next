@@ -1,6 +1,6 @@
-import { clsx } from 'clsx';
 import React from 'react';
 
+import { styles } from './icon.styles.js';
 import { type IconProps } from './icon.types.js';
 
 export function Icon({
@@ -11,6 +11,8 @@ export function Icon({
   focusable = 'false',
   children,
   className,
+  size = 'medium',
+  color,
   ...props
 }: IconProps) {
   return (
@@ -19,7 +21,7 @@ export function Icon({
       viewBox={viewBox}
       role={role}
       focusable={focusable}
-      className={clsx(className, 'icon')}
+      className={styles({ size, color, className })}
       {...props}
     >
       {copyrightYear && (

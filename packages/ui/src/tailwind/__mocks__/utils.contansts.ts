@@ -97,13 +97,13 @@ export const EXPECTED_ICONS = {
   '.icon': {
     '@apply w-4 h-4': {},
   },
-  '.icon-size-medium': {
+  '.icon-medium': {
     '@apply w-4 h-4': {},
   },
-  '.icon-size-small': {
+  '.icon-small': {
     '@apply w-3 h-3': {},
   },
-  '.icon-size-xsmall': {
+  '.icon-xsmall': {
     '@apply w-2 h-2': {},
   },
 };

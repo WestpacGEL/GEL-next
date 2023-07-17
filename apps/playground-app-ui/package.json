@@ -10,7 +10,6 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "@westpac/theme": "workspace:~",
     "@westpac/ui": "workspace:~",
     "next": "^13.4.8",
     "react": "^18.2.0",
