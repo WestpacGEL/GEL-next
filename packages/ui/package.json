@@ -16,8 +16,12 @@
     ".": {
       "default": "./dist/index.js"
     },
-    "./css": "./dist/css/westpac-ui.min.css",
-    "./plugins": "./dist/tailwind/index.js"
+    "./css": {
+      "default": "./dist/css/westpac-ui.min.css"
+    },
+    "./plugins": {
+      "default": "./dist/sprinkles/index.js"
+    }
   },
   "files": [
     "*",
