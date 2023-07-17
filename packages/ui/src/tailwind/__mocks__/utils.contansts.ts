@@ -93,21 +93,6 @@ export const EXPECTED_COLORS = {
   },
 };
 
-export const EXPECTED_ICONS = {
-  '.icon': {
-    '@apply w-4 h-4': {},
-  },
-  '.icon-medium': {
-    '@apply w-4 h-4': {},
-  },
-  '.icon-small': {
-    '@apply w-3 h-3': {},
-  },
-  '.icon-xsmall': {
-    '@apply w-2 h-2': {},
-  },
-};
-
 export const EXPECTED_TYPOGRAPHY = {
   '.typography-body-1': {
     fontFamily: 'MOCK',
