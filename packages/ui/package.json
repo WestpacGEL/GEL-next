@@ -20,7 +20,7 @@
       "default": "./dist/css/westpac-ui.min.css"
     },
     "./plugins": {
-      "default": "./dist/sprinkles/index.js"
+      "default": "./dist/tailwind/index.js"
     }
   },
   "files": [
