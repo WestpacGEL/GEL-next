@@ -19,7 +19,7 @@
     "./css": {
       "default": "./dist/css/westpac-ui.min.css"
     },
-    "./plugins": {
+    "./tailwind": {
       "default": "./dist/tailwind/index.js"
     }
   },

@@ -1,4 +1,4 @@
-import { WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin } from '@westpac/ui/plugins';
+import { WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin } from '@westpac/ui/tailwind';
 import { type Config } from 'tailwindcss';
 
 const config: Config = {

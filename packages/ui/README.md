@@ -8,7 +8,7 @@ Following example is to use the `wbc` theme.
 
 ```tsx
 // tailwind.config.ts
-import { WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin } from '@westpac/ui/plugins';
+import { WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin } from '@westpac/ui/tailwind';
 
 const config: any = {
   relative: true,
