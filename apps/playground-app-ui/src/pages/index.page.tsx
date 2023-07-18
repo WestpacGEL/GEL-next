@@ -257,6 +257,7 @@ const HomePage = () => {
           </Button>
         ))}
       </div>
+      <Button color={{ initial: 'hero', lg: 'primary' }}>Responsive</Button>
       <Well className="my-2 block w-full">
         <h3>Well</h3>
       </Well>
@@ -304,7 +305,6 @@ const HomePage = () => {
         aliquam, recusandae assumenda blanditiis dolorem ratione cupiditate eligendi mollitia provident officia deleniti
         at nam.
       </p>
-      {/* <Button size="medium">Test</Button> */}
     </div>
   );
 };
