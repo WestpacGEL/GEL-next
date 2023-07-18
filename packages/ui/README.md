@@ -4,14 +4,14 @@
 
 Following example is to use the `wbc` theme.
 
-1. Use `withWT` with your config in the `tailwind.config.ts`
+1. Use `withGEL` with your config in the `tailwind.config.ts`
 
 ```tsx
 // tailwind.config.ts
-import { withWT } from '@westpac/ui/tailwind';
+import { withGEL } from '@westpac/ui/tailwind';
 import { type Config } from 'tailwindcss';
 
-const config: Config = withWT({
+const config: Config = withGEL({
   relative: true,
   mode: 'jit',
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],

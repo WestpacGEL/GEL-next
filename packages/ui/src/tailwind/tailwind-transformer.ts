@@ -3,7 +3,7 @@ import { type Config } from 'tailwindcss';
 
 import { WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin } from '@westpac/ui/tailwind';
 
-export const withWT = (config: Config) =>
+export const withGEL = (config: Config) =>
   withTV({
     ...config,
     plugins: [
