@@ -9,4 +9,4 @@ export type ButtonProps = {
    */
   tag?: keyof Pick<JSX.IntrinsicElements, 'a' | 'span' | 'button' | 'div'>;
 } & VariantProps<typeof styles> &
-  HTMLAttributes<Element>;
+  Omit<HTMLAttributes<Element>, 'color'>;

@@ -250,8 +250,13 @@ const HomePage = () => {
 
   return (
     <div className="mx-auto flex max-w-screen-xl flex-col items-center p-4" data-theme={selectedBrand}>
-      <Button size={{ initial: 'medium', md: 'small', lg: 'xlarge' }}>Test button</Button>
-      <Button size="xlarge">Test button</Button>
+      <div className="flex flex-wrap gap-2">
+        {['hero', 'primary', 'faint', 'link', null, 'hero-soft', 'primary-soft', 'faint-soft'].map(color => (
+          <Button key={color} color={color}>
+            Test button
+          </Button>
+        ))}
+      </div>
       <Well className="my-2 block w-full">
         <h3>Well</h3>
       </Well>

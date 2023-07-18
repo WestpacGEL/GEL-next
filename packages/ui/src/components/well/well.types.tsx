@@ -1,5 +1,5 @@
-import { type VariantProps } from 'class-variance-authority';
 import { HTMLAttributes, ReactNode } from 'react';
+import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './well.styles.js';
 

@@ -91,7 +91,6 @@
     "@westpac/eslint-config": "workspace:~",
     "@westpac/test-config": "workspace:~",
     "@westpac/ts-config": "workspace:~",
-    "class-variance-authority": "~0.6.1",
     "clsx": "^1.2.1",
     "framer-motion": "~10.12.16",
     "react-aria": "~3.25.0",

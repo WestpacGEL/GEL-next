@@ -1,5 +1,5 @@
-import { type VariantProps } from 'class-variance-authority';
 import { type ReactNode, type SVGAttributes } from 'react';
+import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './icon.styles.js';
 

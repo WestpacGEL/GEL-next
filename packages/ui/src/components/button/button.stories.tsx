@@ -29,3 +29,17 @@ export const DefaultStory: Story = {
     children: 'Button text',
   },
 };
+
+/**
+ * > Responsive size
+ */
+export const ResponsiveSizeStory: Story = {
+  args: {
+    children: 'Button text',
+    size: {
+      initial: 'small',
+      md: 'large',
+      lg: 'xlarge',
+    },
+  },
+};
