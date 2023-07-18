@@ -1,8 +1,8 @@
-import { cva } from 'class-variance-authority';
+import { tv } from 'tailwind-variants';
 
-export const styles = cva(
-  'inline-flex items-center gap-2 rounded transition-colors disabled:pointer-events-none disabled:opacity-50',
+export const styles = tv(
   {
+    base: 'inline-flex items-center gap-2 rounded transition-colors disabled:pointer-events-none disabled:opacity-50',
     variants: {
       size: {
         small: 'typography-body-10 px-1',
@@ -116,4 +116,5 @@ export const styles = cva(
       },
     ],
   },
+  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
 );

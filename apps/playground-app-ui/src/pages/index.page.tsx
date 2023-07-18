@@ -250,7 +250,8 @@ const HomePage = () => {
 
   return (
     <div className="mx-auto flex max-w-screen-xl flex-col items-center p-4" data-theme={selectedBrand}>
-      <Button>Test button</Button>
+      <Button size={{ initial: 'medium', md: 'small', lg: 'xlarge' }}>Test button</Button>
+      <Button size="xlarge">Test button</Button>
       <Well className="my-2 block w-full">
         <h3>Well</h3>
       </Well>
@@ -298,12 +299,7 @@ const HomePage = () => {
         aliquam, recusandae assumenda blanditiis dolorem ratione cupiditate eligendi mollitia provident officia deleniti
         at nam.
       </p>
-      <div className="hidden md:block">
-        <Button size="medium">Test</Button>
-      </div>
-      <div className="block md:hidden">
-        <Button size="xlarge">Test</Button>
-      </div>
+      {/* <Button size="medium">Test</Button> */}
     </div>
   );
 };

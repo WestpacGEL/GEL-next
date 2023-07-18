@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .xsl,
+  .sm,
+  .md,
+  .lg,
+  .xl {
+  }
+}
 /* e.g: How to setup a font for a Brand, in this case for RAMS brand */
 
 /* BOM fonts */
@@ -15,7 +23,7 @@
 @font-face {
   src: url('/fonts/lineto-brown-pro-regular.woff2') format('woff2'),
     url('/fonts/lineto-brown-pro-regular.woff') format('woff');
-  font-family: 'Brown Pro'; 
+  font-family: 'Brown Pro';
   font-weight: 400;
   font-style: normal;
 }

@@ -81,6 +81,9 @@ importers:
       postcss:
         specifier: ~8.4.24
         version: 8.4.24
+      tailwind-variants:
+        specifier: ~0.1.13
+        version: 0.1.13(tailwindcss@3.3.2)
       tailwindcss:
         specifier: ~3.3.2
         version: 3.3.2
@@ -264,6 +267,9 @@ importers:
       storybook:
         specifier: ^7.0.21
         version: 7.0.21
+      tailwind-variants:
+        specifier: ~0.1.13
+        version: 0.1.13(tailwindcss@3.3.2)
       tailwindcss:
         specifier: ~3.3.2
         version: 3.3.2
@@ -13363,6 +13369,20 @@ packages:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+    dev: true
+
+  /tailwind-merge@1.14.0:
+    resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
+    dev: true
+
+  /tailwind-variants@0.1.13(tailwindcss@3.3.2):
+    resolution: {integrity: sha512-G2M7M74hjq0nAo6QdEfUJgF+0t9DecFUw91GC1P9YTnwMcfB3uChT5U5e2DuNU42xoOz15lzo7r0mPdMzZkylg==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
+    peerDependencies:
+      tailwindcss: '*'
+    dependencies:
+      tailwind-merge: 1.14.0
+      tailwindcss: 3.3.2
     dev: true
 
   /tailwindcss-themer@3.1.0(tailwindcss@3.3.2):
