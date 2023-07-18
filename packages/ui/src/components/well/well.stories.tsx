@@ -38,7 +38,7 @@ export const NestedUsage: Story = {
     children: (
       <>
         I am outside
-        <Well bgClass="bg-white">I am inside</Well>
+        <Well color="white">I am inside</Well>
       </>
     ),
   },
@@ -63,7 +63,7 @@ export const CustomTagNestedUsage: Story = {
     children: (
       <>
         I am outside
-        <Well bgClass="bg-white">I am inside</Well>
+        <Well color="white">I am inside</Well>
       </>
     ),
   },

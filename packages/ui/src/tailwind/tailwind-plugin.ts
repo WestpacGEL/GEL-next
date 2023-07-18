@@ -5,7 +5,7 @@ import { BREAKPOINTS } from './constants/breakpoints.js';
 import { COLORS, DEFAULT_BODY_TYPOGRAPHY, FONT_TYPES, SPACING } from './constants/index.js';
 import { THEMES } from './themes/index.js';
 import { theme as WBCTheme } from './themes/wbc.js';
-import { createFontSizes, generateFontComponents, generateIconComponents } from './utils/index.js';
+import { createFontSizes, generateFontComponents } from './utils/index.js';
 
 /**
  * Base Plugin responsible for default theming and adding the typography components
@@ -17,7 +17,6 @@ export const WestpacUIKitBasePlugin = plugin(
       html: { color: theme('colors.text.DEFAULT') },
     });
     addComponents(generateFontComponents(theme('typographySizes'), theme));
-    addComponents(generateIconComponents(theme('iconSizes')));
   },
   {
     theme: {
@@ -44,13 +43,6 @@ export const WestpacUIKitBasePlugin = plugin(
         animation: {
           fadeIn: 'fadeIn 0.2s ease',
         },
-      },
-      iconSizes: {
-        xsmall: 'w-2 h-2',
-        small: 'w-3 h-3',
-        medium: 'w-4 h-4',
-        large: 'w-6 h-6',
-        xlarge: 'w-8 h-8',
       },
       typographySizes: {
         1: {

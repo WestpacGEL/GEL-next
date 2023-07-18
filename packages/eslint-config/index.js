@@ -44,6 +44,12 @@ module.exports = {
         distinctGroup: true,
       },
     ],
+    'tailwindcss/no-custom-classname': [
+      'warn',
+      {
+        ignoredKeys: ['compoundVariants', 'defaultVariants', 'responsiveVariants'],
+      },
+    ],
   },
   settings: {
     'import/parsers': {

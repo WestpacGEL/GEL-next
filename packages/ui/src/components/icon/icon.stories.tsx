@@ -23,7 +23,7 @@ const AllIconsExample = (props: AllIcons.IconProps) => {
   const handleOnClick = useCallback(
     async (key: string) => {
       try {
-        await navigator.clipboard.writeText(`<${key} className="${props.className}" />`);
+        await navigator.clipboard.writeText(`<${key} />`);
         console.log('Content copied to clipboard');
       } catch (err) {
         console.error('Failed to copy: ', err);
@@ -70,10 +70,45 @@ const meta: Meta<typeof Icon> = {
     layout: 'fullscreen',
   },
   argTypes: {
-    className: {
-      description: 'Classname',
+    children: {
+      description: 'Children',
       type: { name: 'string' },
-      defaultValue: 'text-primary icon-size-large',
+    },
+    copyrightYear: {
+      description: 'CopyrightYear',
+      type: { name: 'string' },
+    },
+    size: {
+      description: 'size',
+      type: { name: 'enum', value: ['xsmall', 'small', 'medium', 'large', 'xlarge'] },
+    },
+    color: {
+      description: 'color',
+      type: {
+        name: 'enum',
+        value: [
+          'success',
+          'info',
+          'warning',
+          'danger',
+          'system',
+          'white',
+          'black',
+          'background',
+          'border',
+          'borderDark',
+          'focus',
+          'heading',
+          'hero',
+          'light',
+          'link',
+          'muted',
+          'neutral',
+          'pop',
+          'primary',
+          'text',
+        ],
+      },
     },
   },
 };
@@ -93,7 +128,7 @@ export const DefaultStory: Story = {
  */
 export const WithPrimaryColorStory: Story = {
   args: {
-    className: 'text-primary',
+    color: 'primary',
   },
 };
 
@@ -102,15 +137,6 @@ export const WithPrimaryColorStory: Story = {
  */
 export const WithDifferentSizeStory: Story = {
   args: {
-    className: 'icon-size-large',
-  },
-};
-
-/**
- * > With responsive sizes example
- */
-export const WithResponsiveSizeStory: Story = {
-  args: {
-    className: 'icon-size-small md:icon-size-large',
+    size: 'xlarge',
   },
 };

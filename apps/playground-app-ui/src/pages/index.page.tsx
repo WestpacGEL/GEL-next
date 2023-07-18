@@ -1,4 +1,4 @@
-import { AccessibilityIcon, Button } from '@westpac/ui';
+import { AccessibilityIcon, Button, Well } from '@westpac/ui';
 import { useRouter } from 'next/router';
 import { ChangeEvent, useCallback, useMemo } from 'react';
 
@@ -250,8 +250,19 @@ const HomePage = () => {
 
   return (
     <div className="mx-auto flex max-w-screen-xl flex-col items-center p-4" data-theme={selectedBrand}>
-      <AccessibilityIcon className="icon-size-xsmall text-primary md:icon-size-medium" />
-      <AccessibilityIcon className="icon-size-xlarge text-success" />
+      <div className="flex flex-wrap gap-2">
+        {['hero', 'primary', 'faint', 'link', null, 'hero-soft', 'primary-soft', 'faint-soft'].map(color => (
+          <Button key={color} color={color}>
+            Test button
+          </Button>
+        ))}
+      </div>
+      <Button color={{ initial: 'hero', lg: 'primary' }}>Responsive</Button>
+      <Well className="my-2 block w-full">
+        <h3>Well</h3>
+      </Well>
+      <AccessibilityIcon color="primary" size="medium" />
+      <AccessibilityIcon color="success" size="xlarge" />
       <select value={selectedBrand} onChange={handleChange} className="border border-border p-2 pr-4">
         {BRANDS.map(brand => (
           <option key={brand} value={brand}>
@@ -294,7 +305,6 @@ const HomePage = () => {
         aliquam, recusandae assumenda blanditiis dolorem ratione cupiditate eligendi mollitia provident officia deleniti
         at nam.
       </p>
-      <Button />
     </div>
   );
 };

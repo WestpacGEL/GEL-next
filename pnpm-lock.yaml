@@ -32,9 +32,6 @@ importers:
 
   apps/playground-app-ui:
     dependencies:
-      '@westpac/theme':
-        specifier: workspace:~
-        version: link:../../packages/theme
       '@westpac/ui':
         specifier: workspace:~
         version: link:../../packages/ui
@@ -84,6 +81,9 @@ importers:
       postcss:
         specifier: ~8.4.24
         version: 8.4.24
+      tailwind-variants:
+        specifier: ~0.1.13
+        version: 0.1.13(tailwindcss@3.3.2)
       tailwindcss:
         specifier: ~3.3.2
         version: 3.3.2
@@ -150,94 +150,6 @@ importers:
         version: 5.1.6
 
   packages/test-config: {}
-
-  packages/theme:
-    dependencies:
-      csstype:
-        specifier: ^3.1.2
-        version: 3.1.2
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
-    devDependencies:
-      '@swc/cli':
-        specifier: ^0.1.62
-        version: 0.1.62(@swc/core@1.3.35)(chokidar@3.5.3)
-      '@swc/core':
-        specifier: ^1.3.35
-        version: 1.3.35
-      '@testing-library/jest-dom':
-        specifier: ^5.16.5
-        version: 5.16.5
-      '@testing-library/react':
-        specifier: ^13.4.0
-        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
-      '@types/lodash':
-        specifier: ^4.14.194
-        version: 4.14.194
-      '@types/lodash-es':
-        specifier: ^4.17.7
-        version: 4.17.7
-      '@types/react':
-        specifier: ^18.0.28
-        version: 18.0.28
-      '@types/react-dom':
-        specifier: ^18.2.1
-        version: 18.2.1
-      '@vitejs/plugin-react-swc':
-        specifier: ^3.3.0
-        version: 3.3.0(vite@4.3.4)
-      '@vitest/coverage-c8':
-        specifier: ^0.31.0
-        version: 0.31.0(vitest@0.30.1)
-      '@westpac/eslint-config':
-        specifier: workspace:~
-        version: link:../eslint-config
-      '@westpac/test-config':
-        specifier: workspace:~
-        version: link:../test-config
-      '@westpac/ts-config':
-        specifier: workspace:~
-        version: link:../ts-config
-      '@westpac/wbc':
-        specifier: ~3.3.0
-        version: 3.3.0
-      chokidar:
-        specifier: ^3.5.3
-        version: 3.5.3
-      eslint:
-        specifier: ^7.32.0
-        version: 7.32.0
-      jsdom:
-        specifier: ^22.0.0
-        version: 22.0.0
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      shx:
-        specifier: ^0.3.4
-        version: 0.3.4
-      tailwindcss:
-        specifier: ~3.3.2
-        version: 3.3.2
-      tailwindcss-themer:
-        specifier: ~3.1.0
-        version: 3.1.0(tailwindcss@3.3.2)
-      typescript:
-        specifier: ^5.1.6
-        version: 5.1.6
-      values.js:
-        specifier: ~2.1.1
-        version: 2.1.1
-      vite:
-        specifier: ^4.3.4
-        version: 4.3.4(@types/node@17.0.12)(less@4.1.3)
-      vitest:
-        specifier: ^0.30.1
-        version: 0.30.1(jsdom@22.0.0)(less@4.1.3)
 
   packages/ts-config: {}
 
@@ -319,9 +231,6 @@ importers:
       '@vitest/coverage-c8':
         specifier: ^0.31.0
         version: 0.31.0(vitest@0.30.1)
-      '@westpac/theme':
-        specifier: workspace:~
-        version: link:../theme
       chokidar:
         specifier: ^3.5.3
         version: 3.5.3
@@ -355,12 +264,21 @@ importers:
       storybook:
         specifier: ^7.0.21
         version: 7.0.21
+      tailwind-variants:
+        specifier: ~0.1.13
+        version: 0.1.13(tailwindcss@3.3.2)
       tailwindcss:
         specifier: ~3.3.2
         version: 3.3.2
+      tailwindcss-themer:
+        specifier: ~3.1.0
+        version: 3.1.0(tailwindcss@3.3.2)
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
+      values.js:
+        specifier: ~2.1.1
+        version: 2.1.1
       vite:
         specifier: ^4.3.4
         version: 4.3.4(@types/node@17.0.12)(less@4.1.3)
@@ -6530,12 +6448,6 @@ packages:
       '@types/node': 17.0.12
     dev: true
 
-  /@types/lodash-es@4.17.7:
-    resolution: {integrity: sha512-z0ptr6UI10VlU6l5MYhGwS4mC8DZyYer2mCoyysZtSF7p26zOX8UpbrV0YpNYLGS8K4PUFIyEr62IMFFjveSiQ==}
-    dependencies:
-      '@types/lodash': 4.14.194
-    dev: true
-
   /@types/lodash@4.14.194:
     resolution: {integrity: sha512-r22s9tAS7imvBt2lyHC9B8AGwWnXaYb1tY09oyLkXDs4vArpYJzw09nj8MLx5VfciBPGIb+ZwG0ssYnEPJxn/g==}
     dev: true
@@ -7088,12 +7000,6 @@ packages:
     dependencies:
       '@webassemblyjs/ast': 1.11.6
       '@xtuc/long': 4.2.2
-    dev: true
-
-  /@westpac/wbc@3.3.0:
-    resolution: {integrity: sha512-d+KaQfgb38+69KDZGq+qXx4x5Bk4XU2DWDeAHOH2d2l0BhCjvSvpdRceogOEDAQ/LhQDNDzxA0mZf3FuH+VnWg==}
-    dependencies:
-      '@babel/runtime': 7.22.6
     dev: true
 
   /@xtuc/ieee754@1.2.0:
@@ -8225,6 +8131,7 @@ packages:
 
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
+    dev: true
 
   /csv-generate@3.4.3:
     resolution: {integrity: sha512-w/T+rqR0vwvHqWs/1ZyMDWtHHSJaN06klRqJXBEpDJaM/+dZkso0OKh1VcuuYvK3XM53KysVNq8Ko/epCK8wOw==}
@@ -11087,10 +10994,6 @@ packages:
     dependencies:
       p-locate: 5.0.0
 
-  /lodash-es@4.17.21:
-    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
-    dev: false
-
   /lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
@@ -13457,6 +13360,20 @@ packages:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+    dev: true
+
+  /tailwind-merge@1.14.0:
+    resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
+    dev: true
+
+  /tailwind-variants@0.1.13(tailwindcss@3.3.2):
+    resolution: {integrity: sha512-G2M7M74hjq0nAo6QdEfUJgF+0t9DecFUw91GC1P9YTnwMcfB3uChT5U5e2DuNU42xoOz15lzo7r0mPdMzZkylg==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
+    peerDependencies:
+      tailwindcss: '*'
+    dependencies:
+      tailwind-merge: 1.14.0
+      tailwindcss: 3.3.2
     dev: true
 
   /tailwindcss-themer@3.1.0(tailwindcss@3.3.2):

@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-// TODO: It is just an example
-export function Button({ children }: any) {
-  return <button className="rounded-lg bg-primary p-4">Test</button>;
+import { styles } from './button.styles.js';
+import { type ButtonProps } from './button.types.js';
+
+function BaseButton(
+  { size = 'medium', color = 'hero', className, tag: Tag = 'button', children, ...props }: ButtonProps,
+  ref: any,
+) {
+  return (
+    <Tag ref={ref} className={styles({ size, color, className })} {...props}>
+      {children}
+    </Tag>
+  );
 }
+
+export const Button = forwardRef(BaseButton);

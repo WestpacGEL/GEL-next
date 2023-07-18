@@ -1,10 +1,9 @@
 import { HTMLAttributes, ReactNode } from 'react';
+import { type VariantProps } from 'tailwind-variants';
+
+import { styles } from './well.styles.js';
 
 export type WellProps = {
-  /**
-   * background color class
-   */
-  bgClass?: string;
   /**
    * Well's content
    */
@@ -13,4 +12,5 @@ export type WellProps = {
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & HTMLAttributes<Element>;
+} & HTMLAttributes<Element> &
+  VariantProps<typeof styles>;
