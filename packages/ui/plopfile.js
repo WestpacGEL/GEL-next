@@ -35,12 +35,12 @@ export default function (
       },
       {
         type: 'add',
-        path: './src/components/{{kebabCase name}}/{{kebabCase name}}.styles.tsx',
+        path: './src/components/{{kebabCase name}}/{{kebabCase name}}.styles.ts',
         templateFile: './scaffold/component/scaffold.styles.hbs',
       },
       {
         type: 'add',
-        path: './src/components/{{kebabCase name}}/{{kebabCase name}}.types.tsx',
+        path: './src/components/{{kebabCase name}}/{{kebabCase name}}.types.ts',
         templateFile: './scaffold/component/scaffold.types.hbs',
       },
     ],
