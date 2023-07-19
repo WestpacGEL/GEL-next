@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './skip-link.styles.js';
