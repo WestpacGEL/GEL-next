@@ -1,4 +1,5 @@
-import { AccessibilityIcon, Button, Well } from '@westpac/ui';
+import { AccessibilityIcon, Button, SkipLink, VisuallyHidden, Well } from '@westpac/ui';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChangeEvent, useCallback, useMemo } from 'react';
 
@@ -257,7 +258,15 @@ const HomePage = () => {
           </Button>
         ))}
       </div>
-      <Button color={{ initial: 'hero', lg: 'primary' }}>Responsive</Button>
+      <Link href="#link" passHref legacyBehavior>
+        <Button tag="a" color={{ initial: 'hero', lg: 'primary' }}>
+          Responsive
+        </Button>
+      </Link>
+      <Link href="#link" passHref legacyBehavior>
+        <SkipLink>Only for screen reader until tabbed</SkipLink>
+      </Link>
+      <VisuallyHidden>Just screen reader can see it</VisuallyHidden>
       <Well className="my-2 block w-full">
         <h3>Well</h3>
       </Well>

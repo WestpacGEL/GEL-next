@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { Icon } from './icon.component.js';
+import { styles } from './icon.styles.js';
 
 describe('Icon', () => {
   it('renders the component', () => {
@@ -14,5 +15,9 @@ describe('Icon', () => {
       </Icon>,
     );
     expect(container).toBeInTheDocument();
+  });
+  it('renders the style correctly', () => {
+    const style = styles({ color: 'primary' });
+    expect(style).toBe('rounded transition-colors disabled:pointer-events-none disabled:opacity-50 text-primary');
   });
 });
