@@ -1,10 +1,18 @@
 import { render } from '@testing-library/react';
 
 import { {{name}} } from './{{kebabCase name}}.component.js';
+import { styles } from './{{kebabCase name}}.styles.js';
 
 describe('{{name}}', () => {
   it('renders the component', () => {
     const { container } = render(<{{name}} />);
     expect(container).toBeInTheDocument();
+  });
+  it('renders the style correctly', () => {
+    const style = styles();
+    // TODO: use some variants for test
+    expect(style).toBe(
+      '',
+    );
   });
 });
