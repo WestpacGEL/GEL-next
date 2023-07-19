@@ -1,0 +1,10 @@
+import { render } from '@testing-library/react';
+
+import { {{name}} } from './{{kebabCase name}}.component.js';
+
+describe('{{name}}', () => {
+  it('renders the component', () => {
+    const { container } = render(<{{name}} />);
+    expect(container).toBeInTheDocument();
+  });
+});

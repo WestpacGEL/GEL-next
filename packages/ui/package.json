@@ -47,7 +47,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "generate:component": "plop"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.21",
@@ -72,6 +73,7 @@
     "eslint": "^7.32.0",
     "eslint-plugin-storybook": "~0.6.12",
     "jsdom": "^22.0.0",
+    "plop": "~3.1.2",
     "postcss": "~8.4.24",
     "postcss-cli": "~10.1.0",
     "prop-types": "^15.8.1",

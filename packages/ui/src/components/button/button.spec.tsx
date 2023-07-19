@@ -4,7 +4,7 @@ import { Button } from './button.component.js';
 
 describe('Button', () => {
   it('renders the component', () => {
-    const { container } = render(<Button />);
+    const { container } = render(<Button tag="a" href="link" color="primary" />);
     expect(container).toBeInTheDocument();
   });
 });
