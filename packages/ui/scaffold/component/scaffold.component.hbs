@@ -1,0 +1,12 @@
+import React from 'react';
+
+import { styles } from './{{kebabCase name}}.styles.js';
+import { type {{name}}Props } from './{{kebabCase name}}.types.js';
+
+export function {{name}}({ className, tag: Tag = 'div', children, ...props }: {{name}}Props) {
+  return (
+    <Tag className={styles({ className })} {...props}>
+      {children}
+    </Tag>
+  );
+}

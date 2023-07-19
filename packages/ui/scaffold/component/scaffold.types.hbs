@@ -1,0 +1,12 @@
+import { HTMLAttributes } from 'react';
+import { type VariantProps } from 'tailwind-variants';
+
+import { styles } from './{{kebabCase name}}.styles.js';
+
+export type {{name}}Props = {
+  /**
+   * Tag to render
+   */
+  tag?: keyof JSX.IntrinsicElements;
+} & VariantProps<typeof styles> &
+  HTMLAttributes<Element>;
