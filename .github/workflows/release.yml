@@ -28,7 +28,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Create Release Pull Request or Publish to npm
-        uses: changeset/action@v1
+        uses: changesets/action@v1
         with:
           publish: pnpm ci:publish
         env:
