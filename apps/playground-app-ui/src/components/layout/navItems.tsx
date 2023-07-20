@@ -1,16 +1,11 @@
 import { NavItem } from './sidebar';
 
-export const defaultNavItems: NavItem[] = [
-  {
-    label: 'Button',
-    href: '/button',
-  },
-  {
-    label: 'Typography',
-    href: '/typography',
-  },
-  {
-    label: 'Colors',
-    href: '/colors',
-  },
+export const DEFAULT_NAV_ITEMS: NavItem[] = [
+  { href: '/', label: 'Home' },
+  { href: '/button', label: 'Button' },
+  { href: '/typography', label: 'Typography' },
+  { href: '/colors', label: 'Colors' },
+  { href: '/input', label: 'Input' },
+  { href: '/select', label: 'Select' },
+  { href: '/textarea', label: 'Textarea' },
 ];
