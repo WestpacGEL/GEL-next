@@ -9,8 +9,10 @@ describe('Select', () => {
     expect(container).toBeInTheDocument();
   });
   it('renders the style correctly', () => {
-    const style = styles();
+    const style = styles({ size: 'medium' });
     // TODO: use some variants for test
-    expect(style).toBe('');
+    expect(style).toBe(
+      'form-control bg-no-repeat select-caret disabled:form-control-disabled focus:focus-outline form-control-medium bg-[right_0.75rem_center] pr-[calc(0.5rem+14px+0.75rem)]',
+    );
   });
 });
