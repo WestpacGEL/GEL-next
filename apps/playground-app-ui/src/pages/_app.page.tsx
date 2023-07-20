@@ -1,15 +1,23 @@
 import '../styles/globals.css';
-
 import NextApp, { AppContext, type AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+import { Layout } from '../components/layout/layout';
+
+const brandsList = ['bom', 'bsa', 'stg', 'wbc', 'wbg', 'rams'] as const;
+
+type PlaygroundAppProps = AppProps & { brand: (typeof brandsList)[number] };
+
+export default function PlaygroundApp({ Component, pageProps, brand }: PlaygroundAppProps) {
+  return (
+    <Layout brand={brand}>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
-App.getInitialProps = async (appContext: AppContext) => {
+PlaygroundApp.getInitialProps = async (appContext: AppContext) => {
   const ctx = await NextApp.getInitialProps(appContext);
   const brandParam = appContext.ctx.query?.brand || '';
-  const brandsList = ['bom', 'bsa', 'stg', 'wbc', 'wbg', 'rams'];
   const brand = brandsList.find(b => b.toLowerCase() === brandParam) || 'wbc';
   return { ...ctx, brand };
 };

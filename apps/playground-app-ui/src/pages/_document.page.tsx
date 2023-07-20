@@ -47,6 +47,7 @@ const getFontFilesPerBrand = (brandKey: BrandKey) => {
 };
 export default function Document({ __NEXT_DATA__ }: DocumentProps) {
   const brand = __NEXT_DATA__?.props?.brand ?? 'wbc';
+  console.log('brand', brand);
   const fontsToPreload = getFontFilesPerBrand(brand);
   return (
     <Html lang="en" data-theme={brand}>
