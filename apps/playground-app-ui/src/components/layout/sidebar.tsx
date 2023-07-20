@@ -23,7 +23,7 @@ type SidebarProps = {
 };
 export function Sidebar({ open, navItems = defaultNavItems, setOpen, brand }: SidebarProps) {
   const ref = useRef<HTMLDivElement>(null);
-  useOnClickOutside(ref, e => {
+  useOnClickOutside(ref, () => {
     setOpen(false);
   });
 
