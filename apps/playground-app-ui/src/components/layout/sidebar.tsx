@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React, { ChangeEvent, useCallback, useRef } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
-import { defaultNavItems } from './navItems';
+import { DEFAULT_NAV_ITEMS } from './navItems';
 
 // Credits: https://github.com/jmarioste/next-responsive-sidebar-tailwind
 
@@ -21,7 +21,7 @@ type SidebarProps = {
   open: boolean;
   setOpen(open: boolean): void;
 };
-export function Sidebar({ open, navItems = defaultNavItems, setOpen, brand }: SidebarProps) {
+export function Sidebar({ open, navItems = DEFAULT_NAV_ITEMS, setOpen, brand }: SidebarProps) {
   const ref = useRef<HTMLDivElement>(null);
   useOnClickOutside(ref, () => {
     setOpen(false);
