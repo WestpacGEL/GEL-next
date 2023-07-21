@@ -11,7 +11,7 @@ function BreadcrumbPage() {
       </Head>
       <div>
         <section className="border-b-2 border-b-background p-2">
-          <h2 className="typography-body-6 pb-2">Breadcrumb sizes</h2>
+          <h2 className="typography-body-6 pb-2">Breadcrumb</h2>
           <Breadcrumb>
             <Link href="#test" passHref legacyBehavior>
               <Breadcrumb.Item tag="a">Anchor item</Breadcrumb.Item>
