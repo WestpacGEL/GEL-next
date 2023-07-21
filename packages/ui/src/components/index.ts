@@ -6,3 +6,4 @@ export * from './icon/index.js';
 export * from './textarea/index.js';
 export * from './input/index.js';
 export * from './select/index.js';
+export * from './breadcrumb/index.js';
