@@ -33,7 +33,7 @@ export function BaseBreadcrumbItem(
   return (
     <li className="inline-flex items-center">
       <FinalTag
-        {...({ ...itemProps, ref: propRef, href: FinalTag === 'a' && href } as any)}
+        {...({ ...itemProps, ref: propRef, href: FinalTag === 'a' ? href : undefined } as any)}
         className={styles({ className, isDisabled, isCurrent })}
       >
         {children}
