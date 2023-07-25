@@ -15,6 +15,9 @@ function Home() {
       <li>
         <Link href="/colors">Colors</Link>
       </li>
+      <li>
+        <Link href="/alerts">Alert</Link>
+      </li>
     </ul>
   );
 }

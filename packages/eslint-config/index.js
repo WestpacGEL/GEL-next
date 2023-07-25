@@ -47,7 +47,7 @@ module.exports = {
     'tailwindcss/no-custom-classname': [
       'warn',
       {
-        ignoredKeys: ['compoundVariants', 'defaultVariants', 'responsiveVariants'],
+        ignoredKeys: ['compoundVariants', 'defaultVariants', 'responsiveVariants', 'compoundSlots'],
       },
     ],
   },

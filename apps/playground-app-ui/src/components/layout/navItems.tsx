@@ -13,4 +13,8 @@ export const defaultNavItems: NavItem[] = [
     label: 'Colors',
     href: '/colors',
   },
+  {
+    label: 'Alert',
+    href: '/alert',
+  },
 ];
