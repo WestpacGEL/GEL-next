@@ -14,13 +14,13 @@ export const styles = tv(
         xlarge: 'typography-body-8 px-3 pb-[0.625rem] pt-[0.5625rem]',
       },
       color: {
-        hero: 'border border-hero bg-hero text-white hover:bg-hero-300 active:bg-hero-200',
-        primary: 'border border-primary bg-primary text-white hover:bg-primary-300 active:bg-primary-200',
-        link: 'text-link underline',
+        primary: 'border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50',
+        hero: 'border border-hero bg-hero text-white hover:bg-hero-70 active:bg-hero-50',
         faint: 'border border-border bg-light text-text hover:bg-white active:bg-white',
-        'hero-soft': 'border border-hero bg-white text-text hover:bg-hero-300 hover:text-white active:bg-hero-200',
+        link: 'text-link underline',
         'primary-soft':
-          'border border-primary bg-white text-text hover:bg-primary-300 hover:text-white active:bg-primary-200',
+          'border border-primary bg-white text-text hover:bg-primary-70 hover:text-white active:bg-primary-50',
+        'hero-soft': 'border border-hero bg-white text-text hover:bg-hero-70 hover:text-white active:bg-hero-50',
         'faint-soft': 'border border-border bg-white text-text hover:bg-light active:bg-light',
       },
     },
