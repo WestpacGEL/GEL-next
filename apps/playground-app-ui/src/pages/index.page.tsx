@@ -1,23 +1,15 @@
 import Link from 'next/link';
 
+import { DEFAULT_NAV_ITEMS } from '../components/layout/navItems';
+
 function Home() {
   return (
     <ul>
-      <li>
-        <Link href="/">Home</Link>
-      </li>
-      <li>
-        <Link href="/button">Button</Link>
-      </li>
-      <li>
-        <Link href="/typography">Typography</Link>
-      </li>
-      <li>
-        <Link href="/colors">Colors</Link>
-      </li>
-      <li>
-        <Link href="/alerts">Alert</Link>
-      </li>
+      {DEFAULT_NAV_ITEMS.map(({ href, label }) => (
+        <li key={href}>
+          <Link href={href}>{label}</Link>
+        </li>
+      ))}
     </ul>
   );
 }
