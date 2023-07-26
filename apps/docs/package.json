@@ -1,5 +1,5 @@
 {
-  "name": "playground-app-ui",
+  "name": "docs",
   "version": "0.1.13",
   "private": true,
   "scripts": {
@@ -10,11 +10,17 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@keystatic/core": "~0.0.112",
+    "@keystatic/next": "~0.0.11",
     "@westpac/ui": "workspace:~",
+    "clipboard-copy": "~4.0.1",
     "clsx": "^1.2.1",
     "next": "^13.4.8",
+    "prism-react-renderer": "~2.0.6",
+    "prismjs": "~1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-live": "~4.1.3",
     "react-stately": "~3.23.0",
     "usehooks-ts": "~2.9.1"
   },
