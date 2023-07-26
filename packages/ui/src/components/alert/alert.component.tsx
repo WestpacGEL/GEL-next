@@ -1,10 +1,12 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import { AlertIcon, CloseIcon, InfoIcon, LimitIcon, SuccessIcon, WarningIcon } from '../index.js';
 
 import { styles as alertStyles } from './alert.styles.js';
-import { type AlertProps, Look } from './alert.types.js';
+import { type AlertProps, type Look } from './alert.types.js';
+
+const loadAnimations = () => import('./alert.utils.js').then(res => res.default);
 
 export function Alert({
   look = 'info',
@@ -45,31 +47,33 @@ export function Alert({
   }, [onClose]);
 
   return (
-    <AnimatePresence initial={false}>
-      {open && (
-        <motion.div
-          key="alert"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <Tag className={styles.base({ className })} {...props}>
-            <span className={styles.icon()}>
-              <Icon size={{ initial: 'small', xsl: 'medium' }} />
-            </span>
-            <div className={styles.body()}>
-              {!!heading && <HeadingTag className={styles.heading()}>{heading}</HeadingTag>}
-              {children}
-            </div>
-            {dismissible && mode !== 'text' && (
-              <button className={styles.close()} onClick={handleClose} aria-label="Close alert">
-                <CloseIcon size="small" />
-              </button>
-            )}
-          </Tag>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <LazyMotion features={loadAnimations}>
+      <AnimatePresence initial={false}>
+        {open && (
+          <m.div
+            key="alert"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <Tag className={styles.base({ className })} {...props}>
+              <span className={styles.icon()}>
+                <Icon size={{ initial: 'small', xsl: 'medium' }} />
+              </span>
+              <div className={styles.body()}>
+                {!!heading && <HeadingTag className={styles.heading()}>{heading}</HeadingTag>}
+                {children}
+              </div>
+              {dismissible && mode !== 'text' && (
+                <button className={styles.close()} onClick={handleClose} aria-label="Close alert">
+                  <CloseIcon size="small" />
+                </button>
+              )}
+            </Tag>
+          </m.div>
+        )}
+      </AnimatePresence>
+    </LazyMotion>
   );
 }
