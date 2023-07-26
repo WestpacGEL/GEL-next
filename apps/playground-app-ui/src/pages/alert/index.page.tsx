@@ -2,7 +2,7 @@ import { Alert, Button, TelephoneIcon } from '@westpac/ui';
 import Head from 'next/head';
 import React, { useState } from 'react';
 
-function ButtonPage() {
+function AlertPage() {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -88,4 +88,4 @@ function ButtonPage() {
   );
 }
 
-export default ButtonPage;
+export default AlertPage;
