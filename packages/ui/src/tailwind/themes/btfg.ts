@@ -1,9 +1,9 @@
 import { type BrandConfig } from '../index.js';
-import { generateColorShades } from '../utils/generate-color-shades.js';
+import { generateColorTints } from '../utils/generate-color-tints.js';
 
 export const theme: BrandConfig = {
   code: 'BTFG',
-  colors: generateColorShades({
+  colors: generateColorTints({
     background: '#F9F9F9',
     border: '#E0E0E0',
     borderDark: '#949494',
