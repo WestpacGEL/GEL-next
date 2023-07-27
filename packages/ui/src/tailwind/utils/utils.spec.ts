@@ -6,12 +6,12 @@ import {
   EXPECTED_SPACING,
   EXPECTED_TYPOGRAPHY,
   TEST_COLORS,
-} from '../__mocks__/utils.contansts.js';
+} from '../__mocks__/utils.constants.js';
 
 import {
   createFontSizes,
   createSpacing,
-  generateColorShades,
+  generateColorTints,
   generateFontComponents,
   generateFormControlComponents,
 } from './index.js';
@@ -28,15 +28,15 @@ describe('Utils testing', () => {
 
   describe('Create font sizes', () => {
     it(SHOULD_RETURNED, () => {
-      const spacingValues = createFontSizes(['body', 'brand']);
-      expect(spacingValues).toEqual(EXPECTED_FONT_SIZES_VARS);
+      const fontValues = createFontSizes(['body', 'brand']);
+      expect(fontValues).toEqual(EXPECTED_FONT_SIZES_VARS);
     });
   });
 
   describe('Create color shades', () => {
     it(SHOULD_RETURNED, () => {
-      const spacingValues = generateColorShades(TEST_COLORS);
-      expect(spacingValues).toEqual(EXPECTED_COLORS);
+      const colorValues = generateColorTints(TEST_COLORS);
+      expect(colorValues).toEqual(EXPECTED_COLORS);
     });
   });
 

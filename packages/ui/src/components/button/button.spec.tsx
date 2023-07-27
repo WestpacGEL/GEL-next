@@ -11,7 +11,7 @@ describe('Button', () => {
   it('renders the style correctly', () => {
     const style = styles({ color: 'primary' });
     expect(style).toBe(
-      'inline-flex items-center gap-2 rounded leading-[1.5] transition-colors disabled:pointer-events-none disabled:opacity-50 border border-primary bg-primary text-white hover:bg-primary-300 active:bg-primary-200',
+      'inline-flex items-center gap-2 rounded leading-[1.5] transition-colors disabled:pointer-events-none disabled:opacity-50 border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50',
     );
   });
 });

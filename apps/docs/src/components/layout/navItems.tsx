@@ -8,4 +8,6 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
   { href: '/input', label: 'Input' },
   { href: '/select', label: 'Select' },
   { href: '/textarea', label: 'Textarea' },
+  { href: '/breadcrumb', label: 'Breadcrumb' },
+  { href: '/alert', label: 'Alert' },
 ];

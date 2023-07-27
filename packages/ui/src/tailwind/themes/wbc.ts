@@ -1,9 +1,9 @@
 import { type BrandConfig } from '../index.js';
-import { generateColorShades } from '../utils/generate-color-shades.js';
+import { generateColorTints } from '../utils/generate-color-tints.js';
 
 export const theme: BrandConfig = {
   code: 'WBC',
-  colors: generateColorShades({
+  colors: generateColorTints({
     background: '#F3F4F6',
     border: '#DEDEE1',
     borderDark: '#9390A2',
