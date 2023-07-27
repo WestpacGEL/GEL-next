@@ -60,11 +60,25 @@ export default config({
             },
           },
         }),
-        content: fields.document({
+        design: fields.document({
           formatting: true,
           dividers: true,
           links: true,
-          label: 'Content',
+          label: 'Design',
+          componentBlocks: ComponentBlocks,
+        }),
+        accessibility: fields.document({
+          formatting: true,
+          dividers: true,
+          links: true,
+          label: 'Accessibility',
+          componentBlocks: ComponentBlocks,
+        }),
+        code: fields.document({
+          formatting: true,
+          dividers: true,
+          links: true,
+          label: 'Code',
           componentBlocks: ComponentBlocks,
         }),
       },

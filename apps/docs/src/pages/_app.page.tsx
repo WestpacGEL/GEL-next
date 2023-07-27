@@ -22,9 +22,21 @@ export default function PlaygroundApp({ Component, pageProps, brand }: AppPropsW
   return getLayout(<Component {...pageProps} />, brand);
 }
 
+const getGetParameters = (url: string): Record<string, string> => {
+  const searchParams = url.replace(/.+\?/gi, '');
+  return searchParams.split('&').reduce((acc, current) => {
+    const [key, value] = current.split('=');
+    return {
+      ...acc,
+      [key]: value,
+    };
+  }, {});
+};
+
 PlaygroundApp.getInitialProps = async (appContext: AppContext) => {
   const ctx = await NextApp.getInitialProps(appContext);
-  const brandParam = appContext.ctx.query?.brand || '';
+  const getParameters = getGetParameters(appContext.ctx.asPath || '');
+  const brandParam = getParameters.brand || appContext.ctx.query?.brand || '';
   const brand = brandsList.find(b => b.toLowerCase() === brandParam) || 'wbc';
   return { ...ctx, brand };
 };

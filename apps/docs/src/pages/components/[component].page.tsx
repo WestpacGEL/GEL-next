@@ -44,7 +44,21 @@ type ComponentDetailPageProps = {
 export default function ComponentDetailPage({ component }: ComponentDetailPageProps) {
   return (
     <div>
-      <DocumentRenderer document={component.content} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
+      <DocumentRenderer document={component.code} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
+      {/* TODO: Replace with Tabs afterwards */}
+      {/* 
+        <Tabs>
+          <TabPane key="design">
+            <DocumentRenderer document={component.design} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
+          </TabPane>
+          <TabPane key="accessibility">
+            <DocumentRenderer document={component.accessibility} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
+          </TabPane>
+          <TabPane key="code">
+            <DocumentRenderer document={component.code} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
+          </TabPane>
+        </Tabs> 
+      */}
     </div>
   );
 }

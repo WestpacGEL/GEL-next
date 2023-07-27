@@ -1,0 +1,23 @@
+## Breadcrumb
+
+```jsx
+// Using the Link component from 'next/link'
+<Breadcrumb>
+  <Link href="#test" passHref legacyBehavior>
+    <Breadcrumb.Item tag="a">Anchor item</Breadcrumb.Item>
+  </Link>
+  <Link href="#another" passHref legacyBehavior>
+    <Breadcrumb.Item tag="a">Another anchor item</Breadcrumb.Item>
+  </Link>
+  <Link href="#another" passHref legacyBehavior>
+    <Breadcrumb.Item isDisabled tag="a">
+      Disabled item
+    </Breadcrumb.Item>
+  </Link>
+  <Link href="#another" passHref legacyBehavior>
+    <Breadcrumb.Item isCurrent tag="a">
+      Last item
+    </Breadcrumb.Item>
+  </Link>
+</Breadcrumb>
+```

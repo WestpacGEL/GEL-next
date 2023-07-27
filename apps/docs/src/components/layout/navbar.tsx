@@ -11,7 +11,7 @@ export function Navbar(props: NavbarProps) {
   return (
     <nav
       className={clsx({
-        'bg-primary': true, // colors
+        'bg-primary transition-colors': true, // colors
         'flex items-center': true, // layout
         'w-full fixed z-10 px-4 shadow-sm h-16': true, //positioning & styling
       })}

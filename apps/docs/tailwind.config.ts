@@ -15,6 +15,23 @@ const config: Config = withGEL({
       },
     },
   },
+  safelist: [
+    // This needed to be included because of the examples
+    {
+      pattern: /bg-+/, // 👈  This includes bg of all colors and shades
+    },
+    {
+      pattern: /typography-+/,
+    },
+    'flex',
+    'h-7',
+    'w-12',
+    'w-22',
+    'items-center',
+    'justify-center',
+    'rounded',
+    'transition-colors',
+  ],
 });
 
 export default config;

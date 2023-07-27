@@ -31,8 +31,13 @@ export function Sidebar({ open, navItems = DEFAULT_NAV_ITEMS, setOpen, brand }: 
   const router = useRouter();
   const handleChange = useCallback(
     async (ev: ChangeEvent<HTMLSelectElement>) => {
-      await router.push({ query: { brand: ev.target.value } });
-      router.reload();
+      router.push({
+        pathname: router.pathname,
+        query: {
+          ...router.query,
+          brand: ev.target.value,
+        },
+      });
     },
     [router],
   );
@@ -42,7 +47,7 @@ export function Sidebar({ open, navItems = DEFAULT_NAV_ITEMS, setOpen, brand }: 
       className={clsx({
         'flex flex-col justify-between': true, // layout
         'bg-white text-text border-r-none md:border-r md:border-r-border': true, // colors
-        'md:top-16 md:bottom-0 md:z-0 top-0 z-20 fixed': true, // positioning
+        'md:top-16 md:bottom-0 top-0 z-20 fixed': true, // positioning
         'w-[250px] grow-0 h-full md:h-auto': true, // for height and width
         'transition-transform .3s ease-in-out md:-translate-x-0': true, //animations
         '-translate-x-full': !open, //hide sidebar to the left when closed
@@ -57,7 +62,7 @@ export function Sidebar({ open, navItems = DEFAULT_NAV_ITEMS, setOpen, brand }: 
             return (
               <li key={index}>
                 <Link
-                  href={item.href}
+                  href={brand ? `${item.href}?brand=${brand}` : item.href}
                   className={clsx({
                     'text-link focus:outline-focus': true, //colors
                     'flex gap-4 items-center ': true, //layout
@@ -75,7 +80,7 @@ export function Sidebar({ open, navItems = DEFAULT_NAV_ITEMS, setOpen, brand }: 
       <div className="border-t border-t-border p-4">
         <label className="my-0">
           Change brand
-          <Select onChange={handleChange} defaultValue={brand} className="block w-full">
+          <Select onChange={handleChange} value={brand} className="block w-full">
             <option value="wbc">Westpac</option>
             <option value="stg">St. George</option>
             <option value="bom">Bank of Melbourne</option>
