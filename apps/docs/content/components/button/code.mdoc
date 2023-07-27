@@ -1,0 +1,59 @@
+## Button sizes
+
+```jsx
+<div className="flex gap-2">
+  <Button color="primary" size="xlarge">
+    Extra large: 48px
+  </Button>
+  
+  <Button color="primary" size="large">
+    Large: 42px
+  </Button>
+  
+  <Button color="primary" size="medium">
+    Medium: 36px
+  </Button>
+  
+  <Button color="primary" size="small">
+    Small: 30px
+  </Button>
+</div>
+```
+---
+
+## Standard buttons
+
+```jsx
+<div className="flex gap-2">
+  <Button color="primary">Primary standard</Button>
+  <Button color="hero">Hero standard</Button>
+  <Button color="faint">Faint standard</Button>
+  <Button color="link">Link</Button>
+</div>
+```
+---
+
+## Soft buttons
+
+```jsx
+<div className="flex gap-2">
+  <Button color="primary-soft">Primary soft</Button>
+  <Button color="hero-soft">Hero soft</Button>
+  <Button color="faint-soft">Faint soft</Button>
+</div>
+```
+---
+
+## Responsive buttons
+
+Medium size button becomes Extra large from the MD breakpoint
+
+```jsx
+<Button size={{ initial: 'medium', md: 'xlarge' }}>Sample button</Button>
+```
+
+Small size button becomes medium at the SM breakpoint, large at the MD breakpoint and Extra large at the LG breakpoint
+
+```jsx
+<Button size={{ initial: 'small', md: 'large', lg: 'xlarge' }}>Sample button</Button>
+```
