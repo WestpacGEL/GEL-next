@@ -8,8 +8,8 @@ const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
     : {
         kind: 'github',
         repo: {
-          owner: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER!,
-          name: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG!,
+          owner: process.env.NEXT_PUBLIC_GIT_REPO_OWNER!,
+          name: process.env.NEXT_PUBLIC_GIT_REPO_SLUG!,
         },
       };
 
