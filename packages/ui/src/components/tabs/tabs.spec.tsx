@@ -24,6 +24,6 @@ describe('Tabs', () => {
     const { base, tabList } = styles({ look: 'default', orientation: 'horizontal' });
     // TODO: use some variants for test
     expect(base()).toBe('flex flex-col');
-    expect(tabList()).toBe('relative z-10 flex mb-[-1px] flex-row gap-1');
+    expect(tabList()).toBe('relative z-10 flex mb-[-1px] flex-row gap-[2px]');
   });
 });

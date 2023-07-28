@@ -19,8 +19,4 @@ export type TabsProps<T = any> = SpectrumTabsProps<T> &
      * Stretch the tab to fill the whole content
      */
     justify?: boolean;
-    /**
-     * Tag to render
-     */
-    tag?: keyof JSX.IntrinsicElements;
-  } & HTMLAttributes<Element>;
+  } & HTMLAttributes<HTMLDivElement>;

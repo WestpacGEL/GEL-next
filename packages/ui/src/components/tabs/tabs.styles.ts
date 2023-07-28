@@ -19,7 +19,7 @@ export const styles = tv(
       },
       look: {
         default: {
-          tabList: 'gap-1',
+          tabList: 'gap-[2px]',
         },
         material: '',
       },

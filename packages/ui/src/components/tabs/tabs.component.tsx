@@ -10,7 +10,6 @@ export function Tabs({
   className,
   orientation = 'horizontal',
   justify,
-  tag: Tag = 'div',
   children,
   color,
   look = 'default',
