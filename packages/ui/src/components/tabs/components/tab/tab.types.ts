@@ -1,15 +1,26 @@
 import { HTMLAttributes } from 'react';
 import { Orientation } from 'react-aria';
-import { TabListState } from 'react-stately';
+import { Node, TabListState } from 'react-stately';
 import { type VariantProps } from 'tailwind-variants';
-import { T } from 'vitest/dist/types-e3c9754d.js';
 
 import { styles } from './tab.styles.js';
 
-export type TabProps = {
+export type TabProps<T = any> = {
+  /**
+   * isDisabled flag
+   */
   isDisabled?: boolean;
-  item: Node;
+  /**
+   * Item
+   */
+  item: Node<T>;
+  /**
+   * Orientation, vertical or horizontal for tab
+   */
   orientation?: Orientation;
+  /**
+   * TabListState
+   */
   state: TabListState<T>;
   /**
    * Tag to render
