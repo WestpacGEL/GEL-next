@@ -179,6 +179,9 @@ importers:
 
   packages/ui:
     dependencies:
+      '@react-types/tabs':
+        specifier: ~3.3.0
+        version: 3.3.0(react@18.2.0)
       '@westpac/eslint-config':
         specifier: workspace:~
         version: link:../eslint-config
