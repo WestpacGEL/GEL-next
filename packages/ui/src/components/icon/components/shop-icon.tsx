@@ -1,16 +1,37 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Icon } from '../icon.component.js';
 import { type IconProps } from '../icon.types.js';
 
-export function ShopIcon({ 'aria-label': ariaLabel = 'Shop', copyrightYear = '2020', ...props }: IconProps) {
+export function ShopIcon({
+  look = 'filled',
+  'aria-label': ariaLabel = 'Shop',
+  copyrightYear = '2020',
+  ...props
+}: IconProps) {
   return (
     <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
-      <path
-        fill="currentColor"
-        fillRule="evenodd"
-        d="M4,2 L20,2 L20,0 L4,0 L4,2 Z M4,4 L0,11.00075 L0,14.00075 L2,14.00075 L2,24 L14,24 L14,14.00075 L20,14.00075 L20,24 L22,24 L22,14.00075 L24,14.00075 L24,11.00075 L20,4 L4,4 Z M4,20 L12,20 L12,14 L4,14 L4,20 Z"
-      />
+      {look === 'filled' ? (
+        <Fragment>
+          <path d="M4 0H20V2H4V0Z" fill="currentColor" />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M4 4L0 11.0007V14H2V24H22V14H24V11.0007L20 4H4ZM20 22V14H16V22H20ZM14 22V14H4V22H14Z"
+            fill="currentColor"
+          />
+        </Fragment>
+      ) : (
+        <Fragment>
+          <path d="M4 0H20V2H4V0Z" fill="currentColor" />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M4 4L0 11.0007V14H2V24H22V14H24V11.0007L20 4H4ZM2 11.5318V12H22V11.5318L18.8393 6H5.16071L2 11.5318ZM20 22V14H16V22H20ZM14 22V14H4V22H14Z"
+            fill="currentColor"
+          />
+        </Fragment>
+      )}
     </Icon>
   );
 }

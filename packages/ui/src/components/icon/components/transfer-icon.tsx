@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Icon } from '../icon.component.js';
 import { type IconProps } from '../icon.types.js';
 
-export function TransferIcon({ 'aria-label': ariaLabel = 'Transfer', copyrightYear = '2020', ...props }: IconProps) {
+export function TransferIcon({
+  look = 'filled',
+  'aria-label': ariaLabel = 'Transfer',
+  copyrightYear = '2020',
+  ...props
+}: IconProps) {
   return (
     <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
-      <path
-        fill="currentColor"
-        fillRule="evenodd"
-        d="M12,12 L16,12 L16,8 L24,16 L16,24 L16,20 L12,20 L12,12 Z M0,8 L8,0 L8,4 L12,4 L12,12 L8,12 L8,16 L0,8 Z"
-      />
+      {look === 'filled' ? (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M8 16L0 8L8 0V4H12V12H8V16ZM12 12V20H16V24L24 16L16 8V12H12Z"
+          fill="currentColor"
+        />
+      ) : (
+        <Fragment>
+          <path d="M8 0L0 8L8 16V13.1719L2.82837 8L6 4.82812V6H11V10H13V4H8V0Z" fill="currentColor" />
+          <path d="M16 20V24L24 16L16 8V12H10V20H16Z" fill="currentColor" />
+        </Fragment>
+      )}
     </Icon>
   );
 }

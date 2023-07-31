@@ -3,14 +3,29 @@ import React from 'react';
 import { Icon } from '../icon.component.js';
 import { type IconProps } from '../icon.types.js';
 
-export function InvestIcon({ 'aria-label': ariaLabel = 'Invest', copyrightYear = '2020', ...props }: IconProps) {
+export function InvestIcon({
+  look = 'filled',
+  'aria-label': ariaLabel = 'Invest',
+  copyrightYear = '2020',
+  ...props
+}: IconProps) {
   return (
     <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
-      <path
-        fill="currentColor"
-        fillRule="evenodd"
-        d="M18,24 L22,24 L22,10 L18,10 L18,24 Z M10,24 L14,24 L14,16 L10,16 L10,24 Z M2,24 L6,24 L6,14 L2,14 L2,24 Z M21.7309981,3.73099809 L12.2500311,13.4994066 L5.63133825,6.8807138 L0,12.512052 L8.8817842e-16,9.68362492 L5.63133825,4.05228667 L12.2287557,10.6497041 L20.3166269,2.31662686 L18,3.99680289e-15 L24,0 L24,6 L21.7309981,3.73099809 L21.7309981,3.73099809 Z"
-      />
+      {look === 'filled' ? (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12.25 13.4994L21.731 3.731L24 6V0H18L20.3166 2.31663L12.2288 10.6497L5.63134 4.05229L0 9.68363V12.5121L5.63134 6.88071L12.25 13.4994ZM22 24H18V10H22V24ZM14 24H10V16H14V24ZM2 24H6V14H2V24Z"
+          fill="currentColor"
+        />
+      ) : (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12.25 13.4994L21.731 3.731L24 6V0H18L20.3166 2.31663L12.2288 10.6497L5.63134 4.05229L0 9.68363V12.5121L5.63134 6.88071L12.25 13.4994ZM22 24H20V10H22V24ZM13 24H11V16H13V24ZM2 24H4V14H2V24Z"
+          fill="currentColor"
+        />
+      )}
     </Icon>
   );
 }

@@ -5,6 +5,10 @@ import { styles } from './icon.styles.js';
 
 export type IconProps = SVGAttributes<SVGElement> & {
   /**
+   * Icon look variation. Defaults to filled
+   */
+  look?: 'filled' | 'outlined';
+  /**
    * children prop
    */
   children?: ReactNode;

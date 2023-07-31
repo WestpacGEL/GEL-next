@@ -11,4 +11,5 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
   { href: '/components/breadcrumb', label: 'Breadcrumb' },
   { href: '/components/alert', label: 'Alert' },
   { href: '/components/tabs', label: 'Tabs' },
+  { href: '/components/icons', label: 'Icons' },
 ];

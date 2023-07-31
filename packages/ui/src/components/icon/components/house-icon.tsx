@@ -3,14 +3,29 @@ import React from 'react';
 import { Icon } from '../icon.component.js';
 import { type IconProps } from '../icon.types.js';
 
-export function HouseIcon({ 'aria-label': ariaLabel = 'House', copyrightYear = '2020', ...props }: IconProps) {
+export function HouseIcon({
+  look = 'filled',
+  'aria-label': ariaLabel = 'House',
+  copyrightYear = '2020',
+  ...props
+}: IconProps) {
   return (
     <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
-      <polygon
-        fill="currentColor"
-        fillRule="evenodd"
-        points="12 0 0 12 4 12 4 24 10 24 10 17 14 17 14 24 20 24 20 12 24 12"
-      />
+      {look === 'filled' ? (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M24 12V11.0769L12 0L0 11.0769V12H2V24H22V12H24ZM15 22V15H9V22H15Z"
+          fill="currentColor"
+        />
+      ) : (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M24 12V11.0769L12 0L0 11.0769V12H2V24H22V12H24ZM20 22V10.1064L12 2.72182L4 10.1064V22H8V15H16V22H20ZM14 22V17H10V22H14Z"
+          fill="currentColor"
+        />
+      )}
     </Icon>
   );
 }
