@@ -13,7 +13,7 @@ export function Navbar(props: NavbarProps) {
       className={clsx({
         'bg-primary transition-colors': true, // colors
         'flex items-center': true, // layout
-        'w-full fixed z-10 px-4 shadow-sm h-16': true, //positioning & styling
+        'w-full fixed z-50 px-4 shadow-sm h-16': true, //positioning & styling
       })}
     >
       <div className="text-lg font-bold text-white">GEL Next</div>
