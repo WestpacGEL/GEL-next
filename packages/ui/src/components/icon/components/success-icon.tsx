@@ -13,7 +13,7 @@ export function SuccessIcon({
     <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
       {look === 'filled' ? (
         <Fragment>
-          <g clip-path="url(#clip0_2741_3411)">
+          <g clipPath="url(#clip0_2741_3411)">
             <path
               fillRule="evenodd"
               clipRule="evenodd"
@@ -29,7 +29,7 @@ export function SuccessIcon({
         </Fragment>
       ) : (
         <Fragment>
-          <g clip-path="url(#clip0_2741_3410)">
+          <g clipPath="url(#clip0_2741_3410)">
             <path
               d="M9.99519 14.5891L17.2923 7.29199L18.7023 8.71199L9.99519 17.4191L5.28809 12.712L6.69809 11.302L9.99519 14.5891Z"
               fill="currentColor"
