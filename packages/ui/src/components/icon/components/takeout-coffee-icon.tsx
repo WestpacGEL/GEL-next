@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function TakeoutCoffeeIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Takeout Coffee',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

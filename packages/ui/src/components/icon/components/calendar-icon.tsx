@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function CalendarIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Calendar',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

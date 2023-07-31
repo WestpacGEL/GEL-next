@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function BackspaceIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Backspace',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

@@ -3,7 +3,7 @@ import React from 'react';
 import { Icon } from '../icon.component.js';
 import { type IconProps } from '../icon.types.js';
 
-export function OfficeIcon({ 'aria-label': ariaLabel = 'Office', copyrightYear = '2020', ...props }: IconProps) {
+export function OfficeIcon({ 'aria-label': ariaLabel = 'Office', copyrightYear = '2023', ...props }: IconProps) {
   return (
     <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
       <path d="M20 10H16V12H20V10Z" fill="currentColor" />
