@@ -1,16 +1,34 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Icon } from '../icon.component.js';
 import { type IconProps } from '../icon.types.js';
 
-export function PlayCircleIcon({ 'aria-label': ariaLabel = 'Play', copyrightYear = '2020', ...props }: IconProps) {
+export function PlayCircleIcon({
+  look = 'filled',
+  'aria-label': ariaLabel = 'Play Circle',
+  copyrightYear = '2023',
+  ...props
+}: IconProps) {
   return (
     <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
-      <path
-        fill="currentColor"
-        fillRule="evenodd"
-        d="M24,12 C24,18.627 18.62775,24 12,24 C5.37225,24 0,18.627 0,12 C0,5.373 5.37225,0 12,0 C18.62775,0 24,5.373 24,12 Z M12,2 C6.47714286,2 2,6.47714286 2,12 C2,17.5228571 6.47714286,22 12,22 C17.5228571,22 22,17.5228571 22,12 C22,6.47714286 17.5228571,2 12,2 Z M10,16.5 L10,7.5 L16,12 L10,16.5 Z"
-      />
+      {look === 'filled' ? (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 24C18.6278 24 24 18.627 24 12C24 5.373 18.6278 0 12 0C5.37225 0 0 5.373 0 12C0 18.627 5.37225 24 12 24ZM16 12L10 16.5V7.5L16 12Z"
+          fill="currentColor"
+        />
+      ) : (
+        <Fragment>
+          <path d="M16 12L10 16.5V7.5L16 12Z" fill="currentColor" />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M24 12C24 18.627 18.6278 24 12 24C5.37225 24 0 18.627 0 12C0 5.373 5.37225 0 12 0C18.6278 0 24 5.373 24 12ZM12 2C6.47714 2 2 6.47714 2 12C2 17.5229 6.47714 22 12 22C17.5229 22 22 17.5229 22 12C22 6.47714 17.5229 2 12 2Z"
+            fill="currentColor"
+          />
+        </Fragment>
+      )}
     </Icon>
   );
 }

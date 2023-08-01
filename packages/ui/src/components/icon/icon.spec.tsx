@@ -24,6 +24,11 @@ describe('Icon', () => {
       const { container } = render(<Icon copyrightYear="2023" />);
       expect(container).toBeInTheDocument();
     });
+
+    it(`renders the outlined version of the ${iconName} component`, () => {
+      const { container } = render(<Icon look="outlined" copyrightYear="2023" />);
+      expect(container).toBeInTheDocument();
+    });
   }, []);
 
   it('renders the style correctly', () => {
