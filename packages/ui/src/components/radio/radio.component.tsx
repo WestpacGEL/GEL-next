@@ -10,6 +10,7 @@ import { styles as radioStyles } from './radio.styles.js';
 import { type RadioContextState, type RadioProps } from './radio.types.js';
 
 export const RadioContext = createContext<RadioContextState>({
+  // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
   name: '',
   isDisabled: false,
   isReadOnly: false,
@@ -26,7 +27,6 @@ export const RadioContext = createContext<RadioContextState>({
 export function Radio({
   className,
   children,
-  data,
   label,
   orientation = 'vertical',
   showAmount = 0,
@@ -36,15 +36,9 @@ export function Radio({
   const state = useRadioGroupState({ ...props, label, orientation });
   const { radioGroupProps, labelProps } = useRadioGroup({ ...props, label, orientation }, state);
   const [hiddenOptions, setHiddenOptions] = useState<boolean>(showAmount > 0);
-  const revealAmount = data ? data.length - showAmount : children && children.length - showAmount;
+  const revealAmount = children && children.length - showAmount;
   const styles = radioStyles({ orientation });
-  const childrenToRender = data
-    ? data.map((option, index) => (
-        <Option value={option.value} isDisabled={option.isDisabled} hint={option.hint} key={index}>
-          {option.text}
-        </Option>
-      ))
-    : children?.map((child, index) => <div key={index}>{child}</div>);
+  const childrenToRender = children && children.map((child, index) => <div key={index}>{child}</div>);
 
   return (
     <div className={styles.base({ className })} {...radioGroupProps}>

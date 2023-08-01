@@ -20,20 +20,6 @@ describe('Radio', () => {
     expect(getByText('Option 2')).toBeInTheDocument();
   });
 
-  it('should render Option when passed through data prop', () => {
-    const { getByText } = render(
-      <Radio
-        data={[
-          { value: 'Option 1', text: 'Option 1' },
-          { value: 'Option 2', text: 'Option 2' },
-        ]}
-        label="test"
-      />,
-    );
-    expect(getByText('Option 1')).toBeInTheDocument();
-    expect(getByText('Option 2')).toBeInTheDocument();
-  });
-
   it('should hide Options when showAmount prop is passed', async () => {
     const user = userEvent.setup();
 
@@ -74,14 +60,11 @@ describe('Radio', () => {
         <Radio.Option value="Option 1" data-testid="option1">
           Option 1
         </Radio.Option>
-        <Radio.Option value="Option 2" data-testid="option2">
-          Option 2
-        </Radio.Option>
+        <Radio.Option value="Option 2">Option 2</Radio.Option>
       </Radio>,
     );
     await act(() => user.click(getByTestId('option1')));
     expect(onChange).toBeCalled();
-    await act(() => user.click(getByTestId('option2')));
   });
 
   it('should have Options be bigger when size large is passed', () => {

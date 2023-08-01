@@ -34,10 +34,6 @@ export type RadioProps = {
    */
   className?: string;
   /**
-   * Array of data to generate options
-   */
-  data?: OptionData[];
-  /**
    * Amount of Options to display, remainder will be hidden behind reveal button
    */
   showAmount?: number;

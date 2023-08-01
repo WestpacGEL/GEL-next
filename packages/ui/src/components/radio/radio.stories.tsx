@@ -2,23 +2,6 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
 import { Radio } from './radio.component.js';
 
-const dataDrivenOptions = [
-  {
-    value: 'Option 1',
-    text: 'Option 1',
-  },
-  {
-    value: 'Option 2',
-    text: 'Option 2',
-    isDisabled: true,
-  },
-  {
-    value: 'Option 3',
-    text: 'Option 3',
-    hint: 'this is a test hint',
-  },
-];
-
 const meta: Meta<typeof Radio> = {
   title: 'Example/Radio',
   component: Radio,
@@ -136,14 +119,5 @@ export const RadioWithHiddenOptions: Story = {
       <Radio.Option value="Option 3">Option 3</Radio.Option>,
     ],
     showAmount: 1,
-  },
-};
-
-/**
- * > Radio that gets it's option values from data
- */
-export const RadioDataDriven: Story = {
-  args: {
-    data: dataDrivenOptions,
   },
 };
