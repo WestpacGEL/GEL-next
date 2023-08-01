@@ -218,14 +218,14 @@
       <div className="flex gap-2">
         <label className="flex flex-col">
           <span>Colors:</span>
-          <Select onChange={({ target: { value }}) => setColor(value)}>
-            {COLORS.map((itemColor) => <option selected={itemColor === color} value={itemColor}>{itemColor ? itemColor: 'None'}</option>)}
+          <Select value={color} onChange={({ target: { value }}) => setColor(value)}>
+            {COLORS.map((itemColor) => <option key={itemColor || ''} value={itemColor}>{itemColor ? itemColor: 'None'}</option>)}
           </Select>
         </label>
         <label className="flex flex-col">
           <span>Looks:</span>
-          <Select onChange={({ target: { value }}) => setLook(value)}>
-            {LOOKS.map((itemLook) => <option selected={itemLook === look} value={itemLook}>{itemLook}</option>)}
+          <Select value={look} onChange={({ target: { value }}) => setLook(value)}>
+            {LOOKS.map((itemLook) => <option key={itemLook} value={itemLook}>{itemLook}</option>)}
           </Select>
         </label>
         <label className="">
