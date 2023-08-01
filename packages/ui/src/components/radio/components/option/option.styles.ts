@@ -6,17 +6,17 @@ export const styles = tv(
       base: 'flex',
       hiddenInput: '',
       svg: 'overflow-visible',
-      outerCircle: 'stroke-hero fill-none',
+      outerCircle: 'fill-none stroke-hero',
       innerCircle: 'fill-hero',
-      focusRing: 'stroke-focus fill-none stroke-2',
-      textWrapper: 'flex justify-center flex-col',
+      focusRing: 'fill-none stroke-focus stroke-2',
+      textWrapper: 'flex flex-col justify-center',
       labelText: 'typography-body-10 py-[2px] pl-1',
-      hintText: 'typography-body-10 text-muted pl-1',
+      hintText: 'typography-body-10 pl-1 text-muted',
     },
     variants: {
       isDisabled: {
         true: {
-          outerCircle: 'stroke-border fill-border-20',
+          outerCircle: 'fill-border-20 stroke-border',
           innerCircle: 'fill-border',
           labelText: 'text-muted',
         },

@@ -11,3 +11,4 @@ export * from './breadcrumb/index.js';
 export * from './badge/index.js';
 export * from './radio/index.js';
 export * from './tabs/index.js';
+export * from './accordion/index.js';

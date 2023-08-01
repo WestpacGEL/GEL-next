@@ -179,6 +179,15 @@ importers:
 
   packages/ui:
     dependencies:
+      '@react-aria/accordion':
+        specifier: 3.0.0-alpha.19
+        version: 3.0.0-alpha.19(react@18.2.0)
+      '@react-aria/utils':
+        specifier: ~3.18.0
+        version: 3.18.0(react@18.2.0)
+      '@react-spectrum/utils':
+        specifier: ~3.10.0
+        version: 3.10.0(react@18.2.0)
       '@react-types/tabs':
         specifier: ~3.3.0
         version: 3.3.0(react@18.2.0)
@@ -204,6 +213,9 @@ importers:
         specifier: ~3.23.0
         version: 3.23.0(react@18.2.0)
     devDependencies:
+      '@react-types/accordion':
+        specifier: 3.0.0-alpha.14
+        version: 3.0.0-alpha.14(react@18.2.0)
       '@storybook/addon-essentials':
         specifier: ^7.0.21
         version: 7.0.21(react-dom@18.2.0)(react@18.2.0)
@@ -4013,6 +4025,23 @@ packages:
       picocolors: 1.0.0
       tslib: 2.6.0
 
+  /@react-aria/accordion@3.0.0-alpha.19(react@18.2.0):
+    resolution: {integrity: sha512-eQqqfv/+4iCx5krxU85SSadq1l5SMDjEf33+6ccpqX7okFI79cKfrK9aD4ilN7OIO8dn+BmuNZEg51OgUBVPFg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/button': 3.8.0(react@18.2.0)
+      '@react-aria/interactions': 3.16.0(react@18.2.0)
+      '@react-aria/selection': 3.16.0(react@18.2.0)
+      '@react-aria/utils': 3.18.0(react@18.2.0)
+      '@react-stately/tree': 3.7.0(react@18.2.0)
+      '@react-types/accordion': 3.0.0-alpha.14(react@18.2.0)
+      '@react-types/button': 3.7.3(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
+      '@swc/helpers': 0.5.1
+      react: 18.2.0
+    dev: false
+
   /@react-aria/actiongroup@3.6.0(react@18.2.0):
     resolution: {integrity: sha512-osTXF7UpzL6YfPM4GOpNgjxrT3iWSO53yseDYZXZXDrHof/USNId3TLQEH6Q86FJyH4ghLYkZpzwjXn2KFKhAg==}
     peerDependencies:
@@ -4735,6 +4764,20 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@react-spectrum/utils@3.10.0(react@18.2.0):
+    resolution: {integrity: sha512-YLZH/3o0Oxo4lB3SPv/1mzJdvNg8CeQDqhCOFHXG7+nmdpN5m5urjAb0cTXL2jVtsTsqXAuamOEO/hWEoMerxA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/i18n': 3.8.0(react@18.2.0)
+      '@react-aria/ssr': 3.7.0(react@18.2.0)
+      '@react-aria/utils': 3.18.0(react@18.2.0)
+      '@react-types/shared': 3.18.1(react@18.2.0)
+      '@swc/helpers': 0.5.1
+      clsx: 1.2.1
+      react: 18.2.0
+    dev: false
+
   /@react-stately/calendar@3.3.0(react@18.2.0):
     resolution: {integrity: sha512-fnqdxCTlkikgldEyW8ciPNUWhqaUsQKTx6X6XGob6VCwK59k0LmdlgZX+dXj0q2ezC+w4lnvz8TzpoRQ7GY8lw==}
     peerDependencies:
@@ -5063,6 +5106,14 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@react-types/accordion@3.0.0-alpha.14(react@18.2.0):
+    resolution: {integrity: sha512-GWrhzedjCkZ4Rcp9hcLhdv5oVWN6tI45uwv/IfWUVTrEPzFWpPYUfBReVPlyVWY0aI7ppDDEIeg03wCe6notnA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-types/shared': 3.18.1(react@18.2.0)
+      react: 18.2.0
+
   /@react-types/actiongroup@3.4.2(react@18.2.0):
     resolution: {integrity: sha512-517UQyA9wxXl2JcqiNxnXzo4tl8AT7TzbQW05k0Mb1HZ71sQsz4goT0oBE0TfuB+TDO7I+LsRqMbkTLjlNc+aA==}
     peerDependencies:
@@ -5260,7 +5311,6 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
     dependencies:
       react: 18.2.0
-    dev: false
 
   /@react-types/slider@3.5.1(react@18.2.0):
     resolution: {integrity: sha512-8+AMNexx7q7DqfAtQKC5tgnZdG/tIwG2tcEbFCfAQA09Djrt/xiMNz+mc7SsV1PWoWwVuSDFH9QqKPodOrJHDg==}

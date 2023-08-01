@@ -41,6 +41,9 @@ export const WestpacUIKitBasePlugin = plugin(
           tight: '1.2',
           normal: '1.4',
         },
+        borderWidth: {
+          5: '0.3125rem',
+        },
         fontSize: createFontSizes(FONT_TYPES),
         keyframes: {
           fadeIn: {
