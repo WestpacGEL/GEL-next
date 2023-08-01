@@ -22,6 +22,10 @@ export function AccordionItem<T = any>({ className, tag: Tag = 'div', color, ...
 
   return (
     <Tag className={styles.base()}>
+      {/* 
+        Using h3 tag since the official page is using it, also the react-spectrum
+        https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/ 
+      */}
       <h3>
         <button {...mergeProps(buttonProps, hoverProps)} ref={ref} className={styles.itemHeader()}>
           <span>{item.props.title}</span>
