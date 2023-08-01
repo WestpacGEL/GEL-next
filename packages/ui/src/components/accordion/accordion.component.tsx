@@ -11,7 +11,7 @@ import { AccordionItem } from './components/index.js';
 function Accordion<T extends object>({ className, color, rounded = true, ...props }: AccordionProps<T>, ref: any) {
   // react-aria doesn't allow for now to use component children when there is multiple levels
   // in our case we don't need that functionality and we have to render html tags or components
-  // thereforem as a workaround we are setting hasChildItems false for all of them
+  // therefore as a workaround we are setting hasChildItems false for all of them
   // https://github.com/adobe/react-spectrum/issues/3882
   const finalProps: any = {
     ...props,
