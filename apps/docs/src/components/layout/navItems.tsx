@@ -13,4 +13,5 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
   { href: '/components/radio', label: 'Radio' },
   { href: '/components/tabs', label: 'Tabs' },
   { href: '/components/icons', label: 'Icons' },
+  { href: '/components/checkbox', label: 'Checkbox' },
 ];

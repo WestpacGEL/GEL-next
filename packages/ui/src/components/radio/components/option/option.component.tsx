@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { forwardRef, useContext, useRef } from 'react';
 import { VisuallyHidden, useFocusRing, useRadio } from 'react-aria';
 
 import { RadioContext } from '../../radio.component.js';
@@ -6,19 +6,19 @@ import { RadioContext } from '../../radio.component.js';
 import { styles as optionStyles } from './option.styles.js';
 import { type OptionProps } from './option.types.js';
 
-export function Option({ className, hint, children, value, ...props }: OptionProps) {
+function BaseOption({ className, hint, children, ...props }: OptionProps, ref: any) {
   const state = useContext(RadioContext);
   const { size, orientation } = state;
-  const ref = useRef(null);
-  const { inputProps, isSelected, isDisabled } = useRadio({ ...props, value, children }, state, ref);
+  const localRef = useRef(null);
+  const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children }, state, localRef);
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = optionStyles({ isDisabled, size, orientation });
   const circleSize = size === 'large' ? 15 : 12;
 
   return (
-    <label className={styles.base({ className })}>
+    <label className={styles.base({ className })} ref={ref}>
       <VisuallyHidden>
-        <input className={styles.hiddenInput()} {...inputProps} {...focusProps} ref={ref} />
+        <input className={styles.hiddenInput()} {...inputProps} {...focusProps} ref={localRef} />
       </VisuallyHidden>
       <svg aria-hidden="true" className={styles.svg()}>
         <circle cx={circleSize} cy={circleSize} r={circleSize} className={styles.outerCircle()} />
@@ -40,3 +40,5 @@ export function Option({ className, hint, children, value, ...props }: OptionPro
     </label>
   );
 }
+
+export const Option = forwardRef(BaseOption);

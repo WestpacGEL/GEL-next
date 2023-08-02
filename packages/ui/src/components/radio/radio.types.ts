@@ -5,25 +5,6 @@ import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './radio.styles.js';
 
-export type OptionData = {
-  /**
-   * Option hint
-   */
-  hint?: string;
-  /**
-   * Whether this individual option is disabled
-   */
-  isDisabled?: boolean;
-  /**
-   * Option text
-   */
-  text: string;
-  /**
-   * Option value
-   */
-  value: string;
-};
-
 export type RadioProps = {
   /**
    * The `Option` components to render
@@ -42,7 +23,7 @@ export type RadioProps = {
    */
   size?: 'medium' | 'large';
 } & VariantProps<typeof styles> &
-  Omit<AriaRadioGroupProps, 'errorMessage'>;
+  Omit<AriaRadioGroupProps, 'errorMessage' | 'description'>;
 
 export type RadioContextState = {
   /**
