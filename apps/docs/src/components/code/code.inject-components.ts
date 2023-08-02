@@ -10,10 +10,6 @@ export {
   Select,
   Textarea,
   Tabs,
-  Radio,
-  Checkbox,
-} from '@westpac/ui';
-export {
   AddIcon,
   CalendarIcon,
   DeleteIcon,
@@ -26,5 +22,8 @@ export {
   ProgressIcon,
   StarRateIcon,
   WriteIcon,
+  Accordion,
+  Radio,
+  Checkbox,
 } from '@westpac/ui';
 export { Link };

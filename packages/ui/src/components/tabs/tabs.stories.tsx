@@ -1,6 +1,8 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Key, useState } from 'react';
 
+import { Button } from '../index.js';
+
 import { Tabs } from './tabs.component.js';
 
 const meta: Meta<typeof Tabs> = {
