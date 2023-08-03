@@ -1,9 +1,8 @@
 import React, { forwardRef, useContext, useRef } from 'react';
 import { VisuallyHidden, useCheckboxGroupItem, useFocusRing } from 'react-aria';
 
-import { IconProps } from 'src/index.js';
-
 import { Icon } from '../../../icon/icon.component.js';
+import { IconProps } from '../../../icon/index.js';
 import { CheckboxGroupContext } from '../../checkbox-group.component.js';
 
 import { styles as checkboxItemStyles } from './checkbox.styles.js';
