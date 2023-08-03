@@ -1,10 +1,10 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
-import { Option } from './option.component.js';
+import { Radio } from './radio.component.js';
 
-const meta: Meta<typeof Option> = {
-  title: 'Example/Radio/Option',
-  component: Option,
+const meta: Meta<typeof Radio> = {
+  title: 'Example/RadioGroup/Radio',
+  component: Radio,
   tags: ['autodocs'],
   decorators: [
     (Story: StoryFn) => (
@@ -28,22 +28,22 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * > Base option, unchecked as that is handled by Radio
+ * > Base radio, unchecked as that is handled by RadioGroup
  */
 export const DefaultStory: Story = {
   args: { children: 'Option 1', value: 'Option 1' },
 };
 
 /**
- * > Option with hint example
+ * > Radio with hint example
  */
-export const OptionWithHint: Story = {
+export const RadioWithHint: Story = {
   args: { children: 'Option 1', value: 'Option 1', hint: 'Test hint' },
 };
 
 /**
- * > Disabled Option example
+ * > Disabled Radio example
  */
-export const OptionDisabled: Story = {
+export const RadioDisabled: Story = {
   args: { children: 'Option 1', value: 'Option 1', isDisabled: true },
 };
