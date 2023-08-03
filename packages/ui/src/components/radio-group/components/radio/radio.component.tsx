@@ -17,7 +17,7 @@ function BaseRadio({ className, hint, children, ...props }: RadioProps, ref: any
   return (
     <label className={styles.base({ className })} ref={ref}>
       <VisuallyHidden>
-        <input className={styles.hiddenInput()} {...inputProps} {...focusProps} ref={localRef} />
+        <input {...inputProps} {...focusProps} ref={localRef} />
       </VisuallyHidden>
       <div className={styles.selector()} />
       <div className={styles.textWrapper()}>

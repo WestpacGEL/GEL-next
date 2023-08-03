@@ -92,14 +92,4 @@ describe('CheckboxGroup', () => {
     expect(getByTestId('option1')).toBeChecked();
     expect(getByTestId('option2')).toBeChecked();
   });
-
-  it('should have Options be bigger when size large is passed', () => {
-    const { container } = render(
-      <CheckboxGroup label="test" size="large">
-        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
-        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
-      </CheckboxGroup>,
-    );
-    expect(container.querySelector("[height='29']")).toBeInTheDocument();
-  });
 });

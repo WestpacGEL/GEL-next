@@ -4,7 +4,6 @@ export const styles = tv(
   {
     slots: {
       base: 'flex',
-      hiddenInput: '',
       textWrapper: 'flex flex-col justify-center',
       labelText: 'typography-body-10 py-[2px] pl-1',
       hintText: 'typography-body-10 pl-1 text-muted',
@@ -39,12 +38,10 @@ export const styles = tv(
       size: {
         large: {
           selector: 'h-5 w-5',
-          hiddenInput: 'h-5 w-5',
           base: 'mb-2',
         },
         medium: {
           selector: 'h-4 w-4',
-          hiddenInput: 'h-4 w-4',
           base: 'mb-1',
         },
       },

@@ -1,6 +1,7 @@
-import { act, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { Checkbox } from './checkbox.component.js';
+import { styles } from './checkbox.styles.js';
 import { CheckboxProps } from './checkbox.types.js';
 
 describe('Checkbox', () => {
@@ -29,12 +30,15 @@ describe('Checkbox', () => {
     expect(getByText('test hint')).toBeInTheDocument();
   });
 
+  it('should have Radios be bigger when size is large', () => {
+    const { checkbox } = styles({ size: 'large' });
+
+    expect(checkbox()).toContain('h-5 w-5');
+  });
+
   it('should have correct styling on focus', () => {
-    const { getByTestId, queryByTestId } = render(
-      <Checkbox {...defaultProps} hint="test hint" data-testid="focused-checkbox-item" />,
-    );
-    expect(queryByTestId('focus-rect')).not.toBeInTheDocument();
-    act(() => getByTestId('focused-checkbox-item').focus());
-    expect(queryByTestId('focus-rect')).toBeInTheDocument();
+    const { checkbox } = styles({ isFocusVisible: true });
+
+    expect(checkbox()).toContain('focus-outline');
   });
 });

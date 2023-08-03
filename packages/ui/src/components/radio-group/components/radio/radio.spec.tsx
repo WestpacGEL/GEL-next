@@ -1,6 +1,4 @@
-import { act, render } from '@testing-library/react';
-
-import { RadioGroup } from '../../radio-group.component.js';
+import { render } from '@testing-library/react';
 
 import { Radio } from './radio.component.js';
 import { styles } from './radio.styles.js';
