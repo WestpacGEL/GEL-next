@@ -23,6 +23,9 @@ const config: Config = withGEL({
     {
       pattern: /typography-+/,
     },
+    {
+      pattern: /gap-+/,
+    },
     'flex',
     'h-7',
     'w-12',

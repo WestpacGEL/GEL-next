@@ -71,15 +71,4 @@ describe('RadioGroup', () => {
     await act(() => user.click(getByTestId('option1')));
     expect(onChange).toBeCalled();
   });
-
-  it('should have Radios be bigger when size large is passed', () => {
-    const { container } = render(
-      <RadioGroup label="test" size="large">
-        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
-        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
-      </RadioGroup>,
-    );
-
-    expect(container.querySelector("[cx='15']")).toBeInTheDocument();
-  });
 });

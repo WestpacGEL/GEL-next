@@ -1,6 +1,9 @@
 import { act, render } from '@testing-library/react';
 
+import { RadioGroup } from '../../radio-group.component.js';
+
 import { Radio } from './radio.component.js';
+import { styles } from './radio.styles.js';
 import { RadioProps } from './radio.types.js';
 
 describe('Radio', () => {
@@ -29,12 +32,15 @@ describe('Radio', () => {
     expect(getByText('test hint')).toBeInTheDocument();
   });
 
+  it('should have Radios be bigger when size is large', () => {
+    const { selector } = styles({ size: 'large' });
+
+    expect(selector()).toContain('h-5 w-5');
+  });
+
   it('should have correct styling on focus', () => {
-    const { getByTestId, queryByTestId } = render(
-      <Radio {...defaultProps} hint="test hint" data-testid="focused-option" />,
-    );
-    expect(queryByTestId('focus-ring')).not.toBeInTheDocument();
-    act(() => getByTestId('focused-option').focus());
-    expect(queryByTestId('focus-ring')).toBeInTheDocument();
+    const { selector } = styles({ isFocusVisible: true });
+
+    expect(selector()).toContain('focus-outline');
   });
 });
