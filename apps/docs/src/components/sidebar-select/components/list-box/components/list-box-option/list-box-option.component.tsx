@@ -3,6 +3,8 @@ import * as React from 'react';
 import { useOption } from 'react-aria';
 import { type ListState } from 'react-stately';
 
+import { styles } from './list-box-option.styles';
+
 interface OptionProps<T = any> {
   item: Node<T>;
   state: ListState<T>;
@@ -19,22 +21,8 @@ export function Option({ item, state }: OptionProps) {
     ref,
   );
 
-  let text = 'text-gray-700';
-
-  if (isFocused || isSelected) {
-    text = 'text-pink-600';
-  } else if (isDisabled) {
-    text = 'text-gray-200';
-  }
-
   return (
-    <li
-      {...optionProps}
-      ref={ref}
-      className={`flex cursor-pointer items-center justify-between border-t border-t-border bg-white p-2 px-3 transition-colors first:border-t-0 hover:bg-light focus:bg-light ${
-        isFocused ? 'bg-light' : ''
-      } ${isSelected ? 'text-primary' : ''}`}
-    >
+    <li {...optionProps} ref={ref} className={styles({ isFocused, isSelected, isDisabled })}>
       {item.rendered}
     </li>
   );
