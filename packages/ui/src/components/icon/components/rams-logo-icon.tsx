@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function RAMSLogoIcon({
   'aria-label': ariaLabel = 'RAMS',
   copyrightYear = '2023',
-  viewBox = '0 0 180 65',
+  viewBox = '0 0 100 65',
   ...props
 }: IconProps) {
   return (

@@ -87,8 +87,8 @@ export function Sidebar({ open, navItems, setOpen, brand }: SidebarProps) {
       )}
       ref={ref}
     >
-      <div className="py-4">
-        <Logo brand={brand} className="h-10 w-full" />
+      <div className="p-3">
+        <Logo brand={brand} className="h-6 w-2/3" />
       </div>
       <div className="border-b border-b-border">
         <SidebarSelect selectedKey={brand} onSelectionChange={handleChange}>

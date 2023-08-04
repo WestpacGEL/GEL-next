@@ -7,5 +7,9 @@ export default function HomePage() {
 }
 
 HomePage.getLayout = function getLayout(page: ReactNode, brand: string) {
-  return <Layout brand={brand}>{page}</Layout>;
+  return (
+    <Layout brand={brand} headerProps={{ title: 'GEL Next Design System' }}>
+      {page}
+    </Layout>
+  );
 };

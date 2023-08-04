@@ -2,7 +2,6 @@ import { NavItem } from './sidebar';
 
 export const DEFAULT_NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home' },
-  { label: 'Accessibility', children: [] },
   {
     label: 'Components',
     children: [

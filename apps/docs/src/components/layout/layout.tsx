@@ -18,10 +18,7 @@ export function Layout({
       <Sidebar navItems={DEFAULT_NAV_ITEMS} open={sidebarOpen} setOpen={setSidebarOpen} brand={brand} />
       <div className="flex flex-1 flex-col md:ml-[250px]">
         <Header {...headerProps} brand={brand} onMenuButtonClick={() => setSidebarOpen(prev => !prev)} />
-        <div className="flex flex-1 flex-col p-5">
-          <div className="sticky top-4 h-5 w-5 bg-primary" />
-          {children}
-        </div>
+        <div className="flex flex-1 flex-col p-5">{children}</div>
       </div>
     </div>
   );

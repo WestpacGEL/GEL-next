@@ -15,14 +15,16 @@ type ListItemProps = {
 export const ListItem = ({ item, brand }: ListItemProps) => {
   const router = useRouter();
   const pathWithourGetParams = getPathWithoutGetParameters(router.asPath);
+  const isHighlighted =
+    item.href === '/' ? pathWithourGetParams === '/' : pathWithourGetParams.indexOf(item.href || '') > -1;
   return (
     <Link
       href={brand ? `${item.href}?brand=${brand}` : item.href}
       className={clsx(
         'typography-body-10 flex items-center gap-4 rounded-md px-3 py-2 transition-colors duration-300 hover:bg-light focus:outline-focus',
         {
-          'text-link': pathWithourGetParams === item.href,
-          'text-text': pathWithourGetParams !== item.href,
+          'text-link': isHighlighted,
+          'text-text': !isHighlighted,
         },
       )}
     >
