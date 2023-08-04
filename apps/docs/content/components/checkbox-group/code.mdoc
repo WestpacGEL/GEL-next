@@ -1,0 +1,109 @@
+This component was combined with RadioGroup in the old GEL, it is now it's own component as it using React Aria
+
+## Checkbox sizes
+
+```jsx
+<div className="flex">
+    <CheckboxGroup label={<p className="font-bold mb-1">Medium</p>} size="medium">
+        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+    <span className="mr-3" />  
+    <CheckboxGroup label={<p className="font-bold mb-1">Large</p>} size="large">
+        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+</div>
+```
+
+## Horizontal layout
+
+```jsx
+<div>
+    <CheckboxGroup label={<p className="font-bold mb-1">Medium</p>} orientation="horizontal">
+        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+     
+    <CheckboxGroup label={<p className="font-bold mb-1">Large</p>} size="large" orientation="horizontal">
+        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+</div>
+```
+
+## Checkboxes with hint text
+
+```jsx
+<div className="flex">
+    <CheckboxGroup label={<p className="font-bold mb-1">Medium</p>} size="medium">
+        <CheckboxGroup.Checkbox value="Option 1" hint="This is hint text">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2" hint="This is hint text">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3" hint="This is hint text">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+    <span className="mr-3" />  
+    <CheckboxGroup label={<p className="font-bold mb-1">Large</p>} size="large">
+        <CheckboxGroup.Checkbox value="Option 1" hint="This is hint text">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2" hint="This is hint text">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3" hint="This is hint text">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+</div>
+```
+
+## CheckboxGroup with Reveal
+
+```jsx
+<div className="flex">
+    <CheckboxGroup label={<p className="font-bold mb-1">Medium</p>} size="medium" showAmount={1}>
+        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+    <span className="mr-3" />  
+    <CheckboxGroup label={<p className="font-bold mb-1">Large</p>} size="large" showAmount={1}>
+        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+</div>
+```
+
+## CheckboxGroup completely disabled
+
+```jsx
+<div className="flex">
+    <CheckboxGroup label={<p className="font-bold mb-1">Medium</p>} size="medium" isDisabled>
+        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+    <span className="mr-3" />  
+    <CheckboxGroup label={<p className="font-bold mb-1">Large</p>} size="large" isDisabled>
+        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+</div>
+```
+
+## CheckboxGroup with individual items disabled
+
+```jsx
+<div className="flex">
+    <CheckboxGroup label={<p className="font-bold mb-1">Medium</p>} size="medium">
+        <CheckboxGroup.Checkbox value="Option 1" isDisabled>Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+    <span className="mr-3" />  
+    <CheckboxGroup label={<p className="font-bold mb-1">Large</p>} size="large">
+        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2" isDisabled>Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+</div>
+```
