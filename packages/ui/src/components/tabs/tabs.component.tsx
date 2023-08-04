@@ -13,16 +13,18 @@ export function Tabs({
   children,
   color,
   look = 'default',
+  sticky = false,
+  stickyOffset = {},
   ...props
 }: TabsProps) {
   const state = useTabListState({ ...props, children });
-  const styles = tabStyles({ orientation, look });
+  const styles = tabStyles({ orientation, look, sticky });
 
   const ref = useRef(null);
   const { tabListProps } = useTabList({ ...props, orientation }, state, ref);
   return (
     <div className={styles.base({ className })}>
-      <div {...tabListProps} className={styles.tabList()} ref={ref}>
+      <div style={{ ...tabListProps.style, ...stickyOffset }} {...tabListProps} className={styles.tabList()} ref={ref}>
         {[...state.collection].map(item => (
           <Tab
             key={item.key}
