@@ -1,7 +1,7 @@
-import { RAMSLogoIcon, Select, WBCLogoIcon, WBGLogoIcon } from '@westpac/ui';
+import { RAMSLogoIcon, WBCLogoIcon, WBGLogoIcon } from '@westpac/ui';
 import { clsx } from 'clsx';
 import { useRouter } from 'next/router';
-import React, { ChangeEvent, Key, useCallback, useRef } from 'react';
+import React, { Key, useCallback, useRef } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
 import { List } from '../list';
