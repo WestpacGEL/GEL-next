@@ -23,6 +23,7 @@ export {
   StarRateIcon,
   WriteIcon,
   Accordion,
-  Radio,
+  RadioGroup,
+  CheckboxGroup,
 } from '@westpac/ui';
 export { Link };

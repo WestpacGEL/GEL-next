@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       base: 'flex',
-      tabList: 'relative z-10 flex',
+      tabList: 'relative z-10 flex bg-white',
     },
     variants: {
       orientation: {
@@ -22,6 +22,11 @@ export const styles = tv(
           tabList: 'gap-[2px]',
         },
         material: '',
+      },
+      sticky: {
+        true: {
+          tabList: 'sticky shadow-md shadow-black/10',
+        },
       },
     },
   },

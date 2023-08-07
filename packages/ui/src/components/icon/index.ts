@@ -226,5 +226,11 @@ export { WriteIcon } from './components/write-icon.js';
 export { YammerIcon } from './components/yammer-icon.js';
 export { YoutubeIcon } from './components/youtube-icon.js';
 export { ZipFileIcon } from './components/zip-file-icon.js';
+export { BOMLogoIcon } from './components/bom-logo-icon.js';
+export { BSALogoIcon } from './components/bsa-logo-icon.js';
+export { RAMSLogoIcon } from './components/rams-logo-icon.js';
+export { STGLogoIcon } from './components/stg-logo-icon.js';
+export { WBCLogoIcon } from './components/wbc-logo-icon.js';
+export { WBGLogoIcon } from './components/wbg-logo-icon.js';
 
 export { type IconProps } from './icon.types.js';

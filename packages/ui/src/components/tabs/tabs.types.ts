@@ -19,4 +19,13 @@ export type TabsProps<T = any> = SpectrumTabsProps<T> &
      * Stretch the tab to fill the whole content
      */
     justify?: boolean;
+    /**
+     * set the offset for the sticky tab
+     */
+    stickyOffset?: {
+      bottom?: string;
+      left?: string;
+      right?: string;
+      top?: string;
+    };
   } & HTMLAttributes<HTMLDivElement>;

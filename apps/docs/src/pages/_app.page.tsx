@@ -1,7 +1,9 @@
 import { NextPage } from 'next';
 import NextApp, { AppContext, type AppProps } from 'next/app';
 import { ReactElement, ReactNode } from 'react';
+
 import '../styles/globals.css';
+import { getGetParameters } from '../utils/url';
 
 const brandsList = ['bom', 'bsa', 'stg', 'wbc', 'wbg', 'rams'] as const;
 
@@ -19,19 +21,8 @@ export default function PlaygroundApp({ Component, pageProps, brand }: AppPropsW
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || ((page: ReactNode) => page);
 
-  return getLayout(<Component {...pageProps} />, brand);
+  return getLayout(<Component {...pageProps} brand={brand} />, brand);
 }
-
-const getGetParameters = (url: string): Record<string, string> => {
-  const searchParams = url.replace(/.+\?/gi, '');
-  return searchParams.split('&').reduce((acc, current) => {
-    const [key, value] = current.split('=');
-    return {
-      ...acc,
-      [key]: value,
-    };
-  }, {});
-};
 
 PlaygroundApp.getInitialProps = async (appContext: AppContext) => {
   const ctx = await NextApp.getInitialProps(appContext);

@@ -43,7 +43,7 @@ export function LiveCode({ showCode = false, className }: LiveCodeProps) {
   );
 
   return (
-    <div className={clsx('max-w-5xl overflow-hidden rounded-md border border-muted-50 p-4 pb-0', className)}>
+    <div className={clsx('max-w-5xl overflow-hidden rounded-md border border-muted-50 bg-white p-4 pb-0', className)}>
       <div className="relative -mx-4 -mt-4 border-muted-50 p-4">
         {live.error ? (
           <div className="flex gap-2 rounded-md bg-danger-10 p-2 text-danger-90">
