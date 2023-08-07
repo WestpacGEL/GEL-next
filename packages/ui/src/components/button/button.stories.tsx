@@ -1,5 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
-import { useState } from 'react';
+
+import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon } from '../index.js';
 
 import { Button } from './button.component.js';
 
@@ -22,6 +23,10 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const LOOKS = ['primary', 'hero', 'faint', 'link'];
+const SOFT_LOOKS = ['primary', 'hero', 'faint'];
+const SIZES = ['small', 'medium', 'large', 'xlarge'];
+
 /**
  * > Default usage example
  */
@@ -32,56 +37,216 @@ export const DefaultStory: Story = {
 };
 
 /**
- * > Responsive size
+ * > Button looks
  */
-export const ResponsiveSizeStory: Story = {
-  args: {
-    children: 'Button text',
-    size: {
-      initial: 'small',
-      md: 'large',
-      lg: 'xlarge',
-    },
-  },
-};
+export const ButtonColors = () => (
+  <div className="flex flex-col gap-2">
+    <h3 className="font-bold">Default</h3>
+    <div className="flex gap-2">
+      {LOOKS.map((look: any) => (
+        <Button look={look}>{look}</Button>
+      ))}
+    </div>
+    <h3 className="font-bold">Soft</h3>
+    <div className="flex gap-2">
+      {SOFT_LOOKS.map((look: any) => (
+        <Button look={look} soft>
+          {look}
+        </Button>
+      ))}
+    </div>
+  </div>
+);
 
-const COLORS = ['hero', 'primary', 'link', 'faint'];
-const OUTLINE_COLORS = ['hero-soft', 'primary-soft', 'link-soft', 'faint-soft'];
-const SIZES = ['small', 'medium', 'large', 'xlarge'];
 /**
- * > Button sizes and colors
+ * > Button sizes
  */
-export const ButtonSizeAndColors = () => {
-  const [size, setSize] = useState('medium');
-  return (
-    <div className="flex flex-col gap-2">
+export const ButtonSizes = () => (
+  <div className="flex flex-col gap-2">
+    {SIZES.map((size: any) => (
+      <>
+        <h3 className="font-bold">{size}</h3>
+        <div className="flex gap-2">
+          {LOOKS.map((look: any) => (
+            <Button look={look} size={size}>
+              {look}
+            </Button>
+          ))}
+        </div>
+        <div className="flex gap-2">
+          {SOFT_LOOKS.map((look: any) => (
+            <Button look={look} size={size} soft>
+              {look}
+            </Button>
+          ))}
+        </div>
+      </>
+    ))}
+  </div>
+);
+
+/**
+ * > Block buttons
+ */
+export const BlockButtons = () => (
+  <div className="flex flex-col gap-2">
+    {SIZES.map((size: any) => (
+      <>
+        <h3 className="font-bold">{size}</h3>
+        <div className="flex flex-col gap-2">
+          {SOFT_LOOKS.map((look: any) => (
+            <Button look={look} size={size} block>
+              {look}
+            </Button>
+          ))}
+        </div>
+      </>
+    ))}
+  </div>
+);
+
+/**
+ * > Buttons with icons
+ */
+export const ButtonIcons = () => (
+  <div>
+    <div className="mb-4 flex flex-col gap-2">
+      <h2 className="typography-body-7 font-bold">Icon Before</h2>
+      <h3 className="font-bold">Colors</h3>
+      <div className="flex gap-2">
+        {LOOKS.map((look: any) => (
+          <Button look={look} iconBefore={BurgerIcon}>
+            {look}
+          </Button>
+        ))}
+      </div>
+      <div className="flex gap-2">
+        {SOFT_LOOKS.map((look: any) => (
+          <Button look={look} soft iconBefore={BurgerIcon}>
+            {look}
+          </Button>
+        ))}
+      </div>
+      <h3 className="font-bold">Sizes</h3>
       <div>
-        {SIZES.map(sizeOption => (
-          <Button
-            key={sizeOption}
-            onClick={() => setSize(sizeOption)}
-            size="small"
-            color={size === sizeOption ? 'hero' : 'hero-soft'}
-          >
-            {sizeOption}
+        {SIZES.map((size: any) => (
+          <Button size={size} iconBefore={BurgerIcon} className="mr-2">
+            Button
           </Button>
         ))}
       </div>
-      <hr />
-      <div className="flex gap-2">
-        {COLORS.map(color => (
-          <Button className="transition-all" key={color} size={size as any} color={color as any}>
-            Button {color}
+      <div>
+        {SIZES.map((size: any) => (
+          <Button size={size} iconBefore={BurgerIcon} soft className="mr-2">
+            Button
           </Button>
         ))}
       </div>
-      <div className="flex gap-2">
-        {OUTLINE_COLORS.map(color => (
-          <Button className="transition-all" key={color} size={size as any} color={color as any}>
-            Button {color}
-          </Button>
-        ))}
+      <h3 className="font-bold">Block</h3>
+      <div className="flex flex-col gap-2">
+        <Button block iconBefore={ArrowLeftIcon}>
+          Button
+        </Button>
+        <Button block justify iconBefore={ArrowLeftIcon}>
+          Button
+        </Button>
       </div>
     </div>
-  );
-};
+
+    <div className="mb-4 flex flex-col gap-2">
+      <h2 className="typography-body-7 font-bold">Icon After</h2>
+      <h3 className="font-bold">Colors</h3>
+      <div className="flex gap-2">
+        {LOOKS.map((look: any) => (
+          <Button look={look} iconAfter={BurgerIcon}>
+            {look}
+          </Button>
+        ))}
+      </div>
+      <div className="flex gap-2">
+        {SOFT_LOOKS.map((look: any) => (
+          <Button look={look} soft iconAfter={BurgerIcon}>
+            {look}
+          </Button>
+        ))}
+      </div>
+      <h3 className="font-bold">Sizes</h3>
+      <div>
+        {SIZES.map((size: any) => (
+          <Button size={size} iconAfter={BurgerIcon} className="mr-2">
+            Button
+          </Button>
+        ))}
+      </div>
+      <div>
+        {SIZES.map((size: any) => (
+          <Button size={size} iconAfter={BurgerIcon} soft className="mr-2">
+            Button
+          </Button>
+        ))}
+      </div>
+      <h3 className="font-bold">Block</h3>
+      <div className="flex flex-col gap-2">
+        <Button block iconAfter={ArrowRightIcon}>
+          Button
+        </Button>
+        <Button block justify iconAfter={ArrowRightIcon}>
+          Button
+        </Button>
+      </div>
+    </div>
+    <div className="mb-4 flex flex-col gap-2">
+      <h2 className="typography-body-7 font-bold">Icon Only</h2>
+      <h3 className="font-bold">Colors</h3>
+      <div className="flex gap-2">
+        {LOOKS.map((look: any) => (
+          <Button look={look} iconAfter={BurgerIcon} />
+        ))}
+      </div>
+      <div className="flex gap-2">
+        {SOFT_LOOKS.map((look: any) => (
+          <Button look={look} soft iconAfter={BurgerIcon} />
+        ))}
+      </div>
+      <h3 className="font-bold">Sizes</h3>
+      <div>
+        {SIZES.map((size: any) => (
+          <Button size={size} iconAfter={BurgerIcon} className="mr-2" />
+        ))}
+      </div>
+      <div>
+        {SIZES.map((size: any) => (
+          <Button size={size} iconAfter={BurgerIcon} soft className="mr-2" />
+        ))}
+      </div>
+      <h3 className="font-bold">Block</h3>
+      <div className="flex flex-col gap-2">
+        <Button block iconAfter={BurgerIcon} />
+      </div>
+    </div>
+  </div>
+);
+
+export const ResponsiveSize = () => (
+  <div>
+    <Button
+      size={{
+        initial: 'small',
+        md: 'large',
+        lg: 'xlarge',
+      }}
+    >
+      Responsive Button
+    </Button>{' '}
+    <Button
+      iconAfter={BurgerIcon}
+      size={{
+        initial: 'small',
+        md: 'large',
+        lg: 'xlarge',
+      }}
+    >
+      Responsive Button with icon
+    </Button>{' '}
+  </div>
+);

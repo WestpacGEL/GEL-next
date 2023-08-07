@@ -2,19 +2,19 @@
 
 ```jsx
 <div className="flex gap-2">
-  <Button color="primary" size="xlarge">
+  <Button look="primary" size="xlarge">
     Extra large: 48px
   </Button>
   
-  <Button color="primary" size="large">
+  <Button look="primary" size="large">
     Large: 42px
   </Button>
   
-  <Button color="primary" size="medium">
+  <Button look="primary" size="medium">
     Medium: 36px
   </Button>
   
-  <Button color="primary" size="small">
+  <Button look="primary" size="small">
     Small: 30px
   </Button>
 </div>
@@ -25,10 +25,10 @@
 
 ```jsx
 <div className="flex gap-2">
-  <Button color="primary">Primary standard</Button>
-  <Button color="hero">Hero standard</Button>
-  <Button color="faint">Faint standard</Button>
-  <Button color="link">Link</Button>
+  <Button look="primary">Primary standard</Button>
+  <Button look="hero">Hero standard</Button>
+  <Button look="faint">Faint standard</Button>
+  <Button look="link">Link</Button>
 </div>
 ```
 ---
@@ -37,11 +37,34 @@
 
 ```jsx
 <div className="flex gap-2">
-  <Button color="primary-soft">Primary soft</Button>
-  <Button color="hero-soft">Hero soft</Button>
-  <Button color="faint-soft">Faint soft</Button>
+  <Button look="primary" soft>Primary soft</Button>
+  <Button look="hero" soft>Hero soft</Button>
+  <Button look="faint" soft>Faint soft</Button>
 </div>
 ```
+---
+
+## Buttons with icons
+
+```jsx
+<div className="flex flex-col gap-2">
+  <div className="flex gap-2">
+    <Button iconBefore={FavoriteIcon}>Button</Button>
+    <Button look="primary" iconAfter={FavoriteIcon}>Button</Button>
+    <Button look="faint" iconAfter={FavoriteIcon}>Button</Button>
+  </div>
+  <div className="flex gap-2">
+    <Button soft iconBefore={FavoriteIcon}>Button</Button>
+    <Button look="primary" soft iconAfter={FavoriteIcon}>Button</Button>
+    <Button look="faint" soft iconAfter={FavoriteIcon}>Button</Button>
+  </div>
+  <div className="flex flex-col gap-2">
+    <Button block iconAfter={AddIcon}>Button</Button>
+    <Button block justify iconAfter={AddIcon}>Button</Button>
+  </div>
+</div>
+```
+
 ---
 
 ## Responsive buttons
