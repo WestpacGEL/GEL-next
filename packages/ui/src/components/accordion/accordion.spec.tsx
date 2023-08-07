@@ -53,6 +53,6 @@ describe('Accordion', () => {
   });
   it('renders the style correctly', () => {
     const style = styles({ rounded: true });
-    expect(style).toBe('flex flex-col border border-border overflow-hidden rounded');
+    expect(style).toBe('flex flex-col overflow-hidden rounded');
   });
 });

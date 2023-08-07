@@ -83,6 +83,30 @@ export const HeroColorStory: Story = {
   render: ({ ...props }) => (
     <Accordion {...props}>
       {[
+        { key: 'files', title: 'My files' },
+        { key: 'shared', title: 'my shared with you' },
+        { key: 'last', title: 'Last item' },
+      ].map(({ key, title }) => (
+        <Accordion.Item key={key} title={title}>
+          <p>{title}</p>
+          <Button>Test</Button>
+        </Accordion.Item>
+      ))}
+    </Accordion>
+  ),
+};
+
+/**
+ * > Hero color usage example
+ */
+export const MaterialLookStory: Story = {
+  args: {
+    look: 'material',
+    rounded: false,
+  },
+  render: ({ ...props }) => (
+    <Accordion {...props}>
+      {[
         { key: 'files', title: 'Your files' },
         { key: 'shared', title: 'Shared with you' },
         { key: 'last', title: 'Last item' },

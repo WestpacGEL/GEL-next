@@ -8,7 +8,10 @@ import { styles } from './accordion.styles.js';
 import { type AccordionProps } from './accordion.types.js';
 import { AccordionItem } from './components/index.js';
 
-function Accordion<T extends object>({ className, color, rounded = true, ...props }: AccordionProps<T>, ref: any) {
+function Accordion<T extends object>(
+  { className, color, rounded = true, look = 'default', ...props }: AccordionProps<T>,
+  ref: any,
+) {
   // react-aria doesn't allow for now to use component children when there is multiple levels
   // in our case we don't need that functionality and we have to render html tags or components
   // therefore as a workaround we are setting hasChildItems false for all of them
@@ -30,10 +33,15 @@ function Accordion<T extends object>({ className, color, rounded = true, ...prop
   const { accordionProps } = useAccordion(finalProps, state, domRef);
 
   return (
-    <div {...filterDOMProps(finalProps)} {...accordionProps} ref={domRef} className={styles({ className, rounded })}>
+    <div
+      {...filterDOMProps(finalProps)}
+      {...accordionProps}
+      ref={domRef}
+      className={styles({ className, rounded, look })}
+    >
       <div className="mt-[-1px]">
         {[...state.collection].map(item => (
-          <AccordionItem<T> key={item.key} item={item} state={state} color={color} />
+          <AccordionItem<T> key={item.key} item={item} state={state} color={color} look={look} />
         ))}
       </div>
     </div>

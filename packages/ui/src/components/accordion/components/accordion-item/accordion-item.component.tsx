@@ -10,7 +10,13 @@ import { type AccordionItemProps } from './accordion-item.types.js';
 
 const loadAnimations = () => import('./accordion-item.utils.js').then(res => res.default);
 
-export function AccordionItem<T = any>({ className, tag: Tag = 'div', color, ...props }: AccordionItemProps<T>) {
+export function AccordionItem<T = any>({
+  className,
+  tag: Tag = 'div',
+  color,
+  look = 'default',
+  ...props
+}: AccordionItemProps<T>) {
   const ref = useRef<HTMLButtonElement>(null);
   const { state, item } = props;
   const { buttonProps, regionProps } = useAccordionItem<T>(props, state, ref);
@@ -18,7 +24,7 @@ export function AccordionItem<T = any>({ className, tag: Tag = 'div', color, ...
   const isDisabled = state.disabledKeys.has(item.key);
   const { hoverProps } = useHover({ isDisabled });
   const { direction } = useLocale();
-  const styles = accordionItemStyles({ isOpen, isDisabled, className, color });
+  const styles = accordionItemStyles({ isOpen, isDisabled, className, color, look });
 
   return (
     <Tag className={styles.base()}>
@@ -29,11 +35,13 @@ export function AccordionItem<T = any>({ className, tag: Tag = 'div', color, ...
       <h3>
         <button {...mergeProps(buttonProps, hoverProps)} ref={ref} className={styles.itemHeader()}>
           <span>{item.props.title}</span>
-          {direction === 'ltr' ? (
-            <ArrowRightIcon aria-hidden="true" className={styles.indicator()} />
-          ) : (
-            <ArrowLeftIcon aria-hidden="true" className={styles.indicator()} />
-          )}
+          {look === 'material' && <div aria-hidden="true" className={styles.indicator()} />}
+          {look === 'default' &&
+            (direction === 'ltr' ? (
+              <ArrowRightIcon aria-hidden="true" className={styles.indicator()} />
+            ) : (
+              <ArrowLeftIcon aria-hidden="true" className={styles.indicator()} />
+            ))}
         </button>
       </h3>
       <div {...regionProps}>
