@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { IconProps } from '../index.js';
@@ -18,5 +18,6 @@ export type ButtonProps = {
    * Tag to render
    */
   tag?: keyof Pick<JSX.IntrinsicElements, 'a' | 'span' | 'button' | 'div'>;
-} & Omit<AnchorHTMLAttributes<Element>, 'type'> &
+} & ButtonHTMLAttributes<Element> &
+  AnchorHTMLAttributes<Element> &
   VariantProps<typeof styles>;

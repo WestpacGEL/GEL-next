@@ -227,6 +227,9 @@ export const ButtonIcons = () => (
   </div>
 );
 
+/**
+ * > Responsive styles
+ */
 export const ResponsiveSize = () => (
   <div>
     <Button
@@ -250,3 +253,24 @@ export const ResponsiveSize = () => (
     </Button>{' '}
   </div>
 );
+
+/**
+ * > As anchor tag
+ */
+export const AsLinkStory: Story = {
+  args: {
+    children: 'Link button',
+    tag: 'a',
+    href: '#',
+  },
+};
+
+/**
+ * > Disabled look
+ */
+export const DisabledStory: Story = {
+  args: {
+    children: 'Disabled button',
+    disabled: true,
+  },
+};
