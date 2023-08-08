@@ -33,6 +33,8 @@ describe('Icon', () => {
 
   it('renders the style correctly', () => {
     const style = styles({ color: 'primary' });
-    expect(style).toBe('rounded transition-colors disabled:pointer-events-none disabled:opacity-50 text-primary');
+    expect(style).toBe(
+      'inline-block rounded transition-colors disabled:pointer-events-none disabled:opacity-50 text-primary',
+    );
   });
 });
