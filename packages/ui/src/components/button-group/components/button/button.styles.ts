@@ -5,7 +5,7 @@ export const styles = tv(
     slots: {
       base: '',
       button:
-        'hover:cursor-pointer rounded-none group-first/buttons:rounded-l group-last/buttons:rounded-r group-[:not(:first-child)]/buttons:border-l-0',
+        'rounded-none hover:cursor-pointer group-first/buttons:rounded-l group-last/buttons:rounded-r group-[:not(:first-child)]/buttons:border-l-0',
     },
     variants: {
       isDisabled: {

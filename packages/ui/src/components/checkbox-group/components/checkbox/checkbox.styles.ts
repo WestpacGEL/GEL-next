@@ -5,7 +5,7 @@ export const styles = tv(
     slots: {
       base: 'flex',
       checkIcon: 'overflow-visible',
-      textWrapper: 'flex justify-center flex-col',
+      textWrapper: 'flex flex-col justify-center',
       labelText: 'typography-body-10 py-[2px] pl-1',
       hintText: 'typography-body-10 text-muted pl-1',
       checkbox: 'flex h-4 w-4 items-center justify-center rounded border border-hero',
