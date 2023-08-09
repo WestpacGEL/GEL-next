@@ -52,10 +52,10 @@ export function RadioGroup({
   }, [children, hiddenOptions, showAmount]);
 
   useEffect(() => {
-    if (!hiddenOptions) {
+    if (showAmount > 0 && !hiddenOptions) {
       firstNewRadioRef.current?.focus();
     }
-  }, [hiddenOptions]);
+  }, [hiddenOptions, showAmount]);
 
   return (
     <div className={styles.base({ className })} {...radioGroupProps}>

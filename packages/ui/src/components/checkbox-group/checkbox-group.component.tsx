@@ -51,10 +51,10 @@ export function CheckboxGroup({
   }, [children, hiddenOptions, showAmount]);
 
   useEffect(() => {
-    if (!hiddenOptions) {
+    if (showAmount > 0 && !hiddenOptions) {
       firstNewCheckboxRef.current?.focus();
     }
-  }, [hiddenOptions]);
+  }, [hiddenOptions, showAmount]);
 
   return (
     <div className={styles.base({ className })} {...groupProps}>
