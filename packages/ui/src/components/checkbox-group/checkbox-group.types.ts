@@ -1,9 +1,6 @@
 import { ReactNode } from 'react';
 import { AriaCheckboxGroupProps } from 'react-aria';
 import { CheckboxGroupState } from 'react-stately';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './checkbox-group.styles.js';
 
 export type CheckboxGroupProps = {
   /**
@@ -26,8 +23,7 @@ export type CheckboxGroupProps = {
    * Controls size of `CheckboxItem` components, can't be applied directly to `CheckboxItem`
    */
   size?: 'medium' | 'large';
-} & VariantProps<typeof styles> &
-  Omit<AriaCheckboxGroupProps, 'errorMessage' | 'description'>;
+} & Omit<AriaCheckboxGroupProps, 'errorMessage' | 'description'>;
 
 export type CheckboxGroupContextState = {
   /**

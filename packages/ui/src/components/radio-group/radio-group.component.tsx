@@ -68,13 +68,13 @@ export function RadioGroup({
           <Button
             onClick={() => setHiddenOptions(false)}
             className={styles.revealButton()}
-            color="link"
+            look="link"
+            iconAfter={() => <ExpandMoreIcon size="small" color="link" />}
             {...focusProps}
           >
             <p className={styles.buttonText()}>{`Show ${revealAmount} more ${
               revealAmount === 1 ? 'item' : 'items'
             }`}</p>
-            <ExpandMoreIcon size="small" color="link" />
           </Button>
         )}
       </div>

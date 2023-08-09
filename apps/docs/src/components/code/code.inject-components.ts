@@ -25,5 +25,6 @@ export {
   Accordion,
   RadioGroup,
   CheckboxGroup,
+  ButtonGroup,
 } from '@westpac/ui';
 export { Link };
