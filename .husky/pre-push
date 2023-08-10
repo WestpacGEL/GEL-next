@@ -9,6 +9,10 @@ echo "pnpm format started"
 pnpm format
 echo "pnpm format ended"
 
+echo "pnpm build started"
+pnpm build
+echo "pnpm build ended"
+
 echo "pnpm lint started"
 pnpm lint
 echo "pnpm lint ended"
