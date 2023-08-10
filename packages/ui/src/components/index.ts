@@ -13,3 +13,4 @@ export * from './radio-group/index.js';
 export * from './tabs/index.js';
 export * from './checkbox-group/index.js';
 export * from './accordion/index.js';
+export * from './button-group/index.js';

@@ -1,9 +1,6 @@
 import { ReactNode } from 'react';
 import { type AriaRadioGroupProps } from 'react-aria';
 import { type RadioGroupState } from 'react-stately';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './radio-group.styles.js';
 
 export type RadioGroupProps = {
   /**
@@ -22,8 +19,7 @@ export type RadioGroupProps = {
    * Controls size of `Radio` components, can't be applied directly to `Radio`
    */
   size?: 'medium' | 'large';
-} & VariantProps<typeof styles> &
-  Omit<AriaRadioGroupProps, 'errorMessage' | 'description'>;
+} & Omit<AriaRadioGroupProps, 'errorMessage' | 'description'>;
 
 export type RadioGroupContextState = {
   /**

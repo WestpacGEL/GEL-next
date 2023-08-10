@@ -18,6 +18,7 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/accordion', label: 'Accordion' },
       { href: '/components/icons', label: 'Icons' },
       { href: '/components/checkbox-group', label: 'CheckboxGroup' },
+      { href: '/components/button-group', label: 'ButtonGroup' },
     ],
   },
 ];
