@@ -3,8 +3,10 @@ import { render } from '@testing-library/react';
 import { Icon } from './icon.component.js';
 import { styles } from './icon.styles.js';
 
+import * as AllIcons from './index.js';
+
 describe('Icon', () => {
-  it('renders the component', () => {
+  it('renders the Icon component', () => {
     const { container } = render(
       <Icon copyrightYear="2023">
         <path
@@ -16,8 +18,23 @@ describe('Icon', () => {
     );
     expect(container).toBeInTheDocument();
   });
+
+  Object.entries(AllIcons).forEach(([iconName, Icon]) => {
+    it(`renders the ${iconName} component`, () => {
+      const { container } = render(<Icon copyrightYear="2023" />);
+      expect(container).toBeInTheDocument();
+    });
+
+    it(`renders the outlined version of the ${iconName} component`, () => {
+      const { container } = render(<Icon look="outlined" copyrightYear="2023" />);
+      expect(container).toBeInTheDocument();
+    });
+  }, []);
+
   it('renders the style correctly', () => {
     const style = styles({ color: 'primary' });
-    expect(style).toBe('rounded transition-colors disabled:pointer-events-none disabled:opacity-50 text-primary');
+    expect(style).toBe(
+      'inline-block rounded transition-colors disabled:pointer-events-none disabled:opacity-50 text-primary',
+    );
   });
 });

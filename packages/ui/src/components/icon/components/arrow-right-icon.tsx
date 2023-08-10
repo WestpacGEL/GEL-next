@@ -5,12 +5,12 @@ import { type IconProps } from '../icon.types.js';
 
 export function ArrowRightIcon({
   'aria-label': ariaLabel = 'Arrow Right',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (
     <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
-      <polygon fill="currentColor" fillRule="evenodd" points="14.588 12 8 18.588 9.412 20 17.412 12 9.412 4 8 5.412" />
+      <path d="M14.5879 12L8.00006 18.5878L9.41223 20L17.4122 12L9.41218 4L8 5.41218L14.5879 12Z" fill="currentColor" />
     </Icon>
   );
 }

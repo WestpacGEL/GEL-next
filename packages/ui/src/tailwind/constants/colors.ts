@@ -1,4 +1,4 @@
-import { generateColorShades } from '../utils/generate-color-shades.js';
+import { generateColorTints } from '../utils/generate-color-tints.js';
 
 export const BASE_COLORS = {
   success: '#008000',
@@ -9,7 +9,7 @@ export const BASE_COLORS = {
 };
 
 export const COLORS = {
-  ...generateColorShades(BASE_COLORS),
+  ...generateColorTints(BASE_COLORS),
   white: '#FFF',
   black: '#000',
 };

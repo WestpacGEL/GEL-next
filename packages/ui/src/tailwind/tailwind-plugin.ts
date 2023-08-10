@@ -5,18 +5,26 @@ import { BREAKPOINTS } from './constants/breakpoints.js';
 import { COLORS, DEFAULT_BODY_TYPOGRAPHY, FONT_TYPES, SPACING } from './constants/index.js';
 import { THEMES } from './themes/index.js';
 import { theme as WBCTheme } from './themes/wbc.js';
-import { createFontSizes, generateFontComponents } from './utils/index.js';
+import { createFontSizes, generateFontComponents, generateFormControlComponents } from './utils/index.js';
 
 /**
  * Base Plugin responsible for default theming and adding the typography components
  */
 export const WestpacUIKitBasePlugin = plugin(
   // Adding the typography components
-  ({ addComponents, addBase, theme }) => {
+  ({ addComponents, addUtilities, addBase, theme }) => {
     addBase({
       html: { color: theme('colors.text.DEFAULT') },
     });
+    addUtilities({
+      '.focus-outline': { [`@apply ${theme('focusOutline')}`]: {} },
+      '.select-caret': {
+        backgroundImage:
+          "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='8' style='color: rgb(89,87,103);'><path fill='currentColor' d='M0 0l7 8 7-8z'/></svg>\")",
+      },
+    });
     addComponents(generateFontComponents(theme('typographySizes'), theme));
+    addComponents(generateFormControlComponents(theme('formControl')));
   },
   {
     theme: {
@@ -32,6 +40,9 @@ export const WestpacUIKitBasePlugin = plugin(
         lineHeight: {
           tight: '1.2',
           normal: '1.4',
+        },
+        borderWidth: {
+          5: '0.3125rem',
         },
         fontSize: createFontSizes(FONT_TYPES),
         keyframes: {
@@ -86,6 +97,18 @@ export const WestpacUIKitBasePlugin = plugin(
           lineHeight: 'normal',
         },
       },
+      formControl: {
+        base: 'no-inner-spin-button box-border w-fit appearance-none overflow-visible rounded border bg-white align-middle text-text transition placeholder:font-light placeholder:text-text-50 placeholder:opacity-100 focus:focus-outline disabled:form-control-disabled',
+        disabled: 'cursor-not-allowed border-dashed bg-background text-muted',
+        sizes: {
+          // Some of the values are not following the spacing so we needed to use static values as following
+          small: 'px-[0.5625rem] pb-[0.25rem] pt-[0.1875rem] text-sm',
+          medium: 'typography-body-9 px-2 py-[0.3125rem]',
+          large: 'px-[0.9375rem] py-[0.5rem] text-base',
+          xlarge: 'px-3 pb-[0.625rem] pt-[0.5625rem] text-lg',
+        },
+      },
+      focusOutline: 'outline outline-2 outline-offset-[3px] outline-focus',
     },
   },
 );

@@ -140,3 +140,12 @@ export const WithDifferentSizeStory: Story = {
     size: 'xlarge',
   },
 };
+
+/**
+ * > With outlined look example
+ */
+export const WithOutlinedLookStory: Story = {
+  args: {
+    look: 'outlined',
+  },
+};

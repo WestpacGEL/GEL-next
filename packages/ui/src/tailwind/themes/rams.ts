@@ -1,9 +1,9 @@
 import { type BrandConfig } from '../index.js';
-import { generateColorShades } from '../utils/generate-color-shades.js';
+import { generateColorTints } from '../utils/generate-color-tints.js';
 
 export const theme: BrandConfig = {
   code: 'RAMS',
-  colors: generateColorShades({
+  colors: generateColorTints({
     background: '#F3F4F4',
     border: '#D3D4D5',
     borderDark: '#909396',
