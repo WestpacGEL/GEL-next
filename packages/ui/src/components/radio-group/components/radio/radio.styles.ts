@@ -13,7 +13,7 @@ export const styles = tv(
       isDisabled: {
         true: {
           labelText: 'text-muted',
-          selector: 'bg-border-20 border-border before:bg-border',
+          selector: 'border-border bg-border-20 before:bg-border',
         },
         false: {
           base: 'hover:cursor-pointer',

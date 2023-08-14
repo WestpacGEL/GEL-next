@@ -2,7 +2,7 @@ import { act, render, screen, waitFor, waitForElementToBeRemoved } from '@testin
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
-import { TelephoneIcon } from '../index.js';
+import { TelephoneIcon } from '../icon/index.js';
 
 import { Alert } from './alert.component.js';
 import { styles } from './alert.styles.js';

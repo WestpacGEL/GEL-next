@@ -1,4 +1,4 @@
-import { RAMSLogoIcon, WBCLogoIcon, WBGLogoIcon } from '@westpac/ui';
+import { RAMSLogoIcon, WBCLogoIcon, WBGLogoIcon } from '@westpac/ui/icon';
 import { clsx } from 'clsx';
 import { useRouter } from 'next/router';
 import React, { Key, useCallback, useRef } from 'react';

@@ -1,4 +1,4 @@
-import { HamburgerMenuIcon } from '@westpac/ui';
+import { HamburgerMenuIcon } from '@westpac/ui/icon';
 import React, { useEffect, useState } from 'react';
 
 import { styles as headerStyles } from './header.styles';

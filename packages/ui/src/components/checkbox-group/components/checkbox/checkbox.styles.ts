@@ -7,14 +7,14 @@ export const styles = tv(
       checkIcon: 'overflow-visible',
       textWrapper: 'flex flex-col justify-center',
       labelText: 'typography-body-10 py-[2px] pl-1',
-      hintText: 'typography-body-10 text-muted pl-1',
+      hintText: 'typography-body-10 pl-1 text-muted',
       checkbox: 'flex h-4 w-4 items-center justify-center rounded border border-hero',
     },
     variants: {
       isDisabled: {
         true: {
           labelText: 'text-muted',
-          checkbox: 'bg-border-20 border-border',
+          checkbox: 'border-border bg-border-20',
         },
         false: {
           base: 'hover:cursor-pointer',
