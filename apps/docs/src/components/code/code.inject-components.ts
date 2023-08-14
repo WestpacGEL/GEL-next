@@ -5,11 +5,17 @@ export {
   Well,
   Alert,
   Breadcrumb,
-  TelephoneIcon,
   Input,
   Select,
   Textarea,
   Tabs,
+  Accordion,
+  RadioGroup,
+  CheckboxGroup,
+  ButtonGroup,
+} from '@westpac/ui';
+
+export {
   AddIcon,
   CalendarIcon,
   DeleteIcon,
@@ -22,9 +28,6 @@ export {
   ProgressIcon,
   StarRateIcon,
   WriteIcon,
-  Accordion,
-  RadioGroup,
-  CheckboxGroup,
-  ButtonGroup,
-} from '@westpac/ui';
+  TelephoneIcon,
+} from '@westpac/ui/icon';
 export { Link };
