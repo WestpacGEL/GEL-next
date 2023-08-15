@@ -18,7 +18,13 @@ export function Popover({ label, children, heading, placement, look, iconAfter, 
   const styles = popoverStyles({});
   return (
     <>
-      <Button onClick={state.toggle} look={look} iconAfter={iconAfter} ref={ref} className={styles.button()}>
+      <Button
+        onClick={state.toggle}
+        look={iconAfter ? 'link' : look}
+        iconAfter={iconAfter}
+        ref={ref}
+        className={styles.button()}
+      >
         {label}
       </Button>
       {state.isOpen && (
