@@ -54,6 +54,9 @@ export const WestpacUIKitBasePlugin = plugin(
         animation: {
           fadeIn: 'fadeIn 0.2s ease',
         },
+        boxShadow: {
+          switch: '0.1875rem 0 0.375rem 0 rgba(0,0,0,0.53)',
+        },
       },
       typographySizes: {
         1: {

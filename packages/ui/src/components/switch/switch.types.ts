@@ -1,4 +1,4 @@
-import { AriaSwitchProps } from 'react-aria';
+import { AriaCheckboxProps } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './switch.styles.js';
@@ -9,12 +9,12 @@ export type SwitchProps = {
    */
   block?: boolean;
   /**
-   * Tag to render
+   * Classname for overriding base style
    */
   className?: string;
   /**
    * Label for the switch
    */
   label: string;
-} & Omit<AriaSwitchProps, 'children'> &
+} & Omit<AriaCheckboxProps, 'children'> &
   Pick<VariantProps<typeof styles>, 'size'>;

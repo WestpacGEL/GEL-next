@@ -29,4 +29,9 @@ describe('Switch', () => {
     await act(() => user.click(getByLabelText('onChange')));
     expect(onChange).toBeCalled;
   });
+
+  it('should have correct style', () => {
+    const style = styles({ size: 'small' });
+    console.log(style.switchDiv());
+  });
 });

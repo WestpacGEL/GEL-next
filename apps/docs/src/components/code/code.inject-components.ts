@@ -13,6 +13,7 @@ export {
   RadioGroup,
   CheckboxGroup,
   ButtonGroup,
+  Switch,
 } from '@westpac/ui';
 
 export {
