@@ -2,7 +2,6 @@ import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Switch } from './switch.component.js';
-import { styles } from './switch.styles.js';
 
 describe('Switch', () => {
   it('renders the component', () => {
@@ -28,10 +27,5 @@ describe('Switch', () => {
     const { getByLabelText } = render(<Switch label="onChange" onChange={onChange} />);
     await act(() => user.click(getByLabelText('onChange')));
     expect(onChange).toBeCalled;
-  });
-
-  it('should have correct style', () => {
-    const style = styles({ size: 'small' });
-    console.log(style.switchDiv());
   });
 });
