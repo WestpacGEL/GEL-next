@@ -19,6 +19,7 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/icons', label: 'Icons' },
       { href: '/components/checkbox-group', label: 'CheckboxGroup' },
       { href: '/components/button-group', label: 'ButtonGroup' },
+      { href: '/components/switch', label: 'Switch' },
     ],
   },
 ];
