@@ -1,0 +1,39 @@
+## Progress Bar
+
+```jsx
+() => {
+    const [barValue, setBarValue] = useState(0);
+    const handleProgress = useCallback(
+      (calc: number) => {
+        const progress = barValue + calc;
+        if (progress > 100) return setBarValue(100);
+        if (progress < 0) return setBarValue(0);
+        return setBarValue(progress);
+      },
+      [barValue],
+    );
+    return (
+      <>
+        <h2 className="typography-body-9 mb-1 font-bold">Default</h2>
+        <ProgressBar value={barValue} className="mb-2" />
+        <h2 className="typography-body-9 mb-1 font-bold">Skinny</h2>
+        <ProgressBar look="skinny" value={barValue} className="mb-2" />
+        <p className="mb-2">Use the +/- buttons below to demonstrate how the progress bar moves.</p>
+        <div className="flex space-x-2">
+          <Button soft onClick={() => handleProgress(-1)}>
+            -1%
+          </Button>
+          <Button soft onClick={() => handleProgress(-10)}>
+            -10%
+          </Button>
+          <Button soft onClick={() => handleProgress(+1)}>
+            +1%
+          </Button>
+          <Button soft onClick={() => handleProgress(+10)}>
+            +10%
+          </Button>
+        </div>
+      </>
+    );
+};
+```

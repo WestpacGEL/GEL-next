@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useCallback, useState } from 'react';
 import { LiveProvider } from 'react-live';
 
 import { StaticCode } from '../static-code';
@@ -10,6 +10,7 @@ import { LiveCode } from './components/live-code';
 const LIVE_SCOPE = {
   ...UISystemComponents,
   useState,
+  useCallback,
   Fragment,
   React,
 };
