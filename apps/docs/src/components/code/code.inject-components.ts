@@ -14,6 +14,7 @@ export {
   CheckboxGroup,
   ButtonGroup,
   Switch,
+  ProgressBar,
 } from '@westpac/ui';
 
 export {
