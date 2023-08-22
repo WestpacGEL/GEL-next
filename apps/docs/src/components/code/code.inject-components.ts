@@ -15,10 +15,12 @@ export {
   ButtonGroup,
   Switch,
   ProgressBar,
+  Link,
 } from '@westpac/ui';
 
 export {
   AddIcon,
+  ArrowRightIcon,
   CalendarIcon,
   DeleteIcon,
   FavoriteIcon,
@@ -26,10 +28,11 @@ export {
   HelpIcon,
   MessageIcon,
   NotificationOffIcon,
+  PdfFileIcon,
   PersonIcon,
   ProgressIcon,
   StarRateIcon,
   WriteIcon,
   TelephoneIcon,
 } from '@westpac/ui/icon';
-export { Link };
+export { Link as NextLink };

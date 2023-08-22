@@ -15,3 +15,4 @@ export * from './accordion/index.js';
 export * from './button-group/index.js';
 export * from './switch/index.js';
 export * from './progress-bar/index.js';
+export * from './link/index.js';
