@@ -21,6 +21,7 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/button-group', label: 'Button Group' },
       { href: '/components/switch', label: 'Switch' },
       { href: '/components/progress-bar', label: 'Progress Bar' },
+      { href: '/components/link', label: 'Link' },
     ],
   },
 ];
