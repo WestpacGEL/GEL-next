@@ -18,11 +18,13 @@ type ColorsKey =
   | 'text'
   | 'white'
   | 'black';
+type PictogramColorMap = { dark: string; duo: { highlight: string; outline: string } };
+type PictogramConfig = Record<'pictogram', PictogramColorMap>;
 type ColorConfig = Record<ColorsKey, ColorValue>;
 
 export type BrandConfig = {
   brandFont: string;
   code: string;
-  colors: ColorConfig;
+  colors: ColorConfig & PictogramConfig;
   name: string;
 };
