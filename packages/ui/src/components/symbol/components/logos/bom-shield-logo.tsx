@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export function BOMShieldLogo({
   'aria-label': ariaLabel = 'Bank of Melbourne',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   viewBoxWidth = 26,
   viewBoxHeight = 39,
   className,

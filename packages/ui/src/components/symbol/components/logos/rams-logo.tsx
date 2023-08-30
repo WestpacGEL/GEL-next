@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export const RAMSLogo = ({
   'aria-label': ariaLabel = 'RAMS',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   viewBoxWidth = 99,
   viewBoxHeight = 51,
   className,

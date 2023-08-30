@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export const WBGInternalLogo = ({
   'aria-label': ariaLabel = 'We Are Westpac Group',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   viewBoxWidth = 233,
   viewBoxHeight = 48,
   className,

@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export const RedAvatarCircleLogo = ({
   'aria-label': ariaLabel = 'Red Avatar',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   viewBoxWidth = 64,
   viewBoxHeight = 64,
   className,

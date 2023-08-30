@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export const STGDragonLogo = ({
   'aria-label': ariaLabel = 'St.George',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   viewBoxWidth = 54,
   viewBoxHeight = 38,
   className,

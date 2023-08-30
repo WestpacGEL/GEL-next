@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export const BSAMultibrandLargeLogo = ({
   'aria-label': ariaLabel = 'Bank SA',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   viewBoxWidth = 180,
   viewBoxHeight = 65,
   align = 'left',

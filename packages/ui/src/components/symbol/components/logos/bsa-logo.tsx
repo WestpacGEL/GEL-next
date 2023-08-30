@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export const BSALogo = ({
   'aria-label': ariaLabel = 'Bank SA',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   viewBoxWidth = 90,
   viewBoxHeight = 41,
   className,
