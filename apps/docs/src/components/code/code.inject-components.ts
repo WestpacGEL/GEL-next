@@ -16,6 +16,7 @@ export {
   Switch,
   ProgressBar,
   Link,
+  Table,
 } from '@westpac/ui';
 
 export {
