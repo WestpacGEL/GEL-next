@@ -17,3 +17,4 @@ export * from './switch/index.js';
 export * from './progress-bar/index.js';
 export * from './link/index.js';
 export * from './grid/index.js';
+export * from './table/index.js';
