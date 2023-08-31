@@ -17,6 +17,7 @@ export {
   ProgressBar,
   Link,
   Table,
+  DatePicker,
 } from '@westpac/ui';
 
 export {
