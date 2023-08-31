@@ -25,6 +25,9 @@
     "./pictogram": {
       "default": "./dist/components/pictogram/index.js"
     },
+    "./symbol": {
+      "default": "./dist/components/symbol/index.js"
+    },
     "./tailwind": {
       "default": "./dist/tailwind/index.js"
     }
