@@ -5,6 +5,7 @@ import { BREAKPOINTS } from './constants/breakpoints.js';
 import { COLORS, DEFAULT_BODY_TYPOGRAPHY, FONT_TYPES, SPACING } from './constants/index.js';
 import { THEMES } from './themes/index.js';
 import { theme as WBCTheme } from './themes/wbc.js';
+import { generateDatePicker } from './utils/generate-date-picker-component.js';
 import { createFontSizes, generateFontComponents, generateFormControlComponents } from './utils/index.js';
 
 /**
@@ -25,6 +26,7 @@ export const WestpacUIKitBasePlugin = plugin(
     });
     addComponents(generateFontComponents(theme('typographySizes'), theme));
     addComponents(generateFormControlComponents(theme('formControl')));
+    addComponents(generateDatePicker());
   },
   {
     theme: {
