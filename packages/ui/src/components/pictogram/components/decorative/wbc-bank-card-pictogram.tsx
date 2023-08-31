@@ -6,7 +6,7 @@ import { type PictogramProps } from '../../pictogram.types.js';
 
 export function WBCBankCardPictogram({
   'aria-label': ariaLabel = 'Bank card',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   viewBoxHeight = 200,
   viewBoxWidth = 200,
   className,

@@ -10,7 +10,7 @@ export function HousePictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'House',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   className,
   ...props
 }: PictogramProps) {

@@ -10,7 +10,7 @@ export function EftposPictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'Eftpos',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   className,
   ...props
 }: PictogramProps) {

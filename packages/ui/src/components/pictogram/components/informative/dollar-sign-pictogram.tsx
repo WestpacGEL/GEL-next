@@ -10,7 +10,7 @@ export function DollarSignPictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'Dollar sign',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   className,
   ...props
 }: PictogramProps) {

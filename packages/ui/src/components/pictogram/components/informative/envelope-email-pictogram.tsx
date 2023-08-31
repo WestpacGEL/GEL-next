@@ -10,7 +10,7 @@ export function EnvelopeEmailPictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'Email envelope',
-  copyrightYear = '2020',
+  copyrightYear = '2023',
   className,
   ...props
 }: PictogramProps) {
