@@ -1,3 +1,4 @@
+import { isEqual } from 'lodash-es';
 import { EventHandler, RefObject, useEffect } from 'react';
 
 import { DuetDatePickerElement } from './date-picker.types.js';
@@ -71,4 +72,25 @@ export function parseISODate(value: string) {
   if (matches) {
     return createDate(matches[1], matches[2], matches[3]);
   }
+}
+
+/**
+ * @param date Date
+ * @param disableWeekends boolean to disable weekends
+ * @param disableDaysOfWeek array of disable days of the week
+ * @param disableDates Disabled dates
+ */
+export function isDateDisabled(
+  date: Date,
+  disableWeekends?: boolean,
+  disableDaysOfWeek?: number[],
+  disableDates?: string[],
+) {
+  if (disableWeekends && (date.getDay() === 0 || date.getDay() === 6)) {
+    return true;
+  }
+  if (disableDaysOfWeek?.includes(date.getDay())) {
+    return true;
+  }
+  return !!disableDates?.some((d: string) => isEqual(date, parseISODate(d)));
 }

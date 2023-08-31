@@ -1,10 +1,9 @@
-import { applyPolyfills, defineCustomElements } from '@duetds/date-picker/dist/loader';
-import { isEqual } from 'lodash-es';
+import { defineCustomElements } from '@duetds/date-picker/dist/loader';
 import React, { useEffect, useLayoutEffect, useMemo, useRef } from 'react';
 
 import { styles } from './date-picker.styles.js';
 import { type DatePickerProps, DuetDatePickerElement } from './date-picker.types.js';
-import { formatDate, parseISODate, useListener } from './date-picker.utils.js';
+import { formatDate, isDateDisabled, useListener } from './date-picker.utils.js';
 
 export function DatePicker({
   disableWeekends,
@@ -26,13 +25,7 @@ export function DatePicker({
 }: DatePickerProps) {
   useEffect(() => {
     // Register Duet Date Picker
-    applyPolyfills()
-      .then(() => {
-        return defineCustomElements(window);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    defineCustomElements(window);
   }, []);
 
   const ref = useRef<DuetDatePickerElement>(null);
@@ -97,19 +90,7 @@ export function DatePicker({
     ref.current.value = value;
 
     ref.current.isDateDisabled = (date: Date) => {
-      let isDisabled = false;
-
-      if (disableWeekends && (date.getDay() === 0 || date.getDay() === 6)) {
-        isDisabled = true;
-      }
-      if (disableDaysOfWeek?.includes(date.getDay())) {
-        isDisabled = true;
-      }
-      if (disableDates?.some(d => isEqual(date, parseISODate(d)))) {
-        isDisabled = true;
-      }
-
-      return isDisabled;
+      return isDateDisabled(date, disableWeekends, disableDaysOfWeek, disableDates);
     };
   }, [ref]);
 
