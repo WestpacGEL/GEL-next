@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.3.0
+
+### Minor Changes
+
+- add more components
+
 ## 0.2.1
 
 ### Patch Changes
