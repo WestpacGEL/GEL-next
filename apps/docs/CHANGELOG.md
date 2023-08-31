@@ -1,5 +1,12 @@
 # docs
 
+## 0.1.16
+
+### Patch Changes
+
+- Updated dependencies
+  - @westpac/ui@0.3.0
+
 ## 0.1.15
 
 ### Patch Changes
