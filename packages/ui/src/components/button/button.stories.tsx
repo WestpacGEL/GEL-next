@@ -1,6 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
-import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon } from '../index.js';
+import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon } from '../icon/index.js';
 
 import { Button } from './button.component.js';
 

@@ -1,4 +1,4 @@
-import { BOMLogoIcon, BSALogoIcon, RAMSLogoIcon, STGLogoIcon, WBCLogoIcon, WBGLogoIcon } from '@westpac/ui';
+import { BOMLogoIcon, BSALogoIcon, RAMSLogoIcon, STGLogoIcon, WBCLogoIcon, WBGLogoIcon } from '@westpac/ui/icon';
 
 import { LogoProps } from './logo.types';
 

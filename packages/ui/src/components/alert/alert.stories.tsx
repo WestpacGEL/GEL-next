@@ -1,6 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
-import { TelephoneIcon } from '../index.js';
+import { TelephoneIcon } from '../icon/index.js';
 
 import { Alert } from './alert.component.js';
 

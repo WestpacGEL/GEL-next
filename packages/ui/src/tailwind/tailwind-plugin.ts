@@ -54,6 +54,16 @@ export const WestpacUIKitBasePlugin = plugin(
         animation: {
           fadeIn: 'fadeIn 0.2s ease',
         },
+        boxShadow: {
+          switch: '0.1875rem 0 0.375rem 0 rgba(0,0,0,0.53)',
+        },
+        maxWidth: {
+          xsl: BREAKPOINTS.xsl,
+          sm: BREAKPOINTS.sm,
+          md: BREAKPOINTS.md,
+          lg: BREAKPOINTS.lg,
+          container: '1320px', //1200 (lg) + 60 (paddingHorizontal) + 60 (paddingHorizontal)
+        },
       },
       typographySizes: {
         1: {

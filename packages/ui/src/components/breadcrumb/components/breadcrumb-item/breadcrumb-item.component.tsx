@@ -1,7 +1,7 @@
 import React, { forwardRef, useRef } from 'react';
 import { useBreadcrumbItem } from 'react-aria';
 
-import { ArrowRightIcon } from '../../../index.js';
+import { ArrowRightIcon } from '../../../icon/index.js';
 
 import { styles } from './breadcrumb-item.styles.js';
 import { type BreadcrumbItemProps } from './breadcrumb-item.types.js';

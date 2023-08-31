@@ -1,4 +1,4 @@
-import { AlertIcon } from '@westpac/ui';
+import { AlertIcon } from '@westpac/ui/icon';
 import copy from 'clipboard-copy';
 import { clsx } from 'clsx';
 import { themes } from 'prism-react-renderer';

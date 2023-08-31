@@ -3,7 +3,7 @@ import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useRef } from 'react';
 import { mergeProps, useHover, useLocale } from 'react-aria';
 
-import { ArrowLeftIcon, ArrowRightIcon } from '../../../index.js';
+import { ArrowLeftIcon, ArrowRightIcon } from '../../../icon/index.js';
 
 import { styles as accordionItemStyles } from './accordion-item.styles.js';
 import { type AccordionItemProps } from './accordion-item.types.js';
@@ -28,9 +28,9 @@ export function AccordionItem<T = any>({
 
   return (
     <Tag className={styles.base()}>
-      {/* 
+      {/*
         Using h3 tag since the official page is using it, also the react-spectrum
-        https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/ 
+        https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/
       */}
       <h3>
         <button {...mergeProps(buttonProps, hoverProps)} ref={ref} className={styles.itemHeader()}>

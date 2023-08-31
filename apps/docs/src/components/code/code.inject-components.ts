@@ -5,12 +5,23 @@ export {
   Well,
   Alert,
   Breadcrumb,
-  TelephoneIcon,
   Input,
   Select,
   Textarea,
   Tabs,
+  Accordion,
+  RadioGroup,
+  CheckboxGroup,
+  ButtonGroup,
+  Switch,
+  ProgressBar,
+  Link,
+  Table,
+} from '@westpac/ui';
+
+export {
   AddIcon,
+  ArrowRightIcon,
   CalendarIcon,
   DeleteIcon,
   FavoriteIcon,
@@ -18,13 +29,11 @@ export {
   HelpIcon,
   MessageIcon,
   NotificationOffIcon,
+  PdfFileIcon,
   PersonIcon,
   ProgressIcon,
   StarRateIcon,
   WriteIcon,
-  Accordion,
-  RadioGroup,
-  CheckboxGroup,
-  ButtonGroup,
-} from '@westpac/ui';
-export { Link };
+  TelephoneIcon,
+} from '@westpac/ui/icon';
+export { Link as NextLink };
