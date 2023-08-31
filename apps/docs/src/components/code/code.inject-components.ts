@@ -17,6 +17,7 @@ export {
   ProgressBar,
   Link,
   Table,
+  Collapsible,
 } from '@westpac/ui';
 
 export {
