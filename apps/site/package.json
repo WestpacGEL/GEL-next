@@ -1,0 +1,44 @@
+{
+  "name": "site",
+  "version": "0.0.12",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@keystatic/core": "^0.0.115",
+    "@keystatic/next": "^0.0.11",
+    "@westpac/ui": "workspace:~",
+    "clipboard-copy": "~4.0.1",
+    "clsx": "^1.2.1",
+    "lodash.throttle": "~4.1.1",
+    "next": "^13.4.8",
+    "prism-react-renderer": "~2.0.6",
+    "prismjs": "~1.29.0",
+    "react": "^18.2.0",
+    "react-aria": "~3.25.0",
+    "react-dom": "^18.2.0",
+    "react-live": "~4.1.3",
+    "react-stately": "~3.23.0",
+    "usehooks-ts": "~2.9.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@react-types/shared": "~3.18.1",
+    "@swc/core": "^1.3.23",
+    "@types/node": "^17.0.12",
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.0.7",
+    "@westpac/eslint-config": "workspace:~",
+    "@westpac/ts-config": "workspace:~",
+    "autoprefixer": "~10.4.14",
+    "eslint": "^8.29.0",
+    "eslint-config-next": "13.1.1",
+    "postcss": "~8.4.24",
+    "tailwind-variants": "~0.1.13",
+    "tailwindcss": "~3.3.2",
+    "typescript": "^5.1.3"
+  }
+}

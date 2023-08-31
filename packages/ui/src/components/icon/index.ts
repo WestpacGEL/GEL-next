@@ -233,4 +233,5 @@ export { STGLogoIcon } from './components/stg-logo-icon.js';
 export { WBCLogoIcon } from './components/wbc-logo-icon.js';
 export { WBGLogoIcon } from './components/wbg-logo-icon.js';
 
+export { Icon } from './icon.component.js';
 export { type IconProps } from './icon.types.js';
