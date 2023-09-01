@@ -3,8 +3,8 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'border-border box-border w-full overflow-hidden border bg-white p-[0.0625rem]',
-      innerBar: 'bg-hero box-border h-full text-right leading-tight transition-[width] duration-[.6s]',
+      base: 'box-border w-full overflow-hidden border border-border bg-white p-[0.0625rem]',
+      innerBar: 'box-border h-full bg-hero text-right leading-tight transition-[width] duration-[.6s]',
       label: 'typography-body-10 mx-[0.75rem] my-0 block font-bold text-white',
     },
     variants: {

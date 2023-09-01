@@ -18,6 +18,9 @@ const config: StorybookConfig = {
   },
   async viteFinal(config) {
     return mergeConfig(config, {
+      optimizeDeps: {
+        exclude: ['@duetds/date-picker/dist/loader'],
+      },
       define: {
         'process.env': {},
       },
