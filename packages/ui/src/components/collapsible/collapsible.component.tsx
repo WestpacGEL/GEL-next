@@ -15,7 +15,7 @@ export function Collapsible({
   open = false,
   text,
   size = 'medium',
-  onClick = () => null,
+  onClick = () => undefined,
 }: CollapsibleProps) {
   const [contentOpen, setContentOpen] = useState(open);
 

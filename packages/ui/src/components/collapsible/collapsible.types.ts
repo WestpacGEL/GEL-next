@@ -6,7 +6,7 @@ export type CollapsibleProps = {
   /**
    * A function for the onClick event
    */
-  onClick?: () => unknown;
+  onClick?: () => void;
   /**
    * State of whether the Collapsible is open
    */

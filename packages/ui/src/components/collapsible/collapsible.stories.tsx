@@ -10,7 +10,6 @@ const meta: Meta<typeof Collapsible> = {
     (Story: StoryFn) => (
       <div className="typography-body-10 p-3">
         <Story />
-        <Story />
       </div>
     ),
   ],
@@ -41,7 +40,7 @@ export const DefaultStory: Story = {
 export const CollapsibleSizes = () => (
   <div className="typography-body-10 p-3">
     {SIZES.map((size: any) => (
-      <div className="mb-2">
+      <div className="mb-2" key={size}>
         <h2 className="typography-body-8 mb-1 font-bold">{size}</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur illum quidem neque quod impedit,
@@ -75,7 +74,7 @@ export const CollapsibleSizes = () => (
 export const CollapsibleOpen = () => (
   <div className="typography-body-10 p-3">
     {SIZES.map((size: any) => (
-      <div className="mb-2">
+      <div className="mb-2" key={size}>
         <h2 className="typography-body-8 mb-1 font-bold">{size}</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur illum quidem neque quod impedit,
