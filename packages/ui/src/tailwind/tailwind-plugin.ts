@@ -5,6 +5,7 @@ import { BREAKPOINTS } from './constants/breakpoints.js';
 import { COLORS, DEFAULT_BODY_TYPOGRAPHY, FONT_TYPES, SPACING } from './constants/index.js';
 import { THEMES } from './themes/index.js';
 import { theme as WBCTheme } from './themes/wbc.js';
+import { generateDatePicker } from './utils/generate-date-picker-component.js';
 import { createFontSizes, generateFontComponents, generateFormControlComponents } from './utils/index.js';
 
 /**
@@ -25,6 +26,7 @@ export const WestpacUIKitBasePlugin = plugin(
     });
     addComponents(generateFontComponents(theme('typographySizes'), theme));
     addComponents(generateFormControlComponents(theme('formControl')));
+    addComponents(generateDatePicker());
   },
   {
     theme: {
@@ -56,6 +58,13 @@ export const WestpacUIKitBasePlugin = plugin(
         },
         boxShadow: {
           switch: '0.1875rem 0 0.375rem 0 rgba(0,0,0,0.53)',
+        },
+        maxWidth: {
+          xsl: BREAKPOINTS.xsl,
+          sm: BREAKPOINTS.sm,
+          md: BREAKPOINTS.md,
+          lg: BREAKPOINTS.lg,
+          container: '1320px', //1200 (lg) + 60 (paddingHorizontal) + 60 (paddingHorizontal)
         },
       },
       typographySizes: {

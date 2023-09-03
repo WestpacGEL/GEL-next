@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -21,6 +21,9 @@
     },
     "./icon": {
       "default": "./dist/components/icon/index.js"
+    },
+    "./pictogram": {
+      "default": "./dist/components/pictogram/index.js"
     },
     "./symbol": {
       "default": "./dist/components/symbol/index.js"
@@ -72,6 +75,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "~14.4.3",
+    "@types/lodash-es": "~4.17.8",
     "@types/prettier": "~2.7.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.2.1",
@@ -103,6 +107,7 @@
     "vitest": "^0.30.1"
   },
   "dependencies": {
+    "@duetds/date-picker": "~1.4.0",
     "@react-aria/accordion": "3.0.0-alpha.19",
     "@react-aria/utils": "~3.18.0",
     "@react-spectrum/utils": "~3.10.0",
@@ -112,6 +117,7 @@
     "@westpac/ts-config": "workspace:~",
     "clsx": "^1.2.1",
     "framer-motion": "~10.12.16",
+    "lodash-es": "~4.17.21",
     "react-aria": "~3.25.0",
     "react-stately": "~3.23.0"
   },
