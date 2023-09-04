@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { styles } from './date-picker.styles.js';
 import { type DatePickerProps, DuetDatePickerElement } from './date-picker.types.js';
@@ -22,10 +22,13 @@ export function DatePicker({
   name,
   ...props
 }: DatePickerProps) {
+  const [initialized, setInitialized] = useState(false);
+
   useEffect(() => {
     const initDatePicker = async () => {
       const { defineCustomElements } = await import('@duetds/date-picker/custom-element');
       defineCustomElements(window);
+      setInitialized(true);
     };
     initDatePicker();
   }, []);
@@ -41,13 +44,13 @@ export function DatePicker({
   const dateAdapter = useMemo(
     () => ({
       parse(value = '', createDate: any) {
-        const matches = value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+        const matches = value.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
         if (matches) {
           return createDate(matches[3], matches[2], matches[1]);
         }
       },
       format(date: Date) {
-        return formatDate(date, 'dd/mm/yyyy');
+        return formatDate(date, 'dd-mm-yyyy');
       },
     }),
     [],
@@ -89,12 +92,15 @@ export function DatePicker({
     }
     ref.current.dateAdapter = dateAdapter;
     ref.current.localization = localization;
+
     ref.current.value = value;
+    ref.current.identifier = id;
+    ref.current.name = name;
 
     ref.current.isDateDisabled = (date: Date) => {
       return isDateDisabled(date, disableWeekends, disableDaysOfWeek, disableDates);
     };
-  }, [ref]);
+  }, [ref, initialized]);
 
   useLayoutEffect(() => {
     if (!ref.current) {
@@ -103,15 +109,7 @@ export function DatePicker({
     ref.current.value = value;
   }, [value, ref]);
 
-  useEffect(() => {
-    if (!ref.current) {
-      return;
-    }
-    ref.current.identifier = id;
-    ref.current.name = name;
-  }, [ref]);
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!ref.current) {
       return;
     }
