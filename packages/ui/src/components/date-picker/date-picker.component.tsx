@@ -22,15 +22,31 @@ export function DatePicker({
   name,
   ...props
 }: DatePickerProps) {
-  useEffect(() => {
-    const initDatePicker = async () => {
-      const { defineCustomElements } = await import('@duetds/date-picker/custom-element');
-      defineCustomElements(window);
-    };
-    initDatePicker();
-  }, []);
-
   const ref = useRef<DuetDatePickerElement>(null);
+  const initialised = useRef(false);
+
+  useEffect(() => {
+    (async () => {
+      const initDatePicker = async () => {
+        const { defineCustomElements } = await import('@duetds/date-picker/custom-element');
+        defineCustomElements(window);
+        initialised.current = true;
+      };
+      if (!initialised.current) {
+        await initDatePicker();
+      }
+      if (!ref.current) {
+        return;
+      }
+      ref.current.dateAdapter = dateAdapter;
+      ref.current.localization = localization;
+      ref.current.value = value;
+
+      ref.current.isDateDisabled = (date: Date) => {
+        return isDateDisabled(date, disableWeekends, disableDaysOfWeek, disableDates);
+      };
+    })();
+  }, [ref]);
 
   useListener(ref, 'duetChange', onChange);
   useListener(ref, 'duetFocus', onFocus);
@@ -82,19 +98,6 @@ export function DatePicker({
       monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     };
   }, [placeholder]);
-
-  useLayoutEffect(() => {
-    if (!ref.current) {
-      return;
-    }
-    ref.current.dateAdapter = dateAdapter;
-    ref.current.localization = localization;
-    ref.current.value = value;
-
-    ref.current.isDateDisabled = (date: Date) => {
-      return isDateDisabled(date, disableWeekends, disableDaysOfWeek, disableDates);
-    };
-  }, [ref]);
 
   useLayoutEffect(() => {
     if (!ref.current) {
