@@ -1,10 +1,10 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { DatePicker } from './date-picker.component.js';
 import { styles } from './date-picker.styles.js';
 import { createDate, formatDate, isDateDisabled } from './date-picker.utils.js';
 
-vi.mock('@duetds/date-picker/dist/loader', () => {
+vi.mock('@duetds/date-picker/custom-element', () => {
   const createMockDatePicker = (w: Window) => {
     customElements.get('duet-date-picker') ||
       customElements.define(
@@ -13,6 +13,7 @@ vi.mock('@duetds/date-picker/dist/loader', () => {
           constructor() {
             super();
             const p = w.document.createElement('p');
+            p.setAttribute('role', 'date-picker');
             p.textContent = 'duet-ds-date-picker';
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
@@ -40,9 +41,9 @@ vi.mock('@duetds/date-picker/dist/loader', () => {
 });
 
 describe('DatePicker', () => {
-  it('renders the custom date picker element, bind the parse and format functions to the date adaptor', () => {
-    const { getByText } = render(<DatePicker />);
-    const el = getByText('duet-ds-date-picker');
+  it('renders the custom date picker element, bind the parse and format functions to the date adaptor', async () => {
+    render(<DatePicker />);
+    const el = await screen.findByText('duet-ds-date-picker');
     expect(el).toBeInTheDocument();
     expect(el.getAttribute('data-parse-date')).toBe('2012-12-12');
     expect(el.getAttribute('data-formatted-date')).toBe('04/12/2029');

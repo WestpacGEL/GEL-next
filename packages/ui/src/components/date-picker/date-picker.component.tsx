@@ -1,4 +1,3 @@
-import { defineCustomElements } from '@duetds/date-picker/dist/loader';
 import React, { useEffect, useLayoutEffect, useMemo, useRef } from 'react';
 
 import { styles } from './date-picker.styles.js';
@@ -24,8 +23,11 @@ export function DatePicker({
   ...props
 }: DatePickerProps) {
   useEffect(() => {
-    // Register Duet Date Picker
-    defineCustomElements(window);
+    const initDatePicker = async () => {
+      const { defineCustomElements } = await import('@duetds/date-picker/custom-element');
+      defineCustomElements(window);
+    };
+    initDatePicker();
   }, []);
 
   const ref = useRef<DuetDatePickerElement>(null);
