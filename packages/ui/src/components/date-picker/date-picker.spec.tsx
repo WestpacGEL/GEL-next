@@ -24,9 +24,9 @@ vi.mock('@duetds/date-picker/custom-element', () => {
             const formattedDate = dateAdapter?.format(new Date('2029-12-04T00:12:00.000Z'));
             p.setAttribute('data-formatted-date', formattedDate);
             const _createDate = (s1: string, s2: string, s3: string) => {
-              return `${s1}-${s2}-${s3}`;
+              return `${s1}-${s2}-${s3}T00:00:00.000Z`;
             };
-            const parseDate = dateAdapter?.parse('12/12/2012', _createDate);
+            const parseDate = dateAdapter?.parse('12-12-2012', _createDate);
             p.setAttribute('data-parse-date', parseDate);
 
             this.appendChild(p);
@@ -45,8 +45,8 @@ describe('DatePicker', () => {
     render(<DatePicker />);
     const el = await screen.findByText('duet-ds-date-picker');
     expect(el).toBeInTheDocument();
-    expect(el.getAttribute('data-parse-date')).toBe('2012-12-12');
-    expect(el.getAttribute('data-formatted-date')).toBe('04/12/2029');
+    expect(el.getAttribute('data-parse-date')).toBe('2012-12-12T00:00:00.000Z');
+    expect(el.getAttribute('data-formatted-date')).toBe('04-12-2029');
   });
 
   it('renders the style correctly', () => {
