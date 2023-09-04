@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { useButton, useComboBox, useFilter, useSearchField } from 'react-aria';
-import { useComboBoxState, useSearchFieldState } from 'react-stately';
+import { Item, useComboBoxState, useSearchFieldState } from 'react-stately';
 
 import { ClearIcon } from '../icon/index.js';
 
 import { styles as autocompleteStyles } from './autocomplete.styles.js';
 import { type AutocompleteProps } from './autocomplete.types.js';
 import { ListBox, Popover } from './components/index.js';
-
-export { Item } from 'react-stately';
 
 export function Autocomplete<T extends object>({
   size = 'medium',
@@ -34,8 +32,8 @@ export function Autocomplete<T extends object>({
   );
 
   const styles = autocompleteStyles({
-    isFocused: state.isFocused,
     isDisabled,
+    isFocused: state.isFocused,
     size,
     invalid,
   });
@@ -47,7 +45,11 @@ export function Autocomplete<T extends object>({
   };
 
   const searchState = useSearchFieldState(searchProps);
-  const { clearButtonProps } = useSearchField(searchProps, searchState, inputRef);
+  const { clearButtonProps } = useSearchField(
+    { ...searchProps, 'aria-label': props['aria-label'], 'aria-labelledby': props['aria-labelledby'] },
+    searchState,
+    inputRef,
+  );
   const clearButtonRef = React.useRef(null);
   const { buttonProps } = useButton(clearButtonProps, clearButtonRef);
   const outerRef = React.useRef(null);
@@ -72,15 +74,7 @@ export function Autocomplete<T extends object>({
       </div>
 
       {state.isOpen && (
-        <Popover
-          popoverRef={popoverRef}
-          triggerRef={outerRef}
-          state={state}
-          isNonModal
-          placement="bottom start"
-          // TODO: Size suppose to be according to the input size.
-          className="w-35"
-        >
+        <Popover popoverRef={popoverRef} triggerRef={outerRef} state={state} isNonModal placement="bottom start">
           <ListBox {...listBoxProps} listBoxRef={listBoxRef} state={state} />
           {footer && <div className="border-t border-t-border px-3 py-2">{footer}</div>}
         </Popover>
@@ -88,3 +82,5 @@ export function Autocomplete<T extends object>({
     </div>
   );
 }
+
+Autocomplete.Item = Item;

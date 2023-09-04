@@ -6,7 +6,7 @@ export const styles = tv(
       base: 'relative flex flex-col',
       label: 'block text-left text-sm font-medium text-text',
       outerWrapper:
-        'form-control relative flex flex-row items-center overflow-hidden pr-2 disabled:form-control-disabled focus:focus-outline',
+        'form-control relative flex w-full flex-row items-center overflow-hidden pr-2 disabled:form-control-disabled focus:focus-outline',
       input: 'w-full appearance-none bg-[transparent] outline-none',
       clearButton: 'flex cursor-default items-center justify-center text-text-50 hover:text-border-60',
     },

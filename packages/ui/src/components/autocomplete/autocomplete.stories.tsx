@@ -1,6 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { Key, useState } from 'react';
 
-import { Autocomplete, Item } from './autocomplete.component.js';
+import { Autocomplete } from './autocomplete.component.js';
 
 const meta: Meta<typeof Autocomplete> = {
   title: 'Example/Autocomplete',
@@ -14,7 +15,7 @@ const meta: Meta<typeof Autocomplete> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'centered',
   },
 };
 
@@ -26,15 +27,38 @@ type Story = StoryObj<typeof meta>;
  */
 export const DefaultStory: Story = {
   args: {
-    label: 'My label',
+    'aria-label': 'Animals',
     children: [
-      <Item key="red panda">Red Panda</Item>,
-      <Item key="cat">Cat</Item>,
-      <Item key="dog">Dog</Item>,
-      <Item key="aardvark">Aardvark</Item>,
-      <Item key="kangaroo">Kangaroo</Item>,
-      <Item key="snake">Snake</Item>,
+      <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>,
+      <Autocomplete.Item key="cat">Cat</Autocomplete.Item>,
+      <Autocomplete.Item key="dog">Dog</Autocomplete.Item>,
+      <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>,
+      <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>,
+      <Autocomplete.Item key="snake">Snake</Autocomplete.Item>,
     ],
+  },
+};
+
+/**
+ * > Controlled usage example
+ */
+export const ControlledStory: Story = {
+  args: {},
+  render: () => {
+    const [selectedKey, setSelectedKey] = useState<Key>();
+    const handleSelectionChange = (key: Key) => {
+      setSelectedKey(key);
+    };
+    return (
+      <Autocomplete onSelectionChange={handleSelectionChange} selectedKey={selectedKey} aria-label="Animals">
+        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+        <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
+        <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
+        <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
+        <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
+        <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+      </Autocomplete>
+    );
   },
 };
 
@@ -43,15 +67,15 @@ export const DefaultStory: Story = {
  */
 export const DisabledStory: Story = {
   args: {
-    label: 'My label',
     isDisabled: true,
+    'aria-label': 'Disable example',
     children: [
-      <Item key="red panda">Red Panda</Item>,
-      <Item key="cat">Cat</Item>,
-      <Item key="dog">Dog</Item>,
-      <Item key="aardvark">Aardvark</Item>,
-      <Item key="kangaroo">Kangaroo</Item>,
-      <Item key="snake">Snake</Item>,
+      <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>,
+      <Autocomplete.Item key="cat">Cat</Autocomplete.Item>,
+      <Autocomplete.Item key="dog">Dog</Autocomplete.Item>,
+      <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>,
+      <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>,
+      <Autocomplete.Item key="snake">Snake</Autocomplete.Item>,
     ],
   },
 };
@@ -61,15 +85,15 @@ export const DisabledStory: Story = {
  */
 export const InvalidStory: Story = {
   args: {
-    label: 'My label',
     invalid: true,
+    'aria-label': 'Invalid example',
     children: [
-      <Item key="red panda">Red Panda</Item>,
-      <Item key="cat">Cat</Item>,
-      <Item key="dog">Dog</Item>,
-      <Item key="aardvark">Aardvark</Item>,
-      <Item key="kangaroo">Kangaroo</Item>,
-      <Item key="snake">Snake</Item>,
+      <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>,
+      <Autocomplete.Item key="cat">Cat</Autocomplete.Item>,
+      <Autocomplete.Item key="dog">Dog</Autocomplete.Item>,
+      <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>,
+      <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>,
+      <Autocomplete.Item key="snake">Snake</Autocomplete.Item>,
     ],
   },
 };
@@ -84,13 +108,13 @@ export const SizesStory: Story = {
       <>
         {['small', 'medium', 'large', 'xlarge'].map(size => (
           <div className="py-2" key={size}>
-            <Autocomplete label={size} size={size as any}>
-              <Item key="red panda">Red Panda</Item>
-              <Item key="cat">Cat</Item>
-              <Item key="dog">Dog</Item>
-              <Item key="aardvark">Aardvark</Item>
-              <Item key="kangaroo">Kangaroo</Item>
-              <Item key="snake">Snake</Item>
+            <Autocomplete label={size} size={size as any} aria-label={`size ${size}`}>
+              <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+              <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
+              <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
+              <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
+              <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
+              <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
             </Autocomplete>
           </div>
         ))}
@@ -108,12 +132,30 @@ export const FooterStory: Story = {
     return (
       <div className="py-2">
         <Autocomplete label="With footer" footer={<h3>Footer</h3>}>
-          <Item key="red panda">Red Panda</Item>
-          <Item key="cat">Cat</Item>
-          <Item key="dog">Dog</Item>
-          <Item key="aardvark">Aardvark</Item>
-          <Item key="kangaroo">Kangaroo</Item>
-          <Item key="snake">Snake</Item>
+          <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+          <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
+          <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
+          <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
+          <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
+          <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+          <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+          <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
+          <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
+          <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
+          <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
+          <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+          <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+          <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
+          <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
+          <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
+          <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
+          <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+          <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+          <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
+          <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
+          <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
+          <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
+          <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
         </Autocomplete>
       </div>
     );

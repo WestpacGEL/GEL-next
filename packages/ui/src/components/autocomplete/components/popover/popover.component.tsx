@@ -15,12 +15,14 @@ export function Popover(props: PopoverProps) {
     state,
   );
 
+  const width = props.triggerRef.current?.getBoundingClientRect().width;
   return (
     <Overlay>
       {!isNonModal && <div {...underlayProps} className="fixed inset-0" />}
 
       <div
         {...popoverProps}
+        style={{ ...popoverProps.style, width: width ? `${width}px` : undefined }}
         ref={popoverRef}
         className={clsx('z-10 border border-border bg-white shadow-lg', className)}
       >
