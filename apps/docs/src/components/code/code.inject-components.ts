@@ -18,6 +18,7 @@ export {
   Link,
   Table,
   DatePicker,
+  Panel,
 } from '@westpac/ui';
 
 export {

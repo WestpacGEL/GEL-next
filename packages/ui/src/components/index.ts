@@ -19,3 +19,4 @@ export * from './link/index.js';
 export * from './date-picker/index.js';
 export * from './grid/index.js';
 export * from './table/index.js';
+export * from './panel/index.js';

@@ -24,6 +24,7 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/link', label: 'Link' },
       { href: '/components/table', label: 'Table' },
       { href: '/components/date-picker', label: 'Date Picker' },
+      { href: '/components/panel', label: 'Panel' },
     ],
   },
 ];
