@@ -92,6 +92,9 @@ export const generateDatePicker = () => {
         '&.is-today': {
           '@apply !shadow-primary !text-text !bg-primary/5': {},
         },
+        '&.is-disabled': {
+          '@apply line-through': {},
+        },
 
         "&[aria-pressed='true']": {
           '@apply border border-opacity-0 !bg-primary !text-white focus:!text-white': {},
