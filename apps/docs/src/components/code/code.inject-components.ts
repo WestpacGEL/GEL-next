@@ -19,6 +19,7 @@ export {
   Table,
   Collapsible,
   DatePicker,
+  Panel,
 } from '@westpac/ui';
 
 export {
