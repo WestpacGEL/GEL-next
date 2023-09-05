@@ -6,7 +6,7 @@ import { PopoverProps } from './popover.types.js';
 
 export function Popover(props: PopoverProps) {
   const ref = React.useRef<HTMLDivElement>(null);
-  const { popoverRef = ref, state, children, className, isNonModal } = props;
+  const { popoverRef = ref, state, children, className, isNonModal, portalContainer } = props;
   const { popoverProps, underlayProps } = usePopover(
     {
       ...props,
@@ -17,7 +17,7 @@ export function Popover(props: PopoverProps) {
 
   const width = props.triggerRef.current?.getBoundingClientRect().width;
   return (
-    <Overlay>
+    <Overlay portalContainer={portalContainer}>
       {!isNonModal && <div {...underlayProps} className="fixed inset-0" />}
 
       <div

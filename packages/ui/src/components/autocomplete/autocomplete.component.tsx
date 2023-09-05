@@ -13,6 +13,7 @@ export function Autocomplete<T extends object>({
   invalid = false,
   isDisabled,
   footer,
+  portalContainer,
   ...props
 }: AutocompleteProps<T>) {
   const { contains } = useFilter({ sensitivity: 'base' });
@@ -74,7 +75,14 @@ export function Autocomplete<T extends object>({
       </div>
 
       {state.isOpen && (
-        <Popover popoverRef={popoverRef} triggerRef={outerRef} state={state} isNonModal placement="bottom start">
+        <Popover
+          popoverRef={popoverRef}
+          triggerRef={outerRef}
+          state={state}
+          isNonModal
+          placement="bottom start"
+          portalContainer={portalContainer}
+        >
           <ListBox {...listBoxProps} listBoxRef={listBoxRef} state={state} />
           {footer && <div className="border-t border-t-border px-3 py-2">{footer}</div>}
         </Popover>
