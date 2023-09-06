@@ -26,6 +26,7 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/collapsible', label: 'Collapsible' },
       { href: '/components/date-picker', label: 'Date Picker' },
       { href: '/components/flexi-cell', label: 'Flexi Cell' },
+      { href: '/components/panel', label: 'Panel' },
     ],
   },
 ];
