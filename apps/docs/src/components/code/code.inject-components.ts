@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 export {
+  Badge,
   Button,
   Well,
   Alert,
@@ -19,12 +20,15 @@ export {
   Table,
   Collapsible,
   DatePicker,
+  FlexiCell,
+  Circle,
   Autocomplete,
   Panel,
 } from '@westpac/ui';
 
 export {
   AddIcon,
+  TickCircleIcon,
   ArrowRightIcon,
   CalendarIcon,
   DeleteIcon,
@@ -39,5 +43,8 @@ export {
   StarRateIcon,
   WriteIcon,
   TelephoneIcon,
+  InfoIcon,
 } from '@westpac/ui/icon';
+
+export { GiftPictogram } from '@westpac/ui/pictogram';
 export { Link as NextLink };

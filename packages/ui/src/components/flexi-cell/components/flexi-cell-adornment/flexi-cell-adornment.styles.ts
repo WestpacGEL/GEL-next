@@ -2,10 +2,12 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    slots: { base: 'typography-body-10 p-2 text-left font-light text-muted' },
+    base: 'flex flex-col items-end gap-1',
     variants: {
-      bordered: {
-        true: { base: 'border border-border' },
+      align: {
+        center: 'justify-center',
+        top: 'justify-start',
+        bottom: 'justify-end',
       },
     },
   },
