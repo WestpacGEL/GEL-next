@@ -82,8 +82,8 @@ describe('Table', () => {
         <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
       </Table>,
     );
-    expect(getByTestId('header-cell')).toHaveClass('border-x-1 border-t-1 border-x-border border-t-border');
-    expect(getByTestId('cell')).toHaveClass('border-x-1');
+    expect(getByTestId('header-cell')).toHaveClass('border-x border-t border-x-border border-t-border');
+    expect(getByTestId('cell')).toHaveClass('border-x');
     expect(getByText('Footer goes here and should colSpan all columns')).toHaveClass('border-border border');
   });
 
