@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { ArrowRightIcon } from '../icon/index.js';
 
@@ -14,22 +14,25 @@ import {
 import { styles as flexiCellStyles } from './flexi-cell.styles.js';
 import { type FlexiCellProps } from './flexi-cell.types.js';
 
-export function FlexiCell({
-  className,
-  tag: Tag = 'div',
-  children,
-  badge,
-  before,
-  body,
-  after,
-  withArrow,
-  withBorder = false,
-  href,
-  ...props
-}: FlexiCellProps) {
+function FlexiCellBase(
+  {
+    className,
+    tag: Tag = 'div',
+    children,
+    badge,
+    before,
+    body,
+    after,
+    withArrow,
+    withBorder = false,
+    href,
+    ...props
+  }: FlexiCellProps,
+  ref: any,
+) {
   const styles = flexiCellStyles({ className, withBorder, isLink: !!href });
   return (
-    <Tag className={styles.base({ className })} href={href} {...props}>
+    <Tag {...({ ref } as any)} className={styles.base({ className })} href={href} {...props}>
       {badge && <div className={styles.badge()}>{badge}</div>}
       {before}
       <div className={styles.bodyWrapper()}>{body ? <FlexiCellBody>{children}</FlexiCellBody> : children}</div>
@@ -43,6 +46,18 @@ export function FlexiCell({
   );
 }
 
+export const FlexiCell = forwardRef(FlexiCellBase) as React.ForwardRefExoticComponent<
+  FlexiCellProps & React.RefAttributes<unknown>
+> & {
+  Adornment: typeof FlexiCellAdornment;
+  Body: typeof FlexiCellBody;
+  Button: typeof FlexiCellButton;
+  Circle: typeof FlexiCellCircle;
+  Footer: typeof FlexiCellFooter;
+  Hint: typeof FlexiCellHint;
+  Label: typeof FlexiCellLabel;
+};
+
 FlexiCell.Body = FlexiCellBody;
 FlexiCell.Footer = FlexiCellFooter;
 FlexiCell.Adornment = FlexiCellAdornment;
@@ -50,3 +65,5 @@ FlexiCell.Hint = FlexiCellHint;
 FlexiCell.Label = FlexiCellLabel;
 FlexiCell.Button = FlexiCellButton;
 FlexiCell.Circle = FlexiCellCircle;
+
+FlexiCell.displayName = 'FlexiCell';

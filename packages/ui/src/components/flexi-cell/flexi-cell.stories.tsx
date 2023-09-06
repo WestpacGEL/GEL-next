@@ -461,7 +461,7 @@ export const PayeeListStory: Story = {
                         {paidAt ? (
                           <FlexiCell.Hint tag="h4">{paidAt}</FlexiCell.Hint>
                         ) : (
-                          <FlexiCell.Button href="/somewhere" iconBefore={InfoIcon} aria-label="more info" />
+                          <FlexiCell.Button tag="a" href="/somewhere" iconBefore={InfoIcon} aria-label="more info" />
                         )}
                       </FlexiCell.Adornment>
                     }
@@ -474,7 +474,7 @@ export const PayeeListStory: Story = {
                         <FlexiCell.Hint>{number}</FlexiCell.Hint>
                       </>
                     ) : (
-                      <a href="#" className="text-[inherit] decoration-[inherit]">
+                      <a href="#" className="text-[inherit] decoration-[inherit] focus:focus-outline">
                         <FlexiCell.Label className="font-medium" tag="h4">
                           {name}
                         </FlexiCell.Label>
@@ -633,7 +633,7 @@ export const ForeignCurrencyListStory: Story = {
                         <FlexiCell.Hint>{number}</FlexiCell.Hint>
                       </>
                     ) : (
-                      <a href="#" className="text-[inherit] decoration-[inherit]">
+                      <a href="#" className="text-[inherit] decoration-[inherit] focus:focus-outline">
                         <FlexiCell.Label className="font-medium" tag="h4">
                           {name}
                         </FlexiCell.Label>
@@ -732,7 +732,7 @@ export const PromotilesVerticalListStory: Story = {
                 </Badge>
               }
             >
-              <FlexiCell.Body tag="a" href="#" className="text-[inherit] decoration-[inherit]">
+              <FlexiCell.Body tag="a" href="#" className="text-[inherit] decoration-[inherit] focus:focus-outline">
                 <img
                   src="https://images.unsplash.com/photo-1657299170950-87e5b0eaf77c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
                   alt=""
@@ -746,10 +746,10 @@ export const PromotilesVerticalListStory: Story = {
               </FlexiCell.Body>
               <FlexiCell.Footer>
                 <div className="mt-2 flex gap-2">
-                  <a href="#">
+                  <a href="#" className="focus:focus-outline">
                     <Badge color="primary">Badge1</Badge>
                   </a>
-                  <a href="#">
+                  <a href="#" className="focus:focus-outline">
                     <Badge color="primary">Badge2</Badge>
                   </a>
                 </div>
