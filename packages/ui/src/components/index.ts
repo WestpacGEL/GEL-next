@@ -20,3 +20,5 @@ export * from './date-picker/index.js';
 export * from './grid/index.js';
 export * from './table/index.js';
 export * from './collapsible/index.js';
+export * from './circle/index.js';
+export * from './flexi-cell/index.js';
