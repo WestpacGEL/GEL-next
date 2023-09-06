@@ -19,7 +19,6 @@ export function FlexiCell({
   tag: Tag = 'div',
   children,
   badge,
-  badgeZIndex,
   before,
   body,
   after,
@@ -28,7 +27,7 @@ export function FlexiCell({
   href,
   ...props
 }: FlexiCellProps) {
-  const styles = flexiCellStyles({ withBorder, isLink: !!href });
+  const styles = flexiCellStyles({ className, withBorder, isLink: !!href });
   return (
     <Tag className={styles.base({ className })} href={href} {...props}>
       {badge && <div className={styles.badge()}>{badge}</div>}
@@ -43,6 +42,7 @@ export function FlexiCell({
     </Tag>
   );
 }
+
 FlexiCell.Body = FlexiCellBody;
 FlexiCell.Footer = FlexiCellFooter;
 FlexiCell.Adornment = FlexiCellAdornment;

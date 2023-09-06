@@ -65,7 +65,7 @@ const meta: Meta<typeof FlexiCell> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<any>;
 
 /**
  * > Default usage example
