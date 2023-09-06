@@ -653,23 +653,23 @@ export const ForeignCurrencyListStory: Story = {
 
 const MOCK_PROMOS = [
   {
-    title: 'This is talking about the bonus.',
-    subtitle: 'This is more about the bonus and all the other exciting things about this.',
+    title: 'Get 50% Off on All Products',
+    subtitle: 'Limited time offer! Save big on our entire range of products.',
     stars: true,
   },
   {
-    title: 'This is a longer heading talking all about the bonus this one wraps.',
-    subtitle: 'This is more about the bonus',
+    title: 'Exclusive Membership Benefits',
+    subtitle: 'Unlock premium features and discounts with our membership program.',
     stars: false,
   },
   {
-    title: 'This is talking about the bonus.',
-    subtitle: 'This is more about the bonus and all the other exciting things about this.',
+    title: 'New Arrival Alert!',
+    subtitle: 'Discover the latest arrivals and stay ahead of the trend.',
     stars: false,
   },
   {
-    title: 'This is a longer heading talking all about the bonus this one wraps.',
-    subtitle: 'This is more about the bonus',
+    title: 'Weekend Special Sale',
+    subtitle: "Don't miss out on our weekend sale with massive discounts!",
     stars: false,
   },
 ];
