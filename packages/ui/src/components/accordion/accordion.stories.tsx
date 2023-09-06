@@ -17,7 +17,7 @@ const meta: Meta<typeof Accordion> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'centered',
   },
 };
 

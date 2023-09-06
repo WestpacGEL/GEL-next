@@ -22,6 +22,7 @@ export {
   DatePicker,
   FlexiCell,
   Circle,
+  Autocomplete,
   Panel,
 } from '@westpac/ui';
 

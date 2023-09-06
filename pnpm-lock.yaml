@@ -225,6 +225,12 @@ importers:
       '@react-types/accordion':
         specifier: 3.0.0-alpha.14
         version: 3.0.0-alpha.14(react@18.2.0)
+      '@react-types/combobox':
+        specifier: ~3.7.0
+        version: 3.7.0(react@18.2.0)
+      '@react-types/shared':
+        specifier: ~3.18.1
+        version: 3.18.1(react@18.2.0)
       '@storybook/addon-essentials':
         specifier: ^7.0.21
         version: 7.0.21(react-dom@18.2.0)(react@18.2.0)
@@ -3717,7 +3723,7 @@ packages:
       '@react-types/actiongroup': 3.4.2(react@18.2.0)
       '@react-types/breadcrumbs': 3.6.0(react@18.2.0)
       '@react-types/button': 3.7.3(react@18.2.0)
-      '@react-types/combobox': 3.6.2(react@18.2.0)
+      '@react-types/combobox': 3.7.0(react@18.2.0)
       '@react-types/datepicker': 3.4.0(react@18.2.0)
       '@react-types/grid': 3.1.8(react@18.2.0)
       '@react-types/menu': 3.9.2(react@18.2.0)
@@ -4164,7 +4170,7 @@ packages:
       '@react-stately/combobox': 3.5.2(react@18.2.0)
       '@react-stately/layout': 3.12.2(react@18.2.0)
       '@react-types/button': 3.7.3(react@18.2.0)
-      '@react-types/combobox': 3.6.2(react@18.2.0)
+      '@react-types/combobox': 3.7.0(react@18.2.0)
       '@react-types/shared': 3.18.1(react@18.2.0)
       '@swc/helpers': 0.5.1
       react: 18.2.0
@@ -4844,7 +4850,7 @@ packages:
       '@react-stately/menu': 3.5.3(react@18.2.0)
       '@react-stately/select': 3.5.2(react@18.2.0)
       '@react-stately/utils': 3.7.0(react@18.2.0)
-      '@react-types/combobox': 3.6.2(react@18.2.0)
+      '@react-types/combobox': 3.7.0(react@18.2.0)
       '@react-types/shared': 3.18.1(react@18.2.0)
       '@swc/helpers': 0.5.1
       react: 18.2.0
@@ -5181,14 +5187,13 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-types/combobox@3.6.2(react@18.2.0):
-    resolution: {integrity: sha512-qitu/W3Z3/ihyqocy+8n4HZKRXF5JTMHl1ug3rKps5yCNnVdkWwjPFPM6w180c9QjquThNY3o947LZ1v59qJ4A==}
+  /@react-types/combobox@3.7.0(react@18.2.0):
+    resolution: {integrity: sha512-w9LSAq/DR1mM8lwHk7cGbIGGm75yg+A2pdnLaViFNEVqv7nBUuhHUBzIihnCQ2k/4piWxa5Ih5gcggDFv2yE4g==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
     dependencies:
-      '@react-types/shared': 3.18.1(react@18.2.0)
+      '@react-types/shared': 3.19.0(react@18.2.0)
       react: 18.2.0
-    dev: false
 
   /@react-types/datepicker@3.4.0(react@18.2.0):
     resolution: {integrity: sha512-gQmbeNdVPXpaX8XsvxQb6nRLQZNlsMnDLVVpagVno7bifz2cdbthLfMe124nNT/Xr+JXolP+BtlYlZ7IRQVxdA==}
@@ -5326,6 +5331,13 @@ packages:
 
   /@react-types/shared@3.18.1(react@18.2.0):
     resolution: {integrity: sha512-OpTYRFS607Ctfd6Tmhyk6t6cbFyDhO5K+etU35X50pMzpypo1b7vF0mkngEeTc0Xwl0e749ONZNPZskMyu5k8w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+
+  /@react-types/shared@3.19.0(react@18.2.0):
+    resolution: {integrity: sha512-h852l8bWhqUxbXIG8vH3ab7gE19nnP3U1kuWf6SNSMvgmqjiRN9jXKPIFxF/PbfdvnXXm0yZSgSMWfUCARF0Cg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
     dependencies:

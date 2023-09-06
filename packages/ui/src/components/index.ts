@@ -23,3 +23,4 @@ export * from './panel/index.js';
 export * from './collapsible/index.js';
 export * from './circle/index.js';
 export * from './flexi-cell/index.js';
+export * from './autocomplete/index.js';
