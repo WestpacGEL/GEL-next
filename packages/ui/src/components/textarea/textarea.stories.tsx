@@ -14,7 +14,7 @@ const meta: Meta<typeof Textarea> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 

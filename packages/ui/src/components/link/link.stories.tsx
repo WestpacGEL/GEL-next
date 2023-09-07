@@ -16,7 +16,7 @@ const meta: Meta<typeof Link> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 

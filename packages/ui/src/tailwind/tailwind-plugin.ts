@@ -114,10 +114,10 @@ export const WestpacUIKitBasePlugin = plugin(
         disabled: 'cursor-not-allowed border-dashed bg-background text-muted',
         sizes: {
           // Some of the values are not following the spacing so we needed to use static values as following
-          small: 'px-[0.5625rem] pb-[0.25rem] pt-[0.1875rem] text-sm',
-          medium: 'typography-body-9 px-2 py-[0.3125rem]',
+          small: 'px-[0.5625rem] pb-[0.25rem] pt-[0.1875rem] text-sm leading-[1.3rem]',
+          medium: 'typography-body-9 px-2 py-[0.3125rem] leading-6',
           large: 'px-[0.9375rem] py-[0.5rem] text-base',
-          xlarge: 'px-3 pb-[0.625rem] pt-[0.5625rem] text-lg',
+          xlarge: 'px-3 pb-[0.625rem] pt-[0.5625rem] text-lg leading-[1.685rem]',
         },
       },
       focusOutline: 'outline outline-2 outline-offset-[3px] outline-focus',

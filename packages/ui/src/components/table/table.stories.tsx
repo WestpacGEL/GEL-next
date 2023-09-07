@@ -14,7 +14,7 @@ const meta: Meta<typeof Table> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 

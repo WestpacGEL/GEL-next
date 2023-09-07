@@ -15,7 +15,7 @@ const meta: Meta<typeof Tabs> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 
