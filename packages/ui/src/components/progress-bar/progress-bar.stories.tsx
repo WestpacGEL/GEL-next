@@ -17,7 +17,7 @@ const meta: Meta<typeof ProgressBar> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 

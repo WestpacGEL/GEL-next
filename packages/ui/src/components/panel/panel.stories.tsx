@@ -16,7 +16,7 @@ const meta: Meta<typeof Panel> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
   args: {
     heading: 'Panel title',

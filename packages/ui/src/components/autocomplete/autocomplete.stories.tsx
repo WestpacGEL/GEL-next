@@ -138,24 +138,19 @@ export const FooterStory: Story = {
           <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
           <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
           <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
-          <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-          <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-          <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-          <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-          <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-          <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
-          <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-          <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-          <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-          <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-          <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-          <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
-          <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-          <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-          <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-          <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-          <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-          <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+          <Autocomplete.Item key="elephant">Elephant</Autocomplete.Item>
+          <Autocomplete.Item key="giraffe">Giraffe</Autocomplete.Item>
+          <Autocomplete.Item key="lion">Lion</Autocomplete.Item>
+          <Autocomplete.Item key="tiger">Tiger</Autocomplete.Item>
+          <Autocomplete.Item key="penguin">Penguin</Autocomplete.Item>
+          <Autocomplete.Item key="octopus">Octopus</Autocomplete.Item>
+          <Autocomplete.Item key="cheetah">Cheetah</Autocomplete.Item>
+          <Autocomplete.Item key="polar bear">Polar Bear</Autocomplete.Item>
+          <Autocomplete.Item key="koala">Koala</Autocomplete.Item>
+          <Autocomplete.Item key="dolphin">Dolphin</Autocomplete.Item>
+          <Autocomplete.Item key="flamingo">Flamingo</Autocomplete.Item>
+          <Autocomplete.Item key="elephant seal">Elephant Seal</Autocomplete.Item>
+          <Autocomplete.Item key="orca">Orca</Autocomplete.Item>
         </Autocomplete>
       </div>
     );

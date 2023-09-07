@@ -14,7 +14,7 @@ const meta: Meta<typeof Checkbox> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
   argTypes: {
     isDisabled: {

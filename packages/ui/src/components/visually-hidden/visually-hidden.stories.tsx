@@ -8,7 +8,7 @@ const meta: Meta<typeof VisuallyHidden> = {
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 

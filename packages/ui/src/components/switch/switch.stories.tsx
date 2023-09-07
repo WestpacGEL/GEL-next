@@ -14,7 +14,7 @@ const meta: Meta<typeof Switch> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 

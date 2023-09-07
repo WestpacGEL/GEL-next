@@ -8,7 +8,7 @@ const meta: Meta<typeof Circle> = {
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
   parameters: {
-    layout: 'center',
+    layout: 'centered',
   },
 };
 
@@ -19,5 +19,7 @@ type Story = StoryObj<typeof meta>;
  * > Default usage example
  */
 export const DefaultStory: Story = {
-  args: {},
+  args: {
+    children: 'GK',
+  },
 };
