@@ -14,7 +14,7 @@ const meta: Meta<typeof Button> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 

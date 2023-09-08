@@ -14,7 +14,7 @@ const meta: Meta<typeof Collapsible> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 
