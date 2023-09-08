@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 
-import { IconProps } from 'src/components/icon/index.js';
+import { IconProps } from '../../../icon/index.js';
 
 export type ItemProps = {
   /**
