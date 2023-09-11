@@ -24,6 +24,7 @@ export {
   Circle,
   Autocomplete,
   Panel,
+  Modal,
 } from '@westpac/ui';
 
 export {
