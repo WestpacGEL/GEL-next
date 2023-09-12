@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { forwardRef, useContext, useRef } from 'react';
 
 import { ListContext } from '../../list.component.js';
 import { getStateValues } from '../../list.utils.js';
@@ -6,7 +6,7 @@ import { getStateValues } from '../../list.utils.js';
 import { styles as itemStyles } from './item.styles.js';
 import { type ItemProps } from './item.types.js';
 
-export function Item({ className, children, href, look, type, spacing, icon, ...props }: ItemProps) {
+export function BaseItem({ className, children, href, look, type, spacing, icon, ...props }: ItemProps, ref: any) {
   const state = useContext(ListContext);
 
   const stateValues = getStateValues({ look, type, spacing, state, icon });
@@ -38,7 +38,7 @@ export function Item({ className, children, href, look, type, spacing, icon, ...
       {bulletToRender()}
       <li className={styles.base({ className })} {...props}>
         {type === 'link' ? (
-          <a href={href} className={styles.link()}>
+          <a href={href} className={styles.link()} ref={ref}>
             {children}
           </a>
         ) : (
@@ -48,3 +48,5 @@ export function Item({ className, children, href, look, type, spacing, icon, ...
     </div>
   );
 }
+
+export const Item = forwardRef(BaseItem);
