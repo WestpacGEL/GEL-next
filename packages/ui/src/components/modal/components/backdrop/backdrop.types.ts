@@ -14,6 +14,10 @@ export type BackdropProps = {
    */
   className?: string;
   /**
+   * Element where backdrop will be placed
+   */
+  portalContainer?: Element;
+  /**
    * OverlayTriggerState props
    */
   state: OverlayTriggerState;

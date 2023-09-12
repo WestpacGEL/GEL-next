@@ -4,7 +4,7 @@ import { Overlay, useModalOverlay } from 'react-aria';
 import { styles as backdropStyles } from './backdrop.styles.js';
 import { type BackdropProps } from './backdrop.types.js';
 
-export function Backdrop({ zIndex = 100, ...props }: BackdropProps) {
+export function Backdrop({ zIndex = 100, portalContainer, ...props }: BackdropProps) {
   const { children, state, className } = props;
 
   const ref = useRef(null);
@@ -18,10 +18,8 @@ export function Backdrop({ zIndex = 100, ...props }: BackdropProps) {
   }
 
   return (
-    // Animate opacity and backdrop blur of underlay
-    <Overlay>
+    <Overlay portalContainer={portalContainer}>
       <div style={{ zIndex }} className={styles.base()} {...underlayProps}>
-        {/* Animate modal slightly upward when entering, and downward when exiting. */}
         <div {...modalProps} ref={ref} className={styles.modal()}>
           {children}
         </div>
