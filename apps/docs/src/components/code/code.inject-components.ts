@@ -20,6 +20,7 @@ export {
   Table,
   Collapsible,
   DatePicker,
+  List,
   FlexiCell,
   Circle,
   Autocomplete,
