@@ -12,7 +12,7 @@ describe('Input', () => {
     const style = styles({ size: 'medium' });
     // TODO: use some variants for test
     expect(style).toBe(
-      'form-control read-only:form-control-disabled disabled:form-control-disabled focus:focus-outline form-control-medium',
+      'form-control flex-1 read-only:form-control-disabled disabled:form-control-disabled focus:focus-outline group-[.input-field-after]:rounded-r-none group-[.input-field-before]:rounded-l-none group-[.input-field-after]:border-r-0 group-[.input-field-before]:border-l-0 form-control-medium group-[.input-field-inset-after]:pr-7 group-[.input-field-inset-before]:pl-7',
     );
   });
 });

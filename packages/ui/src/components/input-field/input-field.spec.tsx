@@ -11,6 +11,6 @@ describe('InputField', () => {
   it('renders the style correctly', () => {
     const style = styles();
     // TODO: use some variants for test
-    expect(style).toBe('');
+    expect(style).toBe('group m-0 mb-5 border-none p-0');
   });
 });
