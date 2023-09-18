@@ -7,6 +7,8 @@ import { Button, Input, Select } from '../index.js';
 import { InputField } from './input-field.component.js';
 import { styles } from './input-field.styles.js';
 
+const MOCK_INPUT = 'Mock input';
+
 describe('InputField', () => {
   it('renders the component', () => {
     const { container } = render(
@@ -117,7 +119,7 @@ describe('InputField', () => {
         render(
           <InputField
             before={
-              <Select size="medium" inline={false} invalid={false}>
+              <Select size="medium" invalid={false}>
                 <option>Select</option>
                 <option>One</option>
                 <option>Two</option>
@@ -136,7 +138,7 @@ describe('InputField', () => {
         render(
           <InputField
             before={
-              <Select size="medium" inline={false} invalid={false}>
+              <Select size="medium" invalid={false}>
                 <option>Select</option>
                 <option>One</option>
                 <option>Two</option>
@@ -205,7 +207,7 @@ describe('InputField', () => {
         render(
           <InputField
             after={
-              <Select size="medium" inline={false} invalid={false}>
+              <Select size="medium" invalid={false}>
                 <option>Select</option>
                 <option>One</option>
                 <option>Two</option>
@@ -224,7 +226,7 @@ describe('InputField', () => {
         render(
           <InputField
             after={
-              <Select size="medium" inline={false} invalid={false}>
+              <Select size="medium" invalid={false}>
                 <option>Select</option>
                 <option>One</option>
                 <option>Two</option>
@@ -250,7 +252,7 @@ describe('InputField', () => {
         </InputField>,
       );
 
-      expect(screen.getByRole('textbox', { name: 'Mock input' })).toBeInTheDocument();
+      expect(screen.getByRole('textbox', { name: MOCK_INPUT })).toBeInTheDocument();
     });
 
     describe('when a default value is defined', () => {
@@ -260,7 +262,7 @@ describe('InputField', () => {
             <Input defaultValue="test-value" />
           </InputField>,
         );
-        expect(screen.getByRole('textbox', { name: 'Mock input' })).toHaveValue('test-value');
+        expect(screen.getByRole('textbox', { name: MOCK_INPUT })).toHaveValue('test-value');
       });
     });
 
@@ -272,7 +274,7 @@ describe('InputField', () => {
           </InputField>,
         );
 
-        expect(screen.getByRole('textbox', { name: 'Mock input' })).toHaveValue('test-value');
+        expect(screen.getByRole('textbox', { name: MOCK_INPUT })).toHaveValue('test-value');
       });
     });
 
@@ -285,7 +287,7 @@ describe('InputField', () => {
             <Input value="test-value" onChange={handleChange} />
           </InputField>,
         );
-        const input = screen.getByRole('textbox', { name: 'Mock input' });
+        const input = screen.getByRole('textbox', { name: MOCK_INPUT });
         await user.type(input, 't');
         expect(handleChange).toHaveBeenCalledTimes(1);
       });
@@ -300,7 +302,7 @@ describe('InputField', () => {
           </InputField>,
         );
 
-        const input = screen.getByRole('textbox', { name: 'Mock input' });
+        const input = screen.getByRole('textbox', { name: MOCK_INPUT });
         await user.type(input, 'test-text');
         expect(input).toHaveValue('test-text');
       });
@@ -313,7 +315,7 @@ describe('InputField', () => {
             <Input invalid />
           </InputField>,
         );
-        expect(screen.getByRole('textbox', { name: 'Mock input' })).toBeInvalid();
+        expect(screen.getByRole('textbox', { name: MOCK_INPUT })).toBeInvalid();
       });
     });
 
@@ -325,7 +327,7 @@ describe('InputField', () => {
           </InputField>,
         );
 
-        expect(screen.getByRole('textbox', { name: 'Mock input' })).toBeDisabled();
+        expect(screen.getByRole('textbox', { name: MOCK_INPUT })).toBeDisabled();
       });
     });
   });
