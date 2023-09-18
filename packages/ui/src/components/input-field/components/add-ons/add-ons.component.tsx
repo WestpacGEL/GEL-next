@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { styles } from './add-ons.styles.js';
 import { InputAddOnProps } from './add-ons.types.js';
 import { DefaultAddOn, IconAddOn, TextAddOn } from './components/index.js';

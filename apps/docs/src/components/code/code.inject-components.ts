@@ -25,6 +25,7 @@ export {
   Circle,
   Autocomplete,
   Panel,
+  InputField,
 } from '@westpac/ui';
 
 export {
@@ -45,6 +46,11 @@ export {
   WriteIcon,
   TelephoneIcon,
   InfoIcon,
+  SearchIcon,
+  VisibilityIcon,
+  CloseIcon,
+  VisibilityOffIcon,
+  RefreshIcon,
 } from '@westpac/ui/icon';
 
 export { GiftPictogram } from '@westpac/ui/pictogram';
