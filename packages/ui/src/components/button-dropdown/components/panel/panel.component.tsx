@@ -25,7 +25,7 @@ export function Panel({ className, children, state, block, ...props }: PanelProp
     return () => {
       window.document.removeEventListener('focusin', focusHandler);
     };
-  }, [state.isOpen]);
+  }, []);
 
   return (
     <Overlay>
