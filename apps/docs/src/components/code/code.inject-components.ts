@@ -20,11 +20,13 @@ export {
   Table,
   Collapsible,
   DatePicker,
+  List,
   FlexiCell,
   Circle,
   Autocomplete,
   Panel,
   ButtonDropdown,
+  Modal,
 } from '@westpac/ui';
 
 export {

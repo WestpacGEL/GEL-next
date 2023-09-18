@@ -25,10 +25,12 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/table', label: 'Table' },
       { href: '/components/collapsible', label: 'Collapsible' },
       { href: '/components/date-picker', label: 'Date Picker' },
+      { href: '/components/list', label: 'List' },
       { href: '/components/flexi-cell', label: 'Flexi Cell' },
       { href: '/components/autocomplete', label: 'Autocomplete' },
       { href: '/components/panel', label: 'Panel' },
       { href: '/components/button-dropdown', label: 'Button Dropdown' },
+      { href: '/components/modal', label: 'Modal' },
     ],
   },
 ];
