@@ -74,6 +74,7 @@ export function InputField({
       if (isValidElement(child)) {
         return cloneElement(child, {
           size,
+          id,
           'aria-describedby': ariaDescribedByValue,
         } as any);
       }
