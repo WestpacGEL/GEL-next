@@ -15,7 +15,7 @@ export function ComponentTabs({ content }) {
   return (
     <Tabs
       sticky
-      stickyOffset={{ top: '60px' }}
+      stickyOffset={{ top: '66px' }}
       // selectedKey={tab}
       // onSelectionChange={handleChange}
       look="material"

@@ -1,9 +1,13 @@
 import { tv } from 'tailwind-variants';
 // linear-gradient(to right, rgb(0, 47, 108) 0%, rgb(0, 70, 142) 50%, rgb(0, 173, 189) 100%)
+// md:top-[-260px] md:h-[20rem]
+
+// on scroll, header should be 66px
+// tabs should be 90px height and top offset of 66px
 export const styles = tv(
   {
     slots: {
-      base: 'bg-hero sticky top-0 z-50 flex w-full items-center gap-2 px-3 py-2 transition-colors md:top-[-260px] md:h-[20rem] md:items-end',
+      base: 'sticky top-0 z-50 flex w-full items-center gap-2 bg-hero px-3 py-2 transition-colors md:top-[-162px] md:h-[228px] md:items-end',
       hamburgerButton: 'h-6 w-6 md:hidden',
       title: 'typography-brand-8 font-bold text-white',
     },
@@ -15,7 +19,7 @@ export const styles = tv(
         },
         false: {
           base: '',
-          title: 'md:typography-brand-2 p-0 md:p-3',
+          title: 'p-0 md:typography-brand-2 md:p-3',
         },
       },
       brand: {
@@ -33,6 +37,7 @@ export const styles = tv(
         },
         wbc: {
           base: 'bg-primary bg-[url("/imgs/backgrounds/wbc-background.svg")] bg-right-bottom bg-no-repeat',
+          title: 'uppercase',
         },
       },
     },

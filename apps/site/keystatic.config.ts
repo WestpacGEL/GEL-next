@@ -15,9 +15,9 @@ export default config({
   storage,
   singletons: {},
   collections: {
-    components: collection({
-      label: 'Components',
-      path: 'content/design-system/components/*/',
+    designSystem: collection({
+      label: 'Design System',
+      path: 'content/design-system/**/',
       slugField: 'name',
       schema: {
         name: fields.slug({

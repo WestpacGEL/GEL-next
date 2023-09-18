@@ -1,66 +1,52 @@
 'use client';
 
-import { RAMSLogoIcon, WBCLogoIcon, WBGLogoIcon } from '@westpac/ui/icon';
+import { BOMShieldLogo, BSAStackedLogo, RAMSLogo, STGDragonLogo, WBCLogo, WBGLogo } from '@westpac/ui/symbol';
 import { clsx } from 'clsx';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { Key, useCallback, useRef } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
-import { BackToGelSvg } from './components/back-to-gel-svg';
-import { List } from './components/list';
-import { Logo } from './components/logo';
-import { SidebarSelect } from './components/sidebar-select';
+import { BackToGelSvg, Logo, Navigation, SidebarSelect } from './components';
 import { useSidebar } from './sidebar.context';
+import { SidebarProps } from './sidebar.types';
 
 const BANK_OPTIONS = [
   {
     key: 'wbc',
     label: 'Westpac',
-    icon: <WBCLogoIcon className="h-3 w-7" />,
+    icon: <WBCLogo className="h-3 w-[44px]" />,
   },
   {
     key: 'stg',
     label: 'St. George',
-    icon: <WBCLogoIcon className="h-3 w-7" />,
+    icon: <STGDragonLogo className="-mr-2 h-[38px] w-9" />,
   },
   {
     key: 'bom',
     label: 'Bank of Melbourne',
-    icon: <WBCLogoIcon className="h-3 w-7" />,
+    icon: <BOMShieldLogo className="mr-[9px] h-[39px] w-[26px]" />,
   },
   {
     key: 'bsa',
     label: 'Bank of SA',
-    icon: <WBCLogoIcon className="h-3 w-7" />,
+    icon: <BSAStackedLogo className="mr-[8px] h-[46px] w-[27px]" />,
   },
   {
     key: 'wbg',
     label: 'Westpac Group',
-    icon: <WBGLogoIcon className="h-3 w-7" />,
+    icon: <WBGLogo className="mr-[-8px] h-[9px] w-[70px]" />,
   },
   {
     key: 'rams',
     label: 'RAMS',
-    icon: <RAMSLogoIcon className="h-3 w-7" />,
+    icon: <RAMSLogo className="mr-[-8px] h-6 w-[70px]" />,
   },
 ];
 
 // Credits: https://github.com/jmarioste/next-responsive-sidebar-tailwind
 
-// define a NavItem prop
-export type NavItem = {
-  children?: NavItem[];
-  href?: string;
-  icon?: React.ReactNode;
-  label: string;
-};
-// add NavItem prop to component prop
-type SidebarProps = {
-  brand: string;
-  navItems: NavItem[];
-};
-export function Sidebar({ navItems }: SidebarProps) {
+export function Sidebar({ items }: SidebarProps) {
   const { open, setOpen } = useSidebar();
 
   const ref = useRef<HTMLDivElement>(null);
@@ -79,7 +65,6 @@ export function Sidebar({ navItems }: SidebarProps) {
     },
     [router, pathname],
   );
-
   return (
     <div
       className={clsx(
@@ -109,7 +94,7 @@ export function Sidebar({ navItems }: SidebarProps) {
         <Link href="/" className="block" aria-label="Back to GEL">
           <BackToGelSvg />
         </Link>
-        <List items={navItems} brand={brand} />
+        <Navigation items={items} brand={brand} />
       </nav>
     </div>
   );

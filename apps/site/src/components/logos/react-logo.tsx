@@ -1,4 +1,4 @@
-import { Svg } from './components';
+import { Svg } from '@/components/svg';
 
 export function ReactLogo() {
   return (

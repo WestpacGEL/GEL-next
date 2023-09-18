@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import throttle from 'lodash.throttle';
 import { useEffect, useRef, useState } from 'react';
 
-export function StickyHeader(props) {
+export function StickyHeader() {
   const ref = useRef();
   const [stuck, setStuck] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -42,7 +42,6 @@ export function StickyHeader(props) {
         'sticky top-0 z-[1] transition-shadow delay-0 duration-200 ease-[ease]',
         stuck && scrolled && 'shadow-[0_8px_8px_rgba(0,0,0,0.24)]',
       )}
-      {...props}
     />
   );
 }

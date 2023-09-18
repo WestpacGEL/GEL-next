@@ -138,6 +138,9 @@ importers:
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
+      framer-motion:
+        specifier: ~10.12.16
+        version: 10.12.16(react-dom@18.2.0)(react@18.2.0)
       lodash.throttle:
         specifier: ~4.1.1
         version: 4.1.1

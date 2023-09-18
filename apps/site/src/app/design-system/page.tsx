@@ -19,11 +19,6 @@ import {
 
 import { Hero, Section, SectionHeading, SectionItem } from './components';
 
-/*
-To Do
-- backgrounds
-*/
-
 export default function DesignSystemHomePage() {
   return (
     <>

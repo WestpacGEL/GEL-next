@@ -1,4 +1,5 @@
 'use client';
+
 import { Dispatch, SetStateAction, createContext, useContext, useState } from 'react';
 
 type SidebarContextType = { open: boolean | null; setOpen: Dispatch<SetStateAction<boolean>> };

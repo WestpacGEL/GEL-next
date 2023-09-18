@@ -41,7 +41,6 @@ export function SidebarSelect(props: SidebarSelectProps) {
         </div>
         {/* <SelectorIcon className={`h-5 w-5 ${isFocusVisible ? 'text-pink-500' : 'text-gray-500'}`} /> */}
       </button>
-
       {state.isOpen && (
         <Popover state={state} triggerRef={ref} placement="bottom start" className={styles.popover()}>
           <ListBox {...menuProps} state={state} />
