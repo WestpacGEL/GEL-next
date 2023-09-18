@@ -1,7 +1,4 @@
 import { FormHTMLAttributes } from 'react';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './form.styles.js';
 
 export type FormContextValue = {
   inline?: boolean;
@@ -9,4 +6,4 @@ export type FormContextValue = {
   spacing?: 'small' | 'medium';
 };
 
-export type FormProps = FormContextValue & VariantProps<typeof styles> & FormHTMLAttributes<HTMLFormElement>;
+export type FormProps = FormContextValue & FormHTMLAttributes<HTMLFormElement>;
