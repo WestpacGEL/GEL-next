@@ -7,7 +7,7 @@ export type ErrorMessageProps = {
   /**
    * Icon
    */
-  icon?: (...args: unknown[]) => ReactNode;
+  icon?: (...args: unknown[]) => JSX.Element;
   /**
    * Message or messages
    */

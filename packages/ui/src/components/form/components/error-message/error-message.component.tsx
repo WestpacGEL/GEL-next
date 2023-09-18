@@ -7,14 +7,14 @@ import { type ErrorMessageProps } from './error-message.types.js';
 
 export function ErrorMessage({ className, tag: Tag = 'div', icon: Icon, message, ...props }: ErrorMessageProps) {
   const styles = errorMessageStyles({});
-  const FinalIcon = Icon || AlertIcon;
+  const FinalIcon = Icon ?? AlertIcon;
 
   return Array.isArray(message) ? (
     <ul className={styles.list({})} {...props}>
       {message.map(msg => (
         <li className={styles.base({ className })}>
           <FinalIcon
-            copyrightYear="2020"
+            copyrightYear="2023"
             className={styles.icon({})}
             size="xsmall"
             look="outlined"
