@@ -24,6 +24,7 @@ export {
   Circle,
   Autocomplete,
   Panel,
+  ButtonDropdown,
 } from '@westpac/ui';
 
 export {
