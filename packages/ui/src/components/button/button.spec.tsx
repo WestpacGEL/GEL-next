@@ -17,7 +17,7 @@ describe('Button', () => {
   it('renders the style correctly', () => {
     const style = styles({ look: 'primary', size: 'medium' });
     expect(style.base()).toBe(
-      'inline-flex items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 typography-body-9 px-2 py-[0.3125rem] border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50',
+      'inline-flex items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 typography-body-9 px-2 py-[0.3125rem] border-primary bg-primary hover:bg-primary-70 active:bg-primary-50 border text-white',
     );
   });
 
