@@ -7,7 +7,7 @@ export function BaseInput(
   { className, size = 'medium', invalid = false, ...props }: InputProps,
   ref: ForwardedRef<HTMLInputElement>,
 ) {
-  return <input ref={ref} className={styles({ className, size, invalid })} {...props} />;
+  return <input ref={ref} className={styles({ className, size, invalid })} aria-invalid={invalid} {...props} />;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(BaseInput);

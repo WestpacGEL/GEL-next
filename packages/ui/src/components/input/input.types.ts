@@ -3,4 +3,5 @@ import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './input.styles.js';
 
-export type InputProps = VariantProps<typeof styles> & Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;
+export type InputProps = { invalid?: boolean } & Omit<VariantProps<typeof styles>, 'invalid'> &
+  Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;

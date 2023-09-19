@@ -3,8 +3,8 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'border-hero group/panel mb-4 overflow-hidden rounded-[0.1875rem] border',
-      header: 'max-xsl:px-2 px-4 py-[0.625rem]',
+      base: 'group/panel mb-4 overflow-hidden rounded-[0.1875rem] border border-hero',
+      header: 'px-4 py-[0.625rem] max-xsl:px-2',
     },
     variants: {
       look: {
@@ -13,7 +13,7 @@ export const styles = tv(
         },
         faint: {
           base: 'border-border',
-          header: 'text-text bg-background border-b-border border-0 border-b',
+          header: 'border-0 border-b border-b-border bg-background text-text',
         },
       },
     },
