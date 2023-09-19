@@ -33,6 +33,26 @@ export const DefaultStory: Story = {
 };
 
 /**
+ * > SrOnlyLabel usage example
+ */
+export const SrOnlyLabelStory: Story = {
+  args: {},
+  render: () => {
+    return (
+      <InputField
+        label="Label"
+        hideLabel
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        after={<Button>Check</Button>}
+      >
+        <Input />
+      </InputField>
+    );
+  },
+};
+
+/**
  * > Combination usage example
  */
 export const CombinationStory: Story = {
