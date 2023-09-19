@@ -1,12 +1,12 @@
 import { HTMLAttributes } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
-import { styles } from './form-hint.styles.js';
+import { styles } from './form-section.styles.js';
 
-export type FormHintProps = {
+export type FormSectionProps = {
   /**
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & Omit<VariantProps<typeof styles>, 'spacing'> &
+} & VariantProps<typeof styles> &
   HTMLAttributes<Element>;

@@ -9,7 +9,7 @@ import { type FormLabelProps } from './form-label.types.js';
 export function FormLabel({
   className,
   tag: Tag = 'label',
-  spacing = 'medium',
+  spacing,
   srOnly,
   children,
   subLabel = false,
@@ -17,7 +17,7 @@ export function FormLabel({
 }: FormLabelProps) {
   const context = useFormContext();
 
-  const finalSpacing = spacing || context?.spacing;
+  const finalSpacing = spacing || context?.spacing || 'medium';
 
   return srOnly ? (
     <VisuallyHidden>{children}</VisuallyHidden>

@@ -2,13 +2,16 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'typography-body-10 mb-2 text-muted',
+    base: '',
     variants: {
+      inline: {
+        true: 'sm:inline-block sm:align-middle',
+        false: '',
+      },
       spacing: {
-        // TODO: small is not defined
-        small: '-mt-1 mb-2',
-        medium: '-mt-1 mb-2',
-        large: '-mt-2 mb-3',
+        small: 'mb-3',
+        medium: 'mb-3',
+        large: 'mb-4',
       },
     },
   },

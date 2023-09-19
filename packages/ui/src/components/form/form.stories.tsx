@@ -24,12 +24,77 @@ export const DefaultStory: Story = {
   args: {},
   render: () => {
     return (
-      <Form>
-        <Form.Label>This is a label</Form.Label>
-        <Form.Hint>This is a hint</Form.Hint>
-        <Form.ErrorMessage message="This is an error message" />
-        <Input />
-      </Form>
+      <>
+        <h2 className="typography-body-7 my-4">Default size and spacing</h2>
+        <Form>
+          <Form.Section>
+            <Form.ChitChat>
+              Hello, I’m the friendly conversational text component. I live at the top of the form pod if required.
+            </Form.ChitChat>
+          </Form.Section>
+
+          <Form.Section>
+            <Form.Group>
+              <Form.Label htmlFor="example-default-1">This is a label</Form.Label>
+              <Form.Hint>This is a hint</Form.Hint>
+              <Form.ErrorMessage message="This is an error message" />
+              <Input name="example-default-1" />
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label htmlFor="example-default-2">This is a label</Form.Label>
+              <Form.Hint>This is a hint</Form.Hint>
+              <Form.ErrorMessage message="This is an error message" />
+              <Input name="example-default-2" />
+            </Form.Group>
+          </Form.Section>
+
+          <Form.Section>
+            <Form.Group>
+              <Form.Label htmlFor="example-default-3">This is a label</Form.Label>
+              <Form.Hint>This is a hint</Form.Hint>
+              <Form.ErrorMessage message="This is an error message" />
+              <Input name="example-default-3" />
+            </Form.Group>
+          </Form.Section>
+        </Form>
+
+        <hr />
+
+        <h2 className="typography-body-7 my-4">Large size with large spacing</h2>
+        <Form size="large" spacing="large">
+          <Form.Section>
+            <Form.ChitChat>
+              Hello, I’m the friendly conversational text component. I live at the top of the form pod if required.
+            </Form.ChitChat>
+          </Form.Section>
+
+          <Form.Section>
+            <Form.Group>
+              <Form.Label htmlFor="example-large-1">This is a label</Form.Label>
+              <Form.Hint>This is a hint</Form.Hint>
+              <Form.ErrorMessage message="This is an error message" />
+              <Input name="example-large-1" />
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label htmlFor="example-large-2">This is a label</Form.Label>
+              <Form.Hint>This is a hint</Form.Hint>
+              <Form.ErrorMessage message="This is an error message" />
+              <Input name="example-large-2" />
+            </Form.Group>
+          </Form.Section>
+
+          <Form.Section>
+            <Form.Group>
+              <Form.Label htmlFor="example-large-3">This is a label</Form.Label>
+              <Form.Hint>This is a hint</Form.Hint>
+              <Form.ErrorMessage message="This is an error message" />
+              <Input name="example-large-3" />
+            </Form.Group>
+          </Form.Section>
+        </Form>
+      </>
     );
   },
 };

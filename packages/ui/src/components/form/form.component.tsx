@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react';
 
-import { ErrorMessage, FormHint, FormLabel } from './components/index.js';
+import { ErrorMessage, FormChitChat, FormGroup, FormHint, FormLabel, FormSection } from './components/index.js';
 import { FormContextValue, type FormProps } from './form.types.js';
 
 // ==============================
@@ -8,7 +8,7 @@ import { FormContextValue, type FormProps } from './form.types.js';
 // ==============================
 const FormContext = createContext<FormContextValue | null>(null);
 
-export const useFormContext = () => useContext(FormContext);
+export const useFormContext = () => useContext(FormContext) || {};
 
 export function Form({ children, size = 'medium', spacing = 'medium', inline = false, ...props }: FormProps) {
   return (
@@ -21,3 +21,6 @@ export function Form({ children, size = 'medium', spacing = 'medium', inline = f
 Form.Label = FormLabel;
 Form.ErrorMessage = ErrorMessage;
 Form.Hint = FormHint;
+Form.Section = FormSection;
+Form.ChitChat = FormChitChat;
+Form.Group = FormGroup;
