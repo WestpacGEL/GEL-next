@@ -270,7 +270,7 @@ describe('InputField', () => {
       test('then the value of the text input should match the value', async () => {
         render(
           <InputField label="Mock input">
-            <Input value="test-value" onChange={() => {}} />
+            <Input value="test-value" />
           </InputField>,
         );
 
