@@ -5,7 +5,7 @@ export const styles = tv(
     slots: {
       base: 'typography-body-10 pl-[1.1875rem]',
       bullet: 'absolute block border',
-      link: 'text-text focus:focus-outline hover:cursor-pointer hover:underline',
+      link: 'text-text hover:cursor-pointer hover:underline focus:focus-outline',
       wrapper: 'relative',
     },
     variants: {

@@ -1,7 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
-import { VisibilityIcon } from '../icon/index.js';
-import { Button, Input, Select, Textarea } from '../index.js';
+import { Button, Input } from '../index.js';
 
 import { InputField } from './input-field.component.js';
 

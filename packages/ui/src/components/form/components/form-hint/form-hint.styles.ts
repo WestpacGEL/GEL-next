@@ -5,8 +5,6 @@ export const styles = tv(
     base: 'typography-body-10 mb-2 text-muted',
     variants: {
       spacing: {
-        // TODO: small is not defined
-        small: '-mt-1 mb-2',
         medium: '-mt-1 mb-2',
         large: '-mt-2 mb-3',
       },

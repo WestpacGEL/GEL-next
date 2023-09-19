@@ -9,7 +9,6 @@ export const styles = tv(
         false: '',
       },
       spacing: {
-        small: 'mb-3',
         medium: 'mb-3',
         large: 'mb-4',
       },

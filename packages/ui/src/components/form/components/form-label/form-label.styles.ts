@@ -5,7 +5,6 @@ export const styles = tv(
     base: 'typography-body-9 block font-medium',
     variants: {
       spacing: {
-        small: '',
         medium: '',
         large: '',
       },
@@ -17,11 +16,6 @@ export const styles = tv(
     compoundVariants: [
       {
         subLabel: true,
-        spacing: 'small',
-        className: 'mb-1',
-      },
-      {
-        subLabel: true,
         spacing: 'medium',
         className: 'mb-1',
       },
@@ -29,12 +23,6 @@ export const styles = tv(
         subLabel: true,
         spacing: 'large',
         className: 'mb-1',
-      },
-      // TODO: There is no small spacing
-      {
-        subLabel: false,
-        spacing: 'small',
-        className: 'mb-2',
       },
       {
         subLabel: false,

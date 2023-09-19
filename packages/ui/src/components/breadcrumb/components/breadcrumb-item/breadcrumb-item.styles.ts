@@ -9,7 +9,7 @@ export const styles = tv(
         false: '',
       },
       isDisabled: {
-        true: 'text-muted-100',
+        true: 'text-muted-10',
         false: 'text-muted',
       },
     },
