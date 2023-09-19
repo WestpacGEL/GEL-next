@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       base: '',
-      button: '',
+      button: 'focus:focus-outline',
     },
     variants: {},
   },

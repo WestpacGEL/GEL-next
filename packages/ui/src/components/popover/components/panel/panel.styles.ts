@@ -8,7 +8,7 @@ export const styles = tv(
       popover: 'border-muted rounded-[3px] border bg-white',
       arrow:
         'border-t-muted absolute h-0 w-0 border-x-[8px] border-t-[12px] border-x-[transparent] after:absolute after:h-0 after:w-0 after:border-x-[7px] after:border-t-[11px] after:border-x-[transparent] after:border-t-white',
-      closeBtn: 'absolute right-1 top-1 m-1 h-3 w-3 hover:cursor-pointer hover:opacity-80',
+      closeBtn: 'focus:focus-outline absolute right-1 top-1 m-1 p-0 hover:opacity-80',
     },
     variants: {
       placement: {

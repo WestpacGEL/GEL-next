@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 import { AriaPopoverProps } from 'react-aria';
 import { OverlayTriggerState } from 'react-stately';
 
@@ -15,4 +15,5 @@ export type PanelProps = {
    * Overlay trigger state
    */
   state: OverlayTriggerState;
-} & Omit<AriaPopoverProps, 'popoverRef' | 'isKeyboardDismissDisabled'>;
+} & Omit<AriaPopoverProps, 'popoverRef' | 'isKeyboardDismissDisabled'> &
+  HTMLAttributes<Element>;

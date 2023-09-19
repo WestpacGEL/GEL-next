@@ -10,10 +10,8 @@ export function Dialog({ children, heading, tag: Tag = 'h4', ...props }: DialogP
   const styles = dialogStyles({});
 
   return (
-    <div {...dialogProps} ref={ref} className={styles.base()}>
-      <Tag {...titleProps} className={styles.heading()}>
-        {heading}
-      </Tag>
+    <div ref={ref} className={styles.base()}>
+      <Tag className={styles.heading()}>{heading}</Tag>
       <div className={styles.body()}>{children}</div>
     </div>
   );
