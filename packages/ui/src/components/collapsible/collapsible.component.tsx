@@ -1,5 +1,5 @@
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useId, useState } from 'react';
 
 import { Button } from '../button/index.js';
 import { ExpandLessIcon, ExpandMoreIcon, IconProps } from '../icon/index.js';
@@ -18,6 +18,7 @@ export function Collapsible({
   onClick = () => undefined,
 }: CollapsibleProps) {
   const [contentOpen, setContentOpen] = useState(open);
+  const contentId = useId();
 
   const ButtonIcon = (props: IconProps) => {
     if (!contentOpen) return <ExpandMoreIcon color="link" {...props} />;
@@ -40,7 +41,7 @@ export function Collapsible({
         onClick={handleClick}
         size={size}
         aria-expanded={contentOpen}
-        aria-controls="expanded-content"
+        aria-controls={contentId}
       >
         {text}
       </Button>
@@ -53,7 +54,7 @@ export function Collapsible({
               animate={{ opacity: 1 }}
               transition={{ duration: 0.15 }}
               className={styles.content()}
-              id="expanded-content"
+              id={contentId}
               aria-hidden={!contentOpen}
             >
               {children}

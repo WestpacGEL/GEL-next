@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useId, useRef } from 'react';
 import { useButton, useOverlayTrigger } from 'react-aria';
 import { useOverlayTriggerState } from 'react-stately';
 
@@ -23,6 +23,7 @@ export function ButtonDropdown({
   block = false,
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const panelId = useId();
   const styles = buttonDropdownStyles({ block, dropdownSize });
   const state = useOverlayTriggerState({ defaultOpen: open });
   const { overlayProps, triggerProps } = useOverlayTrigger({ type: 'menu' }, state, ref);
@@ -68,6 +69,7 @@ export function ButtonDropdown({
           triggerRef={ref}
           state={state}
           block={block}
+          id={panelId}
           {...overlayProps}
         >
           {children}

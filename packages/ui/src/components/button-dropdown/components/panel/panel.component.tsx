@@ -4,7 +4,7 @@ import { DismissButton, Overlay, mergeProps, useOverlay, usePopover } from 'reac
 import { styles as panelStyles } from './panel.styles.js';
 import { type PanelProps } from './panel.types.js';
 
-export function Panel({ className, children, state, block, ...props }: PanelProps) {
+export function Panel({ className, children, state, block, id, ...props }: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const { overlayProps } = useOverlay({ shouldCloseOnBlur: true, onClose: state.close }, popoverRef);
   const { popoverProps } = usePopover({ popoverRef, shouldFlip: false, ...props }, state);
@@ -31,7 +31,7 @@ export function Panel({ className, children, state, block, ...props }: PanelProp
     <Overlay>
       <div
         {...mergeProps(popoverProps, overlayProps)}
-        id="panel-dialog"
+        id={id}
         data-testid="panel-dialog"
         style={{ ...popoverProps.style, width: block && width ? `${width}px` : undefined }}
         ref={popoverRef}
