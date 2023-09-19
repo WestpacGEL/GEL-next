@@ -30,6 +30,7 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/autocomplete', label: 'Autocomplete' },
       { href: '/components/panel', label: 'Panel' },
       { href: '/components/input-field', label: 'Input Field' },
+      { href: '/components/modal', label: 'Modal' },
     ],
   },
 ];
