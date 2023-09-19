@@ -25,7 +25,7 @@ export const DefaultStory: Story = {
   render: () => {
     return (
       <>
-        <h2 className="typography-body-7 my-4">Default size and spacing</h2>
+        <h2 className="typography-body-7 my-4 font-bold">Default size and spacing</h2>
         <Form>
           <Form.Section>
             <Form.ChitChat>
@@ -61,7 +61,7 @@ export const DefaultStory: Story = {
 
         <hr />
 
-        <h2 className="typography-body-7 my-4">Large size with large spacing</h2>
+        <h2 className="typography-body-7 my-4 font-bold">Large size with large spacing</h2>
         <Form size="large" spacing="large">
           <Form.Section>
             <Form.ChitChat>
