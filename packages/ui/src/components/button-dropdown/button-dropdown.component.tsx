@@ -42,7 +42,7 @@ export function ButtonDropdown({
     return () => {
       window.document.removeEventListener('keydown', keyHandler);
     };
-  }, [state.isOpen]);
+  }, [keyHandler]);
 
   return (
     <>
