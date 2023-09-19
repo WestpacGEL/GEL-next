@@ -14,7 +14,7 @@ const meta: Meta<typeof BreadcrumbItem> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 

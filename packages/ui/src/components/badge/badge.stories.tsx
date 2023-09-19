@@ -26,7 +26,7 @@ const meta: Meta<typeof Badge> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
   argTypes: {
     children: {

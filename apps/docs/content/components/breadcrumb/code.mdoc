@@ -1,23 +1,23 @@
 ## Breadcrumb
 
 ```jsx
-// Using the Link component from 'next/link'
+// Using the Link component (as NextLink) from 'next/LinkLink'
 <Breadcrumb>
-  <Link href="#test" passHref legacyBehavior>
+  <NextLink href="#test" passHref legacyBehavior>
     <Breadcrumb.Item tag="a">Anchor item</Breadcrumb.Item>
-  </Link>
-  <Link href="#another" passHref legacyBehavior>
+  </NextLink>
+  <NextLink href="#another" passHref legacyBehavior>
     <Breadcrumb.Item tag="a">Another anchor item</Breadcrumb.Item>
-  </Link>
-  <Link href="#another" passHref legacyBehavior>
+  </NextLink>
+  <NextLink href="#another" passHref legacyBehavior>
     <Breadcrumb.Item isDisabled tag="a">
       Disabled item
     </Breadcrumb.Item>
-  </Link>
-  <Link href="#another" passHref legacyBehavior>
+  </NextLink>
+  <NextLink href="#another" passHref legacyBehavior>
     <Breadcrumb.Item isCurrent tag="a">
       Last item
     </Breadcrumb.Item>
-  </Link>
+  </NextLink>
 </Breadcrumb>
 ```

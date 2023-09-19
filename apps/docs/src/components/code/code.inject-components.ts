@@ -1,16 +1,37 @@
 import Link from 'next/link';
 
 export {
+  Badge,
   Button,
   Well,
   Alert,
   Breadcrumb,
-  TelephoneIcon,
   Input,
   Select,
   Textarea,
   Tabs,
+  Accordion,
+  RadioGroup,
+  CheckboxGroup,
+  ButtonGroup,
+  Switch,
+  ProgressBar,
+  Link,
+  Table,
+  Collapsible,
+  DatePicker,
+  List,
+  FlexiCell,
+  Circle,
+  Autocomplete,
+  Panel,
+  Modal,
+} from '@westpac/ui';
+
+export {
   AddIcon,
+  TickCircleIcon,
+  ArrowRightIcon,
   CalendarIcon,
   DeleteIcon,
   FavoriteIcon,
@@ -18,13 +39,14 @@ export {
   HelpIcon,
   MessageIcon,
   NotificationOffIcon,
+  PdfFileIcon,
   PersonIcon,
   ProgressIcon,
   StarRateIcon,
   WriteIcon,
-  Accordion,
-  RadioGroup,
-  CheckboxGroup,
-  ButtonGroup,
-} from '@westpac/ui';
-export { Link };
+  TelephoneIcon,
+  InfoIcon,
+} from '@westpac/ui/icon';
+
+export { GiftPictogram } from '@westpac/ui/pictogram';
+export { Link as NextLink };

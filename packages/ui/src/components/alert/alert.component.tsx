@@ -1,7 +1,7 @@
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useCallback, useEffect, useState } from 'react';
 
-import { AlertIcon, CloseIcon, InfoIcon, LimitIcon, SuccessIcon, WarningIcon } from '../index.js';
+import { AlertIcon, CloseIcon, InfoIcon, LimitIcon, SuccessIcon, WarningIcon } from '../icon/index.js';
 
 import { styles as alertStyles } from './alert.styles.js';
 import { type AlertProps, type Look } from './alert.types.js';

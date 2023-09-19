@@ -2,7 +2,7 @@ import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
-import { ArrowLeftIcon, ArrowRightIcon } from '../index.js';
+import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
 
 import { Button } from './button.component.js';
 import { styles } from './button.styles.js';

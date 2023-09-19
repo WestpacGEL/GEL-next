@@ -1,7 +1,7 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
-import { IconProps } from '../index.js';
+import { IconProps } from '../icon/index.js';
 
 import { styles } from './button.styles.js';
 
