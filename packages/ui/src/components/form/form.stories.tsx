@@ -146,7 +146,7 @@ export const AllSpacingsStory: Story = {
   render: () => {
     return (
       <div className="flex flex-col gap-3">
-        {(['small', 'medium'] as const).map(size => (
+        {(['medium', 'large'] as const).map(size => (
           <Form spacing={size}>
             <h3>Form with Spacing:{size}</h3>
             <Form.Label>This is a label</Form.Label>
