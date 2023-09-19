@@ -3,6 +3,7 @@ import { useButton, useOverlayTrigger } from 'react-aria';
 import { useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '../button/index.js';
+import { DropDownIcon, IconProps } from '../icon/index.js';
 
 import { styles as buttonDropdownStyles } from './button-dropdown.styles.js';
 import { type ButtonDropdownProps } from './button-dropdown.types.js';
@@ -13,7 +14,6 @@ export function ButtonDropdown({
   className,
   dropdownSize = 'medium',
   iconBefore: IconBefore,
-  iconAfter: IconAfter,
   open = false,
   text,
   children,
@@ -47,9 +47,8 @@ export function ButtonDropdown({
   return (
     <>
       <Button
-        dropdown
         ref={ref}
-        iconAfter={IconAfter}
+        iconAfter={(props: IconProps) => <DropDownIcon aria-hidden {...props} />}
         iconBefore={IconBefore}
         size={size}
         look={look}

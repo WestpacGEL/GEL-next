@@ -7,10 +7,6 @@ import { styles } from './button.styles.js';
 
 export type ButtonProps = {
   /**
-   * Enable dropdown mode for button dropdown component
-   */
-  dropdown?: boolean;
-  /**
    * Places an icon within the button, after the button’s text
    */
   iconAfter?: (props: IconProps) => JSX.Element;

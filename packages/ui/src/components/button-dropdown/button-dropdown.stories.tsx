@@ -146,7 +146,6 @@ export const BlockDropdownButton: Story = {
 export const DropdownButtonWithIcons: Story = {
   args: {
     iconBefore: AndroidIcon,
-    iconAfter: AppleIcon,
     text: 'Icon Dropdown',
     children: (
       <p>

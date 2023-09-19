@@ -23,5 +23,5 @@ export type ButtonDropdownProps = {
    */
   text: string;
 } & ButtonHTMLAttributes<Element> &
-  Pick<ButtonProps, 'size' | 'iconBefore' | 'iconAfter' | 'block'> &
+  Pick<ButtonProps, 'size' | 'iconBefore' | 'block'> &
   VariantProps<typeof styles>;
