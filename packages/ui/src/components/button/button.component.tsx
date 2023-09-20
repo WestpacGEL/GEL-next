@@ -1,6 +1,8 @@
 import React, { forwardRef, useMemo } from 'react';
 import { FocusRing } from 'react-aria';
 
+import { DropDownIcon } from '../icon/index.js';
+
 import { styles as buttonStyles } from './button.styles.js';
 import { type ButtonProps } from './button.types.js';
 import { getIconSize } from './button.utils.js';

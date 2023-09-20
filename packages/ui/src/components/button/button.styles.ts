@@ -9,6 +9,7 @@ export const styles = tv(
       base: 'inline-flex items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none',
       iconBefore: '',
       iconAfter: '',
+      dropdown: 'ml-[0.4em]',
       text: 'overflow-hidden text-ellipsis',
     },
     variants: {
@@ -19,9 +20,9 @@ export const styles = tv(
         xlarge: { base: 'typography-body-8 px-3 pb-[0.625rem] pt-[0.5625rem]' },
       },
       look: {
-        primary: { base: 'border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50' },
-        hero: { base: 'border border-hero bg-hero text-white hover:bg-hero-70 active:bg-hero-50' },
-        faint: { base: 'border border-border bg-light text-muted hover:bg-white active:bg-white' },
+        primary: { base: 'border-primary bg-primary hover:bg-primary-70 active:bg-primary-50 border text-white' },
+        hero: { base: 'border-hero bg-hero hover:bg-hero-70 active:bg-hero-50 border text-white' },
+        faint: { base: 'border-border bg-light text-muted border hover:bg-white active:bg-white' },
         link: { base: 'text-link underline' },
       },
       soft: {

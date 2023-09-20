@@ -25,6 +25,7 @@ export {
   Circle,
   Autocomplete,
   Panel,
+  ButtonDropdown,
   InputField,
   Modal,
 } from '@westpac/ui';

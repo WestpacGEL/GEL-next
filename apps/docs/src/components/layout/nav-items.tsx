@@ -29,6 +29,7 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/flexi-cell', label: 'Flexi Cell' },
       { href: '/components/autocomplete', label: 'Autocomplete' },
       { href: '/components/panel', label: 'Panel' },
+      { href: '/components/button-dropdown', label: 'Button Dropdown' },
       { href: '/components/input-field', label: 'Input Field' },
       { href: '/components/modal', label: 'Modal' },
     ],
