@@ -18,6 +18,7 @@ function BaseButton(
     tag: Tag = 'button',
     iconBefore: IconBefore,
     iconAfter: IconAfter,
+    iconColor,
     children,
     ...props
   }: ButtonProps,
@@ -35,9 +36,9 @@ function BaseButton(
   return (
     <FocusRing focusRingClass="focus-outline">
       <Tag ref={ref} className={styles.base({ className })} {...props}>
-        {IconBefore && <IconBefore size={iconSize} className={styles.iconBefore()} />}
+        {IconBefore && <IconBefore size={iconSize} className={styles.iconBefore()} color={iconColor} />}
         <span className={styles.text()}>{children}</span>
-        {IconAfter && <IconAfter size={iconSize} className={styles.iconAfter()} />}
+        {IconAfter && <IconAfter size={iconSize} className={styles.iconAfter()} color={iconColor} />}
       </Tag>
     </FocusRing>
   );
