@@ -27,6 +27,7 @@ export {
   Panel,
   InputField,
   Modal,
+  ProgressRope,
 } from '@westpac/ui';
 
 export {

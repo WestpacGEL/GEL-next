@@ -38,7 +38,7 @@ export const DefaultStory: Story = {
       { text: <h3>Step 3</h3>, onClick: handleClick(2) },
       { text: <h3>Step 4</h3>, onClick: handleClick(3) },
       { text: <h3>Step 5</h3>, onClick: handleClick(4) },
-      { type: 'end', text: <h3>Review and Submit</h3>, onClick: handleClick(5) },
+      { text: <h3>Review and Submit</h3>, onClick: handleClick(5) },
     ];
 
     return (
@@ -94,7 +94,7 @@ export const GroupingStepsStory: Story = {
           { text: 'Step 7', onClick: handleClick(6) },
         ],
       },
-      { type: 'end', text: 'Review and Submit', onClick: handleClick(7) },
+      { text: 'Review and Submit', onClick: handleClick(7) },
     ];
 
     return (
