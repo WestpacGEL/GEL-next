@@ -1,19 +1,25 @@
-import { HTMLAttributes, ReactNode } from 'react';
-import { AriaPopoverProps } from 'react-aria';
+import { HTMLAttributes } from 'react';
 import { OverlayTriggerState } from 'react-stately';
 
 export type PanelProps = {
   /**
-   * Children to render
+   * Content of popover
    */
-  children: ReactNode;
+  content: string;
+  /**
+   * Heading for popover box
+   */
+  heading?: string;
+  /**
+   * Tag to render
+   */
+  headingTag?: keyof Pick<JSX.IntrinsicElements, 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>;
   /**
    * Overlay trigger state
    */
-  placement?: 'top' | 'bottom' | 'left' | 'right';
+  placement?: 'top' | 'bottom';
   /**
    * Overlay trigger state
    */
   state: OverlayTriggerState;
-} & Omit<AriaPopoverProps, 'popoverRef' | 'isKeyboardDismissDisabled'> &
-  HTMLAttributes<Element>;
+} & HTMLAttributes<Element>;

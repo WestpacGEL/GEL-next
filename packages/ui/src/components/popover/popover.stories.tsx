@@ -4,19 +4,26 @@ import { HelpIcon } from '../icon/index.js';
 
 import { Popover } from './popover.component.js';
 
+const popoverContent =
+  'Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas.';
+
 const meta: Meta<typeof Popover> = {
   title: 'Example/Popover',
   component: Popover,
   tags: ['autodocs'],
   decorators: [
     (Story: StoryFn) => (
-      <div className="p-4">
+      <div className="p-[200px]">
         <Story />
       </div>
     ),
   ],
   parameters: {
     layout: 'center',
+  },
+  args: {
+    content: popoverContent,
+    heading: 'Test Heading',
   },
 };
 
@@ -28,10 +35,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const DefaultStory: Story = {
   args: {
-    label: 'Click Me',
-    heading: 'test title',
-    children:
-      'Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas.',
+    children: 'Click Me',
   },
 };
 
@@ -40,10 +44,41 @@ export const DefaultStory: Story = {
  */
 export const PopoverIconTrigger: Story = {
   args: {
-    heading: 'test title',
-    look: 'link',
-    iconAfter: () => <HelpIcon color="hero" />,
-    children:
-      'Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas.',
+    icon: () => <HelpIcon color="hero" />,
   },
 };
+
+/**
+ * > Default open
+ */
+export const DefaultOpenPopover: Story = {
+  args: {
+    children: 'Click Me',
+    open: true,
+  },
+};
+
+/**
+ * > No heading
+ */
+export const PopoverNoHeading: Story = {
+  args: {
+    children: 'Click Me',
+    open: true,
+    heading: undefined,
+  },
+};
+
+/**
+ * > Top and bottom popover
+ */
+export const PopoverPlacement = () => (
+  <div>
+    <Popover className="mr-3" heading="Heading" placement="top" content={popoverContent} open>
+      Top Popover
+    </Popover>
+    <Popover placement="bottom" heading="Heading" content={popoverContent} open>
+      Bottom Popover
+    </Popover>
+  </div>
+);
