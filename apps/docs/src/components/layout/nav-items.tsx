@@ -33,6 +33,7 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/input-field', label: 'Input Field' },
       { href: '/components/modal', label: 'Modal' },
       { href: '/components/popover', label: 'Popover' },
+      { href: '/components/progress-rope', label: 'Progress Rope' },
     ],
   },
 ];

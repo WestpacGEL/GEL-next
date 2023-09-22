@@ -30,3 +30,4 @@ export * from './form/index.js';
 export * from './input-field/index.js';
 export * from './modal/index.js';
 export * from './popover/index.js';
+export * from './progress-rope/index.js';
