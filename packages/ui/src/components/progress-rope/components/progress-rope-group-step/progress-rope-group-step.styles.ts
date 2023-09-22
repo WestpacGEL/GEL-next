@@ -16,53 +16,24 @@ export const styles = tv(
         },
         false: {},
       },
-      current: {
-        true: {},
-        false: {},
-      },
-      visited: {
-        true: {
-          base: 'before:border-solid before:border-primary',
-          circle: 'border-[3px]',
-          circleWrapper: 'before:border-solid before:border-primary after:border-solid after:border-primary',
-        },
-        false: {
-          base: 'before:border-borderDark',
-          circleWrapper: 'after:border-dotted after:border-borderDark',
-        },
-      },
-    },
-    compoundVariants: [
-      {
-        visited: true,
-        current: true,
-        className: {
+      state: {
+        current: {
           base: 'font-bold text-primary',
           circle: 'border-primary bg-white',
+          circleWrapper: 'before:border-solid before:border-primary after:border-solid after:border-primary',
         },
-      },
-      {
-        visited: true,
-        current: false,
-        className: {
-          circle: 'border-primary bg-primary',
+        visited: {
+          base: 'before:border-solid before:border-primary',
+          circle: 'border-[3px] border-primary bg-primary',
+          circleWrapper: 'text-text before:border-solid before:border-primary after:border-solid after:border-primary',
         },
-      },
-      {
-        visited: false,
-        current: false,
-        className: {
+        'non-visited': {
+          base: 'before:border-borderDark',
+          circleWrapper: 'text-muted-90 after:border-dotted after:border-borderDark',
           circle: 'border-borderDark bg-white',
         },
       },
-      {
-        visited: false,
-        current: true,
-        className: {
-          circle: 'border-primary bg-white',
-        },
-      },
-    ],
+    },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
 );

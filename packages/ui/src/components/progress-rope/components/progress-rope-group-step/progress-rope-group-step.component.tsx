@@ -39,7 +39,19 @@ export function ProgressRopeGroupStep({
     return 'not started';
   }, [steps, furthestVisitedStep]);
 
-  const styles = progressRopeGroupStyles({ firstItem, current, visited });
+  const state = useMemo(() => {
+    if (current) {
+      return 'current';
+    }
+    if (visited) {
+      return 'visited';
+    }
+    return 'non-visited';
+  }, [current, visited]);
+
+  console.log('state', state);
+
+  const styles = progressRopeGroupStyles({ firstItem, state });
   return (
     <>
       <button

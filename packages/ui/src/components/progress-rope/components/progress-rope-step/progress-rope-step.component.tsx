@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { Circle } from '../../../index.js';
 
@@ -16,10 +16,20 @@ export function ProgressRopeStep({
   firstItem,
   ...props
 }: ProgressRopeStepProps) {
-  const styles = progressRopeStyles({ className, current, visited, size, firstItem });
+  const state = useMemo(() => {
+    if (current) {
+      return 'current';
+    }
+    if (visited) {
+      return 'visited';
+    }
+    return 'non-visited';
+  }, [current, visited]);
+
+  const styles = progressRopeStyles({ className, state, size, firstItem });
 
   return (
-    <Tag className={styles.base({})} aria-current={current} {...props}>
+    <Tag className={styles.base({})} aria-current={current} disabled={state === 'non-visited'} {...props}>
       <Circle className={styles.circle()} aria-hidden="true" />
       {children}
     </Tag>

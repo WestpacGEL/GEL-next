@@ -7,6 +7,20 @@ export const styles = tv(
       circle: 'relative z-10 bg-white transition-colors',
     },
     variants: {
+      state: {
+        current: {
+          base: 'font-bold text-primary before:border-solid',
+          circle: 'border-[3px] border-primary bg-white',
+        },
+        visited: {
+          base: 'text-text before:border-solid before:border-primary',
+          circle: 'border-[3px] border-primary bg-primary',
+        },
+        'non-visited': {
+          base: 'text-muted-90 before:border-borderDark',
+          circle: 'border-2 border-borderDark bg-white',
+        },
+      },
       firstItem: {
         true: {
           base: 'before:first:hidden',
@@ -22,50 +36,7 @@ export const styles = tv(
           base: 'gap-4',
         },
       },
-      current: {
-        true: {},
-        false: {},
-      },
-      visited: {
-        true: {
-          base: 'before:border-solid before:border-primary',
-        },
-        false: {
-          base: 'before:border-borderDark',
-        },
-      },
     },
-    compoundVariants: [
-      {
-        visited: true,
-        current: true,
-        className: {
-          base: 'font-bold text-primary',
-          circle: 'border-[3px] border-primary bg-white',
-        },
-      },
-      {
-        visited: true,
-        current: false,
-        className: {
-          circle: 'border-[3px] border-primary bg-primary',
-        },
-      },
-      {
-        visited: false,
-        current: false,
-        className: {
-          circle: 'border-2 border-borderDark bg-white',
-        },
-      },
-      {
-        visited: false,
-        current: true,
-        className: {
-          circle: 'border-primary bg-white',
-        },
-      },
-    ],
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
 );
