@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useRef } from 'react';
+import React, { forwardRef, useContext } from 'react';
 
 import { ListContext } from '../../list.component.js';
 import { getStateValues } from '../../list.utils.js';
