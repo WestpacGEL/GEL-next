@@ -1,0 +1,92 @@
+## Default List 
+
+```jsx
+<div>
+  <h1 className="typography-body-10 mb-2">Default list</h1>
+  <List type="bullet">
+    <List.Item>Styled bullet list</List.Item>
+    <List.Item>Styled bullet list</List.Item>
+    <List.Item>Styled bullet list</List.Item>
+    <List>
+      <List.Item>Styled bullet list</List.Item>
+      <List.Item>Styled bullet list</List.Item>
+      <List.Item>Styled bullet list</List.Item>
+      <List>
+        <List.Item>Styled bullet list</List.Item>
+        <List.Item>Styled bullet list</List.Item>
+        <List.Item>Styled bullet list</List.Item>
+      </List>
+      <List.Item>Styled bullet list</List.Item>
+    </List>
+    <List.Item>Styled bullet list</List.Item>
+  </List>
+  <h1 className="typography-body-10 mb-2">Look</h1>
+  <List type="bullet" look="primary" className="mb-4">
+    <List.Item>Styled bullet list - primary</List.Item>
+    <List.Item>Styled bullet list - primary</List.Item>
+  </List>
+  <List type="bullet" look="hero" className="mb-4">
+    <List.Item>Styled bullet list - hero</List.Item>
+    <List.Item>Styled bullet list - hero</List.Item>
+  </List>
+  <List type="bullet" look="neutral" className="mb-4">
+    <List.Item>Styled bullet list - neutral</List.Item>
+    <List.Item>Styled bullet list - neutral</List.Item>
+  </List>
+</div>
+```
+
+## List Looks 
+
+```jsx 
+() => { 
+    const TYPES = ['bullet', 'link', 'tick', 'cross', 'unstyled', 'icon', 'ordered'];
+    return (
+            TYPES.map((type) => (
+            <div key={type}>
+                <h1 className="typography-body-10 mb-2">{type}</h1>
+                <List type={type} className="mb-4" icon={type === 'icon' ? PdfFileIcon : undefined}>
+                    <List.Item>Styled {type} list</List.Item>
+                    <List.Item>Styled {type} list</List.Item>
+                    <List.Item>Styled {type} list</List.Item>
+                </List>
+            </div>
+            ))
+    ); 
+}; 
+```
+## List spacing
+
+```jsx
+<div>
+  <h1 className="typography-body-10 mb-2">Medium</h1>
+  <List type="bullet" className="mb-4" spacing="medium">
+    <List.Item>Styled bullet list</List.Item>
+    <List.Item>Styled bullet list</List.Item>
+    <List.Item>Styled bullet list</List.Item>
+  </List>
+  <h1 className="typography-body-10 mb-2">Large</h1>
+  <List type="bullet" className="mb-4" spacing="large">
+    <List.Item>Styled bullet list</List.Item>
+    <List.Item>Styled bullet list</List.Item>
+    <List.Item>Styled bullet list</List.Item>
+  </List>
+</div>
+```
+
+## Using Next Link
+
+```jsx
+<div>
+  <List type="link" className="mb-4">
+    <NextLink href="#test1" passHref legacyBehavior>
+      <List.Item>Styled bullet list</List.Item>
+    </NextLink>
+    <NextLink href="#test2" passHref legacyBehavior>
+      <List.Item>Styled bullet list</List.Item>
+    </NextLink>
+    <NextLink href="#test3" passHref legacyBehavior>
+      <List.Item>Styled bullet list</List.Item>
+    </NextLink>
+  </List>
+</div>
