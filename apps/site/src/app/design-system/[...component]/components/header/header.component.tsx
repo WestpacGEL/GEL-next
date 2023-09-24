@@ -16,7 +16,7 @@ export function Header({ className }: { className?: string }) {
   const searchParams = useSearchParams();
   const brand = searchParams.get('brand')?.toLowerCase();
   const params = useParams();
-  const component = formatComponentSlug(params?.component.match(/[^/]+$/)?.[0] ?? '');
+  const component = formatComponentSlug(params?.component.at(-1) ?? '');
   const styles = headerStyles({ brand: brand as BrandKey, fixed, className });
   const { setOpen } = useSidebar();
 
