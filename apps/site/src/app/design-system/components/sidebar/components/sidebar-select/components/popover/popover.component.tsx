@@ -1,11 +1,11 @@
 import { clsx } from 'clsx';
-import * as React from 'react';
+import { useRef } from 'react';
 import { DismissButton, Overlay, usePopover } from 'react-aria';
 
 import { PopoverProps } from './popover.types';
 
 export function Popover(props: PopoverProps) {
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { popoverRef = ref, state, children, className, isNonModal } = props;
   const { popoverProps, underlayProps } = usePopover(
     {

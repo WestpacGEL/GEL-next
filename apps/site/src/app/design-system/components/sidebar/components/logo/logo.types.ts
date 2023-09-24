@@ -1,5 +1,6 @@
-import { type IconProps } from '@westpac/ui';
-import { type BrandKey } from '@westpac/ui/tailwind';
+import { type IconProps } from '@westpac/ui/icon';
+
+import { type BrandKey } from '@/app/types/brand.types';
 
 export type LogoProps = {
   brand?: BrandKey;

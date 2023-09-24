@@ -4,6 +4,7 @@ import { HamburgerMenuIcon } from '@westpac/ui/icon';
 import { useParams, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
+import { BrandKey } from '@/app/types/brand.types';
 import { formatComponentSlug } from '@/utils/format';
 
 import { useSidebar } from '../../../components/sidebar/sidebar.context';
@@ -15,14 +16,14 @@ export function Header({ className }: { className?: string }) {
   const searchParams = useSearchParams();
   const brand = searchParams.get('brand')?.toLowerCase();
   const params = useParams();
-  const component = formatComponentSlug(params?.component.match(/[^/]+$/));
-  const styles = headerStyles({ brand, fixed, className });
+  const component = formatComponentSlug(params?.component.match(/[^/]+$/)?.[0] ?? '');
+  const styles = headerStyles({ brand: brand as BrandKey, fixed, className });
   const { setOpen } = useSidebar();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const handleScroll = () => {
-        const isFixed = window.scrollY >= 162;
+        const isFixed = window.scrollY >= 162; // 228 - 66 = height to stick
         setFixed(isFixed);
       };
       window.addEventListener('scroll', handleScroll);

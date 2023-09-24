@@ -4,19 +4,21 @@ import { clsx } from 'clsx';
 import throttle from 'lodash.throttle';
 import { useEffect, useRef, useState } from 'react';
 
-export function StickyHeader() {
-  const ref = useRef();
+export function StickyHeader({ className, children }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef(null);
   const [stuck, setStuck] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const cachedRef = ref.current;
-    const observer = new IntersectionObserver(([e]) => setStuck(e.intersectionRatio < 1), {
-      rootMargin: '-1px 0px 0px 0px',
-      threshold: [1],
-    });
-    observer.observe(cachedRef);
-    return () => observer.unobserve(cachedRef);
+    if (cachedRef) {
+      const observer = new IntersectionObserver(([e]) => setStuck(e.intersectionRatio < 1), {
+        rootMargin: '-1px 0px 0px 0px',
+        threshold: [1],
+      });
+      observer.observe(cachedRef);
+      return () => observer.unobserve(cachedRef);
+    }
   }, [ref]);
 
   useEffect(() => {
@@ -41,7 +43,10 @@ export function StickyHeader() {
       className={clsx(
         'sticky top-0 z-[1] transition-shadow delay-0 duration-200 ease-[ease]',
         stuck && scrolled && 'shadow-[0_8px_8px_rgba(0,0,0,0.24)]',
+        className,
       )}
-    />
+    >
+      {children}
+    </div>
   );
 }

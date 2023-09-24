@@ -9,10 +9,11 @@ import { useState } from 'react';
 import { formatComponentSlug } from '@/utils/format';
 
 import { itemStyles } from './navigation.styles';
+import { GroupProps, ItemProps, Level, ListProps, NavigationProps } from './navigation.types';
 
-const loadAnimations = () => import('./navigation.utils.ts').then(res => res.default);
+const loadAnimations = () => import('./navigation.utils').then(res => res.default);
 
-export function Navigation({ items, brand }) {
+export function Navigation({ items, brand }: NavigationProps) {
   const path = usePathname();
   const currPath = path.split('/');
   return (
@@ -23,7 +24,7 @@ export function Navigation({ items, brand }) {
   );
 }
 
-function List({ items, level = 0, currPath, brand }) {
+function List({ items, level = 0, currPath, brand }: ListProps) {
   return items.map(item => {
     if (item.children) {
       return (
@@ -39,12 +40,12 @@ function List({ items, level = 0, currPath, brand }) {
   });
 }
 
-function Group({ label, level, currPath, children, ...props }) {
+function Group({ label, level, currPath, children, ...props }: GroupProps) {
   const [open, setOpen] = useState(currPath.includes(label));
   return (
     <li {...props}>
       <button
-        className={itemStyles({ level, type: 'button', nested: level > 0 })}
+        className={itemStyles({ level: level.toString() as Level, type: 'button', nested: level > 0 })}
         onClick={() => setOpen(open => !open)}
       >
         <span>{formatComponentSlug(label)}</span>
@@ -77,12 +78,15 @@ function Group({ label, level, currPath, children, ...props }) {
   );
 }
 
-function Item({ label, path, level, currPath, brand, ...props }) {
+function Item({ label, path, level, currPath, brand, ...props }: ItemProps) {
   const href = `/design-system/${path}?brand=${brand}`;
   const active = currPath[currPath.length - 1] === label;
   return (
     <li {...props}>
-      <Link href={href} className={itemStyles({ level, type: 'link', nested: level > 0, active })}>
+      <Link
+        href={href}
+        className={itemStyles({ level: level.toString() as Level, type: 'link', nested: level > 0, active })}
+      >
         {formatComponentSlug(label)}
       </Link>
     </li>

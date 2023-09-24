@@ -19,8 +19,8 @@ export function StickyFooter() {
 
   useLayoutEffect(() => {
     const setFooter = () => {
-      const windowHeight = window.clientHeight;
-      const documentHeight = window.scrollHeight;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
       const scroll = window.scrollY;
 
       setVisible(windowHeight >= documentHeight || scroll > 600 || scroll + windowHeight > documentHeight - 100);

@@ -8,7 +8,7 @@ export function generateMetadata({ params }: { params: { component: string } }) 
   return { title: formatComponentSlug(component[component.length - 1]) };
 }
 
-export default async function ComponentPage({ params }: { params: { component: string } }) {
+export default async function ComponentPage({ params }: { params: { component: string[] } }) {
   const { component } = params;
   const content = await reader.collections.designSystem.read(component.join('/'));
   if (!content) return <div>Component not found!</div>;

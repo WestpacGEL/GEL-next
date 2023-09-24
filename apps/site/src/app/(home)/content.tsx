@@ -28,7 +28,6 @@ const Tile = ({ className }: { className?: string }) => (
 );
 
 export function Content() {
-  // remove margin bottom from container later
   return (
     <Container className="mb-8 mt-5 xsl:mt-6 sm:mt-8 md:mt-9 lg:mt-10">
       <Grid>

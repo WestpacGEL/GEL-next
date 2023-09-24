@@ -3,14 +3,8 @@ export function formatComponentSlug(component: string) {
   return name.replace(/-/g, ' ');
 }
 
-/**
- * Create navigation groupings from list of page slugs
- *
- * @param navList
- * @returns
- */
 export function formatNavItems(navList: string[]) {
-  const navItems = [];
+  const navItems: any[] = [];
   navList.forEach(path => {
     const params = path.split('/');
     let curr = navItems;

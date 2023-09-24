@@ -1,9 +1,19 @@
 'use client';
 
-import { BOMShieldLogo, BSAStackedLogo, RAMSLogo, STGDragonLogo, WBCLogo, WBGLogo } from '@westpac/ui/symbol';
+import {
+  BOMShieldLogo,
+  BSAStackedLogo,
+  RAMSLogo,
+  STGDragonLogo,
+  SymbolProps,
+  WBCLogo,
+  WBGLogo,
+} from '@westpac/ui/symbol';
 import { tv } from 'tailwind-variants';
 
-export const logoMap = {
+import { BrandKey } from '@/app/types/brand.types';
+
+export const logoMap: Record<BrandKey, { logo: React.FC<SymbolProps>; name: string }> = {
   wbc: { name: 'Westpac', logo: WBCLogo },
   stg: { name: 'St.George', logo: STGDragonLogo },
   bom: { name: 'Bank of Melbourne', logo: BOMShieldLogo },

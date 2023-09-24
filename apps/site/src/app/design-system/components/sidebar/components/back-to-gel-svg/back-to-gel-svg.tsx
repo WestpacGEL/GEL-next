@@ -1,4 +1,4 @@
-export function BackToGelSvg(props) {
+export function BackToGelSvg() {
   return (
     <svg
       viewBox="0 0 299 90"
@@ -7,7 +7,6 @@ export function BackToGelSvg(props) {
       className="inline-block align-middle leading-none"
       role="img"
       focusable="false"
-      {...props}
     >
       <title>Back to GEL</title>
       <g fill="none" fillRule="evenodd">

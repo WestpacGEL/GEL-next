@@ -1,9 +1,5 @@
 import { tv } from 'tailwind-variants';
-// linear-gradient(to right, rgb(0, 47, 108) 0%, rgb(0, 70, 142) 50%, rgb(0, 173, 189) 100%)
-// md:top-[-260px] md:h-[20rem]
 
-// on scroll, header should be 66px
-// tabs should be 90px height and top offset of 66px
 export const styles = tv(
   {
     slots: {
@@ -23,7 +19,6 @@ export const styles = tv(
         },
       },
       brand: {
-        btfg: {},
         wbg: {},
         bom: {},
         bsa: {
@@ -41,14 +36,6 @@ export const styles = tv(
         },
       },
     },
-    compoundSlots: [
-      // {
-      //   slots: ['itemHeader'],
-      //   color: 'primary',
-      //   isOpen: true,
-      //   className: 'border-l-primary',
-      // },
-    ],
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
 );

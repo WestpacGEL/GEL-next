@@ -7,6 +7,8 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { Key, useCallback, useRef } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
+import { BrandKey } from '@/app/types/brand.types';
+
 import { BackToGelSvg, Logo, Navigation, SidebarSelect } from './components';
 import { useSidebar } from './sidebar.context';
 import { SidebarProps } from './sidebar.types';
@@ -57,7 +59,7 @@ export function Sidebar({ items }: SidebarProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const brand = searchParams.get('brand')?.toLowerCase() ?? 'wbc';
+  const brand = (searchParams.get('brand')?.toLowerCase() ?? 'wbc') as BrandKey;
 
   const handleChange = useCallback(
     async (key: Key) => {
@@ -90,7 +92,7 @@ export function Sidebar({ items }: SidebarProps) {
           ))}
         </SidebarSelect>
       </div>
-      <nav className="flex-1 overflow-auto pb-4">
+      <nav className="flex-1 overflow-y-auto pb-4">
         <Link href="/" className="block" aria-label="Back to GEL">
           <BackToGelSvg />
         </Link>

@@ -2,6 +2,7 @@
 import { Container, Grid } from '@westpac/ui';
 import { EmailIcon, PdfFileIcon } from '@westpac/ui/icon';
 
+import { BrandKey } from '@/app/types/brand.types';
 import { FigmaLogo } from '@/components/logos';
 
 import { logoMap, logoStyles } from '../utils';
@@ -21,7 +22,7 @@ export function Footer() {
                   <li key={key} className="col-span-12 xsl:col-span-6">
                     <Link href={`/design-system?brand=${key}`}>
                       <Circle>
-                        <Logo className={logoStyles({ brand: key, footer: true })} />
+                        <Logo className={logoStyles({ brand: key as BrandKey, footer: true })} />
                       </Circle>
                       <Text>{name}</Text>
                     </Link>

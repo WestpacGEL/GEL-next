@@ -3,6 +3,7 @@ import { Container } from '@westpac/ui';
 import { ArrowRightIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
 
+import { BrandKey } from '@/app/types/brand.types';
 import { GELLogo } from '@/components/logos';
 import { StickyHeader } from '@/components/sticky-header';
 
@@ -27,7 +28,7 @@ export function ActionBar() {
             <li key={key}>
               <Link href={`/design-system?brand=${key}`}>
                 <CircleLogo>
-                  <Logo className={logoStyles({ brand: key })} />
+                  <Logo className={logoStyles({ brand: key as BrandKey })} />
                 </CircleLogo>
               </Link>
             </li>

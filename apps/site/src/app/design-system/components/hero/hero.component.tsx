@@ -2,8 +2,9 @@
 
 import { Container, Grid, Item } from '@westpac/ui';
 import { AccessibilityPictogram, StopwatchPictogram, TruckPictogram } from '@westpac/ui/pictogram';
-import { type BrandKey } from '@westpac/ui/tailwind';
 import { useSearchParams } from 'next/navigation';
+
+import { type BrandKey } from '@/app/types/brand.types';
 
 import { BackgroundImage, Header } from './components';
 import { styles } from './hero.styles';

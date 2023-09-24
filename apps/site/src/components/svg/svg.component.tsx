@@ -1,15 +1,8 @@
 import { clsx } from 'clsx';
-import React, { SVGAttributes } from 'react';
 
-type SvgProps = SVGAttributes<SVGElement> & {
-  'aria-label'?: string;
-  className?: string;
-  height?: number;
-  viewBox: string;
-  width?: number;
-};
+import { SvgProps } from './svg.types';
 
-export function Svg({ viewBox, width, height, 'aria-label': ariaLabel, className, ...props }: SvgProps) {
+export function Svg({ viewBox, width, height, 'aria-label': ariaLabel, className, children, ...props }: SvgProps) {
   return (
     <svg
       aria-label={ariaLabel}
@@ -21,6 +14,8 @@ export function Svg({ viewBox, width, height, 'aria-label': ariaLabel, className
       focusable="false"
       className={clsx(className, 'inline-block')}
       {...props}
-    />
+    >
+      {children}
+    </svg>
   );
 }
