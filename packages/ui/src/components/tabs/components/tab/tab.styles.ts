@@ -5,7 +5,7 @@ export const styles = tv(
     base: 'typography-body-9 flex cursor-pointer px-3 py-2 text-text transition-colors hover:bg-white focus:focus-outline',
     variants: {
       look: {
-        default: 'border border-border',
+        default: 'border border-border bg-white',
         material: '',
       },
       selected: {

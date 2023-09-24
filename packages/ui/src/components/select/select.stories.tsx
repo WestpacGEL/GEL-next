@@ -14,7 +14,7 @@ const meta: Meta<typeof Select> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 

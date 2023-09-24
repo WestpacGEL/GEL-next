@@ -5,6 +5,7 @@ import { BREAKPOINTS } from './constants/breakpoints.js';
 import { COLORS, DEFAULT_BODY_TYPOGRAPHY, FONT_TYPES, SPACING } from './constants/index.js';
 import { THEMES } from './themes/index.js';
 import { theme as WBCTheme } from './themes/wbc.js';
+import { generateDatePicker } from './utils/generate-date-picker-component.js';
 import { createFontSizes, generateFontComponents, generateFormControlComponents } from './utils/index.js';
 
 /**
@@ -25,6 +26,7 @@ export const WestpacUIKitBasePlugin = plugin(
     });
     addComponents(generateFontComponents(theme('typographySizes'), theme));
     addComponents(generateFormControlComponents(theme('formControl')));
+    addComponents(generateDatePicker());
   },
   {
     theme: {
@@ -50,9 +52,20 @@ export const WestpacUIKitBasePlugin = plugin(
             '0%': { opacity: '0' },
             '100%': { opacity: '1' },
           },
+          fadeInDown: {
+            '0%': {
+              opacity: '0',
+              transform: 'translateY(-10vh)',
+            },
+            '100%': {
+              opacity: '1',
+              transform: 'translateY(0)',
+            },
+          },
         },
         animation: {
           fadeIn: 'fadeIn 0.2s ease',
+          fadeInDown: 'fadeInDown 0.4s ease',
         },
         boxShadow: {
           switch: '0.1875rem 0 0.375rem 0 rgba(0,0,0,0.53)',
@@ -112,10 +125,10 @@ export const WestpacUIKitBasePlugin = plugin(
         disabled: 'cursor-not-allowed border-dashed bg-background text-muted',
         sizes: {
           // Some of the values are not following the spacing so we needed to use static values as following
-          small: 'px-[0.5625rem] pb-[0.25rem] pt-[0.1875rem] text-sm',
-          medium: 'typography-body-9 px-2 py-[0.3125rem]',
+          small: 'px-[0.5625rem] pb-[0.25rem] pt-[0.1875rem] text-sm leading-[1.3rem]',
+          medium: 'typography-body-9 px-2 py-[0.3125rem] leading-6',
           large: 'px-[0.9375rem] py-[0.5rem] text-base',
-          xlarge: 'px-3 pb-[0.625rem] pt-[0.5625rem] text-lg',
+          xlarge: 'px-3 pb-[0.625rem] pt-[0.5625rem] text-lg leading-[1.685rem]',
         },
       },
       focusOutline: 'outline outline-2 outline-offset-[3px] outline-focus',

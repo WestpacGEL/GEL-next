@@ -14,7 +14,7 @@ const meta: Meta<typeof Radio> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
   argTypes: {
     isDisabled: {

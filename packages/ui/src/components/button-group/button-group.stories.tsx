@@ -14,7 +14,7 @@ const meta: Meta<typeof ButtonGroup> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
   argTypes: {
     isDisabled: {

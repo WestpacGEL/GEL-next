@@ -15,6 +15,12 @@ export type ButtonProps = {
    */
   iconBefore?: (props: IconProps) => JSX.Element;
   /**
+   * The color for the icon.
+   *
+   * Defaults to the current text color.
+   */
+  iconColor?: IconProps['color'];
+  /**
    * Tag to render
    */
   tag?: keyof Pick<JSX.IntrinsicElements, 'a' | 'span' | 'button' | 'div'>;
