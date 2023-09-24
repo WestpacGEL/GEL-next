@@ -42,7 +42,6 @@ export function ContentTabs({ content }: { content: Record<string, DocumentEleme
                 componentBlocks={{}}
               />
             </Container>
-            <div className="h-screen" />
           </div>
         </Tabs.Panel>
       ))}

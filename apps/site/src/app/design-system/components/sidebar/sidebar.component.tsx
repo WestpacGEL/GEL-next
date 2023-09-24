@@ -92,7 +92,7 @@ export function Sidebar({ items }: SidebarProps) {
           ))}
         </SidebarSelect>
       </div>
-      <nav className="flex-1 overflow-y-auto pb-4">
+      <nav className="flex-1 overflow-y-auto overflow-x-hidden pb-4">
         <Link href="/" className="block" aria-label="Back to GEL">
           <BackToGelSvg />
         </Link>

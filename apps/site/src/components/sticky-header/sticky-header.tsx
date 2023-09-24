@@ -1,25 +1,35 @@
 'use client';
 
-import { clsx } from 'clsx';
 import throttle from 'lodash.throttle';
 import { useEffect, useRef, useState } from 'react';
 
-export function StickyHeader({ className, children }: { children: React.ReactNode; className?: string }) {
+import { styles } from './sticky-header.styles';
+
+export function StickyHeader({
+  stickyPosition = 0,
+  className,
+  children,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  stickyPosition?: number;
+}) {
   const ref = useRef(null);
   const [stuck, setStuck] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const cachedRef = ref.current;
-    if (cachedRef) {
-      const observer = new IntersectionObserver(([e]) => setStuck(e.intersectionRatio < 1), {
-        rootMargin: '-1px 0px 0px 0px',
-        threshold: [1],
-      });
-      observer.observe(cachedRef);
-      return () => observer.unobserve(cachedRef);
-    }
-  }, [ref]);
+
+    if (!cachedRef) return;
+
+    const observer = new IntersectionObserver(([e]) => setStuck(e.intersectionRatio < 1), {
+      rootMargin: `-${stickyPosition + 1}px 0px 0px 0px`,
+      threshold: [1],
+    });
+    observer.observe(cachedRef);
+    return () => observer.unobserve(cachedRef);
+  }, [ref, stickyPosition]);
 
   useEffect(() => {
     const handleScroll = throttle(() => {
@@ -38,14 +48,7 @@ export function StickyHeader({ className, children }: { children: React.ReactNod
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className={clsx(
-        'sticky top-0 z-[1] transition-shadow delay-0 duration-200 ease-[ease]',
-        stuck && scrolled && 'shadow-[0_8px_8px_rgba(0,0,0,0.24)]',
-        className,
-      )}
-    >
+    <div ref={ref} className={styles({ shadow: stuck && scrolled, className })}>
       {children}
     </div>
   );
