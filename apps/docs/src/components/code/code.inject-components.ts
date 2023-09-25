@@ -28,6 +28,7 @@ export {
   ButtonDropdown,
   InputField,
   Modal,
+  Pagination,
 } from '@westpac/ui';
 
 export {

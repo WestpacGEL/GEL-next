@@ -64,6 +64,7 @@
     "@react-types/accordion": "3.0.0-alpha.14",
     "@react-types/combobox": "~3.7.0",
     "@react-types/shared": "~3.18.1",
+    "@storybook/addon-actions": "~7.4.3",
     "@storybook/addon-essentials": "^7.0.21",
     "@storybook/addon-interactions": "^7.0.21",
     "@storybook/addon-links": "^7.0.21",
@@ -123,8 +124,8 @@
     "react-stately": "~3.23.0"
   },
   "peerDependencies": {
-    "colorjs.io": "~0.4.5",
     "@duetds/date-picker": "~1.4.0",
+    "colorjs.io": "~0.4.5",
     "tailwind-variants": "~0.1.13",
     "tailwindcss": "~3.3.2",
     "tailwindcss-themer": "~3.1.0"
