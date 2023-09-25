@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 
 import { PaginationItem } from './components/index.js';
 import { styles as paginationStyles } from './pagination.styles.js';
@@ -12,13 +12,32 @@ export function Pagination({
   children,
   current,
   linkComponent,
-  infinite,
+  infinite = false,
   onChange,
   backLabel = 'Back',
   nextLabel = 'Next',
   ...props
 }: PaginationProps) {
   const styles = paginationStyles({});
+
+  const generateHandleOnClickBackwards = useCallback(
+    (
+        current: number,
+        infinite: boolean,
+        cannotGoBackwards: boolean,
+        onChange: (page: number) => any,
+        pages: PaginationProps['pages'],
+      ) =>
+      () => {
+        if (infinite && cannotGoBackwards) {
+          return onChange(pages.length);
+        }
+        if (!cannotGoBackwards) {
+          return onChange(current - 1);
+        }
+      },
+    [],
+  );
 
   const paginationBackProps = useMemo(() => {
     const cannotGoBackwards = (current || 1) <= 1;
@@ -36,17 +55,9 @@ export function Pagination({
       return {
         ...defaultBackProps,
         tag: linkComponent || 'button',
-        onClick: current
-          ? () => {
-              if (infinite && cannotGoBackwards) {
-                return onChange(pages.length);
-              }
-              if (cannotGoBackwards) {
-                return;
-              }
-              return onChange(current - 1);
-            }
-          : undefined,
+        ...(current && {
+          onClick: generateHandleOnClickBackwards(current, infinite, cannotGoBackwards, onChange, pages),
+        }),
       };
     }
     return {
@@ -55,6 +66,19 @@ export function Pagination({
       href: cannotGoBackwards ? pages[pages.length - 1].href : pages[(current || 0) - 2]?.href,
     };
   }, [current, onChange, linkComponent, pages, infinite]);
+
+  const generateHandleOnClickForward = useCallback(
+    (current: number, infinite: boolean, cannotGoForward: boolean, onChange: (page: number) => any) => () => {
+      if (infinite && cannotGoForward) {
+        return onChange(1);
+      }
+      if (cannotGoForward) {
+        return;
+      }
+      return onChange(current + 1);
+    },
+    [],
+  );
 
   const paginationNextProps = useMemo(() => {
     const cannotGoForward = (current || 1) >= pages.length;
@@ -72,17 +96,9 @@ export function Pagination({
       return {
         ...defaultNextProps,
         tag: linkComponent || 'button',
-        onClick: current
-          ? () => {
-              if (infinite && cannotGoForward) {
-                return onChange(1);
-              }
-              if (cannotGoForward) {
-                return;
-              }
-              return onChange(current + 1);
-            }
-          : undefined,
+        ...(current && {
+          onClick: generateHandleOnClickForward(current, infinite, cannotGoForward, onChange),
+        }),
       };
     }
     return {
