@@ -15,7 +15,7 @@ const Tile = ({ className }: { className?: string }) => (
       src={testImage}
       alt=""
       className={clsx(
-        'aspect-[1092/563] w-full object-cover transition-[border-radius] duration-200 ease-[cubic-bezier(0.13,0.00,0.11,1.00)] group-hover:rounded-[200px] group-hover:transition-[border-radius] group-hover:duration-300 group-hover:ease-[cubic-bezier(0.13,0.00,0.11,1.00)]',
+        'aspect-[1092/563] w-full object-cover transition-[border-radius] duration-200 ease-[cubic-bezier(0.13,0.00,0.11,1.00)] group-hover:rounded-[12.5rem] group-hover:transition-[border-radius] group-hover:duration-300 group-hover:ease-[cubic-bezier(0.13,0.00,0.11,1.00)]',
         className,
       )}
     />

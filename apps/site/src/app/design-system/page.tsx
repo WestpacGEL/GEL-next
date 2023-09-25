@@ -123,7 +123,7 @@ export default function DesignSystemHomePage() {
               <li className="border-b border-border">
                 <Link
                   href="/articles/figma-libraries"
-                  className="box-border flex min-h-[55px] items-center justify-between py-[1rem] hover:text-primary hover:underline sm:min-h-[72px] sm:py-[9px] sm:pr-[9px]"
+                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] hover:text-primary hover:underline sm:min-h-[4.5rem] sm:py-[0.5625rem] sm:pr-[0.5625rem]"
                 >
                   Figma UI Kits
                   <FigmaLogo />
@@ -138,7 +138,7 @@ export default function DesignSystemHomePage() {
                 <Link
                   href="https://github.com/WestpacGEL/GEL"
                   target="_blank"
-                  className="box-border flex min-h-[55px] items-center justify-between py-[1rem] hover:text-primary hover:underline sm:min-h-[72px] sm:py-[9px] sm:pr-[9px]"
+                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] hover:text-primary hover:underline sm:min-h-[4.5rem] sm:py-[0.5625rem] sm:pr-[0.5625rem]"
                 >
                   Follow Westpac GEL on GitHub
                   <GithubIcon size={{ initial: 'large', lg: 'xlarge' }} color="text" />

@@ -13,7 +13,20 @@ const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
 
 export default config({
   storage,
-  singletons: {},
+  singletons: {
+    url: singleton({
+      label: 'URLs',
+      path: 'content/urls/',
+      schema: {
+        guidelines: fields.url({
+          label: 'Master Brand Guidelines',
+        }),
+        gelEmail: fields.text({
+          label: 'GEL team contact email',
+        }),
+      },
+    }),
+  },
   collections: {
     designSystem: collection({
       label: 'Design System',

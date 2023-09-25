@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'sticky top-0 z-50 flex w-full items-center gap-2 bg-hero px-3 py-2 transition-colors md:top-[-162px] md:h-[228px] md:items-end',
+      base: 'sticky top-0 z-50 flex w-full items-center gap-2 bg-hero px-3 py-2 transition-colors md:top-[-10.125rem] md:h-[14.25rem] md:items-end',
       hamburgerButton: 'h-6 w-6 md:hidden',
       title: 'typography-brand-8 font-bold text-white',
     },

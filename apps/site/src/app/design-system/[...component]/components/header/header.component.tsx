@@ -11,6 +11,8 @@ import { useSidebar } from '../../../components/sidebar/sidebar.context';
 
 import { styles as headerStyles } from './header.styles';
 
+const FIXED_HEADER = 162; // 228 - 66 = height to stick
+
 export function Header({ className }: { className?: string }) {
   const [fixed, setFixed] = useState(false);
   const searchParams = useSearchParams();
@@ -23,7 +25,7 @@ export function Header({ className }: { className?: string }) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const handleScroll = () => {
-        const isFixed = window.scrollY >= 162; // 228 - 66 = height to stick
+        const isFixed = window.scrollY >= FIXED_HEADER;
         setFixed(isFixed);
       };
       window.addEventListener('scroll', handleScroll);

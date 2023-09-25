@@ -8,6 +8,10 @@ import { BackgroundImage } from '../background-image/background-image.component'
 
 import { styles } from './header.styles';
 
+const HEADER_HEIGHT = 66;
+const BREAKPOINT_SM = 768;
+const FIXED_HEADER = 5;
+
 export function Header({ brand }: { brand: BrandKey }) {
   const { setOpen } = useSidebar();
   const [fixed, setFixed] = useState(false);
@@ -18,10 +22,10 @@ export function Header({ brand }: { brand: BrandKey }) {
       const handleScroll = throttle(() => {
         const section = ref?.current?.closest('section');
         const width = window.innerWidth;
-        if (width > 768 && section) {
-          setFixed(section.clientHeight - window.scrollY <= 66);
+        if (width > BREAKPOINT_SM && section) {
+          setFixed(section.clientHeight - window.scrollY <= HEADER_HEIGHT);
         } else {
-          setFixed(window.scrollY > 5);
+          setFixed(window.scrollY > FIXED_HEADER);
         }
       }, 10);
       window.addEventListener('scroll', handleScroll);

@@ -9,7 +9,7 @@ import { logoMap, logoStyles } from '../utils';
 
 import { Circle, Link, Text, Title } from './components/helpers.component';
 
-export function Footer() {
+export function Footer({ gelEmail, guidelinesURL }: { gelEmail?: string; guidelinesURL?: string }) {
   return (
     <div className="bg-[#F3F5F6]">
       <Container>
@@ -43,7 +43,7 @@ export function Footer() {
                 </Link>
               </li>
               <li className="col-span-12 xsl:col-span-6 sm:col-span-12">
-                <Link href="https://westpacgroup.sharepoint.com/:f:/s/O365-UG-031831-GELOperatingEnvironmenttest/EnwmDFymE-dDtefynPcIwn4BdmYcqLZ2_ia2qdR6_YJcqA?e=rc10CQ">
+                <Link href={guidelinesURL}>
                   <Circle>
                     <PdfFileIcon className="text-[#1976D2]" size={{ initial: 'medium', lg: 'large' }} />
                   </Circle>
@@ -51,7 +51,7 @@ export function Footer() {
                 </Link>
               </li>
               <li className="col-span-12 xsl:col-span-6 sm:col-span-12">
-                <Link href="mailto:gel@westpac.com.au">
+                <Link href={`mailto:${gelEmail}`}>
                   <Circle>
                     <EmailIcon className="text-[#1976D2]" size={{ initial: 'medium', lg: 'large' }} />
                   </Circle>

@@ -11,7 +11,7 @@ export default async function DesignSystemLayout({ children }: { children: React
     <div className="flex min-h-screen flex-col">
       <SidebarContextProvider>
         <Sidebar items={formattedItems} />
-        <div className="mb-8 flex flex-1 flex-col lg:ml-[300px]">{children}</div>
+        <div className="mb-8 flex flex-1 flex-col lg:ml-[18.75rem]">{children}</div>
       </SidebarContextProvider>
     </div>
   );

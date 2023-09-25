@@ -16,7 +16,7 @@ export function Header() {
               <ArrowLeftIcon className="text-white" />
             </span>
             <span className="flex h-full items-center border-l border-[rgba(255,255,255,0.8)] pl-3">
-              <GELLogo className="h-3 w-[45px] text-white xsl:h-4 xsl:w-10" />
+              <GELLogo className="h-3 w-[2.8125rem] text-white xsl:h-4 xsl:w-10" />
             </span>
           </div>
         </Link>

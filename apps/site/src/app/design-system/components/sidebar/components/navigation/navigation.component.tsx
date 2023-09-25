@@ -15,33 +15,31 @@ const loadAnimations = () => import('./navigation.utils').then(res => res.defaul
 
 export function Navigation({ items, brand }: NavigationProps) {
   const path = usePathname();
-  const currPath = path.split('/');
+  const crumbs = path.split('/');
   return (
     <ul className="typography-body-10 text-text">
-      <Item label="Home" level={0} path="" currPath={currPath} brand={brand} />
-      <List items={items} currPath={currPath} brand={brand} />
+      <Item label="Home" level={0} path="" crumbs={crumbs} brand={brand} />
+      <List items={items} crumbs={crumbs} brand={brand} />
     </ul>
   );
 }
 
-function List({ items, level = 0, currPath, brand }: ListProps) {
+function List({ items, level = 0, crumbs, brand }: ListProps) {
   return items.map(item => {
     if (item.children) {
       return (
-        <Group key={item.label} label={item.label} level={level} currPath={currPath}>
-          <List items={item.children} level={level + 1} currPath={currPath} brand={brand} />
+        <Group key={item.label} label={item.label} level={level} crumbs={crumbs}>
+          <List items={item.children} level={level + 1} crumbs={crumbs} brand={brand} />
         </Group>
       );
     } else {
-      return (
-        <Item key={item.label} label={item.label} path={item.path} level={level} currPath={currPath} brand={brand} />
-      );
+      return <Item key={item.label} label={item.label} path={item.path} level={level} crumbs={crumbs} brand={brand} />;
     }
   });
 }
 
-function Group({ label, level, currPath, children, ...props }: GroupProps) {
-  const [open, setOpen] = useState(currPath.includes(label));
+function Group({ label, level, crumbs, children, ...props }: GroupProps) {
+  const [open, setOpen] = useState(crumbs.includes(label));
   return (
     <li {...props}>
       <button
@@ -78,9 +76,9 @@ function Group({ label, level, currPath, children, ...props }: GroupProps) {
   );
 }
 
-function Item({ label, path, level, currPath, brand, ...props }: ItemProps) {
+function Item({ label, path, level, crumbs, brand, ...props }: ItemProps) {
   const href = `/design-system/${path}?brand=${brand}`;
-  const active = currPath[currPath.length - 1] === label;
+  const active = crumbs[crumbs.length - 1] === label;
   return (
     <li {...props}>
       <Link

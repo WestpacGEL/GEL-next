@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'fixed inset-x-0 top-0 z-20 flex h-11 overflow-hidden text-white sm:static sm:pl-2 lg:left-[300px] lg:pl-5',
+    base: 'fixed inset-x-0 top-0 z-20 flex h-11 overflow-hidden text-white sm:static sm:pl-2 lg:left-[18.75rem] lg:pl-5',
     heading: 'z-10 flex grow items-center sm:border-b sm:border-white/70',
   },
   variants: {

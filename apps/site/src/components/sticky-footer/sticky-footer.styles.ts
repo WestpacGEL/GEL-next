@@ -10,7 +10,7 @@ export const styles = tv({
   variants: {
     isDesignSystem: {
       true: {
-        footer: 'lg:left-[300px]',
+        footer: 'lg:left-[18.75rem]',
         icons: 'text-muted',
       },
       false: {

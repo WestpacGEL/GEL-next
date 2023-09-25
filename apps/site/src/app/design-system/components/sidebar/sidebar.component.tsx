@@ -17,32 +17,32 @@ const BANK_OPTIONS = [
   {
     key: 'wbc',
     label: 'Westpac',
-    icon: <WBCLogo className="h-3 w-[44px]" />,
+    icon: <WBCLogo className="h-3 w-[2.75rem]" />,
   },
   {
     key: 'stg',
     label: 'St. George',
-    icon: <STGDragonLogo className="-mr-2 h-[38px] w-9" />,
+    icon: <STGDragonLogo className="-mr-2 h-[2.375rem] w-9" />,
   },
   {
     key: 'bom',
     label: 'Bank of Melbourne',
-    icon: <BOMShieldLogo className="mr-[9px] h-[39px] w-[26px]" />,
+    icon: <BOMShieldLogo className="mr-[0.5625rem] h-[2.4375rem] w-[1.625rem]" />,
   },
   {
     key: 'bsa',
     label: 'Bank of SA',
-    icon: <BSAStackedLogo className="mr-[8px] h-[46px] w-[27px]" />,
+    icon: <BSAStackedLogo className="mr-[0.5rem] h-[2.875rem] w-[1.6875rem]" />,
   },
   {
     key: 'wbg',
     label: 'Westpac Group',
-    icon: <WBGLogo className="mr-[-8px] h-[9px] w-[70px]" />,
+    icon: <WBGLogo className="mr-[-0.5rem] h-[0.5625rem] w-[4.375rem]" />,
   },
   {
     key: 'rams',
     label: 'RAMS',
-    icon: <RAMSLogo className="mr-[-8px] h-6 w-[70px]" />,
+    icon: <RAMSLogo className="mr-[-0.5rem] h-6 w-[4.375rem]" />,
   },
 ];
 
@@ -70,7 +70,7 @@ export function Sidebar({ items }: SidebarProps) {
   return (
     <div
       className={clsx(
-        'fixed top-0 z-[60] flex h-full w-[300px] grow-0 flex-col border-r-0 bg-white text-text shadow-2xl transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:-translate-x-0 lg:border-r lg:border-r-border lg:shadow-none',
+        'fixed top-0 z-[60] flex h-full w-[18.75rem] grow-0 flex-col border-r-0 bg-white text-text shadow-2xl transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:-translate-x-0 lg:border-r lg:border-r-border lg:shadow-none',
         {
           '-translate-x-full': !open, //hide sidebar to the left when closed
         },
