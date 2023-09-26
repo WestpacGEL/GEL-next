@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactElement, ReactNode } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactElement } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './pagination-item.styles.js';
