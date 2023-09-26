@@ -17,7 +17,7 @@ export function PaginationItem({
       className={styles({ className, firstItem, active, disabled })}
       {...props}
       disabled={disabled}
-      aria-current={active && 'page'}
+      aria-current={active ? 'page' : undefined}
     >
       {children}
     </Tag>
