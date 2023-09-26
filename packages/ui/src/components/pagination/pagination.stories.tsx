@@ -121,7 +121,7 @@ export const ExampleWithCustomBackAndNextLabel = () => {
 };
 
 /**
- * > Using custom back and next label
+ * > Using use pagination hook
  */
 export const ExampleWithUsePagination = () => {
   const { pages, currentPage, setCurrentPage } = usePagination({
@@ -143,7 +143,7 @@ export const ExampleWithUsePagination = () => {
 };
 
 /**
- * > Using custom back and next label
+ * > Using use pagination hook with other components
  */
 export const ExampleUsePagination = () => {
   const { next, previous, selectedPage } = usePagination({
