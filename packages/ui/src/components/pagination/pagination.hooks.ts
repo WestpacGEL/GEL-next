@@ -32,6 +32,7 @@ export const usePagination = ({ defaultCurrent = 1, pages, infinite = false }: P
   return {
     selectedPage,
     currentPage,
+    setCurrentPage,
     next,
     previous,
     pages,

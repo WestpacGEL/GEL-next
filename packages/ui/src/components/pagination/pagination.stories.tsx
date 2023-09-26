@@ -2,7 +2,11 @@ import { action } from '@storybook/addon-actions';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
+import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
+import { Button } from '../index.js';
+
 import { Pagination } from './pagination.component.js';
+import { usePagination } from './pagination.hooks.js';
 
 const meta: Meta<typeof Pagination> = {
   title: 'Example/Pagination',
@@ -113,5 +117,45 @@ export const ExampleWithCustomBackAndNextLabel = () => {
       }}
       pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
     />
+  );
+};
+
+/**
+ * > Using custom back and next label
+ */
+export const ExampleWithUsePagination = () => {
+  const { pages, currentPage, setCurrentPage } = usePagination({
+    pages: [{ text: '1' }, { text: '2' }, { text: '3' }],
+  });
+
+  return (
+    <Pagination
+      current={currentPage}
+      backLabel="Custom back"
+      nextLabel="Custom next"
+      infinite
+      onChange={changedPage => {
+        setCurrentPage(changedPage);
+      }}
+      pages={pages}
+    />
+  );
+};
+
+/**
+ * > Using custom back and next label
+ */
+export const ExampleUsePagination = () => {
+  const { next, previous, selectedPage } = usePagination({
+    pages: [{ text: 'Page 1' }, { text: 'Page 2' }, { text: 'Page 3' }],
+    infinite: true,
+  });
+
+  return (
+    <div className="flex items-center">
+      <Button look="link" iconAfter={ArrowLeftIcon} onClick={previous} />
+      <h4>{selectedPage.text}</h4>
+      <Button look="link" iconAfter={ArrowRightIcon} onClick={next} />
+    </div>
   );
 };
