@@ -28,6 +28,7 @@ export {
   ButtonDropdown,
   InputField,
   Modal,
+  Popover,
   ProgressRope,
 } from '@westpac/ui';
 
