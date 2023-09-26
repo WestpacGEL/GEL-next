@@ -29,6 +29,8 @@ export {
   InputField,
   Modal,
   Pagination,
+  Popover,
+  ProgressRope,
 } from '@westpac/ui';
 
 export { usePagination } from '@westpac/ui/hook';

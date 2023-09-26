@@ -231,6 +231,9 @@ importers:
       '@react-types/shared':
         specifier: ~3.18.1
         version: 3.18.1(react@18.2.0)
+      '@storybook/addon-a11y':
+        specifier: ~7.4.3
+        version: 7.4.3(@types/react-dom@18.2.1)(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addon-actions':
         specifier: ~7.4.3
         version: 7.4.3(@types/react-dom@18.2.1)(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0)
@@ -6001,6 +6004,37 @@ packages:
     hasBin: true
     dev: false
 
+  /@storybook/addon-a11y@7.4.3(@types/react-dom@18.2.1)(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-ol/7cLedJo82DmIgz925CL6ajPqwoYLDM3DDUkcDiPivLEvCsQkY+Yjv/6DM2cJXdchjppYk7hDTuwO1QJXO4w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@storybook/addon-highlight': 7.4.3
+      '@storybook/channels': 7.4.3
+      '@storybook/client-logger': 7.4.3
+      '@storybook/components': 7.4.3(@types/react-dom@18.2.1)(@types/react@18.0.28)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/core-events': 7.4.3
+      '@storybook/global': 5.0.0
+      '@storybook/manager-api': 7.4.3(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/preview-api': 7.4.3
+      '@storybook/theming': 7.4.3(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/types': 7.4.3
+      axe-core: 4.7.2
+      lodash: 4.17.21
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-resize-detector: 7.1.2(react-dom@18.2.0)(react@18.2.0)
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
+    dev: true
+
   /@storybook/addon-actions@7.0.21(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-wYH1rDHY4KzLkNeXiMonrAZ4uIZFJVjo3E439mWylnJRqs6lKukCU3iHUx02J0KKeJH+GywRg87B/i42qQK62g==}
     peerDependencies:
@@ -6027,7 +6061,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-inspector: 6.0.2(react@18.2.0)
-      telejson: 7.1.0
+      telejson: 7.2.0
       ts-dedent: 2.2.0
       uuid: 9.0.0
     dev: true
@@ -6184,6 +6218,14 @@ packages:
       '@storybook/core-events': 7.0.21
       '@storybook/global': 5.0.0
       '@storybook/preview-api': 7.0.21
+    dev: true
+
+  /@storybook/addon-highlight@7.4.3:
+    resolution: {integrity: sha512-4FDvg+ZH5/H6b7qI6tVSygCaF5h7TStfyLXwxx07edot0vaaw4ir/0sbCAH9AUQ9/+08RiXsMFO5tgMUp/BjcA==}
+    dependencies:
+      '@storybook/core-events': 7.4.3
+      '@storybook/global': 5.0.0
+      '@storybook/preview-api': 7.4.3
     dev: true
 
   /@storybook/addon-interactions@7.0.21(react-dom@18.2.0)(react@18.2.0):
@@ -6913,7 +6955,7 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
       semver: 7.5.4
       store2: 2.14.2
-      telejson: 7.1.0
+      telejson: 7.2.0
       ts-dedent: 2.2.0
     dev: true
 
@@ -6938,7 +6980,7 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
       semver: 7.5.4
       store2: 2.14.2
-      telejson: 7.1.0
+      telejson: 7.2.0
       ts-dedent: 2.2.0
     dev: true
 
@@ -14806,6 +14848,17 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
+
+  /react-resize-detector@7.1.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-zXnPJ2m8+6oq9Nn8zsep/orts9vQv3elrpA+R8XTcW7DVVUJ9vwDwMXaBtykAYjMnkCIaOoK9vObyR7ZgFNlOw==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      lodash: 4.17.21
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: true
 
   /react-stately@3.23.0(react@18.2.0):
     resolution: {integrity: sha512-nk2ihInebz5s+eDcXeEL+e2AbP9g0Mp9Gx5GEgqfICc8CKoYWERQsukXphGc6WEvFpAjVde7Q33hqusIqAO5gA==}

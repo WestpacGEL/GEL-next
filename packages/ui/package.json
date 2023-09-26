@@ -68,6 +68,7 @@
     "@react-types/combobox": "~3.7.0",
     "@react-types/shared": "~3.18.1",
     "@storybook/addon-actions": "~7.4.3",
+    "@storybook/addon-a11y": "~7.4.3",
     "@storybook/addon-essentials": "^7.0.21",
     "@storybook/addon-interactions": "^7.0.21",
     "@storybook/addon-links": "^7.0.21",
