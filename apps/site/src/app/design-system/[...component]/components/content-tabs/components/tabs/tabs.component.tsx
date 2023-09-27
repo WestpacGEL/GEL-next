@@ -8,13 +8,15 @@ import { StickyHeader } from '@/components/sticky-header';
 
 import { styles } from './tabs.styles';
 
+const HEADER_OFFSET = 66;
+
 export function Tabs(props: AriaTabListProps<AriaTabProps>) {
   const state = useTabListState(props);
   const ref = useRef(null);
   const { tabListProps } = useTabList(props, state, ref);
   return (
     <div>
-      <StickyHeader stickyPosition={66} className="top-11">
+      <StickyHeader stickyPosition={HEADER_OFFSET} className="top-11">
         <div {...tabListProps} ref={ref} className="flex h-11 items-end bg-white sm:h-15">
           {[...state.collection].map(item => (
             <Tab key={item.key} item={item} state={state} />

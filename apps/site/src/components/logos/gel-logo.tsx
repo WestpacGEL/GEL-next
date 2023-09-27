@@ -2,7 +2,7 @@ import { clsx } from 'clsx';
 
 import { Svg } from '@/components/svg';
 
-export function GELLogo({ className, ...props }) {
+export function GELLogo({ className, ...props }: { className?: string }) {
   return (
     <span className={clsx('inline-block h-3 w-[45px]', className)} {...props}>
       <Svg viewBox="0 0 45 18" aria-label="GEL">

@@ -8,7 +8,7 @@ export function GELHeroLogo() {
       role="img"
       focusable="false"
       aria-label="GEL global experience language - speak the same language"
-      className="w-full h-auto"
+      className="h-auto w-full"
     >
       <title>GEL global experience language</title>
       <path

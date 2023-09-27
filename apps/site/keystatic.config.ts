@@ -1,18 +1,21 @@
 import { GitHubConfig, LocalConfig, collection, config, fields, singleton } from '@keystatic/core';
 
-const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
-  process.env.NODE_ENV === 'development'
-    ? { kind: 'local' }
-    : {
-        kind: 'github',
-        repo: {
-          owner: process.env.NEXT_PUBLIC_GIT_REPO_OWNER!,
-          name: process.env.NEXT_PUBLIC_GIT_REPO_SLUG!,
-        },
-      };
+// TODO: re-enable once properly configured with keystatic github app
+// const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
+//   process.env.NODE_ENV === 'development'
+//     ? { kind: 'local' }
+//     : {
+//         kind: 'github',
+//         repo: {
+//           owner: process.env.NEXT_PUBLIC_GIT_REPO_OWNER!,
+//           name: process.env.NEXT_PUBLIC_GIT_REPO_SLUG!,
+//         },
+//       };
 
 export default config({
-  storage,
+  storage: {
+    kind: 'local',
+  },
   singletons: {
     url: singleton({
       label: 'URLs',

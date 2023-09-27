@@ -39,7 +39,7 @@ function List({ items, level = 0, crumbs, brand }: ListProps) {
 }
 
 function Group({ label, level, crumbs, children, ...props }: GroupProps) {
-  const [open, setOpen] = useState(crumbs.includes(label));
+  const [open, setOpen] = useState<boolean>(crumbs.includes(label));
   return (
     <li {...props}>
       <button

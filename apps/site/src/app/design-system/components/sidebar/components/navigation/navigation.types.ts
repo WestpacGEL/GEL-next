@@ -12,14 +12,14 @@ export type NavigationProps = {
 };
 export type ListProps = {
   brand: BrandKey;
-  currPath: string[];
+  crumbs: string[];
   items: Item[];
   level?: number;
 };
 
 export type ItemProps = {
   brand: BrandKey;
-  currPath: string[];
+  crumbs: string[];
   label: string;
   level: number;
   path: string | undefined;
@@ -27,7 +27,7 @@ export type ItemProps = {
 
 export type GroupProps = {
   children: React.ReactNode;
-  currPath: string[];
+  crumbs: string[];
   label: string;
   level: number;
 };

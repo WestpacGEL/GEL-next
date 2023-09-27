@@ -10,7 +10,7 @@ export default async function Homepage() {
       <Hero />
       <ActionBar />
       <Content />
-      <Footer gelEmail={urls.gelEmail} guidelinesURL={urls.guidelines} />
+      <Footer gelEmail={urls?.gelEmail ?? ''} guidelinesURL={urls?.guidelines ?? ''} />
     </main>
   );
 }

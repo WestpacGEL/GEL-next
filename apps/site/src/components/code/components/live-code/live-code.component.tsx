@@ -2,7 +2,7 @@ import { AlertIcon } from '@westpac/ui/icon';
 import copy from 'clipboard-copy';
 import { clsx } from 'clsx';
 import { themes } from 'prism-react-renderer';
-import React, { KeyboardEvent, useCallback, useContext, useId, useRef, useState } from 'react';
+import { KeyboardEvent, useCallback, useContext, useId, useRef, useState } from 'react';
 import { LiveContext, LiveEditor, LivePreview } from 'react-live';
 
 import { BracketIcon } from '../../../icons/bracket-icon';
@@ -61,7 +61,7 @@ export function LiveCode({ showCode = false, className }: LiveCodeProps) {
             aria-controls={codeId}
           >
             <>
-              <BracketIcon width="14px" />
+              <BracketIcon />
               {isCodeVisible ? 'Hide code' : 'Show code'}
             </>
           </button>

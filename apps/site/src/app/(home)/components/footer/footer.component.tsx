@@ -9,7 +9,7 @@ import { logoMap, logoStyles } from '../utils';
 
 import { Circle, Link, Text, Title } from './components/helpers.component';
 
-export function Footer({ gelEmail, guidelinesURL }: { gelEmail?: string; guidelinesURL?: string }) {
+export function Footer({ gelEmail = '', guidelinesURL = '' }: { gelEmail?: string; guidelinesURL?: string }) {
   return (
     <div className="bg-[#F3F5F6]">
       <Container>

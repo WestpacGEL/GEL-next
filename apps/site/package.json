@@ -5,7 +5,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "check-types": "tsc --noemit --emitDeclarationOnly false"
   },
   "dependencies": {
     "@keystatic/core": "^0.1.4",
