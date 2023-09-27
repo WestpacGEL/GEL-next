@@ -10,7 +10,7 @@ export function SectionItem({ className, children, ...props }: { children: React
       start={{ initial: 2, xsl: 1, sm: 2 }}
       {...props}
     >
-      {children}
+      <>{children}</>
     </Item>
   );
 }

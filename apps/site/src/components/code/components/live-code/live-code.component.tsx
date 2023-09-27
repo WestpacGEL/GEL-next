@@ -2,7 +2,7 @@ import { AlertIcon } from '@westpac/ui/icon';
 import copy from 'clipboard-copy';
 import { clsx } from 'clsx';
 import { themes } from 'prism-react-renderer';
-import { KeyboardEvent, useCallback, useContext, useId, useRef, useState } from 'react';
+import { ComponentType, Context, KeyboardEvent, useCallback, useContext, useId, useRef, useState } from 'react';
 import { LiveContext, LiveEditor, LivePreview } from 'react-live';
 
 import { BracketIcon } from '../../../icons/bracket-icon';
