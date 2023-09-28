@@ -9,6 +9,9 @@ export type CompactaProps = {
    * Component to repeat
    */
   children: (...props: ContentProps[]) => ReactNode;
+  /**
+   * Tag for primary title
+   */
   titleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 } & Omit<HTMLAttributes<Element>, 'children'>;
 

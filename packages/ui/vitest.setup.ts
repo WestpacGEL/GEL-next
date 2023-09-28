@@ -5,7 +5,7 @@ const noop = () => {
 };
 Object.defineProperty(window, 'scrollTo', { value: noop, writable: true });
 Object.defineProperty(window.URL, 'createObjectURL', {
-  value: () => 'test',
+  value: () => new Blob(),
   writable: true,
 });
 Object.defineProperty(window.URL, 'revokeObjectURL', { value: noop, writable: true });
