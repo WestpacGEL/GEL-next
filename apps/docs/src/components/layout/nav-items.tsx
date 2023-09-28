@@ -32,6 +32,7 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/button-dropdown', label: 'Button Dropdown' },
       { href: '/components/input-field', label: 'Input Field' },
       { href: '/components/modal', label: 'Modal' },
+      { href: '/components/popover', label: 'Popover' },
       { href: '/components/progress-rope', label: 'Progress Rope' },
       { href: '/components/compacta', label: 'Compacta' },
     ],
