@@ -123,6 +123,11 @@
     "react-aria": "~3.25.0",
     "react-stately": "~3.23.0"
   },
+  "overrides": {
+    "react-aria": {
+      "@types/react": "$@types/react"
+    }
+  },
   "peerDependencies": {
     "@duetds/date-picker": "~1.4.0",
     "colorjs.io": "~0.4.5",
