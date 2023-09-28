@@ -29,6 +29,7 @@ export {
   InputField,
   Modal,
   ProgressRope,
+  Compacta,
 } from '@westpac/ui';
 
 export {

@@ -46,21 +46,19 @@ export function Collapsible({
         {text}
       </Button>
       <LazyMotion features={loadAnimations}>
-        <AnimatePresence>
-          {contentOpen && (
-            <m.div
-              key="content"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.15 }}
-              className={styles.content()}
-              id={contentId}
-              aria-hidden={!contentOpen}
-            >
-              {children}
-            </m.div>
-          )}
-        </AnimatePresence>
+        {contentOpen && (
+          <m.div
+            key="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.15 }}
+            className={styles.content()}
+            id={contentId}
+            aria-hidden={!contentOpen}
+          >
+            {children}
+          </m.div>
+        )}
       </LazyMotion>
     </>
   );
