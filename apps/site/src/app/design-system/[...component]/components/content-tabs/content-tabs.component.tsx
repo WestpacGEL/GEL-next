@@ -6,6 +6,7 @@ import { Container } from '@westpac/ui';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Key, useCallback } from 'react';
 
+import { AccessibilityContent, DesignContent } from '@/components/content-blocks';
 import { DOCUMENT_RENDERERS } from '@/components/document-renderer';
 
 import { Tabs } from './components';
@@ -34,14 +35,20 @@ export function ContentTabs({ content }: { content: Record<string, DocumentEleme
     <Tabs aria-label="GEL design system content" selectedKey={tab} onSelectionChange={handleChange}>
       {TABS.map(tab => (
         <Tabs.Panel title={tab.label} key={tab.key}>
-          <div className="bg-light p-4">
-            <Container>
-              <DocumentRenderer
-                document={content[tab.key as 'design' | 'accessibility' | 'code']}
-                renderers={DOCUMENT_RENDERERS}
-                componentBlocks={{}}
-              />
-            </Container>
+          <div className="bg-background">
+            {tab.key === 'design' && <DesignContent />}
+            {tab.key === 'accessibility' && <AccessibilityContent />}
+            {tab.key === 'code' && (
+              <div className="bg-light p-4">
+                <Container>
+                  <DocumentRenderer
+                    document={content[tab.key as 'design' | 'accessibility' | 'code']}
+                    renderers={DOCUMENT_RENDERERS}
+                    componentBlocks={{}}
+                  />
+                </Container>
+              </div>
+            )}
           </div>
         </Tabs.Panel>
       ))}
