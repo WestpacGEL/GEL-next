@@ -2,7 +2,6 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    // 0.5625rem 0.75rem
     base: 'typography-body-10 block border-l border-border px-2 py-[0.5625rem] text-center text-text transition-colors',
     variants: {
       firstItem: {
