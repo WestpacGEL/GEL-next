@@ -98,7 +98,6 @@ export function Compacta({
           headingRefs?.current[action.index]?.focus();
         }, 1);
         setStatus(`Item ${action.index + 1} added`);
-        console.log(status);
       }
 
       if (action.type === 'remove') {

@@ -12,7 +12,7 @@ export const styles = tv(
       itemIndex: 'mr-2 w-4 flex-none font-bold',
       removeBtn: 'mt-[0.875rem] h-auto p-0 no-underline hover:underline',
       addBtn: 'h-auto p-0 no-underline hover:underline',
-      toggleBtn: 'ml-auto p-0',
+      toggleBtn: 'ml-auto p-0 focus:outline-focus',
       collapsible: '',
       content: 'xsl:pl-[3.375rem] p-[0_1.125rem_1.875rem]',
       footer: 'pt-[0.5rem]',
