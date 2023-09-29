@@ -12,7 +12,7 @@ export type SelectorRadioGroupProps = {
   tag?: keyof JSX.IntrinsicElements;
 } & VariantProps<typeof styles> &
   AriaRadioGroupProps &
-  HTMLAttributes<Element>;
+  Omit<HTMLAttributes<Element>, 'onChange'>;
 
 export type SelectorRadioGroupContextState = {
   /**

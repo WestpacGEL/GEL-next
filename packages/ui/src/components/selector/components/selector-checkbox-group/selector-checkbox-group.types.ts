@@ -22,4 +22,4 @@ export type SelectorCheckboxGroupProps = {
   size?: 'medium' | 'large';
 } & AriaCheckboxGroupProps &
   VariantProps<typeof styles> &
-  HTMLAttributes<Element>;
+  Omit<HTMLAttributes<Element>, 'onChange'>;

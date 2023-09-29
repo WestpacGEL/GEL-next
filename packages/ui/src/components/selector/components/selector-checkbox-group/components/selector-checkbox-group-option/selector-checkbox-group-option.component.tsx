@@ -19,7 +19,7 @@ function BaseSelectorCheckboxGroupOption(
     badge,
     badgeZIndex,
     before,
-    body,
+    body = true,
     checkIcon = 'checkbox',
     ...props
   }: SelectorCheckboxGroupOptionProps,
@@ -41,7 +41,12 @@ function BaseSelectorCheckboxGroupOption(
 
   return (
     <FlexiCell
-      after={<FinalIcon aria-hidden="true" className={styles.icon({})} />}
+      after={
+        <div className="flex gap-2">
+          {after}
+          <FinalIcon aria-hidden="true" className={styles.icon({})} />
+        </div>
+      }
       badge={badge}
       badgeZIndex={badgeZIndex}
       before={before}

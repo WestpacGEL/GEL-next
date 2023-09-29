@@ -19,7 +19,7 @@ function BaseSelectorRadioGroupOption(
     badge,
     badgeZIndex,
     before,
-    body,
+    body = true,
     checkIcon = 'checkbox',
     ...props
   }: SelectorRadioGroupOptionProps,
@@ -35,7 +35,12 @@ function BaseSelectorRadioGroupOption(
 
   return (
     <FlexiCell
-      after={<FinalIcon aria-hidden="true" className={styles.icon({})} />}
+      after={
+        <div className="flex gap-2">
+          {after}
+          <FinalIcon aria-hidden="true" className={styles.icon({})} />
+        </div>
+      }
       badge={badge}
       badgeZIndex={badgeZIndex}
       before={before}
