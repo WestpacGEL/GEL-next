@@ -51,7 +51,6 @@ function BaseSelectorRadioGroupOption(
       ref={ref}
       className={styles.base({})}
       withHoverEffect
-      {...props}
     >
       <VisuallyHidden>
         <input {...inputProps} {...focusProps} ref={localRef} />

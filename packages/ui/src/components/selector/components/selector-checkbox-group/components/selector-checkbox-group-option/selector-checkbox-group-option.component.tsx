@@ -57,7 +57,6 @@ function BaseSelectorCheckboxGroupOption(
       ref={ref}
       withHoverEffect
       className={styles.base({})}
-      {...props}
     >
       <VisuallyHidden>
         <input {...inputProps} {...focusProps} ref={localRef} />
