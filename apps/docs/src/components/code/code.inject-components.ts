@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 export {
+  Badge,
   Button,
   Well,
   Alert,
@@ -17,10 +18,29 @@ export {
   ProgressBar,
   Link,
   Table,
+  Collapsible,
+  DatePicker,
+  List,
+  FlexiCell,
+  Circle,
+  Autocomplete,
+  Panel,
+  ButtonDropdown,
+  InputField,
+  Modal,
+  Pagination,
+  Popover,
+  ProgressRope,
+  Compacta,
+  Form,
 } from '@westpac/ui';
+
+export { usePagination } from '@westpac/ui/hook';
 
 export {
   AddIcon,
+  TickCircleIcon,
+  ArrowLeftIcon,
   ArrowRightIcon,
   CalendarIcon,
   DeleteIcon,
@@ -35,5 +55,13 @@ export {
   StarRateIcon,
   WriteIcon,
   TelephoneIcon,
+  InfoIcon,
+  SearchIcon,
+  VisibilityIcon,
+  CloseIcon,
+  VisibilityOffIcon,
+  RefreshIcon,
 } from '@westpac/ui/icon';
+
+export { GiftPictogram } from '@westpac/ui/pictogram';
 export { Link as NextLink };

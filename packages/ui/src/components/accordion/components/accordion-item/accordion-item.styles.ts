@@ -22,10 +22,10 @@ export const styles = tv(
       },
       color: {
         hero: {
-          itemHeader: 'border-l-5 border-l-border transition-colors',
+          itemHeader: 'border-l-[0.375rem] border-l-border transition-colors',
         },
         primary: {
-          itemHeader: 'border-l-5 border-l-border transition-colors',
+          itemHeader: 'border-l-[0.375rem] border-l-border transition-colors',
         },
       },
       isOpen: {
@@ -69,12 +69,12 @@ export const styles = tv(
       {
         slots: ['content'],
         color: 'hero',
-        className: 'border-l-5 border-l-border',
+        className: 'border-l-[0.375rem] border-l-border',
       },
       {
         slots: ['content'],
         color: 'primary',
-        className: 'border-l-5 border-l-border',
+        className: 'border-l-[0.375rem] border-l-border',
       },
     ],
   },

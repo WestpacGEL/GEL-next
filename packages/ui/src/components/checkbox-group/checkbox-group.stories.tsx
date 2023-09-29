@@ -14,7 +14,7 @@ const meta: Meta<typeof CheckboxGroup> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
   args: {
     label: <h2>Test</h2>,

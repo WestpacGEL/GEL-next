@@ -1,0 +1,70 @@
+## Using link pagination
+
+```tsx
+<div className="flex">
+  <Pagination
+    current={1}
+    pages={[
+      { text: '1', href: '#page-1' },
+      { text: '2', href: '#page-2' },
+      { text: '3', href: '#page-3' },
+    ]}
+  />
+</div>
+```
+
+## Using state as pagination
+
+```tsx
+() => {
+  const [page, setPage] = useState(1);
+
+  return (
+    <div className="flex">
+      <Pagination
+        current={page}
+        onChange={changedPage => {
+          setPage(changedPage);
+        }}
+        pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
+      />
+    </div>
+  );
+};
+```
+
+## Using usePagination hook
+
+```tsx
+() => {
+  const { next, previous, selectedPage } = usePagination({
+    pages: [{ text: 'Page 1' }, { text: 'Page 2' }, { text: 'Page 3' }],
+    infinite: true,
+  });
+
+  return (
+    <div className="flex items-center">
+      <Button look="link" iconAfter={ArrowLeftIcon} onClick={previous} />
+      <h4>{selectedPage.text}</h4>
+      <Button look="link" iconAfter={ArrowRightIcon} onClick={next} />
+    </div>
+  );
+};
+```
+
+## Using Next Link
+
+```tsx
+<div className="flex">
+  <Pagination
+    linkComponent={NextLink}
+    current={2}
+    type="link"
+    pages={[
+      { text: '1', href: '#page1' },
+      { text: '2', href: '#page2' },
+      { text: '3', href: '#page3' },
+    ]}
+  />
+</div>
+```

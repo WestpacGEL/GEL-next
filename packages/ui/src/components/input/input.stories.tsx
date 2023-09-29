@@ -14,7 +14,7 @@ const meta: Meta<typeof Input> = {
     ),
   ],
   parameters: {
-    layout: 'center',
+    layout: 'fullscreen',
   },
 };
 
