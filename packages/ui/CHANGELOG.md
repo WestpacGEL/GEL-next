@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.4.0
+
+### Minor Changes
+
+- 3182ae2: added auto complete, date picker, progress rope, panel, list, mega input, pagination and compacta
+
 ## 0.3.0
 
 ### Minor Changes
