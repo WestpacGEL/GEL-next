@@ -30,6 +30,8 @@ export {
   Modal,
   Popover,
   ProgressRope,
+  Compacta,
+  Form,
 } from '@westpac/ui';
 
 export {
