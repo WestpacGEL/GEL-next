@@ -7,6 +7,10 @@ import { BusPictogram, ChatPictogram, PizzaPictogram } from '../pictogram/index.
 
 import { Selector } from './selector.component.js';
 
+const HERE_IS_A_LABEL_A = 'Here is a label A';
+const HERE_IS_A_LABEL_B = 'Here is a label B';
+const HERE_IS_A_LABEL_C = 'Here is a label C';
+
 const meta: Meta<typeof Selector> = {
   title: 'Example/Selector',
   component: Selector,
@@ -172,7 +176,7 @@ export const WithHintTextStory = () => {
     <Selector type="checkbox">
       {[
         {
-          label: 'Here is a label A',
+          label: HERE_IS_A_LABEL_A,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -183,7 +187,7 @@ export const WithHintTextStory = () => {
           disabled: false,
         },
         {
-          label: 'Here is a label B',
+          label: HERE_IS_A_LABEL_B,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -193,7 +197,7 @@ export const WithHintTextStory = () => {
           key: 'B',
           disabled: false,
         },
-        { label: 'Here is a label C', hint: '', key: 'C', disabled: false },
+        { label: HERE_IS_A_LABEL_C, hint: '', key: 'C', disabled: false },
       ].map(({ key, disabled, hint, label }) => (
         <Selector.Checkbox key={key} body value={key} isDisabled={disabled}>
           <Selector.Label>{label}</Selector.Label>
@@ -217,7 +221,7 @@ export const WithPictogramStory = () => {
               <PizzaPictogram className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label A',
+          label: HERE_IS_A_LABEL_A,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -233,7 +237,7 @@ export const WithPictogramStory = () => {
               <ChatPictogram className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label B',
+          label: HERE_IS_A_LABEL_B,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -249,7 +253,7 @@ export const WithPictogramStory = () => {
               <BusPictogram className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label C',
+          label: HERE_IS_A_LABEL_C,
           hint: '',
           key: 'C',
           disabled: false,
@@ -277,7 +281,7 @@ export const WithPictogramDifferentSizesStory = () => {
               <PizzaPictogram className="h-15 w-15" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label A',
+          label: HERE_IS_A_LABEL_A,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -293,7 +297,7 @@ export const WithPictogramDifferentSizesStory = () => {
               <ChatPictogram className="h-10 w-10" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label B',
+          label: HERE_IS_A_LABEL_B,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -309,7 +313,7 @@ export const WithPictogramDifferentSizesStory = () => {
               <BusPictogram className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label C',
+          label: HERE_IS_A_LABEL_C,
           hint: '',
           key: 'C',
           disabled: false,
@@ -337,7 +341,7 @@ export const WithIconsDifferentSizesStory = () => {
               <PersonIcon className="h-15 w-15" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label A',
+          label: HERE_IS_A_LABEL_A,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -353,7 +357,7 @@ export const WithIconsDifferentSizesStory = () => {
               <PersonIcon className="h-10 w-10" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label B',
+          label: HERE_IS_A_LABEL_B,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -369,7 +373,7 @@ export const WithIconsDifferentSizesStory = () => {
               <PersonIcon className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label C',
+          label: HERE_IS_A_LABEL_C,
           hint: '',
           key: 'C',
           disabled: false,
@@ -397,7 +401,7 @@ export const WithIconsAndSecondaryLabelStory = () => {
               <PersonIcon className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label A',
+          label: HERE_IS_A_LABEL_A,
           after: <Selector.Label>$200,000.00</Selector.Label>,
           hint: (
             <>
@@ -414,7 +418,7 @@ export const WithIconsAndSecondaryLabelStory = () => {
               <PersonIcon className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label B',
+          label: HERE_IS_A_LABEL_B,
           after: <Selector.Label>$200,000.00</Selector.Label>,
           hint: (
             <>
@@ -431,7 +435,7 @@ export const WithIconsAndSecondaryLabelStory = () => {
               <PersonIcon className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label C',
+          label: HERE_IS_A_LABEL_C,
           after: (
             <Selector.Adornment align="center">
               <span>$200,000.00</span>
@@ -469,7 +473,7 @@ export const RadioWithIconsAndSecondaryLabelStory = () => {
               <PersonIcon className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label A',
+          label: HERE_IS_A_LABEL_A,
           after: <Selector.Label>$200,000.00</Selector.Label>,
           hint: (
             <>
@@ -486,7 +490,7 @@ export const RadioWithIconsAndSecondaryLabelStory = () => {
               <PersonIcon className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label B',
+          label: HERE_IS_A_LABEL_B,
           after: <Selector.Label>$200,000.00</Selector.Label>,
           hint: (
             <>
@@ -503,7 +507,7 @@ export const RadioWithIconsAndSecondaryLabelStory = () => {
               <PersonIcon className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label C',
+          label: HERE_IS_A_LABEL_C,
           after: (
             <Selector.Adornment align="center">
               <span>$200,000.00</span>
@@ -549,7 +553,7 @@ export const DisablecStateStory = () => {
               <PersonIcon className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label A',
+          label: HERE_IS_A_LABEL_A,
           after: <Selector.Label>$200,000.00</Selector.Label>,
           hint: (
             <>
@@ -566,7 +570,7 @@ export const DisablecStateStory = () => {
               <PersonIcon className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label B',
+          label: HERE_IS_A_LABEL_B,
           after: <Selector.Label>$200,000.00</Selector.Label>,
           hint: (
             <>
@@ -583,7 +587,7 @@ export const DisablecStateStory = () => {
               <PersonIcon className="h-5 w-5" />
             </Selector.Adornment>
           ),
-          label: 'Here is a label C',
+          label: HERE_IS_A_LABEL_C,
           after: (
             <Selector.Adornment align="center">
               <span>$200,000.00</span>
