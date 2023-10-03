@@ -28,13 +28,19 @@ export {
   ButtonDropdown,
   InputField,
   Modal,
+  Pagination,
   Popover,
   ProgressRope,
+  Compacta,
+  Form,
 } from '@westpac/ui';
+
+export { usePagination } from '@westpac/ui/hook';
 
 export {
   AddIcon,
   TickCircleIcon,
+  ArrowLeftIcon,
   ArrowRightIcon,
   CalendarIcon,
   DeleteIcon,
