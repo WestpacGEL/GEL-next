@@ -2,7 +2,6 @@ import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Selector } from './selector.component.js';
-import { styles } from './selector.styles.js';
 import { type SelectorProps } from './selector.types.js';
 
 const SimpleRadioSelector = (props: Omit<SelectorProps<'radio'>, 'children' | 'type'>) => (
@@ -85,7 +84,9 @@ describe('Selector', () => {
   });
 
   it('should call onChange function if type is button', async () => {
-    const handleChange = vitest.fn(() => {});
+    const handleChange = vitest.fn(() => {
+      return;
+    });
     const { getByText } = render(<SimpleRadioSelector onChange={handleChange} />);
 
     await act(async () => {

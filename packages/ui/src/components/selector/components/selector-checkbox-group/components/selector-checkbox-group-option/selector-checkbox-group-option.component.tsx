@@ -1,6 +1,15 @@
 import React, { forwardRef, useContext, useRef } from 'react';
 import { VisuallyHidden, useCheckboxGroupItem, useFocusRing } from 'react-aria';
 
+import {
+  FlexiCellAdornment,
+  FlexiCellBody,
+  FlexiCellButton,
+  FlexiCellCircle,
+  FlexiCellFooter,
+  FlexiCellHint,
+  FlexiCellLabel,
+} from '../../../../../../components/flexi-cell/components/index.js';
 import { ArrowRightIcon, TickIcon } from '../../../../../../components/icon/index.js';
 import { FlexiCell } from '../../../../../../components/index.js';
 import { SelectorCheckboxGroupContext } from '../../selector-checkbox-group.component.js';
@@ -78,10 +87,10 @@ export const SelectorCheckboxGroupOption = forwardRef(
   Label: typeof FlexiCell.Label;
 };
 
-SelectorCheckboxGroupOption.Body = FlexiCell.Body;
-SelectorCheckboxGroupOption.Footer = FlexiCell.Footer;
-SelectorCheckboxGroupOption.Adornment = FlexiCell.Adornment;
-SelectorCheckboxGroupOption.Hint = FlexiCell.Hint;
-SelectorCheckboxGroupOption.Label = FlexiCell.Label;
-SelectorCheckboxGroupOption.Button = FlexiCell.Button;
-SelectorCheckboxGroupOption.Circle = FlexiCell.Circle;
+SelectorCheckboxGroupOption.Body = FlexiCellBody;
+SelectorCheckboxGroupOption.Footer = FlexiCellFooter;
+SelectorCheckboxGroupOption.Adornment = FlexiCellAdornment;
+SelectorCheckboxGroupOption.Hint = FlexiCellHint;
+SelectorCheckboxGroupOption.Label = FlexiCellLabel;
+SelectorCheckboxGroupOption.Button = FlexiCellButton;
+SelectorCheckboxGroupOption.Circle = FlexiCellCircle;
