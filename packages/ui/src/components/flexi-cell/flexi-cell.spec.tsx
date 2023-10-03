@@ -11,7 +11,7 @@ describe('FlexiCell', () => {
   it('renders the style correctly', () => {
     const style = styles();
     // TODO: use some variants for test
-    expect(style.base()).toBe('relative flex gap-2 bg-white px-2 py-3 transition-colors focus:focus-outline');
+    expect(style.base()).toBe('relative flex gap-2 bg-white p-2 transition-colors focus:focus-outline md:p-3');
     expect(style.badge()).toBe('absolute right-0 top-0');
     expect(style.bodyWrapper()).toBe('flex flex-1 flex-col');
   });
