@@ -9,7 +9,7 @@ import {
   FlexiCellFooter,
   FlexiCellHint,
   FlexiCellLabel,
-} from '../../../../../../components/flexi-cell/components/index.js';
+} from '../../../../../../components/flexi-cell/index.js';
 import { ArrowRightIcon, TickIcon } from '../../../../../../components/icon/index.js';
 import { FlexiCell } from '../../../../../../components/index.js';
 import { SelectorCheckboxGroupContext } from '../../selector-checkbox-group.component.js';

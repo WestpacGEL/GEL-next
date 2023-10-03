@@ -9,7 +9,7 @@ import {
   FlexiCellFooter,
   FlexiCellHint,
   FlexiCellLabel,
-} from '../../../../../../components/flexi-cell/components/index.js';
+} from '../../../../../../components/flexi-cell/index.js';
 import { ArrowRightIcon, TickIcon } from '../../../../../../components/icon/index.js';
 import { FlexiCell } from '../../../../../index.js';
 import { SelectorRadioGroupContext } from '../../selector-radio-group.component.js';
