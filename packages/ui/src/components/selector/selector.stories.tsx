@@ -543,7 +543,7 @@ export const RadioWithIconsAndSecondaryLabelStory = () => {
 /**
  * > Disable state style example
  */
-export const DisablecStateStory = () => {
+export const DisableStateStory = () => {
   return (
     <Selector type="radio" value="A">
       {[

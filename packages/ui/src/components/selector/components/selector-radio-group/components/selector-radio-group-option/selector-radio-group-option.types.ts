@@ -8,6 +8,10 @@ import { styles } from './selector-radio-group-option.styles.js';
 
 export type SelectorRadioGroupOptionProps = {
   /**
+   * Check icon to render
+   */
+  checkIcon?: 'checkbox' | 'arrow';
+  /**
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;

@@ -15,6 +15,7 @@ import { SelectorCheckboxGroupOption } from './components/selector-checkbox-grou
 import { SelectorRadioGroupOption } from './components/selector-radio-group/components/index.js';
 import { type SelectorProps } from './selector.types.js';
 
+// TODO: react-aria doesn't consider the click as focus. so the focusRing will appeared just with the tab.
 export function Selector(props: SelectorProps) {
   if (props.type === 'checkbox') {
     return <SelectorCheckboxGroup {...props} />;
