@@ -26,11 +26,12 @@ function FlexiCellBase(
     withArrow,
     withBorder = false,
     href,
+    withHoverEffect = false,
     ...props
   }: FlexiCellProps,
   ref: any,
 ) {
-  const styles = flexiCellStyles({ className, withBorder, isLink: !!href });
+  const styles = flexiCellStyles({ className, withBorder, isLink: !!href || withHoverEffect });
   return (
     <Tag {...({ ref } as any)} className={styles.base({ className })} href={href} {...props}>
       {badge && <div className={styles.badge()}>{badge}</div>}

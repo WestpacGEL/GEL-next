@@ -35,6 +35,7 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/pagination', label: 'Pagination' },
       { href: '/components/popover', label: 'Popover' },
       { href: '/components/progress-rope', label: 'Progress Rope' },
+      { href: '/components/selector', label: 'Selector' },
       { href: '/components/compacta', label: 'Compacta' },
     ],
   },
