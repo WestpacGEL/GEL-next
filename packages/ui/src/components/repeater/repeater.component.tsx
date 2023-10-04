@@ -1,8 +1,8 @@
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
+import { generateID } from '../../utils/index.js';
 import { Button } from '../button/index.js';
-import { generateID } from '../compacta/compacta.utils.js';
 import { AddCircleIcon, IconProps, RemoveCircleIcon } from '../icon/index.js';
 import { VisuallyHidden } from '../index.js';
 
