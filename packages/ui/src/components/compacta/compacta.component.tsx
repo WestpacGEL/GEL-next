@@ -97,7 +97,7 @@ export function Compacta({
         setTimeout(() => {
           headingRefs?.current[action.index]?.focus();
         }, 1);
-        setStatus(`Item ${action.index + 1} added`);
+        setStatus(`Item added`);
       }
 
       if (action.type === 'remove') {

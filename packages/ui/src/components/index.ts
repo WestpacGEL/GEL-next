@@ -32,3 +32,4 @@ export * from './modal/index.js';
 export * from './popover/index.js';
 export * from './progress-rope/index.js';
 export * from './compacta/index.js';
+export * from './repeater/index.js';

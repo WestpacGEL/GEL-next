@@ -32,6 +32,7 @@ export {
   ProgressRope,
   Compacta,
   Form,
+  Repeater,
 } from '@westpac/ui';
 
 export {
