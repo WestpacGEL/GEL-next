@@ -37,6 +37,7 @@ export const DEFAULT_NAV_ITEMS: NavItem[] = [
       { href: '/components/progress-rope', label: 'Progress Rope' },
       { href: '/components/selector', label: 'Selector' },
       { href: '/components/compacta', label: 'Compacta' },
+      { href: '/components/repeater', label: 'Repeater' },
     ],
   },
 ];
