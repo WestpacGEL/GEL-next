@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'focus:focus-outline',
+      base: '',
       panel: 'overflow-hidden',
     },
     variants: {

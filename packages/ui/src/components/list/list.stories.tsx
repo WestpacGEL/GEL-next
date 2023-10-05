@@ -47,9 +47,9 @@ export const ListTypes = () =>
     <div className="mb-2" key={type}>
       <h1 className="typography-body-8">{type}</h1>
       <List type={type} icon={type === 'icon' ? AndroidIcon : undefined}>
-        <List.Item>Styled {type} list</List.Item>
-        <List.Item>Styled {type} list</List.Item>
-        <List.Item>Styled {type} list</List.Item>
+        <List.Item href={type === 'link' ? '#' : undefined}>Styled {type} list</List.Item>
+        <List.Item href={type === 'link' ? '#' : undefined}>Styled {type} list</List.Item>
+        <List.Item href={type === 'link' ? '#' : undefined}>Styled {type} list</List.Item>
         <List icon={type === 'link' ? AndroidIcon : undefined}>
           <List.Item>Styled {type} list</List.Item>
           <List.Item>Styled {type} list</List.Item>

@@ -24,12 +24,12 @@ describe('Autocomplete', () => {
     // TODO: use some variants for test
     expect(style.base()).toBe('relative flex flex-col');
     expect(style.clearButton()).toBe(
-      'flex cursor-default items-center justify-center text-text-50 hover:text-border-60',
+      'text-text-50 hover:text-border-60 flex cursor-default items-center justify-center',
     );
     expect(style.input()).toBe('w-full appearance-none bg-[transparent] outline-none form-control-large');
-    expect(style.label()).toBe('block text-left text-sm font-medium text-text');
+    expect(style.label()).toBe('text-text block text-left text-sm font-medium');
     expect(style.outerWrapper()).toBe(
-      'form-control relative flex w-full flex-row items-center overflow-hidden pr-2 disabled:form-control-disabled focus:focus-outline',
+      'form-control disabled:form-control-disabled relative flex w-full flex-row items-center overflow-hidden pr-2',
     );
   });
 

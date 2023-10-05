@@ -2,10 +2,10 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'typography-body-9 flex cursor-pointer px-3 py-2 text-text transition-colors hover:bg-white focus:focus-outline',
+    base: 'typography-body-9 text-text flex cursor-pointer px-3 py-2 transition-colors hover:bg-white',
     variants: {
       look: {
-        default: 'border border-border bg-white',
+        default: 'border-border border bg-white',
         material: '',
       },
       selected: {
@@ -22,6 +22,10 @@ export const styles = tv(
       color: {
         primary: '',
         hero: '',
+      },
+      isFocusVisible: {
+        true: 'focus-outline',
+        false: 'outline-none',
       },
     },
     compoundVariants: [
@@ -54,36 +58,36 @@ export const styles = tv(
         color: 'primary',
         look: 'default',
         selected: false,
-        className: 'border-primary-90 bg-primary text-white hover:bg-primary-70',
+        className: 'border-primary-90 bg-primary hover:bg-primary-70 text-white',
       },
       {
         color: 'hero',
         selected: false,
         look: 'default',
-        className: 'border-hero-90 bg-hero text-white hover:bg-hero-70',
+        className: 'border-hero-90 bg-hero hover:bg-hero-70 text-white',
       },
       // Material look design
       {
         look: 'material',
         orientation: 'horizontal',
-        className: 'border-b-4 border-r border-b-white border-r-border last:border-r-0',
+        className: 'border-r-border border-b-4 border-r border-b-white last:border-r-0',
       },
       {
         look: 'material',
         orientation: 'vertical',
-        className: 'border-b border-l-4 border-b-border border-l-white last:border-b-0',
+        className: 'border-b-border border-b border-l-4 border-l-white last:border-b-0',
       },
       {
         look: 'material',
         selected: true,
         orientation: 'horizontal',
-        className: 'border-bottom border-b-white text-text',
+        className: 'border-bottom text-text border-b-white',
       },
       {
         look: 'material',
         selected: true,
         orientation: 'vertical',
-        className: 'border-left border-l-transparent text-text',
+        className: 'border-left text-text border-l-transparent',
       },
       {
         color: 'primary',

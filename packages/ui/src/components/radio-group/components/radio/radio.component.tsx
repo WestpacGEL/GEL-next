@@ -11,8 +11,8 @@ function BaseRadio({ className, hint, children, ...props }: RadioProps, ref: any
   const { size, orientation } = state;
   const localRef = useRef(null);
   const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children }, state, localRef);
-  const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = radioStyles({ isDisabled, isSelected, isFocusVisible, size, orientation });
+  const { isFocused, focusProps } = useFocusRing();
+  const styles = radioStyles({ isDisabled, isSelected, isFocused, size, orientation });
 
   return (
     <label className={styles.base({ className })} ref={ref}>

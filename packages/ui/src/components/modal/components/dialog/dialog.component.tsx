@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useDialog } from 'react-aria';
+import { useDialog, useFocusRing } from 'react-aria';
 
 import { CloseIcon } from '../../../../components/icon/index.js';
 
@@ -10,7 +10,8 @@ import { type DialogProps } from './dialog.types.js';
 
 export function Dialog({ className, body, onClose, size = 'md', ...props }: DialogProps) {
   const { children } = props;
-  const styles = dialogStyles({ className, size });
+  const { isFocusVisible, focusProps } = useFocusRing();
+  const styles = dialogStyles({ className, size, isFocusVisible });
 
   const ref = useRef(null);
 
@@ -19,7 +20,7 @@ export function Dialog({ className, body, onClose, size = 'md', ...props }: Dial
   return (
     <div {...dialogProps} ref={ref} className={styles.base()}>
       {onClose && (
-        <button className={styles.close()} onClick={onClose} aria-label="Close modal">
+        <button className={styles.close()} onClick={onClose} aria-label="Close modal" {...focusProps}>
           <CloseIcon className="block" size="small" />
         </button>
       )}

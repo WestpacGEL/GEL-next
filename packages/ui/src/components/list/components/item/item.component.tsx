@@ -1,4 +1,5 @@
 import React, { forwardRef, useContext } from 'react';
+import { useFocusRing } from 'react-aria';
 
 import { ListContext } from '../../list.component.js';
 import { getStateValues } from '../../list.utils.js';
@@ -14,6 +15,7 @@ export function BaseItem({ className, children, href, look, type, spacing, icon,
   look = stateValues.look;
   type = stateValues.type;
   const Icon = stateValues.icon;
+  const { isFocusVisible, focusProps } = useFocusRing();
 
   const styles = itemStyles({
     look,
@@ -21,6 +23,7 @@ export function BaseItem({ className, children, href, look, type, spacing, icon,
     spacing: stateValues.spacing,
     icon: !!Icon,
     nested: (state.nested && state.nested > 0) || false,
+    isFocusVisible,
   });
 
   const bulletToRender = () => {
@@ -38,7 +41,7 @@ export function BaseItem({ className, children, href, look, type, spacing, icon,
       {bulletToRender()}
       <li className={styles.base({ className })} {...props}>
         {type === 'link' ? (
-          <a href={href} className={styles.link()} ref={ref}>
+          <a href={href} className={styles.link()} ref={ref} {...focusProps}>
             {children}
           </a>
         ) : (

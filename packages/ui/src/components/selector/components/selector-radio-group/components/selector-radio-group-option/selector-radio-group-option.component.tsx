@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext, useRef } from 'react';
-import { VisuallyHidden, useFocusRing, useRadio } from 'react-aria';
+import { VisuallyHidden, mergeProps, useFocusRing, useRadio } from 'react-aria';
 
 import {
   FlexiCellAdornment,
@@ -37,8 +37,8 @@ function BaseSelectorRadioGroupOption(
   const state = useContext(SelectorRadioGroupContext);
   const localRef = useRef(null);
   const { inputProps, isSelected, isDisabled } = useRadio({ ...props, value, children }, state, localRef);
-  const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = selectorRadioGroupOptionStyles({ className, isSelected, isFocusVisible, isDisabled, checkIcon });
+  const { isFocused, focusProps } = useFocusRing();
+  const styles = selectorRadioGroupOptionStyles({ className, isSelected, isFocused, isDisabled, checkIcon });
 
   const FinalIcon = checkIcon === 'checkbox' ? TickIcon : ArrowRightIcon;
 
@@ -62,7 +62,7 @@ function BaseSelectorRadioGroupOption(
       withHoverEffect
     >
       <VisuallyHidden>
-        <input {...inputProps} {...focusProps} ref={localRef} />
+        <input {...mergeProps(inputProps, focusProps)} ref={localRef} />
       </VisuallyHidden>
       {children}
     </FlexiCell>

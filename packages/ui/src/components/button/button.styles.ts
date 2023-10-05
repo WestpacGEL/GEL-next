@@ -37,6 +37,10 @@ export const styles = tv(
       hasChildren: {
         true: '',
       },
+      isFocusVisible: {
+        true: { base: 'focus-outline' },
+        false: { base: 'outline-none' },
+      },
     },
     compoundSlots: [
       {
