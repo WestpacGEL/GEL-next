@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.5.0
+
+### Minor Changes
+
+- 473c0d6: added selector and repeater components
+
 ## 0.4.0
 
 ### Minor Changes
