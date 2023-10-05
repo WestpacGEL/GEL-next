@@ -1,0 +1,528 @@
+## Input sizes
+
+#### Default usage example
+
+```jsx
+<InputField label="Label" hint="I am a hint" supportingText="I am supporting text" after={<Button>Check</Button>}>
+  <Input />
+</InputField>
+```
+
+#### Combination usage example
+
+```jsx
+<InputField
+  label="Label"
+  hint="I am a hint"
+  supportingText="I am supporting text"
+  after={<Button>Check</Button>}
+  before="$AUD"
+>
+  <Input />
+</InputField>
+```
+
+#### Fieldset as a tag
+
+```jsx
+<InputField
+  tag="fieldset"
+  label="Label"
+  hint="I am a hint"
+  supportingText="I am supporting text"
+  after={<Button>Check</Button>}
+  before="$AUD"
+>
+  <Input />
+</InputField>
+```
+
+#### Text Beforoe story example
+
+```jsx
+<InputField label="Text before" hint="I am a hint" supportingText="I am supporting text" before="$AUD">
+  <Input />
+</InputField>
+```
+
+#### Text Beforoe story example
+
+```jsx
+<InputField label="Text after" hint="I am a hint" supportingText="I am supporting text" after="Text">
+  <Input />
+</InputField>
+```
+
+#### Text After and Beforoe story example
+
+```jsx
+<InputField label="Text after" hint="I am a hint" supportingText="I am supporting text" before="$AUD" after="Text">
+  <Input />
+</InputField>
+```
+
+#### Textarea
+
+```jsx
+<Fragment>
+  <InputField
+    label="Icon before"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    before={{ icon: SearchIcon }}
+  >
+    <Input />
+  </InputField>
+  <InputField label="Icon after" hint="I am a hint" supportingText="I am supporting text" after={{ icon: SearchIcon }}>
+    <Input />
+  </InputField>
+  <InputField
+    label="Icon after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={{ icon: SearchIcon }}
+    before={{ icon: SearchIcon }}
+  >
+    <Input />
+  </InputField>
+</Fragment>
+```
+
+#### Icons in buttons
+
+```jsx
+<Fragment>
+  <InputField
+    label="Icon button before"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    before={{ inset: true, element: <Button look="link" iconAfter={VisibilityIcon} iconColor="muted" /> }}
+  >
+    <Input />
+  </InputField>
+  <InputField
+    label="Icon button after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={{ inset: true, element: <Button look="link" iconAfter={VisibilityIcon} iconColor="muted" /> }}
+  >
+    <Input />
+  </InputField>
+  <InputField
+    label="Icon button before and after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={{ inset: true, element: <Button look="link" iconAfter={VisibilityIcon} iconColor="muted" /> }}
+    before={{ inset: true, element: <Button look="link" iconAfter={VisibilityIcon} iconColor="muted" /> }}
+  >
+    <Input />
+  </InputField>
+</Fragment>
+```
+
+#### Button add ons
+
+```jsx
+<Fragment>
+  <InputField
+    label="Button before"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    before={<Button>Check</Button>}
+  >
+    <Input />
+  </InputField>
+  <InputField
+    label="Button after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={<Button>Check</Button>}
+  >
+    <Input />
+  </InputField>
+  <InputField
+    label="Button before and after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={<Button>Check</Button>}
+    before={<Button>Check</Button>}
+  >
+    <Input />
+  </InputField>
+  <InputField
+    label="Primary button after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={<Button look="primary">Check</Button>}
+  >
+    <Input />
+  </InputField>
+  <InputField
+    label="Faint button after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={<Button look="faint">Check</Button>}
+  >
+    <Input />
+  </InputField>
+</Fragment>
+```
+
+#### Select add ons
+
+```jsx
+<InputField
+  label="Select"
+  hint="I am a hint"
+  supportingText="I am supporting text"
+  before={
+    <Select>
+      <option>Select</option>
+    </Select>
+  }
+  after={
+    <Select>
+      <option>Select</option>
+    </Select>
+  }
+>
+  <Input />
+</InputField>
+```
+
+#### Textarea
+
+```jsx
+<InputField label="Text after" hint="I am a hint" supportingText="I am supporting text">
+  <Textarea />
+</InputField>
+```
+
+#### Different sizes
+
+```jsx
+ <Fragment>
+  {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
+    <div key={size} className="border-b border-b-border py-3">
+      <h3 className="typography-body-7 mb-4 font-bold">Size: {size}</h3>
+      <InputField
+        size={size}
+        label="Text"
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        before="$AUD"
+        after="Text"
+      >
+        <Input />
+      </InputField>
+
+      <InputField
+        size={size}
+        label="Icon"
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        before={{ icon: VisibilityIcon, inset: true }}
+        after={{ icon: VisibilityIcon, inset: true }}
+      >
+        <Input />
+      </InputField>
+
+      <InputField
+        size={size}
+        label="Icon Button"
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        before={{
+          element: <Button size={size} look="link" iconAfter={VisibilityIcon} iconColor="pop" />,
+          inset: true,
+        }}
+        after={{
+          element: <Button size={size} look="link" iconAfter={VisibilityIcon} iconColor="pop" />,
+          inset: true,
+        }}
+      >
+        <Input />
+      </InputField>
+
+      <InputField
+        size={size}
+        label="Button"
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        before={<Button>Check</Button>}
+        after={<Button>Check</Button>}
+      >
+        <Input />
+      </InputField>
+
+      <InputField
+        size={size}
+        label="Select"
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        before={
+          <Select>
+            <option value="Select">Select</option>
+          </Select>
+        }
+        after={
+          <Select>
+            <option value="Select">Select</option>
+          </Select>
+        }
+      >
+        <Input />
+      </InputField>
+    </div>
+  ))}
+</Fragment>
+```
+
+#### Invalid with error message/s
+
+```jsx
+<Fragment>
+  <InputField
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    errorMessage="If there is an error it can go here"
+    after={<Button>Check</Button>}
+  >
+    <Input invalid />
+  </InputField>
+  <InputField
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    errorMessage={['If there is an error it can go here', 'If there is another error it can go here']}
+    after={<Button>Check</Button>}
+    before={<Button>Check</Button>}
+  >
+    <Input invalid />
+  </InputField>
+  <InputField
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    errorMessage="If there is an error it can go here"
+    after={{ icon: SearchIcon }}
+    before={{ icon: SearchIcon }}
+  >
+    <Input invalid />
+  </InputField>
+  <InputField
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    errorMessage="If there is an error it can go here"
+    after="Text"
+    before="Text"
+  >
+    <Input invalid />
+  </InputField>
+  <InputField
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    errorMessage="If there is an error it can go here"
+    after={
+      <Select invalid>
+        <option>Select</option>
+      </Select>
+    }
+    before={
+      <Select invalid>
+        <option>Select</option>
+      </Select>
+    }
+  >
+    <Input invalid />
+  </InputField>
+</Fragment>
+```
+
+#### Input field with disabled state
+
+```jsx
+<Fragment>
+  <InputField
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={{ icon: SearchIcon }}
+    before={{ icon: SearchIcon }}
+  >
+    <Input disabled />
+  </InputField>
+  <InputField label="Text after" hint="I am a hint" supportingText="I am supporting text" before="$AUD" after="Text">
+    <Input disabled />
+  </InputField>
+</Fragment>
+```
+
+#### Input field with read-only state
+
+```jsx
+<Fragment>
+  <InputField
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={{ icon: SearchIcon }}
+    before={{ icon: SearchIcon }}
+  >
+    <Input readOnly />
+  </InputField>
+  <InputField label="Text after" hint="I am a hint" supportingText="I am supporting text" before="$AUD" after="Text">
+    <Input readOnly />
+  </InputField>
+</Fragment>
+```
+
+#### Number of dependents
+
+```jsx
+() => {
+  const [numberOfDependents, setNumberOfDependents] = useState(0);
+  const minusButton = useCallback(() => setNumberOfDependents(state => --state), []);
+  const plusButton = useCallback(() => setNumberOfDependents(state => ++state), []);
+
+  return (
+    <InputField
+      label="Number of dependents"
+      before={<Button onClick={minusButton}>-</Button>}
+      after={<Button onClick={plusButton}>+</Button>}
+    >
+      <Input value={numberOfDependents} />
+    </InputField>
+  );
+};
+```
+
+#### Masked characters in field
+
+```tsx
+() => {
+  const [typeInput, setTypeInput] = useState<'password'|'text'>('password');
+  const toggleType = useCallback(() => setTypeInput(state => (state === 'password' ? 'text' : 'password')), []);
+
+  return (
+    <InputField
+      label="Password"
+      after={{
+        inset: true,
+        element: (
+          <Button
+            onClick={toggleType}
+            look="link"
+            iconAfter={typeInput === 'password' ? VisibilityIcon : VisibilityOffIcon}
+            iconColor="muted"
+          />
+        ),
+      }}
+    >
+      <Input type={typeInput} />
+    </InputField>
+  );
+};
+```
+
+#### Search with left icon and clear button
+
+```tsx
+() => {
+  const [inputValue, setInputValue] = useState<string>('');
+  const clearInput = useCallback(() => setInputValue(''), []);
+
+  return (
+    <InputField
+      label="Search"
+      before={{
+        icon: SearchIcon,
+      }}
+      after={{
+        inset: true,
+        element: <Button onClick={clearInput} look="link" iconAfter={CloseIcon} iconColor="muted" />,
+      }}
+    >
+      <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputField>
+  );
+};
+```
+
+#### Inline field validation flow
+
+```tsx
+() => {
+    const [inputValue, setInputValue] = useState<string>('');
+    const [validating, setValidating] = useState<boolean>(false);
+    const [error, setError] = useState<string>();
+    const validate = useCallback(() => {
+      setValidating(true);
+      setError(undefined);
+      setTimeout(() => {
+        if (inputValue !== '647453') {
+          setError('Routing number not found');
+        }
+        setValidating(false);
+      }, 1500);
+    }, [inputValue]);
+
+    return (
+      <InputField
+        label="Enter ABA routing number"
+        hint="For a valid response use: 647453, all other numbers will show the invalid response"
+        after={validating ? { icon: RefreshIcon } : <Button onClick={validate}>Check</Button>}
+        errorMessage={error}
+      >
+        <Input invalid={!!error} onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+      </InputField>
+    );
+  }
+```
+
+#### Search Currency and frequency
+
+```tsx
+() => {
+  const [inputValue, setInputValue] = useState<string>('');
+
+  return (
+    <InputField
+      label="Salary"
+      before="$AUD"
+      after={
+        <Select>
+          <option>Select</option>
+          <option>Per Year</option>
+          <option>Per Month</option>
+          <option>Per Week</option>
+        </Select>
+      }
+    >
+      <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputField>
+  );
+};
+```
+
+#### Search Textarea with character count
+
+```jsx
+() => {
+  const MAX_LENGTH = 250;
+  const [inputValue, setInputValue] = useState<string>('');
+  const counterText = useMemo(() => {
+    const lengthLeft = MAX_LENGTH - inputValue.length;
+    return `${lengthLeft} remaining`;
+  }, [inputValue]);
+
+  return (
+    <InputField label="Comments" hint="I am a hint" supportingText={counterText}>
+      <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputField>
+  );
+};
+```

@@ -59,7 +59,7 @@ export function Alert({
           >
             <Tag className={styles.base({ className })} {...props}>
               <span className={styles.icon()}>
-                <Icon size={{ initial: 'small', xsl: 'medium' }} />
+                <Icon size={{ initial: 'small', xsl: 'medium' }} look="outlined" />
               </span>
               <div className={styles.body()}>
                 {!!heading && <HeadingTag className={styles.heading()}>{heading}</HeadingTag>}

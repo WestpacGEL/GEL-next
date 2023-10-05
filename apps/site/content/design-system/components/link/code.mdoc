@@ -1,0 +1,56 @@
+## Standalone Link
+
+```jsx
+<div className="flex flex-col pl-1 space-y-1">
+    <Link href="#">Look I'm a standalone link</Link>
+    <Link href="#" iconBefore={PdfFileIcon}>Look I'm a standalone link</Link>
+    <Link href="#" iconAfter={ArrowRightIcon}>Look I'm a standalone link</Link>
+  </div>
+```
+
+## Inline Link
+
+```jsx
+<div className="pl-1 space-y-1">
+    <p className="typography-body-10">
+        Lorem ipsum dolor{' '}
+        <Link href="#" type="inline">
+          look, I'm an inline link
+        </Link>{' '}
+        sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
+        doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
+      </p>
+      <p className="typography-body-10">
+        Lorem ipsum dolor{' '}
+        <Link href="#" type="inline" underline={false}>
+          look, I'm an inline link with no underline
+        </Link>{' '}
+        sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
+        doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
+      </p>
+      <p className="typography-body-10">
+        Lorem ipsum dolor{' '}
+        <Link href="#" type="inline" iconBefore={PdfFileIcon}>
+          look, I'm an inline link
+        </Link>{' '}
+        sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
+        doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
+      </p>
+      <p className="typography-body-10">
+        Lorem ipsum dolor{' '}
+        <Link href="#" type="inline" iconAfter={ArrowRightIcon}>
+          look, I'm an inline link
+        </Link>{' '}
+        sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
+        doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
+      </p>
+  </div>
+```
+
+## Using Next Link
+
+```jsx
+<NextLink href="#test" passHref legacyBehavior>
+  <Link>I'm using the Next Link</Link>
+</NextLink>
+```
