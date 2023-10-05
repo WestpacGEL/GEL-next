@@ -47,7 +47,6 @@ export function Popover({
       <Button
         look={icon && !children ? 'link' : look}
         iconAfter={icon}
-        className={styles.button()}
         aria-expanded={state.isOpen}
         aria-controls={panelId}
         onClick={handleClick}

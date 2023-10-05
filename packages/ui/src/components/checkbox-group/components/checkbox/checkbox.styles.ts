@@ -7,8 +7,8 @@ export const styles = tv(
       checkIcon: 'overflow-visible',
       textWrapper: 'flex flex-col justify-center',
       labelText: 'typography-body-10 py-[2px] pl-1',
-      hintText: 'typography-body-10 pl-1 text-muted',
-      checkbox: 'flex h-4 w-4 items-center justify-center rounded border border-hero',
+      hintText: 'typography-body-10 text-muted pl-1',
+      checkbox: 'border-hero flex h-4 w-4 items-center justify-center rounded border',
     },
     variants: {
       isDisabled: {
@@ -20,8 +20,8 @@ export const styles = tv(
           base: 'hover:cursor-pointer',
         },
       },
-      isFocusVisible: {
-        true: { checkbox: 'rounded focus-outline' },
+      isFocused: {
+        true: { checkbox: 'focus-outline' },
       },
       orientation: {
         horizontal: {

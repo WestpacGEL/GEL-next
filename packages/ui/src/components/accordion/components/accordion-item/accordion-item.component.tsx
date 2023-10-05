@@ -1,7 +1,7 @@
 import { useAccordionItem } from '@react-aria/accordion';
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useRef } from 'react';
-import { mergeProps, useHover, useLocale } from 'react-aria';
+import { mergeProps, useFocusRing, useHover, useLocale } from 'react-aria';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../../../icon/index.js';
 
@@ -20,11 +20,12 @@ export function AccordionItem<T = any>({
   const ref = useRef<HTMLButtonElement>(null);
   const { state, item } = props;
   const { buttonProps, regionProps } = useAccordionItem<T>(props, state, ref);
+  const { isFocusVisible, focusProps } = useFocusRing();
   const isOpen = state.expandedKeys.has(item.key);
   const isDisabled = state.disabledKeys.has(item.key);
   const { hoverProps } = useHover({ isDisabled });
   const { direction } = useLocale();
-  const styles = accordionItemStyles({ isOpen, isDisabled, className, color, look });
+  const styles = accordionItemStyles({ isOpen, isDisabled, className, color, look, isFocusVisible });
 
   return (
     <Tag className={styles.base()}>
@@ -33,7 +34,7 @@ export function AccordionItem<T = any>({
         https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/
       */}
       <h3>
-        <button {...mergeProps(buttonProps, hoverProps)} ref={ref} className={styles.itemHeader()}>
+        <button {...mergeProps(buttonProps, hoverProps, focusProps)} ref={ref} className={styles.itemHeader()}>
           <span>{item.props.title}</span>
           {look === 'material' && <div aria-hidden="true" className={styles.indicator()} />}
           {look === 'default' &&

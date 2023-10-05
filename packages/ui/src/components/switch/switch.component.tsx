@@ -1,18 +1,30 @@
 import React, { useId, useRef } from 'react';
-import { VisuallyHidden, useCheckbox, useFocusRing } from 'react-aria';
+import { VisuallyHidden, mergeProps, useCheckbox, useFocusRing } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
 import { styles as switchStyles } from './switch.styles.js';
 import { type SwitchProps } from './switch.types.js';
 
-export function Switch({ className, label, size = 'medium', block = false, isDisabled, ...props }: SwitchProps) {
-  const state = useToggleState(props);
+export function Switch({
+  className,
+  label,
+  size = 'medium',
+  block = false,
+  checked = false,
+  isDisabled,
+  ...props
+}: SwitchProps) {
+  const state = useToggleState({ ...props, defaultSelected: checked });
   const labelId = useId();
   const ref = useRef(null);
-  const { inputProps } = useCheckbox({ isDisabled, 'aria-labelledby': labelId, ...props }, state, ref);
   const { isSelected } = state;
-  const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = switchStyles({ block, isFocusVisible, isSelected, isDisabled, size });
+  const { inputProps } = useCheckbox(
+    { isDisabled, 'aria-labelledby': labelId, defaultSelected: checked, ...props },
+    state,
+    ref,
+  );
+  const { isFocused, focusProps } = useFocusRing();
+  const styles = switchStyles({ block, isFocused, isSelected, isDisabled, size });
 
   return (
     <label className={styles.base({ className })}>
@@ -20,7 +32,7 @@ export function Switch({ className, label, size = 'medium', block = false, isDis
         {label}
       </span>
       <VisuallyHidden>
-        <input {...inputProps} {...focusProps} ref={ref} />
+        <input {...mergeProps(inputProps, focusProps)} ref={ref} />
       </VisuallyHidden>
       <div className={styles.switchDiv()} />
     </label>

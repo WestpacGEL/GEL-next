@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'px-0 text-text no-underline hover:underline focus:focus-outline',
+      base: 'text-text px-0 no-underline hover:underline',
       content: 'typography-body-10 mb-2 block',
     },
     variants: {

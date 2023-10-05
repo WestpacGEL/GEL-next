@@ -5,7 +5,7 @@ export const styles = tv(
     slots: {
       base: 'pl-[1.1875rem]',
       bullet: 'absolute block border',
-      link: 'text-text hover:cursor-pointer hover:underline focus:focus-outline',
+      link: 'text-text hover:cursor-pointer hover:underline',
       wrapper: 'relative',
     },
     variants: {
@@ -70,6 +70,9 @@ export const styles = tv(
       },
       nested: {
         true: { bullet: 'bg-[transparent]' },
+      },
+      isFocusVisible: {
+        true: { link: 'focus-outline' },
       },
     },
     compoundSlots: [

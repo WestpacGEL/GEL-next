@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import { mergeProps, useFocusRing } from 'react-aria';
 
 import { ArrowRightIcon } from '../icon/index.js';
 
@@ -31,9 +32,10 @@ function FlexiCellBase(
   }: FlexiCellProps,
   ref: any,
 ) {
-  const styles = flexiCellStyles({ className, withBorder, isLink: !!href || withHoverEffect });
+  const { isFocusVisible, focusProps } = useFocusRing();
+  const styles = flexiCellStyles({ className, withBorder, isLink: !!href || withHoverEffect, isFocusVisible });
   return (
-    <Tag {...({ ref } as any)} className={styles.base({ className })} href={href} {...props}>
+    <Tag {...({ ref } as any)} className={styles.base({ className })} href={href} {...mergeProps(props, focusProps)}>
       {badge && <div className={styles.badge()}>{badge}</div>}
       {before}
       <div className={styles.bodyWrapper()}>{body ? <FlexiCellBody>{children}</FlexiCellBody> : children}</div>
