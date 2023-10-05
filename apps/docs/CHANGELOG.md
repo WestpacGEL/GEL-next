@@ -1,5 +1,12 @@
 # docs
 
+## 0.1.19
+
+### Patch Changes
+
+- Updated dependencies [240f606]
+  - @westpac/ui@0.6.0
+
 ## 0.1.18
 
 ### Patch Changes

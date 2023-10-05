@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.6.0
+
+### Minor Changes
+
+- 240f606: fixes keyboard focus style in several components
+
 ## 0.5.0
 
 ### Minor Changes
