@@ -1,7 +1,5 @@
 import React, { forwardRef, useMemo } from 'react';
-import { FocusRing } from 'react-aria';
-
-import { DropDownIcon } from '../icon/index.js';
+import { mergeProps, useFocusRing } from 'react-aria';
 
 import { styles as buttonStyles } from './button.styles.js';
 import { type ButtonProps } from './button.types.js';
@@ -24,6 +22,7 @@ function BaseButton(
   }: ButtonProps,
   ref: any,
 ) {
+  const { isFocusVisible, focusProps } = useFocusRing();
   const iconSize = useMemo(() => getIconSize(size), [size]);
   const styles = buttonStyles({
     size,
@@ -31,16 +30,16 @@ function BaseButton(
     soft,
     block,
     justify,
+    isFocusVisible,
     hasChildren: !!children,
   });
+
   return (
-    <FocusRing focusRingClass="focus-outline">
-      <Tag ref={ref} className={styles.base({ className })} {...props}>
-        {IconBefore && <IconBefore size={iconSize} className={styles.iconBefore()} color={iconColor} />}
-        <span className={styles.text()}>{children}</span>
-        {IconAfter && <IconAfter size={iconSize} className={styles.iconAfter()} color={iconColor} />}
-      </Tag>
-    </FocusRing>
+    <Tag ref={ref} className={styles.base({ className })} {...mergeProps(props, focusProps)}>
+      {IconBefore && <IconBefore size={iconSize} className={styles.iconBefore()} color={iconColor} />}
+      <span className={styles.text()}>{children}</span>
+      {IconAfter && <IconAfter size={iconSize} className={styles.iconAfter()} color={iconColor} />}
+    </Tag>
   );
 }
 

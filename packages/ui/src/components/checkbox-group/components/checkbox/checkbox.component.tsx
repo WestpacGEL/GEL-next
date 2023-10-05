@@ -25,8 +25,8 @@ function BaseCheckbox({ className, hint, children, value, ...props }: CheckboxPr
   const { size, orientation } = state;
   const localRef = useRef(null);
   const { inputProps, isDisabled, isSelected } = useCheckboxGroupItem({ ...props, value, children }, state, localRef);
-  const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = checkboxItemStyles({ isDisabled, size, orientation, isFocusVisible });
+  const { isFocused, focusProps } = useFocusRing();
+  const styles = checkboxItemStyles({ isDisabled, size, orientation, isFocused });
 
   return (
     <label className={styles.base({ className })} ref={ref}>

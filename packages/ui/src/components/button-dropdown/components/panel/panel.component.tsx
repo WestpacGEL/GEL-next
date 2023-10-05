@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { DismissButton, Overlay, mergeProps, useOverlay, usePopover } from 'react-aria';
+import { DismissButton, Overlay, mergeProps, useFocusRing, useOverlay, usePopover } from 'react-aria';
 
 import { styles as panelStyles } from './panel.styles.js';
 import { type PanelProps } from './panel.types.js';
@@ -8,7 +8,8 @@ export function Panel({ className, children, state, block, id, ...props }: Panel
   const popoverRef = useRef<HTMLDivElement>(null);
   const { overlayProps } = useOverlay({ shouldCloseOnBlur: true, onClose: state.close }, popoverRef);
   const { popoverProps } = usePopover({ popoverRef, shouldFlip: false, ...props }, state);
-  const styles = panelStyles({});
+  const { isFocused, focusProps } = useFocusRing();
+  const styles = panelStyles({ isFocused });
   const width = props.triggerRef.current?.getBoundingClientRect().width;
 
   // Added this based on accessibility features seen https://gel.westpacgroup.com.au/design-system/components/button-dropdowns?b=WBC&tab=accessibility and React Aria doesn't do this
@@ -30,7 +31,7 @@ export function Panel({ className, children, state, block, id, ...props }: Panel
   return (
     <Overlay>
       <div
-        {...mergeProps(popoverProps, overlayProps)}
+        {...mergeProps(popoverProps, overlayProps, focusProps)}
         id={id}
         data-testid="panel-dialog"
         style={{ ...popoverProps.style, width: block && width ? `${width}px` : undefined }}

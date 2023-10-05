@@ -1,5 +1,6 @@
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useFocusRing } from 'react-aria';
 
 import { generateID } from '../../utils/index.js';
 import { Button } from '../button/index.js';
@@ -28,6 +29,7 @@ export function Repeater({
   const [action, setAction] = useState<Action>({ type: '', index: 0 });
   const [status, setStatus] = useState('');
   const refArr = useRef<HTMLElement[]>([]);
+  const { isFocused, focusProps } = useFocusRing();
 
   const handleAdd = useCallback(() => {
     setItems([...items, { id: generateID() }]);
@@ -58,7 +60,7 @@ export function Repeater({
   }, [items.length, action]);
 
   const Tag = separator ? 'ol' : 'ul';
-  const styles = repeaterStyles({ separator });
+  const styles = repeaterStyles({ separator, isFocused });
 
   return (
     <div className={styles.base({ className })}>
@@ -80,6 +82,7 @@ export function Repeater({
                     }}
                     tabIndex={-1}
                     className={styles.item()}
+                    {...focusProps}
                   >
                     {separator && <ItemIndex className={styles.itemIndex()}>{index + 1}.</ItemIndex>}
                     <div className={styles.content()}>{children}</div>

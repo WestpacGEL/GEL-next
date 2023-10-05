@@ -4,7 +4,6 @@ export const styles = tv(
   {
     slots: {
       base: 'relative inline-block',
-      button: 'focus:focus-outline',
     },
     variants: {},
   },

@@ -19,7 +19,7 @@ export const styles = tv(
         },
         false: {},
       },
-      isFocusVisible: {
+      isFocused: {
         true: {
           base: 'focus-outline',
         },

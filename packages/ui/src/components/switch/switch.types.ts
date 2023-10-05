@@ -9,6 +9,10 @@ export type SwitchProps = {
    */
   block?: boolean;
   /**
+   * Default checked
+   */
+  checked?: boolean;
+  /**
    * Classname for overriding base style
    */
   className?: string;
@@ -16,5 +20,5 @@ export type SwitchProps = {
    * Label for the switch
    */
   label: string;
-} & Omit<AriaCheckboxProps, 'children'> &
+} & Omit<AriaCheckboxProps, 'children' | 'isSelected'> &
   Pick<VariantProps<typeof styles>, 'size'>;

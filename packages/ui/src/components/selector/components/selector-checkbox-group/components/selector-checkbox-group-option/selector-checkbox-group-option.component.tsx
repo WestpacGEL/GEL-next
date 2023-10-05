@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext, useRef } from 'react';
-import { VisuallyHidden, useCheckboxGroupItem, useFocusRing } from 'react-aria';
+import { VisuallyHidden, mergeProps, useCheckboxGroupItem, useFocusRing } from 'react-aria';
 
 import {
   FlexiCellAdornment,
@@ -37,11 +37,11 @@ function BaseSelectorCheckboxGroupOption(
   const state = useContext(SelectorCheckboxGroupContext);
   const localRef = useRef(null);
   const { inputProps, isDisabled, isSelected } = useCheckboxGroupItem({ ...props, value, children }, state, localRef);
-  const { isFocusVisible, focusProps } = useFocusRing();
+  const { isFocused, focusProps } = useFocusRing();
   const styles = selectorCheckboxGroupOptionStyles({
     className,
     isSelected,
-    isFocusVisible,
+    isFocused,
     isDisabled,
     checkIcon,
   });
@@ -68,7 +68,7 @@ function BaseSelectorCheckboxGroupOption(
       className={styles.base({})}
     >
       <VisuallyHidden>
-        <input {...inputProps} {...focusProps} ref={localRef} />
+        <input {...mergeProps(inputProps, focusProps)} ref={localRef} />
       </VisuallyHidden>
       {children}
     </FlexiCell>

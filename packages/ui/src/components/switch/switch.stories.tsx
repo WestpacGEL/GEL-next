@@ -39,7 +39,7 @@ export const DefaultStory: Story = {
 export const SelectedSwitch: Story = {
   args: {
     label: 'eStatements',
-    isSelected: true,
+    checked: true,
   },
 };
 

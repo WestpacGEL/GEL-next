@@ -37,7 +37,7 @@ describe('Radio', () => {
   });
 
   it('should have correct styling on focus', () => {
-    const { selector } = styles({ isFocusVisible: true });
+    const { selector } = styles({ isFocused: true });
 
     expect(selector()).toContain('focus-outline');
   });

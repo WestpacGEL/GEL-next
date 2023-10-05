@@ -1,5 +1,5 @@
 import React, { forwardRef, useRef } from 'react';
-import { useLink } from 'react-aria';
+import { mergeProps, useFocusRing, useLink } from 'react-aria';
 
 import { ArrowRightIcon } from '../icon/index.js';
 
@@ -23,14 +23,21 @@ export function BaseLink(
 ) {
   const ref = useRef(propRef);
   const { linkProps } = useLink({ ...props }, ref);
-  const styles = linkStyles({ type, underline });
+  const { isFocusVisible, focusProps } = useFocusRing();
+  const styles = linkStyles({ type, underline, isFocusVisible });
 
   if (type === 'standalone' && !IconBefore && !IconAfter) {
     IconBefore = ArrowRightIcon;
   }
 
   return (
-    <a {...linkProps} ref={propRef} href={href} target={target} className={styles.base({ className })}>
+    <a
+      {...mergeProps(linkProps, focusProps)}
+      ref={propRef}
+      href={href}
+      target={target}
+      className={styles.base({ className })}
+    >
       {IconBefore && <IconBefore size={iconSize} color="link" className={styles.iconBefore()} />}
       <span className={styles.text()}>{children}</span>
       {IconAfter && <IconAfter size={iconSize} color="link" className={styles.iconAfter()} />}
