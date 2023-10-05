@@ -1,12 +1,13 @@
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
 
+import { generateID } from '../../utils/index.js';
+import { Button } from '../button/index.js';
 import { AddCircleIcon, ExpandLessIcon, ExpandMoreIcon, IconProps, RemoveCircleIcon } from '../icon/index.js';
-import { Button, VisuallyHidden } from '../index.js';
+import { VisuallyHidden } from '../index.js';
 
 import { styles as compactaStyles } from './compacta.styles.js';
 import { type CompactaProps } from './compacta.types.js';
-import { generateID } from './compacta.utils.js';
 
 interface Action {
   id?: string;
@@ -97,7 +98,7 @@ export function Compacta({
         setTimeout(() => {
           headingRefs?.current[action.index]?.focus();
         }, 1);
-        setStatus(`Item ${action.index + 1} added`);
+        setStatus(`Item added`);
       }
 
       if (action.type === 'remove') {

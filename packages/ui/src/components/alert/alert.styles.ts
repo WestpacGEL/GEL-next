@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'typography-body-10 relative mb-4 p-3 xsl:flex',
+      base: 'typography-body-10 relative mb-4 xsl:flex',
       icon: 'float-left mr-1 flex-none xsl:mr-2',
       body: 'relative flex-1 xsl:top-[0.125rem] [&_a]:underline',
       heading: 'typography-body-9 mb-2 font-bold',
@@ -29,7 +29,7 @@ export const styles = tv(
       },
       mode: {
         box: {
-          base: 'border-y',
+          base: 'border-y p-3',
         },
         text: {
           base: 'bg-[transparent]',

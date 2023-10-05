@@ -1,0 +1,104 @@
+This component does not contain an option for `checkbox` as it was decided it should be two separate components
+
+## RadioGroup sizes
+
+```jsx
+<div className="flex gap-3">
+    <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium">
+        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+    <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large">
+        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+</div>
+```
+
+## Horizontal layout
+
+```jsx
+<div>
+    <RadioGroup label={<p className="font-bold mb-1">Medium</p>} orientation="horizontal">
+        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+     
+    <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large" orientation="horizontal">
+        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+</div>
+```
+
+## Radios with hint text
+
+```jsx
+<div className="flex gap-3">
+    <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium">
+        <RadioGroup.Radio value="Option 1" hint="This is hint text">Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2" hint="This is hint text">Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3" hint="This is hint text">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+    <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large">
+        <RadioGroup.Radio value="Option 1" hint="This is hint text">Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2" hint="This is hint text">Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3" hint="This is hint text">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+</div>
+```
+
+## RadioGroup with Reveal
+
+```jsx
+<div className="flex gap-3">
+    <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium" showAmount={1}>
+        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+    <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large" showAmount={1}>
+        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+</div>
+```
+
+## RadioGroup completely disabled
+
+```jsx
+<div className="flex gap-3">
+    <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium" isDisabled>
+        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+    <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large" isDisabled>
+        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+</div>
+```
+
+## RadioGroup with individual options disabled
+
+```jsx
+<div className="flex gap-3">
+    <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium">
+        <RadioGroup.Radio value="Option 1" isDisabled>Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+    <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large">
+        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 2" isDisabled>Option 2</RadioGroup.Radio>
+        <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
+    </RadioGroup>
+</div>
+```

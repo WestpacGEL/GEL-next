@@ -44,6 +44,10 @@ type BaseFlexiCellProps = {
    * Adds a border radius and a border
    */
   withBorder?: boolean;
+  /**
+   * With hover style
+   */
+  withHoverEffect?: boolean;
 } & HTMLAttributes<HTMLOrSVGElement>;
 
 type FlexiCellAsLinkProps = {

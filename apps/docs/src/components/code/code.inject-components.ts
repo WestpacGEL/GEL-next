@@ -33,6 +33,7 @@ export {
   ProgressRope,
   Compacta,
   Form,
+  Repeater,
 } from '@westpac/ui';
 
 export { usePagination } from '@westpac/ui/hook';
