@@ -6,4 +6,4 @@ export default create({
     brandImage: '../assets/storybook/gel-icon.svg',
     brandTarget: '_self',
     colorSecondary: '#DA1710',
-})
+});
