@@ -5,7 +5,7 @@ import { SymbolProps, WBCLogo, WBCMultibrandSmallLogo } from './index.js';
 import * as symbols from './index.js';
 
 const meta: Meta<typeof Symbol> = {
-  title: 'Example/Symbol',
+  title: 'Foundation/Symbols',
   component: WBCLogo,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

@@ -5,7 +5,7 @@ import { Button, Input } from '../index.js';
 import { InputField } from './input-field.component.js';
 
 const meta: Meta<typeof InputField> = {
-  title: 'Example/InputField',
+  title: 'Components/InputField',
   component: InputField,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { DatePicker } from './date-picker.component.js';
 
 const meta: Meta<typeof DatePicker> = {
-  title: 'Example/DatePicker',
+  title: 'Components/DatePicker',
   component: DatePicker,
   tags: ['autodocs'],
   decorators: [

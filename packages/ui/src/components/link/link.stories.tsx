@@ -5,7 +5,7 @@ import { ArrowRightIcon, PdfFileIcon } from '../icon/index.js';
 import { Link } from './link.component.js';
 
 const meta: Meta<typeof Link> = {
-  title: 'Example/Link',
+  title: 'Components/Link',
   component: Link,
   tags: ['autodocs'],
   decorators: [

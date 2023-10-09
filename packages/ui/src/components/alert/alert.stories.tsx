@@ -5,7 +5,7 @@ import { TelephoneIcon } from '../icon/index.js';
 import { Alert } from './alert.component.js';
 
 const meta: Meta<typeof Alert> = {
-  title: 'Example/Alert',
+  title: 'Components/Alert',
   component: Alert,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

@@ -5,7 +5,7 @@ import { Input } from '../index.js';
 import { Form } from './form.component.js';
 
 const meta: Meta<typeof Form> = {
-  title: 'Example/Form',
+  title: 'Components/Form',
   component: Form,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

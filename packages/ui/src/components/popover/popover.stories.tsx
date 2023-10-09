@@ -8,7 +8,7 @@ const popoverContent =
   'Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas.';
 
 const meta: Meta<typeof Popover> = {
-  title: 'Example/Popover',
+  title: 'Components/Popover',
   component: Popover,
   tags: ['autodocs'],
   decorators: [

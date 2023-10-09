@@ -3,7 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Textarea } from './textarea.component.js';
 
 const meta: Meta<typeof Textarea> = {
-  title: 'Example/Textarea',
+  title: 'Components/Textarea',
   component: Textarea,
   tags: ['autodocs'],
   decorators: [

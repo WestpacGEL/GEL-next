@@ -6,7 +6,7 @@ import { Form, Input } from '../index.js';
 import { Compacta } from './compacta.component.js';
 
 const meta: Meta<typeof Compacta> = {
-  title: 'Example/Compacta',
+  title: 'Components/Compacta',
   component: Compacta,
   tags: ['autodocs'],
   decorators: [

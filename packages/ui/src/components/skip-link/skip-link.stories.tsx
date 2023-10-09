@@ -3,7 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { SkipLink } from './skip-link.component.js';
 
 const meta: Meta<typeof SkipLink> = {
-  title: 'Example/SkipLink',
+  title: 'Components/SkipLink',
   component: SkipLink,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

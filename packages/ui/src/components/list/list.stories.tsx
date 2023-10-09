@@ -5,7 +5,7 @@ import { AndroidIcon } from '../icon/index.js';
 import { List } from './list.component.js';
 
 const meta: Meta<typeof List> = {
-  title: 'Example/List',
+  title: 'Components/List',
   component: List,
   tags: ['autodocs'],
   decorators: [

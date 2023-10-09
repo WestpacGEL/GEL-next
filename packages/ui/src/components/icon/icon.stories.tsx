@@ -56,7 +56,7 @@ const AllIconsExample = (props: AllIcons.IconProps) => {
 };
 
 const meta: Meta<typeof Icon> = {
-  title: 'Example/Icon',
+  title: 'Foundation/Icons',
   component: AllIconsExample,
   tags: ['autodocs'],
   decorators: [

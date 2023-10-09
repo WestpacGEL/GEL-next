@@ -4,7 +4,7 @@ import { Container, Item } from './components/index.js';
 import { Grid } from './grid.component.js';
 
 const meta: Meta<typeof Grid> = {
-  title: 'Example/Grid',
+  title: 'Foundation/Grid',
   component: Grid,
   tags: ['autodocs'],
   decorators: [

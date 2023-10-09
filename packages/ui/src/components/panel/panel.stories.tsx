@@ -5,7 +5,7 @@ import { Table } from '../table/index.js';
 import { Panel } from './panel.component.js';
 
 const meta: Meta<typeof Panel> = {
-  title: 'Example/Panel',
+  title: 'Components/Panel',
   component: Panel,
   tags: ['autodocs'],
   decorators: [

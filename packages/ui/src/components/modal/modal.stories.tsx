@@ -7,7 +7,7 @@ import { Button } from '../index.js';
 import { Modal } from './modal.component.js';
 
 const meta: Meta<typeof Modal> = {
-  title: 'Example/Modal',
+  title: 'Components/Modal',
   component: Modal,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

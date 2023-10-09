@@ -6,7 +6,7 @@ import { Button, Input, Select, Textarea } from '../index.js';
 import { InputField } from './input-field.component.js';
 
 const meta: Meta<typeof InputField> = {
-  title: 'Example/InputField/Types',
+  title: 'Components/InputField/Types',
   component: InputField,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

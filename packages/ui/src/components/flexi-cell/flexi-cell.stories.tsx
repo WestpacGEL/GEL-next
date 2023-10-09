@@ -7,7 +7,7 @@ import { GiftPictogram } from '../pictogram/index.js';
 import { FlexiCell } from './flexi-cell.component.js';
 
 const meta: Meta<typeof FlexiCell> = {
-  title: 'Example/FlexiCell',
+  title: 'Components/FlexiCell',
   component: FlexiCell,
   tags: ['autodocs'],
   decorators: [

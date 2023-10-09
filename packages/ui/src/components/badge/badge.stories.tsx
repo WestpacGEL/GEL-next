@@ -15,7 +15,7 @@ const INVERTED_COLORS = [
 ];
 
 const meta: Meta<typeof Badge> = {
-  title: 'Example/Badge',
+  title: 'Components/Badge',
   component: Badge,
   tags: ['autodocs'],
   decorators: [

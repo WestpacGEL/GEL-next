@@ -3,7 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Well } from './well.component.js';
 
 const meta: Meta<typeof Well> = {
-  title: 'Example/Well',
+  title: 'Components/Well',
   component: Well,
   tags: ['autodocs'],
   decorators: [

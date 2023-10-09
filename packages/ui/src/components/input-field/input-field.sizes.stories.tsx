@@ -6,7 +6,7 @@ import { Button, Input, Select } from '../index.js';
 import { InputField } from './input-field.component.js';
 
 const meta: Meta<typeof InputField> = {
-  title: 'Example/InputField/Sizes',
+  title: 'Components/InputField/Sizes',
   component: InputField,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

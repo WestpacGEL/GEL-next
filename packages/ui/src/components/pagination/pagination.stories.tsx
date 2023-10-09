@@ -9,7 +9,7 @@ import { Pagination } from './pagination.component.js';
 import { usePagination } from './pagination.hooks.js';
 
 const meta: Meta<typeof Pagination> = {
-  title: 'Example/Pagination',
+  title: 'Components/Pagination',
   component: Pagination,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

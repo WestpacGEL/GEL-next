@@ -12,7 +12,7 @@ const HERE_IS_A_LABEL_B = 'Here is a label B';
 const HERE_IS_A_LABEL_C = 'Here is a label C';
 
 const meta: Meta<typeof Selector> = {
-  title: 'Example/Selector',
+  title: 'Components/Selector',
   component: Selector,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

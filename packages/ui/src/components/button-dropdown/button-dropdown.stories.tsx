@@ -5,7 +5,7 @@ import { AndroidIcon, AppleIcon } from '../icon/index.js';
 import { ButtonDropdown } from './button-dropdown.component.js';
 
 const meta: Meta<typeof ButtonDropdown> = {
-  title: 'Example/ButtonDropdown',
+  title: 'Components/ButtonDropdown',
   component: ButtonDropdown,
   tags: ['autodocs'],
   decorators: [

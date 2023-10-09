@@ -7,7 +7,7 @@ import { ProgressRope } from './progress-rope.component.js';
 import { ProgressRopeProps } from './progress-rope.types.js';
 
 const meta: Meta<typeof ProgressRope> = {
-  title: 'Example/ProgressRope',
+  title: 'Components/ProgressRope',
   component: ProgressRope,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

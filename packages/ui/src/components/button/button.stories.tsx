@@ -5,7 +5,7 @@ import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon } from '../icon/index.js';
 import { Button } from './button.component.js';
 
 const meta: Meta<typeof Button> = {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
   decorators: [

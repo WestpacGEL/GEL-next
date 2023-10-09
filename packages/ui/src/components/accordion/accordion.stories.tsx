@@ -6,7 +6,7 @@ import { Button } from '../index.js';
 import { Accordion } from './accordion.component.js';
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Example/Accordion',
+  title: 'Components/Accordion',
   component: Accordion,
   tags: ['autodocs'],
   decorators: [

@@ -25,7 +25,7 @@ const AllPictogramsExample = (props: PictogramProps) => {
 };
 
 const meta: Meta<typeof Pictogram> = {
-  title: 'Example/Pictogram',
+  title: 'Foundation/Pictograms',
   component: AllPictogramsExample,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

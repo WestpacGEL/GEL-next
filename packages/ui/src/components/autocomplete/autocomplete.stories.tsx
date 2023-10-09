@@ -4,7 +4,7 @@ import { Key, useState } from 'react';
 import { Autocomplete } from './autocomplete.component.js';
 
 const meta: Meta<typeof Autocomplete> = {
-  title: 'Example/Autocomplete',
+  title: 'Components/Autocomplete',
   component: Autocomplete,
   tags: ['autodocs'],
   decorators: [

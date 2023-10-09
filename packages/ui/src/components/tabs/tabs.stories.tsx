@@ -4,7 +4,7 @@ import { Key, useState } from 'react';
 import { Tabs } from './tabs.component.js';
 
 const meta: Meta<typeof Tabs> = {
-  title: 'Example/Tabs',
+  title: 'Components/Tabs',
   component: Tabs,
   tags: ['autodocs'],
   decorators: [
