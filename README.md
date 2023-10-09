@@ -1,129 +1,175 @@
-# GEL Next repository
+## Getting Started
 
-This repository provides tools (packages) to help developers build web apps.
+This section describes how to get started with Westpac GEL.
 
-The strategy used is a monorepo provided by [TurboRepo](https://turbo.build/repo), which allows us to condense multiple projects within a single repository. Each project within this monorepo is referenced as a `workspace`.
+### What is GEL?
 
-This turborepo requires [NodeJS](https://nodejs.org/) version 18 or higher and uses [pnpm](https://pnpm.io) as a package manager.
+The Global Experience Language is our single source of truth, providing everything you need to deliver our brand promises and create consistent, coherent customer experiences across our entire digital landscape faster, and with less effort.
 
-## Folders structure
+You can read more about GEL in [https://gel.westpacgroup.com.au/articles/what-is-GEL](https://gel.westpacgroup.com.au/articles/what-is-GEL)
 
-There are 2 main folders on this monorepo:
+### Pre-requisites
 
-- apps
-- packages
-
-The `apps` folder should contain workspaces for launchable apps, like Next.js, React, Angular, etc. However, this monorepo will have dummy non deployable apps for testing purposes only.
-
-The `packages` folder should contain workspaces for packages that are used by either an app or another package.
-
-This monorepo focuses solemnly on holding projects in the `packages` folder, allowing dummy projects in the `apps` folder to be used for testing purposes or demos only.
-
-### Utilities
-
-This turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-- [Changesets](https://github.com/changesets/changesets/tree/main#readme) for managing versioning and changelogs
-- [Husky](https://typicode.github.io/husky/) for git hooks
-
-### Packages
-
-- [themes](packages/theme/README.md): Tailwind plugin to apply multiple brand theming
-- [ui](packages/ui/README.md): UI components build on top of the themes and Tailwind
-
-### Git Hooks
-
-This monorepo uses a `pre-push` git hook to ensure a set of commands are executed prior to pushing code to the remote repository. You can see the list of commands in the `.husky` folder.
-
-## Getting started
-
-After cloning this repository, you can install all the dependencies by running the following command:
+All GEL components have a couple of dependencies so please ensure the following are installed:
 
 ```
-pnpm i --frozen-lockfile
+npm i react@^18.2.0
+npm i -D tailwindcss postcss autoprefixer
 ```
 
-The `--frozen-lockfile` will not modify the `pnpm-lock.yaml` file.
+GEL is using [Tailwind](https://tailwindcss.com/docs/installation) for styling. Highly likely you will be using `GEL` with `Next.js` or `Vite`. Therefore, follow the [framework specific installation guide](https://tailwindcss.com/docs/installation/framework-guides) for Tailwind.
 
-## Commands
+### Installation
 
-### Build
+GEL can be installed using a package manager like `npm`, `yarn` or `pnpm`.
 
-To build all apps and packages, run the following command:
+```
+npm i @westpac/ui
+```
+
+Update `tailwind.config.js` to use the `withGEL` helper exported by `@westpac/ui` as follows.
+
+```ts
+import { withGEL } from '@westpac/ui/tailwind';
+
+/** @type {import('tailwindcss').Config} */
+const config = withGEL({
+  relative: true,
+  mode: 'jit',
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
+  safelist: [],
+});
+
+export default config;
+```
+
+For applications using `brand fonts`, import the custom fonts as follows in your main `CSS` file.
+
+```css
+/* WBC fonts */
+@font-face {
+  src: url('/path-to-the-font/Westpac-Bold-v2.007.woff2') format('woff2'), url('/path-to-the-font/Westpac-Bold-v2.007.woff')
+      format('woff');
+  font-family: 'Westpac';
+  font-weight: 400;
+  font-style: normal;
+}
+```
+
+### Usage
+
+Add a custom attribute tag `data-theme="brand_name"` to `html` tag. Note that instead of adding the custom attribute to html tag, you can add it to the parent tag of your application as well.
+
+Following example shows adding `wbc` theme. You can add other valid brand names such as `stg`, `bom`, `bsa`, `rams`, `wbg` etc. as the value.
+
+```html
+<!DOCTYPE html>
+<html lang="en" data-theme="wbc">
+  ...
+</html>
+```
+
+Now you can start using the GEL components in your `React.js` application. Following example shows how to use the `Button` component.
+
+For detailed documentation refer to [https://gel.westpacgroup.com.au/design-system](https://gel.westpacgroup.com.au/design-system).
+
+```tsx
+import { Button } from '@westpac/ui';
+
+export default function SampleApp() {
+  return (
+    <section>
+      <div className="space-x-4 mb-2">
+        <Button look="primary">Pay here</Button>
+      </div>
+    </section>
+  );
+}
+```
+
+## Documentation
+
+Visit [https://gel.westpacgroup.com.au/design-system](https://gel.westpacgroup.com.au/design-system) to view the full documentation.
+
+## Contributing to GEL
+
+### Developing
+
+- The development branch is `develop`.
+- All pull requests should be opened against `develop`.
+- The changes on the `develop` branch are published to the `preview` environment.
+
+#### To develop locally (common for all the packages and apps)
+
+1. Install Node.js 18.x or above. We recommend [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm) to install Node.js.
+
+2. Clone the Next.js repository:
+   ```
+   git clone git@github.com:WestpacGEL/GEL-next.git -- --branch develop --single-branch
+   ```
+3. Create a new branch:
+   ```
+   git checkout -b MY_BRANCH_NAME origin/develop
+   ```
+4. Enable pnpm:
+   ```
+   corepack enable pnpm
+   ```
+5. Install the dependencies with:
+   ```
+   pnpm install
+   ```
+6. Start developing and watch for code changes:
+   ```
+   pnpm dev
+   ```
+7. Run the unit tests with:
+   ```
+   pnpm test
+   ```
+8. Fix formatting and linting with:
+   ```
+   pnpm format:fix && pnpm lint:fix
+   ```
+9. Check formatting and linting with:
+   ```
+   pnpm format && pnpm lint
+   ```
+10. Check TypeScript compatibility with:
+
+```
+pnpm check-types
+```
+
+11. You can build packages and apps with:
 
 ```
 pnpm build
 ```
 
-### Test
-
-To test all apps and packages, run the following command:
+12. You can add a changeset with:
 
 ```
-pnpm test
+pnpm changeset
 ```
 
-### Lint
+##### To develop a GEL UI component locally
 
-To lint all apps and packages, run the following command:
-
-```
-pnpm lint
-```
-
-You can allow `eslint` to try to fix issues automatically by running the following command:
-
-```
-pnpm lint:fix
-```
-
-### Format
-
-To format all apps and packages files, run the following command:
-
-```
-pnpm format
-```
-
-You can allow `prettier` to try to fix issues automatically by running the following command:
-
-```
-pnpm format:fix
-```
-
-### Filtering workspaces
-
-In order to run a command in a single workspace, use the `--filter` parameter
-
-The command below lints the my-package and my-app workspaces only:
-
-```
-pnpm --filter my-package --filter my-app lint
-```
-
-### Scaffolding a new package
-
-This monorepo uses default templates to generate new packages.
-
-You can create a new package by running the following command:
-
-```
-pnpm new:package
-```
-
-The above command will prompt you with the details about the new package.
-
-### Creating new versions of the packages
-
-We are using https://github.com/changesets/changesets to manage the package versioning and changelogs.
-
-#### Steps to follow
-
-- To generate a new changeset, run `pnpm changeset` in the root of the repository.
-- Run `pnpm changeset version`. This will increment the versions of packages.
-- Run `pnpm install`. This will update the lockfile and rebuild packages.
-- Commit the changes.
-- Create a pull request.
+1. Change the working directory with:
+   ```
+   cd packages/ui
+   ```
+2. Create a new `GEL` component with:
+   ```
+   cd packages/ui
+   pnpm generate:component
+   ```
+3. Start storybook with:
+   ```
+   pnpm storybook
+   ```
+4. Run the unit tests in watch mode with:
+   ```
+   pnpm test:watch
+   ```
+   When your changes are finished, commit them to the branch and push it to origin.
