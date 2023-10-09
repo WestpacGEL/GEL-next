@@ -18,6 +18,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
+  staticDirs: ['../assets/storybook'],
   async viteFinal(config) {
     return mergeConfig(config, {
       optimizeDeps: {
