@@ -11,26 +11,26 @@ export const styles = tv(
     variants: {
       look: {
         material: {
-          itemHeader: 'hover:bg-light bg-white transition-colors',
+          itemHeader: 'bg-white transition-colors hover:bg-light',
           indicator:
-            'before:bg-muted after:bg-muted relative h-2 w-2 before:absolute before:left-1/2 before:top-1/2 before:block before:h-[2px] before:w-full before:-translate-x-1/2 before:-translate-y-1/2 after:absolute after:left-1/2 after:top-1/2 after:block after:h-full after:w-[2px] after:-translate-x-1/2 after:-translate-y-1/2 after:transition-transform',
+            'relative h-2 w-2 before:absolute before:left-1/2 before:top-1/2 before:block before:h-[2px] before:w-full before:-translate-x-1/2 before:-translate-y-1/2 before:bg-muted after:absolute after:left-1/2 after:top-1/2 after:block after:h-full after:w-[2px] after:-translate-x-1/2 after:-translate-y-1/2 after:bg-muted after:transition-transform',
         },
         default: {
-          itemHeader: 'border-border bg-light border-t',
-          indicator: 'h-3 w-3 -rotate-90 transition-transform',
+          itemHeader: 'border-t border-border bg-light',
+          indicator: 'h-3 w-3 rotate-90 transition-transform',
         },
       },
       color: {
         hero: {
-          itemHeader: 'border-l-border border-l-[0.375rem] transition-colors',
+          itemHeader: 'border-l-[0.375rem] border-l-border transition-colors',
         },
         primary: {
-          itemHeader: 'border-l-border border-l-[0.375rem] transition-colors',
+          itemHeader: 'border-l-[0.375rem] border-l-border transition-colors',
         },
       },
       isOpen: {
         true: {
-          content: 'border-border block border-t p-3',
+          content: 'block border-t border-border p-3',
         },
         false: {
           base: '',
@@ -54,7 +54,7 @@ export const styles = tv(
         slots: ['indicator'],
         look: 'default',
         isOpen: true,
-        className: 'rotate-90',
+        className: '-rotate-90',
       },
       {
         slots: ['indicator'],
@@ -77,12 +77,12 @@ export const styles = tv(
       {
         slots: ['content'],
         color: 'hero',
-        className: 'border-l-border border-l-[0.375rem]',
+        className: 'border-l-[0.375rem] border-l-border',
       },
       {
         slots: ['content'],
         color: 'primary',
-        className: 'border-l-border border-l-[0.375rem]',
+        className: 'border-l-[0.375rem] border-l-border',
       },
     ],
   },
