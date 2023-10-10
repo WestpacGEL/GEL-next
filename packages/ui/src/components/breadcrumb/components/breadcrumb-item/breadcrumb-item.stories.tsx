@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     isDisabled: false,
     children: 'Default Crumb',
@@ -34,7 +34,7 @@ export const DefaultStory: Story = {
 /**
  * > Disabled
  */
-export const IsDisabledStory: Story = {
+export const IsDisabled: Story = {
   args: {
     isDisabled: true,
     children: 'Disabled Crumb',

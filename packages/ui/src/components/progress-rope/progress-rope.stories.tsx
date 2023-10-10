@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {},
   render: () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -58,7 +58,7 @@ export const DefaultStory: Story = {
 /**
  * > Grouping steps story usage example
  */
-export const GroupingStepsStory: Story = {
+export const GroupingSteps: Story = {
   args: {},
   render: () => {
     const [activeIndex, setActiveIndex] = useState(0);

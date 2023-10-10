@@ -25,7 +25,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     'aria-label': 'Animals',
     children: [
@@ -42,7 +42,7 @@ export const DefaultStory: Story = {
 /**
  * > Controlled usage example
  */
-export const ControlledStory: Story = {
+export const Controlled: Story = {
   args: {},
   render: () => {
     const [selectedKey, setSelectedKey] = useState<Key>();
@@ -65,7 +65,7 @@ export const ControlledStory: Story = {
 /**
  * > Disabled usage example
  */
-export const DisabledStory: Story = {
+export const Disabled: Story = {
   args: {
     isDisabled: true,
     'aria-label': 'Disable example',
@@ -83,7 +83,7 @@ export const DisabledStory: Story = {
 /**
  * > Invalid usage example
  */
-export const InvalidStory: Story = {
+export const Invalid: Story = {
   args: {
     invalid: true,
     'aria-label': 'Invalid example',
@@ -101,7 +101,7 @@ export const InvalidStory: Story = {
 /**
  * > Sizes example
  */
-export const SizesStory: Story = {
+export const Sizes: Story = {
   args: {},
   render: () => {
     return (
@@ -126,7 +126,7 @@ export const SizesStory: Story = {
 /**
  * > Footer example
  */
-export const FooterStory: Story = {
+export const Footer: Story = {
   args: {},
   render: () => {
     return (

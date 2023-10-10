@@ -70,7 +70,7 @@ type Story = StoryObj<any>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     tag: 'a',
     href: '#',
@@ -87,7 +87,7 @@ export const DefaultStory: Story = {
   },
 };
 
-export const CreditCardStory: Story = {
+export const CreditCard: Story = {
   args: {
     tag: 'a',
     href: '#',
@@ -108,7 +108,7 @@ export const CreditCardStory: Story = {
   },
 };
 
-export const AccountStory: Story = {
+export const Account: Story = {
   args: {
     tag: 'a',
     href: '#',
@@ -128,7 +128,7 @@ export const AccountStory: Story = {
   },
 };
 
-export const PayeeStory: Story = {
+export const Payee: Story = {
   args: {
     tag: 'a',
     href: '#',
@@ -153,7 +153,7 @@ export const PayeeStory: Story = {
   },
 };
 
-export const PayeeWithInfoStory: Story = {
+export const PayeeWithInfo: Story = {
   args: {
     withBorder: true,
     body: true,
@@ -176,7 +176,7 @@ export const PayeeWithInfoStory: Story = {
   },
 };
 
-export const FlagPayeeStory: Story = {
+export const FlagPayee: Story = {
   args: {
     withBorder: true,
     body: true,
@@ -195,7 +195,7 @@ export const FlagPayeeStory: Story = {
   },
 };
 
-export const ListItemWithFlagStory: Story = {
+export const ListItemWithFlag: Story = {
   args: {
     tag: 'a',
     href: '#',
@@ -206,7 +206,7 @@ export const ListItemWithFlagStory: Story = {
   },
 };
 
-export const ListItemStory: Story = {
+export const ListItem: Story = {
   args: {
     tag: 'a',
     href: '#',
@@ -216,7 +216,7 @@ export const ListItemStory: Story = {
   },
 };
 
-export const WestpacSpecialProductStory: Story = {
+export const WestpacSpecialProduct: Story = {
   args: {
     tag: 'a',
     href: '#',
@@ -237,7 +237,7 @@ export const WestpacSpecialProductStory: Story = {
   },
 };
 
-export const FlexiCellWithImageStory: Story = {
+export const FlexiCellWithImage: Story = {
   args: {
     tag: 'a',
     href: '#',
@@ -257,7 +257,7 @@ export const FlexiCellWithImageStory: Story = {
   },
 };
 
-export const StickyFooterExampleStory: Story = {
+export const StickyFooterExample: Story = {
   args: {},
   render: () => {
     return (
@@ -343,7 +343,7 @@ const MOCK_ACCOUNTS = [
   },
 ];
 // WIP
-export const AccountListStory: Story = {
+export const AccountList: Story = {
   args: {},
   render: () => {
     return (
@@ -433,7 +433,7 @@ const MOCK_PAYEES = [
   },
 ];
 
-export const PayeeListStory: Story = {
+export const PayeeList: Story = {
   args: {},
   render: () => {
     return (
@@ -535,7 +535,7 @@ const MOCK_COUNTRIES = [
   },
 ];
 
-export const CountryListStory: Story = {
+export const CountryList: Story = {
   args: {},
   render: () => {
     return (
@@ -583,7 +583,7 @@ export const CountryListStory: Story = {
   },
 };
 
-export const ForeignCurrencyListStory: Story = {
+export const ForeignCurrencyList: Story = {
   args: {},
   render: () => {
     return (
@@ -674,7 +674,7 @@ const MOCK_PROMOS = [
   },
 ];
 
-export const PromotilesHorizontalListStory: Story = {
+export const PromotilesHorizontalList: Story = {
   args: {},
   render: () => {
     return (
@@ -715,7 +715,7 @@ export const PromotilesHorizontalListStory: Story = {
   },
 };
 
-export const PromotilesVerticalListStory: Story = {
+export const PromotilesVerticalList: Story = {
   args: {},
   render: () => {
     return (
@@ -777,7 +777,7 @@ const MOCK_PRODUCTS = [
   },
 ];
 
-export const ProductTilesStory: Story = {
+export const ProductTiles: Story = {
   args: {},
   render: () => {
     return (

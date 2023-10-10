@@ -45,7 +45,7 @@ const SIZES = ['small', 'medium', 'large', 'xlarge'];
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: [
       <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>,
@@ -58,7 +58,7 @@ export const DefaultStory: Story = {
 /**
  * Button group looks
  */
-export const ButtonGroupColors = () => (
+export const Colors = () => (
   <div className="flex flex-col gap-2">
     {LOOKS.map((look: any) => (
       <ButtonGroup label={<h3 className="font-bold">{look}</h3>} look={look}>
@@ -73,7 +73,7 @@ export const ButtonGroupColors = () => (
 /**
  * Button group sizes
  */
-export const ButtonGroupSizes = () => (
+export const Sizes = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map((size: any) => (
       <ButtonGroup label={<h3 className="font-bold">{size}</h3>} size={size}>
@@ -88,7 +88,7 @@ export const ButtonGroupSizes = () => (
 /**
  * Button group responsive sizing
  */
-export const ButtonGroupResponsiveSize: Story = {
+export const ResponsiveSize: Story = {
   args: {
     children: [
       <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>,
@@ -106,7 +106,7 @@ export const ButtonGroupResponsiveSize: Story = {
 /**
  * Button group block
  */
-export const ButtonGroupBlock = () => (
+export const Block = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map((size: any) => (
       <ButtonGroup block label={<h3 className="font-bold">{size}</h3>} size={size}>
@@ -121,7 +121,7 @@ export const ButtonGroupBlock = () => (
 /**
  * Disabled button group
  */
-export const DisabledButtonGroup: Story = {
+export const Disabled: Story = {
   args: {
     children: [
       <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>,

@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Input field with different sizes
  */
-export const InputFieldWithDifferentSizesStory: Story = {
+export const InputFieldWithDifferentSizes: Story = {
   args: {},
   render: () => {
     return (

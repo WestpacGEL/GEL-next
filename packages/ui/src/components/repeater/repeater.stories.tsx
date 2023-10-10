@@ -37,13 +37,13 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {},
 };
 
 /**
  * > Example using the separator prop
  */
-export const SeparatedRepeater: Story = {
+export const Separator: Story = {
   args: { separator: true },
 };

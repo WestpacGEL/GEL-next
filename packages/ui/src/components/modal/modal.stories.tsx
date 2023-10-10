@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: `
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
@@ -50,7 +50,7 @@ export const DefaultStory: Story = {
 /**
  * > WithFooter usage example
  */
-export const WithFooterStory: Story = {
+export const WithFooter: Story = {
   args: {
     children: `I'm children`,
     title: 'Title',
@@ -76,7 +76,7 @@ export const WithFooterStory: Story = {
 /**
  * > All sizes usage example
  */
-export const AllSizesStory: Story = {
+export const Sizes: Story = {
   args: {
     children: `I'm children`,
     title: 'Title',
@@ -116,7 +116,7 @@ export const AllSizesStory: Story = {
 /**
  * > Not dismissable example
  */
-export const NotDismissibleStory: Story = {
+export const NotDismissible: Story = {
   args: {
     children: `I'm children`,
     title: 'Title',

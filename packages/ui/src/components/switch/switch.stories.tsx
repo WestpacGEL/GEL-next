@@ -26,7 +26,7 @@ const SIZES = ['small', 'medium', 'large', 'xlarge'];
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     size: 'medium',
     label: 'eStatements',
@@ -36,7 +36,7 @@ export const DefaultStory: Story = {
 /**
  * > Selected switch example
  */
-export const SelectedSwitch: Story = {
+export const Selected: Story = {
   args: {
     label: 'eStatements',
     checked: true,
@@ -46,7 +46,7 @@ export const SelectedSwitch: Story = {
 /**
  * > Switch size example
  */
-export const SwitchSizes = () => (
+export const Sizes = () => (
   <div>
     {SIZES.map((size: any) => (
       <div key={size}>
@@ -62,7 +62,7 @@ export const SwitchSizes = () => (
 /**
  * > Disabled switch example
  */
-export const DisabledSwitch: Story = {
+export const Disabled: Story = {
   args: {
     label: 'eStatements',
     isDisabled: true,
@@ -72,7 +72,7 @@ export const DisabledSwitch: Story = {
 /**
  * > Block switch example
  */
-export const BlockSwitch = () => (
+export const Block = () => (
   <div>
     <>
       <div className="mb-2">
@@ -91,7 +91,7 @@ export const BlockSwitch = () => (
 /**
  * > Responsive switch example
  */
-export const ResponsiveSizeSwitch: Story = {
+export const ResponsiveSize: Story = {
   args: {
     label: 'eStatements',
     size: { initial: 'small', md: 'large', lg: 'xlarge' },

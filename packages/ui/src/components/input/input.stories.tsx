@@ -21,10 +21,13 @@ const meta: Meta<typeof Input> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const SIZES = ['small', 'medium', 'large', 'xlarge'];
+const FIXED_WIDTHS = [2, 3, 4, 5, 10, 20, 30];
+
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     placeholder: 'placeholder',
     size: 'medium',
@@ -34,7 +37,7 @@ export const DefaultStory: Story = {
 /**
  * > Invalid usage example
  */
-export const InvalidStory: Story = {
+export const Invalid: Story = {
   args: {
     invalid: true,
   },
@@ -43,16 +46,27 @@ export const InvalidStory: Story = {
 /**
  * > Disabled usage example
  */
-export const DisabledStory: Story = {
+export const Disabled: Story = {
   args: {
     disabled: true,
   },
 };
 
 /**
+ * >Sizes
+ */
+export const Sizes = () => (
+  <div className="flex flex-col gap-2">
+    {SIZES.map(size => (
+      <Input size={size as any} placeholder={size} />
+    ))}
+  </div>
+);
+
+/**
  * > ReadOnly usage example
  */
-export const ReadOnlyStory: Story = {
+export const ReadOnly: Story = {
   args: {
     readOnly: true,
   },

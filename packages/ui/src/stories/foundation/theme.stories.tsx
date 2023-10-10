@@ -1,7 +1,7 @@
 import { type Meta, StoryFn } from '@storybook/react';
 
 const meta: Meta = {
-  title: 'Foundation/ThemeProvider',
+  title: 'Foundation/Theme',
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
   parameters: {
@@ -14,7 +14,7 @@ export default meta;
 /**
  * Providing themeing is a matter of wrapping with HTML or div with data-theme="theme-name", see code of story for example
  */
-export const ThemeProvider = () => (
+export const Theme = () => (
   /**
    * Valid theme tokens:
    * BOM

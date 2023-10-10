@@ -33,7 +33,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: 'Click Me',
   },
@@ -42,7 +42,7 @@ export const DefaultStory: Story = {
 /**
  * > Using icon as trigger
  */
-export const PopoverIconTrigger: Story = {
+export const IconTrigger: Story = {
   args: {
     icon: () => <HelpIcon color="hero" />,
   },
@@ -51,7 +51,7 @@ export const PopoverIconTrigger: Story = {
 /**
  * > Default open
  */
-export const DefaultOpenPopover: Story = {
+export const DefaultOpen: Story = {
   args: {
     children: 'Click Me',
     open: true,
@@ -61,7 +61,7 @@ export const DefaultOpenPopover: Story = {
 /**
  * > No heading
  */
-export const PopoverNoHeading: Story = {
+export const NoHeading: Story = {
   args: {
     children: 'Click Me',
     open: true,

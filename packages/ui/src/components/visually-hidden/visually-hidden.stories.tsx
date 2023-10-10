@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
  * Note: The examples below the following headings are visibility hidden.
  * Best you inspect what is being rendered using your browser’s DevTools.
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: 'Only screen reader can read this',
   },

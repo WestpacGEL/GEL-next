@@ -27,7 +27,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     value: 50,
     look: 'default',
@@ -37,7 +37,7 @@ export const DefaultStory: Story = {
 /**
  * > Skinny example
  */
-export const ProgressBarSkinny: Story = {
+export const Skinny: Story = {
   args: {
     value: 50,
     look: 'skinny',
@@ -47,7 +47,7 @@ export const ProgressBarSkinny: Story = {
 /**
  * > No label example
  */
-export const ProgressBarNoLabel: Story = {
+export const NoLabel: Story = {
   args: {
     value: 50,
     look: 'default',
@@ -58,7 +58,7 @@ export const ProgressBarNoLabel: Story = {
 /**
  * Example of Progress Bar controlled by buttons
  */
-export const ProgressBarControlled = () => {
+export const Controlled = () => {
   const [barValue, setBarValue] = useState(0);
   const handleProgress = useCallback(
     (calc: number) => {

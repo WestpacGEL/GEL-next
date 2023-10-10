@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     placeholder: 'placeholder',
     size: 'medium',
@@ -34,7 +34,7 @@ export const DefaultStory: Story = {
 /**
  * > Invalid usage example
  */
-export const InvalidStory: Story = {
+export const Invalid: Story = {
   args: {
     invalid: true,
   },
@@ -43,7 +43,7 @@ export const InvalidStory: Story = {
 /**
  * > Disabled usage example
  */
-export const DisabledStory: Story = {
+export const Disabled: Story = {
   args: {
     disabled: true,
   },
@@ -52,7 +52,7 @@ export const DisabledStory: Story = {
 /**
  * > ReadOnly usage example
  */
-export const ReadOnlyStory: Story = {
+export const ReadOnly: Story = {
   args: {
     readOnly: true,
   },

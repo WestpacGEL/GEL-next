@@ -23,12 +23,11 @@ const meta: Meta<typeof Compacta> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 /**
  * > Default usage example
  */
-export const StoryDefault = () => {
+export const Default = () => {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

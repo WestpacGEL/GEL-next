@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: [
       <Breadcrumb.Item tag="button" onClick={() => alert('Folder 1')}>

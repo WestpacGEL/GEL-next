@@ -25,14 +25,14 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {},
 };
 
 /**
  * > Different sizes example
  */
-export const DifferentSizesStory: Story = {
+export const Sizes: Story = {
   args: {},
   render: () => {
     return (
@@ -52,7 +52,7 @@ export const DifferentSizesStory: Story = {
 /**
  * > Controlled value
  */
-export const ControlledValueStory: Story = {
+export const Controlled: Story = {
   args: {},
   render: () => {
     const [value, setValue] = useState('2023-08-01');
@@ -78,4 +78,25 @@ export const ControlledValueStory: Story = {
       />
     );
   },
+};
+
+/**
+ * > Disable weekends
+ */
+export const DisableWeekends: Story = {
+  args: { disableWeekends: true },
+};
+
+/**
+ * > Disable days of the week (Mon, Wed, Fri in example)
+ */
+export const DisableDaysOfWeek: Story = {
+  args: { disableDaysOfWeek: [1, 3, 5] },
+};
+
+/**
+ * > Disable specific dates (2023-10-10 in example)
+ */
+export const DisableSpecificDates: Story = {
+  args: { disableDates: ['2023-10-10'] },
 };

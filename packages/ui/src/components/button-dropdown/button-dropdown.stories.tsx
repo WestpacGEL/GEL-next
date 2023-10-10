@@ -4,6 +4,9 @@ import { AndroidIcon, AppleIcon } from '../icon/index.js';
 
 import { ButtonDropdown } from './button-dropdown.component.js';
 
+/**
+ * ## NOTE: If you can't scroll on page click anywhere on page to close default open dropdown
+ */
 const meta: Meta<typeof ButtonDropdown> = {
   title: 'Components/ButtonDropdown',
   component: ButtonDropdown,
@@ -30,7 +33,7 @@ const DROPDOWNSIZE = ['small', 'medium', 'large'];
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     text: 'Default Dropdown',
     children: (
@@ -102,6 +105,23 @@ export const ButtonSizes = () => (
         </ButtonDropdown>
       </>
     ))}
+    <h3 className="font-bold">Responsive</h3>
+    <ButtonDropdown
+      size={{
+        initial: 'small',
+        md: 'large',
+        lg: 'xlarge',
+      }}
+      text="responsive"
+    >
+      <p>
+        Example dropdown
+        <a href="#" className="text-[blue] underline">
+          content
+        </a>
+        ...
+      </p>
+    </ButtonDropdown>
   </div>
 );
 
@@ -118,27 +138,41 @@ export const DropdownSizes = () => (
         </ButtonDropdown>
       </>
     ))}
+    <h3 className="font-bold">Responsive</h3>
+    <ButtonDropdown
+      dropdownSize={{
+        initial: 'large',
+        md: 'small',
+        lg: 'medium',
+      }}
+      text="Responsive"
+    >
+      Responive
+    </ButtonDropdown>
   </div>
 );
 
 /**
  * > Block usage example
  */
-export const BlockDropdownButton: Story = {
-  args: {
-    block: true,
-    text: 'Block Dropdown',
-    children: (
-      <p>
-        Example dropdown
-        <a href="#" className="text-[blue] underline">
-          content
-        </a>
-        ...
-      </p>
-    ),
-  },
-};
+export const BlockDropdownButton = () => (
+  <div>
+    <h3 className="font-bold">Block</h3>
+    <ButtonDropdown block={true} text="Block">
+      Block
+    </ButtonDropdown>
+    <h3 className="font-bold">Responsive Block</h3>
+    <ButtonDropdown
+      block={{
+        initial: false,
+        lg: true,
+      }}
+      text="Responsive Block"
+    >
+      Responive Block
+    </ButtonDropdown>
+  </div>
+);
 
 /**
  * > Icon usage example
@@ -173,6 +207,25 @@ export const DropdownWithHeadings: Story = {
         <ButtonDropdown.Heading>Dropdown heading #2</ButtonDropdown.Heading>
         Example dropdown content...
       </>
+    ),
+  },
+};
+
+/**
+ * > Open by default
+ */
+export const Open: Story = {
+  args: {
+    open: true,
+    text: 'Default Dropdown',
+    children: (
+      <p>
+        Example dropdown
+        <a href="#" className="text-[blue] underline">
+          content
+        </a>
+        ...
+      </p>
     ),
   },
 };

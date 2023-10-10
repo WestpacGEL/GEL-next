@@ -27,7 +27,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory = () => {
+export const Default = () => {
   return (
     <Selector type="checkbox">
       {[
@@ -47,7 +47,7 @@ export const DefaultStory = () => {
 /**
  * > Radio usage example
  */
-export const RadioStory = () => {
+export const Radio = () => {
   return (
     <Selector type="radio">
       {[
@@ -67,7 +67,7 @@ export const RadioStory = () => {
 /**
  * > Radio usage example
  */
-export const CheckWithArrowStory = () => {
+export const CheckWithArrow = () => {
   return (
     <Selector type="radio">
       {[
@@ -87,7 +87,7 @@ export const CheckWithArrowStory = () => {
 /**
  * > Radio with state usage example
  */
-export const RadioWithStateStory = () => {
+export const RadioWithState = () => {
   const [selectedOption, setSelectedOption] = useState<string>();
   return (
     <>
@@ -117,7 +117,7 @@ export const RadioWithStateStory = () => {
 /**
  * > Check options with state usage example
  */
-export const CheckboxWithStateStory = () => {
+export const CheckboxWithState = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>();
   return (
     <>
@@ -147,7 +147,7 @@ export const CheckboxWithStateStory = () => {
 /**
  * > Default usage example
  */
-export const LongTextStory = () => {
+export const LongText = () => {
   return (
     <Selector type="checkbox">
       {[
@@ -171,7 +171,7 @@ export const LongTextStory = () => {
 /**
  * > With hint text usage example
  */
-export const WithHintTextStory = () => {
+export const HintText = () => {
   return (
     <Selector type="checkbox">
       {[
@@ -211,7 +211,7 @@ export const WithHintTextStory = () => {
 /**
  * > With pictogram usage example
  */
-export const WithPictogramStory = () => {
+export const Pictogram = () => {
   return (
     <Selector type="checkbox">
       {[
@@ -271,7 +271,7 @@ export const WithPictogramStory = () => {
 /**
  * > With pictogram with different sizes usage example
  */
-export const WithPictogramDifferentSizesStory = () => {
+export const PictogramSizes = () => {
   return (
     <Selector type="checkbox">
       {[
@@ -331,7 +331,7 @@ export const WithPictogramDifferentSizesStory = () => {
 /**
  * > With icon and different size
  */
-export const WithIconsDifferentSizesStory = () => {
+export const IconsSizes = () => {
   return (
     <Selector type="checkbox">
       {[
@@ -391,7 +391,7 @@ export const WithIconsDifferentSizesStory = () => {
 /**
  * > With icon and secondary label
  */
-export const WithIconsAndSecondaryLabelStory = () => {
+export const IconsAndSecondaryLabel = () => {
   return (
     <Selector type="checkbox">
       {[
@@ -463,7 +463,7 @@ export const WithIconsAndSecondaryLabelStory = () => {
 /**
  * > Radio example with icons and secondary text
  */
-export const RadioWithIconsAndSecondaryLabelStory = () => {
+export const RadioWithIconsAndSecondaryLabel = () => {
   return (
     <Selector type="radio">
       {[
@@ -543,7 +543,7 @@ export const RadioWithIconsAndSecondaryLabelStory = () => {
 /**
  * > Disable state style example
  */
-export const DisableStateStory = () => {
+export const Disabled = () => {
   return (
     <Selector type="radio" value="A">
       {[

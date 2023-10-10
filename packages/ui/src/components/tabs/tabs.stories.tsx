@@ -25,7 +25,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     look: 'default',
     color: undefined,
@@ -48,7 +48,7 @@ export const DefaultStory: Story = {
 /**
  * > Default usage example
  */
-export const JustifyStory: Story = {
+export const Justify: Story = {
   args: {
     justify: true,
     children: [
@@ -68,7 +68,7 @@ export const JustifyStory: Story = {
 /**
  * > Default usage example
  */
-export const ColorStory: Story = {
+export const Color: Story = {
   args: {
     justify: true,
     color: 'hero',
@@ -89,7 +89,7 @@ export const ColorStory: Story = {
 /**
  * > Vertical story usage example
  */
-export const VerticalStory: Story = {
+export const Vertical: Story = {
   args: {
     orientation: 'vertical',
     children: [
@@ -103,75 +103,5 @@ export const VerticalStory: Story = {
         Alea jacta est.
       </Tabs.Panel>,
     ],
-  },
-};
-
-/**
- * > Vertical story usage example
- */
-export const MaterialLookStory: Story = {
-  args: {
-    look: 'material',
-    color: 'primary',
-    children: [
-      <Tabs.Panel key="FoR" title="Founding of Rome">
-        Arma virumque cano, Troiae qui primus ab oris.
-      </Tabs.Panel>,
-      <Tabs.Panel key="MaR" title="Monarchy and Republic">
-        Senatus Populusque Romanus.
-      </Tabs.Panel>,
-      <Tabs.Panel key="Emp" title="Empire">
-        Alea jacta est.
-      </Tabs.Panel>,
-    ],
-  },
-};
-
-/**
- * > Vertical story usage example
- */
-export const VerticalMaterialLookStory: Story = {
-  args: {
-    look: 'material',
-    color: 'primary',
-    orientation: 'vertical',
-    children: [
-      <Tabs.Panel key="FoR" title="Founding of Rome">
-        Arma virumque cano, Troiae qui primus ab oris
-      </Tabs.Panel>,
-      <Tabs.Panel key="MaR" title="Monarchy and Republic">
-        Senatus Populusque Romanus.
-      </Tabs.Panel>,
-      <Tabs.Panel key="Emp" title="Empire">
-        Alea jacta est.
-      </Tabs.Panel>,
-    ],
-  },
-};
-
-/**
- * > Vertical story usage example
- */
-export const ControlledMaterialLookStory: Story = {
-  render: () => {
-    const [selectedKey, setSelectedKey] = useState<Key>('FoR');
-    return (
-      <Tabs
-        selectedKey={selectedKey}
-        onSelectionChange={key => {
-          setSelectedKey(key);
-        }}
-      >
-        <Tabs.Panel key="FoR" title="Founding of Rome">
-          Arma virumque cano, Troiae qui primus ab oris.
-        </Tabs.Panel>
-        <Tabs.Panel key="MaR" title="Monarchy and Republic">
-          Senatus Populusque Romanus.
-        </Tabs.Panel>
-        <Tabs.Panel key="Emp" title="Empire">
-          Alea jacta est.
-        </Tabs.Panel>
-      </Tabs>
-    );
   },
 };

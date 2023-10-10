@@ -55,7 +55,7 @@ export function ButtonDropdown({
         soft={soft}
         block={block}
         aria-expanded={state.isOpen}
-        aria-controls="panel-dialog"
+        aria-controls={panelId}
         className={styles.base()}
         {...buttonProps}
       >

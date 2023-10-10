@@ -46,8 +46,8 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {},
 };
 
-export const DecorativeStory = () => <WBCBankCardPictogram />;
+export const Decorative = () => <WBCBankCardPictogram />;

@@ -7,7 +7,7 @@ export const styles = tv(
       textWrapper: 'flex flex-col justify-center',
       labelText: 'typography-body-10 py-[2px] pl-1',
       hintText: 'typography-body-10 text-muted pl-1',
-      selector: 'border-hero flex h-4 w-4 items-center justify-center rounded-full border',
+      selector: 'border-hero flex shrink-0 h-4 w-4 items-center justify-center rounded-full border',
     },
     variants: {
       isDisabled: {
