@@ -87,6 +87,28 @@ export default function SampleApp() {
 }
 ```
 
+### Unit testing
+
+We recommend [vitest](https://vitest.dev/) for unit testing since `vitest` natively supports `ESM` modules.
+
+If you are using `jest` for unit testing, you might encounter some issues since `jest` does not support `ESM` modules by default. Therefore, you will need to make following configuration changes to the `jest` test runner.
+
+```ts
+// jest.config.ts
+const customJestConfig = {
+  transform: {},
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+};
+```
+
+```json
+{
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  }
+}
+```
+
 ## Documentation
 
 Visit [https://gel.westpacgroup.com.au/design-system](https://gel.westpacgroup.com.au/design-system) to view the full documentation.
