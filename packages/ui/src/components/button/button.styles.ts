@@ -49,7 +49,7 @@ export const styles = tv(
         slots: ['base'],
         look: 'primary',
         soft: true,
-        className: 'text-text hover:text-white on-theme-rams:text-primary',
+        className: 'text-text hover:text-white on-theme-rams:text-primary on-theme-rams:hover:text-white',
       },
       {
         slots: ['base'],
