@@ -25,5 +25,5 @@ export const Theme = () => (
    * wbc
    * wbg
    */
-  <div data-theme="WBC">Click on show code</div>
+  <div data-theme="wbc">Click on show code</div>
 );
