@@ -1,12 +1,9 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
-import { AndroidIcon, AppleIcon } from '../icon/index.js';
+import { AndroidIcon } from '../icon/index.js';
 
 import { ButtonDropdown } from './button-dropdown.component.js';
 
-/**
- * ## NOTE: If you can't scroll on page click anywhere on page to close default open dropdown
- */
 const meta: Meta<typeof ButtonDropdown> = {
   title: 'Components/ButtonDropdown',
   component: ButtonDropdown,
@@ -213,6 +210,7 @@ export const DropdownWithHeadings: Story = {
 
 /**
  * > Open by default
+ * NOTE: This element has a visual bug on the Storybook Docs page when page loaded but doesn't in dev docs/canvas view
  */
 export const Open: Story = {
   args: {

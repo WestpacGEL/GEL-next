@@ -17,13 +17,13 @@ export default meta;
 export const Theme = () => (
   /**
    * Valid theme tokens:
-   * BOM
-   * BSA
-   * BTFG
-   * RAMS
-   * STG
-   * WBC
-   * WBG
+   * bom
+   * bsa
+   * btfg
+   * rams
+   * stg
+   * wbc
+   * wbg
    */
   <div data-theme="WBC">Click on show code</div>
 );
