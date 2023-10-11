@@ -39,7 +39,7 @@ export function BaseLink(
       className={styles.base({ className })}
     >
       {IconBefore && <IconBefore size={iconSize} color="link" className={styles.iconBefore()} />}
-      <span className={styles.text()}>{children}</span>
+      <span>{children}</span>
       {IconAfter && <IconAfter size={iconSize} color="link" className={styles.iconAfter()} />}
     </a>
   );
