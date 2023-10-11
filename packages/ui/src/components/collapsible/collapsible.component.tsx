@@ -37,6 +37,7 @@ export function Collapsible({
       <Button
         className={styles.base({ className })}
         look="link"
+        iconColor="primary"
         iconAfter={ButtonIcon}
         onClick={handleClick}
         size={size}
