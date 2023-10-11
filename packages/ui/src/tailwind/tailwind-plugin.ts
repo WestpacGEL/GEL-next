@@ -13,7 +13,7 @@ import { createFontSizes, generateFontComponents, generateFormControlComponents 
  */
 export const WestpacUIKitBasePlugin = plugin(
   // Adding the typography components
-  ({ addComponents, addUtilities, addBase, theme }) => {
+  ({ addComponents, addUtilities, addVariant, addBase, theme }) => {
     addBase({
       html: { color: theme('colors.text.DEFAULT') },
     });
@@ -27,6 +27,12 @@ export const WestpacUIKitBasePlugin = plugin(
     addComponents(generateFontComponents(theme('typographySizes'), theme));
     addComponents(generateFormControlComponents(theme('formControl')));
     addComponents(generateDatePicker());
+    THEMES.forEach(({ name }) => {
+      addVariant(`active-theme-${name.toLowerCase()}`, [
+        `[data-theme="${name.toLowerCase()}"] &`,
+        `.theme-${name.toLowerCase()} &`,
+      ]);
+    });
   },
   {
     theme: {
@@ -129,6 +135,23 @@ export const WestpacUIKitBasePlugin = plugin(
           medium: 'typography-body-9 px-2 py-[0.3125rem] leading-6',
           large: 'px-[0.9375rem] py-[0.5rem] text-base',
           xlarge: 'px-3 pb-[0.625rem] pt-[0.5625rem] text-lg leading-[1.685rem]',
+        },
+      },
+      button: {
+        base: 'inline-flex items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none',
+        look: {
+          base: {
+            primary: 'border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50',
+            hero: 'border border-hero bg-hero text-white hover:bg-hero-70 active:bg-hero-50',
+            faint: 'border border-border bg-light text-muted hover:bg-white active:bg-white',
+            link: 'text-link underline',
+          },
+          soft: {
+            primary:
+              'border border-primary bg-white text-text hover:text-white hover:bg-primary-70 active:bg-primary-50',
+            hero: 'border border-hero bg-hero bg-white text-text hover:text-white hover:bg-hero-70 active:bg-hero-50',
+            faint: 'border border-border bg-white text-muted hover:bg-light active:bg-light',
+          },
         },
       },
       focusOutline: 'outline outline-2 outline-offset-[3px] outline-focus',
