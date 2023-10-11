@@ -10,11 +10,17 @@ const meta: Meta<typeof Accordion> = {
   component: Accordion,
   tags: ['autodocs'],
   decorators: [
-    (Story: StoryFn) => (
-      <div className="p-3">
-        <Story />
-      </div>
-    ),
+    (Story: StoryFn) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      Accordion.Item.displayName = 'Accordion.Item';
+
+      return (
+        <div className="p-3">
+          <Story />
+        </div>
+      );
+    },
   ],
   parameters: {
     layout: 'fullscreen',

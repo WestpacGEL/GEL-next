@@ -8,11 +8,17 @@ const meta: Meta<typeof Tabs> = {
   component: Tabs,
   tags: ['autodocs'],
   decorators: [
-    (Story: StoryFn) => (
-      <div className="p-3">
-        <Story />
-      </div>
-    ),
+    (Story: StoryFn) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      Tabs.Panel.displayName = 'Tabs.Panel';
+
+      return (
+        <div className="p-3">
+          <Story />
+        </div>
+      );
+    },
   ],
   parameters: {
     layout: 'fullscreen',

@@ -8,11 +8,17 @@ const meta: Meta<typeof Autocomplete> = {
   component: Autocomplete,
   tags: ['autodocs'],
   decorators: [
-    (Story: StoryFn) => (
-      <div className="h-30 p-3">
-        <Story />
-      </div>
-    ),
+    (Story: StoryFn) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      Autocomplete.Item.displayName = 'Autocomplete.Item';
+
+      return (
+        <div className="h-30 p-3">
+          <Story />
+        </div>
+      );
+    },
   ],
   parameters: {
     layout: 'centered',
