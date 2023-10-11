@@ -28,7 +28,7 @@ export const WestpacUIKitBasePlugin = plugin(
     addComponents(generateFormControlComponents(theme('formControl')));
     addComponents(generateDatePicker());
     THEMES.forEach(({ name }) => {
-      addVariant(`on-theme-${name.toLowerCase()}`, [
+      addVariant(`active-theme-${name.toLowerCase()}`, [
         `[data-theme="${name.toLowerCase()}"] &`,
         `.theme-${name.toLowerCase()} &`,
       ]);

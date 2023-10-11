@@ -17,7 +17,7 @@ describe('Button', () => {
   it('renders the style correctly', () => {
     const style = styles({ look: 'primary', size: 'medium' });
     expect(style.base()).toBe(
-      'inline-flex items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none typography-body-9 px-2 py-[0.3125rem] on-theme-rams:before:h-[0.125rem] relative border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50 on-theme-rams:border-b-pop on-theme-rams:before:absolute on-theme-rams:before:bottom-0 on-theme-rams:before:block on-theme-rams:before:w-full on-theme-rams:before:bg-pop',
+      'inline-flex items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none active-theme-rams:before:h-[0.125rem] typography-body-9 px-2 py-[0.3125rem] active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-pop relative border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50',
     );
   });
 
