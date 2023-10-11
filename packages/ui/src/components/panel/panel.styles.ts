@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       base: 'group/panel mb-4 overflow-hidden rounded-[0.1875rem] border border-hero',
-      header: 'px-4 py-[0.625rem] max-xsl:px-2',
+      header: 'px-2 py-[0.625rem] sm:px-4',
     },
     variants: {
       look: {
