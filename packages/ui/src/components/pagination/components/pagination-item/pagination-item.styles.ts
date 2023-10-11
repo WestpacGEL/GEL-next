@@ -13,7 +13,7 @@ export const styles = tv(
         false: 'hover:bg-light',
       },
       disabled: {
-        true: 'cursor-not-allowed bg-light text-muted-90',
+        true: 'cursor-not-allowed bg-light text-muted opacity-50',
         false: 'cursor-pointer',
       },
     },
