@@ -6,7 +6,7 @@ import { Button } from '../index.js';
 import { Accordion } from './accordion.component.js';
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Example/Accordion',
+  title: 'Components/Accordion',
   component: Accordion,
   tags: ['autodocs'],
   decorators: [
@@ -27,7 +27,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     rounded: true,
     color: undefined,
@@ -51,7 +51,7 @@ export const DefaultStory: Story = {
 /**
  * > Primary color usage example
  */
-export const PrimaryColorStory: Story = {
+export const PrimaryColor: Story = {
   args: {
     color: 'primary',
     rounded: false,
@@ -75,7 +75,7 @@ export const PrimaryColorStory: Story = {
 /**
  * > Hero color usage example
  */
-export const HeroColorStory: Story = {
+export const HeroColor: Story = {
   args: {
     color: 'hero',
     rounded: false,
@@ -97,33 +97,9 @@ export const HeroColorStory: Story = {
 };
 
 /**
- * > Hero color usage example
- */
-export const MaterialLookStory: Story = {
-  args: {
-    look: 'material',
-    rounded: false,
-  },
-  render: ({ ...props }) => (
-    <Accordion {...props}>
-      {[
-        { key: 'files', title: 'Your files' },
-        { key: 'shared', title: 'Shared with you' },
-        { key: 'last', title: 'Last item' },
-      ].map(({ key, title }) => (
-        <Accordion.Item key={key} title={title}>
-          <p>{title}</p>
-          <Button>Test</Button>
-        </Accordion.Item>
-      ))}
-    </Accordion>
-  ),
-};
-
-/**
  * > Controlled example
  */
-export const ControlledColorStory: Story = {
+export const ControlledColor: Story = {
   args: {
     color: 'hero',
     rounded: false,

@@ -5,7 +5,7 @@ import { AndroidIcon } from '../icon/index.js';
 import { List } from './list.component.js';
 
 const meta: Meta<typeof List> = {
-  title: 'Example/List',
+  title: 'Components/List',
   component: List,
   tags: ['autodocs'],
   decorators: [
@@ -29,7 +29,7 @@ const TYPES = ['bullet', 'link', 'tick', 'cross', 'unstyled', 'icon', 'ordered']
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: [
       <List.Item>Styled list</List.Item>,
@@ -42,7 +42,7 @@ export const DefaultStory: Story = {
 /**
  * > Type of list
  */
-export const ListTypes = () =>
+export const Types = () =>
   TYPES.map((type: any) => (
     <div className="mb-2" key={type}>
       <h1 className="typography-body-8">{type}</h1>
@@ -63,7 +63,7 @@ export const ListTypes = () =>
 /**
  * > Type of list
  */
-export const ListLooks = () =>
+export const Looks = () =>
   LOOKS.map((look: any) => (
     <div className="mb-2" key={look}>
       <h1 className="typography-body-8">{look}</h1>
@@ -84,7 +84,7 @@ export const ListLooks = () =>
 /**
  * Nested list
  */
-export const NestedList = () => (
+export const Nested = () => (
   <div>
     <List type="bullet" assistiveText="test">
       <List.Item>Styled list</List.Item>
@@ -112,7 +112,7 @@ export const NestedList = () => (
 /**
  * List spacing
  */
-export const ListSpacing = () => (
+export const Spacing = () => (
   <div>
     <h1 className="typography-body-10 mb-2">Medium</h1>
     <List type="bullet" className="mb-4" spacing="medium">

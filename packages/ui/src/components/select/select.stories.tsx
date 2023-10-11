@@ -3,7 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Select } from './select.component.js';
 
 const meta: Meta<typeof Select> = {
-  title: 'Example/Select',
+  title: 'Components/Select',
   component: Select,
   tags: ['autodocs'],
   decorators: [
@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: (
       <>
@@ -40,7 +40,7 @@ export const DefaultStory: Story = {
 /**
  * > Invalid usage example
  */
-export const InvalidStory: Story = {
+export const Invalid: Story = {
   args: {
     invalid: true,
     children: (
@@ -57,7 +57,7 @@ export const InvalidStory: Story = {
 /**
  * > Disabled usage example
  */
-export const DisabledStory: Story = {
+export const Disabled: Story = {
   args: {
     disabled: true,
     children: (

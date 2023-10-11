@@ -5,7 +5,7 @@ import { SymbolProps, WBCLogo, WBCMultibrandSmallLogo } from './index.js';
 import * as symbols from './index.js';
 
 const meta: Meta<typeof Symbol> = {
-  title: 'Example/Symbol',
+  title: 'Foundation/Symbols',
   component: WBCLogo,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {},
 };
 

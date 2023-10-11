@@ -5,7 +5,7 @@ import { Table } from '../table/index.js';
 import { Panel } from './panel.component.js';
 
 const meta: Meta<typeof Panel> = {
-  title: 'Example/Panel',
+  title: 'Components/Panel',
   component: Panel,
   tags: ['autodocs'],
   decorators: [
@@ -29,7 +29,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: [
       <Panel.Body>
@@ -45,7 +45,7 @@ export const DefaultStory: Story = {
 /**
  * > Faint look example
  */
-export const FaintLookPanel: Story = {
+export const FaintLook: Story = {
   args: {
     look: 'faint',
     children: [
@@ -62,7 +62,7 @@ export const FaintLookPanel: Story = {
 /**
  * > Example using a table
  */
-export const PanelWithTable: Story = {
+export const WithTable: Story = {
   args: {
     children: [
       <Table>
@@ -107,7 +107,7 @@ export const PanelWithTable: Story = {
 /**
  * > Example using a table with a body and a panel footer
  */
-export const PanelWithTableAndBody: Story = {
+export const WithTableAndBody: Story = {
   args: {
     children: [
       <Panel.Body>

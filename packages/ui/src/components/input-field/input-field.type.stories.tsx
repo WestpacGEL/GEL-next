@@ -6,7 +6,7 @@ import { Button, Input, Select, Textarea } from '../index.js';
 import { InputField } from './input-field.component.js';
 
 const meta: Meta<typeof InputField> = {
-  title: 'Example/InputField/Types',
+  title: 'Components/InputField/Types',
   component: InputField,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
@@ -35,7 +35,7 @@ export const TextBeforeStory: Story = {
 /**
  * > Text Beforoe story example
  */
-export const TextAfterStory: Story = {
+export const TextAfter: Story = {
   args: {},
   render: () => {
     return (
@@ -49,7 +49,7 @@ export const TextAfterStory: Story = {
 /**
  * > Text After and Beforoe story example
  */
-export const TextAfterAndBeforeStory: Story = {
+export const TextAfterAndBefore: Story = {
   args: {},
   render: () => {
     return (
@@ -69,7 +69,7 @@ export const TextAfterAndBeforeStory: Story = {
 /**
  * > Textarea
  */
-export const IconAddOnStory: Story = {
+export const IconAddOn: Story = {
   args: {},
   render: () => {
     return (
@@ -107,7 +107,7 @@ export const IconAddOnStory: Story = {
 /**
  * > Icons in buttons
  */
-export const IconInButtonsOnStory: Story = {
+export const IconInButtonsOn: Story = {
   args: {},
   render: () => {
     return (
@@ -145,7 +145,7 @@ export const IconInButtonsOnStory: Story = {
 /**
  * > Button add ons
  */
-export const ButtonAddOnStory: Story = {
+export const ButtonAddOn: Story = {
   args: {},
   render: () => {
     return (
@@ -199,7 +199,7 @@ export const ButtonAddOnStory: Story = {
 /**
  * > Select add ons
  */
-export const SelectAddOnStory: Story = {
+export const SelectAddOn: Story = {
   args: {},
   render: () => {
     return (
@@ -227,7 +227,7 @@ export const SelectAddOnStory: Story = {
 /**
  * > Textarea
  */
-export const TextAreaStory: Story = {
+export const TextArea: Story = {
   args: {},
   render: () => {
     return (

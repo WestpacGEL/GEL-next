@@ -6,7 +6,7 @@ import { Form, Input } from '../index.js';
 import { Compacta } from './compacta.component.js';
 
 const meta: Meta<typeof Compacta> = {
-  title: 'Example/Compacta',
+  title: 'Components/Compacta',
   component: Compacta,
   tags: ['autodocs'],
   decorators: [
@@ -23,12 +23,11 @@ const meta: Meta<typeof Compacta> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 /**
  * > Default usage example
  */
-export const StoryDefault = () => {
+export const Default = () => {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

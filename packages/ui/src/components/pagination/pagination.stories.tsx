@@ -9,7 +9,7 @@ import { Pagination } from './pagination.component.js';
 import { usePagination } from './pagination.hooks.js';
 
 const meta: Meta<typeof Pagination> = {
-  title: 'Example/Pagination',
+  title: 'Components/Pagination',
   component: Pagination,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Button usage example
  */
-export const DefaultStory: any = {
+export const Default: any = {
   args: {
     current: 1,
     onChange: action('onChange'),
@@ -45,7 +45,7 @@ export const DefaultStory: any = {
 /**
  * > Link usage example
  */
-export const AsLinkStory: any = {
+export const AsLink: any = {
   args: {
     current: 1,
     onChange: undefined,
@@ -69,7 +69,7 @@ export const AsLinkStory: any = {
 /**
  * > Using useState as example
  */
-export const ExampleWithState = () => {
+export const State = () => {
   const [page, setPage] = useState(1);
 
   return (
@@ -86,7 +86,7 @@ export const ExampleWithState = () => {
 /**
  * > Using useState as example
  */
-export const ExampleWithInfiniteState = () => {
+export const InfiniteState = () => {
   const [page, setPage] = useState(1);
 
   return (
@@ -104,7 +104,7 @@ export const ExampleWithInfiniteState = () => {
 /**
  * > Using custom back and next label
  */
-export const ExampleWithCustomBackAndNextLabel = () => {
+export const CustomBackAndNextLabel = () => {
   const [page, setPage] = useState(1);
 
   return (
@@ -123,7 +123,7 @@ export const ExampleWithCustomBackAndNextLabel = () => {
 /**
  * > Using use pagination hook
  */
-export const ExampleWithUsePagination = () => {
+export const UsePagination = () => {
   const { pages, currentPage, setCurrentPage } = usePagination({
     pages: [{ text: '1' }, { text: '2' }, { text: '3' }],
   });
@@ -145,7 +145,7 @@ export const ExampleWithUsePagination = () => {
 /**
  * > Using use pagination hook with other components
  */
-export const ExampleUsePagination = () => {
+export const UsePaginationDifferentComponents = () => {
   const { next, previous, selectedPage } = usePagination({
     pages: [{ text: 'Page 1' }, { text: 'Page 2' }, { text: 'Page 3' }],
     infinite: true,

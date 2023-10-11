@@ -5,7 +5,7 @@ import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon } from '../icon/index.js';
 import { Button } from './button.component.js';
 
 const meta: Meta<typeof Button> = {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
   decorators: [
@@ -30,7 +30,7 @@ const SIZES = ['small', 'medium', 'large', 'xlarge'];
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: 'Button text',
   },
@@ -39,7 +39,7 @@ export const DefaultStory: Story = {
 /**
  * > Button looks
  */
-export const ButtonColors = () => (
+export const Colors = () => (
   <div className="flex flex-col gap-2">
     <h3 className="font-bold">Default</h3>
     <div className="flex gap-2">
@@ -61,7 +61,7 @@ export const ButtonColors = () => (
 /**
  * > Button sizes
  */
-export const ButtonSizes = () => (
+export const Sizes = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map((size: any) => (
       <>
@@ -88,7 +88,7 @@ export const ButtonSizes = () => (
 /**
  * > Block buttons
  */
-export const BlockButtons = () => (
+export const Block = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map((size: any) => (
       <>
@@ -108,7 +108,7 @@ export const BlockButtons = () => (
 /**
  * > Buttons with icons
  */
-export const ButtonIcons = () => (
+export const Icons = () => (
   <div>
     <div className="mb-4 flex flex-col gap-2">
       <h2 className="typography-body-7 font-bold">Icon Before</h2>
@@ -257,7 +257,7 @@ export const ResponsiveSize = () => (
 /**
  * > As anchor tag
  */
-export const AsLinkStory: Story = {
+export const AsLink: Story = {
   args: {
     children: 'Link button',
     tag: 'a',
@@ -268,7 +268,7 @@ export const AsLinkStory: Story = {
 /**
  * > Disabled look
  */
-export const DisabledStory: Story = {
+export const Disabled: Story = {
   args: {
     children: 'Disabled button',
     disabled: true,

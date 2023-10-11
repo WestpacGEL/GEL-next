@@ -3,7 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Collapsible } from './collapsible.component.js';
 
 const meta: Meta<typeof Collapsible> = {
-  title: 'Example/Collapsible',
+  title: 'Components/Collapsible',
   component: Collapsible,
   tags: ['autodocs'],
   decorators: [
@@ -26,7 +26,7 @@ const SIZES = ['small', 'medium', 'large', 'xlarge'];
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     text: 'Toggle collapsible',
     children:
@@ -37,7 +37,7 @@ export const DefaultStory: Story = {
 /**
  * > Examples of sizes of collapsible button
  */
-export const CollapsibleSizes = () => (
+export const Sizes = () => (
   <div className="typography-body-10 p-3">
     {SIZES.map((size: any) => (
       <div className="mb-2" key={size}>
@@ -71,7 +71,7 @@ export const CollapsibleSizes = () => (
 /**
  * > Setting the default of collapsible to open
  */
-export const CollapsibleOpen = () => (
+export const Open = () => (
   <div className="typography-body-10 p-3">
     {SIZES.map((size: any) => (
       <div className="mb-2" key={size}>

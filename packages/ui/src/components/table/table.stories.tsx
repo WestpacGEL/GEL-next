@@ -3,7 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Table } from './table.component.js';
 
 const meta: Meta<typeof Table> = {
-  title: 'Example/Table',
+  title: 'Components/Table',
   component: Table,
   tags: ['autodocs'],
   decorators: [
@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: (
       <>
@@ -69,7 +69,7 @@ export const DefaultStory: Story = {
 /**
  * > Striped example
  */
-export const StripedTable: Story = {
+export const Striped: Story = {
   args: {
     striped: true,
     children: (
@@ -113,9 +113,9 @@ export const StripedTable: Story = {
 };
 
 /**
- * > Striped example
+ * > Bordered example
  */
-export const BorderedTable: Story = {
+export const Bordered: Story = {
   args: {
     bordered: true,
     children: (
@@ -159,9 +159,56 @@ export const BorderedTable: Story = {
 };
 
 /**
+ * > Bordered & Striped example
+ */
+export const BorderedAndStriped: Story = {
+  args: {
+    bordered: true,
+    striped: true,
+    children: (
+      <>
+        <Table.Caption>
+          Caption this table width is: <em>(100%)</em>
+        </Table.Caption>
+        <Table.Header>
+          <Table.HeaderRow>
+            <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell>Type</Table.HeaderCell>
+            <Table.HeaderCell>Date Modified</Table.HeaderCell>
+          </Table.HeaderRow>
+        </Table.Header>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>Games</Table.Cell>
+            <Table.Cell>File folder</Table.Cell>
+            <Table.Cell>6/7/2020</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Program Files</Table.Cell>
+            <Table.Cell>File folder</Table.Cell>
+            <Table.Cell>4/7/2021</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>bootmgr</Table.Cell>
+            <Table.Cell>System file</Table.Cell>
+            <Table.Cell>11/20/2010</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>log.txt</Table.Cell>
+            <Table.Cell>Text Document</Table.Cell>
+            <Table.Cell>1/18/2016</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+        <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
+      </>
+    ),
+  },
+};
+
+/**
  * > Example of table with highlighted rows or cells
  */
-export const HighlightedRowCellTable: Story = {
+export const HighlightedRowCell: Story = {
   args: {
     children: (
       <>

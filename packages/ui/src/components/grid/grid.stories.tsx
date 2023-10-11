@@ -4,7 +4,7 @@ import { Container, Item } from './components/index.js';
 import { Grid } from './grid.component.js';
 
 const meta: Meta<typeof Grid> = {
-  title: 'Example/Grid',
+  title: 'Foundation/Grid',
   component: Grid,
   tags: ['autodocs'],
   decorators: [
@@ -21,7 +21,7 @@ const meta: Meta<typeof Grid> = {
 
 export default meta;
 
-export const GridStory = () => {
+export const Default = () => {
   const items = Array(12).fill(null);
 
   return (
@@ -35,7 +35,7 @@ export const GridStory = () => {
   );
 };
 
-export const ContainerStory = () => {
+export const DefaultContainer = () => {
   const items = Array(12).fill(null);
 
   return (
@@ -51,7 +51,7 @@ export const ContainerStory = () => {
   );
 };
 
-export const ItemStory = () => {
+export const ResponsiveItems = () => {
   return (
     <Container>
       <Grid>
@@ -61,8 +61,53 @@ export const ItemStory = () => {
         <Item span={{ initial: 6, lg: 10 }} className="border border-border bg-light p-2 text-center">
           span - (xs:6, lg:10)
         </Item>
+      </Grid>
+    </Container>
+  );
+};
+
+export const Positioning = () => {
+  return (
+    <Container>
+      <Grid>
+        <Item span={4} className="border border-border bg-light p-2 text-center">
+          Top Left
+        </Item>
+        <Item start={9} span={4} className="border border-border bg-light p-2 text-center">
+          Top Right
+        </Item>
         <Item start={5} span={4} className="border border-border bg-light p-2 text-center">
-          start:5 span:4
+          Middle
+        </Item>
+        <Item start={1} span={4} className="border border-border bg-light p-2 text-center">
+          Bottom Left
+        </Item>
+        <Item start={9} span={4} className="border border-border bg-light p-2 text-center">
+          Bottom Right
+        </Item>
+      </Grid>
+    </Container>
+  );
+};
+
+export const HolyGrailLayout = () => {
+  return (
+    <Container>
+      <Grid>
+        <Item span={12} className="border border-border bg-light p-2 text-center h-12">
+          Header
+        </Item>
+        <Item span={3} className="border border-border bg-light p-2 text-center h-10">
+          Menu
+        </Item>
+        <Item span={6} className="border border-border bg-light p-2 text-center h-10">
+          Content
+        </Item>
+        <Item span={3} className="border border-border bg-light p-2 text-center h-10">
+          Ads
+        </Item>
+        <Item span={12} className="border border-border bg-light p-2 text-center h-12">
+          Footer
         </Item>
       </Grid>
     </Container>

@@ -3,7 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Well } from './well.component.js';
 
 const meta: Meta<typeof Well> = {
-  title: 'Example/Well',
+  title: 'Components/Well',
   component: Well,
   tags: ['autodocs'],
   decorators: [
@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultUsage: Story = {
+export const Default: Story = {
   args: {
     children: "Look, I'm in a well",
   },
@@ -33,7 +33,7 @@ export const DefaultUsage: Story = {
 /**
  * > Nested usage example
  */
-export const NestedUsage: Story = {
+export const Nested: Story = {
   args: {
     children: (
       <>
@@ -47,7 +47,7 @@ export const NestedUsage: Story = {
 /**
  * > Tag as <article>
  */
-export const CustomTagUsage: Story = {
+export const CustomTag: Story = {
   args: {
     tag: 'article',
     children: "Look, I'm in a well",
@@ -57,7 +57,7 @@ export const CustomTagUsage: Story = {
 /**
  * > Nested tag as <article>
  */
-export const CustomTagNestedUsage: Story = {
+export const CustomTagNested: Story = {
   args: {
     tag: 'article',
     children: (
@@ -72,7 +72,7 @@ export const CustomTagNestedUsage: Story = {
 /**
  * > Tag as <aside> with child <san>, passed as a component
  */
-export const ComplexCustomTagNestedUsage: Story = {
+export const ComplexCustomTagNested: Story = {
   args: {
     tag: 'aside',
     children: <span>Look, I'm in a well</span>,

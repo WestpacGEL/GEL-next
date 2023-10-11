@@ -5,7 +5,7 @@ import { Button, Input } from '../index.js';
 import { InputField } from './input-field.component.js';
 
 const meta: Meta<typeof InputField> = {
-  title: 'Example/InputField',
+  title: 'Components/InputField',
   component: InputField,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {},
   render: () => {
     return (
@@ -34,7 +34,7 @@ export const DefaultStory: Story = {
 /**
  * > SrOnlyLabel usage example
  */
-export const SrOnlyLabelStory: Story = {
+export const SrOnlyLabel: Story = {
   args: {},
   render: () => {
     return (
@@ -54,7 +54,7 @@ export const SrOnlyLabelStory: Story = {
 /**
  * > Combination usage example
  */
-export const CombinationStory: Story = {
+export const Combination: Story = {
   args: {},
   render: () => {
     return (
@@ -74,7 +74,7 @@ export const CombinationStory: Story = {
 /**
  * > Fieldset as tag
  */
-export const WithFieldsetStory: Story = {
+export const WithFieldset: Story = {
   args: {},
   render: () => {
     return (

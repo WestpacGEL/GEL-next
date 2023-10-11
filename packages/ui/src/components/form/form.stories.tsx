@@ -5,7 +5,7 @@ import { Input } from '../index.js';
 import { Form } from './form.component.js';
 
 const meta: Meta<typeof Form> = {
-  title: 'Example/Form',
+  title: 'Components/Form',
   component: Form,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default size and spacing
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {},
   render: () => {
     return (
@@ -102,7 +102,7 @@ export const DefaultStory: Story = {
 /**
  * > Multiple errors
  */
-export const MultipleErrorsStory: Story = {
+export const MultipleErrors: Story = {
   args: {},
   render: () => {
     return (
@@ -119,7 +119,7 @@ export const MultipleErrorsStory: Story = {
 /**
  * > All sizes Story
  */
-export const AllSizesStory: Story = {
+export const AllSizes: Story = {
   args: {},
   render: () => {
     return (
@@ -141,7 +141,7 @@ export const AllSizesStory: Story = {
 /**
  * > All spacings Story
  */
-export const AllSpacingsStory: Story = {
+export const AllSpacings: Story = {
   args: {},
   render: () => {
     return (

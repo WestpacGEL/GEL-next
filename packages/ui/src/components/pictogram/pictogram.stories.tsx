@@ -25,7 +25,7 @@ const AllPictogramsExample = (props: PictogramProps) => {
 };
 
 const meta: Meta<typeof Pictogram> = {
-  title: 'Example/Pictogram',
+  title: 'Foundation/Pictograms',
   component: AllPictogramsExample,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
@@ -46,8 +46,8 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {},
 };
 
-export const DecorativeStory = () => <WBCBankCardPictogram />;
+export const Decorative = () => <WBCBankCardPictogram />;

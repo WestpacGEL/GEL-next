@@ -7,7 +7,7 @@ import { Button, Input, Select, Textarea } from '../index.js';
 import { InputField } from './input-field.component.js';
 
 const meta: Meta<typeof InputField> = {
-  title: 'Example/InputField/Scenarios',
+  title: 'Components/InputField/Scenarios',
   component: InputField,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Number of dependents
  */
-export const NumberStepperStory: Story = {
+export const NumberStepper: Story = {
   args: {},
   render: () => {
     const [numberOfDependents, setNumberOfDependents] = useState(0);
@@ -44,7 +44,7 @@ export const NumberStepperStory: Story = {
 /**
  * > Masked characters in field
  */
-export const MaskedCharactersStory: Story = {
+export const MaskedCharacters: Story = {
   args: {},
   render: () => {
     const [typeInput, setTypeInput] = useState<'password' | 'text'>('password');
@@ -74,7 +74,7 @@ export const MaskedCharactersStory: Story = {
 /**
  * > Search with left icon and clear button
  */
-export const SearchWithLeftIconAndClearButtonStory: Story = {
+export const SearchWithLeftIconAndClearButton: Story = {
   args: {},
   render: () => {
     const [inputValue, setInputValue] = useState<string>('');
@@ -100,7 +100,7 @@ export const SearchWithLeftIconAndClearButtonStory: Story = {
 /**
  * > Inline field validation flow
  */
-export const InlineFieldValidationFlowStory: Story = {
+export const InlineFieldValidationFlow: Story = {
   args: {},
   render: () => {
     const [inputValue, setInputValue] = useState<string>('');
@@ -132,7 +132,7 @@ export const InlineFieldValidationFlowStory: Story = {
 /**
  * > Search Currency and frequency
  */
-export const CurrencyAndFrequencyStory: Story = {
+export const CurrencyAndFrequency: Story = {
   args: {},
   render: () => {
     const [inputValue, setInputValue] = useState<string>('');
@@ -159,7 +159,7 @@ export const CurrencyAndFrequencyStory: Story = {
  * > Search Textarea with character count
  */
 const MAX_LENGTH = 250;
-export const TextareaWithCharacterCountStory: Story = {
+export const TextareaWithCharacterCount: Story = {
   args: {},
   render: () => {
     const [inputValue, setInputValue] = useState<string>('');

@@ -56,7 +56,7 @@ const AllIconsExample = (props: AllIcons.IconProps) => {
 };
 
 const meta: Meta<typeof Icon> = {
-  title: 'Example/Icon',
+  title: 'Foundation/Icons',
   component: AllIconsExample,
   tags: ['autodocs'],
   decorators: [
@@ -119,14 +119,14 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {},
 };
 
 /**
  * > With primary color example
  */
-export const WithPrimaryColorStory: Story = {
+export const Primary: Story = {
   args: {
     color: 'primary',
   },
@@ -135,7 +135,7 @@ export const WithPrimaryColorStory: Story = {
 /**
  * > With large size example
  */
-export const WithDifferentSizeStory: Story = {
+export const Size: Story = {
   args: {
     size: 'xlarge',
   },
@@ -144,7 +144,7 @@ export const WithDifferentSizeStory: Story = {
 /**
  * > With outlined look example
  */
-export const WithOutlinedLookStory: Story = {
+export const Outlined: Story = {
   args: {
     look: 'outlined',
   },

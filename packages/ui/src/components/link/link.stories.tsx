@@ -5,7 +5,7 @@ import { ArrowRightIcon, PdfFileIcon } from '../icon/index.js';
 import { Link } from './link.component.js';
 
 const meta: Meta<typeof Link> = {
-  title: 'Example/Link',
+  title: 'Components/Link',
   component: Link,
   tags: ['autodocs'],
   decorators: [
@@ -26,7 +26,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: "Look, I'm a default link",
     href: '#',
@@ -39,7 +39,7 @@ const SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
  * > Standalone link with iconSizes, arrowRight is default but can be overridden.
  * > If no icon is passed it defaults to ArrowRightIcon in the iconBefore position
  */
-export const StandaloneLink = () => (
+export const Standalone = () => (
   <div className="space-y-1 pl-1">
     <h1 className="font-bold">Default</h1>
     <Link href="#">Look I'm a standalone link</Link>
@@ -57,7 +57,7 @@ export const StandaloneLink = () => (
 /**
  * > Inline link example
  */
-export const InlineLink = () => (
+export const Inline = () => (
   <div className="space-y-1 p-1">
     <p className="typography-body-10">
       Lorem ipsum dolor{' '}

@@ -6,7 +6,7 @@ import { Button, Input, Select } from '../index.js';
 import { InputField } from './input-field.component.js';
 
 const meta: Meta<typeof InputField> = {
-  title: 'Example/InputField/State',
+  title: 'Components/InputField/State',
   component: InputField,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Invalid with error message/s
  */
-export const InvalidWithErrorMessagesStory: Story = {
+export const InvalidWithErrorMessages: Story = {
   args: {},
   render: () => {
     return (
@@ -91,7 +91,7 @@ export const InvalidWithErrorMessagesStory: Story = {
 /**
  * > Input field with disabled state
  */
-export const InputFieldWithDisabledStateStory: Story = {
+export const InputFieldWithDisabledState: Story = {
   args: {},
   render: () => {
     return (
@@ -122,7 +122,7 @@ export const InputFieldWithDisabledStateStory: Story = {
 /**
  * > Input field with read-only state
  */
-export const InputFieldWithReadOnlyStateStory: Story = {
+export const InputFieldWithReadOnlyState: Story = {
   args: {},
   render: () => {
     return (

@@ -3,7 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { CheckboxGroup } from './checkbox-group.component.js';
 
 const meta: Meta<typeof CheckboxGroup> = {
-  title: 'Example/CheckboxGroup',
+  title: 'Components/CheckboxGroup',
   component: CheckboxGroup,
   tags: ['autodocs'],
   decorators: [
@@ -42,7 +42,7 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {
     children: [
       <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
@@ -53,9 +53,26 @@ export const DefaultStory: Story = {
 };
 
 /**
+ * > Default usage example
+ */
+export const LongLines: Story = {
+  args: {
+    children: [
+      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
+      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
+      <CheckboxGroup.Checkbox value="Option 3">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et odit labore illo sint tempora magnam modi nesciunt
+        consectetur vitae maiores itaque reiciendis sunt nisi ullam officiis, provident fugiat, esse iste adipisci
+        repellat! Incidunt delectus, pariatur quaerat vitae aspernatur eveniet libero.
+      </CheckboxGroup.Checkbox>,
+    ],
+  },
+};
+
+/**
  * > CheckboxGroup with default value
  */
-export const CheckboxGroupWithDefaultValue: Story = {
+export const DefaultValue: Story = {
   args: {
     children: [
       <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
@@ -69,7 +86,7 @@ export const CheckboxGroupWithDefaultValue: Story = {
 /**
  * > CheckboxGroup with checkboxes aligned horizontally
  */
-export const CheckboxGroupHorizontal: Story = {
+export const Inline: Story = {
   args: {
     children: [
       <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
@@ -81,9 +98,27 @@ export const CheckboxGroupHorizontal: Story = {
 };
 
 /**
+ * > Horizontal long lines
+ */
+export const InlineLongLines: Story = {
+  args: {
+    children: [
+      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
+      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
+      <CheckboxGroup.Checkbox value="Option 3">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et odit labore illo sint tempora magnam modi nesciunt
+        consectetur vitae maiores itaque reiciendis sunt nisi ullam officiis, provident fugiat, esse iste adipisci
+        repellat! Incidunt delectus, pariatur quaerat vitae aspernatur eveniet libero.
+      </CheckboxGroup.Checkbox>,
+    ],
+    orientation: 'horizontal',
+  },
+};
+
+/**
  * > CheckboxGroup that is disabled
  */
-export const CheckboxGroupDisabled: Story = {
+export const Disabled: Story = {
   args: {
     children: [
       <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
@@ -98,7 +133,7 @@ export const CheckboxGroupDisabled: Story = {
 /**
  * > CheckboxGroup with large checkboxes
  */
-export const CheckboxGroupLarge: Story = {
+export const Large: Story = {
   args: {
     children: [
       <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
@@ -112,7 +147,7 @@ export const CheckboxGroupLarge: Story = {
 /**
  * > CheckboxGroup that has hidden checkboxes that will be revealed on clicking on button
  */
-export const CheckboxGroupWithHiddenItems: Story = {
+export const HiddenItems: Story = {
   args: {
     children: [
       <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
@@ -120,5 +155,44 @@ export const CheckboxGroupWithHiddenItems: Story = {
       <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>,
     ],
     showAmount: 1,
+  },
+};
+
+/**
+ * > Hint text
+ */
+export const HintText: Story = {
+  args: {
+    children: [
+      <CheckboxGroup.Checkbox value="Option 1" hint="This is hint text">
+        Option 1
+      </CheckboxGroup.Checkbox>,
+      <CheckboxGroup.Checkbox value="Option 2" hint="This is hint text">
+        Option 2
+      </CheckboxGroup.Checkbox>,
+      <CheckboxGroup.Checkbox value="Option 3" hint="This is hint text">
+        Option 3
+      </CheckboxGroup.Checkbox>,
+    ],
+  },
+};
+
+/**
+ * > On change (check console log)
+ */
+export const OnChange: Story = {
+  args: {
+    children: [
+      <CheckboxGroup.Checkbox value="Option 1" hint="This is hint text">
+        Option 1
+      </CheckboxGroup.Checkbox>,
+      <CheckboxGroup.Checkbox value="Option 2" hint="This is hint text">
+        Option 2
+      </CheckboxGroup.Checkbox>,
+      <CheckboxGroup.Checkbox value="Option 3" hint="This is hint text">
+        Option 3
+      </CheckboxGroup.Checkbox>,
+    ],
+    onChange: e => console.log(e),
   },
 };

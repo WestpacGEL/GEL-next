@@ -5,7 +5,7 @@ import { Form, Input } from '../index.js';
 import { Repeater } from './repeater.component.js';
 
 const meta: Meta<typeof Repeater> = {
-  title: 'Example/Repeater',
+  title: 'Components/Repeater',
   component: Repeater,
   tags: ['autodocs'],
   decorators: [
@@ -37,13 +37,13 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
+export const Default: Story = {
   args: {},
 };
 
 /**
  * > Example using the separator prop
  */
-export const SeparatedRepeater: Story = {
+export const Separator: Story = {
   args: { separator: true },
 };
