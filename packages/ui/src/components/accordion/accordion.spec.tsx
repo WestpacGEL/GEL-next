@@ -37,16 +37,15 @@ describe('Accordion', () => {
         </Accordion.Item>
       </Accordion>,
     );
-    await act(() => {
-      user.click(getByText('Founding of Rome'));
-    });
+
+    user.click(getByText('Founding of Rome'));
+
     await waitFor(() => {
       expect(getByText('Arma virumque cano, Troiae qui primus ab oris.')).toBeVisible();
     });
 
-    await act(() => {
-      user.click(getByText('Monarchy and Republic'));
-    });
+    user.click(getByText('Monarchy and Republic'));
+
     await waitFor(() => {
       expect(getByText('Senatus Populusque Romanus.')).toBeVisible();
     });

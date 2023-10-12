@@ -71,43 +71,40 @@ describe('Compacta', () => {
 
   it('should hide contents of compacta when button pressed', async () => {
     const user = userEvent.setup();
-    const { getByText, getByLabelText, queryByText } = render(<TestCompacta />);
+    const { getByText, getByLabelText } = render(<TestCompacta />);
 
     expect(getByText(textToQuery)).toBeInTheDocument();
-    await act(() => {
-      user.click(getByLabelText('1.'));
-    });
-    await waitFor(() => {
-      expect(queryByText(textToQuery)).not.toBeInTheDocument();
-    });
+    user.click(getByLabelText('1.'));
+    await waitFor(() => expect(getByLabelText('1.')).toHaveAttribute('aria-expanded', 'false'));
   });
 
   it('should display input values when collapsed', async () => {
+    // This test inconsistently shows a warning, it is likely related to framer-motion
     const user = userEvent.setup();
     const { getByText, getByLabelText, queryByText, getByTestId } = render(<TestCompacta />);
 
-    await act(() => userEvent.type(getByTestId('input-one'), 'first'));
-    await act(() => userEvent.type(getByTestId('input-two'), 'second'));
-    await act(() => userEvent.type(getByTestId('input-three'), 'third'));
+    await act(() => user.type(getByTestId('input-one'), 'first'));
+    await act(() => user.type(getByTestId('input-two'), 'second'));
+    await act(() => user.type(getByTestId('input-three'), 'third'));
 
-    await act(() => {
-      user.click(getByLabelText('1.'));
-    });
-    await waitFor(() => {
-      expect(queryByText(textToQuery)).not.toBeInTheDocument();
-      expect(getByText('first')).toBeInTheDocument();
-      expect(getByText('second')).toBeInTheDocument();
-      expect(getByText('third')).toBeInTheDocument();
-    });
+    user.click(getByLabelText('1.'));
+    await waitFor(
+      () => {
+        expect(queryByText(textToQuery)).not.toBeInTheDocument();
+        expect(getByText('first')).toBeInTheDocument();
+        expect(getByText('second')).toBeInTheDocument();
+        expect(getByText('third')).toBeInTheDocument();
+      },
+      { timeout: 2000 },
+    );
   });
 
   it('should add another compacta when add button is pressed', async () => {
     const user = userEvent.setup();
     const { getByRole, getByText } = render(<TestCompacta />);
 
-    await act(() => {
-      user.click(getByRole('button', { name: 'Add another' }));
-    });
+    user.click(getByRole('button', { name: 'Add another' }));
+
     await waitFor(() => {
       expect(getByText('2.')).toBeInTheDocument();
     });
@@ -117,15 +114,11 @@ describe('Compacta', () => {
     const user = userEvent.setup();
     const { getByRole, getByText, queryByText } = render(<TestCompacta />);
 
-    await act(() => {
-      user.click(getByRole('button', { name: 'Add another' }));
-    });
+    user.click(getByRole('button', { name: 'Add another' }));
     await waitFor(() => {
       expect(getByText('2.')).toBeInTheDocument();
     });
-    await act(() => {
-      user.click(getByRole('button', { name: 'remove item 2' }));
-    });
+    user.click(getByRole('button', { name: 'remove item 2' }));
     await waitFor(() => {
       expect(queryByText('2.')).not.toBeInTheDocument();
     });

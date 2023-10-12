@@ -5,7 +5,7 @@ import { styles } from './button.styles.js';
 
 describe('Buttons', () => {
   it('renders the component', () => {
-    const { container } = render(<Button value="Option 1" />);
+    const { container } = render(<Button value="Option 1">Test</Button>);
     expect(container).toBeInTheDocument();
   });
 

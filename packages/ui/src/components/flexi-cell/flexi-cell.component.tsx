@@ -21,6 +21,7 @@ function FlexiCellBase(
     tag: Tag = 'div',
     children,
     badge,
+    badgeZIndex,
     before,
     body,
     after,
@@ -36,7 +37,11 @@ function FlexiCellBase(
   const styles = flexiCellStyles({ className, withBorder, isLink: !!href || withHoverEffect, isFocusVisible });
   return (
     <Tag {...({ ref } as any)} className={styles.base({ className })} href={href} {...mergeProps(props, focusProps)}>
-      {badge && <div className={styles.badge()}>{badge}</div>}
+      {badge && (
+        <div className={styles.badge()} style={{ zIndex: badgeZIndex }}>
+          {badge}
+        </div>
+      )}
       {before}
       <div className={styles.bodyWrapper()}>{body ? <FlexiCellBody>{children}</FlexiCellBody> : children}</div>
       {after}

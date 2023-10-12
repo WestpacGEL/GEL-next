@@ -49,8 +49,6 @@ export function ProgressRopeGroupStep({
     return 'non-visited';
   }, [current, visited]);
 
-  console.log('state', state);
-
   const styles = progressRopeGroupStyles({ firstItem, state });
   return (
     <>
