@@ -272,15 +272,15 @@ describe('Pagination', () => {
         }),
       );
       expect(result.current.currentPage).toBe(1);
-      result.current.next();
+      await act(() => result.current.next());
       rerender();
 
       expect(result.current.currentPage).toBe(2);
-      result.current.next();
+      await act(() => result.current.next());
       rerender();
 
       expect(result.current.currentPage).toBe(3);
-      result.current.next();
+      await act(() => result.current.next());
       rerender();
 
       expect(result.current.currentPage).toBe(3);
@@ -294,15 +294,15 @@ describe('Pagination', () => {
         }),
       );
       expect(result.current.currentPage).toBe(3);
-      result.current.previous();
+      await act(() => result.current.previous());
       rerender();
 
       expect(result.current.currentPage).toBe(2);
-      result.current.previous();
+      await act(() => result.current.previous());
       rerender();
 
       expect(result.current.currentPage).toBe(1);
-      result.current.previous();
+      await act(() => result.current.previous());
       rerender();
 
       expect(result.current.currentPage).toBe(1);
@@ -318,7 +318,7 @@ describe('Pagination', () => {
           }),
         );
         expect(result.current.currentPage).toBe(3);
-        result.current.next();
+        await act(() => result.current.next());
         rerender();
 
         expect(result.current.currentPage).toBe(1);
@@ -333,7 +333,7 @@ describe('Pagination', () => {
           }),
         );
         expect(result.current.currentPage).toBe(1);
-        result.current.previous();
+        await act(() => result.current.previous());
         rerender();
 
         expect(result.current.currentPage).toBe(3);

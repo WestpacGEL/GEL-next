@@ -7,7 +7,7 @@ import { styles } from './autocomplete.styles.js';
 describe('Autocomplete', () => {
   it('renders the component', () => {
     const { container } = render(
-      <Autocomplete>
+      <Autocomplete aria-label="animals">
         <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
         <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
         <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
@@ -35,7 +35,7 @@ describe('Autocomplete', () => {
 
   it('filters the options by typing on the component', async () => {
     const { getByRole, getByText, queryByText } = render(
-      <Autocomplete>
+      <Autocomplete aria-label="animals">
         <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
         <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
         <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
@@ -43,7 +43,7 @@ describe('Autocomplete', () => {
         <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
         <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
       </Autocomplete>,
-      { container: document.body },
+      // { container: document.body },
     );
     const textbox = getByRole('combobox');
     const user = userEvent.setup();
@@ -58,7 +58,7 @@ describe('Autocomplete', () => {
 
   it('selects the item', async () => {
     const { getByRole, getByText } = render(
-      <Autocomplete>
+      <Autocomplete aria-label="animals">
         <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
         <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
         <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
@@ -66,7 +66,7 @@ describe('Autocomplete', () => {
         <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
         <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
       </Autocomplete>,
-      { container: document.body },
+      // { container: document.body },
     );
     const textbox = getByRole('combobox');
     const user = userEvent.setup();

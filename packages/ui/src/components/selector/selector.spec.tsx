@@ -5,7 +5,7 @@ import { Selector } from './selector.component.js';
 import { type SelectorProps } from './selector.types.js';
 
 const SimpleRadioSelector = (props: Omit<SelectorProps<'radio'>, 'children' | 'type'>) => (
-  <Selector type="radio" {...props}>
+  <Selector type="radio" aria-label="test" {...props}>
     <Selector.Radio value="1" data-testid="opt1">
       option 1
     </Selector.Radio>
@@ -19,7 +19,7 @@ const SimpleRadioSelector = (props: Omit<SelectorProps<'radio'>, 'children' | 't
 );
 
 const SimpleCheckboxSelector = (props: Omit<SelectorProps<'checkbox'>, 'children' | 'type'>) => (
-  <Selector type="checkbox" {...props}>
+  <Selector type="checkbox" aria-label="test" {...props}>
     <Selector.Checkbox value="1" data-testid="opt1">
       option 1
     </Selector.Checkbox>

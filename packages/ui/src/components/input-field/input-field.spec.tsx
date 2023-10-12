@@ -268,9 +268,10 @@ describe('InputField', () => {
 
     describe('when the value prop is defined', () => {
       test('then the value of the text input should match the value', async () => {
+        const handleChange = vi.fn();
         render(
           <InputField label="Mock input">
-            <Input value="test-value" />
+            <Input value="test-value" onChange={handleChange} />
           </InputField>,
         );
 
@@ -281,7 +282,7 @@ describe('InputField', () => {
     describe('when the onChange prop is defined', () => {
       test('then the callback should be fired as the user types', async () => {
         const user = userEvent.setup();
-        const handleChange = vitest.fn();
+        const handleChange = vi.fn();
         render(
           <InputField label="Mock input">
             <Input value="test-value" onChange={handleChange} />
