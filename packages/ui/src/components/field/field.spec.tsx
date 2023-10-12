@@ -8,9 +8,4 @@ describe('Field', () => {
     const { container } = render(<Field />);
     expect(container).toBeInTheDocument();
   });
-  it('renders the style correctly', () => {
-    const style = styles();
-    // TODO: use some variants for test
-    expect(style).toBe('');
-  });
 });

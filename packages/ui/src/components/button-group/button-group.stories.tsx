@@ -133,7 +133,7 @@ export const Disabled: Story = {
 };
 
 /**
- * Disabled button group
+ * Error message and label
  */
 export const ErrorMessageAndLabel: Story = {
   args: {

@@ -1,6 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
-import { Input } from '../index.js';
+import { Input, Select } from '../index.js';
 
 import { Field } from './field.component.js';
 
@@ -30,6 +30,24 @@ export const DefaultStory: Story = {
         errorMessage="This is an inline error message"
       >
         <Input />
+      </Field>
+    );
+  },
+};
+
+/**
+ * > Select usage example
+ */
+export const SelectStory: Story = {
+  args: {},
+  render: () => {
+    return (
+      <Field
+        label="Are you an existing customer?"
+        hintMessage="Hint: choose from one of the following options"
+        errorMessage="This is an inline error message"
+      >
+        <Select />
       </Field>
     );
   },

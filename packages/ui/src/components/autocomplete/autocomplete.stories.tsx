@@ -156,3 +156,20 @@ export const Footer: Story = {
     );
   },
 };
+
+/**
+ * Error message and label
+ */
+export const ErrorMessageAndLabel: Story = {
+  args: {
+    label: 'Are you an existing customer?',
+    errorMessage: 'This is an inline error message',
+    validationState: 'invalid',
+    hintMessage: 'Hint: choose from one of the following options',
+    children: [
+      <Autocomplete.Item key="Option 1">Option 1</Autocomplete.Item>,
+      <Autocomplete.Item key="Option 2">Option 2</Autocomplete.Item>,
+      <Autocomplete.Item key="Option 3">Option 3</Autocomplete.Item>,
+    ],
+  },
+};

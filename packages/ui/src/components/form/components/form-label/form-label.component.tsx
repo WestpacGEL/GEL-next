@@ -1,9 +1,8 @@
 import React from 'react';
 
 import { type FormLabelProps } from '../../../../index.js';
+import { FormLabel as GELFormLabel } from '../../../index.js';
 import { useFormContext } from '../../form.component.js';
-
-import { FormLabel as GELFormLabel } from './index.js';
 
 export function FormLabel({ spacing, children, ...props }: FormLabelProps) {
   const context = useFormContext();
