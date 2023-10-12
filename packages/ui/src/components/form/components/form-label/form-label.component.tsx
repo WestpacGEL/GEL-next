@@ -1,29 +1,17 @@
 import React from 'react';
 
-import { VisuallyHidden } from '../../../index.js';
+import { type FormLabelProps } from '../../../../index.js';
 import { useFormContext } from '../../form.component.js';
 
-import { styles } from './form-label.styles.js';
-import { type FormLabelProps } from './form-label.types.js';
+import { FormLabel as GELFormLabel } from './index.js';
 
-export function FormLabel({
-  className,
-  tag: Tag = 'label',
-  spacing,
-  srOnly,
-  children,
-  subLabel = false,
-  ...props
-}: FormLabelProps) {
+export function FormLabel({ spacing, children, ...props }: FormLabelProps) {
   const context = useFormContext();
-
   const finalSpacing = spacing || context?.spacing || 'medium';
 
-  return srOnly ? (
-    <VisuallyHidden>{children}</VisuallyHidden>
-  ) : (
-    <Tag className={styles({ className, spacing: finalSpacing, subLabel })} {...props}>
+  return (
+    <GELFormLabel {...props} spacing={finalSpacing}>
       {children}
-    </Tag>
+    </GELFormLabel>
   );
 }

@@ -5,6 +5,10 @@ import { styles } from './form-hint.styles.js';
 
 export type FormHintProps = {
   /**
+   * spacing
+   */
+  spacing?: 'medium' | 'large';
+  /**
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
