@@ -2,6 +2,8 @@ import React, { createContext } from 'react';
 import { useCheckboxGroup } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
+import { ErrorMessage, FormHint, FormLabel } from '../../../index.js';
+
 import { SelectorCheckboxGroupOption } from './components/index.js';
 import { styles } from './selector-checkbox-group.styles.js';
 import {
@@ -28,18 +30,12 @@ export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {
 
   return (
     <div {...groupProps} className={styles({ className: groupProps.className })}>
-      <span {...labelProps}>{label}</span>
-      <SelectorCheckboxGroupContext.Provider value={state}>{children}</SelectorCheckboxGroupContext.Provider>
-      {description && (
-        <div {...descriptionProps} style={{ fontSize: 12 }}>
-          {description}
-        </div>
-      )}
+      <FormLabel {...labelProps}>{label}</FormLabel>
+      {description && <FormHint {...descriptionProps}>{description}</FormHint>}
       {errorMessage && state.validationState === 'invalid' && (
-        <div {...errorMessageProps} className="typography-body-10 text-danger">
-          {errorMessage}
-        </div>
+        <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}
+      <SelectorCheckboxGroupContext.Provider value={state}>{children}</SelectorCheckboxGroupContext.Provider>
     </div>
   );
 }

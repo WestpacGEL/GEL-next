@@ -1,6 +1,6 @@
 import React, { Children, ReactNode, cloneElement, isValidElement, useCallback, useId, useMemo } from 'react';
 
-import { Form } from '../form/form.component.js';
+import { ErrorMessage, FormHint, FormLabel } from '../index.js';
 
 import { InputAddOn } from './components/add-ons/add-ons.component.js';
 import { SupportingText } from './components/index.js';
@@ -86,12 +86,12 @@ export function InputField({
   return (
     <Tag className={styles({ before: !!before, after: !!after, afterInset, beforeInset })} {...props}>
       {label && (
-        <Form.Label srOnly={hideLabel} tag={isFieldset ? 'legend' : 'label'} {...(!isFieldset && { htmlFor: id })}>
+        <FormLabel srOnly={hideLabel} tag={isFieldset ? 'legend' : 'label'} {...(!isFieldset && { htmlFor: id })}>
           {label}
-        </Form.Label>
+        </FormLabel>
       )}
-      {hint && <Form.Hint id={`${id}-hint`}>{hint}</Form.Hint>}
-      {errorMessage && <Form.ErrorMessage id={`${id}-error`} message={errorMessage} />}
+      {hint && <FormHint id={`${id}-hint`}>{hint}</FormHint>}
+      {errorMessage && <ErrorMessage id={`${id}-error`} message={errorMessage} />}
       <div className="relative flex">
         {before && (
           <InputAddOn position="before" size={size} inset={beforeInset} icon={beforeIcon} id={id}>

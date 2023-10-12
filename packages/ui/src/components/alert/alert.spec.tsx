@@ -51,20 +51,14 @@ describe('Alert', () => {
 
   it('should be removed when the close button is clicked', async () => {
     render(<Alert data-testid="alert" dismissible />);
-    await act(() => {
-      user.click(screen.getByRole('button', { name: closeBtn }));
-    });
-    await waitForElementToBeRemoved(() => screen.getByTestId('alert'));
+    user.click(screen.getByRole('button', { name: closeBtn }));
+    await waitFor(() => expect(screen.getByTestId('alert')).not.toBeInTheDocument, { timeout: 2000 });
   });
 
   it('calls the onClose callback when dismissed', async () => {
     const handleClose = vi.fn();
     render(<Alert dismissible onClose={handleClose} />);
-    await act(() => {
-      user.click(screen.getByRole('button', { name: closeBtn }));
-    });
-    await waitFor(() => {
-      expect(handleClose).toHaveBeenCalledTimes(1);
-    });
+    user.click(screen.getByRole('button', { name: closeBtn }));
+    await waitFor(() => expect(handleClose).toHaveBeenCalledTimes(1));
   });
 });

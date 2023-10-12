@@ -4,11 +4,11 @@ export const styles = tv(
   {
     slots: {
       base: 'relative flex flex-col',
-      label: 'text-text block text-left text-sm font-medium',
+      label: 'block text-left text-sm font-medium text-text',
       outerWrapper:
-        'form-control disabled:form-control-disabled relative flex w-full flex-row items-center overflow-hidden pr-2',
+        'form-control relative flex w-full flex-row items-center overflow-hidden pr-2 disabled:form-control-disabled',
       input: 'w-full appearance-none bg-[transparent] outline-none',
-      clearButton: 'text-text-50 hover:text-border-60 flex cursor-default items-center justify-center',
+      clearButton: 'flex cursor-default items-center justify-center text-text-50 hover:text-border-60',
     },
     variants: {
       invalid: {

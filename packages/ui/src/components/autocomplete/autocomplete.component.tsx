@@ -3,6 +3,7 @@ import { useButton, useComboBox, useFilter, useSearchField } from 'react-aria';
 import { Item, useComboBoxState, useSearchFieldState } from 'react-stately';
 
 import { ClearIcon } from '../icon/index.js';
+import { ErrorMessage, FormHint, FormLabel } from '../index.js';
 
 import { styles as autocompleteStyles } from './autocomplete.styles.js';
 import { type AutocompleteProps } from './autocomplete.types.js';
@@ -14,6 +15,8 @@ export function Autocomplete<T extends object>({
   isDisabled,
   footer,
   portalContainer,
+  errorMessage,
+  hintMessage,
   ...props
 }: AutocompleteProps<T>) {
   const { contains } = useFilter({ sensitivity: 'base' });
@@ -21,7 +24,7 @@ export function Autocomplete<T extends object>({
   const inputRef = React.useRef(null);
   const listBoxRef = React.useRef(null);
   const popoverRef = React.useRef(null);
-  const { inputProps, listBoxProps, labelProps } = useComboBox(
+  const { inputProps, listBoxProps, labelProps, descriptionProps, errorMessageProps } = useComboBox(
     {
       ...props,
       isDisabled,
@@ -57,9 +60,9 @@ export function Autocomplete<T extends object>({
 
   return (
     <div className={styles.base()}>
-      <label {...labelProps} className={styles.label()}>
-        {props.label}
-      </label>
+      <FormLabel {...labelProps}>{props.label}</FormLabel>
+      {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}
+      {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
 
       <div ref={outerRef} className={styles.outerWrapper()}>
         <input {...inputProps} ref={inputRef} className={styles.input()} />
@@ -83,8 +86,8 @@ export function Autocomplete<T extends object>({
           placement="bottom start"
           portalContainer={portalContainer}
         >
-          <ListBox {...listBoxProps} listBoxRef={listBoxRef} state={state} />
-          {footer && <div className="border-t border-t-border px-3 py-2">{footer}</div>}
+          <ListBox {...listBoxProps} autoFocus={listBoxProps.autoFocus as any} listBoxRef={listBoxRef} state={state} />
+          {footer && <div className="border-t-border border-t px-3 py-2">{footer}</div>}
         </Popover>
       )}
     </div>

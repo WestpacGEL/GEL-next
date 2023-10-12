@@ -2,6 +2,8 @@ import { ReactNode } from 'react';
 import { AriaCheckboxGroupProps } from 'react-aria';
 import { CheckboxGroupState } from 'react-stately';
 
+import { FormHintProps } from '../index.js';
+
 export type CheckboxGroupProps = {
   /**
    * The `CheckboxItem` components to render
@@ -11,6 +13,14 @@ export type CheckboxGroupProps = {
    * String to override base style
    */
   className?: string;
+  /**
+   * error message
+   */
+  errorMessage?: string | string[];
+  /**
+   * hint message
+   */
+  hintMessage?: FormHintProps['children'];
   /**
    * Orientation of checkbox items
    */

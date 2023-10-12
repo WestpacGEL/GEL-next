@@ -189,3 +189,20 @@ export const OnChange: Story = {
     onChange: e => console.log(e),
   },
 };
+
+/**
+ * Error message and label
+ */
+export const ErrorMessageAndLabel: Story = {
+  args: {
+    label: 'Are you an existing customer?',
+    errorMessage: 'This is an inline error message',
+    validationState: 'invalid',
+    hintMessage: 'Hint: choose from one of the following options',
+    children: [
+      <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>,
+      <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>,
+      <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>,
+    ],
+  },
+};

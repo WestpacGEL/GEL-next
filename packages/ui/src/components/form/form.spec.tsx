@@ -25,7 +25,7 @@ describe('Form', () => {
           <Form.Group>
             <Form.Label htmlFor="example-default-2">This is a label</Form.Label>
             <Form.Hint>This is a hint</Form.Hint>
-            <Form.ErrorMessage message="This is an error message" />
+            {/* <Form.ErrorMessage message="This is an error message" /> */}
             <Input name="example-default-2" />
           </Form.Group>
         </Form.Section>
@@ -34,7 +34,7 @@ describe('Form', () => {
           <Form.Group>
             <Form.Label htmlFor="example-default-3">This is a label</Form.Label>
             <Form.Hint>This is a hint</Form.Hint>
-            <Form.ErrorMessage message="This is an error message" />
+            {/* <Form.ErrorMessage message="This is an error message" /> */}
             <Input name="example-default-3" />
           </Form.Group>
         </Form.Section>

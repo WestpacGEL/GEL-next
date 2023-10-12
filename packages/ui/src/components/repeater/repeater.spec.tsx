@@ -1,4 +1,4 @@
-import { act, render, waitFor } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Repeater } from './repeater.component.js';
@@ -22,9 +22,7 @@ describe('Repeater', () => {
     const user = userEvent.setup();
     const { queryAllByText, getByRole } = render(<TestRepeater />);
     expect(queryAllByText(queryText)).toHaveLength(1);
-    await act(() => {
-      user.click(getByRole('button', { name: 'Add another item' }));
-    });
+    user.click(getByRole('button', { name: 'Add another item' }));
     await waitFor(() => expect(queryAllByText(queryText)).toHaveLength(2));
   });
 
@@ -32,13 +30,9 @@ describe('Repeater', () => {
     const user = userEvent.setup();
     const { queryAllByText, getByRole } = render(<TestRepeater />);
     expect(queryAllByText(queryText)).toHaveLength(1);
-    await act(() => {
-      user.click(getByRole('button', { name: 'Add another item' }));
-    });
+    user.click(getByRole('button', { name: 'Add another item' }));
     await waitFor(() => expect(queryAllByText(queryText)).toHaveLength(2));
-    await act(() => {
-      user.click(getByRole('button', { name: 'remove item 2' }));
-    });
+    user.click(getByRole('button', { name: 'remove item 2' }));
     await waitFor(() => expect(queryAllByText(queryText)).toHaveLength(1));
   });
 

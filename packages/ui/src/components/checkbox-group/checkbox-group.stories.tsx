@@ -196,3 +196,20 @@ export const OnChange: Story = {
     onChange: e => console.log(e),
   },
 };
+
+/**
+ * Error message and label
+ */
+export const ErrorMessageAndLabel: Story = {
+  args: {
+    label: 'Are you an existing customer?',
+    errorMessage: 'This is an inline error message',
+    validationState: 'invalid',
+    hintMessage: 'Hint: choose from one of the following options',
+    children: [
+      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
+      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
+      <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>,
+    ],
+  },
+};
