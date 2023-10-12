@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { SearchIcon } from '../icon/index.js';
@@ -109,7 +109,7 @@ describe('InputField', () => {
             <Input />
           </InputField>,
         );
-        await user.click(screen.getByRole('button'));
+        await act(() => user.click(screen.getByRole('button')));
         expect(handleClick).toHaveBeenCalledTimes(1);
       });
     });
@@ -150,7 +150,7 @@ describe('InputField', () => {
           </InputField>,
         );
         const select = screen.getByRole('combobox');
-        await user.selectOptions(select, 'One');
+        await act(() => user.selectOptions(select, 'One'));
         expect(select).toHaveValue('One');
       });
     });
@@ -197,7 +197,7 @@ describe('InputField', () => {
             <Input />
           </InputField>,
         );
-        await user.click(screen.getByRole('button'));
+        await act(() => user.click(screen.getByRole('button')));
         expect(handleClick).toHaveBeenCalledTimes(1);
       });
     });
@@ -238,7 +238,7 @@ describe('InputField', () => {
           </InputField>,
         );
         const select = screen.getByRole('combobox');
-        await user.selectOptions(select, 'One');
+        await act(() => user.selectOptions(select, 'One'));
         expect(select).toHaveValue('One');
       });
     });
@@ -289,7 +289,7 @@ describe('InputField', () => {
           </InputField>,
         );
         const input = screen.getByRole('textbox', { name: MOCK_INPUT });
-        await user.type(input, 't');
+        await act(() => user.type(input, 't'));
         expect(handleChange).toHaveBeenCalledTimes(1);
       });
     });
@@ -304,7 +304,7 @@ describe('InputField', () => {
         );
 
         const input = screen.getByRole('textbox', { name: MOCK_INPUT });
-        await user.type(input, 'test-text');
+        await act(() => user.type(input, 'test-text'));
         expect(input).toHaveValue('test-text');
       });
     });
