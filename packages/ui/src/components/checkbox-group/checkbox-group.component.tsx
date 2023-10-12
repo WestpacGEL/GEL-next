@@ -4,6 +4,7 @@ import { useCheckboxGroupState } from 'react-stately';
 
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
+import { ErrorMessage, FormHint, FormLabel } from '../index.js';
 
 import { styles as checkboxStyles } from './checkbox-group.styles.js';
 import { type CheckboxGroupContextState, type CheckboxGroupProps } from './checkbox-group.types.js';
@@ -22,7 +23,6 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
   toggleValue: () => null,
   validationState: 'valid',
 });
-
 export function CheckboxGroup({
   className,
   children,
@@ -30,10 +30,12 @@ export function CheckboxGroup({
   orientation = 'vertical',
   showAmount = 0,
   size = 'medium',
+  errorMessage,
+  hintMessage,
   ...props
 }: CheckboxGroupProps) {
   const state = useCheckboxGroupState({ ...props, label });
-  const { groupProps, labelProps } = useCheckboxGroup({ ...props, label }, state);
+  const { groupProps, labelProps, errorMessageProps, descriptionProps } = useCheckboxGroup({ ...props, label }, state);
   const { isFocusVisible, focusProps } = useFocusRing();
   const [hiddenOptions, setHiddenOptions] = useState<boolean>(showAmount > 0);
   const firstNewCheckboxRef = useRef<HTMLDivElement>(null);
@@ -58,7 +60,11 @@ export function CheckboxGroup({
 
   return (
     <div className={styles.base({ className })} {...groupProps}>
-      <span {...labelProps}>{label}</span>
+      <FormLabel {...labelProps}>{label}</FormLabel>
+      {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}
+      {errorMessage && state.validationState === 'invalid' && (
+        <ErrorMessage {...errorMessageProps} message={errorMessage} />
+      )}
       <div className={styles.itemWrapper()}>
         <CheckboxGroupContext.Provider value={{ ...state, orientation, size }}>
           {childrenToRender}

@@ -35,3 +35,6 @@ export * from './progress-rope/index.js';
 export * from './selector/index.js';
 export * from './compacta/index.js';
 export * from './repeater/index.js';
+export * from './error-message/index.js';
+export * from './form-label/index.js';
+export * from './form-hint/index.js';

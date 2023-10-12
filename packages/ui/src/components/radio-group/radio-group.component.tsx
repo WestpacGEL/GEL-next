@@ -4,6 +4,7 @@ import { useRadioGroupState } from 'react-stately';
 
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
+import { ErrorMessage, FormHint, FormLabel } from '../index.js';
 
 import { Radio } from './components/radio/radio.component.js';
 import { styles as radioGroupStyles } from './radio-group.styles.js';
@@ -31,10 +32,15 @@ export function RadioGroup({
   orientation = 'vertical',
   showAmount = 0,
   size = 'medium',
+  errorMessage,
+  hintMessage,
   ...props
 }: RadioGroupProps) {
   const state = useRadioGroupState({ ...props, label, orientation });
-  const { radioGroupProps, labelProps } = useRadioGroup({ ...props, label, orientation }, state);
+  const { radioGroupProps, labelProps, errorMessageProps, descriptionProps } = useRadioGroup(
+    { ...props, label, orientation },
+    state,
+  );
   const { isFocusVisible, focusProps } = useFocusRing();
   const [hiddenOptions, setHiddenOptions] = useState<boolean>(showAmount > 0);
   const firstNewRadioRef = useRef<HTMLDivElement>(null);
@@ -59,7 +65,11 @@ export function RadioGroup({
 
   return (
     <div className={styles.base({ className })} {...radioGroupProps}>
-      <span {...labelProps}>{label}</span>
+      <FormLabel {...labelProps}>{label}</FormLabel>
+      {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}
+      {errorMessage && state.validationState === 'invalid' && (
+        <ErrorMessage {...errorMessageProps} message={errorMessage} />
+      )}
       <div className={styles.radioWrapper()}>
         <RadioGroupContext.Provider value={{ ...state, orientation, size }}>
           {childrenToRender}

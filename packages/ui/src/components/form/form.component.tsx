@@ -1,6 +1,8 @@
 import React, { createContext, useContext } from 'react';
 
-import { ErrorMessage, FormChitChat, FormGroup, FormHint, FormLabel, FormSection } from './components/index.js';
+import { ErrorMessage } from '../error-message/index.js';
+
+import { FormChitChat, FormGroup, FormHint, FormLabel, FormSection } from './components/index.js';
 import { FormContextValue, type FormProps } from './form.types.js';
 
 // ==============================

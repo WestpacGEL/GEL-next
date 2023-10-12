@@ -1,5 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
+import { Field } from '../field/index.js';
+
 import { Select } from './select.component.js';
 
 const meta: Meta<typeof Select> = {
@@ -68,5 +70,28 @@ export const Disabled: Story = {
         <option value="option-4">option 4</option>
       </>
     ),
+  },
+};
+
+/**
+ * > Form field example
+ */
+export const FormField: Story = {
+  args: {},
+  render: () => {
+    return (
+      <Field
+        label="Are you an existing customer?"
+        hintMessage="Hint: choose from one of the following options"
+        errorMessage="This is an inline error message"
+      >
+        <Select invalid>
+          <option value="option-1">option 1</option>
+          <option value="option-2">option 2</option>
+          <option value="option-3">option 3</option>
+          <option value="option-4">option 4</option>
+        </Select>
+      </Field>
+    );
   },
 };

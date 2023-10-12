@@ -131,3 +131,20 @@ export const Disabled: Story = {
     isDisabled: true,
   },
 };
+
+/**
+ * Error message and label
+ */
+export const ErrorMessageAndLabel: Story = {
+  args: {
+    label: 'Are you an existing customer?',
+    errorMessage: 'This is an inline error message',
+    validationState: 'invalid',
+    hintMessage: 'Hint: choose from one of the following options',
+    children: [
+      <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>,
+      <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>,
+      <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>,
+    ],
+  },
+};

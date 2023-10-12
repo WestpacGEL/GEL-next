@@ -2,6 +2,8 @@ import React, { createContext } from 'react';
 import { useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
+import { ErrorMessage, FormHint, FormLabel } from '../../../index.js';
+
 import { SelectorRadioGroupOption } from './components/index.js';
 import { styles } from './selector-radio-group.styles.js';
 import { type SelectorRadioGroupContextState, type SelectorRadioGroupProps } from './selector-radio-group.types.js';
@@ -26,22 +28,25 @@ export function SelectorRadioGroup({
   label,
   orientation = 'vertical',
   errorMessage,
+  description,
   ...props
 }: SelectorRadioGroupProps) {
   const state = useRadioGroupState({ ...props, errorMessage, label, orientation });
-  const { radioGroupProps, labelProps, errorMessageProps } = useRadioGroup({ ...props, label, orientation }, state);
+  const { radioGroupProps, labelProps, errorMessageProps, descriptionProps } = useRadioGroup(
+    { ...props, label, orientation },
+    state,
+  );
 
   return (
     <div className={styles({ className, orientation })} {...radioGroupProps}>
-      <span {...labelProps}>{label}</span>
+      <FormLabel {...labelProps}>{label}</FormLabel>
+      {description && <FormHint {...descriptionProps}>{description}</FormHint>}
+      {errorMessage && state.validationState === 'invalid' && (
+        <ErrorMessage {...errorMessageProps} message={errorMessage} />
+      )}
       <SelectorRadioGroupContext.Provider value={{ ...state, orientation }}>
         {children}
       </SelectorRadioGroupContext.Provider>
-      {errorMessage && state.validationState === 'invalid' && (
-        <div {...errorMessageProps} className="typography-body-10 text-danger">
-          {errorMessage}
-        </div>
-      )}
     </div>
   );
 }

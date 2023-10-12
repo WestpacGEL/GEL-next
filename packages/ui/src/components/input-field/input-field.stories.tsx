@@ -32,6 +32,20 @@ export const Default: Story = {
 };
 
 /**
+ * > Another usage example
+ */
+export const AnotherDefault: Story = {
+  args: {},
+  render: () => {
+    return (
+      <InputField label="Label" hint="I am a hint" supportingText="I am supporting text">
+        <Input />
+      </InputField>
+    );
+  },
+};
+
+/**
  * > SrOnlyLabel usage example
  */
 export const SrOnlyLabel: Story = {

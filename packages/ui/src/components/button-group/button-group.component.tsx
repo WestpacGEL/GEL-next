@@ -2,6 +2,8 @@ import React, { ReactElement, cloneElement, createContext } from 'react';
 import { useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
+import { ErrorMessage, FormHint, FormLabel } from '../index.js';
+
 import { styles as buttonGroupStyles } from './button-group.styles.js';
 import { ButtonGroupContextState, type ButtonGroupProps } from './button-group.types.js';
 import { Button } from './components/button/button.component.js';
@@ -29,10 +31,20 @@ export function ButtonGroup({
   look = 'hero',
   size = 'medium',
   block = false,
+  errorMessage,
+  hintMessage,
   ...props
 }: ButtonGroupProps) {
   const state = useRadioGroupState({ ...props, label, orientation: 'horizontal' });
-  const { radioGroupProps, labelProps } = useRadioGroup({ ...props, label, orientation: 'horizontal' }, state);
+  const { radioGroupProps, labelProps, errorMessageProps, descriptionProps } = useRadioGroup(
+    {
+      ...props,
+      'aria-errormessage': Array.isArray(errorMessage) ? errorMessage.join(', ') : errorMessage,
+      label,
+      orientation: 'horizontal',
+    },
+    state,
+  );
   const styles = buttonGroupStyles({});
   const childrenToRender = children.map((child, index) => {
     return cloneElement(child as ReactElement, {
@@ -43,7 +55,11 @@ export function ButtonGroup({
 
   return (
     <div className={styles.base({ className })} {...radioGroupProps}>
-      <span {...labelProps}>{label}</span>
+      <FormLabel {...labelProps}>{label}</FormLabel>
+      {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}
+      {errorMessage && state.validationState === 'invalid' && (
+        <ErrorMessage {...errorMessageProps} message={errorMessage} />
+      )}
       <div className={styles.buttonWrapper()}>
         <ButtonGroupContext.Provider value={{ ...state, size, look, block }}>
           {childrenToRender}

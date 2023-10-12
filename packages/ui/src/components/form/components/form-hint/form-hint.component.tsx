@@ -1,16 +1,10 @@
 import React from 'react';
 
+import { type FormHintProps, FormHint as GelFormHint } from '../../../index.js';
 import { useFormContext } from '../../form.component.js';
 
-import { styles } from './form-hint.styles.js';
-import { type FormHintProps } from './form-hint.types.js';
-
-export function FormHint({ className, tag: Tag = 'div', children, ...props }: FormHintProps) {
+export function FormHint({ ...props }: FormHintProps) {
   const { spacing } = useFormContext();
 
-  return (
-    <Tag className={styles({ className, spacing: spacing || 'medium' })} {...props}>
-      {children}
-    </Tag>
-  );
+  return <GelFormHint spacing={spacing} {...props} />;
 }

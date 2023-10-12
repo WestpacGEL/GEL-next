@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AlertIcon } from '../../../../components/icon/index.js';
+import { AlertIcon } from '../../components/icon/index.js';
 
 import { styles as errorMessageStyles } from './error-message.styles.js';
 import { type ErrorMessageProps } from './error-message.types.js';
