@@ -8,11 +8,23 @@ const meta: Meta<typeof Tabs> = {
   component: Tabs,
   tags: ['autodocs'],
   decorators: [
-    (Story: StoryFn) => (
-      <div className="p-3">
-        <Story />
-      </div>
-    ),
+    (Story: StoryFn) => {
+      /**
+       * NOTE:
+       * Needed to change displayName here so subcomponent shows correct name in code view
+       * Could not change it on the component as Item from react-stately is used in three components
+       * and one displayName would overwrite the others
+       */
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      Tabs.Panel.displayName = 'Tabs.Panel';
+
+      return (
+        <div className="p-3">
+          <Story />
+        </div>
+      );
+    },
   ],
   parameters: {
     layout: 'fullscreen',
