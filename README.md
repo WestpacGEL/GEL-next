@@ -127,7 +127,7 @@ Visit [https://gel.westpacgroup.com.au/design-system](https://gel.westpacgroup.c
 
 2. Clone the Next.js repository:
    ```
-   git clone git@github.com:WestpacGEL/GEL-next.git -- --branch develop --single-branch
+   git clone --single-branch --branch develop git@github.com:WestpacGEL/GEL-next.git
    ```
 3. Create a new branch:
    ```
