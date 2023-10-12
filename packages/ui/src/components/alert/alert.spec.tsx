@@ -58,7 +58,7 @@ describe('Alert', () => {
   it('calls the onClose callback when dismissed', async () => {
     const handleClose = vi.fn();
     render(<Alert dismissible onClose={handleClose} />);
-    user.click(screen.getByRole('button', { name: closeBtn }));
+    await act(() => user.click(screen.getByRole('button', { name: closeBtn })));
     await waitFor(() => expect(handleClose).toHaveBeenCalledTimes(1));
   });
 });

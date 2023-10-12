@@ -5,7 +5,7 @@ import { styles } from './field.styles.js';
 
 describe('Field', () => {
   it('renders the component', () => {
-    const { container } = render(<Field />);
+    const { container } = render(<Field aria-label="test" />);
     expect(container).toBeInTheDocument();
   });
 });
