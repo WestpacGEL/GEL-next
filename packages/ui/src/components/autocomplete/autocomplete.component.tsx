@@ -86,8 +86,8 @@ export function Autocomplete<T extends object>({
           placement="bottom start"
           portalContainer={portalContainer}
         >
-          <ListBox {...listBoxProps} listBoxRef={listBoxRef} state={state} />
-          {footer && <div className="border-t border-t-border px-3 py-2">{footer}</div>}
+          <ListBox {...listBoxProps} autoFocus={listBoxProps.autoFocus as any} listBoxRef={listBoxRef} state={state} />
+          {footer && <div className="border-t-border border-t px-3 py-2">{footer}</div>}
         </Popover>
       )}
     </div>
