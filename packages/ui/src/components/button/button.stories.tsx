@@ -23,9 +23,9 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const LOOKS = ['primary', 'hero', 'faint', 'link'];
-const SOFT_LOOKS = ['primary', 'hero', 'faint'];
-const SIZES = ['small', 'medium', 'large', 'xlarge'];
+const LOOKS = ['primary', 'hero', 'faint', 'link'] as const;
+const SOFT_LOOKS = ['primary', 'hero', 'faint'] as const;
+const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 
 /**
  * > Default usage example
@@ -43,13 +43,13 @@ export const Colors = () => (
   <div className="flex flex-col gap-2">
     <h3 className="font-bold">Default</h3>
     <div className="flex gap-2">
-      {LOOKS.map((look: any) => (
+      {LOOKS.map(look => (
         <Button look={look}>{look}</Button>
       ))}
     </div>
     <h3 className="font-bold">Soft</h3>
     <div className="flex gap-2">
-      {SOFT_LOOKS.map((look: any) => (
+      {SOFT_LOOKS.map(look => (
         <Button look={look} soft>
           {look}
         </Button>
@@ -63,18 +63,18 @@ export const Colors = () => (
  */
 export const Sizes = () => (
   <div className="flex flex-col gap-2">
-    {SIZES.map((size: any) => (
+    {SIZES.map(size => (
       <>
         <h3 className="font-bold">{size}</h3>
         <div className="flex gap-2">
-          {LOOKS.map((look: any) => (
+          {LOOKS.map(look => (
             <Button look={look} size={size}>
               {look}
             </Button>
           ))}
         </div>
         <div className="flex gap-2">
-          {SOFT_LOOKS.map((look: any) => (
+          {SOFT_LOOKS.map(look => (
             <Button look={look} size={size} soft>
               {look}
             </Button>
@@ -90,11 +90,11 @@ export const Sizes = () => (
  */
 export const Block = () => (
   <div className="flex flex-col gap-2">
-    {SIZES.map((size: any) => (
+    {SIZES.map(size => (
       <>
         <h3 className="font-bold">{size}</h3>
         <div className="flex flex-col gap-2">
-          {SOFT_LOOKS.map((look: any) => (
+          {SOFT_LOOKS.map(look => (
             <Button look={look} size={size} block>
               {look}
             </Button>
@@ -114,14 +114,14 @@ export const Icons = () => (
       <h2 className="typography-body-7 font-bold">Icon Before</h2>
       <h3 className="font-bold">Colors</h3>
       <div className="flex gap-2">
-        {LOOKS.map((look: any) => (
+        {LOOKS.map(look => (
           <Button look={look} iconBefore={BurgerIcon}>
             {look}
           </Button>
         ))}
       </div>
       <div className="flex gap-2">
-        {SOFT_LOOKS.map((look: any) => (
+        {SOFT_LOOKS.map(look => (
           <Button look={look} soft iconBefore={BurgerIcon}>
             {look}
           </Button>
@@ -129,14 +129,14 @@ export const Icons = () => (
       </div>
       <h3 className="font-bold">Sizes</h3>
       <div>
-        {SIZES.map((size: any) => (
+        {SIZES.map(size => (
           <Button size={size} iconBefore={BurgerIcon} className="mr-2">
             Button
           </Button>
         ))}
       </div>
       <div>
-        {SIZES.map((size: any) => (
+        {SIZES.map(size => (
           <Button size={size} iconBefore={BurgerIcon} soft className="mr-2">
             Button
           </Button>
@@ -157,14 +157,14 @@ export const Icons = () => (
       <h2 className="typography-body-7 font-bold">Icon After</h2>
       <h3 className="font-bold">Colors</h3>
       <div className="flex gap-2">
-        {LOOKS.map((look: any) => (
+        {LOOKS.map(look => (
           <Button look={look} iconAfter={BurgerIcon}>
             {look}
           </Button>
         ))}
       </div>
       <div className="flex gap-2">
-        {SOFT_LOOKS.map((look: any) => (
+        {SOFT_LOOKS.map(look => (
           <Button look={look} soft iconAfter={BurgerIcon}>
             {look}
           </Button>
@@ -172,14 +172,14 @@ export const Icons = () => (
       </div>
       <h3 className="font-bold">Sizes</h3>
       <div>
-        {SIZES.map((size: any) => (
+        {SIZES.map(size => (
           <Button size={size} iconAfter={BurgerIcon} className="mr-2">
             Button
           </Button>
         ))}
       </div>
       <div>
-        {SIZES.map((size: any) => (
+        {SIZES.map(size => (
           <Button size={size} iconAfter={BurgerIcon} soft className="mr-2">
             Button
           </Button>
@@ -199,23 +199,23 @@ export const Icons = () => (
       <h2 className="typography-body-7 font-bold">Icon Only</h2>
       <h3 className="font-bold">Colors</h3>
       <div className="flex gap-2">
-        {LOOKS.map((look: any) => (
+        {LOOKS.map(look => (
           <Button look={look} iconAfter={BurgerIcon} />
         ))}
       </div>
       <div className="flex gap-2">
-        {SOFT_LOOKS.map((look: any) => (
+        {SOFT_LOOKS.map(look => (
           <Button look={look} soft iconAfter={BurgerIcon} />
         ))}
       </div>
       <h3 className="font-bold">Sizes</h3>
       <div>
-        {SIZES.map((size: any) => (
+        {SIZES.map(size => (
           <Button size={size} iconAfter={BurgerIcon} className="mr-2" />
         ))}
       </div>
       <div>
-        {SIZES.map((size: any) => (
+        {SIZES.map(size => (
           <Button size={size} iconAfter={BurgerIcon} soft className="mr-2" />
         ))}
       </div>

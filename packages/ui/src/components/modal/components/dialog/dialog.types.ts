@@ -19,7 +19,7 @@ export type DialogProps = {
   /**
    * onClose callback
    */
-  onClose?: () => any;
+  onClose?: () => unknown;
   /**
    * Title for Modal
    */

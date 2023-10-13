@@ -23,9 +23,9 @@ const meta: Meta<typeof ButtonDropdown> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const LOOKS = ['primary', 'hero', 'faint'];
-const SIZES = ['small', 'medium', 'large', 'xlarge'];
-const DROPDOWNSIZE = ['small', 'medium', 'large'];
+const LOOKS = ['primary', 'hero', 'faint'] as const;
+const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
+const DROPDOWNSIZE = ['small', 'medium', 'large'] as const;
 
 /**
  * > Default usage example
@@ -50,7 +50,7 @@ export const Default: Story = {
  */
 export const StandardLooks = () => (
   <div className="flex gap-2">
-    {LOOKS.map((look: any) => (
+    {LOOKS.map(look => (
       <ButtonDropdown look={look} text={look}>
         <p>
           Example dropdown
@@ -69,7 +69,7 @@ export const StandardLooks = () => (
  */
 export const SoftLooks = () => (
   <div className="flex gap-2">
-    {LOOKS.map((look: any) => (
+    {LOOKS.map(look => (
       <ButtonDropdown look={look} soft text={look}>
         <p>
           Example dropdown
@@ -88,7 +88,7 @@ export const SoftLooks = () => (
  */
 export const ButtonSizes = () => (
   <div>
-    {SIZES.map((size: any) => (
+    {SIZES.map(size => (
       <>
         <h3 className="font-bold">{size}</h3>
         <ButtonDropdown size={size} text={size}>
@@ -127,7 +127,7 @@ export const ButtonSizes = () => (
  */
 export const DropdownSizes = () => (
   <div>
-    {DROPDOWNSIZE.map((size: any) => (
+    {DROPDOWNSIZE.map(size => (
       <>
         <h3 className="font-bold">{size}</h3>
         <ButtonDropdown dropdownSize={size} text={size}>

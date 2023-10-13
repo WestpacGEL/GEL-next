@@ -23,8 +23,8 @@ const meta: Meta<typeof List> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const LOOKS = ['primary', 'hero', 'neutral', 'success', 'danger', 'link'];
-const TYPES = ['bullet', 'link', 'tick', 'cross', 'unstyled', 'icon', 'ordered'];
+const LOOKS = ['primary', 'hero', 'neutral', 'success', 'danger', 'link'] as const;
+const TYPES = ['bullet', 'link', 'tick', 'cross', 'unstyled', 'icon', 'ordered'] as const;
 
 /**
  * > Default usage example
@@ -43,7 +43,7 @@ export const Default: Story = {
  * > Type of list
  */
 export const Types = () =>
-  TYPES.map((type: any) => (
+  TYPES.map(type => (
     <div className="mb-2" key={type}>
       <h1 className="typography-body-8">{type}</h1>
       <List type={type} icon={type === 'icon' ? AndroidIcon : undefined}>
@@ -64,7 +64,7 @@ export const Types = () =>
  * > Type of list
  */
 export const Looks = () =>
-  LOOKS.map((look: any) => (
+  LOOKS.map(look => (
     <div className="mb-2" key={look}>
       <h1 className="typography-body-8">{look}</h1>
       <List look={look} type="bullet">

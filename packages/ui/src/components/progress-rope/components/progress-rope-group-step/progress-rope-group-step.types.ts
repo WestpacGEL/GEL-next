@@ -25,7 +25,7 @@ export type ProgressRopeGroupStepProps = {
   /**
    * Trigger when the user try to open/close the group
    */
-  onToggle?: () => any;
+  onToggle?: () => unknown;
   /**
    * Boolean to tell if group is expanded
    */

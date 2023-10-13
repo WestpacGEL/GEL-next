@@ -24,7 +24,7 @@ export function Pagination({
         current: number,
         infinite: boolean,
         forwardOnly: boolean,
-        onChange: (page: number) => any,
+        onChange: (page: number) => unknown,
         pages: PaginationProps['pages'],
       ) =>
       () => {
@@ -67,7 +67,7 @@ export function Pagination({
   }, [current, onChange, linkComponent, pages, infinite]);
 
   const generateHandleOnClickForward = useCallback(
-    (current: number, infinite: boolean, backwardsOnly: boolean, onChange: (page: number) => any) => () => {
+    (current: number, infinite: boolean, backwardsOnly: boolean, onChange: (page: number) => unknown) => () => {
       if (infinite && backwardsOnly) {
         return onChange(1);
       }

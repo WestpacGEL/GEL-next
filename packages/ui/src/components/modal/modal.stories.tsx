@@ -34,7 +34,7 @@ export const Default: Story = {
     title: 'Title',
     isDismissable: true,
   },
-  render: ({ children, ...props }: any) => {
+  render: ({ children, ...props }) => {
     const state = useOverlayTriggerState({});
     return (
       <>
@@ -56,7 +56,7 @@ export const WithFooter: Story = {
     title: 'Title',
     isDismissable: true,
   },
-  render: ({ children, ...props }: any) => {
+  render: ({ children, ...props }) => {
     const state = useOverlayTriggerState({});
 
     return (
@@ -82,7 +82,7 @@ export const Sizes: Story = {
     title: 'Title',
     isDismissable: true,
   },
-  render: ({ children, ...props }: any) => {
+  render: ({ children, ...props }) => {
     const stateSM = useOverlayTriggerState({});
     const stateMD = useOverlayTriggerState({});
     const stateLG = useOverlayTriggerState({});
@@ -97,15 +97,15 @@ export const Sizes: Story = {
 
     return (
       <div className="flex gap-2">
-        {['sm', 'md', 'lg'].map((size: string) => (
+        {(['sm', 'md', 'lg'] as const).map(size => (
           <Fragment key={size}>
-            <Modal {...props} size={size} state={states[size as 'sm' | 'md' | 'lg']} title={`Modal ${size}`}>
+            <Modal {...props} size={size} state={states[size]} title={`Modal ${size}`}>
               <Modal.Body>{children}</Modal.Body>
               <Modal.Footer>
                 <p>Lorem, ipsum dolor</p>
               </Modal.Footer>
             </Modal>
-            <Button onClick={states[size as 'sm' | 'md' | 'lg'].open}>Open Modal {size}</Button>
+            <Button onClick={states[size].open}>Open Modal {size}</Button>
           </Fragment>
         ))}
       </div>
@@ -122,7 +122,7 @@ export const NotDismissible: Story = {
     title: 'Title',
     isDismissable: false,
   },
-  render: ({ children, ...props }: any) => {
+  render: ({ children, ...props }) => {
     const state = useOverlayTriggerState({});
 
     return (
