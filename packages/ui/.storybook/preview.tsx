@@ -5,7 +5,7 @@ import * as React from 'react';
 const withThemeProvider = (Story, context) => {
   const theme = context.globals?.theme || 'WBC';
   return (
-    <div data-theme={theme.toLowerCase()} className="p-4 typography-body-10">
+    <div data-theme={theme.toLowerCase()} className="p-4">
       <Story />
     </div>
   );
