@@ -39,8 +39,8 @@ const meta: Meta<typeof ButtonGroup> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const LOOKS = ['primary', 'hero'];
-const SIZES = ['small', 'medium', 'large', 'xlarge'];
+const LOOKS = ['primary', 'hero'] as const;
+const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 
 /**
  * > Default usage example
@@ -60,7 +60,7 @@ export const Default: Story = {
  */
 export const Colors = () => (
   <div className="flex flex-col gap-2">
-    {LOOKS.map((look: any) => (
+    {LOOKS.map(look => (
       <ButtonGroup label={<h3 className="font-bold">{look}</h3>} look={look}>
         <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
         <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
@@ -75,7 +75,7 @@ export const Colors = () => (
  */
 export const Sizes = () => (
   <div className="flex flex-col gap-2">
-    {SIZES.map((size: any) => (
+    {SIZES.map(size => (
       <ButtonGroup label={<h3 className="font-bold">{size}</h3>} size={size}>
         <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
         <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
@@ -108,7 +108,7 @@ export const ResponsiveSize: Story = {
  */
 export const Block = () => (
   <div className="flex flex-col gap-2">
-    {SIZES.map((size: any) => (
+    {SIZES.map(size => (
       <ButtonGroup block label={<h3 className="font-bold">{size}</h3>} size={size}>
         <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
         <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>

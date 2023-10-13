@@ -39,8 +39,8 @@ export function useListener(
   useEffect(() => {
     if (ref?.current && handler) {
       const element = ref.current;
-      element.addEventListener(eventName as any, handler);
-      return () => element.removeEventListener(eventName as any, handler);
+      element.addEventListener(eventName, handler);
+      return () => element.removeEventListener(eventName, handler);
     }
   }, [eventName, handler]);
 }

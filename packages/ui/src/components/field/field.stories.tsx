@@ -5,7 +5,7 @@ import { Input, Select } from '../index.js';
 import { Field } from './field.component.js';
 
 const meta: Meta<typeof Field> = {
-  title: 'Components/Field',
+  title: 'Foundation/Field',
   component: Field,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],

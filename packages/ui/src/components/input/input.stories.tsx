@@ -21,7 +21,7 @@ const meta: Meta<typeof Input> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const SIZES = ['small', 'medium', 'large', 'xlarge'];
+const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 const FIXED_WIDTHS = [2, 3, 4, 5, 10, 20, 30];
 
 /**
@@ -58,7 +58,7 @@ export const Disabled: Story = {
 export const Sizes = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
-      <Input size={size as any} placeholder={size} />
+      <Input size={size} placeholder={size} />
     ))}
   </div>
 );

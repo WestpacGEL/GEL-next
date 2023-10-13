@@ -42,23 +42,23 @@ export type DatePickerProps = {
   /*
    * onBlur
    */
-  onBlur?: (...args: any[]) => any;
+  onBlur?: (...args: any[]) => unknown;
   /*
    * onChange
    */
-  onChange?: (...args: any[]) => any;
+  onChange?: (...args: any[]) => unknown;
   /*
    * onClose
    */
-  onClose?: (...args: any[]) => any;
+  onClose?: (...args: any[]) => unknown;
   /*
    * onFocus
    */
-  onFocus?: (...args: any[]) => any;
+  onFocus?: (...args: any[]) => unknown;
   /*
    * onOpen
    */
-  onOpen?: (...args: any[]) => any;
+  onOpen?: (...args: any[]) => unknown;
   /*
    * Date picker input value. Must be in IS0-8601 format: YYYY-MM-DD
    */

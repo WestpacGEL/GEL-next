@@ -33,7 +33,7 @@ export const Default: Story = {
   },
 };
 
-const SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
+const SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'] as const;
 
 /**
  * > Standalone link with iconSizes, arrowRight is default but can be overridden.
@@ -102,7 +102,7 @@ export const Inline = () => (
  */
 export const IconSizes = () => (
   <div className="space-y-1 pl-1">
-    {SIZES.map((size: any) => (
+    {SIZES.map(size => (
       <div key={size}>
         <h1 className="font-bold">{size}</h1>
         <Link href="#" iconSize={size} iconBefore={PdfFileIcon} iconAfter={PdfFileIcon}>

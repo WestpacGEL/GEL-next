@@ -24,7 +24,7 @@ export type PaginationAsButtonProps = {
   /**
    * on page change
    */
-  onChange: (page: number) => any;
+  onChange: (page: number) => unknown;
   /**
    * Pages items
    */

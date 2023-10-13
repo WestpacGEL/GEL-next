@@ -39,7 +39,7 @@ export const Sizes: Story = {
   render: () => {
     return (
       <>
-        {(['sm', 'md', 'lg', 'xl'] as any[]).map(size => {
+        {(['sm', 'md', 'lg', 'xl'] as const).map(size => {
           return (
             <div className="py-2" key={size}>
               <DatePicker size={size} />

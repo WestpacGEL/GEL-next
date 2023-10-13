@@ -24,7 +24,7 @@ const meta: Meta<typeof Repeater> = {
         <Form.Group>
           <Form.Label htmlFor={`test`}>Primary</Form.Label>
           <Form.Hint>Primary title text</Form.Hint>
-          <Input name={`test`} onChange={(e: any) => console.log(e)} />
+          <Input name="test" onChange={e => console.log(e)} />
         </Form.Group>
       </Form>
     ),

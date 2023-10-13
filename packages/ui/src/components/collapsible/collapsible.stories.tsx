@@ -21,7 +21,7 @@ const meta: Meta<typeof Collapsible> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const SIZES = ['small', 'medium', 'large', 'xlarge'];
+const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 
 /**
  * > Default usage example
@@ -39,7 +39,7 @@ export const Default: Story = {
  */
 export const Sizes = () => (
   <div className="typography-body-10 p-3">
-    {SIZES.map((size: any) => (
+    {SIZES.map(size => (
       <div className="mb-2" key={size}>
         <h2 className="typography-body-8 mb-1 font-bold">{size}</h2>
         <p>
@@ -73,7 +73,7 @@ export const Sizes = () => (
  */
 export const Open = () => (
   <div className="typography-body-10 p-3">
-    {SIZES.map((size: any) => (
+    {SIZES.map(size => (
       <div className="mb-2" key={size}>
         <h2 className="typography-body-8 mb-1 font-bold">{size}</h2>
         <p>

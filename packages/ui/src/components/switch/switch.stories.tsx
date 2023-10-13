@@ -21,7 +21,7 @@ const meta: Meta<typeof Switch> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const SIZES = ['small', 'medium', 'large', 'xlarge'];
+const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 
 /**
  * > Default usage example
@@ -48,7 +48,7 @@ export const Selected: Story = {
  */
 export const Sizes = () => (
   <div>
-    {SIZES.map((size: any) => (
+    {SIZES.map(size => (
       <div key={size}>
         <h3 className="font-bold">{size}</h3>
         <div className="mb-2">

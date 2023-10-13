@@ -118,9 +118,9 @@ export const Sizes: Story = {
   render: () => {
     return (
       <>
-        {['small', 'medium', 'large', 'xlarge'].map(size => (
+        {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
           <div className="py-2" key={size}>
-            <Autocomplete label={size} size={size as any} aria-label={`size ${size}`}>
+            <Autocomplete label={size} size={size} aria-label={`size ${size}`}>
               <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
               <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
               <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
