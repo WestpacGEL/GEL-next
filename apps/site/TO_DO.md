@@ -4,23 +4,23 @@
 
 [x] 1. Create and add GEL Brand
 
-   - [x] Refactor to remove hardcoded colors
-   - [x] GEL brand is only used home page and article pages
+- [x] Refactor to remove hardcoded colors
+- [x] GEL brand is only used home page and article pages
 
-   ```
-   const GEL_COLORS = {
-       primary: '#C80038',
-       background: '#F3F5F6',
-       border: '#CFD8DC',
-       icon: '#1976D2',
-       text: '#122935',
-       link: '#1871C9',
-       muted: '#575F65',
-       hover: '#F9FAFB',
-   };
-   ```
+```
+const GEL_COLORS = {
+    primary: '#C80038',
+    background: '#F3F5F6',
+    border: '#CFD8DC',
+    icon: '#1976D2',
+    text: '#122935',
+    link: '#1871C9',
+    muted: '#575F65',
+    hover: '#F9FAFB',
+};
+```
 
-   - [ ] Update typography font family to use `graphik` + default font fallback stack
+- [ ] Update typography font family to use `graphik` + default font fallback stack
 
 ### /design-system
 
