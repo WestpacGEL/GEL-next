@@ -14,7 +14,7 @@ const meta: Meta<typeof Pagination> = {
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
   },
 };
 
