@@ -9,16 +9,7 @@ const meta: Meta<typeof DatePicker> = {
   title: 'Components/DatePicker',
   component: DatePicker,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="h-30 p-3">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;

@@ -9,9 +9,6 @@ const meta: Meta<typeof Symbol> = {
   component: WBCLogo,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;

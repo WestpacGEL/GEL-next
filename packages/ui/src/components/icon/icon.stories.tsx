@@ -59,16 +59,7 @@ const meta: Meta<typeof Icon> = {
   title: 'Foundation/Icons',
   component: AllIconsExample,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div style={{ padding: '3rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
   argTypes: {
     children: {
       description: 'Children',

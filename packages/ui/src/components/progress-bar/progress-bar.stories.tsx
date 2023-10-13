@@ -9,16 +9,7 @@ const meta: Meta<typeof ProgressBar> = {
   title: 'Components/ProgressBar',
   component: ProgressBar,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-3">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;

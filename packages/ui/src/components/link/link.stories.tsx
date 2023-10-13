@@ -8,16 +8,7 @@ const meta: Meta<typeof Link> = {
   title: 'Components/Link',
   component: Link,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-1">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;
@@ -40,7 +31,7 @@ const SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'] as const;
  * > If no icon is passed it defaults to ArrowRightIcon in the iconBefore position
  */
 export const Standalone = () => (
-  <div className="space-y-1 pl-1">
+  <div className="space-y-1">
     <h1 className="font-bold">Default</h1>
     <Link href="#">Look I'm a standalone link</Link>
     <h1 className="font-bold">Icon Before override</h1>
@@ -58,7 +49,7 @@ export const Standalone = () => (
  * > Inline link example
  */
 export const Inline = () => (
-  <div className="space-y-1 p-1">
+  <div className="space-y-1">
     <p className="typography-body-10">
       Lorem ipsum dolor{' '}
       <Link href="#" type="inline">
@@ -101,7 +92,7 @@ export const Inline = () => (
  * > example of icon sizes
  */
 export const IconSizes = () => (
-  <div className="space-y-1 pl-1">
+  <div className="space-y-1">
     {SIZES.map(size => (
       <div key={size}>
         <h1 className="font-bold">{size}</h1>

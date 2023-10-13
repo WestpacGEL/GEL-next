@@ -6,16 +6,7 @@ const meta: Meta<typeof BreadcrumbItem> = {
   title: 'Components/Breadcrumb/BreadCrumbItem',
   component: BreadcrumbItem,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-2">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;
@@ -27,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     isDisabled: false,
-    children: 'Default Crumb',
+    children: 'Strategic partnerships',
   },
 };
 
@@ -37,6 +28,6 @@ export const Default: Story = {
 export const IsDisabled: Story = {
   args: {
     isDisabled: true,
-    children: 'Disabled Crumb',
+    children: 'Open Banking',
   },
 };

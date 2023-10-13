@@ -4,9 +4,6 @@ const meta: Meta = {
   title: 'Foundation/Breakpoints',
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;
@@ -16,7 +13,7 @@ export default meta;
  */
 export const Breakpoints = () => (
   <ul>
-    <li>xsl: 575px</li>
+    <li>xsl: 576px</li>
     <li>sm: 768px</li>
     <li>md: 992px</li>
     <li>lg: 1200px</li>

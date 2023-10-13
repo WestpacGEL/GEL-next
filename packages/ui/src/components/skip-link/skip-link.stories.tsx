@@ -9,16 +9,7 @@ const meta: Meta<typeof SkipLink> = {
   title: 'Components/SkipLink',
   component: SkipLink,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-10">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;
@@ -40,7 +31,7 @@ export const Default = () => {
         it’s rather curious, you know, this sort of life! I do wonder what can have happened to me! When I used to read
         fairy-tales, I fancied that kind of thing never happened, and now here I am in the middle of one! There ought to
         be a book written about me, that there ought!’{' '}
-        <h3 id="skiptohere" className="typography-body-7 font-bold p-2">
+        <h3 id="skiptohere" className="typography-body-7 p-2 font-bold">
           Will skip to here
         </h3>{' '}
         ‘It was much pleasanter at home’, thought poor Alice, ‘when one wasn’t always growing larger and smaller, and

@@ -300,7 +300,7 @@ export const BrandColors: Story = {
           {brandColors.map(color => (
             <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
               <div className={`bg-${color}${tintString} h-[80px]`} />
-              <div className="border-border divide-border divide-y border p-2">
+              <div className="divide-y divide-border border border-border p-2">
                 <div className="pb-2 font-bold">{color}</div>
                 <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-${color}${tintString}`}</div>
                 {/* Below comments to get rid of type nightmare when trying to get hex value */}
@@ -342,7 +342,7 @@ export const ReservedColors = () => {
         {reservedColors.map(color => (
           <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
             <div className={`bg-${color}${tintString} h-[80px]`} />
-            <div className="border-border divide-border divide-y border p-2">
+            <div className="divide-y divide-border border border-border p-2">
               <div className="pb-2 font-bold">{color}</div>
               <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-${color}${tintString}`}</div>
               {/* Below comments to get rid of type nightmare when trying to get hex value */}
@@ -363,16 +363,16 @@ export const ReservedColors = () => {
 export const ReservedWithNoTints = () => (
   <div className="flex">
     <div className="w-[33%] min-w-[200px] max-w-[300px] p-2">
-      <div className={`bg-black h-[80px]`} />
-      <div className="border-border divide-border divide-y border p-2">
+      <div className={`h-[80px] bg-black`} />
+      <div className="divide-y divide-border border border-border p-2">
         <div className="pb-2 font-bold">black</div>
         <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-black`}</div>
         <div className="typography-body-10 pt-2 font-light">#000</div>
       </div>
     </div>
     <div className="w-[33%] min-w-[200px] max-w-[300px] p-2">
-      <div className={`bg-white h-[80px] border border-border`} />
-      <div className="border-border divide-border divide-y border p-2">
+      <div className={`h-[80px] border border-border bg-white`} />
+      <div className="divide-y divide-border border border-border p-2">
         <div className="pb-2 font-bold">white</div>
         <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-white`}</div>
         <div className="typography-body-10 pt-2 font-light">#FFF</div>

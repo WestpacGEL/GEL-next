@@ -7,9 +7,6 @@ const meta: Meta<typeof Circle> = {
   component: Circle,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;

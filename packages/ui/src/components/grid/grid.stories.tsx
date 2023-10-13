@@ -7,16 +7,7 @@ const meta: Meta<typeof Grid> = {
   title: 'Foundation/Grid',
   component: Grid,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="mt-10">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;
@@ -94,19 +85,19 @@ export const HolyGrailLayout = () => {
   return (
     <Container>
       <Grid>
-        <Item span={12} className="border border-border bg-light p-2 text-center h-12">
+        <Item span={12} className="h-12 border border-border bg-light p-2 text-center">
           Header
         </Item>
-        <Item span={3} className="border border-border bg-light p-2 text-center h-10">
+        <Item span={3} className="h-10 border border-border bg-light p-2 text-center">
           Menu
         </Item>
-        <Item span={6} className="border border-border bg-light p-2 text-center h-10">
+        <Item span={6} className="h-10 border border-border bg-light p-2 text-center">
           Content
         </Item>
-        <Item span={3} className="border border-border bg-light p-2 text-center h-10">
+        <Item span={3} className="h-10 border border-border bg-light p-2 text-center">
           Ads
         </Item>
-        <Item span={12} className="border border-border bg-light p-2 text-center h-12">
+        <Item span={12} className="h-12 border border-border bg-light p-2 text-center">
           Footer
         </Item>
       </Grid>

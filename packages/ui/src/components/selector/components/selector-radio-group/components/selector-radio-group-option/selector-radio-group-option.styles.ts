@@ -15,7 +15,7 @@ export const styles = tv(
       },
       isSelected: {
         true: {
-          base: 'border-hero shadow-hero shadow-[0_0_0_2px_inset]',
+          base: 'border-hero shadow-[0_0_0_2px_inset] shadow-hero',
         },
         false: {},
       },

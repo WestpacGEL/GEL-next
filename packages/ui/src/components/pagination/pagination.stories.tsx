@@ -13,18 +13,14 @@ const meta: Meta<typeof Pagination> = {
   component: Pagination,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'padded',
-  },
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 /**
  * > Button usage example
  */
-export const Default: any = {
+export const Default: unknown = {
   args: {
     current: 1,
     onChange: action('onChange'),
@@ -62,7 +58,7 @@ export const Default: any = {
 /**
  * > Link usage example
  */
-export const AsLink: any = {
+export const AsLink: unknown = {
   args: {
     current: 1,
     onChange: undefined,

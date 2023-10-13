@@ -20,15 +20,12 @@ const meta: Meta<typeof Autocomplete> = {
       Autocomplete.Item.displayName = 'Autocomplete.Item';
 
       return (
-        <div className="h-30 p-3">
+        <div className="h-30">
           <Story />
         </div>
       );
     },
   ],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;

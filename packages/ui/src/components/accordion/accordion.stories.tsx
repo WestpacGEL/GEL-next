@@ -21,16 +21,9 @@ const meta: Meta<typeof Accordion> = {
       // @ts-ignore
       Accordion.Item.displayName = 'Accordion.Item';
 
-      return (
-        <div className="p-3">
-          <Story />
-        </div>
-      );
+      return <Story />;
     },
   ],
-  parameters: {
-    layout: 'fullscreen',
-  },
 };
 
 export default meta;

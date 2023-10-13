@@ -10,13 +10,7 @@ const meta: Meta<typeof FlexiCell> = {
   title: 'Components/FlexiCell',
   component: FlexiCell,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-3">
-        <Story />
-      </div>
-    ),
-  ],
+  decorators: [(Story: StoryFn) => <Story />],
   argTypes: {
     after: {
       description: 'Renders an element on the right',
@@ -59,13 +53,10 @@ const meta: Meta<typeof FlexiCell> = {
       type: { name: 'boolean' },
     },
   },
-  parameters: {
-    layout: 'fullscreen',
-  },
 };
 
 export default meta;
-type Story = StoryObj<any>;
+type Story = StoryObj<unknown>;
 
 /**
  * > Default usage example
