@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply typography-body-10;
+  @apply typography-body-9;
 }
