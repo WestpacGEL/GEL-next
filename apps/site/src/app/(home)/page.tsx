@@ -6,7 +6,7 @@ import { Content } from './content';
 export default async function Homepage() {
   const urls = await reader.singletons.url.read();
   return (
-    <main className="pb-8">
+    <main className="pb-8 font-gel-sans">
       <Hero />
       <ActionBar />
       <Content />

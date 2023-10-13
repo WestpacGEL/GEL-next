@@ -19,10 +19,10 @@ const Tile = ({ className }: { className?: string }) => (
         className,
       )}
     />
-    <div className="flex grow flex-col border-[#CFD8DC] pl-1 pt-4 xsl:border-r xsl:pt-7">
+    <div className="flex grow flex-col border-gel-border pl-1 pt-4 xsl:border-r xsl:pt-7">
       <h4 className="typography-body-9 mb-2 uppercase leading-[1.12]">Test Article</h4>
       <p className="typography-body-9 mb-2 mr-4">I am an article description</p>
-      <ArrowRightIcon className="ml-auto mt-auto block text-[#1976D2] xsl:mr-1" />
+      <ArrowRightIcon className="ml-auto mt-auto block text-gel-icon xsl:mr-1" />
     </div>
   </Link>
 );

@@ -2,10 +2,10 @@
 
 ### /(home)
 
-1. Create and add GEL Brand
+[x] 1. Create and add GEL Brand
 
-   - Refactor to remove hardcoded colors
-   - GEL brand is only used home page and article pages
+   - [x] Refactor to remove hardcoded colors
+   - [x] GEL brand is only used home page and article pages
 
    ```
    const GEL_COLORS = {
@@ -20,7 +20,7 @@
    };
    ```
 
-   - Update typography font family to use `graphik` + default font fallback stack
+   - [ ] Update typography font family to use `graphik` + default font fallback stack
 
 ### /design-system
 

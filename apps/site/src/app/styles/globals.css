@@ -103,3 +103,25 @@
   font-weight: 700;
   font-style: normal;
 }
+
+/* GEL fonts */
+@font-face {
+  src: url('/fonts/Graphik-Regular-Web.woff') format('woff');
+  font-family: 'Graphik';
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  src: url('/fonts/Graphik-Bold-Web.woff') format('woff');
+  font-family: 'Graphik';
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  src: url('/fonts/GuardianEgyp-Light-Web.woff') format('woff');
+  font-family: 'Guardian';
+  font-weight: 300;
+  font-style: normal;
+}
