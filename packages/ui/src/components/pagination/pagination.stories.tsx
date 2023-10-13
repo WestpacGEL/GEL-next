@@ -1,9 +1,9 @@
 import { action } from '@storybook/addon-actions';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
-import { Button } from '../index.js';
+import { Button, PaginationProps } from '../index.js';
 
 import { Pagination } from './pagination.component.js';
 import { usePagination } from './pagination.hooks.js';
@@ -39,6 +39,23 @@ export const Default: any = {
         text: '3',
       },
     ],
+  },
+  render: (props: PaginationProps) => {
+    const [current, setCurrent] = useState(props.current);
+    useEffect(() => {
+      setCurrent(props.current);
+    }, [props.current]);
+
+    return (
+      <Pagination
+        {...props}
+        onChange={value => {
+          setCurrent(value);
+          props.onChange?.(value);
+        }}
+        current={current}
+      />
+    );
   },
 };
 
