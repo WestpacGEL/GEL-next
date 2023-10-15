@@ -8,14 +8,11 @@ const meta: Meta<typeof Checkbox> = {
   tags: ['autodocs'],
   decorators: [
     (Story: StoryFn) => (
-      <div className="flex justify-center p-3">
+      <div className="flex">
         <Story />{' '}
       </div>
     ),
   ],
-  parameters: {
-    layout: 'fullscreen',
-  },
   argTypes: {
     isDisabled: {
       description: 'Controls whether individual checkbox items are disabled or not',

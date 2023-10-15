@@ -10,9 +10,6 @@ const meta: Meta<typeof InputField> = {
   component: InputField,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'padded',
-  },
 };
 
 export default meta;

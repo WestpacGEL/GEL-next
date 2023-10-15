@@ -6,16 +6,7 @@ const meta: Meta<typeof Breadcrumb> = {
   title: 'Components/Breadcrumb',
   component: Breadcrumb,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-2">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;
@@ -28,20 +19,13 @@ export const Default: Story = {
   args: {
     children: [
       <Breadcrumb.Item tag="button" onClick={() => alert('Folder 1')}>
-        Button item
+        About us
       </Breadcrumb.Item>,
-      <Breadcrumb.Item tag="a" href="#test">
-        Anchor item
-      </Breadcrumb.Item>,
-      <Breadcrumb.Item tag="span">Span item</Breadcrumb.Item>,
-      <Breadcrumb.Item tag="span" isDisabled>
-        Span and disabled
-      </Breadcrumb.Item>,
-      <Breadcrumb.Item tag="a" isDisabled href="#lol">
-        anchor and disabled
+      <Breadcrumb.Item tag="a" href="#nogo">
+        Innovation
       </Breadcrumb.Item>,
       <Breadcrumb.Item tag="a" href="#loko">
-        Last item
+        Principal investments
       </Breadcrumb.Item>,
     ],
   },

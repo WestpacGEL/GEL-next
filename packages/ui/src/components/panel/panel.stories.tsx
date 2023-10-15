@@ -8,16 +8,7 @@ const meta: Meta<typeof Panel> = {
   title: 'Components/Panel',
   component: Panel,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-3">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
   args: {
     heading: 'Panel title',
   },

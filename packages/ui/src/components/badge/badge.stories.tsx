@@ -22,14 +22,11 @@ const meta: Meta<typeof Badge> = {
   tags: ['autodocs'],
   decorators: [
     (Story: StoryFn) => (
-      <div className="flex items-center justify-center p-2">
+      <div className="flex p-2">
         <Story />
       </div>
     ),
   ],
-  parameters: {
-    layout: 'fullscreen',
-  },
   argTypes: {
     children: {
       description: 'Children',

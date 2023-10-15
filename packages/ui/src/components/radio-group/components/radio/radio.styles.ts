@@ -21,7 +21,7 @@ export const styles = tv(
       },
       isSelected: {
         true: {
-          selector: 'before:bg-hero before:block before:h-2 before:w-2 before:rounded-full',
+          selector: 'before:block before:h-2 before:w-2 before:rounded-full before:bg-hero',
         },
       },
       isFocused: {

@@ -8,16 +8,7 @@ const meta: Meta<typeof Repeater> = {
   title: 'Components/Repeater',
   component: Repeater,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-5">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
   args: {
     children: (
       <Form>

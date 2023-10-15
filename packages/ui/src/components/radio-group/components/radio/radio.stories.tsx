@@ -6,16 +6,7 @@ const meta: Meta<typeof Radio> = {
   title: 'Components/RadioGroup/Radio',
   component: Radio,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="flex justify-center p-3">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
   argTypes: {
     isDisabled: {
       description: 'Controls whether individual radio options are disabled or not',
