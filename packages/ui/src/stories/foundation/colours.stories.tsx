@@ -1,8 +1,7 @@
 import { type Meta, StoryFn, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
-import { Field } from '../../components/field/index.js';
-import { Select } from '../../components/index.js';
+import { Field, Select } from '../../components/index.js';
 import { BASE_COLORS } from '../../tailwind/constants/colors.js';
 import { ALL_THEMES } from '../../tailwind/themes/index.js';
 import { generateColorTints } from '../../tailwind/utils/generate-color-tints.js';
