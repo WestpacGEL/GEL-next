@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'form-control w-full read-only:form-control-disabled disabled:form-control-disabled',
+    base: 'form-control read-only:form-control-disabled disabled:form-control-disabled w-full',
     variants: {
       size: {
         small: 'form-control-small min-h-[3.375rem]',
