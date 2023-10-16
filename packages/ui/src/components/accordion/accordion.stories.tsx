@@ -141,7 +141,6 @@ export const ControlledColor: Story = {
  */
 export const Responsive: Story = {
   render: ({ ...props }) => {
-    const [expandedKeys, setExpandedKeys] = useState<Set<Key>>();
     const data = [
       { key: 'files', title: 'First Item', content: 'First Accordion content...' },
       { key: 'shared', title: 'Second Item', content: 'Second Accordion content...' },
@@ -149,14 +148,7 @@ export const Responsive: Story = {
     ];
     return (
       <>
-        <Accordion
-          {...props}
-          expandedKeys={expandedKeys}
-          onExpandedChange={keys => {
-            setExpandedKeys(keys);
-          }}
-          className="sm:hidden"
-        >
+        <Accordion {...props} className="sm:hidden">
           {data.map(({ key, title, content }) => (
             <Accordion.Item key={key} title={title}>
               <p>{content}</p>
