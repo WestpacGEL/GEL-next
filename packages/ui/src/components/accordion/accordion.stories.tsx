@@ -137,7 +137,8 @@ export const ControlledColor: Story = {
 /**
  * > Example showing how you can use styling to change accordion to tabs responsively.
  * > Replicates GEL Tabcordion functionality.
- * NOTE: Due to how items work the Accordion.Item that are children of Tabs should be Tab.Panel but can't due to name sharing on this page
+ * NOTE: Due to how items work the Accordion.Item that are children of Tabs should be Tab.Panel but can't due to name sharing on this page.
+ * See the source of this example in, https://github.com/WestpacGEL/GEL-next/blob/main/packages/ui/src/components/accordion/accordion.stories.tsx#L142
  */
 export const Responsive: Story = {
   render: ({ ...props }) => {
