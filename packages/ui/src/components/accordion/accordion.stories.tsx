@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Key, useState } from 'react';
 
-import { Button } from '../index.js';
+import { Button, Tabs } from '../index.js';
 
 import { Accordion } from './accordion.component.js';
 
@@ -130,6 +130,47 @@ export const ControlledColor: Story = {
           </Accordion.Item>
         ))}
       </Accordion>
+    );
+  },
+};
+
+/**
+ * > Example showing how you can use styling to change accordion to tabs responsively.
+ * > Replicates GEL Tabcordion functionality.
+ * NOTE: Due to how items work the Accordion.Item that are children of Tabs should be Tab.Panel but can't due to name sharing on this page
+ */
+export const Responsive: Story = {
+  render: ({ ...props }) => {
+    const [expandedKeys, setExpandedKeys] = useState<Set<Key>>();
+    const data = [
+      { key: 'files', title: 'First Item', content: 'First Accordion content...' },
+      { key: 'shared', title: 'Second Item', content: 'Second Accordion content...' },
+      { key: 'last', title: 'Third Item', content: 'Third Accordion content...' },
+    ];
+    return (
+      <>
+        <Accordion
+          {...props}
+          expandedKeys={expandedKeys}
+          onExpandedChange={keys => {
+            setExpandedKeys(keys);
+          }}
+          className="sm:hidden"
+        >
+          {data.map(({ key, title, content }) => (
+            <Accordion.Item key={key} title={title}>
+              <p>{content}</p>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+        <Tabs className="max-sm:hidden">
+          {data.map(({ key, title, content }) => (
+            <Tabs.Panel key={key} title={title}>
+              <p>{content}</p>
+            </Tabs.Panel>
+          ))}
+        </Tabs>
+      </>
     );
   },
 };
