@@ -3,11 +3,13 @@ import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './switch.styles.js';
 
+type Variants = VariantProps<typeof styles>;
+
 export type SwitchProps = {
   /**
    * Whether to display switch as block
    */
-  block?: boolean;
+  block?: Variants['block'];
   /**
    * Default checked
    */
@@ -20,5 +22,8 @@ export type SwitchProps = {
    * Label for the switch
    */
   label: string;
-} & Omit<AriaCheckboxProps, 'children' | 'isSelected'> &
-  Pick<VariantProps<typeof styles>, 'size'>;
+  /**
+   * Size of switch
+   */
+  size?: Variants['size'];
+} & Omit<AriaCheckboxProps, 'children' | 'isSelected'>;

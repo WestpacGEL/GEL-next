@@ -3,10 +3,19 @@ import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './item.styles.js';
 
+type Variants = VariantProps<typeof styles>;
+
 export type ItemProps = {
+  /**
+   * Controls width of item based on amount of grid spaces to cover
+   */
+  span?: Variants['span'];
+  /**
+   * Position item should start in grid
+   */
+  start?: Variants['start'];
   /**
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & VariantProps<typeof styles> &
-  HTMLAttributes<Element>;
+} & HTMLAttributes<Element>;

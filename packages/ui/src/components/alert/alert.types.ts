@@ -1,7 +1,4 @@
 import { HTMLAttributes } from 'react';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './alert.styles.js';
 
 export type Look = 'info' | 'success' | 'warning' | 'danger' | 'system';
 
@@ -44,5 +41,4 @@ export type AlertProps = {
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & VariantProps<typeof styles> &
-  HTMLAttributes<Element>;
+} & HTMLAttributes<Element>;

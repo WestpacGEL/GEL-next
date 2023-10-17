@@ -5,7 +5,13 @@ import { ButtonProps } from '../button/index.js';
 
 import { styles } from './button-dropdown.styles.js';
 
+type Variants = VariantProps<typeof styles>;
+
 export type ButtonDropdownProps = {
+  /**
+   * Size of the the dropdown panel
+   */
+  dropdownSize?: Variants['dropdownSize'];
   /**
    * Look for button
    */
@@ -23,5 +29,4 @@ export type ButtonDropdownProps = {
    */
   text: string;
 } & ButtonHTMLAttributes<Element> &
-  Pick<ButtonProps, 'size' | 'iconBefore' | 'block'> &
-  VariantProps<typeof styles>;
+  Pick<ButtonProps, 'size' | 'iconBefore' | 'block'>;

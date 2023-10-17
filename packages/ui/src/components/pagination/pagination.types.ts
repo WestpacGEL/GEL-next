@@ -1,8 +1,6 @@
 import { HTMLAttributes, ReactNode } from 'react';
-import { type VariantProps } from 'tailwind-variants';
 
 import { type PaginationItemProps } from './components/index.js';
-import { styles } from './pagination.styles.js';
 
 export type PageProps = {
   href: string;
@@ -63,5 +61,4 @@ export type PaginationProps = {
    */
   tag?: keyof JSX.IntrinsicElements;
 } & (PaginationAsLinkProps | PaginationAsButtonProps) &
-  VariantProps<typeof styles> &
   Omit<HTMLAttributes<Element>, 'onChange'>;
