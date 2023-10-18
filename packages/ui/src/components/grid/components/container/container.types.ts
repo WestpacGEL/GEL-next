@@ -1,7 +1,4 @@
 import { HTMLAttributes } from 'react';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './container.styles.js';
 
 export type ContainerProps = {
   /**
@@ -12,5 +9,4 @@ export type ContainerProps = {
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & VariantProps<typeof styles> &
-  HTMLAttributes<Element>;
+} & HTMLAttributes<Element>;

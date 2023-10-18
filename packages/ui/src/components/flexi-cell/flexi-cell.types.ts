@@ -1,7 +1,4 @@
 import { CSSProperties, type HTMLAttributes, type ReactNode } from 'react';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './flexi-cell.styles.js';
 
 type BaseFlexiCellProps = {
   /**
@@ -68,7 +65,4 @@ type FlexiCellAsAllOtherTagsProps<Tag> = {
 
 export type FlexiCellProps<
   Tag extends keyof Omit<JSX.IntrinsicElements, 'a'> = keyof Omit<JSX.IntrinsicElements, 'a'>,
-> = (FlexiCellAsLinkProps | FlexiCellAsAllOtherTagsProps<Tag>) &
-  BaseFlexiCellProps &
-  VariantProps<typeof styles> &
-  HTMLAttributes<Element>;
+> = (FlexiCellAsLinkProps | FlexiCellAsAllOtherTagsProps<Tag>) & BaseFlexiCellProps & HTMLAttributes<Element>;

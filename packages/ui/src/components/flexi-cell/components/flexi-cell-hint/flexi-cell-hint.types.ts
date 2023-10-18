@@ -1,7 +1,4 @@
 import { type HTMLAttributes, type ReactNode } from 'react';
-import { VariantProps } from 'tailwind-variants';
-
-import { styles } from './flexi-cell-hint.styles.js';
 
 export type FlexiCellHintProps = {
   /**
@@ -16,5 +13,4 @@ export type FlexiCellHintProps = {
    * Define if it is going to truncate the text
    */
   truncateText?: boolean;
-} & HTMLAttributes<HTMLOrSVGElement> &
-  VariantProps<typeof styles>;
+} & HTMLAttributes<HTMLOrSVGElement>;

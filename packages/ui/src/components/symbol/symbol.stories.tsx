@@ -1,6 +1,8 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import React from 'react';
 
+import { Symbol } from './symbol.component.js';
+
 import { SymbolProps, WBCLogo, WBCMultibrandSmallLogo } from './index.js';
 import * as symbols from './index.js';
 

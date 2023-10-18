@@ -1,7 +1,4 @@
 import { AnchorHTMLAttributes } from 'react';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './breadcrumb-item.styles.js';
 
 export type BreadcrumbItemProps = {
   /**
@@ -16,5 +13,4 @@ export type BreadcrumbItemProps = {
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & VariantProps<typeof styles> &
-  AnchorHTMLAttributes<Element>;
+} & AnchorHTMLAttributes<Element>;
