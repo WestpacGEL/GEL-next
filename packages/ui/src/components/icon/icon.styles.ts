@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'inline-block rounded transition-colors disabled:pointer-events-none disabled:opacity-50',
+    base: 'inline-block transition-colors disabled:pointer-events-none disabled:opacity-50',
     variants: {
       size: {
         xsmall: 'h-2 w-2',
