@@ -1,7 +1,4 @@
 import { type SVGAttributes } from 'react';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './symbol.styles.js';
 
 export type Align = 'left' | 'center' | 'right';
 
@@ -30,4 +27,4 @@ export type SymbolProps = Omit<SVGAttributes<SVGElement>, 'offset'> & {
    * SVG viewBox width
    */
   viewBoxWidth?: number;
-} & VariantProps<typeof styles>;
+};

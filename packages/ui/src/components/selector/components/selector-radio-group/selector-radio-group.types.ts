@@ -5,13 +5,18 @@ import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './selector-radio-group.styles.js';
 
+type Variants = VariantProps<typeof styles>;
+
 export type SelectorRadioGroupProps = {
+  /**
+   * Orientation of radio
+   */
+  orientation?: Variants['orientation'];
   /**
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & VariantProps<typeof styles> &
-  AriaRadioGroupProps &
+} & AriaRadioGroupProps &
   Omit<HTMLAttributes<Element>, 'onChange'>;
 
 export type SelectorRadioGroupContextState = {

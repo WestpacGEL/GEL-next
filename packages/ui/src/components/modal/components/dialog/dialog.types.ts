@@ -3,6 +3,8 @@ import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './dialog.styles.js';
 
+type Variants = VariantProps<typeof styles>;
+
 export type DialogProps = {
   /**
    * Boolean to wrap all children into a Modal.Body
@@ -21,8 +23,11 @@ export type DialogProps = {
    */
   onClose?: () => unknown;
   /**
+   * Size of dialog
+   */
+  size?: Variants['size'];
+  /**
    * Title for Modal
    */
   title?: string;
-} & VariantProps<typeof styles> &
-  AriaDialogProps;
+} & AriaDialogProps;
