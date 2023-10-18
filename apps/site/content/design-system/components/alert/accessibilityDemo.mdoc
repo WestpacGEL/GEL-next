@@ -1,0 +1,35 @@
+```tsx
+<div>
+  <p className="typography-body-10 mb-[0.875rem] text-muted">Success</p>
+  <Alert look="success">
+    <strong>Thank you</strong> Your account has successfully been opened.
+  </Alert>
+  <p className="typography-body-10 mb-[0.875rem] text-muted">Information</p>
+  <Alert look="info" dismissible>
+    <strong>Changed Opening Hours</strong> The opening hours for this branch have changed.
+  </Alert>
+  <p className="typography-body-10 mb-[0.875rem] text-muted">Warning</p>
+  <Alert look="warning" dismissible>
+    <strong>Time out</strong> Please make sure you complete this process, this operation will time out in 5 min.
+  </Alert>
+  <p className="typography-body-10 mb-[0.875rem] text-muted">Danger</p>
+  <Alert look="danger" dismissible>
+    <strong>Please fix the 3 errors listed below</strong>
+    <ul className="[&_li]:m-1 [&_li]:underline">
+      <li>Select a title</li>
+      <li>Enter your given name</li>
+      <li>Enter your family name</li>
+    </ul>
+  </Alert>
+  <p className="typography-body-10 mb-[0.875rem] text-muted">System error</p>
+  <Alert look="system" dismissible>
+    <strong>System Error</strong> The server is not responding. Please try again later. We are sorry for any
+    inconvenience.
+  </Alert>
+  <p className="typography-body-10 mb-[0.875rem] text-muted">Flexible info style icon</p>
+  <Alert look="info" icon={PhoneIcon}>
+    Please make sure your mobile number is correct, we will use this to contact you if we have any questions about your
+    application.
+  </Alert>
+</div>
+```

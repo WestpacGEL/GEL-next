@@ -46,18 +46,69 @@ export default config({
             },
           },
         }),
-        design: fields.document({
+        description: fields.text({
+          label: 'Description',
+          multiline: true,
+        }),
+        pageOfContent: fields.array(
+          fields.object({
+            title: fields.text({ label: 'Name' }),
+          }),
+          {
+            label: 'Page of Content',
+            itemLabel: props => props.fields.title.value,
+            slugField: 'title',
+          },
+        ),
+        design: fields.array(
+          fields.object({
+            title: fields.text({ label: 'Name' }),
+            content: fields.document({
+              formatting: true,
+              dividers: true,
+              links: true,
+              label: 'Design',
+            }),
+          }),
+          {
+            label: 'Design sections',
+            itemLabel: props => props.fields.title.value,
+            slugField: 'title',
+          },
+        ),
+        accessibility: fields.array(
+          fields.object({
+            title: fields.text({ label: 'Name' }),
+            content: fields.document({
+              formatting: true,
+              dividers: true,
+              links: true,
+              label: 'Design',
+            }),
+          }),
+          {
+            label: 'Accessibility sections',
+            itemLabel: props => props.fields.title.value,
+            slugField: 'title',
+          },
+        ),
+        accessibilityDemo: fields.document({
           formatting: true,
           dividers: true,
           links: true,
-          label: 'Design',
+          label: 'Accessibility Demo',
         }),
-        accessibility: fields.document({
-          formatting: true,
-          dividers: true,
-          links: true,
-          label: 'Accessibility',
-        }),
+        relatedInformation: fields.array(
+          fields.relationship({
+            label: 'Related components',
+            description: 'A list of related components',
+            collection: 'designSystem',
+          }),
+          {
+            label: 'Related Components',
+            itemLabel: props => props.value || '',
+          },
+        ),
         code: fields.document({
           formatting: true,
           dividers: true,

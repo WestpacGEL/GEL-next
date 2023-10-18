@@ -1,23 +1,22 @@
 'use client';
 
-import { DocumentElement } from '@keystatic/core';
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Container } from '@westpac/ui';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Key, useCallback } from 'react';
 
-import { AccessibilityContent, DesignContent } from '@/components/content-blocks';
 import { DOCUMENT_RENDERERS } from '@/components/document-renderer';
 
-import { Tabs } from './components';
+import { AccessibilityContent, DesignContent, Tabs } from './components';
+import { type ContentTabsProps } from './content-tabs.types';
 
 const TABS = [
   { label: 'Design', key: 'design' },
   { label: 'Accessibility', key: 'accessibility' },
   { label: 'Code', key: 'code' },
-];
+] as const;
 
-export function ContentTabs({ content }: { content: Record<string, DocumentElement[]> }) {
+export function ContentTabs({ content }: { content: ContentTabsProps }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -26,7 +25,7 @@ export function ContentTabs({ content }: { content: Record<string, DocumentEleme
 
   const handleChange = useCallback(
     (key: Key) => {
-      router.push(`${pathname}?brand=${brand}&tab=${key}`);
+      return router.push(`${pathname}?brand=${brand}&tab=${key}`);
     },
     [brand, pathname, router],
   );
@@ -36,18 +35,23 @@ export function ContentTabs({ content }: { content: Record<string, DocumentEleme
       {TABS.map(tab => (
         <Tabs.Panel title={tab.label} key={tab.key}>
           <div className="bg-background">
-            {tab.key === 'design' && <DesignContent />}
-            {tab.key === 'accessibility' && <AccessibilityContent />}
+            {tab.key === 'design' && (
+              <DesignContent
+                description={content.description}
+                designSections={content.designSections}
+                relatedComponents={content.relatedComponents}
+              />
+            )}
+            {tab.key === 'accessibility' && (
+              <AccessibilityContent
+                accessibilitySections={content.accessibilitySections}
+                accessibilityDemo={content.accessibilityDemo}
+              />
+            )}
             {tab.key === 'code' && (
-              <div className="bg-light p-4">
-                <Container>
-                  <DocumentRenderer
-                    document={content[tab.key as 'design' | 'accessibility' | 'code']}
-                    renderers={DOCUMENT_RENDERERS}
-                    componentBlocks={{}}
-                  />
-                </Container>
-              </div>
+              <Container className="py-15">
+                <DocumentRenderer document={content[tab.key]} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
+              </Container>
             )}
           </div>
         </Tabs.Panel>

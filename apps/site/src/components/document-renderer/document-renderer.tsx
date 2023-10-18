@@ -1,12 +1,19 @@
 import { DocumentRendererProps } from '@keystatic/core/renderer';
 
-import { Code } from './components';
+import { Code as InlineCode, Link } from '../content-blocks/typography';
+
+import { Code, Divider, Heading, List, Paragraph } from './components';
 
 export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = {
   block: {
-    // paragraph: Paragraph,
+    divider: Divider,
+    paragraph: Paragraph,
     code: Code,
-    // divider: Divider,
-    // heading: Heading,
+    heading: Heading,
+    list: List,
+  },
+  inline: {
+    code: InlineCode,
+    link: Link,
   },
 };

@@ -1,12 +1,12 @@
 'use client';
 
 import { useRef } from 'react';
-import { AriaTabListProps, AriaTabProps, useTab, useTabList, useTabPanel } from 'react-aria';
-import { Item, Node, TabListState, useTabListState } from 'react-stately';
+import { AriaTabListProps, AriaTabProps, useTabList } from 'react-aria';
+import { Item, useTabListState } from 'react-stately';
 
 import { StickyHeader } from '@/components/sticky-header';
 
-import { styles } from './tabs.styles';
+import { Tab, TabPanel } from './components';
 
 const HEADER_OFFSET = 66;
 
@@ -29,25 +29,3 @@ export function Tabs(props: AriaTabListProps<AriaTabProps>) {
 }
 
 Tabs.Panel = Item;
-
-function Tab({ item, state }: { item: Node<AriaTabProps>; state: TabListState<AriaTabProps> }) {
-  const { key, rendered } = item;
-  const ref = useRef(null);
-  const { tabProps } = useTab({ key }, state, ref);
-  const selected = key === state.selectedKey;
-  return (
-    <div {...tabProps} ref={ref} className={styles({ selected })}>
-      {rendered}
-    </div>
-  );
-}
-
-function TabPanel({ state, ...props }: { state: TabListState<AriaTabProps> }) {
-  const ref = useRef(null);
-  const { tabPanelProps } = useTabPanel(props, state, ref);
-  return (
-    <div {...tabPanelProps} ref={ref}>
-      {state.selectedItem?.props.children}
-    </div>
-  );
-}
