@@ -11,7 +11,7 @@ import { Circle, Link, Text, Title } from './components/helpers.component';
 
 export function Footer({ gelEmail = '', guidelinesURL = '' }: { gelEmail?: string; guidelinesURL?: string }) {
   return (
-    <div className="bg-[#F3F5F6]">
+    <div className="bg-gel-background">
       <Container>
         <Grid className="gap-y-7 pb-10 pt-9 xsl:gap-y-9 xsl:pb-11 xsl:pt-10 sm:pb-14 sm:pt-13 lg:pb-16 lg:pt-15">
           <div className="col-span-12 sm:col-span-8 md:col-span-7">
@@ -45,7 +45,7 @@ export function Footer({ gelEmail = '', guidelinesURL = '' }: { gelEmail?: strin
               <li className="col-span-12 xsl:col-span-6 sm:col-span-12">
                 <Link href={guidelinesURL}>
                   <Circle>
-                    <PdfFileIcon className="text-[#1976D2]" size={{ initial: 'medium', lg: 'large' }} />
+                    <PdfFileIcon className="text-gel-icon" size={{ initial: 'medium', lg: 'large' }} />
                   </Circle>
                   <Text>Master Brand Guidelines</Text>
                 </Link>
@@ -53,7 +53,7 @@ export function Footer({ gelEmail = '', guidelinesURL = '' }: { gelEmail?: strin
               <li className="col-span-12 xsl:col-span-6 sm:col-span-12">
                 <Link href={`mailto:${gelEmail}`}>
                   <Circle>
-                    <EmailIcon className="text-[#1976D2]" size={{ initial: 'medium', lg: 'large' }} />
+                    <EmailIcon className="text-gel-icon" size={{ initial: 'medium', lg: 'large' }} />
                   </Circle>
                   <Text>Contact GEL</Text>
                 </Link>

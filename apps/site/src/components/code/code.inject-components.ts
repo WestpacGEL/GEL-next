@@ -54,6 +54,7 @@ export {
   CloseIcon,
   VisibilityOffIcon,
   RefreshIcon,
+  PhoneIcon,
 } from '@westpac/ui/icon';
 
 export { GiftPictogram } from '@westpac/ui/pictogram';

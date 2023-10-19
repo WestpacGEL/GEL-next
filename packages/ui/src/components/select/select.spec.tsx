@@ -12,7 +12,7 @@ describe('Select', () => {
     const style = styles({ size: 'medium' });
     // TODO: use some variants for test
     expect(style).toBe(
-      'form-control select-caret disabled:form-control-disabled bg-no-repeat group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none form-control-medium bg-[right_0.75rem_center] pr-[calc(0.5rem+14px+0.75rem)]',
+      'form-control bg-no-repeat select-caret disabled:form-control-disabled group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none form-control-medium bg-[right_0.75rem_center] pr-[calc(0.5rem+14px+0.75rem)]',
     );
   });
 });

@@ -7,11 +7,36 @@ const config: Config = withGEL({
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      fontFamily: {
+        'gel-sans': [
+          'Graphik',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Helvetica',
+          'Arial',
+          'sans-serif',
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol',
+        ],
+        'gel-serif': ['Guardian', 'Times New Roman', 'Times', 'serif'],
+      },
       gridTemplateColumns: {
         sidebar: '300px auto',
       },
       gridTemplateRows: {
         header: '64px auto',
+      },
+      colors: {
+        'gel-primary': '#C80038',
+        'gel-background': '#F3F5F6',
+        'gel-border': '#CFD8DC',
+        'gel-icon': '#1976D2',
+        'gel-text': '#122935',
+        'gel-link': '#1871C9',
+        'gel-muted': '#575F65',
+        'gel-hover': '#F9FAFB',
       },
     },
   },

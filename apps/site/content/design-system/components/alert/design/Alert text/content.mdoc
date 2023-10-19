@@ -1,0 +1,22 @@
+Alert text comes in four different styles and is configurable to allow for simple styling, eg links, bold and italics. It must be used with the defaulted icon to comply with accessibility guidelines, as per Alert boxes. Definitions and usage examples for each style are provided further down the page.
+
+```jsx
+<div>
+  <p className="typography-body-10 mb-[0.875rem] text-muted">Success</p>
+  <Alert look="success" mode="text">
+    Your account has successfully been opened.
+  </Alert>
+  <p className="typography-body-10 mb-[0.875rem] text-muted">Information</p>
+  <Alert look="info" mode="text">
+    The opening hours for this branch have changed.
+  </Alert>
+  <p className="typography-body-10 mb-[0.875rem] text-muted">Warning</p>
+  <Alert look="warning" mode="text">
+    Please make sure you complete this process, this operation will time out in 5 min.
+  </Alert>
+  <p className="typography-body-10 mb-[0.875rem] text-muted">Danger</p>
+  <Alert look="danger" mode="text">
+    Please enter a valid account number.
+  </Alert>
+</div>
+```

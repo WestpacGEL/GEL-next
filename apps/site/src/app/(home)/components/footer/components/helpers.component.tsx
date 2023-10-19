@@ -19,5 +19,5 @@ export function Circle({ children }: { children: React.ReactNode }) {
 }
 
 export function Text({ children }: { children: React.ReactNode }) {
-  return <div className="inline-flex grow items-center border-b border-[#CFD8DC]">{children}</div>;
+  return <div className="inline-flex grow items-center border-b border-gel-border">{children}</div>;
 }
