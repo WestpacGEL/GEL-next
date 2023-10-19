@@ -9,7 +9,7 @@ describe('Accordion', () => {
 
   it('renders the component', () => {
     const { container } = render(
-      <Accordion color="primary">
+      <Accordion look="soft">
         <Accordion.Item key="FoR" title="Founding of Rome">
           Arma virumque cano, Troiae qui primus ab oris.
         </Accordion.Item>
@@ -52,6 +52,6 @@ describe('Accordion', () => {
   });
   it('renders the style correctly', () => {
     const style = styles({ rounded: true });
-    expect(style).toBe('flex flex-col overflow-hidden rounded');
+    expect(style).toBe('text-text border-border flex flex-col border overflow-hidden rounded');
   });
 });
