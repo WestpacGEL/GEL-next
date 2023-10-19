@@ -3,7 +3,7 @@ import { ArrowRightIcon, CubeIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
 
 import { Section } from '../content-blocks/section';
-import { Heading } from '../document-renderer/components';
+import { Heading } from '../document-renderer';
 
 import { RelatedInfoProps } from './related-info.types';
 

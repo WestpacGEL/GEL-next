@@ -14,14 +14,14 @@ export const styles = tv(
     },
     variants: {
       size: {
-        small: { base: 'active-theme-rams:before:h-[0.0625rem] typography-body-10 px-2 pb-[0.25rem] pt-[0.1875rem]' },
-        medium: { base: 'active-theme-rams:before:h-[0.125rem] typography-body-9 px-2 py-[0.3125rem]' },
-        large: { base: 'active-theme-rams:before:h-[0.1875rem] typography-body-9 px-[0.9375rem] py-[0.5rem]' },
-        xlarge: { base: 'active-theme-rams:before:h-[0.25rem] typography-body-8 px-3 pb-[0.625rem] pt-[0.5625rem]' },
+        small: { base: 'typography-body-10 px-2 pb-[0.25rem] pt-[0.1875rem] active-theme-rams:before:h-[0.0625rem]' },
+        medium: { base: 'typography-body-9 px-2 py-[0.3125rem] active-theme-rams:before:h-[0.125rem]' },
+        large: { base: 'typography-body-9 px-[0.9375rem] py-[0.5rem] active-theme-rams:before:h-[0.1875rem]' },
+        xlarge: { base: 'typography-body-8 px-3 pb-[0.625rem] pt-[0.5625rem] active-theme-rams:before:h-[0.25rem]' },
       },
       look: {
         primary: {
-          base: 'active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-pop relative border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50',
+          base: 'relative border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50 active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-pop',
         },
         hero: { base: 'border border-hero bg-hero text-white hover:bg-hero-70 active:bg-hero-50' },
         faint: { base: 'border border-border bg-light text-muted hover:bg-white active:bg-white' },
@@ -49,7 +49,7 @@ export const styles = tv(
         slots: ['base'],
         look: 'primary',
         soft: true,
-        className: 'active-theme-rams:text-primary active-theme-rams:hover:text-white text-text hover:text-white',
+        className: 'text-text hover:text-white active-theme-rams:text-primary active-theme-rams:hover:text-white',
       },
       {
         slots: ['base'],

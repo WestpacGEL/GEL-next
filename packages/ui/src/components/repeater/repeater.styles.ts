@@ -15,10 +15,10 @@ export const styles = tv(
     variants: {
       separator: {
         true: {
-          item: 'border-neutral border-t-2 pt-[0.625rem]',
+          item: 'border-t-2 border-neutral pt-[0.625rem]',
           content: 'p-[0_1.125rem_2.625rem]',
           removeBtn: 'relative m-[0_0_1.875rem_1.125rem]',
-          footer: 'border-neutral border-t-2 pt-[0.875rem]',
+          footer: 'border-t-2 border-neutral pt-[0.875rem]',
         },
       },
       isFocused: {

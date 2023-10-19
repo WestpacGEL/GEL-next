@@ -1,4 +1,4 @@
-import { act, render, waitFor } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Accordion } from './accordion.component.js';

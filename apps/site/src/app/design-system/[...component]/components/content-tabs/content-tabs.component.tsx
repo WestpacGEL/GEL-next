@@ -5,9 +5,8 @@ import { Container } from '@westpac/ui';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Key, useCallback } from 'react';
 
-import { DOCUMENT_RENDERERS } from '@/components/document-renderer';
-
 import { AccessibilityContent, DesignContent, Tabs } from './components';
+import { DOCUMENT_RENDERERS } from './components/document-renderer';
 import { type ContentTabsProps } from './content-tabs.types';
 
 const TABS = [

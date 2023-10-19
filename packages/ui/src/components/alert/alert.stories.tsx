@@ -64,23 +64,23 @@ export const Looks: Story = {
 export const TextMode: Story = {
   render: () => (
     <>
-      <h3 className="typography-body-8 font-bold mb-2">Info</h3>
+      <h3 className="typography-body-8 mb-2 font-bold">Info</h3>
       <Alert look="info" mode="text">
         <strong>Heads up!</strong> This alert needs your attention, but it’s not super important. <a href="#">Link</a>
       </Alert>
-      <h3 className="typography-body-8 font-bold mb-2">Success</h3>
+      <h3 className="typography-body-8 mb-2 font-bold">Success</h3>
       <Alert look="success" mode="text">
         <strong>Well done!</strong> You successfully read this important alert message. <a href="#">Link</a>
       </Alert>
-      <h3 className="typography-body-8 font-bold mb-2">Warning</h3>
+      <h3 className="typography-body-8 mb-2 font-bold">Warning</h3>
       <Alert look="warning" mode="text">
         <strong>Warning!</strong> Better check yourself, you’re not looking too good. <a href="#">Link</a>
       </Alert>
-      <h3 className="typography-body-8 font-bold mb-2">Danger</h3>
+      <h3 className="typography-body-8 mb-2 font-bold">Danger</h3>
       <Alert look="danger" mode="text">
         <strong>Oh snap!</strong> Change a few things up and try submitting again. <a href="#">Link</a>
       </Alert>
-      <h3 className="typography-body-8 font-bold mb-2">System</h3>
+      <h3 className="typography-body-8 mb-2 font-bold">System</h3>
       <Alert look="system" mode="text">
         <strong>System Error 8942:</strong> The server is no responding. Please try again later. Sorry for the
         inconvenience. <a href="#">Link</a>
@@ -118,24 +118,24 @@ export const Dismissible: Story = {
 export const CustomIcon: Story = {
   render: () => (
     <>
-      <h3 className="typography-body-8 font-bold mb-2">Info</h3>
+      <h3 className="typography-body-8 mb-2 font-bold">Info</h3>
       <Alert look="info" icon={TelephoneIcon}>
         <strong>Heads up!</strong> This alert needs your attention, but it’s not super important. <a href="#">Link</a>
       </Alert>
-      <h3 className="typography-body-8 font-bold mb-2">Note: the following should not render a custom icon</h3>
-      <h3 className="typography-body-8 font-bold mb-2">Success</h3>
+      <h3 className="typography-body-8 mb-2 font-bold">Note: the following should not render a custom icon</h3>
+      <h3 className="typography-body-8 mb-2 font-bold">Success</h3>
       <Alert look="success" icon={TelephoneIcon}>
         <strong>Well done!</strong> You successfully read this important alert message. <a href="#">Link</a>
       </Alert>
-      <h3 className="typography-body-8 font-bold mb-2">Warning</h3>
+      <h3 className="typography-body-8 mb-2 font-bold">Warning</h3>
       <Alert look="warning" icon={TelephoneIcon}>
         <strong>Warning!</strong> Better check yourself, you’re not looking too good. <a href="#">Link</a>
       </Alert>
-      <h3 className="typography-body-8 font-bold mb-2">Danger</h3>
+      <h3 className="typography-body-8 mb-2 font-bold">Danger</h3>
       <Alert look="danger" icon={TelephoneIcon}>
         <strong>Oh snap!</strong> Change a few things up and try submitting again. <a href="#">Link</a>
       </Alert>
-      <h3 className="typography-body-8 font-bold mb-2">System</h3>
+      <h3 className="typography-body-8 mb-2 font-bold">System</h3>
       <Alert look="system" icon={TelephoneIcon}>
         <strong>System Error 8942:</strong> The server is no responding. Please try again later. Sorry for the
         inconvenience. <a href="#">Link</a>

@@ -5,11 +5,11 @@ import { Container } from '@westpac/ui';
 import { useMemo } from 'react';
 
 import { Section } from '@/components/content-blocks/section';
-import { DOCUMENT_RENDERERS } from '@/components/document-renderer';
-import { Heading } from '@/components/document-renderer/components';
+import { Heading } from '@/components/document-renderer';
 import { RelatedInfo } from '@/components/related-info';
 
 import { Intro } from '..';
+import { DOCUMENT_RENDERERS } from '../document-renderer';
 
 import { type DesignContentProps } from '.';
 
