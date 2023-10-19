@@ -14,11 +14,11 @@ export const styles = tv({
   variants: {
     isCodeVisible: {
       true: {
-        codeWrapper: 'hidden',
+        codeWrapper: 'block',
         arrowIcon: '-rotate-90',
       },
       false: {
-        codeWrapper: 'block',
+        codeWrapper: 'hidden',
         arrowIcon: 'rotate-90',
       },
     },
