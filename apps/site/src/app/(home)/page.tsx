@@ -4,7 +4,10 @@ import { ActionBar, Footer, Hero, HomePage as HomePageContent } from './componen
 
 export default async function Homepage() {
   const urls = await reader.singletons.url.read();
-  const articles = (await reader.collections.articles.all()).map(article => ({ ...article, entry: { ...article.entry, content: null } }));
+  const articles = (await reader.collections.articles.all()).map(article => ({
+    ...article,
+    entry: { ...article.entry, content: null },
+  }));
   console.log('articles', articles);
   return (
     <main className="pb-8 font-gel-sans">

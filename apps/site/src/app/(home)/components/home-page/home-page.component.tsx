@@ -28,4 +28,4 @@ export const HomePage = ({ articles }: HomePageProps) => {
       </Grid>
     </Container>
   );
-}
+};

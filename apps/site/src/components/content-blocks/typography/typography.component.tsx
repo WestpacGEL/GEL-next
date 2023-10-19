@@ -7,7 +7,10 @@ export function Text({ children }: { children?: React.ReactNode }) {
   return <p className="typography-body-9 mb-2 leading-[2]">{children}</p>;
 }
 
-export function Link({ color = 'default', ...props }: React.PropsWithChildren<LinkProps & VariantProps<typeof linkStyles>>) {
+export function Link({
+  color = 'default',
+  ...props
+}: React.PropsWithChildren<LinkProps & VariantProps<typeof linkStyles>>) {
   return <NextLink className={linkStyles({ color })} {...props} />;
 }
 
