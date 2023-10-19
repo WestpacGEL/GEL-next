@@ -9,7 +9,7 @@ import { type AccordionProps } from './accordion.types.js';
 import { AccordionItem } from './components/index.js';
 
 function Accordion<T extends object>(
-  { className, color, rounded = true, look = 'default', ...props }: AccordionProps<T>,
+  { className, rounded = true, look = 'soft', ...props }: AccordionProps<T>,
   ref: any,
 ) {
   // react-aria doesn't allow for now to use component children when there is multiple levels
@@ -33,15 +33,10 @@ function Accordion<T extends object>(
   const { accordionProps } = useAccordion(finalProps, state, domRef);
 
   return (
-    <div
-      {...filterDOMProps(finalProps)}
-      {...accordionProps}
-      ref={domRef}
-      className={styles({ className, rounded, look })}
-    >
+    <div {...filterDOMProps(finalProps)} {...accordionProps} ref={domRef} className={styles({ className, rounded })}>
       <div className="mt-[-1px]">
         {[...state.collection].map(item => (
-          <AccordionItem<T> key={item.key} item={item} state={state} color={color} look={look} />
+          <AccordionItem<T> key={item.key} item={item} state={state} look={look} />
         ))}
       </div>
     </div>
