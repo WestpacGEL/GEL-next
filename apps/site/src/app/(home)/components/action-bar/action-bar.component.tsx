@@ -14,9 +14,9 @@ export function ActionBar() {
   return (
     <StickyHeader>
       <Container className="flex h-[6.375rem] items-end bg-white pb-2 ">
-        <div className="mr-4 flex h-full flex-col justify-end border-r-[1px] border-[#CFD8DC]">
+        <div className="mr-4 flex h-full flex-col justify-end border-r-[1px] border-gel-border">
           <span className="mb-2 inline-block">
-            <GELLogo className="text-[#122935]" />
+            <GELLogo className="text-gel-text" />
           </span>
           <p className="mb-1 flex items-end">
             Design System

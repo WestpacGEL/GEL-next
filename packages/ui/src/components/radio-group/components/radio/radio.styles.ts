@@ -6,8 +6,8 @@ export const styles = tv(
       base: 'flex',
       textWrapper: 'flex flex-col justify-center',
       labelText: 'typography-body-10 py-[2px] pl-1',
-      hintText: 'typography-body-10 text-muted pl-1',
-      selector: 'border-hero flex shrink-0 h-4 w-4 items-center justify-center rounded-full border',
+      hintText: 'typography-body-10 pl-1 text-muted',
+      selector: 'flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-hero',
     },
     variants: {
       isDisabled: {

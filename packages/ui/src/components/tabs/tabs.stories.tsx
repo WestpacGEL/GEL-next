@@ -1,5 +1,4 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
-import { Key, useState } from 'react';
 
 import { Tabs } from './tabs.component.js';
 

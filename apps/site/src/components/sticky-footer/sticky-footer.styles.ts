@@ -14,8 +14,8 @@ export const styles = tv({
         icons: 'text-muted',
       },
       false: {
-        icons: 'text-[#1976D2]',
-        button: 'text-[#1976D2]',
+        icons: 'text-gel-icon',
+        button: 'text-gel-icon',
       },
     },
     visible: {

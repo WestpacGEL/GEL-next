@@ -79,7 +79,7 @@ export const LegoLook: Story = {
 /**
  * > Controlled example
  */
-export const ControlledLook: Story = {
+export const Controlled: Story = {
   args: {
     look: 'lego',
     rounded: false,

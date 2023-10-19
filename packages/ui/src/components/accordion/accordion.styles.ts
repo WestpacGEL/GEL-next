@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'text-text border-border flex flex-col border',
+    base: 'flex flex-col border border-border text-text',
     variants: {
       rounded: {
         true: 'overflow-hidden rounded',

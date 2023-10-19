@@ -1,12 +1,12 @@
-import { AlertIcon } from '@westpac/ui/icon';
+import { AlertIcon, ArrowRightIcon } from '@westpac/ui/icon';
 import copy from 'clipboard-copy';
-import { clsx } from 'clsx';
 import { themes } from 'prism-react-renderer';
-import { ComponentType, Context, KeyboardEvent, useCallback, useContext, useId, useRef, useState } from 'react';
+import { KeyboardEvent, useCallback, useContext, useId, useRef, useState } from 'react';
 import { LiveContext, LiveEditor, LivePreview } from 'react-live';
 
 import { BracketIcon } from '../../../icons/bracket-icon';
 
+import { styles as liveCodeStyles } from './live-code.styles';
 import { LiveCodeProps } from './live-code.types';
 
 export function LiveCode({ showCode = false, className }: LiveCodeProps) {
@@ -16,6 +16,8 @@ export function LiveCode({ showCode = false, className }: LiveCodeProps) {
   const liveOnChange = live.onChange;
   const [localCopy, setLocalCopy] = useState<string>(live.code);
   const [isCodeVisible, toggleIsCodeVisible] = useState(showCode);
+
+  const styles = liveCodeStyles({ isCodeVisible, className });
 
   const copyLiveCode = useCallback(() => {
     copy(localCopy);
@@ -43,39 +45,32 @@ export function LiveCode({ showCode = false, className }: LiveCodeProps) {
   );
 
   return (
-    <div className={clsx('max-w-5xl overflow-hidden rounded-md border border-muted-50 bg-white p-4 pb-0', className)}>
-      <div className="relative -mx-4 -mt-4 border-muted-50 p-4">
+    <div className={styles.base({})}>
+      <div className={styles.displayWrapper({})}>
         {live.error ? (
-          <div className="flex gap-2 rounded-md bg-danger-10 p-2 text-danger-90">
+          <div className={styles.error({})}>
             <AlertIcon />
             {live.error}
           </div>
         ) : (
           <LivePreview aria-label="Rendered code snippet example" />
         )}
-        <div className="absolute right-0 top-0 flex items-center justify-center rounded bg-white/50">
+        <div className={styles.buttonWrapper({})}>
           <button
-            className="typography-body-10 flex items-center gap-1 p-1 pr-2 opacity-50 transition-opacity hover:opacity-100"
+            className="typography-body-10 flex items-center gap-1 border-l border-l-border p-3 transition-opacity hover:opacity-100"
             ref={liveCodeToggleButton}
             onClick={() => toggleIsCodeVisible(state => !state)}
             aria-controls={codeId}
           >
             <>
-              <BracketIcon />
-              {isCodeVisible ? 'Hide code' : 'Show code'}
+              {isCodeVisible ? 'Hide live code' : 'Show live code'}
+              <ArrowRightIcon color="primary" className={styles.arrowIcon({})} />
             </>
           </button>
         </div>
       </div>
-      <div
-        id={codeId}
-        className={clsx({ hidden: !isCodeVisible, block: isCodeVisible }, 'relative -mx-4 border-t border-muted-50')}
-        onKeyDown={onLiveEditorContainerKeyDown}
-      >
-        <button
-          onClick={copyLiveCode}
-          className="typography-body-10 absolute right-0 top-0 p-1 pr-2 text-white opacity-50 transition-opacity hover:opacity-100"
-        >
+      <div id={codeId} className={styles.codeWrapper({})} onKeyDown={onLiveEditorContainerKeyDown}>
+        <button onClick={copyLiveCode} className={styles.copyCodeButton({})}>
           Copy code
         </button>
         <LiveEditor

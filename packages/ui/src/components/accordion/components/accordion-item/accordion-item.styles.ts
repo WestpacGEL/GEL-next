@@ -11,15 +11,15 @@ export const styles = tv(
     variants: {
       look: {
         soft: {
-          itemHeader: 'border-border bg-light border-t',
+          itemHeader: 'border-t border-border bg-light',
         },
         lego: {
-          itemHeader: 'border-border bg-light border-l-border border-l-[0.375rem] border-t transition-colors',
+          itemHeader: 'border-l-[0.375rem] border-t border-border bg-light transition-colors',
         },
       },
       isOpen: {
         true: {
-          content: 'border-border block border-t p-3',
+          content: 'block border-t border-border p-3',
         },
         false: {
           base: '',
@@ -53,7 +53,7 @@ export const styles = tv(
       {
         slots: ['content'],
         look: 'lego',
-        className: 'border-l-border border-l-[0.375rem]',
+        className: 'border-l-[0.375rem] border-l-border',
       },
     ],
   },

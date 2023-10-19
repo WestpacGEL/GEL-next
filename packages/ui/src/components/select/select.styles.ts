@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'form-control select-caret disabled:form-control-disabled bg-no-repeat group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none',
+    base: 'form-control bg-no-repeat select-caret disabled:form-control-disabled group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none',
     variants: {
       size: {
         small: 'form-control-small bg-[right_0.5625rem_center] pr-[calc(0.5rem+14px+0.5625rem)]',
