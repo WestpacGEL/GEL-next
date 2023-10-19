@@ -1,4 +1,4 @@
-import { act, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
@@ -18,7 +18,7 @@ describe('Alert', () => {
   it('generates the base style correctly', () => {
     const style = styles({ look: 'info', mode: 'box' });
     expect(style.base()).toBe(
-      'typography-body-10 relative mb-4 xsl:flex text-info border-y p-3 border-info-50 bg-info-5',
+      'typography-body-10 xsl:flex relative mb-4 text-info border-y p-3 border-info-50 bg-info-5',
     );
   });
 
