@@ -1,4 +1,4 @@
-import { AlertIcon } from '@westpac/ui/icon';
+import { AlertIcon, ArrowRightIcon } from '@westpac/ui/icon';
 import copy from 'clipboard-copy';
 import { themes } from 'prism-react-renderer';
 import { KeyboardEvent, useCallback, useContext, useId, useRef, useState } from 'react';
@@ -57,14 +57,14 @@ export function LiveCode({ showCode = false, className }: LiveCodeProps) {
         )}
         <div className={styles.buttonWrapper({})}>
           <button
-            className="typography-body-10 flex items-center gap-1 p-1 pr-2 opacity-50 transition-opacity hover:opacity-100"
+            className="typography-body-10 flex items-center gap-1 border-l border-l-border p-3 transition-opacity hover:opacity-100"
             ref={liveCodeToggleButton}
             onClick={() => toggleIsCodeVisible(state => !state)}
             aria-controls={codeId}
           >
             <>
-              <BracketIcon width="14px" />
-              {isCodeVisible ? 'Hide code' : 'Show code'}
+              {isCodeVisible ? 'Hide live code' : 'Show live code'}
+              <ArrowRightIcon color="primary" className={styles.arrowIcon({})} />
             </>
           </button>
         </div>

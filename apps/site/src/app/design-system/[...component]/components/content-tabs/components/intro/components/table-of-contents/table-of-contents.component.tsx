@@ -1,7 +1,6 @@
 'use client';
 
 import { List } from '@westpac/ui';
-import { BREAKPOINTS } from '@westpac/ui/tailwind';
 import { MouseEventHandler, useCallback } from 'react';
 
 import { ArrowDownRightIcon } from '@/components/icons';

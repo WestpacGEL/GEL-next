@@ -29,10 +29,10 @@ const GEL_COLORS = {
 
 #### code tab
 
-1. [] Package info table used in intro section
-2. [] Update Live code block to look like current gel site
-   - [] Update Show code text to Show live code
-3. [] Props table
+1. [ ] Package info table used in intro section
+2. [x] Update Live code block to look like current gel site
+   - [x] Update Show code text to Show live code
+3. [ ] Props table
 
 ### /articles
 
@@ -40,5 +40,5 @@ const GEL_COLORS = {
 
 ### General
 
-1. [] Fix list component styling, changing line height breaks current list component
-2. [] Update component slugs to match current GEL navigation grouping
+1. [ ] Fix list component styling, changing line height breaks current list component
+2. [ ] Update component slugs to match current GEL navigation grouping
