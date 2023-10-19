@@ -35,7 +35,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     rounded: true,
-    color: undefined,
     children: [
       { key: 'files', title: 'My files' },
       { key: 'shared', title: 'Shared with us' },
@@ -53,36 +52,36 @@ export const Default: Story = {
   },
 };
 
-/**
- * > Primary color usage example
- */
-export const PrimaryColor: Story = {
-  args: {
-    color: 'primary',
-    rounded: false,
-  },
-  render: ({ ...props }) => (
-    <Accordion {...props}>
-      {[
-        { key: 'colors', title: 'Your colors' },
-        { key: 'shared', title: 'Shared color' },
-        { key: 'last', title: 'Last item' },
-      ].map(({ key, title }) => (
-        <Accordion.Item key={key} title={title}>
-          <p>{title}</p>
-          <Button>Test</Button>
-        </Accordion.Item>
-      ))}
-    </Accordion>
-  ),
-};
+// /**
+//  * > Primary color usage example
+//  */
+// export const PrimaryColor: Story = {
+//   args: {
+//     color: 'primary',
+//     rounded: false,
+//   },
+//   render: ({ ...props }) => (
+//     <Accordion {...props}>
+//       {[
+//         { key: 'colors', title: 'Your colors' },
+//         { key: 'shared', title: 'Shared color' },
+//         { key: 'last', title: 'Last item' },
+//       ].map(({ key, title }) => (
+//         <Accordion.Item key={key} title={title}>
+//           <p>{title}</p>
+//           <Button>Test</Button>
+//         </Accordion.Item>
+//       ))}
+//     </Accordion>
+//   ),
+// };
 
 /**
- * > Hero color usage example
+ * > Lego look using Hero color
  */
-export const HeroColor: Story = {
+export const LegoLook: Story = {
   args: {
-    color: 'hero',
+    look: 'lego',
     rounded: false,
   },
   render: ({ ...props }) => (
@@ -104,9 +103,9 @@ export const HeroColor: Story = {
 /**
  * > Controlled example
  */
-export const ControlledColor: Story = {
+export const ControlledLook: Story = {
   args: {
-    color: 'hero',
+    look: 'lego',
     rounded: false,
   },
   render: ({ ...props }) => {

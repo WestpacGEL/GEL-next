@@ -8,10 +8,6 @@ type Variants = VariantProps<typeof styles>;
 
 export type AccordionItemProps<T = any> = {
   /**
-   * Color of the item
-   */
-  color?: Variants['color'];
-  /**
    * Node from react-stately
    */
   item: Node<T>;

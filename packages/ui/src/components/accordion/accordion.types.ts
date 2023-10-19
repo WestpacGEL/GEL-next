@@ -8,17 +8,13 @@ import { AccordionItemProps } from './components/index.js';
 type Variants = VariantProps<typeof styles>;
 export type AccordionProps<T = any> = SpectrumAccordionProps<T> & {
   /**
-   * Accordion colors
-   */
-  color?: AccordionItemProps['color'];
-  /**
    * Stretch the tab to fill the whole content
    */
   justify?: boolean;
   /**
    * The look of the accordion
    */
-  look?: Variants['look'];
+  look?: AccordionItemProps['look'];
   /**
    * Whether the accordion is rounded
    */
