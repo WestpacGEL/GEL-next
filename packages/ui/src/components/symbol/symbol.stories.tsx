@@ -1,6 +1,8 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import React from 'react';
 
+import { Symbol } from './symbol.component.js';
+
 import { SymbolProps, WBCLogo, WBCMultibrandSmallLogo } from './index.js';
 import * as symbols from './index.js';
 
@@ -9,9 +11,6 @@ const meta: Meta<typeof Symbol> = {
   component: WBCLogo,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;

@@ -1,9 +1,9 @@
 import { action } from '@storybook/addon-actions';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
-import { Button } from '../index.js';
+import { Button, PaginationProps } from '../index.js';
 
 import { Pagination } from './pagination.component.js';
 import { usePagination } from './pagination.hooks.js';
@@ -13,18 +13,14 @@ const meta: Meta<typeof Pagination> = {
   component: Pagination,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 /**
  * > Button usage example
  */
-export const Default: any = {
+export const Default: unknown = {
   args: {
     current: 1,
     onChange: action('onChange'),
@@ -40,12 +36,29 @@ export const Default: any = {
       },
     ],
   },
+  render: (props: PaginationProps) => {
+    const [current, setCurrent] = useState(props.current);
+    useEffect(() => {
+      setCurrent(props.current);
+    }, [props.current]);
+
+    return (
+      <Pagination
+        {...props}
+        onChange={value => {
+          setCurrent(value);
+          props.onChange?.(value);
+        }}
+        current={current}
+      />
+    );
+  },
 };
 
 /**
  * > Link usage example
  */
-export const AsLink: any = {
+export const AsLink: unknown = {
   args: {
     current: 1,
     onChange: undefined,

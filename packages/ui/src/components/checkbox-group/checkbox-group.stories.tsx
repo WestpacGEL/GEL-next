@@ -8,14 +8,11 @@ const meta: Meta<typeof CheckboxGroup> = {
   tags: ['autodocs'],
   decorators: [
     (Story: StoryFn) => (
-      <div className="flex p-3">
+      <div className="flex">
         <Story />
       </div>
     ),
   ],
-  parameters: {
-    layout: 'fullscreen',
-  },
   args: {
     label: <h2>Test</h2>,
   },

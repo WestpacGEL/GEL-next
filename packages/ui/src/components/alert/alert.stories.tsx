@@ -9,9 +9,6 @@ const meta: Meta<typeof Alert> = {
   component: Alert,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;

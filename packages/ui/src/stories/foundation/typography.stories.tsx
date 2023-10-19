@@ -1,12 +1,11 @@
 import { type Meta, StoryFn } from '@storybook/react';
 
+import { Table } from '../../components/index.js';
+
 const meta: Meta = {
   title: 'Foundation/Typography',
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;
@@ -16,43 +15,79 @@ export default meta;
  */
 export const BrandFont = () => {
   const typographyBrandScale = [
-    { className: 'typography-brand-1', size: '60' },
-    { className: 'typography-brand-2', size: '54' },
-    { className: 'typography-brand-3', size: '48' },
-    { className: 'typography-brand-4', size: '42' },
-    { className: 'typography-brand-5', size: '36' },
-    { className: 'typography-brand-6', size: '30' },
-    { className: 'typography-brand-7', size: '24' },
-    { className: 'typography-brand-8', size: '18' },
-    { className: 'typography-brand-9', size: '16' },
-    { className: 'typography-brand-10', size: '14' },
+    { className: 'typography-brand-1', size: '3.75rem (60px)' },
+    { className: 'typography-brand-2', size: '3.375rem (54px)' },
+    { className: 'typography-brand-3', size: '3rem (48px)' },
+    { className: 'typography-brand-4', size: '2.625rem (42px)' },
+    { className: 'typography-brand-5', size: '2.25rem (36px)' },
+    { className: 'typography-brand-6', size: '1.875rem (30px)' },
+    { className: 'typography-brand-7', size: '1.5rem (24px)' },
+    { className: 'typography-brand-8', size: '1.125rem (18px)' },
+    { className: 'typography-brand-9', size: '1rem (16px)' },
+    { className: 'typography-brand-10', size: '0.875rem (14px)' },
   ];
-  return typographyBrandScale.map(i => (
-    <div key={i.size} className="pb-1">
-      <p className={i.className}>Type size: {i.size}</p>
-    </div>
-  ));
+  return (
+    <Table>
+      <Table.Caption>GEL brand typography tokens</Table.Caption>
+      <Table.Header>
+        <Table.HeaderRow>
+          <Table.HeaderCell>Token</Table.HeaderCell>
+          <Table.HeaderCell>Value</Table.HeaderCell>
+          <Table.HeaderCell>Tailwind class</Table.HeaderCell>
+        </Table.HeaderRow>
+      </Table.Header>
+      <Table.Body>
+        {typographyBrandScale.map(i => (
+          <Table.Row key={i.className}>
+            <Table.Cell>
+              <span className={i.className}>{i.className.replace('typography-', '')}</span>
+            </Table.Cell>
+            <Table.Cell>{i.size}</Table.Cell>
+            <Table.Cell>{i.className}</Table.Cell>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+  );
 };
 
 /**
  * Body fonts
  */
 export const BodyFont = () => {
-  const typographyBodyScale = [
-    { className: 'typography-body-1', size: '60' },
-    { className: 'typography-body-2', size: '54' },
-    { className: 'typography-body-3', size: '48' },
-    { className: 'typography-body-4', size: '42' },
-    { className: 'typography-body-5', size: '36' },
-    { className: 'typography-body-6', size: '30' },
-    { className: 'typography-body-7', size: '24' },
-    { className: 'typography-body-8', size: '18' },
-    { className: 'typography-body-9', size: '16' },
-    { className: 'typography-body-10', size: '14' },
+  const typographyBrandScale = [
+    { className: 'typography-body-1', size: '3.75rem (60px)' },
+    { className: 'typography-body-2', size: '3.375rem (54px)' },
+    { className: 'typography-body-3', size: '3rem (48px)' },
+    { className: 'typography-body-4', size: '2.625rem (42px)' },
+    { className: 'typography-body-5', size: '2.25rem (36px)' },
+    { className: 'typography-body-6', size: '1.875rem (30px)' },
+    { className: 'typography-body-7', size: '1.5rem (24px)' },
+    { className: 'typography-body-8', size: '1.125rem (18px)' },
+    { className: 'typography-body-9', size: '1rem (16px)' },
+    { className: 'typography-body-10', size: '0.875rem (14px)' },
   ];
-  return typographyBodyScale.map(i => (
-    <div key={i.size} className="pb-1">
-      <p className={i.className}>Type size: {i.size}</p>
-    </div>
-  ));
+  return (
+    <Table>
+      <Table.Caption>GEL body typography tokens</Table.Caption>
+      <Table.Header>
+        <Table.HeaderRow>
+          <Table.HeaderCell>Token</Table.HeaderCell>
+          <Table.HeaderCell>Value</Table.HeaderCell>
+          <Table.HeaderCell>Tailwind class</Table.HeaderCell>
+        </Table.HeaderRow>
+      </Table.Header>
+      <Table.Body>
+        {typographyBrandScale.map(i => (
+          <Table.Row key={i.className}>
+            <Table.Cell>
+              <span className={i.className}>{i.className.replace('typography-', '')}</span>
+            </Table.Cell>
+            <Table.Cell>{i.size}</Table.Cell>
+            <Table.Cell>{i.className}</Table.Cell>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+  );
 };

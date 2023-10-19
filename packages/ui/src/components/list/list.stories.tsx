@@ -8,16 +8,7 @@ const meta: Meta<typeof List> = {
   title: 'Components/List',
   component: List,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-2">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'center',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;

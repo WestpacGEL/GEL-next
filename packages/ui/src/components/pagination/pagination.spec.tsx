@@ -32,8 +32,8 @@ describe('Pagination', () => {
   it('renders the style correctly', () => {
     const { base, ul } = styles();
     // TODO: use some variants for test
-    expect(base()).toBe('overflow-hidden rounded border border-border');
-    expect(ul()).toBe('flex');
+    expect(base()).toBe('flex flex-col items-center');
+    expect(ul()).toBe('flex overflow-hidden rounded border border-border');
   });
 
   it('goes to the page where user has clicked', async () => {

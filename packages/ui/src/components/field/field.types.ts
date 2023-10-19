@@ -1,10 +1,7 @@
 import { HTMLAttributes } from 'react';
 import { AriaFieldProps } from 'react-aria';
-import { type VariantProps } from 'tailwind-variants';
 
 import { FormHintProps } from '../index.js';
-
-import { styles } from './field.styles.js';
 
 export type FieldProps = {
   /**
@@ -20,5 +17,4 @@ export type FieldProps = {
    */
   tag?: keyof JSX.IntrinsicElements;
 } & AriaFieldProps &
-  VariantProps<typeof styles> &
   HTMLAttributes<Element>;

@@ -7,16 +7,7 @@ const meta: Meta<typeof Grid> = {
   title: 'Foundation/Grid',
   component: Grid,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="mt-10">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;

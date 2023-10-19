@@ -5,7 +5,13 @@ import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './tab.styles.js';
 
+type Variants = VariantProps<typeof styles>;
+
 export type TabProps<T = any> = {
+  /**
+   * Color of tab
+   */
+  color?: Variants['color'];
   /**
    * isDisabled flag
    */
@@ -14,6 +20,14 @@ export type TabProps<T = any> = {
    * Item
    */
   item: Node<T>;
+  /**
+   * Whether tab is justified
+   */
+  justify?: Variants['justify'];
+  /**
+   * Look of tab
+   */
+  look?: Variants['look'];
   /**
    * Orientation, vertical or horizontal for tab
    */
@@ -26,5 +40,4 @@ export type TabProps<T = any> = {
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & VariantProps<typeof styles> &
-  HTMLAttributes<Element>;
+} & HTMLAttributes<Element>;

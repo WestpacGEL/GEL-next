@@ -1,9 +1,6 @@
 import { type ReactNode } from 'react';
-import { type VariantProps } from 'tailwind-variants';
 
 import { type IconProps } from '../icon/index.js';
-
-import { styles } from './input-field.styles.js';
 
 export type Composition = Record<'before' | 'after', string | null>;
 
@@ -61,4 +58,4 @@ export type InputFieldProps = {
    */
   // TODO: maybe we could limit the tags to be only fieldset or div?
   tag?: keyof JSX.IntrinsicElements;
-} & Omit<VariantProps<typeof styles>, 'before' | 'after'>;
+};

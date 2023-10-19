@@ -6,16 +6,7 @@ const meta: Meta<typeof Well> = {
   title: 'Components/Well',
   component: Well,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div style={{ padding: '3rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;

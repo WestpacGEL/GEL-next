@@ -8,16 +8,7 @@ const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div style={{ padding: '3rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;
@@ -232,15 +223,17 @@ export const Icons = () => (
  */
 export const ResponsiveSize = () => (
   <div>
-    <Button
-      size={{
-        initial: 'small',
-        md: 'large',
-        lg: 'xlarge',
-      }}
-    >
-      Responsive Button
-    </Button>{' '}
+    <div className="py-2">
+      <Button
+        size={{
+          initial: 'small',
+          md: 'large',
+          lg: 'xlarge',
+        }}
+      >
+        Responsive Button
+      </Button>
+    </div>
     <Button
       iconAfter={BurgerIcon}
       size={{
@@ -250,7 +243,7 @@ export const ResponsiveSize = () => (
       }}
     >
       Responsive Button with icon
-    </Button>{' '}
+    </Button>
   </div>
 );
 

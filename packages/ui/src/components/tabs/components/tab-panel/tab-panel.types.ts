@@ -5,11 +5,16 @@ import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './tab-panel.styles.js';
 
+type Variants = VariantProps<typeof styles>;
+
 export type TabPanelProps<T = any> = {
+  /**
+   * Look of tab panel
+   */
+  look?: Variants['look'];
   /**
    * Tab list state
    */
   state: TabListState<T>;
 } & AriaTabPanelProps &
-  VariantProps<typeof styles> &
   HTMLAttributes<Element>;

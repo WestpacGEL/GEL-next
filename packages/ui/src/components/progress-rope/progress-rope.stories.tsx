@@ -11,9 +11,6 @@ const meta: Meta<typeof ProgressRope> = {
   component: ProgressRope,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;

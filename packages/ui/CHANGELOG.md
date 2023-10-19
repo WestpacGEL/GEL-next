@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.7.0
+
+### Minor Changes
+
+- 6e580a5: miscellaneous styling updates to bring new components to align with current design system
+
 ## 0.6.0
 
 ### Minor Changes

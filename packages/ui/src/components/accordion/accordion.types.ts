@@ -5,14 +5,18 @@ import { type VariantProps } from 'tailwind-variants';
 import { styles } from './accordion.styles.js';
 import { AccordionItemProps } from './components/index.js';
 
-export type AccordionProps<T = any> = SpectrumAccordionProps<T> &
-  VariantProps<typeof styles> & {
-    /**
-     * Accordion colors
-     */
-    color?: AccordionItemProps['color'];
-    /**
-     * Stretch the tab to fill the whole content
-     */
-    justify?: boolean;
-  } & Omit<HTMLAttributes<HTMLDivElement>, 'color'>;
+type Variants = VariantProps<typeof styles>;
+export type AccordionProps<T = any> = SpectrumAccordionProps<T> & {
+  /**
+   * Stretch the tab to fill the whole content
+   */
+  justify?: boolean;
+  /**
+   * The look of the accordion
+   */
+  look?: AccordionItemProps['look'];
+  /**
+   * Whether the accordion is rounded
+   */
+  rounded?: Variants['rounded'];
+} & Omit<HTMLAttributes<HTMLDivElement>, 'color'>;

@@ -1,7 +1,4 @@
 import { type HTMLAttributes, type ReactNode } from 'react';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './flexi-cell-body.styles.js';
 
 export type BaseFlexiCellBodyProps = {
   /**
@@ -40,5 +37,4 @@ export type FlexiCellBodyProps<Tag extends ElementKeysWithoutA = ElementKeysWith
   | FlexiCellBodyAsLinkProps
   | CircleAsAllOtherTagsProps<Tag>
 ) &
-  BaseFlexiCellBodyProps &
-  VariantProps<typeof styles>;
+  BaseFlexiCellBodyProps;

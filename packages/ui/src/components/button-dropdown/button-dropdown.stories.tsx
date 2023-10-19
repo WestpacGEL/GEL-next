@@ -8,16 +8,7 @@ const meta: Meta<typeof ButtonDropdown> = {
   title: 'Components/ButtonDropdown',
   component: ButtonDropdown,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-3">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;

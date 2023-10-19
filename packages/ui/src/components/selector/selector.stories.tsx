@@ -16,9 +16,6 @@ const meta: Meta<typeof Selector> = {
   component: Selector,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'padded',
-  },
 };
 
 export default meta;

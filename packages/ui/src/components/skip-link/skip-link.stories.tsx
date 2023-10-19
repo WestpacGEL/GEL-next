@@ -9,16 +9,7 @@ const meta: Meta<typeof SkipLink> = {
   title: 'Components/SkipLink',
   component: SkipLink,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-10">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;

@@ -7,9 +7,6 @@ const meta: Meta<typeof VisuallyHidden> = {
   component: VisuallyHidden,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'fullscreen',
-  },
 };
 
 export default meta;

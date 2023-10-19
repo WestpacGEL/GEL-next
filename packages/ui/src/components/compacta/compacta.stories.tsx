@@ -1,5 +1,5 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
-import { ChangeEvent, ReactNode, useState } from 'react';
+import { type Meta, StoryFn } from '@storybook/react';
+import { ChangeEvent, useState } from 'react';
 
 import { Form, Input } from '../index.js';
 
@@ -9,16 +9,7 @@ const meta: Meta<typeof Compacta> = {
   title: 'Components/Compacta',
   component: Compacta,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="p-5">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
   args: {},
 };
 

@@ -14,6 +14,8 @@ export type DuetDatePickerElement = Element & {
   value?: string;
 };
 
+type Variants = VariantProps<typeof styles>;
+
 export type DatePickerProps = {
   /*
    * Disable specific dates. Must be in IS0-8601 format: YYYY-MM-DD
@@ -59,9 +61,12 @@ export type DatePickerProps = {
    * onOpen
    */
   onOpen?: (...args: any[]) => unknown;
+  /**
+   * Size of datepicker input
+   */
+  size?: Variants['size'];
   /*
    * Date picker input value. Must be in IS0-8601 format: YYYY-MM-DD
    */
   value?: string;
-} & VariantProps<typeof styles> &
-  HTMLAttributes<Element>;
+} & HTMLAttributes<Element>;

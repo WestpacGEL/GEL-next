@@ -3,4 +3,15 @@ import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './textarea.styles.js';
 
-export type TextareaProps = VariantProps<typeof styles> & Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'>;
+type Variants = VariantProps<typeof styles>;
+
+export type TextareaProps = {
+  /**
+   * Whether text area is invalid
+   */
+  invalid?: Variants['invalid'];
+  /**
+   * Size of text area
+   */
+  size?: Variants['size'];
+} & Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'>;

@@ -13,14 +13,11 @@ const meta: Meta<typeof Popover> = {
   tags: ['autodocs'],
   decorators: [
     (Story: StoryFn) => (
-      <div className="p-[200px]">
+      <div className="p-29">
         <Story />
       </div>
     ),
   ],
-  parameters: {
-    layout: 'center',
-  },
   args: {
     content: popoverContent,
     heading: 'Test Heading',

@@ -4,11 +4,17 @@ import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './accordion-item.styles.js';
 
+type Variants = VariantProps<typeof styles>;
+
 export type AccordionItemProps<T = any> = {
   /**
    * Node from react-stately
    */
   item: Node<T>;
+  /**
+   * Look of the item
+   */
+  look?: Variants['look'];
   /**
    * Tree state
    */
@@ -17,5 +23,4 @@ export type AccordionItemProps<T = any> = {
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & VariantProps<typeof styles> &
-  HTMLAttributes<Element>;
+} & HTMLAttributes<Element>;

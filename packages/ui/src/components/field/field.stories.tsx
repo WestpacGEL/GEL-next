@@ -4,14 +4,14 @@ import { Input, Select } from '../index.js';
 
 import { Field } from './field.component.js';
 
+/**
+ * Field component provides label, hint message and error message to form components such as Select, Input etc.
+ */
 const meta: Meta<typeof Field> = {
   title: 'Foundation/Field',
   component: Field,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;
@@ -47,7 +47,10 @@ export const SelectStory: Story = {
         hintMessage="Hint: choose from one of the following options"
         errorMessage="This is an inline error message"
       >
-        <Select />
+        <Select>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </Select>
       </Field>
     );
   },

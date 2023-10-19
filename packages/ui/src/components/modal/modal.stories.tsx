@@ -11,9 +11,6 @@ const meta: Meta<typeof Modal> = {
   component: Modal,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;

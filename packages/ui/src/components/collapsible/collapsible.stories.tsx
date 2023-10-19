@@ -6,16 +6,7 @@ const meta: Meta<typeof Collapsible> = {
   title: 'Components/Collapsible',
   component: Collapsible,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="typography-body-10 p-3">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
 };
 
 export default meta;
@@ -38,7 +29,7 @@ export const Default: Story = {
  * > Examples of sizes of collapsible button
  */
 export const Sizes = () => (
-  <div className="typography-body-10 p-3">
+  <div>
     {SIZES.map(size => (
       <div className="mb-2" key={size}>
         <h2 className="typography-body-8 mb-1 font-bold">{size}</h2>
@@ -72,7 +63,7 @@ export const Sizes = () => (
  * > Setting the default of collapsible to open
  */
 export const Open = () => (
-  <div className="typography-body-10 p-3">
+  <div>
     {SIZES.map(size => (
       <div className="mb-2" key={size}>
         <h2 className="typography-body-8 mb-1 font-bold">{size}</h2>

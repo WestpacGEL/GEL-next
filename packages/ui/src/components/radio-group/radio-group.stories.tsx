@@ -6,16 +6,7 @@ const meta: Meta<typeof RadioGroup> = {
   title: 'Components/RadioGroup',
   component: RadioGroup,
   tags: ['autodocs'],
-  decorators: [
-    (Story: StoryFn) => (
-      <div className="flex p-3">
-        <Story />
-      </div>
-    ),
-  ],
-  parameters: {
-    layout: 'fullscreen',
-  },
+  decorators: [(Story: StoryFn) => <Story />],
   args: {
     label: <h2>Test</h2>,
   },

@@ -1,7 +1,4 @@
 import { HTMLAttributes, MouseEventHandler, ReactNode } from 'react';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './progress-rope.styles.js';
 
 export type ProgressRopeStepItem = {
   onClick?: MouseEventHandler<Element>;
@@ -37,5 +34,4 @@ export type ProgressRopeProps = {
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & VariantProps<typeof styles> &
-  HTMLAttributes<Element>;
+} & HTMLAttributes<Element>;

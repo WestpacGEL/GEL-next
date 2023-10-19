@@ -1,9 +1,6 @@
 import { ReactNode } from 'react';
-import { type VariantProps } from 'tailwind-variants';
 
 import { ProgressRopeStepItem, type ProgressRopeStepWithIndex } from '../../progress-rope.types.js';
-
-import { styles } from './progress-rope-group-step.styles.js';
 
 export type ProgressRopeGroupStepProps = {
   /**
@@ -30,8 +27,9 @@ export type ProgressRopeGroupStepProps = {
    * Boolean to tell if group is expanded
    */
   opened?: boolean;
+
   /**
    * Steps to render
    */
   steps: (ProgressRopeStepItem & { index: number })[];
-} & VariantProps<typeof styles>;
+};

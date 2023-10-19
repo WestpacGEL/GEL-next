@@ -11,14 +11,11 @@ const meta: Meta<typeof DatePicker> = {
   tags: ['autodocs'],
   decorators: [
     (Story: StoryFn) => (
-      <div className="h-30 p-3">
+      <div className="h-30">
         <Story />
       </div>
     ),
   ],
-  parameters: {
-    layout: 'fullscreen',
-  },
 };
 
 export default meta;

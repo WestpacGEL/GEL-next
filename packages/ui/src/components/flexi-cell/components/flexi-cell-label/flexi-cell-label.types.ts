@@ -1,7 +1,4 @@
 import { CSSProperties, type HTMLAttributes, type ReactNode } from 'react';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './flexi-cell-label.styles.js';
 
 export type FlexiCellLabelProps = {
   /**
@@ -20,5 +17,4 @@ export type FlexiCellLabelProps = {
    * Define if it is going to truncate the text
    */
   truncateText?: boolean;
-} & HTMLAttributes<HTMLOrSVGElement> &
-  VariantProps<typeof styles>;
+} & HTMLAttributes<HTMLOrSVGElement>;

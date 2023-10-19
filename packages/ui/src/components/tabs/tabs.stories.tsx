@@ -18,16 +18,9 @@ const meta: Meta<typeof Tabs> = {
       // @ts-ignore
       Tabs.Panel.displayName = 'Tabs.Panel';
 
-      return (
-        <div className="p-3">
-          <Story />
-        </div>
-      );
+      return <Story />;
     },
   ],
-  parameters: {
-    layout: 'fullscreen',
-  },
 };
 
 export default meta;

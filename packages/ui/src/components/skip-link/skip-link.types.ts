@@ -1,7 +1,4 @@
 import { HTMLAttributes } from 'react';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './skip-link.styles.js';
 
 export type SkipLinkProps = (
   | {
@@ -21,5 +18,4 @@ export type SkipLinkProps = (
       tag?: keyof Pick<JSX.IntrinsicElements, 'a'>;
     }
 ) &
-  VariantProps<typeof styles> &
   HTMLAttributes<Element>;
