@@ -29,7 +29,7 @@ const GEL_COLORS = {
 
 #### code tab
 
-1. [ ] Package info table used in intro section
+1. [x] Package info table used in intro section
 2. [x] Update Live code block to look like current gel site
    - [x] Update Show code text to Show live code
 3. [ ] Props table

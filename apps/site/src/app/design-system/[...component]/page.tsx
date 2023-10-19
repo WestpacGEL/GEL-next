@@ -12,7 +12,10 @@ export function generateMetadata({ params }: { params: { component: string } }) 
 
 export default async function ComponentPage({ params }: { params: { component: string[] } }) {
   const { component } = params;
-  const content = await reader.collections.designSystem.read(component.join('/'));
+  const [content, westpacInfo] = await Promise.all([
+    reader.collections.designSystem.read(component.join('/')),
+    reader.singletons.westpacUIInfo.read(),
+  ]);
   if (!content) return <div>Component not found!</div>;
 
   const [designSections, accessibilitySections, accessibilityDemo, code] = await Promise.all([
@@ -65,6 +68,7 @@ export default async function ComponentPage({ params }: { params: { component: s
   return (
     <ContentTabs
       content={{
+        westpacUIInfo: westpacInfo,
         accessibilitySections,
         accessibilityDemo,
         code,

@@ -33,7 +33,7 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
   return (
     <>
       <Section className="border-t-0">
-        <Container>
+        <Container className="pt-5">
           <Heading level={2} className="mb-4 sm:mb-7">
             Colour impairment demonstration
           </Heading>
