@@ -52,30 +52,6 @@ export const Default: Story = {
   },
 };
 
-// /**
-//  * > Primary color usage example
-//  */
-// export const PrimaryColor: Story = {
-//   args: {
-//     color: 'primary',
-//     rounded: false,
-//   },
-//   render: ({ ...props }) => (
-//     <Accordion {...props}>
-//       {[
-//         { key: 'colors', title: 'Your colors' },
-//         { key: 'shared', title: 'Shared color' },
-//         { key: 'last', title: 'Last item' },
-//       ].map(({ key, title }) => (
-//         <Accordion.Item key={key} title={title}>
-//           <p>{title}</p>
-//           <Button>Test</Button>
-//         </Accordion.Item>
-//       ))}
-//     </Accordion>
-//   ),
-// };
-
 /**
  * > Lego look using Hero color
  */
