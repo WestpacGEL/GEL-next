@@ -24,10 +24,10 @@ export function AccordionItem<T = any>({
   const isDisabled = state.disabledKeys.has(item.key);
   const { hoverProps } = useHover({ isDisabled });
   const { direction } = useLocale();
-  const styles = accordionItemStyles({ isOpen, isDisabled, className, look, isFocusVisible });
+  const styles = accordionItemStyles({ isOpen, isDisabled, look, isFocusVisible });
 
   return (
-    <Tag className={styles.base()}>
+    <Tag className={styles.base({ className })}>
       {/*
         Using h3 tag since the official page is using it, also the react-spectrum
         https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/
@@ -49,17 +49,14 @@ export function AccordionItem<T = any>({
               <m.div
                 initial={{
                   height: 0,
-                  opacity: 0,
                 }}
                 animate={{
                   height: 'auto',
-                  opacity: 1,
                 }}
                 exit={{
                   height: 0,
-                  opacity: 0,
                 }}
-                transition={{ duration: 0.2, ease: 'easeInOut' }}
+                transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }}
               >
                 <div className={styles.content()}>{item.props.children}</div>
               </m.div>
