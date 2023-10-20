@@ -1,9 +1,10 @@
 'use client';
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
-import { Button, Container, Grid, Item, Link, Table } from '@westpac/ui';
+import { Button, Container, Grid, Item } from '@westpac/ui';
 import { NewWindowIcon } from '@westpac/ui/icon';
 
+import { ComponentPropsTable } from '@/components/component-props-table';
 import { Code } from '@/components/content-blocks/typography';
 import { Heading } from '@/components/document-renderer';
 
@@ -12,7 +13,7 @@ import { TableOfContents } from '../intro/components';
 
 import { type CodeContentProps } from '.';
 
-export function CodeContent({ content, westpacUIInfo }: CodeContentProps) {
+export function CodeContent({ content, westpacUIInfo, componentProps, subComponentProps }: CodeContentProps) {
   return (
     <>
       <section className="py-7 sm:pb-10 sm:pt-15">
@@ -68,34 +69,18 @@ export function CodeContent({ content, westpacUIInfo }: CodeContentProps) {
       <section className="bg-white py-7 sm:pb-10 sm:pt-15">
         <Container>
           <Heading level={2}>Props</Heading>
-          <Table bordered striped className="table w-full">
-            <Table.Caption className="text-left">Alert props</Table.Caption>
-            <Table.Header>
-              <Table.Row>
-                {['Property', 'Type', 'Value', 'Default', 'Required', 'Description'].map(title => (
-                  <Table.HeaderCell key={title} className="text-left">
-                    {title}
-                  </Table.HeaderCell>
-                ))}
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              <Table.Row>
-                {['Property', 'Type', 'Value', 'Default', 'Required', 'Description'].map(title => (
-                  <Table.Cell key={title} className="text-left">
-                    {title}
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-              <Table.Row>
-                {['Property', 'Type', 'Value', 'Default', 'Required', 'Description'].map(title => (
-                  <Table.Cell key={title} className="text-left">
-                    {title}
-                  </Table.Cell>
-                ))}
-              </Table.Row>
-            </Table.Body>
-          </Table>
+          <div className="flex flex-col gap-6">
+            <ComponentPropsTable componentProps={componentProps} />
+            {subComponentProps?.map(subComponentProps => (
+              <ComponentPropsTable
+                key={subComponentProps.displayName}
+                componentProps={{
+                  ...subComponentProps,
+                  displayName: `Table.${subComponentProps.displayName?.replace(componentProps.displayName || '', '')}`,
+                }}
+              />
+            ))}
+          </div>
         </Container>
       </section>
     </>

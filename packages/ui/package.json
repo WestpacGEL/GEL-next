@@ -16,6 +16,9 @@
     ".": {
       "default": "./dist/index.js"
     },
+    "./component-type.json": {
+      "default": "./dist/component-type.json"
+    },
     "./css": {
       "default": "./dist/css/westpac-ui.min.css"
     },
@@ -53,7 +56,8 @@
     "build:esm": "swc ./src -d dist --no-swcrc --config-file .swcrc",
     "build:icons": "ts-node --esm ./utils/build-icons/index.ts",
     "build:watch": "pnpm clean && pnpm build:types && pnpm build:esm -w && pnpm build:css:all",
-    "build": "pnpm clean && pnpm build:types && pnpm build:esm && pnpm build:css:all",
+    "build:type-table": "node generate-component-types.cjs",
+    "build": "pnpm clean && pnpm build:types && pnpm build:esm && pnpm build:css:all && pnpm build:type-table",
     "check-types": "tsc --noemit --emitDeclarationOnly false",
     "lint": "eslint \"./src/**/*.{ts,tsx,js,jsx}\"",
     "lint:fix": "eslint \"./src/**/*.{ts,tsx,js,jsx}\" --fix",
@@ -104,6 +108,7 @@
     "prettier": "^2.8.4",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-docgen-typescript": "~2.2.2",
     "react-dom": "^18.2.0",
     "shx": "^0.3.4",
     "storybook": "^7.0.21",

@@ -17,7 +17,7 @@ export function LiveCode({ showCode = false, className }: LiveCodeProps) {
   const [localCopy, setLocalCopy] = useState<string>(live.code);
   const [isCodeVisible, toggleIsCodeVisible] = useState(showCode);
 
-  const styles = liveCodeStyles({ isCodeVisible, className });
+  const styles = liveCodeStyles({ isCodeVisible });
 
   const copyLiveCode = useCallback(() => {
     copy(localCopy);
@@ -45,7 +45,7 @@ export function LiveCode({ showCode = false, className }: LiveCodeProps) {
   );
 
   return (
-    <div className={styles.base({})}>
+    <div className={styles.base({ className })}>
       <div className={styles.displayWrapper({})}>
         {live.error ? (
           <div className={styles.error({})}>

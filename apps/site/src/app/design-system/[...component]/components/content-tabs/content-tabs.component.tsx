@@ -44,7 +44,14 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
                 accessibilityDemo={content.accessibilityDemo}
               />
             )}
-            {tab.key === 'code' && <CodeContent westpacUIInfo={content.westpacUIInfo} content={content.code} />}
+            {tab.key === 'code' && (
+              <CodeContent
+                subComponentProps={content.subComponentProps}
+                componentProps={content.componentProps}
+                westpacUIInfo={content.westpacUIInfo}
+                content={content.code}
+              />
+            )}
           </div>
         </Tabs.Panel>
       ))}

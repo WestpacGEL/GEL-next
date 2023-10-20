@@ -1,3 +1,6 @@
+import { type ComponentProps } from '@westpac/ui';
+import json from '@westpac/ui/component-type.json';
+
 import { reader } from '@/app/reader';
 import { formatComponentSlug } from '@/utils/format';
 
@@ -14,7 +17,7 @@ export default async function ComponentPage({ params }: { params: { component: s
   const { component } = params;
   const [content, westpacInfo] = await Promise.all([
     reader.collections.designSystem.read(component.join('/')),
-    reader.singletons.westpacUIInfo.read(),
+    reader.singletons.westpacUIInfo.readOrThrow(),
   ]);
   if (!content) return <div>Component not found!</div>;
 
@@ -64,6 +67,16 @@ export default async function ComponentPage({ params }: { params: { component: s
     content?.accessibilityDemo(),
     content?.code(),
   ]);
+  const componentName = component[1];
+  const componentProps: ComponentProps = (json as any)[`${componentName}/${componentName}.component.tsx`];
+  const subComponentProps = Object.entries(json).reduce((acc, [key, value]) => {
+    if (key.indexOf(`${componentName}/components/`) === -1) {
+      return acc;
+    }
+    return [...acc, value];
+  }, []);
+
+  console.log('subComponentProps', subComponentProps);
 
   return (
     <ContentTabs
@@ -76,6 +89,8 @@ export default async function ComponentPage({ params }: { params: { component: s
         pageOfContent: content.pageOfContent.concat(),
         designSections,
         relatedComponents: content.relatedInformation.filter(value => !!value) as string[],
+        componentProps,
+        subComponentProps,
       }}
     />
   );
