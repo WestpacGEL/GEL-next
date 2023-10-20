@@ -21,6 +21,7 @@ export const styles = tv(
       block: {
         true: {
           panel: '',
+          base: 'justify-between',
         },
       },
     },
