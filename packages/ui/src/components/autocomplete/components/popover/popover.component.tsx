@@ -3,7 +3,9 @@ import * as React from 'react';
 import { DismissButton, Overlay, usePopover } from 'react-aria';
 
 import { PopoverProps } from './popover.types.js';
-
+/**
+ * @private
+ */
 export function Popover(props: PopoverProps) {
   const ref = React.useRef<HTMLDivElement>(null);
   const { popoverRef = ref, state, children, className, isNonModal, portalContainer } = props;

@@ -53,9 +53,10 @@ function Group({ label, level, crumbs, children, ...props }: GroupProps) {
         <AnimatePresence initial={false}>
           {open && (
             <m.div
+              className="overflow-hidden"
               initial={{
                 height: 0,
-                opacity: 0,
+                opacity: 1,
               }}
               animate={{
                 height: 'auto',
@@ -63,7 +64,7 @@ function Group({ label, level, crumbs, children, ...props }: GroupProps) {
               }}
               exit={{
                 height: 0,
-                opacity: 0,
+                opacity: 1,
               }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
             >

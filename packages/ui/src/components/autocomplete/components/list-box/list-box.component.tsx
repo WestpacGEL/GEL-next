@@ -4,6 +4,9 @@ import { useListBox } from 'react-aria';
 import { ListBoxSection, Option } from './components/index.js';
 import { ListBoxProps } from './list-box.types.js';
 
+/**
+ * @private
+ */
 export function ListBox(props: ListBoxProps) {
   const ref = React.useRef<HTMLUListElement>(null);
 

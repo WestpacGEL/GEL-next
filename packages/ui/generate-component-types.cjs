@@ -29,38 +29,44 @@ const TYPES_TO_BE_IGNORED = [
   const results = await glob(components);
 
   const data = Object.fromEntries(
-    tsConfigParser.parse(results).map(({ displayName, description, props, filePath, ...rest }) => {
+    tsConfigParser.parse(results).reduce((acc, { displayName, description, props, filePath, tags }) => {
+      if (tags.private !== undefined) {
+        return acc;
+      }
       return [
-        filePath.replace(process.cwd(), '').replace('/src/components/', '').replace('src/components/', ''),
-        {
-          displayName,
-          description,
-          // Sort the required props before the non-required props, then sort alphabetically
-          props: Object.fromEntries(
-            Object.values(props)
-              .sort((a, b) => {
-                if (a.required !== b.required) {
-                  if (a.required) return -1;
-                  return 1;
-                }
-                return a.name.localeCompare(b.name);
-              })
-              .filter(a => {
-                if (TYPES_TO_BE_IGNORED.includes(a.parent ? a.parent.name : '')) {
-                  return false;
-                }
-                return true;
-              })
-              .map(a => {
-                if (a.name === 'tag' && a.type.name.indexOf('more ...') !== -1) {
-                  return [a.name, { ...a, type: { ...a.type, name: 'keyof IntrinsicElements' } }];
-                }
-                return [a.name, a];
-              }),
-          ),
-        },
+        ...acc,
+        [
+          filePath.replace(process.cwd(), '').replace('/src/components/', '').replace('src/components/', ''),
+          {
+            displayName,
+            description,
+            // Sort the required props before the non-required props, then sort alphabetically
+            props: Object.fromEntries(
+              Object.values(props)
+                .sort((a, b) => {
+                  if (a.required !== b.required) {
+                    if (a.required) return -1;
+                    return 1;
+                  }
+                  return a.name.localeCompare(b.name);
+                })
+                .filter(a => {
+                  if (TYPES_TO_BE_IGNORED.includes(a.parent ? a.parent.name : '')) {
+                    return false;
+                  }
+                  return true;
+                })
+                .map(a => {
+                  if (a.name === 'tag' && a.type.name.indexOf('more ...') !== -1) {
+                    return [a.name, { ...a, type: { ...a.type, name: 'keyof IntrinsicElements' } }];
+                  }
+                  return [a.name, a];
+                }),
+            ),
+          },
+        ],
       ];
-    }),
+    }, []),
   );
 
   // Create the output folder if it doesn't exist

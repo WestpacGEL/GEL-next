@@ -10,6 +10,9 @@ interface OptionProps<T = any> {
   state: ListState<T>;
 }
 
+/**
+ * @private
+ */
 export function Option({ item, state }: OptionProps) {
   const ref = React.useRef<HTMLLIElement>(null);
 

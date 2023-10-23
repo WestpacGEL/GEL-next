@@ -1,6 +1,7 @@
 'use client';
 import React, { Fragment, useCallback, useMemo, useState } from 'react';
 import { LiveProvider } from 'react-live';
+import { useOverlayTriggerState } from 'react-stately';
 
 import { StaticCode } from '../static-code';
 
@@ -13,6 +14,7 @@ const LIVE_SCOPE = {
   useState,
   useCallback,
   useMemo,
+  useOverlayTriggerState,
   Fragment,
   React,
 };

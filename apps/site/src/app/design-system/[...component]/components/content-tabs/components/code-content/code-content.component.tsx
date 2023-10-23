@@ -1,8 +1,10 @@
 'use client';
 
+import { DocumentElement } from '@keystatic/core';
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Button, Container, Grid, Item } from '@westpac/ui';
 import { NewWindowIcon } from '@westpac/ui/icon';
+import { useMemo } from 'react';
 
 import { ComponentPropsTable } from '@/components/component-props-table';
 import { Code } from '@/components/content-blocks/typography';
@@ -14,6 +16,15 @@ import { TableOfContents } from '../intro/components';
 import { type CodeContentProps } from '.';
 
 export function CodeContent({ content, westpacUIInfo, componentProps, subComponentProps }: CodeContentProps) {
+  const tableOfContents = useMemo(() => {
+    return content.reduce((acc, item: DocumentElement & { level?: number }) => {
+      if (item.type === 'heading' && item?.level && item.level <= 3) {
+        return [...acc, { title: item.children[0].text as string }];
+      }
+      return acc;
+    }, [] as { title: string }[]);
+  }, [content]);
+
   return (
     <>
       <section className="py-7 sm:pb-10 sm:pt-15">
@@ -58,14 +69,17 @@ export function CodeContent({ content, westpacUIInfo, componentProps, subCompone
               </table>
             </Item>
             <Item span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
-              <TableOfContents contents={[{ title: 'test' }]} />
+              <TableOfContents contents={tableOfContents} />
             </Item>
           </Grid>
         </Container>
       </section>
-      <Container className="py-15">
-        <DocumentRenderer document={content} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
-      </Container>
+      <section className="border-t border-t-border">
+        <Container className="py-15">
+          <h2 className="typography-body-6 mb-4 font-bold sm:mb-8">Development examples</h2>
+          <DocumentRenderer document={content} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
+        </Container>
+      </section>
       <section className="bg-white py-7 sm:pb-10 sm:pt-15">
         <Container>
           <Heading level={2}>Props</Heading>
