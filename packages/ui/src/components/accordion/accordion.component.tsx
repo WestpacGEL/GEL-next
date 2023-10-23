@@ -1,3 +1,5 @@
+'use client';
+
 import { useAccordion } from '@react-aria/accordion';
 import { filterDOMProps } from '@react-aria/utils';
 import { useDOMRef } from '@react-spectrum/utils';

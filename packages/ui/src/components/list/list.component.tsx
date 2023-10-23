@@ -1,3 +1,5 @@
+'use client';
+
 import React, { Children, ReactElement, cloneElement, createContext, useContext } from 'react';
 
 import { Item } from './components/item/index.js';

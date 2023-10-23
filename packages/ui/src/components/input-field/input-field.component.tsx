@@ -1,3 +1,5 @@
+'use client';
+
 import React, { Children, ReactNode, cloneElement, isValidElement, useCallback, useId, useMemo } from 'react';
 
 import { ErrorMessage, FormHint, FormLabel } from '../index.js';

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useCallback, useEffect, useId } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 

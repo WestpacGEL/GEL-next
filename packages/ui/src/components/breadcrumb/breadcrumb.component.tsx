@@ -1,3 +1,5 @@
+'use client';
+
 import React, { Children, FunctionComponentElement, cloneElement } from 'react';
 import { useBreadcrumbs } from 'react-aria';
 

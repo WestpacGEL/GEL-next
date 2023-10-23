@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useId, useRef } from 'react';
 import { VisuallyHidden, mergeProps, useCheckbox, useFocusRing } from 'react-aria';
 import { useToggleState } from 'react-stately';

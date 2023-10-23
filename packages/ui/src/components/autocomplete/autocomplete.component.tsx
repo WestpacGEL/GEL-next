@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { useButton, useComboBox, useFilter, useSearchField } from 'react-aria';
 import { Item, useComboBoxState, useSearchFieldState } from 'react-stately';
