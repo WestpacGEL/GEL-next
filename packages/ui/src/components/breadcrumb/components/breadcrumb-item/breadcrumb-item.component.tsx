@@ -48,3 +48,5 @@ export function BaseBreadcrumbItem(
 }
 
 export const BreadcrumbItem = forwardRef<any, BreadcrumbItemProps>(BaseBreadcrumbItem);
+
+BreadcrumbItem.displayName = 'Breadcrumb.Item';

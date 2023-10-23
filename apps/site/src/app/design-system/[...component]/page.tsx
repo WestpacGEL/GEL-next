@@ -1,5 +1,6 @@
 import { type ComponentProps } from '@westpac/ui';
 import json from '@westpac/ui/component-type.json';
+import { useMemo } from 'react';
 
 import { reader } from '@/app/reader';
 import { formatComponentSlug } from '@/utils/format';
@@ -19,6 +20,11 @@ export default async function ComponentPage({ params }: { params: { component: s
     reader.collections.designSystem.read(component.join('/')),
     reader.singletons.westpacUIInfo.readOrThrow(),
   ]);
+  const componentName = component[1]
+    .split('-')
+    .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
+    .join('');
+
   if (!content) return <div>Component not found!</div>;
 
   const [designSections, accessibilitySections, accessibilityDemo, code] = await Promise.all([
@@ -67,10 +73,9 @@ export default async function ComponentPage({ params }: { params: { component: s
     content?.accessibilityDemo(),
     content?.code(),
   ]);
-  const componentName = component[1];
-  const componentProps: ComponentProps = (json as any)[`${componentName}/${componentName}.component.tsx`];
+  const componentProps: ComponentProps | undefined = (json as any)[componentName];
   const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, ComponentProps]) => {
-    if (key.indexOf(`${componentName}/components/`) === -1) {
+    if (key.indexOf(`${componentName}.`) !== 0) {
       return acc;
     }
     return [...acc, value];

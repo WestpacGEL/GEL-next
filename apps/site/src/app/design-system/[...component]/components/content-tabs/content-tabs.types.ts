@@ -10,7 +10,7 @@ export type ContentTabsProps = {
   accessibilityDemo: DocumentElement[];
   accessibilitySections: AccessibilitySectionProps[];
   code: DocumentElement[];
-  componentProps: ComponentProps;
+  componentProps?: ComponentProps;
   description?: string;
   designSections?: DesignSectionProps[];
   pageOfContent?: { title: string }[];

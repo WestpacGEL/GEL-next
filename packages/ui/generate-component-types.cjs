@@ -29,14 +29,15 @@ const TYPES_TO_BE_IGNORED = [
   const results = await glob(components);
 
   const data = Object.fromEntries(
-    tsConfigParser.parse(results).reduce((acc, { displayName, description, props, filePath, tags }) => {
+    tsConfigParser.parse(results).reduce((acc, { displayName, description, props, tags }) => {
       if (tags.private !== undefined) {
         return acc;
       }
+
       return [
         ...acc,
         [
-          filePath.replace(process.cwd(), '').replace('/src/components/', '').replace('src/components/', ''),
+          displayName,
           {
             displayName,
             description,
@@ -51,6 +52,9 @@ const TYPES_TO_BE_IGNORED = [
                   return a.name.localeCompare(b.name);
                 })
                 .filter(a => {
+                  if (a.name === 'children' && a.description) {
+                    return true;
+                  }
                   if (TYPES_TO_BE_IGNORED.includes(a.parent ? a.parent.name : '')) {
                     return false;
                   }

@@ -11,3 +11,4 @@ export const FlexiCellBody = ({ children, tag: Tag = 'div', className, ...props 
     </Tag>
   );
 };
+FlexiCellBody.displayName = 'FlexiCell.Body';

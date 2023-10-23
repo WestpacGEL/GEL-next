@@ -7,7 +7,7 @@ import { WestpacUIInfo } from '@/types/westpac-ui-info.types';
 export type CodeSectionProps = { content: DocumentElement[]; title: string };
 
 export type CodeContentProps = {
-  componentProps: ComponentProps;
+  componentProps?: ComponentProps;
   content: DocumentElement[];
   description?: string;
   relatedComponents?: RelatedInfoProps['relatedComponents'];

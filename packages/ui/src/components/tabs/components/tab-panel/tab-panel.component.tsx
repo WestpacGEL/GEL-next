@@ -14,3 +14,4 @@ export function TabPanel({ className, state, look, ...props }: TabPanelProps) {
     </div>
   );
 }
+TabPanel.displayName = 'Tabs.Panel';

@@ -80,26 +80,25 @@ export function CodeContent({ content, westpacUIInfo, componentProps, subCompone
           <DocumentRenderer document={content} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
         </Container>
       </section>
-      <section className="bg-white py-7 sm:pb-10 sm:pt-15">
-        <Container>
-          <Heading level={2}>Props</Heading>
-          <div className="flex flex-col gap-6">
-            <ComponentPropsTable componentProps={componentProps} />
-            {subComponentProps?.map(subComponentProps => (
-              <ComponentPropsTable
-                key={subComponentProps.displayName}
-                componentProps={{
-                  ...subComponentProps,
-                  displayName: `${componentProps.displayName}.${subComponentProps.displayName?.replace(
-                    componentProps.displayName || '',
-                    '',
-                  )}`,
-                }}
-              />
-            ))}
-          </div>
-        </Container>
-      </section>
+      {componentProps && (
+        <section className="bg-white py-7 sm:pb-10 sm:pt-15">
+          <Container>
+            <Heading level={2}>Props</Heading>
+            <div className="flex flex-col gap-6">
+              <ComponentPropsTable componentProps={componentProps} />
+              {subComponentProps?.map(subComponentProps => (
+                <ComponentPropsTable
+                  key={subComponentProps.displayName}
+                  componentProps={{
+                    ...subComponentProps,
+                    displayName: subComponentProps.displayName,
+                  }}
+                />
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
     </>
   );
 }

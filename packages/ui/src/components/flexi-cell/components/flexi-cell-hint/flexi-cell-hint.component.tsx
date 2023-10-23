@@ -17,3 +17,4 @@ export const FlexiCellHint = ({
     </Tag>
   );
 };
+FlexiCellHint.displayName = 'FlexiCell.Hint';

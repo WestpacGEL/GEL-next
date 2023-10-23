@@ -29,3 +29,4 @@ function BaseRadio({ className, hint, children, ...props }: RadioProps, ref: any
 }
 
 export const Radio = forwardRef(BaseRadio);
+Radio.displayName = 'RadioGroup.Radio';

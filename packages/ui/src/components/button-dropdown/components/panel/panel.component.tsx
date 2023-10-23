@@ -4,6 +4,9 @@ import { DismissButton, Overlay, mergeProps, useFocusRing, usePopover } from 're
 import { styles as panelStyles } from './panel.styles.js';
 import { type PanelProps } from './panel.types.js';
 
+/**
+ * @private
+ */
 export function Panel({ className, children, state, block, id, ...props }: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const { popoverProps } = usePopover({ popoverRef, shouldFlip: false, isNonModal: true, ...props }, state);
