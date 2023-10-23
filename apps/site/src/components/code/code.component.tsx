@@ -1,6 +1,7 @@
 'use client';
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useCallback, useMemo, useState } from 'react';
 import { LiveProvider } from 'react-live';
+import { useOverlayTriggerState } from 'react-stately';
 
 import { StaticCode } from '../static-code';
 
@@ -11,6 +12,9 @@ import { LiveCode } from './components/live-code';
 const LIVE_SCOPE = {
   ...UISystemComponents,
   useState,
+  useCallback,
+  useMemo,
+  useOverlayTriggerState,
   Fragment,
   React,
 };

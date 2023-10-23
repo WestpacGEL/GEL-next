@@ -17,3 +17,4 @@ export const FlexiCellAdornment = ({
     </Tag>
   );
 };
+FlexiCellAdornment.displayName = 'FlexiCell.Adornment';

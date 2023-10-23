@@ -1,3 +1,5 @@
-import { DocumentRendererProps } from '@keystatic/core/renderer';
-
-export type CodeProps = Required<Required<DocumentRendererProps>['renderers']>['block']['code'];
+export type CodeProps = {
+  children: string;
+  className?: string;
+  language?: string;
+};

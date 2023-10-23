@@ -31,6 +31,18 @@ export default config({
         }),
       },
     }),
+    westpacUIInfo: singleton({
+      label: 'Westpac UI Info',
+      path: 'content/westpac-ui-info/',
+      schema: {
+        changelog: fields.url({
+          label: 'Changelog link',
+        }),
+        currentVersion: fields.text({
+          label: 'current gel version',
+        }),
+      },
+    }),
   },
   collections: {
     designSystem: collection({

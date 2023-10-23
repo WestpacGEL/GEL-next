@@ -8,7 +8,7 @@ export default async function Homepage() {
     ...article,
     entry: { ...article.entry, content: null },
   }));
-  console.log('articles', articles);
+
   return (
     <main className="pb-8 font-gel-sans">
       <Hero />

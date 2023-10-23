@@ -4,6 +4,9 @@ import { styles } from './add-ons.styles.js';
 import { InputAddOnProps } from './add-ons.types.js';
 import { DefaultAddOn, IconAddOn, TextAddOn } from './components/index.js';
 
+/**
+ * @private
+ */
 export const InputAddOn = ({
   position,
   icon: Icon,

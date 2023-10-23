@@ -5,6 +5,9 @@ import { Option } from '../list-box-option/index.js';
 
 import { type ListBoxSectionProps } from './list-box-section.types.js';
 
+/**
+ * @private
+ */
 export function ListBoxSection({ section, state }: ListBoxSectionProps) {
   const { itemProps, headingProps, groupProps } = useListBoxSection({
     heading: section.rendered,

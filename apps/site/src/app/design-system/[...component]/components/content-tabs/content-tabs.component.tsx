@@ -1,12 +1,9 @@
 'use client';
 
-import { DocumentRenderer } from '@keystatic/core/renderer';
-import { Container } from '@westpac/ui';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Key, useCallback } from 'react';
 
-import { AccessibilityContent, DesignContent, Tabs } from './components';
-import { DOCUMENT_RENDERERS } from './components/document-renderer';
+import { AccessibilityContent, CodeContent, DesignContent, Tabs } from './components';
 import { type ContentTabsProps } from './content-tabs.types';
 
 const TABS = [
@@ -48,9 +45,12 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
               />
             )}
             {tab.key === 'code' && (
-              <Container className="py-15">
-                <DocumentRenderer document={content[tab.key]} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
-              </Container>
+              <CodeContent
+                subComponentProps={content.subComponentProps}
+                componentProps={content.componentProps}
+                westpacUIInfo={content.westpacUIInfo}
+                content={content.code}
+              />
             )}
           </div>
         </Tabs.Panel>

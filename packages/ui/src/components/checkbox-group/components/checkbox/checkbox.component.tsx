@@ -54,3 +54,4 @@ function BaseCheckbox({ className, hint, children, value, ...props }: CheckboxPr
 }
 
 export const Checkbox = forwardRef(BaseCheckbox);
+Checkbox.displayName = 'CheckboxGroup.Checkbox';

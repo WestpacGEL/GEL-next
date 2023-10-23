@@ -2,6 +2,7 @@ import { HTMLAttributes, ReactNode } from 'react';
 import { type AriaPopoverProps } from 'react-aria';
 import { type OverlayTriggerState } from 'react-stately';
 
+// @private
 export type PopoverProps = Omit<AriaPopoverProps, 'popoverRef'> & {
   /**
    * Popover content

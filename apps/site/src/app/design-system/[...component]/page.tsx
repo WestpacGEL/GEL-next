@@ -1,3 +1,7 @@
+import { type ComponentProps } from '@westpac/ui';
+import json from '@westpac/ui/component-type.json';
+import { useMemo } from 'react';
+
 import { reader } from '@/app/reader';
 import { formatComponentSlug } from '@/utils/format';
 
@@ -12,7 +16,15 @@ export function generateMetadata({ params }: { params: { component: string } }) 
 
 export default async function ComponentPage({ params }: { params: { component: string[] } }) {
   const { component } = params;
-  const content = await reader.collections.designSystem.read(component.join('/'));
+  const [content, westpacInfo] = await Promise.all([
+    reader.collections.designSystem.read(component.join('/')),
+    reader.singletons.westpacUIInfo.readOrThrow(),
+  ]);
+  const componentName = component[1]
+    .split('-')
+    .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
+    .join('');
+
   if (!content) return <div>Component not found!</div>;
 
   const [designSections, accessibilitySections, accessibilityDemo, code] = await Promise.all([
@@ -61,10 +73,18 @@ export default async function ComponentPage({ params }: { params: { component: s
     content?.accessibilityDemo(),
     content?.code(),
   ]);
+  const componentProps: ComponentProps | undefined = (json as any)[componentName];
+  const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, ComponentProps]) => {
+    if (key.indexOf(`${componentName}.`) !== 0) {
+      return acc;
+    }
+    return [...acc, value];
+  }, [] as ComponentProps[]);
 
   return (
     <ContentTabs
       content={{
+        westpacUIInfo: westpacInfo,
         accessibilitySections,
         accessibilityDemo,
         code,
@@ -72,6 +92,8 @@ export default async function ComponentPage({ params }: { params: { component: s
         pageOfContent: content.pageOfContent.concat(),
         designSections,
         relatedComponents: content.relatedInformation.filter(value => !!value) as string[],
+        componentProps,
+        subComponentProps,
       }}
     />
   );

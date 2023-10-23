@@ -9,3 +9,4 @@ import { FlexiCellCircleProps } from './flexi-cell-circle.types.js';
 export const FlexiCellCircle = ({ className, ...props }: FlexiCellCircleProps) => {
   return <Circle className={styles({ className })} {...props} />;
 };
+FlexiCellCircle.displayName = 'FlexiCell.Circle';

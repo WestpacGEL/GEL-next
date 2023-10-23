@@ -67,3 +67,4 @@ export function AccordionItem<T = any>({
     </Tag>
   );
 }
+AccordionItem.displayName = 'Accordion.Item';
