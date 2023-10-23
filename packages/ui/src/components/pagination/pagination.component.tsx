@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useCallback, useMemo } from 'react';
 
 import { PaginationItem } from './components/index.js';

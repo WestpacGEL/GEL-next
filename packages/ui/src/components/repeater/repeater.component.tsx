@@ -1,3 +1,5 @@
+'use client';
+
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useFocusRing } from 'react-aria';

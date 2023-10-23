@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useMemo, useState } from 'react';
 
 import { ProgressRopeGroupStep, ProgressRopeStep } from './components/index.js';

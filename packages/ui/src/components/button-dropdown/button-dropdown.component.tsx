@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useCallback, useEffect, useId, useRef } from 'react';
 import { useButton, useOverlayTrigger } from 'react-aria';
 import { useOverlayTriggerState } from 'react-stately';

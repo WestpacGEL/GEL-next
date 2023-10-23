@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ReactElement, cloneElement, createContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useCheckboxGroup, useFocusRing } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';

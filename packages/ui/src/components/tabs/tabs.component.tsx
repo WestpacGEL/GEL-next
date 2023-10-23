@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef } from 'react';
 import { useTabList } from 'react-aria';
 import { Item, useTabListState } from 'react-stately';

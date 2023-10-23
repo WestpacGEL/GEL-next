@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 import { Backdrop, Dialog } from './components/index.js';

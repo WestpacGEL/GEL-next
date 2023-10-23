@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ReactElement, cloneElement, createContext } from 'react';
 import { useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';

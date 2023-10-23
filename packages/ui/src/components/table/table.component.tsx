@@ -1,3 +1,5 @@
+'use client';
+
 import React, { createContext } from 'react';
 
 import { Body, Caption, Cell, Footer, Header, HeaderCell, HeaderRow, Row } from './components/index.js';
