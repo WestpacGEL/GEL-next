@@ -76,7 +76,10 @@ export function CodeContent({ content, westpacUIInfo, componentProps, subCompone
                 key={subComponentProps.displayName}
                 componentProps={{
                   ...subComponentProps,
-                  displayName: `Table.${subComponentProps.displayName?.replace(componentProps.displayName || '', '')}`,
+                  displayName: `${componentProps.displayName}.${subComponentProps.displayName?.replace(
+                    componentProps.displayName || '',
+                    '',
+                  )}`,
                 }}
               />
             ))}

@@ -69,14 +69,12 @@ export default async function ComponentPage({ params }: { params: { component: s
   ]);
   const componentName = component[1];
   const componentProps: ComponentProps = (json as any)[`${componentName}/${componentName}.component.tsx`];
-  const subComponentProps = Object.entries(json).reduce((acc, [key, value]) => {
+  const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, ComponentProps]) => {
     if (key.indexOf(`${componentName}/components/`) === -1) {
       return acc;
     }
     return [...acc, value];
-  }, []);
-
-  console.log('subComponentProps', subComponentProps);
+  }, [] as ComponentProps[]);
 
   return (
     <ContentTabs
