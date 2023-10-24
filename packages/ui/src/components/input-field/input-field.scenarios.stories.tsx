@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useCallback, useMemo, useState } from 'react';
 
-import { CloseIcon, RefreshIcon, SearchIcon, VisibilityIcon, VisibilityOffIcon } from '../icon/index.js';
+import { ClearIcon, RefreshIcon, SearchIcon, VisibilityIcon, VisibilityOffIcon } from '../icon/index.js';
 import { Button, Input, Select, Textarea } from '../index.js';
 
 import { InputField } from './input-field.component.js';
@@ -85,7 +85,7 @@ export const SearchWithLeftIconAndClearButton: Story = {
         }}
         after={{
           inset: true,
-          element: <Button onClick={clearInput} look="link" iconAfter={CloseIcon} iconColor="muted" />,
+          element: <Button onClick={clearInput} look="link" iconAfter={ClearIcon} iconColor="muted" />,
         }}
       >
         <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
