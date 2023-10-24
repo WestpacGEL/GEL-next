@@ -19,6 +19,10 @@ export type PaginationItemProps = {
    */
   firstItem?: Variants['firstItem'];
   /**
+   * Whether it is first item
+   */
+  lastItem?: Variants['lastItem'];
+  /**
    * Link component to render
    */
   tag?: 'a' | 'button' | ((...args: any[]) => ReactElement | null);

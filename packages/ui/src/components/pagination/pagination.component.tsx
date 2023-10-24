@@ -86,6 +86,7 @@ export function Pagination({
     const defaultNextProps = {
       disabled: !infinite && backwardsOnly,
       tag: linkComponent,
+      lastItem: true,
     };
     if (defaultNextProps.disabled) {
       return {
