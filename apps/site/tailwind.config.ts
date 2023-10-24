@@ -1,5 +1,15 @@
 import { withGEL } from '@westpac/ui/tailwind';
 import { type Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
+
+import { generateFontComponents } from './src/utils/generate-font-components';
+
+const SitePlugin = plugin(
+  // Adding the typography components
+  ({ addComponents, theme }) => {
+    addComponents(generateFontComponents(theme('typographySizes'), theme));
+  },
+);
 
 const config: Config = withGEL({
   relative: true,
@@ -60,6 +70,7 @@ const config: Config = withGEL({
     'rounded',
     'transition-colors',
   ],
+  plugins: [SitePlugin],
 });
 
 export default config;

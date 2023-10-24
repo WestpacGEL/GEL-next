@@ -9,12 +9,12 @@ export const styles = tv({
       end: 'text-right',
     },
     level: {
-      1: 'typography-body-5 mb-5',
-      2: 'typography-body-7 mb-7 sm:typography-body-6',
-      3: 'typography-body-7 mb-5',
-      4: 'typography-body-9 mb-5',
-      5: 'typography-body-10 mb-2',
-      6: 'typography-body-10 mb-2',
+      1: 'typography-site-5 mb-5',
+      2: 'typography-site-7 mb-7 sm:typography-site-6',
+      3: 'typography-site-7 mb-5',
+      4: 'typography-site-9 mb-5',
+      5: 'typography-site-10 mb-2',
+      6: 'typography-site-10 mb-2',
     },
   },
 });

@@ -74,7 +74,7 @@ export default async function ComponentPage({ params }: { params: { component: s
     content?.code(),
   ]);
   const componentProps: ComponentProps | undefined = (json as any)[componentName];
-  const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, ComponentProps]) => {
+  const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, any]) => {
     if (key.indexOf(`${componentName}.`) !== 0) {
       return acc;
     }
