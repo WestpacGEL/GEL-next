@@ -15,11 +15,11 @@ export type PaginationItemProps = {
    */
   disabled?: Variants['disabled'];
   /**
-   * Whether it is first item
+   * Whether it is the first item
    */
   firstItem?: Variants['firstItem'];
   /**
-   * Whether it is first item
+   * Whether it is the last item
    */
   lastItem?: Variants['lastItem'];
   /**
