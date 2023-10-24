@@ -25,7 +25,7 @@ const GEL_COLORS = {
 ### /design-system
 
 1. [x] Integrate content blocks with keystatic
-2. Add box shadow to brand selector on navigation scroll
+2. [x] Add box shadow to brand selector on navigation scroll
 
 #### code tab
 
@@ -40,5 +40,5 @@ const GEL_COLORS = {
 
 ### General
 
-1. [ ] Fix list component styling, changing line height breaks current list component
+1. [x] Fix list component styling, changing line height breaks current list component
 2. [ ] Update component slugs to match current GEL navigation grouping

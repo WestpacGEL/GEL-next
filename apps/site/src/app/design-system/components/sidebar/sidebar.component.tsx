@@ -4,7 +4,7 @@ import { BOMShieldLogo, BSAStackedLogo, RAMSLogo, STGDragonLogo, WBCLogo, WBGLog
 import { clsx } from 'clsx';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import React, { Key, useCallback, useRef } from 'react';
+import React, { Key, useCallback, useEffect, useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
 import { BrandKey } from '@/app/types/brand.types';
@@ -50,11 +50,28 @@ const BANK_OPTIONS = [
 
 export function Sidebar({ items }: SidebarProps) {
   const { open, setOpen } = useSidebar();
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
-  const ref = useRef<HTMLDivElement>(null);
-  useOnClickOutside(ref, () => {
+  const outsideRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+
+  useOnClickOutside(outsideRef, () => {
     setOpen(false);
   });
+
+  useEffect(() => {
+    if (!listRef.current) {
+      return;
+    }
+    const listener = () => {
+      const y = listRef.current?.scrollTop || 0;
+      setScrolled(y > 0);
+    };
+    listRef.current.addEventListener('scroll', listener);
+    return () => {
+      listRef.current?.removeEventListener('scroll', listener);
+    };
+  }, [listRef]);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -67,6 +84,7 @@ export function Sidebar({ items }: SidebarProps) {
     },
     [router, pathname],
   );
+
   return (
     <div
       className={clsx(
@@ -75,7 +93,7 @@ export function Sidebar({ items }: SidebarProps) {
           '-translate-x-full': !open, //hide sidebar to the left when closed
         },
       )}
-      ref={ref}
+      ref={outsideRef}
     >
       <Link href="/" className="flex h-15 items-center px-3" aria-label="GEL home">
         <Logo brand={brand} />
@@ -92,7 +110,12 @@ export function Sidebar({ items }: SidebarProps) {
           ))}
         </SidebarSelect>
       </div>
-      <nav className="flex-1 overflow-y-auto overflow-x-hidden pb-4">
+      <nav
+        ref={listRef}
+        className={clsx('flex-1 overflow-y-auto overflow-x-hidden pb-4 transition-all', {
+          'shadow-[inset_rgba(0,0,0,0.26)_0_2px_5px]': scrolled,
+        })}
+      >
         <Link href="/" className="block" aria-label="Back to GEL">
           <BackToGelSvg />
         </Link>
