@@ -181,19 +181,21 @@ export function Compacta({
                         setSecondaryTitle: (title: string) => setTitle(item.id, 'secondary', title),
                         setTertiaryTitle: (title: string) => setTitle(item.id, 'tertiary', title),
                       })}
-                      <Button
-                        className={styles.removeBtn()}
-                        aria-label={`remove item ${index + 1}`}
-                        iconBefore={(props: IconProps) => (
-                          <RemoveCircleIcon {...props} aria-hidden look="outlined" size="xsmall" />
-                        )}
-                        look="link"
-                        size="small"
-                        soft
-                        onClick={() => handleRemove(item.id, index)}
-                      >
-                        Remove
-                      </Button>
+                      {items.length > 1 && (
+                        <Button
+                          className={styles.removeBtn()}
+                          aria-label={`remove item ${index + 1}`}
+                          iconBefore={(props: IconProps) => (
+                            <RemoveCircleIcon {...props} aria-hidden look="outlined" size="xsmall" />
+                          )}
+                          look="link"
+                          size="small"
+                          soft
+                          onClick={() => handleRemove(item.id, index)}
+                        >
+                          Remove
+                        </Button>
+                      )}
                     </div>
                   </m.div>
                 )}
