@@ -4,7 +4,7 @@ import { BOMShieldLogo, BSAStackedLogo, RAMSLogo, STGDragonLogo, WBCLogo, WBGLog
 import { clsx } from 'clsx';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import React, { Key, use, useCallback, useEffect, useRef, useState } from 'react';
+import React, { Key, useCallback, useEffect, useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
 import { BrandKey } from '@/app/types/brand.types';
