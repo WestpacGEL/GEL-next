@@ -76,7 +76,7 @@ export function Repeater({
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.15 }}
-                  key={index}
+                  key={item.id}
                 >
                   <div
                     ref={(el: HTMLDivElement) => {
@@ -92,7 +92,9 @@ export function Repeater({
                       <Button
                         className={styles.removeBtn()}
                         aria-label={`remove item ${index + 1}`}
-                        iconBefore={(props: IconProps) => <RemoveCircleIcon {...props} aria-hidden size="xsmall" />}
+                        iconBefore={(props: IconProps) => (
+                          <RemoveCircleIcon {...props} aria-hidden look="outlined" size="xsmall" />
+                        )}
                         look="link"
                         size="small"
                         soft
