@@ -30,6 +30,10 @@ const TYPES_TO_BE_IGNORED = [
 
   const data = Object.fromEntries(
     tsConfigParser.parse(results).reduce((acc, { displayName, description, props, tags }) => {
+      /**
+       * Some components should not be scanned since it is a internal component
+       * so the comment @private is used in order to skip some components.
+       */
       if (tags.private !== undefined) {
         return acc;
       }

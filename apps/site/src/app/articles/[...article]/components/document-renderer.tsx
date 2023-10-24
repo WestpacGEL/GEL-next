@@ -9,11 +9,15 @@ import { Image } from './image';
 export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = {
   block: {
     divider: Divider,
-    paragraph: Paragraph,
+    paragraph: props => <Paragraph {...props} type="graphik" />,
     code: Code,
     heading: Heading,
-    list: props => <List color="blue" {...props} />,
-    blockquote: ({ children }) => <Blockquote className="mx-0 sm:-mx-20">{children}</Blockquote>,
+    list: props => <List color="blue" fontFamily="graphik" {...props} />,
+    blockquote: ({ children }) => (
+      <Blockquote type="graphik" className="mx-0 sm:-mx-20">
+        {children}
+      </Blockquote>
+    ),
     image: Image,
   },
   inline: {
