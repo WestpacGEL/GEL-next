@@ -10,8 +10,8 @@ export function generateMetadata({ params }: { params: { article: string } }) {
 
 export default async function ArticleServerPage({ params }: { params: { article: string[] } }) {
   const { article: articleParam } = params;
-  const article = await reader.collections.articles.read(articleParam.join('/'));
-  if (!article) return <div>Article not found!</div>;
+  console.log(`articleParam.join('/')`, articleParam.join('/'));
+  const article = await reader.collections.articles.readOrThrow(articleParam.join('/'));
 
   const [articleContent, author] = await Promise.all([
     article.content(),
