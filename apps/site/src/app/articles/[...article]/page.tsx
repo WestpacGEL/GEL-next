@@ -8,10 +8,9 @@ export function generateMetadata({ params }: { params: { article: string } }) {
   return { title: formatComponentSlug(article[article.length - 1]) };
 }
 
-export default async function ArticleServerPage({ params }: { params: { article: string[] } }) {
+export default async function ArticleServerPage({ params }: { params: { article: string } }) {
   const { article: articleParam } = params;
-  console.log(`articleParam.join('/')`, articleParam.join('/'));
-  const article = await reader.collections.articles.readOrThrow(articleParam.join('/'));
+  const article = await reader.collections.articles.readOrThrow(articleParam);
 
   const [articleContent, author] = await Promise.all([
     article.content(),
