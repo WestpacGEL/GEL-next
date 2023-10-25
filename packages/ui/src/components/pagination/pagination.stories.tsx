@@ -165,7 +165,7 @@ export const UsePaginationDifferentComponents = () => {
   });
 
   return (
-    <div className="flex items-center">
+    <div className="flex w-[15.625rem] items-center justify-between">
       <Button look="link" iconAfter={ArrowLeftIcon} onClick={previous} />
       <h4>{selectedPage.text}</h4>
       <Button look="link" iconAfter={ArrowRightIcon} onClick={next} />

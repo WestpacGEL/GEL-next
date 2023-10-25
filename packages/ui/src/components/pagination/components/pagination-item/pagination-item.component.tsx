@@ -6,6 +6,7 @@ import { type PaginationItemProps } from './pagination-item.types.js';
 export function PaginationItem({
   className,
   firstItem = false,
+  lastItem = false,
   tag: Tag = 'a',
   children,
   active,
@@ -14,7 +15,7 @@ export function PaginationItem({
 }: PaginationItemProps) {
   return (
     <Tag
-      className={styles({ className, firstItem, active, disabled })}
+      className={styles({ className, firstItem, lastItem, active, disabled })}
       {...props}
       disabled={disabled}
       aria-current={active ? 'page' : undefined}

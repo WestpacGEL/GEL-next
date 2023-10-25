@@ -47,6 +47,7 @@ export function AccordionItem<T = any>({
           <AnimatePresence initial={false}>
             {isOpen && (
               <m.div
+                className="overflow-hidden"
                 initial={{
                   height: 0,
                 }}
