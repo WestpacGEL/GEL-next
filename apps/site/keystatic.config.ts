@@ -18,7 +18,7 @@ export default config({
   singletons: {
     url: singleton({
       label: 'URLs',
-      path: 'content/urls/',
+      path: 'src/content/urls/',
       schema: {
         guidelines: fields.url({
           label: 'Master Brand Guidelines',
@@ -30,7 +30,7 @@ export default config({
     }),
     westpacUIInfo: singleton({
       label: 'Westpac UI Info',
-      path: 'content/westpac-ui-info/',
+      path: 'src/content/westpac-ui-info/',
       schema: {
         changelog: fields.url({
           label: 'Changelog link',
@@ -44,7 +44,7 @@ export default config({
   collections: {
     designSystem: collection({
       label: 'Design System',
-      path: 'content/design-system/**/',
+      path: 'src/content/design-system/**/',
       slugField: 'name',
       schema: {
         name: fields.slug({
@@ -130,7 +130,7 @@ export default config({
     }),
     authors: collection({
       label: 'Authors',
-      path: 'content/authors/*',
+      path: 'src/content/authors/*',
       slugField: 'name',
       schema: {
         name: fields.slug({
@@ -147,7 +147,7 @@ export default config({
     }),
     articles: collection({
       label: 'Articles',
-      path: 'content/articles/*',
+      path: 'src/content/articles/*',
       slugField: 'name',
       schema: {
         name: fields.slug({
