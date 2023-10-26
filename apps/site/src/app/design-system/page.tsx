@@ -17,7 +17,7 @@ import {
   TwitterLogo,
 } from '@/components/logos';
 
-import { Hero, Section, SectionHeading, SectionItem } from './components';
+import { Hero, Section, SectionHeading, SectionItem } from './my-components';
 
 export default function DesignSystemHomePage() {
   return (
