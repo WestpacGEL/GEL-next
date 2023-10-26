@@ -1,0 +1,21 @@
+name: Alert
+description: >-
+  Alerts use a cross-brand palette of reserved, contextual colours providing a
+  flexible, consistent message system for common user interactions.
+pageOfContent:
+  - title: Alert Boxes
+  - title: Alert text
+design:
+  - title: Alert boxes
+  - title: Alert text
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API
+relatedInformation:
+  - components/button-group
+  - components/colors

@@ -1,0 +1,38 @@
+## Input sizes
+
+```tsx
+() => {
+  const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
+  return (
+    <div className="flex items-end gap-4">
+      {SIZES.map(size => (
+        <div key={size}>
+          <h3 className="typography-body-8">{size}</h3>
+          <Input size={size} />
+        </div>
+      ))}
+    </div>
+  )
+}
+```
+
+---
+
+## Different status
+
+```jsx
+<div className="flex items-end gap-4">
+  <div>
+    <h3 className="typography-body-8">Disabled</h3>
+    <Input disabled />
+  </div>
+  <div>
+    <h3 className="typography-body-8">Read only</h3>
+    <Input readOnly />
+  </div>
+  <div>
+    <h3 className="typography-body-8">Invalid</h3>
+    <Input invalid />
+  </div>
+</div>
+```
