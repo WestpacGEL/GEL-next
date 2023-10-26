@@ -1,7 +1,7 @@
 import { reader } from '@/app/reader';
 import { formatNavItems } from '@/utils/format';
 
-import { Sidebar, SidebarContextProvider } from './components';
+import { Sidebar, SidebarContextProvider } from './my-components';
 
 export default async function DesignSystemLayout({ children }: { children: React.ReactNode }) {
   const items = await reader.collections.designSystem.list();

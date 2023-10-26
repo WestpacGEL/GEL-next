@@ -4,29 +4,10 @@ export function formatComponentSlug(component: string) {
 }
 
 export function formatNavItems(navList: string[]) {
-  const navItems: any[] = [];
-  navList.forEach(path => {
-    const params = path.split('/');
-    let curr = navItems;
-    params.forEach((param, i) => {
-      if (i === params.length - 1) {
-        curr.push({ label: param, path });
-      } else {
-        let exists = false;
-        curr.forEach(item => {
-          if (item.label === param) {
-            exists = true;
-            curr = item.children;
-          }
-        });
-
-        if (!exists) {
-          const newNode = { label: param, children: [] };
-          curr.push(newNode);
-          curr = newNode.children;
-        }
-      }
-    });
+  return navList.map(component => {
+    return {
+      label: component,
+      path: `components/${component}`,
+    };
   });
-  return navItems;
 }
