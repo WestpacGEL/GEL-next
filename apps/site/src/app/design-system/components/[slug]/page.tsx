@@ -15,10 +15,19 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 
 export default async function ComponentPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
-  const [content, westpacInfo] = await Promise.all([
-    reader.collections.designSystem.readOrThrow(slug),
+  // const [content, westpacInfo] = await Promise.all([
+  const [allComponents, westpacInfo] = await Promise.all([
+    // TODO: Try to make it work this way afterwards
+    // reader.collections.designSystem.readOrThrow(slug),
+    reader.collections.designSystem.all(),
     reader.singletons.westpacUIInfo.readOrThrow(),
   ]);
+  // TODO: Temporary solution since the reader api is not working on deploy version
+  const content = allComponents.find(component => component.slug === slug)?.entry;
+  if (!content) {
+    throw new Error(`Component: ${slug} not found`);
+  }
+
   const componentName = slug
     .split('-')
     .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
