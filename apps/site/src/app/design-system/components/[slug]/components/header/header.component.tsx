@@ -4,10 +4,9 @@ import { HamburgerMenuIcon } from '@westpac/ui/icon';
 import { useParams, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
+import { useSidebar } from '@/app/design-system/my-components';
 import { BrandKey } from '@/app/types/brand.types';
 import { formatComponentSlug } from '@/utils/format';
-
-import { useSidebar } from '../../../components/sidebar/sidebar.context';
 
 import { styles as headerStyles } from './header.styles';
 
@@ -18,7 +17,7 @@ export function Header({ className }: { className?: string }) {
   const searchParams = useSearchParams();
   const brand = searchParams.get('brand')?.toLowerCase();
   const params = useParams();
-  const component = formatComponentSlug(params?.component.at(-1) ?? '');
+  const component = formatComponentSlug(params?.slug.toString() || '');
   const styles = headerStyles({ brand: brand as BrandKey, fixed, className });
   const { setOpen } = useSidebar();
 

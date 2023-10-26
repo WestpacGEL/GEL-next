@@ -3,14 +3,14 @@ import { formatComponentSlug } from '@/utils/format';
 
 import { ArticlePage } from './components/article-page/article-page.component';
 
-export function generateMetadata({ params }: { params: { article: string } }) {
-  const { article } = params;
-  return { title: formatComponentSlug(article[article.length - 1]) };
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+  return { title: formatComponentSlug(slug) };
 }
 
-export default async function ArticleServerPage({ params }: { params: { article: string } }) {
-  const { article: articleParam } = params;
-  const article = await reader.collections.articles.readOrThrow(articleParam);
+export default async function ArticleServerPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+  const article = await reader.collections.articles.readOrThrow(slug);
 
   const [articleContent, author] = await Promise.all([
     article.content(),

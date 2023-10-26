@@ -8,18 +8,18 @@ import { ContentTabs } from './components';
 import { AccessibilitySectionProps } from './components/content-tabs/components/accessibility-content/accessibility-content.types';
 import { DesignSectionProps } from './components/content-tabs/components/design-content/design-content.types';
 
-export function generateMetadata({ params }: { params: { component: string } }) {
-  const { component } = params;
-  return { title: formatComponentSlug(component[component.length - 1]) };
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+  return { title: formatComponentSlug(slug) };
 }
 
-export default async function ComponentPage({ params }: { params: { component: string[] } }) {
-  const { component } = params;
+export default async function ComponentPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const [content, westpacInfo] = await Promise.all([
-    reader.collections.designSystem.readOrThrow(component.join('/')),
+    reader.collections.designSystem.readOrThrow(slug),
     reader.singletons.westpacUIInfo.readOrThrow(),
   ]);
-  const componentName = component[1]
+  const componentName = slug
     .split('-')
     .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
     .join('');

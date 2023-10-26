@@ -188,7 +188,7 @@ pnpm changeset
    ```
 3. Start storybook with:
    ```
-   pnpm storybook
+   pnpm build && pnpm storybook
    ```
 4. Run the unit tests in watch mode with:
    ```
