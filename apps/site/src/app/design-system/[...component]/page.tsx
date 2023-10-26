@@ -2,15 +2,17 @@ import { type ComponentProps } from '@westpac/ui';
 import json from '@westpac/ui/component-type.json';
 
 import { reader } from '@/app/reader';
-import { formatComponentSlug } from '@/utils/format';
 
 import { ContentTabs } from './components';
 import { AccessibilitySectionProps } from './components/content-tabs/components/accessibility-content/accessibility-content.types';
 import { DesignSectionProps } from './components/content-tabs/components/design-content/design-content.types';
 
-export function generateMetadata({ params }: { params: { component: string } }) {
-  const { component } = params;
-  return { title: formatComponentSlug(component[component.length - 1]) };
+export async function generateStaticParams() {
+  const components = await reader.collections.designSystem.all();
+
+  return components.map(component => ({
+    component: [component.slug],
+  }));
 }
 
 export default async function ComponentPage({ params }: { params: { component: string[] } }) {

@@ -1,11 +1,13 @@
 import { reader } from '@/app/reader';
-import { formatComponentSlug } from '@/utils/format';
 
 import { ArticlePage } from './components/article-page/article-page.component';
 
-export function generateMetadata({ params }: { params: { article: string } }) {
-  const { article } = params;
-  return { title: formatComponentSlug(article[article.length - 1]) };
+export async function generateStaticParams() {
+  const articles = await reader.collections.articles.all();
+
+  return articles.map(article => ({
+    article: [article.slug],
+  }));
 }
 
 export default async function ArticleServerPage({ params }: { params: { article: string } }) {
