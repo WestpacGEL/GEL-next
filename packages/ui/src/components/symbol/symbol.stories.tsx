@@ -2,6 +2,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { Symbol } from './symbol.component.js';
+import { type Align } from './symbol.types.js';
 
 import { SymbolProps, WBCLogo, WBCMultibrandSmallLogo } from './index.js';
 import * as symbols from './index.js';
@@ -62,14 +63,69 @@ export const AllLogos = () => {
     {} as { [index: string]: React.FC<SymbolProps> },
   );
 
+  const logos = Object.entries(allLogos).reduce(
+    (curr, [key, symbol]) => (!key.includes('Multibrand') ? { ...curr, [key]: symbol } : curr),
+    {} as { [index: string]: React.FC<SymbolProps> },
+  );
+
+  const multibrandLargeLogos = Object.entries(allLogos).reduce(
+    (curr, [key, symbol]) => (key.includes('MultibrandLarge') ? { ...curr, [key]: symbol } : curr),
+    {} as { [index: string]: React.FC<SymbolProps> },
+  );
+
+  const multibrandSmallLogos = Object.entries(allLogos).reduce(
+    (curr, [key, symbol]) => (key.includes('MultibrandSmall') ? { ...curr, [key]: symbol } : curr),
+    {} as { [index: string]: React.FC<SymbolProps> },
+  );
+
+  const align: Align[] = ['left', 'center', 'right'];
+
   return (
-    <div className="grid grid-cols-4 gap-5">
-      {Object.entries(allLogos).map(([key, Logo]) => (
-        <div key={key} className=" flex flex-col items-center justify-end">
-          <Logo />
-          <p className="mt-2">{key}</p>
-        </div>
-      ))}
-    </div>
+    <>
+      <h3 className="typography-body-7 mb-4 font-bold">Logos</h3>
+      <div className="grid grid-cols-4 gap-5">
+        {Object.entries(logos).map(([key, Logo]) => (
+          <div key={key} className=" flex flex-col items-center justify-end">
+            <Logo />
+            <p className="mt-2">{`<${key} />`}</p>
+          </div>
+        ))}
+      </div>
+      <h3 className="typography-body-7 mb-2 mt-6 font-bold">Multi-brand logos</h3>
+      <h4 className="typography-body-8 mb-4 font-bold">Large</h4>
+      <div className="grid grid-cols-4 gap-5">
+        {Object.entries(multibrandLargeLogos).map(([key, Logo]) => (
+          <>
+            <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
+              <Logo className="border border-dashed border-border" />
+              <p className="mt-2">{`<${key} />`}</p>
+            </div>
+            {align.map(align => (
+              <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
+                <Logo align={align} className="border border-dashed border-border" />
+                <p className="mt-2">{`<${key} align=${align} />`}</p>
+              </div>
+            ))}
+          </>
+        ))}
+      </div>
+      <h4 className="typography-body-8 my-4 font-bold">Small</h4>
+      <div className="grid grid-cols-4 gap-5">
+        {Object.entries(multibrandSmallLogos).map(([key, Logo]) => (
+          <>
+            <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
+              <Logo className="border border-dashed border-border" />
+              <p className="mt-2">{`<${key} />`}</p>
+            </div>
+            {align.map(align => (
+              <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
+                <Logo align={align} className="border border-dashed border-border" />
+                <p className="mt-2">{`<${key} align=${align} />`}</p>
+              </div>
+            ))}
+          </>
+        ))}
+      </div>
+    </>
   );
 };
