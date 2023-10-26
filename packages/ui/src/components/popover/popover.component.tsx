@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useId } from 'react';
+import React, { useCallback, useEffect, useId, useRef } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '../button/index.js';
@@ -24,6 +24,7 @@ export function Popover({
   const state = useOverlayTriggerState({ defaultOpen: open });
   const panelId = useId();
   const styles = popoverStyles({});
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleClick = useCallback(() => {
     onClick();
@@ -52,6 +53,7 @@ export function Popover({
         aria-expanded={state.isOpen}
         aria-controls={panelId}
         onClick={handleClick}
+        ref={ref}
       >
         {children}
       </Button>
@@ -63,6 +65,7 @@ export function Popover({
           content={content}
           state={state}
           id={panelId}
+          triggerRef={ref}
         />
       )}
     </div>

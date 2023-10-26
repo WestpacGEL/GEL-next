@@ -15,12 +15,20 @@ export const styles = tv(
     variants: {
       placement: {
         top: {
-          popover: 'bottom-full left-1/2 mb-[0.9375rem] -translate-x-1/2',
-          arrow: 'left-1/2 top-full -translate-x-1/2 after:top-[-12px] after:translate-x-[-7px]',
+          popover: 'bottom-full mb-[0.9375rem]',
+          arrow: 'top-full after:top-[-12px] after:translate-x-[-6.5px]',
         },
         bottom: {
-          popover: 'left-1/2 top-full mt-[0.9375rem] -translate-x-1/2',
-          arrow: 'bottom-full left-1/2 -translate-x-1/2 rotate-180 after:bottom-[1px] after:translate-x-[-7px]',
+          popover: 'top-full mt-[0.9375rem]',
+          arrow: 'bottom-full rotate-180 after:bottom-[1px] after:translate-x-[-6.5px]',
+        },
+      },
+      offset: {
+        left: {
+          popover: '-translate-x-1/2',
+        },
+        right: {
+          popover: '',
         },
       },
     },

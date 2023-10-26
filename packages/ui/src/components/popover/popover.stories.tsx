@@ -13,7 +13,7 @@ const meta: Meta<typeof Popover> = {
   tags: ['autodocs'],
   decorators: [
     (Story: StoryFn) => (
-      <div className="p-29">
+      <div>
         <Story />
       </div>
     ),
@@ -71,11 +71,17 @@ export const NoHeading: Story = {
  */
 export const PopoverPlacement = () => (
   <div>
-    <Popover className="mr-3" heading="Heading" placement="top" content={popoverContent} open>
-      Top Popover
+    <Popover heading="Heading" content={popoverContent} open>
+      test
     </Popover>
     <Popover placement="bottom" heading="Heading" content={popoverContent} open>
       Bottom Popover
+    </Popover>
+    <Popover placement="bottom" heading="Heading" content={popoverContent} open>
+      test
+    </Popover>
+    <Popover placement="bottom" heading="Heading" content={popoverContent} open>
+      test
     </Popover>
   </div>
 );
