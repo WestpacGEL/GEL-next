@@ -7,6 +7,7 @@ const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
     ? { kind: 'local' }
     : {
         kind: 'github',
+        pathPrefix: 'apps/site',
         repo: {
           owner: process.env.NEXT_PUBLIC_GIT_REPO_OWNER!,
           name: process.env.NEXT_PUBLIC_GIT_REPO_SLUG!,
