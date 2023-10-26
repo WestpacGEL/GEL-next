@@ -1,7 +1,9 @@
-import path from 'path';
 import fs from 'fs';
+import path from 'path';
+
 import { glob } from 'glob';
 import prettier from 'prettier';
+
 import { iconTemplate } from './icon-template.js';
 
 const prettierConfig = prettier.resolveConfig.sync(path.join(process.cwd(), '../../.prettierrc'));
@@ -28,7 +30,7 @@ const formatIconName = (icon: string) => {
  * @param {boolean} addFragment - extra condition to add fragment, used to filer cases where filled and outlined use the same svg
  * @returns {string} - formatted svg path for use as react child
  */
-const formatSVG = (svg: Buffer, pathCount: number, addFragment: Boolean) => {
+const formatSVG = (svg: Buffer, pathCount: number, addFragment: boolean) => {
   const iconPaths = svg
     .toString()
     .replace(/<\/?svg[^>]*>/g, '')
@@ -99,6 +101,7 @@ const main = async () => {
   }
 
   iconNames.sort();
+  iconNames.push(`\nexport { Icon } from './icon.component.js';`);
   iconNames.push(`\nexport { type IconProps } from './icon.types.js';\n`);
   await fs.promises.writeFile(path.join(process.cwd(), 'src/components/icon/index.ts'), iconNames.join('\n'));
 
