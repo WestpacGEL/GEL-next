@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.7.1
+
+### Patch Changes
+
+- d159d41: miscellaneous visual fixes based on ux feedback
+
 ## 0.7.0
 
 ### Minor Changes
