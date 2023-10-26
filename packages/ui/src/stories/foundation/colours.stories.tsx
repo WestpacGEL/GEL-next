@@ -267,7 +267,6 @@ export const BrandColors: Story = {
       'background',
       'border',
       'borderDark',
-      'focus',
       'heading',
       'hero',
       'light',
