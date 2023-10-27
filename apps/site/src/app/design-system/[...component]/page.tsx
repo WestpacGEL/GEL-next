@@ -9,9 +9,8 @@ import { DesignSectionProps } from './components/content-tabs/components/design-
 
 export async function generateStaticParams() {
   const components = await reader.collections.designSystem.all();
-
   return components.map(component => ({
-    component: [component.slug],
+    component: component.slug.split('/'),
   }));
 }
 
@@ -88,7 +87,6 @@ export default async function ComponentPage({ params }: { params: { component: s
         accessibilityDemo,
         code,
         description: content.description,
-        pageOfContent: content.pageOfContent.concat(),
         designSections,
         relatedComponents: content.relatedInformation.filter(value => !!value) as string[],
         componentProps,

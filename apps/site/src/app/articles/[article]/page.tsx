@@ -6,7 +6,7 @@ export async function generateStaticParams() {
   const articles = await reader.collections.articles.all();
 
   return articles.map(article => ({
-    article: [article.slug],
+    article: article.slug,
   }));
 }
 
