@@ -91,3 +91,39 @@ export const BodyFont = () => {
     </Table>
   );
 };
+
+/**
+ * Fonts weight
+ */
+export const FontWeight = () => {
+  const fontWeight = [
+    { className: 'typography-brand-8 font-light', weight: '300' },
+    { className: 'typography-brand-8 font-normal', weight: '400' },
+    { className: 'typography-brand-8 font-medium', weight: '500' },
+    { className: 'typography-brand-8 font-semibold', weight: '600' },
+    { className: 'typography-brand-8 font-bold', weight: '700' },
+  ];
+  return (
+    <Table>
+      <Table.Caption>Font Weight</Table.Caption>
+      <Table.Header>
+        <Table.HeaderRow>
+          <Table.HeaderCell>Token</Table.HeaderCell>
+          <Table.HeaderCell>Value</Table.HeaderCell>
+          <Table.HeaderCell>Tailwind class</Table.HeaderCell>
+        </Table.HeaderRow>
+      </Table.Header>
+      <Table.Body>
+        {fontWeight.map(i => (
+          <Table.Row key={i.className}>
+            <Table.Cell>
+              <span className={i.className}>{i.className.replace('typography-brand-8 font-', '')}</span>
+            </Table.Cell>
+            <Table.Cell className={i.className}>{i.weight}</Table.Cell>
+            <Table.Cell>{i.className.replace('typography-brand-8 ', '')}</Table.Cell>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+  );
+};
