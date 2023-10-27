@@ -1,4 +1,5 @@
 import { type Meta, StoryFn } from '@storybook/react';
+import { clsx } from 'clsx';
 
 import { Table } from '../../components/index.js';
 
@@ -40,7 +41,7 @@ export const BrandFont = () => {
         {typographyBrandScale.map(i => (
           <Table.Row key={i.className}>
             <Table.Cell>
-              <span className={i.className}>{i.className.replace('typography-', '')}</span>
+              <span className={clsx(i.className, 'capitalize')}>{i.className.replace('typography-', '')}</span>
             </Table.Cell>
             <Table.Cell>{i.size}</Table.Cell>
             <Table.Cell>{i.className}</Table.Cell>
@@ -81,7 +82,7 @@ export const BodyFont = () => {
         {typographyBrandScale.map(i => (
           <Table.Row key={i.className}>
             <Table.Cell>
-              <span className={i.className}>{i.className.replace('typography-', '')}</span>
+              <span className={clsx(i.className, 'capitalize')}>{i.className.replace('typography-', '')}</span>
             </Table.Cell>
             <Table.Cell>{i.size}</Table.Cell>
             <Table.Cell>{i.className}</Table.Cell>
@@ -97,11 +98,11 @@ export const BodyFont = () => {
  */
 export const FontWeight = () => {
   const fontWeight = [
-    { className: 'typography-brand-8 font-light', weight: '300' },
-    { className: 'typography-brand-8 font-normal', weight: '400' },
-    { className: 'typography-brand-8 font-medium', weight: '500' },
-    { className: 'typography-brand-8 font-semibold', weight: '600' },
-    { className: 'typography-brand-8 font-bold', weight: '700' },
+    { className: 'typography-brand-7 font-light', weight: '300' },
+    { className: 'typography-brand-7 font-normal', weight: '400' },
+    { className: 'typography-brand-7 font-medium', weight: '500' },
+    { className: 'typography-brand-7 font-semibold', weight: '600' },
+    { className: 'typography-brand-7 font-bold', weight: '700' },
   ];
   return (
     <Table>
@@ -117,10 +118,12 @@ export const FontWeight = () => {
         {fontWeight.map(i => (
           <Table.Row key={i.className}>
             <Table.Cell>
-              <span className={i.className}>{i.className.replace('typography-brand-8 font-', '')}</span>
+              <span className={clsx(i.className, 'capitalize')}>
+                {i.className.replace('typography-brand-7 font-', '')}
+              </span>
             </Table.Cell>
             <Table.Cell className={i.className}>{i.weight}</Table.Cell>
-            <Table.Cell>{i.className.replace('typography-brand-8 ', '')}</Table.Cell>
+            <Table.Cell>{i.className.replace('typography-brand-7 ', '')}</Table.Cell>
           </Table.Row>
         ))}
       </Table.Body>
