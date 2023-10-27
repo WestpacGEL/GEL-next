@@ -11,13 +11,11 @@ const meta: Meta<typeof Repeater> = {
   decorators: [(Story: StoryFn) => <Story />],
   args: {
     children: (
-      <Form>
-        <Form.Group>
-          <Form.Label htmlFor={`test`}>Primary</Form.Label>
-          <Form.Hint>Primary title text</Form.Hint>
-          <Input name="test" onChange={e => console.log(e)} />
-        </Form.Group>
-      </Form>
+      <Form.Group>
+        <Form.Label htmlFor={`test`}>Primary</Form.Label>
+        <Form.Hint>Primary title text</Form.Hint>
+        <Input className="w-full" name="test" onChange={e => console.log(e)} />
+      </Form.Group>
     ),
   },
 };
