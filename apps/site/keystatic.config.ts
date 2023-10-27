@@ -62,16 +62,6 @@ export default config({
           label: 'Description',
           multiline: true,
         }),
-        pageOfContent: fields.array(
-          fields.object({
-            title: fields.text({ label: 'Name' }),
-          }),
-          {
-            label: 'Page of Content',
-            itemLabel: props => props.fields.title.value,
-            slugField: 'title',
-          },
-        ),
         design: fields.array(
           fields.object({
             title: fields.text({ label: 'Name' }),
