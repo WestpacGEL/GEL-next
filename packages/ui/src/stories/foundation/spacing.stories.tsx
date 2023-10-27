@@ -45,6 +45,7 @@ const SPACING_SCALE = [
   { className: 'pr-30' },
 ];
 const VARIATION_MARGIN_PADDING = ['', 'x', 'y', 't', 'r', 'b', 'l'];
+const SPACING_DEFAULT_CLASSES = 'h-3 w-0 bg-primary';
 
 /**
  * Margin scale
@@ -71,7 +72,7 @@ export const MarginScale = () => {
           return (
             <Table.Row key={spacing.className}>
               <Table.Cell className="align-middle">
-                <div className={clsx(spacing.className, 'h-3 w-0 bg-primary')} />
+                <div className={clsx(spacing.className, SPACING_DEFAULT_CLASSES)} />
               </Table.Cell>
               <Table.Cell className="align-middle">{pixelSize}px</Table.Cell>
               <Table.Cell className="align-middle">{remSize}rem</Table.Cell>
@@ -115,7 +116,7 @@ export const PaddingScale = () => {
           return (
             <Table.Row key={spacing.className}>
               <Table.Cell className="align-middle">
-                <div className={clsx(spacing.className, 'h-3 w-0 bg-primary')} />
+                <div className={clsx(spacing.className, SPACING_DEFAULT_CLASSES)} />
               </Table.Cell>
               <Table.Cell className="align-middle">{pixelSize}px</Table.Cell>
               <Table.Cell className="align-middle">{remSize}rem</Table.Cell>
@@ -159,7 +160,7 @@ export const GapScale = () => {
           return (
             <Table.Row key={spacing.className}>
               <Table.Cell className="align-middle">
-                <div className={clsx(spacing.className, 'h-3 w-0 bg-primary')} />
+                <div className={clsx(spacing.className, SPACING_DEFAULT_CLASSES)} />
               </Table.Cell>
               <Table.Cell className="align-middle">{pixelSize}px</Table.Cell>
               <Table.Cell className="align-middle">{remSize}rem</Table.Cell>
