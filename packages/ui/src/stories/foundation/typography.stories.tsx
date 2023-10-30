@@ -96,6 +96,11 @@ export const BodyFont = () => {
  * Line height
  */
 export const LineHeight = () => {
+  const lineHeights = [
+    { className: 'leading-normal', lineHeight: '1.4' },
+    { className: 'leading-tight', lineHeight: '1.2' },
+    { className: 'leading-loose', lineHeight: '1.428571429' },
+  ];
   return (
     <div>
       <p className="mb-2">
@@ -108,29 +113,35 @@ export const LineHeight = () => {
           here
         </Link>
         . A typography type has been added and the leading style in tailwind (with 14px font) has been extended to
-        include this value for use to match the older version of GEL.
+        include this value for use to match the older version of GEL. The default tailwind values for normal and tight
+        have also been updated and included in the table.
       </p>
       <Table>
         <Table.Caption>GEL 'loose' line-height</Table.Caption>
         <Table.Header>
           <Table.HeaderRow>
-            <Table.HeaderCell>Tailwind Class</Table.HeaderCell>
-            <Table.HeaderCell>CSS Value</Table.HeaderCell>
+            <Table.HeaderCell>Token</Table.HeaderCell>
+            <Table.HeaderCell>Value</Table.HeaderCell>
+            <Table.HeaderCell>Tailwind class</Table.HeaderCell>
           </Table.HeaderRow>
         </Table.Header>
         <Table.Body>
           <Table.Row key="typography-11">
             <Table.Cell>
-              <span className="typography-body-11">typography-body-11</span>
+              <span className="typography-body-11">body-11</span>
             </Table.Cell>
-            <Table.Cell>fontSize: 0.875rem; lineHeight: 1.428571429</Table.Cell>
+            <Table.Cell>fontSize: 0.875rem (14px); lineHeight: 1.428571429</Table.Cell>
+            <Table.Cell>typography-body-11</Table.Cell>
           </Table.Row>
-          <Table.Row key="leading-loose">
-            <Table.Cell>
-              <span className="leading-loose">leading-loose</span>
-            </Table.Cell>
-            <Table.Cell>lineHeight: 1.428571429</Table.Cell>
-          </Table.Row>
+          {lineHeights.map(i => (
+            <Table.Row key={i.className}>
+              <Table.Cell>
+                <span className={i.className}>{i.className.replace('leading-', '')}</span>
+              </Table.Cell>
+              <Table.Cell>lineHeight: {i.lineHeight}</Table.Cell>
+              <Table.Cell>{i.className}</Table.Cell>
+            </Table.Row>
+          ))}
         </Table.Body>
       </Table>
     </div>
