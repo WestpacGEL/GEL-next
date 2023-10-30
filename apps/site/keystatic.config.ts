@@ -2,26 +2,24 @@ import { GitHubConfig, LocalConfig, collection, config, fields, singleton } from
 
 import { ComponentBlocks } from '@/components/component-blocks/component-blocks';
 
-// TODO: re-enable once properly configured with keystatic github app
-// const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
-//   process.env.NODE_ENV === 'development'
-//     ? { kind: 'local' }
-//     : {
-//         kind: 'github',
-//         repo: {
-//           owner: process.env.NEXT_PUBLIC_GIT_REPO_OWNER!,
-//           name: process.env.NEXT_PUBLIC_GIT_REPO_SLUG!,
-//         },
-//       };
+const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
+  process.env.NODE_ENV === 'development'
+    ? { kind: 'local' }
+    : {
+        kind: 'github',
+        pathPrefix: 'apps/site',
+        repo: {
+          owner: process.env.NEXT_PUBLIC_GIT_REPO_OWNER!,
+          name: process.env.NEXT_PUBLIC_GIT_REPO_SLUG!,
+        },
+      };
 
 export default config({
-  storage: {
-    kind: 'local',
-  },
+  storage,
   singletons: {
     url: singleton({
       label: 'URLs',
-      path: 'content/urls/',
+      path: 'src/content/urls/',
       schema: {
         guidelines: fields.url({
           label: 'Master Brand Guidelines',
@@ -33,7 +31,7 @@ export default config({
     }),
     westpacUIInfo: singleton({
       label: 'Westpac UI Info',
-      path: 'content/westpac-ui-info/',
+      path: 'src/content/westpac-ui-info/',
       schema: {
         changelog: fields.url({
           label: 'Changelog link',
@@ -47,7 +45,7 @@ export default config({
   collections: {
     designSystem: collection({
       label: 'Design System',
-      path: 'content/design-system/**/',
+      path: 'src/content/design-system/**/',
       slugField: 'name',
       schema: {
         name: fields.slug({
@@ -64,16 +62,6 @@ export default config({
           label: 'Description',
           multiline: true,
         }),
-        pageOfContent: fields.array(
-          fields.object({
-            title: fields.text({ label: 'Name' }),
-          }),
-          {
-            label: 'Page of Content',
-            itemLabel: props => props.fields.title.value,
-            slugField: 'title',
-          },
-        ),
         design: fields.array(
           fields.object({
             title: fields.text({ label: 'Name' }),
@@ -133,7 +121,7 @@ export default config({
     }),
     authors: collection({
       label: 'Authors',
-      path: 'content/authors/*',
+      path: 'src/content/authors/*',
       slugField: 'name',
       schema: {
         name: fields.slug({
@@ -150,7 +138,7 @@ export default config({
     }),
     articles: collection({
       label: 'Articles',
-      path: 'content/articles/*',
+      path: 'src/content/articles/*',
       slugField: 'name',
       schema: {
         name: fields.slug({

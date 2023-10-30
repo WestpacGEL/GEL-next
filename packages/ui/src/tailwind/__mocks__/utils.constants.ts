@@ -40,6 +40,7 @@ export const EXPECTED_SPACING = {
 export const EXPECTED_FONT_SIZES_VARS = {
   'body-1': '3.75rem',
   'body-10': '0.875rem',
+  'body-11': '0.875rem',
   'body-2': '3.375rem',
   'body-3': '3rem',
   'body-4': '2.625rem',
@@ -50,6 +51,7 @@ export const EXPECTED_FONT_SIZES_VARS = {
   'body-9': '1rem',
   'brand-1': '3.75rem',
   'brand-10': '0.875rem',
+  'brand-11': '0.875rem',
   'brand-2': '3.375rem',
   'brand-3': '3rem',
   'brand-4': '2.625rem',

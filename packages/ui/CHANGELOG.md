@@ -1,5 +1,17 @@
 # @westpac/ui
 
+## 0.8.0
+
+### Minor Changes
+
+- 842f28d: misc style fixes and removed stories from node package
+
+## 0.7.1
+
+### Patch Changes
+
+- d159d41: miscellaneous visual fixes based on ux feedback
+
 ## 0.7.0
 
 ### Minor Changes

@@ -13,6 +13,7 @@ export { BSAMultibrandSmallLogo } from './components/logos/bsa-multibrand-small-
 export { BSAStackedLogo } from './components/logos/bsa-stacked-logo.js';
 export { FacebookSymbol } from './components/symbols/facebook-symbol.js';
 export { GooglePlusSymbol } from './components/symbols/google-plus-symbol.js';
+export { GoogleStoreSymbol } from './components/symbols/google-store-symbol.js';
 export { InstagramSymbol } from './components/symbols/instagram-symbol.js';
 export { LinkedInSymbol } from './components/symbols/linked-in-symbol.js';
 export { MastercardAcceptedSymbol } from './components/symbols/mastercard-accepted-symbol.js';

@@ -4,8 +4,6 @@ import { themes } from 'prism-react-renderer';
 import { KeyboardEvent, useCallback, useContext, useId, useRef, useState } from 'react';
 import { LiveContext, LiveEditor, LivePreview } from 'react-live';
 
-import { BracketIcon } from '../../../icons/bracket-icon';
-
 import { styles as liveCodeStyles } from './live-code.styles';
 import { LiveCodeProps } from './live-code.types';
 

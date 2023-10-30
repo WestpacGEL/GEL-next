@@ -2,7 +2,6 @@
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Container, Grid } from '@westpac/ui';
-import Image from 'next/image';
 
 import { DOCUMENT_RENDERERS } from '..';
 

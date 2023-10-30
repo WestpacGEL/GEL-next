@@ -8,7 +8,7 @@ export const styles = tv(
       textWrapper: 'flex flex-col justify-center',
       labelText: 'typography-body-10 py-[2px] pl-1',
       hintText: 'typography-body-10 pl-1 text-muted',
-      checkbox: 'flex shrink-0 items-center justify-center rounded border border-hero',
+      checkbox: 'flex shrink-0 items-center justify-center rounded-[0.1875rem] border border-hero',
     },
     variants: {
       isDisabled: {

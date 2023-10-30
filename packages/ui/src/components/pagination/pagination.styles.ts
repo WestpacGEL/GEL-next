@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       base: 'flex flex-col items-center',
-      ul: 'flex overflow-hidden rounded border border-border',
+      ul: 'flex overflow-hidden',
     },
     variants: {},
   },

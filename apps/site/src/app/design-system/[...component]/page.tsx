@@ -1,31 +1,29 @@
 import { type ComponentProps } from '@westpac/ui';
 import json from '@westpac/ui/component-type.json';
-import { useMemo } from 'react';
 
 import { reader } from '@/app/reader';
-import { formatComponentSlug } from '@/utils/format';
 
 import { ContentTabs } from './components';
 import { AccessibilitySectionProps } from './components/content-tabs/components/accessibility-content/accessibility-content.types';
 import { DesignSectionProps } from './components/content-tabs/components/design-content/design-content.types';
 
-export function generateMetadata({ params }: { params: { component: string } }) {
-  const { component } = params;
-  return { title: formatComponentSlug(component[component.length - 1]) };
+export async function generateStaticParams() {
+  const components = await reader.collections.designSystem.all();
+  return components.map(component => ({
+    component: component.slug.split('/'),
+  }));
 }
 
 export default async function ComponentPage({ params }: { params: { component: string[] } }) {
   const { component } = params;
   const [content, westpacInfo] = await Promise.all([
-    reader.collections.designSystem.read(component.join('/')),
+    reader.collections.designSystem.readOrThrow(component.join('/')),
     reader.singletons.westpacUIInfo.readOrThrow(),
   ]);
   const componentName = component[1]
     .split('-')
     .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
     .join('');
-
-  if (!content) return <div>Component not found!</div>;
 
   const [designSections, accessibilitySections, accessibilityDemo, code] = await Promise.all([
     Promise.all(
@@ -74,7 +72,7 @@ export default async function ComponentPage({ params }: { params: { component: s
     content?.code(),
   ]);
   const componentProps: ComponentProps | undefined = (json as any)[componentName];
-  const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, ComponentProps]) => {
+  const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, any]) => {
     if (key.indexOf(`${componentName}.`) !== 0) {
       return acc;
     }
@@ -89,7 +87,6 @@ export default async function ComponentPage({ params }: { params: { component: s
         accessibilityDemo,
         code,
         description: content.description,
-        pageOfContent: content.pageOfContent.concat(),
         designSections,
         relatedComponents: content.relatedInformation.filter(value => !!value) as string[],
         componentProps,
