@@ -14,9 +14,9 @@ const FormContext = createContext<FormContextValue | null>(null);
 
 export const useFormContext = () => useContext(FormContext) || {};
 
-export function Form({ children, size = 'medium', spacing = 'medium', inline = false, ...props }: FormProps) {
+export function Form({ children, spacing = 'medium', inline = false, ...props }: FormProps) {
   return (
-    <FormContext.Provider value={{ inline, size, spacing }}>
+    <FormContext.Provider value={{ inline, spacing }}>
       <form {...props}>{children}</form>
     </FormContext.Provider>
   );
