@@ -1,6 +1,6 @@
 import { type Meta, StoryFn } from '@storybook/react';
 
-import { Table } from '../../components/index.js';
+import { Link, Table } from '../../components/index.js';
 
 const meta: Meta = {
   title: 'Foundation/Typography',
@@ -89,5 +89,50 @@ export const BodyFont = () => {
         ))}
       </Table.Body>
     </Table>
+  );
+};
+
+/**
+ * Line height
+ */
+export const LineHeight = () => {
+  return (
+    <div>
+      <p className="mb-2">
+        The pre-Next version of GEL had a fall-back line height of 1.428571429 for things inside the body, the reasoning
+        for this can be found{' '}
+        <Link
+          href="https://stackoverflow.com/questions/19982651/why-does-bootstrap-set-the-line-height-property-to-1-428571429"
+          type="inline"
+        >
+          here
+        </Link>
+        . A typography type has been added and the leading style in tailwind (with 14px font) has been extended to
+        include this value for use to match the older version of GEL.
+      </p>
+      <Table>
+        <Table.Caption>GEL 'loose' line-height</Table.Caption>
+        <Table.Header>
+          <Table.HeaderRow>
+            <Table.HeaderCell>Tailwind Class</Table.HeaderCell>
+            <Table.HeaderCell>CSS Value</Table.HeaderCell>
+          </Table.HeaderRow>
+        </Table.Header>
+        <Table.Body>
+          <Table.Row key="typography-11">
+            <Table.Cell>
+              <span className="typography-body-11">typography-body-11</span>
+            </Table.Cell>
+            <Table.Cell>fontSize: 0.875rem; lineHeight: 1.428571429</Table.Cell>
+          </Table.Row>
+          <Table.Row key="leading-loose">
+            <Table.Cell>
+              <span className="leading-loose">leading-loose</span>
+            </Table.Cell>
+            <Table.Cell>lineHeight: 1.428571429</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+    </div>
   );
 };

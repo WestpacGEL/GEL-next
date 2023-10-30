@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply typography-body-10;
+@layer base {
+  body {
+    @apply typography-body-11;
+  }
 }
