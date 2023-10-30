@@ -44,7 +44,7 @@
     "!stories",
     "!vitest.setup.ts",
     "!vitest.config.ts",
-    "!**/*.{test,spec}.{ts,tsx,js,jsx}"
+    "!**/*.{test,spec,stories}.{ts,tsx,js,jsx}"
   ],
   "scripts": {
     "dev": "pnpm build:watch",
