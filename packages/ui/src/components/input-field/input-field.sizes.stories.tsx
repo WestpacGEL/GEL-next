@@ -42,8 +42,8 @@ export const InputFieldWithDifferentSizes: Story = {
               label="Icon"
               hint="I am a hint"
               supportingText="I am supporting text"
-              before={{ icon: VisibilityIcon, inset: true }}
-              after={{ icon: VisibilityIcon, inset: true }}
+              before={{ icon: () => <VisibilityIcon color="muted" />, inset: true }}
+              after={{ icon: () => <VisibilityIcon color="muted" />, inset: true }}
             >
               <Input />
             </InputField>
@@ -54,11 +54,11 @@ export const InputFieldWithDifferentSizes: Story = {
               hint="I am a hint"
               supportingText="I am supporting text"
               before={{
-                element: <Button size={size} look="link" iconAfter={VisibilityIcon} iconColor="pop" />,
+                element: <Button size={size} look="link" iconAfter={() => <VisibilityIcon color="muted" />} />,
                 inset: true,
               }}
               after={{
-                element: <Button size={size} look="link" iconAfter={VisibilityIcon} iconColor="pop" />,
+                element: <Button size={size} look="link" iconAfter={() => <VisibilityIcon color="muted" />} />,
                 inset: true,
               }}
             >

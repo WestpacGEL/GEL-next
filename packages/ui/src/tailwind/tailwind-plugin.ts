@@ -48,6 +48,8 @@ export const WestpacUIKitBasePlugin = plugin(
         lineHeight: {
           tight: '1.2',
           normal: '1.4',
+          // See https://stackoverflow.com/questions/19982651/why-does-bootstrap-set-the-line-height-property-to-1-428571429 for below line height reasoning
+          loose: '1.428571429',
         },
         borderWidth: {
           5: '0.3125rem',
@@ -124,6 +126,10 @@ export const WestpacUIKitBasePlugin = plugin(
         10: {
           fontSize: '0.875rem',
           lineHeight: 'normal',
+        },
+        11: {
+          fontSize: '0.875rem',
+          lineHeight: 'loose',
         },
       },
       formControl: {

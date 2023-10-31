@@ -13,7 +13,6 @@ export type ContentTabsProps = {
   componentProps?: ComponentProps;
   description?: string;
   designSections?: DesignSectionProps[];
-  pageOfContent?: { title: string }[];
   relatedComponents?: string[];
   subComponentProps: ComponentProps[];
   westpacUIInfo: WestpacUIInfo;

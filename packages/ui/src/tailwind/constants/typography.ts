@@ -53,4 +53,8 @@ export const FONT_SIZES = {
     fontSize: '0.875rem',
     lineHeight: 'normal',
   },
+  11: {
+    fontSize: '0.875rem',
+    lineHeight: 'loose',
+  },
 };
