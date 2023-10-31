@@ -40,7 +40,9 @@
   },
   "files": [
     "*",
+    "!.storybook",
     "!coverage",
+    "!scaffold",
     "!stories",
     "!vitest.setup.ts",
     "!vitest.config.ts",
