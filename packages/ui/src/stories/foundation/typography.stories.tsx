@@ -149,3 +149,39 @@ export const LineHeight = () => {
     </div>
   );
 };
+
+/**
+ * Fonts weight
+ */
+export const FontWeight = () => {
+  const fontWeight = [
+    { className: 'font-light', weight: '300' },
+    { className: 'font-normal', weight: '400' },
+    { className: 'font-medium', weight: '500' },
+    { className: 'font-semibold', weight: '600' },
+    { className: 'font-bold', weight: '700' },
+  ];
+  return (
+    <Table>
+      <Table.Caption>Font Weight</Table.Caption>
+      <Table.Header>
+        <Table.HeaderRow>
+          <Table.HeaderCell>Token</Table.HeaderCell>
+          <Table.HeaderCell>Font weight</Table.HeaderCell>
+          <Table.HeaderCell>Tailwind class</Table.HeaderCell>
+        </Table.HeaderRow>
+      </Table.Header>
+      <Table.Body>
+        {fontWeight.map(i => (
+          <Table.Row key={i.className}>
+            <Table.Cell>
+              <span className={i.className}>{i.className.replace('font-', '')}</span>
+            </Table.Cell>
+            <Table.Cell className={i.className}>{i.weight}</Table.Cell>
+            <Table.Cell>{i.className}</Table.Cell>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+  );
+};
