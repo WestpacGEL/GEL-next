@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { FocusScope } from 'react-aria';
 
 import { Button } from '../../../button/index.js';
@@ -6,49 +6,39 @@ import { CloseIcon } from '../../../icon/index.js';
 import { usePopoverPosition } from '../../popover.hooks.js';
 
 import { styles as panelStyles } from './panel.styles.js';
-import { type PanelProps } from './panel.types.js';
-
-interface Position {
-  arrowPosition?: number;
-  empty?: boolean;
-  offset?: 'left' | 'right';
-  panelPosition?: number | string;
-  placement?: 'top' | 'bottom';
-}
+import { type PanelProps, Position } from './panel.types.js';
 
 export function Panel({ state, heading, headingTag: Tag = 'h1', content, placement, id, triggerRef }: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
+  const remSize = parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize);
 
   const [position, setPosition] = useState<Position>({
-    placement,
-    empty: !placement,
+    placement: 'top',
     offset: 'left',
+    panelPosition: triggerRef.current ? triggerRef.current.offsetWidth / 2 / remSize : 0,
+    arrowPosition: popoverRef.current ? popoverRef.current.getBoundingClientRect().width / 2 / remSize : 0,
   });
 
-  useEffect(() => {
-    if (state.isOpen) {
-      setPosition(usePopoverPosition(triggerRef, popoverRef, arrowRef, placement));
-    }
+  useLayoutEffect(() => {
+    setPosition(usePopoverPosition(triggerRef, popoverRef, arrowRef, placement));
   }, [state.isOpen]);
 
   const getPopoverClass = useCallback(() => {
     return {
       [position.offset as string]:
-        position.offset === 'left' ? `${position.panelPosition}px` : `-${position.panelPosition}px`,
-      // transform: position.offset === 'left' ? 'translateX(-50%)' : 'none',
+        position.offset === 'left' ? `${position.panelPosition}rem` : `-${position.panelPosition}rem`,
+      transform: position.offset === 'left' ? 'translateX(-50%)' : 'none',
     };
   }, [position]);
 
   const getArrowClass = useCallback(() => {
     return {
-      [!position.offset || position.offset === 'left' ? 'left' : 'right']: `${position.arrowPosition}px`,
+      [!position.offset || position.offset === 'left' ? 'left' : 'right']: `${position.arrowPosition}rem`,
     };
   }, [position]);
 
-  const styles = panelStyles({ placement: position.placement, offset: position.offset });
-
-  console.log(position);
+  const styles = panelStyles({ placement: position.placement });
 
   return (
     <FocusScope restoreFocus>

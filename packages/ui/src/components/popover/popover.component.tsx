@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useId, useRef } from 'react';
+import React, { useCallback, useEffect, useId, useLayoutEffect, useRef } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '../button/index.js';
@@ -8,6 +8,11 @@ import { Button } from '../button/index.js';
 import { Panel } from './components/panel/panel.component.js';
 import { styles as popoverStyles } from './popover.styles.js';
 import { type PopoverProps } from './popover.types.js';
+
+/**
+ * NOTE: This component does not use the react aria usePopover as it is opinionated
+ * and doesn't match requirements for GEL popover
+ */
 
 export function Popover({
   children,
@@ -21,7 +26,7 @@ export function Popover({
   open = false,
   icon,
 }: PopoverProps) {
-  const state = useOverlayTriggerState({ defaultOpen: open });
+  const state = useOverlayTriggerState({});
   const panelId = useId();
   const styles = popoverStyles({});
   const ref = useRef<HTMLDivElement>(null);
@@ -45,6 +50,9 @@ export function Popover({
     };
   }, [state.isOpen]);
 
+  useLayoutEffect(() => {
+    if (open) state.setOpen(true);
+  }, [open]);
   return (
     <div className={styles.base({ className })}>
       <Button

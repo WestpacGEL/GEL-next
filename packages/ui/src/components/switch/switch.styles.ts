@@ -5,7 +5,7 @@ export const styles = tv(
     slots: {
       base: 'mb-1 inline-flex items-center hover:cursor-pointer',
       switchDiv:
-        'relative box-content overflow-hidden border border-borderDark transition duration-[.3s] after:absolute after:left-0 after:top-0 after:block after:rounded-[50%] after:bg-white after:shadow-switch after:transition-all after:duration-[.3s]',
+        'relative box-content overflow-hidden border border-borderDark transition duration-[.3s] after:absolute after:left-0 after:top-0 after:block after:rounded-full after:bg-white after:shadow-switch after:transition-all after:duration-[.3s]',
       label: 'pr-1',
     },
     variants: {

@@ -28,7 +28,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * > Default usage example
+ * > Default usage example NOTE: Does not display correctly in story view please check individual story
  */
 export const Default: Story = {
   args: {
@@ -37,7 +37,7 @@ export const Default: Story = {
 };
 
 /**
- * > Using icon as trigger
+ * > Using icon as trigger NOTE: Does not display correctly in story view please check individual story
  */
 export const IconTrigger: Story = {
   args: {
@@ -46,7 +46,7 @@ export const IconTrigger: Story = {
 };
 
 /**
- * > Default open
+ * > Default open NOTE: Does not display correctly in story view please check individual story
  */
 export const DefaultOpen: Story = {
   args: {
@@ -56,7 +56,7 @@ export const DefaultOpen: Story = {
 };
 
 /**
- * > No heading
+ * > No heading NOTE: Does not display correctly in story view please check individual story
  */
 export const NoHeading: Story = {
   args: {
@@ -67,21 +67,65 @@ export const NoHeading: Story = {
 };
 
 /**
- * > Top and bottom popover
+ * > Auto adjustment NOTE: Does not display correctly in story view please check individual story
+ */
+export const AutoAdjustment = () => (
+  <>
+    <div>
+      If no placement prop is used the popover will not automatically adjust itself to the top or bottom. It will always
+      adjust it self if it is too close to either edge of the screen.
+    </div>
+    <Popover heading="Heading" content={popoverContent}>
+      Auto Bottom Popover
+    </Popover>
+    <div className="mt-[200px] flex flex-col">
+      <div className="flex justify-between">
+        <Popover heading="Heading" content={popoverContent}>
+          Left Popover
+        </Popover>
+        <Popover heading="Heading" content={popoverContent}>
+          Center Popover
+        </Popover>
+        <Popover heading="Heading" content={popoverContent}>
+          Right Popover
+        </Popover>
+      </div>
+    </div>
+  </>
+);
+
+/**
+ * > Top and bottom popover NOTE: Does not display correctly in story view please check individual story
  */
 export const PopoverPlacement = () => (
-  <div>
-    <Popover heading="Heading" content={popoverContent} open>
-      test
-    </Popover>
-    <Popover placement="bottom" heading="Heading" content={popoverContent} open>
-      Bottom Popover
-    </Popover>
-    <Popover placement="bottom" heading="Heading" content={popoverContent} open>
-      test
-    </Popover>
-    <Popover placement="bottom" heading="Heading" content={popoverContent} open>
-      test
-    </Popover>
-  </div>
+  <>
+    <div>
+      If the placement prop is used the popover will not automatically adjust itself to the top or bottom but will still
+      adjust left and right if too close to the edge.
+    </div>
+    <div className="mt-[200px] flex flex-col space-y-2">
+      <div className="flex justify-between">
+        <Popover placement="top" heading="Heading" content={popoverContent} open>
+          Left Top Popover
+        </Popover>
+        <Popover placement="top" heading="Heading" content={popoverContent} open>
+          Center Top Popover
+        </Popover>
+        <Popover placement="top" heading="Heading" content={popoverContent} open>
+          Right Top Popover
+        </Popover>
+      </div>
+      <div className="flex justify-between">
+        <Popover placement="bottom" heading="Heading" content={popoverContent} open>
+          Left Bottom Popover
+        </Popover>
+        <Popover placement="bottom" heading="Heading" content={popoverContent} open>
+          Center Bottom Popover
+        </Popover>
+        <Popover placement="bottom" heading="Heading" content={popoverContent} open>
+          Right Bottom Popover
+        </Popover>
+      </div>
+    </div>
+  </>
 );

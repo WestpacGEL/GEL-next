@@ -1,12 +1,6 @@
 import { RefObject } from 'react';
 
-interface Position {
-  arrowPosition?: number;
-  empty?: boolean;
-  offset: 'left' | 'right';
-  panelPosition?: number | string;
-  placement?: 'top' | 'bottom';
-}
+import { Position } from './components/panel/panel.types.js';
 
 export const usePopoverPosition = (
   triggerRef: RefObject<HTMLDivElement>,
@@ -14,65 +8,48 @@ export const usePopoverPosition = (
   arrowRef: RefObject<HTMLDivElement>,
   placement?: 'top' | 'bottom',
 ): Position => {
-  //TODO: Update arrow location on left offset
-  //TODO: Update space between left side of screen and popover when open and offset
-
   // bail early without refs
   if (!triggerRef.current || !popoverRef.current || !arrowRef.current) {
-    throw new Error('You must pass two valid refs.');
+    throw new Error('You must pass valid refs.');
   }
-
-  let position: Position = { placement: undefined, offset: 'left', panelPosition: 0, arrowPosition: 0 };
-
-  if (typeof window === 'undefined') {
-    return position;
-  }
-  const remSize = parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize);
 
   const trigger = triggerRef.current.getBoundingClientRect();
   const popover = popoverRef.current.getBoundingClientRect();
   const arrow = arrowRef.current.getBoundingClientRect();
+  const remSize = parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize);
 
-  console.log(popover);
-  // console.log(window.innerWidth - (trigger.left + trigger.width / 2) - (remSize + arrow.width / 2));
+  const position: Position = {
+    placement: placement ? placement : 'top',
+    offset: popover.right >= window.innerWidth ? 'right' : 'left',
+    panelPosition: trigger.width / 2 / remSize,
+    arrowPosition: (popover.width / 2 - arrow.width / 2) / remSize,
+  };
+  if (typeof window === 'undefined') {
+    return position;
+  }
 
   const offLeft = popover.left <= 0;
-  const offRight = popover.right >= window.innerWidth;
-
-  let offset: 'left' | 'right' = 'left';
-  if (popover.right > window.innerWidth) offset = 'right';
-
-  console.log(offLeft);
-  console.log(offRight);
-
-  let panelPosition = trigger.width / 2;
-  let arrowPosition = (popover.width - arrow.width) / 2;
+  const offRight = popover.right + remSize >= window.innerWidth;
 
   if (offLeft) {
-    panelPosition = popover.width / 2 + remSize;
-    arrowPosition = popover.width / 2 + remSize;
-  } else if (offRight) {
-    panelPosition = window.innerWidth - trigger.right - remSize;
-    arrowPosition = window.innerWidth - (trigger.left + trigger.width / 2) - (remSize + arrow.width / 2);
+    position.panelPosition = (popover.width - popover.right + trigger.width / 2 + remSize) / remSize;
+    position.arrowPosition = (trigger.right - trigger.width / 2 - arrow.width / 2 - remSize) / remSize;
   }
-  // const left = offLeft ? popover.width / 2 + remSize : trigger.width / 2;
-  // const right = offRight ? window.innerWidth - trigger.right - remSize : 0;
-  // const center = window.innerWidth - (trigger.right - trigger.width / 2) - 24;
 
-  if (popover.top > trigger.top) {
-    position = {
-      placement: placement ? placement : 'bottom',
-      offset,
-      panelPosition,
-      arrowPosition,
-    };
-  } else {
-    position = {
-      placement: placement ? placement : 'top',
-      offset,
-      panelPosition,
-      arrowPosition,
-    };
+  if (offRight) {
+    position.panelPosition = (window.innerWidth - trigger.right - remSize) / remSize;
+    position.arrowPosition =
+      (window.innerWidth - (trigger.left + trigger.width / 2) - (remSize + arrow.width / 2)) / remSize;
+  }
+
+  if (popover.height > trigger.top) {
+    position.placement = placement ? placement : 'bottom';
+    return position;
+  }
+
+  if (popover.bottom > window.innerHeight) {
+    position.placement = placement ? placement : 'top';
+    return position;
   }
 
   return position;

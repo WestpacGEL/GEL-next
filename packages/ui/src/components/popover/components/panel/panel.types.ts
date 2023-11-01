@@ -27,3 +27,10 @@ export type PanelProps = {
    */
   triggerRef: RefObject<HTMLDivElement>;
 } & HTMLAttributes<Element>;
+
+export type Position = {
+  arrowPosition?: number;
+  offset?: 'left' | 'right';
+  panelPosition?: number;
+  placement?: 'top' | 'bottom';
+};
