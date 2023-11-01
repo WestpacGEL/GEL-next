@@ -6,11 +6,11 @@ export const styles = tv(
       base: '',
       list: 'm-0 flex list-none flex-col pl-0',
       item: 'relative',
-      itemIndex: 'mb-[1.125rem] font-bold',
+      itemIndex: 'mb-3 font-bold',
       content: '',
       removeBtn: 'absolute right-0 top-0 h-auto p-0 no-underline hover:underline',
       footer: 'flex justify-between pt-[0.875rem]',
-      addBtn: 'height-auto p-0 no-underline hover:underline',
+      addBtn: 'h-auto p-0 no-underline hover:underline',
     },
     variants: {
       separator: {
@@ -19,8 +19,8 @@ export const styles = tv(
         },
         true: {
           item: 'border-t-2 border-neutral pt-[0.625rem]',
-          content: 'p-[0_1.125rem_2.625rem]',
-          removeBtn: 'relative m-[0_0_1.875rem_1.125rem]',
+          content: 'px-3 pb-7 pt-0',
+          removeBtn: 'relative mb-5 ml-3',
           footer: 'border-t-2 border-neutral',
         },
       },

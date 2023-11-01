@@ -37,12 +37,12 @@ export const styles = tv(
       {
         orientation: 'horizontal',
         look: 'default',
-        className: 'rounded-t-[0.1875rem]',
+        className: 'rounded-t',
       },
       {
         orientation: 'vertical',
         look: 'default',
-        className: 'rounded-l-[0.1875rem]',
+        className: 'rounded-l',
       },
       {
         orientation: 'horizontal',

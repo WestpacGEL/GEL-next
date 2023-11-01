@@ -21,7 +21,7 @@ const SHOULD_RETURNED = 'should return an expected output';
 describe('Utils testing', () => {
   describe('Create spacing vars', () => {
     it(SHOULD_RETURNED, () => {
-      const spacingValues = createSpacing(6, 16);
+      const spacingValues = createSpacing(6, 16, true);
       expect(spacingValues).toEqual(EXPECTED_SPACING);
     });
   });
