@@ -24,7 +24,7 @@ export const styles = tv(
       },
       type: {
         pill: 'typography-body-10 rounded-xl px-[0.4375rem] py-[0.25rem] font-bold leading-none',
-        default: 'rounded-sm px-1 py-[0.1875rem] pb-[0.125rem] text-[0.75rem] leading-none',
+        default: 'rounded-sm px-1 py-0.5 pb-[0.125rem] text-[0.75rem] leading-none',
       },
     },
   },
