@@ -13,17 +13,14 @@ export const styles = tv({
   variants: {
     layout: {
       '1x1': {
-        base: 'xsl:w-6/12',
         // eslint-disable-next-line sonarjs/no-duplicate-string
         imageWrapper: 'xsl:aspect-[1092/563]',
       },
-      '1x2': '',
-      '2x1': '',
+      '1x2': {},
+      '2x1': {},
       '1x1x1': {
         // eslint-disable-next-line sonarjs/no-duplicate-string
-        base: 'xsl:w-4/12',
-        // eslint-disable-next-line sonarjs/no-duplicate-string
-        imageWrapper: 'xsl:aspect-[744/559]',
+        imageWrapper: 'xsl:aspect-[708/559]',
       },
     },
     index: {
@@ -36,50 +33,38 @@ export const styles = tv({
     {
       slots: ['base'],
       layout: '1x2',
-      index: '0',
-      className: 'xsl:w-4/12',
-    },
-    {
-      slots: ['base'],
-      layout: '1x2',
       index: '1',
-      className: 'xsl:w-8/12',
+      className: 'xsl:col-span-2',
     },
     {
       slots: ['base'],
       layout: '2x1',
       index: '0',
-      className: 'xsl:w-8/12',
-    },
-    {
-      slots: ['base'],
-      layout: '2x1',
-      index: '1',
-      className: 'xsl:w-4/12',
+      className: 'xsl:col-span-2',
     },
     {
       slots: ['imageWrapper'],
       layout: '2x1',
       index: '0',
-      className: 'xsl:aspect-[478/185]',
+      className: 'xsl:aspect-[484/185]',
     },
     {
       slots: ['imageWrapper'],
       layout: '2x1',
       index: '1',
-      className: 'xsl:aspect-[744/559]',
+      className: 'xsl:aspect-[708/559]',
     },
     {
       slots: ['imageWrapper'],
       layout: '1x2',
       index: '0',
-      className: 'xsl:aspect-[744/559]',
+      className: 'xsl:aspect-[708/559]',
     },
     {
       slots: ['imageWrapper'],
       layout: '1x2',
       index: '1',
-      className: 'xsl:aspect-[478/185]',
+      className: 'xsl:aspect-[484/185]',
     },
   ],
 });
