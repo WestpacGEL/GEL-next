@@ -54,23 +54,6 @@ export default config({
               })`,
           },
         ),
-        content: fields.document({
-          formatting: true,
-          dividers: true,
-          links: true,
-          label: 'Content',
-          layouts: [
-            [1, 1],
-            [1, 2],
-            [2, 1],
-            [1, 1, 1],
-          ],
-          componentBlocks: ComponentBlocks,
-          images: {
-            directory: 'public/images/articles/content',
-            publicPath: '/images/articles/content',
-          },
-        }),
       },
     }),
     url: singleton({
