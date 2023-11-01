@@ -1,11 +1,9 @@
 'use client';
 
-import { Container, Grid } from '@westpac/ui';
-import { clsx } from 'clsx';
+import { Container } from '@westpac/ui';
 
 import { ArticleTile } from '../article-tile/article-tile.component';
 
-import { ArticleColumn } from './components/article-column/article-column.component';
 import { HomePageProps } from './home-page.types';
 
 export const HomePage = ({ articleRows }: HomePageProps) => {
