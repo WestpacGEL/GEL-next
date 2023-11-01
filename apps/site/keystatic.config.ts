@@ -17,6 +17,62 @@ const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
 export default config({
   storage,
   singletons: {
+    homePage: singleton({
+      label: 'Home page config',
+      path: 'src/content/home-page/',
+      schema: {
+        articleRows: fields.array(
+          fields.object({
+            layout: fields.select({
+              label: 'Layout',
+              description: 'Layout to display the article row',
+              options: [
+                { label: '1x1:   [_____][_____]', value: '1x1' },
+                { label: '2x1:   [_______][___]', value: '2x1' },
+                { label: '1x2:   [___][_______]', value: '1x2' },
+                { label: '1x1x1: [___][___][___]', value: '1x1x1' },
+              ],
+              defaultValue: '1x1',
+            }),
+            articles: fields.array(
+              fields.relationship({
+                label: 'Related articles',
+                description: 'A list of articles',
+                collection: 'articles',
+              }),
+              {
+                label: 'Articles',
+                itemLabel: props => props.value || '',
+              },
+            ),
+          }),
+          {
+            label: 'Article Rows',
+            itemLabel: props =>
+              `Articles: [${props.fields.articles.elements.map(element => element.value).join(', ')}] (${
+                props.fields.layout.value
+              })`,
+          },
+        ),
+        content: fields.document({
+          formatting: true,
+          dividers: true,
+          links: true,
+          label: 'Content',
+          layouts: [
+            [1, 1],
+            [1, 2],
+            [2, 1],
+            [1, 1, 1],
+          ],
+          componentBlocks: ComponentBlocks,
+          images: {
+            directory: 'public/images/articles/content',
+            publicPath: '/images/articles/content',
+          },
+        }),
+      },
+    }),
     url: singleton({
       label: 'URLs',
       path: 'src/content/urls/',
@@ -183,6 +239,12 @@ export default config({
           dividers: true,
           links: true,
           label: 'Design',
+          layouts: [
+            [1, 1],
+            [1, 2],
+            [2, 1],
+            [1, 1, 1],
+          ],
           componentBlocks: ComponentBlocks,
           images: {
             directory: 'public/images/articles/content',

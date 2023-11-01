@@ -6,7 +6,7 @@ import { type ComponentPropsTableProps } from './component-props-table.types';
 
 export function ComponentPropsTable({ className, componentProps, ...props }: ComponentPropsTableProps) {
   return (
-    <div className="-mx-2 overflow-x-auto px-2 xsl:-mx-5 xsl:px-5 sm:-mx-6 sm:px-6 md:-mx-8 md:px-8 lg:-mx-10 lg:px-10">
+    <div className="-mx-4 overflow-x-auto px-2 xsl:-mx-5 xsl:px-5 sm:-mx-6 sm:px-6 md:-mx-8 md:px-8 lg:-mx-10 lg:px-10">
       <Table bordered striped {...props} className={clsx('min-w-[800px]', className)}>
         <Table.Caption className="text-left">{componentProps.displayName} props</Table.Caption>
         <Table.Header>
