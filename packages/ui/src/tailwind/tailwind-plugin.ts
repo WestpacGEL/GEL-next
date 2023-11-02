@@ -51,6 +51,9 @@ export const WestpacUIKitBasePlugin = plugin(
           // See https://stackoverflow.com/questions/19982651/why-does-bootstrap-set-the-line-height-property-to-1-428571429 for below line height reasoning
           loose: '1.428571429',
         },
+        borderRadius: {
+          DEFAULT: '0.1875rem',
+        },
         borderWidth: {
           5: '0.3125rem',
         },

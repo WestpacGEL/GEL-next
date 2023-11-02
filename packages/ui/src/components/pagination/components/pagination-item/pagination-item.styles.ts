@@ -2,14 +2,14 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'typography-body-10 relative block border border-border px-2 py-[0.5625rem] text-center text-text transition-colors',
+    base: 'typography-body-10 relative block border border-border px-2 py-1.5 text-center text-text transition-colors',
     variants: {
       firstItem: {
-        true: 'rounded-l-[0.1875rem]',
+        true: 'rounded-l',
         false: 'ml-[-1px]',
       },
       lastItem: {
-        true: 'rounded-r-[0.1875rem]',
+        true: 'rounded-r',
         false: '',
       },
       active: {

@@ -6,7 +6,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'inline-flex items-center justify-center rounded-[0.1875rem] leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none',
+      base: 'inline-flex items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none',
       iconBefore: '',
       iconAfter: '',
       dropdown: 'ml-[0.4em]',
@@ -14,10 +14,10 @@ export const styles = tv(
     },
     variants: {
       size: {
-        small: { base: 'typography-body-10 px-2 pb-[0.25rem] pt-[0.1875rem] active-theme-rams:before:h-[0.0625rem]' },
+        small: { base: 'typography-body-10 px-2 pb-[0.25rem] pt-0.5 active-theme-rams:before:h-[0.0625rem]' },
         medium: { base: 'typography-body-9 px-2 py-[0.3125rem] active-theme-rams:before:h-[0.125rem]' },
-        large: { base: 'typography-body-9 px-[0.9375rem] py-[0.5rem] active-theme-rams:before:h-[0.1875rem]' },
-        xlarge: { base: 'typography-body-8 px-3 pb-[0.625rem] pt-[0.5625rem] active-theme-rams:before:h-[0.25rem]' },
+        large: { base: 'typography-body-9 px-2.5 py-[0.5rem] active-theme-rams:before:h-0.5' },
+        xlarge: { base: 'typography-body-8 px-3 pb-[0.625rem] pt-1.5 active-theme-rams:before:h-[0.25rem]' },
       },
       look: {
         primary: {
