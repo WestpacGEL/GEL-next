@@ -3,9 +3,9 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'typography-body-10 xsl:flex relative mb-4',
-      icon: 'xsl:mr-2 float-left mr-1 flex-none',
-      body: 'xsl:top-[0.125rem] relative flex-1 overflow-hidden [&_a]:underline',
+      base: 'typography-body-10 relative mb-4 xsl:flex',
+      icon: 'float-left mr-1 flex-none xsl:mr-2',
+      body: 'relative flex-1 overflow-hidden xsl:top-[0.125rem] [&_a]:underline',
       heading: 'typography-body-9 mb-2 font-bold',
       close: 'absolute right-[0.1875rem] top-[0.1875rem] p-1 hover:opacity-[0.8]',
     },

@@ -27,7 +27,7 @@ describe('Grid', () => {
 
   it('renders the Container style correctly', () => {
     const style = containerStyles();
-    expect(style).toBe('mx-auto box-border w-full max-w-container px-4 xsl:px-5 sm:px-6 md:px-8 lg:px-10');
+    expect(style).toBe('mx-auto box-border w-full max-w-container px-2 xsl:px-5 sm:px-6 md:px-8 lg:px-10');
   });
 
   it('renders the Item component', () => {

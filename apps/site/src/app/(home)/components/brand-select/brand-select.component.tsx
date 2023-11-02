@@ -50,4 +50,4 @@ export function BrandSelect(props: BrandSelectProps) {
     </div>
   );
 }
-BrandSelect.Option = Item as (props: ItemProps<AriaLinkOptions> & AriaLinkOptions & { href?: string; }) => JSX.Element;
+BrandSelect.Option = Item as (props: ItemProps<AriaLinkOptions> & AriaLinkOptions & { href?: string }) => JSX.Element;
