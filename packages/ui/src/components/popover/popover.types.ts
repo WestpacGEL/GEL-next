@@ -33,7 +33,7 @@ export type PopoverProps = {
    */
   open?: boolean;
   /**
-   * Placement of popover
+   * Placement of popover. If no placement provided it will default to top unless there is no space then will appear on bottom.
    */
   placement?: 'top' | 'bottom';
 } & HTMLAttributes<Element> &
