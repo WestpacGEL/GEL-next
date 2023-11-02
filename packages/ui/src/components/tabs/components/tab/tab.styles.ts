@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'typography-body-9 flex cursor-pointer px-3 py-2 text-text transition-colors hover:bg-white',
+    base: 'typography-body-9 flex cursor-pointer px-3 py-2 text-text transition-colors',
     variants: {
       look: {
         default: 'border border-border bg-white',
@@ -10,7 +10,7 @@ export const styles = tv(
       },
       selected: {
         true: 'bg-white',
-        false: '',
+        false: 'hover:bg-background',
       },
       orientation: {
         horizontal: '',
