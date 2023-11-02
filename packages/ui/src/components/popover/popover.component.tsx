@@ -10,8 +10,8 @@ import { styles as popoverStyles } from './popover.styles.js';
 import { type PopoverProps } from './popover.types.js';
 
 /**
- * NOTE: This component does not use the react aria usePopover as it is opinionated
- * and doesn't match requirements for GEL popover
+ * TODO: Revisit this component when react-aria has updated usePopover, see: https://github.com/adobe/react-spectrum/discussions/5341
+ * This version does not currently use react-aria as it blocked so functionality that was needed to match GEL 3.0
  */
 
 export function Popover({
