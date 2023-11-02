@@ -1,4 +1,4 @@
-import { component, fields } from '@keystatic/core';
+// import { component, fields } from '@keystatic/core';
 
 export const ComponentBlocks = {
   // EXAMPLES:

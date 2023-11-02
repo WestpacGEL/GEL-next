@@ -22,7 +22,7 @@ export function ListBoxSection({ section, state }: ListBoxSectionProps) {
 
         <ul {...groupProps}>
           {[...section.childNodes].map(node => (
-            <Option key={node.key} item={node} />
+            <Option key={node.key} item={node} state={state} />
           ))}
         </ul>
       </li>
