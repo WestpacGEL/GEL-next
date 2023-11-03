@@ -1,14 +1,10 @@
-import { type SPACING_KEY } from '../types/theme.types.js';
-
-type SpacingRecord = Record<SPACING_KEY, string>;
-export const createSpacing = (spacingUnit: number, spacingScale: number) => {
-  return Array.from({ length: 35 }).reduce<SpacingRecord>(
-    (spacing, _, i) => {
-      const newIndex = ++i;
-      spacing[newIndex as SPACING_KEY] = `${(newIndex * spacingUnit) / spacingScale}rem`;
-
-      return spacing;
-    },
-    { 0: '0' } as SpacingRecord,
-  );
+type SpacingRecord = Record<number, string>;
+export const createSpacing = (spacingUnit: number, spacingScale: number, addMinorScale: boolean) => {
+  return Array.from({ length: 36 }).reduce<SpacingRecord>((spacing, _, i) => {
+    spacing[i] = `${(i * spacingUnit) / spacingScale}rem`;
+    if (addMinorScale && i < 35) {
+      spacing[i + 0.5] = `${((i + 0.5) * spacingUnit) / spacingScale}rem`;
+    }
+    return spacing;
+  }, {} as SpacingRecord);
 };

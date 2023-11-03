@@ -17,6 +17,45 @@ const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
 export default config({
   storage,
   singletons: {
+    homePage: singleton({
+      label: 'Home page config',
+      path: 'src/content/home-page/',
+      schema: {
+        articleRows: fields.array(
+          fields.object({
+            layout: fields.select({
+              label: 'Layout',
+              description: 'Layout to display the article row',
+              options: [
+                { label: '1x1:   [_____][_____]', value: '1x1' },
+                { label: '2x1:   [_______][___]', value: '2x1' },
+                { label: '1x2:   [___][_______]', value: '1x2' },
+                { label: '1x1x1: [___][___][___]', value: '1x1x1' },
+              ],
+              defaultValue: '1x1',
+            }),
+            articles: fields.array(
+              fields.relationship({
+                label: 'Related articles',
+                description: 'A list of articles',
+                collection: 'articles',
+              }),
+              {
+                label: 'Articles',
+                itemLabel: props => props.value || '',
+              },
+            ),
+          }),
+          {
+            label: 'Article Rows',
+            itemLabel: props =>
+              `Articles: [${props.fields.articles.elements.map(element => element.value).join(', ')}] (${
+                props.fields.layout.value
+              })`,
+          },
+        ),
+      },
+    }),
     url: singleton({
       label: 'URLs',
       path: 'src/content/urls/',
@@ -158,6 +197,12 @@ export default config({
         thumbnail: fields.image({
           label: 'Thumbnail image',
           description: 'Thumbnail image',
+          directory: 'public/images/articles',
+          publicPath: '/images/articles',
+        }),
+        smallDescription: fields.image({
+          label: 'Small description',
+          description: 'Small description that goes along with the thumbnail',
           directory: 'public/images/articles',
           publicPath: '/images/articles',
         }),

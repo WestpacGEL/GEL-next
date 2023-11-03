@@ -1,0 +1,36 @@
+articleRows:
+  - layout: 1x1
+    articles:
+      - what-is-gel
+      - value-of-a-design-system
+  - layout: 1x1x1
+    articles:
+      - motion-principles
+      - patterns
+      - data-visualisation
+  - layout: 2x1
+    articles:
+      - accessible-by-design
+      - typography
+  - layout: 1x1
+    articles:
+      - think-responsive
+      - multi-brand-made-easy
+  - layout: 1x1x1
+    articles:
+      - iconography
+      - colour
+      - the-grid
+  - layout: 2x1
+    articles:
+      - using-fonts
+      - design-with-gel
+  - layout: 1x1
+    articles:
+      - figma-libraries
+      - code-with-gel
+  - layout: 1x1x1
+    articles:
+      - build-strong-brands
+      - collaborate-for-change
+      - gel-design-approach

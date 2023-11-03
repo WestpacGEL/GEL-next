@@ -39,7 +39,7 @@ export function BaseBreadcrumbItem(
         {children}
       </FinalTag>
       {!isCurrent && (
-        <span aria-hidden="true" className="flex items-center px-[0.1875rem]">
+        <span aria-hidden="true" className="flex items-center px-0.5">
           <ArrowRightIcon size="small" className="inline-block" color="primary" />
         </span>
       )}
