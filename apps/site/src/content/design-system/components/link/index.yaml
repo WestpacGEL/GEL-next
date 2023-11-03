@@ -1,1 +1,16 @@
-name: Link
+name: Link (anchor)
+description: >-
+  The Link component is a way for developers to quickly apply consistent web
+  link styling while also providing global guidance for designers. There are two
+  main styles of links for different use cases. This component is also called
+  Anchor.
+design:
+  - title: Standalone
+  - title: Inline
+  - title: User experience
+  - title: Visual Design
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

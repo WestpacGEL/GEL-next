@@ -1,1 +1,14 @@
-name: button-group
+name: Button group
+description: >-
+  Button groups are an elegant and easily tapable way to visualise a simple
+  choice.
+design:
+  - title: Button groups
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

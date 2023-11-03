@@ -1,0 +1,6 @@
+*   `<input type="radio|checkbox" aria-describedby="{HINT_ID}" id="{OPTION_ID}" name="{NAME}">`: Checkbox and Radio Selectors: each item option is defined as a radio or checkbox _input_ and must have a unique _id_ value. A consistent _name_ attribute value is required for radio inputs for toggling to operate correctly. \[React component: _id_ is auto-generated\]
+*   `<label for="{OPTION_ID}">`: Each radio or checkbox _input_ has a _label_ element and uses explicit association (connected to the input using a _for_ attribute) for optimal support in assistive technologies. \[React component: _for_ is auto-generated\]
+*   `<div id="{HINT_ID}">`: Hint text element must have a unique _id_ value. The _input_ element _aria-describedby_ and hint text element _id_ attribute values must match.
+*   `<div aria-hidden="true">`: Indicator check/tick and next icons are hidden from assistive technologies; any selected/checked state is provided by the input
+*   `<button aria-pressed="false|true">`: Button Selector: state is provided with _aria-pressed_ attribute. Note: Button (and Link) Selector hint text is not associated as with Checkbox and Radio Selector; hint text is announced as standard button (or link) text.
+*   `<span aria-hidden="true">`: Hides icon or pictogram SVGs from assistive technologies; they are visual embellishment

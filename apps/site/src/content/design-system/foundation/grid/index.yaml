@@ -1,0 +1,14 @@
+name: Grid
+description: >-
+  Using the responsive 12-column grid ensures your design works effectively for
+  all devices and screen sizes, and establishes consistency across all of
+  Westpac Group brands.
+design:
+  - title: Grid examples
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

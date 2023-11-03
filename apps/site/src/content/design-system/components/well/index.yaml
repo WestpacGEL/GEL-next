@@ -1,0 +1,13 @@
+name: Well
+description: >-
+  Wells are containers with simple text. They are designed to house content
+  without interfering with the primary content on a page.
+design:
+  - title: Well
+  - title: User experience
+  - title: Visual design
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

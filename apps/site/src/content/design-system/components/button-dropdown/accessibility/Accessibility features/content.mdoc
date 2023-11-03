@@ -1,0 +1,5 @@
+*   The user interacts with the button to toggle the panel – consistently whether using mouse, touch or keyboard. To hide the panel the user may toggle the button again, perform a ‘blur’ event (focusing elsewhere via click or keyboard) or press the ‘Esc’ key.
+*   As with similar components that hide/show content, this component follows a ‘user is in control’ approach. Rather than programmatically moving focus to the panel when shown, the toggle button has an _aria-expanded_ attribute; the assistive technology user can choose to ‘arrow down’ to announce the panel content if they wish.
+*   When the panel closes, focus returns to the button that originally toggled the panel
+*   An indicator outline appears around the button toggle when focused
+*   The button shape, text, icon content and panel is visible in Windows High Contrast Mode (WHCM). The button ‘look’ styling (colour) is not visible in WHCM.

@@ -1,1 +1,19 @@
 name: Table
+description: >-
+  Tables are a way to organise small to large data sets. As financial products
+  and services are often complex, they are effective at communicating and
+  comparing values.
+design:
+  - title: Basic table
+  - title: Striped row table
+  - title: Bordered table
+  - title: Bordered, striped table
+  - title: Basic table with highlights
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

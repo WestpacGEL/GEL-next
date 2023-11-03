@@ -1,0 +1,14 @@
+name: Pictogram
+description: >-
+  Pictograms are commonly used in Westpac interfaces. They are implemented as
+  scalable vector graphics (SVGs), this ensures the highest quality rendering on
+  all devices. Use them to assist with visual communication.
+design:
+  - title: Informative pictograms
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

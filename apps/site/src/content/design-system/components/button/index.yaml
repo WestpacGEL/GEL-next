@@ -1,1 +1,17 @@
 name: Button
+description: >-
+  Buttons are elements capable of performing an action. They have a variety of
+  uses and require careful consideration for consistency, hierarchy, brand, and
+  accessibility.
+design:
+  - title: Button sizes
+  - title: Button styles
+  - title: Responsive buttons
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API
