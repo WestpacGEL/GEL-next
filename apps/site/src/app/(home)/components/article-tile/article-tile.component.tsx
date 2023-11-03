@@ -18,7 +18,7 @@ export function ArticleTile({ article, slug, className, layout, index }: Article
       )}
       <div className={styles.contentWrapper({})}>
         <h4 className={styles.title({})}>{article.name}</h4>
-        <p className={styles.description({})}>{article.description}</p>
+        <p className={styles.description({})}>{article.smallDescription}</p>
         <ArrowRightIcon className={styles.icon({})} />
       </div>
     </Link>
