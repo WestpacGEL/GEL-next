@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 0.9.0
+
+### Minor Changes
+
+- 61e6f8b: Removed .storybook and scaffold folders from node module
+- fe42599: styling fixes based on UX feedback
+
 ## 0.8.0
 
 ### Minor Changes
