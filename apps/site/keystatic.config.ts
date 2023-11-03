@@ -200,6 +200,12 @@ export default config({
           directory: 'public/images/articles',
           publicPath: '/images/articles',
         }),
+        smallDescription: fields.image({
+          label: 'Small description',
+          description: 'Small description that goes along with the thumbnail',
+          directory: 'public/images/articles',
+          publicPath: '/images/articles',
+        }),
         image: fields.image({
           label: 'Main Image',
           description: 'Main image',
