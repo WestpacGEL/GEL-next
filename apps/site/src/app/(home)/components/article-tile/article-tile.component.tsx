@@ -7,10 +7,10 @@ import Link from 'next/link';
 import { styles as articleStyles } from './article-tile.style';
 import { ArticleTileProps } from './article-tile.types';
 
-export function ArticleTile({ article, slug, className }: ArticleTileProps) {
-  const styles = articleStyles({ className });
+export function ArticleTile({ article, slug, className, layout, index }: ArticleTileProps) {
+  const styles = articleStyles({ layout, index: index.toString() as '0' | '1' | '2' });
   return (
-    <Link href={`/articles/${slug}`} className={styles.base({})}>
+    <Link href={`/articles/${slug}`} className={styles.base({ className })}>
       {article.thumbnail && (
         <div className={styles.imageWrapper({})}>
           <Image fill objectFit="cover" src={article.thumbnail} alt="" />

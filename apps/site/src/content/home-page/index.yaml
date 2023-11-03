@@ -1,0 +1,14 @@
+articleRows:
+  - layout: 1x1
+    articles:
+      - accessible-by-design
+      - what-is-gel
+  - layout: 2x1
+    articles:
+      - what-is-gel
+      - accessible-by-design
+  - layout: 1x1x1
+    articles:
+      - accessible-by-design
+      - what-is-gel
+      - accessible-by-design
