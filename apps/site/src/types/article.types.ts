@@ -4,8 +4,8 @@ export type Article = {
   author: string | null;
   content: DocumentElement[];
   description?: string;
-  smallDescription?: string;
   image: string | null;
   name: string;
+  smallDescription?: string;
   thumbnail: string | null;
 };
