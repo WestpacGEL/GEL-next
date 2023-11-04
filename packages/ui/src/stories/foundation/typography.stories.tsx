@@ -1,4 +1,5 @@
 import { type Meta, StoryFn } from '@storybook/react';
+import { clsx } from 'clsx';
 
 import { Link, Table } from '../../components/index.js';
 
@@ -149,11 +150,7 @@ export const LineHeight = () => {
     </div>
   );
 };
-
-/**
- * Fonts weight
- */
-export const FontWeight = () => {
+const FontWeightTable = ({ type, caption }: { caption: string; type: 'brand' | 'body' }) => {
   const fontWeight = [
     { className: 'font-light', weight: '300' },
     { className: 'font-normal', weight: '400' },
@@ -161,9 +158,10 @@ export const FontWeight = () => {
     { className: 'font-semibold', weight: '600' },
     { className: 'font-bold', weight: '700' },
   ];
+  const typography = type === 'brand' ? 'typography-brand-7' : 'typography-body-7';
   return (
     <Table>
-      <Table.Caption>Font Weight</Table.Caption>
+      <Table.Caption>{caption}</Table.Caption>
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Token</Table.HeaderCell>
@@ -175,13 +173,27 @@ export const FontWeight = () => {
         {fontWeight.map(i => (
           <Table.Row key={i.className}>
             <Table.Cell>
-              <span className={i.className}>{i.className.replace('font-', '')}</span>
+              <span className={clsx(typography, i.className)}>{i.className.replace('font-', '')}</span>
             </Table.Cell>
-            <Table.Cell className={i.className}>{i.weight}</Table.Cell>
+            <Table.Cell>{i.weight}</Table.Cell>
             <Table.Cell>{i.className}</Table.Cell>
           </Table.Row>
         ))}
       </Table.Body>
     </Table>
   );
+};
+
+/**
+ * Brand fonts weight
+ */
+export const BrandFontWeight = () => {
+  return <FontWeightTable caption="GEL brand font weight tokens" type="brand" />;
+};
+
+/**
+ * Body fonts weight
+ */
+export const BodyFontWeight = () => {
+  return <FontWeightTable caption="GEL body font weight tokens" type="body" />;
 };
