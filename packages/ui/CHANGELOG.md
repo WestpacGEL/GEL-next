@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.10.0
+
+### Minor Changes
+
+- 626c503: misc. styling fixes and optimised the build package
+
 ## 0.9.0
 
 ### Minor Changes
