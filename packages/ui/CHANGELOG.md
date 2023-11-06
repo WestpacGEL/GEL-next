@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.12.0
+
+### Minor Changes
+
+- 3b27f18: fixed date-picker import issue in CRA based apps
+
 ## 0.11.0
 
 ### Minor Changes
