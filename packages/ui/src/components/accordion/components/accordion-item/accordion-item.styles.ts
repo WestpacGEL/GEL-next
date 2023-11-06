@@ -51,7 +51,6 @@ export const styles = tv(
         look: 'lego',
         isOpen: true,
         className: 'border-l-hero',
-        // className: 'border-l-hero',
       },
       {
         slots: ['content'],
