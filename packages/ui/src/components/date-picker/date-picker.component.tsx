@@ -28,7 +28,7 @@ export function DatePicker({
 
   useEffect(() => {
     const initDatePicker = async () => {
-      const { defineCustomElements } = await import('@duetds/date-picker/custom-element');
+      const { defineCustomElements } = await import('@duetds/date-picker/custom-element/index.js');
       defineCustomElements(window);
       setInitialized(true);
     };
