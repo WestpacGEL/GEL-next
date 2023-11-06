@@ -1,0 +1,13 @@
+name: Popover
+description: >-
+  Popovers are small contextual panels of information. They can be used to help
+  your users in the moment yet require careful consideration for mobile screens.
+design:
+  - title: Popover
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

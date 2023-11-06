@@ -1,1 +1,17 @@
-name: Input
+name: Text input
+description: >-
+  Text inputs are fields for users to enter words or numerical data. They are
+  used to capture information critical to acquiring or servicing a product:
+  users' information.
+design:
+  - title: Text inputs
+  - title: Selects
+  - title: Text areas
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

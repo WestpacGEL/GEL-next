@@ -231,4 +231,5 @@ export { YoutubeIcon } from './components/youtube-icon.js';
 export { ZipFileIcon } from './components/zip-file-icon.js';
 
 export { Icon } from './icon.component.js';
+
 export { type IconProps } from './icon.types.js';

@@ -1,1 +1,16 @@
 name: List
+description: >-
+  Lists are compiled of an ordered set of items. They are highly legible,
+  intuitive, simple and extremely effective at highlighting features, benefits,
+  or legal copy for example.
+design:
+  - title: Bullet lists
+  - title: Other lists
+  - title: List item spacing
+  - title: User experience
+  - title: Visual design
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

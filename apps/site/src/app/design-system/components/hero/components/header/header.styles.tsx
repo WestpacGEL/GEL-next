@@ -11,8 +11,8 @@ export const styles = tv({
       stg: { base: 'bg-hero' },
       bom: { base: 'bg-hero' },
       bsa: { base: 'bg-gradient-to-r from-hero via-[#00468e] to-[#00adbd]' },
-      wbg: { base: 'sm:bg-hero' },
-      rams: { base: 'sm:bg-primary' },
+      wbg: { base: 'bg-hero' },
+      rams: { base: 'bg-primary' },
       btfg: {},
     },
     fixed: {

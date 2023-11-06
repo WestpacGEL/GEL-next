@@ -1,0 +1,14 @@
+name: Pagination
+description: >-
+  Pagination is a component capable of helping the user navigate and give access
+  to multiple pages of content, typically used in long form content.
+design:
+  - title: Pagination
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

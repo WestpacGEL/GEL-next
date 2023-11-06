@@ -1,0 +1,14 @@
+name: Text styling
+description: >-
+  Use text styling to create typographic hierarchy throughout a page and deliver
+  better reading and scanning experiences for users.
+design:
+  - title: Editorial text styles
+  - title: Headings
+  - title: User experience
+  - title: Visual design
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

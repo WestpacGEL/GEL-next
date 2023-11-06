@@ -13,13 +13,7 @@ export function ErrorMessage({ className, tag: Tag = 'div', icon: Icon, message,
     <ul className={styles.list({})} {...props}>
       {message.map(msg => (
         <li className={styles.base({ className })}>
-          <FinalIcon
-            copyrightYear="2023"
-            className={styles.icon({})}
-            size="xsmall"
-            look="outlined"
-            // color="inherit"
-          />
+          <FinalIcon copyrightYear="2023" className={styles.icon({})} size="xsmall" look="outlined" />
           {msg}
         </li>
       ))}

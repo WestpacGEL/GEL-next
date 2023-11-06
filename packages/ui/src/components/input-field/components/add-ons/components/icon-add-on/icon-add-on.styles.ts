@@ -5,10 +5,10 @@ export const styles = tv(
     base: 'flex h-full items-center',
     variants: {
       size: {
-        small: 'px-[0.5625rem]', //'0.5625rem',
-        medium: 'px-2', //'0.75rem',
-        large: 'px-[0.9375rem]', //'0.9375rem',
-        xlarge: 'px-3', //'1.125rem',
+        small: 'px-1.5',
+        medium: 'px-2',
+        large: 'px-2.5',
+        xlarge: 'px-3',
       },
       position: {
         before: '',
@@ -18,42 +18,42 @@ export const styles = tv(
     compoundVariants: [
       {
         position: 'before',
-        size: 'small', //'0.5625rem',,
-        className: 'pl-[0.5625rem]',
+        size: 'small',
+        className: 'pl-1.5',
       },
       {
         position: 'before',
-        size: 'medium', //'0.75rem',,
+        size: 'medium',
         className: 'pl-2',
       },
       {
         position: 'before',
-        size: 'large', //'0.9375rem',,
-        className: 'pl-[0.9375rem]',
+        size: 'large',
+        className: 'pl-2.5',
       },
       {
         position: 'before',
-        size: 'xlarge', //'1.125rem',,
+        size: 'xlarge',
         className: 'pl-3',
       },
       {
         position: 'after',
-        size: 'small', //'0.5625rem',,
-        className: 'pr-[0.5625rem]',
+        size: 'small',
+        className: 'pr-1.5',
       },
       {
         position: 'after',
-        size: 'medium', //'0.75rem',,
+        size: 'medium',
         className: 'pr-2',
       },
       {
         position: 'after',
-        size: 'large', //'0.9375rem',,
-        className: 'pr-[0.9375rem]',
+        size: 'large',
+        className: 'pr-2.5',
       },
       {
         position: 'after',
-        size: 'xlarge', //'1.125rem',,
+        size: 'xlarge',
         className: 'pr-3',
       },
     ],

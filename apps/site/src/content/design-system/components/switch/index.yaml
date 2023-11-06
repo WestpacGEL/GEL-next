@@ -1,1 +1,14 @@
 name: Switch
+description: >-
+  Switches are a toggle element with a binary value. They are an effective way
+  to quickly define settings or preferences at an account or system level.
+design:
+  - title: Switches
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

@@ -6,5 +6,6 @@ export type Article = {
   description?: string;
   image: string | null;
   name: string;
+  smallDescription: string | null;
   thumbnail: string | null;
 };

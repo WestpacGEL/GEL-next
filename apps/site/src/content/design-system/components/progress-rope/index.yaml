@@ -1,1 +1,15 @@
-name: Progress-Rope
+name: Progress bar
+description: >-
+  Progress bars are animated bars which show a rate of completion for a system
+  task or a response to user input. They can be accompanied by a percentage of
+  completion value.
+design:
+  - title: Progress bar
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

@@ -19,6 +19,7 @@ export const WestpacUIKitBasePlugin = plugin(
     });
     addUtilities({
       '.focus-outline': { [`@apply ${theme('focusOutline')}`]: {} },
+      '.background-transition': { [`@apply ${theme('backgroundTransition')}`]: {} },
       '.select-caret': {
         backgroundImage:
           "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='8' style='color: rgb(89,87,103);'><path fill='currentColor' d='M0 0l7 8 7-8z'/></svg>\")",
@@ -48,6 +49,11 @@ export const WestpacUIKitBasePlugin = plugin(
         lineHeight: {
           tight: '1.2',
           normal: '1.4',
+          // See https://stackoverflow.com/questions/19982651/why-does-bootstrap-set-the-line-height-property-to-1-428571429 for below line height reasoning
+          loose: '1.428571429',
+        },
+        borderRadius: {
+          DEFAULT: '0.1875rem',
         },
         borderWidth: {
           5: '0.3125rem',
@@ -82,6 +88,9 @@ export const WestpacUIKitBasePlugin = plugin(
           md: BREAKPOINTS.md,
           lg: BREAKPOINTS.lg,
           container: '1320px', //1200 (lg) + 60 (paddingHorizontal) + 60 (paddingHorizontal)
+        },
+        transitionTimingFunction: {
+          ease: 'cubic-bezier(0.25, 0.1, 0.25, 1.0)', // based on css ease timing function used in GEL 3.0
         },
       },
       typographySizes: {
@@ -125,6 +134,10 @@ export const WestpacUIKitBasePlugin = plugin(
           fontSize: '0.875rem',
           lineHeight: 'normal',
         },
+        11: {
+          fontSize: '0.875rem',
+          lineHeight: 'loose',
+        },
       },
       formControl: {
         base: 'no-inner-spin-button box-border w-fit appearance-none overflow-visible rounded border bg-white align-middle text-text transition placeholder:font-light placeholder:text-text-50 placeholder:opacity-100 focus:focus-outline disabled:form-control-disabled',
@@ -155,6 +168,7 @@ export const WestpacUIKitBasePlugin = plugin(
         },
       },
       focusOutline: 'outline outline-2 outline-offset-[3px] outline-focus',
+      backgroundTransition: 'transition-[background] duration-300 ease-ease',
     },
   },
 );

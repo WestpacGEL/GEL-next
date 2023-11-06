@@ -6,10 +6,6 @@ export type FormContextValue = {
    */
   inline?: boolean;
   /**
-   * Size of Form
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
    * Spacing of Form
    */
   spacing?: 'medium' | 'large';

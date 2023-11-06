@@ -6,7 +6,7 @@ import { useId, useState } from 'react';
 
 import { Section } from '@/components/content-blocks/section';
 import { Link, Text } from '@/components/content-blocks/typography';
-import { Heading } from '@/components/document-renderer';
+import { Code, Heading } from '@/components/document-renderer';
 import { VisionFilter, VisionFilterProps } from '@/components/vision-filter';
 
 import { DOCUMENT_RENDERERS } from '../document-renderer';
@@ -65,7 +65,17 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
                 </Select>
               </div>
               <VisionFilter value={filter}>
-                <DocumentRenderer document={accessibilityDemo} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
+                <DocumentRenderer
+                  document={accessibilityDemo}
+                  renderers={{
+                    ...DOCUMENT_RENDERERS,
+                    block: {
+                      ...DOCUMENT_RENDERERS.block,
+                      code: props => <Code className="my-4" enableLiveCode={false} {...props} />,
+                    },
+                  }}
+                  componentBlocks={{}}
+                />
               </VisionFilter>
             </>
           )}

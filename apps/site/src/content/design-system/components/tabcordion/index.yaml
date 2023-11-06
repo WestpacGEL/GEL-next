@@ -1,0 +1,16 @@
+name: Tabcordion
+description: >-
+  Tabcordions are grouped sets of tabbed or accordion style panels. Use them to
+  group and simplify large amounts of content such as product information.
+design:
+  - title: Tabset
+  - title: Accordion
+  - title: Tabcordion
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

@@ -1,8 +1,18 @@
 name: Accessible By Design
 description: >-
+  Let’s change the way we think about accessibility. Westpac’s Access and
+  Inclusion Director, Majella Knobel notes “People assume accessibility is only
+  about the 18% of people with disability. But everyone, to some extent, will
+  experience what it’s like to live with disability. It could be a change in
+  eyesight, an injured wrist or a recovery from surgery. Disability and
+  accessibility requirements will impact all of us at some point in our
+  lifetime.”
+thumbnail: >-
+  https://res.cloudinary.com/westpac-gel/image/upload/v1666333819/cl9i44qb7000wtc8ihnxv08ex.png
+smallDescription: >-
   The Westpac Group is committed to creating products that are perceivable,
   operable, understandable, and robust for all users. Inclusive design is part
   of our dna.
-thumbnail: /images/articles/accessible-by-design/thumbnail.png
-image: /images/articles/accessible-by-design/image.png
+image: >-
+  https://res.cloudinary.com/westpac-gel/image/upload/v1666333853/cl9i45goa000xtc8i8wgx5cu2.png
 author: michael-colibraro

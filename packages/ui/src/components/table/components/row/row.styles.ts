@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: { base: 'hover:bg-background' },
     variants: {
-      striped: { true: { base: 'hover:bg-default even:bg-background' } },
+      striped: { true: { base: 'even:bg-background hover:bg-[transparent]' } },
       highlightedRow: { true: { base: 'border border-b-[3px] border-l-[6px] border-r-0 border-primary' } },
     },
   },

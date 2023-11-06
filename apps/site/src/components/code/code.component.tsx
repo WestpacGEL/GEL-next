@@ -19,7 +19,7 @@ const LIVE_SCOPE = {
   React,
 };
 
-export function Code({ children, live, showCode, className, language = 'tsx' }: CodeProps) {
+export function Code({ children, live, showCode, className, language = 'tsx', enableLiveCode = true }: CodeProps) {
   const childrenAsString = children?.toString().trim();
 
   if (!childrenAsString) return null;
@@ -27,7 +27,7 @@ export function Code({ children, live, showCode, className, language = 'tsx' }: 
   if (live) {
     return (
       <LiveProvider code={childrenAsString} scope={LIVE_SCOPE} language={language}>
-        <LiveCode showCode={showCode} className={className} />
+        <LiveCode showCode={showCode} className={className} enableLiveCode={enableLiveCode} />
       </LiveProvider>
     );
   }

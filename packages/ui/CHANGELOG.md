@@ -1,5 +1,36 @@
 # @westpac/ui
 
+## 0.11.0
+
+### Minor Changes
+
+- d9eb910: Add individual component exports
+
+## 0.10.0
+
+### Minor Changes
+
+- 626c503: misc. styling fixes and optimised the build package
+
+## 0.9.0
+
+### Minor Changes
+
+- 61e6f8b: Removed .storybook and scaffold folders from node module
+- fe42599: styling fixes based on UX feedback
+
+## 0.8.0
+
+### Minor Changes
+
+- 842f28d: misc style fixes and removed stories from node package
+
+## 0.7.1
+
+### Patch Changes
+
+- d159d41: miscellaneous visual fixes based on ux feedback
+
 ## 0.7.0
 
 ### Minor Changes

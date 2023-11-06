@@ -22,7 +22,9 @@ describe('List', () => {
         <List.Item>bullet list</List.Item>
       </List>,
     );
-    expect(getByTestId('bullet')).toHaveClass('left-[0.25rem] top-[0.375rem] h-[0.5rem] w-[0.5rem] rounded-full');
+    expect(getByTestId('bullet')).toHaveClass(
+      'absolute block border border-hero bg-hero after:border-hero left-[0.25rem] top-1 h-[0.5rem] w-[0.5rem] rounded-full',
+    );
   });
 
   it('should render with correct bullet styles when type is link', () => {
@@ -32,7 +34,7 @@ describe('List', () => {
       </List>,
     );
     expect(getByTestId('link')).toHaveClass(
-      'left-[0.125rem] top-[0.375rem] h-[0.5rem] w-[0.5rem] rotate-45 border-b-0 border-l-0 border-r-[0.125rem] border-t-[0.125rem] bg-[transparent]',
+      'absolute block border border-link after:border-link left-[0.125rem] top-1 h-[0.5rem] w-[0.5rem] rotate-45 border-b-0 border-l-0 border-r-[0.125rem] border-t-[0.125rem] bg-[transparent]',
     );
   });
 
@@ -43,7 +45,7 @@ describe('List', () => {
       </List>,
     );
     expect(getByTestId('tick')).toHaveClass(
-      'left-[0.125rem] top-[0.3125rem] h-[0.375rem] w-[0.75rem] rotate-[-44deg] border-b-[0.125rem] border-l-[0.125rem] border-r-0 border-t-0 bg-[transparent]',
+      'absolute block border border-hero after:border-hero left-[0.125rem] top-[0.3125rem] h-1 w-2 rotate-[-44deg] border-b-[0.125rem] border-l-[0.125rem] border-r-0 border-t-0 bg-[transparent]',
     );
   });
 
@@ -54,7 +56,7 @@ describe('List', () => {
       </List>,
     );
     expect(getByTestId('cross')).toHaveClass(
-      'left-[0.375rem] top-[0.25rem] h-[0.75rem] w-0 -rotate-45 border-y-0 border-l-[0.125rem] border-r-0 bg-[transparent] after:absolute after:left-[-0.125rem] after:block after:h-[0.75rem] after:w-0 after:rotate-90 after:border-y-0 after:border-l-[0.125rem] after:border-r-0',
+      'absolute block border border-hero after:border-hero left-1 top-[0.25rem] h-2 w-0 -rotate-45 border-y-0 border-l-[0.125rem] border-r-0 bg-[transparent] after:absolute after:left-[-0.125rem] after:block after:h-2 after:w-0 after:rotate-90 after:border-y-0 after:border-l-[0.125rem] after:border-r-0',
     );
   });
 

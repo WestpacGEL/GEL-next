@@ -36,7 +36,7 @@ function Accordion<T extends object>(
 
   return (
     <div {...filterDOMProps(finalProps)} {...accordionProps} ref={domRef} className={styles({ className, rounded })}>
-      <div className="mt-[-1px]">
+      <div className="ml-[-1px] mt-[-1px]">
         {[...state.collection].map(item => (
           <AccordionItem<T> key={item.key} item={item} state={state} look={look} />
         ))}

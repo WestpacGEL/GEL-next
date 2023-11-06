@@ -5,12 +5,12 @@ export const styles = tv(
     slots: {
       base: 'box-border w-full overflow-hidden border border-border bg-white p-[0.0625rem]',
       innerBar: 'box-border h-full bg-hero text-right leading-tight transition-[width] duration-[.6s]',
-      label: 'typography-body-10 mx-[0.75rem] my-0 block font-bold text-white',
+      label: 'typography-body-10 mx-2 my-0 block font-bold text-white',
     },
     variants: {
       look: {
         default: {
-          base: 'h-[1.5rem] rounded-[1.5rem]',
+          base: 'h-4 rounded-[1.5rem]',
           innerBar: ' rounded-[1.5rem]',
         },
         skinny: {

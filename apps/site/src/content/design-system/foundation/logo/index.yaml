@@ -1,0 +1,15 @@
+name: Logo
+description: >-
+  These logos and are commonly used in Westpac interfaces. They are implemented
+  as scalable vector graphics (SVGs) which ensures the highest quality rendering
+  on all devices. It also allows styling with code and complies with WGAG AA
+  accessibility requirements.
+design:
+  - title: Logos
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

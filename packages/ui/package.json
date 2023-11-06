@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "0.7.0",
+  "version": "0.11.0",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -22,29 +22,154 @@
     "./css": {
       "default": "./dist/css/westpac-ui.min.css"
     },
+    "./hook": {
+      "default": "./dist/hook/index.js"
+    },
+    "./tailwind": {
+      "default": "./dist/tailwind/index.js"
+    },
+    "./accordion": {
+      "default": "./dist/components/accordion/index.js"
+    },
+    "./alert": {
+      "default": "./dist/components/alert/index.js"
+    },
+    "./autocomplete": {
+      "default": "./dist/components/autocomplete/index.js"
+    },
+    "./badge": {
+      "default": "./dist/components/badge/index.js"
+    },
+    "./breadcrumb": {
+      "default": "./dist/components/breadcrumb/index.js"
+    },
+    "./button": {
+      "default": "./dist/components/button/index.js"
+    },
+    "./button-dropdown": {
+      "default": "./dist/components/button-dropdown/index.js"
+    },
+    "./button-group": {
+      "default": "./dist/components/button-group/index.js"
+    },
+    "./checkbox-group": {
+      "default": "./dist/components/checkbox-group/index.js"
+    },
+    "./circle": {
+      "default": "./dist/components/circle/index.js"
+    },
+    "./collapsible": {
+      "default": "./dist/components/collapsible/index.js"
+    },
+    "./compacta": {
+      "default": "./dist/components/compacta/index.js"
+    },
+    "./date-picker": {
+      "default": "./dist/components/date-picker/index.js"
+    },
+    "./error-message": {
+      "default": "./dist/components/error-message/index.js"
+    },
+    "./field": {
+      "default": "./dist/components/field/index.js"
+    },
+    "./flexi-cell": {
+      "default": "./dist/components/flexi-cell/index.js"
+    },
+    "./form": {
+      "default": "./dist/components/form/index.js"
+    },
+    "./form-hint": {
+      "default": "./dist/components/form-hint/index.js"
+    },
+    "./form-label": {
+      "default": "./dist/components/form-label/index.js"
+    },
+    "./grid": {
+      "default": "./dist/components/grid/index.js"
+    },
     "./icon": {
       "default": "./dist/components/icon/index.js"
     },
-    "./hook": {
-      "default": "./dist/hook/index.js"
+    "./input": {
+      "default": "./dist/components/input/index.js"
+    },
+    "./input-field": {
+      "default": "./dist/components/input-field/index.js"
+    },
+    "./link": {
+      "default": "./dist/components/link/index.js"
+    },
+    "./list": {
+      "default": "./dist/components/list/index.js"
+    },
+    "./modal": {
+      "default": "./dist/components/modal/index.js"
+    },
+    "./pagination": {
+      "default": "./dist/components/pagination/index.js"
+    },
+    "./panel": {
+      "default": "./dist/components/panel/index.js"
     },
     "./pictogram": {
       "default": "./dist/components/pictogram/index.js"
     },
+    "./popover": {
+      "default": "./dist/components/popover/index.js"
+    },
+    "./progress-bar": {
+      "default": "./dist/components/progress-bar/index.js"
+    },
+    "./progress-rope": {
+      "default": "./dist/components/progress-rope/index.js"
+    },
+    "./radio-group": {
+      "default": "./dist/components/radio-group/index.js"
+    },
+    "./repeater": {
+      "default": "./dist/components/repeater/index.js"
+    },
+    "./select": {
+      "default": "./dist/components/select/index.js"
+    },
+    "./selector": {
+      "default": "./dist/components/selector/index.js"
+    },
+    "./skip-link": {
+      "default": "./dist/components/skip-link/index.js"
+    },
+    "./switch": {
+      "default": "./dist/components/switch/index.js"
+    },
     "./symbol": {
       "default": "./dist/components/symbol/index.js"
     },
-    "./tailwind": {
-      "default": "./dist/tailwind/index.js"
+    "./table": {
+      "default": "./dist/components/table/index.js"
+    },
+    "./tabs": {
+      "default": "./dist/components/tabs/index.js"
+    },
+    "./textarea": {
+      "default": "./dist/components/textarea/index.js"
+    },
+    "./visually-hidden": {
+      "default": "./dist/components/visually-hidden/index.js"
+    },
+    "./well": {
+      "default": "./dist/components/well/index.js"
     }
   },
   "files": [
     "*",
+    "!.storybook",
     "!coverage",
+    "!scaffold",
     "!stories",
     "!vitest.setup.ts",
     "!vitest.config.ts",
-    "!**/*.{test,spec}.{ts,tsx,js,jsx}"
+    "!**/*.{test,spec,stories}.{ts,tsx,js,jsx}"
   ],
   "scripts": {
     "dev": "pnpm build:watch",
@@ -55,6 +180,7 @@
     "build:types": "tsc --project tsconfig.build.json",
     "build:esm": "swc ./src -d dist --no-swcrc --config-file .swcrc",
     "build:icons": "ts-node --esm ./utils/build-icons/index.ts",
+    "build:exports": "ts-node --esm ./utils/build-exports/index.ts && prettier --write package.json",
     "build:watch": "pnpm clean && pnpm build:types && pnpm build:esm -w && pnpm build:css:all",
     "build:type-table": "node generate-component-types.cjs",
     "build": "pnpm clean && pnpm build:types && pnpm build:esm && pnpm build:css:all && pnpm build:type-table",
@@ -65,7 +191,7 @@
     "test:watch": "vitest --no-coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "generate:component": "plop"
+    "generate:component": "plop && pnpm build:exports"
   },
   "devDependencies": {
     "@react-types/tabs": "~3.3.0",

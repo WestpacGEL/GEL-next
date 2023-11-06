@@ -1,0 +1,16 @@
+name: Colour
+description: >-
+  The colours specified below should be used for all Westpac user interfaces.
+  It’s important to understand how the colour system works in a multi-brand
+  environment and adhere to the accessibility guidelines.
+design:
+  - title: Primary UI palette
+  - title: Secondary colours
+  - title: Reserved colours
+  - title: User experience
+  - title: Visual design
+accessibility:
+  - title: Accessibility notes
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

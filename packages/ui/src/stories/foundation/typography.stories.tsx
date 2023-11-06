@@ -1,6 +1,7 @@
 import { type Meta, StoryFn } from '@storybook/react';
+import { clsx } from 'clsx';
 
-import { Table } from '../../components/index.js';
+import { Link, Table } from '../../components/index.js';
 
 const meta: Meta = {
   title: 'Foundation/Typography',
@@ -10,21 +11,25 @@ const meta: Meta = {
 
 export default meta;
 
+const twentyPixel = '1.428571429';
+const fourteenPixel = '0.875rem (14px)';
+
 /**
  * Brand fonts
  */
 export const BrandFont = () => {
-  const typographyBrandScale = [
-    { className: 'typography-brand-1', size: '3.75rem (60px)' },
-    { className: 'typography-brand-2', size: '3.375rem (54px)' },
-    { className: 'typography-brand-3', size: '3rem (48px)' },
-    { className: 'typography-brand-4', size: '2.625rem (42px)' },
-    { className: 'typography-brand-5', size: '2.25rem (36px)' },
-    { className: 'typography-brand-6', size: '1.875rem (30px)' },
-    { className: 'typography-brand-7', size: '1.5rem (24px)' },
-    { className: 'typography-brand-8', size: '1.125rem (18px)' },
-    { className: 'typography-brand-9', size: '1rem (16px)' },
-    { className: 'typography-brand-10', size: '0.875rem (14px)' },
+  const typographyScale = [
+    { className: 'typography-brand-1', fontSize: '3.75rem (60px)', lineHeight: '1.2' },
+    { className: 'typography-brand-2', fontSize: '3.375rem (54px)', lineHeight: '1.2' },
+    { className: 'typography-brand-3', fontSize: '3rem (48px)', lineHeight: '1.2' },
+    { className: 'typography-brand-4', fontSize: '2.625rem (42px)', lineHeight: '1.2' },
+    { className: 'typography-brand-5', fontSize: '2.25rem (36px)', lineHeight: '1.2' },
+    { className: 'typography-brand-6', fontSize: '1.875rem (30px)', lineHeight: '1.2' },
+    { className: 'typography-brand-7', fontSize: '1.5rem (24px)', lineHeight: '1.2' },
+    { className: 'typography-brand-8', fontSize: '1.125rem (18px)', lineHeight: '1.4' },
+    { className: 'typography-brand-9', fontSize: '1rem (16px)', lineHeight: '1.4' },
+    { className: 'typography-brand-10', fontSize: fourteenPixel, lineHeight: '1.4' },
+    { className: 'typography-brand-11', fontSize: fourteenPixel, lineHeight: twentyPixel },
   ];
   return (
     <Table>
@@ -32,17 +37,19 @@ export const BrandFont = () => {
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Token</Table.HeaderCell>
-          <Table.HeaderCell>Value</Table.HeaderCell>
+          <Table.HeaderCell>Font size</Table.HeaderCell>
+          <Table.HeaderCell>Line height</Table.HeaderCell>
           <Table.HeaderCell>Tailwind class</Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
       <Table.Body>
-        {typographyBrandScale.map(i => (
+        {typographyScale.map(i => (
           <Table.Row key={i.className}>
             <Table.Cell>
               <span className={i.className}>{i.className.replace('typography-', '')}</span>
             </Table.Cell>
-            <Table.Cell>{i.size}</Table.Cell>
+            <Table.Cell>{i.fontSize}</Table.Cell>
+            <Table.Cell>{i.lineHeight}</Table.Cell>
             <Table.Cell>{i.className}</Table.Cell>
           </Table.Row>
         ))}
@@ -55,17 +62,18 @@ export const BrandFont = () => {
  * Body fonts
  */
 export const BodyFont = () => {
-  const typographyBrandScale = [
-    { className: 'typography-body-1', size: '3.75rem (60px)' },
-    { className: 'typography-body-2', size: '3.375rem (54px)' },
-    { className: 'typography-body-3', size: '3rem (48px)' },
-    { className: 'typography-body-4', size: '2.625rem (42px)' },
-    { className: 'typography-body-5', size: '2.25rem (36px)' },
-    { className: 'typography-body-6', size: '1.875rem (30px)' },
-    { className: 'typography-body-7', size: '1.5rem (24px)' },
-    { className: 'typography-body-8', size: '1.125rem (18px)' },
-    { className: 'typography-body-9', size: '1rem (16px)' },
-    { className: 'typography-body-10', size: '0.875rem (14px)' },
+  const typographyScale = [
+    { className: 'typography-body-1', fontSize: '3.75rem (60px)', lineHeight: '1.2' },
+    { className: 'typography-body-2', fontSize: '3.375rem (54px)', lineHeight: '1.2' },
+    { className: 'typography-body-3', fontSize: '3rem (48px)', lineHeight: '1.2' },
+    { className: 'typography-body-4', fontSize: '2.625rem (42px)', lineHeight: '1.2' },
+    { className: 'typography-body-5', fontSize: '2.25rem (36px)', lineHeight: '1.2' },
+    { className: 'typography-body-6', fontSize: '1.875rem (30px)', lineHeight: '1.2' },
+    { className: 'typography-body-7', fontSize: '1.5rem (24px)', lineHeight: '1.2' },
+    { className: 'typography-body-8', fontSize: '1.125rem (18px)', lineHeight: '1.4' },
+    { className: 'typography-body-9', fontSize: '1rem (16px)', lineHeight: '1.4' },
+    { className: 'typography-body-10', fontSize: fourteenPixel, lineHeight: '1.4' },
+    { className: 'typography-body-11', fontSize: fourteenPixel, lineHeight: twentyPixel },
   ];
   return (
     <Table>
@@ -73,21 +81,119 @@ export const BodyFont = () => {
       <Table.Header>
         <Table.HeaderRow>
           <Table.HeaderCell>Token</Table.HeaderCell>
-          <Table.HeaderCell>Value</Table.HeaderCell>
+          <Table.HeaderCell>Font size</Table.HeaderCell>
+          <Table.HeaderCell>Line height</Table.HeaderCell>
           <Table.HeaderCell>Tailwind class</Table.HeaderCell>
         </Table.HeaderRow>
       </Table.Header>
       <Table.Body>
-        {typographyBrandScale.map(i => (
+        {typographyScale.map(i => (
           <Table.Row key={i.className}>
             <Table.Cell>
               <span className={i.className}>{i.className.replace('typography-', '')}</span>
             </Table.Cell>
-            <Table.Cell>{i.size}</Table.Cell>
+            <Table.Cell>{i.fontSize}</Table.Cell>
+            <Table.Cell>{i.lineHeight}</Table.Cell>
             <Table.Cell>{i.className}</Table.Cell>
           </Table.Row>
         ))}
       </Table.Body>
     </Table>
   );
+};
+
+/**
+ * Line height
+ */
+export const LineHeight = () => {
+  const lineHeights = [
+    { className: 'leading-normal', lineHeight: '1.4' },
+    { className: 'leading-tight', lineHeight: '1.2' },
+    { className: 'leading-loose', lineHeight: '1.428571429' },
+  ];
+  return (
+    <div>
+      <p className="mb-2">
+        The pre-Next version of GEL had a fall-back line height of 1.428571429 for things inside the body, the reasoning
+        for this can be found{' '}
+        <Link
+          href="https://stackoverflow.com/questions/19982651/why-does-bootstrap-set-the-line-height-property-to-1-428571429"
+          type="inline"
+        >
+          here
+        </Link>
+        . A typography type has been added and the leading style in tailwind (with 14px font) has been extended to
+        include this value for use to match the older version of GEL. The default tailwind values for normal and tight
+        have also been updated and included in the table.
+      </p>
+      <Table>
+        <Table.Caption>GEL line height tokens</Table.Caption>
+        <Table.Header>
+          <Table.HeaderRow>
+            <Table.HeaderCell>Token</Table.HeaderCell>
+            <Table.HeaderCell>Line height</Table.HeaderCell>
+            <Table.HeaderCell>Tailwind class</Table.HeaderCell>
+          </Table.HeaderRow>
+        </Table.Header>
+        <Table.Body>
+          {lineHeights.map(i => (
+            <Table.Row key={i.className}>
+              <Table.Cell>
+                <span className={i.className}>{i.className.replace('leading-', '')}</span>
+              </Table.Cell>
+              <Table.Cell>{i.lineHeight}</Table.Cell>
+              <Table.Cell>{i.className}</Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table>
+    </div>
+  );
+};
+const FontWeightTable = ({ type, caption }: { caption: string; type: 'brand' | 'body' }) => {
+  const fontWeight = [
+    { className: 'font-light', weight: '300' },
+    { className: 'font-normal', weight: '400' },
+    { className: 'font-medium', weight: '500' },
+    { className: 'font-semibold', weight: '600' },
+    { className: 'font-bold', weight: '700' },
+  ];
+  const typography = type === 'brand' ? 'typography-brand-7' : 'typography-body-7';
+  return (
+    <Table>
+      <Table.Caption>{caption}</Table.Caption>
+      <Table.Header>
+        <Table.HeaderRow>
+          <Table.HeaderCell>Token</Table.HeaderCell>
+          <Table.HeaderCell>Font weight</Table.HeaderCell>
+          <Table.HeaderCell>Tailwind class</Table.HeaderCell>
+        </Table.HeaderRow>
+      </Table.Header>
+      <Table.Body>
+        {fontWeight.map(i => (
+          <Table.Row key={i.className}>
+            <Table.Cell>
+              <span className={clsx(typography, i.className)}>{i.className.replace('font-', '')}</span>
+            </Table.Cell>
+            <Table.Cell>{i.weight}</Table.Cell>
+            <Table.Cell>{i.className}</Table.Cell>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+  );
+};
+
+/**
+ * Brand fonts weight
+ */
+export const BrandFontWeight = () => {
+  return <FontWeightTable caption="GEL brand font weight tokens" type="brand" />;
+};
+
+/**
+ * Body fonts weight
+ */
+export const BodyFontWeight = () => {
+  return <FontWeightTable caption="GEL body font weight tokens" type="body" />;
 };

@@ -1,0 +1,14 @@
+name: Breadcrumb
+description: >-
+  Breadcrumbs are styled navigational links used to indicate the user’s location
+  within your site. They are a simple, effective and proven method to aid
+  orientation.
+design:
+  - title: Breadcrumbs
+  - title: User experience
+  - title: Visual design
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API
