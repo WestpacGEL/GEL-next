@@ -23,7 +23,7 @@ export const styles = tv(
         },
         false: {
           base: '',
-          itemHeader: 'hover:bg-background',
+          itemHeader: 'background-transition hover:bg-background',
         },
       },
       isDisabled: {

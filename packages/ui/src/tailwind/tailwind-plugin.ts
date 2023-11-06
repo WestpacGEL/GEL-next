@@ -19,6 +19,7 @@ export const WestpacUIKitBasePlugin = plugin(
     });
     addUtilities({
       '.focus-outline': { [`@apply ${theme('focusOutline')}`]: {} },
+      '.background-transition': { [`@apply ${theme('backgroundTransition')}`]: {} },
       '.select-caret': {
         backgroundImage:
           "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='8' style='color: rgb(89,87,103);'><path fill='currentColor' d='M0 0l7 8 7-8z'/></svg>\")",
@@ -87,6 +88,9 @@ export const WestpacUIKitBasePlugin = plugin(
           md: BREAKPOINTS.md,
           lg: BREAKPOINTS.lg,
           container: '1320px', //1200 (lg) + 60 (paddingHorizontal) + 60 (paddingHorizontal)
+        },
+        transitionTimingFunction: {
+          ease: 'cubic-bezier(0.25, 0.1, 0.25, 1.0)', // based on css ease timing function used in GEL 3.0
         },
       },
       typographySizes: {
@@ -164,6 +168,7 @@ export const WestpacUIKitBasePlugin = plugin(
         },
       },
       focusOutline: 'outline outline-2 outline-offset-[3px] outline-focus',
+      backgroundTransition: 'transition-[background] duration-300 ease-ease',
     },
   },
 );

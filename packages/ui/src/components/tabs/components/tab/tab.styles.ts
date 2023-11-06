@@ -10,7 +10,7 @@ export const styles = tv(
       },
       selected: {
         true: 'bg-white',
-        false: 'hover:bg-background',
+        false: 'background-transition hover:bg-background',
       },
       orientation: {
         horizontal: '',
