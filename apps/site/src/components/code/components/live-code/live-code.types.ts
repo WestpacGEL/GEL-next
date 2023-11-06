@@ -1,1 +1,1 @@
-export type LiveCodeProps = { className?: string; showCode?: boolean };
+export type LiveCodeProps = { className?: string; enableLiveCode?: boolean; showCode?: boolean };

@@ -5,7 +5,7 @@ import { Container } from '@westpac/ui';
 import { useMemo } from 'react';
 
 import { Section } from '@/components/content-blocks/section';
-import { Heading } from '@/components/document-renderer';
+import { Code, Heading } from '@/components/document-renderer';
 import { RelatedInfo } from '@/components/related-info';
 
 import { Intro } from '..';
@@ -27,7 +27,17 @@ export function DesignContent({ designSections, description, relatedComponents }
           <Section key={id}>
             <Container>
               <Heading level={2}>{title}</Heading>
-              <DocumentRenderer document={content} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
+              <DocumentRenderer
+                document={content}
+                renderers={{
+                  ...DOCUMENT_RENDERERS,
+                  block: {
+                    ...DOCUMENT_RENDERERS.block,
+                    code: props => <Code className="my-4" enableLiveCode={false} {...props} />,
+                  },
+                }}
+                componentBlocks={{}}
+              />
             </Container>
           </Section>
         );
