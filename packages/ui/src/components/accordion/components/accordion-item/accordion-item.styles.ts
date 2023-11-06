@@ -14,7 +14,8 @@ export const styles = tv(
           itemHeader: 'border-t border-border bg-light',
         },
         lego: {
-          itemHeader: 'border-l-[0.375rem] border-t border-border bg-light transition-colors',
+          itemHeader:
+            'border-l-[0.375rem] border-border bg-light shadow-[inset_0_1px_0_var(--tw-shadow-color)] !shadow-border transition-colors',
         },
       },
       isOpen: {
