@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.11.0
+
+### Minor Changes
+
+- d9eb910: Add individual component exports
+
 ## 0.10.0
 
 ### Minor Changes
