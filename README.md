@@ -87,6 +87,22 @@ export default function SampleApp() {
 }
 ```
 
+The following example shows how to import a component individually. (Recommended if running into issues with tree-shaking and bundle size in applications)
+
+```tsx
+import { Button } from '@westpac/ui/button';
+
+export default function SampleApp() {
+  return (
+    <section>
+      <div className="space-x-4 mb-2">
+        <Button look="primary">Pay here</Button>
+      </div>
+    </section>
+  );
+}
+```
+
 ### Unit testing
 
 We recommend [vitest](https://vitest.dev/) for unit testing since `vitest` natively supports `ESM` modules.
