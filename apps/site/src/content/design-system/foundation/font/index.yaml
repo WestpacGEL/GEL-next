@@ -1,0 +1,15 @@
+name: Font
+description: >-
+  The font system allows each brand to designate two typefaces: A display font
+  for headings and a body font for editorial and UI elements.
+design:
+  - title: Brand font
+  - title: Body font
+  - title: Typographic scale
+  - title: Font weights
+  - title: Using fonts
+  - title: Dos and don’ts
+accessibility:
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API

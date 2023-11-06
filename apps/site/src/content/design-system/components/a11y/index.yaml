@@ -1,0 +1,6 @@
+name: A11y
+description: >-
+  This is a developer-only accessibility package that is used to ensure an
+  optimal experience for users of assistive technologies.
+design: []
+accessibility: []

@@ -1,0 +1,29 @@
+There are several versions of tables from basic to striped row to bordered. Basic tables are designed to display simple data sets with 2 or 3 columns. Bordered and striped row tables are designed to display more complex data sets with multiple columns and text heavy values. Using borders and alternating tints in the rows aids legibility by clearly separating the data and grouping it by row.
+
+Avoid having large amounts of content in an individual cell, if you are finding your content cannot easily fit in to the table cells, revisit your data and content, and look for other ways to communicate or solve your problem.
+
+If required, you can use a table component within a [Panel](/design-system/components/panels).
+
+### Responsive tables
+
+Working in financial services means that tables are frequently encountered in our content. Usually to display rows of numeric data, rates, transactions etc. When building responsively we need to ensure these tables are legible in smaller devices where screen space is limited.
+
+There are a few ways to approach this:
+
+1.  Shrinking the tables to fit a small screen and relying on people to pinch and zoom.
+2.  Re-structuring/stacking the table cells at the small views.
+3.  Allowing the table to scroll horizontally within the viewport.
+
+**Option 1:** Shrinking the table is a bit lazy, and not very effective.
+
+**Option 2:** Re-stacking table cells can work, but defining how the table reconfigures is wholly dependant on each specific use case and the content being displayed. Which means it’s not possible to provide a solution within the Design System that will cater for every type of content scenario required.
+
+**Option 3:** Allowing the table to scroll horizontally is the most widely used solution and is also very effective and able to be applied in most situations. This is the solution that is used in the GEL Design System for responsive tables. Even with this solution, it still requires tables to be relatively short. In general tables on mobile are difficult.
+
+We often have no choice in using tables, they need to be used to display tabular data, however we would recommend that tables are not used unless they are necessary. For example do not use a table to layout content, instead, stack the content under headings, this will create a more flexible layout.
+
+#### Comparison functionality – to table or not to table
+
+One of the functions that is critical to online research is comparison. Before the prevalence of mobile devices massively increased, the standard way to compare products was a comparison table. It is often a very large, data-heavy experience that allows the user to compare the same aspects of multiple products across rows. This obviously becomes problematic when trying to recreate the same experience on small screens, where you can only see one or two products at a time – making it very difficult to compare.
+
+As we know, the device usage ratio from desktop to mobile has swapped – design is now mobile first, sometimes mobile only. So, the standard approach of a large format comparison table has to change as well. We still need to offer the functionality of comparison, but we need to be more creative in how we achieve that. Consider using other forms of filtering to narrow down a user’s product choices before they compare the full features of the products.

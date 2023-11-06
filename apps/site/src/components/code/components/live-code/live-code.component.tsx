@@ -7,7 +7,7 @@ import { LiveContext, LiveEditor, LivePreview } from 'react-live';
 import { styles as liveCodeStyles } from './live-code.styles';
 import { LiveCodeProps } from './live-code.types';
 
-export function LiveCode({ showCode = false, className }: LiveCodeProps) {
+export function LiveCode({ showCode = false, enableLiveCode = true, className }: LiveCodeProps) {
   const liveCodeToggleButton = useRef<HTMLButtonElement>(null);
   const live = useContext(LiveContext);
 
@@ -53,34 +53,38 @@ export function LiveCode({ showCode = false, className }: LiveCodeProps) {
         ) : (
           <LivePreview aria-label="Rendered code snippet example" />
         )}
-        <div className={styles.buttonWrapper({})}>
-          <button
-            className="typography-body-10 flex items-center gap-1 border-l border-l-border p-3 transition-opacity hover:opacity-100"
-            ref={liveCodeToggleButton}
-            onClick={() => toggleIsCodeVisible(state => !state)}
-            aria-controls={codeId}
-          >
-            <>
-              {isCodeVisible ? 'Hide live code' : 'Show live code'}
-              <ArrowRightIcon color="primary" className={styles.arrowIcon({})} />
-            </>
+        {enableLiveCode && (
+          <div className={styles.buttonWrapper({})}>
+            <button
+              className="typography-body-10 flex items-center gap-1 border-l border-l-border p-3 transition-opacity hover:opacity-100"
+              ref={liveCodeToggleButton}
+              onClick={() => toggleIsCodeVisible(state => !state)}
+              aria-controls={codeId}
+            >
+              <>
+                {isCodeVisible ? 'Hide live code' : 'Show live code'}
+                <ArrowRightIcon color="primary" className={styles.arrowIcon({})} />
+              </>
+            </button>
+          </div>
+        )}
+      </div>
+      {enableLiveCode && (
+        <div id={codeId} className={styles.codeWrapper({})} onKeyDown={onLiveEditorContainerKeyDown}>
+          <button onClick={copyLiveCode} className={styles.copyCodeButton({})}>
+            Copy code
           </button>
+          <LiveEditor
+            tabMode="focus"
+            aria-label="Live code editor, press the escape key to leave the editor"
+            theme={themes.shadesOfPurple}
+            code={live.code}
+            language={live.language}
+            disabled={live.disabled}
+            onChange={handleChange}
+          />
         </div>
-      </div>
-      <div id={codeId} className={styles.codeWrapper({})} onKeyDown={onLiveEditorContainerKeyDown}>
-        <button onClick={copyLiveCode} className={styles.copyCodeButton({})}>
-          Copy code
-        </button>
-        <LiveEditor
-          tabMode="focus"
-          aria-label="Live code editor, press the escape key to leave the editor"
-          theme={themes.shadesOfPurple}
-          code={live.code}
-          language={live.language}
-          disabled={live.disabled}
-          onChange={handleChange}
-        />
-      </div>
+      )}
     </div>
   );
 }
