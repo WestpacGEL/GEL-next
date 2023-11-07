@@ -90,7 +90,7 @@ export const generateDatePicker = () => {
         '@apply hover:!bg-primary/5 focus:!bg-white/0 focus:!text-text': {},
         '@apply active:shadow active:focus-outline focus:focus-outline focus:!shadow-none !outline-offset-0': {},
         '&.is-today': {
-          '@apply !shadow-primary !text-text !bg-primary/5': {},
+          '@apply !shadow-primary !text-text !bg-primary/5 !border !border-solid !border-primary': {},
         },
         '&.is-disabled': {
           '@apply line-through': {},
