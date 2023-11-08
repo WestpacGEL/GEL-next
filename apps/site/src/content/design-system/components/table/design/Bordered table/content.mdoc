@@ -3,7 +3,10 @@ The bordered table outlines each cell, use a bordered table if displaying lots o
 ```jsx
 <div className="p-3">
   <Table bordered>
-    <Table.Caption> Caption this table width is: <em>(100%)</em> </Table.Caption>
+    <Table.Caption>
+      {' '}
+      Caption this table width is: <em>(100%)</em>{' '}
+    </Table.Caption>
     <Table.Header>
       <Table.HeaderRow>
         <Table.HeaderCell>Name</Table.HeaderCell>
@@ -36,4 +39,4 @@ The bordered table outlines each cell, use a bordered table if displaying lots o
     <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
   </Table>
 </div>
-``` 
+```

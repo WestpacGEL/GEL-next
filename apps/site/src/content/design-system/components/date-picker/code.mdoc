@@ -3,7 +3,7 @@
 ```jsx
 () => {
   const sizes = ['sm', 'md', 'lg', 'xl'];
-  return sizes.map((size) => (
+  return sizes.map(size => (
     <div className="py-2" key={size}>
       <small>size {size}</small>
       <DatePicker size={size} />
@@ -18,6 +18,6 @@
 
 ```jsx
 () => {
-  return <DatePicker disableWeekends />
+  return <DatePicker disableWeekends />;
 };
 ```
