@@ -108,6 +108,8 @@ export default config({
               formatting: true,
               dividers: true,
               links: true,
+              images: true,
+              layouts: [[1, 1]],
               label: 'Design',
             }),
           }),

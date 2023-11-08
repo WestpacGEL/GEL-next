@@ -4,7 +4,19 @@ Any of the variations described above can come in either a simple or complex lay
 
 The minimum content requirement is a label.
 
-Loading...
+```tsx
+<Selector type="radio">
+  {[
+    { key: 'A', disabled: false },
+    { key: 'B', disabled: false },
+    { key: 'C', disabled: false },
+  ].map(({ key, disabled }) => (
+    <Selector.Radio key={key} body value={key} isDisabled={disabled}>
+      <Selector.Label>Label</Selector.Label>
+    </Selector.Radio>
+  ))}
+</Selector>
+```
 
 ### Complex layout
 
@@ -12,4 +24,58 @@ Some experiences may require more detail such as monetary values or product name
 
 Any combination of these elements may be used as long as they are used consistently throughout a set, and should always at least have a label.
 
-Loading...
+```tsx
+<Selector type="radio">
+  {[
+    {
+      before: (
+        <Selector.Adornment align="top">
+          <SettingsIcon className="h-5 w-5" />
+        </Selector.Adornment>
+      ),
+      label: 'Label',
+      hint: 'Some supporting hint text can do here',
+      key: 'A',
+      secondaryText: '$10,000.00',
+      disabled: false,
+    },
+    {
+      before: (
+        <Selector.Adornment align="top">
+          <WatchIcon className="h-5 w-5" />
+        </Selector.Adornment>
+      ),
+      label: 'Label',
+      hint: 'Some supporting hint text can do here',
+      key: 'B',
+      secondaryText: '$10,000.00',
+      disabled: false,
+    },
+    {
+      before: (
+        <Selector.Adornment align="top">
+          <EmailIcon className="h-5 w-5" />
+        </Selector.Adornment>
+      ),
+      label: 'Label',
+      hint: 'Some supporting hint text can do here',
+      key: 'C',
+      secondaryText: '$10,000.00',
+      disabled: false,
+    },
+  ].map(({ key, disabled, hint, label, before, secondaryText }) => (
+    <Selector.Radio
+      checkIcon="arrow"
+      before={before}
+      after={<Selector.Label>{secondaryText}</Selector.Label>}
+      key={key}
+      body
+      value={key}
+      isDisabled={disabled}
+    >
+      <Selector.Label>{label}</Selector.Label>
+      {hint && <Selector.Hint>{hint}</Selector.Hint>}
+    </Selector.Radio>
+  ))}
+</Selector>
+```

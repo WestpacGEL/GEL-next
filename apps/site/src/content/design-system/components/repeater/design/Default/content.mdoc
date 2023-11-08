@@ -1,3 +1,11 @@
 Sitting directly under the elements or component it aims to repeat, by selecting the “Add new” button, the item will repeat.
 
-Loading...
+```jsx
+<Repeater>
+  <Form.Group>
+    <Form.Label htmlFor={`test`}>Primary</Form.Label>
+    <Form.Hint>Primary title text</Form.Hint>
+    <Input className="w-full" name="test" onChange={e => console.log(e)} />
+  </Form.Group>
+</Repeater>
+```

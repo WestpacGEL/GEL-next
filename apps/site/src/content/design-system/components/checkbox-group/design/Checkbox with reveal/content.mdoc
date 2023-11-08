@@ -5,4 +5,18 @@ When requirements dictate long lists of choices, and particularly as mobile scre
 *   Surface the most popular and hide the rest behind the interaction.
 *   Always express how many items are behind the reveal.
 
-Loading...
+```jsx
+<div className="flex">
+    <CheckboxGroup label={<p className="font-bold mb-1">Medium</p>} size="medium" showAmount={1}>
+        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+    <span className="mr-3" />  
+    <CheckboxGroup label={<p className="font-bold mb-1">Large</p>} size="large" showAmount={1}>
+        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+</div>
+```

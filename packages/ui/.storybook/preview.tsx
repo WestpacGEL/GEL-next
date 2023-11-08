@@ -1,11 +1,13 @@
 import type { Preview } from '@storybook/react';
 import './global.css';
 import * as React from 'react';
+import { clsx } from 'clsx';
 
 const withThemeProvider = (Story, context) => {
   const theme = context.globals?.theme || 'WBC';
+  // Note: Not using padding for grid demos as it affects the proper grid visuals i.e. breakpoints, paddings, margins etc.
   return (
-    <div data-theme={theme.toLowerCase()} className="p-4">
+    <div data-theme={theme.toLowerCase()} className={clsx(!(context.componentId === 'foundation-grid') && 'p-4')}>
       <Story />
     </div>
   );

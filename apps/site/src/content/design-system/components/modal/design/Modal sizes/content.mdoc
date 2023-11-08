@@ -1,3 +1,33 @@
 Use the appropriate modal size to suit your content. A modal will always responsively, re-size itself to fit the view port it appears in. Select from the buttons below to view the modals.
 
-Loading...
+```jsx
+() => {
+  const stateSM = useOverlayTriggerState({});
+  const stateMD = useOverlayTriggerState({});
+  const stateLG = useOverlayTriggerState({});
+
+  const states = useMemo(() => {
+    return {
+      sm: stateSM,
+      md: stateMD,
+      lg: stateLG,
+    };
+  }, [stateSM, stateMD, stateLG]);
+
+  return (
+    <div className="flex gap-2">
+      {['sm', 'md', 'lg'].map((size: string) => (
+        <Fragment key={size}>
+          <Modal isDismissable size={size} state={states[size as 'sm' | 'md' | 'lg']} title={`Modal ${size}`}>
+            <Modal.Body>I'm child</Modal.Body>
+            <Modal.Footer>
+              <p>Lorem, ipsum dolor</p>
+            </Modal.Footer>
+          </Modal>
+          <Button onClick={states[size as 'sm' | 'md' | 'lg'].open}>Open Modal {size}</Button>
+        </Fragment>
+      ))}
+    </div>
+  );
+};
+```

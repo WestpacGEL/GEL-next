@@ -1,6 +1,7 @@
 import { type Meta, StoryFn } from '@storybook/react';
 
-import { Container, Item } from './components/index.js';
+import { Container, Item as GridItem } from './components/index.js';
+import { type ItemProps } from './components/item/item.types.js';
 import { Grid } from './grid.component.js';
 
 const meta: Meta<typeof Grid> = {
@@ -12,15 +13,17 @@ const meta: Meta<typeof Grid> = {
 
 export default meta;
 
+const Item = (props: ItemProps) => (
+  <GridItem className="flex h-10 items-center justify-center border border-border bg-light" {...props} />
+);
+
 export const Default = () => {
   const items = Array(12).fill(null);
 
   return (
     <Grid>
       {items.map((_, i) => (
-        <Item key={i} className="border border-border bg-light p-2 text-center">
-          {i + 1}
-        </Item>
+        <Item key={i}>{i + 1}</Item>
       ))}
     </Grid>
   );
@@ -33,9 +36,7 @@ export const DefaultContainer = () => {
     <Container>
       <Grid>
         {items.map((_, i) => (
-          <Item key={i} className="border border-border bg-light p-2 text-center">
-            {i + 1}
-          </Item>
+          <Item key={i}>{i + 1}</Item>
         ))}
       </Grid>
     </Container>
@@ -46,12 +47,8 @@ export const ResponsiveItems = () => {
   return (
     <Container>
       <Grid>
-        <Item span={{ initial: 6, lg: 2 }} className="border border-border bg-light p-2 text-center">
-          span - (xs:6, lg:3)
-        </Item>
-        <Item span={{ initial: 6, lg: 10 }} className="border border-border bg-light p-2 text-center">
-          span - (xs:6, lg:10)
-        </Item>
+        <Item span={{ initial: 6, lg: 2 }}>span - (xs:6, lg:3)</Item>
+        <Item span={{ initial: 6, lg: 10 }}>span - (xs:6, lg:10)</Item>
       </Grid>
     </Container>
   );
@@ -61,19 +58,17 @@ export const Positioning = () => {
   return (
     <Container>
       <Grid>
-        <Item span={4} className="border border-border bg-light p-2 text-center">
-          Top Left
-        </Item>
-        <Item start={9} span={4} className="border border-border bg-light p-2 text-center">
+        <Item span={4}>Top Left</Item>
+        <Item start={9} span={4}>
           Top Right
         </Item>
-        <Item start={5} span={4} className="border border-border bg-light p-2 text-center">
+        <Item start={5} span={4}>
           Middle
         </Item>
-        <Item start={1} span={4} className="border border-border bg-light p-2 text-center">
+        <Item start={1} span={4}>
           Bottom Left
         </Item>
-        <Item start={9} span={4} className="border border-border bg-light p-2 text-center">
+        <Item start={9} span={4}>
           Bottom Right
         </Item>
       </Grid>
@@ -85,21 +80,11 @@ export const HolyGrailLayout = () => {
   return (
     <Container>
       <Grid>
-        <Item span={12} className="h-12 border border-border bg-light p-2 text-center">
-          Header
-        </Item>
-        <Item span={3} className="h-10 border border-border bg-light p-2 text-center">
-          Menu
-        </Item>
-        <Item span={6} className="h-10 border border-border bg-light p-2 text-center">
-          Content
-        </Item>
-        <Item span={3} className="h-10 border border-border bg-light p-2 text-center">
-          Ads
-        </Item>
-        <Item span={12} className="h-12 border border-border bg-light p-2 text-center">
-          Footer
-        </Item>
+        <Item span={12}>Header</Item>
+        <Item span={3}>Menu</Item>
+        <Item span={6}>Content</Item>
+        <Item span={3}>Ads</Item>
+        <Item span={12}>Footer</Item>
       </Grid>
     </Container>
   );
