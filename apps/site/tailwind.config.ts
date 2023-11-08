@@ -69,6 +69,8 @@ const config: Config = withGEL({
     'justify-center',
     'rounded',
     'transition-colors',
+    'bg-primary-20',
+    'bg-success-20',
   ],
   plugins: [SitePlugin],
 });

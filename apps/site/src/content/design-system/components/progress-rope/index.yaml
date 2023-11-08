@@ -1,10 +1,10 @@
-name: Progress bar
+name: Progress rope
 description: >-
-  Progress bars are animated bars which show a rate of completion for a system
-  task or a response to user input. They can be accompanied by a percentage of
-  completion value.
+  The progress rope is a tool for signposting completion on long forms or
+  applications and is designed to be used with the GEL forms framework.
 design:
-  - title: Progress bar
+  - title: Default progress rope
+  - title: Grouped progress rope
   - title: User experience
   - title: Visual design
   - title: Dos and don’ts

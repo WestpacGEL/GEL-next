@@ -1,0 +1,15 @@
+```tsx
+() => {
+  const [page, setPage] = useState(1);
+
+  return (
+    <Pagination
+      current={page}
+      onChange={changedPage => {
+        setPage(changedPage);
+      }}
+      pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
+    />
+  );
+};
+```

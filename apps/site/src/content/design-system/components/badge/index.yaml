@@ -1,12 +1,13 @@
-name: Breadcrumb
+name: Badge
 description: >-
-  Breadcrumbs are styled navigational links used to indicate the user’s location
-  within your site. They are a simple, effective and proven method to aid
-  orientation.
+  Badges are small, styled UI items usually used with other elements. They can
+  be used as a number count, to highlight a word or give context to an action
+  needed.
 design:
-  - title: Breadcrumbs
+  - title: Badge styles
   - title: User experience
   - title: Visual design
+  - title: Dos and don’ts
 accessibility:
   - title: Notes on accessibility
   - title: Accessibility features

@@ -1,11 +1,55 @@
 **Sizes:** There are four button group sizes, make sure when laying out forms that your button group size and field sizes are aligned.
 
-Loading...
+```tsx
+<div className="grid gap-3">
+    <ButtonGroup label={<p className="font-bold mb-1">Small</p>} size="small">
+        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+    </ButtonGroup>
+    <ButtonGroup label={<p className="font-bold mb-1">Medium (default)</p>} size="medium">
+        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+    </ButtonGroup>
+    <ButtonGroup label={<p className="font-bold mb-1">Large</p>} size="large">
+        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+    </ButtonGroup>
+    <ButtonGroup label={<p className="font-bold mb-1">Extra large</p>} size="xlarge">
+        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+    </ButtonGroup>
+</div>
+```
 
 **Multiple items:** We recommend only using up to 3 items in a button group, any more can become too difficult to scan and can become problematic at smaller viewports. Is also best to keep the labels short.
 
-Loading...
+```tsx
+<div className="grid gap-3">
+    <ButtonGroup label={<p className="font-bold mb-1">Hero (default)</p>} look="hero">
+        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+    </ButtonGroup>
+    <ButtonGroup label={<p className="font-bold mb-1">Primary</p>} look="primary">
+        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+    </ButtonGroup>
+</div>
+```
 
 **Block level:** Using block level button groups will allow the group to stretch the full width of the view port. This is useful for smaller viewports.
 
-Loading...
+```jsx
+<div className="grid gap-3">
+    <ButtonGroup label={<p className="font-bold mb-1">Block</p>} look="hero" block>
+        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
+        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+    </ButtonGroup>
+</div>
+```

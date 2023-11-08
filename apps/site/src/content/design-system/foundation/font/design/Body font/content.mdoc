@@ -4,12 +4,17 @@ The body font stack is a list of system fonts for each operating system. When us
 
 To date the current body font stack uses:
 
-*   San Francisco - _iOS_
-*   Roboto - _Android_
-*   Segoe - _Windows_
+- San Francisco - _iOS_
+- Roboto - _Android_
+- Segoe - _Windows_
 
 Please note operating systems are updated all the time - these fonts may change.
 
 _**Note:**_ _Never use a web font without confirmation that you have the correct licence agreement in place._
 
-Loading...
+```tsx
+<div>
+  <p className="typography-body-10 text-muted italic">Sans serif system font</p>
+  <p className="typography-body-4">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890 !@#$¢%&*©®™£</p>
+</div>
+```

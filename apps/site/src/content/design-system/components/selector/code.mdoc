@@ -1,0 +1,95 @@
+```tsx
+<Selector type="checkbox">
+  {[
+    { key: 'A', disabled: false },
+    { key: 'B', disabled: false },
+    { key: 'C', disabled: false },
+    { key: 'D', disabled: true },
+  ].map(({ key, disabled }) => (
+    <Selector.Checkbox key={key} body value={key} isDisabled={disabled}>
+      <Selector.Label>Something {key}</Selector.Label>
+    </Selector.Checkbox>
+  ))}
+</Selector>
+```
+
+---
+
+### Radio
+
+```tsx
+<Selector type="radio">
+  {[
+    { key: 'A', disabled: false },
+    { key: 'B', disabled: false },
+    { key: 'C', disabled: false },
+    { key: 'D', disabled: true },
+  ].map(({ key, disabled }) => (
+    <Selector.Radio key={key} body value={key} isDisabled={disabled}>
+      <Selector.Label>Something {key}</Selector.Label>
+    </Selector.Radio>
+  ))}
+</Selector>
+```
+
+---
+
+### Check with arrow
+
+```tsx
+<Selector type="radio">
+  {[
+    { key: 'A', disabled: false },
+    { key: 'B', disabled: false },
+    { key: 'C', disabled: false },
+    { key: 'D', disabled: true },
+  ].map(({ key, disabled }) => (
+    <Selector.Radio key={key} body value={key} isDisabled={disabled} checkIcon="arrow">
+      <Selector.Label>Something {key}</Selector.Label>
+    </Selector.Radio>
+  ))}
+</Selector>
+```
+
+---
+
+### Check with arrow
+
+```tsx
+() => {
+  return (
+    <Selector type="checkbox">
+      {[
+        {
+          label: 'Here is a label A',
+          hint: (
+            <>
+              <VisuallyHidden>Bank Account</VisuallyHidden>
+              123-456 123456
+            </>
+          ),
+          key: 'A',
+          disabled: false,
+        },
+        {
+          label: 'Here is a label B',
+          hint: (
+            <>
+              <VisuallyHidden>Bank Account</VisuallyHidden>
+              123-456 123456
+            </>
+          ),
+          key: 'B',
+          disabled: false,
+        },
+        { label: 'Here is a label C', hint: '', key: 'C', disabled: false },
+      ].map(({ key, disabled, hint, label }) => (
+        <Selector.Checkbox key={key} body value={key} isDisabled={disabled}>
+          <Selector.Label>{label}</Selector.Label>
+          {hint && <Selector.Hint>{hint}</Selector.Hint>}
+        </Selector.Checkbox>
+      ))}
+    </Selector>
+  );
+};
+```
