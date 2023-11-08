@@ -1,3 +1,17 @@
 Use link list styling when the list items are clickable. An un-styled list has no bullets, ticks or icons.
 
-Loading...
+```jsx
+() => {
+  const TYPES = ['bullet', 'link', 'tick', 'cross', 'unstyled', 'icon', 'ordered'];
+  return TYPES.map(type => (
+    <div key={type}>
+      <h1 className="typography-body-10 mb-2">{type}</h1>
+      <List type={type} className="mb-4" icon={type === 'icon' ? PdfFileIcon : undefined}>
+        <List.Item>Styled {type} list</List.Item>
+        <List.Item>Styled {type} list</List.Item>
+        <List.Item>Styled {type} list</List.Item>
+      </List>
+    </div>
+  ));
+};
+```

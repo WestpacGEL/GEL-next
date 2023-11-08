@@ -1,11 +1,41 @@
 **Standard buttons:** There are three standard button styles you can use in your interface.
 
-Loading...
+```jsx
+<div className="flex gap-2">
+  <Button look="primary">Primary standard</Button>
+  <Button look="hero">Hero standard</Button>
+  <Button look="faint">Faint standard</Button>
+  <Button look="link">Link</Button>
+</div>
+```
 
 **Soft buttons:** The soft button option places less visual emphasis on the button. Soft buttons are useful when grouping buttons with differing importance.
 
-Loading...
+```jsx
+<div className="flex gap-2">
+  <Button look="primary" soft>Primary soft</Button>
+  <Button look="hero" soft>Hero soft</Button>
+  <Button look="faint" soft>Faint soft</Button>
+</div>
+```
 
 **Buttons with icons:** Using icons in buttons is especially useful for indicating a button's functionality. Icons are a universal language - the 'Search icon' will almost always mean search.
 
-Loading...
+```jsx
+<div className="flex flex-col gap-2">
+  <div className="flex gap-2">
+    <Button iconBefore={FavoriteIcon}>Button</Button>
+    <Button look="primary" iconAfter={FavoriteIcon}>Button</Button>
+    <Button look="faint" iconAfter={FavoriteIcon}>Button</Button>
+  </div>
+  <div className="flex gap-2">
+    <Button soft iconBefore={FavoriteIcon}>Button</Button>
+    <Button look="primary" soft iconAfter={FavoriteIcon}>Button</Button>
+    <Button look="faint" soft iconAfter={FavoriteIcon}>Button</Button>
+  </div>
+  <div className="flex flex-col gap-2">
+    <Button block iconAfter={AddIcon}>Button</Button>
+    <Button block justify iconAfter={AddIcon}>Button</Button>
+  </div>
+</div>
+```

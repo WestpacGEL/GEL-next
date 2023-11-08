@@ -28,7 +28,18 @@ export {
   ButtonDropdown,
   InputField,
   Modal,
+  Field,
   ProgressRope,
+  VisuallyHidden,
+  Pagination,
+  Popover,
+  Repeater,
+  SkipLink,
+  Compacta,
+  Form,
+  Selector,
+  Grid,
+  Item,
 } from '@westpac/ui';
 
 export {
@@ -55,6 +66,9 @@ export {
   VisibilityOffIcon,
   RefreshIcon,
   PhoneIcon,
+  SettingsIcon,
+  WatchIcon,
+  EmailIcon,
 } from '@westpac/ui/icon';
 
 export { GiftPictogram } from '@westpac/ui/pictogram';

@@ -1,1 +1,15 @@
-name: Input-Field
+name: Input Field
+description: >-
+  Input field is an input field either followed or preceded by an input or
+  character. They are useful for giving context to input field values.
+design:
+  - title: Input field examples
+  - title: Input field sizes
+  - title: User experience
+  - title: Visual design
+  - title: Dos and don’ts
+accessibility:
+  - title: Notes on accessibility
+  - title: Accessibility features
+  - title: Keyboard support
+  - title: Accessibility API
