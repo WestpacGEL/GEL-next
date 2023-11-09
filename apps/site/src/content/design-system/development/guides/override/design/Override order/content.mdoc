@@ -1,0 +1,63 @@
+The override system contains different levels where you can introduce overrides to a component. The levels you can introduce an override are:
+
+- token: overrides coming from the theme/brand package
+- brand: overrides coming from the \`brand\` prop on the '<GEL />' wrapper
+- component: overrides coming from the component \`override\` prop
+
+An application is able to introduce overrides at different levels and our components will perform a reconciliation and merge on all the overrides passed to it with the following specificity order (from lowest to highest):
+
+token -> brand -> component
+
+### Component overrides
+
+All GEL components take an \`override\` prop which is an object mapping of subcomponents and their overrides.
+
+Loading...
+
+### Brand overrides
+
+The GEL design system also allows for overrides at a brand level. This way you can specify an override once and all instances of the component within the GEL wrapper will use this override. To override at a brand level, add a key with the GEL component package name with an override value within the brand object.
+
+import wbc from '@westpac/wbc'; const brand = { ...wbc }; brand\['@westpac/switch'\] = { Label: { styles: (styles) => ({ ...styles, color: 'indigo', paddingRight: '2rem', }), }, Toggle: { styles: (styles, { checked }) => ({ ...styles, borderColor: 'indigo', backgroundColor: checked ? 'darkmagenta' : 'white', }), }, };
+
+import wbc from '@westpac/wbc';
+
+const brand \= { ...wbc };
+
+brand\['@westpac/switch'\] \= {
+
+    	Label: {
+
+    		styles: (styles) \=> ({
+
+    			...styles,
+
+    			color: 'indigo',
+
+    			paddingRight: '2rem',
+
+    		}),
+
+    	},
+
+    	Toggle: {
+
+    		styles: (styles, { checked }) \=> ({
+
+    			...styles,
+
+    			borderColor: 'indigo',
+
+    			backgroundColor: checked ? 'darkmagenta' : 'white',
+
+    		}),
+
+    	},
+
+    };
+
+/\*\* \* Reset the text fill color so that placeholder is visible \*/ .npm\_\_react-simple-code-editor\_\_textarea:empty { -webkit-text-fill-color: inherit !important; } /\*\* \* Hack to apply on some CSS on IE10 and IE11 \*/ @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /\*\* \* IE doesn't support '-webkit-text-fill-color' \* So we use 'color: transparent' to make the text transparent on IE \* Unlike other browsers, it doesn't affect caret color in IE \*/ .npm\_\_react-simple-code-editor\_\_textarea { color: transparent !important; } .npm\_\_react-simple-code-editor\_\_textarea::selection { background-color: #accef7 !important; color: transparent !important; } }
+
+### Token overrides
+
+As we are a multi-brand design system, we allow for each of the brands to have brand specific styling in their components. The GEL team handles this by adding them directly into the brand package that is used by applications. These overrides are not able to be directly accessed by developers as they are in the brand package but developers are able to override them by introducing their own overrides at a higher specificity level.

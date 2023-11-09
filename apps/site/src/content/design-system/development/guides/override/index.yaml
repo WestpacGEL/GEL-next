@@ -1,0 +1,11 @@
+name: Override
+description: >-
+  As part of the Westpac GEL design system we have introduced an override system
+  that allows developers to customise different parts of a component for their
+  development needs.
+design:
+  - title: Subcomponents
+  - title: Structure
+  - title: How overrides work
+  - title: Override order
+accessibility: []

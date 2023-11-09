@@ -1,16 +1,10 @@
 'use client';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { Key, useCallback } from 'react';
+import { Key, useCallback, useMemo } from 'react';
 
 import { AccessibilityContent, CodeContent, DesignContent, Tabs } from './components';
 import { type ContentTabsProps } from './content-tabs.types';
-
-const TABS = [
-  { label: 'Design', key: 'design' },
-  { label: 'Accessibility', key: 'accessibility' },
-  { label: 'Code', key: 'code' },
-] as const;
 
 export function ContentTabs({ content }: { content: ContentTabsProps }) {
   const router = useRouter();
@@ -26,9 +20,17 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
     [brand, pathname, router],
   );
 
+  const filteredTabs = useMemo(() => {
+    return [
+      { label: 'Design', key: 'design' },
+      ...(content.accessibilitySections.length > 0 ? [{ label: 'Accessibility', key: 'accessibility' }] : []),
+      ...(content.componentProps || content.code ? [{ label: 'Code', key: 'code' }] : []),
+    ];
+  }, [content.accessibilitySections.length, content.code, content.componentProps]);
+
   return (
     <Tabs aria-label="GEL design system content" selectedKey={tab} onSelectionChange={handleChange}>
-      {TABS.map(tab => (
+      {filteredTabs.map(tab => (
         <Tabs.Panel title={tab.label} key={tab.key}>
           <div className="bg-background">
             {tab.key === 'design' && (
