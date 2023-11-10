@@ -1,5 +1,6 @@
-name: Hyperlinks & email addresse
+name: Hyperlinks & email addresses
 description: A guide to using hyperlinks and email addresses.
 design:
-  - {}
+  - title: undefined     
+    noTitle: true
 accessibility: []

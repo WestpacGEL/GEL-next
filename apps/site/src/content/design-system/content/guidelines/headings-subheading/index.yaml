@@ -3,5 +3,6 @@ description: >-
   Headings and subheadings are used to tell a person what they can expect from
   the content of a section.
 design:
-  - {}
+  - title: undefined     
+    noTitle: true
 accessibility: []

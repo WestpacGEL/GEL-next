@@ -12,6 +12,9 @@ export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = 
     heading: Heading,
     list: props => <List {...props} className="sm:w-9/12" />,
     layout: Layout,
+    blockquote: ({ children }) => (
+      <blockquote className="typography-body-9 mx-6.5 my-2.5 font-light">{children}</blockquote>
+    ),
   },
   inline: {
     code: InlineCode,

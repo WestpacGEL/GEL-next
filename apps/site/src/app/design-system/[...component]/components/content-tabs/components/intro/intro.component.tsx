@@ -16,9 +16,11 @@ export function Intro({ description, sectionNames }: IntroProps) {
               {description}
             </p>
           </Item>
-          <Item span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
-            <TableOfContents contents={sectionNames} />
-          </Item>
+          {sectionNames.length > 0 && (
+            <Item span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
+              <TableOfContents contents={sectionNames} />
+            </Item>
+          )}
         </Grid>
       </Container>
     </section>

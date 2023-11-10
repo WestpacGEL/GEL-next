@@ -1,5 +1,6 @@
 name: People & diversity
 description: A guide to writing for an inclusive audience.
 design:
-  - {}
+  - title: undefined     
+    noTitle: true
 accessibility: []

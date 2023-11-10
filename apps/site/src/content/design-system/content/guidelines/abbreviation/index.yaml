@@ -2,4 +2,5 @@ name: Abbreviation
 description: Abbreviations are shortened forms of words or phrases.
 design:
   - title: title
+    noTitle: true
 accessibility: []
