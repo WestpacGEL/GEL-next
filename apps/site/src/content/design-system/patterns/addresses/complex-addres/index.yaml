@@ -1,0 +1,8 @@
+name: Complex addres
+description: >-
+  Use the complex address pattern when you need to allow for the accurate
+  capture of multiple property types.
+design:
+  - title: Complex address
+  - title: Pattern examples in code
+accessibility: []

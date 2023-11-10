@@ -6,7 +6,7 @@ export const styles = tv(
       base: 'relative flex w-full flex-col',
       label: 'block cursor-default text-left text-sm font-medium text-text',
       button:
-        'relative flex h-11 cursor-pointer flex-row items-stretch overflow-hidden pl-3 pr-4 shadow-sm outline-none focus:focus-outline',
+        'relative flex h-11 cursor-pointer flex-row items-stretch overflow-hidden pl-3 pr-4 shadow-sm outline-none',
       // TODO: this is a workaround to align, but need to find a better way.
       popover: 'ml-[-0.75rem] w-[18.75rem]',
       // icon: 'text-primary transition-transform',
@@ -16,7 +16,7 @@ export const styles = tv(
     variants: {
       isFocusVisible: {
         true: {
-          base: '',
+          button: 'focus-outline',
         },
         false: {},
       },

@@ -1,7 +1,6 @@
 import './styles/globals.css';
 import { type Metadata } from 'next';
 
-import { StickyFooter } from '@/components/sticky-footer';
 import { ThemeProvider } from '@/components/theme';
 
 export const metadata: Metadata = {
