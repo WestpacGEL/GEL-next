@@ -1,2 +1,2 @@
-export * from './heading.component';
-export * from './heading.types';
+export * from './layout.component';
+export * from './layout.types';
