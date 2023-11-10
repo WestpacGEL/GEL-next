@@ -2,6 +2,7 @@ import { DocumentRendererProps } from '@keystatic/core/renderer';
 
 import { Code as InlineCode, Link } from '@/components/content-blocks/typography';
 import { Blockquote, Code, Divider, List, Paragraph } from '@/components/document-renderer';
+import { Layout } from '@/components/document-renderer/layout/layout.component';
 
 import { Heading } from './heading';
 import { Image } from './image';
@@ -19,6 +20,7 @@ export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = 
       </Blockquote>
     ),
     image: Image,
+    layout: Layout,
   },
   inline: {
     code: InlineCode,

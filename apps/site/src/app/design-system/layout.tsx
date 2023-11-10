@@ -4,8 +4,8 @@ import { formatNavItems } from '@/utils/format';
 import { Sidebar, SidebarContextProvider } from './components';
 
 export default async function DesignSystemLayout({ children }: { children: React.ReactNode }) {
-  const items = await reader.collections.designSystem.list();
-  const formattedItems = formatNavItems(items);
+  const allContent = await reader.collections.designSystem.all();
+  const formattedItems = formatNavItems(allContent.map(({ entry, slug }) => ({ slug, name: entry.name })));
 
   return (
     <div className="flex min-h-screen flex-col">

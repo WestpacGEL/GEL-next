@@ -1,0 +1,10 @@
+name: Error message
+description: >-
+  The way we communicate errors to our users helps them to recover quickly with
+  less effort.
+design:
+  - title: undefined     
+    noTitle: true
+  - title: Types of error messages
+  - title: Displaying error messages
+accessibility: []

@@ -1,0 +1,11 @@
+name: Phone
+description: >-
+  This pattern is used for accurately capturing phone numbers. Only capture what
+  you need for your application.
+design:
+  - title: Phone number
+  - title: Error states
+  - title: User experience
+  - title: Dos and don'ts
+  - title: Pattern examples in code
+accessibility: []

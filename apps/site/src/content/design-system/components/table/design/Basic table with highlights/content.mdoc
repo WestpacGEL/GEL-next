@@ -3,7 +3,10 @@ Use highlights to call out specific cells in a table. They can be added to an in
 ```jsx
 <div className="p-3">
   <Table>
-    <Table.Caption> Caption this table width is: <em>(100%)</em> </Table.Caption>
+    <Table.Caption>
+      {' '}
+      Caption this table width is: <em>(100%)</em>{' '}
+    </Table.Caption>
     <Table.Header>
       <Table.HeaderRow>
         <Table.HeaderCell>Name</Table.HeaderCell>
@@ -29,7 +32,10 @@ Use highlights to call out specific cells in a table. They can be added to an in
         <Table.Cell>6/7/2020</Table.Cell>
       </Table.Row>
       <Table.Row>
-        <Table.Cell highlightStart highlighted> bootmgr </Table.Cell>
+        <Table.Cell highlightStart highlighted>
+          {' '}
+          bootmgr{' '}
+        </Table.Cell>
         <Table.Cell highlighted> System file </Table.Cell>
         <Table.Cell>11/20/2010</Table.Cell>
         <Table.Cell>File folder</Table.Cell>

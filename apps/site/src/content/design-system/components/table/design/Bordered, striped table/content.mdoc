@@ -3,7 +3,10 @@ You can combine multiple classes to configure your table style.
 ```jsx
 <div className="p-3">
   <Table bordered striped>
-    <Table.Caption> Caption this table width is: <em>(100%)</em> </Table.Caption>
+    <Table.Caption>
+      {' '}
+      Caption this table width is: <em>(100%)</em>{' '}
+    </Table.Caption>
     <Table.Header>
       <Table.HeaderRow>
         <Table.HeaderCell>Name</Table.HeaderCell>
@@ -36,4 +39,4 @@ You can combine multiple classes to configure your table style.
     <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
   </Table>
 </div>
-``` 
+```

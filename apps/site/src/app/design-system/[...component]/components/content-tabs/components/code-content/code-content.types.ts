@@ -8,7 +8,7 @@ export type CodeSectionProps = { content: DocumentElement[]; title: string };
 
 export type CodeContentProps = {
   componentProps?: ComponentProps;
-  content: DocumentElement[];
+  content?: DocumentElement[];
   description?: string;
   relatedComponents?: RelatedInfoProps['relatedComponents'];
   subComponentProps?: ComponentProps[];
