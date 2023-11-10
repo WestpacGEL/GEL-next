@@ -1,9 +1,12 @@
-## Default table with caption and footer 
+## Default table with caption and footer
 
 ```jsx
 <div className="p-3">
   <Table>
-    <Table.Caption> Caption this table width is: <em>(100%)</em> </Table.Caption>
+    <Table.Caption>
+      {' '}
+      Caption this table width is: <em>(100%)</em>{' '}
+    </Table.Caption>
     <Table.Header>
       <Table.HeaderRow>
         <Table.HeaderCell>Name</Table.HeaderCell>
@@ -38,12 +41,15 @@
 </div>
 ```
 
-## Bordered Table 
+## Bordered Table
 
 ```jsx
 <div className="p-3">
   <Table bordered>
-    <Table.Caption> Caption this table width is: <em>(100%)</em> </Table.Caption>
+    <Table.Caption>
+      {' '}
+      Caption this table width is: <em>(100%)</em>{' '}
+    </Table.Caption>
     <Table.Header>
       <Table.HeaderRow>
         <Table.HeaderCell>Name</Table.HeaderCell>
@@ -76,14 +82,17 @@
     <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
   </Table>
 </div>
-``` 
+```
 
-## Striped Table 
+## Striped Table
 
 ```jsx
 <div className="p-3">
   <Table striped>
-    <Table.Caption> Caption this table width is: <em>(100%)</em> </Table.Caption>
+    <Table.Caption>
+      {' '}
+      Caption this table width is: <em>(100%)</em>{' '}
+    </Table.Caption>
     <Table.Header>
       <Table.HeaderRow>
         <Table.HeaderCell>Name</Table.HeaderCell>
@@ -116,14 +125,17 @@
     <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
   </Table>
 </div>
-``` 
+```
 
-## Bordered & Striped Table 
+## Bordered & Striped Table
 
 ```jsx
 <div className="p-3">
   <Table bordered striped>
-    <Table.Caption> Caption this table width is: <em>(100%)</em> </Table.Caption>
+    <Table.Caption>
+      {' '}
+      Caption this table width is: <em>(100%)</em>{' '}
+    </Table.Caption>
     <Table.Header>
       <Table.HeaderRow>
         <Table.HeaderCell>Name</Table.HeaderCell>
@@ -156,14 +168,17 @@
     <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
   </Table>
 </div>
-``` 
+```
 
-## Highlighted Table 
+## Highlighted Table
 
 ```jsx
 <div className="p-3">
   <Table>
-    <Table.Caption> Caption this table width is: <em>(100%)</em> </Table.Caption>
+    <Table.Caption>
+      {' '}
+      Caption this table width is: <em>(100%)</em>{' '}
+    </Table.Caption>
     <Table.Header>
       <Table.HeaderRow>
         <Table.HeaderCell>Name</Table.HeaderCell>
@@ -189,7 +204,10 @@
         <Table.Cell>6/7/2020</Table.Cell>
       </Table.Row>
       <Table.Row>
-        <Table.Cell highlightStart highlighted> bootmgr </Table.Cell>
+        <Table.Cell highlightStart highlighted>
+          {' '}
+          bootmgr{' '}
+        </Table.Cell>
         <Table.Cell highlighted> System file </Table.Cell>
         <Table.Cell>11/20/2010</Table.Cell>
         <Table.Cell>File folder</Table.Cell>
