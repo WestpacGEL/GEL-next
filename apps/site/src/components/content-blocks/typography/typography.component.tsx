@@ -1,3 +1,4 @@
+import { NewWindowIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
 import { VariantProps } from 'tailwind-variants';
 
@@ -9,9 +10,21 @@ export function Text({ children }: { children?: React.ReactNode }) {
 
 export function Link({
   color = 'default',
+  children,
+  href,
   ...props
 }: React.PropsWithChildren<LinkProps & VariantProps<typeof linkStyles>>) {
-  return <NextLink className={linkStyles({ color })} {...props} />;
+  return (
+    <NextLink
+      href={href}
+      target={href.toString().indexOf('http') === 0 ? '_blank' : '_self'}
+      className={linkStyles({ color })}
+      {...props}
+    >
+      {children}
+      <NewWindowIcon size="xsmall" className="ml-1" />
+    </NextLink>
+  );
 }
 
 export function Code({ children }: { children?: React.ReactNode }) {

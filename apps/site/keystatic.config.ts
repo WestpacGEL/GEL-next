@@ -104,12 +104,13 @@ export default config({
         design: fields.array(
           fields.object({
             title: fields.text({ label: 'Name' }),
+            noTitle: fields.checkbox({ label: 'No title' }),
             content: fields.document({
               formatting: true,
               dividers: true,
               links: true,
               images: true,
-              layouts: [[1, 1]],
+              layouts: [[6, 6]],
               label: 'Design',
             }),
           }),

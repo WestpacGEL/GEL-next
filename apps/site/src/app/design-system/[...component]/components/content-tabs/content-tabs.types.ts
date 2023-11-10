@@ -9,7 +9,7 @@ import { DesignSectionProps } from './components/design-content/design-content.t
 export type ContentTabsProps = {
   accessibilityDemo: DocumentElement[];
   accessibilitySections: AccessibilitySectionProps[];
-  code: DocumentElement[];
+  code?: DocumentElement[];
   componentProps?: ComponentProps;
   description?: string;
   designSections?: DesignSectionProps[];

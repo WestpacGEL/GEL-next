@@ -1,0 +1,10 @@
+name: Expiry date
+description: >-
+  This pattern is used for capturing a date that requires month and year only,
+  and is most commonly used for expiry dates.
+design:
+  - title: Expiry date
+  - title: Error states
+  - title: Dos and don'ts
+  - title: Pattern examples in code
+accessibility: []

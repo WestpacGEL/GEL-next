@@ -3,14 +3,14 @@ export function formatComponentSlug(component: string) {
   return name.replace(/-/g, ' ');
 }
 
-export function formatNavItems(navList: string[]) {
+export function formatNavItems(navList: { name: string; slug: string }[]) {
   const navItems: any[] = [];
-  navList.forEach(path => {
-    const params = path.split('/');
+  navList.forEach(({ slug, name }) => {
+    const params = slug.split('/');
     let curr = navItems;
     params.forEach((param, i) => {
       if (i === params.length - 1) {
-        curr.push({ label: param, path });
+        curr.push({ label: name, path: slug });
       } else {
         let exists = false;
         curr.forEach(item => {
