@@ -35,6 +35,7 @@ export default async function ComponentPage({ params }: { params: { component: s
               resolve({
                 title: section.title,
                 content: content,
+                noTitle: section.noTitle,
               });
               return {
                 ...section,
@@ -71,6 +72,9 @@ export default async function ComponentPage({ params }: { params: { component: s
     content?.accessibilityDemo(),
     content?.code(),
   ]);
+
+  const codeIsEmpty = code[0].children.length <= 1 && !code[0].children[0].text;
+
   const componentProps: ComponentProps | undefined = (json as any)[componentName];
   const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, any]) => {
     if (key.indexOf(`${componentName}.`) !== 0) {
@@ -85,7 +89,7 @@ export default async function ComponentPage({ params }: { params: { component: s
         westpacUIInfo: westpacInfo,
         accessibilitySections,
         accessibilityDemo,
-        code,
+        code: codeIsEmpty ? undefined : code,
         description: content.description,
         designSections,
         relatedComponents: content.relatedInformation.filter(value => !!value) as string[],

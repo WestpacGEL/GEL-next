@@ -5,7 +5,7 @@
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputs((prev: object) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  
+
   return (
     <Compacta>
       {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
