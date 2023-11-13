@@ -13,7 +13,7 @@ export const withGEL = (config: Config) =>
       ...(Array.isArray(config.safelist) ? config.safelist : []),
     ],
     plugins: [
-      WestpacUIKitBasePlugin,
+      WestpacUIKitBasePlugin(config?.options),
       WestpacUIKitThemesPlugin,
       ...(config.plugins ? (Array.isArray(config.plugins) ? config.plugins : [config.plugins]) : []),
     ],

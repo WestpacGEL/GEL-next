@@ -73,6 +73,11 @@ const config: Config = withGEL({
     'bg-success-20',
   ],
   plugins: [SitePlugin],
+  options: {
+    brandFonts: {
+      src: '/fonts',
+    },
+  },
 });
 
 export default config;
