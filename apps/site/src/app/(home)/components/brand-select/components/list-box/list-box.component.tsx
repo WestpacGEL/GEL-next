@@ -12,7 +12,11 @@ export function ListBox(props: ListBoxProps) {
   const { listBoxProps } = useListBox(props, state, listBoxRef);
 
   return (
-    <ul {...listBoxProps} ref={listBoxRef} className="max-h-[25rem] w-full overflow-auto outline-none">
+    <ul
+      {...listBoxProps}
+      ref={listBoxRef}
+      className="max-h-[25rem] w-full overflow-auto px-4 pb-4 pt-2 outline-none xsl:px-5 xsl:pb-5"
+    >
       {[...state.collection].map(item =>
         item.type === 'section' ? (
           <ListBoxSection key={item.key} section={item} state={state} />
