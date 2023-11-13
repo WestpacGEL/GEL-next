@@ -31,7 +31,7 @@ export const logoStyles = tv({
       bom: 'h-[35px] w-[23px]',
       bsa: 'h-[35px] w-[20px]',
       wbg: 'h-[7px] w-[50px]',
-      rams: 'h-[45px] w-[45px]',
+      rams: 'h-[27px] w-[42px]',
     },
     footer: {
       true: '',
