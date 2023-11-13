@@ -27,11 +27,11 @@ export const logoStyles = tv({
   variants: {
     brand: {
       wbc: 'h-3 w-[45px]',
-      stg: 'h-[31px] w-[45px]',
+      stg: 'h-[32px] w-[45px]',
       bom: 'h-[35px] w-[23px]',
-      bsa: 'h-[35px] w-[20px]',
+      bsa: 'h-[34px] w-[21px]',
       wbg: 'h-[7px] w-[50px]',
-      rams: 'h-[27px] w-[42px]',
+      rams: 'h-[25px] w-[40px]',
     },
     footer: {
       true: '',
