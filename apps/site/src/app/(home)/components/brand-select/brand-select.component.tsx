@@ -33,9 +33,9 @@ export function BrandSelect(props: BrandSelectProps) {
 
       <button {...mergeProps(buttonProps, focusProps)} ref={ref} className={styles.button()}>
         <div className={styles.textWrapper()}>
-          <div className="flex w-full items-center gap-2 overflow-hidden text-ellipsis py-2" {...valueProps}>
+          <div className="flex w-full items-end gap-[0.625rem] overflow-hidden text-ellipsis py-2" {...valueProps}>
             <GELLogo className="w-[2.8125rem] shrink-0" />
-            <span className="mb-[-0.3rem] shrink truncate">Design System</span>
+            <span className="mb-[-0.2rem] shrink truncate leading-4">Design System</span>
           </div>
         </div>
         <div aria-hidden="true" className={styles.iconWrapper()}>
