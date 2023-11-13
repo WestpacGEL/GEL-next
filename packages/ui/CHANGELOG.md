@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.13.0
+
+### Minor Changes
+
+- 7a54cf7: Add brand font options to withGEL tailwind plugin
+
 ## 0.12.0
 
 ### Minor Changes
