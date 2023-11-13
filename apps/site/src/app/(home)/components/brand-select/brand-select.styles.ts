@@ -16,7 +16,7 @@ export const styles = tv(
     variants: {
       isFocusVisible: {
         true: {
-          base: '',
+          base: 'focus-outline',
         },
         false: {},
       },

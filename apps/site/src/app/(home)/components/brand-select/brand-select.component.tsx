@@ -5,7 +5,7 @@ import { Item, ItemProps, useSelectState } from 'react-stately';
 
 import { GELLogo } from '@/components/logos';
 
-import { styles as sidebarSelectStyles } from './brand-select.styles';
+import { styles as brandSelectStyles } from './brand-select.styles';
 import { type BrandSelectProps } from './brand-select.types';
 import { ListBox } from './components/list-box';
 import { Popover } from './components/popover';
@@ -23,7 +23,7 @@ export function BrandSelect(props: BrandSelectProps) {
   const { buttonProps } = useButton(triggerProps, ref);
 
   const { focusProps, isFocusVisible } = useFocusRing();
-  const styles = sidebarSelectStyles({ isFocusVisible, isOpen: state.isOpen });
+  const styles = brandSelectStyles({ isFocusVisible, isOpen: state.isOpen });
 
   return (
     <div className={styles.base()}>

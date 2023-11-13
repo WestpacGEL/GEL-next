@@ -1,0 +1,14 @@
+name: Design system accessibility
+description: >-
+  Accessibility is not just a box you tick at the end of a project, we have to
+  be diligent and aware of the impacts the decisions we make have at all stages
+  of product delivery. The following areas need to be considered when designing
+  for accessibility and inclusion.
+design:
+  - title: Principles of accessibility
+  - title: Inclusive product design
+  - title: Inclusive content writing
+  - title: Accessible interfaces
+  - title: Accessibility testing
+  - title: Deprecated components
+accessibility: []
