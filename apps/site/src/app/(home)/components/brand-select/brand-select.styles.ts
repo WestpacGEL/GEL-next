@@ -10,7 +10,7 @@ export const styles = tv(
       // TODO: this is a workaround to align, but need to find a better way.
       popover: 'ml-[-0.75rem] w-full',
       // icon: 'text-primary transition-transform',
-      iconWrapper: 'flex flex-shrink-0 items-center text-primary',
+      iconWrapper: 'mb-[-0.4rem] flex flex-shrink-0 items-center text-primary',
       textWrapper: 'flex flex-shrink items-center overflow-hidden pr-2',
     },
     variants: {
