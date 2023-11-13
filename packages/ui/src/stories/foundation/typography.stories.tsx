@@ -152,11 +152,15 @@ export const LineHeight = () => {
 };
 const FontWeightTable = ({ type, caption }: { caption: string; type: 'brand' | 'body' }) => {
   const fontWeight = [
+    { className: 'font-thin', weight: '100' },
+    { className: 'font-extralight', weight: '200' },
     { className: 'font-light', weight: '300' },
     { className: 'font-normal', weight: '400' },
     { className: 'font-medium', weight: '500' },
     { className: 'font-semibold', weight: '600' },
     { className: 'font-bold', weight: '700' },
+    { className: 'font-extrabold', weight: '800' },
+    { className: 'font-black', weight: '900' },
   ];
   const typography = type === 'brand' ? 'typography-brand-7' : 'typography-body-7';
   return (

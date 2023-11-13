@@ -43,17 +43,21 @@ const config = withGEL({
 export default config;
 ```
 
-For applications using `brand fonts`, import the custom fonts as follows in your main `CSS` file.
+For applications using `brand fonts` add the following options config to the `withGEL` helper.
 
-```css
-/* WBC fonts */
-@font-face {
-  src: url('/path-to-the-font/Westpac-Bold-v2.007.woff2') format('woff2'), url('/path-to-the-font/Westpac-Bold-v2.007.woff')
-      format('woff');
-  font-family: 'Westpac';
-  font-weight: 400;
-  font-style: normal;
-}
+```ts
+const config = withGEL({
+  relative: true,
+  mode: 'jit',
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
+  safelist: [],
+  options: {
+    brandFonts: {
+      src: '/fonts', // path to font files
+      brands: ['wbc', 'stg'], // takes a single brand string e.g. 'wbc' or an array of brands. If no brands are specified will import all brands by default
+    },
+  },
+});
 ```
 
 ### Usage
