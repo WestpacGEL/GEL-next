@@ -1,4 +1,5 @@
 import { reader } from '@/app/reader';
+import { StickyFooter } from '@/components/sticky-footer';
 import { formatNavItems } from '@/utils/format';
 
 import { Sidebar, SidebarContextProvider } from './components';
@@ -8,11 +9,14 @@ export default async function DesignSystemLayout({ children }: { children: React
   const formattedItems = formatNavItems(allContent.map(({ entry, slug }) => ({ slug, name: entry.name })));
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <SidebarContextProvider>
-        <Sidebar items={formattedItems} />
-        <div className="mb-8 flex flex-1 flex-col lg:ml-[18.75rem]">{children}</div>
-      </SidebarContextProvider>
-    </div>
+    <>
+      <div className="flex min-h-screen flex-col">
+        <SidebarContextProvider>
+          <Sidebar items={formattedItems} />
+          <div className="mb-8 flex flex-1 flex-col lg:ml-[18.75rem]">{children}</div>
+        </SidebarContextProvider>
+      </div>
+      <StickyFooter />
+    </>
   );
 }
