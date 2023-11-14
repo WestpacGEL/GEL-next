@@ -17,10 +17,10 @@ export function ArticlePage({ article, author }: ArticlePageProps) {
         <Container className=" pt-8 xsl:pt-10 sm:pt-11">
           <Grid className="gap-y-5 xsl:gap-y-6 sm:gap-y-8">
             <div className="col-span-12">
-              <h1 className="typography-body-6 mb-2 font-black tracking-[-1px] xsl:typography-body-3 xsl:mb-3">
+              <h1 className="typography-site-6 mb-2 font-black tracking-[-1px] xsl:typography-site-3 xsl:mb-2">
                 {article.name}
               </h1>
-              <p className="text-gel-muted">{author?.name}</p>
+              <p className="typography-site-9 text-gel-muted">{author?.name}</p>
             </div>
             <div className="col-span-12 mb-7 xsl:mb-9">
               {article.image && (

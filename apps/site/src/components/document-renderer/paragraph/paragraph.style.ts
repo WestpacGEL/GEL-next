@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'mb-4 w-full leading-[2] last:mb-0',
+  base: 'mb-2 w-full leading-[2] last:mb-0',
   variants: {
     textAlign: {
       center: 'text-center',
