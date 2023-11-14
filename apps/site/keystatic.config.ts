@@ -1,6 +1,6 @@
 import { GitHubConfig, LocalConfig, collection, config, fields, singleton } from '@keystatic/core';
 
-import { ComponentBlocks } from '@/components/component-blocks/component-blocks';
+import { ArticleComponentBlocks } from '@/components/component-blocks/article-component-blocks';
 
 const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
   process.env.NODE_ENV === 'development'
@@ -231,7 +231,8 @@ export default config({
           dividers: true,
           links: true,
           label: 'Design',
-          componentBlocks: ComponentBlocks,
+          componentBlocks: ArticleComponentBlocks,
+          layouts: [[6, 6]],
           images: {
             directory: 'public/images/articles/content',
             publicPath: '/images/articles/content',

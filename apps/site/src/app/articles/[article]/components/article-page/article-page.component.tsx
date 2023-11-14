@@ -3,6 +3,8 @@
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Container, Grid } from '@westpac/ui';
 
+import { ArticleComponentBlocksComponents } from '@/components/component-blocks/article-component-blocks';
+
 import { DOCUMENT_RENDERERS } from '..';
 
 import { type ArticlePageProps } from './article-page.types';
@@ -31,7 +33,14 @@ export function ArticlePage({ article, author }: ArticlePageProps) {
       </div>
       <Container>
         <div className="mx-auto w-full pb-9 sm:w-8/12">
-          <DocumentRenderer document={article.content} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
+          <p className="typography-body-8 mx-0 mb-9 leading-[1.6] xsl:typography-body-7 xsl:leading-[1.6] sm:-mx-16">
+            {article.description}
+          </p>
+          <DocumentRenderer
+            document={article.content}
+            renderers={DOCUMENT_RENDERERS}
+            componentBlocks={ArticleComponentBlocksComponents}
+          />
         </div>
       </Container>
     </div>
