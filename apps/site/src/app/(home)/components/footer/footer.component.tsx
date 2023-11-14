@@ -32,7 +32,7 @@ export function Footer({ gelEmail = '', guidelinesURL = '' }: { gelEmail?: strin
             </Grid>
           </div>
           <div className="col-span-12 sm:col-span-4 md:col-start-9">
-            <Title>Tools and resources</Title>
+            <Title>Tools &amp; resources</Title>
             <Grid tag="ul" className="gap-y-1 xsl:gap-y-2 sm:gap-y-4 lg:gap-y-2">
               <li className="col-span-12 xsl:col-span-6 sm:col-span-12">
                 <Link href="/articles/figma-libraries">
