@@ -35,7 +35,7 @@ export function ArticlePage({ article, author }: ArticlePageProps) {
           </Container>
         </div>
         <Container>
-          <div className="mx-auto w-full pb-9 sm:w-8/12">
+          <div className="mx-auto w-full pb-9 xsl:w-10/12 md:w-8/12">
             <LeadingText text={article.description} />
             <DocumentRenderer
               document={article.content}
