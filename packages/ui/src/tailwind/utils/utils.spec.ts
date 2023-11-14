@@ -2,6 +2,7 @@ import { PluginAPI } from 'tailwindcss/types/config.js';
 
 import {
   EXPECTED_COLORS,
+  EXPECTED_FONT_FACES,
   EXPECTED_FONT_SIZES_VARS,
   EXPECTED_SPACING,
   EXPECTED_TYPOGRAPHY,
@@ -9,6 +10,7 @@ import {
 } from '../__mocks__/utils.constants.js';
 
 import {
+  createBrandFonts,
   createFontSizes,
   createSpacing,
   generateColorTints,
@@ -83,6 +85,27 @@ describe('Utils testing', () => {
           margin: '0',
         },
       });
+    });
+  });
+
+  describe('Create brand font face declarations', () => {
+    it(`${SHOULD_RETURNED} for all brands`, () => {
+      const fonts = createBrandFonts({ src: '/fonts' });
+      expect(fonts).toEqual(EXPECTED_FONT_FACES);
+    });
+
+    it(`${SHOULD_RETURNED} for a single brand`, () => {
+      const fonts = createBrandFonts({ src: '/fonts', brand: 'wbc' });
+      expect(fonts).toEqual([
+        {
+          '@font-face': {
+            src: "url('/fonts/Westpac-Bold-v2.007.woff2') format('woff2'), url('/fonts/Westpac-Bold-v2.007.woff') format('woff')",
+            'font-family': 'Westpac',
+            'font-weight': '100 900',
+            'font-style': 'normal',
+          },
+        },
+      ]);
     });
   });
 });

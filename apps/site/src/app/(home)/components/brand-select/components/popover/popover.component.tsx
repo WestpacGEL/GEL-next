@@ -22,7 +22,7 @@ export function Popover(props: PopoverProps) {
       <div
         {...popoverProps}
         ref={popoverRef}
-        className={clsx('z-10 border border-border bg-white shadow-lg', className)}
+        className={clsx('z-10 bg-white shadow-[rgba(0,0,0,0.24)_0_8px_8px]', className)}
       >
         {!isNonModal && <DismissButton onDismiss={state.close} />}
         {children}
