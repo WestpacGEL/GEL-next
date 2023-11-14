@@ -1,27 +1,27 @@
 import { component, fields } from '@keystatic/core';
 import { DocumentRenderer } from '@keystatic/core/renderer';
 
-import { JumboImage } from './components/jumbo-image';
+import { ArticleBodyImage } from './components/article-body-image';
 import { LeadingText } from './components/leading-text';
 
 export const ArticleComponentBlocks = {
   // EXAMPLES:
-  jumboImage: component({
+  articleBodyImage: component({
     label: 'Hero Image',
     preview: props => (
       <img
         className="w-1/3"
         src={URL.createObjectURL(
           new Blob(
-            [props.fields.jumboImage.value?.data.buffer || ''],
-            { type: `image/${props.fields.jumboImage.value?.extension}` } /* (1) */,
+            [props.fields.articleBodyImage.value?.data.buffer || ''],
+            { type: `image/${props.fields.articleBodyImage.value?.extension}` } /* (1) */,
           ),
         )}
-        alt={props.fields.jumboImage.value?.filename}
+        alt={props.fields.articleBodyImage.value?.filename}
       />
     ),
     schema: {
-      jumboImage: fields.image({
+      articleBodyImage: fields.image({
         label: 'Hero Image',
         description: 'Hero image',
         directory: 'public/images/articles',
@@ -46,6 +46,6 @@ export const ArticleComponentBlocks = {
 
 export const ArticleComponentBlocksComponents = {
   // EXAMPLES:
-  jumboImage: JumboImage,
+  articleBodyImage: ArticleBodyImage,
   leadingText: LeadingText,
 };
