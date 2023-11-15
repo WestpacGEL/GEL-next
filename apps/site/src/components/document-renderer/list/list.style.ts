@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'mb-11 mt-3 w-full p-0 leading-[2] last:mb-0',
+    base: 'my-4 w-full p-0 leading-[2] last:mb-0',
     li: 'relative mb-2 pl-3 leading-7',
   },
   variants: {
