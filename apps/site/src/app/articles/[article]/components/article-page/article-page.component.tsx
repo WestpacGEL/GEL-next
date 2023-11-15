@@ -19,7 +19,7 @@ export function ArticlePage({ article, author }: ArticlePageProps) {
           <Container className=" pt-8 xsl:pt-10 sm:pt-11">
             <Grid className="gap-y-5 xsl:gap-y-6 sm:gap-y-8">
               <div className="col-span-12">
-                <h1 className="typography-site-6 mb-2 font-black tracking-[-1px] xsl:typography-site-3 xsl:mb-2">
+                <h1 className="typography-site-6 mb-2 font-black !leading-[1.1] tracking-[-1px] xsl:typography-site-3 xsl:mb-3">
                   {article.name}
                 </h1>
                 <p className="typography-site-9 text-gel-muted">{author?.name}</p>
@@ -35,14 +35,16 @@ export function ArticlePage({ article, author }: ArticlePageProps) {
           </Container>
         </div>
         <Container>
-          <div className="mx-auto w-full pb-9 xsl:w-10/12 md:w-8/12">
-            <LeadingText text={article.description} />
-            <DocumentRenderer
-              document={article.content}
-              renderers={DOCUMENT_RENDERERS}
-              componentBlocks={ArticleComponentBlocksComponents}
-            />
-          </div>
+          <Grid>
+            <div className="col-span-12 pb-9 xsl:col-span-10 xsl:col-start-2 md:col-span-8 md:col-start-3">
+              <LeadingText text={article.description} />
+              <DocumentRenderer
+                document={article.content}
+                renderers={DOCUMENT_RENDERERS}
+                componentBlocks={ArticleComponentBlocksComponents}
+              />
+            </div>
+          </Grid>
         </Container>
       </div>
       <StickyFooter />

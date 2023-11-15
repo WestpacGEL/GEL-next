@@ -10,7 +10,7 @@ export const styles = tv({
     },
     level: {
       1: 'typography-site-5 mb-5',
-      2: 'typography-site-7 mb-5 xsl:typography-site-6',
+      2: 'typography-site-7 mb-4 xsl:typography-site-6 xsl:mb-5',
       3: 'typography-site-7 mb-5',
       4: 'typography-site-9 mb-5',
       5: 'typography-site-10 mb-2',
