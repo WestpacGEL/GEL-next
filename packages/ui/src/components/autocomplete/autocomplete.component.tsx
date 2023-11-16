@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { useMemo } from 'react';
 import { useButton, useComboBox, useFilter, useSearchField } from 'react-aria';
 import { Item, useComboBoxState, useSearchFieldState } from 'react-stately';
 
@@ -11,6 +12,22 @@ import { styles as autocompleteStyles } from './autocomplete.styles.js';
 import { type AutocompleteProps } from './autocomplete.types.js';
 import { ListBox, Popover } from './components/index.js';
 
+const STATIC_IS_OPEN_STATE = {
+  isOpen: true,
+  setOpen: () => {
+    return;
+  },
+  open: () => {
+    return;
+  },
+  close: () => {
+    return;
+  },
+  toggle: () => {
+    return;
+  },
+};
+
 export function Autocomplete<T extends object>({
   size = 'medium',
   invalid = false,
@@ -19,6 +36,7 @@ export function Autocomplete<T extends object>({
   portalContainer,
   errorMessage,
   hintMessage,
+  noOptionsMessage,
   ...props
 }: AutocompleteProps<T>) {
   const { contains } = useFilter({ sensitivity: 'base' });
@@ -60,6 +78,14 @@ export function Autocomplete<T extends object>({
   const { buttonProps } = useButton(clearButtonProps, clearButtonRef);
   const outerRef = React.useRef(null);
 
+  const isNoOptionPopOverOpen = useMemo(() => {
+    return (
+      noOptionsMessage &&
+      ((!state.isOpen && state.isFocused && searchProps.value.length > 0 && !state.selectedItem) ||
+        (state.collection.size === 0 && searchProps.value.length > 0))
+    );
+  }, [state, searchProps, noOptionsMessage]);
+
   return (
     <div className={styles.base()}>
       <FormLabel {...labelProps}>{props.label}</FormLabel>
@@ -78,7 +104,17 @@ export function Autocomplete<T extends object>({
           <ClearIcon aria-hidden="true" color="muted" size="small" />
         </button>
       </div>
-
+      {isNoOptionPopOverOpen && (
+        <Popover
+          state={STATIC_IS_OPEN_STATE}
+          isNonModal
+          placement="bottom start"
+          portalContainer={portalContainer}
+          triggerRef={outerRef}
+        >
+          <div className="px-3 py-2">{noOptionsMessage}</div>
+        </Popover>
+      )}
       {state.isOpen && (
         <Popover
           popoverRef={popoverRef}
