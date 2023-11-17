@@ -104,10 +104,14 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
                 transform: 'translateY(0)',
               },
             },
+            maxHeightIn: {
+              '0%': { maxHeight: '0' },
+            },
           },
           animation: {
             fadeIn: 'fadeIn 0.2s ease',
             fadeInDown: 'fadeInDown 0.4s ease',
+            maxHeightIn: 'maxHeightIn 0.4s ease',
           },
           boxShadow: {
             switch: '0.1875rem 0 0.375rem 0 rgba(0,0,0,0.53)',

@@ -1,8 +1,11 @@
 import { clsx } from 'clsx';
+import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import { useRef } from 'react';
 import { DismissButton, Overlay, usePopover } from 'react-aria';
 
 import { PopoverProps } from './popover.types';
+
+const loadAnimations = () => import('./popover.utils').then(res => res.default);
 
 export function Popover(props: PopoverProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -22,10 +25,33 @@ export function Popover(props: PopoverProps) {
       <div
         {...popoverProps}
         ref={popoverRef}
-        className={clsx('z-10 bg-white shadow-[rgba(0,0,0,0.24)_0_8px_8px]', className)}
+        className={clsx('z-10 overflow-hidden bg-white shadow-[rgba(0,0,0,0.24)_0_8px_8px]', className)}
       >
         {!isNonModal && <DismissButton onDismiss={state.close} />}
-        {children}
+        <LazyMotion features={loadAnimations}>
+          <AnimatePresence initial mode="wait">
+            {state.isOpen && (
+              <m.div
+                className="overflow-hidden"
+                initial={{
+                  height: 0,
+                  opacity: 0,
+                }}
+                animate={{
+                  height: 'auto',
+                  opacity: 1,
+                }}
+                exit={{
+                  height: 0,
+                  opacity: 0,
+                }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              >
+                {children}
+              </m.div>
+            )}
+          </AnimatePresence>
+        </LazyMotion>
         <DismissButton onDismiss={state.close} />
       </div>
     </Overlay>

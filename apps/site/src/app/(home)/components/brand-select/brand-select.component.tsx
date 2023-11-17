@@ -44,22 +44,20 @@ export function BrandSelect(props: BrandSelectProps) {
           {state.isOpen ? <ExpandLessIcon className="text-gel-link" /> : <ExpandMoreIcon className="text-gel-link" />}
         </div>
       </button>
-      <div className="-mx-4" ref={portalContainreRef} />
-      {state.isOpen && (
-        <Popover
-          portalContainer={portalContainreRef.current || undefined}
-          isNonModal
-          containerPadding={0}
-          popoverRef={popoverRef}
-          shouldFlip={false}
-          state={state}
-          triggerRef={ref}
-          placement="bottom start"
-          className={styles.popover()}
-        >
-          <ListBox {...menuProps} state={state} />
-        </Popover>
-      )}
+      <div ref={portalContainreRef} />
+      <Popover
+        portalContainer={portalContainreRef.current || undefined}
+        isNonModal
+        containerPadding={0}
+        popoverRef={popoverRef}
+        shouldFlip={false}
+        state={state}
+        triggerRef={ref}
+        placement="bottom start"
+        className={styles.popover()}
+      >
+        {state.isOpen && <ListBox {...menuProps} state={state} />}
+      </Popover>
     </div>
   );
 }
