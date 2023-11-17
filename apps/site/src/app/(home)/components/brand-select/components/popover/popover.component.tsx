@@ -6,7 +6,7 @@ import { PopoverProps } from './popover.types';
 
 export function Popover(props: PopoverProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const { popoverRef = ref, state, children, className, isNonModal } = props;
+  const { popoverRef = ref, state, children, className, isNonModal, portalContainer } = props;
   const { popoverProps, underlayProps } = usePopover(
     {
       ...props,
@@ -16,7 +16,7 @@ export function Popover(props: PopoverProps) {
   );
 
   return (
-    <Overlay>
+    <Overlay portalContainer={portalContainer}>
       {!isNonModal && <div {...underlayProps} className="fixed inset-0" />}
 
       <div
