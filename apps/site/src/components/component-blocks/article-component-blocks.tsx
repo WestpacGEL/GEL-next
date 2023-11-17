@@ -1,5 +1,4 @@
 import { component, fields } from '@keystatic/core';
-import { DocumentRenderer } from '@keystatic/core/renderer';
 
 import { ArticleBodyImage } from './components/article-body-image';
 import { LeadingText } from './components/leading-text';
@@ -7,7 +6,7 @@ import { LeadingText } from './components/leading-text';
 export const ArticleComponentBlocks = {
   // EXAMPLES:
   articleBodyImage: component({
-    label: 'Hero Image',
+    label: 'Article body image',
     preview: props => (
       <img
         className="w-1/3"
@@ -22,13 +21,16 @@ export const ArticleComponentBlocks = {
     ),
     schema: {
       articleBodyImage: fields.image({
-        label: 'Hero Image',
-        description: 'Hero image',
+        label: 'Image',
+        description: 'image',
         directory: 'public/images/articles',
         publicPath: '/images/articles',
       }),
       alt: fields.text({
         label: 'Alt text',
+      }),
+      title: fields.text({
+        label: 'Title',
       }),
     },
   }),
