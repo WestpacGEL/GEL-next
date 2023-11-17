@@ -16,6 +16,8 @@ export function BrandSelect(props: BrandSelectProps) {
 
   // Get props for child elements from useSelect
   const ref = useRef(null);
+  const popoverRef = useRef(null);
+  const portalContainreRef = useRef<HTMLDivElement>(null);
 
   const { labelProps, triggerProps, valueProps, menuProps } = useSelect(props, state, ref);
   // Get props for the button based on the trigger props from useSelect
@@ -42,11 +44,20 @@ export function BrandSelect(props: BrandSelectProps) {
           {state.isOpen ? <ExpandLessIcon className="text-gel-link" /> : <ExpandMoreIcon className="text-gel-link" />}
         </div>
       </button>
-      {state.isOpen && (
-        <Popover state={state} triggerRef={ref} placement="bottom start" className={styles.popover()}>
-          <ListBox {...menuProps} state={state} />
-        </Popover>
-      )}
+      <div ref={portalContainreRef} />
+      <Popover
+        portalContainer={portalContainreRef.current || undefined}
+        isNonModal
+        containerPadding={0}
+        popoverRef={popoverRef}
+        shouldFlip={false}
+        state={state}
+        triggerRef={ref}
+        placement="bottom start"
+        className={styles.popover()}
+      >
+        {state.isOpen && <ListBox {...menuProps} state={state} />}
+      </Popover>
     </div>
   );
 }
