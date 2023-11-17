@@ -4,7 +4,7 @@ export function CircleLogo({ className, children }: { children: React.ReactNode;
   return (
     <span
       className={clsx(
-        'flex h-12 w-12 items-center justify-center rounded-full bg-white outline outline-1 outline-gel-border hover:outline-4 hover:outline-gel-icon/40',
+        'flex h-12 w-12 items-center justify-center rounded-full bg-white outline outline-1 outline-gel-border transition-all hover:outline-4 hover:outline-gel-icon/40',
         className,
       )}
     >

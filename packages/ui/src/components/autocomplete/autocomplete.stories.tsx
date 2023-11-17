@@ -175,6 +175,7 @@ export const ErrorMessageAndLabel: Story = {
     errorMessage: 'This is an inline error message',
     validationState: 'invalid',
     hintMessage: 'Hint: choose from one of the following options',
+    noOptionsMessage: 'No options',
     children: [
       <Autocomplete.Item key="Option 1">Option 1</Autocomplete.Item>,
       <Autocomplete.Item key="Option 2">Option 2</Autocomplete.Item>,
