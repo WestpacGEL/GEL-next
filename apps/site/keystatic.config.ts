@@ -1,6 +1,6 @@
 import { GitHubConfig, LocalConfig, collection, config, fields, singleton } from '@keystatic/core';
 
-import { ComponentBlocks } from '@/components/component-blocks/component-blocks';
+import { ArticleComponentBlocks } from '@/components/component-blocks/article-component-blocks';
 
 const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
   process.env.NODE_ENV === 'development'
@@ -104,12 +104,13 @@ export default config({
         design: fields.array(
           fields.object({
             title: fields.text({ label: 'Name' }),
+            noTitle: fields.checkbox({ label: 'No title' }),
             content: fields.document({
               formatting: true,
               dividers: true,
               links: true,
               images: true,
-              layouts: [[1, 1]],
+              layouts: [[6, 6]],
               label: 'Design',
             }),
           }),
@@ -202,11 +203,9 @@ export default config({
           directory: 'public/images/articles',
           publicPath: '/images/articles',
         }),
-        smallDescription: fields.image({
+        smallDescription: fields.text({
           label: 'Small description',
-          description: 'Small description that goes along with the thumbnail',
-          directory: 'public/images/articles',
-          publicPath: '/images/articles',
+          multiline: true,
         }),
         image: fields.image({
           label: 'Main Image',
@@ -230,7 +229,8 @@ export default config({
           dividers: true,
           links: true,
           label: 'Design',
-          componentBlocks: ComponentBlocks,
+          componentBlocks: ArticleComponentBlocks,
+          layouts: [[6, 6]],
           images: {
             directory: 'public/images/articles/content',
             publicPath: '/images/articles/content',

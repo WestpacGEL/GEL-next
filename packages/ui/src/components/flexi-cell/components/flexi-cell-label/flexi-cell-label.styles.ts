@@ -2,12 +2,16 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'typography-body-9 m-0 font-normal text-text transition-colors xsl:typography-body-8 group-hover:text-link',
+    base: 'mb-0 content-start font-medium text-text transition-colors max-sm:typography-body-9 sm:typography-body-8',
     variants: {
       truncateText: {
-        true: 'truncate',
-        false: '',
+        true: 'truncate whitespace-nowrap',
       },
+      rightLabel: {
+        true: 'font-normal',
+        false: 'group-hover/dualaction:text-primary group-hover/noborder:text-primary',
+      },
+      subLabel: { true: 'font-normal text-muted sm:typography-body-10 max-sm:text-[12px]' },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },

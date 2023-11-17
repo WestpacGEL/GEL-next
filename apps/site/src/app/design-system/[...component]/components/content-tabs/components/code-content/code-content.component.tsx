@@ -15,14 +15,16 @@ import { TableOfContents } from '../intro/components';
 
 import { type CodeContentProps } from '.';
 
-export function CodeContent({ content, westpacUIInfo, componentProps, subComponentProps }: CodeContentProps) {
+export function CodeContent({ content = [], westpacUIInfo, componentProps, subComponentProps }: CodeContentProps) {
   const tableOfContents = useMemo(() => {
-    return content.reduce((acc, item: DocumentElement & { level?: number }) => {
-      if (item.type === 'heading' && item?.level && item.level <= 3) {
-        return [...acc, { title: item.children[0].text as string }];
-      }
-      return acc;
-    }, [] as { title: string }[]);
+    return (
+      content?.reduce((acc, item: DocumentElement & { level?: number }) => {
+        if (item.type === 'heading' && item?.level && item.level <= 3) {
+          return [...acc, { title: item.children[0].text as string }];
+        }
+        return acc;
+      }, [] as { title: string }[]) || []
+    );
   }, [content]);
 
   return (

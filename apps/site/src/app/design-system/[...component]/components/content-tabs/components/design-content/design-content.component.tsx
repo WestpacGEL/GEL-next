@@ -15,18 +15,18 @@ import { type DesignContentProps } from '.';
 
 export function DesignContent({ designSections, description, relatedComponents }: DesignContentProps) {
   const sectionNames = useMemo(() => {
-    return designSections?.map(({ title }) => ({ title })) || [];
+    return designSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title })) || [];
   }, [designSections]);
 
   return (
     <>
       {description && <Intro description={description} sectionNames={sectionNames} />}
-      {designSections?.map(({ title, content }) => {
+      {designSections?.map(({ title, content, noTitle }) => {
         const id = title.toLowerCase().split(' ').join('-');
         return (
           <Section key={id}>
             <Container>
-              <Heading level={2}>{title}</Heading>
+              {!noTitle && <Heading level={2}>{title}</Heading>}
               <DocumentRenderer
                 document={content}
                 renderers={{

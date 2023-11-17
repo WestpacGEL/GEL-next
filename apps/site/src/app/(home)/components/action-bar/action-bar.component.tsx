@@ -18,12 +18,10 @@ export function ActionBar() {
       <Container className="px-4">
         <div className="hidden h-[6.375rem] items-end bg-white pb-2 sm:flex">
           <div className="mr-4 flex h-full flex-col justify-end border-r-[1px] border-gel-border">
-            <span className="mb-2 inline-block">
-              <GELLogo className="inline-block h-3 w-[45px] text-gel-text" />
-            </span>
+            <GELLogo className="mb-2 block h-3 w-[45px] text-gel-text" />
             <p className="mb-1 flex items-end">
               Design System
-              <ArrowRightIcon className="ml-2 mr-[1rem]" />
+              <ArrowRightIcon className="ml-0 mr-2 md:ml-2 md:mr-[1rem]" />
             </p>
           </div>
           <ul role="list" className="flex gap-2">

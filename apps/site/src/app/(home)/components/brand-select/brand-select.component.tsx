@@ -5,7 +5,7 @@ import { Item, ItemProps, useSelectState } from 'react-stately';
 
 import { GELLogo } from '@/components/logos';
 
-import { styles as sidebarSelectStyles } from './brand-select.styles';
+import { styles as brandSelectStyles } from './brand-select.styles';
 import { type BrandSelectProps } from './brand-select.types';
 import { ListBox } from './components/list-box';
 import { Popover } from './components/popover';
@@ -16,6 +16,8 @@ export function BrandSelect(props: BrandSelectProps) {
 
   // Get props for child elements from useSelect
   const ref = useRef(null);
+  const popoverRef = useRef(null);
+  const portalContainreRef = useRef<HTMLDivElement>(null);
 
   const { labelProps, triggerProps, valueProps, menuProps } = useSelect(props, state, ref);
   // Get props for the button based on the trigger props from useSelect
@@ -23,7 +25,7 @@ export function BrandSelect(props: BrandSelectProps) {
   const { buttonProps } = useButton(triggerProps, ref);
 
   const { focusProps, isFocusVisible } = useFocusRing();
-  const styles = sidebarSelectStyles({ isFocusVisible, isOpen: state.isOpen });
+  const styles = brandSelectStyles({ isFocusVisible, isOpen: state.isOpen });
 
   return (
     <div className={styles.base()}>
@@ -33,20 +35,29 @@ export function BrandSelect(props: BrandSelectProps) {
 
       <button {...mergeProps(buttonProps, focusProps)} ref={ref} className={styles.button()}>
         <div className={styles.textWrapper()}>
-          <div className="flex w-full items-center gap-2 overflow-hidden text-ellipsis py-2" {...valueProps}>
+          <div className="flex w-full items-end gap-[0.625rem] overflow-hidden text-ellipsis py-2" {...valueProps}>
             <GELLogo className="w-[2.8125rem] shrink-0" />
-            <span className="mb-[-0.3rem] shrink truncate">Design System</span>
+            <span className="mb-[-0.2rem] shrink truncate leading-4">Design System</span>
           </div>
         </div>
         <div aria-hidden="true" className={styles.iconWrapper()}>
           {state.isOpen ? <ExpandLessIcon className="text-gel-link" /> : <ExpandMoreIcon className="text-gel-link" />}
         </div>
       </button>
-      {state.isOpen && (
-        <Popover state={state} triggerRef={ref} placement="bottom start" className={styles.popover()}>
-          <ListBox {...menuProps} state={state} />
-        </Popover>
-      )}
+      <div ref={portalContainreRef} />
+      <Popover
+        portalContainer={portalContainreRef.current || undefined}
+        isNonModal
+        containerPadding={0}
+        popoverRef={popoverRef}
+        shouldFlip={false}
+        state={state}
+        triggerRef={ref}
+        placement="bottom start"
+        className={styles.popover()}
+      >
+        {state.isOpen && <ListBox {...menuProps} state={state} />}
+      </Popover>
     </div>
   );
 }

@@ -1,11 +1,39 @@
 import { type ComponentProps } from '@westpac/ui';
 import json from '@westpac/ui/component-type.json';
+import { Metadata } from 'next';
 
 import { reader } from '@/app/reader';
 
 import { ContentTabs } from './components';
 import { AccessibilitySectionProps } from './components/content-tabs/components/accessibility-content/accessibility-content.types';
 import { DesignSectionProps } from './components/content-tabs/components/design-content/design-content.types';
+
+type MetadataProps = {
+  params: { component: string[] };
+};
+
+export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
+  const { component } = params;
+  const content = await reader.collections.designSystem.readOrThrow(component.join('/'));
+
+  const title = `${content.name} | GEL Design System`;
+  const description = content.description;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description: content.description,
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const components = await reader.collections.designSystem.all();
@@ -35,6 +63,7 @@ export default async function ComponentPage({ params }: { params: { component: s
               resolve({
                 title: section.title,
                 content: content,
+                noTitle: section.noTitle,
               });
               return {
                 ...section,
@@ -71,6 +100,9 @@ export default async function ComponentPage({ params }: { params: { component: s
     content?.accessibilityDemo(),
     content?.code(),
   ]);
+
+  const codeIsEmpty = code[0].children.length <= 1 && !code[0].children[0].text;
+
   const componentProps: ComponentProps | undefined = (json as any)[componentName];
   const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, any]) => {
     if (key.indexOf(`${componentName}.`) !== 0) {
@@ -85,7 +117,7 @@ export default async function ComponentPage({ params }: { params: { component: s
         westpacUIInfo: westpacInfo,
         accessibilitySections,
         accessibilityDemo,
-        code,
+        code: codeIsEmpty ? undefined : code,
         description: content.description,
         designSections,
         relatedComponents: content.relatedInformation.filter(value => !!value) as string[],

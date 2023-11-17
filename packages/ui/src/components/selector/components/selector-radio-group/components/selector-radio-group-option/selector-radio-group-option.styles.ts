@@ -3,13 +3,13 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'group/radio-option cursor-pointer',
+      base: 'group/radio-option max-sm:mb-0 sm:mb-0',
       icon: 'transition-transform',
     },
     variants: {
       checkIcon: {
         arrow: {
-          icon: 'text-primary group-hover/radio-option:translate-x-1',
+          icon: 'text-primary',
         },
         checkbox: {},
       },
@@ -29,7 +29,7 @@ export const styles = tv(
         true: {
           base: 'opacity-50',
         },
-        false: {},
+        false: { base: 'cursor-pointer hover:border-hero' },
       },
     },
     compoundVariants: [
@@ -45,6 +45,13 @@ export const styles = tv(
         isSelected: true,
         className: {
           icon: 'opacity-100',
+        },
+      },
+      {
+        checkIcon: 'arrow',
+        isDisabled: false,
+        className: {
+          icon: 'group-hover/radio-option:translate-x-1',
         },
       },
     ],

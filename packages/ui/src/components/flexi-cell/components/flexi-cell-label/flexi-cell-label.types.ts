@@ -1,4 +1,4 @@
-import { CSSProperties, type HTMLAttributes, type ReactNode } from 'react';
+import { type HTMLAttributes, type ReactNode } from 'react';
 
 export type FlexiCellLabelProps = {
   /**
@@ -6,9 +6,13 @@ export type FlexiCellLabelProps = {
    */
   children: ReactNode;
   /**
-   * Label's font weight
+   * Styles to match a label that gets rendered on the right of the flexicell i.e. Amount/Balance/Label
    */
-  fontWeight?: CSSProperties['fontWeight'];
+  rightLabel?: boolean;
+  /**
+   * Styles to match a promo tile brand label
+   */
+  subLabel?: boolean;
   /**
    * Component tag
    */

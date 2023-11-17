@@ -2,8 +2,13 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'h-5 w-5 text-muted hover:text-link xsl:h-6 xsl:w-6',
-    variants: {},
+    slots: { base: 'pointer-events-none text-[12px] font-bold text-muted' },
+    variants: {
+      promoCircle: {
+        true: { base: 'h-[70px] w-[70px] border border-border bg-white' },
+        false: { base: 'xsl:h-5 xsl:w-5 sm:h-6 sm:w-6' },
+      },
+    },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
 );

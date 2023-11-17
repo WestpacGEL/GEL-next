@@ -22,30 +22,43 @@ function FlexiCellBase(
     className,
     tag: Tag = 'div',
     children,
-    badge,
-    badgeZIndex,
     before,
-    body,
     after,
     withArrow,
     withBorder = false,
     href,
-    withHoverEffect = false,
+    dualAction = false,
+    topBadge: TopBadge,
     ...props
   }: FlexiCellProps,
   ref: any,
 ) {
   const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = flexiCellStyles({ className, withBorder, isLink: !!href || withHoverEffect, isFocusVisible });
+
+  const styles = flexiCellStyles({
+    className,
+    withBorder,
+    isLink: !!href,
+    isFocusVisible,
+    shouldHoverEffect: !withBorder && !dualAction,
+  });
+
   return (
     <Tag {...({ ref } as any)} className={styles.base({ className })} href={href} {...mergeProps(props, focusProps)}>
-      {badge && (
-        <div className={styles.badge()} style={{ zIndex: badgeZIndex }}>
-          {badge}
+      {TopBadge && (
+        <div className={styles.topBadgeWrapper()}>
+          <TopBadge className={styles.topBadge()} color="hero" />
         </div>
       )}
       {before}
-      <div className={styles.bodyWrapper()}>{body ? <FlexiCellBody>{children}</FlexiCellBody> : children}</div>
+
+      {dualAction && href ? (
+        <FlexiCell.Body tag="a" href={href}>
+          {children}
+        </FlexiCell.Body>
+      ) : (
+        <FlexiCell.Body>{children}</FlexiCell.Body>
+      )}
       {after}
       {withArrow && (
         <FlexiCellAdornment align="top">

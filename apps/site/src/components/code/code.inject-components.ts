@@ -69,6 +69,10 @@ export {
   SettingsIcon,
   WatchIcon,
   EmailIcon,
+  GiftIcon,
+  WarningIcon,
+  PadlockIcon,
+  SuccessIcon,
 } from '@westpac/ui/icon';
 
 export { GiftPictogram } from '@westpac/ui/pictogram';

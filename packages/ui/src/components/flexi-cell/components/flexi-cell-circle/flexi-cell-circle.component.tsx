@@ -2,11 +2,12 @@ import React from 'react';
 
 import { Circle } from '../../../../components/index.js';
 
-import { styles } from './flexi-cell-circle.styles.js';
+import { styles as flexiCellCircleStyles } from './flexi-cell-circle.styles.js';
 import { FlexiCellCircleProps } from './flexi-cell-circle.types.js';
 
 /** Flexi Cell Circle: Flexi Cell Circle */
-export const FlexiCellCircle = ({ className, ...props }: FlexiCellCircleProps) => {
-  return <Circle className={styles({ className })} {...props} />;
+export const FlexiCellCircle = ({ className, promoCircle = false, ...props }: FlexiCellCircleProps) => {
+  const styles = flexiCellCircleStyles({ promoCircle });
+  return <Circle className={styles.base({ className })} {...props} />;
 };
 FlexiCellCircle.displayName = 'FlexiCell.Circle';

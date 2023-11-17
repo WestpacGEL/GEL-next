@@ -8,14 +8,12 @@ export function Hero() {
   return (
     <div className="bg-gel-primary">
       <Container>
-        <Grid className="gap-y-0 xsl:gap-y-0">
+        <Grid className="gap-y-5 pt-5 xsl:gap-y-6 xsl:pt-7 sm:gap-y-7 sm:pt-9 md:gap-y-10 md:pt-10 lg:pt-11">
           <div className="col-span-11 row-end-[span_1] xsl:col-span-9">
-            <div className="mb-4 mt-5 xsl:mb-5 xsl:mt-7 sm:mb-6 sm:mt-9 md:mb-9 md:mt-10 lg:mt-11">
-              <GELHeroLogo />
-            </div>
+            <GELHeroLogo />
           </div>
           <div className="col-span-10 col-start-2 row-start-2 row-end-[span_1] mb-7 xsl:col-span-9 xsl:col-start-3 xsl:mb-9 sm:mb-14 md:mb-15 lg:mb-16">
-            <p className="font-gel-serif text-[1.125rem] text-white antialiased sm:text-[1.5rem]">
+            <p className="font-gel-serif text-[1.125rem] leading-[1.33] text-white antialiased sm:text-[1.5rem] sm:leading-[1.38]">
               The Global Experience Language is our single source of truth, providing everything you need to deliver our
               brand promises and create consistent, coherent customer experiences across our entire digital landscape
               faster, and with less effort.

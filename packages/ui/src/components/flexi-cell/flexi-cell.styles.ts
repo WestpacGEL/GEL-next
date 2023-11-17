@@ -3,25 +3,27 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'relative flex gap-2 bg-white p-2 transition-colors xsl:p-3',
-      bodyWrapper: 'flex flex-1 flex-col',
-      badge: 'absolute right-0 top-0',
+      base: 'relative flex bg-white transition-colors max-sm:mb-2 max-sm:gap-2 max-sm:p-2 sm:mb-3 sm:gap-3 sm:p-3',
+      topBadgeWrapper: 'absolute right-[-1px] top-[-1px]',
+      topBadge: 'rounded-br-none rounded-tl-none',
     },
     variants: {
       withBorder: {
         true: {
           base: 'rounded border border-borderDark',
         },
-        false: {},
       },
       isLink: {
         true: {
           base: 'hover:border-hero',
         },
-        false: {},
+        false: '',
       },
-      isFocusVisible: {
-        true: { base: 'focus-outline' },
+      isFocusVisible: { true: { base: 'focus-outline' }, false: {} },
+      shouldHoverEffect: {
+        true: {
+          base: 'group/noborder',
+        },
       },
     },
   },
