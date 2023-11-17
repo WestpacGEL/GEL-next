@@ -28,3 +28,12 @@ export type BrandConfig = {
   colors: ColorConfig & PictogramConfig;
   name: string;
 };
+
+export type FontFace = {
+  '@font-face': {
+    'font-family': string;
+    'font-style': string;
+    'font-weight': string;
+    src: string;
+  };
+};

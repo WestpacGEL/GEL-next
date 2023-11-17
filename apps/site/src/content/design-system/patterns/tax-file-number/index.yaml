@@ -1,0 +1,10 @@
+name: Tax file number
+description: >-
+  Use this pattern to capture the preferences around whether or not a customer
+  wants to provide their Tax File Number details.
+design:
+  - title: Tax File Number
+  - title: Error states
+  - title: User experience
+  - title: Pattern examples in code
+accessibility: []
