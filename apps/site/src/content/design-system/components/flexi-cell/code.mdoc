@@ -29,7 +29,9 @@
   withBorder
   after={
     <FlexiCell.Adornment align="top">
-      <FlexiCell.Label tag="h3" rightLabel>$9,999.99</FlexiCell.Label>
+      <FlexiCell.Label tag="h3" rightLabel>
+        $9,999.99
+      </FlexiCell.Label>
       <FlexiCell.Hint>avail $9,999.99</FlexiCell.Hint>
     </FlexiCell.Adornment>
   }
@@ -48,7 +50,9 @@
   withBorder
   after={
     <FlexiCell.Adornment align="top">
-      <FlexiCell.Label tag="h3" rightLabel>$9,999.99</FlexiCell.Label>
+      <FlexiCell.Label tag="h3" rightLabel>
+        $9,999.99
+      </FlexiCell.Label>
     </FlexiCell.Adornment>
   }
 >
@@ -62,11 +66,11 @@
 ```jsx
 <FlexiCell
   after={
-  <FlexiCell.Adornment align="center">
-    <FlexiCell.Label tag="h3" rightLabel>
-      Fri 5 Aug
-    </FlexiCell.Label>
-  </FlexiCell.Adornment>
+    <FlexiCell.Adornment align="center">
+      <FlexiCell.Label tag="h3" rightLabel>
+        Fri 5 Aug
+      </FlexiCell.Label>
+    </FlexiCell.Adornment>
   }
   before={
     <FlexiCell.Circle className="bg-muted text-white" aria-label="Walter White">
@@ -87,9 +91,7 @@
 <FlexiCell
   after={
     <FlexiCell.Adornment align="center">
-      <FlexiCell.Button
-        icon={({ className }) => <InfoIcon color="muted" look="outlined" className={className} />}
-      />
+      <FlexiCell.Button icon={({ className }) => <InfoIcon color="muted" look="outlined" className={className} />} />
     </FlexiCell.Adornment>
   }
   before={
@@ -111,9 +113,7 @@
 <FlexiCell
   after={
     <FlexiCell.Adornment align="center">
-      <FlexiCell.Button
-        icon={({ className }) => <InfoIcon color="muted" look="outlined" className={className} />}
-      />
+      <FlexiCell.Button icon={({ className }) => <InfoIcon color="muted" look="outlined" className={className} />} />
     </FlexiCell.Adornment>
   }
   before={
@@ -131,7 +131,8 @@
           <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
         </svg>
       )}
-    />}
+    />
+  }
   dualAction
   href="#"
 >
@@ -165,18 +166,16 @@
   tag="a"
   href="#"
 >
-  <FlexiCell.Label className="mt-1" tag="h3">List Item</FlexiCell.Label>
+  <FlexiCell.Label className="mt-1" tag="h3">
+    List Item
+  </FlexiCell.Label>
 </FlexiCell>
 ```
 
 ### List item usage
 
 ```jsx
-<FlexiCell
-  withBorder
-  tag="a"
-  href="#"
->
+<FlexiCell withBorder tag="a" href="#">
   <FlexiCell.Label tag="h3">List Item</FlexiCell.Label>
 </FlexiCell>
 ```
@@ -217,11 +216,7 @@
       </FlexiCell.Circle>
     </FlexiCell.Adornment>
   }
-  topBadge={props => (
-    <Badge {...props}>
-      Corner flag
-    </Badge>
-  )}
+  topBadge={props => <Badge {...props}>Corner flag</Badge>}
 >
   <FlexiCell.Label subLabel tag="p">
     MYER
@@ -236,8 +231,6 @@
   </FlexiCell.Footer>
 </FlexiCell>
 ```
-
-
 
 ### Account list usage
 
@@ -495,9 +488,7 @@
                     </FlexiCell.Adornment>
                   }
                 >
-                  <FlexiCell.Label tag="span">
-                    {name}
-                  </FlexiCell.Label>
+                  <FlexiCell.Label tag="span">{name}</FlexiCell.Label>
                 </FlexiCell>
               );
             })}
@@ -514,61 +505,61 @@
 ```jsx
 () => {
   const MOCK_FOREIGNPAYEES = [
-  {
-    title: 'Recently Paid',
-    id: 'recently-paid',
-    payees: [
-      {
-        name: 'Andrew Jones',
-        paidAt: 'Fri 5 Aug',
-        number: '10964567891',
-        bank: 'BANK OF ANTARCTICA, ANTARCTICA',
-        code: 'NFBKAS33XXX',
-      },
-      {
-        name: 'Joss Wight',
-        paidAt: 'Mon 1 Aug',
-        number: '10964567892',
-        bank: 'LLOYDS OF LONDON, DEVON',
-        code: 'NFBKAS33XXX',
-      },
-    ],
-  },
-  {
-    title: 'A',
-    id: 'a',
-    payees: [
-      {
-        name: 'American Apparel',
-        number: '10964567894',
-        bank: 'BANK OF AMERICA, NEW YORK',
-        code: 'NFBKAS33XXX',
-        paidAt: undefined,
-      },
-      {
-        initials: 'AC',
-        name: 'Alfred Prince',
-        number: '10964567895',
-        bank: 'BANK OF AMERICA, NEW YORK',
-        code: 'NFBKAS33XXX',
-        paidAt: undefined,
-      },
-    ],
-  },
-  {
-    title: 'H',
-    id: 'h',
-    payees: [
-      {
-        name: 'Havana Houseboats',
-        number: '10964567896',
-        bank: 'BANK OF CUBA, HAVANA',
-        code: 'NFBKAS33XXX',
-        paidAt: undefined,
-      },
-    ],
-  },
-];
+    {
+      title: 'Recently Paid',
+      id: 'recently-paid',
+      payees: [
+        {
+          name: 'Andrew Jones',
+          paidAt: 'Fri 5 Aug',
+          number: '10964567891',
+          bank: 'BANK OF ANTARCTICA, ANTARCTICA',
+          code: 'NFBKAS33XXX',
+        },
+        {
+          name: 'Joss Wight',
+          paidAt: 'Mon 1 Aug',
+          number: '10964567892',
+          bank: 'LLOYDS OF LONDON, DEVON',
+          code: 'NFBKAS33XXX',
+        },
+      ],
+    },
+    {
+      title: 'A',
+      id: 'a',
+      payees: [
+        {
+          name: 'American Apparel',
+          number: '10964567894',
+          bank: 'BANK OF AMERICA, NEW YORK',
+          code: 'NFBKAS33XXX',
+          paidAt: undefined,
+        },
+        {
+          initials: 'AC',
+          name: 'Alfred Prince',
+          number: '10964567895',
+          bank: 'BANK OF AMERICA, NEW YORK',
+          code: 'NFBKAS33XXX',
+          paidAt: undefined,
+        },
+      ],
+    },
+    {
+      title: 'H',
+      id: 'h',
+      payees: [
+        {
+          name: 'Havana Houseboats',
+          number: '10964567896',
+          bank: 'BANK OF CUBA, HAVANA',
+          code: 'NFBKAS33XXX',
+          paidAt: undefined,
+        },
+      ],
+    },
+  ];
 
   return (
     <>
@@ -713,8 +704,8 @@
 ### Vertical Promo Tiles
 
 ```jsx
-  () => {
-    const MOCK_VERTICAL_PROMOS = [
+() => {
+  const MOCK_VERTICAL_PROMOS = [
     {
       title: 'About the bonus',
       subtitle:
@@ -773,49 +764,49 @@
 
 ```jsx
 () => {
-    const title = 'Westpac specials and product offers';
-    const subtitle = 'Discounts and cashback from select merchants & products offers from Westpac';
-    return (
-      <>
-        <FlexiCell
-          tag="a"
-          href="#"
-          withBorder
-          withArrow
-          key={title}
-          before={
-            <FlexiCell.Adornment className="max-sm:hidden">
-              <GiftIcon look="outlined" color="hero" />
-            </FlexiCell.Adornment>
-          }
-          after={<WarningIcon look="outlined" color="danger" />}
-        >
-          <GiftIcon className="sm:hidden" look="outlined" color="hero" />
-          <FlexiCell.Label className="text-hero" tag="h4">
-            {title}
-          </FlexiCell.Label>
-          <FlexiCell.Hint>{subtitle}</FlexiCell.Hint>
-        </FlexiCell>
-        <FlexiCell
-          tag="a"
-          href="#"
-          withBorder
-          withArrow
-          key={title}
-          before={
-            <FlexiCell.Adornment className="max-sm:hidden">
-              <PadlockIcon look="outlined" color="hero" />
-            </FlexiCell.Adornment>
-          }
-          after={<SuccessIcon look="outlined" color="success" />}
-        >
-          <PadlockIcon className="sm:hidden" look="outlined" color="hero" />
-          <FlexiCell.Label className="text-hero" tag="h4">
-            {title}
-          </FlexiCell.Label>
-          <FlexiCell.Hint>{subtitle}</FlexiCell.Hint>
-        </FlexiCell>
-      </>
-    );
+  const title = 'Westpac specials and product offers';
+  const subtitle = 'Discounts and cashback from select merchants & products offers from Westpac';
+  return (
+    <>
+      <FlexiCell
+        tag="a"
+        href="#"
+        withBorder
+        withArrow
+        key={title}
+        before={
+          <FlexiCell.Adornment className="max-sm:hidden">
+            <GiftIcon look="outlined" color="hero" />
+          </FlexiCell.Adornment>
+        }
+        after={<WarningIcon look="outlined" color="danger" />}
+      >
+        <GiftIcon className="sm:hidden" look="outlined" color="hero" />
+        <FlexiCell.Label className="text-hero" tag="h4">
+          {title}
+        </FlexiCell.Label>
+        <FlexiCell.Hint>{subtitle}</FlexiCell.Hint>
+      </FlexiCell>
+      <FlexiCell
+        tag="a"
+        href="#"
+        withBorder
+        withArrow
+        key={title}
+        before={
+          <FlexiCell.Adornment className="max-sm:hidden">
+            <PadlockIcon look="outlined" color="hero" />
+          </FlexiCell.Adornment>
+        }
+        after={<SuccessIcon look="outlined" color="success" />}
+      >
+        <PadlockIcon className="sm:hidden" look="outlined" color="hero" />
+        <FlexiCell.Label className="text-hero" tag="h4">
+          {title}
+        </FlexiCell.Label>
+        <FlexiCell.Hint>{subtitle}</FlexiCell.Hint>
+      </FlexiCell>
+    </>
+  );
 };
 ```
