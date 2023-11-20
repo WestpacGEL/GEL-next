@@ -4,12 +4,28 @@ description: >-
   area of the screen. They are typically reserved for critical junctions in a
   user journey.
 design:
-  - title: Modal sizes
-  - title: Modal variations
-  - title: User experience
-  - title: Visual design
-  - title: Dos and don’ts
+  - title:
+      name: Modal sizes
+      slug: modal-sizes
+  - title:
+      name: Modal variations
+      slug: modal-variations
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Visual design
+      slug: visual-design
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
 accessibility:
-  - title: Accessibility features
-  - title: Keyboard support
-  - title: Accessibility API
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

@@ -3,12 +3,28 @@ description: >-
   A Selector is essentially a large stylised radio or checkbox that can be
   configured in many different ways for different uses.
 design:
-  - title: Selector functionality
-  - title: Selector design
-  - title: User experience
-  - title: Visual design
+  - title:
+      name: Selector functionality
+      slug: selector-functionality
+  - title:
+      name: Selector design
+      slug: selector-design
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Visual design
+      slug: visual-design
 accessibility:
-  - title: Notes on accessibility
-  - title: Accessibility features
-  - title: Keyboard support
-  - title: Accessibility API
+  - title:
+      name: Notes on accessibility
+      slug: notes-on-accessibility
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

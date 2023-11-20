@@ -4,13 +4,31 @@ description: >-
   It’s important to understand how the colour system works in a multi-brand
   environment and adhere to the accessibility guidelines.
 design:
-  - title: Primary UI palette
-  - title: Secondary colours
-  - title: Reserved colours
-  - title: User experience
-  - title: Visual design
+  - title:
+      name: Primary UI palette
+      slug: primary-ui-palette
+  - title:
+      name: Secondary colours
+      slug: secondary-colours
+  - title:
+      name: Reserved colours
+      slug: reserved-colours
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Visual design
+      slug: visual-design
 accessibility:
-  - title: Accessibility notes
-  - title: Accessibility features
-  - title: Keyboard support
-  - title: Accessibility API
+  - title:
+      name: Accessibility notes
+      slug: accessibility-notes
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

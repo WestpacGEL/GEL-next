@@ -3,7 +3,13 @@ description: >-
   The GEL design system is built using React. Use it to easily build new React
   applications, as well as add to existing ones.
 design:
-  - title: Pre-requisites
-  - title: Quick setup
-  - title: Resources
+  - title:
+      name: Pre-requisites
+      slug: pre-requisites
+  - title:
+      name: Quick setup
+      slug: quick-setup
+  - title:
+      name: Resources
+      slug: resources
 accessibility: []
