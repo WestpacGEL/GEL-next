@@ -4,5 +4,6 @@ design:
   - title:
       name: undefined
       slug: undefined
+    noTitle: true
 accessibility: []
 relatedInformation: []

@@ -6,6 +6,7 @@ design:
   - title:
       name: undefined
       slug: undefined
+    noTitle: true
   - title:
       name: useBrand
       slug: usebrand

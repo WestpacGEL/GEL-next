@@ -6,6 +6,7 @@ design:
   - title:
       name: undefined
       slug: undefined
+    noTitle: true
   - title:
       name: Types of error messages
       slug: types-of-error-messages
