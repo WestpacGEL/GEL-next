@@ -4,6 +4,9 @@ description: >-
   succeeded or has been chosen by the user.
 design:
   - title: Manual address
+    slug: manual-address
   - title: Error states
+    slug: error-states
   - title: Pattern examples in code
+    slug: pattern-examples-in-code
 accessibility: []

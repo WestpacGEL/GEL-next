@@ -4,11 +4,19 @@ description: >-
   configured in many different ways for different uses.
 design:
   - title: Selector functionality
+    slug: selector-functionality
   - title: Selector design
+    slug: selector-design
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
 accessibility:
   - title: Notes on accessibility
+    slug: notes-on-accessibility
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

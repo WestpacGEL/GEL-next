@@ -3,6 +3,6 @@ description: >-
   Bolding and underlining are used to emphasise words. We only use bolding in
   certain situations.
 design:
-  - title: undefined     
-    noTitle: true
+  - title: undefined
+    slug: undefined
 accessibility: []

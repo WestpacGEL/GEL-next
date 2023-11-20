@@ -4,14 +4,25 @@ description: >-
   They also require careful consideration to produce the best results.
 design:
   - title: Radio sizes
+    slug: radio-sizes
   - title: Horizontal layout
+    slug: horizontal-layout
   - title: Radios with hint text
+    slug: radios-with-hint-text
   - title: Radios with reveal
+    slug: radios-with-reveal
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
   - title: Dos and don’ts
+    slug: dos-and-donts
 accessibility:
   - title: Notes on accessibility
+    slug: notes-on-accessibility
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

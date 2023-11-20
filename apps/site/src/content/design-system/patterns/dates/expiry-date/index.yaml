@@ -4,7 +4,11 @@ description: >-
   and is most commonly used for expiry dates.
 design:
   - title: Expiry date
+    slug: expiry-date
   - title: Error states
+    slug: error-states
   - title: Dos and don'ts
+    slug: dos-and-donts
   - title: Pattern examples in code
+    slug: pattern-examples-in-code
 accessibility: []

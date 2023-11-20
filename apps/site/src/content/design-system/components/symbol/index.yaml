@@ -6,10 +6,17 @@ description: >-
   complies with WGAG AA accessibility requirements.
 design:
   - title: Third Party Symbols
+    slug: third-party-symbols
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
   - title: Dos and don’ts
+    slug: dos-and-donts
 accessibility:
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

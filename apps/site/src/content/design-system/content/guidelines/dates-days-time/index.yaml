@@ -1,6 +1,6 @@
 name: Dates, days & time
 description: A guide to writing dates, days and time.
 design:
-  - title: undefined     
-    noTitle: true
+  - title: undefined
+    slug: undefined
 accessibility: []

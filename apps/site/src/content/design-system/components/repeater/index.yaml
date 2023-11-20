@@ -4,7 +4,11 @@ description: >-
   something.
 design:
   - title: Default
+    slug: default
   - title: User experience
+    slug: user-experience
   - title: Dos and don'ts
+    slug: dos-and-donts
 accessibility:
   - title: Notes and accessibility
+    slug: notes-and-accessibility

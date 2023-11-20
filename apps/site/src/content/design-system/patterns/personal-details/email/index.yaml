@@ -4,7 +4,11 @@ description: >-
   primary way we communicate with customers, it’s important to get this right.
 design:
   - title: Email
+    slug: email
   - title: Error states
+    slug: error-states
   - title: Dos and don'ts
+    slug: dos-and-donts
   - title: Pattern examples in code
+    slug: pattern-examples-in-code
 accessibility: []

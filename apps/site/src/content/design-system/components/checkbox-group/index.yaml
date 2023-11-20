@@ -4,14 +4,25 @@ description: >-
   user. They also require careful consideration to produce the best results.
 design:
   - title: Checkbox sizes
+    slug: checkbox-sizes
   - title: Horizontal layout
+    slug: horizontal-layout
   - title: Checkbox with hint text
+    slug: checkbox-with-hint-text
   - title: Checkbox with reveal
+    slug: checkbox-with-reveal
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
   - title: Dos and don’ts
+    slug: dos-and-donts
 accessibility:
   - title: Notes on accessibility
+    slug: notes-on-accessibility
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

@@ -4,6 +4,9 @@ description: >-
   applications, as well as add to existing ones.
 design:
   - title: Pre-requisites
+    slug: pre-requisites
   - title: Quick setup
+    slug: quick-setup
   - title: Resources
+    slug: resources
 accessibility: []

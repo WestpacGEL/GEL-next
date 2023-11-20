@@ -4,9 +4,15 @@ description: >-
   nouns.
 design:
   - title: Headings
+    slug: headings
   - title: Sentence-case
+    slug: sentence-case
   - title: Capitalisation
+    slug: capitalisation
   - title: Lower-case
+    slug: lower-case
   - title: States and territories
+    slug: states-and-territories
   - title: Countries
+    slug: countries
 accessibility: []

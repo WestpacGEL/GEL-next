@@ -4,12 +4,21 @@ description: >-
   for headings and a body font for editorial and UI elements.
 design:
   - title: Brand font
+    slug: brand-font
   - title: Body font
+    slug: body-font
   - title: Typographic scale
+    slug: typographic-scale
   - title: Font weights
+    slug: font-weights
   - title: Using fonts
+    slug: using-fonts
   - title: Dos and don’ts
+    slug: dos-and-donts
 accessibility:
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

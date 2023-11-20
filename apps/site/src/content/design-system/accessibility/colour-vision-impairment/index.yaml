@@ -5,5 +5,7 @@ description: >-
   effects many of our customers, regardless of age.
 design:
   - title: What is a colour vision impairment?
+    slug: what-is-a-colour-vision-impairment
   - title: Colour contrast testing
+    slug: colour-contrast-testing
 accessibility: []

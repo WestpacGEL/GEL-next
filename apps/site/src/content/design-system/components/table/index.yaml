@@ -5,15 +5,27 @@ description: >-
   comparing values.
 design:
   - title: Basic table
+    slug: basic-table
   - title: Striped row table
+    slug: striped-row-table
   - title: Bordered table
+    slug: bordered-table
   - title: Bordered, striped table
+    slug: bordered-striped-table
   - title: Basic table with highlights
+    slug: basic-table-with-highlights
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
   - title: Dos and don’ts
+    slug: dos-and-donts
 accessibility:
   - title: Notes on accessibility
+    slug: notes-on-accessibility
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

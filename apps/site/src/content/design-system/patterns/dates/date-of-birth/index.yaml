@@ -4,8 +4,13 @@ description: >-
   recalled and entered without the need for select elements.
 design:
   - title: Date of birth
+    slug: date-of-birth
   - title: Error states
+    slug: error-states
   - title: User experience
+    slug: user-experience
   - title: Dos and don'ts
+    slug: dos-and-donts
   - title: Pattern examples in code
+    slug: pattern-examples-in-code
 accessibility: []

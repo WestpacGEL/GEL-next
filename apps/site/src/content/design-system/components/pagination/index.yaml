@@ -4,11 +4,19 @@ description: >-
   to multiple pages of content, typically used in long form content.
 design:
   - title: Pagination
+    slug: pagination
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
   - title: Dos and don’ts
+    slug: dos-and-donts
 accessibility:
   - title: Notes on accessibility
+    slug: notes-on-accessibility
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

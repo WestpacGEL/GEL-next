@@ -4,8 +4,13 @@ description: >-
   you need for your application.
 design:
   - title: Phone number
+    slug: phone-number
   - title: Error states
+    slug: error-states
   - title: User experience
+    slug: user-experience
   - title: Dos and don'ts
+    slug: dos-and-donts
   - title: Pattern examples in code
+    slug: pattern-examples-in-code
 accessibility: []

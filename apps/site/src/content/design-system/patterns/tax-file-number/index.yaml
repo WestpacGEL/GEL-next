@@ -4,7 +4,11 @@ description: >-
   wants to provide their Tax File Number details.
 design:
   - title: Tax File Number
+    slug: tax-file-number
   - title: Error states
+    slug: error-states
   - title: User experience
+    slug: user-experience
   - title: Pattern examples in code
+    slug: pattern-examples-in-code
 accessibility: []

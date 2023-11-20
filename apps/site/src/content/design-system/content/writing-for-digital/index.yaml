@@ -5,6 +5,9 @@ description: >-
   simplest way possible.
 design:
   - title: Why our words matter
+    slug: why-our-words-matter
   - title: Principles
+    slug: principles
   - title: Writing tips
+    slug: writing-tips
 accessibility: []

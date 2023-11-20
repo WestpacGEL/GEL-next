@@ -4,7 +4,11 @@ description: >-
   international formats.
 design:
   - title: International address
+    slug: international-address
   - title: Error states
+    slug: error-states
   - title: User experience
+    slug: user-experience
   - title: Pattern examples in code
+    slug: pattern-examples-in-code
 accessibility: []

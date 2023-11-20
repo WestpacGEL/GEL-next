@@ -5,12 +5,21 @@ description: >-
   environment and adhere to the accessibility guidelines.
 design:
   - title: Primary UI palette
+    slug: primary-ui-palette
   - title: Secondary colours
+    slug: secondary-colours
   - title: Reserved colours
+    slug: reserved-colours
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
 accessibility:
   - title: Accessibility notes
+    slug: accessibility-notes
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

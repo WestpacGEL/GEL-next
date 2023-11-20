@@ -4,10 +4,17 @@ description: >-
   without interfering with the primary content on a page.
 design:
   - title: Well
+    slug: well
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
 accessibility:
   - title: Notes on accessibility
+    slug: notes-on-accessibility
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

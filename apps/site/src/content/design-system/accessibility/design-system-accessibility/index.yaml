@@ -6,9 +6,15 @@ description: >-
   for accessibility and inclusion.
 design:
   - title: Principles of accessibility
+    slug: principles-of-accessibility
   - title: Inclusive product design
+    slug: inclusive-product-design
   - title: Inclusive content writing
+    slug: inclusive-content-writing
   - title: Accessible interfaces
+    slug: accessible-interfaces
   - title: Accessibility testing
+    slug: accessibility-testing
   - title: Deprecated components
+    slug: deprecated-components
 accessibility: []

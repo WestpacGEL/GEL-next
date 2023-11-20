@@ -5,10 +5,17 @@ description: >-
   all devices. Use them to assist with visual communication.
 design:
   - title: Informative pictograms
+    slug: informative-pictograms
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
   - title: Dos and don’ts
+    slug: dos-and-donts
 accessibility:
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

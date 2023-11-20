@@ -103,7 +103,16 @@ export default config({
         }),
         design: fields.array(
           fields.object({
-            title: fields.text({ label: 'Name' }),
+            title: fields.slug({
+              name: {
+                label: 'Title',
+                validation: {
+                  length: {
+                    min: 1,
+                  },
+                },
+              },
+            }),
             noTitle: fields.checkbox({ label: 'No title' }),
             content: fields.document({
               formatting: true,
@@ -116,13 +125,22 @@ export default config({
           }),
           {
             label: 'Design sections',
-            itemLabel: props => props.fields.title.value,
+            itemLabel: props => props.fields.title.value.name,
             slugField: 'title',
           },
         ),
         accessibility: fields.array(
           fields.object({
-            title: fields.text({ label: 'Name' }),
+            title: fields.slug({
+              name: {
+                label: 'Title',
+                validation: {
+                  length: {
+                    min: 1,
+                  },
+                },
+              },
+            }),
             content: fields.document({
               formatting: true,
               dividers: true,
@@ -132,7 +150,7 @@ export default config({
           }),
           {
             label: 'Accessibility sections',
-            itemLabel: props => props.fields.title.value,
+            itemLabel: props => props.fields.title.value.name,
             slugField: 'title',
           },
         ),

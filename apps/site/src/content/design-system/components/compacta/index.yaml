@@ -4,8 +4,13 @@ description: >-
   fields, saving valuable screen space.
 design:
   - title: Default
+    slug: default
   - title: Error states
+    slug: error-states
   - title: User experience
+    slug: user-experience
   - title: Dos and don'ts
+    slug: dos-and-donts
 accessibility:
   - title: Accessibility notes
+    slug: accessibility-notes

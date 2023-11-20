@@ -4,5 +4,7 @@ description: >-
   capture of multiple property types.
 design:
   - title: Complex address
+    slug: complex-address
   - title: Pattern examples in code
+    slug: pattern-examples-in-code
 accessibility: []

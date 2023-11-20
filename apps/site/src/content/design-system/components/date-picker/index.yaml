@@ -4,12 +4,21 @@ description: >-
   something, or assist in providing “day of the week” context.
 design:
   - title: Sizes
+    slug: sizes
   - title: Date range
+    slug: date-range
   - title: Unavailable dates
+    slug: unavailable-dates
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
   - title: Dos and don'ts
+    slug: dos-and-donts
 accessibility:
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

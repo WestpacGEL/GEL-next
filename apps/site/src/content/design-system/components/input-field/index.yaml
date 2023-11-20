@@ -4,12 +4,21 @@ description: >-
   character. They are useful for giving context to input field values.
 design:
   - title: Input field examples
+    slug: input-field-examples
   - title: Input field sizes
+    slug: input-field-sizes
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
   - title: Dos and don’ts
+    slug: dos-and-donts
 accessibility:
   - title: Notes on accessibility
+    slug: notes-on-accessibility
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

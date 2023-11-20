@@ -5,7 +5,11 @@ description: >-
   and inclusive.
 design:
   - title: Full name
+    slug: full-name
   - title: Simple name
+    slug: simple-name
   - title: Error states
+    slug: error-states
   - title: Pattern examples in code
+    slug: pattern-examples-in-code
 accessibility: []

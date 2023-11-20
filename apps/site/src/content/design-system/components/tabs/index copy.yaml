@@ -4,13 +4,23 @@ description: >-
   group and simplify large amounts of content such as product information.
 design:
   - title: Tabset
+    slug: tabset
   - title: Accordion
+    slug: accordion
   - title: Tabcordion
+    slug: tabcordion
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
   - title: Dos and don’ts
+    slug: dos-and-donts
 accessibility:
   - title: Notes on accessibility
+    slug: notes-on-accessibility
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

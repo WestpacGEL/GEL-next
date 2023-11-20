@@ -5,12 +5,21 @@ description: >-
   or legal copy for example.
 design:
   - title: Bullet lists
+    slug: bullet-lists
   - title: Other lists
+    slug: other-lists
   - title: List item spacing
+    slug: list-item-spacing
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
 accessibility:
   - title: Notes on accessibility
+    slug: notes-on-accessibility
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api

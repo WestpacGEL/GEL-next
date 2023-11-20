@@ -4,11 +4,19 @@ description: >-
   better reading and scanning experiences for users.
 design:
   - title: Editorial text styles
+    slug: editorial-text-styles
   - title: Headings
+    slug: headings
   - title: User experience
+    slug: user-experience
   - title: Visual design
+    slug: visual-design
 accessibility:
   - title: Notes on accessibility
+    slug: notes-on-accessibility
   - title: Accessibility features
+    slug: accessibility-features
   - title: Keyboard support
+    slug: keyboard-support
   - title: Accessibility API
+    slug: accessibility-api
