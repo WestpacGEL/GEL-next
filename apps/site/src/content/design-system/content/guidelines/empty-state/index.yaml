@@ -3,6 +3,7 @@ description: >-
   Empty states are moments in a person’s experience with a product where there’s
   nothing to display.
 design:
-  - title: undefined
-    slug: undefined
+  - title:
+      name: undefined
+      slug: undefined
 accessibility: []

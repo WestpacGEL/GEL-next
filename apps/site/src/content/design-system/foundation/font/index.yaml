@@ -3,22 +3,31 @@ description: >-
   The font system allows each brand to designate two typefaces: A display font
   for headings and a body font for editorial and UI elements.
 design:
-  - title: Brand font
-    slug: brand-font
-  - title: Body font
-    slug: body-font
-  - title: Typographic scale
-    slug: typographic-scale
-  - title: Font weights
-    slug: font-weights
-  - title: Using fonts
-    slug: using-fonts
-  - title: Dos and don’ts
-    slug: dos-and-donts
+  - title:
+      name: Brand font
+      slug: brand-font
+  - title:
+      name: Body font
+      slug: body-font
+  - title:
+      name: Typographic scale
+      slug: typographic-scale
+  - title:
+      name: Font weights
+      slug: font-weights
+  - title:
+      name: Using fonts
+      slug: using-fonts
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
 accessibility:
-  - title: Accessibility features
-    slug: accessibility-features
-  - title: Keyboard support
-    slug: keyboard-support
-  - title: Accessibility API
-    slug: accessibility-api
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

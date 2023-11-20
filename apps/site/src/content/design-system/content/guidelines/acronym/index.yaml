@@ -1,6 +1,7 @@
 name: Acronym
 description: Acronyms are words that are formed from the first letters of other words.
 design:
-  - title: undefined
-    slug: undefined
+  - title:
+      name: undefined
+      slug: undefined
 accessibility: []

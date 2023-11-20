@@ -61,7 +61,7 @@ export default async function ComponentPage({ params }: { params: { component: s
             .content()
             .then(content => {
               resolve({
-                title: section.title,
+                title: section.title.name,
                 content: content,
                 noTitle: section.noTitle,
               });
@@ -83,7 +83,7 @@ export default async function ComponentPage({ params }: { params: { component: s
             .content()
             .then(content => {
               resolve({
-                title: section.title,
+                title: section.title.name,
                 content: content,
               });
               return {

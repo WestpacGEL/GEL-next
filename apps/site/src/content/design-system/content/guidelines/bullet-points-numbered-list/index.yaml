@@ -3,6 +3,7 @@ description: >-
   Bullet points and numbered lists are used to make it easier to understand a
   series of items.
 design:
-  - title: undefined
-    slug: undefined
+  - title:
+      name: undefined
+      slug: undefined
 accessibility: []

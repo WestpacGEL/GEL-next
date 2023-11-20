@@ -1,6 +1,7 @@
 name: Numbers & currencies
 description: A guide to writing numbers and currencies.
 design:
-  - title: undefined
-    slug: undefined
+  - title:
+      name: undefined
+      slug: undefined
 accessibility: []

@@ -1,6 +1,7 @@
 name: Bracket
 description: Brackets are used to provide extra information.
 design:
-  - title: undefined
-    slug: undefined
+  - title:
+      name: undefined
+      slug: undefined
 accessibility: []

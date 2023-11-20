@@ -3,12 +3,16 @@ description: >-
   Use this pattern to capture the preferences around whether or not a customer
   wants to provide their Tax File Number details.
 design:
-  - title: Tax File Number
-    slug: tax-file-number
-  - title: Error states
-    slug: error-states
-  - title: User experience
-    slug: user-experience
-  - title: Pattern examples in code
-    slug: pattern-examples-in-code
+  - title:
+      name: Tax File Number
+      slug: tax-file-number
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
 accessibility: []

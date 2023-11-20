@@ -3,12 +3,16 @@ description: >-
   Use this flexible address pattern for capturing addresses in multiple
   international formats.
 design:
-  - title: International address
-    slug: international-address
-  - title: Error states
-    slug: error-states
-  - title: User experience
-    slug: user-experience
-  - title: Pattern examples in code
-    slug: pattern-examples-in-code
+  - title:
+      name: International address
+      slug: international-address
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
 accessibility: []

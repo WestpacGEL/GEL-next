@@ -3,10 +3,13 @@ description: >-
   The way we communicate errors to our users helps them to recover quickly with
   less effort.
 design:
-  - title: undefined
-    slug: undefined
-  - title: Types of error messages
-    slug: types-of-error-messages
-  - title: Displaying error messages
-    slug: displaying-error-messages
+  - title:
+      name: undefined
+      slug: undefined
+  - title:
+      name: Types of error messages
+      slug: types-of-error-messages
+  - title:
+      name: Displaying error messages
+      slug: displaying-error-messages
 accessibility: []

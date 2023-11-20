@@ -3,16 +3,22 @@ description: >-
   Capital letters are typically used at the start of a sentence and for proper
   nouns.
 design:
-  - title: Headings
-    slug: headings
-  - title: Sentence-case
-    slug: sentence-case
-  - title: Capitalisation
-    slug: capitalisation
-  - title: Lower-case
-    slug: lower-case
-  - title: States and territories
-    slug: states-and-territories
-  - title: Countries
-    slug: countries
+  - title:
+      name: Headings
+      slug: headings
+  - title:
+      name: Sentence-case
+      slug: sentence-case
+  - title:
+      name: Capitalisation
+      slug: capitalisation
+  - title:
+      name: Lower-case
+      slug: lower-case
+  - title:
+      name: States and territories
+      slug: states-and-territories
+  - title:
+      name: Countries
+      slug: countries
 accessibility: []

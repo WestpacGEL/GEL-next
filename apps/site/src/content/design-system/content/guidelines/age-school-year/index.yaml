@@ -1,7 +1,8 @@
 name: Age & school year
 description: A guide to writing age and school years.
 design:
-  - title: undefined
-    slug: undefined
+  - title:
+      name: undefined
+      slug: undefined
 accessibility: []
 relatedInformation: []

@@ -5,18 +5,25 @@ description: >-
   on all devices. It also allows styling with code and complies with WGAG AA
   accessibility requirements.
 design:
-  - title: Logos
-    slug: logos
-  - title: User experience
-    slug: user-experience
-  - title: Visual design
-    slug: visual-design
-  - title: Dos and don’ts
-    slug: dos-and-donts
+  - title:
+      name: Logos
+      slug: logos
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Visual design
+      slug: visual-design
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
 accessibility:
-  - title: Accessibility features
-    slug: accessibility-features
-  - title: Keyboard support
-    slug: keyboard-support
-  - title: Accessibility API
-    slug: accessibility-api
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

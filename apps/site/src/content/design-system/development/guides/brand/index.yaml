@@ -3,8 +3,10 @@ description: >-
   In order to allow for the most flexibility when theming your application, we
   have published a package for each of the Westpac Group's brands.
 design:
-  - title: undefined
-    slug: undefined
-  - title: useBrand
-    slug: usebrand
+  - title:
+      name: undefined
+      slug: undefined
+  - title:
+      name: useBrand
+      slug: usebrand
 accessibility: []
