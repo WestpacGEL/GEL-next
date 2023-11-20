@@ -27,13 +27,23 @@ export function BrandSelect(props: BrandSelectProps) {
   const { focusProps, isFocusVisible } = useFocusRing();
   const styles = brandSelectStyles({ isFocusVisible, isOpen: state.isOpen });
 
+  const finalButtonProps = mergeProps(focusProps, buttonProps);
   return (
     <div className={styles.base()}>
       <div {...labelProps} className={styles.label()}>
         {props.label}
       </div>
 
-      <button {...mergeProps(buttonProps, focusProps)} ref={ref} className={styles.button()}>
+      <button
+        {...finalButtonProps}
+        onClick={undefined}
+        onPointerUp={undefined}
+        onPointerDown={() => {
+          state.toggle();
+        }}
+        ref={ref}
+        className={styles.button()}
+      >
         <div className={styles.textWrapper()}>
           <div className="flex w-full items-end gap-[0.625rem] overflow-hidden text-ellipsis py-2" {...valueProps}>
             <GELLogo className="w-[2.8125rem] shrink-0" />
