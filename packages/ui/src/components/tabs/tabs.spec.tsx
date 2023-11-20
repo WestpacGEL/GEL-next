@@ -37,13 +37,13 @@ describe('Tabs', () => {
         </Tabs.Panel>
       </Tabs>,
     );
-    await act(() => {
-      user.click(getByText('Founding of Rome'));
+    await act(async () => {
+      await user.click(getByText('Founding of Rome'));
     });
     expect(getByText('Arma virumque cano, Troiae qui primus ab oris.')).toBeVisible();
 
-    await act(() => {
-      user.click(getByText('Monarchy and Republic'));
+    await act(async () => {
+      await user.click(getByText('Monarchy and Republic'));
     });
     expect(getByText('Senatus Populusque Romanus.')).toBeVisible();
   });

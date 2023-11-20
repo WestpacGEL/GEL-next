@@ -3,15 +3,37 @@ description: >-
   Checkboxes are a proven and effective way to elicit a multiple choice from a
   user. They also require careful consideration to produce the best results.
 design:
-  - title: Checkbox sizes
-  - title: Horizontal layout
-  - title: Checkbox with hint text
-  - title: Checkbox with reveal
-  - title: User experience
-  - title: Visual design
-  - title: Dos and don’ts
+  - title:
+      name: Checkbox sizes
+      slug: checkbox-sizes
+  - title:
+      name: Horizontal layout
+      slug: horizontal-layout
+  - title:
+      name: Checkbox with hint text
+      slug: checkbox-with-hint-text
+  - title:
+      name: Checkbox with reveal
+      slug: checkbox-with-reveal
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Visual design
+      slug: visual-design
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
 accessibility:
-  - title: Notes on accessibility
-  - title: Accessibility features
-  - title: Keyboard support
-  - title: Accessibility API
+  - title:
+      name: Notes on accessibility
+      slug: notes-on-accessibility
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

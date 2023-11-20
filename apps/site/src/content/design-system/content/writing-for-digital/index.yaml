@@ -4,7 +4,13 @@ description: >-
   messaging and successfully complete their task online in the quickest and
   simplest way possible.
 design:
-  - title: Why our words matter
-  - title: Principles
-  - title: Writing tips
+  - title:
+      name: Why our words matter
+      slug: why-our-words-matter
+  - title:
+      name: Principles
+      slug: principles
+  - title:
+      name: Writing tips
+      slug: writing-tips
 accessibility: []

@@ -4,6 +4,10 @@ description: >-
   colour blindness and from 0.5-1% of all females. This is something that
   effects many of our customers, regardless of age.
 design:
-  - title: What is a colour vision impairment?
-  - title: Colour contrast testing
+  - title:
+      name: What is a colour vision impairment?
+      slug: what-is-a-colour-vision-impairment
+  - title:
+      name: Colour contrast testing
+      slug: colour-contrast-testing
 accessibility: []

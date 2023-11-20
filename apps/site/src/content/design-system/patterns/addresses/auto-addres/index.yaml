@@ -1,9 +1,19 @@
 name: Auto-addres
 description: Use auto-address to capture addresses quickly and with more accuracy.
 design:
-  - title: Auto-address
-  - title: Error states
-  - title: User experience
-  - title: Dos and don'ts
-  - title: Pattern examples in code
+  - title:
+      name: Auto-address
+      slug: auto-address
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Dos and don'ts
+      slug: dos-and-donts
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
 accessibility: []
