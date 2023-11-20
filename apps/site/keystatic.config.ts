@@ -193,6 +193,9 @@ export default config({
             },
           },
         }),
+        cardTitle: fields.text({
+          label: 'Card title on the home page',
+        }),
         description: fields.text({
           label: 'Description',
           multiline: true,

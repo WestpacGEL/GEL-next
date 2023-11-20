@@ -2,6 +2,7 @@ import { DocumentElement } from '@keystatic/core';
 
 export type Article = {
   author: string | null;
+  cardTitle: string | null;
   content: DocumentElement[];
   description?: string;
   image: string | null;
