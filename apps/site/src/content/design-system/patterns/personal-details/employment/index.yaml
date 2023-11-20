@@ -3,8 +3,16 @@ description: >-
   Use this pattern for capturing employment details, the structure of this data
   is often dictated by systems outside of the bank.
 design:
-  - title: Employment
-  - title: Error states
-  - title: User experience
-  - title: Pattern examples in code
+  - title:
+      name: Employment
+      slug: employment
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
 accessibility: []

@@ -4,11 +4,25 @@ description: >-
   scalable vector graphics (SVGs), this ensures the highest quality rendering on
   all devices. Use them to assist with visual communication.
 design:
-  - title: Informative pictograms
-  - title: User experience
-  - title: Visual design
-  - title: Dos and don’ts
+  - title:
+      name: Informative pictograms
+      slug: informative-pictograms
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Visual design
+      slug: visual-design
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
 accessibility:
-  - title: Accessibility features
-  - title: Keyboard support
-  - title: Accessibility API
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

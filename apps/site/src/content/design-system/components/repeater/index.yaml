@@ -3,8 +3,16 @@ description: >-
   A Repeater is a user controlled pattern for allowing multiple instances of
   something.
 design:
-  - title: Default
-  - title: User experience
-  - title: Dos and don'ts
+  - title:
+      name: Default
+      slug: default
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Dos and don'ts
+      slug: dos-and-donts
 accessibility:
-  - title: Notes and accessibility
+  - title:
+      name: Notes and accessibility
+      slug: notes-and-accessibility

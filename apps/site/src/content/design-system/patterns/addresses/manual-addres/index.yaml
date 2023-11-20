@@ -3,7 +3,13 @@ description: >-
   Use the manual address pattern when auto-address is not available, has not
   succeeded or has been chosen by the user.
 design:
-  - title: Manual address
-  - title: Error states
-  - title: Pattern examples in code
+  - title:
+      name: Manual address
+      slug: manual-address
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
 accessibility: []

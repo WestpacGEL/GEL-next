@@ -3,14 +3,34 @@ description: >-
   Panels are containers used to group and separate content with a strong intent
   or action, or to simply communicate important information.
 design:
-  - title: Default panel
-  - title: Faint panel
-  - title: Panel with table
-  - title: User experience
-  - title: Visual design
-  - title: Dos and don’ts
+  - title:
+      name: Default panel
+      slug: default-panel
+  - title:
+      name: Faint panel
+      slug: faint-panel
+  - title:
+      name: Panel with table
+      slug: panel-with-table
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Visual design
+      slug: visual-design
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
 accessibility:
-  - title: Notes on accessibility
-  - title: Accessibility features
-  - title: Keyboard support
-  - title: Accessibility API
+  - title:
+      name: Notes on accessibility
+      slug: notes-on-accessibility
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

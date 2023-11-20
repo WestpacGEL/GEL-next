@@ -5,7 +5,7 @@ import { EmailIcon, GithubIcon } from '@westpac/ui/icon';
 import throttle from 'lodash.throttle';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useLayoutEffect, useState } from 'react';
+import { MouseEventHandler, useCallback, useLayoutEffect, useState } from 'react';
 
 import { UpIcon } from './components/up-icon';
 import { styles as footerStyles } from './sticky-footer.styles';
@@ -35,6 +35,11 @@ export function StickyFooter() {
     };
   }, []);
 
+  const handleOnClick: MouseEventHandler<HTMLButtonElement> = useCallback(ev => {
+    ev.preventDefault();
+    window?.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <footer className={styles.footer()}>
       <div className="flex items-center">
@@ -49,10 +54,9 @@ export function StickyFooter() {
         </div>
       </div>
       <Button
-        tag="a"
-        href="#0"
         look="link"
         iconAfter={UpIcon}
+        onClick={handleOnClick}
         size="large"
         className={styles.button()}
         aria-label="Go to top"
