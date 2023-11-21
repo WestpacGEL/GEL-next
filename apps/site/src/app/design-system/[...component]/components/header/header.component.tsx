@@ -35,6 +35,23 @@ export function Header({ className, title }: { className?: string; title?: strin
       <button className={styles.hamburgerButton()} onClick={() => setOpen(open => !open)}>
         <HamburgerMenuIcon color="white" className="mx-auto" />
       </button>
+
+      <div className={styles.gridButtonWrapper()}>
+        <span className="hidden sm:block md:hidden">SM</span>
+        <span className="hidden md:block lg:hidden">MD</span>
+        <span className="hidden lg:block">LG</span>
+        <button
+          className={styles.gridButton()}
+          onClick={() => {
+            return;
+          }}
+        >
+          {new Array(4).fill(null).map((_, index) => {
+            return <span className="w-[0.25rem] items-stretch bg-white/30" key={index} />;
+          })}
+        </button>
+      </div>
+
       <h2 className={styles.title()}>{title}</h2>
     </header>
   );
