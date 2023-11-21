@@ -33,7 +33,7 @@ export const styles = tv(
           base: 'bg-heading bg-[url("/imgs/backgrounds/stg-background.svg")] bg-cover',
         },
         wbc: {
-          base: 'bg-primary bg-[url("/imgs/backgrounds/wbc-background.svg")] bg-right-bottom bg-no-repeat',
+          base: 'bg-primary bg-[url("/imgs/backgrounds/wbc-background.svg")] bg-contain bg-right-bottom bg-no-repeat',
           title: 'uppercase',
         },
       },
