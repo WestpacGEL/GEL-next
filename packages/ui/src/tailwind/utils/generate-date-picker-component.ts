@@ -75,7 +75,7 @@ export const generateDatePicker = () => {
         },
       },
       '.duet-date__table-header': {
-        '@apply font-bold': {},
+        '@apply font-semibold': {},
       },
       '.duet-date__prev, .duet-date__next': {
         '@apply bg-background focus:focus-outline !outline-offset-0 text-primary': {},
@@ -93,7 +93,8 @@ export const generateDatePicker = () => {
           '@apply !shadow-primary !text-text !bg-primary/5 !border !border-solid !border-primary': {},
         },
         '&.is-disabled': {
-          '@apply line-through': {},
+          '@apply hover:!bg-[transparent] after:absolute after:z-[1] after:top-1/2 after:left-1/2 after:border after:border-t-0 after:border-x-0 after:border-muted after:w-3 after:h-0 after:-translate-x-1/2':
+            {},
         },
 
         "&[aria-pressed='true']": {
