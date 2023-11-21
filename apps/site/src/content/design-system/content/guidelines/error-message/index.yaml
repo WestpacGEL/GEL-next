@@ -1,4 +1,4 @@
-name: Error message
+name: Error messages
 description: >-
   The way we communicate errors to our users helps them to recover quickly with
   less effort.

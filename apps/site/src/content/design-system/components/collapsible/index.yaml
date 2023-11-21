@@ -1,4 +1,4 @@
-name: Collapsible
+name: Collapsibles
 description: >-
   A Collapsible is a component used for containing information that you may not
   want to surface at the page or screen level, but needs to be findable.

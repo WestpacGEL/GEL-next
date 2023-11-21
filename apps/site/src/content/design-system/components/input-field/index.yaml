@@ -1,4 +1,4 @@
-name: Input Field
+name: Input Fields
 description: >-
   Input field is an input field either followed or preceded by an input or
   character. They are useful for giving context to input field values.
