@@ -1,6 +1,8 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import { GitHubConfig, LocalConfig, collection, config, fields, singleton } from '@keystatic/core';
 
 import { ComponentBlocks } from '@/components/component-blocks/component-blocks';
+import { foundationBlocks } from '@/components/component-blocks/foundation-blocks';
 
 const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
   process.env.NODE_ENV === 'development'
@@ -112,6 +114,7 @@ export default config({
               images: true,
               layouts: [[6, 6]],
               label: 'Design',
+              componentBlocks: foundationBlocks,
             }),
           }),
           {
