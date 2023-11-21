@@ -4,7 +4,7 @@ import * as React from 'react';
 import { AriaLinkOptions, useLink, useOption } from 'react-aria';
 import { type ListState } from 'react-stately';
 
-import { styles } from './list-box-option.styles';
+import { styles as listBoxStyles } from './list-box-option.styles';
 
 type OptionProps<T = any> = {
   item: Node<AriaLinkOptions>;
@@ -21,10 +21,13 @@ export function Option({ item, state }: OptionProps) {
     ref,
   );
   const { linkProps } = useLink(item.props, ref);
+  const styles = listBoxStyles({ isFocused, isSelected, isDisabled });
 
   return (
-    <Link {...linkProps} href={item.props.href} className={styles({ isFocused, isSelected, isDisabled })} ref={ref}>
-      {item.rendered}
-    </Link>
+    <li className={styles.base({})}>
+      <Link {...linkProps} href={item.props.href} className={styles.link({})} ref={ref}>
+        {item.rendered}
+      </Link>
+    </li>
   );
 }

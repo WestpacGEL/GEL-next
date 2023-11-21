@@ -1,15 +1,33 @@
-name: Date picker
+name: Date pickers
 description: >-
   Date pickers assist when dates are not known, set in the future, to schedule
   something, or assist in providing “day of the week” context.
 design:
-  - title: Sizes
-  - title: Date range
-  - title: Unavailable dates
-  - title: User experience
-  - title: Visual design
-  - title: Dos and don'ts
+  - title:
+      name: Sizes
+      slug: sizes
+  - title:
+      name: Date range
+      slug: date-range
+  - title:
+      name: Unavailable dates
+      slug: unavailable-dates
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Visual design
+      slug: visual-design
+  - title:
+      name: Dos and don'ts
+      slug: dos-and-donts
 accessibility:
-  - title: Accessibility features
-  - title: Keyboard support
-  - title: Accessibility API
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

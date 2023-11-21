@@ -4,8 +4,16 @@ description: >-
   the needs of a diverse society means that this pattern needs to be flexible
   and inclusive.
 design:
-  - title: Full name
-  - title: Simple name
-  - title: Error states
-  - title: Pattern examples in code
+  - title:
+      name: Full name
+      slug: full-name
+  - title:
+      name: Simple name
+      slug: simple-name
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
 accessibility: []

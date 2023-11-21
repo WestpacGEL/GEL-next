@@ -1,0 +1,18 @@
+name: International address
+description: >-
+  Use this flexible address pattern for capturing addresses in multiple
+  international formats.
+design:
+  - title:
+      name: International address
+      slug: international-address
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
+accessibility: []

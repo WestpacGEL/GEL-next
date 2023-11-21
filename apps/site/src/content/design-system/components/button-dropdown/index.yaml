@@ -1,13 +1,27 @@
-name: Button dropdown
+name: Button dropdowns
 description: >-
   Button dropdowns are essentially select boxes that contain a list of elements
   to choose from. Use a button dropdown to display a styled list of actions.
 design:
-  - title: Button dropdown menu sizes
-  - title: User experience
-  - title: Visual design
+  - title:
+      name: Button dropdown menu sizes
+      slug: button-dropdown-menu-sizes
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Visual design
+      slug: visual-design
 accessibility:
-  - title: Notes on accessibility
-  - title: Accessibility features
-  - title: Keyboard support
-  - title: Accessibility API
+  - title:
+      name: Notes on accessibility
+      slug: notes-on-accessibility
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

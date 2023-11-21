@@ -1,11 +1,21 @@
-name: Compacta
+name: Compactas
 description: >-
   The Compacta is a form input for capturing multiple instances of multiple
   fields, saving valuable screen space.
 design:
-  - title: Default
-  - title: Error states
-  - title: User experience
-  - title: Dos and don'ts
+  - title:
+      name: Default
+      slug: default
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Dos and don'ts
+      slug: dos-and-donts
 accessibility:
-  - title: Accessibility notes
+  - title:
+      name: Accessibility notes
+      slug: accessibility-notes

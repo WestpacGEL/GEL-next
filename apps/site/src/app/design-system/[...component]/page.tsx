@@ -1,11 +1,39 @@
 import { type ComponentProps } from '@westpac/ui';
 import json from '@westpac/ui/component-type.json';
+import { Metadata } from 'next';
 
 import { reader } from '@/app/reader';
 
 import { ContentTabs } from './components';
 import { AccessibilitySectionProps } from './components/content-tabs/components/accessibility-content/accessibility-content.types';
 import { DesignSectionProps } from './components/content-tabs/components/design-content/design-content.types';
+
+type MetadataProps = {
+  params: { component: string[] };
+};
+
+export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
+  const { component } = params;
+  const content = await reader.collections.designSystem.readOrThrow(component.join('/'));
+
+  const title = `${content.name} | GEL Design System`;
+  const description = content.description;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description: content.description,
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const components = await reader.collections.designSystem.all();
@@ -33,7 +61,7 @@ export default async function ComponentPage({ params }: { params: { component: s
             .content()
             .then(content => {
               resolve({
-                title: section.title,
+                title: section.title.name,
                 content: content,
                 noTitle: section.noTitle,
               });
@@ -55,7 +83,7 @@ export default async function ComponentPage({ params }: { params: { component: s
             .content()
             .then(content => {
               resolve({
-                title: section.title,
+                title: section.title.name,
                 content: content,
               });
               return {

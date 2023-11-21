@@ -3,9 +3,19 @@ description: >-
   A unique date pattern for capturing birthdays, memorable dates that are easily
   recalled and entered without the need for select elements.
 design:
-  - title: Date of birth
-  - title: Error states
-  - title: User experience
-  - title: Dos and don'ts
-  - title: Pattern examples in code
+  - title:
+      name: Date of birth
+      slug: date-of-birth
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Dos and don'ts
+      slug: dos-and-donts
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
 accessibility: []

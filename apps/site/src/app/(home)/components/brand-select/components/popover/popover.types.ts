@@ -6,5 +6,6 @@ export type PopoverProps = Omit<AriaPopoverProps, 'popoverRef'> & {
   children: React.ReactNode;
   className?: string;
   popoverRef?: React.RefObject<HTMLDivElement>;
+  portalContainer?: Element;
   state: OverlayTriggerState;
 } & HTMLAttributes<Element>;

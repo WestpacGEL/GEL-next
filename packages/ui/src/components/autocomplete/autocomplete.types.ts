@@ -32,6 +32,10 @@ export type AutocompleteProps<T extends object> = {
    */
   isDisabled?: Variants['isDisabled'];
   /**
+   * No option message
+   */
+  noOptionsMessage?: ReactNode;
+  /**
    * Element where the popover will be rendered, by default it will be into the body
    */
   portalContainer?: PopoverProps['portalContainer'];

@@ -4,11 +4,25 @@ description: >-
   all devices and screen sizes, and establishes consistency across all of
   Westpac Group brands.
 design:
-  - title: Grid examples
-  - title: User experience
-  - title: Visual design
-  - title: Dos and don’ts
+  - title:
+      name: Grid examples
+      slug: grid-examples
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Visual design
+      slug: visual-design
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
 accessibility:
-  - title: Accessibility features
-  - title: Keyboard support
-  - title: Accessibility API
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

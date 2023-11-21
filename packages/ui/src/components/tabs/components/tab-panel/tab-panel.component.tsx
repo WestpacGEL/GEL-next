@@ -10,7 +10,7 @@ export function TabPanel({ className, state, look, ...props }: TabPanelProps) {
   const { tabPanelProps } = useTabPanel({ ...props }, state, ref);
   return (
     <div {...mergeProps(tabPanelProps, focusProps)} ref={ref} className={styles({ className, look, isFocused })}>
-      {state.selectedItem?.props.children}
+      <div className="animate-fadeIn">{state.selectedItem?.props.children}</div>
     </div>
   );
 }
