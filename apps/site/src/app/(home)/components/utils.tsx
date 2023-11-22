@@ -66,7 +66,7 @@ export const logoStyles = tv({
     {
       brand: 'rams',
       footer: true,
-      className: 'lg:h-[50px] lg:w-[50px]',
+      className: 'lg:h-[31px] lg:w-[45px]',
     },
   ],
 });
