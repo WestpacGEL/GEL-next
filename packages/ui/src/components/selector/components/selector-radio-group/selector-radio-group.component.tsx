@@ -39,7 +39,7 @@ export function SelectorRadioGroup({
 
   return (
     <div className={styles({ className, orientation })} {...radioGroupProps}>
-      <FormLabel {...labelProps}>{label}</FormLabel>
+      {label && <FormLabel {...labelProps}>{label}</FormLabel>}
       {description && <FormHint {...descriptionProps}>{description}</FormHint>}
       {errorMessage && state.validationState === 'invalid' && (
         <ErrorMessage {...errorMessageProps} message={errorMessage} />

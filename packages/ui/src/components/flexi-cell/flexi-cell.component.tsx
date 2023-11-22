@@ -29,6 +29,7 @@ function FlexiCellBase(
     href,
     dualAction = false,
     topBadge: TopBadge,
+    size = 'default',
     ...props
   }: FlexiCellProps,
   ref: any,
@@ -41,6 +42,7 @@ function FlexiCellBase(
     isLink: !!href,
     isFocusVisible,
     shouldHoverEffect: !withBorder && !dualAction,
+    size,
   });
 
   return (

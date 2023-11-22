@@ -1,6 +1,11 @@
 import { type HTMLAttributes, type ReactNode } from 'react';
+import { VariantProps } from 'tailwind-variants';
 
 import { BadgeProps } from '../index.js';
+
+import { styles } from './flexi-cell.styles.js';
+
+type Variants = VariantProps<typeof styles>;
 
 type BaseFlexiCellProps = {
   /**
@@ -25,6 +30,10 @@ type BaseFlexiCellProps = {
    * href in case it is an "a" tag or dualAction
    */
   href?: string;
+  /**
+   * Large adds more padding/spacing to the Flex Cell
+   */
+  size?: Variants['size'];
   /**
    * The native tag that flexicell will be rendered
    */

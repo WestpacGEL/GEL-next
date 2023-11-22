@@ -14,9 +14,7 @@ describe('FlexiCell', () => {
   it('renders the style correctly', () => {
     const style = styles();
     // TODO: use some variants for test
-    expect(style.base()).toBe(
-      'relative flex bg-white transition-colors max-sm:mb-2 max-sm:gap-2 max-sm:p-2 sm:mb-3 sm:gap-3 sm:p-3',
-    );
+    expect(style.base()).toBe('relative flex bg-white transition-colors');
     expect(style.topBadge()).toBe('rounded-br-none rounded-tl-none');
   });
   describe('when children is defined', () => {

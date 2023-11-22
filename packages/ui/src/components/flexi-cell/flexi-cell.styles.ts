@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'relative flex bg-white transition-colors max-sm:mb-2 max-sm:gap-2 max-sm:p-2 sm:mb-3 sm:gap-3 sm:p-3',
+      base: 'relative flex bg-white transition-colors',
       topBadgeWrapper: 'absolute right-[-1px] top-[-1px]',
       topBadge: 'rounded-br-none rounded-tl-none',
     },
@@ -24,6 +24,10 @@ export const styles = tv(
         true: {
           base: 'group/noborder',
         },
+      },
+      size: {
+        default: { base: 'mb-2 gap-2 p-2' },
+        large: { base: 'mb-3 gap-3 p-3' },
       },
     },
   },

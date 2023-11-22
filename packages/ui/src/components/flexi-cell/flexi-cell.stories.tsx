@@ -86,6 +86,7 @@ export const CreditCard: Story = {
           href="#"
           tag="a"
           withBorder
+          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label tag="h3">Credit card Base Styles</FlexiCell.Label>
           <FlexiCell.Hint>Card ending in 1234</FlexiCell.Hint>
@@ -102,6 +103,7 @@ export const CreditCard: Story = {
           href="#"
           tag="a"
           withBorder
+          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label className="font-normal" tag="h3">
             Credit card different styles
@@ -120,6 +122,7 @@ export const CreditCard: Story = {
           href="#"
           tag="a"
           withBorder
+          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label tag="h3">Wrapping Credit CardCredit CardCredit CardCredit Card</FlexiCell.Label>
           <FlexiCell.Hint>
@@ -138,6 +141,7 @@ export const CreditCard: Story = {
           href="#"
           tag="a"
           withBorder
+          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label tag="h3" truncateText>
             Truncating Credit CardCredit CardCredit CardCredit Card
@@ -168,29 +172,54 @@ export const PayeeDetails: Story = {
             </FlexiCell.Adornment>
           }
           before={
-            <FlexiCell.Adornment leftGraphic={({ className }) => <BpayIcon className={className} color="hero" />} />
+            <FlexiCell.Adornment>
+              <BpayIcon color="hero" />
+            </FlexiCell.Adornment>
           }
           tag="a"
           href="#"
+          size={{ initial: 'default', sm: 'large' }}
         >
-          <FlexiCell.Label tag="h3">With Icon</FlexiCell.Label>
+          <FlexiCell.Label tag="h3"> Default With Icon</FlexiCell.Label>
           <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
         </FlexiCell>
         <FlexiCell
           after={
             <FlexiCell.Adornment align="center">
-              <FlexiCell.Button
-                icon={({ className }) => <InfoIcon color="muted" look="outlined" className={className} />}
-              />
+              <FlexiCell.Label tag="h3" rightLabel>
+                Fri 5 Aug
+              </FlexiCell.Label>
             </FlexiCell.Adornment>
           }
           before={
-            <FlexiCell.Circle className="bg-muted text-white" aria-label="Walter White">
+            <FlexiCell.Adornment>
+              <BpayIcon color="hero" className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6" />
+            </FlexiCell.Adornment>
+          }
+          tag="a"
+          href="#"
+          size={{ initial: 'default', sm: 'large' }}
+        >
+          <FlexiCell.Label tag="h3"> Customised With Icon</FlexiCell.Label>
+          <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
+        </FlexiCell>
+        <FlexiCell
+          after={
+            <FlexiCell.Adornment align="center">
+              <FlexiCell.Button icon={() => <InfoIcon color="muted" look="outlined" />} />
+            </FlexiCell.Adornment>
+          }
+          before={
+            <FlexiCell.Circle
+              className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+              aria-label="Walter White"
+            >
               WW
             </FlexiCell.Circle>
           }
           dualAction
           href="#"
+          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label tag="h3">With Circle and Info Button</FlexiCell.Label>
           <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
@@ -204,24 +233,23 @@ export const PayeeDetails: Story = {
             </FlexiCell.Adornment>
           }
           before={
-            <FlexiCell.Adornment
-              leftGraphic={({ className }) => (
-                <svg
-                  className={className}
-                  viewBox="0 0 640 480"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-label="French flag"
-                >
-                  <path d="M0 0H640V480H0V0Z" fill="white" />
-                  <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
-                  <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
-                </svg>
-              )}
-            />
+            <FlexiCell.Adornment>
+              <svg
+                className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                viewBox="0 0 640 480"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="French flag"
+              >
+                <path d="M0 0H640V480H0V0Z" fill="white" />
+                <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
+                <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
+              </svg>
+            </FlexiCell.Adornment>
           }
           tag="a"
           href="#"
+          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label tag="h3">With Flag</FlexiCell.Label>
           <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
@@ -239,32 +267,31 @@ export const ListItems: Story = {
   render: () => {
     return (
       <>
-        <FlexiCell tag="a" href="#" withBorder>
+        <FlexiCell tag="a" href="#" withBorder size={{ initial: 'default', sm: 'large' }}>
           <FlexiCell.Label tag="h3">List Item</FlexiCell.Label>
         </FlexiCell>
         <FlexiCell
           before={
-            <FlexiCell.Adornment
-              leftGraphic={({ className }) => (
-                <svg
-                  className={className}
-                  viewBox="0 0 640 480"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-label="French flag"
-                >
-                  <path d="M0 0H640V480H0V0Z" fill="white" />
-                  <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
-                  <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
-                </svg>
-              )}
-            />
+            <FlexiCell.Adornment>
+              <svg
+                className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                viewBox="0 0 640 480"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="French flag"
+              >
+                <path d="M0 0H640V480H0V0Z" fill="white" />
+                <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
+                <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
+              </svg>
+            </FlexiCell.Adornment>
           }
           tag="a"
           href="#"
           withBorder
+          size={{ initial: 'default', sm: 'large' }}
         >
-          <FlexiCell.Label className="mt-1" tag="h3">
+          <FlexiCell.Label className="max-sm:mt-0.5 sm:mt-1" tag="h3">
             List Item With Flag
           </FlexiCell.Label>
         </FlexiCell>
@@ -338,14 +365,17 @@ export const AccountLists: Story = {
                 key={name}
                 after={
                   <FlexiCell.Adornment>
-                    <FlexiCell.Label rightLabel tag="h4">
+                    <FlexiCell.Label className="font-semibold" rightLabel tag="h4">
                       {amount}
                     </FlexiCell.Label>
-                    <FlexiCell.Hint>available</FlexiCell.Hint>
+                    <FlexiCell.Hint>available $9,999</FlexiCell.Hint>
                   </FlexiCell.Adornment>
                 }
+                size={{ initial: 'default', sm: 'large' }}
               >
-                <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
+                <FlexiCell.Label className="font-normal" tag="h4">
+                  {name}
+                </FlexiCell.Label>
                 <FlexiCell.Hint>{number}</FlexiCell.Hint>
               </FlexiCell>
             ))}
@@ -424,7 +454,11 @@ export const PayeeList: Story = {
                   tag="a"
                   href="#"
                   key={name}
-                  before={<FlexiCell.Circle className="bg-muted text-white">{initials}</FlexiCell.Circle>}
+                  before={
+                    <FlexiCell.Circle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
+                      {initials}
+                    </FlexiCell.Circle>
+                  }
                   after={
                     <FlexiCell.Adornment align="center">
                       <FlexiCell.Label rightLabel tag="h4">
@@ -432,6 +466,7 @@ export const PayeeList: Story = {
                       </FlexiCell.Label>
                     </FlexiCell.Adornment>
                   }
+                  size={{ initial: 'default', sm: 'large' }}
                 >
                   <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
                   <FlexiCell.Hint>{number}</FlexiCell.Hint>
@@ -441,8 +476,13 @@ export const PayeeList: Story = {
                   href="#"
                   dualAction
                   key={name}
-                  before={<FlexiCell.Circle className="bg-muted text-white">{initials}</FlexiCell.Circle>}
-                  after={<FlexiCell.Button icon={InfoIcon} />}
+                  before={
+                    <FlexiCell.Circle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
+                      {initials}
+                    </FlexiCell.Circle>
+                  }
+                  after={<FlexiCell.Button icon={() => <InfoIcon look="outlined" />} />}
+                  size={{ initial: 'default', sm: 'large' }}
                 >
                   <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
                   <FlexiCell.Hint>{number}</FlexiCell.Hint>
@@ -531,21 +571,19 @@ export const ForeinCurrencyPayeeList: Story = {
                   href="#"
                   key={name}
                   before={
-                    <FlexiCell.Adornment
-                      leftGraphic={({ className }) => (
-                        <svg
-                          className={className}
-                          viewBox="0 0 640 480"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          aria-label="French flag"
-                        >
-                          <path d="M0 0H640V480H0V0Z" fill="white" />
-                          <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
-                          <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
-                        </svg>
-                      )}
-                    />
+                    <FlexiCell.Adornment>
+                      <svg
+                        className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                        viewBox="0 0 640 480"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-label="French flag"
+                      >
+                        <path d="M0 0H640V480H0V0Z" fill="white" />
+                        <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
+                        <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
+                      </svg>
+                    </FlexiCell.Adornment>
                   }
                   after={
                     <FlexiCell.Adornment align="center">
@@ -554,6 +592,7 @@ export const ForeinCurrencyPayeeList: Story = {
                       </FlexiCell.Label>
                     </FlexiCell.Adornment>
                   }
+                  size={{ initial: 'default', sm: 'large' }}
                 >
                   <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
                   <FlexiCell.Hint className="-mb-1">{number}</FlexiCell.Hint>
@@ -566,23 +605,22 @@ export const ForeinCurrencyPayeeList: Story = {
                   dualAction
                   key={name}
                   before={
-                    <FlexiCell.Adornment
-                      leftGraphic={({ className }) => (
-                        <svg
-                          className={className}
-                          viewBox="0 0 640 480"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          aria-label="French flag"
-                        >
-                          <path d="M0 0H640V480H0V0Z" fill="white" />
-                          <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
-                          <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
-                        </svg>
-                      )}
-                    />
+                    <FlexiCell.Adornment>
+                      <svg
+                        className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                        viewBox="0 0 640 480"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-label="French flag"
+                      >
+                        <path d="M0 0H640V480H0V0Z" fill="white" />
+                        <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
+                        <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
+                      </svg>
+                    </FlexiCell.Adornment>
                   }
-                  after={<FlexiCell.Button icon={InfoIcon} />}
+                  after={<FlexiCell.Button icon={() => <InfoIcon look="outlined" />} />}
+                  size={{ initial: 'default', sm: 'large' }}
                 >
                   <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
                   <FlexiCell.Hint className="-mb-1">{number}</FlexiCell.Hint>
@@ -626,6 +664,7 @@ export const ProductTiles: Story = {
                 <Icon />
               </FlexiCell.Adornment>
             }
+            size={{ initial: 'default', sm: 'large' }}
           >
             <Icon className="sm:hidden" />
             <FlexiCell.Label className="text-hero" tag="h4">
@@ -661,6 +700,7 @@ export const ProductTilesWithExtraIcon: Story = {
             </FlexiCell.Adornment>
           }
           after={<WarningIcon look="outlined" color="danger" />}
+          size={{ initial: 'default', sm: 'large' }}
         >
           <GiftIcon className="sm:hidden" look="outlined" color="hero" />
           <FlexiCell.Label className="text-hero" tag="h4">
@@ -680,6 +720,7 @@ export const ProductTilesWithExtraIcon: Story = {
             </FlexiCell.Adornment>
           }
           after={<SuccessIcon look="outlined" color="success" />}
+          size={{ initial: 'default', sm: 'large' }}
         >
           <PadlockIcon className="sm:hidden" look="outlined" color="hero" />
           <FlexiCell.Label className="text-hero" tag="h4">
@@ -726,18 +767,19 @@ export const PromotilesHorizontalList: Story = {
             withBorder
             before={
               <FlexiCell.Adornment align="center">
-                <FlexiCell.Circle promoCircle>
+                <FlexiCell.Circle className="h-[70px] w-[70px] border border-border bg-white">
                   <VisaBlueSymbol />
                 </FlexiCell.Circle>
               </FlexiCell.Adornment>
             }
-            topBadge={props => (
-              <Badge {...props} aria-hidden={stars ?? 'true'}>
+            topBadge={({ className }) => (
+              <Badge className={className + ' leading-normal'} aria-hidden={stars ?? 'true'}>
                 {stars ? '✭' : 'Corner flag'}
               </Badge>
             )}
+            size={{ initial: 'default', sm: 'large' }}
           >
-            <FlexiCell.Label subLabel tag="p">
+            <FlexiCell.Label className="text-[12px] font-normal text-muted" tag="p">
               MYER
             </FlexiCell.Label>
             <FlexiCell.Label className="text-hero" tag="h4">
@@ -785,27 +827,25 @@ export const PromotilesVerticalList: Story = {
             href="#"
             tag="a"
             withBorder
-            topBadge={props => <Badge {...props}>Corner flag</Badge>}
+            topBadge={({ className }) => <Badge className={className + ' leading-normal'}>Corner flag</Badge>}
+            size={{ initial: 'default', sm: 'large' }}
           >
-            <FlexiCell.Adornment
-              className="mb-1"
-              promoGraphic={({ className }) => (
-                <img
-                  src="https://images.unsplash.com/photo-1657299170950-87e5b0eaf77c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-                  alt=""
-                  className={className}
-                />
-              )}
-            />
+            <FlexiCell.Adornment className="mb-1">
+              <img
+                src="https://images.unsplash.com/photo-1657299170950-87e5b0eaf77c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                alt=""
+                className="h-10.5 w-full object-cover"
+              />
+            </FlexiCell.Adornment>
 
-            <FlexiCell.Label subLabel tag="p">
+            <FlexiCell.Label className="text-[12px] font-normal text-muted" tag="p">
               MYER
             </FlexiCell.Label>
             <FlexiCell.Label className="text-hero" tag="h4">
               {title}
             </FlexiCell.Label>
-            <FlexiCell.Hint className="line-clamp-3 max-sm:h-10 sm:h-11">{subtitle}</FlexiCell.Hint>
-            <FlexiCell.Footer>
+            <FlexiCell.Hint className="line-clamp-3 max-sm:h-10 sm:h-10.5">{subtitle}</FlexiCell.Hint>
+            <FlexiCell.Footer className="absolute max-sm:bottom-2 max-sm:left-2 sm:bottom-3 sm:left-3">
               <Badge color="primary">Badge 1</Badge>
               <Badge color="faint">Badge 2</Badge>
             </FlexiCell.Footer>

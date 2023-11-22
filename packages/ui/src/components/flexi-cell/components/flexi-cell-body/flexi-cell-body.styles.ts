@@ -10,6 +10,9 @@ export const styles = tv(
       isFocusVisible: {
         true: 'focus-outline',
       },
+      multipleChildren: {
+        true: { base: '' },
+      },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },

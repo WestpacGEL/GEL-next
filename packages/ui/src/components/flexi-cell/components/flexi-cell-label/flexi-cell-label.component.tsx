@@ -10,11 +10,10 @@ export const FlexiCellLabel = ({
   truncateText = false,
   rightLabel = false,
   className,
-  subLabel = false,
   ...props
 }: FlexiCellLabelProps) => {
   return (
-    <Tag className={styles({ className, truncateText, rightLabel, subLabel })} {...props}>
+    <Tag className={styles({ className, truncateText, rightLabel })} {...props}>
       {children}
     </Tag>
   );

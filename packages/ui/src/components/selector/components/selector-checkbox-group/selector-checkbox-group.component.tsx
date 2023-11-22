@@ -30,7 +30,7 @@ export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {
 
   return (
     <div {...groupProps} className={styles({ className: groupProps.className })}>
-      <FormLabel {...labelProps}>{label}</FormLabel>
+      {label && <FormLabel {...labelProps}>{label}</FormLabel>}
       {description && <FormHint {...descriptionProps}>{description}</FormHint>}
       {errorMessage && state.validationState === 'invalid' && (
         <ErrorMessage {...errorMessageProps} message={errorMessage} />

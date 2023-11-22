@@ -7,12 +7,9 @@ export type FlexiCellLabelProps = {
   children: ReactNode;
   /**
    * Styles to match a label that gets rendered on the right of the flexicell i.e. Amount/Balance/Label
+   * - Can be used for a label that doesn't have hover effect in dualAction
    */
   rightLabel?: boolean;
-  /**
-   * Styles to match a promo tile brand label
-   */
-  subLabel?: boolean;
   /**
    * Component tag
    */

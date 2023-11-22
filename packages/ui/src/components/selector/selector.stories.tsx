@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
-import { PersonIcon } from '../icon/index.js';
+import { EmailIcon, PersonIcon, SettingsIcon, WatchIcon } from '../icon/index.js';
 import { VisuallyHidden } from '../index.js';
 import { BusPictogram, ChatPictogram, PizzaPictogram } from '../pictogram/index.js';
 
@@ -367,7 +367,7 @@ export const IconsSizes = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-5 w-5" />
+              <PersonIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_C,
@@ -395,7 +395,7 @@ export const IconsAndSecondaryLabel = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-5 w-5" />
+              <PersonIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_A,
@@ -412,7 +412,7 @@ export const IconsAndSecondaryLabel = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-5 w-5" />
+              <PersonIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_B,
@@ -429,7 +429,7 @@ export const IconsAndSecondaryLabel = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-5 w-5" />
+              <PersonIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_C,
@@ -467,11 +467,11 @@ export const RadioWithIconsAndSecondaryLabel = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-5 w-5" />
+              <SettingsIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_A,
-          after: <Selector.Label>$200,000.00</Selector.Label>,
+          after: <Selector.Label>$10,000.00</Selector.Label>,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -484,7 +484,7 @@ export const RadioWithIconsAndSecondaryLabel = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-5 w-5" />
+              <WatchIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_B,
@@ -501,7 +501,7 @@ export const RadioWithIconsAndSecondaryLabel = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-5 w-5" />
+              <EmailIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_C,
@@ -539,7 +539,7 @@ export const Disabled = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-5 w-5" />
+              <PersonIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_A,
@@ -556,7 +556,7 @@ export const Disabled = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-5 w-5" />
+              <PersonIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_B,
@@ -573,7 +573,7 @@ export const Disabled = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-5 w-5" />
+              <PersonIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_C,

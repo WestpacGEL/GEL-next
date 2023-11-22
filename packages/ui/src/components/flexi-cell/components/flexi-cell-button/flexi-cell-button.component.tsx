@@ -9,17 +9,6 @@ import { type FlexiCellButtonProps } from './flexi-cell-button.types.js';
 export const FlexiCellButton = ({ className, icon: Icon, ...props }: FlexiCellButtonProps) => {
   const styles = flexiButtonStyles();
 
-  return (
-    <>
-      {Icon && (
-        <Button
-          className={styles.base({ className })}
-          iconBefore={({ className }) => <Icon className={styles.iconBase({ className })} look="outlined" />}
-          look="link"
-          {...props}
-        />
-      )}
-    </>
-  );
+  return <>{Icon && <Button className={styles.base({ className })} iconBefore={Icon} look="link" {...props} />}</>;
 };
 FlexiCellButton.displayName = 'FlexiCell.Button';
