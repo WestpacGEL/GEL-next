@@ -25,10 +25,7 @@ function BaseSelectorRadioGroupOption(
     withBorder = true,
     withArrow,
     after,
-    badge,
-    badgeZIndex,
     before,
-    body = true,
     checkIcon = 'checkbox',
     ...props
   }: SelectorRadioGroupOptionProps,
@@ -50,16 +47,12 @@ function BaseSelectorRadioGroupOption(
           <FinalIcon aria-hidden="true" className={styles.icon({})} />
         </div>
       }
-      badge={badge}
-      badgeZIndex={badgeZIndex}
       before={before}
-      body={body}
       withBorder={withBorder}
       withArrow={withArrow}
       tag="label"
       ref={ref}
       className={styles.base({})}
-      withHoverEffect
     >
       <VisuallyHidden>
         <input {...mergeProps(inputProps, focusProps)} ref={localRef} />
