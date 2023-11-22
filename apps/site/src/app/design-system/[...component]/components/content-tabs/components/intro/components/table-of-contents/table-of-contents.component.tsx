@@ -47,7 +47,7 @@ function Link({ href, children }: { children?: React.ReactNode; href?: string })
   );
 
   return (
-    <a href={href} className="hover:underline" onClick={handleClick}>
+    <a href={href} className="ml-1 hover:underline block" onClick={handleClick}>
       {children}
     </a>
   );
