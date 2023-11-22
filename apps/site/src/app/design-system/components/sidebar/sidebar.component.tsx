@@ -67,11 +67,11 @@ export function Sidebar({ items }: SidebarProps) {
       </Link>
       <div className="border-b border-b-border">
         <SidebarSelect selectedKey={brand} onSelectionChange={handleChange} aria-label="Change brand">
-          {BANK_OPTIONS.map(({ icon, key, label }) => (
+          {BANK_OPTIONS.map(({ icon: Icon, designSystemPageClasses, key, label }) => (
             <SidebarSelect.Option key={key} textValue={label}>
               <div className="flex w-full items-center justify-between">
                 <span className="typography-body-10">{label}</span>
-                {icon}
+                {<Icon className={designSystemPageClasses} />}
               </div>
             </SidebarSelect.Option>
           ))}

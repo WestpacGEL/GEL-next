@@ -11,6 +11,7 @@ import { type SidebarSelectProps } from './sidebar-select.types';
 export function SidebarSelect(props: SidebarSelectProps) {
   // Create state based on the incoming props
   const state = useSelectState(props);
+  const portalContainreRef = useRef<HTMLDivElement>(null);
 
   // Get props for child elements from useSelect
   const ref = useRef(null);
@@ -32,8 +33,8 @@ export function SidebarSelect(props: SidebarSelectProps) {
 
       <button {...mergeProps(buttonProps, focusProps)} ref={ref} className={styles.button()}>
         <div className={styles.textWrapper()}>
-          <div className="w-full" {...valueProps}>
-            {state.selectedItem ? state.selectedItem.rendered : 'Select an option'}
+          <div className="typography-body-11 w-full text-left leading-normal" {...valueProps}>
+            Change brand
           </div>
         </div>
         <div aria-hidden="true" className={styles.iconWrapper()}>
@@ -41,11 +42,17 @@ export function SidebarSelect(props: SidebarSelectProps) {
         </div>
         {/* <SelectorIcon className={`h-5 w-5 ${isFocusVisible ? 'text-pink-500' : 'text-gray-500'}`} /> */}
       </button>
-      {state.isOpen && (
-        <Popover state={state} triggerRef={ref} placement="bottom start" className={styles.popover()}>
-          <ListBox {...menuProps} state={state} />
-        </Popover>
-      )}
+      <div ref={portalContainreRef} />
+      <Popover
+        isNonModal
+        portalContainer={portalContainreRef.current ?? undefined}
+        state={state}
+        triggerRef={ref}
+        placement="bottom start"
+        className={styles.popover()}
+      >
+        <ListBox {...menuProps} state={state} />
+      </Popover>
     </div>
   );
 }
