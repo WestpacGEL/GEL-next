@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'mt-9 font-bold',
+  base: 'mt-7 font-bold xsl:mt-9',
   variants: {
     textAlign: {
       left: 'text-left',

@@ -8,6 +8,8 @@ import { useState } from 'react';
 
 import { formatComponentSlug } from '@/utils/format';
 
+import { useSidebar } from '../../sidebar.context';
+
 import { itemStyles } from './navigation.styles';
 import { GroupProps, ItemProps, Level, ListProps, NavigationProps } from './navigation.types';
 
@@ -79,11 +81,15 @@ function Group({ label, level, crumbs, children, ...props }: GroupProps) {
 
 function Item({ label, path, level, crumbs, brand, ...props }: ItemProps) {
   const href = `/design-system/${path}?brand=${brand}`;
-  const active = crumbs[crumbs.length - 1] === label;
+  const page = path?.split('/').pop();
+  const active = crumbs[crumbs.length - 1] === page;
+  const { setOpen } = useSidebar();
+
   return (
     <li {...props}>
       <Link
         href={href}
+        onClick={() => setOpen(false)}
         className={itemStyles({ level: level.toString() as Level, type: 'link', nested: level > 0, active })}
       >
         {formatComponentSlug(label)}

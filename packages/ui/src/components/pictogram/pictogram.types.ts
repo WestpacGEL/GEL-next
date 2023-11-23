@@ -1,5 +1,7 @@
 import { type SVGAttributes } from 'react';
 
+export type PictogramMode = 'dark' | 'light' | 'duo';
+
 export type PictogramProps = SVGAttributes<SVGElement> & {
   /**
    * SVG copyright year
@@ -8,7 +10,7 @@ export type PictogramProps = SVGAttributes<SVGElement> & {
   /**
    * Pictogram mode
    */
-  mode?: 'dark' | 'light' | 'duo';
+  mode?: PictogramMode;
   /**
    * Tag to render
    */

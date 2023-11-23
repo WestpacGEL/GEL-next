@@ -232,4 +232,4 @@ export { ZipFileIcon } from './components/zip-file-icon.js';
 
 export { Icon } from './icon.component.js';
 
-export { type IconProps } from './icon.types.js';
+export { type IconProps, type IconLook } from './icon.types.js';

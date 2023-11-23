@@ -36,7 +36,7 @@ export function ArticlePage({ article, author }: ArticlePageProps) {
         </div>
         <Container>
           <Grid>
-            <div className="col-span-12 pb-9 xsl:col-span-10 xsl:col-start-2 md:col-span-8 md:col-start-3">
+            <div className="col-span-12 pb-14.5 xsl:col-span-10 xsl:col-start-2 md:col-span-8 md:col-start-3">
               <LeadingText text={article.description} />
               <DocumentRenderer
                 document={article.content}

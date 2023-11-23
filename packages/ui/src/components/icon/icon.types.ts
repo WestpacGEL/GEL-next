@@ -5,6 +5,8 @@ import { styles } from './icon.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
+export type IconLook = 'filled' | 'outlined';
+
 export type IconProps = SVGAttributes<SVGElement> & {
   /**
    * children prop
@@ -22,7 +24,7 @@ export type IconProps = SVGAttributes<SVGElement> & {
   /**
    * Icon look variation. Defaults to filled
    */
-  look?: 'filled' | 'outlined';
+  look?: IconLook;
   /**
    * Icon size
    */
