@@ -28,6 +28,12 @@
     "./tailwind": {
       "default": "./dist/tailwind/index.js"
     },
+    "./themes": {
+      "default": "./dist/tailwind/themes/index.js"
+    },
+    "./themes-constants": {
+      "default": "./dist/tailwind/constants/index.js"
+    },
     "./accordion": {
       "default": "./dist/components/accordion/index.js"
     },

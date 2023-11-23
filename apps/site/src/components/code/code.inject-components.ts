@@ -69,11 +69,19 @@ export {
   SettingsIcon,
   WatchIcon,
   EmailIcon,
+  AtmIcon,
+  EftposIcon,
+  PadlockIcon,
+  BusinessPersonIcon,
+  SecurityIcon,
+  VerifiedIcon,
   GiftIcon,
   WarningIcon,
-  PadlockIcon,
   SuccessIcon,
 } from '@westpac/ui/icon';
 
 export { GiftPictogram } from '@westpac/ui/pictogram';
 export { Link as NextLink };
+
+export { IconSizesDemo } from './components/demos';
+export { Hr, Body } from './components/utils';
