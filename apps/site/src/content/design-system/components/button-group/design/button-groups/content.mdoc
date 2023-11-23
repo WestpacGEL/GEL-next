@@ -2,25 +2,21 @@
 
 ```tsx
 <div className="grid gap-3">
-  <ButtonGroup label={<p className="font-bold mb-1">Small</p>} size="small">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+  <ButtonGroup size="small">
+    <ButtonGroup.Button value="sm">Sm - 30px</ButtonGroup.Button>
+    <ButtonGroup.Button value="Label">Label</ButtonGroup.Button>
   </ButtonGroup>
-  <ButtonGroup label={<p className="font-bold mb-1">Medium (default)</p>} size="medium">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+  <ButtonGroup size="medium">
+    <ButtonGroup.Button value="md">Md - 36px</ButtonGroup.Button>
+    <ButtonGroup.Button value="Label">Label</ButtonGroup.Button>
   </ButtonGroup>
-  <ButtonGroup label={<p className="font-bold mb-1">Large</p>} size="large">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+  <ButtonGroup size="large">
+    <ButtonGroup.Button value="lg">Lg - 42px</ButtonGroup.Button>
+    <ButtonGroup.Button value="Label">Label</ButtonGroup.Button>
   </ButtonGroup>
-  <ButtonGroup label={<p className="font-bold mb-1">Extra large</p>} size="xlarge">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+  <ButtonGroup size="xlarge">
+    <ButtonGroup.Button value="xl">Xl - 48px</ButtonGroup.Button>
+    <ButtonGroup.Button value="Label">Label</ButtonGroup.Button>
   </ButtonGroup>
 </div>
 ```
@@ -29,15 +25,14 @@
 
 ```tsx
 <div className="grid gap-3">
-  <ButtonGroup label={<p className="font-bold mb-1">Hero (default)</p>} look="hero">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+  <ButtonGroup look="hero">
+    <ButtonGroup.Button value="Yes">Yes</ButtonGroup.Button>
+    <ButtonGroup.Button value="No">No</ButtonGroup.Button>
   </ButtonGroup>
-  <ButtonGroup label={<p className="font-bold mb-1">Primary</p>} look="primary">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+  <ButtonGroup look="hero">
+    <ButtonGroup.Button value="Email">Email</ButtonGroup.Button>
+    <ButtonGroup.Button value="Phone">Phone</ButtonGroup.Button>
+    <ButtonGroup.Button value="SMS">SMS</ButtonGroup.Button>
   </ButtonGroup>
 </div>
 ```
@@ -46,10 +41,10 @@
 
 ```jsx
 <div className="grid gap-3">
-  <ButtonGroup label={<p className="font-bold mb-1">Block</p>} look="hero" block>
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+  <ButtonGroup look="hero" block>
+    <ButtonGroup.Button value="Email">Email</ButtonGroup.Button>
+    <ButtonGroup.Button value="Phone">Phone</ButtonGroup.Button>
+    <ButtonGroup.Button value="Label">Label</ButtonGroup.Button>
   </ButtonGroup>
 </div>
 ```
