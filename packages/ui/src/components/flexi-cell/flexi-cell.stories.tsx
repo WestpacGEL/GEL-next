@@ -725,7 +725,7 @@ export const ProductTilesWithExtraIcon: Story = {
             </FlexiCell.Adornment>
           }
           after={
-            <Badge className="h-4 w-12" color="success">
+            <Badge className="h-fit w-fit" color="success">
               Completed
             </Badge>
           }
@@ -748,7 +748,7 @@ export const ProductTilesWithExtraIcon: Story = {
             </FlexiCell.Adornment>
           }
           after={
-            <Badge className="h-4 w-12" color="success">
+            <Badge className="h-fit w-fit" color="success">
               Completed
             </Badge>
           }
