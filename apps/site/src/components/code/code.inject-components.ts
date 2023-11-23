@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+export { ComponentTitle } from '../document-renderer/component-title';
+
 export {
   Badge,
   Button,
