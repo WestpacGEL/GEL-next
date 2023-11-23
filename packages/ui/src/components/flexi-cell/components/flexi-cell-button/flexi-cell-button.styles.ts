@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'text-muted hover:text-link',
+    slots: { base: 'text-muted' },
     variants: {},
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },

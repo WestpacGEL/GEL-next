@@ -75,6 +75,9 @@ export {
   BusinessPersonIcon,
   SecurityIcon,
   VerifiedIcon,
+  GiftIcon,
+  WarningIcon,
+  SuccessIcon,
 } from '@westpac/ui/icon';
 
 export { GiftPictogram } from '@westpac/ui/pictogram';

@@ -8,7 +8,7 @@ export type FlexiCellAdornmentProps = {
   /**
    * Children attribute
    */
-  children: ReactNode;
+  children?: ReactNode;
   /**
    * Component's tag
    */

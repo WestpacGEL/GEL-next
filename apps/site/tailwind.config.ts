@@ -67,10 +67,12 @@ const config: Config = withGEL({
     'w-22',
     'items-center',
     'justify-center',
+    'italic',
     'rounded',
     'transition-colors',
     'bg-primary-20',
     'bg-success-20',
+    'mb-[0.875rem]',
   ],
   plugins: [SitePlugin],
   options: {

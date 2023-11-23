@@ -44,11 +44,11 @@ export function ActionBar() {
             }}
             aria-label="Change brand"
           >
-            {BANK_OPTIONS.map(({ icon, key, label }) => (
+            {BANK_OPTIONS.map(({ icon: Icon, homePageClasses, key, label }) => (
               <BrandSelect.Option href={`/design-system?brand=${key}`} key={key} textValue={label}>
                 <div className="flex w-full items-center justify-between">
                   <span className="typography-body-10">{label}</span>
-                  {icon}
+                  <Icon className={homePageClasses} />
                 </div>
               </BrandSelect.Option>
             ))}

@@ -20,7 +20,7 @@ export const styles = tv({
       },
       unordered: {
         base: '',
-        li: 'leading-normal before:absolute before:left-[0.25rem] before:top-1 before:block before:h-[0.5rem] before:w-[0.5rem] before:rounded-full last:mb-0',
+        li: 'leading-[2] before:absolute before:left-[0.25rem] before:top-[0.7rem] before:block before:h-[0.5rem] before:w-[0.5rem] before:rounded-full last:mb-0',
       },
     },
     fontFamily: {

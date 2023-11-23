@@ -1,5 +1,8 @@
 import { render } from '@testing-library/react';
 
+import { Badge } from '../badge/index.js';
+import { InfoIcon } from '../icon/index.js';
+
 import { FlexiCell } from './flexi-cell.component.js';
 import { styles } from './flexi-cell.styles.js';
 
@@ -11,9 +14,8 @@ describe('FlexiCell', () => {
   it('renders the style correctly', () => {
     const style = styles();
     // TODO: use some variants for test
-    expect(style.base()).toBe('relative flex gap-2 bg-white p-2 transition-colors xsl:p-3');
-    expect(style.badge()).toBe('absolute right-0 top-0');
-    expect(style.bodyWrapper()).toBe('flex flex-1 flex-col');
+    expect(style.base()).toBe('relative flex bg-white transition-colors');
+    expect(style.topBadge()).toBe('rounded-br-none rounded-tl-none');
   });
   describe('when children is defined', () => {
     test('then the child component should be visible', () => {
@@ -29,7 +31,9 @@ describe('FlexiCell', () => {
 
   describe('when a badge is defined', () => {
     test('then the badge should be visible', () => {
-      const { getByTestId } = render(<FlexiCell badge={<div data-testid="mock-badge">Flexi badge</div>} />);
+      const { getByTestId } = render(
+        <FlexiCell topBadge={() => <Badge data-testid="mock-badge">Flexi badge</Badge>} />,
+      );
 
       expect(getByTestId('mock-badge')).toBeVisible();
     });
@@ -56,6 +60,82 @@ describe('FlexiCell', () => {
       const { getByRole } = render(<FlexiCell withArrow />);
 
       expect(getByRole('img', { hidden: true })).toBeVisible();
+    });
+  });
+
+  describe('when dualAction is true', () => {
+    test('body content should be a link', () => {
+      const { getByRole } = render(
+        <FlexiCell dualAction withBorder href="#test">
+          <FlexiCell.Label>Test dual action</FlexiCell.Label>
+        </FlexiCell>,
+      );
+
+      expect(getByRole('link', { name: 'Test dual action' })).toHaveAttribute('href', '#test');
+    });
+  });
+
+  describe('when Flexicell Button is used', () => {
+    test('should render button with icon', () => {
+      const { getByTestId } = render(
+        <FlexiCell
+          after={
+            <FlexiCell.Adornment>
+              <FlexiCell.Button icon={() => <InfoIcon data-testid="icon" />} />
+            </FlexiCell.Adornment>
+          }
+        >
+          <FlexiCell.Label>Test</FlexiCell.Label>
+        </FlexiCell>,
+      );
+
+      expect(getByTestId('icon')).toBeInTheDocument();
+    });
+  });
+
+  describe('when Flexicell Circle is used', () => {
+    test('should render circle', () => {
+      const { getByTestId } = render(
+        <FlexiCell
+          before={
+            <FlexiCell.Adornment>
+              <FlexiCell.Circle data-testid="circle">WW</FlexiCell.Circle>
+            </FlexiCell.Adornment>
+          }
+        >
+          <FlexiCell.Label>Test</FlexiCell.Label>
+        </FlexiCell>,
+      );
+
+      expect(getByTestId('circle')).toBeInTheDocument();
+    });
+  });
+
+  describe('when Flexicell Footer is used', () => {
+    test('should render things inside footer', () => {
+      const { getByTestId } = render(
+        <FlexiCell>
+          <FlexiCell.Label>Test</FlexiCell.Label>
+          <FlexiCell.Footer>
+            <Badge data-testid="mock-badge">Flexi badge</Badge>
+          </FlexiCell.Footer>
+        </FlexiCell>,
+      );
+
+      expect(getByTestId('mock-badge')).toBeInTheDocument();
+    });
+  });
+
+  describe('when Flexicell Hint is used', () => {
+    test('should render hint', () => {
+      const { getByText } = render(
+        <FlexiCell>
+          <FlexiCell.Label>Test</FlexiCell.Label>
+          <FlexiCell.Hint>Test hint</FlexiCell.Hint>
+        </FlexiCell>,
+      );
+
+      expect(getByText('Test hint')).toBeInTheDocument();
     });
   });
 });

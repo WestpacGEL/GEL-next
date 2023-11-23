@@ -25,10 +25,7 @@ function BaseSelectorCheckboxGroupOption(
     withBorder = true,
     withArrow,
     after,
-    badge,
-    badgeZIndex,
     before,
-    body = true,
     checkIcon = 'checkbox',
     ...props
   }: SelectorCheckboxGroupOptionProps,
@@ -56,15 +53,11 @@ function BaseSelectorCheckboxGroupOption(
           <FinalIcon aria-hidden="true" className={styles.icon({})} />
         </div>
       }
-      badge={badge}
-      badgeZIndex={badgeZIndex}
       before={before}
-      body={body}
       withBorder={withBorder}
       withArrow={withArrow}
       tag="label"
       ref={ref}
-      withHoverEffect
       className={styles.base({})}
     >
       <VisuallyHidden>

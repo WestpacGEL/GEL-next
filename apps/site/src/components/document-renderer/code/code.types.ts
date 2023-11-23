@@ -3,4 +3,5 @@ export type CodeProps = {
   className?: string;
   enableLiveCode?: boolean;
   language?: string;
+  showCode?: boolean;
 };
