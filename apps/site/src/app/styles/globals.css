@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TEMP FIX: Increasing width for section editor dialogs as the toolbar options overlap when adding the custom component block option */
+section.ksv-dialog-root {
+  width: var(--ksv-size-dialog-large);
+}
+
 /* GEL fonts */
 @font-face {
   src: url('/fonts/Graphik-Regular-Web.woff') format('woff');

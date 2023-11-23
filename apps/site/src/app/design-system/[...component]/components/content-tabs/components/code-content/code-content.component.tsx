@@ -9,6 +9,7 @@ import { useMemo } from 'react';
 import { ComponentPropsTable } from '@/components/component-props-table';
 import { Code } from '@/components/content-blocks/typography';
 import { Heading } from '@/components/document-renderer';
+import { pascalToKebab } from '@/utils/format-string';
 
 import { DOCUMENT_RENDERERS } from '../document-renderer';
 import { TableOfContents } from '../intro/components';
@@ -33,7 +34,7 @@ export function CodeContent({ content = [], westpacUIInfo, componentProps, subCo
         <Container>
           <Grid>
             <Item span={{ initial: 12, sm: 7 }}>
-              <table className="table w-full bg-[#f2f8fc] text-info">
+              <table className="typography-body-11 table w-full bg-[#f2f8fc] text-info">
                 <tbody>
                   <tr>
                     <th className="w-10 border-y border-gel-icon p-3 text-left font-semibold">Version</th>
@@ -45,7 +46,7 @@ export function CodeContent({ content = [], westpacUIInfo, componentProps, subCo
                       <Button
                         tag="a"
                         size="small"
-                        className="pl-0"
+                        className="p-0 leading-none"
                         look="link"
                         target="_blank"
                         href={westpacUIInfo?.changelog || '#'}
@@ -63,10 +64,14 @@ export function CodeContent({ content = [], westpacUIInfo, componentProps, subCo
                       <Code>npm install @westpac/ui</Code>
                     </td>
                   </tr>
-                  <tr>
-                    <th className="w-10 border-y border-gel-icon p-3 text-left font-semibold">Requires</th>
-                    <td className="border-y border-gel-icon p-3">react@18</td>
-                  </tr>
+                  {componentProps && (
+                    <tr>
+                      <th className="w-10 border-y border-gel-icon p-3 text-left font-semibold">Usage</th>
+                      <td className="border-y border-gel-icon p-3 text-black">
+                        <Code>{`import { ... } from @westpac/ui/${pascalToKebab(componentProps.displayName)}`}</Code>
+                      </td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </Item>

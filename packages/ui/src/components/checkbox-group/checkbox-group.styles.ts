@@ -9,7 +9,10 @@ export const styles = tv(
       buttonText: 'typography-body-10',
     },
     variants: {
-      orientation: { horizontal: { itemWrapper: 'flex flex-wrap' }, vertical: { itemWrapper: 'flex flex-col' } },
+      orientation: {
+        horizontal: { itemWrapper: 'flex flex-wrap' },
+        vertical: { itemWrapper: 'flex flex-col items-start' },
+      },
       isFocusVisible: { true: { revealButton: 'focus-outline' } },
     },
   },

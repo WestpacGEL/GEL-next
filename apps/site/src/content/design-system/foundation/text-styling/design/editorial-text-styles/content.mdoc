@@ -1,3 +1,53 @@
 Use the editorial text styles to draw attention to aspects of your content. The styles below map to the current HTML text styling tags. Where possible we recommend using HTML semantic elements as they clearly describe the meaning of the content to the browser and the developer. This will also maximise the opportunity to provide accessible content.
 
-Loading...
+```tsx
+<Body>
+  <p>
+    <strong>Paragraph</strong>
+  </p>
+  <p>The baseline body text.</p>
+  <Hr />
+  <p>
+    <strong>Link</strong>
+  </p>
+  <a href="#" className="underline text-primary">
+    Link a snippet of text
+  </a>
+  . The default text styling being underlined and primary colour.
+  <Hr />
+  <p>
+    <strong>Small</strong>
+  </p>
+  <p>
+    <small>De-emphasise</small> inline or blocks of text.
+  </p>
+  <Hr />
+  <p>
+    <strong>Strong</strong>
+  </p>
+  <p>
+    <strong>Emphasise a snippet of text.</strong> The default text styling being a heavier font weight.
+  </p>
+  <Hr />
+  <p>
+    <strong>Emphasis</strong>
+  </p>
+  <p>
+    <em>Emphasise a snippet of text.</em> The default text styling being italics.
+  </p>
+  <Hr />
+  <p>
+    <strong>Mark</strong>
+  </p>
+  <p>
+    <mark className="bg-primary-20">Highlight</mark> a portion of text.
+  </p>
+  <Hr />
+  <p>
+    <strong>Del/Ins</strong>
+  </p>
+  <p>
+    Show changes by marking up what has been <del>deleted</del> and what has been <ins>inserted</ins>.
+  </p>
+</Body>
+```

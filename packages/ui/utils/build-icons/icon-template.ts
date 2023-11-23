@@ -7,7 +7,7 @@ export const iconTemplate = (
 ) => `import React${addFragment ? ', { Fragment }' : ''} from 'react';
 
 import { Icon } from "../icon.component.js";
-import { type IconProps } from "../icon.types.js";
+import { type IconProps, type IconLook } from "../icon.types.js";
 
 export function ${name}Icon({
   ${sameSVG ? '' : 'look = "filled",'}

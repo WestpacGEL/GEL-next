@@ -2,7 +2,7 @@ export type BrandKey = 'bom' | 'bsa' | 'btfg' | 'rams' | 'stg' | 'wbc' | 'wbg';
 
 type ColorShade = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 'DEFAULT';
 type ColorValue = Record<'DEFAULT' | ColorShade, string>;
-type ColorsKey =
+export type ColorsKey =
   | 'background'
   | 'border'
   | 'borderDark'

@@ -93,4 +93,4 @@ export { WalletPictogram } from './components/informative/wallet-pictogram.js';
 export { WearablesPictogram } from './components/informative/wearables-pictogram.js';
 
 export { WBCBankCardPictogram } from './components/decorative/wbc-bank-card-pictogram.js';
-export { type PictogramProps } from './pictogram.types.js';
+export { type PictogramProps, type PictogramMode } from './pictogram.types.js';
