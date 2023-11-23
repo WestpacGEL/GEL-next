@@ -17,6 +17,12 @@ const exports: Record<string, { default: string }> = {
   './tailwind': {
     default: './dist/tailwind/index.js',
   },
+  './themes': {
+    default: './dist/tailwind/themes/index.js',
+  },
+  './themes-constants': {
+    default: './dist/tailwind/constants/index.js',
+  },
 };
 
 const main = async () => {
