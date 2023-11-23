@@ -1,21 +1,47 @@
 ```jsx
 // Using the Link component (as NextLink) from 'next/LinkLink'
-<Breadcrumb>
-  <NextLink href="#test" passHref legacyBehavior>
-    <Breadcrumb.Item tag="a">Anchor item</Breadcrumb.Item>
-  </NextLink>
-  <NextLink href="#another" passHref legacyBehavior>
-    <Breadcrumb.Item tag="a">Another anchor item</Breadcrumb.Item>
-  </NextLink>
-  <NextLink href="#another" passHref legacyBehavior>
-    <Breadcrumb.Item isDisabled tag="a">
-      Disabled item
-    </Breadcrumb.Item>
-  </NextLink>
-  <NextLink href="#another" passHref legacyBehavior>
-    <Breadcrumb.Item isCurrent tag="a">
-      Last item
-    </Breadcrumb.Item>
-  </NextLink>
-</Breadcrumb>
+<div className="flex flex-col gap-5">
+  <Breadcrumb aria-label="Page transitions and the such">
+    <NextLink href="#home" passHref legacyBehavior>
+      <Breadcrumb.Item isCurrent tag="a">Home</Breadcrumb.Item>
+    </NextLink>
+  </Breadcrumb>
+  <Breadcrumb aria-label="Page transitions and the such">
+    <NextLink href="#home" passHref legacyBehavior>
+      <Breadcrumb.Item tag="a">Home</Breadcrumb.Item>
+    </NextLink>
+    <NextLink href="#personal" passHref legacyBehavior>
+      <Breadcrumb.Item tag="a" isCurrent>Personal</Breadcrumb.Item>
+    </NextLink>
+  </Breadcrumb>
+  <Breadcrumb aria-label="Page transitions and the such">
+    <NextLink href="#home" passHref legacyBehavior>
+      <Breadcrumb.Item tag="a">Home</Breadcrumb.Item>
+    </NextLink>
+    <NextLink href="#personal" passHref legacyBehavior>
+      <Breadcrumb.Item tag="a">Personal</Breadcrumb.Item>
+    </NextLink>
+    <NextLink href="#credit-cards" passHref legacyBehavior>
+      <Breadcrumb.Item tag="a" isCurrent>Credit cards</Breadcrumb.Item>
+    </NextLink>
+  </Breadcrumb>
+  <Breadcrumb>
+    <NextLink href="#test" passHref legacyBehavior>
+      <Breadcrumb.Item tag="a">Anchor item</Breadcrumb.Item>
+    </NextLink>
+    <NextLink href="#another" passHref legacyBehavior>
+      <Breadcrumb.Item tag="a">Another anchor item</Breadcrumb.Item>
+    </NextLink>
+    <NextLink href="#another" passHref legacyBehavior>
+      <Breadcrumb.Item isDisabled tag="a">
+        Disabled item
+      </Breadcrumb.Item>
+    </NextLink>
+    <NextLink href="#another" passHref legacyBehavior>
+      <Breadcrumb.Item isCurrent tag="a">
+        Last item
+      </Breadcrumb.Item>
+    </NextLink>
+  </Breadcrumb>
+</div>
 ```
