@@ -83,8 +83,6 @@ function Item({ label, path, level, crumbs, brand, ...props }: ItemProps) {
   const href = `/design-system/${path}?brand=${brand}`;
   const page = path?.split('/').pop();
   const active = crumbs[crumbs.length - 1] === page || (crumbs[crumbs.length - 1] === 'design-system' && page === '');
-  console.log(page);
-  console.log(crumbs[crumbs.length - 1]);
   const { setOpen } = useSidebar();
 
   return (
