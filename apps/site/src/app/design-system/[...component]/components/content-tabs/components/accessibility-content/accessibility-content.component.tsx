@@ -30,57 +30,57 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
   const [filter, setFilter] = useState<VisionFilterProps['value']>();
   const id = useId();
 
+  console.log('accessibilityDemo', accessibilityDemo);
+
   return (
     <>
-      <Section className="border-t-0">
-        <Container className="pt-5">
-          <Heading level={2} className="mb-4 sm:mb-7">
-            Colour impairment demonstration
-          </Heading>
-          <Grid>
-            <Item span={{ initial: 12, xsl: 11, sm: 8, md: 7, lg: 9 }}>
-              <Text>
-                All components are designed and tested to ensure colour contrast ratios comply with the WCAG 2.1 AA
-                specification. Select a filter from the list below to see how this component would appear to someone
-                with a: <Link href="#">colour vision impairment</Link>.
-              </Text>
-            </Item>
-          </Grid>
-          {accessibilityDemo && (
-            <>
-              <div className="mb-4 flex items-center bg-light p-4">
-                <label htmlFor={id} className="mr-[1rem]">
-                  Select filter
-                </label>
-                <Select
-                  id={id}
-                  value={filter}
-                  onChange={event => setFilter(event.target.value as VisionFilterProps['value'])}
-                >
-                  {FILTERS.map(filter => (
-                    <option key={filter.text} value={filter.value}>
-                      {filter.text}
-                    </option>
-                  ))}
-                </Select>
-              </div>
-              <VisionFilter value={filter}>
-                <DocumentRenderer
-                  document={accessibilityDemo}
-                  renderers={{
-                    ...DOCUMENT_RENDERERS,
-                    block: {
-                      ...DOCUMENT_RENDERERS.block,
-                      code: props => <Code className="my-4" enableLiveCode={false} {...props} />,
-                    },
-                  }}
-                  componentBlocks={{}}
-                />
-              </VisionFilter>
-            </>
-          )}
-        </Container>
-      </Section>
+      {accessibilityDemo && (
+        <Section className="border-t-0">
+          <Container className="pt-5">
+            <Heading level={2} className="mb-4 sm:mb-7">
+              Colour impairment demonstration
+            </Heading>
+            <Grid>
+              <Item span={{ initial: 12, xsl: 11, sm: 8, md: 7, lg: 9 }}>
+                <Text>
+                  All components are designed and tested to ensure colour contrast ratios comply with the WCAG 2.1 AA
+                  specification. Select a filter from the list below to see how this component would appear to someone
+                  with a: <Link href="#">colour vision impairment</Link>.
+                </Text>
+              </Item>
+            </Grid>
+            <div className="mb-4 flex items-center bg-light p-4">
+              <label htmlFor={id} className="mr-[1rem]">
+                Select filter
+              </label>
+              <Select
+                id={id}
+                value={filter}
+                onChange={event => setFilter(event.target.value as VisionFilterProps['value'])}
+              >
+                {FILTERS.map(filter => (
+                  <option key={filter.text} value={filter.value}>
+                    {filter.text}
+                  </option>
+                ))}
+              </Select>
+            </div>
+            <VisionFilter value={filter}>
+              <DocumentRenderer
+                document={accessibilityDemo}
+                renderers={{
+                  ...DOCUMENT_RENDERERS,
+                  block: {
+                    ...DOCUMENT_RENDERERS.block,
+                    code: props => <Code className="my-4" enableLiveCode={false} {...props} />,
+                  },
+                }}
+                componentBlocks={{}}
+              />
+            </VisionFilter>
+          </Container>
+        </Section>
+      )}
       {accessibilitySections?.map(({ title, content }) => {
         const id = title.toLowerCase().split(' ').join('-');
         return (
