@@ -1,67 +1,64 @@
 ### ButtonGroup sizes
 
 ```jsx
-<div className="grid gap-3">
-  <ButtonGroup label={<p className="font-bold mb-1">Small</p>} size="small">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
-  </ButtonGroup>
-  <ButtonGroup label={<p className="font-bold mb-1">Medium (default)</p>} size="medium">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
-  </ButtonGroup>
-  <ButtonGroup label={<p className="font-bold mb-1">Large</p>} size="large">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
-  </ButtonGroup>
-  <ButtonGroup label={<p className="font-bold mb-1">Extra large</p>} size="xlarge">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
-  </ButtonGroup>
-</div>
+<ButtonGroup>
+  <ButtonGroup.Button value="Left">Left</ButtonGroup.Button>
+  <ButtonGroup.Button value="Middle">Middle</ButtonGroup.Button>
+  <ButtonGroup.Button value="Right">Right</ButtonGroup.Button>
+</ButtonGroup>
 ```
 
 ### ButtonGroup looks
 
 ```jsx
 <div className="grid gap-3">
-  <ButtonGroup label={<p className="font-bold mb-1">Hero (default)</p>} look="hero">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+  <ButtonGroup
+    defaultValue={0}
+    label={<p className="typography-body-10 text-muted italic mb-[0.875rem]">Index (integer)</p>}
+  >
+    <ButtonGroup.Button value={0}>Left</ButtonGroup.Button>
+    <ButtonGroup.Button value={1}>Middle</ButtonGroup.Button>
+    <ButtonGroup.Button value={2}>Right</ButtonGroup.Button>
   </ButtonGroup>
-  <ButtonGroup label={<p className="font-bold mb-1">Primary</p>} look="primary">
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
-  </ButtonGroup>
-</div>
-```
-
-### ButtonGroup disabled
-
-```jsx
-<div className="grid gap-3">
-  <ButtonGroup label={<p className="font-bold mb-1">Disabled</p>} look="hero" isDisabled>
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+  <ButtonGroup
+    defaultValue="right"
+    label={<p className="typography-body-10 text-muted italic mb-[0.875rem]">Key (string)</p>}
+  >
+    <ButtonGroup.Button value="left">Left</ButtonGroup.Button>
+    <ButtonGroup.Button value="middle">Middle</ButtonGroup.Button>
+    <ButtonGroup.Button value="right">Right</ButtonGroup.Button>
   </ButtonGroup>
 </div>
 ```
 
-### ButtonGroup block
+### With onChange
 
 ```jsx
-<div className="grid gap-3">
-  <ButtonGroup label={<p className="font-bold mb-1">Block</p>} look="hero" block>
-    <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-    <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
-  </ButtonGroup>
-</div>
+() => {
+  const [controlled, setControlled] = useState();
+
+  return (
+    <div className="grid gap-2">
+      <div className="flex gap-1">
+        <Button type="button" onClick={() => setControlled('yes')} size="small">
+          Set to "yes"
+        </Button>
+        <Button type="button" onClick={() => setControlled('maybe')} size="small">
+          Set to "maybe"
+        </Button>
+        <Button type="button" onClick={() => setControlled('no')} size="small">
+          Set to "no"
+        </Button>
+        <Button type="button" onClick={() => setControlled('')} size="small">
+          reset
+        </Button>
+      </div>
+      <ButtonGroup look="hero" value={controlled}>
+        <ButtonGroup.Button value="yes">Yes</ButtonGroup.Button>
+        <ButtonGroup.Button value="maybe">Maybe</ButtonGroup.Button>
+        <ButtonGroup.Button value="no">No</ButtonGroup.Button>
+      </ButtonGroup>
+    </div>
+  );
+};
 ```

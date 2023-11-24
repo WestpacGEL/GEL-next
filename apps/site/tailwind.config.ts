@@ -72,6 +72,8 @@ const config: Config = withGEL({
     'transition-colors',
     'bg-primary-20',
     'bg-success-20',
+    'italic',
+    'text-muted',
     'mb-[0.875rem]',
   ],
   plugins: [SitePlugin],
