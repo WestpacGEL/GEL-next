@@ -46,6 +46,8 @@ const meta: Meta<typeof FlexiCell> = {
 export default meta;
 type Story = StoryObj<unknown>;
 
+const responsiveString = ' (Responsive)';
+
 /**
  * > Default usage example
  */
@@ -86,9 +88,25 @@ export const CreditCard: Story = {
           href="#"
           tag="a"
           withBorder
-          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label tag="h3">Credit card Base Styles</FlexiCell.Label>
+          <FlexiCell.Hint>Card ending in 1234</FlexiCell.Hint>
+        </FlexiCell>
+        <FlexiCell
+          after={
+            <FlexiCell.Adornment align="top">
+              <FlexiCell.Label tag="h3" rightLabel>
+                $9,999.99
+              </FlexiCell.Label>
+              <FlexiCell.Hint>avail $9,999.99</FlexiCell.Hint>
+            </FlexiCell.Adornment>
+          }
+          href="#"
+          tag="a"
+          withBorder
+          size={{ initial: 'default', sm: 'large' }}
+        >
+          <FlexiCell.Label tag="h3">Responsive Credit card Base Styles</FlexiCell.Label>
           <FlexiCell.Hint>Card ending in 1234</FlexiCell.Hint>
         </FlexiCell>
         <FlexiCell
@@ -103,7 +121,6 @@ export const CreditCard: Story = {
           href="#"
           tag="a"
           withBorder
-          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label className="font-normal" tag="h3">
             Credit card different styles
@@ -122,7 +139,6 @@ export const CreditCard: Story = {
           href="#"
           tag="a"
           withBorder
-          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label tag="h3">Wrapping Credit CardCredit CardCredit CardCredit Card</FlexiCell.Label>
           <FlexiCell.Hint>
@@ -141,7 +157,6 @@ export const CreditCard: Story = {
           href="#"
           tag="a"
           withBorder
-          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label tag="h3" truncateText>
             Truncating Credit CardCredit CardCredit CardCredit Card
@@ -178,29 +193,8 @@ export const PayeeDetails: Story = {
           }
           tag="a"
           href="#"
-          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label tag="h3"> Default With Icon</FlexiCell.Label>
-          <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
-        </FlexiCell>
-        <FlexiCell
-          after={
-            <FlexiCell.Adornment align="center">
-              <FlexiCell.Label tag="h3" rightLabel>
-                Fri 5 Aug
-              </FlexiCell.Label>
-            </FlexiCell.Adornment>
-          }
-          before={
-            <FlexiCell.Adornment>
-              <BpayIcon color="hero" className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6" />
-            </FlexiCell.Adornment>
-          }
-          tag="a"
-          href="#"
-          size={{ initial: 'default', sm: 'large' }}
-        >
-          <FlexiCell.Label tag="h3"> Customised With Icon</FlexiCell.Label>
           <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
         </FlexiCell>
         <FlexiCell
@@ -210,16 +204,12 @@ export const PayeeDetails: Story = {
             </FlexiCell.Adornment>
           }
           before={
-            <FlexiCell.Circle
-              className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
-              aria-label="Walter White"
-            >
+            <FlexiCell.Circle className="bg-muted text-white" aria-label="Walter White">
               WW
             </FlexiCell.Circle>
           }
           dualAction
           href="#"
-          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label tag="h3">With Circle and Info Button</FlexiCell.Label>
           <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
@@ -235,7 +225,7 @@ export const PayeeDetails: Story = {
           before={
             <FlexiCell.Adornment>
               <svg
-                className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                className="h-4 w-4"
                 viewBox="0 0 640 480"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -249,9 +239,28 @@ export const PayeeDetails: Story = {
           }
           tag="a"
           href="#"
-          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label tag="h3">With Flag</FlexiCell.Label>
+          <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
+        </FlexiCell>
+        <FlexiCell
+          after={
+            <FlexiCell.Adornment align="center">
+              <FlexiCell.Label tag="h3" rightLabel>
+                Fri 5 Aug
+              </FlexiCell.Label>
+            </FlexiCell.Adornment>
+          }
+          before={
+            <FlexiCell.Adornment>
+              <BpayIcon color="hero" className="max-sm:h-4 max-sm:w-4 sm:h-6 sm:w-6" />
+            </FlexiCell.Adornment>
+          }
+          tag="a"
+          href="#"
+          size={{ initial: 'default', sm: 'large' }}
+        >
+          <FlexiCell.Label tag="h3"> Responsive With Resposive Icon</FlexiCell.Label>
           <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
         </FlexiCell>
       </>
@@ -267,14 +276,36 @@ export const ListItems: Story = {
   render: () => {
     return (
       <>
-        <FlexiCell tag="a" href="#" withBorder size={{ initial: 'default', sm: 'large' }}>
+        <FlexiCell tag="a" href="#" withBorder>
           <FlexiCell.Label tag="h3">List Item</FlexiCell.Label>
         </FlexiCell>
         <FlexiCell
           before={
             <FlexiCell.Adornment>
               <svg
-                className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                className="h-4 w-4"
+                viewBox="0 0 640 480"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="French flag"
+              >
+                <path d="M0 0H640V480H0V0Z" fill="white" />
+                <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
+                <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
+              </svg>
+            </FlexiCell.Adornment>
+          }
+          tag="a"
+          href="#"
+          withBorder
+        >
+          <FlexiCell.Label tag="h3">List Item With Flag</FlexiCell.Label>
+        </FlexiCell>
+        <FlexiCell
+          before={
+            <FlexiCell.Adornment>
+              <svg
+                className="max-sm:h-4 max-sm:w-4 sm:h-6 sm:w-6"
                 viewBox="0 0 640 480"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -292,7 +323,7 @@ export const ListItems: Story = {
           size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label className="max-sm:mt-0.5 sm:mt-1" tag="h3">
-            List Item With Flag
+            Responsive List Item With Responsive Flag
           </FlexiCell.Label>
         </FlexiCell>
       </>
@@ -468,7 +499,7 @@ export const PayeeList: Story = {
                   }
                   size={{ initial: 'default', sm: 'large' }}
                 >
-                  <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
+                  <FlexiCell.Label tag="h4">{name + responsiveString}</FlexiCell.Label>
                   <FlexiCell.Hint>{number}</FlexiCell.Hint>
                 </FlexiCell>
               ) : (
@@ -476,13 +507,8 @@ export const PayeeList: Story = {
                   href="#"
                   dualAction
                   key={name}
-                  before={
-                    <FlexiCell.Circle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
-                      {initials}
-                    </FlexiCell.Circle>
-                  }
+                  before={<FlexiCell.Circle className="bg-muted text-white">{initials}</FlexiCell.Circle>}
                   after={<FlexiCell.Button icon={() => <InfoIcon look="outlined" />} />}
-                  size={{ initial: 'default', sm: 'large' }}
                 >
                   <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
                   <FlexiCell.Hint>{number}</FlexiCell.Hint>
@@ -594,7 +620,7 @@ export const ForeinCurrencyPayeeList: Story = {
                   }
                   size={{ initial: 'default', sm: 'large' }}
                 >
-                  <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
+                  <FlexiCell.Label tag="h4">{name + responsiveString}</FlexiCell.Label>
                   <FlexiCell.Hint className="-mb-1">{number}</FlexiCell.Hint>
                   <FlexiCell.Hint className="-mb-1">{bank}</FlexiCell.Hint>
                   <FlexiCell.Hint>{code}</FlexiCell.Hint>
@@ -607,7 +633,7 @@ export const ForeinCurrencyPayeeList: Story = {
                   before={
                     <FlexiCell.Adornment>
                       <svg
-                        className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                        className="h-4 w-4"
                         viewBox="0 0 640 480"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -620,7 +646,6 @@ export const ForeinCurrencyPayeeList: Story = {
                     </FlexiCell.Adornment>
                   }
                   after={<FlexiCell.Button icon={() => <InfoIcon look="outlined" />} />}
-                  size={{ initial: 'default', sm: 'large' }}
                 >
                   <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
                   <FlexiCell.Hint className="-mb-1">{number}</FlexiCell.Hint>
@@ -699,8 +724,11 @@ export const ProductTilesWithExtraIcon: Story = {
               <GiftIcon look="outlined" color="hero" />
             </FlexiCell.Adornment>
           }
-          after={<WarningIcon look="outlined" color="danger" />}
-          size={{ initial: 'default', sm: 'large' }}
+          after={
+            <Badge className="h-fit w-fit" color="success">
+              Completed
+            </Badge>
+          }
         >
           <GiftIcon className="sm:hidden" look="outlined" color="hero" />
           <FlexiCell.Label className="text-hero" tag="h4">
@@ -719,12 +747,16 @@ export const ProductTilesWithExtraIcon: Story = {
               <PadlockIcon look="outlined" color="hero" />
             </FlexiCell.Adornment>
           }
-          after={<SuccessIcon look="outlined" color="success" />}
+          after={
+            <Badge className="h-fit w-fit" color="success">
+              Completed
+            </Badge>
+          }
           size={{ initial: 'default', sm: 'large' }}
         >
           <PadlockIcon className="sm:hidden" look="outlined" color="hero" />
           <FlexiCell.Label className="text-hero" tag="h4">
-            {title}
+            {title + responsiveString}
           </FlexiCell.Label>
           <FlexiCell.Hint>{subtitle}</FlexiCell.Hint>
         </FlexiCell>
@@ -777,7 +809,6 @@ export const PromotilesHorizontalList: Story = {
                 {stars ? '✭' : 'Corner flag'}
               </Badge>
             )}
-            size={{ initial: 'default', sm: 'large' }}
           >
             <FlexiCell.Label className="text-[12px] font-normal text-muted" tag="p">
               MYER
@@ -828,7 +859,6 @@ export const PromotilesVerticalList: Story = {
             tag="a"
             withBorder
             topBadge={({ className }) => <Badge className={className + ' leading-normal'}>Corner flag</Badge>}
-            size={{ initial: 'default', sm: 'large' }}
           >
             <FlexiCell.Adornment className="mb-1">
               <img

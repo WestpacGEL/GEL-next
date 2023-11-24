@@ -12,6 +12,7 @@ export const styles = tv(
         true: {
           base: 'rounded border border-borderDark',
         },
+        false: { base: '!px-0' },
       },
       isLink: {
         true: {
