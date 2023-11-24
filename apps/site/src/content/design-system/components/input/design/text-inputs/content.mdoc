@@ -7,7 +7,7 @@ Text inputs come in four different sizes (heights) with the default being Medium
     <div className="flex flex-col gap-4">
       {SIZES.map(size => (
         <div key={size}>
-          <h3 className="typography-body-10 mb-2 text-muted">{size}</h3>
+          <ComponentTitle>{size}</ComponentTitle>
           <Input size={size} />
         </div>
       ))}

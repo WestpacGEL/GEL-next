@@ -69,10 +69,15 @@
       <Input invalid />
     </div>
     <div>
-      <Select invalid className="w-full" />
+      <Select invalid className="w-full">
+        <option>Invalid</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </Select>
     </div>
     <div>
-      <Textarea invalid />
+      <Textarea invalid placeholder="Invalid" />
     </div>
   </div>
   <div className="grid grid-cols-4 gap-3">
@@ -81,20 +86,22 @@
       <Input disabled />
     </div>
     <div>
-      <Select disabled className="w-full" />
+      <Select disabled className="w-full">
+        <option>Disabled</option>
+      </Select>
     </div>
     <div>
-      <Textarea disabled />
+      <Textarea disabled placeholder="Disabled" />
     </div>
   </div>
   <div className="grid grid-cols-4 gap-3">
     <h3 className="typography-body-9">Read only</h3>
     <div>
-      <Input readOnly />
+      <Input readOnly value="This value is readonly" />
     </div>
     <div />
     <div>
-      <Textarea readOnly />
+      <Textarea readOnly value="This value is readonly" />
     </div>
   </div>
 </div>
