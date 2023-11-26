@@ -5,7 +5,7 @@ description: >-
 design:
   - title:
       name: Well
-      slug: well
+      slug: default-well
   - title:
       name: User experience
       slug: user-experience
