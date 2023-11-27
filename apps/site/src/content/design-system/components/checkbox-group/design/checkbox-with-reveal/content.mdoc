@@ -1,0 +1,21 @@
+When requirements dictate long lists of choices, and particularly as mobile screens can only show a limited amount of information at a time, it's possible to surface the most common choices, and hide the rest under a "reveal" interaction. Once the user selects the toggle, the remaining items reveal and the toggle disappears.
+
+- Avoid hiding one or two options under the toggle as this forces the user to interact with the interface for very little value.
+- Use data to inform your decisions on which options are surfaced at the screen level.
+- Surface the most popular and hide the rest behind the interaction.
+- Always express how many items are behind the reveal.
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup label={<ComponentTitle>Medium</ComponentTitle>} size="medium" showAmount={1}>
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+  <CheckboxGroup label={<ComponentTitle>Large</ComponentTitle>} size="large" showAmount={1}>
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+</div>
+```

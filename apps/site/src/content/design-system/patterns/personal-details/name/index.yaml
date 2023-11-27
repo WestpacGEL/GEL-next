@@ -1,0 +1,19 @@
+name: Name
+description: >-
+  This pattern is used for accurately capturing name information. Catering for
+  the needs of a diverse society means that this pattern needs to be flexible
+  and inclusive.
+design:
+  - title:
+      name: Full name
+      slug: full-name
+  - title:
+      name: Simple name
+      slug: simple-name
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
+accessibility: []

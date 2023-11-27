@@ -1,0 +1,34 @@
+name: Alerts
+description: >-
+  Alerts use a cross-brand palette of reserved, contextual colours providing a
+  flexible, consistent message system for common user interactions.
+design:
+  - title:
+      name: Alert boxes
+      slug: alert-boxes
+  - title:
+      name: Alert text
+      slug: alert-text
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Visual design
+      slug: visual-design
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
+accessibility:
+  - title:
+      name: Notes on accessibility
+      slug: notes-on-accessibility
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api
+relatedInformation: []

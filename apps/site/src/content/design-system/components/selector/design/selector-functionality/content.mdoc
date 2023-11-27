@@ -1,0 +1,37 @@
+### Single select
+
+The single-select variation mimics the functionality of radio buttons, allowing only one item from the set to be selected. When an item is selected, the border increases in thickness with a tick icon used for further aid in visual confirmation.
+
+```tsx
+<Selector type="radio">
+  {[
+    { key: 'A', disabled: false },
+    { key: 'B', disabled: false },
+    { key: 'C', disabled: false },
+    { key: 'D', disabled: true },
+  ].map(({ key, disabled }) => (
+    <Selector.Radio key={key} body value={key} isDisabled={disabled}>
+      <Selector.Label>Something {key}</Selector.Label>
+    </Selector.Radio>
+  ))}
+</Selector>
+```
+
+### Multi-select
+
+The multi-select variation mimics the functionality of checkboxes, allowing multiple items from the set to be selected. When an item is selected, the border increases in thickness with a tick icon used for further aid in visual confirmation.
+
+```tsx
+<Selector type="checkbox">
+  {[
+    { key: 'A', disabled: false },
+    { key: 'B', disabled: false },
+    { key: 'C', disabled: false },
+    { key: 'D', disabled: true },
+  ].map(({ key, disabled }) => (
+    <Selector.Checkbox key={key} body value={key} isDisabled={disabled}>
+      <Selector.Label>Something {key}</Selector.Label>
+    </Selector.Checkbox>
+  ))}
+</Selector>
+```

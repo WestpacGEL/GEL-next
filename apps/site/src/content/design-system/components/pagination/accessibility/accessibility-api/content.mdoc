@@ -1,0 +1,4 @@
+- `<nav aria-label="Page number">`: Provides a label that describes the type of navigation
+- `<ul role="list">`: Navigation items are within an unordered list to provide additional semantic meaning—page options are quantifiable. The list has a “list” _role_ because removing standard bullet styling affects how VoiceOver announces lists (see [VoiceOver and list-style-type: none](https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/)).
+- `<button aria-current="page">` / `<a aria-current="page">`: Currently selected navigation item is marked with _aria-current_. Depending on how routing is implemented (updating state vs linking to a new URL), an anchor (link) element may be better suited.
+- `<span role="status">`: A visually hidden _span_ element with “status” _role_ is updated with the current page number text to notify assistive technologies

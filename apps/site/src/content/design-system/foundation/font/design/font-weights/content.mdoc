@@ -1,0 +1,24 @@
+The typography system uses numerical values to assign different font weights rather than specifying the physical name or weight of the font. For example, assigning a value of 300 to the font weight property will display the light weight (providing It’s available). Unavailable weights display the logically closest weight. Font weights should always be used in alignment with the GUI and the digital brand guidelines.
+
+_**Note:**_ _Do not use 300 (light) on text sizes below 18px or your text may fall out of an accessible colour contrast range._
+
+```tsx
+<div>
+  <p className="typography-body-10 text-muted italic">Sans serif system font</p>
+
+  <div className="typography-body-4 flex flex-col gap-1">
+    <p>
+      Light: <strong className="font-light">300</strong>
+    </p>
+    <p>
+      Regular: <strong className="font-normal">400</strong>
+    </p>
+    <p>
+      Medium: <strong className="font-medium">500</strong>
+    </p>
+    <p>
+      Bold: <strong className="font-bold">700</strong>
+    </p>
+  </div>
+</div>
+```

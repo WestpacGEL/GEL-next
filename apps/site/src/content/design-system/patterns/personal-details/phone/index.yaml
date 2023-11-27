@@ -1,0 +1,21 @@
+name: Phone
+description: >-
+  This pattern is used for accurately capturing phone numbers. Only capture what
+  you need for your application.
+design:
+  - title:
+      name: Phone number
+      slug: phone-number
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Dos and don'ts
+      slug: dos-and-donts
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
+accessibility: []

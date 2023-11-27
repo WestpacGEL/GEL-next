@@ -1,0 +1,64 @@
+### ButtonGroup sizes
+
+```jsx
+<ButtonGroup>
+  <ButtonGroup.Button value="Left">Left</ButtonGroup.Button>
+  <ButtonGroup.Button value="Middle">Middle</ButtonGroup.Button>
+  <ButtonGroup.Button value="Right">Right</ButtonGroup.Button>
+</ButtonGroup>
+```
+
+### ButtonGroup looks
+
+```jsx
+<div className="grid gap-3">
+  <ButtonGroup
+    defaultValue={0}
+    label={<p className="typography-body-10 text-muted italic mb-[0.875rem]">Index (integer)</p>}
+  >
+    <ButtonGroup.Button value={0}>Left</ButtonGroup.Button>
+    <ButtonGroup.Button value={1}>Middle</ButtonGroup.Button>
+    <ButtonGroup.Button value={2}>Right</ButtonGroup.Button>
+  </ButtonGroup>
+  <ButtonGroup
+    defaultValue="right"
+    label={<p className="typography-body-10 text-muted italic mb-[0.875rem]">Key (string)</p>}
+  >
+    <ButtonGroup.Button value="left">Left</ButtonGroup.Button>
+    <ButtonGroup.Button value="middle">Middle</ButtonGroup.Button>
+    <ButtonGroup.Button value="right">Right</ButtonGroup.Button>
+  </ButtonGroup>
+</div>
+```
+
+### With onChange
+
+```jsx
+() => {
+  const [controlled, setControlled] = useState();
+
+  return (
+    <div className="grid gap-2">
+      <div className="flex gap-1">
+        <Button type="button" onClick={() => setControlled('yes')} size="small">
+          Set to "yes"
+        </Button>
+        <Button type="button" onClick={() => setControlled('maybe')} size="small">
+          Set to "maybe"
+        </Button>
+        <Button type="button" onClick={() => setControlled('no')} size="small">
+          Set to "no"
+        </Button>
+        <Button type="button" onClick={() => setControlled('')} size="small">
+          reset
+        </Button>
+      </div>
+      <ButtonGroup look="hero" value={controlled}>
+        <ButtonGroup.Button value="yes">Yes</ButtonGroup.Button>
+        <ButtonGroup.Button value="maybe">Maybe</ButtonGroup.Button>
+        <ButtonGroup.Button value="no">No</ButtonGroup.Button>
+      </ButtonGroup>
+    </div>
+  );
+};
+```

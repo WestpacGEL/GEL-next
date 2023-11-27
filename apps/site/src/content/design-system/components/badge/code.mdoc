@@ -1,0 +1,33 @@
+## Autocomplete
+
+```tsx
+() => {
+  const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'primary', 'success', 'warning'] as const;
+
+  const INVERTED_COLORS = [
+    'danger-inverted',
+    'faint-inverted',
+    'hero-inverted',
+    'info-inverted',
+    'neutral-inverted',
+    'primary-inverted',
+    'success-inverted',
+    'warning-inverted',
+  ] as const;
+
+  return (
+    <div className="flex flex-wrap flex-col gap-3">
+      <div className="flex gap-2">
+        {COLORS.map(color => (
+          <Badge color={color}>{color}</Badge>
+        ))}
+      </div>
+      <div className="flex flex-wrap gap-2 bg-muted p-2">
+        {INVERTED_COLORS.map(color => (
+          <Badge color={color}>{color}</Badge>
+        ))}
+      </div>
+    </div>
+  );
+};
+```

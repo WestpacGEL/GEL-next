@@ -1,0 +1,5 @@
+- `<nav role="navigation" aria-label="In this form">`: Provides a label that describes the type of navigation
+- `<ol role="list">`: Step buttons are within an ordered list to provide additional semantic meaning. The list has a “list” _role_ because removing standard bullet styling affects how VoiceOver announces lists (see [VoiceOver and list-style-type: none](https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/)).
+- `<button aria-current="page">`: Applied to the current step button to indicate that it represents the current page
+- `<button aria-expanded="true|false" aria-controls="{ID}">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The _aria-controls_ attribute creates an association between toggle button and collapsible element.
+- `<ol role="list" id="{ID}" aria-hidden="true|false">`: The collapsible element must have a unique _id_ value. The toggle button _aria-controls_ and collapsible element _id_ attribute values must match. The collapsible element uses the _aria-hidden_ attribute to hide from assistive technologies when no longer available.

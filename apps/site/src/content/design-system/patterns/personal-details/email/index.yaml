@@ -1,0 +1,18 @@
+name: Email
+description: >-
+  This pattern is used for accurately capturing email addresses. As email is the
+  primary way we communicate with customers, it’s important to get this right.
+design:
+  - title:
+      name: Email
+      slug: email
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: Dos and don'ts
+      slug: dos-and-donts
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
+accessibility: []

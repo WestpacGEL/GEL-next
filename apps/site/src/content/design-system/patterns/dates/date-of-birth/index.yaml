@@ -1,0 +1,21 @@
+name: Date of birth
+description: >-
+  A unique date pattern for capturing birthdays, memorable dates that are easily
+  recalled and entered without the need for select elements.
+design:
+  - title:
+      name: Date of birth
+      slug: date-of-birth
+  - title:
+      name: Error states
+      slug: error-states
+  - title:
+      name: User experience
+      slug: user-experience
+  - title:
+      name: Dos and don'ts
+      slug: dos-and-donts
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
+accessibility: []

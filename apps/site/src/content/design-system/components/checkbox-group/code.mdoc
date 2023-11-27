@@ -1,0 +1,164 @@
+This component was combined with RadioGroup in the old GEL, it is now it's own component as it using React Aria
+
+### Default form checks
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Checkbox</ComponentTitle>}>
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+</div>
+```
+
+### With default value
+
+```jsx
+<CheckboxGroup label={<ComponentTitle>Checkbox</ComponentTitle>} defaultValue={['1', '3']}>
+  <CheckboxGroup.Checkbox value="1" isDisabled>
+    Option 1
+  </CheckboxGroup.Checkbox>
+  <CheckboxGroup.Checkbox value="2">Option 2</CheckboxGroup.Checkbox>
+  <CheckboxGroup.Checkbox value="3">Option 3</CheckboxGroup.Checkbox>
+</CheckboxGroup>
+```
+
+### With onChange
+
+```jsx
+() => {
+  const [formCheckValue, setFormCheckValue] = useState(['1', '3']);
+
+  return (
+    <CheckboxGroup
+      value={formCheckValue}
+      onChange={(value, event) => setFormCheckValue(value)}
+      label={<ComponentTitle>Checkbox</ComponentTitle>}
+    >
+      <CheckboxGroup.Checkbox value="1">Option 1</CheckboxGroup.Checkbox>
+      <CheckboxGroup.Checkbox value="2">Option 2</CheckboxGroup.Checkbox>
+      <CheckboxGroup.Checkbox value="3">Option 3</CheckboxGroup.Checkbox>
+    </CheckboxGroup>
+  );
+};
+```
+
+### Checkbox sizes
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Medium</ComponentTitle>} size="medium">
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Large</ComponentTitle>} size="large">
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+</div>
+```
+
+### Checkboxes with hint text
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Medium</ComponentTitle>} size="medium">
+    <CheckboxGroup.Checkbox value="Option 1" hint="This is hint text">
+      Option 1
+    </CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2" hint="This is hint text">
+      Option 2
+    </CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3" hint="This is hint text">
+      Option 3
+    </CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Large</ComponentTitle>} size="large">
+    <CheckboxGroup.Checkbox value="Option 1" hint="This is hint text">
+      Option 1
+    </CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2" hint="This is hint text">
+      Option 2
+    </CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3" hint="This is hint text">
+      Option 3
+    </CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+</div>
+```
+
+### Inline
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup label={<ComponentTitle>Medium</ComponentTitle>} orientation="horizontal">
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+
+  <CheckboxGroup label={<ComponentTitle>Large</ComponentTitle>} size="large" orientation="horizontal">
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+</div>
+```
+
+### CheckboxGroup with Reveal
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup label={<ComponentTitle>Medium</ComponentTitle>} size="medium" showAmount={1}>
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+  <CheckboxGroup label={<ComponentTitle>Large</ComponentTitle>} size="large" showAmount={1}>
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+</div>
+```
+
+### CheckboxGroup completely disabled
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup label={<ComponentTitle>Medium</ComponentTitle>} size="medium" isDisabled>
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+  <CheckboxGroup label={<ComponentTitle>Large</ComponentTitle>} size="large" isDisabled>
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+</div>
+```
+
+### CheckboxGroup with individual items disabled
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup label={<ComponentTitle>Medium</ComponentTitle>} size="medium">
+    <CheckboxGroup.Checkbox value="Option 1" isDisabled>
+      Option 1
+    </CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+  <CheckboxGroup label={<ComponentTitle>Large</ComponentTitle>} size="large">
+    <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 2" isDisabled>
+      Option 2
+    </CheckboxGroup.Checkbox>
+    <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+  </CheckboxGroup>
+</div>
+```

@@ -1,0 +1,25 @@
+Selects come in four different sizes (heights) with the default being Medium 36px. Ensure when you are designing forms that you alway use the same size across element types.
+
+```tsx
+() => {
+  const DEFAULT_OPTIONS = ['1', '2', '3'] as const;
+  const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
+  return (
+    <div className="flex flex-col gap-4">
+      {SIZES.map(size => (
+        <div key={size}>
+          <ComponentTitle>{size}</ComponentTitle>
+          <Select className="w-full" size={size}>
+            <option value="">Select</option>
+            {DEFAULT_OPTIONS.map(option => (
+              <option value={option} key={option}>
+                {option}
+              </option>
+            ))}
+          </Select>
+        </div>
+      ))}
+    </div>
+  );
+};
+```

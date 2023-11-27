@@ -1,0 +1,31 @@
+### Default well
+
+```tsx
+<Fragment>
+  <Well>Look, I'm in a well</Well>
+  <p className="mb-2  mt-4 typography-body-10 text-muted">
+    <em>Nested well</em>
+  </p>
+  <Well>
+    I am outside
+    <Well color="white">I am inside</Well>
+  </Well>
+</Fragment>
+```
+
+### Tags
+
+```tsx
+<Fragment>
+  <p className="mb-2 typography-body-10 text-muted">
+    <em>Tag as article</em>
+  </p>
+  <Well>Look, I'm in a well.</Well>
+  <p className="mb-2  mt-4 typography-body-10 text-muted">
+    <em>Tag as aside with child span, passed as a component</em>
+  </p>
+  <Well tag="aside">
+    <span>Look, I'm in a well.</span>
+  </Well>
+</Fragment>
+```

@@ -1,0 +1,4 @@
+- `<input type="radio" id="{OPTION_ID}" name="{NAME}">`: Each item option is defined as a radio _input_ and must have a unique _id_ value. A consistent _name_ attribute value is required on all inputs for toggling to operate correctly. \[React component: _id_ is auto-generated\]
+- `<label for="{OPTION_ID}">`: Each radio _input_ has a _label_ element and uses explicit association (connected to the input using a _for_ attribute) for optimal support in assistive technologies. \[React component: _for_ is auto-generated\]
+- `<button aria-expanded="true|false" aria-hidden="true|false">`: Radio with reveal toggle button uses the _aria-expanded_ attribute to indicate collapse state and _aria-hidden_ attribute to hide from assistive technologies when no longer available
+- `<div aria-hidden="true|false">`: Reveal radio options are wrapped in an element with _aria-hidden_ attribute to hide from assistive technologies when no longer available

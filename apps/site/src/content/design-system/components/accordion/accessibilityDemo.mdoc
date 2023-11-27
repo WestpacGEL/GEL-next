@@ -1,0 +1,40 @@
+```tsx
+<Fragment>
+  <p className="mb-2 typography-body-10 text-muted">
+    <em>Default</em>
+  </p>
+  <Accordion>
+    {[
+      { key: 'files', title: 'Your files' },
+      { key: 'shared', title: 'Shared with you' },
+      { key: 'last', title: 'Last item' },
+    ].map(({ key, title }) => (
+      <Accordion.Item key={key} title={title}>
+        <h3>{title}</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
+          reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
+        </p>
+      </Accordion.Item>
+    ))}
+  </Accordion>
+  <p className="mb-2 mt-4 typography-body-10 text-muted">
+    <em>Lego</em>
+  </p>
+  <Accordion look="lego" rounded={false}>
+    {[
+      { key: 'files', title: 'Your files' },
+      { key: 'shared', title: 'Shared with you' },
+      { key: 'last', title: 'Last item' },
+    ].map(({ key, title }) => (
+      <Accordion.Item key={key} title={title}>
+        <h3>{title}</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
+          reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
+        </p>
+      </Accordion.Item>
+    ))}
+  </Accordion>
+</Fragment>
+```

@@ -1,0 +1,40 @@
+name: Punctuation & symbols
+description: Punctuation and symbols are used to structure or clarify the meaning of text.
+design:
+  - title:
+      name: Ampersands [&]
+      slug: ampersands
+  - title:
+      name: Apostrophes [']
+      slug: apostrophes
+  - title:
+      name: Colons [:]
+      slug: colons
+  - title:
+      name: Commas [,]
+      slug: commas
+  - title:
+      name: Exclamation marks [!]
+      slug: exclamation-marks
+  - title:
+      name: Full stops [.]
+      slug: full-stops
+  - title:
+      name: Hyphens and em - dashes
+      slug: hyphens-and-em-dashes
+  - title:
+      name: Per cent [%]
+      slug: per-cent
+  - title:
+      name: Question mark [?]
+      slug: question-mark
+  - title:
+      name: Quatation marks ["]
+      slug: quatation-marks
+  - title:
+      name: Semi colons [;]
+      slug: semi-colons
+  - title:
+      name: Slashes [/]
+      slug: slashes
+accessibility: []
