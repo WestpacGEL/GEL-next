@@ -1,9 +1,10 @@
 'use client';
 
-import { Container, Grid, Item } from '@westpac/ui';
+import { Grid, Item } from '@westpac/ui';
 import { AccessibilityPictogram, StopwatchPictogram, TruckPictogram } from '@westpac/ui/pictogram';
 import { useSearchParams } from 'next/navigation';
 
+import { Container } from '@/app/design-system/components';
 import { type BrandKey } from '@/app/types/brand.types';
 
 import { BackgroundImage, Header } from './components';

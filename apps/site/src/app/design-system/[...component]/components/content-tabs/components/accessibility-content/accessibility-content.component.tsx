@@ -1,9 +1,10 @@
 'use client';
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
-import { Container, Grid, Item, Select } from '@westpac/ui';
+import { Grid, Item, Select } from '@westpac/ui';
 import { useId, useState } from 'react';
 
+import { Container } from '@/app/design-system/components';
 import { Section } from '@/components/content-blocks/section';
 import { Link, Text } from '@/components/content-blocks/typography';
 import { Code, Heading } from '@/components/document-renderer';

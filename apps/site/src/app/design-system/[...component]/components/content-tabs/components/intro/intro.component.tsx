@@ -1,6 +1,8 @@
 'use client';
 
-import { Container, Grid, Item } from '@westpac/ui';
+import { Grid, Item } from '@westpac/ui';
+
+import { Container } from '@/app/design-system/components';
 
 import { TableOfContents } from './components';
 
