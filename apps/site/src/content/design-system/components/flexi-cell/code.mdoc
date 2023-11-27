@@ -35,7 +35,6 @@
       <FlexiCell.Hint>avail $9,999.99</FlexiCell.Hint>
     </FlexiCell.Adornment>
   }
-  size={{ initial: "default", sm: "large" }}
 >
   <FlexiCell.Label tag="h3">Credit card</FlexiCell.Label>
   <FlexiCell.Hint>Card ending in 1234</FlexiCell.Hint>
@@ -56,7 +55,6 @@
       </FlexiCell.Label>
     </FlexiCell.Adornment>
   }
-  size={{ initial: "default", sm: "large" }}
 >
   <FlexiCell.Label tag="h3">Account</FlexiCell.Label>
   <FlexiCell.Hint>032-123 12345678</FlexiCell.Hint>
@@ -75,13 +73,12 @@
     </FlexiCell.Adornment>
   }
   before={
-    <FlexiCell.Circle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6" aria-label="Walter White">
+    <FlexiCell.Circle className="bg-muted text-white" aria-label="Walter White">
       WW
     </FlexiCell.Circle>
   }
   tag="a"
   href="#"
-  size={{ initial: "default", sm: "large" }}
 >
   <FlexiCell.Label tag="h3">With Circle and Info Button</FlexiCell.Label>
   <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
@@ -98,13 +95,12 @@
     </FlexiCell.Adornment>
   }
   before={
-    <FlexiCell.Circle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6" aria-label="Walter White">
+    <FlexiCell.Circle className="bg-muted text-white" aria-label="Walter White">
       WW
     </FlexiCell.Circle>
   }
   dualAction
   href="#"
-  size={{ initial: "default", sm: "large" }}
 >
   <FlexiCell.Label tag="h3">With Circle and Info Button</FlexiCell.Label>
   <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
@@ -123,7 +119,7 @@
   before={
     <FlexiCell.Adornment>
       <svg
-        className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+        className="h-4 w-4"
         viewBox="0 0 640 480"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +133,6 @@
   }
   dualAction
   href="#"
-  size={{ initial: 'default', sm: 'large' }}
 >
   <FlexiCell.Label tag="h3">With Flag and Info Button</FlexiCell.Label>
   <FlexiCell.Hint>Payee Details</FlexiCell.Hint>
@@ -151,7 +146,7 @@
   before={
     <FlexiCell.Adornment>
       <svg
-        className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+        className="h-4 w-4"
         viewBox="0 0 640 480"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -166,9 +161,8 @@
   withBorder
   tag="a"
   href="#"
-  size={{ initial: 'default', sm: 'large' }}
 >
-  <FlexiCell.Label className="max-sm:mt-0.5 sm:mt-1" tag="h3">
+  <FlexiCell.Label tag="h3">
     List Item
   </FlexiCell.Label>
 </FlexiCell>
@@ -195,7 +189,6 @@
       <GiftIcon look="outlined" color="hero" />
     </FlexiCell.Adornment>
   }
-  size={{ initial: 'default', sm: 'large' }}
 >
   <GiftIcon className="sm:hidden" />
   <FlexiCell.Label className="text-hero" tag="h4">
@@ -219,8 +212,7 @@
       </FlexiCell.Circle>
     </FlexiCell.Adornment>
   }
-  topBadge={props => <Badge {...props}>Corner flag</Badge>}
-  size={{ initial: 'default', sm: 'large' }}
+  topBadge={({ className }) => <Badge className={className + " leading-normal"}>Corner flag</Badge>}
 >
   <FlexiCell.Label className="text-[12px] font-normal text-muted" tag="p">
     MYER
@@ -305,7 +297,6 @@
                     <FlexiCell.Hint>available $9,999</FlexiCell.Hint>
                   </FlexiCell.Adornment>
                 }
-                size={{ initial: 'default', sm: 'large' }}
               >
                 <FlexiCell.Label className="font-normal" tag="h4">
                   {name}
@@ -387,7 +378,7 @@
                 href="#"
                 key={name}
                 before={
-                  <FlexiCell.Circle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
+                  <FlexiCell.Circle className="bg-muted text-white">
                     {initials}
                   </FlexiCell.Circle>
                 }
@@ -398,7 +389,6 @@
                     </FlexiCell.Label>
                   </FlexiCell.Adornment>
                 }
-                size={{ initial: 'default', sm: 'large' }}
               >
                 <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
                 <FlexiCell.Hint>{number}</FlexiCell.Hint>
@@ -409,12 +399,11 @@
                 dualAction
                 key={name}
                 before={
-                  <FlexiCell.Circle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
+                  <FlexiCell.Circle className="bg-muted text-white">
                     {initials}
                   </FlexiCell.Circle>
                 }
                 after={<FlexiCell.Button icon={() => <InfoIcon look="outlined" />} />}
-                size={{ initial: 'default', sm: 'large' }}
               >
                 <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
                 <FlexiCell.Hint>{number}</FlexiCell.Hint>
@@ -491,7 +480,7 @@
                   before={
                     <FlexiCell.Adornment>
                       <svg
-                        className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                        className="h-4 w-4"
                         viewBox="0 0 640 480"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -503,9 +492,8 @@
                       </svg>
                     </FlexiCell.Adornment>
                   }
-                  size={{ initial: 'default', sm: 'large' }}
                 >
-                  <FlexiCell.Label className="max-sm:mt-0.5 sm:mt-1" tag="span">{name}</FlexiCell.Label>
+                  <FlexiCell.Label tag="span">{name}</FlexiCell.Label>
                 </FlexiCell>
               );
             })}
@@ -592,7 +580,7 @@
                 before={
                   <FlexiCell.Adornment>
                     <svg
-                      className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                      className="h-4 w-4"
                       viewBox="0 0 640 480"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -611,7 +599,6 @@
                     </FlexiCell.Label>
                   </FlexiCell.Adornment>
                 }
-                size={{ initial: 'default', sm: 'large' }}
               >
                 <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
                 <FlexiCell.Hint className="-mb-1">{number}</FlexiCell.Hint>
@@ -626,7 +613,7 @@
                 before={
                   <FlexiCell.Adornment>
                     <svg
-                      className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                      className="h-4 w-4"
                       viewBox="0 0 640 480"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -639,7 +626,6 @@
                   </FlexiCell.Adornment>
                 }
                 after={<FlexiCell.Button icon={() => <InfoIcon look="outlined" />} />}
-                size={{ initial: 'default', sm: 'large' }}
               >
                 <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
                 <FlexiCell.Hint className="-mb-1">{number}</FlexiCell.Hint>
@@ -694,7 +680,6 @@
               Corner flag
             </Badge>
           )}
-          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Label className="text-[12px] font-normal text-muted" tag="p">
             MYER
@@ -747,7 +732,6 @@
               Corner flag
             </Badge>
           )}
-          size={{ initial: 'default', sm: 'large' }}
         >
           <FlexiCell.Adornment className="mb-1">
             <img
@@ -794,8 +778,11 @@
           <GiftIcon look="outlined" color="hero" />
         </FlexiCell.Adornment>
       }
-      after={<WarningIcon look="outlined" color="danger" />}
-      size={{ initial: 'default', sm: 'large' }}
+      after={
+        <Badge className="h-fit w-fit" color="success">
+          Completed
+        </Badge>
+      }
     >
       <GiftIcon className="sm:hidden" look="outlined" color="hero" />
       <FlexiCell.Label className="text-hero" tag="h4">
@@ -814,8 +801,11 @@
           <PadlockIcon look="outlined" color="hero" />
         </FlexiCell.Adornment>
       }
-      after={<SuccessIcon look="outlined" color="success" />}
-      size={{ initial: 'default', sm: 'large' }}
+      after={
+        <Badge className="h-fit w-fit" color="success">
+          Completed
+        </Badge>
+      }
     >
       <PadlockIcon className="sm:hidden" look="outlined" color="hero" />
       <FlexiCell.Label className="text-hero" tag="h4">

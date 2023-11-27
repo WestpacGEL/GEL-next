@@ -75,6 +75,10 @@ const config: Config = withGEL({
     'italic',
     'text-muted',
     'mb-[0.875rem]',
+    'xsl:typography-body-8',
+    'sm:typography-body-6',
+    'md:typography-body-4',
+    'lg:typography-body-2',
   ],
   plugins: [SitePlugin],
   options: {
