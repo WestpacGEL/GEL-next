@@ -1,7 +1,0 @@
-name: Abbreviations
-description: Abbreviations are shortened forms of words or phrases.
-design:
-  - title:
-      name: title
-      slug: title
-accessibility: []
