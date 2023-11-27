@@ -30,7 +30,7 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
   const [filter, setFilter] = useState<VisionFilterProps['value']>();
   const id = useId();
 
-  console.log('accessibilityDemo', accessibilityDemo);
+  
 
   return (
     <>
