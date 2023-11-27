@@ -5,7 +5,7 @@ description: >-
 design:
   - title:
       name: Switches
-      slug: switches
+      slug: switches-design
   - title:
       name: User experience
       slug: user-experience

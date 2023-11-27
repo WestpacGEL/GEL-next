@@ -1,4 +1,4 @@
-## Default Switch
+### Default Switch
 
 ```jsx
 <div className="flex flex-col gap-2">
@@ -6,42 +6,33 @@
 </div>
 ```
 
----
-
-## Switch sizes
+### Switch sizes
 
 ```jsx
-<div className="flex flex-col gap-2">
-  <Switch size="small" label="Small 30px" />
+<div className="flex flex-col">
+  <em className="typography-body-10 mb-2">Sizes</em>
+  <Switch size="small" label="Small 30px"/>
+  <br/>
   <Switch label="Medium 36px" />
+  <br/>
   <Switch size="large" label="Large 42px" />
+  <br/>
   <Switch size="xlarge" label="X Large 48px" />
-</div>
-```
-
----
-
-## Responsive sizing
-
-```jsx
-<div className="flex flex-col gap-2">
+  <em className="typography-body-10 mb-2">Responsive sizing</em>
   <Switch
     block
     size={{ initial: 'small', lg: 'xlarge', xl: 'small' }}
     label="Small but Extra large for LG breakpoint"
   />
+  <br/>
   <Switch block size={{ initial: 'medium', lg: 'small', xl: 'medium' }} label="Small for LG breakpoint only" />
 </div>
 ```
 
----
-
-## Block switch
+### Block switch
 
 ```jsx
 <div className="flex flex-col gap-2">
   <Switch block label="I'm a block switch" />
 </div>
 ```
-
----
