@@ -7,7 +7,7 @@ Text areas come in four different default sizes (heights). This is the size they
     <div className="flex flex-col gap-4">
       {SIZES.map(size => (
         <div key={size}>
-          <ComponentTitle>{size}</ComponentTitle>
+          <h3 className="typography-body-10 mb-2 text-muted">{size}</h3>
           <Textarea size={size} />
         </div>
       ))}

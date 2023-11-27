@@ -1,19 +1,6 @@
-## Standalone Link
+The inline option is mainly used when presenting links within a sentence or paragraph, with or without an icon before or after. It can also be used on its own without surrounding text but only when presented in Primary colour with an underline and no icon.
 
-```jsx
-<div className="flex flex-col pl-1 space-y-1">
-  <Link href="#" iconBefore={PdfFileIcon}>
-    Look I'm a standalone link
-  </Link>
-  <Link href="#" iconAfter={ArrowRightIcon}>
-    Look I'm a standalone link
-  </Link>
-</div>
-```
-
-## Inline Link
-
-```jsx
+```tsx
 <div className="pl-1 space-y-1">
   <p className="typography-body-10">
     Lorem ipsum dolor{' '}
@@ -48,12 +35,4 @@
     doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
   </p>
 </div>
-```
-
-## Using Next Link
-
-```jsx
-<NextLink href="#test" passHref legacyBehavior>
-  <Link>I'm using the Next Link</Link>
-</NextLink>
 ```
