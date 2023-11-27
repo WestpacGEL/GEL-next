@@ -2,13 +2,25 @@
 
 ```tsx
 <Fragment>
-  <Well>Look, I'm in a well</Well>
+  <Well className="typography-body-10">
+    It was a bright morning in the early part of summer; the river had resumed its wonted banks and its accustomed pace,
+    and a hot sun seemed to be pulling everything green and bushy and spiky up out of the earth towards him, as if by
+    strings. The Mole and the Water Rat had been up since dawn, very busy on matters connected with boats and the
+    opening of the boating season; painting and varnishing, mending paddles, repairing cushions, hunting for missing
+    boat-hooks, and so on; and were finishing breakfast in their little parlour and eagerly discussing their plans for
+    the day, when a heavy knock sounded at the door.
+  </Well>
   <p className="mb-2  mt-4 typography-body-10 text-muted">
     <em>Nested well</em>
   </p>
-  <Well>
-    I am outside
-    <Well color="white">I am inside</Well>
+  <Well className="typography-body-10">
+    It was a bright morning in the early part of summer; the river had resumed its wonted banks and its accustomed pace,
+    and a hot sun seemed to be pulling everything green and bushy and spiky up out of the earth towards him, as if by
+    strings. The Mole and the Water Rat had been up since dawn, very busy on matters connected with boats and the
+    opening of the boating season; painting and varnishing, mending paddles, repairing cushions, hunting for missing
+    boat-hooks, and so on; and were finishing breakfast in their little parlour and eagerly discussing their plans for
+    the day, when a heavy knock sounded at the door.
+    <Well color="white" className="typography-body-10 my-2">Im a nested well</Well>
   </Well>
 </Fragment>
 ```
@@ -18,13 +30,13 @@
 ```tsx
 <Fragment>
   <p className="mb-2 typography-body-10 text-muted">
-    <em>Tag as article</em>
+    <em>{'Tag as <article>'}</em>
   </p>
-  <Well>Look, I'm in a well.</Well>
+  <Well className="typography-body-10">Look, I'm in a well.</Well>
   <p className="mb-2  mt-4 typography-body-10 text-muted">
-    <em>Tag as aside with child span, passed as a component</em>
+    <em>{'Tag as <aside> with child <span>, passed as a component'}</em>
   </p>
-  <Well tag="aside">
+  <Well tag="aside" className="typography-body-10">
     <span>Look, I'm in a well.</span>
   </Well>
 </Fragment>
