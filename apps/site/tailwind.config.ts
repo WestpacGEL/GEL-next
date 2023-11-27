@@ -48,6 +48,9 @@ const config: Config = withGEL({
         'gel-muted': '#575F65',
         'gel-hover': '#F9FAFB',
       },
+      maxWidth: {
+        'gel-container': '71.5rem',
+      },
     },
   },
   safelist: [
