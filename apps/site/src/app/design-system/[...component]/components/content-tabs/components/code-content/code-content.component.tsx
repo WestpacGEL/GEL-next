@@ -2,10 +2,11 @@
 
 import { DocumentElement } from '@keystatic/core';
 import { DocumentRenderer } from '@keystatic/core/renderer';
-import { Button, Container, Grid, Item } from '@westpac/ui';
+import { Button, Grid, Item } from '@westpac/ui';
 import { NewWindowIcon } from '@westpac/ui/icon';
 import { useMemo } from 'react';
 
+import { Container } from '@/app/design-system/components';
 import { ComponentPropsTable } from '@/components/component-props-table';
 import { Code } from '@/components/content-blocks/typography';
 import { Heading } from '@/components/document-renderer';

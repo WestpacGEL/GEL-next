@@ -23,7 +23,7 @@ export function RelatedInfo({ relatedComponents = [] }: RelatedInfoProps) {
             <ul>
               {relatedComponents.map(relatedComponent => {
                 const componentURL = relatedComponent.split('/').reverse()[0];
-                const componentName = componentURL.split('-').join(' ');
+                const componentName = componentURL[0].toUpperCase() + componentURL.slice(1).split('-').join(' ');
                 return (
                   <li key={relatedComponent}>
                     <Link href={`/design-system/components/${componentURL}?brand=wbc`}>{componentName}</Link>

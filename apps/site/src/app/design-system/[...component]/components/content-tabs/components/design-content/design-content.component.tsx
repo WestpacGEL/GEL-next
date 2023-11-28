@@ -1,9 +1,9 @@
 'use client';
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
-import { Container } from '@westpac/ui';
 import { useMemo } from 'react';
 
+import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
 import { Icons } from '@/components/component-blocks/icons/icons.component';
 import { Logos } from '@/components/component-blocks/logos/logos.component';

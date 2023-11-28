@@ -102,6 +102,7 @@ export default async function ComponentPage({ params }: { params: { component: s
   ]);
 
   const codeIsEmpty = code[0].children.length <= 1 && !code[0].children[0].text;
+  const accessibilityIsEmpty = accessibilityDemo[0].children.length <= 1 && !accessibilityDemo[0].children[0].text;
 
   const componentProps: ComponentProps | undefined = (json as any)[componentName];
   const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, any]) => {
@@ -116,7 +117,7 @@ export default async function ComponentPage({ params }: { params: { component: s
       content={{
         westpacUIInfo: westpacInfo,
         accessibilitySections,
-        accessibilityDemo,
+        accessibilityDemo: accessibilityIsEmpty ? undefined : accessibilityDemo,
         code: codeIsEmpty ? undefined : code,
         description: content.description,
         designSections,
