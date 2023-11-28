@@ -28,3 +28,4 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedInformation: ['icons', 'checkbox-group', 'colours', 'radio-group', 'pictograms']
