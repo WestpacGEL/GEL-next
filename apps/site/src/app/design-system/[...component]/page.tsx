@@ -48,8 +48,8 @@ export default async function ComponentPage({ params }: { params: { component: s
     reader.collections.designSystem.readOrThrow(component.join('/')),
     reader.singletons.westpacUIInfo.readOrThrow(),
   ]);
-  const componentName = component[1]
-    .split('-')
+  const componentName = component?.[1]
+    ?.split('-')
     .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
     .join('');
 
