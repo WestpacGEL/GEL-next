@@ -2,21 +2,42 @@ Modals are configurable. Choose how they are dismissed, whether they have a foot
 
 ```jsx
 () => {
-  const state = useOverlayTriggerState({});
+  const noFooterState = useOverlayTriggerState({});
+  const noDismissState = useOverlayTriggerState({});
 
   return (
-    <Fragment>
-      <Modal isKeyboardDismissDisabled state={state} title="Modal title">
-        <Modal.Body>I'm children</Modal.Body>
-        <Modal.Footer className="flex justify-end gap-2">
-          <Button look="faint" onClick={state.close}>
-            Close
-          </Button>
-          <Button look="primary">Submit</Button>
+    <div className="flex justify-center gap-2">
+      <Modal state={noFooterState} title="Modal title" isDismissable onClose={noFooterState.close}>
+        <Modal.Body>
+          <p>
+            The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
+            against a silvery climbing phosphorescence that grew and grew.
+          </p>
+        </Modal.Body>
+      </Modal>
+      <Button soft look="primary" onClick={noFooterState.open}>
+        No footer
+      </Button>
+      <Modal isKeyboardDismissDisabled state={noDismissState} title="Modal title">
+        <Modal.Body>
+          <p>
+            The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
+            against a silvery climbing phosphorescence that grew and grew.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <div className="flex gap-1 justify-end">
+            <Button look="faint" onClick={noDismissState.close}>
+              Close
+            </Button>
+            <Button look="primary">Save changes</Button>
+          </div>
         </Modal.Footer>
       </Modal>
-      <Button onClick={state.open}>Open Modal</Button>
-    </Fragment>
+      <Button soft look="primary" onClick={noDismissState.open}>
+        No dismiss button
+      </Button>
+    </div>
   );
 };
 ```

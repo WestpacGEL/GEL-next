@@ -7,7 +7,7 @@ import { AccessibilitySectionProps } from './components/accessibility-content/ac
 import { DesignSectionProps } from './components/design-content/design-content.types';
 
 export type ContentTabsProps = {
-  accessibilityDemo: DocumentElement[];
+  accessibilityDemo?: DocumentElement[];
   accessibilitySections: AccessibilitySectionProps[];
   code?: DocumentElement[];
   componentProps?: ComponentProps;

@@ -1,25 +1,71 @@
-## Modal
-
-### Modal Default
+### Default Modal
 
 ```jsx
 () => {
   const state = useOverlayTriggerState({});
   return (
     <>
-      <Modal isDismissable state={state} aria-label="Modal title" body>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet at voluptatibus ipsam? Placeat quaerat iste
-        assumenda voluptatum molestiae delectus atque reiciendis incidunt. Dolorem corrupti porro cumque beatae corporis
-        sequi et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet at voluptatibus ipsam? Placeat
-        quaerat iste assumenda voluptatum molestiae delectus atque reiciendis incidunt. Dolorem corrupti porro cumque
-        beatae corporis sequi et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet at voluptatibus
-        ipsam? Placeat quaerat iste assumenda voluptatum molestiae delectus atque reiciendis incidunt. Dolorem corrupti
-        porro cumque beatae corporis sequi et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet at
-        voluptatibus ipsam? Placeat quaerat iste assumenda voluptatum molestiae delectus atque reiciendis incidunt.
-        Dolorem corrupti porro cumque beatae corporis sequi et.
+      <Modal isDismissable state={state} aria-label="Modal heading" body>
+        ‘It was much pleasanter at home’, thought poor Alice, ‘when one wasn’t always growing larger and smaller, and
+        being ordered about by mice and rabbits. I almost wish I hadn’t gone down that rabbit-hole — and yet — and yet —
+        it’s rather curious, you know, this sort of life! I do wonder what can have happened to me! When I used to read
+        fairy-tales, I fancied that kind of thing never happened, and now here I am in the middle of one! There ought to
+        be a book written about me, that there ought!’
       </Modal>
-      <Button onClick={state.open}>Open Modal</Button>
+      <Button look="primary" soft onClick={state.open}>
+        Open
+      </Button>
     </>
+  );
+};
+```
+
+### Modal sizes
+
+```tsx
+() => {
+  const stateSM = useOverlayTriggerState({});
+  const stateMD = useOverlayTriggerState({});
+  const stateLG = useOverlayTriggerState({});
+
+  const states = useMemo(() => {
+    return {
+      sm: stateSM,
+      md: stateMD,
+      lg: stateLG,
+    };
+  }, [stateSM, stateMD, stateLG]);
+
+  return (
+    <div className="flex justify-center gap-4">
+      {[
+        { size: 'sm', label: 'Small' },
+        { size: 'md', label: 'Default' },
+        { size: 'lg', label: 'Large' },
+      ].map(({ size, label }: { size: string; label: string }) => (
+        <Fragment key={size}>
+          <Modal isDismissable size={size} state={states[size as 'sm' | 'md' | 'lg']} title="Sudden and magnificent">
+            <Modal.Body>
+              <p>
+                The line of the horizon was clear and hard against the sky, and in one particular quarter it showed
+                black against a silvery climbing phosphorescence that grew and grew.
+              </p>
+            </Modal.Body>
+            <Modal.Footer>
+              <div className="flex gap-1 justify-end">
+                <Button look="faint" onClick={states[size as 'sm' | 'md' | 'lg'].close}>
+                  Close
+                </Button>
+                <Button look="primary">Save changes</Button>
+              </div>
+            </Modal.Footer>
+          </Modal>
+          <Button soft look="primary" onClick={states[size as 'sm' | 'md' | 'lg'].open}>
+            {label} Modal
+          </Button>
+        </Fragment>
+      ))}
+    </div>
   );
 };
 ```
@@ -38,42 +84,10 @@
           <p>Lorem, ipsum dolor</p>
         </Modal.Footer>
       </Modal>
-      <Button onClick={state.open}>Open Modal</Button>
+      <Button look="primary" soft onClick={state.open}>
+        Open Modal
+      </Button>
     </Fragment>
-  );
-};
-```
-
-### All sizes Modal
-
-```jsx
-() => {
-  const stateSM = useOverlayTriggerState({});
-  const stateMD = useOverlayTriggerState({});
-  const stateLG = useOverlayTriggerState({});
-
-  const states = useMemo(() => {
-    return {
-      sm: stateSM,
-      md: stateMD,
-      lg: stateLG,
-    };
-  }, [stateSM, stateMD, stateLG]);
-
-  return (
-    <div className="flex gap-2">
-      {['sm', 'md', 'lg'].map((size: string) => (
-        <Fragment key={size}>
-          <Modal isDismissable size={size} state={states[size as 'sm' | 'md' | 'lg']} title={`Modal ${size}`}>
-            <Modal.Body>I'm child</Modal.Body>
-            <Modal.Footer>
-              <p>Lorem, ipsum dolor</p>
-            </Modal.Footer>
-          </Modal>
-          <Button onClick={states[size as 'sm' | 'md' | 'lg'].open}>Open Modal {size}</Button>
-        </Fragment>
-      ))}
-    </div>
   );
 };
 ```
@@ -95,7 +109,9 @@
           <Button look="primary">Submit</Button>
         </Modal.Footer>
       </Modal>
-      <Button onClick={state.open}>Open Modal</Button>
+      <Button look="primary" soft onClick={state.open}>
+        Open Modal
+      </Button>
     </Fragment>
   );
 };
