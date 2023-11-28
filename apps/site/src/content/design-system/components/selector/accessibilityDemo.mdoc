@@ -1,55 +1,62 @@
 ```tsx
-<Selector type="radio">
-  {[
-    {
-      before: (
-        <Selector.Adornment align="top">
-          <SettingsIcon className="h-5 w-5" />
-        </Selector.Adornment>
-      ),
-      label: 'Label',
-      hint: 'Some supporting hint text can do here',
-      key: 'A',
-      secondaryText: '$10,000.00',
-      disabled: false,
-    },
-    {
-      before: (
-        <Selector.Adornment align="top">
-          <WatchIcon className="h-5 w-5" />
-        </Selector.Adornment>
-      ),
-      label: 'Label',
-      hint: 'Some supporting hint text can do here',
-      key: 'B',
-      secondaryText: '$10,000.00',
-      disabled: false,
-    },
-    {
-      before: (
-        <Selector.Adornment align="top">
-          <EmailIcon className="h-5 w-5" />
-        </Selector.Adornment>
-      ),
-      label: 'Label',
-      hint: 'Some supporting hint text can do here',
-      key: 'C',
-      secondaryText: '$10,000.00',
-      disabled: false,
-    },
-  ].map(({ key, disabled, hint, label, before, secondaryText }) => (
-    <Selector.Radio
-      checkIcon="arrow"
-      before={before}
-      after={<Selector.Label>{secondaryText}</Selector.Label>}
-      key={key}
-      body
-      value={key}
-      isDisabled={disabled}
-    >
-      <Selector.Label>{label}</Selector.Label>
-      {hint && <Selector.Hint>{hint}</Selector.Hint>}
-    </Selector.Radio>
-  ))}
-</Selector>
+<Grid>
+  <Item span={{ initial: 12, sm: 6 }}>
+    <Selector type="radio">
+      <Selector.Radio
+        key="1"
+        checkIcon="arrow"
+        value="1"
+        before={
+          <Selector.Adornment align="top">
+            <SettingsIcon color="hero" />
+          </Selector.Adornment>
+        }
+      >
+        <div className="flex flex-row justify-between">
+          <Selector.Label>Label</Selector.Label>
+          <Selector.Label className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
+            $10,000.00
+          </Selector.Label>
+        </div>
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+      <Selector.Radio
+        key="2"
+        checkIcon="arrow"
+        value="2"
+        before={
+          <Selector.Adornment align="top">
+            <WatchIcon color="hero" />
+          </Selector.Adornment>
+        }
+      >
+        <div className="flex flex-row justify-between">
+          <Selector.Label>Label</Selector.Label>
+          <Selector.Label className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
+            $10,000.00
+          </Selector.Label>
+        </div>        
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+      <Selector.Radio
+        key="3"
+        checkIcon="arrow"
+        value="3"
+        before={
+          <Selector.Adornment align="top">
+            <EmailIcon color="hero"/>
+          </Selector.Adornment>
+        }
+      >
+        <div className="flex flex-row justify-between">
+          <Selector.Label>Label</Selector.Label>
+          <Selector.Label className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
+            $10,000.00
+          </Selector.Label>
+        </div>
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+    </Selector>
+  </Item>
+</Grid>
 ```

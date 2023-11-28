@@ -1,95 +1,148 @@
+### Button select
+
 ```tsx
-<Selector type="checkbox">
-  {[
-    { key: 'A', disabled: false },
-    { key: 'B', disabled: false },
-    { key: 'C', disabled: false },
-    { key: 'D', disabled: true },
-  ].map(({ key, disabled }) => (
-    <Selector.Checkbox key={key} body value={key} isDisabled={disabled}>
-      <Selector.Label>Something {key}</Selector.Label>
-    </Selector.Checkbox>
-  ))}
-</Selector>
+<Grid>
+  <Item span={{ initial: 12, sm: 6 }}>
+    <Selector type="radio">
+      <Selector.Radio key="1" checkIcon="arrow" value="1">
+        <Selector.Label>Button select</Selector.Label>
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+      <Selector.Radio key="2" checkIcon="arrow" value="2">
+        <Selector.Label>Button select</Selector.Label>
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+      <Selector.Radio key="3" checkIcon="arrow" value="3">
+        <Selector.Label>Button select</Selector.Label>
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+    </Selector>
+  </Item>
+</Grid>
+```
+
+### Single-select
+
+```tsx
+<Grid>
+  <Item span={{ initial: 12, sm: 6 }}>
+    <Selector type="radio">
+      <Selector.Radio key="1" value="1">
+        <Selector.Label>Single-select</Selector.Label>
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+      <Selector.Radio key="2" value="2">
+        <Selector.Label>Single-select</Selector.Label>
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+      <Selector.Radio key="3" value="3">
+        <Selector.Label>Single-select</Selector.Label>
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+    </Selector>
+  </Item>
+</Grid>
 ```
 
 ---
 
-### Radio
-
-```tsx
-<Selector type="radio">
-  {[
-    { key: 'A', disabled: false },
-    { key: 'B', disabled: false },
-    { key: 'C', disabled: false },
-    { key: 'D', disabled: true },
-  ].map(({ key, disabled }) => (
-    <Selector.Radio key={key} body value={key} isDisabled={disabled}>
-      <Selector.Label>Something {key}</Selector.Label>
-    </Selector.Radio>
-  ))}
-</Selector>
-```
-
----
-
-### Check with arrow
-
-```tsx
-<Selector type="radio">
-  {[
-    { key: 'A', disabled: false },
-    { key: 'B', disabled: false },
-    { key: 'C', disabled: false },
-    { key: 'D', disabled: true },
-  ].map(({ key, disabled }) => (
-    <Selector.Radio key={key} body value={key} isDisabled={disabled} checkIcon="arrow">
-      <Selector.Label>Something {key}</Selector.Label>
-    </Selector.Radio>
-  ))}
-</Selector>
-```
-
----
-
-### Check with arrow
+### Multi-select
 
 ```tsx
 () => {
+  const [selectedValues, setSelectedValues] = useState<string[]>(['2', '3']);
   return (
-    <Selector type="checkbox">
-      {[
-        {
-          label: 'Here is a label A',
-          hint: (
-            <>
-              <VisuallyHidden>Bank Account</VisuallyHidden>
-              123-456 123456
-            </>
-          ),
-          key: 'A',
-          disabled: false,
-        },
-        {
-          label: 'Here is a label B',
-          hint: (
-            <>
-              <VisuallyHidden>Bank Account</VisuallyHidden>
-              123-456 123456
-            </>
-          ),
-          key: 'B',
-          disabled: false,
-        },
-        { label: 'Here is a label C', hint: '', key: 'C', disabled: false },
-      ].map(({ key, disabled, hint, label }) => (
-        <Selector.Checkbox key={key} body value={key} isDisabled={disabled}>
-          <Selector.Label>{label}</Selector.Label>
-          {hint && <Selector.Hint>{hint}</Selector.Hint>}
-        </Selector.Checkbox>
-      ))}
-    </Selector>
+    <Grid>
+      <Item span={{ initial: 12, sm: 6 }}>
+        <Selector
+          type="checkbox"
+          value={selectedValues}
+          onChange={value => {
+            setSelectedValues(value);
+          }}
+        >
+          <Selector.Checkbox key="1" value="1">
+            <Selector.Label>Multi-select</Selector.Label>
+            <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+          </Selector.Checkbox>
+          <Selector.Checkbox key="2" value="2">
+            <Selector.Label>Multi-select</Selector.Label>
+            <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+          </Selector.Checkbox>
+          <Selector.Checkbox key="3" value="3">
+            <Selector.Label>Multi-select</Selector.Label>
+            <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+          </Selector.Checkbox>
+        </Selector>
+      </Item>
+    </Grid>
   );
 };
+```
+
+---
+
+### Complex layout
+
+```tsx
+<Grid>
+  <Item span={{ initial: 12, sm: 6 }}>
+    <Selector type="radio">
+      <Selector.Radio
+        key="1"
+        checkIcon="arrow"
+        value="1"
+        before={
+          <Selector.Adornment align="top">
+            <SettingsIcon color="hero" />
+          </Selector.Adornment>
+        }
+      >
+        <div className="flex flex-row justify-between">
+          <Selector.Label>Label</Selector.Label>
+          <Selector.Label className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
+            $10,000.00
+          </Selector.Label>
+        </div>
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+      <Selector.Radio
+        key="2"
+        checkIcon="arrow"
+        value="2"
+        before={
+          <Selector.Adornment align="top">
+            <WatchIcon color="hero" />
+          </Selector.Adornment>
+        }
+      >
+        <div className="flex flex-row justify-between">
+          <Selector.Label>Label</Selector.Label>
+          <Selector.Label className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
+            $10,000.00
+          </Selector.Label>
+        </div>        
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+      <Selector.Radio
+        key="3"
+        checkIcon="arrow"
+        value="3"
+        before={
+          <Selector.Adornment align="top">
+            <EmailIcon color="hero"/>
+          </Selector.Adornment>
+        }
+      >
+        <div className="flex flex-row justify-between">
+          <Selector.Label>Label</Selector.Label>
+          <Selector.Label className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
+            $10,000.00
+          </Selector.Label>
+        </div>
+        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      </Selector.Radio>
+    </Selector>
+  </Item>
+</Grid>
 ```
