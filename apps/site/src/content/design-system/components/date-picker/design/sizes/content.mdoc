@@ -2,10 +2,15 @@ The date picker can be used in various sizes to match the UI direction.
 
 ```jsx
 () => {
-  const sizes = ['sm', 'md', 'lg', 'xl'];
-  return sizes.map(size => (
-    <div className="py-2" key={size}>
-      <small>size {size}</small>
+  const sizes = [
+    { label: 'Small', size: 'sm' },
+    { label: 'Medium (default)', size: 'md' },
+    { label: 'Large', size: 'lg' },
+    { label: 'XLarge', size: 'xl' },
+  ];
+  return sizes.map(({ label, size}) => (
+    <div className="py-4 border-t border-t-border first:border-t-0" key={size}>
+      <ComponentTitle>{label}</ComponentTitle>
       <DatePicker size={size} />
     </div>
   ));
