@@ -16,7 +16,6 @@ export function LiveCode({ showCode = false, enableLiveCode = true, className }:
   const [localCopy, setLocalCopy] = useState<string>(live.code);
   const [isCodeVisible, toggleIsCodeVisible] = useState(showCode);
 
-  console.log('live.language', live.language);
   const styles = liveCodeStyles({
     isCodeVisible,
     language: live.language as VariantProps<typeof liveCodeStyles>['language'],
