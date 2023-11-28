@@ -3,6 +3,7 @@ import copy from 'clipboard-copy';
 import { themes } from 'prism-react-renderer';
 import { KeyboardEvent, useCallback, useContext, useId, useRef, useState } from 'react';
 import { LiveContext, LiveEditor, LivePreview } from 'react-live';
+import { VariantProps } from 'tailwind-variants';
 
 import { styles as liveCodeStyles } from './live-code.styles';
 import { LiveCodeProps } from './live-code.types';
@@ -15,7 +16,11 @@ export function LiveCode({ showCode = false, enableLiveCode = true, className }:
   const [localCopy, setLocalCopy] = useState<string>(live.code);
   const [isCodeVisible, toggleIsCodeVisible] = useState(showCode);
 
-  const styles = liveCodeStyles({ isCodeVisible });
+  console.log('live.language', live.language);
+  const styles = liveCodeStyles({
+    isCodeVisible,
+    language: live.language as VariantProps<typeof liveCodeStyles>['language'],
+  });
 
   const copyLiveCode = useCallback(() => {
     copy(localCopy);
@@ -56,7 +61,7 @@ export function LiveCode({ showCode = false, enableLiveCode = true, className }:
         {enableLiveCode && (
           <div className={styles.buttonWrapper({})}>
             <button
-              className="typography-body-10 flex items-center gap-1 border-l border-l-border p-3 transition-opacity hover:opacity-100"
+              className="typography-body-10 border-l-border flex items-center gap-1 border-l p-3 transition-opacity hover:opacity-100"
               ref={liveCodeToggleButton}
               onClick={() => toggleIsCodeVisible(state => !state)}
               aria-controls={codeId}
