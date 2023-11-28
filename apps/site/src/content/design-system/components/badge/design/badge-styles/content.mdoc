@@ -4,31 +4,15 @@ Badges come in 2 different styles, _Default_ and _Pill._ Each style has 8 colour
 
 ```tsx
 () => {
-  const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'primary', 'success', 'warning'] as const;
-
-  const INVERTED_COLORS = [
-    'danger-inverted',
-    'faint-inverted',
-    'hero-inverted',
-    'info-inverted',
-    'neutral-inverted',
-    'primary-inverted',
-    'success-inverted',
-    'warning-inverted',
-  ] as const;
+  const COLORS = ['danger', 'warning', 'success', 'info', 'primary', 'hero', 'neutral', 'faint'] as const;
 
   return (
-    <div className="flex flex-wrap flex-col gap-3">
-      <div className="flex gap-2">
-        {COLORS.map(color => (
-          <Badge color={color}>{color}</Badge>
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-2 bg-muted p-2">
-        {INVERTED_COLORS.map(color => (
-          <Badge color={color}>{color}</Badge>
-        ))}
-      </div>
+    <div className="flex gap-1 flex-wrap w-[15.625rem]">
+      {COLORS.map(color => (
+        <Badge className="my-1" color={color}>
+          {color}
+        </Badge>
+      ))}
     </div>
   );
 };
@@ -38,34 +22,15 @@ Badges come in 2 different styles, _Default_ and _Pill._ Each style has 8 colour
 
 ```tsx
 () => {
-  const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'primary', 'success', 'warning'] as const;
-  const INVERTED_COLORS = [
-    'danger-inverted',
-    'faint-inverted',
-    'hero-inverted',
-    'info-inverted',
-    'neutral-inverted',
-    'primary-inverted',
-    'success-inverted',
-    'warning-inverted',
-  ] as const;
+  const COLORS = ['danger', 'warning', 'success', 'info', 'primary', 'hero', 'neutral', 'faint'] as const;
 
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex gap-2">
-        {COLORS.map(color => (
-          <Badge type="pill" color={color}>
-            {color}
-          </Badge>
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-2 bg-muted p-2">
-        {INVERTED_COLORS.map(color => (
-          <Badge type="pill" color={color}>
-            {color}
-          </Badge>
-        ))}
-      </div>
+    <div className="flex gap-1 flex-wrap w-[12rem]">
+      {COLORS.map(color => (
+        <Badge className="my-1" type="pill" color={color}>
+          88
+        </Badge>
+      ))}
     </div>
   );
 };
