@@ -85,6 +85,9 @@ const config: Config = withGEL({
     'w-[15.625rem]',
     'w-[12rem]',
     'ml-2',
+    'text-success',
+    'text-danger',
+    'font-bold',
   ],
   plugins: [SitePlugin],
   options: {

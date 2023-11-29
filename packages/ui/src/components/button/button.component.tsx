@@ -13,7 +13,7 @@ function BaseButton(
     size = 'medium',
     look = 'hero',
     soft,
-    block,
+    block = false,
     justify,
     tag: Tag = 'button',
     iconBefore: IconBefore,
