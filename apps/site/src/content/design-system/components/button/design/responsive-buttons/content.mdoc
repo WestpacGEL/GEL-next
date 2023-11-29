@@ -1,13 +1,25 @@
 Responsive buttons can change appearance based on breakpoint. For example, the buttons can change size or become block or inline. This feature is often used at the XS breakpoint (generally for mobile devices). The example descriptions below assume the button is first viewed at XS, resize your browser to see them change.
 
-Medium size button becomes Extra large from the MD breakpoint
-
 ```jsx
-<Button size={{ initial: 'medium', md: 'xlarge' }}>Sample button</Button>
-```
+<Fragment>
+  <ComponentTitle>Medium size button becomes Extra large from the MD breakpoint</ComponentTitle>
+  <Button size={{ initial: 'medium', md: 'xlarge' }}>Medium → Extra large</Button>
+  <hr className="border-t border-t-border my-4" />
 
-Small size button becomes medium at the SM breakpoint, large at the MD breakpoint and Extra large at the LG breakpoint
+  <ComponentTitle>Extra large size button becomes small from the SM breakpoint</ComponentTitle>
+  <Button size={{ initial: 'xlarge', sm: 'small' }}>Extra large → Small</Button>
+  <hr className="border-t border-t-border my-4" />
 
-```jsx
-<Button size={{ initial: 'small', md: 'large', lg: 'xlarge' }}>Sample button</Button>
+  <ComponentTitle>
+    Small size button becomes medium at the SM breakpoint, large at the MD breakpoint and Extra large at the LG
+    breakpoint
+  </ComponentTitle>
+  <Button size={{ initial: 'small', sm: 'medium', md: 'large', lg: 'xlarge' }}>
+    Small → Medium → Large → Extra large
+  </Button>
+  <hr className="border-t border-t-border my-4" />
+
+  <ComponentTitle>Block button becomes non-block from the SM breakpoint</ComponentTitle>
+  <Button block={{ initial: true, sm: false }}>Block → Non-block</Button>
+</Fragment>
 ```

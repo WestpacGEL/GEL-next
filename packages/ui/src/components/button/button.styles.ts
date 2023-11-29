@@ -32,6 +32,7 @@ export const styles = tv(
       },
       block: {
         true: { base: 'flex w-full' },
+        false: { base: '' },
       },
       justify: {
         true: { base: 'justify-between' },
