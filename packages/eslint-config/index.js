@@ -50,6 +50,7 @@ module.exports = {
         ignoredKeys: ['compoundVariants', 'defaultVariants', 'responsiveVariants', 'compoundSlots'],
       },
     ],
+    'no-console': 'error',
   },
   settings: {
     'import/parsers': {

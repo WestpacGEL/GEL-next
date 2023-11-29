@@ -1,0 +1,9 @@
+name: Design tokens
+description: Design tokens support us to share basic brand styling at the simplest level with any interface on any platform across the Bank.
+design:
+  - title:
+      name: Main
+      slug: main
+    noTitle: true
+accessibility: []
+relatedInformation: []
