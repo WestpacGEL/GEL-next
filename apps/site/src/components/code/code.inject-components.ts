@@ -45,6 +45,12 @@ export {
 } from '@westpac/ui';
 
 export {
+  NewWindowIcon,
+  DropDownIcon,
+  PrintIcon,
+  PlayIcon,
+  PauseIcon,
+  AddCircleIcon,
   AddIcon,
   TickCircleIcon,
   ArrowRightIcon,
@@ -80,6 +86,7 @@ export {
   GiftIcon,
   WarningIcon,
   SuccessIcon,
+  ArrowLeftIcon,
 } from '@westpac/ui/icon';
 
 export { GiftPictogram } from '@westpac/ui/pictogram';
