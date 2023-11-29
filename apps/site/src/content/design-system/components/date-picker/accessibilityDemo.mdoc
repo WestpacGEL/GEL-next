@@ -1,12 +1,17 @@
 ```jsx
-<div className="flex gap-3">
-  <div className="py-2">
-    <small>Select from</small>
-    <DatePicker />
+<Fragment>
+  <ComponentTitle>Selecting a date range</ComponentTitle>
+  <div className="flex gap-3">
+    <div className="pb-2">
+      <Field label="Select from">
+        <DatePicker size="md" />
+      </Field>
+    </div>
+    <div className="pb-2">
+      <Field label="Select to">
+        <DatePicker size="md" />
+      </Field>
+    </div>
   </div>
-  <div className="py-2">
-    <small>Select to</small>
-    <DatePicker />
-  </div>
-</div>
+</Fragment>
 ```

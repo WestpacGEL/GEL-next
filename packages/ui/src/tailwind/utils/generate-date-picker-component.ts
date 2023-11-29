@@ -23,6 +23,9 @@ export const generateDatePicker = () => {
 
       /* SIZE VARIANTS */
       '&.date-picker-sm': {
+        '.duet-date': {
+          '@apply max-w-[8.75rem]': {},
+        },
         '.duet-date__input': {
           '@apply py-[0.25rem] pl-[0.5625rem] text-sm': {},
         },
@@ -31,6 +34,9 @@ export const generateDatePicker = () => {
         },
       },
       '&.date-picker-md': {
+        '.duet-date': {
+          '@apply max-w-[10.9375rem]': {},
+        },
         '.duet-date__input': {
           '@apply py-1 pl-2 text-base': {},
         },
@@ -39,6 +45,9 @@ export const generateDatePicker = () => {
         },
       },
       '&.date-picker-lg': {
+        '.duet-date': {
+          '@apply max-w-[12.0625rem]': {},
+        },
         '.duet-date__input': {
           '@apply py-[0.5rem] pl-[0.9375.rem] text-base': {},
         },
@@ -50,6 +59,9 @@ export const generateDatePicker = () => {
         },
       },
       '&.date-picker-xl': {
+        '.duet-date': {
+          '@apply max-w-[13.6875rem]': {},
+        },
         '.duet-date__input': {
           '@apply py-[0.5625rem] pl-[1.125rem]': {},
         },
@@ -58,6 +70,11 @@ export const generateDatePicker = () => {
         },
         '.duet-date__toggle-icon': {
           '@apply w-[24px] h-[24px]': {},
+        },
+      },
+      '&.date-picker-block': {
+        '.duet-date': {
+          '@apply max-w-none': {},
         },
       },
 
