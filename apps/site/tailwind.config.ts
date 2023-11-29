@@ -84,6 +84,8 @@ const config: Config = withGEL({
     'lg:typography-body-2',
     'w-[15.625rem]',
     'w-[12rem]',
+    '[&_li]:my-1',
+    '[&_li]:underline',
   ],
   plugins: [SitePlugin],
   options: {
