@@ -28,3 +28,10 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Buttons
+    slug: components/button
+  - title: Checkboxes
+    slug: components/checkbox-group
+  - title: Switches
+    slug: components/switch

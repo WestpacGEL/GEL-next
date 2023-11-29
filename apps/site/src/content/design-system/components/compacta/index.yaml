@@ -19,3 +19,8 @@ accessibility:
   - title:
       name: Accessibility notes
       slug: accessibility-notes
+relatedComponents:
+  - title: Accordions
+    slug: components/accordion
+  - title: Tabs
+    slug: components/tabs

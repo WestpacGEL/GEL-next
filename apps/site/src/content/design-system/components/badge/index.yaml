@@ -29,3 +29,8 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Buttons
+    slug: components/button
+  - title: Alerts
+    slug: components/alert

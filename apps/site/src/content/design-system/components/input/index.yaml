@@ -35,3 +35,6 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Input fields
+    slug: components/input-field

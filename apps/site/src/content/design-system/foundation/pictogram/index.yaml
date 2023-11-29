@@ -26,3 +26,10 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Icons
+    slug: foundation/icon
+  - title: Symbols
+    slug: components/symbol
+  - title: Logos
+    slug: foundation/logo

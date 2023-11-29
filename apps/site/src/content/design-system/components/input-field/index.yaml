@@ -31,3 +31,6 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Text inputs
+    slug: components/input

@@ -3,6 +3,7 @@ import json from '@westpac/ui/component-type.json';
 import { Metadata } from 'next';
 
 import { reader } from '@/app/reader';
+import { RelatedInfoLinks } from '@/components/related-info/related-info.types';
 
 import { ContentTabs } from './components';
 import { AccessibilitySectionProps } from './components/content-tabs/components/accessibility-content/accessibility-content.types';
@@ -53,7 +54,7 @@ export default async function ComponentPage({ params }: { params: { component: s
     .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
     .join('');
 
-  const [designSections, accessibilitySections, accessibilityDemo, code] = await Promise.all([
+  const [designSections, accessibilitySections, accessibilityDemo, code, relatedArticles] = await Promise.all([
     Promise.all(
       content.design.map(section => {
         return new Promise<DesignSectionProps>((resolve, reject) => {
@@ -99,10 +100,12 @@ export default async function ComponentPage({ params }: { params: { component: s
     ),
     content?.accessibilityDemo(),
     content?.code(),
+    content?.relatedArticles(),
   ]);
 
   const codeIsEmpty = code[0].children.length <= 1 && !code[0].children[0].text;
   const accessibilityIsEmpty = accessibilityDemo[0].children.length <= 1 && !accessibilityDemo[0].children[0].text;
+  const relatedArticlesIsEmpty = relatedArticles[0].children.length <= 1 && !relatedArticles[0].children[0].text;
 
   const componentProps: ComponentProps | undefined = (json as any)[componentName];
   const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, any]) => {
@@ -121,7 +124,8 @@ export default async function ComponentPage({ params }: { params: { component: s
         code: codeIsEmpty ? undefined : code,
         description: content.description,
         designSections,
-        relatedComponents: content.relatedInformation.filter(value => !!value) as string[],
+        relatedArticles: relatedArticlesIsEmpty ? undefined : relatedArticles,
+        relatedComponents: content.relatedComponents.filter(value => !!value) as RelatedInfoLinks[],
         componentProps,
         subComponentProps,
       }}

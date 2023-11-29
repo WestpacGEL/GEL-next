@@ -35,3 +35,10 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Logos
+    slug: foundation/logo
+  - title: Colours
+    slug: foundation/colour
+  - title: Pictograms
+    slug: foundation/pictogram

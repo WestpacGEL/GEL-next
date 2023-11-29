@@ -28,3 +28,6 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Fonts
+    slug: foundation/font

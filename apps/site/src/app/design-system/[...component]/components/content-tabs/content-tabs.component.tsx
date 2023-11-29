@@ -13,6 +13,7 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
         description={content.description}
         designSections={content.designSections}
         relatedComponents={content.relatedComponents}
+        relatedArticles={content.relatedArticles}
       />
     );
   }

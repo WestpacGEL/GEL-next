@@ -34,3 +34,12 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Accordions
+    slug: components/accordion
+  - title: Tabs
+    slug: components/tabs
+  - title: Wells
+    slug: components/well
+  - title: Tables
+    slug: components/table

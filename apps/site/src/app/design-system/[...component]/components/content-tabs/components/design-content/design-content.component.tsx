@@ -18,7 +18,7 @@ import { DOCUMENT_RENDERERS } from '../document-renderer';
 
 import { type DesignContentProps } from '.';
 
-export function DesignContent({ designSections, description, relatedComponents }: DesignContentProps) {
+export function DesignContent({ designSections, description, relatedComponents, relatedArticles }: DesignContentProps) {
   const sectionNames = useMemo(() => {
     return designSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title })) || [];
   }, [designSections]);
@@ -53,7 +53,9 @@ export function DesignContent({ designSections, description, relatedComponents }
           </Section>
         );
       })}
-      {!!relatedComponents?.length && <RelatedInfo relatedComponents={relatedComponents} />}
+      {(!!relatedComponents?.length || !!relatedArticles?.length) && (
+        <RelatedInfo relatedComponents={relatedComponents} relatedArticles={relatedArticles} />
+      )}
     </>
   );
 }

@@ -28,4 +28,8 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
-relatedInformation: ['checkbox-group', 'button-group']
+relatedComponents:
+  - title: Checkboxes
+    slug: components/checkbox-group
+  - title: Button groups
+    slug: components/button-group

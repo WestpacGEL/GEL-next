@@ -7,5 +7,6 @@ export type DesignSectionProps = { content: DocumentElement[]; noTitle?: boolean
 export type DesignContentProps = {
   description?: string;
   designSections?: DesignSectionProps[];
+  relatedArticles?: RelatedInfoProps['relatedArticles'];
   relatedComponents?: RelatedInfoProps['relatedComponents'];
 };

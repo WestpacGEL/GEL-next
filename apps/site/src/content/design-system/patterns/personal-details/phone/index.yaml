@@ -19,3 +19,10 @@ design:
       name: Pattern examples in code
       slug: pattern-examples-in-code
 accessibility: []
+relatedComponents:
+  - title: Text inputs
+    slug: components/input
+  - title: Input fields
+    slug: components/input-field
+  - title: Alerts
+    slug: components/alert
