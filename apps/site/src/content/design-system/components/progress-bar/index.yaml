@@ -1,4 +1,4 @@
-name: Progress bars
+name: Progress bar
 description: >-
   Progress bars are animated bars which show a rate of completion for a system
   task or a response to user input. They can be accompanied by a percentage of

@@ -1,4 +1,4 @@
-name: Phone
+name: Phone number
 description: >-
   This pattern is used for accurately capturing phone numbers. Only capture what
   you need for your application.
