@@ -1,3 +1,11 @@
+import { DocumentElement } from '@keystatic/core';
+
 export type RelatedInfoProps = {
-  relatedComponents?: string[];
+  relatedArticles?: DocumentElement[];
+  relatedComponents?: RelatedInfoLinks[];
 };
+
+export interface RelatedInfoLinks {
+  slug: string;
+  title: string;
+}

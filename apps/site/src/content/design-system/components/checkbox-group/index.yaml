@@ -37,3 +37,10 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Radios
+    slug: components/radio-group
+  - title: Buttons groups
+    slug: components/button-group
+  - title: Switches
+    slug: components/switch

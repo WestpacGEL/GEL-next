@@ -163,17 +163,26 @@ export default config({
           links: true,
           label: 'Accessibility Demo',
         }),
-        relatedInformation: fields.array(
-          fields.relationship({
-            label: 'Related components',
-            description: 'A list of related components',
-            collection: 'designSystem',
+        relatedComponents: fields.array(
+          fields.object({
+            title: fields.text({
+              label: 'Related Components',
+            }),
+            slug: fields.url({
+              label: 'Slug',
+            }),
           }),
           {
             label: 'Related Components',
-            itemLabel: props => props.value || '',
+            itemLabel: props => props.fields.title.value || '',
           },
         ),
+        relatedArticles: fields.document({
+          formatting: true,
+          dividers: true,
+          links: true,
+          label: 'Related Articles',
+        }),
         code: fields.document({
           formatting: true,
           dividers: true,

@@ -25,3 +25,6 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Modals
+    slug: components/modal

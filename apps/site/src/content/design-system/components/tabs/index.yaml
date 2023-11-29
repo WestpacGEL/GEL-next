@@ -28,3 +28,8 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Wells
+    slug: components/well
+  - title: Panels
+    slug: components/panel

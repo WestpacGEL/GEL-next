@@ -25,4 +25,10 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
-relatedInformation: ['panel', 'accordion', 'tabs']
+relatedComponents:
+  - title: Panels
+    slug: components/panel
+  - title: Accordions
+    slug: components/accordion
+  - title: Tabs
+    slug: components/tabs

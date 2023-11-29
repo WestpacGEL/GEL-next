@@ -30,3 +30,10 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Colours
+    slug: foundation/colour
+  - title: Lists
+    slug: components/list
+  - title: Icons
+    slug: foundation/icon

@@ -7,27 +7,35 @@ design:
   - title:
       name: Basic table
       slug: basic-table
+    
   - title:
       name: Striped row table
       slug: striped-row-table
+    
   - title:
       name: Bordered table
       slug: bordered-table
+    
   - title:
       name: Bordered, striped table
       slug: bordered-striped-table
+    
   - title:
       name: Basic table with highlights
       slug: basic-table-with-highlights
+    
   - title:
       name: User experience
       slug: user-experience
+    
   - title:
       name: Visual design
       slug: visual-design
+    
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    
 accessibility:
   - title:
       name: Notes on accessibility
@@ -41,3 +49,6 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Panels
+    slug: components/panel

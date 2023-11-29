@@ -28,4 +28,14 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
-relatedInformation: ['icons', 'checkbox-group', 'colours', 'radio-group', 'pictograms']
+relatedComponents:
+  - title: Icons
+    slug: foundation/icon
+  - title: Checkboxes
+    slug: components/checkbox-group
+  - title: Colours
+    slug: foundation/colour
+  - title: Radios
+    slug: components/radio-group
+  - title: Pictograms
+    slug: foundation/pictogram
