@@ -24,11 +24,14 @@
   </div>
   <div>
     <ComponentTitle>Icon positioning</ComponentTitle>
-    <Button look="primary" iconAfter={InfoIcon}>
-      Icon right
-    </Button> <Button look="primary" iconBefore={InfoIcon}>
-      Icon left
-    </Button>
+    <div className="flex items-end gap-1">
+      <Button look="primary" iconAfter={InfoIcon}>
+        Icon right
+      </Button>
+      <Button look="primary" iconBefore={InfoIcon}>
+        Icon left
+      </Button>
+    </div>
   </div>
   <div>
     <ComponentTitle>Block-level buttons with icons</ComponentTitle>
