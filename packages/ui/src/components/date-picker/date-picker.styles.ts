@@ -10,6 +10,10 @@ export const styles = tv(
         lg: 'date-picker-lg',
         xl: 'date-picker-xl',
       },
+      block: {
+        true: 'date-picker-block',
+        false: '',
+      },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },

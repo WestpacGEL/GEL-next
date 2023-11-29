@@ -3,14 +3,19 @@ In order to create a date range, two date pickers need to be used with appropria
 Established convention of layout places two date pickers side by side, with stacked date pickers also an option particularly when horizontal space is at a premium or in a responsive context.
 
 ```jsx
-<div className="flex gap-3">
-  <div className="py-2">
-    <small>Select from</small>
-    <DatePicker />
+<Fragment>
+  <ComponentTitle>Selecting a date range</ComponentTitle>
+  <div className="flex gap-3">
+    <div className="pb-2">
+      <Field label="Select from">
+        <DatePicker />
+      </Field>
+    </div>
+    <div className="pb-2">
+      <Field label="Select to">
+        <DatePicker />
+      </Field>
+    </div>
   </div>
-  <div className="py-2">
-    <small>Select to</small>
-    <DatePicker />
-  </div>
-</div>
+</Fragment>
 ```
