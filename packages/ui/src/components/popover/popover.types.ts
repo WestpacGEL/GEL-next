@@ -37,4 +37,4 @@ export type PopoverProps = {
    */
   placement?: 'top' | 'bottom';
 } & HTMLAttributes<Element> &
-  Pick<ButtonProps, 'look'>;
+  Pick<ButtonProps, 'look' | 'soft'>;
