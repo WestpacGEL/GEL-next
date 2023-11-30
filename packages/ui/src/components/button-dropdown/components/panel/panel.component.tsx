@@ -16,7 +16,7 @@ export function Panel({ className, children, state, block, id, ...props }: Panel
 
   // Added this based on accessibility features seen https://gel.westpacgroup.com.au/design-system/components/button-dropdowns?b=WBC&tab=accessibility and React Aria doesn't do this
   const focusHandler = useCallback(
-    (event: globalThis.FocusEvent) => {
+    (event: FocusEvent) => {
       if (
         event.target &&
         popoverRef.current &&
@@ -31,8 +31,15 @@ export function Panel({ className, children, state, block, id, ...props }: Panel
 
   // React Aria does not handle click as we need when isNonModal is true so this is needed
   const clickHandler = useCallback(
-    (event: globalThis.MouseEvent) => {
-      if (event.target && popoverRef.current && !popoverRef.current.contains(event.target as Node) && state.isOpen)
+    (event: MouseEvent) => {
+      if (
+        event.target &&
+        props.triggerRef.current &&
+        !props.triggerRef.current.contains(event.target as Node) &&
+        popoverRef.current &&
+        !popoverRef.current.contains(event.target as Node) &&
+        state.isOpen
+      )
         state.close();
     },
     [state.isOpen],

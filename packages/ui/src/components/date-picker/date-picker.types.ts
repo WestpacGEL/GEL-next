@@ -17,6 +17,10 @@ export type DuetDatePickerElement = Element & {
 type Variants = VariantProps<typeof styles>;
 
 export type DatePickerProps = {
+  /**
+   * Make Datepicker block
+   */
+  block?: Variants['block'];
   /*
    * Disable specific dates. Must be in IS0-8601 format: YYYY-MM-DD
    */

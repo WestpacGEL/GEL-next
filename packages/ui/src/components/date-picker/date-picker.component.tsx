@@ -20,8 +20,9 @@ export function DatePicker({
   max,
   value,
   id,
-  size = 'xl',
+  size = 'md',
   name,
+  block = false,
   ...props
 }: DatePickerProps) {
   const [initialized, setInitialized] = useState(false);
@@ -121,5 +122,5 @@ export function DatePicker({
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  return <duet-date-picker class={styles({ size })} ref={ref} {...props} />;
+  return <duet-date-picker class={styles({ size, block })} ref={ref} {...props} />;
 }

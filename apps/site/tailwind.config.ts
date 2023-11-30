@@ -86,6 +86,10 @@ const config: Config = withGEL({
     'w-[12rem]',
     '[&_li]:my-1',
     '[&_li]:underline',
+    'ml-2',
+    'text-success',
+    'text-danger',
+    'font-bold',
   ],
   plugins: [SitePlugin],
   options: {
