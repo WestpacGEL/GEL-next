@@ -1,12 +1,12 @@
 ```jsx
-// Using the Link component (as NextLink) from 'next/LinkLink'
-<div className="flex flex-col gap-5">
-  <Breadcrumb aria-label="Page transitions and the such">
+// Using the Link component (as NextLink) from 'next/Link'
+<div className="flex flex-col gap-4">
+  <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1 mt-2">
     <NextLink href="#home" passHref legacyBehavior>
       <Breadcrumb.Item isCurrent tag="a">Home</Breadcrumb.Item>
     </NextLink>
   </Breadcrumb>
-  <Breadcrumb aria-label="Page transitions and the such">
+  <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1">
     <NextLink href="#home" passHref legacyBehavior>
       <Breadcrumb.Item tag="a">Home</Breadcrumb.Item>
     </NextLink>
@@ -14,7 +14,7 @@
       <Breadcrumb.Item tag="a" isCurrent>Personal</Breadcrumb.Item>
     </NextLink>
   </Breadcrumb>
-  <Breadcrumb aria-label="Page transitions and the such">
+  <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1 mb-2">
     <NextLink href="#home" passHref legacyBehavior>
       <Breadcrumb.Item tag="a">Home</Breadcrumb.Item>
     </NextLink>
@@ -23,24 +23,6 @@
     </NextLink>
     <NextLink href="#credit-cards" passHref legacyBehavior>
       <Breadcrumb.Item tag="a" isCurrent>Credit cards</Breadcrumb.Item>
-    </NextLink>
-  </Breadcrumb>
-  <Breadcrumb>
-    <NextLink href="#test" passHref legacyBehavior>
-      <Breadcrumb.Item tag="a">Anchor item</Breadcrumb.Item>
-    </NextLink>
-    <NextLink href="#another" passHref legacyBehavior>
-      <Breadcrumb.Item tag="a">Another anchor item</Breadcrumb.Item>
-    </NextLink>
-    <NextLink href="#another" passHref legacyBehavior>
-      <Breadcrumb.Item isDisabled tag="a">
-        Disabled item
-      </Breadcrumb.Item>
-    </NextLink>
-    <NextLink href="#another" passHref legacyBehavior>
-      <Breadcrumb.Item isCurrent tag="a">
-        Last item
-      </Breadcrumb.Item>
     </NextLink>
   </Breadcrumb>
 </div>

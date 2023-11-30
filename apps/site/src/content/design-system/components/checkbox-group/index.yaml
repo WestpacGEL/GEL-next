@@ -1,4 +1,4 @@
-name: Checkbox Groups
+name: Checkboxes
 description: >-
   Checkboxes are a proven and effective way to elicit a multiple choice from a
   user. They also require careful consideration to produce the best results.
@@ -37,3 +37,10 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Radios
+    slug: components/radio-group
+  - title: Buttons groups
+    slug: components/button-group
+  - title: Switches
+    slug: components/switch

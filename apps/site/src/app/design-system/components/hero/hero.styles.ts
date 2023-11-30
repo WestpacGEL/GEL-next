@@ -4,7 +4,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     base: 'relative overflow-hidden bg-background pb-7 text-center antialiased sm:pb-11 sm:text-white',
-    heading: 'typography-brand-4 mt-15 sm:typography-brand-1 sm:mt-7',
+    heading: 'typography-brand-4 mt-15 !leading-none sm:typography-brand-1 sm:mt-7',
   },
   variants: {
     brand: {

@@ -1,4 +1,4 @@
-name: Compactas
+name: Compacta
 description: >-
   The Compacta is a form input for capturing multiple instances of multiple
   fields, saving valuable screen space.
@@ -19,3 +19,8 @@ accessibility:
   - title:
       name: Accessibility notes
       slug: accessibility-notes
+relatedComponents:
+  - title: Accordions
+    slug: components/accordion
+  - title: Tabs
+    slug: components/tabs

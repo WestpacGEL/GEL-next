@@ -8,6 +8,7 @@ import { Colors } from '@/components/component-blocks/colors/colors.component';
 import { Icons } from '@/components/component-blocks/icons/icons.component';
 import { Logos } from '@/components/component-blocks/logos/logos.component';
 import { Pictograms } from '@/components/component-blocks/pictograms/pictograms.component';
+import { Symbols } from '@/components/component-blocks/symbols/symbols.component';
 import { Section } from '@/components/content-blocks/section';
 import { Code, Heading } from '@/components/document-renderer';
 import { RelatedInfo } from '@/components/related-info';
@@ -17,7 +18,7 @@ import { DOCUMENT_RENDERERS } from '../document-renderer';
 
 import { type DesignContentProps } from '.';
 
-export function DesignContent({ designSections, description, relatedComponents }: DesignContentProps) {
+export function DesignContent({ designSections, description, relatedComponents, relatedArticles }: DesignContentProps) {
   const sectionNames = useMemo(() => {
     return designSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title })) || [];
   }, [designSections]);
@@ -44,6 +45,7 @@ export function DesignContent({ designSections, description, relatedComponents }
                   icons: () => <Icons />,
                   logos: () => <Logos />,
                   pictograms: () => <Pictograms />,
+                  symbols: () => <Symbols />,
                   colors: props => <Colors palette={props.palette} />,
                 }}
               />
@@ -51,7 +53,9 @@ export function DesignContent({ designSections, description, relatedComponents }
           </Section>
         );
       })}
-      {!!relatedComponents?.length && <RelatedInfo relatedComponents={relatedComponents} />}
+      {(!!relatedComponents?.length || !!relatedArticles?.length) && (
+        <RelatedInfo relatedComponents={relatedComponents} relatedArticles={relatedArticles} />
+      )}
     </>
   );
 }

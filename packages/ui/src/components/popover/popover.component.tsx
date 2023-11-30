@@ -23,6 +23,7 @@ export function Popover({
   onClick = () => undefined,
   placement,
   look,
+  soft = false,
   open = false,
   icon,
 }: PopoverProps) {
@@ -58,6 +59,7 @@ export function Popover({
       <Button
         look={icon && !children ? 'link' : look}
         iconAfter={icon}
+        soft={soft}
         aria-expanded={state.isOpen}
         aria-controls={panelId}
         onClick={handleClick}

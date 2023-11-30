@@ -1,4 +1,4 @@
-name: Input Fields
+name: Input groups
 description: >-
   Input field is an input field either followed or preceded by an input or
   character. They are useful for giving context to input field values.
@@ -31,3 +31,6 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Text inputs
+    slug: components/input

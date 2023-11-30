@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
 import { Form, Input } from '../index.js';

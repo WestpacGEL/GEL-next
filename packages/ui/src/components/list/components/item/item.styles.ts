@@ -61,11 +61,12 @@ export const styles = tv(
           bullet: 'pl-[1.1875rem] ',
         },
         icon: {
-          base: '',
+          base: 'pl-[1.4375rem]',
           bullet: 'border-none bg-[transparent]',
         },
         ordered: {
-          base: 'pl-0',
+          // value gotten from taking rem of list number from original GEL value as tailwind seems to handled ordered list styling differently
+          base: 'pl-[0.35rem]',
         },
       },
       nested: {
@@ -81,6 +82,12 @@ export const styles = tv(
         type: 'link',
         icon: true,
         className: 'left-0 top-0 h-3 w-3 rotate-0 border-none bg-[transparent]',
+      },
+      {
+        slots: ['base'],
+        type: 'link',
+        icon: true,
+        className: 'pl-[1.4375rem]',
       },
     ],
   },

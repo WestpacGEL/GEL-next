@@ -1,6 +1,7 @@
 import { DocumentElement } from '@keystatic/core';
 import { ComponentProps } from '@westpac/ui';
 
+import { RelatedInfoLinks } from '@/components/related-info/related-info.types';
 import { WestpacUIInfo } from '@/types/westpac-ui-info.types';
 
 import { AccessibilitySectionProps } from './components/accessibility-content/accessibility-content.types';
@@ -13,7 +14,8 @@ export type ContentTabsProps = {
   componentProps?: ComponentProps;
   description?: string;
   designSections?: DesignSectionProps[];
-  relatedComponents?: string[];
+  relatedArticles?: DocumentElement[];
+  relatedComponents?: RelatedInfoLinks[];
   subComponentProps: ComponentProps[];
   westpacUIInfo: WestpacUIInfo;
 };

@@ -89,9 +89,11 @@ export function CodeContent({ content = [], westpacUIInfo, componentProps, subCo
         </Container>
       </section>
       {componentProps && (
-        <section className="bg-white py-7 sm:pb-10 sm:pt-15">
+        <section className="border-t border-t-border bg-white py-7 sm:pb-10 sm:pt-15">
           <Container>
-            <Heading level={2}>Props</Heading>
+            <Heading level={2} className="!mb-4 sm:!mb-7">
+              Props
+            </Heading>
             <div className="flex flex-col gap-6">
               <ComponentPropsTable componentProps={componentProps} />
               {subComponentProps?.map(subComponentProps => (

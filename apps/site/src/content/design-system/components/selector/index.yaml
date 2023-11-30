@@ -1,4 +1,4 @@
-name: Selectors
+name: Selector
 description: >-
   A Selector is essentially a large stylised radio or checkbox that can be
   configured in many different ways for different uses.
@@ -28,3 +28,14 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Icons
+    slug: foundation/icon
+  - title: Checkboxes
+    slug: components/checkbox-group
+  - title: Colours
+    slug: foundation/colour
+  - title: Radios
+    slug: components/radio-group
+  - title: Pictograms
+    slug: foundation/pictogram

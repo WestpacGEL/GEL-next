@@ -1,29 +1,22 @@
 ### Default button dropdown
 
 ```jsx
-<ButtonDropdown text="Default dropdown" look="primary" soft>
-  <p>
-    Example dropdown{' '}
-    <a href="#" className="text-[blue] underline">
-      content
-    </a>
-    ...
-  </p>
-</ButtonDropdown>
+<div>
+  <ButtonDropdown text="Default dropdown" look="primary" soft>
+    <p>Example dropdown content ...</p>
+  </ButtonDropdown>
+  <br />
+  <br />
+  <ButtonDropdown text="Dropdown with headings" look="primary" soft>
+    <ButtonDropdown.Heading>Dropdown heading #1</ButtonDropdown.Heading>
+    Example dropdown content...
+    <ButtonDropdown.Heading>Dropdown heading #2</ButtonDropdown.Heading>
+    Example dropdown content...
+  </ButtonDropdown>
+</div>
 ```
 
-### Dropdown with headings
-
-```jsx
-<ButtonDropdown text="Dropdown with headings" look="primary" soft>
-  <ButtonDropdown.Heading>Dropdown heading #1</ButtonDropdown.Heading>
-  Example dropdown content...
-  <ButtonDropdown.Heading>Dropdown heading #2</ButtonDropdown.Heading>
-  Example dropdown content...
-</ButtonDropdown>
-```
-
-### Dropdown box sizes (min-widths)
+### Button dropdown sizes
 
 ```jsx
 <div className="flex gap-1">

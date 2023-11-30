@@ -26,4 +26,6 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
-relatedInformation: []
+relatedComponents:
+  - title: Icons
+    slug: foundation/icon

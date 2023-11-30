@@ -1,37 +1,53 @@
-import { Container, Grid, Item } from '@westpac/ui';
-import { ArrowRightIcon, CubeIcon } from '@westpac/ui/icon';
+import { DocumentRenderer } from '@keystatic/core/renderer';
+import { Grid, Item } from '@westpac/ui';
+import { ArrowRightIcon, CubeIcon, GenericFileIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
+
+import { Container } from '@/app/design-system/components';
 
 import { Section } from '../content-blocks/section';
 import { Heading } from '../document-renderer';
 
+import { DOCUMENT_RENDERERS } from './articles-renderer';
 import { RelatedInfoProps } from './related-info.types';
 
-export function RelatedInfo({ relatedComponents = [] }: RelatedInfoProps) {
+export function RelatedInfo({ relatedComponents = [], relatedArticles }: RelatedInfoProps) {
+  const relatedComponentsEmpty = relatedComponents?.length < 1;
   return (
     <Section className="bg-white">
-      <Container>
+      <Container className="">
         <Heading level={2} className="mb-4 sm:mb-7">
           Related information
         </Heading>
         <Grid>
-          <Item span={{ initial: 12, sm: 4 }}>
-            <h3 className="typography-body-8 flex items-center justify-between border-b border-neutral pb-3 font-bold">
-              Components
-              <CubeIcon color="muted" />
-            </h3>
-            <ul>
-              {relatedComponents.map(relatedComponent => {
-                const componentURL = relatedComponent.split('/').reverse()[0];
-                const componentName = componentURL[0].toUpperCase() + componentURL.slice(1).split('-').join(' ');
-                return (
-                  <li key={relatedComponent}>
-                    <Link href={`/design-system/components/${componentURL}?brand=wbc`}>{componentName}</Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </Item>
+          {!relatedComponentsEmpty && (
+            <Item span={{ initial: 12, xsl: 4 }}>
+              <h3 className="typography-body-8 flex items-center justify-between border-b border-neutral pb-3 font-bold">
+                Components
+                <CubeIcon color="muted" />
+              </h3>
+              <ul>
+                {relatedComponents.map(({ title, slug }) => {
+                  return (
+                    <li key={title}>
+                      <Link href={`/design-system/${slug}?brand=wbc`}>{title}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </Item>
+          )}
+          {relatedArticles && (
+            <Item span={12} start={{ initial: 1, xsl: relatedComponentsEmpty ? 1 : 6 }}>
+              <h3 className="typography-body-8 flex items-center justify-between border-b border-neutral pb-3 font-bold">
+                Articles
+                <GenericFileIcon color="muted" />
+              </h3>
+              <div className="mt-3">
+                <DocumentRenderer document={relatedArticles} renderers={DOCUMENT_RENDERERS} />
+              </div>
+            </Item>
+          )}
         </Grid>
       </Container>
     </Section>

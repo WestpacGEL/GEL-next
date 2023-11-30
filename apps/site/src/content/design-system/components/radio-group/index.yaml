@@ -1,4 +1,4 @@
-name: Radio groups
+name: Radios
 description: >-
   Radios are a proven and effective way to elicit a single choice from a user.
   They also require careful consideration to produce the best results.
@@ -37,3 +37,10 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Checkboxes
+    slug: components/checkbox-group
+  - title: Button groups
+    slug: components/button-group
+  - title: Switches
+    slug: components/switch

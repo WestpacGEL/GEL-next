@@ -1,4 +1,4 @@
-name: Links (anchor)
+name: Link (Anchor)
 description: >-
   The Link component is a way for developers to quickly apply consistent web
   link styling while also providing global guidance for designers. There are two
@@ -30,3 +30,10 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Colours
+    slug: foundation/colour
+  - title: Lists
+    slug: components/list
+  - title: Icons
+    slug: foundation/icon

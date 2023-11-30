@@ -35,4 +35,12 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
-relatedInformation: []
+relatedComponents:
+  - title: Icons
+    slug: foundation/icon
+  - title: Button dropdowns
+    slug: components/button-dropdown
+  - title: Button groups
+    slug: components/button-group
+  - title: Colours
+    slug: foundation/colour
