@@ -84,6 +84,7 @@ const config: Config = withGEL({
     'lg:typography-body-2',
     'w-[15.625rem]',
     'w-[12rem]',
+    'ml-2',
     'text-success',
     'text-danger',
     'font-bold',
