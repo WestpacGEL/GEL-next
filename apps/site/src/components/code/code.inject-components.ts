@@ -87,6 +87,8 @@ export {
   WarningIcon,
   SuccessIcon,
   ArrowLeftIcon,
+  GenericFileIcon,
+  GithubIcon,
 } from '@westpac/ui/icon';
 
 export { GiftPictogram } from '@westpac/ui/pictogram';
