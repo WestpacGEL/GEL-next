@@ -170,22 +170,22 @@ export const BorderedAndStriped: Story = {
         </Table.Header>
         <Table.Body>
           <Table.Row>
-            <Table.Cell>Games</Table.Cell>
+            <Table.HeaderCell>Games</Table.HeaderCell>
             <Table.Cell>File folder</Table.Cell>
             <Table.Cell>6/7/2020</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>Program Files</Table.Cell>
+            <Table.HeaderCell>Program Files</Table.HeaderCell>
             <Table.Cell>File folder</Table.Cell>
             <Table.Cell>4/7/2021</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>bootmgr</Table.Cell>
+            <Table.HeaderCell>bootmgr</Table.HeaderCell>
             <Table.Cell>System file</Table.Cell>
             <Table.Cell>11/20/2010</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell>log.txt</Table.Cell>
+            <Table.HeaderCell>log.txt</Table.HeaderCell>
             <Table.Cell>Text Document</Table.Cell>
             <Table.Cell>1/18/2016</Table.Cell>
           </Table.Row>
