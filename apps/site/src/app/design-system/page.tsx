@@ -26,7 +26,7 @@ export default function DesignSystemHomePage() {
       <Section>
         <SectionHeading>Accessible by design</SectionHeading>
         <Grid>
-          <SectionItem className="flex flex-col gap-2">
+          <SectionItem className="flex flex-col gap-2 leading-[2]">
             <p>Accessibility and inclusive design is a strong part of the GEL Design System.</p>
             <p>
               The system supports teams to deliver to the Group accessibility commitment, to provide meaningful banking
@@ -41,19 +41,24 @@ export default function DesignSystemHomePage() {
         </Grid>
       </Section>
       <Section background>
-        <ReactLogo />
+        <ReactLogo className="mb-3" />
         <SectionHeading>Built on React</SectionHeading>
         <Grid>
           <SectionItem>
-            <p className="mb-5 sm:mb-7">
+            <p className="mb-5 leading-[2] sm:mb-7">
               The GEL Design System is now using React. You can still access HTML/CSS but with React at its core we can
               showcase so much more and deliver even higher-quality, more accessible code.
             </p>
             <h3 className="typography-body-8 mb-5 border-b pb-2 font-bold">Who else is using React?</h3>
-            <Grid tag="ul" className="items-center gap-y-4 text-neutral-70 sm:gap-7">
+            <Grid tag="ul" className="items-center gap-y-4 text-neutral-70 sm:gap-x-4 sm:gap-y-8">
               {[GovLogo, MicrosoftLogo, MyobLogo, IBMLogo, AtlassianLogo, FacebookLogo, TwitterLogo, ShopifyLogo].map(
                 (Logo, i) => (
-                  <Item tag="li" key={i} span={{ initial: 12, xsl: 6, sm: 3 }}>
+                  <Item
+                    tag="li"
+                    key={i}
+                    span={{ initial: 12, xsl: 6, sm: 3 }}
+                    className="flex items-center justify-center"
+                  >
                     <Logo />
                   </Item>
                 ),
@@ -66,7 +71,7 @@ export default function DesignSystemHomePage() {
         <SectionHeading>Subscribe to GEL updates</SectionHeading>
         <Grid>
           <SectionItem>
-            <p className="mb-5 sm:mb-7">
+            <p className="mb-5 leading-[2] sm:mb-7">
               Get the latest brand and component updates as well as access to new resources and helpful tips.
             </p>
             <form
@@ -109,11 +114,11 @@ export default function DesignSystemHomePage() {
         </Grid>
       </Section>
       <Section background>
-        <SectionHeading>Downloads and links</SectionHeading>
-        <Grid className="mb-5 sm:mb-7">
+        <SectionHeading>Downloads &amp; links</SectionHeading>
+        <Grid className="mb-5 sm:mb-[3.375rem]">
           <SectionItem className="flex flex-col gap-2">
-            <p>Design on-brand with greater efficiency and accuracy using the Sketch UI Kit.</p>
-            <p>Visit GitHub to follow Westpac GEL Design System code updates and log issues.</p>
+            <p className="leading-[2]">Design on-brand with greater efficiency and accuracy using the Sketch UI Kit.</p>
+            <p className="leading-[2]">Visit GitHub to follow Westpac GEL Design System code updates and log issues.</p>
           </SectionItem>
         </Grid>
         <Grid className="gap-y-4 text-left xsl:gap-x-5 sm:gap-x-8 md:gap-x-10">
