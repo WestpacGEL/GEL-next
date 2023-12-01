@@ -65,8 +65,7 @@ export const styles = tv(
           bullet: 'border-none bg-[transparent]',
         },
         ordered: {
-          // value gotten from taking rem of list number from original GEL value as tailwind seems to handled ordered list styling differently
-          base: 'pl-[0.35rem]',
+          base: 'pl-0',
         },
       },
       nested: {
