@@ -1,8 +1,16 @@
+import { clsx } from 'clsx';
+
 import { Svg } from '@/components/svg';
 
-export function ReactLogo() {
+export function ReactLogo({ className }: { className?: string }) {
   return (
-    <Svg viewBox="0 0 2486 2235" width={2486} height={2235} aria-label="React" className="inline-block h-auto w-10">
+    <Svg
+      viewBox="0 0 2486 2235"
+      width={2486}
+      height={2235}
+      aria-label="React"
+      className={clsx('inline-block h-auto w-10', className)}
+    >
       <title>React logo</title>
       <g fillRule="nonzero" fill="none">
         <path
