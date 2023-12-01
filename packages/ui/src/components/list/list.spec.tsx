@@ -85,7 +85,7 @@ describe('List', () => {
         <List.Item>ordered list</List.Item>
       </List>,
     );
-    expect(getByText('ordered list')).toHaveClass('pl-[0.35rem]');
+    expect(getByText('ordered list')).toHaveClass('pl-0');
   });
 
   it('should render with correct spacing when large spacing prop passed', () => {
