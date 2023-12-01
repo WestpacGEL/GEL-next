@@ -111,7 +111,7 @@ describe('Table', () => {
         </Table.Body>
       </Table>,
     );
-    expect(getByTestId('row-2')).toHaveClass('even:bg-background hover:bg-[transparent]');
+    expect(getByTestId('row-2')).toHaveClass('even:bg-light');
   });
 
   it('should render table with correct styling with highlighting options', () => {

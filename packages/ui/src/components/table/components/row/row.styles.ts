@@ -2,9 +2,9 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    slots: { base: 'hover:bg-background' },
+    slots: { base: 'group/row' },
     variants: {
-      striped: { true: { base: 'even:bg-background hover:bg-[transparent]' } },
+      striped: { true: { base: 'even:bg-light' }, false: { base: 'hover:bg-background' } },
       highlightedRow: { true: { base: 'border border-b-[3px] border-l-[6px] border-r-0 border-primary' } },
     },
   },

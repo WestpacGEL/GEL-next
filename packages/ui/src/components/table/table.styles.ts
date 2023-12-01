@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'w-full',
+      base: 'mb-4 w-full',
     },
     variants: {},
   },
