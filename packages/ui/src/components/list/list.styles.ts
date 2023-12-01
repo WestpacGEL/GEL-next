@@ -14,7 +14,7 @@ export const styles = tv(
         unstyled: {},
         icon: {},
         ordered: {
-          base: 'list-inside list-decimal',
+          base: 'list-decimal ps-[1.25rem]',
         },
       },
       nested: {
