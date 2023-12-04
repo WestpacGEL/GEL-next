@@ -1,0 +1,8 @@
+name: Usage
+description: >-
+  There are a couple of different ways you can use GEL components in your application.
+design:
+  - title:
+      name: Using components
+      slug: using-components
+accessibility: []

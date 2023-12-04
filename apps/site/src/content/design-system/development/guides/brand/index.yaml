@@ -1,13 +1,9 @@
 name: Brand
 description: >-
-  In order to allow for the most flexibility when theming your application, we
-  have published a package for each of the Westpac Group's brands.
+  In order to allow for the most flexibility when theming your application, you
+  can easily change your application to use any of Westpac Group's brands.
 design:
   - title:
-      name: undefined
-      slug: undefined
-    noTitle: true
-  - title:
-      name: useBrand
-      slug: usebrand
+      name: Using brands
+      slug: using-brands
 accessibility: []

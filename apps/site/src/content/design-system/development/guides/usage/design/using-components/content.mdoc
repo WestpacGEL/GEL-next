@@ -1,0 +1,41 @@
+### Directly from the package
+
+After setting up the [brand](/design-system/development/guides/brand?brand=wbc) you can start using the GEL components in your `React.js` application. The following example shows how to use the `Button` component.
+
+For detailed information on specific components refer to the Components section of this site.
+
+```html
+<StaticCode language="tsx" code={`
+    import { Button } from '@westpac/ui';
+
+    export default function SampleApp() {
+        return (
+            <section>
+                <div className="space-x-4 mb-2">
+                    <Button look="primary">Pay here</Button>
+                </div>
+            </section>
+        );
+    }
+`} />
+```
+
+### Individually from the package
+
+The following example shows how to import a component individually. (Recommended if running into issues with tree-shaking and bundle size in applications)
+
+```html
+<StaticCode language="tsx" code={`
+    import { Button } from '@westpac/ui/button';
+
+    export default function SampleApp() {
+      return (
+        <section>
+          <div className="space-x-4 mb-2">
+            <Button look="primary">Pay here</Button>
+          </div>
+        </section>
+      );
+    }
+`} />
+```
