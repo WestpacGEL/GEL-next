@@ -17,7 +17,7 @@ export function Tabs(props: AriaTabListProps<AriaTabProps>) {
   return (
     <div>
       <StickyHeader stickyPosition={HEADER_OFFSET} className="top-[3.75rem]">
-        <div {...tabListProps} ref={ref} className="flex h-11 items-end bg-white sm:h-15">
+        <div {...tabListProps} ref={ref} className="flex h-11 items-end bg-white sm:h-[6rem]">
           {[...state.collection].map(item => (
             <Tab key={item.key} item={item} state={state} />
           ))}
