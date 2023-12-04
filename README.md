@@ -128,6 +128,7 @@ const customJestConfig = {
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
 };
 ```
+
 Add the below to `package.json`
 
 ```json
