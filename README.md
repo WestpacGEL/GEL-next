@@ -128,9 +128,9 @@ const customJestConfig = {
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
 };
 ```
+Add the below to `package.json`
 
 ```json
-// package.json
 {
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
