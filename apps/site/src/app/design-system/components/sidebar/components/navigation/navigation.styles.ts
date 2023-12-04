@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const itemStyles = tv({
-  base: 'block py-[0.875rem] pr-5 transition-[background] duration-200 ease-[ease] hover:bg-background',
+  base: 'flex h-[2.875rem] flex-row items-center py-[0.875rem] pr-5 transition-[background] duration-200 ease-[ease] hover:bg-background',
   variants: {
     level: {
       '0': 'pl-6',
@@ -13,7 +13,7 @@ export const itemStyles = tv({
       button: 'flex w-full items-center justify-between',
     },
     nested: {
-      true: 'text-muted',
+      true: 'h-8 text-muted',
     },
     active: {
       true: 'font-bold text-primary',
