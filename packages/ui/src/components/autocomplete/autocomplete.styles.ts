@@ -43,6 +43,7 @@ export const styles = tv(
       isFocused: {
         true: {
           outerWrapper: 'focus-outline',
+          clearButton: 'focus-outline',
         },
         false: {},
       },
