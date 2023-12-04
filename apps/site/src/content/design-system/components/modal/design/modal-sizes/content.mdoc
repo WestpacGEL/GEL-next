@@ -16,22 +16,31 @@ Use the appropriate modal size to suit your content. A modal will always respons
 
   return (
     <div className="flex justify-center gap-4">
-      {[{ size: 'sm', label: 'Small'}, { size: 'md', label: 'Default'}, { size: 'lg', label: 'Large'}].map(({ size, label }: { size: string; label: string; }) => (
+      {[
+        { size: 'sm', label: 'Small' },
+        { size: 'md', label: 'Default' },
+        { size: 'lg', label: 'Large' },
+      ].map(({ size, label }: { size: string; label: string }) => (
         <Fragment key={size}>
           <Modal isDismissable size={size} state={states[size as 'sm' | 'md' | 'lg']} title="Sudden and magnificent">
             <Modal.Body>
               <p>
-                The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black against a silvery climbing phosphorescence that grew and grew.
+                The line of the horizon was clear and hard against the sky, and in one particular quarter it showed
+                black against a silvery climbing phosphorescence that grew and grew.
               </p>
             </Modal.Body>
             <Modal.Footer>
               <div className="flex gap-1 justify-end">
-                <Button look="faint" onClick={states[size as 'sm' | 'md' | 'lg'].close}>Close</Button>
+                <Button look="faint" onClick={states[size as 'sm' | 'md' | 'lg'].close}>
+                  Close
+                </Button>
                 <Button look="primary">Save changes</Button>
               </div>
             </Modal.Footer>
           </Modal>
-          <Button soft look="primary" onClick={states[size as 'sm' | 'md' | 'lg'].open}>{label} Modal</Button>
+          <Button soft look="primary" onClick={states[size as 'sm' | 'md' | 'lg'].open}>
+            {label} Modal
+          </Button>
         </Fragment>
       ))}
     </div>

@@ -162,9 +162,7 @@
   tag="a"
   href="#"
 >
-  <FlexiCell.Label tag="h3">
-    List Item
-  </FlexiCell.Label>
+  <FlexiCell.Label tag="h3">List Item</FlexiCell.Label>
 </FlexiCell>
 ```
 
@@ -212,7 +210,7 @@
       </FlexiCell.Circle>
     </FlexiCell.Adornment>
   }
-  topBadge={({ className }) => <Badge className={className + " leading-normal"}>Corner flag</Badge>}
+  topBadge={({ className }) => <Badge className={className + ' leading-normal'}>Corner flag</Badge>}
 >
   <FlexiCell.Label className="text-[12px] font-normal text-muted" tag="p">
     MYER
@@ -281,30 +279,30 @@
   return (
     <>
       {MOCK_ACCOUNTS.map(({ title, id, accounts }) => (
-          <div key={id}>
-            <h3 className="mb-3 font-normal">{title}</h3>
-            {accounts.map(({ name, amount, number }) => (
-              <FlexiCell
-                tag="a"
-                href="#"
-                withBorder
-                key={name}
-                after={
-                  <FlexiCell.Adornment>
-                    <FlexiCell.Label className="font-semibold" rightLabel tag="h4">
-                      {amount}
-                    </FlexiCell.Label>
-                    <FlexiCell.Hint>available $9,999</FlexiCell.Hint>
-                  </FlexiCell.Adornment>
-                }
-              >
-                <FlexiCell.Label className="font-normal" tag="h4">
-                  {name}
-                </FlexiCell.Label>
-                <FlexiCell.Hint>{number}</FlexiCell.Hint>
-              </FlexiCell>
-            ))}
-          </div>
+        <div key={id}>
+          <h3 className="mb-3 font-normal">{title}</h3>
+          {accounts.map(({ name, amount, number }) => (
+            <FlexiCell
+              tag="a"
+              href="#"
+              withBorder
+              key={name}
+              after={
+                <FlexiCell.Adornment>
+                  <FlexiCell.Label className="font-semibold" rightLabel tag="h4">
+                    {amount}
+                  </FlexiCell.Label>
+                  <FlexiCell.Hint>available $9,999</FlexiCell.Hint>
+                </FlexiCell.Adornment>
+              }
+            >
+              <FlexiCell.Label className="font-normal" tag="h4">
+                {name}
+              </FlexiCell.Label>
+              <FlexiCell.Hint>{number}</FlexiCell.Hint>
+            </FlexiCell>
+          ))}
+        </div>
       ))}
     </>
   );
@@ -377,11 +375,7 @@
                 tag="a"
                 href="#"
                 key={name}
-                before={
-                  <FlexiCell.Circle className="bg-muted text-white">
-                    {initials}
-                  </FlexiCell.Circle>
-                }
+                before={<FlexiCell.Circle className="bg-muted text-white">{initials}</FlexiCell.Circle>}
                 after={
                   <FlexiCell.Adornment align="center">
                     <FlexiCell.Label rightLabel tag="h4">
@@ -398,11 +392,7 @@
                 href="#"
                 dualAction
                 key={name}
-                before={
-                  <FlexiCell.Circle className="bg-muted text-white">
-                    {initials}
-                  </FlexiCell.Circle>
-                }
+                before={<FlexiCell.Circle className="bg-muted text-white">{initials}</FlexiCell.Circle>}
                 after={<FlexiCell.Button icon={() => <InfoIcon look="outlined" />} />}
               >
                 <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
@@ -675,11 +665,7 @@
               </FlexiCell.Circle>
             </FlexiCell.Adornment>
           }
-          topBadge={({ className }) => (
-            <Badge className={className + " leading-normal"}>
-              Corner flag
-            </Badge>
-          )}
+          topBadge={({ className }) => <Badge className={className + ' leading-normal'}>Corner flag</Badge>}
         >
           <FlexiCell.Label className="text-[12px] font-normal text-muted" tag="p">
             MYER
@@ -727,11 +713,7 @@
           href="#"
           tag="a"
           withBorder
-          topBadge={({ className }) => (
-            <Badge className={className + " leading-normal"}>
-              Corner flag
-            </Badge>
-          )}
+          topBadge={({ className }) => <Badge className={className + ' leading-normal'}>Corner flag</Badge>}
         >
           <FlexiCell.Adornment className="mb-1">
             <img
@@ -768,51 +750,51 @@
   return (
     <>
       <FlexiCell
-      tag="a"
-      href="#"
-      withBorder
-      withArrow
-      key={title}
-      before={
-        <FlexiCell.Adornment className="max-sm:hidden">
-          <GiftIcon look="outlined" color="hero" />
-        </FlexiCell.Adornment>
-      }
-      after={
-        <Badge className="h-fit w-fit" color="success">
-          Completed
-        </Badge>
-      }
-    >
-      <GiftIcon className="sm:hidden" look="outlined" color="hero" />
-      <FlexiCell.Label className="text-hero" tag="h4">
-        {title}
-      </FlexiCell.Label>
-      <FlexiCell.Hint>{subtitle}</FlexiCell.Hint>
-    </FlexiCell>
-    <FlexiCell
-      tag="a"
-      href="#"
-      withBorder
-      withArrow
-      key={title}
-      before={
-        <FlexiCell.Adornment className="max-sm:hidden">
-          <PadlockIcon look="outlined" color="hero" />
-        </FlexiCell.Adornment>
-      }
-      after={
-        <Badge className="h-fit w-fit" color="success">
-          Completed
-        </Badge>
-      }
-    >
-      <PadlockIcon className="sm:hidden" look="outlined" color="hero" />
-      <FlexiCell.Label className="text-hero" tag="h4">
-        {title}
-      </FlexiCell.Label>
-      <FlexiCell.Hint>{subtitle}</FlexiCell.Hint>
-    </FlexiCell>
+        tag="a"
+        href="#"
+        withBorder
+        withArrow
+        key={title}
+        before={
+          <FlexiCell.Adornment className="max-sm:hidden">
+            <GiftIcon look="outlined" color="hero" />
+          </FlexiCell.Adornment>
+        }
+        after={
+          <Badge className="h-fit w-fit" color="success">
+            Completed
+          </Badge>
+        }
+      >
+        <GiftIcon className="sm:hidden" look="outlined" color="hero" />
+        <FlexiCell.Label className="text-hero" tag="h4">
+          {title}
+        </FlexiCell.Label>
+        <FlexiCell.Hint>{subtitle}</FlexiCell.Hint>
+      </FlexiCell>
+      <FlexiCell
+        tag="a"
+        href="#"
+        withBorder
+        withArrow
+        key={title}
+        before={
+          <FlexiCell.Adornment className="max-sm:hidden">
+            <PadlockIcon look="outlined" color="hero" />
+          </FlexiCell.Adornment>
+        }
+        after={
+          <Badge className="h-fit w-fit" color="success">
+            Completed
+          </Badge>
+        }
+      >
+        <PadlockIcon className="sm:hidden" look="outlined" color="hero" />
+        <FlexiCell.Label className="text-hero" tag="h4">
+          {title}
+        </FlexiCell.Label>
+        <FlexiCell.Hint>{subtitle}</FlexiCell.Hint>
+      </FlexiCell>
     </>
   );
 };
