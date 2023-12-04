@@ -1,6 +1,6 @@
 name: Unit testing
 description: >-
-  Recommendations for how to handle unit testing
+  Unit testing is key to ensuring that your applications are working as expected. This guide will help you get started with unit testing your applications.
 design:
   - title:
       name: Unit testing
