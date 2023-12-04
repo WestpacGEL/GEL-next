@@ -7,8 +7,8 @@ design:
       name: Pre-requisites
       slug: pre-requisites
   - title:
-      name: Quick setup
-      slug: quick-setup
+      name: Installation
+      slug: installation
   - title:
       name: Resources
       slug: resources
