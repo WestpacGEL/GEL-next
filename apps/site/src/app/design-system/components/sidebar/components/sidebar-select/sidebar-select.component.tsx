@@ -33,7 +33,7 @@ export function SidebarSelect(props: SidebarSelectProps) {
 
       <button {...mergeProps(buttonProps, focusProps)} ref={ref} className={styles.button()}>
         <div className={styles.textWrapper()}>
-          <div className="typography-body-11 w-full text-left leading-normal" {...valueProps}>
+          <div className="typography-body-11 w-full text-left leading-[1.5]" {...valueProps}>
             Change brand
           </div>
         </div>
