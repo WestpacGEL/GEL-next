@@ -17,7 +17,8 @@ npm i react@^18.2.0
 npm i -D tailwindcss postcss autoprefixer
 ```
 
-GEL is using [Tailwind](https://tailwindcss.com/docs/installation) for styling. Highly likely you will be using `GEL` with `Next.js` or `Vite`. Therefore, follow the [framework specific installation guide](https://tailwindcss.com/docs/installation/framework-guides) for Tailwind.
+GEL is using [Tailwind](https://tailwindcss.com/) for styling. Visit the [Tailwind docs](https://tailwindcss.com/docs/installation/framework-guides) to learn more about installation and usage.
+
 
 ### Installation
 
@@ -35,7 +36,6 @@ import { withGEL } from '@westpac/ui/tailwind';
 /** @type {import('tailwindcss').Config} */
 const config = withGEL({
   relative: true,
-  mode: 'jit',
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
   safelist: [],
 });
@@ -48,7 +48,6 @@ For applications using `brand fonts` add the following options config to the `wi
 ```ts
 const config = withGEL({
   relative: true,
-  mode: 'jit',
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
   safelist: [],
   options: {
@@ -62,6 +61,8 @@ const config = withGEL({
 
 ### Usage
 
+#### Using brands
+
 Add a custom attribute tag `data-theme="brand_name"` to `html` tag. Note that instead of adding the custom attribute to html tag, you can add it to the parent tag of your application as well.
 
 Following example shows adding `wbc` theme. You can add other valid brand names such as `stg`, `bom`, `bsa`, `rams`, `wbg` etc. as the value.
@@ -73,25 +74,13 @@ Following example shows adding `wbc` theme. You can add other valid brand names 
 </html>
 ```
 
-Now you can start using the GEL components in your `React.js` application. Following example shows how to use the `Button` component.
+Now you can start using the GEL components in your `React.js` application. The following examples show how to use the `Button` component.
 
 For detailed documentation refer to [https://gel.westpacgroup.com.au/design-system](https://gel.westpacgroup.com.au/design-system).
 
-```tsx
-import { Button } from '@westpac/ui';
+#### Individual package import
 
-export default function SampleApp() {
-  return (
-    <section>
-      <div className="space-x-4 mb-2">
-        <Button look="primary">Pay here</Button>
-      </div>
-    </section>
-  );
-}
-```
-
-The following example shows how to import a component individually. (Recommended if running into issues with tree-shaking and bundle size in applications)
+We recommended the individual package import approach if you have issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking).
 
 ```tsx
 import { Button } from '@westpac/ui/button';
@@ -107,11 +96,31 @@ export default function SampleApp() {
 }
 ```
 
+#### Mono package import
+
+Modern bundlers like [Vite](https://vitejs.dev/) will automatically detect the individual components and only bundle the components you use.
+
+However, use this approach with caution as it may cause issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) since not all bundlers have this advanced capability.
+
+```tsx
+import { Button } from '@westpac/ui';
+
+export default function SampleApp() {
+  return (
+    <section>
+      <div className="space-x-4 mb-2">
+        <Button look="primary">Pay here</Button>
+      </div>
+    </section>
+  );
+}
+```
+
 ### Unit testing
 
-We recommend [vitest](https://vitest.dev/) for unit testing since `vitest` natively supports `ESM` modules.
+We recommend [Vitest](https://vitest.dev/) for unit testing since [Vitest](https://vitest.dev/guide/why.html) natively supports [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
-If you are using `jest` for unit testing, you might encounter some issues since `jest` does not support `ESM` modules by default. Therefore, you will need to make following configuration changes to the `jest` test runner.
+If you are using [Jest](https://jestjs.io/) for unit testing, you might encounter some issues since [Jest](https://jestjs.io/docs/ecmascript-modules) does not support [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) by default. Therefore, you will need to make following configuration changes to the [Jest configuration file](https://jestjs.io/docs/configuration).
 
 ```ts
 // jest.config.ts
@@ -122,6 +131,7 @@ const customJestConfig = {
 ```
 
 ```json
+// package.json
 {
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
