@@ -12,10 +12,9 @@ Update `tailwind.config.js` to use the `withGEL` helper exported by `@westpac/ui
 
     /** @type {import('tailwindcss').Config} */
     const config = withGEL({
-    relative: true,
-    mode: 'jit',
-    content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
-    safelist: [],
+        relative: true,
+        content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
+        safelist: [],
     });
 
     export default config;
@@ -27,10 +26,9 @@ For applications using `brand fonts` add the following options config to the `wi
 ```html
 <StaticCode language="jsx" code={`
     import { withGEL } from '@westpac/ui/tailwind';
-    
+
     const config = withGEL({
         relative: true,
-        mode: 'jit',
         content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
         safelist: [],
         options: {
@@ -42,6 +40,6 @@ For applications using `brand fonts` add the following options config to the `wi
             brands: ['wbc', 'stg'], 
             },
         },
-        });
+    });
 `} />
 ```

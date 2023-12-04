@@ -2,21 +2,21 @@ After setting up the [brand](/design-system/development/guides/brand?brand=wbc) 
 
 ### Individual package import
 
-We recommended individual package import approach if you have issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking).
+We recommended the individual package import approach if you have issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking).
 
 ```html
 <StaticCode language="tsx" code={`
-    import { Button } from '@westpac/ui/button';
+  import { Button } from '@westpac/ui/button';
 
-    export default function SampleApp() {
-      return (
-        <section>
-          <div className="space-x-4 mb-2">
-            <Button look="primary">Pay here</Button>
-          </div>
-        </section>
-      );
-    }
+  export default function SampleApp() {
+    return (
+      <section>
+        <div className="space-x-4 mb-2">
+          <Button look="primary">Pay here</Button>
+        </div>
+      </section>
+    );
+  }
 `} />
 ```
 
@@ -24,20 +24,20 @@ We recommended individual package import approach if you have issues with [Tree 
 
 Modern bundlers like [Vite](https://vitejs.dev/) will automatically detect the individual components and only bundle the components you use.
 
-However, use this approach with caution as it may cause issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) since not all the bundlers got this advanced capability.
+However, use this approach with caution as it may cause issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) since not all bundlers have this advanced capability.
 
 ```html
 <StaticCode language="tsx" code={`
-    import { Button } from '@westpac/ui';
+  import { Button } from '@westpac/ui';
 
-    export default function SampleApp() {
-        return (
-            <section>
-                <div className="space-x-4 mb-2">
-                    <Button look="primary">Pay here</Button>
-                </div>
-            </section>
-        );
-    }
+  export default function SampleApp() {
+      return (
+          <section>
+              <div className="space-x-4 mb-2">
+                  <Button look="primary">Pay here</Button>
+              </div>
+          </section>
+      );
+  }
 `} />
 ```
