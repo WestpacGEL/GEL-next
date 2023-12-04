@@ -1,6 +1,6 @@
 name: Usage
 description: >-
-  There are a couple of different ways you can use GEL components in your application.
+  This page describes how to use GEL components within your application.
 design:
   - title:
       name: Using components

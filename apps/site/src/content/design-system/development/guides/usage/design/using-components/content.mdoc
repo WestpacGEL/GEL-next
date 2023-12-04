@@ -1,28 +1,8 @@
-### Directly from the package
+After setting up the [brand](/design-system/development/guides/brand?brand=wbc) you can start using the GEL components in your [React](https://react.dev/) application.
 
-After setting up the [brand](/design-system/development/guides/brand?brand=wbc) you can start using the GEL components in your [React](https://react.dev/) application. The following example shows how to use the [Button](/design-system/components/button?brand=wbc) component.
+### Individual package import
 
-For detailed information on specific components refer to the Components section of this site.
-
-```html
-<StaticCode language="tsx" code={`
-    import { Button } from '@westpac/ui';
-
-    export default function SampleApp() {
-        return (
-            <section>
-                <div className="space-x-4 mb-2">
-                    <Button look="primary">Pay here</Button>
-                </div>
-            </section>
-        );
-    }
-`} />
-```
-
-### Individually from the package
-
-The following example shows how to import a component individually. (Recommended if running into issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) and bundle size in applications)
+We recommended individual package import approach if you have issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking).
 
 ```html
 <StaticCode language="tsx" code={`
@@ -36,6 +16,28 @@ The following example shows how to import a component individually. (Recommended
           </div>
         </section>
       );
+    }
+`} />
+```
+
+### Mono package import
+
+Modern bundlers like [Vite](https://vitejs.dev/) will automatically detect the individual components and only bundle the components you use.
+
+However, use this approach with caution as it may cause issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) since not all the bundlers got this advanced capability.
+
+```html
+<StaticCode language="tsx" code={`
+    import { Button } from '@westpac/ui';
+
+    export default function SampleApp() {
+        return (
+            <section>
+                <div className="space-x-4 mb-2">
+                    <Button look="primary">Pay here</Button>
+                </div>
+            </section>
+        );
     }
 `} />
 ```
