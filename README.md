@@ -19,7 +19,6 @@ npm i -D tailwindcss postcss autoprefixer
 
 GEL is using [Tailwind](https://tailwindcss.com/) for styling. Visit the [Tailwind docs](https://tailwindcss.com/docs/installation/framework-guides) to learn more about installation and usage.
 
-
 ### Installation
 
 GEL can be installed using a package manager like `npm`, `yarn` or `pnpm`.
