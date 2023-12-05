@@ -254,7 +254,10 @@ export default config({
           links: true,
           label: 'Design',
           componentBlocks: ArticleComponentBlocks,
-          layouts: [[6, 6]],
+          layouts: [
+            [4, 4],
+            [5, 5],
+          ],
           images: {
             directory: 'public/images/articles/content',
             publicPath: '/images/articles/content',

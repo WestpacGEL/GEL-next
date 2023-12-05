@@ -32,6 +32,14 @@ export const ArticleComponentBlocks = {
       title: fields.text({
         label: 'Title',
       }),
+      type: fields.select({
+        label: 'Image width',
+        options: [
+          { label: 'Body', value: 'body' },
+          { label: 'Body Wide', value: 'bodyWide' },
+        ],
+        defaultValue: 'body',
+      }),
     },
   }),
   leadingText: component({
