@@ -58,7 +58,6 @@ export function Panel({ className, children, state, block, id, ...props }: Panel
     <div
       {...mergeProps(popoverProps, focusProps)}
       id={id}
-      data-testid="panel-dialog"
       style={{ ...popoverProps.style, width: block && width ? `${width}px` : undefined }}
       ref={popoverRef}
       className={styles.base({ className })}
