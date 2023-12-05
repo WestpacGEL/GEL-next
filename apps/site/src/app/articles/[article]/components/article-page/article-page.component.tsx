@@ -14,39 +14,35 @@ import { type ArticlePageProps } from './article-page.types';
 export function ArticlePage({ article, author }: ArticlePageProps) {
   return (
     <>
-      <div>
-        <div className="bg-gradient-to-b from-white from-25% to-gel-background">
-          <Container className=" pt-8 xsl:pt-10 sm:pt-11">
-            <Grid className="gap-y-5 xsl:gap-y-6 sm:gap-y-8">
-              <div className="col-span-12">
-                <h1 className="typography-site-6 mb-2 font-black !leading-[1.1] tracking-[-1px] xsl:typography-site-3 xsl:mb-3">
-                  {article.name}
-                </h1>
-                <p className="typography-site-9 text-gel-muted">{author?.name}</p>
-              </div>
-              <div className="col-span-12 mb-7 xsl:mb-9">
-                {article.image && (
-                  <figure>
-                    <img alt={article.name} src={article.image} className="block h-auto w-full" />
-                  </figure>
-                )}
-              </div>
-            </Grid>
-          </Container>
-        </div>
-        <Container>
-          <Grid>
-            <div className="col-span-12 pb-14.5 xsl:col-span-10 xsl:col-start-2 md:col-span-8 md:col-start-3">
-              <LeadingText text={article.description} />
-              <DocumentRenderer
-                document={article.content}
-                renderers={DOCUMENT_RENDERERS}
-                componentBlocks={ArticleComponentBlocksComponents}
-              />
+      <div className="bg-gradient-to-b from-white from-25% to-gel-background">
+        <Container className=" pt-8 xsl:pt-10 sm:pt-11">
+          <Grid className="gap-y-5 xsl:gap-y-6 sm:gap-y-8">
+            <div className="col-span-12">
+              <h1 className="typography-site-6 mb-2 font-black !leading-[1.1] tracking-[-1px] xsl:typography-site-3 xsl:mb-3">
+                {article.name}
+              </h1>
+              <p className="typography-site-9 text-gel-muted">{author?.name}</p>
+            </div>
+            <div className="col-span-12 mb-7 xsl:mb-9">
+              {article.image && (
+                <figure>
+                  <img alt={article.name} src={article.image} className="block h-auto w-full" />
+                </figure>
+              )}
             </div>
           </Grid>
         </Container>
       </div>
+      <Container className="pb-8 xsl:pb-10 sm:pb-11">
+        <Grid className="gap-y-0 xsl:gap-y-0 sm:gap-y-0">
+          <LeadingText text={article.description} />
+          <DocumentRenderer
+            document={article.content}
+            renderers={DOCUMENT_RENDERERS}
+            componentBlocks={ArticleComponentBlocksComponents}
+          />
+        </Grid>
+      </Container>
       <StickyFooter />
     </>
   );
