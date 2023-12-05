@@ -26,6 +26,10 @@ export type InputFieldProps = {
    */
   children?: ReactNode;
   /**
+   * className
+   */
+  className?: string;
+  /**
    * Error message text
    */
   errorMessage?: string | string[];

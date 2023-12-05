@@ -100,5 +100,7 @@ export {
   ManualAddress,
   InternationalAddress,
   ComplexAddressDemo,
+  EmploymentAutocompletePattern,
+  EmploymentSelectFullPattern,
 } from './components/demos';
 export { Hr, Body } from './components/utils';

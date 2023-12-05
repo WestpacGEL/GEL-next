@@ -2,4 +2,17 @@ The error message should always sit above the input field to give context. The e
 
 ### Simple name with error
 
-Loading...
+```tsx
+<Form spacing="large">
+  <Form.Group>
+    <Field label="Given name">
+      <Input size="large" className="w-6/12" />
+    </Field>
+  </Form.Group>
+  <Form.Group>
+    <Field label="Family name" errorMessage="Error message goes here if activated">
+      <Input invalid size="large" className="w-6/12" />
+    </Field>
+  </Form.Group>
+</Form>
+```

@@ -13,9 +13,6 @@ design:
   - title:
       name: Error states
       slug: error-states
-  - title:
-      name: Pattern examples in code
-      slug: pattern-examples-in-code
 accessibility: []
 relatedComponents:
   - title: Text inputs

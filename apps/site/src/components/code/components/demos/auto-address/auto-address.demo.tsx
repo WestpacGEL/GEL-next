@@ -23,7 +23,7 @@ const StreetHint = ({ manual, onClick }: { manual: boolean; onClick: (manual: bo
 
 const Footer = ({ manual, onClick }: { manual: boolean; onClick: (manual: boolean) => any }) => (
   <Fragment>
-    Can't find your address?{' '}
+    Can&apos;t find your address?{' '}
     <Link
       type="inline"
       onClick={e => {
@@ -57,25 +57,25 @@ export function ManualAddress({
           label="Street"
           hintMessage={<StreetHint manual={manual} onClick={() => onClick(manual)} />}
         >
-          <Input invalid={withError} className="w-full" ref={streetLegendRef} />
+          <Input size="large" invalid={withError} className="w-full" ref={streetLegendRef} />
         </Field>
         <Field>
-          <Input className="w-full" />
+          <Input size="large" className="w-full" />
         </Field>
       </Form.Group>
       <Form.Group>
         <Field errorMessage={errorMessage} label="Suburb">
-          <Input invalid={withError} className="w-full sm:w-7/12" />
+          <Input size="large" invalid={withError} className="w-full sm:w-8/12" />
         </Field>
       </Form.Group>
       <Form.Group>
         <Field errorMessage={errorMessage} label="State">
-          <Input invalid={withError} />
+          <Input size="large" invalid={withError} />
         </Field>
       </Form.Group>
       <Form.Group>
         <Field errorMessage={errorMessage} label="Postcode">
-          <Input invalid={withError} className="w-full sm:w-2/12" />
+          <Input size="large" invalid={withError} className="w-full sm:w-2/12" />
         </Field>
       </Form.Group>
     </div>
@@ -125,11 +125,7 @@ export function InternationalAddress({
   return (
     <div>
       <Form.Group>
-        <Field
-          errorMessage={errorMessage}
-          label="Street"
-          hintMessage={<StreetHint manual={manual} onClick={() => onClick(manual)} />}
-        >
+        <Field errorMessage={errorMessage} label="Street">
           <Input invalid={withError} className="w-full" ref={streetLegendRef} />
         </Field>
         <Field>
@@ -138,12 +134,12 @@ export function InternationalAddress({
       </Form.Group>
       <Form.Group>
         <Field errorMessage={errorMessage} label="City, town or suburb">
-          <Input invalid={withError} className="w-full sm:w-7/12" />
+          <Input invalid={withError} className="w-full sm:w-8/12" />
         </Field>
       </Form.Group>
       <Form.Group>
         <Field errorMessage={errorMessage} label="State, province or region">
-          <Input invalid={withError} />
+          <Input invalid={withError} className="w-full sm:w-8/12" />
         </Field>
       </Form.Group>
       <Form.Group>
@@ -162,7 +158,7 @@ export function InternationalAddress({
             invalid={withError}
             footer={
               <Fragment>
-                Can't find your country?{' '}
+                Can&apos;t find your country?{' '}
                 <Link
                   type="inline"
                   onClick={e => {

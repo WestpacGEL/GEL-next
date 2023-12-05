@@ -9,7 +9,7 @@ The error message should always sit above the input field to give context. The e
       <Form.Group>{hasDifferentMailingAddress && <ManualAddress withError />}</Form.Group>
       <Form.Group>
         <Field label="Do you have a different mailing address?">
-          <ButtonGroup value={hasDifferentMailingAddress} onChange={value => setHasDifferentMailingAddress(value)}>
+          <ButtonGroup size="large" value={hasDifferentMailingAddress} onChange={value => setHasDifferentMailingAddress(value)}>
             <ButtonGroup.Button value={true}>Yes</ButtonGroup.Button>
             <ButtonGroup.Button value={false}>No</ButtonGroup.Button>
           </ButtonGroup>

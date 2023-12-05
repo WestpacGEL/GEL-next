@@ -21,6 +21,7 @@ export function InputField({
   before,
   children,
   tag: Tag = 'div',
+  className,
   ...props
 }: InputFieldProps) {
   const _id = useId();
@@ -86,7 +87,7 @@ export function InputField({
   const isFieldset = useMemo(() => Tag === 'fieldset', [Tag]);
 
   return (
-    <Tag className={styles({ before: !!before, after: !!after, afterInset, beforeInset })} {...props}>
+    <Tag className={styles({ before: !!before, after: !!after, afterInset, beforeInset, className })} {...props}>
       {label && (
         <FormLabel srOnly={hideLabel} tag={isFieldset ? 'legend' : 'label'} {...(!isFieldset && { htmlFor: id })}>
           {label}
