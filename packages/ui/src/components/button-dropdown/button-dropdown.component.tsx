@@ -28,7 +28,7 @@ export function ButtonDropdown({
   const panelId = useId();
   const styles = buttonDropdownStyles({ block, dropdownSize });
   const state = useOverlayTriggerState({ defaultOpen: open });
-  const { overlayProps, triggerProps } = useOverlayTrigger({ type: 'menu' }, state, ref);
+  const { triggerProps } = useOverlayTrigger({ type: 'menu' }, state, ref);
   const { buttonProps } = useButton(triggerProps, ref);
 
   // React Aria does not check for escape key press unless panel is focused so this is needed
@@ -71,7 +71,6 @@ export function ButtonDropdown({
           state={state}
           block={block}
           id={panelId}
-          {...overlayProps}
         >
           {children}
         </Panel>

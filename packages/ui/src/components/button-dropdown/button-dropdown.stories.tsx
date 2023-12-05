@@ -1,6 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
 import { AndroidIcon } from '../icon/index.js';
+import { List } from '../index.js';
 
 import { ButtonDropdown } from './button-dropdown.component.js';
 
@@ -218,3 +219,29 @@ export const Open: Story = {
     ),
   },
 };
+
+/**
+ * > With headings and content example
+ */
+export const DropdownWithHeadingsAndContent = () => (
+  <div className="flex gap-4">
+    <ButtonDropdown text="Products" look="primary">
+      <ButtonDropdown.Heading>Credit cards</ButtonDropdown.Heading>
+      <List type="link" spacing="large">
+        <List.Item href="#">Rewards</List.Item>
+        <List.Item href="#">Low rate</List.Item>
+      </List>
+      <ButtonDropdown.Heading>Bank accounts</ButtonDropdown.Heading>
+      <List type="link" spacing="large">
+        <List.Item href="#">Savings</List.Item>
+        <List.Item href="#">Transaction</List.Item>
+      </List>
+    </ButtonDropdown>
+    <ButtonDropdown text="Credit cards" look="primary">
+      <List type="link" spacing="large">
+        <List.Item href="#">Rewards</List.Item>
+        <List.Item href="#">Low rate</List.Item>
+      </List>
+    </ButtonDropdown>
+  </div>
+);
