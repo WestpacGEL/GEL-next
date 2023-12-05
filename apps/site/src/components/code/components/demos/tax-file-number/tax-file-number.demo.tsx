@@ -58,12 +58,11 @@ export const TaxFileNumberPattern = ({ showPrevious = false, showErrors = false 
           </Field>
         </Form.Group>
       )}
-
       {value === 'provide-later' && (
         <Alert>
           {/* TODO: BRand.Name */}
-          You can provide your TFN at any time via phone or at a BRAND.name branch. In the meantime, please note, we
-          may need to withhold tax from any interest you earn.
+          You can provide your TFN at any time via phone or at a BRAND.name branch. In the meantime, please note, we may
+          need to withhold tax from any interest you earn.
         </Alert>
       )}
     </Fragment>
