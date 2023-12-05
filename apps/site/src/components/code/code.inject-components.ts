@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+export { StaticCode } from '../static-code/index';
+
 export { ComponentTitle } from '../document-renderer/component-title';
 
 export {

@@ -30,9 +30,11 @@ export const Default = () => {
         <Form>
           <Form.Group>
             <Form.Label htmlFor={`primary-${id}`}>Primary</Form.Label>
-            <Form.Hint>Primary title text</Form.Hint>
+            <Form.Hint id={`primary-hint-${id}`}>Primary title text</Form.Hint>
             <Input
+              aria-describedby={`primary-hint-${id}`}
               name={`primary-${id}`}
+              id={`primary-${id}`}
               value={inputs[`primary-${id}` as keyof typeof inputs] || ''}
               onChange={e => {
                 handleChange(e);
@@ -42,9 +44,11 @@ export const Default = () => {
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor={`secondary-${id}`}>Secondary</Form.Label>
-            <Form.Hint>Secondary title text</Form.Hint>
+            <Form.Hint id={`secondary-hint-${id}`}>Secondary title text</Form.Hint>
             <Input
+              aria-describedby={`secondary-hint-${id}`}
               name={`secondary-${id}`}
+              id={`secondary-${id}`}
               value={inputs[`secondary-${id}` as keyof typeof inputs] || ''}
               onChange={e => {
                 handleChange(e);
@@ -54,9 +58,11 @@ export const Default = () => {
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor={`tertiary-${id}`}>Tertiary</Form.Label>
-            <Form.Hint>Tertiary title text</Form.Hint>
+            <Form.Hint id={`tertiary-hint-${id}`}>Tertiary title text</Form.Hint>
             <Input
+              aria-describedby={`tertiary-hint-${id}`}
               name={`tertiary-${id}`}
+              id={`tertiary-${id}`}
               value={inputs[`tertiary-${id}` as keyof typeof inputs] || ''}
               onChange={e => {
                 handleChange(e);

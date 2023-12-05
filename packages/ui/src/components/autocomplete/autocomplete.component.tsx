@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useMemo } from 'react';
-import { useButton, useComboBox, useFilter, useSearchField } from 'react-aria';
+import { mergeProps, useButton, useComboBox, useFilter, useFocusRing, useSearchField } from 'react-aria';
 import { Item, useComboBoxState, useSearchFieldState } from 'react-stately';
 
 import { ClearIcon } from '../icon/index.js';
@@ -41,6 +41,7 @@ export function Autocomplete<T extends object>({
 }: AutocompleteProps<T>) {
   const { contains } = useFilter({ sensitivity: 'base' });
   const state = useComboBoxState({ isDisabled, ...props, defaultFilter: contains });
+  const { isFocusVisible, focusProps } = useFocusRing();
   const inputRef = React.useRef(null);
   const listBoxRef = React.useRef(null);
   const popoverRef = React.useRef(null);
@@ -61,6 +62,11 @@ export function Autocomplete<T extends object>({
     size,
     invalid,
   });
+
+  const { clearButton: clearButtonStyle } = autocompleteStyles({
+    isFocused: isFocusVisible,
+  });
+
   // Get props for the clear button from useSearchField
   const searchProps = {
     label: props.label,
@@ -96,10 +102,13 @@ export function Autocomplete<T extends object>({
         <input {...inputProps} ref={inputRef} className={styles.input()} />
 
         <button
-          {...buttonProps}
+          {...mergeProps(buttonProps, focusProps)}
+          //React Aria provides Esc key to clear the input field. But accessibility guidelines require clear button to be focused. So we are preventing the default behavior of Esc key.
+          onKeyDown={() => false}
+          tabIndex={0}
           ref={clearButtonRef}
           style={{ visibility: state.inputValue !== '' ? 'visible' : 'hidden' }}
-          className={styles.clearButton()}
+          className={clearButtonStyle()}
         >
           <ClearIcon aria-hidden="true" color="muted" size="small" />
         </button>

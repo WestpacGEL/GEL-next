@@ -1,0 +1,45 @@
+GEL can be installed using a package manager like `npm`, `yarn` or `pnpm`.
+
+```html
+<StaticCode language="js" code={`npm i @westpac/ui`} />
+```
+
+Update `tailwind.config.js` to use the `withGEL` helper exported by `@westpac/ui` as follows.
+
+```html
+<StaticCode language="jsx" code={`
+    import { withGEL } from '@westpac/ui/tailwind';
+
+    /** @type {import('tailwindcss').Config} */
+    const config = withGEL({
+        relative: true,
+        content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
+        safelist: [],
+    });
+
+    export default config;
+`} />
+```
+
+For applications using `brand fonts` add the following options config to the `withGEL` helper.
+
+```html
+<StaticCode language="jsx" code={`
+    import { withGEL } from '@westpac/ui/tailwind';
+
+    const config = withGEL({
+        relative: true,
+        content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
+        safelist: [],
+        options: {
+            brandFonts: {
+            // path to font files
+            src: '/fonts', 
+            /** takes a single brand string e.g. 'wbc' or an array of brands. 
+            If no brands are specified will import all brands by default */
+            brands: ['wbc', 'stg'], 
+            },
+        },
+    });
+`} />
+```

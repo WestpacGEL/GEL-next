@@ -1,0 +1,12 @@
+Add a custom attribute tag `data-theme="brand_name"` to the base `html` tag. Note that instead of adding the custom attribute to the html tag, you can add it to the parent tag of your application as well.
+
+The following example shows adding the `wbc` theme. You can add other valid brand names such as `stg`, `bom`, `bsa`, `rams`, `wbg` etc. as the value.
+
+```html
+<StaticCode language="jsx" code={`
+    <!DOCTYPE html>
+    <html lang="en" data-theme="wbc">
+    ...
+    </html>
+`} />
+```

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { DismissButton, Overlay, mergeProps, useFocusRing, usePopover } from 'react-aria';
+import { DismissButton, mergeProps, useFocusRing, usePopover } from 'react-aria';
 
 import { styles as panelStyles } from './panel.styles.js';
 import { type PanelProps } from './panel.types.js';
@@ -55,19 +55,16 @@ export function Panel({ className, children, state, block, id, ...props }: Panel
   }, []);
 
   return (
-    <Overlay>
-      <div
-        {...mergeProps(popoverProps, focusProps)}
-        id={id}
-        data-testid="panel-dialog"
-        style={{ ...popoverProps.style, width: block && width ? `${width}px` : undefined }}
-        ref={popoverRef}
-        className={styles.base({ className })}
-      >
-        <DismissButton onDismiss={state.close} />
-        <div className={styles.dialog()}>{children}</div>
-        <DismissButton onDismiss={state.close} />
-      </div>
-    </Overlay>
+    <div
+      {...mergeProps(popoverProps, focusProps)}
+      id={id}
+      style={{ ...popoverProps.style, width: block && width ? `${width}px` : undefined }}
+      ref={popoverRef}
+      className={styles.base({ className })}
+    >
+      <DismissButton onDismiss={state.close} />
+      <div className={styles.dialog()}>{children}</div>
+      <DismissButton onDismiss={state.close} />
+    </div>
   );
 }

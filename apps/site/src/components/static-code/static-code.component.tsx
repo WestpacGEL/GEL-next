@@ -9,7 +9,7 @@ export const StaticCode = ({
   language = '', // By default render as plain text (ie. no language)
 }: StaticCodeProps) => {
   return (
-    <div className="relative overflow-hidden rounded-md">
+    <div className="relative overflow-hidden">
       <Highlight code={code} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={[className, 'p-2'].join(' ')} style={style}>
@@ -25,9 +25,12 @@ export const StaticCode = ({
           </pre>
         )}
       </Highlight>
-      <Button className="absolute right-0 top-0" onClick={() => copy(code)}>
+      <button
+        className="typography-body-10 absolute right-0 top-0 p-1 pr-2 text-white opacity-50 transition-opacity hover:opacity-100"
+        onClick={() => copy(code)}
+      >
         Copy code
-      </Button>
+      </button>
     </div>
   );
 };
