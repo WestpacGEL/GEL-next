@@ -104,5 +104,6 @@ export {
   ComplexAddressDemo,
   EmploymentAutocompletePattern,
   EmploymentSelectFullPattern,
+  TaxFileNumberPattern,
 } from './components/demos';
 export { Hr, Body } from './components/utils';
