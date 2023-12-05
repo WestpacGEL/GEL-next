@@ -39,7 +39,7 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
   const invalid = showErrors;
 
   const [employment, setEmployment] = useState<string>();
-  const [prevEmployment, setPrevEmployment] = useState();
+  const [prevEmployment, setPrevEmployment] = useState<string>();
   const [years, setYears] = useState<number>();
 
   const employed = ['full', 'part', 'casual-seasonal', 'self'];
@@ -109,7 +109,7 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
           </Alert>
           <Form.Group>
             <Field label="Previous employment type">
-              <EmploymentSelect value={prevEmployment} onChange={e => setPrevEmployment(e.target.value)} />
+              <EmploymentSelect value={prevEmployment} onChange={(e: any) => setPrevEmployment(e.target.value)} />
             </Field>
           </Form.Group>
           <Form.Group>
