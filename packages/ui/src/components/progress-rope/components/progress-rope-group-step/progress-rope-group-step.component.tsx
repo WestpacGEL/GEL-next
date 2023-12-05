@@ -79,7 +79,7 @@ export function ProgressRopeGroupStep({
               }}
               transition={{ duration: 0.2, ease: 'easeInOut' }}
             >
-              <ul className={styles.stepsWrapper({})} id={stepsContainerID} aria-hidden={!opened}>
+              <ol className={styles.stepsWrapper({})} id={stepsContainerID} aria-hidden={!opened}>
                 {steps.map((step, index) => (
                   <li key={step.index}>
                     <ProgressRopeStep
@@ -93,7 +93,7 @@ export function ProgressRopeGroupStep({
                     </ProgressRopeStep>
                   </li>
                 ))}
-              </ul>
+              </ol>
             </m.div>
           )}
         </AnimatePresence>

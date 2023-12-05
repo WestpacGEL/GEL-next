@@ -30,12 +30,12 @@ export const Default: Story = {
       [],
     );
     const PROGRESS_ROPE_DATA: ProgressRopeProps['data'] = [
-      { text: <h3>Step 1</h3>, onClick: handleClick(0) },
-      { text: <h3>Step 2</h3>, onClick: handleClick(1) },
-      { text: <h3>Step 3</h3>, onClick: handleClick(2) },
-      { text: <h3>Step 4</h3>, onClick: handleClick(3) },
-      { text: <h3>Step 5</h3>, onClick: handleClick(4) },
-      { text: <h3>Review and Submit</h3>, onClick: handleClick(5) },
+      { text: <div>Step 1</div>, onClick: handleClick(0) },
+      { text: <div>Step 2</div>, onClick: handleClick(1) },
+      { text: <div>Step 3</div>, onClick: handleClick(2) },
+      { text: <div>Step 4</div>, onClick: handleClick(3) },
+      { text: <div>Step 5</div>, onClick: handleClick(4) },
+      { text: <div>Review and Submit</div>, onClick: handleClick(5) },
     ];
 
     return (

@@ -71,7 +71,7 @@ export function ProgressRope({
 
   return (
     <Tag className={className} role={role} aria-label={ariaLabel} {...props}>
-      <ul className={styles({})}>
+      <ol className={styles({})}>
         {mappedData?.map((item, index) => {
           return (
             <li key={index}>
@@ -100,7 +100,7 @@ export function ProgressRope({
             </li>
           );
         })}
-      </ul>
+      </ol>
     </Tag>
   );
 }
