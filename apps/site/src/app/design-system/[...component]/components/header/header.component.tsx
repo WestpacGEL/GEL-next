@@ -37,9 +37,9 @@ export function Header({ className, title }: { className?: string; title?: strin
       </button>
 
       <div className={styles.gridButtonWrapper()}>
-        <span className="hidden sm:block md:hidden">SM</span>
-        <span className="hidden md:block lg:hidden">MD</span>
-        <span className="hidden lg:block">LG</span>
+        <span className="hidden font-bold sm:block md:hidden">SM</span>
+        <span className="hidden font-bold md:block lg:hidden">MD</span>
+        <span className="hidden font-bold lg:block">LG</span>
         <button
           className={styles.gridButton()}
           onClick={() => {
