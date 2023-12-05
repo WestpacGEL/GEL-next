@@ -9,9 +9,11 @@ export function StickyHeader({
   stickyPosition = 0,
   className,
   children,
+  shadow = 'thick',
 }: {
   children: React.ReactNode;
   className?: string;
+  shadow?: 'thick' | 'thin';
   stickyPosition?: number;
 }) {
   const ref = useRef(null);
@@ -48,7 +50,7 @@ export function StickyHeader({
   }, []);
 
   return (
-    <div ref={ref} className={styles({ shadow: stuck && scrolled, className })}>
+    <div ref={ref} className={styles({ shadow: stuck && scrolled ? shadow : 'none', className })}>
       {children}
     </div>
   );

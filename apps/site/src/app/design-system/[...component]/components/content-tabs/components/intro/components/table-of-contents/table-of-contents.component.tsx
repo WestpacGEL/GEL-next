@@ -15,7 +15,7 @@ export function TableOfContents({ contents = [] }: TableOfContentsProps) {
         {contents.map(({ title }) => {
           const id = title.toLowerCase().split(' ').join('-');
           return (
-            <List.Item key={id}>
+            <List.Item key={id} className="pl-[1.075rem]">
               <Link href={`#${id}`}>{title}</Link>
             </List.Item>
           );
