@@ -4,8 +4,46 @@ The Expiry date pattern can isolate which field carries the error and highlight 
 
 ### Text inputs with errors
 
-Loading...
+```tsx
+<Form.Group>
+  <Form.Label>Expiry date</Form.Label>
+  <Form.Hint>Example: 03 2020</Form.Hint>
+  <Form.ErrorMessage message="Month must be valid" />
+  <Form.ErrorMessage message="Year must be valid" />
+  <fieldset className="flex gap-4">
+    <Field label="Month" subLabel>
+      <Input invalid type="number" size="large" pattern="[0-9]*" min="1" max="12" autoComplete="bday-month" />
+    </Field>
+    <Field label="Year" subLabel>
+      <Input invalid className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" />
+    </Field>
+  </fieldset>
+</Form.Group>
+```
 
 ### Selects with errors
 
-Loading...
+```tsx
+<Form.Group>
+  <Form.Label>Expiry date</Form.Label>
+  <Form.ErrorMessage message="Error message goes here if activated" />
+  <fieldset className="flex gap-4">
+    <Field label="Month" subLabel>
+      <Select invalid size="large" width={30}>
+        <option>Select</option>
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => (
+          <option value={value}>{value}</option>
+        ))}
+      </Select>
+    </Field>
+    <Field label="Year" subLabel>
+      <Select size="large" width={30}>
+        <option>Select</option>
+        {[2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030].map(value => (
+          <option value={value}>{value}</option>
+        ))}
+      </Select>
+    </Field>
+  </fieldset>
+</Form.Group>
+```

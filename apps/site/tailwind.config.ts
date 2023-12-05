@@ -92,6 +92,7 @@ const config: Config = withGEL({
     'font-bold',
     'lg:w-7/12',
     'lg:w-2/12',
+    'w-14',
   ],
   plugins: [SitePlugin],
   options: {
