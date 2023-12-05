@@ -4,7 +4,11 @@ The auto address pattern uses auto-complete functionality requiring less input e
 
 _This pattern uses an auto-complete component that is currently being tested and amended to ensure up to date WCAG 2.1 AA accessibility compliance. This work should be completed in the new year, 2022. All other aspects of this pattern are compliant._
 
-Loading...
+```tsx
+<Form spacing="large">
+  <AutoAddressDemo />
+</Form>
+```
 
 ### Usage examples
 
@@ -12,4 +16,22 @@ This example shows the base pattern used with additional questions when further 
 
 To capture a different mailing address, use a text label with a button group to answer the question 'Do you have a different mailing address' with a yes or no. Depending on your project requirements you can serve either an Auto address, Manual address, Manual complex address, or International address. This should alway follow directly after the Home address.
 
-Loading...
+```tsx
+() => {
+  const [hasDifferentMailingAddress, setHasDifferentMailingAddress] = useState(false);
+
+  return (
+    <Form spacing="large">
+      <Form.Group>
+        <Field label="Do you have a different mailing address?">
+          <ButtonGroup value={hasDifferentMailingAddress} onChange={value => setHasDifferentMailingAddress(value)}>
+            <ButtonGroup.Button value={true}>Yes</ButtonGroup.Button>
+            <ButtonGroup.Button value={false}>No</ButtonGroup.Button>
+          </ButtonGroup>
+        </Field>
+      </Form.Group>
+      <Form.Group>{hasDifferentMailingAddress && <AutoAddressDemo />}</Form.Group>
+    </Form>
+  );
+};
+```
