@@ -81,7 +81,7 @@ export function LiveCode({ showCode = false, enableLiveCode = true, className }:
           <LiveEditor
             tabMode="focus"
             aria-label="Live code editor, press the escape key to leave the editor"
-            theme={themes.shadesOfPurple}
+            theme={themes.oceanicNext}
             code={live.code}
             language={live.language}
             disabled={live.disabled}
