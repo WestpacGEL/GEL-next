@@ -32,7 +32,7 @@ export function formatNavItems(navList: { name: string; slug: string }[]) {
   return navItems;
 }
 
-// This had to be made as a separate function as adding some to formatNavItems to cognitively complex
+// This had to be made as a separate function as adding some to formatNavItems too cognitively complex
 export function sortMenu(menuItems: Item[]) {
   const topLevelMenuOrder = [
     'accessibility',
