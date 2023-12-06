@@ -39,7 +39,7 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
   return <></>;
 };
 
-const FIXED_HEADER = 162; // 228 - 66 = height to stick
+const FIXED_HEADER_Y = 162; // 228 - 66 = height to stick
 
 export function ContentTabs({ content }: { content: ContentTabsProps }) {
   const router = useRouter();
@@ -51,10 +51,14 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
   const handleChange = useCallback(
     (key: Key) => {
       const isLargeScreen = window.innerWidth > parseInt(BREAKPOINTS.lg, 10);
-      router.push(`${pathname}?brand=${brand}&tab=${key}`, { scroll: !isLargeScreen });
       if (isLargeScreen) {
-        window.scrollTo({ top: FIXED_HEADER });
+        if (window.scrollY >= FIXED_HEADER_Y) {
+          window.scrollTo({ top: FIXED_HEADER_Y });
+        }
+        router.push(`${pathname}?brand=${brand}&tab=${key}`, { scroll: false });
+        return;
       }
+      router.push(`${pathname}?brand=${brand}&tab=${key}`);
     },
     [brand, pathname, router],
   );
