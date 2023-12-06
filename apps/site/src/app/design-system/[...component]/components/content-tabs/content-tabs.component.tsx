@@ -1,5 +1,6 @@
 'use client';
 
+import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Key, useCallback, useMemo } from 'react';
 
@@ -38,6 +39,8 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
   return <></>;
 };
 
+const FIXED_HEADER = 162; // 228 - 66 = height to stick
+
 export function ContentTabs({ content }: { content: ContentTabsProps }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -47,7 +50,11 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
 
   const handleChange = useCallback(
     (key: Key) => {
-      return router.push(`${pathname}?brand=${brand}&tab=${key}`);
+      const isLargeScreen = window.innerWidth > parseInt(BREAKPOINTS.lg, 10);
+      router.push(`${pathname}?brand=${brand}&tab=${key}`, { scroll: !isLargeScreen });
+      if (isLargeScreen) {
+        window.scrollTo({ top: FIXED_HEADER });
+      }
     },
     [brand, pathname, router],
   );
