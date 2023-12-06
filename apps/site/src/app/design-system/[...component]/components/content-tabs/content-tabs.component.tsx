@@ -51,14 +51,10 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
   const handleChange = useCallback(
     (key: Key) => {
       const isLargeScreen = window.innerWidth > parseInt(BREAKPOINTS.lg, 10);
-      if (isLargeScreen) {
-        if (window.scrollY >= FIXED_HEADER_Y) {
-          window.scrollTo({ top: FIXED_HEADER_Y });
-        }
-        router.push(`${pathname}?brand=${brand}&tab=${key}`, { scroll: false });
-        return;
+      router.push(`${pathname}?brand=${brand}&tab=${key}`, { scroll: !isLargeScreen });
+      if (isLargeScreen && window.scrollY >= FIXED_HEADER_Y) {
+        window.scrollTo({ top: FIXED_HEADER_Y });
       }
-      router.push(`${pathname}?brand=${brand}&tab=${key}`);
     },
     [brand, pathname, router],
   );
