@@ -4,4 +4,5 @@ design:
   - title:
       name: title
       slug: title
+    noTitle: true
 accessibility: []

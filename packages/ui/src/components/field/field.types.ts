@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react';
 import { AriaFieldProps } from 'react-aria';
 
-import { FormHintProps } from '../index.js';
+import { FormHintProps, FormLabelProps } from '../index.js';
 
 export type FieldProps = {
   /**
@@ -12,6 +12,10 @@ export type FieldProps = {
    * hint message
    */
   hintMessage?: FormHintProps['children'];
+  /**
+   * label size
+   */
+  labelSize?: FormLabelProps['size'];
   /**
    * Tag to render
    */

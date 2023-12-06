@@ -6,10 +6,91 @@ This pattern is kept as simple as possible yet captures more data points than Si
 
 **Title:** Only ask for a title if absolutely necessary. Gender, and how we identify ourselves is a personal topic so reasons for capture need to be clear.
 
-Loading...
+```tsx
+<Form spacing="large">
+  <Form.Group>
+    <Field label="Title">
+      <Select name="title" size="large">
+        <option>Select</option>
+        <option>Mrs</option>
+        <option>Mr</option>
+        <option>Miss</option>
+        <option>Ms</option>
+        <option>Dr</option>
+      </Select>
+    </Field>
+  </Form.Group>
+  <Form.Group>
+    <Field label="Given name">
+      <Input name="given-name" size="large" className="w-6/12" />
+    </Field>
+  </Form.Group>
+  <Form.Group>
+    <Field label="Middle names (if any)">
+      <Input name="middle-name" size="large" className="w-6/12" />
+    </Field>
+  </Form.Group>
+  <Form.Group>
+    <Field label="Family name">
+      <Input name="family-name" size="large" className="w-6/12" />
+    </Field>
+  </Form.Group>
+</Form>
+```
 
 ### Example usage
 
 This example shows the base pattern used with additional questions when further details are required; Any other name.
 
-Loading...
+```tsx
+() => {
+  const [differentName, setDifferentName] = useState(false);
+
+  return (
+    <Form spacing="large">
+      <Form.Group>
+        <Field label="Title">
+          <Select name="title" size="large">
+            <option>Select</option>
+            <option>Mrs</option>
+            <option>Mr</option>
+            <option>Miss</option>
+            <option>Ms</option>
+            <option>Dr</option>
+          </Select>
+        </Field>
+      </Form.Group>
+      <Form.Group>
+        <Field label="Given name">
+          <Input name="given-name" size="large" className="w-6/12" />
+        </Field>
+      </Form.Group>
+      <Form.Group>
+        <Field label="Middle names (if any)">
+          <Input name="middle-name" size="large" className="w-6/12" />
+        </Field>
+      </Form.Group>
+      <Form.Group>
+        <Field label="Family name">
+          <Input name="family-name" size="large" className="w-6/12" />
+        </Field>
+      </Form.Group>
+      <Form.Group>
+        <Field label="Have you ever been known by a name different to the one provided above?">
+          <ButtonGroup size="large" onChange={value => setDifferentName(value)} value={differentName} look="hero">
+            <ButtonGroup.Button value={true}>Yes</ButtonGroup.Button>
+            <ButtonGroup.Button value={false}>No</ButtonGroup.Button>
+          </ButtonGroup>
+        </Field>
+      </Form.Group>
+      {differentName && (
+        <Form.Group>
+          <Field label="Other names">
+            <Input name="other-name" size="large" className="w-6/12" />
+          </Field>
+        </Form.Group>
+      )}
+    </Form>
+  );
+};
+```

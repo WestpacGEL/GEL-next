@@ -96,5 +96,14 @@ export {
 export { GiftPictogram } from '@westpac/ui/pictogram';
 export { Link as NextLink };
 
-export { IconSizesDemo } from './components/demos';
+export {
+  IconSizesDemo,
+  AutoAddressDemo,
+  ManualAddress,
+  InternationalAddress,
+  ComplexAddressDemo,
+  EmploymentAutocompletePattern,
+  EmploymentSelectFullPattern,
+  TaxFileNumberPattern,
+} from './components/demos';
 export { Hr, Body } from './components/utils';

@@ -6,7 +6,20 @@ Use this pattern when there are large data sets so users are not required to scr
 
 This pattern exists as a [widget in the WDP system](https://one.dev1.ui.westpac.com.au/react/gel/docs/6.17.4/index.html?path=/story/widgets-expirydate--basic).
 
-Loading...
+```tsx
+<Form.Group>
+  <Form.Label>Expiry date</Form.Label>
+  <Form.Hint>Example: 03 2020</Form.Hint>
+  <fieldset className="flex gap-4">
+    <Field label="Month" labelSize="small">
+      <Input type="number" size="large" pattern="[0-9]*" min="1" max="12" autoComplete="bday-month" />
+    </Field>
+    <Field label="Year" labelSize="small">
+      <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" />
+    </Field>
+  </fieldset>
+</Form.Group>
+```
 
 ### Date range
 
@@ -14,4 +27,26 @@ When databases have short and defined ranges, using select boxes can assist in m
 
 This pattern exists as a [widget in the WDP system](https://one.dev1.ui.westpac.com.au/react/gel/docs/6.17.4/index.html?path=/story/widgets-expirydate--range).
 
-Loading...
+```tsx
+<Form.Group>
+  <Form.Label>Expiry date</Form.Label>
+  <fieldset className="flex gap-4">
+    <Field label="Month" labelSize="small">
+      <Select size="large" width={30}>
+        <option>Select</option>
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => (
+          <option value={value}>{value}</option>
+        ))}
+      </Select>
+    </Field>
+    <Field label="Year" labelSize="small">
+      <Select size="large" width={30}>
+        <option>Select</option>
+        {[2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030].map(value => (
+          <option value={value}>{value}</option>
+        ))}
+      </Select>
+    </Field>
+  </fieldset>
+</Form.Group>
+```

@@ -1,4 +1,3 @@
-import { Button } from '@westpac/ui';
 import copy from 'clipboard-copy';
 import { Highlight } from 'prism-react-renderer';
 

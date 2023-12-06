@@ -2,7 +2,15 @@
 
 If a customer hasn’t filled in a required field, include the name of the field to maximise clarity. Avoid ambiguous error messages that could apply to any field such as ‘Enter a value’ or ‘This field is required’.
 
-Loading...
+```tsx
+<Field
+  label="Email address"
+  errorMessage="Enter an email address in the format: youremail@example.com"
+  hintMessage="Make sure your email address is correct as we will use it to confirm your account"
+>
+  <Input invalid size="large" className="w-6/12" />
+</Field>
+```
 
 ### Formatting errors
 

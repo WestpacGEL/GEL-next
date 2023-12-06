@@ -12,9 +12,6 @@ design:
   - title:
       name: Dos and don'ts
       slug: dos-and-donts
-  - title:
-      name: Pattern examples in code
-      slug: pattern-examples-in-code
 accessibility: []
 relatedComponents:
   - title: Text inputs
