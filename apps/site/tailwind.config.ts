@@ -18,6 +18,7 @@ const config: Config = withGEL({
   theme: {
     extend: {
       fontFamily: {
+        monospace: 'monospace',
         'gel-sans': [
           'Graphik',
           '-apple-system',
