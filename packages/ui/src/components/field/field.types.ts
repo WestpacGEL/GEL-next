@@ -13,9 +13,9 @@ export type FieldProps = {
    */
   hintMessage?: FormHintProps['children'];
   /**
-   * Sub-label mode (smaller label text size)
+   * label size
    */
-  subLabel?: FormLabelProps['subLabel'];
+  labelSize?: FormLabelProps['size'];
   /**
    * Tag to render
    */

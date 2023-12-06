@@ -11,13 +11,13 @@ If more than one field has an error, the errors stack in a group under the hint 
   <Form.ErrorMessage message="Day must be valid" />
   <Form.ErrorMessage message="Year must be valid" />
   <fieldset className="flex gap-4">
-    <Field label="Day" subLabel>
+    <Field label="Day" labelSize="small">
       <Input type="number" size="large" pattern="[0-9]*" min="1" max="31" autoComplete="bday-day" invalid />
     </Field>
-    <Field label="Month" subLabel>
+    <Field label="Month" labelSize="small">
       <Input type="number" size="large" pattern="[0-9]*" min="1" max="12" autoComplete="bday-month" />
     </Field>
-    <Field label="Year" subLabel>
+    <Field label="Year" labelSize="small">
       <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" invalid />
     </Field>
   </fieldset>

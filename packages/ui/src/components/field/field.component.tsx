@@ -16,7 +16,7 @@ export function Field({
   hintMessage,
   errorMessage,
   labelElementType,
-  subLabel,
+  labelSize,
   ...props
 }: FieldProps) {
   const { labelProps, fieldProps, descriptionProps, errorMessageProps } = useField({
@@ -37,7 +37,7 @@ export function Field({
 
   return (
     <Tag className={styles({ className })} {...props}>
-      <FormLabel subLabel={subLabel} {...labelProps}>
+      <FormLabel size={labelSize} {...labelProps}>
         {label}
       </FormLabel>
       {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}

@@ -76,7 +76,7 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
             <Form.Label>Length of time with this {employment === 'self' ? 'company' : 'employer'}</Form.Label>
             {error && <Form.ErrorMessage message={error} />}
             <fieldset className="flex gap-3">
-              <Field label="Years" subLabel>
+              <Field label="Years" labelSize="small">
                 <Select
                   value={years}
                   onChange={(e: any) => {
@@ -89,7 +89,7 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
                   <option value={2}>2</option>
                 </Select>
               </Field>
-              <Field label="Months" subLabel>
+              <Field label="Months" labelSize="small">
                 <Select size="large">
                   <option>Select</option>
                   <option value={1}>1</option>
@@ -133,14 +133,14 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
             <Form.Label>Length of time with this {prevEmployment === 'self' ? 'company' : 'employer'}</Form.Label>
             {error && <Form.ErrorMessage message={error} />}
             <fieldset className="flex gap-3">
-              <Field label="Years" subLabel>
+              <Field label="Years" labelSize="small">
                 <Select size="large">
                   <option>Select</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                 </Select>
               </Field>
-              <Field label="Months" subLabel>
+              <Field label="Months" labelSize="small">
                 <Select size="large">
                   <option>Select</option>
                   <option value="1">1</option>
