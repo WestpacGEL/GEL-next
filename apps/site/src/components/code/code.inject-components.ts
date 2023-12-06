@@ -91,6 +91,10 @@ export {
   ArrowLeftIcon,
   GenericFileIcon,
   GithubIcon,
+  FaceHappyIcon,
+  WalkIcon,
+  HeadsetIcon,
+  AndroidIcon,
 } from '@westpac/ui/icon';
 
 export { GiftPictogram } from '@westpac/ui/pictogram';
