@@ -57,37 +57,38 @@ export function Sidebar({ items }: SidebarProps) {
     <>
       <div
         className={clsx(
-          'fixed top-0 z-[60] flex h-full w-[18.75rem] grow-0 flex-col border-r-0 bg-white text-text shadow-2xl transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:-translate-x-0 lg:border-r lg:border-r-border lg:shadow-none',
+          'fixed top-0 z-[60] flex h-full w-[18.75rem] grow-0 flex-col border-r-0 bg-white text-text shadow-2xl transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:-translate-x-0 lg:overflow-x-hidden lg:border-r lg:border-r-border lg:shadow-none',
           {
-            '-translate-x-full': !open, //hide sidebar to the left when closed
+            '-translate-x-full overflow-x-hidden': !open, //hide sidebar to the left when closed
           },
         )}
         ref={outsideRef}
       >
-        <button className="absolute right-1 top-1 block h-6 w-6 p-1 md:hidden" onClick={() => setOpen(false)}>
-          <CloseIcon className="block text-muted" />
-        </button>
-        <Link href="/" className="flex h-15 items-center px-3" aria-label="GEL home">
-          <Logo brand={brand} />
-        </Link>
-        <div className="border-b border-b-border">
-          <SidebarSelect selectedKey={brand} onSelectionChange={handleChange} aria-label="Change brand">
-            {BANK_OPTIONS.map(({ icon: Icon, designSystemPageClasses, key, label }) => (
-              <SidebarSelect.Option key={key} textValue={label}>
-                <div className="flex w-full items-center justify-between">
-                  <span className="typography-body-10">{label}</span>
-                  {<Icon className={designSystemPageClasses} />}
-                </div>
-              </SidebarSelect.Option>
-            ))}
-          </SidebarSelect>
-        </div>
-        <nav
-          ref={listRef}
-          className={clsx('flex-1 overflow-y-auto overflow-x-hidden pb-4 transition-all', {
-            'shadow-[inset_rgba(0,0,0,0.26)_0_2px_5px]': scrolled,
+        <div
+          className={clsx({
+            'shadow-[rgba(0,0,0,0.26)_0_2px_5px]': scrolled,
           })}
         >
+          <button className="absolute right-1 top-1 block h-6 w-6 p-1 md:hidden" onClick={() => setOpen(false)}>
+            <CloseIcon className="block text-muted" />
+          </button>
+          <Link href="/" className="flex h-15 items-center px-3" aria-label="GEL home">
+            <Logo brand={brand} />
+          </Link>
+          <div className="border-b border-b-border">
+            <SidebarSelect selectedKey={brand} onSelectionChange={handleChange} aria-label="Change brand">
+              {BANK_OPTIONS.map(({ icon: Icon, designSystemPageClasses, key, label }) => (
+                <SidebarSelect.Option key={key} textValue={label}>
+                  <div className="flex w-full items-center justify-between">
+                    <span className="typography-body-10">{label}</span>
+                    {<Icon className={designSystemPageClasses} />}
+                  </div>
+                </SidebarSelect.Option>
+              ))}
+            </SidebarSelect>
+          </div>
+        </div>
+        <nav ref={listRef} className="flex-1 overflow-y-auto overflow-x-hidden pb-4 transition-all">
           <Link href="/" className="block" aria-label="Back to GEL">
             <BackToGelSvg />
           </Link>
