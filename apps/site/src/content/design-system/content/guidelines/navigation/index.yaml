@@ -2,7 +2,7 @@ name: Navigation
 description: Navigation is used to help a person find content on a website or app.
 design:
   - title:
-      name: undefined
-      slug: undefined
+      name: Navigation
+      slug: navigation
     noTitle: true
 accessibility: []

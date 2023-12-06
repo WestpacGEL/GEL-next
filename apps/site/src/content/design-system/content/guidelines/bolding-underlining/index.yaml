@@ -4,7 +4,7 @@ description: >-
   certain situations.
 design:
   - title:
-      name: undefined
-      slug: undefined
+      name: Bolding and underlining
+      slug: bolding-underlining
     noTitle: true
 accessibility: []

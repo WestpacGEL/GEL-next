@@ -4,8 +4,8 @@ description: >-
   less effort.
 design:
   - title:
-      name: undefined
-      slug: undefined
+      name: Error messages
+      slug: error-messages
     noTitle: true
   - title:
       name: Types of error messages

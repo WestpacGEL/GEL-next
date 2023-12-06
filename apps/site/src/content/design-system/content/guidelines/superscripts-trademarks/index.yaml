@@ -4,8 +4,8 @@ description: >-
   lines of texts.
 design:
   - title:
-      name: undefined
-      slug: undefined
+      name: Superscripts
+      slug: superscripts
     noTitle: true
 accessibility: []
 relatedComponents: []
