@@ -57,9 +57,9 @@ export function Sidebar({ items }: SidebarProps) {
     <>
       <div
         className={clsx(
-          'fixed top-0 z-[60] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 bg-white text-text shadow-2xl transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:-translate-x-0 lg:border-r lg:border-r-border lg:shadow-none',
+          'fixed top-0 z-[60] flex h-full w-[18.75rem] grow-0 flex-col border-r-0 bg-white text-text shadow-2xl transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:-translate-x-0 lg:overflow-x-hidden lg:border-r lg:border-r-border lg:shadow-none',
           {
-            '-translate-x-full': !open, //hide sidebar to the left when closed
+            '-translate-x-full overflow-x-hidden': !open, //hide sidebar to the left when closed
           },
         )}
         ref={outsideRef}
