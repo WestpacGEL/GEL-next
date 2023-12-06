@@ -8,29 +8,29 @@ export const styles = tv(
         medium: '',
         large: '',
       },
-      subLabel: {
-        true: 'typography-body-10',
-        false: 'typography-body-9',
+      size: {
+        small: 'typography-body-10',
+        medium: 'typography-body-9',
       },
     },
     compoundVariants: [
       {
-        subLabel: true,
+        size: 'medium',
         spacing: 'medium',
         className: 'mb-1',
       },
       {
-        subLabel: true,
+        size: 'medium',
         spacing: 'large',
         className: 'mb-1',
       },
       {
-        subLabel: false,
+        size: 'small',
         spacing: 'medium',
         className: 'mb-2',
       },
       {
-        subLabel: false,
+        size: 'small',
         spacing: 'large',
         className: 'mb-3',
       },

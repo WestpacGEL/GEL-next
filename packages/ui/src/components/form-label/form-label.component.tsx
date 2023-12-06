@@ -11,7 +11,7 @@ export function FormLabel({
   spacing,
   srOnly,
   children,
-  subLabel = false,
+  size = 'medium',
   ...props
 }: FormLabelProps) {
   const finalSpacing = spacing || 'medium';
@@ -19,7 +19,7 @@ export function FormLabel({
   return srOnly ? (
     <VisuallyHidden>{children}</VisuallyHidden>
   ) : (
-    <Tag className={styles({ className, spacing: finalSpacing, subLabel })} {...props}>
+    <Tag className={styles({ className, spacing: finalSpacing, size })} {...props}>
       {children}
     </Tag>
   );

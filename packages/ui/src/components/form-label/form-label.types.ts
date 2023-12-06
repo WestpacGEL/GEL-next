@@ -17,6 +17,10 @@ export type FormLabelProps = {
    */
   htmlFor?: string;
   /**
+   * label size
+   */
+  size?: Variants['size'];
+  /**
    * Spacing
    */
   spacing?: Variants['spacing'];
@@ -24,10 +28,6 @@ export type FormLabelProps = {
    * Enable ‘screen reader only’ mode
    */
   srOnly?: boolean;
-  /**
-   * Sub-label mode (smaller label text size)
-   */
-  subLabel?: Variants['subLabel'];
   /**
    * Component tag
    */
