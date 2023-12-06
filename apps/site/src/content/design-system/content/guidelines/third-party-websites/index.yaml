@@ -1,0 +1,11 @@
+name: Third-party websites
+description: >-
+  Third-party websites are websites that don’t relate to any of the Westpac
+  brands.
+design:
+  - title:
+      name: undefined
+      slug: undefined
+    noTitle: true
+accessibility: []
+relatedComponents: []

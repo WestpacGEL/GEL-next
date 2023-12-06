@@ -1,0 +1,65 @@
+name: Words to watch out for
+description: A guide to words and terms that could cause confusion.
+design:
+  - title:
+      name: A
+      slug: a
+    noTitle: false
+  - title:
+      name: B
+      slug: b
+    noTitle: false
+  - title:
+      name: C
+      slug: c
+    noTitle: false
+  - title:
+      name: D
+      slug: d
+    noTitle: false
+  - title:
+      name: E
+      slug: e
+    noTitle: false
+  - title:
+      name: F
+      slug: f
+    noTitle: false
+  - title:
+      name: G
+      slug: g
+    noTitle: false
+  - title:
+      name: H
+      slug: h
+    noTitle: false
+  - title:
+      name: I
+      slug: i
+    noTitle: false
+  - title:
+      name: L
+      slug: l
+    noTitle: false
+  - title:
+      name: M
+      slug: m
+    noTitle: false
+  - title:
+      name: O
+      slug: o
+    noTitle: false
+  - title:
+      name: P
+      slug: p
+    noTitle: false
+  - title:
+      name: S
+      slug: s
+    noTitle: false
+  - title:
+      name: T
+      slug: t
+    noTitle: false
+accessibility: []
+relatedComponents: []

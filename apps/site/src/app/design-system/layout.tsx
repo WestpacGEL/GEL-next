@@ -1,12 +1,12 @@
 import { reader } from '@/app/reader';
 import { StickyFooter } from '@/components/sticky-footer';
-import { formatNavItems } from '@/utils/format';
+import { formatNavItems, sortMenu } from '@/utils/format';
 
 import { Sidebar, SidebarContextProvider } from './components';
 
 export default async function DesignSystemLayout({ children }: { children: React.ReactNode }) {
   const allContent = await reader.collections.designSystem.all();
-  const formattedItems = formatNavItems(allContent.map(({ entry, slug }) => ({ slug, name: entry.name })));
+  const formattedItems = sortMenu(formatNavItems(allContent.map(({ entry, slug }) => ({ slug, name: entry.name }))));
 
   return (
     <>
