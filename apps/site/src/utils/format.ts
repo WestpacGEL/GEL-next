@@ -1,10 +1,12 @@
+import { Item } from '@/app/design-system/components/sidebar/components/navigation/navigation.types';
+
 export function formatComponentSlug(component: string) {
-  const name = component[0].toUpperCase() + component.slice(1);
-  return name.replace(/-/g, ' ');
+  return component[0].toUpperCase() + component.slice(1);
 }
 
 export function formatNavItems(navList: { name: string; slug: string }[]) {
   const navItems: any[] = [];
+
   navList.forEach(({ slug, name }) => {
     const params = slug.split('/');
     let curr = navItems;
@@ -19,7 +21,6 @@ export function formatNavItems(navList: { name: string; slug: string }[]) {
             curr = item.children;
           }
         });
-
         if (!exists) {
           const newNode = { label: param, children: [] };
           curr.push(newNode);
@@ -29,4 +30,27 @@ export function formatNavItems(navList: { name: string; slug: string }[]) {
     });
   });
   return navItems;
+}
+
+// This had to be made as a separate function as adding some to formatNavItems too cognitively complex
+export function sortMenu(menuItems: Item[]) {
+  const topLevelMenuOrder = [
+    'accessibility',
+    'foundation',
+    'components',
+    'patterns',
+    'development',
+    'content',
+    'design tokens',
+  ];
+
+  const orderedMenu: Item[] = [];
+  topLevelMenuOrder.forEach(item =>
+    menuItems.forEach(menuItem => {
+      if (item === menuItem.label.toLowerCase()) {
+        orderedMenu.push(menuItem);
+      }
+    }),
+  );
+  return orderedMenu;
 }

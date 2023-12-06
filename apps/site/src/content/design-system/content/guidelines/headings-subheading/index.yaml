@@ -4,7 +4,7 @@ description: >-
   the content of a section.
 design:
   - title:
-      name: undefined
-      slug: undefined
+      name: Headings and subheadings
+      slug: headings-subheadings
     noTitle: true
 accessibility: []

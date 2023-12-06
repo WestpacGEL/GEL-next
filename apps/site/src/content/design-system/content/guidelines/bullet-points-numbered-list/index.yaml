@@ -4,7 +4,7 @@ description: >-
   series of items.
 design:
   - title:
-      name: undefined
-      slug: undefined
+      name: Bullet points and numbered lists
+      slug: bullet-points-numbered-lists
     noTitle: true
 accessibility: []

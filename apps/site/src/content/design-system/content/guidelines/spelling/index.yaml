@@ -1,0 +1,9 @@
+name: Spelling
+description: Spelling refers to the forming of words from letters.
+design:
+  - title:
+      name: Spelling
+      slug: spelling
+    noTitle: true
+accessibility: []
+relatedComponents: []

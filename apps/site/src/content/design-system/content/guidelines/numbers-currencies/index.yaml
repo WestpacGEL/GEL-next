@@ -2,7 +2,7 @@ name: Numbers & currencies
 description: A guide to writing numbers and currencies.
 design:
   - title:
-      name: undefined
-      slug: undefined
+      name: Numbers and currencies
+      slug: numbers-currencies
     noTitle: true
 accessibility: []

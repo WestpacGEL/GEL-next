@@ -4,7 +4,7 @@ description: >-
   nothing to display.
 design:
   - title:
-      name: undefined
-      slug: undefined
+      name: Empty states
+      slug: empty-states
     noTitle: true
 accessibility: []

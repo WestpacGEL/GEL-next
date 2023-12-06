@@ -2,7 +2,7 @@ name: Dates, days & time
 description: A guide to writing dates, days and time.
 design:
   - title:
-      name: undefined
-      slug: undefined
+      name: Dates, days and time
+      slug: dates-days-time
     noTitle: true
 accessibility: []
