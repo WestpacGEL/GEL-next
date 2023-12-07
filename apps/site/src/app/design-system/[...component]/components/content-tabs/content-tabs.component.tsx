@@ -32,7 +32,7 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
         subComponentProps={content.subComponentProps}
         componentProps={content.componentProps}
         westpacUIInfo={content.westpacUIInfo}
-        content={content.code}
+        codeSections={content.codeSections}
       />
     );
   }
