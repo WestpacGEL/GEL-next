@@ -2,8 +2,10 @@ import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Grid, Item } from '@westpac/ui';
 import { ArrowRightIcon, CubeIcon, GenericFileIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 import { Container } from '@/app/design-system/components';
+import { type BrandKey } from '@/app/types/brand.types';
 
 import { Section } from '../content-blocks/section';
 import { Heading } from '../document-renderer';
@@ -13,6 +15,8 @@ import { RelatedInfoProps } from './related-info.types';
 
 export function RelatedInfo({ relatedComponents = [], relatedArticles }: RelatedInfoProps) {
   const relatedComponentsEmpty = relatedComponents?.length < 1;
+  const searchParams = useSearchParams();
+  const brand = (searchParams.get('brand') ?? 'wbc') as BrandKey;
   return (
     <Section className="bg-white">
       <Container className="">
@@ -30,7 +34,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
                 {relatedComponents.map(({ title, slug }) => {
                   return (
                     <li key={title}>
-                      <Link href={`/design-system/${slug}?brand=wbc`}>{title}</Link>
+                      <Link href={`/design-system/${slug}?brand=${brand}`}>{title}</Link>
                     </li>
                   );
                 })}
