@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'sticky top-0 z-50 flex w-full items-center gap-2 bg-hero px-2 py-3.5 antialiased transition-colors sm:px-4 md:top-[-10.125rem] md:h-[14.25rem] md:items-end',
+      base: 'sticky top-0 z-10 flex w-full items-center gap-2 bg-hero px-2 py-3.5 antialiased transition-colors sm:px-4 md:top-[-10.125rem] md:h-[14.25rem] md:items-end',
       gridButton: 'flex h-6 items-stretch gap-[0.125rem] p-1',
       gridButtonWrapper: 'fixed right-2 top-2 hidden items-center text-white sm:flex',
       hamburgerButton: 'fixed left-0 top-0 block h-4 w-4 translate-y-[-0.125rem] px-2 py-3.5 sm:left-2 lg:hidden',
@@ -12,7 +12,7 @@ export const styles = tv(
     variants: {
       fixed: {
         true: {
-          base: 'items-center',
+          base: 'items-center shadow-[0_2px_5px_rgba(0,0,0,0.3)]',
           title: '',
         },
         false: {

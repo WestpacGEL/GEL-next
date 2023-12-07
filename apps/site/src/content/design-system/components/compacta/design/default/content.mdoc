@@ -13,11 +13,13 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
       {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
         <Form>
           <Form.Group>
-            <Form.Label htmlFor={`primary-${id}`}>Primary</Form.Label>
-            <Form.Hint>Primary title text</Form.Hint>
+            <Form.Label htmlFor={`primary-default-${id}`}>Primary</Form.Label>
+            <Form.Hint id={`primary-default-hint-${id}`}>Primary title text</Form.Hint>
             <Input
-              name={`primary-${id}`}
-              value={inputs[`primary-${id}` as keyof typeof inputs] || ''}
+              id={`primary-default-${id}`}
+              aria-describedby={`primary-default-hint-${id}`}
+              name={`primary-default-${id}`}
+              value={inputs[`primary-default-${id}` as keyof typeof inputs] || ''}
               onChange={e => {
                 handleChange(e);
                 setPrimaryTitle(e.target.value);
@@ -25,11 +27,13 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label htmlFor={`secondary-${id}`}>Secondary</Form.Label>
-            <Form.Hint>Secondary title text</Form.Hint>
+            <Form.Label htmlFor={`secondary-default-${id}`}>Secondary</Form.Label>
+            <Form.Hint id={`secondary-default-hint-${id}`}>Secondary title text</Form.Hint>
             <Input
-              name={`secondary-${id}`}
-              value={inputs[`secondary-${id}` as keyof typeof inputs] || ''}
+              id={`secondary-default-${id}`}
+              aria-describedby={`secondary-default-hint-${id}`}
+              name={`secondary-default-${id}`}
+              value={inputs[`secondary-default-${id}` as keyof typeof inputs] || ''}
               onChange={e => {
                 handleChange(e);
                 setSecondaryTitle(e.target.value);
@@ -37,11 +41,13 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label htmlFor={`tertiary-${id}`}>Tertiary</Form.Label>
-            <Form.Hint>Tertiary title text</Form.Hint>
+            <Form.Label htmlFor={`tertiary-default-${id}`}>Tertiary</Form.Label>
+            <Form.Hint id={`tertiary-default-hint-${id}`}>Tertiary title text</Form.Hint>
             <Input
-              name={`tertiary-${id}`}
-              value={inputs[`tertiary-${id}` as keyof typeof inputs] || ''}
+              id={`tertiary-default-${id}`}
+              aria-describedby={`tertiary-default-hint-${id}`}
+              name={`tertiary-default-${id}`}
+              value={inputs[`tertiary-default-${id}` as keyof typeof inputs] || ''}
               onChange={e => {
                 handleChange(e);
                 setTertiaryTitle(e.target.value);
