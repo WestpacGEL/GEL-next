@@ -109,6 +109,7 @@ export default async function ComponentPage({ params }: { params: { component: s
               resolve({
                 title: section.title.name,
                 content: content,
+                noTitle: section.noTitle,
               });
               return {
                 ...section,

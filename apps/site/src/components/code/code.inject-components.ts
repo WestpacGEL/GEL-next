@@ -1,5 +1,9 @@
 import Link from 'next/link';
 
+export { DesktopComputerPictogram } from '@westpac/ui/pictogram';
+
+export { MastercardAcceptedSymbol, WBCLogo } from '@westpac/ui/symbol';
+
 export { StaticCode } from '../static-code/index';
 
 export { ComponentTitle } from '../document-renderer/component-title';

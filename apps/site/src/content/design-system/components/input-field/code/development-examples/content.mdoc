@@ -1,5 +1,3 @@
-## Input sizes
-
 #### Default usage example
 
 ```jsx
@@ -510,10 +508,10 @@
 
 #### Search Textarea with character count
 
-```jsx
+```tsx
 () => {
   const MAX_LENGTH = 250;
-  const [inputValue, setInputValue] = useState < string > '';
+  const [inputValue, setInputValue] = useState<string>('');
   const counterText = useMemo(() => {
     const lengthLeft = MAX_LENGTH - inputValue.length;
     return `${lengthLeft} remaining`;

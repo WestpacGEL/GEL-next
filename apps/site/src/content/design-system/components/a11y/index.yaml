@@ -6,5 +6,8 @@ design: []
 accessibility: []
 code:
   - title:
-      name: Development examples
-      slug: development-examples
+      name: Visually hidden
+      slug: visually-hidden
+  - title:
+      name: Skip link
+      slug: skip-link

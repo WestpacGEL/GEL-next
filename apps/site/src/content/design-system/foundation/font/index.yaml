@@ -31,6 +31,10 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+code:
+  - title:
+      name: Development notes
+      slug: development-notes
 relatedComponents:
   - title: Text styling
     slug: foundation/text-styling
