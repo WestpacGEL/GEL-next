@@ -7,3 +7,7 @@ design:
     noTitle: true
 accessibility: []
 relatedComponents: []
+code:
+  - title:
+      name: Development examples
+      slug: development-examples

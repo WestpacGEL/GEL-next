@@ -34,3 +34,7 @@ relatedComponents:
     slug: components/button
   - title: Alerts
     slug: components/alert
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
