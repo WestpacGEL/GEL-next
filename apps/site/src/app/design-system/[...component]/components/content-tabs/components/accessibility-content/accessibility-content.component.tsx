@@ -2,6 +2,7 @@
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Grid, Item, Select } from '@westpac/ui';
+import { useSearchParams } from 'next/navigation';
 import { useId, useState } from 'react';
 
 import { Container } from '@/app/design-system/components';
@@ -30,12 +31,14 @@ const FILTERS = [
 export function AccessibilityContent({ accessibilitySections, accessibilityDemo }: AccessibilityContentProps) {
   const [filter, setFilter] = useState<VisionFilterProps['value']>();
   const id = useId();
+  const searchParams = useSearchParams();
+  const brand = searchParams.get('brand') || 'wbc';
 
   return (
     <>
       {accessibilityDemo && (
         <Section className="border-t-0">
-          <Container className="pt-5">
+          <Container className="pt-7">
             <Heading level={2} className="mb-4 sm:mb-7">
               Colour impairment demonstration
             </Heading>
@@ -44,11 +47,15 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
                 <Text>
                   All components are designed and tested to ensure colour contrast ratios comply with the WCAG 2.1 AA
                   specification. Select a filter from the list below to see how this component would appear to someone
-                  with a: <Link href="#">colour vision impairment</Link>.
+                  with a:{' '}
+                  <Link href={`/design-system/accessibility/colour-vision-impairment?brand=${brand}`}>
+                    colour vision impairment
+                  </Link>
+                  .
                 </Text>
               </Item>
             </Grid>
-            <div className="mb-4 flex items-center bg-light p-4">
+            <div className="flex items-center bg-light p-4">
               <label htmlFor={id} className="mr-[1rem]">
                 Select filter
               </label>
