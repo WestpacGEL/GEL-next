@@ -1,0 +1,16 @@
+### Base pattern
+
+```tsx
+<Form.Group>
+  <Form.Label>Expiry date</Form.Label>
+  <Form.Hint>Example: 03 2020</Form.Hint>
+  <fieldset className="flex gap-4">
+    <Field label="Month" labelSize="small">
+      <Input type="number" size="large" pattern="[0-9]*" min="1" max="12" autoComplete="bday-month" />
+    </Field>
+    <Field label="Year" labelSize="small">
+      <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" />
+    </Field>
+  </fieldset>
+</Form.Group>
+```

@@ -13,6 +13,10 @@ design:
       name: User experience
       slug: user-experience
 accessibility: []
+code:
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
 relatedComponents:
   - title: Text inputs
     slug: components/input

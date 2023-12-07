@@ -26,7 +26,7 @@ export function CodeContent({ codeSections = [], westpacUIInfo, componentProps, 
     <>
       <section className="py-7 sm:pb-10 sm:pt-15">
         <Container>
-          <Grid>
+          <Grid className="gap-y-5.5">
             <Item span={{ initial: 12, sm: 7 }}>
               <table className="typography-body-11 table w-full bg-[#f2f8fc] text-info">
                 <tbody>
