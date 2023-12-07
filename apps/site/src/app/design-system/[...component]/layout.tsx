@@ -16,7 +16,7 @@ export default async function ComponentLayout({
     <>
       <Header title={content.name} />
       <div className="flex flex-1 flex-col p-5">
-        <div className="-m-5 flex flex-1 flex-col">{children}</div>
+        <div className="-m-5 flex flex-1 flex-col bg-background">{children}</div>
       </div>
     </>
   );
