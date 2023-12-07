@@ -8,6 +8,7 @@ import { useMemo } from 'react';
 
 import { Container } from '@/app/design-system/components';
 import { ComponentPropsTable } from '@/components/component-props-table';
+import { Section } from '@/components/content-blocks/section';
 import { Code } from '@/components/content-blocks/typography';
 import { Heading } from '@/components/document-renderer';
 import { pascalToKebab } from '@/utils/format-string';
@@ -17,23 +18,29 @@ import { TableOfContents } from '../intro/components';
 
 import { type CodeContentProps } from '.';
 
-export function CodeContent({ content = [], westpacUIInfo, componentProps, subComponentProps }: CodeContentProps) {
-  const tableOfContents = useMemo(() => {
+export function CodeContent({ codeSections = [], westpacUIInfo, componentProps, subComponentProps }: CodeContentProps) {
+  const sectionNames = useMemo(() => {
+    return codeSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title })) || [];
+  }, [codeSections]);
+
+  const sectionHeadings = useMemo(() => {
     return (
-      content?.reduce((acc, item: DocumentElement & { level?: number }) => {
-        if (item.type === 'heading' && item?.level && item.level <= 3) {
-          return [...acc, { title: item.children[0].text as string }];
-        }
-        return acc;
+      codeSections.reduce((acc, section) => {
+        return section.content?.reduce((acc, item: DocumentElement & { level?: number }) => {
+          if (item.type === 'heading' && item?.level && item.level <= 3) {
+            return [...acc, { title: item.children[0].text as string }];
+          }
+          return acc;
+        }, acc);
       }, [] as { title: string }[]) || []
     );
-  }, [content]);
+  }, [codeSections]);
 
   return (
     <>
       <section className="py-7 sm:pb-10 sm:pt-15">
         <Container>
-          <Grid>
+          <Grid className="gap-y-5.5">
             <Item span={{ initial: 12, sm: 7 }}>
               <table className="typography-body-11 table w-full bg-[#f2f8fc] text-info">
                 <tbody>
@@ -76,18 +83,25 @@ export function CodeContent({ content = [], westpacUIInfo, componentProps, subCo
                 </tbody>
               </table>
             </Item>
-            <Item span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
-              <TableOfContents contents={tableOfContents} />
-            </Item>
+            {(sectionHeadings || sectionNames).length > 0 && (
+              <Item span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
+                <TableOfContents contents={sectionHeadings || sectionNames} />
+              </Item>
+            )}
           </Grid>
         </Container>
       </section>
-      <section className="border-t border-t-border">
-        <Container className="py-15">
-          <h2 className="typography-body-6 mb-4 font-bold sm:mb-8">Development examples</h2>
-          <DocumentRenderer document={content} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
-        </Container>
-      </section>
+      {codeSections?.map(({ title, content, noTitle }) => {
+        const id = title.toLowerCase().split(' ').join('-');
+        return (
+          <Section key={id}>
+            <Container>
+              {!noTitle && <Heading level={2}>{title}</Heading>}
+              <DocumentRenderer document={content} renderers={DOCUMENT_RENDERERS} />
+            </Container>
+          </Section>
+        );
+      })}
       {componentProps && (
         <section className="border-t border-t-border bg-white py-7 sm:pb-10 sm:pt-15">
           <Container>

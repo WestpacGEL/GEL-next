@@ -4,3 +4,10 @@ description: >-
   optimal experience for users of assistive technologies.
 design: []
 accessibility: []
+code:
+  - title:
+      name: Visually hidden
+      slug: visually-hidden
+  - title:
+      name: Skip link
+      slug: skip-link

@@ -28,6 +28,14 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+code:
+  - title:
+      name: Intro
+      slug: intro
+    noTitle: true
+  - title:
+      name: Development examples
+      slug: development-examples
 relatedComponents:
   - title: Fonts
     slug: foundation/font

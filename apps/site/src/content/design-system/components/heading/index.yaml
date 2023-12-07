@@ -5,3 +5,25 @@ description: >-
   and brand font options.
 design: []
 accessibility: []
+code:
+  - title:
+      name: Heading types
+      slug: heading-types
+  - title:
+      name: Sizes
+      slug: sizes
+  - title:
+      name: Tag
+      slug: tag
+  - title:
+      name: Uppercase
+      slug: uppercase
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api

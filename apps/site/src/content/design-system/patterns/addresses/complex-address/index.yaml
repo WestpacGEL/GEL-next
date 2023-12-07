@@ -7,6 +7,10 @@ design:
       name: Complex address
       slug: complex-address
 accessibility: []
+code:
+  - title:
+      name: Pattern examples in code
+      slug: pattern-examples-in-code
 relatedComponents:
   - title: Text inputs
     slug: components/input

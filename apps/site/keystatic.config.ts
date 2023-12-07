@@ -183,12 +183,35 @@ export default config({
           links: true,
           label: 'Related Articles',
         }),
-        code: fields.document({
-          formatting: true,
-          dividers: true,
-          links: true,
-          label: 'Code',
-        }),
+        code: fields.array(
+          fields.object({
+            title: fields.slug({
+              name: {
+                label: 'Title',
+                validation: {
+                  length: {
+                    min: 1,
+                  },
+                },
+              },
+            }),
+            noTitle: fields.checkbox({ label: 'No title' }),
+            content: fields.document({
+              formatting: true,
+              dividers: true,
+              links: true,
+              images: true,
+              layouts: [[6, 6]],
+              label: 'Code',
+              componentBlocks: foundationBlocks,
+            }),
+          }),
+          {
+            label: 'Code sections',
+            itemLabel: props => props.fields.title.value.name,
+            slugField: 'title',
+          },
+        ),
       },
     }),
     authors: collection({

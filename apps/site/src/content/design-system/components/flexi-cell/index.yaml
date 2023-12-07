@@ -1,1 +1,5 @@
 name: Flexi Cell
+code:
+  - title:
+      name: Development examples
+      slug: development-examples

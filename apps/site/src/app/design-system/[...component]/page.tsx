@@ -7,6 +7,7 @@ import { RelatedInfoLinks } from '@/components/related-info/related-info.types';
 
 import { ContentTabs } from './components';
 import { AccessibilitySectionProps } from './components/content-tabs/components/accessibility-content/accessibility-content.types';
+import { CodeSectionProps } from './components/content-tabs/components/code-content/code-content.types';
 import { DesignSectionProps } from './components/content-tabs/components/design-content/design-content.types';
 
 type MetadataProps = {
@@ -54,7 +55,7 @@ export default async function ComponentPage({ params }: { params: { component: s
     .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
     .join('');
 
-  const [designSections, accessibilitySections, accessibilityDemo, code, relatedArticles] = await Promise.all([
+  const [designSections, accessibilitySections, accessibilityDemo, codeSections, relatedArticles] = await Promise.all([
     Promise.all(
       content.design.map(section => {
         return new Promise<DesignSectionProps>((resolve, reject) => {
@@ -99,11 +100,31 @@ export default async function ComponentPage({ params }: { params: { component: s
       }),
     ),
     content?.accessibilityDemo(),
-    content?.code(),
+    Promise.all(
+      content.code.map(section => {
+        return new Promise<CodeSectionProps>((resolve, reject) => {
+          return section
+            .content()
+            .then(content => {
+              resolve({
+                title: section.title.name,
+                content: content,
+                noTitle: section.noTitle,
+              });
+              return {
+                ...section,
+                content,
+              };
+            })
+            .catch((error: any) => {
+              reject(error);
+            });
+        });
+      }),
+    ),
     content?.relatedArticles(),
   ]);
 
-  const codeIsEmpty = code[0].children.length <= 1 && !code[0].children[0].text;
   const accessibilityIsEmpty = accessibilityDemo[0].children.length <= 1 && !accessibilityDemo[0].children[0].text;
   const relatedArticlesIsEmpty = relatedArticles[0].children.length <= 1 && !relatedArticles[0].children[0].text;
 
@@ -121,7 +142,7 @@ export default async function ComponentPage({ params }: { params: { component: s
         westpacUIInfo: westpacInfo,
         accessibilitySections,
         accessibilityDemo: accessibilityIsEmpty ? undefined : accessibilityDemo,
-        code: codeIsEmpty ? undefined : code,
+        codeSections,
         description: content.description,
         designSections,
         relatedArticles: relatedArticlesIsEmpty ? undefined : relatedArticles,

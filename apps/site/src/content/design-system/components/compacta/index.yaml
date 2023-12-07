@@ -19,6 +19,10 @@ accessibility:
   - title:
       name: Accessibility notes
       slug: accessibility-notes
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
 relatedComponents:
   - title: Accordions
     slug: components/accordion

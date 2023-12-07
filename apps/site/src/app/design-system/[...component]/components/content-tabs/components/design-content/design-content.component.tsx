@@ -39,7 +39,7 @@ export function DesignContent({ designSections, description, relatedComponents, 
                   ...DOCUMENT_RENDERERS,
                   block: {
                     ...DOCUMENT_RENDERERS.block,
-                    code: props => <Code className="my-4" enableLiveCode={false} {...props} />,
+                    code: props => <Code className="mb-5 mt-4" enableLiveCode={false} {...props} />,
                   },
                 }}
                 componentBlocks={{

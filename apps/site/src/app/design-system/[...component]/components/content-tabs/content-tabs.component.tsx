@@ -32,7 +32,7 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
         subComponentProps={content.subComponentProps}
         componentProps={content.componentProps}
         westpacUIInfo={content.westpacUIInfo}
-        content={content.code}
+        codeSections={content.codeSections}
       />
     );
   }
@@ -63,9 +63,14 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
     return [
       ...(content.designSections?.length ? [{ label: 'Design', key: 'design' }] : []),
       ...(content.accessibilitySections.length > 0 ? [{ label: 'Accessibility', key: 'accessibility' }] : []),
-      ...(content.componentProps || content.code ? [{ label: 'Code', key: 'code' }] : []),
+      ...(content.componentProps || content.codeSections.length > 0 ? [{ label: 'Code', key: 'code' }] : []),
     ];
-  }, [content.accessibilitySections.length, content.code, content.componentProps, content.designSections?.length]);
+  }, [
+    content.accessibilitySections.length,
+    content.codeSections.length,
+    content.componentProps,
+    content.designSections?.length,
+  ]);
 
   if (filteredTabs.length === 1) {
     return (
