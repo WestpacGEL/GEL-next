@@ -6,7 +6,7 @@ import { Layout } from '@/components/document-renderer/layout';
 
 export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = {
   block: {
-    divider: Divider,
+    divider: () => <Divider className="w-full sm:w-9/12" />,
     paragraph: props => <Paragraph {...props} className="w-full sm:w-9/12" />,
     code: props => <Code className="mb-5 mt-1 sm:mb-8 sm:mt-2" {...props} showCode />,
     heading: Heading,
