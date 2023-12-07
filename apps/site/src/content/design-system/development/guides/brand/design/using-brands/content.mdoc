@@ -10,3 +10,15 @@ The following example shows adding the `wbc` theme. You can add other valid bran
     </html>
 `} />
 ```
+
+### Targeting a specific brand with Tailwind CSS
+
+You can target a specific brand by using the `active-theme-[brand_name]` prefix. For example, to target the `wbc` brand, you can use the following prefix.
+
+```html
+<StaticCode language="jsx" code={`
+    <section>
+        <p class="text-text active-theme-wbc:text-primary">Budgeting for beginners</p>
+    </section>
+`} />
+```

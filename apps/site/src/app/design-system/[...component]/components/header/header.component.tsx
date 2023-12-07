@@ -37,10 +37,12 @@ export function Header({ className, title }: { className?: string; title?: strin
       </button>
 
       <div className={styles.gridButtonWrapper()}>
+        <span className="sr-only">Active breakpoint:</span>
         <span className="hidden font-bold sm:block md:hidden">SM</span>
         <span className="hidden font-bold md:block lg:hidden">MD</span>
         <span className="hidden font-bold lg:block">LG</span>
         <button
+          aria-hidden="true"
           className={styles.gridButton()}
           onClick={() => {
             return;

@@ -48,7 +48,7 @@ export function StickyFooter() {
           <Link href="mailto:gel@westpac.com.au">
             <EmailIcon />
           </Link>
-          <Link href="github.com/WestpacGEL">
+          <Link target="_blank" href="https://github.com/WestpacGEL/GEL-next">
             <GithubIcon />
           </Link>
         </div>
