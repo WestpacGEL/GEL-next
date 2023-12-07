@@ -13,7 +13,7 @@ Update `tailwind.config.js` to use the `withGEL` helper exported by `@westpac/ui
     /** @type {import('tailwindcss').Config} */
     const config = withGEL({
         relative: true,
-        content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
+        content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx}'],
         safelist: [],
     });
 
@@ -29,15 +29,15 @@ For applications using `brand fonts` add the following options config to the `wi
 
     const config = withGEL({
         relative: true,
-        content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
+        content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx}'],
         safelist: [],
         options: {
             brandFonts: {
             // path to font files
-            src: '/fonts', 
-            /** takes a single brand string e.g. 'wbc' or an array of brands. 
+            src: '/fonts',
+            /** takes a single brand string e.g. 'wbc' or an array of brands.
             If no brands are specified will import all brands by default */
-            brands: ['wbc', 'stg'], 
+            brands: ['wbc', 'stg'],
             },
         },
     });

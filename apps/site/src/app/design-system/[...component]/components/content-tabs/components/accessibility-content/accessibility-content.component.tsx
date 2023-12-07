@@ -2,7 +2,6 @@
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Grid, Item, Select } from '@westpac/ui';
-import { useSearchParams } from 'next/navigation';
 import { useId, useState } from 'react';
 
 import { Container } from '@/app/design-system/components';
@@ -31,8 +30,6 @@ const FILTERS = [
 export function AccessibilityContent({ accessibilitySections, accessibilityDemo }: AccessibilityContentProps) {
   const [filter, setFilter] = useState<VisionFilterProps['value']>();
   const id = useId();
-  const searchParams = useSearchParams();
-  const brand = searchParams.get('brand') || 'wbc';
 
   return (
     <>
@@ -48,10 +45,7 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
                   All components are designed and tested to ensure colour contrast ratios comply with the WCAG 2.1 AA
                   specification. Select a filter from the list below to see how this component would appear to someone
                   with a:{' '}
-                  <Link href={`/design-system/accessibility/colour-vision-impairment?brand=${brand}`}>
-                    colour vision impairment
-                  </Link>
-                  .
+                  <Link href="/design-system/accessibility/colour-vision-impairment">colour vision impairment</Link>.
                 </Text>
               </Item>
             </Grid>
