@@ -83,9 +83,11 @@ export function CodeContent({ codeSections = [], westpacUIInfo, componentProps, 
                 </tbody>
               </table>
             </Item>
-            <Item span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
-              <TableOfContents contents={sectionHeadings || sectionNames} />
-            </Item>
+            {(sectionHeadings || sectionNames).length > 0 && (
+              <Item span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
+                <TableOfContents contents={sectionHeadings || sectionNames} />
+              </Item>
+            )}
           </Grid>
         </Container>
       </section>
