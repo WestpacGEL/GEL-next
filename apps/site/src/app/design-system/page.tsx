@@ -141,7 +141,7 @@ export default function DesignSystemHomePage() {
             <ul className="typography-body-10">
               <li className="border-b border-border">
                 <Link
-                  href="https://github.com/WestpacGEL/GEL"
+                  href="https://github.com/WestpacGEL/GEL-next/"
                   target="_blank"
                   className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] hover:text-primary hover:underline sm:min-h-[4.5rem] sm:py-[0.5625rem] sm:pr-[0.5625rem]"
                 >
