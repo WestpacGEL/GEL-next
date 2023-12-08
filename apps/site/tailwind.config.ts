@@ -74,6 +74,7 @@ const config: Config = withGEL({
     'italic',
     'rounded',
     'transition-colors',
+    'bg-primary-10',
     'bg-primary-20',
     'bg-success-20',
     'italic',
