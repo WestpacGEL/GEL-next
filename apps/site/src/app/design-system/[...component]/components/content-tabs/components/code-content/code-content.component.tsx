@@ -20,20 +20,26 @@ import { type CodeContentProps } from '.';
 
 export function CodeContent({ codeSections = [], westpacUIInfo, componentProps, subComponentProps }: CodeContentProps) {
   const sectionNames = useMemo(() => {
-    return codeSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title })) || [];
+    const sections = codeSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title }));
+    if (sections.length > 0) {
+      return [...sections, { title: 'Props' }];
+    }
+    return [];
   }, [codeSections]);
 
   const sectionHeadings = useMemo(() => {
-    return (
-      codeSections.reduce((acc, section) => {
-        return section.content?.reduce((acc, item: DocumentElement & { level?: number }) => {
-          if (item.type === 'heading' && item?.level && item.level <= 3) {
-            return [...acc, { title: item.children[0].text as string }];
-          }
-          return acc;
-        }, acc);
-      }, [] as { title: string }[]) || []
-    );
+    const sections = codeSections.reduce((acc, section) => {
+      return section.content?.reduce((acc, item: DocumentElement & { level?: number }) => {
+        if (item.type === 'heading' && item?.level && item.level <= 3) {
+          return [...acc, { title: item.children[0].text as string }];
+        }
+        return acc;
+      }, acc);
+    }, [] as { title: string }[]);
+    if (sections.length > 0) {
+      return [...sections, { title: 'Props' }];
+    }
+    return [];
   }, [codeSections]);
 
   return (
