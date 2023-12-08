@@ -2,6 +2,7 @@
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Container, Grid } from '@westpac/ui';
+import Image from 'next/image';
 
 import { ArticleComponentBlocksComponents } from '@/components/component-blocks/article-component-blocks';
 import { LeadingText } from '@/components/component-blocks/components/leading-text';
@@ -26,7 +27,14 @@ export function ArticlePage({ article, author }: ArticlePageProps) {
             <div className="col-span-12 mb-7 xsl:mb-9">
               {article.image && (
                 <figure>
-                  <img alt={article.name} src={article.image} className="block h-auto w-full" />
+                  <Image
+                    priority
+                    alt={article.image.alt}
+                    src={article.image.src}
+                    height={article.image.height || undefined}
+                    width={article.image.width || undefined}
+                    className="block h-auto w-full"
+                  />
                 </figure>
               )}
             </div>

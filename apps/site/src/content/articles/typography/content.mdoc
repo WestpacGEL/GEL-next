@@ -12,13 +12,13 @@ To differentiate themselves brands typically choose (or create) unique typefaces
 
 The body font is the companion to the brand font and used for all UI elements and body text. This typeface has to be extremely flexible and functional. As a result we encourage brands to use system fonts rather than bespoke web-fonts for the body. There are several key reasons we use system fonts for body text and UI elements:
 
-1.  Page weight and download speeds: Similar to images, web-fonts have to be downloaded. When it comes to online banking every byte counts. Using a system font boosts performance because the browser doesn't have to download any font files.
-2.  Multi-lingual applications: Our sites and applications are often multi-lingual and include double-byte character sets (Chinese, Japanese, Korean etc). These fonts use thousands of glyphs which creates huge font files. Using system fonts we have automatic access to these character sets when switching languages.
-3.  Leveraging the smarts: Modern system fonts are specifically designed and created to aid legibility on screen. The geometry, hinting and logic that goes into each glyph works in conjunction with the operating system to ensure that the user always has an optimal reading experience.
+1. Page weight and download speeds: Similar to images, web-fonts have to be downloaded. When it comes to online banking every byte counts. Using a system font boosts performance because the browser doesn't have to download any font files.
+1. Multi-lingual applications: Our sites and applications are often multi-lingual and include double-byte character sets (Chinese, Japanese, Korean etc). These fonts use thousands of glyphs which creates huge font files. Using system fonts we have automatic access to these character sets when switching languages.
+1. Leveraging the smarts: Modern system fonts are specifically designed and created to aid legibility on screen. The geometry, hinting and logic that goes into each glyph works in conjunction with the operating system to ensure that the user always has an optimal reading experience.
 
 ### The font stack
 
-To implement fonts in our web sites and applications we use two CSS font stacks. One for the _brand font_ and one for the _body font_. Put simply a font stack is a list of typefaces. When customers view a website or application their device goes through this list and selects the font best suited to the operating system.
+To implement fonts in our web sites and applications we use two CSS font stacks. One for the *brand font* and one for the *body font*. Put simply a font stack is a list of typefaces. When customers view a website or application their device goes through this list and selects the font best suited to the operating system.
 
 The body font stack is a list of system fonts found in each operating system iOS, Android, Windows etc. When customers view a website or application their device goes through this list and selects the corresponding system font.
 
@@ -26,19 +26,23 @@ The brand font stack is also a list of typefaces with the web-font being the fir
 
 ### Font weights
 
-Font weights allow us to add more visual appeal and hierarchy to our designs. Designers can use the available weights as they see fit however they must consider the brands design direction and guidelines. As we use the font stack to establish the correct typeface developers must always use numerical values to assign different font weights rather than specifying the physical name or weight of the font. For example, assigning a value of 300 to the font weight property will display the light version of whatever typeface the device is using (providing this weight is available). Unavailable weights display the logically closest weight. **Font weights should always be used in alignment with the GUIs and the digital brand guidelines.**
+Font weights allow us to add more visual appeal and hierarchy to our designs. Designers can use the available weights as they see fit however they must consider the brands design direction and guidelines. As we use the font stack to establish the correct typeface developers must always use numerical values to assign different font weights rather than specifying the physical name or weight of the font. For example, assigning a value of 300 to the font weight property will display the light version of whatever typeface the device is using (providing this weight is available). Unavailable weights display the logically closest weight.&nbsp;**Font weights should always be used in alignment with the GUIs and the digital brand guidelines.**
 
-{% articleBodyImage articleBodyImage="https://res.cloudinary.com/westpac-gel/image/upload/v1666139429/cl9eweb04000otc8i5h3k3ep6.png" alt="The different font weights available." type="bodyWide" /%}
+{% articleBodyImage
+   image={src: "https://res.cloudinary.com/westpac-gel/image/upload/v1666139429/cl9eweb04000otc8i5h3k3ep6.png", alt: "The different font weights available.", height: 1382, width: 1852}
+   type="bodyWide" /%}
 
 ### Type scale
 
 Our typographic scale has a limited set of sizes that work together to help maintain a consistent scale and rhythm across all digital touch-points. Designers can use these sizes as they see fit however they must consider the brands design direction and guidelines. We also have a few practical rules around the use of type sizes.
 
-1.  Line height: As a rule of thumb we generally use a proportional line height of 1.2 for headings and 1.4 for body text.
-2.  Responsive text: When reducing the size of headings for use in smaller breakpoints we typically use increments of 6px. For example a heading size of 36px in the sm breakpoint can be reduced to 30px in xs. This simple rule generally works well.
+1. Line height: As a rule of thumb we generally use a proportional line height of 1.2 for headings and 1.4 for body text.
+1. Responsive text: When reducing the size of headings for use in smaller breakpoints we typically use increments of 6px. For example a heading size of 36px in the sm breakpoint can be reduced to 30px in xs. This simple rule generally works well.
 
 We’re hoping to establish a more robust system of spacing for our Typography system however this is easier said than done due to the volume and variation of our digital products and services. We’re also aware that good typography is a craft not an exact science. Baseline grids, tracking, kerning, leading etc are all features used by designers to massage letters and words into visually appealing shapes. With this in mind we are reluctant to apply too many rules to the type system opting instead to let designers work their magic armed with their knowledge, experience and of course the brand guidelines.
 
-{% articleBodyImage articleBodyImage="https://res.cloudinary.com/westpac-gel/image/upload/v1666141371/cl9exjwys000ptc8i1ki2fsxh.png" alt="The font sizes available in the design system" type="bodyWide" /%}
+{% articleBodyImage
+   image={src: "https://res.cloudinary.com/westpac-gel/image/upload/v1666141371/cl9exjwys000ptc8i1ki2fsxh.png", alt: "The font sizes available in the design system", height: 1382, width: 1852}
+   type="bodyWide" /%}
 
 [Access the design system fonts](/design-system/foundation/font)

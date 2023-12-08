@@ -4,11 +4,17 @@ description: >-
   The value of a design system is well documented and has roots in manufacturing
   and construction dating back centuries. In our digital world, and for Westpac
   Group specifically, the value is attributed across four core drivers.
-thumbnail: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1666848438/cl9qmit0m0001f58i7e4bevq2.png
+thumbnail:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1666848438/cl9qmit0m0001f58i7e4bevq2.png
+  height: 1212
+  width: 3168
 smallDescription: >-
   Design systems are helping to shape our digital world so we can deliver
   quality experiences faster.
-image: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1667030117/cl9tmott9000jf58ib5ko3252.png
+image:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1667030117/cl9tmott9000jf58ib5ko3252.png
+  height: 1080
+  width: 1920
 author: marita-purins

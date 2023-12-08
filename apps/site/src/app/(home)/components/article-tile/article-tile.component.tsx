@@ -13,7 +13,7 @@ export function ArticleTile({ article, slug, className, layout, index }: Article
     <Link href={`/articles/${slug}`} className={styles.base({ className })}>
       {article.thumbnail && (
         <div className={styles.imageWrapper({})}>
-          <Image fill objectFit="cover" src={article.thumbnail} alt="" />
+          <Image fill src={article.thumbnail.src} alt={article.name} className="object-cover" />
         </div>
       )}
       <div className={styles.contentWrapper({})}>

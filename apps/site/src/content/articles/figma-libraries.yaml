@@ -4,11 +4,17 @@ description: >-
   The Figma Libraries are a complete set of multi-brand, accessible design
   assets to help you create high quality, consistent, experiences across all our
   digital touchpoints.
-thumbnail: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1663227299/cl82ql8m4000yam8ifp387nfc.png
+thumbnail:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1663227299/cl82ql8m4000yam8ifp387nfc.png
+  height: 1212
+  width: 3168
 smallDescription: >-
   Design using cloud based symbols. All the assets you need to create interfaces
   with the design system.
-image: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1663227299/cl82ql8m2000xam8iaw7o4ols.png
+image:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1663227299/cl82ql8m2000xam8iaw7o4ols.png
+  height: 1080
+  width: 1920
 author: kate-macdonald

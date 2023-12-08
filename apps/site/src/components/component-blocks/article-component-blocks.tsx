@@ -1,33 +1,25 @@
 import { component, fields } from '@keystatic/core';
+import Image from 'next/image';
 
 import { ArticleBodyImage } from './components/article-body-image';
+import { ArticleImage } from './components/article-image';
 import { LeadingText } from './components/leading-text';
 
 export const ArticleComponentBlocks = {
   // EXAMPLES:
   articleBodyImage: component({
     label: 'Article body image',
-    preview: props => (
-      <img
-        className="w-1/3"
-        src={URL.createObjectURL(
-          new Blob(
-            [props.fields.articleBodyImage.value?.data.buffer || ''],
-            { type: `image/${props.fields.articleBodyImage.value?.extension}` } /* (1) */,
-          ),
+    preview: ({ fields: { image, title } }) => (
+      <figure>
+        {image.fields.src.value && (
+          <Image src={image.fields.src.value} alt={image.fields.alt.value} height={150} width={300} />
         )}
-        alt={props.fields.articleBodyImage.value?.filename}
-      />
+        {title && <figcaption>{title.value}</figcaption>}
+      </figure>
     ),
     schema: {
-      articleBodyImage: fields.image({
-        label: 'Image',
-        description: 'image',
-        directory: 'public/images/articles',
-        publicPath: '/images/articles',
-      }),
-      alt: fields.text({
-        label: 'Alt text',
+      image: fields.cloudImage({
+        label: 'Article Body Image',
       }),
       title: fields.text({
         label: 'Title',
@@ -52,10 +44,40 @@ export const ArticleComponentBlocks = {
       }),
     },
   }),
+  articleImage: component({
+    label: 'Article Image',
+    preview: ({ fields: { image, caption } }) => {
+      return (
+        <figure>
+          {image.fields.src.value && (
+            <Image src={image.fields.src.value} alt={image.fields.alt.value} height={150} width={150} />
+          )}
+          {caption && <figcaption>{caption.value}</figcaption>}
+        </figure>
+      );
+    },
+    schema: {
+      image: fields.cloudImage({
+        label: 'Image',
+      }),
+      caption: fields.text({
+        label: 'Caption',
+      }),
+      spacing: fields.select({
+        label: 'Image spacing',
+        options: [
+          { label: 'Default', value: 'default' },
+          { label: 'Reduced', value: 'reduced' },
+        ],
+        defaultValue: 'default',
+      }),
+    },
+  }),
 };
 
 export const ArticleComponentBlocksComponents = {
   // EXAMPLES:
   articleBodyImage: ArticleBodyImage,
   leadingText: LeadingText,
+  articleImage: ArticleImage,
 };

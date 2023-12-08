@@ -1,20 +1,21 @@
 import { Item } from '@westpac/ui';
+import { clsx } from 'clsx';
+import { Children } from 'react';
 
-import { styles } from './layout.styles';
-import { type LayoutProps, type Variants } from './layout.types';
+import { type LayoutProps } from './layout.types';
 import { layoutMap } from './layout.utils';
 
 export const Layout = ({ children, layout }: LayoutProps) => {
   return (
     <>
-      {children.map((child, index) => {
+      {Children.map(children, (child, index) => {
         const width = layout[index];
         return (
           <Item
             key={index}
             span={layoutMap[width].span}
             start={layoutMap[width].start[index]}
-            className={styles({ index: index as Variants['index'] })}
+            className={clsx(index === 0 && 'group')}
           >
             {child}
           </Item>

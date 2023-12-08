@@ -253,21 +253,15 @@ export default config({
           label: 'Description',
           multiline: true,
         }),
-        thumbnail: fields.image({
+        thumbnail: fields.cloudImage({
           label: 'Thumbnail image',
-          description: 'Thumbnail image',
-          directory: 'public/images/articles',
-          publicPath: '/images/articles',
         }),
         smallDescription: fields.text({
           label: 'Small description',
           multiline: true,
         }),
-        image: fields.image({
+        image: fields.cloudImage({
           label: 'Main Image',
-          description: 'Main image',
-          directory: 'public/images/articles',
-          publicPath: '/images/articles',
         }),
         author: fields.relationship({
           label: 'Author',

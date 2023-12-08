@@ -5,11 +5,17 @@ description: >-
   respond to colour. We stop our cars for red lights and go on green. We see
   colour before we see form. This article explains why we have a colour system
   and how to apply it to your designs.
-thumbnail: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1666755294/cl9p32exi0004u48idenu5zh8.png
+thumbnail:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1666755294/cl9p32exi0004u48idenu5zh8.png
+  height: 1212
+  width: 3168
 smallDescription: >-
   Speed up your workflow, ensure you're on brand and stay accessible with our
   multi-brand colour system.
-image: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1666069890/cl9dqztwo000jtc8iarv46fe1.png
+image:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1666069890/cl9dqztwo000jtc8iarv46fe1.png
+  height: 1080
+  width: 1920
 author: justin-spencer
