@@ -1,0 +1,50 @@
+Use this pattern to collect the foreign tax residency status of a customer. We have a legal obligation to collect this information so as not to unwittingly assist income tax evasion.
+
+## What’s happening here?
+
+- **Filtering question.** The customer is asked if they are a tax resident in any other country, if they answer ‘No’ they continue to the next question.
+- **Yes.** If the customer does have another foreign tax residency status to declare and answers ‘Yes’, they are presented with additional questions: Country and Tax Identification Number (TIN).
+- **Multiple.** This pattern allows multiple foreign tax residency status's to be added.
+
+## Why do we do it this way?
+
+### Understand and adapt
+
+Starting with*Yes/No*allows the more detailed questions to only be shown to the customers the questions are relevant for and keeps it simple for the rest.
+
+### Brilliantly simple
+
+Using the search functionality to select a country allows us to display any further country-specific information the customer is required to provide. For example, some countries require a Foreign Taxpayer Identification Number (TIN) and some don’t. 
+
+Using the repeater component to allow multiple sets of information keeps the process simple, and only shows complexity to those it is meant for.
+
+## Where does it sit in the sequence?
+
+Tax details are generally captured just after upfront personal details as part of the Identity check.
+
+## How do we want our customers to feel?
+
+After providing these details, the customer should feel secure and confident that Westpac is doing the right thing for the community by ensuring that they are doing all that they can to help stop criminal activity.
+
+## Looking for detailed designs?
+
+Here are links to detailed specifications of the pattern in Figma. This information is only available to Westpac Group employees:
+
+[Pattern guidelines - Foreign tax Residency](https://www.figma.com/proto/J2RDfHZfPY0Iz0PwgNfn2F/Forms-shell?page-id=605%3A42033&type=design&node-id=605-42034&viewport=827%2C149%2C0.22&t=qzCoLIEw0oQNaUJ7-1&scaling=scale-down-width&mode=design)
+
+## Related items
+
+- [Business address](/articles/originations-business-address)
+- [Business industry](/articles/originations-business-industry)
+- [Celebration moment](/articles/originations-celebration-moment)
+- [Contact details](/articles/originations-capture-contact-details)
+- [Confirm profile](/articles/originations-confirm-profile)
+- Dashboard (Coming soon)
+- [Retrieve application](/articles/originations-retrieve-application)
+- Review (Coming soon)
+- [Select Business](/articles/originations-select-business)
+- [Set up Online Banking](/articles/originations-set-up-online-banking)
+- [Third party intro](/articles/originations-third-party-intro)
+- [Verify ID](/articles/originations-verify-ID)
+- [Back to Originations](/articles/originations-experience)
+- [Back to Sequence](/articles/originations-sequence)
