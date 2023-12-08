@@ -77,6 +77,7 @@ const config: Config = withGEL({
     'bg-primary-10',
     'bg-primary-20',
     'bg-success-20',
+    'break-words',
     'italic',
     'text-muted',
     'mb-[0.875rem]',
