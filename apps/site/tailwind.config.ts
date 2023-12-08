@@ -97,6 +97,12 @@ const config: Config = withGEL({
     'w-6/12',
     'w-7/12',
     'w-5/12',
+    'row-span-2',
+    'w-5',
+    'sm:w-10',
+    'md:w-20',
+    'lg:w-30',
+    'w-auto',
   ],
   plugins: [SitePlugin],
   options: {

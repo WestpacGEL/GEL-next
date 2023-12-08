@@ -1,8 +1,11 @@
 import { Alert, Field, Form, Input, Select } from '@westpac/ui';
 import { Fragment, useState } from 'react';
 
+import { useBrand } from '@/app/design-system/hooks/use-brand';
+
 export const TaxFileNumberPattern = ({ showPrevious = false, showErrors = false }) => {
   const [value, setValue] = useState<string>();
+  const brand = useBrand();
 
   const error = showErrors ? 'Error message goes here if activated' : '';
   const invalid = showErrors;
@@ -60,9 +63,8 @@ export const TaxFileNumberPattern = ({ showPrevious = false, showErrors = false 
       )}
       {value === 'provide-later' && (
         <Alert>
-          {/* TODO: BRand.Name */}
-          You can provide your TFN at any time via phone or at a BRAND.name branch. In the meantime, please note, we may
-          need to withhold tax from any interest you earn.
+          You can provide your TFN at any time via phone or at a {brand?.label} branch. In the meantime, please note, we
+          may need to withhold tax from any interest you earn.
         </Alert>
       )}
     </Fragment>
