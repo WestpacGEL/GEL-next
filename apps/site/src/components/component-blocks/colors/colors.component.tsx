@@ -15,7 +15,7 @@ export function Colors({ palette }: { palette: string }) {
   return (
     <Grid tag="ul" className="mt-2">
       {colorPalette.map(color => (
-        <Item key={color.name} tag="li" span={{ intial: 12, xsl: 6, sm: 4, md: 3 }}>
+        <Item key={color.name} tag="li" span={{ initial: 12, xsl: 6, sm: 4, md: 3 }}>
           <div className="flex flex-row items-center bg-white p-4 xsl:flex-col xsl:items-stretch">
             <Svg viewBox="0 0 132 132" width={132} height={132}>
               <circle fill={color.hex} cx="66" cy="66" r="66" />
