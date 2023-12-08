@@ -2,6 +2,13 @@
 module.exports = {
   reactStrictMode: false,
   images: {
-    domains: ['res.cloudinary.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/westpac-gel/**',
+      },
+    ],
   },
 };

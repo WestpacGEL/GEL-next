@@ -1,8 +1,9 @@
+import { type CloudImageProps } from '@keystatic/core/component-blocks';
+
 export type Width = 'body' | 'bodyWide';
 
 export type ArticleBodyImageProps = {
-  alt?: string;
-  articleBodyImage?: string;
+  image: CloudImageProps;
   title?: string;
   type?: Width;
 };

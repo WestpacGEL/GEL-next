@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
 
   const title = `${article.name} | GEL Design System`;
   const description = article.description;
-  const images = article.image ? [article.image] : [];
+  const images = article.image ? [article.image.src] : [];
 
   return {
     title,

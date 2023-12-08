@@ -6,41 +6,49 @@ In 2008 Westpac merged with the St.George Group. Each business in the group had 
 
 So we needed a solution that would not only maintain the consistency of all these brands but also facilitate an efficient workflow that would ensure the brands integrity and authenticity was not lost or diluted both now and as they evolve into the future.
 
-Several years later on the cusp of the digital revolution the GEL Design System was born. For almost a decade this system has been the foundation of our digital brands. Everything in the system can be used by all our brands ensuring **quality** by empowering us to deliver on our brand promises, **efficiency** through a single source of truth and **consistency** through design clarity and direction. Using this approach has given us the capacity and confidence to focus on solving real business problems and to design delightful customer experiences.
+Several years later on the cusp of the digital revolution the GEL Design System was born. For almost a decade this system has been the foundation of our digital brands. Everything in the system can be used by all our brands ensuring&nbsp;**quality** by empowering us to deliver on our brand promises,&nbsp;**efficiency**&nbsp;through a single source of truth and&nbsp;**consistency**&nbsp;through design clarity and direction. Using this approach has given us the capacity and confidence to focus on solving real business problems and to design delightful customer experiences.
 
 ## The design system
 
 At its core the design system is made up of 4 sub-systems; colour, typography, iconography and layout. These are the foundations of our multi-brand system.
 
-{% articleBodyImage articleBodyImage="https://res.cloudinary.com/westpac-gel/image/upload/v1667257636/cl9xe5c2t0015f58i4u4yd807.png" alt="Graphic showing the design systems 4 sub-systems; Colour, Typography, Iconography and Layout." type="bodyWide" /%}
+{% articleBodyImage
+   image={src: "https://res.cloudinary.com/westpac-gel/image/upload/v1667257636/cl9xe5c2t0015f58i4u4yd807.png", alt: "Graphic showing the design systems 4 sub-systems; Colour, Typography, Iconography and Layout.", height: 1152, width: 2000}
+   type="bodyWide" /%}
 
 ### Colour
 
 The colour system is a collection of carefully considered variables (or tokens) designed to work in unison. In consultation with each brand we developed a unique set of corresponding colour values all rigorously tested to ensure brand alignment and guarantee the user interface remained accessible in every possible scenario.
 
-{% articleBodyImage articleBodyImage="https://res.cloudinary.com/westpac-gel/image/upload/v1665358951/cl91zpy5o000rrq8ih082f3oh.png" alt="Graphic to show the different colours that each brand use for their Primary colour." /%}
+{% articleBodyImage
+   image={src: "https://res.cloudinary.com/westpac-gel/image/upload/v1665358951/cl91zpy5o000rrq8ih082f3oh.png", alt: "Graphic to show the different colours that each brand use for their Primary colour.", height: 1096, width: 2321}
+   type="body" /%}
 
-When we reference these colours in our applications we don’t specify the explicit colour value, instead we reference the colours variable (or token). For example the _Primary colour_ in Westpac is #DA1710 however in Rams it’s #047DBC. Our application only needs to know that the _Primary colour_ is being used, the value of that colour is irrelevant.
+When we reference these colours in our applications we don’t specify the explicit colour value, instead we reference the colours variable (or token). For example the *Primary colour* in Westpac is #DA1710 however in Rams it’s #047DBC. Our application only needs to know that the *Primary colour* is being used, the value of that colour is irrelevant.
 
 For more in-depth information on the colour system see the article [Colour](/articles/colour)
 
 ### Typography
 
-The typography system works in the same way as the colour system. Each brand is assigned two variables we call; _Brand font_ and _Body font_.
+The typography system works in the same way as the colour system. Each brand is assigned two variables we call; *Brand font* and *Body font*.
 
 When we reference these fonts in our applications we don’t specify the actual font name. Instead we reference the fonts variable name.
 
-For example, the _Brand font_ in St.George (fig. 2) is Dragon Bold, Bank of Melbourne’s _Brand font_ is LL Brown (fig. 3). Our application only needs to know that the _Brand font_ is being used, the actual typeface used to display the text is irrelevant.
+For example, the *Brand font* in St.George (fig. 2) is Dragon Bold, Bank of Melbourne’s *Brand font* is LL Brown (fig. 3). Our application only needs to know that the *Brand font* is being used, the actual typeface used to display the text is irrelevant.
 
 {% layout layout=[4, 4] %}
 {% layout-area %}
-![Graphic to show what the St.George brand font looks like.](https://res.cloudinary.com/westpac-gel/image/upload/v1664939880/cl8v27szo000nrq8ie1ogbach.png 'Fig. 2')
-
+{% articleImage
+   image={src: "https://res.cloudinary.com/westpac-gel/image/upload/v1664939880/cl8v27szo000nrq8ie1ogbach.png", alt: "Graphic to show what the St.George brand font looks like.", height: 744, width: 712}
+   caption="Fig. 2"
+   spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
-![Graphic to show what the Bank of Melbourne brand font looks like.](https://res.cloudinary.com/westpac-gel/image/upload/v1664939898/cl8v286s6000orq8ihhl2dkch.png 'Fig. 3')
-
+{% articleImage
+   image={src: "https://res.cloudinary.com/westpac-gel/image/upload/v1664939898/cl8v286s6000orq8ihhl2dkch.png", alt: "Graphic to show what the Bank of Melbourne brand font looks like.", height: 744, width: 712}
+   caption="Fig. 3"
+   spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
 
@@ -50,7 +58,7 @@ For more in-depth information on the typography system see the articles [Typogra
 
 ### Iconography
 
-Also referred to as our _Global Visual Language_ the iconography system is a library of carefully crafted user interface icons shared by all our brands.
+Also referred to as our *Global Visual Language* the iconography system is a library of carefully crafted user interface icons shared by all our brands.
 
 Designed to aid navigation and legibility each icon is reduced to its minimal form to ensure readability and clarity at small sizes.
 
@@ -62,17 +70,21 @@ For more in-depth information on the Iconography system see the article [Iconogr
 
 {% layout layout=[4, 4] %}
 {% layout-area %}
-![Graphic to show how an icon aligns to the 24px grid.](https://res.cloudinary.com/westpac-gel/image/upload/v1665119556/cl8y16vr3000prq8i58486coh.png)
+{% articleImage
+   image={src: "https://res.cloudinary.com/westpac-gel/image/upload/v1665119556/cl8y16vr3000prq8i58486coh.png", alt: "Graphic to show how an icon aligns to the 24px grid.", height: 939, width: 902}
+   spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
-![Graphic to show the different sizes of icons available in the design system.](https://res.cloudinary.com/westpac-gel/image/upload/v1665119583/cl8y17gmw000qrq8id59z6n51.png)
+{% articleImage
+   image={src: "https://res.cloudinary.com/westpac-gel/image/upload/v1665119583/cl8y17gmw000qrq8id59z6n51.png", alt: "Graphic to show the different sizes of icons available in the design system.", height: 939, width: 902}
+   spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
 
 ### Layout
 
-Layout is arguably the most powerful of these sub-systems in part because it uses a mathematical formula based on the number 12. We chose 12 because it’s a highly composite number, divisible by 2, 3, 4, and 6, making it much more flexible than its neighbours. Every aspect of the GEL Design System uses a multiple or divisor of 12 from the number of columns in the responsive grid to the height of a button. This is the key to creating a consistent scale and rhythm throughout the customer journey. It also speeds up the design process and reduces the margin for error during build.
+Layout is arguably the most powerful of these sub-systems in part because it uses a mathematical formula based on the number 12. We chose 12 because it’s a highly composite number, divisible by&nbsp;2,&nbsp;3,&nbsp;4, and&nbsp;6, making it much more flexible than its neighbours. Every aspect of the GEL Design System uses a multiple or divisor of 12 from the number of columns in the responsive grid to the height of a button. This is the key to creating a consistent scale and rhythm throughout the customer journey. It also speeds up the design process and reduces the margin for error during build.
 
 For more in-depth information on the layout system see the article [The Grid](/articles/the-grid)
 

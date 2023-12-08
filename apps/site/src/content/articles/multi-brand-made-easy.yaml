@@ -6,11 +6,17 @@ description: >-
   knowledge, digital assets and business processes is so important. This article
   explains how we achieve this using the GEL Design System, its tools and
   resources.
-thumbnail: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1663137798/cl819awzl0007am8i6n47fcgj.png
+thumbnail:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1663137798/cl819awzl0007am8i6n47fcgj.png
+  height: 1212
+  width: 3168
 smallDescription: >-
   Create individually branded customer experiences while re-using our technical
   knowledge, digital assets and business processes.
-image: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1667114301/cl9v0t61d000zf58ihp0j1odr.jpg
+image:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1667114301/cl9v0t61d000zf58ihp0j1odr.jpg
+  height: 1080
+  width: 1920
 author: justin-spencer

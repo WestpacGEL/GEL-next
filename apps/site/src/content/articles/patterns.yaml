@@ -9,11 +9,17 @@ description: >-
   designing user interfaces, making it easier for projects to create intuitive
   and consistent designs that contribute to a more cohesive customer experience
   across our entire digital channel.
-thumbnail: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1695970092/cln48sxiz002qvd8iblpm5zvt.png
+thumbnail:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1695970092/cln48sxiz002qvd8iblpm5zvt.png
+  height: 1212
+  width: 3168
 smallDescription: >-
   A library of tried and tested patterns to help you quickly create more
   consistent digital experiences.
-image: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1695697952/clmzqrzyz001nvd8i064s69ad.png
+image:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1695697952/clmzqrzyz001nvd8i064s69ad.png
+  height: 1080
+  width: 1920
 author: digital-experience

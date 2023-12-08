@@ -8,12 +8,18 @@ description: >-
   eyesight, an injured wrist or a recovery from surgery. Disability and
   accessibility requirements will impact all of us at some point in our
   lifetime.”
-thumbnail: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1666333819/cl9i44qb7000wtc8ihnxv08ex.png
+thumbnail:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1666333819/cl9i44qb7000wtc8ihnxv08ex.png
+  height: 1212
+  width: 3168
 smallDescription: >-
   The Westpac Group is committed to creating products that are perceivable,
   operable, understandable, and robust for all users. Inclusive design is part
   of our dna.
-image: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1666333853/cl9i45goa000xtc8i8wgx5cu2.png
+image:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1666333853/cl9i45goa000xtc8i8wgx5cu2.png
+  height: 1080
+  width: 1920
 author: michael-colibraro

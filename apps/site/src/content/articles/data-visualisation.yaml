@@ -5,11 +5,17 @@ description: >-
   the need for a consistent approach to data visualisation. This article is an
   introduction to the data visualisation system, how it works and how you can
   use it to create accessible, multi-brand graphs and charts.
-thumbnail: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1687413424/clj6qdu4q0027bn8i5zr512pk.png
+thumbnail:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1687413424/clj6qdu4q0027bn8i5zr512pk.png
+  height: 1212
+  width: 3168
 smallDescription: >-
   The data visualisation system, how it works and how you can use it to create
   accessible, multi-brand charts.
-image: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1687499154/clj85faof003ibn8i8ib98gpx.png
+image:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1687499154/clj85faof003ibn8i8ib98gpx.png
+  height: 1080
+  width: 1920
 author: justin-spencer

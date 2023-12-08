@@ -17,9 +17,9 @@ export const logoMap: Record<BrandKey, { logo: React.FC<SymbolProps>; name: stri
   wbc: { name: 'Westpac', logo: WBCLogo },
   stg: { name: 'St.George', logo: STGDragonLogo },
   bom: { name: 'Bank of Melbourne', logo: BOMShieldLogo },
-  bsa: { name: 'Bank SA', logo: BSAStackedLogo },
+  bsa: { name: 'BankSA', logo: BSAStackedLogo },
   wbg: { name: 'Westpac Group', logo: WBGLogo },
-  rams: { name: 'Rams', logo: RAMSLogo },
+  rams: { name: 'RAMS', logo: RAMSLogo },
 };
 
 export const logoStyles = tv({
