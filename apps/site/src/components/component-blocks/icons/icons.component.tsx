@@ -34,34 +34,28 @@ export const Icons = () => {
 
   return (
     <form action="/api/assets" method="POST">
-      <div className="mb-4 bg-light p-4">
-        <Grid>
-          <Item span={{ initial: 12, sm: 6 }}>
-            <div className="flex flex-col items-start sm:flex-row sm:items-center">
-              <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="filter-icons">
-                Filter by name
-              </label>
-              <Input id="filter-icon" value={search} onChange={handleOnChange} className="w-full" />
-            </div>
-          </Item>
-          <Item span={{ initial: 12, sm: 3 }}>
-            <div className="flex flex-col items-start sm:flex-row sm:items-center">
-              <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="icon-look">
-                Look
-              </label>
-              <Select id="icon-look" value={look} onChange={handleLookChange} className="w-full sm:w-fit">
-                <option value="filled">Filled</option>
-                <option value="outlined">Outlined</option>
-              </Select>
-            </div>
-          </Item>
-          <Item span={{ initial: 12, sm: 3 }}>
-            <input type="hidden" name="asset" value="icon" />
-            <Button look="primary" iconBefore={AllIcons.DownloadIcon} soft type="submit">
-              Download all SVGs
-            </Button>
-          </Item>
-        </Grid>
+      <div className="mb-4 flex flex-wrap gap-3 bg-light p-4 align-bottom">
+        <div className="flex w-full shrink-0 grow flex-col items-start sm:w-auto sm:flex-row sm:items-center">
+          <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="filter-icons">
+            Filter by name
+          </label>
+          <Input id="filter-icon" value={search} onChange={handleOnChange} className="w-full" />
+        </div>
+        <div className="flex w-full flex-col items-start xsl:w-auto sm:flex-row sm:items-center">
+          <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="icon-look">
+            Look
+          </label>
+          <Select id="icon-look" value={look} onChange={handleLookChange} className="w-full sm:w-fit">
+            <option value="filled">Filled</option>
+            <option value="outlined">Outlined</option>
+          </Select>
+        </div>
+        <div className="flex w-full items-end sm:w-auto">
+          <input type="hidden" name="asset" value="icon" />
+          <Button look="primary" iconBefore={AllIcons.DownloadIcon} soft type="submit">
+            Download all SVGs
+          </Button>
+        </div>
       </div>
       <Grid>
         <Item span={12}>
