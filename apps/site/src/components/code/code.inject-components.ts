@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export { DesktopComputerPictogram } from '@westpac/ui/pictogram';
+export { DesktopComputerPictogram, DriversLicencePictogram } from '@westpac/ui/pictogram';
 
 export { MastercardAcceptedSymbol, WBCLogo } from '@westpac/ui/symbol';
 

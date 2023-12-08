@@ -7,6 +7,10 @@ type Variants = VariantProps<typeof styles>;
 
 export type ItemProps = {
   /**
+   * Controls height of item based on amount of grid spaces to cover
+   */
+  rowSpan?: Variants['rowSpan'];
+  /**
    * Controls width of item based on amount of grid spaces to cover
    */
   span?: Variants['span'];

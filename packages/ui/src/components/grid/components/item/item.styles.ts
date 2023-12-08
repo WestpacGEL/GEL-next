@@ -4,6 +4,14 @@ export const styles = tv(
   {
     base: '',
     variants: {
+      rowSpan: {
+        1: 'row-span-1',
+        2: 'row-span-2',
+        3: 'row-span-3',
+        4: 'row-span-4',
+        5: 'row-span-5',
+        6: 'row-span-6',
+      },
       span: {
         1: 'col-span-1',
         2: 'col-span-2',

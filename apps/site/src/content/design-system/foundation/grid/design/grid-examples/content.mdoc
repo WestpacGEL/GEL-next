@@ -5,13 +5,13 @@ This 3 column layout stacks on xs\* (each column takes up full width) but on the
 ```tsx
 <div className="relative">
   <Grid>
-    <Item span={12} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item span={12} className="bg-primary-10 p-2 text-center text-primary">
       Column A
     </Item>
-    <Item span={12} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item span={12} className="bg-primary-10 p-2 text-center text-primary">
       Column B
     </Item>
-    <Item span={12} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item span={12} className="bg-primary-10 p-2 text-center text-primary">
       Column C
     </Item>
   </Grid>
@@ -30,16 +30,16 @@ This 3 column layout stacks on xs\* (each column takes up full width) but on the
 ```tsx
 <div className="relative">
   <Grid>
-    <Item span={{ initial: 4, md: 12 }} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item span={{ initial: 4, md: 12 }} className="bg-primary-10 p-2 text-center text-primary">
       Column 12 at MD
     </Item>
-    <Item span={4} className="border border-primary bg-primary-20 p-2 text-center text-primary row-start-2">
+    <Item span={4} className="bg-primary-10 p-2 text-center text-primary row-start-2">
       Column 4
     </Item>
   </Grid>
   <Grid className="absolute top-0 left-0 right-0 bottom-0">
     {new Array(12).fill(null).map((_, index) => (
-      <Item key={index} span={1} className="bg-success/20 p-2 text-center text-primary" />
+      <Item key={index} span={1} className="bg-success/10 p-2 text-center text-primary" />
     ))}
   </Grid>
 </div>
@@ -52,16 +52,16 @@ Columns can be nested inside columns to achieve greater complexity and structure
 ```tsx
 <div className="relative">
   <Grid>
-    <Item span={12} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item span={12} className="bg-primary-10 p-2 text-center text-primary">
       Column A
     </Item>
-    <Item span={4} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item span={4} className="bg-primary-10 p-2 text-center text-primary">
       Column B
     </Item>
-    <Item span={4} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item span={4} className="bg-primary-10 p-2 text-center text-primary">
       Column C
     </Item>
-    <Item span={4} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item span={4} className="bg-primary-10 p-2 text-center text-primary">
       Column D
     </Item>
   </Grid>
@@ -80,13 +80,13 @@ If a pull-right class is added to the first column it will be the top most colum
 ```tsx
 <div className="relative">
   <Grid>
-    <Item span={4} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item span={4} className="bg-primary-10 p-2 text-center text-primary">
       Column A
     </Item>
-    <Item span={4} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item span={4} className="bg-primary-10 p-2 text-center text-primary">
       Column B
     </Item>
-    <Item span={4} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item span={4} className="bg-primary-10 p-2 text-center text-primary">
       Column C
     </Item>
   </Grid>
@@ -105,7 +105,7 @@ Columns can be offset to create empty space.
 ```tsx
 <div className="relative">
   <Grid>
-    <Item start={2} span={11} className="border border-primary bg-primary-20 p-2 text-center text-primary">
+    <Item start={2} span={11} className="bg-primary-10 p-2 text-center text-primary">
       Column A
     </Item>
   </Grid>

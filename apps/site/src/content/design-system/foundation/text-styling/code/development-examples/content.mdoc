@@ -1,7 +1,63 @@
-```tsx
-<DesktopComputerPictogram />
-```
+### Body text styling
 
 ```tsx
-// TODO: write the examples
+<Fragment>
+  <div className="text-heading font-bold flex flex-col gap-3 mb-4">
+    <h1 className="typography-body-5">Heading 1</h1>
+    <h2 className="typography-body-6">Heading 2</h2>
+    <h3 className="typography-body-7">Heading 3</h3>
+    <h4 className="typography-body-8">Heading 4</h4>
+    <h5 className="typography-body-9">Heading 5</h5>
+    <h6 className="typography-body-10">Heading 6</h6>
+  </div>
+  <Body>
+    <p>
+      <strong>Paragraph</strong>
+    </p>
+    <p>The baseline body text.</p>
+    <Hr />
+    <p>
+      <strong>Link</strong>
+    </p>
+    <a href="#" className="underline text-primary">
+      Link a snippet of text
+    </a>
+    . The default text styling being underlined and primary colour.
+    <Hr />
+    <p>
+      <strong>Small</strong>
+    </p>
+    <p>
+      <small>De-emphasise</small> inline or blocks of text.
+    </p>
+    <Hr />
+    <p>
+      <strong>Strong</strong>
+    </p>
+    <p>
+      <strong>Emphasise a snippet of text.</strong> The default text styling being a heavier font weight.
+    </p>
+    <Hr />
+    <p>
+      <strong>Emphasis</strong>
+    </p>
+    <p>
+      <em>Emphasise a snippet of text.</em> The default text styling being italics.
+    </p>
+    <Hr />
+    <p>
+      <strong>Mark</strong>
+    </p>
+    <p>
+      <mark className="bg-primary-20">Highlight</mark> a portion of text.
+    </p>
+    <Hr />
+    <p>
+      <strong>Del/Ins</strong>
+    </p>
+    <p>
+      Show changes by marking up what has been <del>deleted</del> and what has been <ins>inserted</ins>.
+    </p>
+  </Body>
+</Fragment>
 ```
