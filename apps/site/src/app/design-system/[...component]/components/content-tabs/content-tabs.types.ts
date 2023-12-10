@@ -12,9 +12,11 @@ export type ContentTabsProps = {
   accessibilityDemo?: DocumentElement[];
   accessibilitySections: AccessibilitySectionProps[];
   codeSections: CodeSectionProps[];
+  componentName: string;
   componentProps?: ComponentProps;
   description?: string;
   designSections?: DesignSectionProps[];
+  namedExport?: string;
   relatedArticles?: DocumentElement[];
   relatedComponents?: RelatedInfoLinks[];
   subComponentProps: ComponentProps[];
