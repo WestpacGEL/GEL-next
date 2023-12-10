@@ -129,7 +129,6 @@ export default async function ComponentPage({ params }: { params: { component: s
   const relatedArticlesIsEmpty = relatedArticles[0].children.length <= 1 && !relatedArticles[0].children[0].text;
 
   const componentLookupKey = content.namedExport?.value?.name || componentName;
-  console.log('componentLookupKey', componentLookupKey);
   const componentProps: ComponentProps | undefined = (json as any)[componentLookupKey];
   const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, any]) => {
     if (key.indexOf(`${componentLookupKey}.`) !== 0) {
