@@ -61,7 +61,7 @@ export function StickyFooter() {
         className={styles.button()}
         aria-label="Go to top"
       >
-        <span className="text-text pr-1">Top</span>
+        <span className="pr-1 text-text">Top</span>
       </Button>
     </footer>
   );
