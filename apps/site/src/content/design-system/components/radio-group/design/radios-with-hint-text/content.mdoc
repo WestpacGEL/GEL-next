@@ -1,8 +1,8 @@
 This variation allows supporting text to be displayed below the selectable item. For use in scenarios where the options are complex and require further information for clarity, using the hint text prevents the labels becoming too long which can effect scanability.
 
 ```jsx
-<div className="flex gap-3">
-  <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium">
+<div className="grid grid-cols-2 gap-2">
+  <RadioGroup label={<ComponentTitle>Medium</ComponentTitle>} size="medium">
     <RadioGroup.Radio value="Option 1" hint="This is hint text">
       Option 1
     </RadioGroup.Radio>
@@ -13,7 +13,7 @@ This variation allows supporting text to be displayed below the selectable item.
       Option 3
     </RadioGroup.Radio>
   </RadioGroup>
-  <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large">
+  <RadioGroup label={<ComponentTitle>Large</ComponentTitle>} size="large">
     <RadioGroup.Radio value="Option 1" hint="This is hint text">
       Option 1
     </RadioGroup.Radio>
