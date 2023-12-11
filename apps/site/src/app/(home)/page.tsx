@@ -4,15 +4,15 @@ import { ActionBar, Footer, Hero, HomePage as HomePageContent } from './componen
 import { type ArticleRowsProps } from './components/home-page/home-page.types';
 
 export default async function Homepage() {
-  const [urls, home] = await Promise.all([reader.singletons.url.read(), reader.singletons.homePage.readOrThrow()]);
+  const [urls, home] = await Promise.all([reader().singletons.url.read(), reader().singletons.homePage.readOrThrow()]);
 
   const articleRows = await Promise.all(
     home.articleRows.map(row => {
       return new Promise<ArticleRowsProps>((resolve, reject) => {
         Promise.all(
           row.articles.map(articleSlug =>
-            reader.collections.articles
-              .read(articleSlug || '')
+            reader()
+              .collections.articles.read(articleSlug || '')
               .then(article => ({ ...article, content: null, slug: articleSlug })),
           ),
         )
