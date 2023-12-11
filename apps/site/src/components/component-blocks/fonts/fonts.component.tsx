@@ -3,35 +3,39 @@
 import { useBrand } from '@/app/design-system/hooks/use-brand';
 import { ComponentTitle } from '@/components/document-renderer/component-title';
 
+const FONT_LIGHT = 'font-light';
+const FONT_REGULAR = 'font-regular';
+const FONT_BOLD = 'font-bold';
+
 const FONTS_PER_BRAND = {
   bom: [
     {
       fontWeight: 'Light',
-      className: 'font-light',
+      className: FONT_LIGHT,
     },
     {
       fontWeight: 'Regular',
-      className: 'font-regular',
+      className: FONT_REGULAR,
     },
     {
       fontWeight: 'Bold',
-      className: 'font-bold',
+      className: FONT_BOLD,
     },
   ],
   bsa: [
     {
       fontWeight: 'Light',
-      className: 'font-light',
+      className: FONT_LIGHT,
     },
     {
       fontWeight: 'Bold',
-      className: 'font-bold',
+      className: FONT_BOLD,
     },
   ],
   rams: [
     {
       fontWeight: 'Regular',
-      className: 'font-regular',
+      className: FONT_REGULAR,
     },
     {
       fontWeight: 'Semi-bold', //600
@@ -39,33 +43,33 @@ const FONTS_PER_BRAND = {
     },
     {
       fontWeight: 'Bold', // 700 900
-      className: 'font-bold',
+      className: FONT_BOLD,
     },
   ],
   stg: [
     {
       fontWeight: 'Bold',
-      className: 'font-bold',
+      className: FONT_BOLD,
     },
   ],
   wbc: [
     {
       fontWeight: 'Bold',
-      className: 'font-bold',
+      className: FONT_BOLD,
     },
   ],
   wbg: [
     {
       fontWeight: 'Light', //100 - 300
-      className: 'font-light',
+      className: FONT_LIGHT,
     },
     {
       fontWeight: 'Regular', //400 - 600
-      className: 'font-regular',
+      className: FONT_REGULAR,
     },
     {
       fontWeight: 'Bold', //700 - 900
-      className: 'font-bold',
+      className: FONT_BOLD,
     },
   ],
 } as const;
