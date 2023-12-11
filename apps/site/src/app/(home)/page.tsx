@@ -11,8 +11,8 @@ export default async function Homepage() {
       return new Promise<ArticleRowsProps>((resolve, reject) => {
         Promise.all(
           row.articles.map(articleSlug =>
-            reader().collections.articles
-              .read(articleSlug || '')
+            reader()
+              .collections.articles.read(articleSlug || '')
               .then(article => ({ ...article, content: null, slug: articleSlug })),
           ),
         )
