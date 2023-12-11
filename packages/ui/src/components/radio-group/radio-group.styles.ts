@@ -9,7 +9,10 @@ export const styles = tv(
       buttonText: 'typography-body-10',
     },
     variants: {
-      orientation: { horizontal: { radioWrapper: 'flex flex-wrap' }, vertical: { radioWrapper: 'flex flex-col' } },
+      orientation: {
+        horizontal: { radioWrapper: 'flex flex-wrap' },
+        vertical: { radioWrapper: 'flex flex-col items-start' },
+      },
       isFocusVisible: { true: { revealButton: 'focus-outline' } },
     },
   },
