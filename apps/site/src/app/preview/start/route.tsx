@@ -14,5 +14,6 @@ export async function GET(req: Request) {
   const toUrl = new URL(to, url.origin);
   toUrl.protocol = url.protocol;
   toUrl.host = url.host;
+  toUrl.searchParams.set('brand', 'wbc');
   redirect(toUrl.toString());
 }

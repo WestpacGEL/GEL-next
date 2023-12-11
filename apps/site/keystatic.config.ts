@@ -224,6 +224,7 @@ export default config({
     authors: collection({
       label: 'Authors',
       path: 'src/content/authors/*',
+      previewUrl: `/preview/start?branch={branch}&to=/authors/{slug}`,
       slugField: 'name',
       schema: {
         name: fields.slug({
@@ -241,6 +242,7 @@ export default config({
     articles: collection({
       label: 'Articles',
       path: 'src/content/articles/*',
+      previewUrl: `/preview/start?branch={branch}&to=/articles/{slug}`,
       slugField: 'name',
       schema: {
         name: fields.slug({
