@@ -19,8 +19,9 @@ export const reader = cache(() => {
 
     if (branch) {
       return createGitHubReader(keystaticConfig, {
-        // Replace the below with your repo org an name
+        // Replace the below with your repo org and name
         repo: 'WestpacGEL/GEL-next',
+        pathPrefix: 'apps/site',
         ref: branch,
         // Assuming an existing GitHub app
         token: cookies().get('keystatic-gh-access-token')?.value,
