@@ -10,7 +10,7 @@ export default async function ComponentLayout({
   params: { component: string[] };
 }) {
   const { component } = params;
-  const content = await reader.collections.designSystem.readOrThrow(component.join('/'));
+  const content = await reader().collections.designSystem.readOrThrow(component.join('/'));
 
   return (
     <>

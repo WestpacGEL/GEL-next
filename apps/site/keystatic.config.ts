@@ -87,6 +87,7 @@ export default config({
     designSystem: collection({
       label: 'Design System',
       path: 'src/content/design-system/**/',
+      previewUrl: `/preview/start?branch={branch}&to=/design-system/{slug}`,
       slugField: 'name',
       schema: {
         name: fields.slug({

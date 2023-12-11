@@ -16,7 +16,7 @@ type MetadataProps = {
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
   const { component } = params;
-  const content = await reader.collections.designSystem.readOrThrow(component.join('/'));
+  const content = await reader().collections.designSystem.readOrThrow(component.join('/'));
 
   const title = `${content.name} | GEL Design System`;
   const description = content.description;
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
 }
 
 export async function generateStaticParams() {
-  const components = await reader.collections.designSystem.all();
+  const components = await reader().collections.designSystem.all();
   return components.map(component => ({
     component: component.slug.split('/'),
   }));
@@ -47,8 +47,8 @@ export async function generateStaticParams() {
 export default async function ComponentPage({ params }: { params: { component: string[] } }) {
   const { component } = params;
   const [content, westpacInfo] = await Promise.all([
-    reader.collections.designSystem.readOrThrow(component.join('/')),
-    reader.singletons.westpacUIInfo.readOrThrow(),
+    reader().collections.designSystem.readOrThrow(component.join('/')),
+    reader().singletons.westpacUIInfo.readOrThrow(),
   ]);
   const componentName = component?.[1]
     ?.split('-')
