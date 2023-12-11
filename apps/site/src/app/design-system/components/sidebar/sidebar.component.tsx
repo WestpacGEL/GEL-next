@@ -48,7 +48,7 @@ export function Sidebar({ items }: SidebarProps) {
 
   const handleChange = useCallback(
     async (key: Key) => {
-      router.push(`${pathname}?brand=${key}`);
+      router.push(`${pathname}?brand=${key}`, { scroll: false });
     },
     [router, pathname],
   );
