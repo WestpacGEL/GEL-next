@@ -128,9 +128,10 @@ export default async function ComponentPage({ params }: { params: { component: s
   const accessibilityIsEmpty = accessibilityDemo[0].children.length <= 1 && !accessibilityDemo[0].children[0].text;
   const relatedArticlesIsEmpty = relatedArticles[0].children.length <= 1 && !relatedArticles[0].children[0].text;
 
-  const componentProps: ComponentProps | undefined = (json as any)[componentName];
+  const componentLookupKey = content.namedExport?.value?.name || componentName;
+  const componentProps: ComponentProps | undefined = (json as any)[componentLookupKey];
   const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, any]) => {
-    if (key.indexOf(`${componentName}.`) !== 0) {
+    if (key.indexOf(`${componentLookupKey}.`) !== 0) {
       return acc;
     }
     return [...acc, value];
@@ -139,6 +140,8 @@ export default async function ComponentPage({ params }: { params: { component: s
   return (
     <ContentTabs
       content={{
+        componentName: componentName,
+        namedExport: content.namedExport?.value?.name,
         westpacUIInfo: westpacInfo,
         accessibilitySections,
         accessibilityDemo: accessibilityIsEmpty ? undefined : accessibilityDemo,

@@ -18,7 +18,13 @@ import { TableOfContents } from '../intro/components';
 
 import { type CodeContentProps } from '.';
 
-export function CodeContent({ codeSections = [], westpacUIInfo, componentProps, subComponentProps }: CodeContentProps) {
+export function CodeContent({
+  codeSections = [],
+  westpacUIInfo,
+  componentProps,
+  subComponentProps,
+  componentName,
+}: CodeContentProps) {
   const sectionNames = useMemo(() => {
     const sections = codeSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title }));
     if (sections.length > 0) {
@@ -115,7 +121,7 @@ export function CodeContent({ codeSections = [], westpacUIInfo, componentProps, 
               Props
             </Heading>
             <div className="flex flex-col gap-6">
-              <ComponentPropsTable componentProps={componentProps} />
+              <ComponentPropsTable caption={componentName} componentProps={componentProps} />
               {subComponentProps?.map(subComponentProps => (
                 <ComponentPropsTable
                   key={subComponentProps.displayName}

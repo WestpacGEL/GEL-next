@@ -103,6 +103,12 @@ export default config({
           label: 'Description',
           multiline: true,
         }),
+        namedExport: fields.conditional(fields.checkbox({ label: 'Define custom named export', defaultValue: false }), {
+          true: fields.object({
+            name: fields.text({ label: 'Custom named export of the component' }),
+          }),
+          false: fields.empty(),
+        }),
         design: fields.array(
           fields.object({
             title: fields.slug({

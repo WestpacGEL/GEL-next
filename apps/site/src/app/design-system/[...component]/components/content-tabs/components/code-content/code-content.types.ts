@@ -8,8 +8,10 @@ export type CodeSectionProps = { content: DocumentElement[]; noTitle?: boolean; 
 
 export type CodeContentProps = {
   codeSections?: CodeSectionProps[];
+  componentName: string;
   componentProps?: ComponentProps;
   description?: string;
+  namedExport?: string;
   relatedComponents?: RelatedInfoProps['relatedComponents'];
   subComponentProps?: ComponentProps[];
   westpacUIInfo?: WestpacUIInfo;
