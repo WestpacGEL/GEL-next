@@ -29,7 +29,7 @@ export function Colors({ palette, tab }: { palette: string; tab?: string }) {
                   <div className="mb-0.5">
                     <strong>Tailwind class</strong>
                   </div>
-                  <span>bg-{color.name.toLowerCase()}</span>
+                  <span>{color.name.toLowerCase()}</span>
                 </>
               )}
             </div>
