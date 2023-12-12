@@ -1,6 +1,6 @@
 import './styles/globals.css';
 import { type Metadata } from 'next';
-import { cookies, draftMode } from 'next/headers';
+import { draftMode } from 'next/headers';
 
 import { ThemeProvider } from '@/components/theme';
 
@@ -18,10 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ThemeProvider>{children}</ThemeProvider>
         {isEnabled && (
-          <div>
-            Draft mode ({cookies().get('ks-branch')?.value}){' '}
-            <form method="POST" action="/preview/end">
-              <button>End preview</button>
+          <div className="absolute right-15 top-3 z-[999]">
+            <form method="post" action="/preview/end">
+              <button className="text-white">End preview</button>
             </form>
           </div>
         )}
