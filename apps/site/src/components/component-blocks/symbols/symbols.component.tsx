@@ -47,7 +47,7 @@ export const Symbols = () => {
         {filteredSymbols.map(({ key, Logo }) => (
           <Item key={key} span={{ initial: 12, sm: 6, md: 4, lg: 3 }} className="flex">
             <div className="mb-2 flex grow flex-col items-center justify-center bg-white px-2 pb-3 pt-6 xsl:mb-4">
-              <Logo className="mb-6" />
+              <Logo className="mb-6 grow" />
               <span className="text-[0.6875rem] text-muted">{key}</span>
             </div>
           </Item>
