@@ -8,7 +8,7 @@ import { Svg } from '@/components/svg';
 
 import { getColorPalette } from './colors.utils';
 
-export function Colors({ palette }: { palette: string }) {
+export function Colors({ palette, tab }: { palette: string; tab?: string }) {
   const searchParams = useSearchParams();
   const brand = (searchParams.get('brand') ?? 'wbc') as BrandKey;
   const colorPalette = getColorPalette({ brand, palette });
@@ -23,7 +23,15 @@ export function Colors({ palette }: { palette: string }) {
             <div className="typography-body-10 ml-4 flex flex-col xsl:ml-0 xsl:mt-2 xsl:px-2">
               <strong className="mb-0.5">{color.name}</strong>
               <span className="mb-0.5">{color.hex}</span>
-              <span>{color.rgb}</span>
+              <span className={tab === 'code' ? 'mb-0.5' : ''}>{color.rgb}</span>
+              {tab === 'code' && (
+                <>
+                  <div className="mb-0.5">
+                    <strong>Tailwind class</strong>
+                  </div>
+                  <span>bg-{color.name.toLowerCase()}</span>
+                </>
+              )}
             </div>
           </div>
         </Item>
