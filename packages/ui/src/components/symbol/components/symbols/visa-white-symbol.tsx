@@ -13,7 +13,7 @@ export const VisaWhiteSymbol = ({
   ...props
 }: SymbolProps) => (
   <Symbol
-    className={clsx('h-[44px] w-[122px]', className)}
+    className={clsx('h-[37px] w-[80px]', className)}
     aria-label={ariaLabel}
     copyrightYear={copyrightYear}
     viewBoxWidth={viewBoxWidth}
