@@ -35,20 +35,20 @@ export function ComponentPropsTable({ className, componentProps, ...props }: Com
                 <Table.Cell className="w-1/12">{key}</Table.Cell>
                 <Table.Cell className="w-1/12">
                   {type && (
-                    <Badge color="faint" className="whitespace-normal bg-background text-left">
+                    <Badge tag="code" color="faint" className="whitespace-normal bg-background text-left">
                       {type}
                     </Badge>
                   )}
                 </Table.Cell>
                 <Table.Cell className="w-1/12">
                   {defaultValue && (
-                    <Badge color="faint" className="bg-background">
+                    <Badge tag="code" color="faint" className="bg-background">
                       {defaultValue}
                     </Badge>
                   )}
                 </Table.Cell>
                 <Table.Cell className="w-1/12">
-                  <Badge color="faint" className="bg-background">
+                  <Badge tag="code" color="faint" className="bg-background">
                     {required}
                   </Badge>
                 </Table.Cell>
