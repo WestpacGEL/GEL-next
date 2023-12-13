@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { ProgressRopeStepItem, type ProgressRopeStepWithIndex } from '../../progress-rope.types.js';
+import { ProgressRopeStepItem } from '../../progress-rope.types.js';
 
 export type ProgressRopeGroupStepProps = {
   /**
@@ -19,6 +19,10 @@ export type ProgressRopeGroupStepProps = {
    * Furtherst visited step
    */
   furthestVisitedStep?: number;
+  /**
+   * Whether or not it is the last item
+   */
+  lastItem?: boolean;
   /**
    * Trigger when the user try to open/close the group
    */

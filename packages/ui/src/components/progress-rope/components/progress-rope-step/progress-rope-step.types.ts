@@ -17,6 +17,22 @@ export type ProgressRopeStepProps = {
    */
   firstItem?: Variants['firstItem'];
   /**
+   * Whether step is furthest visited
+   */
+  furthest?: boolean;
+  /**
+   * Whether step is last item in a group
+   */
+  lastItemInGroup?: Variants['lastItemInGroup'];
+  /**
+   * Whether step is last item in the rope e.g. Review and Submit
+   */
+  lastItemInRope?: Variants['lastItemInGroup'];
+  /**
+   * Whether previous step was part of group
+   */
+  previousStepGroup?: boolean;
+  /**
    * Size of step
    */
   size?: Variants['size'];

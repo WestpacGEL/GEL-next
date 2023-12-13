@@ -78,6 +78,7 @@ export function ProgressRope({
               {item.type === 'group' ? (
                 <ProgressRopeGroupStep
                   firstItem={index === 0}
+                  lastItem={index === mappedData.length - 1}
                   furthestVisitedStep={furthestVisitedStep}
                   currentKey={current}
                   steps={item.steps}
@@ -91,8 +92,11 @@ export function ProgressRope({
                   firstItem={index === 0}
                   type={item.type}
                   onClick={furthestVisitedStep >= item.index ? item.onClick : undefined}
-                  visited={furthestVisitedStep >= item.index}
+                  visited={furthestVisitedStep > item.index}
+                  furthest={furthestVisitedStep === item.index}
                   current={current === item.index}
+                  previousStepGroup={mappedData[index - 1]?.type === 'group'}
+                  lastItemInRope={item === mappedData.slice(-1)[0]}
                 >
                   {item.text}
                 </ProgressRopeStep>
