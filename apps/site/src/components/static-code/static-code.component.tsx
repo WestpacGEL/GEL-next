@@ -1,5 +1,5 @@
 import copy from 'clipboard-copy';
-import { Highlight } from 'prism-react-renderer';
+import { Highlight, themes } from 'prism-react-renderer';
 
 import { StaticCodeProps } from './static-code.types';
 
@@ -9,10 +9,10 @@ export const StaticCode = ({
 }: StaticCodeProps) => {
   return (
     <div className="relative overflow-hidden">
-      <Highlight code={code} language={language}>
+      <Highlight code={code} language={language} theme={themes.oceanicNext}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={[className, 'p-2'].join(' ')} style={style}>
-            <code>
+            <code className="font-monospace text-base leading-loose">
               {tokens.map((line, lineKey) => (
                 <div key={lineKey} {...getLineProps({ line, key: lineKey })}>
                   {line.map((token, tokenKey) => (
