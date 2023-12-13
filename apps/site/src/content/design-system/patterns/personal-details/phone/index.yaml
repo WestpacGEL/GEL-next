@@ -2,24 +2,26 @@ name: Phone number
 description: >-
   This pattern is used for accurately capturing phone numbers. Only capture what
   you need for your application.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Phone number
       slug: phone-number
+    noTitle: false
   - title:
       name: Error states
       slug: error-states
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Dos and don'ts
       slug: dos-and-donts
+    noTitle: false
 accessibility: []
-code:
-  - title:
-      name: Pattern examples in code
-      slug: pattern-examples-in-code
 relatedComponents:
   - title: Text inputs
     slug: components/input
@@ -27,3 +29,4 @@ relatedComponents:
     slug: components/input-field
   - title: Alerts
     slug: components/alert
+code: []
