@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { mergeProps, useFocusRing } from 'react-aria';
 
 import { Circle } from '../../../index.js';
 
@@ -14,9 +15,16 @@ export function ProgressRopeStep({
   size = 'medium',
   children,
   firstItem,
+  lastItemInGroup,
+  lastItemInRope,
+  furthest,
+  previousStepGroup,
   ...props
 }: ProgressRopeStepProps) {
   const state = useMemo(() => {
+    if (current && visited) {
+      return 'current-visited';
+    }
     if (current) {
       return 'current';
     }
@@ -25,11 +33,28 @@ export function ProgressRopeStep({
     }
     return 'non-visited';
   }, [current, visited]);
+  const { isFocusVisible, focusProps } = useFocusRing();
 
-  const styles = progressRopeStyles({ className, state, size, firstItem });
+  const styles = progressRopeStyles({
+    className,
+    state,
+    size,
+    firstItem,
+    lastItemInGroup,
+    lastItemInRope: lastItemInRope && !previousStepGroup,
+    lastItemInRopeGrouped: lastItemInRope && previousStepGroup,
+    furthestVisited: !current && furthest,
+    previousStepGroup: furthest && previousStepGroup,
+    isFocusVisible,
+  });
 
   return (
-    <Tag className={styles.base({})} aria-current={current} disabled={state === 'non-visited'} {...props}>
+    <Tag
+      className={styles.base({})}
+      aria-current={current}
+      disabled={state === 'non-visited'}
+      {...mergeProps(props, focusProps)}
+    >
       <Circle className={styles.circle()} aria-hidden="true" />
       {children}
     </Tag>
