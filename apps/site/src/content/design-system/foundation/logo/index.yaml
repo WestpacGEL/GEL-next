@@ -4,6 +4,10 @@ description: >-
   as scalable vector graphics (SVGs) which ensures the highest quality rendering
   on all devices. It also allows styling with code and complies with WGAG AA
   accessibility requirements.
+namedExport:
+  discriminant: true
+  value:
+    name: Symbol
 design:
   - title:
       name: Logos

@@ -29,6 +29,8 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
   if (tabKey === 'code') {
     return (
       <CodeContent
+        componentName={content.componentName}
+        namedExport={content.namedExport}
         subComponentProps={content.subComponentProps}
         componentProps={content.componentProps}
         westpacUIInfo={content.westpacUIInfo}

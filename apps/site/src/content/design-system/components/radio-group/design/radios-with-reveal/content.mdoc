@@ -6,13 +6,13 @@ The radio component has the ability to hide a configurable portion of the option
 - Always express how many items are behind the reveal.
 
 ```jsx
-<div className="flex gap-3">
-  <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium" showAmount={1}>
+<div className="grid grid-cols-2 gap-2">
+  <RadioGroup label={<ComponentTitle>Medium</ComponentTitle>} size="medium" showAmount={1}>
     <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
     <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
     <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
   </RadioGroup>
-  <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large" showAmount={1}>
+  <RadioGroup label={<ComponentTitle>Large</ComponentTitle>} size="large" showAmount={1}>
     <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
     <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
     <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>

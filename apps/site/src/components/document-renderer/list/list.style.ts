@@ -8,7 +8,7 @@ export const styles = tv({
   variants: {
     color: {
       default: {
-        li: 'before:bg-black',
+        li: 'text-text before:bg-hero',
       },
       blue: {
         li: 'before:bg-gel-icon',

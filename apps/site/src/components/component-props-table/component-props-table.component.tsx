@@ -8,7 +8,7 @@ export function ComponentPropsTable({ className, componentProps, ...props }: Com
   return (
     <div className="-mx-2 overflow-x-auto px-2 xsl:-mx-5 xsl:px-5 sm:-mx-6 sm:px-6 md:-mx-8 md:px-8 lg:-mx-10 lg:px-10">
       <Table bordered striped {...props} className={clsx('min-w-[800px]', className)}>
-        <Table.Caption className="text-left">{componentProps.displayName} props</Table.Caption>
+        <Table.Caption className="text-left">{props.caption} props</Table.Caption>
         <Table.Header>
           <Table.Row>
             {[
@@ -35,20 +35,20 @@ export function ComponentPropsTable({ className, componentProps, ...props }: Com
                 <Table.Cell className="w-1/12">{key}</Table.Cell>
                 <Table.Cell className="w-1/12">
                   {type && (
-                    <Badge color="faint" className="whitespace-normal bg-background text-left">
+                    <Badge tag="code" color="faint" className="whitespace-normal bg-background text-left">
                       {type}
                     </Badge>
                   )}
                 </Table.Cell>
                 <Table.Cell className="w-1/12">
                   {defaultValue && (
-                    <Badge color="faint" className="bg-background">
+                    <Badge tag="code" color="faint" className="bg-background">
                       {defaultValue}
                     </Badge>
                   )}
                 </Table.Cell>
                 <Table.Cell className="w-1/12">
-                  <Badge color="faint" className="bg-background">
+                  <Badge tag="code" color="faint" className="bg-background">
                     {required}
                   </Badge>
                 </Table.Cell>

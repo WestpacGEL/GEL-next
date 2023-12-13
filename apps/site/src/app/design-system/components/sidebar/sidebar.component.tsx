@@ -48,7 +48,7 @@ export function Sidebar({ items }: SidebarProps) {
 
   const handleChange = useCallback(
     async (key: Key) => {
-      router.push(`${pathname}?brand=${key}`);
+      router.push(`${pathname}?brand=${key}`, { scroll: false });
     },
     [router, pathname],
   );
@@ -57,7 +57,7 @@ export function Sidebar({ items }: SidebarProps) {
     <>
       <div
         className={clsx(
-          'fixed top-0 z-[60] flex h-full w-[18.75rem] grow-0 flex-col border-r-0 bg-white text-text transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:-translate-x-0 overflow-x-hidden lg:border-r lg:border-r-border',
+          'fixed top-0 z-[60] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 bg-white text-text transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:-translate-x-0 lg:border-r lg:border-r-border',
           {
             '-translate-x-full': !open, //hide sidebar to the left when closed
           },

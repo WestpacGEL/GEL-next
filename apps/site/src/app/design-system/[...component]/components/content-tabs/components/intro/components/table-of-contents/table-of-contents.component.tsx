@@ -13,7 +13,11 @@ export function TableOfContents({ contents = [] }: TableOfContentsProps) {
       <h2 className="typography-body-9 border-b border-border pb-2 font-medium">Page content</h2>
       <List icon={ArrowDownRightIcon} type="icon" look="primary" className="mt-3 [&_li]:my-[0.5625rem]">
         {contents.map(({ title }) => {
-          const id = title.toLowerCase().split(' ').join('-');
+          const id = title
+            .replace(/[^a-zA-Z0-9\s]/g, '')
+            .toLowerCase()
+            .split(' ')
+            .join('-');
           return (
             <List.Item key={id} className="pl-[1.075rem]">
               <Link href={`#${id}`}>{title}</Link>
@@ -47,7 +51,7 @@ function Link({ href, children }: { children?: React.ReactNode; href?: string })
   );
 
   return (
-    <a href={href} className="ml-1 hover:underline block" onClick={handleClick}>
+    <a href={href} className="ml-1 block hover:underline" onClick={handleClick}>
       {children}
     </a>
   );

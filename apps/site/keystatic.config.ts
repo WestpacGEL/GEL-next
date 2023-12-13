@@ -87,6 +87,7 @@ export default config({
     designSystem: collection({
       label: 'Design System',
       path: 'src/content/design-system/**/',
+      previewUrl: `/preview/start?branch={branch}&to=/design-system/{slug}`,
       slugField: 'name',
       schema: {
         name: fields.slug({
@@ -102,6 +103,12 @@ export default config({
         description: fields.text({
           label: 'Description',
           multiline: true,
+        }),
+        namedExport: fields.conditional(fields.checkbox({ label: 'Define custom named export', defaultValue: false }), {
+          true: fields.object({
+            name: fields.text({ label: 'Custom named export of the component' }),
+          }),
+          false: fields.empty(),
         }),
         design: fields.array(
           fields.object({
@@ -217,6 +224,7 @@ export default config({
     authors: collection({
       label: 'Authors',
       path: 'src/content/authors/*',
+      previewUrl: `/preview/start?branch={branch}&to=/authors/{slug}`,
       slugField: 'name',
       schema: {
         name: fields.slug({
@@ -234,6 +242,7 @@ export default config({
     articles: collection({
       label: 'Articles',
       path: 'src/content/articles/*',
+      previewUrl: `/preview/start?branch={branch}&to=/articles/{slug}`,
       slugField: 'name',
       schema: {
         name: fields.slug({

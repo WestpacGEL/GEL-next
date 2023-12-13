@@ -7,7 +7,11 @@ export const Heading = ({ children, level = 3, textAlign = 'left', className }: 
   const Tag = useMemo(() => `h${level}` as keyof JSX.IntrinsicElements, [level]);
   const id = useMemo(() => {
     const text = Array.isArray(children) ? children[0].props.node.text : children?.toString();
-    return text.toLowerCase().split(' ').join('-');
+    return text
+      .replace(/[^a-zA-Z0-9\s]/g, '')
+      .toLowerCase()
+      .split(' ')
+      .join('-');
   }, [children]);
 
   return (

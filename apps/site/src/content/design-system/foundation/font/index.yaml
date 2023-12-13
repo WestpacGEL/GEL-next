@@ -47,4 +47,9 @@ code:
   - title:
       name: Development notes
       slug: development-notes
-    noTitle: false
+  - title:
+      name: Development examples
+      slug: development-examples
+relatedComponents:
+  - title: Text styling
+    slug: foundation/text-styling

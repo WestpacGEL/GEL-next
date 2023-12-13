@@ -7,6 +7,7 @@ import { NewWindowIcon } from '@westpac/ui/icon';
 import { useMemo } from 'react';
 
 import { Container } from '@/app/design-system/components';
+import { Colors } from '@/components/component-blocks/colors/colors.component';
 import { ComponentPropsTable } from '@/components/component-props-table';
 import { Section } from '@/components/content-blocks/section';
 import { Code } from '@/components/content-blocks/typography';
@@ -18,14 +19,20 @@ import { TableOfContents } from '../intro/components';
 
 import { type CodeContentProps } from '.';
 
-export function CodeContent({ codeSections = [], westpacUIInfo, componentProps, subComponentProps }: CodeContentProps) {
+export function CodeContent({
+  codeSections = [],
+  westpacUIInfo,
+  componentProps,
+  subComponentProps,
+  componentName,
+}: CodeContentProps) {
   const sectionNames = useMemo(() => {
     const sections = codeSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title }));
     if (sections.length > 0) {
-      return [...sections, { title: 'Props' }];
+      return componentProps ? [...sections, { title: 'Props' }] : [...sections];
     }
     return [];
-  }, [codeSections]);
+  }, [codeSections, componentProps]);
 
   const sectionHeadings = useMemo(() => {
     const sections = codeSections.reduce((acc, section) => {
@@ -37,10 +44,10 @@ export function CodeContent({ codeSections = [], westpacUIInfo, componentProps, 
       }, acc);
     }, [] as { title: string }[]);
     if (sections.length > 0) {
-      return [...sections, { title: 'Props' }];
+      return componentProps ? [...sections, { title: 'Props' }] : [...sections];
     }
     return [];
-  }, [codeSections]);
+  }, [codeSections, componentProps]);
 
   return (
     <>
@@ -103,7 +110,11 @@ export function CodeContent({ codeSections = [], westpacUIInfo, componentProps, 
           <Section key={id}>
             <Container>
               {!noTitle && <Heading level={2}>{title}</Heading>}
-              <DocumentRenderer document={content} renderers={DOCUMENT_RENDERERS} />
+              <DocumentRenderer
+                document={content}
+                renderers={DOCUMENT_RENDERERS}
+                componentBlocks={{ colors: props => <Colors palette={props.palette} tab="code" /> }}
+              />
             </Container>
           </Section>
         );
@@ -115,7 +126,7 @@ export function CodeContent({ codeSections = [], westpacUIInfo, componentProps, 
               Props
             </Heading>
             <div className="flex flex-col gap-6">
-              <ComponentPropsTable componentProps={componentProps} />
+              <ComponentPropsTable caption={componentName} componentProps={componentProps} />
               {subComponentProps?.map(subComponentProps => (
                 <ComponentPropsTable
                   key={subComponentProps.displayName}
