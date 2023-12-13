@@ -40,9 +40,6 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
-relatedComponents:
-  - title: Text styling
-    slug: foundation/text-styling
 code:
   - title:
       name: Development notes
