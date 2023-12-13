@@ -5,7 +5,7 @@ import { StaticCodeProps } from './static-code.types';
 
 export const StaticCode = ({
   code,
-  language = '', // By default render as plain text (ie. no language)
+  language = '', // By default render as plain text (ie. no language).
 }: StaticCodeProps) => {
   return (
     <div className="relative overflow-hidden">
