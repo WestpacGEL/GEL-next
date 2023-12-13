@@ -1,5 +1,6 @@
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useId, useMemo } from 'react';
+import { useFocusRing } from 'react-aria';
 
 import { Circle, VisuallyHidden } from '../../../index.js';
 import { ProgressRopeStep } from '../index.js';
@@ -39,7 +40,12 @@ export function ProgressRopeGroupStep({
     return 'not started';
   }, [steps, furthestVisitedStep]);
 
+  const { isFocusVisible, focusProps } = useFocusRing();
+
   const state = useMemo(() => {
+    if (current && visited) {
+      return 'current-visited';
+    }
     if (current) {
       return 'current';
     }
@@ -49,7 +55,7 @@ export function ProgressRopeGroupStep({
     return 'non-visited';
   }, [current, visited]);
 
-  const styles = progressRopeGroupStyles({ firstItem, state });
+  const styles = progressRopeGroupStyles({ firstItem, state, isFocusVisible });
   return (
     <>
       <button
@@ -57,6 +63,7 @@ export function ProgressRopeGroupStep({
         className={styles.circleWrapper({})}
         onClick={onToggle}
         aria-controls={stepsContainerID}
+        {...focusProps}
       >
         <Circle className={styles.circle()} aria-hidden="true" />
         {children}
@@ -84,10 +91,12 @@ export function ProgressRopeGroupStep({
                   <li key={step.index}>
                     <ProgressRopeStep
                       firstItem={index === 0}
+                      lastItemInGroup={index === steps.length - 1}
                       size="small"
                       onClick={(furthestVisitedStep || 0) >= step.index ? step.onClick : undefined}
                       current={step.index === currentKey}
-                      visited={(furthestVisitedStep || 0) >= step.index}
+                      visited={(furthestVisitedStep || 0) > step.index}
+                      furthest={furthestVisitedStep === step.index}
                     >
                       {step.text}
                     </ProgressRopeStep>
