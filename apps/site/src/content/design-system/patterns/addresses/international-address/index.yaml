@@ -23,8 +23,4 @@ relatedComponents:
     slug: /components/alert
   - title: Text input
     slug: /components/text-input
-code:
-  - title:
-      name: Pattern examples in code
-      slug: pattern-examples-in-code
-    noTitle: false
+code: []
