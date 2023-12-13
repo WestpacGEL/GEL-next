@@ -19,8 +19,8 @@ design:
     noTitle: false
 accessibility: []
 relatedComponents:
-  - title: alerts
-    slug: test
+  - title: Alerts
+    slug: /components/alert
 code:
   - title:
       name: Pattern examples in code
