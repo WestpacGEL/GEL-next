@@ -19,8 +19,8 @@ design:
     noTitle: false
 accessibility: []
 relatedComponents:
-  - title: Text inputs
-    slug: components/input
   - title: Alerts
     slug: components/alert
+  - title: Text inputs
+    slug: components/input
 code: []
