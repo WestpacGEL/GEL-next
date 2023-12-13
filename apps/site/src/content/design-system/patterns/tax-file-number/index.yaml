@@ -1,4 +1,4 @@
-name: Tax file number
+name: Tax File Number
 description: >-
   Use this pattern to capture the preferences around whether or not a customer
   wants to provide their Tax File Number details.
