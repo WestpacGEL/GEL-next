@@ -23,8 +23,8 @@ design:
       slug: dos-and-donts
 accessibility:
   - title:
-        name: Notes on accessibility
-        slug: notes-on-accessibility
+      name: Notes on accessibility
+      slug: notes-on-accessibility
   - title:
       name: Accessibility features
       slug: accessibility-features
@@ -38,6 +38,9 @@ code:
   - title:
       name: Development notes
       slug: development-notes
+  - title:
+      name: Development examples
+      slug: development-examples
 relatedComponents:
   - title: Text styling
     slug: foundation/text-styling
