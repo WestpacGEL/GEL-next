@@ -95,3 +95,44 @@
   </Tab>
 </Tabs>
 ```
+
+**Responsive tabcordion:** This a responsive component that can render as either a tabset or an [accordion](/accordion), depending on the screen width available.&nbsp;The tabcordion, can appear in either the default or lego style, see Visual design for the usage recommendations for either style.
+
+```jsx
+<>
+  <Accordion className="sm:hidden">
+    <Accordion.Item title="First Item">
+      <p>
+        First Accordion content...
+      </p>
+    </Accordion.Item>
+    <Accordion.Item title="Second Item">
+      <p>
+        Second Accordion content...
+      </p>
+    </Accordion.Item>
+    <Accordion.Item title="Third Item">
+      <p>
+        Third Accordion content...
+      </p>
+    </Accordion.Item>
+  </Accordion>
+  <Tabs className="max-sm:hidden">
+    <Accordion.Item title="First Item">
+      <p>
+        First Accordion content...
+      </p>
+    </Accordion.Item>
+    <Accordion.Item title="Second Item">
+      <p>
+        Second Accordion content...
+      </p>
+    </Accordion.Item>
+    <Accordion.Item title="Third Item">
+      <p>
+        Third Accordion content...
+      </p>
+    </Accordion.Item>
+  </Tabs>
+</>
+```
