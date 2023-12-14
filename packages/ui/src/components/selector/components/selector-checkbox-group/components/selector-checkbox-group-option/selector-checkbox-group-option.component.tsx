@@ -34,11 +34,11 @@ function BaseSelectorCheckboxGroupOption(
   const state = useContext(SelectorCheckboxGroupContext);
   const localRef = useRef(null);
   const { inputProps, isDisabled, isSelected } = useCheckboxGroupItem({ ...props, value, children }, state, localRef);
-  const { isFocused, focusProps } = useFocusRing();
+  const { isFocusVisible, focusProps } = useFocusRing();
   const styles = selectorCheckboxGroupOptionStyles({
     className,
     isSelected,
-    isFocused,
+    isFocusVisible,
     isDisabled,
     checkIcon,
   });
