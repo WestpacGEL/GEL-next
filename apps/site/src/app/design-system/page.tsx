@@ -156,3 +156,5 @@ export default function DesignSystemHomePage() {
     </>
   );
 }
+
+export const dynamic = 'force-dynamic';
