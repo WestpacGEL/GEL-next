@@ -10,11 +10,11 @@ function BaseTextarea(
   { className, size = 'medium', invalid = false, ...props }: TextareaProps,
   ref: ForwardedRef<HTMLTextAreaElement>,
 ) {
-  const { isFocused, focusProps } = useFocusRing();
+  const { isFocused, isFocusVisible, focusProps } = useFocusRing();
   return (
     <textarea
       ref={ref}
-      className={styles({ className, size, invalid, isFocused })}
+      className={styles({ className, size, invalid, isFocused, isFocusVisible })}
       {...mergeProps(props, focusProps)}
     />
   );

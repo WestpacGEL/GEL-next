@@ -40,10 +40,15 @@ export const styles = tv(
         },
         false: {},
       },
-      isFocused: {
+      isFocusVisible: {
+        true: {
+          clearButton: 'focus-outline',
+        },
+        false: {},
+      },
+      isInputFocusVisible: {
         true: {
           outerWrapper: 'focus-outline',
-          clearButton: 'focus-outline',
         },
         false: {},
       },

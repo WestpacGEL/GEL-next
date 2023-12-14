@@ -25,8 +25,8 @@ export function Switch({
     state,
     ref,
   );
-  const { isFocused, focusProps } = useFocusRing();
-  const styles = switchStyles({ block, isFocused, isSelected, isDisabled, size });
+  const { isFocusVisible, focusProps } = useFocusRing();
+  const styles = switchStyles({ block, isFocusVisible, isSelected, isDisabled, size });
 
   return (
     <label className={styles.base({ className })}>

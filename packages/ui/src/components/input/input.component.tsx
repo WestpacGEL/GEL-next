@@ -10,11 +10,11 @@ export function BaseInput(
   { className, size = 'medium', invalid = false, ...props }: InputProps,
   ref: ForwardedRef<HTMLInputElement>,
 ) {
-  const { isFocused, focusProps } = useFocusRing();
+  const { isFocusVisible, isFocused, focusProps } = useFocusRing();
   return (
     <input
       ref={ref}
-      className={styles({ className, size, invalid, isFocused })}
+      className={styles({ className, size, invalid, isFocusVisible, isFocused })}
       aria-invalid={invalid}
       {...mergeProps(props, focusProps)}
     />
