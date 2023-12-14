@@ -14,10 +14,11 @@ export const styles = tv(
         true: 'border-danger',
         false: 'border-borderDark',
       },
+      isFocusVisible: {
+        true: 'focus-outline',
+      },
       isFocused: {
-        true: {
-          base: 'focus-outline',
-        },
+        true: 'outline-none',
       },
     },
   },

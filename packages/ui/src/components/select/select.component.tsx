@@ -10,9 +10,13 @@ function BaseSelect(
   { className, size = 'medium', invalid = false, children, ...props }: SelectProps,
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
-  const { isFocused, focusProps } = useFocusRing();
+  const { isFocused, isFocusVisible, focusProps } = useFocusRing();
   return (
-    <select ref={ref} className={styles({ className, size, invalid, isFocused })} {...mergeProps(props, focusProps)}>
+    <select
+      ref={ref}
+      className={styles({ className, size, invalid, isFocused, isFocusVisible })}
+      {...mergeProps(props, focusProps)}
+    >
       {children}
     </select>
   );

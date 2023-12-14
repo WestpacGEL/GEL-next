@@ -14,8 +14,11 @@ export const styles = tv(
         true: 'border-danger',
         false: 'border-borderDark',
       },
-      isFocused: {
+      isFocusVisible: {
         true: 'focus-outline',
+      },
+      isFocused: {
+        true: 'outline-none',
       },
     },
   },
