@@ -1,20 +1,40 @@
 **Default accordion:** See Visual design for the usage recommendations for the default style.
 
 ```jsx
-<Accordion>
-  {[
-    { key: 'files', title: 'Your files' },
-    { key: 'shared', title: 'Shared with you' },
-    { key: 'last', title: 'Last item' },
-  ].map(({ key, title }) => (
-    <Accordion.Item key={key} title={title}>
-      <h3>{title}</h3>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
-        reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
-      </p>
-    </Accordion.Item>
-  ))}
+<Accordion rounded>
+  <Accordion.Item title="Mole">
+    <h3>
+      Mole
+    </h3>
+    <p>
+      The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his throat and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was moving in the air above and in the earth below and around him, penetrating even his dark and lowly little house with its spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush on the floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without even waiting to put on his coat.
+    </p>
+    <Button>
+      Test
+    </Button>
+  </Accordion.Item>
+  <Accordion.Item title="Shared with us">
+    <h3>
+      Shared with us
+    </h3>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
+    </p>
+    <Button>
+      Test
+    </Button>
+  </Accordion.Item>
+  <Accordion.Item title="Last item">
+    <h3>
+      Last item
+    </h3>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
+    </p>
+    <Button>
+      Test
+    </Button>
+  </Accordion.Item>
 </Accordion>
 ```
 
