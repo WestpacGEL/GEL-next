@@ -35,6 +35,8 @@ accessibility:
       name: Accessibility API
       slug: accessibility-api
 relatedComponents:
+  - title: Accordion
+    slug: components/accordion
   - title: Wells
     slug: components/well
   - title: Panels
