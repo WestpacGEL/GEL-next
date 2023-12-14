@@ -37,7 +37,7 @@ describe('Checkbox', () => {
   });
 
   it('should have correct styling on focus', () => {
-    const { checkbox } = styles({ isFocused: true });
+    const { checkbox } = styles({ isFocusVisible: true });
 
     expect(checkbox()).toContain('focus-outline');
   });
