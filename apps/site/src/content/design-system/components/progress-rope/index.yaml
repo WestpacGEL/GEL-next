@@ -2,22 +2,29 @@ name: Progress rope
 description: >-
   The progress rope is a tool for signposting completion on long forms or
   applications and is designed to be used with the GEL forms framework.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Default progress rope
       slug: default-progress-rope
+    noTitle: false
   - title:
       name: Grouped progress rope
       slug: grouped-progress-rope
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
@@ -31,7 +38,9 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents: []
 code:
   - title:
       name: Development examples
       slug: development-examples
+    noTitle: false
