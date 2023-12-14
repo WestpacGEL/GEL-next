@@ -41,19 +41,40 @@
 **Responsive tabcordion:** This a responsive component that can render as either a [tabset](/components/tabset) or an accordion, depending on the screen width available.&nbsp;The tabcordion, can appear in either the default or lego style, see Visual design for the usage recommendations for either style.
 
 ```jsx
-<Accordion look="lego" rounded={false}>
-  {[
-    { key: 'files', title: 'Your files' },
-    { key: 'shared', title: 'Shared with you' },
-    { key: 'last', title: 'Last item' },
-  ].map(({ key, title }) => (
-    <Accordion.Item key={key} title={title}>
-      <h3>{title}</h3>
+<>
+  <Accordion className="sm:hidden">
+    <Accordion.Item title="First Item">
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
-        reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
+        First Accordion content...
       </p>
     </Accordion.Item>
-  ))}
-</Accordion>
+    <Accordion.Item title="Second Item">
+      <p>
+        Second Accordion content...
+      </p>
+    </Accordion.Item>
+    <Accordion.Item title="Third Item">
+      <p>
+        Third Accordion content...
+      </p>
+    </Accordion.Item>
+  </Accordion>
+  <Tabs className="max-sm:hidden">
+    <Accordion.Item title="First Item">
+      <p>
+        First Accordion content...
+      </p>
+    </Accordion.Item>
+    <Accordion.Item title="Second Item">
+      <p>
+        Second Accordion content...
+      </p>
+    </Accordion.Item>
+    <Accordion.Item title="Third Item">
+      <p>
+        Third Accordion content...
+      </p>
+    </Accordion.Item>
+  </Tabs>
+</>
 ```
