@@ -13,6 +13,7 @@ export function middleware(request: NextRequest) {
     object-src 'none';
     base-uri 'self';
     form-action 'self';
+    connect-src 'self' https://vercel.live/;
     frame-ancestors 'none';
     block-all-mixed-content;
     upgrade-insecure-requests;
