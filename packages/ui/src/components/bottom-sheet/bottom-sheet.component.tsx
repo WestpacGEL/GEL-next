@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 import { BottomSheetProps } from './bottom-sheet.types.js';
