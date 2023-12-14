@@ -1,6 +1,5 @@
 'use client';
 
-import { DocumentElement } from '@keystatic/core';
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Button, Grid, Item } from '@westpac/ui';
 import { NewWindowIcon } from '@westpac/ui/icon';
@@ -28,21 +27,6 @@ export function CodeContent({
 }: CodeContentProps) {
   const sectionNames = useMemo(() => {
     const sections = codeSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title }));
-    if (sections.length > 0) {
-      return componentProps ? [...sections, { title: 'Props' }] : [...sections];
-    }
-    return [];
-  }, [codeSections, componentProps]);
-
-  const sectionHeadings = useMemo(() => {
-    const sections = codeSections.reduce((acc, section) => {
-      return section.content?.reduce((acc, item: DocumentElement & { level?: number }) => {
-        if (item.type === 'heading' && item?.level && item.level <= 3) {
-          return [...acc, { title: item.children[0].text as string }];
-        }
-        return acc;
-      }, acc);
-    }, [] as { title: string }[]);
     if (sections.length > 0) {
       return componentProps ? [...sections, { title: 'Props' }] : [...sections];
     }
@@ -96,9 +80,9 @@ export function CodeContent({
                 </tbody>
               </table>
             </Item>
-            {(sectionHeadings || sectionNames).length > 0 && (
+            {sectionNames.length > 0 && (
               <Item span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
-                <TableOfContents contents={sectionHeadings || sectionNames} />
+                <TableOfContents contents={sectionNames} />
               </Item>
             )}
           </Grid>
