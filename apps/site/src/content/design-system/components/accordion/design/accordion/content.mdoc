@@ -37,3 +37,23 @@
   ))}
 </Accordion>
 ```
+
+**Responsive tabcordion:** This a responsive component that can render as either a [tabset](/components/tabset) or an accordion, depending on the screen width available.&nbsp;The tabcordion, can appear in either the default or lego style, see Visual design for the usage recommendations for either style.
+
+```jsx
+<Accordion look="lego" rounded={false}>
+  {[
+    { key: 'files', title: 'Your files' },
+    { key: 'shared', title: 'Shared with you' },
+    { key: 'last', title: 'Last item' },
+  ].map(({ key, title }) => (
+    <Accordion.Item key={key} title={title}>
+      <h3>{title}</h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
+        reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
+      </p>
+    </Accordion.Item>
+  ))}
+</Accordion>
+```
