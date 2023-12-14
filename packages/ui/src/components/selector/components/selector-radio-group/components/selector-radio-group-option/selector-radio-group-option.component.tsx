@@ -34,8 +34,8 @@ function BaseSelectorRadioGroupOption(
   const state = useContext(SelectorRadioGroupContext);
   const localRef = useRef(null);
   const { inputProps, isSelected, isDisabled } = useRadio({ ...props, value, children }, state, localRef);
-  const { isFocused, focusProps } = useFocusRing();
-  const styles = selectorRadioGroupOptionStyles({ className, isSelected, isFocused, isDisabled, checkIcon });
+  const { isFocusVisible, focusProps } = useFocusRing();
+  const styles = selectorRadioGroupOptionStyles({ className, isSelected, isFocusVisible, isDisabled, checkIcon });
 
   const FinalIcon = checkIcon === 'checkbox' ? TickIcon : ArrowRightIcon;
 

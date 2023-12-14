@@ -20,7 +20,7 @@ export const styles = tv(
           base: 'hover:cursor-pointer',
         },
       },
-      isFocused: {
+      isFocusVisible: {
         true: { checkbox: 'focus-outline' },
       },
       orientation: {

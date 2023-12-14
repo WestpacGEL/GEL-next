@@ -23,7 +23,7 @@ export const styles = tv(
           switchDiv: 'h-[2.875rem] w-14 rounded-[2.875rem] after:h-[2.875rem] after:w-[2.875rem]',
         },
       },
-      isFocused: {
+      isFocusVisible: {
         true: {
           switchDiv: 'focus-outline',
         },

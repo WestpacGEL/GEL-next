@@ -24,7 +24,7 @@ export const styles = tv(
           selector: 'before:block before:h-2 before:w-2 before:rounded-full before:bg-hero',
         },
       },
-      isFocused: {
+      isFocusVisible: {
         true: { selector: 'focus-outline' },
       },
       orientation: {

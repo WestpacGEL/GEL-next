@@ -42,6 +42,7 @@ export function Autocomplete<T extends object>({
   const { contains } = useFilter({ sensitivity: 'base' });
   const state = useComboBoxState({ isDisabled, ...props, defaultFilter: contains });
   const { isFocusVisible, focusProps } = useFocusRing();
+  const { isFocusVisible: isInputFocusVisible, focusProps: inputFocusProps } = useFocusRing();
   const inputRef = React.useRef(null);
   const listBoxRef = React.useRef(null);
   const popoverRef = React.useRef(null);
@@ -58,13 +59,13 @@ export function Autocomplete<T extends object>({
 
   const styles = autocompleteStyles({
     isDisabled,
-    isFocused: state.isFocused,
+    isInputFocusVisible,
     size,
     invalid,
   });
 
   const { clearButton: clearButtonStyle } = autocompleteStyles({
-    isFocused: isFocusVisible,
+    isFocusVisible,
   });
 
   // Get props for the clear button from useSearchField
@@ -99,7 +100,7 @@ export function Autocomplete<T extends object>({
       {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
 
       <div ref={outerRef} className={styles.outerWrapper()}>
-        <input {...inputProps} ref={inputRef} className={styles.input()} />
+        <input {...mergeProps(inputProps, inputFocusProps)} ref={inputRef} className={styles.input()} />
 
         <button
           {...mergeProps(buttonProps, focusProps)}
