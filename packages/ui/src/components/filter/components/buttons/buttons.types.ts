@@ -37,4 +37,4 @@ export type ButtonsProps = {
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & HTMLAttributes<Element>;
+} & Omit<HTMLAttributes<Element>, 'onClick'>;
