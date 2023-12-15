@@ -8,6 +8,9 @@ const config: Config = withTV({
   relative: true,
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   plugins: [WestpacUIKitBasePlugin({ brandFonts: { src: '/fonts' } }), WestpacUIKitThemesPlugin],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 });
 
 export default config;
