@@ -1,7 +1,4 @@
 import { HTMLAttributes } from 'react';
-import { type VariantProps } from 'tailwind-variants';
-
-import { styles } from './buttons.styles.js';
 
 export type FilterButtonProps = {
   /**
