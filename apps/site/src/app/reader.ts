@@ -1,9 +1,14 @@
+import path from 'path';
+
 import { createReader } from '@keystatic/core/reader';
 import { createGitHubReader } from '@keystatic/core/reader/github';
 import { cookies, draftMode } from 'next/headers';
 import { cache } from 'react';
 
 import keystaticConfig from '../../keystatic.config';
+
+// Force Next.js to package all the markdown files in the content folder. Don't delete this line!
+path.join(process.cwd(), 'src', 'content');
 
 export const reader = cache(() => {
   let isDraftModeEnabled = false;

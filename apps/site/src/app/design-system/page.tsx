@@ -1,5 +1,3 @@
-'use client';
-
 import { Button, Grid, Input, Item } from '@westpac/ui';
 import { GithubIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
@@ -156,3 +154,5 @@ export default function DesignSystemHomePage() {
     </>
   );
 }
+
+export const dynamic = 'force-dynamic';
