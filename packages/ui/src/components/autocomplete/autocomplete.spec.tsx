@@ -29,7 +29,7 @@ describe('Autocomplete', () => {
     expect(style.input()).toBe('w-full appearance-none bg-[transparent] outline-none form-control-large');
     expect(style.label()).toBe('block text-left text-sm font-medium text-text');
     expect(style.outerWrapper()).toBe(
-      'form-control relative flex w-full flex-row items-center overflow-hidden pr-2 disabled:form-control-disabled',
+      'form-control relative flex w-full flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled',
     );
   });
 

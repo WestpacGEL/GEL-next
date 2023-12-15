@@ -12,6 +12,10 @@ type Variants = VariantProps<typeof styles>;
 
 export type AutocompleteProps<T extends object> = {
   /**
+   * className
+   */
+  className?: string;
+  /**
    * error message
    */
   errorMessage?: string | string[];

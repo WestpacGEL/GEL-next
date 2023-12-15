@@ -5,7 +5,7 @@ import { useMemo } from 'react';
 import { mergeProps, useButton, useComboBox, useFilter, useFocusRing, useSearchField } from 'react-aria';
 import { Item, useComboBoxState, useSearchFieldState } from 'react-stately';
 
-import { ClearIcon } from '../icon/index.js';
+import { ClearIcon, SearchIcon } from '../icon/index.js';
 import { ErrorMessage, FormHint, FormLabel } from '../index.js';
 
 import { styles as autocompleteStyles } from './autocomplete.styles.js';
@@ -37,6 +37,7 @@ export function Autocomplete<T extends object>({
   errorMessage,
   hintMessage,
   noOptionsMessage,
+  className,
   ...props
 }: AutocompleteProps<T>) {
   const { contains } = useFilter({ sensitivity: 'base' });
@@ -57,14 +58,11 @@ export function Autocomplete<T extends object>({
     state,
   );
 
-  const styles = autocompleteStyles({
+  const { clearButton: clearButtonStyle, ...styles } = autocompleteStyles({
     isDisabled,
     isInputFocusVisible,
     size,
     invalid,
-  });
-
-  const { clearButton: clearButtonStyle } = autocompleteStyles({
     isFocusVisible,
   });
 
@@ -93,13 +91,26 @@ export function Autocomplete<T extends object>({
     );
   }, [state, searchProps, noOptionsMessage]);
 
+  const iconSize = useMemo(() => {
+    switch (size) {
+      case 'small':
+      case 'medium':
+        return 'small';
+      default:
+        return 'medium';
+    }
+  }, [size]);
+
   return (
-    <div className={styles.base()}>
+    <div className={styles.base({ className })}>
       <FormLabel {...labelProps}>{props.label}</FormLabel>
       {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}
       {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
 
       <div ref={outerRef} className={styles.outerWrapper()}>
+        <div className={styles.iconWrapper()}>
+          <SearchIcon aria-hidden size={iconSize} />
+        </div>
         <input {...mergeProps(inputProps, inputFocusProps)} ref={inputRef} className={styles.input()} />
 
         <button
