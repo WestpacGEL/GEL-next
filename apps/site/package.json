@@ -11,14 +11,14 @@
     "check-types": "tsc --noemit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@keystatic/core": "^0.1.7",
-    "@keystatic/next": "^1.0.1",
+    "@keystatic/core": "^0.1.9",
+    "@keystatic/next": "^1.0.2",
     "@westpac/ui": "workspace:~",
     "clipboard-copy": "~4.0.1",
     "clsx": "^1.2.1",
     "framer-motion": "~10.12.16",
     "lodash.throttle": "~4.1.1",
-    "next": "^13.5.6",
+    "next": "^14.0.4",
     "prism-react-renderer": "~2.0.6",
     "prismjs": "~1.29.0",
     "react": "^18.2.0",

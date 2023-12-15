@@ -4,6 +4,7 @@ import { GitHubConfig, LocalConfig, collection, config, fields, singleton } from
 import { ArticleComponentBlocks } from '@/components/component-blocks/article-component-blocks';
 import { foundationBlocks } from '@/components/component-blocks/foundation-blocks';
 
+// storage option for Keystatic.
 const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
   process.env.NODE_ENV === 'development'
     ? { kind: 'local' }
