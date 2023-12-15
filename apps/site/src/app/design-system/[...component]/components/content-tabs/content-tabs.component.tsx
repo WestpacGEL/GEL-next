@@ -35,6 +35,7 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
         componentProps={content.componentProps}
         westpacUIInfo={content.westpacUIInfo}
         codeSections={content.codeSections}
+        description={content.description}
       />
     );
   }
@@ -82,12 +83,17 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
     );
   }
 
+  const omitDescriptionForCode = () => {
+    const { description, ...rest } = content;
+    return rest;
+  };
+
   return (
     <Tabs aria-label="GEL design system content" selectedKey={tab} onSelectionChange={handleChange}>
       {filteredTabs.map(tab => (
         <Tabs.Panel title={tab.label} key={tab.key}>
           <div className="flex-1 bg-background">
-            <TabPanelByKey tabKey={tab.key} content={content} />
+            <TabPanelByKey tabKey={tab.key} content={tab.key === 'code' ? omitDescriptionForCode() : content} />
           </div>
         </Tabs.Panel>
       ))}
