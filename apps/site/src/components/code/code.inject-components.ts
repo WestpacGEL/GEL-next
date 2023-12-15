@@ -48,6 +48,7 @@ export {
   Selector,
   Grid,
   Item,
+  Heading,
 } from '@westpac/ui';
 
 export {

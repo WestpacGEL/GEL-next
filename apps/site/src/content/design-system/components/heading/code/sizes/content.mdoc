@@ -3,16 +3,16 @@ Headings are visually sized using the typographic scale and may be set as either
 #### Fixed sizing
 
 ```jsx
-<Fragment>
-  <h1 className="typography-body-1">Heading size 1</h1>
-  <h1 className="typography-body-2">Heading size 2</h1>
-  <h1 className="typography-body-3">Heading size 3</h1>
-  <h1 className="typography-body-4">Heading size 4</h1>
-  <h1 className="typography-body-5">Heading size 5</h1>
-  <h1 className="typography-body-6">Heading size 6</h1>
-  <h1 className="typography-body-7">Heading size 7</h1>
-  <h1 className="typography-body-8">Heading size 8</h1>
-  <h1 className="typography-body-9">Heading size 9</h1>
-  <h1 className="typography-body-10">Heading size 10</h1>
-</Fragment>
+() => {
+  const sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  return (
+    <>
+      {sizes.map(size => (
+        <Heading size={size} key={size}>
+          Heading size {size}
+        </Heading>
+      ))}
+    </>
+  );
+}
 ```

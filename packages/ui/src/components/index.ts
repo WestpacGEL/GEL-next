@@ -40,3 +40,4 @@ export * from './form-label/index.js';
 export * from './form-hint/index.js';
 export * from './field/index.js';
 export * from './bottom-sheet/index.js';
+export * from './heading/index.js';
