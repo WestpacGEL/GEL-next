@@ -2,7 +2,7 @@ import { type BrandConfig, type BrandKey } from '@westpac/ui/tailwind';
 import { ALL_THEMES } from '@westpac/ui/themes';
 import { BASE_COLORS } from '@westpac/ui/themes-constants';
 
-import { ACCESSIBILITY_COLOURS, PRIMARY_COLORS, SECONDARY_COLORS } from './colors.constants';
+import { ACCESSIBILITY_COLORS, PRIMARY_COLORS, SECONDARY_COLORS } from './colors.constants';
 
 const hexToRgb = (hex: string) =>
   hex
@@ -42,7 +42,7 @@ export function getColorPalette({ brand, palette }: { brand: BrandKey; palette: 
   } else if (palette === 'reserved_for_accessibility') {
     const theme = filterTheme(brand);
     if (theme) {
-      ACCESSIBILITY_COLOURS.map(color => {
+      ACCESSIBILITY_COLORS.map(color => {
         const hex = theme[color].DEFAULT;
         const rgb = hexToRgb(hex) || [];
         colorPalette.push({

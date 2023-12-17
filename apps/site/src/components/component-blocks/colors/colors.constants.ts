@@ -69,4 +69,4 @@ export const SECONDARY_COLORS: Record<BrandKey, Record<string, string>> = {
   },
 };
 
-export const ACCESSIBILITY_COLOURS: ColorsKey[] = ['borderDark', 'focus'];
+export const ACCESSIBILITY_COLORS: ColorsKey[] = ['borderDark', 'focus'];
