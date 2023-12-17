@@ -2,23 +2,25 @@ name: Employment
 description: >-
   Use this pattern for capturing employment details, the structure of this data
   is often dictated by systems outside of the bank.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Employment
       slug: employment
+    noTitle: false
   - title:
       name: Error states
       slug: error-states
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
 accessibility: []
-code:
-  - title:
-      name: Pattern examples in code
-      slug: pattern-examples-in-code
 relatedComponents:
   - title: Text inputs
     slug: components/input
   - title: Alerts
     slug: components/alert
+code: []

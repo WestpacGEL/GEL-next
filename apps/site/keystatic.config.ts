@@ -157,6 +157,7 @@ export default config({
               dividers: true,
               links: true,
               label: 'Design',
+              componentBlocks: foundationBlocks,
             }),
           }),
           {

@@ -1,25 +1,28 @@
 name: Auto-address
 description: Use auto-address to capture addresses quickly and with more accuracy.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Auto-address
       slug: auto-address
+    noTitle: false
   - title:
       name: Error states
       slug: error-states
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Dos and don'ts
       slug: dos-and-donts
+    noTitle: false
 accessibility: []
-code:
-  - title:
-      name: Pattern examples in code
-      slug: pattern-examples-in-code
 relatedComponents:
   - title: Text inputs
     slug: components/input
   - title: Alerts
     slug: components/alert
+code: []
