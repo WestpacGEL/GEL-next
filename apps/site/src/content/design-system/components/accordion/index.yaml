@@ -1,6 +1,6 @@
 name: Accordions
 description: >-
-  Tabcordions are grouped sets of tabbed or accordion style panels. Use them to
+  Accordions are grouped sets of expanding and collapsing panels. Use them to
   group and simplify large amounts of content such as product information.
 namedExport:
   discriminant: false
@@ -35,10 +35,12 @@ accessibility:
       name: Accessibility API
       slug: accessibility-api
 relatedComponents:
-  - title: Wells
-    slug: components/well
+  - title: Tabs
+    slug: components/tabs
   - title: Panels
     slug: components/panel
+  - title: Wells
+    slug: components/well
 code:
   - title:
       name: Development examples

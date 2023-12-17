@@ -3,23 +3,33 @@ description: >-
   Modals are components which interrupt a user flow by focusing on a defined
   area of the screen. They are typically reserved for critical junctions in a
   user journey.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Modal sizes
       slug: modal-sizes
+    noTitle: false
   - title:
       name: Modal variations
       slug: modal-variations
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
+  - title:
+      name: Notes on accessibility
+      slug: notes-on-accessibility
   - title:
       name: Accessibility features
       slug: accessibility-features
@@ -29,10 +39,6 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
-code:
-  - title:
-      name: Development examples
-      slug: development-examples
 relatedComponents:
   - title: Popovers
     slug: components/popover
@@ -40,3 +46,8 @@ relatedComponents:
     slug: components/button
   - title: Icons
     slug: foundation/icon
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: false
