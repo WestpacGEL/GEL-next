@@ -68,3 +68,5 @@ export const SECONDARY_COLORS: Record<BrandKey, Record<string, string>> = {
     'Light Green': '#B7E096',
   },
 };
+
+export const ACCESSIBILITY_COLOURS: ColorsKey[] = ['borderDark', 'focus'];

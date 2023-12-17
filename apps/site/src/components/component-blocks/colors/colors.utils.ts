@@ -2,7 +2,7 @@ import { type BrandConfig, type BrandKey } from '@westpac/ui/tailwind';
 import { ALL_THEMES } from '@westpac/ui/themes';
 import { BASE_COLORS } from '@westpac/ui/themes-constants';
 
-import { PRIMARY_COLORS, SECONDARY_COLORS } from './colors.constants';
+import { ACCESSIBILITY_COLOURS, PRIMARY_COLORS, SECONDARY_COLORS } from './colors.constants';
 
 const hexToRgb = (hex: string) =>
   hex
@@ -11,10 +11,13 @@ const hexToRgb = (hex: string) =>
     ?.match(/.{2}/g)
     ?.map(x => parseInt(x, 16));
 
+const filterTheme = (brand: BrandKey) =>
+  ALL_THEMES.find((brandTheme: BrandConfig) => brandTheme.code === brand.toUpperCase())?.colors;
+
 export function getColorPalette({ brand, palette }: { brand: BrandKey; palette: string }) {
   const colorPalette: { hex: string; name: string; rgb: string }[] = [];
   if (palette === 'primary') {
-    const theme = ALL_THEMES.find((brandTheme: BrandConfig) => brandTheme.code === brand.toUpperCase())?.colors;
+    const theme = filterTheme(brand);
     if (theme) {
       PRIMARY_COLORS.forEach(color => {
         const hex = theme[color].DEFAULT;
@@ -36,6 +39,19 @@ export function getColorPalette({ brand, palette }: { brand: BrandKey; palette: 
       const rgb = hexToRgb(hex) || [];
       colorPalette.push({ name: key[0].toUpperCase() + key.slice(1), hex, rgb: `R:${rgb[0]} G:${rgb[1]} B:${rgb[2]}` });
     });
+  } else if (palette === 'reserved_for_accessibility') {
+    const theme = filterTheme(brand);
+    if (theme) {
+      ACCESSIBILITY_COLOURS.map(color => {
+        const hex = theme[color].DEFAULT;
+        const rgb = hexToRgb(hex) || [];
+        colorPalette.push({
+          name: color[0].toUpperCase() + color.slice(1),
+          hex,
+          rgb: `R:${rgb[0]} G:${rgb[1]} B:${rgb[2]}`,
+        });
+      });
+    }
   }
   return colorPalette;
 }
