@@ -2,17 +2,17 @@ name: Complex address
 description: >-
   Use the complex address pattern when you need to allow for the accurate
   capture of multiple property types.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Complex address
       slug: complex-address
+    noTitle: false
 accessibility: []
-code:
-  - title:
-      name: Pattern examples in code
-      slug: pattern-examples-in-code
 relatedComponents:
   - title: Text inputs
     slug: components/input
   - title: Alerts
     slug: components/alert
+code: []
