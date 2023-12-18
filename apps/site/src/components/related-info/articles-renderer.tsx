@@ -13,5 +13,6 @@ export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = 
   },
   inline: {
     link: Link,
+    underline: props => <span {...props} className="underline" />,
   },
 };
