@@ -4,7 +4,11 @@ description: >-
   speeding up the input process and enhancing the user experience. 
 namedExport:
   discriminant: false
-design: []
+design:
+  - title:
+      name: Autocomplete
+      slug: autocomplete
+    noTitle: false
 accessibility: []
 relatedComponents: []
 code:
