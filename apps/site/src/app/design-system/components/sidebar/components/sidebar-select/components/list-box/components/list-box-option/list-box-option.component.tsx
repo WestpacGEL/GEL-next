@@ -1,6 +1,6 @@
 import { type Node } from '@react-types/shared';
 import * as React from 'react';
-import { useOption } from 'react-aria';
+import { mergeProps, useFocusRing, useOption } from 'react-aria';
 import { type ListState } from 'react-stately';
 
 import { styles } from './list-box-option.styles';
@@ -13,7 +13,8 @@ interface OptionProps<T = any> {
 export function Option({ item, state }: OptionProps) {
   const ref = React.useRef<HTMLLIElement>(null);
 
-  const { optionProps, isDisabled, isSelected, isFocused } = useOption(
+  const { isFocusVisible, focusProps } = useFocusRing();
+  const { optionProps, isDisabled, isSelected } = useOption(
     {
       key: item.key,
     },
@@ -22,7 +23,11 @@ export function Option({ item, state }: OptionProps) {
   );
 
   return (
-    <li {...optionProps} ref={ref} className={styles({ isFocused, isSelected, isDisabled })}>
+    <li
+      {...mergeProps(focusProps, optionProps)}
+      ref={ref}
+      className={styles({ isFocusVisible, isSelected, isDisabled })}
+    >
       {item.rendered}
     </li>
   );
