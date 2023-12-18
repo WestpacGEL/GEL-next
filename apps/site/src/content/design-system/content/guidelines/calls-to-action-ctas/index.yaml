@@ -1,8 +1,12 @@
 name: Calls to action (CTAs)
 description: Calls to action are used to get a person to perform an instruction.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Calls to action
       slug: calls-to-action
     noTitle: true
 accessibility: []
+relatedComponents: []
+code: []
