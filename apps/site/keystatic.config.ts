@@ -125,7 +125,15 @@ export default config({
             }),
             noTitle: fields.checkbox({ label: 'No title' }),
             content: fields.document({
-              formatting: true,
+              formatting: {
+                inlineMarks: {
+                  bold: true,
+                  italic: true,
+                  strikethrough: true,
+                  code: true,
+                  underline: true,
+                },
+              },
               dividers: true,
               links: true,
               images: true,
@@ -153,7 +161,15 @@ export default config({
               },
             }),
             content: fields.document({
-              formatting: true,
+              formatting: {
+                inlineMarks: {
+                  bold: true,
+                  italic: true,
+                  strikethrough: true,
+                  code: true,
+                  underline: true,
+                },
+              },
               dividers: true,
               links: true,
               label: 'Design',
@@ -167,7 +183,15 @@ export default config({
           },
         ),
         accessibilityDemo: fields.document({
-          formatting: true,
+          formatting: {
+            inlineMarks: {
+              bold: true,
+              italic: true,
+              strikethrough: true,
+              code: true,
+              underline: true,
+            },
+          },
           dividers: true,
           links: true,
           label: 'Accessibility Demo',
@@ -187,7 +211,15 @@ export default config({
           },
         ),
         relatedArticles: fields.document({
-          formatting: true,
+          formatting: {
+            inlineMarks: {
+              bold: true,
+              italic: true,
+              strikethrough: true,
+              code: true,
+              underline: true,
+            },
+          },
           dividers: true,
           links: true,
           label: 'Related Articles',
@@ -206,7 +238,15 @@ export default config({
             }),
             noTitle: fields.checkbox({ label: 'No title' }),
             content: fields.document({
-              formatting: true,
+              formatting: {
+                inlineMarks: {
+                  bold: true,
+                  italic: true,
+                  strikethrough: true,
+                  code: true,
+                  underline: true,
+                },
+              },
               dividers: true,
               links: true,
               images: true,
@@ -286,7 +326,15 @@ export default config({
           },
         }),
         content: fields.document({
-          formatting: true,
+          formatting: {
+            inlineMarks: {
+              bold: true,
+              italic: true,
+              strikethrough: true,
+              code: true,
+              underline: true,
+            },
+          },
           dividers: true,
           links: true,
           label: 'Design',

@@ -26,5 +26,6 @@ export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = 
   inline: {
     code: InlineCode,
     link: props => <Link color="blue" {...props} />,
+    underline: props => <span {...props} className="underline" />,
   },
 };
