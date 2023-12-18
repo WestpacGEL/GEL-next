@@ -1,5 +1,14 @@
 name: Autocompletes
+description: >-
+  Autocomplete predicts and suggests possible inputs as users type, thereby
+  speeding up the input process and enhancing the user experience. 
+namedExport:
+  discriminant: false
+design: []
+accessibility: []
+relatedComponents: []
 code:
   - title:
       name: Development examples
       slug: development-examples
+    noTitle: false
