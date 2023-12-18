@@ -9,6 +9,10 @@ design:
       name: Autocomplete
       slug: autocomplete
     noTitle: false
+  - title:
+      name: Sizes
+      slug: sizes
+    noTitle: false
 accessibility: []
 relatedComponents: []
 code:
