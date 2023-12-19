@@ -1,5 +1,3 @@
-'use client';
-
 import { Button, Grid, Input, Item } from '@westpac/ui';
 import { GithubIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
@@ -128,7 +126,7 @@ export default function DesignSystemHomePage() {
               <li className="border-b border-border">
                 <Link
                   href="/articles/figma-libraries"
-                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] hover:text-primary hover:underline sm:min-h-[4.5rem] sm:py-[0.5625rem] sm:pr-[0.5625rem]"
+                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-[4.5rem] sm:py-[0.5625rem] sm:pr-[0.5625rem]"
                 >
                   Figma UI Kits
                   <FigmaLogo />
@@ -143,7 +141,7 @@ export default function DesignSystemHomePage() {
                 <Link
                   href="https://github.com/WestpacGEL/GEL-next/"
                   target="_blank"
-                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] hover:text-primary hover:underline sm:min-h-[4.5rem] sm:py-[0.5625rem] sm:pr-[0.5625rem]"
+                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-[4.5rem] sm:py-[0.5625rem] sm:pr-[0.5625rem]"
                 >
                   Follow Westpac GEL on GitHub
                   <GithubIcon size={{ initial: 'large', lg: 'xlarge' }} color="text" />
@@ -156,3 +154,5 @@ export default function DesignSystemHomePage() {
     </>
   );
 }
+
+export const dynamic = 'force-dynamic';

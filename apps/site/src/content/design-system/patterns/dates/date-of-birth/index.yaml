@@ -2,26 +2,29 @@ name: Date of birth
 description: >-
   A unique date pattern for capturing birthdays, memorable dates that are easily
   recalled and entered without the need for select elements.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Date of birth
       slug: date-of-birth
+    noTitle: false
   - title:
       name: Error states
       slug: error-states
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Dos and don'ts
       slug: dos-and-donts
+    noTitle: false
 accessibility: []
-code:
-  - title:
-      name: Pattern examples in code
-      slug: pattern-examples-in-code
 relatedComponents:
   - title: Text inputs
     slug: components/input
   - title: Alerts
     slug: components/alert
+code: []

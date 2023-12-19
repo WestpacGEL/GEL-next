@@ -4,6 +4,7 @@ import { GitHubConfig, LocalConfig, collection, config, fields, singleton } from
 import { ArticleComponentBlocks } from '@/components/component-blocks/article-component-blocks';
 import { foundationBlocks } from '@/components/component-blocks/foundation-blocks';
 
+// storage option for Keystatic.
 const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
   process.env.NODE_ENV === 'development'
     ? { kind: 'local' }
@@ -124,7 +125,25 @@ export default config({
             }),
             noTitle: fields.checkbox({ label: 'No title' }),
             content: fields.document({
-              formatting: true,
+              formatting: {
+                inlineMarks: {
+                  bold: true,
+                  italic: true,
+                  strikethrough: true,
+                  code: true,
+                  underline: true,
+                },
+                listTypes: {
+                  ordered: true,
+                  unordered: true,
+                },
+                headingLevels: [1, 2, 3, 4, 5, 6],
+                blockTypes: {
+                  blockquote: true,
+                  code: true,
+                },
+                softBreaks: true,
+              },
               dividers: true,
               links: true,
               images: true,
@@ -152,10 +171,29 @@ export default config({
               },
             }),
             content: fields.document({
-              formatting: true,
+              formatting: {
+                inlineMarks: {
+                  bold: true,
+                  italic: true,
+                  strikethrough: true,
+                  code: true,
+                  underline: true,
+                },
+                listTypes: {
+                  ordered: true,
+                  unordered: true,
+                },
+                headingLevels: [1, 2, 3, 4, 5, 6],
+                blockTypes: {
+                  blockquote: true,
+                  code: true,
+                },
+                softBreaks: true,
+              },
               dividers: true,
               links: true,
               label: 'Design',
+              componentBlocks: foundationBlocks,
             }),
           }),
           {
@@ -165,7 +203,25 @@ export default config({
           },
         ),
         accessibilityDemo: fields.document({
-          formatting: true,
+          formatting: {
+            inlineMarks: {
+              bold: true,
+              italic: true,
+              strikethrough: true,
+              code: true,
+              underline: true,
+            },
+            listTypes: {
+              ordered: true,
+              unordered: true,
+            },
+            headingLevels: [1, 2, 3, 4, 5, 6],
+            blockTypes: {
+              blockquote: true,
+              code: true,
+            },
+            softBreaks: true,
+          },
           dividers: true,
           links: true,
           label: 'Accessibility Demo',
@@ -185,7 +241,25 @@ export default config({
           },
         ),
         relatedArticles: fields.document({
-          formatting: true,
+          formatting: {
+            inlineMarks: {
+              bold: true,
+              italic: true,
+              strikethrough: true,
+              code: true,
+              underline: true,
+            },
+            listTypes: {
+              ordered: true,
+              unordered: true,
+            },
+            headingLevels: [1, 2, 3, 4, 5, 6],
+            blockTypes: {
+              blockquote: true,
+              code: true,
+            },
+            softBreaks: true,
+          },
           dividers: true,
           links: true,
           label: 'Related Articles',
@@ -204,7 +278,25 @@ export default config({
             }),
             noTitle: fields.checkbox({ label: 'No title' }),
             content: fields.document({
-              formatting: true,
+              formatting: {
+                inlineMarks: {
+                  bold: true,
+                  italic: true,
+                  strikethrough: true,
+                  code: true,
+                  underline: true,
+                },
+                listTypes: {
+                  ordered: true,
+                  unordered: true,
+                },
+                headingLevels: [1, 2, 3, 4, 5, 6],
+                blockTypes: {
+                  blockquote: true,
+                  code: true,
+                },
+                softBreaks: true,
+              },
               dividers: true,
               links: true,
               images: true,
@@ -284,7 +376,25 @@ export default config({
           },
         }),
         content: fields.document({
-          formatting: true,
+          formatting: {
+            inlineMarks: {
+              bold: true,
+              italic: true,
+              strikethrough: true,
+              code: true,
+              underline: true,
+            },
+            listTypes: {
+              ordered: true,
+              unordered: true,
+            },
+            headingLevels: [1, 2, 3, 4, 5, 6],
+            blockTypes: {
+              blockquote: true,
+              code: true,
+            },
+            softBreaks: true,
+          },
           dividers: true,
           links: true,
           label: 'Design',

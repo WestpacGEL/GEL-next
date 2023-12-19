@@ -94,6 +94,9 @@
     "./grid": {
       "default": "./dist/components/grid/index.js"
     },
+    "./heading": {
+      "default": "./dist/components/heading/index.js"
+    },
     "./icon": {
       "default": "./dist/components/icon/index.js"
     },

@@ -14,6 +14,7 @@ export const colors = component({
         { label: 'Primary', value: 'primary' },
         { label: 'Secondary', value: 'secondary' },
         { label: 'Reserved', value: 'reserved' },
+        { label: 'Reserved for accessibility', value: 'reserved_for_accessibility' },
       ],
       defaultValue: 'primary',
     }),

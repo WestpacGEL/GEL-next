@@ -3,23 +3,25 @@ description: >-
   This pattern is used for accurately capturing name information. Catering for
   the needs of a diverse society means that this pattern needs to be flexible
   and inclusive.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Full name
       slug: full-name
+    noTitle: false
   - title:
       name: Simple name
       slug: simple-name
+    noTitle: false
   - title:
       name: Error states
       slug: error-states
+    noTitle: false
 accessibility: []
-code:
-  - title:
-      name: Pattern examples in code
-      slug: pattern-examples-in-code
 relatedComponents:
   - title: Text inputs
     slug: components/input
   - title: Alerts
     slug: components/alert
+code: []

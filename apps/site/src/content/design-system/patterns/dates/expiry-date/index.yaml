@@ -2,23 +2,25 @@ name: Expiry date
 description: >-
   This pattern is used for capturing a date that requires month and year only,
   and is most commonly used for expiry dates.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Expiry date
       slug: expiry-date
+    noTitle: false
   - title:
       name: Error states
       slug: error-states
+    noTitle: false
   - title:
       name: Dos and don'ts
       slug: dos-and-donts
+    noTitle: false
 accessibility: []
-code:
-  - title:
-      name: Pattern examples in code
-      slug: pattern-examples-in-code
 relatedComponents:
   - title: Text inputs
     slug: components/input
   - title: Alerts
     slug: components/alert
+code: []

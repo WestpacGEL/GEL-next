@@ -24,6 +24,7 @@ export function CodeContent({
   componentProps,
   subComponentProps,
   componentName,
+  description,
 }: CodeContentProps) {
   const sectionNames = useMemo(() => {
     const sections = codeSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title }));
@@ -39,6 +40,11 @@ export function CodeContent({
         <Container>
           <Grid className="gap-y-5.5">
             <Item span={{ initial: 12, sm: 7 }}>
+              {description && (
+                <p className="typography-body-8 mb-7 font-light leading-[1.5] sm:typography-body-7 sm:leading-[1.5]">
+                  {description}
+                </p>
+              )}
               <table className="typography-body-11 table w-full bg-[#f2f8fc] text-info">
                 <tbody>
                   <tr>
