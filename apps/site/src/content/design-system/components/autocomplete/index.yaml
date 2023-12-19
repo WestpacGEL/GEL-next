@@ -25,8 +25,15 @@ design:
       name: Dos and don'ts
       slug: dos-and-don-ts
     noTitle: false
-accessibility: []
-relatedComponents: []
+accessibility:
+  - title:
+      name: Notes on accessibility
+      slug: notes-on-accessibility
+relatedComponents:
+  - title: Icons
+    slug: /design-system/foundation/icon
+  - title: Text input
+    slug: /design-system/components/input
 code:
   - title:
       name: Development examples
