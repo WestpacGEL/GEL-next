@@ -5,7 +5,7 @@ export const styles = tv({
     footer:
       'fixed inset-x-0 flex h-8 items-center justify-between border-t border-t-border bg-white py-1 pl-4 pr-3 leading-none transition-[bottom] duration-[0.4s] ease-[ease]',
     icons: 'flex gap-2',
-    button: 'no-underline',
+    button: 'no-underline focus-visible:focus-outline',
   },
   variants: {
     isDesignSystem: {

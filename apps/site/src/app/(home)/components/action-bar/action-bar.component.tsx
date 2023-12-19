@@ -27,7 +27,7 @@ export function ActionBar() {
           <ul role="list" className="flex gap-2">
             {Object.entries(logoMap).map(([key, { logo: Logo }]) => (
               <li key={key}>
-                <Link href={`/design-system?brand=${key}`}>
+                <Link href={`/design-system?brand=${key}`} className="outline-offset-[3px] outline-focus">
                   <CircleLogo>
                     <Logo className={logoStyles({ brand: key as BrandKey })} />
                   </CircleLogo>

@@ -6,21 +6,27 @@ design:
   - title:
       name: Brand font
       slug: brand-font
+    noTitle: false
   - title:
       name: Body font
       slug: body-font
+    noTitle: false
   - title:
       name: Typographic scale
       slug: typographic-scale
+    noTitle: false
   - title:
       name: Font weights
       slug: font-weights
+    noTitle: false
   - title:
       name: Using fonts
       slug: using-fonts
+    noTitle: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility

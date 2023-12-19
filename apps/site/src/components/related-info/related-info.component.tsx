@@ -61,7 +61,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
 function Link({ children, ...props }: React.PropsWithChildren<LinkProps>) {
   return (
     <NextLink
-      className="typography-body-10 flex min-h-[3.4375rem] items-center justify-between border-b border-border py-1 hover:text-primary hover:underline"
+      className="typography-body-10 flex min-h-[3.4375rem] items-center justify-between border-b border-border py-1 outline-offset-[3px] outline-focus hover:text-primary hover:underline"
       {...props}
     >
       {children}

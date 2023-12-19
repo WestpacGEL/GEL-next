@@ -5,6 +5,7 @@ import { Grid, Item, Select } from '@westpac/ui';
 import { useId, useState } from 'react';
 
 import { Container } from '@/app/design-system/components';
+import { Colors } from '@/components/component-blocks/colors/colors.component';
 import { Section } from '@/components/content-blocks/section';
 import { Link, Text } from '@/components/content-blocks/typography';
 import { Code, Heading } from '@/components/document-renderer';
@@ -87,7 +88,11 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
           <Section key={id} className="">
             <Container>
               <Heading level={2}>{title}</Heading>
-              <DocumentRenderer document={content} renderers={DOCUMENT_RENDERERS} componentBlocks={{}} />
+              <DocumentRenderer
+                document={content}
+                renderers={DOCUMENT_RENDERERS}
+                componentBlocks={{ colors: props => <Colors palette={props.palette} /> }}
+              />
             </Container>
           </Section>
         );

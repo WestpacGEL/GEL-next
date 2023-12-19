@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'group flex flex-col',
+    base: 'group flex flex-col focus-visible:focus-outline',
     imageWrapper:
       'relative aspect-[1092/563] w-full overflow-hidden transition-[border-radius] duration-200 ease-[cubic-bezier(0.13,0.00,0.11,1.00)] group-hover:rounded-[12.5rem] group-hover:transition-[border-radius] group-hover:duration-300 group-hover:ease-[cubic-bezier(0.13,0.00,0.11,1.00)]',
     contentWrapper: 'flex grow flex-col border-gel-border pl-1 pt-4 xsl:border-r xsl:pt-6.5',

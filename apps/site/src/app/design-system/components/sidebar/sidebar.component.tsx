@@ -72,7 +72,11 @@ export function Sidebar({ items }: SidebarProps) {
           <button className="absolute right-1 top-1 block h-6 w-6 p-1 md:hidden" onClick={() => setOpen(false)}>
             <CloseIcon className="block text-muted" />
           </button>
-          <Link href="/" className="flex h-15 items-center px-3" aria-label="GEL home">
+          <Link
+            href="/"
+            className="flex h-15 items-center px-3 outline-offset-[-1px] outline-focus"
+            aria-label="GEL home"
+          >
             <Logo brand={brand} />
           </Link>
           <div className="border-b border-b-border">
@@ -89,7 +93,7 @@ export function Sidebar({ items }: SidebarProps) {
           </div>
         </div>
         <nav ref={listRef} className="flex-1 overflow-y-auto overflow-x-hidden pb-4 transition-all">
-          <Link href="/" className="block" aria-label="Back to GEL">
+          <Link href="/" className="block outline-offset-[-1px] outline-focus" aria-label="Back to GEL">
             <BackToGelSvg />
           </Link>
           <Navigation items={items} brand={brand} />
