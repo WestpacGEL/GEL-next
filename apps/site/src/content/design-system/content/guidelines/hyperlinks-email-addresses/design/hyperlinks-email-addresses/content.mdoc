@@ -4,16 +4,26 @@ Customers with accessibility requirements may use a screen reader which means th
 - avoid duplicating link text within the same page
 - avoid using full URLs.
 
-_Note: External links should open in a new tab while internal links and PDFs should open in the same tab – exceptions for secure environment._
+*Note: External links should open in a new tab while internal links and PDFs should open in the same tab – exceptions for secure environment.*
+
+```jsx
+                             <div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<p className="typography-body-10 mb-2 ml-4"><span className="text-success font-bold">Do:</span> Download our <Link href="#" type="inline">First Home Buyers Guide</Link></p>
+<p className="typography-body-10 ml-4"><span className="text-danger font-bold">Don't:</span> <Link href="#" type="inline">Download</Link> our First Home Buyers Guide</p>
+<p className="typography-body-10 mb-2 ml-4"><span className="text-success font-bold">Do:</span> For more information, see our Online Banking Terms & Conditions</p>
+<p className="typography-body-10 ml-4"><span className="text-danger font-bold">Don't:</span> For more information, see our Online Banking Terms & Conditions</p>
+</div>
+```
 
 For example:
 
 > Do: Download our First Home Buyers Guide
->
+> 
 > Don’t: Download our First Home Buyers Guide
 
 > Do: For more information, see our Online Banking Terms & Conditions
->
+> 
 > Don’t: For more information, see our Online Banking Terms & Conditions
 
 ---
@@ -23,7 +33,7 @@ Never use ‘click here' – and avoid generic CTAs such as 'Find out more', ‘
 For example:
 
 > Do: See our range of credit cards
->
+> 
 > Don’t: Click here for more information on our range of credit cards
 
 ---
@@ -35,7 +45,7 @@ Westpac URLs don’t include ‘https://’ or ‘www.’ but external websites 
 For example:
 
 > johnsmith@westpac.com.au
->
+> 
 > westpac.com.au/westpacapp
 
-_Note: Don’t end a URL with a full stop or forward slash._
+*Note: Don’t end a URL with a full stop or forward slash.*
