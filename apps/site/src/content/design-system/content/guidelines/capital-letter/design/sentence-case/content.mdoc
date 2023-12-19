@@ -1,6 +1,18 @@
 Always use sentence-case for:
 
-- Navigation menus (unless linking a branded product).
+Navigation menus (unless linking a branded product).
+
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <Link href="#" iconBefore={ArrowRightIcon}>
+    Savings account
+  </Link>
+  <Link href="#" iconBefore={ArrowRightIcon}>
+    Westpac Life
+  </Link>
+</div>
+```
 
 For example:
 
@@ -9,6 +21,23 @@ For example:
 > \> Westpac Life
 
 - CTA buttons and hyperlinks (no full stops but fine to use question marks)
+- 
+
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<Button>
+  Compare accounts
+</Button>
+<p className="typography-body-10  mb-2 ml-3"><Link href="#" type="inline">What's new?</Link></p>
+  <Link href="#" iconBefore={ArrowRightIcon}>
+    Calculate my repayments
+  </Link>
+  <Link href="#" iconBefore={ArrowRightIcon}>
+    How much can I borrow?
+  </Link>
+</div>
+```
 
 For example:
 
