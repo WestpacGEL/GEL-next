@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ChangeEvent, ClipboardEvent, KeyboardEvent, useCallback, useRef, useState } from 'react';
 
 import { Input } from '../index.js';
