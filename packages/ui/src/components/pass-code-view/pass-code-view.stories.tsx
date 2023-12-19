@@ -29,3 +29,18 @@ export const DefaultStory: Story = {
     onUpdate: action('onUpdate'),
   },
 };
+
+/**
+ * > With error example
+ */
+export const WithErrorStory: Story = {
+  args: {
+    header: 'Enter SMS code',
+    description: 'Send to mobile ending ...XXXX',
+    passCodeLength: 6,
+    errorMessage: 'Try again (2 attempts remaining)',
+    onComplete: action('onComplete'),
+    onResend: action('onResend'),
+    onUpdate: action('onUpdate'),
+  },
+};
