@@ -11,7 +11,7 @@ export function Buttons({
   onClick,
   selectedButton,
   resultsFound,
-  tag: Tag = 'nav',
+  tag: Tag = 'div',
   className,
   ...props
 }: ButtonsProps) {
