@@ -42,3 +42,5 @@ export * from './filter/index.js';
 export * from './field/index.js';
 export * from './bottom-sheet/index.js';
 export * from './heading/index.js';
+export * from './pass-code/index.js';
+export * from './pass-code-view/index.js';
