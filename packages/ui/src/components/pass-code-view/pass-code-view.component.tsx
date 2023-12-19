@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { AlertIcon, PadlockIcon } from '../icon/index.js';
-import { Button, Link } from '../index.js';
+import { Alert, Button, Link } from '../index.js';
 import { PassCode } from '../pass-code/pass-code.component.js';
 
 import { PassCodeViewLoader } from './pass-code-view.loader.js';
@@ -49,10 +49,9 @@ export function PassCodeView({
             </p>
           )}
           {errorMessage && (
-            <p className="flex items-center gap-1 text-danger">
-              <AlertIcon size="small" look="outlined" color="danger" />
+            <Alert look="danger" mode="text">
               {errorMessage}
-            </p>
+            </Alert>
           )}
           <PassCode className={styles.passCode()} length={passCodeLength} onComplete={onComplete} />
           {resendButtonLabel && (
