@@ -41,7 +41,7 @@ export function PassCodeView({
       ) : (
         <>
           {description && (
-            <p className={styles.description()}>
+            <p>
               {description}
               <Link type="inline" className={styles.link()} onPress={onUpdate}>
                 {updateButtonLabel}
