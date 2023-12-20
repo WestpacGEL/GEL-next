@@ -5,14 +5,13 @@ import { useMemo } from 'react';
 
 import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
-import { ImageCaption } from '@/components/component-blocks/components/image-caption';
 import { Fonts } from '@/components/component-blocks/fonts/fonts.component';
 import { Icons } from '@/components/component-blocks/icons/icons.component';
 import { Logos } from '@/components/component-blocks/logos/logos.component';
 import { Pictograms } from '@/components/component-blocks/pictograms/pictograms.component';
 import { Symbols } from '@/components/component-blocks/symbols/symbols.component';
 import { Section } from '@/components/content-blocks/section';
-import { Code, Heading } from '@/components/document-renderer';
+import { Code, Heading, Image } from '@/components/document-renderer';
 import { RelatedInfo } from '@/components/related-info';
 
 import { Intro } from '..';
@@ -50,7 +49,7 @@ export function DesignContent({ designSections, description, relatedComponents, 
                   pictograms: () => <Pictograms />,
                   symbols: () => <Symbols />,
                   colors: props => <Colors palette={props.palette} />,
-                  imageCaption: props => <ImageCaption text={props.text} />,
+                  designSystemBodyImage: props => <Image {...props} />,
                 }}
               />
             </Container>
