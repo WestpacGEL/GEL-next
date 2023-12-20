@@ -4,6 +4,10 @@ import userEvent from '@testing-library/user-event';
 import { Selector } from './selector.component.js';
 import { type SelectorProps } from './selector.types.js';
 
+const ariaDisabled = 'aria-disabled';
+const ariaPressed = 'aria-pressed';
+const handleClick = vi.fn();
+
 const SimpleRadioSelector = (props: Omit<SelectorProps<'radio'>, 'children' | 'type'>) => (
   <Selector type="radio" aria-label="test" {...props}>
     <Selector.Radio value="1" data-testid="opt1">
@@ -29,6 +33,34 @@ const SimpleCheckboxSelector = (props: Omit<SelectorProps<'checkbox'>, 'children
     <Selector.Checkbox value="3" data-testid="opt3">
       option 3
     </Selector.Checkbox>
+  </Selector>
+);
+
+const SimpleButtonSelector = (props: Omit<SelectorProps<'button'>, 'children' | 'type'>) => (
+  <Selector type="button" aria-label="test" {...props}>
+    <Selector.ButtonOption id="A" data-testid="opt1" onClick={handleClick}>
+      option 1
+    </Selector.ButtonOption>
+    <Selector.ButtonOption id="B" data-testid="opt2" onClick={handleClick}>
+      option 2
+    </Selector.ButtonOption>
+    <Selector.ButtonOption id="C" data-testid="opt3" onClick={handleClick}>
+      option 3
+    </Selector.ButtonOption>
+  </Selector>
+);
+
+const SimpleLinkSelector = (props: Omit<SelectorProps<'link'>, 'children' | 'type'>) => (
+  <Selector type="link" aria-label="test" {...props}>
+    <Selector.Link href="#" data-testid="opt1">
+      option 1
+    </Selector.Link>
+    <Selector.Link href="#" data-testid="opt2">
+      option 2
+    </Selector.Link>
+    <Selector.Link href="#" data-testid="opt3">
+      option 3
+    </Selector.Link>
   </Selector>
 );
 
@@ -140,5 +172,57 @@ describe('Selector', () => {
       await user.click(getByTestId('opt1'));
     });
     expect(handleChange).toBeCalledTimes(1);
+  });
+
+  it('should render Simple Selector as button', () => {
+    const { container } = render(<SimpleButtonSelector />);
+
+    expect(container).toBeInTheDocument();
+  });
+
+  it('should render with correct defaultValue when defaultValue prop passed', () => {
+    const { getByTestId } = render(<SimpleButtonSelector value="B" />);
+
+    expect(getByTestId('opt1')).toHaveAttribute(ariaPressed, 'false');
+    expect(getByTestId('opt2')).toHaveAttribute(ariaPressed, 'true');
+    expect(getByTestId('opt3')).toHaveAttribute(ariaPressed, 'false');
+  });
+
+  it('should select correct option when clicked', async () => {
+    const { getByTestId } = render(<SimpleButtonSelector />);
+    const optionOne = getByTestId('opt1');
+    const optionTwo = getByTestId('opt2');
+
+    expect(optionOne).toHaveAttribute(ariaPressed, 'false');
+    await act(async () => {
+      await user.click(optionOne);
+    });
+    expect(optionOne).toHaveAttribute(ariaPressed, 'true');
+    await act(async () => {
+      await user.click(optionTwo);
+    });
+    expect(optionOne).toHaveAttribute(ariaPressed, 'false');
+    expect(optionTwo).toHaveAttribute(ariaPressed, 'true');
+    expect(handleClick).toHaveBeenCalledTimes(2);
+  });
+
+  it('buttons should be disabled if disabled prop is passed', () => {
+    const { getByTestId } = render(<SimpleButtonSelector isDisabled />);
+
+    expect(getByTestId('opt1')).toHaveAttribute(ariaDisabled, 'true');
+    expect(getByTestId('opt2')).toHaveAttribute(ariaDisabled, 'true');
+    expect(getByTestId('opt3')).toHaveAttribute(ariaDisabled, 'true');
+  });
+
+  it('should render Simple Selector as link', () => {
+    const { container } = render(<SimpleLinkSelector />);
+
+    expect(container).toBeInTheDocument();
+  });
+
+  it('links should be disabled if disabled prop is passed', () => {
+    const { getByTestId } = render(<SimpleLinkSelector isDisabled />);
+
+    expect(getByTestId('opt1')).toHaveClass('pointer-events-none');
   });
 });
