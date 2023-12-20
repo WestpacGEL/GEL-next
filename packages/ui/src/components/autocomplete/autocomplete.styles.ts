@@ -1,18 +1,5 @@
 import { tv } from 'tailwind-variants';
 
-import { INPUT_WIDTHS } from '../../constants/input-widths.js';
-
-type InputWidthKeys = keyof typeof INPUT_WIDTHS;
-const modifiedInputWidths = Object.entries(INPUT_WIDTHS).reduce((acc, [key, value]) => {
-  return {
-    ...acc,
-    [key]: {
-      ...(key === 'full' ? { outerWrapper: 'w-full' } : { outerWrapper: 'w-auto', base: 'items-start' }),
-      input: value,
-    },
-  };
-}, {} as Record<InputWidthKeys, any>);
-
 export const styles = tv(
   {
     slots: {
@@ -70,7 +57,23 @@ export const styles = tv(
         },
         false: {},
       },
-      width: modifiedInputWidths,
+      width: {
+        0: '1',
+        1: 'box-content w-[1.81ex]',
+        // eslint-disable-next-line sonarjs/no-duplicate-string
+        2: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[3.62ex]' },
+        3: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[5.43ex]' },
+        4: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[7.24ex]' },
+        5: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[9.05ex]' },
+        6: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[10.86ex]' },
+        7: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[12.67ex]' },
+        8: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[14.48ex]' },
+        9: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[16.29ex]' },
+        10: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[18.1ex]' },
+        20: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[36.2ex]' },
+        30: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[54.3ex]' },
+        full: { outerWrapper: 'w-full', input: 'w-full' },
+      },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
