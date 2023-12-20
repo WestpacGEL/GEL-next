@@ -58,7 +58,6 @@ export const styles = tv(
         false: {},
       },
       width: {
-        0: '1',
         1: 'box-content w-[1.81ex]',
         // eslint-disable-next-line sonarjs/no-duplicate-string
         2: { outerWrapper: 'w-auto', base: 'items-start', input: 'box-content w-[3.62ex]' },
