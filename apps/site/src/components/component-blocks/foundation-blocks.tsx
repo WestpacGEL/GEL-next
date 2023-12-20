@@ -1,5 +1,5 @@
 import { colors } from './colors/colors.preview';
-import { imageCaption } from './components/image-caption/image-caption.preview';
+import { designSystemBodyImage } from './components/design-system-body-image';
 import { fonts } from './fonts/fonts.preview';
 import { icons } from './icons/icons.preview';
 import { logos } from './logos/logos.preview';
@@ -13,5 +13,5 @@ export const foundationBlocks = {
   pictograms,
   fonts,
   symbols,
-  imageCaption,
+  designSystemBodyImage,
 };
