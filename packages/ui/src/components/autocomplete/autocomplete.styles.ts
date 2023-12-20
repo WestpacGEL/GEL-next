@@ -1,13 +1,26 @@
 import { tv } from 'tailwind-variants';
 
+import { INPUT_WIDTHS } from '../../constants/input-widths.js';
+
+type InputWidthKeys = keyof typeof INPUT_WIDTHS;
+const modifiedInputWidths = Object.entries(INPUT_WIDTHS).reduce((acc, [key, value]) => {
+  return {
+    ...acc,
+    [key]: {
+      ...(key === 'full' ? { outerWrapper: 'w-full' } : { outerWrapper: 'w-auto', base: 'items-start' }),
+      input: value,
+    },
+  };
+}, {} as Record<InputWidthKeys, any>);
+
 export const styles = tv(
   {
     slots: {
-      base: 'relative flex flex-col',
+      base: 'relative flex flex-1 flex-col',
       label: 'block text-left text-sm font-medium text-text',
       outerWrapper:
-        'form-control relative flex w-full flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled',
-      input: 'w-full appearance-none bg-[transparent] outline-none',
+        'form-control relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled group-[.input-field-after]:rounded-r-none group-[.input-field-before]:rounded-l-none group-[.input-field-after]:border-r-0 group-[.input-field-before]:border-l-0',
+      input: 'appearance-none bg-[transparent] outline-none',
       clearButton: 'flex cursor-default items-center justify-center text-text-50 hover:text-border-60',
       iconWrapper: 'flex flex-col justify-center',
     },
@@ -57,6 +70,7 @@ export const styles = tv(
         },
         false: {},
       },
+      width: modifiedInputWidths,
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },

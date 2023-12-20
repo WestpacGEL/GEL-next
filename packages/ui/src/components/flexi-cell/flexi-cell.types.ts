@@ -28,6 +28,7 @@ type BaseFlexiCellProps = {
    * Wraps body with an 'a' tag for dual action styled component
    * - Requires href to be provided
    * - Tag prop should not be used when using this prop
+   * @default false
    */
   dualAction?: boolean;
   /**
@@ -36,10 +37,12 @@ type BaseFlexiCellProps = {
   href?: string;
   /**
    * Large adds more padding/spacing to the Flex Cell
+   * @default default
    */
   size?: Variants['size'];
   /**
    * The native tag that flexicell will be rendered
+   * @default div
    */
   tag?: keyof JSX.IntrinsicElements;
   /**
@@ -52,6 +55,7 @@ type BaseFlexiCellProps = {
   withArrow?: boolean;
   /**
    * Adds a border radius and a border
+   * @default false
    */
   withBorder?: boolean;
 } & HTMLAttributes<HTMLOrSVGElement>;

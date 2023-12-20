@@ -8,10 +8,16 @@ type Variants = VariantProps<typeof styles>;
 export type InputProps = {
   /**
    * Whether the input is invalid
+   * @default false
    */
   invalid?: boolean;
   /**
    * Size of input
+   * @default medium
    */
   size?: Variants['size'];
-} & Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;
+  /**
+   * width of input
+   */
+  width?: Variants['width'];
+} & Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'width'>;

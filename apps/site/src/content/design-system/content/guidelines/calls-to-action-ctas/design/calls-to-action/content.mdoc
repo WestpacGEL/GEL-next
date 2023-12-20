@@ -2,65 +2,76 @@ CTAs should be short and action-orientated – using buttons and hyperlinked tex
 
 For example:
 
-![Two examples of calls to action that are short and action oriented.](https://res.cloudinary.com/westpac-gel/image/upload/v1667894142/cla7x3vj6001ef58icgubfckf.png)
+Missing image https://res.cloudinary.com/westpac-gel/image/upload/v1667894142/cla7x3vj6001ef58icgubfckf.png
 
 {% imageCaption text="Use short, action oriented calls to action" /%}
 
-_Note: No full stops in CTAs but fine to use question marks._
+*Note: No full stops in CTAs but fine to use question marks.*
 
 ---
 
 Hyperlinks must be underlined unless they’re standalone text links, in which case we add a chevron.
 
-For example:
-
-> \> Register for Online Banking
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <Link href="#" iconBefore={ArrowRightIcon}>
+    Register for Online Banking
+  </Link>
+</div>
+```
 
 Instead of using generic CTAs such as ‘Find out more’ and ‘Learn more’ – try to be contextual for accessibility and best practice (SEO & UX).
 
 However, when space is limited, try CTAs such as ‘Tell me more’ or ‘Show me how’ instead of ‘Find out more’ and ‘Learn more’.
 
-For example:
-
-> Find out more about balance transfers
->
-> To learn more about whether Online Banking is right for you, see our Online Banking Terms & Conditions for more information.
-
-> Do: Submit application
->
-> Don’t: Finish
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<p className="typography-body-10  mb-2 ml-3">Find out more about balance transfers</p>
+<p className="typography-body-10  mb-6 ml-3">To learn more about whether Online Banking is right for you, see our Online Banking Terms & Conditions for more information.</p>
+<p className="typography-body-10 mb-2 ml-4"><span className="text-success font-bold">Do:</span> Submit application</p>
+<p className="typography-body-10 ml-4"><span className="text-danger font-bold">Don't:</span> Finish</p>
+</div>
+```
 
 ---
 
 Try to avoid overt navigation instructions, e.g. ‘Click the link below to start the survey’ or ‘call the number below’
 
-For example:
-
-> Use a CTA button or hyperlink that says ‘Start survey now’
->
-> Call us on 13 20 32
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<p className="typography-body-10  mb-2 ml-3">Use a CTA button or hyperlink that says <Link href="#" type="inline">Start survey now</Link></p>
+<p className="typography-body-10  mb-2 ml-3">Call us on <Link href="#" type="inline">13 20 32</Link></p>
+</div>
+```
 
 ---
 
 Keep verbs appropriate to the device type.
 
-For example:
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<p className="typography-body-10 mb-3 ml-4"><span className=" font-bold">Mobile:</span> Go to, tap, swipe, scroll, select, choose</p>
+<p className="typography-body-10 mb-3 ml-4"><span className=" font-bold">Desktop:</span> Go to, select, scroll, choose</p>
+<p className="typography-body-10 mb-3 ml-4"><span className=" font-bold">Cross-device:</span> Go to, select, scroll, choose</p>
+<p className="typography-body-10 text-muted mb-3 italic">Note: ‘Click’ doesn’t adhere to the <Link href="https://www.w3.org/WAI/tips/writing/" type="inline">Accessibility & Inclusion Guidelines</Link>.</p>
 
-> **Mobile:** Go to, tap, swipe, scroll, select, choose
->
-> **Desktop:** Go to, select, scroll, choose
->
-> **Cross-device:** Go to, select, scroll, choose
-
-_Note: ‘Click’ doesn’t adhere to the_ [\_Accessibility & Inclusion Guidelines\_](https://www.w3.org/WAI/tips/writing/)_._
+</div>
+```
 
 ---
 
 When referring to signing into Online Banking or the Westpac App, use ‘into’, not ‘in to’.
 
-For example:
-
-> Sign into Online Banking or the Westpac App
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<p className="typography-body-10 ml-4">Sign into Online Banking or the Westpac App</p>
+</div>
+```
 
 ---
 
@@ -68,15 +79,25 @@ For steps, use bold text for the exact wording on tabs, links and buttons.
 
 For steps in body copy, use chevrons. Capitalise the first word after the chevron.
 
-For example:
-
-> Sign into the Westpac App > Go to the **$** on the bottom menu > Tap **Pay someone** > Tap **Add**.
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<p className="typography-body-10 ml-4">Sign into the Westpac App > Go to the <b>$</b> on the bottom menu > Tap <b>Pay someone</b> > Tap <b>Add</b></p>
+</div>
+```
 
 ---
 
 If there are more than 5 steps, switch to the list format. Also see [Bullet points & numbered lists](/design-system/content/guidelines/bullet-points-numbered-list).
 
-For example:
-
-> - Sign into the Westpac App
-> - Go to **Settings** and select **Wallpaper**
+```jsx
+<div>
+  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <List className="list-disc">
+    <List.Item className="typography-body-10">Sign into the Westpac App</List.Item>
+    <List.Item className="typography-body-10">
+      Go to <b>Settings</b> and select <b>Wallpaper</b>
+    </List.Item>
+  </List>
+</div>
+```

@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react';
 
 import { type IconProps } from '../icon/index.js';
+import { InputProps } from '../index.js';
 
 export type Composition = Record<'before' | 'after', string | null>;
 
@@ -59,7 +60,12 @@ export type InputFieldProps = {
   supportingText?: ReactNode;
   /**
    * Tag to render
+   * @default div
    */
   // TODO: maybe we could limit the tags to be only fieldset or div?
   tag?: keyof JSX.IntrinsicElements;
+  /**
+   * width of input
+   */
+  width?: InputProps['width'];
 };

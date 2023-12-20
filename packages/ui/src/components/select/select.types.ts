@@ -14,4 +14,8 @@ export type SelectProps = {
    * Size of select
    */
   size?: Variants['size'];
+  /**
+   * Width of select
+   */
+  width?: Variants['width'];
 } & Omit<SelectHTMLAttributes<HTMLSelectElement>, 'size'>;

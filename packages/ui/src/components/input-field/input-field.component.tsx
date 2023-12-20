@@ -22,6 +22,7 @@ export function InputField({
   children,
   tag: Tag = 'div',
   className,
+  width = 'full',
   ...props
 }: InputFieldProps) {
   const _id = useId();
@@ -79,6 +80,7 @@ export function InputField({
           size,
           id,
           'aria-describedby': ariaDescribedByValue,
+          ...(width !== 'full' ? { width: width, className: 'flex-grow-0' } : {}),
         } as any);
       }
     });

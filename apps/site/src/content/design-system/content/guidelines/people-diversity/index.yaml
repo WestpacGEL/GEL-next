@@ -1,8 +1,12 @@
 name: People & diversity
 description: A guide to writing for an inclusive audience.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: People and diversity
       slug: people-diversity
     noTitle: true
 accessibility: []
+relatedComponents: []
+code: []
