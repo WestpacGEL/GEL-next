@@ -1,8 +1,12 @@
 name: Abbreviations
 description: Abbreviations are shortened forms of words or phrases.
+namedExport:
+  discriminant: false
 design:
   - title:
-      name: title
-      slug: title
+      name: Abbreviations
+      slug: abbreviations
     noTitle: true
 accessibility: []
+relatedComponents: []
+code: []

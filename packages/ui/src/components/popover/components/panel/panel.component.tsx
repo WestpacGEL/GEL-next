@@ -59,3 +59,4 @@ export function Panel({ state, heading, headingTag: Tag = 'h1', content, placeme
     </FocusScope>
   );
 }
+Panel.displayName = 'Popover.Panel';

@@ -9,7 +9,7 @@ type Variants = VariantProps<typeof styles>;
 
 export type ButtonDropdownProps = {
   /**
-   * Size of the the dropdown panel
+   * Size of the dropdown panel
    */
   dropdownSize?: Variants['dropdownSize'];
   /**

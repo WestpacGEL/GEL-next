@@ -3,19 +3,25 @@ description: >-
   Progress bars are animated bars which show a rate of completion for a system
   task or a response to user input. They can be accompanied by a percentage of
   completion value.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Progress bar
       slug: progress-bar
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
@@ -29,7 +35,9 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents: []
 code:
   - title:
       name: Development examples
       slug: development-examples
+    noTitle: false

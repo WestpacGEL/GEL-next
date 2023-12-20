@@ -1,5 +1,7 @@
 name: Age & school years
 description: A guide to writing age and school years.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Age and school years
@@ -7,3 +9,4 @@ design:
     noTitle: true
 accessibility: []
 relatedComponents: []
+code: []

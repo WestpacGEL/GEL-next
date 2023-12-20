@@ -60,6 +60,7 @@ export type InputFieldProps = {
   supportingText?: ReactNode;
   /**
    * Tag to render
+   * @default div
    */
   // TODO: maybe we could limit the tags to be only fieldset or div?
   tag?: keyof JSX.IntrinsicElements;

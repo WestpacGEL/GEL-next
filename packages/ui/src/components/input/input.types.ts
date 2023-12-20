@@ -8,10 +8,12 @@ type Variants = VariantProps<typeof styles>;
 export type InputProps = {
   /**
    * Whether the input is invalid
+   * @default false
    */
   invalid?: boolean;
   /**
    * Size of input
+   * @default medium
    */
   size?: Variants['size'];
   /**
