@@ -1,8 +1,12 @@
 name: Brackets
 description: Brackets are used to provide extra information.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Brackets
       slug: brackets
     noTitle: true
 accessibility: []
+relatedComponents: []
+code: []

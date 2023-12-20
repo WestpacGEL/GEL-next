@@ -1,8 +1,12 @@
 name: Dates, days & time
 description: A guide to writing dates, days and time.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Dates, days and time
       slug: dates-days-time
     noTitle: true
 accessibility: []
+relatedComponents: []
+code: []
