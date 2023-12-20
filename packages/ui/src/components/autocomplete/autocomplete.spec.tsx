@@ -22,14 +22,14 @@ describe('Autocomplete', () => {
   it('renders the style correctly', () => {
     const style = styles({ size: 'large' });
     // TODO: use some variants for test
-    expect(style.base()).toBe('relative flex flex-col');
+    expect(style.base()).toBe('relative flex flex-1 flex-col');
     expect(style.clearButton()).toBe(
       'flex cursor-default items-center justify-center text-text-50 hover:text-border-60',
     );
-    expect(style.input()).toBe('w-full appearance-none bg-[transparent] outline-none form-control-large');
+    expect(style.input()).toBe('appearance-none bg-[transparent] outline-none form-control-large');
     expect(style.label()).toBe('block text-left text-sm font-medium text-text');
     expect(style.outerWrapper()).toBe(
-      'form-control relative flex w-full flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled',
+      'form-control relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled group-[.input-field-after]:rounded-r-none group-[.input-field-before]:rounded-l-none group-[.input-field-after]:border-r-0 group-[.input-field-before]:border-l-0',
     );
   });
 

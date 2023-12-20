@@ -38,6 +38,7 @@ export function Autocomplete<T extends object>({
   hintMessage,
   noOptionsMessage,
   className,
+  width = 'full',
   ...props
 }: AutocompleteProps<T>) {
   const { contains } = useFilter({ sensitivity: 'base' });
@@ -59,6 +60,7 @@ export function Autocomplete<T extends object>({
   );
 
   const { clearButton: clearButtonStyle, ...styles } = autocompleteStyles({
+    width,
     isDisabled,
     isInputFocusVisible,
     size,
@@ -103,7 +105,7 @@ export function Autocomplete<T extends object>({
 
   return (
     <div className={styles.base({ className })}>
-      <FormLabel {...labelProps}>{props.label}</FormLabel>
+      {props.label && <FormLabel {...labelProps}>{props.label}</FormLabel>}
       {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}
       {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
 
