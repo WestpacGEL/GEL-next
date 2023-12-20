@@ -28,7 +28,7 @@ export type ButtonProps = {
    */
   iconColor?: IconProps['color'];
   /**
-   * Justify align button children. When true, content will justify-between
+   * When true, children will use flex justify-between
    * @default false
    */
   justify?: Variants['justify'];
