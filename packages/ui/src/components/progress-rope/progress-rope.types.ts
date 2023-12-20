@@ -17,6 +17,7 @@ export type ProgressRopeStepWithIndex =
 export type ProgressRopeProps = {
   /**
    * Current active step (zero-indexed)
+   * @default 0
    */
   current?: number;
   /**
@@ -32,6 +33,7 @@ export type ProgressRopeProps = {
   )[];
   /**
    * Tag to render
+   * @default nav
    */
   tag?: keyof JSX.IntrinsicElements;
 } & HTMLAttributes<Element>;

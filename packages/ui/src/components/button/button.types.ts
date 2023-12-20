@@ -10,6 +10,7 @@ type Variants = VariantProps<typeof styles>;
 export type ButtonProps = {
   /**
    * Fit button width to its parent width.
+   * @default false
    */
   block?: Variants['block'];
   /**
@@ -27,15 +28,18 @@ export type ButtonProps = {
    */
   iconColor?: IconProps['color'];
   /**
-   * Justify align button children
+   * Justify align button children. When true, content will justify-between
+   * @default false
    */
   justify?: Variants['justify'];
   /**
    * Button look
+   * @default hero
    */
   look?: Variants['look'];
   /**
    * Size of the button
+   * @default medium
    */
   size?: Variants['size'];
   /**
@@ -44,6 +48,7 @@ export type ButtonProps = {
   soft?: Variants['soft'];
   /**
    * Tag to render
+   * @default button
    */
   tag?: keyof Pick<JSX.IntrinsicElements, 'a' | 'span' | 'button' | 'div'>;
 } & ButtonHTMLAttributes<Element> &

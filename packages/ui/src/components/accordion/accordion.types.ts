@@ -9,14 +9,17 @@ type Variants = VariantProps<typeof styles>;
 export type AccordionProps<T = any> = SpectrumAccordionProps<T> & {
   /**
    * Stretch the tab to fill the whole content
+   * @default false
    */
   justify?: boolean;
   /**
    * The look of the accordion
+   * @default soft
    */
   look?: AccordionItemProps['look'];
   /**
    * Whether the accordion is rounded
+   * @default true
    */
   rounded?: Variants['rounded'];
 } & Omit<HTMLAttributes<HTMLDivElement>, 'color'>;

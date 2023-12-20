@@ -1,10 +1,15 @@
-import { HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 
 export type Look = 'info' | 'success' | 'warning' | 'danger' | 'system';
 
 export type AlertProps = {
   /**
+   * The alert content
+   */
+  children?: React.ReactNode;
+  /**
    * Enable dismissible mode
+   * @default false
    */
   dismissible?: boolean;
   /**
@@ -13,6 +18,7 @@ export type AlertProps = {
   heading?: string;
   /**
    * The alert heading tag is automatically defined, but may be overridden via this prop if required for semantic reasons.
+   * @default h2
    */
   headingTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /**
@@ -23,10 +29,12 @@ export type AlertProps = {
   icon?: React.ElementType;
   /**
    * Alert look style
+   * @default info
    */
   look?: Look;
   /**
    * Alert mode
+   * @default box
    */
   mode?: 'box' | 'text';
   /**
@@ -39,6 +47,7 @@ export type AlertProps = {
   open?: boolean;
   /**
    * Tag to render
+   * @default div
    */
   tag?: keyof JSX.IntrinsicElements;
 } & HTMLAttributes<Element>;

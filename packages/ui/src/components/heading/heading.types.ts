@@ -23,4 +23,4 @@ export type HeadingProps = {
    * Whether heading should be uppercase
    */
   uppercase?: boolean;
-} & HTMLAttributes<Element>;
+} & HTMLAttributes<HTMLDivElement>;
