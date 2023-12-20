@@ -34,3 +34,5 @@ export function Button({ className, children, ...props }: ButtonProps) {
     </label>
   );
 }
+
+Button.displayName = 'ButtonGroup.Button';
