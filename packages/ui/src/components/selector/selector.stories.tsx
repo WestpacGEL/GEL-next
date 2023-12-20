@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
-import { EmailIcon, PersonIcon, SettingsIcon, WatchIcon } from '../icon/index.js';
+import { AtmIcon, CarIcon, EmailIcon, PersonIcon, SettingsIcon, WatchIcon } from '../icon/index.js';
 import { VisuallyHidden } from '../index.js';
 import { BusPictogram, ChatPictogram, PizzaPictogram } from '../pictogram/index.js';
 
@@ -10,6 +10,8 @@ import { Selector } from './selector.component.js';
 const HERE_IS_A_LABEL_A = 'Here is a label A';
 const HERE_IS_A_LABEL_B = 'Here is a label B';
 const HERE_IS_A_LABEL_C = 'Here is a label C';
+
+const selectorTypes = ['checkbox', 'radio', 'button', 'link'];
 
 const meta: Meta<typeof Selector> = {
   title: 'Components/Selector',
@@ -62,20 +64,40 @@ export const Radio = () => {
 };
 
 /**
- * > Radio usage example
+ * > Link usage example
  */
-export const CheckWithArrow = () => {
+export const Link = () => {
   return (
-    <Selector type="radio">
+    <Selector type="link">
       {[
         { key: 'A', disabled: false },
         { key: 'B', disabled: false },
         { key: 'C', disabled: false },
         { key: 'D', disabled: true },
       ].map(({ key, disabled }) => (
-        <Selector.Radio key={key} value={key} isDisabled={disabled} checkIcon="arrow">
+        <Selector.Link href="#" key={key} isDisabled={disabled}>
           <Selector.Label>Something {key}</Selector.Label>
-        </Selector.Radio>
+        </Selector.Link>
+      ))}
+    </Selector>
+  );
+};
+
+/**
+ * > Button usage example
+ */
+export const Button = () => {
+  return (
+    <Selector type="button">
+      {[
+        { key: 'A', disabled: false },
+        { key: 'B', disabled: false },
+        { key: 'C', disabled: false },
+        { key: 'D', disabled: true },
+      ].map(({ key, disabled }) => (
+        <Selector.ButtonOption key={key} id={key} isDisabled={disabled}>
+          <Selector.Label>Something {key}</Selector.Label>
+        </Selector.ButtonOption>
       ))}
     </Selector>
   );
@@ -335,10 +357,10 @@ export const IconsSizes = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-15 w-15" />
+              <PersonIcon size="xlarge" />
             </Selector.Adornment>
           ),
-          label: HERE_IS_A_LABEL_A,
+          label: 'Xlarge Icon',
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -351,10 +373,10 @@ export const IconsSizes = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon className="h-10 w-10" />
+              <PersonIcon size="large" />
             </Selector.Adornment>
           ),
-          label: HERE_IS_A_LABEL_B,
+          label: 'Large Icon',
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -367,12 +389,45 @@ export const IconsSizes = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon />
+              <PersonIcon size="medium" />
             </Selector.Adornment>
           ),
-          label: HERE_IS_A_LABEL_C,
+          label: 'Medium Icon',
           hint: '',
           key: 'C',
+          disabled: false,
+        },
+        {
+          before: (
+            <Selector.Adornment align="top">
+              <PersonIcon size="small" />
+            </Selector.Adornment>
+          ),
+          label: 'Small Icon',
+          hint: '',
+          key: 'D',
+          disabled: false,
+        },
+        {
+          before: (
+            <Selector.Adornment align="top">
+              <PersonIcon size="xsmall" />
+            </Selector.Adornment>
+          ),
+          label: 'Xsmall Icon',
+          hint: '',
+          key: 'E',
+          disabled: false,
+        },
+        {
+          before: (
+            <Selector.Adornment align="top">
+              <PersonIcon size={{ initial: 'xsmall', sm: 'xlarge', md: 'large', lg: 'medium', xl: 'small' }} />
+            </Selector.Adornment>
+          ),
+          label: 'Responsive Icon',
+          hint: '',
+          key: 'F',
           disabled: false,
         },
       ].map(({ key, disabled, hint, label, before }) => (
@@ -412,38 +467,21 @@ export const IconsAndSecondaryLabel = () => {
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon />
+              <AtmIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_B,
           after: <Selector.Label>$200,000.00</Selector.Label>,
-          hint: (
-            <>
-              <VisuallyHidden>Bank Account</VisuallyHidden>
-              123-456 123456
-            </>
-          ),
           key: 'B',
           disabled: false,
         },
         {
           before: (
             <Selector.Adornment align="top">
-              <PersonIcon />
+              <CarIcon />
             </Selector.Adornment>
           ),
           label: HERE_IS_A_LABEL_C,
-          after: (
-            <Selector.Adornment align="center">
-              <span>$200,000.00</span>
-            </Selector.Adornment>
-          ),
-          hint: (
-            <>
-              <VisuallyHidden>Bank Account</VisuallyHidden>
-              123-456 7643123
-            </>
-          ),
           key: 'C',
           disabled: false,
         },
@@ -458,11 +496,11 @@ export const IconsAndSecondaryLabel = () => {
 };
 
 /**
- * > Radio example with icons and secondary text
+ * > Button example with icons and secondary text
  */
-export const RadioWithIconsAndSecondaryLabel = () => {
+export const ButtonsWithIconsAndSecondaryLabel = () => {
   return (
-    <Selector type="radio">
+    <Selector type="button">
       {[
         {
           before: (
@@ -520,10 +558,10 @@ export const RadioWithIconsAndSecondaryLabel = () => {
           disabled: false,
         },
       ].map(({ key, disabled, hint, label, before, after }) => (
-        <Selector.Radio before={before} after={after} key={key} value={key} checkIcon="arrow" isDisabled={disabled}>
+        <Selector.ButtonOption before={before} after={after} key={key} id={key} isDisabled={disabled}>
           <Selector.Label>{label}</Selector.Label>
           {hint && <Selector.Hint>{hint}</Selector.Hint>}
-        </Selector.Radio>
+        </Selector.ButtonOption>
       ))}
     </Selector>
   );
@@ -534,7 +572,7 @@ export const RadioWithIconsAndSecondaryLabel = () => {
  */
 export const Disabled = () => {
   return (
-    <Selector type="radio" value="A">
+    <Selector type="button" value="A">
       {[
         {
           before: (
@@ -592,10 +630,10 @@ export const Disabled = () => {
           disabled: true,
         },
       ].map(({ key, disabled, hint, label, before, after }) => (
-        <Selector.Radio before={before} after={after} key={key} value={key} checkIcon="arrow" isDisabled={disabled}>
+        <Selector.ButtonOption before={before} after={after} key={key} id={key} isDisabled={disabled}>
           <Selector.Label>{label}</Selector.Label>
           {hint && <Selector.Hint>{hint}</Selector.Hint>}
-        </Selector.Radio>
+        </Selector.ButtonOption>
       ))}
     </Selector>
   );

@@ -1,8 +1,19 @@
 import { ReactNode } from 'react';
 
-import { type SelectorCheckboxGroupProps, type SelectorRadioGroupProps } from './components/index.js';
+import {
+  type SelectorButtonGroupProps,
+  type SelectorCheckboxGroupProps,
+  type SelectorLinkGroupProps,
+  type SelectorRadioGroupProps,
+} from './components/index.js';
 
 export type SelectorPropsPerType = {
+  button: {
+    /**
+     * Type button
+     */
+    type: 'button';
+  } & SelectorButtonGroupProps;
   checkbox: {
     children: ReactNode;
     /**
@@ -10,6 +21,12 @@ export type SelectorPropsPerType = {
      */
     type: 'checkbox';
   } & SelectorCheckboxGroupProps;
+  link: {
+    /**
+     * Type link
+     */
+    type: 'link';
+  } & SelectorLinkGroupProps;
   radio: {
     children: ReactNode;
     /**
