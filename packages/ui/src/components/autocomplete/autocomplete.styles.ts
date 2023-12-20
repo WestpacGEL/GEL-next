@@ -2,6 +2,7 @@ import { tv } from 'tailwind-variants';
 
 import { INPUT_WIDTHS } from '../../constants/input-widths.js';
 
+type InputWidthKeys = keyof typeof INPUT_WIDTHS;
 const modifiedInputWidths = Object.entries(INPUT_WIDTHS).reduce((acc, [key, value]) => {
   return {
     ...acc,
@@ -10,7 +11,7 @@ const modifiedInputWidths = Object.entries(INPUT_WIDTHS).reduce((acc, [key, valu
       input: value,
     },
   };
-}, {});
+}, {} as Record<InputWidthKeys, any>);
 
 export const styles = tv(
   {
