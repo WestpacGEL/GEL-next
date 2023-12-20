@@ -31,6 +31,7 @@ function FlexiCellBase(
     topBadge: TopBadge,
     size = 'default',
     disabled,
+    tabIndex,
     ...props
   }: FlexiCellProps,
   ref: any,
@@ -52,7 +53,7 @@ function FlexiCellBase(
       className={styles.base({ className })}
       href={href}
       {...mergeProps(props, focusProps)}
-      tabIndex={disabled ? -1 : 0}
+      tabIndex={disabled ? -1 : tabIndex}
     >
       {TopBadge && (
         <div className={styles.topBadgeWrapper()}>
