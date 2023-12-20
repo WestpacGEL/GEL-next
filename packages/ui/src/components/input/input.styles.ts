@@ -1,5 +1,7 @@
 import { tv } from 'tailwind-variants';
 
+import { INPUT_WIDTHS } from '../../constants/input-widths.js';
+
 export const styles = tv(
   {
     base: 'form-control flex-1 read-only:form-control-disabled disabled:form-control-disabled group-[.input-field-after]:rounded-r-none group-[.input-field-before]:rounded-l-none group-[.input-field-after]:border-r-0 group-[.input-field-before]:border-l-0',
@@ -20,6 +22,7 @@ export const styles = tv(
       isFocused: {
         true: 'outline-none',
       },
+      width: INPUT_WIDTHS,
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },

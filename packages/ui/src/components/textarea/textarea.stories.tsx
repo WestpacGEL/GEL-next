@@ -1,5 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
+import { FIXED_WIDTHS } from '../../constants/input-widths.js';
 import { Field } from '../field/index.js';
 
 import { Textarea } from './textarea.component.js';
@@ -67,4 +68,17 @@ export const FormField: Story = {
       </Field>
     );
   },
+};
+
+/**
+ * > Fixed widths usage example
+ */
+export const FixedWidths = () => {
+  return (
+    <div className="flex flex-col gap-2">
+      {FIXED_WIDTHS.map(width => (
+        <Textarea placeholder={width.toString()} width={width} key={width} />
+      ))}
+    </div>
+  );
 };

@@ -1,6 +1,8 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Key, useState } from 'react';
 
+import { FIXED_WIDTHS } from '../../constants/input-widths.js';
+
 import { Autocomplete } from './autocomplete.component.js';
 
 const meta: Meta<typeof Autocomplete> = {
@@ -182,4 +184,24 @@ export const ErrorMessageAndLabel: Story = {
       <Autocomplete.Item key="Option 3">Option 3</Autocomplete.Item>,
     ],
   },
+};
+
+/**
+ * > Fixed widths usage example
+ */
+export const FixedWidths = () => {
+  return (
+    <div className="flex flex-col gap-2">
+      {FIXED_WIDTHS.map(width => (
+        <Autocomplete key={width} label={`Fixed width: ${width.toString()}`} width={width}>
+          <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+          <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
+          <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
+          <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
+          <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
+          <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+        </Autocomplete>
+      ))}
+    </div>
+  );
 };

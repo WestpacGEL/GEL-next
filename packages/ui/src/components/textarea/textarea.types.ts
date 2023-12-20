@@ -14,4 +14,8 @@ export type TextareaProps = {
    * Size of text area
    */
   size?: Variants['size'];
+  /**
+   * width of text area
+   */
+  width?: Variants['width'];
 } & Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'>;

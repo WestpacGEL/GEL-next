@@ -7,14 +7,14 @@ import { styles } from './textarea.styles.js';
 import { type TextareaProps } from './textarea.types.js';
 
 function BaseTextarea(
-  { className, size = 'medium', invalid = false, ...props }: TextareaProps,
+  { className, size = 'medium', invalid = false, width = 'full', ...props }: TextareaProps,
   ref: ForwardedRef<HTMLTextAreaElement>,
 ) {
   const { isFocused, isFocusVisible, focusProps } = useFocusRing();
   return (
     <textarea
       ref={ref}
-      className={styles({ className, size, invalid, isFocused, isFocusVisible })}
+      className={styles({ className, size, invalid, isFocused, isFocusVisible, width })}
       {...mergeProps(props, focusProps)}
     />
   );
