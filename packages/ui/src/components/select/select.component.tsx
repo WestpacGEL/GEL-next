@@ -7,14 +7,14 @@ import { styles } from './select.styles.js';
 import { type SelectProps } from './select.types.js';
 
 function BaseSelect(
-  { className, size = 'medium', invalid = false, children, ...props }: SelectProps,
+  { className, size = 'medium', invalid = false, width = 'full', children, ...props }: SelectProps,
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
   const { isFocused, isFocusVisible, focusProps } = useFocusRing();
   return (
     <select
       ref={ref}
-      className={styles({ className, size, invalid, isFocused, isFocusVisible })}
+      className={styles({ className, size, invalid, isFocused, isFocusVisible, width })}
       {...mergeProps(props, focusProps)}
     >
       {children}

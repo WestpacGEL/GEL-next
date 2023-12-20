@@ -1,5 +1,7 @@
 import { tv } from 'tailwind-variants';
 
+import { INPUT_WIDTHS } from '../../constants/input-widths.js';
+
 export const styles = tv(
   {
     base: 'form-control w-full read-only:form-control-disabled disabled:form-control-disabled',
@@ -20,6 +22,7 @@ export const styles = tv(
       isFocused: {
         true: 'outline-none',
       },
+      width: INPUT_WIDTHS,
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
