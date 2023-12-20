@@ -12,3 +12,4 @@ export function Heading({ className, tag: Tag = 'h1', children, ...props }: Head
     </Tag>
   );
 }
+Heading.displayName = 'ButtonDropdown.Heading';

@@ -38,6 +38,7 @@ export type PaginationHookProps = {
 export type PaginationProps = {
   /**
    * Back label
+   * @default Back
    */
   backLabel?: ReactNode;
   /**
@@ -46,6 +47,7 @@ export type PaginationProps = {
   current?: number;
   /**
    * Carousel feature
+   * @default false
    */
   infinite?: boolean;
   /**
@@ -54,10 +56,12 @@ export type PaginationProps = {
   linkComponent?: PaginationItemProps['tag'];
   /**
    * Next label
+   * @default Next
    */
   nextLabel?: ReactNode;
   /**
    * Tag to render
+   * @default nav
    */
   tag?: keyof JSX.IntrinsicElements;
 } & (PaginationAsLinkProps | PaginationAsButtonProps) &

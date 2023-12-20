@@ -18,6 +18,7 @@ export type PopoverProps = {
   heading?: string;
   /**
    * Tag to render
+   * @default h1
    */
   headingTag?: keyof Pick<JSX.IntrinsicElements, 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>;
   /**
@@ -34,6 +35,7 @@ export type PopoverProps = {
   open?: boolean;
   /**
    * Placement of popover. If no placement provided it will default to top unless there is no space then will appear on bottom.
+   * @default top
    */
   placement?: 'top' | 'bottom';
 } & HTMLAttributes<Element> &
