@@ -7,6 +7,7 @@ import { THEMES } from './themes/index.js';
 import { theme as WBCTheme } from './themes/wbc.js';
 import { type PluginOptions } from './types/tailwind.types.js';
 import { generateDatePicker } from './utils/generate-date-picker-component.js';
+import { generateLinearLoader } from './utils/generate-linear-loader.js';
 import {
   createBrandFonts,
   createFontSizes,
@@ -49,6 +50,7 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
       /**
        * Components
        */
+      addComponents(generateLinearLoader());
       addComponents(generateFontComponents(theme('typographySizes'), theme));
       addComponents(generateFormControlComponents(theme('formControl')));
       addComponents(generateDatePicker());
@@ -90,6 +92,14 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
           },
           fontSize: createFontSizes(FONT_TYPES),
           keyframes: {
+            waveLines: {
+              '0%': {
+                transform: 'translateX(-100%)',
+              },
+              '100%': {
+                transform: 'translateX(100%)',
+              },
+            },
             fadeIn: {
               '0%': { opacity: '0' },
               '100%': { opacity: '1' },
@@ -109,6 +119,7 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
             },
           },
           animation: {
+            skeleton: 'waveLines 2s infinite ease-out',
             fadeIn: 'fadeIn 0.2s ease',
             fadeInDown: 'fadeInDown 0.4s ease',
             maxHeightIn: 'maxHeightIn 0.4s ease',

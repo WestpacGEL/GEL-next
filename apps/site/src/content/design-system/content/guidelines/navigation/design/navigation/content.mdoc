@@ -1,27 +1,41 @@
 Navigation and menu items are sentence case unless it’s a branded product.
 
-For example:
-
-> \> Home loans
->
-> \> Savings accounts
->
-> \> Westpac Life
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+ <p className="typography-body-10 mb-2 ml-3"> <Link href="#" iconBefore={ArrowRightIcon}>
+    Home loans
+  </Link></p>
+  <p className="typography-body-10 mb-2 ml-3"><Link href="#" iconBefore={ArrowRightIcon}>
+    Savings accounts
+  </Link></p>
+  <p className="typography-body-10 ml-3"><Link href="#" iconBefore={ArrowRightIcon}>
+    Westpac Life
+  </Link></p>
+</div>
+```
 
 Ampersands can be used to shorten the wording
 
-For example:
-
-> \> International & Travel
->
-> \> Terms & Conditions
-
-_Note: Capitalise the second word_
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <p className="typography-body-10  mb-2 ml-3"><Link href="#" iconBefore={ArrowRightIcon}>
+    International & Travel
+  </Link></p>
+  <p className="typography-body-10  mb-6 ml-3"><Link href="#" iconBefore={ArrowRightIcon} mb-6>
+    Terms & Conditions
+  </Link></p>
+<p className="typography-body-10 text-muted italic">Note: Capitalise the second word</p>
+</div>
+```
 
 Refer to the starting screen in the app as ‘home screen’ and not ‘dashboard’ or ‘home dashboard’.
 
-For example:
-
-> **How we calculate your net position**
->
-> We add up the balances of the Westpac accounts that you see on your home screen.
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<p className="typography-body-10  mb-2 ml-3"><b>How we calculate your net position</b></p>
+<p className="typography-body-10  mb-2 ml-3">We add up the balances of the Westpac accounts that you see on your home screen.</p>
+</div>
+```

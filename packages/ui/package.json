@@ -121,6 +121,12 @@
     "./panel": {
       "default": "./dist/components/panel/index.js"
     },
+    "./pass-code": {
+      "default": "./dist/components/pass-code/index.js"
+    },
+    "./pass-code-view": {
+      "default": "./dist/components/pass-code-view/index.js"
+    },
     "./pictogram": {
       "default": "./dist/components/pictogram/index.js"
     },
