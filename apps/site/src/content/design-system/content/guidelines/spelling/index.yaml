@@ -1,5 +1,7 @@
 name: Spelling
 description: Spelling refers to the forming of words from letters.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Spelling
@@ -7,3 +9,4 @@ design:
     noTitle: true
 accessibility: []
 relatedComponents: []
+code: []
