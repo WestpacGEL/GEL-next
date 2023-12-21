@@ -18,6 +18,7 @@ export type InputProps = {
   size?: Variants['size'];
   /**
    * width of input
+   * @default full
    */
   width?: Variants['width'];
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'width'>;
