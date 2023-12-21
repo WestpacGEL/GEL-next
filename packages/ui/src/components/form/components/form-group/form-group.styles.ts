@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'last:mb-0',
+    base: '',
     variants: {
       inline: {
         true: 'sm:inline-block sm:align-middle',

@@ -22,6 +22,12 @@ export function ProgressRopeStep({
   ...props
 }: ProgressRopeStepProps) {
   const state = useMemo(() => {
+    if (lastItemInRope && visited && current) {
+      return 'last-current';
+    }
+    if (lastItemInRope && visited) {
+      return 'last-visited';
+    }
     if (current && visited) {
       return 'current-visited';
     }
