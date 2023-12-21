@@ -29,7 +29,7 @@ export const Logos = () => {
   }, []);
 
   return (
-    <form action="/api/assets" method="POST">
+    <div>
       <div className="mb-4 bg-light p-4">
         <Grid>
           <Item span={{ initial: 12, sm: 6 }}>
@@ -42,7 +42,8 @@ export const Logos = () => {
           </Item>
           <Item span={{ initial: 12, sm: 6 }}>
             <input type="hidden" name="asset" value="logo" />
-            <Button look="primary" iconBefore={DownloadIcon} soft>
+            {/* TODO: It has to change to GEL_Logos afterwards */}
+            <Button tag="a" look="primary" iconBefore={DownloadIcon} soft href="/assets/GEL_Pictograms.zip" download>
               Download all SVGs
             </Button>
           </Item>
@@ -61,6 +62,6 @@ export const Logos = () => {
           </Item>
         ))}
       </Grid>
-    </form>
+    </div>
   );
 };
