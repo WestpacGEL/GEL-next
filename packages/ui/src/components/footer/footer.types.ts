@@ -6,7 +6,7 @@ export type FooterProps = {
   /**
    * Icon for brand
    */
-  brand: BrandKey;
+  brand: Exclude<BrandKey, 'btfg'>;
   /**
    * Hide logo
    */

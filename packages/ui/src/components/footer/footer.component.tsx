@@ -47,9 +47,6 @@ export function Footer({
     rams: {
       logo: (props: SymbolProps) => <RAMSMultibrandSmallLogo {...props} />,
     },
-    btfg: {
-      logo: () => <></>,
-    },
   };
   const Logo = logoMap[brand].logo;
   return (

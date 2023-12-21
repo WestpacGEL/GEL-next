@@ -26,7 +26,7 @@ export const DefaultStory: Story = {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
       <>
-        <Footer brand={brand}>
+        <Footer brand={brand === 'btfg' ? 'wbc' : brand}>
           <div>
             <PadlockIcon
               size={{ initial: 'small', md: 'medium' }}

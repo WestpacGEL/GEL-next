@@ -11,7 +11,7 @@ describe('Footer', () => {
   });
 
   it('should render correct brand logo', () => {
-    const brandList: BrandKey[] = ['wbc', 'stg', 'bom', 'bsa', 'wbg', 'rams'];
+    const brandList: Exclude<BrandKey, 'btfg'>[] = ['wbc', 'stg', 'bom', 'bsa', 'wbg', 'rams'];
     const brandNames = ['Westpac', 'St.George', 'Bank of Melbourne', 'Bank SA', 'Westpac Group', 'RAMS'];
     brandList.forEach((brand, index) => {
       const { container } = render(<Footer brand={brand}>Test</Footer>);
