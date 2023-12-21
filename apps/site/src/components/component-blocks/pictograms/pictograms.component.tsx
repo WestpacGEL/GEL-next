@@ -37,7 +37,7 @@ export const Pictograms = () => {
   }, []);
 
   return (
-    <form action="/api/assets" method="POST">
+    <div>
       <div className="mb-4 bg-light p-4">
         <Grid>
           <Item span={{ initial: 12, sm: 6 }}>
@@ -62,7 +62,7 @@ export const Pictograms = () => {
           </Item>
           <Item span={{ initial: 12, sm: 3 }}>
             <input type="hidden" name="asset" value="pictogram" />
-            <Button look="primary" iconBefore={DownloadIcon} soft>
+            <Button tag="a" look="primary" iconBefore={DownloadIcon} soft href="/assets/GEL_Pictograms.zip" download>
               Download all SVGs
             </Button>
           </Item>
@@ -91,6 +91,6 @@ export const Pictograms = () => {
           </Item>
         ))}
       </Grid>
-    </form>
+    </div>
   );
 };

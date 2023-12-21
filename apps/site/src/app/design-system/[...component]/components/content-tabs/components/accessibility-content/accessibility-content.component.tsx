@@ -51,13 +51,14 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
               </Item>
             </Grid>
             <div className="flex items-center bg-light p-4">
-              <label htmlFor={id} className="mr-[1rem]">
+              <label htmlFor={id} className="mr-[1rem] whitespace-nowrap">
                 Select filter
               </label>
               <Select
                 id={id}
                 value={filter}
-                onChange={event => setFilter(event.target.value as VisionFilterProps['value'])}
+                width={10}
+                onChange={(event: any) => setFilter(event.target.value as VisionFilterProps['value'])}
               >
                 {FILTERS.map(filter => (
                   <option key={filter.text} value={filter.value}>
