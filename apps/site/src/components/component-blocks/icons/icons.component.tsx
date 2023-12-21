@@ -33,7 +33,7 @@ export const Icons = () => {
   }, []);
 
   return (
-    <form action="/api/assets" method="POST">
+    <div>
       <div className="mb-4 flex flex-wrap gap-3 bg-light p-4 align-bottom">
         <div className="flex w-full shrink-0 grow flex-col items-start sm:w-auto sm:flex-row sm:items-center">
           <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="filter-icons">
@@ -52,7 +52,7 @@ export const Icons = () => {
         </div>
         <div className="flex w-full items-end sm:w-auto">
           <input type="hidden" name="asset" value="icon" />
-          <Button look="primary" iconBefore={AllIcons.DownloadIcon} soft type="submit">
+          <Button tag="a" look="primary" iconBefore={AllIcons.DownloadIcon} soft href="/assets/GEL_Icons.zip" download>
             Download all SVGs
           </Button>
         </div>
@@ -70,6 +70,6 @@ export const Icons = () => {
           </Item>
         ))}
       </Grid>
-    </form>
+    </div>
   );
 };

@@ -14,6 +14,8 @@ export const styles = tv(
         },
         visited: {
           base: 'text-text before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:border-primary before:transition-colors',
+          // Can't use a const without getting tailwind errors, compound slots/variants don't work correctly for this
+          // eslint-disable-next-line sonarjs/no-duplicate-string
           circle: 'border-[3px] border-primary bg-primary',
         },
         'non-visited': {
@@ -22,7 +24,15 @@ export const styles = tv(
         },
         'current-visited': {
           base: 'font-bold text-primary before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:border-primary before:transition-colors',
-          circle: 'border-[3px] border-primary bg-white',
+          circle: 'border-[3px] border-primary bg-primary',
+        },
+        'last-visited': {
+          base: 'text-text after:absolute after:inset-y-[0.875rem] after:left-1 after:z-[1] after:block after:translate-y-[-0.875rem] after:border-l-2 after:border-primary after:transition-colors',
+          circle: 'border-[3px] border-primary bg-primary',
+        },
+        'last-current': {
+          base: 'font-bold text-primary ',
+          circle: 'border-[3px] border-primary bg-primary',
         },
       },
       firstItem: {
@@ -44,7 +54,7 @@ export const styles = tv(
         false: {},
       },
       furthestVisited: {
-        true: { base: 'text-text', circle: 'border-[3px] border-primary bg-primary' },
+        true: { base: 'text-text', circle: 'border-[3px] border-primary bg-white' },
         false: {},
       },
       size: {
