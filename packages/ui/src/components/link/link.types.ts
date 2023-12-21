@@ -5,7 +5,7 @@ import { IconProps } from '../icon/index.js';
 
 export type LinkProps = {
   /**
-   * Link text
+   * Link text or component
    */
   children?: ReactNode;
   /**
