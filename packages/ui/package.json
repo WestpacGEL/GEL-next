@@ -46,6 +46,9 @@
     "./badge": {
       "default": "./dist/components/badge/index.js"
     },
+    "./bottom-sheet": {
+      "default": "./dist/components/bottom-sheet/index.js"
+    },
     "./breadcrumb": {
       "default": "./dist/components/breadcrumb/index.js"
     },
@@ -81,6 +84,9 @@
     },
     "./flexi-cell": {
       "default": "./dist/components/flexi-cell/index.js"
+    },
+    "./footer": {
+      "default": "./dist/components/footer/index.js"
     },
     "./form": {
       "default": "./dist/components/form/index.js"

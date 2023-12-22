@@ -120,6 +120,7 @@ export function CodeContent({
               {subComponentProps?.map(subComponentProps => (
                 <ComponentPropsTable
                   key={subComponentProps.displayName}
+                  caption={subComponentProps.displayName}
                   componentProps={{
                     ...subComponentProps,
                     displayName: subComponentProps.displayName,

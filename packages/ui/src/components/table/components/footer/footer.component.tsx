@@ -18,3 +18,5 @@ export function Footer({ className, children, colspan, ...props }: FooterProps) 
     </tfoot>
   );
 }
+
+Footer.displayName = 'Table.Footer';
