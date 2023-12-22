@@ -7,7 +7,7 @@ import { styles } from './select.styles.js';
 import { type SelectProps } from './select.types.js';
 
 function BaseSelect(
-  { className, size = 'medium', invalid = false, width = 'full', children, ...props }: SelectProps,
+  { className, size = 'medium', invalid = false, width = 'auto', children, ...props }: SelectProps,
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
   const { isFocused, isFocusVisible, focusProps } = useFocusRing();

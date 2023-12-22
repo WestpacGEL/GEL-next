@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef, useRef } from 'react';
+import React, { ForwardedRef, RefObject, forwardRef } from 'react';
 import { mergeProps, useFocusRing, useLink } from 'react-aria';
 
 import { ArrowRightIcon } from '../icon/index.js';
@@ -21,10 +21,9 @@ export function BaseLink(
     underline = true,
     ...props
   }: LinkProps,
-  propRef: any,
+  ref: ForwardedRef<HTMLAnchorElement>,
 ) {
-  const ref = useRef(propRef);
-  const { linkProps } = useLink({ ...props }, ref);
+  const { linkProps } = useLink({ ...props, elementType: 'a' }, ref as RefObject<HTMLAnchorElement>);
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = linkStyles({ type, underline, isFocusVisible });
 
@@ -35,7 +34,7 @@ export function BaseLink(
   return (
     <a
       {...mergeProps(linkProps, focusProps)}
-      ref={propRef}
+      ref={ref}
       href={href}
       target={target}
       className={styles.base({ className })}

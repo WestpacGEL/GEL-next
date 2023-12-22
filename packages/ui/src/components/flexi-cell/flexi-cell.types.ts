@@ -21,6 +21,10 @@ type BaseFlexiCellProps = {
    */
   children?: ReactNode;
   /**
+   * Sets tabIndex to -1 to make untabbable when disabled
+   */
+  disabled?: boolean;
+  /**
    * Wraps body with an 'a' tag for dual action styled component
    * - Requires href to be provided
    * - Tag prop should not be used when using this prop

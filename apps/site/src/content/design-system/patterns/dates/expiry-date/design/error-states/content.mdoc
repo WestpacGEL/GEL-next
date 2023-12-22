@@ -29,7 +29,7 @@ The Expiry date pattern can isolate which field carries the error and highlight 
   <Form.ErrorMessage message="Error message goes here if activated" />
   <fieldset className="flex gap-4">
     <Field label="Month" labelSize="small">
-      <Select invalid size="large" width={30}>
+      <Select invalid size="large">
         <option>Select</option>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => (
           <option value={value}>{value}</option>
@@ -37,7 +37,7 @@ The Expiry date pattern can isolate which field carries the error and highlight 
       </Select>
     </Field>
     <Field label="Year" labelSize="small">
-      <Select size="large" width={30}>
+      <Select size="large">
         <option>Select</option>
         {[2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030].map(value => (
           <option value={value}>{value}</option>

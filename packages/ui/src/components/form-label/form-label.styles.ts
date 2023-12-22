@@ -17,12 +17,12 @@ export const styles = tv(
       {
         size: 'medium',
         spacing: 'medium',
-        className: 'mb-1',
+        className: 'mb-2',
       },
       {
         size: 'medium',
         spacing: 'large',
-        className: 'mb-1',
+        className: 'mb-3',
       },
       {
         size: 'small',

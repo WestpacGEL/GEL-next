@@ -32,7 +32,7 @@ This pattern exists as a [widget in the WDP system](https://one.dev1.ui.westpac.
   <Form.Label>Expiry date</Form.Label>
   <fieldset className="flex gap-4">
     <Field label="Month" labelSize="small">
-      <Select size="large" width={30}>
+      <Select size="large">
         <option>Select</option>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => (
           <option value={value}>{value}</option>
@@ -40,7 +40,7 @@ This pattern exists as a [widget in the WDP system](https://one.dev1.ui.westpac.
       </Select>
     </Field>
     <Field label="Year" labelSize="small">
-      <Select size="large" width={30}>
+      <Select size="large">
         <option>Select</option>
         {[2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030].map(value => (
           <option value={value}>{value}</option>

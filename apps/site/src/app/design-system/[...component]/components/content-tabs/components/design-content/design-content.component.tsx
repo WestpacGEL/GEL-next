@@ -49,7 +49,11 @@ export function DesignContent({ designSections, description, relatedComponents, 
                   pictograms: () => <Pictograms />,
                   symbols: () => <Symbols />,
                   colors: props => <Colors palette={props.palette} />,
-                  designSystemBodyImage: props => <Image {...props} />,
+                  designSystemBodyImage: props => (
+                    <div className="mb-5 mt-1">
+                      <Image {...props} />
+                    </div>
+                  ),
                 }}
               />
             </Container>
