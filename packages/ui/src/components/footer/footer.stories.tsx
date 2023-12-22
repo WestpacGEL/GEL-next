@@ -13,6 +13,13 @@ const meta: Meta<typeof Footer> = {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    brand: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export default meta;
@@ -22,11 +29,11 @@ type Story = StoryObj<typeof meta>;
  * > Default usage example
  */
 export const DefaultStory: Story = {
-  render: (args, { globals: { theme } }) => {
+  render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
       <>
-        <Footer brand={brand === 'btfg' ? 'wbc' : brand}>
+        <Footer brand={brand === 'btfg' ? 'wbc' : brand} {...rest}>
           <div>
             <PadlockIcon
               size={{ initial: 'small', md: 'medium' }}
@@ -38,7 +45,7 @@ export const DefaultStory: Story = {
               <Link href="#" type="inline">
                 security information
               </Link>
-              . © 2020 Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714.
+              . © 2023 Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714.
             </p>
           </div>
         </Footer>
