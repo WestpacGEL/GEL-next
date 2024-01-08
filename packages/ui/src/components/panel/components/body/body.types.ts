@@ -1,3 +1,8 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-export type BodyProps = HTMLAttributes<Element>;
+export type BodyProps = {
+  /**
+   * body content
+   */
+  children: ReactNode;
+} & HTMLAttributes<Element>;

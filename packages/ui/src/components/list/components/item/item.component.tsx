@@ -5,9 +5,12 @@ import { ListContext } from '../../list.component.js';
 import { getStateValues } from '../../list.utils.js';
 
 import { styles as itemStyles } from './item.styles.js';
-import { type ItemProps } from './item.types.js';
+import { type ListItemProps } from './item.types.js';
 
-export function BaseItem({ className, children, href, look, type, spacing, icon, ...props }: ItemProps, ref: any) {
+export function BaseListItem(
+  { className, children, href, look, type, spacing, icon, ...props }: ListItemProps,
+  ref: any,
+) {
   const state = useContext(ListContext);
 
   const stateValues = getStateValues({ look, type, spacing, state, icon });
@@ -52,4 +55,5 @@ export function BaseItem({ className, children, href, look, type, spacing, icon,
   );
 }
 
-export const Item = forwardRef(BaseItem);
+export const ListItem = forwardRef(BaseListItem);
+ListItem.displayName = 'List.Item';

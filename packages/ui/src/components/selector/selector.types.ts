@@ -38,4 +38,9 @@ export type SelectorPropsPerType = {
 
 export type SelectorPropsType = keyof SelectorPropsPerType;
 
-export type SelectorProps<K extends SelectorPropsType = SelectorPropsType> = SelectorPropsPerType[K];
+export type SelectorProps<K extends SelectorPropsType = SelectorPropsType> = SelectorPropsPerType[K] & {
+  /**
+   * <Selector.Radio /> | <Selector.Checkbox /> children
+   */
+  children?: ReactNode;
+};

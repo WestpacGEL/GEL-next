@@ -1,6 +1,10 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
 export type PanelProps = {
+  /**
+   * Panel content
+   */
+  children?: ReactNode;
   /**
    * The heading of the panel
    */

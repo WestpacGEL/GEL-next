@@ -1,6 +1,10 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-export type HeadingProps = {
+export type ButtonDropdownHeadingProps = {
+  /**
+   * ButtonDropdownHeading content
+   */
+  children?: ReactNode;
   /**
    * The tag of the heading element for semantic reasons
    * @default h1

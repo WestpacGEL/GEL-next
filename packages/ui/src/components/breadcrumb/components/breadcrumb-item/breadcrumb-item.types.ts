@@ -1,6 +1,10 @@
-import { AnchorHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, ReactNode } from 'react';
 
 export type BreadcrumbItemProps = {
+  /**
+   * BreadCrumbItem body content
+   */
+  children?: ReactNode;
   /**
    * isCurrent flag
    * @default false
