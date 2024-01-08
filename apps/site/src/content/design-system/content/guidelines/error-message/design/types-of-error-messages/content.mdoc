@@ -18,12 +18,20 @@ Formatting errors are shown when someone enters information in an unexpected or 
 
 For example, for an error relating to an Australian mobile phone number:
 
-> ⚠ Enter a number in the format: 0412345678
+```tsx
+<Field
+  label="Phone number"
+  errorMessage="Enter a number in the format: 0412345678">
+  <Input invalid size="large" className="w-6/12" />
+</Field>
+```
 
 Keep inline error messages brief. There’s no need to include a full stop at the end. If two sentences are required, insert a full stop to separate them, leaving out the full stop at the end.
 
-For example:
-
-> Enter an address
->
-> We’re currently having technical issues. Try again later
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<p className="typography-body-10 ml-4"><Alert look="danger" mode="text">Enter an address</Alert></p>
+<p className="typography-body-10 ml-4"><Alert look="danger" mode="text">We’re currently having technical issues. Try again later</Alert></p>
+</div>
+```

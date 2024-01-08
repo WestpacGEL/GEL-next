@@ -2,21 +2,25 @@ Errors are frustrating and interrupt the customer experience, so create messages
 
 When creating error messages, don’t blame the customer and avoid alarming them by saying that something has gone wrong. Instead, explain what happened and help the customer get back on track.
 
-For example:
-
-> Do: Enter an email address in the format: name@example.com
->
-> Don’t: You’ve entered an invalid email
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<p className="typography-body-10 mb-2 ml-4"><span className="text-success font-bold">Do:</span> Enter an email address in the format: name@example.com</p>
+<p className="typography-body-10 ml-4"><span className="text-danger font-bold">Don't:</span> You’ve entered an invalid email</p>
+</div>
+```
 
 ---
 
 Keep the message jargon-free and avoid technical terms like, ‘validation in progress’ or ‘invalid entry’.
 
-For example:
-
-> Do: We couldn’t sign you in. Check your internet connection and try again.
->
-> Don’t: Network error
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<p className="typography-body-10 mb-2 ml-4"><span className="text-success font-bold">Do:</span> We couldn’t sign you in. Check your internet connection and try again.</p>
+<p className="typography-body-10 ml-4"><span className="text-danger font-bold">Don't:</span> Network error</p>
+</div>
+```
 
 ---
 
@@ -28,13 +32,15 @@ It’s ok to use ‘please’ for the error summary heading, but it doesn’t ne
 
 Give helpful hints to customers before they attempt to fill in a field.
 
-For example:
-
-> Your password should:
->
-> - be 8 characters or longer
-> - contain at least 1 number or symbol e.g. !@#%
-
----
+```jsx
+<div>
+  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+<p className="typography-body-10">Your password should:</p>
+  <List className="list-disc">
+    <List.Item className="typography-body-10">be 8 characters or longer</List.Item>
+    <List.Item className="typography-body-10">contain at least 1 number or symbol e.g. !@#%</List.Item>
+  </List>
+</div>
+```
 
 Error messages should be displayed where the error is located instead of making the customer scroll through the page (especially on a mobile device) to find the corresponding field.

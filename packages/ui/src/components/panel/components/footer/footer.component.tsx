@@ -11,3 +11,5 @@ export function Footer({ className, children, ...props }: FooterProps) {
     </div>
   );
 }
+
+Footer.displayName = 'Panel.Footer';
