@@ -1,3 +1,8 @@
-import { ThHTMLAttributes } from 'react';
+import { ReactNode, ThHTMLAttributes } from 'react';
 
-export type HeaderCellProps = ThHTMLAttributes<HTMLTableCellElement>;
+export type HeaderCellProps = {
+  /**
+   * Table Header Cell content
+   */
+  children?: ReactNode;
+} & ThHTMLAttributes<HTMLTableCellElement>;

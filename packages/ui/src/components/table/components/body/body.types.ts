@@ -1,3 +1,8 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-export type BodyProps = HTMLAttributes<HTMLTableSectionElement>;
+export type BodyProps = {
+  /**
+   * Table body content
+   */
+  children?: ReactNode;
+} & HTMLAttributes<HTMLTableSectionElement>;

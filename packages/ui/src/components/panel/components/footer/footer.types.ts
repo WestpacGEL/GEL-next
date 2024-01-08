@@ -1,3 +1,8 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-export type FooterProps = HTMLAttributes<Element>;
+export type FooterProps = {
+  /**
+   * footer content
+   */
+  children: ReactNode;
+} & HTMLAttributes<Element>;

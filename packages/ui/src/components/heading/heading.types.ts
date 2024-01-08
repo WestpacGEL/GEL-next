@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './heading.styles.js';
@@ -10,6 +10,10 @@ export type HeadingProps = {
    * Whether it should be a brand heading
    */
   brandHeading?: boolean;
+  /**
+   * Heading text
+   */
+  children?: ReactNode;
   /**
    * Size of heading
    */

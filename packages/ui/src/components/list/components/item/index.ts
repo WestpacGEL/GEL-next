@@ -1,2 +1,2 @@
-export { Item } from './item.component.js';
-export { type ItemProps } from './item.types.js';
+export { ListItem as Item } from './item.component.js';
+export { type ListItemProps as ItemProps } from './item.types.js';

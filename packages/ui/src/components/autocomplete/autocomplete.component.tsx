@@ -3,14 +3,14 @@
 import * as React from 'react';
 import { useMemo } from 'react';
 import { mergeProps, useButton, useComboBox, useFilter, useFocusRing, useSearchField } from 'react-aria';
-import { Item, useComboBoxState, useSearchFieldState } from 'react-stately';
+import { useComboBoxState, useSearchFieldState } from 'react-stately';
 
 import { ClearIcon, SearchIcon } from '../icon/index.js';
 import { ErrorMessage, FormHint, FormLabel } from '../index.js';
 
 import { styles as autocompleteStyles } from './autocomplete.styles.js';
 import { type AutocompleteProps } from './autocomplete.types.js';
-import { ListBox, Popover } from './components/index.js';
+import { AutocompleteItem, ListBox, Popover } from './components/index.js';
 
 const STATIC_IS_OPEN_STATE = {
   isOpen: true,
@@ -156,4 +156,4 @@ export function Autocomplete<T extends object>({
   );
 }
 
-Autocomplete.Item = Item;
+Autocomplete.Item = AutocompleteItem;

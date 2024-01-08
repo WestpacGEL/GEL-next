@@ -27,7 +27,7 @@ const meta: Meta<typeof Accordion> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<any>;
 
 /**
  * > Default usage example

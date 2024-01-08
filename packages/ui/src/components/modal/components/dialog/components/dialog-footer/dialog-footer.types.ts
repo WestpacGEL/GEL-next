@@ -1,3 +1,8 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-export type DialogFooterProps = HTMLAttributes<HTMLElement>;
+export type DialogFooterProps = {
+  /**
+   * Footer content
+   */
+  children?: ReactNode;
+} & HTMLAttributes<HTMLElement>;

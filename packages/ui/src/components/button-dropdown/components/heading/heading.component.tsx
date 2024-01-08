@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { styles as headingStyles } from './heading.styles.js';
-import { type HeadingProps } from './heading.types.js';
+import { type ButtonDropdownHeadingProps } from './heading.types.js';
 
-export function Heading({ className, tag: Tag = 'h1', children, ...props }: HeadingProps) {
+export function ButtonDropdownHeading({ className, tag: Tag = 'h1', children, ...props }: ButtonDropdownHeadingProps) {
   const styles = headingStyles({});
 
   return (
@@ -12,4 +12,4 @@ export function Heading({ className, tag: Tag = 'h1', children, ...props }: Head
     </Tag>
   );
 }
-Heading.displayName = 'ButtonDropdown.Heading';
+ButtonDropdownHeading.displayName = 'ButtonDropdown.Heading';
