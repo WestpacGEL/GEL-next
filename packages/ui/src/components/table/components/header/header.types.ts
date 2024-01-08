@@ -1,3 +1,8 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-export type HeaderProps = HTMLAttributes<HTMLTableSectionElement>;
+export type HeaderProps = {
+  /**
+   * header content
+   */
+  children: ReactNode;
+} & HTMLAttributes<HTMLTableSectionElement>;

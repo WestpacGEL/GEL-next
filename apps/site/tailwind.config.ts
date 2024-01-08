@@ -105,6 +105,10 @@ const config: Config = withGEL({
     'md:w-20',
     'lg:w-30',
     'w-auto',
+    'h-5',
+    'sm:h-10',
+    'md:h-20',
+    'lg:h-30',
   ],
   plugins: [SitePlugin],
   options: {

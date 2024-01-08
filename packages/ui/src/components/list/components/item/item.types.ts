@@ -1,8 +1,12 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
 import { IconProps } from '../../../icon/index.js';
 
-export type ItemProps = {
+export type ListItemProps = {
+  /**
+   * List.Item body content
+   */
+  children?: ReactNode;
   /**
    * Renders `<a>` link element around the item content
    */

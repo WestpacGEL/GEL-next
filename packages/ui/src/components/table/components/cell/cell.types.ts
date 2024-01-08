@@ -1,6 +1,10 @@
-import { TdHTMLAttributes } from 'react';
+import { ReactNode, TdHTMLAttributes } from 'react';
 
 export type CellProps = {
+  /**
+   * Table cell content
+   */
+  children?: ReactNode;
   /**
    * Should be `true` if cell is start of highlight
    */

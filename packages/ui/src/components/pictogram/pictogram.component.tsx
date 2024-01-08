@@ -17,20 +17,18 @@ export function Pictogram({
   ...props
 }: PictogramProps) {
   return (
-    <span className={styles({ className })}>
-      <svg
-        xmlns={xmlns}
-        role={role}
-        viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
-        focusable={focusable}
-        className="block"
-        {...props}
-      >
-        {copyrightYear && (
-          <metadata>{`Copyright © ${copyrightYear} by Westpac Banking Corporation. All rights reserved.`}</metadata>
-        )}
-        {children}
-      </svg>
-    </span>
+    <svg
+      xmlns={xmlns}
+      role={role}
+      viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
+      focusable={focusable}
+      className={styles({ className })}
+      {...props}
+    >
+      {copyrightYear && (
+        <metadata>{`Copyright © ${copyrightYear} by Westpac Banking Corporation. All rights reserved.`}</metadata>
+      )}
+      {children}
+    </svg>
   );
 }

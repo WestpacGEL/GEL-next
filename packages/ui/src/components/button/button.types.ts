@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { IconProps } from '../icon/index.js';
@@ -13,6 +13,10 @@ export type ButtonProps = {
    * @default false
    */
   block?: Variants['block'];
+  /**
+   * Badge body content
+   */
+  children?: ReactNode;
   /**
    * Places an icon within the button, after the button’s text
    */

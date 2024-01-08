@@ -1,3 +1,8 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-export type DialogBodyProps = HTMLAttributes<HTMLElement>;
+export type DialogBodyProps = {
+  /**
+   * Dialog Body content
+   */
+  children?: ReactNode;
+} & HTMLAttributes<HTMLElement>;

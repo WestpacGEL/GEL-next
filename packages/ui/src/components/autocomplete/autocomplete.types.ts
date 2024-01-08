@@ -12,6 +12,10 @@ type Variants = VariantProps<typeof styles>;
 
 export type AutocompleteProps<T extends object> = {
   /**
+   * <Autocomplete.Item /> as a collection
+   */
+  children?: ComboBoxProps<T>['children'];
+  /**
    * className
    */
   className?: string;
