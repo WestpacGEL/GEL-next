@@ -1,4 +1,4 @@
-import { Item } from '@westpac/ui/grid';
+import { GridItem } from '@westpac/ui/grid';
 import Image from 'next/image';
 
 import { styles as ArticleBodyImageStyles } from './article-body-image.style';
@@ -8,7 +8,7 @@ import { layoutMap } from './article-body-image.utils';
 export const ArticleBodyImage = ({ image, title, type = 'body' }: ArticleBodyImageProps) => {
   const styles = ArticleBodyImageStyles({});
   return (
-    <Item span={layoutMap[type].span} start={layoutMap[type].start}>
+    <GridItem span={layoutMap[type].span} start={layoutMap[type].start}>
       <figure className={styles.base({})}>
         <Image
           className={styles.img({})}
@@ -20,6 +20,6 @@ export const ArticleBodyImage = ({ image, title, type = 'body' }: ArticleBodyIma
         />
         {title && <figcaption className={styles.caption({})}>{title}</figcaption>}
       </figure>
-    </Item>
+    </GridItem>
   );
 };

@@ -5,10 +5,10 @@ import { useMemo, useState } from 'react';
 import { InfoIcon } from '../icon/index.js';
 import { FlexiCell } from '../index.js';
 
-import { ButtonsProps } from './components/index.js';
+import { FilterButtonsProps } from './components/index.js';
 import { Filter } from './filter.component.js';
 
-function StoryFilter({ filterButtons }: ButtonsProps) {
+function StoryFilter({ filterButtons }: FilterButtonsProps) {
   const [selected, setSelected] = useState<string>('one');
 
   return (

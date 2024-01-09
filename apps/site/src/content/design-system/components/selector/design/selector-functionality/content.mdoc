@@ -4,7 +4,7 @@ The Button select variation, or 'Select and go' functionality is used to direct 
 
 ```tsx
 <Grid>
-  <Item span={{ initial: 12, sm: 6 }}>
+  <GridItem span={{ initial: 12, sm: 6 }}>
     <Selector type="radio">
       <Selector.Radio key="1" checkIcon="arrow" value="1">
         <Selector.Label>Button select</Selector.Label>
@@ -19,17 +19,17 @@ The Button select variation, or 'Select and go' functionality is used to direct 
         <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
       </Selector.Radio>
     </Selector>
-  </Item>
+  </GridItem>
 </Grid>
 ```
 
 ### Single select
 
-The single-select variation mimics the functionality of radio buttons, allowing only one item from the set to be selected. When an item is selected, the border increases in thickness with a tick icon used for further aid in visual confirmation.
+The single-select variation mimics the functionality of radio buttons, allowing only one Griditem from the set to be selected. When an Griditem is selected, the border increases in thickness with a tick icon used for further aid in visual confirmation.
 
 ```tsx
 <Grid>
-  <Item span={{ initial: 12, sm: 6 }}>
+  <GridItem span={{ initial: 12, sm: 6 }}>
     <Selector type="radio">
       <Selector.Radio key="1" value="1">
         <Selector.Label>Single-select</Selector.Label>
@@ -44,20 +44,20 @@ The single-select variation mimics the functionality of radio buttons, allowing 
         <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
       </Selector.Radio>
     </Selector>
-  </Item>
+  </GridItem>
 </Grid>
 ```
 
 ### Multi-select
 
-The multi-select variation mimics the functionality of checkboxes, allowing multiple items from the set to be selected. When an item is selected, the border increases in thickness with a tick icon used for further aid in visual confirmation.
+The multi-select variation mimics the functionality of checkboxes, allowing multiple Griditems from the set to be selected. When an Griditem is selected, the border increases in thickness with a tick icon used for further aid in visual confirmation.
 
 ```tsx
 () => {
   const [selectedValues, setSelectedValues] = useState<string[]>(['2', '3']);
   return (
     <Grid>
-      <Item span={{ initial: 12, sm: 6 }}>
+      <GridItem span={{ initial: 12, sm: 6 }}>
         <Selector
           type="checkbox"
           value={selectedValues}
@@ -78,7 +78,7 @@ The multi-select variation mimics the functionality of checkboxes, allowing mult
             <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
           </Selector.Checkbox>
         </Selector>
-      </Item>
+      </GridItem>
     </Grid>
   );
 };

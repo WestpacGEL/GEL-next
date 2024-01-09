@@ -11,8 +11,6 @@ const HERE_IS_A_LABEL_A = 'Here is a label A';
 const HERE_IS_A_LABEL_B = 'Here is a label B';
 const HERE_IS_A_LABEL_C = 'Here is a label C';
 
-const selectorTypes = ['checkbox', 'radio', 'button', 'link'];
-
 const meta: Meta<typeof Selector> = {
   title: 'Components/Selector',
   component: Selector,
@@ -21,7 +19,6 @@ const meta: Meta<typeof Selector> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 /**
  * > Default usage example

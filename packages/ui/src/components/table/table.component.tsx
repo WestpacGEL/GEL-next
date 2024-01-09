@@ -2,7 +2,16 @@
 
 import React, { createContext } from 'react';
 
-import { Body, Caption, Cell, Footer, Header, HeaderCell, HeaderRow, Row } from './components/index.js';
+import {
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHeader,
+  TableHeaderCell,
+  TableHeaderRow,
+  TableRow,
+} from './components/index.js';
 import { styles as tableStyles } from './table.styles.js';
 import { TableContextState, type TableProps } from './table.types.js';
 
@@ -22,11 +31,11 @@ export function Table({ bordered = false, striped = false, children, className, 
     </TableContext.Provider>
   );
 }
-Table.Body = Body;
-Table.Caption = Caption;
-Table.Cell = Cell;
-Table.Footer = Footer;
-Table.Header = Header;
-Table.HeaderCell = HeaderCell;
-Table.HeaderRow = HeaderRow;
-Table.Row = Row;
+Table.Body = TableBody;
+Table.Caption = TableCaption;
+Table.Cell = TableCell;
+Table.Footer = TableFooter;
+Table.Header = TableHeader;
+Table.HeaderCell = TableHeaderCell;
+Table.HeaderRow = TableHeaderRow;
+Table.Row = TableRow;

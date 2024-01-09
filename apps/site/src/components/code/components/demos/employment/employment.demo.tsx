@@ -1,4 +1,4 @@
-import { Autocomplete, type AutocompleteProps, Field, Form, Input, Select, SelectProps } from '@westpac/ui';
+import { Autocomplete, type AutocompleteProps, Field, Form, Select, SelectProps } from '@westpac/ui';
 import { Fragment, useState } from 'react';
 
 export const EmploymentSelect = (props: SelectProps) => (

@@ -1,6 +1,6 @@
 'use client';
 
-import { Grid, Item } from '@westpac/ui';
+import { Grid, GridItem } from '@westpac/ui';
 import { AccessibilityPictogram, StopwatchPictogram, TruckPictogram } from '@westpac/ui/pictogram';
 import { useSearchParams } from 'next/navigation';
 
@@ -20,17 +20,21 @@ export function Hero() {
       <Header brand={brand} />
       <Container className="relative z-10">
         <Grid className="mb-4 !gap-y-0 xsl:mb-10">
-          <Item span={{ initial: 10, xsl: 12, sm: 10 }} start={{ initial: 2, xsl: 1, sm: 2 }} className="mb-4 xsl:mb-6">
+          <GridItem
+            span={{ initial: 10, xsl: 12, sm: 10 }}
+            start={{ initial: 2, xsl: 1, sm: 2 }}
+            className="mb-4 xsl:mb-6"
+          >
             <h2 className={heading()}>
               Deliver quality user interfaces that scale – <em>fast!</em>
             </h2>
-          </Item>
-          <Item span={10} start={2}>
+          </GridItem>
+          <GridItem span={10} start={2}>
             <p className="typography-body-8 mb-2">Simplify your projects with reusable components and patterns</p>
-          </Item>
+          </GridItem>
         </Grid>
         <Grid tag="ul" className="typography-body-8 mb-[1rem] gap-x-0 gap-y-4 xsl:gap-x-5 sm:!gap-5">
-          <Item tag="li" span={{ initial: 12, xsl: 4 }} className=" flex flex-col items-center ">
+          <GridItem tag="li" span={{ initial: 12, xsl: 4 }} className=" flex flex-col items-center ">
             <div className="mb-3">
               <StopwatchPictogram mode="light" className="hidden sm:inline-block" />
               <StopwatchPictogram mode="duo" className="inline-block sm:hidden" />
@@ -38,15 +42,15 @@ export function Hero() {
             <div className="max-w-[18.125rem]">
               Go to market faster leveraging tools to get you up and running instantly
             </div>
-          </Item>
-          <Item tag="li" span={{ initial: 12, xsl: 4 }} className=" flex flex-col items-center ">
+          </GridItem>
+          <GridItem tag="li" span={{ initial: 12, xsl: 4 }} className=" flex flex-col items-center ">
             <div className="mb-3">
               <TruckPictogram mode="light" className="hidden sm:inline-block" />
               <TruckPictogram mode="duo" className="inline-block sm:hidden" />
             </div>
             <div className="max-w-[18.125rem]">Design, build and ship consistent brand experiences</div>
-          </Item>
-          <Item tag="li" span={{ initial: 12, xsl: 4 }} className=" flex flex-col items-center ">
+          </GridItem>
+          <GridItem tag="li" span={{ initial: 12, xsl: 4 }} className=" flex flex-col items-center ">
             <div className="mb-3">
               <AccessibilityPictogram mode="light" className="hidden sm:inline-block" />
               <AccessibilityPictogram mode="duo" className="inline-block sm:hidden" />
@@ -54,7 +58,7 @@ export function Hero() {
             <div className="max-w-[18.125rem]">
               Create more accessible solutions that are inclusive of all customers
             </div>
-          </Item>
+          </GridItem>
         </Grid>
       </Container>
     </section>

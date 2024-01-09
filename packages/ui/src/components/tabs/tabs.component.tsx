@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { useTabList } from 'react-aria';
 import { Item, useTabListState } from 'react-stately';
 
-import { Tab, TabPanel } from './components/index.js';
+import { TabsTab, TabsTabPanel } from './components/index.js';
 import { styles as tabStyles } from './tabs.styles.js';
 import { type TabsProps } from './tabs.types.js';
 
@@ -28,7 +28,7 @@ export function Tabs({
     <div className={styles.base({ className })}>
       <div style={{ ...tabListProps.style, ...stickyOffset }} {...tabListProps} className={styles.tabList()} ref={ref}>
         {[...state.collection].map(item => (
-          <Tab
+          <TabsTab
             key={item.key}
             item={item}
             state={state}
@@ -39,7 +39,7 @@ export function Tabs({
           />
         ))}
       </div>
-      <TabPanel look={look} key={state.selectedItem?.key} state={state} />
+      <TabsTabPanel look={look} key={state.selectedItem?.key} state={state} />
     </div>
   );
 }

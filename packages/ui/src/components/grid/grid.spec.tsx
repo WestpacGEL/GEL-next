@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
 
-import { styles as containerStyles } from './components/container/container.styles.js';
-import { styles as itemStyles } from './components/item/item.styles.js';
+import { styles as containerStyles } from './components/grid-container/grid-container.styles.js';
+import { styles as itemStyles } from './components/grid-item/grid-item.styles.js';
 import { Grid } from './grid.component.js';
 import { styles as gridStyles } from './grid.styles.js';
 
-import { Container, Item } from './index.js';
+import { GridContainer, GridItem } from './index.js';
 
 describe('Grid', () => {
   it('renders the Grid component', () => {
@@ -21,7 +21,7 @@ describe('Grid', () => {
   });
 
   it('renders the Container component', () => {
-    const { container } = render(<Container />);
+    const { container } = render(<GridContainer />);
     expect(container).toBeInTheDocument();
   });
 
@@ -31,7 +31,7 @@ describe('Grid', () => {
   });
 
   it('renders the Item component', () => {
-    const { container } = render(<Item />);
+    const { container } = render(<GridItem />);
     expect(container).toBeInTheDocument();
   });
 

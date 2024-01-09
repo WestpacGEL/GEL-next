@@ -1,4 +1,4 @@
-import { Button, Grid, Input, Item } from '@westpac/ui';
+import { Button, Grid, GridItem, Input } from '@westpac/ui';
 import { GithubIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
 
@@ -51,14 +51,14 @@ export default function DesignSystemHomePage() {
             <Grid tag="ul" className="items-center gap-y-4 text-neutral-70 sm:gap-x-4 sm:gap-y-8">
               {[GovLogo, MicrosoftLogo, MyobLogo, IBMLogo, AtlassianLogo, FacebookLogo, TwitterLogo, ShopifyLogo].map(
                 (Logo, i) => (
-                  <Item
+                  <GridItem
                     tag="li"
                     key={i}
                     span={{ initial: 12, xsl: 6, sm: 3 }}
                     className="flex items-center justify-center"
                   >
                     <Logo />
-                  </Item>
+                  </GridItem>
                 ),
               )}
             </Grid>
@@ -81,7 +81,7 @@ export default function DesignSystemHomePage() {
               noValidate
             >
               <Grid className="text-left">
-                <Item span={{ initial: 10, sm: 5, md: 4 }} start={{ initial: 2, sm: 3, md: 4 }}>
+                <GridItem span={{ initial: 10, sm: 5, md: 4 }} start={{ initial: 2, sm: 3, md: 4 }}>
                   <label htmlFor="mce-EMAIL" className="mb-2 inline-block w-full">
                     Enter your e-mail address
                   </label>
@@ -93,8 +93,12 @@ export default function DesignSystemHomePage() {
                     autoComplete="email"
                     className="w-full"
                   />
-                </Item>
-                <Item span={{ initial: 10, sm: 2 }} start={{ initial: 2 }} className="flex items-end sm:col-start-auto">
+                </GridItem>
+                <GridItem
+                  span={{ initial: 10, sm: 2 }}
+                  start={{ initial: 2 }}
+                  className="flex items-end sm:col-start-auto"
+                >
                   <Button
                     look="primary"
                     type="submit"
@@ -105,7 +109,7 @@ export default function DesignSystemHomePage() {
                   >
                     Subscribe
                   </Button>
-                </Item>
+                </GridItem>
               </Grid>
             </form>
           </SectionItem>
@@ -120,7 +124,7 @@ export default function DesignSystemHomePage() {
           </SectionItem>
         </Grid>
         <Grid className="gap-y-4 text-left xsl:gap-x-5 sm:gap-x-8 md:gap-x-10">
-          <Item span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2, md: 2 }} className="xsl:col-start-auto">
+          <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2, md: 2 }} className="xsl:col-start-auto">
             <h3 className="typography-body-8 border-b border-neutral pb-3 font-bold sm:mb-2">Downloads</h3>
             <ul className="typography-body-10">
               <li className="border-b border-border">
@@ -133,8 +137,8 @@ export default function DesignSystemHomePage() {
                 </Link>
               </li>
             </ul>
-          </Item>
-          <Item span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2 }} className="xsl:col-start-auto">
+          </GridItem>
+          <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2 }} className="xsl:col-start-auto">
             <h3 className="typography-body-8 border-b border-neutral pb-3 font-bold sm:mb-2">Links</h3>
             <ul className="typography-body-10">
               <li className="border-b border-border">
@@ -148,7 +152,7 @@ export default function DesignSystemHomePage() {
                 </Link>
               </li>
             </ul>
-          </Item>
+          </GridItem>
         </Grid>
       </Section>
     </>

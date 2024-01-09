@@ -2,7 +2,7 @@
 
 ```tsx
 <Grid>
-  <Item span={{ initial: 12, sm: 6 }}>
+  <GridItem span={{ initial: 12, sm: 6 }}>
     <Selector type="radio">
       <Selector.Radio key="1" checkIcon="arrow" value="1">
         <Selector.Label>Button select</Selector.Label>
@@ -17,7 +17,7 @@
         <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
       </Selector.Radio>
     </Selector>
-  </Item>
+  </GridItem>
 </Grid>
 ```
 
@@ -25,7 +25,7 @@
 
 ```tsx
 <Grid>
-  <Item span={{ initial: 12, sm: 6 }}>
+  <GridItem span={{ initial: 12, sm: 6 }}>
     <Selector type="radio">
       <Selector.Radio key="1" value="1">
         <Selector.Label>Single-select</Selector.Label>
@@ -40,7 +40,7 @@
         <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
       </Selector.Radio>
     </Selector>
-  </Item>
+  </GridItem>
 </Grid>
 ```
 
@@ -51,7 +51,7 @@
   const [selectedValues, setSelectedValues] = useState<string[]>(['2', '3']);
   return (
     <Grid>
-      <Item span={{ initial: 12, sm: 6 }}>
+      <GridItem span={{ initial: 12, sm: 6 }}>
         <Selector
           type="checkbox"
           value={selectedValues}
@@ -72,7 +72,7 @@
             <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
           </Selector.Checkbox>
         </Selector>
-      </Item>
+      </GridItem>
     </Grid>
   );
 };
@@ -82,7 +82,7 @@
 
 ```tsx
 <Grid>
-  <Item span={{ initial: 12, sm: 6 }}>
+  <GridItem span={{ initial: 12, sm: 6 }}>
     <Selector type="radio">
       <Selector.Radio
         key="1"
@@ -139,6 +139,6 @@
         <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
       </Selector.Radio>
     </Selector>
-  </Item>
+  </GridItem>
 </Grid>
 ```

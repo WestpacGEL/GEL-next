@@ -1,7 +1,7 @@
 'use client';
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
-import { Button, Grid, Item } from '@westpac/ui';
+import { Button, Grid, GridItem } from '@westpac/ui';
 import { NewWindowIcon } from '@westpac/ui/icon';
 import { useMemo } from 'react';
 
@@ -39,7 +39,7 @@ export function CodeContent({
       <section className="py-7 sm:pb-10 sm:pt-15">
         <Container>
           <Grid className="gap-y-5.5">
-            <Item span={{ initial: 12, sm: 7 }}>
+            <GridItem span={{ initial: 12, sm: 7 }}>
               {description && (
                 <p className="typography-body-8 mb-7 font-light leading-[1.5] sm:typography-body-7 sm:leading-[1.5]">
                   {description}
@@ -85,11 +85,11 @@ export function CodeContent({
                   )}
                 </tbody>
               </table>
-            </Item>
+            </GridItem>
             {sectionNames.length > 0 && (
-              <Item span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
+              <GridItem span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
                 <TableOfContents contents={sectionNames} />
-              </Item>
+              </GridItem>
             )}
           </Grid>
         </Container>

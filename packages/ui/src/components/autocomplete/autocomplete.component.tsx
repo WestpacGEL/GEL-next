@@ -10,7 +10,7 @@ import { ErrorMessage, FormHint, FormLabel } from '../index.js';
 
 import { styles as autocompleteStyles } from './autocomplete.styles.js';
 import { type AutocompleteProps } from './autocomplete.types.js';
-import { AutocompleteItem, ListBox, Popover } from './components/index.js';
+import { AutocompleteItem, AutocompleteListBox, AutocompletePopover } from './components/index.js';
 
 const STATIC_IS_OPEN_STATE = {
   isOpen: true,
@@ -128,7 +128,7 @@ export function Autocomplete<T extends object>({
         </button>
       </div>
       {isNoOptionPopOverOpen && (
-        <Popover
+        <AutocompletePopover
           state={STATIC_IS_OPEN_STATE}
           isNonModal
           placement="bottom start"
@@ -137,10 +137,10 @@ export function Autocomplete<T extends object>({
         >
           <div className="px-3 py-2">{noOptionsMessage}</div>
           {footer && <div className="border-t border-t-border px-3 py-2">{footer}</div>}
-        </Popover>
+        </AutocompletePopover>
       )}
       {state.isOpen && (
-        <Popover
+        <AutocompletePopover
           popoverRef={popoverRef}
           triggerRef={outerRef}
           state={state}
@@ -148,9 +148,14 @@ export function Autocomplete<T extends object>({
           placement="bottom start"
           portalContainer={portalContainer}
         >
-          <ListBox {...listBoxProps} autoFocus={listBoxProps.autoFocus as any} listBoxRef={listBoxRef} state={state} />
+          <AutocompleteListBox
+            {...listBoxProps}
+            autoFocus={listBoxProps.autoFocus as any}
+            listBoxRef={listBoxRef}
+            state={state}
+          />
           {footer && <div className="border-t border-t-border px-3 py-2">{footer}</div>}
-        </Popover>
+        </AutocompletePopover>
       )}
     </div>
   );

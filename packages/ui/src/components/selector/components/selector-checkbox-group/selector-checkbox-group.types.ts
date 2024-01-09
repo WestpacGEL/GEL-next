@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from 'react';
+import { HTMLAttributes } from 'react';
 import { AriaCheckboxGroupProps } from 'react-aria';
 import { CheckboxGroupState } from 'react-stately';
 

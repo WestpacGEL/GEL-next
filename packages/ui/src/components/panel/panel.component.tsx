@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Body, Footer } from './components/index.js';
+import { PanelBody, PanelFooter } from './components/index.js';
 import { styles as panelStyles } from './panel.styles.js';
 import { type PanelProps } from './panel.types.js';
 
@@ -13,5 +13,5 @@ export function Panel({ className, children, heading, headingTag: Tag = 'h1', lo
     </div>
   );
 }
-Panel.Body = Body;
-Panel.Footer = Footer;
+Panel.Body = PanelBody;
+Panel.Footer = PanelFooter;
