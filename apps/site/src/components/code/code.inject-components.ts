@@ -59,6 +59,7 @@ export {
   PauseIcon,
   AddCircleIcon,
   AddIcon,
+  RemoveIcon,
   TickCircleIcon,
   ArrowRightIcon,
   CalendarIcon,
