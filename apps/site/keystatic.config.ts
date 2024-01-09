@@ -313,24 +313,6 @@ export default config({
         ),
       },
     }),
-    authors: collection({
-      label: 'Authors',
-      path: 'src/content/authors/*',
-      previewUrl: `/preview/start?branch={branch}&to=/authors/{slug}`,
-      slugField: 'name',
-      schema: {
-        name: fields.slug({
-          name: {
-            label: 'Name',
-            validation: {
-              length: {
-                min: 1,
-              },
-            },
-          },
-        }),
-      },
-    }),
     articles: collection({
       label: 'Articles',
       path: 'src/content/articles/*',
@@ -364,10 +346,8 @@ export default config({
         image: fields.cloudImage({
           label: 'Main Image',
         }),
-        author: fields.relationship({
-          label: 'Author',
-          description: 'Author of this article',
-          collection: 'authors',
+        author: fields.text({
+          label: 'Author name',
         }),
         publishedAt: fields.datetime({
           label: 'Published at',

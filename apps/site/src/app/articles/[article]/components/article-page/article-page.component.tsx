@@ -12,7 +12,7 @@ import { DOCUMENT_RENDERERS } from '..';
 
 import { type ArticlePageProps } from './article-page.types';
 
-export function ArticlePage({ article, author }: ArticlePageProps) {
+export function ArticlePage({ article }: ArticlePageProps) {
   return (
     <>
       <div className="bg-gradient-to-b from-white from-25% to-gel-background">
@@ -22,7 +22,7 @@ export function ArticlePage({ article, author }: ArticlePageProps) {
               <h1 className="typography-site-6 mb-2 font-black !leading-[1.1] tracking-[-1px] xsl:typography-site-3 xsl:mb-3">
                 {article.name}
               </h1>
-              <p className="typography-site-9 text-gel-muted">{author?.name}</p>
+              <p className="typography-site-9 text-gel-muted">{article.author}</p>
             </div>
             <div className="col-span-12 mb-7 xsl:mb-9">
               {article.image && (

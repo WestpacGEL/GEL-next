@@ -19,7 +19,6 @@ type MetadataProps = {
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
   const { article: articleParam } = params;
   const article = await reader().collections.articles.readOrThrow(articleParam);
-  const author = await (article.author ? reader().collections.authors.read(article.author) : Promise.resolve(null));
 
   const title = `${article.name} | GEL Design System`;
   const description = article.description;
@@ -28,13 +27,13 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
   return {
     title,
     description,
-    authors: author ? [{ name: author.name }] : [],
-    creator: author ? author.name : null,
-    publisher: author ? author.name : null,
+    authors: article.author ? [{ name: article.author }] : [],
+    creator: article.author ? article.author : null,
+    publisher: article.author ? article.author : null,
     openGraph: {
       title,
       images,
-      authors: author ? [author.name] : [],
+      authors: article.author ? [article.author] : [],
       description: article.description,
       type: 'article',
       publishedTime: article.publishedAt ? article.publishedAt : undefined,
@@ -52,12 +51,9 @@ export default async function ArticleServerPage({ params }: { params: { article:
   const { article: articleParam } = params;
   const article = await reader().collections.articles.readOrThrow(articleParam);
 
-  const [articleContent, author] = await Promise.all([
-    article.content(),
-    article.author ? reader().collections.authors.read(article.author) : Promise.resolve(null),
-  ]);
+  const articleContent = await article.content();
 
-  return <ArticlePage article={{ ...article, content: articleContent }} author={author} />;
+  return <ArticlePage article={{ ...article, content: articleContent }} />;
 }
 
 export const dynamic = 'force-dynamic';
