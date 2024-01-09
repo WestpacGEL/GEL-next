@@ -21,12 +21,13 @@
   return (
     <div>
       <ProgressRope current={activeIndex} data={PROGRESS_ROPE_DATA} />
-      <div>
-        <h3>Helper Controls</h3>
-        <h4>Current: {activeIndex}</h4>
-        <Button onClick={() => setActiveIndex(state => --state)}>prev</Button>{' '}
-        <Button onClick={() => setActiveIndex(state => ++state)}>next</Button>
-      </div>
+      <Well className="p-2 sm:p-2 flex items-center">
+        <div className="mr-2 flex items-center space-x-1">
+          <Button iconBefore={ArrowLeftIcon} soft look="faint" size="small" onClick={() => setActiveIndex(state => --state)}>prev</Button>{' '}
+          <Button iconAfter={ArrowRightIcon} soft look="faint" size="small" onClick={() => setActiveIndex(state => ++state)}>next</Button>
+        </div>
+        <code className="flex">Current: {activeIndex}</code>
+      </Well>
     </div>
   );
 };
@@ -75,12 +76,13 @@
   return (
     <div>
       <ProgressRope current={activeIndex} data={PROGRESS_ROPE_DATA} />
-      <div>
-        <h3>Helper Controls</h3>
-        <h4>Current: {activeIndex}</h4>
-        <Button onClick={() => setActiveIndex(state => --state)}>prev</Button>{' '}
-        <Button onClick={() => setActiveIndex(state => ++state)}>next</Button>
-      </div>
+      <Well className="p-2 sm:p-2 flex items-center">
+        <div className="mr-2 flex items-center space-x-1">
+          <Button iconBefore={ArrowLeftIcon} soft look="faint" size="small" onClick={() => setActiveIndex(state => --state)}>prev</Button>{' '}
+          <Button iconAfter={ArrowRightIcon} soft look="faint" size="small" onClick={() => setActiveIndex(state => ++state)}>next</Button>
+        </div>
+        <code className="flex">Current: {activeIndex}</code>
+      </Well>
     </div>
   );
 };

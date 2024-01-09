@@ -109,6 +109,7 @@ const config: Config = withGEL({
     'sm:h-10',
     'md:h-20',
     'lg:h-30',
+    'space-x-1',
   ],
   plugins: [SitePlugin],
   options: {
