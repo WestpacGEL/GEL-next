@@ -1,13 +1,13 @@
 'use client';
 
-import { Container, Grid } from '@westpac/ui';
+import { Grid, GridContainer } from '@westpac/ui';
 
 import { GELHeroLogo } from './components/gel-hero-logo';
 
 export function Hero() {
   return (
     <div className="bg-gel-primary">
-      <Container>
+      <GridContainer>
         <Grid className="gap-y-5 pt-5 xsl:gap-y-6 xsl:pt-7 sm:gap-y-7 sm:pt-9 md:gap-y-10 md:pt-10 lg:pt-11">
           <div className="col-span-11 row-end-[span_1] xsl:col-span-9">
             <GELHeroLogo />
@@ -20,7 +20,7 @@ export function Hero() {
             </p>
           </div>
         </Grid>
-      </Container>
+      </GridContainer>
     </div>
   );
 }

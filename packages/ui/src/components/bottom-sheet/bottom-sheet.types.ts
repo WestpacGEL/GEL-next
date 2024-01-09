@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { OverlayTriggerState } from 'react-stately';
 
-import { ModalProps } from './components/modal/modal.types.js';
+import { ModalProps } from './components/bottom-sheet-modal/bottom-sheet-modal.types.js';
 
 export type BottomSheetProps = ModalProps & {
   /**

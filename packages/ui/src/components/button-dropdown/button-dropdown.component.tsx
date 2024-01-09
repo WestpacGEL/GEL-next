@@ -9,8 +9,8 @@ import { DropDownIcon, IconProps } from '../icon/index.js';
 
 import { styles as buttonDropdownStyles } from './button-dropdown.styles.js';
 import { type ButtonDropdownProps } from './button-dropdown.types.js';
-import { Heading } from './components/heading/index.js';
-import { Panel } from './components/panel/panel.component.js';
+import { ButtonDropdownHeading } from './components/button-dropdown-heading/index.js';
+import { ButtonDropdownPanel } from './components/button-dropdown-panel/button-dropdown-panel.component.js';
 
 export function ButtonDropdown({
   className,
@@ -64,7 +64,7 @@ export function ButtonDropdown({
         {text}
       </Button>
       {state.isOpen && (
-        <Panel
+        <ButtonDropdownPanel
           className={styles.panel({ className })}
           placement="bottom start"
           triggerRef={ref}
@@ -73,10 +73,10 @@ export function ButtonDropdown({
           id={panelId}
         >
           {children}
-        </Panel>
+        </ButtonDropdownPanel>
       )}
     </>
   );
 }
 
-ButtonDropdown.Heading = Heading;
+ButtonDropdown.Heading = ButtonDropdownHeading;

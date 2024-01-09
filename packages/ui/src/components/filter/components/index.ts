@@ -1,2 +1,2 @@
-export * from './buttons/index.js';
-export * from './input/index.js';
+export * from './filter-buttons/index.js';
+export * from './filter-input/index.js';

@@ -1,4 +1,4 @@
-import { Grid, Item } from '@westpac/ui/grid';
+import { Grid, GridItem } from '@westpac/ui/grid';
 import { AtmIcon, BusinessPersonIcon, EftposIcon, PadlockIcon, SecurityIcon, VerifiedIcon } from '@westpac/ui/icon';
 import { Fragment } from 'react';
 
@@ -20,30 +20,30 @@ export function IconSizesDemo() {
       {sizes.map(s => (
         <Fragment key={s.size}>
           <Item>{s.text}</Item>
-          <GridItem>
+          <Item>
             <AtmIcon size={s.size} />
-          </GridItem>
-          <GridItem>
+          </Item>
+          <Item>
             <EftposIcon size={s.size} />
-          </GridItem>
-          <GridItem>
+          </Item>
+          <Item>
             <PadlockIcon size={s.size} />
-          </GridItem>
-          <GridItem>
+          </Item>
+          <Item>
             <BusinessPersonIcon size={s.size} />
-          </GridItem>
-          <GridItem>
+          </Item>
+          <Item>
             <SecurityIcon size={s.size} />
-          </GridItem>
-          <GridItem>
+          </Item>
+          <Item>
             <VerifiedIcon size={s.size} />
-          </GridItem>
+          </Item>
         </Fragment>
       ))}
     </Grid>
   );
 }
 
-function GridItem({ children }: { children: React.ReactNode }) {
-  return <Item className="justify-self-center text-muted">{children}</Item>;
+function Item({ children }: { children: React.ReactNode }) {
+  return <GridItem className="justify-self-center text-muted">{children}</GridItem>;
 }

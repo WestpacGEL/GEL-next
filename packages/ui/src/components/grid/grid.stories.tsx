@@ -1,7 +1,7 @@
 import { type Meta, StoryFn } from '@storybook/react';
 
-import { Container, Item as GridItem } from './components/index.js';
-import { type ItemProps } from './components/item/item.types.js';
+import { type GridItemProps } from './components/grid-item/grid-item.types.js';
+import { GridContainer, GridItem } from './components/index.js';
 import { Grid } from './grid.component.js';
 
 const meta: Meta<typeof Grid> = {
@@ -13,7 +13,7 @@ const meta: Meta<typeof Grid> = {
 
 export default meta;
 
-const Item = (props: ItemProps) => (
+const Item = (props: GridItemProps) => (
   <GridItem className="flex h-10 items-center justify-center border border-border bg-light" {...props} />
 );
 
@@ -33,30 +33,30 @@ export const DefaultContainer = () => {
   const items = Array(12).fill(null);
 
   return (
-    <Container>
+    <GridContainer>
       <Grid>
         {items.map((_, i) => (
           <Item key={i}>{i + 1}</Item>
         ))}
       </Grid>
-    </Container>
+    </GridContainer>
   );
 };
 
 export const ResponsiveItems = () => {
   return (
-    <Container>
+    <GridContainer>
       <Grid>
         <Item span={{ initial: 6, lg: 2 }}>span - (xs:6, lg:3)</Item>
         <Item span={{ initial: 6, lg: 10 }}>span - (xs:6, lg:10)</Item>
       </Grid>
-    </Container>
+    </GridContainer>
   );
 };
 
 export const Positioning = () => {
   return (
-    <Container>
+    <GridContainer>
       <Grid>
         <Item span={4}>Top Left</Item>
         <Item start={9} span={4}>
@@ -72,13 +72,13 @@ export const Positioning = () => {
           Bottom Right
         </Item>
       </Grid>
-    </Container>
+    </GridContainer>
   );
 };
 
 export const HolyGrailLayout = () => {
   return (
-    <Container>
+    <GridContainer>
       <Grid>
         <Item span={12}>Header</Item>
         <Item span={3}>Menu</Item>
@@ -86,6 +86,6 @@ export const HolyGrailLayout = () => {
         <Item span={3}>Ads</Item>
         <Item span={12}>Footer</Item>
       </Grid>
-    </Container>
+    </GridContainer>
   );
 };

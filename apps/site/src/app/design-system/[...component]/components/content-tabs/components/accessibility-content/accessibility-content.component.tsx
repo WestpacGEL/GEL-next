@@ -1,7 +1,7 @@
 'use client';
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
-import { Grid, Item, Select } from '@westpac/ui';
+import { Grid, GridItem, Select } from '@westpac/ui';
 import { useId, useState } from 'react';
 
 import { Container } from '@/app/design-system/components';
@@ -41,14 +41,14 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
               Colour impairment demonstration
             </Heading>
             <Grid>
-              <Item span={{ initial: 12, xsl: 11, sm: 8, md: 7, lg: 9 }}>
+              <GridItem span={{ initial: 12, xsl: 11, sm: 8, md: 7, lg: 9 }}>
                 <Text>
                   All components are designed and tested to ensure colour contrast ratios comply with the WCAG 2.1 AA
                   specification. Select a filter from the list below to see how this component would appear to someone
                   with a:{' '}
                   <Link href="/design-system/accessibility/colour-vision-impairment">colour vision impairment</Link>.
                 </Text>
-              </Item>
+              </GridItem>
             </Grid>
             <div className="flex items-center bg-light p-4">
               <label htmlFor={id} className="mr-[1rem] whitespace-nowrap">

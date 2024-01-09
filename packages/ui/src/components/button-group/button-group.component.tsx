@@ -8,7 +8,7 @@ import { ErrorMessage, FormHint, FormLabel } from '../index.js';
 
 import { styles as buttonGroupStyles } from './button-group.styles.js';
 import { ButtonGroupContextState, type ButtonGroupProps } from './button-group.types.js';
-import { Button } from './components/button/button.component.js';
+import { ButtonGroupButton } from './components/button-group-button/button-group-button.component.js';
 
 export const ButtonGroupContext = createContext<ButtonGroupContextState>({
   // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
@@ -70,4 +70,4 @@ export function ButtonGroup({
     </div>
   );
 }
-ButtonGroup.Button = Button;
+ButtonGroup.Button = ButtonGroupButton;

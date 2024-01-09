@@ -1,6 +1,6 @@
 'use client';
 
-import { Grid, Item } from '@westpac/ui';
+import { Grid, GridItem } from '@westpac/ui';
 import { type BrandKey } from '@westpac/ui/tailwind';
 import { useSearchParams } from 'next/navigation';
 
@@ -15,7 +15,7 @@ export function Colors({ palette, tab }: { palette: string; tab?: string }) {
   return (
     <Grid tag="ul" className="mt-2">
       {colorPalette.map(color => (
-        <Item key={color.name} tag="li" span={{ initial: 12, xsl: 6, sm: 4, md: 3 }}>
+        <GridItem key={color.name} tag="li" span={{ initial: 12, xsl: 6, sm: 4, md: 3 }}>
           <div className="flex flex-row items-center bg-white p-4 xsl:flex-col xsl:items-stretch">
             <Svg viewBox="0 0 132 132" width={132} height={132}>
               <circle fill={color.hex} cx="66" cy="66" r="66" />
@@ -34,7 +34,7 @@ export function Colors({ palette, tab }: { palette: string; tab?: string }) {
               )}
             </div>
           </div>
-        </Item>
+        </GridItem>
       ))}
     </Grid>
   );

@@ -13,7 +13,6 @@ const meta: Meta<typeof SkipLink> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 /**
  * > Default usage example

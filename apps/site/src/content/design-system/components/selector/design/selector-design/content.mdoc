@@ -9,7 +9,7 @@ The minimum content requirement is a label.
   const [value, setValue] = useState<string>('2');
   return (
     <Grid>
-      <Item span={{ initial: 12, sm: 6 }}>
+      <GridItem span={{ initial: 12, sm: 6 }}>
         <Selector type="radio" value={value} onChange={value => setValue(value)}>
           <Selector.Radio key="1" value="1">
             <Selector.Label>Label</Selector.Label>
@@ -21,7 +21,7 @@ The minimum content requirement is a label.
             <Selector.Label>Label</Selector.Label>
           </Selector.Radio>
         </Selector>
-      </Item> 
+      </GridItem> 
     </Grid>
   );
 };
@@ -35,7 +35,7 @@ Any combination of these elements may be used as long as they are used consisten
 
 ```tsx
 <Grid>
-  <Item span={{ initial: 12, sm: 6 }}>
+  <GridItem span={{ initial: 12, sm: 6 }}>
     <Selector type="radio">
       <Selector.Radio
         key="1"
@@ -92,6 +92,6 @@ Any combination of these elements may be used as long as they are used consisten
         <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
       </Selector.Radio>
     </Selector>
-  </Item>
+  </GridItem>
 </Grid>
 ```

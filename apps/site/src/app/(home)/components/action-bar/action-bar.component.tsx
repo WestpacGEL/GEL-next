@@ -1,5 +1,5 @@
 'use client';
-import { Container } from '@westpac/ui';
+import { GridContainer } from '@westpac/ui';
 import { ArrowRightIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
 
@@ -15,7 +15,7 @@ import { logoMap, logoStyles } from '../utils';
 export function ActionBar() {
   return (
     <StickyHeader>
-      <Container className="px-4">
+      <GridContainer className="px-4">
         <div className="hidden h-[6.375rem] items-end bg-white pb-2 sm:flex">
           <div className="mr-4 flex h-full flex-col justify-end border-r-[1px] border-gel-border">
             <GELLogo className="mb-2 block h-3 w-[45px] text-gel-text" />
@@ -54,7 +54,7 @@ export function ActionBar() {
             ))}
           </BrandSelect>
         </div>
-      </Container>
+      </GridContainer>
     </StickyHeader>
   );
 }

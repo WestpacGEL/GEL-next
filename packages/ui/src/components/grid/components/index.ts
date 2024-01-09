@@ -1,2 +1,2 @@
-export { Container } from './container/container.component.js';
-export { Item } from './item/item.component.js';
+export { GridContainer } from './grid-container/grid-container.component.js';
+export { GridItem } from './grid-item/grid-item.component.js';
