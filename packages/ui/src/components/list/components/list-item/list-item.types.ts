@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from 'react';
+import { HTMLAttributeAnchorTarget, HTMLAttributes, ReactNode } from 'react';
 
 import { IconProps } from '../../../icon/index.js';
 
@@ -27,6 +27,10 @@ export type ListItemProps = {
    * The size of space between list elements
    */
   spacing?: 'medium' | 'large';
+  /**
+   * Renders `<a>` link element around the item content
+   */
+  target?: HTMLAttributeAnchorTarget;
   /**
    * The list style
    */
