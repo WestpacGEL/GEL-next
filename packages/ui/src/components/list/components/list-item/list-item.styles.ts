@@ -3,10 +3,9 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'pl-[1.1875rem]',
-      bullet: 'absolute block border',
+      base: 'relative pl-[1.1875rem]',
+      bullet: 'absolute left-0 block border',
       link: 'text-text hover:cursor-pointer hover:underline',
-      wrapper: 'relative',
     },
     variants: {
       icon: {

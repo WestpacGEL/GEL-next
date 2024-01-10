@@ -8,7 +8,7 @@ import { styles as itemStyles } from './list-item.styles.js';
 import { type ListItemProps } from './list-item.types.js';
 
 export function BaseListItem(
-  { className, children, href, look, type, spacing, icon, ...props }: ListItemProps,
+  { className, children, href, target, look, type, spacing, icon, ...props }: ListItemProps,
   ref: any,
 ) {
   const state = useContext(ListContext);
@@ -40,18 +40,16 @@ export function BaseListItem(
   };
 
   return (
-    <div className={styles.wrapper()} key={state.nested}>
+    <li className={styles.base({ className })} {...props} key={state.nested}>
       {bulletToRender()}
-      <li className={styles.base({ className })} {...props}>
-        {type === 'link' ? (
-          <a href={href} className={styles.link()} ref={ref} {...focusProps}>
-            {children}
-          </a>
-        ) : (
-          children
-        )}
-      </li>
-    </div>
+      {type === 'link' ? (
+        <a href={href} target={target} className={styles.link()} ref={ref} {...focusProps}>
+          {children}
+        </a>
+      ) : (
+        children
+      )}
+    </li>
   );
 }
 
