@@ -1,6 +1,7 @@
 'use client';
 
 import { List } from '@westpac/ui';
+import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { MouseEventHandler, useCallback } from 'react';
 
 import { ArrowDownRightIcon } from '@/components/icons';
@@ -34,13 +35,11 @@ const HEADER_HEIGHT = {
   lg: 200,
 };
 
-const BREAKPOINT_MD = 768;
-
 function Link({ href, children }: { children?: React.ReactNode; href?: string }) {
   const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
     ev => {
       ev.preventDefault();
-      const viewport = window.innerWidth < BREAKPOINT_MD ? 'sm' : 'lg';
+      const viewport = window.innerWidth < parseInt(BREAKPOINTS.md, 10) ? 'sm' : 'lg';
       const bodyRect = document.body.getBoundingClientRect(),
         elemRect = document?.querySelector(href || '')?.getBoundingClientRect(),
         offset = (elemRect?.top || 0) - bodyRect.top - HEADER_HEIGHT[viewport];

@@ -2,7 +2,7 @@
 
 import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { Key, useCallback, useMemo } from 'react';
+import { Key, useCallback, useEffect, useMemo } from 'react';
 
 import { AccessibilityContent, CodeContent, DesignContent, Tabs } from './components';
 import { type ContentTabsProps } from './content-tabs.types';
@@ -42,6 +42,11 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
   return <></>;
 };
 
+const HEADER_HEIGHT = {
+  sm: 150,
+  lg: 200,
+};
+
 const FIXED_HEADER_Y = 162; // 228 - 66 = height to stick
 
 export function ContentTabs({ content }: { content: ContentTabsProps }) {
@@ -74,6 +79,19 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
     content.componentProps,
     content.designSections?.length,
   ]);
+
+  useEffect(() => {
+    // TODO: the scroll is not working well since we are not waiting for the iframes to be loaded.
+    const viewport = window.innerWidth < parseInt(BREAKPOINTS.md, 10) ? 'sm' : 'lg';
+    const hashSelector = window.location.hash;
+    if (!hashSelector) {
+      return;
+    }
+    const bodyRect = document.body.getBoundingClientRect();
+    const elemRect = document?.querySelector(hashSelector || '')?.getBoundingClientRect();
+    const offset = (elemRect?.top || 0) - bodyRect.top - HEADER_HEIGHT[viewport];
+    window?.scrollTo({ top: offset, behavior: 'smooth' });
+  }, [pathname]);
 
   if (filteredTabs.length === 1) {
     return (
