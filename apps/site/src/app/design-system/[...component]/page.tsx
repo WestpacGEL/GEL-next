@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 
 import { reader } from '@/app/reader';
 import { RelatedInfoLinks } from '@/components/related-info/related-info.types';
+import { ShortCode } from '@/types/short-code.types';
 
 import { ContentTabs } from './components';
 import { AccessibilitySectionProps } from './components/content-tabs/components/accessibility-content/accessibility-content.types';
@@ -46,10 +47,29 @@ export async function generateStaticParams() {
 
 export default async function ComponentPage({ params }: { params: { component: string[] } }) {
   const { component } = params;
-  const [content, westpacInfo] = await Promise.all([
+  const [content, westpacInfo, shortCodes] = await Promise.all([
     reader().collections.designSystem.readOrThrow(component.join('/')),
     reader().singletons.westpacUIInfo.readOrThrow(),
+    reader()
+      .collections.shortCodes.all()
+      .then(shortCodes =>
+        Promise.all(
+          shortCodes.map(
+            shortCode =>
+              new Promise<ShortCode>(resolve => {
+                // eslint-disable-next-line promise/no-nesting
+                return shortCode.entry.content().then(content => {
+                  return resolve({
+                    ...shortCode.entry,
+                    content,
+                  });
+                });
+              }),
+          ),
+        ),
+      ),
   ]);
+
   const componentName = component?.[1]
     ?.split('-')
     .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
@@ -140,6 +160,7 @@ export default async function ComponentPage({ params }: { params: { component: s
   return (
     <ContentTabs
       content={{
+        shortCodes,
         componentName: componentName,
         namedExport: content.namedExport?.value?.name,
         westpacUIInfo: westpacInfo,

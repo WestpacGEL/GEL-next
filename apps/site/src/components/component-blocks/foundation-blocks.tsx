@@ -1,6 +1,7 @@
 import { colors } from './colors/colors.preview';
 import { designSystemBodyImage } from './components/design-system-body-image';
 import { linkList } from './components/link-list/link-list.preview';
+import { shortCode } from './components/short-code/short-code.preview';
 import { fonts } from './fonts/fonts.preview';
 import { icons } from './icons/icons.preview';
 import { logos } from './logos/logos.preview';
@@ -16,4 +17,5 @@ export const foundationBlocks = {
   symbols,
   designSystemBodyImage,
   linkList,
+  shortCode,
 };

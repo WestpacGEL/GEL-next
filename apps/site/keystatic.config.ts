@@ -390,5 +390,55 @@ export default config({
         }),
       },
     }),
+    shortCodes: collection({
+      label: 'Short Codes',
+      path: 'src/content/short-codes/*',
+      slugField: 'name',
+      schema: {
+        name: fields.slug({
+          name: {
+            label: 'Name',
+            validation: {
+              length: {
+                min: 1,
+              },
+            },
+          },
+        }),
+        content: fields.document({
+          formatting: {
+            inlineMarks: {
+              bold: true,
+              italic: true,
+              strikethrough: true,
+              code: true,
+              underline: true,
+            },
+            listTypes: {
+              ordered: true,
+              unordered: true,
+            },
+            headingLevels: [1, 2, 3, 4, 5, 6],
+            blockTypes: {
+              blockquote: true,
+              code: true,
+            },
+            softBreaks: true,
+          },
+          dividers: true,
+          links: true,
+          label: 'Design',
+          componentBlocks: foundationBlocks,
+          layouts: [
+            [4, 4],
+            [5, 5],
+          ],
+          images: {
+            directory: 'public/images/short-codes/content',
+            publicPath: '/images/short-codes/content',
+          },
+        }),
+      },
+    }),
   },
 });

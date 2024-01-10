@@ -6,6 +6,7 @@ import { useId, useState } from 'react';
 
 import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
+import { ShortCode } from '@/components/component-blocks/components/short-code/short-code.component';
 import { Section } from '@/components/content-blocks/section';
 import { Link, Text } from '@/components/content-blocks/typography';
 import { Code, Heading } from '@/components/document-renderer';
@@ -28,7 +29,11 @@ const FILTERS = [
   { text: 'Low contrast', value: 'low-contrast' },
 ] as const;
 
-export function AccessibilityContent({ accessibilitySections, accessibilityDemo }: AccessibilityContentProps) {
+export function AccessibilityContent({
+  accessibilitySections,
+  accessibilityDemo,
+  shortCodes,
+}: AccessibilityContentProps) {
   const [filter, setFilter] = useState<VisionFilterProps['value']>();
   const id = useId();
 
@@ -77,7 +82,11 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
                     code: props => <Code className="my-4" enableLiveCode={false} {...props} />,
                   },
                 }}
-                componentBlocks={{}}
+                componentBlocks={{
+                  shortCode: props => {
+                    return <ShortCode shortCodes={shortCodes} {...props} />;
+                  },
+                }}
               />
             </VisionFilter>
           </Container>
@@ -92,7 +101,12 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
               <DocumentRenderer
                 document={content}
                 renderers={DOCUMENT_RENDERERS}
-                componentBlocks={{ colors: props => <Colors palette={props.palette} /> }}
+                componentBlocks={{ 
+                  colors: props => <Colors palette={props.palette} />,  
+                  shortCode: props => {
+                    return <ShortCode shortCodes={shortCodes} {...props} />;
+                  },
+                }}
               />
             </Container>
           </Section>
