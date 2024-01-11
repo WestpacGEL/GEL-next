@@ -6,6 +6,7 @@ import { useMemo } from 'react';
 import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
 import { LinkList } from '@/components/component-blocks/components/link-list';
+import { ShortCode } from '@/components/component-blocks/components/short-code';
 import { Fonts } from '@/components/component-blocks/fonts/fonts.component';
 import { Icons } from '@/components/component-blocks/icons/icons.component';
 import { Logos } from '@/components/component-blocks/logos/logos.component';
@@ -20,7 +21,13 @@ import { DOCUMENT_RENDERERS } from '../document-renderer';
 
 import { type DesignContentProps } from '.';
 
-export function DesignContent({ designSections, description, relatedComponents, relatedArticles }: DesignContentProps) {
+export function DesignContent({
+  designSections,
+  description,
+  relatedComponents,
+  relatedArticles,
+  shortCodes,
+}: DesignContentProps) {
   const sectionNames = useMemo(() => {
     return designSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title })) || [];
   }, [designSections]);
@@ -51,6 +58,9 @@ export function DesignContent({ designSections, description, relatedComponents, 
                   symbols: () => <Symbols />,
                   colors: props => <Colors palette={props.palette} />,
                   linkList: LinkList,
+                  shortCode: props => {
+                    return <ShortCode shortCodes={shortCodes} {...props} />;
+                  },
                   designSystemBodyImage: props => (
                     <div className="mb-5 mt-1">
                       <Image {...props} />

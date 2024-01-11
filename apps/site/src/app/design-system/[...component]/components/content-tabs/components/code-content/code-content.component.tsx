@@ -7,6 +7,7 @@ import { useMemo } from 'react';
 
 import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
+import { ShortCode } from '@/components/component-blocks/components/short-code';
 import { ComponentPropsTable } from '@/components/component-props-table';
 import { Section } from '@/components/content-blocks/section';
 import { Code } from '@/components/content-blocks/typography';
@@ -25,6 +26,7 @@ export function CodeContent({
   subComponentProps,
   componentName,
   description,
+  shortCodes,
 }: CodeContentProps) {
   const sectionNames = useMemo(() => {
     const sections = codeSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title }));
@@ -103,7 +105,12 @@ export function CodeContent({
               <DocumentRenderer
                 document={content}
                 renderers={DOCUMENT_RENDERERS}
-                componentBlocks={{ colors: props => <Colors palette={props.palette} tab="code" /> }}
+                componentBlocks={{
+                  colors: props => <Colors palette={props.palette} tab="code" />,
+                  shortCode: props => {
+                    return <ShortCode shortCodes={shortCodes} {...props} />;
+                  },
+                }}
               />
             </Container>
           </Section>
