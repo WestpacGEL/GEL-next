@@ -7,7 +7,7 @@ import { useMemo } from 'react';
 
 import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
-import { ShortCode } from '@/components/component-blocks/components/short-code/short-code.component';
+import { ShortCode } from '@/components/component-blocks/components/short-code';
 import { ComponentPropsTable } from '@/components/component-props-table';
 import { Section } from '@/components/content-blocks/section';
 import { Code } from '@/components/content-blocks/typography';

@@ -6,7 +6,7 @@ import { useId, useState } from 'react';
 
 import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
-import { ShortCode } from '@/components/component-blocks/components/short-code/short-code.component';
+import { ShortCode } from '@/components/component-blocks/components/short-code';
 import { Section } from '@/components/content-blocks/section';
 import { Link, Text } from '@/components/content-blocks/typography';
 import { Code, Heading } from '@/components/document-renderer';
@@ -101,8 +101,8 @@ export function AccessibilityContent({
               <DocumentRenderer
                 document={content}
                 renderers={DOCUMENT_RENDERERS}
-                componentBlocks={{ 
-                  colors: props => <Colors palette={props.palette} />,  
+                componentBlocks={{
+                  colors: props => <Colors palette={props.palette} />,
                   shortCode: props => {
                     return <ShortCode shortCodes={shortCodes} {...props} />;
                   },

@@ -149,7 +149,7 @@ export default config({
               images: true,
               layouts: [[6, 6]],
               label: 'Design',
-              componentBlocks: foundationBlocks,
+              componentBlocks: {},
             }),
           }),
           {
