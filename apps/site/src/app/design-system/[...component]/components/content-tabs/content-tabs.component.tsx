@@ -11,6 +11,7 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
   if (tabKey === 'design') {
     return (
       <DesignContent
+        shortCodes={content.shortCodes}
         description={content.description}
         designSections={content.designSections}
         relatedComponents={content.relatedComponents}
@@ -21,6 +22,7 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
   if (tabKey === 'accessibility') {
     return (
       <AccessibilityContent
+        shortCodes={content.shortCodes}
         accessibilitySections={content.accessibilitySections}
         accessibilityDemo={content.accessibilityDemo}
       />
@@ -29,6 +31,7 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
   if (tabKey === 'code') {
     return (
       <CodeContent
+        shortCodes={content.shortCodes}
         componentName={content.componentName}
         namedExport={content.namedExport}
         subComponentProps={content.subComponentProps}

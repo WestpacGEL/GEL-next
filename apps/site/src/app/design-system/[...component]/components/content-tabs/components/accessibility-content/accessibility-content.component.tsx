@@ -1,11 +1,13 @@
 'use client';
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
-import { Grid, Item, Select } from '@westpac/ui';
+import { Grid, GridItem, Select } from '@westpac/ui';
 import { useId, useState } from 'react';
 
 import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
+import { ShortCode } from '@/components/component-blocks/components/short-code';
+import { foundationBlocksComponents } from '@/components/component-blocks/foundation-blocks';
 import { Section } from '@/components/content-blocks/section';
 import { Link, Text } from '@/components/content-blocks/typography';
 import { Code, Heading } from '@/components/document-renderer';
@@ -28,7 +30,11 @@ const FILTERS = [
   { text: 'Low contrast', value: 'low-contrast' },
 ] as const;
 
-export function AccessibilityContent({ accessibilitySections, accessibilityDemo }: AccessibilityContentProps) {
+export function AccessibilityContent({
+  accessibilitySections,
+  accessibilityDemo,
+  shortCodes,
+}: AccessibilityContentProps) {
   const [filter, setFilter] = useState<VisionFilterProps['value']>();
   const id = useId();
 
@@ -41,14 +47,14 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
               Colour impairment demonstration
             </Heading>
             <Grid>
-              <Item span={{ initial: 12, xsl: 11, sm: 8, md: 7, lg: 9 }}>
+              <GridItem span={{ initial: 12, xsl: 11, sm: 8, md: 7, lg: 9 }}>
                 <Text>
                   All components are designed and tested to ensure colour contrast ratios comply with the WCAG 2.1 AA
                   specification. Select a filter from the list below to see how this component would appear to someone
                   with a:{' '}
                   <Link href="/design-system/accessibility/colour-vision-impairment">colour vision impairment</Link>.
                 </Text>
-              </Item>
+              </GridItem>
             </Grid>
             <div className="flex items-center bg-light p-4">
               <label htmlFor={id} className="mr-[1rem] whitespace-nowrap">
@@ -77,7 +83,12 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
                     code: props => <Code className="my-4" enableLiveCode={false} {...props} />,
                   },
                 }}
-                componentBlocks={{}}
+                componentBlocks={{
+                  ...foundationBlocksComponents,
+                  shortCode: props => {
+                    return <ShortCode shortCodes={shortCodes} {...props} />;
+                  },
+                }}
               />
             </VisionFilter>
           </Container>
@@ -92,7 +103,13 @@ export function AccessibilityContent({ accessibilitySections, accessibilityDemo 
               <DocumentRenderer
                 document={content}
                 renderers={DOCUMENT_RENDERERS}
-                componentBlocks={{ colors: props => <Colors palette={props.palette} /> }}
+                componentBlocks={{
+                  ...foundationBlocksComponents,
+                  colors: props => <Colors palette={props.palette} />,
+                  shortCode: props => {
+                    return <ShortCode shortCodes={shortCodes} {...props} />;
+                  },
+                }}
               />
             </Container>
           </Section>

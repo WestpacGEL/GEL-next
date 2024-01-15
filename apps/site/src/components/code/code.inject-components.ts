@@ -47,7 +47,7 @@ export {
   Form,
   Selector,
   Grid,
-  Item,
+  GridItem,
   Heading,
 } from '@westpac/ui';
 
@@ -59,6 +59,7 @@ export {
   PauseIcon,
   AddCircleIcon,
   AddIcon,
+  RemoveIcon,
   TickCircleIcon,
   ArrowRightIcon,
   CalendarIcon,

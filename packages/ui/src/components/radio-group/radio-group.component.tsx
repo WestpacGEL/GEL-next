@@ -8,7 +8,7 @@ import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
 import { ErrorMessage, FormHint, FormLabel } from '../index.js';
 
-import { Radio } from './components/radio/radio.component.js';
+import { RadioGroupRadio } from './components/radio-group-radio/radio-group-radio.component.js';
 import { styles as radioGroupStyles } from './radio-group.styles.js';
 import { type RadioGroupContextState, type RadioGroupProps } from './radio-group.types.js';
 
@@ -93,4 +93,4 @@ export function RadioGroup({
     </div>
   );
 }
-RadioGroup.Radio = Radio;
+RadioGroup.Radio = RadioGroupRadio;

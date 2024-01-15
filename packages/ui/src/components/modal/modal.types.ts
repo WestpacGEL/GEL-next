@@ -1,3 +1,3 @@
-import { type BackdropProps, DialogProps } from './components/index.js';
+import { type ModalBackdropProps, ModalDialogProps } from './components/index.js';
 
-export type ModalProps = BackdropProps & DialogProps;
+export type ModalProps = ModalBackdropProps & ModalDialogProps;

@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
 import { IconProps } from '../icon/index.js';
 
@@ -9,6 +9,10 @@ export type ListProps = {
    * Tick list default value: "The following items are ticked"
    */
   assistiveText?: string;
+  /**
+   * <List.Item /> ReactNodes
+   */
+  children?: ReactNode;
   /**
    * The icon for list
    */

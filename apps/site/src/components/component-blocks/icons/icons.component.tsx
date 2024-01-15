@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@westpac/ui/button';
-import { Grid, Item } from '@westpac/ui/grid';
+import { Grid, GridItem } from '@westpac/ui/grid';
 import * as AllIcons from '@westpac/ui/icon';
 import { Input } from '@westpac/ui/input';
 import { Select } from '@westpac/ui/select';
@@ -58,16 +58,16 @@ export const Icons = () => {
         </div>
       </div>
       <Grid>
-        <Item span={12}>
+        <GridItem span={12}>
           <p className="text-right italic text-muted">{foundText}</p>
-        </Item>
+        </GridItem>
         {filteredIcons.map(({ key, Icon }) => (
-          <Item key={key} span={{ initial: 12, sm: 3, lg: 2 }}>
+          <GridItem key={key} span={{ initial: 12, sm: 3, lg: 2 }}>
             <div className="mb-2 flex flex-col items-center justify-center bg-white px-2 pb-3 pt-6 xsl:mb-4">
               <Icon look={look} className="mb-6" color="muted" />
               <span className="text-[0.6875rem] text-muted">{key}</span>
             </div>
-          </Item>
+          </GridItem>
         ))}
       </Grid>
     </div>

@@ -4,8 +4,8 @@ import React, { Children, ReactNode, cloneElement, isValidElement, useCallback, 
 
 import { ErrorMessage, FormHint, FormLabel } from '../index.js';
 
-import { InputAddOn } from './components/add-ons/add-ons.component.js';
-import { SupportingText } from './components/index.js';
+import { InputFieldSupportingText } from './components/index.js';
+import { InputFieldAddOn } from './components/input-field-add-ons/input-field-add-ons.component.js';
 import { styles } from './input-field.styles.js';
 import { type InputFieldProps } from './input-field.types.js';
 
@@ -99,18 +99,20 @@ export function InputField({
       {errorMessage && <ErrorMessage id={`${id}-error`} message={errorMessage} />}
       <div className="relative flex">
         {before && (
-          <InputAddOn position="before" size={size} inset={beforeInset} icon={beforeIcon} id={id}>
+          <InputFieldAddOn position="before" size={size} inset={beforeInset} icon={beforeIcon} id={id}>
             {beforeElement}
-          </InputAddOn>
+          </InputFieldAddOn>
         )}
         {renderChildren()}
         {after && (
-          <InputAddOn position="after" size={size} inset={afterInset} icon={afterIcon} id={id}>
+          <InputFieldAddOn position="after" size={size} inset={afterInset} icon={afterIcon} id={id}>
             {afterElement}
-          </InputAddOn>
+          </InputFieldAddOn>
         )}
       </div>
-      {supportingText && <SupportingText id={`${id}-supporting-text`}>{supportingText}</SupportingText>}
+      {supportingText && (
+        <InputFieldSupportingText id={`${id}-supporting-text`}>{supportingText}</InputFieldSupportingText>
+      )}
     </Tag>
   );
 }

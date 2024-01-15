@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 import { Node, TreeState } from 'react-stately';
 import { type VariantProps } from 'tailwind-variants';
 
@@ -7,6 +7,10 @@ import { styles } from './accordion-item.styles.js';
 type Variants = VariantProps<typeof styles>;
 
 export type AccordionItemProps<T = any> = {
+  /**
+   * Accordion.Item body content
+   */
+  children?: ReactNode;
   /**
    * Node from react-stately
    */

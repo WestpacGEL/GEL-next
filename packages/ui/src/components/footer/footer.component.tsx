@@ -3,7 +3,7 @@
 import React from 'react';
 import { useFocusRing } from 'react-aria';
 
-import { Grid, Item, VisuallyHidden } from '../index.js';
+import { Grid, GridItem, VisuallyHidden } from '../index.js';
 import {
   BOMMultibrandSmallLogo,
   BSAMultibrandSmallLogo,
@@ -55,17 +55,17 @@ export function Footer({
     <footer className={styles.base({ className })} {...props}>
       <div className={styles.wrapper()}>
         <Grid className={styles.topRow()}>
-          <Item span={12}>{children}</Item>
+          <GridItem span={12}>{children}</GridItem>
         </Grid>
         <Grid>
-          <Item span={{ initial: 12, md: 1 }}>
+          <GridItem span={{ initial: 12, md: 1 }}>
             {!hideLogo && (
               <a href={logoLink} className={styles.link()} {...focusProps}>
                 {srOnlyText && <VisuallyHidden>{srOnlyText}</VisuallyHidden>}
                 <Logo align="right" aria-label={logoAssistiveText} />
               </a>
             )}
-          </Item>
+          </GridItem>
         </Grid>
       </div>
     </footer>

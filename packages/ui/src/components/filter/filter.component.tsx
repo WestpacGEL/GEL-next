@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Buttons, Input } from './components/index.js';
+import { FilterButtons, FilterInput } from './components/index.js';
 import { type FilterProps } from './filter.types.js';
 
 export function Filter({ children, ...props }: FilterProps) {
@@ -10,5 +10,5 @@ export function Filter({ children, ...props }: FilterProps) {
     </div>
   );
 }
-Filter.Input = Input;
-Filter.Buttons = Buttons;
+Filter.Input = FilterInput;
+Filter.Buttons = FilterButtons;

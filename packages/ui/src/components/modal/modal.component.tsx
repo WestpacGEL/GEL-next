@@ -2,13 +2,13 @@
 
 import React from 'react';
 
-import { Backdrop, Dialog } from './components/index.js';
+import { ModalBackdrop, ModalDialog } from './components/index.js';
 import { type ModalProps } from './modal.types.js';
 
 export function Modal({ children, title, role, body, size, ...props }: ModalProps) {
   return (
-    <Backdrop {...props}>
-      <Dialog
+    <ModalBackdrop {...props}>
+      <ModalDialog
         onClose={props.isDismissable ? props.state.close : undefined}
         title={title}
         role={role}
@@ -16,9 +16,9 @@ export function Modal({ children, title, role, body, size, ...props }: ModalProp
         size={size}
       >
         {children}
-      </Dialog>
-    </Backdrop>
+      </ModalDialog>
+    </ModalBackdrop>
   );
 }
-Modal.Footer = Dialog.Footer;
-Modal.Body = Dialog.Body;
+Modal.Footer = ModalDialog.Footer;
+Modal.Body = ModalDialog.Body;

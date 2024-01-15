@@ -2,7 +2,7 @@ import { SpectrumTabsProps } from '@react-types/tabs';
 import { HTMLAttributes, ReactElement } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
-import { TabProps } from './components/index.js';
+import { TabsTabProps } from './components/index.js';
 import { styles } from './tabs.styles.js';
 
 type Variants = VariantProps<typeof styles>;
@@ -15,7 +15,7 @@ export type TabsProps<T = any> = SpectrumTabsProps<T> & {
   /**
    * Colors
    */
-  color?: TabProps['color'];
+  color?: TabsTabProps['color'];
   /**
    * Stretch the tab to fill the whole content
    */

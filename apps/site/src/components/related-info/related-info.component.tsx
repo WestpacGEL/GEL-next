@@ -1,5 +1,5 @@
 import { DocumentRenderer } from '@keystatic/core/renderer';
-import { Grid, Item } from '@westpac/ui';
+import { Grid, GridItem } from '@westpac/ui';
 import { ArrowRightIcon, CubeIcon, GenericFileIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -7,6 +7,7 @@ import { useSearchParams } from 'next/navigation';
 import { Container } from '@/app/design-system/components';
 import { type BrandKey } from '@/app/types/brand.types';
 
+import { foundationBlocksComponents } from '../component-blocks/foundation-blocks';
 import { Section } from '../content-blocks/section';
 import { Heading } from '../document-renderer';
 
@@ -25,7 +26,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
         </Heading>
         <Grid>
           {!relatedComponentsEmpty && (
-            <Item span={{ initial: 12, xsl: 4 }}>
+            <GridItem span={{ initial: 12, xsl: 4 }}>
               <h3 className="typography-body-8 flex items-center justify-between border-b border-neutral pb-3 font-bold">
                 Components
                 <CubeIcon color="muted" />
@@ -39,18 +40,22 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
                   );
                 })}
               </ul>
-            </Item>
+            </GridItem>
           )}
           {relatedArticles && (
-            <Item span={12} start={{ initial: 1, xsl: relatedComponentsEmpty ? 1 : 6 }}>
+            <GridItem span={12} start={{ initial: 1, xsl: relatedComponentsEmpty ? 1 : 6 }}>
               <h3 className="typography-body-8 flex items-center justify-between border-b border-neutral pb-3 font-bold">
                 Articles
                 <GenericFileIcon color="muted" />
               </h3>
               <div className="mt-3">
-                <DocumentRenderer document={relatedArticles} renderers={DOCUMENT_RENDERERS} />
+                <DocumentRenderer
+                  document={relatedArticles}
+                  renderers={DOCUMENT_RENDERERS}
+                  componentBlocks={foundationBlocksComponents}
+                />
               </div>
-            </Item>
+            </GridItem>
           )}
         </Grid>
       </Container>

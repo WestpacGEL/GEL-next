@@ -10,7 +10,7 @@ import { ErrorMessage, FormHint, FormLabel } from '../index.js';
 
 import { styles as checkboxStyles } from './checkbox-group.styles.js';
 import { type CheckboxGroupContextState, type CheckboxGroupProps } from './checkbox-group.types.js';
-import { Checkbox } from './components/checkbox/checkbox.component.js';
+import { CheckboxGroupCheckbox } from './components/checkbox-group-checkbox/checkbox-group-checkbox.component.js';
 
 export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
   orientation: 'vertical',
@@ -88,4 +88,4 @@ export function CheckboxGroup({
     </div>
   );
 }
-CheckboxGroup.Checkbox = Checkbox;
+CheckboxGroup.Checkbox = CheckboxGroupCheckbox;

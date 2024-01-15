@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { ButtonProps } from '../button/index.js';
@@ -8,6 +8,10 @@ import { styles } from './button-dropdown.styles.js';
 type Variants = VariantProps<typeof styles>;
 
 export type ButtonDropdownProps = {
+  /**
+   * ButtonDropdown body content
+   */
+  children?: ReactNode;
   /**
    * Size of the dropdown panel
    */

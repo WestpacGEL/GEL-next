@@ -1,7 +1,8 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useCallback, useState } from 'react';
 
-import { Button } from '../index.js';
+import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
+import { Button, Well } from '../index.js';
 
 import { ProgressRope } from './progress-rope.component.js';
 import { ProgressRopeProps } from './progress-rope.types.js';
@@ -41,12 +42,29 @@ export const Default: Story = {
     return (
       <div>
         <ProgressRope current={activeIndex} data={PROGRESS_ROPE_DATA} />
-        <div>
-          <h3>Helper Controls</h3>
-          <h4>Current: {activeIndex}</h4>
-          <Button onClick={() => setActiveIndex(state => --state)}>prev</Button>{' '}
-          <Button onClick={() => setActiveIndex(state => ++state)}>next</Button>
-        </div>
+        <Well className="flex items-center p-2 sm:p-2">
+          <div className="mr-2 flex items-center space-x-1">
+            <Button
+              iconBefore={ArrowLeftIcon}
+              soft
+              look="faint"
+              size="small"
+              onClick={() => setActiveIndex(state => --state)}
+            >
+              prev
+            </Button>{' '}
+            <Button
+              iconAfter={ArrowRightIcon}
+              soft
+              look="faint"
+              size="small"
+              onClick={() => setActiveIndex(state => ++state)}
+            >
+              next
+            </Button>
+          </div>
+          <code className="flex">Current: {activeIndex}</code>
+        </Well>
       </div>
     );
   },
@@ -97,12 +115,29 @@ export const GroupingSteps: Story = {
     return (
       <div>
         <ProgressRope current={activeIndex} data={PROGRESS_ROPE_DATA} />
-        <div>
-          <h3>Helper Controls</h3>
-          <h4>Current: {activeIndex}</h4>
-          <Button onClick={() => setActiveIndex(state => --state)}>prev</Button>{' '}
-          <Button onClick={() => setActiveIndex(state => ++state)}>next</Button>
-        </div>
+        <Well className="flex items-center p-2 sm:p-2">
+          <div className="mr-2 flex items-center space-x-1">
+            <Button
+              iconBefore={ArrowLeftIcon}
+              soft
+              look="faint"
+              size="small"
+              onClick={() => setActiveIndex(state => --state)}
+            >
+              prev
+            </Button>{' '}
+            <Button
+              iconAfter={ArrowRightIcon}
+              soft
+              look="faint"
+              size="small"
+              onClick={() => setActiveIndex(state => ++state)}
+            >
+              next
+            </Button>
+          </div>
+          <code className="flex">Current: {activeIndex}</code>
+        </Well>
       </div>
     );
   },

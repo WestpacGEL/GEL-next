@@ -1,12 +1,14 @@
 'use client';
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
-import { Button, Grid, Item } from '@westpac/ui';
+import { Button, Grid, GridItem } from '@westpac/ui';
 import { NewWindowIcon } from '@westpac/ui/icon';
 import { useMemo } from 'react';
 
 import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
+import { ShortCode } from '@/components/component-blocks/components/short-code';
+import { foundationBlocksComponents } from '@/components/component-blocks/foundation-blocks';
 import { ComponentPropsTable } from '@/components/component-props-table';
 import { Section } from '@/components/content-blocks/section';
 import { Code } from '@/components/content-blocks/typography';
@@ -25,6 +27,7 @@ export function CodeContent({
   subComponentProps,
   componentName,
   description,
+  shortCodes,
 }: CodeContentProps) {
   const sectionNames = useMemo(() => {
     const sections = codeSections?.filter(({ noTitle }) => !noTitle).map(({ title }) => ({ title }));
@@ -39,7 +42,7 @@ export function CodeContent({
       <section className="py-7 sm:pb-10 sm:pt-15">
         <Container>
           <Grid className="gap-y-5.5">
-            <Item span={{ initial: 12, sm: 7 }}>
+            <GridItem span={{ initial: 12, sm: 7 }}>
               {description && (
                 <p className="typography-body-8 mb-7 font-light leading-[1.5] sm:typography-body-7 sm:leading-[1.5]">
                   {description}
@@ -85,11 +88,11 @@ export function CodeContent({
                   )}
                 </tbody>
               </table>
-            </Item>
+            </GridItem>
             {sectionNames.length > 0 && (
-              <Item span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
+              <GridItem span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>
                 <TableOfContents contents={sectionNames} />
-              </Item>
+              </GridItem>
             )}
           </Grid>
         </Container>
@@ -103,7 +106,13 @@ export function CodeContent({
               <DocumentRenderer
                 document={content}
                 renderers={DOCUMENT_RENDERERS}
-                componentBlocks={{ colors: props => <Colors palette={props.palette} tab="code" /> }}
+                componentBlocks={{
+                  ...foundationBlocksComponents,
+                  colors: props => <Colors palette={props.palette} tab="code" />,
+                  shortCode: props => {
+                    return <ShortCode shortCodes={shortCodes} {...props} />;
+                  },
+                }}
               />
             </Container>
           </Section>
