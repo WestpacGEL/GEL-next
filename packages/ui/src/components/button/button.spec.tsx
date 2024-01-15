@@ -17,7 +17,7 @@ describe('Button', () => {
   it('renders the style correctly', () => {
     const style = styles({ look: 'primary', size: 'medium' });
     expect(style.base()).toBe(
-      'items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none typography-body-9 active-theme-rams:before:h-[0.125rem] px-2 py-[0.3125rem] border-primary bg-primary hover:bg-primary-70 active:bg-primary-50 active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-pop relative border text-white',
+      'items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none typography-body-9 px-2 py-[0.3125rem] active-theme-rams:before:h-[0.125rem] relative border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50 active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-pop',
     );
   });
 
