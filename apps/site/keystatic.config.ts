@@ -149,7 +149,7 @@ export default config({
               images: true,
               layouts: [[6, 6]],
               label: 'Design',
-              componentBlocks: {},
+              componentBlocks: foundationBlocks,
             }),
           }),
           {
@@ -433,10 +433,6 @@ export default config({
             [4, 4],
             [5, 5],
           ],
-          images: {
-            directory: 'public/images/short-codes/content',
-            publicPath: '/images/short-codes/content',
-          },
         }),
       },
     }),

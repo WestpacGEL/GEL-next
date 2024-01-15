@@ -7,6 +7,7 @@ import { useSearchParams } from 'next/navigation';
 import { Container } from '@/app/design-system/components';
 import { type BrandKey } from '@/app/types/brand.types';
 
+import { foundationBlocksComponents } from '../component-blocks/foundation-blocks';
 import { Section } from '../content-blocks/section';
 import { Heading } from '../document-renderer';
 
@@ -48,7 +49,11 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
                 <GenericFileIcon color="muted" />
               </h3>
               <div className="mt-3">
-                <DocumentRenderer document={relatedArticles} renderers={DOCUMENT_RENDERERS} />
+                <DocumentRenderer
+                  document={relatedArticles}
+                  renderers={DOCUMENT_RENDERERS}
+                  componentBlocks={foundationBlocksComponents}
+                />
               </div>
             </GridItem>
           )}

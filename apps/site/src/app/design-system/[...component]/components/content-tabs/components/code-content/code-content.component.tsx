@@ -8,6 +8,7 @@ import { useMemo } from 'react';
 import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
 import { ShortCode } from '@/components/component-blocks/components/short-code';
+import { foundationBlocksComponents } from '@/components/component-blocks/foundation-blocks';
 import { ComponentPropsTable } from '@/components/component-props-table';
 import { Section } from '@/components/content-blocks/section';
 import { Code } from '@/components/content-blocks/typography';
@@ -106,6 +107,7 @@ export function CodeContent({
                 document={content}
                 renderers={DOCUMENT_RENDERERS}
                 componentBlocks={{
+                  ...foundationBlocksComponents,
                   colors: props => <Colors palette={props.palette} tab="code" />,
                   shortCode: props => {
                     return <ShortCode shortCodes={shortCodes} {...props} />;

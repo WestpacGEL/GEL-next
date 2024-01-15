@@ -4,14 +4,8 @@ import { DocumentRenderer } from '@keystatic/core/renderer';
 import { useMemo } from 'react';
 
 import { Container } from '@/app/design-system/components';
-import { Colors } from '@/components/component-blocks/colors/colors.component';
-import { LinkList } from '@/components/component-blocks/components/link-list';
 import { ShortCode } from '@/components/component-blocks/components/short-code';
-import { Fonts } from '@/components/component-blocks/fonts/fonts.component';
-import { Icons } from '@/components/component-blocks/icons/icons.component';
-import { Logos } from '@/components/component-blocks/logos/logos.component';
-import { Pictograms } from '@/components/component-blocks/pictograms/pictograms.component';
-import { Symbols } from '@/components/component-blocks/symbols/symbols.component';
+import { foundationBlocksComponents } from '@/components/component-blocks/foundation-blocks';
 import { Section } from '@/components/content-blocks/section';
 import { Code, Heading, Image } from '@/components/document-renderer';
 import { RelatedInfo } from '@/components/related-info';
@@ -51,21 +45,10 @@ export function DesignContent({
                   },
                 }}
                 componentBlocks={{
-                  fonts: () => <Fonts />,
-                  icons: () => <Icons />,
-                  logos: () => <Logos />,
-                  pictograms: () => <Pictograms />,
-                  symbols: () => <Symbols />,
-                  colors: props => <Colors palette={props.palette} />,
-                  linkList: LinkList,
+                  ...foundationBlocksComponents,
                   shortCode: props => {
                     return <ShortCode shortCodes={shortCodes} {...props} />;
                   },
-                  designSystemBodyImage: props => (
-                    <div className="mb-5 mt-1">
-                      <Image {...props} />
-                    </div>
-                  ),
                 }}
               />
             </Container>
