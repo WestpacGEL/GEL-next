@@ -162,6 +162,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Brown Pro',
       'font-weight': '100 300',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -170,6 +171,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Brown Pro',
       'font-weight': '400 600',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -178,6 +180,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Brown Pro',
       'font-weight': '700 900',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -186,6 +189,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Aller',
       'font-weight': '100 600',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -194,6 +198,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Aller',
       'font-weight': '700 900',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -202,6 +207,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Source Sans Pro',
       'font-weight': '100 500',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -210,6 +216,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Source Sans Pro',
       'font-weight': '600',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -218,6 +225,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Source Sans Pro',
       'font-weight': '700 900',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -226,6 +234,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Dragon Bold',
       'font-weight': '100 900',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -234,6 +243,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Westpac',
       'font-weight': '100 900',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -242,6 +252,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Montserrat',
       'font-weight': '100 300',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -250,6 +261,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Montserrat',
       'font-weight': '400 600',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
   {
@@ -258,6 +270,7 @@ export const EXPECTED_FONT_FACES = [
       'font-family': 'Montserrat',
       'font-weight': '700 900',
       'font-style': 'normal',
+      'font-display': 'auto',
     },
   },
 ];
