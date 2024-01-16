@@ -10,7 +10,7 @@ export const styles = tv(
     variants: {
       size: {
         full: {
-          base: 'w-full flex-1',
+          base: 'max-h-screen w-full flex-1',
         },
         lg: {
           base: 'w-[56.25rem]',
