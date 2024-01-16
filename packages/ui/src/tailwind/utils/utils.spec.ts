@@ -103,6 +103,7 @@ describe('Utils testing', () => {
             'font-family': 'Westpac',
             'font-weight': '100 900',
             'font-style': 'normal',
+            'font-display': 'auto',
           },
         },
       ]);

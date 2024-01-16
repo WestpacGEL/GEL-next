@@ -115,6 +115,7 @@ const config: Config = withGEL({
   options: {
     brandFonts: {
       src: '/fonts',
+      display: 'block',
     },
   },
 });

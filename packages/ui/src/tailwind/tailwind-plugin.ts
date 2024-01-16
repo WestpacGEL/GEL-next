@@ -32,6 +32,7 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
         const fonts = createBrandFonts({
           src: options.brandFonts.src,
           brand: options.brandFonts?.brands,
+          display: options.brandFonts?.display,
         });
         fonts.forEach(font => addBase(font));
       }
