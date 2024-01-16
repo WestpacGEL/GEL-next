@@ -97,7 +97,7 @@ describe('Autocomplete', () => {
     expect(getByText('test')).toBeInTheDocument();
   });
 
-  it('renders the hint text', () => {
+  it('renders the error text', () => {
     const { getByText } = render(
       <Autocomplete aria-label="animals" errorMessage="test">
         <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
