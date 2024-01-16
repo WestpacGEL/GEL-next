@@ -1,8 +1,5 @@
-'use client';
-
 import { Grid, GridItem } from '@westpac/ui';
 import { AccessibilityPictogram, StopwatchPictogram, TruckPictogram } from '@westpac/ui/pictogram';
-import { useSearchParams } from 'next/navigation';
 
 import { Container } from '@/app/design-system/components';
 import { type BrandKey } from '@/app/types/brand.types';
@@ -10,9 +7,7 @@ import { type BrandKey } from '@/app/types/brand.types';
 import { BackgroundImage, Header } from './components';
 import { styles } from './hero.styles';
 
-export function Hero() {
-  const searchParams = useSearchParams();
-  const brand = (searchParams.get('brand') ?? 'wbc') as BrandKey;
+export function Hero({ brand }: { brand: BrandKey }) {
   const { base, heading } = styles({ brand });
   return (
     <section className={base()}>
