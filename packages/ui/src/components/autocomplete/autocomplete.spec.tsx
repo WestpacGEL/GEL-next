@@ -29,7 +29,7 @@ describe('Autocomplete', () => {
     expect(style.input()).toBe('appearance-none bg-[transparent] outline-none form-control-large');
     expect(style.label()).toBe('block text-left text-sm font-medium text-text');
     expect(style.outerWrapper()).toBe(
-      'form-control relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled group-[.input-field-after]:rounded-r-none group-[.input-field-before]:rounded-l-none group-[.input-field-after]:border-r-0 group-[.input-field-before]:border-l-0',
+      'form-control relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled group-[.input-group-after]:rounded-r-none group-[.input-group-before]:rounded-l-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:border-l-0',
     );
   });
 

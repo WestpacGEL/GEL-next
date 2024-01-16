@@ -37,4 +37,4 @@ code:
       slug: development-examples
 relatedComponents:
   - title: Input fields
-    slug: components/input-field
+    slug: components/input-group

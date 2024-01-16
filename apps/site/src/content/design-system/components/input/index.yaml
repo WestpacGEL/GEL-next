@@ -8,12 +8,6 @@ design:
       name: Text inputs
       slug: text-inputs
   - title:
-      name: Selects
-      slug: selects
-  - title:
-      name: Text areas
-      slug: text-areas
-  - title:
       name: User experience
       slug: user-experience
   - title:
@@ -41,4 +35,4 @@ code:
       slug: development-examples
 relatedComponents:
   - title: Input fields
-    slug: components/input-field
+    slug: components/input-group

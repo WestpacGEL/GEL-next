@@ -6,7 +6,7 @@ export const styles = tv(
       base: 'relative flex flex-1 flex-col',
       label: 'block text-left text-sm font-medium text-text',
       outerWrapper:
-        'form-control relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled group-[.input-field-after]:rounded-r-none group-[.input-field-before]:rounded-l-none group-[.input-field-after]:border-r-0 group-[.input-field-before]:border-l-0',
+        'form-control relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled group-[.input-group-after]:rounded-r-none group-[.input-group-before]:rounded-l-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:border-l-0',
       input: 'appearance-none bg-[transparent] outline-none',
       clearButton: 'flex cursor-default items-center justify-center text-text-50 hover:text-border-60',
       iconWrapper: 'flex flex-col justify-center',

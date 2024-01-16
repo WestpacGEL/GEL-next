@@ -112,8 +112,8 @@
     "./input": {
       "default": "./dist/components/input/index.js"
     },
-    "./input-field": {
-      "default": "./dist/components/input-field/index.js"
+    "./input-group": {
+      "default": "./dist/components/input-group/index.js"
     },
     "./link": {
       "default": "./dist/components/link/index.js"
