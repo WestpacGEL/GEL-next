@@ -13,7 +13,12 @@ import { Button } from '../../code.inject-components';
 import { styles as liveCodeStyles } from './live-code.styles';
 import { LiveCodeProps } from './live-code.types';
 
-export function LiveCode({ showCode = false, enableLiveCode = true, className }: LiveCodeProps) {
+export function LiveCode({
+  showCode = false,
+  showResponsiveDemo = false,
+  enableLiveCode = true,
+  className,
+}: LiveCodeProps) {
   const liveCodeToggleButton = useRef<HTMLButtonElement>(null);
   const live = useContext(LiveContext);
 
@@ -55,17 +60,19 @@ export function LiveCode({ showCode = false, enableLiveCode = true, className }:
   return (
     <div className={styles.base({ className })}>
       <div className={styles.displayWrapper({})}>
-        <Button
-          className="absolute right-2 top-2 z-10 py-0"
-          size="small"
-          soft
-          look="faint"
-          onClick={() => responsiveModalState.open()}
-        >
-          <div className="flex items-center gap-1">
-            <span>Demo</span> <NewWindowIcon size="xsmall" />
-          </div>
-        </Button>
+        {showResponsiveDemo && (
+          <Button
+            className="absolute right-2 top-2 z-10 py-0"
+            size="small"
+            soft
+            look="faint"
+            onClick={() => responsiveModalState.open()}
+          >
+            <div className="flex items-center gap-1">
+              <span>Demo</span> <NewWindowIcon size="xsmall" />
+            </div>
+          </Button>
+        )}
         {live.error ? (
           <div className={styles.error({})}>
             <AlertIcon />

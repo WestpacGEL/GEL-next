@@ -7,4 +7,5 @@ export type CodeProps = {
   language?: string;
   live?: boolean;
   showCode?: boolean;
+  showResponsiveDemo?: boolean;
 };
