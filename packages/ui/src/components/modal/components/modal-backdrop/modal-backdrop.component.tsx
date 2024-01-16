@@ -8,7 +8,7 @@ export function ModalBackdrop({ zIndex = 100, portalContainer, size, ...props }:
   const { children, state, className } = props;
 
   const ref = useRef(null);
-  const styles = backdropStyles({ className, fullSize: size === 'full' });
+  const styles = backdropStyles({ className, fullscreen: size === 'full' });
 
   const { modalProps, underlayProps } = useModalOverlay(props, state, ref);
 

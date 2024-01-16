@@ -6,7 +6,7 @@ export const styles = tv({
     modal: 'relative top-5 z-10 h-fit w-full animate-fadeInDown',
   },
   variants: {
-    fullSize: {
+    fullscreen: {
       true: {
         modal: 'top-0 flex flex-1 flex-col',
         base: 'flex flex-col p-0',

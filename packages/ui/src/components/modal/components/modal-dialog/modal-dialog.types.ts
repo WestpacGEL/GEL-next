@@ -19,9 +19,9 @@ export type ModalDialogProps = {
    */
   className?: string;
   /**
-   * Full size
+   * Full screen
    */
-  fullSize?: boolean;
+  fullscreen?: boolean;
   /**
    * onClose callback
    */
