@@ -1,8 +1,9 @@
 'use client';
 
 import { Button } from '@westpac/ui/button';
-import { getLogs } from './logs.utils';
 import { useEffect, useRef, useState } from 'react';
+
+import { getLogs } from './logs.utils';
 
 export const DownloadButton = () => {
   const ref = useRef<HTMLAnchorElement>(null);

@@ -8,7 +8,9 @@ export async function getLogs() {
       const result = await sql`SELECT * FROM logs;`;
       return result.rows;
     } catch (error) {
-      console.log(error);
+      if (error instanceof Error) {
+        return { error: error.message };
+      }
     }
   } else {
     return {};

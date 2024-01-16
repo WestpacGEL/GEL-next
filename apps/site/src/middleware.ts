@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function middleware(request: NextRequest) {
   // logging
@@ -13,6 +13,7 @@ export async function middleware(request: NextRequest) {
             )`;
       await sql`INSERT INTO logs(url, ip) VALUES (${request.url}, ${request.ip || ''})`;
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     }
   }
