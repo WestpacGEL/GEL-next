@@ -34,7 +34,7 @@ export {
   Autocomplete,
   Panel,
   ButtonDropdown,
-  InputField,
+  InputGroup,
   Modal,
   Field,
   ProgressRope,

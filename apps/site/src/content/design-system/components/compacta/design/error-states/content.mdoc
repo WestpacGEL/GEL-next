@@ -59,7 +59,7 @@ When a user attempts to progress through the form, errors are captured at this p
             </Field>
           </Form.Group>
           <Form.Group>
-            <InputField
+            <InputGroup
               name={`input-tertiary-${id}`}
               value={inputs[`input-tertiary-${id}`] || ''}
               onChange={e => {
@@ -73,7 +73,7 @@ When a user attempts to progress through the form, errors are captured at this p
               label="Amount to transfer"
             >
               <Input invalid />
-            </InputField>
+            </InputGroup>
           </Form.Group>
         </Form>
       )}

@@ -1,0 +1,526 @@
+#### Default usage example
+
+```jsx
+<InputGroup label="Label" hint="I am a hint" supportingText="I am supporting text" after={<Button>Check</Button>}>
+  <Input />
+</InputGroup>
+```
+
+#### Combination usage example
+
+```jsx
+<InputGroup
+  label="Label"
+  hint="I am a hint"
+  supportingText="I am supporting text"
+  after={<Button>Check</Button>}
+  before="$AUD"
+>
+  <Input />
+</InputGroup>
+```
+
+#### Fieldset as a tag
+
+```jsx
+<InputGroup
+  tag="fieldset"
+  label="Label"
+  hint="I am a hint"
+  supportingText="I am supporting text"
+  after={<Button>Check</Button>}
+  before="$AUD"
+>
+  <Input />
+</InputGroup>
+```
+
+#### Text Beforoe story example
+
+```jsx
+<InputGroup label="Text before" hint="I am a hint" supportingText="I am supporting text" before="$AUD">
+  <Input />
+</InputGroup>
+```
+
+#### Text Beforoe story example
+
+```jsx
+<InputGroup label="Text after" hint="I am a hint" supportingText="I am supporting text" after="Text">
+  <Input />
+</InputGroup>
+```
+
+#### Text After and Beforoe story example
+
+```jsx
+<InputGroup label="Text after" hint="I am a hint" supportingText="I am supporting text" before="$AUD" after="Text">
+  <Input />
+</InputGroup>
+```
+
+#### Textarea
+
+```jsx
+<Fragment>
+  <InputGroup
+    label="Icon before"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    before={{ icon: SearchIcon }}
+  >
+    <Input />
+  </InputGroup>
+  <InputGroup label="Icon after" hint="I am a hint" supportingText="I am supporting text" after={{ icon: SearchIcon }}>
+    <Input />
+  </InputGroup>
+  <InputGroup
+    label="Icon after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={{ icon: SearchIcon }}
+    before={{ icon: SearchIcon }}
+  >
+    <Input />
+  </InputGroup>
+</Fragment>
+```
+
+#### Icons in buttons
+
+```jsx
+<Fragment>
+  <InputGroup
+    label="Icon button before"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    before={{ inset: true, element: <Button look="link" iconAfter={VisibilityIcon} iconColor="muted" /> }}
+  >
+    <Input />
+  </InputGroup>
+  <InputGroup
+    label="Icon button after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={{ inset: true, element: <Button look="link" iconAfter={VisibilityIcon} iconColor="muted" /> }}
+  >
+    <Input />
+  </InputGroup>
+  <InputGroup
+    label="Icon button before and after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={{ inset: true, element: <Button look="link" iconAfter={VisibilityIcon} iconColor="muted" /> }}
+    before={{ inset: true, element: <Button look="link" iconAfter={VisibilityIcon} iconColor="muted" /> }}
+  >
+    <Input />
+  </InputGroup>
+</Fragment>
+```
+
+#### Button add ons
+
+```jsx
+<Fragment>
+  <InputGroup
+    label="Button before"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    before={<Button>Check</Button>}
+  >
+    <Input />
+  </InputGroup>
+  <InputGroup
+    label="Button after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={<Button>Check</Button>}
+  >
+    <Input />
+  </InputGroup>
+  <InputGroup
+    label="Button before and after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={<Button>Check</Button>}
+    before={<Button>Check</Button>}
+  >
+    <Input />
+  </InputGroup>
+  <InputGroup
+    label="Primary button after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={<Button look="primary">Check</Button>}
+  >
+    <Input />
+  </InputGroup>
+  <InputGroup
+    label="Faint button after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={<Button look="faint">Check</Button>}
+  >
+    <Input />
+  </InputGroup>
+</Fragment>
+```
+
+#### Select add ons
+
+```jsx
+<InputGroup
+  label="Select"
+  hint="I am a hint"
+  supportingText="I am supporting text"
+  before={
+    <Select>
+      <option>Select</option>
+    </Select>
+  }
+  after={
+    <Select>
+      <option>Select</option>
+    </Select>
+  }
+>
+  <Input />
+</InputGroup>
+```
+
+#### Textarea
+
+```jsx
+<InputGroup label="Text after" hint="I am a hint" supportingText="I am supporting text">
+  <Textarea />
+</InputGroup>
+```
+
+#### Different sizes
+
+```jsx
+ <Fragment>
+  {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
+    <div key={size} className="border-b border-b-border py-3">
+      <h3 className="typography-body-7 mb-4 font-bold">Size: {size}</h3>
+      <InputGroup
+        size={size}
+        label="Text"
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        before="$AUD"
+        after="Text"
+      >
+        <Input />
+      </InputGroup>
+
+      <InputGroup
+        size={size}
+        label="Icon"
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        before={{ icon: VisibilityIcon, inset: true }}
+        after={{ icon: VisibilityIcon, inset: true }}
+      >
+        <Input />
+      </InputGroup>
+
+      <InputGroup
+        size={size}
+        label="Icon Button"
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        before={{
+          element: <Button size={size} look="link" iconAfter={VisibilityIcon} iconColor="pop" />,
+          inset: true,
+        }}
+        after={{
+          element: <Button size={size} look="link" iconAfter={VisibilityIcon} iconColor="pop" />,
+          inset: true,
+        }}
+      >
+        <Input />
+      </InputGroup>
+
+      <InputGroup
+        size={size}
+        label="Button"
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        before={<Button>Check</Button>}
+        after={<Button>Check</Button>}
+      >
+        <Input />
+      </InputGroup>
+
+      <InputGroup
+        size={size}
+        label="Select"
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        before={
+          <Select>
+            <option value="Select">Select</option>
+          </Select>
+        }
+        after={
+          <Select>
+            <option value="Select">Select</option>
+          </Select>
+        }
+      >
+        <Input />
+      </InputGroup>
+    </div>
+  ))}
+</Fragment>
+```
+
+#### Invalid with error message/s
+
+```jsx
+<Fragment>
+  <InputGroup
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    errorMessage="If there is an error it can go here"
+    after={<Button>Check</Button>}
+  >
+    <Input invalid />
+  </InputGroup>
+  <InputGroup
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    errorMessage={['If there is an error it can go here', 'If there is another error it can go here']}
+    after={<Button>Check</Button>}
+    before={<Button>Check</Button>}
+  >
+    <Input invalid />
+  </InputGroup>
+  <InputGroup
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    errorMessage="If there is an error it can go here"
+    after={{ icon: SearchIcon }}
+    before={{ icon: SearchIcon }}
+  >
+    <Input invalid />
+  </InputGroup>
+  <InputGroup
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    errorMessage="If there is an error it can go here"
+    after="Text"
+    before="Text"
+  >
+    <Input invalid />
+  </InputGroup>
+  <InputGroup
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    errorMessage="If there is an error it can go here"
+    after={
+      <Select invalid>
+        <option>Select</option>
+      </Select>
+    }
+    before={
+      <Select invalid>
+        <option>Select</option>
+      </Select>
+    }
+  >
+    <Input invalid />
+  </InputGroup>
+</Fragment>
+```
+
+#### Input field with disabled state
+
+```jsx
+<Fragment>
+  <InputGroup
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={{ icon: SearchIcon }}
+    before={{ icon: SearchIcon }}
+  >
+    <Input disabled />
+  </InputGroup>
+  <InputGroup label="Text after" hint="I am a hint" supportingText="I am supporting text" before="$AUD" after="Text">
+    <Input disabled />
+  </InputGroup>
+</Fragment>
+```
+
+#### Input field with read-only state
+
+```jsx
+<Fragment>
+  <InputGroup
+    label="Text after"
+    hint="I am a hint"
+    supportingText="I am supporting text"
+    after={{ icon: SearchIcon }}
+    before={{ icon: SearchIcon }}
+  >
+    <Input readOnly />
+  </InputGroup>
+  <InputGroup label="Text after" hint="I am a hint" supportingText="I am supporting text" before="$AUD" after="Text">
+    <Input readOnly />
+  </InputGroup>
+</Fragment>
+```
+
+#### Number of dependents
+
+```jsx
+() => {
+  const [numberOfDependents, setNumberOfDependents] = useState(0);
+  const minusButton = useCallback(() => setNumberOfDependents(state => --state), []);
+  const plusButton = useCallback(() => setNumberOfDependents(state => ++state), []);
+
+  return (
+    <InputGroup
+      label="Number of dependents"
+      before={<Button onClick={minusButton}>-</Button>}
+      after={<Button onClick={plusButton}>+</Button>}
+    >
+      <Input value={numberOfDependents} />
+    </InputGroup>
+  );
+};
+```
+
+#### Masked characters in field
+
+```tsx
+() => {
+  const [typeInput, setTypeInput] = useState<'password' | 'text'>('password');
+  const toggleType = useCallback(() => setTypeInput(state => (state === 'password' ? 'text' : 'password')), []);
+
+  return (
+    <InputGroup
+      label="Password"
+      after={{
+        inset: true,
+        element: (
+          <Button
+            onClick={toggleType}
+            look="link"
+            iconAfter={typeInput === 'password' ? VisibilityIcon : VisibilityOffIcon}
+            iconColor="muted"
+          />
+        ),
+      }}
+    >
+      <Input type={typeInput} />
+    </InputGroup>
+  );
+};
+```
+
+#### Search with left icon and clear button
+
+```tsx
+() => {
+  const [inputValue, setInputValue] = useState<string>('');
+  const clearInput = useCallback(() => setInputValue(''), []);
+
+  return (
+    <InputGroup
+      label="Search"
+      before={{
+        icon: SearchIcon,
+      }}
+      after={{
+        inset: true,
+        element: <Button onClick={clearInput} look="link" iconAfter={CloseIcon} iconColor="muted" />,
+      }}
+    >
+      <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputGroup>
+  );
+};
+```
+
+#### Inline field validation flow
+
+```tsx
+() => {
+  const [inputValue, setInputValue] = useState<string>('');
+  const [validating, setValidating] = useState<boolean>(false);
+  const [error, setError] = useState<string>();
+  const validate = useCallback(() => {
+    setValidating(true);
+    setError(undefined);
+    setTimeout(() => {
+      if (inputValue !== '647453') {
+        setError('Routing number not found');
+      }
+      setValidating(false);
+    }, 1500);
+  }, [inputValue]);
+
+  return (
+    <InputGroup
+      label="Enter ABA routing number"
+      hint="For a valid response use: 647453, all other numbers will show the invalid response"
+      after={validating ? { icon: RefreshIcon } : <Button onClick={validate}>Check</Button>}
+      errorMessage={error}
+    >
+      <Input invalid={!!error} onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputGroup>
+  );
+};
+```
+
+#### Search Currency and frequency
+
+```tsx
+() => {
+  const [inputValue, setInputValue] = useState<string>('');
+
+  return (
+    <InputGroup
+      label="Salary"
+      before="$AUD"
+      after={
+        <Select>
+          <option>Select</option>
+          <option>Per Year</option>
+          <option>Per Month</option>
+          <option>Per Week</option>
+        </Select>
+      }
+    >
+      <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputGroup>
+  );
+};
+```
+
+#### Search Textarea with character count
+
+```tsx
+() => {
+  const MAX_LENGTH = 250;
+  const [inputValue, setInputValue] = useState<string>('');
+  const counterText = useMemo(() => {
+    const lengthLeft = MAX_LENGTH - inputValue.length;
+    return `${lengthLeft} remaining`;
+  }, [inputValue]);
+
+  return (
+    <InputGroup label="Comments" hint="I am a hint" supportingText={counterText}>
+      <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputGroup>
+  );
+};
+```
