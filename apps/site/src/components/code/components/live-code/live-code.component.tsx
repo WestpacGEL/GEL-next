@@ -28,6 +28,7 @@ export function LiveCode({
   const responsiveModalState = useOverlayTriggerState({});
 
   const styles = liveCodeStyles({
+    showResponsiveDemo,
     isCodeVisible,
     language: live.language as VariantProps<typeof liveCodeStyles>['language'],
   });
@@ -62,7 +63,7 @@ export function LiveCode({
       <div className={styles.displayWrapper({})}>
         {showResponsiveDemo && (
           <Button
-            className="absolute right-2 top-2 z-10 py-0"
+            className="absolute right-2 top-2 z-10"
             size="small"
             soft
             look="faint"
