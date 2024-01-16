@@ -1,3 +1,5 @@
+'use client';
+
 import { HamburgerMenuIcon } from '@westpac/ui/icon';
 import { type BrandKey } from '@westpac/ui/tailwind';
 import throttle from 'lodash.throttle';

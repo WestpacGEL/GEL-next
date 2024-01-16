@@ -2,6 +2,7 @@ import { Button, Grid, GridItem, Input } from '@westpac/ui';
 import { GithubIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
 
+import { BrandKey } from '@/app/types/brand.types';
 import {
   AtlassianLogo,
   FacebookLogo,
@@ -17,10 +18,15 @@ import {
 
 import { Hero, Section, SectionHeading, SectionItem } from './components';
 
-export default function DesignSystemHomePage() {
+export default function DesignSystemHomePage({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | undefined };
+}) {
+  const brand = (searchParams?.brand || 'wbc') as BrandKey;
   return (
     <>
-      <Hero />
+      <Hero brand={brand} />
       <Section>
         <SectionHeading>Accessible by design</SectionHeading>
         <Grid>
