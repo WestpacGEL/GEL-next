@@ -78,4 +78,102 @@ describe('Autocomplete', () => {
     });
     expect(textbox).toHaveValue('Kangaroo');
   });
+
+  it('renders the label', () => {
+    const { getByLabelText } = render(
+      <Autocomplete aria-label="animals" label="test">
+        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+      </Autocomplete>,
+    );
+    expect(getByLabelText('test')).toBeInTheDocument();
+  });
+
+  it('renders the hint text', () => {
+    const { getByText } = render(
+      <Autocomplete aria-label="animals" hintMessage="test">
+        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+      </Autocomplete>,
+    );
+    expect(getByText('test')).toBeInTheDocument();
+  });
+
+  it('renders the error text', () => {
+    const { getByText } = render(
+      <Autocomplete aria-label="animals" errorMessage="test">
+        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+      </Autocomplete>,
+    );
+    expect(getByText('test')).toBeInTheDocument();
+  });
+
+  it('show a message if no options are found', async () => {
+    const { getByRole, getByText } = render(
+      <Autocomplete aria-label="animals" noOptionsMessage="No options">
+        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+        <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
+        <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
+        <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
+        <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
+        <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+      </Autocomplete>,
+      // { container: document.body },
+    );
+    const textbox = getByRole('combobox');
+    const user = userEvent.setup();
+    await act(async () => {
+      await user.type(textbox, 'zz');
+    });
+    expect(getByText('No options')).toBeInTheDocument();
+  });
+
+  it('shows the footer when options are open', async () => {
+    const { getByRole, getByText } = render(
+      <Autocomplete aria-label="animals" footer="test">
+        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+        <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
+        <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
+        <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
+        <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
+        <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+      </Autocomplete>,
+      // { container: document.body },
+    );
+    const textbox = getByRole('combobox');
+    const user = userEvent.setup();
+    await act(async () => {
+      await user.type(textbox, 'an');
+    });
+    expect(getByText('test')).toBeInTheDocument();
+  });
+
+  it('show a message if no options are found and footer if both provided', async () => {
+    const { getByRole, getByText } = render(
+      <Autocomplete aria-label="animals" noOptionsMessage="No options" footer="footer">
+        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+        <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
+        <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
+        <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
+        <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
+        <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+      </Autocomplete>,
+      // { container: document.body },
+    );
+    const textbox = getByRole('combobox');
+    const user = userEvent.setup();
+    await act(async () => {
+      await user.type(textbox, 'zz');
+    });
+    expect(getByText('No options')).toBeInTheDocument();
+    expect(getByText('footer')).toBeInTheDocument();
+  });
+
+  it('shows progress indicator when loading state is true instead of search icon', () => {
+    const { getByLabelText, queryByLabelText } = render(
+      <Autocomplete aria-label="animals" loadingState={true}>
+        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+      </Autocomplete>,
+    );
+    expect(getByLabelText('Loading')).toBeInTheDocument();
+    expect(queryByLabelText('Search')).not.toBeInTheDocument();
+  });
 });

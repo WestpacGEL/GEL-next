@@ -49,6 +49,7 @@ export {
   Grid,
   GridItem,
   Heading,
+  ProgressIndicator,
 } from '@westpac/ui';
 
 export {

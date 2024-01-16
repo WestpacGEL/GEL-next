@@ -40,6 +40,10 @@ export type AutocompleteProps<T extends object> = {
    */
   isDisabled?: Variants['isDisabled'];
   /**
+   * Whether the autocomplete should show a spinner to indicate waiting for data from server
+   */
+  loadingState?: boolean;
+  /**
    * No option message
    */
   noOptionsMessage?: ReactNode;

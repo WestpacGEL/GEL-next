@@ -6,7 +6,7 @@ import { mergeProps, useButton, useComboBox, useFilter, useFocusRing, useSearchF
 import { useComboBoxState, useSearchFieldState } from 'react-stately';
 
 import { ClearIcon, SearchIcon } from '../icon/index.js';
-import { ErrorMessage, FormHint, FormLabel } from '../index.js';
+import { ErrorMessage, FormHint, FormLabel, ProgressIndicator } from '../index.js';
 
 import { styles as autocompleteStyles } from './autocomplete.styles.js';
 import { type AutocompleteProps } from './autocomplete.types.js';
@@ -39,6 +39,7 @@ export function Autocomplete<T extends object>({
   noOptionsMessage,
   className,
   width = 'full',
+  loadingState,
   ...props
 }: AutocompleteProps<T>) {
   const { contains } = useFilter({ sensitivity: 'base' });
@@ -111,9 +112,15 @@ export function Autocomplete<T extends object>({
 
       <div ref={outerRef} className={styles.outerWrapper()}>
         <div className={styles.iconWrapper()}>
-          <SearchIcon aria-hidden size={iconSize} />
+          {loadingState ? <ProgressIndicator size={iconSize} /> : <SearchIcon aria-hidden size={iconSize} />}
         </div>
-        <input {...mergeProps(inputProps, inputFocusProps)} ref={inputRef} className={styles.input()} />
+        <input
+          {...mergeProps(inputProps, inputFocusProps)}
+          ref={inputRef}
+          className={styles.input()}
+          aria-live="polite"
+          aria-busy={loadingState}
+        />
 
         <button
           {...mergeProps(buttonProps, focusProps)}

@@ -82,6 +82,9 @@
     "./field": {
       "default": "./dist/components/field/index.js"
     },
+    "./filter": {
+      "default": "./dist/components/filter/index.js"
+    },
     "./flexi-cell": {
       "default": "./dist/components/flexi-cell/index.js"
     },
@@ -141,6 +144,9 @@
     },
     "./progress-bar": {
       "default": "./dist/components/progress-bar/index.js"
+    },
+    "./progress-indicator": {
+      "default": "./dist/components/progress-indicator/index.js"
     },
     "./progress-rope": {
       "default": "./dist/components/progress-rope/index.js"

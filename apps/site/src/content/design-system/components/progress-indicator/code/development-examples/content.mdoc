@@ -1,0 +1,35 @@
+### Progress Indicator
+
+```tsx
+() => {
+  return <ProgressIndicator />;
+};
+```
+
+### Progress Indicator Sizes
+
+```tsx
+() => {
+  return (
+    <>
+      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
+        <ProgressIndicator size={size} className="mr-2" />
+      ))}
+    </>
+  );
+};
+```
+
+### Inverted Progress Indicator
+
+```tsx
+() => {
+  return (
+    <div className="bg-black w-fit">
+      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
+        <ProgressIndicator size={size} inverted className="mr-2" />
+      ))}
+    </div>
+  );
+};
+```

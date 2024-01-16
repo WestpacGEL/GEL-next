@@ -205,3 +205,54 @@ export const FixedWidths = () => {
     </div>
   );
 };
+
+/**
+ * > Dynamic collections example
+ */
+export const DynamicCollections = () => {
+  const options = [
+    { id: 'red panda', name: 'Red Panda' },
+    { id: 'cat', name: 'Cat' },
+    { id: 'dog', name: 'Dog' },
+    { id: 'aardvark', name: 'Aardvark' },
+    { id: 'kangaroo', name: 'Kangaroo' },
+    { id: 'snake', name: 'Snake' },
+  ];
+  return (
+    <div className="flex flex-col gap-2">
+      <Autocomplete aria-label="Animals" defaultItems={options}>
+        {item => <Autocomplete.Item>{item.name}</Autocomplete.Item>}
+      </Autocomplete>
+    </div>
+  );
+};
+
+/**
+ * > Dynamic collections with Async call
+ */
+export const AsyncDynamicCollections = () => {
+  // For example purposes async call is made on focus of input rather than when page loads
+  const [loading, setLoading] = useState(false);
+  const [items, setItems] = useState<{ id: string; name: string }[]>([]);
+  const getCollection = async () => {
+    setLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    setItems([
+      { id: 'red panda', name: 'Red Panda' },
+      { id: 'cat', name: 'Cat' },
+      { id: 'dog', name: 'Dog' },
+      { id: 'aardvark', name: 'Aardvark' },
+      { id: 'kangaroo', name: 'Kangaroo' },
+      { id: 'snake', name: 'Snake' },
+    ]);
+    setLoading(false);
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      <Autocomplete items={items} onFocus={getCollection} loadingState={loading}>
+        {item => <Autocomplete.Item>{item.name}</Autocomplete.Item>}
+      </Autocomplete>
+    </div>
+  );
+};
