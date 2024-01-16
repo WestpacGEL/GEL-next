@@ -83,18 +83,20 @@ export const Sizes: Story = {
     const stateSM = useOverlayTriggerState({});
     const stateMD = useOverlayTriggerState({});
     const stateLG = useOverlayTriggerState({});
+    const stateFull = useOverlayTriggerState({});
 
     const states = useMemo(() => {
       return {
         sm: stateSM,
         md: stateMD,
         lg: stateLG,
+        full: stateFull,
       };
-    }, [stateSM, stateMD, stateLG]);
+    }, [stateSM, stateMD, stateLG, stateFull]);
 
     return (
       <div className="flex gap-2">
-        {(['sm', 'md', 'lg'] as const).map(size => (
+        {(['sm', 'md', 'lg', 'full'] as const).map(size => (
           <Fragment key={size}>
             <Modal {...props} size={size} state={states[size]} title={`Modal ${size}`}>
               <Modal.Body>{children}</Modal.Body>

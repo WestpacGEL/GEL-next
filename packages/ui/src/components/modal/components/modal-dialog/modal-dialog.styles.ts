@@ -3,12 +3,15 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'relative mx-auto max-w-full overflow-hidden rounded bg-white outline-none',
+      base: 'relative mx-auto flex max-w-full flex-col overflow-hidden rounded bg-white outline-none',
       title: 'border-b border-b-heading pb-2 pl-4 pr-5 pt-3 text-lg font-medium',
       close: 'absolute right-1 top-1 block p-1',
     },
     variants: {
       size: {
+        full: {
+          base: 'w-full flex-1',
+        },
         lg: {
           base: 'w-[56.25rem]',
         },
