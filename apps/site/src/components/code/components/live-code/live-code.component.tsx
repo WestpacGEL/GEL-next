@@ -15,7 +15,7 @@ import { LiveCodeProps } from './live-code.types';
 
 export function LiveCode({
   showCode = false,
-  showResponsiveDemo = false,
+  showResponsiveDemo: _showResponsiveDemo = false,
   enableLiveCode = true,
   className,
 }: LiveCodeProps) {
@@ -26,10 +26,10 @@ export function LiveCode({
   const [localCopy, setLocalCopy] = useState<string>(live.code);
   const [isCodeVisible, toggleIsCodeVisible] = useState(showCode);
   const responsiveModalState = useOverlayTriggerState({});
-  const finalShowResponsiveDemo = live.language !== 'html' && showResponsiveDemo;
+  const showResponsiveDemo = live.language !== 'html' && _showResponsiveDemo;
 
   const styles = liveCodeStyles({
-    showResponsiveDemo: finalShowResponsiveDemo,
+    showResponsiveDemo,
     isCodeVisible,
     language: live.language as VariantProps<typeof liveCodeStyles>['language'],
   });
@@ -62,7 +62,7 @@ export function LiveCode({
   return (
     <div className={styles.base({ className })}>
       <div className={styles.displayWrapper({})}>
-        {finalShowResponsiveDemo && (
+        {showResponsiveDemo && (
           <Button
             className="absolute right-2 top-2 z-10"
             size="small"
