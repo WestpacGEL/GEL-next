@@ -16,7 +16,7 @@ export const styles = tv({
     language: {
       html: {
         base: 'bg-[transparent]',
-        displayWrapper: 'p-0',
+        displayWrapper: '!p-0',
       },
     },
     showResponsiveDemo: {
