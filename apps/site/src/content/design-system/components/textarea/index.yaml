@@ -6,7 +6,7 @@ namedExport:
   discriminant: false
 design:
   - title:
-      name: Text areas
+      name: Sizes
       slug: text-areas
     noTitle: false
   - title:
