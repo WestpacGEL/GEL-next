@@ -1,22 +1,34 @@
-import { AlertIcon, ArrowRightIcon } from '@westpac/ui/icon';
+import { AlertIcon, ArrowRightIcon, NewWindowIcon } from '@westpac/ui/icon';
 import copy from 'clipboard-copy';
 import { themes } from 'prism-react-renderer';
 import { KeyboardEvent, useCallback, useContext, useId, useRef, useState } from 'react';
 import { LiveContext, LiveEditor, LivePreview } from 'react-live';
+import { useOverlayTriggerState } from 'react-stately';
 import { VariantProps } from 'tailwind-variants';
+
+import { ResponsiveModal } from '@/app/design-system/[...component]/components/content-tabs/components/responsive-modal-button';
+
+import { Button } from '../../code.inject-components';
 
 import { styles as liveCodeStyles } from './live-code.styles';
 import { LiveCodeProps } from './live-code.types';
 
-export function LiveCode({ showCode = false, enableLiveCode = true, className }: LiveCodeProps) {
+export function LiveCode({
+  showCode = false,
+  showResponsiveDemo = false,
+  enableLiveCode = true,
+  className,
+}: LiveCodeProps) {
   const liveCodeToggleButton = useRef<HTMLButtonElement>(null);
   const live = useContext(LiveContext);
 
   const liveOnChange = live.onChange;
   const [localCopy, setLocalCopy] = useState<string>(live.code);
   const [isCodeVisible, toggleIsCodeVisible] = useState(showCode);
+  const responsiveModalState = useOverlayTriggerState({});
 
   const styles = liveCodeStyles({
+    showResponsiveDemo,
     isCodeVisible,
     language: live.language as VariantProps<typeof liveCodeStyles>['language'],
   });
@@ -49,6 +61,19 @@ export function LiveCode({ showCode = false, enableLiveCode = true, className }:
   return (
     <div className={styles.base({ className })}>
       <div className={styles.displayWrapper({})}>
+        {showResponsiveDemo && (
+          <Button
+            className="absolute right-2 top-2 z-10"
+            size="small"
+            soft
+            look="faint"
+            onClick={() => responsiveModalState.open()}
+          >
+            <div className="flex items-center gap-1">
+              <span>Demo</span> <NewWindowIcon size="xsmall" />
+            </div>
+          </Button>
+        )}
         {live.error ? (
           <div className={styles.error({})}>
             <AlertIcon />
@@ -89,6 +114,9 @@ export function LiveCode({ showCode = false, enableLiveCode = true, className }:
           />
         </div>
       )}
+      <ResponsiveModal size="full" onClose={responsiveModalState.close} state={responsiveModalState}>
+        <LivePreview aria-label="Rendered code snippet example" />
+      </ResponsiveModal>
     </div>
   );
 }

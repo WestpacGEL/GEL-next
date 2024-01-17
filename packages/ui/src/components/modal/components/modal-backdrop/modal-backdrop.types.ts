@@ -1,6 +1,8 @@
 import { type AriaModalOverlayProps } from 'react-aria';
 import { type OverlayTriggerState } from 'react-stately';
 
+import { ModalDialogProps } from '../index.js';
+
 export type ModalBackdropProps = {
   /**
    * Inner part of backdrop
@@ -14,6 +16,10 @@ export type ModalBackdropProps = {
    * Element where backdrop will be placed
    */
   portalContainer?: Element;
+  /**
+   * size
+   */
+  size?: ModalDialogProps['size'];
   /**
    * OverlayTriggerState props
    */

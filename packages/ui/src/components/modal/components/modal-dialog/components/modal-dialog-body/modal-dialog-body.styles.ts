@@ -1,5 +1,5 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'px-4 py-3',
+  base: 'flex-1 overflow-auto px-4 py-3',
 });
