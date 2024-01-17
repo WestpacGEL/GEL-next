@@ -4,4 +4,5 @@ export type CodeProps = {
   enableLiveCode?: boolean;
   language?: string;
   showCode?: boolean;
+  showResponsiveDemo?: boolean;
 };

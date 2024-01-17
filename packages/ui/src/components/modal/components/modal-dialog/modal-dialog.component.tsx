@@ -11,14 +11,14 @@ import { type ModalDialogProps } from './modal-dialog.types.js';
 export function ModalDialog({ className, body, onClose, size = 'md', ...props }: ModalDialogProps) {
   const { children } = props;
   const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = dialogStyles({ className, size, isFocusVisible });
+  const styles = dialogStyles({ size, isFocusVisible });
 
   const ref = useRef(null);
 
   const { dialogProps, titleProps } = useDialog(props, ref);
 
   return (
-    <div {...dialogProps} ref={ref} className={styles.base()}>
+    <div {...dialogProps} ref={ref} className={styles.base({ className })}>
       {onClose && (
         <button className={styles.close()} onClick={onClose} aria-label="Close modal" {...focusProps}>
           <CloseIcon className="block" size="small" />

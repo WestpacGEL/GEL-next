@@ -5,4 +5,12 @@ export const styles = tv({
     base: 'fixed inset-0 z-50 flex animate-fadeIn justify-center overflow-y-auto bg-black/50 p-2',
     modal: 'relative top-5 z-10 h-fit w-full animate-fadeInDown',
   },
+  variants: {
+    fullscreen: {
+      true: {
+        modal: 'top-0 flex flex-1 flex-col',
+        base: 'flex flex-col p-0',
+      },
+    },
+  },
 });
