@@ -5,13 +5,7 @@ export async function middleware(request: NextRequest) {
   // logging
   if (process.env.NODE_ENV === 'production') {
     try {
-      await sql`CREATE TABLE IF NOT EXISTS logs (
-                id SERIAL PRIMARY KEY,
-                time TIMESTAMPTZ DEFAULT Now(),
-                url TEXT,
-                ip TEXT
-            )`;
-      await sql`INSERT INTO logs(url, ip) VALUES (${request.url}, ${request.ip || ''})`;
+      sql`INSERT INTO logs(url, ip) VALUES (${request.url}, ${request.ip || ''})`;
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
