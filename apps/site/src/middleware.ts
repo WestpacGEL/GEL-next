@@ -1,6 +1,17 @@
+import { sql } from '@vercel/postgres';
 import { NextRequest, NextResponse } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
+  // logging
+  if (process.env.NODE_ENV === 'production') {
+    try {
+      sql`INSERT INTO logs(url, ip) VALUES (${request.url}, ${request.ip || ''})`;
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error);
+    }
+  }
+
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
 
   // We need unsafe-inline for style-src in order to make nextjs/image to work

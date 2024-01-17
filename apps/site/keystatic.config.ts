@@ -3,6 +3,7 @@ import { GitHubConfig, LocalConfig, collection, config, fields, singleton } from
 
 import { ArticleComponentBlocks } from '@/components/component-blocks/article-component-blocks';
 import { foundationBlocks } from '@/components/component-blocks/foundation-blocks';
+import { logs } from '@/components/component-blocks/logs/logs.preview';
 
 // storage option for Keystatic.
 const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
@@ -80,6 +81,16 @@ export default config({
         }),
         currentVersion: fields.text({
           label: 'current gel version',
+        }),
+      },
+    }),
+    logs: singleton({
+      label: 'System Logs',
+      path: 'src/content/logs/',
+      schema: {
+        document: fields.document({
+          label: 'Logs',
+          componentBlocks: { logs },
         }),
       },
     }),
