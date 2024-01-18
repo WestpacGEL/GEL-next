@@ -19,8 +19,8 @@ design:
       slug: icons
     noTitle: false
   - title:
-      name: Input group examples
-      slug: input-group-examples
+      name: Add-on types
+      slug: add-on-types
     noTitle: false
   - title:
       name: Input group sizes
