@@ -1,8 +1,8 @@
 name: Input groups copy
 description: >-
   The input group component contains elements that can be used with form inputs
-  to improve usability and streamline form completion. These include add-ons and
-  supporting text.
+  to improve usability and streamline form completion. These include add-ons,
+  icons and supporting text.
 namedExport:
   discriminant: false
 design:
