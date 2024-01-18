@@ -39,6 +39,8 @@ relatedComponents:
     slug: components/input-group
   - title: Selects
     slug: /design system/select
+  - title: Text areas
+    slug: components/textarea
 code:
   - title:
       name: Development examples
