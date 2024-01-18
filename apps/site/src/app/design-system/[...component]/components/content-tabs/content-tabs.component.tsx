@@ -2,7 +2,7 @@
 
 import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { Key, useCallback, useMemo } from 'react';
+import { Key, useCallback, useLayoutEffect, useMemo, useRef } from 'react';
 
 import { AccessibilityContent, CodeContent, DesignContent, Tabs } from './components';
 import { type ContentTabsProps } from './content-tabs.types';
@@ -54,6 +54,16 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
   const brand = searchParams.get('brand') ?? 'wbc';
   const tab = searchParams.get('tab') ?? 'design';
 
+  const tabPanelRef = useRef<HTMLDivElement>(null);
+
+  /**
+   * Scroll to the element with the id of the focus query param.
+   */
+  useLayoutEffect(() => {
+    const element = tabPanelRef.current?.querySelector(location.hash);
+    element?.scrollIntoView({ behavior: 'smooth', inline: 'nearest' });
+  }, []);
+
   const handleChange = useCallback(
     (key: Key) => {
       const isLargeScreen = window.innerWidth > parseInt(BREAKPOINTS.lg, 10);
@@ -90,7 +100,7 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
     <Tabs aria-label="GEL design system content" selectedKey={tab} onSelectionChange={handleChange}>
       {filteredTabs.map(tab => (
         <Tabs.Panel title={tab.label} key={tab.key}>
-          <div className="flex-1 bg-background">
+          <div className="flex-1 bg-background" ref={tabPanelRef}>
             <TabPanelByKey tabKey={tab.key} content={tab.key === 'code' ? { ...content, description: '' } : content} />
           </div>
         </Tabs.Panel>
