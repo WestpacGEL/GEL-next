@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -212,6 +216,9 @@ importers:
       framer-motion:
         specifier: ~10.12.16
         version: 10.12.16(react-dom@18.2.0)(react@18.2.0)
+      lodash.throttle:
+        specifier: ~4.1.1
+        version: 4.1.1
       react-aria:
         specifier: ~3.25.0
         version: 3.25.0(react-dom@18.2.0)(react@18.2.0)
@@ -285,6 +292,9 @@ importers:
       '@types/lodash-es':
         specifier: ~4.17.8
         version: 4.17.8
+      '@types/lodash.throttle':
+        specifier: ~4.1.7
+        version: 4.1.7
       '@types/prettier':
         specifier: ~2.7.3
         version: 2.7.3
@@ -17788,7 +17798,3 @@ packages:
   /zwitch@1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
     dev: false
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false

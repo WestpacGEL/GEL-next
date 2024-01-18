@@ -45,3 +45,5 @@ export * from './heading/index.js';
 export * from './pass-code/index.js';
 export * from './pass-code-view/index.js';
 export * from './progress-indicator/index.js';
+export * from './header/index.js';
+export * from './footer/index.js';
