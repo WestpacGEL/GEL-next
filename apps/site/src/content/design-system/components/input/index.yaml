@@ -35,8 +35,10 @@ accessibility:
       name: Accessibility API
       slug: accessibility-api
 relatedComponents:
-  - title: Input fields
+  - title: Input group
     slug: components/input-group
+  - title: Selects
+    slug: /design system/select
 code:
   - title:
       name: Development examples
