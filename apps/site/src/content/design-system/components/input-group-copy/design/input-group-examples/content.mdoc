@@ -67,16 +67,8 @@ before={
         <Input />
       </InputGroup>
 
-      <InputGroup
-        name="example-button"
-        label="Filter by name"
-        before={<Button onClick={() => setValue(value => value - 1)}>-</Button>}
-        after={<Button onClick={() => setValue(value => value + 1)}>+</Button>}
-      >
-        <Input value={value} onChange={event => setValue(event.target.value)} />
-      </InputGroup>
 
- <InputGroup name="example-text" label="Text add-ons" before={<Button>Go</Button>} after={<Button>Go</Button>}>
+ <InputGroup name="example-text" label="Button add-ons" before={<Button>Label</Button>} after={<Button>Label</Button>}>
         <Input defaultValue="User input text" />
       </InputGroup>
     </Fragment>
