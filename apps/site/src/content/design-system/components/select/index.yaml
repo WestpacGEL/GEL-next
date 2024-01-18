@@ -6,8 +6,8 @@ namedExport:
   discriminant: false
 design:
   - title:
-      name: Selects
-      slug: selects
+      name: Sizes
+      slug: sizes
     noTitle: false
   - title:
       name: User experience
