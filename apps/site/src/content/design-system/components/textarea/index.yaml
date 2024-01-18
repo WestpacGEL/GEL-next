@@ -7,7 +7,7 @@ namedExport:
 design:
   - title:
       name: Sizes
-      slug: text-areas
+      slug: sizes
     noTitle: false
   - title:
       name: User experience
