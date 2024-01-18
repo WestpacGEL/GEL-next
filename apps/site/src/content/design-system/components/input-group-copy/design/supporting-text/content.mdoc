@@ -11,8 +11,6 @@ Supporting text sits below the field, it can be a character count, or validated 
 ### Usage examples
 
 ```tsx
-{
-  args: {},
   render: () => {
     const [inputValue, setInputValue] = useState<string>('');
     const counterText = useMemo(() => {
@@ -27,5 +25,4 @@ Supporting text sits below the field, it can be a character count, or validated 
       }) => setInputValue(value)} value={inputValue} />
       </InputGroup>;
   }
-}
 ```
