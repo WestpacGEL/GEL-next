@@ -57,7 +57,7 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
   const tabPanelRef = useRef<HTMLDivElement>(null);
 
   /**
-   * Scroll to the element with the id of the focus query param.
+   * Scroll to the element when hash is present
    */
   useLayoutEffect(() => {
     const element = tabPanelRef.current?.querySelector(location.hash);
