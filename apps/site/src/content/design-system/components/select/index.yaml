@@ -21,6 +21,10 @@ design:
       name: Dos and don’ts
       slug: dos-and-donts
     noTitle: false
+  - title:
+      name: Fixed widths
+      slug: fixed-widths
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
