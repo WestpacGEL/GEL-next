@@ -1,8 +1,10 @@
-In order to be most effective input fields must focus on usability and accessibility above all else.
+In order to be most effective, Input fields (including [Inputs](/components/input) and [Selects](/components/select)) must focus on usability and accessibility above all else. Like every component in this system, our design decisions are driven by what will provide the most robust solution across all scenarios.
+
+These components are designed to be stacked and do not work so well in column based executions as long wrapping labels, and hint text length can create misalignment when fields are horizontally laid out.
 
 ### Borders
 
-We use a solid border for text areas as it is simple and universally understood. Using single lines as an input 'field' undermines the integrity of the affordance making it difficult to recognise. These fields can be easily confused with horizontal rules, that are often used in design to denote a break in content or a new section. Replacing the border also affects those with low vision (see the Text Inputs accessibility tab for more).
+We use a solid border as it is simple and universally understood. Using single lines as an input 'field' undermines the integrity of the affordance making it difficult to recognise. These fields can be easily confused with horizontal rules, that are often used in design to denote a break in content or a new section. Replacing the border also affects those with low vision (see the Text Inputs accessibility tab for more).
 
 ### Placeholder text
 
@@ -12,8 +14,8 @@ As placeholder text disappears once the field is in focus, it also places increa
 
 ### Labels
 
-We don't use floating labels. Floating labels often start off as placeholder text so inherit some of those issues then add others such as restrictions on label length (when a label is longer than the input field), hint text location challenges, and consistency with error validation.
+We don't use floating labels. Floating labels often start off as placeholder text so inherit some of those issues described above. Additionally floating labels come with restrictions on label length (when a label is longer than the input field), hint text location challenges, and consistency with error validation.
 
-### Hint text
+### Hint text and error messages
 
-We do place hint text directly under the input label for context. This also ensures on mobile the hint text is visible ‘on canvas’ and is not obscured by any select boxes or keypads when activated.
+We do place hint text and errors messages directly under the input label for context. This approach also guarantees that on mobile devices, the hint text or error message remains visible and is not hidden by activated select boxes or keypads.
