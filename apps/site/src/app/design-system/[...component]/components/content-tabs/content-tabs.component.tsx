@@ -66,7 +66,7 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
       const element = tabPanelRef.current?.querySelector(hash);
       element?.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'start' });
     }
-  }, [tab]);
+  }, [tab, pathname]);
 
   const handleChange = useCallback(
     (key: Key) => {
