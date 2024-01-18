@@ -2,6 +2,22 @@ Use fix width selects to help indicate the length of the data required. For exam
 
 ```tsx
 <div className="flex flex-col gap-2">
+<Select>
+  <React.Fragment key=".0">
+    <option value="option-1">
+      option 1
+    </option>
+    <option value="option-2">
+      option 2
+    </option>
+    <option value="option-3">
+      option 3
+    </option>
+    <option value="option-4">
+      option 4
+    </option>
+  </React.Fragment>
+</Select>
    <Select  placeholder="1"  size="medium" width="1"/>
    <Select  placeholder="2"  size="medium" width="2"/>
    <Select  placeholder="3"  size="medium" width="3"/>
