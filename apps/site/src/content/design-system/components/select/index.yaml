@@ -35,8 +35,12 @@ accessibility:
       name: Accessibility API
       slug: accessibility-api
 relatedComponents:
-  - title: Input fields
+  - title: Inputs
+    slug: components/input
+  - title: Input groups
     slug: components/input-group
+  - title: Text areas
+    slug: components/textarea
 code:
   - title:
       name: Development examples
