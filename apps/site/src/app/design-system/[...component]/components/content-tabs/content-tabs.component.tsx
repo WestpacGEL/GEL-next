@@ -60,7 +60,7 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
    * Scroll to the element when hash is present
    */
   useEffect(() => {
-    const hash = location.hash.replace(/\?brand=[a-z]+|[^a-z]/, '');
+    const hash = location.hash.replace(/\?brand=[a-z]+|[^a-z#]/, '');
     if (hash) {
       const element = tabPanelRef.current?.querySelector(hash);
       element?.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'start' });
