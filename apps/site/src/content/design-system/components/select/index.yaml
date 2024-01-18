@@ -10,6 +10,10 @@ design:
       slug: sizes
     noTitle: false
   - title:
+      name: Fixed widths
+      slug: fixed-widths
+    noTitle: false
+  - title:
       name: User experience
       slug: user-experience
     noTitle: false
@@ -20,10 +24,6 @@ design:
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
-    noTitle: false
-  - title:
-      name: Fixed widths
-      slug: fixed-widths
     noTitle: false
 accessibility:
   - title:
