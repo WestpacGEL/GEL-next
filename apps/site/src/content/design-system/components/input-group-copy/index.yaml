@@ -1,10 +1,23 @@
-name: Input groups test
+name: Input groups copy
 description: >-
-  Input group is an input field either followed or preceded by an input or
-  character. They are useful for giving context to input field values.
+  The input group component contains elements that can be used with form inputs
+  to improve usability and streamline form completion. These include add-ons and
+  supporting text.
 namedExport:
   discriminant: false
 design:
+  - title:
+      name: Add-ons
+      slug: add-ons
+    noTitle: false
+  - title:
+      name: Supporting text
+      slug: supporting-text
+    noTitle: false
+  - title:
+      name: Icons
+      slug: icons
+    noTitle: false
   - title:
       name: Input group examples
       slug: input-group-examples
