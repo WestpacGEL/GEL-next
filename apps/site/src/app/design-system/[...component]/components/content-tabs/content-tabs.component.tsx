@@ -2,7 +2,8 @@
 
 import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { Key, useCallback, useEffect, useMemo, useRef } from 'react';
+import { Key, useCallback, useMemo, useRef } from 'react';
+import { useIsomorphicLayoutEffect } from 'usehooks-ts';
 
 import { AccessibilityContent, CodeContent, DesignContent, Tabs } from './components';
 import { type ContentTabsProps } from './content-tabs.types';
@@ -59,7 +60,7 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
   /**
    * Scroll to the element when hash is present
    */
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const hash = location.hash.replace(/\?brand=[a-z]+|[^a-z#-]/, '');
     if (hash) {
       const element = tabPanelRef.current?.querySelector(hash);
