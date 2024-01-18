@@ -6,7 +6,7 @@ namedExport:
   discriminant: false
 design:
   - title:
-      name: Text inputs
+      name: Sizes
       slug: text-inputs
     noTitle: false
   - title:
