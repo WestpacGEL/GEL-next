@@ -1,5 +1,58 @@
 Add-on elements can be used either before or after an input, they can provide clear affordance that helps users understand the information they are required to enter.
 
+### Types
+
+```tsx
+() => {
+  const [value, setValue] = useState(0);
+
+  return (
+    <Fragment>
+      <InputGroup width="10" name="example-text" label="Text add-ons" before="Text" after="Text">
+        <Input defaultValue="User input text" />
+      </InputGroup>
+
+      <InputGroup width="10"
+        name="example-select"
+        label="Select add-ons"
+        after={
+          <Select
+            name="example-select-select"
+            label="select"
+            defaultValue="Option1"
+            onChange={event => console.log(`Selected ${event.target.value}`)}
+          >
+            <option value="option 1">Option 1</option>
+            <option value="option 2">Option 2</option>
+          </Select>
+        }
+before={
+          <Select
+            name="example-select-select"
+            label="select"
+            defaultValue="Option1"
+            onChange={event => console.log(`Selected ${event.target.value}`)}
+          >
+            <option value="option 1">Option 1</option>
+            <option value="option 2">Option 2</option>
+          </Select>
+        }
+      >
+        <Input />
+      </InputGroup>
+
+
+
+ <InputGroup width="10" name="example-text" label="Button add-ons" before={<Button>Label</Button>} after={<Button>Label</Button>}>
+        <Input defaultValue="User input text" />
+      </InputGroup>
+    </Fragment>
+  );
+};
+```
+
+## Usage examples
+
 ```tsx
 () => {
   const [value, setValue] = useState(0);
