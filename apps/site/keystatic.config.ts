@@ -7,7 +7,7 @@ import { logs } from '@/components/component-blocks/logs/logs.preview';
 
 // storage option for Keystatic.
 const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
-  process.env.NODE_ENV === 'production'
+  process.env.NODE_ENV === 'development'
     ? { kind: 'local' }
     : {
         kind: 'github',
