@@ -177,5 +177,3 @@ export default async function ComponentPage({ params }: { params: { component: s
     />
   );
 }
-
-
