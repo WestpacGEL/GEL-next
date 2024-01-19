@@ -178,4 +178,4 @@ export default async function ComponentPage({ params }: { params: { component: s
   );
 }
 
-export const dynamic = 'force-dynamic';
+

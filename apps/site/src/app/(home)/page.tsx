@@ -39,4 +39,4 @@ export default async function Homepage() {
   );
 }
 
-export const dynamic = 'force-dynamic';
+

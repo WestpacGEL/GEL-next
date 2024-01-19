@@ -56,4 +56,4 @@ export default async function ArticleServerPage({ params }: { params: { article:
   return <ArticlePage article={{ ...article, content: articleContent }} />;
 }
 
-export const dynamic = 'force-dynamic';
+
