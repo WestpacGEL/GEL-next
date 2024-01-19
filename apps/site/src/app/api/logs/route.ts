@@ -1,7 +1,7 @@
-import crypto from 'crypto';
-
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
+
+import { formatLog, sha1 } from './utils';
 
 export async function POST(request: Request) {
   if (process.env.NODE_ENV === 'production') {
@@ -28,22 +28,15 @@ export async function POST(request: Request) {
       const logs = JSON.parse(rawBody);
 
       for (const log of logs) {
-        const {
-          id,
-          timestamp,
-          proxy: { clientIp, referer },
-        } = log;
-
-        await sql`INSERT INTO logs(log_id, time, request_ip, request_url) VALUES (${id}, TO_TIMESTAMP(${timestamp}::bigint/1000), ${clientIp}, ${referer})`;
+        const formattedLog = JSON.stringify([formatLog(log)]);
+        await sql`INSERT INTO logs SELECT * FROM json_populate_recordset(NULL::logs, ${formattedLog})`;
       }
     } catch (error) {
-      return NextResponse.json({ error }, { status: 500 });
+      if (error instanceof Error) {
+        return NextResponse.json({ error: error.message }, { status: 500 });
+      }
     }
   }
 
   return NextResponse.json({ message: 'Logged successfully' });
-}
-
-async function sha1(data: Buffer, secret: string) {
-  return crypto.createHmac('sha1', secret).update(data).digest('hex');
 }
