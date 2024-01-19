@@ -5,7 +5,7 @@ export const styles = tv(
     slots: {
       base: 'flex-none bg-white',
       inner:
-        'mx-auto flex w-full flex-1 border border-x-0 border-t-0 border-b-[#E8E8ED] bg-white text-left transition-[border-bottom-width] duration-200 will-change-[border-bottom-width] after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] max-sm:h-9 max-sm:px-2 sm:h-[4.0625rem] sm:px-4',
+        'mx-auto flex w-full flex-1 border border-x-0 border-t-0 border-b-[#E8E8ED] bg-white text-left transition-[border-bottom-width] duration-200 will-change-[border-bottom-width] after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] max-sm:h-9 max-sm:px-2 sm:h-11 sm:px-4',
       logoLink: 'inline-flex items-center focus-visible:focus-outline',
       smallLogo: 'sm:hidden',
       largeLogo: 'max-sm:hidden',

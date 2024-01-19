@@ -24,6 +24,33 @@ import {
 import { styles as headerStyles } from './header.styles.js';
 import { type HeaderProps } from './header.types.js';
 
+const logoMap = {
+  wbc: {
+    logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
+    largeLogo: (props: SymbolProps) => <WBCMultibrandLargeLogo {...props} />,
+  },
+  stg: {
+    logo: (props: SymbolProps) => <STGMultibrandSmallLogo {...props} />,
+    largeLogo: (props: SymbolProps) => <STGMultibrandLargeLogo {...props} />,
+  },
+  bom: {
+    logo: (props: SymbolProps) => <BOMMultibrandSmallLogo {...props} />,
+    largeLogo: (props: SymbolProps) => <BOMMultibrandLargeLogo {...props} />,
+  },
+  bsa: {
+    logo: (props: SymbolProps) => <BSAMultibrandSmallLogo {...props} />,
+    largeLogo: (props: SymbolProps) => <BSAMultibrandLargeLogo {...props} />,
+  },
+  wbg: {
+    logo: (props: SymbolProps) => <WBGMultibrandSmallLogo {...props} />,
+    largeLogo: (props: SymbolProps) => <WBGMultibrandLargeLogo {...props} />,
+  },
+  rams: {
+    logo: (props: SymbolProps) => <RAMSMultibrandSmallLogo {...props} />,
+    largeLogo: (props: SymbolProps) => <RAMSMultibrandLargeLogo {...props} />,
+  },
+};
+
 export function Header({
   brand,
   className,
@@ -42,15 +69,15 @@ export function Header({
 }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = throttle(() => {
-      let hasScrolled = false;
-      if (window.scrollY > 5) {
-        hasScrolled = true;
-      }
-      setScrolled(hasScrolled);
-    }, 10);
+  const handleScroll = throttle(() => {
+    let hasScrolled = false;
+    if (window.scrollY > 5) {
+      hasScrolled = true;
+    }
+    setScrolled(hasScrolled);
+  }, 10);
 
+  useEffect(() => {
     if (fixed) window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -59,33 +86,6 @@ export function Header({
   }, []);
 
   const logoAlignment = logoCenter ? 'center' : 'left';
-
-  const logoMap = {
-    wbc: {
-      logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
-      largeLogo: (props: SymbolProps) => <WBCMultibrandLargeLogo {...props} />,
-    },
-    stg: {
-      logo: (props: SymbolProps) => <STGMultibrandSmallLogo {...props} />,
-      largeLogo: (props: SymbolProps) => <STGMultibrandLargeLogo {...props} />,
-    },
-    bom: {
-      logo: (props: SymbolProps) => <BOMMultibrandSmallLogo {...props} />,
-      largeLogo: (props: SymbolProps) => <BOMMultibrandLargeLogo {...props} />,
-    },
-    bsa: {
-      logo: (props: SymbolProps) => <BSAMultibrandSmallLogo {...props} />,
-      largeLogo: (props: SymbolProps) => <BSAMultibrandLargeLogo {...props} />,
-    },
-    wbg: {
-      logo: (props: SymbolProps) => <WBGMultibrandSmallLogo {...props} />,
-      largeLogo: (props: SymbolProps) => <WBGMultibrandLargeLogo {...props} />,
-    },
-    rams: {
-      logo: (props: SymbolProps) => <RAMSMultibrandSmallLogo {...props} />,
-      largeLogo: (props: SymbolProps) => <RAMSMultibrandLargeLogo {...props} />,
-    },
-  };
 
   const SmallLogo = logoMap[brand].logo;
   const LargeLogo = logoMap[brand].largeLogo;

@@ -10,6 +10,13 @@ const meta: Meta<typeof Header> = {
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
   parameters: {},
+  argTypes: {
+    brand: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export default meta;
