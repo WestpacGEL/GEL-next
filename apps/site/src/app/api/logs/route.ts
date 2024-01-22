@@ -7,7 +7,7 @@ export async function POST(request: Request) {
   if (process.env.NODE_ENV === 'production') {
     const { VERCEL_LOGS_SECRET } = process.env;
     if (typeof VERCEL_LOGS_SECRET != 'string') {
-      return NextResponse.json({ error: 'No log drain secret found' }, { status: 500 });
+      return NextResponse.json({ error: 'No log drain secret found' }, { status: 401 });
     }
 
     const rawBody = await request.text();
