@@ -22,27 +22,3 @@
   </InputGroup>
 </Fragment>
 ```
-
-### Usage examples
-
-```tsx
-() => {
-  const [inputValue, setInputValue] = useState<string>('');
-  const clearInput = useCallback(() => setInputValue(''), []);
-
-  return (
-    <InputGroup
-      label="Search"
-      before={{
-        icon: SearchIcon,
-      }}
-      after={{
-        inset: true,
-        element: <Button onClick={clearInput} look="link" iconAfter={ClearIcon} iconColor="muted" />,
-      }}
-    >
-      <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
-    </InputGroup>
-  );
-};
-```

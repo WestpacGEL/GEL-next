@@ -38,6 +38,10 @@ design:
       name: Dos and don’ts
       slug: dos-and-donts
     noTitle: false
+  - title:
+      name: Icon usage examples to be moved
+      slug: icon-usage-examples-to-be-moved
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
