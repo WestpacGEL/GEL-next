@@ -9,7 +9,7 @@ Selects come in four different sizes (heights) with the default being Medium 36p
       {SIZES.map(size => (
         <div key={size}>
           <ComponentTitle>{size}</ComponentTitle>
-          <Select className="w-full" width="20" size={size}>
+          <Select width="20" size={size}>
             <option value="">Select</option>
             {DEFAULT_OPTIONS.map(option => (
               <option value={option} key={option}>
