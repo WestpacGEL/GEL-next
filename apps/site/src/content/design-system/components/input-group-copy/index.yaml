@@ -27,14 +27,6 @@ design:
       slug: masked-inputs
     noTitle: true
   - title:
-      name: In-field validation
-      slug: in-field-validation
-    noTitle: true
-  - title:
-      name: Input group sizes OLD
-      slug: input-group-sizes
-    noTitle: false
-  - title:
       name: User experience
       slug: user-experience
     noTitle: false
