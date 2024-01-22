@@ -1,3 +1,5 @@
+import React, { Suspense } from 'react';
+
 import { reader } from '@/app/reader';
 
 import { Header } from './components';
@@ -14,7 +16,9 @@ export default async function ComponentLayout({
 
   return (
     <>
-      <Header title={content.name} />
+      <Suspense fallback={<>Loading...</>}>
+        <Header title={content.name} />
+      </Suspense>
       <div className="flex flex-1 flex-col p-5">
         <div className="-m-5 flex flex-1 flex-col bg-background">{children}</div>
       </div>

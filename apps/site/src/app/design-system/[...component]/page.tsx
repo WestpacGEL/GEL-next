@@ -45,7 +45,15 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ComponentPage({ params }: { params: { component: string[] } }) {
+export default async function ComponentPage({
+  params,
+  searchParams,
+}: {
+  params: { component: string[] };
+  searchParams?: { [key: string]: string | undefined };
+}) {
+  const brand = searchParams?.brand || 'wbc';
+  const tab = searchParams?.tab || 'design';
   const { component } = params;
   const [content, westpacInfo, shortCodes] = await Promise.all([
     reader().collections.designSystem.readOrThrow(component.join('/')),
@@ -159,6 +167,8 @@ export default async function ComponentPage({ params }: { params: { component: s
 
   return (
     <ContentTabs
+      brand={brand}
+      tab={tab}
       content={{
         shortCodes,
         componentName: componentName,
