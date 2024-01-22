@@ -19,6 +19,10 @@ design:
       slug: icons
     noTitle: false
   - title:
+      name: Masked inputs
+      slug: masked-inputs
+    noTitle: false
+  - title:
       name: Input group sizes OLD
       slug: input-group-sizes
     noTitle: false
