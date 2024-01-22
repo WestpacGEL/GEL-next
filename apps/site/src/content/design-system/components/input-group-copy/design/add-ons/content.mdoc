@@ -25,6 +25,24 @@ Add-on elements can be used either before or after an input, they can provide cl
         <Input defaultValue="XLarge" />
       </InputGroup>
 
+
+
+
+
+
+<InputGroup width="10" size="medium" name="example-text" before="Select" after="Select">
+        <Input defaultValue="Size" />
+      </InputGroup>
+
+
+
+
+
+
+
+
+
+
 <h4 className="typography-body-10 text-muted italic mb-3">Select add-ons</h4>
       <InputGroup width="10" size="small"
         name="example-select"
@@ -36,8 +54,8 @@ after={
             defaultValue="Select"
             onChange={event => console.log(`Selected ${event.target.value}`)}
           >
-<option value="option 1">Select</option>            
-<option value="option 1">Option 1</option>
+            <option value="option 1">Select</option>            
+            <option value="option 1">Option 1</option>
             <option value="option 2">Option 2</option>
           </Select>
         }
@@ -48,8 +66,8 @@ before={
             defaultValue="Select"
             onChange={event => console.log(`Selected ${event.target.value}`)}
           >
-<option value="select">Select</option>               
-<option value="option 1">Option 1</option>
+            <option value="select">Select</option>               
+            <option value="option 1">Option 1</option>
             <option value="option 2">Option 2</option>
           </Select>
         }
