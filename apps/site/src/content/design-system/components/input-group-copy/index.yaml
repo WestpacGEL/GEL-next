@@ -19,17 +19,17 @@ design:
       slug: icons
     noTitle: false
   - title:
-      name: Search
-      slug: search
+      name: Usage examples
+      slug: usage-examples
     noTitle: false
   - title:
       name: Masked inputs
       slug: masked-inputs
-    noTitle: false
+    noTitle: true
   - title:
       name: In-field validation
       slug: in-field-validation
-    noTitle: false
+    noTitle: true
   - title:
       name: Input group sizes OLD
       slug: input-group-sizes
