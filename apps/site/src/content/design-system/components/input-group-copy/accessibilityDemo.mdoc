@@ -1,0 +1,69 @@
+```tsx
+() => {
+  const [value, setValue] = useState(0);
+
+  return (
+    <Fragment>
+      <InputGroup name="example-text" label="Total amount" before="AUS $" after=".00">
+        <Input defaultValue="User input text" />
+      </InputGroup>
+      <br />
+      <InputGroup
+        name="example-select"
+        label="Total amount"
+        after={
+          <Select
+            name="example-select-select"
+            label="Currency"
+            defaultValue="monthly"
+            onChange={event => console.log(`Selected ${event.target.value}`)}
+          >
+            <option value="daily">Daily</option>
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+          </Select>
+        }
+      >
+        <Input />
+      </InputGroup>
+      <br />
+      <InputGroup name="example-button" label="Filter by name" after={<Button>Go</Button>}>
+        <Input defaultValue="User input text" />
+      </InputGroup>
+      <br />
+      <InputGroup
+        name="example-select"
+        label="Total amount"
+        placeholder="Placeholder text"
+        before={
+          <Select
+            name="example-select-select"
+            label="option"
+            onChange={event => console.log(`Selected ${event.target.value}`)}
+            data={[
+              { text: 'Option', value: 'option' },
+              { text: 'Option 2', value: 'option2' },
+              { text: 'Option 3', value: 'option' },
+            ]}
+          >
+            <option value="option-1">Option 1</option>
+            <option value="option-2">Option 2</option>
+            <option value="option-3">Option 3</option>
+          </Select>
+        }
+      >
+        <Input />
+      </InputGroup>
+      <br />
+      <InputGroup
+        name="example-button"
+        label="Filter by name"
+        before={<Button onClick={() => setValue(value => value - 1)}>-</Button>}
+        after={<Button onClick={() => setValue(value => value + 1)}>+</Button>}
+      >
+        <Input value={value} onChange={event => setValue(event.target.value)} />
+      </InputGroup>
+    </Fragment>
+  );
+};
+```

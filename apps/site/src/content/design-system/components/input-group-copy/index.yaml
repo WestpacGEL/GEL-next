@@ -1,17 +1,30 @@
-name: Selects
+name: Input groups copy
 description: >-
-  Use selects, also known as dropdown menus or dropdown lists, when users are
-  required to choose one option from a list of predefined choices.
+  The input group component contains elements that can be used with form inputs
+  to improve usability and streamline form completion. These include add-ons,
+  icons and supporting text.
 namedExport:
   discriminant: false
 design:
   - title:
-      name: Sizes
-      slug: sizes
+      name: Add-ons
+      slug: add-ons
     noTitle: false
   - title:
-      name: Fixed widths
-      slug: fixed-widths
+      name: Supporting text
+      slug: supporting-text
+    noTitle: false
+  - title:
+      name: Icons
+      slug: icons
+    noTitle: false
+  - title:
+      name: Masked inputs
+      slug: masked-inputs
+    noTitle: false
+  - title:
+      name: Input group sizes OLD
+      slug: input-group-sizes
     noTitle: false
   - title:
       name: User experience
@@ -39,12 +52,8 @@ accessibility:
       name: Accessibility API
       slug: accessibility-api
 relatedComponents:
-  - title: Inputs
+  - title: Text inputs
     slug: components/input
-  - title: Input groups
-    slug: components/input-group
-  - title: Text areas
-    slug: components/textarea
 code:
   - title:
       name: Development examples

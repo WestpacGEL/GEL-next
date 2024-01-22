@@ -1,0 +1,151 @@
+Use fix width selects to help indicate the length of the data required. For example, if you are asking for an area code use a select with a width of 3 (i.e. 3 characters), this type of affordance helps with scanning and supports quick and easy form completion. The select widths are calculated to fit the respective number capital W's - the widest character.
+
+```tsx
+<div className="flex flex-col gap-2">
+
+<Select size="medium" width="1">
+  <React.Fragment key=".0">
+    <option value="Select 1">
+      Select 1
+    </option>
+    <option value="W">
+      W
+    </option>
+  </React.Fragment>
+</Select>
+
+<Select size="medium" width="2">
+  <React.Fragment key=".0">
+    <option value="Select 2">
+      Select 2
+    </option>
+    <option value="WW">
+      WW
+    </option>
+  </React.Fragment>
+</Select>
+
+<Select size="medium" width="3">
+  <React.Fragment key=".0">
+    <option value="Select  3">
+      Select 3
+    </option>
+    <option value="WWW">
+      WWW
+    </option>
+  </React.Fragment>
+</Select>
+
+<Select size="medium" width="4">
+  <React.Fragment key=".0">
+    <option value="Select 4">
+      Select 4
+    </option>
+    <option value="WWWW">
+      WWWW
+    </option>
+  </React.Fragment>
+</Select>
+
+<Select size="medium" width="5">
+  <React.Fragment key=".0">
+    <option value="Select 5">
+      Select 5
+    </option>
+    <option value="WWWWW">
+      WWWWW
+    </option>
+  </React.Fragment>
+</Select>
+
+<Select size="medium" width="6">
+  <React.Fragment key=".0">
+    <option value="Select 6">
+      Select 6
+    </option>
+    <option value="WWWWWW">
+      WWWWWW
+    </option>
+  </React.Fragment>
+</Select>
+
+<Select size="medium" width="7">
+  <React.Fragment key=".0">
+    <option value="Select 7">
+      Select 7
+    </option>
+    <option value="WWWWWWW">
+      WWWWWWW
+    </option>
+  </React.Fragment>
+</Select>
+
+<Select size="medium" width="8">
+  <React.Fragment key=".0">
+    <option value="Select 8">
+      Select 8
+    </option>
+    <option value="WWWWWWWW">
+      WWWWWWWW
+    </option>
+  </React.Fragment>
+</Select>
+
+<Select size="medium" width="9">
+  <React.Fragment key=".0">
+    <option value="Select 9">
+      Select 9
+    </option>
+    <option value="WWWWWWWWW">
+      WWWWWWWWW
+    </option>
+  </React.Fragment>
+</Select>
+
+<Select size="medium" width="10">
+  <React.Fragment key=".0">
+    <option value="Select 10">
+      Select 10
+    </option>
+    <option value="WWWWWWWWWW">
+      WWWWWWWWWW
+    </option>
+  </React.Fragment>
+</Select>
+
+<Select size="medium" width="20">
+  <React.Fragment key=".0">
+    <option value="Select 20">
+      Select 20
+    </option>
+    <option value="WWWWWWWWWWWWWWWWWWWW">
+      WWWWWWWWWWWWWWWWWWWW
+    </option>
+  </React.Fragment>
+</Select>
+
+
+<Select size="medium" width="30">
+  <React.Fragment key=".0">
+    <option value="Select 30">
+      Select 30
+    </option>
+    <option value="WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW">
+      WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+    </option>
+  </React.Fragment>
+</Select>
+
+<Select size="medium" width="full">
+  <React.Fragment key=".0">
+    <option value="Select full-width">
+      Select full-width
+    </option>
+    <option value="WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW">
+      WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+    </option>
+  </React.Fragment>
+</Select>
+
+</div>
+```
