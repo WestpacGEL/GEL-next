@@ -19,12 +19,16 @@ design:
       slug: icons
     noTitle: false
   - title:
-      name: Icon usage examples to be moved
-      slug: icon-usage-examples-to-be-moved
+      name: Search
+      slug: search
     noTitle: false
   - title:
       name: Masked inputs
       slug: masked-inputs
+    noTitle: false
+  - title:
+      name: In-field validation
+      slug: in-field-validation
     noTitle: false
   - title:
       name: Input group sizes OLD

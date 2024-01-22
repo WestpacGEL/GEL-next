@@ -1,0 +1,28 @@
+```tsx
+() => {
+  const [inputValue, setInputValue] = useState<string>('');
+  const [validating, setValidating] = useState<boolean>(false);
+  const [error, setError] = useState<string>();
+  const validate = useCallback(() => {
+    setValidating(true);
+    setError(undefined);
+    setTimeout(() => {
+      if (inputValue !== '647453') {
+        setError('Routing number not found');
+      }
+      setValidating(false);
+    }, 1500);
+  }, [inputValue]);
+
+  return (
+    <InputGroup
+      label="Enter ABA routing number"
+      hint="For a valid response use: 647453, all other numbers will show the invalid response"
+      after={validating ? { icon: RefreshIcon } : <Button onClick={validate}>Check</Button>}
+      errorMessage={error}
+    >
+      <Input invalid={!!error} onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputGroup>
+  );
+};
+```
