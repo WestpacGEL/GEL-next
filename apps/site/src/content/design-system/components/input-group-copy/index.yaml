@@ -19,11 +19,7 @@ design:
       slug: icons
     noTitle: false
   - title:
-      name: Add-on types
-      slug: add-on-types
-    noTitle: false
-  - title:
-      name: Input group sizes
+      name: Input group sizes OLD
       slug: input-group-sizes
     noTitle: false
   - title:
