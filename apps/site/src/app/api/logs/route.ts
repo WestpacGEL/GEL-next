@@ -1,50 +1,42 @@
-import crypto from 'crypto';
-
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 
+import { formatLog, sha1 } from './utils';
+
 export async function POST(request: Request) {
-  const response = NextResponse.json({});
-  // eslint-disable-next-line turbo/no-undeclared-env-vars
-  response.headers.set('x-vercel-verify', process.env.LOG_DRAIN_VERIFY || '');
+  if (process.env.NODE_ENV === 'production') {
+    const { VERCEL_LOGS_SECRET } = process.env;
+    if (typeof VERCEL_LOGS_SECRET != 'string') {
+      return NextResponse.json({ error: 'No log drain secret found' }, { status: 401 });
+    }
 
-  return response;
-  //   if (process.env.NODE_ENV === 'production') {
-  //     if (typeof process.env.VERCEL_LOG_DRAIN_SECRET != 'string') {
-  //       throw new Error('No integration secret found');
-  //     }
+    const rawBody = await request.text();
+    const rawBodyBuffer = Buffer.from(rawBody, 'utf-8');
+    const bodySignature = await sha1(rawBodyBuffer, VERCEL_LOGS_SECRET);
 
-  //     if (!verifySignature(request)) {
-  //       return NextResponse.json({
-  //         code: 'invalid_signature',
-  //         error: "signature didn't match",
-  //       });
-  //     }
+    if (bodySignature !== request.headers.get('x-vercel-signature')) {
+      return NextResponse.json(
+        {
+          code: 'invalid_signature',
+          error: "signature didn't match",
+        },
+        { status: 401 },
+      );
+    }
 
-  //     try {
-  //       const logs = await request.json();
+    try {
+      const logs = JSON.parse(rawBody);
 
-  //       for (const log of logs) {
-  //         const {
-  //           id,
-  //           timestamp,
-  //           proxy: { clientIp, referer },
-  //         } = log;
+      for (const log of logs) {
+        const formattedLog = JSON.stringify([formatLog(log)]);
+        await sql`INSERT INTO logs SELECT * FROM json_populate_recordset(NULL::logs, ${formattedLog})`;
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        return NextResponse.json({ error: error.message }, { status: 500 });
+      }
+    }
+  }
 
-  //         await sql`INSERT INTO logs_drain(log_id, time, request_ip, request_url) VALUES (${id}, TO_TIMESTAMP(${timestamp}::bigint/1000), ${clientIp}, ${referer})`;
-  //       }
-  //     } catch (error) {
-  //       return NextResponse.json({ error }, { status: 500 });
-  //     }
-  //   }
-
-  //   return NextResponse.json({ message: 'Logged successfully' });
-}
-
-async function verifySignature(request: Request) {
-  const signature = crypto
-    .createHmac('sha1', process.env.VERCEL_LOG_DRAIN_SECRET || '')
-    .update(JSON.stringify(request.body))
-    .digest('hex');
-  return signature === request.headers.get('x-vercel-signature');
+  return NextResponse.json({ message: 'Logged successfully' });
 }

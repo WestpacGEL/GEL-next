@@ -1,6 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["NODE_ENV", "NEXT_PUBLIC_GIT_REPO_OWNER", "NEXT_PUBLIC_GIT_REPO_SLUG", "VERCEL_LOG_DRAIN_SECRET"],
+  "globalEnv": ["NODE_ENV", "NEXT_PUBLIC_GIT_REPO_OWNER", "NEXT_PUBLIC_GIT_REPO_SLUG", "VERCEL_LOGS_SECRET"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
