@@ -19,6 +19,10 @@ design:
       slug: icons
     noTitle: false
   - title:
+      name: Icon usage examples to be moved
+      slug: icon-usage-examples-to-be-moved
+    noTitle: false
+  - title:
       name: Masked inputs
       slug: masked-inputs
     noTitle: false
@@ -37,10 +41,6 @@ design:
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
-    noTitle: false
-  - title:
-      name: Icon usage examples to be moved
-      slug: icon-usage-examples-to-be-moved
     noTitle: false
 accessibility:
   - title:
