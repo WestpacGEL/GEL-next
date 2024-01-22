@@ -103,6 +103,9 @@
     "./grid": {
       "default": "./dist/components/grid/index.js"
     },
+    "./header": {
+      "default": "./dist/components/header/index.js"
+    },
     "./heading": {
       "default": "./dist/components/heading/index.js"
     },
@@ -221,10 +224,10 @@
     "generate:component": "plop && pnpm build:exports"
   },
   "devDependencies": {
-    "@react-types/tabs": "~3.3.0",
     "@react-types/accordion": "3.0.0-alpha.14",
     "@react-types/combobox": "~3.7.0",
     "@react-types/shared": "~3.18.1",
+    "@react-types/tabs": "~3.3.0",
     "@storybook/addon-a11y": "~7.6.4",
     "@storybook/addon-actions": "~7.6.4",
     "@storybook/addon-essentials": "^7.6.4",
@@ -243,6 +246,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "~14.4.3",
     "@types/lodash-es": "~4.17.8",
+    "@types/lodash.throttle": "~4.1.7",
     "@types/prettier": "~2.7.3",
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.1",
@@ -284,6 +288,7 @@
     "@react-spectrum/utils": "~3.10.0",
     "clsx": "^1.2.1",
     "framer-motion": "~10.12.16",
+    "lodash.throttle": "~4.1.1",
     "react-aria": "~3.25.0",
     "react-stately": "~3.23.0"
   },
