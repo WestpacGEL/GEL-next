@@ -3,19 +3,25 @@ description: >-
   Badges are small, styled UI items usually used with other elements. They can
   be used as a number count, to highlight a word or give context to an action
   needed.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Badge styles
       slug: badge-styles
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
@@ -38,3 +44,4 @@ code:
   - title:
       name: Development examples
       slug: development-examples
+    noTitle: false
