@@ -62,14 +62,12 @@
               <Badge color="faint">88</Badge>
             </div>
           </Button>
-          <Button look="link">
-            <div className="flex gap-1 items-center">
-              <span>Label</span>
-              <Badge color="faint" className="no-underline">
-                NEW FEATURE
-              </Badge>
-            </div>
-          </Button>
+<a className="text-link underline" href="#">
+        {color}
+        <Badge color={color} type="pill">
+          12
+        </Badge>
+      </a>
         </div>
       </div>
     </div>
