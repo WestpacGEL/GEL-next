@@ -19,12 +19,6 @@ accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
-  - title:
-      name: Keyboard support
-      slug: keyboard-support
-  - title:
-      name: Accessibility API
-      slug: accessibility-api
 relatedComponents:
   - title: Checkboxes
     slug: components/checkbox-group
