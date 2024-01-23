@@ -3,6 +3,7 @@ import { type Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import React, { Suspense } from 'react';
 
+import { FontPreloader } from '@/components/font-preloader';
 import { ThemeProvider } from '@/components/theme';
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const { isEnabled } = draftMode();
   return (
     <html lang="en">
+      <FontPreloader />
       <body>
         {/*We need to move theme to a cookie based approach for performance*/}
         <Suspense>

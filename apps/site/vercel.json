@@ -26,6 +26,23 @@
           "value": "1; mode=block"
         }
       ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Vercel-CDN-Cache-Control",
+          "value": "max-age=3600"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=3600"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ]
 }
