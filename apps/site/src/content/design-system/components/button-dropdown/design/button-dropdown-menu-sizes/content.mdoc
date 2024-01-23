@@ -43,21 +43,39 @@
 </div>
 ```
 
-```jsx
-() => <div>
-    {DROPDOWNSIZE.map(size => <>
-        <h3 className="font-bold">{size}</h3>
-        <ButtonDropdown dropdownSize={size} text={size}>
-          {size}
-        </ButtonDropdown>
-      </>)}
-    <h3 className="font-bold">Responsive</h3>
-    <ButtonDropdown dropdownSize={{
-    initial: 'large',
-    md: 'small',
-    lg: 'medium'
-  }} text="Responsive">
-      Responive
+### Usage examples
+
+```tsx
+() => <div className="flex gap-4">
+    <ButtonDropdown text="Products" look="primary">
+      <ButtonDropdown.Heading>Credit cards</ButtonDropdown.Heading>
+<CheckboxGroup
+  defaultValue={[
+    'Option 1'
+  ]}
+  label={<h2>Test</h2>}
+>
+  <CheckboxGroup.Checkbox value="Option 1">
+    Option 1
+  </CheckboxGroup.Checkbox>
+  <CheckboxGroup.Checkbox value="Option 2">
+    Option 2
+  </CheckboxGroup.Checkbox>
+  <CheckboxGroup.Checkbox value="Option 3">
+    Option 3
+  </CheckboxGroup.Checkbox>
+</CheckboxGroup>
+      <ButtonDropdown.Heading>Bank accounts</ButtonDropdown.Heading>
+      <List type="link" spacing="large">
+        <List.Item href="#">Savings</List.Item>
+        <List.Item href="#">Transaction</List.Item>
+      </List>
+    </ButtonDropdown>
+    <ButtonDropdown text="Credit cards" look="primary">
+      <List type="link" spacing="large">
+        <List.Item href="#">Rewards</List.Item>
+        <List.Item href="#">Low rate</List.Item>
+      </List>
     </ButtonDropdown>
   </div>
 ```
