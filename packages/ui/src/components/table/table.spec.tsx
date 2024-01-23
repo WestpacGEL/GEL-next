@@ -1,9 +1,17 @@
 import { render } from '@testing-library/react';
-import { TableBody, TableHeader } from 'react-stately';
 
 import { Table } from './table.component.js';
 
-import { TableCaption, TableCell, TableFooter, TableHeaderCell, TableHeaderRow, TableRow } from './index.js';
+import {
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHeader,
+  TableHeaderCell,
+  TableHeaderRow,
+  TableRow,
+} from './index.js';
 
 describe('Table', () => {
   it('renders the component', () => {
