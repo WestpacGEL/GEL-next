@@ -1,21 +1,30 @@
-name: Select
+name: Selects
 description: >-
-  Text inputs are fields for users to enter words or numerical data. They are
-  used to capture information critical to acquiring or servicing a product:
-  users' information.
+  Use selects, also known as dropdown menus or dropdown lists, when users are
+  required to choose one option from a list of predefined choices.
+namedExport:
+  discriminant: false
 design:
   - title:
-      name: Selects
-      slug: selects
+      name: Sizes
+      slug: sizes
+    noTitle: false
+  - title:
+      name: Fixed widths
+      slug: fixed-widths
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
@@ -29,10 +38,15 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Inputs
+    slug: components/input
+  - title: Input groups
+    slug: components/input-group
+  - title: Text areas
+    slug: components/textarea
 code:
   - title:
       name: Development examples
       slug: development-examples
-relatedComponents:
-  - title: Input fields
-    slug: components/input-group
+    noTitle: false

@@ -1,0 +1,61 @@
+name: Input groups copy
+description: >-
+  The input group component contains elements that can be used with form inputs
+  to improve usability and streamline form completion. These include add-ons,
+  icons and supporting text.
+namedExport:
+  discriminant: false
+design:
+  - title:
+      name: Add-ons
+      slug: add-ons
+    noTitle: false
+  - title:
+      name: Supporting text
+      slug: supporting-text
+    noTitle: false
+  - title:
+      name: Icons
+      slug: icons
+    noTitle: false
+  - title:
+      name: Masked inputs
+      slug: masked-inputs
+    noTitle: false
+  - title:
+      name: Input group sizes OLD
+      slug: input-group-sizes
+    noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+  - title:
+      name: Visual design
+      slug: visual-design
+    noTitle: false
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
+    noTitle: false
+accessibility:
+  - title:
+      name: Notes on accessibility
+      slug: notes-on-accessibility
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+  - title:
+      name: Keyboard support
+      slug: keyboard-support
+  - title:
+      name: Accessibility API
+      slug: accessibility-api
+relatedComponents:
+  - title: Text inputs
+    slug: components/input
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: false

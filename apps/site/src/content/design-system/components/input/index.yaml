@@ -1,21 +1,30 @@
-name: Text inputs
+name: Inputs
 description: >-
-  Text inputs are fields for users to enter words or numerical data. They are
-  used to capture information critical to acquiring or servicing a product:
-  users' information.
+  Inputs are used to capture words or numerical data. They are predominantly
+  used in forms and search tools allowing users to submit information.
+namedExport:
+  discriminant: false
 design:
   - title:
-      name: Text inputs
-      slug: text-inputs
+      name: Sizes
+      slug: sizes
+    noTitle: false
+  - title:
+      name: Fixed widths
+      slug: fixed-widths
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
@@ -29,10 +38,15 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Input group
+    slug: components/input-group
+  - title: Selects
+    slug: /design system/select
+  - title: Text areas
+    slug: components/textarea
 code:
   - title:
       name: Development examples
       slug: development-examples
-relatedComponents:
-  - title: Input fields
-    slug: components/input-group
+    noTitle: false
