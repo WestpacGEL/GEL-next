@@ -2,16 +2,21 @@ name: Collapsible
 description: >-
   A Collapsible is a component used for containing information that you may not
   want to surface at the page or screen level, but needs to be findable.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Examples
       slug: examples
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
@@ -25,10 +30,6 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
-code:
-  - title:
-      name: Development examples
-      slug: development-examples
 relatedComponents:
   - title: Buttons
     slug: components/button
@@ -40,3 +41,8 @@ relatedComponents:
     slug: foundation/colour
   - title: Pictograms
     slug: foundation/pictogram
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: false
