@@ -48,7 +48,7 @@
 ```tsx
 () => <div className="flex gap-4">
     <ButtonDropdown text="Set up" look="primary">
-      <ButtonDropdown.Heading>Settings</ButtonDropdown.Heading>
+      <ButtonDropdown.Heading>Checkboxes</ButtonDropdown.Heading>
 <CheckboxGroup
   defaultValue={[
     'Option 1'
@@ -83,7 +83,7 @@
     </ButtonDropdown>
   
 
-  <ButtonDropdown text="Credit cards" look="primary">
+  <ButtonDropdown text="Switches" look="primary">
 <Switch
   label="eStatements"
   size="small"
@@ -93,5 +93,18 @@
   size="small"
 />
     </ButtonDropdown>
+
+  <ButtonDropdown text="Large dropdown" dropdownSize="large" look="hero" >
+    <ButtonDropdown.Heading>Links</ButtonDropdown.Heading>
+      <List type="link" spacing="large">
+        <List.Item href="#">List item</List.Item>
+        <List.Item href="#">List item</List.Item>
+      </List>
+      <ButtonDropdown.Heading>With headings</ButtonDropdown.Heading>
+      <List type="link" spacing="large">
+        <List.Item href="#">List item</List.Item>
+        <List.Item href="#">List item</List.Item>
+      </List>
+  </ButtonDropdown>
   </div>
 ```
