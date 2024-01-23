@@ -2,7 +2,6 @@
 
 import React, { Children, ReactElement, cloneElement, createContext, useContext } from 'react';
 
-import { ListItem } from './components/list-item/index.js';
 import { styles as listStyles } from './list.styles.js';
 import { ListContextState, type ListProps } from './list.types.js';
 import { getStateValues } from './list.utils.js';
@@ -33,5 +32,3 @@ export function List({ assistiveText, className, children, look, nested, icon, t
     </ListContext.Provider>
   );
 }
-
-List.Item = ListItem;

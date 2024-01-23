@@ -1,6 +1,9 @@
+'use client';
+
 import { NewWindowIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import React from 'react';
 import { VariantProps } from 'tailwind-variants';
 
 import { BrandKey } from '@/app/types/brand.types';

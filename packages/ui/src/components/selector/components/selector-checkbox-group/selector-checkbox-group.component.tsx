@@ -1,8 +1,10 @@
+'use client';
+
 import React, { createContext } from 'react';
 import { useCheckboxGroup } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
-import { ErrorMessage, FormHint, FormLabel } from '../../../index.js';
+import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { SelectorCheckboxGroupOption } from './components/index.js';
 import { styles } from './selector-checkbox-group.styles.js';
@@ -30,8 +32,8 @@ export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {
 
   return (
     <div {...groupProps} className={styles({ className: groupProps.className })}>
-      {label && <FormLabel {...labelProps}>{label}</FormLabel>}
-      {description && <FormHint {...descriptionProps}>{description}</FormHint>}
+      {label && <Label {...labelProps}>{label}</Label>}
+      {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && state.validationState === 'invalid' && (
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}

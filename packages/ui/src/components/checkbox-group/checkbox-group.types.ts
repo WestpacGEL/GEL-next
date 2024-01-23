@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { AriaCheckboxGroupProps } from 'react-aria';
 import { CheckboxGroupState } from 'react-stately';
 
-import { FormHintProps } from '../index.js';
+import { HintProps } from '../index.js';
 
 export type CheckboxGroupProps = {
   /**
@@ -20,7 +20,7 @@ export type CheckboxGroupProps = {
   /**
    * hint message
    */
-  hintMessage?: FormHintProps['children'];
+  hintMessage?: HintProps['children'];
   /**
    * Orientation of checkbox items
    */

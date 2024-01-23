@@ -12,4 +12,3 @@ export function ButtonDropdownHeading({ className, tag: Tag = 'h1', children, ..
     </Tag>
   );
 }
-ButtonDropdownHeading.displayName = 'ButtonDropdown.Heading';

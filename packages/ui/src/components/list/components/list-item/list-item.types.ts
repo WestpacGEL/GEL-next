@@ -4,7 +4,7 @@ import { IconProps } from '../../../icon/index.js';
 
 export type ListItemProps = {
   /**
-   * List.Item body content
+   * ListItem body content
    */
   children?: ReactNode;
   /**

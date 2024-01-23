@@ -45,20 +45,20 @@
       ].map(({ size, label }: { size: string; label: string }) => (
         <Fragment key={size}>
           <Modal isDismissable size={size} state={states[size as 'sm' | 'md' | 'lg']} title="Sudden and magnificent">
-            <Modal.Body>
+            <ModalBody>
               <p>
                 The line of the horizon was clear and hard against the sky, and in one particular quarter it showed
                 black against a silvery climbing phosphorescence that grew and grew.
               </p>
-            </Modal.Body>
-            <Modal.Footer>
+            </ModalBody>
+            <ModalFooter>
               <div className="flex gap-1 justify-end">
                 <Button look="faint" onClick={states[size as 'sm' | 'md' | 'lg'].close}>
                   Close
                 </Button>
                 <Button look="primary">Save changes</Button>
               </div>
-            </Modal.Footer>
+            </ModalFooter>
           </Modal>
           <Button soft look="primary" onClick={states[size as 'sm' | 'md' | 'lg'].open}>
             {label} Modal
@@ -79,10 +79,10 @@
   return (
     <Fragment>
       <Modal state={state} title="Title" isDismissable={true}>
-        <Modal.Body>I'm children</Modal.Body>
-        <Modal.Footer>
+        <ModalBody>I'm children</ModalBody>
+        <ModalFooter>
           <p>Lorem, ipsum dolor</p>
-        </Modal.Footer>
+        </ModalFooter>
       </Modal>
       <Button look="primary" soft onClick={state.open}>
         Open Modal
@@ -101,13 +101,13 @@
   return (
     <Fragment>
       <Modal isKeyboardDismissDisabled state={state} title="Modal title">
-        <Modal.Body>I'm children</Modal.Body>
-        <Modal.Footer className="flex justify-end gap-2">
+        <ModalBody>I'm children</ModalBody>
+        <ModalFooter className="flex justify-end gap-2">
           <Button look="faint" onClick={state.close}>
             Close
           </Button>
           <Button look="primary">Submit</Button>
-        </Modal.Footer>
+        </ModalFooter>
       </Modal>
       <Button look="primary" soft onClick={state.open}>
         Open Modal

@@ -2,6 +2,7 @@ import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useState } from 'react';
 
+import { FilterButtons, FilterInput } from './components/index.js';
 import { Filter } from './filter.component.js';
 
 const firstBtnText = 'United States';
@@ -27,8 +28,8 @@ describe('Filter', () => {
 
     return (
       <Filter>
-        <Filter.Input onChange={onChange} />
-        <Filter.Buttons
+        <FilterInput onChange={onChange} />
+        <FilterButtons
           selectedButton={selected}
           resultsFound={2}
           onClick={id => {

@@ -1,15 +1,8 @@
+'use client';
+
 import React, { forwardRef, useContext, useRef } from 'react';
 import { VisuallyHidden, mergeProps, useFocusRing, useRadio } from 'react-aria';
 
-import {
-  FlexiCellAdornment,
-  FlexiCellBody,
-  FlexiCellButton,
-  FlexiCellCircle,
-  FlexiCellFooter,
-  FlexiCellHint,
-  FlexiCellLabel,
-} from '../../../../../../components/flexi-cell/index.js';
 import { ArrowRightIcon, TickIcon } from '../../../../../../components/icon/index.js';
 import { FlexiCell } from '../../../../../index.js';
 import { SelectorRadioGroupContext } from '../../selector-radio-group.component.js';
@@ -64,20 +57,5 @@ function BaseSelectorRadioGroupOption(
 
 export const SelectorRadioGroupOption = forwardRef(BaseSelectorRadioGroupOption) as React.ForwardRefExoticComponent<
   SelectorRadioGroupOptionProps & React.RefAttributes<unknown>
-> & {
-  Adornment: typeof FlexiCell.Adornment;
-  Body: typeof FlexiCell.Body;
-  Button: typeof FlexiCell.Button;
-  Circle: typeof FlexiCell.Circle;
-  Footer: typeof FlexiCell.Footer;
-  Hint: typeof FlexiCell.Hint;
-  Label: typeof FlexiCell.Label;
-};
-
-SelectorRadioGroupOption.Body = FlexiCellBody;
-SelectorRadioGroupOption.Footer = FlexiCellFooter;
-SelectorRadioGroupOption.Adornment = FlexiCellAdornment;
-SelectorRadioGroupOption.Hint = FlexiCellHint;
-SelectorRadioGroupOption.Label = FlexiCellLabel;
-SelectorRadioGroupOption.Button = FlexiCellButton;
-SelectorRadioGroupOption.Circle = FlexiCellCircle;
+>;
+SelectorRadioGroupOption.displayName = 'SelectorRadio';

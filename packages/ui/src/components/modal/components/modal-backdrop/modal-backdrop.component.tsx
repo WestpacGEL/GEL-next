@@ -4,6 +4,9 @@ import { Overlay, useModalOverlay } from 'react-aria';
 import { styles as backdropStyles } from './modal-backdrop.styles.js';
 import { type ModalBackdropProps } from './modal-backdrop.types.js';
 
+/**
+ * @private
+ */
 export function ModalBackdrop({ zIndex = 100, portalContainer, size, ...props }: ModalBackdropProps) {
   const { children, state, className } = props;
 

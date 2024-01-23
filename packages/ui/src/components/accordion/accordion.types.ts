@@ -8,7 +8,7 @@ import { AccordionItemProps } from './components/index.js';
 type Variants = VariantProps<typeof styles>;
 export type AccordionProps<T = any> = SpectrumAccordionProps<T> & {
   /**
-   * <Accordion.Item /> as a collection
+   * <AccordionItem /> as a collection
    */
   children?: SpectrumAccordionProps<T>['children'];
   /**

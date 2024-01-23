@@ -3,6 +3,12 @@ import { render } from '@testing-library/react';
 import { Badge } from '../badge/index.js';
 import { InfoIcon } from '../icon/index.js';
 
+import { FlexiCellAdornment } from './components/flexi-cell-adornment/flexi-cell-adornment.component.js';
+import { FlexiCellButton } from './components/flexi-cell-button/flexi-cell-button.component.js';
+import { FlexiCellCircle } from './components/flexi-cell-circle/flexi-cell-circle.component.js';
+import { FlexiCellFooter } from './components/flexi-cell-footer/flexi-cell-footer.component.js';
+import { FlexiCellHint } from './components/flexi-cell-hint/flexi-cell-hint.component.js';
+import { FlexiCellLabel } from './components/flexi-cell-label/flexi-cell-label.component.js';
 import { FlexiCell } from './flexi-cell.component.js';
 import { styles } from './flexi-cell.styles.js';
 
@@ -67,7 +73,7 @@ describe('FlexiCell', () => {
     test('body content should be a link', () => {
       const { getByRole } = render(
         <FlexiCell dualAction withBorder href="#test">
-          <FlexiCell.Label>Test dual action</FlexiCell.Label>
+          <FlexiCellLabel>Test dual action</FlexiCellLabel>
         </FlexiCell>,
       );
 
@@ -80,12 +86,12 @@ describe('FlexiCell', () => {
       const { getByTestId } = render(
         <FlexiCell
           after={
-            <FlexiCell.Adornment>
-              <FlexiCell.Button icon={() => <InfoIcon data-testid="icon" />} />
-            </FlexiCell.Adornment>
+            <FlexiCellAdornment>
+              <FlexiCellButton icon={() => <InfoIcon data-testid="icon" />} />
+            </FlexiCellAdornment>
           }
         >
-          <FlexiCell.Label>Test</FlexiCell.Label>
+          <FlexiCellLabel>Test</FlexiCellLabel>
         </FlexiCell>,
       );
 
@@ -98,12 +104,12 @@ describe('FlexiCell', () => {
       const { getByTestId } = render(
         <FlexiCell
           before={
-            <FlexiCell.Adornment>
-              <FlexiCell.Circle data-testid="circle">WW</FlexiCell.Circle>
-            </FlexiCell.Adornment>
+            <FlexiCellAdornment>
+              <FlexiCellCircle data-testid="circle">WW</FlexiCellCircle>
+            </FlexiCellAdornment>
           }
         >
-          <FlexiCell.Label>Test</FlexiCell.Label>
+          <FlexiCellLabel>Test</FlexiCellLabel>
         </FlexiCell>,
       );
 
@@ -115,10 +121,10 @@ describe('FlexiCell', () => {
     test('should render things inside footer', () => {
       const { getByTestId } = render(
         <FlexiCell>
-          <FlexiCell.Label>Test</FlexiCell.Label>
-          <FlexiCell.Footer>
+          <FlexiCellLabel>Test</FlexiCellLabel>
+          <FlexiCellFooter>
             <Badge data-testid="mock-badge">Flexi badge</Badge>
-          </FlexiCell.Footer>
+          </FlexiCellFooter>
         </FlexiCell>,
       );
 
@@ -130,8 +136,8 @@ describe('FlexiCell', () => {
     test('should render hint', () => {
       const { getByText } = render(
         <FlexiCell>
-          <FlexiCell.Label>Test</FlexiCell.Label>
-          <FlexiCell.Hint>Test hint</FlexiCell.Hint>
+          <FlexiCellLabel>Test</FlexiCellLabel>
+          <FlexiCellHint>Test hint</FlexiCellHint>
         </FlexiCell>,
       );
 

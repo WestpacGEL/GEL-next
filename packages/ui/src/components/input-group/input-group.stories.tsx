@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';
-import { Autocomplete, Button, Input, Select } from '../index.js';
+import { Autocomplete, AutocompleteItem, Button, Input, Select } from '../index.js';
 
 import { InputGroup } from './input-group.component.js';
 
@@ -155,12 +155,12 @@ export const FixedWidths = () => {
           width={width}
         >
           <Autocomplete key={width} width={width}>
-            <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-            <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-            <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-            <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-            <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-            <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+            <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+            <AutocompleteItem key="cat">Cat</AutocompleteItem>
+            <AutocompleteItem key="dog">Dog</AutocompleteItem>
+            <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+            <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+            <AutocompleteItem key="snake">Snake</AutocompleteItem>
           </Autocomplete>
         </InputGroup>
       ))}

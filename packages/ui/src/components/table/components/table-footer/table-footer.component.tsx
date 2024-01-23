@@ -19,4 +19,4 @@ export function TableFooter({ className, children, colspan, ...props }: TableFoo
   );
 }
 
-TableFooter.displayName = 'Table.Footer';
+TableFooter.displayName = 'TableFooter';

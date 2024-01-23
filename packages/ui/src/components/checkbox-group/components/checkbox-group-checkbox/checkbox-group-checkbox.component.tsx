@@ -1,3 +1,5 @@
+'use client';
+
 import React, { forwardRef, useContext, useRef } from 'react';
 import { VisuallyHidden, useCheckboxGroupItem, useFocusRing } from 'react-aria';
 
@@ -54,4 +56,3 @@ function BaseCheckbox({ className, hint, children, value, ...props }: CheckboxGr
 }
 
 export const CheckboxGroupCheckbox = forwardRef(BaseCheckbox);
-CheckboxGroupCheckbox.displayName = 'CheckboxGroup.Checkbox';

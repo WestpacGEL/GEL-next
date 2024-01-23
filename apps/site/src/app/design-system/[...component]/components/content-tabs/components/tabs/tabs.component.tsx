@@ -28,4 +28,4 @@ export function Tabs(props: AriaTabListProps<AriaTabProps>) {
   );
 }
 
-Tabs.Panel = Item;
+export const TabsPanel = Item;

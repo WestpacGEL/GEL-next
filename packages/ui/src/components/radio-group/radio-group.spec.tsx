@@ -3,12 +3,14 @@ import userEvent from '@testing-library/user-event';
 
 import { RadioGroup } from './radio-group.component.js';
 
+import { RadioGroupRadio } from './index.js';
+
 describe('RadioGroup', () => {
   it('renders the component', () => {
     const { container } = render(
       <RadioGroup label="test">
-        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
-        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
+        <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
       </RadioGroup>,
     );
     expect(container).toBeInTheDocument();
@@ -17,8 +19,8 @@ describe('RadioGroup', () => {
   it('should render Radios when passed as children', () => {
     const { getByText } = render(
       <RadioGroup label="test">
-        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
-        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
+        <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
       </RadioGroup>,
     );
     expect(getByText('Option 1')).toBeInTheDocument();
@@ -30,9 +32,9 @@ describe('RadioGroup', () => {
 
     const { getByText } = render(
       <RadioGroup showAmount={1} label="test">
-        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
-        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
-        <RadioGroup.Radio value="Option 3">Option 3</RadioGroup.Radio>
+        <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
+        <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
+        <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
       </RadioGroup>,
     );
     expect(getByText('Option 1')).toBeInTheDocument();
@@ -47,8 +49,8 @@ describe('RadioGroup', () => {
   it('should display correct text on button showAmount prop is passed and there is only one hidden', () => {
     const { getByText } = render(
       <RadioGroup showAmount={1} label="test">
-        <RadioGroup.Radio value="Option 1">Option 1</RadioGroup.Radio>
-        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
+        <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
       </RadioGroup>,
     );
     expect(getByText('Option 1')).toBeInTheDocument();
@@ -62,10 +64,10 @@ describe('RadioGroup', () => {
 
     const { getByTestId } = render(
       <RadioGroup onChange={onChange} label="test">
-        <RadioGroup.Radio value="Option 1" data-testid="option1">
+        <RadioGroupRadio value="Option 1" data-testid="option1">
           Option 1
-        </RadioGroup.Radio>
-        <RadioGroup.Radio value="Option 2">Option 2</RadioGroup.Radio>
+        </RadioGroupRadio>
+        <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
       </RadioGroup>,
     );
     await act(() => user.click(getByTestId('option1')));

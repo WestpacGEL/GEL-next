@@ -1,6 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
-import { Input } from '../index.js';
+import { ErrorMessage, FormChitChat, FormGroup, FormSection, Hint, Input, Label } from '../index.js';
 
 import { Form } from './form.component.js';
 
@@ -24,100 +24,100 @@ export const Default: Story = {
       <>
         <h2 className="typography-body-7 my-4 font-bold">Default size and spacing</h2>
         <Form>
-          <Form.Section>
-            <Form.ChitChat>
+          <FormSection>
+            <FormChitChat>
               Hello, I’m the friendly conversational text component. I live at the top of the form pod if required.
-            </Form.ChitChat>
-          </Form.Section>
+            </FormChitChat>
+          </FormSection>
 
-          <Form.Section>
-            <Form.Group>
-              <Form.Label htmlFor="example-default-1">This is a label</Form.Label>
-              <Form.Hint id="example-default-1-hint">This is a hint</Form.Hint>
-              <Form.ErrorMessage message="This is an error message" id="example-default-1-error" />
+          <FormSection>
+            <FormGroup>
+              <Label htmlFor="example-default-1">This is a label</Label>
+              <Hint id="example-default-1-hint">This is a hint</Hint>
+              <ErrorMessage message="This is an error message" id="example-default-1-error" />
               <Input
                 name="example-default-1"
                 id="example-default-1"
                 aria-describedby="example-default-1-hint example-default-1-error"
               />
-            </Form.Group>
+            </FormGroup>
 
-            <Form.Group>
-              <Form.Label htmlFor="example-default-2">This is a label</Form.Label>
-              <Form.Hint id="example-default-2-hint">This is a hint</Form.Hint>
-              <Form.ErrorMessage message="This is an error message" id="example-default-2-error" />
+            <FormGroup>
+              <Label htmlFor="example-default-2">This is a label</Label>
+              <Hint id="example-default-2-hint">This is a hint</Hint>
+              <ErrorMessage message="This is an error message" id="example-default-2-error" />
               <Input
                 name="example-default-2"
                 id="example-default-2"
                 aria-describedby="example-default-2-hint example-default-2-error"
               />
-            </Form.Group>
-          </Form.Section>
+            </FormGroup>
+          </FormSection>
 
-          <Form.Section>
-            <Form.Group>
-              <Form.Label htmlFor="example-default-3">This is a label</Form.Label>
-              <Form.Hint id="example-default-3-hint">This is a hint</Form.Hint>
-              <Form.ErrorMessage message="This is an error message" id="example-default-3-error" />
+          <FormSection>
+            <FormGroup>
+              <Label htmlFor="example-default-3">This is a label</Label>
+              <Hint id="example-default-3-hint">This is a hint</Hint>
+              <ErrorMessage message="This is an error message" id="example-default-3-error" />
               <Input
                 name="example-default-3"
                 id="example-default-3"
                 aria-describedby="example-default-3-hint example-default-3-error"
               />
-            </Form.Group>
-          </Form.Section>
+            </FormGroup>
+          </FormSection>
         </Form>
 
         <hr className="my-4 border-t border-t-border" />
 
         <h2 className="typography-body-7 my-4 font-bold">Large size with large spacing</h2>
         <Form spacing="large">
-          <Form.Section>
-            <Form.ChitChat>
+          <FormSection>
+            <FormChitChat>
               Spacing increases space after label, hint and form group. Sizing can be changed via props on the component
               that needs to be bigger i.e. input.
-            </Form.ChitChat>
-          </Form.Section>
+            </FormChitChat>
+          </FormSection>
 
-          <Form.Section>
-            <Form.Group>
-              <Form.Label htmlFor="example-large-1">This is a label</Form.Label>
-              <Form.Hint id="example-large-1-hint">This is a hint</Form.Hint>
-              <Form.ErrorMessage message="This is an error message" id="example-large-1-error" />
+          <FormSection>
+            <FormGroup>
+              <Label htmlFor="example-large-1">This is a label</Label>
+              <Hint id="example-large-1-hint">This is a hint</Hint>
+              <ErrorMessage message="This is an error message" id="example-large-1-error" />
               <Input
                 name="example-large-1"
                 size="large"
                 id="example-large-1"
                 aria-describedby="example-large-1-hint example-large-1-error"
               />
-            </Form.Group>
+            </FormGroup>
 
-            <Form.Group>
-              <Form.Label htmlFor="example-large-2">This is a label</Form.Label>
-              <Form.Hint id="example-large-2-hint">This is a hint</Form.Hint>
-              <Form.ErrorMessage id="example-large-2-error" message="This is an error message" />
+            <FormGroup>
+              <Label htmlFor="example-large-2">This is a label</Label>
+              <Hint id="example-large-2-hint">This is a hint</Hint>
+              <ErrorMessage id="example-large-2-error" message="This is an error message" />
               <Input
                 name="example-large-2"
                 size="large"
                 id="example-large-2"
                 aria-describedby="example-large-2-hint example-large-2-error"
               />
-            </Form.Group>
-          </Form.Section>
+            </FormGroup>
+          </FormSection>
 
-          <Form.Section>
-            <Form.Group>
-              <Form.Label htmlFor="example-large-3">This is a label</Form.Label>
-              <Form.Hint id="example-large-3-hint">This is a hint</Form.Hint>
-              <Form.ErrorMessage message="This is an error message" id="example-large-3-error" />
+          <FormSection>
+            <FormGroup>
+              <Label htmlFor="example-large-3">This is a label</Label>
+              <Hint id="example-large-3-hint">This is a hint</Hint>
+              <ErrorMessage message="This is an error message" id="example-large-3-error" />
               <Input
                 name="example-large-3"
                 size="large"
                 id="example-large-3"
                 aria-describedby="example-large-3-hint example-large-3-error"
               />
-            </Form.Group>
-          </Form.Section>
+            </FormGroup>
+          </FormSection>
         </Form>
       </>
     );
@@ -132,12 +132,9 @@ export const MultipleErrors: Story = {
   render: () => {
     return (
       <Form>
-        <Form.Label htmlFor="example-m-errors">This is a label</Form.Label>
-        <Form.Hint id="example-m-errors-hint">This is a hint</Form.Hint>
-        <Form.ErrorMessage
-          message={['This is an error message', 'another error message']}
-          id="example-m-errors-message"
-        />
+        <Label htmlFor="example-m-errors">This is a label</Label>
+        <Hint id="example-m-errors-hint">This is a hint</Hint>
+        <ErrorMessage message={['This is an error message', 'another error message']} id="example-m-errors-message" />
         <Input id="example-m-errors" aria-describedby="example-m-errors-hint example-m-errors-message" />
       </Form>
     );
@@ -154,9 +151,9 @@ export const Size: Story = {
       <div className="flex flex-col gap-3">
         <Form>
           <h3>Sizing is currently handled on the child level. See example of size prop on Input component in code.</h3>
-          <Form.Label htmlFor="example-size">This is a label</Form.Label>
-          <Form.Hint id="example-size-hint">This is a hint</Form.Hint>
-          <Form.ErrorMessage message="This is an error message" id="example-size-error" />
+          <Label htmlFor="example-size">This is a label</Label>
+          <Hint id="example-size-hint">This is a hint</Hint>
+          <ErrorMessage message="This is an error message" id="example-size-error" />
           <Input size="large" id="example-size" aria-describedby="example-size-hint example-size-error" />
         </Form>
       </div>
@@ -175,9 +172,9 @@ export const AllSpacings: Story = {
         {(['medium', 'large'] as const).map(size => (
           <Form spacing={size}>
             <h3>Form with Spacing:{size}. Sets spacing between label, hint and form groups.</h3>
-            <Form.Label htmlFor={`space-${size}`}>This is a label</Form.Label>
-            <Form.Hint id={`space-${size}-hint`}>This is a hint</Form.Hint>
-            <Form.ErrorMessage message="This is an error message" id={`space-${size}-error`} />
+            <Label htmlFor={`space-${size}`}>This is a label</Label>
+            <Hint id={`space-${size}-hint`}>This is a hint</Hint>
+            <ErrorMessage message="This is an error message" id={`space-${size}-error`} />
             <Input id={`space-${size}`} aria-describedby={`space-${size}-hint space-${size}-error`} />
           </Form>
         ))}

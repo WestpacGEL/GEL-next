@@ -9,7 +9,6 @@ import { DropDownIcon, IconProps } from '../icon/index.js';
 
 import { styles as buttonDropdownStyles } from './button-dropdown.styles.js';
 import { type ButtonDropdownProps } from './button-dropdown.types.js';
-import { ButtonDropdownHeading } from './components/button-dropdown-heading/index.js';
 import { ButtonDropdownPanel } from './components/button-dropdown-panel/button-dropdown-panel.component.js';
 
 export function ButtonDropdown({
@@ -78,5 +77,3 @@ export function ButtonDropdown({
     </>
   );
 }
-
-ButtonDropdown.Heading = ButtonDropdownHeading;

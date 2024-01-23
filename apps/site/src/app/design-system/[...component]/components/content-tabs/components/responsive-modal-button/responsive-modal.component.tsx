@@ -1,6 +1,6 @@
 'use client';
 
-import { Grid, GridItem, Modal } from '@westpac/ui';
+import { Grid, GridItem, Modal, ModalBody } from '@westpac/ui';
 import { DesktopIcon, GelIcon, PhoneIcon, TabletIcon } from '@westpac/ui/icon';
 
 import { Container } from '@/app/design-system/components';
@@ -10,7 +10,7 @@ import { ResponsiveModalProps } from '.';
 export function ResponsiveModal({ children, ...props }: ResponsiveModalProps) {
   return (
     <Modal isDismissable className="bg-light" {...props}>
-      <Modal.Body className="flex flex-1 flex-col">
+      <ModalBody className="flex flex-1 flex-col">
         <Container className="flex flex-1 flex-col pt-5">
           <div className="flex justify-between">
             <h2 className="typography-body-7 font-light sm:typography-body-6">Responsive Demo</h2>
@@ -38,7 +38,7 @@ export function ResponsiveModal({ children, ...props }: ResponsiveModalProps) {
             </div>
           </div>
         </Container>
-      </Modal.Body>
+      </ModalBody>
     </Modal>
   );
 }

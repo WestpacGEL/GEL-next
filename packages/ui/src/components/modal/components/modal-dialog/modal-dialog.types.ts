@@ -7,7 +7,7 @@ type Variants = VariantProps<typeof styles>;
 
 export type ModalDialogProps = {
   /**
-   * Boolean to wrap all children into a Modal.Body
+   * Boolean to wrap all children into a ModalBody
    */
   body?: boolean;
   /**

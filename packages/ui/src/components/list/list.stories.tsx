@@ -4,6 +4,8 @@ import { AndroidIcon } from '../icon/index.js';
 
 import { List } from './list.component.js';
 
+import { ListItem } from './index.js';
+
 const meta: Meta<typeof List> = {
   title: 'Components/List',
   component: List,
@@ -22,11 +24,7 @@ const TYPES = ['bullet', 'link', 'tick', 'cross', 'unstyled', 'icon', 'ordered']
  */
 export const Default: Story = {
   args: {
-    children: [
-      <List.Item>Styled list</List.Item>,
-      <List.Item>Styled list</List.Item>,
-      <List.Item>Styled list</List.Item>,
-    ],
+    children: [<ListItem>Styled list</ListItem>, <ListItem>Styled list</ListItem>, <ListItem>Styled list</ListItem>],
   },
 };
 
@@ -38,15 +36,15 @@ export const Types = () =>
     <div className="mb-2" key={type}>
       <h1 className="typography-body-8">{type}</h1>
       <List type={type} icon={type === 'icon' ? AndroidIcon : undefined}>
-        <List.Item href={type === 'link' ? '#' : undefined}>Styled {type} list</List.Item>
-        <List.Item href={type === 'link' ? '#' : undefined}>Styled {type} list</List.Item>
-        <List.Item href={type === 'link' ? '#' : undefined}>Styled {type} list</List.Item>
+        <ListItem href={type === 'link' ? '#' : undefined}>Styled {type} list</ListItem>
+        <ListItem href={type === 'link' ? '#' : undefined}>Styled {type} list</ListItem>
+        <ListItem href={type === 'link' ? '#' : undefined}>Styled {type} list</ListItem>
         <List icon={type === 'link' ? AndroidIcon : undefined}>
-          <List.Item>Styled {type} list</List.Item>
-          <List.Item>Styled {type} list</List.Item>
-          <List.Item>Styled {type} list</List.Item>
+          <ListItem>Styled {type} list</ListItem>
+          <ListItem>Styled {type} list</ListItem>
+          <ListItem>Styled {type} list</ListItem>
         </List>
-        <List.Item>Styled {type} list</List.Item>
+        <ListItem>Styled {type} list</ListItem>
       </List>
     </div>
   ));
@@ -59,15 +57,15 @@ export const Looks = () =>
     <div className="mb-2" key={look}>
       <h1 className="typography-body-8">{look}</h1>
       <List look={look} type="bullet">
-        <List.Item>Styled {look} list</List.Item>
-        <List.Item>Styled {look} list</List.Item>
-        <List.Item>Styled {look} list</List.Item>
+        <ListItem>Styled {look} list</ListItem>
+        <ListItem>Styled {look} list</ListItem>
+        <ListItem>Styled {look} list</ListItem>
         <List icon={look === 'link' ? AndroidIcon : undefined}>
-          <List.Item>Styled {look} list</List.Item>
-          <List.Item>Styled {look} list</List.Item>
-          <List.Item>Styled {look} list</List.Item>
+          <ListItem>Styled {look} list</ListItem>
+          <ListItem>Styled {look} list</ListItem>
+          <ListItem>Styled {look} list</ListItem>
         </List>
-        <List.Item>Styled {look} list</List.Item>
+        <ListItem>Styled {look} list</ListItem>
       </List>
     </div>
   ));
@@ -78,21 +76,21 @@ export const Looks = () =>
 export const Nested = () => (
   <div>
     <List type="bullet" assistiveText="test">
-      <List.Item>Styled list</List.Item>
-      <List.Item>Styled list</List.Item>
-      <List.Item>Styled list</List.Item>
+      <ListItem>Styled list</ListItem>
+      <ListItem>Styled list</ListItem>
+      <ListItem>Styled list</ListItem>
       <List>
-        <List.Item>Styled list</List.Item>
-        <List.Item>Styled list</List.Item>
-        <List.Item>Styled list</List.Item>
+        <ListItem>Styled list</ListItem>
+        <ListItem>Styled list</ListItem>
+        <ListItem>Styled list</ListItem>
         <List nested={0}>
-          <List.Item>Styled list</List.Item>
-          <List.Item>Styled list</List.Item>
-          <List.Item>Styled list</List.Item>
+          <ListItem>Styled list</ListItem>
+          <ListItem>Styled list</ListItem>
+          <ListItem>Styled list</ListItem>
           <List>
-            <List.Item>Styled list</List.Item>
-            <List.Item>Styled list</List.Item>
-            <List.Item>Styled list</List.Item>
+            <ListItem>Styled list</ListItem>
+            <ListItem>Styled list</ListItem>
+            <ListItem>Styled list</ListItem>
           </List>
         </List>
       </List>
@@ -107,15 +105,15 @@ export const Spacing = () => (
   <div>
     <h1 className="typography-body-10 mb-2">Medium</h1>
     <List type="bullet" className="mb-4" spacing="medium">
-      <List.Item>Styled bullet list</List.Item>
-      <List.Item>Styled bullet list</List.Item>
-      <List.Item>Styled bullet list</List.Item>
+      <ListItem>Styled bullet list</ListItem>
+      <ListItem>Styled bullet list</ListItem>
+      <ListItem>Styled bullet list</ListItem>
     </List>
     <h1 className="typography-body-10 mb-2">Large</h1>
     <List type="bullet" className="mb-4" spacing="large">
-      <List.Item>Styled bullet list</List.Item>
-      <List.Item>Styled bullet list</List.Item>
-      <List.Item>Styled bullet list</List.Item>
+      <ListItem>Styled bullet list</ListItem>
+      <ListItem>Styled bullet list</ListItem>
+      <ListItem>Styled bullet list</ListItem>
     </List>
   </div>
 );
