@@ -58,3 +58,4 @@ function BaseSelectorRadioGroupOption(
 export const SelectorRadioGroupOption = forwardRef(BaseSelectorRadioGroupOption) as React.ForwardRefExoticComponent<
   SelectorRadioGroupOptionProps & React.RefAttributes<unknown>
 >;
+SelectorRadioGroupOption.displayName = 'SelectorRadio';

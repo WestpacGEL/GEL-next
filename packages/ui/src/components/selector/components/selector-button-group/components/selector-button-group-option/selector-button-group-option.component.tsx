@@ -67,3 +67,4 @@ function BaseSelectorButtonGroupOption(
 export const SelectorButtonGroupOption = forwardRef(BaseSelectorButtonGroupOption) as React.ForwardRefExoticComponent<
   SelectorButtonGroupOptionProps & React.RefAttributes<unknown>
 >;
+SelectorButtonGroupOption.displayName = 'SelectorButton';

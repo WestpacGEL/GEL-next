@@ -8,6 +8,9 @@ import { usePopoverPosition } from '../../popover.hooks.js';
 import { styles as panelStyles } from './panel.styles.js';
 import { type PanelProps, Position } from './panel.types.js';
 
+/**
+ * @private
+ */
 export function Panel({ state, heading, headingTag: Tag = 'h1', content, placement, id, triggerRef }: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);

@@ -62,3 +62,4 @@ function BaseSelectorLinkGroupOption(
 export const SelectorLinkGroupOption = forwardRef(BaseSelectorLinkGroupOption) as React.ForwardRefExoticComponent<
   SelectorLinkGroupOptionProps & React.RefAttributes<unknown>
 >;
+SelectorLinkGroupOption.displayName = 'SelectorLink';

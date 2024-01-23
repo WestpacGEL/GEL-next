@@ -150,11 +150,12 @@ export default async function ComponentPage({ params }: { params: { component: s
 
   const componentLookupKey = content.namedExport?.value?.name || componentName;
   const componentProps: ComponentProps | undefined = (json as any)[componentLookupKey];
-  const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, any]) => {
-    if (key.indexOf(`${componentLookupKey}.`) !== 0) {
-      return acc;
+  const componentLookupPath = componentProps?.filePath.split('/')[0];
+  const subComponentProps = Object.entries(json).reduce((acc, [_, value]: [string, any]) => {
+    if (value.filePath.startsWith(`${componentLookupPath}/components`)) {
+      return [...acc, value];
     }
-    return [...acc, value];
+    return acc;
   }, [] as ComponentProps[]);
 
   return (

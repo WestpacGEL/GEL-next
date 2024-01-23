@@ -6,6 +6,9 @@ import { Circle } from '../../../index.js';
 import { styles as progressRopeStyles } from './progress-rope-step.styles.js';
 import { type ProgressRopeStepProps } from './progress-rope-step.types.js';
 
+/**
+ * @private
+ */
 export function ProgressRopeStep({
   className,
   current,

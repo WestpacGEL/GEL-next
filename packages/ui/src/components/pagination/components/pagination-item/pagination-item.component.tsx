@@ -3,6 +3,9 @@ import React from 'react';
 import { styles } from './pagination-item.styles.js';
 import { type PaginationItemProps } from './pagination-item.types.js';
 
+/**
+ * @private
+ */
 export function PaginationItem({
   className,
   firstItem = false,

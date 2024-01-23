@@ -64,3 +64,4 @@ function BaseSelectorCheckboxGroupOption(
 export const SelectorCheckboxGroupOption = forwardRef(
   BaseSelectorCheckboxGroupOption,
 ) as React.ForwardRefExoticComponent<SelectorCheckboxGroupOptionProps & React.RefAttributes<unknown>>;
+SelectorCheckboxGroupOption.displayName = 'SelectorCheckbox';
