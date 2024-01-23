@@ -2,10 +2,10 @@ import React from 'react';
 
 import { VisuallyHidden } from '../index.js';
 
-import { styles } from './form-label.styles.js';
-import { type FormLabelProps } from './form-label.types.js';
+import { styles } from './label.styles.js';
+import { type LabelProps } from './label.types.js';
 
-export function FormLabel({
+export function Label({
   className,
   tag: Tag = 'label',
   spacing,
@@ -13,7 +13,7 @@ export function FormLabel({
   children,
   size = 'medium',
   ...props
-}: FormLabelProps) {
+}: LabelProps) {
   const finalSpacing = spacing || 'medium';
 
   return srOnly ? (

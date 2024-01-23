@@ -29,7 +29,7 @@ const TYPES_TO_BE_IGNORED = [
   const results = await glob(components);
 
   const data = Object.fromEntries(
-    tsConfigParser.parse(results).reduce((acc, { displayName, description, props, tags }) => {
+    tsConfigParser.parse(results).reduce((acc, { displayName, description, props, tags, filePath }) => {
       /**
        * Some components should not be scanned since it is a internal component
        * so the comment @private is used in order to skip some components.
@@ -37,7 +37,6 @@ const TYPES_TO_BE_IGNORED = [
       if (tags.private !== undefined) {
         return acc;
       }
-
       return [
         ...acc,
         [
@@ -45,6 +44,10 @@ const TYPES_TO_BE_IGNORED = [
           {
             displayName,
             description,
+            filePath: filePath
+              .replace(process.cwd(), '')
+              .replace('/src/components/', '')
+              .replace('src/components/', ''),
             // Sort the required props before the non-required props, then sort alphabetically
             props: Object.fromEntries(
               Object.values(props)

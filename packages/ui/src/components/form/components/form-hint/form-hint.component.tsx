@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { type FormHintProps, FormHint as GelFormHint } from '../../../index.js';
+import { Hint as GelFormHint, type HintProps } from '../../../index.js';
 import { useFormContext } from '../../form.component.js';
 
-export function FormHint({ ...props }: FormHintProps) {
+export function FormHint({ ...props }: HintProps) {
   const { spacing } = useFormContext();
 
   return <GelFormHint spacing={spacing} {...props} />;

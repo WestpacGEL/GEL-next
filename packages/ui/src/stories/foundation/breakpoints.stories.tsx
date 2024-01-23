@@ -1,6 +1,15 @@
 import { type Meta, StoryFn } from '@storybook/react';
 
-import { Table } from '../../components/index.js';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHeader,
+  TableHeaderCell,
+  TableHeaderRow,
+  TableRow,
+} from '../../components/index.js';
 
 const meta: Meta = {
   title: 'Foundation/Breakpoints',
@@ -16,40 +25,40 @@ export default meta;
  */
 export const Breakpoints = () => (
   <Table>
-    <Table.Caption>GEL breakpoint tokens</Table.Caption>
-    <Table.Header>
-      <Table.HeaderRow>
-        <Table.HeaderCell>Token</Table.HeaderCell>
-        <Table.HeaderCell>Value</Table.HeaderCell>
-        <Table.HeaderCell>Tailwind prefix</Table.HeaderCell>
-      </Table.HeaderRow>
-    </Table.Header>
-    <Table.Body>
-      <Table.Row>
-        <Table.Cell>xsl</Table.Cell>
-        <Table.Cell>0px and up</Table.Cell>
-        <Table.Cell>xsl:</Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>sm</Table.Cell>
-        <Table.Cell>768px and up</Table.Cell>
-        <Table.Cell>sm:</Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>md</Table.Cell>
-        <Table.Cell>992 and up</Table.Cell>
-        <Table.Cell>md:</Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>lg</Table.Cell>
-        <Table.Cell>1200 and up</Table.Cell>
-        <Table.Cell>lg:</Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>xl</Table.Cell>
-        <Table.Cell>1900 and up</Table.Cell>
-        <Table.Cell>xl:</Table.Cell>
-      </Table.Row>
-    </Table.Body>
+    <TableCaption>GEL breakpoint tokens</TableCaption>
+    <TableHeader>
+      <TableHeaderRow>
+        <TableHeaderCell>Token</TableHeaderCell>
+        <TableHeaderCell>Value</TableHeaderCell>
+        <TableHeaderCell>Tailwind prefix</TableHeaderCell>
+      </TableHeaderRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>xsl</TableCell>
+        <TableCell>0px and up</TableCell>
+        <TableCell>xsl:</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>sm</TableCell>
+        <TableCell>768px and up</TableCell>
+        <TableCell>sm:</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>md</TableCell>
+        <TableCell>992 and up</TableCell>
+        <TableCell>md:</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>lg</TableCell>
+        <TableCell>1200 and up</TableCell>
+        <TableCell>lg:</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>xl</TableCell>
+        <TableCell>1900 and up</TableCell>
+        <TableCell>xl:</TableCell>
+      </TableRow>
+    </TableBody>
   </Table>
 );

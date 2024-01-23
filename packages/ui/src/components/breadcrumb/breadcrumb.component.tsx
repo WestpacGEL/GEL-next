@@ -4,7 +4,6 @@ import React, { Children, FunctionComponentElement, cloneElement } from 'react';
 import { useBreadcrumbs } from 'react-aria';
 
 import { type BreadcrumbProps } from './breadcrumb.types.js';
-import { BreadcrumbItem } from './components/breadcrumb-item/breadcrumb-item.component.js';
 
 export function Breadcrumb({ className, children, ...props }: BreadcrumbProps) {
   const { navProps } = useBreadcrumbs(props);
@@ -22,4 +21,3 @@ export function Breadcrumb({ className, children, ...props }: BreadcrumbProps) {
     </nav>
   );
 }
-Breadcrumb.Item = BreadcrumbItem;

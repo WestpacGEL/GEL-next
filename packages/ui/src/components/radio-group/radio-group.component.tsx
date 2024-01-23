@@ -6,9 +6,8 @@ import { useRadioGroupState } from 'react-stately';
 
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
-import { ErrorMessage, FormHint, FormLabel } from '../index.js';
+import { ErrorMessage, Hint, Label } from '../index.js';
 
-import { RadioGroupRadio } from './components/radio-group-radio/radio-group-radio.component.js';
 import { styles as radioGroupStyles } from './radio-group.styles.js';
 import { type RadioGroupContextState, type RadioGroupProps } from './radio-group.types.js';
 
@@ -67,8 +66,8 @@ export function RadioGroup({
 
   return (
     <div className={styles.base({ className })} {...radioGroupProps}>
-      <FormLabel {...labelProps}>{label}</FormLabel>
-      {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}
+      <Label {...labelProps}>{label}</Label>
+      {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && state.validationState === 'invalid' && (
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}
@@ -93,4 +92,3 @@ export function RadioGroup({
     </div>
   );
 }
-RadioGroup.Radio = RadioGroupRadio;

@@ -2,10 +2,14 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 import { useMemo, useState } from 'react';
 
+import { FlexiCellAdornment } from '../flexi-cell/components/flexi-cell-adornment/flexi-cell-adornment.component.js';
+import { FlexiCellButton } from '../flexi-cell/components/flexi-cell-button/flexi-cell-button.component.js';
+import { FlexiCellHint } from '../flexi-cell/components/flexi-cell-hint/flexi-cell-hint.component.js';
+import { FlexiCellLabel } from '../flexi-cell/components/flexi-cell-label/flexi-cell-label.component.js';
 import { InfoIcon } from '../icon/index.js';
 import { FlexiCell } from '../index.js';
 
-import { FilterButtonsProps } from './components/index.js';
+import { FilterButtons, FilterButtonsProps, FilterInput } from './components/index.js';
 import { Filter } from './filter.component.js';
 
 function StoryFilter({ filterButtons }: FilterButtonsProps) {
@@ -13,8 +17,8 @@ function StoryFilter({ filterButtons }: FilterButtonsProps) {
 
   return (
     <Filter>
-      <Filter.Input onChange={({ target: { value } }) => console.log(value)} />
-      <Filter.Buttons
+      <FilterInput onChange={({ target: { value } }) => console.log(value)} />
+      <FilterButtons
         filterButtons={filterButtons}
         selectedButton={selected}
         onClick={id => setSelected(id)}
@@ -37,27 +41,27 @@ const meta: Meta = {
   ],
   argTypes: {
     children: {
-      description: '`Filter` Should contain `Filter.Input` and `Filter.Buttons` components',
+      description: '`Filter` Should contain `FilterInput` and `FilterButtons` components',
       type: { name: 'other', value: 'ReactNode' },
     },
     filterButtons: {
       description:
-        ' `Filter.Buttons` An array of FilterButtonProps that generate buttons for the filter \n\n- id: used to identify selected button and for key `string` \n\n- text: text on the button `string`',
+        ' `FilterButtons` An array of FilterButtonProps that generate buttons for the filter \n\n- id: used to identify selected button and for key `string` \n\n- text: text on the button `string`',
     },
     onClick: {
-      description: '`Filter.Buttons` Function that is called when a button on the filter is clicked',
+      description: '`FilterButtons` Function that is called when a button on the filter is clicked',
       type: 'function',
     },
     onChange: {
-      description: '`Filter.Input` Function that is called when the input is changed',
+      description: '`FilterInput` Function that is called when the input is changed',
       type: 'function',
     },
     resultsFound: {
-      description: '`Filter.Buttons` Needed for custom `aria-description`, number of results filter returns',
+      description: '`FilterButtons` Needed for custom `aria-description`, number of results filter returns',
       type: 'number',
     },
     selectedButton: {
-      description: '`Filter.Buttons` id of which button should be selected',
+      description: '`FilterButtons` id of which button should be selected',
       type: 'string',
     },
   },
@@ -294,8 +298,8 @@ export const FilterWithContent = () => {
   return (
     <div className="flex flex-col gap-3">
       <Filter>
-        <Filter.Input value={searchValue} onChange={({ target: { value } }) => setSearchValue(value)} />
-        <Filter.Buttons
+        <FilterInput value={searchValue} onChange={({ target: { value } }) => setSearchValue(value)} />
+        <FilterButtons
           filterButtons={FILTERS}
           selectedButton={selectedFilter}
           onClick={id => setSelectedFilter(id)}
@@ -313,7 +317,7 @@ export const FilterWithContent = () => {
                   href="#"
                   key={name}
                   before={
-                    <FlexiCell.Adornment>
+                    <FlexiCellAdornment>
                       <svg
                         className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
                         viewBox="0 0 640 480"
@@ -325,21 +329,21 @@ export const FilterWithContent = () => {
                         <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
                         <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
                       </svg>
-                    </FlexiCell.Adornment>
+                    </FlexiCellAdornment>
                   }
                   after={
-                    <FlexiCell.Adornment align="center">
-                      <FlexiCell.Label rightLabel tag="h4">
+                    <FlexiCellAdornment align="center">
+                      <FlexiCellLabel rightLabel tag="h4">
                         {paidAt}
-                      </FlexiCell.Label>
-                    </FlexiCell.Adornment>
+                      </FlexiCellLabel>
+                    </FlexiCellAdornment>
                   }
                   size={{ initial: 'default', sm: 'large' }}
                 >
-                  <FlexiCell.Label tag="h4">{name + responsiveString}</FlexiCell.Label>
-                  <FlexiCell.Hint className="-mb-1">{number}</FlexiCell.Hint>
-                  <FlexiCell.Hint className="-mb-1">{bank}</FlexiCell.Hint>
-                  <FlexiCell.Hint>{code}</FlexiCell.Hint>
+                  <FlexiCellLabel tag="h4">{name + responsiveString}</FlexiCellLabel>
+                  <FlexiCellHint className="-mb-1">{number}</FlexiCellHint>
+                  <FlexiCellHint className="-mb-1">{bank}</FlexiCellHint>
+                  <FlexiCellHint>{code}</FlexiCellHint>
                 </FlexiCell>
               ) : (
                 <FlexiCell
@@ -347,7 +351,7 @@ export const FilterWithContent = () => {
                   dualAction
                   key={name}
                   before={
-                    <FlexiCell.Adornment>
+                    <FlexiCellAdornment>
                       <svg
                         className="h-4 w-4"
                         viewBox="0 0 640 480"
@@ -359,14 +363,14 @@ export const FilterWithContent = () => {
                         <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
                         <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
                       </svg>
-                    </FlexiCell.Adornment>
+                    </FlexiCellAdornment>
                   }
-                  after={<FlexiCell.Button icon={() => <InfoIcon look="outlined" />} />}
+                  after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
                 >
-                  <FlexiCell.Label tag="h4">{name}</FlexiCell.Label>
-                  <FlexiCell.Hint className="-mb-1">{number}</FlexiCell.Hint>
-                  <FlexiCell.Hint className="-mb-1">{bank}</FlexiCell.Hint>
-                  <FlexiCell.Hint>{code}</FlexiCell.Hint>
+                  <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
+                  <FlexiCellHint className="-mb-1">{number}</FlexiCellHint>
+                  <FlexiCellHint className="-mb-1">{bank}</FlexiCellHint>
+                  <FlexiCellHint>{code}</FlexiCellHint>
                 </FlexiCell>
               ),
             )}

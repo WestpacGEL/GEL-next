@@ -2,12 +2,14 @@ import { render } from '@testing-library/react';
 
 import { Panel } from './panel.component.js';
 
+import { PanelBody, PanelFooter } from './index.js';
+
 describe('Panel', () => {
   it('renders the component', () => {
     const { container } = render(
       <Panel heading="test heading">
-        <Panel.Body>Test body</Panel.Body>
-        <Panel.Footer>Test footer</Panel.Footer>
+        <PanelBody>Test body</PanelBody>
+        <PanelFooter>Test footer</PanelFooter>
       </Panel>,
     );
     expect(container).toBeInTheDocument();
@@ -16,8 +18,8 @@ describe('Panel', () => {
   it('should have the correct default styling', () => {
     const { getByText, getByTestId } = render(
       <Panel heading="test heading" data-testid="panel">
-        <Panel.Body>Test body</Panel.Body>
-        <Panel.Footer>Test footer</Panel.Footer>
+        <PanelBody>Test body</PanelBody>
+        <PanelFooter>Test footer</PanelFooter>
       </Panel>,
     );
     expect(getByTestId('panel')).toHaveClass('border-hero');
@@ -27,8 +29,8 @@ describe('Panel', () => {
   it('should have the correct faint styling', () => {
     const { getByText, getByTestId } = render(
       <Panel heading="test heading" data-testid="panel" look="faint">
-        <Panel.Body>Test body</Panel.Body>
-        <Panel.Footer>Test footer</Panel.Footer>
+        <PanelBody>Test body</PanelBody>
+        <PanelFooter>Test footer</PanelFooter>
       </Panel>,
     );
     expect(getByTestId('panel')).toHaveClass('border-border');

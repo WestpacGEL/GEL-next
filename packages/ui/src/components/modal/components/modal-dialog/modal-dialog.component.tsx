@@ -8,6 +8,9 @@ import { ModalDialogFooter } from './components/modal-dialog-footer/index.js';
 import { styles as dialogStyles } from './modal-dialog.styles.js';
 import { type ModalDialogProps } from './modal-dialog.types.js';
 
+/**
+ * @private
+ */
 export function ModalDialog({ className, body, onClose, size = 'md', ...props }: ModalDialogProps) {
   const { children } = props;
   const { isFocusVisible, focusProps } = useFocusRing();

@@ -1,4 +1,4 @@
-import { Field, Form, Input, Select, SelectProps } from '@westpac/ui';
+import { Field, Form, FormGroup, Input, Select, SelectProps } from '@westpac/ui';
 import { Fragment, useState } from 'react';
 
 const AddressManualComplexPattern = ({ property = 'house' }) => {
@@ -28,24 +28,24 @@ const AddressManualComplexPattern = ({ property = 'house' }) => {
 
   return (
     <Fragment>
-      <Form.Group>
+      <FormGroup>
         <Field label={propertyStr}>
           <Input size="large" className="w-full sm:w-3/12" />
         </Field>
-      </Form.Group>
+      </FormGroup>
       {extraStreetNum && (
-        <Form.Group>
+        <FormGroup>
           <Field label="Street number">
             <Input size="large" className="w-full sm:w-3/12" />
           </Field>
-        </Form.Group>
+        </FormGroup>
       )}
-      <Form.Group>
+      <FormGroup>
         <Field label="Street name">
           <Input size="large" className="w-full sm:w-8/12" />
         </Field>
-      </Form.Group>
-      <Form.Group>
+      </FormGroup>
+      <FormGroup>
         <Field label="Street type">
           <Select size="large" className="w-full sm:w-5/12">
             <option>Select</option>
@@ -54,13 +54,13 @@ const AddressManualComplexPattern = ({ property = 'house' }) => {
             <option>Avenue</option>
           </Select>
         </Field>
-      </Form.Group>
-      <Form.Group>
+      </FormGroup>
+      <FormGroup>
         <Field label="Suburb">
           <Input size="large" className="w-full sm:w-8/12" autoComplete="address-level2" />
         </Field>
-      </Form.Group>
-      <Form.Group>
+      </FormGroup>
+      <FormGroup>
         <Field label="State">
           <Select size="large" className="w-full sm:w-5/12" autoComplete="address-level1">
             <option>Select</option>
@@ -73,12 +73,12 @@ const AddressManualComplexPattern = ({ property = 'house' }) => {
             <option>NT</option>
           </Select>
         </Field>
-      </Form.Group>
-      <Form.Group>
+      </FormGroup>
+      <FormGroup>
         <Field label="Postcode">
           <Input size="large" className="w-full sm:w-2/12" autoComplete="postal-code" />
         </Field>
-      </Form.Group>
+      </FormGroup>
     </Fragment>
   );
 };
@@ -100,11 +100,11 @@ export const ComplexAddressDemo = () => {
 
   return (
     <Form spacing="large">
-      <Form.Group>
+      <FormGroup>
         <Field label="Property type" hintMessage="Must be a residential address">
           <PropertySelect value={property} onChange={e => setProperty(e.target.value)} />
         </Field>
-      </Form.Group>
+      </FormGroup>
       {property && <AddressManualComplexPattern property={property} />}
     </Form>
   );

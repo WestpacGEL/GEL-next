@@ -6,11 +6,10 @@ import { useCheckboxGroupState } from 'react-stately';
 
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
-import { ErrorMessage, FormHint, FormLabel } from '../index.js';
+import { ErrorMessage, Hint, Label } from '../index.js';
 
 import { styles as checkboxStyles } from './checkbox-group.styles.js';
 import { type CheckboxGroupContextState, type CheckboxGroupProps } from './checkbox-group.types.js';
-import { CheckboxGroupCheckbox } from './components/checkbox-group-checkbox/checkbox-group-checkbox.component.js';
 
 export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
   orientation: 'vertical',
@@ -62,8 +61,8 @@ export function CheckboxGroup({
 
   return (
     <div className={styles.base({ className })} {...groupProps}>
-      <FormLabel {...labelProps}>{label}</FormLabel>
-      {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}
+      <Label {...labelProps}>{label}</Label>
+      {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && state.validationState === 'invalid' && (
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}
@@ -88,4 +87,3 @@ export function CheckboxGroup({
     </div>
   );
 }
-CheckboxGroup.Checkbox = CheckboxGroupCheckbox;

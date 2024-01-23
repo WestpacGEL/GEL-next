@@ -1,7 +1,17 @@
 import { type Meta, StoryFn } from '@storybook/react';
 import { clsx } from 'clsx';
 
-import { Badge, Table } from '../../components/index.js';
+import {
+  Badge,
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHeader,
+  TableHeaderCell,
+  TableHeaderRow,
+  TableRow,
+} from '../../components/index.js';
 import { SPACING_UNIT } from '../../tailwind/constants/index.js';
 
 const meta: Meta = {
@@ -83,39 +93,39 @@ const SPACING_DEFAULT_CLASSES = 'h-3 w-0 bg-primary';
 export const MarginScale = () => {
   return (
     <Table>
-      <Table.Caption>
+      <TableCaption>
         GEL spacing for <strong>margin</strong>
-      </Table.Caption>
-      <Table.Header>
-        <Table.HeaderRow>
-          <Table.HeaderCell>Token</Table.HeaderCell>
-          <Table.HeaderCell>Pixel</Table.HeaderCell>
-          <Table.HeaderCell>REM</Table.HeaderCell>
-          <Table.HeaderCell>Tailwind class</Table.HeaderCell>
-        </Table.HeaderRow>
-      </Table.Header>
-      <Table.Body>
+      </TableCaption>
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>Token</TableHeaderCell>
+          <TableHeaderCell>Pixel</TableHeaderCell>
+          <TableHeaderCell>REM</TableHeaderCell>
+          <TableHeaderCell>Tailwind class</TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
         {SPACING_SCALE.map(spacing => {
           const pixelSize = SPACING_UNIT * spacing.value;
           const remSize = pixelSize / 16;
           return (
-            <Table.Row key={spacing.className}>
-              <Table.Cell className="align-middle">
+            <TableRow key={spacing.className}>
+              <TableCell className="align-middle">
                 <div className={clsx(spacing.className, SPACING_DEFAULT_CLASSES)} />
-              </Table.Cell>
-              <Table.Cell className="align-middle">{pixelSize}px</Table.Cell>
-              <Table.Cell className="align-middle">{remSize}rem</Table.Cell>
-              <Table.Cell>
+              </TableCell>
+              <TableCell className="align-middle">{pixelSize}px</TableCell>
+              <TableCell className="align-middle">{remSize}rem</TableCell>
+              <TableCell>
                 <div className="flex flex-wrap gap-1 align-middle">
                   {VARIATION_MARGIN_PADDING.map(v => (
                     <Badge color="faint">{`.m${v}-${spacing.value}`}</Badge>
                   ))}
                 </div>
-              </Table.Cell>
-            </Table.Row>
+              </TableCell>
+            </TableRow>
           );
         })}
-      </Table.Body>
+      </TableBody>
     </Table>
   );
 };
@@ -126,39 +136,39 @@ export const MarginScale = () => {
 export const PaddingScale = () => {
   return (
     <Table>
-      <Table.Caption>
+      <TableCaption>
         GEL spacing for <strong>padding</strong>
-      </Table.Caption>
-      <Table.Header>
-        <Table.HeaderRow>
-          <Table.HeaderCell>Token</Table.HeaderCell>
-          <Table.HeaderCell>Pixel</Table.HeaderCell>
-          <Table.HeaderCell>REM</Table.HeaderCell>
-          <Table.HeaderCell>Tailwind class</Table.HeaderCell>
-        </Table.HeaderRow>
-      </Table.Header>
-      <Table.Body>
+      </TableCaption>
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>Token</TableHeaderCell>
+          <TableHeaderCell>Pixel</TableHeaderCell>
+          <TableHeaderCell>REM</TableHeaderCell>
+          <TableHeaderCell>Tailwind class</TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
         {SPACING_SCALE.map(spacing => {
           const pixelSize = SPACING_UNIT * spacing.value;
           const remSize = pixelSize / 16;
           return (
-            <Table.Row key={spacing.className}>
-              <Table.Cell className="align-middle">
+            <TableRow key={spacing.className}>
+              <TableCell className="align-middle">
                 <div className={clsx(spacing.className, SPACING_DEFAULT_CLASSES)} />
-              </Table.Cell>
-              <Table.Cell className="align-middle">{pixelSize}px</Table.Cell>
-              <Table.Cell className="align-middle">{remSize}rem</Table.Cell>
-              <Table.Cell>
+              </TableCell>
+              <TableCell className="align-middle">{pixelSize}px</TableCell>
+              <TableCell className="align-middle">{remSize}rem</TableCell>
+              <TableCell>
                 <div className="flex flex-wrap gap-1 align-middle">
                   {VARIATION_MARGIN_PADDING.map(v => (
                     <Badge color="faint">{`.p${v}-${spacing.value}`}</Badge>
                   ))}
                 </div>
-              </Table.Cell>
-            </Table.Row>
+              </TableCell>
+            </TableRow>
           );
         })}
-      </Table.Body>
+      </TableBody>
     </Table>
   );
 };
@@ -169,35 +179,35 @@ export const PaddingScale = () => {
 export const GapScale = () => {
   return (
     <Table>
-      <Table.Caption>
+      <TableCaption>
         GEL spacing classes for <strong>gap</strong>
-      </Table.Caption>
-      <Table.Header>
-        <Table.HeaderRow>
-          <Table.HeaderCell>Token</Table.HeaderCell>
-          <Table.HeaderCell>Pixel</Table.HeaderCell>
-          <Table.HeaderCell>REM</Table.HeaderCell>
-          <Table.HeaderCell>Tailwind class</Table.HeaderCell>
-        </Table.HeaderRow>
-      </Table.Header>
-      <Table.Body>
+      </TableCaption>
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>Token</TableHeaderCell>
+          <TableHeaderCell>Pixel</TableHeaderCell>
+          <TableHeaderCell>REM</TableHeaderCell>
+          <TableHeaderCell>Tailwind class</TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
         {SPACING_SCALE.map(spacing => {
           const pixelSize = SPACING_UNIT * spacing.value;
           const remSize = pixelSize / 16;
           return (
-            <Table.Row key={spacing.className}>
-              <Table.Cell className="align-middle">
+            <TableRow key={spacing.className}>
+              <TableCell className="align-middle">
                 <div className={clsx(spacing.className, SPACING_DEFAULT_CLASSES)} />
-              </Table.Cell>
-              <Table.Cell className="align-middle">{pixelSize}px</Table.Cell>
-              <Table.Cell className="align-middle">{remSize}rem</Table.Cell>
-              <Table.Cell className="align-middle">
+              </TableCell>
+              <TableCell className="align-middle">{pixelSize}px</TableCell>
+              <TableCell className="align-middle">{remSize}rem</TableCell>
+              <TableCell className="align-middle">
                 <Badge color="faint">{`.gap-${spacing.value}`}</Badge>
-              </Table.Cell>
-            </Table.Row>
+              </TableCell>
+            </TableRow>
           );
         })}
-      </Table.Body>
+      </TableBody>
     </Table>
   );
 };

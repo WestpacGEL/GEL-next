@@ -4,7 +4,9 @@ The Tax File Number (TFN) pattern uses progressive disclosure as to allow the us
 
 ```tsx
 <Form spacing="large" className="w-full sm:w-7/12">
-  <TaxFileNumberPattern />
+  <Suspense fallback={<div>Loading...</div>}>
+    <TaxFileNumberPattern />
+  <Suspense />
 </Form>
 ```
 
@@ -14,6 +16,8 @@ This variation includes an option to select a TFN that has been provided previou
 
 ```tsx
 <Form spacing="large" className="w-full sm:w-7/12">
-  <TaxFileNumberPattern showPrevious />
+  <Suspense fallback={<div>Loading...</div>}>
+      <TaxFileNumberPattern showPrevious />
+    <Suspense />
 </Form>
 ```

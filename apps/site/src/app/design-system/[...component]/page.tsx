@@ -45,7 +45,15 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ComponentPage({ params }: { params: { component: string[] } }) {
+export default async function ComponentPage({
+  params,
+  searchParams,
+}: {
+  params: { component: string[] };
+  searchParams?: { [key: string]: string | undefined };
+}) {
+  const brand = searchParams?.brand || 'wbc';
+  const tab = searchParams?.tab || 'design';
   const { component } = params;
   const [content, westpacInfo, shortCodes] = await Promise.all([
     reader().collections.designSystem.readOrThrow(component.join('/')),
@@ -150,15 +158,18 @@ export default async function ComponentPage({ params }: { params: { component: s
 
   const componentLookupKey = content.namedExport?.value?.name || componentName;
   const componentProps: ComponentProps | undefined = (json as any)[componentLookupKey];
-  const subComponentProps = Object.entries(json).reduce((acc, [key, value]: [string, any]) => {
-    if (key.indexOf(`${componentLookupKey}.`) !== 0) {
-      return acc;
+  const componentLookupPath = componentProps?.filePath.split('/')[0];
+  const subComponentProps = Object.entries(json).reduce((acc, [_, value]: [string, any]) => {
+    if (value.filePath.startsWith(`${componentLookupPath}/components`)) {
+      return [...acc, value];
     }
-    return [...acc, value];
+    return acc;
   }, [] as ComponentProps[]);
 
   return (
     <ContentTabs
+      brand={brand}
+      tab={tab}
       content={{
         shortCodes,
         componentName: componentName,
@@ -177,5 +188,3 @@ export default async function ComponentPage({ params }: { params: { component: s
     />
   );
 }
-
-export const dynamic = 'force-dynamic';

@@ -25,11 +25,11 @@ export function ActionBar() {
             </p>
           </div>
           <ul role="list" className="flex gap-2">
-            {Object.entries(logoMap).map(([key, { logo: Logo }]) => (
+            {Object.entries(logoMap).map(([key, { logo: Logo, name }]) => (
               <li key={key}>
                 <Link href={`/design-system?brand=${key}`} className="outline-offset-[3px] outline-focus">
                   <CircleLogo>
-                    <Logo className={logoStyles({ brand: key as BrandKey })} />
+                    <Logo aria-label={`${name} Design System`} className={logoStyles({ brand: key as BrandKey })} />
                   </CircleLogo>
                 </Link>
               </li>
@@ -47,8 +47,11 @@ export function ActionBar() {
             {BANK_OPTIONS.map(({ icon: Icon, homePageClasses, key, label }) => (
               <BrandSelect.Option href={`/design-system?brand=${key}`} key={key} textValue={label}>
                 <div className="flex w-full items-center justify-between">
-                  <span className="typography-body-10">{label}</span>
-                  <Icon className={homePageClasses} />
+                  <span className="typography-body-10">
+                    {label}
+                    <span className="sr-only"> Design System</span>
+                  </span>
+                  <Icon aria-hidden="true" className={homePageClasses} />
                 </div>
               </BrandSelect.Option>
             ))}

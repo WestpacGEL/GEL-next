@@ -2,7 +2,7 @@ import { act, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ChangeEvent, useState } from 'react';
 
-import { Form } from '../form/index.js';
+import { Form, FormGroup, FormHint, FormLabel } from '../form/index.js';
 import { Input } from '../input/index.js';
 
 import { Compacta } from './compacta.component.js';
@@ -19,9 +19,9 @@ describe('Compacta', () => {
       <Compacta>
         {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
           <Form>
-            <Form.Group>
-              <Form.Label htmlFor={`primary-${id}`}>Primary</Form.Label>
-              <Form.Hint>Primary title text</Form.Hint>
+            <FormGroup>
+              <FormLabel htmlFor={`primary-${id}`}>Primary</FormLabel>
+              <FormHint>Primary title text</FormHint>
               <Input
                 name={`primary-${id}`}
                 value={inputs[`primary-${id}` as keyof typeof inputs] || ''}
@@ -31,10 +31,10 @@ describe('Compacta', () => {
                 }}
                 data-testid="input-one"
               />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label htmlFor={`secondary-${id}`}>Secondary</Form.Label>
-              <Form.Hint>Secondary title text</Form.Hint>
+            </FormGroup>
+            <FormGroup>
+              <FormLabel htmlFor={`secondary-${id}`}>Secondary</FormLabel>
+              <FormHint>Secondary title text</FormHint>
               <Input
                 name={`secondary-${id}`}
                 value={inputs[`secondary-${id}` as keyof typeof inputs] || ''}
@@ -44,10 +44,10 @@ describe('Compacta', () => {
                 }}
                 data-testid="input-two"
               />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label htmlFor={`tertiary-${id}`}>Tertiary</Form.Label>
-              <Form.Hint>Tertiary title text</Form.Hint>
+            </FormGroup>
+            <FormGroup>
+              <FormLabel htmlFor={`tertiary-${id}`}>Tertiary</FormLabel>
+              <FormHint>Tertiary title text</FormHint>
               <Input
                 name={`tertiary-${id}`}
                 value={inputs[`tertiary-${id}` as keyof typeof inputs] || ''}
@@ -57,7 +57,7 @@ describe('Compacta', () => {
                 }}
                 data-testid="input-three"
               />
-            </Form.Group>
+            </FormGroup>
           </Form>
         )}
       </Compacta>

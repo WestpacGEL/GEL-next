@@ -1,16 +1,9 @@
+'use client';
+
 import React, { forwardRef, useContext, useId, useRef } from 'react';
 import { mergeProps, useFocusRing, useLink } from 'react-aria';
 
 import { FlexiCell } from '../../../../../../index.js';
-import {
-  FlexiCellAdornment,
-  FlexiCellBody,
-  FlexiCellButton,
-  FlexiCellCircle,
-  FlexiCellFooter,
-  FlexiCellHint,
-  FlexiCellLabel,
-} from '../../../../../flexi-cell/index.js';
 import { ArrowRightIcon } from '../../../../../icon/index.js';
 import { SelectorLinkContext } from '../../selector-link-group.component.js';
 
@@ -68,20 +61,5 @@ function BaseSelectorLinkGroupOption(
 
 export const SelectorLinkGroupOption = forwardRef(BaseSelectorLinkGroupOption) as React.ForwardRefExoticComponent<
   SelectorLinkGroupOptionProps & React.RefAttributes<unknown>
-> & {
-  Adornment: typeof FlexiCell.Adornment;
-  Body: typeof FlexiCell.Body;
-  Button: typeof FlexiCell.Button;
-  Circle: typeof FlexiCell.Circle;
-  Footer: typeof FlexiCell.Footer;
-  Hint: typeof FlexiCell.Hint;
-  Label: typeof FlexiCell.Label;
-};
-
-SelectorLinkGroupOption.Body = FlexiCellBody;
-SelectorLinkGroupOption.Footer = FlexiCellFooter;
-SelectorLinkGroupOption.Adornment = FlexiCellAdornment;
-SelectorLinkGroupOption.Hint = FlexiCellHint;
-SelectorLinkGroupOption.Label = FlexiCellLabel;
-SelectorLinkGroupOption.Button = FlexiCellButton;
-SelectorLinkGroupOption.Circle = FlexiCellCircle;
+>;
+SelectorLinkGroupOption.displayName = 'SelectorLink';

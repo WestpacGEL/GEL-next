@@ -4,63 +4,65 @@ import userEvent from '@testing-library/user-event';
 import { Selector } from './selector.component.js';
 import { type SelectorProps } from './selector.types.js';
 
+import { SelectorButtonOption, SelectorCheckbox, SelectorLink, SelectorRadio } from './index.js';
+
 const ariaDisabled = 'aria-disabled';
 const ariaPressed = 'aria-pressed';
 const handleClick = vi.fn();
 
 const SimpleRadioSelector = (props: Omit<SelectorProps<'radio'>, 'children' | 'type'>) => (
   <Selector type="radio" aria-label="test" {...props}>
-    <Selector.Radio value="1" data-testid="opt1">
+    <SelectorRadio value="1" data-testid="opt1">
       option 1
-    </Selector.Radio>
-    <Selector.Radio value="2" data-testid="opt2">
+    </SelectorRadio>
+    <SelectorRadio value="2" data-testid="opt2">
       option 2
-    </Selector.Radio>
-    <Selector.Radio value="3" data-testid="opt3">
+    </SelectorRadio>
+    <SelectorRadio value="3" data-testid="opt3">
       option 3
-    </Selector.Radio>
+    </SelectorRadio>
   </Selector>
 );
 
 const SimpleCheckboxSelector = (props: Omit<SelectorProps<'checkbox'>, 'children' | 'type'>) => (
   <Selector type="checkbox" aria-label="test" {...props}>
-    <Selector.Checkbox value="1" data-testid="opt1">
+    <SelectorCheckbox value="1" data-testid="opt1">
       option 1
-    </Selector.Checkbox>
-    <Selector.Checkbox value="2" data-testid="opt2">
+    </SelectorCheckbox>
+    <SelectorCheckbox value="2" data-testid="opt2">
       option 2
-    </Selector.Checkbox>
-    <Selector.Checkbox value="3" data-testid="opt3">
+    </SelectorCheckbox>
+    <SelectorCheckbox value="3" data-testid="opt3">
       option 3
-    </Selector.Checkbox>
+    </SelectorCheckbox>
   </Selector>
 );
 
 const SimpleButtonSelector = (props: Omit<SelectorProps<'button'>, 'children' | 'type'>) => (
   <Selector type="button" aria-label="test" {...props}>
-    <Selector.ButtonOption id="A" data-testid="opt1" onClick={handleClick}>
+    <SelectorButtonOption id="A" data-testid="opt1" onClick={handleClick}>
       option 1
-    </Selector.ButtonOption>
-    <Selector.ButtonOption id="B" data-testid="opt2" onClick={handleClick}>
+    </SelectorButtonOption>
+    <SelectorButtonOption id="B" data-testid="opt2" onClick={handleClick}>
       option 2
-    </Selector.ButtonOption>
-    <Selector.ButtonOption id="C" data-testid="opt3" onClick={handleClick}>
+    </SelectorButtonOption>
+    <SelectorButtonOption id="C" data-testid="opt3" onClick={handleClick}>
       option 3
-    </Selector.ButtonOption>
+    </SelectorButtonOption>
   </Selector>
 );
 
 const SimpleLinkSelector = (props: Omit<SelectorProps<'link'>, 'children' | 'type'>) => (
   <Selector type="link" aria-label="test" {...props}>
-    <Selector.Link href="#" data-testid="opt1">
+    <SelectorLink href="#" data-testid="opt1">
       option 1
-    </Selector.Link>
-    <Selector.Link href="#" data-testid="opt2">
+    </SelectorLink>
+    <SelectorLink href="#" data-testid="opt2">
       option 2
-    </Selector.Link>
-    <Selector.Link href="#" data-testid="opt3">
+    </SelectorLink>
+    <SelectorLink href="#" data-testid="opt3">
       option 3
-    </Selector.Link>
+    </SelectorLink>
   </Selector>
 );
 

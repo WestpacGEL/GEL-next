@@ -2,14 +2,15 @@ import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ButtonGroup } from './button-group.component.js';
+import { ButtonGroupButton } from './components/button-group-button/button-group-button.component.js';
 
 describe('ButtonGroup', () => {
   it('renders the component', () => {
     const { container } = render(
       <ButtonGroup label="test">
-        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+        <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>
+        <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>
       </ButtonGroup>,
     );
     expect(container).toBeInTheDocument();
@@ -18,9 +19,9 @@ describe('ButtonGroup', () => {
   it('should render buttons when passed as children', () => {
     const { getByText } = render(
       <ButtonGroup label="test">
-        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+        <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>
+        <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>
       </ButtonGroup>,
     );
     expect(getByText('Option 1')).toBeInTheDocument();
@@ -31,9 +32,9 @@ describe('ButtonGroup', () => {
   it('should disable options when isDisabled prop passed', () => {
     const { getAllByRole } = render(
       <ButtonGroup label="test" isDisabled>
-        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+        <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>
+        <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>
       </ButtonGroup>,
     );
     const radios = getAllByRole('radio');
@@ -48,11 +49,11 @@ describe('ButtonGroup', () => {
 
     const { getByTestId } = render(
       <ButtonGroup onChange={onChange} label="test">
-        <ButtonGroup.Button value="Option 1" data-testid="option1">
+        <ButtonGroupButton value="Option 1" data-testid="option1">
           Option 1
-        </ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+        </ButtonGroupButton>
+        <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>
       </ButtonGroup>,
     );
     await act(() => user.click(getByTestId('option1')));
@@ -64,11 +65,11 @@ describe('ButtonGroup', () => {
 
     const { getByTestId } = render(
       <ButtonGroup label="test">
-        <ButtonGroup.Button value="Option 1" data-testid="option1">
+        <ButtonGroupButton value="Option 1" data-testid="option1">
           Option 1
-        </ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+        </ButtonGroupButton>
+        <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>
       </ButtonGroup>,
     );
     await act(() => user.click(getByTestId('option1')));

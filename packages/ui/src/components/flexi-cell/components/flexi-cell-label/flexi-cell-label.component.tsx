@@ -18,4 +18,3 @@ export const FlexiCellLabel = ({
     </Tag>
   );
 };
-FlexiCellLabel.displayName = 'FlexiCell.Label';

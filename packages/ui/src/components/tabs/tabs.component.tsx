@@ -43,4 +43,5 @@ export function Tabs({
     </div>
   );
 }
-Tabs.Panel = Item;
+
+export const TabsPanel = Item;

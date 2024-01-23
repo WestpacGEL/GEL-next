@@ -11,14 +11,14 @@ The minimum content requirement is a label.
     <Grid>
       <GridItem span={{ initial: 12, sm: 6 }}>
         <Selector type="radio" value={value} onChange={value => setValue(value)}>
-          <Selector.Radio key="1" value="1">
-            <Selector.Label>Label</Selector.Label>
+          <SelectorRadio key="1" value="1">
+            <SelectorLabel>Label</SelectorLabel>
           </Selector.Radio>
-          <Selector.Radio key="2" value="2">
-            <Selector.Label>Label</Selector.Label>
+          <SelectorRadio key="2" value="2">
+            <SelectorLabel>Label</SelectorLabel>
           </Selector.Radio>
-          <Selector.Radio key="3" value="3">
-            <Selector.Label>Label</Selector.Label>
+          <SelectorRadio key="3" value="3">
+            <SelectorLabel>Label</SelectorLabel>
           </Selector.Radio>
         </Selector>
       </GridItem> 
@@ -37,59 +37,59 @@ Any combination of these elements may be used as long as they are used consisten
 <Grid>
   <GridItem span={{ initial: 12, sm: 6 }}>
     <Selector type="radio">
-      <Selector.Radio
+      <SelectorRadio
         key="1"
         checkIcon="arrow"
         value="1"
         before={
-          <Selector.Adornment align="top">
+          <SelectorAdornment align="top">
             <SettingsIcon color="hero" />
-          </Selector.Adornment>
+          </SelectorAdornment>
         }
       >
         <div className="flex flex-row justify-between">
-          <Selector.Label>Label</Selector.Label>
-          <Selector.Label className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
+          <SelectorLabel>Label</SelectorLabel>
+          <SelectorLabel className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
             $10,000.00
-          </Selector.Label>
+          </SelectorLabel>
         </div>
-        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+        <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
       </Selector.Radio>
-      <Selector.Radio
+      <SelectorRadio
         key="2"
         checkIcon="arrow"
         value="2"
         before={
-          <Selector.Adornment align="top">
+          <SelectorAdornment align="top">
             <WatchIcon color="hero" />
-          </Selector.Adornment>
+          </SelectorAdornment>
         }
       >
         <div className="flex flex-row justify-between">
-          <Selector.Label>Label</Selector.Label>
-          <Selector.Label className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
+          <SelectorLabel>Label</SelectorLabel>
+          <SelectorLabel className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
             $10,000.00
-          </Selector.Label>
+          </SelectorLabel>
         </div>        
-        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+        <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
       </Selector.Radio>
-      <Selector.Radio
+      <SelectorRadio
         key="3"
         checkIcon="arrow"
         value="3"
         before={
-          <Selector.Adornment align="top">
+          <SelectorAdornment align="top">
             <EmailIcon color="hero"/>
-          </Selector.Adornment>
+          </SelectorAdornment>
         }
       >
         <div className="flex flex-row justify-between">
-          <Selector.Label>Label</Selector.Label>
-          <Selector.Label className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
+          <SelectorLabel>Label</SelectorLabel>
+          <SelectorLabel className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
             $10,000.00
-          </Selector.Label>
+          </SelectorLabel>
         </div>
-        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+        <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
       </Selector.Radio>
     </Selector>
   </GridItem>

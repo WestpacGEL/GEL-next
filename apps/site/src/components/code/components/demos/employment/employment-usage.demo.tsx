@@ -1,4 +1,4 @@
-import { Alert, Field, Form, Input, Select, SelectProps } from '@westpac/ui';
+import { Alert, ErrorMessage, Field, Form, FormGroup, FormLabel, Input, Select, SelectProps } from '@westpac/ui';
 import { Fragment, HTMLAttributes, useState } from 'react';
 
 import { EmploymentSelect, IndustrySelect } from './employment.demo';
@@ -46,35 +46,35 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
 
   return (
     <Fragment>
-      <Form.Group>
+      <FormGroup>
         <Field label="Employment type">
           <EmploymentSelect value={employment} onChange={e => setEmployment(e.target.value)} />
         </Field>
-      </Form.Group>
+      </FormGroup>
 
       {employed.includes(employment || '') && (
         <Fragment>
-          <Form.Group>
+          <FormGroup>
             <Field label="Occupation category">
               <IndustrySelect className="w-full" />
             </Field>
-          </Form.Group>
-          <Form.Group>
+          </FormGroup>
+          <FormGroup>
             <Field label="Occupation">
               <OccupationSelect className="w-full" />
             </Field>
-          </Form.Group>
-          <Form.Group>
+          </FormGroup>
+          <FormGroup>
             <Field
               label={`${employment === 'self' ? 'Company' : 'Employer'}’s legal business name`}
               errorMessage={error}
             >
               <Input className="w-full" size="large" invalid={invalid} />
             </Field>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Length of time with this {employment === 'self' ? 'company' : 'employer'}</Form.Label>
-            {error && <Form.ErrorMessage message={error} />}
+          </FormGroup>
+          <FormGroup>
+            <FormLabel>Length of time with this {employment === 'self' ? 'company' : 'employer'}</FormLabel>
+            {error && <ErrorMessage message={error} />}
             <fieldset className="flex gap-3">
               <Field label="Years" labelSize="small">
                 <Select
@@ -97,7 +97,7 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
                 </Select>
               </Field>
             </fieldset>
-          </Form.Group>
+          </FormGroup>
         </Fragment>
       )}
 
@@ -107,31 +107,31 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
             As you have only been with your current employer for less than x years, we need to capture your previous
             employment details.
           </Alert>
-          <Form.Group>
+          <FormGroup>
             <Field label="Previous employment type">
               <EmploymentSelect value={prevEmployment} onChange={(e: any) => setPrevEmployment(e.target.value)} />
             </Field>
-          </Form.Group>
-          <Form.Group>
+          </FormGroup>
+          <FormGroup>
             <Field label="Previous industry category">
               <IndustrySelect />
             </Field>
-          </Form.Group>
-          <Form.Group>
+          </FormGroup>
+          <FormGroup>
             <Field label="Previous occupation">
               <Select size="large">
                 <option>Select</option>
               </Select>
             </Field>
-          </Form.Group>
-          <Form.Group>
+          </FormGroup>
+          <FormGroup>
             <Field label={`${prevEmployment === 'self' ? 'Company' : 'Employer'}’s legal business name`}>
               <Input size="large" />
             </Field>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Length of time with this {prevEmployment === 'self' ? 'company' : 'employer'}</Form.Label>
-            {error && <Form.ErrorMessage message={error} />}
+          </FormGroup>
+          <FormGroup>
+            <FormLabel>Length of time with this {prevEmployment === 'self' ? 'company' : 'employer'}</FormLabel>
+            {error && <ErrorMessage message={error} />}
             <fieldset className="flex gap-3">
               <Field label="Years" labelSize="small">
                 <Select size="large">
@@ -148,7 +148,7 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
                 </Select>
               </Field>
             </fieldset>
-          </Form.Group>
+          </FormGroup>
         </Wrapper>
       )}
     </Fragment>
