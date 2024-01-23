@@ -22,16 +22,10 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Buttons
-    slug: components/button
   - title: Accordions
     slug: components/accordion
   - title: Tabs
     slug: components/tabs
-  - title: Colours
-    slug: foundation/colour
-  - title: Pictograms
-    slug: foundation/pictogram
 code:
   - title:
       name: Development examples
