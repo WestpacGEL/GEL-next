@@ -2,3 +2,12 @@
 - As with similar components that hide/show content, this component follows a ‘user is in control’ approach. Rather than programmatically moving focus to the collapsible content when shown, the toggle button has an *aria-expanded* attribute; the assistive technology user can choose to ‘arrow down’ to announce the collapsible content if they wish.
 - An indicator outline appears around the button toggle when focused
 - The toggle button shape, text, icon and collapsible content is visible in Windows High Contrast Mode
+
+### Accessibility in the HTML
+
+- `<button aria-expanded="false|true" aria-controls="{ID}">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The&nbsp;*aria-controls*&nbsp;attribute creates an association between toggle button and collapsible element.
+- `<div id="{ID}" aria-hidden="true|false">`: The collapsible element must have a unique&nbsp;*id*&nbsp;value. The toggle button&nbsp;*aria-controls*&nbsp;and collapsible element&nbsp;*id*&nbsp;attribute values must match. The collapsible element uses the&nbsp;*aria-hidden*&nbsp;attribute to hide from assistive technologies when no longer available.
+
+### Keyboard support
+
+Keyboard users navigate the toggle button as they would with a standard button.
