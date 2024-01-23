@@ -66,16 +66,40 @@
   </CheckboxGroup.Checkbox>
 </CheckboxGroup>
       <ButtonDropdown.Heading>Bank accounts</ButtonDropdown.Heading>
-      <List type="link" spacing="large">
-        <List.Item href="#">Savings</List.Item>
-        <List.Item href="#">Transaction</List.Item>
-      </List>
+<CheckboxGroup
+  defaultValue={[
+    'Option 1'
+  ]}
+  label={<h2>Test</h2>}
+>
+  <CheckboxGroup.Checkbox value="Option 1">
+    Option 1
+  </CheckboxGroup.Checkbox>
+  <CheckboxGroup.Checkbox value="Option 2">
+    Option 2
+  </CheckboxGroup.Checkbox>
+  <CheckboxGroup.Checkbox value="Option 3">
+    Option 3
+  </CheckboxGroup.Checkbox>
+</CheckboxGroup>
     </ButtonDropdown>
     <ButtonDropdown text="Credit cards" look="primary">
-      <List type="link" spacing="large">
-        <List.Item href="#">Rewards</List.Item>
-        <List.Item href="#">Low rate</List.Item>
-      </List>
+<CheckboxGroup
+  defaultValue={[
+    'Option 1'
+  ]}
+  label={<h2>Test</h2>}
+>
+  <CheckboxGroup.Checkbox value="Option 1">
+    Option 1
+  </CheckboxGroup.Checkbox>
+  <CheckboxGroup.Checkbox value="Option 2">
+    Option 2
+  </CheckboxGroup.Checkbox>
+  <CheckboxGroup.Checkbox value="Option 3">
+    Option 3
+  </CheckboxGroup.Checkbox>
+</CheckboxGroup>
     </ButtonDropdown>
   </div>
 ```
