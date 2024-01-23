@@ -34,7 +34,7 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Input fields
+  - title: Input groups
     slug: components/input-group
 code:
   - title:
