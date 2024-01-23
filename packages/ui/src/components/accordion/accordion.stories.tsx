@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Key, useState } from 'react';
 
-import { Button, Tabs } from '../index.js';
+import { Button, Tabs, TabsPanel } from '../index.js';
 
 import { Accordion, AccordionItem } from './accordion.component.js';
 

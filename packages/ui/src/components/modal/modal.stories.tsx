@@ -2,7 +2,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Fragment, useMemo } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
-import { Button } from '../index.js';
+import { Button, ModalBody, ModalFooter } from '../index.js';
 
 import { Modal } from './modal.component.js';
 
