@@ -3,16 +3,21 @@ description: >-
   Breadcrumbs are styled navigational links used to indicate the user’s location
   within your site. They are a simple, effective and proven method to aid
   orientation.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Breadcrumbs
       slug: breadcrumbs
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
@@ -26,10 +31,11 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Icons
+    slug: foundation/icon
 code:
   - title:
       name: Development examples
       slug: development-examples
-relatedComponents:
-  - title: Icons
-    slug: foundation/icon
+    noTitle: false
