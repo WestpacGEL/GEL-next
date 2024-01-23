@@ -94,11 +94,11 @@
     "./form": {
       "default": "./dist/components/form/index.js"
     },
-    "./form-hint": {
-      "default": "./dist/components/form-hint/index.js"
+    "./hint": {
+      "default": "./dist/components/hint/index.js"
     },
-    "./form-label": {
-      "default": "./dist/components/form-label/index.js"
+    "./label": {
+      "default": "./dist/components/label/index.js"
     },
     "./grid": {
       "default": "./dist/components/grid/index.js"

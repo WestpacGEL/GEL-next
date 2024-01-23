@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
 import { AndroidIcon } from '../icon/index.js';
-import { List } from '../index.js';
+import { ButtonDropdownHeading, List, ListItem } from '../index.js';
 
 import { ButtonDropdown } from './button-dropdown.component.js';
 
@@ -191,9 +191,9 @@ export const DropdownWithHeadings: Story = {
     block: false,
     children: (
       <>
-        <ButtonDropdown.Heading>Dropdown heading #1</ButtonDropdown.Heading>
+        <ButtonDropdownHeading>Dropdown heading #1</ButtonDropdownHeading>
         Example dropdown content...
-        <ButtonDropdown.Heading>Dropdown heading #2</ButtonDropdown.Heading>
+        <ButtonDropdownHeading>Dropdown heading #2</ButtonDropdownHeading>
         Example dropdown content...
       </>
     ),
@@ -226,21 +226,21 @@ export const Open: Story = {
 export const DropdownWithHeadingsAndContent = () => (
   <div className="flex gap-4">
     <ButtonDropdown text="Products" look="primary">
-      <ButtonDropdown.Heading>Credit cards</ButtonDropdown.Heading>
+      <ButtonDropdownHeading>Credit cards</ButtonDropdownHeading>
       <List type="link" spacing="large">
-        <List.Item href="#">Rewards</List.Item>
-        <List.Item href="#">Low rate</List.Item>
+        <ListItem href="#">Rewards</ListItem>
+        <ListItem href="#">Low rate</ListItem>
       </List>
-      <ButtonDropdown.Heading>Bank accounts</ButtonDropdown.Heading>
+      <ButtonDropdownHeading>Bank accounts</ButtonDropdownHeading>
       <List type="link" spacing="large">
-        <List.Item href="#">Savings</List.Item>
-        <List.Item href="#">Transaction</List.Item>
+        <ListItem href="#">Savings</ListItem>
+        <ListItem href="#">Transaction</ListItem>
       </List>
     </ButtonDropdown>
     <ButtonDropdown text="Credit cards" look="primary">
       <List type="link" spacing="large">
-        <List.Item href="#">Rewards</List.Item>
-        <List.Item href="#">Low rate</List.Item>
+        <ListItem href="#">Rewards</ListItem>
+        <ListItem href="#">Low rate</ListItem>
       </List>
     </ButtonDropdown>
   </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { List } from '@westpac/ui';
+import { List, ListItem } from '@westpac/ui';
 import { MouseEventHandler, useCallback } from 'react';
 
 import { ArrowDownRightIcon } from '@/components/icons';
@@ -19,9 +19,9 @@ export function TableOfContents({ contents = [] }: TableOfContentsProps) {
             .split(' ')
             .join('-');
           return (
-            <List.Item key={id} className="pl-[1.075rem]">
+            <ListItem key={id} className="pl-[1.075rem]">
               <Link href={`#${id}`}>{title}</Link>
-            </List.Item>
+            </ListItem>
           );
         })}
       </List>

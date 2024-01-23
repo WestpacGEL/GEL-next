@@ -1,7 +1,7 @@
 import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Tabs } from './tabs.component.js';
+import { Tabs, TabsPanel } from './tabs.component.js';
 import { styles } from './tabs.styles.js';
 
 describe('Tabs', () => {
@@ -10,15 +10,15 @@ describe('Tabs', () => {
   it('renders the component', () => {
     const { container } = render(
       <Tabs justify>
-        <Tabs.Panel key="FoR" title="Founding of Rome">
+        <TabsPanel key="FoR" title="Founding of Rome">
           Arma virumque cano, Troiae qui primus ab oris.
-        </Tabs.Panel>
-        <Tabs.Panel key="MaR" title="Monarchy and Republic">
+        </TabsPanel>
+        <TabsPanel key="MaR" title="Monarchy and Republic">
           Senatus Populusque Romanus.
-        </Tabs.Panel>
-        <Tabs.Panel key="Emp" title="Empire">
+        </TabsPanel>
+        <TabsPanel key="Emp" title="Empire">
           Alea jacta est.
-        </Tabs.Panel>
+        </TabsPanel>
       </Tabs>,
     );
     expect(container).toBeInTheDocument();
@@ -26,15 +26,15 @@ describe('Tabs', () => {
   it('shows the content of the tab that has been clicked', async () => {
     const { getByText } = render(
       <Tabs>
-        <Tabs.Panel key="FoR" title="Founding of Rome">
+        <TabsPanel key="FoR" title="Founding of Rome">
           Arma virumque cano, Troiae qui primus ab oris.
-        </Tabs.Panel>
-        <Tabs.Panel key="MaR" title="Monarchy and Republic">
+        </TabsPanel>
+        <TabsPanel key="MaR" title="Monarchy and Republic">
           Senatus Populusque Romanus.
-        </Tabs.Panel>
-        <Tabs.Panel key="Emp" title="Empire">
+        </TabsPanel>
+        <TabsPanel key="Emp" title="Empire">
           Alea jacta est.
-        </Tabs.Panel>
+        </TabsPanel>
       </Tabs>,
     );
     await act(async () => {
@@ -50,15 +50,15 @@ describe('Tabs', () => {
   it('shows the content according to the selectedKey', async () => {
     const { getByText } = render(
       <Tabs selectedKey="MaR">
-        <Tabs.Panel key="FoR" title="Founding of Rome">
+        <TabsPanel key="FoR" title="Founding of Rome">
           Arma virumque cano, Troiae qui primus ab oris.
-        </Tabs.Panel>
-        <Tabs.Panel key="MaR" title="Monarchy and Republic">
+        </TabsPanel>
+        <TabsPanel key="MaR" title="Monarchy and Republic">
           Senatus Populusque Romanus.
-        </Tabs.Panel>
-        <Tabs.Panel key="Emp" title="Empire">
+        </TabsPanel>
+        <TabsPanel key="Emp" title="Empire">
           Alea jacta est.
-        </Tabs.Panel>
+        </TabsPanel>
       </Tabs>,
     );
     expect(getByText('Senatus Populusque Romanus.')).toBeVisible();

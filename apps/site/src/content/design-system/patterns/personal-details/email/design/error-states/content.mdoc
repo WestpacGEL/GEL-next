@@ -21,7 +21,7 @@ The error message should always sit above the input field to give context. The e
 
   return (
     <Form spacing="large">
-      <Form.Group>
+      <FormGroup>
         <Field label="Email address">
           <Input
             onChange={({ target: { value } }) => setEmail(value)}
@@ -31,8 +31,8 @@ The error message should always sit above the input field to give context. The e
             className="w-6/12"
           />
         </Field>
-      </Form.Group>
-      <Form.Group>
+      </FormGroup>
+      <FormGroup>
         <Field
           label="Confirm email address"
           errorMessage="Email addresses did not match. Please enter the same email address in both fields."
@@ -45,7 +45,7 @@ The error message should always sit above the input field to give context. The e
             className="w-6/12"
           />
         </Field>
-      </Form.Group>
+      </FormGroup>
     </Form>
   );
 };

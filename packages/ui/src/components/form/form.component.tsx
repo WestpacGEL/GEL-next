@@ -2,9 +2,6 @@
 
 import React, { createContext, useContext } from 'react';
 
-import { ErrorMessage } from '../error-message/index.js';
-
-import { FormChitChat, FormGroup, FormHint, FormLabel, FormSection } from './components/index.js';
 import { FormContextValue, type FormProps } from './form.types.js';
 
 // ==============================
@@ -21,10 +18,3 @@ export function Form({ children, spacing = 'medium', inline = false, ...props }:
     </FormContext.Provider>
   );
 }
-
-Form.Label = FormLabel;
-Form.ErrorMessage = ErrorMessage;
-Form.Hint = FormHint;
-Form.Section = FormSection;
-Form.ChitChat = FormChitChat;
-Form.Group = FormGroup;

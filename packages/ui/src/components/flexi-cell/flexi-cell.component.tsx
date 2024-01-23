@@ -5,15 +5,7 @@ import { mergeProps, useFocusRing } from 'react-aria';
 
 import { ArrowRightIcon } from '../icon/index.js';
 
-import {
-  FlexiCellAdornment,
-  FlexiCellBody,
-  FlexiCellButton,
-  FlexiCellCircle,
-  FlexiCellFooter,
-  FlexiCellHint,
-  FlexiCellLabel,
-} from './components/index.js';
+import { FlexiCellAdornment, FlexiCellBody } from './components/index.js';
 import { styles as flexiCellStyles } from './flexi-cell.styles.js';
 import { type FlexiCellProps } from './flexi-cell.types.js';
 
@@ -63,11 +55,11 @@ function FlexiCellBase(
       {before}
 
       {dualAction && href ? (
-        <FlexiCell.Body tag="a" href={href}>
+        <FlexiCellBody tag="a" href={href}>
           {children}
-        </FlexiCell.Body>
+        </FlexiCellBody>
       ) : (
-        <FlexiCell.Body>{children}</FlexiCell.Body>
+        <FlexiCellBody>{children}</FlexiCellBody>
       )}
       {after}
       {withArrow && (
@@ -79,24 +71,5 @@ function FlexiCellBase(
   );
 }
 
-export const FlexiCell = forwardRef(FlexiCellBase) as React.ForwardRefExoticComponent<
-  FlexiCellProps & React.RefAttributes<unknown>
-> & {
-  Adornment: typeof FlexiCellAdornment;
-  Body: typeof FlexiCellBody;
-  Button: typeof FlexiCellButton;
-  Circle: typeof FlexiCellCircle;
-  Footer: typeof FlexiCellFooter;
-  Hint: typeof FlexiCellHint;
-  Label: typeof FlexiCellLabel;
-};
-
-FlexiCell.Body = FlexiCellBody;
-FlexiCell.Footer = FlexiCellFooter;
-FlexiCell.Adornment = FlexiCellAdornment;
-FlexiCell.Hint = FlexiCellHint;
-FlexiCell.Label = FlexiCellLabel;
-FlexiCell.Button = FlexiCellButton;
-FlexiCell.Circle = FlexiCellCircle;
-
+export const FlexiCell = forwardRef(FlexiCellBase);
 FlexiCell.displayName = 'FlexiCell';

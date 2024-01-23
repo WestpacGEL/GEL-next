@@ -3,17 +3,18 @@ import userEvent from '@testing-library/user-event';
 
 import { Autocomplete } from './autocomplete.component.js';
 import { styles } from './autocomplete.styles.js';
+import { AutocompleteItem } from './components/autocomplete-item/autocomplete-item.component.js';
 
 describe('Autocomplete', () => {
   it('renders the component', () => {
     const { container } = render(
       <Autocomplete aria-label="animals">
-        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-        <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-        <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-        <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-        <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-        <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+        <AutocompleteItem key="cat">Cat</AutocompleteItem>
+        <AutocompleteItem key="dog">Dog</AutocompleteItem>
+        <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+        <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+        <AutocompleteItem key="snake">Snake</AutocompleteItem>
       </Autocomplete>,
     );
     expect(container).toBeInTheDocument();
@@ -36,12 +37,12 @@ describe('Autocomplete', () => {
   it('filters the options by typing on the component', async () => {
     const { getByRole, getByText, queryByText } = render(
       <Autocomplete aria-label="animals">
-        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-        <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-        <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-        <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-        <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-        <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+        <AutocompleteItem key="cat">Cat</AutocompleteItem>
+        <AutocompleteItem key="dog">Dog</AutocompleteItem>
+        <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+        <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+        <AutocompleteItem key="snake">Snake</AutocompleteItem>
       </Autocomplete>,
       // { container: document.body },
     );
@@ -59,12 +60,12 @@ describe('Autocomplete', () => {
   it('selects the item', async () => {
     const { getByRole, getByText } = render(
       <Autocomplete aria-label="animals">
-        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-        <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-        <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-        <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-        <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-        <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+        <AutocompleteItem key="cat">Cat</AutocompleteItem>
+        <AutocompleteItem key="dog">Dog</AutocompleteItem>
+        <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+        <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+        <AutocompleteItem key="snake">Snake</AutocompleteItem>
       </Autocomplete>,
       // { container: document.body },
     );
@@ -82,7 +83,7 @@ describe('Autocomplete', () => {
   it('renders the label', () => {
     const { getByLabelText } = render(
       <Autocomplete aria-label="animals" label="test">
-        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
       </Autocomplete>,
     );
     expect(getByLabelText('test')).toBeInTheDocument();
@@ -91,7 +92,7 @@ describe('Autocomplete', () => {
   it('renders the hint text', () => {
     const { getByText } = render(
       <Autocomplete aria-label="animals" hintMessage="test">
-        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
       </Autocomplete>,
     );
     expect(getByText('test')).toBeInTheDocument();
@@ -100,7 +101,7 @@ describe('Autocomplete', () => {
   it('renders the error text', () => {
     const { getByText } = render(
       <Autocomplete aria-label="animals" errorMessage="test">
-        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
       </Autocomplete>,
     );
     expect(getByText('test')).toBeInTheDocument();
@@ -109,12 +110,12 @@ describe('Autocomplete', () => {
   it('show a message if no options are found', async () => {
     const { getByRole, getByText } = render(
       <Autocomplete aria-label="animals" noOptionsMessage="No options">
-        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-        <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-        <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-        <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-        <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-        <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+        <AutocompleteItem key="cat">Cat</AutocompleteItem>
+        <AutocompleteItem key="dog">Dog</AutocompleteItem>
+        <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+        <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+        <AutocompleteItem key="snake">Snake</AutocompleteItem>
       </Autocomplete>,
       // { container: document.body },
     );
@@ -129,12 +130,12 @@ describe('Autocomplete', () => {
   it('shows the footer when options are open', async () => {
     const { getByRole, getByText } = render(
       <Autocomplete aria-label="animals" footer="test">
-        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-        <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-        <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-        <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-        <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-        <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+        <AutocompleteItem key="cat">Cat</AutocompleteItem>
+        <AutocompleteItem key="dog">Dog</AutocompleteItem>
+        <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+        <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+        <AutocompleteItem key="snake">Snake</AutocompleteItem>
       </Autocomplete>,
       // { container: document.body },
     );
@@ -149,12 +150,12 @@ describe('Autocomplete', () => {
   it('show a message if no options are found and footer if both provided', async () => {
     const { getByRole, getByText } = render(
       <Autocomplete aria-label="animals" noOptionsMessage="No options" footer="footer">
-        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-        <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-        <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-        <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-        <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-        <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+        <AutocompleteItem key="cat">Cat</AutocompleteItem>
+        <AutocompleteItem key="dog">Dog</AutocompleteItem>
+        <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+        <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+        <AutocompleteItem key="snake">Snake</AutocompleteItem>
       </Autocomplete>,
       // { container: document.body },
     );
@@ -170,7 +171,7 @@ describe('Autocomplete', () => {
   it('shows progress indicator when loading state is true instead of search icon', () => {
     const { getByLabelText, queryByLabelText } = render(
       <Autocomplete aria-label="animals" loadingState={true}>
-        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
       </Autocomplete>,
     );
     expect(getByLabelText('Loading')).toBeInTheDocument();

@@ -1,11 +1,11 @@
 import { HTMLAttributes, ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
-import { styles } from './form-label.styles.js';
+import { styles } from './label.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
-export type FormLabelProps = {
+export type LabelProps = {
   /**
    * Children
    */

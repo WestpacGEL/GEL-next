@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { type AriaRadioGroupProps } from 'react-aria';
 import { type RadioGroupState } from 'react-stately';
 
-import { FormHintProps } from '../index.js';
+import { HintProps } from '../index.js';
 
 export type RadioGroupProps = {
   /**
@@ -20,7 +20,7 @@ export type RadioGroupProps = {
   /**
    * hint message
    */
-  hintMessage?: FormHintProps['children'];
+  hintMessage?: HintProps['children'];
   /**
    * Amount of Radios to display, remainder will be hidden behind reveal button
    */

@@ -1,8 +1,10 @@
+'use client';
+
 import React, { createContext } from 'react';
 import { useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
-import { ErrorMessage, FormHint, FormLabel } from '../../../index.js';
+import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { SelectorRadioGroupOption } from './components/index.js';
 import { styles } from './selector-radio-group.styles.js';
@@ -39,8 +41,8 @@ export function SelectorRadioGroup({
 
   return (
     <div className={styles({ className, orientation })} {...radioGroupProps}>
-      {label && <FormLabel {...labelProps}>{label}</FormLabel>}
-      {description && <FormHint {...descriptionProps}>{description}</FormHint>}
+      {label && <Label {...labelProps}>{label}</Label>}
+      {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && state.validationState === 'invalid' && (
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}

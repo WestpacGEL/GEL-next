@@ -4,11 +4,10 @@ import React, { ReactElement, cloneElement, createContext } from 'react';
 import { useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
-import { ErrorMessage, FormHint, FormLabel } from '../index.js';
+import { ErrorMessage, Hint, Label } from '../index.js';
 
 import { styles as buttonGroupStyles } from './button-group.styles.js';
 import { ButtonGroupContextState, type ButtonGroupProps } from './button-group.types.js';
-import { ButtonGroupButton } from './components/button-group-button/button-group-button.component.js';
 
 export const ButtonGroupContext = createContext<ButtonGroupContextState>({
   // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
@@ -57,8 +56,8 @@ export function ButtonGroup({
 
   return (
     <div className={styles.base({ className })} {...radioGroupProps}>
-      <FormLabel {...labelProps}>{label}</FormLabel>
-      {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}
+      <Label {...labelProps}>{label}</Label>
+      {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && state.validationState === 'invalid' && (
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}
@@ -70,4 +69,3 @@ export function ButtonGroup({
     </div>
   );
 }
-ButtonGroup.Button = ButtonGroupButton;

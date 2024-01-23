@@ -4,7 +4,7 @@ import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Key, useCallback, useMemo } from 'react';
 
-import { AccessibilityContent, CodeContent, DesignContent, Tabs } from './components';
+import { AccessibilityContent, CodeContent, DesignContent, Tabs, TabsPanel } from './components';
 import { type ContentTabsProps } from './content-tabs.types';
 
 const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey: string }) => {
@@ -89,11 +89,11 @@ export function ContentTabs({ content }: { content: ContentTabsProps }) {
   return (
     <Tabs aria-label="GEL design system content" selectedKey={tab} onSelectionChange={handleChange}>
       {filteredTabs.map(tab => (
-        <Tabs.Panel title={tab.label} key={tab.key}>
+        <TabsPanel title={tab.label} key={tab.key}>
           <div className="flex-1 bg-background">
             <TabPanelByKey tabKey={tab.key} content={tab.key === 'code' ? { ...content, description: '' } : content} />
           </div>
-        </Tabs.Panel>
+        </TabsPanel>
       ))}
     </Tabs>
   );

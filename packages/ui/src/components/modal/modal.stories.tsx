@@ -59,10 +59,10 @@ export const WithFooter: Story = {
     return (
       <>
         <Modal {...props} state={state} aria-label="Modal title">
-          <Modal.Body>{children}</Modal.Body>
-          <Modal.Footer>
+          <ModalBody>{children}</ModalBody>
+          <ModalFooter>
             <p>Lorem, ipsum dolor</p>
-          </Modal.Footer>
+          </ModalFooter>
         </Modal>
         <Button onClick={state.open}>Open Modal</Button>
       </>
@@ -99,10 +99,10 @@ export const Sizes: Story = {
         {(['sm', 'md', 'lg', 'full'] as const).map(size => (
           <Fragment key={size}>
             <Modal {...props} size={size} state={states[size]} title={`Modal ${size}`}>
-              <Modal.Body>{children}</Modal.Body>
-              <Modal.Footer>
+              <ModalBody>{children}</ModalBody>
+              <ModalFooter>
                 <p>Lorem, ipsum dolor</p>
-              </Modal.Footer>
+              </ModalFooter>
             </Modal>
             <Button onClick={states[size].open}>Open Modal {size}</Button>
           </Fragment>
@@ -127,13 +127,13 @@ export const NotDismissible: Story = {
     return (
       <>
         <Modal {...props} state={state} aria-label="Modal title">
-          <Modal.Body>{children}</Modal.Body>
-          <Modal.Footer className="flex justify-end gap-2">
+          <ModalBody>{children}</ModalBody>
+          <ModalFooter className="flex justify-end gap-2">
             <Button look="faint" onClick={state.close}>
               Close
             </Button>
             <Button look="primary">Submit</Button>
-          </Modal.Footer>
+          </ModalFooter>
         </Modal>
         <Button onClick={state.open}>Open Modal</Button>
       </>

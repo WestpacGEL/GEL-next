@@ -4,13 +4,15 @@ import { AndroidIcon } from '../icon/index.js';
 
 import { List } from './list.component.js';
 
+import { ListItem } from './index.js';
+
 describe('List', () => {
   it('renders the component', () => {
     const { container } = render(
       <List>
-        <List.Item>Styled bullet list</List.Item>
-        <List.Item>Styled bullet list</List.Item>
-        <List.Item>Styled bullet list</List.Item>
+        <ListItem>Styled bullet list</ListItem>
+        <ListItem>Styled bullet list</ListItem>
+        <ListItem>Styled bullet list</ListItem>
       </List>,
     );
     expect(container).toBeInTheDocument();
@@ -19,7 +21,7 @@ describe('List', () => {
   it('should render with correct bullet styles when type is bullet', () => {
     const { getByTestId } = render(
       <List type="bullet">
-        <List.Item>bullet list</List.Item>
+        <ListItem>bullet list</ListItem>
       </List>,
     );
     expect(getByTestId('bullet')).toHaveClass(
@@ -30,7 +32,7 @@ describe('List', () => {
   it('should render with correct bullet styles when type is link', () => {
     const { getByTestId } = render(
       <List type="link">
-        <List.Item>link list</List.Item>
+        <ListItem>link list</ListItem>
       </List>,
     );
     expect(getByTestId('link')).toHaveClass(
@@ -41,7 +43,7 @@ describe('List', () => {
   it('should render with correct bullet styles when type is tick', () => {
     const { getByTestId } = render(
       <List type="tick">
-        <List.Item>tick list</List.Item>
+        <ListItem>tick list</ListItem>
       </List>,
     );
     expect(getByTestId('tick')).toHaveClass(
@@ -52,7 +54,7 @@ describe('List', () => {
   it('should render with correct bullet styles when type is cross', () => {
     const { getByTestId } = render(
       <List type="cross">
-        <List.Item>cross list</List.Item>
+        <ListItem>cross list</ListItem>
       </List>,
     );
     expect(getByTestId('cross')).toHaveClass(
@@ -63,7 +65,7 @@ describe('List', () => {
   it('should render with correct bullet styles and icon when type is icon and icon provided', () => {
     const { getByTestId } = render(
       <List type="icon" icon={AndroidIcon}>
-        <List.Item>icon list</List.Item>
+        <ListItem>icon list</ListItem>
       </List>,
     );
     expect(screen.getByRole('img', { name: 'Android' })).toBeInTheDocument();
@@ -73,7 +75,7 @@ describe('List', () => {
   it('should render with correct bullet styles when type is unstyled', () => {
     const { getByText } = render(
       <List type="unstyled">
-        <List.Item>unstyled list</List.Item>
+        <ListItem>unstyled list</ListItem>
       </List>,
     );
     expect(getByText('unstyled list')).toHaveClass('pl-0');
@@ -82,7 +84,7 @@ describe('List', () => {
   it('should render with correct bullet styles when type is ordered', () => {
     const { getByText } = render(
       <List type="ordered">
-        <List.Item>ordered list</List.Item>
+        <ListItem>ordered list</ListItem>
       </List>,
     );
     expect(getByText('ordered list')).toHaveClass('pl-0');
@@ -91,7 +93,7 @@ describe('List', () => {
   it('should render with correct spacing when large spacing prop passed', () => {
     const { getByTestId } = render(
       <List type="bullet" spacing="large">
-        <List.Item data-testid="large-item">bullet list</List.Item>
+        <ListItem data-testid="large-item">bullet list</ListItem>
       </List>,
     );
     expect(getByTestId('large-item')).toHaveClass('my-2');
@@ -100,9 +102,9 @@ describe('List', () => {
   it('should render with correctly when nested', () => {
     const { getByTestId } = render(
       <List type="bullet">
-        <List.Item>bullet list</List.Item>
+        <ListItem>bullet list</ListItem>
         <List data-testid="nested-list">
-          <List.Item>bullet list</List.Item>
+          <ListItem>bullet list</ListItem>
         </List>
       </List>,
     );
@@ -112,7 +114,7 @@ describe('List', () => {
   it('should apply aria-label when custom assistive text passed and tick', () => {
     const { getByLabelText } = render(
       <List type="tick" assistiveText="test assistive text">
-        <List.Item>tick list</List.Item>
+        <ListItem>tick list</ListItem>
       </List>,
     );
     expect(getByLabelText('test assistive text')).toBeInTheDocument();

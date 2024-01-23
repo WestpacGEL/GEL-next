@@ -1,6 +1,9 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { TableBody, TableHeader } from 'react-stately';
 
 import { Table } from './table.component.js';
+
+import { TableCaption, TableCell, TableFooter, TableHeaderCell, TableHeaderRow, TableRow } from './index.js';
 
 const meta: Meta<typeof Table> = {
   title: 'Components/Table',
@@ -19,39 +22,39 @@ export const Default: Story = {
   args: {
     children: (
       <>
-        <Table.Caption>
+        <TableCaption>
           Caption this table width is: <em>(100%)</em>
-        </Table.Caption>
-        <Table.Header>
-          <Table.HeaderRow>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Type</Table.HeaderCell>
-            <Table.HeaderCell>Date Modified</Table.HeaderCell>
-          </Table.HeaderRow>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>Games</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>6/7/2020</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Program Files</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>4/7/2021</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>bootmgr</Table.Cell>
-            <Table.Cell>System file</Table.Cell>
-            <Table.Cell>11/20/2010</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>log.txt</Table.Cell>
-            <Table.Cell>Text Document</Table.Cell>
-            <Table.Cell>1/18/2016</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-        <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
+        </TableCaption>
+        <TableHeader>
+          <TableHeaderRow>
+            <TableHeaderCell>Name</TableHeaderCell>
+            <TableHeaderCell>Type</TableHeaderCell>
+            <TableHeaderCell>Date Modified</TableHeaderCell>
+          </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>Games</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>6/7/2020</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Program Files</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>4/7/2021</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>bootmgr</TableCell>
+            <TableCell>System file</TableCell>
+            <TableCell>11/20/2010</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>log.txt</TableCell>
+            <TableCell>Text Document</TableCell>
+            <TableCell>1/18/2016</TableCell>
+          </TableRow>
+        </TableBody>
+        <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
       </>
     ),
   },
@@ -65,39 +68,39 @@ export const Striped: Story = {
     striped: true,
     children: (
       <>
-        <Table.Caption>
+        <TableCaption>
           Caption this table width is: <em>(100%)</em>
-        </Table.Caption>
-        <Table.Header>
-          <Table.HeaderRow>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Type</Table.HeaderCell>
-            <Table.HeaderCell>Date Modified</Table.HeaderCell>
-          </Table.HeaderRow>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>Games</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>6/7/2020</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Program Files</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>4/7/2021</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>bootmgr</Table.Cell>
-            <Table.Cell>System file</Table.Cell>
-            <Table.Cell>11/20/2010</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>log.txt</Table.Cell>
-            <Table.Cell>Text Document</Table.Cell>
-            <Table.Cell>1/18/2016</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-        <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
+        </TableCaption>
+        <TableHeader>
+          <TableHeaderRow>
+            <TableHeaderCell>Name</TableHeaderCell>
+            <TableHeaderCell>Type</TableHeaderCell>
+            <TableHeaderCell>Date Modified</TableHeaderCell>
+          </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>Games</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>6/7/2020</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Program Files</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>4/7/2021</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>bootmgr</TableCell>
+            <TableCell>System file</TableCell>
+            <TableCell>11/20/2010</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>log.txt</TableCell>
+            <TableCell>Text Document</TableCell>
+            <TableCell>1/18/2016</TableCell>
+          </TableRow>
+        </TableBody>
+        <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
       </>
     ),
   },
@@ -111,39 +114,39 @@ export const Bordered: Story = {
     bordered: true,
     children: (
       <>
-        <Table.Caption>
+        <TableCaption>
           Caption this table width is: <em>(100%)</em>
-        </Table.Caption>
-        <Table.Header>
-          <Table.HeaderRow>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Type</Table.HeaderCell>
-            <Table.HeaderCell>Date Modified</Table.HeaderCell>
-          </Table.HeaderRow>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>Games</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>6/7/2020</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Program Files</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>4/7/2021</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>bootmgr</Table.Cell>
-            <Table.Cell>System file</Table.Cell>
-            <Table.Cell>11/20/2010</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>log.txt</Table.Cell>
-            <Table.Cell>Text Document</Table.Cell>
-            <Table.Cell>1/18/2016</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-        <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
+        </TableCaption>
+        <TableHeader>
+          <TableHeaderRow>
+            <TableHeaderCell>Name</TableHeaderCell>
+            <TableHeaderCell>Type</TableHeaderCell>
+            <TableHeaderCell>Date Modified</TableHeaderCell>
+          </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>Games</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>6/7/2020</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Program Files</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>4/7/2021</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>bootmgr</TableCell>
+            <TableCell>System file</TableCell>
+            <TableCell>11/20/2010</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>log.txt</TableCell>
+            <TableCell>Text Document</TableCell>
+            <TableCell>1/18/2016</TableCell>
+          </TableRow>
+        </TableBody>
+        <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
       </>
     ),
   },
@@ -158,39 +161,39 @@ export const BorderedAndStriped: Story = {
     striped: true,
     children: (
       <>
-        <Table.Caption>
+        <TableCaption>
           Caption this table width is: <em>(100%)</em>
-        </Table.Caption>
-        <Table.Header>
-          <Table.HeaderRow>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Type</Table.HeaderCell>
-            <Table.HeaderCell>Date Modified</Table.HeaderCell>
-          </Table.HeaderRow>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.HeaderCell>Games</Table.HeaderCell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>6/7/2020</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.HeaderCell>Program Files</Table.HeaderCell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>4/7/2021</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.HeaderCell>bootmgr</Table.HeaderCell>
-            <Table.Cell>System file</Table.Cell>
-            <Table.Cell>11/20/2010</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.HeaderCell>log.txt</Table.HeaderCell>
-            <Table.Cell>Text Document</Table.Cell>
-            <Table.Cell>1/18/2016</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-        <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
+        </TableCaption>
+        <TableHeader>
+          <TableHeaderRow>
+            <TableHeaderCell>Name</TableHeaderCell>
+            <TableHeaderCell>Type</TableHeaderCell>
+            <TableHeaderCell>Date Modified</TableHeaderCell>
+          </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableHeaderCell>Games</TableHeaderCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>6/7/2020</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHeaderCell>Program Files</TableHeaderCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>4/7/2021</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHeaderCell>bootmgr</TableHeaderCell>
+            <TableCell>System file</TableCell>
+            <TableCell>11/20/2010</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHeaderCell>log.txt</TableHeaderCell>
+            <TableCell>Text Document</TableCell>
+            <TableCell>1/18/2016</TableCell>
+          </TableRow>
+        </TableBody>
+        <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
       </>
     ),
   },
@@ -203,41 +206,41 @@ export const HighlightedRowCell: Story = {
   args: {
     children: (
       <>
-        <Table.Caption>
+        <TableCaption>
           Caption this table width is: <em>(100%)</em>
-        </Table.Caption>
-        <Table.Header>
-          <Table.HeaderRow>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Type</Table.HeaderCell>
-            <Table.HeaderCell>Date Modified</Table.HeaderCell>
-          </Table.HeaderRow>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row highlighted>
-            <Table.Cell>Games</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>6/7/2020</Table.Cell>
-          </Table.Row>
-          <Table.Row highlighted={[0, 2]}>
-            <Table.Cell>Program Files</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>4/7/2021</Table.Cell>
-          </Table.Row>
-          <Table.Row highlighted={[1, 2]}>
-            <Table.Cell>bootmgr</Table.Cell>
-            <Table.Cell>System file</Table.Cell>
-            <Table.Cell>11/20/2010</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell highlightStart highlighted>
+        </TableCaption>
+        <TableHeader>
+          <TableHeaderRow>
+            <TableHeaderCell>Name</TableHeaderCell>
+            <TableHeaderCell>Type</TableHeaderCell>
+            <TableHeaderCell>Date Modified</TableHeaderCell>
+          </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow highlighted>
+            <TableCell>Games</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>6/7/2020</TableCell>
+          </TableRow>
+          <TableRow highlighted={[0, 2]}>
+            <TableCell>Program Files</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>4/7/2021</TableCell>
+          </TableRow>
+          <TableRow highlighted={[1, 2]}>
+            <TableCell>bootmgr</TableCell>
+            <TableCell>System file</TableCell>
+            <TableCell>11/20/2010</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell highlightStart highlighted>
               log.txt
-            </Table.Cell>
-            <Table.Cell>Text Document</Table.Cell>
-            <Table.Cell>1/18/2016</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-        <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
+            </TableCell>
+            <TableCell>Text Document</TableCell>
+            <TableCell>1/18/2016</TableCell>
+          </TableRow>
+        </TableBody>
+        <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
       </>
     ),
   },

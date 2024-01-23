@@ -2,7 +2,7 @@
 
 import React, { Children, ReactNode, cloneElement, isValidElement, useCallback, useId, useMemo } from 'react';
 
-import { ErrorMessage, FormHint, FormLabel } from '../index.js';
+import { ErrorMessage, Hint, Label } from '../index.js';
 
 import { InputGroupSupportingText } from './components/index.js';
 import { InputGroupAddOn } from './components/input-group-add-ons/input-group-add-ons.component.js';
@@ -91,11 +91,11 @@ export function InputGroup({
   return (
     <Tag className={styles({ before: !!before, after: !!after, afterInset, beforeInset, className })} {...props}>
       {label && (
-        <FormLabel srOnly={hideLabel} tag={isFieldset ? 'legend' : 'label'} {...(!isFieldset && { htmlFor: id })}>
+        <Label srOnly={hideLabel} tag={isFieldset ? 'legend' : 'label'} {...(!isFieldset && { htmlFor: id })}>
           {label}
-        </FormLabel>
+        </Label>
       )}
-      {hint && <FormHint id={`${id}-hint`}>{hint}</FormHint>}
+      {hint && <Hint id={`${id}-hint`}>{hint}</Hint>}
       {errorMessage && <ErrorMessage id={`${id}-error`} message={errorMessage} />}
       <div className="relative flex">
         {before && (

@@ -1,7 +1,9 @@
+'use client';
+
 import { createContext, useCallback, useState } from 'react';
 import { useField } from 'react-aria';
 
-import { ErrorMessage, FormHint, FormLabel } from '../../../index.js';
+import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { SelectorButtonGroupOption } from './components/index.js';
 import { styles } from './selector-button-group.styles.js';
@@ -51,8 +53,8 @@ export function SelectorButtonGroup({
 
   return (
     <div className={styles({ className, orientation })} {...fieldProps}>
-      {label && <FormLabel {...labelProps}>{label}</FormLabel>}
-      {description && <FormHint {...descriptionProps}>{description}</FormHint>}
+      {label && <Label {...labelProps}>{label}</Label>}
+      {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       <SelectorButtonContext.Provider value={state}>{children}</SelectorButtonContext.Provider>
     </div>

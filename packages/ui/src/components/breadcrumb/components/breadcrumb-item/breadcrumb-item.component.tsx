@@ -1,3 +1,5 @@
+'use client';
+
 import React, { forwardRef, useRef } from 'react';
 import { useBreadcrumbItem } from 'react-aria';
 
@@ -48,5 +50,3 @@ export function BaseBreadcrumbItem(
 }
 
 export const BreadcrumbItem = forwardRef<any, BreadcrumbItemProps>(BaseBreadcrumbItem);
-
-BreadcrumbItem.displayName = 'Breadcrumb.Item';

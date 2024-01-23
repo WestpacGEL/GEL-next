@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 
-export type FormHintProps = {
+export type HintProps = {
   /**
    * spacing
    */

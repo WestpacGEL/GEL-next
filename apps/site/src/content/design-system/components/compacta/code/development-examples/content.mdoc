@@ -12,7 +12,7 @@
     <Compacta>
       {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
         <Form spacing="large">
-          <Form.Group>
+          <FormGroup>
             <Field label="Primary" hintMessage="Select your card insitution">
               <Select
                 name={`input-primary-${id}`}
@@ -34,8 +34,8 @@
                 <option>Westpac Bank</option>
               </Select>
             </Field>
-          </Form.Group>
-          <Form.Group>
+          </FormGroup>
+          <FormGroup>
             <Field label="Account number" hintMessage="Refer to a statement from the card’s financial institution">
               <Input
                 name={`input-secondary-${id}`}
@@ -47,8 +47,8 @@
                 width={30}
               />
             </Field>
-          </Form.Group>
-          <Form.Group>
+          </FormGroup>
+          <FormGroup>
             <InputGroup
               name={`input-tertiary-${id}`}
               value={inputs[`input-tertiary-${id}`] || ''}
@@ -62,7 +62,7 @@
             >
               <Input />
             </InputGroup>
-          </Form.Group>
+          </FormGroup>
         </Form>
       )}
     </Compacta>

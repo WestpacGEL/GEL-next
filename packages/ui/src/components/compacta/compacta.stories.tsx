@@ -1,7 +1,7 @@
 import { type Meta, StoryFn } from '@storybook/react';
 import { ChangeEvent, useState } from 'react';
 
-import { Form, Input } from '../index.js';
+import { Form, FormGroup, Hint, Input, Label } from '../index.js';
 
 import { Compacta } from './compacta.component.js';
 
@@ -28,9 +28,9 @@ export const Default = () => {
     <Compacta>
       {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
         <Form>
-          <Form.Group>
-            <Form.Label htmlFor={`primary-${id}`}>Primary</Form.Label>
-            <Form.Hint id={`primary-hint-${id}`}>Primary title text</Form.Hint>
+          <FormGroup>
+            <Label htmlFor={`primary-${id}`}>Primary</Label>
+            <Hint id={`primary-hint-${id}`}>Primary title text</Hint>
             <Input
               aria-describedby={`primary-hint-${id}`}
               name={`primary-${id}`}
@@ -41,10 +41,10 @@ export const Default = () => {
                 setPrimaryTitle(e.target.value);
               }}
             />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor={`secondary-${id}`}>Secondary</Form.Label>
-            <Form.Hint id={`secondary-hint-${id}`}>Secondary title text</Form.Hint>
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor={`secondary-${id}`}>Secondary</Label>
+            <Hint id={`secondary-hint-${id}`}>Secondary title text</Hint>
             <Input
               aria-describedby={`secondary-hint-${id}`}
               name={`secondary-${id}`}
@@ -55,10 +55,10 @@ export const Default = () => {
                 setSecondaryTitle(e.target.value);
               }}
             />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor={`tertiary-${id}`}>Tertiary</Form.Label>
-            <Form.Hint id={`tertiary-hint-${id}`}>Tertiary title text</Form.Hint>
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor={`tertiary-${id}`}>Tertiary</Label>
+            <Hint id={`tertiary-hint-${id}`}>Tertiary title text</Hint>
             <Input
               aria-describedby={`tertiary-hint-${id}`}
               name={`tertiary-${id}`}
@@ -69,7 +69,7 @@ export const Default = () => {
                 setTertiaryTitle(e.target.value);
               }}
             />
-          </Form.Group>
+          </FormGroup>
         </Form>
       )}
     </Compacta>

@@ -1,6 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
 import { ButtonGroup } from './button-group.component.js';
+import { ButtonGroupButton } from './components/button-group-button/button-group-button.component.js';
 
 const meta: Meta<typeof ButtonGroup> = {
   title: 'Components/ButtonGroup',
@@ -39,9 +40,9 @@ const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 export const Default: Story = {
   args: {
     children: [
-      <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>,
-      <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>,
-      <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>,
+      <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>,
+      <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>,
+      <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>,
     ],
   },
 };
@@ -53,9 +54,9 @@ export const Colors = () => (
   <div className="flex flex-col gap-2">
     {LOOKS.map(look => (
       <ButtonGroup label={<h3 className="font-bold">{look}</h3>} look={look}>
-        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+        <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>
+        <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>
       </ButtonGroup>
     ))}
   </div>
@@ -68,9 +69,9 @@ export const Sizes = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
       <ButtonGroup label={<h3 className="font-bold">{size}</h3>} size={size}>
-        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+        <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>
+        <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>
       </ButtonGroup>
     ))}
   </div>
@@ -82,9 +83,9 @@ export const Sizes = () => (
 export const ResponsiveSize: Story = {
   args: {
     children: [
-      <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>,
-      <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>,
-      <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>,
+      <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>,
+      <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>,
+      <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>,
     ],
     size: {
       initial: 'small',
@@ -101,9 +102,9 @@ export const Block = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
       <ButtonGroup block label={<h3 className="font-bold">{size}</h3>} size={size}>
-        <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>
-        <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>
+        <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>
+        <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>
       </ButtonGroup>
     ))}
   </div>
@@ -115,9 +116,9 @@ export const Block = () => (
 export const Disabled: Story = {
   args: {
     children: [
-      <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>,
-      <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>,
-      <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>,
+      <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>,
+      <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>,
+      <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>,
     ],
     isDisabled: true,
   },
@@ -133,9 +134,9 @@ export const ErrorMessageAndLabel: Story = {
     validationState: 'invalid',
     hintMessage: 'Hint: choose from one of the following options',
     children: [
-      <ButtonGroup.Button value="Option 1">Option 1</ButtonGroup.Button>,
-      <ButtonGroup.Button value="Option 2">Option 2</ButtonGroup.Button>,
-      <ButtonGroup.Button value="Option 3">Option 3</ButtonGroup.Button>,
+      <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>,
+      <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>,
+      <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>,
     ],
   },
 };

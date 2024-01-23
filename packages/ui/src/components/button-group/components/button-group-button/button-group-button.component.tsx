@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useContext, useRef } from 'react';
 import { VisuallyHidden, useFocusRing, useRadio } from 'react-aria';
 
@@ -34,5 +36,3 @@ export function ButtonGroupButton({ className, children, ...props }: ButtonGroup
     </label>
   );
 }
-
-ButtonGroupButton.displayName = 'ButtonGroup.Button';

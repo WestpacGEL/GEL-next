@@ -2,13 +2,14 @@ import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CheckboxGroup } from './checkbox-group.component.js';
+import { CheckboxGroupCheckbox } from './components/checkbox-group-checkbox/checkbox-group-checkbox.component.js';
 
 describe('CheckboxGroup', () => {
   it('renders the component', () => {
     const { container } = render(
       <CheckboxGroup label="test">
-        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
-        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
+        <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
       </CheckboxGroup>,
     );
     expect(container).toBeInTheDocument();
@@ -17,8 +18,8 @@ describe('CheckboxGroup', () => {
   it('should render Options when passed as children', () => {
     const { getByText } = render(
       <CheckboxGroup label="test">
-        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
-        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
+        <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
       </CheckboxGroup>,
     );
     expect(getByText('Option 1')).toBeInTheDocument();
@@ -30,9 +31,9 @@ describe('CheckboxGroup', () => {
 
     const { getByText } = render(
       <CheckboxGroup showAmount={1} label="test">
-        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
-        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
-        <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>
+        <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
+        <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
+        <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
       </CheckboxGroup>,
     );
     expect(getByText('Option 1')).toBeInTheDocument();
@@ -47,8 +48,8 @@ describe('CheckboxGroup', () => {
   it('should display correct text on button showAmount prop is passed and there is only one hidden', () => {
     const { getByText } = render(
       <CheckboxGroup showAmount={1} label="test">
-        <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>
-        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
+        <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
       </CheckboxGroup>,
     );
     expect(getByText('Option 1')).toBeInTheDocument();
@@ -62,10 +63,10 @@ describe('CheckboxGroup', () => {
 
     const { getByTestId } = render(
       <CheckboxGroup onChange={onChange} label="test">
-        <CheckboxGroup.Checkbox value="Option 1" data-testid="option1">
+        <CheckboxGroupCheckbox value="Option 1" data-testid="option1">
           Option 1
-        </CheckboxGroup.Checkbox>
-        <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>
+        </CheckboxGroupCheckbox>
+        <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
       </CheckboxGroup>,
     );
     await act(() => user.click(getByTestId('option1')));
@@ -78,13 +79,13 @@ describe('CheckboxGroup', () => {
 
     const { getByTestId } = render(
       <CheckboxGroup onChange={onChange} label="test">
-        <CheckboxGroup.Checkbox value="Option 1" data-testid="option1">
+        <CheckboxGroupCheckbox value="Option 1" data-testid="option1">
           Option 1
-        </CheckboxGroup.Checkbox>
-        <CheckboxGroup.Checkbox value="Option 2" data-testid="option2">
+        </CheckboxGroupCheckbox>
+        <CheckboxGroupCheckbox value="Option 2" data-testid="option2">
           Option 2
-        </CheckboxGroup.Checkbox>
-        <CheckboxGroup.Checkbox value="Option 2">Option 3</CheckboxGroup.Checkbox>
+        </CheckboxGroupCheckbox>
+        <CheckboxGroupCheckbox value="Option 2">Option 3</CheckboxGroupCheckbox>
       </CheckboxGroup>,
     );
     await act(() => user.click(getByTestId('option1')));

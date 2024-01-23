@@ -1,8 +1,17 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react';
 import { useState } from 'react';
 
 import { AtmIcon, CarIcon, EmailIcon, PersonIcon, SettingsIcon, WatchIcon } from '../icon/index.js';
-import { VisuallyHidden } from '../index.js';
+import {
+  SelectorAdornment,
+  SelectorButtonOption,
+  SelectorCheckbox,
+  SelectorHint,
+  SelectorLabel,
+  SelectorLink,
+  SelectorRadio,
+  VisuallyHidden,
+} from '../index.js';
 import { BusPictogram, ChatPictogram, PizzaPictogram } from '../pictogram/index.js';
 
 import { Selector } from './selector.component.js';
@@ -32,9 +41,9 @@ export const Default = () => {
         { key: 'C', disabled: false },
         { key: 'D', disabled: true },
       ].map(({ key, disabled }) => (
-        <Selector.Checkbox key={key} value={key} isDisabled={disabled}>
-          <Selector.Label>Something {key}</Selector.Label>
-        </Selector.Checkbox>
+        <SelectorCheckbox key={key} value={key} isDisabled={disabled}>
+          <SelectorLabel>Something {key}</SelectorLabel>
+        </SelectorCheckbox>
       ))}
     </Selector>
   );
@@ -52,9 +61,9 @@ export const Radio = () => {
         { key: 'C', disabled: false },
         { key: 'D', disabled: true },
       ].map(({ key, disabled }) => (
-        <Selector.Radio key={key} value={key} isDisabled={disabled}>
-          <Selector.Label>Something {key}</Selector.Label>
-        </Selector.Radio>
+        <SelectorRadio key={key} value={key} isDisabled={disabled}>
+          <SelectorLabel>Something {key}</SelectorLabel>
+        </SelectorRadio>
       ))}
     </Selector>
   );
@@ -72,9 +81,9 @@ export const Link = () => {
         { key: 'C', disabled: false },
         { key: 'D', disabled: true },
       ].map(({ key, disabled }) => (
-        <Selector.Link href="#" key={key} isDisabled={disabled}>
-          <Selector.Label>Something {key}</Selector.Label>
-        </Selector.Link>
+        <SelectorLink href="#" key={key} isDisabled={disabled}>
+          <SelectorLabel>Something {key}</SelectorLabel>
+        </SelectorLink>
       ))}
     </Selector>
   );
@@ -92,9 +101,9 @@ export const Button = () => {
         { key: 'C', disabled: false },
         { key: 'D', disabled: true },
       ].map(({ key, disabled }) => (
-        <Selector.ButtonOption key={key} id={key} isDisabled={disabled}>
-          <Selector.Label>Something {key}</Selector.Label>
-        </Selector.ButtonOption>
+        <SelectorButtonOption key={key} id={key} isDisabled={disabled}>
+          <SelectorLabel>Something {key}</SelectorLabel>
+        </SelectorButtonOption>
       ))}
     </Selector>
   );
@@ -121,9 +130,9 @@ export const RadioWithState = () => {
           { key: 'C', disabled: false },
           { key: 'D', disabled: true },
         ].map(({ key, disabled }) => (
-          <Selector.Radio key={key} value={key} isDisabled={disabled}>
-            <Selector.Label>Something {key}</Selector.Label>
-          </Selector.Radio>
+          <SelectorRadio key={key} value={key} isDisabled={disabled}>
+            <SelectorLabel>Something {key}</SelectorLabel>
+          </SelectorRadio>
         ))}
       </Selector>
     </>
@@ -151,9 +160,9 @@ export const CheckboxWithState = () => {
           { key: 'C', disabled: false },
           { key: 'D', disabled: true },
         ].map(({ key, disabled }) => (
-          <Selector.Checkbox key={key} value={key} isDisabled={disabled}>
-            <Selector.Label>Something {key}</Selector.Label>
-          </Selector.Checkbox>
+          <SelectorCheckbox key={key} value={key} isDisabled={disabled}>
+            <SelectorLabel>Something {key}</SelectorLabel>
+          </SelectorCheckbox>
         ))}
       </Selector>
     </>
@@ -172,13 +181,13 @@ export const LongText = () => {
         { key: 'C', disabled: false },
         { key: 'D', disabled: true },
       ].map(({ key, disabled }) => (
-        <Selector.Checkbox key={key} value={key} isDisabled={disabled}>
-          <Selector.Label>
+        <SelectorCheckbox key={key} value={key} isDisabled={disabled}>
+          <SelectorLabel>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores architecto eum aperiam consectetur
             quibusdam. Laboriosam saepe, explicabo odio quis doloribus consequuntur quae et necessitatibus quasi
             similique. Debitis non quo recusandae. {key}
-          </Selector.Label>
-        </Selector.Checkbox>
+          </SelectorLabel>
+        </SelectorCheckbox>
       ))}
     </Selector>
   );
@@ -215,10 +224,10 @@ export const HintText = () => {
         },
         { label: HERE_IS_A_LABEL_C, hint: '', key: 'C', disabled: false },
       ].map(({ key, disabled, hint, label }) => (
-        <Selector.Checkbox key={key} value={key} isDisabled={disabled}>
-          <Selector.Label>{label}</Selector.Label>
-          {hint && <Selector.Hint>{hint}</Selector.Hint>}
-        </Selector.Checkbox>
+        <SelectorCheckbox key={key} value={key} isDisabled={disabled}>
+          <SelectorLabel>{label}</SelectorLabel>
+          {hint && <SelectorHint>{hint}</SelectorHint>}
+        </SelectorCheckbox>
       ))}
     </Selector>
   );
@@ -233,9 +242,9 @@ export const Pictogram = () => {
       {[
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PizzaPictogram className="h-5 w-5" />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_A,
           hint: (
@@ -249,9 +258,9 @@ export const Pictogram = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <ChatPictogram className="h-5 w-5" />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_B,
           hint: (
@@ -265,9 +274,9 @@ export const Pictogram = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <BusPictogram className="h-5 w-5" />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_C,
           hint: '',
@@ -275,10 +284,10 @@ export const Pictogram = () => {
           disabled: false,
         },
       ].map(({ key, disabled, hint, label, before }) => (
-        <Selector.Checkbox before={before} key={key} value={key} isDisabled={disabled}>
-          <Selector.Label>{label}</Selector.Label>
-          {hint && <Selector.Hint>{hint}</Selector.Hint>}
-        </Selector.Checkbox>
+        <SelectorCheckbox before={before} key={key} value={key} isDisabled={disabled}>
+          <SelectorLabel>{label}</SelectorLabel>
+          {hint && <SelectorHint>{hint}</SelectorHint>}
+        </SelectorCheckbox>
       ))}
     </Selector>
   );
@@ -293,9 +302,9 @@ export const PictogramSizes = () => {
       {[
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PizzaPictogram className="h-15 w-15" />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_A,
           hint: (
@@ -309,9 +318,9 @@ export const PictogramSizes = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <ChatPictogram className="h-10 w-10" />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_B,
           hint: (
@@ -325,9 +334,9 @@ export const PictogramSizes = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <BusPictogram className="h-5 w-5" />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_C,
           hint: '',
@@ -335,10 +344,10 @@ export const PictogramSizes = () => {
           disabled: false,
         },
       ].map(({ key, disabled, hint, label, before }) => (
-        <Selector.Checkbox before={before} key={key} value={key} isDisabled={disabled}>
-          <Selector.Label>{label}</Selector.Label>
-          {hint && <Selector.Hint>{hint}</Selector.Hint>}
-        </Selector.Checkbox>
+        <SelectorCheckbox before={before} key={key} value={key} isDisabled={disabled}>
+          <SelectorLabel>{label}</SelectorLabel>
+          {hint && <SelectorHint>{hint}</SelectorHint>}
+        </SelectorCheckbox>
       ))}
     </Selector>
   );
@@ -353,9 +362,9 @@ export const IconsSizes = () => {
       {[
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PersonIcon size="xlarge" />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: 'Xlarge Icon',
           hint: (
@@ -369,9 +378,9 @@ export const IconsSizes = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PersonIcon size="large" />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: 'Large Icon',
           hint: (
@@ -385,9 +394,9 @@ export const IconsSizes = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PersonIcon size="medium" />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: 'Medium Icon',
           hint: '',
@@ -396,9 +405,9 @@ export const IconsSizes = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PersonIcon size="small" />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: 'Small Icon',
           hint: '',
@@ -407,9 +416,9 @@ export const IconsSizes = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PersonIcon size="xsmall" />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: 'Xsmall Icon',
           hint: '',
@@ -418,9 +427,9 @@ export const IconsSizes = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PersonIcon size={{ initial: 'xsmall', sm: 'xlarge', md: 'large', lg: 'medium', xl: 'small' }} />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: 'Responsive Icon',
           hint: '',
@@ -428,10 +437,10 @@ export const IconsSizes = () => {
           disabled: false,
         },
       ].map(({ key, disabled, hint, label, before }) => (
-        <Selector.Checkbox before={before} key={key} value={key} isDisabled={disabled}>
-          <Selector.Label>{label}</Selector.Label>
-          {hint && <Selector.Hint>{hint}</Selector.Hint>}
-        </Selector.Checkbox>
+        <SelectorCheckbox before={before} key={key} value={key} isDisabled={disabled}>
+          <SelectorLabel>{label}</SelectorLabel>
+          {hint && <SelectorHint>{hint}</SelectorHint>}
+        </SelectorCheckbox>
       ))}
     </Selector>
   );
@@ -446,12 +455,12 @@ export const IconsAndSecondaryLabel = () => {
       {[
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PersonIcon />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_A,
-          after: <Selector.Label>$200,000.00</Selector.Label>,
+          after: <SelectorLabel>$200,000.00</SelectorLabel>,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -463,30 +472,30 @@ export const IconsAndSecondaryLabel = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <AtmIcon />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_B,
-          after: <Selector.Label>$200,000.00</Selector.Label>,
+          after: <SelectorLabel>$200,000.00</SelectorLabel>,
           key: 'B',
           disabled: false,
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <CarIcon />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_C,
           key: 'C',
           disabled: false,
         },
       ].map(({ key, disabled, hint, label, before, after }) => (
-        <Selector.Checkbox before={before} after={after} key={key} value={key} isDisabled={disabled}>
-          <Selector.Label>{label}</Selector.Label>
-          {hint && <Selector.Hint>{hint}</Selector.Hint>}
-        </Selector.Checkbox>
+        <SelectorCheckbox before={before} after={after} key={key} value={key} isDisabled={disabled}>
+          <SelectorLabel>{label}</SelectorLabel>
+          {hint && <SelectorHint>{hint}</SelectorHint>}
+        </SelectorCheckbox>
       ))}
     </Selector>
   );
@@ -501,12 +510,12 @@ export const ButtonsWithIconsAndSecondaryLabel = () => {
       {[
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <SettingsIcon />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_A,
-          after: <Selector.Label>$10,000.00</Selector.Label>,
+          after: <SelectorLabel>$10,000.00</SelectorLabel>,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -518,12 +527,12 @@ export const ButtonsWithIconsAndSecondaryLabel = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <WatchIcon />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_B,
-          after: <Selector.Label>$200,000.00</Selector.Label>,
+          after: <SelectorLabel>$200,000.00</SelectorLabel>,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -535,15 +544,15 @@ export const ButtonsWithIconsAndSecondaryLabel = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <EmailIcon />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_C,
           after: (
-            <Selector.Adornment align="center">
+            <SelectorAdornment align="center">
               <span>$200,000.00</span>
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           hint: (
             <>
@@ -555,10 +564,10 @@ export const ButtonsWithIconsAndSecondaryLabel = () => {
           disabled: false,
         },
       ].map(({ key, disabled, hint, label, before, after }) => (
-        <Selector.ButtonOption before={before} after={after} key={key} id={key} isDisabled={disabled}>
-          <Selector.Label>{label}</Selector.Label>
-          {hint && <Selector.Hint>{hint}</Selector.Hint>}
-        </Selector.ButtonOption>
+        <SelectorButtonOption before={before} after={after} key={key} id={key} isDisabled={disabled}>
+          <SelectorLabel>{label}</SelectorLabel>
+          {hint && <SelectorHint>{hint}</SelectorHint>}
+        </SelectorButtonOption>
       ))}
     </Selector>
   );
@@ -573,12 +582,12 @@ export const Disabled = () => {
       {[
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PersonIcon />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_A,
-          after: <Selector.Label>$200,000.00</Selector.Label>,
+          after: <SelectorLabel>$200,000.00</SelectorLabel>,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -590,12 +599,12 @@ export const Disabled = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PersonIcon />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_B,
-          after: <Selector.Label>$200,000.00</Selector.Label>,
+          after: <SelectorLabel>$200,000.00</SelectorLabel>,
           hint: (
             <>
               <VisuallyHidden>Bank Account</VisuallyHidden>
@@ -607,15 +616,15 @@ export const Disabled = () => {
         },
         {
           before: (
-            <Selector.Adornment align="top">
+            <SelectorAdornment align="top">
               <PersonIcon />
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_C,
           after: (
-            <Selector.Adornment align="center">
+            <SelectorAdornment align="center">
               <span>$200,000.00</span>
-            </Selector.Adornment>
+            </SelectorAdornment>
           ),
           hint: (
             <>
@@ -627,10 +636,10 @@ export const Disabled = () => {
           disabled: true,
         },
       ].map(({ key, disabled, hint, label, before, after }) => (
-        <Selector.ButtonOption before={before} after={after} key={key} id={key} isDisabled={disabled}>
-          <Selector.Label>{label}</Selector.Label>
-          {hint && <Selector.Hint>{hint}</Selector.Hint>}
-        </Selector.ButtonOption>
+        <SelectorButtonOption before={before} after={after} key={key} id={key} isDisabled={disabled}>
+          <SelectorLabel>{label}</SelectorLabel>
+          {hint && <SelectorHint>{hint}</SelectorHint>}
+        </SelectorButtonOption>
       ))}
     </Selector>
   );

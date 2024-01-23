@@ -8,7 +8,7 @@ type Variants = VariantProps<typeof styles>;
 
 export type AccordionItemProps<T = any> = {
   /**
-   * Accordion.Item body content
+   * AccordionItem body content
    */
   children?: ReactNode;
   /**

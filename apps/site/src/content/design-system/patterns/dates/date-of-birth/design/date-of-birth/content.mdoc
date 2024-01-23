@@ -3,9 +3,9 @@
 This pattern is defined as a ‘memorable date’, of which users will know the answer. Using hint text helps the user to understand the format, while the three separate boxes with Day, Month, Year labels removes ambiguity about which comes first, day or month. They also serve an important part in helping assistive technologies recognise and distinguish all three.
 
 ```tsx
-<Form.Group>
-  <Form.Label>Date of birth</Form.Label>
-  <Form.Hint>Example: 31 3 1980</Form.Hint>
+<FormGroup>
+  <FormLabel>Date of birth</FormLabel>
+  <FormHint>Example: 31 3 1980</FormHint>
   <fieldset className="flex gap-4">
     <Field label="Day" labelSize="small">
       <Input
@@ -31,5 +31,5 @@ This pattern is defined as a ‘memorable date’, of which users will know the 
       <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" />
     </Field>
   </fieldset>
-</Form.Group>
+</FormGroup>
 ```

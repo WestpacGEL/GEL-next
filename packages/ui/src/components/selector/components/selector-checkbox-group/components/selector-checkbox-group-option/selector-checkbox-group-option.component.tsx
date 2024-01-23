@@ -1,15 +1,8 @@
+'use client';
+
 import React, { forwardRef, useContext, useRef } from 'react';
 import { VisuallyHidden, mergeProps, useCheckboxGroupItem, useFocusRing } from 'react-aria';
 
-import {
-  FlexiCellAdornment,
-  FlexiCellBody,
-  FlexiCellButton,
-  FlexiCellCircle,
-  FlexiCellFooter,
-  FlexiCellHint,
-  FlexiCellLabel,
-} from '../../../../../../components/flexi-cell/index.js';
 import { ArrowRightIcon, TickIcon } from '../../../../../../components/icon/index.js';
 import { FlexiCell } from '../../../../../../components/index.js';
 import { SelectorCheckboxGroupContext } from '../../selector-checkbox-group.component.js';
@@ -70,20 +63,4 @@ function BaseSelectorCheckboxGroupOption(
 
 export const SelectorCheckboxGroupOption = forwardRef(
   BaseSelectorCheckboxGroupOption,
-) as React.ForwardRefExoticComponent<SelectorCheckboxGroupOptionProps & React.RefAttributes<unknown>> & {
-  Adornment: typeof FlexiCell.Adornment;
-  Body: typeof FlexiCell.Body;
-  Button: typeof FlexiCell.Button;
-  Circle: typeof FlexiCell.Circle;
-  Footer: typeof FlexiCell.Footer;
-  Hint: typeof FlexiCell.Hint;
-  Label: typeof FlexiCell.Label;
-};
-
-SelectorCheckboxGroupOption.Body = FlexiCellBody;
-SelectorCheckboxGroupOption.Footer = FlexiCellFooter;
-SelectorCheckboxGroupOption.Adornment = FlexiCellAdornment;
-SelectorCheckboxGroupOption.Hint = FlexiCellHint;
-SelectorCheckboxGroupOption.Label = FlexiCellLabel;
-SelectorCheckboxGroupOption.Button = FlexiCellButton;
-SelectorCheckboxGroupOption.Circle = FlexiCellCircle;
+) as React.ForwardRefExoticComponent<SelectorCheckboxGroupOptionProps & React.RefAttributes<unknown>>;
