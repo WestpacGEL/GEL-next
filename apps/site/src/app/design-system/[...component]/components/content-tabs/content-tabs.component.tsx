@@ -1,7 +1,7 @@
 'use client';
 
 import { BREAKPOINTS } from '@westpac/ui/themes-constants';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Key, useCallback, useMemo } from 'react';
 
 import { AccessibilityContent, CodeContent, DesignContent, Tabs, TabsPanel } from './components';
@@ -47,12 +47,9 @@ const TabPanelByKey = ({ tabKey, content }: { content: ContentTabsProps; tabKey:
 
 const FIXED_HEADER_Y = 162; // 228 - 66 = height to stick
 
-export function ContentTabs({ content }: { content: ContentTabsProps }) {
+export function ContentTabs({ content, brand, tab }: { brand: string; content: ContentTabsProps; tab: string }) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const brand = searchParams.get('brand') ?? 'wbc';
-  const tab = searchParams.get('tab') ?? 'design';
 
   const handleChange = useCallback(
     (key: Key) => {

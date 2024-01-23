@@ -1,6 +1,7 @@
 import './styles/globals.css';
 import { type Metadata } from 'next';
 import { draftMode } from 'next/headers';
+import React, { Suspense } from 'react';
 
 import { ThemeProvider } from '@/components/theme';
 
@@ -16,7 +17,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        {/*We need to move theme to a cookie based approach for performance*/}
+        <Suspense>
+          <ThemeProvider>{children}</ThemeProvider>
+        </Suspense>
         {isEnabled && (
           <div className="absolute right-15 top-3 z-[999]">
             <form method="post" action="/preview/end">
