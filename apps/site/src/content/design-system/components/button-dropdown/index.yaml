@@ -6,7 +6,7 @@ namedExport:
   discriminant: false
 design:
   - title:
-      name: Button dropdown menu sizes
+      name: Button dropdowns
       slug: button-dropdown-menu-sizes
     noTitle: false
   - title:
