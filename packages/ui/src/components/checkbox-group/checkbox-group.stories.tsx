@@ -2,6 +2,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
 import { CheckboxGroup } from './checkbox-group.component.js';
+import { CheckboxGroupCheckbox } from './components/checkbox-group-checkbox/checkbox-group-checkbox.component.js';
 
 const meta: Meta<typeof CheckboxGroup> = {
   title: 'Components/CheckboxGroup',
@@ -43,9 +44,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: [
-      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>,
+      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>,
     ],
   },
 };
@@ -56,13 +57,13 @@ export const Default: Story = {
 export const LongLines: Story = {
   args: {
     children: [
-      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 3">
+      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 3">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et odit labore illo sint tempora magnam modi nesciunt
         consectetur vitae maiores itaque reiciendis sunt nisi ullam officiis, provident fugiat, esse iste adipisci
         repellat! Incidunt delectus, pariatur quaerat vitae aspernatur eveniet libero.
-      </CheckboxGroup.Checkbox>,
+      </CheckboxGroupCheckbox>,
     ],
   },
 };
@@ -73,9 +74,9 @@ export const LongLines: Story = {
 export const DefaultValue: Story = {
   args: {
     children: [
-      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>,
+      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>,
     ],
     defaultValue: ['Option 1'],
   },
@@ -87,9 +88,9 @@ export const DefaultValue: Story = {
 export const Inline: Story = {
   args: {
     children: [
-      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>,
+      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>,
     ],
     orientation: 'horizontal',
   },
@@ -101,13 +102,13 @@ export const Inline: Story = {
 export const InlineLongLines: Story = {
   args: {
     children: [
-      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 3">
+      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 3">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et odit labore illo sint tempora magnam modi nesciunt
         consectetur vitae maiores itaque reiciendis sunt nisi ullam officiis, provident fugiat, esse iste adipisci
         repellat! Incidunt delectus, pariatur quaerat vitae aspernatur eveniet libero.
-      </CheckboxGroup.Checkbox>,
+      </CheckboxGroupCheckbox>,
     ],
     orientation: 'horizontal',
   },
@@ -119,9 +120,9 @@ export const InlineLongLines: Story = {
 export const Disabled: Story = {
   args: {
     children: [
-      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>,
+      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>,
     ],
     isDisabled: true,
     defaultValue: ['Option 1'],
@@ -134,9 +135,9 @@ export const Disabled: Story = {
 export const Large: Story = {
   args: {
     children: [
-      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>,
+      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>,
     ],
     size: 'large',
   },
@@ -148,9 +149,9 @@ export const Large: Story = {
 export const HiddenItems: Story = {
   args: {
     children: [
-      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>,
+      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>,
     ],
     showAmount: 1,
   },
@@ -162,15 +163,15 @@ export const HiddenItems: Story = {
 export const HintText: Story = {
   args: {
     children: [
-      <CheckboxGroup.Checkbox value="Option 1" hint="This is hint text">
+      <CheckboxGroupCheckbox value="Option 1" hint="This is hint text">
         Option 1
-      </CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 2" hint="This is hint text">
+      </CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 2" hint="This is hint text">
         Option 2
-      </CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 3" hint="This is hint text">
+      </CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 3" hint="This is hint text">
         Option 3
-      </CheckboxGroup.Checkbox>,
+      </CheckboxGroupCheckbox>,
     ],
   },
 };
@@ -181,15 +182,15 @@ export const HintText: Story = {
 export const OnChange: Story = {
   args: {
     children: [
-      <CheckboxGroup.Checkbox value="Option 1" hint="This is hint text">
+      <CheckboxGroupCheckbox value="Option 1" hint="This is hint text">
         Option 1
-      </CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 2" hint="This is hint text">
+      </CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 2" hint="This is hint text">
         Option 2
-      </CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 3" hint="This is hint text">
+      </CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 3" hint="This is hint text">
         Option 3
-      </CheckboxGroup.Checkbox>,
+      </CheckboxGroupCheckbox>,
     ],
     onChange: e => console.log(e),
   },
@@ -205,9 +206,9 @@ export const ErrorMessageAndLabel: Story = {
     validationState: 'invalid',
     hintMessage: 'Hint: choose from one of the following options',
     children: [
-      <CheckboxGroup.Checkbox value="Option 1">Option 1</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 2">Option 2</CheckboxGroup.Checkbox>,
-      <CheckboxGroup.Checkbox value="Option 3">Option 3</CheckboxGroup.Checkbox>,
+      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>,
+      <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>,
     ],
   },
 };

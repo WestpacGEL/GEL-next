@@ -8,7 +8,7 @@ import { Item, useTreeState } from 'react-stately';
 
 import { styles } from './accordion.styles.js';
 import { type AccordionProps } from './accordion.types.js';
-import { AccordionItem } from './components/index.js';
+import { AccordionItem as AccordionItemContent } from './components/index.js';
 
 function Accordion<T extends object>(
   { className, rounded = true, look = 'soft', ...props }: AccordionProps<T>,
@@ -38,18 +38,18 @@ function Accordion<T extends object>(
     <div {...filterDOMProps(finalProps)} {...accordionProps} ref={domRef} className={styles({ className, rounded })}>
       <div className="ml-[-1px] mt-[-1px]">
         {[...state.collection].map(item => (
-          <AccordionItem<T> key={item.key} item={item} state={state} look={look} />
+          <AccordionItemContent<T> key={item.key} item={item} state={state} look={look} />
         ))}
       </div>
     </div>
   );
 }
 
-const _Accordion = forwardRef(Accordion) as unknown as { Item: typeof Item; displayName: string } & (<T>(
+const _Accordion = forwardRef(Accordion) as unknown as { displayName: string } & (<T>(
   props: AccordionProps<T> & { ref?: any },
 ) => ReturnType<typeof Accordion>);
 
 _Accordion.displayName = 'Accordion';
-_Accordion.Item = Item;
 
 export { _Accordion as Accordion };
+export const AccordionItem = Item;

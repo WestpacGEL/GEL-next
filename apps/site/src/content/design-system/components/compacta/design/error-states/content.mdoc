@@ -12,7 +12,7 @@ When a user attempts to progress through the form, errors are captured at this p
     <Compacta>
       {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
         <Form spacing="large">
-          <Form.Group>
+          <FormGroup>
             <Field
               label="Primary"
               hintMessage="Select your card insitution"
@@ -39,8 +39,8 @@ When a user attempts to progress through the form, errors are captured at this p
                 <option>Westpac Bank</option>
               </Select>
             </Field>
-          </Form.Group>
-          <Form.Group>
+          </FormGroup>
+          <FormGroup>
             <Field
               label="Account number"
               hintMessage="Refer to a statement from the card’s financial institution"
@@ -57,8 +57,8 @@ When a user attempts to progress through the form, errors are captured at this p
                 invalid
               />
             </Field>
-          </Form.Group>
-          <Form.Group>
+          </FormGroup>
+          <FormGroup>
             <InputGroup
               name={`input-tertiary-${id}`}
               value={inputs[`input-tertiary-${id}`] || ''}
@@ -74,7 +74,7 @@ When a user attempts to progress through the form, errors are captured at this p
             >
               <Input invalid />
             </InputGroup>
-          </Form.Group>
+          </FormGroup>
         </Form>
       )}
     </Compacta>

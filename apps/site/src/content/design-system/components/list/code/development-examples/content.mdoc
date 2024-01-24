@@ -4,34 +4,34 @@
 <div>
   <h1 className="typography-body-10 mb-2 italic text-muted">Default list</h1>
   <List type="bullet">
-    <List.Item>Styled bullet list</List.Item>
-    <List.Item>Styled bullet list</List.Item>
-    <List.Item>Styled bullet list</List.Item>
+    <ListItem>Styled bullet list</ListItem>
+    <ListItem>Styled bullet list</ListItem>
+    <ListItem>Styled bullet list</ListItem>
     <List>
-      <List.Item>Styled bullet list</List.Item>
-      <List.Item>Styled bullet list</List.Item>
-      <List.Item>Styled bullet list</List.Item>
+      <ListItem>Styled bullet list</ListItem>
+      <ListItem>Styled bullet list</ListItem>
+      <ListItem>Styled bullet list</ListItem>
       <List>
-        <List.Item>Styled bullet list</List.Item>
-        <List.Item>Styled bullet list</List.Item>
-        <List.Item>Styled bullet list</List.Item>
+        <ListItem>Styled bullet list</ListItem>
+        <ListItem>Styled bullet list</ListItem>
+        <ListItem>Styled bullet list</ListItem>
       </List>
-      <List.Item>Styled bullet list</List.Item>
+      <ListItem>Styled bullet list</ListItem>
     </List>
-    <List.Item>Styled bullet list</List.Item>
+    <ListItem>Styled bullet list</ListItem>
   </List>
   <h1 className="typography-body-10 mb-2 italic text-muted">Look</h1>
   <List type="bullet" look="primary" className="mb-4">
-    <List.Item>Styled bullet list - primary</List.Item>
-    <List.Item>Styled bullet list - primary</List.Item>
+    <ListItem>Styled bullet list - primary</ListItem>
+    <ListItem>Styled bullet list - primary</ListItem>
   </List>
   <List type="bullet" look="hero" className="mb-4">
-    <List.Item>Styled bullet list - hero</List.Item>
-    <List.Item>Styled bullet list - hero</List.Item>
+    <ListItem>Styled bullet list - hero</ListItem>
+    <ListItem>Styled bullet list - hero</ListItem>
   </List>
   <List type="bullet" look="neutral" className="mb-4">
-    <List.Item>Styled bullet list - neutral</List.Item>
-    <List.Item>Styled bullet list - neutral</List.Item>
+    <ListItem>Styled bullet list - neutral</ListItem>
+    <ListItem>Styled bullet list - neutral</ListItem>
   </List>
 </div>
 ```
@@ -45,9 +45,9 @@
     <div key={type}>
       <h1 className="typography-body-10 mb-2 italic text-muted">{`${type[0].toUpperCase()}${type.slice(1)} List`}</h1>
       <List type={type} icon={type === 'icon' ? GithubIcon : undefined}>
-        <List.Item>Styled {type} list</List.Item>
-        <List.Item>Styled {type} list</List.Item>
-        <List.Item>Styled {type} list</List.Item>
+        <ListItem>Styled {type} list</ListItem>
+        <ListItem>Styled {type} list</ListItem>
+        <ListItem>Styled {type} list</ListItem>
       </List>
     </div>
   ));
@@ -60,15 +60,15 @@
 <div>
   <h1 className="typography-body-10 mb-2 italic text-muted">Medium</h1>
   <List type="bullet" className="mb-4" spacing="medium">
-    <List.Item>Styled bullet list</List.Item>
-    <List.Item>Styled bullet list</List.Item>
-    <List.Item>Styled bullet list</List.Item>
+    <ListItem>Styled bullet list</ListItem>
+    <ListItem>Styled bullet list</ListItem>
+    <ListItem>Styled bullet list</ListItem>
   </List>
   <h1 className="typography-body-10 mb-2 italic text-muted">Large</h1>
   <List type="bullet" className="mb-4" spacing="large">
-    <List.Item>Styled bullet list</List.Item>
-    <List.Item>Styled bullet list</List.Item>
-    <List.Item>Styled bullet list</List.Item>
+    <ListItem>Styled bullet list</ListItem>
+    <ListItem>Styled bullet list</ListItem>
+    <ListItem>Styled bullet list</ListItem>
   </List>
 </div>
 ```

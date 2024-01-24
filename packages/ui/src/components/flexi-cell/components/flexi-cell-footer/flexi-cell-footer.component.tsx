@@ -11,4 +11,3 @@ export const FlexiCellFooter = ({ children, className, tag: Tag = 'div', ...prop
     </Tag>
   );
 };
-FlexiCellFooter.displayName = 'FlexiCell.Footer';

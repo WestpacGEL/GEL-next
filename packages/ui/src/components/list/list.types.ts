@@ -10,7 +10,7 @@ export type ListProps = {
    */
   assistiveText?: string;
   /**
-   * <List.Item /> ReactNodes
+   * <ListItem /> ReactNodes
    */
   children?: ReactNode;
   /**

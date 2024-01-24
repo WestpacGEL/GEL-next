@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "version": "0.0.22",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -11,15 +11,15 @@
     "check-types": "tsc --noemit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@keystatic/core": "^0.2.9",
-    "@keystatic/next": "^2.0.1",
+    "@keystatic/core": "^0.3.4",
+    "@keystatic/next": "^3.0.0",
     "@vercel/postgres": "~0.5.1",
     "@westpac/ui": "workspace:~",
     "clipboard-copy": "~4.0.1",
     "clsx": "^1.2.1",
     "framer-motion": "~10.12.16",
     "lodash.throttle": "~4.1.1",
-    "next": "^14.0.4",
+    "next": "^14.1.0",
     "prism-react-renderer": "~2.0.6",
     "prismjs": "~1.29.0",
     "react": "^18.2.0",

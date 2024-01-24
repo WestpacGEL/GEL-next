@@ -1,7 +1,17 @@
 import { type Meta, StoryFn } from '@storybook/react';
 import { clsx } from 'clsx';
 
-import { Link, Table } from '../../components/index.js';
+import {
+  Link,
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHeader,
+  TableHeaderCell,
+  TableHeaderRow,
+  TableRow,
+} from '../../components/index.js';
 
 const meta: Meta = {
   title: 'Foundation/Typography',
@@ -33,27 +43,27 @@ export const BrandFont = () => {
   ];
   return (
     <Table>
-      <Table.Caption>GEL brand typography tokens</Table.Caption>
-      <Table.Header>
-        <Table.HeaderRow>
-          <Table.HeaderCell>Token</Table.HeaderCell>
-          <Table.HeaderCell>Font size</Table.HeaderCell>
-          <Table.HeaderCell>Line height</Table.HeaderCell>
-          <Table.HeaderCell>Tailwind class</Table.HeaderCell>
-        </Table.HeaderRow>
-      </Table.Header>
-      <Table.Body>
+      <TableCaption>GEL brand typography tokens</TableCaption>
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>Token</TableHeaderCell>
+          <TableHeaderCell>Font size</TableHeaderCell>
+          <TableHeaderCell>Line height</TableHeaderCell>
+          <TableHeaderCell>Tailwind class</TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
         {typographyScale.map(i => (
-          <Table.Row key={i.className}>
-            <Table.Cell>
+          <TableRow key={i.className}>
+            <TableCell>
               <span className={i.className}>{i.className.replace('typography-', '')}</span>
-            </Table.Cell>
-            <Table.Cell>{i.fontSize}</Table.Cell>
-            <Table.Cell>{i.lineHeight}</Table.Cell>
-            <Table.Cell>{i.className}</Table.Cell>
-          </Table.Row>
+            </TableCell>
+            <TableCell>{i.fontSize}</TableCell>
+            <TableCell>{i.lineHeight}</TableCell>
+            <TableCell>{i.className}</TableCell>
+          </TableRow>
         ))}
-      </Table.Body>
+      </TableBody>
     </Table>
   );
 };
@@ -77,27 +87,27 @@ export const BodyFont = () => {
   ];
   return (
     <Table>
-      <Table.Caption>GEL body typography tokens</Table.Caption>
-      <Table.Header>
-        <Table.HeaderRow>
-          <Table.HeaderCell>Token</Table.HeaderCell>
-          <Table.HeaderCell>Font size</Table.HeaderCell>
-          <Table.HeaderCell>Line height</Table.HeaderCell>
-          <Table.HeaderCell>Tailwind class</Table.HeaderCell>
-        </Table.HeaderRow>
-      </Table.Header>
-      <Table.Body>
+      <TableCaption>GEL body typography tokens</TableCaption>
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>Token</TableHeaderCell>
+          <TableHeaderCell>Font size</TableHeaderCell>
+          <TableHeaderCell>Line height</TableHeaderCell>
+          <TableHeaderCell>Tailwind class</TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
         {typographyScale.map(i => (
-          <Table.Row key={i.className}>
-            <Table.Cell>
+          <TableRow key={i.className}>
+            <TableCell>
               <span className={i.className}>{i.className.replace('typography-', '')}</span>
-            </Table.Cell>
-            <Table.Cell>{i.fontSize}</Table.Cell>
-            <Table.Cell>{i.lineHeight}</Table.Cell>
-            <Table.Cell>{i.className}</Table.Cell>
-          </Table.Row>
+            </TableCell>
+            <TableCell>{i.fontSize}</TableCell>
+            <TableCell>{i.lineHeight}</TableCell>
+            <TableCell>{i.className}</TableCell>
+          </TableRow>
         ))}
-      </Table.Body>
+      </TableBody>
     </Table>
   );
 };
@@ -124,28 +134,28 @@ export const LineHeight = () => {
         </Link>
         . A typography type has been added and the leading style in tailwind (with 14px font) has been extended to
         include this value for use to match the older version of GEL. The default tailwind values for normal and tight
-        have also been updated and included in the table.
+        have also been updated and included in the table
       </p>
       <Table>
-        <Table.Caption>GEL line height tokens</Table.Caption>
-        <Table.Header>
-          <Table.HeaderRow>
-            <Table.HeaderCell>Token</Table.HeaderCell>
-            <Table.HeaderCell>Line height</Table.HeaderCell>
-            <Table.HeaderCell>Tailwind class</Table.HeaderCell>
-          </Table.HeaderRow>
-        </Table.Header>
-        <Table.Body>
+        <TableCaption>GEL line height tokens</TableCaption>
+        <TableHeader>
+          <TableHeaderRow>
+            <TableHeaderCell>Token</TableHeaderCell>
+            <TableHeaderCell>Line height</TableHeaderCell>
+            <TableHeaderCell>Tailwind class</TableHeaderCell>
+          </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
           {lineHeights.map(i => (
-            <Table.Row key={i.className}>
-              <Table.Cell>
+            <TableRow key={i.className}>
+              <TableCell>
                 <span className={i.className}>{i.className.replace('leading-', '')}</span>
-              </Table.Cell>
-              <Table.Cell>{i.lineHeight}</Table.Cell>
-              <Table.Cell>{i.className}</Table.Cell>
-            </Table.Row>
+              </TableCell>
+              <TableCell>{i.lineHeight}</TableCell>
+              <TableCell>{i.className}</TableCell>
+            </TableRow>
           ))}
-        </Table.Body>
+        </TableBody>
       </Table>
     </div>
   );
@@ -165,25 +175,25 @@ const FontWeightTable = ({ type, caption }: { caption: string; type: 'brand' | '
   const typography = type === 'brand' ? 'typography-brand-7' : 'typography-body-7';
   return (
     <Table>
-      <Table.Caption>{caption}</Table.Caption>
-      <Table.Header>
-        <Table.HeaderRow>
-          <Table.HeaderCell>Token</Table.HeaderCell>
-          <Table.HeaderCell>Font weight</Table.HeaderCell>
-          <Table.HeaderCell>Tailwind class</Table.HeaderCell>
-        </Table.HeaderRow>
-      </Table.Header>
-      <Table.Body>
+      <TableCaption>{caption}</TableCaption>
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>Token</TableHeaderCell>
+          <TableHeaderCell>Font weight</TableHeaderCell>
+          <TableHeaderCell>Tailwind class</TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
         {fontWeight.map(i => (
-          <Table.Row key={i.className}>
-            <Table.Cell>
+          <TableRow key={i.className}>
+            <TableCell>
               <span className={clsx(typography, i.className)}>{i.className.replace('font-', '')}</span>
-            </Table.Cell>
-            <Table.Cell>{i.weight}</Table.Cell>
-            <Table.Cell>{i.className}</Table.Cell>
-          </Table.Row>
+            </TableCell>
+            <TableCell>{i.weight}</TableCell>
+            <TableCell>{i.className}</TableCell>
+          </TableRow>
         ))}
-      </Table.Body>
+      </TableBody>
     </Table>
   );
 };

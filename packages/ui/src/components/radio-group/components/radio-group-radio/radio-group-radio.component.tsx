@@ -1,3 +1,5 @@
+'use client';
+
 import React, { forwardRef, useContext, useRef } from 'react';
 import { VisuallyHidden, useFocusRing, useRadio } from 'react-aria';
 
@@ -29,4 +31,4 @@ function BaseRadioGroupRadio({ className, hint, children, ...props }: RadioGroup
 }
 
 export const RadioGroupRadio = forwardRef(BaseRadioGroupRadio);
-RadioGroupRadio.displayName = 'RadioGroup.Radio';
+RadioGroupRadio.displayName = 'RadioGroupRadio';

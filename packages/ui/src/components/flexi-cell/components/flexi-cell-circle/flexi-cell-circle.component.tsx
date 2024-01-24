@@ -10,4 +10,3 @@ export const FlexiCellCircle = ({ className, ...props }: FlexiCellCircleProps) =
   const styles = flexiCellCircleStyles({});
   return <Circle className={styles.base({ className })} {...props} />;
 };
-FlexiCellCircle.displayName = 'FlexiCell.Circle';

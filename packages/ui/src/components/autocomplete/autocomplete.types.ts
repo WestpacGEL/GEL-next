@@ -3,7 +3,7 @@ import { type AriaLabelingProps } from '@react-types/shared';
 import { type ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
-import { FormHintProps, InputProps } from '../index.js';
+import { HintProps, InputProps } from '../index.js';
 
 import { styles } from './autocomplete.styles.js';
 import { AutocompletePopoverProps } from './components/index.js';
@@ -12,7 +12,7 @@ type Variants = VariantProps<typeof styles>;
 
 export type AutocompleteProps<T extends object> = {
   /**
-   * <Autocomplete.Item /> as a collection
+   * <AutocompleteItem /> as a collection
    */
   children?: ComboBoxProps<T>['children'];
   /**
@@ -30,7 +30,7 @@ export type AutocompleteProps<T extends object> = {
   /**
    * hint message
    */
-  hintMessage?: FormHintProps['children'];
+  hintMessage?: HintProps['children'];
   /**
    * Whether autocomplete is invalid
    */

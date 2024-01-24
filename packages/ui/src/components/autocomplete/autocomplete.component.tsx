@@ -6,11 +6,11 @@ import { mergeProps, useButton, useComboBox, useFilter, useFocusRing, useSearchF
 import { useComboBoxState, useSearchFieldState } from 'react-stately';
 
 import { ClearIcon, SearchIcon } from '../icon/index.js';
-import { ErrorMessage, FormHint, FormLabel, ProgressIndicator } from '../index.js';
+import { ErrorMessage, Hint, Label, ProgressIndicator } from '../index.js';
 
 import { styles as autocompleteStyles } from './autocomplete.styles.js';
 import { type AutocompleteProps } from './autocomplete.types.js';
-import { AutocompleteItem, AutocompleteListBox, AutocompletePopover } from './components/index.js';
+import { AutocompleteListBox, AutocompletePopover } from './components/index.js';
 
 const STATIC_IS_OPEN_STATE = {
   isOpen: true,
@@ -106,8 +106,8 @@ export function Autocomplete<T extends object>({
 
   return (
     <div className={styles.base({ className })}>
-      {props.label && <FormLabel {...labelProps}>{props.label}</FormLabel>}
-      {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}
+      {props.label && <Label {...labelProps}>{props.label}</Label>}
+      {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
 
       <div ref={outerRef} className={styles.outerWrapper()}>
@@ -167,5 +167,3 @@ export function Autocomplete<T extends object>({
     </div>
   );
 }
-
-Autocomplete.Item = AutocompleteItem;

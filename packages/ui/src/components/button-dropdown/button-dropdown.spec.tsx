@@ -2,6 +2,7 @@ import { act, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ButtonDropdown } from './button-dropdown.component.js';
+import { ButtonDropdownHeading } from './components/button-dropdown-heading/button-dropdown-heading.component.js';
 
 describe('ButtonDropdown', () => {
   it('renders the component', () => {
@@ -53,7 +54,7 @@ describe('ButtonDropdown', () => {
     const user = userEvent.setup();
     const { getByRole, getByText } = render(
       <ButtonDropdown text="test heading">
-        <ButtonDropdown.Heading>Dropdown heading</ButtonDropdown.Heading>
+        <ButtonDropdownHeading>Dropdown heading</ButtonDropdownHeading>
       </ButtonDropdown>,
     );
     await act(() => {

@@ -7,7 +7,7 @@ import { Container } from '@/app/design-system/components';
 import { ShortCode } from '@/components/component-blocks/components/short-code';
 import { foundationBlocksComponents } from '@/components/component-blocks/foundation-blocks';
 import { Section } from '@/components/content-blocks/section';
-import { Code, Heading, Image } from '@/components/document-renderer';
+import { Code, Heading } from '@/components/document-renderer';
 import { RelatedInfo } from '@/components/related-info';
 
 import { Intro } from '..';

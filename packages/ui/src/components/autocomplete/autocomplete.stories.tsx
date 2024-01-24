@@ -4,6 +4,7 @@ import { Key, useState } from 'react';
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';
 
 import { Autocomplete } from './autocomplete.component.js';
+import { AutocompleteItem } from './components/autocomplete-item/autocomplete-item.component.js';
 
 const meta: Meta<typeof Autocomplete> = {
   title: 'Components/Autocomplete',
@@ -19,7 +20,7 @@ const meta: Meta<typeof Autocomplete> = {
        */
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      Autocomplete.Item.displayName = 'Autocomplete.Item';
+      AutocompleteItem.displayName = 'AutocompleteItem';
 
       return (
         <div className="h-30">
@@ -40,12 +41,12 @@ export const Default: Story = {
   args: {
     'aria-label': 'Animals',
     children: [
-      <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>,
-      <Autocomplete.Item key="cat">Cat</Autocomplete.Item>,
-      <Autocomplete.Item key="dog">Dog</Autocomplete.Item>,
-      <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>,
-      <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>,
-      <Autocomplete.Item key="snake">Snake</Autocomplete.Item>,
+      <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>,
+      <AutocompleteItem key="cat">Cat</AutocompleteItem>,
+      <AutocompleteItem key="dog">Dog</AutocompleteItem>,
+      <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>,
+      <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>,
+      <AutocompleteItem key="snake">Snake</AutocompleteItem>,
     ],
   },
 };
@@ -62,12 +63,12 @@ export const Controlled: Story = {
     };
     return (
       <Autocomplete onSelectionChange={handleSelectionChange} selectedKey={selectedKey} aria-label="Animals">
-        <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-        <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-        <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-        <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-        <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-        <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+        <AutocompleteItem key="cat">Cat</AutocompleteItem>
+        <AutocompleteItem key="dog">Dog</AutocompleteItem>
+        <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+        <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+        <AutocompleteItem key="snake">Snake</AutocompleteItem>
       </Autocomplete>
     );
   },
@@ -81,12 +82,12 @@ export const Disabled: Story = {
     isDisabled: true,
     'aria-label': 'Disable example',
     children: [
-      <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>,
-      <Autocomplete.Item key="cat">Cat</Autocomplete.Item>,
-      <Autocomplete.Item key="dog">Dog</Autocomplete.Item>,
-      <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>,
-      <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>,
-      <Autocomplete.Item key="snake">Snake</Autocomplete.Item>,
+      <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>,
+      <AutocompleteItem key="cat">Cat</AutocompleteItem>,
+      <AutocompleteItem key="dog">Dog</AutocompleteItem>,
+      <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>,
+      <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>,
+      <AutocompleteItem key="snake">Snake</AutocompleteItem>,
     ],
   },
 };
@@ -99,12 +100,12 @@ export const Invalid: Story = {
     invalid: true,
     'aria-label': 'Invalid example',
     children: [
-      <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>,
-      <Autocomplete.Item key="cat">Cat</Autocomplete.Item>,
-      <Autocomplete.Item key="dog">Dog</Autocomplete.Item>,
-      <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>,
-      <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>,
-      <Autocomplete.Item key="snake">Snake</Autocomplete.Item>,
+      <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>,
+      <AutocompleteItem key="cat">Cat</AutocompleteItem>,
+      <AutocompleteItem key="dog">Dog</AutocompleteItem>,
+      <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>,
+      <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>,
+      <AutocompleteItem key="snake">Snake</AutocompleteItem>,
     ],
   },
 };
@@ -120,12 +121,12 @@ export const Sizes: Story = {
         {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
           <div className="py-2" key={size}>
             <Autocomplete label={size} size={size} aria-label={`size ${size}`}>
-              <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-              <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-              <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-              <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-              <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-              <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+              <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+              <AutocompleteItem key="cat">Cat</AutocompleteItem>
+              <AutocompleteItem key="dog">Dog</AutocompleteItem>
+              <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+              <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+              <AutocompleteItem key="snake">Snake</AutocompleteItem>
             </Autocomplete>
           </div>
         ))}
@@ -143,25 +144,25 @@ export const Footer: Story = {
     return (
       <div className="py-2">
         <Autocomplete label="With footer" footer={<h3>Footer</h3>}>
-          <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-          <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-          <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-          <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-          <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-          <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
-          <Autocomplete.Item key="elephant">Elephant</Autocomplete.Item>
-          <Autocomplete.Item key="giraffe">Giraffe</Autocomplete.Item>
-          <Autocomplete.Item key="lion">Lion</Autocomplete.Item>
-          <Autocomplete.Item key="tiger">Tiger</Autocomplete.Item>
-          <Autocomplete.Item key="penguin">Penguin</Autocomplete.Item>
-          <Autocomplete.Item key="octopus">Octopus</Autocomplete.Item>
-          <Autocomplete.Item key="cheetah">Cheetah</Autocomplete.Item>
-          <Autocomplete.Item key="polar bear">Polar Bear</Autocomplete.Item>
-          <Autocomplete.Item key="koala">Koala</Autocomplete.Item>
-          <Autocomplete.Item key="dolphin">Dolphin</Autocomplete.Item>
-          <Autocomplete.Item key="flamingo">Flamingo</Autocomplete.Item>
-          <Autocomplete.Item key="elephant seal">Elephant Seal</Autocomplete.Item>
-          <Autocomplete.Item key="orca">Orca</Autocomplete.Item>
+          <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+          <AutocompleteItem key="cat">Cat</AutocompleteItem>
+          <AutocompleteItem key="dog">Dog</AutocompleteItem>
+          <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+          <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+          <AutocompleteItem key="snake">Snake</AutocompleteItem>
+          <AutocompleteItem key="elephant">Elephant</AutocompleteItem>
+          <AutocompleteItem key="giraffe">Giraffe</AutocompleteItem>
+          <AutocompleteItem key="lion">Lion</AutocompleteItem>
+          <AutocompleteItem key="tiger">Tiger</AutocompleteItem>
+          <AutocompleteItem key="penguin">Penguin</AutocompleteItem>
+          <AutocompleteItem key="octopus">Octopus</AutocompleteItem>
+          <AutocompleteItem key="cheetah">Cheetah</AutocompleteItem>
+          <AutocompleteItem key="polar bear">Polar Bear</AutocompleteItem>
+          <AutocompleteItem key="koala">Koala</AutocompleteItem>
+          <AutocompleteItem key="dolphin">Dolphin</AutocompleteItem>
+          <AutocompleteItem key="flamingo">Flamingo</AutocompleteItem>
+          <AutocompleteItem key="elephant seal">Elephant Seal</AutocompleteItem>
+          <AutocompleteItem key="orca">Orca</AutocompleteItem>
         </Autocomplete>
       </div>
     );
@@ -179,9 +180,9 @@ export const ErrorMessageAndLabel: Story = {
     hintMessage: 'Hint: choose from one of the following options',
     noOptionsMessage: 'No options',
     children: [
-      <Autocomplete.Item key="Option 1">Option 1</Autocomplete.Item>,
-      <Autocomplete.Item key="Option 2">Option 2</Autocomplete.Item>,
-      <Autocomplete.Item key="Option 3">Option 3</Autocomplete.Item>,
+      <AutocompleteItem key="Option 1">Option 1</AutocompleteItem>,
+      <AutocompleteItem key="Option 2">Option 2</AutocompleteItem>,
+      <AutocompleteItem key="Option 3">Option 3</AutocompleteItem>,
     ],
   },
 };
@@ -194,12 +195,12 @@ export const FixedWidths = () => {
     <div className="flex flex-col gap-2">
       {FIXED_WIDTHS.map(width => (
         <Autocomplete key={width} label={`Fixed width: ${width.toString()}`} width={width}>
-          <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-          <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-          <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-          <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-          <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-          <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+          <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+          <AutocompleteItem key="cat">Cat</AutocompleteItem>
+          <AutocompleteItem key="dog">Dog</AutocompleteItem>
+          <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+          <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+          <AutocompleteItem key="snake">Snake</AutocompleteItem>
         </Autocomplete>
       ))}
     </div>
@@ -221,7 +222,7 @@ export const DynamicCollections = () => {
   return (
     <div className="flex flex-col gap-2">
       <Autocomplete aria-label="Animals" defaultItems={options}>
-        {item => <Autocomplete.Item>{item.name}</Autocomplete.Item>}
+        {item => <AutocompleteItem>{item.name}</AutocompleteItem>}
       </Autocomplete>
     </div>
   );
@@ -251,7 +252,7 @@ export const AsyncDynamicCollections = () => {
   return (
     <div className="flex flex-col gap-2">
       <Autocomplete items={items} onFocus={getCollection} loadingState={loading}>
-        {item => <Autocomplete.Item>{item.name}</Autocomplete.Item>}
+        {item => <AutocompleteItem>{item.name}</AutocompleteItem>}
       </Autocomplete>
     </div>
   );

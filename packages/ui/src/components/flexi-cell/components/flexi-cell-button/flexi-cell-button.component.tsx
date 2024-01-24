@@ -11,4 +11,3 @@ export const FlexiCellButton = ({ className, icon: Icon, ...props }: FlexiCellBu
 
   return <>{Icon && <Button className={styles.base({ className })} iconBefore={Icon} look="link" {...props} />}</>;
 };
-FlexiCellButton.displayName = 'FlexiCell.Button';

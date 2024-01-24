@@ -19,17 +19,17 @@ Use the appropriate modal size to suit your content. A modal will always respons
       {[{ size: 'sm', label: 'Small'}, { size: 'md', label: 'Default'}, { size: 'lg', label: 'Large'}].map(({ size, label }: { size: string; label: string; }) => (
         <Fragment key={size}>
           <Modal isDismissable size={size} state={states[size as 'sm' | 'md' | 'lg']} title="Sudden and magnificent">
-            <Modal.Body>
+            <ModalBody>
               <p>
                 The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black against a silvery climbing phosphorescence that grew and grew.
               </p>
-            </Modal.Body>
-            <Modal.Footer>
+            </ModalBody>
+            <ModalFooter>
               <div className="flex gap-1 justify-end">
                 <Button look="faint" onClick={states[size as 'sm' | 'md' | 'lg'].close}>Close</Button>
                 <Button look="primary">Save changes</Button>
               </div>
-            </Modal.Footer>
+            </ModalFooter>
           </Modal>
           <Button soft look="primary" onClick={states[size as 'sm' | 'md' | 'lg'].open}>{label} Modal</Button>
         </Fragment>

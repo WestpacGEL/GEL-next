@@ -12,9 +12,9 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
     <Compacta>
       {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
         <Form>
-          <Form.Group>
-            <Form.Label htmlFor={`primary-default-${id}`}>Primary</Form.Label>
-            <Form.Hint id={`primary-default-hint-${id}`}>Primary title text</Form.Hint>
+          <FormGroup>
+            <FormLabel htmlFor={`primary-default-${id}`}>Primary</FormLabel>
+            <FormHint id={`primary-default-hint-${id}`}>Primary title text</FormHint>
             <Input
               id={`primary-default-${id}`}
               aria-describedby={`primary-default-hint-${id}`}
@@ -25,10 +25,10 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
                 setPrimaryTitle(e.target.value);
               }}
             />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor={`secondary-default-${id}`}>Secondary</Form.Label>
-            <Form.Hint id={`secondary-default-hint-${id}`}>Secondary title text</Form.Hint>
+          </FormGroup>
+          <FormGroup>
+            <FormLabel htmlFor={`secondary-default-${id}`}>Secondary</FormLabel>
+            <FormHint id={`secondary-default-hint-${id}`}>Secondary title text</FormHint>
             <Input
               id={`secondary-default-${id}`}
               aria-describedby={`secondary-default-hint-${id}`}
@@ -39,10 +39,10 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
                 setSecondaryTitle(e.target.value);
               }}
             />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor={`tertiary-default-${id}`}>Tertiary</Form.Label>
-            <Form.Hint id={`tertiary-default-hint-${id}`}>Tertiary title text</Form.Hint>
+          </FormGroup>
+          <FormGroup>
+            <FormLabel htmlFor={`tertiary-default-${id}`}>Tertiary</FormLabel>
+            <FormHint id={`tertiary-default-hint-${id}`}>Tertiary title text</FormHint>
             <Input
               id={`tertiary-default-${id}`}
               aria-describedby={`tertiary-default-hint-${id}`}
@@ -53,7 +53,7 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
                 setTertiaryTitle(e.target.value);
               }}
             />
-          </Form.Group>
+          </FormGroup>
         </Form>
       )}
     </Compacta>

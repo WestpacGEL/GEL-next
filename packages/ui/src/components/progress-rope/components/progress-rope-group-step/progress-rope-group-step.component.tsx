@@ -10,6 +10,9 @@ import { type ProgressRopeGroupStepProps } from './progress-rope-group-step.type
 
 const loadAnimations = () => import('./progress-rope-group-step.utils.js').then(res => res.default);
 
+/**
+ * @private
+ */
 export function ProgressRopeGroupStep({
   steps,
   currentKey,

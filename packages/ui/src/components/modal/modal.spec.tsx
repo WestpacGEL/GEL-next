@@ -4,6 +4,8 @@ import { useOverlayTriggerState } from 'react-stately';
 
 import { Modal } from './modal.component.js';
 
+import { ModalBody, ModalFooter } from './index.js';
+
 describe('Modal', () => {
   const user = userEvent.setup();
 
@@ -26,8 +28,8 @@ describe('Modal', () => {
 
     render(
       <Modal state={result.current}>
-        <Modal.Body>Body</Modal.Body>
-        <Modal.Footer>Footer</Modal.Footer>
+        <ModalBody>Body</ModalBody>
+        <ModalFooter>Footer</ModalFooter>
       </Modal>,
     );
 
@@ -38,8 +40,8 @@ describe('Modal', () => {
 
     render(
       <Modal state={result.current} isDismissable>
-        <Modal.Body>Body</Modal.Body>
-        <Modal.Footer>Footer</Modal.Footer>
+        <ModalBody>Body</ModalBody>
+        <ModalFooter>Footer</ModalFooter>
       </Modal>,
     );
 

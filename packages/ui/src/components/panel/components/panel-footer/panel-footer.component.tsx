@@ -12,4 +12,4 @@ export function PanelFooter({ className, children, ...props }: PanelFooterProps)
   );
 }
 
-PanelFooter.displayName = 'Panel.Footer';
+PanelFooter.displayName = 'PanelFooter';

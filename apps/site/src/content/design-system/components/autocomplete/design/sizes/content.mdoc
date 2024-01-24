@@ -1,45 +1,38 @@
 Autocomplete fields come in four different sizes (heights), which align to the regular text inputs within the Design system. Ensure when you are designing forms that you alway use the same size across element types.
 
 ```jsx
-       <div>     
-<h4 className="typography-body-10 text-muted italic mb-3">Small</h4>
-<Autocomplete width="30" size="small" className="mb-4">
-              <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-              <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-              <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-              <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-              <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-              <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
-            </Autocomplete>
- 
-<h4 className="typography-body-10 text-muted italic mb-3">Medium</h4>          
- <Autocomplete width="30" size="medium" className="mb-4">
-              <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-              <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-              <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-              <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-              <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-              <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
-            </Autocomplete>
-
-<h4 className="typography-body-10 text-muted italic mb-3">Large</h4>
- <Autocomplete width="30" size="large" className="mb-4">
-              <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-              <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-              <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-              <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-              <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-              <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
-            </Autocomplete>
-
-<h4 className="typography-body-10 text-muted italic mb-3">XLarge</h4>
- <Autocomplete width="30" size="xlarge">
-              <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-              <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-              <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-              <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-              <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-              <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
-            </Autocomplete>
+<div>
+  <Autocomplete label="Small example" size="small" className="mb-4">
+    <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+    <AutocompleteItem key="cat">Cat</AutocompleteItem>
+    <AutocompleteItem key="dog">Dog</AutocompleteItem>
+    <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+    <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+    <AutocompleteItem key="snake">Snake</AutocompleteItem>
+  </Autocomplete>
+  <Autocomplete label="Medium example" size="medium" className="mb-4">
+    <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+    <AutocompleteItem key="cat">Cat</AutocompleteItem>
+    <AutocompleteItem key="dog">Dog</AutocompleteItem>
+    <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+    <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+    <AutocompleteItem key="snake">Snake</AutocompleteItem>
+  </Autocomplete>
+  <Autocomplete label="Large example" size="large" className="mb-4">
+    <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+    <AutocompleteItem key="cat">Cat</AutocompleteItem>
+    <AutocompleteItem key="dog">Dog</AutocompleteItem>
+    <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+    <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+    <AutocompleteItem key="snake">Snake</AutocompleteItem>
+  </Autocomplete>
+  <Autocomplete label="X-Large example" size="xlarge">
+    <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+    <AutocompleteItem key="cat">Cat</AutocompleteItem>
+    <AutocompleteItem key="dog">Dog</AutocompleteItem>
+    <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+    <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+    <AutocompleteItem key="snake">Snake</AutocompleteItem>
+  </Autocomplete>
 </div>
 ```

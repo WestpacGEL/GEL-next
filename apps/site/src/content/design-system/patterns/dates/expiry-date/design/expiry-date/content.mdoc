@@ -7,9 +7,9 @@ Use this pattern when there are large data sets so users are not required to scr
 This pattern exists as a [widget in the WDP system](https://one.dev1.ui.westpac.com.au/react/gel/docs/6.17.4/index.html?path=/story/widgets-expirydate--basic).
 
 ```tsx
-<Form.Group>
-  <Form.Label>Expiry date</Form.Label>
-  <Form.Hint>Example: 03 2020</Form.Hint>
+<FormGroup>
+  <FormLabel>Expiry date</FormLabel>
+  <FormHint>Example: 03 2020</FormHint>
   <fieldset className="flex gap-4">
     <Field label="Month" labelSize="small">
       <Input type="number" size="large" pattern="[0-9]*" min="1" max="12" autoComplete="bday-month" />
@@ -18,7 +18,7 @@ This pattern exists as a [widget in the WDP system](https://one.dev1.ui.westpac.
       <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" />
     </Field>
   </fieldset>
-</Form.Group>
+</FormGroup>
 ```
 
 ### Date range
@@ -28,8 +28,8 @@ When databases have short and defined ranges, using select boxes can assist in m
 This pattern exists as a [widget in the WDP system](https://one.dev1.ui.westpac.com.au/react/gel/docs/6.17.4/index.html?path=/story/widgets-expirydate--range).
 
 ```tsx
-<Form.Group>
-  <Form.Label>Expiry date</Form.Label>
+<FormGroup>
+  <FormLabel>Expiry date</FormLabel>
   <fieldset className="flex gap-4">
     <Field label="Month" labelSize="small">
       <Select size="large">
@@ -48,5 +48,5 @@ This pattern exists as a [widget in the WDP system](https://one.dev1.ui.westpac.
       </Select>
     </Field>
   </fieldset>
-</Form.Group>
+</FormGroup>
 ```

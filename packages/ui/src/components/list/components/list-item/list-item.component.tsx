@@ -1,3 +1,5 @@
+'use client';
+
 import React, { forwardRef, useContext } from 'react';
 import { useFocusRing } from 'react-aria';
 
@@ -54,4 +56,4 @@ export function BaseListItem(
 }
 
 export const ListItem = forwardRef(BaseListItem);
-ListItem.displayName = 'List.Item';
+ListItem.displayName = 'ListItem';

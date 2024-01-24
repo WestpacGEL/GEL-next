@@ -1,8 +1,20 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
-import { Table } from '../table/index.js';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHeader,
+  TableHeaderCell,
+  TableHeaderRow,
+  TableRow,
+} from '../table/index.js';
 
 import { Panel } from './panel.component.js';
+
+import { PanelBody, PanelFooter } from './index.js';
 
 const meta: Meta<typeof Panel> = {
   title: 'Components/Panel',
@@ -23,12 +35,12 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: [
-      <Panel.Body>
+      <PanelBody>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora officiis officia omnis aperiam voluptate
         suscipit, laudantium praesentium quas consequatur placeat, perferendis eligendi saepe in unde sequi dolores
         excepturi doloremque autem! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      </Panel.Body>,
-      <Panel.Footer>Panel footer</Panel.Footer>,
+      </PanelBody>,
+      <PanelFooter>Panel footer</PanelFooter>,
     ],
   },
 };
@@ -40,12 +52,12 @@ export const FaintLook: Story = {
   args: {
     look: 'faint',
     children: [
-      <Panel.Body>
+      <PanelBody>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora officiis officia omnis aperiam voluptate
         suscipit, laudantium praesentium quas consequatur placeat, perferendis eligendi saepe in unde sequi dolores
         excepturi doloremque autem! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      </Panel.Body>,
-      <Panel.Footer>Panel footer</Panel.Footer>,
+      </PanelBody>,
+      <PanelFooter>Panel footer</PanelFooter>,
     ],
   },
 };
@@ -57,39 +69,39 @@ export const WithTable: Story = {
   args: {
     children: [
       <Table>
-        <Table.Caption>
+        <TableCaption>
           Caption this table width is: <em>(100%)</em>
-        </Table.Caption>
-        <Table.Header>
-          <Table.HeaderRow>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Type</Table.HeaderCell>
-            <Table.HeaderCell>Date Modified</Table.HeaderCell>
-          </Table.HeaderRow>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>Games</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>6/7/2020</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Program Files</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>4/7/2021</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>bootmgr</Table.Cell>
-            <Table.Cell>System file</Table.Cell>
-            <Table.Cell>11/20/2010</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>log.txt</Table.Cell>
-            <Table.Cell>Text Document</Table.Cell>
-            <Table.Cell>1/18/2016</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-        <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
+        </TableCaption>
+        <TableHeader>
+          <TableHeaderRow>
+            <TableHeaderCell>Name</TableHeaderCell>
+            <TableHeaderCell>Type</TableHeaderCell>
+            <TableHeaderCell>Date Modified</TableHeaderCell>
+          </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>Games</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>6/7/2020</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Program Files</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>4/7/2021</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>bootmgr</TableCell>
+            <TableCell>System file</TableCell>
+            <TableCell>11/20/2010</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>log.txt</TableCell>
+            <TableCell>Text Document</TableCell>
+            <TableCell>1/18/2016</TableCell>
+          </TableRow>
+        </TableBody>
+        <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
       </Table>,
     ],
   },
@@ -101,47 +113,47 @@ export const WithTable: Story = {
 export const WithTableAndBody: Story = {
   args: {
     children: [
-      <Panel.Body>
+      <PanelBody>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora officiis officia omnis aperiam voluptate
         suscipit, laudantium praesentium quas consequatur placeat, perferendis eligendi saepe in unde sequi dolores
         excepturi doloremque autem! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      </Panel.Body>,
+      </PanelBody>,
       <Table>
-        <Table.Caption>
+        <TableCaption>
           Caption this table width is: <em>(100%)</em>
-        </Table.Caption>
-        <Table.Header>
-          <Table.HeaderRow>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Type</Table.HeaderCell>
-            <Table.HeaderCell>Date Modified</Table.HeaderCell>
-          </Table.HeaderRow>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>Games</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>6/7/2020</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Program Files</Table.Cell>
-            <Table.Cell>File folder</Table.Cell>
-            <Table.Cell>4/7/2021</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>bootmgr</Table.Cell>
-            <Table.Cell>System file</Table.Cell>
-            <Table.Cell>11/20/2010</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>log.txt</Table.Cell>
-            <Table.Cell>Text Document</Table.Cell>
-            <Table.Cell>1/18/2016</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-        <Table.Footer colspan={3}>Footer goes here and should colSpan all columns</Table.Footer>
+        </TableCaption>
+        <TableHeader>
+          <TableHeaderRow>
+            <TableHeaderCell>Name</TableHeaderCell>
+            <TableHeaderCell>Type</TableHeaderCell>
+            <TableHeaderCell>Date Modified</TableHeaderCell>
+          </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>Games</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>6/7/2020</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Program Files</TableCell>
+            <TableCell>File folder</TableCell>
+            <TableCell>4/7/2021</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>bootmgr</TableCell>
+            <TableCell>System file</TableCell>
+            <TableCell>11/20/2010</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>log.txt</TableCell>
+            <TableCell>Text Document</TableCell>
+            <TableCell>1/18/2016</TableCell>
+          </TableRow>
+        </TableBody>
+        <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
       </Table>,
-      <Panel.Footer>Panel footer</Panel.Footer>,
+      <PanelFooter>Panel footer</PanelFooter>,
     ],
   },
 };

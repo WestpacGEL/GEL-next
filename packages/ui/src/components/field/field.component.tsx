@@ -3,7 +3,7 @@
 import React, { Children, ReactNode, cloneElement, isValidElement, useCallback } from 'react';
 import { useField } from 'react-aria';
 
-import { ErrorMessage, FormHint, FormLabel } from '../index.js';
+import { ErrorMessage, Hint, Label } from '../index.js';
 
 import { styles } from './field.styles.js';
 import { type FieldProps } from './field.types.js';
@@ -37,10 +37,10 @@ export function Field({
 
   return (
     <Tag className={styles({ className })} {...props}>
-      <FormLabel size={labelSize} {...labelProps}>
+      <Label size={labelSize} {...labelProps}>
         {label}
-      </FormLabel>
-      {hintMessage && <FormHint {...descriptionProps}>{hintMessage}</FormHint>}
+      </Label>
+      {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       {renderChildren()}
     </Tag>

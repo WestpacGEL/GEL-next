@@ -38,5 +38,3 @@ export default async function Homepage() {
     </main>
   );
 }
-
-export const dynamic = 'force-dynamic';

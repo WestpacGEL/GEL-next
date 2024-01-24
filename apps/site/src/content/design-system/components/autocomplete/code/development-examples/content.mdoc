@@ -2,12 +2,12 @@
 
 ```jsx
 <Autocomplete aria-label="Animals">
-  <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-  <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-  <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-  <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-  <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-  <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+  <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+  <AutocompleteItem key="cat">Cat</AutocompleteItem>
+  <AutocompleteItem key="dog">Dog</AutocompleteItem>
+  <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+  <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+  <AutocompleteItem key="snake">Snake</AutocompleteItem>
 </Autocomplete>
 ```
 
@@ -21,12 +21,12 @@
   };
   return (
     <Autocomplete onSelectionChange={handleSelectionChange} selectedKey={selectedKey} aria-label="Animals">
-      <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-      <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-      <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-      <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-      <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-      <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+      <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+      <AutocompleteItem key="cat">Cat</AutocompleteItem>
+      <AutocompleteItem key="dog">Dog</AutocompleteItem>
+      <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+      <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+      <AutocompleteItem key="snake">Snake</AutocompleteItem>
     </Autocomplete>
   );
 };
@@ -36,12 +36,12 @@
 
 ```jsx
 <Autocomplete aria-label="Animals" invalid>
-  <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-  <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-  <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-  <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-  <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-  <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+  <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+  <AutocompleteItem key="cat">Cat</AutocompleteItem>
+  <AutocompleteItem key="dog">Dog</AutocompleteItem>
+  <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+  <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+  <AutocompleteItem key="snake">Snake</AutocompleteItem>
 </Autocomplete>
 ```
 
@@ -49,12 +49,12 @@
 
 ```jsx
 <Autocomplete aria-label="Animals" disabled>
-  <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-  <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-  <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-  <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-  <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-  <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+  <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+  <AutocompleteItem key="cat">Cat</AutocompleteItem>
+  <AutocompleteItem key="dog">Dog</AutocompleteItem>
+  <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+  <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+  <AutocompleteItem key="snake">Snake</AutocompleteItem>
 </Autocomplete>
 ```
 
@@ -71,12 +71,12 @@
       {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
         <div className="py-2" key={size}>
           <Autocomplete label={size} size={size} aria-label={`size ${size}`}>
-            <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-            <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-            <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-            <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-            <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-            <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+            <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+            <AutocompleteItem key="cat">Cat</AutocompleteItem>
+            <AutocompleteItem key="dog">Dog</AutocompleteItem>
+            <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+            <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+            <AutocompleteItem key="snake">Snake</AutocompleteItem>
           </Autocomplete>
         </div>
       ))}
@@ -89,12 +89,12 @@
 
 ```jsx
 <Autocomplete aria-label="Animals" disabled footer={<h3>Footer message</h3>}>
-  <Autocomplete.Item key="red panda">Red Panda</Autocomplete.Item>
-  <Autocomplete.Item key="cat">Cat</Autocomplete.Item>
-  <Autocomplete.Item key="dog">Dog</Autocomplete.Item>
-  <Autocomplete.Item key="aardvark">Aardvark</Autocomplete.Item>
-  <Autocomplete.Item key="kangaroo">Kangaroo</Autocomplete.Item>
-  <Autocomplete.Item key="snake">Snake</Autocomplete.Item>
+  <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+  <AutocompleteItem key="cat">Cat</AutocompleteItem>
+  <AutocompleteItem key="dog">Dog</AutocompleteItem>
+  <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+  <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+  <AutocompleteItem key="snake">Snake</AutocompleteItem>
 </Autocomplete>
 ```
 
@@ -113,7 +113,7 @@
   return (
     <div className="flex flex-col gap-2">
       <Autocomplete aria-label="Animals" defaultItems={options}>
-        {item => <Autocomplete.Item>{item.name}</Autocomplete.Item>}
+        {item => <AutocompleteItem>{item.name}</AutocompleteItem>}
       </Autocomplete>
     </div>
   );
@@ -144,7 +144,7 @@
   return (
     <div className="flex flex-col gap-2">
       <Autocomplete items={items} onFocus={getCollection} loadingState={loading}>
-        {item => <Autocomplete.Item>{item.name}</Autocomplete.Item>}
+        {item => <AutocompleteItem>{item.name}</AutocompleteItem>}
       </Autocomplete>
     </div>
   );

@@ -1,7 +1,7 @@
 import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Accordion } from './accordion.component.js';
+import { Accordion, AccordionItem } from './accordion.component.js';
 import { styles } from './accordion.styles.js';
 
 describe('Accordion', () => {
@@ -10,15 +10,15 @@ describe('Accordion', () => {
   it('renders the component', () => {
     const { container } = render(
       <Accordion look="soft">
-        <Accordion.Item key="FoR" title="Founding of Rome">
+        <AccordionItem key="FoR" title="Founding of Rome">
           Arma virumque cano, Troiae qui primus ab oris.
-        </Accordion.Item>
-        <Accordion.Item key="MaR" title="Monarchy and Republic">
+        </AccordionItem>
+        <AccordionItem key="MaR" title="Monarchy and Republic">
           Senatus Populusque Romanus.
-        </Accordion.Item>
-        <Accordion.Item key="Emp" title="Empire">
+        </AccordionItem>
+        <AccordionItem key="Emp" title="Empire">
           Alea jacta est.
-        </Accordion.Item>
+        </AccordionItem>
       </Accordion>,
     );
     expect(container).toBeInTheDocument();
@@ -26,15 +26,15 @@ describe('Accordion', () => {
   it('shows the content of the tab that has been clicked', async () => {
     const { getByText } = render(
       <Accordion>
-        <Accordion.Item key="FoR" title="Founding of Rome">
+        <AccordionItem key="FoR" title="Founding of Rome">
           Arma virumque cano, Troiae qui primus ab oris.
-        </Accordion.Item>
-        <Accordion.Item key="MaR" title="Monarchy and Republic">
+        </AccordionItem>
+        <AccordionItem key="MaR" title="Monarchy and Republic">
           Senatus Populusque Romanus.
-        </Accordion.Item>
-        <Accordion.Item key="Emp" title="Empire">
+        </AccordionItem>
+        <AccordionItem key="Emp" title="Empire">
           Alea jacta est.
-        </Accordion.Item>
+        </AccordionItem>
       </Accordion>,
     );
 

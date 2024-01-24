@@ -5,107 +5,83 @@ The button dropdown menus come in three sizes or widths. They are triggered by t
 ```jsx
 <div className="flex gap-1">
   <ButtonDropdown text="Small" dropdownSize="small" look="hero">
-          <ButtonDropdown.Heading>Small menu</ButtonDropdown.Heading>
-      <List type="link" spacing="large">
-        <List.Item href="#">List item</List.Item>
-        <List.Item href="#">List item</List.Item>
-      </List>
-      <ButtonDropdown.Heading>Sub heading</ButtonDropdown.Heading>
-      <List type="link" spacing="large">
-        <List.Item href="#">List item</List.Item>
-        <List.Item href="#">List item</List.Item>
-      </List>
+    <ButtonDropdownHeading>Small menu</ButtonDropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
+    <ButtonDropdownHeading>Sub heading</ButtonDropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
   </ButtonDropdown>
 
   <ButtonDropdown text="Medium " dropdownSize="medium" look="hero">
-    <ButtonDropdown.Heading>Medium menu</ButtonDropdown.Heading>
-      <List type="link" spacing="large">
-        <List.Item href="#">List item</List.Item>
-        <List.Item href="#">List item</List.Item>
-      </List>
-      <ButtonDropdown.Heading>Sub heading</ButtonDropdown.Heading>
-      <List type="link" spacing="large">
-        <List.Item href="#">List item</List.Item>
-        <List.Item href="#">List item</List.Item>
-      </List>
+    <ButtonDropdownHeading>Medium menu</ButtonDropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
+    <ButtonDropdownHeading>Sub heading</ButtonDropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
   </ButtonDropdown>
 
-  <ButtonDropdown text="Large dropdown" dropdownSize="large" look="hero" >
-    <ButtonDropdown.Heading>Large menu</ButtonDropdown.Heading>
-      <List type="link" spacing="large">
-        <List.Item href="#">List item</List.Item>
-        <List.Item href="#">List item</List.Item>
-      </List>
-      <ButtonDropdown.Heading>With headings</ButtonDropdown.Heading>
-      <List type="link" spacing="large">
-        <List.Item href="#">List item</List.Item>
-        <List.Item href="#">List item</List.Item>
-      </List>
+  <ButtonDropdown text="Large dropdown" dropdownSize="large" look="hero">
+    <ButtonDropdownHeading>Large menu</ButtonDropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
+    <ButtonDropdownHeading>With headings</ButtonDropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
   </ButtonDropdown>
 </div>
 ```
 
 ### Usage examples
 
-```tsx
-() => <div className="flex gap-1">
-    <ButtonDropdown text="Checkboxes" look="primary">
-      <ButtonDropdown.Heading>Checkboxes</ButtonDropdown.Heading>
-<CheckboxGroup
-  defaultValue={[
-    'Option 1'
-  ]}
->
-  <CheckboxGroup.Checkbox value="Option 1">
-    Option 1
-  </CheckboxGroup.Checkbox>
-  <CheckboxGroup.Checkbox value="Option 2">
-    Option 2
-  </CheckboxGroup.Checkbox>
-  <CheckboxGroup.Checkbox value="Option 3">
-    Option 3
-  </CheckboxGroup.Checkbox>
-</CheckboxGroup>
-      <ButtonDropdown.Heading>Options</ButtonDropdown.Heading>
-<CheckboxGroup
-  defaultValue={[
-    'Option 1'
-  ]}
->
-  <CheckboxGroup.Checkbox value="Option 1">
-    Option 1
-  </CheckboxGroup.Checkbox>
-  <CheckboxGroup.Checkbox value="Option 2">
-    Option 2
-  </CheckboxGroup.Checkbox>
-  <CheckboxGroup.Checkbox value="Option 3">
-    Option 3
-  </CheckboxGroup.Checkbox>
-</CheckboxGroup>
-    </ButtonDropdown>
-  
-
-<ButtonDropdown text="Switches" look="primary">
-    <div><Switch
-     block label="Option 1"
-      size="small" />
-    </div>
-    <div><Switch
-      block label="Option 2"
-      size="small" />
-    </div>
-    <div><Switch
-      block label="Option 3"
-      size="small" />
-    </div>
-</ButtonDropdown>
-
-  <ButtonDropdown text="Links" dropdownSize="large" look="primary" >
-    <ButtonDropdown.Heading>Links</ButtonDropdown.Heading>
-      <List type="link" spacing="large">
-        <List.Item href="#">List item</List.Item>
-        <List.Item href="#">List item</List.Item>
-      </List>
+```jsx
+<div className="flex gap-1">
+  <ButtonDropdown text="Checkboxes" look="primary">
+    <ButtonDropdownHeading>Checkboxes</ButtonDropdownHeading>
+    <CheckboxGroup defaultValue={['Option 1']}>
+      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
+      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
+      <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
+    </CheckboxGroup>
+    <ButtonDropdownHeading>Options</ButtonDropdownHeading>
+    <CheckboxGroup defaultValue={['Option 1']}>
+      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
+      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
+      <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
+    </CheckboxGroup>
   </ButtonDropdown>
-  </div>
+
+  <ButtonDropdown text="Switches" look="primary">
+    <div>
+      <Switch block label="Option 1" size="small" />
+    </div>
+    <div>
+      <Switch block label="Option 2" size="small" />
+    </div>
+    <div>
+      <Switch block label="Option 3" size="small" />
+    </div>
+  </ButtonDropdown>
+
+  <ButtonDropdown text="Links" dropdownSize="large" look="primary">
+    <ButtonDropdownHeading>Links</ButtonDropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
+  </ButtonDropdown>
+</div>
 ```

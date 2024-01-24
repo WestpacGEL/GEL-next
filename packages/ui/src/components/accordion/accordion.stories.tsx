@@ -1,9 +1,9 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { Key, useState } from 'react';
 
-import { Button, Tabs } from '../index.js';
+import { Button, Tabs, TabsPanel } from '../index.js';
 
-import { Accordion } from './accordion.component.js';
+import { Accordion, AccordionItem } from './accordion.component.js';
 
 const meta: Meta<typeof Accordion> = {
   title: 'Components/Accordion',
@@ -19,7 +19,7 @@ const meta: Meta<typeof Accordion> = {
        */
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      Accordion.Item.displayName = 'Accordion.Item';
+      AccordionItem.displayName = 'AccordionItem';
 
       return <Story />;
     },
@@ -40,14 +40,14 @@ export const Default: Story = {
       { key: 'shared', title: 'Shared with us' },
       { key: 'last', title: 'Last item' },
     ].map(({ key, title }) => (
-      <Accordion.Item key={key} title={title}>
+      <AccordionItem key={key} title={title}>
         <h3>{title}</h3>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
           reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
         </p>
         <Button>Test</Button>
-      </Accordion.Item>
+      </AccordionItem>
     )),
   },
 };
@@ -67,10 +67,10 @@ export const LegoLook: Story = {
         { key: 'shared', title: 'my shared with you' },
         { key: 'last', title: 'Last item' },
       ].map(({ key, title }) => (
-        <Accordion.Item key={key} title={title}>
+        <AccordionItem key={key} title={title}>
           <p>{title}</p>
           <Button>Test</Button>
-        </Accordion.Item>
+        </AccordionItem>
       ))}
     </Accordion>
   ),
@@ -99,10 +99,10 @@ export const Controlled: Story = {
           { key: 'shared', title: 'Shared with you' },
           { key: 'last', title: 'Last item' },
         ].map(({ key, title }) => (
-          <Accordion.Item key={key} title={title}>
+          <AccordionItem key={key} title={title}>
             <p>{title}</p>
             <Button>Test</Button>
-          </Accordion.Item>
+          </AccordionItem>
         ))}
       </Accordion>
     );
@@ -112,7 +112,7 @@ export const Controlled: Story = {
 /**
  * > Example showing how you can use styling to change accordion to tabs responsively.
  * > Replicates GEL Tabcordion functionality.
- * NOTE: Due to how items work the Accordion.Item that are children of Tabs should be Tab.Panel but can't due to name sharing on this page.
+ * NOTE: Due to how items work the AccordionItem that are children of Tabs should be Tab.Panel but can't due to name sharing on this page.
  * See the source of this example in, https://github.com/WestpacGEL/GEL-next/blob/main/packages/ui/src/components/accordion/accordion.stories.tsx#L142
  */
 export const Responsive: Story = {
@@ -126,16 +126,16 @@ export const Responsive: Story = {
       <>
         <Accordion {...props} className="sm:hidden">
           {data.map(({ key, title, content }) => (
-            <Accordion.Item key={key} title={title}>
+            <AccordionItem key={key} title={title}>
               <p>{content}</p>
-            </Accordion.Item>
+            </AccordionItem>
           ))}
         </Accordion>
         <Tabs className="max-sm:hidden">
           {data.map(({ key, title, content }) => (
-            <Tabs.Panel key={key} title={title}>
+            <TabsPanel key={key} title={title}>
               <p>{content}</p>
-            </Tabs.Panel>
+            </TabsPanel>
           ))}
         </Tabs>
       </>

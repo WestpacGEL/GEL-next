@@ -22,5 +22,3 @@ export function Modal({ children, title, role, body, size, className, fullscreen
     </ModalBackdrop>
   );
 }
-Modal.Footer = ModalDialog.Footer;
-Modal.Body = ModalDialog.Body;

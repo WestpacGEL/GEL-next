@@ -5,18 +5,20 @@ import { ArticleComponentBlocks } from '@/components/component-blocks/article-co
 import { foundationBlocks } from '@/components/component-blocks/foundation-blocks';
 import { logs } from '@/components/component-blocks/logs/logs.preview';
 
+const IS_VERCEL_BUILD =
+  typeof process.env.NEXT_PUBLIC_GIT_REPO_OWNER === 'string' && process.env.NEXT_PUBLIC_GIT_REPO_OWNER !== '';
+
 // storage option for Keystatic.
-const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
-  process.env.NODE_ENV === 'development'
-    ? { kind: 'local' }
-    : {
-        kind: 'github',
-        pathPrefix: 'apps/site',
-        repo: {
-          owner: process.env.NEXT_PUBLIC_GIT_REPO_OWNER!,
-          name: process.env.NEXT_PUBLIC_GIT_REPO_SLUG!,
-        },
-      };
+const storage: LocalConfig['storage'] | GitHubConfig['storage'] = IS_VERCEL_BUILD
+  ? {
+      kind: 'github',
+      pathPrefix: 'apps/site',
+      repo: {
+        owner: process.env.NEXT_PUBLIC_GIT_REPO_OWNER!,
+        name: process.env.NEXT_PUBLIC_GIT_REPO_SLUG!,
+      },
+    }
+  : { kind: 'local' };
 
 export default config({
   storage,

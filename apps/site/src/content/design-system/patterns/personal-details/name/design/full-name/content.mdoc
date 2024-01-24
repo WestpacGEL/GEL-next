@@ -8,7 +8,7 @@ This pattern is kept as simple as possible yet captures more data points than Si
 
 ```tsx
 <Form spacing="large">
-  <Form.Group>
+  <FormGroup>
     <Field label="Title">
       <Select name="title" size="large">
         <option>Select</option>
@@ -19,22 +19,22 @@ This pattern is kept as simple as possible yet captures more data points than Si
         <option>Dr</option>
       </Select>
     </Field>
-  </Form.Group>
-  <Form.Group>
+  </FormGroup>
+  <FormGroup>
     <Field label="Given name">
       <Input name="given-name" size="large" className="w-6/12" />
     </Field>
-  </Form.Group>
-  <Form.Group>
+  </FormGroup>
+  <FormGroup>
     <Field label="Middle names (if any)">
       <Input name="middle-name" size="large" className="w-6/12" />
     </Field>
-  </Form.Group>
-  <Form.Group>
+  </FormGroup>
+  <FormGroup>
     <Field label="Family name">
       <Input name="family-name" size="large" className="w-6/12" />
     </Field>
-  </Form.Group>
+  </FormGroup>
 </Form>
 ```
 
@@ -48,7 +48,7 @@ This example shows the base pattern used with additional questions when further 
 
   return (
     <Form spacing="large">
-      <Form.Group>
+      <FormGroup>
         <Field label="Title">
           <Select name="title" size="large">
             <option>Select</option>
@@ -59,36 +59,36 @@ This example shows the base pattern used with additional questions when further 
             <option>Dr</option>
           </Select>
         </Field>
-      </Form.Group>
-      <Form.Group>
+      </FormGroup>
+      <FormGroup>
         <Field label="Given name">
           <Input name="given-name" size="large" className="w-6/12" />
         </Field>
-      </Form.Group>
-      <Form.Group>
+      </FormGroup>
+      <FormGroup>
         <Field label="Middle names (if any)">
           <Input name="middle-name" size="large" className="w-6/12" />
         </Field>
-      </Form.Group>
-      <Form.Group>
+      </FormGroup>
+      <FormGroup>
         <Field label="Family name">
           <Input name="family-name" size="large" className="w-6/12" />
         </Field>
-      </Form.Group>
-      <Form.Group>
+      </FormGroup>
+      <FormGroup>
         <Field label="Have you ever been known by a name different to the one provided above?">
           <ButtonGroup size="large" onChange={value => setDifferentName(value)} value={differentName} look="hero">
-            <ButtonGroup.Button value={true}>Yes</ButtonGroup.Button>
-            <ButtonGroup.Button value={false}>No</ButtonGroup.Button>
+            <ButtonGroupButton value={true}>Yes</ButtonGroupButton>
+            <ButtonGroupButton value={false}>No</ButtonGroupButton>
           </ButtonGroup>
         </Field>
-      </Form.Group>
+      </FormGroup>
       {differentName && (
-        <Form.Group>
+        <FormGroup>
           <Field label="Other names">
             <Input name="other-name" size="large" className="w-6/12" />
           </Field>
-        </Form.Group>
+        </FormGroup>
       )}
     </Form>
   );

@@ -2,15 +2,6 @@ import React, { MouseEventHandler, forwardRef, useCallback, useContext } from 'r
 import { mergeProps, useFocusRing } from 'react-aria';
 
 import { FlexiCell } from '../../../../../../index.js';
-import {
-  FlexiCellAdornment,
-  FlexiCellBody,
-  FlexiCellButton,
-  FlexiCellCircle,
-  FlexiCellFooter,
-  FlexiCellHint,
-  FlexiCellLabel,
-} from '../../../../../flexi-cell/index.js';
 import { ArrowRightIcon } from '../../../../../icon/index.js';
 import { SelectorButtonContext } from '../../selector-button-group.component.js';
 
@@ -75,20 +66,5 @@ function BaseSelectorButtonGroupOption(
 
 export const SelectorButtonGroupOption = forwardRef(BaseSelectorButtonGroupOption) as React.ForwardRefExoticComponent<
   SelectorButtonGroupOptionProps & React.RefAttributes<unknown>
-> & {
-  Adornment: typeof FlexiCell.Adornment;
-  Body: typeof FlexiCell.Body;
-  Button: typeof FlexiCell.Button;
-  Circle: typeof FlexiCell.Circle;
-  Footer: typeof FlexiCell.Footer;
-  Hint: typeof FlexiCell.Hint;
-  Label: typeof FlexiCell.Label;
-};
-
-SelectorButtonGroupOption.Body = FlexiCellBody;
-SelectorButtonGroupOption.Footer = FlexiCellFooter;
-SelectorButtonGroupOption.Adornment = FlexiCellAdornment;
-SelectorButtonGroupOption.Hint = FlexiCellHint;
-SelectorButtonGroupOption.Label = FlexiCellLabel;
-SelectorButtonGroupOption.Button = FlexiCellButton;
-SelectorButtonGroupOption.Circle = FlexiCellCircle;
+>;
+SelectorButtonGroupOption.displayName = 'SelectorButton';

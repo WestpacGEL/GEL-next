@@ -6,17 +6,17 @@ The Button select variation, or 'Select and go' functionality is used to direct 
 <Grid>
   <GridItem span={{ initial: 12, sm: 6 }}>
     <Selector type="radio">
-      <Selector.Radio key="1" checkIcon="arrow" value="1">
-        <Selector.Label>Button select</Selector.Label>
-        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      <SelectorRadio key="1" checkIcon="arrow" value="1">
+        <SelectorLabel>Button select</SelectorLabel>
+        <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
       </Selector.Radio>
-      <Selector.Radio key="2" checkIcon="arrow" value="2">
-        <Selector.Label>Button select</Selector.Label>
-        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      <SelectorRadio key="2" checkIcon="arrow" value="2">
+        <SelectorLabel>Button select</SelectorLabel>
+        <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
       </Selector.Radio>
-      <Selector.Radio key="3" checkIcon="arrow" value="3">
-        <Selector.Label>Button select</Selector.Label>
-        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      <SelectorRadio key="3" checkIcon="arrow" value="3">
+        <SelectorLabel>Button select</SelectorLabel>
+        <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
       </Selector.Radio>
     </Selector>
   </GridItem>
@@ -31,17 +31,17 @@ The single-select variation mimics the functionality of radio buttons, allowing 
 <Grid>
   <GridItem span={{ initial: 12, sm: 6 }}>
     <Selector type="radio">
-      <Selector.Radio key="1" value="1">
-        <Selector.Label>Single-select</Selector.Label>
-        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      <SelectorRadio key="1" value="1">
+        <SelectorLabel>Single-select</SelectorLabel>
+        <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
       </Selector.Radio>
-      <Selector.Radio key="2" value="2">
-        <Selector.Label>Single-select</Selector.Label>
-        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      <SelectorRadio key="2" value="2">
+        <SelectorLabel>Single-select</SelectorLabel>
+        <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
       </Selector.Radio>
-      <Selector.Radio key="3" value="3">
-        <Selector.Label>Single-select</Selector.Label>
-        <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
+      <SelectorRadio key="3" value="3">
+        <SelectorLabel>Single-select</SelectorLabel>
+        <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
       </Selector.Radio>
     </Selector>
   </GridItem>
@@ -65,18 +65,18 @@ The multi-select variation mimics the functionality of checkboxes, allowing mult
             setSelectedValues(value);
           }}
         >
-          <Selector.Checkbox key="1" value="1">
-            <Selector.Label>Multi-select</Selector.Label>
-            <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
-          </Selector.Checkbox>
-          <Selector.Checkbox key="2" value="2">
-            <Selector.Label>Multi-select</Selector.Label>
-            <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
-          </Selector.Checkbox>
-          <Selector.Checkbox key="3" value="3">
-            <Selector.Label>Multi-select</Selector.Label>
-            <Selector.Hint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</Selector.Hint>
-          </Selector.Checkbox>
+          <SelectorCheckbox key="1" value="1">
+            <SelectorLabel>Multi-select</SelectorLabel>
+            <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
+          </SelectorCheckbox>
+          <SelectorCheckbox key="2" value="2">
+            <SelectorLabel>Multi-select</SelectorLabel>
+            <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
+          </SelectorCheckbox>
+          <SelectorCheckbox key="3" value="3">
+            <SelectorLabel>Multi-select</SelectorLabel>
+            <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
+          </SelectorCheckbox>
         </Selector>
       </GridItem>
     </Grid>
