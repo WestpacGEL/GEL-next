@@ -1,50 +1,48 @@
 ## Standalone Link
 
 ```jsx
-<div className="flex flex-col pl-1 space-y-1">
-  <Link href="#" iconBefore={PdfFileIcon}>
+<div className="flex flex-col gap-5">
+<Link mb-4 href="#" iconBefore={PdfFileIcon}>
     Look I'm a standalone link
   </Link>
-  <Link href="#" iconAfter={ArrowRightIcon}>
-    Look I'm a standalone link
+  <Link href="#" iconBefore={ArrowRightIcon}>
+    I'm also a standalone link
+  </Link>
+  <Link href="#" iconAfter={NewWindowIcon} size="xsmall">
+    I'm a standalone link too
   </Link>
 </div>
 ```
 
 ## Inline Link
 
-```jsx
-<div className="pl-1 space-y-1">
-  <p className="typography-body-10">
-    Lorem ipsum dolor{' '}
+```tsx
+<div className="flex flex-col gap-5">
+  <p className="typography-body-9">
+  <Heading size="9" className="font-bold">Inline link - no icon</Heading>
+    Lorem ipsum dolor sit amet consectetur,{' '}
     <Link href="#" type="inline">
       look, I'm an inline link
     </Link>{' '}
-    sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
+    adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
     doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
   </p>
-  <p className="typography-body-10">
-    Lorem ipsum dolor{' '}
-    <Link href="#" type="inline" underline={false}>
-      look, I'm an inline link with no underline
-    </Link>{' '}
-    sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
-    doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
-  </p>
-  <p className="typography-body-10">
-    Lorem ipsum dolor{' '}
+  <p className="typography-body-9">
+  <Heading size="9" className="font-bold">Inline link - icon before</Heading>
+    Lorem ipsum dolor sit amet consectetur,{' '}
     <Link href="#" type="inline" iconBefore={PdfFileIcon}>
       look, I'm an inline link
     </Link>{' '}
-    sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
+    adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
     doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
   </p>
-  <p className="typography-body-10">
-    Lorem ipsum dolor{' '}
-    <Link href="#" type="inline" iconAfter={ArrowRightIcon}>
+  <p className="typography-body-9">
+  <Heading size="9" className="font-bold">Inline link - icon after</Heading>
+    Lorem ipsum dolor sit amet consectetur,{' '}
+    <Link href="#" iconSize="xsmall" type="inline" iconAfter={NewWindowIcon} size="small">
       look, I'm an inline link
     </Link>{' '}
-    sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
+    adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
     doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
   </p>
 </div>
