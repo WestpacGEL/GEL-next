@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.14.0
+
+### Minor Changes
+
+- ee3543f: Removed JSX dot notation components due to server component compatibility issues. E.g. Accordion.Item exported as AccordionItem
+
 ## 0.13.0
 
 ### Minor Changes
