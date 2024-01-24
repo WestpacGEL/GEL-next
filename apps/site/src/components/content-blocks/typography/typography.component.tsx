@@ -2,7 +2,7 @@
 
 import { NewWindowIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import React from 'react';
 import { VariantProps } from 'tailwind-variants';
 
@@ -20,16 +20,11 @@ export function Link({
   href,
   ...props
 }: React.PropsWithChildren<LinkProps & VariantProps<typeof linkStyles>>) {
-  const searchParams = useSearchParams();
-  const brand = (searchParams.get('brand') ?? 'wbc') as BrandKey;
+  const params = useParams();
+  const brand = (params.brand ?? 'wbc') as BrandKey;
   const isExternalLink = href.toString().indexOf('http') === 0 || href.toString().indexOf('mailto') === 0;
   return (
-    <NextLink
-      href={isExternalLink ? href : `${href}?brand=${brand}`}
-      target={isExternalLink ? '_blank' : '_self'}
-      className={linkStyles({ color })}
-      {...props}
-    >
+    <NextLink href={href} target={isExternalLink ? '_blank' : '_self'} className={linkStyles({ color })} {...props}>
       {children}
       {isExternalLink && <NewWindowIcon size="xsmall" className="ml-1" />}
     </NextLink>

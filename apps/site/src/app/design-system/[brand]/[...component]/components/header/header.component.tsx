@@ -1,22 +1,18 @@
 'use client';
 
 import { HamburgerMenuIcon } from '@westpac/ui/icon';
-import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
+import { useSidebar } from '@/app/design-system/components/sidebar/sidebar.context';
 import { BrandKey } from '@/app/types/brand.types';
-
-import { useSidebar } from '../../../components/sidebar/sidebar.context';
 
 import { styles as headerStyles } from './header.styles';
 
 const FIXED_HEADER = 162; // 228 - 66 = height to stick
 
-export function Header({ className, title }: { className?: string; title?: string }) {
+export function Header({ className, title, brand }: { brand: string; className?: string; title?: string }) {
   const [fixed, setFixed] = useState(false);
-  const searchParams = useSearchParams();
-  const brand = searchParams.get('brand')?.toLowerCase();
-  const styles = headerStyles({ brand: brand as BrandKey, fixed, className });
+  const styles = headerStyles({ brand: brand.toLowerCase() as BrandKey, fixed, className });
   const { setOpen } = useSidebar();
 
   useEffect(() => {

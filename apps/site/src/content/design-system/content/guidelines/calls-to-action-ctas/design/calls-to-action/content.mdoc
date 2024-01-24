@@ -4,7 +4,7 @@ For example:
 
 {% designSystemBodyImage alt="Two examples of calls to action that are short and action oriented." src="https://res.cloudinary.com/westpac-gel/image/upload/v1667894142/cla7x3vj6001ef58icgubfckf.png" title="Use short, action oriented calls to action" /%}
 
-*Note: No full stops in CTAs but fine to use question marks.*
+_Note: No full stops in CTAs but fine to use question marks._
 
 ---
 
@@ -12,7 +12,7 @@ Hyperlinks must be underlined unless they’re standalone text links, in which c
 
 ```jsx
 <div>
-<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
   <Link href="#" iconBefore={ArrowRightIcon}>
     Register for Online Banking
   </Link>
@@ -25,11 +25,18 @@ However, when space is limited, try CTAs such as ‘Tell me more’ or ‘Show m
 
 ```jsx
 <div>
-<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
-<p className="typography-body-10  mb-2 ml-3">Find out more about balance transfers</p>
-<p className="typography-body-10  mb-6 ml-3">To learn more about whether Online Banking is right for you, see our Online Banking Terms & Conditions for more information.</p>
-<p className="typography-body-10 mb-2 ml-4"><span className="text-success font-bold">Do:</span> Submit application</p>
-<p className="typography-body-10 ml-4"><span className="text-danger font-bold">Don't:</span> Finish</p>
+  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <p className="typography-body-10  mb-2 ml-3">Find out more about balance transfers</p>
+  <p className="typography-body-10  mb-6 ml-3">
+    To learn more about whether Online Banking is right for you, see our Online Banking Terms & Conditions for more
+    information.
+  </p>
+  <p className="typography-body-10 mb-2 ml-4">
+    <span className="text-success font-bold">Do:</span> Submit application
+  </p>
+  <p className="typography-body-10 ml-4">
+    <span className="text-danger font-bold">Don't:</span> Finish
+  </p>
 </div>
 ```
 
@@ -39,9 +46,19 @@ Try to avoid overt navigation instructions, e.g. ‘Click the link below to star
 
 ```jsx
 <div>
-<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
-<p className="typography-body-10  mb-2 ml-3">Use a CTA button or hyperlink that says <Link href="#" type="inline">Start survey now</Link></p>
-<p className="typography-body-10  mb-2 ml-3">Call us on <Link href="#" type="inline">13 20 32</Link></p>
+  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <p className="typography-body-10  mb-2 ml-3">
+    Use a CTA button or hyperlink that says{' '}
+    <Link href="#" type="inline">
+      Start survey now
+    </Link>
+  </p>
+  <p className="typography-body-10  mb-2 ml-3">
+    Call us on{' '}
+    <Link href="#" type="inline">
+      13 20 32
+    </Link>
+  </p>
 </div>
 ```
 
@@ -51,12 +68,23 @@ Keep verbs appropriate to the device type.
 
 ```jsx
 <div>
-<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
-<p className="typography-body-10 mb-3 ml-4"><span className=" font-bold">Mobile:</span> Go to, tap, swipe, scroll, select, choose</p>
-<p className="typography-body-10 mb-3 ml-4"><span className=" font-bold">Desktop:</span> Go to, select, scroll, choose</p>
-<p className="typography-body-10 mb-3 ml-4"><span className=" font-bold">Cross-device:</span> Go to, select, scroll, choose</p>
-<p className="typography-body-10 text-muted mb-3 italic">Note: ‘Click’ doesn’t adhere to the <Link href="https://www.w3.org/WAI/tips/writing/" type="inline">Accessibility & Inclusion Guidelines</Link>.</p>
-
+  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <p className="typography-body-10 mb-3 ml-4">
+    <span className=" font-bold">Mobile:</span> Go to, tap, swipe, scroll, select, choose
+  </p>
+  <p className="typography-body-10 mb-3 ml-4">
+    <span className=" font-bold">Desktop:</span> Go to, select, scroll, choose
+  </p>
+  <p className="typography-body-10 mb-3 ml-4">
+    <span className=" font-bold">Cross-device:</span> Go to, select, scroll, choose
+  </p>
+  <p className="typography-body-10 text-muted mb-3 italic">
+    Note: ‘Click’ doesn’t adhere to the{' '}
+    <Link href="https://www.w3.org/WAI/tips/writing/" type="inline">
+      Accessibility & Inclusion Guidelines
+    </Link>
+    .
+  </p>
 </div>
 ```
 
@@ -66,8 +94,8 @@ When referring to signing into Online Banking or the Westpac App, use ‘into’
 
 ```jsx
 <div>
-<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
-<p className="typography-body-10 ml-4">Sign into Online Banking or the Westpac App</p>
+  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <p className="typography-body-10 ml-4">Sign into Online Banking or the Westpac App</p>
 </div>
 ```
 
@@ -79,14 +107,16 @@ For steps in body copy, use chevrons. Capitalise the first word after the chevro
 
 ```jsx
 <div>
-<h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
-<p className="typography-body-10 ml-4">Sign into the Westpac App > Go to the <b>$</b> on the bottom menu > Tap <b>Pay someone</b> > Tap <b>Add</b></p>
+  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <p className="typography-body-10 ml-4">
+    Sign into the Westpac App > Go to the <b>$</b> on the bottom menu > Tap <b>Pay someone</b> > Tap <b>Add</b>
+  </p>
 </div>
 ```
 
 ---
 
-If there are more than 5 steps, switch to the list format. Also see [Bullet points & numbered lists](/design-system/content/guidelines/bullet-points-numbered-list).
+If there are more than 5 steps, switch to the list format. Also see [Bullet points & numbered lists](/design-system/wbc/content/guidelines/bullet-points-numbered-list).
 
 ```jsx
 <div>

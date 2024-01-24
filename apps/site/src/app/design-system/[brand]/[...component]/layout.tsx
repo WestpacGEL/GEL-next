@@ -9,15 +9,15 @@ export default async function ComponentLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { component: string[] };
+  params: { brand: string; component: string[] };
 }) {
-  const { component } = params;
+  const { brand, component } = params;
   const content = await reader().collections.designSystem.readOrThrow(component.join('/'));
 
   return (
     <>
       <Suspense fallback={<>Loading...</>}>
-        <Header title={content.name} />
+        <Header title={content.name} brand={brand} />
       </Suspense>
       <div className="flex flex-1 flex-col p-5">
         <div className="-m-5 flex flex-1 flex-col bg-background">{children}</div>

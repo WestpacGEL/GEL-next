@@ -1,7 +1,7 @@
 name: Autocomplete
 description: >-
   Autocomplete predicts and suggests possible inputs as users type, speeding up
-  the input process and enhancing the user experience. 
+  the input process and enhancing the user experience.
 namedExport:
   discriminant: false
 design:
@@ -31,9 +31,9 @@ accessibility:
       slug: notes-on-accessibility
 relatedComponents:
   - title: Icons
-    slug: /design-system/foundation/icon
+    slug: /design-system/wbc/foundation/icon
   - title: Text input
-    slug: /design-system/components/input
+    slug: /design-system/wbc/components/input
 code:
   - title:
       name: Development examples
