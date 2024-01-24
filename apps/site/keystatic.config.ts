@@ -5,7 +5,8 @@ import { ArticleComponentBlocks } from '@/components/component-blocks/article-co
 import { foundationBlocks } from '@/components/component-blocks/foundation-blocks';
 import { logs } from '@/components/component-blocks/logs/logs.preview';
 
-const IS_VERCEL_BUILD = typeof process.env.NEXT_PUBLIC_GIT_REPO_OWNER === 'string';
+const IS_VERCEL_BUILD =
+  typeof process.env.NEXT_PUBLIC_GIT_REPO_OWNER === 'string' && process.env.NEXT_PUBLIC_GIT_REPO_OWNER !== '';
 
 // storage option for Keystatic.
 const storage: LocalConfig['storage'] | GitHubConfig['storage'] = IS_VERCEL_BUILD
