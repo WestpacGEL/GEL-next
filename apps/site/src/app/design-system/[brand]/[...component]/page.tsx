@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 
 import { reader } from '@/app/reader';
 import { RelatedInfoLinks } from '@/components/related-info/related-info.types';
+import { BANK_OPTIONS } from '@/constants/bank-options';
 import { ShortCode } from '@/types/short-code.types';
 
 import { ContentTabs } from './components';
@@ -40,9 +41,11 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
 
 export async function generateStaticParams() {
   const components = await reader().collections.designSystem.all();
-  return components.map(component => ({
-    component: component.slug.split('/'),
-  }));
+  const params: Array<{ brand: string; component: string[] }> = [];
+  BANK_OPTIONS.forEach(bank => {
+    components.forEach(component => params.push({ brand: bank.key, component: component.slug.split('/') }));
+  });
+  return params;
 }
 
 export default async function ComponentPage({

@@ -16,14 +16,10 @@ import {
   TwitterLogo,
 } from '@/components/logos';
 
-import { Hero, Section, SectionHeading, SectionItem } from './components';
+import { Hero, Section, SectionHeading, SectionItem } from '../components';
 
-export default function DesignSystemHomePage({
-  searchParams,
-}: {
-  searchParams?: { [key: string]: string | undefined };
-}) {
-  const brand = (searchParams?.brand || 'wbc') as BrandKey;
+export default function DesignSystemHomePage({ params }: { params: { brand: string } }) {
+  const brand = (params.brand || 'wbc') as BrandKey;
   return (
     <>
       <Hero brand={brand} />

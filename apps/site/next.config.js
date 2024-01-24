@@ -11,4 +11,13 @@ module.exports = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/design-system',
+        destination: '/design-system/wbc',
+        permanent: false,
+      },
+    ];
+  },
 };
