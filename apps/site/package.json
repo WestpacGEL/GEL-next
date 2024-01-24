@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "version": "0.0.22",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "next build",
