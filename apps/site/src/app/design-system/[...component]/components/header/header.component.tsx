@@ -32,10 +32,6 @@ export function Header({ className, title }: { className?: string; title?: strin
 
   return (
     <header className={styles.base()}>
-      <button className={styles.hamburgerButton()} onClick={() => setOpen(open => !open)}>
-        <HamburgerMenuIcon color="white" className="mx-auto" />
-      </button>
-
       <div className={styles.gridButtonWrapper()}>
         <span className="sr-only">Active breakpoint:</span>
         <span className="hidden font-bold sm:block md:hidden">SM</span>
@@ -53,6 +49,10 @@ export function Header({ className, title }: { className?: string; title?: strin
           })}
         </button>
       </div>
+      {/* The tab order on the original site was the grid button before wrapper when coming from the browser bar */}
+      <button className={styles.hamburgerButton()} onClick={() => setOpen(open => !open)}>
+        <HamburgerMenuIcon color="white" className="mx-auto" />
+      </button>
 
       <h2 className={styles.title()}>{title}</h2>
     </header>

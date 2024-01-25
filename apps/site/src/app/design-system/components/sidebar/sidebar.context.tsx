@@ -2,7 +2,12 @@
 
 import { Dispatch, SetStateAction, createContext, useContext, useState } from 'react';
 
-type SidebarContextType = { open: boolean | null; setOpen: Dispatch<SetStateAction<boolean>> };
+type SidebarContextType = {
+  linkClicked: boolean | null;
+  open: boolean | null;
+  setLinkClicked: Dispatch<SetStateAction<boolean>>;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+};
 
 const SidebarContext = createContext<SidebarContextType | null>(null);
 
@@ -18,6 +23,9 @@ export const useSidebar = () => {
 
 export function SidebarContextProvider({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
+  const [linkClicked, setLinkClicked] = useState(false);
 
-  return <SidebarContext.Provider value={{ open, setOpen }}>{children}</SidebarContext.Provider>;
+  return (
+    <SidebarContext.Provider value={{ linkClicked, setLinkClicked, open, setOpen }}>{children}</SidebarContext.Provider>
+  );
 }

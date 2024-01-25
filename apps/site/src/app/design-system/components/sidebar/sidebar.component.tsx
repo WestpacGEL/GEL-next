@@ -22,6 +22,7 @@ export function Sidebar({ items }: SidebarProps) {
 
   const outsideRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
+  const focusRef = useRef<HTMLButtonElement>(null);
 
   useOnClickOutside(outsideRef, () => {
     setOpen(false);
@@ -41,6 +42,12 @@ export function Sidebar({ items }: SidebarProps) {
     };
   }, [listRef]);
 
+  useEffect(() => {
+    if (open) {
+      focusRef.current?.focus();
+    }
+  }, [open]);
+
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -57,52 +64,64 @@ export function Sidebar({ items }: SidebarProps) {
     <>
       <div
         className={clsx(
-          'fixed top-0 z-[60] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 bg-white text-text transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:-translate-x-0 lg:border-r lg:border-r-border',
+          'fixed top-0 z-[60] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 bg-white text-text transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r lg:border-r-border',
           {
             '-translate-x-full': !open, //hide sidebar to the left when closed
           },
         )}
         ref={outsideRef}
       >
+        {/* Below div required to hide so the transform still happens while still hiding the sidebar below large, otherwise users could tab into it when closed */}
         <div
           className={clsx({
-            'shadow-[rgba(0,0,0,0.26)_0_2px_5px]': scrolled,
+            'max-lg:hidden': !open,
           })}
         >
-          <button className="absolute right-1 top-1 block h-6 w-6 p-1 md:hidden" onClick={() => setOpen(false)}>
-            <CloseIcon className="block text-muted" />
-          </button>
-          <Link
-            href="/"
-            className="flex h-15 items-center px-3 outline-offset-[-1px] outline-focus"
-            aria-label="GEL home"
+          <div
+            className={clsx({
+              'shadow-[rgba(0,0,0,0.26)_0_2px_5px]': scrolled,
+            })}
           >
-            <Logo brand={brand} />
-          </Link>
-          <div className="border-b border-b-border">
-            <SidebarSelect selectedKey={brand} onSelectionChange={handleChange} aria-label="Change brand">
-              {BANK_OPTIONS.map(({ icon: Icon, designSystemPageClasses, key, label }) => (
-                <SidebarSelect.Option key={key} textValue={label}>
-                  <div className="flex w-full items-center justify-between">
-                    <span className="typography-body-10">{label}</span>
-                    {<Icon className={designSystemPageClasses} />}
-                  </div>
-                </SidebarSelect.Option>
-              ))}
-            </SidebarSelect>
+            <button
+              className="absolute right-1 top-1 block h-6 w-6 p-1 outline-focus lg:hidden"
+              onClick={() => setOpen(false)}
+              ref={focusRef}
+            >
+              <CloseIcon className="block text-muted" />
+            </button>
+            <Link
+              href="/"
+              className="flex h-15 items-center px-3 outline-offset-[-1px] outline-focus"
+              aria-label="GEL home"
+            >
+              <Logo brand={brand} />
+            </Link>
+            <div className="border-b border-b-border">
+              <SidebarSelect selectedKey={brand} onSelectionChange={handleChange} aria-label="Change brand">
+                {BANK_OPTIONS.map(({ icon: Icon, designSystemPageClasses, key, label }) => (
+                  <SidebarSelect.Option key={key} textValue={label}>
+                    <div className="flex w-full items-center justify-between">
+                      <span className="typography-body-10">{label}</span>
+                      {<Icon className={designSystemPageClasses} />}
+                    </div>
+                  </SidebarSelect.Option>
+                ))}
+              </SidebarSelect>
+            </div>
           </div>
+          <nav ref={listRef} className="flex-1 overflow-y-auto overflow-x-hidden pb-4 transition-all">
+            <Link href="/" className="block outline-offset-[-1px] outline-focus" aria-label="Back to GEL">
+              <BackToGelSvg />
+            </Link>
+            <Navigation items={items} brand={brand} />
+          </nav>
         </div>
-        <nav ref={listRef} className="flex-1 overflow-y-auto overflow-x-hidden pb-4 transition-all">
-          <Link href="/" className="block outline-offset-[-1px] outline-focus" aria-label="Back to GEL">
-            <BackToGelSvg />
-          </Link>
-          <Navigation items={items} brand={brand} />
-        </nav>
       </div>
       <div
         aria-hidden="true"
         className={clsx({
-          'before:bg-black/40 z-[59] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed': open,
+          'max-lg:before:bg-black/40 z-[59] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed':
+            open,
         })}
       />
     </>

@@ -39,7 +39,10 @@ export function Header({ brand }: { brand: BrandKey }) {
   return (
     <header ref={ref} className={base()}>
       <BackgroundImage brand={brand} type="header" fixed={fixed} />
-      <button className="z-10 flex items-center px-2 lg:hidden" onClick={() => setOpen(open => !open)}>
+      <button
+        className="z-10 flex items-center px-2 focus-visible:!outline-offset-[-2px] focus-visible:focus-outline lg:hidden"
+        onClick={() => setOpen(open => !open)}
+      >
         <HamburgerMenuIcon />
       </button>
       <div className={heading()}>

@@ -4,7 +4,7 @@ import { AddIcon, RemoveIcon } from '@westpac/ui/icon';
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { formatComponentSlug } from '@/utils/format';
 
@@ -83,13 +83,18 @@ function Item({ label, path, level, crumbs, brand, ...props }: ItemProps) {
   const href = `/design-system/${path}?brand=${brand}`;
   const page = path?.split('/').pop();
   const active = crumbs[crumbs.length - 1] === page || (crumbs[crumbs.length - 1] === 'design-system' && page === '');
-  const { setOpen } = useSidebar();
+  const { setOpen, setLinkClicked } = useSidebar();
+
+  const onLinkClick = () => {
+    setOpen(false);
+    setLinkClicked(true);
+  };
 
   return (
     <li {...props}>
       <Link
         href={href}
-        onClick={() => setOpen(false)}
+        onClick={onLinkClick}
         className={itemStyles({ level: level.toString() as Level, type: 'link', nested: level > 0, active })}
       >
         {formatComponentSlug(label)}
