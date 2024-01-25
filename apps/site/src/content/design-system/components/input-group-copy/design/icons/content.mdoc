@@ -25,3 +25,56 @@
   </InputGroup>
 </Fragment>
 ```
+
+### Usage examples
+
+```tsx
+() => {
+  const [inputValue, setInputValue] = useState<string>('');
+  const clearInput = useCallback(() => setInputValue(''), []);
+
+  return (
+    <InputGroup
+      label="Search"
+      before={{
+        icon: SearchIcon,
+      }}
+      after={{
+        inset: true,
+        element: <Button onClick={clearInput} look="link" iconAfter={ClearIcon} iconColor="muted" />,
+      }}
+    >
+      <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputGroup>
+  );
+};
+```
+
+### Masked inputs
+
+```tsx
+
+() => {
+  const [typeInput, setTypeInput] = useState<'password' | 'text'>('password');
+  const toggleType = useCallback(() => setTypeInput(state => (state === 'password' ? 'text' : 'password')), []);
+
+  return (
+    <InputGroup
+      label="Masked password input"
+      after={{
+        inset: true,
+        element: (
+          <Button
+            onClick={toggleType}
+            look="link"
+            iconAfter={typeInput === 'password' ? VisibilityIcon : VisibilityOffIcon}
+            iconColor="muted"
+          />
+        ),
+      }}
+    >
+      <Input type={typeInput} />
+    </InputGroup>
+  );
+};
+```

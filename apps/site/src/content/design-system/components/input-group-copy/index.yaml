@@ -23,10 +23,6 @@ design:
       slug: usage-examples
     noTitle: false
   - title:
-      name: Masked inputs
-      slug: masked-inputs
-    noTitle: true
-  - title:
       name: User experience
       slug: user-experience
     noTitle: false
