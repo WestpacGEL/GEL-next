@@ -1,7 +1,7 @@
 'use client';
 
 import { HamburgerMenuIcon } from '@westpac/ui/icon';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { useSidebar } from '@/app/design-system/components/sidebar/sidebar.context';
 import { BrandKey } from '@/app/types/brand.types';
@@ -13,6 +13,7 @@ const FIXED_HEADER = 162; // 228 - 66 = height to stick
 export function Header({ className, title, brand }: { brand: string; className?: string; title?: string }) {
   const [fixed, setFixed] = useState(typeof window !== 'undefined' ? window.scrollY >= FIXED_HEADER : false);
   const styles = headerStyles({ brand: brand.toLowerCase() as BrandKey, fixed, className });
+  const headerRef = useRef<HTMLHeadingElement>(null);
   const { setOpen } = useSidebar();
 
   useEffect(() => {
@@ -50,7 +51,7 @@ export function Header({ className, title, brand }: { brand: string; className?:
         <HamburgerMenuIcon color="white" className="mx-auto" />
       </button>
 
-      <h2 className={styles.title()} id="header" tabIndex={-1}>
+      <h2 className={styles.title()} ref={headerRef} id="header" aria-hidden tabIndex={-1}>
         {title}
       </h2>
     </header>

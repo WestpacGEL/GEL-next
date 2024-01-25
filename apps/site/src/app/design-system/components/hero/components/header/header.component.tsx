@@ -46,7 +46,7 @@ export function Header({ brand }: { brand: BrandKey }) {
         <HamburgerMenuIcon />
       </button>
       <div className={heading()}>
-        <h1 className="typography-body-9">
+        <h1 className="typography-body-9" id="header" tabIndex={-1}>
           <strong>GEL</strong> Design System
         </h1>
       </div>
