@@ -4,6 +4,7 @@ description: >-
   something.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Default
