@@ -11,6 +11,10 @@ design:
       slug: separator-1
     noTitle: false
   - title:
+      name: Usage examples
+      slug: usage-examples
+    noTitle: false
+  - title:
       name: User experience
       slug: user-experience
     noTitle: false
