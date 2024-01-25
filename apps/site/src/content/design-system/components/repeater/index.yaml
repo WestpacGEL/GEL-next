@@ -11,10 +11,6 @@ design:
       slug: separator-1
     noTitle: false
   - title:
-      name: Separator
-      slug: separator
-    noTitle: false
-  - title:
       name: User experience
       slug: user-experience
     noTitle: false
