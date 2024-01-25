@@ -15,11 +15,11 @@
   return (
     <Repeater separator>
       <FormGroup>
-        <div className="mb-4" width 6>
+        <div className="mb-4" width="6">
             <FormLabel htmlFor={`input${groupOneId}`}>BSB</FormLabel>
             <Input aria-describedby={`inputHint${groupOneId}`} className="w-full" id={`input${groupOneId}`} name={`input${groupOneId}`} />
         </div>
-        <div>
+        <div width="12">
             <FormLabel htmlFor={`input${groupTwoId}`}>Account number</FormLabel>
             <FormHint id={`inputHint${groupTwoId}`}>Account number should have 10 digits</FormHint>
             <Input aria-describedby={`inputHint${groupTwoId}`} className="w-full" id={`input${groupTwoId}`} name={`input${groupTwoId}`} />
