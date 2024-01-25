@@ -31,17 +31,11 @@ accessibility:
       name: Colours reserved for accessibility
       slug: colours-reserved-for-accessibility
   - title:
-      name: Accessibility notes
-      slug: accessibility-notes
-  - title:
       name: Accessibility features
       slug: accessibility-features
   - title:
-      name: Keyboard support
-      slug: keyboard-support
-  - title:
-      name: Accessibility API
-      slug: accessibility-api
+      name: Accessibility notes
+      slug: accessibility-notes
 relatedComponents: []
 code:
   - title:

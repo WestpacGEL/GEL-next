@@ -1,3 +1,12 @@
 - The switch behaves as a checkbox input for assistive technology users. Leveraging standard HTML form inputs to maintain state and store data provides optimal support in assistive technologies.
 - An indicator outline appears around the switch toggle when focused
 - The switch toggle and label text is visible in Windows High Contrast Mode (WHCM). The enabled (‘on’) state appears as a simple filled switch toggle for WHCM users.
+
+### Accessibility in the HTML
+
+- `<input type="checkbox" id="{ID}">`: Switch is defined as a (hidden) checkbox&nbsp;*input*&nbsp;and must have a unique&nbsp;*id*&nbsp;value. [React component:&nbsp;*id*&nbsp;is auto-generated]
+- `<label for="{ID}">`: Checkbox&nbsp;*input*&nbsp;is wrapped with a&nbsp;*label*&nbsp;element and uses explicit association (connected to the input using a&nbsp;*for*&nbsp;attribute) for optimal support in assistive technologies. [React component:&nbsp;*for*&nbsp;is auto-generated]
+
+### Keyboard support
+
+- Navigation pattern is consistent with standard checkbox inputs;&nbsp;*tab*&nbsp;key navigates,&nbsp;*space*&nbsp;key toggles the selection
