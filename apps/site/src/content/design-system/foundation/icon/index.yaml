@@ -37,12 +37,6 @@ accessibility:
   - title:
       name: Notes on accessibility
       slug: notes-on-accessibility
-  - title:
-      name: Keyboard support
-      slug: keyboard-support
-  - title:
-      name: Accessibility API
-      slug: accessibility-api
 relatedComponents:
   - title: Logos
     slug: foundation/logo
