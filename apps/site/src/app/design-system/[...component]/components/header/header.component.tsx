@@ -13,7 +13,7 @@ import { styles as headerStyles } from './header.styles';
 const FIXED_HEADER = 162; // 228 - 66 = height to stick
 
 export function Header({ className, title }: { className?: string; title?: string }) {
-  const [fixed, setFixed] = useState(false);
+  const [fixed, setFixed] = useState(window.scrollY >= FIXED_HEADER);
   const searchParams = useSearchParams();
   const brand = searchParams.get('brand')?.toLowerCase();
   const styles = headerStyles({ brand: brand as BrandKey, fixed, className });
@@ -54,7 +54,9 @@ export function Header({ className, title }: { className?: string; title?: strin
         <HamburgerMenuIcon color="white" className="mx-auto" />
       </button>
 
-      <h2 className={styles.title()}>{title}</h2>
+      <h2 className={styles.title()} id="header" tabIndex={-1}>
+        {title}
+      </h2>
     </header>
   );
 }

@@ -4,7 +4,7 @@ import { AddIcon, RemoveIcon } from '@westpac/ui/icon';
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 
 import { formatComponentSlug } from '@/utils/format';
 
@@ -83,11 +83,11 @@ function Item({ label, path, level, crumbs, brand, ...props }: ItemProps) {
   const href = `/design-system/${path}?brand=${brand}`;
   const page = path?.split('/').pop();
   const active = crumbs[crumbs.length - 1] === page || (crumbs[crumbs.length - 1] === 'design-system' && page === '');
-  const { setOpen, setLinkClicked } = useSidebar();
+  const { setOpen } = useSidebar();
 
   const onLinkClick = () => {
     setOpen(false);
-    setLinkClicked(true);
+    document.getElementById('header')?.focus();
   };
 
   return (

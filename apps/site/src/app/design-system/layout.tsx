@@ -6,7 +6,6 @@ import { StickyFooter } from '@/components/sticky-footer';
 import { formatNavItems, sortMenu } from '@/utils/format';
 
 import { Sidebar, SidebarContextProvider } from './components';
-import { ContentWrapper } from './components/content-wrapper';
 
 export default async function DesignSystemLayout({ children }: { children: React.ReactNode }) {
   const allContent = await reader().collections.designSystem.all();
@@ -22,7 +21,7 @@ export default async function DesignSystemLayout({ children }: { children: React
           <Suspense>
             <Sidebar items={formattedItems} />
           </Suspense>
-          <ContentWrapper>{children}</ContentWrapper>
+          <div className="mb-8 flex flex-1 flex-col lg:ml-[18.75rem]">{children}</div>
         </SidebarContextProvider>
       </div>
       <StickyFooter />
