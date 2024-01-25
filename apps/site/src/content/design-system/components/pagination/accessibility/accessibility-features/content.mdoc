@@ -4,3 +4,14 @@
 - A visually hidden status element is updated to announce the current page
 - An indicator outline appears around the navigation item when focused
 - The pagination shape and text content is visible in Windows High Contrast Mode
+
+### Accessibility in the HTML
+
+- `<nav aria-label="Page number">`: Provides a label that describes the type of navigation
+- `<ul role="list">`: Navigation items are within an unordered list to provide additional semantic meaning—page options are quantifiable. The list has a “list”&nbsp;*role*&nbsp;because removing standard bullet styling affects how VoiceOver announces lists (see&nbsp;[VoiceOver and list-style-type: none](https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/)).
+- `<button aria-current="page">`&nbsp;/&nbsp;`<a aria-current="page">`: Currently selected navigation item is marked with&nbsp;*aria-current*. Depending on how routing is implemented (updating state vs linking to a new URL), an anchor (link) element may be better suited.
+- `<span role="status">`: A visually hidden&nbsp;*span*&nbsp;element with “status”&nbsp;*role*&nbsp;is updated with the current page number text to notify assistive technologies
+
+### Keyboard support
+
+Keyboard users navigate the pagination items as they would with a standard button or link.
