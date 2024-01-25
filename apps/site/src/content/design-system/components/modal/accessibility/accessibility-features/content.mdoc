@@ -6,6 +6,15 @@
 - When the modal closes, focus returns to the button that originally toggled the modal
 - The modal shape, text and icon content is visible in Windows High Contrast Mode (WHCM). Button ‘look’ styling (colour) is not visible in WHCM.
 
-Accessibility in the HTML
+### Accessibility in the HTML
 
-Keyboard support
+- `<div aria-modal="true" aria-hidden="{true|false}">`: Tells assistive technologies that the windows underneath the current dialog are not available for interaction (inert) and&nbsp;*aria-hidden*&nbsp;ensures the modal is hidden from assistive technologies as required.&nbsp;**Note: there is no**&nbsp;***role="dialog"***&nbsp;**attribute**. This is intentional as many screen readers will announce all modal content on open if this role is used. Our approach is to simply announce the heading and let the user be in control (as mentioned above).
+- `<h1 tabindex="-1">`: Modal heading has a&nbsp;*tabindex*&nbsp;attribute, enabling the heading to receive focus (programmatically). The heading is announced on open. The&nbsp;*tabindex*&nbsp;value uses&nbsp;*-1*&nbsp;(rather than&nbsp;*0*) because we don’t need the heading focusable during normal keyboard navigation.
+- `<button aria-label="Close modal">`: Close button announced as “Close modal” in screen readers
+
+### Keyboard support
+
+- ‘Tab’ moves focus to next focusable element inside the dialog. When focus is on the last focusable element in the dialog, moves focus to the first focusable element in the dialog.
+- ‘Shift + Tab’ moves focus to previous focusable element inside the dialog
+- When focus is on the first focusable element in the dialog, moves focus to the last focusable element in the dialog
+- ‘Esc’ key closes the modal (if modal is dismissible)
