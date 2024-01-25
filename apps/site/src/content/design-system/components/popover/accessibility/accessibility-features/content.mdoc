@@ -3,3 +3,13 @@
 - When the panel closes, focus returns to the button that originally toggled the panel
 - An indicator outline appears around the button toggle when focused
 - The button shape, text, icon content and panel is visible in Windows High Contrast Mode (WHCM). The button ‘look’ styling (colour) is not visible in WHCM.
+
+### Accessibility in the HTML
+
+- `<button aria-expanded="false|true" aria-controls="{PANEL_ID}">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The&nbsp;*aria-controls*&nbsp;attribute creates an association between toggle button and collapsible element (panel).
+- `<div id="{PANEL_ID}">`: The panel must have a unique&nbsp;*id*&nbsp;value. The toggle button&nbsp;*aria-controls*&nbsp;and panel&nbsp;*id*&nbsp;attribute values must match.
+
+### Keyboard support
+
+- Keyboard users navigate toggle buttons as they would with a standard button
+- ‘Esc’ key closes the currently active panel
