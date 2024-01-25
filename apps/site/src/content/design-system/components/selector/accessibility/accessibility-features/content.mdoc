@@ -2,3 +2,20 @@
 - Selector behaves as radio, checkbox, button or link depending on requirements; implementation of each has been considered to provide an optimal experience for assistive technology users
 - Optionally use visually hidden text within hint text (e.g. When announcing a bank account: “*Bank account:* 123-456 123456”)
 - The Selector option text, icons and pictograms are visible in Windows High Contrast Mode (WHCM). The Selector option tick is rendered using CSS borders to ensure visibility in WHCM.
+
+### Accessibility in the HTML
+
+- `<input type="radio|checkbox" aria-describedby="{HINT_ID}" id="{OPTION_ID}" name="{NAME}">`: Checkbox and Radio Selectors: each item option is defined as a radio or checkbox&nbsp;*input*&nbsp;and must have a unique&nbsp;*id*&nbsp;value. A consistent&nbsp;*name*&nbsp;attribute value is required for radio inputs for toggling to operate correctly. [React component:&nbsp;*id*&nbsp;is auto-generated]
+- `<label for="{OPTION_ID}">`: Each radio or checkbox&nbsp;*input*&nbsp;has a&nbsp;*label*&nbsp;element and uses explicit association (connected to the input using a&nbsp;*for*&nbsp;attribute) for optimal support in assistive technologies. [React component:&nbsp;*for*&nbsp;is auto-generated]
+- `<div id="{HINT_ID}">`: Hint text element must have a unique&nbsp;*id*&nbsp;value. The&nbsp;*input*&nbsp;element&nbsp;*aria-describedby*&nbsp;and hint text element&nbsp;*id*&nbsp;attribute values must match.
+- `<div aria-hidden="true">`: Indicator check/tick and next icons are hidden from assistive technologies; any selected/checked state is provided by the input
+- `<button aria-pressed="false|true">`: Button Selector: state is provided with&nbsp;*aria-pressed*&nbsp;attribute. Note: Button (and Link) Selector hint text is not associated as with Checkbox and Radio Selector; hint text is announced as standard button (or link) text.
+- `<span aria-hidden="true">`: Hides icon or pictogram SVGs from assistive technologies; they are visual embellishment
+
+### Keyboard support
+
+- Navigation pattern is consistent with standard checkbox, radio, button or link inputs (depending on Selector type)
+- Checkbox:&nbsp;*tab*&nbsp;key navigates the options,&nbsp;*space*&nbsp;key toggles the selection
+- Radio:&nbsp;*arrow*&nbsp;keys change the selection
+- Button:&nbsp;*tab*&nbsp;key navigates the options,&nbsp;*space*&nbsp;or&nbsp;*enter*&nbsp;key toggles the selection
+- Link:&nbsp;*tab*&nbsp;key navigates the options,&nbsp;*enter*&nbsp;key triggers the link
