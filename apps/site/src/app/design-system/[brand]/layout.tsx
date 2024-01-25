@@ -15,7 +15,11 @@ export default async function DesignSystemLayout({
   params: { brand: string };
 }) {
   const allContent = await reader().collections.designSystem.all();
-  const formattedItems = sortMenu(formatNavItems(allContent.map(({ entry, slug }) => ({ slug, name: entry.name }))));
+  const formattedItems = sortMenu(
+    formatNavItems(
+      allContent.filter(i => !i.entry?.excludeFromNavbar).map(({ entry, slug }) => ({ slug, name: entry.name })),
+    ),
+  );
   const brand = (params?.brand ?? 'wbc') as BrandKey; // double check this is the best way to do this
 
   return (

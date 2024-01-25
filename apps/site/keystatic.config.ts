@@ -124,6 +124,7 @@ export default config({
           }),
           false: fields.empty(),
         }),
+        excludeFromNavbar: fields.checkbox({ label: 'Exclude from navigation bar' }),
         design: fields.array(
           fields.object({
             title: fields.slug({
