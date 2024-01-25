@@ -18,7 +18,11 @@ Use the Repeater with separator when the user may need to repeat a set of  compo
 ```jsx
 <Repeater separator>
 <FormGroup>
-          <FormLabel htmlFor="formInput">Lable</FormLabel>
+          <FormLabel htmlFor="formInput">Label</FormLabel>
+          <Input aria-describedby="formHint" className="w-full" id="formInput" name="test" />
+        </FormGroup>
+<FormGroup>
+          <FormLabel htmlFor="formInput">Label</FormLabel>
           <Input aria-describedby="formHint" className="w-full" id="formInput" name="test" />
         </FormGroup>
 </Repeater>
