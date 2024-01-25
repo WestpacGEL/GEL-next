@@ -7,8 +7,8 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
-      name: Separator
-      slug: separator-1
+      name: Repeater
+      slug: repeater
     noTitle: false
   - title:
       name: Usage examples
