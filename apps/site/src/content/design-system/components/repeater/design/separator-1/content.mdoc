@@ -1,0 +1,25 @@
+### Default
+
+Use the default Repeater in situations where the user may need to repeat a single component or field, e.g. for multiple phone number entries.
+
+```jsx
+<Repeater>
+<FormGroup>
+          <FormLabel htmlFor="formInput">Label</FormLabel>
+          <Input aria-describedby="formHint" className="w-full" id="formInput" name="test" />
+        </FormGroup>
+</Repeater>
+```
+
+### With separator
+
+Use the Repeater with separator when the user may need to repeat a set of  components or fields, e.g. for multiple sets of credit card or account details.
+
+```jsx
+<Repeater separator>
+<FormGroup>
+          <FormLabel htmlFor="formInput">Lable</FormLabel>
+          <Input aria-describedby="formHint" className="w-full" id="formInput" name="test" />
+        </FormGroup>
+</Repeater>
+```

@@ -7,8 +7,8 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
-      name: Default
-      slug: default
+      name: Separator
+      slug: separator-1
     noTitle: false
   - title:
       name: Separator
