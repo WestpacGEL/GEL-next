@@ -1,19 +1,9 @@
 Sitting directly under the elements or component it aims to repeat, by selecting the “Add new” button, the item will repeat.
 
 ```jsx
-<Repeater>
-  <FormGroup>
-    <Label htmlFor="test">
-      Primary
-    </Label>
-    <Hint>
-      Primary title text
-    </Hint>
-    <Input
-      className="w-full"
-      name="test"
-      onChange={function Ya(){}}
-    />
-  </FormGroup>
-</Repeater>
+<FormGroup>
+          <FormLabel htmlFor="formInput">Primary</FormLabel>
+          <FormHint id="formHint">Primary title text</Hint>
+          <Input aria-describedby="formHint" className="w-full" id="formInput" name="test" />
+        </FormGroup>
 ```
