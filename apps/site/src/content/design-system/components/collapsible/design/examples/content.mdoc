@@ -1,6 +1,6 @@
 ### Basic
 
-Used much in the same way as an [accordion or tabcordion](/design-system/wbc/components/tabcordions), a Collapsible toggles to open and reveal more content below.
+Similar to [accordions](/design-system/wbc/components/accordion) or [tabs](/design-system/wbc/components/tabs), a Collapsible toggles to open and reveal more content below. They come in four sizes, the different sizes are reflected in the font size of the link, these sizes correspond to the sizes of the other form elements.
 
 ```jsx
 <Collapsible text="Drink me" size="medium">
@@ -20,10 +20,8 @@ Used much in the same way as an [accordion or tabcordion](/design-system/wbc/com
 
 ```jsx
 <div>
-  <div className="mb-2">
-    <ComponentTitle>Small</ComponentTitle>
-
-    <Collapsible text="Drink me" size="small">
+  <div className="mb-4">
+    <Collapsible text="Small" size="small">
       <p>
         It was all very well to say ‘Drink me,’ but the wise little Alice was not going to do that in a hurry. ‘No, I’ll
         look first,’ she said, ‘and see whether it’s marked “poison” or not’; for she had read several nice little
@@ -35,11 +33,9 @@ Used much in the same way as an [accordion or tabcordion](/design-system/wbc/com
       </p>
     </Collapsible>
   </div>
-  <hr className="mb-2" />
-  <div className="mb-2">
-    <ComponentTitle>Medium (default)</ComponentTitle>
 
-    <Collapsible text="Drink me" size="medium">
+  <div className="mb-4">
+    <Collapsible text="Medium" size="medium">
       <p>
         It was all very well to say ‘Drink me,’ but the wise little Alice was not going to do that in a hurry. ‘No, I’ll
         look first,’ she said, ‘and see whether it’s marked “poison” or not’; for she had read several nice little
@@ -51,11 +47,9 @@ Used much in the same way as an [accordion or tabcordion](/design-system/wbc/com
       </p>
     </Collapsible>
   </div>
-  <hr className="mb-2" />
-  <div className="mb-2">
-    <ComponentTitle>Large</ComponentTitle>
 
-    <Collapsible text="Drink me" size="large">
+  <div className="mb-4">
+    <Collapsible text="Large" size="large">
       <p>
         It was all very well to say ‘Drink me,’ but the wise little Alice was not going to do that in a hurry. ‘No, I’ll
         look first,’ she said, ‘and see whether it’s marked “poison” or not’; for she had read several nice little
@@ -67,11 +61,9 @@ Used much in the same way as an [accordion or tabcordion](/design-system/wbc/com
       </p>
     </Collapsible>
   </div>
-  <hr className="mb-2" />
-  <div className="mb-2">
-    <ComponentTitle>XLarge</ComponentTitle>
 
-    <Collapsible text="Drink me" size="xlarge">
+  <div className="mb-4">
+    <Collapsible text="XLarge" size="xlarge">
       <p>
         It was all very well to say ‘Drink me,’ but the wise little Alice was not going to do that in a hurry. ‘No, I’ll
         look first,’ she said, ‘and see whether it’s marked “poison” or not’; for she had read several nice little

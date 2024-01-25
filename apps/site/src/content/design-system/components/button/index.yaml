@@ -3,42 +3,40 @@ description: >-
   Buttons are elements capable of performing an action. They have a variety of
   uses and require careful consideration for consistency, hierarchy, brand, and
   accessibility.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Button sizes
       slug: button-sizes
+    noTitle: false
   - title:
       name: Button styles
       slug: button-styles
+    noTitle: false
   - title:
       name: Responsive buttons
       slug: responsive-buttons
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
-  - title:
-      name: Notes on accessibility
-      slug: notes-on-accessibility
   - title:
       name: Accessibility features
       slug: accessibility-features
   - title:
-      name: Keyboard support
-      slug: keyboard-support
-  - title:
-      name: Accessibility API
-      slug: accessibility-api
-code:
-  - title:
-      name: Development examples
-      slug: development-examples
+      name: Notes on accessibility
+      slug: notes-on-accessibility
 relatedComponents:
   - title: Icons
     slug: foundation/icon
@@ -48,3 +46,8 @@ relatedComponents:
     slug: components/button-group
   - title: Colours
     slug: foundation/colour
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: false

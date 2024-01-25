@@ -1,12 +1,15 @@
-The standalone option is to be used by itself, on its own line, and never within a sentence or paragraph. It must always be used with an [icon](/design-system/wbc/foundation/icons) before or after.
+The standalone option is to be used by itself, on its own line, and never within a sentence or paragraph. It must always be used with an [icon](/design-system/wbc/foundation/icons) before or after. The styling for a standalone link is "Text" colour text and "Link" colour icon. The underline appears on hover.
 
 ```jsx
-<div className="flex flex-col pl-1 space-y-1">
-  <Link href="#" iconBefore={PdfFileIcon}>
+<div className="flex flex-col gap-5">
+  <Link mb-4 href="#" iconBefore={PdfFileIcon}>
     Look I'm a standalone link
   </Link>
-  <Link href="#" iconAfter={ArrowRightIcon}>
-    Look I'm a standalone link
+  <Link href="#" iconBefore={ArrowRightIcon}>
+    I'm also a standalone link
+  </Link>
+  <Link href="#" iconAfter={NewWindowIcon} size="xsmall">
+    I'm a standalone link too
   </Link>
 </div>
 ```

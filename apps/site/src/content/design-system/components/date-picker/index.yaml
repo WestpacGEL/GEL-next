@@ -2,39 +2,42 @@ name: Date picker
 description: >-
   Date pickers assist when dates are not known, set in the future, to schedule
   something, or assist in providing “day of the week” context.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Sizes
       slug: sizes
+    noTitle: false
   - title:
       name: Date range
       slug: date-range
+    noTitle: false
   - title:
       name: Unavailable dates
       slug: unavailable-dates
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
   - title:
       name: Dos and don'ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
-  - title:
-      name: Keyboard support
-      slug: keyboard-support
-  - title:
-      name: Accessibility API
-      slug: accessibility-api
+relatedComponents:
+  - title: Input groups
+    slug: components/input-group
 code:
   - title:
       name: Development examples
       slug: development-examples
-relatedComponents:
-  - title: Input fields
-    slug: components/input-group
+    noTitle: false

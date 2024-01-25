@@ -1,4 +1,4 @@
-Badges come in 2 different styles, _Default_ and _Pill._ Each style has 8 colour options, the Reserved colours as well as 4 brand colours. In general, badges can be used to highlight that something requires attention.
+Badges come in 2 different styles, *Default* and *Pill.* Each style has 8 colour options, the Reserved colours as well as 4 brand colours. In general, badges can be used to highlight that something requires attention.
 
 ### Badges - Default
 
@@ -40,79 +40,79 @@ Badges come in 2 different styles, _Default_ and _Pill._ Each style has 8 colour
 
 ```tsx
 () => {
-  const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'primary', 'success', 'warning'] as const;
-  const INVERTED_COLORS = [
-    'danger-inverted',
-    'faint-inverted',
-    'hero-inverted',
-    'info-inverted',
-    'neutral-inverted',
-    'primary-inverted',
-    'success-inverted',
-    'warning-inverted',
-  ] as const;
+    const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'primary', 'success', 'warning'] as const;
+    const INVERTED_COLORS = [
+      'danger-inverted',
+      'faint-inverted',
+      'hero-inverted',
+      'info-inverted',
+      'neutral-inverted',
+      'primary-inverted',
+      'success-inverted',
+      'warning-inverted',
+    ] as const;
+  
+    return (
+      <div className="flex flex-col gap-3">
+        <div>
+          <p className="mb-2 typography-body-10 text-muted">
+            <em>Examples showing pill style badge</em>
+          </p>
+          <div className="flex gap-2">
+            <Button look="primary" soft>
+              <div className="flex gap-1">
+                <Badge color="hero" type="pill">
+                  6
+                </Badge>
+                <span>Label</span>
+              </div>
+            </Button>
+            <Button look="primary">
+              <div className="flex gap-1">
+                <Badge color="faint" type="pill">
+                  88
+                </Badge>
+                <span>Label</span>
+              </div>
+            </Button>
+            <a className="text-link underline" href="#">
+                Messages 
+                <Badge color="success" type="pill">
+                  12
+                </Badge>
+              </a>
+          </div>
+        </div>
+        <div>
+          <p className="mb-2 typography-body-10 text-muted">
+            <em>Examples showing basic style badge</em>
+          </p>
+  
+          <div className="flex gap-2">
+            <Button look="primary" soft>
+              <div className="flex gap-1 items-center">
+                <span>Label</span>
+                <Badge color="hero">NEW</Badge>
+              </div>
+            </Button>
+  
+            <Button look="primary">
+              <div className="flex gap-1 items-center">
+                <span>Label</span>
+                <Badge color="faint">NEW</Badge>
+              </div>
+            </Button>
+  
+            <a className="text-link underline" href="#">
+                Product feature{' '}
+                <Badge color="faint"  ml-4>
+                  NEW
+                </Badge>
+              </a>
 
-  return (
-    <div className="flex flex-col gap-3">
-      <div>
-        <p className="mb-2 typography-body-10 text-muted">
-          <em>Examples showing pill style badge</em>
-        </p>
-        <div className="flex gap-2">
-          <Button look="primary" soft>
-            <div className="flex gap-1">
-              <Badge color="hero" type="pill">
-                6
-              </Badge>
-              <span>Label</span>
-            </div>
-          </Button>
-          <Button look="primary">
-            <div className="flex gap-1">
-              <Badge color="faint" type="pill">
-                88
-              </Badge>
-              <span>Label</span>
-            </div>
-          </Button>
-          <Button look="link">
-            <div className="flex gap-1">
-              <span>Label</span>
-              <Badge color="success" type="pill" className="no-underline">
-                6
-              </Badge>
-            </div>
-          </Button>
+          </div>
         </div>
       </div>
-      <div>
-        <p className="mb-2 typography-body-10 text-muted">
-          <em>Examples showing pill style badge Examples showing basic style badge</em>
-        </p>
-        <div className="flex gap-2">
-          <Button look="primary" soft>
-            <div className="flex gap-1 items-center">
-              <span>Label</span>
-              <Badge color="hero">6</Badge>
-            </div>
-          </Button>
-          <Button look="primary">
-            <div className="flex gap-1 items-center">
-              <span>Label</span>
-              <Badge color="faint">88</Badge>
-            </div>
-          </Button>
-          <Button look="link">
-            <div className="flex gap-1 items-center">
-              <span>Label</span>
-              <Badge color="success" className="no-underline">
-                6
-              </Badge>
-            </div>
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-};
+    );
+  };
 ```

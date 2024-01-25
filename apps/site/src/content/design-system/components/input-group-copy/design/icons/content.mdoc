@@ -3,46 +3,25 @@
 ```tsx
 <Fragment>
 <h4 className="typography-body-10 text-muted italic mb-3">Icon before</h4>
-  <InputGroup
-    before={{ icon: SearchIcon }}
+  <InputGroup 
+    before={{ icon: () => <SearchIcon size="small" color="success" /> }}
   >
- <Input />
+ <Input width={20} />
   </InputGroup>
 
-<h4 className="typography-body-10 text-muted italic mb-3">Icon after</h4> 
-  <InputGroup after={{ icon: TickIcon }}>
-    <Input />
-  </InputGroup>
+<h4 className="typography-body-10 text-muted italic mb-3">Icon after</h4>
+  <InputGroup width="20"
+    after={{ icon: TickIcon }}
+  >
+    <Input  />
+  </InputGroup> 
+
 
 <h4 className="typography-body-10 text-muted italic mb-3">Button icon after</h4>
-  <InputGroup
-    after={{ icon: ClearIcon }}
+ <InputGroup
+    after={{ inset: true, element: <Button look="link" iconAfter={ClearIcon} iconColor="muted" /> }}
   >
-    <Input />
+    <Input width="20" />
   </InputGroup>
 </Fragment>
-```
-
-### Usage examples
-
-```tsx
-() => {
-  const [inputValue, setInputValue] = useState<string>('');
-  const clearInput = useCallback(() => setInputValue(''), []);
-
-  return (
-    <InputGroup
-      label="Search"
-      before={{
-        icon: SearchIcon,
-      }}
-      after={{
-        inset: true,
-        element: <Button onClick={clearInput} look="link" iconAfter={ClearIcon} iconColor="muted" />,
-      }}
-    >
-      <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
-    </InputGroup>
-  );
-};
 ```

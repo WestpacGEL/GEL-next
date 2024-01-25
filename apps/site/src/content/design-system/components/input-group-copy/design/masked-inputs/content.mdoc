@@ -1,4 +1,7 @@
+### Masked inputs
+
 ```tsx
+
 () => {
   const [typeInput, setTypeInput] = useState<'password' | 'text'>('password');
   const toggleType = useCallback(() => setTypeInput(state => (state === 'password' ? 'text' : 'password')), []);

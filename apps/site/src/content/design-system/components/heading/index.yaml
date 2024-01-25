@@ -3,27 +3,25 @@ description: >-
   This is a developer-only package containing styling for heading elements
   supporting visual and semantic heading levels, uppercase and both body font
   and brand font options.
+namedExport:
+  discriminant: false
 design: []
 accessibility: []
+relatedComponents: []
 code:
   - title:
       name: Heading types
       slug: heading-types
+    noTitle: false
   - title:
       name: Sizes
       slug: sizes
+    noTitle: false
   - title:
       name: Tag
       slug: tag
+    noTitle: false
   - title:
       name: Uppercase
       slug: uppercase
-  - title:
-      name: Accessibility features
-      slug: accessibility-features
-  - title:
-      name: Keyboard support
-      slug: keyboard-support
-  - title:
-      name: Accessibility API
-      slug: accessibility-api
+    noTitle: false
