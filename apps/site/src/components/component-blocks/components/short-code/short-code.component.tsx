@@ -1,7 +1,7 @@
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { useMemo } from 'react';
 
-import { DOCUMENT_RENDERERS } from '@/app/design-system/[...component]/components/content-tabs/components/document-renderer';
+import { DOCUMENT_RENDERERS } from '@/app/design-system/[brand]/[...component]/components/content-tabs/components/document-renderer';
 
 import { foundationBlocksComponents } from '../../foundation-blocks';
 

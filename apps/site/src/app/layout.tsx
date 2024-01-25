@@ -1,10 +1,9 @@
 import './styles/globals.css';
 import { type Metadata } from 'next';
 import { draftMode } from 'next/headers';
-import React, { Suspense } from 'react';
+import React from 'react';
 
 import { FontPreloader } from '@/components/font-preloader';
-import { ThemeProvider } from '@/components/theme';
 
 export const metadata: Metadata = {
   title: {
@@ -19,10 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <FontPreloader />
       <body>
-        {/*We need to move theme to a cookie based approach for performance*/}
-        <Suspense>
-          <ThemeProvider>{children}</ThemeProvider>
-        </Suspense>
+        {children}
         {isEnabled && (
           <div className="absolute right-15 top-3 z-[999]">
             <form method="post" action="/preview/end">

@@ -1,4 +1,4 @@
-Text areas come in four sizes, they dictate the size of the displayed input text. These input text sizes are aligned with the [Input](/design-system/components/input) and [Select](/design-system/components/select) components. The text area field can be stretched by the user to expose more text if required.
+Text areas come in four sizes, they dictate the size of the displayed input text. These input text sizes are aligned with the [Input](/design-system/wbc/components/input) and [Select](/design-system/wbc/components/select) components. The text area field can be stretched by the user to expose more text if required.
 
 ```tsx
 () => {
@@ -8,7 +8,7 @@ Text areas come in four sizes, they dictate the size of the displayed input text
       {SIZES.map(size => (
         <div key={size}>
           <ComponentTitle>{size}</ComponentTitle>
-          <Textarea size={size} width="20"/>
+          <Textarea size={size} width="20" />
         </div>
       ))}
     </div>

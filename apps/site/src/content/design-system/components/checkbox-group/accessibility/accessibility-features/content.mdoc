@@ -1,3 +1,14 @@
 - An indicator outline appears around the checkbox toggle when focused
 - Focus moves to the first new checkbox option when further options are revealed
 - The checkbox toggle and label text is visible in Windows High Contrast Mode (WHCM). The checkbox toggle tick is rendered using CSS borders to ensure visibility in WHCM.
+
+### Accessibility in the HTML
+
+- `<input type="checkbox" id="{OPTION_ID}">`: Each item option is defined as a checkbox&nbsp;*input*&nbsp;and must have a unique&nbsp;*id*&nbsp;value. [React component:&nbsp;*id*&nbsp;is auto-generated]
+- `<label for="{OPTION_ID}">`: Each checkbox&nbsp;*input*&nbsp;has a&nbsp;*label*&nbsp;element and uses explicit association (connected to the input using a&nbsp;*for*&nbsp;attribute) for optimal support in assistive technologies. [React component:&nbsp;*for*&nbsp;is auto-generated]
+- `<button aria-expanded="true|false" aria-hidden="true|false">`: Checkbox with reveal toggle button uses&nbsp;*aria-expanded*&nbsp;attribute to indicate collapse state and&nbsp;*aria-hidden*&nbsp;to hide from assistive technologies when no longer available
+- `<div aria-hidden="true|false">`: Reveal checkbox options are wrapped in an element with&nbsp;*aria-hidden*&nbsp;attribute
+
+### Keyboard support
+
+Navigation pattern is consistent with standard checkbox inputs;&nbsp;*tab*&nbsp;key navigates the checkbox options,&nbsp;*space*&nbsp;key toggles the selection.

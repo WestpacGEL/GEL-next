@@ -1,3 +1,7 @@
 - Inline text links are styled with a custom colour to distinguish them from normal text, but also use the standard HTML document underline convention. This approach satisfies an important accessibility requirement to ‘not rely on colour alone’ to convey information, indicate an action or distinguish a visual element.
 - An indicator outline appears around the links when focused.
 - The link text and icon is visible in Windows High Contrast Mode.
+
+### Accessibility in the HTML
+
+- `<svg aria-label="{DESCRIPTION}" role="img" focusable="false">`: Provides a label to describe the icon, prevents the Icon SVG element from being traversed by browsers that map the SVG to the ‘group’ role and from unnecessarily receiving focus in Internet Explorer (IE)

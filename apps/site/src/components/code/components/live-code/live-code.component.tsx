@@ -6,7 +6,7 @@ import { LiveContext, LiveEditor, LivePreview } from 'react-live';
 import { useOverlayTriggerState } from 'react-stately';
 import { VariantProps } from 'tailwind-variants';
 
-import { ResponsiveModal } from '@/app/design-system/[...component]/components/content-tabs/components/responsive-modal-button';
+import { ResponsiveModal } from '@/app/design-system/[brand]/[...component]/components/content-tabs/components/responsive-modal-button';
 
 import { Button } from '../../code.inject-components';
 

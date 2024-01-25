@@ -20,7 +20,7 @@ export function Footer({ gelEmail = '', guidelinesURL = '' }: { gelEmail?: strin
               {Object.entries(logoMap).map(([key, { logo: Logo, name }]) => {
                 return (
                   <li key={key} className="col-span-12 xsl:col-span-6">
-                    <Link href={`/design-system?brand=${key}`}>
+                    <Link href={`/design-system/${key}`}>
                       <Circle>
                         <Logo className={logoStyles({ brand: key as BrandKey, footer: true })} />
                       </Circle>
