@@ -2,19 +2,25 @@ name: Switches
 description: >-
   Switches are a toggle element with a binary value. They are an effective way
   to quickly define settings or preferences at an account or system level.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Switches
       slug: switches-design
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
@@ -28,12 +34,13 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
-code:
-  - title:
-      name: Development examples
-      slug: development-examples
 relatedComponents:
   - title: Checkboxes
     slug: components/checkbox-group
   - title: Button groups
     slug: components/button-group
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: false
