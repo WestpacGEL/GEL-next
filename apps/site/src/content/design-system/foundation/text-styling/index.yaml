@@ -2,19 +2,25 @@ name: Text styling
 description: >-
   Use text styling to create typographic hierarchy throughout a page and deliver
   better reading and scanning experiences for users.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Editorial text styles
       slug: editorial-text-styles
+    noTitle: false
   - title:
       name: Headings
       slug: headings
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
@@ -28,6 +34,9 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Fonts
+    slug: foundation/font
 code:
   - title:
       name: Intro
@@ -36,6 +45,4 @@ code:
   - title:
       name: Development examples
       slug: development-examples
-relatedComponents:
-  - title: Fonts
-    slug: foundation/font
+    noTitle: false
