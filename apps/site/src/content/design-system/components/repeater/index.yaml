@@ -1,7 +1,7 @@
 name: Repeater
 description: >-
-  A Repeater is a user controlled pattern for allowing multiple instances of
-  something.
+  Repeaters are user controlled patterns for repeating sets or single UI
+  elements, usually inputs.
 namedExport:
   discriminant: false
 excludeFromNavbar: false
