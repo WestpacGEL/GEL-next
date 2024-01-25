@@ -2,21 +2,28 @@ name: Repeater
 description: >-
   A Repeater is a user controlled pattern for allowing multiple instances of
   something.
+namedExport:
+  discriminant: false
 design:
   - title:
       name: Default
       slug: default
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Dos and don'ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
   - title:
-      name: Notes and accessibility
-      slug: notes-and-accessibility
+      name: Accessibility features
+      slug: accessibility-features
+relatedComponents: []
 code:
   - title:
       name: Development examples
       slug: development-examples
+    noTitle: false

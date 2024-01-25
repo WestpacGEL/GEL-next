@@ -1,3 +1,5 @@
+import { BrandKey } from '@/app/types/brand.types';
+
 type Item = {
   children?: Item[];
   label: string;
@@ -5,5 +7,6 @@ type Item = {
 };
 
 export type SidebarProps = {
+  brand: BrandKey;
   items: Item[];
 };

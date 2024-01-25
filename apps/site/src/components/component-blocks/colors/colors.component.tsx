@@ -2,15 +2,15 @@
 
 import { Grid, GridItem } from '@westpac/ui';
 import { type BrandKey } from '@westpac/ui/tailwind';
-import { useSearchParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 import { Svg } from '@/components/svg';
 
 import { getColorPalette } from './colors.utils';
 
 export function Colors({ palette, tab }: { palette: string; tab?: string }) {
-  const searchParams = useSearchParams();
-  const brand = (searchParams.get('brand') ?? 'wbc') as BrandKey;
+  const params = useParams();
+  const brand = (params.brand ?? 'wbc') as BrandKey;
   const colorPalette = getColorPalette({ brand, palette });
   return (
     <Grid tag="ul" className="mt-2">

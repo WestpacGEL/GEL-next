@@ -2,11 +2,10 @@
 
 import { clsx } from 'clsx';
 import Link from 'next/link';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import React, { Key, useCallback, useEffect, useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
-import { BrandKey } from '@/app/types/brand.types';
 import { CloseIcon } from '@/components/code/code.inject-components';
 import { BANK_OPTIONS } from '@/constants/bank-options';
 
@@ -16,7 +15,7 @@ import { SidebarProps } from './sidebar.types';
 
 // Credits: https://github.com/jmarioste/next-responsive-sidebar-tailwind
 
-export function Sidebar({ items }: SidebarProps) {
+export function Sidebar({ items, brand }: SidebarProps) {
   const { open, setOpen } = useSidebar();
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -49,15 +48,19 @@ export function Sidebar({ items }: SidebarProps) {
   }, [open]);
 
   const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const brand = (searchParams.get('brand')?.toLowerCase() ?? 'wbc') as BrandKey;
+  const params = useParams();
 
   const handleChange = useCallback(
     async (key: Key) => {
-      router.push(`${pathname}?brand=${key}`, { scroll: false });
+      if (params.component) {
+        const componentPath = Array.isArray(params.component) ? params.component.join('/') : params.component;
+        router.push(`/design-system/${key}/${componentPath}`, { scroll: false });
+      } else {
+        // on home page
+        router.push(`/design-system/${key}`, { scroll: false });
+      }
     },
-    [router, pathname],
+    [router, params],
   );
 
   return (

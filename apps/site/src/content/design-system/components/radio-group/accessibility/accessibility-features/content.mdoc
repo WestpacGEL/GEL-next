@@ -1,3 +1,14 @@
 - An indicator outline appears around the radio toggle when focused
 - Focus moves to the first new radio option when further options are revealed
 - The radio toggle and label text is visible in Windows High Contrast Mode (WHCM). The radio toggle ‘dot’ is rendered using CSS borders to ensure visibility in WHCM.
+
+### Accessibility in the HTML
+
+- `<input type="radio" id="{OPTION_ID}" name="{NAME}">`: Each item option is defined as a radio&nbsp;*input*&nbsp;and must have a unique&nbsp;*id*&nbsp;value. A consistent&nbsp;*name*&nbsp;attribute value is required on all inputs for toggling to operate correctly. [React component:&nbsp;*id*&nbsp;is auto-generated]
+- `<label for="{OPTION_ID}">`: Each radio&nbsp;*input*&nbsp;has a&nbsp;*label*&nbsp;element and uses explicit association (connected to the input using a&nbsp;*for*&nbsp;attribute) for optimal support in assistive technologies. [React component:&nbsp;*for*&nbsp;is auto-generated]
+- `<button aria-expanded="true|false" aria-hidden="true|false">`: Radio with reveal toggle button uses the&nbsp;*aria-expanded*&nbsp;attribute to indicate collapse state and&nbsp;*aria-hidden*&nbsp;attribute to hide from assistive technologies when no longer available
+- `<div aria-hidden="true|false">`: Reveal radio options are wrapped in an element with&nbsp;*aria-hidden*&nbsp;attribute to hide from assistive technologies when no longer available
+
+### Keyboard support
+
+Navigation pattern is consistent with standard radio inputs;&nbsp;*arrow*&nbsp;keys change the selection.

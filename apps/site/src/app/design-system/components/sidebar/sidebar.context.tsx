@@ -2,10 +2,7 @@
 
 import { Dispatch, SetStateAction, createContext, useContext, useState } from 'react';
 
-type SidebarContextType = {
-  open: boolean | null;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-};
+type SidebarContextType = { open: boolean | null; setOpen: Dispatch<SetStateAction<boolean>> };
 
 const SidebarContext = createContext<SidebarContextType | null>(null);
 

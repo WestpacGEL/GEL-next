@@ -2,12 +2,17 @@ name: A11y (Dev)
 description: >-
   This is a developer-only accessibility package that is used to ensure an
   optimal experience for users of assistive technologies.
+namedExport:
+  discriminant: false
 design: []
 accessibility: []
+relatedComponents: []
 code:
   - title:
       name: Visually hidden
       slug: visually-hidden
+    noTitle: false
   - title:
       name: Skip link
       slug: skip-link
+    noTitle: false
