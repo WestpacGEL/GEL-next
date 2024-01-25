@@ -11,9 +11,8 @@ export async function GET(req: Request) {
   }
   draftMode().enable();
   cookies().set('ks-branch', branch);
-  const toUrl = new URL(to, url.origin);
+  const toUrl = new URL(to.replace(/design-system\//, 'design-system/wbc/'), url.origin);
   toUrl.protocol = url.protocol;
   toUrl.host = url.host;
-  toUrl.searchParams.set('brand', 'wbc');
   redirect(toUrl.toString());
 }
