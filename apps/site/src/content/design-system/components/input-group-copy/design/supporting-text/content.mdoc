@@ -20,7 +20,7 @@ Supporting text sits below the field, it can be a character count, or validated 
   }, [inputValue]);
 
   return (
-    <InputGroup label="Comments" hint="Supporting text can be used as a character count" supportingText={counterText}>
+    <InputGroup label="Comments" hint="Supporting text used for character count" supportingText={counterText}>
       <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
     </InputGroup>
   );
