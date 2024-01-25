@@ -19,10 +19,10 @@
             <FormLabel htmlFor={`input${groupOneId}`}>BSB</FormLabel>
             <Input aria-describedby={`inputHint${groupOneId}`} className="w-full" id={`input${groupOneId}`} name={`input${groupOneId}`} />
         </div>
-        <div width="12">
+        <div>
             <FormLabel htmlFor={`input${groupTwoId}`}>Account number</FormLabel>
             <FormHint id={`inputHint${groupTwoId}`}>Account number should have 10 digits</FormHint>
-            <Input aria-describedby={`inputHint${groupTwoId}`} className="w-full" id={`input${groupTwoId}`} name={`input${groupTwoId}`} />
+            <Input aria-describedby={`inputHint${groupTwoId}`}  width="12" id={`input${groupTwoId}`} name={`input${groupTwoId}`} />
         </div>
       </FormGroup>
     </Repeater>
