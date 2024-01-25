@@ -16,14 +16,25 @@ Use the default Repeater in situations where the user may need to repeat a singl
 Use the Repeater with separator when the user may need to repeat a set of  components or fields, e.g. for multiple sets of credit card or account details.
 
 ```jsx
-<Repeater separator>
-<FormGroup>
-          <FormLabel htmlFor="formInput">Label</FormLabel>
-          <Input aria-describedby="formHint" className="w-full" id="formInput" name="test" />
-        </FormGroup>
-<FormGroup>
-          <FormLabel htmlFor="formInput">Label</FormLabel>
-          <Input aria-describedby="formHint" className="w-full" id="formInput" name="test" />
-        </FormGroup>
-</Repeater>
+() => {
+  const groupOneId = React.useId();
+  const groupTwoId = React.useId();
+
+  return (
+    <Repeater separator>
+      <FormGroup>
+        <div className="mb-4">
+            <FormLabel htmlFor={`input${groupOneId}`}>Primary</FormLabel>
+            <FormHint id={`inputHint${groupOneId}`}>Primary title text</FormHint>
+            <Input aria-describedby={`inputHint${groupOneId}`} className="w-full" id={`input${groupOneId}`} name={`input${groupOneId}`} />
+        </div>
+        <div className="mb-4">
+            <FormLabel htmlFor={`input${groupTwoId}`}>Secondary</FormLabel>
+            <FormHint id={`inputHint${groupTwoId}`}>Secondary title text</FormHint>
+            <Input aria-describedby={`inputHint${groupTwoId}`} className="w-full" id={`input${groupTwoId}`} name={`input${groupTwoId}`} />
+        </div>
+      </FormGroup>
+    </Repeater>
+  );
+};
 ```
