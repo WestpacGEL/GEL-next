@@ -1,8 +1,13 @@
 name: Usage
-description: >-
-  This page describes how to use GEL components within your application.
+description: This page describes how to use GEL components within your application.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Using components
       slug: using-components
+    noTitle: false
 accessibility: []
+relatedComponents: []
+code: []
