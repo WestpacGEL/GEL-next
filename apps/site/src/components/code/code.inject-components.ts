@@ -119,7 +119,7 @@ export { Hr, Body } from './components/utils';
 /**
  * Export space related constants
  */
-export { SPACING_UNIT } from '@westpac/ui/tailwind';
+export const SPACING_UNIT = 6;
 
 export const SPACING_SCALE = [
   { value: 0.5, className: 'pr-0.5' },
