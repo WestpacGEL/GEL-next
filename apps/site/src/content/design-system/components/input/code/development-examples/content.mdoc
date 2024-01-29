@@ -1,21 +1,14 @@
 ### Default
 
 ```tsx
-<div className="flex flex-col gap-4">
+
   <div>
     <p className="mb-2 typography-body-10 text-muted">
       <em>Default</em>
     </p>
     <Input className="w-full" />
   </div>
-  <Select className="w-full">
-    <option>Select</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-  </Select>
-  <Textarea />
-</div>
+
 ```
 
 ---
@@ -26,7 +19,7 @@
 () => {
   const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
   return (
-    <div className="grid grid-cols-3 gap-3">
+
       <div className="flex flex-col gap-4">
         {SIZES.map(size => (
           <div key={size}>
@@ -34,25 +27,7 @@
           </div>
         ))}
       </div>
-      <div className="flex flex-col gap-4">
-        {SIZES.map(size => (
-          <div key={size}>
-            <Select className="w-full" size={size}>
-              <option>{size}</option>
-              <option>1</option>
-              <option>2</option>
-            </Select>
-          </div>
-        ))}
-      </div>
-      <div className="flex flex-col gap-4">
-        {SIZES.map(size => (
-          <div key={size}>
-            <Textarea placeholder={size} className="w-full" size={size} />
-          </div>
-        ))}
-      </div>
-    </div>
+
   );
 };
 ```
@@ -63,46 +38,28 @@
 
 ```jsx
 <div className="flex flex-col gap-4">
-  <div className="grid grid-cols-4 align-top gap-3">
-    <h3 className="typography-body-9">Invalid</h3>
+    <p className="typography-body-10 text-muted">
+      <em>Invalid</em>
+      </p>
     <div>
       <Input invalid />
     </div>
-    <div>
-      <Select invalid className="w-full">
-        <option>Invalid</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </Select>
-    </div>
-    <div>
-      <Textarea invalid placeholder="Invalid" />
-    </div>
-  </div>
-  <div className="grid grid-cols-4 gap-3">
-    <h3 className="typography-body-9">Disabled</h3>
+
+    <p className="typography-body-10 text-muted">
+      <em>Disabled</em>
+      </p>
     <div>
       <Input disabled />
     </div>
-    <div>
-      <Select disabled className="w-full">
-        <option>Disabled</option>
-      </Select>
-    </div>
-    <div>
-      <Textarea disabled placeholder="Disabled" />
-    </div>
-  </div>
-  <div className="grid grid-cols-4 gap-3">
-    <h3 className="typography-body-9">Read only</h3>
+
+
+    <p className="typography-body-10 text-muted">
+      <em>Read-only</em>
+      </p>
     <div>
       <Input readOnly value="This value is readonly" />
     </div>
     <div />
-    <div>
-      <Textarea readOnly value="This value is readonly" />
-    </div>
-  </div>
+
 </div>
 ```
