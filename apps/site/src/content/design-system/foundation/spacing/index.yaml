@@ -7,6 +7,10 @@ namedExport:
 excludeFromNavbar: true
 design:
   - title:
+      name: Design system spacing tokens
+      slug: user-experience
+    noTitle: false
+  - title:
       name: Spacing for margin
       slug: spacing-for-margin
     noTitle: false
@@ -17,10 +21,6 @@ design:
   - title:
       name: Spacing for gap
       slug: spacing-for-gap
-    noTitle: false
-  - title:
-      name: User experience
-      slug: user-experience
     noTitle: false
 accessibility:
   - title:
