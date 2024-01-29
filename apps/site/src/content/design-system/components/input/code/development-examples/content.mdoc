@@ -27,24 +27,6 @@
           </div>
         ))}
       </div>
-      <div className="flex flex-col gap-4">
-        {SIZES.map(size => (
-          <div key={size}>
-            <Select className="w-full" size={size}>
-              <option>{size}</option>
-              <option>1</option>
-              <option>2</option>
-            </Select>
-          </div>
-        ))}
-      </div>
-      <div className="flex flex-col gap-4">
-        {SIZES.map(size => (
-          <div key={size}>
-            <Textarea placeholder={size} className="w-full" size={size} />
-          </div>
-        ))}
-      </div>
     </div>
   );
 };
