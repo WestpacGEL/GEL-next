@@ -4,6 +4,7 @@ description: >-
   used in forms and search tools allowing users to submit information.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Sizes
