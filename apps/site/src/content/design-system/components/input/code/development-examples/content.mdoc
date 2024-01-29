@@ -19,7 +19,7 @@
 () => {
   const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
   return (
-    <div className="grid grid-cols-3 gap-3">
+
       <div className="flex flex-col gap-4">
         {SIZES.map(size => (
           <div key={size}>
@@ -27,7 +27,7 @@
           </div>
         ))}
       </div>
-    </div>
+
   );
 };
 ```
