@@ -15,6 +15,10 @@ design:
       slug: spacing-for-padding
     noTitle: false
   - title:
+      name: Spacing for gap
+      slug: spacing-for-gap
+    noTitle: false
+  - title:
       name: User experience
       slug: user-experience
     noTitle: false
@@ -25,10 +29,6 @@ design:
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
-    noTitle: false
-  - title:
-      name: Spacing for gap
-      slug: spacing-for-gap
     noTitle: false
 accessibility:
   - title:
