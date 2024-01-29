@@ -40,42 +40,23 @@
 
 ```jsx
 <div className="flex flex-col gap-4">
-  <div className="grid grid-cols-4 align-top gap-3">
     <h3 className="typography-body-9">Invalid</h3>
     <div>
       <Input invalid />
     </div>
     <div>
-      <Select invalid className="w-full">
-        <option>Invalid</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </Select>
-    </div>
-    <div>
       <Textarea invalid placeholder="Invalid" />
     </div>
-  </div>
-  <div className="grid grid-cols-4 gap-3">
+
     <h3 className="typography-body-9">Disabled</h3>
-    <div>
-      <Input disabled />
-    </div>
-    <div>
-      <Select disabled className="w-full">
-        <option>Disabled</option>
-      </Select>
-    </div>
+
     <div>
       <Textarea disabled placeholder="Disabled" />
     </div>
-  </div>
+
   <div className="grid grid-cols-4 gap-3">
     <h3 className="typography-body-9">Read only</h3>
-    <div>
-      <Input readOnly value="This value is readonly" />
-    </div>
+
     <div />
     <div>
       <Textarea readOnly value="This value is readonly" />
