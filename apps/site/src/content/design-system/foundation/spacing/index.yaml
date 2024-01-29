@@ -1,8 +1,7 @@
 name: Spacing
 description: >-
-  Using the responsive 12-column grid ensures your design works effectively for
-  all devices and screen sizes, and establishes consistency across all of
-  Westpac Group brands.
+  These spacing tokens allow the Design System to consistently define the widths
+  and heights of the spaces used around and within components.
 namedExport:
   discriminant: false
 excludeFromNavbar: true
