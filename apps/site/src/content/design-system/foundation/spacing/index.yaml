@@ -5,7 +5,7 @@ description: >-
   Westpac Group brands.
 namedExport:
   discriminant: false
-excludeFromNavbar: false
+excludeFromNavbar: true
 design:
   - title:
       name: Spacing for margin
