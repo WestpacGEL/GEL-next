@@ -1,0 +1,35 @@
+name: Spacing
+description: >-
+  Using the responsive 12-column grid ensures your design works effectively for
+  all devices and screen sizes, and establishes consistency across all of
+  Westpac Group brands.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Spacing for margin
+      slug: spacing-for-margin
+    noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+  - title:
+      name: Visual design
+      slug: visual-design
+    noTitle: false
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
+    noTitle: false
+accessibility:
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+relatedComponents: []
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: true
