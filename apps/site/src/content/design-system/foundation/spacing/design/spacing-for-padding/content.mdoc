@@ -1,10 +1,10 @@
-Margin spacing is the way the the space around the HTML element is described.
+Padding spacing is the way the the space inside the HTML element is described.
 
 ```tsx
 () => {
   return <Table>
       <TableCaption>
-        GEL spacing for <strong>margin</strong>
+        GEL spacing for <strong>padding</strong>
       </TableCaption>
       <TableHeader>
         <TableHeaderRow>
@@ -26,7 +26,7 @@ Margin spacing is the way the the space around the HTML element is described.
               <TableCell className="align-middle">{remSize}rem</TableCell>
               <TableCell>
                 <div className="flex flex-wrap gap-1 align-middle">
-                  {VARIATION_MARGIN_PADDING.map(v => <Badge color="faint">{`.m${v}-${spacing.value}`}</Badge>)}
+                  {VARIATION_MARGIN_PADDING.map(v => <Badge color="faint">{`.p${v}-${spacing.value}`}</Badge>)}
                 </div>
               </TableCell>
             </TableRow>;

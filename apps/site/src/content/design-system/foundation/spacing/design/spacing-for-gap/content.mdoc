@@ -1,10 +1,10 @@
-Margin spacing is the way the the space around the HTML element is described.
+Gap spacing is the way the the space between the HTML elements is described.
 
 ```tsx
 () => {
   return <Table>
       <TableCaption>
-        GEL spacing for <strong>margin</strong>
+        GEL spacing classes for <strong>gap</strong>
       </TableCaption>
       <TableHeader>
         <TableHeaderRow>
@@ -24,10 +24,8 @@ Margin spacing is the way the the space around the HTML element is described.
               </TableCell>
               <TableCell className="align-middle">{pixelSize}px</TableCell>
               <TableCell className="align-middle">{remSize}rem</TableCell>
-              <TableCell>
-                <div className="flex flex-wrap gap-1 align-middle">
-                  {VARIATION_MARGIN_PADDING.map(v => <Badge color="faint">{`.m${v}-${spacing.value}`}</Badge>)}
-                </div>
+              <TableCell className="align-middle">
+                <Badge color="faint">{`.gap-${spacing.value}`}</Badge>
               </TableCell>
             </TableRow>;
       })}
