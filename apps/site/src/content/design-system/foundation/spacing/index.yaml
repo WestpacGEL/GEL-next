@@ -26,7 +26,9 @@ accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
-relatedComponents: []
+relatedComponents:
+  - title: Grid
+    slug: foundation/grid
 code:
   - title:
       name: Development examples
