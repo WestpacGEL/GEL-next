@@ -1,3 +1,4 @@
+import { SkipLink } from '@westpac/ui';
 import { Suspense } from 'react';
 
 import { reader } from '@/app/reader';
@@ -24,6 +25,9 @@ export default async function DesignSystemLayout({
 
   return (
     <div data-theme={brand?.toLowerCase()}>
+      <SkipLink href="#content" className="z-[100]">
+        Skip to content
+      </SkipLink>
       <div className="flex min-h-screen flex-col text-text active-theme-stg:text-heading">
         <SidebarContextProvider>
           <Suspense>
