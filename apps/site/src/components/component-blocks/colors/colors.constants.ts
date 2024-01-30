@@ -6,6 +6,7 @@ export const PRIMARY_COLORS: ColorsKey[] = [
   'neutral',
   'heading',
   'text',
+  'link',
   'muted',
   'border',
   'background',

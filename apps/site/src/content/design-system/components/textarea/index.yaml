@@ -4,6 +4,7 @@ description: >-
   text.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Sizes

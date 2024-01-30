@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { ArticleBodyImage } from './components/article-body-image';
 import { ArticleImage } from './components/article-image';
 import { LeadingText } from './components/leading-text';
-import { LinkList } from './components/link-list';
+import { ArticleLinkList } from './components/link-list';
 import { linkList } from './components/link-list/link-list.preview';
 
 export const ArticleComponentBlocks = {
@@ -83,5 +83,5 @@ export const ArticleComponentBlocksComponents = {
   articleBodyImage: ArticleBodyImage,
   leadingText: LeadingText,
   articleImage: ArticleImage,
-  linkList: LinkList,
+  linkList: ArticleLinkList,
 };

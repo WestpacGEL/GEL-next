@@ -41,4 +41,3 @@ export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {
     </div>
   );
 }
-SelectorCheckboxGroup.Option = SelectorCheckboxGroupOption;

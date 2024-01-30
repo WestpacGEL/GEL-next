@@ -1,0 +1,31 @@
+```jsx
+<Repeater>
+<FormGroup>
+          <FormLabel htmlFor="formInput">Mobile number</FormLabel>
+          <Input aria-describedby="formHint" width="20" id="formInput" name="test" />
+        </FormGroup>
+</Repeater>
+```
+
+```jsx
+() => {
+  const groupOneId = React.useId();
+  const groupTwoId = React.useId();
+
+  return (
+    <Repeater separator>
+      <FormGroup>
+        <div className="mb-4" width="6">
+            <FormLabel htmlFor={`input${groupOneId}`}>BSB</FormLabel>
+            <Input aria-describedby={`inputHint${groupOneId}`} width="10" id={`input${groupOneId}`} name={`input${groupOneId}`} />
+        </div>
+        <div>
+            <FormLabel htmlFor={`input${groupTwoId}`}>Account number</FormLabel>
+            <FormHint id={`inputHint${groupTwoId}`}>Account number should have 10 digits</FormHint>
+            <Input aria-describedby={`inputHint${groupTwoId}`}  width="18" id={`input${groupTwoId}`} name={`input${groupTwoId}`} />
+        </div>
+      </FormGroup>
+    </Repeater>
+  );
+};
+```

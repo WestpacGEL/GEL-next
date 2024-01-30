@@ -82,14 +82,19 @@ function Group({ label, level, crumbs, children, ...props }: GroupProps) {
 function Item({ label, path, level, crumbs, brand, ...props }: ItemProps) {
   const href = `/design-system/${brand}/${path}`;
   const page = path?.split('/').pop();
-  const active = crumbs[crumbs.length - 1] === page || (crumbs[crumbs.length - 1] === 'design-system' && page === '');
+  const active = crumbs[crumbs.length - 1] === page || (crumbs[crumbs.length - 1] === brand && page === '');
   const { setOpen } = useSidebar();
+
+  const onLinkClick = () => {
+    setOpen(false);
+    document.getElementById('header')?.focus();
+  };
 
   return (
     <li {...props}>
       <Link
         href={href}
-        onClick={() => setOpen(false)}
+        onClick={onLinkClick}
         className={itemStyles({ level: level.toString() as Level, type: 'link', nested: level > 0, active })}
       >
         {formatComponentSlug(label)}
