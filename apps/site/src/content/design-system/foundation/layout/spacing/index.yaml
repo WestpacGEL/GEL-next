@@ -11,16 +11,16 @@ design:
       slug: user-experience
     noTitle: false
   - title:
-      name: Spacing for margin
-      slug: spacing-for-margin
+      name: Margin spacing
+      slug: margin-spacing
     noTitle: false
   - title:
-      name: Spacing for padding
-      slug: spacing-for-padding
+      name: Padding spacing
+      slug: padding-spacing
     noTitle: false
   - title:
-      name: Spacing for gap
-      slug: spacing-for-gap
+      name: Gap spacing
+      slug: gap-spacing
     noTitle: false
 accessibility:
   - title:
