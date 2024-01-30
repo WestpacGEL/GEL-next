@@ -4,13 +4,13 @@
 
   return (
     <Fragment>
-      <InputGroup width="10" name="example-text" label="Total amount (in whole dollars)" before="AUD" after=".00">
-        <Input defaultValue="" />
+      <InputGroup name="example-text" label="Total amount" before="AUS $" after=".00">
+        <Input defaultValue="User input text" />
       </InputGroup>
-
-      <InputGroup size="large" width="10" before="$"
+      <br />
+      <InputGroup
         name="example-select"
-        label="Rental amount"
+        label="Total amount"
         after={
           <Select
             name="example-select-select"
@@ -18,45 +18,46 @@
             defaultValue="monthly"
             onChange={event => console.log(`Selected ${event.target.value}`)}
           >
+            <option value="daily">Daily</option>
             <option value="monthly">Monthly</option>
-            <option value="weekly">Weekly</option>
+            <option value="yearly">Yearly</option>
           </Select>
         }
       >
         <Input />
       </InputGroup>
-
-      <InputGroup  size="large" width="30" name="example-button" label="Search" after={<Button>Go</Button>}>
-        <Input defaultValue="" />
+      <br />
+      <InputGroup name="example-button" label="Filter by name" after={<Button>Go</Button>}>
+        <Input defaultValue="User input text" />
       </InputGroup>
-
-      <InputGroup size="large" width="10"
+      <br />
+      <InputGroup
         name="example-select"
-        label="Phone number"
+        label="Total amount"
         placeholder="Placeholder text"
         before={
           <Select
             name="example-select-select"
-            label="+612"
+            label="option"
             onChange={event => console.log(`Selected ${event.target.value}`)}
             data={[
-              { text: '+612', value: '+612' },
-              { text: '+613', value: '+613' },
-              { text: '+614', value: '+614' },
+              { text: 'Option', value: 'option' },
+              { text: 'Option 2', value: 'option2' },
+              { text: 'Option 3', value: 'option' },
             ]}
           >
-            <option value="+612">+612</option>
-            <option value="+613">+613</option>
-            <option value="+614">+614</option>
+            <option value="option-1">Option 1</option>
+            <option value="option-2">Option 2</option>
+            <option value="option-3">Option 3</option>
           </Select>
         }
       >
         <Input />
       </InputGroup>
-
-      <InputGroup size="large" width="4"
+      <br />
+      <InputGroup
         name="example-button"
-        label="Number stepper"
+        label="Filter by name"
         before={<Button onClick={() => setValue(value => value - 1)}>-</Button>}
         after={<Button onClick={() => setValue(value => value + 1)}>+</Button>}
       >

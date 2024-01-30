@@ -1,5 +1,12 @@
 name: Flexi Cell
+namedExport:
+  discriminant: false
+excludeFromNavbar: true
+design: []
+accessibility: []
+relatedComponents: []
 code:
   - title:
       name: Development examples
       slug: development-examples
+    noTitle: false
