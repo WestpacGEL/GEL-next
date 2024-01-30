@@ -5,6 +5,7 @@ description: >-
   Westpac Group brands.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Grid examples
@@ -26,7 +27,9 @@ accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
-relatedComponents: []
+relatedComponents:
+  - title: Grid
+    slug: /foundation/grid
 code:
   - title:
       name: Development examples

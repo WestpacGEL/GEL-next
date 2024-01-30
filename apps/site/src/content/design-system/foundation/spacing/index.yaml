@@ -1,0 +1,36 @@
+name: Spacing
+description: >-
+  These spacing tokens allow the Design System to consistently define the widths
+  and heights of the spaces used around and within components.
+namedExport:
+  discriminant: false
+excludeFromNavbar: true
+design:
+  - title:
+      name: Design system spacing tokens
+      slug: user-experience
+    noTitle: false
+  - title:
+      name: Spacing for margin
+      slug: spacing-for-margin
+    noTitle: false
+  - title:
+      name: Spacing for padding
+      slug: spacing-for-padding
+    noTitle: false
+  - title:
+      name: Spacing for gap
+      slug: spacing-for-gap
+    noTitle: false
+accessibility:
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+relatedComponents:
+  - title: Grid
+    slug: foundation/grid
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: true

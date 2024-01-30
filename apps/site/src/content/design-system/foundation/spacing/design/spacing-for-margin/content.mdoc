@@ -1,0 +1,37 @@
+The margin properties are used to create space around elements, outside of any defined borders.
+
+```tsx
+() => {
+  return <Table>
+      <TableCaption>
+        GEL spacing for <strong>margin</strong>
+      </TableCaption>
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>Token</TableHeaderCell>
+          <TableHeaderCell>Pixel</TableHeaderCell>
+          <TableHeaderCell>REM</TableHeaderCell>
+          <TableHeaderCell>Tailwind class</TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
+        {SPACING_SCALE.map(spacing => {
+        const pixelSize = SPACING_UNIT * spacing.value;
+        const remSize = pixelSize / 16;
+        return <TableRow key={spacing.className}>
+              <TableCell className="align-middle">
+                <div className={clsx(spacing.className, SPACING_DEFAULT_CLASSES)} />
+              </TableCell>
+              <TableCell className="align-middle">{pixelSize}px</TableCell>
+              <TableCell className="align-middle">{remSize}rem</TableCell>
+              <TableCell>
+                <div className="flex flex-wrap gap-1 align-middle">
+                  {VARIATION_MARGIN_PADDING.map(v => <Badge color="faint">{`.m${v}-${spacing.value}`}</Badge>)}
+                </div>
+              </TableCell>
+            </TableRow>;
+      })}
+      </TableBody>
+    </Table>;
+}
+```
