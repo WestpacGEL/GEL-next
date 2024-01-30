@@ -29,6 +29,8 @@ accessibility:
 relatedComponents:
   - title: Grid
     slug: foundation/grid
+  - title: Breakpoints
+    slug: foundation/layout/breakpoints
 code:
   - title:
       name: Development examples
