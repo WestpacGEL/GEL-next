@@ -16,12 +16,12 @@ If a customer hasn’t filled in a required field, include the name of the field
 
 Formatting errors are shown when someone enters information in an unexpected or incorrect way. Phone numbers, email addresses and dates are examples of fields that need specific formatting. In these cases, it’s best to suggest how someone should enter the information.
 
-For example, for an error relating to an Australian mobile phone number:
+For example, for an error relating to a phone number:
 
 ```tsx
 <Field
   label="Phone number"
-  errorMessage="Enter a number in the format: 0412345678">
+  errorMessage="Enter a number in the format: 2135096995, 213-509-6995 or (213) 509-6995">
   <Input invalid size="large" className="w-6/12" />
 </Field>
 ```

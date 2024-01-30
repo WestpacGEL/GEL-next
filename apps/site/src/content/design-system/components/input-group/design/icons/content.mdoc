@@ -1,0 +1,73 @@
+### Types
+
+```tsx
+<Fragment>
+  <h4 className="typography-body-10 text-muted italic mb-3">Icon before</h4>
+  <InputGroup width={20} before={{ icon: () => <SearchIcon size="small" color="muted" /> }}>
+    <Input />
+  </InputGroup>
+
+  <h4 className="typography-body-10 text-muted italic mb-3">Icon after</h4>
+  <InputGroup width={20} after={{ icon: TickIcon }}>
+    <Input />
+  </InputGroup>
+
+  <h4 className="typography-body-10 text-muted italic mb-3">Button icon after</h4>
+  <InputGroup
+    width={20}
+    after={{ inset: true, element: <Button look="link" iconAfter={ClearIcon} iconColor="muted" /> }}
+  >
+    <Input />
+  </InputGroup>
+</Fragment>
+```
+
+### Usage examples
+
+```tsx
+() => {
+  const [inputValue, setInputValue] = useState<string>('');
+  const clearInput = useCallback(() => setInputValue(''), []);
+
+  return (
+    <InputGroup
+      label="Search"
+      before={{
+        icon: SearchIcon,
+      }}
+      after={{
+        inset: true,
+        element: <Button onClick={clearInput} look="link" iconAfter={ClearIcon} iconColor="muted" />,
+      }}
+    >
+      <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputGroup>
+  );
+};
+```
+
+```tsx
+() => {
+  const [typeInput, setTypeInput] = useState<'password' | 'text'>('password');
+  const toggleType = useCallback(() => setTypeInput(state => (state === 'password' ? 'text' : 'password')), []);
+
+  return (
+    <InputGroup
+      label="Show and hide input visibility"
+      after={{
+        inset: true,
+        element: (
+          <Button
+            onClick={toggleType}
+            look="link"
+            iconAfter={typeInput === 'password' ? VisibilityIcon : VisibilityOffIcon}
+            iconColor="muted"
+          />
+        ),
+      }}
+    >
+      <Input type={typeInput} />
+    </InputGroup>
+  );
+};
+```
