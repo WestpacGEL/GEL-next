@@ -4,7 +4,7 @@ import { Button } from '../index.js';
 
 import { Badge } from './badge.component.js';
 
-const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'primary', 'success', 'warning'] as const;
+const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'muted', 'primary', 'success', 'warning'] as const;
 const INVERTED_COLORS = [
   'danger-inverted',
   'faint-inverted',
@@ -97,6 +97,25 @@ export const Colors = () => (
           </Badge>
         ))}
       </div>
+    </div>
+  </div>
+);
+
+export const Soft = () => (
+  <div className="flex flex-col gap-2">
+    <div className="flex gap-2">
+      {COLORS.map(color => (
+        <Badge color={color} soft>
+          {color}
+        </Badge>
+      ))}
+    </div>
+    <div className="flex gap-2">
+      {COLORS.map(color => (
+        <Badge color={color} type="pill" soft>
+          {color}
+        </Badge>
+      ))}
     </div>
   </div>
 );

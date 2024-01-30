@@ -16,6 +16,11 @@ export type BadgeProps = {
    */
   color?: Variants['color'];
   /**
+   * Removes background colour and adjusts text colour.
+   * @default false
+   */
+  soft?: Variants['soft'];
+  /**
    * Tag to render
    * @default div
    */
