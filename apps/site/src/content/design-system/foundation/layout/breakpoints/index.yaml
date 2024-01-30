@@ -5,7 +5,11 @@ description: >-
 namedExport:
   discriminant: false
 excludeFromNavbar: false
-design: []
+design:
+  - title:
+      name: Breakpoint tokens
+      slug: breakpoint-tokens
+    noTitle: false
 accessibility: []
 relatedComponents: []
 code: []
