@@ -60,4 +60,3 @@ export function SelectorButtonGroup({
     </div>
   );
 }
-SelectorButtonGroup.Option = SelectorButtonGroupOption;

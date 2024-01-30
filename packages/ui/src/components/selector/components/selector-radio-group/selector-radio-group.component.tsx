@@ -52,4 +52,3 @@ export function SelectorRadioGroup({
     </div>
   );
 }
-SelectorRadioGroup.Option = SelectorRadioGroupOption;

@@ -6,7 +6,7 @@ import { ErrorMessage, Hint, Label } from '../index.js';
 
 import { InputGroupSupportingText } from './components/index.js';
 import { InputGroupAddOn } from './components/input-group-add-ons/input-group-add-ons.component.js';
-import { styles } from './input-group.styles.js';
+import { styles as inputGroupStyles } from './input-group.styles.js';
 import { type InputGroupProps } from './input-group.types.js';
 
 export function InputGroup({
@@ -80,7 +80,7 @@ export function InputGroup({
           size,
           id,
           'aria-describedby': ariaDescribedByValue,
-          ...(width !== 'full' ? { width: width, className: 'flex-grow-0' } : {}),
+          ...(width !== 'full' ? { width: width } : {}),
         } as any);
       }
     });
@@ -88,8 +88,16 @@ export function InputGroup({
 
   const isFieldset = useMemo(() => Tag === 'fieldset', [Tag]);
 
+  const styles = inputGroupStyles({
+    before: !!before,
+    after: !!after,
+    afterInset,
+    beforeInset,
+    width: !isNaN(Number(width)),
+  });
+
   return (
-    <Tag className={styles({ before: !!before, after: !!after, afterInset, beforeInset, className })} {...props}>
+    <Tag className={styles.base({ className })} {...props}>
       {label && (
         <Label srOnly={hideLabel} tag={isFieldset ? 'legend' : 'label'} {...(!isFieldset && { htmlFor: id })}>
           {label}
@@ -97,7 +105,7 @@ export function InputGroup({
       )}
       {hint && <Hint id={`${id}-hint`}>{hint}</Hint>}
       {errorMessage && <ErrorMessage id={`${id}-error`} message={errorMessage} />}
-      <div className="relative flex">
+      <div className={styles.input()}>
         {before && (
           <InputGroupAddOn position="before" size={size} inset={beforeInset} icon={beforeIcon} id={id}>
             {beforeElement}

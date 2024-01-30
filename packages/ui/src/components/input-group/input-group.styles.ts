@@ -2,7 +2,10 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'group m-0 mb-5 border-none p-0',
+    slots: {
+      base: 'group m-0 mb-5 border-none p-0',
+      input: 'relative flex',
+    },
     variants: {
       before: {
         true: '',
@@ -20,27 +23,37 @@ export const styles = tv(
         true: '',
         false: '',
       },
+      width: {
+        true: '',
+        false: '',
+      },
     },
     compoundVariants: [
       {
         after: true,
         afterInset: false,
-        className: 'input-group-after',
+        className: { base: 'input-group-after' },
       },
       {
         before: true,
         beforeInset: false,
-        className: 'input-group-before',
+        className: { base: 'input-group-before' },
       },
       {
         after: true,
         afterInset: true,
-        className: 'input-group-inset-after',
+        className: { base: 'input-group-inset-after' },
       },
       {
         before: true,
         beforeInset: true,
-        className: 'input-group-inset-before',
+        className: { base: 'input-group-inset-before' },
+      },
+      {
+        width: true,
+        className: {
+          input: 'inline-flex',
+        },
       },
     ],
   },
