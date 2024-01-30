@@ -21,7 +21,7 @@ import { Hero, Section, SectionHeading, SectionItem } from '../components';
 export default function DesignSystemHomePage({ params }: { params: { brand: string } }) {
   const brand = (params.brand || 'wbc') as BrandKey;
   return (
-    <>
+    <div tabIndex={-1} id="content" className="focus:outline-none">
       <Hero brand={brand} />
       <Section>
         <SectionHeading>Accessible by design</SectionHeading>
@@ -157,6 +157,6 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
           </GridItem>
         </Grid>
       </Section>
-    </>
+    </div>
   );
 }
