@@ -4,6 +4,7 @@ description: >-
   required to choose one option from a list of predefined choices.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Sizes
