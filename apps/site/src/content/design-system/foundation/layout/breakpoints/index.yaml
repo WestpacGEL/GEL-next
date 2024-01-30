@@ -19,4 +19,8 @@ relatedComponents:
     slug: foundation/layout/grid
   - title: Spacing
     slug: foundation/layout/spacing
-code: []
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: false
