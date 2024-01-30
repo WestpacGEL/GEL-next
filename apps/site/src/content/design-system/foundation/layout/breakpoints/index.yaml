@@ -11,5 +11,9 @@ design:
       slug: breakpoint-tokens
     noTitle: false
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  - title: Grid
+    slug: foundation/layout/grid
+  - title: Spacing
+    slug: foundation/layout/spacing
 code: []
