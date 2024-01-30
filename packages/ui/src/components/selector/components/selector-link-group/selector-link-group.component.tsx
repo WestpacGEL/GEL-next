@@ -43,4 +43,3 @@ export function SelectorLinkGroup({
     </div>
   );
 }
-SelectorLinkGroup.Option = SelectorLinkGroupOption;

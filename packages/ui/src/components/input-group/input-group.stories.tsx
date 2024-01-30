@@ -1,6 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';
+import { VisibilityIcon } from '../icon/index.js';
 import { Autocomplete, AutocompleteItem, Button, Input, Select } from '../index.js';
 
 import { InputGroup } from './input-group.component.js';
@@ -121,6 +122,19 @@ export const FixedWidths = () => {
           after={<Button>Check</Button>}
           before="$AUD"
           width={width}
+        >
+          <Input placeholder={width.toString()} />
+        </InputGroup>
+      ))}
+      <h3 className="typography-body-7 mb-3">Input sizes with icon</h3>
+      {FIXED_WIDTHS.map(width => (
+        <InputGroup
+          key={width}
+          width={width}
+          label="Icon"
+          hint="I am a hint"
+          supportingText="I am supporting text"
+          after={{ icon: () => <VisibilityIcon color="muted" />, inset: true }}
         >
           <Input placeholder={width.toString()} />
         </InputGroup>

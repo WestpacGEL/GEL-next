@@ -8,13 +8,17 @@
         <Input defaultValue="" />
       </InputGroup>
 
-      <InputGroup size="large" width="10" before="$"
+      <InputGroup
+        size="large"
+        width="10"
+        before="$"
         name="example-select"
         label="Rental amount"
         after={
           <Select
             name="example-select-select"
             label="Currency"
+            size="large"
             defaultValue="monthly"
             onChange={event => console.log(`Selected ${event.target.value}`)}
           >
@@ -26,11 +30,13 @@
         <Input />
       </InputGroup>
 
-      <InputGroup  size="large" width="30" name="example-button" label="Search" after={<Button>Go</Button>}>
+      <InputGroup size="large" width="30" name="example-button" label="Search" after={<Button>Go</Button>}>
         <Input defaultValue="" />
       </InputGroup>
 
-      <InputGroup size="large" width="10"
+      <InputGroup
+        size="large"
+        width="10"
         name="example-select"
         label="Phone number"
         placeholder="Placeholder text"
@@ -38,6 +44,7 @@
           <Select
             name="example-select-select"
             label="+612"
+            size="large"
             onChange={event => console.log(`Selected ${event.target.value}`)}
             data={[
               { text: '+612', value: '+612' },
@@ -54,11 +61,21 @@
         <Input />
       </InputGroup>
 
-      <InputGroup size="large" width="4"
+      <InputGroup
+        size="large"
+        width="4"
         name="example-button"
         label="Number stepper"
-        before={<Button onClick={() => setValue(value => value - 1)}>-</Button>}
-        after={<Button onClick={() => setValue(value => value + 1)}>+</Button>}
+        before={
+          <Button size="large" onClick={() => setValue(value => value - 1)}>
+            -
+          </Button>
+        }
+        after={
+          <Button size="large" onClick={() => setValue(value => value + 1)}>
+            +
+          </Button>
+        }
       >
         <Input value={value} onChange={event => setValue(event.target.value)} />
       </InputGroup>
