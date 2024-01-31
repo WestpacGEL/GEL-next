@@ -18,19 +18,24 @@ To capture a different mailing address, use a text label with a button group to 
 
 ```tsx
 () => {
-  const [hasDifferentMailingAddress, setHasDifferentMailingAddress] = useState(false);
+  const [hasDifferentMailingAddress, setHasDifferentMailingAddress] = useState('');
 
   return (
     <Form spacing="large">
       <FormGroup>
         <Field label="Do you have a different mailing address?">
-          <ButtonGroup size="large" value={hasDifferentMailingAddress} onChange={value => setHasDifferentMailingAddress(value)}>
-            <ButtonGroupButton value={true}>Yes</ButtonGroupButton>
-            <ButtonGroupButton value={false}>No</ButtonGroupButton>
-          </ButtonGroup>
+          <ButtonGroup 
+            size="large" 
+            value={hasDifferentMailingAddress} 
+            onChange={value => setHasDifferentMailingAddress(value)}
+            buttons={[
+              { value: 'yes', children: "Yes" }, 
+              { value: 'no', children: "No" }
+            ]}
+          />
         </Field>
       </FormGroup>
-      <FormGroup>{hasDifferentMailingAddress && <AutoAddressDemo />}</FormGroup>
+      <FormGroup>{hasDifferentMailingAddress === 'yes' && <AutoAddressDemo />}</FormGroup>
     </Form>
   );
 };

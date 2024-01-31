@@ -2,16 +2,25 @@ Use this option when you require an inline layout, it's only recommended in very
 
 ```jsx
 <div className="grid grid-cols-2 gap-2">
-  <RadioGroup label={<ComponentTitle>Medium</ComponentTitle>} orientation="horizontal">
-    <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
-    <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-    <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-  </RadioGroup>
+  <RadioGroup 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    orientation="horizontal"
+    radios={[
+      { value: 'Option 1', children: 'Option 1' },
+      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 3', children: 'Option 3' },
+    ]}
+  />
 
-  <RadioGroup label={<ComponentTitle>Large</ComponentTitle>} size="large" orientation="horizontal">
-    <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
-    <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-    <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-  </RadioGroup>
+  <RadioGroup 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large" 
+    orientation="horizontal"
+    radios={[
+      { value: 'Option 1', children: 'Option 1' },
+      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 3', children: 'Option 3' },
+    ]}
+  />
 </div>
 ```

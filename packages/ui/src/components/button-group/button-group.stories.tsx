@@ -1,7 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
 import { ButtonGroup } from './button-group.component.js';
-import { ButtonGroupButton } from './components/button-group-button/button-group-button.component.js';
 
 const meta: Meta<typeof ButtonGroup> = {
   title: 'Components/ButtonGroup',
@@ -39,10 +38,19 @@ const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
  */
 export const Default: Story = {
   args: {
-    children: [
-      <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>,
-      <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>,
-      <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>,
+    buttons: [
+      {
+        value: 'Option 1',
+        children: 'Option 1',
+      },
+      {
+        value: 'Option 2',
+        children: 'Option 2',
+      },
+      {
+        value: 'Option 3',
+        children: 'Option 3',
+      },
     ],
   },
 };
@@ -53,11 +61,24 @@ export const Default: Story = {
 export const Colors = () => (
   <div className="flex flex-col gap-2">
     {LOOKS.map(look => (
-      <ButtonGroup label={<h3 className="font-bold">{look}</h3>} look={look}>
-        <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>
-        <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>
-        <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>
-      </ButtonGroup>
+      <ButtonGroup
+        label={<h3 className="font-bold">{look}</h3>}
+        look={look}
+        buttons={[
+          {
+            value: 'Option 1',
+            children: 'Option 1',
+          },
+          {
+            value: 'Option 2',
+            children: 'Option 2',
+          },
+          {
+            value: 'Option 3',
+            children: 'Option 3',
+          },
+        ]}
+      />
     ))}
   </div>
 );
@@ -68,11 +89,24 @@ export const Colors = () => (
 export const Sizes = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
-      <ButtonGroup label={<h3 className="font-bold">{size}</h3>} size={size}>
-        <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>
-        <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>
-        <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>
-      </ButtonGroup>
+      <ButtonGroup
+        label={<h3 className="font-bold">{size}</h3>}
+        size={size}
+        buttons={[
+          {
+            value: 'Option 1',
+            children: 'Option 1',
+          },
+          {
+            value: 'Option 2',
+            children: 'Option 2',
+          },
+          {
+            value: 'Option 3',
+            children: 'Option 3',
+          },
+        ]}
+      />
     ))}
   </div>
 );
@@ -82,10 +116,19 @@ export const Sizes = () => (
  */
 export const ResponsiveSize: Story = {
   args: {
-    children: [
-      <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>,
-      <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>,
-      <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>,
+    buttons: [
+      {
+        value: 'Option 1',
+        children: 'Option 1',
+      },
+      {
+        value: 'Option 2',
+        children: 'Option 2',
+      },
+      {
+        value: 'Option 3',
+        children: 'Option 3',
+      },
     ],
     size: {
       initial: 'small',
@@ -101,11 +144,25 @@ export const ResponsiveSize: Story = {
 export const Block = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
-      <ButtonGroup block label={<h3 className="font-bold">{size}</h3>} size={size}>
-        <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>
-        <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>
-        <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>
-      </ButtonGroup>
+      <ButtonGroup
+        block
+        label={<h3 className="font-bold">{size}</h3>}
+        size={size}
+        buttons={[
+          {
+            value: 'Option 1',
+            children: 'Option 1',
+          },
+          {
+            value: 'Option 2',
+            children: 'Option 2',
+          },
+          {
+            value: 'Option 3',
+            children: 'Option 3',
+          },
+        ]}
+      />
     ))}
   </div>
 );
@@ -115,10 +172,19 @@ export const Block = () => (
  */
 export const Disabled: Story = {
   args: {
-    children: [
-      <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>,
-      <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>,
-      <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>,
+    buttons: [
+      {
+        value: 'Option 1',
+        children: 'Option 1',
+      },
+      {
+        value: 'Option 2',
+        children: 'Option 2',
+      },
+      {
+        value: 'Option 3',
+        children: 'Option 3',
+      },
     ],
     isDisabled: true,
   },
@@ -133,10 +199,19 @@ export const ErrorMessageAndLabel: Story = {
     errorMessage: 'This is an inline error message',
     validationState: 'invalid',
     hintMessage: 'Hint: choose from one of the following options',
-    children: [
-      <ButtonGroupButton value="Option 1">Option 1</ButtonGroupButton>,
-      <ButtonGroupButton value="Option 2">Option 2</ButtonGroupButton>,
-      <ButtonGroupButton value="Option 3">Option 3</ButtonGroupButton>,
+    buttons: [
+      {
+        value: 'Option 1',
+        children: 'Option 1',
+      },
+      {
+        value: 'Option 2',
+        children: 'Option 2',
+      },
+      {
+        value: 'Option 3',
+        children: 'Option 3',
+      },
     ],
   },
 };

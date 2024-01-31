@@ -2,27 +2,25 @@ This variation allows supporting text to be displayed below the selectable item.
 
 ```jsx
 <div className="grid grid-cols-2">
-  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Medium</ComponentTitle>} size="medium">
-    <CheckboxGroupCheckbox value="Option 1" hint="This is hint text">
-      Option 1
-    </CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2" hint="This is hint text">
-      Option 2
-    </CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3" hint="This is hint text">
-      Option 3
-    </CheckboxGroupCheckbox>
-  </CheckboxGroup>
-  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Large</ComponentTitle>} size="large">
-    <CheckboxGroupCheckbox value="Option 1" hint="This is hint text">
-      Option 1
-    </CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2" hint="This is hint text">
-      Option 2
-    </CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3" hint="This is hint text">
-      Option 3
-    </CheckboxGroupCheckbox>
-  </CheckboxGroup>
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    size="medium"
+    checkboxes={[
+      { value: "Option 1", children: "Option 1", hint: "This is hint text" },
+      { value: "Option 2", children: "Option 2", hint: "This is hint text" },
+      { value: "Option 3", children: "Option 3", hint: "This is hint text" },
+    ]}
+  />
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large"
+    checkboxes={[
+      { value: "Option 1", children: "Option 1", hint: "This is hint text" },
+      { value: "Option 2", children: "Option 2", hint: "This is hint text" },
+      { value: "Option 3", children: "Option 3", hint: "This is hint text" },
+    ]}
+  />
 </div>
 ```

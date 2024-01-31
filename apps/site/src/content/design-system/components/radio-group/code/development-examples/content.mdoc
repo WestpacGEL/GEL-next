@@ -4,16 +4,24 @@ This component does not contain an option for `checkbox` as it was decided it sh
 
 ```jsx
 <div className="flex gap-3">
-  <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium">
-    <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
-    <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-    <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-  </RadioGroup>
-  <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large">
-    <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
-    <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-    <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-  </RadioGroup>
+  <RadioGroup 
+    label={<p className="font-bold mb-1">Medium</p>} 
+    size="medium"
+    radios={[
+      { value: 'Option 1', children: 'Option 1' },
+      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 3', children: 'Option 3' },
+    ]}
+  />
+  <RadioGroup 
+    label={<p className="font-bold mb-1">Large</p>} 
+    size="large"
+    radios={[
+      { value: 'Option 1', children: 'Option 1' },
+      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 3', children: 'Option 3' },
+    ]}
+  />
 </div>
 ```
 
@@ -21,17 +29,26 @@ This component does not contain an option for `checkbox` as it was decided it sh
 
 ```jsx
 <div>
-  <RadioGroup label={<p className="font-bold mb-1">Medium</p>} orientation="horizontal">
-    <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
-    <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-    <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-  </RadioGroup>
+  <RadioGroup 
+    label={<p className="font-bold mb-1">Medium</p>} 
+    orientation="horizontal"
+    radios={[
+      { value: 'Option 1', children: 'Option 1' },
+      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 3', children: 'Option 3' },
+    ]}
+  />
 
-  <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large" orientation="horizontal">
-    <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
-    <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-    <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-  </RadioGroup>
+  <RadioGroup 
+    label={<p className="font-bold mb-1">Large</p>} 
+    size="large" 
+    orientation="horizontal"
+    radios={[
+      { value: 'Option 1', children: 'Option 1' },
+      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 3', children: 'Option 3' },
+    ]}
+  />
 </div>
 ```
 
@@ -39,28 +56,24 @@ This component does not contain an option for `checkbox` as it was decided it sh
 
 ```jsx
 <div className="flex gap-3">
-  <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium">
-    <RadioGroupRadio value="Option 1" hint="This is hint text">
-      Option 1
-    </RadioGroupRadio>
-    <RadioGroupRadio value="Option 2" hint="This is hint text">
-      Option 2
-    </RadioGroupRadio>
-    <RadioGroupRadio value="Option 3" hint="This is hint text">
-      Option 3
-    </RadioGroupRadio>
-  </RadioGroup>
-  <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large">
-    <RadioGroupRadio value="Option 1" hint="This is hint text">
-      Option 1
-    </RadioGroupRadio>
-    <RadioGroupRadio value="Option 2" hint="This is hint text">
-      Option 2
-    </RadioGroupRadio>
-    <RadioGroupRadio value="Option 3" hint="This is hint text">
-      Option 3
-    </RadioGroupRadio>
-  </RadioGroup>
+  <RadioGroup 
+    label={<p className="font-bold mb-1">Medium</p>} 
+    size="medium"
+    radios={[
+      { value: 'Option 1', children: 'Option 1', hint: 'This is hint text' },
+      { value: 'Option 2', children: 'Option 2', hint: 'This is hint text' },
+      { value: 'Option 3', children: 'Option 3', hint: 'This is hint text' },
+    ]}
+  />
+  <RadioGroup 
+    label={<p className="font-bold mb-1">Large</p>} 
+    size="large"
+    radios={[
+      { value: 'Option 1', children: 'Option 1', hint: 'This is hint text' },
+      { value: 'Option 2', children: 'Option 2', hint: 'This is hint text' },
+      { value: 'Option 3', children: 'Option 3', hint: 'This is hint text' },
+    ]}
+  />
 </div>
 ```
 
@@ -68,16 +81,26 @@ This component does not contain an option for `checkbox` as it was decided it sh
 
 ```jsx
 <div className="flex gap-3">
-  <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium" showAmount={1}>
-    <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
-    <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-    <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-  </RadioGroup>
-  <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large" showAmount={1}>
-    <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
-    <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-    <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-  </RadioGroup>
+  <RadioGroup 
+    label={<p className="font-bold mb-1">Medium</p>} 
+    size="medium" 
+    showAmount={1}
+    radios={[
+      { value: 'Option 1', children: 'Option 1' },
+      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 3', children: 'Option 3' },
+    ]}
+  />
+  <RadioGroup 
+    label={<p className="font-bold mb-1">Large</p>} 
+    size="large" 
+    showAmount={1}
+    radios={[
+      { value: 'Option 1', children: 'Option 1' },
+      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 3', children: 'Option 3' },
+    ]}
+  />
 </div>
 ```
 
@@ -85,16 +108,26 @@ This component does not contain an option for `checkbox` as it was decided it sh
 
 ```jsx
 <div className="flex gap-3">
-  <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium" isDisabled>
-    <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
-    <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-    <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-  </RadioGroup>
-  <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large" isDisabled>
-    <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
-    <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-    <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-  </RadioGroup>
+  <RadioGroup 
+    label={<p className="font-bold mb-1">Medium</p>} 
+    size="medium" 
+    isDisabled
+    radios={[
+      { value: 'Option 1', children: 'Option 1' },
+      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 3', children: 'Option 3' },
+    ]}
+  />
+  <RadioGroup 
+    label={<p className="font-bold mb-1">Large</p>} 
+    size="large" 
+    isDisabled
+    radios={[
+      { value: 'Option 1', children: 'Option 1' },
+      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 3', children: 'Option 3' },
+    ]}
+  />
 </div>
 ```
 
@@ -102,14 +135,24 @@ This component does not contain an option for `checkbox` as it was decided it sh
 
 ```jsx
 <div className="flex gap-3">
-  <RadioGroup label={<p className="font-bold mb-1">Medium</p>} size="medium">
-    <RadioGroupRadio value="Option 1" isDisabled>
-      Option 1
-    </RadioGroupRadio>
-    <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-    <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-  </RadioGroup>
-  <RadioGroup label={<p className="font-bold mb-1">Large</p>} size="large">
+  <RadioGroup 
+    label={<p className="font-bold mb-1">Medium</p>} 
+    size="medium"
+    radios={[
+      { value: 'Option 1', children: 'Option 1', isDisabled: true },
+      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 3', children: 'Option 3' },
+    ]}
+  />
+  <RadioGroup 
+  label={<p className="font-bold mb-1">Large</p>} 
+  size="large"
+  radios={[
+    { value: 'Option 1', children: 'Option 1'},
+    { value: 'Option 2', children: 'Option 2', isDisabled: true },
+    { value: 'Option 3', children: 'Option 3' },
+  ]}
+  >
     <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
     <RadioGroupRadio value="Option 2" isDisabled>
       Option 2

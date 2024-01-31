@@ -4,24 +4,30 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
 
 ```jsx
 <div className="grid grid-cols-2">
-  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Checkbox</ComponentTitle>}>
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Checkbox</ComponentTitle>}
+    checkboxes={[
+      { value: "Option 1", children: "Option 1" },
+      { value: "Option 2", children: "Option 2" },
+      { value: "Option 3", children: "Option 3" },
+    ]}
+  />
 </div>
 ```
 
 ### With default value
 
 ```jsx
-<CheckboxGroup label={<ComponentTitle>Checkbox</ComponentTitle>} defaultValue={['1', '3']}>
-  <CheckboxGroupCheckbox value="1" isDisabled>
-    Option 1
-  </CheckboxGroupCheckbox>
-  <CheckboxGroupCheckbox value="2">Option 2</CheckboxGroupCheckbox>
-  <CheckboxGroupCheckbox value="3">Option 3</CheckboxGroupCheckbox>
-</CheckboxGroup>
+<CheckboxGroup 
+  label={<ComponentTitle>Checkbox</ComponentTitle>} 
+  defaultValue={['1', '3']}
+  checkboxes={[
+    { value: "1", children: "Option 1", isDisabled: true},
+    { value: "2", children: "Option 2" },
+    { value: "3", children: "Option 3" },
+  ]}
+/>
 ```
 
 ### With onChange
@@ -35,11 +41,12 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
       value={formCheckValue}
       onChange={(value, event) => setFormCheckValue(value)}
       label={<ComponentTitle>Checkbox</ComponentTitle>}
-    >
-      <CheckboxGroupCheckbox value="1">Option 1</CheckboxGroupCheckbox>
-      <CheckboxGroupCheckbox value="2">Option 2</CheckboxGroupCheckbox>
-      <CheckboxGroupCheckbox value="3">Option 3</CheckboxGroupCheckbox>
-    </CheckboxGroup>
+      checkboxes={[
+        { value: "1", children: "Option 1" },
+        { value: "2", children: "Option 2" },
+        { value: "3", children: "Option 3" },
+      ]}
+    />
   );
 };
 ```
@@ -48,16 +55,26 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
 
 ```jsx
 <div className="grid grid-cols-2">
-  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Medium</ComponentTitle>} size="medium">
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
-  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Large</ComponentTitle>} size="large">
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    size="medium"
+    checkboxes={[
+      { value: "Option 1", children: "Option 1" },
+      { value: "Option 2", children: "Option 2" },
+      { value: "Option 3", children: "Option 3" },
+    ]}
+  />
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large"
+    checkboxes={[
+      { value: "Option 1", children: "Option 1" },
+      { value: "Option 2", children: "Option 2" },
+      { value: "Option 3", children: "Option 3" },
+    ]}
+  />
 </div>
 ```
 
@@ -65,28 +82,26 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
 
 ```jsx
 <div className="grid grid-cols-2">
-  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Medium</ComponentTitle>} size="medium">
-    <CheckboxGroupCheckbox value="Option 1" hint="This is hint text">
-      Option 1
-    </CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2" hint="This is hint text">
-      Option 2
-    </CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3" hint="This is hint text">
-      Option 3
-    </CheckboxGroupCheckbox>
-  </CheckboxGroup>
-  <CheckboxGroup className="col-span-1" label={<ComponentTitle>Large</ComponentTitle>} size="large">
-    <CheckboxGroupCheckbox value="Option 1" hint="This is hint text">
-      Option 1
-    </CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2" hint="This is hint text">
-      Option 2
-    </CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3" hint="This is hint text">
-      Option 3
-    </CheckboxGroupCheckbox>
-  </CheckboxGroup>
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    size="medium"
+    checkboxes={[
+      { value: "Option 1", children: "Option 1", hint: "This is hint text" },
+      { value: "Option 2", children: "Option 2", hint: "This is hint text" },
+      { value: "Option 3", children: "Option 3", hint: "This is hint text" },
+    ]}
+  />
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large"
+    checkboxes={[
+      { value: "Option 1", children: "Option 1", hint: "This is hint text" },
+      { value: "Option 2", children: "Option 2", hint: "This is hint text" },
+      { value: "Option 3", children: "Option 3", hint: "This is hint text" },
+    ]}
+  />
 </div>
 ```
 
@@ -94,17 +109,26 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
 
 ```jsx
 <div className="grid grid-cols-2">
-  <CheckboxGroup label={<ComponentTitle>Medium</ComponentTitle>} orientation="horizontal">
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
+  <CheckboxGroup 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    orientation="horizontal"
+    checkboxes={[
+      { value: "Option 1", children: "Option 1" },
+      { value: "Option 2", children: "Option 2" },
+      { value: "Option 3", children: "Option 3" },
+    ]}
+  />
 
-  <CheckboxGroup label={<ComponentTitle>Large</ComponentTitle>} size="large" orientation="horizontal">
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
+  <CheckboxGroup 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large" 
+    orientation="horizontal"
+    checkboxes={[
+      { value: "Option 1", children: "Option 1" },
+      { value: "Option 2", children: "Option 2" },
+      { value: "Option 3", children: "Option 3" },
+    ]}
+  />
 </div>
 ```
 
@@ -112,16 +136,26 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
 
 ```jsx
 <div className="grid grid-cols-2">
-  <CheckboxGroup label={<ComponentTitle>Medium</ComponentTitle>} size="medium" showAmount={1}>
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
-  <CheckboxGroup label={<ComponentTitle>Large</ComponentTitle>} size="large" showAmount={1}>
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
+  <CheckboxGroup 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    size="medium" 
+    showAmount={1}
+    checkboxes={[
+      { value: "Option 1", children: "Option 1" },
+      { value: "Option 2", children: "Option 2" },
+      { value: "Option 3", children: "Option 3" },
+    ]}
+  />
+  <CheckboxGroup 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large" 
+    showAmount={1}
+    checkboxes={[
+      { value: "Option 1", children: "Option 1" },
+      { value: "Option 2", children: "Option 2" },
+      { value: "Option 3", children: "Option 3" },
+    ]}  
+  />
 </div>
 ```
 
@@ -129,16 +163,26 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
 
 ```jsx
 <div className="grid grid-cols-2">
-  <CheckboxGroup label={<ComponentTitle>Medium</ComponentTitle>} size="medium" isDisabled>
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
-  <CheckboxGroup label={<ComponentTitle>Large</ComponentTitle>} size="large" isDisabled>
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
+  <CheckboxGroup 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    size="medium" 
+    isDisabled
+    checkboxes={[
+      { value: "Option 1", children: "Option 1" },
+      { value: "Option 2", children: "Option 2" },
+      { value: "Option 3", children: "Option 3" },
+    ]}
+  />
+  <CheckboxGroup 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large" 
+    isDisabled
+    checkboxes={[
+      { value: "Option 1", children: "Option 1" },
+      { value: "Option 2", children: "Option 2" },
+      { value: "Option 3", children: "Option 3" },
+    ]}
+  />
 </div>
 ```
 
@@ -146,19 +190,24 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
 
 ```jsx
 <div className="grid grid-cols-2">
-  <CheckboxGroup label={<ComponentTitle>Medium</ComponentTitle>} size="medium">
-    <CheckboxGroupCheckbox value="Option 1" isDisabled>
-      Option 1
-    </CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
-  <CheckboxGroup label={<ComponentTitle>Large</ComponentTitle>} size="large">
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2" isDisabled>
-      Option 2
-    </CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
+  <CheckboxGroup 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    size="medium"
+    checkboxes={[
+      { value: "Option 1", children: "Option 1", isDisabled: true },
+      { value: "Option 2", children: "Option 2" },
+      { value: "Option 3", children: "Option 3" },
+    ]}
+  />
+  <CheckboxGroup 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large"
+    checkboxes={[
+      { value: "Option 1", children: "Option 1" },
+      { value: "Option 2", children: "Option 2", isDisabled: true  },
+      { value: "Option 3", children: "Option 3" },
+    ]}
+  />
   </CheckboxGroup>
 </div>
 ```

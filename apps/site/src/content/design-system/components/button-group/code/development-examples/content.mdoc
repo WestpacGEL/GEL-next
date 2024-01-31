@@ -1,11 +1,14 @@
 ### ButtonGroup sizes
 
 ```jsx
-<ButtonGroup>
-  <ButtonGroupButton value="Left">Left</ButtonGroupButton>
-  <ButtonGroupButton value="Middle">Middle</ButtonGroupButton>
-  <ButtonGroupButton value="Right">Right</ButtonGroupButton>
-</ButtonGroup>
+<ButtonGroup 
+  buttons={[
+    { value: "Left", children: "Left"}, 
+    { value: "Middle", children: "Middle" }, 
+    { value: "Right", children: "Right"}
+  ]} 
+/>
+
 ```
 
 ### ButtonGroup looks
@@ -15,19 +18,21 @@
   <ButtonGroup
     defaultValue={0}
     label={<p className="typography-body-10 text-muted italic mb-[0.875rem]">Index (integer)</p>}
-  >
-    <ButtonGroupButton value={0}>Left</ButtonGroupButton>
-    <ButtonGroupButton value={1}>Middle</ButtonGroupButton>
-    <ButtonGroupButton value={2}>Right</ButtonGroupButton>
-  </ButtonGroup>
+    buttons={[
+      { value: 0, children: "Left" }, 
+      { value: 1, children: "Middle" }, 
+      { value: 2, children: "Right"}
+    ]}
+  />
   <ButtonGroup
     defaultValue="right"
     label={<p className="typography-body-10 text-muted italic mb-[0.875rem]">Key (string)</p>}
-  >
-    <ButtonGroupButton value="left">Left</ButtonGroupButton>
-    <ButtonGroupButton value="middle">Middle</ButtonGroupButton>
-    <ButtonGroupButton value="right">Right</ButtonGroupButton>
-  </ButtonGroup>
+    buttons={[
+      { value: "left", children: "Left" }, 
+      { value: "middle", children: "Middle" }, 
+      { value: "right", children: "Right"}
+    ]}
+  />
 </div>
 ```
 
@@ -53,11 +58,15 @@
           reset
         </Button>
       </div>
-      <ButtonGroup look="hero" value={controlled}>
-        <ButtonGroupButton value="yes">Yes</ButtonGroupButton>
-        <ButtonGroupButton value="maybe">Maybe</ButtonGroupButton>
-        <ButtonGroupButton value="no">No</ButtonGroupButton>
-      </ButtonGroup>
+      <ButtonGroup 
+        look="hero" 
+        value={controlled}
+        buttons={[
+          { value: "yes", children: "Yes"}, 
+          { value: "maybe", children: "Maybe" }, 
+          { value: "no", children: "No"}
+        ]}
+      />
     </div>
   );
 };

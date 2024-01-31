@@ -51,17 +51,23 @@ The button dropdown menus come in three sizes or widths. They are triggered by t
 <div className="flex gap-1">
   <ButtonDropdown text="Checkboxes" look="primary">
     <ButtonDropdownHeading>Checkboxes</ButtonDropdownHeading>
-    <CheckboxGroup defaultValue={['Option 1']}>
-      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-      <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-    </CheckboxGroup>
+    <CheckboxGroup 
+      defaultValue={['Option 1']}
+      checkboxes={[
+        { value: "Option 1", children: "Option 1" },
+        { value: "Option 2", children: "Option 2" },
+        { value: "Option 3", children: "Option 3" },
+      ]}
+    />
     <ButtonDropdownHeading>Options</ButtonDropdownHeading>
-    <CheckboxGroup defaultValue={['Option 1']}>
-      <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-      <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-      <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-    </CheckboxGroup>
+    <CheckboxGroup 
+      defaultValue={['Option 1']}
+      checkboxes={[
+        { value: "Option 1", children: "Option 1" },
+        { value: "Option 2", children: "Option 2" },
+        { value: "Option 3", children: "Option 3" },
+      ]}
+    />
   </ButtonDropdown>
 
   <ButtonDropdown text="Switches" look="primary">

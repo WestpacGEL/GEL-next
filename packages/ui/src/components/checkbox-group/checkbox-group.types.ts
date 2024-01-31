@@ -1,14 +1,15 @@
-import { ReactNode } from 'react';
 import { AriaCheckboxGroupProps } from 'react-aria';
 import { CheckboxGroupState } from 'react-stately';
 
 import { HintProps } from '../index.js';
 
+import { CheckboxGroupCheckboxProps } from './components/checkbox-group-checkbox/checkbox-group-checkbox.types.js';
+
 export type CheckboxGroupProps = {
   /**
    * The `CheckboxItem` components to render
    */
-  children: ReactNode[];
+  checkboxes: CheckboxGroupCheckboxProps[];
   /**
    * String to override base style
    */

@@ -2,22 +2,34 @@
 
 ```tsx
 <div className="grid gap-3">
-  <ButtonGroup size="small">
-    <ButtonGroupButton value="sm">Sm - 30px</ButtonGroupButton>
-    <ButtonGroupButton value="Label">Label</ButtonGroupButton>
-  </ButtonGroup>
-  <ButtonGroup size="medium">
-    <ButtonGroupButton value="md">Md - 36px</ButtonGroupButton>
-    <ButtonGroupButton value="Label">Label</ButtonGroupButton>
-  </ButtonGroup>
-  <ButtonGroup size="large">
-    <ButtonGroupButton value="lg">Lg - 42px</ButtonGroupButton>
-    <ButtonGroupButton value="Label">Label</ButtonGroupButton>
-  </ButtonGroup>
-  <ButtonGroup size="xlarge">
-    <ButtonGroupButton value="xl">Xl - 48px</ButtonGroupButton>
-    <ButtonGroupButton value="Label">Label</ButtonGroupButton>
-  </ButtonGroup>
+  <ButtonGroup 
+    size="small"
+    buttons={[
+      { value: "sm", children: "Sm - 30px"}, 
+      { value: "Label", children: "Label" }
+    ]}
+  />
+  <ButtonGroup 
+    size="medium"
+    buttons={[
+      { value: "md", children: "Md - 36px"}, 
+      { value: "Label", children: "Label" }
+    ]}
+    />
+  <ButtonGroup 
+    size="large"
+    buttons={[
+      { value: "lg", children: "Lg - 42px"}, 
+      { value: "Label", children: "Label" }
+    ]}
+  />
+  <ButtonGroup 
+    size="xlarge"
+    buttons={[
+      { value: "xl", children: "Xl - 48px"}, 
+      { value: "Label", children: "Label" }
+    ]}
+  />
 </div>
 ```
 
@@ -25,15 +37,22 @@
 
 ```tsx
 <div className="grid gap-3">
-  <ButtonGroup look="hero">
-    <ButtonGroupButton value="Yes">Yes</ButtonGroupButton>
-    <ButtonGroupButton value="No">No</ButtonGroupButton>
-  </ButtonGroup>
-  <ButtonGroup look="hero">
-    <ButtonGroupButton value="Email">Email</ButtonGroupButton>
-    <ButtonGroupButton value="Phone">Phone</ButtonGroupButton>
-    <ButtonGroupButton value="SMS">SMS</ButtonGroupButton>
-  </ButtonGroup>
+  <ButtonGroup 
+    look="hero"
+    buttons={[
+      { value: "Yes", children: "Yes"}, 
+      { value: "No", children: "No" }
+    ]}
+  />
+
+  <ButtonGroup 
+    look="hero"
+    buttons={[
+      { value: "Email", children: "Email"}, 
+      { value: "Phone", children: "Phone" },
+      { value: "SMS", children: "SMS" }
+    ]}
+  />
 </div>
 ```
 
@@ -41,10 +60,14 @@
 
 ```jsx
 <div className="grid gap-3">
-  <ButtonGroup look="hero" block>
-    <ButtonGroupButton value="Email">Email</ButtonGroupButton>
-    <ButtonGroupButton value="Phone">Phone</ButtonGroupButton>
-    <ButtonGroupButton value="Label">Label</ButtonGroupButton>
-  </ButtonGroup>
+  <ButtonGroup 
+    look="hero" 
+    block
+    buttons={[
+      { value: "Email", children: "Email"}, 
+      { value: "Phone", children: "Phone" },
+      { value: "SMS", children: "SMS" }
+    ]}
+  />
 </div>
 ```
