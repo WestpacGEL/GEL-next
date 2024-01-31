@@ -9,21 +9,21 @@ describe('RadioGroup', () => {
       <RadioGroup
         label="test"
         radios={[
-          { value: 'Option 1', children: 'Option 1' },
-          { value: 'Option 2', children: 'Option 2' },
+          { value: 'Option 1', label: 'Option 1' },
+          { value: 'Option 2', label: 'Option 2' },
         ]}
       />,
     );
     expect(container).toBeInTheDocument();
   });
 
-  it('should render Radios when passed as children', () => {
+  it('should render Radios when passed in through radios prop', () => {
     const { getByText } = render(
       <RadioGroup
         label="test"
         radios={[
-          { value: 'Option 1', children: 'Option 1' },
-          { value: 'Option 2', children: 'Option 2' },
+          { value: 'Option 1', label: 'Option 1' },
+          { value: 'Option 2', label: 'Option 2' },
         ]}
       />,
     );
@@ -39,9 +39,9 @@ describe('RadioGroup', () => {
         showAmount={1}
         label="test"
         radios={[
-          { value: 'Option 1', children: 'Option 1' },
-          { value: 'Option 2', children: 'Option 2' },
-          { value: 'Option 3', children: 'Option 3' },
+          { value: 'Option 1', label: 'Option 1' },
+          { value: 'Option 2', label: 'Option 2' },
+          { value: 'Option 3', label: 'Option 3' },
         ]}
       />,
     );
@@ -60,8 +60,8 @@ describe('RadioGroup', () => {
         showAmount={1}
         label="test"
         radios={[
-          { value: 'Option 1', children: 'Option 1' },
-          { value: 'Option 2', children: 'Option 2' },
+          { value: 'Option 1', label: 'Option 1' },
+          { value: 'Option 2', label: 'Option 2' },
         ]}
       />,
     );
@@ -79,8 +79,8 @@ describe('RadioGroup', () => {
         onChange={onChange}
         label="test"
         radios={[
-          { value: 'Option 1', children: 'Option 1' },
-          { value: 'Option 2', children: 'Option 2' },
+          { value: 'Option 1', label: 'Option 1' },
+          { value: 'Option 2', label: 'Option 2' },
         ]}
       />,
     );

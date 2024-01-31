@@ -9,21 +9,21 @@ describe('CheckboxGroup', () => {
       <CheckboxGroup
         label="test"
         checkboxes={[
-          { value: 'Option 1', children: 'Option 1' },
-          { value: 'Option 2', children: 'Option 2' },
+          { value: 'Option 1', label: 'Option 1' },
+          { value: 'Option 2', label: 'Option 2' },
         ]}
       />,
     );
     expect(container).toBeInTheDocument();
   });
 
-  it('should render Options when passed as children', () => {
+  it('should render Options when passed in through checkboxes prop', () => {
     const { getByText } = render(
       <CheckboxGroup
         label="test"
         checkboxes={[
-          { value: 'Option 1', children: 'Option 1' },
-          { value: 'Option 2', children: 'Option 2' },
+          { value: 'Option 1', label: 'Option 1' },
+          { value: 'Option 2', label: 'Option 2' },
         ]}
       />,
     );
@@ -39,9 +39,9 @@ describe('CheckboxGroup', () => {
         showAmount={1}
         label="test"
         checkboxes={[
-          { value: 'Option 1', children: 'Option 1' },
-          { value: 'Option 2', children: 'Option 2' },
-          { value: 'Option 3', children: 'Option 3' },
+          { value: 'Option 1', label: 'Option 1' },
+          { value: 'Option 2', label: 'Option 2' },
+          { value: 'Option 3', label: 'Option 3' },
         ]}
       />,
     );
@@ -60,8 +60,8 @@ describe('CheckboxGroup', () => {
         showAmount={1}
         label="test"
         checkboxes={[
-          { value: 'Option 1', children: 'Option 1' },
-          { value: 'Option 2', children: 'Option 2' },
+          { value: 'Option 1', label: 'Option 1' },
+          { value: 'Option 2', label: 'Option 2' },
         ]}
       />,
     );
@@ -79,8 +79,8 @@ describe('CheckboxGroup', () => {
         onChange={onChange}
         label="test"
         checkboxes={[
-          { value: 'Option 1', children: 'Option 1' },
-          { value: 'Option 2', children: 'Option 2' },
+          { value: 'Option 1', label: 'Option 1' },
+          { value: 'Option 2', label: 'Option 2' },
         ]}
       />,
     );
@@ -97,9 +97,9 @@ describe('CheckboxGroup', () => {
         onChange={onChange}
         label="test"
         checkboxes={[
-          { value: 'Option 1', children: 'Option 1' },
-          { value: 'Option 2', children: 'Option 2' },
-          { value: 'Option 3', children: 'Option 3' },
+          { value: 'Option 1', label: 'Option 1' },
+          { value: 'Option 2', label: 'Option 2' },
+          { value: 'Option 3', label: 'Option 3' },
         ]}
       />,
     );

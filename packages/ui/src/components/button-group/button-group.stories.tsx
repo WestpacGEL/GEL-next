@@ -41,15 +41,15 @@ export const Default: Story = {
     buttons: [
       {
         value: 'Option 1',
-        children: 'Option 1',
+        label: 'Option 1',
       },
       {
         value: 'Option 2',
-        children: 'Option 2',
+        label: 'Option 2',
       },
       {
         value: 'Option 3',
-        children: 'Option 3',
+        label: 'Option 3',
       },
     ],
   },
@@ -67,15 +67,15 @@ export const Colors = () => (
         buttons={[
           {
             value: 'Option 1',
-            children: 'Option 1',
+            label: 'Option 1',
           },
           {
             value: 'Option 2',
-            children: 'Option 2',
+            label: 'Option 2',
           },
           {
             value: 'Option 3',
-            children: 'Option 3',
+            label: 'Option 3',
           },
         ]}
       />
@@ -95,15 +95,15 @@ export const Sizes = () => (
         buttons={[
           {
             value: 'Option 1',
-            children: 'Option 1',
+            label: 'Option 1',
           },
           {
             value: 'Option 2',
-            children: 'Option 2',
+            label: 'Option 2',
           },
           {
             value: 'Option 3',
-            children: 'Option 3',
+            label: 'Option 3',
           },
         ]}
       />
@@ -119,15 +119,15 @@ export const ResponsiveSize: Story = {
     buttons: [
       {
         value: 'Option 1',
-        children: 'Option 1',
+        label: 'Option 1',
       },
       {
         value: 'Option 2',
-        children: 'Option 2',
+        label: 'Option 2',
       },
       {
         value: 'Option 3',
-        children: 'Option 3',
+        label: 'Option 3',
       },
     ],
     size: {
@@ -151,15 +151,15 @@ export const Block = () => (
         buttons={[
           {
             value: 'Option 1',
-            children: 'Option 1',
+            label: 'Option 1',
           },
           {
             value: 'Option 2',
-            children: 'Option 2',
+            label: 'Option 2',
           },
           {
             value: 'Option 3',
-            children: 'Option 3',
+            label: 'Option 3',
           },
         ]}
       />
@@ -175,15 +175,15 @@ export const Disabled: Story = {
     buttons: [
       {
         value: 'Option 1',
-        children: 'Option 1',
+        label: 'Option 1',
       },
       {
         value: 'Option 2',
-        children: 'Option 2',
+        label: 'Option 2',
       },
       {
         value: 'Option 3',
-        children: 'Option 3',
+        label: 'Option 3',
       },
     ],
     isDisabled: true,
@@ -202,15 +202,15 @@ export const ErrorMessageAndLabel: Story = {
     buttons: [
       {
         value: 'Option 1',
-        children: 'Option 1',
+        label: 'Option 1',
       },
       {
         value: 'Option 2',
-        children: 'Option 2',
+        label: 'Option 2',
       },
       {
         value: 'Option 3',
-        children: 'Option 3',
+        label: 'Option 3',
       },
     ],
   },

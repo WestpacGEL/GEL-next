@@ -11,15 +11,15 @@ describe('ButtonGroup', () => {
         buttons={[
           {
             value: 'Option 1',
-            children: 'Option 1',
+            label: 'Option 1',
           },
           {
             value: 'Option 2',
-            children: 'Option 2',
+            label: 'Option 2',
           },
           {
             value: 'Option 3',
-            children: 'Option 3',
+            label: 'Option 3',
           },
         ]}
       />,
@@ -27,22 +27,22 @@ describe('ButtonGroup', () => {
     expect(container).toBeInTheDocument();
   });
 
-  it('should render buttons when passed as children', () => {
+  it('should render buttons when passed as in buttons prop', () => {
     const { getByText } = render(
       <ButtonGroup
         label="test"
         buttons={[
           {
             value: 'Option 1',
-            children: 'Option 1',
+            label: 'Option 1',
           },
           {
             value: 'Option 2',
-            children: 'Option 2',
+            label: 'Option 2',
           },
           {
             value: 'Option 3',
-            children: 'Option 3',
+            label: 'Option 3',
           },
         ]}
       />,
@@ -60,15 +60,15 @@ describe('ButtonGroup', () => {
         buttons={[
           {
             value: 'Option 1',
-            children: 'Option 1',
+            label: 'Option 1',
           },
           {
             value: 'Option 2',
-            children: 'Option 2',
+            label: 'Option 2',
           },
           {
             value: 'Option 3',
-            children: 'Option 3',
+            label: 'Option 3',
           },
         ]}
       />,
@@ -90,15 +90,15 @@ describe('ButtonGroup', () => {
         buttons={[
           {
             value: 'Option 1',
-            children: 'Option 1',
+            label: 'Option 1',
           },
           {
             value: 'Option 2',
-            children: 'Option 2',
+            label: 'Option 2',
           },
           {
             value: 'Option 3',
-            children: 'Option 3',
+            label: 'Option 3',
           },
         ]}
       />,
@@ -116,15 +116,15 @@ describe('ButtonGroup', () => {
         buttons={[
           {
             value: 'Option 1',
-            children: 'Option 1',
+            label: 'Option 1',
           },
           {
             value: 'Option 2',
-            children: 'Option 2',
+            label: 'Option 2',
           },
           {
             value: 'Option 3',
-            children: 'Option 3',
+            label: 'Option 3',
           },
         ]}
       />,

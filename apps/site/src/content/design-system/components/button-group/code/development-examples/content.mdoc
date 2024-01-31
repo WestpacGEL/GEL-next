@@ -3,9 +3,9 @@
 ```jsx
 <ButtonGroup 
   buttons={[
-    { value: "Left", children: "Left"}, 
-    { value: "Middle", children: "Middle" }, 
-    { value: "Right", children: "Right"}
+    { value: "Left", label: "Left"}, 
+    { value: "Middle", label: "Middle" }, 
+    { value: "Right", label: "Right"}
   ]} 
 />
 
@@ -19,18 +19,18 @@
     defaultValue={0}
     label={<p className="typography-body-10 text-muted italic mb-[0.875rem]">Index (integer)</p>}
     buttons={[
-      { value: 0, children: "Left" }, 
-      { value: 1, children: "Middle" }, 
-      { value: 2, children: "Right"}
+      { value: 0, label: "Left" }, 
+      { value: 1, label: "Middle" }, 
+      { value: 2, label: "Right"}
     ]}
   />
   <ButtonGroup
     defaultValue="right"
     label={<p className="typography-body-10 text-muted italic mb-[0.875rem]">Key (string)</p>}
     buttons={[
-      { value: "left", children: "Left" }, 
-      { value: "middle", children: "Middle" }, 
-      { value: "right", children: "Right"}
+      { value: "left", label: "Left" }, 
+      { value: "middle", label: "Middle" }, 
+      { value: "right", label: "Right"}
     ]}
   />
 </div>
@@ -62,9 +62,9 @@
         look="hero" 
         value={controlled}
         buttons={[
-          { value: "yes", children: "Yes"}, 
-          { value: "maybe", children: "Maybe" }, 
-          { value: "no", children: "No"}
+          { value: "yes", label: "Yes"}, 
+          { value: "maybe", label: "Maybe" }, 
+          { value: "no", label: "No"}
         ]}
       />
     </div>

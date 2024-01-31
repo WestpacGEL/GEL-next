@@ -37,9 +37,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     radios: [
-      { value: 'Option 1', children: 'Option 1' },
-      { value: 'Option 2', children: 'Option 2' },
-      { value: 'Option 3', children: 'Option 3' },
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
   },
 };
@@ -50,11 +50,11 @@ export const Default: Story = {
 export const LongLines: Story = {
   args: {
     radios: [
-      { value: 'Option 1', children: 'Option 1' },
-      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
       {
         value: 'Option 3',
-        children:
+        label:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et odit labore illo sint tempora magnam modi nesciunt consectetur vitae maiores itaque reiciendis sunt nisi ullam officiis, provident fugiat, esse iste adipisci repellat! Incidunt delectus, pariatur quaerat vitae aspernatur eveniet libero.',
       },
     ],
@@ -67,9 +67,9 @@ export const LongLines: Story = {
 export const DefaultValue: Story = {
   args: {
     radios: [
-      { value: 'Option 1', children: 'Option 1' },
-      { value: 'Option 2', children: 'Option 2' },
-      { value: 'Option 3', children: 'Option 3' },
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     defaultValue: 'Option 1',
   },
@@ -81,9 +81,9 @@ export const DefaultValue: Story = {
 export const Inline: Story = {
   args: {
     radios: [
-      { value: 'Option 1', children: 'Option 1' },
-      { value: 'Option 2', children: 'Option 2' },
-      { value: 'Option 3', children: 'Option 3' },
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     orientation: 'horizontal',
   },
@@ -95,11 +95,11 @@ export const Inline: Story = {
 export const InlineLongLines: Story = {
   args: {
     radios: [
-      { value: 'Option 1', children: 'Option 1' },
-      { value: 'Option 2', children: 'Option 2' },
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
       {
         value: 'Option 3',
-        children:
+        label:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et odit labore illo sint tempora magnam modi nesciunt consectetur vitae maiores itaque reiciendis sunt nisi ullam officiis, provident fugiat, esse iste adipisci repellat! Incidunt delectus, pariatur quaerat vitae aspernatur eveniet libero.',
       },
     ],
@@ -113,9 +113,9 @@ export const InlineLongLines: Story = {
 export const Disabled: Story = {
   args: {
     radios: [
-      { value: 'Option 1', children: 'Option 1' },
-      { value: 'Option 2', children: 'Option 2' },
-      { value: 'Option 3', children: 'Option 3' },
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     isDisabled: true,
   },
@@ -127,9 +127,9 @@ export const Disabled: Story = {
 export const Large: Story = {
   args: {
     radios: [
-      { value: 'Option 1', children: 'Option 1' },
-      { value: 'Option 2', children: 'Option 2' },
-      { value: 'Option 3', children: 'Option 3' },
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     size: 'large',
   },
@@ -141,9 +141,9 @@ export const Large: Story = {
 export const HiddenOptions: Story = {
   args: {
     radios: [
-      { value: 'Option 1', children: 'Option 1' },
-      { value: 'Option 2', children: 'Option 2' },
-      { value: 'Option 3', children: 'Option 3' },
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     showAmount: 1,
   },
@@ -155,9 +155,9 @@ export const HiddenOptions: Story = {
 export const HintText: Story = {
   args: {
     radios: [
-      { value: 'Option 1', children: 'Option 1', hint: 'This is hint text 1' },
-      { value: 'Option 2', children: 'Option 2', hint: 'This is hint text 2' },
-      { value: 'Option 3', children: 'Option 3', hint: 'This is hint text 3' },
+      { value: 'Option 1', label: 'Option 1', hint: 'This is hint text 1' },
+      { value: 'Option 2', label: 'Option 2', hint: 'This is hint text 2' },
+      { value: 'Option 3', label: 'Option 3', hint: 'This is hint text 3' },
     ],
   },
 };
@@ -168,9 +168,9 @@ export const HintText: Story = {
 export const OnChange: Story = {
   args: {
     radios: [
-      { value: 'Option 1', children: 'Option 1' },
-      { value: 'Option 2', children: 'Option 2' },
-      { value: 'Option 3', children: 'Option 3' },
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     onChange: e => console.log(e),
   },
@@ -186,9 +186,9 @@ export const ErrorMessageAndLabel: Story = {
     validationState: 'invalid',
     hintMessage: 'Hint: choose from one of the following options',
     radios: [
-      { value: 'Option 1', children: 'Option 1' },
-      { value: 'Option 2', children: 'Option 2' },
-      { value: 'Option 3', children: 'Option 3' },
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
   },
 };

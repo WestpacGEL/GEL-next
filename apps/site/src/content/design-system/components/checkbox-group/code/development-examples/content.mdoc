@@ -8,9 +8,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     className="col-span-1" 
     label={<ComponentTitle>Checkbox</ComponentTitle>}
     checkboxes={[
-      { value: "Option 1", children: "Option 1" },
-      { value: "Option 2", children: "Option 2" },
-      { value: "Option 3", children: "Option 3" },
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
     ]}
   />
 </div>
@@ -23,9 +23,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
   label={<ComponentTitle>Checkbox</ComponentTitle>} 
   defaultValue={['1', '3']}
   checkboxes={[
-    { value: "1", children: "Option 1", isDisabled: true},
-    { value: "2", children: "Option 2" },
-    { value: "3", children: "Option 3" },
+    { value: "1", label: "Option 1", isDisabled: true},
+    { value: "2", label: "Option 2" },
+    { value: "3", label: "Option 3" },
   ]}
 />
 ```
@@ -42,9 +42,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
       onChange={(value, event) => setFormCheckValue(value)}
       label={<ComponentTitle>Checkbox</ComponentTitle>}
       checkboxes={[
-        { value: "1", children: "Option 1" },
-        { value: "2", children: "Option 2" },
-        { value: "3", children: "Option 3" },
+        { value: "1", label: "Option 1" },
+        { value: "2", label: "Option 2" },
+        { value: "3", label: "Option 3" },
       ]}
     />
   );
@@ -60,9 +60,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     label={<ComponentTitle>Medium</ComponentTitle>} 
     size="medium"
     checkboxes={[
-      { value: "Option 1", children: "Option 1" },
-      { value: "Option 2", children: "Option 2" },
-      { value: "Option 3", children: "Option 3" },
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
     ]}
   />
   <CheckboxGroup 
@@ -70,9 +70,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     label={<ComponentTitle>Large</ComponentTitle>} 
     size="large"
     checkboxes={[
-      { value: "Option 1", children: "Option 1" },
-      { value: "Option 2", children: "Option 2" },
-      { value: "Option 3", children: "Option 3" },
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
     ]}
   />
 </div>
@@ -87,9 +87,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     label={<ComponentTitle>Medium</ComponentTitle>} 
     size="medium"
     checkboxes={[
-      { value: "Option 1", children: "Option 1", hint: "This is hint text" },
-      { value: "Option 2", children: "Option 2", hint: "This is hint text" },
-      { value: "Option 3", children: "Option 3", hint: "This is hint text" },
+      { value: "Option 1", label: "Option 1", hint: "This is hint text" },
+      { value: "Option 2", label: "Option 2", hint: "This is hint text" },
+      { value: "Option 3", label: "Option 3", hint: "This is hint text" },
     ]}
   />
   <CheckboxGroup 
@@ -97,9 +97,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     label={<ComponentTitle>Large</ComponentTitle>} 
     size="large"
     checkboxes={[
-      { value: "Option 1", children: "Option 1", hint: "This is hint text" },
-      { value: "Option 2", children: "Option 2", hint: "This is hint text" },
-      { value: "Option 3", children: "Option 3", hint: "This is hint text" },
+      { value: "Option 1", label: "Option 1", hint: "This is hint text" },
+      { value: "Option 2", label: "Option 2", hint: "This is hint text" },
+      { value: "Option 3", label: "Option 3", hint: "This is hint text" },
     ]}
   />
 </div>
@@ -113,9 +113,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     label={<ComponentTitle>Medium</ComponentTitle>} 
     orientation="horizontal"
     checkboxes={[
-      { value: "Option 1", children: "Option 1" },
-      { value: "Option 2", children: "Option 2" },
-      { value: "Option 3", children: "Option 3" },
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
     ]}
   />
 
@@ -124,9 +124,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     size="large" 
     orientation="horizontal"
     checkboxes={[
-      { value: "Option 1", children: "Option 1" },
-      { value: "Option 2", children: "Option 2" },
-      { value: "Option 3", children: "Option 3" },
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
     ]}
   />
 </div>
@@ -141,9 +141,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     size="medium" 
     showAmount={1}
     checkboxes={[
-      { value: "Option 1", children: "Option 1" },
-      { value: "Option 2", children: "Option 2" },
-      { value: "Option 3", children: "Option 3" },
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
     ]}
   />
   <CheckboxGroup 
@@ -151,9 +151,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     size="large" 
     showAmount={1}
     checkboxes={[
-      { value: "Option 1", children: "Option 1" },
-      { value: "Option 2", children: "Option 2" },
-      { value: "Option 3", children: "Option 3" },
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
     ]}  
   />
 </div>
@@ -168,9 +168,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     size="medium" 
     isDisabled
     checkboxes={[
-      { value: "Option 1", children: "Option 1" },
-      { value: "Option 2", children: "Option 2" },
-      { value: "Option 3", children: "Option 3" },
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
     ]}
   />
   <CheckboxGroup 
@@ -178,9 +178,9 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     size="large" 
     isDisabled
     checkboxes={[
-      { value: "Option 1", children: "Option 1" },
-      { value: "Option 2", children: "Option 2" },
-      { value: "Option 3", children: "Option 3" },
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
     ]}
   />
 </div>
@@ -194,20 +194,19 @@ This component was combined with RadioGroup in the old GEL, it is now it's own c
     label={<ComponentTitle>Medium</ComponentTitle>} 
     size="medium"
     checkboxes={[
-      { value: "Option 1", children: "Option 1", isDisabled: true },
-      { value: "Option 2", children: "Option 2" },
-      { value: "Option 3", children: "Option 3" },
+      { value: "Option 1", label: "Option 1", isDisabled: true },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
     ]}
   />
   <CheckboxGroup 
     label={<ComponentTitle>Large</ComponentTitle>} 
     size="large"
     checkboxes={[
-      { value: "Option 1", children: "Option 1" },
-      { value: "Option 2", children: "Option 2", isDisabled: true  },
-      { value: "Option 3", children: "Option 3" },
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2", isDisabled: true  },
+      { value: "Option 3", label: "Option 3" },
     ]}
   />
-  </CheckboxGroup>
 </div>
 ```

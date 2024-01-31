@@ -9,11 +9,11 @@ import { ButtonGroupContext } from '../../button-group.component.js';
 import { styles as buttonStyles } from './button-group-button.styles.js';
 import { type ButtonGroupButtonProps } from './button-group-button.types.js';
 
-export function ButtonGroupButton({ className, children, ...props }: ButtonGroupButtonProps) {
+export function ButtonGroupButton({ className, label, ...props }: ButtonGroupButtonProps) {
   const state = useContext(ButtonGroupContext);
   const { size, look, block } = state;
   const ref = useRef(null);
-  const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children }, state, ref);
+  const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children: label }, state, ref);
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = buttonStyles({ block, isDisabled, isFocusVisible });
 
@@ -31,7 +31,7 @@ export function ButtonGroupButton({ className, children, ...props }: ButtonGroup
         size={size}
         className={styles.button()}
       >
-        {children}
+        {label}
       </GELButton>
     </label>
   );
