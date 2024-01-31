@@ -128,7 +128,7 @@ export const Links = () => (
     {COLORS.map(color => (
       <a className="text-link underline" href="#">
         {color}
-        <Badge color={color} type="pill">
+        <Badge color={color} type="pill" className="ml-1">
           12
         </Badge>
       </a>
