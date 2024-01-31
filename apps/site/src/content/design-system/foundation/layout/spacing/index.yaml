@@ -4,23 +4,23 @@ description: >-
   and heights of the spaces used around and within components.
 namedExport:
   discriminant: false
-excludeFromNavbar: true
+excludeFromNavbar: false
 design:
   - title:
       name: Design system spacing tokens
       slug: user-experience
     noTitle: false
   - title:
-      name: Spacing for margin
-      slug: spacing-for-margin
+      name: Margin spacing
+      slug: margin-spacing
     noTitle: false
   - title:
-      name: Spacing for padding
-      slug: spacing-for-padding
+      name: Padding spacing
+      slug: padding-spacing
     noTitle: false
   - title:
-      name: Spacing for gap
-      slug: spacing-for-gap
+      name: Gap spacing
+      slug: gap-spacing
     noTitle: false
 accessibility:
   - title:
@@ -29,6 +29,8 @@ accessibility:
 relatedComponents:
   - title: Grid
     slug: foundation/grid
+  - title: Breakpoints
+    slug: foundation/layout/breakpoints
 code:
   - title:
       name: Development examples

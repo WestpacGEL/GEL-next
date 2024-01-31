@@ -1,11 +1,8 @@
-The padding properties are used to generate space around an element's content, inside of any defined borders.
+The margin properties are used to create space around elements, outside of any defined borders.
 
 ```tsx
 () => {
   return <Table>
-      <TableCaption>
-        GEL spacing for <strong>padding</strong>
-      </TableCaption>
       <TableHeader>
         <TableHeaderRow>
           <TableHeaderCell>Token</TableHeaderCell>
@@ -26,7 +23,7 @@ The padding properties are used to generate space around an element's content, i
               <TableCell className="align-middle">{remSize}rem</TableCell>
               <TableCell>
                 <div className="flex flex-wrap gap-1 align-middle">
-                  {VARIATION_MARGIN_PADDING.map(v => <Badge color="faint">{`.p${v}-${spacing.value}`}</Badge>)}
+                  {VARIATION_MARGIN_PADDING.map(v => <Badge color="faint">{`.m${v}-${spacing.value}`}</Badge>)}
                 </div>
               </TableCell>
             </TableRow>;
