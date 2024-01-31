@@ -1,9 +1,10 @@
 name: Fonts
 description: >-
-  The font system allows each brand to designate two typefaces: A display font
-  for headings and a body font for editorial and UI elements.
+  The font system allows each brand to designate two typefaces, a brand font and
+  a body font.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Brand font
