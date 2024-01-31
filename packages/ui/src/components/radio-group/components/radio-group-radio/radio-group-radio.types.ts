@@ -10,4 +10,8 @@ export type RadioGroupRadioProps = {
    * Renders hint under radio, most likely a `string` but could be something else
    */
   hint?: ReactNode;
-} & AriaRadioProps;
+  /**
+   * Label to render
+   */
+  label: ReactNode;
+} & Omit<AriaRadioProps, 'children'>;

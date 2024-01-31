@@ -44,7 +44,7 @@ This example shows the base pattern used with additional questions when further 
 
 ```tsx
 () => {
-  const [differentName, setDifferentName] = useState(false);
+  const [differentName, setDifferentName] = useState('');
 
   return (
     <Form spacing="large">
@@ -77,13 +77,19 @@ This example shows the base pattern used with additional questions when further 
       </FormGroup>
       <FormGroup>
         <Field label="Have you ever been known by a name different to the one provided above?">
-          <ButtonGroup size="large" onChange={value => setDifferentName(value)} value={differentName} look="hero">
-            <ButtonGroupButton value={true}>Yes</ButtonGroupButton>
-            <ButtonGroupButton value={false}>No</ButtonGroupButton>
-          </ButtonGroup>
+          <ButtonGroup 
+            size="large" 
+            onChange={value => setDifferentName(value)} 
+            value={differentName} 
+            look="hero"
+            buttons={[
+              { value: "yes", label: "Yes" }, 
+              { value: "no", label: "No" }
+            ]}
+          />
         </Field>
       </FormGroup>
-      {differentName && (
+      {differentName === 'yes' && (
         <FormGroup>
           <Field label="Other names">
             <Input name="other-name" size="large" className="w-6/12" />

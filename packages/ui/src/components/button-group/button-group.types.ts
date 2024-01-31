@@ -1,8 +1,9 @@
-import { ReactNode } from 'react';
 import { AriaRadioGroupProps } from 'react-aria';
 import { RadioGroupState } from 'react-stately';
 
 import { type ButtonProps } from '../button/index.js';
+
+import { ButtonGroupButtonProps } from './components/button-group-button/button-group-button.types.js';
 
 export type ButtonGroupProps = {
   /**
@@ -10,9 +11,9 @@ export type ButtonGroupProps = {
    */
   block?: boolean;
   /**
-   * The `Button` components to render
+   * The `Button` components to render in the form of an object
    */
-  children: ReactNode[];
+  buttons: Omit<ButtonGroupButtonProps, 'className'>[];
   /**
    * String to override base style
    */
@@ -29,7 +30,7 @@ export type ButtonGroupProps = {
    * Controls look of `Button` components, can't be applied directly to `Button`
    */
   look?: 'hero' | 'primary';
-} & Omit<AriaRadioGroupProps, 'errorMessage' | 'description' | 'orientation'> &
+} & Omit<AriaRadioGroupProps, 'errorMessage' | 'description' | 'orientation' | 'children'> &
   Pick<ButtonProps, 'size'>;
 
 export type ButtonGroupContextState = {

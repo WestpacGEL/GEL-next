@@ -1,10 +1,10 @@
 'use client';
 
-import React, { ReactElement, cloneElement, createContext } from 'react';
+import React, { createContext } from 'react';
 import { useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
-import { ErrorMessage, Hint, Label } from '../index.js';
+import { ButtonGroupButton, ErrorMessage, Hint, Label } from '../index.js';
 
 import { styles as buttonGroupStyles } from './button-group.styles.js';
 import { ButtonGroupContextState, type ButtonGroupProps } from './button-group.types.js';
@@ -27,7 +27,7 @@ export const ButtonGroupContext = createContext<ButtonGroupContextState>({
 
 export function ButtonGroup({
   className,
-  children,
+  buttons,
   label,
   look = 'hero',
   size = 'medium',
@@ -47,12 +47,6 @@ export function ButtonGroup({
     state,
   );
   const styles = buttonGroupStyles({});
-  const childrenToRender = children.map((child, index) => {
-    return cloneElement(child as ReactElement, {
-      key: index,
-      className: 'group/buttons',
-    });
-  });
 
   return (
     <div className={styles.base({ className })} {...radioGroupProps}>
@@ -63,7 +57,9 @@ export function ButtonGroup({
       )}
       <div className={styles.buttonWrapper()}>
         <ButtonGroupContext.Provider value={{ ...state, size, look, block }}>
-          {childrenToRender}
+          {buttons.map((button, index) => (
+            <ButtonGroupButton key={index} className="group/buttons" {...button} />
+          ))}
         </ButtonGroupContext.Provider>
       </div>
     </div>

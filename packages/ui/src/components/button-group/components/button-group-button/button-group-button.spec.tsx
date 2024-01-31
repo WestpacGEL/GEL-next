@@ -5,7 +5,7 @@ import { styles } from './button-group-button.styles.js';
 
 describe('ButtonGroupButton', () => {
   it('renders the component', () => {
-    const { container } = render(<ButtonGroupButton value="Option 1">Test</ButtonGroupButton>);
+    const { container } = render(<ButtonGroupButton value="Option 1" label="Option 1" />);
     expect(container).toBeInTheDocument();
   });
 

@@ -31,11 +31,15 @@ function CheckIcon({ copyrightYear = '2023', size, ...props }: IconProps) {
   );
 }
 
-function BaseCheckbox({ className, hint, children, value, ...props }: CheckboxGroupCheckboxProps, ref: any) {
+function BaseCheckbox({ className, hint, label, value, ...props }: CheckboxGroupCheckboxProps, ref: any) {
   const state = useContext(CheckboxGroupContext);
   const { size, orientation } = state;
   const localRef = useRef(null);
-  const { inputProps, isDisabled, isSelected } = useCheckboxGroupItem({ ...props, value, children }, state, localRef);
+  const { inputProps, isDisabled, isSelected } = useCheckboxGroupItem(
+    { ...props, value, children: label },
+    state,
+    localRef,
+  );
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = checkboxItemStyles({ isDisabled, size, orientation, isFocusVisible });
 
@@ -48,7 +52,7 @@ function BaseCheckbox({ className, hint, children, value, ...props }: CheckboxGr
         {isSelected && <CheckIcon className={styles.checkIcon()} size={size} color={isDisabled ? 'border' : 'hero'} />}
       </div>
       <div className={styles.textWrapper()}>
-        <span className={styles.labelText()}>{children}</span>
+        <span className={styles.labelText()}>{label}</span>
         {hint && <span className={styles.hintText()}>{hint}</span>}
       </div>
     </label>

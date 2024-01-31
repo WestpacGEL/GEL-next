@@ -7,7 +7,7 @@ import { CheckboxGroupCheckboxProps } from './checkbox-group-checkbox.types.js';
 describe('Checkbox', () => {
   const defaultProps: CheckboxGroupCheckboxProps = {
     value: 'Option 1',
-    children: 'Option 1',
+    label: 'Option 1',
   };
 
   it('renders the component', () => {

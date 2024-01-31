@@ -1,7 +1,10 @@
 ```tsx
-<RadioGroup orientation="horizontal">
-  <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>
-  <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>
-  <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>
-</RadioGroup>
+<RadioGroup 
+  orientation="horizontal"
+  radios={[
+    { value: 'Option 1', label: 'Option 1' },
+    { value: 'Option 2', label: 'Option 2' },
+    { value: 'Option 3', label: 'Option 3' },
+  ]}
+/>
 ```

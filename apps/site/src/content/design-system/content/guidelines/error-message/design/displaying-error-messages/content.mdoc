@@ -24,11 +24,14 @@ There are some instances where the red keyline is not used, such as radio button
   <GridItem span={{ initial: 12, sm: 6 }}>
     <Form>
       <Field label="Label" hintMessage="If there is hint text, it can go here">
-        <CheckboxGroup orientation="vertical">
-          <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-          <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-          <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-        </CheckboxGroup>
+        <CheckboxGroup 
+          orientation="vertical"
+          checkboxes={[
+            { value: "Option 1", label: "Option 1" },
+            { value: "Option 2", label: "Option 2" },
+            { value: "Option 3", label: "Option 3" },
+          ]}
+        />
       </Field>
     </Form>
   </GridItem>
@@ -39,11 +42,14 @@ There are some instances where the red keyline is not used, such as radio button
         hintMessage="If there is hint text, it can go here"
         errorMessage="If there is an error, it can go here"
       >
-        <CheckboxGroup orientation="vertical">
-          <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-          <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-          <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-        </CheckboxGroup>
+        <CheckboxGroup 
+          orientation="vertical"
+          checkboxes={[
+            { value: "Option 1", label: "Option 1" },
+            { value: "Option 2", label: "Option 2" },
+            { value: "Option 3", label: "Option 3" },
+          ]}
+        />
       </Field>
     </Form>
   </GridItem>

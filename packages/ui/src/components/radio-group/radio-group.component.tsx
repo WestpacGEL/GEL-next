@@ -1,12 +1,12 @@
 'use client';
 
-import React, { ReactElement, cloneElement, createContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { createContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useFocusRing, useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
-import { ErrorMessage, Hint, Label } from '../index.js';
+import { ErrorMessage, Hint, Label, RadioGroupRadio } from '../index.js';
 
 import { styles as radioGroupStyles } from './radio-group.styles.js';
 import { type RadioGroupContextState, type RadioGroupProps } from './radio-group.types.js';
@@ -28,7 +28,7 @@ export const RadioGroupContext = createContext<RadioGroupContextState>({
 
 export function RadioGroup({
   className,
-  children,
+  radios,
   label,
   orientation = 'vertical',
   showAmount = 0,
@@ -45,18 +45,15 @@ export function RadioGroup({
   const { isFocusVisible, focusProps } = useFocusRing();
   const [hiddenOptions, setHiddenOptions] = useState<boolean>(showAmount > 0);
   const firstNewRadioRef = useRef<HTMLDivElement>(null);
-  const revealAmount = children && children.length - showAmount;
+  const revealAmount = radios && radios.length - showAmount;
   const styles = radioGroupStyles({ orientation, isFocusVisible });
   const childrenToRender = useMemo(() => {
-    const newChildren = children.map((child, index) => {
-      return cloneElement(child as ReactElement, {
-        key: index,
-        ref: index === showAmount ? firstNewRadioRef : null,
-      });
-    });
+    const newChildren = radios.map((radio, index) => (
+      <RadioGroupRadio key={index} ref={index === showAmount ? firstNewRadioRef : null} {...radio} />
+    ));
 
     return hiddenOptions ? newChildren.slice(0, showAmount) : newChildren;
-  }, [children, hiddenOptions, showAmount]);
+  }, [radios, hiddenOptions, showAmount]);
 
   useEffect(() => {
     if (showAmount > 0 && !hiddenOptions) {

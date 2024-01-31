@@ -1,14 +1,11 @@
-import { ReactNode } from 'react';
 import { type AriaRadioGroupProps } from 'react-aria';
 import { type RadioGroupState } from 'react-stately';
 
 import { HintProps } from '../index.js';
 
+import { RadioGroupRadioProps } from './components/radio-group-radio/radio-group-radio.types.js';
+
 export type RadioGroupProps = {
-  /**
-   * The `Radio` components to render
-   */
-  children: ReactNode[];
   /**
    * String to override base style
    */
@@ -21,6 +18,10 @@ export type RadioGroupProps = {
    * hint message
    */
   hintMessage?: HintProps['children'];
+  /**
+   * The `Radio` components to render
+   */
+  radios: RadioGroupRadioProps[];
   /**
    * Amount of Radios to display, remainder will be hidden behind reveal button
    */

@@ -1,12 +1,12 @@
 'use client';
 
-import React, { ReactElement, cloneElement, createContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { createContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useCheckboxGroup, useFocusRing } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
-import { ErrorMessage, Hint, Label } from '../index.js';
+import { CheckboxGroupCheckbox, ErrorMessage, Hint, Label } from '../index.js';
 
 import { styles as checkboxStyles } from './checkbox-group.styles.js';
 import { type CheckboxGroupContextState, type CheckboxGroupProps } from './checkbox-group.types.js';
@@ -26,7 +26,7 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
 });
 export function CheckboxGroup({
   className,
-  children,
+  checkboxes,
   label,
   orientation = 'vertical',
   showAmount = 0,
@@ -40,18 +40,15 @@ export function CheckboxGroup({
   const { isFocusVisible, focusProps } = useFocusRing();
   const [hiddenOptions, setHiddenOptions] = useState<boolean>(showAmount > 0);
   const firstNewCheckboxRef = useRef<HTMLDivElement>(null);
-  const revealAmount = children && children.length - showAmount;
+  const revealAmount = checkboxes && checkboxes.length - showAmount;
   const styles = checkboxStyles({ orientation, isFocusVisible });
   const childrenToRender = useMemo(() => {
-    const newChildren = children.map((child, index) => {
-      return cloneElement(child as ReactElement, {
-        key: index,
-        ref: index === showAmount ? firstNewCheckboxRef : null,
-      });
-    });
+    const newChildren = checkboxes.map((checkbox, index) => (
+      <CheckboxGroupCheckbox key={index} ref={index === showAmount ? firstNewCheckboxRef : null} {...checkbox} />
+    ));
 
     return hiddenOptions ? newChildren.slice(0, showAmount) : newChildren;
-  }, [children, hiddenOptions, showAmount]);
+  }, [checkboxes, hiddenOptions, showAmount]);
 
   useEffect(() => {
     if (showAmount > 0 && !hiddenOptions) {
