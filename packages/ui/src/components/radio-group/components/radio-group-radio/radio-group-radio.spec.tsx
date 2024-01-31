@@ -7,7 +7,7 @@ import { RadioGroupRadioProps } from './radio-group-radio.types.js';
 describe('Radio', () => {
   const defaultProps: RadioGroupRadioProps = {
     value: 'Option 1',
-    children: 'Option 1',
+    label: 'Option 1',
   };
 
   it('renders the component', () => {

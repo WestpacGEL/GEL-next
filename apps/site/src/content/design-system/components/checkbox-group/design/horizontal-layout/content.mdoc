@@ -1,9 +1,12 @@
 Use this option when you require an inline layout, it's only recommended in very specific circumstances and we suggest never having more than two checkboxes side-by-side.
 
 ```jsx
-<CheckboxGroup orientation="horizontal">
-  <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-  <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-  <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-</CheckboxGroup>
+<CheckboxGroup 
+  orientation="horizontal"
+  checkboxes={[
+    { value: "Option 1", label: "Option 1" },
+    { value: "Option 2", label: "Option 2" },
+    { value: "Option 3", label: "Option 3" },
+  ]}
+/>
 ```

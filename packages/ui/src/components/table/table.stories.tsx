@@ -1,9 +1,17 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
-import { TableBody, TableHeader } from 'react-stately';
 
 import { Table } from './table.component.js';
 
-import { TableCaption, TableCell, TableFooter, TableHeaderCell, TableHeaderRow, TableRow } from './index.js';
+import {
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHeader,
+  TableHeaderCell,
+  TableHeaderRow,
+  TableRow,
+} from './index.js';
 
 const meta: Meta<typeof Table> = {
   title: 'Components/Table',

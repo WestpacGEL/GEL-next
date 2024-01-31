@@ -7,15 +7,25 @@ When requirements dictate long lists of choices, and particularly as mobile scre
 
 ```jsx
 <div className="grid grid-cols-2">
-  <CheckboxGroup label={<ComponentTitle>Medium</ComponentTitle>} size="medium" showAmount={1}>
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
-  <CheckboxGroup label={<ComponentTitle>Large</ComponentTitle>} size="large" showAmount={1}>
-    <CheckboxGroupCheckbox value="Option 1">Option 1</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 2">Option 2</CheckboxGroupCheckbox>
-    <CheckboxGroupCheckbox value="Option 3">Option 3</CheckboxGroupCheckbox>
-  </CheckboxGroup>
+  <CheckboxGroup
+    label={<ComponentTitle>Medium</ComponentTitle>}
+    size="medium"
+    showAmount={1}
+    checkboxes={[
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
+    ]}
+  />
+  <CheckboxGroup
+    label={<ComponentTitle>Large</ComponentTitle>}
+    size="large"
+    showAmount={1}
+    checkboxes={[
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
+    ]}
+  />
 </div>
 ```

@@ -8,11 +8,11 @@ import { RadioGroupContext } from '../../radio-group.component.js';
 import { styles as radioStyles } from './radio-group-radio.styles.js';
 import { type RadioGroupRadioProps } from './radio-group-radio.types.js';
 
-function BaseRadioGroupRadio({ className, hint, children, ...props }: RadioGroupRadioProps, ref: any) {
+function BaseRadioGroupRadio({ className, hint, label, ...props }: RadioGroupRadioProps, ref: any) {
   const state = useContext(RadioGroupContext);
   const { size, orientation } = state;
   const localRef = useRef(null);
-  const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children }, state, localRef);
+  const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children: label }, state, localRef);
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = radioStyles({ isDisabled, isSelected, isFocusVisible, size, orientation });
 
@@ -23,7 +23,7 @@ function BaseRadioGroupRadio({ className, hint, children, ...props }: RadioGroup
       </VisuallyHidden>
       <div className={styles.selector()} />
       <div className={styles.textWrapper()}>
-        <span className={styles.labelText()}>{children}</span>
+        <span className={styles.labelText()}>{label}</span>
         {hint && <span className={styles.hintText()}>{hint}</span>}
       </div>
     </label>

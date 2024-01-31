@@ -10,4 +10,8 @@ export type CheckboxGroupCheckboxProps = {
    * Renders hint under option, most likely a `string` but could be something else
    */
   hint?: ReactNode;
-} & Omit<AriaCheckboxGroupItemProps, 'isIndeterminate'>;
+  /**
+   * Label to render
+   */
+  label: ReactNode;
+} & Omit<AriaCheckboxGroupItemProps, 'isIndeterminate' | 'children'>;

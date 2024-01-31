@@ -3,8 +3,6 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
 import { RadioGroup } from './radio-group.component.js';
 
-import { RadioGroupRadio } from './index.js';
-
 const meta: Meta<typeof RadioGroup> = {
   title: 'Components/RadioGroup',
   component: RadioGroup,
@@ -38,10 +36,10 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {
   args: {
-    children: [
-      <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>,
+    radios: [
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
   },
 };
@@ -51,14 +49,14 @@ export const Default: Story = {
  */
 export const LongLines: Story = {
   args: {
-    children: [
-      <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 3">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et odit labore illo sint tempora magnam modi nesciunt
-        consectetur vitae maiores itaque reiciendis sunt nisi ullam officiis, provident fugiat, esse iste adipisci
-        repellat! Incidunt delectus, pariatur quaerat vitae aspernatur eveniet libero.
-      </RadioGroupRadio>,
+    radios: [
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      {
+        value: 'Option 3',
+        label:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et odit labore illo sint tempora magnam modi nesciunt consectetur vitae maiores itaque reiciendis sunt nisi ullam officiis, provident fugiat, esse iste adipisci repellat! Incidunt delectus, pariatur quaerat vitae aspernatur eveniet libero.',
+      },
     ],
   },
 };
@@ -68,10 +66,10 @@ export const LongLines: Story = {
  */
 export const DefaultValue: Story = {
   args: {
-    children: [
-      <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>,
+    radios: [
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     defaultValue: 'Option 1',
   },
@@ -82,10 +80,10 @@ export const DefaultValue: Story = {
  */
 export const Inline: Story = {
   args: {
-    children: [
-      <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>,
+    radios: [
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     orientation: 'horizontal',
   },
@@ -96,14 +94,14 @@ export const Inline: Story = {
  */
 export const InlineLongLines: Story = {
   args: {
-    children: [
-      <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 3">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et odit labore illo sint tempora magnam modi nesciunt
-        consectetur vitae maiores itaque reiciendis sunt nisi ullam officiis, provident fugiat, esse iste adipisci
-        repellat! Incidunt delectus, pariatur quaerat vitae aspernatur eveniet libero.
-      </RadioGroupRadio>,
+    radios: [
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      {
+        value: 'Option 3',
+        label:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et odit labore illo sint tempora magnam modi nesciunt consectetur vitae maiores itaque reiciendis sunt nisi ullam officiis, provident fugiat, esse iste adipisci repellat! Incidunt delectus, pariatur quaerat vitae aspernatur eveniet libero.',
+      },
     ],
     orientation: 'horizontal',
   },
@@ -114,10 +112,10 @@ export const InlineLongLines: Story = {
  */
 export const Disabled: Story = {
   args: {
-    children: [
-      <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>,
+    radios: [
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     isDisabled: true,
   },
@@ -128,10 +126,10 @@ export const Disabled: Story = {
  */
 export const Large: Story = {
   args: {
-    children: [
-      <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>,
+    radios: [
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     size: 'large',
   },
@@ -142,10 +140,10 @@ export const Large: Story = {
  */
 export const HiddenOptions: Story = {
   args: {
-    children: [
-      <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>,
+    radios: [
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     showAmount: 1,
   },
@@ -156,16 +154,10 @@ export const HiddenOptions: Story = {
  */
 export const HintText: Story = {
   args: {
-    children: [
-      <RadioGroupRadio value="Option 1" hint="This is a hint">
-        Option 1
-      </RadioGroupRadio>,
-      <RadioGroupRadio value="Option 2" hint="This is a hint">
-        Option 2
-      </RadioGroupRadio>,
-      <RadioGroupRadio value="Option 3" hint="This is a hint">
-        Option 3
-      </RadioGroupRadio>,
+    radios: [
+      { value: 'Option 1', label: 'Option 1', hint: 'This is hint text 1' },
+      { value: 'Option 2', label: 'Option 2', hint: 'This is hint text 2' },
+      { value: 'Option 3', label: 'Option 3', hint: 'This is hint text 3' },
     ],
   },
 };
@@ -175,10 +167,10 @@ export const HintText: Story = {
  */
 export const OnChange: Story = {
   args: {
-    children: [
-      <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>,
+    radios: [
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
     onChange: e => console.log(e),
   },
@@ -193,10 +185,10 @@ export const ErrorMessageAndLabel: Story = {
     errorMessage: 'This is an inline error message',
     validationState: 'invalid',
     hintMessage: 'Hint: choose from one of the following options',
-    children: [
-      <RadioGroupRadio value="Option 1">Option 1</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 2">Option 2</RadioGroupRadio>,
-      <RadioGroupRadio value="Option 3">Option 3</RadioGroupRadio>,
+    radios: [
+      { value: 'Option 1', label: 'Option 1' },
+      { value: 'Option 2', label: 'Option 2' },
+      { value: 'Option 3', label: 'Option 3' },
     ],
   },
 };

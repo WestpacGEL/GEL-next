@@ -28,19 +28,19 @@ type Story = StoryObj<typeof meta>;
  * > Base Checkbox Item, unchecked as that is handled by Checkbox
  */
 export const Default: Story = {
-  args: { children: 'Option 1', value: 'Option 1' },
+  args: { label: 'Option 1', value: 'Option 1' },
 };
 
 /**
  * > Checkbox Item with hint example
  */
 export const HintText: Story = {
-  args: { children: 'Option 1', value: 'Option 1', hint: 'Test hint' },
+  args: { label: 'Option 1', value: 'Option 1', hint: 'Test hint' },
 };
 
 /**
  * > Disabled Checkbox Item example
  */
 export const Disabled: Story = {
-  args: { children: 'Option 1', value: 'Option 1', isDisabled: true },
+  args: { label: 'Option 1', value: 'Option 1', isDisabled: true },
 };
