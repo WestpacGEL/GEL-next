@@ -1,10 +1,10 @@
 name: Colours
 description: >-
-  The colours specified below should be used for all Westpac user interfaces.
   It’s important to understand how the colour system works in a multi-brand
   environment and adhere to the accessibility guidelines.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Primary UI palette

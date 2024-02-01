@@ -5,6 +5,7 @@ description: >-
   icons and supporting text.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Add-ons
