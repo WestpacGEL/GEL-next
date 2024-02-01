@@ -30,6 +30,34 @@ Badges come in 2 different styles, *Default* and *Pill.* Each style has 8 colour
 };
 ```
 
+```tsx
+() => {
+  const COLORS = ['danger', 'warning', 'success', 'info', 'primary', 'hero', 'neutral', 'faint', 'muted'] as const;
+ 
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex gap-2">
+        {COLORS.map(color => (
+          <Badge className="my-1" type="pill" color={color} >
+            88
+          </Badge>
+        ))}
+      </div>
+          <p className="typography-body-10 text-muted">
+            <em>Soft</em>
+          </p>
+      <div className="flex gap-2">
+        {COLORS.map(color => (
+          <Badge className="my-1" type="pill" color={color} soft>
+            88
+          </Badge>
+        ))}
+      </div>
+    </div>
+  );
+};
+```
+
 ### Badges - Pill
 
 ```tsx
