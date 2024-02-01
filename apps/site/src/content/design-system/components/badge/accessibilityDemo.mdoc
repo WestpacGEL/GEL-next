@@ -13,7 +13,7 @@
     ] as const;
   
     return (
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-6">
         <div>
           <p className="mb-2 typography-body-10 text-muted">
             <em>Examples showing pill style badge</em>
@@ -29,7 +29,7 @@
             </Button>
             <Button look="primary">
               <div className="flex gap-1">
-                <Badge color="faint" type="pill">
+                <Badge color="faint" type="pill" soft>
                   88
                 </Badge>
                 <span>Label</span>
@@ -37,7 +37,7 @@
             </Button>
             <a className="text-link underline" href="#">
                 Messages 
-                <Badge color="success" type="pill">
+                <Badge color="muted" type="pill" className="ml-1">
                   12
                 </Badge>
               </a>
@@ -59,21 +59,21 @@
             <Button look="primary">
               <div className="flex gap-1 items-center">
                 <span>Label</span>
-                <Badge color="faint">NEW</Badge>
+                <Badge color="faint" soft>NEW</Badge>
               </div>
             </Button>
   
             <a className="text-link underline" href="#">
                 Product feature
-                <Badge color="faint"  ml-4>
+                <Badge color="muted"  className="ml-1">
                   NEW
                 </Badge>
               </a>
+
 
           </div>
         </div>
       </div>
     );
   };
- 
 ```
