@@ -8,7 +8,7 @@ import { foundationBlocksComponents } from '../../foundation-blocks';
 import { type ShortCodeProps } from './short-code.types';
 
 export const ShortCode = ({ name, shortCodes }: ShortCodeProps) => {
-  const shortCode = useMemo(() => shortCodes.find(shortCode => shortCode.name === name), [name, shortCodes]);
+  const shortCode = useMemo(() => shortCodes.find(shortCode => shortCode.slug === name), [name, shortCodes]);
 
   return shortCode?.content ? (
     <DocumentRenderer

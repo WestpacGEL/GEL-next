@@ -23,6 +23,9 @@ design:
     noTitle: false
 accessibility:
   - title:
+      name: Colour impairment demonstration
+      slug: colour-impairment-demonstration
+  - title:
       name: Accessibility notes
       slug: accessibility-notes
 relatedComponents:

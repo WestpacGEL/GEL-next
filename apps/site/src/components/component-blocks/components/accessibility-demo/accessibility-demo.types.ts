@@ -1,7 +1,5 @@
 import { DocumentElement } from '@keystatic/core';
 
-export type ShortCode = {
+export type AccessibilityDemoProps = {
   content: DocumentElement[];
-  name: string;
-  slug: string;
 };

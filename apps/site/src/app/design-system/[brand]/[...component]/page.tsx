@@ -72,6 +72,7 @@ export default async function ComponentPage({
                 return shortCode.entry.content().then(content => {
                   return resolve({
                     ...shortCode.entry,
+                    slug: shortCode.slug,
                     content,
                   });
                 });
