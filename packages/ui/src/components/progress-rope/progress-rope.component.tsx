@@ -16,12 +16,13 @@ const verifyByCurrentIndexWhichGroupIsOpened = (currentIndex: number, mappedData
 };
 
 export function ProgressRope({
-  'aria-label': ariaLabel = 'Form steps',
+  'aria-label': ariaLabel = 'In this form',
   role = 'navigation',
   className,
   tag: Tag = 'nav',
   current = 0,
   data,
+  headingTag = 'h3',
   ...props
 }: ProgressRopeProps) {
   const [furthestVisitedStep, setFurthestVisitedStep] = useState<number>(current);
@@ -84,6 +85,7 @@ export function ProgressRope({
                   steps={item.steps}
                   opened={openedGroupStepIndex === index}
                   onToggle={() => setOpenedGroupStepIndex(state => (state === index ? null : index))}
+                  tag={headingTag}
                 >
                   {item.text}
                 </ProgressRopeGroupStep>

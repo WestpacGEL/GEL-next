@@ -5,12 +5,12 @@ import { useBreadcrumbs } from 'react-aria';
 
 import { type BreadcrumbProps } from './breadcrumb.types.js';
 
-export function Breadcrumb({ className, children, ...props }: BreadcrumbProps) {
+export function Breadcrumb({ className, children, 'aria-label': ariaLabel = 'Breadcrumb', ...props }: BreadcrumbProps) {
   const { navProps } = useBreadcrumbs(props);
   const childCount = Children.count(children);
 
   return (
-    <nav className={className} {...navProps}>
+    <nav className={className} aria-label={ariaLabel} {...navProps}>
       <ol className="m-0 flex list-none p-0">
         {Children.map(
           children,

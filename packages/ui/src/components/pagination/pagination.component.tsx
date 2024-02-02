@@ -111,7 +111,7 @@ export function Pagination({
   }, [current, onChange, linkComponent, pages, infinite]);
 
   return (
-    <Tag className={styles.base({ className })} role={role} {...props}>
+    <Tag className={styles.base({ className })} role={role} aria-label="Page number" {...props}>
       <ul className={styles.ul({})}>
         <li>
           <PaginationItem {...paginationBackProps}>{backLabel}</PaginationItem>

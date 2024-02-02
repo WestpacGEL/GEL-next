@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { createContext, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useCheckboxGroup, useFocusRing } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
@@ -42,6 +42,7 @@ export function CheckboxGroup({
   const firstNewCheckboxRef = useRef<HTMLDivElement>(null);
   const revealAmount = checkboxes && checkboxes.length - showAmount;
   const styles = checkboxStyles({ orientation, isFocusVisible });
+  const panelId = useId();
   const childrenToRender = useMemo(() => {
     const newChildren = checkboxes.map((checkbox, index) => (
       <CheckboxGroupCheckbox key={index} ref={index === showAmount ? firstNewCheckboxRef : null} {...checkbox} />
@@ -63,7 +64,7 @@ export function CheckboxGroup({
       {errorMessage && state.validationState === 'invalid' && (
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}
-      <div className={styles.itemWrapper()}>
+      <div className={styles.itemWrapper()} id={panelId}>
         <CheckboxGroupContext.Provider value={{ ...state, orientation, size }}>
           {childrenToRender}
         </CheckboxGroupContext.Provider>
@@ -73,6 +74,8 @@ export function CheckboxGroup({
             className={styles.revealButton()}
             look="link"
             iconAfter={() => <ExpandMoreIcon size="small" color="link" />}
+            aria-controls={panelId}
+            aria-expanded={!hiddenOptions}
             {...focusProps}
           >
             <p className={styles.buttonText()}>{`Show ${revealAmount} more ${

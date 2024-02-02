@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { createContext, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useFocusRing, useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
@@ -47,6 +47,7 @@ export function RadioGroup({
   const firstNewRadioRef = useRef<HTMLDivElement>(null);
   const revealAmount = radios && radios.length - showAmount;
   const styles = radioGroupStyles({ orientation, isFocusVisible });
+  const panelId = useId();
   const childrenToRender = useMemo(() => {
     const newChildren = radios.map((radio, index) => (
       <RadioGroupRadio key={index} ref={index === showAmount ? firstNewRadioRef : null} {...radio} />
@@ -68,7 +69,7 @@ export function RadioGroup({
       {errorMessage && state.validationState === 'invalid' && (
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}
-      <div className={styles.radioWrapper()}>
+      <div className={styles.radioWrapper()} id={panelId}>
         <RadioGroupContext.Provider value={{ ...state, orientation, size }}>
           {childrenToRender}
         </RadioGroupContext.Provider>
@@ -78,6 +79,8 @@ export function RadioGroup({
             className={styles.revealButton()}
             look="link"
             iconAfter={() => <ExpandMoreIcon size="small" color="link" />}
+            aria-controls={panelId}
+            aria-expanded={!hiddenOptions}
             {...focusProps}
           >
             <p className={styles.buttonText()}>{`Show ${revealAmount} more ${
