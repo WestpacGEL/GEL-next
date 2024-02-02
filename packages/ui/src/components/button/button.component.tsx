@@ -38,9 +38,9 @@ function BaseButton(
 
   return (
     <Tag ref={ref} className={styles.base({ className })} {...mergeProps(props, focusProps)}>
-      {IconBefore && <IconBefore size={iconSize} className={styles.iconBefore()} color={iconColor} />}
+      {IconBefore && <IconBefore size={iconSize} className={styles.iconBefore()} color={iconColor} aria-hidden />}
       <span className={styles.text()}>{children}</span>
-      {IconAfter && <IconAfter size={iconSize} className={styles.iconAfter()} color={iconColor} />}
+      {IconAfter && <IconAfter size={iconSize} className={styles.iconAfter()} color={iconColor} aria-hidden />}
     </Tag>
   );
 }

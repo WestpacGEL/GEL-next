@@ -21,6 +21,7 @@ export function ProgressRopeGroupStep({
   firstItem,
   opened,
   onToggle,
+  tag: Tag,
 }: ProgressRopeGroupStepProps) {
   const id = useId();
   const stepsContainerID = `progress-rope-group-steps-container-${id}`;
@@ -35,13 +36,13 @@ export function ProgressRopeGroupStep({
 
   const visuallyHiddenMessage = useMemo(() => {
     if (steps.slice(-1)[0].index < (furthestVisitedStep || 0)) {
-      return 'completed';
+      return ', completed';
     }
-    if (current) {
-      return 'in progress';
+    if (current || visited) {
+      return ', in progress';
     }
-    return 'not started';
-  }, [steps, furthestVisitedStep]);
+    return ', not started';
+  }, [steps, furthestVisitedStep, current, visited]);
 
   const { isFocusVisible, focusProps } = useFocusRing();
 
@@ -60,7 +61,7 @@ export function ProgressRopeGroupStep({
 
   const styles = progressRopeGroupStyles({ firstItem, state, isFocusVisible });
   return (
-    <>
+    <Tag>
       <button
         aria-expanded={opened}
         className={styles.circleWrapper({})}
@@ -70,7 +71,7 @@ export function ProgressRopeGroupStep({
       >
         <Circle className={styles.circle()} aria-hidden="true" />
         {children}
-        <VisuallyHidden>, {visuallyHiddenMessage}</VisuallyHidden>
+        <VisuallyHidden>{visuallyHiddenMessage}</VisuallyHidden>
       </button>
       <LazyMotion features={loadAnimations}>
         <AnimatePresence initial={false}>
@@ -110,6 +111,6 @@ export function ProgressRopeGroupStep({
           )}
         </AnimatePresence>
       </LazyMotion>
-    </>
+    </Tag>
   );
 }

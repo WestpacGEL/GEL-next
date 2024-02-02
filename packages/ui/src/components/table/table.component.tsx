@@ -15,9 +15,11 @@ export function Table({ bordered = false, striped = false, children, className, 
 
   return (
     <TableContext.Provider value={{ bordered, striped }}>
-      <table className={styles.base({ className })} {...props}>
-        {children}
-      </table>
+      <div className={styles.wrapper()}>
+        <table className={styles.base({ className })} {...props}>
+          {children}
+        </table>
+      </div>
     </TableContext.Provider>
   );
 }
