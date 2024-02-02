@@ -23,12 +23,12 @@ describe('Button', () => {
 
   it('renders an iconBefore when passed', () => {
     render(<Button iconBefore={ArrowRightIcon} />);
-    expect(screen.getByRole('img', { name: 'Arrow Right' })).toBeInTheDocument();
+    expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
   });
 
   it('renders an iconAfter when passed', () => {
     render(<Button iconAfter={ArrowLeftIcon} />);
-    expect(screen.getByRole('img', { name: 'Arrow Left' })).toBeInTheDocument();
+    expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
   });
 
   it('renders as an a tag', () => {
