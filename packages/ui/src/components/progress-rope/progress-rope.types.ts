@@ -32,6 +32,11 @@ export type ProgressRopeProps = {
       }
   )[];
   /**
+   * The semantic tag for the group step headings
+   * @default h3
+   */
+  headingTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /**
    * Tag to render
    * @default nav
    */

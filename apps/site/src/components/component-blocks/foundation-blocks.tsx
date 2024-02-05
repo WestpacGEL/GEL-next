@@ -2,6 +2,8 @@ import { Image } from '@/components/document-renderer';
 
 import { Colors } from './colors/colors.component';
 import { colors } from './colors/colors.preview';
+import { AccessibilityDemo } from './components/accessibility-demo';
+import { accessibilityDemo } from './components/accessibility-demo/accessibility-demo.preview';
 import { designSystemBodyImage } from './components/design-system-body-image';
 import { LinkList } from './components/link-list';
 import { linkList } from './components/link-list/link-list.preview';
@@ -27,6 +29,7 @@ export const foundationBlocks = {
   designSystemBodyImage,
   linkList,
   shortCode,
+  accessibilityDemo,
 };
 
 export const foundationBlocksComponents = {

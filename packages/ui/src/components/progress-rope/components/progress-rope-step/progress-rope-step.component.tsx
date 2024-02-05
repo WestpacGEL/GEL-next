@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
-import { Circle } from '../../../index.js';
+import { Circle, VisuallyHidden } from '../../../index.js';
 
 import { styles as progressRopeStyles } from './progress-rope-step.styles.js';
 import { type ProgressRopeStepProps } from './progress-rope-step.types.js';
@@ -57,15 +57,26 @@ export function ProgressRopeStep({
     isFocusVisible,
   });
 
+  const stateText = useMemo(() => {
+    if (current) {
+      return ', in progress';
+    }
+    if (visited || (!current && furthest)) {
+      return ', complete';
+    }
+    return ', not started';
+  }, [current, visited]);
+
   return (
     <Tag
       className={styles.base({})}
-      aria-current={current}
+      aria-current={current ? 'step' : false}
       disabled={state === 'non-visited'}
       {...mergeProps(props, focusProps)}
     >
       <Circle className={styles.circle()} aria-hidden="true" />
       {children}
+      <VisuallyHidden>{stateText}</VisuallyHidden>
     </Tag>
   );
 }
