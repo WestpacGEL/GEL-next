@@ -1,24 +1,11 @@
-import { component, fields } from '@keystatic/core';
-
-import { AccessibilityDemo } from '.';
+import { component } from '@keystatic/core';
 
 // Apparently the document field is not possible be implemented on a component.
 export const accessibilityDemo = component({
+  chromeless: true,
   label: 'Accessibility Demo',
-  preview: ({ fields }) => {
-    return <h1>Accessibility Demo</h1>;
-    // return <AccessibilityDemo content={content.value} />;
+  preview: () => {
+    return <h3>Accessibility demo placeholder</h3>;
   },
-  schema: {
-    // content: fields.document({
-    //   label: 'Content',
-    //   componentBlocks: {},
-    //   formatting: {
-    //     blockTypes: {
-    //       blockquote: true,
-    //       code: true,
-    //     },
-    //   },
-    // }),
-  },
+  schema: {},
 });
