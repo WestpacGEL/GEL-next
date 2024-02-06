@@ -4,23 +4,14 @@ Use the input group component to accessibly define the labels used with [Inputs,
 <FormGroup >
           <FormLabel htmlFor="formInput">Label</FormLabel>
             <FormHint>Hint text</FormHint>
-<errorMessage>If there is an error it can go here</errorMessage>
           <Input aria-describedby="formHint" width="20" id="formInput" name="test" />
         </FormGroup>
 ```
 
-testing 1
+testing 1 - using InputGroup - not FormGroup
 
 ```jsx
   <InputGroup label="Label" hint="Hint text"  errorMessage="If there is an error it can go here">
           <Input invalid />
         </InputGroup>
-```
-
-testing 2
-
-```jsx
-  <FormGroup label="Label" hint="Hint text"  errorMessage="If there is an error it can go here">
-          <Input invalid />
-        </FormGroup>
 ```
