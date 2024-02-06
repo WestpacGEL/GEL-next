@@ -1,4 +1,4 @@
-**Sizes:** There are four button group sizes, make sure when laying out forms that your button group size and field sizes are aligned.
+There are four button group sizes, make sure when laying out forms that your button group size and field sizes are aligned.
 
 ```tsx
 <div className="grid gap-3">
@@ -12,6 +12,8 @@
     ]}
   />
   <ButtonGroup 
+  label="Make a selection"
+    hintMessage="This is a medium button group"
     size="medium"
     buttons={[
       { value: "md", label: "Md - 36px"}, 
@@ -19,6 +21,8 @@
     ]}
     />
   <ButtonGroup 
+  label="Make a selection"
+    hintMessage="This is a large button group"
     size="large"
     buttons={[
       { value: "lg", label: "Lg - 42px"}, 
@@ -26,6 +30,8 @@
     ]}
   />
   <ButtonGroup 
+  label="Make a selection"
+    hintMessage="This is an xlarge button group"
     size="xlarge"
     buttons={[
       { value: "xl", label: "Xl - 48px"}, 

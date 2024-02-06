@@ -7,8 +7,8 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
-      name: Button groups
-      slug: button-groups
+      name: Sizes
+      slug: sizes
     noTitle: false
   - title:
       name: User experience
