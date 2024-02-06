@@ -5,6 +5,7 @@ description: >-
   comparing values.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Basic table
@@ -40,11 +41,11 @@ design:
     noTitle: false
 accessibility:
   - title:
-      name: Colour impairment demonstration
-      slug: colour-impairment-demonstration
-  - title:
       name: Accessibility features
       slug: accessibility-features
+  - title:
+      name: Colour impairment demonstration
+      slug: colour-impairment-demonstration
 relatedComponents:
   - title: Panels
     slug: components/panel
