@@ -4,6 +4,7 @@ description: >-
   to quickly define settings or preferences at an account or system level.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Switches
