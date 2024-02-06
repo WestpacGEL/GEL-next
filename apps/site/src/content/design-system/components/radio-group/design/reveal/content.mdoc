@@ -4,28 +4,22 @@ The radio component has the ability to hide a configurable portion of the option
 - Use data to inform your decisions on which options are surfaced at the screen level.
 - Surface the most popular and hide the rest behind the interaction.
 - Always express how many items are behind the reveal.
+- Reveal can be used with both Medium and Large sized radios.
 
 ```jsx
-<div className="grid grid-cols-2 gap-2">
   <RadioGroup 
-    label={<ComponentTitle>Medium</ComponentTitle>} 
-    size="medium" 
-    showAmount={1}
-    radios={[
-      { value: 'Option 1', label: 'Option 1' },
-      { value: 'Option 2', label: 'Option 2' },
-      { value: 'Option 3', label: 'Option 3' },
-    ]}
-  />
-  <RadioGroup 
-    label={<ComponentTitle>Large</ComponentTitle>} 
-    size="large" 
-    showAmount={1}
-    radios={[
-      { value: 'Option 1', label: 'Option 1' },
-      { value: 'Option 2', label: 'Option 2' },
-      { value: 'Option 3', label: 'Option 3' },
-    ]}
-  />
-</div>
+    hintMessage="These are large sized radios with more to reveal"
+    label="Select an option"
+      className="col-span-1" 
+      size="large"
+      showAmount={2}
+      radios={[
+        { value: "Option 1", label: "Option 1" },
+        { value: "Option 2", label: "Option 2" },
+        { value: "Option 3", label: "Option 3" },
+        { value: "Option 4", label: "Option 4" },
+        { value: "Option 5", label: "Option 5" },
+        { value: "Option 6", label: "Option 6" },
+      ]}
+    />
 ```
