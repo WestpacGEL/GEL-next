@@ -34,6 +34,10 @@ design:
       name: Dos and don’ts
       slug: dos-and-donts
     noTitle: false
+  - title:
+      name: Checkboxes with error state
+      slug: checkboxes-with-error-state
+    noTitle: false
 accessibility:
   - title:
       name: Accessibility features
