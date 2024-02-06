@@ -7,8 +7,16 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
-      name: Switches
-      slug: switches-design
+      name: Sizes
+      slug: sizes
+    noTitle: false
+  - title:
+      name: Block
+      slug: block
+    noTitle: false
+  - title:
+      name: Responsive breakpoint control
+      slug: responsive-breakpoint-control
     noTitle: false
   - title:
       name: User experience
