@@ -2,19 +2,23 @@ This variation allows supporting text to be displayed below the selectable item.
 
 ```jsx
 <div className="grid grid-cols-2">
+<div><h4 className="typography-body-10 text-muted italic mb-3">Medium</h4>
   <CheckboxGroup 
+  hintMessage="These are medium sized checkboxes"
+  label="Select an option"
     className="col-span-1" 
-    label={<ComponentTitle>Medium</ComponentTitle>} 
     size="medium"
     checkboxes={[
       { value: "Option 1", label: "Option 1", hint: "This is hint text" },
       { value: "Option 2", label: "Option 2", hint: "This is hint text" },
       { value: "Option 3", label: "Option 3", hint: "This is hint text" },
     ]}
-  />
-  <CheckboxGroup 
+  /></div>
+<div><h4 className="typography-body-10 text-muted italic mb-3">Large</h4>  
+<CheckboxGroup 
+  hintMessage="These are large sized checkboxes"
+  label="Select an option"
     className="col-span-1" 
-    label={<ComponentTitle>Large</ComponentTitle>} 
     size="large"
     checkboxes={[
       { value: "Option 1", label: "Option 1", hint: "This is hint text" },
@@ -22,5 +26,5 @@ This variation allows supporting text to be displayed below the selectable item.
       { value: "Option 3", label: "Option 3", hint: "This is hint text" },
     ]}
   />
-</div>
+</div></div>
 ```
