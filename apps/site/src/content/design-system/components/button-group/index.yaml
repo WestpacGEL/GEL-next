@@ -4,6 +4,7 @@ description: >-
   choice.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Button groups
