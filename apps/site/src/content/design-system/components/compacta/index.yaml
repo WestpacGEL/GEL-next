@@ -4,6 +4,7 @@ description: >-
   fields, saving valuable screen space.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Default
@@ -22,9 +23,6 @@ design:
       slug: dos-and-donts
     noTitle: false
 accessibility:
-  - title:
-      name: Colour impairment demonstration
-      slug: colour-impairment-demonstration
   - title:
       name: Accessibility notes
       slug: accessibility-notes
