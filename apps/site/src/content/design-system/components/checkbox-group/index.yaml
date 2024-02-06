@@ -23,6 +23,10 @@ design:
       slug: horizontal-layout
     noTitle: false
   - title:
+      name: Checkboxes with error state
+      slug: checkboxes-with-error-state
+    noTitle: false
+  - title:
       name: User experience
       slug: user-experience
     noTitle: false
@@ -33,10 +37,6 @@ design:
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
-    noTitle: false
-  - title:
-      name: Checkboxes with error state
-      slug: checkboxes-with-error-state
     noTitle: false
 accessibility:
   - title:
