@@ -11,16 +11,16 @@ design:
       slug: checkbox-sizes
     noTitle: false
   - title:
-      name: Horizontal layout
-      slug: horizontal-layout
-    noTitle: false
-  - title:
       name: Checkbox with hint text
       slug: checkbox-with-hint-text
     noTitle: false
   - title:
       name: Checkbox with reveal
       slug: checkbox-with-reveal
+    noTitle: false
+  - title:
+      name: Horizontal layout
+      slug: horizontal-layout
     noTitle: false
   - title:
       name: User experience
