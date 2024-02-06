@@ -8,6 +8,10 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
+      name: Labels
+      slug: labels
+    noTitle: false
+  - title:
       name: Add-ons
       slug: add-ons
     noTitle: false
