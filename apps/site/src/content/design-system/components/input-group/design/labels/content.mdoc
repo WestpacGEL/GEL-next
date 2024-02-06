@@ -3,21 +3,7 @@ All inputs require labels for usability and accessibility, use this component to
 ```jsx
 <FormGroup>
           <FormLabel htmlFor="formInput">Label</FormLabel>
-            <FormHint>Account number should have 10 digits</FormHint>
+            <FormHint>Hint text</FormHint>
           <Input aria-describedby="formHint" className="w-full" id="formInput" name="test" />
         </FormGroup>
-```
-
-```jsx
-      <FormGroup>
-        <div className="mb-4" width="6">
-            <FormLabel htmlFor={`input${groupOneId}`}>BSB</FormLabel>
-            <Input aria-describedby={`inputHint${groupOneId}`} width="10" id={`input${groupOneId}`} name={`input${groupOneId}`} />
-        </div>
-        <div>
-            <FormLabel htmlFor={`input${groupTwoId}`}>Account number</FormLabel>
-            <FormHint id={`inputHint${groupTwoId}`}>Account number should have 10 digits</FormHint>
-            <Input aria-describedby={`inputHint${groupTwoId}`}  width="18" id={`input${groupTwoId}`} name={`input${groupTwoId}`} />
-        </div>
-      </FormGroup>
 ```
