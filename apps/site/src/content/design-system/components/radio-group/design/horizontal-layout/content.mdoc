@@ -1,26 +1,14 @@
 Use this option when you require an inline layout, it's only recommended in very specific circumstances and we suggest never having more than two radio buttons side-by-side.
 
 ```jsx
-<div className="grid grid-cols-2 gap-2">
-  <RadioGroup 
-    label={<ComponentTitle>Medium</ComponentTitle>} 
-    orientation="horizontal"
-    radios={[
-      { value: 'Option 1', label: 'Option 1' },
-      { value: 'Option 2', label: 'Option 2' },
-      { value: 'Option 3', label: 'Option 3' },
-    ]}
-  />
-
-  <RadioGroup 
-    label={<ComponentTitle>Large</ComponentTitle>} 
-    size="large" 
-    orientation="horizontal"
-    radios={[
-      { value: 'Option 1', label: 'Option 1' },
-      { value: 'Option 2', label: 'Option 2' },
-      { value: 'Option 3', label: 'Option 3' },
-    ]}
-  />
-</div>
+<RadioGroup 
+  hintMessage="These are medium sized radios in a horizontal layout"
+  label="Select an option"
+  orientation="horizontal"
+size="medium"
+  radios={[
+    { value: "Option 1", label: "Option 1" },
+    { value: "Option 2", label: "Option 2" },
+  ]}
+/>
 ```
