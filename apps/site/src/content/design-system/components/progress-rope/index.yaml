@@ -4,6 +4,7 @@ description: >-
   applications and is designed to be used with the GEL forms framework.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Default progress rope
@@ -26,9 +27,6 @@ design:
       slug: dos-and-donts
     noTitle: false
 accessibility:
-  - title:
-      name: Colour impairment demonstration
-      slug: colour-impairment-demonstration
   - title:
       name: Accessibility features
       slug: accessibility-features
