@@ -4,6 +4,7 @@ description: >-
   something, or assist in providing “day of the week” context.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Sizes
@@ -30,9 +31,6 @@ design:
       slug: dos-and-donts
     noTitle: false
 accessibility:
-  - title:
-      name: Colour impairment demonstration
-      slug: colour-impairment-demonstration
   - title:
       name: Accessibility features
       slug: accessibility-features
