@@ -7,24 +7,24 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
-      name: Checkbox sizes
-      slug: checkbox-sizes
+      name: Sizes
+      slug: sizes
     noTitle: false
   - title:
-      name: Checkbox with hint text
-      slug: checkbox-with-hint-text
+      name: Hint text
+      slug: hint-text
     noTitle: false
   - title:
-      name: Checkbox with reveal
-      slug: checkbox-with-reveal
+      name: Reveal
+      slug: reveal
     noTitle: false
   - title:
       name: Horizontal layout
       slug: horizontal-layout
     noTitle: false
   - title:
-      name: Checkboxes with error state
-      slug: checkboxes-with-error-state
+      name: Error state
+      slug: error-state
     noTitle: false
   - title:
       name: User experience
