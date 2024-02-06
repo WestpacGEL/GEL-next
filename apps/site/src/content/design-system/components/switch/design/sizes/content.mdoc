@@ -8,32 +8,3 @@ We have one simple switch style that is available in four sizes (heights), with 
   <Switch size="xlarge" label="X Large 48px" />
 </div>
 ```
-
-**Block switches:** Use Block switches in small break points to align the label and element to either side of the screen. This behaviour can be set up to work responsively, and change depending on breakpoint.
-
-```jsx
-<div className="flex flex-col">
-  <Switch block label="eStatements" />
-  <Switch block label="Quick balance" />
-</div>
-```
-
-**Using responsive breakpoint control:** As well as determining if the switch is a Block switch, the switch's size can also change based on breakpoint.
-
-```jsx
-<div className="flex flex-col">
-  <em className="typography-body-10 mb-2">Medium size switch becomes Extra large from the MD breakpoint</em>
-  <Switch block size={{ initial: 'medium', md: 'xlarge' }} label="Medium → Extra large" />
-
-  <hr className="border-border my-4" />
-  <em className="typography-body-10 mb-2">Extra large size switch becomes small from the SM breakpoint</em>
-  <Switch block size={{ initial: 'xlarge', sm: 'small' }} label="Extra large → Small" />
-
-  <hr className="border-border my-4" />
-  <em className="typography-body-10 mb-2">
-    Small size switch becomes medium at the SM breakpoint, large at the MD breakpoint and Extra large at the LG
-    breakpoint
-  </em>
-  <Switch block size={{ initial: 'small', sm: 'medium', md: 'large', lg: 'xlarge' }} label="Small → Medium → Large → Extra large" />
-</div>
-```
