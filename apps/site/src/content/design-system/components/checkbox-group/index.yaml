@@ -4,6 +4,7 @@ description: >-
   user. They also require careful consideration to produce the best results.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Checkbox sizes
