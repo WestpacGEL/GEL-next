@@ -1,0 +1,15 @@
+Using block level button groups will allow the group to stretch the full width of the view port. This is useful for smaller viewports.
+
+```jsx
+<div className="grid gap-3">
+  <ButtonGroup 
+    look="hero" 
+    block
+    buttons={[
+      { value: "Email", label: "Email"}, 
+      { value: "Phone", label: "Phone" },
+      { value: "SMS", label: "SMS" }
+    ]}
+  />
+</div>
+```

@@ -11,6 +11,18 @@ design:
       slug: sizes
     noTitle: false
   - title:
+      name: Block
+      slug: block
+    noTitle: false
+  - title:
+      name: Multiple items
+      slug: multiple-items
+    noTitle: false
+  - title:
+      name: Error state
+      slug: error-state
+    noTitle: false
+  - title:
       name: User experience
       slug: user-experience
     noTitle: false
