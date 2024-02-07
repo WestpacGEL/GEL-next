@@ -3,7 +3,7 @@ Autocomplete fields come in four different sizes (heights), which align to the r
 ```jsx
 <div>
 <Autocomplete width="30" className="mb-6"
-  hintMessage="This is a small autocomplete"
+  hintMessage="This is a Small autocomplete"
   label="Label"
   noOptionsMessage="No options"
 size="small"
@@ -19,7 +19,7 @@ size="small"
   </AutocompleteItem>
 </Autocomplete>
 <Autocomplete width="30" className="mb-6"
-  hintMessage="This is a medium autocomplete"
+  hintMessage="This is a Medium autocomplete"
   label="Label"
   noOptionsMessage="No options"
 size="medium"
@@ -34,21 +34,36 @@ size="medium"
     Blue
   </AutocompleteItem>
 </Autocomplete>
-  <Autocomplete label="Large example" size="large" className="mb-6">
-    <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
-    <AutocompleteItem key="cat">Cat</AutocompleteItem>
-    <AutocompleteItem key="dog">Dog</AutocompleteItem>
-    <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
-    <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
-    <AutocompleteItem key="snake">Snake</AutocompleteItem>
-  </Autocomplete>
-  <Autocomplete label="X-Large example" size="xlarge">
-    <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
-    <AutocompleteItem key="cat">Cat</AutocompleteItem>
-    <AutocompleteItem key="dog">Dog</AutocompleteItem>
-    <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
-    <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
-    <AutocompleteItem key="snake">Snake</AutocompleteItem>
-  </Autocomplete>
+<Autocomplete width="30" className="mb-6"
+  hintMessage="This is a Large autocomplete"
+  label="Label"
+  noOptionsMessage="No options"
+size="large"
+>
+  <AutocompleteItem>
+    Green
+  </AutocompleteItem>
+  <AutocompleteItem>
+    Purple
+  </AutocompleteItem>
+  <AutocompleteItem>
+    Blue
+  </AutocompleteItem>
+</Autocomplete>
+<Autocomplete width="30" className="mb-6"
+  hintMessage="This is a xLarge autocomplete"
+  label="Label"
+  noOptionsMessage="No options"
+size="xlarge"
+>
+  <AutocompleteItem>
+    Green
+  </AutocompleteItem>
+  <AutocompleteItem>
+    Purple
+  </AutocompleteItem>
+  <AutocompleteItem>
+    Blue
+  </AutocompleteItem>
 </div>
 ```
