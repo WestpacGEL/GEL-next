@@ -4,6 +4,7 @@ description: >-
   the input process and enhancing the user experience.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Autocomplete
