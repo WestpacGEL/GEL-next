@@ -4,22 +4,27 @@ description: >-
   user. They also require careful consideration to produce the best results.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
-      name: Checkbox sizes
-      slug: checkbox-sizes
+      name: Sizes
+      slug: sizes
+    noTitle: false
+  - title:
+      name: Hint text
+      slug: hint-text
+    noTitle: false
+  - title:
+      name: Reveal
+      slug: reveal
     noTitle: false
   - title:
       name: Horizontal layout
       slug: horizontal-layout
     noTitle: false
   - title:
-      name: Checkbox with hint text
-      slug: checkbox-with-hint-text
-    noTitle: false
-  - title:
-      name: Checkbox with reveal
-      slug: checkbox-with-reveal
+      name: Error state
+      slug: error-state
     noTitle: false
   - title:
       name: User experience

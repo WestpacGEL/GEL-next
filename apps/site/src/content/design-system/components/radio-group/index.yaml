@@ -4,22 +4,27 @@ description: >-
   They also require careful consideration to produce the best results.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
-      name: Radio sizes
-      slug: radio-sizes
+      name: Sizes
+      slug: sizes
+    noTitle: false
+  - title:
+      name: Hint text
+      slug: hint-text
+    noTitle: false
+  - title:
+      name: Reveal
+      slug: reveal
     noTitle: false
   - title:
       name: Horizontal layout
       slug: horizontal-layout
     noTitle: false
   - title:
-      name: Radios with hint text
-      slug: radios-with-hint-text
-    noTitle: false
-  - title:
-      name: Radios with reveal
-      slug: radios-with-reveal
+      name: Error state
+      slug: error-state
     noTitle: false
   - title:
       name: User experience

@@ -4,6 +4,7 @@ description: >-
   less effort.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Error messages

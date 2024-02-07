@@ -1,12 +1,16 @@
 name: Input groups
 description: >-
-  The input group component contains elements that can be used with form inputs
-  to improve usability and streamline form completion. These include add-ons,
-  icons and supporting text.
+  The input group component comprises elements used with form inputs. These
+  elements include labels, add-ons, icons and supporting text, all aimed at
+  enhancing accessibility, usability and streamlining form completion. 
 namedExport:
   discriminant: false
 excludeFromNavbar: false
 design:
+  - title:
+      name: Labels
+      slug: labels
+    noTitle: false
   - title:
       name: Add-ons
       slug: add-ons

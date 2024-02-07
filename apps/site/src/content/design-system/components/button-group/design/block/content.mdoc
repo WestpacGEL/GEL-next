@@ -1,0 +1,18 @@
+Using block-level button groups will allow the button group to stretch the full width of its container, which is useful for smaller viewports. Use the 'Demo' button to see this component working responsively.
+
+```jsx
+<div className="grid gap-3">
+  <ButtonGroup 
+hintMessage="This is a responsive block button group"
+    label="How would you like us to contact you?"
+    look="hero" 
+    block
+      size="large"
+    buttons={[
+      { value: "Email", label: "Email"}, 
+      { value: "Phone", label: "Phone" },
+      { value: "SMS", label: "SMS" }
+    ]}
+  />
+</div>
+```

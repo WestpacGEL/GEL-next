@@ -1,0 +1,26 @@
+We recommend only using up to 3 items in a button group, any more can become too difficult to scan and can become problematic at smaller viewports. Is also best to keep the labels short.
+
+```tsx
+<div className="grid gap-6">
+  <ButtonGroup 
+    label="Would you like to receive eStatements"
+    look="hero" 
+      size="large"
+    buttons={[
+      { value: "Yes", label: "Yes"}, 
+      { value: "No", label: "No" }
+    ]}
+  />
+
+  <ButtonGroup 
+    label="How would you like us to contact you?"
+    look="hero" 
+      size="large"
+    buttons={[
+      { value: "Email", label: "Email"}, 
+      { value: "Phone", label: "Phone" },
+      { value: "SMS", label: "SMS" }
+    ]}
+  />
+</div>
+```

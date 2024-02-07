@@ -1,0 +1,17 @@
+Use the input group component to accessibly define the labels used with [Inputs,](/components/inputs) [Selects](/components/selects) and [Text areas](/components/textareas). All inputs require labels for usability and accessibility.
+
+```jsx
+<FormGroup >
+          <FormLabel htmlFor="formInput">Label</FormLabel>
+            <FormHint>Hint text</FormHint>
+          <Input aria-describedby="formHint" width="20" id="formInput" name="test" />
+        </FormGroup>
+```
+
+testing 1 - using InputGroup - not FormGroup
+
+```jsx
+  <InputGroup label="Label" hint="Hint text"  errorMessage="If there is an error it can go here">
+          <Input invalid />
+        </InputGroup>
+```

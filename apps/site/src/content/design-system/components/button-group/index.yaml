@@ -4,10 +4,23 @@ description: >-
   choice.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
-      name: Button groups
-      slug: button-groups
+      name: Sizes
+      slug: sizes
+    noTitle: false
+  - title:
+      name: Block
+      slug: block
+    noTitle: false
+  - title:
+      name: Multiple items
+      slug: multiple-items
+    noTitle: false
+  - title:
+      name: Error state
+      slug: error-state
     noTitle: false
   - title:
       name: User experience

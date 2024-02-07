@@ -1,0 +1,17 @@
+All form elements have associated error states, see [Error messages](/design-system/wbc/content/guidelines/error-message) in our content guidelines for more.
+
+```jsx
+  <RadioGroup 
+errorMessage="This is an inline error message"    
+hintMessage="These are large sized radios"
+    label="Select an option"
+  validationState="invalid"
+      className="col-span-1" 
+      size="large"
+      radios={[
+        { value: "Option 1", label: "Option 1" },
+        { value: "Option 2", label: "Option 2" },
+        { value: "Option 3", label: "Option 3" },
+      ]}
+    />
+```

@@ -2,11 +2,13 @@ Use this option when you require an inline layout, it's only recommended in very
 
 ```jsx
 <CheckboxGroup 
+  hintMessage="These are medium sized checkboxes in a horizontal layout"
+  label="Select an option"
   orientation="horizontal"
+size="medium"
   checkboxes={[
     { value: "Option 1", label: "Option 1" },
     { value: "Option 2", label: "Option 2" },
-    { value: "Option 3", label: "Option 3" },
   ]}
 />
 ```
