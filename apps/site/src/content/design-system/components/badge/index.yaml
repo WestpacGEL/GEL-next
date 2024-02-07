@@ -25,11 +25,11 @@ design:
     noTitle: false
 accessibility:
   - title:
-      name: Colour impairment demonstration
-      slug: colour-impairment-demonstration
-  - title:
       name: Accessibility features
       slug: accessibility-features
+  - title:
+      name: Colour impairment demonstration
+      slug: colour-impairment-demonstration
 relatedComponents:
   - title: Buttons
     slug: components/button

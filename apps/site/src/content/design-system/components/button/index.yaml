@@ -5,6 +5,7 @@ description: >-
   accessibility.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Button sizes
@@ -32,14 +33,14 @@ design:
     noTitle: false
 accessibility:
   - title:
-      name: Colour impairment demonstration
-      slug: colour-impairment-demonstration
-  - title:
       name: Accessibility features
       slug: accessibility-features
   - title:
       name: Notes on accessibility
       slug: notes-on-accessibility
+  - title:
+      name: Colour impairment demonstration
+      slug: colour-impairment-demonstration
 relatedComponents:
   - title: Icons
     slug: foundation/icon

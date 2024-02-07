@@ -2,6 +2,7 @@ name: Progress indicator
 description: Progress indicators are used to show a state of loading.
 namedExport:
   discriminant: false
+excludeFromNavbar: true
 design:
   - title:
       name: Progress indicator
