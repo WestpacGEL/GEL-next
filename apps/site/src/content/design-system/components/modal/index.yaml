@@ -5,6 +5,7 @@ description: >-
   user journey.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Modal sizes
