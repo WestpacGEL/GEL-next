@@ -6,6 +6,7 @@ description: >-
   complies with WGAG AA accessibility requirements.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Third Party Symbols
