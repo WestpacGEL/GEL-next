@@ -5,6 +5,7 @@ description: >-
   all devices. Use them to assist with visual communication.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Informative pictograms

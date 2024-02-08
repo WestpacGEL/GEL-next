@@ -1,8 +1,8 @@
-- A `<span>` element labeled with a description identifies the Pictogram
+- A `<svg>` element labeled with a description identifies the Pictogram
 - The Pictogram shape is visible in Windows High Contrast Mode
 - When using alongside descriptive visual text ensure `aria-hidden="true"` is used to hide the Pictogram from assistive technologies, otherwise users will receive duplicate descriptions
 
 ### Accessibility in the HTML
 
-- `<span aria-label="{DESCRIPTION}">`: Provides a label that describes the Pictogram
+- `<svg aria-label="{DESCRIPTION}">`: Provides a label that describes the Pictogram
 - `<svg role="img" focusable="false">`: Prevents the Pictogram SVG element from being traversed by browsers that map the SVG to the ‘group’ role and from unnecessarily receiving focus in Internet Explorer (IE)
