@@ -9,8 +9,8 @@
 
 - `<button>`&nbsp;/&nbsp;`<a>`: Identifies the element as a button (or link) element. Accessible name for the button is defined by the element’s text content. [React component: refer to&nbsp;*tag*&nbsp;prop]
 - `<a href="{URL}">`: Links styled to look like buttons must include an&nbsp;*href*. [React component: refer to&nbsp;*tag prop*&nbsp;and&nbsp;*href*&nbsp;attribute]
-- `<button aria-label="{BUTTON_LABEL}">`: Optionally use&nbsp;*aria-label*&nbsp;attribute to set a custom label (if different to the button text). The overall meaning of the&nbsp;*aria-label*&nbsp;must be consistent with the visual button text to ensure an optimal experience for speech recognition software users (i.e. Dragon NaturallySpeaking). [React component: refer to&nbsp;*assistiveText*&nbsp;prop]
-- `<span aria-hidden="true">`: Button icon elements have&nbsp;*aria-hidden="false"*&nbsp;to hide them from assistive technologies; they are visual embellishment. Generally the button text provides the button description, if this is not the case a custom label can be used which will be announced instead of the button text for screen reader users. [React component: refer to&nbsp;*iconBefore*,&nbsp;*iconAfter*&nbsp;and&nbsp;*assistiveText*&nbsp;props)
+- `<button aria-label="{BUTTON_LABEL}">` Optionally use aria-label attribute to set a custom label (if different to the button text). The overall meaning of the aria-label must be consistent with the visual button text to ensure an optimal experience for speech recognition software users (i.e. Dragon NaturallySpeaking)
+- `<svg aria-hidden="true">` Button icon elements have aria-hidden="true" to hide them from assistive technologies; they are visual embellishment. Generally the button text provides the button description, if this is not the case a custom label can be used which will be announced instead of the button text for screen reader users. [React component: refer to iconBefore and iconAfter props]
 
 ### Keyboard support
 
