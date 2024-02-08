@@ -1,8 +1,9 @@
-- A `<div>` element with “progressbar” *role* identifies an element that displays the progress status for a task that take a long time or consists of several steps. Various aria attributes provide min, max and current values.
+- A `<div>` element with “progressbar” role identifies an element that displays the progress status for a task that take a long time or consists of several steps. Various aria attributes provide min, max and current values. All of these are added through the useProgressBar hook from React Aria
 - The progress bar is configured to provide an indication of task or action completion in percentage units, announced as “x% complete”
 - Displaying the current value is optional; it can be visually hidden if required, but always provided to screen readers through aria value attributes
 - The progress bar shape and is visible in Windows High Contrast Mode (WHCM). The indicator bar is additionally rendered using a transparent CSS border to ensure visibility in WHCM.
 
 ### Accessibility in the HTML
 
-- `<div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0% complete" aria-live="polite">`: Provides a progress bar with aria attributes to indicate the actual progress value. The&nbsp;*aria-live*&nbsp;attribute informs assistive technologies the region receives updates that are important for the user to receive, but not so rapid as to be annoying. [React component: refer to&nbsp;*value*&nbsp;prop]
+- The progress bar uses the useProgressBar hook from React Aria to handle the accessibility code. Read the [full specifications](https://reactspectrum.blob.core.windows.net/reactspectrum/d77b35e970e5549f66b47a83f07423f5c93b7297/docs/react-aria/useProgressBar.html) for more information.
+- An `aria-live=”polite”` property has been added on top of React Aria to inform assistive technologies the region receives updates that are important for the user to receive, but not so rapid as to be annoying.

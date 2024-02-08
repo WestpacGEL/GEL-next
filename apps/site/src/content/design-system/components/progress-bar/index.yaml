@@ -5,6 +5,7 @@ description: >-
   completion value.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Progress bar
