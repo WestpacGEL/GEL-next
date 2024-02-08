@@ -4,6 +4,7 @@ description: >-
   to multiple pages of content, typically used in long form content.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Pagination
