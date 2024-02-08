@@ -5,6 +5,7 @@ description: >-
   orientation.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Breadcrumbs
