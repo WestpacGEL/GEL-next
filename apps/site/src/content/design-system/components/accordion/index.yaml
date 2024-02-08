@@ -4,6 +4,7 @@ description: >-
   group and simplify large amounts of content such as product information.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Accordion
