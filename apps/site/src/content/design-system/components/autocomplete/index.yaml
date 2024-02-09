@@ -32,9 +32,9 @@ accessibility:
       slug: notes-on-accessibility
 relatedComponents:
   - title: Icons
-    slug: /design-system/wbc/foundation/icon
+    slug: /foundation/icon
   - title: Text input
-    slug: /design-system/wbc/components/input
+    slug: /components/input
 code:
   - title:
       name: Development examples

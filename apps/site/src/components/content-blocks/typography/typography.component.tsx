@@ -23,8 +23,16 @@ export function Link({
   const params = useParams();
   const brand = (params.brand ?? 'wbc') as BrandKey;
   const isExternalLink = href.toString().indexOf('http') === 0 || href.toString().indexOf('mailto') === 0;
+  const isArticle = href.toString().indexOf('/article') === 0;
+  const isDesignSystem = href.toString().indexOf('/design-system') === 0;
+
   return (
-    <NextLink href={href} target={isExternalLink ? '_blank' : '_self'} className={linkStyles({ color })} {...props}>
+    <NextLink
+      href={isExternalLink || isArticle || isDesignSystem ? href : `/design-system/${brand}${href.toString()}`}
+      target={isExternalLink ? '_blank' : '_self'}
+      className={linkStyles({ color })}
+      {...props}
+    >
       {children}
       {isExternalLink && <NewWindowIcon size="xsmall" className="ml-1" />}
     </NextLink>
