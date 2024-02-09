@@ -5,6 +5,7 @@ description: >-
   or legal copy for example.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Bullet lists

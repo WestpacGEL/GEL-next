@@ -5,12 +5,12 @@
 
 ### Accessibility in the HTML
 
-- `<input type="radio|checkbox" aria-describedby="{HINT_ID}" id="{OPTION_ID}" name="{NAME}">`: Checkbox and Radio Selectors: each item option is defined as a radio or checkbox&nbsp;*input*&nbsp;and must have a unique&nbsp;*id*&nbsp;value. A consistent&nbsp;*name*&nbsp;attribute value is required for radio inputs for toggling to operate correctly. [React component:&nbsp;*id*&nbsp;is auto-generated]
-- `<label for="{OPTION_ID}">`: Each radio or checkbox&nbsp;*input*&nbsp;has a&nbsp;*label*&nbsp;element and uses explicit association (connected to the input using a&nbsp;*for*&nbsp;attribute) for optimal support in assistive technologies. [React component:&nbsp;*for*&nbsp;is auto-generated]
-- `<div id="{HINT_ID}">`: Hint text element must have a unique&nbsp;*id*&nbsp;value. The&nbsp;*input*&nbsp;element&nbsp;*aria-describedby*&nbsp;and hint text element&nbsp;*id*&nbsp;attribute values must match.
-- `<div aria-hidden="true">`: Indicator check/tick and next icons are hidden from assistive technologies; any selected/checked state is provided by the input
-- `<button aria-pressed="false|true">`: Button Selector: state is provided with&nbsp;*aria-pressed*&nbsp;attribute. Note: Button (and Link) Selector hint text is not associated as with Checkbox and Radio Selector; hint text is announced as standard button (or link) text.
-- `<span aria-hidden="true">`: Hides icon or pictogram SVGs from assistive technologies; they are visual embellishment
+- The button and link selector options use the useField hook from React Aria to handle the accessibility code. Read the [full specifications](https://react-spectrum.adobe.com/react-aria/useField.html) for more information.
+- The radio selector uses the useRadioGroup and useRadio hooks from React Aria to handle the accessibility code. Read the [full specifications](https://reactspectrum.blob.core.windows.net/reactspectrum/d77b35e970e5549f66b47a83f07423f5c93b7297/docs/react-aria/useRadioGroup.html) for more information.
+- · The checkbox selector option uses the useCheckboxGroup and useCheckboxGroupItem hooks from React Aria to handle the accessibility code. Read the [full specifications](https://reactspectrum.blob.core.windows.net/reactspectrum/d77b35e970e5549f66b47a83f07423f5c93b7297/docs/react-aria/useCheckboxGroup.html) for more information.
+- `<svg aria-hidden="true">`: Indicator check/tick and next icons are hidden from assistive technologies; any selected/checked state is provided by the input
+- `<button aria-pressed="false|true">`: Button Selector: state is provided with aria-pressed attribute. Note: Button (and Link) Selector hint text is not associated as with Checkbox and Radio Selector; hint text is announced as standard button (or link) text.
+- `<svg aria-hidden="true">`: Hides icon or pictogram SVGs from assistive technologies; they are visual embellishment
 
 ### Keyboard support
 

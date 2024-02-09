@@ -8,6 +8,7 @@ namedExport:
   discriminant: true
   value:
     name: Symbol
+excludeFromNavbar: false
 design:
   - title:
       name: Logos

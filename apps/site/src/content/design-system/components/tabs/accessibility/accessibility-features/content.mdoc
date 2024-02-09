@@ -1,12 +1,10 @@
 - The tabset is implemented as a set of buttons, rather than tabs. This approach has shown to provide a better user experience.
 - An indicator outline appears around the toggle buttons when focused
-- The tabcordion shape, text and accordion toggle icons are visible in Windows High Contrast Mode
+- The tab shape, text and accordion toggle icons are visible in Windows High Contrast Mode
 
 ### Accessibility in the HTML
 
-- `<div role="tablist">`: Indicates that the element serves as a container for a set of tabs
-- `<button aria-controls="{PANEL_ID}" aria-expanded="true|false">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The&nbsp;*aria-controls*&nbsp;attribute creates an association between toggle button and collapsible element (panel).
-- `<div id="{PANEL_ID}" aria-hidden="false|true">`: The panel must have a unique&nbsp;*id*&nbsp;value. The toggle button&nbsp;*aria-controls*&nbsp;and panel&nbsp;*id*&nbsp;attribute values must match. The panel uses the&nbsp;*aria-hidden*&nbsp;attribute to hide from assistive technologies when no longer available.
+- The tab group, tab panel and tabs use the useTablist, useTabPanel and useTab hooks from React Aria to handle the accessibility code. Read the [full specifications](https://react-spectrum.adobe.com/react-aria/useTabList.html) for more information.
 
 ### Keyboard support
 

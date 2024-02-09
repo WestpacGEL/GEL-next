@@ -1,8 +1,8 @@
 - Indicator outline appears around the input and button elements when focused
-- Text input and select elements include a visually hidden label
+- Input group includes an option to visually hide the label
 - The input group shape and text content is visible in Windows High Contrast Mode (WHCM). Button ‘look’ styling (colour) is not visible in WHCM.
 
 ### Accessibility in the HTML
 
-- `<label for="{ID}">`: Each text input or select element has a visually hidden *label* element and uses explicit association (connected to the text input or select element using a *for* attribute) for optimal support in assistive technologies. [React component: refer to *label* prop to set label text, *for* is auto-generated]
-- `<input type="text" id="{ID}">` / `<select id="{ID}">`: Text input or select elements must have a unique *id* value. [React component: *id* is auto-generated]
+- `<label htmlFor="{ID}">` Input group has the option of having a visually hidden label element and uses explicit association for optimal support in assistive technologies. [React component: refer to srOnly prop, id is auto-generated]
+- `<input type="text" id="{ID}"> / <select id="{ID}">` Text input or select elements must have a unique id value. [React component: id is auto-generated but can be overwritten using instanceId property]
