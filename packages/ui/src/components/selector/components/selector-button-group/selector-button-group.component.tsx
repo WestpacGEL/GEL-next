@@ -5,7 +5,6 @@ import { useField } from 'react-aria';
 
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
-import { SelectorButtonGroupOption } from './components/index.js';
 import { styles } from './selector-button-group.styles.js';
 import { SelectorButtonGroupContextState, SelectorButtonGroupProps } from './selector-button-group.types.js';
 
@@ -52,11 +51,13 @@ export function SelectorButtonGroup({
   });
 
   return (
-    <div className={styles({ className, orientation })} {...fieldProps}>
+    <>
       {label && <Label {...labelProps}>{label}</Label>}
       {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
-      <SelectorButtonContext.Provider value={state}>{children}</SelectorButtonContext.Provider>
-    </div>
+      <div className={styles({ className, orientation })} {...fieldProps}>
+        <SelectorButtonContext.Provider value={state}>{children}</SelectorButtonContext.Provider>
+      </div>
+    </>
   );
 }

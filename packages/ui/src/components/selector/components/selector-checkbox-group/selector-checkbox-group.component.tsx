@@ -6,7 +6,6 @@ import { useCheckboxGroupState } from 'react-stately';
 
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
-import { SelectorCheckboxGroupOption } from './components/index.js';
 import { styles } from './selector-checkbox-group.styles.js';
 import {
   type SelectorCheckboxGroupContextState,
@@ -31,13 +30,15 @@ export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {
   const { groupProps, labelProps, descriptionProps, errorMessageProps } = useCheckboxGroup(props, state);
 
   return (
-    <div {...groupProps} className={styles({ className: groupProps.className })}>
+    <>
       {label && <Label {...labelProps}>{label}</Label>}
       {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && state.validationState === 'invalid' && (
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}
-      <SelectorCheckboxGroupContext.Provider value={state}>{children}</SelectorCheckboxGroupContext.Provider>
-    </div>
+      <div {...groupProps} className={styles({ className: groupProps.className })}>
+        <SelectorCheckboxGroupContext.Provider value={state}>{children}</SelectorCheckboxGroupContext.Provider>
+      </div>
+    </>
   );
 }

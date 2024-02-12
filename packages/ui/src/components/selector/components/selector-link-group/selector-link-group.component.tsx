@@ -5,7 +5,6 @@ import { useField } from 'react-aria';
 
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
-import { SelectorLinkGroupOption } from './components/index.js';
 import { styles } from './selector-link-group.styles.js';
 import { SelectorLinkGroupProps } from './selector-link-group.types.js';
 
@@ -35,11 +34,13 @@ export function SelectorLinkGroup({
   const state: { isDisabled?: boolean } = { isDisabled };
 
   return (
-    <div className={styles({ className, orientation })} {...fieldProps}>
+    <>
       {label && <Label {...labelProps}>{label}</Label>}
       {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
-      <SelectorLinkContext.Provider value={state}>{children}</SelectorLinkContext.Provider>
-    </div>
+      <div className={styles({ className, orientation })} {...fieldProps}>
+        <SelectorLinkContext.Provider value={state}>{children}</SelectorLinkContext.Provider>
+      </div>
+    </>
   );
 }
