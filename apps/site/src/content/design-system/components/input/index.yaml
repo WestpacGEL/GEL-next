@@ -7,8 +7,8 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
-      name: Inputs with lables
-      slug: inputs-with-lables
+      name: Inputs with labels
+      slug: inputs-with-labels
     noTitle: false
   - title:
       name: Sizes
