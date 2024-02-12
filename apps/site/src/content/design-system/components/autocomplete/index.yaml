@@ -15,6 +15,10 @@ design:
       slug: sizes
     noTitle: false
   - title:
+      name: Error state
+      slug: error-state
+    noTitle: false
+  - title:
       name: User experience
       slug: user-experience
     noTitle: false
@@ -25,10 +29,6 @@ design:
   - title:
       name: Dos and don'ts
       slug: dos-and-don-ts
-    noTitle: false
-  - title:
-      name: Error state
-      slug: error-state
     noTitle: false
 accessibility:
   - title:
