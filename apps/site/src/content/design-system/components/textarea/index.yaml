@@ -7,8 +7,16 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
+      name: Text area with labels
+      slug: text-area-with-labels
+    noTitle: false
+  - title:
       name: Sizes
       slug: sizes
+    noTitle: false
+  - title:
+      name: Error state
+      slug: error-state
     noTitle: false
   - title:
       name: User experience
