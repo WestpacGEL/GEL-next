@@ -22,6 +22,7 @@ export const styles = tv(
         true: {
           base: 'w-full',
         },
+        false: { base: 'w-auto' },
       },
     },
   },

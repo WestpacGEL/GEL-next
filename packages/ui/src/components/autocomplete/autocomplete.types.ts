@@ -44,6 +44,10 @@ export type AutocompleteProps<T extends object> = {
    */
   loadingState?: boolean;
   /**
+   * Name for input for forms
+   */
+  name?: string;
+  /**
    * No option message
    */
   noOptionsMessage?: ReactNode;
