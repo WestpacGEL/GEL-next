@@ -26,6 +26,10 @@ design:
       name: Dos and don’ts
       slug: dos-and-donts
     noTitle: false
+  - title:
+      name: Select with labels
+      slug: select-with-labels
+    noTitle: false
 accessibility:
   - title:
       name: Accessibility features
