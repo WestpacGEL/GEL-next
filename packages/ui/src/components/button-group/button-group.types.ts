@@ -1,15 +1,19 @@
 import { AriaRadioGroupProps } from 'react-aria';
 import { RadioGroupState } from 'react-stately';
+import { VariantProps } from 'tailwind-variants';
 
 import { type ButtonProps } from '../button/index.js';
 
+import { styles } from './components/button-group-button/button-group-button.styles.js';
 import { ButtonGroupButtonProps } from './components/button-group-button/button-group-button.types.js';
+
+type Variants = VariantProps<typeof styles>;
 
 export type ButtonGroupProps = {
   /**
    * Sets whether buttons fill the entire box they are located in
    */
-  block?: boolean;
+  block?: Variants['block'];
   /**
    * The `Button` components to render in the form of an object
    */
@@ -37,7 +41,7 @@ export type ButtonGroupContextState = {
   /**
    * Sets whether buttons fill the entire box they are located in
    */
-  block?: boolean;
+  block?: Variants['block'];
   /**
    * Controls look of `Button` components, can't be applied directly to `Button`
    */

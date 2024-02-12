@@ -57,16 +57,16 @@ export function Footer({
         <Grid className={styles.topRow()}>
           <GridItem span={12}>{children}</GridItem>
         </Grid>
-        <Grid>
-          <GridItem span={{ initial: 12, md: 1 }}>
-            {!hideLogo && (
+        {!hideLogo && (
+          <Grid>
+            <GridItem span={{ initial: 12, md: 1 }}>
               <a href={logoLink} className={styles.link()} {...focusProps}>
                 {srOnlyText && <VisuallyHidden>{srOnlyText}</VisuallyHidden>}
                 <Logo align="right" aria-label={logoAssistiveText} />
               </a>
-            )}
-          </GridItem>
-        </Grid>
+            </GridItem>
+          </Grid>
+        )}
       </div>
     </footer>
   );
