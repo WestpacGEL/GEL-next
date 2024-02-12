@@ -7,12 +7,20 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
+      name: Select with labels
+      slug: select-with-labels
+    noTitle: false
+  - title:
       name: Sizes
       slug: sizes
     noTitle: false
   - title:
       name: Fixed widths
       slug: fixed-widths
+    noTitle: false
+  - title:
+      name: Error state
+      slug: error-state
     noTitle: false
   - title:
       name: User experience

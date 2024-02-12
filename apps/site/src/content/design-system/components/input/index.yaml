@@ -4,7 +4,12 @@ description: >-
   used in forms and search tools allowing users to submit information.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
+  - title:
+      name: Inputs with labels
+      slug: inputs-with-labels
+    noTitle: false
   - title:
       name: Sizes
       slug: sizes
@@ -12,6 +17,10 @@ design:
   - title:
       name: Fixed widths
       slug: fixed-widths
+    noTitle: false
+  - title:
+      name: Error state
+      slug: error-state
     noTitle: false
   - title:
       name: User experience
