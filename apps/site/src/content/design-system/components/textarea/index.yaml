@@ -7,6 +7,10 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
+      name: Text area with labels
+      slug: text-area-with-labels
+    noTitle: false
+  - title:
       name: Sizes
       slug: sizes
     noTitle: false
