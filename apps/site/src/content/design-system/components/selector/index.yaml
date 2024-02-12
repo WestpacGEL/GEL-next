@@ -7,6 +7,10 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
+      name: Selector with labels
+      slug: selector-with-labels
+    noTitle: false
+  - title:
       name: Selector functionality
       slug: selector-functionality
     noTitle: false
