@@ -19,6 +19,10 @@ design:
       slug: fixed-widths
     noTitle: false
   - title:
+      name: Error state
+      slug: error-state
+    noTitle: false
+  - title:
       name: User experience
       slug: user-experience
     noTitle: false
