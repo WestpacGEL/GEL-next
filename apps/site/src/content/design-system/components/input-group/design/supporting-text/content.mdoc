@@ -3,7 +3,7 @@ Supporting text sits below the field, it can be a character count, or validated 
 ### Types
 
 ```tsx
-<InputGroup width={20} label="Supporting text" supportingText="I am supporting text">
+<InputGroup width="20" label="Supporting text" supportingText="I am supporting text">
   <Input />
 </InputGroup>
 ```
@@ -20,7 +20,7 @@ Supporting text sits below the field, it can be a character count, or validated 
   }, [inputValue]);
 
   return (
-    <InputGroup width={50} label="Comments" hint="Supporting text used for character count" supportingText={counterText}>
+    <InputGroup width="50" label="Comments" hint="Supporting text used for character count" supportingText={counterText}>
       <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
     </InputGroup>
   );
