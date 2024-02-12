@@ -26,6 +26,10 @@ design:
       name: Dos and don'ts
       slug: dos-and-don-ts
     noTitle: false
+  - title:
+      name: Error state
+      slug: error-state
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility

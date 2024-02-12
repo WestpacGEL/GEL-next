@@ -1,0 +1,22 @@
+All form elements have associated error states, see&nbsp;[Error messages](/content/guidelines/error-message)&nbsp;in our content guidelines for more.
+
+```jsx
+<Autocomplete width="30"
+  errorMessage="If there is an error it can go here"
+  hintMessage="Search for the appropriate colour"
+  label="What colour is the sky?"
+  noOptionsMessage="No options"
+  validationState="invalid"
+size="small"
+>
+  <AutocompleteItem>
+    Green
+  </AutocompleteItem>
+  <AutocompleteItem>
+    Purple
+  </AutocompleteItem>
+  <AutocompleteItem>
+    Blue
+  </AutocompleteItem>
+</Autocomplete>
+```
