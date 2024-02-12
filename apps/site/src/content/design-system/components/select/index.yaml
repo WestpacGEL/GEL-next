@@ -7,6 +7,10 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
+      name: Select with labels
+      slug: select-with-labels
+    noTitle: false
+  - title:
       name: Sizes
       slug: sizes
     noTitle: false
@@ -25,10 +29,6 @@ design:
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
-    noTitle: false
-  - title:
-      name: Select with labels
-      slug: select-with-labels
     noTitle: false
 accessibility:
   - title:
