@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function ServiceBellIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Service Bell',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   ...props
 }: IconProps) {
   return (

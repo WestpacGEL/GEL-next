@@ -12,7 +12,7 @@ export function CalendarPictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'Calendar',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   className,
   ...props
 }: PictogramProps) {

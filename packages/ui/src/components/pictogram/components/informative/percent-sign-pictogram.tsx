@@ -12,7 +12,7 @@ export function PercentSignPictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'Percent sign',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   className,
   ...props
 }: PictogramProps) {

@@ -3,7 +3,7 @@ import React from 'react';
 import { Icon } from '../icon.component.js';
 import { type IconProps } from '../icon.types.js';
 
-export function MoveToIcon({ 'aria-label': ariaLabel = 'Move To', copyrightYear = '2023', ...props }: IconProps) {
+export function MoveToIcon({ 'aria-label': ariaLabel = 'Move To', copyrightYear = '2024', ...props }: IconProps) {
   return (
     <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
       <path

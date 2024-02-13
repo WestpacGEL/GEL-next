@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function VerifiedIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Verified',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   ...props
 }: IconProps) {
   return (

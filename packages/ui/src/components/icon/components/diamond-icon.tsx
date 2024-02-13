@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function DiamondIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Diamond',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   ...props
 }: IconProps) {
   return (

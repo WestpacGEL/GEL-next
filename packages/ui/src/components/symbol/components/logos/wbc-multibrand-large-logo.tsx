@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export const WBCMultibrandLargeLogo = ({
   'aria-label': ariaLabel = 'Westpac',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   viewBoxWidth = 180,
   viewBoxHeight = 65,
   align = 'left',

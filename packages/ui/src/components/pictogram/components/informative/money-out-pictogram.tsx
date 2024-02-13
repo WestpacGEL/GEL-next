@@ -12,7 +12,7 @@ export function MoneyOutPictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'Money out',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   className,
   ...props
 }: PictogramProps) {

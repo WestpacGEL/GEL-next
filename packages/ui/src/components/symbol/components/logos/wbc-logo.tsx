@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export function WBCLogo({
   'aria-label': ariaLabel = 'Westpac',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   viewBoxWidth = 69,
   viewBoxHeight = 28,
   className,

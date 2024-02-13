@@ -5,7 +5,7 @@ import { type IconProps } from '../icon.types.js';
 
 export function QuestionMarkIcon({
   'aria-label': ariaLabel = 'Question Mark',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   ...props
 }: IconProps) {
   return (

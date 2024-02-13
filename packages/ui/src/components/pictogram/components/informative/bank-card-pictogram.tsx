@@ -12,7 +12,7 @@ export function BankCardPictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'Bank card',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   className,
   ...props
 }: PictogramProps) {
