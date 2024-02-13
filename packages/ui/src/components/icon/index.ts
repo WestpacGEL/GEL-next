@@ -156,6 +156,7 @@ export { PercentIcon } from './components/percent-icon.js';
 export { PersonIcon } from './components/person-icon.js';
 export { PhoneIcon } from './components/phone-icon.js';
 export { PieChartIcon } from './components/pie-chart-icon.js';
+export { PiggyBankIcon } from './components/piggy-bank.js';
 export { PizzaIcon } from './components/pizza-icon.js';
 export { PlaneIcon } from './components/plane-icon.js';
 export { PlayCircleIcon } from './components/play-circle-icon.js';
