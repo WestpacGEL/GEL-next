@@ -5,7 +5,7 @@ import { type IconProps } from '../icon.types.js';
 
 export function FutureClockIcon({
   'aria-label': ariaLabel = 'Future Clock',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   ...props
 }: IconProps) {
   return (

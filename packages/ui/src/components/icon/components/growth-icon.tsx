@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function GrowthIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Growth',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   ...props
 }: IconProps) {
   return (

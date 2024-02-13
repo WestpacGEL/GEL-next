@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export function BOMLogo({
   'aria-label': ariaLabel = 'Bank of Melbourne',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   viewBoxWidth = 150,
   viewBoxHeight = 39,
   className,

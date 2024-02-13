@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function FirstAidCaseIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'First Aid Case',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   ...props
 }: IconProps) {
   return (
