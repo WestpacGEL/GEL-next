@@ -2,22 +2,30 @@ name: Input groups
 description: >-
   Input group is an input field either followed or preceded by an input or
   character. They are useful for giving context to input field values.
+namedExport:
+  discriminant: false
+excludeFromNavbar: true
 design:
   - title:
       name: Input group examples
       slug: input-group-examples
+    noTitle: false
   - title:
       name: Input group sizes
       slug: input-group-sizes
+    noTitle: false
   - title:
       name: User experience
       slug: user-experience
+    noTitle: false
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
 accessibility:
   - title:
       name: Notes on accessibility
@@ -31,10 +39,11 @@ accessibility:
   - title:
       name: Accessibility API
       slug: accessibility-api
+relatedComponents:
+  - title: Text inputs
+    slug: components/input
 code:
   - title:
       name: Development examples
       slug: development-examples
-relatedComponents:
-  - title: Text inputs
-    slug: components/input
+    noTitle: false
