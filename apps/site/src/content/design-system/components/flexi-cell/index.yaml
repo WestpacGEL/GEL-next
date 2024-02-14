@@ -6,7 +6,11 @@ description: >-
 namedExport:
   discriminant: false
 excludeFromNavbar: true
-design: []
+design:
+  - title:
+      name: Promotional tile
+      slug: promotional-tile
+    noTitle: false
 accessibility: []
 relatedComponents: []
 code:

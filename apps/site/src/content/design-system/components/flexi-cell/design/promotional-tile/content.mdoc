@@ -1,0 +1,36 @@
+The date picker can be used in various sizes to match the UI direction.
+
+```jsx
+{
+  args: {},
+  render: () => {
+    return <div className="flex flex-col">
+        {MOCK_PROMOS.map(({
+        title,
+        subtitle,
+        stars
+      }) => <FlexiCell tag="a" href="#" key={title} withBorder before={<FlexiCellAdornment align="center">
+                <FlexiCellCircle className="h-[70px] w-[70px] border border-border bg-white">
+                  <VisaBlueSymbol />
+                </FlexiCellCircle>
+              </FlexiCellAdornment>} topBadge={({
+        className
+      }) => <Badge className={className + ' leading-normal'} aria-hidden={stars ?? 'true'}>
+                {stars ? '✭' : 'Corner flag'}
+              </Badge>}>
+            <FlexiCellLabel className="text-[12px] font-normal text-muted" tag="p">
+              MYER
+            </FlexiCellLabel>
+            <FlexiCellLabel className="text-hero" tag="h4">
+              {title}
+            </FlexiCellLabel>
+            <FlexiCellHint>{subtitle}</FlexiCellHint>
+            <FlexiCellFooter>
+              <Badge color="primary">Badge 1</Badge>
+              <Badge color="faint">Badge 2</Badge>
+            </FlexiCellFooter>
+          </FlexiCell>)}
+      </div>;
+  }
+}
+```
