@@ -4,6 +4,7 @@ description: >-
   want to surface at the page or screen level, but needs to be findable.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Examples
