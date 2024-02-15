@@ -8,12 +8,16 @@ namedExport:
 excludeFromNavbar: true
 design:
   - title:
-      name: Promotional tile
-      slug: promotional-tile
+      name: Product tiles
+      slug: demo
     noTitle: false
   - title:
-      name: Demo
-      slug: demo
+      name: Promotional tiles vertical
+      slug: promotional-tiles-vertical
+    noTitle: false
+  - title:
+      name: Product tile with badge
+      slug: product-tile-with-badge
     noTitle: false
 accessibility: []
 relatedComponents: []
