@@ -11,6 +11,10 @@ design:
       name: Promotional tile
       slug: promotional-tile
     noTitle: false
+  - title:
+      name: Demo
+      slug: demo
+    noTitle: false
 accessibility: []
 relatedComponents: []
 code:
