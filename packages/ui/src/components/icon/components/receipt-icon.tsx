@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function ReceiptIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Receipt',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   ...props
 }: IconProps) {
   return (

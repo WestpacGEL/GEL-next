@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export function BOMMultibrandSmallLogo({
   'aria-label': ariaLabel = 'Bank of Melbourne',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   viewBoxWidth = 122,
   viewBoxHeight = 44,
   align = 'left',

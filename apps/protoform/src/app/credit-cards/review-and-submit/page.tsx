@@ -82,20 +82,14 @@ export default function Address() {
   return (
     <div>
       <BackButton onClick={() => router.push('/credit-cards/address')}>Back to Address</BackButton>
-      <CustomHeading>Review and submit</CustomHeading>
+      <CustomHeading leadText="[Dummy lead text to be replaced later]">Review and submit</CustomHeading>
       <ReviewSection baseEditRoute="/credit-cards" sections={SECTION_ITEMS} />
       <div className="border-t-[1px] border-t-border pt-5">
         <PhoneIcon color="primary" size="large" className="mb-5" />
         <h3 className="typography-body-8 pb-5 font-bold text-heading">Help protect your application</h3>
         <p>Before continuing we’ll send you a one-time passcode to your mobile for added security.</p>
       </div>
-      <Cta
-        primaryType="submit"
-        secondaryOnClick={() => router.push('/credit-cards/address')}
-        secondary="Back"
-        tertiaryOnClick={() => router.push('/')}
-        tertiary="Cancel"
-      >
+      <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
         Send SMS code
       </Cta>
     </div>

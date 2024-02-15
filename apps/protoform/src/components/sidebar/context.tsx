@@ -5,7 +5,7 @@ import { Dispatch, SetStateAction, createContext, useContext, useState } from 'r
 
 type SidebarContextType = {
   open: boolean | null;
-  ropeData: ProgressRopeProps['data'];
+  ropeData?: ProgressRopeProps['data'];
   ropeStep: number;
   setOpen: Dispatch<SetStateAction<boolean>>;
   setRopeData: Dispatch<SetStateAction<ProgressRopeProps['data']>>;

@@ -7,6 +7,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { BackButton } from '@/components/back-button/back-button';
 import { Cta } from '@/components/cta/cta';
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
+import { ErrorValidationAlert, ValidationErrorType } from '@/components/error-validation-alert/error-validation-alert';
 import { useSidebar } from '@/components/sidebar/context';
 import { defaultError } from '@/constants/form-contsants';
 import { getFormData } from '@/utils/getFormData';
@@ -23,6 +24,7 @@ export default function NameAndContact() {
   const [dobMonthError, setDobMonthError] = useState('');
   const [dobYearError, setDobYearError] = useState('');
   const [mobileError, setMobileError] = useState('');
+  const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
 
   // eslint-disable-next-line sonarjs/cognitive-complexity
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -47,6 +49,13 @@ export default function NameAndContact() {
       setDobMonthError(!dobMonth ? defaultError : '');
       setDobYearError(!dobYear ? defaultError : '');
       setMobileError(!mobileNumber ? defaultError : '');
+      setValidationErrors([
+        ...(!title ? [{ id: 'title', label: 'Title' }] : []),
+        ...(!givenName ? [{ id: 'givenName', label: 'Given name' }] : []),
+        ...(!familyName ? [{ id: 'familyName', label: 'Family name' }] : []),
+        ...(!dobDay || !dobMonth || !dobYear ? [{ id: 'dob', label: 'Date of birth' }] : []),
+        ...(!mobileNumber ? [{ id: 'mobileNumber', label: 'Mobile number' }] : []),
+      ]);
     } else {
       setData({ ...data, title, givenName, middleName, familyName, dobDay, dobMonth, dobYear, mobileNumber });
       router.push('/credit-cards/address');
@@ -62,11 +71,14 @@ export default function NameAndContact() {
   return (
     <div>
       <BackButton onClick={() => router.push('/credit-cards/credit-limit')}>Back to Credit limit</BackButton>
-      <CustomHeading>Name & contact</CustomHeading>
-      <Form id="credit-card" spacing="large" className="pt-6" onSubmit={handleSubmit}>
+      <CustomHeading groupHeading="Your details" leadText="[Dummy lead text to be replaced later]">
+        Name & contact
+      </CustomHeading>
+      {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
+      <Form id="credit-card" spacing="large" onSubmit={handleSubmit}>
         <FormSection className="border-none !p-0">
           <FormGroup>
-            <InputGroup label="Title" size="large" errorMessage={titleError}>
+            <InputGroup label="Title" size="large" errorMessage={titleError} instanceId="title">
               <Select name="title" defaultValue={data.title} invalid={!!titleError}>
                 <option value="">Select</option>
                 <option value="Mr">Mr</option>
@@ -77,7 +89,7 @@ export default function NameAndContact() {
           </FormGroup>
 
           <FormGroup>
-            <InputGroup size="large" label="Given name" errorMessage={givenNameError}>
+            <InputGroup size="large" label="Given name" instanceId="givenName" errorMessage={givenNameError}>
               <Input name="givenName" defaultValue={data.givenName} invalid={!!givenNameError} />
             </InputGroup>
           </FormGroup>
@@ -89,7 +101,7 @@ export default function NameAndContact() {
           </FormGroup>
 
           <FormGroup>
-            <InputGroup size="large" label="Family name" errorMessage={familyNameError}>
+            <InputGroup size="large" instanceId="familyName" label="Family name" errorMessage={familyNameError}>
               <Input name="familyName" defaultValue={data.familyName} invalid={!!familyNameError} />
             </InputGroup>
           </FormGroup>
@@ -99,6 +111,7 @@ export default function NameAndContact() {
               size="large"
               label="Date of birth"
               hint="For example 31 3 1980"
+              instanceId="dob"
               errorMessage={dobDayError || dobMonthError || dobYearError}
             >
               <Field className="mr-2" label="Day">
@@ -138,18 +151,13 @@ export default function NameAndContact() {
               hint="We’ll send a verification code to your divhone later, to create your account."
               errorMessage={mobileError}
               before="AUS +61"
+              instanceId="mobileNumber"
             >
               <Input name="mobileNumber" defaultValue={data.mobileNumber} invalid={!!mobileError} />
             </InputGroup>
           </FormGroup>
         </FormSection>
-        <Cta
-          primaryType="submit"
-          secondaryOnClick={() => router.push('/credit-cards')}
-          secondary="Back"
-          tertiaryOnClick={() => router.push('/')}
-          tertiary="Cancel"
-        >
+        <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
       </Form>

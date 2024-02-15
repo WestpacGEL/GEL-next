@@ -7,6 +7,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { BackButton } from '@/components/back-button/back-button';
 import { Cta } from '@/components/cta/cta';
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
+import { ErrorValidationAlert, ValidationErrorType } from '@/components/error-validation-alert/error-validation-alert';
 import { useSidebar } from '@/components/sidebar/context';
 import { defaultError } from '@/constants/form-contsants';
 import { getFormData } from '@/utils/getFormData';
@@ -19,6 +20,7 @@ export default function IncomeAndSavings() {
   const [incomeError, setIncomeError] = useState('');
   const [freqError, setFreqError] = useState('');
   const [balanceError, setBalanceError] = useState('');
+  const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,6 +33,11 @@ export default function IncomeAndSavings() {
       setIncomeError(!income ? defaultError : '');
       setBalanceError(!totalBal ? defaultError : '');
       setFreqError(!incomeFreq ? defaultError : '');
+      setValidationErrors([
+        ...(!totalBal ? [{ id: 'totalBal', label: 'Total balances in savings / investment accounts' }] : []),
+        ...(!income ? [{ id: 'income', label: 'Income / salary / pension' }] : []),
+        ...(!incomeFreq ? [{ id: 'incomeFreq', label: 'Income frequency' }] : []),
+      ]);
     } else {
       setData({ ...data, totalBal, incomeFreq, income });
       router.push('/credit-cards/loans-and-cards');
@@ -46,8 +53,11 @@ export default function IncomeAndSavings() {
   return (
     <div>
       <BackButton onClick={() => router.push('/credit-cards')}>Back to Quick contact</BackButton>
-      <CustomHeading>Income & savings</CustomHeading>
-      <Form id="credit-card" spacing="large" className="pt-6" onSubmit={handleSubmit}>
+      <CustomHeading groupHeading="Your finances" leadText="[Dummy lead text to be replaced later]">
+        Income & savings
+      </CustomHeading>
+      {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
+      <Form id="credit-card" spacing="large" onSubmit={handleSubmit}>
         <FormSection className="border-none !p-0">
           <FormGroup>
             <Repeater className="mb-5">
@@ -55,13 +65,14 @@ export default function IncomeAndSavings() {
                 label="Income / salary / pension (after tax)"
                 hint="Enter a dollar value and choose a frequency"
                 errorMessage={incomeError || freqError}
+                instanceId="income"
                 before="$"
                 after={
-                  <Select name="incomeFreq" defaultValue={data.incomeFreq} invalid={!!freqError}>
+                  <Select name="incomeFreq" id="incomeFreq" defaultValue={data.incomeFreq} invalid={!!freqError}>
                     <option value="">Select</option>
-                    <option value="Yearly">Yearly</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Fortnightly">Fortnightly</option>
                     <option value="Monthly">Monthly</option>
-                    <option value="Daily">Daily</option>
                   </Select>
                 }
                 size="large"
@@ -76,6 +87,7 @@ export default function IncomeAndSavings() {
               size="large"
               label="Total balances in savings / investment accounts (if any)"
               hint="Enter a dollar value"
+              instanceId="totalBal"
               errorMessage={balanceError}
               before="$"
             >
@@ -83,13 +95,7 @@ export default function IncomeAndSavings() {
             </InputGroup>
           </FormGroup>
         </FormSection>
-        <Cta
-          primaryType="submit"
-          secondaryOnClick={() => router.push('/credit-cards')}
-          secondary="Back"
-          tertiaryOnClick={() => router.push('/')}
-          tertiary="Cancel"
-        >
+        <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
       </Form>

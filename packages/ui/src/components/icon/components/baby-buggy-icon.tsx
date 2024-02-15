@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function BabyBuggyIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Baby Buggy',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   ...props
 }: IconProps) {
   return (

@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export const BSAStackedLogo = ({
   'aria-label': ariaLabel = 'Bank SA',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   viewBoxWidth = 32,
   viewBoxHeight = 54,
   className,

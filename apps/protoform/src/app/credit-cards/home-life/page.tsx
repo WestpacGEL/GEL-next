@@ -7,6 +7,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { BackButton } from '@/components/back-button/back-button';
 import { Cta } from '@/components/cta/cta';
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
+import { ErrorValidationAlert, ValidationErrorType } from '@/components/error-validation-alert/error-validation-alert';
 import { useSidebar } from '@/components/sidebar/context';
 import { defaultError } from '@/constants/form-contsants';
 import { getFormData } from '@/utils/getFormData';
@@ -22,7 +23,9 @@ export default function HomeLife() {
   const [housingError, setHousingError] = useState('');
   const [sharedExpensesError, setSharedExpensesError] = useState('');
   const [sharedExpenses, setSharedExpenses] = useState('');
+  const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
 
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { housing, dependants, expenseFreq, expenses } = getFormData(e.currentTarget) as {
@@ -38,6 +41,13 @@ export default function HomeLife() {
       setExpenseFreqError(!expenseFreq ? defaultError : '');
       setExpensesError(!expenses ? defaultError : '');
       setSharedExpensesError(!sharedExpenses ? defaultError : '');
+      setValidationErrors([
+        ...(!housing ? [{ id: 'housing', label: 'Housing situation' }] : []),
+        ...(!dependants ? [{ id: 'dependants', label: 'Dependants' }] : []),
+        ...(!expenseFreq ? [{ id: 'expenseFreq', label: 'Expense frequency' }] : []),
+        ...(!expenses ? [{ id: 'expenses', label: 'Expenses' }] : []),
+        ...(!sharedExpenses ? [{ id: 'sharedExpenses', label: 'Shared expenses' }] : []),
+      ]);
     } else {
       setData({ ...data, housing, dependants, expenseFreq, expenses, sharedExpenses });
       router.push('/credit-cards/credit-limit');
@@ -53,11 +63,19 @@ export default function HomeLife() {
   return (
     <div>
       <BackButton onClick={() => router.push('/credit-cards/loans-and-cards')}>Back to Loans and cards</BackButton>
-      <CustomHeading>Home life</CustomHeading>
-      <Form id="credit-card" spacing="large" className="pt-6" onSubmit={handleSubmit}>
+      <CustomHeading groupHeading="Your finances" leadText="[Dummy lead text to be replaced later]">
+        Home life
+      </CustomHeading>
+      {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
+      <Form id="credit-card" spacing="large" onSubmit={handleSubmit}>
         <FormSection className="border-none !p-0">
           <FormGroup>
-            <InputGroup label="What is your current housing situation?" errorMessage={housingError} size="large">
+            <InputGroup
+              instanceId="housing"
+              label="What is your current housing situation?"
+              errorMessage={housingError}
+              size="large"
+            >
               <Select name="housing" defaultValue={data.housing} invalid={!!housingError}>
                 <option value="">Select</option>
                 <option value="Renting">Renting</option>
@@ -70,6 +88,7 @@ export default function HomeLife() {
             <ButtonGroup
               label="Do you share household expenses?"
               hintMessage="For example utility bills"
+              id="sharedExpenses"
               errorMessage={sharedExpensesError}
               defaultValue={data.sharedExpenses}
               size="large"
@@ -86,6 +105,7 @@ export default function HomeLife() {
             <InputGroup
               label="How many dependants do you have?"
               hint="Excluding spouse"
+              instanceId="dependants"
               errorMessage={dependantsError}
               size="large"
             >
@@ -105,14 +125,19 @@ export default function HomeLife() {
               label="All other expenses"
               hint="For example Food, regular bills. transport, Insurance, Child support. Enter a dollar value and choose a frequency"
               errorMessage={expensesError || expenseFreqError}
+              instanceId="expenses"
               before="$"
               after={
-                <Select name="expenseFreq" invalid={!!expenseFreqError} defaultValue={data.expenseFreq}>
+                <Select
+                  name="expenseFreq"
+                  id="expenseFreq"
+                  invalid={!!expenseFreqError}
+                  defaultValue={data.expenseFreq}
+                >
                   <option value="">Select</option>
-                  <option value="Yearly">Yearly</option>
-                  <option value="Monthly">Monthly</option>
-                  <option value="Fortnightly">Fortnightly</option>
                   <option value="Weekly">Weekly</option>
+                  <option value="Fortnightly">Fortnightly</option>
+                  <option value="Monthly">Monthly</option>
                 </Select>
               }
             >
@@ -120,13 +145,7 @@ export default function HomeLife() {
             </InputGroup>
           </FormGroup>
         </FormSection>
-        <Cta
-          primaryType="submit"
-          secondaryOnClick={() => router.push('/credit-cards/loans-and-cards')}
-          secondary="Back"
-          tertiaryOnClick={() => router.push('/')}
-          tertiary="Cancel"
-        >
+        <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
       </Form>

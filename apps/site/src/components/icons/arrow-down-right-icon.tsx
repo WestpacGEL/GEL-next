@@ -2,7 +2,7 @@ import { Icon, type IconProps } from '@westpac/ui/icon';
 
 export function ArrowDownRightIcon({
   'aria-label': ariaLabel = 'Arrow Down Right',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   ...props
 }: IconProps) {
   return (

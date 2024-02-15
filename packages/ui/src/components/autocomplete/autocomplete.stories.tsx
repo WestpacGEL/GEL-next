@@ -179,6 +179,7 @@ export const ErrorMessageAndLabel: Story = {
     validationState: 'invalid',
     hintMessage: 'Hint: choose from one of the following options',
     noOptionsMessage: 'No options',
+    invalid: true,
     children: [
       <AutocompleteItem key="Option 1">Option 1</AutocompleteItem>,
       <AutocompleteItem key="Option 2">Option 2</AutocompleteItem>,

@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function DownloadIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Download',
-  copyrightYear = '2023',
+  copyrightYear = '2024',
   ...props
 }: IconProps) {
   return (

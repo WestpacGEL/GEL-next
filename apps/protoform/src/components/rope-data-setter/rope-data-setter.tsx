@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 import { useSidebar } from '../sidebar/context';
 
-export function RopeDataSetter({ data }: { data: ProgressRopeProps['data'] }) {
+export function RopeDataSetter({ data }: { data?: ProgressRopeProps['data'] }) {
   const { setRopeData } = useSidebar();
 
   useEffect(() => {

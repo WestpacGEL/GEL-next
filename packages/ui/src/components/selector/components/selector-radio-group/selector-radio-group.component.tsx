@@ -6,7 +6,6 @@ import { useRadioGroupState } from 'react-stately';
 
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
-import { SelectorRadioGroupOption } from './components/index.js';
 import { styles } from './selector-radio-group.styles.js';
 import { type SelectorRadioGroupContextState, type SelectorRadioGroupProps } from './selector-radio-group.types.js';
 
@@ -40,15 +39,17 @@ export function SelectorRadioGroup({
   );
 
   return (
-    <div className={styles({ className, orientation })} {...radioGroupProps}>
+    <>
       {label && <Label {...labelProps}>{label}</Label>}
       {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && state.validationState === 'invalid' && (
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}
-      <SelectorRadioGroupContext.Provider value={{ ...state, orientation }}>
-        {children}
-      </SelectorRadioGroupContext.Provider>
-    </div>
+      <div className={styles({ className, orientation })} {...radioGroupProps}>
+        <SelectorRadioGroupContext.Provider value={{ ...state, orientation }}>
+          {children}
+        </SelectorRadioGroupContext.Provider>
+      </div>
+    </>
   );
 }
