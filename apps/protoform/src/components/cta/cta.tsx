@@ -20,7 +20,7 @@ export function Cta({
 }) {
   return (
     <div className="flex gap-2 pb-[120px] pt-6 max-md:flex-col max-md:pb-10">
-      <Button look="primary" onClick={primaryOnClick} type={primaryType}>
+      <Button look="primary" className="md:px-2.5" onClick={primaryOnClick} type={primaryType}>
         {children}
       </Button>
       {secondary && (
