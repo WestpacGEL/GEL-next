@@ -1,12 +1,12 @@
 'use client';
 
 import { Button, ProgressRope } from '@westpac/ui';
-import { CloseIcon, HouseIcon, MoreVertIcon } from '@westpac/ui/icon';
+import { CloseIcon, MoreVertIcon } from '@westpac/ui/icon';
 import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { clsx } from 'clsx';
 import throttle from 'lodash.throttle';
 import { usePathname } from 'next/navigation';
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useState } from 'react';
 
 import { useSidebar } from './context';
 
@@ -35,16 +35,17 @@ export function Sidebar({ children }: { children?: ReactNode }) {
     };
   }, [handleScroll]);
 
-  useEffect(() => {
-    const updateOpen = () => {
-      setOpen(window.innerWidth >= parseInt(BREAKPOINTS.md));
-    };
+  const updateOpen = useCallback(() => {
+    setOpen(window.innerWidth >= parseInt(BREAKPOINTS.md));
+  }, [setOpen]);
 
+  useEffect(() => {
+    if (ropeData) setOpen(true);
     updateOpen();
 
     window.addEventListener('resize', updateOpen);
     return () => window.removeEventListener('resize', updateOpen);
-  }, [setOpen]);
+  }, [ropeData, setOpen, updateOpen]);
 
   useEffect(() => {
     const ropeType = ropeData && ropeData[0].type;
@@ -71,19 +72,31 @@ export function Sidebar({ children }: { children?: ReactNode }) {
             { 'after:opacity-100': scrolled },
           )}
         >
-          <p className="font-bold">{`Step ${currStep} of ${totalSteps}`}</p>
+          <p className="font-medium">{`Step ${currStep} of ${totalSteps}`}</p>
           {!open && (
             <Button look="link" iconAfter={MoreVertIcon} className="no-underline" onClick={() => setOpen(true)}>
               Show all steps
             </Button>
           )}
         </div>
-        {open && (
+
+        <>
           <>
-            <>
-              <div className="fixed inset-y-0 left-auto right-0 w-[300px] border-l-[1px] border-t-[1px] border-l-border border-t-border bg-white max-md:z-[100] md:mt-11">
-                <div className="flex flex-row justify-between px-2 py-2.5 md:hidden">
-                  <p className="font-bold">{`Step ${currStep} of ${totalSteps}`}</p>
+            <div
+              className={clsx(
+                'fixed inset-y-0 left-auto right-0 w-[300px] overflow-auto border-l-[1px] border-l-border bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-md:z-[100] md:mt-11',
+                {
+                  'translate-x-full': !open,
+                },
+              )}
+            >
+              <div
+                className={clsx({
+                  'max-md:hidden': !open,
+                })}
+              >
+                <div className="flex flex-row justify-between border-b-[1px] border-b-border px-2 py-2.5 md:hidden">
+                  <p className="font-medium">{`Step ${currStep} of ${totalSteps}`}</p>
                   <Button
                     look="link"
                     iconBefore={CloseIcon}
@@ -92,26 +105,29 @@ export function Sidebar({ children }: { children?: ReactNode }) {
                     onClick={() => setOpen(false)}
                   />
                 </div>
-                <Button
+                {/* Return to dashboard button hidden by request, keeping code here for future implementation */}
+                {/* <Button
                   iconBefore={props => <HouseIcon {...props} size="medium" look="outlined" />}
                   look="link"
                   className="pb-5 pl-4 pr-0 pt-10 font-normal no-underline"
                 >
                   Return to dashboard
-                </Button>
-                {ropeData && <ProgressRope className="pl-4" current={ropeStep} data={ropeData} />}
-                {children}
+                </Button> */}
+                <div className="py-10">
+                  {ropeData && <ProgressRope className="pl-5" current={ropeStep} data={ropeData} />}
+                  {children}
+                </div>
               </div>
-            </>
-            <div
-              aria-hidden="true"
-              className={clsx({
-                'md:hidden max-md:before:bg-black/40 before:z-[59] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed':
-                  open,
-              })}
-            />
+            </div>
           </>
-        )}
+          <div
+            aria-hidden="true"
+            className={clsx({
+              ' md:hidden max-md:before:bg-black/70 before:z-[59] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed':
+                open,
+            })}
+          />
+        </>
       </>
     )
   );

@@ -2,15 +2,17 @@
 
 import { Grid, GridContainer, GridItem } from '@westpac/ui';
 import { clsx } from 'clsx';
-import { usePathname } from 'next/navigation';
 import { ReactNode } from 'react';
 
+import { useSidebar } from '../sidebar/context';
+
 export function ContentWrapper({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
+  const { open } = useSidebar();
+
   return (
     <section
-      className={clsx('min-h-screen md:mr-[300px] md:mt-11', {
-        'md:mr-0': pathname === '/',
+      className={clsx('min-h-screen md:mt-11', {
+        'md:mr-[300px]': open,
       })}
     >
       <GridContainer>

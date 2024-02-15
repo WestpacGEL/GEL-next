@@ -7,6 +7,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { BackButton } from '@/components/back-button/back-button';
 import { Cta } from '@/components/cta/cta';
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
+import { ErrorValidationAlert, ValidationErrorType } from '@/components/error-validation-alert/error-validation-alert';
 import { useSidebar } from '@/components/sidebar/context';
 import { defaultError } from '@/constants/form-contsants';
 import { getFormData } from '@/utils/getFormData';
@@ -21,7 +22,9 @@ export default function IncomeAndSavings() {
   const [repaymentFrequencyError, setRepaymentFrequencyError] = useState('');
   const [totalBalanceError, setTotalBalanceError] = useState('');
   const [otherCards, setOtherCards] = useState('');
+  const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
 
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { repaymentFreq, repayments, totalBal } = getFormData(e.currentTarget) as {
@@ -34,6 +37,14 @@ export default function IncomeAndSavings() {
       setRepaymentsError(!repayments ? defaultError : '');
       setTotalBalanceError(otherCards === 'Yes' && !totalBal ? defaultError : '');
       setOtherCardError(!otherCards ? defaultError : '');
+      setValidationErrors([
+        ...(!repaymentFreq ? [{ id: 'repaymentFreq', label: 'Repayment frequency' }] : []),
+        ...(!repayments ? [{ id: 'repayments', label: 'Your loan repayments' }] : []),
+        ...(otherCards === 'Yes' && !totalBal
+          ? [{ id: 'totalBal', label: 'Total balances of non-Westpac cards' }]
+          : []),
+        ...(!otherCards ? [{ id: 'otherCards', label: 'Do you have any non-Westpac credit cards?' }] : []),
+      ]);
     } else {
       setData({ ...data, repaymentFreq, repayments, totalBal, nonWestpacCards: otherCards });
       router.push('/credit-cards/home-life');
@@ -51,21 +62,30 @@ export default function IncomeAndSavings() {
       <BackButton onClick={() => router.push('/credit-cards/income-and-savings')}>
         Back to Income and savings
       </BackButton>
-      <CustomHeading>Loans & cards</CustomHeading>
-      <Form id="credit-card" spacing="large" className="pt-6" onSubmit={handleSubmit}>
+      <CustomHeading groupHeading="Your finances" leadText="[Dummy lead text to be replaced later]">
+        Loans & cards
+      </CustomHeading>
+      {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
+      <Form id="credit-card" spacing="large" onSubmit={handleSubmit}>
         <FormSection className="border-none !p-0">
           <FormGroup>
             <InputGroup
               label="Your loan repayments (if any)"
               hint="For example Home, Investment or Personal loans, overdrafts"
+              instanceId="repayments"
               errorMessage={repaymentFrequencyError || repaymentsError}
               before="$"
               after={
-                <Select name="repaymentFreq" invalid={!!repaymentFrequencyError} defaultValue={data.repaymentFreq}>
+                <Select
+                  name="repaymentFreq"
+                  id="repaymentFreq"
+                  invalid={!!repaymentFrequencyError}
+                  defaultValue={data.repaymentFreq}
+                >
                   <option value="">Select</option>
-                  <option value="Yearly">Yearly</option>
+                  <option value="Weekly">Weekly</option>
+                  <option value="Fortnightly">Fortnightly</option>
                   <option value="Monthly">Monthly</option>
-                  <option value="Daily">Daily</option>
                 </Select>
               }
               size="large"
@@ -79,6 +99,7 @@ export default function IncomeAndSavings() {
               label="Do you have any non-Westpac credit cards?"
               hintMessage="Including store and charge cards, lines of credit"
               size="large"
+              id="otherCards"
               block={{ initial: true, md: false }}
               errorMessage={otherCardError}
               defaultValue={data.nonWestpacCards}
@@ -92,6 +113,7 @@ export default function IncomeAndSavings() {
           {otherCards === 'Yes' && (
             <FormGroup>
               <InputGroup
+                instanceId="totalBal"
                 size="large"
                 label="Total balances of non-Westpac cards"
                 hint="Enter a dollar value"
@@ -103,13 +125,7 @@ export default function IncomeAndSavings() {
             </FormGroup>
           )}
         </FormSection>
-        <Cta
-          primaryType="submit"
-          secondaryOnClick={() => router.push('/credit-cards/income-and-savings')}
-          secondary="Back"
-          tertiaryOnClick={() => router.push('/')}
-          tertiary="Cancel"
-        >
+        <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
       </Form>

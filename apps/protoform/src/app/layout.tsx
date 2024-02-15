@@ -1,9 +1,8 @@
-import { Footer, Link } from '@westpac/ui';
-import { PadlockIcon } from '@westpac/ui/icon';
 import { type Metadata } from 'next';
 import './globals.css';
 
 import { ContentWrapper } from '@/components/content-wrapper/content-wrapper';
+import { CustomFooter } from '@/components/custom-footer/custom-footer';
 import { CustomHeader } from '@/components/custom-header/custom-header';
 import { SidebarContextProvider } from '@/components/sidebar/context';
 import { Sidebar } from '@/components/sidebar/sidebar';
@@ -26,53 +25,10 @@ export default function RootLayout({
           <SidebarContextProvider>
             <Sidebar />
             <ContentWrapper>{children}</ContentWrapper>
+            <CustomFooter />
           </SidebarContextProvider>
-          <Footer
-            brand="wbc"
-            className="relative bottom-0 top-auto z-[58] w-full border-t-border bg-white pb-0"
-            hideLogo
-          >
-            <div>
-              <PadlockIcon
-                size={{ initial: 'small', md: 'medium' }}
-                className="float-left shrink-0 max-md:mr-1 md:mr-2"
-                color="borderDark"
-              />
-              <p className="text-muted">
-                Our site and your transactions are secure. You can read our{' '}
-                <Link href="#" type="inline">
-                  security information
-                </Link>
-                . © 2024 Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714.
-              </p>
-            </div>
-          </Footer>
         </main>
       </body>
     </html>
   );
-}
-
-{
-  /* <div className="min-h-[100vh] w-full ml-auto mr-auto max-w-[1922px] bg-[#f3f4f6]">
-          <main id="content" className="mr-[300px] mt-[67px]">
-            {children}
-          </main>
-        </div>
-        <Footer brand="wbc" className="mr-[300px]">
-          <div>
-            <PadlockIcon
-              size={{ initial: 'small', md: 'medium' }}
-              className="float-left shrink-0 max-md:mr-1 md:mr-2"
-              color="borderDark"
-            />
-            <p className="text-muted">
-              Our site and your transactions are secure. You can read our{' '}
-              <Link href="#" type="inline">
-                security information
-              </Link>
-              . © 2024 Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714.
-            </p>
-          </div>
-        </Footer> */
 }
