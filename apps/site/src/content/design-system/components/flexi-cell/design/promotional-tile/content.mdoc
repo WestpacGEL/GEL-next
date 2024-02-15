@@ -1,4 +1,4 @@
-The date picker can be used in various sizes to match the UI direction.
+Horizontal stacked
 
 ```jsx
 {
@@ -35,7 +35,7 @@ The date picker can be used in various sizes to match the UI direction.
 }
 ```
 
-The date picker can be used in various sizes to match the UI direction.
+Promo horizontal
 
 ```jsx
 {
@@ -65,6 +65,75 @@ The date picker can be used in various sizes to match the UI direction.
             </FlexiCellFooter>
           </FlexiCell>)}
       </div>;
+  }
+}
+
+```
+
+Account list
+
+```jsx
+{
+  args: {},
+  render: () => {
+    return <>
+        <FlexiCell after={<FlexiCellAdornment align="top">
+              <FlexiCellLabel tag="h3" rightLabel>
+                $9,999.99
+              </FlexiCellLabel>
+              <FlexiCellHint>avail $9,999.99</FlexiCellHint>
+            </FlexiCellAdornment>} href="#" tag="a" withBorder>
+          <FlexiCellLabel tag="h3">Credit card Base Styles</FlexiCellLabel>
+          <FlexiCellHint>Card ending in 1234</FlexiCellHint>
+        </FlexiCell>
+        <FlexiCell after={<FlexiCellAdornment align="top">
+              <FlexiCellLabel tag="h3" rightLabel>
+                $9,999.99
+              </FlexiCellLabel>
+              <FlexiCellHint>avail $9,999.99</FlexiCellHint>
+            </FlexiCellAdornment>} href="#" tag="a" withBorder size={{
+        initial: 'default',
+        sm: 'large'
+      }}>
+          <FlexiCellLabel tag="h3">Responsive Credit card Base Styles</FlexiCellLabel>
+          <FlexiCellHint>Card ending in 1234</FlexiCellHint>
+        </FlexiCell>
+        <FlexiCell after={<FlexiCellAdornment align="top">
+              <FlexiCellLabel tag="h3" className="font-medium" rightLabel>
+                $9,999.99
+              </FlexiCellLabel>
+              <FlexiCellHint>avail $9,999.99</FlexiCellHint>
+            </FlexiCellAdornment>} href="#" tag="a" withBorder>
+          <FlexiCellLabel className="font-normal" tag="h3">
+            Credit card different styles
+          </FlexiCellLabel>
+          <FlexiCellHint>Card ending in 1234</FlexiCellHint>
+        </FlexiCell>
+        <FlexiCell after={<FlexiCellAdornment align="top">
+              <FlexiCellLabel tag="h3" rightLabel>
+                $9,999.99
+              </FlexiCellLabel>
+              <FlexiCellHint>avail $9,999.99</FlexiCellHint>
+            </FlexiCellAdornment>} href="#" tag="a" withBorder>
+          <FlexiCellLabel tag="h3">Wrapping Credit CardCredit CardCredit CardCredit Card</FlexiCellLabel>
+          <FlexiCellHint>
+            Wrapping Card ending in 1234Card ending in 1234Card ending in 1234Card ending in 1234Card ending in 1234
+          </FlexiCellHint>
+        </FlexiCell>
+        <FlexiCell after={<FlexiCellAdornment align="top">
+              <FlexiCellLabel tag="h3" rightLabel>
+                $9,999.99
+              </FlexiCellLabel>
+              <FlexiCellHint>avail $9,999.99</FlexiCellHint>
+            </FlexiCellAdornment>} href="#" tag="a" withBorder>
+          <FlexiCellLabel tag="h3" truncateText>
+            Truncating Credit CardCredit CardCredit CardCredit Card
+          </FlexiCellLabel>
+          <FlexiCellHint truncateText>
+            Truncating Card ending in 1234Card ending in 1234Card ending in 1234Card ending in 1234Card ending in 1234
+          </FlexiCellHint>
+        </FlexiCell>
+      </>;
   }
 }
 
