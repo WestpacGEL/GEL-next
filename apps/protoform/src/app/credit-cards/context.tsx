@@ -57,7 +57,7 @@ export function CreditCardContextProvider({ children }: { children: React.ReactN
     dobMonth: '',
     dobYear: '',
     email: '',
-    expenseFreq: 'Monthly',
+    expenseFreq: 'Monthl',
     expenses: '',
     familyName: '',
     givenName: '',
