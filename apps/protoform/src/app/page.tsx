@@ -9,10 +9,10 @@ import { RopeDataSetter } from '@/components/rope-data-setter/rope-data-setter';
 import { useSidebar } from '@/components/sidebar/context';
 
 export default function Home() {
-  const { setOpen } = useSidebar();
+  const { open, setOpen } = useSidebar();
   useEffect(() => {
-    setOpen(false);
-  }, [setOpen]);
+    open && setOpen(false);
+  }, [open, setOpen]);
   return (
     <section>
       <RopeDataSetter data={undefined} />

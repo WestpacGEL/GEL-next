@@ -11,7 +11,7 @@ export function CustomFooter() {
   return (
     <Footer
       brand="wbc"
-      className={clsx('sticky bottom-0 z-[58] w-full border-t-border bg-white pb-0', {
+      className={clsx('relative bottom-0 z-[58] w-full border-t-border bg-white pb-0', {
         'md:w-[calc(100%-300px)]': open,
       })}
       hideLogo
@@ -22,12 +22,12 @@ export function CustomFooter() {
           className="float-left shrink-0 max-md:mr-1 md:mr-2"
           color="borderDark"
         />
-        <p className="text-muted">
+        <p className="typography-body-10 text-muted">
           Our site and your transactions are secure. You can read our{' '}
           <Link href="#" type="inline">
             security information
           </Link>
-          . © 2024 Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714.
+          . <br /> © 2024 Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714.
         </p>
       </div>
     </Footer>
