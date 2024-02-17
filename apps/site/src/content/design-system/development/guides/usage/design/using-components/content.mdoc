@@ -1,18 +1,22 @@
-After setting up the [brand](/wbc/development/guides/brand) you can start using the GEL components in your [React](https://react.dev/) application.
+After setting up the [brand](/development/guides/brand) you can start using the GEL components in your [React](https://react.dev/) application.
 
 ### Individual package import
 
 We recommended the individual package import approach if you have issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking).
 
 ```html
-<StaticCode language="tsx" code={` import { Button } from '@westpac/ui/button'; export default function SampleApp() {
-return (
-<section>
-  <div className="space-x-4 mb-2">
-    <Button look="primary">Pay here</Button>
-  </div>
-</section>
-); } `} />
+<StaticCode language="tsx" code={`
+import { Button } from "@westpac/ui/button";
+export default function SampleApp() {
+  return (
+    <section>
+      <div className="space-x-4 mb-2">
+        <Button look="primary">Pay here</Button>
+      </div>
+    </section>
+  );
+}
+`} />
 ```
 
 ### Mono package import
@@ -22,11 +26,16 @@ Modern bundlers like [Vite](https://vitejs.dev/) will automatically detect the i
 However, use this approach with caution as it may cause issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) since not all bundlers have this advanced capability.
 
 ```html
-<StaticCode language="tsx" code={` import { Button } from '@westpac/ui'; export default function SampleApp() { return (
-<section>
-  <div className="space-x-4 mb-2">
-    <Button look="primary">Pay here</Button>
-  </div>
-</section>
-); } `} />
+<StaticCode language="tsx" code={`
+import { Button } from "@westpac/ui";
+export default function SampleApp() {
+  return (
+    <section>
+      <div className="space-x-4 mb-2">
+        <Button look="primary">Pay here</Button>
+      </div>
+    </section>
+  );
+}
+`} />
 ```
