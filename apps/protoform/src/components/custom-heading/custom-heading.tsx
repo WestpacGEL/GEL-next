@@ -20,7 +20,11 @@ export function CustomHeading({
         'pt-0 pb-5': Tag === 'h3' || Tag === 'h4' || Tag === 'h5' || Tag === 'h6',
       })}
     >
-      {groupHeading && <h3 className="typography-body-10 pb-1 text-[11px] font-bold text-muted">{groupHeading}</h3>}
+      {groupHeading && (
+        <h3 className=" typography-body-10 pb-1 text-[11px] font-medium uppercase text-muted md:hidden">
+          {groupHeading}
+        </h3>
+      )}
       <Tag
         className={clsx('font-bold text-heading', {
           'max-md:typography-body-6 typography-body-5': Tag === 'h1',
@@ -33,7 +37,7 @@ export function CustomHeading({
       </Tag>
       {leadText && (
         <p
-          className={clsx('typography-body-9 text-text', {
+          className={clsx('typography-body-9 text-heading', {
             'max-md:pt-3 pt-4': Tag === 'h1' || Tag === 'h2',
             'pt-2': Tag === 'h3',
             'max-md:pt-1 pt-2': Tag === 'h4' || Tag === 'h5' || Tag === 'h6',

@@ -26,7 +26,6 @@ export function CustomHeader() {
       leftIcon={isMobile ? 'arrow' : undefined}
       leftOnClick={() => router.back()}
       logoLink="/"
-      className=""
     >
       <Button look="faint" size={{ initial: 'small', sm: 'medium' }} soft>
         Sign Out
