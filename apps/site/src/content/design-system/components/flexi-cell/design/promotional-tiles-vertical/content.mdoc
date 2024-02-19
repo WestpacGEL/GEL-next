@@ -120,7 +120,7 @@ Test 3 trying to separate code into individual tiles
 
 ```
  <div className="flex gap-2">
-      {MOCK_VERTICAL_PROMOS.map(({ title, subtitle }) => (
+
         <FlexiCell
           className="max-sm:h-[255px] max-sm:min-w-[214px] sm:h-[277px] sm:min-w-[298px] sm:max-w-[298px]"
           href="#"
@@ -143,11 +143,14 @@ Test 3 trying to separate code into individual tiles
           <FlexiCellLabel className="text-[12px] font-normal text-muted" tag="p">
             MYER
           </FlexiCellLabel>
-          <FlexiCellLabel className="text-hero" tag="h4">
-            {title}
+          
+<FlexiCellLabel className="text-hero" tag="h4">
+            Title
           </FlexiCellLabel>
-          <FlexiCellHint className="line-clamp-3 max-sm:h-10 sm:h-10.5">{subtitle}</FlexiCellHint>
-          <FlexiCellFooter className="absolute max-sm:bottom-2 max-sm:left-2 sm:bottom-3 sm:left-3">
+          
+<FlexiCellHint className="line-clamp-3 max-sm:h-10 sm:h-10.5">This is hte hint</FlexiCellHint>
+          
+<FlexiCellFooter className="absolute max-sm:bottom-2 max-sm:left-2 sm:bottom-3 sm:left-3">
             <Badge color="primary">Badge 1</Badge>
             <Badge color="faint">Badge 2</Badge>
           </FlexiCellFooter>
