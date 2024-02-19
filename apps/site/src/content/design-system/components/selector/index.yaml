@@ -1,7 +1,7 @@
 name: Selector
 description: >-
-  A Selector is essentially a large stylised radio or checkbox that can be
-  configured in many different ways for different uses.
+  A Selector is essentially a large stylised radio, checkbox or link button that
+  can be configured in many different ways for different uses.
 namedExport:
   discriminant: false
 excludeFromNavbar: false
