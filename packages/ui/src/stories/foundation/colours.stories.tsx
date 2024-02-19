@@ -395,7 +395,7 @@ export const ReservedWithNoTints = () => (
 /**
  * Examples for all data visualisation colors, name in brackets are what it could be referred to in Figma etc.
  */
-export const DataVisColors: Story = {
+export const DataVisualisationColors: Story = {
   render: (args, { globals: { theme } }) => {
     const currThemeToken: Exclude<BrandKey, 'btfg'> = theme ? theme.toLowerCase() : 'wbc';
     const dataVisSolidColors = [
