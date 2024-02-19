@@ -2,7 +2,8 @@ import { type Meta, StoryFn, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
 import { Field, Select } from '../../components/index.js';
-import { BASE_COLORS } from '../../tailwind/constants/colors.js';
+import { BASE_COLORS, DATA_VIS_COLORS } from '../../tailwind/constants/colors.js';
+import { BrandKey } from '../../tailwind/index.js';
 import { ALL_THEMES } from '../../tailwind/themes/index.js';
 import { generateColorTints } from '../../tailwind/utils/generate-color-tints.js';
 
@@ -254,6 +255,18 @@ const LOAD_COLORS = {
     'bg-system-10',
     'bg-system-5',
   ],
+  'data-a-solid': ['bg-data-a-solid', 'bg-data-a-solid/30'],
+  'data-a-tint': ['bg-data-a-tint'],
+  'data-b-solid': ['bg-data-b-solid', 'bg-data-b-solid/30'],
+  'data-b-tint': ['bg-data-b-tint'],
+  'data-c-solid': ['bg-data-c-solid', 'bg-data-c-solid/30'],
+  'data-c-tint': ['bg-data-c-tint'],
+  'data-d-solid': ['bg-data-d-solid', 'bg-data-d-solid/30'],
+  'data-d-tint': ['bg-data-d-tint'],
+  'data-e-solid': ['bg-data-e-solid', 'bg-data-e-solid/30'],
+  'data-e-tint': ['bg-data-e-tint'],
+  'data-f-solid': ['bg-data-f-solid', 'bg-data-f-solid/30'],
+  'data-f-tint': ['bg-data-f-tint'],
 };
 
 /**
@@ -378,3 +391,80 @@ export const ReservedWithNoTints = () => (
     </div>
   </div>
 );
+
+/**
+ * Examples for all data visualisation colors, name in brackets are what it could be referred to in Figma etc.
+ */
+export const DataVisColors: Story = {
+  render: (args, { globals: { theme } }) => {
+    const currThemeToken: Exclude<BrandKey, 'btfg'> = theme ? theme.toLowerCase() : 'wbc';
+    const dataVisSolidColors = [
+      'data-a-solid',
+      'data-b-solid',
+      'data-c-solid',
+      'data-d-solid',
+      'data-e-solid',
+      'data-f-solid',
+    ];
+    const dataVisTintColors = [
+      'data-a-tint',
+      'data-b-tint',
+      'data-c-tint',
+      'data-d-tint',
+      'data-e-tint',
+      'data-f-tint',
+    ];
+
+    return (
+      <>
+        <div className="flex flex-wrap">
+          {dataVisSolidColors.map(color => (
+            <div className="flex w-[16%] min-w-[100px] max-w-[300px] flex-col">
+              <div className=" p-2" key={color}>
+                <div className={`bg-${color} h-[80px]`} />
+                <div className="divide-y divide-border border border-border p-2">
+                  <div className="pb-2 font-bold">{color}</div>
+                  <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-${color}`}</div>
+                  {/* Below comments to get rid of type nightmare when trying to get hex value */}
+                  {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                  {/* @ts-ignore */}
+                  <div className="typography-body-10 pt-2 font-light">{DATA_VIS_COLORS[currThemeToken][color]}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+          {dataVisTintColors.map(color => (
+            <div className="flex w-[16%] min-w-[100px] max-w-[300px] flex-col">
+              <div className=" p-2" key={color}>
+                <div className={`bg-${color} h-[80px]`} />
+                <div className="divide-y divide-border border border-border p-2">
+                  <div className="pb-2 font-bold">{color}</div>
+                  <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-${color}`}</div>
+                  {/* Below comments to get rid of type nightmare when trying to get hex value */}
+                  {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                  {/* @ts-ignore */}
+                  <div className="typography-body-10 pt-2 font-light">{DATA_VIS_COLORS[currThemeToken][color]}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+          {dataVisSolidColors.map(color => (
+            <div className="flex w-[16%] min-w-[100px] max-w-[300px] flex-col">
+              <div className=" p-2" key={`${color}/30`}>
+                <div className={`bg-${color}/30 h-[80px]`} />
+                <div className="divide-y divide-border border border-border p-2">
+                  <div className="pb-2 font-bold">{`${color}/30`}</div>
+                  <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-${color}/30`}</div>
+                  {/* Below comments to get rid of type nightmare when trying to get hex value */}
+                  {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                  {/* @ts-ignore */}
+                  <div className="typography-body-10 pt-2 font-light">{DATA_VIS_COLORS[currThemeToken][color]}4D</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
+    );
+  },
+};

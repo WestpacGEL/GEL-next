@@ -1,3 +1,4 @@
+import { DATA_VIS_COLORS } from '../constants/colors.js';
 import { type BrandConfig } from '../index.js';
 import { generateColorTints } from '../utils/generate-color-tints.js';
 
@@ -21,6 +22,19 @@ export const theme: BrandConfig = {
       pop: '#FF7468',
       primary: '#DA1710',
       text: '#000',
+      'data-a-solid': DATA_VIS_COLORS.wbg['data-a-solid'],
+      // tint values need to be specified rather than using tailwind generated due to difference in provided value
+      'data-a-tint': DATA_VIS_COLORS.wbg['data-a-tint'],
+      'data-b-solid': DATA_VIS_COLORS.wbg['data-b-solid'],
+      'data-b-tint': DATA_VIS_COLORS.wbg['data-b-tint'],
+      'data-c-solid': DATA_VIS_COLORS.wbg['data-c-solid'],
+      'data-c-tint': DATA_VIS_COLORS.wbg['data-c-tint'],
+      'data-d-solid': DATA_VIS_COLORS.wbg['data-d-solid'],
+      'data-d-tint': DATA_VIS_COLORS.wbg['data-d-tint'],
+      'data-e-solid': DATA_VIS_COLORS.wbg['data-e-solid'],
+      'data-e-tint': DATA_VIS_COLORS.wbg['data-e-tint'],
+      'data-f-solid': DATA_VIS_COLORS.wbg['data-f-solid'],
+      'data-f-tint': DATA_VIS_COLORS.wbg['data-f-tint'],
     }),
     pictogram: {
       dark: HERO,

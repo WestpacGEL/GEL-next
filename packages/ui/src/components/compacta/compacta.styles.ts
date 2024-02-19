@@ -14,7 +14,7 @@ export const styles = tv(
       addBtn: 'h-auto p-0 no-underline hover:underline',
       toggleBtn: 'p-0',
       collapsible: '',
-      content: 'px-3 pb-5 pt-0 xsl:pl-9',
+      content: 'px-3 pb-5 pt-0 md:px-9',
       footer: '',
       titlePrimary: 'typography-body-9 font-bold',
       titleSecondary: 'mt-1 items-center',

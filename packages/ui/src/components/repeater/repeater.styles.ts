@@ -20,7 +20,7 @@ export const styles = tv(
         true: {
           item: 'border-t-2 border-neutral pt-[0.625rem]',
           content: 'px-0 pb-7 pt-0 md:px-6',
-          removeBtn: 'relative mb-5 ml-3',
+          removeBtn: 'relative mb-5 md:ml-6',
           footer: 'border-t-2 border-neutral',
         },
       },
