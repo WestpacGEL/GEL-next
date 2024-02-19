@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.16.0
+
+### Minor Changes
+
+- 31167d7: added data visualisation colours
+
 ## 0.15.0
 
 ### Minor Changes
