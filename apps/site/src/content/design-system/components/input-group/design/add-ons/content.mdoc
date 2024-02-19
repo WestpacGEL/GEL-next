@@ -257,7 +257,7 @@ Add-on elements can be used either before or after an input, they can provide cl
 
     
           <InputGroup width={10} size="medium" name="example-text" before="Text" after="Text" label="Label" errorMessage="If there is an error, it can go here">
-            <Input invalid defaultValue="Medium" />
+            <Input invalid defaultValue="" />
           </InputGroup>
 
     
@@ -268,22 +268,23 @@ Add-on elements can be used either before or after an input, they can provide cl
           <InputGroup
             width={10}
             size="medium"
+label="Label"
             before={
-              <Select invalid size="medium">
+              <Select invalid size="medium" errorMessage="If there is an error, it can go here">
                 <option>Select</option>
                 <option>Option 1</option>
                 <option>Option 2</option>
               </Select>
             }
             after={
-              <Select invalid size="medium">
+              <Select invalid size="medium" errorMessage="If there is an error, it can go here">
                 <option>Select</option>
                 <option>Option 1</option>
                 <option>Option 2</option>
               </Select>
             }
           >
-            <Input invalid defaultValue="Medium" />
+            <Input invalid errorMessage="If there is an error, it can go here"defaultValue="" />
           </InputGroup>
     
     
@@ -298,7 +299,7 @@ Add-on elements can be used either before or after an input, they can provide cl
             before={<Button size="medium">Button</Button>}
             after={<Button size="medium">Button</Button>}
           >
-            <Input invalid defaultValue="Medium" />
+            <Input invalid defaultValue="" />
           </InputGroup>
     
         </Fragment>
