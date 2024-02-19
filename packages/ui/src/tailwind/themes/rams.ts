@@ -1,3 +1,4 @@
+import { DATA_VIS_COLORS } from '../constants/colors.js';
 import { type BrandConfig } from '../index.js';
 import { generateColorTints } from '../utils/generate-color-tints.js';
 
@@ -21,6 +22,19 @@ export const theme: BrandConfig = {
       pop: POP,
       primary: PRIMARY,
       text: '#333',
+      'data-a-solid': DATA_VIS_COLORS.rams['data-a-solid'],
+      // tint values need to be specified rather than using tailwind generated due to difference in provided value
+      'data-a-tint': DATA_VIS_COLORS.rams['data-a-tint'],
+      'data-b-solid': DATA_VIS_COLORS.rams['data-b-solid'],
+      'data-b-tint': DATA_VIS_COLORS.rams['data-b-tint'],
+      'data-c-solid': DATA_VIS_COLORS.rams['data-c-solid'],
+      'data-c-tint': DATA_VIS_COLORS.rams['data-c-tint'],
+      'data-d-solid': DATA_VIS_COLORS.rams['data-d-solid'],
+      'data-d-tint': DATA_VIS_COLORS.rams['data-d-tint'],
+      'data-e-solid': DATA_VIS_COLORS.rams['data-e-solid'],
+      'data-e-tint': DATA_VIS_COLORS.rams['data-e-tint'],
+      'data-f-solid': DATA_VIS_COLORS.rams['data-f-solid'],
+      'data-f-tint': DATA_VIS_COLORS.rams['data-f-tint'],
     }),
     pictogram: {
       dark: PRIMARY,
