@@ -5,32 +5,51 @@ import { useDialog } from 'react-aria';
 import { CloseIcon } from '../../../../components/icon/index.js';
 import { Button } from '../../../../components/index.js';
 
+import { styles as bottomSheetDialogStyles } from './bottom-sheet-dialog.styles.js';
 import { DialogProps } from './bottom-sheet-dialog.types.js';
 
-export function BottomSheetDialog({ children, title, className, onClose, ...props }: DialogProps) {
+export function BottomSheetDialog({
+  children,
+  title,
+  className,
+  onClose,
+  primaryLabel,
+  primaryOnClick,
+  secondaryLabel,
+  secondaryOnClick,
+  ...props
+}: DialogProps) {
   const ref = useRef(null);
   const { dialogProps, titleProps } = useDialog({ ...props, role: 'dialog' }, ref);
+  const styles = bottomSheetDialogStyles({});
 
   return (
-    <div
-      {...dialogProps}
-      className={clsx(
-        className,
-        'flex max-h-screen max-w-full flex-1 flex-col overflow-hidden rounded-t-md bg-white shadow-sm md:rounded-md',
-      )}
-      ref={ref}
-    >
-      <header className="flex flex-row justify-between px-4 py-5 md:px-15 md:py-5">
-        <h3 className="typography-body-3 m-0 md:typography-body-2" {...titleProps}>
+    <div {...dialogProps} className={styles.base({ className })} ref={ref}>
+      <header>
+        <h3 className={styles.title()} {...titleProps}>
           {title}
         </h3>
         {onClose && (
-          <Button size="small" look="link" onClick={onClose} aria-label="close">
-            <CloseIcon color="primary" />
+          <Button size="small" look="link" onClick={onClose} aria-label="close" className={styles.closeBtn()}>
+            <CloseIcon color="muted" size="small" />
           </Button>
         )}
       </header>
-      <div className="flex-1 overflow-auto px-4 pb-10 md:px-15">{children}</div>
+      <div className={styles.body()}>{children}</div>
+      {(primaryLabel || secondaryLabel) && (
+        <div className={styles.buttonWrapper()}>
+          {primaryLabel && (
+            <Button look="primary" size="large" className={styles.primaryBtn()} onClick={primaryOnClick}>
+              {primaryLabel}
+            </Button>
+          )}
+          {secondaryLabel && (
+            <Button look="link" size="large" className={styles.secondaryBtn()} onClick={secondaryOnClick}>
+              {secondaryLabel}
+            </Button>
+          )}
+        </div>
+      )}
     </div>
   );
 }

@@ -35,3 +35,10 @@ export type ModalDialogProps = {
    */
   title?: string;
 } & AriaDialogProps;
+
+export type ModalDialogContextValue = {
+  /**
+   * Size of dialog
+   */
+  size?: Variants['size'];
+};

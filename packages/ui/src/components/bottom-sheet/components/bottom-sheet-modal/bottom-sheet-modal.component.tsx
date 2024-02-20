@@ -5,7 +5,8 @@ import { Overlay, useModalOverlay } from 'react-aria';
 
 import { BREAKPOINTS } from '../../../../tailwind/constants/index.js';
 
-import { ModalProps, Sizes } from './bottom-sheet-modal.types.js';
+import { styles as bottomSheetModalStyles } from './bottom-sheet-modal.styles.js';
+import { ModalProps } from './bottom-sheet-modal.types.js';
 
 const isBrowser = typeof window !== 'undefined';
 
@@ -18,27 +19,11 @@ function checkIfItIsMobile(breakpoint: number) {
   }
 }
 
-const SIZES: Record<Sizes, string> = {
-  xs: 'md:w-[20rem]',
-  sm: 'md:w-[32.25rem]',
-  md: 'md:w-[44.5rem]',
-  lg: 'md:w-[56.75rem]',
-  xl: 'md:w-[79rem]',
-  full: 'md:h-full md:w-full',
-};
-
 const MEDIUM_BREAKPOINT_AS_NUMBER = +BREAKPOINTS.md.replace('px', '');
 
 // TODO: discuss about the animation
-export function BottomSheetModal({
-  state,
-  height,
-  width,
-  children,
-  size = 'md',
-  portalContainer,
-  ...props
-}: ModalProps) {
+export function BottomSheetModal({ state, height, width, children, portalContainer, ...props }: ModalProps) {
+  const styles = bottomSheetModalStyles({});
   const ref = useRef(null);
   const { modalProps, underlayProps } = useModalOverlay(props, state, ref);
   const controls = useAnimation();
@@ -81,10 +66,7 @@ export function BottomSheetModal({
 
   return (
     <Overlay portalContainer={portalContainer}>
-      <div
-        className="fixed inset-0 z-10 flex animate-fadeIn flex-col justify-end bg-black/50 transition-all md:items-center md:justify-center"
-        {...underlayProps}
-      >
+      <div className={styles.underlay()} {...underlayProps}>
         <motion.div
           animate={controls}
           dragElastic={0}
@@ -103,9 +85,9 @@ export function BottomSheetModal({
             visible: { y: 0 },
             hidden: { y: '100%' },
           }}
-          className={clsx('flex flex-col', SIZES[size])}
+          className={styles.motionWrapper()}
         >
-          <div className="flex w-full flex-col" {...modalProps} ref={ref} style={{ height, width }}>
+          <div className={styles.modal()} {...modalProps} ref={ref} style={{ height, width }}>
             {children}
           </div>
         </motion.div>
