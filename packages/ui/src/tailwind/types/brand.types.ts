@@ -17,7 +17,20 @@ export type ColorsKey =
   | 'primary'
   | 'text'
   | 'white'
-  | 'black';
+  | 'black'
+  | 'data-a-solid'
+  | 'data-a-tint'
+  | 'data-b-solid'
+  | 'data-b-tint'
+  | 'data-c-solid'
+  | 'data-c-tint'
+  | 'data-d-solid'
+  | 'data-d-tint'
+  | 'data-e-solid'
+  | 'data-e-tint'
+  | 'data-f-solid'
+  | 'data-f-tint';
+
 type PictogramColorMap = { dark: string; duo: { highlight: string; outline: string } };
 type PictogramConfig = Record<'pictogram', PictogramColorMap>;
 type ColorConfig = Record<ColorsKey, ColorValue>;
