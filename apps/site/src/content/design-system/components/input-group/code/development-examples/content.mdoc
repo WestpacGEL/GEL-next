@@ -231,11 +231,11 @@
         hint="I am a hint"
         supportingText="I am supporting text"
         before={{
-          element: <Button size={size} look="link" iconAfter={VisibilityIcon} iconColor="pop" />,
+          element: <Button size={size} look="link" iconAfter={() => <VisibilityIcon size="small" color="pop" />} />,
           inset: true,
         }}
         after={{
-          element: <Button size={size} look="link" iconAfter={VisibilityIcon} iconColor="pop" />,
+          element: <Button size={size} look="link" iconAfter={() => <VisibilityIcon size="small" color="pop" />} />,
           inset: true,
         }}
       >
