@@ -24,8 +24,8 @@ design:
       slug: dos-and-donts
     noTitle: false
   - title:
-      name: Where else can I find this?
-      slug: where-else-can-i-find-this
+      name: Where can I find this?
+      slug: where-can-i-find-this
     noTitle: false
 accessibility:
   - title:
