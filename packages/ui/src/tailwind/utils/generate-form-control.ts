@@ -3,14 +3,17 @@ export const generateFormControlComponents = (formControlProps: {
   disabled: string;
   sizes: Record<string, string>;
 }) => {
-  const sizes = Object.entries(formControlProps.sizes).reduce((acc, [size, value]) => {
-    return {
-      ...acc,
-      [`.form-control-${size}`]: {
-        [`@apply ${value}`]: {},
-      },
-    };
-  }, {} as Record<string, any>);
+  const sizes = Object.entries(formControlProps.sizes).reduce(
+    (acc, [size, value]) => {
+      return {
+        ...acc,
+        [`.form-control-${size}`]: {
+          [`@apply ${value}`]: {},
+        },
+      };
+    },
+    {} as Record<string, any>,
+  );
   return {
     '.form-control': {
       [`@apply ${formControlProps.base}`]: {},
