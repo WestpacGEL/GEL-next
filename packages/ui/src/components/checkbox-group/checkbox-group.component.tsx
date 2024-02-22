@@ -25,7 +25,9 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
   validationState: 'valid',
   isInvalid: false,
   isRequired: false,
-  setInvalid: () => {},
+  setInvalid: () => function (): void {
+    throw new Error('Function not implemented.');
+  },
   realtimeValidation: {
     isInvalid: false,
     validationErrors: [],
@@ -60,7 +62,9 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
       valueMissing: false,
     },
   },
-  updateValidation: () => {},
+  updateValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
   resetValidation: function (): void {
     throw new Error('Function not implemented.');
   },

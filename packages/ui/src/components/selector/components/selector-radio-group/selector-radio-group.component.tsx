@@ -8,6 +8,7 @@ import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { styles } from './selector-radio-group.styles.js';
 import { type SelectorRadioGroupContextState, type SelectorRadioGroupProps } from './selector-radio-group.types.js';
+import { FUNCTION_NOT_IMPLEMENTED } from '../../../../constants/message.js';
 
 export const SelectorRadioGroupContext = createContext<SelectorRadioGroupContextState>({
   // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
@@ -57,13 +58,13 @@ export const SelectorRadioGroupContext = createContext<SelectorRadioGroupContext
     },
   },
   updateValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
   resetValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
   commitValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
 });
 
