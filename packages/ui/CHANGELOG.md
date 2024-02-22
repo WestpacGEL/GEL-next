@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.17.0
+
+### Minor Changes
+
+- 29c07cc: update look/feel of modal and bottom sheet
+
 ## 0.16.0
 
 ### Minor Changes
