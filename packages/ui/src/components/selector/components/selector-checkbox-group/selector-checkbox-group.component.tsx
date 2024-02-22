@@ -22,6 +22,54 @@ export const SelectorCheckboxGroupContext = createContext<SelectorCheckboxGroupC
   removeValue: () => null,
   toggleValue: () => null,
   validationState: 'valid',
+  isInvalid: false,
+  isRequired: false,
+  setInvalid: function (): void {
+    throw new Error('Function not implemented.');
+  },
+  realtimeValidation: {
+    isInvalid: false,
+    validationErrors: [],
+    validationDetails: {
+      badInput: false,
+      customError: false,
+      patternMismatch: false,
+      rangeOverflow: false,
+      rangeUnderflow: false,
+      stepMismatch: false,
+      tooLong: false,
+      tooShort: false,
+      typeMismatch: false,
+      valid: false,
+      valueMissing: false,
+    },
+  },
+  displayValidation: {
+    isInvalid: false,
+    validationErrors: [],
+    validationDetails: {
+      badInput: false,
+      customError: false,
+      patternMismatch: false,
+      rangeOverflow: false,
+      rangeUnderflow: false,
+      stepMismatch: false,
+      tooLong: false,
+      tooShort: false,
+      typeMismatch: false,
+      valid: false,
+      valueMissing: false,
+    },
+  },
+  updateValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
+  resetValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
+  commitValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
 });
 
 export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {

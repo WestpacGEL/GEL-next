@@ -1,4 +1,5 @@
 import { HTMLAttributes, ReactNode } from 'react';
+import { AriaFieldProps } from 'react-aria';
 
 export type ErrorMessageProps = {
   /**
@@ -8,7 +9,7 @@ export type ErrorMessageProps = {
   /**
    * Message or messages
    */
-  message?: ReactNode | ReactNode[];
+  message?: AriaFieldProps['errorMessage'];
   /**
    * Tag to render
    */

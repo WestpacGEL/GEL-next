@@ -23,6 +23,50 @@ export const ButtonGroupContext = createContext<ButtonGroupContextState>({
   block: false,
   look: 'hero',
   size: 'medium',
+  isInvalid: false,
+  realtimeValidation: {
+    isInvalid: false,
+    validationErrors: [],
+    validationDetails: {
+      badInput: false,
+      customError: false,
+      patternMismatch: false,
+      rangeOverflow: false,
+      rangeUnderflow: false,
+      stepMismatch: false,
+      tooLong: false,
+      tooShort: false,
+      typeMismatch: false,
+      valid: false,
+      valueMissing: false,
+    },
+  },
+  displayValidation: {
+    isInvalid: false,
+    validationErrors: [],
+    validationDetails: {
+      badInput: false,
+      customError: false,
+      patternMismatch: false,
+      rangeOverflow: false,
+      rangeUnderflow: false,
+      stepMismatch: false,
+      tooLong: false,
+      tooShort: false,
+      typeMismatch: false,
+      valid: false,
+      valueMissing: false,
+    },
+  },
+  updateValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
+  resetValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
+  commitValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
 });
 
 export function ButtonGroup({

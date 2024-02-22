@@ -23,6 +23,50 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
   removeValue: () => null,
   toggleValue: () => null,
   validationState: 'valid',
+  isInvalid: false,
+  isRequired: false,
+  setInvalid: () => {},
+  realtimeValidation: {
+    isInvalid: false,
+    validationErrors: [],
+    validationDetails: {
+      badInput: false,
+      customError: false,
+      patternMismatch: false,
+      rangeOverflow: false,
+      rangeUnderflow: false,
+      stepMismatch: false,
+      tooLong: false,
+      tooShort: false,
+      typeMismatch: false,
+      valid: false,
+      valueMissing: false,
+    },
+  },
+  displayValidation: {
+    isInvalid: false,
+    validationErrors: [],
+    validationDetails: {
+      badInput: false,
+      customError: false,
+      patternMismatch: false,
+      rangeOverflow: false,
+      rangeUnderflow: false,
+      stepMismatch: false,
+      tooLong: false,
+      tooShort: false,
+      typeMismatch: false,
+      valid: false,
+      valueMissing: false,
+    },
+  },
+  updateValidation: () => {},
+  resetValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
+  commitValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
 });
 export function CheckboxGroup({
   className,

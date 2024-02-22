@@ -21,6 +21,50 @@ export const SelectorRadioGroupContext = createContext<SelectorRadioGroupContext
   lastFocusedValue: null,
   setLastFocusedValue: () => null,
   orientation: 'vertical',
+  isInvalid: false,
+  realtimeValidation: {
+    isInvalid: false,
+    validationErrors: [],
+    validationDetails: {
+      badInput: false,
+      customError: false,
+      patternMismatch: false,
+      rangeOverflow: false,
+      rangeUnderflow: false,
+      stepMismatch: false,
+      tooLong: false,
+      tooShort: false,
+      typeMismatch: false,
+      valid: false,
+      valueMissing: false,
+    },
+  },
+  displayValidation: {
+    isInvalid: false,
+    validationErrors: [],
+    validationDetails: {
+      badInput: false,
+      customError: false,
+      patternMismatch: false,
+      rangeOverflow: false,
+      rangeUnderflow: false,
+      stepMismatch: false,
+      tooLong: false,
+      tooShort: false,
+      typeMismatch: false,
+      valid: false,
+      valueMissing: false,
+    },
+  },
+  updateValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
+  resetValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
+  commitValidation: function (): void {
+    throw new Error('Function not implemented.');
+  },
 });
 
 export function SelectorRadioGroup({

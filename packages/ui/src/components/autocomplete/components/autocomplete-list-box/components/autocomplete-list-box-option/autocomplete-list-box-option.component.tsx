@@ -18,7 +18,7 @@ export function AutocompleteListBoxOption({ item, state }: AutocompleteListBoxOp
 
   const { optionProps, isDisabled, isSelected, isFocused } = useOption(
     {
-      key: item.key,
+      key: item.key as any,
     },
     state,
     ref,
