@@ -4,6 +4,7 @@ import React, { createContext, useEffect, useId, useMemo, useRef, useState } fro
 import { useCheckboxGroup, useFocusRing } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
+import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
 import { CheckboxGroupCheckbox, ErrorMessage, Hint, Label } from '../index.js';
@@ -25,9 +26,10 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
   validationState: 'valid',
   isInvalid: false,
   isRequired: false,
-  setInvalid: () => function (): void {
-    throw new Error('Function not implemented.');
-  },
+  setInvalid: () =>
+    function (): void {
+      throw new Error(FUNCTION_NOT_IMPLEMENTED);
+    },
   realtimeValidation: {
     isInvalid: false,
     validationErrors: [],
@@ -63,13 +65,13 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
     },
   },
   updateValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
   resetValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
   commitValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
 });
 export function CheckboxGroup({
