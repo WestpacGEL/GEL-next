@@ -19,8 +19,8 @@ design:
       slug: visual-design
     noTitle: false
   - title:
-      name: Where else can I find this?
-      slug: where-else-can-i-find-this
+      name: Where is this available?
+      slug: where-is-this-available
     noTitle: false
 accessibility:
   - title:
