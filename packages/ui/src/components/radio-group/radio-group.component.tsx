@@ -10,6 +10,7 @@ import { ErrorMessage, Hint, Label, RadioGroupRadio } from '../index.js';
 
 import { styles as radioGroupStyles } from './radio-group.styles.js';
 import { type RadioGroupContextState, type RadioGroupProps } from './radio-group.types.js';
+import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
 
 export const RadioGroupContext = createContext<RadioGroupContextState>({
   // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
@@ -60,13 +61,13 @@ export const RadioGroupContext = createContext<RadioGroupContextState>({
     },
   },
   updateValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
   resetValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
   commitValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
 });
 
@@ -127,9 +128,8 @@ export function RadioGroup({
             aria-expanded={!hiddenOptions}
             {...focusProps}
           >
-            <p className={styles.buttonText()}>{`Show ${revealAmount} more ${
-              revealAmount === 1 ? 'item' : 'items'
-            }`}</p>
+            <p className={styles.buttonText()}>{`Show ${revealAmount} more ${revealAmount === 1 ? 'item' : 'items'
+              }`}</p>
           </Button>
         )}
       </div>

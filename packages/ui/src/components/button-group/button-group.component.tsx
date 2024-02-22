@@ -8,6 +8,7 @@ import { ButtonGroupButton, ErrorMessage, Hint, Label } from '../index.js';
 
 import { styles as buttonGroupStyles } from './button-group.styles.js';
 import { ButtonGroupContextState, type ButtonGroupProps } from './button-group.types.js';
+import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
 
 export const ButtonGroupContext = createContext<ButtonGroupContextState>({
   // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
@@ -59,13 +60,13 @@ export const ButtonGroupContext = createContext<ButtonGroupContextState>({
     },
   },
   updateValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
   resetValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
   commitValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
 });
 

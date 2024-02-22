@@ -24,7 +24,7 @@ function Accordion<T extends object>(
       // equal to (if (child == null || typeof child == 'string'))
       if (!isValidElement(child)) return child;
       return cloneElement(child, {
-        ...child.props,
+        ...child.props as any,
         // Adding hasChildItems false by default
         hasChildItems: false,
       });

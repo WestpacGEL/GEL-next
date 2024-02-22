@@ -11,6 +11,7 @@ import {
   type SelectorCheckboxGroupContextState,
   type SelectorCheckboxGroupProps,
 } from './selector-checkbox-group.types.js';
+import { FUNCTION_NOT_IMPLEMENTED } from '../../../../constants/message.js';
 
 export const SelectorCheckboxGroupContext = createContext<SelectorCheckboxGroupContextState>({
   value: [],
@@ -25,7 +26,7 @@ export const SelectorCheckboxGroupContext = createContext<SelectorCheckboxGroupC
   isInvalid: false,
   isRequired: false,
   setInvalid: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
   realtimeValidation: {
     isInvalid: false,
@@ -62,13 +63,13 @@ export const SelectorCheckboxGroupContext = createContext<SelectorCheckboxGroupC
     },
   },
   updateValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
   resetValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
   commitValidation: function (): void {
-    throw new Error('Function not implemented.');
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
 });
 
