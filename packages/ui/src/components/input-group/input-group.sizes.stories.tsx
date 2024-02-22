@@ -42,8 +42,8 @@ export const InputGroupWithDifferentSizes: Story = {
               label="Icon"
               hint="I am a hint"
               supportingText="I am supporting text"
-              before={{ icon: () => <VisibilityIcon color="muted" />, inset: true }}
-              after={{ icon: () => <VisibilityIcon color="muted" />, inset: true }}
+              before={{ icon: props => <VisibilityIcon {...props} color="muted" /> }}
+              after={{ icon: props => <VisibilityIcon {...props} color="muted" /> }}
             >
               <Input />
             </InputGroup>
@@ -54,11 +54,15 @@ export const InputGroupWithDifferentSizes: Story = {
               hint="I am a hint"
               supportingText="I am supporting text"
               before={{
-                element: <Button size={size} look="link" iconAfter={() => <VisibilityIcon color="muted" />} />,
+                element: (
+                  <Button size={size} look="link" iconAfter={() => <VisibilityIcon size="small" color="muted" />} />
+                ),
                 inset: true,
               }}
               after={{
-                element: <Button size={size} look="link" iconAfter={() => <VisibilityIcon color="muted" />} />,
+                element: (
+                  <Button size={size} look="link" iconAfter={() => <VisibilityIcon size="small" color="muted" />} />
+                ),
                 inset: true,
               }}
             >

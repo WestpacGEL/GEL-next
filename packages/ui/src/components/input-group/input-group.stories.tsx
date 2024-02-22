@@ -134,7 +134,7 @@ export const FixedWidths = () => {
           label="Icon"
           hint="I am a hint"
           supportingText="I am supporting text"
-          after={{ icon: () => <VisibilityIcon color="muted" />, inset: true }}
+          after={{ icon: props => <VisibilityIcon {...props} color="muted" />, inset: true }}
         >
           <Input placeholder={width.toString()} />
         </InputGroup>

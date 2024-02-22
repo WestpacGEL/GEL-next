@@ -20,16 +20,16 @@ export function Cta({
 }) {
   return (
     <div className="flex gap-2 pb-[120px] pt-6 max-md:flex-col max-md:pb-10">
-      <Button look="primary" className="md:px-2.5" onClick={primaryOnClick} type={primaryType}>
+      <Button size="large" look="primary" className="md:px-2.5" onClick={primaryOnClick} type={primaryType}>
         {children}
       </Button>
       {secondary && (
-        <Button look="faint" type="button" soft onClick={secondaryOnClick}>
+        <Button size="large" look="faint" type="button" soft onClick={secondaryOnClick}>
           {secondary}
         </Button>
       )}
       {tertiary && (
-        <Button className="no-underline" type="button" look="link" onClick={tertiaryOnClick}>
+        <Button size="large" className="no-underline" type="button" look="link" onClick={tertiaryOnClick}>
           {tertiary}
         </Button>
       )}

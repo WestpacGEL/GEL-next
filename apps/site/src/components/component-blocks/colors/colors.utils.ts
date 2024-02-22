@@ -1,6 +1,6 @@
 import { type BrandConfig, type BrandKey } from '@westpac/ui/tailwind';
 import { ALL_THEMES } from '@westpac/ui/themes';
-import { BASE_COLORS } from '@westpac/ui/themes-constants';
+import { BASE_COLORS, DATA_VIS_COLORS } from '@westpac/ui/themes-constants';
 
 import { ACCESSIBILITY_COLORS, PRIMARY_COLORS, SECONDARY_COLORS } from './colors.constants';
 
@@ -14,6 +14,7 @@ const hexToRgb = (hex: string) =>
 const filterTheme = (brand: BrandKey) =>
   ALL_THEMES.find((brandTheme: BrandConfig) => brandTheme.code === brand.toUpperCase())?.colors;
 
+// eslint-disable-next-line sonarjs/cognitive-complexity
 export function getColorPalette({ brand, palette }: { brand: BrandKey; palette: string }) {
   const colorPalette: { hex: string; name: string; rgb: string }[] = [];
   if (palette === 'primary') {
@@ -52,6 +53,17 @@ export function getColorPalette({ brand, palette }: { brand: BrandKey; palette: 
         });
       });
     }
+  } else if (palette === 'data_visualisation') {
+    const typedBrand = brand as Exclude<BrandKey, 'btfg'>;
+    Object.entries(DATA_VIS_COLORS[typedBrand]).forEach(([name, hex]) => {
+      const hexStr = hex as string;
+      const rgb = hexToRgb(hexStr) || [];
+      colorPalette.push({
+        name,
+        hex: hexStr,
+        rgb: `R:${rgb[0]} G:${rgb[1]} B:${rgb[2]}${rgb[3] ? ' A:' + rgb[3] : ''}`,
+      });
+    });
   }
   return colorPalette;
 }

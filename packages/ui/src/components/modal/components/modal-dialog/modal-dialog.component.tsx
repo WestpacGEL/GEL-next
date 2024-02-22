@@ -1,4 +1,6 @@
-import React, { useRef } from 'react';
+'use client';
+
+import React, { createContext, useContext, useRef } from 'react';
 import { useDialog, useFocusRing } from 'react-aria';
 
 import { CloseIcon } from '../../../../components/icon/index.js';
@@ -6,8 +8,11 @@ import { CloseIcon } from '../../../../components/icon/index.js';
 import { ModalDialogBody } from './components/modal-dialog-body/index.js';
 import { ModalDialogFooter } from './components/modal-dialog-footer/index.js';
 import { styles as dialogStyles } from './modal-dialog.styles.js';
-import { type ModalDialogProps } from './modal-dialog.types.js';
+import { ModalDialogContextValue, type ModalDialogProps } from './modal-dialog.types.js';
 
+const ModalDialogContext = createContext<ModalDialogContextValue>({ size: 'md' });
+
+export const useModalDialogContext = () => useContext(ModalDialogContext);
 /**
  * @private
  */
@@ -32,7 +37,9 @@ export function ModalDialog({ className, body, onClose, size = 'md', ...props }:
           {props.title}
         </h3>
       )}
-      {body ? <ModalDialogBody>{children}</ModalDialogBody> : children}
+      <ModalDialogContext.Provider value={{ size }}>
+        {body ? <ModalDialogBody>{children}</ModalDialogBody> : children}
+      </ModalDialogContext.Provider>
     </div>
   );
 }
