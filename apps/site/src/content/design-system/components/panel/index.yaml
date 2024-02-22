@@ -4,6 +4,7 @@ description: >-
   or action, or to simply communicate important information.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Default panel
@@ -28,6 +29,10 @@ design:
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
     noTitle: false
 accessibility:
   - title:

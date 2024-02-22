@@ -4,6 +4,7 @@ description: >-
   your users in the moment yet require careful consideration for mobile screens.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Popover
@@ -20,6 +21,10 @@ design:
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
+    noTitle: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
     noTitle: false
 accessibility:
   - title:

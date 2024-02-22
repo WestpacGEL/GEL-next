@@ -1,8 +1,24 @@
 name: Flexi Cell
+description: >-
+  Use the Flexi-cell component to present information in a visually distinct and
+  interactive way. They can have a stacked or horizontal layout, ensure your
+  content aligns with the brand guidelines.
 namedExport:
   discriminant: false
 excludeFromNavbar: true
-design: []
+design:
+  - title:
+      name: Product tiles
+      slug: demo
+    noTitle: false
+  - title:
+      name: Promotional tiles vertical
+      slug: promotional-tiles-vertical
+    noTitle: false
+  - title:
+      name: Product tile with badge
+      slug: product-tile-with-badge
+    noTitle: false
 accessibility: []
 relatedComponents: []
 code:

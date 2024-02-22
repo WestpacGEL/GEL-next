@@ -27,6 +27,10 @@ design:
       name: Dos and don’ts
       slug: dos-and-donts
     noTitle: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
+    noTitle: false
 accessibility:
   - title:
       name: Accessibility features
