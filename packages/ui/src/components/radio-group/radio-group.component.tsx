@@ -4,13 +4,13 @@ import React, { createContext, useEffect, useId, useMemo, useRef, useState } fro
 import { useFocusRing, useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
+import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
 import { ErrorMessage, Hint, Label, RadioGroupRadio } from '../index.js';
 
 import { styles as radioGroupStyles } from './radio-group.styles.js';
 import { type RadioGroupContextState, type RadioGroupProps } from './radio-group.types.js';
-import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
 
 export const RadioGroupContext = createContext<RadioGroupContextState>({
   // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
@@ -128,8 +128,9 @@ export function RadioGroup({
             aria-expanded={!hiddenOptions}
             {...focusProps}
           >
-            <p className={styles.buttonText()}>{`Show ${revealAmount} more ${revealAmount === 1 ? 'item' : 'items'
-              }`}</p>
+            <p className={styles.buttonText()}>{`Show ${revealAmount} more ${
+              revealAmount === 1 ? 'item' : 'items'
+            }`}</p>
           </Button>
         )}
       </div>

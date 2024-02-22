@@ -4,6 +4,7 @@ import React, { createContext } from 'react';
 import { useCheckboxGroup } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
+import { FUNCTION_NOT_IMPLEMENTED } from '../../../../constants/message.js';
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { styles } from './selector-checkbox-group.styles.js';
@@ -11,7 +12,6 @@ import {
   type SelectorCheckboxGroupContextState,
   type SelectorCheckboxGroupProps,
 } from './selector-checkbox-group.types.js';
-import { FUNCTION_NOT_IMPLEMENTED } from '../../../../constants/message.js';
 
 export const SelectorCheckboxGroupContext = createContext<SelectorCheckboxGroupContextState>({
   value: [],

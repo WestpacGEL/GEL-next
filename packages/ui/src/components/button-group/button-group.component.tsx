@@ -4,11 +4,11 @@ import React, { createContext } from 'react';
 import { useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
+import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
 import { ButtonGroupButton, ErrorMessage, Hint, Label } from '../index.js';
 
 import { styles as buttonGroupStyles } from './button-group.styles.js';
 import { ButtonGroupContextState, type ButtonGroupProps } from './button-group.types.js';
-import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
 
 export const ButtonGroupContext = createContext<ButtonGroupContextState>({
   // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
