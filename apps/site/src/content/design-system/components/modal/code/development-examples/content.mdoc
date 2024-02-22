@@ -5,7 +5,7 @@
   const state = useOverlayTriggerState({});
   return (
     <>
-      <Modal isDismissable state={state} aria-label="Modal heading" body>
+      <Modal isDismissable state={state} aria-label="Modal heading" title="Title" body>
         ‘It was much pleasanter at home’, thought poor Alice, ‘when one wasn’t always growing larger and smaller, and
         being ordered about by mice and rabbits. I almost wish I hadn’t gone down that rabbit-hole — and yet — and yet —
         it’s rather curious, you know, this sort of life! I do wonder what can have happened to me! When I used to read
@@ -51,14 +51,12 @@
                 black against a silvery climbing phosphorescence that grew and grew.
               </p>
             </ModalBody>
-            <ModalFooter>
-              <div className="flex gap-1 justify-end">
-                <Button look="faint" onClick={states[size as 'sm' | 'md' | 'lg'].close}>
-                  Close
-                </Button>
-                <Button look="primary">Save changes</Button>
-              </div>
-            </ModalFooter>
+            <ModalFooter
+              primaryLabel="Save changes"
+              primaryOnClick={states[size as 'sm' | 'md' | 'lg'].close}
+              secondaryLabel="Close"
+              secondaryOnClick={states[size as 'sm' | 'md' | 'lg'].close}
+            />
           </Modal>
           <Button soft look="primary" onClick={states[size as 'sm' | 'md' | 'lg'].open}>
             {label} Modal
@@ -80,9 +78,12 @@
     <Fragment>
       <Modal state={state} title="Title" isDismissable={true}>
         <ModalBody>I'm children</ModalBody>
-        <ModalFooter>
-          <p>Lorem, ipsum dolor</p>
-        </ModalFooter>
+        <ModalFooter
+          primaryLabel="Label"
+          primaryOnClick={state.close}
+          secondaryLabel="Label"
+          secondaryOnClick={state.close}
+        />
       </Modal>
       <Button look="primary" soft onClick={state.open}>
         Open Modal
@@ -102,12 +103,12 @@
     <Fragment>
       <Modal isKeyboardDismissDisabled state={state} title="Modal title">
         <ModalBody>I'm children</ModalBody>
-        <ModalFooter className="flex justify-end gap-2">
-          <Button look="faint" onClick={state.close}>
-            Close
-          </Button>
-          <Button look="primary">Submit</Button>
-        </ModalFooter>
+        <ModalFooter
+          primaryLabel="Submit"
+          primaryOnClick={state.close}
+          secondaryLabel="Close"
+          secondaryOnClick={state.close}
+        />
       </Modal>
       <Button look="primary" soft onClick={state.open}>
         Open Modal

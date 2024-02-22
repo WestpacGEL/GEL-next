@@ -22,10 +22,10 @@ export function CustomHeader() {
   return (
     <Header
       brand="wbc"
-      fixed={!isMobile ? true : false}
       leftIcon={isMobile ? 'arrow' : undefined}
       leftOnClick={() => router.back()}
       logoLink="/"
+      className="z-[100] m-auto max-w-[1922px] md:sticky md:top-0"
     >
       <Button look="faint" size={{ initial: 'small', sm: 'medium' }} soft>
         Sign Out

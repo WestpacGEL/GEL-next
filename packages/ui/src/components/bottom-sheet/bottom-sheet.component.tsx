@@ -9,10 +9,28 @@ import { BottomSheetModal } from './components/bottom-sheet-modal/bottom-sheet-m
 /**
  * Bottom sheet component
  */
-export function BottomSheet({ children, state, ...props }: BottomSheetProps) {
+export function BottomSheet({
+  children,
+  state,
+  title,
+  primaryLabel,
+  secondaryLabel,
+  primaryOnClick,
+  secondaryOnClick,
+  ...props
+}: BottomSheetProps) {
   return (
     <BottomSheetModal state={state} {...props}>
-      <BottomSheetDialog onClose={state.close}>{children}</BottomSheetDialog>
+      <BottomSheetDialog
+        primaryLabel={primaryLabel}
+        secondaryLabel={secondaryLabel}
+        primaryOnClick={primaryOnClick}
+        secondaryOnClick={secondaryOnClick}
+        onClose={state.close}
+        title={title}
+      >
+        {children}
+      </BottomSheetDialog>
     </BottomSheetModal>
   );
 }

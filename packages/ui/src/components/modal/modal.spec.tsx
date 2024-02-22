@@ -29,7 +29,7 @@ describe('Modal', () => {
     render(
       <Modal state={result.current}>
         <ModalBody>Body</ModalBody>
-        <ModalFooter>Footer</ModalFooter>
+        <ModalFooter primaryLabel="Footer" primaryOnClick={() => null} />
       </Modal>,
     );
 
@@ -41,7 +41,7 @@ describe('Modal', () => {
     render(
       <Modal state={result.current} isDismissable>
         <ModalBody>Body</ModalBody>
-        <ModalFooter>Footer</ModalFooter>
+        <ModalFooter primaryLabel="Footer" primaryOnClick={() => null} />
       </Modal>,
     );
 

@@ -4,22 +4,31 @@ export const styles = tv(
   {
     slots: {
       base: 'relative mx-auto flex max-w-full flex-col overflow-hidden rounded bg-white outline-none',
-      title: 'border-b border-b-heading pb-2 pl-4 pr-5 pt-3 text-lg font-medium',
-      close: 'absolute right-1 top-1 block p-1',
+      title: 'typography-body-7 pb-4 pt-9 font-bold',
+      close: 'absolute right-0 top-0 block p-3',
     },
     variants: {
       size: {
         full: {
           base: 'max-h-screen w-full flex-1',
+          close: 'p-2',
+          title: 'px-4 py-3',
         },
         lg: {
-          base: 'w-[56.25rem]',
+          base: 'w-[50rem]',
+          title: 'px-12 pt-12',
         },
         md: {
           base: 'w-[37.5rem]',
+          title: 'px-7 ',
         },
         sm: {
-          base: 'w-[18.75rem]',
+          base: 'w-[25rem]',
+          title: 'px-5',
+        },
+        fluid: {
+          base: 'w-full',
+          title: 'px-5',
         },
       },
       isFocusVisible: {

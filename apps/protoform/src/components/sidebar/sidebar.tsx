@@ -6,7 +6,7 @@ import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { clsx } from 'clsx';
 import throttle from 'lodash.throttle';
 import { usePathname } from 'next/navigation';
-import { ReactNode, useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import { useSidebar } from './context';
 
@@ -15,7 +15,8 @@ export function Sidebar({ children }: { children?: ReactNode }) {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarScrolled, setSidebarScrolled] = useState(false);
   const [totalSteps, setTotalSteps] = useState(0);
-  const [sidebarContent, setSidebarContent] = useState<HTMLElement | null>(null);
+  const [isMaxWidth, setIsMaxWidth] = useState(true);
+  const sidebarContent = useRef<HTMLDivElement>(null);
 
   const handleScroll = throttle(() => {
     let hasScrolled = false;
@@ -27,7 +28,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
 
   const handleSidebarScroll = throttle(() => {
     let hasScrolled = false;
-    if (sidebarContent && sidebarContent.scrollTop > 5) {
+    if (sidebarContent.current && sidebarContent.current.scrollTop > 5) {
       hasScrolled = true;
     }
     setSidebarScrolled(hasScrolled);
@@ -37,26 +38,25 @@ export function Sidebar({ children }: { children?: ReactNode }) {
   const isDashboard = pathName === '/';
   const currStep = ropeStep + 1;
 
-  useLayoutEffect(() => {
-    setSidebarContent(document.getElementById('sidebar-content'));
-  }, []);
-
   useEffect(() => {
+    const content = sidebarContent.current;
     window.addEventListener('scroll', handleScroll);
-    sidebarContent?.addEventListener('scroll', handleSidebarScroll);
+    content?.addEventListener('scroll', handleSidebarScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      sidebarContent?.removeEventListener('scroll', handleSidebarScroll);
+      content?.removeEventListener('scroll', handleSidebarScroll);
     };
   }, [handleScroll, handleSidebarScroll, sidebarContent]);
 
   const updateOpen = useCallback(() => {
+    setIsMaxWidth(window.innerWidth >= 1920);
     setOpen(window.innerWidth >= parseInt(BREAKPOINTS.md));
   }, [setOpen]);
 
   useEffect(() => {
     if (ropeData) setOpen(true);
+    setIsMaxWidth(window.innerWidth >= 1920);
     updateOpen();
 
     window.addEventListener('resize', updateOpen);
@@ -100,18 +100,20 @@ export function Sidebar({ children }: { children?: ReactNode }) {
             </Button>
           )}
         </div>
-
         <>
           <>
             <div
               className={clsx(
-                'fixed inset-y-0 left-auto right-0 w-[300px] overflow-auto border-l-[1px] border-l-border bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] after:pointer-events-none after:fixed after:left-[calc(100%-300px)] after:right-0 after:top-[66px] after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] max-md:z-[100] md:mt-11',
+                'fixed inset-y-0 w-[300px] overflow-auto border-l-[1px] border-t-[1px] border-border bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] before:pointer-events-none before:sticky before:inset-x-0 before:top-0 before:z-50 before:block before:h-1 before:bg-gradient-to-b before:from-black/[.2] before:from-0% before:opacity-0 before:transition-all before:duration-200 before:will-change-[opacity] max-md:z-[100] md:mt-11',
                 {
-                  'after:opacity-100': sidebarScrolled,
-                  'translate-x-full': !open,
+                  'before:opacity-100': sidebarScrolled,
+                  'max-md:translate-x-full': !open,
+                  'ml-[1620px]': isMaxWidth,
+                  'md:right-[2px] right-0': !isMaxWidth,
                 },
               )}
               id="sidebar-content"
+              ref={sidebarContent}
             >
               <div
                 className={clsx({
