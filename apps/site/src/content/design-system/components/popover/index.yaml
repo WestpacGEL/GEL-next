@@ -26,6 +26,10 @@ design:
       name: Where is this available?
       slug: where-is-this-available
     noTitle: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available-1
+    noTitle: false
 accessibility:
   - title:
       name: Accessibility features
