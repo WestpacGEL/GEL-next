@@ -30,13 +30,14 @@ export function ContentWrapper({ children }: { children: ReactNode }) {
   return (
     <section
       className={clsx(
-        'min-h-screen after:pointer-events-none after:fixed after:inset-x-0 after:top-[66px] after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] md:mt-11',
+        'min-h-screen before:pointer-events-none before:sticky before:inset-x-auto before:top-[66px] before:z-10 before:block before:h-1 before:bg-gradient-to-b before:from-black/[.2] before:from-0% before:opacity-0 before:transition-[opacity] before:duration-200 before:will-change-[opacity]',
         {
-          'md:mr-[300px]': open,
-          'md:after:opacity-100': scrolled,
-          'after:left-0 after:right-[300px]': scrolled && open,
+          'md:mr-[300px] before:right-[300px]': open,
+          'md:before:opacity-100': scrolled,
+          'before:left-0 ': scrolled && open,
         },
       )}
+      id="content-wrapper"
     >
       <GridContainer>
         <Grid>

@@ -99,6 +99,7 @@ export function Repeater({
                         size="small"
                         soft
                         onClick={() => handleRemove(item.id, index)}
+                        type="button"
                       >
                         Remove
                       </Button>
@@ -118,6 +119,7 @@ export function Repeater({
           size="small"
           soft
           onClick={() => handleAdd()}
+          type="button"
         >
           {addText}
         </Button>
