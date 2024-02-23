@@ -5,6 +5,12 @@
       "schedule": "0 5 * * *"
     }
   ],
+  "rewrites": [
+    {
+      "source": "/articles/what-is-GEL",
+      "destination": "/articles/what-is-gel"
+    }
+  ],
   "headers": [
     {
       "source": "/((?!api|keystatic|_next/static|_next/image|favicon.ico).*)",
