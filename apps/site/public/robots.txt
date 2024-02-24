@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /keystatic/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://gel.westpacgroup.com.au/sitemap/sitemap.xml
