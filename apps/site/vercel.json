@@ -9,6 +9,34 @@
     {
       "source": "/articles/what-is-GEL",
       "destination": "/articles/what-is-gel"
+    },
+    {
+      "source": "/design-system/accessibility/(.*)",
+      "destination": "/design-system/wbc/accessibility/$1"
+    },
+    {
+      "source": "/design-system/foundation/(.*)",
+      "destination": "/design-system/wbc/foundation/$1"
+    },
+    {
+      "source": "/design-system/components/(.*)",
+      "destination": "/design-system/wbc/components/$1"
+    },
+    {
+      "source": "/design-system/patterns/(.*)",
+      "destination": "/design-system/wbc/patterns/$1"
+    },
+    {
+      "source": "/design-system/development/(.*)",
+      "destination": "/design-system/wbc/development/$1"
+    },
+    {
+      "source": "/design-system/content/(.*)",
+      "destination": "/design-system/wbc/content/$1"
+    },
+    {
+      "source": "/design-system/design-tokens",
+      "destination": "/design-system/wbc/design-tokens"
     }
   ],
   "headers": [
