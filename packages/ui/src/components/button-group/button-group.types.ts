@@ -46,5 +46,12 @@ export type ButtonGroupContextState = {
    * Controls look of `Button` components, can't be applied directly to `Button`
    */
   look?: 'hero' | 'primary';
-} & RadioGroupState &
-  Pick<ButtonProps, 'size'>;
+  /**
+   * Controls look of `Button` components, can't be applied directly to `Button`
+   */
+  size: ButtonProps['size'];
+  /**
+   * Radio group state
+   */
+  state: RadioGroupState;
+};

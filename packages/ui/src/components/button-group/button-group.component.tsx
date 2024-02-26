@@ -11,62 +11,64 @@ import { styles as buttonGroupStyles } from './button-group.styles.js';
 import { ButtonGroupContextState, type ButtonGroupProps } from './button-group.types.js';
 
 export const ButtonGroupContext = createContext<ButtonGroupContextState>({
-  // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
-  name: '',
-  isDisabled: false,
-  isReadOnly: false,
-  isRequired: false,
-  validationState: null,
-  selectedValue: null,
-  setSelectedValue: () => null,
-  lastFocusedValue: null,
-  setLastFocusedValue: () => null,
   block: false,
   look: 'hero',
   size: 'medium',
-  isInvalid: false,
-  realtimeValidation: {
+  state: {
+    // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
+    name: '',
+    isDisabled: false,
+    isReadOnly: false,
+    isRequired: false,
+    validationState: null,
+    selectedValue: null,
+    setSelectedValue: () => null,
+    lastFocusedValue: null,
+    setLastFocusedValue: () => null,
     isInvalid: false,
-    validationErrors: [],
-    validationDetails: {
-      badInput: false,
-      customError: false,
-      patternMismatch: false,
-      rangeOverflow: false,
-      rangeUnderflow: false,
-      stepMismatch: false,
-      tooLong: false,
-      tooShort: false,
-      typeMismatch: false,
-      valid: false,
-      valueMissing: false,
+    realtimeValidation: {
+      isInvalid: false,
+      validationErrors: [],
+      validationDetails: {
+        badInput: false,
+        customError: false,
+        patternMismatch: false,
+        rangeOverflow: false,
+        rangeUnderflow: false,
+        stepMismatch: false,
+        tooLong: false,
+        tooShort: false,
+        typeMismatch: false,
+        valid: false,
+        valueMissing: false,
+      },
     },
-  },
-  displayValidation: {
-    isInvalid: false,
-    validationErrors: [],
-    validationDetails: {
-      badInput: false,
-      customError: false,
-      patternMismatch: false,
-      rangeOverflow: false,
-      rangeUnderflow: false,
-      stepMismatch: false,
-      tooLong: false,
-      tooShort: false,
-      typeMismatch: false,
-      valid: false,
-      valueMissing: false,
+    displayValidation: {
+      isInvalid: false,
+      validationErrors: [],
+      validationDetails: {
+        badInput: false,
+        customError: false,
+        patternMismatch: false,
+        rangeOverflow: false,
+        rangeUnderflow: false,
+        stepMismatch: false,
+        tooLong: false,
+        tooShort: false,
+        typeMismatch: false,
+        valid: false,
+        valueMissing: false,
+      },
     },
-  },
-  updateValidation: function (): void {
-    throw new Error(FUNCTION_NOT_IMPLEMENTED);
-  },
-  resetValidation: function (): void {
-    throw new Error(FUNCTION_NOT_IMPLEMENTED);
-  },
-  commitValidation: function (): void {
-    throw new Error(FUNCTION_NOT_IMPLEMENTED);
+    updateValidation: function (): void {
+      throw new Error(FUNCTION_NOT_IMPLEMENTED);
+    },
+    resetValidation: function (): void {
+      throw new Error(FUNCTION_NOT_IMPLEMENTED);
+    },
+    commitValidation: function (): void {
+      throw new Error(FUNCTION_NOT_IMPLEMENTED);
+    },
   },
 });
 
@@ -101,7 +103,7 @@ export function ButtonGroup({
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}
       <div className={styles.buttonWrapper()}>
-        <ButtonGroupContext.Provider value={{ ...state, size, look, block }}>
+        <ButtonGroupContext.Provider value={{ state, size, look, block }}>
           {buttons.map((button, index) => (
             <ButtonGroupButton key={index} className="group/buttons" {...button} />
           ))}
