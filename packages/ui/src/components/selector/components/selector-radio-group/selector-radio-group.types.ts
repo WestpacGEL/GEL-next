@@ -24,4 +24,8 @@ export type SelectorRadioGroupContextState = {
    * Controls orientation of `Radio` components, can't be applied directly on `Radio`
    */
   orientation: 'vertical' | 'horizontal';
-} & RadioGroupState;
+  /**
+   * Radio group state
+   */
+  state: RadioGroupState;
+};

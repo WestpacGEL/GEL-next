@@ -23,12 +23,12 @@ export function Pagination({
 
   const generateHandleOnClickBackwards = useCallback(
     (
-        current: number,
-        infinite: boolean,
-        forwardOnly: boolean,
-        onChange: (page: number) => unknown,
-        pages: PaginationProps['pages'],
-      ) =>
+      current: number,
+      infinite: boolean,
+      forwardOnly: boolean,
+      onChange: (page: number) => unknown,
+      pages: PaginationProps['pages'],
+    ) =>
       () => {
         if (infinite && forwardOnly) {
           return onChange(pages.length);

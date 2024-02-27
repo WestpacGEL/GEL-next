@@ -2,6 +2,7 @@ name: Button dropdowns
 description: Use a button dropdown to display a styled list of actions.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Button dropdowns
@@ -14,6 +15,10 @@ design:
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
     noTitle: false
 accessibility:
   - title:

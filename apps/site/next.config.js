@@ -18,6 +18,16 @@ module.exports = {
         destination: '/design-system/wbc',
         permanent: false,
       },
+      {
+        source: '/design-system/what-is-(G|g)(E|e)(L|l)',
+        destination: '/articles/what-is-gel',
+        permanent: false,
+      },
+      {
+        source: '/articles',
+        destination: '/',
+        permanent: false,
+      },
     ];
   },
 };

@@ -45,4 +45,8 @@ export type CheckboxGroupContextState = {
    * Controls size of `CheckboxItem` components, can't be applied directly on `CheckboxItem`
    */
   size: 'medium' | 'large';
-} & CheckboxGroupState;
+  /**
+   * State
+   */
+  state: CheckboxGroupState;
+};

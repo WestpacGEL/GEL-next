@@ -17,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <FontPreloader />
+      <meta name="google-site-verification" content="OqpMflvRwQAgK3Lbvov6fs-G37wjQy1hqAH7ECgCW7M" />
       <body>
         {children}
         {isEnabled && (

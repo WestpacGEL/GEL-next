@@ -1,6 +1,8 @@
-```tsx
+{% shortCode name="where-is-this-available" /%}
 
-    <Table colspan={3}>
+```tsx
+  <Table colspan={2}>
+
       <React.Fragment key=".0">
         <TableHeader>
           <TableHeaderRow>
@@ -16,11 +18,19 @@
         <TableBody>
           <TableRow>
             <TableCell>
+              <strong>GEL Design System</strong>
+            </TableCell>
+            <TableCell>
+<div className="typography-body-10 text-success"><TickCircleIcon size="small" look="outlined" className="mr-2" />Available</div>
+            </TableCell>
+
+          </TableRow>
+<TableRow>
+            <TableCell>
               <strong>Mesh UI</strong>
             </TableCell>
             <TableCell>
-<Alert look="success" mode="text">Available
-      </Alert>
+<div className="typography-body-10 text-info"><CalendarIcon size="small" look="outlined" className="mr-2" />Older version available - Upgrade in backlog</div>
             </TableCell>
 
           </TableRow>
@@ -29,8 +39,7 @@
              <strong>Legacy WDP</strong>
             </TableCell>
             <TableCell>
-<Alert look="success" mode="text">Available
-      </Alert>
+<div className="typography-body-10 text-warning"><WarningIcon size="small" look="outlined" className="mr-2" />Older version available</div>
             </TableCell>
 
           </TableRow>

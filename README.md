@@ -67,7 +67,7 @@ Add a custom attribute tag `data-theme="brand_name"` to `html` tag. Note that in
 Following example shows adding `wbc` theme. You can add other valid brand names such as `stg`, `bom`, `bsa`, `rams`, `wbg` etc. as the value.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="wbc">
   ...
 </html>

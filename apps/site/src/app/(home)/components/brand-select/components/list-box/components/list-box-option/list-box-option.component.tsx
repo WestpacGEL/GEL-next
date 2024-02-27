@@ -15,7 +15,7 @@ export function Option({ item, state }: OptionProps) {
   const ref = React.useRef<HTMLAnchorElement>(null);
   const { isDisabled, isSelected, isFocused } = useOption(
     {
-      key: item.key,
+      key: item.key as any,
     },
     state,
     ref,

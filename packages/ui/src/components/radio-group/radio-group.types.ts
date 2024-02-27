@@ -41,4 +41,8 @@ export type RadioGroupContextState = {
    * Controls size of `Radio` components, can't be applied directly on `Radio`
    */
   size: 'medium' | 'large';
-} & RadioGroupState;
+  /**
+   * State
+   */
+  state: RadioGroupState;
+};

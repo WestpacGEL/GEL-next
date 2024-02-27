@@ -4,6 +4,7 @@ description: >-
   want to surface at the page or screen level, but needs to be findable.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Examples
@@ -16,6 +17,10 @@ design:
   - title:
       name: Visual design
       slug: visual-design
+    noTitle: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
     noTitle: false
 accessibility:
   - title:
