@@ -29,6 +29,9 @@ export function BottomSheetModal({ state, height, width, children, portalContain
   const controls = useAnimation();
   const [isMobile, setIsMobile] = useState(checkIfItIsMobile(MEDIUM_BREAKPOINT_AS_NUMBER));
 
+  // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
+  const brandContainer = document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]');
+
   useEffect(() => {
     function handleResize() {
       setIsMobile(checkIfItIsMobile(MEDIUM_BREAKPOINT_AS_NUMBER));
@@ -65,7 +68,7 @@ export function BottomSheetModal({ state, height, width, children, portalContain
   }
 
   return (
-    <Overlay portalContainer={portalContainer}>
+    <Overlay portalContainer={portalContainer || brandContainer || document.body}>
       <div className={styles.underlay()} {...underlayProps}>
         <motion.div
           animate={controls}

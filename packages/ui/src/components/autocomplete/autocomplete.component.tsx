@@ -112,7 +112,11 @@ export function Autocomplete<T extends object>({
 
       <div ref={outerRef} className={styles.outerWrapper()}>
         <div className={styles.iconWrapper()}>
-          {loadingState ? <ProgressIndicator size={iconSize} /> : <SearchIcon aria-hidden size={iconSize} />}
+          {loadingState ? (
+            <ProgressIndicator size={iconSize} color="muted" />
+          ) : (
+            <SearchIcon aria-hidden size={iconSize} color="muted" />
+          )}
         </div>
         <input
           {...mergeProps(inputProps, inputFocusProps)}

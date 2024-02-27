@@ -11,6 +11,8 @@ The following example shows adding the `wbc` theme. You can add other valid bran
 `} />
 ```
 
+**NOTE:** There are some components that use portals `Modal`, `BottomSheet`, `AutoComplete`. These components will default their portal to where you add your `data-theme` attribute tag so these components can make use of branding. This can be overridden using their `portalContainer` props if you require the portal to be located elsewhere.
+
 ### Targeting a specific brand with Tailwind CSS
 
 You can target a specific brand by using the `active-theme-[brand_name]` prefix. For example, to target the `wbc` brand, you can use the following prefix.
