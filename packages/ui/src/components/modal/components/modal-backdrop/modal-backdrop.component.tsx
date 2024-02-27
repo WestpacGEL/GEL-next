@@ -20,8 +20,11 @@ export function ModalBackdrop({ zIndex = 100, portalContainer, size, ...props }:
     return null;
   }
 
+  // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
+  const brandContainer = document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]');
+
   return (
-    <Overlay portalContainer={portalContainer}>
+    <Overlay portalContainer={portalContainer || brandContainer || document.body}>
       <div style={{ zIndex }} className={styles.base()} {...underlayProps}>
         <div {...modalProps} ref={ref} className={styles.modal()}>
           {children}
