@@ -73,6 +73,8 @@ Following example shows adding `wbc` theme. You can add other valid brand names 
 </html>
 ```
 
+**NOTE:** There are some components that use portals `Modal`, `BottomSheet`, `AutoComplete`. These components will default their portal to where you add your `data-theme` attribute tag so these components can make use of branding. This can be overridden using their `portalContainer` props if you require the portal to be located elsewhere.
+
 Now you can start using the GEL components in your `React.js` application. The following examples show how to use the `Button` component.
 
 For detailed documentation refer to [https://gel.westpacgroup.com.au/design-system](https://gel.westpacgroup.com.au/design-system).
