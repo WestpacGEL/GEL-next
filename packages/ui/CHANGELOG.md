@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.18.0
+
+### Minor Changes
+
+- 243b111: updated components that use Overlay from react-aria to have a default portal that selects where the data-theme attribute is
+
 ## 0.17.0
 
 ### Minor Changes
