@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { useTabList } from 'react-aria';
-import { Item, useTabListState } from 'react-stately';
+import { AriaLinkOptions, useTabList } from 'react-aria';
+import { Item, ItemProps, useTabListState } from 'react-stately';
 
 import { TabsTab, TabsTabPanel } from './components/index.js';
 import { styles as tabStyles } from './tabs.styles.js';
@@ -17,13 +17,32 @@ export function Tabs({
   look = 'default',
   sticky = false,
   stickyOffset = {},
+  disabledKeys,
+  selectedKey,
+  defaultSelectedKey,
   ...props
 }: TabsProps) {
-  const state = useTabListState({ ...props, children });
+  const state = useTabListState({
+    ...props,
+    disabledKeys: disabledKeys as any,
+    selectedKey: selectedKey as any,
+    defaultSelectedKey: defaultSelectedKey as any,
+    children,
+  });
   const styles = tabStyles({ orientation, look, sticky });
 
   const ref = useRef(null);
-  const { tabListProps } = useTabList({ ...props, orientation }, state, ref);
+  const { tabListProps } = useTabList(
+    {
+      ...props,
+      disabledKeys: disabledKeys as any,
+      selectedKey: selectedKey as any,
+      defaultSelectedKey: defaultSelectedKey as any,
+      orientation,
+    },
+    state,
+    ref,
+  );
   return (
     <div className={styles.base({ className })}>
       <div style={{ ...tabListProps.style, ...stickyOffset }} {...tabListProps} className={styles.tabList()} ref={ref}>
@@ -44,4 +63,6 @@ export function Tabs({
   );
 }
 
-export const TabsPanel = Item;
+export const TabsPanel = Item as (
+  props: ItemProps<AriaLinkOptions> & AriaLinkOptions & { href?: string },
+) => JSX.Element;

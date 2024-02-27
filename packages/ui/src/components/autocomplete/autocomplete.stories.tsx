@@ -1,5 +1,5 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
-import { Key, useState } from 'react';
+import { useState } from 'react';
 
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';
 
@@ -57,8 +57,8 @@ export const Default: Story = {
 export const Controlled: Story = {
   args: {},
   render: () => {
-    const [selectedKey, setSelectedKey] = useState<Key>();
-    const handleSelectionChange = (key: Key) => {
+    const [selectedKey, setSelectedKey] = useState<string | number>();
+    const handleSelectionChange = (key: string | number) => {
       setSelectedKey(key);
     };
     return (
@@ -176,7 +176,6 @@ export const ErrorMessageAndLabel: Story = {
   args: {
     label: 'Are you an existing customer?',
     errorMessage: 'This is an inline error message',
-    validationState: 'invalid',
     hintMessage: 'Hint: choose from one of the following options',
     noOptionsMessage: 'No options',
     invalid: true,

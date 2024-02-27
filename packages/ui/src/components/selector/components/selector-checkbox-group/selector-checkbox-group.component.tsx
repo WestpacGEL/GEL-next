@@ -4,6 +4,7 @@ import React, { createContext } from 'react';
 import { useCheckboxGroup } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
+import { FUNCTION_NOT_IMPLEMENTED } from '../../../../constants/message.js';
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { styles } from './selector-checkbox-group.styles.js';
@@ -22,6 +23,54 @@ export const SelectorCheckboxGroupContext = createContext<SelectorCheckboxGroupC
   removeValue: () => null,
   toggleValue: () => null,
   validationState: 'valid',
+  isInvalid: false,
+  isRequired: false,
+  setInvalid: function (): void {
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
+  },
+  realtimeValidation: {
+    isInvalid: false,
+    validationErrors: [],
+    validationDetails: {
+      badInput: false,
+      customError: false,
+      patternMismatch: false,
+      rangeOverflow: false,
+      rangeUnderflow: false,
+      stepMismatch: false,
+      tooLong: false,
+      tooShort: false,
+      typeMismatch: false,
+      valid: false,
+      valueMissing: false,
+    },
+  },
+  displayValidation: {
+    isInvalid: false,
+    validationErrors: [],
+    validationDetails: {
+      badInput: false,
+      customError: false,
+      patternMismatch: false,
+      rangeOverflow: false,
+      rangeUnderflow: false,
+      stepMismatch: false,
+      tooLong: false,
+      tooShort: false,
+      typeMismatch: false,
+      valid: false,
+      valueMissing: false,
+    },
+  },
+  updateValidation: function (): void {
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
+  },
+  resetValidation: function (): void {
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
+  },
+  commitValidation: function (): void {
+    throw new Error(FUNCTION_NOT_IMPLEMENTED);
+  },
 });
 
 export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {

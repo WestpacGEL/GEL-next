@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useCallback, useState } from 'react';
+import { createContext, useCallback, useMemo, useState } from 'react';
 import { useField } from 'react-aria';
 
 import { ErrorMessage, Hint, Label } from '../../../index.js';
@@ -35,12 +35,15 @@ export function SelectorButtonGroup({
     [selected, setSelected],
   );
 
-  const state: SelectorButtonGroupContextState = {
-    value: selected,
-    onClick: (id: string) => handleChange(id),
-    validationState: errorMessage ? 'invalid' : 'valid',
-    isDisabled,
-  };
+  const state: SelectorButtonGroupContextState = useMemo(
+    () => ({
+      value: selected,
+      onClick: (id: string) => handleChange(id),
+      validationState: errorMessage ? 'invalid' : 'valid',
+      isDisabled,
+    }),
+    [selected],
+  );
 
   const { labelProps, fieldProps, descriptionProps, errorMessageProps } = useField({
     validationState: state.validationState,
