@@ -10,8 +10,7 @@ import { styles as buttonStyles } from './button-group-button.styles.js';
 import { type ButtonGroupButtonProps } from './button-group-button.types.js';
 
 export function ButtonGroupButton({ className, label, ...props }: ButtonGroupButtonProps) {
-  const state = useContext(ButtonGroupContext);
-  const { size, look, block } = state;
+  const { state, size, look, block } = useContext(ButtonGroupContext);
   const ref = useRef(null);
   const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children: label }, state, ref);
   const { isFocusVisible, focusProps } = useFocusRing();

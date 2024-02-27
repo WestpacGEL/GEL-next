@@ -9,8 +9,7 @@ import { styles as radioStyles } from './radio-group-radio.styles.js';
 import { type RadioGroupRadioProps } from './radio-group-radio.types.js';
 
 function BaseRadioGroupRadio({ className, hint, label, ...props }: RadioGroupRadioProps, ref: any) {
-  const state = useContext(RadioGroupContext);
-  const { size, orientation } = state;
+  const { state, size, orientation } = useContext(RadioGroupContext);
   const localRef = useRef(null);
   const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children: label }, state, localRef);
   const { isFocusVisible, focusProps } = useFocusRing();

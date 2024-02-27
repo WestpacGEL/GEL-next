@@ -65,6 +65,10 @@ export type DatePickerProps = {
    * onOpen
    */
   onOpen?: (...args: any[]) => unknown;
+  /*
+   * placeholder
+   */
+  placeholder?: string;
   /**
    * Size of datepicker input
    */

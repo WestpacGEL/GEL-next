@@ -4,7 +4,7 @@ import { useAccordion } from '@react-aria/accordion';
 import { filterDOMProps } from '@react-aria/utils';
 import { useDOMRef } from '@react-spectrum/utils';
 import React, { Children, cloneElement, forwardRef, isValidElement } from 'react';
-import { Item, useTreeState } from 'react-stately';
+import { Item, type ItemProps, useTreeState } from 'react-stately';
 
 import { styles } from './accordion.styles.js';
 import { type AccordionProps } from './accordion.types.js';
@@ -24,7 +24,7 @@ function Accordion<T extends object>(
       // equal to (if (child == null || typeof child == 'string'))
       if (!isValidElement(child)) return child;
       return cloneElement(child, {
-        ...child.props,
+        ...(child.props as any),
         // Adding hasChildItems false by default
         hasChildItems: false,
       });
@@ -52,4 +52,4 @@ const _Accordion = forwardRef(Accordion) as unknown as { displayName: string } &
 _Accordion.displayName = 'Accordion';
 
 export { _Accordion as Accordion };
-export const AccordionItem = Item;
+export const AccordionItem: <T>(props: ItemProps<T>) => JSX.Element = Item;

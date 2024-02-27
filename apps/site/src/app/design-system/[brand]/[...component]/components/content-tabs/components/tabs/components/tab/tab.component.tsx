@@ -8,7 +8,7 @@ export function Tab({ item, state }: { item: Node<AriaTabProps>; state: TabListS
   const { key, rendered } = item;
   const ref = useRef(null);
   const { focusProps, isFocusVisible } = useFocusRing();
-  const { tabProps } = useTab({ key }, state, ref);
+  const { tabProps } = useTab({ key: key as string | number }, state, ref);
   const selected = key === state.selectedKey;
   return (
     <div {...mergeProps(tabProps, focusProps)} ref={ref} className={styles({ selected, isFocusVisible })}>

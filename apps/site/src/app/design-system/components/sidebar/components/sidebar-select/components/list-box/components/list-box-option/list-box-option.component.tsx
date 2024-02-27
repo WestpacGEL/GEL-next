@@ -16,7 +16,7 @@ export function Option({ item, state }: OptionProps) {
   const { isFocusVisible, focusProps } = useFocusRing();
   const { optionProps, isDisabled, isSelected } = useOption(
     {
-      key: item.key,
+      key: item.key as string | number,
     },
     state,
     ref,

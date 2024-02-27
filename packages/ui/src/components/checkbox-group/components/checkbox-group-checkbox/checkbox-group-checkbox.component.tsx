@@ -32,8 +32,7 @@ function CheckIcon({ copyrightYear = '2024', size, ...props }: IconProps) {
 }
 
 function BaseCheckbox({ className, hint, label, value, ...props }: CheckboxGroupCheckboxProps, ref: any) {
-  const state = useContext(CheckboxGroupContext);
-  const { size, orientation } = state;
+  const { state, size, orientation } = useContext(CheckboxGroupContext);
   const localRef = useRef(null);
   const { inputProps, isDisabled, isSelected } = useCheckboxGroupItem(
     { ...props, value, children: label },

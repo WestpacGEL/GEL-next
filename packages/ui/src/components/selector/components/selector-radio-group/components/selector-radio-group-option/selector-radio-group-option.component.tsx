@@ -24,7 +24,7 @@ function BaseSelectorRadioGroupOption(
   }: SelectorRadioGroupOptionProps,
   ref: any,
 ) {
-  const state = useContext(SelectorRadioGroupContext);
+  const { state } = useContext(SelectorRadioGroupContext);
   const localRef = useRef(null);
   const { inputProps, isSelected, isDisabled } = useRadio({ ...props, value, children }, state, localRef);
   const { isFocusVisible, focusProps } = useFocusRing();

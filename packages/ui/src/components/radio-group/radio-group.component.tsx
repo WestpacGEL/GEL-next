@@ -4,6 +4,7 @@ import React, { createContext, useEffect, useId, useMemo, useRef, useState } fro
 import { useFocusRing, useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
+import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
 import { ErrorMessage, Hint, Label, RadioGroupRadio } from '../index.js';
@@ -12,18 +13,63 @@ import { styles as radioGroupStyles } from './radio-group.styles.js';
 import { type RadioGroupContextState, type RadioGroupProps } from './radio-group.types.js';
 
 export const RadioGroupContext = createContext<RadioGroupContextState>({
-  // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
-  name: '',
-  isDisabled: false,
-  isReadOnly: false,
-  isRequired: false,
-  validationState: null,
-  selectedValue: null,
-  setSelectedValue: () => null,
-  lastFocusedValue: null,
-  setLastFocusedValue: () => null,
   orientation: 'vertical',
   size: 'medium',
+  state: {
+    name: '',
+    isDisabled: false,
+    isReadOnly: false,
+    isRequired: false,
+    validationState: null,
+    selectedValue: null,
+    setSelectedValue: () => null,
+    lastFocusedValue: null,
+    setLastFocusedValue: () => null,
+    isInvalid: false,
+    realtimeValidation: {
+      isInvalid: false,
+      validationErrors: [],
+      validationDetails: {
+        badInput: false,
+        customError: false,
+        patternMismatch: false,
+        rangeOverflow: false,
+        rangeUnderflow: false,
+        stepMismatch: false,
+        tooLong: false,
+        tooShort: false,
+        typeMismatch: false,
+        valid: false,
+        valueMissing: false,
+      },
+    },
+    displayValidation: {
+      isInvalid: false,
+      validationErrors: [],
+      validationDetails: {
+        badInput: false,
+        customError: false,
+        patternMismatch: false,
+        rangeOverflow: false,
+        rangeUnderflow: false,
+        stepMismatch: false,
+        tooLong: false,
+        tooShort: false,
+        typeMismatch: false,
+        valid: false,
+        valueMissing: false,
+      },
+    },
+    updateValidation: function (): void {
+      throw new Error(FUNCTION_NOT_IMPLEMENTED);
+    },
+    resetValidation: function (): void {
+      throw new Error(FUNCTION_NOT_IMPLEMENTED);
+    },
+    commitValidation: function (): void {
+      throw new Error(FUNCTION_NOT_IMPLEMENTED);
+    },
+  },
 });
 
 export function RadioGroup({
@@ -70,9 +116,7 @@ export function RadioGroup({
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}
       <div className={styles.radioWrapper()} id={panelId}>
-        <RadioGroupContext.Provider value={{ ...state, orientation, size }}>
-          {childrenToRender}
-        </RadioGroupContext.Provider>
+        <RadioGroupContext.Provider value={{ state, orientation, size }}>{childrenToRender}</RadioGroupContext.Provider>
         {hiddenOptions && (
           <Button
             onClick={() => setHiddenOptions(false)}

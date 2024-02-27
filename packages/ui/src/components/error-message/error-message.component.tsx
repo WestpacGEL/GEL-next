@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { AlertIcon } from '../../components/icon/index.js';
 
@@ -21,7 +21,7 @@ export function ErrorMessage({ className, tag: Tag = 'div', icon: Icon, message,
   ) : (
     <Tag className={styles.base({ className: `${className} mb-2` })} {...props}>
       <FinalIcon copyrightYear="2023" className={styles.icon({})} size="xsmall" look="outlined" />
-      {message}
+      {message as ReactNode}
     </Tag>
   );
 }

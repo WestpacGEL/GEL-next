@@ -4,6 +4,7 @@ import React, { createContext, useEffect, useId, useMemo, useRef, useState } fro
 import { useCheckboxGroup, useFocusRing } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
+import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
 import { CheckboxGroupCheckbox, ErrorMessage, Hint, Label } from '../index.js';
@@ -14,15 +15,66 @@ import { type CheckboxGroupContextState, type CheckboxGroupProps } from './check
 export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
   orientation: 'vertical',
   size: 'medium',
-  value: [],
-  isDisabled: false,
-  isReadOnly: false,
-  isSelected: () => false,
-  setValue: () => null,
-  addValue: () => null,
-  removeValue: () => null,
-  toggleValue: () => null,
-  validationState: 'valid',
+  state: {
+    value: [],
+    isDisabled: false,
+    isReadOnly: false,
+    isSelected: () => false,
+    setValue: () => null,
+    addValue: () => null,
+    removeValue: () => null,
+    toggleValue: () => null,
+    validationState: 'valid',
+    isInvalid: false,
+    isRequired: false,
+    setInvalid: () =>
+      function (): void {
+        throw new Error(FUNCTION_NOT_IMPLEMENTED);
+      },
+    realtimeValidation: {
+      isInvalid: false,
+      validationErrors: [],
+      validationDetails: {
+        badInput: false,
+        customError: false,
+        patternMismatch: false,
+        rangeOverflow: false,
+        rangeUnderflow: false,
+        stepMismatch: false,
+        tooLong: false,
+        tooShort: false,
+        typeMismatch: false,
+        valid: false,
+        valueMissing: false,
+      },
+    },
+    displayValidation: {
+      isInvalid: false,
+      validationErrors: [],
+      validationDetails: {
+        badInput: false,
+        customError: false,
+        patternMismatch: false,
+        rangeOverflow: false,
+        rangeUnderflow: false,
+        stepMismatch: false,
+        tooLong: false,
+        tooShort: false,
+        typeMismatch: false,
+        valid: false,
+        valueMissing: false,
+      },
+    },
+    updateValidation: function (): void {
+      throw new Error(FUNCTION_NOT_IMPLEMENTED);
+    },
+    resetValidation: function (): void {
+      throw new Error(FUNCTION_NOT_IMPLEMENTED);
+    },
+    commitValidation: function (): void {
+      throw new Error(FUNCTION_NOT_IMPLEMENTED);
+    },
+  },
 });
 export function CheckboxGroup({
   className,
@@ -65,7 +117,7 @@ export function CheckboxGroup({
         <ErrorMessage {...errorMessageProps} message={errorMessage} />
       )}
       <div className={styles.itemWrapper()} id={panelId}>
-        <CheckboxGroupContext.Provider value={{ ...state, orientation, size }}>
+        <CheckboxGroupContext.Provider value={{ state, orientation, size }}>
           {childrenToRender}
         </CheckboxGroupContext.Provider>
         {hiddenOptions && (
