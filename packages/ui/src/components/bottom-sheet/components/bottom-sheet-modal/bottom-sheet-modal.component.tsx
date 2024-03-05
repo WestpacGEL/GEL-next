@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 import { PanInfo, motion, useAnimation } from 'framer-motion';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Overlay, useModalOverlay } from 'react-aria';
 
 import { BREAKPOINTS } from '../../../../tailwind/constants/index.js';
@@ -30,7 +30,13 @@ export function BottomSheetModal({ state, height, width, children, portalContain
   const [isMobile, setIsMobile] = useState(checkIfItIsMobile(MEDIUM_BREAKPOINT_AS_NUMBER));
 
   // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
-  const brandContainer = document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]');
+  const brandContainer = useMemo(() => {
+    if (isBrowser) {
+      return (
+        document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]') || document.body
+      );
+    }
+  }, []);
 
   useEffect(() => {
     function handleResize() {
@@ -68,7 +74,7 @@ export function BottomSheetModal({ state, height, width, children, portalContain
   }
 
   return (
-    <Overlay portalContainer={portalContainer || brandContainer || document.body}>
+    <Overlay portalContainer={portalContainer || brandContainer}>
       <div className={styles.underlay()} {...underlayProps}>
         <motion.div
           animate={controls}
