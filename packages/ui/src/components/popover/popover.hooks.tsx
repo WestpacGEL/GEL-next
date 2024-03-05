@@ -18,9 +18,7 @@ export const usePopoverPosition = (
   const arrow = arrowRef.current.getBoundingClientRect();
   const remSize = useMemo(() => {
     if (typeof window !== 'undefined') {
-      return (
-        parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize)
-      );
+      return parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize);
     }
     return 1;
   }, []);

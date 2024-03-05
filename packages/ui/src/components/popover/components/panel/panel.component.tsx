@@ -16,9 +16,7 @@ export function Panel({ state, heading, headingTag: Tag = 'h1', content, placeme
   const arrowRef = useRef<HTMLDivElement>(null);
   const remSize = useMemo(() => {
     if (typeof window !== 'undefined') {
-      return (
-        parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize)
-      );
+      return parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize);
     }
     return 1;
   }, []);
