@@ -1,4 +1,4 @@
-import { RefObject } from 'react';
+import { RefObject, useMemo } from 'react';
 
 import { Position } from './components/panel/panel.types.js';
 
@@ -16,7 +16,14 @@ export const usePopoverPosition = (
   const trigger = triggerRef.current.getBoundingClientRect();
   const popover = popoverRef.current.getBoundingClientRect();
   const arrow = arrowRef.current.getBoundingClientRect();
-  const remSize = parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize);
+  const remSize = useMemo(() => {
+    if (typeof window !== 'undefined') {
+      return (
+        parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize)
+      );
+    }
+    return 1;
+  }, []);
 
   const position: Position = {
     placement: placement ? placement : 'top',

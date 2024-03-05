@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { FocusScope } from 'react-aria';
 
 import { Button } from '../../../button/index.js';
@@ -14,7 +14,14 @@ import { type PanelProps, Position } from './panel.types.js';
 export function Panel({ state, heading, headingTag: Tag = 'h1', content, placement, id, triggerRef }: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
-  const remSize = parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize);
+  const remSize = useMemo(() => {
+    if (typeof window !== 'undefined') {
+      return (
+        parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize)
+      );
+    }
+    return 1;
+  }, []);
 
   const [position, setPosition] = useState<Position>({
     placement: 'top',
