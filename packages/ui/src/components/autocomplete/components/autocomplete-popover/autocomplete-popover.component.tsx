@@ -18,11 +18,17 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
   );
 
   // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
-  const brandContainer = document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]');
+  const brandContainer = React.useMemo(() => {
+    if (typeof window !== 'undefined') {
+      return (
+        document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]') || document.body
+      );
+    }
+  }, []);
 
   const width = props.triggerRef.current?.getBoundingClientRect().width;
   return (
-    <Overlay portalContainer={portalContainer || brandContainer || document.body}>
+    <Overlay portalContainer={portalContainer || brandContainer}>
       {!isNonModal && <div {...underlayProps} className="fixed inset-0" />}
 
       <div
