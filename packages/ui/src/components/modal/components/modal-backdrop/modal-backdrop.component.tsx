@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef, useMemo } from 'react';
 import { Overlay, useModalOverlay } from 'react-aria';
 
@@ -15,11 +17,6 @@ export function ModalBackdrop({ zIndex = 100, portalContainer, size, ...props }:
 
   const { modalProps, underlayProps } = useModalOverlay(props, state, ref);
 
-  // Don't render anything if the modal is not open and we're not animating out.
-  if (!state.isOpen) {
-    return null;
-  }
-
   // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
   const brandContainer = useMemo(() => {
     if (typeof window !== 'undefined') {
@@ -28,6 +25,11 @@ export function ModalBackdrop({ zIndex = 100, portalContainer, size, ...props }:
       );
     }
   }, []);
+
+  // Don't render anything if the modal is not open and we're not animating out.
+  if (!state.isOpen) {
+    return null;
+  }
 
   return (
     <Overlay portalContainer={portalContainer || brandContainer}>
