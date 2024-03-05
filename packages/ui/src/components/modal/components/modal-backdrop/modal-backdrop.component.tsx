@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { Overlay, useModalOverlay } from 'react-aria';
 
 import { styles as backdropStyles } from './modal-backdrop.styles.js';

@@ -1,5 +1,7 @@
+'use client';
+
 import { clsx } from 'clsx';
-import React, { useRef, useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { DismissButton, Overlay, usePopover } from 'react-aria';
 
 import { AutocompletePopoverProps } from './autocomplete-popover.types.js';
