@@ -2,12 +2,19 @@ import type { Preview } from '@storybook/react';
 import './global.css';
 import * as React from 'react';
 import { clsx } from 'clsx';
+import { useEffect } from 'react';
 
 const withThemeProvider = (Story, context) => {
   const theme = context.globals?.theme || 'WBC';
+  // workaround for modal
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      document.querySelector('html')?.setAttribute('data-theme', theme.toLowerCase());
+    }
+  }, [theme]);
   // Note: Not using padding for grid demos as it affects the proper grid visuals i.e. breakpoints, paddings, margins etc.
   return (
-    <div data-theme={theme.toLowerCase()} className={clsx(!(context.componentId === 'foundation-grid') && 'p-4')}>
+    <div className={clsx(!(context.componentId === 'foundation-grid') && 'p-4')}>
       <Story />
     </div>
   );

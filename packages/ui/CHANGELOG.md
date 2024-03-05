@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.19.0
+
+### Minor Changes
+
+- b9ec8e3: bottom sheet fix
+
 ## 0.18.0
 
 ### Minor Changes

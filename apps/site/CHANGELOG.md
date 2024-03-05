@@ -1,5 +1,13 @@
 # site
 
+## 0.1.6
+
+### Patch Changes
+
+- b9ec8e3: bottom sheet fix
+- Updated dependencies [b9ec8e3]
+  - @westpac/ui@0.19.0
+
 ## 0.1.5
 
 ### Patch Changes
