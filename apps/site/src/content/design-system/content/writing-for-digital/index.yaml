@@ -5,6 +5,7 @@ description: >-
   simplest way possible.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Why our words matter
