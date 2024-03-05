@@ -1,5 +1,13 @@
 # protoform
 
+## 0.1.4
+
+### Patch Changes
+
+- b9ec8e3: bottom sheet fix
+- Updated dependencies [b9ec8e3]
+  - @westpac/ui@0.19.0
+
 ## 0.1.3
 
 ### Patch Changes
