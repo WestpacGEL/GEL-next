@@ -32,7 +32,9 @@ export function BottomSheetModal({ state, height, width, children, portalContain
   // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
   const brandContainer = useMemo(() => {
     if (isBrowser) {
-      return document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]') || document.body;
+      return (
+        document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]') || document.body
+      );
     }
   }, []);
 
