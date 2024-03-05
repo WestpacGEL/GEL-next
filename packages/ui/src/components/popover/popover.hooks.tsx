@@ -16,12 +16,10 @@ export const usePopoverPosition = (
   const trigger = triggerRef.current.getBoundingClientRect();
   const popover = popoverRef.current.getBoundingClientRect();
   const arrow = arrowRef.current.getBoundingClientRect();
-  const remSize = useMemo(() => {
-    if (typeof window !== 'undefined') {
-      return parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize);
-    }
-    return 1;
-  }, []);
+  const remSize =
+    typeof window !== 'undefined'
+      ? parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize)
+      : 1;
 
   const position: Position = {
     placement: placement ? placement : 'top',
