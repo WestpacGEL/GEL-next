@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { Overlay, useModalOverlay } from 'react-aria';
 
 import { styles as backdropStyles } from './modal-backdrop.styles.js';
@@ -21,7 +21,7 @@ export function ModalBackdrop({ zIndex = 100, portalContainer, size, ...props }:
   }
 
   // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
-  const brandContainer = React.useMemo(() => {
+  const brandContainer = useMemo(() => {
     if (typeof window !== 'undefined') {
       return (
         document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]') || document.body

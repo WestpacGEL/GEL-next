@@ -1,5 +1,5 @@
 import { clsx } from 'clsx';
-import * as React from 'react';
+import React, { useRef, useMemo } from 'react';
 import { DismissButton, Overlay, usePopover } from 'react-aria';
 
 import { AutocompletePopoverProps } from './autocomplete-popover.types.js';
@@ -7,7 +7,7 @@ import { AutocompletePopoverProps } from './autocomplete-popover.types.js';
  * @private
  */
 export function AutocompletePopover(props: AutocompletePopoverProps) {
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { popoverRef = ref, state, children, className, isNonModal, portalContainer } = props;
   const { popoverProps, underlayProps } = usePopover(
     {
@@ -18,7 +18,7 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
   );
 
   // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
-  const brandContainer = React.useMemo(() => {
+  const brandContainer = useMemo(() => {
     if (typeof window !== 'undefined') {
       return (
         document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]') || document.body
