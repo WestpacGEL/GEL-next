@@ -1,5 +1,11 @@
 # @westpac/eslint-config
 
+## 0.2.1
+
+### Patch Changes
+
+- b9ec8e3: bottom sheet fix
+
 ## 0.2.0
 
 ### Minor Changes
