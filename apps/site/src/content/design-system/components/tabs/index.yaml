@@ -7,7 +7,7 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
-      name: Tabset
+      name: Tabs
       slug: tabset
     noTitle: false
   - title:
