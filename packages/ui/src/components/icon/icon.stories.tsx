@@ -21,17 +21,14 @@ const AllIconsExample = (props: AllIcons.IconProps) => {
     setSearch(value);
   }, []);
 
-  const handleOnClick = useCallback(
-    async (key: string) => {
-      try {
-        await navigator.clipboard.writeText(`<${key} />`);
-        console.log('Content copied to clipboard');
-      } catch (err) {
-        console.error('Failed to copy: ', err);
-      }
-    },
-    [props.className],
-  );
+  const handleOnClick = useCallback(async (key: string) => {
+    try {
+      await navigator.clipboard.writeText(`<${key} />`);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }, []);
 
   return (
     <div className="flex flex-col gap-2">

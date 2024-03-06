@@ -68,7 +68,7 @@ export function ProgressRope({
     if (newGroupStepIndex !== openedGroupStepIndex) {
       setOpenedGroupStepIndex(newGroupStepIndex);
     }
-  }, [current]);
+  }, [current, mappedData, openedGroupStepIndex]);
 
   return (
     <Tag className={className} role={role} aria-label={ariaLabel} {...props}>
@@ -92,7 +92,6 @@ export function ProgressRope({
               ) : (
                 <ProgressRopeStep
                   firstItem={index === 0}
-                  type={item.type}
                   onClick={furthestVisitedStep >= item.index ? item.onClick : undefined}
                   visited={furthestVisitedStep > item.index}
                   furthest={furthestVisitedStep === item.index}

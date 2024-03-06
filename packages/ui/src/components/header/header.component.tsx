@@ -83,7 +83,7 @@ export function Header({
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [fixed, handleScroll]);
 
   const logoAlignment = logoCenter ? 'center' : 'left';
 

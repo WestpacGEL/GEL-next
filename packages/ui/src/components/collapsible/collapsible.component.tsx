@@ -30,7 +30,7 @@ export function Collapsible({
   const handleClick = useCallback(() => {
     onClick();
     setContentOpen(contentOpen => !contentOpen);
-  }, [contentOpen]);
+  }, [onClick]);
 
   const styles = collapsibleStyles({ open: contentOpen });
 

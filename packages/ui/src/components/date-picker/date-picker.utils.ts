@@ -42,7 +42,7 @@ export function useListener(
       element.addEventListener(eventName, handler);
       return () => element.removeEventListener(eventName, handler);
     }
-  }, [eventName, handler]);
+  }, [eventName, handler, ref]);
 }
 
 export function createDate(year: string, month: string, day: string) {

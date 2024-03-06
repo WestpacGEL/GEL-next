@@ -62,6 +62,7 @@ export const Colors = () => (
   <div className="flex flex-col gap-2">
     {LOOKS.map(look => (
       <ButtonGroup
+        key={look}
         label={<h3 className="font-bold">{look}</h3>}
         look={look}
         buttons={[
@@ -90,6 +91,7 @@ export const Sizes = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
       <ButtonGroup
+        key={size}
         label={<h3 className="font-bold">{size}</h3>}
         size={size}
         buttons={[
@@ -145,6 +147,7 @@ export const Block = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
       <ButtonGroup
+        key={size}
         block
         label={<h3 className="font-bold">{size}</h3>}
         size={size}

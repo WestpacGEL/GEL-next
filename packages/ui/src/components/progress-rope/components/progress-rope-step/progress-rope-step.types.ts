@@ -44,5 +44,5 @@ export type ProgressRopeStepProps = {
    * Says it is visited
    */
   visited?: boolean;
-} & Omit<ProgressRopeStepItem, 'text'> &
+} & Omit<ProgressRopeStepItem, 'text' | 'type'> &
   HTMLAttributes<Element>;

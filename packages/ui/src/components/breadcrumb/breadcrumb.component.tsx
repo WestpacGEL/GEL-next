@@ -4,6 +4,7 @@ import React, { Children, FunctionComponentElement, cloneElement } from 'react';
 import { useBreadcrumbs } from 'react-aria';
 
 import { type BreadcrumbProps } from './breadcrumb.types.js';
+import { BreadcrumbItemProps } from './components/breadcrumb-item/breadcrumb-item.types.js';
 
 export function Breadcrumb({ className, children, 'aria-label': ariaLabel = 'Breadcrumb', ...props }: BreadcrumbProps) {
   const { navProps } = useBreadcrumbs(props);
@@ -15,7 +16,9 @@ export function Breadcrumb({ className, children, 'aria-label': ariaLabel = 'Bre
         {Children.map(
           children,
           (child, i) =>
-            cloneElement(child as FunctionComponentElement<any>, { isCurrent: i === childCount - 1 }) ?? <></>,
+            cloneElement(child as FunctionComponentElement<BreadcrumbItemProps>, {
+              isCurrent: i === childCount - 1,
+            }) ?? <></>,
         )}
       </ol>
     </nav>

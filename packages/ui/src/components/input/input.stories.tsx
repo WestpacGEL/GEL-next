@@ -56,7 +56,7 @@ export const Disabled: Story = {
 export const Sizes = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
-      <Input size={size} placeholder={size} />
+      <Input key={size} size={size} placeholder={size} />
     ))}
   </div>
 );

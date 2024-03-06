@@ -170,7 +170,7 @@ export const AllSpacings: Story = {
     return (
       <div className="flex flex-col gap-3">
         {(['medium', 'large'] as const).map(size => (
-          <Form spacing={size}>
+          <Form key={size} spacing={size}>
             <h3>Form with Spacing:{size}. Sets spacing between label, hint and form groups.</h3>
             <Label htmlFor={`space-${size}`}>This is a label</Label>
             <Hint id={`space-${size}-hint`}>This is a hint</Hint>

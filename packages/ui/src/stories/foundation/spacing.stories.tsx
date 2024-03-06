@@ -118,7 +118,7 @@ export const MarginScale = () => {
               <TableCell>
                 <div className="flex flex-wrap gap-1 align-middle">
                   {VARIATION_MARGIN_PADDING.map(v => (
-                    <Badge color="faint">{`.m${v}-${spacing.value}`}</Badge>
+                    <Badge key={v} color="faint">{`.m${v}-${spacing.value}`}</Badge>
                   ))}
                 </div>
               </TableCell>
@@ -161,7 +161,7 @@ export const PaddingScale = () => {
               <TableCell>
                 <div className="flex flex-wrap gap-1 align-middle">
                   {VARIATION_MARGIN_PADDING.map(v => (
-                    <Badge color="faint">{`.p${v}-${spacing.value}`}</Badge>
+                    <Badge key={v} color="faint">{`.p${v}-${spacing.value}`}</Badge>
                   ))}
                 </div>
               </TableCell>

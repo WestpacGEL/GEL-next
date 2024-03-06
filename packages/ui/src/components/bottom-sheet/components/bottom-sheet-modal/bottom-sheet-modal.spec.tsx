@@ -7,7 +7,7 @@ import { BottomSheetModal } from './bottom-sheet-modal.component.js';
 describe('BottomSheetModal', () => {
   it('renders the Modal', () => {
     const { result } = renderHook(() => useOverlayTriggerState({}));
-    render(<BottomSheetModal children={undefined} state={result.current} />);
+    render(<BottomSheetModal state={result.current}>{undefined}</BottomSheetModal>);
   });
 
   it('shows the content when the state isOpen is true', async () => {

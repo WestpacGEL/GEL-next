@@ -14,7 +14,6 @@ export function ProgressRopeStep({
   current,
   visited,
   tag: Tag = 'button',
-  type,
   size = 'medium',
   children,
   firstItem,
@@ -41,7 +40,7 @@ export function ProgressRopeStep({
       return 'visited';
     }
     return 'non-visited';
-  }, [current, visited]);
+  }, [current, lastItemInRope, visited]);
   const { isFocusVisible, focusProps } = useFocusRing();
 
   const styles = progressRopeStyles({
@@ -65,7 +64,7 @@ export function ProgressRopeStep({
       return ', complete';
     }
     return ', not started';
-  }, [current, visited]);
+  }, [current, furthest, visited]);
 
   return (
     <Tag

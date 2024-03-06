@@ -19,13 +19,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: [
-      <BreadcrumbItem tag="button" onClick={() => alert('Folder 1')}>
+      <BreadcrumbItem key="one" tag="button" onClick={() => alert('Folder 1')}>
         About us
       </BreadcrumbItem>,
-      <BreadcrumbItem tag="a" href="#nogo">
+      <BreadcrumbItem key="two" tag="a" href="#nogo">
         Innovation
       </BreadcrumbItem>,
-      <BreadcrumbItem tag="a" href="#loko">
+      <BreadcrumbItem key="three" tag="a" href="#loko">
         Principal investments
       </BreadcrumbItem>,
     ],

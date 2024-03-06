@@ -103,7 +103,7 @@ export function DatePicker({
     ref.current.isDateDisabled = (date: Date) => {
       return isDateDisabled(date, disableWeekends, disableDaysOfWeek, disableDates);
     };
-  }, [ref, initialized]);
+  }, [ref, initialized, dateAdapter, localization, value, id, name, disableWeekends, disableDaysOfWeek, disableDates]);
 
   useLayoutEffect(() => {
     if (!ref.current) {

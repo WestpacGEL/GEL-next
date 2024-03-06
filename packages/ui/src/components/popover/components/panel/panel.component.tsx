@@ -3,7 +3,7 @@ import { FocusScope } from 'react-aria';
 
 import { Button } from '../../../button/index.js';
 import { CloseIcon } from '../../../icon/index.js';
-import { usePopoverPosition } from '../../popover.hooks.js';
+import { getPopoverPosition } from '../../popover.utils.js';
 
 import { styles as panelStyles } from './panel.styles.js';
 import { type PanelProps, Position } from './panel.types.js';
@@ -29,8 +29,8 @@ export function Panel({ state, heading, headingTag: Tag = 'h1', content, placeme
   });
 
   useLayoutEffect(() => {
-    setPosition(usePopoverPosition(triggerRef, popoverRef, arrowRef, placement));
-  }, [state.isOpen]);
+    setPosition(getPopoverPosition(triggerRef, popoverRef, arrowRef, placement));
+  }, [placement, remSize, state.isOpen, triggerRef]);
 
   const getPopoverClass = useCallback(() => {
     return {

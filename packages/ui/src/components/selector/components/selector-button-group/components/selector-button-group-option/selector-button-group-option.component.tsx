@@ -36,7 +36,7 @@ function BaseSelectorButtonGroupOption(
       onClick(event);
       state.onClick(id);
     },
-    [onClick, state.onClick],
+    [id, onClick, state],
   );
   return (
     <FlexiCell

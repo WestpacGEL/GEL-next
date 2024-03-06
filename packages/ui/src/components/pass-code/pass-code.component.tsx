@@ -31,7 +31,7 @@ export function PassCode({ length, onComplete, className, ...props }: PassCodePr
         onComplete(newPasscode.join(''));
       }
     },
-    [onComplete, inputRefs, passcode],
+    [passcode, length, onComplete],
   );
 
   const handlePaste = useCallback(
@@ -47,7 +47,7 @@ export function PassCode({ length, onComplete, className, ...props }: PassCodePr
         onComplete(newPasscode.join(''));
       }
     },
-    [passcode],
+    [length, onComplete, passcode],
   );
 
   const handleKeyDown = useCallback(
@@ -66,7 +66,7 @@ export function PassCode({ length, onComplete, className, ...props }: PassCodePr
         }
       }
     },
-    [inputRefs],
+    [passcode],
   );
 
   const handleFocus = useCallback(

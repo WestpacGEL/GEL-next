@@ -37,7 +37,7 @@ export function InputGroup({
       ...(supportingText ? [`${id}-supporting-text`] : []),
     ];
     return arr.join(' ');
-  }, [id, hint, errorMessage, supportingText]);
+  }, [errorMessage, id, hint, before, after, supportingText]);
 
   const {
     element: beforeElement,
@@ -84,7 +84,7 @@ export function InputGroup({
         } as any);
       }
     });
-  }, [children, ariaDescribedByValue]);
+  }, [children, size, id, ariaDescribedByValue, width]);
 
   const isFieldset = useMemo(() => Tag === 'fieldset', [Tag]);
 

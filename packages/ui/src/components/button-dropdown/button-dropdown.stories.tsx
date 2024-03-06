@@ -43,7 +43,7 @@ export const Default: Story = {
 export const StandardLooks = () => (
   <div className="flex gap-2">
     {LOOKS.map(look => (
-      <ButtonDropdown look={look} text={look}>
+      <ButtonDropdown key={look} look={look} text={look}>
         <p>
           Example dropdown
           <a href="#" className="text-[blue] underline">
@@ -62,7 +62,7 @@ export const StandardLooks = () => (
 export const SoftLooks = () => (
   <div className="flex gap-2">
     {LOOKS.map(look => (
-      <ButtonDropdown look={look} soft text={look}>
+      <ButtonDropdown key={look} look={look} soft text={look}>
         <p>
           Example dropdown
           <a href="#" className="text-[blue] underline">

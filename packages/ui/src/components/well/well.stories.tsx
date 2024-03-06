@@ -36,7 +36,7 @@ export const Nested: Story = {
 };
 
 /**
- * > Tag as <article>
+ * > Tag as `<article>`
  */
 export const CustomTag: Story = {
   args: {
@@ -46,7 +46,7 @@ export const CustomTag: Story = {
 };
 
 /**
- * > Nested tag as <article>
+ * > Nested tag as `<article>`
  */
 export const CustomTagNested: Story = {
   args: {
@@ -61,11 +61,11 @@ export const CustomTagNested: Story = {
 };
 
 /**
- * > Tag as <aside> with child <san>, passed as a component
+ * > Tag as `<aside>` with child `<span>`, passed as a component
  */
 export const ComplexCustomTagNested: Story = {
   args: {
     tag: 'aside',
-    children: <span>Look, I'm in a well</span>,
+    children: <span>Look, I&#39;m in a well</span>,
   },
 };

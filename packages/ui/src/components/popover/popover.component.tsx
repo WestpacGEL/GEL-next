@@ -35,13 +35,13 @@ export function Popover({
   const handleClick = useCallback(() => {
     onClick();
     state.toggle();
-  }, [onClick, state.isOpen]);
+  }, [onClick, state]);
 
   const keyHandler = useCallback(
     (event: globalThis.KeyboardEvent) => {
       if (state.isOpen && event.key === 'Escape') state.close();
     },
-    [state.isOpen],
+    [state],
   );
 
   useEffect(() => {
@@ -49,11 +49,11 @@ export function Popover({
     return () => {
       window.document.removeEventListener('keydown', keyHandler);
     };
-  }, [state.isOpen]);
+  }, [keyHandler, state.isOpen]);
 
   useLayoutEffect(() => {
     if (open) state.setOpen(true);
-  }, [open]);
+  }, [open, state]);
   return (
     <div className={styles.base({ className })}>
       <Button

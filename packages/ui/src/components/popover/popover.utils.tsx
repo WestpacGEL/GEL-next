@@ -1,8 +1,8 @@
-import { RefObject, useMemo } from 'react';
+import { RefObject } from 'react';
 
 import { Position } from './components/panel/panel.types.js';
 
-export const usePopoverPosition = (
+export const getPopoverPosition = (
   triggerRef: RefObject<HTMLDivElement>,
   popoverRef: RefObject<HTMLDivElement>,
   arrowRef: RefObject<HTMLDivElement>,

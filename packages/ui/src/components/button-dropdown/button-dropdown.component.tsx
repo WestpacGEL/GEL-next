@@ -35,7 +35,7 @@ export function ButtonDropdown({
     (event: globalThis.KeyboardEvent) => {
       if (state.isOpen && event.key === 'Escape') state.close();
     },
-    [state.isOpen],
+    [state],
   );
 
   useEffect(() => {

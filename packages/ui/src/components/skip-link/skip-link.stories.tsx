@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react';
 import { useRef } from 'react';
 
 import { Button } from '../index.js';
