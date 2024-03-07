@@ -51,7 +51,8 @@ export default function CreditLimit() {
   return (
     <div>
       <BackButton onClick={() => router.push('/credit-cards/home-life')}>Back to Home life</BackButton>
-      <CustomHeading groupHeading="Your card" leadText="[Dummy lead text to be replaced later]">
+      <CustomHeading groupHeading="Your card" leadText="
+Choose your credit card limit or have one allocated for you.">
         Credit limit
       </CustomHeading>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
