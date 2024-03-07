@@ -50,7 +50,7 @@ export default function CreditCards() {
       <CustomHeading groupHeading="Get started" leadText="To begin, we just need a few details.">
         Quick contact
       </CustomHeading>
-      <Alert look="info">
+      <Alert look="info  icon={BookIcon}">
         <strong>We will save your application</strong> for 14 days in case you want to retrieve and complete it later.
       </Alert>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
