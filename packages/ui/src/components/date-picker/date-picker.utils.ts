@@ -1,4 +1,4 @@
-import { EventHandler, RefObject, useEffect } from 'react';
+import { RefObject, useEffect } from 'react';
 
 import { DuetDatePickerElement } from './date-picker.types.js';
 
@@ -34,7 +34,7 @@ export function formatDate(date: Date, format: string) {
 export function useListener(
   ref: RefObject<DuetDatePickerElement> | null,
   eventName: string,
-  handler?: EventHandler<any>,
+  handler?: EventListenerOrEventListenerObject,
 ) {
   useEffect(() => {
     if (ref?.current && handler) {

@@ -9,7 +9,7 @@ import * as AllIcons from './index.js';
 const AllIconsExample = (props: AllIcons.IconProps) => {
   const [search, setSearch] = useState('');
   const filteredIcons = useMemo(() => {
-    return Object.entries(AllIcons).reduce((acc: { Icon: any; key: string }[], [iconName, Icon]) => {
+    return Object.entries(AllIcons).reduce((acc: { Icon: typeof Icon; key: string }[], [iconName, Icon]) => {
       if (iconName.toUpperCase().indexOf(search.toUpperCase()) === -1) {
         return acc;
       }

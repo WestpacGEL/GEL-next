@@ -30,7 +30,7 @@ export function Popover({
   const state = useOverlayTriggerState({});
   const panelId = useId();
   const styles = popoverStyles({});
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
 
   const handleClick = useCallback(() => {
     onClick();

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef } from 'react';
+import React, { Ref, forwardRef } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
 import { ArrowRightIcon } from '../icon/index.js';
@@ -26,7 +26,7 @@ function FlexiCellBase(
     tabIndex,
     ...props
   }: FlexiCellProps,
-  ref: any,
+  ref: Ref<HTMLElement>,
 ) {
   const { isFocusVisible, focusProps } = useFocusRing();
 
@@ -41,7 +41,7 @@ function FlexiCellBase(
 
   return (
     <Tag
-      {...({ ref } as any)}
+      {...({ ref } as object)}
       className={styles.base({ className })}
       href={href}
       {...mergeProps(props, focusProps)}

@@ -18,7 +18,7 @@ export default meta;
  * > Default usage example
  */
 export const Default = () => {
-  const skipLinkRef = useRef<HTMLAnchorElement>();
+  const skipLinkRef = useRef<HTMLAnchorElement>(null);
   return (
     <>
       <SkipLink href="#skiptohere" ref={skipLinkRef}>

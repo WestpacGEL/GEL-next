@@ -1,7 +1,7 @@
 import { useAccordionItem } from '@react-aria/accordion';
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useRef } from 'react';
-import { mergeProps, useFocusRing, useHover, useLocale } from 'react-aria';
+import { Key, mergeProps, useFocusRing, useHover, useLocale } from 'react-aria';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../../../icon/index.js';
 
@@ -10,7 +10,7 @@ import { type AccordionItemProps } from './accordion-item.types.js';
 
 const loadAnimations = () => import('./accordion-item.utils.js').then(res => res.default);
 
-export function AccordionItem<T = any>({
+export function AccordionItem<T = HTMLElement>({
   className,
   tag: Tag = 'div',
   look = 'soft',
@@ -20,8 +20,8 @@ export function AccordionItem<T = any>({
   const { state, item } = props;
   const { buttonProps, regionProps } = useAccordionItem<T>(props, state, ref);
   const { isFocusVisible, focusProps } = useFocusRing();
-  const isOpen = state.expandedKeys.has(item.key as any);
-  const isDisabled = state.disabledKeys.has(item.key as any);
+  const isOpen = state.expandedKeys.has(item.key as Key);
+  const isDisabled = state.disabledKeys.has(item.key as Key);
   const { hoverProps } = useHover({ isDisabled });
   const { direction } = useLocale();
   const styles = accordionItemStyles({ isOpen, isDisabled, look, isFocusVisible });

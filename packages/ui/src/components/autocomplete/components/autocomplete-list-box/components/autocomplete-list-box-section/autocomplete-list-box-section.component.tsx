@@ -8,7 +8,7 @@ import { type AutocompleteListBoxSectionProps } from './autocomplete-list-box-se
 /**
  * @private
  */
-export function AutocompleteListBoxSection({ section, state }: AutocompleteListBoxSectionProps) {
+export function AutocompleteListBoxSection({ section, state }: AutocompleteListBoxSectionProps<unknown>) {
   const { itemProps, headingProps, groupProps } = useListBoxSection({
     heading: section.rendered,
     'aria-label': section['aria-label'],

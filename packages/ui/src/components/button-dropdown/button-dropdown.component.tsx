@@ -23,7 +23,7 @@ export function ButtonDropdown({
   soft = false,
   block = false,
 }: ButtonDropdownProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const panelId = useId();
   const styles = buttonDropdownStyles({ block, dropdownSize });
   const state = useOverlayTriggerState({ defaultOpen: open });

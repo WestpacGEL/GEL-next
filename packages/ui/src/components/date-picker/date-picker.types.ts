@@ -4,10 +4,10 @@ import { VariantProps } from 'tailwind-variants';
 import { styles } from './date-picker.styles.js';
 
 export type DuetDatePickerElement = Element & {
-  dateAdapter: any;
-  identifier: any;
+  dateAdapter: object;
+  identifier?: string;
   isDateDisabled: (date: Date) => boolean;
-  localization: any;
+  localization: object;
   max?: string;
   min?: string;
   name?: string;
@@ -48,23 +48,23 @@ export type DatePickerProps = {
   /*
    * onBlur
    */
-  onBlur?: (...args: any[]) => unknown;
+  onBlur?: (...args: []) => unknown;
   /*
    * onChange
    */
-  onChange?: (...args: any[]) => unknown;
+  onChange?: (...args: []) => unknown;
   /*
    * onClose
    */
-  onClose?: (...args: any[]) => unknown;
+  onClose?: (...args: []) => unknown;
   /*
    * onFocus
    */
-  onFocus?: (...args: any[]) => unknown;
+  onFocus?: (...args: []) => unknown;
   /*
    * onOpen
    */
-  onOpen?: (...args: any[]) => unknown;
+  onOpen?: (...args: []) => unknown;
   /*
    * placeholder
    */

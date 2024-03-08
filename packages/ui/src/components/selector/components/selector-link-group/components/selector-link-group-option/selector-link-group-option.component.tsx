@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef, useContext, useId, useRef } from 'react';
+import React, { Ref, RefObject, forwardRef, useContext, useId, useRef } from 'react';
 import { mergeProps, useFocusRing, useLink } from 'react-aria';
 
 import { FlexiCell } from '../../../../../../index.js';
@@ -22,12 +22,12 @@ function BaseSelectorLinkGroupOption(
     href,
     ...props
   }: SelectorLinkGroupOptionProps,
-  ref: any,
+  ref: Ref<HTMLElement>,
 ) {
   const id = useId();
   const localRef = useRef(ref);
   const state = useContext(SelectorLinkContext);
-  const { linkProps } = useLink({ ...props }, localRef);
+  const { linkProps } = useLink({ ...props }, localRef as RefObject<HTMLElement>);
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = SelectorLinkGroupOptionStyles({
     className,
