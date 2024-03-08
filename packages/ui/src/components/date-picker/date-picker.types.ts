@@ -48,23 +48,33 @@ export type DatePickerProps = {
   /*
    * onBlur
    */
-  onBlur?: (...args: []) => unknown;
+  // NOTE: duet library uses custom events build with another library causing these to be hard to type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onBlur?: (...args: any[]) => void;
   /*
    * onChange
    */
-  onChange?: (...args: []) => unknown;
+  // NOTE: duet library uses custom events build with another library causing these to be hard to type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onChange?: (...args: any[]) => void;
   /*
    * onClose
    */
-  onClose?: (...args: []) => unknown;
+  // NOTE: duet library uses custom events build with another library causing these to be hard to type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onClose?: (...args: any[]) => void;
   /*
    * onFocus
    */
-  onFocus?: (...args: []) => unknown;
+  // NOTE: duet library uses custom events build with another library causing these to be hard to type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onFocus?: (...args: any[]) => void;
   /*
    * onOpen
    */
-  onOpen?: (...args: []) => unknown;
+  // NOTE: duet library uses custom events build with another library causing these to be hard to type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onOpen?: (...args: any[]) => void;
   /*
    * placeholder
    */
