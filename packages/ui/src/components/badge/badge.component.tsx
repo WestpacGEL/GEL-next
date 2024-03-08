@@ -11,7 +11,6 @@ export function BaseBadge(
 ) {
   return (
     <Tag {...({ ref } as object)} className={styles({ className, color, type, soft })} {...props}>
-      {/* styling vertically aligns text in the middle */}
       {children}
     </Tag>
   );
