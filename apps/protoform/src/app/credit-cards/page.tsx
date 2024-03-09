@@ -1,6 +1,7 @@
 'use client';
 
 import { Alert, Form, FormGroup, FormSection, Input, InputGroup } from '@westpac/ui';
+import { BookIcon } from '@westpac/ui/icon';
 import { useRouter } from 'next/navigation';
 import { FormEvent, useEffect, useState } from 'react';
 
@@ -50,7 +51,7 @@ export default function CreditCards() {
       <CustomHeading groupHeading="Get started" leadText="To begin, we just need a few details.">
         Quick contact
       </CustomHeading>
-      <Alert look="info  icon={BookIcon}">
+      <Alert look="info" icon={BookIcon}>
         <strong>We will save your application</strong> for 14 days in case you want to retrieve and complete it later.
       </Alert>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
