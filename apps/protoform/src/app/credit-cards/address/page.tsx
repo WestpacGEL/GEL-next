@@ -46,7 +46,10 @@ export default function Address() {
   return (
     <div>
       <BackButton onClick={() => router.push('/credit-cards/name-and-contact')}>Back to Name & contact</BackButton>
-      <CustomHeading groupHeading="Your details" leadText="[Dummy lead text to be replaced later]">
+      <CustomHeading
+        groupHeading="Your details"
+        leadText="Tell us more about where you live and how long you've been there."
+      >
         Address
       </CustomHeading>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
@@ -56,9 +59,8 @@ export default function Address() {
             <InputGroup size="large" errorMessage={addressError} instanceId="address">
               <Autocomplete
                 noOptionsMessage="No options found"
-                label="Search for you residential address"
-                hintMessage="Can’t be a PO Box. Start typing your address and select from the list or enter your address manually"
-                footer="Can't see your address? Enter it manually."
+                label="Search for you home address"
+                hintMessage="Not a PO Box <>"
                 defaultInputValue={data.address}
                 invalid={!!addressError}
                 name="address"
@@ -70,7 +72,7 @@ export default function Address() {
 
           <FormGroup>
             <InputGroup
-              label="What is your current housing situation?"
+              label="How long have you lived there?"
               instanceId="housingLength"
               errorMessage={housingLengthError}
               size="large"
@@ -78,6 +80,10 @@ export default function Address() {
               <Select name="housingLength" defaultValue={data.housingLength} invalid={!!housingLengthError}>
                 <option value="">Select</option>
                 <option value="1">1 Year</option>
+                <option value="2">2 Years</option>
+                <option value="3">3 Years</option>
+                <option value="4">4 Years</option>
+                <option value="5">5 Years</option>
               </Select>
             </InputGroup>
           </FormGroup>

@@ -1,6 +1,7 @@
 'use client';
 
 import { Alert, Form, FormGroup, FormSection, Input, InputGroup } from '@westpac/ui';
+import { BookIcon } from '@westpac/ui/icon';
 import { useRouter } from 'next/navigation';
 import { FormEvent, useEffect, useState } from 'react';
 
@@ -47,10 +48,10 @@ export default function CreditCards() {
   return (
     <div>
       <BackButton onClick={() => router.push('/')}>Back to dashboard</BackButton>
-      <CustomHeading groupHeading="Get Started" leadText="[Dummy lead text to be replaced later]">
-        Quick Contact
+      <CustomHeading groupHeading="Get started" leadText="To begin, we just need a few details.">
+        Quick contact
       </CustomHeading>
-      <Alert look="info">
+      <Alert look="info" icon={BookIcon}>
         <strong>We will save your application</strong> for 14 days in case you want to retrieve and complete it later.
       </Alert>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
@@ -61,7 +62,7 @@ export default function CreditCards() {
               size="large"
               instanceId="name"
               label="Given name"
-              hint="As shown on your ID"
+              hint="To help us verify your identity online, please enter your name exactly as it appears on your ID."
               errorMessage={nameError}
             >
               <Input name="name" defaultValue={data.name} invalid={!!nameError} />

@@ -63,7 +63,10 @@ export default function HomeLife() {
   return (
     <div>
       <BackButton onClick={() => router.push('/credit-cards/loans-and-cards')}>Back to Loans and cards</BackButton>
-      <CustomHeading groupHeading="Your finances" leadText="[Dummy lead text to be replaced later]">
+      <CustomHeading
+        groupHeading="Your finances"
+        leadText="Tell us more about your general expenses and living situation."
+      >
         Home life
       </CustomHeading>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}

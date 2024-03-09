@@ -82,7 +82,9 @@ export default function Address() {
   return (
     <div>
       <BackButton onClick={() => router.push('/credit-cards/address')}>Back to Address</BackButton>
-      <CustomHeading leadText="[Dummy lead text to be replaced later]">Review and submit</CustomHeading>
+      <CustomHeading leadText="Make suure all your details are correct before you submit your application.">
+        Review and submit
+      </CustomHeading>
       <ReviewSection baseEditRoute="/credit-cards" sections={SECTION_ITEMS} />
       <div className="border-t-[1px] border-t-border pt-5">
         <PhoneIcon color="primary" size="large" className="mb-5" />
