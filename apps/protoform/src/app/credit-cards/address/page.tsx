@@ -46,7 +46,10 @@ export default function Address() {
   return (
     <div>
       <BackButton onClick={() => router.push('/credit-cards/name-and-contact')}>Back to Name & contact</BackButton>
-      <CustomHeading groupHeading="Your details" leadText="Tell us more about where you live and how long you've been there.">
+      <CustomHeading
+        groupHeading="Your details"
+        leadText="Tell us more about where you live and how long you've been there."
+      >
         Address
       </CustomHeading>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}

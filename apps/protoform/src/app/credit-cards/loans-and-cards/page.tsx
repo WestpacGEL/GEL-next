@@ -62,7 +62,10 @@ export default function IncomeAndSavings() {
       <BackButton onClick={() => router.push('/credit-cards/income-and-savings')}>
         Back to Income and savings
       </BackButton>
-      <CustomHeading groupHeading="Your finances" leadText="Provide the total balances of any non-Westpac loans and credit cards you have.">
+      <CustomHeading
+        groupHeading="Your finances"
+        leadText="Provide the total balances of any non-Westpac loans and credit cards you have."
+      >
         Loans & cards
       </CustomHeading>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
