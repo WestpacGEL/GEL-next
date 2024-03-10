@@ -1,0 +1,26 @@
+When setting up your project we recommend extending `@westpac/eslint-config/nextjs` as seen below:
+
+```html
+<StaticCode language="tsx" code={`
+    // .eslintrc.js
+    module.exports = {
+        root: true,
+        extends: ['@westpac/eslint-config/nextjs'],
+    };      
+`} />
+```
+
+If you are using this in a non-Next.js project, you may need to turn off certain rules as seen below:
+
+```html
+<StaticCode language="tsx" code={`
+    // .eslintrc.js
+    module.exports = {
+        root: true,
+        extends: ['@westpac/eslint-config/nextjs'],
+        rules: {
+          '@next/next/no-html-link-for-pages': 0,
+        },
+    };      
+`} />
+```
