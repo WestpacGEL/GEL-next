@@ -5,7 +5,11 @@ description: >-
 namedExport:
   discriminant: false
 excludeFromNavbar: true
-design: []
+design:
+  - title:
+      name: Bottom sheet
+      slug: bottom-sheet
+    noTitle: false
 accessibility: []
 relatedComponents: []
 code: []
