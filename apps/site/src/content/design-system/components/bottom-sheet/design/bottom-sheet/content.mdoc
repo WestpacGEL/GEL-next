@@ -1,20 +1,17 @@
 ```jsx
-  <ls
-  primaryLabel="Label"
-  primaryOnClick={function Ya(){}}
-  secondaryLabel="Label"
-  secondaryOnClick={function Ya(){}}
-  state={{
-    close: function Ya(){},
-    isOpen: false,
-    open: function Ya(){},
-    setOpen: function Ya(){},
-    toggle: function Ya(){}
-  }}
-  title="Heading"
->
-  <p>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a ad blanditiis laborum labore repellendus, vero nihil ducimus, aliquam culpa explicabo doloremque corporis.
-  </p>
-</ls>
+() => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Button onClick={state.open}> Open Bottom Sheet </Button>
+      <BottomSheet title="Heading" primaryLabel="Label" secondaryLabel="Label" state={state} primaryOnClick={state.close} secondaryOnClick={state.close}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a
+          ad blanditiis laborum labore repellendus, vero nihil ducimus, aliquam culpa explicabo doloremque corporis.
+        </p>
+      </BottomSheet>
+    </>
+  );
+};
 ```
