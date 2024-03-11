@@ -5,7 +5,11 @@ description: >-
 namedExport:
   discriminant: false
 excludeFromNavbar: true
-design: []
+design:
+  - title:
+      name: Character count
+      slug: character-count
+    noTitle: false
 accessibility: []
 relatedComponents: []
 code: []
