@@ -1,0 +1,12 @@
+name: Bottom sheet
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Bottom sheet
+      slug: bottom-sheet
+    noTitle: false
+accessibility: []
+relatedComponents: []
+code: []
