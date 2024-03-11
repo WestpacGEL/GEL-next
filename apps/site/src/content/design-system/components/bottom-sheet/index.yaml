@@ -10,6 +10,10 @@ design:
       name: Bottom sheet
       slug: bottom-sheet
     noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
 accessibility: []
 relatedComponents: []
 code: []
