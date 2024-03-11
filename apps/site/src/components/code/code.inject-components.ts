@@ -97,6 +97,7 @@ export {
   GridItem,
   Heading,
   ProgressIndicator,
+  BottomSheet,
 } from '@westpac/ui';
 
 export * from '@westpac/ui/icon';
