@@ -11,5 +11,9 @@ design:
       slug: character-count
     noTitle: false
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  - title: Input group
+    slug: /components/input-group
+  - title: Text area
+    slug: /components/textarea
 code: []
