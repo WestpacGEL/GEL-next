@@ -23,7 +23,10 @@ design:
       name: Where is this available?
       slug: where-is-this-available
     noTitle: false
-accessibility: []
+accessibility:
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
 relatedComponents:
   - title: Modal
     slug: /components/modal
