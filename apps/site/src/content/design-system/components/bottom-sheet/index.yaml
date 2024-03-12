@@ -30,4 +30,8 @@ accessibility:
 relatedComponents:
   - title: Modal
     slug: /components/modal
-code: []
+code:
+  - title:
+      name: Development example
+      slug: development-example
+    noTitle: false
