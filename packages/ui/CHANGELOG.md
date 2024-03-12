@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.20.0
+
+### Minor Changes
+
+- b8240a3: Updated types on some components to resolve eslint errors/warnings
+
 ## 0.19.0
 
 ### Minor Changes
