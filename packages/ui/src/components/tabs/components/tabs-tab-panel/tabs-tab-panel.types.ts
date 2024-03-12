@@ -7,7 +7,7 @@ import { styles } from './tabs-tab-panel.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
-export type TabsTabPanelProps<T = any> = {
+export type TabsTabPanelProps<T = object> = {
   /**
    * Table panel content
    */

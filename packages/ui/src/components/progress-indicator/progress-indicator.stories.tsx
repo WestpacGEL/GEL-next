@@ -30,7 +30,7 @@ export const Sizes = () => {
   return (
     <>
       {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator size={size} className="mr-2" />
+        <ProgressIndicator key={size} size={size} className="mr-2" />
       ))}
     </>
   );
@@ -44,7 +44,7 @@ export const Inverted = () => {
   return (
     <div className="bg-black">
       {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator size={size} inverted className="mr-2" />
+        <ProgressIndicator key={size} size={size} inverted className="mr-2" />
       ))}
     </div>
   );

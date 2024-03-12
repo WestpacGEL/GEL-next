@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef, useContext, useRef } from 'react';
+import React, { Ref, forwardRef, useContext, useRef } from 'react';
 import { VisuallyHidden, useCheckboxGroupItem, useFocusRing } from 'react-aria';
 
 import { Icon } from '../../../icon/icon.component.js';
@@ -31,7 +31,10 @@ function CheckIcon({ copyrightYear = '2024', size, ...props }: IconProps) {
   );
 }
 
-function BaseCheckbox({ className, hint, label, value, ...props }: CheckboxGroupCheckboxProps, ref: any) {
+function BaseCheckbox(
+  { className, hint, label, value, ...props }: CheckboxGroupCheckboxProps,
+  ref: Ref<HTMLLabelElement>,
+) {
   const { state, size, orientation } = useContext(CheckboxGroupContext);
   const localRef = useRef(null);
   const { inputProps, isDisabled, isSelected } = useCheckboxGroupItem(

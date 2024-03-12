@@ -11,8 +11,8 @@ export function ErrorMessage({ className, tag: Tag = 'div', icon: Icon, message,
 
   return Array.isArray(message) ? (
     <ul className={styles.list({})} {...props}>
-      {message.map(msg => (
-        <li className={styles.base({ className })}>
+      {message.map((msg, index) => (
+        <li key={index} className={styles.base({ className })}>
           <FinalIcon copyrightYear="2023" className={styles.icon({})} size="xsmall" look="outlined" />
           {msg}
         </li>

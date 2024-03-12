@@ -7,7 +7,7 @@ import { styles } from './tabs-tab.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
-export type TabsTabProps<T = any> = {
+export type TabsTabProps<T = object> = {
   /**
    * Color of tab
    */

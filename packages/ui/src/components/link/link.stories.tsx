@@ -33,14 +33,14 @@ const SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'] as const;
 export const Standalone = () => (
   <div className="space-y-1">
     <h1 className="font-bold">Default</h1>
-    <Link href="#">Look I'm a standalone link</Link>
+    <Link href="#">Look I&#39;m a standalone link</Link>
     <h1 className="font-bold">Icon Before override</h1>
     <Link href="#" iconBefore={PdfFileIcon}>
-      Look I'm a standalone link
+      Look I&#39;m a standalone link
     </Link>
     <h1 className="font-bold">Icon Before override</h1>
     <Link href="#" iconAfter={ArrowRightIcon}>
-      Look I'm a standalone link
+      Look I&#39;m a standalone link
     </Link>
   </div>
 );
@@ -53,7 +53,7 @@ export const Inline = () => (
     <p className="typography-body-10">
       Lorem ipsum dolor{' '}
       <Link href="#" type="inline">
-        look, I'm an inline link
+        look, I&#39;m an inline link
       </Link>{' '}
       sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
       doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
@@ -61,7 +61,7 @@ export const Inline = () => (
     <p className="typography-body-10">
       Lorem ipsum dolor{' '}
       <Link href="#" type="inline" underline={false}>
-        look, I'm an inline link with no underline
+        look, I&#39;m an inline link with no underline
       </Link>{' '}
       sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
       doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
@@ -69,7 +69,7 @@ export const Inline = () => (
     <p className="typography-body-10">
       Lorem ipsum dolor{' '}
       <Link href="#" type="inline" iconBefore={PdfFileIcon}>
-        look, I'm an inline link
+        look, I&#39;m an inline link
       </Link>{' '}
       sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
       doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
@@ -77,13 +77,13 @@ export const Inline = () => (
     <p className="typography-body-10">
       Lorem ipsum dolor{' '}
       <Link href="#" type="inline" iconAfter={PdfFileIcon}>
-        look, I'm an inline link
+        look, I&#39;m an inline link
       </Link>{' '}
       sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
       doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
     </p>
     <Link href="#" type="inline" iconBefore={PdfFileIcon}>
-      look, I'm an inline link
+      look, I&#39;m an inline link
     </Link>
   </div>
 );
@@ -97,12 +97,12 @@ export const IconSizes = () => (
       <div key={size}>
         <h1 className="font-bold">{size}</h1>
         <Link href="#" iconSize={size} iconBefore={PdfFileIcon} iconAfter={PdfFileIcon}>
-          Look I'm a standalone link
+          Look I&#39;m a standalone link
         </Link>
         <p className="typography-body-10">
           Lorem ipsum dolor{' '}
           <Link href="#" type="inline" iconSize={size} iconBefore={PdfFileIcon} iconAfter={PdfFileIcon}>
-            look, I'm an inline link
+            look, I&#39;m an inline link
           </Link>{' '}
           sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
           doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?

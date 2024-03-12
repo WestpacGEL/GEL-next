@@ -6,7 +6,7 @@ import { styles } from './accordion-item.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
-export type AccordionItemProps<T = any> = {
+export type AccordionItemProps<T = HTMLElement> = {
   /**
    * AccordionItem body content
    */

@@ -4,10 +4,10 @@ import { VariantProps } from 'tailwind-variants';
 import { styles } from './date-picker.styles.js';
 
 export type DuetDatePickerElement = Element & {
-  dateAdapter: any;
-  identifier: any;
+  dateAdapter: object;
+  identifier?: string;
   isDateDisabled: (date: Date) => boolean;
-  localization: any;
+  localization: object;
   max?: string;
   min?: string;
   name?: string;
@@ -48,23 +48,33 @@ export type DatePickerProps = {
   /*
    * onBlur
    */
-  onBlur?: (...args: any[]) => unknown;
+  // NOTE: duet library uses custom events build with another library causing these to be hard to type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onBlur?: (...args: any[]) => void;
   /*
    * onChange
    */
-  onChange?: (...args: any[]) => unknown;
+  // NOTE: duet library uses custom events build with another library causing these to be hard to type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onChange?: (...args: any[]) => void;
   /*
    * onClose
    */
-  onClose?: (...args: any[]) => unknown;
+  // NOTE: duet library uses custom events build with another library causing these to be hard to type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onClose?: (...args: any[]) => void;
   /*
    * onFocus
    */
-  onFocus?: (...args: any[]) => unknown;
+  // NOTE: duet library uses custom events build with another library causing these to be hard to type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onFocus?: (...args: any[]) => void;
   /*
    * onOpen
    */
-  onOpen?: (...args: any[]) => unknown;
+  // NOTE: duet library uses custom events build with another library causing these to be hard to type
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onOpen?: (...args: any[]) => void;
   /*
    * placeholder
    */

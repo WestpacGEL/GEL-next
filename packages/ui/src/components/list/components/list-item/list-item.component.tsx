@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef, useContext } from 'react';
+import React, { Ref, forwardRef, useContext } from 'react';
 import { useFocusRing } from 'react-aria';
 
 import { ListContext } from '../../list.component.js';
@@ -11,7 +11,7 @@ import { type ListItemProps } from './list-item.types.js';
 
 export function BaseListItem(
   { className, children, href, target, look, type, spacing, icon, ...props }: ListItemProps,
-  ref: any,
+  ref: Ref<HTMLAnchorElement>,
 ) {
   const state = useContext(ListContext);
 

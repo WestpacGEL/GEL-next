@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, forwardRef, useCallback, useContext } from 'react';
+import React, { MouseEventHandler, Ref, forwardRef, useCallback, useContext } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
 import { FlexiCell } from '../../../../../../index.js';
@@ -21,7 +21,7 @@ function BaseSelectorButtonGroupOption(
     id,
     ...props
   }: SelectorButtonGroupOptionProps,
-  ref: any,
+  ref: Ref<HTMLElement>,
 ) {
   const state = useContext(SelectorButtonContext);
   const { isFocusVisible, focusProps } = useFocusRing();
@@ -36,7 +36,7 @@ function BaseSelectorButtonGroupOption(
       onClick(event);
       state.onClick(id);
     },
-    [onClick, state.onClick],
+    [id, onClick, state],
   );
   return (
     <FlexiCell

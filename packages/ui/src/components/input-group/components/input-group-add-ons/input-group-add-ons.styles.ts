@@ -9,8 +9,8 @@ export const styles = tv(
         false: '',
       },
       position: {
-        before: 'add-on-before group',
-        after: 'add-on-after group',
+        before: 'group/add-on-before',
+        after: ' group/add-on-after',
       },
     },
     compoundVariants: [

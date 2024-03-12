@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react';
-import { useEffect } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '../index.js';
@@ -7,12 +6,8 @@ import { Button } from '../index.js';
 import { BottomSheet } from './bottom-sheet.component.js';
 import { BottomSheetProps } from './bottom-sheet.types.js';
 
-const StoryBottomSheet = ({ children, state, ...props }: BottomSheetProps) => {
+const StoryBottomSheet = ({ children, ...props }: BottomSheetProps) => {
   const bottomSheetState = useOverlayTriggerState({});
-
-  useEffect(() => {
-    bottomSheetState.setOpen(state.isOpen);
-  }, [state]);
 
   return (
     <>
@@ -65,21 +60,6 @@ type Story = StoryObj<typeof meta>;
  */
 export const DefaultState: Story = {
   args: {
-    state: {
-      close: () => {
-        return;
-      },
-      setOpen: () => {
-        return;
-      },
-      open: () => {
-        return;
-      },
-      toggle: () => {
-        return;
-      },
-      isOpen: false,
-    },
     title: 'Heading',
     primaryLabel: 'Label',
     secondaryLabel: 'Label',
@@ -99,21 +79,6 @@ export const DefaultState: Story = {
  */
 export const NoFooter: Story = {
   args: {
-    state: {
-      close: () => {
-        return;
-      },
-      setOpen: () => {
-        return;
-      },
-      open: () => {
-        return;
-      },
-      toggle: () => {
-        return;
-      },
-      isOpen: false,
-    },
     title: 'Heading',
     children: (
       <p>

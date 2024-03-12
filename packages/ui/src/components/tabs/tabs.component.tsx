@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { AriaLinkOptions, useTabList } from 'react-aria';
+import { AriaLinkOptions, Key, useTabList } from 'react-aria';
 import { Item, ItemProps, useTabListState } from 'react-stately';
 
 import { TabsTab, TabsTabPanel } from './components/index.js';
@@ -24,9 +24,9 @@ export function Tabs({
 }: TabsProps) {
   const state = useTabListState({
     ...props,
-    disabledKeys: disabledKeys as any,
-    selectedKey: selectedKey as any,
-    defaultSelectedKey: defaultSelectedKey as any,
+    disabledKeys: disabledKeys as Iterable<Key>,
+    selectedKey: selectedKey as Key,
+    defaultSelectedKey: defaultSelectedKey as Key,
     children,
   });
   const styles = tabStyles({ orientation, look, sticky });
@@ -35,9 +35,9 @@ export function Tabs({
   const { tabListProps } = useTabList(
     {
       ...props,
-      disabledKeys: disabledKeys as any,
-      selectedKey: selectedKey as any,
-      defaultSelectedKey: defaultSelectedKey as any,
+      disabledKeys: disabledKeys as Iterable<Key>,
+      selectedKey: selectedKey as Key,
+      defaultSelectedKey: defaultSelectedKey as Key,
       orientation,
     },
     state,

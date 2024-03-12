@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react';
 
 import { Heading } from './heading.component.js';
 import { HeadingProps } from './heading.types.js';
@@ -14,7 +14,6 @@ const meta: Meta<typeof Heading> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 const sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -22,15 +21,19 @@ const sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * > Default usage example
  */
 export const Default = () => {
-  return sizes.map((size: any) => <Heading size={size}>Heading size: {size}</Heading>);
+  return sizes.map(size => (
+    <Heading key={size} size={size as HeadingProps['size']}>
+      Heading size: {size}
+    </Heading>
+  ));
 };
 
 /**
  * > With tag prop
  */
 export const WithTag = () => {
-  return sizes.map((size: any) => (
-    <Heading tag={size > 1 ? 'h1' : 'h2'} size={size}>
+  return sizes.map(size => (
+    <Heading key={size} tag={size > 1 ? 'h1' : 'h2'} size={size as HeadingProps['size']}>
       Heading tag:{size > 1 ? ' h1' : ' h2'} size: {size}
     </Heading>
   ));
@@ -40,8 +43,8 @@ export const WithTag = () => {
  * > Brand usage example
  */
 export const Brand = () => {
-  return sizes.map((size: any) => (
-    <Heading size={size} brandHeading>
+  return sizes.map(size => (
+    <Heading key={size} size={size as HeadingProps['size']} brandHeading>
       Heading size: {size}
     </Heading>
   ));
@@ -51,8 +54,8 @@ export const Brand = () => {
  * > With tag and brand prop
  */
 export const WithTagAndBrand = () => {
-  return sizes.map((size: any) => (
-    <Heading tag={size > 1 ? 'h1' : 'h2'} size={size} brandHeading>
+  return sizes.map(size => (
+    <Heading key={size} tag={size > 1 ? 'h1' : 'h2'} size={size as HeadingProps['size']} brandHeading>
       Heading tag:{size > 1 ? ' h1' : ' h2'} size: {size}
     </Heading>
   ));
@@ -62,8 +65,8 @@ export const WithTagAndBrand = () => {
  * > Uppercase usage example
  */
 export const Uppercase = () => {
-  return sizes.map((size: any) => (
-    <Heading size={size} uppercase>
+  return sizes.map(size => (
+    <Heading key={size} size={size as HeadingProps['size']} uppercase>
       Heading size: {size}
     </Heading>
   ));

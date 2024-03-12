@@ -25,5 +25,7 @@ export type PaginationItemProps = {
   /**
    * Link component to render
    */
+  // NOTE: any typing below is very hard to replace
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tag?: 'a' | 'button' | ((...args: any[]) => ReactElement | null);
 } & (AnchorHTMLAttributes<HTMLAnchorElement> | ButtonHTMLAttributes<HTMLButtonElement>);

@@ -20,6 +20,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // NOTE: Although unused this needs to be here so all colors load correctly
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const LOAD_COLORS = {
   background: [
     'bg-background',
@@ -291,6 +292,8 @@ export const BrandColors: Story = {
       'text',
     ];
     const TINTS = ['DEFAULT', 90, 80, 70, 60, 50, 40, 30, 20, 10, 5];
+    // NOTE: Below is ignored as we need global theme value from render
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [selectedTint, setSelectedTint] = useState('DEFAULT');
     const tintString = selectedTint !== 'DEFAULT' ? `-${selectedTint}` : '';
 
@@ -310,6 +313,8 @@ export const BrandColors: Story = {
         <div className="flex flex-wrap">
           {brandColors.map(color => (
             <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
+              {/* NOTE: Below disable tailwind classname warning for string interpolation */}
+              {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
               <div className={`bg-${color}${tintString} h-[80px]`} />
               <div className="divide-y divide-border border border-border p-2">
                 <div className="pb-2 font-bold">{color}</div>
@@ -352,6 +357,8 @@ export const ReservedColors = () => {
       <div className="flex flex-wrap">
         {reservedColors.map(color => (
           <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
+            {/* NOTE: Below disable tailwind classname warning for string interpolation */}
+            {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
             <div className={`bg-${color}${tintString} h-[80px]`} />
             <div className="divide-y divide-border border border-border p-2">
               <div className="pb-2 font-bold">{color}</div>
@@ -419,8 +426,10 @@ export const DataVisualisationColors: Story = {
       <>
         <div className="flex flex-wrap">
           {dataVisSolidColors.map(color => (
-            <div className="flex w-[16%] min-w-[100px] max-w-[300px] flex-col">
+            <div key={color} className="flex w-[16%] min-w-[100px] max-w-[300px] flex-col">
               <div className=" p-2" key={color}>
+                {/* NOTE: Below disable tailwind classname warning for string interpolation */}
+                {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
                 <div className={`bg-${color} h-[80px]`} />
                 <div className="divide-y divide-border border border-border p-2">
                   <div className="pb-2 font-bold">{color}</div>
@@ -434,8 +443,10 @@ export const DataVisualisationColors: Story = {
             </div>
           ))}
           {dataVisTintColors.map(color => (
-            <div className="flex w-[16%] min-w-[100px] max-w-[300px] flex-col">
+            <div key={color} className="flex w-[16%] min-w-[100px] max-w-[300px] flex-col">
               <div className=" p-2" key={color}>
+                {/* NOTE: Below disable tailwind classname warning for string interpolation */}
+                {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
                 <div className={`bg-${color} h-[80px]`} />
                 <div className="divide-y divide-border border border-border p-2">
                   <div className="pb-2 font-bold">{color}</div>
@@ -449,8 +460,10 @@ export const DataVisualisationColors: Story = {
             </div>
           ))}
           {dataVisSolidColors.map(color => (
-            <div className="flex w-[16%] min-w-[100px] max-w-[300px] flex-col">
+            <div key={color} className="flex w-[16%] min-w-[100px] max-w-[300px] flex-col">
               <div className=" p-2" key={`${color}/30`}>
+                {/* NOTE: Below disable tailwind classname warning for string interpolation */}
+                {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
                 <div className={`bg-${color}/30 h-[80px]`} />
                 <div className="divide-y divide-border border border-border p-2">
                   <div className="pb-2 font-bold">{`${color}/30`}</div>

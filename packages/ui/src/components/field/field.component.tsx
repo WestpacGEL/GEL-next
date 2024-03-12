@@ -33,7 +33,7 @@ export function Field({
         return cloneElement(child, fieldProps);
       }
     });
-  }, [children]);
+  }, [children, fieldProps]);
 
   return (
     <Tag className={styles({ className })} {...props}>

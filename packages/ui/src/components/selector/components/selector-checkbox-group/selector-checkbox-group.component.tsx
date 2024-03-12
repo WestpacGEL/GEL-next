@@ -82,9 +82,7 @@ export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {
     <>
       {label && <Label {...labelProps}>{label}</Label>}
       {description && <Hint {...descriptionProps}>{description}</Hint>}
-      {errorMessage && state.validationState === 'invalid' && (
-        <ErrorMessage {...errorMessageProps} message={errorMessage} />
-      )}
+      {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       <div {...groupProps} className={styles({ className: groupProps.className })}>
         <SelectorCheckboxGroupContext.Provider value={state}>{children}</SelectorCheckboxGroupContext.Provider>
       </div>

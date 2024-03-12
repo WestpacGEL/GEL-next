@@ -1,19 +1,18 @@
+import { CSSRuleObject } from 'tailwindcss/types/config.js';
+
 export const generateFormControlComponents = (formControlProps: {
   base: string;
   disabled: string;
   sizes: Record<string, string>;
 }) => {
-  const sizes = Object.entries(formControlProps.sizes).reduce(
-    (acc, [size, value]) => {
-      return {
-        ...acc,
-        [`.form-control-${size}`]: {
-          [`@apply ${value}`]: {},
-        },
-      };
-    },
-    {} as Record<string, any>,
-  );
+  const sizes = Object.entries(formControlProps.sizes).reduce((acc, [size, value]) => {
+    return {
+      ...acc,
+      [`.form-control-${size}`]: {
+        [`@apply ${value}`]: {},
+      },
+    };
+  }, {} as CSSRuleObject);
   return {
     '.form-control': {
       [`@apply ${formControlProps.base}`]: {},

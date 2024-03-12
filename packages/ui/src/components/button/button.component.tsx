@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef, useMemo } from 'react';
+import React, { Ref, forwardRef, useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
 import { styles as buttonStyles } from './button.styles.js';
@@ -22,7 +22,7 @@ function BaseButton(
     children,
     ...props
   }: ButtonProps,
-  ref: any,
+  ref: Ref<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>,
 ) {
   const { isFocusVisible, focusProps } = useFocusRing();
   const iconSize = useMemo(() => getIconSize(size), [size]);

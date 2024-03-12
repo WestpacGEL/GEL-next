@@ -146,7 +146,7 @@ export function Compacta({
                   look="link"
                   size="large"
                   onClick={() => handleToggle(item.id, index)}
-                  ref={(el: HTMLElement) => {
+                  ref={(el: HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement) => {
                     toggleRefs.current[index] = el;
                   }}
                   aria-labelledby={`gel-compacta-title-${item.id}`}

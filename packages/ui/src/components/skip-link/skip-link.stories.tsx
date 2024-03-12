@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react';
 import { useRef } from 'react';
 
 import { Button } from '../index.js';
@@ -18,7 +18,7 @@ export default meta;
  * > Default usage example
  */
 export const Default = () => {
-  const skipLinkRef = useRef<HTMLAnchorElement>();
+  const skipLinkRef = useRef<HTMLAnchorElement>(null);
   return (
     <>
       <SkipLink href="#skiptohere" ref={skipLinkRef}>

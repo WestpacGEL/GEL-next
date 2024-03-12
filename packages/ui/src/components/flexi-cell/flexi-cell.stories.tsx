@@ -860,6 +860,7 @@ export const PromotilesVerticalList: Story = {
       <div className="flex gap-3">
         {MOCK_VERTICAL_PROMOS.map(({ title, subtitle }) => (
           <FlexiCell
+            key={title}
             className="max-sm:h-[255px] max-sm:min-w-[214px] sm:h-[277px] sm:min-w-[298px] sm:max-w-[298px]"
             href="#"
             tag="a"
@@ -867,6 +868,8 @@ export const PromotilesVerticalList: Story = {
             topBadge={({ className }) => <Badge className={className + ' leading-normal'}>Corner flag</Badge>}
           >
             <FlexiCellAdornment className="mb-1">
+              {/* Disabled as we can't import Image */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="https://images.unsplash.com/photo-1657299170950-87e5b0eaf77c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
                 alt=""

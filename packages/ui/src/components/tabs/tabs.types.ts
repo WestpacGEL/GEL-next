@@ -7,7 +7,7 @@ import { styles } from './tabs.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
-export type TabsProps<T = any> = SpectrumTabsProps<T> & {
+export type TabsProps<T = object> = SpectrumTabsProps<T> & {
   /**
    * Children
    */

@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
-import { mergeProps, useFocusRing, useTab } from 'react-aria';
+import { Key, mergeProps, useFocusRing, useTab } from 'react-aria';
 
 import { styles } from './tabs-tab.styles.js';
 import { type TabsTabProps } from './tabs-tab.types.js';
 
 export function TabsTab({ item: { key, rendered }, state, orientation, justify, color, look }: TabsTabProps) {
   const ref = useRef(null);
-  const { tabProps } = useTab({ key: key as any }, state, ref);
+  const { tabProps } = useTab({ key: key as Key }, state, ref);
   const { isFocusVisible, focusProps } = useFocusRing();
   return (
     <div

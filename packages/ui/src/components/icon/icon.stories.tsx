@@ -9,7 +9,7 @@ import * as AllIcons from './index.js';
 const AllIconsExample = (props: AllIcons.IconProps) => {
   const [search, setSearch] = useState('');
   const filteredIcons = useMemo(() => {
-    return Object.entries(AllIcons).reduce((acc: { Icon: any; key: string }[], [iconName, Icon]) => {
+    return Object.entries(AllIcons).reduce((acc: { Icon: typeof Icon; key: string }[], [iconName, Icon]) => {
       if (iconName.toUpperCase().indexOf(search.toUpperCase()) === -1) {
         return acc;
       }
@@ -21,17 +21,14 @@ const AllIconsExample = (props: AllIcons.IconProps) => {
     setSearch(value);
   }, []);
 
-  const handleOnClick = useCallback(
-    async (key: string) => {
-      try {
-        await navigator.clipboard.writeText(`<${key} />`);
-        console.log('Content copied to clipboard');
-      } catch (err) {
-        console.error('Failed to copy: ', err);
-      }
-    },
-    [props.className],
-  );
+  const handleOnClick = useCallback(async (key: string) => {
+    try {
+      await navigator.clipboard.writeText(`<${key} />`);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }, []);
 
   return (
     <div className="flex flex-col gap-2">

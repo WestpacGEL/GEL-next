@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef, useContext, useRef } from 'react';
+import React, { Ref, forwardRef, useContext, useRef } from 'react';
 import { VisuallyHidden, mergeProps, useFocusRing, useRadio } from 'react-aria';
 
 import { ArrowRightIcon, TickIcon } from '../../../../../../components/icon/index.js';
@@ -22,7 +22,7 @@ function BaseSelectorRadioGroupOption(
     checkIcon = 'checkbox',
     ...props
   }: SelectorRadioGroupOptionProps,
-  ref: any,
+  ref: Ref<HTMLElement>,
 ) {
   const { state } = useContext(SelectorRadioGroupContext);
   const localRef = useRef(null);

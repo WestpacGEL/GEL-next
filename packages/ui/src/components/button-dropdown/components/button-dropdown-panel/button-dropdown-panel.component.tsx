@@ -26,7 +26,7 @@ export function ButtonDropdownPanel({ className, children, state, block, id, ...
       )
         state.close();
     },
-    [state.isOpen],
+    [props.triggerRef, state],
   );
 
   // React Aria does not handle click as we need when isNonModal is true so this is needed
@@ -42,7 +42,7 @@ export function ButtonDropdownPanel({ className, children, state, block, id, ...
       )
         state.close();
     },
-    [state.isOpen],
+    [props.triggerRef, state],
   );
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export function ButtonDropdownPanel({ className, children, state, block, id, ...
       window.document.removeEventListener('focusin', focusHandler);
       window.document.removeEventListener('click', clickHandler);
     };
-  }, []);
+  }, [clickHandler, focusHandler]);
 
   return (
     <div

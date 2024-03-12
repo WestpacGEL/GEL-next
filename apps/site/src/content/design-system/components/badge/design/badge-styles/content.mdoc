@@ -11,9 +11,9 @@ Badges come in 2 different styles: Default, used to highlight words, and Pill, u
           <p className="typography-body-10 text-muted">
             <em>Colours</em>
           </p>
-      <div className="flex gap-2">
+      <div>
         {COLORS.map(color => (
-          <Badge color={color} >
+          <Badge color={color} className="my-1 mr-2" >
             {color}
           </Badge>
         ))}
@@ -21,9 +21,9 @@ Badges come in 2 different styles: Default, used to highlight words, and Pill, u
           <p className="typography-body-10 text-muted">
             <em>Soft</em>
           </p>
-      <div className="flex gap-2">
+      <div>
         {COLORS.map(color => (
-          <Badge color={color} soft>
+          <Badge color={color} soft className="my-1 mr-2">
             {color}
           </Badge>
         ))}
@@ -44,9 +44,9 @@ Badges come in 2 different styles: Default, used to highlight words, and Pill, u
           <p className="typography-body-10 text-muted">
             <em>Colours</em>
           </p>
-      <div className="flex gap-2">
+      <div>
         {COLORS.map(color => (
-          <Badge className="my-1" type="pill" color={color} >
+          <Badge className="my-1 mr-2" type="pill" color={color}>
             88
           </Badge>
         ))}
@@ -54,9 +54,9 @@ Badges come in 2 different styles: Default, used to highlight words, and Pill, u
           <p className="typography-body-10 text-muted">
             <em>Soft</em>
           </p>
-      <div className="flex gap-2">
+      <div>
         {COLORS.map(color => (
-          <Badge className="my-1" type="pill" color={color} soft>
+          <Badge className="my-1 mr-2" type="pill" color={color} soft>
             88
           </Badge>
         ))}
