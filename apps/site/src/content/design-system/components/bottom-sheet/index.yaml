@@ -24,5 +24,7 @@ design:
       slug: where-is-this-available
     noTitle: false
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  - title: Modal
+    slug: /components/modal
 code: []
