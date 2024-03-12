@@ -26,6 +26,8 @@ type Story = StoryObj<typeof meta>;
  * > Default usage example
  */
 export const DefaultStory: Story = {
+  // for underscored property
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -40,6 +42,8 @@ export const DefaultStory: Story = {
  * > Example with a button on the right
  */
 export const RightButton: Story = {
+  // for underscored property
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -58,6 +62,8 @@ export const RightButton: Story = {
  * > Example of logo centering when XSL
  */
 export const CenterAtXS: Story = {
+  // for underscored property
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -72,6 +78,8 @@ export const CenterAtXS: Story = {
  * > Example of logo with onClick
  */
 export const LogoOnClick: Story = {
+  // for underscored property
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -87,6 +95,8 @@ export const LogoOnClick: Story = {
  * > Example of header with skiplink
  */
 export const LogoWithSkipLink: Story = {
+  // for underscored property
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -101,6 +111,8 @@ export const LogoWithSkipLink: Story = {
  * > Example fixed header. Does not show correctly in Docs view as it will show how it looks when scrolled, check specifc story for non-scrolled view
  */
 export const Fixed: Story = {
+  // for underscored property
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -115,6 +127,8 @@ export const Fixed: Story = {
  * > Example of header with arrow button
  */
 export const WithArrow: Story = {
+  // for underscored property
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -129,6 +143,8 @@ export const WithArrow: Story = {
  * > Example of header with arrow button with onClick
  */
 export const WithArrowOnClick: Story = {
+  // for underscored property
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -149,6 +165,8 @@ export const WithArrowOnClick: Story = {
  * > Example of header with hamburger (only visible below xsl)
  */
 export const WithHamburger: Story = {
+  // for underscored property
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -163,6 +181,8 @@ export const WithHamburger: Story = {
  * > Example of header with hamburger (only visible below xsl) with onClick
  */
 export const WithHamburgerOnClick: Story = {
+  // for underscored property
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (

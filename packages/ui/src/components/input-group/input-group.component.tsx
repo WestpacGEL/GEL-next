@@ -1,6 +1,15 @@
 'use client';
 
-import React, { Children, ReactNode, cloneElement, isValidElement, useCallback, useId, useMemo } from 'react';
+import React, {
+  Attributes,
+  Children,
+  ReactNode,
+  cloneElement,
+  isValidElement,
+  useCallback,
+  useId,
+  useMemo,
+} from 'react';
 
 import { ErrorMessage, Hint, Label } from '../index.js';
 
@@ -37,7 +46,7 @@ export function InputGroup({
       ...(supportingText ? [`${id}-supporting-text`] : []),
     ];
     return arr.join(' ');
-  }, [id, hint, errorMessage, supportingText]);
+  }, [errorMessage, id, hint, before, after, supportingText]);
 
   const {
     element: beforeElement,
@@ -81,10 +90,10 @@ export function InputGroup({
           id,
           'aria-describedby': ariaDescribedByValue,
           ...(width !== 'full' ? { width: width } : {}),
-        } as any);
+        } as Partial<unknown> & Attributes);
       }
     });
-  }, [children, ariaDescribedByValue]);
+  }, [children, size, id, ariaDescribedByValue, width]);
 
   const isFieldset = useMemo(() => Tag === 'fieldset', [Tag]);
 

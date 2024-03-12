@@ -24,7 +24,11 @@ const TYPES = ['bullet', 'link', 'tick', 'cross', 'unstyled', 'icon', 'ordered']
  */
 export const Default: Story = {
   args: {
-    children: [<ListItem>Styled list</ListItem>, <ListItem>Styled list</ListItem>, <ListItem>Styled list</ListItem>],
+    children: [
+      <ListItem key="one">Styled list</ListItem>,
+      <ListItem key="two">Styled list</ListItem>,
+      <ListItem key="three">Styled list</ListItem>,
+    ],
   },
 };
 

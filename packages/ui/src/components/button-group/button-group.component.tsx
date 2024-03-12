@@ -99,9 +99,7 @@ export function ButtonGroup({
     <div className={styles.base({ className })} {...radioGroupProps}>
       <Label {...labelProps}>{label}</Label>
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
-      {errorMessage && state.validationState === 'invalid' && (
-        <ErrorMessage {...errorMessageProps} message={errorMessage} />
-      )}
+      {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       <div className={styles.buttonWrapper()}>
         <ButtonGroupContext.Provider value={{ state, size, look, block }}>
           {buttons.map((button, index) => (

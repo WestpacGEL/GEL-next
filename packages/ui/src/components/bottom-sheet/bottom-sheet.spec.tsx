@@ -9,7 +9,7 @@ const user = userEvent.setup();
 describe('Bottom Sheet', () => {
   it('renders the bottom sheet', () => {
     const { result } = renderHook(() => useOverlayTriggerState({}));
-    render(<BottomSheet children={undefined} state={result.current} />);
+    render(<BottomSheet state={result.current}>{undefined}</BottomSheet>);
   });
 
   it('shows the content when the state isOpen is true', async () => {

@@ -6,12 +6,7 @@ import { type InputGroupAddOnDefaultAddOnProps } from './input-group-add-on-defa
 /**
  * @private
  */
-export const InputGroupAddOnDefaultAddOn = ({
-  position,
-  className,
-  children,
-  ...props
-}: InputGroupAddOnDefaultAddOnProps) => {
+export const InputGroupAddOnDefaultAddOn = ({ className, children, ...props }: InputGroupAddOnDefaultAddOnProps) => {
   return (
     <div className={styles({ className })} {...props}>
       {children}

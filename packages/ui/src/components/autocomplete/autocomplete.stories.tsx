@@ -54,24 +54,21 @@ export const Default: Story = {
 /**
  * > Controlled usage example
  */
-export const Controlled: Story = {
-  args: {},
-  render: () => {
-    const [selectedKey, setSelectedKey] = useState<string | number>();
-    const handleSelectionChange = (key: string | number) => {
-      setSelectedKey(key);
-    };
-    return (
-      <Autocomplete onSelectionChange={handleSelectionChange} selectedKey={selectedKey} aria-label="Animals">
-        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
-        <AutocompleteItem key="cat">Cat</AutocompleteItem>
-        <AutocompleteItem key="dog">Dog</AutocompleteItem>
-        <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
-        <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
-        <AutocompleteItem key="snake">Snake</AutocompleteItem>
-      </Autocomplete>
-    );
-  },
+export const Controlled = () => {
+  const [selectedKey, setSelectedKey] = useState<string | number>();
+  const handleSelectionChange = (key: string | number) => {
+    setSelectedKey(key);
+  };
+  return (
+    <Autocomplete onSelectionChange={handleSelectionChange} selectedKey={selectedKey} aria-label="Animals">
+      <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+      <AutocompleteItem key="cat">Cat</AutocompleteItem>
+      <AutocompleteItem key="dog">Dog</AutocompleteItem>
+      <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+      <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+      <AutocompleteItem key="snake">Snake</AutocompleteItem>
+    </Autocomplete>
+  );
 };
 
 /**

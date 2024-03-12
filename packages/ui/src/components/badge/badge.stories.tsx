@@ -73,12 +73,14 @@ export const Colors = () => (
   <div className="flex flex-col gap-2">
     <div className="flex gap-2">
       {COLORS.map(color => (
-        <Badge color={color}>{color}</Badge>
+        <Badge key={color} color={color}>
+          {color}
+        </Badge>
       ))}
     </div>
     <div className="flex gap-2">
       {COLORS.map(color => (
-        <Badge color={color} type="pill">
+        <Badge key={color} color={color} type="pill">
           {color}
         </Badge>
       ))}
@@ -87,12 +89,14 @@ export const Colors = () => (
     <div className="flex flex-col gap-2 bg-muted p-2">
       <div className="flex flex-wrap gap-2">
         {INVERTED_COLORS.map(color => (
-          <Badge color={color}>{color}</Badge>
+          <Badge key={color} color={color}>
+            {color}
+          </Badge>
         ))}
       </div>
       <div className="flex flex-wrap gap-2">
         {INVERTED_COLORS.map(color => (
-          <Badge color={color} type="pill">
+          <Badge key={color} color={color} type="pill">
             {color}
           </Badge>
         ))}
@@ -105,14 +109,14 @@ export const Soft = () => (
   <div className="flex flex-col gap-2">
     <div className="flex gap-2">
       {COLORS.map(color => (
-        <Badge color={color} soft>
+        <Badge key={color} color={color} soft>
           {color}
         </Badge>
       ))}
     </div>
     <div className="flex gap-2">
       {COLORS.map(color => (
-        <Badge color={color} type="pill" soft>
+        <Badge key={color} color={color} type="pill" soft>
           {color}
         </Badge>
       ))}
@@ -126,7 +130,7 @@ export const Soft = () => (
 export const Links = () => (
   <div className="flex flex-col gap-2">
     {COLORS.map(color => (
-      <a className="text-link underline" href="#">
+      <a key={color} className="text-link underline" href="#">
         {color}
         <Badge color={color} type="pill" className="ml-1">
           12
@@ -142,7 +146,7 @@ export const Links = () => (
 export const Buttons = () => (
   <div className="flex flex-col gap-2">
     {INVERTED_COLORS.map(color => (
-      <Button look="primary">
+      <Button key={color} look="primary">
         Primary
         <Badge color={color} type="pill" className="ml-1">
           {color}

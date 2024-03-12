@@ -33,11 +33,11 @@ export type PassCodeViewProps = {
   /**
    * on click the resend button
    */
-  onResend?: () => any;
+  onResend?: () => void;
   /**
    * on click the update button
    */
-  onUpdate?: () => any;
+  onUpdate?: () => void;
   /**
    * length of the passcode
    */

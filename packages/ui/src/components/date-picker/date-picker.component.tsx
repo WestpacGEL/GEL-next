@@ -46,7 +46,7 @@ export function DatePicker({
 
   const dateAdapter = useMemo(
     () => ({
-      parse(value = '', createDate: any) {
+      parse(value = '', createDate: (year: string, month: string, day: string) => Date) {
         const matches = value.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
         if (matches) {
           return createDate(matches[3], matches[2], matches[1]);
@@ -103,7 +103,7 @@ export function DatePicker({
     ref.current.isDateDisabled = (date: Date) => {
       return isDateDisabled(date, disableWeekends, disableDaysOfWeek, disableDates);
     };
-  }, [ref, initialized]);
+  }, [ref, initialized, dateAdapter, localization, value, id, name, disableWeekends, disableDaysOfWeek, disableDates]);
 
   useLayoutEffect(() => {
     if (!ref.current) {

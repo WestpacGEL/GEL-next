@@ -35,12 +35,12 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: [
-      <PanelBody>
+      <PanelBody key="panelBody">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora officiis officia omnis aperiam voluptate
         suscipit, laudantium praesentium quas consequatur placeat, perferendis eligendi saepe in unde sequi dolores
         excepturi doloremque autem! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </PanelBody>,
-      <PanelFooter>Panel footer</PanelFooter>,
+      <PanelFooter key="panelFooter">Panel footer</PanelFooter>,
     ],
   },
 };
@@ -52,12 +52,12 @@ export const FaintLook: Story = {
   args: {
     look: 'faint',
     children: [
-      <PanelBody>
+      <PanelBody key="panelBody">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora officiis officia omnis aperiam voluptate
         suscipit, laudantium praesentium quas consequatur placeat, perferendis eligendi saepe in unde sequi dolores
         excepturi doloremque autem! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </PanelBody>,
-      <PanelFooter>Panel footer</PanelFooter>,
+      <PanelFooter key="panelFooter">Panel footer</PanelFooter>,
     ],
   },
 };
@@ -68,7 +68,7 @@ export const FaintLook: Story = {
 export const WithTable: Story = {
   args: {
     children: [
-      <Table>
+      <Table key="table">
         <TableCaption>
           Caption this table width is: <em>(100%)</em>
         </TableCaption>
@@ -113,12 +113,12 @@ export const WithTable: Story = {
 export const WithTableAndBody: Story = {
   args: {
     children: [
-      <PanelBody>
+      <PanelBody key="panelBody">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora officiis officia omnis aperiam voluptate
         suscipit, laudantium praesentium quas consequatur placeat, perferendis eligendi saepe in unde sequi dolores
         excepturi doloremque autem! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </PanelBody>,
-      <Table>
+      <Table key="table">
         <TableCaption>
           Caption this table width is: <em>(100%)</em>
         </TableCaption>
@@ -153,7 +153,7 @@ export const WithTableAndBody: Story = {
         </TableBody>
         <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
       </Table>,
-      <PanelFooter>Panel footer</PanelFooter>,
+      <PanelFooter key="panelFooter">Panel footer</PanelFooter>,
     ],
   },
 };

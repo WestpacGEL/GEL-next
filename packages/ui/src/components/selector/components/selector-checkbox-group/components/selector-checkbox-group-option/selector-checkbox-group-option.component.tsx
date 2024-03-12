@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef, useContext, useRef } from 'react';
+import React, { Ref, forwardRef, useContext, useRef } from 'react';
 import { VisuallyHidden, mergeProps, useCheckboxGroupItem, useFocusRing } from 'react-aria';
 
 import { ArrowRightIcon, TickIcon } from '../../../../../../components/icon/index.js';
@@ -22,7 +22,7 @@ function BaseSelectorCheckboxGroupOption(
     checkIcon = 'checkbox',
     ...props
   }: SelectorCheckboxGroupOptionProps,
-  ref: any,
+  ref: Ref<HTMLElement>,
 ) {
   const state = useContext(SelectorCheckboxGroupContext);
   const localRef = useRef(null);

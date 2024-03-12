@@ -66,7 +66,7 @@ export function Pagination({
       tag: linkComponent || 'a',
       href: fowardOnly ? pages[pages.length - 1].href : pages[(current || 0) - 2]?.href,
     };
-  }, [current, onChange, linkComponent, pages, infinite]);
+  }, [current, infinite, onChange, linkComponent, pages, generateHandleOnClickBackwards]);
 
   const generateHandleOnClickForward = useCallback(
     (current: number, infinite: boolean, backwardsOnly: boolean, onChange: (page: number) => unknown) => () => {
@@ -108,7 +108,7 @@ export function Pagination({
       tag: linkComponent || 'a',
       href: backwardsOnly ? pages[0].href : pages[current || 0]?.href,
     };
-  }, [current, onChange, linkComponent, pages, infinite]);
+  }, [current, pages, infinite, linkComponent, onChange, generateHandleOnClickForward]);
 
   return (
     <Tag className={styles.base({ className })} role={role} aria-label="Page number" {...props}>

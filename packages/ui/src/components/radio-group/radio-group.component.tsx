@@ -90,7 +90,7 @@ export function RadioGroup({
   );
   const { isFocusVisible, focusProps } = useFocusRing();
   const [hiddenOptions, setHiddenOptions] = useState<boolean>(showAmount > 0);
-  const firstNewRadioRef = useRef<HTMLDivElement>(null);
+  const firstNewRadioRef = useRef<HTMLLabelElement>(null);
   const revealAmount = radios && radios.length - showAmount;
   const styles = radioGroupStyles({ orientation, isFocusVisible });
   const panelId = useId();
@@ -112,9 +112,7 @@ export function RadioGroup({
     <div className={styles.base({ className })} {...radioGroupProps}>
       <Label {...labelProps}>{label}</Label>
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
-      {errorMessage && state.validationState === 'invalid' && (
-        <ErrorMessage {...errorMessageProps} message={errorMessage} />
-      )}
+      {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       <div className={styles.radioWrapper()} id={panelId}>
         <RadioGroupContext.Provider value={{ state, orientation, size }}>{childrenToRender}</RadioGroupContext.Provider>
         {hiddenOptions && (

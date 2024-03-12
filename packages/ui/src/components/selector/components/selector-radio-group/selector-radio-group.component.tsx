@@ -89,9 +89,7 @@ export function SelectorRadioGroup({
     <>
       {label && <Label {...labelProps}>{label}</Label>}
       {description && <Hint {...descriptionProps}>{description}</Hint>}
-      {errorMessage && state.validationState === 'invalid' && (
-        <ErrorMessage {...errorMessageProps} message={errorMessage} />
-      )}
+      {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       <div className={styles({ className, orientation })} {...radioGroupProps}>
         <SelectorRadioGroupContext.Provider value={{ state, orientation }}>
           {children}

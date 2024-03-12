@@ -27,7 +27,7 @@ const meta: Meta<typeof Accordion> = {
 };
 
 export default meta;
-type Story = StoryObj<any>;
+type Story = StoryObj<typeof Accordion>;
 
 /**
  * > Default usage example
@@ -79,34 +79,29 @@ export const LegoLook: Story = {
 /**
  * > Controlled example
  */
-export const Controlled: Story = {
-  args: {
-    look: 'lego',
-    rounded: false,
-  },
-  render: ({ ...props }) => {
-    const [expandedKeys, setExpandedKeys] = useState<Set<Key>>();
-    return (
-      <Accordion
-        {...props}
-        expandedKeys={expandedKeys}
-        onExpandedChange={keys => {
-          setExpandedKeys(keys);
-        }}
-      >
-        {[
-          { key: 'files', title: 'Your files' },
-          { key: 'shared', title: 'Shared with you' },
-          { key: 'last', title: 'Last item' },
-        ].map(({ key, title }) => (
-          <AccordionItem key={key} title={title}>
-            <p>{title}</p>
-            <Button>Test</Button>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    );
-  },
+export const Controlled = () => {
+  const [expandedKeys, setExpandedKeys] = useState<Set<Key>>();
+  return (
+    <Accordion
+      look="lego"
+      rounded={false}
+      expandedKeys={expandedKeys}
+      onExpandedChange={keys => {
+        setExpandedKeys(keys);
+      }}
+    >
+      {[
+        { key: 'files', title: 'Your files' },
+        { key: 'shared', title: 'Shared with you' },
+        { key: 'last', title: 'Last item' },
+      ].map(({ key, title }) => (
+        <AccordionItem key={key} title={title}>
+          <p>{title}</p>
+          <Button>Test</Button>
+        </AccordionItem>
+      ))}
+    </Accordion>
+  );
 };
 
 /**

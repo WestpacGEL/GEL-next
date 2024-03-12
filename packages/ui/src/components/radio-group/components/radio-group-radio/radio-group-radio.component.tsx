@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef, useContext, useRef } from 'react';
+import React, { Ref, forwardRef, useContext, useRef } from 'react';
 import { VisuallyHidden, useFocusRing, useRadio } from 'react-aria';
 
 import { RadioGroupContext } from '../../radio-group.component.js';
@@ -8,7 +8,7 @@ import { RadioGroupContext } from '../../radio-group.component.js';
 import { styles as radioStyles } from './radio-group-radio.styles.js';
 import { type RadioGroupRadioProps } from './radio-group-radio.types.js';
 
-function BaseRadioGroupRadio({ className, hint, label, ...props }: RadioGroupRadioProps, ref: any) {
+function BaseRadioGroupRadio({ className, hint, label, ...props }: RadioGroupRadioProps, ref: Ref<HTMLLabelElement>) {
   const { state, size, orientation } = useContext(RadioGroupContext);
   const localRef = useRef(null);
   const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children: label }, state, localRef);

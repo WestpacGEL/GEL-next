@@ -197,7 +197,7 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
           },
         },
         button: {
-          base: 'inline-flex items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-[.add-on-after]:rounded-l-none group-[.add-on-before]:rounded-r-none',
+          base: 'inline-flex items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-last/add-on-after:rounded-l-none group-first/add-on-before:rounded-r-none',
           look: {
             base: {
               primary: 'border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50',

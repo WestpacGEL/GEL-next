@@ -1,4 +1,3 @@
-import { clsx } from 'clsx';
 import { PanInfo, motion, useAnimation } from 'framer-motion';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Overlay, useModalOverlay } from 'react-aria';
@@ -52,7 +51,7 @@ export function BottomSheetModal({ state, height, width, children, portalContain
       return;
     }
     controls.start('hidden');
-  }, [state.isOpen]);
+  }, [controls, state.isOpen]);
 
   const onDragEnd = useCallback(
     (_: unknown, info: PanInfo) => {
@@ -66,7 +65,7 @@ export function BottomSheetModal({ state, height, width, children, portalContain
       controls.start('visible');
       state.open();
     },
-    [controls],
+    [controls, state],
   );
 
   if (!isBrowser || !state.isOpen) {

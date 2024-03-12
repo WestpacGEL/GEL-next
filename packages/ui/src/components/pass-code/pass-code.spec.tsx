@@ -17,7 +17,7 @@ describe('PassCode', () => {
     const { container } = render(
       <PassCode
         length={4}
-        onComplete={(passcode: string) => {
+        onComplete={() => {
           throw new Error('Function not implemented.');
         }}
       />,

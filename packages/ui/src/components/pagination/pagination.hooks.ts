@@ -13,7 +13,7 @@ export const usePagination = ({ defaultCurrent = 1, pages, infinite = false }: P
       }
       return cannotGoForward ? currentPage : currentPage + 1;
     });
-  }, [pages]);
+  }, [infinite, pages.length]);
 
   const previous = useCallback(() => {
     setCurrentPage(currentPage => {
@@ -23,7 +23,7 @@ export const usePagination = ({ defaultCurrent = 1, pages, infinite = false }: P
       }
       return cannotGoBackwards ? currentPage : currentPage - 1;
     });
-  }, [pages]);
+  }, [infinite, pages.length]);
 
   const selectedPage = useMemo(() => {
     return pages[currentPage - 1];

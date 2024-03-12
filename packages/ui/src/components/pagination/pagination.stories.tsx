@@ -1,9 +1,9 @@
 import { action } from '@storybook/addon-actions';
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react';
 import { useEffect, useState } from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
-import { Button, PaginationProps } from '../index.js';
+import { Button } from '../index.js';
 
 import { Pagination } from './pagination.component.js';
 import { usePagination } from './pagination.hooks.js';
@@ -20,39 +20,32 @@ export default meta;
 /**
  * > Button usage example
  */
-export const Default: unknown = {
-  args: {
-    current: 1,
-    onChange: action('onChange'),
-    pages: [
-      {
-        text: '1',
-      },
-      {
-        text: '2',
-      },
-      {
-        text: '3',
-      },
-    ],
-  },
-  render: (props: PaginationProps) => {
-    const [current, setCurrent] = useState(props.current);
-    useEffect(() => {
-      setCurrent(props.current);
-    }, [props.current]);
+export const Default = () => {
+  const [current, setCurrent] = useState(1);
+  useEffect(() => {
+    setCurrent(1);
+  }, []);
 
-    return (
-      <Pagination
-        {...props}
-        onChange={value => {
-          setCurrent(value);
-          props.onChange?.(value);
-        }}
-        current={current}
-      />
-    );
-  },
+  return (
+    <Pagination
+      pages={[
+        {
+          text: '1',
+        },
+        {
+          text: '2',
+        },
+        {
+          text: '3',
+        },
+      ]}
+      onChange={value => {
+        setCurrent(value);
+        action('onChange')(value);
+      }}
+      current={current}
+    />
+  );
 };
 
 /**

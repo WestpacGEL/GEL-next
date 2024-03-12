@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef, useRef } from 'react';
+import React, { Ref, RefObject, forwardRef, useRef } from 'react';
 import { useBreadcrumbItem } from 'react-aria';
 
 import { ArrowRightIcon } from '../../../icon/index.js';
@@ -18,7 +18,7 @@ export function BaseBreadcrumbItem(
     tag: Tag = 'span',
     ...props
   }: BreadcrumbItemProps,
-  propRef: any,
+  propRef: Ref<HTMLElement>,
 ) {
   const ref = useRef(propRef);
   const FinalTag = (Tag === 'a' && isDisabled) || (Tag === 'a' && isCurrent) ? 'span' : Tag;
@@ -30,12 +30,12 @@ export function BaseBreadcrumbItem(
       isCurrent,
       elementType: FinalTag,
     },
-    ref,
+    ref as RefObject<HTMLElement>,
   );
   return (
     <li className="inline-flex items-center">
       <FinalTag
-        {...({ ...itemProps, ref: propRef, href: FinalTag === 'a' ? href : undefined } as any)}
+        {...({ ...itemProps, ref: propRef, href: FinalTag === 'a' ? href : undefined } as object)}
         className={styles({ className, isDisabled, isCurrent })}
       >
         {children}
@@ -49,4 +49,4 @@ export function BaseBreadcrumbItem(
   );
 }
 
-export const BreadcrumbItem = forwardRef<any, BreadcrumbItemProps>(BaseBreadcrumbItem);
+export const BreadcrumbItem = forwardRef<HTMLElement, BreadcrumbItemProps>(BaseBreadcrumbItem);

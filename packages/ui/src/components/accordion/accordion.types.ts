@@ -6,7 +6,7 @@ import { styles } from './accordion.styles.js';
 import { AccordionItemProps } from './components/index.js';
 
 type Variants = VariantProps<typeof styles>;
-export type AccordionProps<T = any> = SpectrumAccordionProps<T> & {
+export type AccordionProps<T = HTMLElement> = SpectrumAccordionProps<T> & {
   /**
    * <AccordionItem /> as a collection
    */

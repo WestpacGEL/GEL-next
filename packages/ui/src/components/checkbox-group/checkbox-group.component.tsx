@@ -91,7 +91,7 @@ export function CheckboxGroup({
   const { groupProps, labelProps, errorMessageProps, descriptionProps } = useCheckboxGroup({ ...props, label }, state);
   const { isFocusVisible, focusProps } = useFocusRing();
   const [hiddenOptions, setHiddenOptions] = useState<boolean>(showAmount > 0);
-  const firstNewCheckboxRef = useRef<HTMLDivElement>(null);
+  const firstNewCheckboxRef = useRef<HTMLLabelElement>(null);
   const revealAmount = checkboxes && checkboxes.length - showAmount;
   const styles = checkboxStyles({ orientation, isFocusVisible });
   const panelId = useId();
@@ -113,9 +113,7 @@ export function CheckboxGroup({
     <div className={styles.base({ className })} {...groupProps}>
       <Label {...labelProps}>{label}</Label>
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
-      {errorMessage && state.validationState === 'invalid' && (
-        <ErrorMessage {...errorMessageProps} message={errorMessage} />
-      )}
+      {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       <div className={styles.itemWrapper()} id={panelId}>
         <CheckboxGroupContext.Provider value={{ state, orientation, size }}>
           {childrenToRender}

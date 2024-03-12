@@ -92,7 +92,14 @@ export function Autocomplete<T extends object>({
       ((!state.isOpen && state.isFocused && searchProps.value.length > 0 && !state.selectedItem) ||
         (state.collection.size === 0 && searchProps.value.length > 0))
     );
-  }, [state, searchProps, noOptionsMessage]);
+  }, [
+    noOptionsMessage,
+    state.isOpen,
+    state.isFocused,
+    state.selectedItem,
+    state.collection.size,
+    searchProps.value.length,
+  ]);
 
   const iconSize = useMemo(() => {
     switch (size) {
@@ -161,7 +168,7 @@ export function Autocomplete<T extends object>({
         >
           <AutocompleteListBox
             {...listBoxProps}
-            autoFocus={listBoxProps.autoFocus as any}
+            autoFocus={listBoxProps.autoFocus as boolean | undefined}
             listBoxRef={listBoxRef}
             state={state}
           />

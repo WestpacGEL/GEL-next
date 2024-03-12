@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Item } from 'react-stately';
 
 import { AutocompleteItemProps } from './autocomplete-item.types.js';

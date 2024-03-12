@@ -32,7 +32,7 @@ export function SelectorButtonGroup({
     (id: string) => {
       setSelected(id);
     },
-    [selected, setSelected],
+    [setSelected],
   );
 
   const state: SelectorButtonGroupContextState = useMemo(
@@ -42,7 +42,7 @@ export function SelectorButtonGroup({
       validationState: errorMessage ? 'invalid' : 'valid',
       isDisabled,
     }),
-    [selected],
+    [errorMessage, handleChange, isDisabled, selected],
   );
 
   const { labelProps, fieldProps, descriptionProps, errorMessageProps } = useField({

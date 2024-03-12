@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'inline-block whitespace-nowrap border text-center leading-none',
+    base: 'inline-block whitespace-nowrap border text-center',
     variants: {
       color: {
         danger: 'border-danger bg-danger text-white',
@@ -24,8 +24,8 @@ export const styles = tv(
         'warning-inverted': 'border-none bg-white text-warning',
       },
       type: {
-        pill: 'typography-body-10 rounded-xl px-[0.4375rem] py-[0.25rem] font-medium leading-none',
-        default: 'rounded-sm px-1 py-[0.125rem] text-[0.75rem] leading-none',
+        pill: 'typography-body-10 h-4 rounded-xl px-[0.4375rem] py-[0.25rem] font-medium leading-none',
+        default: 'h-3 rounded-sm px-1 text-[0.75rem] leading-none',
       },
       soft: {
         true: 'bg-white',
