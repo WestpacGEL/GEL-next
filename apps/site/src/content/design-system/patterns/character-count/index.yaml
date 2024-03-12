@@ -10,6 +10,10 @@ design:
       name: Character count
       slug: character-count
     noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
 accessibility: []
 relatedComponents:
   - title: Input group
