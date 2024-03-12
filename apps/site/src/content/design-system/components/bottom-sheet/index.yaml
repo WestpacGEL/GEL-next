@@ -16,8 +16,8 @@ design:
       slug: user-experience
     noTitle: false
   - title:
-      name: New section to test
-      slug: new-section-to-test
+      name: Visual design
+      slug: visual-design
     noTitle: false
 accessibility: []
 relatedComponents: []
