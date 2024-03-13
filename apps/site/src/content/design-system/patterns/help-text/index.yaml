@@ -23,5 +23,9 @@ design:
       slug: when-to-use-help-text
     noTitle: false
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  - title: Popover
+    slug: /components/popover
+  - title: Icons
+    slug: /components/foundation/icons
 code: []
