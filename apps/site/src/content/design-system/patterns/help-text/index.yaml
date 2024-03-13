@@ -7,9 +7,9 @@ namedExport:
 excludeFromNavbar: true
 design:
   - title:
-      name: Introduction
-      slug: introduction
-    noTitle: true
+      name: Why do we need help text?
+      slug: why-do-we-need-help-text
+    noTitle: false
   - title:
       name: Help text in forms
       slug: help-text-in-forms
