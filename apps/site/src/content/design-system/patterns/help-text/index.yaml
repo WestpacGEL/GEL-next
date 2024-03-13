@@ -18,6 +18,10 @@ design:
       name: Using icons for help
       slug: using-icons-for-help
     noTitle: false
+  - title:
+      name: When to use help text
+      slug: when-to-use-help-text
+    noTitle: false
 accessibility: []
 relatedComponents: []
 code: []
