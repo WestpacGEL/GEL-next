@@ -1,5 +1,6 @@
 import { tv } from 'tailwind-variants';
 
+const inlineFlexInput = { input: 'inline-flex' };
 export const styles = tv(
   {
     slots: {
@@ -23,9 +24,21 @@ export const styles = tv(
         true: '',
         false: '',
       },
+      // Has to be done this as doing it with compoundVariants with array was not working
       width: {
-        true: '',
-        false: '',
+        full: '',
+        1: inlineFlexInput,
+        2: inlineFlexInput,
+        3: inlineFlexInput,
+        4: inlineFlexInput,
+        5: inlineFlexInput,
+        6: inlineFlexInput,
+        7: inlineFlexInput,
+        8: inlineFlexInput,
+        9: inlineFlexInput,
+        10: inlineFlexInput,
+        20: inlineFlexInput,
+        30: inlineFlexInput,
       },
     },
     compoundVariants: [
@@ -48,12 +61,6 @@ export const styles = tv(
         before: true,
         beforeInset: true,
         className: { base: 'input-group-inset-before' },
-      },
-      {
-        width: true,
-        className: {
-          input: 'inline-flex',
-        },
       },
     ],
   },

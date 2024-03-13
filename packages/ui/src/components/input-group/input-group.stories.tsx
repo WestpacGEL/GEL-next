@@ -178,6 +178,19 @@ export const FixedWidths = () => {
           </Autocomplete>
         </InputGroup>
       ))}
+      <h3 className="typography-body-7 mb-3">Responsive input widths</h3>
+      <InputGroup
+        key="responsive width"
+        tag="fieldset"
+        label="Label"
+        hint="I am a hint"
+        supportingText="I am supporting text"
+        after={<Button>Check</Button>}
+        before="$AUD"
+        width={{ initial: 'full', sm: 10, md: 20, lg: 30 }}
+      >
+        <Input placeholder="responsive" />
+      </InputGroup>
     </div>
   );
 };
