@@ -8,12 +8,12 @@ namedExport:
 excludeFromNavbar: true
 design:
   - title:
-      name: Product tiles
-      slug: demo
+      name: Vertical stack
+      slug: vertical-stack
     noTitle: false
   - title:
-      name: Promotional tiles vertical
-      slug: promotional-tiles-vertical
+      name: Horizontal layout
+      slug: horizontal-layout
     noTitle: false
   - title:
       name: Product tile with badge
