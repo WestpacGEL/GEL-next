@@ -15,12 +15,14 @@ design:
       name: Horizontal layout
       slug: horizontal-layout
     noTitle: false
-  - title:
-      name: Product tile with badge
-      slug: product-tile-with-badge
-    noTitle: false
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  - title: Icons
+    slug: /components/foundation/icon
+  - title: Pictograms
+    slug: /components/foundation/icon
+  - title: Badges
+    slug: /components/badge
 code:
   - title:
       name: Development examples
