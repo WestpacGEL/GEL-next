@@ -1,0 +1,12 @@
+name: Account selection
+namedExport:
+  discriminant: false
+excludeFromNavbar: true
+design:
+  - title:
+      name: Account tile
+      slug: account-tile
+    noTitle: false
+accessibility: []
+relatedComponents: []
+code: []
