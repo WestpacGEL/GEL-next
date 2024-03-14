@@ -4,6 +4,7 @@ description: >-
   succeeded or has been chosen by the user.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Manual address

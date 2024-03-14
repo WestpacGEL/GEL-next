@@ -34,8 +34,8 @@ export default function IncomeAndSavings() {
       setBalanceError(!totalBal ? defaultError : '');
       setFreqError(!incomeFreq ? defaultError : '');
       setValidationErrors([
-        ...(!totalBal ? [{ id: 'totalBal', label: 'Total balances in savings / investment accounts' }] : []),
-        ...(!income ? [{ id: 'income', label: 'Income / salary / pension' }] : []),
+        ...(!totalBal ? [{ id: 'totalBal', label: 'Total balances in savings & investment accounts' }] : []),
+        ...(!income ? [{ id: 'income', label: 'Income, salary, pension' }] : []),
         ...(!incomeFreq ? [{ id: 'incomeFreq', label: 'Income frequency' }] : []),
       ]);
     } else {
@@ -53,7 +53,7 @@ export default function IncomeAndSavings() {
   return (
     <div>
       <BackButton onClick={() => router.push('/credit-cards')}>Back to Quick contact</BackButton>
-      <CustomHeading groupHeading="Your finances" leadText="[Dummy lead text to be replaced later]">
+      <CustomHeading groupHeading="Your finances" leadText="Tell us about your income and any savings you have.">
         Income & savings
       </CustomHeading>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
@@ -62,7 +62,7 @@ export default function IncomeAndSavings() {
           <FormGroup>
             <Repeater className="mb-5">
               <InputGroup
-                label="Income / salary / pension (after tax)"
+                label="Income, salary, pension (after tax)"
                 hint="Enter a dollar value and choose a frequency"
                 errorMessage={incomeError || freqError}
                 instanceId="income"
@@ -85,7 +85,7 @@ export default function IncomeAndSavings() {
           <FormGroup>
             <InputGroup
               size="large"
-              label="Total balances in savings / investment accounts (if any)"
+              label="Total balances in savings & investment accounts (if any)"
               hint="Enter a dollar value"
               instanceId="totalBal"
               errorMessage={balanceError}
