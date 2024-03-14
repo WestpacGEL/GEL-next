@@ -1,4 +1,7 @@
 name: Account selection
+description: >-
+  Use this pattern when your process or application requires the user to select
+  one of their accounts
 namedExport:
   discriminant: false
 excludeFromNavbar: true
