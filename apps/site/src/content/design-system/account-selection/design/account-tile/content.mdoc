@@ -18,4 +18,21 @@ Text here
 </FlexiCell>
 ```
 
-### 
+```tsx
+<FlexiCell
+  tag="a"
+  href="#"
+  withBorder
+  after={
+    <FlexiCellAdornment align="top">
+      <FlexiCellLabel tag="h3" rightLabel>
+        $9,999.99
+      </FlexiCellLabel>
+      <FlexiCellHint>avail $9,999.99</FlexiCellHint>
+    </FlexiCellAdornment>
+  }
+>
+  <FlexiCellLabel tag="h3">Credit card name</FlexiCellLabel>
+  <FlexiCellHint>Card ending in 1234</FlexiCellHint>
+</FlexiCell>
+```

@@ -7,7 +7,7 @@ namedExport:
 excludeFromNavbar: true
 design:
   - title:
-      name: Account tile
+      name: Account tiles
       slug: account-tile
     noTitle: false
 accessibility: []
