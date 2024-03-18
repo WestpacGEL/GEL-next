@@ -1,6 +1,4 @@
 ```
-<Grid>
-  <GridItem span={{ initial: 12, sm: 6 }}>
 () => {
   const MOCK_ACCOUNTS = [
     {
@@ -54,6 +52,8 @@
           <div key={id}>
             <h3 className="mb-3 font-normal">{title}</h3>
             {accounts.map(({ name, amount, number }) => (
+<Grid>
+  <GridItem span={{ initial: 12, sm: 6 }}>
               <FlexiCell
                 tag="a"
                 href="#"
@@ -73,12 +73,13 @@
                 </FlexiCellLabel>
                 <FlexiCellHint>{number}</FlexiCellHint>
               </FlexiCell>
+  </GridItem>
+</Grid>
             ))}
           </div>
       ))}
     </>
   );
 };
-  </GridItem>
-</Grid>
+
 ```
