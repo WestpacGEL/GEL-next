@@ -1,0 +1,80 @@
+```
+() => {
+  const MOCK_ACCOUNTS = [
+    {
+      title: 'Cash',
+      id: 'cash',
+      accounts: [
+        {
+          name: 'Westpac Choice',
+          amount: '$1,234.99',
+          number: '732-123 746587',
+        },
+        {
+          name: 'Offset account for loan',
+          amount: '$20,000.00',
+          number: '732-123 123456',
+        },
+      ],
+    },
+    {
+      title: 'Foreign currency',
+      id: 'foreign-currency',
+      accounts: [
+        {
+          name: 'US Dollar Currency Account',
+          amount: '$3,957.57',
+          number: '123-456 1234567',
+        },
+        {
+          name: 'British pound Currency Account',
+          amount: '$9,999,999,999.99',
+          number: '123-456 1234567',
+        },
+      ],
+    },
+    {
+      title: 'Credit cards',
+      id: 'credit-cards',
+      accounts: [
+        {
+          name: 'Altitude Black World Mastercard',
+          amount: '-$3,957.57',
+          number: 'Card ending in 1234',
+        },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      {MOCK_ACCOUNTS.map(({ title, id, accounts }) => (
+          <div key={id}>
+            <h3 className="mb-3 font-normal">{title}</h3>
+            {accounts.map(({ name, amount, number }) => (
+              <FlexiCell
+                tag="a"
+                href="#"
+                withBorder
+                key={name}
+                after={
+                  <FlexiCellAdornment>
+                    <FlexiCellLabel className="font-semibold" rightLabel tag="h4">
+                      {amount}
+                    </FlexiCellLabel>
+                    <FlexiCellHint>available $9,999</FlexiCellHint>
+                  </FlexiCellAdornment>
+                }
+              >
+                <FlexiCellLabel className="font-normal" tag="h4">
+                  {name}
+                </FlexiCellLabel>
+                <FlexiCellHint>{number}</FlexiCellHint>
+              </FlexiCell>
+            ))}
+          </div>
+      ))}
+    </>
+  );
+};
+```

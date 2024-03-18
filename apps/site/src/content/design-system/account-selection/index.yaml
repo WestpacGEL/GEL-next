@@ -1,7 +1,7 @@
 name: Account selection
 description: >-
   Use this pattern when your process or application requires the user to select
-  one of their accounts
+  one of their existing accounts.
 namedExport:
   discriminant: false
 excludeFromNavbar: true
@@ -10,6 +10,12 @@ design:
       name: Account tiles
       slug: account-tile
     noTitle: false
+  - title:
+      name: Account list
+      slug: account-list
+    noTitle: false
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  - title: Flexicell
+    slug: /components/Flexicell
 code: []
