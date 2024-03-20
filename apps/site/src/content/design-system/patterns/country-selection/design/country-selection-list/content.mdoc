@@ -1,6 +1,6 @@
 THIS DEMO NEEDS FLAGS
 
-```
+```tsx
 () => {
   const MOCK_COUNTRIES = [
     {
@@ -53,6 +53,8 @@ THIS DEMO NEEDS FLAGS
           <div>
             {payees.map(({ name }) => {
               return (
+<Grid>
+  <GridItem span={{ initial: 12, sm: 6 }}>
                 <FlexiCell
                   tag="a"
                   href="#"
@@ -76,6 +78,8 @@ THIS DEMO NEEDS FLAGS
                 >
                   <FlexiCellLabel tag="span">{name}</FlexiCellLabel>
                 </FlexiCell>
+  </GridItem>
+</Grid>
               );
             })}
           </div>
