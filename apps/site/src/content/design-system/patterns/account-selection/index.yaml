@@ -14,6 +14,10 @@ design:
       name: Account list
       slug: account-list
     noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
 accessibility: []
 relatedComponents:
   - title: Flexicell
