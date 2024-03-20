@@ -7,8 +7,8 @@ namedExport:
 excludeFromNavbar: true
 design:
   - title:
-      name: Account tiles
-      slug: account-tile
+      name: Country selection tile
+      slug: country-selection-tile
     noTitle: false
   - title:
       name: Account list
