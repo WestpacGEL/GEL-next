@@ -3,10 +3,7 @@ The account tile uses the [Flexicell](/components/flexicell) component.
 When displaying a **savings** or **transaction account**, display the account name (or nickname), account balance and the account number details.
 
 ```tsx
-{
-  args: {},
-  render: () => {
-    return <>
+
         <FlexiCell before={<FlexiCellAdornment>
               <svg className="h-4 w-4" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="French flag">
                 <path d="M0 0H640V480H0V0Z" fill="white" />
@@ -16,8 +13,5 @@ When displaying a **savings** or **transaction account**, display the account na
             </FlexiCellAdornment>} tag="a" href="#" withBorder>
           <FlexiCellLabel tag="h3">List Item With Flag</FlexiCellLabel>
         </FlexiCell>
-    
-      </>;
-  }
-}
+
 ```
