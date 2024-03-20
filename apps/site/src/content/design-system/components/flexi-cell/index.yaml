@@ -15,6 +15,10 @@ design:
       name: Horizontal layout
       slug: horizontal-layout
     noTitle: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
+    noTitle: false
 accessibility: []
 relatedComponents:
   - title: Icons
