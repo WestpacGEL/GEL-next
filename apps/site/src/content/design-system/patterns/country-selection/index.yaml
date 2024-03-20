@@ -11,8 +11,8 @@ design:
       slug: country-selection-tile
     noTitle: false
   - title:
-      name: Account list
-      slug: account-list
+      name: Country selection list
+      slug: country-selection-list
     noTitle: false
   - title:
       name: User experience
