@@ -1,5 +1,91 @@
 THIS DEMO NEEDS FLAGS
 
+```
+() => {
+  const MOCK_COUNTRIES = [
+    {
+      title: 'Popular',
+      id: 'popular',
+      payees: [
+        {
+          code: 'IN',
+          name: 'India',
+        },
+        {
+          code: 'UK',
+          name: 'United Kingdom',
+        },
+        {
+          code: 'USA',
+          name: 'United States',
+        },
+      ],
+    },
+    {
+      title: 'A',
+      id: 'a',
+      payees: [
+        {
+          code: 'AI',
+          name: 'Ascension Islands',
+        },
+        {
+          code: 'AN',
+          name: 'Andorra',
+        },
+        {
+          code: 'UA',
+          name: 'United Arab Emirates',
+        },
+        {
+          code: 'AF',
+          name: 'Afghanistan',
+        },
+      ],
+    },
+  ];
+
+  return (
+    <div>
+      {MOCK_COUNTRIES.map(({ title, id, payees }) => (
+        <div key={id} className="flex flex-col gap-3">
+          <h3 className="m-0 border-b border-b-border pb-1 font-normal">{title}</h3>
+          <div>
+            {payees.map(({ name }) => {
+              return (
+                <FlexiCell
+                  tag="a"
+                  href="#"
+                  withBorder
+                  key={name}
+                  before={
+                    <FlexiCellAdornment>
+                      <svg
+                        className="h-4 w-4"
+                        viewBox="0 0 640 480"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-label="French flag"
+                      >
+                        <path d="M0 0H640V480H0V0Z" fill="white" />
+                        <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
+                        <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
+                      </svg>
+                    </FlexiCellAdornment>
+                  }
+                >
+                  <FlexiCellLabel tag="span">{name}</FlexiCellLabel>
+                </FlexiCell>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+```
+
 ```tsx
 <Grid>
   <GridItem span={{ initial: 12, sm: 6 }}>
