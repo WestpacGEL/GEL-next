@@ -3,7 +3,8 @@ In a scenario where you have a list of accounts of different types, they can be 
 THIS DEMO NEEDS TO BE ADJUSTED TO SHOW THE CORRECT ACCOUN TYPE LAYOUTS.
 
 ```tsx
-
+<Grid>
+  <GridItem span={{ initial: 12, sm: 6 }}>
         <FlexiCell before={<FlexiCellAdornment>
               <svg className="h-4 w-4" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="French flag">
                 <path d="M0 0H640V480H0V0Z" fill="white" />
@@ -73,4 +74,6 @@ THIS DEMO NEEDS TO BE ADJUSTED TO SHOW THE CORRECT ACCOUN TYPE LAYOUTS.
             </FlexiCellAdornment>} tag="a" href="#" withBorder>
           <FlexiCellLabel tag="h3">List item with flag</FlexiCellLabel>
         </FlexiCell>
+  </GridItem>
+</Grid>
 ```
