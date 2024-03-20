@@ -1,7 +1,7 @@
 name: Country selection
 description: >-
   Use this pattern when your process or application requires the user to select
-  one of their existing accounts.
+  a country.
 namedExport:
   discriminant: false
 excludeFromNavbar: true
