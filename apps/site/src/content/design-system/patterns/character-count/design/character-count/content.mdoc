@@ -1,0 +1,18 @@
+The character count patterns uses the supporting text add-on of the [input group](/components/input-group) component.
+
+```tsx
+() => {
+  const MAX_LENGTH = 250;
+  const [inputValue, setInputValue] = useState<string>('');
+  const counterText = useMemo(() => {
+    const lengthLeft = MAX_LENGTH - inputValue.length;
+    return `${lengthLeft} remaining`;
+  }, [inputValue]);
+
+  return (
+    <InputGroup label="Comments" hint="Supporting text used for character count" supportingText={counterText}>
+      <Textarea onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
+    </InputGroup>
+  );
+};
+```

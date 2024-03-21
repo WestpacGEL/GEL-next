@@ -2,6 +2,7 @@ name: Dates, days & time
 description: A guide to writing dates, days and time.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Dates, days and time

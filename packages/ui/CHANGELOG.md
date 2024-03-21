@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.20.1
+
+### Patch Changes
+
+- 0a7cf7c: fixed a bug with input group not passing responsive input widths to child inputs correctly
+
 ## 0.20.0
 
 ### Minor Changes

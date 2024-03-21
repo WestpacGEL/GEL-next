@@ -102,7 +102,7 @@ export function InputGroup({
     after: !!after,
     afterInset,
     beforeInset,
-    width: !isNaN(Number(width)),
+    width: width,
   });
 
   return (

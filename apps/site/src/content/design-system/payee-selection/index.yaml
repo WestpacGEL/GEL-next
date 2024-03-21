@@ -1,0 +1,25 @@
+name: Payee selection
+description: >-
+  Use this pattern when your process or application requires the user to select
+  one of their existing online banking payees.
+namedExport:
+  discriminant: false
+excludeFromNavbar: true
+design:
+  - title:
+      name: Payee tile
+      slug: payee-tile
+    noTitle: false
+  - title:
+      name: Account list
+      slug: account-list
+    noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+accessibility: []
+relatedComponents:
+  - title: Flexicell
+    slug: /components/Flexicell
+code: []

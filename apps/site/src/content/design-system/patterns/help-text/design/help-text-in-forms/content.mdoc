@@ -1,0 +1,27 @@
+Complex questions in origination forms sometimes need clarification. Hint text, which is constantly visible below the label, is a good place to add it. Hint text should be short. If the information you need to include is lengthy, this is when you can use a link to display further information.
+
+The pattern we recommend when you want to display further information along side a field, is a link that sits with the hint text of the component. This approach provides a larger hit target, and can either a) trigger a popover, or b) link to a glossary or other full explanation that’s somewhere else.
+
+Using icons alone to trigger Help text within the context of an input field can get difficult, if the icon is unobtrusive enough to not distract or disrupt the flow of the main content, then&nbsp;people don’t see it. A link ends up being the least intrusive but still findable option.&nbsp;&nbsp;
+
+Using the label ‘Learn more’ is a good, generic approach for triggering help text, the fact that it is sitting with its field provides the context. If you are using help text to provide definitions for complex terms, or spelling out an acronym the help link can say ‘What is an ABN?’.  &nbsp;
+
+Here are some examples:
+
+```jsx
+  <InputGroup width={20} label="Enter ABN or legal business name" hint="For example ‘33007457141’ or ‘Happy days cafe’ What is an ABN?" >
+          <Input />
+        </InputGroup>
+
+```
+
+```jsx
+  
+<Popover
+    look="link"
+    heading="ABN - Australian Business Number"
+    content="An ABN is a unique 11 digit number that identifies your business to the government and community. "
+  >
+What is an ABN?
+  </Popover>
+```
