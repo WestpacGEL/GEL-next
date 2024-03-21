@@ -11,8 +11,8 @@ design:
       slug: payee-tile
     noTitle: false
   - title:
-      name: Account list
-      slug: account-list
+      name: Payee list
+      slug: payee-list
     noTitle: false
   - title:
       name: User experience
