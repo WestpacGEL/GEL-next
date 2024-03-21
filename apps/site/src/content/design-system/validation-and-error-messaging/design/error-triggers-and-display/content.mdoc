@@ -26,9 +26,14 @@ The page level alert summary is an accessibility feature, which allows customers
 Enter your given name
 Enter your family name
 </Alert>
-  <Select className="w-full">
-    <option>Mrs</option>
-  </Select>
+<Field label="Title">
+        <Select >
+          <option value="option-1">Option 1</option>
+          <option value="option-2">Option 2</option>
+          <option value="option-3">Option 3</option>
+          <option value="option-4">Option 4</option>
+        </Select>
+      </Field>
  <InputGroup width={20} label="Given name" errorMessage="Enter your given name">
           <Input invalid />
         </InputGroup>
