@@ -1,11 +1,19 @@
-Example of header with hamburger (only visible below xsl) with onClick
+Example with a button on the right
 
 ```tsx
 <>
-  <Header
-    brand="wbc"
-    leftIcon="hamburger"
-    leftOnClick={function Ya(){}}
-  />
+  <Header brand="wbc">
+    <Button
+      look="faint"
+      onClick={function Ya(){}}
+      size={{
+        initial: 'small',
+        sm: 'medium'
+      }}
+      soft
+    >
+      Sign Out
+    </Button>
+  </Header>
 </>
 ```
