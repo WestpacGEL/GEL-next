@@ -3,7 +3,7 @@ In a scenario where you have a list of payee types, they can be grouped into cat
 ```
 <Grid>
   <GridItem span={{ initial: 12, sm: 6 }}>    
-            <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">Recent</h3>  
+            <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">Recently paid</h3>  
  <FlexiCell after={<FlexiCellAdornment align="center">
               <FlexiCellLabel tag="h3" rightLabel>
                 Fri 5 Aug
@@ -11,21 +11,29 @@ In a scenario where you have a list of payee types, they can be grouped into cat
             </FlexiCellAdornment>} before={<FlexiCellAdornment>
               <BpayIcon color="hero" />
             </FlexiCellAdornment>} tag="a" href="#">
-          <FlexiCellLabel tag="h3"> Telstra</FlexiCellLabel>
+          <FlexiCellLabel tag="h3"> Sam's dance acadamy</FlexiCellLabel>
           <FlexiCellHint><p>Biller code 12345</p><p>Ref 8635483638</p></FlexiCellHint>
         </FlexiCell>
 
- <FlexiCell after={<FlexiCellAdornment align="center">
-              <FlexiCellLabel tag="h3" rightLabel>
-                Fri 5 Aug
-              </FlexiCellLabel>
-            </FlexiCellAdornment>} before={<FlexiCellAdornment>
-              <BpayIcon color="hero" />
-            </FlexiCellAdornment>} tag="a" href="#">
-          <FlexiCellLabel tag="h3"> Payee name</FlexiCellLabel>
+        <FlexiCell after={<FlexiCellAdornment align="center">
+              <FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />
+            </FlexiCellAdornment>} before={<FlexiCellCircle className="bg-muted text-white" aria-label="Walter White">
+              AS
+            </FlexiCellCircle>} dualAction href="#">
+          <FlexiCellLabel tag="h3">Andrew Snow</FlexiCellLabel>
+          <FlexiCellHint>123-777 73648364</FlexiCellHint>
+        </FlexiCell>
+
+            <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">A</h3>  
+<FlexiCell after={<FlexiCellAdornment align="center">
+              <FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />
+            </FlexiCellAdornment>} before={<FlexiCellCircle className="bg-muted text-white" aria-label="Walter White">
+              AM
+            </FlexiCellCircle>} dualAction href="#">
+          <FlexiCellLabel tag="h3">Anita Macintosh</FlexiCellLabel>
           <FlexiCellHint>Payee account details</FlexiCellHint>
         </FlexiCell>
-            <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">A</h3>  
+
 <FlexiCell after={<FlexiCellAdornment align="center">
               <FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />
             </FlexiCellAdornment>} before={<FlexiCellCircle className="bg-muted text-white" aria-label="Walter White">
@@ -34,6 +42,16 @@ In a scenario where you have a list of payee types, they can be grouped into cat
           <FlexiCellLabel tag="h3">Payee name</FlexiCellLabel>
           <FlexiCellHint>Payee account details</FlexiCellHint>
         </FlexiCell>
+        <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">B</h3>  
+<FlexiCell after={<FlexiCellAdornment align="center">
+              <FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />
+            </FlexiCellAdornment>} before={<FlexiCellCircle className="bg-muted text-white" aria-label="Walter White">
+              PN
+            </FlexiCellCircle>} dualAction href="#">
+          <FlexiCellLabel tag="h3">Payee name</FlexiCellLabel>
+          <FlexiCellHint>Payee account details</FlexiCellHint>
+        </FlexiCell>
+
 <FlexiCell after={<FlexiCellAdornment align="center">
               <FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />
             </FlexiCellAdornment>} before={<FlexiCellCircle className="bg-muted text-white" aria-label="Walter White">
