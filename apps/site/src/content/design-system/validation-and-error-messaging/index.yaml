@@ -1,0 +1,17 @@
+name: Validation and error messaging
+description: >-
+  Validation or error messaging helps ensure that data captured online from our
+  customers is as accurate as possible. From making sure it is entered in the
+  correct format, to ensuring we have the correct addresses and contact details
+  for our customers. Validation and errors are essential for data quality. 
+namedExport:
+  discriminant: false
+excludeFromNavbar: true
+design:
+  - title:
+      name: 'Anatomy of an error '
+      slug: anatomy-of-an-error
+    noTitle: false
+accessibility: []
+relatedComponents: []
+code: []

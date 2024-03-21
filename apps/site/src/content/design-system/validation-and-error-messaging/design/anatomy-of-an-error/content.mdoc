@@ -1,0 +1,9 @@
+When we alert customers to something that requires their attention, we use the [
+{% u %}reserved colours{% /u %}
+](/components/foundation/colours) in our colour palette, these colours are designed to stand out from our brand colours, rather than blend in. Validation errors that appear in origination forms use the colour *Danger*, along with an alert icon. The associated icon that displays with an error message is crucial for accessibility, as using colour alone to differentiate from the rest of the text on the page is insufficient to meet the accessibility guidelines that support users with colour vision impairments.&nbsp;
+
+```jsx
+  <InputGroup width={20} label="Label" hint="Hint text"  errorMessage="If there is an error it can go here">
+          <Input invalid />
+        </InputGroup>
+```
