@@ -21,5 +21,9 @@ design:
       slug: writing-error-messages
     noTitle: false
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  - title: Alerts
+    slug: /components/alerts
+  - title: Colours
+    slug: /components/foundation/colours
 code: []
