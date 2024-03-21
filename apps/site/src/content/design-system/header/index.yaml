@@ -8,12 +8,20 @@ namedExport:
 excludeFromNavbar: true
 design:
   - title:
+      name: Header
+      slug: header
+    noTitle: false
+  - title:
       name: User experience
       slug: user-experience
     noTitle: false
   - title:
-      name: Header
-      slug: header
+      name: Visual design
+      slug: visual-design
+    noTitle: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
     noTitle: false
 accessibility: []
 relatedComponents: []
