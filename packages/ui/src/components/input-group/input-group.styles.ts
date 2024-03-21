@@ -1,6 +1,5 @@
 import { tv } from 'tailwind-variants';
 
-const inlineFlexInput = { input: 'inline-flex' };
 export const styles = tv(
   {
     slots: {
@@ -27,18 +26,20 @@ export const styles = tv(
       // Has to be done this as doing it with compoundVariants with array was not working
       width: {
         full: '',
-        1: inlineFlexInput,
-        2: inlineFlexInput,
-        3: inlineFlexInput,
-        4: inlineFlexInput,
-        5: inlineFlexInput,
-        6: inlineFlexInput,
-        7: inlineFlexInput,
-        8: inlineFlexInput,
-        9: inlineFlexInput,
-        10: inlineFlexInput,
-        20: inlineFlexInput,
-        30: inlineFlexInput,
+        // Below ignored because tailwind was showing a transform error when using a const
+        // eslint-disable-next-line sonarjs/no-duplicate-string
+        1: { input: 'inline-flex' },
+        2: { input: 'inline-flex' },
+        3: { input: 'inline-flex' },
+        4: { input: 'inline-flex' },
+        5: { input: 'inline-flex' },
+        6: { input: 'inline-flex' },
+        7: { input: 'inline-flex' },
+        8: { input: 'inline-flex' },
+        9: { input: 'inline-flex' },
+        10: { input: 'inline-flex' },
+        20: { input: 'inline-flex' },
+        30: { input: 'inline-flex' },
       },
     },
     compoundVariants: [

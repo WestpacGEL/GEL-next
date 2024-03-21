@@ -25,11 +25,13 @@ export function Popover({
   look,
   soft = false,
   open = false,
+  linkStyling = false,
+  size = 'medium',
   icon,
 }: PopoverProps) {
   const state = useOverlayTriggerState({});
   const panelId = useId();
-  const styles = popoverStyles({});
+  const styles = popoverStyles({ linkStyling });
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
 
   const handleClick = useCallback(() => {
@@ -57,13 +59,15 @@ export function Popover({
   return (
     <div className={styles.base({ className })}>
       <Button
-        look={icon && !children ? 'link' : look}
+        look={(icon && !children) || linkStyling ? 'link' : look}
         iconAfter={icon}
         soft={soft}
         aria-expanded={state.isOpen}
         aria-controls={panelId}
         onClick={handleClick}
         ref={ref}
+        size={size}
+        className={styles.button()}
       >
         {children}
       </Button>

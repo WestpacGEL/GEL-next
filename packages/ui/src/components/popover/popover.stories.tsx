@@ -1,6 +1,8 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
+import { Field } from '../field/field.component.js';
 import { HelpIcon } from '../icon/index.js';
+import { Input } from '../input/input.component.js';
 
 import { Popover } from './popover.component.js';
 
@@ -65,6 +67,38 @@ export const NoHeading: Story = {
     heading: undefined,
   },
 };
+
+/**
+ * > Popover trigger as link
+ */
+export const AsLink = () => (
+  <>
+    <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
+    <p className="mb-4">
+      {' '}
+      This is an example of using a popover as link.{' '}
+      <Popover linkStyling heading="Heading" content={popoverContent} size="small">
+        Click here.
+      </Popover>{' '}
+      To test popover.
+    </p>
+    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <Field
+      label="Example with field."
+      hintMessage={
+        <p>
+          {' '}
+          This is an example of using a popover as link.{' '}
+          <Popover linkStyling heading="Heading" content={popoverContent} size="small">
+            Click here.
+          </Popover>
+        </p>
+      }
+    >
+      <Input />
+    </Field>
+  </>
+);
 
 /**
  * > Auto adjustment NOTE: Does not display correctly in story view please check individual story

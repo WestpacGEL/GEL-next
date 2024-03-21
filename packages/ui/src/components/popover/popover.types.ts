@@ -26,6 +26,10 @@ export type PopoverProps = {
    */
   icon?: (props: IconProps) => JSX.Element;
   /**
+   * Removes padding from trigger button and sets look to link to be able to look inline, use size prop to match font size
+   */
+  linkStyling?: boolean;
+  /**
    * A function for the onClick event
    */
   onClick?: () => void;
@@ -39,4 +43,4 @@ export type PopoverProps = {
    */
   placement?: 'top' | 'bottom';
 } & HTMLAttributes<Element> &
-  Pick<ButtonProps, 'look' | 'soft'>;
+  Pick<ButtonProps, 'look' | 'soft' | 'size'>;
