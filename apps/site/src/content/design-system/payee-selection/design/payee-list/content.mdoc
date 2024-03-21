@@ -1,40 +1,31 @@
 In a scenario where you have a list of accounts of payee types, they can be grouped into categories, including recently paid to help users easily scan.
 
 ```
-{
-  args: {},
-  render: () => {
-    return <>
-        {MOCK_PAYEES.map(({
-        title,
-        id,
-        payees
-      }) => <div key={id}>
-            <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">{title}</h3>
-            {payees.map(({
-          name,
-          initials,
-          number,
-          paidAt
-        }) => paidAt ? <FlexiCell tag="a" href="#" key={name} before={<FlexiCellCircle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
-                      {initials}
-                    </FlexiCellCircle>} after={<FlexiCellAdornment align="center">
-                      <FlexiCellLabel rightLabel tag="h4">
-                        {paidAt}
-                      </FlexiCellLabel>
-                    </FlexiCellAdornment>} size={{
-          initial: 'default',
-          sm: 'large'
-        }}>
-                  <FlexiCellLabel tag="h4">{name + responsiveString}</FlexiCellLabel>
-                  <FlexiCellHint>{number}</FlexiCellHint>
-                </FlexiCell> : <FlexiCell href="#" dualAction key={name} before={<FlexiCellCircle className="bg-muted text-white">{initials}</FlexiCellCircle>} after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}>
-                  <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
-                  <FlexiCellHint>{number}</FlexiCellHint>
-                </FlexiCell>)}
-          </div>)}
-      </>;
-  }
-}
+<Grid>
+  <GridItem span={{ initial: 12, sm: 6 }}>      
+ <FlexiCell after={<FlexiCellAdornment align="center">
+              <FlexiCellLabel tag="h3" rightLabel>
+                Fri 5 Aug
+              </FlexiCellLabel>
+            </FlexiCellAdornment>} before={<FlexiCellAdornment>
+              <BpayIcon color="hero" />
+            </FlexiCellAdornment>} tag="a" href="#">
+          <FlexiCellLabel tag="h3"> Payee name</FlexiCellLabel>
+          <FlexiCellHint>Payee account details</FlexiCellHint>
+        </FlexiCell>
+
+ <FlexiCell after={<FlexiCellAdornment align="center">
+              <FlexiCellLabel tag="h3" rightLabel>
+                Fri 5 Aug
+              </FlexiCellLabel>
+            </FlexiCellAdornment>} before={<FlexiCellAdornment>
+              <BpayIcon color="hero" />
+            </FlexiCellAdornment>} tag="a" href="#">
+          <FlexiCellLabel tag="h3"> Payee name</FlexiCellLabel>
+          <FlexiCellHint>Payee account details</FlexiCellHint>
+        </FlexiCell>
+
+</GridItem>
+</Grid>
 
 ```
