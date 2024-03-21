@@ -56,8 +56,7 @@ THIS DEMO NEEDS FLAGS, AND THE SEPARATORS FIXED
   return (
     <div>
       {MOCK_COUNTRIES.map(({ title, id, payees }) => (
-        <div key={id} className="flex flex-col gap-3">
-            <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">{title}</h3>            
+        <div key={id} className="flex flex-col gap-3">          
             <h3 className="mb-2 font-normal">{title}</h3>
           <div>
             {payees.map(({ name }) => {
