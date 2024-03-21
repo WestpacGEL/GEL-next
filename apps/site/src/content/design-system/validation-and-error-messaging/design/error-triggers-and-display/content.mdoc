@@ -18,13 +18,14 @@ The page level alert summary is an accessibility feature, which allows customers
 ```jsx
 <Grid>
   <GridItem span={{ initial: 12, sm: 6 }}>
+
 <Alert look="danger" 
   heading="Please fix the 3 errors listed below"
   onClose={function Ya(){}}
 >
-  Select a title
-Enter your given name
-Enter your family name
+<p a href="#">Select a title</a>
+<p a href="#">Enter your given name</a>
+<p a href="#">Enter your family name</a>
 </Alert>
 
 <Field label="Title" errorMessage="Select a title">
