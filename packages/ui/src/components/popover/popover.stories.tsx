@@ -69,14 +69,14 @@ export const NoHeading: Story = {
 };
 
 /**
- * > Popover trigger as link
+ * > Popover trigger as inline link appearance
  */
-export const AsLink = () => (
+export const AsInlineLinkAppearance = () => (
   <>
     <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
     <p className="mb-4">
       {' '}
-      This is an example of using a popover as link.{' '}
+      This is an example of using a popover that looks like an inline link.{' '}
       <Popover linkStyling heading="Heading" content={popoverContent} size="small">
         Click here.
       </Popover>{' '}
@@ -88,7 +88,7 @@ export const AsLink = () => (
       hintMessage={
         <p>
           {' '}
-          This is an example of using a popover as link.{' '}
+          This is an example of using a popover that looks like an inline link.{' '}
           <Popover linkStyling heading="Heading" content={popoverContent} size="small">
             Click here.
           </Popover>
