@@ -24,5 +24,9 @@ design:
       slug: where-is-this-available
     noTitle: false
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  - title: Logos
+    slug: /components/foundation/logos
+  - title: Footer
+    slug: /components/footers
 code: []
