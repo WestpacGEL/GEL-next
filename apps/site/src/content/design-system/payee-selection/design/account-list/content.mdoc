@@ -1,89 +1,40 @@
-In a scenario where you have a list of accounts of different types, they can be grouped into categories to help users easily scan.
-
-THIS DEMO NEEDS TO BE ADJUSTED TO SHOW THE CORRECT ACCOUN TYPE LAYOUTS.
+In a scenario where you have a list of accounts of payee types, they can be grouped into categories, including recently paid to help users easily scan.
 
 ```
-() => {
-  const MOCK_ACCOUNTS = [
-    {
-      title: 'Cash',
-      id: 'cash',
-      accounts: [
-        {
-          name: 'Westpac Choice',
-          amount: '$1,234.99',
-          number: '732-123 746587',
-        },
-        {
-          name: 'Offset account for loan',
-          amount: '$20,000.00',
-          number: '732-123 123456',
-        },
-      ],
-    },
-    {
-      title: 'Foreign currency',
-      id: 'foreign-currency',
-      accounts: [
-        {
-          name: 'US Dollar Currency Account',
-          amount: '$3,957.57',
-          number: '123-456 1234567',
-        },
-        {
-          name: 'British pound Currency Account',
-          amount: '$9,999,999,999.99',
-          number: '123-456 1234567',
-        },
-      ],
-    },
-    {
-      title: 'Credit cards',
-      id: 'credit-cards',
-      accounts: [
-        {
-          name: 'Altitude Black World Mastercard',
-          amount: '-$3,957.57',
-          number: 'Card ending in 1234',
-        },
-      ],
-    },
-  ];
-
-  return (
-    <>
-      {MOCK_ACCOUNTS.map(({ title, id, accounts }) => (
-          <div key={id}>
-            <h3 className="mb-3 font-normal">{title}</h3>
-            {accounts.map(({ name, amount, number }) => (
-<Grid>
-  <GridItem span={{ initial: 12, sm: 6 }}>
-              <FlexiCell
-                tag="a"
-                href="#"
-                withBorder
-                key={name}
-                after={
-                  <FlexiCellAdornment>
-                    <FlexiCellLabel className="font-semibold" rightLabel tag="h4">
-                      {amount}
-                    </FlexiCellLabel>
-                    <FlexiCellHint>available $9,999</FlexiCellHint>
-                  </FlexiCellAdornment>
-                }
-              >
-                <FlexiCellLabel className="font-normal" tag="h4">
-                  {name}
-                </FlexiCellLabel>
-                <FlexiCellHint>{number}</FlexiCellHint>
-              </FlexiCell>
-  </GridItem>
-</Grid>
-            ))}
-          </div>
-      ))}
-    </>
-  );
-};
+{
+  args: {},
+  render: () => {
+    return <>
+        {MOCK_PAYEES.map(({
+        title,
+        id,
+        payees
+      }) => <div key={id}>
+            <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">{title}</h3>
+            {payees.map(({
+          name,
+          initials,
+          number,
+          paidAt
+        }) => paidAt ? <FlexiCell tag="a" href="#" key={name} before={<FlexiCellCircle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
+                      {initials}
+                    </FlexiCellCircle>} after={<FlexiCellAdornment align="center">
+                      <FlexiCellLabel rightLabel tag="h4">
+                        {paidAt}
+                      </FlexiCellLabel>
+                    </FlexiCellAdornment>} size={{
+          initial: 'default',
+          sm: 'large'
+        }}>
+                  <FlexiCellLabel tag="h4">{name + responsiveString}</FlexiCellLabel>
+                  <FlexiCellHint>{number}</FlexiCellHint>
+                </FlexiCell> : <FlexiCell href="#" dualAction key={name} before={<FlexiCellCircle className="bg-muted text-white">{initials}</FlexiCellCircle>} after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}>
+                  <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
+                  <FlexiCellHint>{number}</FlexiCellHint>
+                </FlexiCell>)}
+          </div>)}
+      </>;
+  }
+}
 
 ```
