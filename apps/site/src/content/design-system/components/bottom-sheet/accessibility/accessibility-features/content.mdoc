@@ -1,0 +1,18 @@
+- Bottom sheet/Modal heading receives focus and is announced on open. The user is able to ‘arrow down’ to navigate the content if desired. This pattern differs from the [WAI-ARIA Authoring Practices Modal Dialog](https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/dialog.html) pattern, which announces all modal content on open and is often considered unnecessarily verbose for screen reader users.
+- Close button appears below the heading in the source order; users can easily ‘arrow down’ and close if the heading content was of no interest
+- When open, focus is constrained within the context of the Bottom sheet/Modal. Sequential keyboard navigation loops through focusable elements within the component; and not to any elements found outside.
+- Close using Close button, Esc key or background click (if modal is dismissible)
+- On touch devices the Bottom sheet can be closed via swipe.
+- When the modal closes, focus returns to the button that originally toggled the Bottom sheet/Modal
+- The Bottom sheet/Modal shape, text and icon content is visible in Windows High Contrast Mode (WHCM). Button ‘look’ styling (colour) is not visible in WHCM.
+
+### Accessibility in the HTML
+
+- `<button aria-label="Close modal">`: Close button announced as “Close modal” in screen readers
+
+### Keyboard support
+
+- ‘Tab’ moves focus to next focusable element inside the dialog. When focus is on the last focusable element in the dialog, moves focus to the first focusable element in the dialog.
+- ‘Shift + Tab’ moves focus to previous focusable element inside the dialog
+- When focus is on the first focusable element in the dialog, moves focus to the last focusable element in the dialog
+- ‘Esc’ key closes the modal (if modal is dismissible)

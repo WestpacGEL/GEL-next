@@ -1,7 +1,7 @@
 ```
 () => {
-  const title = 'Westpac specials and product offers';
-  const subtitle = 'Discounts and cashback from select merchants & products offers from Westpac';
+  const title = 'Title';
+  const subtitle = 'Sub-title';
   return (
     <>
       <FlexiCell
@@ -15,11 +15,6 @@
           <GiftIcon look="outlined" color="hero" />
         </FlexiCellAdornment>
       }
-      after={
-        <Badge className="h-fit w-fit" color="success">
-          Completed
-        </Badge>
-      }
     >
       <GiftIcon className="sm:hidden" look="outlined" color="hero" />
       <FlexiCellLabel className="text-hero" tag="h4">
@@ -27,7 +22,8 @@
       </FlexiCellLabel>
       <FlexiCellHint>{subtitle}</FlexiCellHint>
     </FlexiCell>
-    <FlexiCell
+  
+  <FlexiCell
       tag="a"
       href="#"
       withBorder
@@ -35,16 +31,11 @@
       key={title}
       before={
         <FlexiCellAdornment className="max-sm:hidden">
-          <PadlockIcon look="outlined" color="hero" />
+          <DeliveryTruckIcon look="outlined" color="hero" />
         </FlexiCellAdornment>
       }
-      after={
-        <Badge className="h-fit w-fit" color="success">
-          Completed
-        </Badge>
-      }
     >
-      <PadlockIcon className="sm:hidden" look="outlined" color="hero" />
+      <DeliveryTruckIcon className="sm:hidden" look="outlined" color="hero" />
       <FlexiCellLabel className="text-hero" tag="h4">
         {title}
       </FlexiCellLabel>

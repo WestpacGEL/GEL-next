@@ -1,0 +1,42 @@
+The account tile uses the [Flexicell](/components/flexicell) component.
+
+When displaying a **savings** or **transaction account**, display the account name (or nickname), account balance and the account number details.
+
+```tsx
+<FlexiCell
+  tag="a"
+  href="#"
+  withBorder
+  after={
+    <FlexiCellAdornment align="top">
+      <FlexiCellLabel tag="h3" rightLabel>
+        $9,999.99
+      </FlexiCellLabel>
+    </FlexiCellAdornment>
+  }
+>
+  <FlexiCellLabel tag="h3">Account name</FlexiCellLabel>
+  <FlexiCellHint>032-123 12345678</FlexiCellHint>
+</FlexiCell>
+```
+
+When listing a **credit card,** **loan account** or **transaction account** with a **debit card,** display the account name (or nickname), account balance, available balance and the account number or masked card number details.
+
+```tsx
+<FlexiCell
+  tag="a"
+  href="#"
+  withBorder
+  after={
+    <FlexiCellAdornment align="top">
+      <FlexiCellLabel tag="h3" rightLabel>
+        $9,999.99
+      </FlexiCellLabel>
+      <FlexiCellHint>avail $9,999.99</FlexiCellHint>
+    </FlexiCellAdornment>
+  }
+>
+  <FlexiCellLabel tag="h3">Credit card name</FlexiCellLabel>
+  <FlexiCellHint>Card ending in 1234</FlexiCellHint>
+</FlexiCell>
+```

@@ -1,0 +1,23 @@
+name: Character count
+description: >-
+  Use character count to clearly indicate when there are limits on the number of
+  characters allowed in a field.
+namedExport:
+  discriminant: false
+excludeFromNavbar: true
+design:
+  - title:
+      name: Character count
+      slug: character-count
+    noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+accessibility: []
+relatedComponents:
+  - title: Input group
+    slug: /components/input-group
+  - title: Text area
+    slug: /components/textarea
+code: []

@@ -8,19 +8,25 @@ namedExport:
 excludeFromNavbar: true
 design:
   - title:
-      name: Product tiles
-      slug: demo
+      name: Vertical stack
+      slug: vertical-stack
     noTitle: false
   - title:
-      name: Promotional tiles vertical
-      slug: promotional-tiles-vertical
+      name: Horizontal layout
+      slug: horizontal-layout
     noTitle: false
   - title:
-      name: Product tile with badge
-      slug: product-tile-with-badge
+      name: Where is this available?
+      slug: where-is-this-available
     noTitle: false
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  - title: Icons
+    slug: /components/foundation/icon
+  - title: Pictograms
+    slug: /components/foundation/icon
+  - title: Badges
+    slug: /components/badge
 code:
   - title:
       name: Development examples

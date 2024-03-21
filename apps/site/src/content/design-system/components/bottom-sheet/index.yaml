@@ -1,0 +1,37 @@
+name: Bottom sheet
+description: >-
+  The responsive bottom sheet component is a modal-style element that slides up
+  from the bottom of the screen in mobile views and appears as a modal in larger
+  views.
+namedExport:
+  discriminant: false
+excludeFromNavbar: true
+design:
+  - title:
+      name: Bottom sheet
+      slug: bottom-sheet
+    noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+  - title:
+      name: Visual design
+      slug: visual-design
+    noTitle: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
+    noTitle: false
+accessibility:
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+relatedComponents:
+  - title: Modal
+    slug: /components/modal
+code:
+  - title:
+      name: Development example
+      slug: development-example
+    noTitle: false
