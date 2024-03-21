@@ -16,6 +16,8 @@ When error messages are triggered, we alert the customer in two places:&nbsp;
 The page level alert summary is an accessibility feature, which allows customers using screen readers or ***[device for mobility/dexterity issues] t***o easily be able to jump to the places on the page that require attention, as opposed to having to read through the entire form again searching for errors. It is also a very helpful feature for all users to let them know what they have to do next.&nbsp;
 
 ```jsx
+<Grid>
+  <GridItem span={{ initial: 12, sm: 6 }}>
 <Alert look="warning" 
   heading="I am an alert heading"
   onClose={function Ya(){}}
@@ -25,4 +27,6 @@ The page level alert summary is an accessibility feature, which allows customers
  <InputGroup width={20} label="Label" hint="Hint text"  errorMessage="If there is an error it can go here">
           <Input invalid />
         </InputGroup>
+  </GridItem>
+</Grid>
 ```
