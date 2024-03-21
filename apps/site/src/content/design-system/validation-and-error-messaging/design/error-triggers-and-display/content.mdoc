@@ -1,0 +1,16 @@
+Error messages are triggered when the user either navigates to the next page in a process, submits the form or confirms an action.&nbsp;
+
+The system checks the entered data and identifies where it needs attention, such as incomplete mandatory fields, or incorrect formatting.&nbsp;
+
+Errors can also be triggered as the user moves from one field to the next, but not all validation can be consistently performed in this way, requiring errors to be triggered again on submit. Rather than having two rounds of error handling it can be easier just to do it once per page on submit.&nbsp;
+
+When error messages are triggered, we alert the customer in two places:&nbsp;
+
+1. Descriptive [
+   {% u %}Alert text   {% /u %}
+   ](/components/alerts) message that sits with the field in error, and &nbsp;
+1. Page level [
+   {% u %}Alert box   {% /u %}
+   ](/components/alerts) message that sits at the top of the page, with a summary of all the errors on the page and anchor links to each.&nbsp;
+
+The page level alert summary is an accessibility feature, which allows customers using screen readers or ***[device for mobility/dexterity issues] t***o easily be able to jump to the places on the page that require attention, as opposed to having to read through the entire form again searching for errors. It is also a very helpful feature for all users to let them know what they have to do next.&nbsp;
