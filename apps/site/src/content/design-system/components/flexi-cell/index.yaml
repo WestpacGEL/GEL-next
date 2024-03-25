@@ -16,6 +16,10 @@ design:
       slug: horizontal-layout
     noTitle: false
   - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+  - title:
       name: Where is this available?
       slug: where-is-this-available
     noTitle: false

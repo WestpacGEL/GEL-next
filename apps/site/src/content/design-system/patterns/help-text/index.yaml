@@ -1,14 +1,14 @@
 name: Help text
 description: >-
-  Help text is an important tool that can be used very effectively in the jargon
-  and complexity filled industry of financial services.  
+  Clear communication in the jargon and complexity filled industry of financial
+  services is vital.
 namedExport:
   discriminant: false
 excludeFromNavbar: true
 design:
   - title:
-      name: Why do we need help text?
-      slug: why-do-we-need-help-text
+      name: When do we need help text?
+      slug: when-do-we-need-help-text
     noTitle: false
   - title:
       name: Help text in forms
@@ -19,8 +19,8 @@ design:
       slug: using-icons-for-help
     noTitle: false
   - title:
-      name: When to use help text
-      slug: when-to-use-help-text
+      name: Why use help text
+      slug: why-use-help-text
     noTitle: false
 accessibility: []
 relatedComponents:

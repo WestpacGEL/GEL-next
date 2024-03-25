@@ -1,0 +1,72 @@
+name: Header
+description: >-
+  Having consistent and familiar headers throughout an experience is critical,
+  it assists in providing our customers context and confidence in the experience
+  they are in.   
+namedExport:
+  discriminant: false
+excludeFromNavbar: true
+design:
+  - title:
+      name: Header
+      slug: header
+    noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+  - title:
+      name: Visual design
+      slug: visual-design
+    noTitle: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
+    noTitle: false
+accessibility: []
+relatedComponents:
+  - title: Logos
+    slug: /components/foundation/logos
+  - title: Footer
+    slug: /components/footers
+code:
+  - title:
+      name: Default
+      slug: default
+    noTitle: false
+  - title:
+      name: Right button
+      slug: right-button
+    noTitle: false
+  - title:
+      name: Center at Xsl
+      slug: center-at-xsl
+    noTitle: false
+  - title:
+      name: Logo on click
+      slug: logo-on-click
+    noTitle: false
+  - title:
+      name: Logo with skip link
+      slug: logo-with-skip-link
+    noTitle: false
+  - title:
+      name: Fixed
+      slug: fixed
+    noTitle: false
+  - title:
+      name: With back arrow
+      slug: with-back-arrow
+    noTitle: false
+  - title:
+      name: With back arrow on click
+      slug: with-back-arrow-on-click
+    noTitle: false
+  - title:
+      name: With hamburger
+      slug: with-hamburger
+    noTitle: false
+  - title:
+      name: With hamburger on click
+      slug: with-hamburger-on-click
+    noTitle: false
