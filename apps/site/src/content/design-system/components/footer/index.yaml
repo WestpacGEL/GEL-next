@@ -15,6 +15,10 @@ design:
       name: User experience
       slug: user-experience
     noTitle: false
+  - title:
+      name: Visual design
+      slug: visual-design
+    noTitle: false
 accessibility: []
 relatedComponents: []
 code: []
