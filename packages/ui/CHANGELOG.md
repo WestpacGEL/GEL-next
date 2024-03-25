@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.21.0
+
+### Minor Changes
+
+- b62d5f9: added new prop to popover components that makes trigger button look like inline link
+
 ## 0.20.1
 
 ### Patch Changes
