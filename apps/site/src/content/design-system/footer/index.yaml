@@ -1,0 +1,20 @@
+name: Footer
+description: >-
+  Having consistent and familiar footers throughout an experience is critical,
+  it assists in providing our customers context and confidence in the experience
+  they are in.   
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Footer
+      slug: footer
+    noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+accessibility: []
+relatedComponents: []
+code: []
