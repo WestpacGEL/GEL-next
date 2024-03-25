@@ -1,0 +1,39 @@
+The payee tile uses the [Flexicell](/components/flexicell) component.
+
+The payee tile has a few configurations, it can come with an icon to represent the payee type or the initials of the payee's name or nickname. The right side can have optional content, a date for indicating a recent payee, or an Info icon that links to more details about that payee. These configurations are most commonly used in Online Banking processes.
+
+#### Payee with recently paid date
+
+```tsx
+<Grid>
+  <GridItem span={{ initial: 12, sm: 6 }}>      
+ <FlexiCell after={<FlexiCellAdornment align="center">
+              <FlexiCellLabel tag="h3" rightLabel>
+                Fri 5 Aug
+              </FlexiCellLabel>
+            </FlexiCellAdornment>} before={<FlexiCellAdornment>
+              <BpayIcon color="hero" />
+            </FlexiCellAdornment>} tag="a" href="#">
+          <FlexiCellLabel tag="h3"> Payee name</FlexiCellLabel>
+          <FlexiCellHint>Payee account details</FlexiCellHint>
+        </FlexiCell>
+</GridItem>
+</Grid>
+```
+
+#### Payee with info icon link
+
+```tsx
+<Grid>
+  <GridItem span={{ initial: 12, sm: 6 }}>           
+<FlexiCell after={<FlexiCellAdornment align="center">
+              <FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />
+            </FlexiCellAdornment>} before={<FlexiCellCircle className="bg-muted text-white" aria-label="Walter White">
+              PN
+            </FlexiCellCircle>} dualAction href="#">
+          <FlexiCellLabel tag="h3">Payee name</FlexiCellLabel>
+          <FlexiCellHint>Payee account details</FlexiCellHint>
+        </FlexiCell>
+</GridItem>
+</Grid>
+```

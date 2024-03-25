@@ -21,3 +21,40 @@
   </Popover>
 </div>
 ```
+
+### Popover with inline link styling
+
+```tsx
+<div className="flex flex-col gap-2">
+  <>
+    <h3 className="typography-body-8 mb-2 font-bold">Inside paragraph</h3>
+    <p className="mb-4">
+      {' '}
+      This is an example of using a popover as link.{' '}
+      <Popover linkStyling heading="Heading" content="Small overlays of content for housing secondary information. These are often used to provide explanatory information
+      for complex ideas.">
+        Click here.
+      </Popover>{' '}
+      To test popover.
+    </p>
+  </>
+  <>
+    <h3 className="typography-body-8 mb-2 font-bold">Inside hint</h3>
+    <Field
+      label="Example with field."
+      hintMessage={
+        <p>
+          {' '}
+          This is an example of using a popover as link.{' '}
+          <Popover linkStyling heading="Heading" content="Small overlays of content for housing secondary information. These are often used to provide explanatory information
+          for complex ideas." size="small">
+            Click here.
+          </Popover>
+        </p>
+      }
+    >
+      <Input />
+    </Field>
+  </>
+</div>
+```

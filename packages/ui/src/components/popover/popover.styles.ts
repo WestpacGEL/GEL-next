@@ -4,8 +4,16 @@ export const styles = tv(
   {
     slots: {
       base: 'relative inline-block',
+      button: '',
     },
-    variants: {},
+    variants: {
+      linkStyling: {
+        true: {
+          button: 'p-0',
+        },
+        false: {},
+      },
+    },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
 );

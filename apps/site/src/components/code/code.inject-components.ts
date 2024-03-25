@@ -10,6 +10,8 @@ export { StaticCode } from '../static-code/index';
 
 export { ComponentTitle } from '../document-renderer/component-title';
 
+export * from '../country-flags/index';
+
 export {
   Badge,
   Button,
@@ -98,6 +100,8 @@ export {
   Heading,
   ProgressIndicator,
   BottomSheet,
+  Header,
+  Footer,
 } from '@westpac/ui';
 
 export * from '@westpac/ui/icon';
