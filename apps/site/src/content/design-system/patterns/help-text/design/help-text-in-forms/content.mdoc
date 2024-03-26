@@ -23,3 +23,36 @@ Here are some examples:
         </InputGroup>
 </div>
 ```
+
+```jsx
+ <div className="w-[36.2ex]"> <ButtonGroup label="Would you like an off-set account" hint={<p>
+          {' '}
+        
+{' '}
+          <Popover linkStyling content="An ABN is a unique 11 digit number that identifies your business to the government and community." size="small">
+            Learn more
+          </Popover>
+        </p>} >
+          <Input />
+        </InputGroup>
+</div>
+```
+
+```jsx
+          <FormGroup>
+            <ButtonGroup
+              label="What credit limit would you like?"
+              hintMessage="You can chose a limit between $500 and $4,000 for Westpac Lite Visa Card."
+              size="large"
+              id="creditLimitType"
+              block={{ initial: true, md: false }}
+              errorMessage={limitTypeError}
+              defaultValue={data.creditLimitType}
+              buttons={[
+                { value: 'Allocate', label: 'Allocate for me' },
+                { value: 'Specify', label: 'Specify' },
+              ]}
+              onChange={setCreditLimitType}
+            />
+          </FormGroup>
+```
