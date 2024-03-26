@@ -72,6 +72,8 @@
           <div>
             {payees.map(({ name, svg }) => {
               return (
+<Grid>
+  <GridItem span={{ initial: 12, sm: 6 }}>
                 <FlexiCell
                   tag="a"
                   href="#"
@@ -81,6 +83,8 @@
                 >
                   <FlexiCellLabel tag="span">{name}</FlexiCellLabel>
                 </FlexiCell>
+</GridItem>
+</Grid>
               );
             })}
           </div>
