@@ -11,19 +11,16 @@ If you are using help text to provide definitions for complex terms, or spelling
 Here are some examples:
 
 ```jsx
-  <InputGroup width={20} label="Enter ABN or legal business name" hint="For example ‘33007457141’ or ‘Happy days cafe’ What is an ABN?" >
+  <InputGroup width={20} label="Enter ABN or legal business name" hint={<p>
+          {' '}
+          This is an example of using a popover that looks like an inline link.{' '}
+          <Popover linkStyling heading="Heading" content="An ABN is a unique 11 digit number that identifies your business to the government and community." size="small">
+            Click here.
+          </Popover>
+        </p>} >
           <Input />
         </InputGroup>
 
-    <Field label="Enter ABN or legal business name" hintMessage={<p>
-          {' '}
-          For example ‘33007457141’ or ‘Happy days cafe{' '}
-          <Popover linkStyling heading="ABN - Australian Business Number" content="An ABN is a unique 11 digit number that identifies your business to the government and community." size="small">
-            What is an ABN?
-          </Popover>
-        </p>}>
-      <Input />
-    </Field>
 ```
 
 ```jsx
@@ -39,20 +36,11 @@ What is an ABN?
 
 ```jsx
 () => <>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
-    <p className="mb-4">
-      {' '}
-      This is an example of using a popover that looks like an inline link.{' '}
-      <Popover linkStyling heading="Heading" content={popoverContent} size="small">
-        Click here.
-      </Popover>{' '}
-      To test popover.
-    </p>
     <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
     <Field label="Example with field." hintMessage={<p>
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
-          <Popover linkStyling heading="Heading" content={popoverContent} size="small">
+          <Popover linkStyling heading="Heading" content="An ABN is a unique 11 digit number that identifies your business to the government and community." size="small">
             Click here.
           </Popover>
         </p>}>
