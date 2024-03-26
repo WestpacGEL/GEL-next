@@ -42,7 +42,14 @@ Here are some examples:
           <FormGroup>
             <ButtonGroup
               label="Would you like an off-set account?"
-              hintMessage="You can chose a limit between $500 and $4,000 for Westpac Lite Visa Card."
+              hintMessage={<p>
+          {' '}
+        
+{' '}
+          <Popover linkStyling content="An ABN is a unique 11 digit number that identifies your business to the government and community." size="small">
+            Learn more
+          </Popover>
+        </p>}
               size="large"
               id="creditLimitType"
               block={{ initial: true, md: false }}
