@@ -1,7 +1,137 @@
+### Default
+
 Default usage example
 
 ```tsx
 <>
   <Header brand="wbc" />
+</>
+```
+
+### Right button
+
+Example with a button on the right
+
+```tsx
+<>
+  <Header brand="wbc">
+    <Button
+      look="faint"
+      onClick={function Ya(){}}
+      size={{
+        initial: 'small',
+        sm: 'medium'
+      }}
+      soft
+    >
+      Sign Out
+    </Button>
+  </Header>
+</>
+```
+
+### Centre at Xsl
+
+Example of logo centering when XSL
+
+```tsx
+<>
+  <Header
+    brand="wbc"
+    logoCenter
+  />
+</>
+```
+
+### Logo onClick
+
+Example of logo with onClick
+
+```tsx
+<>
+  <Header
+    brand="wbc"
+    logoOnClick={function Ya(){}}
+  />
+</>
+```
+
+### Logo with skiplink
+
+Example of header with skiplink
+
+```tsx
+<>
+  <Header
+    brand="wbc"
+    skipToContentId="#"
+  />
+</>
+```
+
+### Fixed
+
+Example fixed header. Does not show correctly in Docs view as it will show how it looks when scrolled, check specific story for non-scrolled view
+
+```tsx
+<div className="h-10">
+  <Header
+    brand="wbc"
+    fixed
+  />
+</div>
+```
+
+### With back arrow
+
+Example of header with arrow button
+
+```tsx
+<>
+  <Header
+    brand="wbc"
+    leftIcon="arrow"
+  />
+</>
+```
+
+### With back arrow onClick
+
+Example of header with back arrow button with onClick
+
+```tsx
+<>
+  <Header
+    brand="wbc"
+    leftIcon="arrow"
+    leftOnClick={function Ya(){}}
+  />
+</>
+```
+
+### With hamburger
+
+Example of header with hamburger (only visible below xsl)
+
+```tsx
+<>
+  <Header
+    brand="wbc"
+    leftIcon="hamburger"
+  />
+</>
+```
+
+### With hamburger onClick
+
+Example of header with hamburger (only visible below xsl) with onClick
+
+```tsx
+<>
+  <Header
+    brand="wbc"
+    leftIcon="hamburger"
+    leftOnClick={function Ya(){}}
+  />
 </>
 ```
