@@ -47,3 +47,42 @@ Here are some examples:
             />
           </FormGroup>
 ```
+
+```jsx
+ <FormGroup>
+  <FormLabel>Date of birth</FormLabel>
+  <FormHint>Example: 31 3 1980 {<p>
+          {' '}
+        
+{' '}
+          <Popover linkStyling content="An offset account is a type of bank account linked to a home loan. The balance in the offset account is offset against the balance owing on the home loan, reducing the interest payable on the loan." size="small">
+            Learn more
+          </Popover>
+        </p>}</FormHint>
+  <fieldset className="flex gap-4">
+    <Field label="Day" labelSize="small">
+      <Input
+        type="number"
+        size="large"
+        pattern="[0-9]*"
+        min="1"
+        max="31"
+        autoComplete="bday-day"
+      />
+    </Field>
+    <Field label="Month" labelSize="small">
+      <Input
+        type="number"
+        size="large"
+        pattern="[0-9]*"
+        min="1"
+        max="12"
+        autoComplete="bday-month"
+      />
+    </Field>
+    <Field label="Year" labelSize="small">
+      <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" />
+    </Field>
+  </fieldset>
+</FormGroup>
+```
