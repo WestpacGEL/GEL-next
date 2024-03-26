@@ -70,3 +70,7 @@ code:
       name: With hamburger on click
       slug: with-hamburger-on-click
     noTitle: false
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: false
