@@ -46,13 +46,11 @@ Here are some examples:
               size="large"
               id="creditLimitType"
               block={{ initial: true, md: false }}
-              errorMessage={limitTypeError}
-              defaultValue={data.creditLimitType}
+              defaultValue="No"
               buttons={[
-                { value: 'Allocate', label: 'Allocate for me' },
-                { value: 'Specify', label: 'Specify' },
+                { value: 'Yes', label: 'No' },
+                { value: 'Yes', label: 'No' },
               ]}
-              onChange={setCreditLimitType}
             />
           </FormGroup>
 ```
