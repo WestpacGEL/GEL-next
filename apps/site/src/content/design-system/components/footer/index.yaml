@@ -5,7 +5,7 @@ description: >-
   they are in.   
 namedExport:
   discriminant: false
-excludeFromNavbar: false
+excludeFromNavbar: true
 design:
   - title:
       name: Footer

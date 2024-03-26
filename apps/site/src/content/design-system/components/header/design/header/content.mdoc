@@ -1,5 +1,48 @@
 ```tsx
+<div className="flex flex-col gap-4">
+<div><ComponentTitle>Default</ComponentTitle>
 <>
   <Header brand="wbc" />
-</>
+</></div>
+
+  <div><ComponentTitle>With Sign Out </ComponentTitle>
+<>
+  <Header brand="wbc">
+    <Button
+      look="faint"
+      onClick={function Ya(){}}
+      size={{
+        initial: 'small',
+        sm: 'medium'
+      }}
+      soft
+    >
+      Sign Out
+    </Button>
+  </Header>
+</></div>
+
+  <div><ComponentTitle>Logo in centre at small views (see demo)</ComponentTitle>
+<>
+  <Header
+    brand="wbc"
+    logoCenter
+  />
+</></div>
+ <div> <ComponentTitle>With back arrow</ComponentTitle>
+<>
+  <Header
+    brand="wbc"
+    leftIcon="arrow"
+  />
+</></div>
+<div>
+  <ComponentTitle>With hamburger at small views (see demo)</ComponentTitle>
+<>
+  <Header
+    brand="wbc"
+    leftIcon="hamburger"
+  />
+</></div>
+</div>
 ```
