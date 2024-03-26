@@ -7,7 +7,14 @@ There are some instances when using an icon alone to trigger help text makes sen
         <TableHeader>
           <TableHeaderRow>
             <TableHeaderCell>
-              Breakdown
+                  <div className="typography-body-8"> <Popover
+    look="unstyled"
+    heading="Pending transactions"
+    content="Pending transactions are transactions that have been initiated but not processed yet."
+    icon={() => <HelpIcon look="outlined" size="small" className="ml-2" color="info" />}
+  >
+Breakdown
+  </Popover></div>
             </TableHeaderCell>
             <TableHeaderCell>
               Amount
