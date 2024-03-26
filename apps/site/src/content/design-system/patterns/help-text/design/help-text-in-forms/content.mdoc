@@ -15,6 +15,15 @@ Here are some examples:
           <Input />
         </InputGroup>
 
+    <Field label="Enter ABN or legal business name" hintMessage={<p>
+          {' '}
+          For example ‘33007457141’ or ‘Happy days cafe{' '}
+          <Popover linkStyling heading="ABN - Australian Business Number" content="An ABN is a unique 11 digit number that identifies your business to the government and community." size="small">
+            What is an ABN?
+          </Popover>
+        </p>}>
+      <Input />
+    </Field>
 ```
 
 ```jsx
