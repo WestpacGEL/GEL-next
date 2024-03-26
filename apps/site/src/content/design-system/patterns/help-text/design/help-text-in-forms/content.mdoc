@@ -38,8 +38,18 @@ What is an ABN?
 ```
 
 ```jsx
-  
- <Field label="Example with field." hintMessage={<p>
+() => <>
+    <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
+    <p className="mb-4">
+      {' '}
+      This is an example of using a popover that looks like an inline link.{' '}
+      <Popover linkStyling heading="Heading" content={popoverContent} size="small">
+        Click here.
+      </Popover>{' '}
+      To test popover.
+    </p>
+    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <Field label="Example with field." hintMessage={<p>
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
           <Popover linkStyling heading="Heading" content={popoverContent} size="small">
@@ -48,4 +58,5 @@ What is an ABN?
         </p>}>
       <Input />
     </Field>
+  </>
 ```
