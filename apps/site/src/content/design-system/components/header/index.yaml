@@ -31,46 +31,6 @@ relatedComponents:
     slug: /components/footers
 code:
   - title:
-      name: Default
-      slug: default
-    noTitle: false
-  - title:
-      name: Right button
-      slug: right-button
-    noTitle: false
-  - title:
-      name: Center at Xsl
-      slug: center-at-xsl
-    noTitle: false
-  - title:
-      name: Logo on click
-      slug: logo-on-click
-    noTitle: false
-  - title:
-      name: Logo with skip link
-      slug: logo-with-skip-link
-    noTitle: false
-  - title:
-      name: Fixed
-      slug: fixed
-    noTitle: false
-  - title:
-      name: With back arrow
-      slug: with-back-arrow
-    noTitle: false
-  - title:
-      name: With back arrow on click
-      slug: with-back-arrow-on-click
-    noTitle: false
-  - title:
-      name: With hamburger
-      slug: with-hamburger
-    noTitle: false
-  - title:
-      name: With hamburger on click
-      slug: with-hamburger-on-click
-    noTitle: false
-  - title:
       name: Development examples
       slug: development-examples
     noTitle: false
