@@ -1,5 +1,47 @@
 ```tsx
+<div>
+  <ComponentTitle>Default</ComponentTitle>
 <>
   <Header brand="wbc" />
 </>
+
+  <ComponentTitle>With Sign Out </ComponentTitle>
+<>
+  <Header brand="wbc">
+    <Button
+      look="faint"
+      onClick={function Ya(){}}
+      size={{
+        initial: 'small',
+        sm: 'medium'
+      }}
+      soft
+    >
+      Sign Out
+    </Button>
+  </Header>
+</>
+
+  <ComponentTitle>Logo in centre at small views (see demo)</ComponentTitle>
+<>
+  <Header
+    brand="wbc"
+    logoCenter
+  />
+</>
+  <ComponentTitle>With back arrow</ComponentTitle>
+<>
+  <Header
+    brand="wbc"
+    leftIcon="arrow"
+  />
+</>
+  <ComponentTitle>With hamburger at small views (see demo)</ComponentTitle>
+<>
+  <Header
+    brand="wbc"
+    leftIcon="hamburger"
+  />
+</>
+</div>
 ```
