@@ -22,29 +22,3 @@ Here are some examples:
         </InputGroup>
 
 ```
-
-```jsx
-  
-<Popover
-    look="link"
-    heading="ABN - Australian Business Number"
-    content="An ABN is a unique 11 digit number that identifies your business to the government and community. "
-  >
-What is an ABN?
-  </Popover>
-```
-
-```jsx
-() => <>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
-    <Field label="Example with field." hintMessage={<p>
-          {' '}
-          This is an example of using a popover that looks like an inline link.{' '}
-          <Popover linkStyling heading="Heading" content="An ABN is a unique 11 digit number that identifies your business to the government and community." size="small">
-            Click here.
-          </Popover>
-        </p>}>
-      <Input />
-    </Field>
-  </>
-```
