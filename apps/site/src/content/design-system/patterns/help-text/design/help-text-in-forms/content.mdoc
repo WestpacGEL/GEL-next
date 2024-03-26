@@ -11,19 +11,75 @@ If you are using help text to provide definitions for complex terms, or spelling
 Here are some examples:
 
 ```jsx
-  <InputGroup width={20} label="Enter ABN or legal business name" hint="For example ‘33007457141’ or ‘Happy days cafe’ What is an ABN?" >
+ <div className="w-[36.2ex]"> <InputGroup width={20} label="Enter ABN or legal business name" hint={<p>
+          {' '}
+          For example 33007457141 or Happy days cafe.
+{' '}
+          <Popover linkStyling content="An ABN or Australian Business Number is a unique 11 digit number that identifies your business to the government and community." size="small">
+            What is an ABN?
+          </Popover>
+        </p>} >
           <Input />
         </InputGroup>
-
+</div>
 ```
 
 ```jsx
-  
-<Popover
-    look="link"
-    heading="ABN - Australian Business Number"
-    content="An ABN is a unique 11 digit number that identifies your business to the government and community. "
-  >
-What is an ABN?
-  </Popover>
+          <FormGroup>
+            <ButtonGroup
+              label="Would you like an offset account?"
+              hintMessage={<p>
+          {' '}
+          <Popover linkStyling content="An offset account is a type of bank account linked to a home loan. The balance in the offset account is offset against the balance owing on the home loan, reducing the interest payable on the loan." size="small">
+            Learn more
+          </Popover>
+        </p>}
+              size="large"
+              id="creditLimitType"
+              block={{ initial: true, md: false }}
+              defaultValue="No"
+              buttons={[
+                { value: 'Yes', label: 'Yes' },
+                { value: 'No', label: 'No' },
+              ]}
+            />
+          </FormGroup>
+```
+
+```jsx
+ <FormGroup>
+  <FormLabel>Date of birth</FormLabel>
+  <FormHint>{<p> Example: 31 03 1980 
+        
+{' '}
+          <Popover linkStyling content="Knowing your date of birth allows us to accurately identify you." size="small">
+            Why do we need this?
+          </Popover>
+        </p>}</FormHint>
+  <fieldset className="flex gap-4">
+    <Field label="Day" labelSize="small">
+      <Input
+        type="number"
+        size="large"
+        pattern="[0-9]*"
+        min="1"
+        max="31"
+        autoComplete="bday-day"
+      />
+    </Field>
+    <Field label="Month" labelSize="small">
+      <Input
+        type="number"
+        size="large"
+        pattern="[0-9]*"
+        min="1"
+        max="12"
+        autoComplete="bday-month"
+      />
+    </Field>
+    <Field label="Year" labelSize="small">
+      <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" />
+    </Field>
+  </fieldset>
+</FormGroup>
 ```

@@ -1,0 +1,12 @@
+name: Footer usage
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Originations footer
+      slug: originations-footer
+    noTitle: false
+accessibility: []
+relatedComponents: []
+code: []

@@ -1,1 +1,57 @@
 There are some instances when using an icon alone to trigger help text makes sense. The decision to use an icon can be steered by how obvious you can make the icon without disrupting the design. A good example of where this works well is within a complex interface, where having a paragraph of explanatory text or lots of extra links does not make sense for the activity. This is usually the case for complex staff facing screens. The universally understood icon we suggest is the (?).&nbsp;
+
+```tsx
+ <Table colspan={2}>
+
+      <React.Fragment key=".0">
+        <TableHeader>
+          <TableHeaderRow>
+            <TableHeaderCell>
+                  <div> <Popover
+    look="unstyled"
+    heading="Heading"
+    content=""
+    icon={() => <HelpIcon look="outlined" size="small" className="ml-2" color="info" />}
+  >
+Breakdown
+  </Popover></div>
+            </TableHeaderCell>
+            <TableHeaderCell>
+              <div className="typography-body-12" text-success>Amount</div>
+            </TableHeaderCell>
+
+          </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>
+              Outstanding balance
+            </TableCell>
+            <TableCell>
+$1,736.98
+            </TableCell>
+
+          </TableRow>
+<TableRow>
+            <TableCell>
+Pending transactions
+            </TableCell>
+            <TableCell>
+$45.92
+            </TableCell>
+
+          </TableRow>
+          <TableRow>
+            <TableCell>
+             Interest
+            </TableCell>
+            <TableCell>
+$15.23
+            </TableCell>
+
+          </TableRow>
+        </TableBody>
+
+      </React.Fragment>
+    </Table>
+```
