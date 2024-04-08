@@ -88,17 +88,14 @@
     "./flexi-cell": {
       "default": "./dist/components/flexi-cell/index.js"
     },
+    "./flexi-group": {
+      "default": "./dist/components/flexi-group/index.js"
+    },
     "./footer": {
       "default": "./dist/components/footer/index.js"
     },
     "./form": {
       "default": "./dist/components/form/index.js"
-    },
-    "./hint": {
-      "default": "./dist/components/hint/index.js"
-    },
-    "./label": {
-      "default": "./dist/components/label/index.js"
     },
     "./grid": {
       "default": "./dist/components/grid/index.js"
@@ -109,6 +106,9 @@
     "./heading": {
       "default": "./dist/components/heading/index.js"
     },
+    "./hint": {
+      "default": "./dist/components/hint/index.js"
+    },
     "./icon": {
       "default": "./dist/components/icon/index.js"
     },
@@ -117,6 +117,9 @@
     },
     "./input-group": {
       "default": "./dist/components/input-group/index.js"
+    },
+    "./label": {
+      "default": "./dist/components/label/index.js"
     },
     "./link": {
       "default": "./dist/components/link/index.js"
