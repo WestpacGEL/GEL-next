@@ -4,6 +4,7 @@ description: >-
   and is most commonly used for expiry dates.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Expiry date
