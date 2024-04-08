@@ -4,6 +4,7 @@ description: >-
   you need for your application.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Phone number
