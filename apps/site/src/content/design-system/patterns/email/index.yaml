@@ -4,6 +4,7 @@ description: >-
   primary way we communicate with customers, it’s important to get this right.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Email
