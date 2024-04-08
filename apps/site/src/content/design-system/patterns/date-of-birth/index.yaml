@@ -4,6 +4,7 @@ description: >-
   recalled and entered without the need for select elements.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Date of birth
