@@ -27,22 +27,20 @@ These popovers can appear with or without a heading. For accessibility reasons o
 ```tsx
 
 <div className="flex gap-2">
-  <Popover
-    look="Hero"
-    heading="Heading"
-    content="Small overlays of content for housing secondary information. These are often used to provide explanatory information
-    for complex ideas."
-
-  >
-    With heading
-  </Popover>
-  <Popover
-    look="Hero"
-    content="Small overlays of content for housing secondary information. These are often used to provide explanatory information
-    for complex ideas."
-  >
-    Without heading
-  </Popover>
+<Popover
+  content="Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas."
+  heading="Test Heading"
+  onClick={function Ya(){}}
+>
+  Click Me
+</Popover>
+<Popover
+  content="Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas."
+  heading="Test Heading"
+  onClick={function Ya(){}}
+>
+  Click Me
+</Popover>
 </div>
 
 
