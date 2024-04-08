@@ -5,6 +5,7 @@ description: >-
   and inclusive.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Full name
