@@ -1,7 +1,7 @@
 name: Help text
 description: >-
-  Clear communication in the jargon and complexity filled industry of financial
-  services is vital.
+  Clear communication is vital in the jargon and complexity filled industry of
+  financial services.
 namedExport:
   discriminant: false
 excludeFromNavbar: true
