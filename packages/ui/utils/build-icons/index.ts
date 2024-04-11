@@ -105,7 +105,7 @@ const main = async () => {
 
   iconNames.sort();
   iconNames.push(`\nexport { Icon } from './icon.component.js';`);
-  iconNames.push(`\nexport { type IconProps } from './icon.types.js';\n`);
+  iconNames.push(`\nexport { type IconProps, type IconLook } from './icon.types.js';\n`);
   await fs.promises.writeFile(path.join(process.cwd(), 'src/components/icon/index.ts'), iconNames.join('\n'));
 
   console.log('\nFinished building icons');
