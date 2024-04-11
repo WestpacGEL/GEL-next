@@ -5,7 +5,7 @@ description: >-
   views.
 namedExport:
   discriminant: false
-excludeFromNavbar: true
+excludeFromNavbar: false
 design:
   - title:
       name: Bottom sheet
