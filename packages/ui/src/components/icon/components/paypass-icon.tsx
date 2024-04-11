@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function PaypassIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Paypass',
-  copyrightYear = '2024',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

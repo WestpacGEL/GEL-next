@@ -5,7 +5,7 @@ import { type IconProps } from '../icon.types.js';
 
 export function WheelchairIcon({
   'aria-label': ariaLabel = 'Wheelchair',
-  copyrightYear = '2024',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

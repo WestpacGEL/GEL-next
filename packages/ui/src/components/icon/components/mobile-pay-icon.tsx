@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function MobilePayIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Mobile Pay',
-  copyrightYear = '2024',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (
