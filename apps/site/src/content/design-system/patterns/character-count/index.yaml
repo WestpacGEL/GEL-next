@@ -4,7 +4,7 @@ description: >-
   characters allowed in a field.
 namedExport:
   discriminant: false
-excludeFromNavbar: true
+excludeFromNavbar: false
 design:
   - title:
       name: Character count

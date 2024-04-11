@@ -1,0 +1,31 @@
+name: Phone number
+description: >-
+  This pattern is used for accurately capturing phone numbers. Only capture what
+  you need for your application.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Phone number
+      slug: phone-number
+    noTitle: false
+  - title:
+      name: Error states
+      slug: error-states
+    noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+  - title:
+      name: Dos and don'ts
+      slug: dos-and-donts
+    noTitle: false
+accessibility: []
+relatedComponents:
+  - title: Alerts
+    slug: components/alert
+  - title: Text inputs
+    slug: components/input
+code: []

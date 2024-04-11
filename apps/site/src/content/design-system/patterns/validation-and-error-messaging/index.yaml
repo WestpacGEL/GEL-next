@@ -6,7 +6,7 @@ description: >-
   for our users. Validation and errors are essential for data quality. 
 namedExport:
   discriminant: false
-excludeFromNavbar: true
+excludeFromNavbar: false
 design:
   - title:
       name: 'Anatomy of an error '

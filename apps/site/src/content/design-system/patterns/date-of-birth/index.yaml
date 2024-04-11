@@ -1,17 +1,22 @@
-name: Expiry date
+name: Date of birth
 description: >-
-  This pattern is used for capturing a date that requires month and year only,
-  and is most commonly used for expiry dates.
+  A unique date pattern for capturing birthdays, memorable dates that are easily
+  recalled and entered without the need for select elements.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
-      name: Expiry date
-      slug: expiry-date
+      name: Date of birth
+      slug: date-of-birth
     noTitle: false
   - title:
       name: Error states
       slug: error-states
+    noTitle: false
+  - title:
+      name: User experience
+      slug: user-experience
     noTitle: false
   - title:
       name: Dos and don'ts

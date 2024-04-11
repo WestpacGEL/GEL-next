@@ -1,21 +1,18 @@
-name: Date of birth
+name: Email
 description: >-
-  A unique date pattern for capturing birthdays, memorable dates that are easily
-  recalled and entered without the need for select elements.
+  This pattern is used for accurately capturing email addresses. As email is the
+  primary way we communicate with customers, it’s important to get this right.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
-      name: Date of birth
-      slug: date-of-birth
+      name: Email
+      slug: email
     noTitle: false
   - title:
       name: Error states
       slug: error-states
-    noTitle: false
-  - title:
-      name: User experience
-      slug: user-experience
     noTitle: false
   - title:
       name: Dos and don'ts
