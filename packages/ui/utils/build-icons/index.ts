@@ -7,8 +7,6 @@ import prettier from 'prettier';
 
 import { iconTemplate } from './icon-template.js';
 
-const prettierConfig = prettier.resolveConfig.sync(path.join(process.cwd(), '../../.prettierrc'));
-
 /**
  * Format given icon file name
  *
@@ -56,6 +54,7 @@ const getChildren = (sameSVG: boolean, filledSVG: string, outlinedSVG: string) =
   sameSVG ? filledSVG : `{look === "filled" ? ${filledSVG} : ${outlinedSVG}}`;
 
 const main = async () => {
+  const prettierConfig = await prettier.resolveConfig(path.join(process.cwd(), '../../.prettierrc'));
   const iconFiles = glob.sync('assets/icons/filled/*.svg');
   const iconCount = iconFiles.length;
   const iconNames: string[] = [];
@@ -87,10 +86,13 @@ const main = async () => {
 
     const children = getChildren(sameSVG, filledPaths, outlinedPaths);
 
-    const iconComponent = prettier.format(iconTemplate(iconComponentName, ariaLabel, children, addFragment, sameSVG), {
-      parser: 'typescript',
-      ...(prettierConfig || {}),
-    });
+    const iconComponent = await prettier.format(
+      iconTemplate(iconComponentName, ariaLabel, children, addFragment, sameSVG),
+      {
+        parser: 'typescript',
+        ...(prettierConfig || {}),
+      },
+    );
 
     await fs.promises.writeFile(
       path.join(process.cwd(), `src/components/icon/components/${iconFileName}-icon.tsx`),
@@ -103,7 +105,7 @@ const main = async () => {
 
   iconNames.sort();
   iconNames.push(`\nexport { Icon } from './icon.component.js';`);
-  iconNames.push(`\nexport { type IconProps } from './icon.types.js';\n`);
+  iconNames.push(`\nexport { type IconProps, type IconLook } from './icon.types.js';\n`);
   await fs.promises.writeFile(path.join(process.cwd(), 'src/components/icon/index.ts'), iconNames.join('\n'));
 
   console.log('\nFinished building icons');

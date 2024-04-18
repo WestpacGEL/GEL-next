@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function ThumbDownIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Thumb Down',
-  copyrightYear = '2024',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

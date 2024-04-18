@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function LightBulbIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Light Bulb',
-  copyrightYear = '2024',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (
