@@ -5,7 +5,7 @@ import { type IconProps } from '../icon.types.js';
 
 export function HamburgerMenuIcon({
   'aria-label': ariaLabel = 'Hamburger Menu',
-  copyrightYear = '2024',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

@@ -3,7 +3,7 @@ import React from 'react';
 import { Icon } from '../icon.component.js';
 import { type IconProps } from '../icon.types.js';
 
-export function PresetsIcon({ 'aria-label': ariaLabel = 'Presets', copyrightYear = '2024', ...props }: IconProps) {
+export function PresetsIcon({ 'aria-label': ariaLabel = 'Presets', copyrightYear = '2023', ...props }: IconProps) {
   return (
     <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
       <path

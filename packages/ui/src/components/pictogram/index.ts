@@ -78,6 +78,7 @@ export { SearchPictogram } from './components/informative/search-pictogram.js';
 export { SecurePictogram } from './components/informative/secure-pictogram.js';
 export { ShopPictogram } from './components/informative/shop-pictogram.js';
 export { ShoppingPictogram } from './components/informative/shopping-pictogram.js';
+export { SparklePictogram } from './components/informative/sparkle-pictogram.js';
 export { StarPictogram } from './components/informative/star-pictogram.js';
 export { StopwatchPictogram } from './components/informative/stopwatch-pictogram.js';
 export { TaxDocumentPictogram } from './components/informative/tax-document-pictogram.js';

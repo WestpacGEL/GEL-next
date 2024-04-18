@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function HousePeopleIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'House People',
-  copyrightYear = '2024',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (
