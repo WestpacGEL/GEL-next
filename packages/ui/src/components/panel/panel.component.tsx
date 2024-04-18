@@ -7,7 +7,7 @@ export function Panel({ className, children, heading, headingTag: Tag = 'h1', lo
   const styles = panelStyles({ look });
   return (
     <div className={styles.base({ className })} {...props}>
-      <Tag className={styles.header()}>{heading}</Tag>
+      {heading && <Tag className={styles.header()}>{heading}</Tag>}
       {children}
     </div>
   );
