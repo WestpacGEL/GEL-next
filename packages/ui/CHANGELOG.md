@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.22.0
+
+### Minor Changes
+
+- e6df0c3: Add Twitter,stars icons and sparkle pictogram
+
 ## 0.21.0
 
 ### Minor Changes
