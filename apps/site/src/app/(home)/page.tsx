@@ -33,6 +33,7 @@ export default async function Homepage() {
     <main className="pb-8 font-gel-sans text-gel-text">
       <Hero />
       <ActionBar />
+      <div>test</div>
       <HomePageContent articleRows={articleRows} />
       <Footer gelEmail={urls?.gelEmail ?? ''} guidelinesURL={urls?.guidelines ?? ''} />
     </main>
