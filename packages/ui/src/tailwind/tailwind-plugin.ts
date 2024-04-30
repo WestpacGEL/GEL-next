@@ -129,11 +129,11 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
             switch: '0.1875rem 0 0.375rem 0 rgba(0,0,0,0.53)',
           },
           maxWidth: {
-            xsl: BREAKPOINTS.xsl,
-            sm: BREAKPOINTS.sm,
-            md: BREAKPOINTS.md,
-            lg: BREAKPOINTS.lg,
-            container: '1320px', //1200 (lg) + 60 (paddingHorizontal) + 60 (paddingHorizontal)
+            xsl: '43.5rem',
+            sm: '56.25rem',
+            md: '67.5rem',
+            lg: '90rem',
+            container: '82.5rem', //1200 (lg) + 60 (paddingHorizontal) + 60 (paddingHorizontal)
           },
           transitionTimingFunction: {
             ease: 'cubic-bezier(0.25, 0.1, 0.25, 1.0)', // based on css ease timing function used in GEL 3.0
