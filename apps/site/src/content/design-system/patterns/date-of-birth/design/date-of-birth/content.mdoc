@@ -32,4 +32,35 @@ This pattern is defined as a ‘memorable date’, of which users will know the 
     </Field>
   </fieldset>
 </FormGroup>
+
+
+<FormGroup>
+  <FormLabel>Date of birth</FormLabel>
+  <FormHint>Example: 31 3 1980</FormHint>
+  <fieldset className="flex gap-4">
+    <Field label="Day" labelSize="small">
+      <Input
+        type="number"
+        size="large"
+        pattern="[0-9]*"
+        min="1"
+        max="31"
+        autoComplete="bday-day"
+      />
+    </Field>
+    <Field label="Month" labelSize="small">
+      <Input
+        type="number"
+        size="large"
+        pattern="[0-9]*"
+        min="1"
+        max="12"
+        autoComplete="bday-month"
+      />
+    </Field>
+    <Field label="Year" labelSize="small">
+      <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" />
+    </Field>
+  </fieldset>
+</FormGroup>
 ```
