@@ -1,6 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
-import { PadlockIcon } from '../icon/index.js';
+import { SecurityIcon } from '../icon/index.js';
 import { Link } from '../index.js';
 
 import { Footer } from './footer.component.js';
@@ -35,9 +35,9 @@ export const DefaultStory: Story = {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
       <>
-        <Footer brand={brand === 'btfg' ? 'wbc' : brand} {...rest}>
+        <Footer brand={brand === 'btfg' ? 'wbc' : brand} hideLogo {...rest}>
           <div>
-            <PadlockIcon
+            <SecurityIcon
               size={{ initial: 'small', md: 'medium' }}
               className="float-left shrink-0 max-md:mr-1 md:mr-2"
               color="muted"
