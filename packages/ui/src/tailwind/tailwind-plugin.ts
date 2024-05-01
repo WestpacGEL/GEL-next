@@ -129,10 +129,10 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
             switch: '0.1875rem 0 0.375rem 0 rgba(0,0,0,0.53)',
           },
           maxWidth: {
-            xsl: '43.5rem',
-            sm: '56.25rem',
-            md: '67.5rem',
-            lg: '90rem',
+            xsl: '47.25rem',
+            sm: '60.75rem',
+            md: '72.75rem',
+            lg: '97.5rem',
             container: '82.5rem', //1200 (lg) + 60 (paddingHorizontal) + 60 (paddingHorizontal)
           },
           transitionTimingFunction: {
