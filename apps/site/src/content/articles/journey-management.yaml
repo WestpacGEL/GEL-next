@@ -6,12 +6,7 @@ description: >-
   is key to creating improved customer experiences and driving strong business
   outcomes.
 thumbnail:
-  src: https://res.cloudinary.com/westpac-gel/image/upload/journey_map_card.png
-  alt: >-
-    Image of 2 circles with an arrow between them to signify the steps in a
-    process.
-  height: 1212
-  width: 3168
+  src: https://res.cloudinary.com/westpac-gel/image/upload/journey-map-card.png
 smallDescription: >-
   Use storytelling to empathise with customers, articulate their pain points an
   define meaningful solutions.
