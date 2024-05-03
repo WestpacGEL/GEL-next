@@ -6,11 +6,10 @@ description: >-
   is key to creating improved customer experiences and driving strong business
   outcomes.
 thumbnail:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1714703570/GEL%20Article%20-%20Journey%20Maps/Journey_Map_4_fl3eta.png
+  src: https://res.cloudinary.com/westpac-gel/image/upload/journey_map_card.png
   alt: >-
-    Image showing two circles with an arrow pointing from one to the other to
-    indicated steps in a process.
+    Image of 2 circles with an arrow between them to signify the steps in a
+    process.
   height: 1212
   width: 3168
 smallDescription: >-
@@ -18,6 +17,9 @@ smallDescription: >-
   define meaningful solutions.
 image:
   src: https://res.cloudinary.com/westpac-gel/image/upload/journey-map-hero.png
+  alt: >-
+    Image of 2 circles with an arrow between them and someone standing on the
+    first circle. This is to signify the steps in a process.
   height: 1289
   width: 2400
 author: By Author Name
