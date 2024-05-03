@@ -5,10 +5,24 @@ description: >-
   experiences, identifying opportunities, and optimising customer journeys. It
   is key to creating improved customer experiences and driving strong business
   outcomes.
-thumbnail: {}
+thumbnail:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1714703570/GEL%20Article%20-%20Journey%20Maps/Journey_Map_4_fl3eta.png
+  alt: >-
+    Image showing two circles with an arrow pointing from one to the other to
+    indicated steps in a process.
+  height: 1212
+  width: 3168
 smallDescription: >-
   Use storytelling to empathise with customers, articulate their pain points an
   define meaningful solutions.
-image: {}
+image:
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1714703404/GEL%20Article%20-%20Journey%20Maps/Journey_Map_Hero_2_vhqp3g.png
+  alt: >-
+    Image showing two circles with an arrow pointing from one to the other to
+    indicated steps in a process.
+  height: 1289
+  width: 2400
 author: By Author Name
 publishedAt: 2024-05-01T10:40
