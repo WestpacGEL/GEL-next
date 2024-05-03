@@ -16,10 +16,8 @@ smallDescription: >-
   Use storytelling to empathise with customers, articulate their pain points an
   define meaningful solutions.
 image:
-  src: https://res.cloudinary.com/westpac-gel/image/upload/journey-map-hero.png
-  alt: >-
-    Image of 2 circles with an arrow between them and someone standing on the
-    first circle. This is to signify the steps in a process.
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/f_auto/journey-map-hero.png
   height: 1289
   width: 2400
 author: By Author Name
