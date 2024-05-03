@@ -7,6 +7,7 @@ description: >-
   outcomes.
 thumbnail:
   src: https://res.cloudinary.com/westpac-gel/image/upload/journey_map_card.png
+  alt: image of 2 circles with an arrow between them.
   height: 1212
   width: 3168
 smallDescription: >-
@@ -14,6 +15,7 @@ smallDescription: >-
   define meaningful solutions.
 image:
   src: https://res.cloudinary.com/westpac-gel/image/upload/journey-map-hero.png
+  alt: image of 2 circles with an arrow between them.
   height: 1289
   width: 2400
 author: DX Journey Team
