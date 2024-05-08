@@ -9,6 +9,12 @@ module.exports = {
         port: '',
         pathname: '/westpac-gel/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'smashingmedia.hypermart.net',
+        port: '',
+        pathname: '/clients/Westpac/**',
+      },
     ],
   },
   async redirects() {
