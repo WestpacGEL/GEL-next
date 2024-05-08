@@ -14,7 +14,8 @@ smallDescription: >-
   Use storytelling to empathise with customers, articulate their pain points an
   define meaningful solutions.
 image:
-  src: http://smashingmedia.hypermart.net/clients/Westpac/journey-map-hero.png
+  src: >-
+    https://res.cloudinary.com/westpac-gel/image/upload/v1714714884/journey-map-hero.png
   height: 1289
   width: 2400
 author: DX Journey Team
