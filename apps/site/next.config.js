@@ -16,6 +16,7 @@ module.exports = {
         pathname: '/clients/Westpac/**',
       },
     ],
+    unoptimized: true,
   },
   async redirects() {
     return [
