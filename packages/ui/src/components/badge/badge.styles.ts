@@ -6,7 +6,7 @@ export const styles = tv(
     variants: {
       color: {
         danger: 'border-danger bg-danger text-white',
-        faint: 'border-border bg-border text-muted',
+        faint: 'border-border bg-border text-text',
         hero: 'border-hero bg-hero text-white',
         info: 'border-info bg-info text-white',
         neutral: 'border-neutral bg-neutral text-white',
@@ -25,7 +25,7 @@ export const styles = tv(
       },
       type: {
         pill: 'typography-body-10 h-4 rounded-xl px-[0.4375rem] py-[0.25rem] font-medium leading-none',
-        default: 'h-3 rounded-sm px-1 text-[0.75rem] leading-none',
+        default: 'h-[1.25rem] rounded-sm px-1 text-[0.75rem] leading-[normal]',
       },
       soft: {
         true: 'bg-white',
@@ -40,7 +40,7 @@ export const styles = tv(
       {
         color: 'faint',
         soft: true,
-        className: 'text-muted',
+        className: 'text-text',
       },
       {
         color: 'hero',
