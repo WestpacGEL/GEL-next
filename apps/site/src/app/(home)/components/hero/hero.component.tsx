@@ -7,7 +7,7 @@ import { GELHeroLogo } from './components/gel-hero-logo';
 export function Hero() {
   return (
     <div className="bg-gel-primary">
-      <GridContainer fixed>
+      <GridContainer fixed className="lg:max-w-screen-lg lg:px-0">
         <Grid className="gap-y-5 pt-5 xsl:gap-y-6 xsl:pt-7 sm:gap-y-7 sm:pt-9 md:gap-y-10 md:pt-10 lg:pt-11">
           <div className="col-span-11 row-end-[span_1] xsl:col-span-9">
             <GELHeroLogo />
