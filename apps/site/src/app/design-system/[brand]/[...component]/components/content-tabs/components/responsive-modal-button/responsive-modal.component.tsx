@@ -10,7 +10,7 @@ export function ResponsiveModal({ children, ...props }: ResponsiveModalProps) {
 
   return (
     <Modal isDismissable {...props}>
-      <ModalBody className="flex flex-1 flex-col">
+      <ModalBody className="flex flex-1 flex-col px-0">
         <GridContainer fixed className="flex flex-1 flex-col pt-5">
           <h2 className="typography-body-7 font-black xsl:typography-body-6">
             Viewport: <span className="font-light">{width}px</span>
