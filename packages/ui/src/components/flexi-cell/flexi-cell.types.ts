@@ -17,6 +17,10 @@ type BaseFlexiCellProps = {
    */
   before?: ReactNode;
   /**
+   * Wraps everything into FlexiCellBody
+   */
+  body?: boolean;
+  /**
    * the middle content of FlexiCell
    */
   children?: ReactNode;

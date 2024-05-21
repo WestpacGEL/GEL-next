@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
-import { BpayIcon, GiftIcon, InfoIcon, MapPinIcon, PadlockIcon } from '../icon/index.js';
-import { Badge } from '../index.js';
+import { BpayIcon, CheckIcon, GiftIcon, InfoIcon, MapPinIcon, PadlockIcon, TickIcon } from '../icon/index.js';
+import { Badge, FlexiCellBody, Grid, GridContainer, GridItem } from '../index.js';
 import { VisaBlueSymbol } from '../symbol/index.js';
 
 import { FlexiCellAdornment } from './components/flexi-cell-adornment/flexi-cell-adornment.component.js';
