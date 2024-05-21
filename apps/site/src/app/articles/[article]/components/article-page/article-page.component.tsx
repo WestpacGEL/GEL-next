@@ -39,7 +39,7 @@ export function ArticlePage({ article }: ArticlePageProps) {
           </Grid>
         </GridContainer>
       </div>
-      <GridContainer fixed className="pb-8 xsl:pb-10 sm:pb-11">
+      <GridContainer fixed className="pb-8 xsl:pb-10 sm:pb-11 lg:max-w-gel-lg-container lg:px-10">
         <Grid className="gap-y-0 xsl:gap-y-0 sm:gap-y-0">
           <LeadingText text={article.description} />
           <DocumentRenderer
