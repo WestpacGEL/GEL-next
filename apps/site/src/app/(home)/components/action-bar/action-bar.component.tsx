@@ -15,7 +15,7 @@ import { logoMap, logoStyles } from '../utils';
 export function ActionBar() {
   return (
     <StickyHeader>
-      <GridContainer fixed className="px-4 lg:max-w-screen-lg lg:px-0">
+      <GridContainer fixed className="px-4 lg:max-w-gel-lg-container lg:px-10">
         <div className="hidden h-[6.375rem] items-end bg-white pb-2 sm:flex">
           <div className="mr-4 flex h-full flex-col justify-end border-r-[1px] border-gel-border">
             <GELLogo className="mb-2 block h-3 w-[45px] text-gel-text" />

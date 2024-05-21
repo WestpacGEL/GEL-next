@@ -14,7 +14,7 @@ export function ArticlePage({ article }: ArticlePageProps) {
   return (
     <>
       <div className="bg-gradient-to-b from-white from-25% to-gel-background">
-        <GridContainer fixed className=" pt-8 xsl:pt-10 sm:pt-11 lg:max-w-screen-lg lg:px-0">
+        <GridContainer fixed className=" pt-8 xsl:pt-10 sm:pt-11 lg:max-w-gel-lg-container lg:px-10">
           <Grid className="gap-y-5 xsl:gap-y-6 sm:gap-y-8">
             <div className="col-span-12">
               <h1 className="typography-site-6 mb-2 font-black !leading-[1.1] tracking-[-1px] xsl:typography-site-3 xsl:mb-3">

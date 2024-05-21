@@ -138,7 +138,6 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
             'container-sm': '60.75rem',
             'container-md': '72.75rem',
             'container-lg': '97.5rem',
-            container: '82.5rem', //1200 (lg) + 60 (paddingHorizontal) + 60 (paddingHorizontal)
           },
           transitionTimingFunction: {
             ease: 'cubic-bezier(0.25, 0.1, 0.25, 1.0)', // based on css ease timing function used in GEL 3.0

@@ -12,7 +12,7 @@ import { Circle, Link, Text, Title } from './components/helpers.component';
 export function Footer({ gelEmail = '', guidelinesURL = '' }: { gelEmail?: string; guidelinesURL?: string }) {
   return (
     <div className="bg-gel-background">
-      <GridContainer className="lg:max-w-screen-lg lg:px-0">
+      <GridContainer className="lg:max-w-gel-lg-container lg:px-10">
         <Grid className="gap-y-7 pb-10 pt-9 xsl:gap-y-9 xsl:pb-11 xsl:pt-10 sm:pb-14 sm:pt-13 lg:pb-16 lg:pt-15">
           <div className="col-span-12 sm:col-span-8 md:col-span-7">
             <Title>Design System</Title>

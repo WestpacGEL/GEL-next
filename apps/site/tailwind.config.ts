@@ -51,6 +51,7 @@ const config: Config = withGEL({
       },
       maxWidth: {
         'gel-container': '71.5rem',
+        'gel-lg-container': '82.5rem', //1200 (lg) + 60 (paddingHorizontal) + 60 (paddingHorizontal)
       },
     },
   },
