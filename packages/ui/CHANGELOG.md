@@ -1,5 +1,16 @@
 # @westpac/ui
 
+## 0.23.0
+
+### Minor Changes
+
+- af5972c: update the grid container component
+
+### Patch Changes
+
+- 2097183: color change on footer component and example
+- aeceb95: updated styling on badge so it looks correct
+
 ## 0.22.0
 
 ### Minor Changes
