@@ -175,6 +175,7 @@ export const CreditCard: Story = {
     );
   },
 };
+CreditCard.storyName = 'Credit card';
 
 /**
  * > Example for payee details, includes how to customise icon passed to button and Adornment leftGraphic
@@ -273,6 +274,7 @@ export const PayeeDetails: Story = {
     );
   },
 };
+PayeeDetails.storyName = 'Payee details';
 
 /**
  * > Examples of list items
@@ -336,6 +338,7 @@ export const ListItems: Story = {
     );
   },
 };
+ListItems.storyName = 'List items';
 
 const MOCK_ACCOUNTS = [
   {
@@ -422,6 +425,7 @@ export const AccountLists: Story = {
     );
   },
 };
+AccountLists.storyName = 'Account lists';
 
 const MOCK_PAYEES = [
   {
@@ -551,6 +555,7 @@ export const PayeeList: Story = {
     );
   },
 };
+PayeeList.storyName = 'Payee list';
 
 const MOCK_FOREIGNPAYEES = [
   {
@@ -612,7 +617,7 @@ const MOCK_FOREIGNPAYEES = [
 /**
  * > Example of how a foreign currency payee list could be made
  */
-export const ForeinCurrencyPayeeList: Story = {
+export const ForeignCurrencyPayeeList: Story = {
   args: {},
   render: () => {
     return (
@@ -690,6 +695,7 @@ export const ForeinCurrencyPayeeList: Story = {
     );
   },
 };
+ForeignCurrencyPayeeList.storyName = 'Foreign currency payee list';
 
 const ICON_LIST = [
   (props: { className?: string }) => <GiftIcon className={props.className} look="outlined" color="hero" />,
@@ -732,6 +738,7 @@ export const ProductTiles: Story = {
     );
   },
 };
+ProductTiles.storyName = 'Product tiles';
 
 /**
  * > Example of product tiles with the extra icon could be made
@@ -794,6 +801,7 @@ export const ProductTilesWithExtraIcon: Story = {
     );
   },
 };
+ProductTilesWithExtraIcon.storyName = 'Product tiles with extra icon';
 
 const MOCK_PROMOS = [
   {
@@ -857,6 +865,7 @@ export const PromotilesHorizontalList: Story = {
     );
   },
 };
+PromotilesHorizontalList.storyName = 'Promotiles horizontal list';
 
 const MOCK_VERTICAL_PROMOS = [
   {
@@ -918,6 +927,7 @@ export const PromotilesVerticalList: Story = {
     );
   },
 };
+PromotilesVerticalList.storyName = 'Promotiles vertical list';
 
 /**
  * > Status tiles
@@ -1051,3 +1061,4 @@ export const StatusTiles = () => {
     </>
   );
 };
+StatusTiles.storyName = 'Status tiles';

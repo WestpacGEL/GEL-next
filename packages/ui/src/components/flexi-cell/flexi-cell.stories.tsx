@@ -60,7 +60,7 @@ export const SimpleTileVerticalStack = () => {
   return (
     <>
       {new Array(3).fill(null).map((_, index) => (
-        <FlexiCell key={index} tag="a" href="#" withBorder withArrow>
+        <FlexiCell key={index} tag="a" href="#" withBorder withArrow size={{ initial: 'default', sm: 'large' }}>
           <div className="flex flex-row gap-2 md:flex-col">
             <GiftIcon look="outlined" color="hero" />
             <div className="flex flex-col gap-1">
@@ -73,6 +73,7 @@ export const SimpleTileVerticalStack = () => {
     </>
   );
 };
+SimpleTileVerticalStack.storyName = 'Simple tile (Vertical stack)';
 
 /**
  * > Simple tile (Horizontal layout)
@@ -89,7 +90,13 @@ export const SimpleTileHorizontalLayout = () => {
       <Grid>
         {new Array(3).fill(null).map((_, index) => (
           <GridItem span={4} key={index}>
-            <FlexiCell className="min-h-[17.5rem]" tag="a" href="#" withBorder>
+            <FlexiCell
+              className="min-h-[17.5rem]"
+              tag="a"
+              href="#"
+              withBorder
+              size={{ initial: 'default', sm: 'large' }}
+            >
               <div>
                 <div className="flex justify-end">
                   <GiftIcon look="outlined" color="hero" />
@@ -111,6 +118,7 @@ export const SimpleTileHorizontalLayout = () => {
     </GridContainer>
   );
 };
+SimpleTileHorizontalLayout.storyName = 'Simple tile (Horizontal layout)';
 
 /**
  * > Edge to edge Image tile (Vertical stack)
@@ -126,7 +134,7 @@ export const EdgeToEdgeImageTileVerticalStack = () => {
   return (
     <>
       {new Array(3).fill(null).map((_, index) => (
-        <FlexiCell body={false} key={index} tag="a" href="#" withBorder>
+        <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{ initial: 'default', sm: 'large' }}>
           <div className="flex gap-2">
             <img
               src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -150,6 +158,7 @@ export const EdgeToEdgeImageTileVerticalStack = () => {
     </>
   );
 };
+EdgeToEdgeImageTileVerticalStack.storyName = 'Edge to edge Image tile (Vertical stack)';
 
 /**
  * > Padded Image tile (Vertical stack)
@@ -165,7 +174,7 @@ export const PaddedImageTileVerticalStack = () => {
   return (
     <>
       {new Array(3).fill(null).map((_, index) => (
-        <FlexiCell body={false} key={index} tag="a" href="#" withBorder>
+        <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{ initial: 'default', sm: 'large' }}>
           <div className="flex gap-2">
             <img
               src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -189,6 +198,7 @@ export const PaddedImageTileVerticalStack = () => {
     </>
   );
 };
+PaddedImageTileVerticalStack.storyName = 'Padded Image tile (Vertical stack)';
 
 /**
  * > Edge to edge Image tile (Horizontal stack)
@@ -202,34 +212,39 @@ export const PaddedImageTileVerticalStack = () => {
  */
 export const EdgeToEdgeImageTileHorizontalLayout = () => {
   return (
-    <>
-      {new Array(3).fill(null).map((_, index) => (
-        <FlexiCell body={false} key={index} tag="a" href="#" withBorder>
-          <div className="flex flex-col gap-2">
-            <div className="-mx-2 -mt-2">
-              <img
-                src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="background"
-                className="block h-[8.75rem] w-full object-cover"
-              />
-            </div>
-            <FlexiCellBody>
-              <FlexiCellHint className="mb-2">SUB-LABEL</FlexiCellHint>
-              <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
-              <FlexiCellHint>Description</FlexiCellHint>
-              <div className="mt-3 flex gap-1">
-                <Badge color="hero">Label</Badge>
-                <Badge color="faint" soft>
-                  Label
-                </Badge>
+    <GridContainer>
+      <Grid>
+        {new Array(3).fill(null).map((_, index) => (
+          <GridItem key={index} span={4}>
+            <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{ initial: 'default', sm: 'large' }}>
+              <div className="flex flex-col gap-2">
+                <div className="-mx-2 -mt-2">
+                  <img
+                    src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="background"
+                    className="block h-[8.75rem] w-full object-cover"
+                  />
+                </div>
+                <FlexiCellBody>
+                  <FlexiCellHint className="mb-2">SUB-LABEL</FlexiCellHint>
+                  <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+                  <FlexiCellHint>Description</FlexiCellHint>
+                  <div className="mt-3 flex gap-1">
+                    <Badge color="hero">Label</Badge>
+                    <Badge color="faint" soft>
+                      Label
+                    </Badge>
+                  </div>
+                </FlexiCellBody>
               </div>
-            </FlexiCellBody>
-          </div>
-        </FlexiCell>
-      ))}
-    </>
+            </FlexiCell>
+          </GridItem>
+        ))}
+      </Grid>
+    </GridContainer>
   );
 };
+EdgeToEdgeImageTileHorizontalLayout.storyName = 'Edge to edge Image tile (Horizontal stack)';
 
 /**
  * > Padded Image tile (Horizontal stack)
@@ -243,27 +258,32 @@ export const EdgeToEdgeImageTileHorizontalLayout = () => {
  */
 export const PaddedImageTileHorizontalLayout = () => {
   return (
-    <>
-      {new Array(3).fill(null).map((_, index) => (
-        <FlexiCell body key={index} tag="a" href="#" withBorder>
-          <div className="flex flex-col gap-2">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="background"
-              className="block h-[8.75rem] w-full object-cover"
-            />
-            <FlexiCellHint className="mb-2">SUB-LABEL</FlexiCellHint>
-            <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
-            <FlexiCellHint>Description</FlexiCellHint>
-            <div className="mt-3 flex gap-1">
-              <Badge color="hero">Label</Badge>
-              <Badge color="faint" soft>
-                Label
-              </Badge>
-            </div>
-          </div>
-        </FlexiCell>
-      ))}
-    </>
+    <GridContainer>
+      <Grid>
+        {new Array(3).fill(null).map((_, index) => (
+          <GridItem key={index} span={4}>
+            <FlexiCell body tag="a" href="#" withBorder size={{ initial: 'default', sm: 'large' }}>
+              <div className="flex flex-col gap-2">
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="background"
+                  className="block h-[8.75rem] w-full object-cover"
+                />
+                <FlexiCellHint className="mb-2">SUB-LABEL</FlexiCellHint>
+                <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+                <FlexiCellHint>Description</FlexiCellHint>
+                <div className="mt-3 flex gap-1">
+                  <Badge color="hero">Label</Badge>
+                  <Badge color="faint" soft>
+                    Label
+                  </Badge>
+                </div>
+              </div>
+            </FlexiCell>
+          </GridItem>
+        ))}
+      </Grid>
+    </GridContainer>
   );
 };
+PaddedImageTileHorizontalLayout.storyName = 'Padded Image tile (Horizontal stack)';
