@@ -51,8 +51,8 @@ export default meta;
  *
  * This tile has a responsive content layout:
  *
- * - 0px - XXpx: Symbol is stacked above labels, tile padding 12px
- * - XXpx +: Symbol is inline to the left of the labels tile padding 18px
+ * - Xs - Sm: Symbol is stacked above labels, tile padding 12px
+ * - Md +: Symbol is inline to the left of the labels tile padding 18px
  *
  * Change the preview size of this screen to demonstrate.
  */
@@ -79,8 +79,8 @@ SimpleTileVerticalStack.storyName = 'Simple tile (Vertical stack)';
  * > Simple tile (Horizontal layout)
  * This tile has a responsive content layout:
  *
- * - 0px - XXpx: Tile padding 12px
- * - XXpx +: Tile padding 18px
+ * - Xs - Sm: Tile padding 12px
+ * - Md +: Tile padding 18px
  *
  * Change the preview size of this screen to demonstrate.
  */
@@ -125,8 +125,8 @@ SimpleTileHorizontalLayout.storyName = 'Simple tile (Horizontal layout)';
  *
  * This tile has a responsive content layout:
  *
- * - 0px - XXpx: Tile padding 12px
- * - XXpx +: Tile padding 18px
+ * - Xs - Sm: Tile padding 12px
+ * - Md +: Tile padding 18px
  *
  * Change the preview size of this screen to demonstrate.
  */
@@ -139,7 +139,7 @@ export const EdgeToEdgeImageTileVerticalStack = () => {
             <img
               src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="background"
-              className="-my-2 -ml-2 block w-[10rem] object-cover"
+              className="-my-2 -ml-2 block w-[10rem] object-cover sm:-my-3 sm:-ml-3"
             />
             <FlexiCellBody>
               <FlexiCellHint className="mb-2">SUB-LABEL</FlexiCellHint>
@@ -158,15 +158,15 @@ export const EdgeToEdgeImageTileVerticalStack = () => {
     </>
   );
 };
-EdgeToEdgeImageTileVerticalStack.storyName = 'Edge to edge Image tile (Vertical stack)';
+EdgeToEdgeImageTileVerticalStack.storyName = 'Image tile - Edge to edge (Vertical stack)';
 
 /**
  * > Padded Image tile (Vertical stack)
  *
  * This tile has a responsive content layout:
  *
- * - 0px - XXpx: Tile padding 12px
- * - XXpx +: Tile padding 18px
+ * - Xs - Sm: Tile padding 12px
+ * - Md +: Tile padding 18px
  *
  * Change the preview size of this screen to demonstrate.
  */
@@ -198,15 +198,15 @@ export const PaddedImageTileVerticalStack = () => {
     </>
   );
 };
-PaddedImageTileVerticalStack.storyName = 'Padded Image tile (Vertical stack)';
+PaddedImageTileVerticalStack.storyName = 'Image tile - Padded (Vertical stack)';
 
 /**
- * > Edge to edge Image tile (Horizontal stack)
+ * > Edge to edge Image tile (Horizontal layout)
  *
  * This tile has a responsive content layout:
  *
- * - 0px - XXpx: Tile padding 12px
- * - XXpx +: Tile padding 18px
+ * - Xs - Sm: Tile padding 12px
+ * - Md +: Tile padding 18px
  *
  * Change the preview size of this screen to demonstrate.
  */
@@ -218,7 +218,7 @@ export const EdgeToEdgeImageTileHorizontalLayout = () => {
           <GridItem key={index} span={4}>
             <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{ initial: 'default', sm: 'large' }}>
               <div className="flex flex-col gap-2">
-                <div className="-mx-2 -mt-2">
+                <div className="-mx-2 -mt-2 sm:-mx-3 sm:-mt-3">
                   <img
                     src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="background"
@@ -244,15 +244,15 @@ export const EdgeToEdgeImageTileHorizontalLayout = () => {
     </GridContainer>
   );
 };
-EdgeToEdgeImageTileHorizontalLayout.storyName = 'Edge to edge Image tile (Horizontal stack)';
+EdgeToEdgeImageTileHorizontalLayout.storyName = 'Image tile - Edge to edge (Horizontal layout)';
 
 /**
- * > Padded Image tile (Horizontal stack)
+ * > Padded Image tile (Horizontal layout)
  *
  * This tile has a responsive content layout:
  *
- * - 0px - XXpx: Tile padding 12px
- * - XXpx +: Tile padding 18px
+ * - Xs - Sm: Tile padding 12px
+ * - Md +: Tile padding 18px
  *
  * Change the preview size of this screen to demonstrate.
  */
@@ -286,4 +286,4 @@ export const PaddedImageTileHorizontalLayout = () => {
     </GridContainer>
   );
 };
-PaddedImageTileHorizontalLayout.storyName = 'Padded Image tile (Horizontal stack)';
+PaddedImageTileHorizontalLayout.storyName = 'Image tile - Padded (Horizontal layout)';

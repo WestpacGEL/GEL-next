@@ -74,272 +74,6 @@ export const Default: Story = {
   },
 };
 
-/**
- * > Example for credit card display
- */
-export const CreditCard: Story = {
-  args: {},
-  render: () => {
-    return (
-      <>
-        <FlexiCell
-          after={
-            <FlexiCellAdornment align="top">
-              <FlexiCellLabel tag="h3" rightLabel>
-                $9,999.99
-              </FlexiCellLabel>
-              <FlexiCellHint>avail $9,999.99</FlexiCellHint>
-            </FlexiCellAdornment>
-          }
-          href="#"
-          tag="a"
-          withBorder
-        >
-          <FlexiCellLabel tag="h3">Credit card Base Styles</FlexiCellLabel>
-          <FlexiCellHint>Card ending in 1234</FlexiCellHint>
-        </FlexiCell>
-        <FlexiCell
-          after={
-            <FlexiCellAdornment align="top">
-              <FlexiCellLabel tag="h3" rightLabel>
-                $9,999.99
-              </FlexiCellLabel>
-              <FlexiCellHint>avail $9,999.99</FlexiCellHint>
-            </FlexiCellAdornment>
-          }
-          href="#"
-          tag="a"
-          withBorder
-          size={{ initial: 'default', sm: 'large' }}
-        >
-          <FlexiCellLabel tag="h3">Responsive Credit card Base Styles</FlexiCellLabel>
-          <FlexiCellHint>Card ending in 1234</FlexiCellHint>
-        </FlexiCell>
-        <FlexiCell
-          after={
-            <FlexiCellAdornment align="top">
-              <FlexiCellLabel tag="h3" className="font-medium" rightLabel>
-                $9,999.99
-              </FlexiCellLabel>
-              <FlexiCellHint>avail $9,999.99</FlexiCellHint>
-            </FlexiCellAdornment>
-          }
-          href="#"
-          tag="a"
-          withBorder
-        >
-          <FlexiCellLabel className="font-normal" tag="h3">
-            Credit card different styles
-          </FlexiCellLabel>
-          <FlexiCellHint>Card ending in 1234</FlexiCellHint>
-        </FlexiCell>
-        <FlexiCell
-          after={
-            <FlexiCellAdornment align="top">
-              <FlexiCellLabel tag="h3" rightLabel>
-                $9,999.99
-              </FlexiCellLabel>
-              <FlexiCellHint>avail $9,999.99</FlexiCellHint>
-            </FlexiCellAdornment>
-          }
-          href="#"
-          tag="a"
-          withBorder
-        >
-          <FlexiCellLabel tag="h3">Wrapping Credit CardCredit CardCredit CardCredit Card</FlexiCellLabel>
-          <FlexiCellHint>
-            Wrapping Card ending in 1234Card ending in 1234Card ending in 1234Card ending in 1234Card ending in 1234
-          </FlexiCellHint>
-        </FlexiCell>
-        <FlexiCell
-          after={
-            <FlexiCellAdornment align="top">
-              <FlexiCellLabel tag="h3" rightLabel>
-                $9,999.99
-              </FlexiCellLabel>
-              <FlexiCellHint>avail $9,999.99</FlexiCellHint>
-            </FlexiCellAdornment>
-          }
-          href="#"
-          tag="a"
-          withBorder
-        >
-          <FlexiCellLabel tag="h3" truncateText>
-            Truncating Credit CardCredit CardCredit CardCredit Card
-          </FlexiCellLabel>
-          <FlexiCellHint truncateText>
-            Truncating Card ending in 1234Card ending in 1234Card ending in 1234Card ending in 1234Card ending in 1234
-          </FlexiCellHint>
-        </FlexiCell>
-      </>
-    );
-  },
-};
-CreditCard.storyName = 'Credit card';
-
-/**
- * > Example for payee details, includes how to customise icon passed to button and Adornment leftGraphic
- */
-export const PayeeDetails: Story = {
-  args: {},
-  render: () => {
-    return (
-      <>
-        <FlexiCell
-          after={
-            <FlexiCellAdornment align="center">
-              <FlexiCellLabel tag="h3" rightLabel>
-                Fri 5 Aug
-              </FlexiCellLabel>
-            </FlexiCellAdornment>
-          }
-          before={
-            <FlexiCellAdornment>
-              <BpayIcon color="hero" />
-            </FlexiCellAdornment>
-          }
-          tag="a"
-          href="#"
-        >
-          <FlexiCellLabel tag="h3"> Default With Icon</FlexiCellLabel>
-          <FlexiCellHint>Payee Details</FlexiCellHint>
-        </FlexiCell>
-        <FlexiCell
-          after={
-            <FlexiCellAdornment align="center">
-              <FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />
-            </FlexiCellAdornment>
-          }
-          before={
-            <FlexiCellCircle className="bg-muted text-white" aria-label="Walter White">
-              WW
-            </FlexiCellCircle>
-          }
-          dualAction
-          href="#"
-        >
-          <FlexiCellLabel tag="h3">With Circle and Info Button</FlexiCellLabel>
-          <FlexiCellHint>Payee Details</FlexiCellHint>
-        </FlexiCell>
-        <FlexiCell
-          after={
-            <FlexiCellAdornment align="center">
-              <FlexiCellLabel tag="h3" rightLabel>
-                Fri 5 Aug
-              </FlexiCellLabel>
-            </FlexiCellAdornment>
-          }
-          before={
-            <FlexiCellAdornment>
-              <svg
-                className="h-4 w-4"
-                viewBox="0 0 640 480"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-label="French flag"
-              >
-                <path d="M0 0H640V480H0V0Z" fill="white" />
-                <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
-                <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
-              </svg>
-            </FlexiCellAdornment>
-          }
-          tag="a"
-          href="#"
-        >
-          <FlexiCellLabel tag="h3">With Flag</FlexiCellLabel>
-          <FlexiCellHint>Payee Details</FlexiCellHint>
-        </FlexiCell>
-        <FlexiCell
-          after={
-            <FlexiCellAdornment align="center">
-              <FlexiCellLabel tag="h3" rightLabel>
-                Fri 5 Aug
-              </FlexiCellLabel>
-            </FlexiCellAdornment>
-          }
-          before={
-            <FlexiCellAdornment>
-              <BpayIcon color="hero" className="max-sm:h-4 max-sm:w-4 sm:h-6 sm:w-6" />
-            </FlexiCellAdornment>
-          }
-          tag="a"
-          href="#"
-          size={{ initial: 'default', sm: 'large' }}
-        >
-          <FlexiCellLabel tag="h3"> Responsive With Resposive Icon</FlexiCellLabel>
-          <FlexiCellHint>Payee Details</FlexiCellHint>
-        </FlexiCell>
-      </>
-    );
-  },
-};
-PayeeDetails.storyName = 'Payee details';
-
-/**
- * > Examples of list items
- */
-export const ListItems: Story = {
-  args: {},
-  render: () => {
-    return (
-      <>
-        <FlexiCell tag="a" href="#" withBorder>
-          <FlexiCellLabel tag="h3">List Item</FlexiCellLabel>
-        </FlexiCell>
-        <FlexiCell
-          before={
-            <FlexiCellAdornment>
-              <svg
-                className="h-4 w-4"
-                viewBox="0 0 640 480"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-label="French flag"
-              >
-                <path d="M0 0H640V480H0V0Z" fill="white" />
-                <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
-                <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
-              </svg>
-            </FlexiCellAdornment>
-          }
-          tag="a"
-          href="#"
-          withBorder
-        >
-          <FlexiCellLabel tag="h3">List Item With Flag</FlexiCellLabel>
-        </FlexiCell>
-        <FlexiCell
-          before={
-            <FlexiCellAdornment>
-              <svg
-                className="max-sm:h-4 max-sm:w-4 sm:h-6 sm:w-6"
-                viewBox="0 0 640 480"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-label="French flag"
-              >
-                <path d="M0 0H640V480H0V0Z" fill="white" />
-                <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
-                <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
-              </svg>
-            </FlexiCellAdornment>
-          }
-          tag="a"
-          href="#"
-          withBorder
-          size={{ initial: 'default', sm: 'large' }}
-        >
-          <FlexiCellLabel className="max-sm:mt-0.5 sm:mt-1" tag="h3">
-            Responsive List Item With Responsive Flag
-          </FlexiCellLabel>
-        </FlexiCell>
-      </>
-    );
-  },
-};
-ListItems.storyName = 'List items';
-
 const MOCK_ACCOUNTS = [
   {
     title: 'Cash',
@@ -426,136 +160,6 @@ export const AccountLists: Story = {
   },
 };
 AccountLists.storyName = 'Account lists';
-
-const MOCK_PAYEES = [
-  {
-    title: 'Recently Paid',
-    id: 'recently-paid',
-    payees: [
-      {
-        initials: 'AJ',
-        name: 'Andrew Jones',
-        paidAt: 'Fri 5 Aug',
-        number: '123-986 463846',
-        bpay: false,
-      },
-      {
-        initials: 'JW',
-        name: 'Joss Wight',
-        paidAt: 'Mon 1 Aug',
-        number: '098-567 465352',
-        bpay: false,
-      },
-    ],
-  },
-  {
-    title: 'A',
-    id: 'a',
-    payees: [
-      {
-        initials: 'AO',
-        name: 'Active OOSH',
-        number: '857-434 856383',
-        paidAt: undefined,
-        bpay: true,
-      },
-      {
-        initials: 'AC',
-        name: 'Alice Cartwright',
-        number: '950-456 345363',
-        paidAt: undefined,
-        bpay: false,
-      },
-    ],
-  },
-  {
-    title: 'B',
-    id: 'b',
-    payees: [
-      {
-        initials: 'BN',
-        name: 'Active OOSH',
-        number: '123-986 463846',
-        paidAt: undefined,
-        bpay: true,
-      },
-      {
-        initials: 'BN',
-        name: 'Benjamin North',
-        number: '098-123 745362',
-        paidAt: undefined,
-        bpay: false,
-      },
-    ],
-  },
-];
-
-/**
- * > Example of how a payee list could be made
- */
-export const PayeeList: Story = {
-  args: {},
-  render: () => {
-    return (
-      <>
-        {MOCK_PAYEES.map(({ title, id, payees }) => (
-          <div key={id}>
-            <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">{title}</h3>
-            {payees.map(({ name, initials, bpay, number, paidAt }) =>
-              paidAt ? (
-                <FlexiCell
-                  tag="a"
-                  href="#"
-                  key={name}
-                  before={
-                    bpay ? (
-                      <BpayIcon color="hero" />
-                    ) : (
-                      <FlexiCellCircle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
-                        {initials}
-                      </FlexiCellCircle>
-                    )
-                  }
-                  after={
-                    <FlexiCellAdornment align="center">
-                      <FlexiCellLabel rightLabel tag="h4">
-                        {paidAt}
-                      </FlexiCellLabel>
-                    </FlexiCellAdornment>
-                  }
-                  size={{ initial: 'default', sm: 'large' }}
-                >
-                  <FlexiCellLabel tag="h4">{name + responsiveString}</FlexiCellLabel>
-                  <FlexiCellHint>{number}</FlexiCellHint>
-                </FlexiCell>
-              ) : (
-                <FlexiCell
-                  href="#"
-                  dualAction
-                  key={name}
-                  before={
-                    bpay ? (
-                      <BpayIcon color="hero" />
-                    ) : (
-                      <FlexiCellCircle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
-                        {initials}
-                      </FlexiCellCircle>
-                    )
-                  }
-                  after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
-                >
-                  <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
-                  <FlexiCellHint>{number}</FlexiCellHint>
-                </FlexiCell>
-              ),
-            )}
-          </div>
-        ))}
-      </>
-    );
-  },
-};
-PayeeList.storyName = 'Payee list';
 
 const MOCK_FOREIGNPAYEES = [
   {
@@ -695,239 +299,202 @@ export const ForeignCurrencyPayeeList: Story = {
     );
   },
 };
+
 ForeignCurrencyPayeeList.storyName = 'Foreign currency payee list';
 
-const ICON_LIST = [
-  (props: { className?: string }) => <GiftIcon className={props.className} look="outlined" color="hero" />,
-  (props: { className?: string }) => <PadlockIcon className={props.className} look="outlined" color="hero" />,
-  (props: { className?: string }) => <MapPinIcon className={props.className} look="outlined" color="hero" />,
-];
-
 /**
- * > Example of how product tiles could be made
+ * > Examples of list items
  */
-export const ProductTiles: Story = {
+export const ListItems: Story = {
   args: {},
   render: () => {
-    const title = 'Westpac specials and product offers';
-    const subtitle = 'Discounts and cashback from select merchants & products offers from Westpac';
     return (
       <>
-        {ICON_LIST.map(Icon => (
-          <FlexiCell
-            tag="a"
-            href="#"
-            withBorder
-            withArrow
-            key={title}
-            before={
-              <FlexiCellAdornment className="max-sm:hidden">
-                <Icon />
-              </FlexiCellAdornment>
-            }
-            size={{ initial: 'default', sm: 'large' }}
-          >
-            <Icon className="sm:hidden" />
-            <FlexiCellLabel className="text-hero" tag="h4">
-              {title}
-            </FlexiCellLabel>
-            <FlexiCellHint>{subtitle}</FlexiCellHint>
-          </FlexiCell>
-        ))}
-      </>
-    );
-  },
-};
-ProductTiles.storyName = 'Product tiles';
-
-/**
- * > Example of product tiles with the extra icon could be made
- */
-export const ProductTilesWithExtraIcon: Story = {
-  args: {},
-  render: () => {
-    const title = 'Westpac specials and product offers';
-    const subtitle = 'Discounts and cashback from select merchants & products offers from Westpac';
-    return (
-      <>
-        <FlexiCell
-          tag="a"
-          href="#"
-          withBorder
-          withArrow
-          key={title}
-          before={
-            <FlexiCellAdornment className="max-sm:hidden">
-              <GiftIcon look="outlined" color="hero" />
-            </FlexiCellAdornment>
-          }
-          after={
-            <Badge className="h-fit w-fit" color="success">
-              Completed
-            </Badge>
-          }
-        >
-          <GiftIcon className="sm:hidden" look="outlined" color="hero" />
-          <FlexiCellLabel className="text-hero" tag="h4">
-            {title}
-          </FlexiCellLabel>
-          <FlexiCellHint>{subtitle}</FlexiCellHint>
+        <FlexiCell tag="a" href="#" withBorder>
+          <FlexiCellLabel tag="h3">List Item</FlexiCellLabel>
         </FlexiCell>
         <FlexiCell
+          before={
+            <FlexiCellAdornment>
+              <svg
+                className="h-4 w-4"
+                viewBox="0 0 640 480"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="French flag"
+              >
+                <path d="M0 0H640V480H0V0Z" fill="white" />
+                <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
+                <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
+              </svg>
+            </FlexiCellAdornment>
+          }
           tag="a"
           href="#"
           withBorder
-          withArrow
-          key={title}
+        >
+          <FlexiCellLabel tag="h3">List Item With Flag</FlexiCellLabel>
+        </FlexiCell>
+        <FlexiCell
           before={
-            <FlexiCellAdornment className="max-sm:hidden">
-              <PadlockIcon look="outlined" color="hero" />
+            <FlexiCellAdornment>
+              <svg
+                className="max-sm:h-4 max-sm:w-4 sm:h-6 sm:w-6"
+                viewBox="0 0 640 480"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="French flag"
+              >
+                <path d="M0 0H640V480H0V0Z" fill="white" />
+                <path d="M0 0H213.3V480H0V0Z" fill="#002654" />
+                <path d="M426.7 0H640V480H426.7V0Z" fill="#CE1126" />
+              </svg>
             </FlexiCellAdornment>
           }
-          after={
-            <Badge className="h-fit w-fit" color="success">
-              Completed
-            </Badge>
-          }
+          tag="a"
+          href="#"
+          withBorder
           size={{ initial: 'default', sm: 'large' }}
         >
-          <PadlockIcon className="sm:hidden" look="outlined" color="hero" />
-          <FlexiCellLabel className="text-hero" tag="h4">
-            {title + responsiveString}
+          <FlexiCellLabel className="max-sm:mt-0.5 sm:mt-1" tag="h3">
+            Responsive List Item With Responsive Flag
           </FlexiCellLabel>
-          <FlexiCellHint>{subtitle}</FlexiCellHint>
         </FlexiCell>
       </>
     );
   },
 };
-ProductTilesWithExtraIcon.storyName = 'Product tiles with extra icon';
+ListItems.storyName = 'List items';
 
-const MOCK_PROMOS = [
+const MOCK_PAYEES = [
   {
-    title: 'This is talking about the bonus',
-    subtitle: 'This is more about the bonus and all the other exciting things about this.',
-    stars: true,
+    title: 'Recently Paid',
+    id: 'recently-paid',
+    payees: [
+      {
+        initials: 'AJ',
+        name: 'Andrew Jones',
+        paidAt: 'Fri 5 Aug',
+        number: '123-986 463846',
+        bpay: false,
+      },
+      {
+        initials: 'JW',
+        name: 'Joss Wight',
+        paidAt: 'Mon 1 Aug',
+        number: '098-567 465352',
+        bpay: false,
+      },
+    ],
   },
   {
-    title: 'This is a longer heading talking all about the bonus this one wraps',
-    subtitle: 'This is more about the bonus',
-    stars: false,
+    title: 'A',
+    id: 'a',
+    payees: [
+      {
+        initials: 'AO',
+        name: 'Active OOSH',
+        number: '857-434 856383',
+        paidAt: undefined,
+        bpay: true,
+      },
+      {
+        initials: 'AC',
+        name: 'Alice Cartwright',
+        number: '950-456 345363',
+        paidAt: undefined,
+        bpay: false,
+      },
+    ],
   },
   {
-    title: 'This is talking about the bonus',
-    subtitle: 'This is more about the bonus and all the other exciting things about this.',
-    stars: false,
+    title: 'B',
+    id: 'b',
+    payees: [
+      {
+        initials: 'BN',
+        name: 'Active OOSH',
+        number: '123-986 463846',
+        paidAt: undefined,
+        bpay: true,
+      },
+      {
+        initials: 'BN',
+        name: 'Benjamin North',
+        number: '098-123 745362',
+        paidAt: undefined,
+        bpay: false,
+      },
+    ],
   },
 ];
 
 /**
- * > Example of horizontal promo tiles
+ * > Example of how a payee list could be made
  */
-export const PromotilesHorizontalList: Story = {
+export const PayeeList: Story = {
   args: {},
   render: () => {
     return (
-      <div className="flex flex-col">
-        {MOCK_PROMOS.map(({ title, subtitle, stars }) => (
-          <FlexiCell
-            tag="a"
-            href="#"
-            key={title}
-            withBorder
-            before={
-              <FlexiCellAdornment align="center">
-                <FlexiCellCircle className="h-[70px] w-[70px] border border-border bg-white">
-                  <VisaBlueSymbol />
-                </FlexiCellCircle>
-              </FlexiCellAdornment>
-            }
-            topBadge={({ className }) => (
-              <Badge className={className + ' leading-normal'} aria-hidden={stars ?? 'true'}>
-                {stars ? '✭' : 'Corner flag'}
-              </Badge>
+      <>
+        {MOCK_PAYEES.map(({ title, id, payees }) => (
+          <div key={id}>
+            <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">{title}</h3>
+            {payees.map(({ name, initials, bpay, number, paidAt }) =>
+              paidAt ? (
+                <FlexiCell
+                  tag="a"
+                  href="#"
+                  key={name}
+                  before={
+                    bpay ? (
+                      <BpayIcon color="hero" />
+                    ) : (
+                      <FlexiCellCircle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
+                        {initials}
+                      </FlexiCellCircle>
+                    )
+                  }
+                  after={
+                    <FlexiCellAdornment align="center">
+                      <FlexiCellLabel rightLabel tag="h4">
+                        {paidAt}
+                      </FlexiCellLabel>
+                    </FlexiCellAdornment>
+                  }
+                  size={{ initial: 'default', sm: 'large' }}
+                >
+                  <FlexiCellLabel tag="h4">{name + responsiveString}</FlexiCellLabel>
+                  <FlexiCellHint>{number}</FlexiCellHint>
+                </FlexiCell>
+              ) : (
+                <FlexiCell
+                  href="#"
+                  dualAction
+                  key={name}
+                  before={
+                    bpay ? (
+                      <BpayIcon color="hero" />
+                    ) : (
+                      <FlexiCellCircle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
+                        {initials}
+                      </FlexiCellCircle>
+                    )
+                  }
+                  after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
+                >
+                  <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
+                  <FlexiCellHint>{number}</FlexiCellHint>
+                </FlexiCell>
+              ),
             )}
-          >
-            <FlexiCellLabel className="text-[12px] font-normal text-muted" tag="p">
-              MYER
-            </FlexiCellLabel>
-            <FlexiCellLabel className="text-hero" tag="h4">
-              {title}
-            </FlexiCellLabel>
-            <FlexiCellHint>{subtitle}</FlexiCellHint>
-            <FlexiCellFooter>
-              <Badge color="primary">Badge 1</Badge>
-              <Badge color="faint">Badge 2</Badge>
-            </FlexiCellFooter>
-          </FlexiCell>
+          </div>
         ))}
-      </div>
+      </>
     );
   },
 };
-PromotilesHorizontalList.storyName = 'Promotiles horizontal list';
-
-const MOCK_VERTICAL_PROMOS = [
-  {
-    title: 'About the bonus',
-    subtitle:
-      'The bonus and all the other exciting things. This will truncate if it gets too long with some extra text to make it a bit longer.',
-  },
-  {
-    title: 'Short heading',
-    subtitle: 'This is more about the bonus.',
-  },
-  {
-    title: 'This is a longer heading talking all about the bonus this one wraps',
-    subtitle: 'This is more about the bonus',
-  },
-];
-
-/**
- * > Example of vertical promo tiles
- */
-export const PromotilesVerticalList: Story = {
-  args: {},
-  render: () => {
-    return (
-      <div className="flex gap-3">
-        {MOCK_VERTICAL_PROMOS.map(({ title, subtitle }) => (
-          <FlexiCell
-            key={title}
-            className="max-sm:h-[255px] max-sm:min-w-[214px] sm:h-[277px] sm:min-w-[298px] sm:max-w-[298px]"
-            href="#"
-            tag="a"
-            withBorder
-            topBadge={({ className }) => <Badge className={className + ' leading-normal'}>Corner flag</Badge>}
-          >
-            <FlexiCellAdornment className="mb-1">
-              {/* Disabled as we can't import Image */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.unsplash.com/photo-1657299170950-87e5b0eaf77c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-                alt=""
-                className="h-10.5 w-full object-cover"
-              />
-            </FlexiCellAdornment>
-
-            <FlexiCellLabel className="text-[12px] font-normal text-muted" tag="p">
-              MYER
-            </FlexiCellLabel>
-            <FlexiCellLabel className="text-hero" tag="h4">
-              {title}
-            </FlexiCellLabel>
-            <FlexiCellHint className="line-clamp-3 max-sm:h-10 sm:h-10.5">{subtitle}</FlexiCellHint>
-            <FlexiCellFooter className="absolute max-sm:bottom-2 max-sm:left-2 sm:bottom-3 sm:left-3">
-              <Badge color="primary">Badge 1</Badge>
-              <Badge color="faint">Badge 2</Badge>
-            </FlexiCellFooter>
-          </FlexiCell>
-        ))}
-      </div>
-    );
-  },
-};
-PromotilesVerticalList.storyName = 'Promotiles vertical list';
+PayeeList.storyName = 'Payee list';
 
 /**
  * > Status tiles
