@@ -10,6 +10,7 @@ module.exports = {
         pathname: '/westpac-gel/**',
       },
     ],
+    unoptimized: true,
   },
   async redirects() {
     return [

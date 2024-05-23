@@ -43,6 +43,20 @@ export const DefaultContainer = () => {
   );
 };
 
+export const FixedContainer = () => {
+  const items = Array(12).fill(null);
+
+  return (
+    <GridContainer fixed>
+      <Grid>
+        {items.map((_, i) => (
+          <Item key={i}>{i + 1}</Item>
+        ))}
+      </Grid>
+    </GridContainer>
+  );
+};
+
 export const ResponsiveItems = () => {
   return (
     <GridContainer>
