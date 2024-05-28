@@ -67,13 +67,13 @@ Avoid directional navigation instructions, e.g. Instead, be clear on what you wa
 
 ---
 
-Keep verbs appropriate to the device type.
+There are different ways a person could use a device e.g. someone who doesn’t use a mouse may not ‘click’ a link. Therefore, where possible, keep verbs appropriate to the device type.
 
 ```jsx
 <div>
   <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
   <p className="typography-body-10 mb-3 ml-4">
-    <span className=" font-bold">Mobile:</span> Go to, tap, swipe, scroll, select, choose
+    <span className=" font-bold">Mobile:</span> Go to, select, swipe*, scroll, choose
   </p>
   <p className="typography-body-10 mb-3 ml-4">
     <span className=" font-bold">Desktop:</span> Go to, select, scroll, choose
@@ -82,11 +82,7 @@ Keep verbs appropriate to the device type.
     <span className=" font-bold">Cross-device:</span> Go to, select, scroll, choose
   </p>
   <p className="typography-body-10 text-muted mb-3 italic">
-    Note: ‘Click’ doesn’t adhere to the{' '}
-    <Link href="https://www.w3.org/WAI/tips/writing/" type="inline">
-      Accessibility & Inclusion Guidelines
-    </Link>
-    .
+*Use ‘swipe’ only if it’s not possible to use other verbs to describe the action.
   </p>
 </div>
 ```
