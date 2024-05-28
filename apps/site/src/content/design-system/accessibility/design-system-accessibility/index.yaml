@@ -4,23 +4,34 @@ description: >-
   be diligent and aware of the impacts the decisions we make have at all stages
   of product delivery. The following areas need to be considered when designing
   for accessibility and inclusion.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Principles of accessibility
       slug: principles-of-accessibility
+    noTitle: false
   - title:
       name: Inclusive product design
       slug: inclusive-product-design
+    noTitle: false
   - title:
       name: Inclusive content writing
       slug: inclusive-content-writing
+    noTitle: false
   - title:
       name: Accessible interfaces
       slug: accessible-interfaces
+    noTitle: false
   - title:
       name: Accessibility testing
       slug: accessibility-testing
+    noTitle: false
   - title:
       name: Deprecated components
       slug: deprecated-components
+    noTitle: false
 accessibility: []
+relatedComponents: []
+code: []
