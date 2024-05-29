@@ -16,7 +16,10 @@ smallDescription: >-
   system.
 image:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1663138770/cl819vrci000eam8id8qd2k5d.png
-  height: 1080
-  width: 1920
+    https://res.cloudinary.com/westpac-gel/image/upload/v1716958040/Breakpoints_xcjnof.png
+  alt: >-
+    Image showing the 6 breakpoints and where they are likely to be applied ie.
+    Phone, Tablet, Laptop etc.
+  height: 1070
+  width: 2718
 author: Justin Spencer
