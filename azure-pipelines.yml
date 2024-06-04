@@ -46,3 +46,4 @@ steps:
 
   env:
     SNYK_TOKEN: $(SNYK_TOKEN)
+    SNYK_ORG_ID: $(SNYK_ORG_ID)
