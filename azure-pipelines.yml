@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  group: "GEL"
+  group: GEL
   pnpm_config_cache: $(Pipeline.Workspace)/.pnpm-store
 
 steps:
@@ -32,8 +32,7 @@ steps:
 
 - script: |
     pnpm install
-    pnpm run build
-  displayName: "pnpm install and build"
+  displayName: "pnpm install"
 - task: CmdLine@2
   displayName: "Snyk scan"
   inputs:
