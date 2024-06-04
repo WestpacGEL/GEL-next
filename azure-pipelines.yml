@@ -1,0 +1,47 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  pnpm_config_cache: $(Pipeline.Workspace)/.pnpm-store
+
+steps:
+- task: UseNode@1
+  inputs:
+    version: '18.x'
+  displayName: 'Install Node.js'
+- task: Cache@2
+  inputs:
+    key: 'pnpm | "$(Agent.OS)" | pnpm-lock.yaml'
+    path: $(pnpm_config_cache)
+  displayName: Cache pnpm
+
+- script: |
+    corepack enable
+    corepack prepare pnpm@8.2 --activate
+    pnpm config set store-dir $(pnpm_config_cache)
+  displayName: "Setup pnpm"
+
+- script: |
+    pnpm install
+    pnpm run build
+  displayName: "pnpm install and build"
+- task: CmdLine@2
+  displayName: "Snyk scan"
+  inputs:
+    script: |
+      docker run --rm \
+        --env SNYK_TOKEN \
+        --env DEBUG=1 \
+        -v $(Build.SourcesDirectory):/app \
+        snyk/snyk:node-18 snyk monitor --all-projects --org=${SNYK_ORG_ID} --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=$(Build.BuildId)
+
+  env:
+    SNYK_TOKEN: $(SNYK_TOKEN)
