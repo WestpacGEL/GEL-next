@@ -10,7 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  group: GEL
   pnpm_config_cache: $(Pipeline.Workspace)/.pnpm-store
 
 steps:
