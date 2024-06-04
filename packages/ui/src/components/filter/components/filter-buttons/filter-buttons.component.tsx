@@ -1,4 +1,5 @@
-import React from 'react';
+import { delay } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Button } from '../../../index.js';
 import { generateAriaDescription } from '../../filter.util.js';
@@ -15,8 +16,58 @@ export function FilterButtons({
   className,
   ...props
 }: FilterButtonsProps) {
+  const scrollContainerRef = useRef<any>();
+  const [isScrollable, setIsScrollable] = useState({ left: false, right: true });
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      const isLeftScrollable = container.scrollLeft > 0;
+      const isRightScrollable = container.scrollLeft < container.scrollWidth - container.clientWidth;
+      setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
+    }
+  }, [scrollContainerRef]);
+
+  const sideScroll = (element: HTMLDivElement, speed: number, distance: number, step: number) => {
+    let scrollAmount = 0;
+    const slideTimer = setInterval(() => {
+      element.scrollLeft += step;
+      scrollAmount += Math.abs(step);
+      if (scrollAmount >= distance) {
+        clearInterval(slideTimer);
+      }
+    }, speed);
+  };
+
+  const handleScroll = async (direction: string) => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 1;
+      if (direction === 'left') {
+        sideScroll(scrollContainerRef.current, 5, 200, -1);
+      } else {
+        sideScroll(scrollContainerRef.current, 5, 200, 1.5);
+      }
+      // TODO: update to dynamically check for scroll via useEffect
+      const timer = setTimeout(() => {
+        const isLeftScrollable = scrollContainerRef.current.scrollLeft > 0;
+        const isRightScrollable =
+          scrollContainerRef.current.scrollLeft <
+          scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth;
+        setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
+      }, 800);
+    }
+  };
+
   return (
-    <Tag className={styles({ className })} {...props}>
+    <div className={styles({ className })} {...props} ref={scrollContainerRef} style={{ overflowX: 'hidden' }}>
+      <Button
+        style={{ position: 'sticky', left: '0', justifyContent: 'space-between' }}
+        onClick={() => handleScroll('left')}
+        disabled={!isScrollable.left}
+      >
+        &lt;
+      </Button>
+
       {filterButtons.map(button => (
         <Button
           aria-pressed={button.id === selectedButton}
@@ -31,6 +82,14 @@ export function FilterButtons({
           {button.text}
         </Button>
       ))}
-    </Tag>
+
+      <Button
+        style={{ position: 'sticky', right: '0', justifyContent: 'space-between' }}
+        onClick={() => handleScroll('right')}
+        disabled={!isScrollable.right}
+      >
+        &gt;
+      </Button>
+    </div>
   );
 }
