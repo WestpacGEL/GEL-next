@@ -43,7 +43,7 @@ stages:
 
 - stage: Fortify
   jobs:
-  - job: fortify
+  - job: 'fortify_prepare'
     pool:
       vmImage: 'ubuntu-latest'
     steps:
@@ -61,3 +61,20 @@ stages:
         includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/source.zip'
+
+    - publish: '$(Build.ArtifactStagingDirectory)/source.zip'
+      artifact: drop
+  - job: 'fortify_scan'
+    dependsOn: 'fortify_prepare'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - download: current
+      artifact: drop
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          cd $(Pipeline.Workspace)/drop
+          ls && cd $(Build.SourcesDirectory)
+          echo $(Build.BuildId)
