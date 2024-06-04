@@ -44,6 +44,7 @@ stages:
 - stage: Fortify
   jobs:
   - job: 'fortify_prepare'
+    displayName: 'fortify prepare' 
     pool:
       vmImage: 'ubuntu-latest'
     steps:
@@ -65,10 +66,12 @@ stages:
     - publish: '$(Build.ArtifactStagingDirectory)/source.zip'
       artifact: drop
   - job: 'fortify_scan'
+    displayName: 'fortify scan' 
     dependsOn: 'fortify_prepare'
     pool:
       vmImage: 'ubuntu-latest'
     steps:
+    - checkout: none
     - download: current
       artifact: drop
     - task: Bash@3
