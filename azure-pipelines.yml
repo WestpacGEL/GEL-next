@@ -69,7 +69,7 @@ stages:
     displayName: 'fortify scan' 
     dependsOn: 'fortify_prepare'
     pool:
-      vmImage: 'ubuntu-latest'
+      name: 'a00c6a-non-prod-self-hosted'
     steps:
     - checkout: none
     - download: current
