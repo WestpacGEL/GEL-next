@@ -87,7 +87,7 @@ stages:
       inputs:
         targetType: inline
         script: |
-          curl --request POST --url ${FORTIFY_URL} --header "Authorization: Basic ${FORTIFY_TOKEN}" --header "Content-Type: application/x-www-form-urlencoded" --data "APP_ID=${APP_ID}" --data "COMPONENT=GEL" --data "PJVERID=${FORTIFY_COMPONENT_PJVERID}" --data "EMAIL_ADDRESS=${FORTIFY_EMAIL}" --data "BUILD_LABEL=0.0.$(Build.BuildId)" --data "CODE_LANGUAGE=TypeScript" --data "BRANCH=main" --data "AF_LINK=${JFROG_URL}/gel-next/0.0.$(Build.BuildId)/source.zip"
+          curl -s -o /dev/null -w "%{http_code}" --request POST --url ${FORTIFY_URL} --header "Authorization: Basic ${FORTIFY_TOKEN}" --header "Content-Type: application/x-www-form-urlencoded" --data "APP_ID=${APP_ID}" --data "COMPONENT=GEL" --data "PJVERID=${FORTIFY_COMPONENT_PJVERID}" --data "EMAIL_ADDRESS=${FORTIFY_EMAIL}" --data "BUILD_LABEL=0.0.$(Build.BuildId)" --data "CODE_LANGUAGE=TypeScript" --data "BRANCH=main" --data "AF_LINK=${JFROG_URL}/gel-next/0.0.$(Build.BuildId)/source.zip"
       env:
         APP_ID: $(APP_ID)
         FORTIFY_URL: $(FORTIFY_URL)
