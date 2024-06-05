@@ -78,9 +78,20 @@ stages:
       inputs:
         targetType: 'inline'
         script: |
-          curl -${JFROG_USER}:${JFROG_TOKEN} -T $(Pipeline.Workspace)/drop/source.zip "${JFROG_URL}/gel-next/$(Build.BuildId)/source.zip"
+          curl -${JFROG_USER}:${JFROG_TOKEN} -T $(Pipeline.Workspace)/drop/source.zip "${JFROG_URL}/gel-next/0.0.$(Build.BuildId)/source.zip"
       env:
         JFROG_URL: $(JFROG_URL)
         JFROG_USER: $(JFROG_USER)
         JFROG_TOKEN: $(JFROG_TOKEN)
+    - task: Bash@3 
+      inputs:
+        targetType: inline
+        script: |
+          curl -o /dev/null -w "%{response_code}" --request POST --url ${FORTIFY_URL} --header "Authorization: Basic ${FORTIFY_TOKEN}" --header "Content-Type: application/x-www-form-urlencoded" --data "APP_ID=${APP_ID}" --data "COMPONENT=GEL" --data "PJVERID=${FORTIFY_COMPONENT_PJVERID}" --data "EMAIL_ADDRESS=${FORTIFY_EMAIL}" --data "BUILD_LABEL=0.0.$(Build.BuildId)" --data "CODE_LANGUAGE=TypeScript" --data "BRANCH=main" --data "AF_LINK=${JFROG_URL}/gel-next/0.0.$(Build.BuildId)/source.zip"
+      env:
+        APP_ID: $(APP_ID)
+        FORTIFY_URL: $(FORTIFY_URL)
+        FORTIFY_TOKEN: $(FORTIFY_TOKEN)
+        FORTIFY_COMPONENT_PJVERID: $(FORTIFY_COMPONENT_PJVERID)
+        FORTIFY_EMAIL: $(FORTIFY_EMAIL)
 
