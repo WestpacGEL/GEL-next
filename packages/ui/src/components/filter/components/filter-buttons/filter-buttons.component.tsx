@@ -23,7 +23,7 @@ export function FilterButtons({
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (container) {
-      const isLeftScrollable = container.scrollLeft > 0;
+      const isLeftScrollable = container.scrollLeft >= 0;
       const isRightScrollable = container.scrollLeft < container.scrollWidth - container.clientWidth;
       setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
     }
@@ -60,37 +60,45 @@ export function FilterButtons({
   };
 
   return (
-    <div className={styles({ className })} {...props} ref={scrollContainerRef} style={{ overflowX: 'hidden' }}>
-      <Button
-        style={{ position: 'sticky', left: '0', justifyContent: 'space-between' }}
-        onClick={() => handleScroll('left')}
-        disabled={!isScrollable.left}
-      >
-        &lt;
-      </Button>
+    <div style={{ position: 'relative' }}>
 
-      {filterButtons.map(button => (
+      {isScrollable.left && (
         <Button
-          aria-pressed={button.id === selectedButton}
-          aria-description={generateAriaDescription(button.id, selectedButton, filterButtons.length, resultsFound)}
-          aria-label={button.text}
-          look="hero"
-          size="small"
-          onClick={() => onClick(button.id)}
-          key={button.id}
-          soft={button.id !== selectedButton}
-        >
-          {button.text}
+          style={{ position: 'absolute', left: '0', }}
+          onClick={() => handleScroll('left')}
+          disabled={!isScrollable.left}>
+          &lt;
         </Button>
-      ))}
+      )}
 
-      <Button
-        style={{ position: 'sticky', right: '0', justifyContent: 'space-between' }}
-        onClick={() => handleScroll('right')}
-        disabled={!isScrollable.right}
-      >
-        &gt;
-      </Button>
+      {isScrollable.right && (
+        <Button
+          style={{ position: 'absolute', right: '0', }}
+          onClick={() => handleScroll('right')}
+          disabled={!isScrollable.right}>
+          &gt;
+        </Button>
+      )}
+
+      <div className={styles({ className })} {...props} ref={scrollContainerRef} style={{ overflowX: 'auto' }}>
+
+        {filterButtons.map(button => (
+          <Button
+            aria-pressed={button.id === selectedButton}
+            aria-description={generateAriaDescription(button.id, selectedButton, filterButtons.length, resultsFound)}
+            aria-label={button.text}
+            look="hero"
+            size="small"
+            onClick={() => onClick(button.id)}
+            key={button.id}
+            soft={button.id !== selectedButton}
+          >
+            {button.text}
+          </Button>
+        ))}
+
+      </div>
+
     </div>
   );
 }
