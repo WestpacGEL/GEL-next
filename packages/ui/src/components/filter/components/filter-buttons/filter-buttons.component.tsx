@@ -1,4 +1,5 @@
-import { delay } from 'framer-motion';
+'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Button } from '../../../index.js';
