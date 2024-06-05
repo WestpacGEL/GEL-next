@@ -78,6 +78,9 @@ stages:
       inputs:
         targetType: 'inline'
         script: |
-          cd $(Pipeline.Workspace)/drop
-          ls && cd $(Build.SourcesDirectory)
-          echo $(Build.BuildId)
+          curl -${JFROG_USER}:${JFROG_TOKEN} -T $(Pipeline.Workspace)/drop/source.zip "${JFROG_URL}/gel-next/$(Build.BuildId)/source.zip"
+      env:
+        JFROG_URL: $(JFROG_URL)
+        JFROG_USER: $(JFROG_USER)
+        JFROG_TOKEN: $(JFROG_TOKEN)
+
