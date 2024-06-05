@@ -1,5 +1,7 @@
 trigger:
 - main
+variables:
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
 stages:
 - stage: Snyk
   pool:
@@ -42,6 +44,7 @@ stages:
         SNYK_ORG_ID: $(SNYK_ORG_ID)
 
 - stage: Fortify
+  condition: and(succeeded(), eq(variables.isMain, true))
   jobs:
   - job: 'fortify_prepare'
     displayName: 'fortify prepare' 
