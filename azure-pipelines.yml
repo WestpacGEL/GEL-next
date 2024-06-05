@@ -38,7 +38,7 @@ stages:
             --env SNYK_TOKEN \
             --env DEBUG=1 \
             -v $(Build.SourcesDirectory):/app \
-            snyk/snyk:node-18 snyk --all-projects --org=${SNYK_ORG_ID} --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
+            snyk/snyk:node-18 snyk monitor --all-projects --org=${SNYK_ORG_ID} --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
       env:
         SNYK_TOKEN: $(SNYK_TOKEN)
         SNYK_ORG_ID: $(SNYK_ORG_ID)
