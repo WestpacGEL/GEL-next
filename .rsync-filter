@@ -2,6 +2,8 @@
 - azure-pipelines.yml
 - .storybook
 - .changeset
+- .git
+- .dist
 - .github/workflows
 - .husky
 - .eslintrc.js
