@@ -6,7 +6,7 @@ stages:
 - stage: Snyk
   pool:
     vmImage: 'ubuntu-latest'
-    variables:
+  variables:
     pnpm_config_cache: $(Pipeline.Workspace)/.pnpm-store  
   jobs:
   - job: snyk
@@ -24,11 +24,8 @@ stages:
     - script: |
         corepack enable
         corepack prepare pnpm@9.1 --activate
-      displayName: "Setup pnpm"
-
-    - script: |
         pnpm config set store-dir $(pnpm_config_cache)
-      displayName: "Setup pnpnm config"
+      displayName: "Setup pnpm"
 
     - script: |
         pnpm install
