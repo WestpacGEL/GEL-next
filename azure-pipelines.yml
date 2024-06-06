@@ -25,7 +25,6 @@ stages:
         corepack enable
         corepack prepare pnpm@9.1 --activate
         pnpm config set store-dir $(pnpm_config_cache)
-        pnpm store prune
       displayName: "Setup pnpm"
 
     - script: |
