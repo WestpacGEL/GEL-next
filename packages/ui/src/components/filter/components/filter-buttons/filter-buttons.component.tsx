@@ -100,7 +100,12 @@ export function FilterButtons({
         </Button>
       )}
 
-      <div className={styles({ className })} {...props} ref={scrollContainerRef} style={{ overflowX: 'auto', padding: '100' }}>
+      <div
+        className={styles({ className })}
+        {...props}
+        ref={scrollContainerRef}
+        style={{ overflowX: 'auto', padding: '100' }}
+      >
         {filterButtons.map(button => (
           <Button
             aria-pressed={button.id === selectedButton}
