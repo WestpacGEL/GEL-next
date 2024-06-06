@@ -31,14 +31,14 @@ stages:
         pnpm install
       displayName: "pnpm install"
     - task: Bash@3
-      displayName: 'Snyk variable initialization stage 1'
+      displayName: 'Enable synk monitor mode'
       condition: and(succeeded(), eq(variables.isMain, true))
       inputs:
         targetType: inline
         script: |
           echo "##vso[task.setvariable variable=snyk_cmd]monitor"
     - task: Bash@3
-      displayName: 'Snyk variable initialization stage 2'
+      displayName: 'Enable synk test mode'
       condition: and(succeeded(), eq(variables.isMain, false))
       inputs:
         targetType: inline
