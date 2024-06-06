@@ -1,0 +1,100 @@
+trigger:
+- main
+variables:
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+stages:
+- stage: Snyk
+  pool:
+    vmImage: 'ubuntu-latest'
+    variables:
+    pnpm_config_cache: $(Pipeline.Workspace)/.pnpm-store  
+  jobs:
+  - job: snyk
+    steps:
+    - task: UseNode@1
+      inputs:
+        version: '18.x'
+      displayName: 'Install Node.js'
+    - task: Cache@2
+      inputs:
+        key: 'pnpm | "$(Agent.OS)" | pnpm-lock.yaml'
+        path: $(pnpm_config_cache)
+      displayName: Cache pnpm
+
+    - script: |
+        corepack enable
+        corepack prepare pnpm@8.2 --activate
+        pnpm config set store-dir $(pnpm_config_cache)
+      displayName: "Setup pnpm"
+
+    - script: |
+        pnpm install
+      displayName: "pnpm install"
+    - task: CmdLine@2
+      displayName: "Snyk scan"
+      inputs:
+        script: |
+          docker run --rm \
+            --env SNYK_TOKEN \
+            --env DEBUG=1 \
+            -v $(Build.SourcesDirectory):/app \
+            snyk/snyk:node-18 snyk monitor --all-projects --org=${SNYK_ORG_ID} --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
+      env:
+        SNYK_TOKEN: $(SNYK_TOKEN)
+        SNYK_ORG_ID: $(SNYK_ORG_ID)
+
+- stage: Fortify
+  condition: and(succeeded(), eq(variables.isMain, true))
+  jobs:
+  - job: 'fortify_prepare'
+    displayName: 'fortify prepare' 
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Bash@3
+      displayName: 'Create dist folder'
+      inputs:
+        targetType: 'inline'
+        script: |
+          mkdir -p $(Build.SourcesDirectory)/.dist/src 
+          mkdir -p $(Build.SourcesDirectory)/.dist/lib && echo '' >> $(Build.SourcesDirectory)/.dist/lib/blank.txt 
+          rsync -aF -m $(Build.SourcesDirectory)/ $(Build.SourcesDirectory)/.dist/src/
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(Build.SourcesDirectory)/.dist'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/source.zip'
+
+    - publish: '$(Build.ArtifactStagingDirectory)/source.zip'
+      artifact: drop
+  - job: 'fortify_scan'
+    displayName: 'fortify scan' 
+    dependsOn: 'fortify_prepare'
+    pool:
+      name: 'a00c6a-non-prod-self-hosted'
+    steps:
+    - checkout: none
+    - download: current
+      artifact: drop
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          curl -${JFROG_USER}:${JFROG_TOKEN} -T $(Pipeline.Workspace)/drop/source.zip "${JFROG_URL}/gel-next/0.0.$(Build.BuildId)/source.zip"
+      env:
+        JFROG_URL: $(JFROG_URL)
+        JFROG_USER: $(JFROG_USER)
+        JFROG_TOKEN: $(JFROG_TOKEN)
+    - task: Bash@3 
+      inputs:
+        targetType: inline
+        script: |
+          curl -s -o /dev/null -w "%{http_code}" --request POST --url ${FORTIFY_URL} --header "Authorization: Basic ${FORTIFY_TOKEN}" --header "Content-Type: application/x-www-form-urlencoded" --data "APP_ID=${APP_ID}" --data "COMPONENT=GEL" --data "PJVERID=${FORTIFY_COMPONENT_PJVERID}" --data "EMAIL_ADDRESS=${FORTIFY_EMAIL}" --data "BUILD_LABEL=0.0.$(Build.BuildId)" --data "CODE_LANGUAGE=TypeScript" --data "BRANCH=main" --data "AF_LINK=${JFROG_URL}/gel-next/0.0.$(Build.BuildId)/source.zip"
+      env:
+        APP_ID: $(APP_ID)
+        FORTIFY_URL: $(FORTIFY_URL)
+        FORTIFY_TOKEN: $(FORTIFY_TOKEN)
+        FORTIFY_COMPONENT_PJVERID: $(FORTIFY_COMPONENT_PJVERID)
+        FORTIFY_EMAIL: $(FORTIFY_EMAIL)
+

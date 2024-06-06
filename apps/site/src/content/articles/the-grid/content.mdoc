@@ -10,17 +10,18 @@ The first hurdle in responsive design is to accept that you never know the exact
 
 ## **Breakpoints**
 
-A ‘breakpoint’ is a predefined viewport width. The Design System utilises 5 breakpoints. At each breakpoint we have the option to make adjustments to the interface design or layout using CSS. For example, we can adjust how many columns an element should span, the size of the text, its colour, visibility etc.
+A ‘breakpoint’ is a predefined viewport width. The Design System utilises 6 breakpoints. At each breakpoint we have the option to make adjustments to the interface design or layout using CSS. For example, we can adjust how many columns an element should span, the size of the text, its colour, visibility etc.
 
 This is how we define each of the 5 breakpoints:
 
-- **XS** - The Extra Small breakpoint begins at 0px and goes to 575px. (Note: Our minimum supported viewport is 320px)
-- **XSL** - Commonly known as the Phablet this breakpoint, begins at 576px and goes to 767px
-- **SM** - The Small breakpoint begins at 768px and goes to 991px
-- **MD** - The Medium breakpoint begins at 992px and goes to 1199px
-- **LG** - The Large breakpoint begins at 1200px and keeps going (Note: We cap this width at 1224px by applying a max-width to the container).
+- **XS** - The Extra Small breakpoint begins at 0px and goes to 575px. (Note: Our minimum supported viewport width is 320px)
+- **XSL** - Commonly known as the Phablet this breakpoint, begins when the viewport reaches 576px and goes to 767px
+- **SM** - The Small breakpoint begins when the viewport reaches 768px and goes to 995px
+- **MD** - The Medium breakpoint begins when the viewport reaches 996px and goes to 1199px
+- **LG** - The Large breakpoint begins when the viewport reaches 1200px and goes to 1583px
+- **XL** - The Extra Large breakpoint begins when the viewport reaches 1584px (Note: At this point the grid width is fixed at 1440px wide).
 
-As shown in the graphic above it’s important to understand that a breakpoint indicates a range value. For example, if you set an element to span 12 columns in XS view this will remain the case while the viewport is between 0px and 575px wide. Once the viewport has reached the XSL breakpoint you now have the option to change how many columns your element spans (amongst other things).
+As shown in the graphic above it’s important to understand that a breakpoint indicates a range value. For example, if you set an element to span 12 columns in XS view this will remain the case while the viewport is between 0px and 575px wide. Once the viewport has reached the XSL breakpoint you have the option to change how many columns your element spans (amongst other things).
 
 ## **Columns**
 

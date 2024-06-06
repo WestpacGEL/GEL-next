@@ -29,4 +29,8 @@ relatedComponents:
     slug: /foundation/icons
   - title: Headers
     slug: /components/header
-code: []
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: false

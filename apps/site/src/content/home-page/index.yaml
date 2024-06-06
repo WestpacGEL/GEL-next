@@ -5,8 +5,8 @@ articleRows:
       - value-of-a-design-system
   - layout: 1x1x1
     articles:
-      - motion-principles
       - patterns
+      - journey-management
       - data-visualisation
   - layout: 2x1
     articles:
