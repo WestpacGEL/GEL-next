@@ -24,8 +24,11 @@ stages:
     - script: |
         corepack enable
         corepack prepare pnpm@9.1 --activate
-        pnpm config set store-dir $(pnpm_config_cache)
       displayName: "Setup pnpm"
+
+    - script: |
+        pnpm config set store-dir $(pnpm_config_cache)
+      displayName: "Setup pnpnm config"
 
     - script: |
         pnpm install
