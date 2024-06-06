@@ -123,6 +123,26 @@ export const ContentExceedingScreenWidth: Story = {
         id: 'five',
         text: 'International Payees',
       },
+      {
+        id: 'six',
+        text: 'Recipients',
+      },
+      {
+        id: 'seven',
+        text: 'Transfers',
+      },
+      {
+        id: 'eight',
+        text: 'Deposits',
+      },
+      {
+        id: 'nine',
+        text: 'Withdrawls',
+      },
+      {
+        id: 'ten',
+        text: 'Invoices',
+      },
     ],
   },
 };

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
+import { ArrowLeftIcon, ArrowRightIcon } from '../../../icon/index.js';
 import { Button } from '../../../index.js';
 import { generateAriaDescription } from '../../filter.util.js';
 
@@ -18,12 +19,12 @@ export function FilterButtons({
   ...props
 }: FilterButtonsProps) {
   const scrollContainerRef = useRef<any>();
-  const [isScrollable, setIsScrollable] = useState({ left: false, right: true });
+  const [isScrollable, setIsScrollable] = useState({ left: false, right: false });
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (container) {
-      const isLeftScrollable = container.scrollLeft >= 0;
+      const isLeftScrollable = container.scrollLeft >= 1;
       const isRightScrollable = container.scrollLeft < container.scrollWidth - container.clientWidth;
       setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
     }
@@ -42,7 +43,7 @@ export function FilterButtons({
 
   const handleScroll = async (direction: string) => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 1;
+      const scrollAmount = scrollContainerRef.current.clientWidth;
       if (direction === 'left') {
         sideScroll(scrollContainerRef.current, 5, 200, -1);
       } else {
@@ -55,33 +56,51 @@ export function FilterButtons({
           scrollContainerRef.current.scrollLeft <
           scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth;
         setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
-      }, 800);
+      }, 850);
     }
   };
 
   return (
-    <div style={{ position: 'relative' }}>
-
+    <div style={{ position: 'relative', alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
       {isScrollable.left && (
         <Button
-          style={{ position: 'absolute', left: '0', }}
+          style={{
+            position: 'absolute',
+            left: '0',
+            minHeight: '24',
+            alignItems: 'center',
+            height: '100%',
+            background: 'linear-gradient(to left, transparent, white, white)',
+            border: 'none',
+            borderRadius: '0',
+          }}
           onClick={() => handleScroll('left')}
-          disabled={!isScrollable.left}>
-          &lt;
+          disabled={!isScrollable.left}
+        >
+          <ArrowLeftIcon style={{ color: '#2A2E42' }} />
         </Button>
       )}
 
       {isScrollable.right && (
         <Button
-          style={{ position: 'absolute', right: '0', }}
+          style={{
+            position: 'absolute',
+            right: '0',
+            minHeight: '24',
+            alignItems: 'center',
+            height: '100%',
+            background: 'linear-gradient(to right, transparent, white, white)',
+            border: 'none',
+            borderRadius: '0',
+          }}
           onClick={() => handleScroll('right')}
-          disabled={!isScrollable.right}>
-          &gt;
+          disabled={!isScrollable.right}
+        >
+          <ArrowRightIcon style={{ color: '#2A2E42' }} />
         </Button>
       )}
 
-      <div className={styles({ className })} {...props} ref={scrollContainerRef} style={{ overflowX: 'auto' }}>
-
+      <div className={styles({ className })} {...props} ref={scrollContainerRef} style={{ overflowX: 'auto', padding: '100' }}>
         {filterButtons.map(button => (
           <Button
             aria-pressed={button.id === selectedButton}
@@ -96,9 +115,7 @@ export function FilterButtons({
             {button.text}
           </Button>
         ))}
-
       </div>
-
     </div>
   );
 }
