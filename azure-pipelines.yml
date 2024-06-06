@@ -28,6 +28,7 @@ stages:
       displayName: "Setup pnpm"
 
     - script: |
+        pnpm store prune
         pnpm install
       displayName: "pnpm install"
     - task: CmdLine@2
