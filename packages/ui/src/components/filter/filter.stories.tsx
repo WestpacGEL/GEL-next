@@ -203,6 +203,47 @@ export const SmallestBreakpoint: Story = {
   },
 };
 
+/**
+ * > Filter with no search box example
+ */
+export const NoSearchBox = () => {
+  const [selectedFilter, setSelectedFilter] = useState<string>('ALL');
+
+  const filterButtons = [
+    {
+      id: 'one',
+      text: 'All',
+    },
+    {
+      id: 'two',
+      text: 'Payees',
+    },
+    {
+      id: 'three',
+      text: 'PayID',
+    },
+    {
+      id: 'four',
+      text: 'Billers',
+    },
+    {
+      id: 'five',
+      text: 'International Payees',
+    },
+  ];
+
+  return (
+    <Filter>
+      <FilterButtons
+        filterButtons={filterButtons}
+        selectedButton={'one'}
+        onClick={id => setSelectedFilter(id)}
+        resultsFound={2}
+      />
+    </Filter>
+  );
+};
+
 const FILTERS = [
   {
     id: 'ALL',
