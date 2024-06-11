@@ -36,9 +36,9 @@ export function FilterButtons(
     if (scrollContainerRef.current) {
       const scrollAmount = scrollContainerRef.current.clientWidth;
       if (direction === 'left') {
-        sideScroll(scrollContainerRef.current, 5, scrollAmount, -5);
+        sideScroll(scrollContainerRef.current, 1, scrollAmount, -3);
       } else {
-        sideScroll(scrollContainerRef.current, 5, scrollAmount, 5);
+        sideScroll(scrollContainerRef.current, 1, scrollAmount, 3);
       }
     }
   };
@@ -74,18 +74,27 @@ export function FilterButtons(
           style={{
             position: 'absolute',
             left: '0',
-            marginTop: '0',
             resize: 'none',
-            height: '30px',
+            height: '40px',
+            minWidth: '30px',
             border: 'none',
             borderRadius: '0',
             transition: 'background-color 0.3s',
             background: 'linear-gradient(to left, transparent, white, white)',
+            borderLeft: 'white',
           }}
           onClick={() => handleScrollButton('left')}
           disabled={!isScrollable.left}
         >
-          <ArrowLeftIcon style={{ color: '#2A2E42' }} />
+          <ArrowLeftIcon
+            style={{
+              color: '#2A2E42',
+              float: 'left',
+              position: 'absolute',
+              left: '-5',
+              transform: 'translateY(-50%)',
+            }}
+          />
         </Button>
       )}
 
@@ -95,16 +104,26 @@ export function FilterButtons(
             position: 'absolute',
             right: '0',
             resize: 'none',
-            height: '30px',
+            height: '40px',
+            minWidth: '30px',
             border: 'none',
             borderRadius: '0',
             transition: 'background-color 0.3s',
             background: 'linear-gradient(to right, transparent, white, white)',
+            borderLeft: 'white',
           }}
           onClick={() => handleScrollButton('right')}
           disabled={!isScrollable.right}
         >
-          <ArrowRightIcon style={{ color: '#2A2E42' }} />
+          <ArrowRightIcon
+            style={{
+              color: '#2A2E42',
+              float: 'right',
+              position: 'absolute',
+              right: '-5',
+              transform: 'translateY(-50%)',
+            }}
+          />
         </Button>
       )}
 
@@ -112,7 +131,7 @@ export function FilterButtons(
         className={styles({ className })}
         {...props}
         ref={scrollContainerRef}
-        style={{ overflowX: isHovered ? 'auto' : 'hidden', resize: 'none', scrollbarWidth: 'thin' }}
+        style={{ overflowX: isHovered ? 'auto' : 'hidden', resize: 'none', scrollbarWidth: 'thin', padding: '5px' }}
         onMouseEnter={() => handleHover(true)}
         onMouseLeave={() => handleHover(false)}
       >
