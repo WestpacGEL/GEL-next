@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../../../icon/index.js';
 import { Button } from '../../../index.js';
@@ -9,26 +9,13 @@ import { generateAriaDescription } from '../../filter.util.js';
 import { styles } from './filter-buttons.styles.js';
 import { type FilterButtonsProps } from './filter-buttons.types.js';
 
-export function FilterButtons({
-  filterButtons,
-  onClick,
-  selectedButton,
-  resultsFound,
-  tag: Tag = 'div',
-  className,
-  ...props
-}: FilterButtonsProps) {
+export function FilterButtons(
+  this: any,
+  { filterButtons, onClick, selectedButton, resultsFound, tag: Tag = 'div', className, ...props }: FilterButtonsProps,
+) {
   const scrollContainerRef = useRef<any>();
   const [isScrollable, setIsScrollable] = useState({ left: false, right: false });
-
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      const isLeftScrollable = container.scrollLeft >= 1;
-      const isRightScrollable = container.scrollLeft < container.scrollWidth - container.clientWidth;
-      setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
-    }
-  }, [scrollContainerRef]);
+  const [isHovered, setIsHovered] = useState(false);
 
   const sideScroll = (element: HTMLDivElement, speed: number, distance: number, step: number) => {
     let scrollAmount = 0;
@@ -41,40 +28,61 @@ export function FilterButtons({
     }, speed);
   };
 
-  const handleScroll = async (direction: string) => {
+  const handleHover = (hoverState: boolean | ((prevState: boolean) => boolean)) => {
+    setIsHovered(hoverState);
+  };
+
+  const handleScrollButton = (direction: string) => {
     if (scrollContainerRef.current) {
       const scrollAmount = scrollContainerRef.current.clientWidth;
       if (direction === 'left') {
-        sideScroll(scrollContainerRef.current, 5, 200, -1);
+        sideScroll(scrollContainerRef.current, 5, scrollAmount, -5);
       } else {
-        sideScroll(scrollContainerRef.current, 5, 200, 1.5);
+        sideScroll(scrollContainerRef.current, 5, scrollAmount, 5);
       }
-      // TODO: update to dynamically check for scroll via useEffect
-      const timer = setTimeout(() => {
-        const isLeftScrollable = scrollContainerRef.current.scrollLeft > 0;
-        const isRightScrollable =
-          scrollContainerRef.current.scrollLeft <
-          scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth;
-        setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
-      }, 850);
     }
   };
 
+  const handleScroll = useCallback(() => {
+    if (scrollContainerRef.current) {
+      const isLeftScrollable = scrollContainerRef.current.scrollLeft >= 1;
+      const isRightScrollable =
+        scrollContainerRef.current.scrollLeft + 1 <
+        scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth;
+      setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
+    }
+  }, []);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    container.addEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      const isLeftScrollable = container.scrollLeft >= 1;
+      const isRightScrollable = container.scrollLeft < container.scrollWidth - container.clientWidth;
+      setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
+    }
+  }, []);
+
   return (
-    <div style={{ position: 'relative', alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
+    <div style={{ position: 'relative', alignItems: 'top', justifyContent: 'top', display: 'flex' }}>
       {isScrollable.left && (
         <Button
           style={{
             position: 'absolute',
             left: '0',
-            minHeight: '24',
-            alignItems: 'center',
-            height: '100%',
-            background: 'linear-gradient(to left, transparent, white, white)',
+            marginTop: '0',
+            resize: 'none',
+            height: '30px',
             border: 'none',
             borderRadius: '0',
+            transition: 'background-color 0.3s',
+            background: 'linear-gradient(to left, transparent, white, white)',
           }}
-          onClick={() => handleScroll('left')}
+          onClick={() => handleScrollButton('left')}
           disabled={!isScrollable.left}
         >
           <ArrowLeftIcon style={{ color: '#2A2E42' }} />
@@ -86,14 +94,14 @@ export function FilterButtons({
           style={{
             position: 'absolute',
             right: '0',
-            minHeight: '24',
-            alignItems: 'center',
-            height: '100%',
-            background: 'linear-gradient(to right, transparent, white, white)',
+            resize: 'none',
+            height: '30px',
             border: 'none',
             borderRadius: '0',
+            transition: 'background-color 0.3s',
+            background: 'linear-gradient(to right, transparent, white, white)',
           }}
-          onClick={() => handleScroll('right')}
+          onClick={() => handleScrollButton('right')}
           disabled={!isScrollable.right}
         >
           <ArrowRightIcon style={{ color: '#2A2E42' }} />
@@ -104,7 +112,9 @@ export function FilterButtons({
         className={styles({ className })}
         {...props}
         ref={scrollContainerRef}
-        style={{ overflowX: 'auto', padding: '100' }}
+        style={{ overflowX: isHovered ? 'auto' : 'hidden', resize: 'none', scrollbarWidth: 'thin' }}
+        onMouseEnter={() => handleHover(true)}
+        onMouseLeave={() => handleHover(false)}
       >
         {filterButtons.map(button => (
           <Button
@@ -114,6 +124,7 @@ export function FilterButtons({
             look="hero"
             size="small"
             onClick={() => onClick(button.id)}
+            style={{ scrollbarGutter: 'stable' }}
             key={button.id}
             soft={button.id !== selectedButton}
           >
