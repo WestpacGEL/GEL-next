@@ -121,7 +121,7 @@ export const ContentExceedingScreenWidth: Story = {
       },
       {
         id: 'five',
-        text: 'International Payees',
+        text: 'International Transfers',
       },
       {
         id: 'six',
@@ -207,7 +207,7 @@ export const SmallestBreakpoint: Story = {
  * > Filter with no search box example
  */
 export const NoSearchBox = () => {
-  const [selectedFilter, setSelectedFilter] = useState<string>('ALL');
+  const [selected, setSelectedFilter] = useState<string>('ALL');
 
   const filterButtons = [
     {
@@ -236,7 +236,7 @@ export const NoSearchBox = () => {
     <Filter>
       <FilterButtons
         filterButtons={filterButtons}
-        selectedButton={'one'}
+        selectedButton={selected}
         onClick={id => setSelectedFilter(id)}
         resultsFound={2}
       />

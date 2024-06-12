@@ -9,6 +9,7 @@ import { generateAriaDescription } from '../../filter.util.js';
 import { styles } from './filter-buttons.styles.js';
 import { type FilterButtonsProps } from './filter-buttons.types.js';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export function FilterButtons(
   this: any,
   { filterButtons, onClick, selectedButton, resultsFound, tag: Tag = 'div', className, ...props }: FilterButtonsProps,
@@ -68,7 +69,7 @@ export function FilterButtons(
   }, []);
 
   return (
-    <div style={{ position: 'relative', alignItems: 'top', justifyContent: 'top', display: 'flex' }}>
+    <Tag style={{ position: 'relative', alignItems: 'top', justifyContent: 'top', display: 'flex' }}>
       {isScrollable.left && (
         <Button
           style={{
@@ -151,6 +152,6 @@ export function FilterButtons(
           </Button>
         ))}
       </div>
-    </div>
+    </Tag>
   );
 }
