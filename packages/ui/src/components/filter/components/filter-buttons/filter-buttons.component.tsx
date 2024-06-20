@@ -35,7 +35,7 @@ export function FilterButtons(
 
   const handleScrollButton = (direction: string) => {
     if (scrollContainerRef.current) {
-      const scrollAmount = scrollContainerRef.current.clientWidth;
+      let scrollAmount = scrollContainerRef.current.clientWidth;
       if (direction === 'left') {
         sideScroll(scrollContainerRef.current, 1, scrollAmount, -3);
       } else {
@@ -68,6 +68,10 @@ export function FilterButtons(
     }
   }, []);
 
+  // useEffect(() => {
+  // for handling button start
+  // }, []);
+
   return (
     <Tag style={{ position: 'relative', alignItems: 'top', justifyContent: 'top', display: 'flex' }}>
       {isScrollable.left && (
@@ -76,7 +80,7 @@ export function FilterButtons(
             position: 'absolute',
             left: '0',
             resize: 'none',
-            height: '40px',
+            height: '30px',
             minWidth: '30px',
             border: 'none',
             borderRadius: '0',
@@ -105,7 +109,7 @@ export function FilterButtons(
             position: 'absolute',
             right: '0',
             resize: 'none',
-            height: '40px',
+            height: '30px',
             minWidth: '30px',
             border: 'none',
             borderRadius: '0',
@@ -132,7 +136,7 @@ export function FilterButtons(
         className={styles({ className })}
         {...props}
         ref={scrollContainerRef}
-        style={{ overflowX: isHovered ? 'auto' : 'hidden', resize: 'none', scrollbarWidth: 'thin', padding: '5px' }}
+        style={{ overflowX: isHovered ? 'auto' : 'hidden', resize: 'none', scrollbarWidth: 'thin' }}
         onMouseEnter={() => handleHover(true)}
         onMouseLeave={() => handleHover(false)}
       >
