@@ -18,6 +18,12 @@ export function FilterButtons(
   const [isScrollable, setIsScrollable] = useState({ left: false, right: false });
   const [isHovered, setIsHovered] = useState(false);
 
+  // WIP
+  const [buttonWidths, setButtonWidths] = useState([]);
+  const [currentButton, setCurrentButton] = useState(0);
+  const scrollElementRef = useRef<any>();
+  const buttonsPerScroll = 2;
+
   const sideScroll = (element: HTMLDivElement, speed: number, distance: number, step: number) => {
     let scrollAmount = 0;
     const slideTimer = setInterval(() => {
@@ -35,17 +41,40 @@ export function FilterButtons(
 
   const handleScrollButton = (direction: string) => {
     if (scrollContainerRef.current) {
-      let scrollAmount = scrollContainerRef.current.clientWidth;
+      const container = scrollContainerRef.current;
+
+      // scroll to button
+      // if (direction === 'left' && filterButtons.length > currentButton + 1) {
+      //   container.scrollTos();
+      // }
+
+      // let scrollAmount = scrollContainerRef.current.clientWidth;
+      let scrollAmount = container.offsetWidth;
       if (direction === 'left') {
-        sideScroll(scrollContainerRef.current, 1, scrollAmount, -3);
+        sideScroll(container, 1, scrollAmount, -3);
       } else {
-        sideScroll(scrollContainerRef.current, 1, scrollAmount, 3);
+        sideScroll(container, 1, scrollAmount, 3);
       }
     }
   };
 
   const handleScroll = useCallback(() => {
     if (scrollContainerRef.current) {
+      // Find the first button whose left side is aligned with the scroll container's left side
+      const container = scrollContainerRef.current;
+      for (let i = 0; i < filterButtons.length; i++) {
+        const button = filterButtons[i];
+        const buttonElement = container.querySelector(`button[data-button-id="${button.id}"]`);
+
+        if (buttonElement) {
+          const buttonRect = buttonElement.getBoundingClientRect();
+          if (buttonRect.left >= container.getBoundingClientRect().left) {
+            setCurrentButton(i);
+            break;
+          }
+        }
+      }
+
       const isLeftScrollable = scrollContainerRef.current.scrollLeft >= 1;
       const isRightScrollable =
         scrollContainerRef.current.scrollLeft + 1 <
@@ -68,75 +97,52 @@ export function FilterButtons(
     }
   }, []);
 
-  // useEffect(() => {
+  // WIP
   // for handling button start
-  // }, []);
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      // const buttonElements = container.children;
+      // const widths = Array.from(buttonElements).map((button: { clientWidth: any }) => button.clientWidth);
+      // setButtonWidths(widths);
+    }
+  }, []);
 
   return (
-    <Tag style={{ position: 'relative', alignItems: 'top', justifyContent: 'top', display: 'flex' }}>
-      {isScrollable.left && (
-        <Button
-          style={{
-            position: 'absolute',
-            left: '0',
-            resize: 'none',
-            height: '30px',
-            minWidth: '30px',
-            border: 'none',
-            borderRadius: '0',
-            transition: 'background-color 0.3s',
-            background: 'linear-gradient(to left, transparent, white, white)',
-            borderLeft: 'white',
-          }}
-          onClick={() => handleScrollButton('left')}
-          disabled={!isScrollable.left}
-        >
-          <ArrowLeftIcon
-            style={{
-              color: '#2A2E42',
-              float: 'left',
-              position: 'absolute',
-              left: '-5',
-              transform: 'translateY(-50%)',
-            }}
-          />
-        </Button>
-      )}
+    <Tag className={styles.slots.container}>
+      <Button
+        style={{
+          left: '0',
+          background: 'linear-gradient(to left, transparent, white, white)',
+          visibility: !isScrollable.left ? 'hidden' : 'visible',
+        }}
+        className={styles.slots.scrollButton}
+        onClick={() => handleScrollButton('left')}
+        disabled={!isScrollable.left}
+      >
+        <ArrowLeftIcon className={styles.slots.arrowIconLeft} />
+      </Button>
 
-      {isScrollable.right && (
-        <Button
-          style={{
-            position: 'absolute',
-            right: '0',
-            resize: 'none',
-            height: '30px',
-            minWidth: '30px',
-            border: 'none',
-            borderRadius: '0',
-            transition: 'background-color 0.3s',
-            background: 'linear-gradient(to right, transparent, white, white)',
-            borderLeft: 'white',
-          }}
-          onClick={() => handleScrollButton('right')}
-          disabled={!isScrollable.right}
-        >
-          <ArrowRightIcon
-            style={{
-              color: '#2A2E42',
-              float: 'right',
-              position: 'absolute',
-              right: '-5',
-              transform: 'translateY(-50%)',
-            }}
-          />
-        </Button>
-      )}
+      <Button
+        style={{
+          right: '0',
+          background: 'linear-gradient(to right, transparent, white, white)',
+          visibility: !isScrollable.right ? 'hidden' : 'visible',
+        }}
+        className={styles.slots.scrollButton}
+        onClick={() => handleScrollButton('right')}
+        disabled={!isScrollable.right}
+      >
+        <ArrowRightIcon className={styles.slots.arrowIconRight} />
+      </Button>
 
       <div
-        className={styles({ className })}
+        className={styles.base}
         {...props}
         ref={scrollContainerRef}
-        style={{ overflowX: isHovered ? 'auto' : 'hidden', resize: 'none', scrollbarWidth: 'thin' }}
+        style={{
+          scrollbarWidth: 'thin',
+        }}
         onMouseEnter={() => handleHover(true)}
         onMouseLeave={() => handleHover(false)}
       >
@@ -151,6 +157,8 @@ export function FilterButtons(
             style={{ scrollbarGutter: 'stable' }}
             key={button.id}
             soft={button.id !== selectedButton}
+            //WIP
+            ref={scrollElementRef}
           >
             {button.text}
           </Button>
