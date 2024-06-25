@@ -2,10 +2,11 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    container: 'relative justify-start flex',
-    scrollButton: 'absolute resize-none h-5 rounded-none border-none border-l-white transition-all duration-100',
-    arrowIconLeft: 'absolute text-hero -translate-y-2/4 -inset-x-1',
-    arrowIconRight: 'absolute text-hero -translate-y-2/4 inset-x-1',
+    container: 'relative flex justify-start',
+    scrollButton: 'absolute h-5 resize-none rounded-none border-none border-l-white transition-all duration-100',
+    arrowIconLeft: 'absolute -inset-x-1 -translate-y-2/4 text-hero opacity-100 hover:opacity-50',
+    arrowIconRight: 'absolute inset-x-1 -translate-y-2/4 text-hero opacity-100 hover:opacity-50',
+    filterButton: 'scroll-mx-5',
   },
-  base: 'flex w-full gap-1 overflow-auto whitespace-nowrap scrollbar-thin',
+  base: 'flex w-full gap-1 overflow-hidden whitespace-nowrap px-0.5',
 });
