@@ -73,13 +73,11 @@ export function FilterButtons(
   }, []);
 
   useEffect(() => {
-    console.log('2');
     const container = scrollContainerRef.current;
     container.addEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
   useEffect(() => {
-    console.log('1');
     const container = scrollContainerRef.current;
     handleScrollTarget(container);
     handleScrollable(container);
