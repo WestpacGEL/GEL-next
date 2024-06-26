@@ -35,23 +35,52 @@ export function FilterButtons(
     setIsHovered(hoverState);
   };
 
+  // const handleScrollButton = (direction: string) => {
+  //   if (scrollContainerRef.current) {
+  //     const container = scrollContainerRef.current;
+  //     const scrollAmount = container.offsetWidth;
+  //     if (direction === 'left') {
+  //       scrollElementRefs.current[scrollTarget.left].scrollIntoView({
+  //         behavior: 'smooth',
+  //         inline: 'end',
+  //         block: 'nearest',
+  //       });
+  //     } else {
+  //       scrollElementRefs.current[scrollTarget.right].scrollIntoView({
+  //         behavior: 'smooth',
+  //         inline: 'start',
+  //         block: 'nearest',
+  //       });
+  //     }
+  //   }
+  // };
+
   const handleScrollButton = (direction: string) => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
       const scrollAmount = container.offsetWidth;
+
+      let scrollTargetIndex;
       if (direction === 'left') {
-        scrollElementRefs.current[scrollTarget.left].scrollIntoView({
-          behavior: 'smooth',
-          inline: 'end',
-          block: 'nearest',
-        });
+        scrollTargetIndex = scrollTarget.left;
       } else {
-        scrollElementRefs.current[scrollTarget.right].scrollIntoView({
-          behavior: 'smooth',
-          inline: 'start',
-          block: 'nearest',
-        });
+        scrollTargetIndex = scrollTarget.right;
       }
+
+      const targetElement = scrollElementRefs.current[scrollTargetIndex];
+      const targetRect = targetElement.getBoundingClientRect();
+
+      let scrollX;
+      if (direction === 'left') {
+        scrollX = container.scrollLeft + (targetRect.right - container.clientWidth - 30);
+      } else {
+        scrollX = container.scrollLeft + targetRect.left - 60;
+      }
+
+      container.scrollTo({
+        left: scrollX,
+        behavior: 'smooth',
+      });
     }
   };
 
