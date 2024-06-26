@@ -16,65 +16,21 @@ export function FilterButtons(
 ) {
   const scrollContainerRef = useRef<any>();
   const [isScrollable, setIsScrollable] = useState({ left: false, right: false });
-  const [isHovered, setIsHovered] = useState(false);
   const scrollElementRefs = useRef<any>(new Array(filterButtons.length));
   const [scrollTarget, setScrollTarget] = useState({ left: 0, right: 4 });
-
-  const sideScroll = (element: HTMLDivElement, speed: number, distance: number, step: number) => {
-    let scrollAmount = 0;
-    const slideTimer = setInterval(() => {
-      element.scrollLeft += step;
-      scrollAmount += Math.abs(step);
-      if (scrollAmount >= distance) {
-        clearInterval(slideTimer);
-      }
-    }, speed);
-  };
-
-  const handleHover = (hoverState: boolean | ((prevState: boolean) => boolean)) => {
-    setIsHovered(hoverState);
-  };
-
-  // const handleScrollButton = (direction: string) => {
-  //   if (scrollContainerRef.current) {
-  //     const container = scrollContainerRef.current;
-  //     const scrollAmount = container.offsetWidth;
-  //     if (direction === 'left') {
-  //       scrollElementRefs.current[scrollTarget.left].scrollIntoView({
-  //         behavior: 'smooth',
-  //         inline: 'end',
-  //         block: 'nearest',
-  //       });
-  //     } else {
-  //       scrollElementRefs.current[scrollTarget.right].scrollIntoView({
-  //         behavior: 'smooth',
-  //         inline: 'start',
-  //         block: 'nearest',
-  //       });
-  //     }
-  //   }
-  // };
 
   const handleScrollButton = (direction: string) => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      const scrollAmount = container.offsetWidth;
 
-      let scrollTargetIndex;
-      if (direction === 'left') {
-        scrollTargetIndex = scrollTarget.left;
-      } else {
-        scrollTargetIndex = scrollTarget.right;
-      }
-
-      const targetElement = scrollElementRefs.current[scrollTargetIndex];
-      const targetRect = targetElement.getBoundingClientRect();
-
+      let targetElement;
       let scrollX;
       if (direction === 'left') {
-        scrollX = container.scrollLeft + (targetRect.right - container.clientWidth - 30);
+        targetElement = scrollElementRefs.current[scrollTarget.left];
+        scrollX = targetElement.offsetLeft + targetElement.offsetWidth - container.offsetWidth + 20;
       } else {
-        scrollX = container.scrollLeft + targetRect.left - 60;
+        targetElement = scrollElementRefs.current[scrollTarget.right];
+        scrollX = targetElement.offsetLeft - 20;
       }
 
       container.scrollTo({
@@ -84,17 +40,7 @@ export function FilterButtons(
     }
   };
 
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      const isLeftScrollable = container.scrollLeft >= 1;
-      const isRightScrollable = container.scrollLeft < container.scrollWidth - container.clientWidth - 1;
-      setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
-    }
-  }, [handleScrollButton]);
-
-  useEffect(() => {
-    const container = scrollContainerRef.current;
+  const handleScrollTarget = (container: any) => {
     let targetRight = scrollTarget.right;
     let targetLeft = scrollTarget.left;
     const cLeft = container.scrollLeft;
@@ -110,7 +56,34 @@ export function FilterButtons(
       }
     });
     setScrollTarget({ left: targetLeft, right: targetRight });
-  }, [handleScrollButton]);
+  };
+
+  const handleScrollable = (container: any) => {
+    const isLeftScrollable = container.scrollLeft >= 1;
+    const isRightScrollable = container.scrollLeft < container.scrollWidth - container.clientWidth - 1;
+    setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
+  };
+
+  const handleScroll = useCallback(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      handleScrollTarget(container);
+      handleScrollable(container);
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log('2');
+    const container = scrollContainerRef.current;
+    container.addEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
+  useEffect(() => {
+    console.log('1');
+    const container = scrollContainerRef.current;
+    handleScrollTarget(container);
+    handleScrollable(container);
+  }, [handleScroll]);
 
   return (
     <Tag className={styles.slots.container}>
@@ -140,13 +113,7 @@ export function FilterButtons(
         <ArrowRightIcon className={styles.slots.arrowIconRight} />
       </Button>
 
-      <div
-        className={styles.base}
-        {...props}
-        ref={scrollContainerRef}
-        onMouseEnter={() => handleHover(true)}
-        onMouseLeave={() => handleHover(false)}
-      >
+      <div className={styles.base} {...props} ref={scrollContainerRef}>
         {filterButtons.map((button, index) => (
           <Button
             className={styles.slots.filterButton}
@@ -158,6 +125,7 @@ export function FilterButtons(
             onClick={() => onClick(button.id)}
             key={button.id}
             soft={button.id !== selectedButton}
+            style={{ scrollbarWidth: 'thin' }}
             button-index={index}
             ref={element => (scrollElementRefs.current[index] = element)}
           >
