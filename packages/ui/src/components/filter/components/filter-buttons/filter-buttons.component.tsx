@@ -111,7 +111,17 @@ export function FilterButtons(
         <ArrowRightIcon className={styles.slots.arrowIconRight} />
       </Button>
 
-      <div className={styles.base} {...props} ref={scrollContainerRef}>
+      <div
+        className={styles.base}
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+          overflowX: 'scroll',
+          WebkitOverflowScrolling: 'touch',
+        }}
+        {...props}
+        ref={scrollContainerRef}
+      >
         {filterButtons.map((button, index) => (
           <Button
             className={styles.slots.filterButton}
@@ -123,7 +133,6 @@ export function FilterButtons(
             onClick={() => onClick(button.id)}
             key={button.id}
             soft={button.id !== selectedButton}
-            style={{ scrollbarWidth: 'thin' }}
             button-index={index}
             ref={element => (scrollElementRefs.current[index] = element)}
           >
