@@ -126,7 +126,7 @@ export function FilterButtons(
     <Tag className={styles.slots.container}>
       <Button
         style={{
-          // left: '0',
+          left: '0',
           background: 'linear-gradient(to left, transparent, white, white)',
           visibility: !isScrollable.left ? 'hidden' : 'visible',
         }}
@@ -139,7 +139,7 @@ export function FilterButtons(
 
       <Button
         style={{
-          // right: '0',
+          right: '0',
           background: 'linear-gradient(to right, transparent, white, white)',
           visibility: !isScrollable.right ? 'hidden' : 'visible',
         }}
@@ -156,7 +156,6 @@ export function FilterButtons(
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
           overflowX: 'scroll',
-          // WebkitOverflowScrolling: 'touch',
         }}
         {...props}
         ref={scrollContainerRef}
