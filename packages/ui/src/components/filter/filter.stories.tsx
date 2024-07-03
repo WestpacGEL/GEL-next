@@ -36,13 +36,14 @@ const meta: Meta = {
   tags: ['autodocs'],
   decorators: [
     story => (
-      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '320px' }}>{story()}</div>
+      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '50%' }}>{story()}</div>
     ),
   ],
   argTypes: {
     children: {
       description: '`Filter` Should contain `FilterInput` and `FilterButtons` components',
-      type: { name: 'other', value: 'ReactNode' },
+      /* TODO: change to more appropriate type for children argument */
+      type: 'string',
     },
     filterButtons: {
       description:
@@ -80,7 +81,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   decorators: [
     story => (
-      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '500px' }}>{story()}</div>
+      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '100%' }}>{story()}</div>
     ),
   ],
   args: {
@@ -142,6 +143,26 @@ export const ContentExceedingScreenWidth: Story = {
       {
         id: 'ten',
         text: 'Invoices',
+      },
+      {
+        id: 'eleven',
+        text: 'Loans',
+      },
+      {
+        id: 'twelve',
+        text: 'Interest',
+      },
+      {
+        id: 'thirteen',
+        text: 'Debit',
+      },
+      {
+        id: 'fourteen',
+        text: 'Credit Card',
+      },
+      {
+        id: 'fifteen',
+        text: 'Investment',
       },
     ],
   },

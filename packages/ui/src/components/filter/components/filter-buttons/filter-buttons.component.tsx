@@ -17,29 +17,52 @@ export function FilterButtons(
   const scrollContainerRef = useRef<any>();
   const [isScrollable, setIsScrollable] = useState({ left: false, right: false });
   const scrollElementRefs = useRef<any>(new Array(filterButtons.length));
-  const [scrollTarget, setScrollTarget] = useState({ left: 0, right: 4 });
+  const [scrollTarget, setScrollTarget] = useState({ left: -1, right: -1 });
 
+  const setScroll = (scrollBy: boolean, scroll: number, container: any) => {
+    if (scrollBy) {
+      container.scrollBy({
+        left: scroll,
+        behavior: 'smooth',
+      });
+    } else {
+      container.scrollTo({
+        left: scroll,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  /* eslint-disable sonarjs/cognitive-complexity */
   const handleScrollButton = (direction: string) => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
 
       let targetElement;
       let scrollX;
+      let scrollBy = true;
       if (direction === 'left') {
-        targetElement = scrollElementRefs.current[scrollTarget.left];
-        scrollX = targetElement.offsetLeft + targetElement.offsetWidth - container.offsetWidth + 20;
+        if (scrollTarget.left == -1) {
+          scrollX = -container.clientWidth;
+        } else {
+          scrollBy = false;
+          targetElement = scrollElementRefs.current[scrollTarget.left];
+          scrollX = targetElement.offsetLeft + targetElement.offsetWidth - container.offsetWidth + 20;
+        }
       } else {
-        targetElement = scrollElementRefs.current[scrollTarget.right];
-        scrollX = targetElement.offsetLeft - 20;
+        if (scrollTarget.right == -1) {
+          scrollX = container.clientWidth;
+        } else {
+          scrollBy = false;
+          targetElement = scrollElementRefs.current[scrollTarget.right];
+          scrollX = targetElement.offsetLeft - 20;
+        }
       }
-
-      container.scrollTo({
-        left: scrollX,
-        behavior: 'smooth',
-      });
+      setScroll(scrollBy, scrollX, container);
     }
   };
 
+  /* eslint-disable sonarjs/cognitive-complexity */
   const handleScrollTarget = (container: any) => {
     let targetRight = scrollTarget.right;
     let targetLeft = scrollTarget.left;
@@ -48,11 +71,26 @@ export function FilterButtons(
     scrollElementRefs.current.forEach((element: any, index: number) => {
       const eLeft = element.offsetLeft;
       const eRight = eLeft + element.clientWidth;
-      if (eLeft < cLeft && eRight > cLeft) {
+      if (eLeft <= cLeft && eRight >= cLeft) {
         targetLeft = index;
       }
-      if (eRight > cRight && eLeft < cRight) {
+      if (eRight >= cRight && eLeft <= cRight) {
         targetRight = index;
+      }
+      if ((eRight >= cRight && eLeft <= cLeft) || targetRight == targetLeft + 1) {
+        if (targetRight >= filterButtons.length - 1) {
+          targetRight = -1;
+        } else {
+          targetRight = targetRight + 1;
+        }
+        if (targetLeft <= 0) {
+          targetLeft = -1;
+        } else {
+          targetLeft = targetLeft - 1;
+        }
+      }
+      if (targetLeft == filterButtons.length - 1) {
+        targetLeft -= 1;
       }
     });
     setScrollTarget({ left: targetLeft, right: targetRight });
@@ -75,6 +113,7 @@ export function FilterButtons(
   useEffect(() => {
     const container = scrollContainerRef.current;
     container.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
   }, [handleScroll]);
 
   useEffect(() => {
@@ -87,7 +126,7 @@ export function FilterButtons(
     <Tag className={styles.slots.container}>
       <Button
         style={{
-          left: '0',
+          // left: '0',
           background: 'linear-gradient(to left, transparent, white, white)',
           visibility: !isScrollable.left ? 'hidden' : 'visible',
         }}
@@ -100,7 +139,7 @@ export function FilterButtons(
 
       <Button
         style={{
-          right: '0',
+          // right: '0',
           background: 'linear-gradient(to right, transparent, white, white)',
           visibility: !isScrollable.right ? 'hidden' : 'visible',
         }}
@@ -117,14 +156,14 @@ export function FilterButtons(
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
           overflowX: 'scroll',
-          WebkitOverflowScrolling: 'touch',
+          // WebkitOverflowScrolling: 'touch',
         }}
         {...props}
         ref={scrollContainerRef}
       >
         {filterButtons.map((button, index) => (
           <Button
-            className={styles.slots.filterButton}
+            className={className}
             aria-pressed={button.id === selectedButton}
             aria-description={generateAriaDescription(button.id, selectedButton, filterButtons.length, resultsFound)}
             aria-label={button.text}

@@ -8,5 +8,5 @@ export const styles = tv({
     arrowIconRight: 'absolute inset-x-1 -translate-y-2/4 text-hero opacity-100 hover:opacity-50',
     filterButton: 'scroll-mx-5',
   },
-  base: 'flex w-full gap-1 overflow-auto whitespace-nowrap touch-pan-x',
+  base: 'flex w-full touch-pan-x gap-1 overflow-x-auto whitespace-nowrap',
 });
