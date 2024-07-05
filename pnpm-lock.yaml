@@ -15724,7 +15724,7 @@ snapshots:
 
   aria-hidden@1.2.3:
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   aria-hidden@1.2.4:
     dependencies:

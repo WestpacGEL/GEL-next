@@ -31,5 +31,9 @@
   },
   "peerDependencies": {
     "@types/node": "*"
+  },
+  "overrides": {
+    "micromatch": "4.0.6",
+    "braces": "3.0.3"
   }
 }
