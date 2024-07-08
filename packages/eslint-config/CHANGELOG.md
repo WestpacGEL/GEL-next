@@ -1,5 +1,11 @@
 # @westpac/eslint-config
 
+## 0.2.2
+
+### Patch Changes
+
+- b4d8f21e: Snyk fixes
+
 ## 0.2.1
 
 ### Patch Changes

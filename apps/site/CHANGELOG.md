@@ -1,5 +1,16 @@
 # site
 
+## 0.2.0
+
+### Minor Changes
+
+- b4d8f21e: Snyk fixes
+
+### Patch Changes
+
+- Updated dependencies [b4d8f21e]
+  - @westpac/ui@0.24.1
+
 ## 0.1.12
 
 ### Patch Changes
