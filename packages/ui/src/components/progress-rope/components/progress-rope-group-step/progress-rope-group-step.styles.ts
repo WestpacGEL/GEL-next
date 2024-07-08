@@ -6,7 +6,7 @@ export const styles = tv(
       base: '',
       circle: 'relative z-10 h-[14px] w-[14px] border-2 bg-white transition-colors',
       circleWrapper:
-        'typography-body-9 relative flex w-full cursor-pointer items-center gap-2 pb-[1.625rem] pt-1 leading-[1.428571429] transition-colors ',
+        'typography-body-9 relative flex w-full cursor-pointer items-center gap-2 pb-[1.625rem] pt-1 leading-loose transition-colors ',
       stepsWrapper: 'relative transition-all',
     },
     variants: {

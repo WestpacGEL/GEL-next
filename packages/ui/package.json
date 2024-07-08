@@ -260,7 +260,7 @@
     "chokidar": "^3.5.3",
     "colorjs.io": "~0.4.5",
     "cross-env": "~7.0.3",
-    "eslint": "^7.32.0",
+    "eslint": "^8.56.0",
     "eslint-plugin-storybook": "~0.6.15",
     "glob": "~10.3.3",
     "jsdom": "^22.0.0",

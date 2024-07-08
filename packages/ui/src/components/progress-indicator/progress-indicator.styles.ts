@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'box-border inline-block animate-[spin_0.7s_linear_infinite] rounded-full border border-y-[1px] border-l-[1px] border-r-0 border-t-[transparent]',
+    base: 'box-border inline-block animate-[spin_0.7s_linear_infinite] rounded-full border border-r-0 border-t-[transparent]',
     variants: {
       size: {
         xsmall: 'h-2 w-2',
