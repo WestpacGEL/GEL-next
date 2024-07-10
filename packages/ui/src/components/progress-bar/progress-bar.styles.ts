@@ -10,8 +10,8 @@ export const styles = tv(
     variants: {
       look: {
         default: {
-          base: 'h-4 rounded-[1.5rem]',
-          innerBar: ' rounded-[1.5rem]',
+          base: 'h-4 rounded-3xl',
+          innerBar: ' rounded-3xl',
         },
         skinny: {
           base: 'h-[0.625rem] rounded-[0.625rem]',

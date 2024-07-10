@@ -46,7 +46,7 @@ export function BrandSelect(props: BrandSelectProps) {
       >
         <div className={styles.textWrapper()}>
           <div className="flex w-full items-end gap-[0.625rem] overflow-hidden text-ellipsis py-2" {...valueProps}>
-            <GELLogo className="w-[2.8125rem] shrink-0" />
+            <GELLogo className="w-7.5 shrink-0" />
             <span className="mb-[-0.2rem] shrink truncate leading-4">Design System</span>
           </div>
         </div>

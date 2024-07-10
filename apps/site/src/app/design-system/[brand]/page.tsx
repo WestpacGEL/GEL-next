@@ -119,7 +119,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
       </Section>
       <Section background>
         <SectionHeading>Downloads &amp; links</SectionHeading>
-        <Grid className="mb-5 sm:mb-[3.375rem]">
+        <Grid className="mb-5 sm:mb-9">
           <SectionItem className="flex flex-col gap-2">
             <p className="leading-[2]">Design on-brand with greater efficiency and accuracy using the Sketch UI Kit.</p>
             <p className="leading-[2]">Visit GitHub to follow Westpac GEL Design System code updates and log issues.</p>
@@ -132,7 +132,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
               <li className="border-b border-border">
                 <Link
                   href="/articles/figma-libraries"
-                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-[4.5rem] sm:py-[0.5625rem] sm:pr-[0.5625rem]"
+                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-[4.5rem] sm:py-1.5 sm:pr-1.5"
                 >
                   Figma UI Kits
                   <FigmaLogo />
@@ -147,7 +147,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
                 <Link
                   href="https://github.com/WestpacGEL/GEL-next/"
                   target="_blank"
-                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-[4.5rem] sm:py-[0.5625rem] sm:pr-[0.5625rem]"
+                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-[4.5rem] sm:py-1.5 sm:pr-1.5"
                 >
                   Follow Westpac GEL on GitHub
                   <GithubIcon size={{ initial: 'large', lg: 'xlarge' }} color="text" />
