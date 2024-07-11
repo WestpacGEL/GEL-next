@@ -2,6 +2,7 @@ name: Brackets
 description: Brackets are used to provide extra information.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Brackets
