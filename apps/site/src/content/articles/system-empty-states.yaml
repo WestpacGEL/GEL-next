@@ -2,6 +2,7 @@ name: Empty states
 thumbnail:
   src: >-
     https://res.cloudinary.com/westpac-gel/image/upload/v1695685237/Empty_states_wstqow
+  alt: Simplified image of Empty states pattern.
   height: 1464
   width: 2400
 image:
