@@ -2,9 +2,14 @@ name: Empty states
 description: >-
   Empty states are moments in a person’s experience with a product where there’s
   nothing to display.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Empty states
       slug: empty-states
     noTitle: true
 accessibility: []
+relatedComponents: []
+code: []
