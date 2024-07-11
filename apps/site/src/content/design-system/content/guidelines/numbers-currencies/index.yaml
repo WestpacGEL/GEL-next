@@ -2,6 +2,7 @@ name: Numbers & currencies
 description: A guide to writing numbers and currencies.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Numbers and currencies
