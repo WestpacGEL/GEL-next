@@ -1,7 +1,8 @@
 name: Contact details
-author: Digital Experience
+thumbnail: {}
 image:
   src: >-
     https://res.cloudinary.com/westpac-gel/image/upload/v1695948745/cln3w3dmk002evd8ie8zubqoj.png
   height: 1080
   width: 1920
+author: Digital Experience
