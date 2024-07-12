@@ -2,6 +2,7 @@ name: Navigation
 description: Navigation is used to help a person find content on a website or app.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Navigation
