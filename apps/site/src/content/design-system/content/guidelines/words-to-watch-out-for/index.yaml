@@ -5,6 +5,10 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
+      name: Page contents
+      slug: page-contents
+    noTitle: false
+  - title:
       name: A
       slug: a
     noTitle: false
