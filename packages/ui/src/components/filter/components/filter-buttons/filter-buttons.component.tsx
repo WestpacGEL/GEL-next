@@ -130,6 +130,7 @@ export function FilterButtons(
           background: 'linear-gradient(to left, transparent, white, white)',
           visibility: !isScrollable.left ? 'hidden' : 'visible',
         }}
+        aria-hidden="true"
         className={styles.slots.scrollButton}
         onClick={() => handleScrollButton('left')}
         disabled={!isScrollable.left}
@@ -143,6 +144,7 @@ export function FilterButtons(
           background: 'linear-gradient(to right, transparent, white, white)',
           visibility: !isScrollable.right ? 'hidden' : 'visible',
         }}
+        aria-hidden="true"
         className={styles.slots.scrollButton}
         onClick={() => handleScrollButton('right')}
         disabled={!isScrollable.right}
@@ -150,7 +152,7 @@ export function FilterButtons(
         <ArrowRightIcon className={styles.slots.arrowIconRight} />
       </Button>
 
-      <div
+      <ul
         className={styles.base}
         style={{
           scrollbarWidth: 'none',
@@ -159,13 +161,12 @@ export function FilterButtons(
         }}
         {...props}
         ref={scrollContainerRef}
+        role="list"
       >
         {filterButtons.map((button, index) => (
           <Button
             className={className}
             aria-pressed={button.id === selectedButton}
-            aria-description={generateAriaDescription(button.id, selectedButton, filterButtons.length, resultsFound)}
-            aria-label={button.text}
             look="hero"
             size="small"
             onClick={() => onClick(button.id)}
@@ -177,7 +178,7 @@ export function FilterButtons(
             {button.text}
           </Button>
         ))}
-      </div>
+      </ul>
     </Tag>
   );
 }
