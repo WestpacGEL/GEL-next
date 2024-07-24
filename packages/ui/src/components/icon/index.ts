@@ -61,6 +61,8 @@ export { DownloadIcon } from './components/download-icon.js';
 export { DragIcon } from './components/drag-icon.js';
 export { DropDownIcon } from './components/drop-down-icon.js';
 export { DropUpIcon } from './components/drop-up-icon.js';
+export { DropLeftIcon } from './components/drop-left-icon.js';
+export { DropRightIcon } from './components/drop-right-icon.js';
 export { DropboxIcon } from './components/dropbox-icon.js';
 export { EditIcon } from './components/edit-icon.js';
 export { EducationIcon } from './components/education-icon.js';

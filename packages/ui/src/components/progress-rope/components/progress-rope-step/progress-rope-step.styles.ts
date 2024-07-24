@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'typography-body-10 relative flex w-full cursor-pointer items-center gap-2 pb-[0.875rem] pt-[0.5rem] leading-[1.428571429] transition-colors',
+      base: 'typography-body-10 relative flex w-full cursor-pointer items-center gap-2 pb-[0.875rem] pt-[0.5rem] leading-loose transition-colors',
       circle: 'relative z-10 bg-white transition-colors',
     },
     variants: {
