@@ -44,6 +44,8 @@ const meta: Meta<typeof FlexiCell> = {
   },
 };
 
+const imgString = 'https://res.cloudinary.com/westpac-gel/image/upload/v1721621971/house-demo-image_e1ycip.png';
+
 export default meta;
 
 /**
@@ -60,8 +62,8 @@ export const SimpleTileVerticalStack = () => {
   return (
     <>
       {new Array(3).fill(null).map((_, index) => (
-        <FlexiCell key={index} tag="a" href="#" withBorder withArrow size={{ initial: 'default', sm: 'large' }}>
-          <div className="flex flex-row gap-2 md:flex-col">
+        <FlexiCell key={index} tag="a" href="#" withBorder withArrow size={{ initial: 'default', md: 'large' }}>
+          <div className="flex flex-col gap-2 md:flex-row">
             <GiftIcon look="outlined" color="hero" />
             <div className="flex flex-col gap-1">
               <FlexiCellLabel tag="h3">Label</FlexiCellLabel>
@@ -95,16 +97,13 @@ export const SimpleTileHorizontalLayout = () => {
               tag="a"
               href="#"
               withBorder
-              size={{ initial: 'default', sm: 'large' }}
+              size={{ initial: 'default', md: 'large' }}
             >
               <div>
                 <div className="flex justify-end">
                   <GiftIcon look="outlined" color="hero" />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <FlexiCellHint tag="h4" className="typography-body-11 mb-2">
-                    SUB-LABEL
-                  </FlexiCellHint>
                   <FlexiCellLabel tag="h3" className="mb-1">
                     Title
                   </FlexiCellLabel>
@@ -134,15 +133,14 @@ export const EdgeToEdgeImageTileVerticalStack = () => {
   return (
     <>
       {new Array(3).fill(null).map((_, index) => (
-        <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{ initial: 'default', sm: 'large' }}>
+        <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{ initial: 'default', md: 'large' }}>
           <div className="flex gap-2">
             <img
-              src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={imgString}
               alt="background"
-              className="-my-2 -ml-2 block w-[10rem] object-cover sm:-my-3 sm:-ml-3"
+              className="-my-2 -ml-2 block w-[10rem] object-cover md:-my-3 md:-ml-3"
             />
             <FlexiCellBody>
-              <FlexiCellHint className="mb-2">SUB-LABEL</FlexiCellHint>
               <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
               <FlexiCellHint>Description</FlexiCellHint>
               <div className="mt-3 flex gap-1">
@@ -174,15 +172,10 @@ export const PaddedImageTileVerticalStack = () => {
   return (
     <>
       {new Array(3).fill(null).map((_, index) => (
-        <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{ initial: 'default', sm: 'large' }}>
+        <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{ initial: 'default', md: 'large' }}>
           <div className="flex gap-2">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="background"
-              className="block w-[8rem] object-cover"
-            />
+            <img src={imgString} alt="background" className="block w-[8rem] object-cover" />
             <FlexiCellBody>
-              <FlexiCellHint className="mb-2">SUB-LABEL</FlexiCellHint>
               <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
               <FlexiCellHint>Description</FlexiCellHint>
               <div className="mt-3 flex gap-1">
@@ -216,17 +209,20 @@ export const EdgeToEdgeImageTileHorizontalLayout = () => {
       <Grid>
         {new Array(3).fill(null).map((_, index) => (
           <GridItem key={index} span={4}>
-            <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{ initial: 'default', sm: 'large' }}>
+            <FlexiCell
+              className="overflow-hidden"
+              body={false}
+              key={index}
+              tag="a"
+              href="#"
+              withBorder
+              size={{ initial: 'default', md: 'large' }}
+            >
               <div className="flex flex-col gap-2">
-                <div className="-mx-2 -mt-2 sm:-mx-3 sm:-mt-3">
-                  <img
-                    src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="background"
-                    className="block h-[8.75rem] w-full object-cover"
-                  />
+                <div className="-mx-2 -mt-2 md:-mx-3 md:-mt-3">
+                  <img src={imgString} alt="background" className="block h-[8.75rem] w-full object-cover" />
                 </div>
                 <FlexiCellBody>
-                  <FlexiCellHint className="mb-2">SUB-LABEL</FlexiCellHint>
                   <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
                   <FlexiCellHint>Description</FlexiCellHint>
                   <div className="mt-3 flex gap-1">
@@ -262,14 +258,9 @@ export const PaddedImageTileHorizontalLayout = () => {
       <Grid>
         {new Array(3).fill(null).map((_, index) => (
           <GridItem key={index} span={4}>
-            <FlexiCell body tag="a" href="#" withBorder size={{ initial: 'default', sm: 'large' }}>
+            <FlexiCell body tag="a" href="#" withBorder size={{ initial: 'default', md: 'large' }}>
               <div className="flex flex-col gap-2">
-                <img
-                  src="https://plus.unsplash.com/premium_photo-1681400202759-8b5f70e3c8a4?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="background"
-                  className="block h-[8.75rem] w-full object-cover"
-                />
-                <FlexiCellHint className="mb-2">SUB-LABEL</FlexiCellHint>
+                <img src={imgString} alt="background" className="block h-[8.75rem] w-full object-cover" />
                 <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
                 <FlexiCellHint>Description</FlexiCellHint>
                 <div className="mt-3 flex gap-1">

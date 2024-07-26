@@ -1,6 +1,19 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
-import { ArrowRightIcon, BpayIcon, GiftIcon, InfoIcon, MapPinIcon, PadlockIcon, TickIcon } from '../icon/index.js';
+import {
+  ArrowRightIcon,
+  BpayIcon,
+  BusinessPersonIcon,
+  EducationIcon,
+  EmailIcon,
+  GiftIcon,
+  HouseIcon,
+  IdCardIcon,
+  InfoIcon,
+  MapPinIcon,
+  PadlockIcon,
+  TickIcon,
+} from '../icon/index.js';
 import { Badge, ErrorMessage } from '../index.js';
 import { VisaBlueSymbol } from '../symbol/index.js';
 
@@ -51,8 +64,6 @@ const meta: Meta<typeof FlexiCell> = {
 
 export default meta;
 type Story = StoryObj<unknown>;
-
-const responsiveString = ' (Responsive)';
 
 /**
  * > Default usage example
@@ -145,7 +156,7 @@ export const AccountLists: Story = {
                     <FlexiCellHint>available $9,999</FlexiCellHint>
                   </FlexiCellAdornment>
                 }
-                size={{ initial: 'default', sm: 'large' }}
+                size={{ initial: 'default', md: 'large' }}
               >
                 <FlexiCellLabel className="font-normal" tag="h4">
                   {name}
@@ -238,7 +249,7 @@ export const ForeignCurrencyPayeeList: Story = {
                   before={
                     <FlexiCellAdornment>
                       <svg
-                        className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                        className="h-4 w-4"
                         viewBox="0 0 640 480"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -257,9 +268,9 @@ export const ForeignCurrencyPayeeList: Story = {
                       </FlexiCellLabel>
                     </FlexiCellAdornment>
                   }
-                  size={{ initial: 'default', sm: 'large' }}
+                  size={{ initial: 'default', md: 'large' }}
                 >
-                  <FlexiCellLabel tag="h4">{name + responsiveString}</FlexiCellLabel>
+                  <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
                   <FlexiCellHint className="-mb-1">{number}</FlexiCellHint>
                   <FlexiCellHint className="-mb-1">{bank}</FlexiCellHint>
                   <FlexiCellHint>{code}</FlexiCellHint>
@@ -285,6 +296,7 @@ export const ForeignCurrencyPayeeList: Story = {
                     </FlexiCellAdornment>
                   }
                   after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
+                  size={{ initial: 'default', md: 'large' }}
                 >
                   <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
                   <FlexiCellHint className="-mb-1">{number}</FlexiCellHint>
@@ -339,7 +351,7 @@ export const ListItems: Story = {
           before={
             <FlexiCellAdornment>
               <svg
-                className="max-sm:h-4 max-sm:w-4 sm:h-6 sm:w-6"
+                className="max-md:h-4 max-md:w-4 md:h-6 md:w-6"
                 viewBox="0 0 640 480"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -354,9 +366,9 @@ export const ListItems: Story = {
           tag="a"
           href="#"
           withBorder
-          size={{ initial: 'default', sm: 'large' }}
+          size={{ initial: 'default', md: 'large' }}
         >
-          <FlexiCellLabel className="max-sm:mt-0.5 sm:mt-1" tag="h3">
+          <FlexiCellLabel className="max-md:mt-0.5 md:mt-1" tag="h3">
             Responsive List Item With Responsive Flag
           </FlexiCellLabel>
         </FlexiCell>
@@ -448,11 +460,10 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <BpayIcon color="hero" />
+                      <FlexiCellCircle className="bg-muted text-white h-6 w-6">{initials}</FlexiCellCircle>
                     ) : (
-                      <FlexiCellCircle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
-                        {initials}
-                      </FlexiCellCircle>
+                      // <BpayIcon color="hero" />
+                      <FlexiCellCircle className="bg-muted text-white h-6 w-6">{initials}</FlexiCellCircle>
                     )
                   }
                   after={
@@ -462,9 +473,9 @@ export const PayeeList: Story = {
                       </FlexiCellLabel>
                     </FlexiCellAdornment>
                   }
-                  size={{ initial: 'default', sm: 'large' }}
+                  size={{ initial: 'default', md: 'large' }}
                 >
-                  <FlexiCellLabel tag="h4">{name + responsiveString}</FlexiCellLabel>
+                  <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
                   <FlexiCellHint>{number}</FlexiCellHint>
                 </FlexiCell>
               ) : (
@@ -474,14 +485,15 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <BpayIcon color="hero" />
-                    ) : (
-                      <FlexiCellCircle className="bg-muted text-white max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6">
-                        {initials}
+                      <FlexiCellCircle className="bg-muted text-white border-solid border-black h-6 w-6">
+                        <BpayIcon look="outlined" className="text-white rounded-full h-4 w-4 text-xs" />
                       </FlexiCellCircle>
+                    ) : (
+                      <FlexiCellCircle className="bg-muted text-white h-6 w-6">{initials}</FlexiCellCircle>
                     )
                   }
                   after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
+                  size={{ initial: 'default', md: 'large' }}
                 >
                   <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
                   <FlexiCellHint>{number}</FlexiCellHint>
@@ -517,8 +529,8 @@ export const StatusTiles = () => {
         href="#"
         withBorder
         before={
-          <FlexiCellAdornment className="max-sm:hidden">
-            <PadlockIcon look="outlined" color="hero" />
+          <FlexiCellAdornment className="max-md:hidden">
+            <IdCardIcon look="outlined" color="borderDark" />
           </FlexiCellAdornment>
         }
         after={
@@ -529,9 +541,9 @@ export const StatusTiles = () => {
             <TickIcon color="success" />
           </>
         }
-        size={{ initial: 'default', sm: 'large' }}
+        size={{ initial: 'default', md: 'large' }}
       >
-        <PadlockIcon className="mb-1 sm:hidden" look="outlined" color="hero" />
+        <IdCardIcon className="mb-1 md:hidden" look="outlined" color="borderDark" />
         <FlexiCellLabel className="text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
@@ -545,8 +557,8 @@ export const StatusTiles = () => {
         href="#"
         withBorder
         before={
-          <FlexiCellAdornment className="max-sm:hidden">
-            <PadlockIcon look="outlined" color="hero" />
+          <FlexiCellAdornment className="max-md:hidden">
+            <EducationIcon look="outlined" color="borderDark" />
           </FlexiCellAdornment>
         }
         after={
@@ -557,9 +569,9 @@ export const StatusTiles = () => {
             <ArrowRightIcon color="primary" />
           </>
         }
-        size={{ initial: 'default', sm: 'large' }}
+        size={{ initial: 'default', md: 'large' }}
       >
-        <PadlockIcon className="mb-1 sm:hidden" look="outlined" color="hero" />
+        <EducationIcon className="mb-1 md:hidden" look="outlined" color="borderDark" />
         <FlexiCellLabel className="text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
@@ -573,8 +585,8 @@ export const StatusTiles = () => {
         href="#"
         withBorder
         before={
-          <FlexiCellAdornment className="max-sm:hidden">
-            <PadlockIcon look="outlined" color="hero" />
+          <FlexiCellAdornment className="max-md:hidden">
+            <EmailIcon look="outlined" color="borderDark" />
           </FlexiCellAdornment>
         }
         after={
@@ -585,9 +597,9 @@ export const StatusTiles = () => {
             <ArrowRightIcon color="primary" />
           </>
         }
-        size={{ initial: 'default', sm: 'large' }}
+        size={{ initial: 'default', md: 'large' }}
       >
-        <PadlockIcon className="mb-1 sm:hidden" look="outlined" color="hero" />
+        <EmailIcon className="mb-1 md:hidden" look="outlined" color="borderDark" />
         <FlexiCellLabel className="text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
@@ -602,8 +614,8 @@ export const StatusTiles = () => {
         href="#"
         withBorder
         before={
-          <FlexiCellAdornment className="max-sm:hidden">
-            <PadlockIcon look="outlined" color="hero" />
+          <FlexiCellAdornment className="max-md:hidden">
+            <HouseIcon look="outlined" color="borderDark" />
           </FlexiCellAdornment>
         }
         after={
@@ -614,9 +626,9 @@ export const StatusTiles = () => {
             <PadlockIcon look="outlined" color="hero" />
           </>
         }
-        size={{ initial: 'default', sm: 'large' }}
+        size={{ initial: 'default', md: 'large' }}
       >
-        <PadlockIcon className="mb-1 sm:hidden" look="outlined" color="hero" />
+        <HouseIcon className="mb-1 md:hidden" look="outlined" color="borderDark" />
         <FlexiCellLabel className="text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
