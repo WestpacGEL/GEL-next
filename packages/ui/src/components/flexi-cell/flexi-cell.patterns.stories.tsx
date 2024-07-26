@@ -460,9 +460,10 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="bg-muted text-white h-6 w-6">{initials}</FlexiCellCircle>
+                      <FlexiCellCircle className="bg-muted text-white border-solid border-black h-6 w-6">
+                        <BpayIcon look="outlined" className="text-white rounded-full h-4 w-4 text-xs" />
+                      </FlexiCellCircle>
                     ) : (
-                      // <BpayIcon color="hero" />
                       <FlexiCellCircle className="bg-muted text-white h-6 w-6">{initials}</FlexiCellCircle>
                     )
                   }
