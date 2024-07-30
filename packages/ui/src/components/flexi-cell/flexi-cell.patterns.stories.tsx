@@ -3,19 +3,15 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import {
   ArrowRightIcon,
   BpayIcon,
-  BusinessPersonIcon,
   EducationIcon,
   EmailIcon,
-  GiftIcon,
   HouseIcon,
   IdCardIcon,
   InfoIcon,
-  MapPinIcon,
   PadlockIcon,
   TickIcon,
 } from '../icon/index.js';
 import { Badge, ErrorMessage } from '../index.js';
-import { VisaBlueSymbol } from '../symbol/index.js';
 
 import { FlexiCellAdornment } from './components/flexi-cell-adornment/flexi-cell-adornment.component.js';
 import { FlexiCellButton } from './components/flexi-cell-button/flexi-cell-button.component.js';
@@ -239,7 +235,7 @@ export const ForeignCurrencyPayeeList: Story = {
       <>
         {MOCK_FOREIGNPAYEES.map(({ title, id, payees }) => (
           <div key={id}>
-            <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">{title}</h3>
+            <h3 className="mb-3 border-b border-border pb-1 font-normal">{title}</h3>
             {payees.map(({ name, number, paidAt, bank, code }) =>
               paidAt ? (
                 <FlexiCell
@@ -451,7 +447,7 @@ export const PayeeList: Story = {
       <>
         {MOCK_PAYEES.map(({ title, id, payees }) => (
           <div key={id}>
-            <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">{title}</h3>
+            <h3 className="mb-3 border-b border-border pb-1 font-normal">{title}</h3>
             {payees.map(({ name, initials, bpay, number, paidAt }) =>
               paidAt ? (
                 <FlexiCell
@@ -460,11 +456,11 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="bg-muted text-white border-solid border-black h-6 w-6">
-                        <BpayIcon look="outlined" className="text-white rounded-full h-4 w-4 text-xs" />
+                      <FlexiCellCircle className="h-5 w-5 border-solid bg-muted text-muted">
+                        <BpayIcon look="filled" className="h-4 w-4 rounded-full bg-muted text-sm text-white" />
                       </FlexiCellCircle>
                     ) : (
-                      <FlexiCellCircle className="bg-muted text-white h-6 w-6">{initials}</FlexiCellCircle>
+                      <FlexiCellCircle className="h-5 w-5 bg-muted text-white">{initials}</FlexiCellCircle>
                     )
                   }
                   after={
@@ -486,11 +482,11 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="bg-muted text-white border-solid border-black h-6 w-6">
-                        <BpayIcon look="outlined" className="text-white rounded-full h-4 w-4 text-xs" />
+                      <FlexiCellCircle className="h-5 w-5 border-solid bg-muted text-muted">
+                        <BpayIcon look="filled" className="h-4 w-4 rounded-full bg-muted text-sm text-white" />
                       </FlexiCellCircle>
                     ) : (
-                      <FlexiCellCircle className="bg-muted text-white h-6 w-6">{initials}</FlexiCellCircle>
+                      <FlexiCellCircle className="h-5 w-5 bg-muted text-white">{initials}</FlexiCellCircle>
                     )
                   }
                   after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
