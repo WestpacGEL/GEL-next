@@ -4,6 +4,7 @@ description: >-
   series of items.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Bullet points and numbered lists

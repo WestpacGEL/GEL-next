@@ -2,6 +2,7 @@ name: Hyperlinks & email addresses
 description: A guide to using hyperlinks and email addresses.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Hyperlinks and email addresses
