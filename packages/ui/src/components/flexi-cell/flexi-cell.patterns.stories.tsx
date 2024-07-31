@@ -527,7 +527,7 @@ export const StatusTiles = () => {
         withBorder
         before={
           <FlexiCellAdornment className="max-md:hidden">
-            <IdCardIcon look="outlined" color="borderDark" />
+            <IdCardIcon look="outlined" color="hero" />
           </FlexiCellAdornment>
         }
         after={
@@ -540,7 +540,7 @@ export const StatusTiles = () => {
         }
         size={{ initial: 'default', md: 'large' }}
       >
-        <IdCardIcon className="mb-1 md:hidden" look="outlined" color="borderDark" />
+        <IdCardIcon className="mb-1 md:hidden" look="outlined" color="hero" />
         <FlexiCellLabel className="text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
@@ -555,7 +555,7 @@ export const StatusTiles = () => {
         withBorder
         before={
           <FlexiCellAdornment className="max-md:hidden">
-            <EducationIcon look="outlined" color="borderDark" />
+            <EducationIcon look="outlined" color="hero" />
           </FlexiCellAdornment>
         }
         after={
@@ -568,7 +568,7 @@ export const StatusTiles = () => {
         }
         size={{ initial: 'default', md: 'large' }}
       >
-        <EducationIcon className="mb-1 md:hidden" look="outlined" color="borderDark" />
+        <EducationIcon className="mb-1 md:hidden" look="outlined" color="hero" />
         <FlexiCellLabel className="text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
@@ -583,7 +583,7 @@ export const StatusTiles = () => {
         withBorder
         before={
           <FlexiCellAdornment className="max-md:hidden">
-            <EmailIcon look="outlined" color="borderDark" />
+            <EmailIcon look="outlined" color="hero" />
           </FlexiCellAdornment>
         }
         after={
@@ -596,7 +596,7 @@ export const StatusTiles = () => {
         }
         size={{ initial: 'default', md: 'large' }}
       >
-        <EmailIcon className="mb-1 md:hidden" look="outlined" color="borderDark" />
+        <EmailIcon className="mb-1 md:hidden" look="outlined" color="hero" />
         <FlexiCellLabel className="text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
@@ -612,7 +612,7 @@ export const StatusTiles = () => {
         withBorder
         before={
           <FlexiCellAdornment className="max-md:hidden">
-            <HouseIcon look="outlined" color="borderDark" />
+            <HouseIcon look="outlined" color="hero" />
           </FlexiCellAdornment>
         }
         after={
@@ -620,12 +620,12 @@ export const StatusTiles = () => {
             <Badge className="h-fit w-fit" color="faint" soft>
               Locked
             </Badge>
-            <PadlockIcon look="outlined" color="hero" />
+            <PadlockIcon size="small" look="outlined" color="borderDark" />
           </>
         }
         size={{ initial: 'default', md: 'large' }}
       >
-        <HouseIcon className="mb-1 md:hidden" look="outlined" color="borderDark" />
+        <HouseIcon className="mb-1 md:hidden" look="outlined" color="hero" />
         <FlexiCellLabel className="text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
