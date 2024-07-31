@@ -456,8 +456,8 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="h-5 w-5 border-solid bg-muted text-muted">
-                        <BpayIcon look="filled" className="h-4 w-4 rounded-full bg-muted text-sm text-white" />
+                      <FlexiCellCircle className="h-5 w-5 bg-muted text-muted">
+                        <BpayIcon look="filled" className="h-3 w-3 rounded-full bg-muted text-xs text-white" />
                       </FlexiCellCircle>
                     ) : (
                       <FlexiCellCircle className="h-5 w-5 bg-muted text-white">{initials}</FlexiCellCircle>
@@ -482,8 +482,8 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="h-5 w-5 border-solid bg-muted text-muted">
-                        <BpayIcon look="filled" className="h-4 w-4 rounded-full bg-muted text-sm text-white" />
+                      <FlexiCellCircle className="h-5 w-5 bg-muted text-muted">
+                        <BpayIcon look="filled" className="h-3 w-3 rounded-full bg-muted text-xs text-white" />
                       </FlexiCellCircle>
                     ) : (
                       <FlexiCellCircle className="h-5 w-5 bg-muted text-white">{initials}</FlexiCellCircle>
