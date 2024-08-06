@@ -3,6 +3,7 @@ GEL can be installed using a package manager like `npm`, `yarn` or `pnpm`.
 ```html
 <StaticCode language="js" code={`npm i @westpac/ui`} />
 ```
+
 If you are using a workspace update `tailwind.config.js` to use the `withGEL` helper exported by `@westpac/ui` as follows.
 
 ```html
@@ -63,4 +64,13 @@ const config = withGEL({
     },
 });
 `} />
+```
+
+Ensure tailwind directives are added to your main css file
+
+```html
+<StaticCode language="css" code={`
+@tailwind base; 
+@tailwind components; 
+@tailwind utilities;`} />
 ```
