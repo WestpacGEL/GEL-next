@@ -42,6 +42,17 @@ const config = withGEL({
 export default config;
 ```
 
+Also you have to create a `postcss.config.js` on the root of your application as follows.
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
 For applications using `brand fonts` add the following options config to the `withGEL` helper.
 
 ```ts
