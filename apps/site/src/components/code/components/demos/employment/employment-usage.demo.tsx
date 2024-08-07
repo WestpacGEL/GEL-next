@@ -1,4 +1,4 @@
-import { Alert, ErrorMessage, Field, Form, FormGroup, FormLabel, Input, Select, SelectProps } from '@westpac/ui';
+import { Alert, ErrorMessage, Field, FormGroup, FormLabel, Input, Select, SelectProps } from '@westpac/ui';
 import { Fragment, HTMLAttributes, useState } from 'react';
 
 import { EmploymentSelect, IndustrySelect } from './employment.demo';

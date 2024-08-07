@@ -8,7 +8,7 @@ module.exports = {
     jest: true,
   },
   parserOptions: { ecmaVersion: 9, sourceType: 'module' },
-  extends: ['turbo', 'eslint:recommended', 'plugin:prettier/recommended', 'plugin:tailwindcss/recommended'],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:tailwindcss/recommended'],
   plugins: ['import', 'prettier'],
   ignorePatterns: ['node_modules/*', 'dist/*'],
   rules: {
