@@ -1,5 +1,8 @@
 name: Words to watch out for
 description: A guide to words and terms that could cause confusion.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: A
@@ -63,3 +66,4 @@ design:
     noTitle: false
 accessibility: []
 relatedComponents: []
+code: []

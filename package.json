@@ -36,10 +36,17 @@
     "turbo": "^1.9.0"
   },
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=20"
   },
-  "packageManager": "pnpm@8.2.0",
+  "packageManager": "pnpm@9.1.2",
   "dependencies": {
     "typescript": "~5.1.6"
+  },
+  "pnpm": {
+    "overrides": {
+      "braces": "3.0.3",
+      "micromatch": "4.0.6",
+      "json5": "1.0.2"
+    }
   }
 }

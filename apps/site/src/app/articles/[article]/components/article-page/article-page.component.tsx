@@ -1,3 +1,5 @@
+'use client';
+
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Grid, GridContainer } from '@westpac/ui';
 import Image from 'next/image';

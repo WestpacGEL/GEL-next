@@ -1,5 +1,17 @@
 # @westpac/ui
 
+## 0.24.1
+
+### Patch Changes
+
+- b4d8f21e: Snyk fixes
+
+## 0.24.0
+
+### Minor Changes
+
+- 4522a5c8: Added left and right directions for the drop arrow icon in ui.
+
 ## 0.23.0
 
 ### Minor Changes

@@ -1,0 +1,24 @@
+name: Digital writing approach
+description: >-
+  When writing for digital, we want our customers to easily understand our
+  messaging and successfully complete their task online in the quickest and
+  simplest way possible.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Why our words matter
+      slug: why-our-words-matter
+    noTitle: false
+  - title:
+      name: Principles
+      slug: principles
+    noTitle: false
+  - title:
+      name: Writing tips
+      slug: writing-tips
+    noTitle: false
+accessibility: []
+relatedComponents: []
+code: []

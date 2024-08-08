@@ -2,9 +2,12 @@ CTAs should be short and action-orientated – using buttons and hyperlinked tex
 
 For example:
 
-{% designSystemBodyImage alt="Two examples of calls to action that are short and action oriented." src="https://res.cloudinary.com/westpac-gel/image/upload/v1667894142/cla7x3vj6001ef58icgubfckf.png" title="Use short, action oriented calls to action" /%}
+{% designSystemBodyImage
+   title="Use short, action-oriented calls to action"
+   src="https://res.cloudinary.com/westpac-gel/image/upload/v1667894142/cla7x3vj6001ef58icgubfckf.png"
+   alt="Two examples of calls to action that are short and action-oriented." /%}
 
-_Note: No full stops in CTAs but fine to use question marks._
+*Note: No full stops in CTAs but fine to use question marks.*
 
 ---
 
@@ -12,27 +15,24 @@ Hyperlinks must be underlined unless they’re standalone text links, in which c
 
 ```jsx
 <div>
-  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <h4 className="typography-body-10 text-muted mb-3">For example:</h4>
   <Link href="#" iconBefore={ArrowRightIcon}>
     Register for Online Banking
   </Link>
 </div>
 ```
 
-Instead of using generic CTAs such as ‘Find out more’ and ‘Learn more’ – try to be contextual for accessibility and best practice (SEO & UX).
-
-However, when space is limited, try CTAs such as ‘Tell me more’ or ‘Show me how’ instead of ‘Find out more’ and ‘Learn more’.
+Contextual links are best for accessibility and best practice (SEO & UX). Try to avoid using generic CTAs such as ‘Find out more’ and ‘Learn more’.
 
 ```jsx
 <div>
-  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <h4 className="typography-body-10 text-muted mb-3">For example:</h4>
   <p className="typography-body-10  mb-2 ml-3">Find out more about balance transfers</p>
   <p className="typography-body-10  mb-6 ml-3">
-    To learn more about whether Online Banking is right for you, see our Online Banking Terms & Conditions for more
-    information.
+To learn more about whether Online Banking is right for you, check out our Online Banking Terms & Conditions for more information.
   </p>
   <p className="typography-body-10 mb-2 ml-4">
-    <span className="text-success font-bold">Do:</span> Submit application
+    <span className="text-success font-bold">Do:</span> Return to Online Banking
   </p>
   <p className="typography-body-10 ml-4">
     <span className="text-danger font-bold">Don't:</span> Finish
@@ -42,35 +42,53 @@ However, when space is limited, try CTAs such as ‘Tell me more’ or ‘Show m
 
 ---
 
-Try to avoid overt navigation instructions, e.g. ‘Click the link below to start the survey’ or ‘call the number below’
+CTAs with specific descriptions are more accessible, SEO-friendly, and contribute to a better user experience. So, instead of saying ‘Find out more’ or ‘Learn more’, try using CTAs like ‘Explore accounts’ and ‘Discover EFTPOS’
 
 ```jsx
 <div>
-  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
-  <p className="typography-body-10  mb-2 ml-3">
-    Use a CTA button or hyperlink that says{' '}
-    <Link href="#" type="inline">
-      Start survey now
-    </Link>
+  <h4 className="typography-body-10 text-muted mb-3">For example:</h4>
+  <p className="typography-body-10  mb-2 ml-3">When space is limited, it’s ok to use ‘Find out more’ and ‘Learn more’. Remember to keep accessibility in mind, not everyone consumes content in a visual way.</p>
+
+  <p className="typography-body-10 mb-2 ml-4">
+    <span className="text-success font-bold">Do:</span> Show me how, Check out, Review, Refer to, Visit a branch
   </p>
-  <p className="typography-body-10  mb-2 ml-3">
-    Call us on{' '}
-    <Link href="#" type="inline">
-      13 20 32
-    </Link>
+  <p className="typography-body-10 ml-4">
+    <span className="text-danger font-bold">Don't:</span> View, See, Watch, Walk into a branch, Watch or listen to
   </p>
 </div>
 ```
 
 ---
 
-Keep verbs appropriate to the device type.
+Avoid directional navigation instructions. Instead, be clear on what you want the reader to do.
 
 ```jsx
 <div>
-  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <h4 className="typography-body-10 text-muted mb-3">For example:</h4>
+   <p className="typography-body-10 mb-2 ml-4">
+    <span className="text-danger font-bold">Don't:</span> Click the link below to start the survey
+  </p>
   <p className="typography-body-10 mb-3 ml-4">
-    <span className=" font-bold">Mobile:</span> Go to, tap, swipe, scroll, select, choose
+    <span className="text-success font-bold">Do:</span> Use a CTA button or hyperlink that says ‘Start survey now’
+  </p>
+   <p className="typography-body-10 mb-2 ml-4">
+    <span className="text-danger font-bold">Don't:</span> Call the number above
+  </p>
+  <p className="typography-body-10 ml-4">
+    <span className="text-success font-bold">Do:</span> Call us on 13 20 32
+  </p>
+</div>
+```
+
+---
+
+There are different ways a person could use a device e.g. someone who doesn’t use a mouse may not ‘click’ a link. Therefore, where possible, keep verbs appropriate to the device type.
+
+```jsx
+<div>
+  <h4 className="typography-body-10 text-muted mb-3">For example:</h4>
+  <p className="typography-body-10 mb-3 ml-4">
+    <span className=" font-bold">Mobile:</span> Go to, select, swipe*, scroll, choose
   </p>
   <p className="typography-body-10 mb-3 ml-4">
     <span className=" font-bold">Desktop:</span> Go to, select, scroll, choose
@@ -79,11 +97,7 @@ Keep verbs appropriate to the device type.
     <span className=" font-bold">Cross-device:</span> Go to, select, scroll, choose
   </p>
   <p className="typography-body-10 text-muted mb-3 italic">
-    Note: ‘Click’ doesn’t adhere to the{' '}
-    <Link href="https://www.w3.org/WAI/tips/writing/" type="inline">
-      Accessibility & Inclusion Guidelines
-    </Link>
-    .
+*Use ‘swipe’ only if it’s not possible to use other verbs to describe the action.
   </p>
 </div>
 ```
@@ -94,7 +108,7 @@ When referring to signing into Online Banking or the Westpac App, use ‘into’
 
 ```jsx
 <div>
-  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <h4 className="typography-body-10 text-muted mb-3">For example:</h4>
   <p className="typography-body-10 ml-4">Sign into Online Banking or the Westpac App</p>
 </div>
 ```
@@ -107,7 +121,7 @@ For steps in body copy, use chevrons. Capitalise the first word after the chevro
 
 ```jsx
 <div>
-  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <h4 className="typography-body-10 text-muted mb-3">For example:</h4>
   <p className="typography-body-10 ml-4">
     Sign into the Westpac App > Go to the <b>$</b> on the bottom menu > Tap <b>Pay someone</b> > Tap <b>Add</b>
   </p>
@@ -120,7 +134,7 @@ If there are more than 5 steps, switch to the list format. Also see [Bullet poin
 
 ```jsx
 <div>
-  <h4 className="typography-body-10 text-muted mb-3">FOR EXAMPLE:</h4>
+  <h4 className="typography-body-10 text-muted mb-3">For example:</h4>
   <List className="list-disc">
     <ListItem className="typography-body-10">Sign into the Westpac App</ListItem>
     <ListItem className="typography-body-10">
