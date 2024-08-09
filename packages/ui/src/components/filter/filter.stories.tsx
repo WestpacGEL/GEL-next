@@ -36,13 +36,14 @@ const meta: Meta = {
   tags: ['autodocs'],
   decorators: [
     story => (
-      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '320px' }}>{story()}</div>
+      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '50%' }}>{story()}</div>
     ),
   ],
   argTypes: {
     children: {
       description: '`Filter` Should contain `FilterInput` and `FilterButtons` components',
-      type: { name: 'other', value: 'ReactNode' },
+      /* TODO: change to more appropriate type for children argument */
+      type: 'string',
     },
     filterButtons: {
       description:
@@ -80,7 +81,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   decorators: [
     story => (
-      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '500px' }}>{story()}</div>
+      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '100%' }}>{story()}</div>
     ),
   ],
   args: {
@@ -121,7 +122,47 @@ export const ContentExceedingScreenWidth: Story = {
       },
       {
         id: 'five',
-        text: 'International Payees',
+        text: 'International Transfers',
+      },
+      {
+        id: 'six',
+        text: 'Recipients',
+      },
+      {
+        id: 'seven',
+        text: 'Transfers',
+      },
+      {
+        id: 'eight',
+        text: 'Deposits',
+      },
+      {
+        id: 'nine',
+        text: 'Withdrawls',
+      },
+      {
+        id: 'ten',
+        text: 'Invoices',
+      },
+      {
+        id: 'eleven',
+        text: 'Loans',
+      },
+      {
+        id: 'twelve',
+        text: 'Interest',
+      },
+      {
+        id: 'thirteen',
+        text: 'Debit',
+      },
+      {
+        id: 'fourteen',
+        text: 'Credit Card',
+      },
+      {
+        id: 'fifteen',
+        text: 'Investment',
       },
     ],
   },
@@ -181,6 +222,47 @@ export const SmallestBreakpoint: Story = {
       },
     ],
   },
+};
+
+/**
+ * > Filter with no search box example
+ */
+export const NoSearchBox = () => {
+  const [selected, setSelectedFilter] = useState<string>('one');
+
+  const filterButtons = [
+    {
+      id: 'one',
+      text: 'All',
+    },
+    {
+      id: 'two',
+      text: 'Payees',
+    },
+    {
+      id: 'three',
+      text: 'PayID',
+    },
+    {
+      id: 'four',
+      text: 'Billers',
+    },
+    {
+      id: 'five',
+      text: 'International Payees',
+    },
+  ];
+
+  return (
+    <Filter>
+      <FilterButtons
+        filterButtons={filterButtons}
+        selectedButton={selected}
+        onClick={id => setSelectedFilter(id)}
+        resultsFound={2}
+      />
+    </Filter>
+  );
 };
 
 const FILTERS = [
