@@ -21,6 +21,11 @@ export function FilterButtons({
   const scrollElementRefs = useRef<HTMLButtonElement[]>(new Array(filterButtons.length));
   const [scrollTarget, setScrollTarget] = useState({ left: -1, right: -1 });
 
+  const styles = filterButtonsStyles({
+    isScrollableLeft: !!isScrollable.left,
+    isScrollableRight: !!isScrollable.right,
+  });
+
   const setScroll = (scrollBy: boolean, scroll: number, container: HTMLUListElement) => {
     if (scrollBy) {
       container.scrollBy({
@@ -34,8 +39,6 @@ export function FilterButtons({
       });
     }
   };
-
-  const styles = filterButtonsStyles({});
 
   const handleScrollButton = (direction: string) => {
     if (scrollContainerRef.current) {
@@ -66,71 +69,82 @@ export function FilterButtons({
     }
   };
 
-  const getTargetLeft = (element: HTMLButtonElement, cLeft: number, index: number, targetLeft: number) => {
+  const getTargetLeft = useCallback((element: HTMLButtonElement, cLeft: number, index: number, targetLeft: number) => {
     const eLeft = element.offsetLeft;
     const eRight = eLeft + element.clientWidth;
+
     if (eLeft <= cLeft && eRight >= cLeft) {
       targetLeft = index;
     }
+
     return targetLeft;
-  };
+  }, []);
 
-  const getTargetRight = (element: HTMLButtonElement, cRight: number, index: number, targetRight: number) => {
-    const eLeft = element.offsetLeft;
-    const eRight = eLeft + element.clientWidth;
-    if (eRight >= cRight && eLeft <= cRight) {
-      targetRight = index;
-    }
-    return targetRight;
-  };
+  const getTargetRight = useCallback(
+    (element: HTMLButtonElement, cRight: number, index: number, targetRight: number) => {
+      const eLeft = element.offsetLeft;
+      const eRight = eLeft + element.clientWidth;
 
-  const adjustTargets = (
-    element: HTMLButtonElement,
-    cLeft: number,
-    cRight: number,
-    targetLeft: number,
-    targetRight: number,
-  ) => {
-    const eLeft = element.offsetLeft;
-    const eRight = eLeft + element.clientWidth;
-    if ((eRight >= cRight && eLeft <= cLeft) || targetRight === targetLeft + 1) {
-      if (targetRight >= filterButtons.length - 1) {
-        targetRight = -1;
-      } else {
-        targetRight = targetRight + 1;
+      if (eRight >= cRight && eLeft <= cRight) {
+        targetRight = index;
       }
-      if (targetLeft <= 0) {
-        targetLeft = -1;
-      } else {
-        targetLeft = targetLeft - 1;
-      }
-    }
-    return { targetLeft, targetRight };
-  };
 
-  const handleScrollTarget = (container: HTMLUListElement) => {
-    let targetRight = scrollTarget.right;
-    let targetLeft = scrollTarget.left;
-    const cLeft = container.scrollLeft;
-    const cRight = cLeft + container.clientWidth;
-    scrollElementRefs.current.forEach((element: HTMLButtonElement, index: number) => {
-      targetLeft = getTargetLeft(element, cLeft, index, targetLeft);
-      targetRight = getTargetRight(element, cRight, index, targetRight);
-      const targets = adjustTargets(element, cLeft, cRight, targetLeft, targetRight);
-      targetLeft = targets.targetLeft;
-      targetRight = targets.targetRight;
-      if (targetLeft === filterButtons.length - 1) {
-        targetLeft -= 1;
-      }
-    });
-    setScrollTarget({ left: targetLeft, right: targetRight });
-  };
+      return targetRight;
+    },
+    [],
+  );
 
-  const handleScrollable = (container: HTMLUListElement) => {
+  const adjustTargets = useCallback(
+    (element: HTMLButtonElement, cLeft: number, cRight: number, targetLeft: number, targetRight: number) => {
+      const eLeft = element.offsetLeft;
+      const eRight = eLeft + element.clientWidth;
+
+      if ((eRight >= cRight && eLeft <= cLeft) || targetRight === targetLeft + 1) {
+        if (targetRight >= filterButtons.length - 1) {
+          targetRight = -1;
+        } else {
+          targetRight = targetRight + 1;
+        }
+        if (targetLeft <= 0) {
+          targetLeft = -1;
+        } else {
+          targetLeft = targetLeft - 1;
+        }
+      }
+
+      return { targetLeft, targetRight };
+    },
+    [],
+  );
+
+  const handleScrollTarget = useCallback(
+    (container: HTMLUListElement) => {
+      let targetRight = scrollTarget.right;
+      let targetLeft = scrollTarget.left;
+      const cLeft = container.scrollLeft;
+      const cRight = cLeft + container.clientWidth;
+
+      scrollElementRefs.current.forEach((element: HTMLButtonElement, index: number) => {
+        targetLeft = getTargetLeft(element, cLeft, index, targetLeft);
+        targetRight = getTargetRight(element, cRight, index, targetRight);
+        const targets = adjustTargets(element, cLeft, cRight, targetLeft, targetRight);
+        targetLeft = targets.targetLeft;
+        targetRight = targets.targetRight;
+        if (targetLeft === filterButtons.length - 1) {
+          targetLeft -= 1;
+        }
+      });
+
+      setScrollTarget({ left: targetLeft, right: targetRight });
+    },
+    [scrollTarget, scrollElementRefs, filterButtons.length, getTargetLeft, getTargetRight, adjustTargets],
+  );
+
+  const handleScrollable = useCallback((container: HTMLUListElement) => {
     const isLeftScrollable = container.scrollLeft >= 1;
     const isRightScrollable = container.scrollLeft < container.scrollWidth - container.clientWidth - 1;
     setIsScrollable({ left: isLeftScrollable, right: isRightScrollable });
-  };
+  }, []);
 
   const handleScroll = useCallback(() => {
     const container = scrollContainerRef.current;
@@ -141,13 +155,13 @@ export function FilterButtons({
   }, []);
 
   useEffect(() => {
-    const container = scrollContainerRef.current;
+    const container = scrollContainerRef.current!;
     container!.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleScroll);
   }, [handleScroll]);
 
   useEffect(() => {
-    const container = scrollContainerRef.current;
+    const container = scrollContainerRef.current!;
     handleScrollTarget(container!);
     handleScrollable(container!);
   }, [handleScroll]);
@@ -156,7 +170,7 @@ export function FilterButtons({
     <Tag className={styles.container()}>
       <Button
         aria-hidden="true"
-        className={!isScrollable.left ? styles.scrollButtonLeftHidden() : styles.scrollButtonLeft()}
+        className={styles.scrollButtonLeft()}
         onClick={() => handleScrollButton('left')}
         disabled={!isScrollable.left}
       >
@@ -165,7 +179,7 @@ export function FilterButtons({
 
       <Button
         aria-hidden="true"
-        className={!isScrollable.right ? styles.scrollButtonRightHidden() : styles.scrollButtonRight()}
+        className={styles.scrollButtonRight()}
         onClick={() => handleScrollButton('right')}
         disabled={!isScrollable.right}
       >
