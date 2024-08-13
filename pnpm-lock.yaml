@@ -26,6 +26,9 @@ importers:
       '@westpac/ts-config':
         specifier: workspace:~
         version: link:packages/ts-config
+      eslint-config-turbo:
+        specifier: ^0.0.7
+        version: 0.0.7(eslint@8.57.0)
       husky:
         specifier: ^8.0.3
         version: 8.0.3
@@ -127,6 +130,9 @@ importers:
       eslint-config-next:
         specifier: 14.2.4
         version: 14.2.4(eslint@8.57.0)(typescript@5.1.6)
+      eslint-config-turbo:
+        specifier: ^0.0.7
+        version: 0.0.7(eslint@8.57.0)
       postcss:
         specifier: ^8
         version: 8.4.31
@@ -227,6 +233,9 @@ importers:
       eslint-config-next:
         specifier: 14.2.4
         version: 14.2.4(eslint@8.57.0)(typescript@5.1.6)
+      eslint-config-turbo:
+        specifier: ^0.0.7
+        version: 0.0.7(eslint@8.57.0)
       postcss:
         specifier: ~8.4.31
         version: 8.4.31

@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ['@westpac/eslint-config/nextjs'],
+  extends: ['turbo', '@westpac/eslint-config/nextjs'],
 };
