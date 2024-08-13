@@ -1,5 +1,15 @@
 # protoform
 
+## 0.2.0
+
+### Minor Changes
+
+- d275ec7e: eslint config separating the turbo config
+
+### Patch Changes
+
+- @westpac/ui@0.24.1
+
 ## 0.1.11
 
 ### Patch Changes
