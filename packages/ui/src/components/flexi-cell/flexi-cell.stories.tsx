@@ -100,10 +100,10 @@ export const SimpleTileHorizontalLayout = () => {
               size={{ initial: 'default', md: 'large' }}
             >
               <div>
-                <div className="flex justify-end">
+                <div className="flex justify-start mb-2 md:mb-3">
                   <GiftIcon look="outlined" color="hero" />
                 </div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col">
                   <FlexiCellLabel tag="h3" className="mb-1">
                     Title
                   </FlexiCellLabel>
