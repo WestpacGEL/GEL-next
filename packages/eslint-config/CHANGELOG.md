@@ -1,5 +1,11 @@
 # @westpac/eslint-config
 
+## 0.3.0
+
+### Minor Changes
+
+- d275ec7e: eslint config separating the turbo config
+
 ## 0.2.2
 
 ### Patch Changes

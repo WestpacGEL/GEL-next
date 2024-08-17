@@ -43,6 +43,19 @@ export default config;
 `} />
 ```
 
+Also you have to create a `postcss.config.js` on the root of your application as follows.
+
+```html
+<StaticCode language="js" code={`
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+`} />
+```
+
 For applications using `brand fonts` add the following options config to the `withGEL` helper.
 
 ```html
