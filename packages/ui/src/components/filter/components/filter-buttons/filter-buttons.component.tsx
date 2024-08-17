@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
+import { type ButtonRef } from '../../../button/button.types.js';
 import { ArrowLeftIcon, ArrowRightIcon } from '../../../icon/index.js';
 import { Button } from '../../../index.js';
 
@@ -18,15 +19,12 @@ export function FilterButtons({
 }: FilterButtonsProps) {
   const scrollContainerRef = useRef<HTMLUListElement>(null);
   const [isScrollable, setIsScrollable] = useState({ left: false, right: false });
-  const scrollElementRefs = useRef<HTMLButtonElement[]>(new Array(filterButtons.length));
+  const scrollElementRefs = useRef<ButtonRef[]>(new Array(filterButtons.length));
   const [scrollTarget, setScrollTarget] = useState({ left: -1, right: -1 });
 
-  const styles = filterButtonsStyles({
-    isScrollableLeft: !!isScrollable.left,
-    isScrollableRight: !!isScrollable.right,
-  });
+  const styles = filterButtonsStyles();
 
-  const setScroll = (scrollBy: boolean, scroll: number, container: HTMLUListElement) => {
+  const setScroll = useCallback((scrollBy: boolean, scroll: number, container: HTMLUListElement) => {
     if (scrollBy) {
       container.scrollBy({
         left: scroll,
@@ -38,9 +36,9 @@ export function FilterButtons({
         behavior: 'smooth',
       });
     }
-  };
+  }, []);
 
-  const handleScrollButton = (direction: string) => {
+  const handleScrollButton = useCallback((direction: string) => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
 
@@ -67,7 +65,8 @@ export function FilterButtons({
       }
       setScroll(scrollBy, scrollX, container);
     }
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const getTargetLeft = useCallback((element: HTMLButtonElement, cLeft: number, index: number, targetLeft: number) => {
     const eLeft = element.offsetLeft;
@@ -114,31 +113,30 @@ export function FilterButtons({
 
       return { targetLeft, targetRight };
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
 
-  const handleScrollTarget = useCallback(
-    (container: HTMLUListElement) => {
-      let targetRight = scrollTarget.right;
-      let targetLeft = scrollTarget.left;
-      const cLeft = container.scrollLeft;
-      const cRight = cLeft + container.clientWidth;
+  const handleScrollTarget = useCallback((container: HTMLUListElement) => {
+    let targetRight = scrollTarget.right;
+    let targetLeft = scrollTarget.left;
+    const cLeft = container.scrollLeft;
+    const cRight = cLeft + container.clientWidth;
 
-      scrollElementRefs.current.forEach((element: HTMLButtonElement, index: number) => {
-        targetLeft = getTargetLeft(element, cLeft, index, targetLeft);
-        targetRight = getTargetRight(element, cRight, index, targetRight);
-        const targets = adjustTargets(element, cLeft, cRight, targetLeft, targetRight);
-        targetLeft = targets.targetLeft;
-        targetRight = targets.targetRight;
-        if (targetLeft === filterButtons.length - 1) {
-          targetLeft -= 1;
-        }
-      });
+    scrollElementRefs.current.forEach((element: HTMLButtonElement, index: number) => {
+      targetLeft = getTargetLeft(element, cLeft, index, targetLeft);
+      targetRight = getTargetRight(element, cRight, index, targetRight);
+      const targets = adjustTargets(element, cLeft, cRight, targetLeft, targetRight);
+      targetLeft = targets.targetLeft;
+      targetRight = targets.targetRight;
+      if (targetLeft === filterButtons.length - 1) {
+        targetLeft -= 1;
+      }
+    });
 
-      setScrollTarget({ left: targetLeft, right: targetRight });
-    },
-    [scrollTarget, scrollElementRefs, filterButtons.length, getTargetLeft, getTargetRight, adjustTargets],
-  );
+    setScrollTarget({ left: targetLeft, right: targetRight });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleScrollable = useCallback((container: HTMLUListElement) => {
     const isLeftScrollable = container.scrollLeft >= 1;
@@ -152,42 +150,50 @@ export function FilterButtons({
       handleScrollTarget(container);
       handleScrollable(container);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    const container = scrollContainerRef.current!;
-    container!.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll);
-  }, [handleScroll]);
+    const container = scrollContainerRef.current;
+    if (container) {
+      handleScrollTarget(container);
+      handleScrollable(container);
 
-  useEffect(() => {
-    const container = scrollContainerRef.current!;
-    handleScrollTarget(container!);
-    handleScrollable(container!);
-  }, [handleScroll]);
+      container.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleScroll);
+    }
+
+    return () => {
+      container?.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('reize', handleScroll);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <Tag className={styles.container()}>
+    <Tag className={styles.base({ className })}>
       <Button
-        aria-hidden="true"
-        className={styles.scrollButtonLeft()}
+        className={styles.scrollButton({ position: 'left', hidden: !isScrollable.left })}
         onClick={() => handleScrollButton('left')}
-        disabled={!isScrollable.left}
-      >
-        <ArrowLeftIcon className={styles.arrowIconLeft()} />
-      </Button>
-
-      <Button
+        look="link"
+        size="small"
+        iconBefore={ArrowLeftIcon}
+        iconColor="hero"
+        iconSize="medium"
         aria-hidden="true"
-        className={styles.scrollButtonRight()}
+      />
+      <Button
+        className={styles.scrollButton({ position: 'right', hidden: !isScrollable.right })}
         onClick={() => handleScrollButton('right')}
-        disabled={!isScrollable.right}
-      >
-        <ArrowRightIcon className={styles.arrowIconRight()} />
-      </Button>
-
+        look="link"
+        size="small"
+        iconBefore={ArrowRightIcon}
+        iconColor="hero"
+        iconSize="medium"
+        aria-hidden="true"
+      />
       <ul
-        className={styles.base({ className })}
+        className={styles.buttonList({ className })}
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
@@ -206,7 +212,7 @@ export function FilterButtons({
             key={button.id}
             soft={button.id !== selectedButton}
             button-index={index}
-            ref={element => (scrollElementRefs.current[index] = element!)}
+            ref={(element: ButtonRef) => (scrollElementRefs.current[index] = element)}
           >
             {button.text}
           </Button>

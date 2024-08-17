@@ -1,4 +1,5 @@
-import { CSSProperties, ReactNode } from 'react';
+import { Property } from 'csstype';
+import { ReactNode } from 'react';
 import { AriaModalOverlayProps } from 'react-aria';
 import { OverlayTriggerState } from 'react-stately';
 
@@ -10,7 +11,7 @@ export type ModalProps = AriaModalOverlayProps & {
   /**
    * Height of the Modal
    */
-  height?: CSSProperties['height'];
+  height?: Property.Height;
   /**
    * Element where the modal will be rendered, by default it will be into the body
    */
@@ -22,5 +23,5 @@ export type ModalProps = AriaModalOverlayProps & {
   /**
    * Width of the Modal
    */
-  width?: CSSProperties['width'];
+  width?: Property.Width;
 };

@@ -22,7 +22,7 @@ export function SidebarSelect(props: SidebarSelectProps) {
   const { buttonProps } = useButton(triggerProps, ref);
 
   const { focusProps, isFocusVisible } = useFocusRing();
-  const styles = sidebarSelectStyles({ isFocusVisible, isOpen: state.isOpen });
+  const styles = sidebarSelectStyles({ isFocusVisible });
   return (
     <div className={styles.base()}>
       <div {...labelProps} className={styles.label()}>
@@ -33,7 +33,7 @@ export function SidebarSelect(props: SidebarSelectProps) {
 
       <button {...mergeProps(buttonProps, focusProps)} ref={ref} className={styles.button()}>
         <div className={styles.textWrapper()}>
-          <div className="typography-body-11 w-full text-left leading-[1.5]" {...valueProps}>
+          <div className="typography-body-11 w-full text-left leading-normal" {...valueProps}>
             Change brand
           </div>
         </div>
