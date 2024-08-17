@@ -1,5 +1,5 @@
 ---
-"@westpac/eslint-config": minor
+'@westpac/eslint-config': minor
 ---
 
 Update typescript version
