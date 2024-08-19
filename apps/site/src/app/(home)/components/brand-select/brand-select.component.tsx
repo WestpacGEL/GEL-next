@@ -25,7 +25,7 @@ export function BrandSelect(props: BrandSelectProps) {
   const { buttonProps } = useButton(triggerProps, ref);
 
   const { focusProps, isFocusVisible } = useFocusRing();
-  const styles = brandSelectStyles({ isFocusVisible, isOpen: state.isOpen });
+  const styles = brandSelectStyles({ isFocusVisible });
 
   const finalButtonProps = mergeProps(focusProps, buttonProps);
   return (
@@ -45,7 +45,7 @@ export function BrandSelect(props: BrandSelectProps) {
         className={styles.button()}
       >
         <div className={styles.textWrapper()}>
-          <div className="flex w-full items-end gap-[0.625rem] overflow-hidden text-ellipsis py-2" {...valueProps}>
+          <div className="flex w-full items-end gap-2.5 overflow-hidden text-ellipsis py-2" {...valueProps}>
             <GELLogo className="w-7.5 shrink-0" />
             <span className="mb-[-0.2rem] shrink truncate leading-4">Design System</span>
           </div>

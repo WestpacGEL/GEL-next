@@ -7,6 +7,8 @@ import { styles } from './button.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
+export type ButtonRef = HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement;
+
 export type ButtonProps = {
   /**
    * Fit button width to its parent width.
@@ -31,6 +33,12 @@ export type ButtonProps = {
    * Defaults to the current text color.
    */
   iconColor?: IconProps['color'];
+  /**
+   * The size of the icon
+   *
+   * Defaults to system size depending on size of the button
+   */
+  iconSize?: IconProps['size'];
   /**
    * When true, children will use flex justify-between
    * @default false

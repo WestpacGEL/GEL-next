@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { type Meta, type StoryObj } from '@storybook/react';
+import { type Meta, type StoryFn, type StoryObj } from '@storybook/react';
 import { useMemo, useState } from 'react';
 
 import { FlexiCellAdornment } from '../flexi-cell/components/flexi-cell-adornment/flexi-cell-adornment.component.js';
@@ -18,12 +18,7 @@ function StoryFilter({ filterButtons }: FilterButtonsProps) {
   return (
     <Filter>
       <FilterInput onChange={({ target: { value } }) => console.log(value)} />
-      <FilterButtons
-        filterButtons={filterButtons}
-        selectedButton={selected}
-        onClick={id => setSelected(id)}
-        resultsFound={2}
-      />
+      <FilterButtons filterButtons={filterButtons} selectedButton={selected} onClick={id => setSelected(id)} />
     </Filter>
   );
 }
@@ -35,14 +30,17 @@ const meta: Meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   decorators: [
-    story => (
-      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '320px' }}>{story()}</div>
+    (Story: StoryFn) => (
+      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '50%' }}>
+        <Story />
+      </div>
     ),
   ],
   argTypes: {
     children: {
       description: '`Filter` Should contain `FilterInput` and `FilterButtons` components',
-      type: { name: 'other', value: 'ReactNode' },
+      /* TODO: change to more appropriate type for children argument */
+      type: 'string',
     },
     filterButtons: {
       description:
@@ -55,10 +53,6 @@ const meta: Meta = {
     onChange: {
       description: '`FilterInput` Function that is called when the input is changed',
       type: 'function',
-    },
-    resultsFound: {
-      description: '`FilterButtons` Needed for custom `aria-description`, number of results filter returns',
-      type: 'number',
     },
     selectedButton: {
       description: '`FilterButtons` id of which button should be selected',
@@ -79,8 +73,10 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {
   decorators: [
-    story => (
-      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '500px' }}>{story()}</div>
+    (Story: StoryFn) => (
+      <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '1rem', width: '100%' }}>
+        <Story />
+      </div>
     ),
   ],
   args: {
@@ -121,7 +117,47 @@ export const ContentExceedingScreenWidth: Story = {
       },
       {
         id: 'five',
-        text: 'International Payees',
+        text: 'International Transfers',
+      },
+      {
+        id: 'six',
+        text: 'Recipients',
+      },
+      {
+        id: 'seven',
+        text: 'Transfers',
+      },
+      {
+        id: 'eight',
+        text: 'Deposits',
+      },
+      {
+        id: 'nine',
+        text: 'Withdrawls',
+      },
+      {
+        id: 'ten',
+        text: 'Invoices',
+      },
+      {
+        id: 'eleven',
+        text: 'Loans',
+      },
+      {
+        id: 'twelve',
+        text: 'Interest',
+      },
+      {
+        id: 'thirteen',
+        text: 'Debit',
+      },
+      {
+        id: 'fourteen',
+        text: 'Credit Card',
+      },
+      {
+        id: 'fifteen',
+        text: 'Investment',
       },
     ],
   },
@@ -181,6 +217,42 @@ export const SmallestBreakpoint: Story = {
       },
     ],
   },
+};
+
+/**
+ * > Filter with no search box example
+ */
+export const NoSearchBox = () => {
+  const [selected, setSelectedFilter] = useState<string>('one');
+
+  const filterButtons = [
+    {
+      id: 'one',
+      text: 'All',
+    },
+    {
+      id: 'two',
+      text: 'Payees',
+    },
+    {
+      id: 'three',
+      text: 'PayID',
+    },
+    {
+      id: 'four',
+      text: 'Billers',
+    },
+    {
+      id: 'five',
+      text: 'International Payees',
+    },
+  ];
+
+  return (
+    <Filter>
+      <FilterButtons filterButtons={filterButtons} selectedButton={selected} onClick={id => setSelectedFilter(id)} />
+    </Filter>
+  );
 };
 
 const FILTERS = [
@@ -289,27 +361,16 @@ export const FilterWithContent = () => {
     }).filter(({ payees }) => payees.length > 0);
   }, [searchValue, selectedFilter]);
 
-  const resultsFound = useMemo(() => {
-    return filteredAccounts.reduce((acc, accounts) => {
-      return acc + accounts.payees.length;
-    }, 0);
-  }, [filteredAccounts]);
-
   return (
     <div className="flex flex-col gap-3">
       <Filter>
         <FilterInput value={searchValue} onChange={({ target: { value } }) => setSearchValue(value)} />
-        <FilterButtons
-          filterButtons={FILTERS}
-          selectedButton={selectedFilter}
-          onClick={id => setSelectedFilter(id)}
-          resultsFound={resultsFound}
-        />
+        <FilterButtons filterButtons={FILTERS} selectedButton={selectedFilter} onClick={id => setSelectedFilter(id)} />
       </Filter>
       <div>
         {filteredAccounts.map(({ title, id, payees }) => (
           <div key={id}>
-            <h3 className="mb-3 border-b border-border pb-1 font-normal">{title}</h3>
+            <h3 className="border-border mb-3 border-b pb-1 font-normal">{title}</h3>
             {payees.map(({ name, number, paidAt, bank, code }) =>
               paidAt ? (
                 <FlexiCell
@@ -319,7 +380,7 @@ export const FilterWithContent = () => {
                   before={
                     <FlexiCellAdornment>
                       <svg
-                        className="max-sm:h-5 max-sm:w-5 sm:h-6 sm:w-6"
+                        className="max-sm:size-5 sm:size-6"
                         viewBox="0 0 640 480"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -353,7 +414,7 @@ export const FilterWithContent = () => {
                   before={
                     <FlexiCellAdornment>
                       <svg
-                        className="h-4 w-4"
+                        className="size-4"
                         viewBox="0 0 640 480"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"

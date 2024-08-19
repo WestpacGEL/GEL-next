@@ -4,7 +4,7 @@ import React, { Ref, forwardRef, useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
 import { styles as buttonStyles } from './button.styles.js';
-import { type ButtonProps } from './button.types.js';
+import { type ButtonProps, ButtonRef } from './button.types.js';
 import { getIconSize } from './button.utils.js';
 
 function BaseButton(
@@ -19,13 +19,14 @@ function BaseButton(
     iconBefore: IconBefore,
     iconAfter: IconAfter,
     iconColor,
+    iconSize,
     children,
     ...props
   }: ButtonProps,
-  ref: Ref<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>,
+  ref: Ref<ButtonRef>,
 ) {
   const { isFocusVisible, focusProps } = useFocusRing();
-  const iconSize = useMemo(() => getIconSize(size), [size]);
+  const btnIconSize = useMemo(() => iconSize || getIconSize(size), [iconSize, size]);
   const styles = buttonStyles({
     size,
     look,
@@ -38,9 +39,9 @@ function BaseButton(
 
   return (
     <Tag ref={ref} className={styles.base({ className })} {...mergeProps(props, focusProps)}>
-      {IconBefore && <IconBefore size={iconSize} className={styles.iconBefore()} color={iconColor} aria-hidden />}
+      {IconBefore && <IconBefore size={btnIconSize} className={styles.iconBefore()} color={iconColor} aria-hidden />}
       <span className={styles.text()}>{children}</span>
-      {IconAfter && <IconAfter size={iconSize} className={styles.iconAfter()} color={iconColor} aria-hidden />}
+      {IconAfter && <IconAfter size={btnIconSize} className={styles.iconAfter()} color={iconColor} aria-hidden />}
     </Tag>
   );
 }

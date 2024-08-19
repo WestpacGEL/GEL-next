@@ -23,10 +23,6 @@ export type FilterButtonsProps = {
    */
   onClick: (id: string) => unknown;
   /**
-   * Needed for custom `aria-description`, number of results filter returns
-   */
-  resultsFound: number;
-  /**
    * id of which button should be selected
    */
   selectedButton: string;
