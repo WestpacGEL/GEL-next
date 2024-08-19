@@ -3,6 +3,7 @@ import { type Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import React from 'react';
 
+import { Analytics } from '@/components/analytics';
 import { FontPreloader } from '@/components/font-preloader';
 
 export const metadata: Metadata = {
@@ -27,6 +28,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </form>
           </div>
         )}
+        <Analytics
+          analyticsAppMeasurement={process.env.NEXT_PUBLIC_ANALYTICS_APP_MEASUREMENT || ''}
+          scriptSrc={process.env.NEXT_PUBLIC_ANALYTICS_SCRIPT_SRC || ''}
+        />
       </body>
     </html>
   );
