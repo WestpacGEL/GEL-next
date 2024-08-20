@@ -203,6 +203,7 @@ export { TabletIcon } from './components/tablet-icon.js';
 export { TagIcon } from './components/tag-icon.js';
 export { TakeoutCoffeeIcon } from './components/takeout-coffee-icon.js';
 export { TakeoutFoodIcon } from './components/takeout-food-icon.js';
+export { TargetIcon } from './components/target-icon.js';
 export { TelephoneIcon } from './components/telephone-icon.js';
 export { ThumbDownIcon } from './components/thumb-down-icon.js';
 export { ThumbUpIcon } from './components/thumb-up-icon.js';
