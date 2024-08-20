@@ -36,6 +36,7 @@ export { CardlessCashIcon } from './components/cardless-cash-icon.js';
 export { CartIcon } from './components/cart-icon.js';
 export { ChatIcon } from './components/chat-icon.js';
 export { CheckIcon } from './components/check-icon.js';
+export { CircleIcon } from './components/circle-icon.js';
 export { ClearIcon } from './components/clear-icon.js';
 export { ClockIcon } from './components/clock-icon.js';
 export { CloseIcon } from './components/close-icon.js';
