@@ -31,6 +31,7 @@ export { CalculateIcon } from './components/calculate-icon.js';
 export { CalculatorIcon } from './components/calculator-icon.js';
 export { CalendarIcon } from './components/calendar-icon.js';
 export { CameraIcon } from './components/camera-icon.js';
+export { CancelCardIcon } from './components/cancel-card-icon.js';
 export { CarIcon } from './components/car-icon.js';
 export { CardlessCashIcon } from './components/cardless-cash-icon.js';
 export { CartIcon } from './components/cart-icon.js';
