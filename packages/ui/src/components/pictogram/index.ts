@@ -81,6 +81,7 @@ export { ShoppingPictogram } from './components/informative/shopping-pictogram.j
 export { SparklePictogram } from './components/informative/sparkle-pictogram.js';
 export { StarPictogram } from './components/informative/star-pictogram.js';
 export { StopwatchPictogram } from './components/informative/stopwatch-pictogram.js';
+export { TargetPictogram } from './components/informative/target-pictogram.js';
 export { TaxDocumentPictogram } from './components/informative/tax-document-pictogram.js';
 export { TelephoneCallPictogram } from './components/informative/telephone-call-pictogram.js';
 export { ThumbsUpPictogram } from './components/informative/thumbs-up-pictogram.js';
