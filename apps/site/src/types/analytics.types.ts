@@ -1,5 +1,5 @@
 export type AnalyticsConfig = {
-  encryptedID: string; // EAM tracker ID. EAM tracker ID available in SAML headers and should be available in JWT
+  encryptedID: string;
   journeyType: 'auth' | 'pub';
   loginStatus: 'logged in' | 'logged out';
   pageStatus: 'auth' | 'pub';
