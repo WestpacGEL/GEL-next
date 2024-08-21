@@ -24,6 +24,7 @@ function FlexiCellBase(
     size = 'default',
     disabled,
     tabIndex,
+    body = true,
     ...props
   }: FlexiCellProps,
   ref: Ref<HTMLElement>,
@@ -58,8 +59,10 @@ function FlexiCellBase(
         <FlexiCellBody tag="a" href={href}>
           {children}
         </FlexiCellBody>
-      ) : (
+      ) : body ? (
         <FlexiCellBody>{children}</FlexiCellBody>
+      ) : (
+        <div className="flex-1">{children}</div>
       )}
       {after}
       {withArrow && (
