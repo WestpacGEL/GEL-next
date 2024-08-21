@@ -31,7 +31,6 @@ describe('Filter', () => {
         <FilterInput onChange={onChange} />
         <FilterButtons
           selectedButton={selected}
-          resultsFound={2}
           onClick={id => {
             onClick();
             setSelected(id);
