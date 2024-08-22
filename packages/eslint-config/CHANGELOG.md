@@ -1,5 +1,11 @@
 # @westpac/eslint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- 07fb7eaa: Update typescript version
+
 ## 0.3.0
 
 ### Minor Changes

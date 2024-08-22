@@ -1,5 +1,14 @@
 # @westpac/ui
 
+## 0.25.0
+
+### Minor Changes
+
+- 82c454db: adding back the body parameter to flexi cell
+- cc069a42: - Update filter buttons
+  - Update typescript and tailwind variants version
+- f82970a2: Added target, cancel-card, and circle icons; Added target pictogram; Updated quick balance icon
+
 ## 0.24.1
 
 ### Patch Changes
