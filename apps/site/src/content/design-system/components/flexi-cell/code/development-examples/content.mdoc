@@ -18,760 +18,112 @@
 </NextLink>
 ```
 
-### Credit card usage
-
-```jsx
-<FlexiCell
-  tag="a"
-  href="#"
-  withBorder
-  after={
-    <FlexiCellAdornment align="top">
-      <FlexiCellLabel tag="h3" rightLabel>
-        $9,999.99
-      </FlexiCellLabel>
-      <FlexiCellHint>avail $9,999.99</FlexiCellHint>
-    </FlexiCellAdornment>
-  }
->
-  <FlexiCellLabel tag="h3">Credit card</FlexiCellLabel>
-  <FlexiCellHint>Card ending in 1234</FlexiCellHint>
-</FlexiCell>
-```
-
-### Account usage
-
-```jsx
-<FlexiCell
-  tag="a"
-  href="#"
-  withBorder
-  after={
-    <FlexiCellAdornment align="top">
-      <FlexiCellLabel tag="h3" rightLabel>
-        $9,999.99
-      </FlexiCellLabel>
-    </FlexiCellAdornment>
-  }
->
-  <FlexiCellLabel tag="h3">Account</FlexiCellLabel>
-  <FlexiCellHint>032-123 12345678</FlexiCellHint>
-</FlexiCell>
-```
-
-### Payee usage
-
-```jsx
-<FlexiCell
-  after={
-    <FlexiCellAdornment align="center">
-      <FlexiCellLabel tag="h3" rightLabel>
-        Fri 5 Aug
-      </FlexiCellLabel>
-    </FlexiCellAdornment>
-  }
-  before={
-    <FlexiCellCircle className="bg-muted text-white" aria-label="Walter White">
-      WW
-    </FlexiCellCircle>
-  }
-  tag="a"
-  href="#"
->
-  <FlexiCellLabel tag="h3">With Circle and Info Button</FlexiCellLabel>
-  <FlexiCellHint>Payee Details</FlexiCellHint>
-</FlexiCell>
-```
-
-### Payee with info usage
-
-```jsx
-<FlexiCell
-  after={
-    <FlexiCellAdornment align="center">
-      <FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />
-    </FlexiCellAdornment>
-  }
-  before={
-    <FlexiCellCircle className="bg-muted text-white" aria-label="Walter White">
-      WW
-    </FlexiCellCircle>
-  }
-  dualAction
-  href="#"
->
-  <FlexiCellLabel tag="h3">With Circle and Info Button</FlexiCellLabel>
-  <FlexiCellHint>Payee Details</FlexiCellHint>
-</FlexiCell>
-```
-
-### Flag payee usage
-
-```jsx
-<FlexiCell
-  after={
-    <FlexiCellAdornment align="center">
-      <FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />
-    </FlexiCellAdornment>
-  }
-  before={
-    <FlexiCellAdornment>
-      <AustraliaFlag />
-    </FlexiCellAdornment>
-  }
-  dualAction
-  href="#"
->
-  <FlexiCellLabel tag="h3">With Flag and Info Button</FlexiCellLabel>
-  <FlexiCellHint>Payee Details</FlexiCellHint>
-</FlexiCell>
-```
-
-### List item with flag usage
-
-```jsx
-<FlexiCell
-  before={
-    <FlexiCellAdornment>
-      <AustraliaFlag />
-    </FlexiCellAdornment>
-  }
-  withBorder
-  tag="a"
-  href="#"
->
-  <FlexiCellLabel tag="h3">List Item</FlexiCellLabel>
-</FlexiCell>
-```
-
-### List item usage
-
-```jsx
-<FlexiCell withBorder tag="a" href="#">
-  <FlexiCellLabel tag="h3">List Item</FlexiCellLabel>
-</FlexiCell>
-```
-
-### Westpac special product usage
-
-```jsx
-<FlexiCell
-  tag="a"
-  href="#"
-  withBorder
-  withArrow
-  before={
-    <FlexiCellAdornment className="max-sm:hidden">
-      <GiftIcon look="outlined" color="hero" />
-    </FlexiCellAdornment>
-  }
->
-  <GiftIcon className="sm:hidden" />
-  <FlexiCellLabel className="text-hero" tag="h4">
-    Westpac specials and product offers
-  </FlexiCellLabel>
-  <FlexiCellHint>Discounts and cashback from select merchants & product offers from Westpac</FlexiCellHint>
-</FlexiCell>
-```
-
-### Horizontal Promo Tile with footer
-
-```jsx
-<FlexiCell
-  tag="a"
-  href="#"
-  withBorder
-  before={
-    <FlexiCellAdornment align="center">
-      <FlexiCellCircle className="h-[70px] w-[70px] border border-border bg-white">
-        <span className="m-1">Graphic Here</span>
-      </FlexiCellCircle>
-    </FlexiCellAdornment>
-  }
-  topBadge={({ className }) => <Badge className={className + ' leading-normal'}>Corner flag</Badge>}
->
-  <FlexiCellLabel className="text-[12px] font-normal text-muted" tag="p">
-    MYER
-  </FlexiCellLabel>
-  <FlexiCellLabel className="text-hero" tag="h4">
-    This is talking about the bonus
-  </FlexiCellLabel>
-  <FlexiCellHint>This is more about the bonus and all the other exciting things about this.</FlexiCellHint>
-  <FlexiCellFooter>
-    <Badge color="primary">Badge 1</Badge>
-    <Badge color="faint">Badge 2</Badge>
-  </FlexiCellFooter>
-</FlexiCell>
-```
-
-### Account list usage
+### **Simple tile (Vertical stack)**
 
 ```jsx
 () => {
-  const MOCK_ACCOUNTS = [
-    {
-      title: 'Cash',
-      id: 'cash',
-      accounts: [
-        {
-          name: 'Westpac Choice',
-          amount: '$1,234.99',
-          number: '732-123 746587',
-        },
-        {
-          name: 'Offset account for loan',
-          amount: '$20,000.00',
-          number: '732-123 123456',
-        },
-      ],
-    },
-    {
-      title: 'Foreign currency',
-      id: 'foreign-currency',
-      accounts: [
-        {
-          name: 'US Dollar Currency Account',
-          amount: '$3,957.57',
-          number: '123-456 1234567',
-        },
-        {
-          name: 'British pound Currency Account',
-          amount: '$9,999,999,999.99',
-          number: '123-456 1234567',
-        },
-      ],
-    },
-    {
-      title: 'Credit cards',
-      id: 'credit-cards',
-      accounts: [
-        {
-          name: 'Altitude Black World Mastercard',
-          amount: '-$3,957.57',
-          number: 'Card ending in 1234',
-        },
-      ],
-    },
-  ];
-
-  return (
-    <>
-      {MOCK_ACCOUNTS.map(({ title, id, accounts }) => (
-        <div key={id}>
-          <h3 className="mb-3 font-normal">{title}</h3>
-          {accounts.map(({ name, amount, number }) => (
-            <FlexiCell
-              tag="a"
-              href="#"
-              withBorder
-              key={name}
-              after={
-                <FlexiCellAdornment>
-                  <FlexiCellLabel className="font-semibold" rightLabel tag="h4">
-                    {amount}
-                  </FlexiCellLabel>
-                  <FlexiCellHint>available $9,999</FlexiCellHint>
-                </FlexiCellAdornment>
-              }
-            >
-              <FlexiCellLabel className="font-normal" tag="h4">
-                {name}
-              </FlexiCellLabel>
-              <FlexiCellHint>{number}</FlexiCellHint>
-            </FlexiCell>
-          ))}
-        </div>
-      ))}
-    </>
-  );
-};
-```
-
-### Payee list usage
-
-```jsx
-() => {
-  const MOCK_PAYEES = [
-    {
-      title: 'Recently Paid',
-      id: 'recently-paid',
-      payees: [
-        {
-          initials: 'AJ',
-          name: 'Andrew Jones',
-          paidAt: 'Fri 5 Aug',
-          number: '123-986 463846',
-        },
-        {
-          initials: 'JW',
-          name: 'Joss Wight',
-          paidAt: 'Mon 1 Aug',
-          number: '098-567 465352',
-        },
-      ],
-    },
-    {
-      title: 'A',
-      id: 'a',
-      payees: [
-        {
-          initials: 'AO',
-          name: 'Active OOSH',
-          number: '857-434 856383',
-          paidAt: undefined,
-        },
-        {
-          initials: 'AC',
-          name: 'Alice Cartwright',
-          number: '950-456 345363',
-          paidAt: undefined,
-        },
-      ],
-    },
-    {
-      title: 'B',
-      id: 'b',
-      payees: [
-        {
-          initials: 'BN',
-          name: 'Benjamin North',
-          number: '098-123 745362',
-          paidAt: undefined,
-        },
-      ],
-    },
-  ];
-
-  return (
-    <>
-      {MOCK_PAYEES.map(({ title, id, payees }) => (
-        <div key={id}>
-          <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">{title}</h3>
-          {payees.map(({ name, initials, number, paidAt }) =>
-            paidAt ? (
-              <FlexiCell
-                tag="a"
-                href="#"
-                key={name}
-                before={<FlexiCellCircle className="bg-muted text-white">{initials}</FlexiCellCircle>}
-                after={
-                  <FlexiCellAdornment align="center">
-                    <FlexiCellLabel rightLabel tag="h4">
-                      {paidAt}
-                    </FlexiCellLabel>
-                  </FlexiCellAdornment>
-                }
-              >
-                <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
-                <FlexiCellHint>{number}</FlexiCellHint>
-              </FlexiCell>
-            ) : (
-              <FlexiCell
-                href="#"
-                dualAction
-                key={name}
-                before={<FlexiCellCircle className="bg-muted text-white">{initials}</FlexiCellCircle>}
-                after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
-              >
-                <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
-                <FlexiCellHint>{number}</FlexiCellHint>
-              </FlexiCell>
-            ),
-          )}
-        </div>
-      ))}
-    </>
-  );
-};
-```
-
-### Country list usage
-
-```jsx
-() => {
-  const MOCK_COUNTRIES = [
-    {
-      title: 'Popular',
-      id: 'popular',
-      payees: [
-        {
-          code: 'IN',
-          name: 'India',
-          svg: (
-            <IndiaFlag />
-          ),
-        },
-        {
-          code: 'UK',
-          name: 'United Kingdom',
-          svg: (
-            <UnitedKingdomFlag />
-          ),
-        },
-        {
-          code: 'USA',
-          name: 'United States',
-          svg: (
-            <UnitedStatesFlag />
-          ),
-        },
-      ],
-    },
-    {
-      title: 'A',
-      id: 'a',
-      payees: [
-        {
-          code: 'AI',
-          name: 'Ascension Island',
-          svg: (
-            <AscensionIslandFlag />
-          ),
-        },
-        {
-          code: 'AN',
-          name: 'Andorra',
-          svg: (
-            <AndorraFlag />
-          ),
-        },
-        {
-          code: 'UA',
-          name: 'United Arab Emirates',
-          svg: (
-            <UnitedArabEmiratesFlag />
-          ),
-        },
-        {
-          code: 'AF',
-          name: 'Afghanistan',
-          svg: (
-            <AfghanistanFlag />
-          ),
-        },
-      ],
-    },
-  ];
-
-  return (
-    <div>
-      {MOCK_COUNTRIES.map(({ title, id, payees }) => (
-        <div key={id} className="flex flex-col gap-3">
-          <h3 className="m-0 border-b border-b-border pb-1 font-normal">{title}</h3>
-          <div>
-            {payees.map(({ name, svg }) => {
-              return (
-                <FlexiCell
-                  tag="a"
-                  href="#"
-                  withBorder
-                  key={name}
-                  before={<FlexiCellAdornment>{svg}</FlexiCellAdornment>}
-                >
-                  <FlexiCellLabel tag="span">{name}</FlexiCellLabel>
-                </FlexiCell>
-              );
-            })}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-```
-
-### Foreign Payee list usage
-
-```jsx
-() => {
-  const MOCK_FOREIGNPAYEES = [
-    {
-      title: 'Recently Paid',
-      id: 'recently-paid',
-      payees: [
-        {
-          name: 'Andrew Jones',
-          paidAt: 'Fri 5 Aug',
-          number: '10964567891',
-          bank: 'BANK OF ANTARCTICA, ANTARCTICA',
-          code: 'NFBKAS33XXX',
-          svg: (
-            <AntarcticaFlag />
-          ),
-        },
-        {
-          name: 'Joss Wight',
-          paidAt: 'Mon 1 Aug',
-          number: '10964567892',
-          bank: 'LLOYDS OF LONDON, DEVON',
-          code: 'NFBKAS33XXX',
-          svg: (
-            <UnitedKingdomFlag />
-          ),
-        },
-      ],
-    },
-    {
-      title: 'A',
-      id: 'a',
-      payees: [
-        {
-          name: 'American Apparel',
-          number: '10964567894',
-          bank: 'BANK OF AMERICA, NEW YORK',
-          code: 'NFBKAS33XXX',
-          paidAt: undefined,
-          svg: (
-            <UnitedStatesFlag />
-          ),
-        },
-        {
-          initials: 'AC',
-          name: 'Alfred Prince',
-          number: '10964567895',
-          bank: 'BANK OF AMERICA, NEW YORK',
-          code: 'NFBKAS33XXX',
-          paidAt: undefined,
-          svg: (
-            <UnitedStatesFlag />
-          ),
-        },
-      ],
-    },
-    {
-      title: 'H',
-      id: 'h',
-      payees: [
-        {
-          name: 'Havana Houseboats',
-          number: '10964567896',
-          bank: 'BANK OF CUBA, HAVANA',
-          code: 'NFBKAS33XXX',
-          paidAt: undefined,
-          svg: (
-            <CubaFlag />
-          ),
-        },
-      ],
-    },
-  ];
-
-  return (
-    <>
-      {MOCK_FOREIGNPAYEES.map(({ title, id, payees }) => (
-        <div key={id}>
-          <h3 className="mb-3 border-b-[1px] border-border pb-1 font-normal">{title}</h3>
-          {payees.map(({ name, number, paidAt, bank, code, svg }) =>
-            paidAt ? (
-              <FlexiCell
-                tag="a"
-                href="#"
-                key={name}
-                before={<FlexiCellAdornment>{svg}</FlexiCellAdornment>}
-                after={
-                  <FlexiCellAdornment align="center">
-                    <FlexiCellLabel rightLabel tag="h4">
-                      {paidAt}
-                    </FlexiCellLabel>
-                  </FlexiCellAdornment>
-                }
-              >
-                <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
-                <FlexiCellHint className="-mb-1">{number}</FlexiCellHint>
-                <FlexiCellHint className="-mb-1">{bank}</FlexiCellHint>
-                <FlexiCellHint>{code}</FlexiCellHint>
-              </FlexiCell>
-            ) : (
-              <FlexiCell
-                href="#"
-                dualAction
-                key={name}
-                before={
-                  <FlexiCellAdornment>
-                    {svg}
-                  </FlexiCellAdornment>
-                }
-                after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
-              >
-                <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
-                <FlexiCellHint className="-mb-1">{number}</FlexiCellHint>
-                <FlexiCellHint className="-mb-1">{bank}</FlexiCellHint>
-                <FlexiCellHint>{code}</FlexiCellHint>
-              </FlexiCell>
-            ),
-          )}
-        </div>
-      ))}
-    </>
-  );
-};
-```
-
-### Promo tiles - Vertically stacked
-
-```jsx
-() => {
-  const MOCK_PROMOS = [
-    {
-      title: 'This is talking about the bonus',
-      subtitle: 'This is more about the bonus and all the other exciting things about this.',
-    },
-    {
-      title: 'This is a longer heading talking all about the bonus this one wraps',
-      subtitle: 'This is more about the bonus',
-    },
-    {
-      title: 'This is talking about the bonus',
-      subtitle: 'This is more about the bonus and all the other exciting things about this.',
-    },
-  ];
-
-  return (
-    <div className="flex flex-col">
-      {MOCK_PROMOS.map(({ title, subtitle }) => (
-        <FlexiCell
-          tag="a"
-          href="#"
-          key={title}
-          withBorder
-          before={
-            <FlexiCellAdornment align="center">
-              <FlexiCellCircle className="h-[70px] w-[70px] border border-border bg-white">
-                <span className="m-1">Graphic Here</span>
-              </FlexiCellCircle>
-            </FlexiCellAdornment>
-          }
-          topBadge={({ className }) => <Badge className={className + ' leading-normal'}>Corner flag</Badge>}
-        >
-          <FlexiCellLabel className="text-[12px] font-normal text-muted" tag="p">
-            MYER
-          </FlexiCellLabel>
-          <FlexiCellLabel className="text-hero" tag="h4">
-            {title}
-          </FlexiCellLabel>
-          <FlexiCellHint>{subtitle}</FlexiCellHint>
-          <FlexiCellFooter>
-            <Badge color="primary">Badge 1</Badge>
-            <Badge color="faint">Badge 2</Badge>
-          </FlexiCellFooter>
-        </FlexiCell>
-      ))}
-    </div>
-  );
-};
-```
-
-### Promo Tiles - Horizontal layout
-
-```jsx
-() => {
-  const MOCK_VERTICAL_PROMOS = [
-    {
-      title: 'About the bonus',
-      subtitle:
-        'The bonus and all the other exciting things. This will truncate if it gets too long with some extra text to make it a bit longer.',
-    },
-    {
-      title: 'Short heading',
-      subtitle: 'This is more about the bonus.',
-    },
-    {
-      title: 'This is a longer heading talking all about the bonus this one wraps',
-      subtitle: 'This is more about the bonus',
-    },
-  ];
-
-  return (
-    <div className="flex gap-3">
-      {MOCK_VERTICAL_PROMOS.map(({ title, subtitle }) => (
-        <FlexiCell
-          className="max-sm:h-[255px] max-sm:min-w-[214px] sm:h-[277px] sm:min-w-[298px] sm:max-w-[298px]"
-          href="#"
-          tag="a"
-          withBorder
-          topBadge={({ className }) => <Badge className={className + ' leading-normal'}>Corner flag</Badge>}
-        >
-          <FlexiCellAdornment className="mb-1">
-            <img
-              src="https://res.cloudinary.com/westpac-gel/image/upload/v1695965746/house-demo-image_e1ycip"
-              alt=""
-              className="h-10.5 w-full object-cover"
-            />
-          </FlexiCellAdornment>
-
-          <FlexiCellLabel className="text-[12px] font-normal text-muted" tag="p">
-            MYER
-          </FlexiCellLabel>
-          <FlexiCellLabel className="text-hero" tag="h4">
-            {title}
-          </FlexiCellLabel>
-          <FlexiCellHint className="line-clamp-3 max-sm:h-10 sm:h-10.5">{subtitle}</FlexiCellHint>
-          <FlexiCellFooter className="absolute max-sm:bottom-2 max-sm:left-2 sm:bottom-3 sm:left-3">
-            <Badge color="primary">Badge 1</Badge>
-            <Badge color="faint">Badge 2</Badge>
-          </FlexiCellFooter>
-        </FlexiCell>
-      ))}
-    </div>
-  );
-};
-```
-
-### Product tiles usage
-
-```jsx
-() => {
-  const title = 'Westpac specials and product offers';
-  const subtitle = 'Discounts and cashback from select merchants & products offers from Westpac';
-  return (
-    <>
-      <FlexiCell
-        tag="a"
-        href="#"
-        withBorder
-        withArrow
-        key={title}
-        before={
-          <FlexiCellAdornment className="max-sm:hidden">
+  return <>
+      {new Array(3).fill(null).map((_, index) => <FlexiCell key={index} tag="a" href="#" withBorder withArrow size={{
+      initial: 'default',
+      md: 'large'
+    }}>
+          <div className="flex flex-col gap-2 md:flex-row">
             <GiftIcon look="outlined" color="hero" />
-          </FlexiCellAdornment>
-        }
-        after={
-          <Badge className="h-fit w-fit" color="success">
-            Completed
-          </Badge>
-        }
-      >
-        <GiftIcon className="sm:hidden" look="outlined" color="hero" />
-        <FlexiCellLabel className="text-hero" tag="h4">
-          {title}
-        </FlexiCellLabel>
-        <FlexiCellHint>{subtitle}</FlexiCellHint>
-      </FlexiCell>
-      <FlexiCell
-        tag="a"
-        href="#"
-        withBorder
-        withArrow
-        key={title}
-        before={
-          <FlexiCellAdornment className="max-sm:hidden">
-            <PadlockIcon look="outlined" color="hero" />
-          </FlexiCellAdornment>
-        }
-        after={
-          <Badge className="h-fit w-fit" color="success">
-            Completed
-          </Badge>
-        }
-      >
-        <PadlockIcon className="sm:hidden" look="outlined" color="hero" />
-        <FlexiCellLabel className="text-hero" tag="h4">
-          {title}
-        </FlexiCellLabel>
-        <FlexiCellHint>{subtitle}</FlexiCellHint>
-      </FlexiCell>
-    </>
-  );
-};
+            <div className="flex flex-col gap-1">
+              <FlexiCellLabel tag="h3">Label</FlexiCellLabel>
+              <FlexiCellHint>Descriptive information</FlexiCellHint>
+            </div>
+          </div>
+        </FlexiCell>)}
+    </>;
+}
+```
+
+### **Simple tile (Horizontal layout)**
+
+```jsx
+() => {
+  return <GridContainer fixed>
+      <Grid>
+        {new Array(3).fill(null).map((_, index) => <GridItem span={4} key={index}>
+            <FlexiCell className="min-h-[17.5rem]" tag="a" href="#" withBorder size={{
+          initial: 'default',
+          md: 'large'
+        }}>
+              <div>
+                <div className="flex justify-start mb-2 md:mb-3">
+                  <GiftIcon look="outlined" color="hero" />
+                </div>
+                <div className="flex flex-col">
+                  <FlexiCellLabel tag="h3" className="mb-1">
+                    Title
+                  </FlexiCellLabel>
+                  <FlexiCellHint>Description</FlexiCellHint>
+                </div>
+              </div>
+            </FlexiCell>
+          </GridItem>)}
+      </Grid>
+    </GridContainer>;
+}
+```
+
+### **Image tile (Vertical stack)**
+
+```jsx
+() => {
+  return <>
+      {new Array(3).fill(null).map((_, index) => <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{
+      initial: 'default',
+      md: 'large'
+    }}>
+          <div className="flex gap-2">
+            <img src={imgString} alt="background" className="-my-2 -ml-2 block w-[10rem] object-cover md:-my-3 md:-ml-3" />
+            <FlexiCellBody>
+              <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+              <FlexiCellHint>Description</FlexiCellHint>
+              <div className="mt-3 flex gap-1">
+                <Badge color="hero">Label</Badge>
+                <Badge color="faint" soft>
+                  Label
+                </Badge>
+              </div>
+            </FlexiCellBody>
+          </div>
+        </FlexiCell>)}
+    </>;
+}
+```
+
+### **Image tile - Edge to edge (Horizontal layout)**
+
+```jsx
+() => {
+  return <GridContainer>
+      <Grid>
+        {new Array(3).fill(null).map((_, index) => <GridItem key={index} span={4}>
+            <FlexiCell className="overflow-hidden" body={false} key={index} tag="a" href="#" withBorder size={{
+          initial: 'default',
+          md: 'large'
+        }}>
+              <div className="flex flex-col gap-2">
+                <div className="-mx-2 -mt-2 md:-mx-3 md:-mt-3">
+                  <img src={imgString} alt="background" className="block h-[8.75rem] w-full object-cover" />
+                </div>
+                <FlexiCellBody>
+                  <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+                  <FlexiCellHint>Description</FlexiCellHint>
+                  <div className="mt-3 flex gap-1">
+                    <Badge color="hero">Label</Badge>
+                    <Badge color="faint" soft>
+                      Label
+                    </Badge>
+                  </div>
+                </FlexiCellBody>
+              </div>
+            </FlexiCell>
+          </GridItem>)}
+      </Grid>
+    </GridContainer>;
+}
 ```
