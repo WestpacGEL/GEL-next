@@ -102,6 +102,7 @@ export {
   BottomSheet,
   Header,
   Footer,
+  GridContainer,
 } from '@westpac/ui';
 
 export * from '@westpac/ui/icon';
