@@ -12,8 +12,8 @@ design:
       slug: simple-tile
     noTitle: false
   - title:
-      name: Horizontal layout
-      slug: horizontal-layout
+      name: Image tile
+      slug: image-tile
     noTitle: false
   - title:
       name: User experience
