@@ -1,47 +1,42 @@
 ```
 () => {
-  const title = 'Title';
-  const subtitle = 'Sub-title';
-  return (
-    <>
-      <FlexiCell
-      tag="a"
-      href="#"
-      withBorder
-      withArrow
-      key={title}
-      before={
-        <FlexiCellAdornment className="max-sm:hidden">
-          <GiftIcon look="outlined" color="hero" />
-        </FlexiCellAdornment>
-      }
-    >
-      <GiftIcon className="sm:hidden" look="outlined" color="hero" />
-      <FlexiCellLabel className="text-hero" tag="h4">
-        {title}
-      </FlexiCellLabel>
-      <FlexiCellHint>{subtitle}</FlexiCellHint>
-    </FlexiCell>
-  
-  <FlexiCell
-      tag="a"
-      href="#"
-      withBorder
-      withArrow
-      key={title}
-      before={
-        <FlexiCellAdornment className="max-sm:hidden">
-          <DeliveryTruckIcon look="outlined" color="hero" />
-        </FlexiCellAdornment>
-      }
-    >
-      <DeliveryTruckIcon className="sm:hidden" look="outlined" color="hero" />
-      <FlexiCellLabel className="text-hero" tag="h4">
-        {title}
-      </FlexiCellLabel>
-      <FlexiCellHint>{subtitle}</FlexiCellHint>
-    </FlexiCell>
-    </>
-  );
-};
+  return <>
+<FlexiCell tag="a" href="#" withBorder withArrow size={{
+      initial: 'default',
+      md: 'large'
+    }}>
+          <div className="flex flex-col gap-2 md:flex-row">
+            <AccountIcon look="outlined" color="hero" />
+            <div className="flex flex-col gap-1">
+              <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+              <FlexiCellHint>Descriptive information</FlexiCellHint>
+            </div>
+          </div>
+        </FlexiCell>
+        <FlexiCell tag="a" href="#" withBorder withArrow size={{
+      initial: 'default',
+      md: 'large'
+    }}>
+          <div className="flex flex-col gap-2 md:flex-row">
+            <IdCardIcon look="outlined" color="hero" />
+            <div className="flex flex-col gap-1">
+              <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+              <FlexiCellHint>Descriptive information</FlexiCellHint>
+            </div>
+          </div>
+        </FlexiCell>
+                <FlexiCell tag="a" href="#" withBorder withArrow size={{
+      initial: 'default',
+      md: 'large'
+    }}>
+          <div className="flex flex-col gap-2 md:flex-row">
+            <DollarIcon look="outlined" color="hero" />
+            <div className="flex flex-col gap-1">
+              <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+              <FlexiCellHint>Descriptive information</FlexiCellHint>
+            </div>
+          </div>
+        </FlexiCell>
+    </>;
+}
 ```
