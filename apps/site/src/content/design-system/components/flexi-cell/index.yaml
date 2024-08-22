@@ -8,8 +8,8 @@ namedExport:
 excludeFromNavbar: true
 design:
   - title:
-      name: Vertical stack
-      slug: vertical-stack
+      name: Simple tile
+      slug: simple-tile
     noTitle: false
   - title:
       name: Horizontal layout
