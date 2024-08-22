@@ -1,62 +1,24 @@
 ```
-  () => {
-  return <GridContainer fixed>
-      <Grid>
-        <GridItem span={4}>
-            <FlexiCell className="min-h-[17.5rem]" tag="a" href="#" withBorder size={{
-          initial: 'default',
-          md: 'large'
-        }}>
-              <div>
-                <div className="flex justify-start mb-2 md:mb-3">
-                  <AccountIcon look="outlined" color="hero" />
-                </div>
-                <div className="flex flex-col">
-                  <FlexiCellLabel tag="h3" className="mb-1">
-                    Flexi-cell title
-                  </FlexiCellLabel>
-                  <FlexiCellHint>Descriptive information - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tellus libero, faucibus eu leo non, aliquam ultrices odio. Proin mattis tellus neque, et molestie urna ullamcorper. </FlexiCellHint>
-                </div>
+ () => {
+  return <>
+      {new Array(3).fill(null).map((_, index) => <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{
+      initial: 'default',
+      md: 'large'
+    }}>
+          <div className="flex gap-2">
+            <img src="https://res.cloudinary.com/westpac-gel/image/upload/v1695965746/house-demo-image_e1ycip" alt="background" className="-my-2 -ml-2 block w-[10rem] object-cover md:-my-3 md:-ml-3" />
+            <FlexiCellBody>
+              <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+              <FlexiCellHint>Descriptive information</FlexiCellHint>
+              <div className="mt-3 flex gap-1">
+                <Badge color="hero">Label</Badge>
+                <Badge color="faint" soft>
+                  Label
+                </Badge>
               </div>
-            </FlexiCell>
-          </GridItem>
-                  <GridItem span={4}>
-            <FlexiCell className="min-h-[17.5rem]" tag="a" href="#" withBorder size={{
-          initial: 'default',
-          md: 'large'
-        }}>
-              <div>
-                <div className="flex justify-start mb-2 md:mb-3">
-                  <IdCardIcon look="outlined" color="hero" />
-                </div>
-                <div className="flex flex-col">
-                  <FlexiCellLabel tag="h3" className="mb-1">
-                    Flexi-cell title
-                  </FlexiCellLabel>
-                  <FlexiCellHint>Descriptive information - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tellus libero, faucibus eu leo non, aliquam ultrices odio. Proin mattis tellus neque, et molestie urna ullamcorper.</FlexiCellHint>
-                </div>
-              </div>
-            </FlexiCell>
-          </GridItem>
-                  <GridItem span={4}>
-            <FlexiCell className="min-h-[17.5rem]" tag="a" href="#" withBorder size={{
-          initial: 'default',
-          md: 'large'
-        }}>
-              <div>
-                <div className="flex justify-start mb-2 md:mb-3">
-                  <DollarIcon look="outlined" color="hero" />
-                </div>
-                <div className="flex flex-col">
-                  <FlexiCellLabel tag="h3" className="mb-1">
-                    Flexi-cell title
-                  </FlexiCellLabel>
-                  <FlexiCellHint>Descriptive information - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tellus libero, faucibus eu leo non, aliquam ultrices odio. Proin mattis tellus neque, et molestie urna ullamcorper.</FlexiCellHint>
-                </div>
-              </div>
-            </FlexiCell>
-          </GridItem>
-      </Grid>
-    </GridContainer>;
+            </FlexiCellBody>
+          </div>
+        </FlexiCell>)}
+    </>;
 }
 ```
