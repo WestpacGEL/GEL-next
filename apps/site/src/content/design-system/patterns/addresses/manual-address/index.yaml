@@ -10,10 +10,12 @@ design:
       name: Manual address
       slug: manual-address
     noTitle: false
+    noDemo: false
   - title:
       name: Error states
       slug: error-states
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents:
   - title: Text inputs

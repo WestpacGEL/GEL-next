@@ -8,10 +8,12 @@ design:
       name: What is a colour vision impairment?
       slug: what-is-a-colour-vision-impairment
     noTitle: false
+    noDemo: false
   - title:
       name: Colour contrast testing
       slug: colour-contrast-testing
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []

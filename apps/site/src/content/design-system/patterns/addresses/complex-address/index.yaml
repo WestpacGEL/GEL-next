@@ -9,6 +9,7 @@ design:
       name: Complex address
       slug: complex-address
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents:
   - title: Text inputs

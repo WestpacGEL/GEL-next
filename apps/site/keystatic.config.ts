@@ -138,6 +138,7 @@ export default config({
               },
             }),
             noTitle: fields.checkbox({ label: 'No title' }),
+            noDemo: fields.checkbox({ label: 'No Demo' }),
             content: fields.document({
               formatting: {
                 inlineMarks: {

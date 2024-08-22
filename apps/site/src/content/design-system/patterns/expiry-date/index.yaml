@@ -10,14 +10,17 @@ design:
       name: Expiry date
       slug: expiry-date
     noTitle: false
+    noDemo: false
   - title:
       name: Error states
       slug: error-states
     noTitle: false
+    noDemo: false
   - title:
       name: Dos and don'ts
       slug: dos-and-donts
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents:
   - title: Text inputs

@@ -10,18 +10,22 @@ design:
       name: Design system spacing tokens
       slug: user-experience
     noTitle: false
+    noDemo: false
   - title:
       name: Margin spacing
       slug: margin-spacing
     noTitle: false
+    noDemo: false
   - title:
       name: Padding spacing
       slug: padding-spacing
     noTitle: false
+    noDemo: false
   - title:
       name: Gap spacing
       slug: gap-spacing
     noTitle: false
+    noDemo: false
 accessibility:
   - title:
       name: Accessibility features
