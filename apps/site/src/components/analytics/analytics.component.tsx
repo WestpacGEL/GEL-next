@@ -2,7 +2,7 @@
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 
 import { sendToAnalytics } from '@/utils/send-to-analytics';
 
@@ -24,7 +24,9 @@ export function Analytics({ analyticsAppMeasurement, scriptSrc }: AnalyticsProps
     <>
       <Script id="analytics-appmeasurement">{`window.__adobe_anayltics_appmeasurement="${analyticsAppMeasurement}"`}</Script>
       <Script id="analytics-script" src={scriptSrc} strategy="afterInteractive" />
-      <TrackPageNavigation />
+      <Suspense>
+        <TrackPageNavigation />
+      </Suspense>
     </>
   );
 }
