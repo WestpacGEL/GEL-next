@@ -194,7 +194,7 @@
       },
       page: function (a) {
         a = e.cloneObject(a || {});
-        a.siteVersion || (a.siteVersion = 'analytics_wdp_wbc.js:1.1.6:20210910');
+        a.siteVersion || (a.siteVersion = 'analytics_gel_wbg.js:1.1.6:20240825');
         s3.w_trackPage(a);
       },
     },
