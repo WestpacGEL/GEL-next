@@ -3,7 +3,7 @@ export type AnalyticsConfig = {
   journeyType: 'auth' | 'pub';
   loginStatus: 'logged in' | 'logged out';
   pageStatus: 'auth' | 'pub';
-  siteBrand: 'wbc' | 'stg' | 'bom' | 'bsa';
+  siteBrand: 'wbc' | 'stg' | 'bom' | 'bsa' | 'wbg';
   siteDomain: string;
   siteEnv: 'test' | 'prod';
   siteName: string;
