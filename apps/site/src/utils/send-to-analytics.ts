@@ -18,9 +18,12 @@ const ANALYTICS_CONFIG: AnalyticsConfig = {
 };
 
 export const sendToAnalytics = (event: EventType, analyticsPayload?: AnalyticsPayload) => {
-  const request = createRequest(
-    { ...ANALYTICS_CONFIG, ...{ siteEnv: window?.location?.hostname === SITE ? 'prod' : 'test' } },
-    analyticsPayload,
-  );
+  const host = window?.location?.hostname;
+  if (host.includes('vercel.app')) {
+    // We don't want to track PR builds
+    return;
+  }
+  const siteEnv = host === SITE ? 'prod' : 'test';
+  const request = createRequest({ ...ANALYTICS_CONFIG, ...{ siteEnv: siteEnv } }, analyticsPayload);
   track(event, request);
 };
