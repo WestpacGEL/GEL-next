@@ -121,8 +121,9 @@ const getSiteSection = (url: string, level: number): string | undefined => {
 };
 
 const getPageName = (): string => {
-  // default page name creates using path and when it's empty fallback to page title. E.g. format wbc:www:corp:westpac-iq:ceo-survey
+  // default page name creates using path & query and when it's empty fallback to page title. E.g. format wbc:www:corp:westpac-iq:ceo-survey
+  const query = window?.location?.search;
   const path = window?.location?.pathname;
-  const name = path.replace(/^\/|\/$/g, '').replace(/\//g, ':') || window?.document?.title;
+  const name = `${path + query}`.replace(/^\/|\/$/g, '').replace(/\?|=|&|\//g, ':') || window?.document?.title;
   return convertToKebabCase(name);
 };

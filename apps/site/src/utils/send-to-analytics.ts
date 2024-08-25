@@ -2,23 +2,25 @@ import { AnalyticsConfig, AnalyticsPayload, EventType } from '../types/analytics
 
 import { createRequest, track } from './analytics.utils';
 
+const SITE = 'gel.westpacgroup.com.au';
+
 const ANALYTICS_CONFIG: AnalyticsConfig = {
-  // TODO: remove?
   encryptedID: '',
   journeyType: 'pub',
   loginStatus: 'logged out',
   pageStatus: 'pub',
-  // TODO: which script and path?
-  scriptSrc: '',
-  siteBrand: 'bom',
-  siteDomain: 'localhost',
+  siteBrand: 'wbc',
+  siteDomain: SITE,
   siteEnv: 'test',
-  siteVersion: '1.0.0',
-  siteName: 'online',
-  trackOnce: false,
+  siteVersion: '4.0',
+  siteName: 'gel',
+  trackOnce: true,
 };
 
 export const sendToAnalytics = (event: EventType, analyticsPayload?: AnalyticsPayload) => {
-  const request = createRequest(ANALYTICS_CONFIG, analyticsPayload);
+  const request = createRequest(
+    { ...ANALYTICS_CONFIG, ...{ siteEnv: window?.location?.hostname === SITE ? 'prod' : 'test' } },
+    analyticsPayload,
+  );
   track(event, request);
 };
