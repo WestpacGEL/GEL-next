@@ -132,15 +132,26 @@ export default function SampleApp() {
 
 We recommend [Vitest](https://vitest.dev/) for unit testing since [Vitest](https://vitest.dev/guide/why.html) natively supports [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
-If you are using [Jest](https://jestjs.io/) for unit testing, you might encounter some issues since [Jest](https://jestjs.io/docs/ecmascript-modules) does not support [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) by default. Therefore, you will need to make following configuration changes to the [Jest configuration file](https://jestjs.io/docs/configuration).
+If you are using [Jest](https://jestjs.io/) for unit testing, you might encounter some issues since [Jest](https://jestjs.io/docs/ecmascript-modules) does not support [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) by default. Therefore, you will need to make following configuration changes.
 
-Add the below to `package.json`
+Update the `package.json` file if you have initialized your project with [Create React App](https://create-react-app.dev/).
 
 ```json
 {
   "scripts": {
-    "test": "jest --transformIgnorePatterns \"node_modules/(?!(@westpac/ui)/)\""
+    "test": "node scripts/test.js --transformIgnorePatterns \"node_modules/(?!(@westpac/ui)/)\""
   }
+}
+```
+
+Update the `jest.config.js` file if you have initialized your project with [Nx build system](https://nx.dev/) and [Babel](https://babeljs.io/).
+
+```js
+{
+   transform: {
+     '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nrwl/react/babel'] }]
+   },
+   transformIgnorePatterns: ['node_modules/(?!@westpac/ui)']
 }
 ```
 
