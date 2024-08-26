@@ -45,7 +45,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "frame-ancestors 'self'; upgrade-insecure-requests; img-src 'self' blob: data: res.cloudinary.com; font-src 'self'; object-src 'none'; form-action 'self'; connect-src 'self' https://vercel.live/; style-src 'self' 'unsafe-inline'; block-all-mixed-content;"
+          "value": "frame-ancestors 'self'; upgrade-insecure-requests; img-src 'self' blob: data: res.cloudinary.com; font-src 'self'; object-src 'none'; form-action 'self'; connect-src 'self' https://dpm.demdex.net https://vercel.live/; style-src 'self' 'unsafe-inline'; block-all-mixed-content;"
         },
         {
           "key": "X-Content-Type-Options",
