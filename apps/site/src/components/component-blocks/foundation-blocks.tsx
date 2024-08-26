@@ -3,6 +3,8 @@ import { Image } from '@/components/document-renderer';
 import { Colors } from './colors/colors.component';
 import { colors } from './colors/colors.preview';
 import { accessibilityDemo } from './components/accessibility-demo/accessibility-demo.preview';
+import { AvailabilityContent } from './components/availability-content/availability-content.component';
+import { availabilityContent } from './components/availability-content/availability-content.preview';
 import { designSystemBodyImage } from './components/design-system-body-image';
 import { LinkList } from './components/link-list';
 import { linkList } from './components/link-list/link-list.preview';
@@ -29,6 +31,7 @@ export const foundationBlocks = {
   linkList,
   shortCode,
   accessibilityDemo,
+  availabilityContent,
 };
 
 export const foundationBlocksComponents = {
@@ -43,5 +46,14 @@ export const foundationBlocksComponents = {
     <div className="mb-5 mt-1">
       <Image {...props} />
     </div>
+  ),
+  availabilityContent: (props: any) => (
+    <AvailabilityContent
+      availableGel={props.availableGel}
+      availableMesh={props.availableMesh}
+      availableLegacyWdp={props.availableLegacyWdp}
+      alternativeMesh={props.alternativeMesh}
+      alternativeLegacyWdp={props.alternativeLegacyWdp}
+    />
   ),
 };
