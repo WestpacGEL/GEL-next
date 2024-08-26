@@ -110,7 +110,7 @@ export default function SampleApp() {
 
 #### Mono package import
 
-Modern bundlers like [Vite](https://vitejs.dev/) will automatically detect the individual components and only bundle the components you use.
+Modern bundlers like [Vite](https://vitejs.dev/) and latest [webpack](https://webpack.js.org/) will automatically detect the individual components and only bundle the components you use.
 
 However, use this approach with caution as it may cause issues with [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) since not all bundlers have this advanced capability.
 
@@ -134,20 +134,12 @@ We recommend [Vitest](https://vitest.dev/) for unit testing since [Vitest](https
 
 If you are using [Jest](https://jestjs.io/) for unit testing, you might encounter some issues since [Jest](https://jestjs.io/docs/ecmascript-modules) does not support [ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) by default. Therefore, you will need to make following configuration changes to the [Jest configuration file](https://jestjs.io/docs/configuration).
 
-```ts
-// jest.config.ts
-const customJestConfig = {
-  transform: {},
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
-};
-```
-
 Add the below to `package.json`
 
 ```json
 {
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "jest --transformIgnorePatterns \"node_modules/(?!(@westpac/ui)/)\""
   }
 }
 ```
