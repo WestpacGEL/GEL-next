@@ -139,7 +139,7 @@ Add the below to `package.json`
 ```json
 {
   "scripts": {
-    "test": "node scripts/test.js --transformIgnorePatterns \"node_modules/(?!(@westpac/ui)/)\""
+    "test": "jest --transformIgnorePatterns \"node_modules/(?!(@westpac/ui)/)\""
   }
 }
 ```
