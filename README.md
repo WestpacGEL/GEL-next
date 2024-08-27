@@ -42,13 +42,27 @@ const config = withGEL({
 export default config;
 ```
 
-Also you have to create a `postcss.config.js` on the root of your application as follows.
+Also, you have to create a `postcss.config.js` on the root of your application as follows.
 
 ```js
 module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
+  },
+};
+```
+
+Update the `postcss.config.js` file if you have initialized your project with [Nx build system](https://nx.dev/) and [Babel](https://babeljs.io/).
+
+```js
+const { join } = require('path');
+module.exports = {
+  plugins: {
+     tailwindcss: {
+        config: join(__dirname, 'tailwind.config.js')
+     },
+     autoprefixer: {}
   },
 };
 ```
