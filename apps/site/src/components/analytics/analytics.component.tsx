@@ -22,7 +22,7 @@ function TrackPageNavigation() {
 export function Analytics({ analyticsAppMeasurement, scriptSrc }: AnalyticsProps) {
   return (
     <>
-      <Script id="analytics-appmeasurement">{`window.__adobe_anayltics_appmeasurement="${analyticsAppMeasurement}"`}</Script>
+      <Script id="analytics-appmeasurement">{`window.__adobe_analytics_app_measurement="${analyticsAppMeasurement}"`}</Script>
       <Script id="analytics-script" src={scriptSrc} strategy="afterInteractive" />
       <Suspense>
         <TrackPageNavigation />
