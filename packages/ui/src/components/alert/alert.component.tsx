@@ -19,6 +19,7 @@ export function Alert({
   open: isOpen = true,
   onClose,
   icon,
+  iconSize,
   tag: Tag = 'div',
   className,
   children,
@@ -61,7 +62,7 @@ export function Alert({
           >
             <Tag className={styles.base({ className })} {...props}>
               <span className={styles.icon()}>
-                <Icon size={{ initial: 'small', xsl: 'medium' }} look="outlined" />
+                <Icon size={iconSize || { initial: 'small', xsl: 'medium' }} look="outlined" />
               </span>
               <div className={styles.body()}>
                 {!!heading && <HeadingTag className={styles.heading()}>{heading}</HeadingTag>}

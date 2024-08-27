@@ -28,6 +28,11 @@ export type AlertProps = {
    */
   icon?: React.ElementType;
   /**
+   * The size of the alert icon.
+   * @default undefined
+   */
+  iconSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+  /**
    * Alert look style
    * @default info
    */
