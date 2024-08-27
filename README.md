@@ -59,10 +59,10 @@ Update the `postcss.config.js` file if you have initialized your project with [N
 const { join } = require('path');
 module.exports = {
   plugins: {
-     tailwindcss: {
-        config: join(__dirname, 'tailwind.config.js')
-     },
-     autoprefixer: {}
+    tailwindcss: {
+      config: join(__dirname, 'tailwind.config.js'),
+    },
+    autoprefixer: {},
   },
 };
 ```
