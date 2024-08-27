@@ -19,8 +19,9 @@ const ANALYTICS_CONFIG: AnalyticsConfig = {
 
 export const sendToAnalytics = (event: EventType, analyticsPayload?: AnalyticsPayload) => {
   const host = window?.location?.hostname;
-  if (host.includes('vercel.app')) {
-    // We don't want to track PR builds
+  const path = window?.location?.pathname;
+  if (host.includes('vercel.app') || path.startsWith('/keystatic')) {
+    // We don't want to track PR builds or CMS edits
     return;
   }
   const siteEnv = host === SITE ? 'prod' : 'test';
