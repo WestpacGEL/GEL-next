@@ -127,7 +127,7 @@
     },
     pageSetup: function () {
       var a = e.scriptElement('app-measurement'),
-        b = '/scripts/appmeasurement_gel.js',
+        b = d.__adobe_anayltics_appmeasurement,
         c = function () {
           return d.s3 && d.s3.w_trackPage;
         };
