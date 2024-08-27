@@ -25,12 +25,12 @@ design:
     noTitle: false
 accessibility: []
 relatedComponents:
-  - title: Icons
-    slug: /components/foundation/icon
-  - title: Pictograms
-    slug: /components/foundation/icon
   - title: Badges
     slug: /components/badge
+  - title: Icons
+    slug: /components/foundation/icon
+  - title: Selector
+    slug: /components/selector
 code:
   - title:
       name: Development examples
