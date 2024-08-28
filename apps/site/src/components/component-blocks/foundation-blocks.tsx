@@ -47,13 +47,5 @@ export const foundationBlocksComponents = {
       <Image {...props} />
     </div>
   ),
-  availabilityContent: (props: any) => (
-    <AvailabilityContent
-      availableGel={props.availableGel}
-      availableMesh={props.availableMesh}
-      availableLegacyWdp={props.availableLegacyWdp}
-      alternativeMesh={props.alternativeMesh}
-      alternativeLegacyWdp={props.alternativeLegacyWdp}
-    />
-  ),
+  availabilityContent: (props: any) => <AvailabilityContent {...props} />,
 };
