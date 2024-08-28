@@ -41,6 +41,7 @@ export function TableOfAvailability({
   const styles = TableOfAvailabilityStyles({});
 
   const hasAlternativeNames = platforms.some(platform => platform.alternative);
+  const cellWidth = 200;
 
   return (
     <Table>
@@ -56,16 +57,16 @@ export function TableOfAvailability({
           const { text, icon: Icon, color } = availabilityMap[platform.status];
           return (
             <TableRow key={platform.name}>
-              <TableCell>
+              <TableCell width={cellWidth}>
                 <strong>{platform.name}</strong>
               </TableCell>
-              <TableCell>
+              <TableCell width={cellWidth}>
                 <div className={styles.text({ color })}>
                   <Icon size="small" look="outlined" className="mr-2" color={color} />
                   {text}
                 </div>
               </TableCell>
-              {hasAlternativeNames && <TableCell>{platform.alternative || ''}</TableCell>}
+              {hasAlternativeNames && <TableCell width={cellWidth}>{platform.alternative || ''}</TableCell>}
             </TableRow>
           );
         })}
