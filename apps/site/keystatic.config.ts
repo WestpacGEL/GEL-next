@@ -138,7 +138,7 @@ export default config({
               },
             }),
             noTitle: fields.checkbox({ label: 'No title' }),
-            noDemo: fields.checkbox({ label: 'No Demo' }),
+            noDemo: fields.checkbox({ label: 'No demo button on examples' }),
             content: fields.document({
               formatting: {
                 inlineMarks: {
