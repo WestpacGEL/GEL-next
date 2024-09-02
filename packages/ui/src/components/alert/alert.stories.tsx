@@ -85,15 +85,15 @@ export const TextMode: Story = {
         inconvenience. <a href="#">Link</a>
       </Alert>
       <h2 className="typography-body-8 mb-2 font-bold pt-4">Custom Icon Sizes</h2>
-      <h3 className="font-bold pb-2">Large</h3>
+      <h3 className="font-bold pb-2">Medium</h3>
       <Alert look="info" iconSize="medium" mode="text">
         <strong>Medium</strong> This alert has a medium icon. <a href="#">Link</a>
       </Alert>
-      <h3 className="font-bold pb-2">Medium</h3>
+      <h3 className="font-bold pb-2">Small</h3>
       <Alert look="info" iconSize="small" mode="text">
         <strong>Small</strong> This alert has a small icon. <a href="#">Link</a>
       </Alert>
-      <h3 className="font-bold pb-2">Small</h3>
+      <h3 className="font-bold pb-2">Extra Small</h3>
       <Alert look="info" iconSize="xsmall" mode="text">
         <strong>Extra Small</strong> This alert has an extra small icon. <a href="#">Link</a>
       </Alert>

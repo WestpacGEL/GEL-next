@@ -19,7 +19,7 @@ export function Alert({
   open: isOpen = true,
   onClose,
   icon,
-  iconSize,
+  iconSize = 'flex',
   tag: Tag = 'div',
   className,
   children,
@@ -38,7 +38,7 @@ export function Alert({
   // A11y: Only info look allows a custom icon
   const Icon = look === 'info' && icon ? icon : iconMap[look as Look];
 
-  const styles = alertStyles({ look, mode, dismissible });
+  const styles = alertStyles({ look, mode, dismissible, iconSize });
 
   useEffect(() => {
     setOpen(isOpen);
@@ -62,7 +62,7 @@ export function Alert({
           >
             <Tag className={styles.base({ className })} {...props}>
               <span className={styles.icon()}>
-                <Icon size={iconSize || { initial: 'small', xsl: 'medium' }} look="outlined" />
+                <Icon size={iconSize === 'flex' ? { initial: 'small', xsl: 'medium' } : iconSize} look="outlined" />
               </span>
               <div className={styles.body()}>
                 {!!heading && <HeadingTag className={styles.heading()}>{heading}</HeadingTag>}

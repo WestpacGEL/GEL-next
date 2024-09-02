@@ -31,7 +31,7 @@ export type AlertProps = {
    * The size of the alert icon.
    * @default undefined
    */
-  iconSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+  iconSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'flex';
   /**
    * Alert look style
    * @default info
