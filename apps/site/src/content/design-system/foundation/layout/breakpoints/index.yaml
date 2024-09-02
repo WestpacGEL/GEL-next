@@ -1,7 +1,7 @@
 name: Breakpoints
 description: >-
   Breakpoints are a set of predefined viewport widths that can be used to change
-  the layout of a page to ensure it accommodates different devices. 
+  the layout of a page to ensure it accommodates different devices.
 namedExport:
   discriminant: false
 excludeFromNavbar: false
@@ -10,6 +10,7 @@ design:
       name: Breakpoint tokens
       slug: breakpoint-tokens
     noTitle: false
+    noDemo: false
 accessibility:
   - title:
       name: Accessibility features

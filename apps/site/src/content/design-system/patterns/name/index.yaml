@@ -11,14 +11,17 @@ design:
       name: Full name
       slug: full-name
     noTitle: false
+    noDemo: false
   - title:
       name: Simple name
       slug: simple-name
     noTitle: false
+    noDemo: false
   - title:
       name: Error states
       slug: error-states
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents:
   - title: Text inputs

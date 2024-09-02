@@ -9,14 +9,17 @@ design:
       name: International address
       slug: international-address
     noTitle: false
+    noDemo: false
   - title:
       name: Error states
       slug: error-states
     noTitle: false
+    noDemo: false
   - title:
       name: User experience
       slug: user-experience
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents:
   - title: Alerts

@@ -11,18 +11,22 @@ design:
       name: Vertical stack
       slug: vertical-stack
     noTitle: false
+    noDemo: false
   - title:
       name: Horizontal layout
       slug: horizontal-layout
     noTitle: false
+    noDemo: false
   - title:
       name: User experience
       slug: user-experience
     noTitle: false
+    noDemo: false
   - title:
       name: Where is this available?
       slug: where-is-this-available
     noTitle: false
+    noDemo: true
 accessibility: []
 relatedComponents:
   - title: Icons
