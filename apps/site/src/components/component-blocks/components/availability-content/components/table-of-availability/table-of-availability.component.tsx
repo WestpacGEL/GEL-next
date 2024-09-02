@@ -41,7 +41,7 @@ export function TableOfAvailability({
   const styles = TableOfAvailabilityStyles({});
 
   const hasAlternativeNames = platforms.some(platform => platform.alternative);
-  const cellWidth = '10%';
+  const cellWidth = hasAlternativeNames ? '33%' : '50%';
 
   return (
     <Table>
