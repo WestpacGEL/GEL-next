@@ -8,12 +8,12 @@ namedExport:
 excludeFromNavbar: true
 design:
   - title:
-      name: Simple tile
-      slug: simple-tile
+      name: Symbol
+      slug: symbol
     noTitle: false
   - title:
-      name: Image tile
-      slug: image-tile
+      name: Image bleed
+      slug: image-bleed
     noTitle: false
   - title:
       name: User experience
