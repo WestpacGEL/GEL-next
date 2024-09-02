@@ -1,0 +1,117 @@
+These tiles have a responsive content layout, use the demo button to preview this responsive behaviour.
+
+### Horizontal
+
+- **Xs - Sm:** Symbol is stacked above labels, tile padding 12px
+- **Md +:** Symbol is inline to the left of the labels tile padding 18px
+
+```
+() => {
+  return <>
+<FlexiCell tag="a" href="#" withBorder withArrow size={{
+      initial: 'default',
+      md: 'large'
+    }}>
+          <div className="flex flex-col gap-2 md:flex-row">
+            <AccountIcon look="outlined" color="hero" />
+            <div className="flex flex-col gap-1">
+              <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+              <FlexiCellHint>Descriptive information</FlexiCellHint>
+            </div>
+          </div>
+        </FlexiCell>
+        <FlexiCell tag="a" href="#" withBorder withArrow size={{
+      initial: 'default',
+      md: 'large'
+    }}>
+          <div className="flex flex-col gap-2 md:flex-row">
+            <IdCardIcon look="outlined" color="hero" />
+            <div className="flex flex-col gap-1">
+              <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+              <FlexiCellHint>Descriptive information</FlexiCellHint>
+            </div>
+          </div>
+        </FlexiCell>
+                <FlexiCell tag="a" href="#" withBorder withArrow size={{
+      initial: 'default',
+      md: 'large'
+    }}>
+          <div className="flex flex-col gap-2 md:flex-row">
+            <DollarIcon look="outlined" color="hero" />
+            <div className="flex flex-col gap-1">
+              <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+              <FlexiCellHint>Descriptive information</FlexiCellHint>
+            </div>
+          </div>
+        </FlexiCell>
+    </>;
+}
+```
+
+### Vertical
+
+- **Xs - Sm:** Tile padding 12px
+- **Md +:** Tile padding 18px
+
+```
+  () => {
+  return <GridContainer fixed>
+      <Grid>
+        <GridItem span={4}>
+            <FlexiCell className="min-h-[17.5rem]" tag="a" href="#" withBorder size={{
+          initial: 'default',
+          md: 'large'
+        }}>
+              <div>
+                <div className="flex justify-start mb-2 md:mb-3">
+                  <AccountIcon look="outlined" color="hero" />
+                </div>
+                <div className="flex flex-col">
+                  <FlexiCellLabel tag="h3" className="mb-1">
+                    Flexi-cell title
+                  </FlexiCellLabel>
+                  <FlexiCellHint>Descriptive information - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tellus libero, faucibus eu leo non, aliquam ultrices odio. Proin mattis tellus neque, et molestie urna ullamcorper. </FlexiCellHint>
+                </div>
+              </div>
+            </FlexiCell>
+          </GridItem>
+                  <GridItem span={4}>
+            <FlexiCell className="min-h-[17.5rem]" tag="a" href="#" withBorder size={{
+          initial: 'default',
+          md: 'large'
+        }}>
+              <div>
+                <div className="flex justify-start mb-2 md:mb-3">
+                  <IdCardIcon look="outlined" color="hero" />
+                </div>
+                <div className="flex flex-col">
+                  <FlexiCellLabel tag="h3" className="mb-1">
+                    Flexi-cell title
+                  </FlexiCellLabel>
+                  <FlexiCellHint>Descriptive information - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tellus libero, faucibus eu leo non, aliquam ultrices odio. Proin mattis tellus neque, et molestie urna ullamcorper.</FlexiCellHint>
+                </div>
+              </div>
+            </FlexiCell>
+          </GridItem>
+                  <GridItem span={4}>
+            <FlexiCell className="min-h-[17.5rem]" tag="a" href="#" withBorder size={{
+          initial: 'default',
+          md: 'large'
+        }}>
+              <div>
+                <div className="flex justify-start mb-2 md:mb-3">
+                  <DollarIcon look="outlined" color="hero" />
+                </div>
+                <div className="flex flex-col">
+                  <FlexiCellLabel tag="h3" className="mb-1">
+                    Flexi-cell title
+                  </FlexiCellLabel>
+                  <FlexiCellHint>Descriptive information - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tellus libero, faucibus eu leo non, aliquam ultrices odio. Proin mattis tellus neque, et molestie urna ullamcorper.</FlexiCellHint>
+                </div>
+              </div>
+            </FlexiCell>
+          </GridItem>
+      </Grid>
+    </GridContainer>;
+}
+```
