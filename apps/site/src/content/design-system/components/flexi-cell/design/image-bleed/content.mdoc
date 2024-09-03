@@ -36,8 +36,7 @@ This version of the Flexi-cell has a responsive content layout, use the demo but
 - **Md +:** Tile padding 18px
 
 ```
-() => {
-  return <GridContainer>
+
       <Grid>
         {new Array(3).fill(null).map((_, index) => <GridItem key={index} span={4}>
             <FlexiCell className="overflow-hidden" body={false} key={index} tag="a" href="#" withBorder size={{
@@ -62,6 +61,4 @@ This version of the Flexi-cell has a responsive content layout, use the demo but
             </FlexiCell>
           </GridItem>)}
       </Grid>
-    </GridContainer>;
-}
 ```
