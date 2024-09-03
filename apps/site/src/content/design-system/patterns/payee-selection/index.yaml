@@ -4,7 +4,7 @@ description: >-
   one of their existing online banking payees.
 namedExport:
   discriminant: false
-excludeFromNavbar: true
+excludeFromNavbar: false
 design:
   - title:
       name: Payee tile
