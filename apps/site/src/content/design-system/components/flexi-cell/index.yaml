@@ -1,8 +1,8 @@
 name: Flexi Cell
 description: >-
-  Use the Flexi-cell component to present information in a visually distinct and
-  interactive way. They can have a stacked or horizontal layout, ensure your
-  content aligns with the brand guidelines.
+  Use Flexi-cells to help organise content into consistent, manageable, visually
+  distinct blocks, making it easier for users to scan and interact with. Ensure
+  your content aligns with the brand guidelines.
 namedExport:
   discriminant: false
 excludeFromNavbar: true

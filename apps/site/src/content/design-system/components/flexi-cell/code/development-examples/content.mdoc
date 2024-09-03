@@ -42,8 +42,7 @@
 ### **Simple tile (Horizontal layout)**
 
 ```jsx
-() => {
-  return <GridContainer fixed>
+
       <Grid>
         {new Array(3).fill(null).map((_, index) => <GridItem span={4} key={index}>
             <FlexiCell className="min-h-[17.5rem]" tag="a" href="#" withBorder size={{
@@ -64,8 +63,7 @@
             </FlexiCell>
           </GridItem>)}
       </Grid>
-    </GridContainer>;
-}
+
 ```
 
 ### **Image tile (Vertical stack)**
@@ -98,8 +96,7 @@
 ### **Image tile - Edge to edge (Horizontal layout)**
 
 ```jsx
-() => {
-  return <GridContainer>
+
       <Grid>
         {new Array(3).fill(null).map((_, index) => <GridItem key={index} span={4}>
             <FlexiCell className="overflow-hidden" body={false} key={index} tag="a" href="#" withBorder size={{
@@ -124,6 +121,5 @@
             </FlexiCell>
           </GridItem>)}
       </Grid>
-    </GridContainer>;
-}
+
 ```

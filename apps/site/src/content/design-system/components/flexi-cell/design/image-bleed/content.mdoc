@@ -1,4 +1,4 @@
-These tiles have a responsive content layout, use the demo button to preview this responsive behaviour.
+This version of the Flexi-cell has a responsive content layout, use the demo button to preview this responsive behaviour.
 
 ### Horizontal
 
@@ -36,8 +36,7 @@ These tiles have a responsive content layout, use the demo button to preview thi
 - **Md +:** Tile padding 18px
 
 ```
-() => {
-  return <GridContainer>
+
       <Grid>
         {new Array(3).fill(null).map((_, index) => <GridItem key={index} span={4}>
             <FlexiCell className="overflow-hidden" body={false} key={index} tag="a" href="#" withBorder size={{
@@ -62,6 +61,4 @@ These tiles have a responsive content layout, use the demo button to preview thi
             </FlexiCell>
           </GridItem>)}
       </Grid>
-    </GridContainer>;
-}
 ```
