@@ -21,7 +21,7 @@ export default async function DesignSystemLayout({
       allContent.filter(i => !i.entry?.excludeFromNavbar).map(({ entry, slug }) => ({ slug, name: entry.name })),
     ),
   );
-  const brand = (params?.brand ?? 'wbc') as BrandKey; // double check this is the best way to do this
+  const brand = (params?.brand ?? 'wbc') as BrandKey; // double check this is the best way to do this.
 
   return (
     <div data-theme={brand?.toLowerCase()}>

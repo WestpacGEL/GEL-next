@@ -10,18 +10,22 @@ design:
       name: When do we need help text?
       slug: when-do-we-need-help-text
     noTitle: false
+    noDemo: false
   - title:
       name: Help text in forms
       slug: help-text-in-forms
     noTitle: false
+    noDemo: false
   - title:
       name: Using icons for help
       slug: using-icons-for-help
     noTitle: false
+    noDemo: false
   - title:
       name: Why use help text
       slug: why-use-help-text
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents:
   - title: Popover

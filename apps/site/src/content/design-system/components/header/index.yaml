@@ -2,7 +2,7 @@ name: Header
 description: >-
   Having consistent and familiar headers throughout an experience is critical,
   it assists in providing our customers context and confidence in the experience
-  they are in.   
+  they are in.
 namedExport:
   discriminant: false
 excludeFromNavbar: false
@@ -11,18 +11,22 @@ design:
       name: Header
       slug: header
     noTitle: false
+    noDemo: false
   - title:
       name: User experience
       slug: user-experience
     noTitle: false
+    noDemo: false
   - title:
       name: Visual design
       slug: visual-design
     noTitle: false
+    noDemo: false
   - title:
       name: Where is this available?
       slug: where-is-this-available
     noTitle: false
+    noDemo: true
 accessibility: []
 relatedComponents:
   - title: Logos

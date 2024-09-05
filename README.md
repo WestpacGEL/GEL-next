@@ -53,20 +53,6 @@ module.exports = {
 };
 ```
 
-Update the `postcss.config.js` file if you have initialized your project with [Nx build system](https://nx.dev/) and [Babel](https://babeljs.io/).
-
-```js
-const { join } = require('path');
-module.exports = {
-  plugins: {
-    tailwindcss: {
-      config: join(__dirname, 'tailwind.config.js'),
-    },
-    autoprefixer: {},
-  },
-};
-```
-
 For applications using `brand fonts` add the following options config to the `withGEL` helper.
 
 ```ts
@@ -82,6 +68,17 @@ const config = withGEL({
   },
 });
 ```
+
+Ensure tailwind directives are added to your main CSS file.
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+If you have initialized your project with Nx build system follow the official [Nx tailwind documentation](https://nx.dev/latest/react/guides/tailwind) to configure tailwind.
+Nx based projects requires `__dirname` prefix to the `paths` in the `tailwind.config.js` file and `postcss` file.
 
 ### Usage
 
