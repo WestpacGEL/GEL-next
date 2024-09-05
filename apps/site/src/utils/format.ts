@@ -11,18 +11,19 @@ export function formatNavItems(navList: { name: string; slug: string }[]) {
     const params = slug.split('/');
     let curr = navItems;
     params.forEach((param, i) => {
+      const decodedParam = decodeURIComponent(param);
       if (i === params.length - 1) {
         curr.push({ label: name, path: slug });
       } else {
         let exists = false;
         curr.forEach(item => {
-          if (item.label === param) {
+          if (item.label === decodedParam) {
             exists = true;
             curr = item.children;
           }
         });
         if (!exists) {
-          const newNode = { label: param, children: [] };
+          const newNode = { label: decodedParam, children: [] };
           curr.push(newNode);
           curr = newNode.children;
         }
@@ -35,12 +36,14 @@ export function formatNavItems(navList: { name: string; slug: string }[]) {
 // This had to be made as a separate function as adding some to formatNavItems too cognitively complex
 export function sortMenu(menuItems: Item[]) {
   const topLevelMenuOrder = [
-    'accessibility',
+    'home',
+    'get started',
     'foundation',
     'components',
     'patterns',
-    'development',
+    'accessibility',
     'content',
+    'footer usage',
     'design tokens',
   ];
 

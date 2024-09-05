@@ -1,4 +1,4 @@
-name: ESLint
+name: ESLint configuration
 description: >-
   We suggest following the Westpac Group ESLint configuration.
 design:
