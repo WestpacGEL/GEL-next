@@ -38,6 +38,12 @@ export const styles = tv(
       dismissible: {
         true: '',
       },
+      hasSize: {
+        true: {},
+        false: {
+          icon: 'mr-1 xsl:mr-2',
+        },
+      },
       iconSize: {
         xsmall: {
           icon: 'mr-1',
@@ -51,8 +57,8 @@ export const styles = tv(
         large: {
           icon: 'mr-2',
         },
-        flex: {
-          icon: 'mr-1 xsl:mr-2',
+        xlarge: {
+          icon: 'mr-2',
         },
       },
     },

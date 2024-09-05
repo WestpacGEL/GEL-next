@@ -19,7 +19,7 @@ export function Alert({
   open: isOpen = true,
   onClose,
   icon,
-  iconSize = 'flex',
+  iconSize,
   tag: Tag = 'div',
   className,
   children,
@@ -61,8 +61,8 @@ export function Alert({
             transition={{ duration: 0.4 }}
           >
             <Tag className={styles.base({ className })} {...props}>
-              <span className={styles.icon()}>
-                <Icon size={iconSize === 'flex' ? { initial: 'small', xsl: 'medium' } : iconSize} look="outlined" />
+              <span className={styles.icon({ hasSize: iconSize ? true : false })}>
+                <Icon size={iconSize ? iconSize : { initial: 'small', xsl: 'medium' }} look="outlined" />
               </span>
               <div className={styles.body()}>
                 {!!heading && <HeadingTag className={styles.heading()}>{heading}</HeadingTag>}
