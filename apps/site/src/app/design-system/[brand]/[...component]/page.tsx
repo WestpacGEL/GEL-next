@@ -98,6 +98,7 @@ export default async function ComponentPage({
                 title: section.title.name,
                 content: content,
                 noTitle: section.noTitle,
+                noDemo: section.noDemo,
               });
               return {
                 ...section,

@@ -11,30 +11,37 @@ design:
       name: All icons
       slug: all-icons
     noTitle: false
+    noDemo: false
   - title:
       name: Icon sizing
       slug: icon-sizing
     noTitle: false
+    noDemo: false
   - title:
       name: Icon colours
       slug: icon-colours
     noTitle: false
+    noDemo: false
   - title:
       name: User experience
       slug: user-experience
     noTitle: false
+    noDemo: false
   - title:
       name: Visual design
       slug: visual-design
     noTitle: false
+    noDemo: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
     noTitle: false
+    noDemo: false
   - title:
       name: Where is this available?
       slug: where-is-this-available
     noTitle: false
+    noDemo: true
 accessibility:
   - title:
       name: Accessibility features

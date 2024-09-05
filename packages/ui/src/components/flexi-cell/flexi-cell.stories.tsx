@@ -49,7 +49,7 @@ const imgString = 'https://res.cloudinary.com/westpac-gel/image/upload/v17216219
 export default meta;
 
 /**
- * > Simple tile (Vertical stack)
+ * > Symbol - Horizontal
  *
  * This tile has a responsive content layout:
  *
@@ -58,7 +58,7 @@ export default meta;
  *
  * Change the preview size of this screen to demonstrate.
  */
-export const SimpleTileVerticalStack = () => {
+export const SymbolHorizontal = () => {
   return (
     <>
       {new Array(3).fill(null).map((_, index) => (
@@ -75,10 +75,11 @@ export const SimpleTileVerticalStack = () => {
     </>
   );
 };
-SimpleTileVerticalStack.storyName = 'Simple tile (Vertical stack)';
+SymbolHorizontal.storyName = 'Symbol - Horizontal';
 
 /**
- * > Simple tile (Horizontal layout)
+ * > Symbol - Vertical
+ *
  * This tile has a responsive content layout:
  *
  * - Xs - Sm: Tile padding 12px
@@ -86,7 +87,7 @@ SimpleTileVerticalStack.storyName = 'Simple tile (Vertical stack)';
  *
  * Change the preview size of this screen to demonstrate.
  */
-export const SimpleTileHorizontalLayout = () => {
+export const SymbolVertical = () => {
   return (
     <GridContainer fixed>
       <Grid>
@@ -117,10 +118,10 @@ export const SimpleTileHorizontalLayout = () => {
     </GridContainer>
   );
 };
-SimpleTileHorizontalLayout.storyName = 'Simple tile (Horizontal layout)';
+SymbolVertical.storyName = 'Symbol - Vertical';
 
 /**
- * > Edge to edge Image tile (Vertical stack)
+ * > Image bleed - Horizontal
  *
  * This tile has a responsive content layout:
  *
@@ -129,7 +130,7 @@ SimpleTileHorizontalLayout.storyName = 'Simple tile (Horizontal layout)';
  *
  * Change the preview size of this screen to demonstrate.
  */
-export const EdgeToEdgeImageTileVerticalStack = () => {
+export const ImageBleedHorizontal = () => {
   return (
     <>
       {new Array(3).fill(null).map((_, index) => (
@@ -156,10 +157,10 @@ export const EdgeToEdgeImageTileVerticalStack = () => {
     </>
   );
 };
-EdgeToEdgeImageTileVerticalStack.storyName = 'Image tile - Edge to edge (Vertical stack)';
+ImageBleedHorizontal.storyName = 'Image bleed - Horizontal';
 
 /**
- * > Padded Image tile (Vertical stack)
+ * > Image padded - Horizontal
  *
  * This tile has a responsive content layout:
  *
@@ -168,7 +169,7 @@ EdgeToEdgeImageTileVerticalStack.storyName = 'Image tile - Edge to edge (Vertica
  *
  * Change the preview size of this screen to demonstrate.
  */
-export const PaddedImageTileVerticalStack = () => {
+export const ImagePaddedHorizontal = () => {
   return (
     <>
       {new Array(3).fill(null).map((_, index) => (
@@ -191,10 +192,10 @@ export const PaddedImageTileVerticalStack = () => {
     </>
   );
 };
-PaddedImageTileVerticalStack.storyName = 'Image tile - Padded (Vertical stack)';
+ImagePaddedHorizontal.storyName = 'Image padded - Horizontal';
 
 /**
- * > Edge to edge Image tile (Horizontal layout)
+ * > Image bleed - Vertical
  *
  * This tile has a responsive content layout:
  *
@@ -203,7 +204,7 @@ PaddedImageTileVerticalStack.storyName = 'Image tile - Padded (Vertical stack)';
  *
  * Change the preview size of this screen to demonstrate.
  */
-export const EdgeToEdgeImageTileHorizontalLayout = () => {
+export const ImageBleedVertical = () => {
   return (
     <GridContainer>
       <Grid>
@@ -240,10 +241,10 @@ export const EdgeToEdgeImageTileHorizontalLayout = () => {
     </GridContainer>
   );
 };
-EdgeToEdgeImageTileHorizontalLayout.storyName = 'Image tile - Edge to edge (Horizontal layout)';
+ImageBleedVertical.storyName = 'Image bleed - Vertical';
 
 /**
- * > Padded Image tile (Horizontal layout)
+ * > Image padded - Vertical
  *
  * This tile has a responsive content layout:
  *
@@ -252,7 +253,7 @@ EdgeToEdgeImageTileHorizontalLayout.storyName = 'Image tile - Edge to edge (Hori
  *
  * Change the preview size of this screen to demonstrate.
  */
-export const PaddedImageTileHorizontalLayout = () => {
+export const ImagePaddedVertical = () => {
   return (
     <GridContainer>
       <Grid>
@@ -277,4 +278,4 @@ export const PaddedImageTileHorizontalLayout = () => {
     </GridContainer>
   );
 };
-PaddedImageTileHorizontalLayout.storyName = 'Image tile - Padded (Horizontal layout)';
+ImagePaddedVertical.storyName = 'Image padded - Vertical';

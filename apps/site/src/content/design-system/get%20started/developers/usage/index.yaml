@@ -8,6 +8,7 @@ design:
       name: Using components
       slug: using-components
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []

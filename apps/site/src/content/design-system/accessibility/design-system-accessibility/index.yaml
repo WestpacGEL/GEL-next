@@ -12,26 +12,32 @@ design:
       name: Principles of accessibility
       slug: principles-of-accessibility
     noTitle: false
+    noDemo: false
   - title:
       name: Inclusive product design
       slug: inclusive-product-design
     noTitle: false
+    noDemo: false
   - title:
       name: Inclusive content writing
       slug: inclusive-content-writing
     noTitle: false
+    noDemo: false
   - title:
       name: Accessible interfaces
       slug: accessible-interfaces
     noTitle: false
+    noDemo: false
   - title:
       name: Accessibility testing
       slug: accessibility-testing
     noTitle: false
+    noDemo: false
   - title:
       name: Deprecated components
       slug: deprecated-components
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []
