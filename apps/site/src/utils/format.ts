@@ -1,7 +1,8 @@
 import { Item } from '@/app/design-system/components/sidebar/components/navigation/navigation.types';
 
 export function formatComponentSlug(component: string) {
-  return component[0].toUpperCase() + component.slice(1);
+  const label = component.replace('-', ' ');
+  return label[0].toUpperCase() + label.slice(1);
 }
 
 export function formatNavItems(navList: { name: string; slug: string }[]) {
@@ -11,19 +12,18 @@ export function formatNavItems(navList: { name: string; slug: string }[]) {
     const params = slug.split('/');
     let curr = navItems;
     params.forEach((param, i) => {
-      const decodedParam = decodeURIComponent(param);
       if (i === params.length - 1) {
         curr.push({ label: name, path: slug });
       } else {
         let exists = false;
         curr.forEach(item => {
-          if (item.label === decodedParam) {
+          if (item.label === param) {
             exists = true;
             curr = item.children;
           }
         });
         if (!exists) {
-          const newNode = { label: decodedParam, children: [] };
+          const newNode = { label: param, children: [] };
           curr.push(newNode);
           curr = newNode.children;
         }
@@ -37,13 +37,12 @@ export function formatNavItems(navList: { name: string; slug: string }[]) {
 export function sortMenu(menuItems: Item[]) {
   const topLevelMenuOrder = [
     'home',
-    'get started',
+    'get-started',
     'foundation',
     'components',
     'patterns',
     'accessibility',
     'content',
-    'footer usage',
     'design tokens',
   ];
 

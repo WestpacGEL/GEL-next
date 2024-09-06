@@ -21,6 +21,7 @@ export default async function DesignSystemLayout({
       allContent.filter(i => !i.entry?.excludeFromNavbar).map(({ entry, slug }) => ({ slug, name: entry.name })),
     ),
   );
+
   const brand = (params?.brand ?? 'wbc') as BrandKey; // double check this is the best way to do this.
 
   return (
@@ -28,7 +29,7 @@ export default async function DesignSystemLayout({
       <SkipLink href="#content" className="z-[100]">
         Skip to content
       </SkipLink>
-      <div className="flex min-h-screen flex-col text-text active-theme-stg:text-heading">
+      <div className="text-text active-theme-stg:text-heading flex min-h-screen flex-col">
         <SidebarContextProvider>
           <Suspense>
             <Sidebar items={formattedItems} brand={brand} />
