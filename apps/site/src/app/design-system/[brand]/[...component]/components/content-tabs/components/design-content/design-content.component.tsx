@@ -29,7 +29,7 @@ export function DesignContent({
   return (
     <>
       {description && <Intro description={description} sectionNames={sectionNames} />}
-      {designSections?.map(({ title, content, noTitle }) => {
+      {designSections?.map(({ title, content, noTitle, noDemo }) => {
         const id = title.toLowerCase().split(' ').join('-');
         return (
           <Section key={id}>
@@ -41,7 +41,9 @@ export function DesignContent({
                   ...DOCUMENT_RENDERERS,
                   block: {
                     ...DOCUMENT_RENDERERS.block,
-                    code: props => <Code className="mb-5 mt-4" enableLiveCode={false} showResponsiveDemo {...props} />,
+                    code: props => (
+                      <Code className="mb-5 mt-4" enableLiveCode={false} showResponsiveDemo={!noDemo} {...props} />
+                    ),
                   },
                 }}
                 componentBlocks={{

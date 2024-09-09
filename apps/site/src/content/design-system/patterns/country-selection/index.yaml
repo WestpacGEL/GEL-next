@@ -10,14 +10,17 @@ design:
       name: Country selection tile
       slug: country-selection-tile
     noTitle: false
+    noDemo: false
   - title:
       name: Country selection list
       slug: country-selection-list
     noTitle: false
+    noDemo: false
   - title:
       name: User experience
       slug: user-experience
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents:
   - title: Flexicell

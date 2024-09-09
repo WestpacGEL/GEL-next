@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       base: 'typography-body-10 relative mb-4 xsl:flex',
-      icon: 'float-left mr-1 flex-none xsl:mr-2',
+      icon: 'float-left flex-none',
       body: 'relative flex-1 overflow-hidden xsl:top-[0.125rem] [&_a]:underline',
       heading: 'typography-body-9 mb-2 font-bold',
       close: 'absolute right-0.5 top-0.5 p-1 hover:opacity-80',
@@ -37,6 +37,29 @@ export const styles = tv(
       },
       dismissible: {
         true: '',
+      },
+      hasSize: {
+        true: {},
+        false: {
+          icon: 'mr-1 xsl:mr-2',
+        },
+      },
+      iconSize: {
+        xsmall: {
+          icon: 'mr-1',
+        },
+        small: {
+          icon: 'mr-1',
+        },
+        medium: {
+          icon: 'mr-2',
+        },
+        large: {
+          icon: 'mr-2',
+        },
+        xlarge: {
+          icon: 'mr-2',
+        },
       },
     },
     compoundSlots: [

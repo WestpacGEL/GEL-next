@@ -4,6 +4,7 @@ design:
       name: Designers
       slug: designers
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []
