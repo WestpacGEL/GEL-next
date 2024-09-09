@@ -1,14 +1,14 @@
 name: Designers
-description: >-
-  TBA
+description: TBA
 namedExport:
   discriminant: false
-excludeFromNavbar: false
+excludeFromNavbar: true
 design:
   - title:
       name: Designer's guide
       slug: designers-guide
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []
