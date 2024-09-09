@@ -1,20 +1,20 @@
 name: Flexi Cell
 description: >-
-  Use the Flexi-cell component to present information in a visually distinct and
-  interactive way. They can have a stacked or horizontal layout, ensure your
-  content aligns with the brand guidelines.
+  Use Flexi-cells to help organise content into consistent, manageable, visually
+  distinct blocks, making it easier for users to scan and interact with. Ensure
+  your content aligns with the brand guidelines.
 namedExport:
   discriminant: false
 excludeFromNavbar: true
 design:
   - title:
-      name: Vertical stack
-      slug: vertical-stack
+      name: Symbol
+      slug: symbol
     noTitle: false
     noDemo: false
   - title:
-      name: Horizontal layout
-      slug: horizontal-layout
+      name: Image bleed
+      slug: image-bleed
     noTitle: false
     noDemo: false
   - title:
@@ -29,12 +29,12 @@ design:
     noDemo: true
 accessibility: []
 relatedComponents:
-  - title: Icons
-    slug: /components/foundation/icon
-  - title: Pictograms
-    slug: /components/foundation/icon
   - title: Badges
     slug: /components/badge
+  - title: Icons
+    slug: /components/foundation/icon
+  - title: Selector
+    slug: /components/selector
 code:
   - title:
       name: Development examples
