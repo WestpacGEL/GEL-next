@@ -1,7 +1,8 @@
 import { Item } from '@/app/design-system/components/sidebar/components/navigation/navigation.types';
 
 export function formatComponentSlug(component: string) {
-  return component[0].toUpperCase() + component.slice(1);
+  const label = component.replace('-', ' ');
+  return label[0].toUpperCase() + label.slice(1);
 }
 
 export function formatNavItems(navList: { name: string; slug: string }[]) {
@@ -35,11 +36,12 @@ export function formatNavItems(navList: { name: string; slug: string }[]) {
 // This had to be made as a separate function as adding some to formatNavItems too cognitively complex
 export function sortMenu(menuItems: Item[]) {
   const topLevelMenuOrder = [
-    'accessibility',
+    'home',
+    'get-started',
     'foundation',
     'components',
     'patterns',
-    'development',
+    'accessibility',
     'content',
     'design tokens',
   ];
