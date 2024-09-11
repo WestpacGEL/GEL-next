@@ -16,19 +16,15 @@ export const styles = tv(
       size: {
         small: {
           base: 'typography-body-10 px-1.5 active-theme-rams:before:h-[0.0625rem] h-5',
-          text: 'p-1',
         },
         medium: {
           base: 'typography-body-9 px-2 active-theme-rams:before:h-0.5 h-6',
-          text: 'p-1',
         },
         large: {
           base: 'typography-body-9 px-2.5 active-theme-rams:before:h-0.5 h-7',
-          text: 'p-1',
         },
         xlarge: {
           base: 'typography-body-8 px-3 active-theme-rams:before:h-1 h-8',
-          text: 'p-1.5',
         },
       },
       look: {

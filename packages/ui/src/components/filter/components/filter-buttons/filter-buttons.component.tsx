@@ -46,7 +46,7 @@ export function FilterButtons({
         let targetElement;
         let scrollX;
         let scrollBy = true;
-        const buttonPaddingOffset = 30;
+        const buttonPaddingOffset = 20;
         if (direction === 'left') {
           if (scrollTarget.left === -1) {
             scrollX = -container.clientWidth;
@@ -191,7 +191,7 @@ export function FilterButtons({
         onClick={() => handleScrollButton('right')}
         look="link"
         size="small"
-        iconAfter={ArrowRightIcon}
+        iconBefore={ArrowRightIcon}
         iconColor="hero"
         iconSize="medium"
         aria-hidden="true"
