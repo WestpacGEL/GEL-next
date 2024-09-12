@@ -75,12 +75,24 @@ export const styles = tv(
       {
         slots: ['iconBefore'],
         hasChildren: true,
-        className: 'mr-[0.4em]',
+        className: 'mr-1',
       },
       {
         slots: ['iconAfter'],
         hasChildren: true,
-        className: 'ml-[0.4em]',
+        className: 'ml-1',
+      },
+      {
+        slots: ['iconBefore'],
+        size: 'xlarge',
+        hasChildren: true,
+        className: 'mr-1.5',
+      },
+      {
+        slots: ['iconAfter'],
+        size: 'xlarge',
+        hasChildren: true,
+        className: 'ml-1.5',
       },
     ],
   },
