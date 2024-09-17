@@ -3,6 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon } from '../icon/index.js';
 
 import { Button } from './button.component.js';
+import { ProgressIndicator } from '../progress-indicator/progress-indicator.component.js';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -158,7 +159,7 @@ export const Icons = () => (
       </div>
       <div className="flex gap-2">
         {SOFT_LOOKS.map(look => (
-          <Button key={look} look={look} soft iconAfter={BurgerIcon}>
+          <Button key={look} look={look} soft iconAfter={BurgerIcon | ProgressIndicator}>
             {look}
           </Button>
         ))}

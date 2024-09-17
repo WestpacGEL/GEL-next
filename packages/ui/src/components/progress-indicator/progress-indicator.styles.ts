@@ -11,10 +11,6 @@ export const styles = tv(
         large: 'h-6 w-6',
         xlarge: 'h-8 w-8',
       },
-      inverted: {
-        true: 'border-b-white border-l-white',
-        false: 'border-b-hero border-l-hero',
-      },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },

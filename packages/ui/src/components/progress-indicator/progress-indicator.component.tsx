@@ -2,18 +2,20 @@ import React from 'react';
 
 import { styles } from './progress-indicator.styles.js';
 import { type ProgressIndicatorProps } from './progress-indicator.types.js';
+import { IconProps } from '../icon/icon.types.js';
+import { Icon } from '../icon/icon.component.js';
 
 export function ProgressIndicator({
   className,
   children,
-  inverted = false,
+  color = 'hero',
   size = 'medium',
   'aria-label': ariaLabel = 'Loading',
   ...props
-}: ProgressIndicatorProps) {
+}: IconProps) {
   return (
-    <div className={styles({ className, size, inverted })} aria-label={ariaLabel} {...props}>
+    <Icon className={styles({ className, size })} color={color} aria-label={ariaLabel} {...props}>
       {children}
-    </div>
+    </Icon>
   );
 }
