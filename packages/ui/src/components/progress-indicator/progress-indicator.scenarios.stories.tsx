@@ -1,11 +1,12 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
-
-import { ProgressIndicator } from './progress-indicator.component.js';
-import { Button } from '../button/button.component.js';
 import { useCallback, useState } from 'react';
+
+import { Button } from '../button/button.component.js';
 import { ClearIcon, DropDownIcon, SearchIcon } from '../icon/index.js';
 import { Input } from '../input/input.component.js';
 import { InputGroup } from '../input-group/input-group.component.js';
+
+import { ProgressIndicator } from './progress-indicator.component.js';
 
 const meta: Meta<typeof ProgressIndicator> = {
   title: 'Components/ProgressIndicator/Scenarios',

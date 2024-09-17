@@ -1,9 +1,10 @@
 import React from 'react';
 
+import { Icon } from '../icon/icon.component.js';
+import { IconProps } from '../icon/icon.types.js';
+
 import { styles } from './progress-indicator.styles.js';
 import { type ProgressIndicatorProps } from './progress-indicator.types.js';
-import { IconProps } from '../icon/icon.types.js';
-import { Icon } from '../icon/icon.component.js';
 
 export function ProgressIndicator({
   className,

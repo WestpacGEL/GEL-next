@@ -15,6 +15,7 @@ const INVERTED_COLORS = [
   'success-inverted',
   'warning-inverted',
 ] as const;
+const SIZES = ['xlarge', 'large', 'medium', 'small'] as const;
 
 const meta: Meta<typeof Badge> = {
   title: 'Components/Badge',
@@ -141,10 +142,11 @@ export const Links = () => (
 );
 
 /**
- * > Example next to link
+ * > Example on buttons
  */
 export const Buttons = () => (
   <div className="flex flex-col gap-2">
+    <h3 className="typography-body-9 font-bold">Colors</h3>
     {INVERTED_COLORS.map(color => (
       <Button key={color} look="primary">
         Primary
@@ -152,6 +154,23 @@ export const Buttons = () => (
           {color}
         </Badge>
       </Button>
+    ))}
+    <h3 className="typography-body-9 font-bold">Sizes</h3>
+    {SIZES.map(size => (
+      <div key={size} className="flex gap-2">
+        <Button color="primary" size={size} className="mr-2">
+          Label
+          <Badge type="default" color="faint" className="ml-1">
+            NEW
+          </Badge>
+        </Button>
+        <Button color="primary" size={size} className="mr-2">
+          <Badge type="default" color="faint" className="ml-1">
+            NEW
+          </Badge>{' '}
+          Label
+        </Button>
+      </div>
     ))}
   </div>
 );

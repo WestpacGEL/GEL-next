@@ -20,7 +20,6 @@ function BaseButton(
     iconAfter: IconAfter,
     iconColor,
     iconSize,
-    childrenBefore,
     children,
     ...props
   }: ButtonProps,

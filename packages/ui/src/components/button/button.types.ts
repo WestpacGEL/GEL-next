@@ -63,9 +63,5 @@ export type ButtonProps = {
    * @default button
    */
   tag?: keyof Pick<JSX.IntrinsicElements, 'a' | 'span' | 'button' | 'div'>;
-  /**
-   * Children to render before
-   */
-  childrenBefore?: JSX.Element;
 } & ButtonHTMLAttributes<Element> &
   AnchorHTMLAttributes<Element>;
