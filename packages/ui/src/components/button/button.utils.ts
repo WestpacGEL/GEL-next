@@ -1,8 +1,8 @@
 export const getIconSize = (size: string | object) => {
   const iconSizeMap: Record<string, string> = {
-    small: 'small',
+    small: 'xsmall',
     medium: 'small',
-    large: 'medium',
+    large: 'small',
     xlarge: 'medium',
   };
 
