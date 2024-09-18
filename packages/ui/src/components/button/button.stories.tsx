@@ -36,7 +36,7 @@ export const Colors = () => (
     <div className="flex gap-2">
       {LOOKS.map(look => (
         <Button key={look} look={look}>
-          {look}
+          {look.charAt(0).toUpperCase() + look.slice(1)}
         </Button>
       ))}
     </div>
@@ -44,7 +44,7 @@ export const Colors = () => (
     <div className="flex gap-2">
       {SOFT_LOOKS.map(look => (
         <Button key={look} look={look} soft>
-          {look}
+          {look.charAt(0).toUpperCase() + look.slice(1)}
         </Button>
       ))}
     </div>
@@ -62,14 +62,14 @@ export const Sizes = () => (
         <div className="flex gap-2">
           {LOOKS.map(look => (
             <Button key={look} look={look} size={size}>
-              {look}
+              {look.charAt(0).toUpperCase() + look.slice(1)}
             </Button>
           ))}
         </div>
         <div className="flex gap-2">
           {SOFT_LOOKS.map(look => (
             <Button key={look} look={look} size={size} soft>
-              {look}
+              {look.charAt(0).toUpperCase() + look.slice(1)}
             </Button>
           ))}
         </div>
@@ -89,7 +89,7 @@ export const Block = () => (
         <div className="flex flex-col gap-2">
           {SOFT_LOOKS.map(look => (
             <Button key={look} look={look} size={size} block>
-              {look}
+              {look.charAt(0).toUpperCase() + look.slice(1)}
             </Button>
           ))}
         </div>
@@ -109,14 +109,14 @@ export const Icons = () => (
       <div className="flex gap-2">
         {LOOKS.map(look => (
           <Button key={look} look={look} iconBefore={BurgerIcon}>
-            {look}
+            {look.charAt(0).toUpperCase() + look.slice(1)}
           </Button>
         ))}
       </div>
       <div className="flex gap-2">
         {SOFT_LOOKS.map(look => (
           <Button key={look} look={look} soft iconBefore={BurgerIcon}>
-            {look}
+            {look.charAt(0).toUpperCase() + look.slice(1)}
           </Button>
         ))}
       </div>
@@ -152,14 +152,14 @@ export const Icons = () => (
       <div className="flex gap-2">
         {LOOKS.map(look => (
           <Button key={look} look={look} iconAfter={BurgerIcon}>
-            {look}
+            {look.charAt(0).toUpperCase() + look.slice(1)}
           </Button>
         ))}
       </div>
       <div className="flex gap-2">
         {SOFT_LOOKS.map(look => (
           <Button key={look} look={look} soft iconAfter={BurgerIcon}>
-            {look}
+            {look.charAt(0).toUpperCase() + look.slice(1)}
           </Button>
         ))}
       </div>
