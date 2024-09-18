@@ -146,30 +146,43 @@ export const Links = () => (
  */
 export const Buttons = () => (
   <div className="flex flex-col gap-2">
-    <h3 className="typography-body-9 font-bold">Colors</h3>
+    <div className="flex gap-2">
+      {SIZES.map(size => (
+        <Button key={size} color="primary" size={size} className="mr-2">
+          <div className="w-max flex items-center">
+            Label
+            <Badge type="default" color="faint" className="ml-1">
+              NEW
+            </Badge>{' '}
+          </div>
+        </Button>
+      ))}
+    </div>
+    <div className="flex gap-2">
+      {SIZES.map(size => (
+        <Button key={size} color="primary" size={size} className="mr-2">
+          <div className="w-max flex items-center">
+            <Badge type="default" color="faint" className="mr-1">
+              NEW
+            </Badge>{' '}
+            Label
+          </div>
+        </Button>
+      ))}
+    </div>
+    <h3 className="typography-body-9 font-bold">Pill badges in different colors</h3>
     {INVERTED_COLORS.map(color => (
-      <Button key={color} look="primary">
-        Primary
-        <Badge color={color} type="pill" className="ml-1">
-          {color}
-        </Badge>
-      </Button>
-    ))}
-    <h3 className="typography-body-9 font-bold">Sizes</h3>
-    {SIZES.map(size => (
-      <div key={size} className="flex gap-2">
-        <Button color="primary" size={size} className="mr-2">
-          Label
-          <Badge type="default" color="faint" className="ml-1">
-            NEW
-          </Badge>
-        </Button>
-        <Button color="primary" size={size} className="mr-2">
-          <Badge type="default" color="faint" className="ml-1">
-            NEW
-          </Badge>{' '}
-          Label
-        </Button>
+      <div key={color} className="flex gap-2">
+        {SIZES.map(size => (
+          <Button key={size} look="primary" size={size}>
+            <div className="w-max flex items-center">
+              Primary
+              <Badge color={color} type="pill" className="ml-1">
+                88
+              </Badge>
+            </div>
+          </Button>
+        ))}
       </div>
     ))}
   </div>
