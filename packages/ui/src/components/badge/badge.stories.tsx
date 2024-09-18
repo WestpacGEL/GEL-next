@@ -148,7 +148,7 @@ export const Buttons = () => (
   <div className="flex flex-col gap-2">
     <div className="flex gap-2">
       {SIZES.map(size => (
-        <Button key={size} color="primary" size={size} className="mr-2">
+        <Button key={size} color="primary" size={size}>
           <div className="w-max flex items-center">
             Label
             <Badge type="default" color="faint" className="ml-1">
@@ -160,7 +160,7 @@ export const Buttons = () => (
     </div>
     <div className="flex gap-2">
       {SIZES.map(size => (
-        <Button key={size} color="primary" size={size} className="mr-2">
+        <Button key={size} color="primary" size={size}>
           <div className="w-max flex items-center">
             <Badge type="default" color="faint" className="mr-1">
               NEW
@@ -170,20 +170,30 @@ export const Buttons = () => (
         </Button>
       ))}
     </div>
-    <h3 className="typography-body-9 font-bold">Pill badges in different colors</h3>
-    {INVERTED_COLORS.map(color => (
-      <div key={color} className="flex gap-2">
-        {SIZES.map(size => (
-          <Button key={size} look="primary" size={size}>
-            <div className="w-max flex items-center">
-              Primary
-              <Badge color={color} type="pill" className="ml-1">
-                88
-              </Badge>
-            </div>
-          </Button>
-        ))}
-      </div>
-    ))}
+    <h3 className="typography-body-9 font-bold">Pill badge</h3>
+    <div className="flex gap-2">
+      {SIZES.map(size => (
+        <Button key={size} look="primary" size={size}>
+          <div className="w-max flex items-center">
+            Label
+            <Badge color="danger-inverted" type="pill" className="ml-1">
+              88
+            </Badge>
+          </div>
+        </Button>
+      ))}
+    </div>
+    <div className="flex gap-2">
+      {SIZES.map(size => (
+        <Button key={size} look="primary" size={size}>
+          <div className="w-max flex items-center">
+            <Badge color="danger-inverted" type="pill" className="mr-1">
+              88
+            </Badge>
+            Label
+          </div>
+        </Button>
+      ))}
+    </div>
   </div>
 );
