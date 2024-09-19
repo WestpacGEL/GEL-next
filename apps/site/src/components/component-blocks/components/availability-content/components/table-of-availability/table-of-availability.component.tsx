@@ -1,7 +1,7 @@
 'use client';
 
 import { Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableHeaderRow, TableRow } from '@westpac/ui';
-import { CalendarIcon, TickCircleIcon, WarningIcon } from '@westpac/ui/icon';
+import { AlertIcon, CalendarIcon, TickCircleIcon, WarningIcon } from '@westpac/ui/icon';
 import React from 'react';
 
 import { styles as TableOfAvailabilityStyles } from './table-of-availability.styles';
@@ -17,11 +17,12 @@ interface TableOfAvailabilityProps {
 
 const availabilityMap: Record<
   string,
-  { color: 'success' | 'warning' | 'info'; icon: React.ElementType; text: string }
+  { color: 'success' | 'warning' | 'info' | 'danger'; icon: React.ElementType; text: string }
 > = {
   available: { text: 'Available', icon: TickCircleIcon, color: 'success' },
-  unavailable: { text: 'Older version available', icon: WarningIcon, color: 'warning' },
   'in-progress': { text: 'Older version available - Upgrade in backlog', icon: CalendarIcon, color: 'info' },
+  'older-version-available': { text: 'Older version available', icon: WarningIcon, color: 'warning' },
+  unavailable: { text: 'Not available', icon: AlertIcon, color: 'danger' },
 };
 
 export function TableOfAvailability({
