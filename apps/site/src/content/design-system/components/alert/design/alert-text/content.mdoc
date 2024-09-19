@@ -1,3 +1,5 @@
+### Styles
+
 Alert text comes in four different styles and is configurable to allow for simple styling, eg links, bold and italics. It must be used with the defaulted icon to comply with accessibility guidelines, as per Alert boxes. Definitions and usage examples for each style are provided further down the page.
 
 ```jsx
@@ -18,5 +20,26 @@ Alert text comes in four different styles and is configurable to allow for simpl
   <Alert look="danger" mode="text">
     Please enter a valid account number.
   </Alert>
+</div>
+```
+
+### Icon sizes
+
+The icon that accompanies Alert text has three size options, Md-24px, Sm-18px and Xs-12px.
+
+```jsx
+<div>
+     <ComponentTitle>Medium</ComponentTitle>
+      <Alert look="info" iconSize="medium" mode="text">
+        <strong>Medium</strong> This alert has a medium icon. <a href="#">Link</a>
+      </Alert>
+      <ComponentTitle>Small</ComponentTitle>
+      <Alert look="info" iconSize="small" mode="text">
+        <strong>Small</strong> This alert has a small icon. <a href="#">Link</a>
+      </Alert>
+      <ComponentTitle>Extra Small</ComponentTitle>
+      <Alert look="info" iconSize="xsmall" mode="text">
+        <strong>Extra Small</strong> This alert has an extra small icon. <a href="#">Link</a>
+      </Alert>
 </div>
 ```
