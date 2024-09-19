@@ -5,5 +5,5 @@
 <path d="M20 10H16V12H20V10Z" fill="#0000FF"/>
 <path d="M16 14H20V16H16V14Z" fill="#0000FF"/>
 <path d="M20 18H16V20H20V18Z" fill="#0000FF"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M14 6V0L0 4V24H24V6H14ZM2 22V5.5086L12 2.65146V22H2ZM14 22V8H22V22H14Z" fill="#0000FF"/>
+<path fillRule="evenodd" clipRule="evenodd" d="M14 6V0L0 4V24H24V6H14ZM2 22V5.5086L12 2.65146V22H2ZM14 22V8H22V22H14Z" fill="#0000FF"/>
 </svg>

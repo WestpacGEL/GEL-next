@@ -8,7 +8,8 @@ import { styles as passCodeStyles } from './pass-code.styles.js';
 import { type PassCodeProps } from './pass-code.types.js';
 
 export function PassCode({ length, onComplete, className, ...props }: PassCodeProps) {
-  const [passcode, setPasscode] = useState<(string | undefined)[]>(Array.from({ length }).map(() => undefined));
+  const [passcode, setPasscode] = useState<string[]>(Array.from({ length }).map(() => ''));
+
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
 
   const styles = passCodeStyles({});
@@ -54,7 +55,7 @@ export function PassCode({ length, onComplete, className, ...props }: PassCodePr
     (index: number, event: KeyboardEvent<HTMLInputElement>) => {
       if (event.key === 'Backspace' && index > 0) {
         event.preventDefault();
-        const newPasscode = [...passcode.slice(0, index), undefined, ...passcode.slice(index + 1)];
+        const newPasscode = [...passcode.slice(0, index), '', ...passcode.slice(index + 1)];
         setPasscode(newPasscode);
         const previousInput = inputRefs.current[index - 1];
         const currentInput = inputRefs.current[index];

@@ -34,9 +34,9 @@ const formatSVG = (svg: Buffer, pathCount: number, addFragment: boolean) => {
     .toString()
     .replace(/<\/?svg[^>]*>/g, '')
     .replace(/fill="[^"]*"/g, 'fill="currentColor"')
-    .replace(/fill-rule/g, 'fillRule')
-    .replace(/clip-rule/g, 'clipRule')
-    .replace(/clip-path/g, 'clipPath')
+    .replace(/fillRule/g, 'fillRule')
+    .replace(/clipRule/g, 'clipRule')
+    .replace(/clipPath/g, 'clipPath')
     .trim();
 
   return pathCount > 1 && addFragment ? `<Fragment>${iconPaths}</Fragment>` : iconPaths;

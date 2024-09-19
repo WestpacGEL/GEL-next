@@ -60,7 +60,7 @@ export default function Address() {
               <Autocomplete
                 noOptionsMessage="No options found"
                 label="Search for you home address"
-                hintMessage="Not a PO Box <>"
+                hintMessage="Not a PO Box"
                 defaultInputValue={data.address}
                 invalid={!!addressError}
                 name="address"
