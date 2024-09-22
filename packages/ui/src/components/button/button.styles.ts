@@ -6,7 +6,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'items-center justify-center rounded leading-normal transition-[background] disabled:pointer-events-none disabled:opacity-50 group-first/add-on-before:rounded-r-none group-last/add-on-after:rounded-l-none',
+      base: 'items-center justify-center rounded transition-[background] disabled:pointer-events-none disabled:opacity-50 group-first/add-on-before:rounded-r-none group-last/add-on-after:rounded-l-none',
       iconBefore: '',
       iconAfter: '',
       dropdown: 'ml-[0.4em]',
@@ -14,10 +14,18 @@ export const styles = tv(
     },
     variants: {
       size: {
-        small: { base: 'typography-body-10 px-2 pb-1 pt-0.5 active-theme-rams:before:h-[0.0625rem]' },
-        medium: { base: 'typography-body-9 px-2 py-[0.3125rem] active-theme-rams:before:h-0.5' },
-        large: { base: 'typography-body-9 px-2.5 py-2 active-theme-rams:before:h-0.5' },
-        xlarge: { base: 'typography-body-8 px-3 pb-2.5 pt-1.5 active-theme-rams:before:h-1' },
+        small: {
+          base: 'typography-body-10 px-1.5 active-theme-rams:before:h-[0.0625rem] h-5',
+        },
+        medium: {
+          base: 'typography-body-9 px-2 active-theme-rams:before:h-0.5 h-6',
+        },
+        large: {
+          base: 'typography-body-9 px-2.5 active-theme-rams:before:h-0.5 h-7',
+        },
+        xlarge: {
+          base: 'typography-body-8 px-3 active-theme-rams:before:h-1 h-8',
+        },
       },
       look: {
         primary: {
@@ -67,12 +75,24 @@ export const styles = tv(
       {
         slots: ['iconBefore'],
         hasChildren: true,
-        className: 'mr-[0.4em]',
+        className: 'mr-1',
       },
       {
         slots: ['iconAfter'],
         hasChildren: true,
-        className: 'ml-[0.4em]',
+        className: 'ml-1',
+      },
+      {
+        slots: ['iconBefore'],
+        size: 'xlarge',
+        hasChildren: true,
+        className: 'mr-1.5',
+      },
+      {
+        slots: ['iconAfter'],
+        size: 'xlarge',
+        hasChildren: true,
+        className: 'ml-1.5',
       },
     ],
   },

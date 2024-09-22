@@ -15,6 +15,9 @@ export const styles = tv({
       info: {
         text: 'text-info',
       },
+      danger: {
+        text: 'text-danger',
+      },
     },
   },
 });

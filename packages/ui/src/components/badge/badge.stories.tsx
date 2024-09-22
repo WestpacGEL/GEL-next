@@ -15,6 +15,7 @@ const INVERTED_COLORS = [
   'success-inverted',
   'warning-inverted',
 ] as const;
+const SIZES = ['xlarge', 'large', 'medium', 'small'] as const;
 
 const meta: Meta<typeof Badge> = {
   title: 'Components/Badge',
@@ -141,17 +142,58 @@ export const Links = () => (
 );
 
 /**
- * > Example next to link
+ * > Example on buttons
  */
 export const Buttons = () => (
   <div className="flex flex-col gap-2">
-    {INVERTED_COLORS.map(color => (
-      <Button key={color} look="primary">
-        Primary
-        <Badge color={color} type="pill" className="ml-1">
-          {color}
-        </Badge>
-      </Button>
-    ))}
+    <div className="flex gap-2">
+      {SIZES.map(size => (
+        <Button key={size} color="primary" size={size}>
+          <div className="w-max flex items-center">
+            Label
+            <Badge type="default" color="faint" className="ml-1">
+              NEW
+            </Badge>{' '}
+          </div>
+        </Button>
+      ))}
+    </div>
+    <div className="flex gap-2">
+      {SIZES.map(size => (
+        <Button key={size} color="primary" size={size}>
+          <div className="w-max flex items-center">
+            <Badge type="default" color="faint" className="mr-1">
+              NEW
+            </Badge>{' '}
+            Label
+          </div>
+        </Button>
+      ))}
+    </div>
+    <h3 className="typography-body-9 font-bold">Pill badge</h3>
+    <div className="flex gap-2">
+      {SIZES.map(size => (
+        <Button key={size} look="primary" size={size}>
+          <div className="w-max flex items-center">
+            Label
+            <Badge color="danger-inverted" type="pill" className="ml-1">
+              88
+            </Badge>
+          </div>
+        </Button>
+      ))}
+    </div>
+    <div className="flex gap-2">
+      {SIZES.map(size => (
+        <Button key={size} look="primary" size={size}>
+          <div className="w-max flex items-center">
+            <Badge color="danger-inverted" type="pill" className="mr-1">
+              88
+            </Badge>
+            Label
+          </div>
+        </Button>
+      ))}
+    </div>
   </div>
 );
