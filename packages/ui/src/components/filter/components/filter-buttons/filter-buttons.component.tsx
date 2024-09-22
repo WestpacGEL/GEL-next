@@ -38,35 +38,38 @@ export function FilterButtons({
     }
   }, []);
 
-  const handleScrollButton = useCallback((direction: string) => {
-    if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current;
+  const handleScrollButton = useCallback(
+    (direction: string) => {
+      if (scrollContainerRef.current) {
+        const container = scrollContainerRef.current;
 
-      let targetElement;
-      let scrollX;
-      let scrollBy = true;
-      const buttonPaddingOffset = 20;
-      if (direction === 'left') {
-        if (scrollTarget.left === -1) {
-          scrollX = -container.clientWidth;
+        let targetElement;
+        let scrollX;
+        let scrollBy = true;
+        const buttonPaddingOffset = 20;
+        if (direction === 'left') {
+          if (scrollTarget.left === -1) {
+            scrollX = -container.clientWidth;
+          } else {
+            scrollBy = false;
+            targetElement = scrollElementRefs.current[scrollTarget.left];
+            scrollX =
+              targetElement.offsetLeft + targetElement.offsetWidth - container.offsetWidth + buttonPaddingOffset;
+          }
         } else {
-          scrollBy = false;
-          targetElement = scrollElementRefs.current[scrollTarget.left];
-          scrollX = targetElement.offsetLeft + targetElement.offsetWidth - container.offsetWidth + buttonPaddingOffset;
+          if (scrollTarget.right === -1) {
+            scrollX = container.clientWidth;
+          } else {
+            scrollBy = false;
+            targetElement = scrollElementRefs.current[scrollTarget.right];
+            scrollX = targetElement.offsetLeft - buttonPaddingOffset;
+          }
         }
-      } else {
-        if (scrollTarget.right === -1) {
-          scrollX = container.clientWidth;
-        } else {
-          scrollBy = false;
-          targetElement = scrollElementRefs.current[scrollTarget.right];
-          scrollX = targetElement.offsetLeft - buttonPaddingOffset;
-        }
+        setScroll(scrollBy, scrollX, container);
       }
-      setScroll(scrollBy, scrollX, container);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    },
+    [scrollTarget],
+  );
 
   const getTargetLeft = useCallback((element: HTMLButtonElement, cLeft: number, index: number, targetLeft: number) => {
     const eLeft = element.offsetLeft;
@@ -113,30 +116,33 @@ export function FilterButtons({
 
       return { targetLeft, targetRight };
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
 
-  const handleScrollTarget = useCallback((container: HTMLUListElement) => {
-    let targetRight = scrollTarget.right;
-    let targetLeft = scrollTarget.left;
-    const cLeft = container.scrollLeft;
-    const cRight = cLeft + container.clientWidth;
+  const handleScrollTarget = useCallback(
+    (container: HTMLUListElement) => {
+      let targetRight = scrollTarget.right;
+      let targetLeft = scrollTarget.left;
+      const cLeft = container.scrollLeft;
+      const cRight = cLeft + container.clientWidth;
 
-    scrollElementRefs.current.forEach((element: HTMLButtonElement, index: number) => {
-      targetLeft = getTargetLeft(element, cLeft, index, targetLeft);
-      targetRight = getTargetRight(element, cRight, index, targetRight);
-      const targets = adjustTargets(element, cLeft, cRight, targetLeft, targetRight);
-      targetLeft = targets.targetLeft;
-      targetRight = targets.targetRight;
-      if (targetLeft === filterButtons.length - 1) {
-        targetLeft -= 1;
+      scrollElementRefs.current.forEach((element: HTMLButtonElement, index: number) => {
+        targetLeft = getTargetLeft(element, cLeft, index, targetLeft);
+        targetRight = getTargetRight(element, cRight, index, targetRight);
+        const targets = adjustTargets(element, cLeft, cRight, targetLeft, targetRight);
+        targetLeft = targets.targetLeft;
+        targetRight = targets.targetRight;
+        if (targetLeft === filterButtons.length - 1) {
+          targetLeft -= 1;
+        }
+      });
+
+      if (targetLeft !== scrollTarget.left || targetRight !== scrollTarget.right) {
+        setScrollTarget({ left: targetLeft, right: targetRight });
       }
-    });
-
-    setScrollTarget({ left: targetLeft, right: targetRight });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    },
+    [scrollTarget, getTargetLeft, getTargetRight, adjustTargets],
+  );
 
   const handleScrollable = useCallback((container: HTMLUListElement) => {
     const isLeftScrollable = container.scrollLeft >= 1;
@@ -150,8 +156,7 @@ export function FilterButtons({
       handleScrollTarget(container);
       handleScrollable(container);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [handleScrollTarget, handleScrollable]);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -165,10 +170,9 @@ export function FilterButtons({
 
     return () => {
       container?.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('reize', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [handleScrollTarget, handleScrollable]);
 
   return (
     <Tag className={styles.base({ className })}>
