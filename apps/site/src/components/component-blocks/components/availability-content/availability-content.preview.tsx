@@ -4,6 +4,7 @@ const availabilityOptions = [
   { label: 'Available', value: 'available' },
   { label: 'Not Available', value: 'unavailable' },
   { label: 'In Progress', value: 'in-progress' },
+  { label: 'Older Version Available', value: 'older-version-available' },
 ];
 
 export const availabilityContent = component({
