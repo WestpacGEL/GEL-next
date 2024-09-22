@@ -1,6 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
 import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon } from '../icon/index.js';
+import { ProgressIndicator } from '../progress-indicator/progress-indicator.component.js';
 
 import { Button } from './button.component.js';
 
