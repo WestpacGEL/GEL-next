@@ -3,7 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { ProgressIndicator } from './progress-indicator.component.js';
 
 const meta: Meta<typeof ProgressIndicator> = {
-  title: 'Components/Progress Indicator',
+  title: 'Components/ProgressIndicator',
   component: ProgressIndicator,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
@@ -42,9 +42,9 @@ export const Sizes = () => {
 
 export const Inverted = () => {
   return (
-    <div className="bg-black">
+    <div className="rounded bg-black">
       {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator key={size} size={size} inverted className="mr-2" />
+        <ProgressIndicator key={size} size={size} color={'white'} className="mr-2" />
       ))}
     </div>
   );

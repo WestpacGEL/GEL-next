@@ -10,26 +10,32 @@ design:
       name: Primary UI palette
       slug: primary-ui-palette
     noTitle: false
+    noDemo: false
   - title:
       name: Secondary colours
       slug: secondary-colours
     noTitle: false
+    noDemo: false
   - title:
       name: Reserved colours
       slug: reserved-colours
     noTitle: false
+    noDemo: false
   - title:
       name: Data visualisation colours
       slug: data-visualisation-colours
     noTitle: false
+    noDemo: false
   - title:
       name: User experience
       slug: user-experience
     noTitle: false
+    noDemo: false
   - title:
       name: Visual design
       slug: visual-design
     noTitle: false
+    noDemo: false
 accessibility:
   - title:
       name: Colours reserved for accessibility

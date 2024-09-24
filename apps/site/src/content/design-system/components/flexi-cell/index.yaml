@@ -11,18 +11,22 @@ design:
       name: Symbol
       slug: symbol
     noTitle: false
+    noDemo: false
   - title:
       name: Image bleed
       slug: image-bleed
     noTitle: false
+    noDemo: false
   - title:
       name: User experience
       slug: user-experience
     noTitle: false
+    noDemo: false
   - title:
       name: Where is this available?
       slug: where-is-this-available
     noTitle: false
+    noDemo: true
 accessibility: []
 relatedComponents:
   - title: Badges

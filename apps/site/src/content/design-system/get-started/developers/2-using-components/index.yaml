@@ -1,4 +1,4 @@
-name: Usage
+name: Using components
 description: This page describes how to use GEL components within your application.
 namedExport:
   discriminant: false
@@ -8,6 +8,7 @@ design:
       name: Using components
       slug: using-components
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []

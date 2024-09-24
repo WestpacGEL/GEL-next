@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.26.0
+
+### Minor Changes
+
+- 48a09cb: added iconSize prop option for alert component
+
 ## 0.25.0
 
 ### Minor Changes

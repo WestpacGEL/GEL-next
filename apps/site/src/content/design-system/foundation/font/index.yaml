@@ -10,30 +10,37 @@ design:
       name: Brand font
       slug: brand-font
     noTitle: false
+    noDemo: false
   - title:
       name: Body font
       slug: body-font
     noTitle: false
+    noDemo: false
   - title:
       name: Typographic scale
       slug: typographic-scale
     noTitle: false
+    noDemo: false
   - title:
       name: Font weights
       slug: font-weights
     noTitle: false
+    noDemo: false
   - title:
       name: Using fonts
       slug: using-fonts
     noTitle: false
+    noDemo: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
     noTitle: false
+    noDemo: false
   - title:
       name: Where is this available?
       slug: where-is-this-available
     noTitle: false
+    noDemo: true
 accessibility:
   - title:
       name: Accessibility features

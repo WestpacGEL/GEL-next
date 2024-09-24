@@ -11,14 +11,17 @@ design:
       name: Why our words matter
       slug: why-our-words-matter
     noTitle: false
+    noDemo: false
   - title:
       name: Principles
       slug: principles
     noTitle: false
+    noDemo: false
   - title:
       name: Writing tips
       slug: writing-tips
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []

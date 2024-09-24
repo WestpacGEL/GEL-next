@@ -10,22 +10,27 @@ design:
       name: Input group examples
       slug: input-group-examples
     noTitle: false
+    noDemo: false
   - title:
       name: Input group sizes
       slug: input-group-sizes
     noTitle: false
+    noDemo: false
   - title:
       name: User experience
       slug: user-experience
     noTitle: false
+    noDemo: false
   - title:
       name: Visual design
       slug: visual-design
     noTitle: false
+    noDemo: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
     noTitle: false
+    noDemo: false
 accessibility:
   - title:
       name: Notes on accessibility

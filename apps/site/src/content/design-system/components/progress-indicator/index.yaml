@@ -8,18 +8,22 @@ design:
       name: Progress indicator
       slug: progress-indicator
     noTitle: false
+    noDemo: false
   - title:
       name: User experience
       slug: user-experience
     noTitle: false
+    noDemo: false
   - title:
       name: Visual design
       slug: visual-design
     noTitle: false
+    noDemo: false
   - title:
       name: Dos and don’ts
       slug: dos-and-donts
     noTitle: false
+    noDemo: false
 accessibility:
   - title:
       name: Colour impairment demonstration

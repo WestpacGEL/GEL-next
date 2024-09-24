@@ -7,50 +7,62 @@ design:
       name: Ampersands [&]
       slug: ampersands
     noTitle: false
+    noDemo: false
   - title:
       name: Apostrophes [']
       slug: apostrophes
     noTitle: false
+    noDemo: false
   - title:
       name: Colons [:]
       slug: colons
     noTitle: false
+    noDemo: false
   - title:
       name: Commas [,]
       slug: commas
     noTitle: false
+    noDemo: false
   - title:
       name: Exclamation marks [!]
       slug: exclamation-marks
     noTitle: false
+    noDemo: false
   - title:
       name: Full stops [.]
       slug: full-stops
     noTitle: false
+    noDemo: false
   - title:
       name: Hyphens and em - dashes
       slug: hyphens-and-em-dashes
     noTitle: false
+    noDemo: false
   - title:
       name: Per cent [%]
       slug: per-cent
     noTitle: false
+    noDemo: false
   - title:
       name: Question mark [?]
       slug: question-mark
     noTitle: false
+    noDemo: false
   - title:
       name: Quotation marks ["]
       slug: quatation-marks
     noTitle: false
+    noDemo: false
   - title:
       name: Semi colons [;]
       slug: semi-colons
     noTitle: false
+    noDemo: false
   - title:
       name: Slashes [/]
       slug: slashes
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []
