@@ -4,11 +4,13 @@ description: >-
   brands.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Third-party websites
       slug: third-party-websites
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code:
