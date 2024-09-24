@@ -10,6 +10,7 @@ design:
       name: Empty states
       slug: empty-states
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []
