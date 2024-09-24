@@ -43,7 +43,7 @@ export const Logos = () => {
           <GridItem span={{ initial: 12, sm: 6 }}>
             <input type="hidden" name="asset" value="logo" />
             {/* TODO: It has to change to GEL_Logos afterwards */}
-            <Button tag="a" look="primary" iconBefore={DownloadIcon} soft href="/assets/GEL_Pictograms.zip" download>
+            <Button tag="a" look="primary" iconBefore={DownloadIcon} soft href="/assets/GEL_Logos_Symbols.zip" download>
               Download all SVGs
             </Button>
           </GridItem>

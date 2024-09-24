@@ -26,50 +26,50 @@ export function SparklePictogram({
       {...props}
     >
       <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_882_7929)">
+        <g clipPath="url(#clip0_882_7929)">
           <path
             d="M38.9999 61.716C37.7659 61.716 36.6949 60.9716 36.2758 59.8201L32.4922 49.5961C31.782 47.6885 30.2802 46.1765 28.371 45.4786L18.1378 41.6984C16.9853 41.268 16.2402 40.1979 16.2402 38.9766C16.2402 37.7553 16.9853 36.6736 18.1378 36.2549L28.371 32.4747C30.2802 31.7652 31.7937 30.2647 32.4922 28.3572L36.2758 18.1332C36.7065 16.9817 37.7775 16.2373 38.9999 16.2373C40.2223 16.2373 43.5 17 44.0525 18.1332L47.8361 28.3572C48.5462 30.2647 50.048 31.7768 51.9572 32.4747L62.1904 36.2549C63.3429 36.6853 64.088 37.7553 64.088 38.9766C64.088 40.1979 63.3429 41.2797 62.1904 41.6984L51.9572 45.4786C50.048 46.1881 48.5346 47.6885 47.8361 49.5961C47.8361 49.5961 45.6049 57.6401 44.0525 59.8201C42.5 62 40.2223 61.716 38.9999 61.716ZM38.9999 18.5403C38.8835 18.5403 38.5808 18.5752 38.4528 18.9242L34.6692 29.1481C33.7262 31.6954 31.7238 33.7076 29.1626 34.6498L18.9295 38.43C18.5919 38.5579 18.5453 38.8487 18.5453 38.9766C18.5453 39.1046 18.5802 39.3954 18.9295 39.5233L29.1626 43.3035C31.7122 44.2457 33.7262 46.2463 34.6692 48.8052L38.4528 59.0291C38.5808 59.3664 38.8719 59.413 38.9999 59.413C39.128 59.413 39.419 59.3781 39.5471 59.0291L43.3307 48.8052C44.2737 46.2579 46.2761 44.2457 48.8372 43.3035L59.0704 39.5233C59.408 39.3954 59.4546 39.1046 59.4546 38.9766C59.4546 38.8487 59.4196 38.5579 59.0704 38.43L48.8372 34.6498C46.2877 33.7076 44.2737 31.707 43.3307 29.1481L41.4389 24.0361L39.5471 18.9242C39.419 18.5868 39.128 18.5403 38.9999 18.5403Z"
             className={fill({ mode, outline: true })}
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M67.5225 39.5465H78.0001V37.2202H67.5225V39.5465Z"
             className={fill({ mode, highlight: true })}
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M39.582 10.4682V0H37.2537V10.4682H39.582Z"
             className={fill({ mode, highlight: true })}
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M58.8375 20.192L66.0671 12.9689L64.4605 11.3638L57.231 18.5869L58.8375 20.192Z"
             className={fill({ mode, highlight: true })}
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M19.9772 18.5869L12.7477 11.3638L11.1411 12.9689L18.3707 20.192L19.9772 18.5869Z"
             className={fill({ mode, highlight: true })}
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M0 39.5465H10.4776V37.2202H0V39.5465Z"
             className={fill({ mode, highlight: true })}
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M39.582 77.9302V67.4619H37.2537V77.9302H39.582Z"
             className={fill({ mode, highlight: true })}
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M12.7477 66.2408L19.9772 59.0177L18.3707 57.4126L11.1411 64.6357L12.7477 66.2408Z"
             className={fill({ mode, highlight: true })}
           />
