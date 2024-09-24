@@ -10,16 +10,19 @@ design:
       name: Payee tile
       slug: payee-tile
     noTitle: false
+    noDemo: false
   - title:
       name: Payee list
       slug: payee-list
     noTitle: false
+    noDemo: false
   - title:
       name: User experience
       slug: user-experience
     noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents:
   - title: Flexicell
-    slug: /components/Flexicell
+    slug: /components/flexi-cell
 code: []
