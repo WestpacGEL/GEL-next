@@ -209,7 +209,7 @@
     "build:css:all": "pnpm build:css && pnpm build:css:min",
     "build:types": "tsc --project tsconfig.build.json",
     "build:esm": "swc ./src -d dist --no-swcrc --config-file .swcrc",
-    "build:icons": "ts-node --esm ./utils/build-icons/index.ts",
+    "build:icons": "node --loader ts-node/esm ./utils/build-icons/index.ts",
     "build:exports": "ts-node --esm ./utils/build-exports/index.ts && prettier --write package.json",
     "build:watch": "pnpm clean && pnpm build:types && pnpm build:esm -w && pnpm build:css:all",
     "build:type-table": "node generate-component-types.cjs",
