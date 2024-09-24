@@ -8,6 +8,7 @@ design:
       name: People and diversity
       slug: people-diversity
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []
