@@ -11,10 +11,6 @@
       "destination": "/articles/what-is-gel"
     },
     {
-      "source": "/design-system/development/get-started?b=WBC",
-      "destination": "/design-system/wbc/get-started/developers/1-set-up"
-    },
-    {
       "source": "/design-system/accessibility/(.*)",
       "destination": "/design-system/wbc/accessibility/$1"
     },
