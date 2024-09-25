@@ -1,6 +1,6 @@
 There are a few different ways to communicate that something is loading, the direction you take depends on the content you are waiting on. Page loading solutions are used when the system is waiting for an entire page or application to load. Loading pages should also communicate with the user about what is happening and why they are waiting.
 
-#### What could be happening
+### What could be happening
 
 - The process is transitioning to a new application
 - The page is loading a very large volume of content
@@ -8,14 +8,14 @@ There are a few different ways to communicate that something is loading, the dir
 
 In these scenarios it can be important to disable the entire screen so the user cannot interact with it during the loading process, using an overlay can achieve this.
 
-#### When should you display it?
+### When should you display it?
 
-Generally speaking you should display a loading page if the content has taken more than 1-2 seconds to display.
+Generally speaking, you should display a loading page if the content has taken more than 1-2 seconds to display.
 
-### Overlays & spinners
+### What does it look like?
 
 The most common page loading pattern is a simple, animated spinning icon on a page overlay. This approach prevents the user from interacting with the content on the screen by covering the entire page including headers, footers or any other navigation. The loading animation should be accompanied by messaging that explains what is happening and why the user is waiting. The message can change based on how long the system is taking.
 
 #### Spinner vs animation
 
-Depending on the process or the audience, instead of showing a simple spinner, the system can display a more complex and potentially engaging animation. This is usually reserved for customer facing processes. These animations can be visually specific to the actual process.
+Depending on the process or the audience, instead of showing a simple spinner, the system can display a more complex and potentially engaging animation. This is usually reserved for customer facing processes. These animations can be visually specific to the actual process, for example showing an animated letter if the system is sending a message.
