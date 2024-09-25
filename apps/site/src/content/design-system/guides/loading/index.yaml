@@ -1,8 +1,28 @@
 name: Loading
+description: >-
+  Loading patterns are used when the system takes too long to display the
+  requested content on screen. This sort of communication is a critical aspect
+  of the user experience. It helps manage user expectations and reduce perceived
+  wait times. 
 namedExport:
   discriminant: false
 excludeFromNavbar: false
-design: []
+design:
+  - title:
+      name: Introduction
+      slug: introduction
+    noTitle: true
+    noDemo: false
+  - title:
+      name: Loading pages
+      slug: loading-pages
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Overlays & spinners
+      slug: overlays-and-spinners
+    noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []
