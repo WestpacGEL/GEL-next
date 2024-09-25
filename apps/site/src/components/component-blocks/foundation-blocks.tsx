@@ -1,24 +1,31 @@
 import { Image } from '@/components/document-renderer';
 
 import { Colors } from './colors/colors.component';
-import { colors } from './colors/colors.preview';
-import { accessibilityDemo } from './components/accessibility-demo/accessibility-demo.preview';
+import { colors, colorsKeystatic } from './colors/colors.preview';
+import {
+  accessibilityDemo,
+  accessibilityDemoKeystatic,
+} from './components/accessibility-demo/accessibility-demo.preview';
 import { AvailabilityContent } from './components/availability-content/availability-content.component';
-import { availabilityContent } from './components/availability-content/availability-content.preview';
-import { designSystemBodyImage } from './components/design-system-body-image';
+import {
+  availabilityContent,
+  availabilityContentKeystatic,
+} from './components/availability-content/availability-content.preview';
+import { designSystemBodyImage, designSystemBodyImageKeystatic } from './components/design-system-body-image';
 import { LinkList } from './components/link-list';
-import { linkList } from './components/link-list/link-list.preview';
-import { shortCode } from './components/short-code/short-code.preview';
+import { linkList, linkListKeystatic } from './components/link-list/link-list.preview';
+import { shortCode, shortCodeKeystatic } from './components/short-code/short-code.preview';
 import { Fonts } from './fonts/fonts.component';
-import { fonts } from './fonts/fonts.preview';
+import { fonts, fontsKeystatic } from './fonts/fonts.preview';
 import { Icons } from './icons/icons.component';
-import { icons } from './icons/icons.preview';
+import { icons, iconsKeystatic } from './icons/icons.preview';
 import { Logos } from './logos/logos.component';
-import { logos } from './logos/logos.preview';
+import { logos, logosKeystatic } from './logos/logos.preview';
 import { Pictograms } from './pictograms/pictograms.component';
-import { pictograms } from './pictograms/pictograms.preview';
+import { pictograms, pictogramsKeystatic } from './pictograms/pictograms.preview';
 import { Symbols } from './symbols/symbols.component';
-import { symbols } from './symbols/symbols.preview';
+import { symbols, symbolsKeystatic } from './symbols/symbols.preview';
+import { block, wrapper } from '@keystatic/core/content-components';
 
 export const foundationBlocks = {
   colors,
@@ -48,4 +55,18 @@ export const foundationBlocksComponents = {
     </div>
   ),
   availabilityContent: (props: any) => <AvailabilityContent {...props} />,
+};
+
+export const foundationBlocksKeystatic = {
+  Colors: colorsKeystatic,
+  Icons: iconsKeystatic,
+  Logos: logosKeystatic,
+  pictograms: pictogramsKeystatic,
+  fonts: fontsKeystatic,
+  symbols: symbolsKeystatic,
+  designSystemBodyImage: designSystemBodyImageKeystatic,
+  linkList: linkListKeystatic,
+  shortCode: shortCodeKeystatic,
+  accessibilityDemo: accessibilityDemoKeystatic,
+  AvailabilityContent: availabilityContentKeystatic,
 };

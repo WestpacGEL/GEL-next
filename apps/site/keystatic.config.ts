@@ -1,9 +1,10 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-import { GitHubConfig, LocalConfig, collection, config, fields, singleton } from '@keystatic/core';
+import { GitHubConfig, LocalConfig, collection, component, config, fields, singleton } from '@keystatic/core';
 
 import { ArticleComponentBlocks } from '@/components/component-blocks/article-component-blocks';
-import { foundationBlocks } from '@/components/component-blocks/foundation-blocks';
+import { foundationBlocksKeystatic, foundationBlocks } from '@/components/component-blocks/foundation-blocks';
 import { logs } from '@/components/component-blocks/logs/logs.preview';
+import { Label } from '@westpac/ui';
 
 const IS_VERCEL_BUILD =
   typeof process.env.NEXT_PUBLIC_GIT_REPO_OWNER === 'string' && process.env.NEXT_PUBLIC_GIT_REPO_OWNER !== '';
@@ -90,9 +91,11 @@ export default config({
       label: 'System Logs',
       path: 'src/content/logs/',
       schema: {
-        document: fields.document({
+        document: fields.markdoc({
           label: 'Logs',
-          componentBlocks: { logs },
+          components: {
+            Logs: logs,
+          },
         }),
       },
     }),
@@ -139,32 +142,32 @@ export default config({
             }),
             noTitle: fields.checkbox({ label: 'No title' }),
             noDemo: fields.checkbox({ label: 'No demo button on examples' }),
-            content: fields.document({
-              formatting: {
-                inlineMarks: {
-                  bold: true,
-                  italic: true,
-                  strikethrough: true,
-                  code: true,
-                  underline: true,
-                },
-                listTypes: {
-                  ordered: true,
-                  unordered: true,
-                },
-                headingLevels: [1, 2, 3, 4, 5, 6],
-                blockTypes: {
-                  blockquote: true,
-                  code: true,
-                },
-                softBreaks: true,
-              },
-              dividers: true,
-              links: true,
-              images: true,
-              layouts: [[6, 6]],
+            content: fields.markdoc({
+              // formatting: {
+              //   inlineMarks: {
+              //     bold: true,
+              //     italic: true,
+              //     strikethrough: true,
+              //     code: true,
+              //     underline: true,
+              //   },
+              //   listTypes: {
+              //     ordered: true,
+              //     unordered: true,
+              //   },
+              //   headingLevels: [1, 2, 3, 4, 5, 6],
+              //   blockTypes: {
+              //     blockquote: true,
+              //     code: true,
+              //   },
+              //   softBreaks: true,
+              // },
+              // dividers: true,
+              // links: true,
+              // images: true,
+              // layouts: [[6, 6]],
               label: 'Design',
-              componentBlocks: foundationBlocks,
+              components: foundationBlocksKeystatic,
             }),
           }),
           {
