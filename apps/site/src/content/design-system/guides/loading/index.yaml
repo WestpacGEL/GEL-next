@@ -9,11 +9,6 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
-      name: Introduction
-      slug: introduction
-    noTitle: true
-    noDemo: false
-  - title:
       name: Loading pages
       slug: loading-pages
     noTitle: true
