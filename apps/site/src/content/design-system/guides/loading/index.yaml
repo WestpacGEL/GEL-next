@@ -9,13 +9,8 @@ namedExport:
 excludeFromNavbar: false
 design:
   - title:
-      name: Loading pages
-      slug: loading-pages
-    noTitle: true
-    noDemo: false
-  - title:
-      name: Overlays & spinners
-      slug: overlays-and-spinners
+      name: Loading options
+      slug: loading-options
     noTitle: false
     noDemo: false
 accessibility: []
