@@ -4,11 +4,13 @@ description: >-
   lines of texts.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Superscripts
       slug: superscripts
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []

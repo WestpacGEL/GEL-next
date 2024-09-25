@@ -2,11 +2,13 @@ name: Age & school years
 description: A guide to writing age and school years.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Age and school years
       slug: age-school-years
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []
