@@ -14,8 +14,8 @@ design:
     noTitle: false
     noDemo: false
   - title:
-      name: Page section
-      slug: page-section
+      name: Page section loading
+      slug: page-section-loading
     noTitle: false
     noDemo: false
 accessibility: []
