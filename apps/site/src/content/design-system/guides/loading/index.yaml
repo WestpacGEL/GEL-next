@@ -16,7 +16,7 @@ design:
   - title:
       name: Loading pages
       slug: loading-pages
-    noTitle: false
+    noTitle: true
     noDemo: false
   - title:
       name: Overlays & spinners
