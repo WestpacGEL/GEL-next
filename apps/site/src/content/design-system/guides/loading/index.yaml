@@ -13,6 +13,11 @@ design:
       slug: loading-options
     noTitle: false
     noDemo: false
+  - title:
+      name: Page section
+      slug: page-section
+    noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []
