@@ -1,18 +1,16 @@
-There are a few different ways to communicate that something is loading, the direction you take depends on the content you are waiting on. Page loading solutions are used when the system is waiting for an entire page or application to load.
+There are a few different ways to communicate that something is loading, the direction you take depends on the content you are waiting on. Page loading solutions are used when the system is waiting for an entire page or application to load. Loading pages should also communicate with the user about what is happening and why they are waiting.
 
-#### What is happening
+#### What could be happening
 
 - The process is transitioning to a new application
-- Large volume of content on the page
-- Technical issue
+- The page is loading a very large volume of content
+- There is a technical issue
 
-In these scenarios it can be important to disable the entire screen so the user cannot interact with it during the loading process, using an overlay can achieve this.\
-\
-When possible it is important to communicate with the user about what is happening and why they are waiting.\
-\
-When to show a loading page\
-\
-Short , Medium, long wait
+In these scenarios it can be important to disable the entire screen so the user cannot interact with it during the loading process, using an overlay can achieve this.
+
+#### When should you display it?
+
+Generally speaking you should display a loading page if the content has taken more than 1-2 seconds to display.
 
 ### Overlays & spinners
 
