@@ -18,6 +18,11 @@ design:
       slug: page-section-loading
     noTitle: false
     noDemo: false
+  - title:
+      name: Loading within components
+      slug: loading-within-components
+    noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []

@@ -1,0 +1,16 @@
+There are also scenarios where small, individual components require a loading state, for example buttons or input fields. For example if you have a button that initiates an action in the page or that you only want the user to click once, the button can have an animated spinner icon that appears once the button is clicked and disables the button until the action is completed.\
+\
+Another common pattern is loading within an input field for an auto-complete component. The user starts typing, if there is a lag while the system calls the back-end to retrieve the items the field can display an animated spinner until the action is completed.
+
+### Why
+
+- To indicate a process has initiated, like search
+- To disable a button from being clicked more than once
+
+### When
+
+Display immediately
+
+### What
+
+When indicating loading for very small elements we use an animated icon embedded with the component.
