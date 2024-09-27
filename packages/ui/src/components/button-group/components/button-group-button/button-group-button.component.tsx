@@ -28,7 +28,7 @@ export function ButtonGroupButton({ className, label, ...props }: ButtonGroupBut
         disabled={isDisabled}
         look={look}
         size={size}
-        className={styles.button()}
+        className={styles.button({ hasTransition: !isSelected })}
       >
         {label}
       </GELButton>
