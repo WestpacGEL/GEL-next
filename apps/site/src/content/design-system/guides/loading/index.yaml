@@ -24,5 +24,7 @@ design:
     noTitle: false
     noDemo: false
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  - title: Progress Indicator
+    slug: /components/progress-indicator
 code: []
