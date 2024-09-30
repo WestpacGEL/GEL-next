@@ -34,7 +34,7 @@ Description of what will be displayed
       setValidating(false);
     }, 1500);
   }, [inputValue]);
-  return <InputGroup label="Enter routing number" width="20" hint="Select validate to see the progress Indicator." after={validating ? {
+  return <InputGroup label="Validate entry" width="20" hint="Select validate to see the Progress Indicator." after={validating ? {
     icon: ProgressIndicator
   } : <Button onClick={validate}>Validate</Button>} errorMessage={error}>
       <Input invalid={!!error} onChange={({
