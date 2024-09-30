@@ -20,10 +20,24 @@ The most common page loading pattern is a simple, animated spinning icon on a pa
 
 Depending on the process or the audience, instead of showing a simple spinner, we can take the opportunity to insert a brand moment by using a more complex, branded and potentially engaging animation. These are usually reserved for customer facing processes. These animations can be visually specific to the actual process, for example showing an animated letter if the system is sending a message.
 
-### Pattern
+### Usage example
 
-[Link to page loading overlay pattern?](#)
+Description of what will be displayed
 
-### Component
+```jsx
+() => {
+  const state = useOverlayTriggerState({});
+  return (
+    <>
+<ProgressIndicator size="xlarge" color="white" className="mr-2 mb-2 mt-2" />
+      <Button look="primary" soft onClick={state.open}>
+        Open
+      </Button>
+    </>
+  );
+};
+```
+
+#### Components
 
 [Progress indicator](/components/progress-indicator) (Spinner)
