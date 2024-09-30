@@ -22,7 +22,7 @@ design:
       name: Loading within components
       slug: loading-within-components
     noTitle: false
-    noDemo: false
+    noDemo: true
 accessibility: []
 relatedComponents:
   - title: Progress Indicator
