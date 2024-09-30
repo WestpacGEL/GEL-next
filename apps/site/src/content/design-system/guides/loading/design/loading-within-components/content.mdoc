@@ -34,9 +34,9 @@ Description of what will be displayed
       setValidating(false);
     }, 1500);
   }, [inputValue]);
-  return <InputGroup label="Enter ABA routing number" width={30} hint="For a valid response use: 647453, all other numbers will show the invalid response" after={validating ? {
+  return <InputGroup label="Enter routing number" width={30} hint="For a valid response use: 647453, all other numbers will show the invalid response" after={validating ? {
     icon: RefreshIcon
-  } : <Button onClick={validate}>Check</Button>} errorMessage={error}>
+  } : <Button onClick={validate}>Validate</Button>} errorMessage={error}>
       <Input invalid={!!error} onChange={({
       target: {
         value
