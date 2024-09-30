@@ -20,7 +20,7 @@ export function TableOfContents({ contents = [] }: TableOfContentsProps) {
             .join('-');
           return (
             <ListItem key={id} className="pl-[1.075rem]">
-              <Link href={`/design-system/wbc/components/alert#user-experience`}>{title}</Link>
+              <Link href={`#${id}`}>{title}</Link>
             </ListItem>
           );
         })}
