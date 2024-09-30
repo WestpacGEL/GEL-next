@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-import { formatComponentSlug } from '@/utils/format';
+import { formatComponentSlug, formatNavItems, sortDeveloperMenu, sortMenu } from '@/utils/format';
 
 import { useSidebar } from '../../sidebar.context';
 
@@ -29,6 +29,14 @@ export function Navigation({ items, brand }: NavigationProps) {
 function List({ items, level = 0, crumbs, brand }: ListProps) {
   return items.map(item => {
     if (item.children) {
+      if (item.label.toLowerCase() === 'developers') {
+        const formattedItems = sortDeveloperMenu(item.children);
+        return (
+          <Group key={item.label} label={item.label} level={level} crumbs={crumbs}>
+            <List items={formattedItems} level={level + 1} crumbs={crumbs} brand={brand} />
+          </Group>
+        );
+      }
       return (
         <Group key={item.label} label={item.label} level={level} crumbs={crumbs}>
           <List items={item.children} level={level + 1} crumbs={crumbs} brand={brand} />
