@@ -12,10 +12,24 @@ Display after about 200–500 milliseconds
 
 A Skeleton loader displays a very simplified visual placeholder that mimics the layout of the final content in an abstract and non-literal way. These can often have an animation layer added called a shimmer that creates movement and a bit of visual interest to show that something is happening. As the Skeleton loaders only obscure the areas that are taking a while to appear, it means the user still has access to interact with other areas of the page including navigation.
 
-### Pattern
+### Usage example
 
-[Link to skeleton pattern?](#)
+Showing examples of skeleton loading. Could we do an animated demo where the skeleton loading transitions to the actual UI?
 
-### Component
+```jsx
+() => {
+  const state = useOverlayTriggerState({});
+  return (
+    <>
+<ProgressIndicator size="xlarge" color="white" className="mr-2 mb-2 mt-2" />
+      <Button look="primary" soft onClick={state.open}>
+        Demo of skeleton loader
+      </Button>
+    </>
+  );
+};
+```
 
-[Link to Skeleton component?](#)
+#### Components
+
+[Skeleton](#)
