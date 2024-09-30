@@ -15,10 +15,25 @@ Display immediately for disabling scenarios, or after about 200–500 millisecon
 
 When indicating loading for very small elements we use an animated icon embedded with the component.
 
-### Pattern
+### Usage example
 
-[Link to input and button loading pattern?](#)
+Description of what will be displayed
 
-[Link to Auto-complete pattern?](#)
+```jsx
+() => {
+  return <div>
+      {(['large', 'medium', 'small'] as const).map(size => <>
+          <h3 className="font-bold">{size.charAt(0).toUpperCase() + size.slice(1)}</h3>
+          <div className="flex gap-2 py-2">
+            {(['primary', 'hero', 'faint'] as const).map(look => <Button size={size} look={look} key={`${size}-${look}`} iconAfter={ProgressIndicator} iconSize={size === 'small' ? 'xsmall' : 'small'} iconColor={look === 'faint' ? 'hero' : 'white'}>
+                Loading...{'  '}
+              </Button>)}
+          </div>
+        </>)}
+    </div>;
+}
+```
 
-Or embed example in this page instead of linking out to them?
+#### Components
+
+[Progress indicator](/components/progress-indicator) (Spinner)
