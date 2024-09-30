@@ -20,7 +20,7 @@ export function TableOfContents({ contents = [] }: TableOfContentsProps) {
             .join('-');
           return (
             <ListItem key={id} className="pl-[1.075rem]">
-              <Link href={`/design-system/wbc/components/alert#user-experience`}>{title}</Link>
+              <Link href={`#${id}`}>{title}</Link>
             </ListItem>
           );
         })}
@@ -36,49 +36,45 @@ const HEADER_HEIGHT = {
 
 const BREAKPOINT_MD = 768;
 
-function Link({ href, children }: { children?: React.ReactNode; href?: string }) {
+function Link({ href, children }: { children?: React.ReactNode; href: string }) {
   const router = useRouter();
   const pathname = usePathname();
   const [scrollToHash, setScrollToHash] = useState<string | null>(null);
+  const [path, hash] = href.split('#');
+
+  const scrollToSection = useCallback(() => {
+    const viewport = window.innerWidth < BREAKPOINT_MD ? 'sm' : 'lg';
+    const bodyRect = document.body.getBoundingClientRect();
+    const elemRect = document?.querySelector(`#${hash}`)?.getBoundingClientRect();
+    const offset = (elemRect?.top || 0) - bodyRect.top - HEADER_HEIGHT[viewport];
+
+    window?.scrollTo({ top: offset, behavior: 'smooth' });
+    window.history.pushState(null, '', `#${hash}`);
+  }, [hash]);
 
   useEffect(() => {
     if (scrollToHash) {
       setTimeout(() => {
-        const viewport = window.innerWidth < BREAKPOINT_MD ? 'sm' : 'lg';
-        const bodyRect = document.body.getBoundingClientRect();
-        const elemRect = document?.querySelector(`#${scrollToHash}`)?.getBoundingClientRect();
-        const offset = (elemRect?.top || 0) - bodyRect.top - HEADER_HEIGHT[viewport];
-
-        window?.scrollTo({ top: offset, behavior: 'smooth' });
+        scrollToSection();
       }, 500);
       setScrollToHash(null);
     }
-  }, [scrollToHash, pathname]);
+  }, [scrollToHash, pathname, scrollToSection]);
 
   const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
     async ev => {
       ev.preventDefault();
-      if (!href) return;
-
-      const [path, hash] = href.split('#');
       const currentPath = pathname;
 
       if (path === currentPath || !path) {
-        const viewport = window.innerWidth < BREAKPOINT_MD ? 'sm' : 'lg';
-        const bodyRect = document.body.getBoundingClientRect();
-        const elemRect = document?.querySelector(`#${hash}`)?.getBoundingClientRect();
-        const offset = (elemRect?.top || 0) - bodyRect.top - HEADER_HEIGHT[viewport];
-
-        window?.scrollTo({ top: offset, behavior: 'smooth' });
-        window.history.pushState(null, '', `#${hash}`);
+        scrollToSection();
       } else {
         router.prefetch(path);
         setScrollToHash(hash);
         await router.push(path);
-        // window.history.pushState(null, '', `#${hash}`);
       }
     },
-    [href, router, pathname],
+    [path, hash, router, pathname, scrollToSection],
   );
 
   return (
