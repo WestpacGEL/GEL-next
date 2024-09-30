@@ -21,6 +21,10 @@ Description of what will be displayed
 
 ```jsx
 () => {
+  const [value, setValue] = useState(0);
+
+  return (
+    <Fragment>
   const [inputValue, setInputValue] = useState<string>('');
   const [validating, setValidating] = useState<boolean>(false);
   const [error, setError] = useState<string>();
@@ -47,6 +51,9 @@ Description of what will be displayed
 <Form spacing="large">
   <AutoAddressDemo />
 </Form>
+    </Fragment>
+  );
+};
 ```
 
 #### Components
