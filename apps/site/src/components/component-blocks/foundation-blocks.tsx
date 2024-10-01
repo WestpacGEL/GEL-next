@@ -1,4 +1,3 @@
-import { block, wrapper } from '@keystatic/core/content-components';
 import { Image } from '@/components/document-renderer';
 
 import { Colors } from './colors/colors.component';
