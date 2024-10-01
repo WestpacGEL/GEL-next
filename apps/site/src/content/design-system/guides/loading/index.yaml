@@ -6,7 +6,7 @@ description: >-
   wait times. 
 namedExport:
   discriminant: false
-excludeFromNavbar: false
+excludeFromNavbar: true
 design:
   - title:
       name: Page loading
