@@ -52,6 +52,7 @@ export function sortMenu(menuItems: Item[]) {
     'get-started',
     'foundation',
     'components',
+    'guides',
     'patterns',
     'accessibility',
     'content',
