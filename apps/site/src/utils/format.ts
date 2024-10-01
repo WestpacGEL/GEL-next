@@ -33,6 +33,18 @@ export function formatNavItems(navList: { name: string; slug: string }[]) {
   return navItems;
 }
 
+function orderMenu(menuItems: Item[], order: string[]) {
+  const orderedMenu: Item[] = [];
+  order.forEach(item =>
+    menuItems.forEach(menuItem => {
+      if (item === menuItem.label.toLowerCase()) {
+        orderedMenu.push(menuItem);
+      }
+    }),
+  );
+  return orderedMenu;
+}
+
 // This had to be made as a separate function as adding some to formatNavItems too cognitively complex
 export function sortMenu(menuItems: Item[]) {
   const topLevelMenuOrder = [
@@ -46,13 +58,11 @@ export function sortMenu(menuItems: Item[]) {
     'design tokens',
   ];
 
-  const orderedMenu: Item[] = [];
-  topLevelMenuOrder.forEach(item =>
-    menuItems.forEach(menuItem => {
-      if (item === menuItem.label.toLowerCase()) {
-        orderedMenu.push(menuItem);
-      }
-    }),
-  );
-  return orderedMenu;
+  return orderMenu(menuItems, topLevelMenuOrder);
+}
+
+export function sortDeveloperMenu(menuItems: Item[]) {
+  const developersMenuOrder = ['set up', 'using components', 'using brands', 'eslint configuration', 'unit testing'];
+
+  return orderMenu(menuItems, developersMenuOrder);
 }
