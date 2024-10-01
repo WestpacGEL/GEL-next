@@ -1,3 +1,4 @@
+import { block, wrapper } from '@keystatic/core/content-components';
 import { Image } from '@/components/document-renderer';
 
 import { Colors } from './colors/colors.component';
@@ -25,7 +26,6 @@ import { Pictograms } from './pictograms/pictograms.component';
 import { pictograms, pictogramsKeystatic } from './pictograms/pictograms.preview';
 import { Symbols } from './symbols/symbols.component';
 import { symbols, symbolsKeystatic } from './symbols/symbols.preview';
-import { block, wrapper } from '@keystatic/core/content-components';
 
 export const foundationBlocks = {
   colors,
