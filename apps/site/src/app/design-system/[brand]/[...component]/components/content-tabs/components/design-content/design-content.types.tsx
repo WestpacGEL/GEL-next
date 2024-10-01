@@ -2,8 +2,9 @@ import { DocumentElement } from '@keystatic/core';
 
 import { RelatedInfoProps } from '@/components/related-info/related-info.types';
 import { ShortCode } from '@/types/short-code.types';
+import { ReactNode } from 'react';
 
-export type DesignSectionProps = { content: DocumentElement[]; noDemo?: boolean; noTitle?: boolean; title: string };
+export type DesignSectionProps = { content: Node[]; noDemo?: boolean; noTitle?: boolean; title: string };
 
 export type DesignContentProps = {
   description?: string;
