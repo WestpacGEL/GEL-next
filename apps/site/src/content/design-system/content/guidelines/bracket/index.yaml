@@ -8,6 +8,7 @@ design:
       name: Brackets
       slug: brackets
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []

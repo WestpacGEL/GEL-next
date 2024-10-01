@@ -4,7 +4,7 @@ description: >-
   one of their existing accounts.
 namedExport:
   discriminant: false
-excludeFromNavbar: true
+excludeFromNavbar: false
 design:
   - title:
       name: Account tiles
@@ -24,5 +24,5 @@ design:
 accessibility: []
 relatedComponents:
   - title: Flexicell
-    slug: /components/Flexicell
+    slug: /components/flexi-cell
 code: []

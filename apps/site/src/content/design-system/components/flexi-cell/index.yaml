@@ -5,7 +5,7 @@ description: >-
   your content aligns with the brand guidelines.
 namedExport:
   discriminant: false
-excludeFromNavbar: true
+excludeFromNavbar: false
 design:
   - title:
       name: Symbol

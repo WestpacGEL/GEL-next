@@ -8,77 +8,77 @@ design:
       name: A
       slug: a
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: B
       slug: b
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: C
       slug: c
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: D
       slug: d
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: E
       slug: e
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: F
       slug: f
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: G
       slug: g
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: H
       slug: h
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: I
       slug: i
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: L
       slug: l
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: M
       slug: m
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: O
       slug: o
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: P
       slug: p
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: S
       slug: s
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: T
       slug: t
     noTitle: false
-    noDemo: false
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []

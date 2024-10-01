@@ -10,32 +10,32 @@ design:
       name: Headings
       slug: headings
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Sentence-case
       slug: sentence-case
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Capitalisation
       slug: capitalisation
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Lower-case
       slug: lower-case
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: States and territories
       slug: states-and-territories
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Countries
       slug: countries
     noTitle: false
-    noDemo: false
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []

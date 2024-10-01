@@ -8,6 +8,7 @@ design:
       name: Hyperlinks and email addresses
       slug: hyperlinks-email-addresses
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []

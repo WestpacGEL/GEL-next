@@ -2,11 +2,13 @@ name: Spelling
 description: Spelling refers to the forming of words from letters.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Spelling
       slug: spelling
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []

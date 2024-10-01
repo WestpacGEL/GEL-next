@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 0.27.0
+
+### Minor Changes
+
+- 0ee48a0: updated button styling; fix filter scroll button visual bug
+- e158bc8: updated progress-indicators to use IconProps
+
 ## 0.26.0
 
 ### Minor Changes

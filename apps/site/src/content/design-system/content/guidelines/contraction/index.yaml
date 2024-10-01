@@ -2,11 +2,13 @@ name: Contractions
 description: Contractions consist of two words combined to create a shorter word.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Contractions
       slug: contractions
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []

@@ -2,11 +2,13 @@ name: Acronyms
 description: Acronyms are words that are formed from the first letters of other words.
 namedExport:
   discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Acronyms
       slug: acronyms
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []

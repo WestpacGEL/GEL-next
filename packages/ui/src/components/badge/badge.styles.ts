@@ -24,7 +24,7 @@ export const styles = tv(
         'warning-inverted': 'border-none bg-white text-warning',
       },
       type: {
-        pill: 'typography-body-10 h-4 rounded-xl px-[0.4375rem] py-[0.25rem] font-medium leading-none',
+        pill: 'typography-body-10 h-4 rounded-xl px-[0.4375rem] font-medium leading-none flex items-center',
         default: 'h-[1.25rem] rounded-sm px-1 text-[0.75rem] leading-[1.125rem]',
       },
       soft: {

@@ -11,6 +11,10 @@
       "destination": "/articles/what-is-gel"
     },
     {
+      "source": "/design-system/development/get-started(.*)",
+      "destination": "/design-system/wbc/get-started/developers/1-set-up"
+    },
+    {
       "source": "/design-system/accessibility/(.*)",
       "destination": "/design-system/wbc/accessibility/$1"
     },

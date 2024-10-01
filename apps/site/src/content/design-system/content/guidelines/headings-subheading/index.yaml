@@ -2,9 +2,15 @@ name: Headings & subheadings
 description: >-
   Headings and subheadings are used to tell a person what they can expect from
   the content of a section.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
 design:
   - title:
       name: Headings and subheadings
       slug: headings-subheadings
     noTitle: true
+    noDemo: true
 accessibility: []
+relatedComponents: []
+code: []

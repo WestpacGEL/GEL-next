@@ -10,16 +10,17 @@ design:
       name: Error messages
       slug: error-messages
     noTitle: true
+    noDemo: true
   - title:
       name: Types of error messages
       slug: types-of-error-messages
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Displaying error messages
       slug: displaying-error-messages
     noTitle: false
-    noDemo: false
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []
