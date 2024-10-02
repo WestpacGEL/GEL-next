@@ -41,6 +41,7 @@ function Link({ href, children }: { children?: React.ReactNode; href: string }) 
   const pathname = usePathname();
   const [scrollToHash, setScrollToHash] = useState<string | null>(null);
   const [path, hash] = href.split('#');
+  const DELAY_TIME_TO_SCROLL = 500;
 
   const scrollToSection = useCallback(() => {
     const viewport = window.innerWidth < BREAKPOINT_MD ? 'sm' : 'lg';
@@ -56,7 +57,7 @@ function Link({ href, children }: { children?: React.ReactNode; href: string }) 
     if (scrollToHash) {
       setTimeout(() => {
         scrollToSection();
-      }, 500);
+      }, DELAY_TIME_TO_SCROLL);
       setScrollToHash(null);
     }
   }, [scrollToHash, pathname, scrollToSection]);
