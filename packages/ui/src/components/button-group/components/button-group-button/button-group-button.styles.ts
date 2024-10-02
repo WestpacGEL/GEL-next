@@ -28,6 +28,9 @@ export const styles = tv(
         true: {
           button: 'pointer-events-auto',
         },
+        false: {
+          button: 'pointer-events-none',
+        },
       },
     },
   },

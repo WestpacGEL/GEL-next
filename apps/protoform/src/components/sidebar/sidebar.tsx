@@ -84,7 +84,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
       <>
         <div
           className={clsx(
-            'sticky top-0 z-10 flex h-9 justify-between bg-white px-2 py-3 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] xsl:px-4 sm:px-5 md:hidden',
+            'items-center sticky top-0 z-10 flex h-9 justify-between bg-white px-2 py-3 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] xsl:px-4 sm:px-5 md:hidden',
             { 'after:opacity-100': scrolled },
           )}
         >
@@ -100,6 +100,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
             </Button>
           )}
         </div>
+
         <>
           <>
             <div
