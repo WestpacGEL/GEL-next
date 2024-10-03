@@ -101,7 +101,7 @@ export const SymbolVertical = () => {
               size={{ initial: 'default', md: 'large' }}
             >
               <div>
-                <div className="flex justify-start mb-2 md:mb-3">
+                <div className="mb-2 flex justify-start md:mb-3">
                   <GiftIcon look="outlined" color="hero" />
                 </div>
                 <div className="flex flex-col">

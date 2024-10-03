@@ -2,7 +2,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useCallback, useState } from 'react';
 
 import { Button } from '../button/button.component.js';
-import { ClearIcon, DropDownIcon, SearchIcon } from '../icon/index.js';
+import { ClearIcon, DropDownIcon } from '../icon/index.js';
 import { Input } from '../input/input.component.js';
 import { InputGroup } from '../input-group/input-group.component.js';
 

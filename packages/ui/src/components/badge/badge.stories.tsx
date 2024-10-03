@@ -149,7 +149,7 @@ export const Buttons = () => (
     <div className="flex gap-2">
       {SIZES.map(size => (
         <Button key={size} color="primary" size={size}>
-          <div className="w-max flex items-center">
+          <div className="flex w-max items-center">
             Label
             <Badge type="default" color="faint" className="ml-1">
               NEW
@@ -161,7 +161,7 @@ export const Buttons = () => (
     <div className="flex gap-2">
       {SIZES.map(size => (
         <Button key={size} color="primary" size={size}>
-          <div className="w-max flex items-center">
+          <div className="flex w-max items-center">
             <Badge type="default" color="faint" className="mr-1">
               NEW
             </Badge>{' '}
@@ -174,7 +174,7 @@ export const Buttons = () => (
     <div className="flex gap-2">
       {SIZES.map(size => (
         <Button key={size} look="primary" size={size}>
-          <div className="w-max flex items-center">
+          <div className="flex w-max items-center">
             Label
             <Badge color="danger-inverted" type="pill" className="ml-1">
               88
@@ -186,7 +186,7 @@ export const Buttons = () => (
     <div className="flex gap-2">
       {SIZES.map(size => (
         <Button key={size} look="primary" size={size}>
-          <div className="w-max flex items-center">
+          <div className="flex w-max items-center">
             <Badge color="danger-inverted" type="pill" className="mr-1">
               88
             </Badge>
