@@ -2,7 +2,8 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useCallback, useState } from 'react';
 
 import { Button } from '../button/button.component.js';
-import { ClearIcon, DropDownIcon, SearchIcon } from '../icon/index.js';
+import { Heading } from '../heading/heading.component.js';
+import { ClearIcon, DropDownIcon } from '../icon/index.js';
 import { Input } from '../input/input.component.js';
 import { InputGroup } from '../input-group/input-group.component.js';
 
@@ -92,6 +93,58 @@ export const InputUsage = () => {
       >
         <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
       </InputGroup>
+    </>
+  );
+};
+
+/**
+ * >Usage in loading screen
+ */
+
+export const LoadingScreenUsage = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleClick = () => {
+    setIsLoading(true);
+  };
+
+  const handleOverlayClick = () => {
+    setIsLoading(false);
+  };
+
+  return (
+    <>
+      <Button onClick={handleClick} size="large">
+        Click me
+      </Button>
+      {isLoading && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+          onClick={handleOverlayClick}
+        >
+          <div
+            className="flex flex-col justify-center items-center content-center gap-3 sm:gap-4"
+            onClick={e => e.stopPropagation()}
+          >
+            <ProgressIndicator
+              size={{
+                initial: 'large',
+                sm: 'xlarge',
+              }}
+              color="primary"
+            />
+            <Heading
+              className="text-white animate-pulse"
+              size={{
+                initial: 8,
+                sm: 7,
+              }}
+            >
+              Loading...
+            </Heading>
+          </div>
+        </div>
+      )}
     </>
   );
 };
