@@ -1,6 +1,6 @@
 'use client';
 
-import { useContext, useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { VisuallyHidden, useFocusRing, useRadio } from 'react-aria';
 
 import { Button as GELButton } from '../../../button/index.js';
