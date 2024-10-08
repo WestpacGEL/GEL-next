@@ -38,10 +38,10 @@ export const DefaultStory: Story = {
         <Footer brand={brand === 'btfg' ? 'wbc' : brand} hideLogo {...rest}>
           <div className="relative">
             <div className="float-left flex-none">
-              <SecurityIcon size="small" className="float-left shrink-0 mr-1 mt-0.5" color="muted" />
+              <SecurityIcon size="small" className="float-left mr-1 shrink-0" color="muted" />
             </div>
             <div className="flex">
-              <p className="text-muted relative flex-1">
+              <p className="relative flex-1 text-muted">
                 Our site and your transactions are secure. You can read our{' '}
                 <Link href="#" type="inline">
                   security information

@@ -101,16 +101,6 @@ export function Autocomplete<T extends object>({
     searchProps.value.length,
   ]);
 
-  const iconSize = useMemo(() => {
-    switch (size) {
-      case 'small':
-      case 'medium':
-        return 'small';
-      default:
-        return 'medium';
-    }
-  }, [size]);
-
   return (
     <div className={styles.base({ className })}>
       {props.label && <Label {...labelProps}>{props.label}</Label>}
@@ -120,9 +110,9 @@ export function Autocomplete<T extends object>({
       <div ref={outerRef} className={styles.outerWrapper()}>
         <div className={styles.iconWrapper()}>
           {loadingState ? (
-            <ProgressIndicator size={iconSize} color="muted" />
+            <ProgressIndicator size="small" color="muted" />
           ) : (
-            <SearchIcon aria-hidden size={iconSize} color="muted" />
+            <SearchIcon aria-hidden size="small" color="muted" />
           )}
         </div>
         <input

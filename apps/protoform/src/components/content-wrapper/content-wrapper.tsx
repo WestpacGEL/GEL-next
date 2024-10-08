@@ -42,6 +42,7 @@ export function ContentWrapper({ children }: { children: ReactNode }) {
       <GridContainer>
         <Grid>
           <GridItem span={{ initial: 12, sm: 8, md: 8, lg: 6 }} start={{ initial: 1, sm: 3, md: 3, lg: 4 }}>
+            <div className="md:h-10"></div>
             {children}
           </GridItem>
         </Grid>

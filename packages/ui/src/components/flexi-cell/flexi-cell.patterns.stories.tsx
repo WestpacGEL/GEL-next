@@ -16,7 +16,6 @@ import { Badge, ErrorMessage } from '../index.js';
 import { FlexiCellAdornment } from './components/flexi-cell-adornment/flexi-cell-adornment.component.js';
 import { FlexiCellButton } from './components/flexi-cell-button/flexi-cell-button.component.js';
 import { FlexiCellCircle } from './components/flexi-cell-circle/flexi-cell-circle.component.js';
-import { FlexiCellFooter } from './components/flexi-cell-footer/flexi-cell-footer.component.js';
 import { FlexiCellHint } from './components/flexi-cell-hint/flexi-cell-hint.component.js';
 import { FlexiCellLabel } from './components/flexi-cell-label/flexi-cell-label.component.js';
 import { FlexiCell } from './flexi-cell.component.js';

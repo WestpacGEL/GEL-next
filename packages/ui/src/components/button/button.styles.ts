@@ -15,16 +15,16 @@ export const styles = tv(
     variants: {
       size: {
         small: {
-          base: 'typography-body-10 px-1.5 active-theme-rams:before:h-[0.0625rem] h-5',
+          base: 'typography-body-10 h-5 px-1.5 active-theme-rams:before:h-[0.0625rem]',
         },
         medium: {
-          base: 'typography-body-9 px-2 active-theme-rams:before:h-0.5 h-6',
+          base: 'typography-body-9 h-6 px-2 active-theme-rams:before:h-0.5',
         },
         large: {
-          base: 'typography-body-9 px-2.5 active-theme-rams:before:h-0.5 h-7',
+          base: 'typography-body-9 h-7 px-2.5 active-theme-rams:before:h-0.5',
         },
         xlarge: {
-          base: 'typography-body-8 px-3 active-theme-rams:before:h-1 h-8',
+          base: 'typography-body-8 h-8 px-3 active-theme-rams:before:h-1',
         },
       },
       look: {

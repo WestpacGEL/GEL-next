@@ -63,37 +63,37 @@ export const TextMode: Story = {
   render: () => (
     <>
       <h2 className="typography-body-8 mb-2 font-bold">Default</h2>
-      <h3 className="font-bold pb-2">Info</h3>
+      <h3 className="pb-2 font-bold">Info</h3>
       <Alert look="info" mode="text">
         <strong>Heads up!</strong> This alert needs your attention, but it’s not super important. <a href="#">Link</a>
       </Alert>
-      <h3 className="font-bold pb-2">Success</h3>
+      <h3 className="pb-2 font-bold">Success</h3>
       <Alert look="success" mode="text">
         <strong>Well done!</strong> You successfully read this important alert message. <a href="#">Link</a>
       </Alert>
-      <h3 className="font-bold pb-2">Warning</h3>
+      <h3 className="pb-2 font-bold">Warning</h3>
       <Alert look="warning" mode="text">
         <strong>Warning!</strong> Better check yourself, you’re not looking too good. <a href="#">Link</a>
       </Alert>
-      <h3 className="font-bold pb-2">Danger</h3>
+      <h3 className="pb-2 font-bold">Danger</h3>
       <Alert look="danger" mode="text">
         <strong>Oh snap!</strong> Change a few things up and try submitting again. <a href="#">Link</a>
       </Alert>
-      <h3 className="font-bold pb-2">System</h3>
+      <h3 className="pb-2 font-bold">System</h3>
       <Alert look="system" mode="text">
         <strong>System Error 8942:</strong> The server is no responding. Please try again later. Sorry for the
         inconvenience. <a href="#">Link</a>
       </Alert>
-      <h2 className="typography-body-8 mb-2 font-bold pt-4">Custom Icon Sizes</h2>
-      <h3 className="font-bold pb-2">Medium</h3>
+      <h2 className="typography-body-8 mb-2 pt-4 font-bold">Custom Icon Sizes</h2>
+      <h3 className="pb-2 font-bold">Medium</h3>
       <Alert look="info" iconSize="medium" mode="text">
         <strong>Medium</strong> This alert has a medium icon. <a href="#">Link</a>
       </Alert>
-      <h3 className="font-bold pb-2">Small</h3>
+      <h3 className="pb-2 font-bold">Small</h3>
       <Alert look="info" iconSize="small" mode="text">
         <strong>Small</strong> This alert has a small icon. <a href="#">Link</a>
       </Alert>
-      <h3 className="font-bold pb-2">Extra Small</h3>
+      <h3 className="pb-2 font-bold">Extra Small</h3>
       <Alert look="info" iconSize="xsmall" mode="text">
         <strong>Extra Small</strong> This alert has an extra small icon. <a href="#">Link</a>
       </Alert>
