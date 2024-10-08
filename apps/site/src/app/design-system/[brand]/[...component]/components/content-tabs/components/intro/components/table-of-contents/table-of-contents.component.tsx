@@ -1,7 +1,7 @@
 'use client';
-
 import { List, ListItem } from '@westpac/ui';
-import { MouseEventHandler, useCallback } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { MouseEventHandler, useCallback, useEffect, useState } from 'react';
 
 import { ArrowDownRightIcon } from '@/components/icons';
 
@@ -36,18 +36,46 @@ const HEADER_HEIGHT = {
 
 const BREAKPOINT_MD = 768;
 
-function Link({ href, children }: { children?: React.ReactNode; href?: string }) {
-  const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
-    ev => {
-      ev.preventDefault();
-      const viewport = window.innerWidth < BREAKPOINT_MD ? 'sm' : 'lg';
-      const bodyRect = document.body.getBoundingClientRect(),
-        elemRect = document?.querySelector(href || '')?.getBoundingClientRect(),
-        offset = (elemRect?.top || 0) - bodyRect.top - HEADER_HEIGHT[viewport];
+function Link({ href, children }: { children?: React.ReactNode; href: string }) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [scrollToHash, setScrollToHash] = useState<string | null>(null);
+  const [path, hash] = href.split('#');
+  const DELAY_TIME_TO_SCROLL = 500;
 
-      window?.scrollTo({ top: offset, behavior: 'smooth' });
+  const scrollToSection = useCallback(() => {
+    const viewport = window.innerWidth < BREAKPOINT_MD ? 'sm' : 'lg';
+    const bodyRect = document.body.getBoundingClientRect();
+    const elemRect = document?.querySelector(`#${hash}`)?.getBoundingClientRect();
+    const offset = (elemRect?.top || 0) - bodyRect.top - HEADER_HEIGHT[viewport];
+
+    window?.scrollTo({ top: offset, behavior: 'smooth' });
+    window.history.pushState(null, '', `#${hash}`);
+  }, [hash]);
+
+  useEffect(() => {
+    if (scrollToHash) {
+      setTimeout(() => {
+        scrollToSection();
+      }, DELAY_TIME_TO_SCROLL);
+      setScrollToHash(null);
+    }
+  }, [scrollToHash, pathname, scrollToSection]);
+
+  const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
+    async ev => {
+      ev.preventDefault();
+      const currentPath = pathname;
+
+      if (path === currentPath || !path) {
+        scrollToSection();
+      } else {
+        router.prefetch(path);
+        setScrollToHash(hash);
+        await router.push(path);
+      }
     },
-    [href],
+    [path, hash, router, pathname, scrollToSection],
   );
 
   return (
