@@ -6,18 +6,19 @@
     brand="wbc"
     hideLogo
   >
-    <div>
-      <SecurityIcon
-        className="float-left shrink-0 max-md:mr-1 md:mr-2"
-        color="muted"
-        size={{
-          initial: 'small',
-          md: 'medium'
-        }}
-      />
-      <p className="text-muted">
-        Footer content
-      </p>
+    <div className="relative">
+      <div className="float-left flex-none">
+        <SecurityIcon
+          className="float-left shrink-0 mr-1 mt-0.5"
+          color="muted"
+          size="small"
+        />
+      </div>
+      <div className="flex">
+        <p className="text-muted relative flex-1">
+          Footer content goes here.
+        </p>
+      </div>
     </div>
   </Footer>
 </>
