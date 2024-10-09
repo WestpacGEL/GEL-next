@@ -15,17 +15,17 @@ design:
       name: Body font
       slug: body-font
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Typographic scale
       slug: typographic-scale
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Font weights
       slug: font-weights
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Using fonts
       slug: using-fonts
