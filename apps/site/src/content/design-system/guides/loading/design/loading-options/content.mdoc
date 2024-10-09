@@ -40,14 +40,14 @@ Page loading demonstration.
       {isLoading && <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50" onClick={handleOverlayClick}>
           <div className="flex flex-col justify-center items-center content-center gap-3 sm:gap-4" onClick={e => e.stopPropagation()}>
             <ProgressIndicator size={{
-          initial: 'large',
+          initial: 'xlarge',
           sm: 'xlarge'
-        }} color="primary" />
+        }} color="white" />
             <Heading className="text-white animate-pulse" size={{
-          initial: 8,
+          initial: 7,
           sm: 7
         }}>
-              Loading...
+              Checking your details
             </Heading>
           </div>
         </div>}
