@@ -10,7 +10,7 @@ design:
       name: Breakpoint tokens
       slug: breakpoint-tokens
     noTitle: false
-    noDemo: false
+    noDemo: true
 accessibility:
   - title:
       name: Accessibility features

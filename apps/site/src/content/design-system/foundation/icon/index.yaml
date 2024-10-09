@@ -16,12 +16,12 @@ design:
       name: Icon sizing
       slug: icon-sizing
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Icon colours
       slug: icon-colours
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: User experience
       slug: user-experience
