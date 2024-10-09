@@ -22,18 +22,35 @@ Depending on the process or the audience, instead of showing a simple spinner, w
 
 ### Usage example
 
-Description of what will be displayed
+Page loading demonstration.
 
 ```jsx
 () => {
-  const state = useOverlayTriggerState({});
-  return (
-    <>
-<ProgressIndicator size="xlarge" color="white" className="mr-2 mb-2 mt-2" />
-      <Button look="primary" soft onClick={state.open}>
-        Open
+  const [isLoading, setIsLoading] = useState(false);
+  const handleClick = () => {
+    setIsLoading(true);
+  };
+  const handleOverlayClick = () => {
+    setIsLoading(false);
+  };
+  return <>
+      <Button onClick={handleClick} size="large">
+        Show loader
       </Button>
-    </>
-  );
-};
+      {isLoading && <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50" onClick={handleOverlayClick}>
+          <div className="flex flex-col justify-center items-center content-center gap-3 sm:gap-4" onClick={e => e.stopPropagation()}>
+            <ProgressIndicator size={{
+          initial: 'large',
+          sm: 'xlarge'
+        }} color="primary" />
+            <Heading className="text-white animate-pulse" size={{
+          initial: 8,
+          sm: 7
+        }}>
+              Loading...
+            </Heading>
+          </div>
+        </div>}
+    </>;
+}
 ```
