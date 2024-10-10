@@ -54,3 +54,7 @@ Page loading demonstration.
     </>;
 }
 ```
+
+```jsx
+() => {  const [isLoading, setIsLoading] = useState(false);  const handleClick = () => {    setIsLoading(true);  };  const handleOverlayClick = () => {    setIsLoading(false);  };  return (    <>      <Button look="primary" soft onClick={handleClick} size="large">        Open      </Button>      {isLoading && (        <div          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center inset-0           z-[100]"          onClick={handleOverlayClick}        >          <div            className="flex flex-col justify-center items-center content-center gap-3 sm:gap-4"            onClick={e => e.stopPropagation()}          >            <ProgressIndicator              size={{                initial: 'large',                sm: 'xlarge',              }}              color="primary"            />            <Heading              className="text-white animate-pulse"              size={{                initial: 8,                sm: 7,              }}            >              Loading...            </Heading>          </div>        </div>      )}    </>  );}; 
+```
