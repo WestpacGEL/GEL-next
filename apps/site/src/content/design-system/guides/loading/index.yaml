@@ -12,7 +12,7 @@ design:
       name: Page loading
       slug: loading-options
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Page section loading
       slug: page-section-loading
