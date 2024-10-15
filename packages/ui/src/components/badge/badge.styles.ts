@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'inline-block whitespace-nowrap border text-center',
+    base: 'inline-block w-fit whitespace-nowrap border text-center',
     variants: {
       color: {
         danger: 'border-danger bg-danger text-white',
