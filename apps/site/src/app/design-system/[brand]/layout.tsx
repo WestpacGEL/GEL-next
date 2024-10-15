@@ -29,7 +29,7 @@ export default async function DesignSystemLayout({
       <SkipLink href="#content" className="z-[100]">
         Skip to content
       </SkipLink>
-      <div className="text-text active-theme-stg:text-heading flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col text-text active-theme-stg:text-heading">
         <SidebarContextProvider>
           <Suspense>
             <Sidebar items={formattedItems} brand={brand} />

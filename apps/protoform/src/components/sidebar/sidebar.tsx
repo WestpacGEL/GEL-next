@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import { useSidebar } from './context';
+import React from 'react';
 
 export function Sidebar({ children }: { children?: ReactNode }) {
   const { open, setOpen, ropeData, ropeStep } = useSidebar();
@@ -84,7 +85,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
       <>
         <div
           className={clsx(
-            'items-center sticky top-0 z-10 flex h-9 justify-between bg-white px-2 py-3 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] xsl:px-4 sm:px-5 md:hidden',
+            'sticky top-0 flex h-9 justify-between bg-white px-2 py-3 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] xsl:px-4 sm:px-5 md:hidden',
             { 'after:opacity-100': scrolled },
           )}
         >
@@ -105,7 +106,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
           <>
             <div
               className={clsx(
-                'fixed inset-y-0 w-[300px] overflow-auto border-l-[1px] border-t-[1px] border-border bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] before:pointer-events-none before:sticky before:inset-x-0 before:top-0 before:z-50 before:block before:h-1 before:bg-gradient-to-b before:from-black/[.2] before:from-0% before:opacity-0 before:transition-all before:duration-200 before:will-change-[opacity] max-md:z-[100] md:mt-11',
+                'fixed inset-y-0 w-[300px] overflow-auto border-l-[1px] border-border bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] before:pointer-events-none before:sticky before:inset-x-0 before:top-0 before:z-50 before:block before:h-1 before:bg-gradient-to-b before:from-black/[.2] before:from-0% before:opacity-0 before:transition-all before:duration-200 before:will-change-[opacity] max-md:z-[100] md:mt-11 overscroll-contain',
                 {
                   'before:opacity-100': sidebarScrolled,
                   'max-md:translate-x-full': !open,
