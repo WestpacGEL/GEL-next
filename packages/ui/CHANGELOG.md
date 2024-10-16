@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.28.0
+
+### Minor Changes
+
+- 6f96072: fixed button groups hover glitch; updated footer story shield margin; updated space below alert title; updated search icon size in automcomplete
+
 ## 0.27.0
 
 ### Minor Changes
