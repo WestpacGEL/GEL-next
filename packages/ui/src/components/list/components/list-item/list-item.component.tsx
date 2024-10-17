@@ -10,7 +10,7 @@ import { styles as itemStyles } from './list-item.styles.js';
 import { type ListItemProps } from './list-item.types.js';
 
 export function BaseListItem(
-  { className, children, href, target, look, type, spacing, icon, ...props }: ListItemProps,
+  { className, linkTag: LinkTag = 'a', children, href, target, look, type, spacing, icon, ...props }: ListItemProps,
   ref: Ref<HTMLAnchorElement>,
 ) {
   const state = useContext(ListContext);
@@ -45,9 +45,9 @@ export function BaseListItem(
     <li className={styles.base({ className })} {...props} key={state.nested}>
       {bulletToRender()}
       {type === 'link' ? (
-        <a href={href} target={target} className={styles.link()} ref={ref} {...focusProps}>
+        <LinkTag href={href} target={target} className={styles.link()} ref={ref} {...focusProps}>
           {children}
-        </a>
+        </LinkTag>
       ) : (
         children
       )}

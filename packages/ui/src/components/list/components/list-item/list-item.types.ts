@@ -1,4 +1,4 @@
-import { HTMLAttributeAnchorTarget, HTMLAttributes, ReactNode } from 'react';
+import { HTMLAttributeAnchorTarget, HTMLAttributes, ReactElement, ReactNode } from 'react';
 
 import { IconProps } from '../../../icon/index.js';
 
@@ -15,6 +15,10 @@ export type ListItemProps = {
    * The icon for list item
    */
   icon?: (props: IconProps) => JSX.Element;
+  /**
+   * Link tag to render
+   */
+  linkTag?: keyof JSX.IntrinsicElements | ((...args: any[]) => ReactElement | null);
   /**
    * The look of the bullet, icon, tick and cross lists
    */

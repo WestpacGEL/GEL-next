@@ -121,3 +121,23 @@ export const Spacing = () => (
     </List>
   </div>
 );
+
+const CustomLink = (props: any) => {
+  // eslint-disable-next-line no-console
+  console.info('TEST');
+  return <a {...props}>{props.children}</a>;
+};
+
+/**
+ * Custom Component
+ */
+export const CustomComponent = () => (
+  <div>
+    <h1 className="typography-body-10 mb-2">Title</h1>
+    <List type="link" className="mb-4" spacing="medium">
+      <ListItem linkTag={CustomLink}>Styled bullet list</ListItem>
+      <ListItem linkTag={CustomLink}>Styled bullet list</ListItem>
+      <ListItem linkTag={CustomLink}>Styled bullet list</ListItem>
+    </List>
+  </div>
+);
