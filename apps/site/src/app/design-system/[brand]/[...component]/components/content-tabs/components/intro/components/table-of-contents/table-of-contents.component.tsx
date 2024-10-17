@@ -1,7 +1,8 @@
 'use client';
-
 import { List, ListItem } from '@westpac/ui';
-import { MouseEventHandler, useCallback } from 'react';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { MouseEventHandler, useCallback, useEffect, useState } from 'react';
 
 import { ArrowDownRightIcon } from '@/components/icons';
 
@@ -20,7 +21,7 @@ export function TableOfContents({ contents = [] }: TableOfContentsProps) {
             .join('-');
           return (
             <ListItem key={id} className="pl-[1.075rem]">
-              <Link href={`#${id}`}>{title}</Link>
+              <NavLink href={`#${id}`}>{title}</NavLink>
             </ListItem>
           );
         })}
@@ -36,23 +37,25 @@ const HEADER_HEIGHT = {
 
 const BREAKPOINT_MD = 768;
 
-function Link({ href, children }: { children?: React.ReactNode; href?: string }) {
-  const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
-    ev => {
-      ev.preventDefault();
+function NavLink({ href, children }: { children?: React.ReactNode; href: string }) {
+  const [path, hash] = href.split('#');
+  const DELAY_TIME_TO_SCROLL = 100;
+
+  const handleClick: MouseEventHandler<HTMLAnchorElement> = () => {
+    setTimeout(() => {
       const viewport = window.innerWidth < BREAKPOINT_MD ? 'sm' : 'lg';
-      const bodyRect = document.body.getBoundingClientRect(),
-        elemRect = document?.querySelector(href || '')?.getBoundingClientRect(),
-        offset = (elemRect?.top || 0) - bodyRect.top - HEADER_HEIGHT[viewport];
+      const bodyRect = document.body.getBoundingClientRect();
+      const elemRect = document?.querySelector(`#${hash}`)?.getBoundingClientRect();
+      const offset = (elemRect?.top || 0) - bodyRect.top - HEADER_HEIGHT[viewport];
 
       window?.scrollTo({ top: offset, behavior: 'smooth' });
-    },
-    [href],
-  );
+      window.history.pushState(null, '', `#${hash}`);
+    }, DELAY_TIME_TO_SCROLL);
+  };
 
   return (
-    <a href={href} className="ml-1 block hover:underline focus-visible:focus-outline" onClick={handleClick}>
+    <Link className="ml-1 block hover:underline focus-visible:focus-outline" href={path} onClick={handleClick}>
       {children}
-    </a>
+    </Link>
   );
 }
