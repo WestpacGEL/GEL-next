@@ -1,5 +1,6 @@
 'use client';
 import { List, ListItem } from '@westpac/ui';
+import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { MouseEventHandler, useCallback, useEffect, useState } from 'react';
 
@@ -20,7 +21,7 @@ export function TableOfContents({ contents = [] }: TableOfContentsProps) {
             .join('-');
           return (
             <ListItem key={id} className="pl-[1.075rem]">
-              <Link href={`#${id}`}>{title}</Link>
+              <NavLink href={`#${id}`}>{title}</NavLink>
             </ListItem>
           );
         })}
@@ -36,51 +37,25 @@ const HEADER_HEIGHT = {
 
 const BREAKPOINT_MD = 768;
 
-function Link({ href, children }: { children?: React.ReactNode; href: string }) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [scrollToHash, setScrollToHash] = useState<string | null>(null);
+function NavLink({ href, children }: { children?: React.ReactNode; href: string }) {
   const [path, hash] = href.split('#');
-  const DELAY_TIME_TO_SCROLL = 500;
+  const DELAY_TIME_TO_SCROLL = 100;
 
-  const scrollToSection = useCallback(() => {
-    const viewport = window.innerWidth < BREAKPOINT_MD ? 'sm' : 'lg';
-    const bodyRect = document.body.getBoundingClientRect();
-    const elemRect = document?.querySelector(`#${hash}`)?.getBoundingClientRect();
-    const offset = (elemRect?.top || 0) - bodyRect.top - HEADER_HEIGHT[viewport];
+  const handleClick: MouseEventHandler<HTMLAnchorElement> = () => {
+    setTimeout(() => {
+      const viewport = window.innerWidth < BREAKPOINT_MD ? 'sm' : 'lg';
+      const bodyRect = document.body.getBoundingClientRect();
+      const elemRect = document?.querySelector(`#${hash}`)?.getBoundingClientRect();
+      const offset = (elemRect?.top || 0) - bodyRect.top - HEADER_HEIGHT[viewport];
 
-    window?.scrollTo({ top: offset, behavior: 'smooth' });
-    window.history.pushState(null, '', `#${hash}`);
-  }, [hash]);
-
-  useEffect(() => {
-    if (scrollToHash) {
-      setTimeout(() => {
-        scrollToSection();
-      }, DELAY_TIME_TO_SCROLL);
-      setScrollToHash(null);
-    }
-  }, [scrollToHash, pathname, scrollToSection]);
-
-  const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
-    async ev => {
-      ev.preventDefault();
-      const currentPath = pathname;
-
-      if (path === currentPath || !path) {
-        scrollToSection();
-      } else {
-        router.prefetch(path);
-        setScrollToHash(hash);
-        await router.push(path);
-      }
-    },
-    [path, hash, router, pathname, scrollToSection],
-  );
+      window?.scrollTo({ top: offset, behavior: 'smooth' });
+      window.history.pushState(null, '', `#${hash}`);
+    }, DELAY_TIME_TO_SCROLL);
+  };
 
   return (
-    <a href={href} className="ml-1 block hover:underline focus-visible:focus-outline" onClick={handleClick}>
+    <Link className="ml-1 block hover:underline focus-visible:focus-outline" href={path} onClick={handleClick}>
       {children}
-    </a>
+    </Link>
   );
 }
