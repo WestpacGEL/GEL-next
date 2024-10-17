@@ -18,7 +18,7 @@ export type ListItemProps = {
   /**
    * Link tag to render
    */
-  linkTag?: keyof JSX.IntrinsicElements | ((...args: any[]) => ReactElement | null);
+  linkTag?: 'a' | ((...args: any[]) => ReactElement | null);
   /**
    * The look of the bullet, icon, tick and cross lists
    */
