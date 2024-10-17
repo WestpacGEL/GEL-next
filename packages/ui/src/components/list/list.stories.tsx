@@ -135,9 +135,15 @@ export const CustomComponent = () => (
   <div>
     <h1 className="typography-body-10 mb-2">Title</h1>
     <List type="link" className="mb-4" spacing="medium">
-      <ListItem linkTag={CustomLink}>Styled bullet list</ListItem>
-      <ListItem linkTag={CustomLink}>Styled bullet list</ListItem>
-      <ListItem linkTag={CustomLink}>Styled bullet list</ListItem>
+      <ListItem linkTag={CustomLink} href="#href1">
+        Styled bullet list
+      </ListItem>
+      <ListItem linkTag={CustomLink} href="#href2">
+        Styled bullet list
+      </ListItem>
+      <ListItem linkTag={CustomLink} href="#href3">
+        Styled bullet list
+      </ListItem>
     </List>
   </div>
 );
