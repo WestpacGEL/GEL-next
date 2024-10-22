@@ -47,3 +47,70 @@ The typographic scale has a limited set of type sizes that work together and hel
   </div>
 </div>
 ```
+
+```tsx
+() => {
+  const typographyScale = [{
+    className: 'typography-body-1',
+    fontSize: '3.75rem (60px)',
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-body-2',
+    fontSize: '3.375rem (54px)',
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-body-3',
+    fontSize: '3rem (48px)',
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-body-4',
+    fontSize: '2.625rem (42px)',
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-body-5',
+    fontSize: '2.25rem (36px)',
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-body-6',
+    fontSize: '1.875rem (30px)',
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-body-7',
+    fontSize: '1.5rem (24px)',
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-body-8',
+    fontSize: '1.125rem (18px)',
+    lineHeight: '1.4'
+  }, {
+    className: 'typography-body-9',
+    fontSize: '1rem (16px)',
+    lineHeight: '1.4'
+  }, {
+    className: 'typography-body-10',
+    fontSize: '0.875rem (14px)',
+    lineHeight: '1.4'
+  }];
+  return <Table>
+      <TableCaption>GEL body typography tokens</TableCaption>
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>Token</TableHeaderCell>
+          <TableHeaderCell>Font size</TableHeaderCell>
+          <TableHeaderCell>Line height</TableHeaderCell>
+          <TableHeaderCell>Tailwind class</TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
+        {typographyScale.map(i => <TableRow key={i.className}>
+            <TableCell>
+              <span className={i.className}>{i.className.replace('typography-', '')}</span>
+            </TableCell>
+            <TableCell>{i.fontSize}</TableCell>
+            <TableCell>{i.lineHeight}</TableCell>
+            <TableCell>{i.className}</TableCell>
+          </TableRow>)}
+      </TableBody>
+    </Table>;
+}
+```
