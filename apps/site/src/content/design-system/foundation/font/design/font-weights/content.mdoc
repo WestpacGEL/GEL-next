@@ -55,8 +55,8 @@ The typography system uses numerical values to assign different font weights rat
             <TableCell><span className='typography-body-1'>
               <span className={i.className}>{i.className.replace('typography-', '')}</span>
             </span></TableCell>
-            <TableCell><span className='typography-body-1'>{i.fontWeight}</span></TableCell>
-            <TableCell><span className='typography-body-1'>{i.className}</span></TableCell>
+            <TableCell>{i.fontWeight}</TableCell>
+            <TableCell>{i.className}</TableCell>
           </TableRow>)}
       </TableBody>
     </Table>;
