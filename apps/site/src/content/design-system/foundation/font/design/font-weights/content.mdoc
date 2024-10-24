@@ -52,11 +52,11 @@ The typography system uses numerical values to assign different font weights rat
       </TableHeader>
       <TableBody>
         {typographyScale.map(i => <TableRow key={i.className}>
-            <TableCell>
+            <TableCell><span className='typography-body-1'>
               <span className={i.className}>{i.className.replace('typography-', '')}</span>
-            </TableCell>
-            <TableCell>{i.fontWeight}</TableCell>
-            <TableCell>{i.className}</TableCell>
+            </span></TableCell>
+            <TableCell><span className='typography-body-1'>{i.fontWeight}</span></TableCell>
+            <TableCell><span className='typography-body-1'>{i.className}</span></TableCell>
           </TableRow>)}
       </TableBody>
     </Table>;
