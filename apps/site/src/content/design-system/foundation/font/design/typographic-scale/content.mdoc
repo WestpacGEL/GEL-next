@@ -78,3 +78,82 @@ The typographic scale has a limited set of type sizes that work together and hel
     </Table>;
 }
 ```
+
+```tsx
+() => {
+  const typographyScale = [{
+    className: 'typography-brand-1',
+    fontSize: '60px',
+    rem: '3.75rem',
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-brand-2',
+    fontSize: '54px',
+    rem: '3.375rem',
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-brand-3',
+    fontSize: '48px',
+    rem: '3rem',    
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-brand-4',
+    fontSize: '42px',
+    rem: '2.625rem',    
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-brand-5',
+    fontSize: '36px',
+    rem: '2.25rem',    
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-brand-6',
+    fontSize: '30px',
+    rem: '1.875rem',    
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-brand-7',
+    fontSize: '24px',
+    rem: '1.5rem',    
+    lineHeight: '1.2'
+  }, {
+    className: 'typography-brand-8',
+    fontSize: '18px',
+    rem: '1.125rem',    
+    lineHeight: '1.4'
+  }, {
+    className: 'typography-brand-9',
+    fontSize: '16px',
+    rem: '1rem',    
+    lineHeight: '1.4'
+  }, {
+    className: 'typography-brand-10',
+    fontSize: '14px',
+    rem: '0.875rem',    
+    lineHeight: '1.4'
+  }];
+  return <Table>
+      <TableCaption>GEL brand typography tokens (Sans serif system font)</TableCaption>
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>Text size</TableHeaderCell>
+          <TableHeaderCell>Token</TableHeaderCell>
+          <TableHeaderCell>Rem</TableHeaderCell>
+          <TableHeaderCell>Line height</TableHeaderCell>
+          <TableHeaderCell>Tailwind class</TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
+        {typographyScale.map(i => <TableRow key={i.className}>
+            <TableCell><span className={i.className}>{i.fontSize.replace('typography-', '')}</span></TableCell>
+            <TableCell>
+              <span className={i.className}>{i.className.replace('typography-', '')}</span>
+            </TableCell>
+            <TableCell>{i.rem}</TableCell>
+            <TableCell>{i.lineHeight}</TableCell>
+            <TableCell>{i.className}</TableCell>
+          </TableRow>)}
+      </TableBody>
+    </Table>;
+}
+```
