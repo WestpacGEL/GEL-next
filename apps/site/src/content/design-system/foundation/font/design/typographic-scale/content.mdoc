@@ -1,54 +1,6 @@
 The typographic scale has a limited set of type sizes that work together and help maintain a consistent type scale across all digital touch-points. Designers can use these sizes as they see fit however there are a few practical rules around the use of type sizes.
 
 ```tsx
-<div>
-  <p className="typography-body-10 text-muted italic">Sans serif system font</p>
-
-  <div className="flex flex-col gap-2">
-    <p className="typography-body-1">
-      Type size: <strong>60</strong>
-    </p>
-
-    <p className="typography-body-2">
-      Type size: <strong>54</strong>
-    </p>
-
-    <p className="typography-body-3">
-      Type size: <strong>48</strong>
-    </p>
-
-    <p className="typography-body-4">
-      Type size: <strong>42</strong>
-    </p>
-
-    <p className="typography-body-5">
-      Type size: <strong>36</strong>
-    </p>
-
-    <p className="typography-body-6">
-      Type size: <strong>30</strong>
-    </p>
-
-    <p className="typography-body-7">
-      Type size: <strong>24</strong>
-    </p>
-
-    <p className="typography-body-8">
-      Type size: <strong>18</strong>
-    </p>
-
-    <p className="typography-body-9">
-      Type size: <strong>16</strong>
-    </p>
-
-    <p className="typography-body-10">
-      Type size: <strong>14 </strong>
-    </p>
-  </div>
-</div>
-```
-
-```tsx
 () => {
   const typographyScale = [{
     className: 'typography-body-1',
