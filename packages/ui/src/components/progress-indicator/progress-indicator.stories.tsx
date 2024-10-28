@@ -1,5 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
+import { FingerprintIcon, PadlockIcon, PadlockTickIcon } from '../icon/index.js';
+
 import { ProgressIndicator } from './progress-indicator.component.js';
 
 const meta: Meta<typeof ProgressIndicator> = {
@@ -19,7 +21,7 @@ type Story = StoryObj<typeof meta>;
  * > Default usage example
  */
 export const Default: Story = {
-  args: { size: 'xlarge' },
+  args: { size: 'large' },
 };
 
 /**
@@ -28,11 +30,11 @@ export const Default: Story = {
 
 export const Sizes = () => {
   return (
-    <>
-      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator key={size} size={size} className="mr-2" />
+    <div className="flex items-center justify-center gap-1">
+      {(['xsmall', 'small', 'medium', 'large'] as const).map(size => (
+        <ProgressIndicator key={size} size={size} />
       ))}
-    </>
+    </div>
   );
 };
 
@@ -42,10 +44,36 @@ export const Sizes = () => {
 
 export const Inverted = () => {
   return (
-    <div className="rounded bg-black">
-      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator key={size} size={size} color={'white'} className="mr-2" />
+    <div className="flex items-center justify-center gap-1 rounded bg-black">
+      {(['xsmall', 'small', 'medium', 'large'] as const).map(size => (
+        <ProgressIndicator key={size} size={size} inverted />
       ))}
+    </div>
+  );
+};
+
+/**
+ * > Large indicator with embedded icon example
+ */
+
+export const Icon = () => {
+  return (
+    <div className="flex items-center justify-center gap-3">
+      <ProgressIndicator size="large" embedIcon={PadlockIcon} />
+      <ProgressIndicator size="large" embedIcon={PadlockTickIcon} />
+      <ProgressIndicator size="large" embedIcon={FingerprintIcon} />
+    </div>
+  );
+};
+
+/**
+ * > Large indicator with label example
+ */
+export const Label = () => {
+  return (
+    <div className="flex items-center justify-center gap-3">
+      <ProgressIndicator size="large" label="Loading..." />
+      <ProgressIndicator size="large" embedIcon={PadlockTickIcon} label="Signing in..." />
     </div>
   );
 };
