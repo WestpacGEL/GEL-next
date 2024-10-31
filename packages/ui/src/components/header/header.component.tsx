@@ -103,7 +103,7 @@ export function Header({
             <Button
               look="link"
               iconAfter={ButtonIcon}
-              size="large"
+              iconSize={leftIcon === 'arrow' ? 'medium' : 'small'}
               onClick={leftOnClick}
               aria-label={leftAssistiveText}
               className={styles.leftButton()}
