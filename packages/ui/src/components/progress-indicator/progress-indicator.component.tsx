@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 
 import { Icon } from '../icon/icon.component.js';
 import { Label } from '../label/label.component.js';
@@ -20,6 +20,8 @@ export function ProgressIndicator({
     inverted,
   });
 
+  const id = useId();
+
   const sizeMap: Record<string, { strokeWidth: number }> = {
     xlarge: { strokeWidth: 4 },
     large: { strokeWidth: 4 },
@@ -29,20 +31,6 @@ export function ProgressIndicator({
   };
 
   const strokeHalfWidth = sizeMap[size.toString()].strokeWidth / 2;
-  const setPath = (
-    <g strokeWidth={strokeHalfWidth * 2}>
-      <>
-        <path
-          stroke="url(#a)"
-          d={`M ${strokeHalfWidth} 90 A ${90 - strokeHalfWidth} ${90 - strokeHalfWidth} 0 0 1 ${180 - strokeHalfWidth} 90`}
-        ></path>
-        <path
-          stroke="url(#b)"
-          d={`M ${180 - strokeHalfWidth} 90 A ${90 - strokeHalfWidth} ${90 - strokeHalfWidth} 0 0 1 ${strokeHalfWidth} 90`}
-        ></path>
-      </>
-    </g>
-  );
 
   return (
     <div aria-label={ariaLabel} className={styles.container()}>
@@ -55,16 +43,27 @@ export function ProgressIndicator({
           {...props}
         >
           <defs>
-            <linearGradient id="a">
-              <stop offset="0%" stopOpacity="0" stopColor="currentColor"></stop>
-              <stop offset="100%" stopColor="currentColor"></stop>
+            <linearGradient id={`${id}-1`}>
+              <stop offset="0%" stopOpacity="0" stopColor="currentColor" />
+              <stop offset="100%" stopColor="currentColor" />
             </linearGradient>
-            <linearGradient id="b">
-              <stop offset="0%" stopColor="currentColor"></stop>
-              <stop offset="50%" stopColor="currentColor"></stop>
+            <linearGradient id={`${id}-2`}>
+              <stop offset="0%" stopColor="currentColor" />
+              <stop offset="50%" stopColor="currentColor" />
             </linearGradient>
           </defs>
-          {setPath}
+          <g strokeWidth={strokeHalfWidth * 2}>
+            <>
+              <path
+                stroke={`url(#${id}-1)`}
+                d={`M ${strokeHalfWidth} 90 A ${90 - strokeHalfWidth} ${90 - strokeHalfWidth} 0 0 1 ${180 - strokeHalfWidth} 90`}
+              ></path>
+              <path
+                stroke={`url(#${id}-2)`}
+                d={`M ${180 - strokeHalfWidth} 90 A ${90 - strokeHalfWidth} ${90 - strokeHalfWidth} 0 0 1 ${strokeHalfWidth} 90`}
+              ></path>
+            </>
+          </g>
         </Icon>
         {EmbedIcon && size === 'large' && <EmbedIcon size="large" className={styles.icon()} />}
       </div>
