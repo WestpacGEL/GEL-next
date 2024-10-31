@@ -20,9 +20,6 @@ export function Header({ className, title, brand }: { brand: string; className?:
     if (typeof window !== 'undefined') {
       const handleScroll = () => {
         const isFixed = window.scrollY >= FIXED_HEADER;
-        console.log('window position:' + window.scrollY);
-        console.log('header position:' + FIXED_HEADER);
-        console.log('isFixed:' + isFixed);
         setFixed(isFixed);
       };
       handleScroll();

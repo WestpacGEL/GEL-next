@@ -19,7 +19,7 @@ export function Cta({
   tertiaryOnClick?: () => void;
 }) {
   return (
-    <div className="flex gap-2 pb-[120px] pt-6 max-md:flex-col max-md:pb-10">
+    <div className="flex gap-2 py-5 max-md:flex-col">
       <Button size="large" look="primary" className="md:px-2.5" onClick={primaryOnClick} type={primaryType}>
         {children}
       </Button>

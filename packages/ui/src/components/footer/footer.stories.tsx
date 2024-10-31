@@ -36,19 +36,19 @@ export const DefaultStory: Story = {
     return (
       <>
         <Footer brand={brand === 'btfg' ? 'wbc' : brand} hideLogo {...rest}>
-          <div>
-            <SecurityIcon
-              size={{ initial: 'small', md: 'medium' }}
-              className="float-left shrink-0 max-md:mr-1 md:mr-2"
-              color="muted"
-            />
-            <p className="text-muted">
-              Our site and your transactions are secure. You can read our{' '}
-              <Link href="#" type="inline">
-                security information
-              </Link>
-              . © 2023 Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714.
-            </p>
+          <div className="relative">
+            <div className="float-left flex-none">
+              <SecurityIcon size="small" className="float-left mr-1 shrink-0" color="muted" />
+            </div>
+            <div className="flex">
+              <p className="relative flex-1 text-muted">
+                Our site and your transactions are secure. You can read our{' '}
+                <Link href="#" type="inline">
+                  security information
+                </Link>
+                . © 2023 Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714.
+              </p>
+            </div>
           </div>
         </Footer>
       </>

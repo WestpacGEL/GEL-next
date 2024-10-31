@@ -15,9 +15,10 @@ export function ButtonGroupButton({ className, label, ...props }: ButtonGroupBut
   const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children: label }, state, ref);
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = buttonStyles({ block, isDisabled, isFocusVisible });
+  const key = isSelected ? 'selected' : 'not-selected';
 
   return (
-    <label className={styles.base({ className })}>
+    <label className={styles.base({ className })} key={key}>
       <VisuallyHidden>
         <input {...inputProps} {...focusProps} ref={ref} />
       </VisuallyHidden>
@@ -28,7 +29,7 @@ export function ButtonGroupButton({ className, label, ...props }: ButtonGroupBut
         disabled={isDisabled}
         look={look}
         size={size}
-        className={styles.button()}
+        className={styles.button({ hasTransition: !isSelected })}
       >
         {label}
       </GELButton>

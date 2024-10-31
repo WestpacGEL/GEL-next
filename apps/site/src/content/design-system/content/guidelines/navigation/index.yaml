@@ -8,6 +8,7 @@ design:
       name: Navigation
       slug: navigation
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []

@@ -8,6 +8,7 @@ design:
       name: Dates, days and time
       slug: dates-days-time
     noTitle: true
+    noDemo: true
 accessibility: []
 relatedComponents: []
 code: []
