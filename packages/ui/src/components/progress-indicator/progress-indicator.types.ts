@@ -11,7 +11,7 @@ export type ProgressIndicatorProps = IconProps & {
   /**
    * Icon embedded in progress indicator
    */
-  embedIcon?: (props: IconProps) => JSX.Element;
+  icon?: (props: IconProps) => JSX.Element;
   /**
    * Progress indicator color
    * @default false

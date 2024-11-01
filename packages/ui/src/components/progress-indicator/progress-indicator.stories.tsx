@@ -59,9 +59,9 @@ export const Inverted = () => {
 export const Icon = () => {
   return (
     <div className="flex items-center justify-center gap-3">
-      <ProgressIndicator size="large" embedIcon={PadlockIcon} />
-      <ProgressIndicator size="large" embedIcon={PadlockTickIcon} />
-      <ProgressIndicator size="large" embedIcon={FingerprintIcon} />
+      <ProgressIndicator size="large" icon={PadlockIcon} />
+      <ProgressIndicator size="large" icon={PadlockTickIcon} />
+      <ProgressIndicator size="large" color="primary" icon={FingerprintIcon} />
     </div>
   );
 };
@@ -73,7 +73,7 @@ export const Label = () => {
   return (
     <div className="flex items-center justify-center gap-3">
       <ProgressIndicator size="large" label="Loading..." />
-      <ProgressIndicator size="large" embedIcon={PadlockTickIcon} label="Signing in..." />
+      <ProgressIndicator size="large" icon={PadlockTickIcon} label="Signing in..." />
     </div>
   );
 };

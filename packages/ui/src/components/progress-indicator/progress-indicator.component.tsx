@@ -7,10 +7,11 @@ import { styles as ProgressIndicatorStyles } from './progress-indicator.styles.j
 import { ProgressIndicatorProps } from './progress-indicator.types.js';
 
 export function ProgressIndicator({
+  color = 'hero',
   inverted = false,
   label,
   size = 'medium',
-  embedIcon: EmbedIcon,
+  icon: EmbedIcon,
   className,
   'aria-label': ariaLabel = 'Loading',
   ...props
