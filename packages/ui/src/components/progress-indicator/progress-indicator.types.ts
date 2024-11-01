@@ -13,11 +13,6 @@ export type ProgressIndicatorProps = IconProps & {
    */
   icon?: (props: IconProps) => JSX.Element;
   /**
-   * Progress indicator color
-   * @default false
-   */
-  inverted?: boolean;
-  /**
    * Label placed below progress indicator
    */
   label?: string;

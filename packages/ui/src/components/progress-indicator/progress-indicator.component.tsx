@@ -8,7 +8,6 @@ import { ProgressIndicatorProps } from './progress-indicator.types.js';
 
 export function ProgressIndicator({
   color = 'hero',
-  inverted = false,
   label,
   size = 'medium',
   icon: EmbedIcon,
@@ -18,7 +17,7 @@ export function ProgressIndicator({
 }: ProgressIndicatorProps) {
   const styles = ProgressIndicatorStyles({
     size,
-    inverted,
+    color,
   });
 
   const id = useId();
@@ -36,13 +35,7 @@ export function ProgressIndicator({
   return (
     <div aria-label={ariaLabel} className={styles.container()}>
       <div className="relative">
-        <Icon
-          viewBox="0 0 180 180"
-          fill="none"
-          color={inverted ? 'white' : 'hero'}
-          className={styles.base({ className })}
-          {...props}
-        >
+        <Icon viewBox="0 0 180 180" fill="none" color={color} className={styles.base({ className })} {...props}>
           <defs>
             <linearGradient id={`${id}-1`}>
               <stop offset="0%" stopOpacity="0" stopColor="currentColor" />
@@ -66,7 +59,7 @@ export function ProgressIndicator({
             </>
           </g>
         </Icon>
-        {EmbedIcon && size === 'large' && <EmbedIcon size="large" className={styles.icon()} />}
+        {EmbedIcon && size === 'large' && <EmbedIcon size="large" color={color} className={styles.icon()} />}
       </div>
       {label && size === 'large' && <Label className={styles.label()}>{label}</Label>}
     </div>

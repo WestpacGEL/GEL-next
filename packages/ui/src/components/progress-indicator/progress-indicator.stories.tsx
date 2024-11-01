@@ -46,7 +46,7 @@ export const Inverted = () => {
   return (
     <div className="flex items-center justify-center gap-1 rounded bg-black">
       {(['xsmall', 'small', 'medium', 'large'] as const).map(size => (
-        <ProgressIndicator key={size} size={size} inverted />
+        <ProgressIndicator key={size} size={size} color="white" />
       ))}
     </div>
   );
@@ -61,7 +61,7 @@ export const Icon = () => {
     <div className="flex items-center justify-center gap-3">
       <ProgressIndicator size="large" icon={PadlockIcon} />
       <ProgressIndicator size="large" icon={PadlockTickIcon} />
-      <ProgressIndicator size="large" color="primary" icon={FingerprintIcon} />
+      <ProgressIndicator size="large" icon={FingerprintIcon} />
     </div>
   );
 };
