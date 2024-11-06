@@ -2,20 +2,62 @@
 
 ```tsx
 <Fragment>
-  <p className="my-2">
-    <Badge >Default</Badge>
-  </p>
+<p className="typography-body-10 text-muted">
+<em>Default</em>
+</p>
   <p className="my-2">
     <Badge color="primary">Primary</Badge>{" "}
     <Badge color="hero">Hero</Badge>{" "}
     <Badge color="neutral">Neutral</Badge>{" "}
-    <Badge color="faint">Faint</Badge>
-  </p>
-  <p className="my-2">
+    <Badge color="faint">Faint</Badge>{" "}
+
     <Badge color="success" >Success</Badge>{" "}
     <Badge color="info" >Info</Badge>{" "}
     <Badge color="warning" >Warning</Badge>{" "}
     <Badge color="danger" >Danger</Badge>
   </p>
+  <p className="typography-body-10 text-muted">
+<em>Soft</em>
+</p>
+    <p className="my-2">
+    <Badge color="primary" soft>Primary</Badge>{" "}
+    <Badge color="hero" soft>Hero</Badge>{" "}
+    <Badge color="neutral" soft>Neutral</Badge>{" "}
+    <Badge color="faint" soft>Faint</Badge>{" "}
+    <Badge color="success" soft>Success</Badge>{" "}
+    <Badge color="info" soft>Info</Badge>{" "}
+    <Badge color="warning" soft>Warning</Badge>{" "}
+    <Badge color="danger" soft>Danger</Badge>
+  </p>
+  
+  <Fragment>
+          <p className="mb-2 mt-6 typography-body-10 text-muted">
+            <em>Default - Pill</em>
+          </p>
+                <div className="flex gap-1">
+    <Badge color="primary" type="pill">88</Badge>{" "}
+    <Badge color="hero" type="pill">88</Badge>{" "}
+    <Badge color="neutral" type="pill">88</Badge>{" "}
+    <Badge color="faint" type="pill">88</Badge>{" "}
+
+    <Badge color="success" type="pill">88</Badge>{" "}
+    <Badge color="info"  type="pill">88</Badge>{" "}
+    <Badge color="warning"  type="pill">88</Badge>{" "}
+    <Badge color="danger"  type="pill">88</Badge>
+  </p>
+          <p className="mb-2 mt-2 typography-body-10 text-muted">
+            <em>Soft - Pill</em>
+          </p>
+                  <div className="flex gap-1">
+    <Badge color="primary"  type="pill" soft>88</Badge>{" "}
+    <Badge color="hero" type="pill" soft>88</Badge>{" "}
+    <Badge color="neutral" type="pill" soft>88</Badge>{" "}
+    <Badge color="faint" type="pill" soft>88</Badge>{" "}
+    <Badge color="success" type="pill" soft>88</Badge>{" "}
+    <Badge color="info" type="pill" soft>88</Badge>{" "}
+    <Badge color="warning" type="pill" soft>88</Badge>{" "}
+    <Badge color="danger" type="pill" soft>88</Badge>
+  </p>
+</Fragment>
 </Fragment>
 ```
