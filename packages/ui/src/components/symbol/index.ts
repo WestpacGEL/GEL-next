@@ -46,4 +46,13 @@ export { WBGMultibrandSmallLogo } from './components/logos/wbg-multibrand-small-
 export { YammerSymbol } from './components/symbols/yammer-symbol.js';
 export { YouTubeSymbol } from './components/symbols/youtube-symbol.js';
 
+export { BTReversedLogo } from './components/logos/bt-reversed-logo.js';
+export { BTPanoramaReversedLogo } from './components/logos/bt-panorama-reversed-logo.js';
+export { BTLogo } from './components/logos/bt-logo.js';
+export { BTPanoramaLogo } from './components/logos/bt-panorama-logo.js';
+export { BTMultibrandSmallLogo } from './components/logos/bt-multibrand-small-logo.js';
+export { BTMultibrandLargeLogo } from './components/logos/bt-multibrand-large-logo.js';
+export { BTPanoramaMultibrandSmallLogo } from './components/logos/bt-panorama-multibrand-small-logo.js';
+export { BTPanoramaMultibrandLargeLogo } from './components/logos/bt-panorama-multibrand-large-logo.js';
+
 export { type SymbolProps } from './symbol.types.js';
