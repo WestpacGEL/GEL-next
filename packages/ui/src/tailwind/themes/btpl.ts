@@ -21,7 +21,7 @@ export const theme: BrandConfig = {
       focus: '#B470D7',
     }),
     pictogram: {
-      dark: '#006DBC',
+      dark: '#00345A',
       duo: {
         highlight: '#006DBC',
         outline: '#00345A',
