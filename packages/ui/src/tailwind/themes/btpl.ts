@@ -14,7 +14,6 @@ export const theme: BrandConfig = {
       muted: '#666666',
       neutral: '#2A2E42',
       pop: '#672993',
-      // Pop Light: #F7F4FA
       primary: '#006DBC',
       text: '#171717',
       borderDark: '#949494',
