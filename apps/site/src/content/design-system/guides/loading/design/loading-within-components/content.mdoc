@@ -1,0 +1,62 @@
+There are also scenarios where small, individual components require a loading state. For example if you have a button that initiates an action in the page or that you only want the user to click once, the button can have a [Progress Indicator](/components/progress-indicator) (or Spinner icon) that appears once the button is clicked and disables the button until the action is completed.\
+\
+Another common pattern is loading within an input field for an auto-complete component. The user starts typing, if there is a lag while the system calls the back-end to retrieve the items the field can display a [Progress Indicator](/components/progress-indicator) (or Spinner icon)  until the action is completed.
+
+### Why
+
+- To indicate a process has initiated, like search
+- To disable a button from being clicked more than once
+
+### When
+
+Display immediately for disabling scenarios, or after about 200–500 milliseconds when loading.
+
+### What
+
+When indicating loading for very small elements we use an animated icon embedded with the component.
+
+### Usage examples
+
+#### In-field
+
+```jsx
+() => {
+  const [inputValue, setInputValue] = useState<string>('');
+  const [validating, setValidating] = useState<boolean>(false);
+  const [error, setError] = useState<string>();
+  const validate = useCallback(() => {
+    setValidating(true);
+    setError(undefined);
+    setTimeout(() => {
+      if (inputValue !== '647453') {
+        setError('Now you have seen the Progress indicator within a small component.');
+      }
+      setValidating(false);
+    }, 1500);
+  }, [inputValue]);
+  return <InputGroup label="Validate entry" width="20" hint="Select validate to see the Progress Indicator." after={validating ? {
+    icon: ProgressIndicator
+  } : <Button onClick={validate}>Validate</Button>} errorMessage={error}>
+      <Input invalid={!!error} onChange={({
+      target: {
+        value
+      }
+    }) => setInputValue(value)} value={inputValue} />
+    </InputGroup>;
+}
+```
+
+#### In button
+
+```jsx
+() => {
+  return <div className="flex gap-2 py-2">
+<Button size='large' look='primary'  iconAfter={DownloadIcon} iconSize='small' iconColor='white'>
+                Download{'  '}
+              </Button>
+              <Button size='large' look='primary'  iconAfter={ProgressIndicator} disabled iconSize='small' iconColor='white'>
+                Downloading{'  '}
+              </Button>
+    </div>;
+}
+```

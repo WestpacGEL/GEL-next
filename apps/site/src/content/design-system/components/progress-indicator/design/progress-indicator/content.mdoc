@@ -1,5 +1,41 @@
+### Default
+
+Use this progress indicator to show a process is running.
+
 ```tsx
 () => {
-  return <ProgressIndicator />;
+  return (
+    <div className="p-1 rounded-md flex items-end justify-center" >
+      <ProgressIndicator size="xlarge" />
+    </div>
+  );
+}
+```
+
+### Sizes
+
+The indicator comes in various sizes (Xs, Sm, Md, Lg and Xl) suitable for buttons, fields, or full-page loading.
+
+```tsx
+() => {
+  return (
+    <div className="p-1 rounded-md flex items-end justify-center" >
+      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
+        <ProgressIndicator size={size} className="mr-2" />
+      ))}
+    </div>
+  );
 };
+```
+
+### Dark backgrounds
+
+The indicator can appear white for use on dark backgrounds.
+
+```tsx
+() => {
+  return <div className="rounded-md bg-black flex items-end justify-center">
+      <ProgressIndicator size="xlarge" color="white" className="mr-2 mb-2 mt-2" />)}
+    </div>;
+}
 ```

@@ -27,15 +27,15 @@ export const Default: Story = {
 export const Offset = () => (
   <div>
     <p>Left</p>
-    <WBCMultibrandSmallLogo className="border border-dashed" />
+    <WBCMultibrandSmallLogo className="box-content border border-dashed" />
     <br />
     <br />
     <p>Center</p>
-    <WBCMultibrandSmallLogo align="center" className="border border-dashed" />
+    <WBCMultibrandSmallLogo align="center" className="box-content border border-dashed" />
     <br />
     <br />
     <p>Right</p>
-    <WBCMultibrandSmallLogo align="right" className="border border-dashed" />
+    <WBCMultibrandSmallLogo align="right" className="box-content border border-dashed" />
   </div>
 );
 
@@ -97,12 +97,12 @@ export const AllLogos = () => {
         {Object.entries(multibrandLargeLogos).map(([key, Logo]) => (
           <>
             <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-              <Logo className="border border-dashed border-border" />
+              <Logo className="border-border box-content border border-dashed" />
               <p className="mt-2">{`<${key} />`}</p>
             </div>
             {align.map(align => (
               <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-                <Logo align={align} className="border border-dashed border-border" />
+                <Logo align={align} className="border-border box-content border border-dashed" />
                 <p className="mt-2">{`<${key} align=${align} />`}</p>
               </div>
             ))}
@@ -114,12 +114,12 @@ export const AllLogos = () => {
         {Object.entries(multibrandSmallLogos).map(([key, Logo]) => (
           <>
             <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-              <Logo className="border border-dashed border-border" />
+              <Logo className="border-border box-content border border-dashed" />
               <p className="mt-2">{`<${key} />`}</p>
             </div>
             {align.map(align => (
               <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-                <Logo align={align} className="border border-dashed border-border" />
+                <Logo align={align} className="border-border box-content border border-dashed" />
                 <p className="mt-2">{`<${key} align=${align} />`}</p>
               </div>
             ))}
