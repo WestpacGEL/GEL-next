@@ -1,7 +1,7 @@
 'use client';
 
 import { HamburgerMenuIcon } from '@westpac/ui/icon';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 
 import { useSidebar } from '@/app/design-system/components/sidebar/sidebar.context';
 import { BrandKey } from '@/app/types/brand.types';
@@ -16,18 +16,17 @@ export function Header({ className, title, brand }: { brand: string; className?:
   const headerRef = useRef<HTMLHeadingElement>(null);
   const { setOpen } = useSidebar();
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const handleScroll = () => {
-        const isFixed = window.scrollY >= FIXED_HEADER;
-        setFixed(isFixed);
-      };
-      handleScroll();
-      window.addEventListener('scroll', handleScroll);
-      window.addEventListener('load', handleScroll);
+  useLayoutEffect(() => {
+    const handleScroll = () => {
+      const isFixed = window.scrollY >= FIXED_HEADER;
+      setFixed(isFixed);
+    };
 
-      return () => window.removeEventListener('scroll', handleScroll);
-    }
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.addEventListener('scroll', handleScroll);
   }, []);
 
   return (
