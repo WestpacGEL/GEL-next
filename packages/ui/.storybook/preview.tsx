@@ -75,8 +75,7 @@ const preview: Preview = {
         title: 'Theme',
         icon: 'paintbrush',
         // Array of plain string values or MenuItem shape (see below)
-        // TODO: REMOVE BTPL
-        items: ['BOM', 'BSA', 'BTFG', 'RAMS', 'STG', 'WBC', 'WBG', 'BTPL'],
+        items: ['BOM', 'BSA', 'BTFG', 'RAMS', 'STG', 'WBC', 'WBG'],
         // Change title based on selected value
         dynamicTitle: true,
       },

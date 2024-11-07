@@ -4,6 +4,14 @@ export { AppleStoreSymbol } from './components/symbols/apple-store-symbol.js';
 export { BOMLogo } from './components/logos/bom-logo.js';
 export { BOMMultibrandLargeLogo } from './components/logos/bom-multibrand-large-logo.js';
 export { BOMMultibrandSmallLogo } from './components/logos/bom-multibrand-small-logo.js';
+export { BTReversedLogo } from './components/logos/bt-reversed-logo.js';
+export { BTPanoramaReversedLogo } from './components/logos/bt-panorama-reversed-logo.js';
+export { BTLogo } from './components/logos/bt-logo.js';
+export { BTPanoramaLogo } from './components/logos/bt-panorama-logo.js';
+export { BTMultibrandSmallLogo } from './components/logos/bt-multibrand-small-logo.js';
+export { BTMultibrandLargeLogo } from './components/logos/bt-multibrand-large-logo.js';
+export { BTPanoramaMultibrandSmallLogo } from './components/logos/bt-panorama-multibrand-small-logo.js';
+export { BTPanoramaMultibrandLargeLogo } from './components/logos/bt-panorama-multibrand-large-logo.js';
 export { BOMShieldLogo } from './components/logos/bom-shield-logo.js';
 export { BPayLandSymbol } from './components/symbols/bpay-land-symbol.js';
 export { BPayPortSymbol } from './components/symbols/bpay-port-symbol.js';
@@ -45,14 +53,5 @@ export { WBGMultibrandLargeLogo } from './components/logos/wbg-multibrand-large-
 export { WBGMultibrandSmallLogo } from './components/logos/wbg-multibrand-small-logo.js';
 export { YammerSymbol } from './components/symbols/yammer-symbol.js';
 export { YouTubeSymbol } from './components/symbols/youtube-symbol.js';
-
-export { BTReversedLogo } from './components/logos/bt-reversed-logo.js';
-export { BTPanoramaReversedLogo } from './components/logos/bt-panorama-reversed-logo.js';
-export { BTLogo } from './components/logos/bt-logo.js';
-export { BTPanoramaLogo } from './components/logos/bt-panorama-logo.js';
-export { BTMultibrandSmallLogo } from './components/logos/bt-multibrand-small-logo.js';
-export { BTMultibrandLargeLogo } from './components/logos/bt-multibrand-large-logo.js';
-export { BTPanoramaMultibrandSmallLogo } from './components/logos/bt-panorama-multibrand-small-logo.js';
-export { BTPanoramaMultibrandLargeLogo } from './components/logos/bt-panorama-multibrand-large-logo.js';
 
 export { type SymbolProps } from './symbol.types.js';
