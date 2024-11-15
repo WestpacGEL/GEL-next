@@ -10,20 +10,15 @@ design:
       name: Editorial text styles
       slug: editorial-text-styles
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Headings
       slug: headings
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: User experience
       slug: user-experience
-    noTitle: false
-    noDemo: false
-  - title:
-      name: Visual design
-      slug: visual-design
     noTitle: false
     noDemo: false
   - title:

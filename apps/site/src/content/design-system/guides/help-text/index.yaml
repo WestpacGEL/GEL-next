@@ -1,4 +1,4 @@
-name: Help text
+name: Help
 description: >-
   Clear communication is vital in the jargon and complexity filled industry of
   financial services.
@@ -15,12 +15,12 @@ design:
       name: Help text in forms
       slug: help-text-in-forms
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Using icons for help
       slug: using-icons-for-help
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Why use help text
       slug: why-use-help-text
