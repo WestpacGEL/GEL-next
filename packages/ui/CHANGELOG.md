@@ -1,5 +1,13 @@
 # @westpac/ui
 
+## 0.28.0
+
+### Minor Changes
+
+- 6f96072: fixed button groups hover glitch; updated footer story shield margin; updated space below alert title; updated search icon size in automcomplete
+- 23dad1b: Updated the appearance and svg of progress indicator component; updated visual bugs in header and badge;
+- 94d6345: added icons - arrow circle icons
+
 ## 0.27.0
 
 ### Minor Changes
