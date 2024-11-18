@@ -28,18 +28,18 @@ export function Sidebar({ items, brand }: SidebarProps) {
   });
 
   useEffect(() => {
-    if (!listRef.current) {
+    if (!outsideRef.current) {
       return;
     }
     const listener = () => {
-      const y = listRef.current?.scrollTop || 0;
+      const y = outsideRef.current?.scrollTop || 0;
       setScrolled(y > 0);
     };
-    listRef.current.addEventListener('scroll', listener);
+    outsideRef.current.addEventListener('scroll', listener);
     return () => {
-      listRef.current?.removeEventListener('scroll', listener);
+      outsideRef.current?.removeEventListener('scroll', listener);
     };
-  }, [listRef]);
+  }, []);
 
   useEffect(() => {
     if (open) {
@@ -81,8 +81,8 @@ export function Sidebar({ items, brand }: SidebarProps) {
           })}
         >
           <div
-            className={clsx({
-              'shadow-[rgba(0,0,0,0.26)_0_2px_5px]': scrolled,
+            className={clsx('sticky top-0 bg-white transition-shadow delay-0 duration-200 ease-[ease]', {
+              'shadow-[0_2px_5px_rgba(0,0,0,0.3)]': scrolled,
             })}
           >
             <button

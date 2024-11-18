@@ -25,7 +25,7 @@ type Story = StoryObj<typeof meta>;
  * >Default usage example
  */
 export const Default: Story = {
-  args: { size: 'xlarge' },
+  args: { size: 'large' },
 };
 
 /**

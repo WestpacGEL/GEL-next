@@ -42,7 +42,7 @@ export const BrandFont = () => {
     { className: 'typography-brand-11', fontSize: fourteenPixel, lineHeight: twentyPixel },
   ];
   return (
-    <Table>
+    <Table className="whitespace-pre">
       <TableCaption>GEL brand typography tokens</TableCaption>
       <TableHeader>
         <TableHeaderRow>

@@ -1,38 +1,48 @@
 Badges come in 2 different types:
 
-- Default -  used to highlight words
+- Default - used to highlight words
 - Pill - used to highlight numbers
 
 ### Badges - Default
 
 ```tsx
 <Fragment>
-<p className="typography-body-10 text-muted">
-<em>Default</em>
-</p>
+  <p className="typography-body-10 text-muted">
+    <em>Default</em>
+  </p>
   <p className="my-2">
-    <Badge color="primary">Primary</Badge>{" "}
-    <Badge color="hero">Hero</Badge>{" "}
-    <Badge color="neutral">Neutral</Badge>{" "}
-    <Badge color="faint">Faint</Badge>{" "}
-
-    <Badge color="success" >Success</Badge>{" "}
-    <Badge color="info" >Info</Badge>{" "}
-    <Badge color="warning" >Warning</Badge>{" "}
-    <Badge color="danger" >Danger</Badge>
+    <Badge color="primary">Primary</Badge> <Badge color="hero">Hero</Badge> <Badge color="neutral">Neutral</Badge>{' '}
+    <Badge color="faint">Faint</Badge> <Badge color="success">Success</Badge> <Badge color="info">Info</Badge>{' '}
+    <Badge color="warning">Warning</Badge> <Badge color="danger">Danger</Badge>
   </p>
   <p className="typography-body-10 text-muted">
-<em>Soft</em>
-</p>
-    <p className="my-2">
-    <Badge color="primary" soft>Primary</Badge>{" "}
-    <Badge color="hero" soft>Hero</Badge>{" "}
-    <Badge color="neutral" soft>Neutral</Badge>{" "}
-    <Badge color="faint" soft>Faint</Badge>{" "}
-    <Badge color="success" soft>Success</Badge>{" "}
-    <Badge color="info" soft>Info</Badge>{" "}
-    <Badge color="warning" soft>Warning</Badge>{" "}
-    <Badge color="danger" soft>Danger</Badge>
+    <em>Soft</em>
+  </p>
+  <p className="my-2">
+    <Badge color="primary" soft>
+      Primary
+    </Badge>{' '}
+    <Badge color="hero" soft>
+      Hero
+    </Badge>{' '}
+    <Badge color="neutral" soft>
+      Neutral
+    </Badge>{' '}
+    <Badge color="faint" soft>
+      Faint
+    </Badge>{' '}
+    <Badge color="success" soft>
+      Success
+    </Badge>{' '}
+    <Badge color="info" soft>
+      Info
+    </Badge>{' '}
+    <Badge color="warning" soft>
+      Warning
+    </Badge>{' '}
+    <Badge color="danger" soft>
+      Danger
+    </Badge>
   </p>
 </Fragment>
 ```
@@ -75,80 +85,80 @@ Badges come in 2 different types:
 
 ```tsx
 () => {
-    const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'primary', 'success', 'warning'] as const;
-    const INVERTED_COLORS = [
-      'danger-inverted',
-      'faint-inverted',
-      'hero-inverted',
-      'info-inverted',
-      'neutral-inverted',
-      'primary-inverted',
-      'success-inverted',
-      'warning-inverted',
-    ] as const;
-  
-    return (
-      <div className="flex flex-col gap-6">
-        <div>
-          <p className="mb-2 typography-body-10 text-muted">
-            <em>Examples showing pill style badge</em>
-          </p>
-          <div className="flex gap-2">
-            <Button look="primary" soft>
-              <div className="flex gap-1">
-                <Badge color="hero" type="pill">
-                  6
-                </Badge>
-                <span>Label</span>
-              </div>
-            </Button>
-            <Button look="primary">
-              <div className="flex gap-1">
-                <Badge color="faint" type="pill" soft>
-                  88
-                </Badge>
-                <span>Label</span>
-              </div>
-            </Button>
-            <a className="text-link underline" href="#">
-                Messages </a>
-                <Badge color="muted" type="pill" className="ml-.5">
-                  12
-                </Badge>
-              
-          </div>
-        </div>
-        <div>
-          <p className="mb-2 typography-body-10 text-muted">
-            <em>Examples showing basic style badge</em>
-          </p>
-  
-          <div className="flex gap-2">
-            <Button look="primary" soft>
-              <div className="flex gap-1 items-center">
-                <span>Label</span>
-                <Badge color="hero">New</Badge>
-              </div>
-            </Button>
-  
-            <Button look="primary">
-              <div className="flex gap-1 items-center">
-                <span>Label</span>
-                <Badge color="faint" soft>New</Badge>
-              </div>
-            </Button>
-  
-            <a className="text-link underline" href="#">
-                Product feature</a>
-                <Badge color="muted" className="ml-.5">
-                  New
-                </Badge>
-              
+  const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'primary', 'success', 'warning'] as const;
+  const INVERTED_COLORS = [
+    'danger-inverted',
+    'faint-inverted',
+    'hero-inverted',
+    'info-inverted',
+    'neutral-inverted',
+    'primary-inverted',
+    'success-inverted',
+    'warning-inverted',
+  ] as const;
 
-
-          </div>
+  return (
+    <div className="flex flex-col gap-6">
+      <div>
+        <p className="mb-2 typography-body-10 text-muted">
+          <em>Examples showing pill style badge</em>
+        </p>
+        <div className="flex gap-2">
+          <Button look="primary" soft>
+            <div className="flex gap-1">
+              <Badge color="hero" type="pill">
+                6
+              </Badge>
+              <span>Label</span>
+            </div>
+          </Button>
+          <Button look="primary">
+            <div className="flex gap-1">
+              <Badge color="faint" type="pill" soft>
+                88
+              </Badge>
+              <span>Label</span>
+            </div>
+          </Button>
+          <a className="text-link underline" href="#">
+            Messages{' '}
+          </a>
+          <Badge color="muted" type="pill" className="ml-.5">
+            12
+          </Badge>
         </div>
       </div>
-    );
-  };
+      <div>
+        <p className="mb-2 typography-body-10 text-muted">
+          <em>Examples showing basic style badge</em>
+        </p>
+
+        <div className="flex gap-2">
+          <Button look="primary" soft>
+            <div className="flex gap-1 items-center">
+              <span>Label</span>
+              <Badge color="hero">New</Badge>
+            </div>
+          </Button>
+
+          <Button look="primary">
+            <div className="flex gap-1 items-center">
+              <span>Label</span>
+              <Badge color="faint" soft>
+                New
+              </Badge>
+            </div>
+          </Button>
+
+          <a className="text-link underline" href="#">
+            Product feature
+          </a>
+          <Badge color="muted" className="ml-.5">
+            New
+          </Badge>
+        </div>
+      </div>
+    </div>
+  );
+};
 ```
