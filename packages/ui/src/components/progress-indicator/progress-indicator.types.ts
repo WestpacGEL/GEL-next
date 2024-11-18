@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { IconProps } from '../icon/icon.types.js';
 
-export type ProgressIndicatorProps = IconProps & {
+export type ProgressIndicatorProps = Omit<IconProps, 'copyrightYear' | 'look'> & {
   /**
    * children prop
    * @default false
