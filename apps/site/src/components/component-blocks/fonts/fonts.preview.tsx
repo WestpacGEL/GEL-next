@@ -1,4 +1,4 @@
-import { NotEditable, component } from '@keystatic/core';
+import { NotEditable, component, fields } from '@keystatic/core';
 
 export const fonts = component({
   preview: () => (
@@ -7,5 +7,14 @@ export const fonts = component({
     </NotEditable>
   ),
   label: 'Fonts',
-  schema: {},
+  schema: {
+    view: fields.select({
+      label: 'Display Type',
+      options: [
+        { label: 'Default', value: 'default' },
+        { label: 'Table', value: 'table' },
+      ],
+      defaultValue: 'default',
+    }),
+  },
 });
