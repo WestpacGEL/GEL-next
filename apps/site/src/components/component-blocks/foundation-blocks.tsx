@@ -5,8 +5,6 @@ import { colors } from './colors/colors.preview';
 import { accessibilityDemo } from './components/accessibility-demo/accessibility-demo.preview';
 import { AvailabilityContent } from './components/availability-content/availability-content.component';
 import { availabilityContent } from './components/availability-content/availability-content.preview';
-import { BrandFontWeight } from './components/brand-font-weight/brand-font-weight.component';
-import { brandFontWeight } from './components/brand-font-weight/brand-font-weight.preview';
 import { designSystemBodyImage } from './components/design-system-body-image';
 import { LinkList } from './components/link-list';
 import { linkList } from './components/link-list/link-list.preview';
@@ -34,7 +32,6 @@ export const foundationBlocks = {
   shortCode,
   accessibilityDemo,
   availabilityContent,
-  brandFontWeight,
 };
 
 export const foundationBlocksComponents = {
@@ -51,5 +48,4 @@ export const foundationBlocksComponents = {
     </div>
   ),
   availabilityContent: (props: any) => <AvailabilityContent {...props} />,
-  brandFontWeight: (props: any) => <BrandFontWeight {...props} />,
 };
