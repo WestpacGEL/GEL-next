@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { AlertIcon, PadlockIcon } from '../icon/index.js';
 import { Button, Link } from '../index.js';
@@ -31,6 +31,13 @@ export function PassCodeView({
   ...props
 }: PassCodeViewProps) {
   const styles = passCodeViewStyles({});
+  const passcodeRef = useRef<{ updatePasscode: (code: string) => void }>(null);
+
+  const clearPasscode = () => {
+    if (passcodeRef.current) {
+      passcodeRef.current.updatePasscode('');
+    }
+  };
 
   return (
     <Tag className={styles.base({ className })} {...props}>
@@ -54,9 +61,20 @@ export function PassCodeView({
               {errorMessage}
             </p>
           )}
-          <PassCode className={styles.passCode()} length={passCodeLength} onComplete={onComplete} />
+          <PassCode
+            innerRef={passcodeRef}
+            className={styles.passCode()}
+            length={passCodeLength}
+            onComplete={onComplete}
+          />
           {resendButtonLabel && (
-            <Button look="link" onClick={onResend}>
+            <Button
+              look="link"
+              onClick={() => {
+                onResend();
+                clearPasscode();
+              }}
+            >
               {resendButtonLabel}
             </Button>
           )}

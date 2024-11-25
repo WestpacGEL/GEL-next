@@ -1,6 +1,14 @@
 'use client';
 
-import React, { ChangeEvent, ClipboardEvent, KeyboardEvent, useCallback, useRef, useState } from 'react';
+import React, {
+  ChangeEvent,
+  ClipboardEvent,
+  KeyboardEvent,
+  useCallback,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react';
 
 import { Input } from '../index.js';
 
@@ -12,6 +20,20 @@ export function PassCode({ length, onComplete, className, ...props }: PassCodePr
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
 
   const styles = passCodeStyles({});
+
+  // Expose a red to update the passcode via a ref
+  useImperativeHandle(props.innerRef, () => ({
+    updatePasscode: (newPasscode: string) => {
+      const updatedPasscode =
+        newPasscode === ''
+          ? Array(length).fill('')
+          : newPasscode.split('').slice(0, length).concat(Array(length).fill(undefined)).slice(0, length);
+      setPasscode(updatedPasscode);
+      if (updatedPasscode.filter(passcode => !passcode).length === 0) {
+        onComplete(updatedPasscode.join(''));
+      }
+    },
+  }));
 
   const handleChange = useCallback(
     (index: number, event: ChangeEvent<HTMLInputElement>) => {
