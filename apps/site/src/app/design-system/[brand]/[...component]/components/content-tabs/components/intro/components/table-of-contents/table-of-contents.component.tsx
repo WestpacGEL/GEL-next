@@ -10,7 +10,7 @@ import { type TableOfContentsProps } from './table-of-contents.types';
 export function TableOfContents({ contents = [] }: TableOfContentsProps) {
   return (
     <nav>
-      <h2 className="typography-body-9 border-border border-b pb-2 font-medium">Page content</h2>
+      <h2 className="typography-body-9 border-b border-border pb-2 font-medium">Page content</h2>
       <List icon={ArrowDownRightIcon} type="icon" look="primary" className="mt-3 [&_li]:my-1.5">
         {contents.map(({ title }) => {
           const id = title
@@ -33,7 +33,7 @@ function NavLink({ href, children }: { children?: React.ReactNode; href: string 
   const pathname = usePathname();
 
   return (
-    <Link className="focus-visible:focus-outline ml-1 block hover:underline" href={`${pathname}${href}`} replace scroll>
+    <Link className="ml-1 block hover:underline focus-visible:focus-outline" href={`${pathname}${href}`} replace scroll>
       {children}
     </Link>
   );

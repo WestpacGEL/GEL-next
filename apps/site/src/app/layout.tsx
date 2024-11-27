@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         {isEnabled && (
-          <div className="right-15 absolute top-3 z-[999]">
+          <div className="absolute right-15 top-3 z-[999]">
             <form method="post" action="/preview/end">
               <button className="text-white">End preview</button>
             </form>
