@@ -41,6 +41,8 @@ export { CardlessCashIcon } from './components/cardless-cash-icon.js';
 export { CartIcon } from './components/cart-icon.js';
 export { ChatIcon } from './components/chat-icon.js';
 export { CheckIcon } from './components/check-icon.js';
+export { ChildCareIcon } from './components/child-care-icon.js';
+export { ChildIcon } from './components/child-icon.js';
 export { CircleIcon } from './components/circle-icon.js';
 export { ClearIcon } from './components/clear-icon.js';
 export { ClockIcon } from './components/clock-icon.js';
