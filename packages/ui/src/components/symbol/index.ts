@@ -40,7 +40,6 @@ export { STGDragonLogo } from './components/logos/stg-dragon-logo.js';
 export { STGLogo } from './components/logos/stg-logo.js';
 export { STGMultibrandLargeLogo } from './components/logos/stg-multibrand-large-logo.js';
 export { STGMultibrandSmallLogo } from './components/logos/stg-multibrand-small-logo.js';
-export { TwitterSymbol } from './components/symbols/twitter-symbol.js';
 export { VisaBlueSymbol } from './components/symbols/visa-blue-symbol.js';
 export { VisaSymbol } from './components/symbols/visa-symbol.js';
 export { VisaWhiteSymbol } from './components/symbols/visa-white-symbol.js';
@@ -51,6 +50,9 @@ export { WBGInternalLogo } from './components/logos/wbg-internal-logo.js';
 export { WBGLogo } from './components/logos/wbg-logo.js';
 export { WBGMultibrandLargeLogo } from './components/logos/wbg-multibrand-large-logo.js';
 export { WBGMultibrandSmallLogo } from './components/logos/wbg-multibrand-small-logo.js';
+export { XSymbol } from './components/symbols/x-symbol.js';
+export { XMarkSymbol } from './components/symbols/x-mark-symbol.js';
+export { XMarkInverseSymbol } from './components/symbols/x-mark-inverse-symbol.js'
 export { YammerSymbol } from './components/symbols/yammer-symbol.js';
 export { YouTubeSymbol } from './components/symbols/youtube-symbol.js';
 
