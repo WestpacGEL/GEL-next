@@ -52,7 +52,7 @@ export { WBGMultibrandLargeLogo } from './components/logos/wbg-multibrand-large-
 export { WBGMultibrandSmallLogo } from './components/logos/wbg-multibrand-small-logo.js';
 export { XSymbol } from './components/symbols/x-symbol.js';
 export { XMarkSymbol } from './components/symbols/x-mark-symbol.js';
-export { XMarkInverseSymbol } from './components/symbols/x-mark-inverse-symbol.js'
+export { XMarkInverseSymbol } from './components/symbols/x-mark-inverse-symbol.js';
 export { YammerSymbol } from './components/symbols/yammer-symbol.js';
 export { YouTubeSymbol } from './components/symbols/youtube-symbol.js';
 

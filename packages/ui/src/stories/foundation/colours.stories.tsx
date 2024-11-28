@@ -317,7 +317,7 @@ export const BrandColors: Story = {
               {/* NOTE: Below disable tailwind classname warning for string interpolation */}
               {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
               <div className={`bg-${color}${tintString} h-[80px]`} />
-              <div className="divide-border border-border divide-y border p-2">
+              <div className="divide-y divide-border border border-border p-2">
                 <div className="pb-2 font-bold">{color}</div>
                 <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-${color}${tintString}`}</div>
                 {/* Below comments to get rid of type nightmare when trying to get hex value */}
@@ -361,7 +361,7 @@ export const ReservedColors = () => {
             {/* NOTE: Below disable tailwind classname warning for string interpolation */}
             {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
             <div className={`bg-${color}${tintString} h-[80px]`} />
-            <div className="divide-border border-border divide-y border p-2">
+            <div className="divide-y divide-border border border-border p-2">
               <div className="pb-2 font-bold">{color}</div>
               <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-${color}${tintString}`}</div>
               {/* Below comments to get rid of type nightmare when trying to get hex value */}
@@ -383,15 +383,15 @@ export const ReservedWithNoTints = () => (
   <div className="flex">
     <div className="w-[33%] min-w-[200px] max-w-[300px] p-2">
       <div className={`h-[80px] bg-black`} />
-      <div className="divide-border border-border divide-y border p-2">
+      <div className="divide-y divide-border border border-border p-2">
         <div className="pb-2 font-bold">black</div>
         <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-black`}</div>
         <div className="typography-body-10 pt-2 font-light">#000</div>
       </div>
     </div>
     <div className="w-[33%] min-w-[200px] max-w-[300px] p-2">
-      <div className={`border-border h-[80px] border bg-white`} />
-      <div className="divide-border border-border divide-y border p-2">
+      <div className={`h-[80px] border border-border bg-white`} />
+      <div className="divide-y divide-border border border-border p-2">
         <div className="pb-2 font-bold">white</div>
         <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-white`}</div>
         <div className="typography-body-10 pt-2 font-light">#FFF</div>
@@ -432,7 +432,7 @@ export const DataVisualisationColors: Story = {
                 {/* NOTE: Below disable tailwind classname warning for string interpolation */}
                 {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
                 <div className={`bg-${color} h-[80px]`} />
-                <div className="divide-border border-border divide-y border p-2">
+                <div className="divide-y divide-border border border-border p-2">
                   <div className="pb-2 font-bold">{color}</div>
                   <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-${color}`}</div>
                   {/* Below comments to get rid of type nightmare when trying to get hex value */}
@@ -449,7 +449,7 @@ export const DataVisualisationColors: Story = {
                 {/* NOTE: Below disable tailwind classname warning for string interpolation */}
                 {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
                 <div className={`bg-${color} h-[80px]`} />
-                <div className="divide-border border-border divide-y border p-2">
+                <div className="divide-y divide-border border border-border p-2">
                   <div className="pb-2 font-bold">{color}</div>
                   <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-${color}`}</div>
                   {/* Below comments to get rid of type nightmare when trying to get hex value */}
@@ -466,7 +466,7 @@ export const DataVisualisationColors: Story = {
                 {/* NOTE: Below disable tailwind classname warning for string interpolation */}
                 {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
                 <div className={`bg-${color}/30 h-[80px]`} />
-                <div className="divide-border border-border divide-y border p-2">
+                <div className="divide-y divide-border border border-border p-2">
                   <div className="pb-2 font-bold">{`${color}/30`}</div>
                   <div className="typography-body-10 py-2 font-light">{`Tailwind eg: bg-${color}/30`}</div>
                   {/* Below comments to get rid of type nightmare when trying to get hex value */}
