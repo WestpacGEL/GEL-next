@@ -35,7 +35,7 @@ export const foundationBlocks = {
 };
 
 export const foundationBlocksComponents = {
-  fonts: () => <Fonts />,
+  fonts: (props: any) => <Fonts {...props} />,
   icons: () => <Icons />,
   logos: () => <Logos />,
   pictograms: () => <Pictograms />,

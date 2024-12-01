@@ -97,12 +97,12 @@ export const AllLogos = () => {
         {Object.entries(multibrandLargeLogos).map(([key, Logo]) => (
           <>
             <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-              <Logo className="border-border box-content border border-dashed" />
+              <Logo className="box-content border border-dashed border-border" />
               <p className="mt-2">{`<${key} />`}</p>
             </div>
             {align.map(align => (
               <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-                <Logo align={align} className="border-border box-content border border-dashed" />
+                <Logo align={align} className="box-content border border-dashed border-border" />
                 <p className="mt-2">{`<${key} align=${align} />`}</p>
               </div>
             ))}
@@ -114,12 +114,12 @@ export const AllLogos = () => {
         {Object.entries(multibrandSmallLogos).map(([key, Logo]) => (
           <>
             <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-              <Logo className="border-border box-content border border-dashed" />
+              <Logo className="box-content border border-dashed border-border" />
               <p className="mt-2">{`<${key} />`}</p>
             </div>
             {align.map(align => (
               <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-                <Logo align={align} className="border-border box-content border border-dashed" />
+                <Logo align={align} className="box-content border border-dashed border-border" />
                 <p className="mt-2">{`<${key} align=${align} />`}</p>
               </div>
             ))}
