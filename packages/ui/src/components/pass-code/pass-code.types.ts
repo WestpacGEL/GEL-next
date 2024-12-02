@@ -8,3 +8,6 @@ export type PassCodeProps = {
   onComplete: (passcode: string) => void;
 } & VariantProps<typeof styles> &
   HTMLAttributes<Element>;
+
+  clear: () => void;
+};
