@@ -22,6 +22,17 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default = () => <PassCode length={4} onComplete={val => console.log(val)} />;
 
+export const Types = () => (
+  <div className="flex flex-col gap-2">
+    <p>Alphanumeric</p>
+    <PassCode length={4} onComplete={val => console.log(val)} />
+    <p>Numbers only</p>
+    <PassCode type="numbers" length={4} onComplete={val => console.log(val)} />
+    <p>Letters only</p>
+    <PassCode type="letters" length={4} onComplete={val => console.log(val)} />
+  </div>
+);
+
 /**
  * > Controlled Input example
  */

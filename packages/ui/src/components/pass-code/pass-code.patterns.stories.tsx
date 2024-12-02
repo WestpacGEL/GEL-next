@@ -1,12 +1,13 @@
+/* eslint-disable sonarjs/no-identical-functions */
 /* eslint-disable no-console */
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react';
 import { useRef, useState } from 'react';
 
 import { PadlockIcon } from '../icon/index.js';
-import { Alert, Button, Link } from '../index.js';
+import { Alert, Button } from '../index.js';
 
-// update passcodeRef to come from types file instead
-import { PassCode, PassCodeRef } from './pass-code.component.js';
+import { PassCode } from './pass-code.component.js';
+import { PassCodeRef } from './pass-code.types.js';
 
 const meta: Meta<typeof PassCode> = {
   title: 'Components/PassCode/Patterns',
@@ -19,44 +20,58 @@ const meta: Meta<typeof PassCode> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 /**
  * > SMS
  */
 export const SMS = () => {
   const [value, setValue] = useState(Array.from({ length: 4 }).map(() => ''));
-  const [showAlert, setShowAlert] = useState(false);
+  const [error, setError] = useState(false);
+  const [alert, setAlert] = useState(false);
 
   const ref = useRef<PassCodeRef>(null);
 
+  const reset = () => {
+    setValue(Array.from({ length: 4 }).map(() => '')); // clear
+    ref.current?.focus();
+  };
+
   const handleChange = (val: string[]) => {
-    if (showAlert && val.some(Boolean)) {
-      setShowAlert(false);
+    if (alert && val.some(Boolean)) {
+      setAlert(false);
     }
+
+    if (error) {
+      setError(false);
+    }
+
     setValue(val);
   };
 
   const handleResend = () => {
-    setValue(Array.from({ length: 6 }).map(() => ''));
-    ref.current?.focus();
-    setShowAlert(true);
+    reset();
+    setAlert(true);
   };
 
   const handleComplete = (code: string) => {
     if (code === '1234') {
-      console.log('Code is correct');
+      console.log('Correct code inputted');
     } else {
-      console.log('Code is incorrect');
+      setError(true);
+      reset();
     }
-    console.log(code);
   };
 
   return (
     <div className="flex w-[350px] flex-col items-center">
       <PadlockIcon className="mb-3" />
       <h3 className="typography-body-5 mb-3 font-bold">Enter SMS code</h3>
-      <p className="mb-4 text-center">Your security code has been sent to your mobile number **** **** *XXXX </p>
+      <p className="mb-3 text-center">Your security code (1234) has been sent to your mobile number **** **** *XXXX </p>
+      {error && (
+        <Alert look="danger" mode="text" iconSize="small" className="mb-3">
+          Enter a valid 6 digit code using only numbers, you have X remaining challenge attempts.
+        </Alert>
+      )}
       <PassCode
         ref={ref}
         className="mb-3"
@@ -65,7 +80,7 @@ export const SMS = () => {
         onChange={handleChange}
         onComplete={handleComplete}
       />
-      {showAlert && <Alert>A text message with a new verification code was just sent to your mobile.</Alert>}
+      {alert && <Alert>A text message with a new verification code was just sent to your mobile.</Alert>}
       <p>
         Didn&apos;t receive your code?
         <Button look="link" size="small" onClick={handleResend}>
@@ -77,5 +92,65 @@ export const SMS = () => {
 };
 
 export const SMSWithSubmit = () => {
-  return <div />;
+  const [value, setValue] = useState(Array.from({ length: 4 }).map(() => ''));
+  const [error, setError] = useState(false);
+  const [alert, setAlert] = useState(false);
+
+  const ref = useRef<PassCodeRef>(null);
+
+  const reset = () => {
+    setValue(Array.from({ length: 4 }).map(() => '')); // clear
+    ref.current?.focus();
+  };
+
+  const handleChange = (val: string[]) => {
+    if (alert && val.some(Boolean)) {
+      setAlert(false);
+    }
+
+    if (error) {
+      setError(false);
+    }
+
+    setValue(val);
+  };
+
+  const handleResend = () => {
+    reset();
+    setAlert(true);
+  };
+
+  const handleSubmit = () => {
+    console.log(value.join(''));
+    if (value.join('') === '1234') {
+      console.log('Correct code inputted');
+    } else {
+      setError(true);
+      reset();
+    }
+  };
+
+  return (
+    <div className="flex w-[350px] flex-col items-center">
+      <PadlockIcon className="mb-3" />
+      <h3 className="typography-body-5 mb-3 font-bold">Enter SMS code</h3>
+      <p className="mb-3 text-center">Your security code (1234) has been sent to your mobile number **** **** *XXXX </p>
+      {error && (
+        <Alert look="danger" mode="text" iconSize="small" className="mb-3">
+          Enter a valid 6 digit code using only numbers, you have X remaining challenge attempts.
+        </Alert>
+      )}
+      <PassCode ref={ref} className="mb-3" length={4} value={value} onChange={handleChange} />
+      {alert && <Alert>A text message with a new verification code was just sent to your mobile.</Alert>}
+      <p className="mb-3">
+        Didn&apos;t receive your code?
+        <Button look="link" size="small" onClick={handleResend}>
+          Send it again
+        </Button>
+      </p>
+      <Button look="primary" onClick={handleSubmit}>
+        Submit
+      </Button>
+    </div>
+  );
 };

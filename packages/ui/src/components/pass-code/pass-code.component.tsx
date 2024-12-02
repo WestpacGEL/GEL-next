@@ -4,10 +4,10 @@
 import React, {
   ChangeEvent,
   ClipboardEvent,
+  FocusEvent,
   KeyboardEvent,
   forwardRef,
   useCallback,
-  useEffect,
   useImperativeHandle,
   useRef,
   useState,
@@ -16,52 +16,33 @@ import React, {
 import { Input } from '../index.js';
 
 import { styles as passCodeStyles } from './pass-code.styles.js';
-// import { type PassCodeProps } from './pass-code.types.js';
-
-interface PassCodeProps {
-  className?: string;
-  length: number;
-  onChange?: (newPasscode: string[]) => void;
-  onComplete?: (passcode: string) => void;
-  type?: 'numbers' | 'letters' | 'alphanumeric';
-  value?: string[];
-}
-
-export type PassCodeRef = {
-  clear: () => void;
-  focus: () => void;
-};
+import { PassCodeProps, PassCodeRef } from './pass-code.types.js';
 
 export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
-  ({ length, value, onChange, onComplete, className, type = 'alphanumeric', ...props }, ref) => {
+  ({ length, value, onChange, onComplete, className, type = 'alphanumeric', onBlur, ...props }, ref) => {
     const [internalPasscode, setInternalPasscode] = useState<string[]>(Array.from({ length }).map(() => ''));
     const passcode = value ? value : internalPasscode;
     const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
 
     const styles = passCodeStyles({});
 
-    useImperativeHandle(ref, () => {
-      return {
-        focus: () => {
-          inputRefs.current[0]?.focus();
-        },
-        clear: () => {
-          setInternalPasscode(Array.from({ length }).map(() => ''));
-        },
-      };
-    });
+    useImperativeHandle(ref, () => ({
+      focus: () => {
+        inputRefs.current[0]?.focus();
+      },
+      clear: () => {
+        setInternalPasscode(Array.from({ length }).map(() => ''));
+      },
+    }));
 
     const handleChange = useCallback(
       (index: number, event: ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value.slice(-1);
-
-        // Validate input based on type
         if (
           (type === 'numbers' && /^\d$/.test(inputValue)) ||
           (type === 'letters' && /^[a-zA-Z]$/.test(inputValue)) ||
           (type === 'alphanumeric' && /^[a-zA-Z0-9]$/.test(inputValue))
         ) {
-          // Update the passcode state
           const newPasscode = [...passcode.slice(0, index), inputValue, ...passcode.slice(index + 1)];
           if (onChange) {
             onChange(newPasscode);
@@ -73,8 +54,6 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
           if (index < length - 1 && inputValue !== '') {
             inputRefs.current[index + 1]?.focus();
           }
-
-          // Call onComplete when passcode is complete
           if (newPasscode.filter(passcode => !passcode).length === 0 && onComplete) {
             onComplete(newPasscode.join(''));
           }
@@ -143,6 +122,15 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
       [inputRefs],
     );
 
+    const handleBlur = useCallback(
+      (index: number, event: FocusEvent<HTMLInputElement>) => {
+        if (onBlur) {
+          onBlur(index, event);
+        }
+      },
+      [onBlur],
+    );
+
     return (
       <div {...props} className={styles.base({ className })}>
         {Array.from({ length }).map((_, index) => (
@@ -154,6 +142,7 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
             onPaste={e => handlePaste(index, e)}
             onKeyDown={e => handleKeyDown(index, e)}
             onFocus={() => handleFocus(index)}
+            onBlur={e => handleBlur(index, e)}
             ref={input => (inputRefs.current[index] = input)}
             className={styles.input({})}
             aria-label={`Passcode digit ${index + 1}`}
