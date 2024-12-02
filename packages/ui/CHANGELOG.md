@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.29.0
+
+### Minor Changes
+
+- 62db13b: Export brand tokens
+
 ## 0.28.0
 
 ### Minor Changes
