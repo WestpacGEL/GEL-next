@@ -1,5 +1,17 @@
 # @westpac/ui
 
+## 0.30.0
+
+### Minor Changes
+
+- Update passcodeview to allow for controlled input
+
+## 0.29.0
+
+### Minor Changes
+
+- 62db13b: Export brand tokens
+
 ## 0.28.0
 
 ### Minor Changes
