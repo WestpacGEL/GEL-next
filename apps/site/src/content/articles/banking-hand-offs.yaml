@@ -3,6 +3,7 @@ thumbnail: {}
 image:
   src: >-
     https://www.westpac.com.au/content/dam/public/gel/images/banking-hand-offs-hero.png
+  alt: Stylised example image of a page loading animation.
   height: 1468
   width: 2400
 author: Digital Experience
