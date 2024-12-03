@@ -8,7 +8,7 @@ export function _middleware(request: NextRequest) {
     default-src 'self';
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval';
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data: res.cloudinary.com westpac.com.au;
+    img-src 'self' blob: data: res.cloudinary.com www.westpac.com.au;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
