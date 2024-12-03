@@ -11,6 +11,9 @@ description: >-
 thumbnail:
   src: >-
     https://www.westpac.com.au/content/dam/public/gel/images/accessible-by-design-hero.png
+  alt: >-
+    Hero image depicting icons usually associate with accessibility, Eye, Ear
+    and Person on a wheelchair.
   height: 1212
   width: 3168
 smallDescription: >-
@@ -20,6 +23,9 @@ smallDescription: >-
 image:
   src: >-
     https://www.westpac.com.au/content/dam/public/gel/images/accessible-by-design-hero.png
+  alt: >-
+    Hero image depicting icons usually associate with accessibility, Eye, Ear
+    and Person on a wheelchair.
   height: 1212
   width: 3168
 author: Michael Colibraro
