@@ -40,6 +40,7 @@ export { STGDragonLogo } from './components/logos/stg-dragon-logo.js';
 export { STGLogo } from './components/logos/stg-logo.js';
 export { STGMultibrandLargeLogo } from './components/logos/stg-multibrand-large-logo.js';
 export { STGMultibrandSmallLogo } from './components/logos/stg-multibrand-small-logo.js';
+export { TwitterSymbol } from './components/symbols/twitter-symbol.js';
 export { VisaBlueSymbol } from './components/symbols/visa-blue-symbol.js';
 export { VisaSymbol } from './components/symbols/visa-symbol.js';
 export { VisaWhiteSymbol } from './components/symbols/visa-white-symbol.js';

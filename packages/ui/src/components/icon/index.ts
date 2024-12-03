@@ -221,6 +221,7 @@ export { TransferIcon } from './components/transfer-icon.js';
 export { TransportIcon } from './components/transport-icon.js';
 export { TravelExploreIcon } from './components/travel-explore-icon.js';
 export { TuneIcon } from './components/tune-icon.js';
+export { TwitterIcon } from './components/twitter-icon.js';
 export { UmbrellaIcon } from './components/umbrella-icon.js';
 export { UploadIcon } from './components/upload-icon.js';
 export { VerifiedIcon } from './components/verified-icon.js';
