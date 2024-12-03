@@ -3,7 +3,9 @@ thumbnail: {}
 image:
   src: >-
     https://www.westpac.com.au/content/dam/public/gel/images/banking-display-accounts-hero.png
-  alt: Stylised example image of a list of transactions.
+  alt: >-
+    Stylised example image of a list of banking accounts as they would appear on
+    a mobile phone.
   height: 1466
   width: 2400
 author: Digital Experience
