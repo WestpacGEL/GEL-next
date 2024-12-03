@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
-
-import { Button, Link } from '../index.js';
+import { useState } from 'react';
 
 import { PassCode } from './pass-code.component.js';
 
@@ -21,39 +20,34 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultStory: Story = {
-  args: {
-    length: 4,
-  },
-};
+export const Default = () => <PassCode length={4} onComplete={val => console.log(val)} />;
+
+export const Types = () => (
+  <div className="flex flex-col gap-2">
+    <p>Alphanumeric</p>
+    <PassCode length={4} onComplete={val => console.log(val)} />
+    <p>Numbers only</p>
+    <PassCode type="numbers" length={4} onComplete={val => console.log(val)} />
+    <p>Letters only</p>
+    <PassCode type="letters" length={4} onComplete={val => console.log(val)} />
+  </div>
+);
 
 /**
- * > SMS usage example
+ * > Controlled Input example
  */
-export const SMSStory = () => {
+export const Controlled = () => {
+  const [value, setValue] = useState(Array.from({ length: 4 }).map(() => ''));
+
   return (
-    <div className="flex flex-col items-center">
-      <h3 className="typography-body-5 mb-3 font-bold">Enter SMS code</h3>
-      <p className="mb-4">
-        Send to mobile ending ...XXXX{' '}
-        <Link
-          type="inline"
-          className="cursor-pointer"
-          onPress={() => {
-            console.log('update');
-          }}
-        >
-          update
-        </Link>
-      </p>
-      <PassCode
-        className="mb-3"
-        length={6}
-        onComplete={(passcode: string) => {
-          console.log('passcode', passcode);
-        }}
-      />
-      <Button look="link">Resend code</Button>
-    </div>
+    <PassCode
+      className="mb-3"
+      length={4}
+      value={value}
+      onChange={val => setValue(val)}
+      onComplete={(passcode: string) => {
+        console.log('passcode', passcode);
+      }}
+    />
   );
 };

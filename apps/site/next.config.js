@@ -9,6 +9,12 @@ module.exports = {
         port: '',
         pathname: '/westpac-gel/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'westpac.com.au',
+        port: '',
+        pathname: '/content/dam/public/gel/**',
+      },
     ],
     unoptimized: true,
   },
