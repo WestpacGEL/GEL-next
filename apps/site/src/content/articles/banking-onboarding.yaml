@@ -2,4 +2,7 @@ name: Onboarding
 thumbnail: {}
 image:
   src: "https://www.westpac.com.au/content/dam/public/gel/images/banking-onboarding-hero.png\r"
+  alt: >-
+    Stylised example image of a banking onboarding screen as it would appear on
+    a mobile phone.
 author: Digital Experience
