@@ -2,4 +2,7 @@ name: Service page
 thumbnail: {}
 image:
   src: "https://www.westpac.com.au/content/dam/public/gel/images/website-service-page-hero.png\r"
+  alt: >-
+    Diagram showing all of the modules required on a website serice page
+    template.
 author: Digital Experience
