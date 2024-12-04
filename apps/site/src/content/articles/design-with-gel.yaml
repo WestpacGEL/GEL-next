@@ -6,14 +6,9 @@ description: >-
   and be on the cutting edge of the industry. How do you retain this enthusiasm
   while designing with a design system?
 thumbnail:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1666848508/cl9qmkbwp0003f58i11636bi6.png
-  height: 1212
-  width: 3168
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/design-with-gel-card.png\r"
 smallDescription: Learn how to design digital applications within a large organisation.
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1667030991/cl9tn7jht000lf58i656j7yhf.jpg
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/design-with-gel-hero.jpg\r"
+  alt: People pointing to a transparent whiteboard covered in post it notes.
 author: Mark Marshall
