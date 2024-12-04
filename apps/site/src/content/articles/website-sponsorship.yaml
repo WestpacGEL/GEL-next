@@ -3,4 +3,7 @@ thumbnail: {}
 image:
   src: >
     https://www.westpac.com.au/content/dam/public/gel/images/website-sponsorship-page-hero.png
+  alt: >-
+    Diagram showing all of the modules required on a website sponsorship page
+    template.
 author: Digital Experience
