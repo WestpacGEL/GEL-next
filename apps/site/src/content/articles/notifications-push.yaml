@@ -1,8 +1,6 @@
 name: Push
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695796155/cln1d8uxx001yvd8i50s50fdh.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/notifications-push-hero.png\r"
+  alt: Stylist illustration of a push notification on mobile.
 author: Digital Experience
