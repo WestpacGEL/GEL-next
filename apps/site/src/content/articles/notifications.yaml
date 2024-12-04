@@ -11,9 +11,8 @@ description: >-
   wheel.  
 thumbnail: {}
 image:
-  src: >-
-    https://www.westpac.com.au/content/dam/public/gel/images/notifications-splash-hero.png
-  alt: Stylised example image of a splash page on mobile.
-  height: 1392
-  width: 2400
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/patterns-notifications-hero.png\r"
+  alt: >-
+    Hero image depicting the word Patterns and a woman's face with a quote "I
+    want to know if there's a problem with my accounts.
 author: Digital Experience
