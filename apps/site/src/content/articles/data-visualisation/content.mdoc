@@ -49,14 +49,14 @@ To make our pie chart accessible we have to display the supporting data as shown
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig5.png", height: 1620, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig5.png", alt: "Pie chart that does not provide supporting data, this version of the pie chart is not accessible", height: 1620, width: 1125}
    caption="Fig.5"
    spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig6.png", height: 2070, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig6.png", alt: "Pie chart that does provide supporting data, this version of the pie chart is accessible", height: 2070, width: 1125}
    caption="Fig.6"
    spacing="default" /%}
 {% /layout-area %}
@@ -69,14 +69,14 @@ These charts only use one category and therefore do not require a key. Providing
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig7.png", height: 1380, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig7.png", alt: "A line graph chart displaying only one category, which does not require a key, this chart is accessible", height: 1380, width: 1125}
    caption="Fig.7"
    spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig8.png", height: 1380, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig8.png", alt: "A line bar chart displaying only one category, which does not require a key, this chart is accessible", height: 1380, width: 1125}
    caption="Fig.8"
    spacing="default" /%}
 {% /layout-area %}
@@ -91,27 +91,13 @@ To assist designers with this we’ve created a data visualisation colour palett
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-wbc.png", height: 1012, width: 1276}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-wbc.png", alt: "Data visualisation colour chart for Westpac brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
    spacing="reduced" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-stg.png", height: 1012, width: 1276}
-   spacing="reduced" /%}
-{% /layout-area %}
-{% /layout %}
-
-{% layout layout=[4, 4] %}
-{% layout-area %}
-{% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-bom.png", height: 1012, width: 1276}
-   spacing="reduced" /%}
-{% /layout-area %}
-
-{% layout-area %}
-{% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-bsa.png", height: 1012, width: 1276}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-stg.png", alt: "Data visualisation colour chart for St.George brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
    spacing="reduced" /%}
 {% /layout-area %}
 {% /layout %}
@@ -119,13 +105,27 @@ To assist designers with this we’ve created a data visualisation colour palett
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-rams.png", height: 1012, width: 1276}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-bom.png", alt: "Data visualisation colour chart for Bank of Melbourne brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
+   spacing="reduced" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-bsa.png", alt: "Data visualisation colour chart for BankSA brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
+   spacing="reduced" /%}
+{% /layout-area %}
+{% /layout %}
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-rams.png", alt: "Data visualisation colour chart for RAMS brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
    spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-wbg.png", height: 1012, width: 1276}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-wbg.png", alt: "Data visualisation colour chart for Westpac Group brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
    spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
@@ -137,14 +137,14 @@ To give you some context, the following examples show how these colours are appl
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig9.png", height: 972, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig9.png", alt: "COPY HERE", height: 972, width: 1125}
    caption="Fig.9"
    spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig10.png", alt: "Fig.10", height: 972, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig10.png", alt: "COPY HERE", height: 972, width: 1125}
    caption="Fig.10"
    spacing="default" /%}
 {% /layout-area %}
@@ -155,14 +155,14 @@ The comparison chart in fig.11 shows how a tint is used with its corresponding s
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig11.png", height: 1179, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig11.png", alt: "COPY HERE", height: 1179, width: 1125}
    caption="Fig.11"
    spacing="reduced" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig12.png", height: 1179, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig12.png", alt: "COPY HERE", height: 1179, width: 1125}
    caption="Fig.12"
    spacing="reduced" /%}
 {% /layout-area %}
@@ -171,14 +171,14 @@ The comparison chart in fig.11 shows how a tint is used with its corresponding s
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig13.png", height: 1179, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig13.png", alt: "COPY HERE", height: 1179, width: 1125}
    caption="Fig.13"
    spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig14.png", height: 1179, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig14.png", alt: "COPY HERE", height: 1179, width: 1125}
    caption="Fig.14"
    spacing="default" /%}
 {% /layout-area %}
@@ -191,7 +191,7 @@ We just looked at where to use these colours. Now we’re going to look at when 
 The first 4 colours (A–D) are the main set and should ALWAYS be the first choice. The last 2 colours (E–F) are backup colours and must ONLY be used as a last resort for charts that require more than 4 categories.
 
 {% articleBodyImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig15.png", height: 610, width: 1544}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig15.png", alt: "COPY HERE", height: 610, width: 1544}
    title="Fig.15"
    type="body" /%}
 
@@ -210,14 +210,14 @@ Always use colours from the main set before using colours from the backup set.
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig16.png", height: 1869, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig16.png", alt: "COPY HERE", height: 1869, width: 1125}
    caption="Fig.16"
    spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig17.png", height: 1869, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig17.png", alt: "COPY HERE", height: 1869, width: 1125}
    caption="Fig.17"
    spacing="default" /%}
 {% /layout-area %}
@@ -230,14 +230,14 @@ Avoid using the tint (or transparent) variations on their own. As mentioned earl
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig18.png", height: 2094, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig18.png", alt: "COPY HERE", height: 2094, width: 1125}
    caption="Fig.18"
    spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig19.png", height: 2094, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig19.png", alt: "COPY HERE", height: 2094, width: 1125}
    caption="Fig.19"
    spacing="default" /%}
 {% /layout-area %}
@@ -250,14 +250,14 @@ Only use the tint (and transparent) variations with their corresponding solid co
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig20.png", height: 2121, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig20.png", alt: "COPY HERE", height: 2121, width: 1125}
    caption="Fig.20"
    spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig21.png", height: 2121, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig21.png", alt: "COPY HERE", height: 2121, width: 1125}
    caption="Fig.21"
    spacing="default" /%}
 {% /layout-area %}
@@ -272,14 +272,14 @@ Fig.23 below shows a simple Westpac line graph. This graph uses colour C from th
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig23.png", height: 1557, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig23.png", alt: "COPY HERE", height: 1557, width: 1125}
    caption="Fig.23"
    spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig24.png", height: 1557, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig24.png", alt: "COPY HERE", height: 1557, width: 1125}
    caption="Fig.24"
    spacing="default" /%}
 {% /layout-area %}
@@ -292,27 +292,13 @@ To make life easier we’ve structured the colour tokens to accomodate this scen
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-wbc.png", height: 729, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-wbc.png", alt: "COPY HERE", height: 729, width: 1125}
    spacing="reduced" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-stg.png", height: 729, width: 1125}
-   spacing="reduced" /%}
-{% /layout-area %}
-{% /layout %}
-
-{% layout layout=[4, 4] %}
-{% layout-area %}
-{% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-bom.png", height: 729, width: 1125}
-   spacing="reduced" /%}
-{% /layout-area %}
-
-{% layout-area %}
-{% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-bsa.png", height: 729, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-stg.png", alt: "COPY HERE", height: 729, width: 1125}
    spacing="reduced" /%}
 {% /layout-area %}
 {% /layout %}
@@ -320,13 +306,27 @@ To make life easier we’ve structured the colour tokens to accomodate this scen
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-rams.png", height: 729, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-bom.png", alt: "COPY HERE", height: 729, width: 1125}
+   spacing="reduced" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-bsa.png", alt: "COPY HERE", height: 729, width: 1125}
+   spacing="reduced" /%}
+{% /layout-area %}
+{% /layout %}
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-rams.png", alt: "COPY HERE", height: 729, width: 1125}
    spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-wbg.png", height: 729, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-wbg.png", alt: "COPY HERE", height: 729, width: 1125}
    spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
@@ -336,14 +336,14 @@ If you want to take advantage of this system, using either of these colours (A o
 {% layout layout=[4, 4] %}
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig25.png", height: 1557, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig25.png", alt: "COPY HERE", height: 1557, width: 1125}
    caption="Fig.25"
    spacing="default" /%}
 {% /layout-area %}
 
 {% layout-area %}
 {% articleImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig26.png", height: 1557, width: 1125}
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig26.png", alt: "COPY HERE", height: 1557, width: 1125}
    caption="Fig.26"
    spacing="default" /%}
 {% /layout-area %}
