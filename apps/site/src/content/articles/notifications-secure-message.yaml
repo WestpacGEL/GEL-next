@@ -1,8 +1,6 @@
 name: Secure message
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695796181/cln1d9er6001zvd8i33dt3zti.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/notifications-secure-message-hero.png\r"
+  alt: Stylised illustration of a secure message screen on mobile.
 author: Digital Experience
