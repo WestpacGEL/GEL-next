@@ -8,6 +8,7 @@ description: >-
 thumbnail:
   src: >-
     https://www.westpac.com.au/content/dam/public/gel/images/data-visualisation-card.png
+  alt: Illustration of a pie chart
   height: 1212
   width: 3168
 smallDescription: >-
