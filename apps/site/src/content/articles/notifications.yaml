@@ -5,9 +5,10 @@ description: >-
    They are an integral part of the Banks communication strategy and are used to inform 
    our customers about various events, updates or actions that require their attention. 
    They can be one way, where we are informing the customer of something, or two-way, 
-   where we ask the customer to take an action.  Through analysis and research, we’ve created 
-   notifications conventions that we apply to our projects to achieve consistency across our digital channels. 
-   Projects can replicate these solutions, so there’s no need to reinvent the wheel.  
+   where we ask the customer to take an action.  Through analysis and research, we’ve created notifications conventions that we apply to our projects to achieve consistency across our digital channels. 
+
+  Projects can replicate these solutions, so there’s no need to reinvent the
+  wheel.  
 thumbnail: {}
 image:
   src: >-
