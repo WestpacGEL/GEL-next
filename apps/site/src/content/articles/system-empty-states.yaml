@@ -1,9 +1,7 @@
 name: Empty states
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1721090165/Empty_states_pattern_jfonpj.png
+  src: >
+    https://www.westpac.com.au/content/dam/public/gel/images/staff-system-empty-states-hero.png
   alt: Simplified image of empty states pattern.
-  height: 1464
-  width: 2400
 author: Business borrow team
