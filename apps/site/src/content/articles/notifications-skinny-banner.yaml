@@ -1,8 +1,6 @@
 name: Skinny banner
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695796290/cln1dbqzb0022vd8i1msigjiu.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/notifications-skinny-banner-hero.png\r"
+  alt: Stylist illustration of a skinny banner message on mobile.
 author: Digital Experience
