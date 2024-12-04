@@ -6,16 +6,12 @@ description: >-
   the customer experience. Using the GEL Design System also increases the
   consistency of our brand experiences across the entire brand ecosystem.
 thumbnail:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1667099621/cl9us2ju9000wf58ie0m958i4.png
-  height: 1212
-  width: 3168
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/gel-design-approach-card.png\r"
+  alt: Illustration of a target with an arrow in the bullseye
 smallDescription: >-
   Adopt the design system with confidence. We think from big picture to minute
   detail.
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1667099383/cl9urxfbl000vf58i6q0d9q45.jpg
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/gel-design-approach-hero.jpg\r"
+  alt: Photograph of a dart board with three arrows in the bullseye.
 author: Marita Purins
