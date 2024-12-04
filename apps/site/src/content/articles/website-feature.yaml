@@ -2,4 +2,7 @@ name: Feature page
 thumbnail: {}
 image:
   src: "https://www.westpac.com.au/content/dam/public/gel/images/website-feature-page-hero.png\r"
+  alt: >-
+    Diagram showing all of the modules required on a website feature page
+    template.
 author: Digital Experience
