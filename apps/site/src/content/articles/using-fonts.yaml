@@ -6,17 +6,14 @@ description: >-
   article explains the different types of fonts we need, where to get these
   fonts and how to use them in your websites and apps.
 thumbnail:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1687413009/clj6q4xmg0024bn8i4qjpblt2.png
-  height: 1212
-  width: 3168
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/using-fonts-card.png\r"
+  alt: Illustration of three different letter As of different fonts.
 smallDescription: >-
   Using fonts today is fairly straight forward, however there are some
   requirements that should be considered before jumping in. This article talks
   about where to get them, how to use them and everything in-between.
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1666932237/cl9s0evvm000ef58iet3e8acb.jpg
-  height: 1080
-  width: 1920
+  src: >
+    https://www.westpac.com.au/content/dam/public/gel/images/using-fonts-hero.jpg
+  alt: Photograph of old-fashioned printing blocks.
 author: Justin Spencer
