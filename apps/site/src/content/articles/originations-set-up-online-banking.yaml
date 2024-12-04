@@ -1,8 +1,6 @@
 name: Set up Online Banking
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695953272/cln3ysf15002jvd8i9yh335uk.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/originations-set-up-online-banking-hero.png\r"
+  alt: Stylised illustration of the setup online banking pattern.
 author: Digital Experience
