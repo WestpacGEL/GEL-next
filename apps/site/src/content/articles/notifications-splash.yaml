@@ -1,8 +1,7 @@
 name: Splash
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695796234/cln1dajis0021vd8i29um4dip.png
-  height: 1080
-  width: 1920
+  src: >
+    https://www.westpac.com.au/content/dam/public/gel/images/notifications-splash-hero.png
+  alt: Stylised illustration of a splash notification screen on mobile.
 author: Digital Experience
