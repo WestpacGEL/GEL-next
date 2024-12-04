@@ -1,7 +1,5 @@
 name: Price change page
-author: Digital Experience
+thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1696384015/clnb38qev003ovd8ieiro5kby.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/website-price-change-page-hero.png\r"
+author: Digital Experience
