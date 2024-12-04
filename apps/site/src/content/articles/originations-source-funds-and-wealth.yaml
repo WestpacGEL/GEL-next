@@ -1,8 +1,6 @@
 name: Source of funds & wealth
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695685237/Source_of_funds_and_wealth_dknao2
-  height: 1464
-  width: 2400
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/originations-source-wealth-funds-hero.png\r"
+  alt: Stylised illustration of the source of wealth and funds pattern.
 author: Borrow team
