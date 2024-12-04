@@ -8,13 +8,16 @@ description: >-
   information about embedding, sizing and styling icons please refer to the
   Design System Iconography.
 thumbnail:
-  src: "https://www.westpac.com.au/content/dam/public/gel/images/iconography-hero.png\r"
-  alt: Illustration of a flower icon
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/iconography-card.png
+  alt: Illustration of flower icon
+  height: 1212
+  width: 3168
 smallDescription: Use our global visual language to communicate and engage with customers.
 image:
   src: >-
-    https://www.westpac.com.au/content/dam/public/gel/images/iconography-card.png
-  alt: Illustration of an upload icon
+    https://www.westpac.com.au/content/dam/public/gel/images/iconography-hero.png
+  alt: Illustration of upload icon
   height: 1080
   width: 1920
 author: Justin Spencer
