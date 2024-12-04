@@ -2,4 +2,7 @@ name: Price change page
 thumbnail: {}
 image:
   src: "https://www.westpac.com.au/content/dam/public/gel/images/website-price-change-page-hero.png\r"
+  alt: >-
+    Diagram showing all of the modules required on a website price change page
+    template.
 author: Digital Experience
