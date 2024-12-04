@@ -7,19 +7,14 @@ description: >-
   sizes and resolutions. We can’t keep creating custom solutions for every
   device on the market. What do we do?
 thumbnail:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1666755403/cl9p34rfz0005u48ig6ub5p67.png
-  height: 1212
-  width: 3168
-smallDescription: >-
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/grid-card.png\r"
+  alt: Stylist illustration of grid columns
+smallDescription: >
   Design flexible, robust layouts for any device, screen size and operating
   system.
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1716958040/Breakpoints_xcjnof.png
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/grid-hero.png\r"
   alt: >-
-    Image showing the 6 breakpoints and where they are likely to be applied ie.
-    Phone, Tablet, Laptop etc.
-  height: 1070
-  width: 2718
+    Illustration showing the 6 breakpoints and where they are likely to be
+    applied ie. Phone, Tablet, Laptop etc.
 author: Justin Spencer
