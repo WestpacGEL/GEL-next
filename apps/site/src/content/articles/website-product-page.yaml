@@ -2,4 +2,7 @@ name: Product page
 thumbnail: {}
 image:
   src: "https://www.westpac.com.au/content/dam/public/gel/images/website-product-page-hero.png\r"
+  alt: >-
+    Diagram showing all of the modules required on a website product page
+    template.
 author: Digital Experience
