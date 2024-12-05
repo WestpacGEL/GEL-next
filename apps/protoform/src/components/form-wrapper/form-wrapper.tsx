@@ -17,7 +17,7 @@ export function FormWrapper({
     <div>
       <BackButton>Back to something</BackButton>
       <CustomHeading>Quick Contact</CustomHeading>
-      <Form id={formId} spacing="large" className="p-0" onSubmit={handleSubmit}>
+      <Form id={formId} spacing="large" className="p-0 z-[10]" onSubmit={handleSubmit}>
         {children}
       </Form>
       <Cta secondary="Back" tertiary="Cancel">

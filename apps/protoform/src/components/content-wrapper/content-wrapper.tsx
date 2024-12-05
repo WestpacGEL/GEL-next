@@ -30,17 +30,17 @@ export function ContentWrapper({ children }: { children: ReactNode }) {
   return (
     <section
       className={clsx(
-        'min-h-[100vh] before:pointer-events-none before:fixed xl:before:static before:inset-x-auto before:top-[66px] before:z-10 before:block before:h-1 before:bg-gradient-to-b before:from-black/[.2] before:from-0% before:opacity-0 before:transition-[opacity] before:duration-200 before:will-change-[opacity]',
+        'min-h-[100vh] before:pointer-events-none before:fixed before:inset-x-auto before:top-[66px] before:block before:h-1 before:bg-gradient-to-b before:from-black/[.2] before:from-0% before:opacity-0 before:transition-[opacity] before:duration-200 before:will-change-[opacity]',
         {
           'md:mr-[300px] before:right-[300px]': open,
-          'md:before:opacity-100': scrolled,
+          'md:before:opacity-0': scrolled,
           'before:left-0 ': scrolled && open,
         },
       )}
       id="content-wrapper"
     >
       <GridContainer>
-        <Grid>
+        <Grid className="h-screen">
           <GridItem span={{ initial: 12, sm: 8, md: 8, lg: 6 }} start={{ initial: 1, sm: 3, md: 3, lg: 4 }}>
             <div className="md:h-10 overscroll-x-none"></div>
             {children}
