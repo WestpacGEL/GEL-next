@@ -8,3 +8,4 @@ export { MicrosoftLogo } from './microsoft-logo';
 export { MyobLogo } from './myob-logo';
 export { ReactLogo } from './react-logo';
 export { ShopifyLogo } from './shopify-logo';
+export { TwitterLogo } from './twitter-logo';
