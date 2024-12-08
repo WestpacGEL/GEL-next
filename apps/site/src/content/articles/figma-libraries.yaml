@@ -6,15 +6,14 @@ description: >-
   digital touchpoints.
 thumbnail:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1663227299/cl82ql8m4000yam8ifp387nfc.png
+    https://www.westpac.com.au/content/dam/public/gel/images/figma-libraries-hero.png
+  alt: Illustration of a painters pallet.
   height: 1212
   width: 3168
 smallDescription: >-
   Design using cloud based symbols. All the assets you need to create interfaces
   with the design system.
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1663227299/cl82ql8m2000xam8iaw7o4ols.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/figma-libraries-hero.png\r"
+  alt: Illustration of a painters pallet.
 author: Kate Macdonald

@@ -1,8 +1,6 @@
 name: Confirm profile
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695685196/clmzj6mhn001kvd8ifngh2qks.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/originations-confirm-profile-hero.png\r"
+  alt: Stylised illustration of the confirm profile pattern.
 author: Digital Experience

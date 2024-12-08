@@ -1,8 +1,8 @@
-name: Things you should kn -
+name: Things you should know
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695782900/cln15crdr001vvd8igdiy7fcz.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/banking-tysk-hero.png\r"
+  alt: >-
+    Stylised example image of form fields and Things you should know text as
+    they would appear on a mobile phone.
 author: Digital Experience

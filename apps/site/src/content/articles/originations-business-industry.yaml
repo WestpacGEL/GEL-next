@@ -2,7 +2,8 @@ name: Business industry
 thumbnail: {}
 image:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695685221/clmzj75p4001lvd8ih9cfa1hs.png
-  height: 1080
-  width: 1920
+    https://www.westpac.com.au/content/dam/public/gel/images/originations-business-industry-hero.png
+  alt: Stylised illustration of the business industry pattern
+  height: 1466
+  width: 2400
 author: Digital Experience

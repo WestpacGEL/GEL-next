@@ -10,16 +10,15 @@ description: >-
   and consistent designs that contribute to a more cohesive customer experience
   across our entire digital channel.
 thumbnail:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695970092/cln48sxiz002qvd8iblpm5zvt.png
-  height: 1212
-  width: 3168
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/patterns-card.png\r"
+  alt: Illustration showing coloured dots in a grid
 smallDescription: >-
   A library of tried and tested patterns to help you quickly create more
   consistent digital experiences.
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695697952/clmzqrzyz001nvd8i064s69ad.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/patterns-hero.png\r"
+  alt: >-
+    An image displaying different patterned panels and the words, Pattern - a
+    regular and intelligible form or sequence discernible in the way in which
+    something happens or is done.
 author: Digital Experience

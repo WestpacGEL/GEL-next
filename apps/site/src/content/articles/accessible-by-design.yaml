@@ -10,7 +10,10 @@ description: >-
   lifetime.”
 thumbnail:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1666333819/cl9i44qb7000wtc8ihnxv08ex.png
+    https://www.westpac.com.au/content/dam/public/gel/images/accessible-by-design-hero.png
+  alt: >-
+    Hero image depicting icons usually associate with accessibility, Eye, Ear
+    and Person on a wheelchair.
   height: 1212
   width: 3168
 smallDescription: >-
@@ -19,7 +22,10 @@ smallDescription: >-
   of our dna.
 image:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1666333853/cl9i45goa000xtc8i8wgx5cu2.png
-  height: 1080
-  width: 1920
+    https://www.westpac.com.au/content/dam/public/gel/images/accessible-by-design-hero.png
+  alt: >-
+    Hero image depicting icons usually associate with accessibility, Eye, Ear
+    and Person on a wheelchair.
+  height: 1212
+  width: 3168
 author: Michael Colibraro

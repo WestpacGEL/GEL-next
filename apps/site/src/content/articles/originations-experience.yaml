@@ -9,8 +9,8 @@ description: >-
   replicate what works, so there’s no need to reinvent the wheel every time.
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695945747/cln3ub41e002cvd8idz6ld0k7.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/patterns-originations-hero.png\r"
+  alt: >-
+    Hero image depicting the word Patterns and a woman's face with a quote "I
+    don't want to answer the same questions."
 author: Digital Experience

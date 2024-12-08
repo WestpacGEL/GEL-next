@@ -5,7 +5,8 @@ description: >-
   accessible, and serve a purpose without following some guiding principles.
 thumbnail:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1687413365/clj6qckw70025bn8ibcno3r5j.png
+    https://www.westpac.com.au/content/dam/public/gel/images/motion-principles-card.png
+  alt: Simple illustration of a Newton's Cradle desk toy
   height: 1212
   width: 3168
 smallDescription: >-
@@ -13,7 +14,8 @@ smallDescription: >-
   and serve a purpose.
 image:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1687412203/clj6pnoev0022bn8ibs0s0wk6.png
-  height: 1080
-  width: 1920
+    https://www.westpac.com.au/content/dam/public/gel/images/motion-principles-hero.png
+  alt: Simple illustration of a Newton's Cradle desk toy
+  height: 1212
+  width: 3168
 author: Mark Marshall

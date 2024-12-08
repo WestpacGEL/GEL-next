@@ -11,7 +11,10 @@ description: >-
 thumbnail: {}
 image:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695868279/cln2k6p0p0025vd8iauie3l0o.png
-  height: 1080
-  width: 1920
+    https://www.westpac.com.au/content/dam/public/gel/images/patterns-banking-hero.png
+  alt: >-
+    Hero image depicting the word Patterns and a mans face with a quote "I just
+    want to get it done so I can get on with my day."
+  height: 1028
+  width: 2400
 author: Digital Experience

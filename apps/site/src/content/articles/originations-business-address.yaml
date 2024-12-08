@@ -1,8 +1,6 @@
 name: Business address
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695685237/clmzj7hwq001mvd8iairl9yoy.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/originations-business-address-hero.png\r"
+  alt: Stylised illustration of the business address pattern
 author: Digital Experience

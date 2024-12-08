@@ -1,8 +1,6 @@
 name: Celebration moment
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695948709/cln3w2lu2002dvd8ighgxcxez.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/originations-celebration-moment-hero.png\r"
+  alt: Stylised illustration of the celebration moment pattern.
 author: Digital Experience

@@ -9,13 +9,15 @@ description: >-
   Design System Iconography.
 thumbnail:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1663138229/cl819k5u60009am8i687f9lc2.png
+    https://www.westpac.com.au/content/dam/public/gel/images/iconography-card.png
+  alt: Illustration of flower icon
   height: 1212
   width: 3168
 smallDescription: Use our global visual language to communicate and engage with customers.
 image:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1690447987/clkkx311z00034g8i2jjuhsdh.png
+    https://www.westpac.com.au/content/dam/public/gel/images/iconography-hero.png
+  alt: Illustration of upload icon
   height: 1080
   width: 1920
 author: Justin Spencer

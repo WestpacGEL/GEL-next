@@ -4,14 +4,10 @@ description: >-
   Design system change has wide impact, whether it’s a brand change, a component
   or a pattern change so collaboration & early engagement are key.
 thumbnail:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1666855413/cl9qqobm6000cf58idusod3xr.png
-  height: 1212
-  width: 3168
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/collaborate-for-change-card.png\r"
+  alt: Stylised illustration of a bike chain.
 smallDescription: Considered change made collaboratively achieves the best results.
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1663227077/cl82qghhn000tam8ia8c6gxjs.jpg
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/collaborate-for-change-hero.jpg\r"
+  alt: Image of a child pushing another child down the road on a billycart.
 author: Marita Purins
