@@ -29,7 +29,7 @@ export default async function Homepage() {
   );
 
   return (
-    <main className="font-gel-sans text-gel-text pb-8">
+    <main className="pb-8 font-gel-sans text-gel-text">
       <Hero />
       <ActionBar />
       <HomePageContent articleRows={articleRows} />

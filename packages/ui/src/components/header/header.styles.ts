@@ -11,7 +11,7 @@ export const styles = tv(
       largeLogo: 'max-sm:hidden',
       leftContent: 'flex items-center',
       leftButton:
-        'my-1 border-r border-[#E8E8ED] p-0 rounded-none max-sm:-ml-2 max-sm:mr-2 max-sm:h-7 max-sm:min-w-[2.625rem] sm:-ml-4 sm:mr-3 sm:h-[3.3125rem] sm:min-w-[3.75rem]',
+        'my-1 rounded-none border-r border-[#E8E8ED] p-0 max-sm:-ml-2 max-sm:mr-2 max-sm:h-7 max-sm:min-w-[2.625rem] sm:-ml-4 sm:mr-3 sm:h-[3.3125rem] sm:min-w-[3.75rem]',
       rightContent: 'ml-auto flex items-center',
     },
     variants: {

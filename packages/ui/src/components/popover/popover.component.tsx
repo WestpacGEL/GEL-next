@@ -28,6 +28,7 @@ export function Popover({
   linkStyling = false,
   size = 'medium',
   icon,
+  portal = false,
 }: PopoverProps) {
   const state = useOverlayTriggerState({});
   const panelId = useId();
@@ -56,6 +57,7 @@ export function Popover({
   useLayoutEffect(() => {
     if (open) state.setOpen(true);
   }, [open, state]);
+
   return (
     <div className={styles.base({ className })}>
       <Button
@@ -73,6 +75,7 @@ export function Popover({
       </Button>
       {state.isOpen && (
         <Panel
+          portal={portal}
           placement={placement}
           heading={heading ? heading : ''}
           headingTag={headingTag}

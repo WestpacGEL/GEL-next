@@ -16,6 +16,7 @@ export const getPopoverPosition = (
   const trigger = triggerRef.current.getBoundingClientRect();
   const popover = popoverRef.current.getBoundingClientRect();
   const arrow = arrowRef.current.getBoundingClientRect();
+
   const remSize =
     typeof window !== 'undefined'
       ? parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize)

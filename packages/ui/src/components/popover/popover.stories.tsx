@@ -163,3 +163,79 @@ export const PopoverPlacement = () => (
     </div>
   </>
 );
+
+/**
+ * > Popover trigger as inline link appearance
+ */
+export const WhenThereIsALongScrollWithPortal = () => (
+  <>
+    <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
+    {[...Array(20)].map((_, index) => (
+      <p key={index}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis provident, porro dolor error nemo expedita
+        non mollitia est fugiat officiis deleniti harum dignissimos doloribus accusantium maxime optio libero. Ut,
+        laboriosam!
+      </p>
+    ))}
+    <p className="mb-4">
+      {' '}
+      This is an example of using a popover that looks like an inline link.{' '}
+      <Popover portal linkStyling heading="Heading" placement="top" content={popoverContent} size="small">
+        Click here portal top.
+      </Popover>{' '}
+      To test popover.
+    </p>
+    <p className="mb-4">
+      {' '}
+      This is an example of using a popover that looks like an inline link.{' '}
+      <Popover portal linkStyling heading="Heading" placement="bottom" content={popoverContent} size="small">
+        Click here portal bottom.
+      </Popover>{' '}
+      To test popover.
+    </p>
+    {[...Array(10)].map((_, index) => (
+      <p key={index}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis provident, porro dolor error nemo expedita
+        non mollitia est fugiat officiis deleniti harum dignissimos doloribus accusantium maxime optio libero. Ut,
+        laboriosam!
+      </p>
+    ))}
+    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <Field
+      label="Example with field."
+      hintMessage={
+        <p>
+          {' '}
+          This is an example of using a popover that looks like an inline link.{' '}
+          <Popover linkStyling heading="Heading" content={popoverContent} size="small">
+            Click here. bottom placement
+          </Popover>
+        </p>
+      }
+    >
+      <Input />
+    </Field>
+    {[...Array(10)].map((_, index) => (
+      <p key={index}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis provident, porro dolor error nemo expedita
+        non mollitia est fugiat officiis deleniti harum dignissimos doloribus accusantium maxime optio libero. Ut,
+        laboriosam!
+      </p>
+    ))}
+    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <Field
+      label="Example with field."
+      hintMessage={
+        <p>
+          {' '}
+          This is an example of using a popover that looks like an inline link.{' '}
+          <Popover placement="top" linkStyling heading="Heading" content={popoverContent} size="small">
+            Click here. top
+          </Popover>
+        </p>
+      }
+    >
+      <Input />
+    </Field>
+  </>
+);
