@@ -25,7 +25,7 @@ describe('List', () => {
       </List>,
     );
     expect(getByTestId('bullet')).toHaveClass(
-      'absolute block border border-hero bg-hero after:border-hero left-[0.25rem] top-1 h-[0.5rem] w-[0.5rem] rounded-full',
+      'absolute block border border-hero bg-hero after:border-hero left-[0.25rem] top-1 size-[0.5rem] rounded-full',
     );
   });
 
@@ -36,7 +36,7 @@ describe('List', () => {
       </List>,
     );
     expect(getByTestId('link')).toHaveClass(
-      'absolute block border border-link after:border-link left-[0.125rem] top-1 h-[0.5rem] w-[0.5rem] rotate-45 border-b-0 border-l-0 border-r-[0.125rem] border-t-[0.125rem] bg-[transparent]',
+      'absolute block border border-link after:border-link left-[0.125rem] top-1 size-[0.5rem] rotate-45 border-b-0 border-l-0 border-r-[0.125rem] border-t-[0.125rem] bg-[transparent]',
     );
   });
 

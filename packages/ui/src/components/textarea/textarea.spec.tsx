@@ -12,7 +12,7 @@ describe('Textarea', () => {
     const style = styles({ size: 'medium' });
     // TODO: use some variants for test
     expect(style).toBe(
-      'form-control w-full read-only:form-control-disabled disabled:form-control-disabled form-control-medium min-h-[3.375rem] border-borderDark',
+      'form-control w-full read-only:form-control-disabled disabled:form-control-disabled form-control-medium min-h-9 border-borderDark',
     );
   });
 });
