@@ -16,7 +16,7 @@ export function WBCBankCardPictogram({
 }: PictogramProps) {
   return (
     <Pictogram
-      className={clsx('h-[200px] w-[200px]', className)}
+      className={clsx('size-[200px]', className)}
       aria-label={ariaLabel}
       copyrightYear={copyrightYear}
       viewBoxHeight={viewBoxHeight}

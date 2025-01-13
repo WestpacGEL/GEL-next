@@ -244,7 +244,7 @@ export const ForeignCurrencyPayeeList: Story = {
                   before={
                     <FlexiCellAdornment>
                       <svg
-                        className="h-4 w-4"
+                        className="size-4"
                         viewBox="0 0 640 480"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -278,7 +278,7 @@ export const ForeignCurrencyPayeeList: Story = {
                   before={
                     <FlexiCellAdornment>
                       <svg
-                        className="h-4 w-4"
+                        className="size-4"
                         viewBox="0 0 640 480"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -324,7 +324,7 @@ export const ListItems: Story = {
           before={
             <FlexiCellAdornment>
               <svg
-                className="h-4 w-4"
+                className="size-4"
                 viewBox="0 0 640 480"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -346,7 +346,7 @@ export const ListItems: Story = {
           before={
             <FlexiCellAdornment>
               <svg
-                className="max-md:h-4 max-md:w-4 md:h-6 md:w-6"
+                className="max-md:size-4 md:size-6"
                 viewBox="0 0 640 480"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -455,11 +455,11 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="h-5 w-5 bg-muted text-muted">
-                        <BpayIcon look="filled" className="h-3 w-3 rounded-full bg-muted text-xs text-white" />
+                      <FlexiCellCircle className="size-5 bg-muted text-muted">
+                        <BpayIcon look="filled" className="size-3 rounded-full bg-muted text-xs text-white" />
                       </FlexiCellCircle>
                     ) : (
-                      <FlexiCellCircle className="h-5 w-5 bg-muted text-white">{initials}</FlexiCellCircle>
+                      <FlexiCellCircle className="size-5 bg-muted text-white">{initials}</FlexiCellCircle>
                     )
                   }
                   after={
@@ -481,11 +481,11 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="h-5 w-5 bg-muted text-muted">
-                        <BpayIcon look="filled" className="h-3 w-3 rounded-full bg-muted text-xs text-white" />
+                      <FlexiCellCircle className="size-5 bg-muted text-muted">
+                        <BpayIcon look="filled" className="size-3 rounded-full bg-muted text-xs text-white" />
                       </FlexiCellCircle>
                     ) : (
-                      <FlexiCellCircle className="h-5 w-5 bg-muted text-white">{initials}</FlexiCellCircle>
+                      <FlexiCellCircle className="size-5 bg-muted text-white">{initials}</FlexiCellCircle>
                     )
                   }
                   after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
@@ -531,7 +531,7 @@ export const StatusTiles = () => {
         }
         after={
           <>
-            <Badge className="h-fit w-fit" color="success">
+            <Badge className="size-fit" color="success">
               Completed
             </Badge>
             <TickIcon color="success" />
@@ -544,7 +544,7 @@ export const StatusTiles = () => {
           {title}
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>
-        <Badge className="h-fit w-fit" color="faint" soft>
+        <Badge className="size-fit" color="faint" soft>
           Est. Time or Steps x of y
         </Badge>
       </FlexiCell>
@@ -559,7 +559,7 @@ export const StatusTiles = () => {
         }
         after={
           <>
-            <Badge className="h-fit w-fit" color="faint" soft>
+            <Badge className="size-fit" color="faint" soft>
               In-progress
             </Badge>
             <ArrowRightIcon color="primary" />
@@ -572,7 +572,7 @@ export const StatusTiles = () => {
           {title}
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>
-        <Badge className="h-fit w-fit" color="faint" soft>
+        <Badge className="size-fit" color="faint" soft>
           Est. Time or Steps x of y
         </Badge>
       </FlexiCell>
@@ -587,7 +587,7 @@ export const StatusTiles = () => {
         }
         after={
           <>
-            <Badge className="h-fit w-fit" color="faint" soft>
+            <Badge className="size-fit" color="faint" soft>
               In-progress
             </Badge>
             <ArrowRightIcon color="primary" />
@@ -601,7 +601,7 @@ export const StatusTiles = () => {
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>
         <ErrorMessage message="Error message" className="!mb-0" />
-        <Badge className="h-fit w-fit" color="faint" soft>
+        <Badge className="size-fit" color="faint" soft>
           Est. Time or Steps x of y
         </Badge>
       </FlexiCell>
@@ -616,7 +616,7 @@ export const StatusTiles = () => {
         }
         after={
           <>
-            <Badge className="h-fit w-fit" color="faint" soft>
+            <Badge className="size-fit" color="faint" soft>
               Locked
             </Badge>
             <PadlockIcon size="small" look="outlined" color="borderDark" />
@@ -629,7 +629,7 @@ export const StatusTiles = () => {
           {title}
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>
-        <Badge className="h-fit w-fit" color="faint" soft>
+        <Badge className="size-fit" color="faint" soft>
           Est. Time or Steps x of y
         </Badge>
       </FlexiCell>

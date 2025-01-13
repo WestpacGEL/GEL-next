@@ -132,7 +132,6 @@ export const StackingOrderWithPortal = () => (
   </>
 );
 
-
 /**
  * > Auto adjustment NOTE: Does not display correctly in story view please check individual story
  */

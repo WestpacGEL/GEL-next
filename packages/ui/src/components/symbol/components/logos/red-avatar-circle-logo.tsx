@@ -13,7 +13,7 @@ export const RedAvatarCircleLogo = ({
   ...props
 }: SymbolProps) => (
   <Symbol
-    className={clsx('h-[64px] w-[64px]', className)}
+    className={clsx('size-[64px]', className)}
     aria-label={ariaLabel}
     copyrightYear={copyrightYear}
     viewBoxWidth={viewBoxWidth}
