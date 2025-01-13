@@ -101,6 +101,39 @@ export const AsInlineLinkAppearance = () => (
 );
 
 /**
+ * > Popover trigger as inline link appearance
+ */
+export const StackingOrderWithPortal = () => (
+  <>
+    <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
+    <p className="mb-4">
+      {' '}
+      This is an example of using a popover that looks like an inline link.{' '}
+      <Popover portal linkStyling heading="Heading" content={popoverContent} size="small">
+        Click here.
+      </Popover>{' '}
+      To test popover.
+    </p>
+    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <Field
+      label="Example with field."
+      hintMessage={
+        <p>
+          {' '}
+          This is an example of using a popover that looks like an inline link.{' '}
+          <Popover portal linkStyling heading="Heading" content={popoverContent} size="small">
+            Click here.
+          </Popover>
+        </p>
+      }
+    >
+      <Input />
+    </Field>
+  </>
+);
+
+
+/**
  * > Auto adjustment NOTE: Does not display correctly in story view please check individual story
  */
 export const AutoAdjustment = () => (
