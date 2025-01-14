@@ -21,7 +21,7 @@ export const styles = tv({
       },
       unordered: {
         base: '',
-        li: 'pl-[1.1875rem] leading-[2] before:absolute before:left-[0.25rem] before:top-[0.7rem] before:block before:h-[0.5rem] before:w-[0.5rem] before:rounded-full last:mb-0',
+        li: 'pl-[1.1875rem] leading-[2] before:absolute before:left-[0.25rem] before:top-[0.7rem] before:block before:size-[0.5rem] before:rounded-full last:mb-0',
       },
     },
     fontFamily: {

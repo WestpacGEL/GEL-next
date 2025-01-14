@@ -86,7 +86,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
             })}
           >
             <button
-              className="absolute right-1 top-1 block h-6 w-6 p-1 outline-focus lg:hidden"
+              className="absolute right-1 top-1 block size-6 p-1 outline-focus lg:hidden"
               onClick={() => setOpen(false)}
               ref={focusRef}
             >

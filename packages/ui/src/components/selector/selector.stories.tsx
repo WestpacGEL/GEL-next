@@ -243,7 +243,7 @@ export const Pictogram = () => {
         {
           before: (
             <SelectorAdornment align="top">
-              <PizzaPictogram className="h-5 w-5" />
+              <PizzaPictogram className="size-5" />
             </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_A,
@@ -259,7 +259,7 @@ export const Pictogram = () => {
         {
           before: (
             <SelectorAdornment align="top">
-              <ChatPictogram className="h-5 w-5" />
+              <ChatPictogram className="size-5" />
             </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_B,
@@ -275,7 +275,7 @@ export const Pictogram = () => {
         {
           before: (
             <SelectorAdornment align="top">
-              <BusPictogram className="h-5 w-5" />
+              <BusPictogram className="size-5" />
             </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_C,
@@ -303,7 +303,7 @@ export const PictogramSizes = () => {
         {
           before: (
             <SelectorAdornment align="top">
-              <PizzaPictogram className="h-15 w-15" />
+              <PizzaPictogram className="size-15" />
             </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_A,
@@ -319,7 +319,7 @@ export const PictogramSizes = () => {
         {
           before: (
             <SelectorAdornment align="top">
-              <ChatPictogram className="h-10 w-10" />
+              <ChatPictogram className="size-10" />
             </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_B,
@@ -335,7 +335,7 @@ export const PictogramSizes = () => {
         {
           before: (
             <SelectorAdornment align="top">
-              <BusPictogram className="h-5 w-5" />
+              <BusPictogram className="size-5" />
             </SelectorAdornment>
           ),
           label: HERE_IS_A_LABEL_C,

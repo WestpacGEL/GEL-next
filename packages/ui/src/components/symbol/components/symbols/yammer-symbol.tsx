@@ -13,7 +13,7 @@ export const YammerSymbol = ({
   ...props
 }: SymbolProps) => (
   <Symbol
-    className={clsx('h-[32px] w-[32px]', className)}
+    className={clsx('size-[32px]', className)}
     aria-label={ariaLabel}
     copyrightYear={copyrightYear}
     viewBoxWidth={viewBoxWidth}

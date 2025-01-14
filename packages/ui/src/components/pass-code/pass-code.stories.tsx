@@ -15,7 +15,6 @@ const meta: Meta<typeof PassCode> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 /**
  * > Default usage example
