@@ -19,6 +19,10 @@ export type PanelProps = {
    */
   placement?: 'top' | 'bottom';
   /**
+   * Uses portal to render popover
+   */
+  portal?: boolean | Element;
+  /**
    * Overlay trigger state
    */
   state: OverlayTriggerState;

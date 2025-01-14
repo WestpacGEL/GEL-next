@@ -1,58 +1,36 @@
-import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { FocusScope } from 'react-aria';
+import { createPortal } from 'react-dom';
 
 import { Button } from '../../../button/index.js';
 import { CloseIcon } from '../../../icon/index.js';
-import { getPopoverPosition } from '../../popover.utils.js';
 
+import { usePanel } from './panel.hook.js';
 import { styles as panelStyles } from './panel.styles.js';
-import { type PanelProps, Position } from './panel.types.js';
+import { type PanelProps } from './panel.types.js';
 
-/**
- * @private
- */
-export function Panel({ state, heading, headingTag: Tag = 'h1', content, placement, id, triggerRef }: PanelProps) {
+export function BasePanel({
+  state,
+  heading,
+  headingTag: Tag = 'h1',
+  content,
+  placement = 'bottom',
+  id,
+  triggerRef,
+  portal,
+}: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
-  const remSize = useMemo(() => {
-    if (typeof window !== 'undefined') {
-      return parseInt(window.getComputedStyle(document.getElementsByTagName('html')[0]).fontSize);
-    }
-    return 1;
-  }, []);
+  const { popoverPosition, arrowPosition } = usePanel({ state, placement, triggerRef, portal });
 
-  const [position, setPosition] = useState<Position>({
-    placement: 'top',
-    offset: 'left',
-    panelPosition: triggerRef.current ? triggerRef.current.offsetWidth / 2 / remSize : 0,
-    arrowPosition: popoverRef.current ? popoverRef.current.getBoundingClientRect().width / 2 / remSize : 0,
-  });
-
-  useLayoutEffect(() => {
-    setPosition(getPopoverPosition(triggerRef, popoverRef, arrowRef, placement));
-  }, [placement, remSize, state.isOpen, triggerRef]);
-
-  const getPopoverClass = useCallback(() => {
-    return {
-      [position.offset as string]:
-        position.offset === 'left' ? `${position.panelPosition}rem` : `-${position.panelPosition}rem`,
-      transform: position.offset === 'left' ? 'translateX(-50%)' : 'none',
-    };
-  }, [position]);
-
-  const getArrowClass = useCallback(() => {
-    return {
-      [!position.offset || position.offset === 'left' ? 'left' : 'right']: `${position.arrowPosition}rem`,
-    };
-  }, [position]);
-
-  const styles = panelStyles({ placement: position.placement });
-
+  const styles = panelStyles({ placement });
   return (
-    <FocusScope restoreFocus>
-      <div className={styles.popover()} style={getPopoverClass()} id={id} ref={popoverRef}>
+    <FocusScope contain autoFocus restoreFocus>
+      <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef}>
         <div className={styles.content()}>
-          <Tag className={styles.heading()}>{heading}</Tag>
+          <Tag tabIndex={0} className={styles.heading()}>
+            {heading}
+          </Tag>
           <div className={styles.body()}>{content}</div>
           <Button
             look="link"
@@ -62,9 +40,20 @@ export function Panel({ state, heading, headingTag: Tag = 'h1', content, placeme
             aria-label="Close popover"
           />
         </div>
-        <div aria-hidden className={styles.arrow()} style={getArrowClass()} ref={arrowRef} />
+        <div aria-hidden className={styles.arrow()} style={arrowPosition} test-id="arrow" ref={arrowRef} />
       </div>
     </FocusScope>
   );
+}
+
+/**
+ * @private
+ */
+export function Panel({ portal = false, ...props }: PanelProps) {
+  if (portal) {
+    const portalValue = typeof portal === 'boolean' ? document.body : portal;
+    return createPortal(<BasePanel {...props} portal={portalValue} />, portalValue);
+  }
+  return <BasePanel portal={portal} {...props} />;
 }
 Panel.displayName = 'Popover.Panel';

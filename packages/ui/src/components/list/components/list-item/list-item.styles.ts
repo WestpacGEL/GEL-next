@@ -41,11 +41,11 @@ export const styles = tv(
       },
       type: {
         bullet: {
-          bullet: 'left-[0.25rem] top-1 h-[0.5rem] w-[0.5rem] rounded-full',
+          bullet: 'left-[0.25rem] top-1 size-[0.5rem] rounded-full',
         },
         link: {
           bullet:
-            'left-[0.125rem] top-1 h-[0.5rem] w-[0.5rem] rotate-45 border-b-0 border-l-0 border-r-[0.125rem] border-t-[0.125rem] bg-[transparent]',
+            'left-[0.125rem] top-1 size-[0.5rem] rotate-45 border-b-0 border-l-0 border-r-[0.125rem] border-t-[0.125rem] bg-[transparent]',
         },
         tick: {
           bullet:
@@ -79,7 +79,7 @@ export const styles = tv(
         slots: ['bullet'],
         type: 'link',
         icon: true,
-        className: 'left-0 top-0 h-3 w-3 rotate-0 border-none bg-[transparent]',
+        className: 'left-0 top-0 size-3 rotate-0 border-none bg-[transparent]',
       },
       {
         slots: ['base'],
