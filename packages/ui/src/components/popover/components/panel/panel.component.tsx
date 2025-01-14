@@ -28,7 +28,9 @@ export function BasePanel({
     <FocusScope autoFocus restoreFocus>
       <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef}>
         <div className={styles.content()}>
-          <Tag className={styles.heading()}>{heading}</Tag>
+          <Tag tabIndex={-1} className={styles.heading()}>
+            {heading}
+          </Tag>
           <div className={styles.body()}>{content}</div>
           <Button
             look="link"
