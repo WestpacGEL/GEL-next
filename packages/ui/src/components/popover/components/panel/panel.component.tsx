@@ -25,7 +25,7 @@ export function BasePanel({
 
   const styles = panelStyles({ placement });
   return (
-    <FocusScope autoFocus restoreFocus>
+    <FocusScope contain autoFocus restoreFocus>
       <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef}>
         <div className={styles.content()}>
           <Tag tabIndex={0} className={styles.heading()}>
