@@ -34,10 +34,13 @@ export function Popover({
   const styles = popoverStyles({ linkStyling });
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
 
-  const handleClick = useCallback(() => {
-    onClick();
-    state.toggle();
-  }, [onClick, state]);
+  const handleClick = useCallback(
+    (event: React.MouseEvent<HTMLElement>) => {
+      onClick(event);
+      state.toggle();
+    },
+    [onClick, state],
+  );
 
   const keyHandler = useCallback(
     (event: globalThis.KeyboardEvent) => {
