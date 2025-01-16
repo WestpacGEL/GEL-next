@@ -18,10 +18,6 @@ export const styles = tv(
       isFocusVisible: {
         true: { link: 'focus-outline' },
       },
-      hideLogo: {
-        true: '',
-        false: { topRow: 'max-md:mb-7 md:mb-4' },
-      },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
