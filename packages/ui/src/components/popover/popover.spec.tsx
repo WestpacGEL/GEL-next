@@ -18,15 +18,23 @@ describe('Popover', () => {
     expect(getByLabelText('Help')).toBeInTheDocument();
   });
 
-  it('should render popover when button clicked', async () => {
+  it('should render popover when button clicked and handle callback with native event to let parent consume event object as per needs', async () => {
+    const handleParentOnClick = vi
+      .fn()
+      .mockImplementation((event: React.MouseEvent<HTMLElement>) => event.stopPropagation());
     const user = userEvent.setup();
-    const { getByRole, getByText } = render(<Popover content={panelContent}>Test</Popover>);
+    const { getByRole, getByText } = render(
+      <Popover content={panelContent} onClick={handleParentOnClick}>
+        Test
+      </Popover>,
+    );
     await act(() => {
       user.click(getByRole('button', { name: 'Test' }));
     });
     await waitFor(() => {
       expect(getByText(panelContent)).toBeInTheDocument();
     });
+    await waitFor(() => expect(handleParentOnClick).toHaveReturned());
   });
 
   it('should render heading when heading passed as prop', () => {
