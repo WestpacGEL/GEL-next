@@ -9,6 +9,7 @@ Object.defineProperty(window, 'scrollTo', { value: noop, writable: true });
 Object.defineProperty(window.URL, 'createObjectURL', {
   // Below needs to return unique string
   // while Math.random() does not guarantee IDs to be unique it should be fine for only generating a couple of ids per test
+  // eslint-disable-next-line sonarjs/pseudo-random
   value: () => Math.random().toString(),
   writable: true,
 });

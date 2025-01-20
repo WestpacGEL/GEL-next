@@ -1,15 +1,13 @@
-module.exports = {
-  root: true,
-  extends: ['next/core-web-vitals', '../index.js'],
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-        project: ['apps/*/tsconfig.json', 'packages/*/tsconfig.json', './ts-config.json'],
-      },
-    },
-  },
-};
+import { FlatCompat } from '@eslint/eslintrc';
+import config from '../index.js';
+
+const compat = new FlatCompat({
+  baseDirectory: import.meta.dirname,
+});
+
+export default [
+  ...config,
+  ...compat.config({
+    extends: ['next/core-web-vitals'],
+  }),
+];

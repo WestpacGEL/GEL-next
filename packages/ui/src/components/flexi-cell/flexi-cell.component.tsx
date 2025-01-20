@@ -59,7 +59,8 @@ function FlexiCellBase(
         <FlexiCellBody tag="a" href={href}>
           {children}
         </FlexiCellBody>
-      ) : body ? (
+      ) : // eslint-disable-next-line sonarjs/no-nested-conditional
+      body ? (
         <FlexiCellBody>{children}</FlexiCellBody>
       ) : (
         <div className="flex-1">{children}</div>

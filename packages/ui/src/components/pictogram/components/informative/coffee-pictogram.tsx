@@ -18,7 +18,7 @@ export function CoffeePictogram({
 }: PictogramProps) {
   return (
     <Pictogram
-      className={clsx('h-13 w-13', className)}
+      className={clsx('size-13', className)}
       viewBoxWidth={viewBoxWidth}
       viewBoxHeight={viewBoxHeight}
       aria-label={ariaLabel}

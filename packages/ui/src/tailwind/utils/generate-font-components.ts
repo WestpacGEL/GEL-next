@@ -1,4 +1,4 @@
-import { CSSRuleObject, PluginAPI } from 'tailwindcss/types/config.js';
+import { PluginAPI } from 'tailwindcss/types/config.js';
 
 export const generateFontComponents = (
   typographySizes: Record<string, { fontSize: string; lineHeight: string }>,
@@ -18,5 +18,5 @@ export const generateFontComponents = (
         fontFamily: theme(`fontFamily.brand`),
       },
     };
-  }, {} as CSSRuleObject[]);
+  }, {});
 };

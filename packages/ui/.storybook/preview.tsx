@@ -1,12 +1,14 @@
+import { clsx } from 'clsx';
+import * as React from 'react';
+import { useEffect } from 'react';
+
 import type { Preview } from '@storybook/react';
 import './global.css';
-import * as React from 'react';
-import { clsx } from 'clsx';
-import { useEffect } from 'react';
 
 const withThemeProvider = (Story, context) => {
   const theme = context.globals?.theme || 'WBC';
   // workaround for modal
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     if (typeof window !== 'undefined') {
       document.querySelector('html')?.setAttribute('data-theme', theme.toLowerCase());
@@ -14,7 +16,7 @@ const withThemeProvider = (Story, context) => {
   }, [theme]);
   // Note: Not using padding for grid demos as it affects the proper grid visuals i.e. breakpoints, paddings, margins etc.
   return (
-    <div className={clsx(!(context.componentId === 'foundation-grid') && 'p-4')}>
+    <div className={clsx(context.componentId !== 'foundation-grid' && 'p-4')}>
       <Story />
     </div>
   );

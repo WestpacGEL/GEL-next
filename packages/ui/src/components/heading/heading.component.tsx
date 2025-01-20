@@ -16,6 +16,7 @@ export function Heading({ className, tag, brandHeading, size, children, uppercas
     9: 'h6',
     10: 'h6',
   };
+  // eslint-disable-next-line sonarjs/no-nested-conditional
   const Tag = typeof size === 'number' && !tag ? (sizeToTag[size] as keyof HeadingProps['tag']) : tag ? tag : 'h6';
 
   return (

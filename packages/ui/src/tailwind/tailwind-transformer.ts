@@ -15,6 +15,7 @@ export const withGEL = (config: Config) =>
     plugins: [
       WestpacUIKitBasePlugin(config?.options),
       WestpacUIKitThemesPlugin,
+      // eslint-disable-next-line sonarjs/no-nested-conditional
       ...(config.plugins ? (Array.isArray(config.plugins) ? config.plugins : [config.plugins]) : []),
     ],
   });

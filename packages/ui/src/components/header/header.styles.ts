@@ -11,14 +11,14 @@ export const styles = tv(
       largeLogo: 'max-sm:hidden',
       leftContent: 'flex items-center',
       leftButton:
-        'my-1 border-r border-[#E8E8ED] p-0 rounded-none max-sm:-ml-2 max-sm:mr-2 max-sm:h-7 max-sm:min-w-[2.625rem] sm:-ml-4 sm:mr-3 sm:h-[3.3125rem] sm:min-w-[3.75rem]',
+        'my-1 rounded-none border-r border-[#E8E8ED] p-0 max-sm:-ml-2 max-sm:mr-2 max-sm:h-7 max-sm:min-w-7 sm:-ml-4 sm:mr-3 sm:h-[3.3125rem] sm:min-w-10',
       rightContent: 'ml-auto flex items-center',
     },
     variants: {
       logoCenter: {
         true: {
           logoLink:
-            'max-sm:absolute max-sm:left-1/2 max-sm:z-0 max-sm:translate-x-[-50%] max-sm:translate-y-[15%] sm:relative',
+            'max-sm:absolute max-sm:left-1/2 max-sm:z-0 max-sm:-translate-x-1/2 max-sm:translate-y-[15%] sm:relative',
           smallLogo: '',
         },
         false: {

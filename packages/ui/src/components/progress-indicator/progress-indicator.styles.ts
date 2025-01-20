@@ -10,11 +10,11 @@ export const styles = tv(
     },
     variants: {
       size: {
-        xsmall: { base: 'h-2 w-2' },
-        small: { base: 'h-3 w-3' },
-        medium: { base: 'h-4 w-4' },
-        large: { base: 'h-15 w-15' },
-        xlarge: { base: 'h-15 w-15' },
+        xsmall: { base: 'size-2' },
+        small: { base: 'size-3' },
+        medium: { base: 'size-4' },
+        large: { base: 'size-15' },
+        xlarge: { base: 'size-15' },
       },
       color: {
         success: { label: 'text-success' },

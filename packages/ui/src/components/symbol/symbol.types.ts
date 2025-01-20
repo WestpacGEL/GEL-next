@@ -14,7 +14,7 @@ export type SymbolProps = Omit<SVGAttributes<SVGElement>, 'offset'> & {
   /**
    * Symbol offset alignment array i.e. [left, center, right]
    */
-  offset?: Array<number | null>;
+  offset?: (number | null)[];
   /**
    * Tag to render
    */

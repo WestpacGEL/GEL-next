@@ -19,7 +19,8 @@ export function List({ assistiveText, className, children, look, nested, icon, t
 
   assistiveText =
     (type === 'tick' || type === 'cross') && nested === 0
-      ? assistiveText || `The following items are ${type === 'tick' ? 'ticked' : 'crossed'}`
+      ? // eslint-disable-next-line sonarjs/no-nested-conditional
+        assistiveText || `The following items are ${type === 'tick' ? 'ticked' : 'crossed'}`
       : undefined;
 
   const styles = listStyles({ type: stateValues.type, nested: typeof state.nested === 'number' });

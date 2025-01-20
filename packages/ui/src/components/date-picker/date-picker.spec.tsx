@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { render, screen } from '@testing-library/react';
 
 import { DatePicker } from './date-picker.component.js';

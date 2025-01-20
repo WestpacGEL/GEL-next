@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/cognitive-complexity */
 'use client';
 
 import React, {
@@ -22,7 +21,7 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
   ({ length, value, onChange, onComplete, className, type = 'alphanumeric', onBlur, ...props }, ref) => {
     const [internalPasscode, setInternalPasscode] = useState<string[]>(Array.from({ length }).map(() => ''));
     const passcode = value ? value : internalPasscode;
-    const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
+    const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
     const styles = passCodeStyles({});
 

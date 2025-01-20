@@ -33,14 +33,14 @@ export const styles = tv(
       },
       size: {
         large: {
-          checkIcon: 'h-5 w-5',
+          checkIcon: 'size-5',
           base: 'mb-2',
-          checkbox: 'h-5 w-5',
+          checkbox: 'size-5',
         },
         medium: {
-          checkIcon: 'h-4 w-4',
+          checkIcon: 'size-4',
           base: 'mb-1',
-          checkbox: 'h-4 w-4',
+          checkbox: 'size-4',
         },
       },
     },

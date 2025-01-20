@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react';
 import { useState } from 'react';
 
 import { PassCode } from './pass-code.component.js';
@@ -15,7 +15,6 @@ const meta: Meta<typeof PassCode> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 /**
  * > Default usage example

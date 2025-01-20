@@ -1,85 +1,78 @@
-require('@rushstack/eslint-patch/modern-module-resolution');
+import globals from 'globals';
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import pluginPromise from 'eslint-plugin-promise';
+import tailwind from 'eslint-plugin-tailwindcss';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import sonarjs from 'eslint-plugin-sonarjs';
+import importPlugin from 'eslint-plugin-import';
 
-module.exports = {
-  root: true,
-  env: {
-    es6: true,
-    node: true,
-    jest: true,
-  },
-  parserOptions: { ecmaVersion: 9, sourceType: 'module' },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:tailwindcss/recommended'],
-  plugins: ['import', 'prettier'],
-  ignorePatterns: ['node_modules/*', 'dist/*'],
-  rules: {
-    'prettier/prettier': 'error',
-    'sort-imports': [
-      'error',
-      {
-        ignoreCase: false,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+export default tseslint.config(
+  {
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        ...globals.jest,
       },
-    ],
-    'import/first': 'error',
-    'import/newline-after-import': 'error',
-    'import/no-duplicates': 'error',
-    'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
-        pathGroups: [
-          {
-            pattern: '@/',
-            group: 'internal',
-          },
-        ],
-        'newlines-between': 'always',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
+      ecmaVersion: 9,
+      sourceType: 'module',
+    },
+    settings: {
+      'import/parsers': {
+        '@typescript-eslint/parser': ['.ts', '.tsx'],
+      },
+
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: ['packages/*/tsconfig.json', 'apps/*/tsconfig.json'],
         },
-        distinctGroup: true,
-      },
-    ],
-    'tailwindcss/no-custom-classname': [
-      'warn',
-      {
-        ignoredKeys: ['compoundVariants', 'defaultVariants', 'responsiveVariants', 'compoundSlots'],
-      },
-    ],
-    'no-console': 'error',
-  },
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-        project: ['packages/*/tsconfig.json', 'apps/*/tsconfig.json'],
       },
     },
   },
-  overrides: [
-    {
-      files: ['**/*.ts', '**/*.tsx'],
-      env: {
-        browser: true,
-        es6: true,
-        node: true,
-        jest: true,
-      },
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:import/recommended',
-        'plugin:import/typescript',
-        'plugin:promise/recommended',
-        'plugin:typescript-sort-keys/recommended',
-        'plugin:sonarjs/recommended',
+  eslint.configs.recommended,
+  sonarjs.configs.recommended,
+  importPlugin.flatConfigs.recommended,
+  pluginPromise.configs['flat/recommended'],
+  eslintPluginPrettierRecommended,
+  ...tseslint.configs.stylistic,
+  ...tseslint.configs.strict,
+  ...tailwind.configs['flat/recommended'],
+  {
+    rules: {
+      'import/first': 'error',
+      'import/newline-after-import': 'error',
+      'import/no-duplicates': 'error',
+      'import/order': [
+        'error',
+        {
+          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
+          pathGroups: [
+            {
+              pattern: '@/',
+              group: 'internal',
+            },
+          ],
+          'newlines-between': 'always',
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+          distinctGroup: true,
+        },
       ],
+      'tailwindcss/no-custom-classname': [
+        'warn',
+        {
+          ignoredKeys: ['compoundVariants', 'defaultVariants', 'responsiveVariants', 'compoundSlots'],
+        },
+      ],
+      // 'tailwindcss/enforces-shorthand': 'off', // TEMP
+      'sonarjs/todo-tag': 'off',
+      '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
+      'no-console': 'error',
     },
-  ],
-};
+  },
+  { ignores: ['node_modules/*', 'dist/*'] },
+);

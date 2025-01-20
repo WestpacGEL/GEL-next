@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-globals-shadowing */
 import { render, screen } from '@testing-library/react';
 
 import { Symbol } from './symbol.component.js';

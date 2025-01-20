@@ -11,16 +11,16 @@ export const styles = tv(
     variants: {
       size: {
         small: {
-          switchDiv: 'h-[1.75rem] w-8 rounded-[1.75rem] after:h-[1.75rem] after:w-[1.75rem]',
+          switchDiv: 'h-[1.75rem] w-8 rounded-[1.75rem] after:size-[1.75rem]',
         },
         medium: {
-          switchDiv: 'h-[2.125rem] w-10 rounded-[2.125rem] after:h-[2.125rem] after:w-[2.125rem]',
+          switchDiv: 'h-[2.125rem] w-10 rounded-[2.125rem] after:size-[2.125rem]',
         },
         large: {
-          switchDiv: 'h-[2.5rem] w-12 rounded-[2.5rem] after:h-[2.5rem] after:w-[2.5rem]',
+          switchDiv: 'h-[2.5rem] w-12 rounded-[2.5rem] after:size-[2.5rem]',
         },
         xlarge: {
-          switchDiv: 'h-[2.875rem] w-14 rounded-[2.875rem] after:h-[2.875rem] after:w-[2.875rem]',
+          switchDiv: 'h-[2.875rem] w-14 rounded-[2.875rem] after:size-[2.875rem]',
         },
       },
       isFocusVisible: {

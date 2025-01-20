@@ -46,6 +46,7 @@ export function Alert({
 
   const handleClose = useCallback(() => {
     setOpen(false);
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     !!onClose && onClose();
   }, [onClose]);
 

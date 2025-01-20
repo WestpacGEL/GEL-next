@@ -5,10 +5,10 @@ import { type ListState } from 'react-stately';
 
 import { styles } from './autocomplete-list-box-option.styles.js';
 
-interface AutocompleteListBoxOptionProps<T = unknown> {
+type AutocompleteListBoxOptionProps<T = unknown> = {
   item: Node<T>;
   state: ListState<T>;
-}
+};
 
 /**
  * @private

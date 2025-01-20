@@ -15,7 +15,7 @@ export const styles = tv(
         visited: {
           base: 'text-text before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:border-primary before:transition-colors',
           // Can't use a const without getting tailwind errors, compound slots/variants don't work correctly for this
-          // eslint-disable-next-line sonarjs/no-duplicate-string
+
           circle: 'border-[3px] border-primary bg-primary',
         },
         'non-visited': {
@@ -59,10 +59,10 @@ export const styles = tv(
       },
       size: {
         medium: {
-          circle: 'h-[0.875rem] w-[0.875rem]',
+          circle: 'size-[0.875rem]',
         },
         small: {
-          circle: 'mr-[0.25rem] h-[0.625rem] w-[0.625rem] translate-x-[0.125rem]',
+          circle: 'mr-[0.25rem] size-[0.625rem] translate-x-[0.125rem]',
           base: 'gap-4',
         },
       },

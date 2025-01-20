@@ -1,5 +1,5 @@
 import { withTV } from 'tailwind-variants/transformer';
-import { Config } from 'tailwindcss';
+import { Config } from 'tailwindcss/types/config.js';
 
 import { WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin } from './src/tailwind/index.js';
 

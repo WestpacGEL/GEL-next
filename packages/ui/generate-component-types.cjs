@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require('fs');
 const path = require('path');
 
@@ -62,10 +63,7 @@ const TYPES_TO_BE_IGNORED = [
                   if (a.name === 'children' && a.description) {
                     return true;
                   }
-                  if (TYPES_TO_BE_IGNORED.includes(a.parent ? a.parent.name : '')) {
-                    return false;
-                  }
-                  return true;
+                  return !TYPES_TO_BE_IGNORED.includes(a.parent ? a.parent.name : '');
                 })
                 .map(a => {
                   if (a.name === 'tag' && a.type.name.indexOf('more ...') !== -1) {

@@ -27,7 +27,7 @@ export const styles = tv(
       width: {
         full: '',
         // Below ignored because tailwind was showing a transform error when using a const
-        // eslint-disable-next-line sonarjs/no-duplicate-string
+
         1: { input: 'inline-flex' },
         2: { input: 'inline-flex' },
         3: { input: 'inline-flex' },

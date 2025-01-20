@@ -294,7 +294,6 @@ export const BrandColors: Story = {
     ];
     const TINTS = ['DEFAULT', 90, 80, 70, 60, 50, 40, 30, 20, 10, 5];
     // NOTE: Below is ignored as we need global theme value from render
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [selectedTint, setSelectedTint] = useState('DEFAULT');
     const tintString = selectedTint !== 'DEFAULT' ? `-${selectedTint}` : '';
 

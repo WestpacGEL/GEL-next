@@ -6,7 +6,7 @@ export const styles = tv(
       base: '',
       popover: 'absolute z-[999] rounded border border-muted bg-white shadow-[0_5px_10px_rgba(0,0,0,0.2)]',
       arrow:
-        'absolute h-0 w-0 border-x-8 border-t-[12px] border-x-[transparent] border-t-muted after:absolute after:h-0 after:w-0 after:border-x-[7px] after:border-t-[11px] after:border-x-[transparent] after:border-t-white',
+        'absolute size-0 border-x-8 border-t-[12px] border-x-[transparent] border-t-muted after:absolute after:size-0 after:border-x-[7px] after:border-t-[11px] after:border-x-[transparent] after:border-t-white',
       closeBtn: 'absolute right-1 top-1 m-1 p-0 hover:opacity-80',
       content: 'w-[17.625rem] py-4 pl-3 pr-5',
       heading: 'typography-body-9 mb-2 font-bold text-text',

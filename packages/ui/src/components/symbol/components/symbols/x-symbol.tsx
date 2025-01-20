@@ -13,14 +13,14 @@ export const XSymbol = ({
   ...props
 }: SymbolProps) => (
   <Symbol
-    className={clsx('h-[32px] w-[32px]', className)}
+    className={clsx('size-[32px]', className)}
     aria-label={ariaLabel}
     copyrightYear={copyrightYear}
     viewBoxWidth={viewBoxWidth}
     viewBoxHeight={viewBoxHeight}
     {...props}
   >
-    <g clip-path="url(#clip0_1842_16)">
+    <g clipPath="url(#clip0_1842_16)">
       <path
         d="M30 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H30C31.1046 32 32 31.1046 32 30V2C32 0.89543 31.1046 0 30 0Z"
         fill="black"

@@ -1,5 +1,3 @@
-import { CSSRuleObject } from 'tailwindcss/types/config.js';
-
 export const generateFormControlComponents = (formControlProps: {
   base: string;
   disabled: string;
@@ -12,7 +10,7 @@ export const generateFormControlComponents = (formControlProps: {
         [`@apply ${value}`]: {},
       },
     };
-  }, {} as CSSRuleObject);
+  }, {});
   return {
     '.form-control': {
       [`@apply ${formControlProps.base}`]: {},
