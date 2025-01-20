@@ -1,7 +1,8 @@
 name: Service page
-author: Digital Experience
+thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1696383939/clnb3743w003nvd8i74tm5tl6.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/website-service-page-hero.png\r"
+  alt: >-
+    Diagram showing all of the modules required on a website serice page
+    template.
+author: Digital Experience

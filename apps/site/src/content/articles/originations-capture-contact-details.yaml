@@ -2,7 +2,9 @@ name: Contact details
 thumbnail: {}
 image:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695948745/cln3w3dmk002evd8ie8zubqoj.png
-  height: 1080
-  width: 1920
+    https://www.westpac.com.au/content/dam/public/gel/images/originations-capture-contact
+    details-hero.png
+  alt: Stylised illustration of the capture contact details pattern
+  height: 1656
+  width: 2400
 author: Digital Experience

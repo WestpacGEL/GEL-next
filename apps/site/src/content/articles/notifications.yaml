@@ -5,13 +5,14 @@ description: >-
    They are an integral part of the Banks communication strategy and are used to inform 
    our customers about various events, updates or actions that require their attention. 
    They can be one way, where we are informing the customer of something, or two-way, 
-   where we ask the customer to take an action.  Through analysis and research, we’ve created 
-   notifications conventions that we apply to our projects to achieve consistency across our digital channels. 
-   Projects can replicate these solutions, so there’s no need to reinvent the wheel.  
+   where we ask the customer to take an action.  Through analysis and research, we’ve created notifications conventions that we apply to our projects to achieve consistency across our digital channels. 
+
+  Projects can replicate these solutions, so there’s no need to reinvent the
+  wheel.  
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1696380383/clnb12vrf003fvd8igcoj7goo.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/patterns-notifications-hero.png\r"
+  alt: >-
+    Hero image depicting the word Patterns and a woman's face with a quote "I
+    want to know if there's a problem with my accounts.
 author: Digital Experience

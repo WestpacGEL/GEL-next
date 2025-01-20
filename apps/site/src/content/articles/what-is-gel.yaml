@@ -6,16 +6,12 @@ description: >-
   and deliver consistent, coherent customer experiences across our entire
   digital landscape faster, and with less effort.
 thumbnail:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1662699957/cl7u0mgxx000f808i0mjx43a8.png
-  height: 1212
-  width: 3168
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/what-is-gel-card.png\r"
+  alt: GEL logo
 smallDescription: >-
   GEL is our Global Experience Language, the foundation for all digital design
   at Westpac and so much more.
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1663303769/cl84049030019am8i5gx94qoy.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/what-is-gel-hero.png\r"
+  alt: Window cleaner hanging in front of a big wall that says 'The big picture'.
 author: Marita Purins

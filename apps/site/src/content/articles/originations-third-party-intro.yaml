@@ -1,8 +1,6 @@
 name: Third-party intro
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695953393/cln3yv06g002kvd8id5957qzu.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/originations-third-party-intro-hero.png\r"
+  alt: Stylised illustration of the third-party intro pattern.
 author: Digital Experience

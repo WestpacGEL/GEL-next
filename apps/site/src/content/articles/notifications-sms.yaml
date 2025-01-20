@@ -2,7 +2,8 @@ name: SMS
 thumbnail: {}
 image:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695796200/cln1d9ttq0020vd8i33xl3xcg.png
+    https://www.westpac.com.au/content/dam/public/gel/images/notifications-sms-hero.png
+  alt: Styli illustration of an SMS message on mobile.
   height: 1080
-  width: 1920
+  width: 2400
 author: Digital Experience

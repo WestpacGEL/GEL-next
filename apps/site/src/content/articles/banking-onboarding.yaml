@@ -1,8 +1,8 @@
 name: Onboarding
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695783106/cln15h6a4001wvd8i9rs50m3t.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/banking-onboarding-hero.png\r"
+  alt: >-
+    Stylised example image of a banking onboarding screen as it would appear on
+    a mobile phone.
 author: Digital Experience

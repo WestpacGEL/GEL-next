@@ -1,24 +1,19 @@
-The typography system uses numerical values to assign different font weights rather than specifying the physical name or weight of the font. For example, assigning a value of 300 to the font weight property will display the light weight (providing It’s available). Unavailable weights display the logically closest weight. Font weights should always be used in alignment with the GUI and the digital brand guidelines.
+The typography system uses numerical values to assign different font weights rather than specifying the physical name or weight of the font. For example, assigning a value of 300 to the font weight property will display the light weight (providing It’s available). Unavailable weights display the logically closest weight. Font weights should always be used in alignment with the digital brand guidelines.
 
 ***Note:*** *Do not use 300 (light) on text sizes below 18px or your text may fall out of an accessible colour contrast range.*
 
 ```tsx
-<div>
-  <p className="typography-body-10 text-muted italic break-words">Sans serif system font</p>
-
-  <div className="typography-body-4 flex flex-col gap-1">
-    <p>
-      Light: <strong className="font-light">300</strong>
-    </p>
-    <p>
-      Regular: <strong className="font-normal">400</strong>
-    </p>
-    <p>
-      Medium: <strong className="font-medium">500</strong>
-    </p>
-    <p>
-      Bold: <strong className="font-bold">700</strong>
-    </p>
-  </div>
-</div>
+() => {  const typographyScale = [{    className: 'font-light',    fontWeight: '300',  }, {    className: 'font-normal',    fontWeight: '400',  }, {      className: 'font-medium',    fontWeight: '500',  }, {    className: 'font-semibold',    fontWeight: '600',  }, {    className: 'font-bold',    fontWeight: '700',  }];  return <Table className="w-max sm:w-full whitespace-pre">      <TableCaption>GEL body font tokens (Sans serif system font)</TableCaption>      
+<TableHeader>        
+<TableHeaderRow>          
+<TableHeaderCell>Token</TableHeaderCell>          
+<TableHeaderCell>Line height</TableHeaderCell>          
+<TableHeaderCell>Tailwind class</TableHeaderCell>        
+</TableHeaderRow>      
+</TableHeader>      
+<TableBody>{typographyScale.map(i => <TableRow key={i.className}>
+<TableCell><span className='typography-body-7'>
+<span className={i.className}>{i.className.replace('typography-', '')}</span></span></TableCell>            <TableCell>{i.fontWeight}</TableCell> <TableCell>{i.className}</TableCell></TableRow>)}      </TableBody></Table>;}
 ```
+
+{% fonts view="table" /%}

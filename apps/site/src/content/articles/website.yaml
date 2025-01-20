@@ -1,7 +1,9 @@
 name: Website
-author: Digital Experience
+thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695867630/cln2jssqi0024vd8i08zjelvv.png
-  height: 1080
-  width: 1920
+  src: >
+    https://www.westpac.com.au/content/dam/public/gel/images/patterns-website-hero.png
+  alt: >-
+    Hero image depicting the word Patterns and a woman's face with a quote
+    "Finding the content that's relevant to me and my needs."
+author: Digital Experience

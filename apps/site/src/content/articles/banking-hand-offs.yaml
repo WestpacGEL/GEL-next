@@ -2,7 +2,8 @@ name: Hand-offs
 thumbnail: {}
 image:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695783266/cln15klrw001xvd8igne64soh.png
-  height: 1080
-  width: 1920
+    https://www.westpac.com.au/content/dam/public/gel/images/banking-hand-offs-hero.png
+  alt: Stylised example image of a page loading animation.
+  height: 1468
+  width: 2400
 author: Digital Experience

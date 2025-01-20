@@ -1,7 +1,8 @@
 name: Partnership page
-author: Digital Experience
+thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1696382845/clnb2jnlg003kvd8ihtb5cgzb.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/website-partnership-page-hero.png\r"
+  alt: >-
+    Diagram showing all of the modules required on a website partnership page
+    template.
+author: Digital Experience

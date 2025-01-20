@@ -8,7 +8,8 @@ description: >-
   resources.
 thumbnail:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1663137798/cl819awzl0007am8i6n47fcgj.png
+    https://www.westpac.com.au/content/dam/public/gel/images/multi-brand-made-easy-card.png
+  alt: .
   height: 1212
   width: 3168
 smallDescription: >-
@@ -16,7 +17,8 @@ smallDescription: >-
   knowledge, digital assets and business processes.
 image:
   src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1667114301/cl9v0t61d000zf58ihp0j1odr.jpg
-  height: 1080
-  width: 1920
+    https://www.westpac.com.au/content/dam/public/gel/images/multi-brand-made-easy-hero.jpg
+  alt: Old-fashioned television with a St George dragon ad on the screen.
+  height: 1289
+  width: 2400
 author: Justin Spencer

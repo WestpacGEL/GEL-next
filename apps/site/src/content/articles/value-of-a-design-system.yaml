@@ -5,16 +5,15 @@ description: >-
   and construction dating back centuries. In our digital world, and for Westpac
   Group specifically, the value is attributed across four core drivers.
 thumbnail:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1666848438/cl9qmit0m0001f58i7e4bevq2.png
-  height: 1212
-  width: 3168
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/value-design-system-card.png\r"
+  alt: Illustration of lego blocks.
 smallDescription: >-
   Design systems are helping to shape our digital world so we can deliver
   quality experiences faster.
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1667030117/cl9tmott9000jf58ib5ko3252.png
-  height: 1080
-  width: 1920
+  src: >
+    https://www.westpac.com.au/content/dam/public/gel/images/value-design-system-hero.png
+  alt: >-
+    Illustration depicting different device types. Design and build one project
+    output in six brands view on all platforms and all devices.
 author: Marita Purins

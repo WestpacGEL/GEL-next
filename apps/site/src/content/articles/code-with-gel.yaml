@@ -1,16 +1,18 @@
 name: Code with GEL
 cardTitle: Code with GEL
-thumbnail:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1663140016/cl81amh5c000mam8i3iuq5qt9.png
-  height: 1212
-  width: 3168
-smallDescription: Automate your environment, scale your projects and speed up your work flow with our cutting edge code library.
-image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1663300551/cl83y79gg0013am8iddv886ry.jpg
-  height: 1080
-  width: 1920
 description: >-
-  The GEL coding framework has been built with serviceability in mind, supporting multiple platforms across the Bank that may use different libraries, languages and coding technologies.
+  The GEL coding framework has been built with serviceability in mind,
+  supporting multiple platforms across the Bank that may use different
+  libraries, languages and coding technologies.
+thumbnail:
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/code-with-gel-card.png\r"
+  alt: Stylist illustration coding terminal screen
+smallDescription: >-
+  Automate your environment, scale your projects and speed up your work flow
+  with our cutting edge code library.
+image:
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/code-with-gel-hero.jpg\r"
+  alt: >-
+    Image of a piece of cardboard with a shape cut out and printed code showing
+    through from behind. The cardboard has the words GEL code printed on it.
 author: Marita Purins

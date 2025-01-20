@@ -1,8 +1,6 @@
 name: Select business
 thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695685126/clmzj54e9001hvd8i1hynfyle.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/originations-business-select-business-hero.png\r"
+  alt: Stylised illustration of the select business pattern.
 author: Digital Experience

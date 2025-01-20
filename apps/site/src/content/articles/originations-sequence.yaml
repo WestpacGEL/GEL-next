@@ -1,7 +1,9 @@
 name: Originations sequence
-author: Digital Experience
+thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695949021/cln3w9anq002gvd8i3jjxay25.png
-  height: 1080
-  width: 1920
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/originations-sequence-hero.png\r"
+  alt: >-
+    Diagram of the following sequence: Product choice and entry,
+    Pre-application, Customer details, Business details, Identity check, Product
+    config, Finance, Review, Post-application.
+author: Digital Experience

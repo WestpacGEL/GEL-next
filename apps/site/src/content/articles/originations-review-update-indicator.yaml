@@ -1,10 +1,6 @@
 name: Review with update indicator
 thumbnail: {}
-smallDescription: >-
-  https://res.cloudinary.com/westpac-gel/image/upload/v1695685237/Review_update_indicator_b5fjki
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1695685237/Review_update_indicator_b5fjki
-  height: 1464
-  width: 2400
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/originations-business-update-indicator-hero.png\r"
+  alt: "\bStylised illustration of the upload indicator pattern."
 author: Business borrow team

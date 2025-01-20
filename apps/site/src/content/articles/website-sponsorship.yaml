@@ -1,7 +1,9 @@
 name: Sponsorship page
-author: Digital Experience
+thumbnail: {}
 image:
-  src: >-
-    https://res.cloudinary.com/westpac-gel/image/upload/v1696382757/clnb2hs30003jvd8ie7m2bhcy.png
-  height: 1080
-  width: 1920
+  src: >
+    https://www.westpac.com.au/content/dam/public/gel/images/website-sponsorship-page-hero.png
+  alt: >-
+    Diagram showing all of the modules required on a website sponsorship page
+    template.
+author: Digital Experience
