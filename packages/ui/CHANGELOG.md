@@ -1,5 +1,15 @@
 # @westpac/ui
 
+## 0.31.0
+
+### Minor Changes
+
+- b4b88a1: consumer component's onclick callback prop should be called with native even object to handle scenarios specific to parent comp
+- 08512ae: added: x-symbol and logo
+- b018d3c: reverted deletion of twitter icon
+- 00d0c35: added: child and child-care icons
+- 08512ae: remove: twitter symbol and icon
+
 ## 0.30.0
 
 ### Minor Changes
