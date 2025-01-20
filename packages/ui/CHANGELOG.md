@@ -1,5 +1,14 @@
 # @westpac/ui
 
+## 0.31.0
+
+### Minor Changes
+
+- 08512ae: added: x-symbol and logo
+- b018d3c: reverted deletion of twitter icon
+- 00d0c35: added: child and child-care icons
+- 08512ae: remove: twitter symbol and icon
+
 ## 0.30.0
 
 ### Minor Changes
