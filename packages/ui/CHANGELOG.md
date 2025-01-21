@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.32.1
+
+### Patch Changes
+
+- 1687a67: Fix for popover component, injecting React inside of Popover.Panel
+
 ## 0.32.0
 
 ### Minor Changes
