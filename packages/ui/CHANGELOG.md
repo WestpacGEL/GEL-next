@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.32.0
+
+### Minor Changes
+
+- 0a8cb58: Miscellaneous Bugs and Fixes
+
 ## 0.31.0
 
 ### Minor Changes
