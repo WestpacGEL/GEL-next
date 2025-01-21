@@ -28,16 +28,20 @@ export function Popover({
   linkStyling = false,
   size = 'medium',
   icon,
+  portal = false,
 }: PopoverProps) {
   const state = useOverlayTriggerState({});
   const panelId = useId();
   const styles = popoverStyles({ linkStyling });
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
 
-  const handleClick = useCallback(() => {
-    onClick();
-    state.toggle();
-  }, [onClick, state]);
+  const handleClick = useCallback(
+    (event: React.MouseEvent<HTMLElement>) => {
+      onClick(event);
+      state.toggle();
+    },
+    [onClick, state],
+  );
 
   const keyHandler = useCallback(
     (event: globalThis.KeyboardEvent) => {
@@ -56,6 +60,7 @@ export function Popover({
   useLayoutEffect(() => {
     if (open) state.setOpen(true);
   }, [open, state]);
+
   return (
     <div className={styles.base({ className })}>
       <Button
@@ -73,6 +78,7 @@ export function Popover({
       </Button>
       {state.isOpen && (
         <Panel
+          portal={portal}
           placement={placement}
           heading={heading ? heading : ''}
           headingTag={headingTag}

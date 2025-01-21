@@ -2,7 +2,7 @@ import { Svg } from '@/components/svg';
 
 export function FigmaLogo() {
   return (
-    <span className="inline-block h-[40px] w-[40px] shrink align-middle leading-none lg:h-[55px] lg:w-[55px]">
+    <span className="inline-block size-[40px] shrink align-middle leading-none lg:size-[55px]">
       <Svg viewBox="0 0 180 180" aria-label="Figma">
         <path d="M90 93a24 24 0 1 1 48 0 24 24 0 0 1-48 0Z" fill="#1ABCFE" />
         <path

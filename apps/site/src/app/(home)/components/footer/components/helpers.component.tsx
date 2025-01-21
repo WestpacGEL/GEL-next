@@ -12,9 +12,7 @@ export function Link(props: React.PropsWithChildren<LinkProps>) {
 
 export function Circle({ children }: { children: React.ReactNode }) {
   return (
-    <CircleLogo className="group-hover:outline-4 group-hover:outline-[#1976D260] lg:h-14 lg:w-14">
-      {children}
-    </CircleLogo>
+    <CircleLogo className="group-hover:outline-4 group-hover:outline-[#1976D260] lg:size-14">{children}</CircleLogo>
   );
 }
 

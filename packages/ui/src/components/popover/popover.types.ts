@@ -3,6 +3,8 @@ import { HTMLAttributes, ReactNode } from 'react';
 import { ButtonProps } from '../button/index.js';
 import { IconProps } from '../icon/icon.types.js';
 
+import { PanelProps } from './components/panel/panel.types.js';
+
 export type PopoverProps = {
   /**
    * Button text
@@ -42,5 +44,11 @@ export type PopoverProps = {
    * @default top
    */
   placement?: 'top' | 'bottom';
+  /**
+   * Renders the popover using a portal. You can either pass an HTML element to use as the portal container,
+   * or a boolean value to use the document.body as the portal container.
+   * @default false
+   */
+  portal?: PanelProps['portal'];
 } & HTMLAttributes<Element> &
   Pick<ButtonProps, 'look' | 'soft' | 'size'>;

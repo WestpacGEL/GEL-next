@@ -59,10 +59,10 @@ export const styles = tv(
       },
       size: {
         medium: {
-          circle: 'h-[0.875rem] w-[0.875rem]',
+          circle: 'size-[0.875rem]',
         },
         small: {
-          circle: 'mr-[0.25rem] h-[0.625rem] w-[0.625rem] translate-x-[0.125rem]',
+          circle: 'mr-[0.25rem] size-[0.625rem] translate-x-[0.125rem]',
           base: 'gap-4',
         },
       },
