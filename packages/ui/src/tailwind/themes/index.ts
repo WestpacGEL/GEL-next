@@ -11,7 +11,7 @@ import { theme as WBCTheme } from './wbc.js';
 import { theme as WBGTheme } from './wbg.js';
 
 // ALL_THEMES, THEMES are used for documentation and as per GEL Team request we dont display BTPL Theme in any public documentation i.e. storybook, site etc
-export const ALL_THEMES = [BOMTheme, BSATheme, BTFGTheme, RAMSTheme, STGTheme, WBCTheme, WBGTheme];
+export const ALL_THEMES = [BOMTheme, BSATheme, BTFGTheme, RAMSTheme, STGTheme, WBCTheme, WBGTheme, BTPLTheme];
 
 export const THEMES = ALL_THEMES.map(theme => {
   return {
