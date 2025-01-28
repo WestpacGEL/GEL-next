@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.33.0
+
+### Minor Changes
+
+- ca6ed6e: fixes date picker space issue
+
 ## 0.32.1
 
 ### Patch Changes
