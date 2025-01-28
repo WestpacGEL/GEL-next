@@ -27,7 +27,7 @@ export const generateDatePicker = () => {
           '@apply max-w-[8.75rem]': {},
         },
         '.duet-date__input': {
-          '@apply py-[0.25rem] pl-[0.5625rem] text-sm': {},
+          '@apply py-[0.25rem] pl-[0.5625rem]  pr-6.5 text-sm': {},
         },
         '.duet-date__toggle': {
           '@apply px-2 w-auto': {},
