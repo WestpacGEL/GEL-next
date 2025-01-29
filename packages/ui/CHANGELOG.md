@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.34.0
+
+### Minor Changes
+
+- 62dd521: minior date picker fix #977
+
 ## 0.33.0
 
 ### Minor Changes
