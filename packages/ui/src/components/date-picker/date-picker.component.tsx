@@ -118,7 +118,7 @@ export function DatePicker({
     }
     ref.current.max = max;
     ref.current.min = min;
-  }, [max, min, ref]);
+  }, [max, min, initialized, ref]);
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
