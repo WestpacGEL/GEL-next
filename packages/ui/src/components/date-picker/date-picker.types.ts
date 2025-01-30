@@ -34,6 +34,11 @@ export type DatePickerProps = {
    */
   disableWeekends?: boolean;
   /**
+   * Whether the user input is invalid
+   * @default false
+   */
+  invalid?: boolean;
+  /**
    * Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.
    */
   max?: string;
