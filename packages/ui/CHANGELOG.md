@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.35.0
+
+### Minor Changes
+
+- 2ed1fd5: fixes #983 and invalid state in #976
+
 ## 0.34.1
 
 ### Patch Changes
