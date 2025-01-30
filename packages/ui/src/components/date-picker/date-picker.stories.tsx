@@ -99,6 +99,13 @@ export const DisableSpecificDates: Story = {
 };
 
 /**
+ * > Invalid state
+ */
+export const InvalidState: Story = {
+  args: { invalid: true },
+};
+
+/**
  * > Form field example
  */
 export const FormField = () => {

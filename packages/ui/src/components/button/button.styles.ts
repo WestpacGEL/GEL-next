@@ -34,6 +34,7 @@ export const styles = tv(
         hero: { base: 'border border-hero bg-hero text-white hover:bg-hero-70 active:bg-hero-50' },
         faint: { base: 'border border-border bg-light text-muted hover:bg-white active:bg-white' },
         link: { base: 'text-link underline' },
+        unstyled: { base: '' },
       },
       soft: {
         true: { base: 'bg-white' },
