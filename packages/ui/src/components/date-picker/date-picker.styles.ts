@@ -14,6 +14,10 @@ export const styles = tv(
         true: 'date-picker-block',
         false: '',
       },
+      invalid: {
+        true: 'date-picker-invalid',
+        false: '',
+      },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
