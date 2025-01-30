@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.34.1
+
+### Patch Changes
+
+- 4179a06: Fix button group keyboard accessibility bug
+
 ## 0.34.0
 
 ### Minor Changes
