@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.36.0
+
+### Minor Changes
+
+- 40d387d: support #976 date format request
+
 ## 0.35.0
 
 ### Minor Changes
