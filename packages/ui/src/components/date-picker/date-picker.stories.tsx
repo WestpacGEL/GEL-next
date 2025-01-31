@@ -78,6 +78,13 @@ export const Controlled = () => {
 };
 
 /**
+ * > Different  date format (dd/MM/yyyy)
+ */
+export const DifferentDateFormat: Story = {
+  args: { dateFormat: 'dd/MM/yyyy' },
+};
+
+/**
  * > Disable weekends
  */
 export const DisableWeekends: Story = {
