@@ -56,7 +56,7 @@ describe('DatePicker', () => {
   });
   describe('DatePicker utils', () => {
     it('should format the date', () => {
-      expect(formatDate(createDate('2023', '08', '01') ?? new Date(), 'DD/MM/YYYY')).toBe('01/08/2023');
+      expect(formatDate(createDate('2023', '08', '01') ?? new Date(), 'dd/MM/yyyy')).toBe('01/08/2023');
     });
 
     it('should calculate the disabled date', () => {
