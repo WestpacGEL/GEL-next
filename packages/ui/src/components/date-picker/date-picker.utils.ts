@@ -8,7 +8,7 @@ const ISO_DATE_FORMAT = /^(\d{4})-(\d{2})-(\d{2})$/;
  * @param date the date to format as a Date
  * @param format the format string eg. "dd.mm.yyyy", "YYYY-MM-DD"
  */
-export function formatDate(date: Date, format: string) {
+export function formatDate(date: Date, format: 'dd-MM-yyyy' | 'dd/MM/yyyy') {
   if (!date) {
     return '';
   }

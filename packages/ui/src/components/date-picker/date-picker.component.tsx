@@ -7,6 +7,7 @@ import { type DatePickerProps, DuetDatePickerElement } from './date-picker.types
 import { formatDate, isDateDisabled, useListener } from './date-picker.utils.js';
 
 export function DatePicker({
+  dateFormat = 'dd-MM-yyyy',
   disableWeekends,
   disableDaysOfWeek,
   disableDates,
@@ -48,16 +49,16 @@ export function DatePicker({
   const dateAdapter = useMemo(
     () => ({
       parse(value = '', createDate: (year: string, month: string, day: string) => Date) {
-        const matches = value.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+        const matches = value.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{4})$/);
         if (matches) {
           return createDate(matches[3], matches[2], matches[1]);
         }
       },
       format(date: Date) {
-        return formatDate(date, 'dd-mm-yyyy');
+        return formatDate(date, dateFormat as 'dd-MM-yyyy' | 'dd/MM/yyyy');
       },
     }),
-    [],
+    [dateFormat],
   );
 
   const localization = useMemo(() => {

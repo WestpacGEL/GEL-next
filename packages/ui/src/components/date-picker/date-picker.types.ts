@@ -21,6 +21,11 @@ export type DatePickerProps = {
    * Make Datepicker block
    */
   block?: Variants['block'];
+  /**
+   * Date format
+   * @default dd-MM-yyyy
+   */
+  dateFormat?: 'dd-MM-yyyy' | 'dd/MM/yyyy';
   /*
    * Disable specific dates. Must be in IS0-8601 format: YYYY-MM-DD
    */
