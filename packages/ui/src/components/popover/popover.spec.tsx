@@ -1,5 +1,5 @@
 import { act, render, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import userEvent, { event } from '@testing-library/user-event';
 
 import { HelpIcon } from '../icon/index.js';
 
@@ -24,7 +24,7 @@ describe('Popover', () => {
       .mockImplementation((event: React.MouseEvent<HTMLElement>) => event.stopPropagation());
     const user = userEvent.setup();
     const { getByRole, getByText } = render(
-      <Popover content={panelContent} onClick={handleParentOnClick}>
+      <Popover content={panelContent} onClick={e => handleParentOnClick(e)}>
         Test
       </Popover>,
     );
