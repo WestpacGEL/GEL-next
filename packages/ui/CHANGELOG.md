@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.34.2
+
+### Patch Changes
+
+- 3f410a7: type check fix for onClick prop of popover
+
 ## 0.34.1
 
 ### Patch Changes
