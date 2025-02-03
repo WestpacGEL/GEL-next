@@ -34,7 +34,7 @@ export type PopoverProps = {
   /**
    * A function for the onClick event
    */
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent<HTMLElement>) => void;
   /**
    * Whether popover is open by default
    */
