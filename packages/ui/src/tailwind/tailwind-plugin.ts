@@ -39,22 +39,31 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
       /**
        * Utilities
        */
-      addUtilities({
-        '.focus-outline': { [`@apply ${theme('focusOutline')}`]: {} },
-        '.background-transition': { [`@apply ${theme('backgroundTransition')}`]: {} },
-        '.select-caret': {
-          backgroundImage:
-            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='8' style='color: rgb(89,87,103);'><path fill='currentColor' d='M0 0l7 8 7-8z'/></svg>\")",
+      addUtilities(
+        {
+          '.focus-outline': { [`@apply ${theme('focusOutline')}`]: {} },
+          '.background-transition': { [`@apply ${theme('backgroundTransition')}`]: {} },
+          '.select-caret': {
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='8' style='color: rgb(89,87,103);'><path fill='currentColor' d='M0 0l7 8 7-8z'/></svg>\")",
+          },
         },
-      });
+        { respectPrefix: true, respectImportant: true },
+      );
 
       /**
        * Components
        */
-      addComponents(generateLinearLoader());
-      addComponents(generateFontComponents(theme('typographySizes'), theme));
-      addComponents(generateFormControlComponents(theme('formControl')));
-      addComponents(generateDatePicker());
+      addComponents(generateLinearLoader(), { respectPrefix: true, respectImportant: true });
+      addComponents(generateFontComponents(theme('typographySizes'), theme), {
+        respectPrefix: true,
+        respectImportant: true,
+      });
+      addComponents(generateFormControlComponents(theme('formControl')), {
+        respectPrefix: true,
+        respectImportant: true,
+      });
+      addComponents(generateDatePicker(), { respectPrefix: true, respectImportant: true });
 
       /**
        * Variants
