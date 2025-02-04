@@ -34,6 +34,11 @@ export type ButtonProps = {
    */
   iconColor?: IconProps['color'];
   /**
+   * The look of the icon
+   * @default filled
+   */
+  iconLook?: IconProps['look'];
+  /**
    * The size of the icon
    *
    * Defaults to system size depending on size of the button
