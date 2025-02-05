@@ -60,8 +60,17 @@
 ### Buttons with icons
 
 ```jsx
-<div className="flex items-center gap-1">
-  <Button iconBefore={ArrowLeftIcon}>Icon before</Button>
-  <Button iconAfter={ArrowRightIcon}>Icon after</Button>
+<>
+<ComponentTitle>Filled icons</ComponentTitle>
+<div className="flex items-center gap-2 mb-2">  
+<Button iconBefore={SpaIcon}>Icon before</Button>  
+<Button iconAfter={SpaIcon}>Icon after</Button>
 </div>
+<Hr />
+<ComponentTitle>Outlined icons</ComponentTitle>
+<div className="flex items-center gap-2">  
+<Button iconBefore={SpaIcon} iconLook="outline">Icon after</Button>  
+<Button iconAfter={SpaIcon} iconLook="outline">Icon after</Button>
+</div>
+</>
 ```
