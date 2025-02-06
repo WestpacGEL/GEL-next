@@ -47,16 +47,16 @@ function BaseCheckbox(
 
   return (
     <label className={styles.base({ className })} ref={ref}>
-      <VisuallyHidden>
+      <VisuallyHidden elementType="span">
         <input {...inputProps} {...focusProps} ref={localRef} />
       </VisuallyHidden>
-      <div className={styles.checkbox()}>
+      <span className={styles.checkbox()}>
         {isSelected && <CheckIcon className={styles.checkIcon()} size={size} color={isDisabled ? 'border' : 'hero'} />}
-      </div>
-      <div className={styles.textWrapper()}>
+      </span>
+      <span className={styles.textWrapper()}>
         <span className={styles.labelText()}>{label}</span>
         {hint && <span className={styles.hintText()}>{hint}</span>}
-      </div>
+      </span>
     </label>
   );
 }

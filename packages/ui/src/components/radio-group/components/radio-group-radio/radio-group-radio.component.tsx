@@ -17,14 +17,14 @@ function BaseRadioGroupRadio({ className, hint, label, ...props }: RadioGroupRad
 
   return (
     <label className={styles.base({ className })} ref={ref}>
-      <VisuallyHidden>
+      <VisuallyHidden elementType="span">
         <input {...inputProps} {...focusProps} ref={localRef} />
       </VisuallyHidden>
-      <div className={styles.selector()} />
-      <div className={styles.textWrapper()}>
+      <span className={styles.selector()} />
+      <span className={styles.textWrapper()}>
         <span className={styles.labelText()}>{label}</span>
         {hint && <span className={styles.hintText()}>{hint}</span>}
-      </div>
+      </span>
     </label>
   );
 }
