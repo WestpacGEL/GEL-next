@@ -32,6 +32,10 @@ function BaseSelectorRadioGroupOption(
 
   const FinalIcon = checkIcon === 'checkbox' ? TickIcon : ArrowRightIcon;
 
+  const onItemClick = () => {
+    state.setSelectedValue(value);
+  };
+
   return (
     <FlexiCell
       after={
@@ -43,8 +47,8 @@ function BaseSelectorRadioGroupOption(
       before={before}
       withBorder={withBorder}
       withArrow={withArrow}
-      tag="label"
       ref={ref}
+      onClick={onItemClick}
       className={styles.base({})}
     >
       <VisuallyHidden>
