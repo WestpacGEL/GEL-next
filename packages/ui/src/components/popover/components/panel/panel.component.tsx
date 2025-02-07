@@ -34,6 +34,7 @@ export function BasePanel({
           <div className={styles.body()}>{content}</div>
           <Button
             look="link"
+            size="small"
             onClick={state.close}
             className={styles.closeBtn()}
             iconAfter={() => <CloseIcon color="muted" size="small" aria-hidden />}
