@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.40.1
+
+### Patch Changes
+
+- 6b3ed1b: popover styling changes for rounded corner, thick arrow, arrow possitioning, and header's font medium
+
 ## 0.40.0
 
 ### Minor Changes
