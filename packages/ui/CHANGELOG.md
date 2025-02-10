@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.40.2
+
+### Patch Changes
+
+- 18c66ea: Fix popover focus issue
+
 ## 0.40.1
 
 ### Patch Changes
