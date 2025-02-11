@@ -32,7 +32,7 @@ export const styles = tv(
           base: 'relative border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50 active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-pop',
         },
         hero: { base: 'border border-hero bg-hero text-white hover:bg-hero-70 active:bg-hero-50' },
-        faint: { base: 'border border-border bg-light text-muted hover:bg-white active:bg-white' },
+        faint: { base: 'border border-borderDark bg-light text-muted hover:bg-white active:bg-white' },
         link: { base: 'text-link underline' },
         unstyled: { base: '' },
       },
