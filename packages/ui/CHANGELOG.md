@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.40.3
+
+### Patch Changes
+
+- b31459e: Update button.styles.ts to implement #1014
+
 ## 0.40.2
 
 ### Patch Changes
