@@ -33,10 +33,10 @@ export function Switch({
       <span className={styles.label()} id={labelId}>
         {label}
       </span>
-      <VisuallyHidden>
+      <VisuallyHidden elementType="span">
         <input {...mergeProps(inputProps, focusProps)} ref={ref} />
       </VisuallyHidden>
-      <div className={styles.switchDiv()} />
+      <span className={styles.switchDiv()} />
     </label>
   );
 }
