@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.41.1
+
+### Patch Changes
+
+- 11cd67f: unstyled button must not have padding and text should be left aligned
+
 ## 0.41.0
 
 ### Minor Changes
