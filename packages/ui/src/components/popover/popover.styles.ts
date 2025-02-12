@@ -13,6 +13,12 @@ export const styles = tv(
         },
         false: {},
       },
+      look: {
+        unstyled: {
+          button: 'p-0 text-left',
+          false: {},
+        },
+      },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },

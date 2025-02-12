@@ -101,6 +101,34 @@ export const AsInlineLinkAppearance = () => (
 );
 
 /**
+ * > Popover trigger as inline unstyled appearance
+ */
+export const AsInlineUnstyledAppearance = () => (
+  <>
+    <h3 className="typography-body-7 mb-2 font-bold">Inside Accordian/Paragraph</h3>
+    <p className="mb-4">
+      {' '}
+      This is an example of using a popover that looks like an inline customised underling decoration{' '}
+      <Popover look="unstyled" heading="Heading" content={popoverContent} size="small">
+        <span className="underline decoration-dotted decoration-[1.5px]">Click here.</span>
+      </Popover>{' '}
+      To test popover.
+    </p>
+
+    <p className="mb-4">
+      {' '}
+      This is an example of using a popover that looks like an inline customised underling decoration and name is way
+      big and screen size is small{' '}
+      <Popover look="unstyled" heading="Heading" content={popoverContent} size="small">
+        <span className="underline decoration-dotted decoration-[1.5px]">
+          THE ELIZABETH COLLEGE OF TECHNOLOG MARK CHARLES HOOKWAY AND MADDALENA limited.
+        </span>
+      </Popover>{' '}
+    </p>
+  </>
+);
+
+/**
  * > Popover trigger as inline link appearance
  */
 export const StackingOrderWithPortal = () => (

@@ -32,7 +32,7 @@ export function Popover({
 }: PopoverProps) {
   const state = useOverlayTriggerState({});
   const panelId = useId();
-  const styles = popoverStyles({ linkStyling });
+  const styles = popoverStyles({ linkStyling, look });
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
 
   const handleClick = useCallback(
