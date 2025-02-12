@@ -16,8 +16,13 @@ export const styles = tv(
       look: {
         unstyled: {
           button: 'p-0 text-left',
-          false: {},
         },
+        link: {
+          button: 'p-0 text-left',
+        },
+        primary: {},
+        hero: {},
+        faint: {},
       },
     },
   },
