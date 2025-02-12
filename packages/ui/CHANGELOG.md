@@ -1,5 +1,15 @@
 # @westpac/ui
 
+## 0.41.0
+
+### Minor Changes
+
+- 555b720: updated switch to include isSelected prop
+
+### Patch Changes
+
+- 11cd67f: unstyled button must not have padding and text should be left aligned
+
 ## 0.40.3
 
 ### Patch Changes

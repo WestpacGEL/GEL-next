@@ -1,5 +1,13 @@
 # protoform
 
+## 0.2.23
+
+### Patch Changes
+
+- Updated dependencies [555b720]
+- Updated dependencies [11cd67f]
+  - @westpac/ui@0.41.0
+
 ## 0.2.22
 
 ### Patch Changes
