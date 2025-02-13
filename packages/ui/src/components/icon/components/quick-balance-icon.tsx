@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function QuickBalanceIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Quick Balance',
-  copyrightYear = '2023',
+  copyrightYear = '2025',
   ...props
 }: IconProps) {
   return (

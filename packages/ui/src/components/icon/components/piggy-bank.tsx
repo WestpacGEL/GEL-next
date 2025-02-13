@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function PiggyBankIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Piggy Bank',
-  copyrightYear = '2024',
+  copyrightYear = '2025',
   ...props
 }: IconProps) {
   return (

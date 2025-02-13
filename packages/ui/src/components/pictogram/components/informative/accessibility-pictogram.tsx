@@ -12,7 +12,7 @@ export function AccessibilityPictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'Accessibility',
-  copyrightYear = '2024',
+  copyrightYear = '2025',
   className,
   ...props
 }: PictogramProps) {

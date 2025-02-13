@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function ArrowBackCircleIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Arrow Back Circle',
-  copyrightYear = '2023',
+  copyrightYear = '2025',
   ...props
 }: IconProps) {
   return (

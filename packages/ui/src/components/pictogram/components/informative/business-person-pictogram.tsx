@@ -12,7 +12,7 @@ export function BusinessPersonPictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'Business person',
-  copyrightYear = '2024',
+  copyrightYear = '2025',
   className,
   ...props
 }: PictogramProps) {

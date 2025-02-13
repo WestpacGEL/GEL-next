@@ -12,7 +12,7 @@ export function ThumbsUpPictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'Thumbs up',
-  copyrightYear = '2024',
+  copyrightYear = '2025',
   className,
   ...props
 }: PictogramProps) {

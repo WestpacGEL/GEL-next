@@ -12,7 +12,7 @@ export function MedicareCardPictogram({
   viewBoxWidth = 78,
   viewBoxHeight = 78,
   'aria-label': ariaLabel = 'Medicare card',
-  copyrightYear = '2024',
+  copyrightYear = '2025',
   className,
   ...props
 }: PictogramProps) {
