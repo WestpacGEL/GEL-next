@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 0.42.0
+
+### Minor Changes
+
+- 12478b5: added pin and unpin icons
+- 20c9f07: updated copyright year of all icons and logos to latest
+
 ## 0.41.1
 
 ### Patch Changes
