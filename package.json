@@ -47,7 +47,8 @@
   "pnpm": {
     "overrides": {
       "json5": "1.0.2",
-      "micromatch@<4.0.8": ">=4.0.8"
+      "micromatch@<4.0.8": ">=4.0.8",
+      "file-entry-cache": "^8.0.0"
     }
   }
 }
