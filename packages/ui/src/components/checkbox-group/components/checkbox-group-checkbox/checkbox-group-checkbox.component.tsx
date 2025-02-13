@@ -12,7 +12,7 @@ import { type CheckboxGroupCheckboxProps } from './checkbox-group-checkbox.types
 
 // TODO: Discuss with designers if this icon should be included as part of Icons
 // Icon based on SVGs/instructions received from this issue https://github.com/WestpacGEL/GEL-next/issues/159
-function CheckIcon({ copyrightYear = '2024', size, ...props }: IconProps) {
+function CheckIcon({ copyrightYear = '2025', size, ...props }: IconProps) {
   const viewBoxSize = size === 'large' ? '0 0 30 30' : '0 0 24 24';
   return (
     <Icon copyrightYear={copyrightYear} viewBox={viewBoxSize} {...props}>

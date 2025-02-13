@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export const RAMSMultibrandLargeLogo = ({
   'aria-label': ariaLabel = 'RAMS',
-  copyrightYear = '2024',
+  copyrightYear = '2025',
   viewBoxWidth = 180,
   viewBoxHeight = 65,
   align = 'left',
