@@ -1,5 +1,17 @@
 # @westpac/ui
 
+## 0.41.0
+
+### Minor Changes
+
+- 555b720: updated switch to include isSelected prop
+- 12478b5: added pin and unpin icons
+- 20c9f07: updated copyright year of all icons and logos to latest
+
+### Patch Changes
+
+- 11cd67f: unstyled button must not have padding and text should be left aligned
+
 ## 0.40.3
 
 ### Patch Changes
