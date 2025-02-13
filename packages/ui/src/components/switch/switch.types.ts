@@ -26,4 +26,4 @@ export type SwitchProps = {
    * Size of switch
    */
   size?: Variants['size'];
-} & Omit<AriaCheckboxProps, 'children' | 'isSelected'>;
+} & Omit<AriaCheckboxProps, 'children'>;

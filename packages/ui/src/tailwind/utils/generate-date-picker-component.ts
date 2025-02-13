@@ -77,6 +77,11 @@ export const generateDatePicker = () => {
           '@apply max-w-none': {},
         },
       },
+      '&.date-picker-invalid': {
+        '.duet-date__input': {
+          '@apply border-danger': {},
+        },
+      },
 
       /* Calendar selects */
       '.duet-date__dialog-content': {

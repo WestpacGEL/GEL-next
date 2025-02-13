@@ -21,6 +21,11 @@ export type DatePickerProps = {
    * Make Datepicker block
    */
   block?: Variants['block'];
+  /**
+   * Date format
+   * @default dd-MM-yyyy
+   */
+  dateFormat?: 'dd-MM-yyyy' | 'dd/MM/yyyy';
   /*
    * Disable specific dates. Must be in IS0-8601 format: YYYY-MM-DD
    */
@@ -33,6 +38,11 @@ export type DatePickerProps = {
    * Disable weekend days
    */
   disableWeekends?: boolean;
+  /**
+   * Whether the user input is invalid
+   * @default false
+   */
+  invalid?: boolean;
   /**
    * Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.
    */

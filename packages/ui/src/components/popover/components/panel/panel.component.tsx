@@ -25,7 +25,7 @@ export function BasePanel({
 
   const styles = panelStyles({ placement });
   return (
-    <FocusScope contain autoFocus restoreFocus>
+    <FocusScope autoFocus restoreFocus>
       <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef}>
         <div className={styles.content()}>
           <Tag tabIndex={0} className={styles.heading()}>
@@ -34,6 +34,7 @@ export function BasePanel({
           <div className={styles.body()}>{content}</div>
           <Button
             look="link"
+            size="small"
             onClick={state.close}
             className={styles.closeBtn()}
             iconAfter={() => <CloseIcon color="muted" size="small" aria-hidden />}

@@ -1,5 +1,65 @@
 # @westpac/ui
 
+## 0.40.3
+
+### Patch Changes
+
+- b31459e: Update button.styles.ts to implement #1014
+
+## 0.40.2
+
+### Patch Changes
+
+- 18c66ea: Fix popover focus issue
+
+## 0.40.1
+
+### Patch Changes
+
+- 6b3ed1b: popover styling changes for rounded corner, thick arrow, arrow possitioning, and header's font medium
+
+## 0.40.0
+
+### Minor Changes
+
+- 04d5a45: fixes #1006
+
+## 0.39.0
+
+### Minor Changes
+
+- faea8ea: fixes #1003
+
+## 0.38.0
+
+### Minor Changes
+
+- 779e98f: fixes #996
+
+## 0.37.0
+
+### Minor Changes
+
+- 66b74a9: fixes #992
+
+## 0.36.1
+
+### Patch Changes
+
+- 3f410a7: type check fix for onClick prop of popover
+
+## 0.36.0
+
+### Minor Changes
+
+- 40d387d: support #976 date format request
+
+## 0.35.0
+
+### Minor Changes
+
+- 2ed1fd5: fixes #983 and invalid state in #976
+
 ## 0.34.1
 
 ### Patch Changes

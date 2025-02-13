@@ -14,7 +14,7 @@ All GEL components have a couple of dependencies so please ensure the following 
 
 ```
 npm i react@^18.2.0
-npm i -D tailwindcss@~3.3.2 postcss autoprefixer
+npm i -D tailwindcss@~3.4.15 postcss autoprefixer
 ```
 
 GEL is using [Tailwind](https://tailwindcss.com/) for styling. Visit the [Tailwind docs](https://tailwindcss.com/docs/installation/framework-guides) to learn more about installation and usage.

@@ -13,7 +13,7 @@
         be a book written about me, that there ought!’
       </Modal>
       <Button look="primary" soft onClick={state.open}>
-        Open
+        Open modal
       </Button>
     </>
   );
@@ -52,14 +52,14 @@
               </p>
             </ModalBody>
             <ModalFooter
-              primaryLabel="Save changes"
+              primaryLabel="Label"
               primaryOnClick={states[size as 'sm' | 'md' | 'lg'].close}
-              secondaryLabel="Close"
+              secondaryLabel="Label"
               secondaryOnClick={states[size as 'sm' | 'md' | 'lg'].close}
             />
           </Modal>
           <Button soft look="primary" onClick={states[size as 'sm' | 'md' | 'lg'].open}>
-            {label} Modal
+            {label} modal
           </Button>
         </Fragment>
       ))}
@@ -86,7 +86,7 @@
         />
       </Modal>
       <Button look="primary" soft onClick={state.open}>
-        Open Modal
+        Open modal
       </Button>
     </Fragment>
   );
@@ -104,14 +104,14 @@
       <Modal isKeyboardDismissDisabled state={state} title="Modal title">
         <ModalBody>I'm children</ModalBody>
         <ModalFooter
-          primaryLabel="Submit"
+          primaryLabel="Label"
           primaryOnClick={state.close}
           secondaryLabel="Close"
           secondaryOnClick={state.close}
         />
       </Modal>
       <Button look="primary" soft onClick={state.open}>
-        Open Modal
+        Open modal
       </Button>
     </Fragment>
   );

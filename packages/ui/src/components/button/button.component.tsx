@@ -18,6 +18,7 @@ function BaseButton(
     tag: Tag = 'button',
     iconBefore: IconBefore,
     iconAfter: IconAfter,
+    iconLook,
     iconColor,
     iconSize,
     children,
@@ -39,9 +40,13 @@ function BaseButton(
 
   return (
     <Tag ref={ref} className={styles.base({ className })} {...mergeProps(props, focusProps)}>
-      {IconBefore && <IconBefore size={btnIconSize} className={styles.iconBefore()} color={iconColor} aria-hidden />}
+      {IconBefore && (
+        <IconBefore look={iconLook} size={btnIconSize} className={styles.iconBefore()} color={iconColor} aria-hidden />
+      )}
       <span className={styles.text()}>{children}</span>
-      {IconAfter && <IconAfter size={btnIconSize} className={styles.iconAfter()} color={iconColor} aria-hidden />}
+      {IconAfter && (
+        <IconAfter look={iconLook} size={btnIconSize} className={styles.iconAfter()} color={iconColor} aria-hidden />
+      )}
     </Tag>
   );
 }

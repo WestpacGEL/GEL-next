@@ -38,6 +38,10 @@ function BaseSelectorCheckboxGroupOption(
 
   const FinalIcon = checkIcon === 'checkbox' ? TickIcon : ArrowRightIcon;
 
+  const onItemClick = () => {
+    state.toggleValue(value);
+  };
+
   return (
     <FlexiCell
       after={
@@ -49,8 +53,8 @@ function BaseSelectorCheckboxGroupOption(
       before={before}
       withBorder={withBorder}
       withArrow={withArrow}
-      tag="label"
       ref={ref}
+      onClick={onItemClick}
       className={styles.base({})}
     >
       <VisuallyHidden>

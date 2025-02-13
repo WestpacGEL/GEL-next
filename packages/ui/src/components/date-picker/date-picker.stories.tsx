@@ -78,6 +78,13 @@ export const Controlled = () => {
 };
 
 /**
+ * > Different  date format (dd/MM/yyyy)
+ */
+export const DifferentDateFormat: Story = {
+  args: { dateFormat: 'dd/MM/yyyy' },
+};
+
+/**
  * > Disable weekends
  */
 export const DisableWeekends: Story = {
@@ -96,6 +103,13 @@ export const DisableDaysOfWeek: Story = {
  */
 export const DisableSpecificDates: Story = {
   args: { disableDates: ['2023-10-10'] },
+};
+
+/**
+ * > Invalid state
+ */
+export const InvalidState: Story = {
+  args: { invalid: true },
 };
 
 /**
