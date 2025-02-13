@@ -6,7 +6,7 @@ import { type SymbolProps } from '../../symbol.types.js';
 
 export const STGLogo = ({
   'aria-label': ariaLabel = 'St.George',
-  copyrightYear = '2024',
+  copyrightYear = '2025',
   viewBoxWidth = 170,
   viewBoxHeight = 51,
   className,

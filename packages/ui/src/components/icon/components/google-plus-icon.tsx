@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function GooglePlusIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Google Plus',
-  copyrightYear = '2023',
+  copyrightYear = '2025',
   ...props
 }: IconProps) {
   return (

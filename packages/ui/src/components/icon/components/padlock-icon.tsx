@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function PadlockIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Padlock',
-  copyrightYear = '2023',
+  copyrightYear = '2025',
   ...props
 }: IconProps) {
   return (

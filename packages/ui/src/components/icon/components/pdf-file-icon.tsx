@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function PdfFileIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Pdf File',
-  copyrightYear = '2023',
+  copyrightYear = '2025',
   ...props
 }: IconProps) {
   return (

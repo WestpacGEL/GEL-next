@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function OpenBrowserIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Open Browser',
-  copyrightYear = '2023',
+  copyrightYear = '2025',
   ...props
 }: IconProps) {
   return (
