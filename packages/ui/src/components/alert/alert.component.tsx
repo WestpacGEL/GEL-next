@@ -69,7 +69,7 @@ export function Alert({
                 {children}
               </div>
               {dismissible && mode !== 'text' && (
-                <button className={styles.close()} onClick={handleClose} aria-label="Close alert">
+                <button type="button" className={styles.close()} onClick={handleClose} aria-label="Close alert">
                   <CloseIcon size="small" />
                 </button>
               )}
