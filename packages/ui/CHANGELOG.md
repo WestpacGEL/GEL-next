@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.42.1
+
+### Patch Changes
+
+- 1020b3a: When Alert are put in Form and click on close button, It triggers onsubmit action due default type of button is submit for most of the browsers
+
 ## 0.42.0
 
 ### Minor Changes
