@@ -137,3 +137,32 @@ export const Responsive: Story = {
     );
   },
 };
+
+/**
+ * > Example showing how you can use defaultExpandedKeys to open any accordian item by default
+ */
+
+export const defaultExpandedKeysStory = () => (
+  <Accordion look="lego" rounded={false} defaultExpandedKeys={['first']}>
+    <AccordionItem key="first" title="hello first">
+      <h3>First</h3>
+      <p>I am by default opened upon load</p>
+    </AccordionItem>
+
+    <AccordionItem key="sec" title="hello sec">
+      <h3>Second</h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
+        reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
+      </p>
+    </AccordionItem>
+
+    <AccordionItem key="third" title="hello third">
+      <h3>Third</h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
+        reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
+      </p>
+    </AccordionItem>
+  </Accordion>
+);
