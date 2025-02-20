@@ -19,17 +19,25 @@ function Accordion<T extends object>(
   // in our case we don't need that functionality and we have to render html tags or components
   // therefore as a workaround we are setting hasChildItems false for all of them
   // https://github.com/adobe/react-spectrum/issues/3882
+  const clonedChildren: React.ReactElement<T>[] = [];
+  // map and toArray method, change the original key by prefix '.$..'
+  // thus, using forEach
+  Children.forEach(props.children, child => {
+    if (isValidElement(child)) {
+      const cloned = {
+        ...cloneElement(child, {
+          ...child.props,
+          // Adding hasChildItems false by default
+          hasChildItems: false,
+        }),
+      };
+      clonedChildren.push(cloned as React.ReactElement<T>);
+    }
+  });
+
   const finalProps = {
     ...props,
-    children: Children.map(props.children, child => {
-      // equal to (if (child == null || typeof child == 'string'))
-      if (!isValidElement(child)) return child;
-      return cloneElement(child, {
-        ...child.props,
-        // Adding hasChildItems false by default
-        hasChildItems: false,
-      });
-    }),
+    children: clonedChildren,
   };
   const state = useTreeState<T>(finalProps as TreeProps<T>);
   const domRef = useDOMRef<HTMLDivElement>(ref);
