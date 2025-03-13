@@ -4,14 +4,17 @@ description: Understand customer behaviour and make better informed design decis
 thumbnail:
   src: >-
     https://www.westpac.com.au/content/dam/public/gel/images/customer-insights-card.png
+  alt: >-
+    Graphic illustration of a head with a brain to indicate an understanding of
+    what the customer is thinking and their needs.
   height: 1212
   width: 3168
-smallDescription: >-
-  Graphic illustration of a head with a brain to indicate an understanding of
-  what the customer is thinking and their needs.
 image:
   src: >-
     https://www.westpac.com.au/content/dam/public/gel/images/customer-insights-card.png
+  alt: >-
+    Graphic illustration of a head with a brain to indicate an understanding of
+    what the customer is thinking and their needs.
   height: 1212
   width: 3168
 author: Kimberley Jones
