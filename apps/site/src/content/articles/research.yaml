@@ -1,8 +1,10 @@
 name: Research
-cardTitle: This should be the card title
+cardTitle: Research
 description: >-
-  This should be the card description - Understand customer behaviour and make
-  better informed design decisions.
+  Research underpins human-centred design; when design decisions are based on
+  customer needs, preferences and insights, customers are at the heart of our
+  digital development to ensure our platforms are easy to use and meet
+  expectations.
 thumbnail:
   src: >-
     https://www.westpac.com.au/content/dam/public/gel/images/customer-insights-card.png
@@ -11,11 +13,7 @@ thumbnail:
     what the customer is thinking and their needs.
   height: 1212
   width: 3168
-smallDescription: >-
-  Research underpins human-centred design; when design decisions are based on
-  customer needs, preferences and insights, customers are at the heart of our
-  digital development to ensure our platforms are easy to use and meet
-  expectations.
+smallDescription: Understand customer behaviour and make better informed design decisions.
 image:
   src: >-
     https://www.westpac.com.au/content/dam/public/gel/images/customer-insights-card.png
