@@ -1,6 +1,14 @@
 name: Research
+cardTitle: Research
+description: Understand customer behaviour and make better informed design decisions.
 thumbnail:
   src: >-
     https://www.westpac.com.au/content/dam/public/gel/images/customer-insights-card.png
-image: {}
+smallDescription: >-
+  Graphic illustration of a head with a brain to indicate an understanding of
+  what the customer is thinking and their needs.
+image:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/customer-insights-card.png
+author: Kimberley Jones
 publishedAt: 2025-03-13T12:34:00.000Z
