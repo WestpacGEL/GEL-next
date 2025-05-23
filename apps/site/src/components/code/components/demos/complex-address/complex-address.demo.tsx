@@ -101,7 +101,7 @@ export const ComplexAddressDemo = () => {
   return (
     <Form spacing="large">
       <FormGroup>
-        <Field label="Property type" hintMessage="Must be a residential address">
+        <Field label="Property test type" hintMessage="Must be a residential address">
           <PropertySelect value={property} onChange={e => setProperty(e.target.value)} />
         </Field>
       </FormGroup>
