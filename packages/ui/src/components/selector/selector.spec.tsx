@@ -1,4 +1,4 @@
-import { act, render } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Selector } from './selector.component.js';
@@ -115,6 +115,32 @@ describe('Selector', () => {
     expect(getByTestId('opt1')).toBeDisabled();
     expect(getByTestId('opt2')).toBeDisabled();
     expect(getByTestId('opt3')).toBeDisabled();
+  });
+
+  it('should not be able to select a disabled option', async () => {
+    const handleChange = vitest.fn(() => {
+      return;
+    });
+
+    render(
+      <Selector type="radio" aria-label="test" onChange={handleChange}>
+        <SelectorRadio value="1" data-testid="opt1">
+          option 1
+        </SelectorRadio>
+        <SelectorRadio value="2" data-testid="opt2">
+          option 2
+        </SelectorRadio>
+        <SelectorRadio value="3" data-testid="opt3" isDisabled>
+          option 3
+        </SelectorRadio>
+      </Selector>,
+    );
+
+    await act(async () => {
+      await user.click(screen.getByText(/option 3/));
+    });
+
+    expect(handleChange).toBeCalledTimes(0);
   });
 
   it('should call onChange function if type is button', async () => {

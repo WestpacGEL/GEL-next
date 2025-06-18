@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { type Meta, StoryFn } from '@storybook/react';
 
 import { GiftIcon } from '../icon/index.js';

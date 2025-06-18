@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Ref, forwardRef, useContext, useRef } from 'react';
+import React, { Ref, forwardRef, useCallback, useContext, useRef } from 'react';
 import { VisuallyHidden, mergeProps, useFocusRing, useRadio } from 'react-aria';
 
 import { ArrowRightIcon, TickIcon } from '../../../../../../components/icon/index.js';
@@ -32,9 +32,12 @@ function BaseSelectorRadioGroupOption(
 
   const FinalIcon = checkIcon === 'checkbox' ? TickIcon : ArrowRightIcon;
 
-  const onItemClick = () => {
+  const onItemClick = useCallback(() => {
+    if (isDisabled) {
+      return;
+    }
     state.setSelectedValue(value);
-  };
+  }, [isDisabled, state, value]);
 
   return (
     <FlexiCell
