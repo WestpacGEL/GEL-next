@@ -1,5 +1,36 @@
 # @westpac/ui
 
+## 0.42.2
+
+### Patch Changes
+
+- 0f41959: accordina default open items not working because items keys are being transformed with .$ by React map method. Thus, keys does not match with defaultExpandedKeys
+
+## 0.42.1
+
+### Patch Changes
+
+- 1020b3a: When Alert are put in Form and click on close button, It triggers onsubmit action due default type of button is submit for most of the browsers
+
+## 0.42.0
+
+### Minor Changes
+
+- 12478b5: added pin and unpin icons
+- 20c9f07: updated copyright year of all icons and logos to latest
+
+## 0.41.1
+
+### Patch Changes
+
+- 11cd67f: unstyled button must not have padding and text should be left aligned
+
+## 0.41.0
+
+### Minor Changes
+
+- 555b720: updated switch to include isSelected prop
+
 ## 0.40.3
 
 ### Patch Changes

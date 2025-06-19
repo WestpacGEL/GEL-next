@@ -1,5 +1,11 @@
 # @westpac/eslint-config
 
+## 0.5.0
+
+### Minor Changes
+
+- 563e3f6: fixes #1032
+
 ## 0.4.0
 
 ### Minor Changes
