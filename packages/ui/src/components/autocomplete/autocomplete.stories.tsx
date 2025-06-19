@@ -1,5 +1,5 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';
 
@@ -251,6 +251,27 @@ export const AsyncDynamicCollections = () => {
       <Autocomplete items={items} onFocus={getCollection} loadingState={loading}>
         {item => <AutocompleteItem>{item.name}</AutocompleteItem>}
       </Autocomplete>
+    </div>
+  );
+};
+
+/**
+ * > Passing external ref
+ */
+export const TestPassingRefAndFocus = () => {
+  const autocompleteRef = useRef<HTMLInputElement>(null);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <Autocomplete ref={autocompleteRef}>
+        <AutocompleteItem key="red panda">Red Panda</AutocompleteItem>
+        <AutocompleteItem key="cat">Cat</AutocompleteItem>
+        <AutocompleteItem key="dog">Dog</AutocompleteItem>
+        <AutocompleteItem key="aardvark">Aardvark</AutocompleteItem>
+        <AutocompleteItem key="kangaroo">Kangaroo</AutocompleteItem>
+        <AutocompleteItem key="snake">Snake</AutocompleteItem>
+      </Autocomplete>
+      <button onClick={() => autocompleteRef.current?.focus()}>Test focus</button>
     </div>
   );
 };
