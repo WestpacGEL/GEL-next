@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useMemo } from 'react';
+import { ForwardedRef, forwardRef, useMemo } from 'react';
 import { mergeProps, useButton, useComboBox, useFilter, useFocusRing, useSearchField } from 'react-aria';
 import { useComboBoxState, useSearchFieldState } from 'react-stately';
 
@@ -28,25 +28,30 @@ const STATIC_IS_OPEN_STATE = {
   },
 };
 
-export function Autocomplete<T extends object>({
-  size = 'medium',
-  invalid = false,
-  isDisabled,
-  footer,
-  portalContainer,
-  errorMessage,
-  hintMessage,
-  noOptionsMessage,
-  className,
-  width = 'full',
-  loadingState,
-  ...props
-}: AutocompleteProps<T>) {
+function Autocomplete<T extends object>(
+  {
+    size = 'medium',
+    invalid = false,
+    isDisabled,
+    footer,
+    portalContainer,
+    errorMessage,
+    hintMessage,
+    noOptionsMessage,
+    className,
+    width = 'full',
+    loadingState,
+    ...props
+  }: AutocompleteProps<T>,
+  ref: ForwardedRef<HTMLInputElement>,
+) {
   const { contains } = useFilter({ sensitivity: 'base' });
   const state = useComboBoxState({ isDisabled, ...props, defaultFilter: contains });
   const { isFocusVisible, focusProps } = useFocusRing();
   const { isFocusVisible: isInputFocusVisible, focusProps: inputFocusProps } = useFocusRing();
-  const inputRef = React.useRef(null);
+  const inputRef = React.useRef<HTMLInputElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  React.useImperativeHandle(ref, () => inputRef.current!);
   const listBoxRef = React.useRef(null);
   const popoverRef = React.useRef(null);
   const { inputProps, listBoxProps, labelProps, descriptionProps, errorMessageProps } = useComboBox(
@@ -168,3 +173,11 @@ export function Autocomplete<T extends object>({
     </div>
   );
 }
+
+const _Autocomplete = forwardRef(Autocomplete) as unknown as { displayName: string } & (<T extends object>(
+  props: AutocompleteProps<T> & { ref?: ForwardedRef<HTMLInputElement> },
+) => ReturnType<typeof Autocomplete>);
+
+_Autocomplete.displayName = 'Autocomplete';
+
+export { _Autocomplete as Autocomplete };
