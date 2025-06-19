@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useFocusVisible } from 'react-aria';
 
 import { styles } from './date-picker.styles.js';
 import { type DatePickerProps, DuetDatePickerElement } from './date-picker.types.js';
@@ -28,6 +29,7 @@ export function DatePicker({
   ...props
 }: DatePickerProps) {
   const [initialized, setInitialized] = useState(false);
+  const { isFocusVisible } = useFocusVisible();
 
   useEffect(() => {
     const initDatePicker = async () => {
@@ -124,5 +126,5 @@ export function DatePicker({
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  return <duet-date-picker class={styles({ size, block, invalid })} ref={ref} {...props} />;
+  return <duet-date-picker class={styles({ size, block, invalid, isFocusVisible })} ref={ref} {...props} />;
 }
