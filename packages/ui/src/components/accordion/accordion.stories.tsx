@@ -142,7 +142,7 @@ export const Responsive: Story = {
  * > Example showing how you can use defaultExpandedKeys to open any accordian item by default
  */
 
-export const defaultExpandedKeysStory = () => (
+export const DefaultExpandedKeysStory = () => (
   <Accordion look="lego" rounded={false} defaultExpandedKeys={['first']}>
     <AccordionItem key="first" title="hello first">
       <h3>First</h3>
