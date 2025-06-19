@@ -18,6 +18,10 @@ export const styles = tv(
         true: 'date-picker-invalid',
         false: '',
       },
+      isFocusVisible: {
+        true: 'date-picker-focused',
+        false: '',
+      },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
