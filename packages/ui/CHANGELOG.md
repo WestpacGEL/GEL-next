@@ -1,5 +1,15 @@
 # @westpac/ui
 
+## 0.42.3
+
+### Patch Changes
+
+- 7d91d01: focus outlined bug fix
+- 6da1e45: Autocomplete accepts ref
+- 6872395: fixes icon shrink bug on an error message
+- 5feefff: Alert with same focus outline style
+- 8024bc6: Selector radio group isDisabled bugfix
+
 ## 0.42.2
 
 ### Patch Changes
