@@ -3,6 +3,7 @@
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useCallback, useEffect, useState } from 'react';
 
+import { Button } from '../button/button.component.js';
 import { AlertIcon, CloseIcon, InfoIcon, LimitIcon, SuccessIcon, WarningIcon } from '../icon/index.js';
 
 import { styles as alertStyles } from './alert.styles.js';
@@ -69,9 +70,15 @@ export function Alert({
                 {children}
               </div>
               {dismissible && mode !== 'text' && (
-                <button type="button" className={styles.close()} onClick={handleClose} aria-label="Close alert">
+                <Button
+                  look="unstyled"
+                  type="button"
+                  className={styles.close()}
+                  onClick={handleClose}
+                  aria-label="Close alert"
+                >
                   <CloseIcon size="small" />
-                </button>
+                </Button>
               )}
             </Tag>
           </m.div>
