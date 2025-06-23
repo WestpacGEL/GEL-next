@@ -1,3 +1,4 @@
+import { Key } from '@react-types/shared';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useRef, useState } from 'react';
 
@@ -55,8 +56,8 @@ export const Default: Story = {
  * > Controlled usage example
  */
 export const Controlled = () => {
-  const [selectedKey, setSelectedKey] = useState<string | number>();
-  const handleSelectionChange = (key: string | number) => {
+  const [selectedKey, setSelectedKey] = useState<Key | null>();
+  const handleSelectionChange = (key: Key | null) => {
     setSelectedKey(key);
   };
   return (
