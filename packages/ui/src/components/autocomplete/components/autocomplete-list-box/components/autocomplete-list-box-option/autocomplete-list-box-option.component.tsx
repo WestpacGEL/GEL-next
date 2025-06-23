@@ -1,4 +1,5 @@
 import { type Node } from '@react-types/shared';
+import { clsx } from 'clsx';
 import * as React from 'react';
 import { Key, useOption } from 'react-aria';
 import { type ListState } from 'react-stately';
@@ -25,7 +26,11 @@ export function AutocompleteListBoxOption({ item, state }: AutocompleteListBoxOp
   );
 
   return (
-    <li {...optionProps} ref={ref} className={styles({ isFocused, isSelected, isDisabled })}>
+    <li
+      {...optionProps}
+      ref={ref}
+      className={clsx(styles({ isFocused, isSelected, isDisabled }), item.props.className)}
+    >
       {item.rendered}
     </li>
   );
