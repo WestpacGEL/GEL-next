@@ -119,6 +119,9 @@ const config: Config = withGEL({
       display: 'block',
     },
   },
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 });
 
 export default config;
