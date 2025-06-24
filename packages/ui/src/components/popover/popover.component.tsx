@@ -64,6 +64,7 @@ export function Popover({
   return (
     <div className={styles.base({ className })}>
       <Button
+        type="button"
         look={(icon && !children) || linkStyling ? 'link' : look}
         iconAfter={icon}
         soft={soft}
