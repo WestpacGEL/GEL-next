@@ -148,7 +148,7 @@ export function Pagination({
           <PaginationItem {...paginationNextProps}>{nextLabel}</PaginationItem>
         </li>
       </ul>
-      {current && (
+      {current !== undefined && (
         <span className="sr-only" role="status">
           Page {current}
         </span>
