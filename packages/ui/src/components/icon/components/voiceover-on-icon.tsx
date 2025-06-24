@@ -1,0 +1,51 @@
+import React, { Fragment } from 'react';
+
+import { Icon } from '../icon.component.js';
+import { type IconProps } from '../icon.types.js';
+
+export function VoiceoverOnIcon({
+  look = 'filled',
+  'aria-label': ariaLabel = 'Voiceover On',
+  copyrightYear = '2023',
+  ...props
+}: IconProps) {
+  return (
+    <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
+      {look === 'filled' ? (
+        <Fragment>
+          <path
+            d="M10 14.071c3.004 0 9 1.34 9 4v4H1v-4c0-2.66 5.996-4 9-4ZM21.071 1A9.97 9.97 0 0 1 24 8.071a9.97 9.97 0 0 1-2.929 7.072l-1.414-1.415A7.976 7.976 0 0 0 22 8.072c0-2.209-.895-4.21-2.343-5.657L21.071 1ZM10 3.071c2.762 0 5 2.238 5 5 0 2.763-2.238 5-5 5-2.763 0-5-2.237-5-5 0-2.762 2.237-5 5-5Z"
+            fill="currentColor"
+          />
+          <path
+            d="M18.242 3.83A5.98 5.98 0 0 1 20 8.07a5.98 5.98 0 0 1-1.758 4.242L16.828 10.9A3.987 3.987 0 0 0 18 8.071a3.987 3.987 0 0 0-1.172-2.828l1.414-1.414Z"
+            fill="currentColor"
+          />
+        </Fragment>
+      ) : (
+        <Fragment>
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M10 14.071c3.004 0 9 1.34 9 4v4H1v-4c0-2.66 5.996-4 9-4Zm0 2c-1.28 0-3.303.299-4.955.887-.83.295-1.434.617-1.793.912a1.14 1.14 0 0 0-.252.262v1.94h14v-1.94a1.142 1.142 0 0 0-.252-.262c-.36-.295-.964-.617-1.793-.912-1.652-.588-3.674-.887-4.955-.887Z"
+            fill="currentColor"
+          />
+          <path
+            d="M21.071 1A9.97 9.97 0 0 1 24 8.071a9.97 9.97 0 0 1-2.929 7.072l-1.414-1.415A7.976 7.976 0 0 0 22 8.072c0-2.209-.895-4.21-2.343-5.657L21.071 1Z"
+            fill="currentColor"
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M10 3.071c2.762 0 5 2.238 5 5 0 2.763-2.238 5-5 5-2.763 0-5-2.237-5-5 0-2.762 2.237-5 5-5Zm0 2c-1.658 0-3 1.342-3 3s1.342 3 3 3 3-1.342 3-3-1.342-3-3-3Z"
+            fill="currentColor"
+          />
+          <path
+            d="M18.242 3.83A5.98 5.98 0 0 1 20 8.07a5.98 5.98 0 0 1-1.758 4.242L16.828 10.9A3.987 3.987 0 0 0 18 8.071a3.987 3.987 0 0 0-1.172-2.828l1.414-1.414Z"
+            fill="currentColor"
+          />
+        </Fragment>
+      )}
+    </Icon>
+  );
+}

@@ -5,7 +5,7 @@ import { type IconProps } from '../icon.types.js';
 
 export function TravelExploreIcon({
   'aria-label': ariaLabel = 'Travel Explore',
-  copyrightYear = '2025',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

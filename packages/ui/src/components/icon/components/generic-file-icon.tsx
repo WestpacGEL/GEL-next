@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function GenericFileIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Generic File',
-  copyrightYear = '2025',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

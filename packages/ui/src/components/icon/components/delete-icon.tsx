@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function DeleteIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Delete',
-  copyrightYear = '2025',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

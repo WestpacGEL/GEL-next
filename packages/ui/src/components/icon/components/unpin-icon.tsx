@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function UnpinIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Unpin',
-  copyrightYear = '2025',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

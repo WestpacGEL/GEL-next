@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function AttacheCaseIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Attache Case',
-  copyrightYear = '2025',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

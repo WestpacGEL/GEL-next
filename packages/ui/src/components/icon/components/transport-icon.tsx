@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function TransportIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Transport',
-  copyrightYear = '2025',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (

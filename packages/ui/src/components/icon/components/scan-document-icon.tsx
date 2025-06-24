@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function ScanDocumentIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Scan Document',
-  copyrightYear = '2025',
+  copyrightYear = '2023',
   ...props
 }: IconProps) {
   return (
