@@ -9,7 +9,7 @@ function App() {
   const handleSelectionChange = (key: string | number | null) => {
     setSelectedKey(key);
   };
-  
+
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +20,7 @@ function App() {
         <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
-        <Grid className='w-full'>
+        <Grid className="w-full">
           <GridItem span={{ initial: 12, lg: 6 }}>
             <Accordion
               look="lego"
