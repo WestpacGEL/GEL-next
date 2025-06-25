@@ -136,6 +136,7 @@ stages:
           - task: Bash@3
             displayName: 'Push to Bitbucket'
             env:
+              BB_USER: $(BB_USER)
               BB_USER_TOKEN: $(BB_USER_TOKEN)
               BB_REPO: $(BB_REPO)
             inputs:
