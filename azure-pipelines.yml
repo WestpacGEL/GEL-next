@@ -111,3 +111,34 @@ stages:
               FORTIFY_TOKEN: $(FORTIFY_TOKEN)
               FORTIFY_COMPONENT_PJVERID: $(FORTIFY_COMPONENT_PJVERID)
               FORTIFY_EMAIL: $(FORTIFY_EMAIL)
+
+  - stage: SyncToBitbucket
+    displayName: 'Sync to Bitbucket'
+    condition: and(succeeded(), eq(variables.isMain, true))
+    jobs:
+      - job: sync_to_bitbucket
+        displayName: 'Shallow clone and push to Bitbucket'
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - checkout: self
+            fetchDepth: 1
+          - task: Bash@3
+            env:
+              BB_USER: $(BB_USER)
+              BB_EMAIL: $(BB_EMAIL)
+            displayName: 'Set up Git user'
+            inputs:
+              targetType: 'inline'
+              script: |
+                git config user.name "${BB_USER}"
+                git config user.email "${BB_EMAIL}"
+          - task: Bash@3
+            displayName: 'Push to Bitbucket'
+            env:
+              BB_USER_TOKEN: $(BB_USER_TOKEN)
+              BB_REPO: $(BB_REPO)
+            inputs:
+              targetType: 'inline'
+              script: |
+                git push --set-upstream https://${BB_USER}:${BB_USER_TOKEN}@${BB_REPO} main --force
