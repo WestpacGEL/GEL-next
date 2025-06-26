@@ -123,6 +123,7 @@ stages:
         steps:
           - checkout: self
             fetchDepth: 1
+            fetchTags: false
           - task: Bash@3
             env:
               BB_USER: $(BB_USER)
@@ -142,4 +143,4 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                git push --set-upstream https://${BB_USER}:${BB_USER_TOKEN}@${BB_REPO} main --force
+                git push --set-upstream https://${BB_USER}:${BB_USER_TOKEN}@${BB_REPO} HEAD:main --force
