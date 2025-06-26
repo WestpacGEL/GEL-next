@@ -42,6 +42,11 @@ export type PaginationProps = {
    */
   backLabel?: ReactNode;
   /**
+   * boundaryCount
+   * @default 1
+   */
+  boundaryCount?: number;
+  /**
    * Current page
    */
   current?: number;
@@ -60,9 +65,26 @@ export type PaginationProps = {
    */
   nextLabel?: ReactNode;
   /**
+   * siblingCount
+   * @default 1
+   */
+  siblingCount?: number;
+  /**
    * Tag to render
    * @default nav
    */
   tag?: keyof JSX.IntrinsicElements;
 } & (PaginationAsLinkProps | PaginationAsButtonProps) &
   Omit<HTMLAttributes<Element>, 'onChange'>;
+
+export type PageToRender =
+  | {
+      href: string;
+      page: number;
+      text: React.ReactNode;
+    }
+  | {
+      page: number;
+      text: React.ReactNode;
+    }
+  | null;
