@@ -290,6 +290,8 @@
     "@react-aria/accordion": "3.0.0-alpha.27",
     "@react-aria/utils": "~3.23.2",
     "@react-spectrum/utils": "~3.11.5",
+    "@types/archiver": "~6.0.3",
+    "archiver": "~7.0.1",
     "clsx": "^1.2.1",
     "framer-motion": "~10.12.16",
     "lodash.throttle": "~4.1.1",
