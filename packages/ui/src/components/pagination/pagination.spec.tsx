@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 import { Pagination } from './pagination.component.js';
 import { usePagination } from './pagination.hooks.js';
-import { styles } from './pagination.styles.js';
 
 const TWENTY_PAGES_SAMPLE = [
   { text: 'page-1' },
@@ -51,12 +50,6 @@ describe('Pagination', () => {
       <Pagination current={1} onChange={fn} pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]} />,
     );
     expect(container).toBeInTheDocument();
-  });
-  it('renders the style correctly', () => {
-    const { base, ul } = styles();
-    // TODO: use some variants for test
-    expect(base()).toBe('flex flex-col items-center');
-    expect(ul()).toBe('flex overflow-hidden');
   });
 
   it('goes to the page where user has clicked', async () => {

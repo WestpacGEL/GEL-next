@@ -3,7 +3,7 @@ import { type Meta, StoryFn } from '@storybook/react';
 import { useEffect, useState } from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
-import { Button } from '../index.js';
+import { Button, type PaginationProps } from '../index.js';
 
 import { Pagination } from './pagination.component.js';
 import { usePagination } from './pagination.hooks.js';
@@ -57,7 +57,7 @@ export default meta;
 /**
  * > Button usage example
  */
-export const Default = (props: any) => {
+export const Default = (props: PaginationProps) => {
   const [current, setCurrent] = useState(1);
   useEffect(() => {
     setCurrent(1);
@@ -65,66 +65,8 @@ export const Default = (props: any) => {
 
   return (
     <Pagination
-      pages={[
-        {
-          text: '1',
-        },
-        {
-          text: '2',
-        },
-        {
-          text: '3',
-        },
-        {
-          text: '4',
-        },
-        {
-          text: '5',
-        },
-        {
-          text: '6',
-        },
-        {
-          text: '7',
-        },
-        {
-          text: '8',
-        },
-        {
-          text: '9',
-        },
-        {
-          text: '10',
-        },
-        {
-          text: '11',
-        },
-        {
-          text: '12',
-        },
-        {
-          text: '13',
-        },
-        {
-          text: '14',
-        },
-        {
-          text: '15',
-        },
-        {
-          text: '16',
-        },
-        {
-          text: '17',
-        },
-        {
-          text: '18',
-        },
-        {
-          text: '19',
-        },
-      ]}
       {...props}
+      totalPages={20}
       onChange={value => {
         setCurrent(value);
         action('onChange')(value);
@@ -132,6 +74,13 @@ export const Default = (props: any) => {
       current={current}
     />
   );
+};
+
+/**
+ * > Button usage example
+ */
+export const AsLinkOnTotalPages = () => {
+  return <Pagination totalPages={20} onPageItemProps={page => ({ text: page, href: `#page-${page}` })} current={20} />;
 };
 
 /**
@@ -238,7 +187,7 @@ export const State = () => {
       onChange={changedPage => {
         setPage(changedPage);
       }}
-      pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
+      pages={Array.from({ length: 19 }, (_, i) => i + 1).map(page => ({ text: page }))}
     />
   );
 };
