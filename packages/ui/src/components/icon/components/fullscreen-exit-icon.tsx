@@ -5,7 +5,7 @@ import { type IconProps } from '../icon.types.js';
 
 export function FullscreenExitIcon({
   'aria-label': ariaLabel = 'Fullscreen Exit',
-  copyrightYear = '2023',
+  copyrightYear = '2025',
   ...props
 }: IconProps) {
   return (

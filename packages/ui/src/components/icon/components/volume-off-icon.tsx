@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function VolumeOffIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Volume Off',
-  copyrightYear = '2023',
+  copyrightYear = '2025',
   ...props
 }: IconProps) {
   return (

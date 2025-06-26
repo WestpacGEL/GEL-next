@@ -5,7 +5,7 @@ import { type IconProps } from '../icon.types.js';
 
 export function FullscreenIcon({
   'aria-label': ariaLabel = 'Fullscreen',
-  copyrightYear = '2023',
+  copyrightYear = '2025',
   ...props
 }: IconProps) {
   return (
