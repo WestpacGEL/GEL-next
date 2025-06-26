@@ -5,11 +5,13 @@ import { PaginationBase } from '../../pagination.types.js';
 
 export type PageToRender =
   | {
+      'aria-label'?: string;
       href: string;
       page: number;
       text: React.ReactNode;
     }
   | {
+      'aria-label'?: string;
       page: number;
       text: React.ReactNode;
     }

@@ -41,6 +41,7 @@ export function PaginationPresentational({
 
           const commonProps = {
             active: (current || 0) === page.page,
+            'aria-label': page['aria-label'] || `Go to page ${page.page}`,
           };
 
           return (

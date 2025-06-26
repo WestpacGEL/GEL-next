@@ -3,6 +3,7 @@ import { HTMLAttributes, ReactNode } from 'react';
 import { PaginationBase } from '../../pagination.types.js';
 
 export type PageProps = {
+  'aria-label'?: string;
   href: string;
   text: ReactNode;
 };

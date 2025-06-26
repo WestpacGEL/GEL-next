@@ -39,11 +39,10 @@ export type PaginationTotalPagesProps = {
   Omit<HTMLAttributes<Element>, 'onChange'>;
 
 export type PageToRenderBase = {
+  'aria-label'?: string;
   page: number;
   text: React.ReactNode;
 };
 export type PageToRenderHref = PageToRenderBase & {
   href: string;
 };
-
-export type PageToRender = PageToRenderHref | PageToRenderBase | null;
