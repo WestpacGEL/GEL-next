@@ -1,10 +1,33 @@
-import { act, render, renderHook } from '@testing-library/react';
+import { act, render, renderHook, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useState } from 'react';
 
 import { Pagination } from './pagination.component.js';
 import { usePagination } from './pagination.hooks.js';
 import { styles } from './pagination.styles.js';
+
+const TWENTY_PAGES_SAMPLE = [
+  { text: 'page-1' },
+  { text: 'page-2' },
+  { text: 'page-3' },
+  { text: 'page-4' },
+  { text: 'page-5' },
+  { text: 'page-6' },
+  { text: 'page-7' },
+  { text: 'page-8' },
+  { text: 'page-9' },
+  { text: 'page-10' },
+  { text: 'page-11' },
+  { text: 'page-12' },
+  { text: 'page-13' },
+  { text: 'page-14' },
+  { text: 'page-15' },
+  { text: 'page-16' },
+  { text: 'page-17' },
+  { text: 'page-18' },
+  { text: 'page-19' },
+  { text: 'page-20' },
+];
 
 describe('Pagination', () => {
   const user = userEvent.setup();
@@ -262,6 +285,106 @@ describe('Pagination', () => {
       />,
     );
     expect(getByRole('button', { current: 'page' })).toHaveTextContent('page-3');
+  });
+
+  describe('should render the pages according to siblingCount and boundaryCount', () => {
+    it('should render 8 buttons with current={1} siblingCount={2} and boundaryCount={0} with 20 pages', async () => {
+      render(
+        <Pagination
+          current={1}
+          siblingCount={2}
+          boundaryCount={0}
+          // eslint-disable-next-line @typescript-eslint/no-empty-function
+          onChange={() => {}}
+          pages={TWENTY_PAGES_SAMPLE}
+        />,
+      );
+      expect(screen.getAllByRole('button').length).toBe(8);
+    });
+
+    it('should render 7 buttons with current={1} siblingCount={2} and boundaryCount={0} with 20 pages', async () => {
+      render(
+        <Pagination
+          current={10}
+          siblingCount={2}
+          boundaryCount={0}
+          // eslint-disable-next-line @typescript-eslint/no-empty-function
+          onChange={() => {}}
+          pages={TWENTY_PAGES_SAMPLE}
+        />,
+      );
+      expect(screen.getAllByRole('button').length).toBe(7);
+    });
+
+    it('should render 10 buttons with current={1} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+      render(
+        <Pagination
+          current={1}
+          siblingCount={2}
+          boundaryCount={1}
+          // eslint-disable-next-line @typescript-eslint/no-empty-function
+          onChange={() => {}}
+          pages={TWENTY_PAGES_SAMPLE}
+        />,
+      );
+      expect(screen.getAllByRole('button').length).toBe(10);
+    });
+
+    it('should render 9 buttons with current={10} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+      render(
+        <Pagination
+          current={10}
+          siblingCount={2}
+          boundaryCount={1}
+          // eslint-disable-next-line @typescript-eslint/no-empty-function
+          onChange={() => {}}
+          pages={TWENTY_PAGES_SAMPLE}
+        />,
+      );
+      expect(screen.getAllByRole('button').length).toBe(9);
+    });
+
+    it('should render 10 buttons with current={20} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+      render(
+        <Pagination
+          current={20}
+          siblingCount={2}
+          boundaryCount={1}
+          // eslint-disable-next-line @typescript-eslint/no-empty-function
+          onChange={() => {}}
+          pages={TWENTY_PAGES_SAMPLE}
+        />,
+      );
+      expect(screen.getAllByRole('button').length).toBe(10);
+    });
+
+    it('should render 12 buttons with current={1} siblingCount={2} and boundaryCount={2} with 20 pages', async () => {
+      render(
+        <Pagination
+          current={20}
+          siblingCount={2}
+          boundaryCount={2}
+          // eslint-disable-next-line @typescript-eslint/no-empty-function
+          onChange={() => {}}
+          pages={TWENTY_PAGES_SAMPLE}
+        />,
+      );
+      expect(screen.getAllByRole('button').length).toBe(12);
+    });
+
+    it('should render 11 buttons with current={10} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+      render(
+        <Pagination
+          current={10}
+          siblingCount={2}
+          boundaryCount={2}
+          // eslint-disable-next-line @typescript-eslint/no-empty-function
+          onChange={() => {}}
+          pages={TWENTY_PAGES_SAMPLE}
+        />,
+      );
+      expect(screen.getAllByRole('button').length).toBe(11);
+    });
   });
 
   describe('usePagination hook', () => {
