@@ -2,16 +2,15 @@ export const generateDatePicker = () => {
   return {
     '.date-picker': {
       '.duet-date__input': {
-        '@apply text-lg focus:!border-borderDark focus:!shadow-none focus:focus-outline border border-borderDark border-solid rounded':
-          {},
+        '@apply text-lg focus:!border-borderDark focus:!shadow-none border border-borderDark border-solid rounded': {},
       },
       '.duet-date__toggle': {
         '@apply shadow-none border-solid border-l !border-l-borderDark !bg-light touch-manipulation whitespace-nowrap transition hover:bg-white active:bg-white rounded-r':
           {},
-        '@apply focus:shadow-none focus:focus-outline': {},
+        '@apply focus:shadow-none': {},
       },
       '.duet-date__select select:focus + .duet-date__select-label': {
-        '@apply !focus-outline rounded': {},
+        '@apply rounded': {},
       },
       '.duet-date__toggle-icon': {
         '@apply w-[18px] h-[18px] bg-cover flex-auto': {},
@@ -100,17 +99,17 @@ export const generateDatePicker = () => {
         '@apply font-semibold': {},
       },
       '.duet-date__prev, .duet-date__next': {
-        '@apply bg-background focus:focus-outline !outline-offset-0 text-primary': {},
+        '@apply bg-background !outline-offset-0 text-primary': {},
       },
       '.duet-date-dialog-select select:focus + .duet-date-dialog-select-label': {
-        '@apply focus-outline !shadow-none': {},
+        '@apply !shadow-none': {},
         'outline-offset': '0 !important',
       },
 
       /* Calendar days */
       '.duet-date__day': {
         '@apply hover:!bg-primary/5 focus:!bg-white/0 focus:!text-text': {},
-        '@apply active:shadow active:focus-outline focus:focus-outline focus:!shadow-none !outline-offset-0': {},
+        '@apply active:shadow focus:!shadow-none !outline-offset-0': {},
         '&.is-today': {
           '@apply !shadow-primary !text-text !bg-primary/5 !border !border-solid !border-primary': {},
         },
@@ -124,8 +123,33 @@ export const generateDatePicker = () => {
         },
       },
       '.duet-date__close:focus': {
-        '@apply bg-light focus-outline': {},
+        '@apply bg-light': {},
         'outline-offset': '0 !important',
+      },
+
+      /* Focused styles */
+      '&.date-picker-focused': {
+        '.duet-date__input': {
+          '@apply focus:focus-outline': {},
+        },
+        '.duet-date__toggle': {
+          '@apply focus:focus-outline': {},
+        },
+        '.duet-date__select select:focus + .duet-date__select-label': {
+          '@apply !focus-outline': {},
+        },
+        '.duet-date__prev, .duet-date__next': {
+          '@apply focus:focus-outline': {},
+        },
+        '.duet-date-dialog-select select:focus + .duet-date-dialog-select-label': {
+          '@apply focus-outline': {},
+        },
+        '.duet-date__day': {
+          '@apply active:focus-outline focus:focus-outline': {},
+        },
+        '.duet-date__close:focus': {
+          '@apply bg-light focus-outline': {},
+        },
       },
     },
   };

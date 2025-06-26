@@ -18,7 +18,7 @@ export const styles = tv(
       logoCenter: {
         true: {
           logoLink:
-            'max-sm:absolute max-sm:left-1/2 max-sm:z-0 max-sm:translate-x-[-50%] max-sm:translate-y-[15%] sm:relative',
+            'max-sm:absolute max-sm:left-1/2 max-sm:z-0 max-sm:-translate-x-1/2 max-sm:translate-y-[15%] sm:relative',
           smallLogo: '',
         },
         false: {

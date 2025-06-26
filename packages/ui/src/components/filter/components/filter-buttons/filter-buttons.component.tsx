@@ -68,6 +68,7 @@ export function FilterButtons({
         setScroll(scrollBy, scrollX, container);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [scrollTarget],
   );
 
@@ -116,7 +117,7 @@ export function FilterButtons({
 
       return { targetLeft, targetRight };
     },
-    [],
+    [filterButtons.length],
   );
 
   const handleScrollTarget = useCallback(
@@ -141,6 +142,7 @@ export function FilterButtons({
         setScrollTarget({ left: targetLeft, right: targetRight });
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [scrollTarget, getTargetLeft, getTargetRight, adjustTargets],
   );
 
@@ -172,6 +174,7 @@ export function FilterButtons({
       container?.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [handleScrollTarget, handleScrollable]);
 
   return (

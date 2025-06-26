@@ -1,5 +1,5 @@
 import { act, render, waitFor } from '@testing-library/react';
-import userEvent, { event } from '@testing-library/user-event';
+import userEvent from '@testing-library/user-event';
 
 import { HelpIcon } from '../icon/index.js';
 
