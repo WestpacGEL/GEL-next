@@ -20,7 +20,7 @@ export function Switch({
   const labelId = useId();
   const ref = useRef(null);
   const { isSelected } = state;
-  const { inputProps } = useCheckbox(
+  const { inputProps, labelProps } = useCheckbox(
     { isDisabled, 'aria-labelledby': labelId, defaultSelected: checked, ...props },
     state,
     ref,
@@ -29,7 +29,7 @@ export function Switch({
   const styles = switchStyles({ block, isFocusVisible, isSelected, isDisabled, size });
 
   return (
-    <label className={styles.base({ className })}>
+    <label className={styles.base({ className })} {...labelProps}>
       <span className={styles.label()} id={labelId}>
         {label}
       </span>

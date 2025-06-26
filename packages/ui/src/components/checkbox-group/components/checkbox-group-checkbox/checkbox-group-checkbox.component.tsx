@@ -1,7 +1,7 @@
 'use client';
 
 import React, { Ref, forwardRef, useContext, useRef } from 'react';
-import { VisuallyHidden, useCheckboxGroupItem, useFocusRing } from 'react-aria';
+import { VisuallyHidden, mergeProps, useCheckboxGroupItem, useFocusRing } from 'react-aria';
 
 import { Icon } from '../../../icon/icon.component.js';
 import { IconProps } from '../../../icon/index.js';
@@ -37,7 +37,7 @@ function BaseCheckbox(
 ) {
   const { state, size, orientation } = useContext(CheckboxGroupContext);
   const localRef = useRef(null);
-  const { inputProps, isDisabled, isSelected } = useCheckboxGroupItem(
+  const { inputProps, labelProps, isDisabled, isSelected } = useCheckboxGroupItem(
     { ...props, value, children: label },
     state,
     localRef,
@@ -46,9 +46,9 @@ function BaseCheckbox(
   const styles = checkboxItemStyles({ isDisabled, size, orientation, isFocusVisible });
 
   return (
-    <label className={styles.base({ className })} ref={ref}>
+    <label className={styles.base({ className })} ref={ref} {...labelProps}>
       <VisuallyHidden elementType="span">
-        <input {...inputProps} {...focusProps} ref={localRef} />
+        <input {...mergeProps(inputProps, focusProps)} ref={localRef} />
       </VisuallyHidden>
       <span className={styles.checkbox()}>
         {isSelected && <CheckIcon className={styles.checkIcon()} size={size} color={isDisabled ? 'border' : 'hero'} />}
