@@ -51,7 +51,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
   const params = useParams();
 
   const handleChange = useCallback(
-    async (key: Key) => {
+    async (key: string | number | null) => {
       if (params.component) {
         const componentPath = Array.isArray(params.component) ? params.component.join('/') : params.component;
         router.push(`/design-system/${key}/${componentPath}`, { scroll: false });
