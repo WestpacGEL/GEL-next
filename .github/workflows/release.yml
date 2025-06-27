@@ -28,6 +28,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Upload icons zip artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: icons-zip
+          path: ./apps/site/public/assets/GEL_Icons.zip
+
       - name: Publish to npm
         uses: changesets/action@v1
         with:
