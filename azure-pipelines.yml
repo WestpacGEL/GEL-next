@@ -117,13 +117,12 @@ stages:
     condition: and(succeeded(), eq(variables.isMain, true))
     jobs:
       - job: sync_to_bitbucket
-        displayName: 'Shallow clone and push to Bitbucket'
+        displayName: 'Clone and push to Bitbucket'
         pool:
           name: 'a00c6a-non-prod-self-hosted'
         steps:
           - checkout: self
-            fetchDepth: 1
-            fetchTags: false
+            fetchDepth: 0
           - task: Bash@3
             env:
               BB_USER: $(BB_USER)
@@ -143,5 +142,4 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                git filter-branch -- --all
                 git push --set-upstream https://${BB_USER}:${BB_USER_TOKEN}@${BB_REPO} HEAD:refs/heads/GEL-Next-GH --force
