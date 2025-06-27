@@ -143,4 +143,4 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                git push --set-upstream https://${BB_USER}:${BB_USER_TOKEN}@${BB_REPO} HEAD:main --force
+                git push --set-upstream https://${BB_USER}:${BB_USER_TOKEN}@${BB_REPO} HEAD:GEL-Next-GH --force
