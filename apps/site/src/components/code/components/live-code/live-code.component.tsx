@@ -115,7 +115,7 @@ export function LiveCode({
           />
         </div>
       )}
-      <ResponsiveModal size="full" onClose={responsiveModalState.close} state={responsiveModalState}>
+      <ResponsiveModal size="full" onClose={responsiveModalState.close} state={responsiveModalState} zIndex={1010}>
         <LivePreview aria-label="Rendered code snippet example" />
       </ResponsiveModal>
     </div>
