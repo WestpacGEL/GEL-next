@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-import { formatComponentSlug, formatNavItems, sortDeveloperMenu, sortMenu } from '@/utils/format';
+import { formatComponentSlug, sortDeveloperMenu } from '@/utils/format';
 
 import { useSidebar } from '../../sidebar.context';
 
