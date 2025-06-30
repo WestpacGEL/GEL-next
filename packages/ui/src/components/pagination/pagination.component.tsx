@@ -110,6 +110,10 @@ export function Pagination({
     };
   }, [current, pages, infinite, linkComponent, onChange, generateHandleOnClickForward]);
 
+  if (!pages || pages.length === 0) {
+    return null;
+  }
+
   return (
     <Tag className={styles.base({ className })} role={role} aria-label="Page number" {...props}>
       <ul className={styles.ul({})}>
@@ -148,7 +152,7 @@ export function Pagination({
           <PaginationItem {...paginationNextProps}>{nextLabel}</PaginationItem>
         </li>
       </ul>
-      {current && (
+      {current !== undefined && (
         <span className="sr-only" role="status">
           Page {current}
         </span>
