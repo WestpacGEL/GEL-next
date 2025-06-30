@@ -1,5 +1,6 @@
+import { type Key } from '@react-types/shared';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
-import { Key, useState } from 'react';
+import { useState } from 'react';
 
 import { Button, Tabs, TabsPanel } from '../index.js';
 
@@ -80,7 +81,7 @@ export const LegoLook: Story = {
  * > Controlled example
  */
 export const Controlled = () => {
-  const [expandedKeys, setExpandedKeys] = useState<Set<Key>>();
+  const [expandedKeys, setExpandedKeys] = useState<Iterable<Key>>();
   return (
     <Accordion
       look="lego"
