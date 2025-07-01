@@ -33,8 +33,8 @@ export function PaginationPresentational({
         {pagesToRender.map((page, index) => {
           if (page === null) {
             return (
-              <li className={styles.emptyItem()} aria-hidden="true" key={`index-${index}`}>
-                ...
+              <li className={styles.emptyItem()} key={`index-${index}`}>
+                …
               </li>
             );
           }
