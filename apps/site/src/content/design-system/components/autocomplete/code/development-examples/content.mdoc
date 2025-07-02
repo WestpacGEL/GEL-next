@@ -150,3 +150,26 @@
   );
 };
 ```
+### Customised Items
+
+```jsx
+<Autocomplete aria-label="Animals">
+  <AutocompleteItem key="BSB">
+    <div className="flex flex-col">
+      <h3 className="typography-body-9 font-medium">Business Name</h3>
+      <p>12 345 678 910</p>
+    </div>
+  </AutocompleteItem>,
+  <AutocompleteItem key="staff">
+    <div className="flex items-center gap-2">
+      <Circle className="size-5 bg-muted text-white">SN</Circle>
+      <div className="flex flex-col ">
+        <h3 className="typography-body-9">Staff Name</h3>
+        <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
+          Staff role, staff business area
+        </p>
+      </div>
+    </div>
+  </AutocompleteItem>
+</Autocomplete>
+```
