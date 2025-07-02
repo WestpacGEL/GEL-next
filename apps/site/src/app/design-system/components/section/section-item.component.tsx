@@ -1,8 +1,9 @@
 'use client';
 
 import { GridItem } from '@westpac/ui';
+import { ReactNode } from 'react';
 
-export function SectionItem({ className, children, ...props }: { children: React.ReactNode; className?: string }) {
+export function SectionItem({ className, children, ...props }: { children: ReactNode; className?: string }) {
   return (
     <GridItem
       className={className}

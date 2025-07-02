@@ -21,7 +21,6 @@ export function ListBox(props: ListBoxProps) {
         item.type === 'section' ? (
           <ListBoxSection key={item.key} section={item} state={state} />
         ) : (
-          // eslint-disable-next-line react/jsx-no-undef
           <Option key={item.key} item={item} state={state} />
         ),
       )}

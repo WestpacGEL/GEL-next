@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/deprecation */
 import * as React from 'react';
 import { useListBoxSection } from 'react-aria';
 

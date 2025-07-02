@@ -14,7 +14,6 @@ const hexToRgb = (hex: string) =>
 const filterTheme = (brand: BrandKey) =>
   ALL_THEMES.find((brandTheme: BrandConfig) => brandTheme.code === brand.toUpperCase())?.colors;
 
-// eslint-disable-next-line sonarjs/cognitive-complexity
 export function getColorPalette({ brand, palette }: { brand: BrandKey; palette: string }) {
   const colorPalette: { hex: string; name: string; rgb: string }[] = [];
   if (palette === 'primary') {
@@ -43,7 +42,7 @@ export function getColorPalette({ brand, palette }: { brand: BrandKey; palette: 
   } else if (palette === 'reserved_for_accessibility') {
     const theme = filterTheme(brand);
     if (theme) {
-      ACCESSIBILITY_COLORS.map(color => {
+      ACCESSIBILITY_COLORS.forEach(color => {
         const hex = theme[color].DEFAULT;
         const rgb = hexToRgb(hex) || [];
         colorPalette.push({

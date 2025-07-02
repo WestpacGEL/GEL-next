@@ -12,6 +12,7 @@ export default async function Homepage() {
           row.articles.map(articleSlug =>
             reader()
               .collections.articles.read(articleSlug || '')
+              // eslint-disable-next-line sonarjs/no-nested-functions
               .then(article => ({ ...article, content: null, slug: articleSlug })),
           ),
         )

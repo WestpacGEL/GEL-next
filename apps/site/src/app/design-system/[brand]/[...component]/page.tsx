@@ -68,7 +68,7 @@ export default async function ComponentPage({
           shortCodes.map(
             shortCode =>
               new Promise<ShortCode>(resolve => {
-                // eslint-disable-next-line promise/no-nesting
+                // eslint-disable-next-line promise/no-nesting, sonarjs/no-nested-functions
                 return shortCode.entry.content().then(content => {
                   return resolve({
                     ...shortCode.entry,
@@ -164,6 +164,7 @@ export default async function ComponentPage({
   const componentLookupKey = content.namedExport?.value?.name || componentName;
   const componentProps: ComponentProps | undefined = (json as any)[componentLookupKey];
   const componentLookupPath = componentProps?.filePath.split('/')[0];
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const subComponentProps = Object.entries(json).reduce((acc, [_, value]: [string, any]) => {
     if (value.filePath.startsWith(`${componentLookupPath}/components`)) {
       return [...acc, value];

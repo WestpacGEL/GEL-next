@@ -1,5 +1,5 @@
 import { SkipLink } from '@westpac/ui';
-import { Suspense } from 'react';
+import { ReactNode, Suspense } from 'react';
 
 import { reader } from '@/app/reader';
 import { BrandKey } from '@/app/types/brand.types';
@@ -12,7 +12,7 @@ export default async function DesignSystemLayout({
   children,
   params,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   params: { brand: string };
 }) {
   const allContent = await reader().collections.designSystem.all();

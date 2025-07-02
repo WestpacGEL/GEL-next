@@ -6,5 +6,5 @@ import { styles } from './paragraph.style';
 export type ParagraphProps = {
   children: ReactNode;
   className?: string;
-  textAlign?: 'center' | 'end' | undefined;
+  textAlign?: 'center' | 'end';
 } & VariantProps<typeof styles>;

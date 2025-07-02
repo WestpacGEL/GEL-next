@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({

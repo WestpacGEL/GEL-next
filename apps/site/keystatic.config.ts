@@ -1,4 +1,4 @@
-/* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable sonarjs/deprecation */
 import { GitHubConfig, LocalConfig, collection, config, fields, singleton } from '@keystatic/core';
 
 import { ArticleComponentBlocks } from '@/components/component-blocks/article-component-blocks';

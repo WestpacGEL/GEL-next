@@ -1,9 +1,10 @@
+import { ReactNode } from 'react';
 import { tv } from 'tailwind-variants';
 
 const styles = tv({
   base: 'border-t border-t-border py-7 sm:py-10',
 });
 
-export function Section({ className, children }: { children?: React.ReactNode; className?: string }) {
+export function Section({ className, children }: { children?: ReactNode; className?: string }) {
   return <section className={styles({ className })}>{children}</section>;
 }

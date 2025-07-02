@@ -9,11 +9,12 @@ import {
   WBCLogo,
   WBGLogo,
 } from '@westpac/ui/symbol';
+import { FC } from 'react';
 import { tv } from 'tailwind-variants';
 
 import { BrandKey } from '@/app/types/brand.types';
 
-export const logoMap: Record<BrandKey, { logo: React.FC<SymbolProps>; name: string }> = {
+export const logoMap: Record<BrandKey, { logo: FC<SymbolProps>; name: string }> = {
   wbc: { name: 'Westpac', logo: WBCLogo },
   stg: { name: 'St.George', logo: STGDragonLogo },
   bom: { name: 'Bank of Melbourne', logo: BOMShieldLogo },
