@@ -7,8 +7,8 @@ import { type SymbolProps } from '../../symbol.types.js';
 export const XMarkInverseSymbol = ({
   'aria-label': ariaLabel = 'X',
   copyrightYear = '',
-  viewBoxWidth = 32,
-  viewBoxHeight = 32,
+  viewBoxWidth = 80,
+  viewBoxHeight = 80,
   className,
   ...props
 }: SymbolProps) => (

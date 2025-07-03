@@ -35,6 +35,14 @@ export { RAMSMultibrandSmallLogo } from './components/logos/rams-multibrand-smal
 export { RedAvatarCircleLogo } from './components/logos/red-avatar-circle-logo.js';
 export { RedAvatarCircleReversedLogo } from './components/logos/red-avatar-circle-reversed-logo.js';
 export { RedAvatarLogo } from './components/logos/red-avatar-logo.js';
+export { PayToBlackSymbol } from './components/symbols/pay-to-black-symbol.js';
+export { PayToDarkGreySymbol } from './components/symbols/pay-to-dark-grey-symbol.js';
+export { PayToLightGreySymbol } from './components/symbols/pay-to-light-grey-symbol.js';
+export { PayToWhiteSymbol } from './components/symbols/pay-to-white-symbol.js';
+export { PayToWordmarkBlackSymbol } from './components/symbols/pay-to-wordmark-black-symbol.js';
+export { PayToWordmarkLightGreySymbol } from './components/symbols/pay-to-wordmark-light-grey-symbol.js';
+export { PayToWordmarkDarkGreySymbol } from './components/symbols/pay-to-wordmark-dark-grey-symbol.js';
+export { PayToWordmarkWhiteSymbol } from './components/symbols/pay-to-wordmark-white-symbol.js';
 export { SlackSymbol } from './components/symbols/slack-symbol.js';
 export { STGDragonLogo } from './components/logos/stg-dragon-logo.js';
 export { STGLogo } from './components/logos/stg-logo.js';
