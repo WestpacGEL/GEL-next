@@ -11,7 +11,9 @@ import { useSidebar } from '@/components/sidebar/context';
 export default function Home() {
   const { open, setOpen } = useSidebar();
   useEffect(() => {
-    open && setOpen(false);
+    if(open) {
+      setOpen(false);
+    }
   }, [open, setOpen]);
   return (
     <section>

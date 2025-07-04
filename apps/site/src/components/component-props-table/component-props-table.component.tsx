@@ -1,6 +1,5 @@
 import { Badge, Table, TableBody, TableCaption, TableCell, TableHeader, TableHeaderCell, TableRow } from '@westpac/ui';
 import { clsx } from 'clsx';
-import React from 'react';
 
 import { type ComponentPropsTableProps } from './component-props-table.types';
 
@@ -27,6 +26,7 @@ export function ComponentPropsTable({ className, componentProps, ...props }: Com
         <TableBody>
           {Object.entries(componentProps.props || {}).map(([key, value]) => {
             const type = value.type.name;
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
             const defaultValue = value.defaultValue?.value;
             const required = value.required ? 'true' : 'false';
 

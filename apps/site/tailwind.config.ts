@@ -6,6 +6,7 @@ import { generateFontComponents } from './src/utils/generate-font-components';
 
 const SitePlugin = plugin(
   // Adding the typography components
+  // eslint-disable-next-line @typescript-eslint/unbound-method
   ({ addComponents, theme }) => {
     addComponents(generateFontComponents(theme('typographySizes'), theme));
   },

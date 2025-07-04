@@ -17,6 +17,7 @@ export default async function DesignSystemLayout({
 }) {
   const allContent = await reader().collections.designSystem.all();
   const formattedItems = sortMenu(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     formatNavItems(
       allContent.filter(i => !i.entry?.excludeFromNavbar).map(({ entry, slug }) => ({ slug, name: entry.name })),
     ),

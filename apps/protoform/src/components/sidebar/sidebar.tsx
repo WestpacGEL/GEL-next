@@ -5,7 +5,6 @@ import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { clsx } from 'clsx';
 import throttle from 'lodash.throttle';
 import { usePathname } from 'next/navigation';
-import React from 'react';
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import { useSidebar } from './context';

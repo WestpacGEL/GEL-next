@@ -1,5 +1,5 @@
 import { ExpandLessIcon, ExpandMoreIcon } from '@westpac/ui/icon';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { HiddenSelect, mergeProps, useButton, useFocusRing, useSelect } from 'react-aria';
 import { Item, useSelectState } from 'react-stately';
 

@@ -108,7 +108,7 @@ export function CodeContent({
                 renderers={DOCUMENT_RENDERERS}
                 componentBlocks={{
                   ...foundationBlocksComponents,
-                  colors: props => <Colors palette={props.palette} tab="code" />,
+                  colors: (props: { palette: string }) => <Colors palette={props.palette} tab="code" />,
                   shortCode: props => {
                     return <ShortCode shortCodes={shortCodes} {...props} />;
                   },

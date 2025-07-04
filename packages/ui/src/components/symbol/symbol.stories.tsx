@@ -42,7 +42,7 @@ export const Offset = () => (
 export const AllSymbols = () => {
   const allSymbols = Object.entries(symbols).reduce(
     (curr, [key, symbol]) => (key.includes('Symbol') ? { ...curr, [key]: symbol } : curr),
-    {} as { [index: string]: React.FC<SymbolProps> },
+    {} as Record<string, React.FC<SymbolProps>>,
   );
 
   return (
@@ -60,22 +60,22 @@ export const AllSymbols = () => {
 export const AllLogos = () => {
   const allLogos = Object.entries(symbols).reduce(
     (curr, [key, symbol]) => (key.includes('Logo') ? { ...curr, [key]: symbol } : curr),
-    {} as { [index: string]: React.FC<SymbolProps> },
+    {} as Record<string, React.FC<SymbolProps>>,
   );
 
   const logos = Object.entries(allLogos).reduce(
     (curr, [key, symbol]) => (!key.includes('Multibrand') ? { ...curr, [key]: symbol } : curr),
-    {} as { [index: string]: React.FC<SymbolProps> },
+    {} as Record<string, React.FC<SymbolProps>>,
   );
 
   const multibrandLargeLogos = Object.entries(allLogos).reduce(
     (curr, [key, symbol]) => (key.includes('MultibrandLarge') ? { ...curr, [key]: symbol } : curr),
-    {} as { [index: string]: React.FC<SymbolProps> },
+    {} as Record<string, React.FC<SymbolProps>>,
   );
 
   const multibrandSmallLogos = Object.entries(allLogos).reduce(
     (curr, [key, symbol]) => (key.includes('MultibrandSmall') ? { ...curr, [key]: symbol } : curr),
-    {} as { [index: string]: React.FC<SymbolProps> },
+    {} as Record<string, React.FC<SymbolProps>>,
   );
 
   const align: Align[] = ['left', 'center', 'right'];

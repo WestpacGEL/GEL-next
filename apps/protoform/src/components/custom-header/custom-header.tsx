@@ -2,12 +2,11 @@
 
 import { Button, Header } from '@westpac/ui';
 import { BREAKPOINTS } from '@westpac/ui/themes-constants';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export function CustomHeader() {
   const router = useRouter();
-  const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(true);
 
   const updateSize = () => {

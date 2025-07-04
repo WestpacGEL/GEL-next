@@ -2,7 +2,7 @@
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
-import React, { Suspense, useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 
 import { sendToAnalytics } from '@/utils/send-to-analytics';
 

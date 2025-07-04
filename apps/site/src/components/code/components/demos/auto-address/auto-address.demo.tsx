@@ -55,7 +55,14 @@ export function ManualAddress({
         <Field
           errorMessage={errorMessage}
           label="Street"
-          hintMessage={<StreetHint manual={manual} onClick={() => onClick(manual)} />}
+          hintMessage={
+            <StreetHint
+              manual={manual}
+              onClick={() => {
+                onClick(manual);
+              }}
+            />
+          }
         >
           <Input size="large" invalid={withError} className="w-full" ref={streetLegendRef} />
         </Field>

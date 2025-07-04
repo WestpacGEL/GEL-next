@@ -55,7 +55,7 @@ export function getColorPalette({ brand, palette }: { brand: BrandKey; palette: 
   } else if (palette === 'data_visualisation') {
     const typedBrand = brand as Exclude<BrandKey, 'btfg'>;
     Object.entries(DATA_VIS_COLORS[typedBrand]).forEach(([name, hex]) => {
-      const hexStr = hex as string;
+      const hexStr = hex;
       const rgb = hexToRgb(hexStr) || [];
       colorPalette.push({
         name,

@@ -57,7 +57,7 @@ export function DatePicker({
         }
       },
       format(date: Date) {
-        return formatDate(date, dateFormat as 'dd-MM-yyyy' | 'dd/MM/yyyy');
+        return formatDate(date, dateFormat);
       },
     }),
     [dateFormat],

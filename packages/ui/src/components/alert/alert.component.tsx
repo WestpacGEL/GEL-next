@@ -37,7 +37,7 @@ export function Alert({
   };
 
   // A11y: Only info look allows a custom icon
-  const Icon = look === 'info' && icon ? icon : iconMap[look as Look];
+  const Icon = look === 'info' && icon ? icon : iconMap[look];
 
   const styles = alertStyles({ look, mode, dismissible, iconSize });
 

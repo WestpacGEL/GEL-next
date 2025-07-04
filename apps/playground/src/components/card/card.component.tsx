@@ -6,10 +6,7 @@ import { BrandKey } from '@/theme/theme.types';
 export function Card({ active, brand = 'wbc' }: { active?: boolean; brand?: BrandKey }) {
   const { themes, activeTheme, activeThemeKey, brandName } = useThemeStore();
   return (
-    <li
-      style={{ borderColor: activeTheme.border }}
-      className="flex content-center justify-center gap-3 rounded border p-4"
-    >
+    <li style={{ borderColor: activeTheme.border }} className="flex place-content-center gap-3 rounded border p-4">
       <div
         style={{ backgroundColor: active ? activeTheme.primary : themes[brand].primary }}
         className="size-16 shrink-0 rounded-full"

@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/todo-tag */
 'use client';
 
 import { Button } from '@westpac/ui/button';

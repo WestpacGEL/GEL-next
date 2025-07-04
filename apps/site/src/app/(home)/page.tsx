@@ -23,7 +23,7 @@ export default async function Homepage() {
             } as ArticleRowsProps);
           })
           .catch(error => {
-            reject(error);
+            reject(error as Error);
           });
       });
     }),

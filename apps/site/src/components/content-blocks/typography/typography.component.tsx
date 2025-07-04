@@ -3,7 +3,7 @@
 import { NewWindowIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
 import { useParams } from 'next/navigation';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { VariantProps } from 'tailwind-variants';
 
 import { BrandKey } from '@/app/types/brand.types';
@@ -22,13 +22,23 @@ export function Link({
 }: React.PropsWithChildren<LinkProps & VariantProps<typeof linkStyles>>) {
   const params = useParams();
   const brand = (params.brand ?? 'wbc') as BrandKey;
-  const isExternalLink = href.toString().indexOf('http') === 0 || href.toString().indexOf('mailto') === 0;
-  const isArticle = href.toString().indexOf('/article') === 0;
-  const isDesignSystem = href.toString().indexOf('/design-system') === 0;
+  const isExternalLink =
+    (typeof href === 'string' ? href : href.href || '').indexOf('http') === 0 ||
+    (typeof href === 'string' ? href : href.href || '').indexOf('mailto') === 0;
+  const isArticle = (typeof href === 'string' ? href : href.href || '').indexOf('/article') === 0;
+  const isDesignSystem = (typeof href === 'string' ? href : href.href || '').indexOf('/design-system') === 0;
+
+  // eslint-disable-next-line sonarjs/function-return-type
+  const finalHref = useMemo(() => {
+    if (isExternalLink || isArticle || isDesignSystem) {
+      return href;
+    }
+    return `/design-system/${brand}${typeof href === 'string' ? href : href.href || ''}`;
+  }, [isExternalLink, isArticle, isDesignSystem, brand, href]);
 
   return (
     <NextLink
-      href={isExternalLink || isArticle || isDesignSystem ? href : `/design-system/${brand}${href.toString()}`}
+      href={finalHref}
       target={isExternalLink ? '_blank' : '_self'}
       className={linkStyles({ color })}
       {...props}
@@ -39,6 +49,6 @@ export function Link({
   );
 }
 
-export function Code({ children }: { children?: React.ReactNode }) {
+export function Code({ children }: { children?: ReactNode }) {
   return <code className="bg-white px-0.5 font-monospace text-info">{children}</code>;
 }

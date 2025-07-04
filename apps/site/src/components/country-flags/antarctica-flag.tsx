@@ -15,8 +15,8 @@ export function AntarcticaFlag({ className = 'h-4 w-4' }: { className?: string }
       <path
         fill="none"
         stroke="#fff"
-        stroke-linejoin="round"
-        stroke-width="2.5"
+        strokeLinejoin="round"
+        strokeWidth="2.5"
         d="M595.5 297.6c-.6 1.3-.5 2.6.1 3.6 1.1-1.7.2-2.4 0-3.6zm-476-149.4s-3-.4-2.4 2.3c1-2 2.3-2.2 2.4-2.3zm-.3-6.4c-1.7 0-3.8-.2-3 2.5 1-2.1 3-2.4 3-2.5zm12.7 36.3s2.6-.2 2 2.5c-1-2-2-2.4-2-2.5z"
         transform="scale(.86021 .96774)"
       ></path>
