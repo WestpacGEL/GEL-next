@@ -1,10 +1,13 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useCallback, useState } from 'react';
+import { useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '../button/button.component.js';
 import { ClearIcon, DropDownIcon } from '../icon/index.js';
 import { Input } from '../input/input.component.js';
 import { InputGroup } from '../input-group/input-group.component.js';
+import { ModalBody } from '../modal/index.js';
+import { Modal } from '../modal/modal.component.js';
 
 import { ProgressIndicator } from './progress-indicator.component.js';
 
@@ -92,6 +95,24 @@ export const InputUsage = () => {
       >
         <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
       </InputGroup>
+    </>
+  );
+};
+
+/**
+ * > Usage in loading overlay
+ */
+export const LoadingOverlayUsage = () => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Modal size="full" state={state} aria-label="Loading overlay" className="bg-transparent">
+        <ModalBody onClick={state.close} className="align-center min-h-100vh min-w-100vw flex flex-col justify-center">
+          <ProgressIndicator color="white" size="large" label="Loading..." />
+        </ModalBody>
+      </Modal>
+      <Button onClick={state.open}>Open Loader</Button>
     </>
   );
 };
