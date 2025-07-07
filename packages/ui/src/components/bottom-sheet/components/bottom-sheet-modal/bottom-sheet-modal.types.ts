@@ -5,6 +5,10 @@ import { OverlayTriggerState } from 'react-stately';
 
 export type ModalProps = AriaModalOverlayProps & {
   /**
+   * zIndex
+   */
+  zIndex: number;
+  /**
    * Body content of Modal
    */
   children: ReactNode;

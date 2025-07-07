@@ -21,7 +21,15 @@ function checkIfItIsMobile(breakpoint: number) {
 const MEDIUM_BREAKPOINT_AS_NUMBER = +BREAKPOINTS.md.replace('px', '');
 
 // TODO: discuss about the animation
-export function BottomSheetModal({ state, height, width, children, portalContainer, ...props }: ModalProps) {
+export function BottomSheetModal({
+  zIndex = 10,
+  state,
+  height,
+  width,
+  children,
+  portalContainer,
+  ...props
+}: ModalProps) {
   const styles = bottomSheetModalStyles({});
   const ref = useRef(null);
   const { modalProps, underlayProps } = useModalOverlay(props, state, ref);
@@ -74,7 +82,7 @@ export function BottomSheetModal({ state, height, width, children, portalContain
 
   return (
     <Overlay portalContainer={portalContainer || brandContainer}>
-      <div className={styles.underlay()} {...underlayProps}>
+      <div className={styles.underlay()} style={{ zIndex }} {...underlayProps}>
         <motion.div
           animate={controls}
           dragElastic={0}

@@ -4,6 +4,10 @@
   "main": "index.js",
   "type": "module",
   "license": "MIT",
+  "exports": {
+    "./nextjs": "./nextjs/index.js",
+    ".": "./index.js"
+  },
   "dependencies": {
     "@eslint/compat": "~1.3.1",
     "@next/eslint-plugin-next": "~15.3.5",

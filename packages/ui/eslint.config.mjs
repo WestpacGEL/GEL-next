@@ -1,5 +1,5 @@
 import { fixupPluginRules } from '@eslint/compat';
-import eslintConfig from '@westpac/eslint-config/nextjs/index.js';
+import eslintConfig from '@westpac/eslint-config/nextjs';
 import { defineConfig } from 'eslint/config';
 import storybookPlugin from 'eslint-plugin-storybook';
 
