@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/function-return-type */
 'use client';
 import { Button, ProgressRope } from '@westpac/ui';
 import { CloseIcon, MoreVertIcon } from '@westpac/ui/icon';
@@ -65,7 +66,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
   useEffect(() => {
     const ropeType = ropeData && ropeData[0].type;
     let stepCount = 0;
-    ropeData &&
+    if (ropeData) {
       ropeData.forEach(rope => {
         if ('steps' in rope) {
           stepCount += rope.steps.length;
@@ -75,6 +76,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
           stepCount += ropeData.length;
         }
       });
+    }
     setTotalSteps(stepCount);
   }, [ropeData]);
 
@@ -83,7 +85,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
       <>
         <div
           className={clsx(
-            'sticky items-center top-0 flex h-9 justify-between bg-white px-2 py-3 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] xsl:px-4 sm:px-5 md:hidden',
+            'sticky top-0 flex h-9 items-center justify-between bg-white px-2 py-3 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] xsl:px-4 sm:px-5 md:hidden',
             { 'after:opacity-100': scrolled },
           )}
         >
@@ -104,7 +106,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
           <>
             <div
               className={clsx(
-                'fixed inset-y-0 w-[300px] overflow-auto border-l-[1px] border-border bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] before:pointer-events-none before:sticky before:inset-x-0 before:top-0 before:z-50 before:block before:h-1 before:bg-gradient-to-b before:from-black/[.2] before:from-0% before:opacity-0 before:transition-all before:duration-200 before:will-change-[opacity] max-md:z-[100] md:mt-11 overscroll-contain',
+                'fixed inset-y-0 w-[300px] overflow-auto overscroll-contain border-l border-border bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] before:pointer-events-none before:sticky before:inset-x-0 before:top-0 before:z-50 before:block before:h-1 before:bg-gradient-to-b before:from-black/[.2] before:from-0% before:opacity-0 before:transition-all before:duration-200 before:will-change-[opacity] max-md:z-[100] md:mt-11',
                 {
                   'before:opacity-100': sidebarScrolled,
                   'max-md:translate-x-full': !open,

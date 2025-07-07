@@ -30,6 +30,8 @@ export function ProgressIndicator({
     xsmall: { strokeWidth: 30 },
   };
 
+  // TODO: fix this properly
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
   const strokeHalfWidth = sizeMap[size.toString()].strokeWidth / 2;
 
   return (

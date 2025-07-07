@@ -47,9 +47,9 @@ export const AllSymbols = () => {
 
   return (
     <div className="grid grid-cols-4 gap-5">
-      {Object.entries(allSymbols).map(([key, Symbol]) => (
+      {Object.entries(allSymbols).map(([key, SymbolComponent]) => (
         <div key={key} className=" flex flex-col items-center justify-end">
-          <Symbol />
+          <SymbolComponent />
           <p className="mt-2">{key}</p>
         </div>
       ))}
@@ -96,6 +96,7 @@ export const AllLogos = () => {
       <div className="grid grid-cols-4 gap-5">
         {Object.entries(multibrandLargeLogos).map(([key, Logo]) => (
           <>
+            {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
             <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
               <Logo className="box-content border border-dashed border-border" />
               <p className="mt-2">{`<${key} />`}</p>
@@ -113,6 +114,7 @@ export const AllLogos = () => {
       <div className="grid grid-cols-4 gap-5">
         {Object.entries(multibrandSmallLogos).map(([key, Logo]) => (
           <>
+            {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
             <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
               <Logo className="box-content border border-dashed border-border" />
               <p className="mt-2">{`<${key} />`}</p>

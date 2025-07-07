@@ -5,17 +5,17 @@ import { useState } from 'react';
 import { FilterButtons, FilterInput } from './components/index.js';
 import { Filter } from './filter.component.js';
 
-const firstBtnText = 'United States';
-const secondBtnText = 'All International';
+const UNITED_STATES = 'United States';
+const ALL_INTERNATIONAL = 'All International';
 
 const filterButtons = [
   {
     id: 'one',
-    text: firstBtnText,
+    text: UNITED_STATES,
   },
   {
     id: 'two',
-    text: secondBtnText,
+    text: ALL_INTERNATIONAL,
   },
 ];
 
@@ -48,24 +48,23 @@ describe('Filter', () => {
 
   it('should render all buttons', () => {
     const { getByText } = render(<TestFilter />);
-    expect(getByText(firstBtnText)).toBeInTheDocument();
-    expect(getByText(secondBtnText)).toBeInTheDocument();
+    expect(getByText(UNITED_STATES)).toBeInTheDocument();
+    expect(getByText(ALL_INTERNATIONAL)).toBeInTheDocument();
   });
 
   it('should change selected button and call onClick when clicked', async () => {
     const user = userEvent.setup();
-    const { getByText } = render(<TestFilter />);
-    const defaultSelectedButton = getByText(firstBtnText);
-    const defaultNotSelectedButton = getByText(secondBtnText);
-
-    expect(defaultSelectedButton).toHaveStyle(`background-color: var(--colors-hero)`);
-    expect(defaultNotSelectedButton).toHaveStyle('background-color: #FFFFF');
+    const { getByRole } = render(<TestFilter />);
+    const defaultSelectedButton = getByRole('button', { name: UNITED_STATES });
+    const defaultNotSelectedButton = getByRole('button', { name: ALL_INTERNATIONAL });
+    expect(defaultSelectedButton).toHaveClass('bg-hero');
+    expect(defaultNotSelectedButton).not.toHaveClass('bg-hero');
 
     await act(() => user.click(defaultNotSelectedButton));
 
     expect(onClick).toBeCalled();
-    expect(defaultSelectedButton).toHaveStyle('background-color: #FFFFF');
-    expect(defaultNotSelectedButton).toHaveStyle(`background-color: var(--colors-hero)`);
+    expect(defaultSelectedButton).not.toHaveClass('bg-hero');
+    expect(defaultNotSelectedButton).toHaveClass('bg-hero');
   });
 
   it('should call onChange when something is typed in the input', async () => {

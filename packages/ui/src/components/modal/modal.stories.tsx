@@ -31,7 +31,7 @@ export const Default = () => {
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
     `}
       </Modal>
-      <Button onClick={state.open}>Open Modal</Button>
+      <Button onClick={() => state.open()}>Open Modal</Button>
     </>
   );
 };
@@ -48,12 +48,12 @@ export const WithFooter = () => {
         <ModalBody>{`I'm children`}</ModalBody>
         <ModalFooter
           primaryLabel="Label"
-          primaryOnClick={state.close}
+          primaryOnClick={() => state.close()}
           secondaryLabel="Label"
-          secondaryOnClick={state.close}
+          secondaryOnClick={() => state.close()}
         />
       </Modal>
-      <Button onClick={state.open}>Open Modal</Button>
+      <Button onClick={() => state.open()}>Open Modal</Button>
     </>
   );
 };
@@ -86,12 +86,12 @@ export const Sizes = () => {
             <ModalBody>{`Type something but keep it simple. Modals should be easy to digest so that the user can quickly get back to what they were doing.`}</ModalBody>
             <ModalFooter
               primaryLabel="Label"
-              primaryOnClick={states[size].close}
+              primaryOnClick={() => states[size].close()}
               secondaryLabel="Label"
-              secondaryOnClick={states[size].close}
+              secondaryOnClick={() => states[size].close()}
             />
           </Modal>
-          <Button onClick={states[size].open}>Open Modal {size}</Button>
+          <Button onClick={() => states[size].open()}>Open Modal {size}</Button>
         </Fragment>
       ))}
     </div>
@@ -110,12 +110,12 @@ export const NotDismissible = () => {
         <ModalBody>{`I'm children`}</ModalBody>
         <ModalFooter
           primaryLabel="Label"
-          primaryOnClick={state.close}
+          primaryOnClick={() => state.close()}
           secondaryLabel="Label"
-          secondaryOnClick={state.close}
+          secondaryOnClick={() => state.close()}
         />
       </Modal>
-      <Button onClick={state.open}>Open Modal</Button>
+      <Button onClick={() => state.open()}>Open Modal</Button>
     </>
   );
 };
@@ -138,12 +138,12 @@ export const Responsive = () => {
         <ModalBody>{`I'm children`}</ModalBody>
         <ModalFooter
           primaryLabel="Label"
-          primaryOnClick={state.close}
+          primaryOnClick={() => state.close()}
           secondaryLabel="Label"
-          secondaryOnClick={state.close}
+          secondaryOnClick={() => state.close()}
         />
       </Modal>
-      <Button onClick={state.open}>Open Modal</Button>
+      <Button onClick={() => state.open()}>Open Modal</Button>
     </>
   );
 };

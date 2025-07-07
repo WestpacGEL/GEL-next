@@ -47,7 +47,7 @@ export function Alert({
 
   const handleClose = useCallback(() => {
     setOpen(false);
-    !!onClose && onClose();
+    onClose?.();
   }, [onClose]);
 
   return (

@@ -5,13 +5,14 @@ import { TableContext } from '../../table.component.js';
 import { styles as rowStyles } from './table-row.styles.js';
 import { type TableRowProps } from './table-row.types.js';
 
-const generateHighlightMap = (highlighted: unknown[], tdCount: number) => {
-  const map = Array(tdCount).fill(false);
+const generateHighlightMap = (highlighted: unknown[], tdCount: number): boolean[] => {
+  const map = Array(tdCount).fill(false) as boolean[];
 
   highlighted.forEach(highlight => {
     if (typeof highlight === 'number') {
       map[highlight] = true;
     } else if (Array.isArray(highlight)) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       map.fill(true, highlight[0], highlight[1] + 1);
     }
   });
@@ -26,6 +27,7 @@ export function TableRow({ className, children, highlighted, ...props }: TableRo
   if (Array.isArray(highlighted)) {
     const highlightMap = generateHighlightMap(highlighted, Children.count(children));
 
+    // eslint-disable-next-line sonarjs/function-return-type
     highlightedChildren = Children.map(children, (child, index) => {
       if (highlightMap[index] === true) {
         if (index === 0 || highlightMap[index - 1] === false) {

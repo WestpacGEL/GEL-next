@@ -51,8 +51,9 @@ describe('Alert', () => {
 
   it('should be removed when the close button is clicked', async () => {
     render(<Alert data-testid="alert" dismissible />);
+    expect(screen.queryByTestId('alert')).toBeInTheDocument();
     user.click(screen.getByRole('button', { name: closeBtn }));
-    await waitFor(() => expect(screen.getByTestId('alert')).not.toBeInTheDocument, { timeout: 2000 });
+    await waitFor(() => expect(screen.queryByTestId('alert')).not.toBeInTheDocument(), { timeout: 2000 });
   });
 
   it('calls the onClose callback when dismissed', async () => {

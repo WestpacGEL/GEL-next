@@ -1,6 +1,6 @@
 import { type Node } from '@react-types/shared';
 import * as React from 'react';
-import { Key, useOption } from 'react-aria';
+import { useOption } from 'react-aria';
 import { type ListState } from 'react-stately';
 
 import { styles } from './autocomplete-list-box-option.styles.js';

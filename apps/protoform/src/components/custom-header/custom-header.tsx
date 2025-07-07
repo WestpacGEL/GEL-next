@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 export function CustomHeader() {
   const router = useRouter();
-  const [isMobile, setIsMobile] = useState(true);
+  const [, setIsMobile] = useState(true);
 
   const updateSize = () => {
     setIsMobile(window.innerWidth < parseInt(BREAKPOINTS.md));
@@ -25,7 +25,7 @@ export function CustomHeader() {
       leftIcon={'arrow'}
       leftOnClick={() => router.back()}
       logoLink="/"
-      className="z-[100] m-auto max-w-[1921px] md:fixed md:top-0 w-full"
+      className="z-[100] m-auto w-full max-w-[1921px] md:fixed md:top-0"
     >
       <Button look="faint" size={{ initial: 'small', sm: 'medium' }} soft>
         Sign Out

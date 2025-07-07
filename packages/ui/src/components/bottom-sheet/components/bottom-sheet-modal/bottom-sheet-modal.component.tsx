@@ -47,10 +47,10 @@ export function BottomSheetModal({ state, height, width, children, portalContain
 
   useEffect(() => {
     if (state.isOpen) {
-      controls.start('visible');
+      void controls.start('visible');
       return;
     }
-    controls.start('hidden');
+    void controls.start('hidden');
   }, [controls, state.isOpen]);
 
   const onDragEnd = useCallback(
@@ -58,11 +58,11 @@ export function BottomSheetModal({ state, height, width, children, portalContain
       const shouldClose =
         info.velocity.y > VELOCITY_DISMISS || (info.velocity.y >= 0 && info.offset.y > DISMISS_OFFSET);
       if (shouldClose) {
-        controls.start('hidden');
+        void controls.start('hidden');
         state.close();
         return;
       }
-      controls.start('visible');
+      void controls.start('visible');
       state.open();
     },
     [controls, state],

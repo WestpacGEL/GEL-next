@@ -10,7 +10,7 @@ describe('BottomSheetModal', () => {
     render(<BottomSheetModal state={result.current}>{undefined}</BottomSheetModal>);
   });
 
-  it('shows the content when the state isOpen is true', async () => {
+  it('shows the content when the state isOpen is true', () => {
     const { result } = renderHook(() =>
       useOverlayTriggerState({
         isOpen: true,

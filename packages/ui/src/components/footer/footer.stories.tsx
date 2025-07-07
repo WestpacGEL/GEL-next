@@ -30,7 +30,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const DefaultStory: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (

@@ -249,7 +249,7 @@ export const AsyncDynamicCollections = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <Autocomplete items={items} onFocus={getCollection} loadingState={loading}>
+      <Autocomplete items={items} onFocus={() => void getCollection()} loadingState={loading}>
         {item => <AutocompleteItem>{item.name}</AutocompleteItem>}
       </Autocomplete>
     </div>

@@ -20,7 +20,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // NOTE: Although unused this needs to be here so all colors load correctly
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const LOAD_COLORS = {
   background: [
     'bg-background',

@@ -28,7 +28,7 @@ describe('Popover', () => {
         Test
       </Popover>,
     );
-    await act(() => {
+    act(() => {
       user.click(getByRole('button', { name: 'Test' }));
     });
     await waitFor(() => {
@@ -60,13 +60,13 @@ describe('Popover', () => {
   it('should close popover when close button clicked', async () => {
     const user = userEvent.setup();
     const { getByRole, getByText, queryByText } = render(<Popover content={panelContent}>Test</Popover>);
-    await act(() => {
+    act(() => {
       user.click(getByRole('button', { name: 'Test' }));
     });
     await waitFor(() => {
       expect(getByText(panelContent)).toBeInTheDocument();
     });
-    await act(() => {
+    act(() => {
       user.click(getByRole('button', { name: 'Close popover' }));
     });
     await waitFor(() => {
@@ -77,13 +77,13 @@ describe('Popover', () => {
   it('should close popover when esc key pressed', async () => {
     const user = userEvent.setup();
     const { getByRole, getByText, queryByText } = render(<Popover content={panelContent}>Test</Popover>);
-    await act(() => {
+    act(() => {
       user.click(getByRole('button', { name: 'Test' }));
     });
     await waitFor(() => {
       expect(getByText(panelContent)).toBeInTheDocument();
     });
-    await act(() => {
+    act(() => {
       user.keyboard('[Escape]');
     });
     await waitFor(() => {

@@ -67,7 +67,7 @@ export function createDate(year: string, month: string, day: string) {
  * @param value date string in ISO format YYYY-MM-DD
  */
 export function parseISODate(value: string) {
-  const matches = value.match(ISO_DATE_FORMAT);
+  const matches = ISO_DATE_FORMAT.exec(value);
   if (matches) {
     return createDate(matches[1], matches[2], matches[3]);
   }

@@ -16,7 +16,7 @@ export function Heading({ className, tag, brandHeading, size, children, uppercas
     9: 'h6',
     10: 'h6',
   };
-  const Tag = typeof size === 'number' && !tag ? (sizeToTag[size] as keyof HeadingProps['tag']) : tag ? tag : 'h6';
+  const Tag = typeof size === 'number' && !tag ? (sizeToTag[size] as keyof HeadingProps['tag']) : tag || 'h6';
 
   return (
     <Tag className={styles({ className, brandHeading, size, uppercase })} {...props}>

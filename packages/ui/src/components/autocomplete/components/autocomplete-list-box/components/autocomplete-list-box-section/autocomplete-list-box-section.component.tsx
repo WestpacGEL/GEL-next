@@ -24,6 +24,7 @@ export function AutocompleteListBoxSection({ section, state }: AutocompleteListB
         )}
 
         <ul {...groupProps}>
+          {/* eslint-disable-next-line sonarjs/deprecation */}
           {[...section.childNodes].map(node => (
             <AutocompleteListBoxOption key={node.key} item={node} state={state} />
           ))}

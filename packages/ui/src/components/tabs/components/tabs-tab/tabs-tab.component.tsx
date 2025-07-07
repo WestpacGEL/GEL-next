@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Key, mergeProps, useFocusRing, useTab } from 'react-aria';
+import { mergeProps, useFocusRing, useTab } from 'react-aria';
 
 import { styles } from './tabs-tab.styles.js';
 import { type TabsTabProps } from './tabs-tab.types.js';

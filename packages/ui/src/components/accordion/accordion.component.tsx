@@ -25,6 +25,7 @@ function Accordion<T extends object>(
   Children.forEach(props.children, child => {
     if (isValidElement(child)) {
       const cloned = {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         ...cloneElement(child, {
           ...child.props,
           // Adding hasChildItems false by default
