@@ -7,7 +7,7 @@ export type ModalProps = AriaModalOverlayProps & {
   /**
    * zIndex
    */
-  zIndex: number;
+  zIndex?: number;
   /**
    * Body content of Modal
    */
