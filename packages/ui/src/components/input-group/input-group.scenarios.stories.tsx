@@ -139,7 +139,7 @@ export const CurrencyAndFrequency = () => {
 };
 
 /**
- * > Search Textarea with character count
+ * > Search Textarea with character count.
  */
 const MAX_LENGTH = 250;
 export const TextareaWithCharacterCount = () => {
