@@ -24,7 +24,7 @@ export function Option({ item, state }: OptionProps) {
 
   return (
     <li
-      {...mergeProps(focusProps, optionProps)}
+      {...mergeProps(optionProps, focusProps)}
       ref={ref}
       className={styles({ isFocusVisible, isSelected, isDisabled })}
     >

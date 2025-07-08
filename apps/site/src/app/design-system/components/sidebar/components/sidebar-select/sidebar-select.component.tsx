@@ -31,7 +31,16 @@ export function SidebarSelect(props: SidebarSelectProps) {
 
       <HiddenSelect state={state} triggerRef={ref} label={props.label} name={props.name} />
 
-      <button {...mergeProps(buttonProps, focusProps)} ref={ref} className={styles.button()}>
+      <button
+        {...mergeProps(buttonProps, focusProps)}
+        onClick={undefined}
+        onPointerUp={undefined}
+        onPointerDown={() => {
+          state.toggle();
+        }}
+        ref={ref}
+        className={styles.button()}
+      >
         <div className={styles.textWrapper()}>
           <div className="typography-body-11 w-full text-left leading-normal" {...valueProps}>
             Change brand
@@ -40,14 +49,13 @@ export function SidebarSelect(props: SidebarSelectProps) {
         <div aria-hidden="true" className={styles.iconWrapper()}>
           {state.isOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </div>
-        {/* <SelectorIcon className={`h-5 w-5 ${isFocusVisible ? 'text-pink-500' : 'text-gray-500'}`} /> */}
       </button>
       <div ref={portalContainreRef} />
       <Popover
-        isNonModal
-        portalContainer={portalContainreRef.current ?? undefined}
         state={state}
         triggerRef={ref}
+        isNonModal
+        portalContainer={portalContainreRef.current ?? undefined}
         placement="bottom start"
         className={styles.popover()}
       >

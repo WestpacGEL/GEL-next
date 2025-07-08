@@ -3,14 +3,14 @@
 import { NewWindowIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
 import { useParams } from 'next/navigation';
-import React, { useMemo } from 'react';
+import React, { useMemo, type ReactNode } from 'react';
 import { VariantProps } from 'tailwind-variants';
 
 import { BrandKey } from '@/app/types/brand.types';
 
 import { linkStyles } from './typography.styles';
 
-export function Text({ children }: { children?: React.ReactNode }) {
+export function Text({ children }: { children?: ReactNode }) {
   return <p className="typography-body-9 mb-2 leading-[2]">{children}</p>;
 }
 

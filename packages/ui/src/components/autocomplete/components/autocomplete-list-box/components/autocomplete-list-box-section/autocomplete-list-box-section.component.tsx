@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useListBoxSection } from 'react-aria';
 
 import { AutocompleteListBoxOption } from '../autocomplete-list-box-option/index.js';
@@ -24,8 +23,7 @@ export function AutocompleteListBoxSection({ section, state }: AutocompleteListB
         )}
 
         <ul {...groupProps}>
-          {/* eslint-disable-next-line sonarjs/deprecation */}
-          {[...section.childNodes].map(node => (
+          {[...state.collection].map(node => (
             <AutocompleteListBoxOption key={node.key} item={node} state={state} />
           ))}
         </ul>

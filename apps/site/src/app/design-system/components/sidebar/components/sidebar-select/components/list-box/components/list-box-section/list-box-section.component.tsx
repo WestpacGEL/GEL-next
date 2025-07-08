@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/deprecation */
 import { useListBoxSection } from 'react-aria';
 
 import { Option } from '../list-box-option';
@@ -21,7 +20,7 @@ export function ListBoxSection({ section, state }: ListBoxSectionProps) {
         )}
 
         <ul {...groupProps}>
-          {[...section.childNodes].map(node => (
+          {[...state.collection].map(node => (
             <Option key={node.key} item={node} state={state} />
           ))}
         </ul>
