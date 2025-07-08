@@ -1,5 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 
+import { InfoIcon } from '../icon/index.js';
 import {
   Table,
   TableBody,
@@ -153,6 +154,28 @@ export const WithTableAndBody: Story = {
         </TableBody>
         <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
       </Table>,
+      <PanelFooter key="panelFooter">Panel footer</PanelFooter>,
+    ],
+  },
+};
+
+/**
+ * > Example with icon in header
+ */
+export const WithIconInHeader: Story = {
+  args: {
+    heading: (
+      <div className="flex flex-row gap-2">
+        <InfoIcon size="small" />
+        <span className="font-semibold">Panel title</span>
+      </div>
+    ),
+    children: [
+      <PanelBody key="panelBody">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora officiis officia omnis aperiam voluptate
+        suscipit, laudantium praesentium quas consequatur placeat, perferendis eligendi saepe in unde sequi dolores
+        excepturi doloremque autem! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </PanelBody>,
       <PanelFooter key="panelFooter">Panel footer</PanelFooter>,
     ],
   },
