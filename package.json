@@ -24,7 +24,7 @@
     "test": "turbo run test --filter=./packages/* --no-daemon",
     "ci:build": "pnpm install --frozen-lockfile && pnpm format && pnpm build && pnpm lint && pnpm check-types && pnpm test",
     "ci:publish": "pnpm build && changeset publish",
-    "ci:test": "pnpm format && pnpm lint && pnpm check-types && pnpm test",
+    "ci:test": "pnpm format && pnpm lint -- --no-cache && pnpm check-types && pnpm test",
     "migrate": "node script.cjs"
   },
   "devDependencies": {
