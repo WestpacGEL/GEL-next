@@ -1,5 +1,18 @@
 # @westpac/ui
 
+## 0.43.0
+
+### Minor Changes
+
+- daec52a: addec icons: arrow-thread-reply, fullscreen-exit, replay, volume-off, volume-on, closed-caption; updated icons pause and play
+- dd677c0: added: PayTo symbols
+- 93a3070: added icons: format color, button shape, color filters, tex increase, text bold, text large, and voiceover on
+- d43ef3c: add: panel header now takes react node as children
+
+### Patch Changes
+
+- 9a0e1a0: style updates for autocomplete
+
 ## 0.42.3
 
 ### Patch Changes
