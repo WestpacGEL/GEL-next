@@ -77,6 +77,57 @@ export const Default = (props: PaginationProps) => {
 };
 
 /**
+ * > Responsive using totalPages
+ */
+export const ResponsiveTotalPages = (props: PaginationProps) => {
+  const [current, setCurrent] = useState(1);
+  useEffect(() => {
+    setCurrent(1);
+  }, []);
+
+  return (
+    <Pagination
+      {...props}
+      totalPages={20}
+      siblingCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
+      boundaryCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
+      onChange={value => {
+        setCurrent(value);
+        action('onChange')(value);
+      }}
+      current={current}
+    />
+  );
+};
+
+/**
+ * > Responsive using pages
+ */
+export const ResponsivePages = (props: PaginationProps) => {
+  const [current, setCurrent] = useState(1);
+  useEffect(() => {
+    setCurrent(1);
+  }, []);
+
+  return (
+    <>
+      <Pagination
+        {...props}
+        pages={Array.from({ length: 20 }, (_, i) => i + 1).map(page => ({ text: page }))}
+        siblingCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
+        boundaryCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
+        onChange={value => {
+          setCurrent(value);
+          action('onChange')(value);
+        }}
+        current={current}
+      />
+      <p className="text-link xsl:text-link md:text-link lg:text-link">bla</p>
+    </>
+  );
+};
+
+/**
  * > Button usage example
  */
 export const AsLinkOnTotalPages = () => {

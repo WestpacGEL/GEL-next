@@ -3,6 +3,8 @@
 
 import React, { useCallback, useMemo } from 'react';
 
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { getSiblingOrBoundaryCount } from '../../pagination.utils.js';
 import { PaginationPresentational } from '../pagination-presentational/pagination-presentational.component.js';
 
 import { PageToRender, type PaginationPageProps } from './pagination-pages.types.js';
@@ -24,6 +26,24 @@ export function PaginationPage({
   boundaryCount = 1,
   ...props
 }: PaginationPageProps) {
+  const breakpoint = useBreakpoint();
+
+  // catering for responsive usage of siblingCount.
+  const finalSiblingCount = useMemo(() => {
+    if (typeof siblingCount === 'number') {
+      return siblingCount;
+    }
+    return getSiblingOrBoundaryCount(siblingCount, breakpoint);
+  }, [breakpoint, siblingCount]);
+
+  // catering for responsive usage of BoundaryCount.
+  const finalBoundaryCount = useMemo(() => {
+    if (typeof boundaryCount === 'number') {
+      return boundaryCount;
+    }
+    return getSiblingOrBoundaryCount(boundaryCount, breakpoint);
+  }, [boundaryCount, breakpoint]);
+
   const generateHandleOnClickBackwards = useCallback(
     (
       current: number,
@@ -120,34 +140,35 @@ export function PaginationPage({
 
   /** Compute which pages and ellipses to show */
   const pagesToRender: PageToRender[] = useMemo(() => {
-    const minEdgePagesVisible = siblingCount * 2 + boundaryCount + 2;
+    const minEdgePagesVisible = finalSiblingCount * 2 + finalBoundaryCount + 2;
 
     // Always show these boundaries
-    let leftCorner = numberedPages.slice(0, boundaryCount);
+    let leftCorner = numberedPages.slice(0, finalBoundaryCount);
     let rightCorner =
-      boundaryCount > 0
-        ? numberedPages.slice(-boundaryCount).filter(page => !leftCorner.some(leftItem => leftItem.page === page.page))
+      finalBoundaryCount > 0
+        ? numberedPages
+            .slice(-finalBoundaryCount)
+            .filter(page => !leftCorner.some(leftItem => leftItem.page === page.page))
         : [];
     let middle: PageToRender[] = [];
 
     if (current) {
       // Expand corners when near start or end
-      const nearStart = current < minEdgePagesVisible - siblingCount;
-      const nearEnd = current > numberedPages.length - minEdgePagesVisible + siblingCount;
+      const nearStart = current < minEdgePagesVisible - finalSiblingCount;
+      const nearEnd = current > numberedPages.length - minEdgePagesVisible + finalSiblingCount;
 
       if (nearStart) {
         leftCorner = numberedPages.slice(0, minEdgePagesVisible);
       }
       if (nearEnd) {
-        rightCorner = numberedPages
-          .slice(-minEdgePagesVisible)
-          .filter(page => !leftCorner.some(leftItem => leftItem.page === page.page));
+        rightCorner = numberedPages.slice(-minEdgePagesVisible);
       }
+      rightCorner = rightCorner.filter(page => !leftCorner.some(leftItem => leftItem.page === page.page));
 
       // Compute middle pages
       const currentIndex = current - 1;
-      const leftEdge = currentIndex - siblingCount;
-      middle = numberedPages.slice(Math.max(0, leftEdge), leftEdge + (siblingCount * 2 + 1)).filter(middleItem => {
+      const leftEdge = currentIndex - finalSiblingCount;
+      middle = numberedPages.slice(Math.max(0, leftEdge), leftEdge + (finalSiblingCount * 2 + 1)).filter(middleItem => {
         return !(
           leftCorner.some(left => left.page === middleItem.page) ||
           rightCorner.some(right => right.page === middleItem.page)
@@ -167,7 +188,7 @@ export function PaginationPage({
       }
     }
     return [...leftCorner, ...middle, ...rightCorner];
-  }, [boundaryCount, current, numberedPages, siblingCount]);
+  }, [finalBoundaryCount, current, numberedPages, finalSiblingCount]);
 
   if (!pages.length) {
     return <></>;

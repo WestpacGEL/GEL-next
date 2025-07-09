@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { Breakpoint } from '../../tailwind/constants/breakpoints.js';
+
 import { PaginationItemProps } from './components/index.js';
 import { PaginationPageProps } from './components/pagination-pages/pagination-pages.types.js';
 import { PaginationTotalPagesProps } from './components/pagination-total-pages/pagination-total-pages.types.js';
@@ -24,7 +26,7 @@ export type PaginationBase = {
    * boundaryCount
    * @default 1
    */
-  boundaryCount?: number;
+  boundaryCount?: number | Partial<Record<Breakpoint | 'initial', number>>;
   /**
    * Current page
    */
@@ -52,7 +54,7 @@ export type PaginationBase = {
    * siblingCount
    * @default 1
    */
-  siblingCount?: number;
+  siblingCount?: number | Partial<Record<Breakpoint | 'initial', number>>;
   /**
    * Tag to render
    * @default nav

@@ -3,6 +3,8 @@
 
 import React, { useCallback, useMemo } from 'react';
 
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { getSiblingOrBoundaryCount } from '../../pagination.utils.js';
 import { PaginationPresentational } from '../pagination-presentational/pagination-presentational.component.js';
 
 import { type PaginationTotalPagesProps } from './pagination-total-pages.types.js';
@@ -29,6 +31,24 @@ export function PaginationTotalPages({
   onPageItemProps,
   ...props
 }: PaginationTotalPagesProps) {
+  const breakpoint = useBreakpoint();
+
+  // catering for responsive usage of siblingCount.
+  const finalSiblingCount = useMemo(() => {
+    if (typeof siblingCount === 'number') {
+      return siblingCount;
+    }
+    return getSiblingOrBoundaryCount(siblingCount, breakpoint);
+  }, [breakpoint, siblingCount]);
+
+  // catering for responsive usage of BoundaryCount
+  const finalBoundaryCount = useMemo(() => {
+    if (typeof boundaryCount === 'number') {
+      return boundaryCount;
+    }
+    return getSiblingOrBoundaryCount(boundaryCount, breakpoint);
+  }, [boundaryCount, breakpoint]);
+
   const generateHandleOnClickBackwards = useCallback(
     (
       current: number,
@@ -141,13 +161,13 @@ export function PaginationTotalPages({
 
   /** Compute which pages and ellipses to show */
   const pagesToRender = useMemo(() => {
-    const minEdgePagesVisible = siblingCount * 2 + boundaryCount + 2;
+    const minEdgePagesVisible = finalSiblingCount * 2 + finalBoundaryCount + 2;
 
     // Always show these boundaries
-    let leftCorner = generateArray(1, Math.min(boundaryCount, totalPages));
+    let leftCorner = generateArray(1, Math.min(finalBoundaryCount, totalPages));
     let rightCorner =
-      boundaryCount > 0
-        ? generateArray(totalPages + 1 - boundaryCount, totalPages).filter(
+      finalBoundaryCount > 0
+        ? generateArray(totalPages + 1 - finalBoundaryCount, totalPages).filter(
             page => !leftCorner.some(leftItem => leftItem === page),
           )
         : [];
@@ -155,21 +175,20 @@ export function PaginationTotalPages({
 
     if (current) {
       // Expand corners when near start or end
-      const nearStart = current < minEdgePagesVisible - siblingCount;
-      const nearEnd = current > totalPages - minEdgePagesVisible + siblingCount;
+      const nearStart = current < minEdgePagesVisible - finalSiblingCount;
+      const nearEnd = current > totalPages - minEdgePagesVisible + finalSiblingCount;
 
       if (nearStart) {
         leftCorner = generateArray(1, minEdgePagesVisible);
       }
       if (nearEnd) {
-        rightCorner = generateArray(totalPages - minEdgePagesVisible + 1, totalPages).filter(
-          page => !leftCorner.some(leftItem => leftItem === page),
-        );
+        rightCorner = generateArray(totalPages - minEdgePagesVisible + 1, totalPages);
       }
+      rightCorner = rightCorner.filter(page => !leftCorner.some(leftItem => leftItem === page));
 
       // Compute middle pages
-      const leftEdge = current - siblingCount;
-      middle = generateArray(Math.max(1, leftEdge), Math.min(leftEdge + siblingCount * 2, totalPages)).filter(
+      const leftEdge = current - finalSiblingCount;
+      middle = generateArray(Math.max(1, leftEdge), Math.min(leftEdge + finalSiblingCount * 2, totalPages)).filter(
         middleItem => {
           return !(leftCorner.some(left => left === middleItem) || rightCorner.some(right => right === middleItem));
         },
@@ -190,7 +209,7 @@ export function PaginationTotalPages({
     return [...leftCorner, ...middle, ...rightCorner].map(page =>
       page ? { page, text: page, ...onPageItemProps?.(page) } : null,
     );
-  }, [boundaryCount, current, onPageItemProps, siblingCount, totalPages]);
+  }, [finalBoundaryCount, current, onPageItemProps, finalSiblingCount, totalPages]);
 
   if (totalPages <= 0) {
     return <></>;
