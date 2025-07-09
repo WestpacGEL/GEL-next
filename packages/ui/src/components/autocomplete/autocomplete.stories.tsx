@@ -1,7 +1,9 @@
+import { Key } from '@react-types/shared';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useRef, useState } from 'react';
 
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';
+import { Circle } from '../circle/circle.component.js';
 
 import { Autocomplete } from './autocomplete.component.js';
 import { AutocompleteItem } from './components/autocomplete-item/autocomplete-item.component.js';
@@ -55,8 +57,8 @@ export const Default: Story = {
  * > Controlled usage example
  */
 export const Controlled = () => {
-  const [selectedKey, setSelectedKey] = useState<string | number>();
-  const handleSelectionChange = (key: string | number) => {
+  const [selectedKey, setSelectedKey] = useState<Key | null>();
+  const handleSelectionChange = (key: Key | null) => {
     setSelectedKey(key);
   };
   return (
@@ -274,4 +276,32 @@ export const TestPassingRefAndFocus = () => {
       <button onClick={() => autocompleteRef.current?.focus()}>Test focus</button>
     </div>
   );
+};
+
+/**
+ * > Custom item example
+ */
+export const UsingCustomItems: Story = {
+  args: {
+    'aria-label': 'Custom Items',
+    children: [
+      <AutocompleteItem key="BSB">
+        <div className="flex flex-col">
+          <h3 className="typography-body-9 font-medium">Business Name</h3>
+          <p>12 345 678 910</p>
+        </div>
+      </AutocompleteItem>,
+      <AutocompleteItem key="staff">
+        <div className="flex items-center gap-2">
+          <Circle className="size-5 bg-muted text-white">SN</Circle>
+          <div className="flex flex-col ">
+            <h3 className="typography-body-9">Staff Name</h3>
+            <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
+              Staff role, staff business area
+            </p>
+          </div>
+        </div>
+      </AutocompleteItem>,
+    ],
+  },
 };

@@ -15,4 +15,5 @@
 *.so binary
 *.jpg binary
 *.jpeg binary
+*.zip binary
 *.crt
