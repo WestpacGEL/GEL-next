@@ -66,8 +66,8 @@ export const WithIcons: Story = {
         title: (
           <div className="flex flex-1 items-center justify-between">
             <div className="flex items-center gap-2">
-              <AccountIcon look="outlined" />
-              <p className="typography-body-8">Accounts</p>
+              <AccountIcon size="small" look="outlined" />
+              <p className="typography-body-9">Accounts</p>
             </div>
             <Badge color="success">Label</Badge>
           </div>
@@ -78,8 +78,8 @@ export const WithIcons: Story = {
         title: (
           <div className="flex flex-1 items-center justify-between">
             <div className="flex items-center gap-2">
-              <CreditCardsIcon look="outlined" />
-              <p className="typography-body-8">Credit cards</p>
+              <CreditCardsIcon size="small" look="outlined" />
+              <p className="typography-body-9">Credit cards</p>
             </div>
             <Badge color="success">Label</Badge>
           </div>
@@ -90,8 +90,8 @@ export const WithIcons: Story = {
         title: (
           <div className="flex flex-1 items-center justify-between">
             <div className="flex items-center gap-2">
-              <ShareIosIcon look="outlined" />
-              <p className="typography-body-8">Shares</p>
+              <ShareIosIcon size="small" look="outlined" />
+              <p className="typography-body-9">Shares</p>
             </div>
             <Badge color="success">Label</Badge>
           </div>
@@ -102,8 +102,8 @@ export const WithIcons: Story = {
         title: (
           <div className="flex flex-1 items-center justify-between">
             <div className="flex items-center gap-2">
-              <InvoiceIcon look="outlined" />
-              <p className="typography-body-8">Invoices</p>
+              <InvoiceIcon size="small" look="outlined" />
+              <p className="typography-body-9">Invoices</p>
             </div>
             <Badge color="success">Label</Badge>
           </div>
