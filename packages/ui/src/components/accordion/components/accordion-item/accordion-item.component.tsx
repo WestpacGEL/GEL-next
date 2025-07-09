@@ -34,7 +34,7 @@ export function AccordionItem<T = HTMLElement>({
       */}
       <h3>
         <button {...mergeProps(buttonProps, hoverProps, focusProps)} ref={ref} className={styles.itemHeader()}>
-          <span>{item.props.title}</span>
+          <span className={styles.headerTitleWrapper()}>{item.props.title}</span>
           {direction === 'ltr' ? (
             <ArrowRightIcon aria-hidden="true" className={styles.indicator()} />
           ) : (
