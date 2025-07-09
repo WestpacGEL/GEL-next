@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { BREAKPOINTS, Breakpoint } from '../tailwind/index.js';
+import { BREAKPOINTS, Breakpoint } from '../tailwind/constants/index.js';
 
 function checkBreakpoint(): Breakpoint | 'initial' {
   const breakpointsAsArray = Object.entries(BREAKPOINTS).reverse() as [Breakpoint, string][];
