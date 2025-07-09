@@ -122,7 +122,6 @@ export const ResponsivePages = (props: PaginationProps) => {
         }}
         current={current}
       />
-      <p className="text-link xsl:text-link md:text-link lg:text-link">bla</p>
     </>
   );
 };
