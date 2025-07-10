@@ -22,18 +22,18 @@ Depending on the process or the audience, instead of showing a simple spinner, w
 
 ### Usage example
 
-Description of what will be displayed
+Here is an example of a page loading pattern.
 
 ```jsx
 () => {
   const state = useOverlayTriggerState({});
-  return (
-    <>
-<ProgressIndicator size="xlarge" color="white" className="mr-2 mb-2 mt-2" />
-      <Button look="primary" soft onClick={state.open}>
-        Open
-      </Button>
-    </>
-  );
-};
+  return <>
+      <Modal size="full" state={state} aria-label="Loading overlay" className="bg-transparent">
+        <ModalBody onClick={state.close} className="align-center min-h-100vh min-w-100vw flex flex-col justify-center">
+          <ProgressIndicator icon={PadlockIcon} color="white" size="large" label="Loading..." />
+        </ModalBody>
+      </Modal>
+      <Button onClick={state.open}>Open loader</Button>
+    </>;
+}
 ```
