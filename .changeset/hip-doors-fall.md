@@ -1,5 +1,5 @@
 ---
-'@westpac/eslint-config': minor
+'@westpac/eslint-config': major
 '@westpac/ui': minor
 ---
 
