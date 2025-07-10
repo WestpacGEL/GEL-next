@@ -322,6 +322,9 @@ importers:
       '@duetds/date-picker':
         specifier: ~1.4.0
         version: 1.4.0
+      '@internationalized/date':
+        specifier: ~3.8.2
+        version: 3.8.2
       '@react-aria/accordion':
         specifier: 3.0.0-alpha.27
         version: 3.0.0-alpha.27(react-dom@18.2.0(react@18.2.0))(react@18.2.0)

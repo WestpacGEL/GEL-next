@@ -287,6 +287,7 @@
   },
   "dependencies": {
     "@duetds/date-picker": "~1.4.0",
+    "@internationalized/date": "~3.8.2",
     "@react-aria/accordion": "3.0.0-alpha.27",
     "@react-aria/utils": "~3.29.1",
     "@react-spectrum/utils": "~3.11.5",
