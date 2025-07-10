@@ -1,8 +1,8 @@
 import { type Meta, StoryFn } from '@storybook/react';
 import { useCallback, useMemo, useState } from 'react';
 
-import { ClearIcon, DropDownIcon, RefreshIcon, SearchIcon, VisibilityIcon, VisibilityOffIcon } from '../icon/index.js';
-import { Button, ButtonDropdown, Input, Select, Textarea } from '../index.js';
+import { ClearIcon, RefreshIcon, SearchIcon, VisibilityIcon, VisibilityOffIcon } from '../icon/index.js';
+import { Button, Input, Select, Textarea } from '../index.js';
 
 import { InputGroup } from './input-group.component.js';
 
@@ -128,6 +128,7 @@ export const InlineFieldValidationFlow = () => {
   const [validating, setValidating] = useState<boolean>(false);
   const [error, setError] = useState<string>();
   const validate = useCallback(() => {
+    setValidated(false);
     setValidating(true);
     setError(undefined);
     setTimeout(() => {
