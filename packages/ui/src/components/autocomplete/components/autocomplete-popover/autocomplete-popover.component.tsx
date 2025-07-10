@@ -37,7 +37,7 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
         {...popoverProps}
         style={{ ...popoverProps.style, width: width ? `${width}px` : undefined }}
         ref={popoverRef}
-        className={clsx('z-10 border border-border bg-white shadow-lg', className)}
+        className={clsx('border-border z-10 max-h-[400px] overflow-auto border bg-white shadow-lg', className)}
       >
         {!isNonModal && <DismissButton onDismiss={() => state.close()} />}
         {children}
