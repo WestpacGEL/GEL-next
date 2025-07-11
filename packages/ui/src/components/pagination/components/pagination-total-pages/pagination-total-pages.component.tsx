@@ -161,7 +161,7 @@ export function PaginationTotalPages({
 
   /** Compute which pages and ellipses to show */
   const pagesToRender = useMemo(() => {
-    const minEdgePagesVisible = finalSiblingCount * 2 + finalBoundaryCount + 2;
+    const minEdgePagesVisible = Math.min(finalSiblingCount * 2 + finalBoundaryCount + 2, totalPages);
 
     // Always show these boundaries
     let leftCorner = generateArray(1, Math.min(finalBoundaryCount, totalPages));
@@ -206,6 +206,11 @@ export function PaginationTotalPages({
         if (hasRightDots) middle.push(null);
       }
     }
+
+    console.log('----------------------');
+    console.log('leftCorner', leftCorner);
+    console.log('middle', middle);
+    console.log('rightCorner', rightCorner);
     return [...leftCorner, ...middle, ...rightCorner].map(page =>
       page ? { page, text: page, ...onPageItemProps?.(page) } : null,
     );

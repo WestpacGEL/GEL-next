@@ -140,7 +140,7 @@ export function PaginationPage({
 
   /** Compute which pages and ellipses to show */
   const pagesToRender: PageToRender[] = useMemo(() => {
-    const minEdgePagesVisible = finalSiblingCount * 2 + finalBoundaryCount + 2;
+    const minEdgePagesVisible = Math.min(finalSiblingCount * 2 + finalBoundaryCount + 2);
 
     // Always show these boundaries
     let leftCorner = numberedPages.slice(0, finalBoundaryCount);
