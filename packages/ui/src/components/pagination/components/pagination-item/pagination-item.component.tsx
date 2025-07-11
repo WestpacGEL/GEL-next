@@ -22,6 +22,7 @@ export function PaginationItem({
       {...props}
       disabled={disabled}
       aria-current={active ? 'page' : undefined}
+      {...(Tag === 'button' && { type: 'button' })}
     >
       {children}
     </Tag>
