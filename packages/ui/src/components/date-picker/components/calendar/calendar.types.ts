@@ -17,4 +17,4 @@ export type DuetDatePickerElement = Element & {
 
 type Variants = VariantProps<typeof styles>;
 
-export type DatePickerProps = Omit<CalendarStateOptions, 'createCalendar'> & HTMLAttributes<Element>;
+export type DatePickerProps = Omit<CalendarStateOptions, 'createCalendar'>;

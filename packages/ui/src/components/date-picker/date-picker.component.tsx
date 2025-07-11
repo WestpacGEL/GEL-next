@@ -1,130 +1,54 @@
 'use client';
 
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { useFocusVisible } from 'react-aria';
+import React, { useRef } from 'react';
+import { useButton, useDatePicker } from 'react-aria';
+import { useDatePickerState } from 'react-stately';
 
-import { styles } from './date-picker.styles.js';
-import { type DatePickerProps, DuetDatePickerElement } from './date-picker.types.js';
-import { formatDate, isDateDisabled, useListener } from './date-picker.utils.js';
+import { Button } from '../button/index.js';
+import { CalendarIcon } from '../icon/index.js';
 
-export function DatePicker({
-  dateFormat = 'dd-MM-yyyy',
-  disableWeekends,
-  disableDaysOfWeek,
-  disableDates,
-  placeholder,
-  onChange,
-  onFocus,
-  onBlur,
-  onOpen,
-  onClose,
-  min,
-  max,
-  value,
-  id,
-  size = 'md',
-  name,
-  block = false,
-  invalid = false,
-  ...props
-}: DatePickerProps) {
-  const [initialized, setInitialized] = useState(false);
-  const { isFocusVisible } = useFocusVisible();
+import { Calendar } from './components/calendar/calendar.component.js';
+import { DateField } from './components/date-field/date-field.component.js';
+import { Dialog } from './components/dialog/dialog.component.js';
+import { Popover } from './components/popover/popover.component.js';
+import { type DatePickerProps } from './date-picker.types.js';
 
-  useEffect(() => {
-    const initDatePicker = async () => {
-      const { defineCustomElements } = await import('@duetds/date-picker/custom-element/index.js');
-      defineCustomElements(window);
-      setInitialized(true);
-    };
-    initDatePicker();
-  }, []);
-
-  const ref = useRef<DuetDatePickerElement>(null);
-
-  useListener(ref, 'duetChange', onChange);
-  useListener(ref, 'duetFocus', onFocus);
-  useListener(ref, 'duetBlur', onBlur);
-  useListener(ref, 'duetOpen', onOpen);
-  useListener(ref, 'duetClose', onClose);
-
-  const dateAdapter = useMemo(
-    () => ({
-      parse(value = '', createDate: (year: string, month: string, day: string) => Date) {
-        const matches = value.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{4})$/);
-        if (matches) {
-          return createDate(matches[3], matches[2], matches[1]);
-        }
-      },
-      format(date: Date) {
-        return formatDate(date, dateFormat as 'dd-MM-yyyy' | 'dd/MM/yyyy');
-      },
-    }),
-    [dateFormat],
+export function DatePicker({ ...props }: DatePickerProps) {
+  const state = useDatePickerState(props);
+  const ref = useRef(null);
+  const { groupProps, labelProps, fieldProps, buttonProps, dialogProps, calendarProps } = useDatePicker(
+    props,
+    state,
+    ref,
   );
 
-  const localization = useMemo(() => {
-    return {
-      buttonLabel: 'Choose date',
-      placeholder,
-      selectedDateMessage: 'Selected date is',
-      prevMonthLabel: 'Previous month',
-      nextMonthLabel: 'Next month',
-      monthSelectLabel: 'Month',
-      yearSelectLabel: 'Year',
-      closeLabel: 'Close window',
-      calendarHeading: 'Choose a date',
-      dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      monthNames: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-      ],
-      monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    };
-  }, [placeholder]);
+  const buttonRef = useRef(null);
+  const { buttonProps: newButtonProps } = useButton(buttonProps, buttonRef);
 
-  useLayoutEffect(() => {
-    if (!ref.current) {
-      return;
-    }
-    ref.current.dateAdapter = dateAdapter;
-    ref.current.localization = localization;
-
-    ref.current.value = value;
-    ref.current.identifier = id;
-    ref.current.name = name;
-
-    ref.current.isDateDisabled = (date: Date) => {
-      return isDateDisabled(date, disableWeekends, disableDaysOfWeek, disableDates);
-    };
-  }, [ref, initialized, dateAdapter, localization, value, id, name, disableWeekends, disableDaysOfWeek, disableDates]);
-
-  useLayoutEffect(() => {
-    if (!ref.current) {
-      return;
-    }
-    ref.current.value = value;
-  }, [value, ref]);
-
-  useLayoutEffect(() => {
-    if (!ref.current) {
-      return;
-    }
-    ref.current.max = max;
-    ref.current.min = min;
-  }, [max, min, initialized, ref]);
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  return <duet-date-picker class={styles({ size, block, invalid, isFocusVisible })} ref={ref} {...props} />;
+  return (
+    <div className="inline-flex flex-col">
+      <div {...labelProps}>{props.label}</div>
+      <div
+        {...groupProps}
+        ref={ref}
+        className="form-control flex items-center gap-1 px-2 disabled:form-control-disabled"
+      >
+        <DateField {...fieldProps} />
+        <Button
+          look="unstyled"
+          className="-mr-2 flex items-center justify-center rounded-l-none border-l border-l-borderDark bg-light px-2 py-3"
+          {...newButtonProps}
+        >
+          <CalendarIcon size="small" />
+        </Button>
+      </div>
+      {state.isOpen && (
+        <Popover state={state} triggerRef={ref} placement="bottom left">
+          <Dialog {...dialogProps}>
+            <Calendar locale="en_AU" {...calendarProps} firstDayOfWeek={props.firstDayOfWeek} />
+          </Dialog>
+        </Popover>
+      )}
+    </div>
+  );
 }

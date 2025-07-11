@@ -19,6 +19,7 @@ export function Calendar({ value, ...props }: DatePickerProps) {
   const state = useCalendarState({
     createCalendar,
     ...props,
+    value,
     locale,
   });
 
@@ -26,7 +27,6 @@ export function Calendar({ value, ...props }: DatePickerProps) {
   const { buttonProps: newPrevButtonProps } = useButton(prevButtonProps, refPrevButton);
   const { buttonProps: newNextButtonProps } = useButton(nextButtonProps, refNextButton);
 
-  console.log('value', value);
   return (
     <div {...calendarProps} className="calendar">
       <div className="flex items-center justify-between">
