@@ -17,20 +17,10 @@ Use this progress indicator to show a process is running.
 The indicator comes in various sizes: Sm and Md suitable for using in components ie buttons or fields, or xl full-page loading.
 
 ```tsx
-() => {
-  return (
-    <div className="p-1 rounded-md flex items-end justify-center" >
-      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator size={size} className="mr-2" />
-      ))}
-    </div>
-    <div className="p-1 rounded-md flex items-end justify-center" >
-      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator size={size} className="mr-2" />
-      ))}
-    </div>
-  );
-};
+<div className="flex gap-2">
+      <ProgressIndicator size="large" label="Loading..." />
+      <ProgressIndicator size="large" icon={PadlockTickIcon} label="Signing  in..." />
+</div>
 ```
 
 ### Dark backgrounds
