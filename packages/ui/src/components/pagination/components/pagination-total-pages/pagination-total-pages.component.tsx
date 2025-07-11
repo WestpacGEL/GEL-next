@@ -207,10 +207,6 @@ export function PaginationTotalPages({
       }
     }
 
-    console.log('----------------------');
-    console.log('leftCorner', leftCorner);
-    console.log('middle', middle);
-    console.log('rightCorner', rightCorner);
     return [...leftCorner, ...middle, ...rightCorner].map(page =>
       page ? { page, text: page, ...onPageItemProps?.(page) } : null,
     );
