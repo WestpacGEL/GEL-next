@@ -128,7 +128,6 @@ export const InlineFieldValidationFlow = () => {
   const [validating, setValidating] = useState<boolean>(false);
   const [error, setError] = useState<string>();
   const validate = useCallback(() => {
-    setValidated(false);
     setValidating(true);
     setError(undefined);
     setTimeout(() => {
