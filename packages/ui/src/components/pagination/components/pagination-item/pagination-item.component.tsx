@@ -23,6 +23,7 @@ export function PaginationItem({
       disabled={disabled}
       aria-disabled={disabled ? 'true' : 'false'}
       aria-current={active ? 'page' : undefined}
+      {...(Tag === 'button' && { type: 'button' })}
     >
       {children}
     </Tag>
