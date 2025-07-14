@@ -9,7 +9,7 @@ import { Button } from '../../../button/index.js';
 import { Circle } from '../../../circle/circle.component.js';
 import { ArrowLeftIcon, ArrowRightIcon } from '../../../icon/index.js';
 
-import { type DatePickerProps } from './calendar.types.js';
+import { type CalendarProps } from './calendar.types.js';
 import { CalendarGrid } from './components/calendar-grid/calendar-grid.component.js';
 import { Select } from './components/select/select.component.js';
 
@@ -25,7 +25,7 @@ const MONTHS = Array.from({ length: 12 }, (_, i) => {
 
 const YEAR_OFFSET = 10;
 
-export function Calendar({ value, ...props }: DatePickerProps) {
+export function Calendar({ value, ...props }: CalendarProps) {
   const { locale } = useLocale();
   const refPrevButton = useRef(null);
   const refNextButton = useRef(null);

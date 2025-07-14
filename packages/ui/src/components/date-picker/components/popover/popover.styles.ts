@@ -10,7 +10,7 @@ export const styles = tv(
       showAsBottomSheet: {
         true: {
           underlay: 'animate-fadeIn bg-black/20',
-          popover: 'animate-slideUp !fixed inset-x-0 !bottom-0 !left-0 !top-auto px-[8%] pb-3',
+          popover: '!fixed inset-x-0 !bottom-0 !left-0 !top-auto animate-slideUp px-[8%] pb-3',
         },
         false: {
           underlay: '',
