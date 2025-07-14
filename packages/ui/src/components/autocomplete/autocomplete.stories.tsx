@@ -285,13 +285,13 @@ export const UsingCustomItems: Story = {
   args: {
     'aria-label': 'Custom Items',
     children: [
-      <AutocompleteItem key="BSB">
+      <AutocompleteItem key="BSB" textValue="Business Name">
         <div className="flex flex-col">
           <h3 className="typography-body-9 font-medium">Business Name</h3>
           <p>12 345 678 910</p>
         </div>
       </AutocompleteItem>,
-      <AutocompleteItem key="staff">
+      <AutocompleteItem key="staff" textValue="Staff Name">
         <div className="flex items-center gap-2">
           <Circle className="size-5 bg-muted text-white">SN</Circle>
           <div className="flex flex-col ">
