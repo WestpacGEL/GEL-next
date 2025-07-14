@@ -21,6 +21,7 @@ export function PaginationItem({
       className={styles({ className, firstItem, lastItem, active, disabled })}
       {...props}
       disabled={disabled}
+      aria-disabled={disabled ? 'true' : 'false'}
       aria-current={active ? 'page' : undefined}
       {...(Tag === 'button' && { type: 'button' })}
     >
