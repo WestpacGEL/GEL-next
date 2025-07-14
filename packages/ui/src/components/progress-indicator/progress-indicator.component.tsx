@@ -34,7 +34,7 @@ export function ProgressIndicator({
 
   return (
     <div aria-label={ariaLabel} className={styles.container()}>
-      <div className="relative">
+      <div className="relative flex items-center justify-center">
         <Icon viewBox="0 0 180 180" fill="none" color={color} className={styles.base({ className })} {...props}>
           <defs>
             <linearGradient id={`${id}-1`}>
