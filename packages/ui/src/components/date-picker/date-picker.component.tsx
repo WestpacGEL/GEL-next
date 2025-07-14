@@ -60,7 +60,7 @@ export function DatePicker({
       {state.isOpen && (
         <Popover showAsBottomSheet={showAsBottomSheet} state={state} triggerRef={ref} placement="bottom left">
           <Dialog {...dialogProps}>
-            <Calendar locale="en_AU" {...calendarProps} firstDayOfWeek={props.firstDayOfWeek} />
+            <Calendar {...calendarProps} firstDayOfWeek={props.firstDayOfWeek} />
           </Dialog>
         </Popover>
       )}
