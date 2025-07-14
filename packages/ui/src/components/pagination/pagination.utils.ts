@@ -1,4 +1,4 @@
-import { BREAKPOINTS, Breakpoint } from '../../tailwind/index.js';
+import { BREAKPOINTS, Breakpoint } from '../../tailwind/constants/index.js';
 
 const BREAKPOINTS_DECRECENT = Object.keys(BREAKPOINTS).reverse();
 export function getSiblingOrBoundaryCount(
