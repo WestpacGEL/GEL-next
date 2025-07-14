@@ -6,7 +6,7 @@ import { useLocale } from 'react-aria';
 import { DatePicker } from './date-picker.component.js';
 
 const meta: Meta<typeof DatePicker> = {
-  title: 'Components/NewDatePicker',
+  title: 'Components/Datepicker',
   component: DatePicker,
   tags: ['autodocs'],
   decorators: [

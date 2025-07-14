@@ -3,7 +3,7 @@ import { DateValue } from 'react-aria';
 import { DatePickerStateOptions } from 'react-stately';
 import { VariantProps } from 'tailwind-variants';
 
-import { Breakpoint } from 'src/tailwind/index.js';
+import { Breakpoint } from '../../tailwind/constants/index.js';
 
 import { styles } from './date-picker.styles.js';
 
