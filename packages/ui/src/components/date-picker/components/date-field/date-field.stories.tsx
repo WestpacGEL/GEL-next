@@ -32,17 +32,13 @@ export const Default: Story = {
  * > Default usage example
  */
 export const State = () => {
-  const [date, setDate] = useState<DateValue>();
+  const [date, setDate] = useState<DateValue | null>(null);
 
   return (
     <DateField
-      locale="en_AU"
       value={date}
       onChange={value => {
-        console.log('value', value);
-        if ('day' in value) {
-          setDate(value);
-        }
+        setDate(value);
       }}
     />
   );
