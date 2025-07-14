@@ -1,4 +1,3 @@
-import { HTMLAttributes } from 'react';
 import { CalendarStateOptions } from 'react-stately';
 import { VariantProps } from 'tailwind-variants';
 
@@ -14,7 +13,5 @@ export type DuetDatePickerElement = Element & {
   name?: string;
   value?: string;
 };
-
-type Variants = VariantProps<typeof styles>;
 
 export type DatePickerProps = Omit<CalendarStateOptions, 'createCalendar'>;

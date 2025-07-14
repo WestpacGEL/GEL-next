@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useRef } from 'react';
 import { DismissButton, Overlay, usePopover } from 'react-aria';
 
 import { styles as popoverStyles } from './popover.styles.js';
