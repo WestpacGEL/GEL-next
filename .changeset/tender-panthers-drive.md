@@ -2,4 +2,4 @@
 '@westpac/ui': minor
 ---
 
-Update pagination functionality to support total pages
+Update pagination functionality to support larger number of pages and various pagination bug fixes
