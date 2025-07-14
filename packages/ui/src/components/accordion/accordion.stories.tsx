@@ -2,7 +2,8 @@ import { type Key } from '@react-types/shared';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
-import { Button, Tabs, TabsPanel } from '../index.js';
+import { AccountIcon, CreditCardsIcon, InvoiceIcon, ShareIosIcon } from '../icon/index.js';
+import { Badge, Button, Tabs, TabsPanel } from '../index.js';
 
 import { Accordion, AccordionItem } from './accordion.component.js';
 
@@ -43,6 +44,73 @@ export const Default: Story = {
     ].map(({ key, title }) => (
       <AccordionItem key={key} title={title}>
         <h3>{title}</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
+          reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
+        </p>
+        <Button>Test</Button>
+      </AccordionItem>
+    )),
+  },
+};
+
+/**
+ * > Default usage example
+ */
+export const WithIcons: Story = {
+  args: {
+    rounded: true,
+    children: [
+      {
+        key: 'Accounts',
+        title: (
+          <div className="flex flex-1 items-center justify-between">
+            <div className="flex items-center gap-2">
+              <AccountIcon size="small" look="outlined" />
+              <p className="typography-body-9">Accounts</p>
+            </div>
+            <Badge color="success">Label</Badge>
+          </div>
+        ),
+      },
+      {
+        key: 'Credit cards',
+        title: (
+          <div className="flex flex-1 items-center justify-between">
+            <div className="flex items-center gap-2">
+              <CreditCardsIcon size="small" look="outlined" />
+              <p className="typography-body-9">Credit cards</p>
+            </div>
+            <Badge color="success">Label</Badge>
+          </div>
+        ),
+      },
+      {
+        key: 'Shares',
+        title: (
+          <div className="flex flex-1 items-center justify-between">
+            <div className="flex items-center gap-2">
+              <ShareIosIcon size="small" look="outlined" />
+              <p className="typography-body-9">Shares</p>
+            </div>
+            <Badge color="success">Label</Badge>
+          </div>
+        ),
+      },
+      {
+        key: 'Invoices',
+        title: (
+          <div className="flex flex-1 items-center justify-between">
+            <div className="flex items-center gap-2">
+              <InvoiceIcon size="small" look="outlined" />
+              <p className="typography-body-9">Invoices</p>
+            </div>
+            <Badge color="success">Label</Badge>
+          </div>
+        ),
+      },
+    ].map(({ key, title }) => (
+      <AccordionItem key={key} title={title}>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
           reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!

@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '../button/button.component.js';
-import { ClearIcon, DropDownIcon } from '../icon/index.js';
+import { ClearIcon, DownloadIcon } from '../icon/index.js';
 import { Input } from '../input/input.component.js';
 import { InputGroup } from '../input-group/input-group.component.js';
 import { ModalBody } from '../modal/index.js';
@@ -49,9 +49,9 @@ export const ButtonsUsage = () => {
                 key={`${size}-${look}`}
                 iconAfter={ProgressIndicator}
                 iconSize={size === 'small' ? 'xsmall' : 'small'}
-                iconColor={look === 'faint' ? 'hero' : 'white'}
+                iconColor={look === 'faint' ? 'muted' : 'white'}
               >
-                Loading...{'  '}
+                Loading{'  '}
               </Button>
             ))}
           </div>
@@ -74,7 +74,7 @@ export const InputUsage = () => {
       <InputGroup
         label="Input with left progress indicator"
         before={{
-          icon: ProgressIndicator,
+          icon: () => <ProgressIndicator size="small" color="muted" />,
         }}
         after={{
           inset: true,
@@ -85,16 +85,39 @@ export const InputUsage = () => {
       </InputGroup>
       <InputGroup
         label="Input with right progress indicator"
-        before={{
-          inset: true,
-          element: <Button onClick={clearInput} look="link" iconAfter={DropDownIcon} iconColor="muted" />,
-        }}
         after={{
-          icon: ProgressIndicator,
+          icon: () => <ProgressIndicator size="small" color="muted" />,
         }}
       >
         <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
       </InputGroup>
+    </>
+  );
+};
+
+/**
+ * > Button loading usage
+ */
+export const ButtonLoadingUsage = () => {
+  const [loading, setLoading] = useState(false);
+  const handleSubmit = useCallback(async () => {
+    setLoading(true);
+    await new Promise<void>(resolve => {
+      setTimeout(() => resolve(), 3000);
+    });
+    setLoading(false);
+  }, []);
+
+  return (
+    <>
+      <Button
+        disabled={loading}
+        iconAfter={loading ? ProgressIndicator : DownloadIcon}
+        iconColor="white"
+        onClick={handleSubmit}
+      >
+        Download
+      </Button>
     </>
   );
 };

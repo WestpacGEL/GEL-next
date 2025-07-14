@@ -1,5 +1,17 @@
 # @westpac/ui
 
+## 0.44.0
+
+### Minor Changes
+
+- 2e9f7bd: Update pagination functionality to support larger number of pages and various pagination bug fixes
+
+### Patch Changes
+
+- a27d5ab: centralise the progress indicator inside of a button
+- 3f756a8: Click on default pagination(button) click triggers form submission when pagination component used under form tab
+- b5f54d8: adjusting the title size in order to place icon on the edges
+
 ## 0.43.0
 
 ### Minor Changes

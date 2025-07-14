@@ -1,46 +1,32 @@
-import { HTMLAttributes, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
-import { type PaginationItemProps } from './components/index.js';
+import { Breakpoint } from '../../tailwind/constants/breakpoints.js';
+
+import { PaginationItemProps } from './components/index.js';
+import { PaginationPageProps } from './components/pagination-pages/pagination-pages.types.js';
+import { PaginationTotalPagesProps } from './components/pagination-total-pages/pagination-total-pages.types.js';
 
 export type PageProps = {
   href: string;
   text: ReactNode;
 };
 
-export type PaginationAsLinkProps = {
+export type PaginationBase = {
   /**
-   * on page change
+   * Back aria label
+   * @default Back
    */
-  onChange?: never;
-  /**
-   * Pages items
-   */
-  pages: PageProps[];
-};
-
-export type PaginationAsButtonProps = {
-  /**
-   * on page change
-   */
-  onChange: (page: number) => unknown;
-  /**
-   * Pages items
-   */
-  pages: Omit<PageProps, 'href'>[];
-};
-
-export type PaginationHookProps = {
-  defaultCurrent?: number;
-  infinite?: boolean;
-  pages: (Omit<PageProps, 'href'> & { href?: string })[];
-};
-
-export type PaginationProps = {
+  backAriaLabel?: string;
   /**
    * Back label
    * @default Back
    */
   backLabel?: ReactNode;
+  /**
+   * boundaryCount
+   * @default 1
+   */
+  boundaryCount?: number | Partial<Record<Breakpoint | 'initial', number>>;
   /**
    * Current page
    */
@@ -55,14 +41,31 @@ export type PaginationProps = {
    */
   linkComponent?: PaginationItemProps['tag'];
   /**
+   * Next aria label
+   * @default Next
+   */
+  nextAriaLabel?: string;
+  /**
    * Next label
    * @default Next
    */
   nextLabel?: ReactNode;
   /**
+   * siblingCount
+   * @default 1
+   */
+  siblingCount?: number | Partial<Record<Breakpoint | 'initial', number>>;
+  /**
    * Tag to render
    * @default nav
    */
   tag?: keyof JSX.IntrinsicElements;
-} & (PaginationAsLinkProps | PaginationAsButtonProps) &
-  Omit<HTMLAttributes<Element>, 'onChange'>;
+};
+
+export type PaginationHookProps = {
+  defaultCurrent?: number;
+  infinite?: boolean;
+  pages: (Omit<PageProps, 'href'> & { href?: string })[];
+};
+
+export type PaginationProps = PaginationPageProps | PaginationTotalPagesProps;
