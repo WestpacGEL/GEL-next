@@ -89,8 +89,8 @@ export const ResponsiveTotalPages = (props: PaginationProps) => {
     <Pagination
       {...props}
       totalPages={20}
-      siblingCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
-      boundaryCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
+      siblingCount={{ initial: 0, sm: 2, md: 3 }}
+      boundaryCount={{ initial: 0, sm: 2, md: 3 }}
       onChange={value => {
         setCurrent(value);
         action('onChange')(value);
