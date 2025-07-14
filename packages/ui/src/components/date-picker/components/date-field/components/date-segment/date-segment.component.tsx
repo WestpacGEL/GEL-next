@@ -1,21 +1,22 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { useDateSegment } from 'react-aria';
+import { mergeProps, useDateSegment, useFocusRing } from 'react-aria';
 
+import { styles as dateSegmentStyles } from './date-segment.styles.js';
 import { DateSegmentProps } from './date-segment.types.js';
 
 export function DateSegment({ segment, state, ...props }: DateSegmentProps) {
   const ref = useRef(null);
+  const { focusProps, isFocusVisible } = useFocusRing();
   const { segmentProps } = useDateSegment(segment, state, ref);
-
+  const styles = dateSegmentStyles({
+    isFocusVisible,
+    isPlaceholder: segment.isPlaceholder,
+    isSeparator: segmentProps.role !== 'spinbutton',
+  });
   return (
-    <span
-      {...props}
-      {...segmentProps}
-      ref={ref}
-      className={`disabled:form-control-disabled placeholder:font-light placeholder:text-text-50 placeholder:opacity-100 ${segment.isPlaceholder ? 'placeholder' : ''}`}
-    >
+    <span {...props} {...mergeProps(focusProps, segmentProps)} ref={ref} className={styles}>
       {segment.text}
     </span>
   );

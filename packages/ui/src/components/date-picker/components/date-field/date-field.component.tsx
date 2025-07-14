@@ -17,17 +17,14 @@ export function DateField({ ...props }: DateFieldProps) {
   });
 
   const ref = useRef(null);
-  const { labelProps, fieldProps } = useDateField(props, state, ref);
+  const { fieldProps } = useDateField(props, state, ref);
 
   return (
-    <div className="wrapper">
-      <span {...labelProps}>{props.label}</span>
-      <div {...fieldProps} ref={ref} className="field">
-        {state.segments.map((segment, i) => (
-          <DateSegment key={i} segment={segment} state={state} />
-        ))}
-        {state.isInvalid && <span aria-hidden="true">🚫</span>}
-      </div>
+    <div {...fieldProps} ref={ref}>
+      {state.segments.map((segment, i) => (
+        <DateSegment key={i} segment={segment} state={state} />
+      ))}
+      {/* {state.isInvalid && <span aria-hidden="true">🚫</span>} */}
     </div>
   );
 }

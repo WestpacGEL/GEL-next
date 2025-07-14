@@ -21,9 +21,11 @@ export function CalendarCell({ state, date }: CalendarCellProps) {
   const styles = calendarCellStyles({ isSelected, isFocused, isToday, isDisabled, isUnavailable });
 
   return (
-    <td className={styles.base()} {...cellProps}>
-      <div {...buttonProps} ref={ref} hidden={isOutsideVisibleRange} className={styles.text()}>
-        {formattedDate}
+    <td {...cellProps}>
+      <div className={styles.base()}>
+        <div {...buttonProps} ref={ref} hidden={isOutsideVisibleRange} className={styles.text()}>
+          {formattedDate}
+        </div>
       </div>
     </td>
   );

@@ -2,23 +2,27 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: '',
-    text: 'size-6 rounded-full border border-white text-center leading-[2.125rem] hover:bg-primary/5',
+    base: 'flex items-center justify-center',
+    text: 'size-6 rounded-full border border-white text-center leading-[2.125rem]',
   },
   variants: {
     isDisabled: {
       true: {
-        text: 'opacity-50',
+        text: 'cursor-default line-through opacity-50',
+      },
+      false: {
+        text: 'hover:bg-primary/5',
       },
     },
     isUnavailable: {
       true: {
-        text: 'focus-outline',
+        text: 'cursor-default line-through opacity-50',
       },
+      false: {},
     },
     isFocused: {
       true: {
-        text: 'focus-outline',
+        text: '!outline-offset-0 focus-outline',
       },
     },
     isToday: {

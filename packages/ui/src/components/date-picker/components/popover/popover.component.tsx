@@ -1,16 +1,21 @@
-import React, { useRef } from 'react';
-import { DismissButton, Overlay, useDialog, usePopover } from 'react-aria';
+import React, { useMemo, useRef } from 'react';
+import { DismissButton, Overlay, usePopover } from 'react-aria';
 
+import { styles as popoverStyles } from './popover.styles.js';
 import { PopoverProps } from './popover.types.js';
 
-export function Popover({ state, children, ...props }: PopoverProps) {
+export function Popover({ state, children, showAsBottomSheet, ...props }: PopoverProps) {
   const ref = useRef(null);
-  const { popoverProps, underlayProps } = usePopover({ ...props, popoverRef: ref }, state);
+  const { popoverProps, underlayProps } = usePopover(
+    { ...props, popoverRef: ref, containerPadding: 0, offset: 0 },
+    state,
+  );
+  const styles = popoverStyles({ showAsBottomSheet });
 
   return (
     <Overlay>
-      <div {...underlayProps} className="fixed inset-0" />
-      <div {...popoverProps} ref={ref} className="absolute border border-border bg-white shadow-sm">
+      <div {...underlayProps} className={styles.underlay()} />
+      <div {...popoverProps} ref={ref} className={styles.popover()}>
         <DismissButton onDismiss={() => state.close()} />
         {children}
       </div>

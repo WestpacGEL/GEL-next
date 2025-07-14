@@ -8,7 +8,7 @@ export function CalendarGrid({ state, weekdayStyle = 'short', ...props }: Calend
   const { gridProps, headerProps, weekDays, weeksInMonth } = useCalendarGrid({ weekdayStyle, ...props }, state);
 
   return (
-    <table {...gridProps}>
+    <table className="w-full" {...gridProps}>
       <thead {...headerProps}>
         <tr>
           {weekDays.map((day, index) => (
