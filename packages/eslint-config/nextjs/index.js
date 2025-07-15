@@ -1,15 +1,16 @@
-module.exports = {
-  root: true,
-  extends: ['next/core-web-vitals', '../index.js'],
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-        project: ['apps/*/tsconfig.json', 'packages/*/tsconfig.json', './ts-config.json'],
-      },
-    },
+import sharedConfig from '../index.js';
+import eslintPluginNext from '@next/eslint-plugin-next';
+import eslintPluginReact from 'eslint-plugin-react';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+  ...sharedConfig,
+  eslintPluginNext.flatConfig.recommended,
+  eslintPluginNext.flatConfig.coreWebVitals,
+  eslintPluginReactHooks.configs['recommended-latest'],
+  eslintPluginReact.configs.flat['jsx-runtime'],
+  {
+    ignores: ['.next/**', '**/public/**/*.js'],
   },
-};
+);

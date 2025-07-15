@@ -1,7 +1,7 @@
 import { Autocomplete, AutocompleteItem, Field, FormGroup, Input, Link } from '@westpac/ui';
 import { Fragment, RefObject, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
-const StreetHint = ({ manual, onClick }: { manual: boolean; onClick: (manual: boolean) => any }) => (
+const StreetHint = ({ manual, onClick }: { manual?: boolean; onClick: (manual: boolean) => any }) => (
   <Fragment>
     Not a PO Box
     {manual !== undefined && (
@@ -55,7 +55,14 @@ export function ManualAddress({
         <Field
           errorMessage={errorMessage}
           label="Street"
-          hintMessage={<StreetHint manual={manual} onClick={() => onClick(manual)} />}
+          hintMessage={
+            <StreetHint
+              manual={manual}
+              onClick={() => {
+                onClick(manual);
+              }}
+            />
+          }
         >
           <Input size="large" invalid={withError} className="w-full" ref={streetLegendRef} />
         </Field>

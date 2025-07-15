@@ -5,7 +5,7 @@ export const articleWrapperStyles = tv({
   variants: {
     layout: {
       '1x1': 'grid-cols-2',
-      // eslint-disable-next-line sonarjs/no-duplicate-string
+
       '1x2': 'grid-cols-3',
       '2x1': 'grid-cols-3',
       '1x1x1': 'grid-cols-3',

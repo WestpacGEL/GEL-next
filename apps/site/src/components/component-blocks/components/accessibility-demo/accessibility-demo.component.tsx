@@ -2,7 +2,7 @@
 
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Select } from '@westpac/ui';
-import { useId, useState } from 'react';
+import { ChangeEvent, useId, useState } from 'react';
 
 import { DOCUMENT_RENDERERS } from '@/app/articles/[article]/components/document-renderer';
 import { Code } from '@/components/code';
@@ -37,7 +37,9 @@ export const AccessibilityDemo = ({ content }: AccessibilityDemoProps) => {
           id={id}
           value={filter}
           width={10}
-          onChange={(event: any) => setFilter(event.target.value as VisionFilterProps['value'])}
+          onChange={(event: ChangeEvent<HTMLSelectElement>) =>
+            setFilter(event.target.value as VisionFilterProps['value'])
+          }
         >
           {FILTERS.map(filter => (
             <option key={filter.text} value={filter.value}>

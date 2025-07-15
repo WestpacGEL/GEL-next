@@ -2,6 +2,7 @@
 import { List, ListItem } from '@westpac/ui';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ReactNode } from 'react';
 
 import { ArrowDownRightIcon } from '@/components/icons';
 
@@ -29,7 +30,7 @@ export function TableOfContents({ contents = [] }: TableOfContentsProps) {
   );
 }
 
-function NavLink({ href, children }: { children?: React.ReactNode; href: string }) {
+function NavLink({ href, children }: { children?: ReactNode; href: string }) {
   const pathname = usePathname();
 
   return (

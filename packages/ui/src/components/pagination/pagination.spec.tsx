@@ -381,28 +381,28 @@ describe('Pagination', () => {
   });
 
   describe('usePagination hook', () => {
-    it('goes to next page', async () => {
+    it('goes to next page', () => {
       const { result, rerender } = renderHook(() =>
         usePagination({
           pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
         }),
       );
       expect(result.current.currentPage).toBe(1);
-      await act(() => result.current.next());
+      act(() => result.current.next());
       rerender();
 
       expect(result.current.currentPage).toBe(2);
-      await act(() => result.current.next());
+      act(() => result.current.next());
       rerender();
 
       expect(result.current.currentPage).toBe(3);
-      await act(() => result.current.next());
+      act(() => result.current.next());
       rerender();
 
       expect(result.current.currentPage).toBe(3);
     });
 
-    it('goes to the previous when previous is invoked', async () => {
+    it('goes to the previous when previous is invoked', () => {
       const { result, rerender } = renderHook(() =>
         usePagination({
           pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
@@ -410,22 +410,22 @@ describe('Pagination', () => {
         }),
       );
       expect(result.current.currentPage).toBe(3);
-      await act(() => result.current.previous());
+      act(() => result.current.previous());
       rerender();
 
       expect(result.current.currentPage).toBe(2);
-      await act(() => result.current.previous());
+      act(() => result.current.previous());
       rerender();
 
       expect(result.current.currentPage).toBe(1);
-      await act(() => result.current.previous());
+      act(() => result.current.previous());
       rerender();
 
       expect(result.current.currentPage).toBe(1);
     });
 
     describe('when infinite option is ticked', () => {
-      it('goes to the first page when next() is invoked on the last page', async () => {
+      it('goes to the first page when next() is invoked on the last page', () => {
         const { result, rerender } = renderHook(() =>
           usePagination({
             pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
@@ -434,13 +434,13 @@ describe('Pagination', () => {
           }),
         );
         expect(result.current.currentPage).toBe(3);
-        await act(() => result.current.next());
+        act(() => result.current.next());
         rerender();
 
         expect(result.current.currentPage).toBe(1);
       });
 
-      it('goes to the last page when previous() is invoked on the first page', async () => {
+      it('goes to the last page when previous() is invoked on the first page', () => {
         const { result, rerender } = renderHook(() =>
           usePagination({
             pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
@@ -449,7 +449,7 @@ describe('Pagination', () => {
           }),
         );
         expect(result.current.currentPage).toBe(1);
-        await act(() => result.current.previous());
+        act(() => result.current.previous());
         rerender();
 
         expect(result.current.currentPage).toBe(3);

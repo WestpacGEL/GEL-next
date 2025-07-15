@@ -1,6 +1,8 @@
+import { ReactNode } from 'react';
+
 export type SvgProps = {
   'aria-label'?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   className?: string;
   height?: number;
   viewBox: string;

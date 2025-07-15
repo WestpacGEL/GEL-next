@@ -13,13 +13,11 @@ export const styles = tv({
   variants: {
     layout: {
       '1x1': {
-        // eslint-disable-next-line sonarjs/no-duplicate-string
         imageWrapper: 'xsl:aspect-[1092/563]',
       },
       '1x2': {},
       '2x1': {},
       '1x1x1': {
-        // eslint-disable-next-line sonarjs/no-duplicate-string
         imageWrapper: 'xsl:aspect-[708/559]',
       },
     },

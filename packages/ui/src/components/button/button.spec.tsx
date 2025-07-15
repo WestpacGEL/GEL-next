@@ -43,7 +43,7 @@ describe('Button', () => {
   it('calls the onClick', async () => {
     const handleClick = vi.fn();
     render(<Button onClick={handleClick}>Button Click</Button>);
-    await act(() => {
+    act(() => {
       user.click(screen.getByRole('button', { name: 'Button Click' }));
     });
     await waitFor(() => {

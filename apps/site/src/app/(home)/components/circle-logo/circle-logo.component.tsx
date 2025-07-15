@@ -1,6 +1,7 @@
 import { clsx } from 'clsx';
+import { ReactNode } from 'react';
 
-export function CircleLogo({ className, children }: { children: React.ReactNode; className?: string }) {
+export function CircleLogo({ className, children }: { children: ReactNode; className?: string }) {
   return (
     <span
       className={clsx(

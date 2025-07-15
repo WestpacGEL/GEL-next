@@ -9,6 +9,6 @@ export const getIconSize = (size: string | object) => {
   if (typeof size === 'string') {
     return iconSizeMap[size];
   } else {
-    return Object.entries(size).reduce((acc, [key, val]) => ({ ...acc, [key]: iconSizeMap[val] }), {});
+    return Object.entries(size).reduce((acc, [key, val]) => ({ ...acc, [key]: iconSizeMap[val as string] }), {});
   }
 };

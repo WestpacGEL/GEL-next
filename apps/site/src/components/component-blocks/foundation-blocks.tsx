@@ -40,7 +40,7 @@ export const foundationBlocksComponents = {
   logos: () => <Logos />,
   pictograms: () => <Pictograms />,
   symbols: () => <Symbols />,
-  colors: (props: any) => <Colors palette={props.palette} />,
+  colors: (props: { palette: string }) => <Colors palette={props.palette} />,
   linkList: LinkList,
   designSystemBodyImage: (props: any) => (
     <div className="mb-5 mt-1">

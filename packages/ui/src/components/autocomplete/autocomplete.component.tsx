@@ -45,6 +45,7 @@ function Autocomplete<T extends object>(
   }: AutocompleteProps<T>,
   ref: ForwardedRef<HTMLInputElement>,
 ) {
+  // eslint-disable-next-line @typescript-eslint/unbound-method
   const { contains } = useFilter({ sensitivity: 'base' });
   const state = useComboBoxState({ isDisabled, ...props, defaultFilter: contains });
   const { isFocusVisible, focusProps } = useFocusRing();
@@ -92,7 +93,7 @@ function Autocomplete<T extends object>(
   const outerRef = React.useRef(null);
 
   const isNoOptionPopOverOpen = useMemo(() => {
-    return (
+    return !!(
       noOptionsMessage &&
       ((!state.isOpen && state.isFocused && searchProps.value.length > 0 && !state.selectedItem) ||
         (state.collection.size === 0 && searchProps.value.length > 0))

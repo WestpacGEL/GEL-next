@@ -37,7 +37,7 @@ export function DatePicker({
       defineCustomElements(window);
       setInitialized(true);
     };
-    initDatePicker();
+    void initDatePicker();
   }, []);
 
   const ref = useRef<DuetDatePickerElement>(null);
@@ -51,13 +51,13 @@ export function DatePicker({
   const dateAdapter = useMemo(
     () => ({
       parse(value = '', createDate: (year: string, month: string, day: string) => Date) {
-        const matches = value.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{4})$/);
+        const matches = /^(\d{1,2})[-/](\d{1,2})[-/](\d{4})$/.exec(value);
         if (matches) {
           return createDate(matches[3], matches[2], matches[1]);
         }
       },
       format(date: Date) {
-        return formatDate(date, dateFormat as 'dd-MM-yyyy' | 'dd/MM/yyyy');
+        return formatDate(date, dateFormat);
       },
     }),
     [dateFormat],

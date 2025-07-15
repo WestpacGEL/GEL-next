@@ -32,7 +32,7 @@ export function AccessibilityContent({
                 renderers={DOCUMENT_RENDERERS}
                 componentBlocks={{
                   ...foundationBlocksComponents,
-                  colors: props => <Colors palette={props.palette} />,
+                  colors: (props: { palette: string }) => <Colors palette={props.palette} />,
                   accessibilityDemo: () => <AccessibilityDemo content={accessibilityDemo || []} />,
                   shortCode: props => {
                     return (

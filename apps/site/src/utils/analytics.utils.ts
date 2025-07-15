@@ -100,7 +100,7 @@ export const track = (event: EventType, request: AnalyticsRequest): void => {
   if (window?.wa) {
     try {
       window.wa?.(event, request);
-    } catch (e) {
+    } catch {
       // Do nothing here.
     }
   }
@@ -124,6 +124,7 @@ const getPageName = (): string => {
   // default page name creates using path & query and when it's empty fallback to page title. E.g. format wbc:www:corp:westpac-iq:ceo-survey
   const query = window?.location?.search;
   const path = window?.location?.pathname;
-  const name = `${path + query}`.replace(/^\/|\/$/g, '').replace(/\?|=|&|\//g, ':') || window?.document?.title;
+  // eslint-disable-next-line sonarjs/anchor-precedence
+  const name = `${path + query}`.replace(/^\/|\/$/g, '').replace(/[?=&/]/g, ':') || window?.document?.title;
   return convertToKebabCase(name);
 };

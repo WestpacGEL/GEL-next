@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 export const EXPECTED_SPACING = {
   '0': '0rem',
   '1': '0.375rem',

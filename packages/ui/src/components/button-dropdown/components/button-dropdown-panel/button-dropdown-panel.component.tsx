@@ -20,6 +20,7 @@ export function ButtonDropdownPanel({ className, children, state, block, id, ...
       if (
         event.target &&
         popoverRef.current &&
+        // eslint-disable-next-line sonarjs/different-types-comparison
         event.target !== props.triggerRef.current &&
         !popoverRef.current.contains(event.target as Node) &&
         state.isOpen
@@ -62,9 +63,9 @@ export function ButtonDropdownPanel({ className, children, state, block, id, ...
       ref={popoverRef}
       className={styles.base({ className })}
     >
-      <DismissButton onDismiss={state.close} />
+      <DismissButton onDismiss={() => state.close()} />
       <div className={styles.dialog()}>{children}</div>
-      <DismissButton onDismiss={state.close} />
+      <DismissButton onDismiss={() => state.close()} />
     </div>
   );
 }

@@ -30,9 +30,8 @@ export function Code({
   language = 'tsx',
   enableLiveCode = true,
 }: CodeProps) {
-  const childrenAsString = children?.toString().trim();
-
-  if (!childrenAsString) return null;
+  if (typeof children !== 'string') return null;
+  const childrenAsString = children.trim();
 
   if (live) {
     return (
