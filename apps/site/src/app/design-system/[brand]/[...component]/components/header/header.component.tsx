@@ -1,7 +1,7 @@
 'use client';
 
 import { HamburgerMenuIcon } from '@westpac/ui/icon';
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 
 import { useSidebar } from '@/app/design-system/components/sidebar/sidebar.context';
 import { BrandKey } from '@/app/types/brand.types';

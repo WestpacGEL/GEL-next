@@ -2,8 +2,7 @@ import { CalendarDate } from '@internationalized/date';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { act } from 'react-dom/test-utils';
-import { useDatePickerState } from 'react-stately';
-import { Mock, afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { Mock, describe, expect, it, vi } from 'vitest';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 

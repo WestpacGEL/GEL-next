@@ -64,7 +64,7 @@ export function DatePicker({
     }
     const currentBreakpointIndex = BREAKPOINTS_DECRECENT.findIndex(bp => bp === breakpoint);
     const finalBreakPoint = [breakpoint, ...BREAKPOINTS_DECRECENT.slice(currentBreakpointIndex)].find(
-      currentBreakpoint => bottomSheetView[currentBreakpoint as Breakpoint | 'initial'] !== undefined,
+      currentBreakpoint => bottomSheetView[currentBreakpoint] !== undefined,
     ) as Breakpoint | 'initial';
 
     return bottomSheetView[finalBreakPoint] || false;

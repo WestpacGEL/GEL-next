@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { DateValue, getLocalTimeZone, isWeekend, today } from '@internationalized/date';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
 import { useLocale } from 'react-aria';

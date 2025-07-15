@@ -11,7 +11,7 @@ const StoryBottomSheet = ({ children, ...props }: BottomSheetProps) => {
 
   return (
     <>
-      <Button onClick={bottomSheetState.open}> Open Bottom Sheet </Button>
+      <Button onClick={() => bottomSheetState.open()}> Open Bottom Sheet </Button>
       <BottomSheet {...props} state={bottomSheetState}>
         {children}
       </BottomSheet>

@@ -5,10 +5,10 @@ import { type ListState } from 'react-stately';
 
 import { styles } from './list-box-option.styles';
 
-interface OptionProps<T = any> {
+type OptionProps<T = any> = {
   item: Node<T>;
   state: ListState<T>;
-}
+};
 
 export function Option({ item, state }: OptionProps) {
   const ref = React.useRef<HTMLLIElement>(null);
@@ -24,7 +24,7 @@ export function Option({ item, state }: OptionProps) {
 
   return (
     <li
-      {...mergeProps(focusProps, optionProps)}
+      {...mergeProps(optionProps, focusProps)}
       ref={ref}
       className={styles({ isFocusVisible, isSelected, isDisabled })}
     >

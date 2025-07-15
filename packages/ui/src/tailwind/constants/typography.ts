@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 export const DEFAULT_BODY_TYPOGRAPHY = [
   '-apple-system',
   'BlinkMacSystemFont',

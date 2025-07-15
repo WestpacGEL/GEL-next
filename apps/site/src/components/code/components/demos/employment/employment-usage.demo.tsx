@@ -1,5 +1,5 @@
 import { Alert, ErrorMessage, Field, FormGroup, FormLabel, Input, Select, SelectProps } from '@westpac/ui';
-import { Fragment, HTMLAttributes, useState } from 'react';
+import { ChangeEvent, Fragment, HTMLAttributes, useState } from 'react';
 
 import { EmploymentSelect, IndustrySelect } from './employment.demo';
 
@@ -79,7 +79,7 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
               <Field label="Years" labelSize="small">
                 <Select
                   value={years}
-                  onChange={(e: any) => {
+                  onChange={(e: ChangeEvent<HTMLSelectElement>) => {
                     setYears(+e.target.value);
                   }}
                   size="large"
@@ -109,7 +109,10 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
           </Alert>
           <FormGroup>
             <Field label="Previous employment type">
-              <EmploymentSelect value={prevEmployment} onChange={(e: any) => setPrevEmployment(e.target.value)} />
+              <EmploymentSelect
+                value={prevEmployment}
+                onChange={(e: ChangeEvent<HTMLSelectElement>) => setPrevEmployment(e.target.value)}
+              />
             </Field>
           </FormGroup>
           <FormGroup>

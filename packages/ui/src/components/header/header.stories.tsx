@@ -27,7 +27,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const DefaultStory: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -43,7 +43,7 @@ export const DefaultStory: Story = {
  */
 export const RightButton: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -63,7 +63,7 @@ export const RightButton: Story = {
  */
 export const CenterAtXS: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -79,7 +79,7 @@ export const CenterAtXS: Story = {
  */
 export const LogoOnClick: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -96,7 +96,7 @@ export const LogoOnClick: Story = {
  */
 export const LogoWithSkipLink: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -112,7 +112,7 @@ export const LogoWithSkipLink: Story = {
  */
 export const Fixed: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -128,7 +128,7 @@ export const Fixed: Story = {
  */
 export const WithArrow: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -144,7 +144,7 @@ export const WithArrow: Story = {
  */
 export const WithArrowOnClick: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -166,7 +166,7 @@ export const WithArrowOnClick: Story = {
  */
 export const WithHamburger: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
@@ -182,7 +182,7 @@ export const WithHamburger: Story = {
  */
 export const WithHamburgerOnClick: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (

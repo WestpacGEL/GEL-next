@@ -39,9 +39,9 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
         ref={popoverRef}
         className={clsx('z-10 max-h-[400px] overflow-auto border border-border bg-white shadow-lg', className)}
       >
-        {!isNonModal && <DismissButton onDismiss={state.close} />}
+        {!isNonModal && <DismissButton onDismiss={() => state.close()} />}
         {children}
-        <DismissButton onDismiss={state.close} />
+        <DismissButton onDismiss={() => state.close()} />
       </div>
     </Overlay>
   );

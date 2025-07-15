@@ -17,9 +17,9 @@ import { ComponentTitle } from '@/components/document-renderer/component-title';
 
 import { styles as FontsStyles } from './fonts.styles';
 
-interface FontProps {
+type FontProps = {
   view: 'default' | 'table';
-}
+};
 
 const FONT_LIGHT = 'font-light';
 const FONT_REGULAR = 'font-regular';

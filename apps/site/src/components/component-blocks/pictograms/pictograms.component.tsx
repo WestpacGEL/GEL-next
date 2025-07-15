@@ -7,7 +7,7 @@ import { Input } from '@westpac/ui/input';
 import * as AllPictograms from '@westpac/ui/pictogram';
 import { Select } from '@westpac/ui/select';
 import { clsx } from 'clsx';
-import { ChangeEvent, useCallback, useMemo, useState } from 'react';
+import { ChangeEvent, FC, useCallback, useMemo, useState } from 'react';
 
 export const Pictograms = () => {
   const [search, setSearch] = useState('');
@@ -15,7 +15,7 @@ export const Pictograms = () => {
 
   const filteredPictograms = useMemo(() => {
     return Object.entries(AllPictograms).reduce(
-      (acc: { Pictogram: React.FC<AllPictograms.PictogramProps>; key: string }[], [pictogramName, Pictogram]) => {
+      (acc: { Pictogram: FC<AllPictograms.PictogramProps>; key: string }[], [pictogramName, Pictogram]) => {
         if (pictogramName.toUpperCase().indexOf(search.toUpperCase()) === -1 || pictogramName.startsWith('WBC')) {
           return acc;
         }

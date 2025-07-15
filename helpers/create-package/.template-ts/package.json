@@ -29,7 +29,7 @@
     "@vitest/coverage-c8": "^0.30.1",
     "@westpac/eslint-config": "workspace:~",
     "@westpac/ts-config": "workspace:~",
-    "eslint": "^8.33.0",
+    "eslint": "^9.30.0",
     "shx": "^0.3.4",
     "typescript": "^5.5.4",
     "vitest": "^0.30.1"

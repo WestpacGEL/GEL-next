@@ -13,12 +13,12 @@ describe('Switch', () => {
     const user = userEvent.setup();
     const { getByLabelText } = render(<Switch label="checked" />);
     await act(() => user.click(getByLabelText('checked')));
-    expect(getByLabelText('checked')).toBeChecked;
+    expect(getByLabelText('checked')).toBeChecked();
   });
 
   it('should be disabled when isDisabled prop passed', () => {
     const { getByLabelText } = render(<Switch label="disabled" isDisabled />);
-    expect(getByLabelText('disabled')).toBeDisabled;
+    expect(getByLabelText('disabled')).toBeDisabled();
   });
 
   it('should fire onChange when switch is clicked', async () => {
@@ -26,6 +26,6 @@ describe('Switch', () => {
     const user = userEvent.setup();
     const { getByLabelText } = render(<Switch label="onChange" onChange={onChange} />);
     await act(() => user.click(getByLabelText('onChange')));
-    expect(onChange).toBeCalled;
+    expect(onChange).toBeCalled();
   });
 });

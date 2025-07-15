@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { type ComponentProps } from '@westpac/ui';
 import json from '@westpac/ui/component-type.json';
 import { Metadata } from 'next';
@@ -41,7 +46,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
 
 export async function generateStaticParams() {
   const components = await reader().collections.designSystem.all();
-  const params: Array<{ brand: string; component: string[] }> = [];
+  const params: { brand: string; component: string[] }[] = [];
   BANK_OPTIONS.forEach(bank => {
     components.forEach(component => params.push({ brand: bank.key, component: component.slug.split('/') }));
   });
@@ -53,7 +58,7 @@ export default async function ComponentPage({
   searchParams,
 }: {
   params: { component: string[] };
-  searchParams?: { [key: string]: string | undefined };
+  searchParams?: Record<string, string | undefined>;
 }) {
   const brand = searchParams?.brand || 'wbc';
   const tab = searchParams?.tab || 'design';
@@ -68,7 +73,7 @@ export default async function ComponentPage({
           shortCodes.map(
             shortCode =>
               new Promise<ShortCode>(resolve => {
-                // eslint-disable-next-line promise/no-nesting
+                // eslint-disable-next-line sonarjs/no-nested-functions
                 return shortCode.entry.content().then(content => {
                   return resolve({
                     ...shortCode.entry,
@@ -105,8 +110,8 @@ export default async function ComponentPage({
                 content,
               };
             })
-            .catch((error: any) => {
-              reject(error);
+            .catch((error: unknown) => {
+              reject(error as Error);
             });
         });
       }),
@@ -126,8 +131,8 @@ export default async function ComponentPage({
                 content,
               };
             })
-            .catch((error: any) => {
-              reject(error);
+            .catch((error: unknown) => {
+              reject(error as Error);
             });
         });
       }),
@@ -149,8 +154,8 @@ export default async function ComponentPage({
                 content,
               };
             })
-            .catch((error: any) => {
-              reject(error);
+            .catch((error: unknown) => {
+              reject(error as Error);
             });
         });
       }),
@@ -164,6 +169,7 @@ export default async function ComponentPage({
   const componentLookupKey = content.namedExport?.value?.name || componentName;
   const componentProps: ComponentProps | undefined = (json as any)[componentLookupKey];
   const componentLookupPath = componentProps?.filePath.split('/')[0];
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const subComponentProps = Object.entries(json).reduce((acc, [_, value]: [string, any]) => {
     if (value.filePath.startsWith(`${componentLookupPath}/components`)) {
       return [...acc, value];

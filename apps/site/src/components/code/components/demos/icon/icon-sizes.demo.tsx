@@ -1,6 +1,6 @@
 import { Grid, GridItem } from '@westpac/ui/grid';
 import { AtmIcon, BusinessPersonIcon, EftposIcon, PadlockIcon, SecurityIcon, VerifiedIcon } from '@westpac/ui/icon';
-import { Fragment } from 'react';
+import { Fragment, ReactNode } from 'react';
 
 type IconSize = {
   size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
@@ -44,6 +44,6 @@ export function IconSizesDemo() {
   );
 }
 
-function Item({ children }: { children: React.ReactNode }) {
+function Item({ children }: { children: ReactNode }) {
   return <GridItem className="justify-self-center text-muted">{children}</GridItem>;
 }

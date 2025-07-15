@@ -5,7 +5,7 @@ export type RelatedInfoProps = {
   relatedComponents?: RelatedInfoLinks[];
 };
 
-export interface RelatedInfoLinks {
+export type RelatedInfoLinks = {
   slug: string;
   title: string;
-}
+};

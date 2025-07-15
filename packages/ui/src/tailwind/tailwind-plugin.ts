@@ -1,4 +1,4 @@
-/* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable @typescript-eslint/unbound-method */
 import plugin from 'tailwindcss/plugin.js';
 import createThemes from 'tailwindcss-themer';
 
@@ -48,7 +48,9 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
        */
       addUtilities(
         {
+          // eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions
           '.focus-outline': { [`@apply ${theme('focusOutline')}`]: {} },
+          // eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions
           '.background-transition': { [`@apply ${theme('backgroundTransition')}`]: {} },
           '.select-caret': {
             backgroundImage:

@@ -114,7 +114,7 @@ export const ButtonLoadingUsage = () => {
         disabled={loading}
         iconAfter={loading ? ProgressIndicator : DownloadIcon}
         iconColor="white"
-        onClick={handleSubmit}
+        onClick={() => void handleSubmit()}
       >
         Download
       </Button>
@@ -130,15 +130,15 @@ export const LoadingOverlayUsage = () => {
 
   return (
     <>
-      <Modal size="full" state={state} aria-label="Loading overlay">
+      <Modal size="full" state={state} aria-label="Loading overlay" className="bg-transparent">
         <ModalBody
-          onClick={state.close}
+          onClick={() => state.close()}
           className="flex min-h-screen min-w-[100vw] flex-col items-center justify-center"
         >
           <ProgressIndicator color="white" size="large" label="Loading..." />
         </ModalBody>
       </Modal>
-      <Button onClick={state.open}>Open Loader</Button>
+      <Button onClick={() => state.open()}>Open Loader</Button>
     </>
   );
 };

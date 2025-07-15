@@ -9,10 +9,10 @@ export function CubaFlag({ className = 'h-4 w-4' }: { className?: string }) {
     >
       <defs>
         <clipPath id="a">
-          <path fill-opacity=".7" d="M-32 0h682.7v512H-32z"></path>
+          <path fillOpacity=".7" d="M-32 0h682.7v512H-32z"></path>
         </clipPath>
       </defs>
-      <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(30) scale(.94)">
+      <g fillRule="evenodd" clipPath="url(#a)" transform="translate(30) scale(.94)">
         <path fill="#002a8f" d="M-32 0h768v512H-32z"></path>
         <path fill="#fff" d="M-32 102.4h768v102.4H-32zm0 204.8h768v102.4H-32z"></path>
         <path fill="#cb1515" d="m-32 0 440.7 255.7L-32 511V0z"></path>

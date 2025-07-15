@@ -281,7 +281,7 @@ describe('Pagination', () => {
   });
 
   describe('should render the pages according to siblingCount and boundaryCount', () => {
-    it('should render 8 buttons with current={1} siblingCount={2} and boundaryCount={0} with 20 pages', async () => {
+    it('should render 8 buttons with current={1} siblingCount={2} and boundaryCount={0} with 20 pages', () => {
       render(
         <Pagination
           current={1}
@@ -295,7 +295,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(8);
     });
 
-    it('should render 7 buttons with current={1} siblingCount={2} and boundaryCount={0} with 20 pages', async () => {
+    it('should render 7 buttons with current={1} siblingCount={2} and boundaryCount={0} with 20 pages', () => {
       render(
         <Pagination
           current={10}
@@ -309,7 +309,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(7);
     });
 
-    it('should render 10 buttons with current={1} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+    it('should render 10 buttons with current={1} siblingCount={2} and boundaryCount={1} with 20 pages', () => {
       render(
         <Pagination
           current={1}
@@ -323,7 +323,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(10);
     });
 
-    it('should render 9 buttons with current={10} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+    it('should render 9 buttons with current={10} siblingCount={2} and boundaryCount={1} with 20 pages', () => {
       render(
         <Pagination
           current={10}
@@ -337,7 +337,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(9);
     });
 
-    it('should render 10 buttons with current={20} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+    it('should render 10 buttons with current={20} siblingCount={2} and boundaryCount={1} with 20 pages', () => {
       render(
         <Pagination
           current={20}
@@ -351,7 +351,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(10);
     });
 
-    it('should render 12 buttons with current={1} siblingCount={2} and boundaryCount={2} with 20 pages', async () => {
+    it('should render 12 buttons with current={1} siblingCount={2} and boundaryCount={2} with 20 pages', () => {
       render(
         <Pagination
           current={20}
@@ -365,7 +365,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(12);
     });
 
-    it('should render 11 buttons with current={10} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+    it('should render 11 buttons with current={10} siblingCount={2} and boundaryCount={1} with 20 pages', () => {
       render(
         <Pagination
           current={10}
@@ -381,28 +381,28 @@ describe('Pagination', () => {
   });
 
   describe('usePagination hook', () => {
-    it('goes to next page', async () => {
+    it('goes to next page', () => {
       const { result, rerender } = renderHook(() =>
         usePagination({
           pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
         }),
       );
       expect(result.current.currentPage).toBe(1);
-      await act(() => result.current.next());
+      act(() => result.current.next());
       rerender();
 
       expect(result.current.currentPage).toBe(2);
-      await act(() => result.current.next());
+      act(() => result.current.next());
       rerender();
 
       expect(result.current.currentPage).toBe(3);
-      await act(() => result.current.next());
+      act(() => result.current.next());
       rerender();
 
       expect(result.current.currentPage).toBe(3);
     });
 
-    it('goes to the previous when previous is invoked', async () => {
+    it('goes to the previous when previous is invoked', () => {
       const { result, rerender } = renderHook(() =>
         usePagination({
           pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
@@ -410,22 +410,22 @@ describe('Pagination', () => {
         }),
       );
       expect(result.current.currentPage).toBe(3);
-      await act(() => result.current.previous());
+      act(() => result.current.previous());
       rerender();
 
       expect(result.current.currentPage).toBe(2);
-      await act(() => result.current.previous());
+      act(() => result.current.previous());
       rerender();
 
       expect(result.current.currentPage).toBe(1);
-      await act(() => result.current.previous());
+      act(() => result.current.previous());
       rerender();
 
       expect(result.current.currentPage).toBe(1);
     });
 
     describe('when infinite option is ticked', () => {
-      it('goes to the first page when next() is invoked on the last page', async () => {
+      it('goes to the first page when next() is invoked on the last page', () => {
         const { result, rerender } = renderHook(() =>
           usePagination({
             pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
@@ -434,13 +434,13 @@ describe('Pagination', () => {
           }),
         );
         expect(result.current.currentPage).toBe(3);
-        await act(() => result.current.next());
+        act(() => result.current.next());
         rerender();
 
         expect(result.current.currentPage).toBe(1);
       });
 
-      it('goes to the last page when previous() is invoked on the first page', async () => {
+      it('goes to the last page when previous() is invoked on the first page', () => {
         const { result, rerender } = renderHook(() =>
           usePagination({
             pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
@@ -449,7 +449,7 @@ describe('Pagination', () => {
           }),
         );
         expect(result.current.currentPage).toBe(1);
-        await act(() => result.current.previous());
+        act(() => result.current.previous());
         rerender();
 
         expect(result.current.currentPage).toBe(3);

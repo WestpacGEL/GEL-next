@@ -22,6 +22,7 @@ export function LiveCode({
   const liveCodeToggleButton = useRef<HTMLButtonElement>(null);
   const live = useContext(LiveContext);
 
+  // eslint-disable-next-line @typescript-eslint/unbound-method
   const liveOnChange = live.onChange;
   const [localCopy, setLocalCopy] = useState<string>(live.code);
   const [isCodeVisible, toggleIsCodeVisible] = useState(showCode);
@@ -35,7 +36,7 @@ export function LiveCode({
   });
 
   const copyLiveCode = useCallback(() => {
-    copy(localCopy);
+    void copy(localCopy);
   }, [localCopy]);
 
   const handleChange = useCallback(
@@ -115,7 +116,12 @@ export function LiveCode({
           />
         </div>
       )}
-      <ResponsiveModal size="full" onClose={responsiveModalState.close} state={responsiveModalState} zIndex={1010}>
+      <ResponsiveModal
+        size="full"
+        onClose={() => responsiveModalState.close()}
+        state={responsiveModalState}
+        zIndex={1010}
+      >
         <LivePreview aria-label="Rendered code snippet example" />
       </ResponsiveModal>
     </div>
