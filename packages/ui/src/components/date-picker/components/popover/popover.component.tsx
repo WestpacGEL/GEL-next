@@ -1,5 +1,8 @@
 import React, { useRef } from 'react';
-import { DismissButton, Overlay, usePopover } from 'react-aria';
+import { Overlay, usePopover } from 'react-aria';
+
+import { Button } from '../../../button/button.component.js';
+import { CloseIcon } from '../../../icon/index.js';
 
 import { styles as popoverStyles } from './popover.styles.js';
 import { PopoverProps } from './popover.types.js';
@@ -16,7 +19,18 @@ export function Popover({ state, children, showAsBottomSheet, ...props }: Popove
     <Overlay>
       <div {...underlayProps} className={styles.underlay()} />
       <div {...popoverProps} ref={ref} className={styles.popover()}>
-        <DismissButton onDismiss={() => state.close()} />
+        <div className={styles.header()}>
+          <p className={styles.headerLabel()}>Choose a date</p>
+          <Button
+            aria-label="Close widow"
+            size="small"
+            look="unstyled"
+            onClick={() => state.close()}
+            iconAfter={CloseIcon}
+            iconColor="muted"
+            className={styles.closeButton()}
+          />
+        </div>
         {children}
       </div>
     </Overlay>

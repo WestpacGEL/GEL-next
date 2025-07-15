@@ -3,27 +3,27 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      input: 'form-control flex items-center gap-1 overflow-hidden px-2 disabled:form-control-disabled',
+      input: 'form-control flex items-center border-borderDark disabled:form-control-disabled',
       button:
-        '-mr-2 flex h-auto items-center justify-center rounded-l-none border-l border-l-borderDark bg-light px-2 py-3',
+        'flex h-auto items-center justify-center rounded-l-none border-y-0 border-l border-r-0 border-l-borderDark bg-light',
     },
     variants: {
       size: {
-        sm: {
-          input: 'form-control-small',
-          button: 'my-[-0.25rem] py-[0.25rem]',
+        small: {
+          input: 'form-control-small gap-1.5',
+          button: '-my-0.5 -mr-1.5 mb-[-0.25rem] min-h-5 py-[0.25rem]',
         },
-        md: {
-          input: 'form-control-medium',
-          button: 'my-[-0.3125rem] py-[0.3125rem]',
+        medium: {
+          input: 'form-control-medium gap-2',
+          button: 'my-[-0.3125rem] -mr-2 min-h-6 py-[0.3125rem]',
         },
-        lg: {
-          input: 'form-control-large',
-          button: 'my-[-0.5rem] py-[0.5rem]',
+        large: {
+          input: 'form-control-large gap-2.5',
+          button: 'my-[-0.5rem] -mr-2.5 min-h-7 py-[0.5rem]',
         },
-        xl: {
-          input: 'form-control-xlarge',
-          button: 'my-[-0.6875rem] py-[0.6875rem]',
+        xlarge: {
+          input: 'form-control-xlarge gap-3',
+          button: '-my-1.5 -mr-3 mb-[-0.625rem] min-h-8 py-1.5',
         },
       },
       isInvalid: {

@@ -6,7 +6,7 @@ import { mergeProps, useDateSegment, useFocusRing } from 'react-aria';
 import { styles as dateSegmentStyles } from './date-segment.styles.js';
 import { DateSegmentProps } from './date-segment.types.js';
 
-export function DateSegment({ segment, state, ...props }: DateSegmentProps) {
+export function DateSegment({ segment, state, separator, ...props }: DateSegmentProps) {
   const ref = useRef(null);
   const { focusProps, isFocusVisible } = useFocusRing();
   const { segmentProps } = useDateSegment(segment, state, ref);
@@ -17,7 +17,7 @@ export function DateSegment({ segment, state, ...props }: DateSegmentProps) {
   });
   return (
     <span {...props} {...mergeProps(focusProps, segmentProps)} ref={ref} className={styles}>
-      {segment.text}
+      {segment.type === 'literal' ? separator || segment.text : segment.text}
     </span>
   );
 }

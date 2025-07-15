@@ -1,4 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { CalendarDate } from '@internationalized/date';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { act } from 'react-dom/test-utils';
 import { useDatePickerState } from 'react-stately';
 import { Mock, afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -6,65 +9,13 @@ import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 import { DatePicker } from './date-picker.component.js';
 
-// Mock react-aria and react-stately hooks
-vi.mock('react-aria', async () => {
-  const actual = await vi.importActual<typeof import('react-aria')>('react-aria');
-  return {
-    ...actual,
-    useDatePicker: vi.fn(() => ({
-      groupProps: {},
-      labelProps: {},
-      fieldProps: {},
-      buttonProps: {},
-      dialogProps: {},
-      calendarProps: {},
-    })),
-    useButton: vi.fn((props, ref) => ({ buttonProps: { ...props, ref } })),
-  };
-});
-
-vi.mock('react-stately', async () => {
-  const actual = await vi.importActual<typeof import('react-stately')>('react-stately');
-  return {
-    ...actual,
-    useDatePickerState: vi.fn(() => ({
-      isOpen: false,
-      isInvalid: false,
-      open: vi.fn(),
-      close: vi.fn(),
-    })),
-  };
-});
-
 // Mock your internal hook
 vi.mock('../../hook/breakpoints.hook.js', () => ({
   useBreakpoint: vi.fn(() => 'md'),
 }));
 
-// Mock styles
-vi.mock('./date-picker.styles.js', () => ({
-  styles: () => ({
-    input: ({ className }: { className?: string }) => `input ${className || ''}`,
-    button: () => 'button-class',
-  }),
-}));
-
 describe('DatePicker component', () => {
-  let mockState: any;
-
-  beforeEach(() => {
-    mockState = {
-      isOpen: false,
-      isInvalid: false,
-      open: vi.fn(),
-      close: vi.fn(),
-    };
-    (useDatePickerState as Mock).mockReturnValue(mockState);
-  });
-
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
+  const user = userEvent.setup();
 
   it('renders label and button', () => {
     render(<DatePicker label="Test Label" />);
@@ -72,19 +23,45 @@ describe('DatePicker component', () => {
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
-  it('renders popover when state.isOpen is true', () => {
-    mockState.isOpen = true;
+  it('renders popover when state.isOpen is true', async () => {
     render(<DatePicker label="Test Label" />);
+    await act(async () => {
+      await user.click(screen.getByRole('button'));
+    });
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
-  it('applies bottomSheetView correctly', () => {
+  it('applies bottomSheetView correctly', async () => {
     (useBreakpoint as Mock).mockReturnValue('initial');
 
-    render(<DatePicker label="Test Label" bottomSheetView={{ initial: true, xsl: false }} />);
+    render(<DatePicker bottomSheetView={{ initial: true, xsl: false }} />);
+    await act(async () => {
+      await user.click(screen.getByRole('button'));
+    });
+    expect(screen.getByText('Choose a date')).toBeVisible();
+  });
 
-    // Basic render check, verifying correct class and button exist
-    expect(screen.getByRole('button')).toBeInTheDocument();
+  it('applies the right separator', () => {
+    render(<DatePicker label="Test Label" separator="-" />);
+
+    screen.getAllByText('-').forEach(el => {
+      expect(el).toBeInTheDocument();
+    });
+  });
+
+  it('disable weekends', async () => {
+    render(<DatePicker disableWeekends value={new CalendarDate(2025, 7, 18)} />);
+
+    await act(async () => {
+      await user.click(screen.getByRole('button'));
+    });
+    await waitFor(
+      () => {
+        expect(screen.getByRole('button', { name: 'Friday, July 18, 2025 selected' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Saturday, July 19, 2025', hidden: false })).toBeInTheDocument();
+      },
+      { timeout: 5000 },
+    );
   });
 
   it('passes className correctly to input div', () => {

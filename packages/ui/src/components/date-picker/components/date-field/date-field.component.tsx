@@ -8,7 +8,7 @@ import { useDateFieldState } from 'react-stately';
 import { DateSegment } from './components/date-segment/date-segment.component.js';
 import { type DateFieldProps } from './date-field.types.js';
 
-export function DateField({ ...props }: DateFieldProps) {
+export function DateField({ separator, ...props }: DateFieldProps) {
   const { locale } = useLocale();
   const state = useDateFieldState({
     ...props,
@@ -22,7 +22,7 @@ export function DateField({ ...props }: DateFieldProps) {
   return (
     <div {...fieldProps} ref={ref}>
       {state.segments.map((segment, i) => (
-        <DateSegment key={i} segment={segment} state={state} />
+        <DateSegment separator={separator} key={i} segment={segment} state={state} />
       ))}
       {/* {state.isInvalid && <span aria-hidden="true">🚫</span>} */}
     </div>

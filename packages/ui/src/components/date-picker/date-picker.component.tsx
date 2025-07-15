@@ -1,7 +1,8 @@
 'use client';
 
+import { DateValue, getDayOfWeek, isWeekend } from '@internationalized/date';
 import React, { useMemo, useRef } from 'react';
-import { useButton, useDatePicker } from 'react-aria';
+import { useButton, useDatePicker, useLocale } from 'react-aria';
 import { useDatePickerState } from 'react-stately';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
@@ -18,16 +19,37 @@ import { type DatePickerProps } from './date-picker.types.js';
 
 const BREAKPOINTS_DECRECENT = ['xl', 'lg', 'md', 'sm', 'xsl', 'initial'] as const;
 export function DatePicker({
-  size = 'md',
+  size = 'medium',
   className,
   bottomSheetView = { initial: true, xsl: false },
+  isDateUnavailable,
+  disableDaysOfWeek,
+  disableWeekends,
+  separator,
   ...props
 }: DatePickerProps) {
-  const state = useDatePickerState(props);
+  const { locale } = useLocale();
+
+  const enhancedIsDateUnavailable = useMemo(() => {
+    return disableDaysOfWeek || disableWeekends
+      ? (date: DateValue) => {
+          let conditions = [isDateUnavailable?.(date) || false];
+          if (disableDaysOfWeek) {
+            conditions = [disableDaysOfWeek.indexOf(getDayOfWeek(date, locale)) !== -1, ...conditions];
+          }
+          if (disableWeekends) {
+            conditions = [isWeekend(date, locale), ...conditions];
+          }
+          return conditions.some(condition => condition);
+        }
+      : isDateUnavailable;
+  }, [disableDaysOfWeek, disableWeekends, isDateUnavailable, locale]);
+
+  const state = useDatePickerState({ isDateUnavailable: enhancedIsDateUnavailable, ...props });
   const breakpoint = useBreakpoint();
   const ref = useRef(null);
   const { groupProps, labelProps, fieldProps, buttonProps, dialogProps, calendarProps } = useDatePicker(
-    props,
+    { isDateUnavailable: enhancedIsDateUnavailable, ...props },
     state,
     ref,
   );
@@ -52,10 +74,15 @@ export function DatePicker({
     <>
       <div {...labelProps}>{props.label}</div>
       <div {...props} {...groupProps} ref={ref} className={styles.input({ className })}>
-        <DateField {...fieldProps} />
-        <Button look="unstyled" className={styles.button()} {...newButtonProps}>
-          <CalendarIcon size="small" />
-        </Button>
+        <DateField separator={separator} {...fieldProps} />
+        <Button
+          look="faint"
+          className={styles.button()}
+          iconColor="muted"
+          size={size}
+          iconAfter={CalendarIcon}
+          {...newButtonProps}
+        />
       </div>
       {state.isOpen && (
         <Popover showAsBottomSheet={showAsBottomSheet} state={state} triggerRef={ref} placement="bottom left">

@@ -13,4 +13,7 @@ export type DatePickerProps<T extends DateValue = DateValue> = DatePickerStateOp
   Variants &
   Omit<HTMLAttributes<HTMLDivElement>, 'invalid'> & {
     bottomSheetView?: boolean | Partial<Record<Breakpoint | 'initial', boolean>>;
+    disableDaysOfWeek?: number[];
+    disableWeekends?: boolean;
+    separator?: string;
   };

@@ -2,10 +2,10 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'font-light disabled:form-control-disabled',
+    base: 'rounded-sm font-light text-text disabled:form-control-disabled',
     variants: {
       isPlaceholder: {
-        true: 'text-text-50 opacity-100',
+        true: 'text-muted-50 opacity-100',
         false: '',
       },
       isFocusVisible: {

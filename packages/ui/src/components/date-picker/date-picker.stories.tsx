@@ -29,6 +29,15 @@ export const Default: Story = {
 };
 
 /**
+ * > Custom separator usage example
+ */
+export const CustomSeparator: Story = {
+  args: {
+    separator: '-',
+  },
+};
+
+/**
  * > Different sizes example
  */
 export const Sizes: Story = {
@@ -36,7 +45,7 @@ export const Sizes: Story = {
   render: () => {
     return (
       <>
-        {(['sm', 'md', 'lg', 'xl'] as const).map(size => {
+        {(['small', 'medium', 'large', 'xlarge'] as const).map(size => {
           return (
             <div className="py-2" key={size}>
               <DatePicker size={size} />
@@ -49,7 +58,7 @@ export const Sizes: Story = {
 };
 
 /**
- * > Different sizes example
+ * > Invalid example
  */
 export const Invalid: Story = {
   args: {},
@@ -59,7 +68,7 @@ export const Invalid: Story = {
 };
 
 /**
- * > Different sizes example
+ * > Disabled
  */
 export const Disabled: Story = {
   args: {},
@@ -69,7 +78,7 @@ export const Disabled: Story = {
 };
 
 /**
- * > Different sizes example
+ * > Disabled dates
  */
 export const DisabledDates: Story = {
   args: {},
@@ -92,9 +101,29 @@ export const DisabledDates: Story = {
 };
 
 /**
- * > Different sizes example
+ * > Disable weekends
  */
 export const DisabledWeekendsDates: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker disableWeekends />;
+  },
+};
+
+/**
+ * > Disable weekends
+ */
+export const DisabledWeekdays: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker disableDaysOfWeek={[0, 1, 2]} />;
+  },
+};
+
+/**
+ * > Disable weekends
+ */
+export const DisabledWeekdaysWeekendsAndCustom: Story = {
   args: {},
   render: () => {
     const now = today(getLocalTimeZone());
@@ -104,12 +133,9 @@ export const DisabledWeekendsDates: Story = {
       [now.add({ days: 23 }), now.add({ days: 24 })],
     ];
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { locale } = useLocale();
     const isDateUnavailable = (date: DateValue) =>
-      isWeekend(date, locale) ||
       disabledRanges.some(interval => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0);
 
-    return <DatePicker isDateUnavailable={isDateUnavailable} />;
+    return <DatePicker isDateUnavailable={isDateUnavailable} disableDaysOfWeek={[0, 1, 2]} disableWeekends />;
   },
 };

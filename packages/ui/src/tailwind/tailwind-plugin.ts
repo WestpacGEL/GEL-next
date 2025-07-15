@@ -226,7 +226,7 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
           },
         },
         formControl: {
-          base: 'no-inner-spin-button box-border w-fit appearance-none overflow-visible rounded border bg-white align-middle text-text transition placeholder:font-light placeholder:text-text-50 placeholder:opacity-100 disabled:form-control-disabled',
+          base: 'no-inner-spin-button box-border w-fit appearance-none overflow-visible rounded border bg-white align-middle text-text transition placeholder:font-light placeholder:text-muted-50 placeholder:opacity-100 disabled:form-control-disabled',
           disabled: 'cursor-not-allowed border-dashed bg-background text-muted',
           sizes: {
             // Some of the values are not following the spacing so we needed to use static values as following
