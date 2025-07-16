@@ -1,17 +1,22 @@
 ```jsx
 <Fragment>
   <ComponentTitle>Selecting a date range</ComponentTitle>
-  <div className="flex gap-3">
-    <div className="pb-2">
-      <Field label="Select from" errorMessage="An error can go here">
-        <DatePicker isInvalid/>
-      </Field>
+  <FormGroup>
+    <FormLabel>Select a date range</FormLabel>
+    <ErrorMessage message="Select from date must be valid" />
+    <ErrorMessage message="Select to date must be valid" />
+    <div className="flex gap-3">
+      <div className="pb-2">
+        <Field label="Select from" labelSize="small">
+          <DatePicker isInvalid />
+        </Field>
+      </div>
+      <div className="pb-2">
+        <Field label="Select to" labelSize="small">
+          <DatePicker isInvalid />
+        </Field>
+      </div>
     </div>
-    <div className="pb-2">
-      <Field label="Select to" errorMessage="An error can go here">
-        <DatePicker isInvalid/>
-      </Field>
-    </div>
-  </div>
+  </FormGroup>
 </Fragment>
 ```
