@@ -1,6 +1,8 @@
+/* eslint-disable sonarjs/deprecation */
 import { CalendarDate } from '@internationalized/date';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { I18nProvider } from 'react-aria';
 import { act } from 'react-dom/test-utils';
 import { Mock, describe, expect, it, vi } from 'vitest';
 
@@ -8,7 +10,6 @@ import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 import { DatePicker } from './date-picker.component.js';
 
-// Mock your internal hook
 vi.mock('../../hook/breakpoints.hook.js', () => ({
   useBreakpoint: vi.fn(() => 'md'),
 }));
@@ -61,6 +62,25 @@ describe('DatePicker component', () => {
       },
       { timeout: 5000 },
     );
+  });
+
+  it('disable weekdays', async () => {
+    render(
+      <I18nProvider locale="en-AU">
+        <DatePicker disableDaysOfWeek={[0, 1, 2]} value={new CalendarDate(2025, 7, 18)} />
+      </I18nProvider>,
+    );
+
+    await act(async () => {
+      await user.click(screen.getByRole('button'));
+    });
+    const disabledDays = ['1', '2', '7', '8', '9'];
+
+    disabledDays.forEach(day => {
+      const button = screen.getByRole('button', { name: new RegExp(`\\b${day}\\b`) });
+      expect(button).toHaveAttribute('aria-disabled', 'true');
+      expect(button.className).toContain('line-through');
+    });
   });
 
   it('passes className correctly to input div', () => {
