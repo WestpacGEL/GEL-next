@@ -7,15 +7,15 @@ import { type ComponentProps } from '@westpac/ui';
 import json from '@westpac/ui/component-type.json';
 import { Metadata } from 'next';
 
-import { ContentTabs } from './components';
-import { AccessibilitySectionProps } from './components/content-tabs/components/accessibility-content/accessibility-content.types';
-import { CodeSectionProps } from './components/content-tabs/components/code-content/code-content.types';
-import { DesignSectionProps } from './components/content-tabs/components/design-content/design-content.types';
-
 import { reader } from '@/app/reader';
 import { RelatedInfoLinks } from '@/components/related-info/related-info.types';
 import { BANK_OPTIONS } from '@/constants/bank-options';
 import { ShortCode } from '@/types/short-code.types';
+
+import { ContentTabs } from './components';
+import { AccessibilitySectionProps } from './components/content-tabs/components/accessibility-content/accessibility-content.types';
+import { CodeSectionProps } from './components/content-tabs/components/code-content/code-content.types';
+import { DesignSectionProps } from './components/content-tabs/components/design-content/design-content.types';
 
 type MetadataProps = {
   params: { component: string[] };
