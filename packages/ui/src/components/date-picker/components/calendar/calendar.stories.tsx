@@ -36,7 +36,6 @@ export const State = () => {
 
   return (
     <Calendar
-      locale="en_AU"
       value={date}
       onChange={value => {
         console.log('value', value);
