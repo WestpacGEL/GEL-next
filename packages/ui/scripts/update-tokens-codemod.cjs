@@ -1,6 +1,6 @@
 /**
  * jscodeshift script to replace old tokens with new tokens. You will need to install jscodeshift locally to run the script.
- * 
+ *
  * Some tokens do not have a direct replacement and will be marked with [REPLACE TOKEN].
  *
  * Usage:
@@ -66,18 +66,17 @@ module.exports = function transformer(file, api) {
   };
 
   const BLACK_AND_WHITE = {
-    "bg-black": "bg-black[REPLACE TOKEN]",
-    "bg-white": "bg-white[REPLACE TOKEN]",
-    "text-black": "text-black[REPLACE TOKEN]",
-    "text-white": "text-white[REPLACE TOKEN]",
-    "border-black": "border-black[REPLACE TOKEN]",
-    "border-white": "border-border-reversed"
+    'bg-black': 'bg-black[REPLACE TOKEN]',
+    'bg-white': 'bg-white[REPLACE TOKEN]',
+    'text-black': 'text-black[REPLACE TOKEN]',
+    'text-white': 'text-white[REPLACE TOKEN]',
+    'border-black': 'border-black[REPLACE TOKEN]',
+    'border-white': 'border-border-reversed',
   };
 
   const TINTED_COLOURS = {};
   const j = api.jscodeshift;
   const root = j(file.source);
-
 
   Object.keys(REPLACEMENTS).forEach(key => {
     tints.forEach(tint => {

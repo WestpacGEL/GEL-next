@@ -13,7 +13,8 @@ const primitiveColors = tokens[0].Primitives.modes['Mode 1'];
 const flattenObject = (obj, delimiter = '.', prefix = '') => {
   return Object.keys(obj).reduce((acc, key) => {
     // doesn't append $value to the key so it can be used with the reference values for themes/tokens
-    const newKey = prefix ? `${prefix}${key === '$value' ? '' : delimiter}${key === '$value' ? '' : key}` : key;
+    const newKeyString = key === '$value' ? '' : `${delimiter}${key}`;
+    const newKey = prefix ? `${prefix}${newKeyString}` : key;
 
     if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
       // Recursively flatten nested objects
@@ -22,6 +23,7 @@ const flattenObject = (obj, delimiter = '.', prefix = '') => {
       // Will end once it reaches the $value key
       if (key === '$value') {
         // strips the {} off the themes $value as it is a reference, then can be used to get actual value
+        // eslint-disable-next-line sonarjs/slow-regex
         acc[newKey] = obj[key].toString().replace(/\s*[{}]/g, '');
       }
     }
@@ -35,7 +37,8 @@ const flattenObject = (obj, delimiter = '.', prefix = '') => {
 const flattenTokenObject = (obj, delimiter = '.', prefix = '') => {
   return Object.keys(obj).reduce((acc, key) => {
     // doesn't append $value to the key so it can be used with the reference values for themes/tokens
-    const newKey = prefix ? `${prefix}${key === '$value' ? '' : delimiter}${key === '$value' ? '' : key}` : key;
+    const newKeyString = key === '$value' ? '' : `${delimiter}${key}`;
+    const newKey = prefix ? `${prefix}${newKeyString}` : key;
 
     if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
       // Recursively flatten nested objects
@@ -45,6 +48,7 @@ const flattenTokenObject = (obj, delimiter = '.', prefix = '') => {
       if (key === '$value') {
         // for current provided JSON the [1] position in the array should be the token name
         // strips the {} off the themes $value as it is a reference, then can be used to get actual value
+        // eslint-disable-next-line sonarjs/slow-regex
         acc[newKey.split('.')[1]] = obj[key].toString().replace(/\s*[{}]/g, '');
       }
     }
@@ -75,40 +79,41 @@ const modes = Object.keys(tokens[1].Tokens.modes);
 
 let flattenedTokens = {};
 
+const updateTokensWithMappedValues = (brand, tokensWithMappedValues, themes) => {
+  Object.keys(tokensWithMappedValues).forEach(token => {
+    const themeKey = `${brand}.${tokensWithMappedValues[token]}`;
+    tokensWithMappedValues[token] = themes[themeKey];
+  });
+};
+
 // creates final formatted json format of brand : { light: tokens, dark: tokens }
 brands.forEach(brand => {
-  let theme = {};
+  let tempModeObj = {};
   modes.forEach(mode => {
-    let type = {};
-    Object.keys(tokens[1].Tokens.modes[mode]).forEach(key => {
+    let tempTypeObj = {};
+    // type = border, color etc.
+    Object.keys(tokens[1].Tokens.modes[mode]).forEach(type => {
       // colors can be combined into one object but other types will need to be broken up more i.e border: { radius: { tokenName: 'tokenVal' }}
-      if (key !== 'color') {
-        let subTheme = {};
-        Object.keys(tokens[1].Tokens.modes[mode][key]).forEach(subKey => {
-          const tokensWithMappedValues = flattenTokenObject(tokens[1].Tokens.modes[mode][key]);
-          Object.keys(tokensWithMappedValues).forEach(token => {
-            const themeKey = `${brand}.${tokensWithMappedValues[token]}`;
-            tokensWithMappedValues[token] = themes[themeKey];
-          });
-          subTheme[subKey] = tokensWithMappedValues;
+      const tokensWithMappedValues = flattenTokenObject(tokens[1].Tokens.modes[mode][type]);
+      if (type !== 'color') {
+        // will contain things like radius for border
+        let tempTypePropObj = {};
+        Object.keys(tokens[1].Tokens.modes[mode][type]).forEach(prop => {
+          updateTokensWithMappedValues(brand, tokensWithMappedValues, themes);
+          tempTypePropObj[prop] = tokensWithMappedValues;
         });
-        type[key] = subTheme;
+        tempTypeObj[type] = tempTypePropObj;
       } else {
-        const tokensWithMappedValues = flattenTokenObject(tokens[1].Tokens.modes[mode][key]);
-        Object.keys(tokensWithMappedValues).forEach(token => {
-          // needs to append brand to token to get correct value
-          const themeKey = `${brand}.${tokensWithMappedValues[token]}`;
-          tokensWithMappedValues[token] = themes[themeKey];
-        });
-        type[key] = tokensWithMappedValues;
+        updateTokensWithMappedValues(brand, tokensWithMappedValues, themes);
+        tempTypeObj[type] = tokensWithMappedValues;
       }
     });
 
     // use a different key name for light/dark mode
     const modeShort = mode.includes('Light') ? 'light' : 'dark';
-    theme[modeShort] = type;
+    tempModeObj[modeShort] = tempTypeObj;
   });
-  flattenedTokens[brand] = theme;
+  flattenedTokens[brand] = tempModeObj;
 });
 
 const outputPath = path.resolve(__dirname, '../flattened-tokens.json');
