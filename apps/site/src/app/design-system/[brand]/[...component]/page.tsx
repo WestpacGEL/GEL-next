@@ -167,6 +167,7 @@ export default async function ComponentPage({
   const relatedArticlesIsEmpty = relatedArticles[0].children.length <= 1 && !relatedArticles[0].children[0].text;
 
   const componentLookupKey = content.namedExport?.value?.name || componentName;
+
   const componentProps: ComponentProps | undefined = (json as any)[componentLookupKey];
   const componentLookupPath = componentProps?.filePath.split('/')[0];
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

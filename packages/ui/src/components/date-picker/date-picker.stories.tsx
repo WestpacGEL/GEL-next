@@ -138,3 +138,33 @@ export const DisabledWeekdaysWeekendsAndCustom: Story = {
     return <DatePicker isDateUnavailable={isDateUnavailable} disableDaysOfWeek={[0, 1, 2]} disableWeekends />;
   },
 };
+
+/**
+ * > Show as bottom sheet
+ */
+export const ShowAsBottomSheet: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker bottomSheetView />;
+  },
+};
+
+/**
+ * > Always as popover view
+ */
+export const NeverShowAsBottomSheet: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker bottomSheetView={false} />;
+  },
+};
+
+/**
+ * > Show as bottom sheet
+ */
+export const ShowAsBottomSheetResponsive: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker bottomSheetView={{ initial: false, lg: true }} />;
+  },
+};

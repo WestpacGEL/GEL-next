@@ -46,21 +46,19 @@ export function DatePicker({
   }, [disableDaysOfWeek, disableWeekends, isDateUnavailable, locale]);
 
   const state = useDatePickerState({ isDateUnavailable: enhancedIsDateUnavailable, ...props });
+  const styles = datePickerStyles({ size, isInvalid: state.isInvalid, isDisabled: props.isDisabled });
   const breakpoint = useBreakpoint();
   const ref = useRef(null);
+
   const { groupProps, labelProps, fieldProps, buttonProps, dialogProps, calendarProps } = useDatePicker(
     { isDateUnavailable: enhancedIsDateUnavailable, ...props },
     state,
     ref,
   );
-  const styles = datePickerStyles({ size, isInvalid: state.isInvalid, isDisabled: props.isDisabled });
-
-  const buttonRef = useRef(null);
-  const { buttonProps: newButtonProps } = useButton(buttonProps, buttonRef);
 
   const showAsBottomSheet: boolean = useMemo(() => {
     if (typeof bottomSheetView === 'boolean') {
-      return showAsBottomSheet;
+      return bottomSheetView;
     }
     const currentBreakpointIndex = BREAKPOINTS_DECRECENT.findIndex(bp => bp === breakpoint);
     const finalBreakPoint = [breakpoint, ...BREAKPOINTS_DECRECENT.slice(currentBreakpointIndex)].find(
@@ -69,6 +67,9 @@ export function DatePicker({
 
     return bottomSheetView[finalBreakPoint] || false;
   }, [bottomSheetView, breakpoint]);
+
+  const buttonRef = useRef(null);
+  const { buttonProps: newButtonProps } = useButton(buttonProps, buttonRef);
 
   return (
     <>
