@@ -1,13 +1,16 @@
 'use client';
 
 import { createCalendar } from '@internationalized/date';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { useDateField, useLocale } from 'react-aria';
 import { useDateFieldState } from 'react-stately';
 
 import { DateSegment } from './components/date-segment/date-segment.component.js';
 import { type DateFieldProps } from './date-field.types.js';
 
+/**
+ * @private
+ */
 export function DateField({ separator, ...props }: DateFieldProps) {
   const { locale } = useLocale();
   const state = useDateFieldState({

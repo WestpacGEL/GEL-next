@@ -3,6 +3,9 @@ import { useDialog } from 'react-aria';
 
 import { DialogProps } from './dialog.types.js';
 
+/**
+ * @private
+ */
 export function Dialog({ title, children, ...props }: DialogProps) {
   const ref = useRef(null);
   const { dialogProps, titleProps } = useDialog(props, ref);

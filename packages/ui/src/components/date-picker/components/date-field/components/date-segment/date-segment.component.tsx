@@ -6,6 +6,9 @@ import { mergeProps, useDateSegment, useFocusRing } from 'react-aria';
 import { styles as dateSegmentStyles } from './date-segment.styles.js';
 import { DateSegmentProps } from './date-segment.types.js';
 
+/**
+ * @private
+ */
 export function DateSegment({ segment, state, separator, ...props }: DateSegmentProps) {
   const ref = useRef(null);
   const { focusProps, isFocusVisible } = useFocusRing();

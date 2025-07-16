@@ -7,6 +7,9 @@ import { CloseIcon } from '../../../icon/index.js';
 import { styles as popoverStyles } from './popover.styles.js';
 import { PopoverProps } from './popover.types.js';
 
+/**
+ * @private
+ */
 export function Popover({ state, children, showAsBottomSheet, ...props }: PopoverProps) {
   const ref = useRef(null);
   const { popoverProps, underlayProps } = usePopover(

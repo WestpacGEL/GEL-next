@@ -1,9 +1,13 @@
+import React from 'react';
 import { useCalendarGrid } from 'react-aria';
 
 import { CalendarCell } from '../calendar-cell/calendar-cell.component.js';
 
 import { CalendarGridProps } from './calendar-grid.types.js';
 
+/**
+ * @private
+ */
 export function CalendarGrid({ state, weekdayStyle = 'short', ...props }: CalendarGridProps) {
   const { gridProps, headerProps, weekDays, weeksInMonth } = useCalendarGrid({ weekdayStyle, ...props }, state);
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { CalendarDate, createCalendar } from '@internationalized/date';
-import { ChangeEvent, useCallback, useMemo, useRef } from 'react';
+import React, { ChangeEvent, useCallback, useMemo, useRef } from 'react';
 import { useButton, useCalendar, useLocale } from 'react-aria';
 import { useCalendarState } from 'react-stately';
 
@@ -25,6 +25,9 @@ const MONTHS = Array.from({ length: 12 }, (_, i) => {
 
 const YEAR_OFFSET = 10;
 
+/**
+ * @private
+ */
 export function Calendar({ value, ...props }: CalendarProps) {
   const { locale } = useLocale();
   const refPrevButton = useRef(null);

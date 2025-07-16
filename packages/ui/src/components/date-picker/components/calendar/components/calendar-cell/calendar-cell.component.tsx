@@ -5,6 +5,9 @@ import { useCalendarCell } from 'react-aria';
 import { styles as calendarCellStyles } from './calendar-cell.styles.js';
 import { CalendarCellProps } from './calendar-cell.types.js';
 
+/**
+ * @private
+ */
 export function CalendarCell({ state, date }: CalendarCellProps) {
   const ref = useRef(null);
   const {
