@@ -22,7 +22,13 @@ export function CalendarCell({ state, date }: CalendarCellProps) {
     isFocused,
   } = useCalendarCell({ date }, state, ref);
   const isToday = buttonProps['aria-label']?.indexOf('Today') !== -1;
-  const styles = calendarCellStyles({ isSelected, isFocused: isFocused && isFocusVisible, isToday, isDisabled, isUnavailable });
+  const styles = calendarCellStyles({
+    isSelected,
+    isFocused: isFocused && isFocusVisible,
+    isToday,
+    isDisabled,
+    isUnavailable,
+  });
 
   return (
     <td {...cellProps}>
