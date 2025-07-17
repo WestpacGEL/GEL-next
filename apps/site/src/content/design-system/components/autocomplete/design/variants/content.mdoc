@@ -16,7 +16,7 @@ The items contained within the Autocomplete can also have simple styling.
 ];
   return (
     <div className="flex flex-col gap-2">
-      <Autocomplete aria-label="Animals" defaultItems={options}>
+      <Autocomplete width="30" aria-label="Animals" defaultItems={options}>
         {item => (
           <AutocompleteItem key={item.name} textValue={item.name}>
             <div className="flex items-center gap-2">
