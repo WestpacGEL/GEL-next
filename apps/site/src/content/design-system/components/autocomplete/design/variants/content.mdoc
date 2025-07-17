@@ -3,9 +3,17 @@ The items contained within the Autocomplete can also have simple styling.
 ```jsx
 () => {
   const options = [
-    { name: 'Oliver Bennett', initials: 'OB', role: 'Compliance Officer, Legal' },
-    { name: 'Mia Chandler', initials: 'MC', role: 'Financial Analyst, Finance' },
-  ];
+  { name: 'Oliver Bennett', initials: 'OB', role: 'Compliance Officer, Legal' },
+  { name: 'Mia Chandler', initials: 'MC', role: 'Financial Analyst, Finance' },
+  { name: 'Zoe Chang', initials: 'ZC', role: 'UX Designer, Product Design' },
+  { name: "Lucas D'Souza", initials: 'LD', role: 'Cybersecurity Specialist, Information Security' },
+  { name: 'Leo Hartman', initials: 'LH', role: 'Software Engineer, IT & Development' },
+  { name: 'Isla Morrison', initials: 'IM', role: 'Data Scientist, Business Intelligence' },
+  { name: 'Ava Nguyen', initials: 'AN', role: 'HR Coordinator, Human Resources' },
+  { name: 'Ethan Patel', initials: 'EP', role: 'Marketing Strategist, Marketing' },
+  { name: 'Noah Rivera', initials: 'NR', role: 'Project Manager, Operations' },
+  { name: 'Harper Singh', initials: 'HS', role: 'Sales Executive, Sales' },
+];
   return (
     <div className="flex flex-col gap-2">
       <Autocomplete aria-label="Animals" defaultItems={options}>
