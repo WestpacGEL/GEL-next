@@ -181,24 +181,30 @@
 };
 ```
 
+### More customised Items
+
 ```jsx
+
 () => {
   const options = [
-  { name: 'Oliver Bennett', initials: 'OB', role: 'Compliance Officer, Legal' },
-  { name: 'Mia Chandler', initials: 'MC', role: 'Financial Analyst, Finance' },
-  { name: 'Zoe Chang', initials: 'ZC', role: 'UX Designer, Product Design' },
-  { name: "Lucas D'Souza", initials: 'LD', role: 'Cybersecurity Specialist, Information Security' },
+  { name: 'Nimbus Analytics Pty Ltd', abn: '123 456 789' },
+  { name: 'Blueleaf Financial Group', abn: '987 654 321' },
+  { name: 'Ironclad Risk Solutions', abn: '456 789 123' },
+  { name: 'Summit Edge Advisory', abn: '321 654 987' },
 ];
   return (
-      <Autocomplete width="30" aria-label="Staff directory" defaultItems={options}>
+      <Autocomplete 
+      noOptionsMessage="No options found, try a different spelling"
+      width="30" 
+      aria-label="Business directory" 
+      defaultItems={options}>
         {item => (
           <AutocompleteItem key={item.name} textValue={item.name}>
             <div className="flex items-center gap-2">
-              <Circle className="size-5 bg-muted text-white">{item.initials}</Circle>
               <div className="flex flex-col ">
                 <h3 className="typography-body-9">{item.name}</h3>
                 <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
-                  {item.role}
+                  {item.abn}
                 </p>
               </div>
             </div>
