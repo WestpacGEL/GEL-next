@@ -15,8 +15,13 @@ The items contained within the Autocomplete can also have simple styling.
   { name: 'Harper Singh', initials: 'HS', role: 'Sales Executive, Sales' },
 ];
   return (
-    <div className="flex flex-col gap-2">
-      <Autocomplete width="30" aria-label="Animals" defaultItems={options}>
+      <Autocomplete 
+      hintMessage="Search for a staff member"
+      label="Staff directory"
+      noOptionsMessage="No options"
+      width="30" 
+      aria-label="Staff directory" 
+      defaultItems={options}>
         {item => (
           <AutocompleteItem key={item.name} textValue={item.name}>
             <div className="flex items-center gap-2">
@@ -31,7 +36,6 @@ The items contained within the Autocomplete can also have simple styling.
           </AutocompleteItem>
         )}
       </Autocomplete>
-    </div>
   );
 };
 ```
