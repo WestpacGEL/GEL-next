@@ -94,7 +94,7 @@ const preview: Preview = {
     },
     layout: 'fullscreen',
     viewport: {
-      viewports: VIEWPORTS,
+      options: VIEWPORTS,
     },
   },
   decorators: [withThemeProvider],
