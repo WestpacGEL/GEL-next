@@ -8,3 +8,30 @@ Use this pagination component for navigation within both finite (a set number) a
   totalPages={20}
 />
 ```
+
+infinite (unknown number) of views.
+
+```tsx
+<Pagination
+  boundaryCount={{
+    initial: 0,
+    lg: 4,
+    md: 3,
+    sm: 2,
+    xl: 5,
+    xsl: 1
+  }}
+  current={1}
+  onChange={function Ma(){}}
+  onPageItemProps={function Ma(){}}
+  siblingCount={{
+    initial: 0,
+    lg: 4,
+    md: 3,
+    sm: 2,
+    xl: 5,
+    xsl: 1
+  }}
+  totalPages={20}
+/>
+```
