@@ -1,37 +1,29 @@
 The items contained within the Autocomplete can also have simple styling.
 
 ```jsx
-const options = [
-  { name: 'Oliver Bennett', initials: 'OB', role: 'Compliance Officer, Legal' },
-  { name: 'Mia Chandler', initials: 'MC', role: 'Financial Analyst, Finance' },
-  { name: 'Zoe Chang', initials: 'ZC', role: 'UX Designer, Product Design' },
-  { name: "Lucas D'Souza", initials: 'LD', role: 'Cybersecurity Specialist, Information Security' },
-  { name: 'Leo Hartman', initials: 'LH', role: 'Software Engineer, IT & Development' },
-  { name: 'Isla Morrison', initials: 'IM', role: 'Data Scientist, Business Intelligence' },
-  { name: 'Ava Nguyen', initials: 'AN', role: 'HR Coordinator, Human Resources' },
-  { name: 'Ethan Patel', initials: 'EP', role: 'Marketing Strategist, Marketing' },
-  { name: 'Noah Rivera', initials: 'NR', role: 'Project Manager, Operations' },
-  { name: 'Harper Singh', initials: 'HS', role: 'Sales Executive, Sales' },
-];
-
-return (
-  <div className="flex flex-col gap-2">
-    <Autocomplete aria-label="Staff Directory" defaultItems={options}>
-      {item => (
-        <AutocompleteItem key={item.name} textValue={item.name}>
-          <div className="flex items-center gap-2">
-            <Circle className="size-5 bg-muted text-white">{item.initials}</Circle>
-            <div className="flex flex-col ">
-              <h3 className="typography-body-9">{item.name}</h3>
-              <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
-                {item.role}
-              </p>
+() => {
+  const options = [
+    { name: 'Oliver Bennett', initials: 'OB', role: 'Compliance Officer, Legal' },
+    { name: 'Mia Chandler', initials: 'MC', role: 'Financial Analyst, Finance' },
+  ];
+  return (
+    <div className="flex flex-col gap-2">
+      <Autocomplete aria-label="Animals" defaultItems={options}>
+        {item => (
+          <AutocompleteItem key={item.name} textValue={item.name}>
+            <div className="flex items-center gap-2">
+              <Circle className="size-5 bg-muted text-white">{item.initials}</Circle>
+              <div className="flex flex-col ">
+                <h3 className="typography-body-9">{item.name}</h3>
+                <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
+                  {item.role}
+                </p>
+              </div>
             </div>
-          </div>
-        </AutocompleteItem>
-      )}
-    </Autocomplete>
-  </div>
-);
-
+          </AutocompleteItem>
+        )}
+      </Autocomplete>
+    </div>
+  );
+};
 ```
