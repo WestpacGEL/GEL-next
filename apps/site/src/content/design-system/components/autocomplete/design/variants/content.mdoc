@@ -39,3 +39,44 @@ The items contained within the Autocomplete can also have simple styling.
   );
 };
 ```
+
+The items contained within the Autocomplete can also have simple styling.
+
+```jsx
+() => {
+  const options = [
+  { name: 'Nimbus Analytics Pty Ltd', abn: '123 456 789' },
+  { name: 'Blueleaf Financial Group', abn: '987 654 321' },
+  { name: 'Ironclad Risk Solutions', abn: '456 789 123' },
+  { name: 'Summit Edge Advisory', abn: '321 654 987' },
+  { name: 'Crimson Ledger Partners', abn: '159 753 486' },
+  { name: 'EchoWave Consulting', abn: '753 159 246' },
+  { name: 'Brightspire Capital', abn: '246 135 789' },
+  { name: 'Veridian Strategy Co.', abn: '864 213 579' },
+  { name: 'Oak & Sage Holdings', abn: '135 246 975' },
+  { name: 'Silverline Ventures', abn: '579 864 312' },
+];
+  return (
+      <Autocomplete 
+      hintMessage="Search for a Business"
+      label="Find your business"
+      noOptionsMessage="No options"
+      width="30" 
+      aria-label="Business directory" 
+      defaultItems={options}>
+        {item => (
+          <AutocompleteItem key={item.name} textValue={item.name}>
+            <div className="flex items-center gap-2">
+              <div className="flex flex-col ">
+                <h3 className="typography-body-9">{item.name}</h3>
+                <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
+                  {item.abn}
+                </p>
+              </div>
+            </div>
+          </AutocompleteItem>
+        )}
+      </Autocomplete>
+  );
+};
+```
