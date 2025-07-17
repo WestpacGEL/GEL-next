@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useCallback, useState } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
