@@ -58,13 +58,19 @@ const flattenTokenObject = (obj, delimiter = '.', prefix = '') => {
 
 const primitives = flattenObject(primitiveColors);
 const themes = flattenObject(tokens[2].Themes.modes);
+// console.log(themes);
 
 // reassigns keys in themes obj to actual values from primitives
 Object.keys(themes).forEach(key => {
   const val = themes[key];
+  const currBrand = key.split('.')[0];
+
   if (key.includes('anomaly')) {
+    if (val.includes('mono')) {
+      themes[key] = themes[`${currBrand}.${val}`];
+      return;
+    }
     // anomaly tokens need to know the current brand which is the first part of the key in current provided JSON
-    const currBrand = key.split('.')[0];
     themes[key] = primitives[themes[`${currBrand}.${val}`]];
   } else if (themes[key].includes('#')) {
     // keeps the value if it is a hex value already and not a reference

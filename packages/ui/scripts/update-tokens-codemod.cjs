@@ -16,7 +16,7 @@ module.exports = function transformer(file, api) {
     'bg-heading': 'bg-heading[REPLACE TOKEN]',
     'bg-hero': 'bg-surface-hero',
     'bg-light': 'bg-surface-muted-faint',
-    'bg-link': 'bg-surface-link',
+    'bg-link': 'bg-surface-primary',
     'bg-muted': 'bg-surface-muted',
     'bg-neutral': 'bg-neutral[REPLACE TOKEN]',
     'bg-pop': 'bg-surface-pop',
@@ -71,7 +71,7 @@ module.exports = function transformer(file, api) {
     'text-black': 'text-black[REPLACE TOKEN]',
     'text-white': 'text-white[REPLACE TOKEN]',
     'border-black': 'border-black[REPLACE TOKEN]',
-    'border-white': 'border-border-reversed',
+    'border-white': 'border-border-mono',
   };
 
   const TINTED_COLOURS = {};
