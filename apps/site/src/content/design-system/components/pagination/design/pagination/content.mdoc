@@ -1,12 +1,24 @@
 Use this pagination component for navigation within both finite (a set number) and infinite (unknown number) of views.
 
 ```tsx
-<Pagination
-  current={1}
-  onChange={function Ma(){}}
-  onPageItemProps={function Ma(){}}
-  totalPages={20}
-/>
+() => {
+  const [current, setCurrent] = useState(1);
+  useEffect(() => {
+    setCurrent(1);
+  }, []);
+
+  return (
+    <Pagination
+      {...props}
+      totalPages={20}
+      onChange={value => {
+        setCurrent(value);
+        action('onChange')(value);
+      }}
+      current={current}
+    />
+  );
+};
 ```
 
 infinite (unknown number) of views.
