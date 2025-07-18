@@ -3,9 +3,6 @@ Use this pagination component for navigation within both finite (a set number) a
 ```tsx
 () => {
   const [current, setCurrent] = useState(1);
-  useEffect(() => {
-    setCurrent(1);
-  }, []);
 
   return (
     <Pagination
