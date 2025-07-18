@@ -6,7 +6,7 @@ Use this pagination component for navigation within both finite (a set number) a
 
   return (
     <Pagination
-      {...props}
+      current={current}
       totalPages={20}
       onChange={value => {
         setCurrent(value);
