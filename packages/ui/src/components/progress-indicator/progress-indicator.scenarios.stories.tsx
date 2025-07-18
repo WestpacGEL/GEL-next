@@ -114,7 +114,7 @@ export const ButtonLoadingUsage = () => {
         disabled={loading}
         iconAfter={loading ? ProgressIndicator : DownloadIcon}
         iconColor="white"
-        onClick={handleSubmit}
+        onClick={() => void handleSubmit()}
       >
         Download
       </Button>

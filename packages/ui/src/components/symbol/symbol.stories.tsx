@@ -95,7 +95,7 @@ export const AllLogos = () => {
       <h4 className="typography-body-8 mb-4 font-bold">Large</h4>
       <div className="grid grid-cols-4 gap-5">
         {Object.entries(multibrandLargeLogos).map(([key, Logo]) => (
-          <>
+          <div key={key} className="flex flex-col">
             {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
             <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
               <Logo className="box-content border border-dashed border-border" />
@@ -107,7 +107,7 @@ export const AllLogos = () => {
                 <p className="mt-2">{`<${key} align=${align} />`}</p>
               </div>
             ))}
-          </>
+          </div>
         ))}
       </div>
       <h4 className="typography-body-8 my-4 font-bold">Small</h4>
