@@ -6,11 +6,9 @@ Use this pagination component for navigation within both finite (a set number) a
 
   return (
     <Pagination
-      current={current}
       totalPages={20}
       onChange={value => {
         setCurrent(value);
-        action('onChange')(value);
       }}
       current={current}
     />
