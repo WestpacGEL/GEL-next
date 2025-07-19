@@ -1,6 +1,6 @@
 ### Sizes
 
-Use this xLarge size for page loads. See [Loading guide](/guides/loading) for patterns.
+Use this Large size Progress indicator for page loads. See [Loading guide](/guides/loading) for page load patterns.
 
 ```tsx
 () => {
@@ -12,21 +12,16 @@ Use this xLarge size for page loads. See [Loading guide](/guides/loading) for pa
 }
 ```
 
-### Sizes
-
 The smaller sizes Sm and Md are suitable for use in components ie buttons or fields.  See [Loading guide](/guides/loading#loading-within-components) for component patterns.
 
 ```tsx
 () => {
   return (
     <div className="p-1 rounded-md flex items-end justify-center" >
-      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
+      {(['small', 'medium', 'large'] as const).map(size => (
         <ProgressIndicator size={size} className="mr-2" />
       ))}
 
-      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator size={size} className="mr-2" />
-      ))}
     </div>
   );
 };
