@@ -1,4 +1,4 @@
-### Progress indicator
+### Default
 
 ```tsx
 () => {
@@ -10,26 +10,22 @@
 
 ```tsx
 () => {
-  return (
-    <>
-      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator size={size} className="mr-2" />
-      ))}
-    </>
-  );
-};
+  return <div className="flex items-top justify-center gap-3">
+     <ProgressIndicator size="small" />
+     <ProgressIndicator size="medium" />
+     <ProgressIndicator size="large" />
+    </div>;
+}
 ```
 
 ### Dark background
 
 ```tsx
 () => {
-  return (
-    <div className="bg-black w-fit">
-      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator size={size} color={'white'} className="mr-2" />
-      ))}
-    </div>
-  );
-};
+  return <div className="p-3 bg-black rounded-md flex items-top justify-center gap-3">
+     <ProgressIndicator color="white" size="small" />
+     <ProgressIndicator color="white" size="medium" />
+     <ProgressIndicator color="white" size="large" />
+    </div>;
+}
 ```
