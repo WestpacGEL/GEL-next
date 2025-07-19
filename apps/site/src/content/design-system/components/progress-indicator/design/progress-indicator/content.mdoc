@@ -1,6 +1,6 @@
-### Default
+### Sizes
 
-Use this progress indicator to show a process is running.
+Use this xLarge size for page loads. See [Loading guide](/guides/loading) for patterns.
 
 ```tsx
 () => {
@@ -14,13 +14,22 @@ Use this progress indicator to show a process is running.
 
 ### Sizes
 
-The indicator comes in various sizes: Sm and Md suitable for using in components ie buttons or fields, or xl full-page loading.
+The smaller sizes Sm and Md are suitable for use in components ie buttons or fields.  See [Loading guide](/guides/loading#loading-within-components) for component patterns.
 
 ```tsx
-<div className="flex gap-2">
-      <ProgressIndicator size="large" label="Loading..." />
-      <ProgressIndicator size="large" icon={PadlockTickIcon} label="Signing  in..." />
-</div>
+() => {
+  return (
+    <div className="p-1 rounded-md flex items-end justify-center" >
+      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
+        <ProgressIndicator size={size} className="mr-2" />
+      ))}
+
+      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
+        <ProgressIndicator size={size} className="mr-2" />
+      ))}
+    </div>
+  );
+};
 ```
 
 ### Dark backgrounds
@@ -29,9 +38,8 @@ The indicator can appear white for use on dark backgrounds.
 
 ```tsx
 () => {
-  return <div className="rounded-md bg-black flex items-end ">
-      <ProgressIndicator color="white" size="large" label="Loading..." />
-      <ProgressIndicator color="white" size="large" icon={PadlockTickIcon} label="Signing  in..." />
+  return <div className="rounded-md bg-black flex items-end justify-center">
+      <ProgressIndicator size="xlarge" color="white" className="mr-2 mb-2 mt-2" />)}
     </div>;
 }
 ```
