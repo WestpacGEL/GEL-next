@@ -18,7 +18,7 @@ The smaller sizes Sm and Md are suitable for use in components ie buttons or fie
 ```tsx
 () => {
   return (
-    <div className="p-1 rounded-md flex items-end justify-top" >
+    <div className="p-1 rounded-md flex items-top justify-centre" >
       {(['small', 'medium',] as const).map(size => (
         <ProgressIndicator size={size} className="mr-2" />
       ))}
@@ -36,8 +36,8 @@ The indicator can appear white for use on dark backgrounds.
 
 
 () => {
-  return <div className="rounded-md bg-black flex items-end justify-top">
-      <ProgressIndicator size="large" />
+  return <div className="rounded-md bg-black flex items-top justify-centre">
+      <ProgressIndicator size="large" color="white" />
       <ProgressIndicator size="large" color="white" label="Loading..." />
       <ProgressIndicator size="large" color="white" icon={PadlockTickIcon} />
       <ProgressIndicator size="large" color="white" label="Signing in" icon={FingerprintIcon} />
