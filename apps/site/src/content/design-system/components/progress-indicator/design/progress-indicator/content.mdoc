@@ -33,10 +33,8 @@ The smaller sizes Sm and Md are suitable for use in components ie buttons or fie
 The indicator can appear white for use on dark backgrounds.
 
 ```tsx
-
-
 () => {
-  return <div className="rounded-md bg-black flex items-top justify-centre">
+  return <div className="p-5 bg-black rounded-md flex items-top justify-center gap-3">
       <ProgressIndicator size="large" color="white" />
       <ProgressIndicator size="large" color="white" label="Loading..." />
       <ProgressIndicator size="large" color="white" icon={PadlockTickIcon} />
