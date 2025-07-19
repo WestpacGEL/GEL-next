@@ -1,15 +1,19 @@
 ### Sizes
 
-Use this Large size Progress indicator for page loads. See [Loading guide](/guides/loading) for page load patterns.
+Use this Large size Progress indicator for page loads, this size can also include an icon and/or a label. See [Loading guide](/guides/loading) for page load patterns.
 
 ```tsx
 () => {
   return (
     <div className="p-1 rounded-md flex items-end justify-center" >
-      <ProgressIndicator size="xlarge" />
+        <ProgressIndicator size="large" className="mr-2" />
+        <ProgressIndicator size="large" className="mr-2" />
+        <ProgressIndicator size="large" className="mr-2" />
+      ))}
+
     </div>
   );
-}
+};
 ```
 
 The smaller sizes Sm and Md are suitable for use in components ie buttons or fields.  See [Loading guide](/guides/loading#loading-within-components) for component patterns.
