@@ -4,15 +4,12 @@ Use this Large size Progress indicator for page loads, this size can also includ
 
 ```tsx
 () => {
-  return (
-    <div className="p-1 rounded-md flex items-end justify-center" >
-        <ProgressIndicator size="large" className="mr-2" />
-        <ProgressIndicator size="large" label="Signing in" className="mr-2" />
-        <ProgressIndicator size="large" label="Signing in" Icon="PadlockIcon" className="mr-2" />
-
-    </div>
-  );
-};
+  return <div className="flex items-top justify-center gap-3">
+      <ProgressIndicator size="large" icon={PadlockIcon} />
+      <ProgressIndicator size="large" icon={PadlockTickIcon} />
+      <ProgressIndicator size="large" label="Signing in..." icon={FingerprintIcon} />
+    </div>;
+}
 ```
 
 The smaller sizes Sm and Md are suitable for use in components ie buttons or fields.  See [Loading guide](/guides/loading#loading-within-components) for component patterns.
