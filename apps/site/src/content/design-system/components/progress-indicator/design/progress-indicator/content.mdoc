@@ -18,7 +18,7 @@ The smaller sizes Sm and Md are suitable for use in components ie buttons or fie
 () => {
   return (
     <div className="p-1 rounded-md flex items-end justify-center" >
-      {(['small', 'medium', 'large'] as const).map(size => (
+      {(['small', 'medium',] as const).map(size => (
         <ProgressIndicator size={size} className="mr-2" />
       ))}
 
