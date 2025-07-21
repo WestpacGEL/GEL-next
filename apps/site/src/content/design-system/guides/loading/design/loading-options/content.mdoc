@@ -22,7 +22,7 @@ Depending on the process or the audience, instead of showing a simple spinner, w
 
 ### Usage example
 
-Description of what will be displayed
+Page loading overlay example.
 
 ```jsx
 () => {
@@ -30,10 +30,10 @@ Description of what will be displayed
   return <>
       <Modal size="full" state={state} aria-label="Loading overlay" className="bg-transparent">
         <ModalBody onClick={state.close} className="align-center min-h-100vh min-w-100vw flex flex-col justify-center">
-          <ProgressIndicator color="white" size="large" label="Loading..." />
+          <ProgressIndicator size="large" color="white" icon={PadlockTickIcon} />
         </ModalBody>
       </Modal>
-      <Button onClick={state.open}>Open Loader</Button>
+      <Button onClick={state.open}>Open loader</Button>
     </>;
 }
 ```
