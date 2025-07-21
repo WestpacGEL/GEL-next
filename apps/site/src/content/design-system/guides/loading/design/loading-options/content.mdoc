@@ -22,6 +22,7 @@ Depending on the process or the audience, instead of showing a simple spinner, w
 
 ### Usage example
 
+
 Here is an example of a page loading pattern.
 
 ```jsx
@@ -30,7 +31,7 @@ Here is an example of a page loading pattern.
   return <>
       <Modal size="full" state={state} aria-label="Loading overlay" className="bg-transparent">
         <ModalBody onClick={state.close} className="align-center min-h-100vh min-w-100vw flex flex-col justify-center">
-          <ProgressIndicator icon={PadlockIcon} color="white" size="large" label="Loading..." />
+          <ProgressIndicator size="large" label="Loading..." color="white" icon={PadlockTickIcon} />
         </ModalBody>
       </Modal>
       <Button onClick={state.open}>Open loader</Button>
