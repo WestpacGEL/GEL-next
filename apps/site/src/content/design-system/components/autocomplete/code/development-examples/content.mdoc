@@ -1,4 +1,4 @@
-### Default accordion
+### Default
 
 ```jsx
 <Autocomplete aria-label="Animals">
@@ -150,26 +150,104 @@
   );
 };
 ```
+
 ### Customised Items
 
 ```jsx
+() => {
+  const options = [
+  { name: 'Oliver Bennett', initials: 'OB', role: 'Compliance Officer, Legal' },
+  { name: 'Mia Chandler', initials: 'MC', role: 'Financial Analyst, Finance' },
+  { name: 'Zoe Chang', initials: 'ZC', role: 'UX Designer, Product Design' },
+  { name: "Lucas D'Souza", initials: 'LD', role: 'Cybersecurity Specialist, Information Security' },
+];
+  return (
+      <Autocomplete width="30" aria-label="Staff directory" defaultItems={options}>
+        {item => (
+          <AutocompleteItem key={item.name} textValue={item.name}>
+            <div className="flex items-center gap-2">
+              <Circle className="size-5 bg-muted text-white">{item.initials}</Circle>
+              <div className="flex flex-col ">
+                <h3 className="typography-body-9">{item.name}</h3>
+                <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
+                  {item.role}
+                </p>
+              </div>
+            </div>
+          </AutocompleteItem>
+        )}
+      </Autocomplete>
+  );
+};
+```
+
+### More customised Items
+
+```jsx
+
+() => {
+  const options = [
+  { name: 'Nimbus Analytics Pty Ltd', abn: '123 456 789' },
+  { name: 'Blueleaf Financial Group', abn: '987 654 321' },
+  { name: 'Ironclad Risk Solutions', abn: '456 789 123' },
+  { name: 'Summit Edge Advisory', abn: '321 654 987' },
+];
+  return (
+      <Autocomplete 
+      noOptionsMessage="No options found, try a different spelling"
+      width="30" 
+      aria-label="Business directory" 
+      defaultItems={options}>
+        {item => (
+          <AutocompleteItem key={item.name} textValue={item.name}>
+            <div className="flex items-center gap-2">
+              <div className="flex flex-col ">
+                <h3 className="typography-body-9">{item.name}</h3>
+                <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
+                  {item.abn}
+                </p>
+              </div>
+            </div>
+          </AutocompleteItem>
+        )}
+      </Autocomplete>
+  );
+};
+```
+
+```jsx
+
+```
+
+### testing
+
+```jsx
+
 <Autocomplete aria-label="Animals">
   <AutocompleteItem key="BSB">
     <div className="flex flex-col">
       <h3 className="typography-body-9 font-medium">Business Name</h3>
       <p>12 345 678 910</p>
     </div>
-  </AutocompleteItem>,
+  </AutocompleteItem>
+  ,
   <AutocompleteItem key="staff">
     <div className="flex items-center gap-2">
-      <Circle className="size-5 bg-muted text-white">SN</Circle>
+      <Circle
+        className="size-5 bg-muted text-white group-[.is-focused]:bg-white group-[.is-focused]:text-muted"
+      >
+        SN
+      </Circle>
       <div className="flex flex-col ">
         <h3 className="typography-body-9">Staff Name</h3>
-        <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
+        <p
+          className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white"
+        >
           Staff role, staff business area
         </p>
       </div>
     </div>
   </AutocompleteItem>
 </Autocomplete>
+ 
 ```
