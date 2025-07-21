@@ -27,7 +27,6 @@ export function DateField({ separator, ...props }: DateFieldProps) {
       {state.segments.map((segment, i) => (
         <DateSegment separator={separator} key={i} segment={segment} state={state} />
       ))}
-      {/* {state.isInvalid && <span aria-hidden="true">🚫</span>} */}
     </div>
   );
 }
