@@ -1,10 +1,13 @@
-import type { Preview } from '@storybook/react';
-import './global.css';
-import * as React from 'react';
+/* eslint-disable react-hooks/rules-of-hooks */
 import { clsx } from 'clsx';
+import * as React from 'react';
 import { useEffect } from 'react';
 
-const withThemeProvider = (Story, context) => {
+import type { Decorator, Preview } from '@storybook/react-vite';
+
+import './global.css';
+
+const withThemeProvider: Decorator = (Story, context) => {
   const theme = context.globals?.theme || 'WBC';
   // workaround for modal
   useEffect(() => {
@@ -20,7 +23,7 @@ const withThemeProvider = (Story, context) => {
   );
 };
 
-const systemViewports = {
+const VIEWPORTS = {
   xs: {
     name: 'XS',
     styles: {
@@ -82,7 +85,7 @@ const preview: Preview = {
     },
   },
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    actions: { argTypesRegex: '^on.*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -91,7 +94,7 @@ const preview: Preview = {
     },
     layout: 'fullscreen',
     viewport: {
-      viewports: systemViewports,
+      options: VIEWPORTS,
     },
   },
   decorators: [withThemeProvider],

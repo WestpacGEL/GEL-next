@@ -1,5 +1,5 @@
 import { Key } from '@react-types/shared';
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useRef, useState } from 'react';
 
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';

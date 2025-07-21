@@ -33,13 +33,13 @@ export const Icons = () => {
     <div>
       <div className="mb-4 flex flex-wrap gap-3 bg-light p-4 align-bottom">
         <div className="flex w-full shrink-0 grow flex-col items-start sm:w-auto sm:flex-row sm:items-center">
-          <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="filter-icons">
+          <label className="mb-2 mr-4 sm:mb-0" htmlFor="filter-icons">
             Filter by name
           </label>
           <Input id="filter-icon" value={search} onChange={handleOnChange} className="w-full" />
         </div>
         <div className="flex w-full flex-col items-start xsl:w-auto sm:flex-row sm:items-center">
-          <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="icon-look">
+          <label className="mb-2 mr-4 sm:mb-0" htmlFor="icon-look">
             Look
           </label>
           <Select id="icon-look" value={look} onChange={handleLookChange} className="w-full sm:w-fit">

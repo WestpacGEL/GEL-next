@@ -42,7 +42,7 @@ export const Pictograms = () => {
         <Grid>
           <GridItem span={{ initial: 12, sm: 6 }}>
             <div className="flex flex-col items-start sm:flex-row sm:items-center">
-              <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="filter-pictograms">
+              <label className="mb-2 mr-4 sm:mb-0" htmlFor="filter-pictograms">
                 Filter by name
               </label>
               <Input id="filter-pictograms" value={search} onChange={handleOnChange} className="w-full" />
@@ -50,7 +50,7 @@ export const Pictograms = () => {
           </GridItem>
           <GridItem span={{ initial: 12, sm: 3 }}>
             <div className="flex flex-col items-start sm:flex-row sm:items-center">
-              <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="pictogram-mode">
+              <label className="mb-2 mr-4 sm:mb-0" htmlFor="pictogram-mode">
                 Mode
               </label>
               <Select id="pictogram-mode" value={mode} onChange={handleModeChange} className="w-full sm:w-fit">

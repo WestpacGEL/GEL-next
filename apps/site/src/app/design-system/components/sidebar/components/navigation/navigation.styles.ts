@@ -1,11 +1,11 @@
 import { tv } from 'tailwind-variants';
 
 export const itemStyles = tv({
-  base: 'flex flex-row items-center py-[0.875rem] pr-5 !outline-offset-[-2px] transition-[background] duration-200 ease-[ease] hover:bg-background focus-visible:focus-outline ',
+  base: 'flex flex-row items-center py-3.5 pr-5 !outline-offset-[-2px] transition-[background] duration-200 ease-[ease] hover:bg-background focus-visible:focus-outline ',
   variants: {
     level: {
       '0': 'pl-6',
-      '1': 'pl-[3.5rem]',
+      '1': 'pl-14',
       '2': 'pl-[4.75rem]',
     },
     type: {

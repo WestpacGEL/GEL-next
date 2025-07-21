@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { AndroidIcon } from '../icon/index.js';
 import { ButtonDropdownHeading, List, ListItem } from '../index.js';

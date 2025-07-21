@@ -1,4 +1,5 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { fn, expect } from 'storybook/test';
 
 import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon } from '../icon/index.js';
 
@@ -24,6 +25,11 @@ const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 export const Default: Story = {
   args: {
     children: 'Button text',
+    onClick: fn(),
+  },
+  play: async ({ canvas, userEvent }) => {
+    const button = await canvas.findByRole('button', { name: 'Button text' });
+    await expect(button).toBeInTheDocument();
   },
 };
 
@@ -57,7 +63,7 @@ export const Colors = () => (
 export const Sizes = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
-      <>
+      <div className="flex flex-col gap-2" key={size}>
         <h3 className="font-bold">{size}</h3>
         <div className="flex gap-2">
           {LOOKS.map(look => (
@@ -73,7 +79,7 @@ export const Sizes = () => (
             </Button>
           ))}
         </div>
-      </>
+      </div>
     ))}
   </div>
 );
@@ -84,7 +90,7 @@ export const Sizes = () => (
 export const Block = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
-      <>
+      <div className="flex flex-col" key={size}>
         <h3 className="font-bold">{size}</h3>
         <div className="flex flex-col gap-2">
           {SOFT_LOOKS.map(look => (
@@ -93,7 +99,7 @@ export const Block = () => (
             </Button>
           ))}
         </div>
-      </>
+      </div>
     ))}
   </div>
 );

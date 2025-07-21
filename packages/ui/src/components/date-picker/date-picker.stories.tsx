@@ -1,5 +1,5 @@
 import { DateValue, getLocalTimeZone, isWeekend, today } from '@internationalized/date';
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useLocale } from 'react-aria';
 
 import { DatePicker } from './date-picker.component.js';

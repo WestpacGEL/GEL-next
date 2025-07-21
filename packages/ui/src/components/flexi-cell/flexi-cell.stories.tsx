@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { type Meta, StoryFn } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react-vite';
 
 import { GiftIcon } from '../icon/index.js';
 import { Badge, FlexiCellBody, Grid, GridContainer, GridItem } from '../index.js';

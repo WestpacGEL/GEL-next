@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'w-full p-0 leading-[2] last:mb-0',
+    base: 'w-full p-0 leading-loose last:mb-0',
     li: 'relative mb-2 leading-7',
   },
   variants: {
@@ -21,7 +21,7 @@ export const styles = tv({
       },
       unordered: {
         base: '',
-        li: 'pl-[1.1875rem] leading-[2] before:absolute before:left-[0.25rem] before:top-[0.7rem] before:block before:size-[0.5rem] before:rounded-full last:mb-0',
+        li: 'pl-[1.1875rem] leading-loose before:absolute before:left-1 before:top-[0.7rem] before:block before:size-2 before:rounded-full last:mb-0',
       },
     },
     fontFamily: {
