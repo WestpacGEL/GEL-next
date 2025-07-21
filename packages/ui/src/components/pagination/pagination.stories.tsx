@@ -1,6 +1,6 @@
-import { action } from '@storybook/addon-actions';
-import { type Meta, StoryFn } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
+import { action } from 'storybook/actions';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
 import { Button, type PaginationProps } from '../index.js';

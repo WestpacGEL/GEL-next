@@ -1,4 +1,4 @@
-import { type Meta, StoryFn } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react-vite';
 
 import { type GridItemProps } from './components/grid-item/grid-item.types.js';
 import { GridContainer, GridItem } from './components/index.js';

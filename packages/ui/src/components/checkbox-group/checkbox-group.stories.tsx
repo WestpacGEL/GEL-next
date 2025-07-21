@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { CheckboxGroup } from './checkbox-group.component.js';
 

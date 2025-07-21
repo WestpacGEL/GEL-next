@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';
 import { VisibilityIcon } from '../icon/index.js';

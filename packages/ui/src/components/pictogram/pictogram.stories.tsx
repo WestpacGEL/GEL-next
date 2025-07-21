@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { clsx } from 'clsx';
 
 import { Pictogram } from './pictogram.component.js';

@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { Breadcrumb } from './breadcrumb.component.js';
 import { BreadcrumbItem } from './components/breadcrumb-item/breadcrumb-item.component.js';
