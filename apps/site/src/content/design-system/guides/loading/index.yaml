@@ -14,11 +14,6 @@ design:
     noTitle: false
     noDemo: false
   - title:
-      name: Page section loading
-      slug: page-section-loading
-    noTitle: false
-    noDemo: false
-  - title:
       name: Loading within components
       slug: loading-within-components
     noTitle: false
