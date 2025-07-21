@@ -1,5 +1,5 @@
 import { DateValue } from '@internationalized/date';
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 import { DateField } from './date-field.component.js';
