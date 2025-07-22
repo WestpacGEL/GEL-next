@@ -18,10 +18,10 @@ export const styles = tv(
           list: 'gap-5',
         },
         true: {
-          item: 'border-t-2 border-neutral pt-[0.625rem]',
+          item: 'border-neutral[REPLACE TOKEN] border-t-2 pt-[0.625rem]',
           content: 'px-0 pb-7 pt-0 md:px-6',
           removeBtn: 'relative mb-5 md:ml-6',
-          footer: 'border-t-2 border-neutral',
+          footer: 'border-neutral[REPLACE TOKEN] border-t-2',
         },
       },
       isFocused: {

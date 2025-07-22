@@ -3,20 +3,20 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'relative flex bg-white transition-colors',
+      base: 'relative flex bg-surface-white-faint transition-colors',
       topBadgeWrapper: 'absolute right-[-1px] top-[-1px]',
       topBadge: 'rounded-br-none rounded-tl-none',
     },
     variants: {
       withBorder: {
         true: {
-          base: 'rounded border border-borderDark',
+          base: 'rounded border border-border-muted-strong',
         },
         false: { base: '!px-0' },
       },
       isLink: {
         true: {
-          base: 'hover:border-hero',
+          base: 'hover:border-border-hero',
         },
         false: '',
       },

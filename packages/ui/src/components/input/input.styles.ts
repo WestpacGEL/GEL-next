@@ -11,8 +11,8 @@ export const styles = tv(
         xlarge: 'form-control-xlarge group-[.input-group-inset-after]:pr-9 group-[.input-group-inset-before]:pl-9',
       },
       invalid: {
-        true: 'border-danger',
-        false: 'border-borderDark',
+        true: 'border-border-danger',
+        false: 'border-border-muted-strong',
       },
       isFocusVisible: {
         true: 'focus-outline',

@@ -1,7 +1,7 @@
 /**
  * jscodeshift script to replace old tokens with new tokens. You will need to install jscodeshift locally to run the script.
  *
- * Some tokens do not have a direct replacement and will be marked with [REPLACE TOKEN].
+ * Some tokens do not have a direct replacement and will be marked with [REPLACE_TOKEN].
  *
  * Usage:
  *   jscodeshift --parser=tsx -t ./update-tokens-codemod.cjs <path>
@@ -9,68 +9,72 @@
 module.exports = function transformer(file, api) {
   const tints = ['-5', '-10', '-20', '-30', '-40', '-50', '-60', '-70', '-80', '-90'];
   const REPLACEMENTS = {
-    'bg-background': 'bg-surface-muted',
+    'bg-background': 'bg-surface-muted-pale',
     'bg-border': 'bg-surface-muted-soft',
     'bg-borderDark': 'bg-surface-muted-strong',
-    'bg-focus': 'bg-focus[REPLACE TOKEN]',
-    'bg-heading': 'bg-heading[REPLACE TOKEN]',
+    'bg-focus': 'bg-focus[REPLACE_TOKEN]',
+    'bg-heading': 'bg-heading[REPLACE_TOKEN]',
     'bg-hero': 'bg-surface-hero',
     'bg-light': 'bg-surface-muted-faint',
     'bg-link': 'bg-surface-primary',
     'bg-muted': 'bg-surface-muted',
-    'bg-neutral': 'bg-neutral[REPLACE TOKEN]',
+    'bg-neutral': 'bg-neutral[REPLACE_TOKEN]',
     'bg-pop': 'bg-surface-pop',
     'bg-primary': 'bg-surface-primary',
+    'bg-primary-50': 'bg-surface-primary-faint',
     'bg-text': 'bg-surface-muted-vivid',
     'bg-success': 'bg-surface-success',
     'bg-info': 'bg-surface-info',
     'bg-warning': 'bg-surface-warning',
     'bg-danger': 'bg-surface-danger',
     'bg-system': 'bg-surface-system-error',
+    'bg-white': 'bg-surface-white-pale',
     'text-text': 'text-text-body',
-    'text-background': 'text-background[REPLACE TOKEN]',
-    'text-border': 'text-border[REPLACE TOKEN]',
-    'text-borderDark': 'text-borderDark[REPLACE TOKEN]',
-    'text-focus': 'text-focus[REPLACE TOKEN]',
+    'text-background': 'text-background[REPLACE_TOKEN]',
+    'text-border': 'text-border[REPLACE_TOKEN]',
+    'text-borderDark': 'text-borderDark[REPLACE_TOKEN]',
+    'text-focus': 'text-focus[REPLACE_TOKEN]',
     'text-heading': 'text-text-heading',
     'text-hero': 'text-text-hero',
-    'text-light': 'text-light[REPLACE TOKEN]',
+    'text-light': 'text-light[REPLACE_TOKEN]',
     'text-link': 'text-text-link',
     'text-muted': 'text-text-muted',
-    'text-neutral': 'text-neutral[REPLACE TOKEN]',
-    'text-pop': 'text-pop[REPLACE TOKEN]',
+    'text-neutral': 'text-neutral[REPLACE_TOKEN]',
+    'text-pop': 'text-pop[REPLACE_TOKEN]',
     'text-primary': 'text-text-primary',
     'text-success': 'text-text-success',
     'text-info': 'text-text-info',
     'text-warning': 'text-text-warning',
     'text-danger': 'text-text-danger',
     'text-system': 'text-text-system-error',
+    'text-white': 'text-text-mono',
     'border-border': 'border-muted-soft',
-    'border-background': 'border-background[REPLACE TOKEN]',
+    'border-background': 'border-background[REPLACE_TOKEN]',
     'border-borderDark': 'border-muted-strong',
     'border-focus': 'border-border-focus',
-    'border-heading': 'border-heading[REPLACE TOKEN]',
+    'border-heading': 'border-heading[REPLACE_TOKEN]',
     'border-hero': 'border-border-hero',
-    'border-light': 'border-light[REPLACE TOKEN]',
-    'border-link': 'border-link[REPLACE TOKEN]',
+    'border-light': 'border-light[REPLACE_TOKEN]',
+    'border-link': 'border-link[REPLACE_TOKEN]',
     'border-muted': 'border-border-muted',
-    'border-neutral': 'border-neutral[REPLACE TOKEN]',
-    'border-pop': 'border-pop[REPLACE TOKEN]',
+    'border-neutral': 'border-neutral[REPLACE_TOKEN]',
+    'border-pop': 'border-pop[REPLACE_TOKEN]',
     'border-primary': 'border-border-primary',
-    'border-text': 'border-text[REPLACE TOKEN]',
+    'border-text': 'border-text[REPLACE_TOKEN]',
     'border-success': 'border-border-success',
     'border-info': 'border-border-info',
     'border-warning': 'border-border-warning',
     'border-danger': 'border-border-danger',
-    'border-system': 'border-system[REPLACE TOKEN]',
+    'border-system': 'border-system[REPLACE_TOKEN]',
+    
   };
 
   const BLACK_AND_WHITE = {
-    'bg-black': 'bg-black[REPLACE TOKEN]',
-    'bg-white': 'bg-white[REPLACE TOKEN]',
-    'text-black': 'text-black[REPLACE TOKEN]',
-    'text-white': 'text-white[REPLACE TOKEN]',
-    'border-black': 'border-black[REPLACE TOKEN]',
+    'bg-black': 'bg-black[REPLACE_TOKEN]',
+    'bg-white': 'bg-white[REPLACE_TOKEN]',
+    'text-black': 'text-black[REPLACE_TOKEN]',
+    // 'text-white': 'text-white[REPLACE_TOKEN]',
+    'border-black': 'border-black[REPLACE_TOKEN]',
     'border-white': 'border-border-mono',
   };
 
@@ -80,7 +84,7 @@ module.exports = function transformer(file, api) {
 
   Object.keys(REPLACEMENTS).forEach(key => {
     tints.forEach(tint => {
-      TINTED_COLOURS[`${key}${tint}`] = `${key}${tint}[REPLACE TOKEN]`;
+      TINTED_COLOURS[`${key}${tint}`] = `${key}${tint}[REPLACE_TOKEN]`;
     });
   });
 

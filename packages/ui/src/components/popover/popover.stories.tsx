@@ -82,7 +82,7 @@ export const AsInlineLinkAppearance = () => (
       </Popover>{' '}
       To test popover.
     </p>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <h3 className="typography-body-7 mb-2 font-bold text-text-danger">Inside hint</h3>
     <Field
       label="Example with field."
       hintMessage={

@@ -9,8 +9,8 @@ export const styles = tv(
         false: '',
       },
       isDisabled: {
-        true: 'text-text-10',
-        false: 'text-text',
+        true: 'text-text-body/10',
+        false: 'text-text-body',
       },
     },
     compoundVariants: [

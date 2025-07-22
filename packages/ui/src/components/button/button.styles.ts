@@ -29,15 +29,19 @@ export const styles = tv(
       },
       look: {
         primary: {
-          base: 'relative border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50 active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-pop',
+          base: 'relative border border-border-primary bg-surface-primary text-text-mono hover:bg-surface-primary active:bg-surface-primary-faint active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop',
         },
-        hero: { base: 'border border-hero bg-hero text-white hover:bg-hero-70 active:bg-hero-50' },
-        faint: { base: 'border border-borderDark bg-light text-muted hover:bg-white active:bg-white' },
-        link: { base: 'text-link underline' },
+        hero: {
+          base: 'border border-border-hero bg-surface-hero text-text-mono hover:bg-surface-hero/70 active:bg-surface-hero/50',
+        },
+        faint: {
+          base: 'border border-border-muted-strong bg-surface-muted-faint text-text-muted hover:bg-surface-muted-faint/70 active:bg-surface-muted-faint/50',
+        },
+        link: { base: 'text-text-link underline' },
         unstyled: { base: 'p-0 text-left' },
       },
       soft: {
-        true: { base: 'bg-white' },
+        true: { base: 'bg-surface-white-faint' },
       },
       block: {
         true: { base: 'flex w-full' },
@@ -59,19 +63,20 @@ export const styles = tv(
         slots: ['base'],
         look: 'primary',
         soft: true,
-        className: 'text-text hover:text-white active-theme-rams:text-primary active-theme-rams:hover:text-white',
+        className:
+          'text-text-body hover:text-text-mono active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono',
       },
       {
         slots: ['base'],
         look: 'hero',
         soft: true,
-        className: 'text-text hover:text-white',
+        className: 'text-text-body hover:text-text-mono',
       },
       {
         slots: ['base'],
         look: 'faint',
         soft: true,
-        className: 'hover:bg-light active:bg-light',
+        className: 'hover:bg-surface-muted-faint active:bg-surface-muted-faint',
       },
       {
         slots: ['iconBefore'],

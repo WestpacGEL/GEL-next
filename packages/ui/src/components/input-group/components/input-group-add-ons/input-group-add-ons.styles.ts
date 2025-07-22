@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'inset-y-0',
+    base: 'inset-y-0 text-text-body',
     variants: {
       isInset: {
         true: 'absolute',

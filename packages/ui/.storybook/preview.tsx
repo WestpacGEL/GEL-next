@@ -14,7 +14,7 @@ const withThemeProvider = (Story, context) => {
   }, [theme]);
   // Note: Not using padding for grid demos as it affects the proper grid visuals i.e. breakpoints, paddings, margins etc.
   return (
-    <div className={clsx(!(context.componentId === 'foundation-grid') && 'p-4')}>
+    <div className={clsx(!(context.componentId === 'foundation-grid') && 'p-4 bg-surface-white-pale')}>
       <Story />
     </div>
   );

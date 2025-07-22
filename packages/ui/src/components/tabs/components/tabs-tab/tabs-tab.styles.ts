@@ -2,15 +2,15 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'typography-body-9 flex cursor-pointer px-3 py-2 text-text transition-colors',
+    base: 'typography-body-9 flex cursor-pointer px-3 py-2 text-text-body transition-colors',
     variants: {
       look: {
-        default: 'border border-border bg-white',
+        default: 'border border-border-muted-soft bg-screen-background-faint',
         material: '',
       },
       selected: {
-        true: 'bg-white',
-        false: 'background-transition hover:bg-background',
+        true: 'bg-surface-white-pale',
+        false: 'background-transition hover:bg-surface-muted',
       },
       orientation: {
         horizontal: '',
@@ -32,7 +32,7 @@ export const styles = tv(
       {
         look: 'default',
         selected: false,
-        className: 'bg-light',
+        className: 'bg-surface-muted-faint',
       },
       {
         orientation: 'horizontal',
@@ -58,13 +58,13 @@ export const styles = tv(
         color: 'primary',
         look: 'default',
         selected: false,
-        className: 'border-primary-90 bg-primary text-white hover:bg-primary-70',
+        className: 'border-border-primary/90 bg-surface-primary text-text-mono hover:bg-surface-primary/70',
       },
       {
         color: 'hero',
         selected: false,
         look: 'default',
-        className: 'border-hero-90 bg-hero text-white hover:bg-hero-70',
+        className: 'border-border-hero/90 bg-surface-hero text-text-mono hover:bg-surface-hero/70',
       },
       // Material look design
       {
@@ -81,13 +81,13 @@ export const styles = tv(
         look: 'material',
         selected: true,
         orientation: 'horizontal',
-        className: 'border-bottom border-b-white text-text',
+        className: 'border-bottom border-b-white text-text-body',
       },
       {
         look: 'material',
         selected: true,
         orientation: 'vertical',
-        className: 'border-left border-l-transparent text-text',
+        className: 'border-left border-l-transparent text-text-body',
       },
       {
         color: 'primary',

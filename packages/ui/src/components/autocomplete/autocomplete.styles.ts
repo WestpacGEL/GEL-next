@@ -4,20 +4,21 @@ export const styles = tv(
   {
     slots: {
       base: 'relative flex flex-1 flex-col',
-      label: 'block text-left text-sm font-medium text-text',
+      label: 'block text-left text-sm font-medium text-text-body',
       outerWrapper:
         'form-control relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled group-[.input-group-after]:rounded-r-none group-[.input-group-before]:rounded-l-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:border-l-0',
       input: 'appearance-none bg-[transparent] outline-none',
-      clearButton: 'flex cursor-default items-center justify-center text-text-50 hover:text-border-60',
+      clearButton:
+        'hover:text-border-60[REPLACE TOKEN] flex cursor-default items-center justify-center text-surface-muted',
       iconWrapper: 'flex flex-col justify-center',
     },
     variants: {
       invalid: {
         true: {
-          outerWrapper: 'border-danger',
+          outerWrapper: 'border-border-danger',
         },
         false: {
-          outerWrapper: 'border-borderDark',
+          outerWrapper: 'border-border-muted-strong',
         },
       },
       size: {

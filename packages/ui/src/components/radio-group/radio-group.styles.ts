@@ -5,7 +5,7 @@ export const styles = tv(
     slots: {
       base: '',
       radioWrapper: '',
-      revealButton: 'gap-1 px-0 text-text no-underline hover:underline',
+      revealButton: 'gap-1 px-0 text-text-body no-underline hover:underline',
       buttonText: 'typography-body-10',
     },
     variants: {

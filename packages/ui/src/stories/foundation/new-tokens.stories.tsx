@@ -23,7 +23,7 @@ const meta: Meta = {
             }}
             className="pl-2"
           />
-          <div className="p-2 bg-screen-background-white">
+          <div className="bg-screen-background-white p-2">
             <p className="font-bold text-text-warning">
               NOTE: These tokens are not final and this is for example purposes
             </p>
@@ -43,7 +43,7 @@ const meta: Meta = {
 };
 
 // NOTE: Although unused this needs to be here so all colors load correctly
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const LOAD_COLORS = {
   colors: [
     'bg-screen-background-white',
@@ -156,7 +156,7 @@ export const ScreenColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="p-2 bg-screen-background-white">
+          <div className="bg-screen-background-white p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
           <div className="flex flex-wrap bg-screen-background-white">
@@ -200,7 +200,7 @@ export const SurfaceColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="p-2 bg-screen-background-white">
+          <div className="bg-screen-background-white p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
           <div className="flex flex-wrap bg-screen-background-white">
@@ -244,7 +244,7 @@ export const TextColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="p-2 bg-screen-background-white">
+          <div className="bg-screen-background-white p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
           <div className="flex flex-wrap bg-screen-background-white">
@@ -288,7 +288,7 @@ export const BorderColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="p-2 bg-screen-background-white">
+          <div className="bg-screen-background-white p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
           <div className="flex flex-wrap bg-screen-background-white">
@@ -332,7 +332,7 @@ export const DataColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="p-2 bg-screen-background-white">
+          <div className="bg-screen-background-white p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
           <div className="flex flex-wrap bg-screen-background-white">

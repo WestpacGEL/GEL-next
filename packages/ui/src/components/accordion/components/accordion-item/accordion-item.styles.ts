@@ -12,20 +12,20 @@ export const styles = tv(
     variants: {
       look: {
         soft: {
-          itemHeader: 'border-t border-border bg-light',
+          itemHeader: 'border-t border-border-muted-soft bg-surface-muted-faint',
         },
         lego: {
           itemHeader:
-            'border-l-[0.375rem] border-border bg-light shadow-[inset_0_1px_0_var(--tw-shadow-color)] !shadow-border transition-colors',
+            'border-l-[0.375rem] border-border-muted-soft bg-surface-muted-faint shadow-[inset_0_1px_0_var(--tw-shadow-color)] !shadow-border transition-colors',
         },
       },
       isOpen: {
         true: {
-          content: 'block border-t border-border p-3',
+          content: 'block border-t border-border-muted-soft p-3',
         },
         false: {
           base: '',
-          itemHeader: 'background-transition hover:bg-background',
+          itemHeader: 'background-transition hover:bg-surface-muted',
         },
       },
       isDisabled: {

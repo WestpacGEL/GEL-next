@@ -4,7 +4,7 @@ export const styles = tv({
   slots: {
     base: 'relative flex justify-start',
     buttonList: 'flex w-full touch-pan-x gap-1 overflow-x-auto overflow-y-visible whitespace-nowrap',
-    scrollButton: 'absolute rounded-none contrast-more:bg-black',
+    scrollButton: 'contrast-more:bg-black[REPLACE TOKEN] absolute rounded-none',
   },
   variants: {
     position: {

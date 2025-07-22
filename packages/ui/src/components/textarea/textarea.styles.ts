@@ -11,8 +11,8 @@ export const styles = tv(
         xlarge: 'form-control-xlarge min-h-12',
       },
       invalid: {
-        true: 'border-danger',
-        false: 'border-borderDark',
+        true: 'border-border-danger',
+        false: 'border-border-muted-strong',
       },
       isFocusVisible: {
         true: 'focus-outline',
