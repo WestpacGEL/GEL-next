@@ -1,4 +1,4 @@
-import { type Meta, StoryFn } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react-vite';
 import { ChangeEvent, useState } from 'react';
 
 import { Form, FormGroup, Hint, Input, Label } from '../index.js';

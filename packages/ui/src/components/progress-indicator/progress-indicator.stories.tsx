@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { FingerprintIcon, PadlockIcon, PadlockTickIcon } from '../icon/index.js';
 

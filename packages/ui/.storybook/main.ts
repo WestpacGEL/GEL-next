@@ -1,25 +1,30 @@
-import type { StorybookConfig } from '@storybook/react-vite';
+import { createRequire } from 'node:module';
+import { dirname, join } from 'node:path';
+
 import { mergeConfig } from 'vite';
+
+import type { StorybookConfig } from '@storybook/react-vite';
+
+const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
+
   addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    '@storybook/addon-styling',
-    '@storybook/addon-actions',
-    '@storybook/addon-a11y',
+    getAbsolutePath('@chromatic-com/storybook'),
+    getAbsolutePath('@storybook/addon-docs'),
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('@storybook/addon-a11y'),
   ],
+
   framework: {
-    name: '@storybook/react-vite',
+    name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
-  docs: {
-    autodocs: 'tag',
-  },
+
   staticDirs: ['../assets/storybook'],
-  async viteFinal(config) {
+
+  viteFinal(config) {
     return mergeConfig(config, {
       optimizeDeps: {
         exclude: ['@duetds/date-picker/dist/loader'],
@@ -30,4 +35,9 @@ const config: StorybookConfig = {
     });
   },
 };
+
 export default config;
+
+function getAbsolutePath(value: string) {
+  return dirname(require.resolve(join(value, 'package.json')));
+}

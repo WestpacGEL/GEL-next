@@ -281,7 +281,7 @@ describe('Pagination', () => {
   });
 
   describe('should render the pages according to siblingCount and boundaryCount', () => {
-    it('should render 8 buttons with current={1} siblingCount={2} and boundaryCount={0} with 20 pages', async () => {
+    it('should render 8 buttons with current={1} siblingCount={2} and boundaryCount={0} with 20 pages', () => {
       render(
         <Pagination
           current={1}
@@ -295,7 +295,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(8);
     });
 
-    it('should render 7 buttons with current={1} siblingCount={2} and boundaryCount={0} with 20 pages', async () => {
+    it('should render 7 buttons with current={1} siblingCount={2} and boundaryCount={0} with 20 pages', () => {
       render(
         <Pagination
           current={10}
@@ -309,7 +309,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(7);
     });
 
-    it('should render 10 buttons with current={1} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+    it('should render 10 buttons with current={1} siblingCount={2} and boundaryCount={1} with 20 pages', () => {
       render(
         <Pagination
           current={1}
@@ -323,7 +323,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(10);
     });
 
-    it('should render 9 buttons with current={10} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+    it('should render 9 buttons with current={10} siblingCount={2} and boundaryCount={1} with 20 pages', () => {
       render(
         <Pagination
           current={10}
@@ -337,7 +337,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(9);
     });
 
-    it('should render 10 buttons with current={20} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+    it('should render 10 buttons with current={20} siblingCount={2} and boundaryCount={1} with 20 pages', () => {
       render(
         <Pagination
           current={20}
@@ -351,7 +351,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(10);
     });
 
-    it('should render 12 buttons with current={1} siblingCount={2} and boundaryCount={2} with 20 pages', async () => {
+    it('should render 12 buttons with current={1} siblingCount={2} and boundaryCount={2} with 20 pages', () => {
       render(
         <Pagination
           current={20}
@@ -365,7 +365,7 @@ describe('Pagination', () => {
       expect(screen.getAllByRole('button').length).toBe(12);
     });
 
-    it('should render 11 buttons with current={10} siblingCount={2} and boundaryCount={1} with 20 pages', async () => {
+    it('should render 11 buttons with current={10} siblingCount={2} and boundaryCount={1} with 20 pages', () => {
       render(
         <Pagination
           current={10}

@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useCallback, useState } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
@@ -114,7 +114,7 @@ export const ButtonLoadingUsage = () => {
         disabled={loading}
         iconAfter={loading ? ProgressIndicator : DownloadIcon}
         iconColor="white"
-        onClick={handleSubmit}
+        onClick={() => void handleSubmit()}
       >
         Download
       </Button>

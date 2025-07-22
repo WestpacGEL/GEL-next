@@ -1,4 +1,4 @@
-import { type Meta, StoryFn } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react-vite';
 import { useCallback, useState } from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../icon/index.js';
