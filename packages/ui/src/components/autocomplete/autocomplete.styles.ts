@@ -9,7 +9,7 @@ export const styles = tv(
         'form-control relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled group-[.input-group-after]:rounded-r-none group-[.input-group-before]:rounded-l-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:border-l-0',
       input: 'appearance-none bg-[transparent] outline-none',
       clearButton:
-        'hover:text-border-60[REPLACE TOKEN] flex cursor-default items-center justify-center text-surface-muted',
+        'hover:text-border-60[REPLACE_TOKEN] flex cursor-default items-center justify-center text-surface-muted',
       iconWrapper: 'flex flex-col justify-center',
     },
     variants: {
