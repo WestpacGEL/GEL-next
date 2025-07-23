@@ -121,7 +121,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         <SectionHeading>Downloads &amp; links</SectionHeading>
         <Grid className="mb-5 sm:mb-9">
           <SectionItem className="flex flex-col gap-2">
-            <p className="leading-[2]">Design on-brand with greater efficiency and accuracy using the Sketch UI Kit.</p>
+            <p className="leading-[2]">Design on-brand with greater efficiency and accuracy using the Figma UI Kit.</p>
             <p className="leading-[2]">Visit GitHub to follow Westpac GEL Design System code updates and log issues.</p>
           </SectionItem>
         </Grid>
