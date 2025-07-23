@@ -17,10 +17,10 @@ Example with a button on the right
   <Header brand="wbc">
     <Button
       look="faint"
-      onClick={function Ya(){}}
+      onClick={() => {}}
       size={{
         initial: 'small',
-        sm: 'medium'
+        sm: 'medium',
       }}
       soft
     >
@@ -36,10 +36,7 @@ Example of logo centering when XSL
 
 ```tsx
 <>
-  <Header
-    brand="wbc"
-    logoCenter
-  />
+  <Header brand="wbc" logoCenter />
 </>
 ```
 
@@ -49,10 +46,7 @@ Example of logo with onClick
 
 ```tsx
 <>
-  <Header
-    brand="wbc"
-    logoOnClick={function Ya(){}}
-  />
+  <Header brand="wbc" logoOnClick={() => {}} />
 </>
 ```
 
@@ -62,10 +56,7 @@ Example of header with skiplink
 
 ```tsx
 <>
-  <Header
-    brand="wbc"
-    skipToContentId="#"
-  />
+  <Header brand="wbc" skipToContentId="#" />
 </>
 ```
 
@@ -75,10 +66,7 @@ Example fixed header. Does not show correctly in Docs view as it will show how i
 
 ```tsx
 <div className="h-10">
-  <Header
-    brand="wbc"
-    fixed
-  />
+  <Header brand="wbc" fixed />
 </div>
 ```
 
@@ -88,10 +76,7 @@ Example of header with arrow button
 
 ```tsx
 <>
-  <Header
-    brand="wbc"
-    leftIcon="arrow"
-  />
+  <Header brand="wbc" leftIcon="arrow" />
 </>
 ```
 
@@ -101,11 +86,7 @@ Example of header with back arrow button with onClick
 
 ```tsx
 <>
-  <Header
-    brand="wbc"
-    leftIcon="arrow"
-    leftOnClick={function Ya(){}}
-  />
+  <Header brand="wbc" leftIcon="arrow" leftOnClick={() => {}} />
 </>
 ```
 
@@ -115,10 +96,7 @@ Example of header with hamburger (only visible below xsl) with onClick
 
 ```tsx
 <>
-  <Header
-    brand="wbc"
-    leftIcon="hamburger"
-  />
+  <Header brand="wbc" leftIcon="hamburger" />
 </>
 ```
 
@@ -128,10 +106,6 @@ Example of header with hamburger (only visible below xsl) with onClick
 
 ```tsx
 <>
-  <Header
-    brand="wbc"
-    leftIcon="hamburger"
-    leftOnClick={function Ya(){}}
-  />
+  <Header brand="wbc" leftIcon="hamburger" leftOnClick={() => {}} />
 </>
 ```
