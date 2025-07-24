@@ -5,6 +5,7 @@ import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 import { Icon } from './icon.component.js';
 
 import * as AllIcons from './index.js';
+import { AlertIcon } from './index.js';
 
 const AllIconsExample = (props: AllIcons.IconProps) => {
   const [search, setSearch] = useState('');
@@ -119,6 +120,61 @@ export const Primary: Story = {
   args: {
     color: 'primary',
   },
+};
+
+/**
+ * > With primary color example
+ */
+export const AllColorsExample: Story = {
+  args: {
+  },
+  render: () => {
+    const ALL_COLORS = [
+        'muted',
+        'muted-vivid',
+        'muted-strong',
+        'muted-mild',
+        'muted-soft',
+        'muted-pale',
+        'muted-faint',
+        'white-muted',
+        'white-strong',
+        'white-mild',
+        'white-soft',
+        'white-pale',
+        'white-faint',
+        'mono',
+        'primary',
+        'primary-faint',
+        'hero',
+        'hero-faint',
+        'pop',
+        'pop-faint',
+        'holler',
+        'holler-faint',
+        'sing',
+        'sing-faint',
+        'dance',
+        'dance-faint',
+        'success',
+        'success-faint',
+        'info',
+        'info-faint',
+        'warning',
+        'warning-faint',
+        'danger',
+        'danger-faint',
+        'system-error',
+        'system-error-dark',
+    ] as const;
+
+    return <div className='flex gap-2 flex-wrap'>
+      {ALL_COLORS.map((color) => <div key={color} className='flex flex-col items-center' >
+        <AlertIcon key={color} color={color} />
+        <p>{color}</p>
+        </div>)}
+    </div>
+  }
 };
 
 /**

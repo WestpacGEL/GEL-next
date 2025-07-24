@@ -41,7 +41,8 @@ export const styles = tv(
         unstyled: { base: 'p-0 text-left' },
       },
       soft: {
-        true: { base: 'bg-surface-white-faint' },
+        true: {},
+        false: {},
       },
       block: {
         true: { base: 'flex w-full' },
@@ -64,19 +65,19 @@ export const styles = tv(
         look: 'primary',
         soft: true,
         className:
-          'text-text-body hover:text-text-mono active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono',
+          'bg-surface-white-faint text-text-body hover:text-text-mono active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono',
       },
       {
         slots: ['base'],
         look: 'hero',
         soft: true,
-        className: 'text-text-body hover:text-text-mono',
+        className: 'bg-surface-white-faint text-text-body hover:text-text-mono',
       },
       {
         slots: ['base'],
         look: 'faint',
         soft: true,
-        className: 'hover:bg-surface-muted-faint active:bg-surface-muted-faint',
+        className: 'bg-surface-white-faint hover:bg-surface-muted-faint active:bg-surface-muted-faint',
       },
       {
         slots: ['iconBefore'],
