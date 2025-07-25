@@ -25,7 +25,7 @@ export const styles = tv(
         },
         false: {
           base: '',
-          itemHeader: 'background-transition hover:bg-surface-muted',
+          itemHeader: 'background-transition hover:bg-surface-hover-muted-pale',
         },
       },
       isDisabled: {
@@ -51,7 +51,7 @@ export const styles = tv(
         slots: ['itemHeader'],
         look: 'lego',
         isOpen: true,
-        className: 'border-l-hero',
+        className: 'border-l-border-hero',
       },
       {
         slots: ['content'],
