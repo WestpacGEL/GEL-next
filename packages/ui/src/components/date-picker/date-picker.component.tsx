@@ -69,6 +69,7 @@ export function DatePicker({
   }, [bottomSheetView, breakpoint]);
 
   const buttonRef = useRef(null);
+  // TODO: buttonProps.aria-labelledby verify to remove the second reference to the input
   const { buttonProps: newButtonProps } = useButton(buttonProps, buttonRef);
 
   return (

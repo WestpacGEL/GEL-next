@@ -8,6 +8,12 @@ const meta: Meta<typeof DatePicker> = {
   title: 'Components/Datepicker',
   component: DatePicker,
   tags: ['autodocs'],
+  argTypes: {
+    isRequired: {
+      description: 'isRequired',
+      type: { name: 'boolean' },
+    },
+  },
   decorators: [
     (Story: StoryFn) => (
       <div className="h-30">
