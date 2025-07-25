@@ -58,14 +58,13 @@ const flattenTokenObject = (obj, delimiter = '.', prefix = '') => {
 
 const primitives = flattenObject(primitiveColors);
 const themes = flattenObject(tokens[2].Themes.modes);
-// console.log(themes);
 
 // reassigns keys in themes obj to actual values from primitives
 Object.keys(themes).forEach(key => {
   const val = themes[key];
   const currBrand = key.split('.')[0];
 
-  if (key.includes('anomaly')) {
+  if (key.includes('alias')) {
     if (val.includes('mono')) {
       themes[key] = themes[`${currBrand}.${val}`];
       return;

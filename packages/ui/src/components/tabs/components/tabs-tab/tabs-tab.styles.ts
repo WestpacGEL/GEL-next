@@ -10,7 +10,7 @@ export const styles = tv(
       },
       selected: {
         true: 'bg-surface-white-pale',
-        false: 'background-transition hover:bg-surface-muted',
+        false: 'background-transition hover:bg-surface-hover-muted-pale',
       },
       orientation: {
         horizontal: '',
@@ -58,13 +58,13 @@ export const styles = tv(
         color: 'primary',
         look: 'default',
         selected: false,
-        className: 'border-border-primary/90 bg-surface-primary text-text-mono hover:bg-surface-primary/70',
+        className: 'border-border-primary/90 bg-surface-primary text-text-mono hover:bg-surface-hover-primary',
       },
       {
         color: 'hero',
         selected: false,
         look: 'default',
-        className: 'border-border-hero/90 bg-surface-hero text-text-mono hover:bg-surface-hero/70',
+        className: 'border-border-hero/90 bg-surface-hero text-text-mono hover:bg-surface-hover-hero',
       },
       // Material look design
       {

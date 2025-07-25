@@ -36,7 +36,9 @@ export function BaseListItem(
       return null;
     }
     if ((type === 'icon' || type === 'link') && Icon) {
-      return <Icon size="small" className={styles.bullet()} color={look} data-testid={type} />;
+      return (
+        <Icon size="small" className={styles.bullet()} color={look === 'link' ? 'primary' : look} data-testid={type} />
+      );
     }
     return <div className={styles.bullet()} data-testid={type} />;
   };

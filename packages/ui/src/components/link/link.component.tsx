@@ -39,9 +39,9 @@ export function BaseLink(
       target={target}
       className={styles.base({ className })}
     >
-      {IconBefore && <IconBefore size={iconSize} color="link" className={styles.iconBefore()} />}
+      {IconBefore && <IconBefore size={iconSize} color="primary" className={styles.iconBefore()} />}
       <span>{children}</span>
-      {IconAfter && <IconAfter size={iconSize} color="link" className={styles.iconAfter()} />}
+      {IconAfter && <IconAfter size={iconSize} color="primary" className={styles.iconAfter()} />}
     </a>
   );
 }

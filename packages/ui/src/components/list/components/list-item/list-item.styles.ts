@@ -26,9 +26,6 @@ export const styles = tv(
         hero: {
           bullet: 'border-border-hero bg-surface-hero after:border-border-hero',
         },
-        neutral: {
-          bullet: 'border-neutral[REPLACE_TOKEN] bg-neutral[REPLACE_TOKEN] after:border-neutral[REPLACE_TOKEN]',
-        },
         success: {
           bullet: 'border-border-success bg-surface-success after:border-border-success',
         },
@@ -36,7 +33,7 @@ export const styles = tv(
           bullet: 'border-border-danger bg-surface-danger after:border-border-danger',
         },
         link: {
-          bullet: 'border-link[REPLACE_TOKEN] after:border-link[REPLACE_TOKEN] bg-surface-primary',
+          bullet: 'border-border-primary bg-surface-primary after:border-border-primary',
         },
       },
       type: {

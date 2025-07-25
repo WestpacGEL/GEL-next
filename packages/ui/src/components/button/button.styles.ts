@@ -29,13 +29,13 @@ export const styles = tv(
       },
       look: {
         primary: {
-          base: 'relative border border-border-primary bg-surface-primary text-text-mono hover:bg-surface-primary active:bg-surface-primary-faint active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop',
+          base: 'relative border border-border-primary bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-primary-faint active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop',
         },
         hero: {
-          base: 'border border-border-hero bg-surface-hero text-text-mono hover:bg-surface-hero/70 active:bg-surface-hero/50',
+          base: 'border border-border-hero bg-surface-hero text-text-mono hover:bg-surface-hover-hero active:bg-surface-hero/50',
         },
         faint: {
-          base: 'border border-border-muted-strong bg-surface-muted-faint text-text-muted hover:bg-surface-muted-faint/70 active:bg-surface-muted-faint/50',
+          base: 'border border-border-muted-strong bg-surface-muted-faint text-text-muted hover:bg-surface-hover-mono active:bg-surface-muted-faint/50',
         },
         link: { base: 'text-text-link underline' },
         unstyled: { base: 'p-0 text-left' },
@@ -65,19 +65,19 @@ export const styles = tv(
         look: 'primary',
         soft: true,
         className:
-          'bg-surface-white-faint text-text-body hover:text-text-mono active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono',
+          'bg-surface-white-faint text-text-body hover:bg-surface-hover-primary-faint active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono',
       },
       {
         slots: ['base'],
         look: 'hero',
         soft: true,
-        className: 'bg-surface-white-faint text-text-body hover:text-text-mono',
+        className: 'bg-surface-white-faint text-text-body hover:bg-surface-hover-hero-faint',
       },
       {
         slots: ['base'],
         look: 'faint',
         soft: true,
-        className: 'bg-surface-white-faint hover:bg-surface-muted-faint active:bg-surface-muted-faint',
+        className: 'bg-surface-white-faint hover:bg-surface-muted-pale active:bg-surface-muted-faint',
       },
       {
         slots: ['iconBefore'],
