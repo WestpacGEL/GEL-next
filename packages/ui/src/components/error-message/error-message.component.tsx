@@ -13,14 +13,14 @@ export function ErrorMessage({ className, tag: Tag = 'div', icon: Icon, message,
     <ul className={styles.list({})} {...props}>
       {message.map((msg, index) => (
         <li key={index} className={styles.base({ className })}>
-          <FinalIcon copyrightYear="2023" className={styles.icon({})} size="xsmall" look="outlined" />
+          <FinalIcon color="danger" copyrightYear="2023" className={styles.icon({})} size="xsmall" look="outlined" />
           {msg}
         </li>
       ))}
     </ul>
   ) : (
     <Tag className={styles.base({ className: `${className} mb-2` })} {...props}>
-      <FinalIcon copyrightYear="2023" className={styles.icon({})} size="xsmall" look="outlined" />
+      <FinalIcon color="danger" copyrightYear="2023" className={styles.icon({})} size="xsmall" look="outlined" />
       {message as ReactNode}
     </Tag>
   );

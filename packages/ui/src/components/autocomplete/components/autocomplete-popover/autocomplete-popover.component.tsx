@@ -35,9 +35,19 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
 
       <div
         {...popoverProps}
-        style={{ ...popoverProps.style, width: width ? `${width}px` : undefined }}
+        style={{
+          ...popoverProps.style,
+          width: width ? `${width}px` : undefined,
+          maxHeight:
+            popoverProps.style?.maxHeight && +popoverProps.style?.maxHeight <= 400
+              ? +popoverProps.style.maxHeight
+              : 400,
+        }}
         ref={popoverRef}
-        className={clsx('z-10 max-h-[400px] overflow-auto border border-border bg-white shadow-lg', className)}
+        className={clsx(
+          'z-10 mt-1 max-h-[400px] overflow-auto rounded bg-white shadow-[0_2px_12px_rgba(0,0,0,0.2)]',
+          className,
+        )}
       >
         {!isNonModal && <DismissButton onDismiss={() => state.close()} />}
         {children}
