@@ -18,6 +18,7 @@ const meta: Meta = {
             label="Toggle opposite mode"
             checked={checked}
             onChange={isSelected => {
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
               dataThemeEl.setAttribute('data-theme', isSelected ? toggledTheme.toLowerCase() : theme.toLowerCase());
               setChecked(isSelected);
             }}

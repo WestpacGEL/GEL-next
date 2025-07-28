@@ -9,7 +9,6 @@ export const styles = tv(
         faint: 'border-border-muted-soft bg-surface-muted-soft text-text-muted',
         hero: 'border-border-hero bg-surface-hero text-text-mono',
         info: 'border-border-info bg-surface-info text-text-mono',
-        neutral: 'border-surface-muted-vivid bg-surface-muted-vivid text-text-mono',
         muted: 'border-border-muted bg-surface-muted text-text-mono',
         primary: 'border-border-primary bg-surface-primary text-text-mono',
         success: 'border-border-success bg-surface-success text-text-mono',
@@ -18,7 +17,6 @@ export const styles = tv(
         'faint-inverted': 'border-none bg-surface-muted-soft text-text-muted',
         'hero-inverted': 'border-none bg-surface-hero-faint text-text-hero',
         'info-inverted': 'border-none bg-surface-info-faint text-text-info',
-        'neutral-inverted': 'border-surface-muted-vivid bg-surface-white-faint text-text-body',
         'primary-inverted': 'border-none bg-surface-primary-faint text-text-primary',
         'success-inverted': 'border-none bg-surface-success-faint text-text-success',
         'warning-inverted': 'border-none bg-surface-warning-faint text-text-warning',
@@ -51,11 +49,6 @@ export const styles = tv(
         color: 'info',
         soft: true,
         className: 'text-text-info',
-      },
-      {
-        color: 'neutral',
-        soft: true,
-        className: 'text-text-body',
       },
       {
         color: 'muted',
