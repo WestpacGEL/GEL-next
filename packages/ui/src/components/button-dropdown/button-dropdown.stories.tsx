@@ -81,7 +81,7 @@ export const SoftLooks = () => (
 export const ButtonSizes = () => (
   <div>
     {SIZES.map(size => (
-      <>
+      <div key={size}>
         <h3 className="font-bold text-text-body">{size}</h3>
         <ButtonDropdown size={size} text={size}>
           <p className="text-text-body">
@@ -92,7 +92,7 @@ export const ButtonSizes = () => (
             ...
           </p>
         </ButtonDropdown>
-      </>
+      </div>
     ))}
     <h3 className="font-bold text-text-body">Responsive</h3>
     <ButtonDropdown

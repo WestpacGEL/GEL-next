@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Button } from '../button/button.component.js';
 import { AlertIcon, CloseIcon, InfoIcon, LimitIcon, SuccessIcon, WarningIcon } from '../icon/index.js';
@@ -50,6 +50,13 @@ export function Alert({
     onClose?.();
   }, [onClose]);
 
+  const iconColor = useMemo(() => {
+    if (look === 'system') {
+      return 'system-error-dark';
+    }
+    return look;
+  }, [look]);
+
   return (
     <LazyMotion features={loadAnimations}>
       <AnimatePresence initial={false}>
@@ -63,7 +70,11 @@ export function Alert({
           >
             <Tag className={styles.base({ className })} {...props}>
               <span className={styles.icon({ hasSize: iconSize ? true : false })}>
-                <Icon size={iconSize ? iconSize : { initial: 'small', xsl: 'medium' }} look="outlined" />
+                <Icon
+                  size={iconSize ? iconSize : { initial: 'small', xsl: 'medium' }}
+                  look="outlined"
+                  color={iconColor}
+                />
               </span>
               <div className={styles.body()}>
                 {!!heading && <HeadingTag className={styles.heading()}>{heading}</HeadingTag>}
@@ -77,7 +88,7 @@ export function Alert({
                   onClick={handleClose}
                   aria-label="Close alert"
                 >
-                  <CloseIcon size="small" />
+                  <CloseIcon size="small" color={iconColor} />
                 </Button>
               )}
             </Tag>

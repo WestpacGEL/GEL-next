@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useId, useRef } from 'react';
+import React, { useCallback, useEffect, useId, useMemo, useRef } from 'react';
 import { useButton, useOverlayTrigger } from 'react-aria';
 import { useOverlayTriggerState } from 'react-stately';
 
@@ -45,11 +45,18 @@ export function ButtonDropdown({
     };
   }, [keyHandler]);
 
+  const iconColor = useMemo(() => {
+    if (look === 'faint') {
+      return 'muted';
+    }
+    return soft ? 'mono' : 'muted-vivid';
+  }, [look, soft]);
+
   return (
     <>
       <Button
         ref={ref}
-        iconAfter={(props: IconProps) => <DropDownIcon aria-hidden {...props} />}
+        iconAfter={(props: IconProps) => <DropDownIcon color={iconColor} aria-hidden {...props} />}
         iconBefore={IconBefore}
         size={size}
         look={look}

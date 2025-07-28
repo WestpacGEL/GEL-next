@@ -30,7 +30,7 @@ export function BottomSheetDialog({
         </h3>
         {onClose && (
           <Button size="small" look="link" onClick={onClose} aria-label="close" className={styles.closeBtn()}>
-            <CloseIcon color="muted" size="small" />
+            <CloseIcon color="primary" size="small" />
           </Button>
         )}
       </header>

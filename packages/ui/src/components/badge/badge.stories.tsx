@@ -4,13 +4,12 @@ import { Button } from '../index.js';
 
 import { Badge } from './badge.component.js';
 
-const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'muted', 'primary', 'success', 'warning'] as const;
+const COLORS = ['danger', 'faint', 'hero', 'info', 'muted', 'primary', 'success', 'warning'] as const;
 const INVERTED_COLORS = [
   'danger-inverted',
   'faint-inverted',
   'hero-inverted',
   'info-inverted',
-  'neutral-inverted',
   'primary-inverted',
   'success-inverted',
   'warning-inverted',
