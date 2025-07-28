@@ -12,7 +12,7 @@ export function Icon({
   children,
   className,
   size = 'medium',
-  color,
+  color = 'muted',
   ...props
 }: IconProps) {
   return (

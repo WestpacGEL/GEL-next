@@ -66,7 +66,7 @@ export const WithIcons: Story = {
         title: (
           <div className="flex flex-1 items-center justify-between">
             <div className="flex items-center gap-2">
-              <AccountIcon size="small" look="outlined" />
+              <AccountIcon color="muted-vivid" size="small" look="outlined" />
               <p className="typography-body-9">Accounts</p>
             </div>
             <Badge color="success">Label</Badge>
@@ -78,7 +78,7 @@ export const WithIcons: Story = {
         title: (
           <div className="flex flex-1 items-center justify-between">
             <div className="flex items-center gap-2">
-              <CreditCardsIcon size="small" look="outlined" />
+              <CreditCardsIcon color="muted-vivid" size="small" look="outlined" />
               <p className="typography-body-9">Credit cards</p>
             </div>
             <Badge color="success">Label</Badge>
@@ -90,7 +90,7 @@ export const WithIcons: Story = {
         title: (
           <div className="flex flex-1 items-center justify-between">
             <div className="flex items-center gap-2">
-              <ShareIosIcon size="small" look="outlined" />
+              <ShareIosIcon color="muted-vivid" size="small" look="outlined" />
               <p className="typography-body-9">Shares</p>
             </div>
             <Badge color="success">Label</Badge>
@@ -102,7 +102,7 @@ export const WithIcons: Story = {
         title: (
           <div className="flex flex-1 items-center justify-between">
             <div className="flex items-center gap-2">
-              <InvoiceIcon size="small" look="outlined" />
+              <InvoiceIcon color="muted-vivid" size="small" look="outlined" />
               <p className="typography-body-9">Invoices</p>
             </div>
             <Badge color="success">Label</Badge>
