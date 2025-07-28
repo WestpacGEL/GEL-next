@@ -71,55 +71,37 @@ export const Pill: Story = {
  */
 export const Colors = () => (
   <div className="flex flex-col gap-2">
-    <div className="flex gap-2">
-      {COLORS.map(color => (
-        <Badge key={color} color={color}>
-          {color}
-        </Badge>
-      ))}
-    </div>
-    <div className="flex gap-2">
-      {COLORS.map(color => (
-        <Badge key={color} color={color} type="pill">
-          {color}
-        </Badge>
-      ))}
-    </div>
-    <h3 className="typography-body-9 font-bold">Inverted</h3>
-    <div className="flex flex-col gap-2 bg-muted p-2">
-      <div className="flex flex-wrap gap-2">
-        {INVERTED_COLORS.map(color => (
-          <Badge key={color} color={color}>
-            {color}
-          </Badge>
-        ))}
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
+        <h3 className="typography-body-10 text-text-muted">Default</h3>
+        <div className="flex gap-2">
+          {COLORS.map(color => (
+            <Badge key={color} color={color}>
+              {color}
+            </Badge>
+          ))}
+        </div>
       </div>
-      <div className="flex flex-wrap gap-2">
-        {INVERTED_COLORS.map(color => (
-          <Badge key={color} color={color} type="pill">
-            {color}
-          </Badge>
-        ))}
+      <div className="flex flex-col gap-2">
+        <h3 className="typography-body-10 text-text-muted">Soft</h3>
+        <div className="flex gap-2">
+          {COLORS.map(color => (
+            <Badge soft key={color} color={color}>
+              {color}
+            </Badge>
+          ))}
+        </div>
       </div>
-    </div>
-  </div>
-);
-
-export const Soft = () => (
-  <div className="flex flex-col gap-2">
-    <div className="flex gap-2">
-      {COLORS.map(color => (
-        <Badge key={color} color={color} soft>
-          {color}
-        </Badge>
-      ))}
-    </div>
-    <div className="flex gap-2">
-      {COLORS.map(color => (
-        <Badge key={color} color={color} type="pill" soft>
-          {color}
-        </Badge>
-      ))}
+      <div className="flex flex-col gap-2">
+        <h3 className="typography-body-10 text-text-muted">Inverted</h3>
+        <div className="flex gap-2">
+          {INVERTED_COLORS.map(color => (
+            <Badge key={color} color={color}>
+              {color}
+            </Badge>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 );
