@@ -38,14 +38,49 @@ function BaseButton(
     hasChildren: !!children,
   });
 
+  // eslint-disable-next-line sonarjs/function-return-type
+  const finalIconColor = useMemo(() => {
+    if (iconColor !== undefined) {
+      return iconColor;
+    }
+    if (!soft && look === 'faint') {
+      return 'muted';
+    }
+    if (!soft) {
+      return 'mono';
+    }
+    switch (look) {
+      case 'primary':
+      case 'hero':
+        return look;
+      case 'faint':
+        return 'muted';
+      case 'link':
+        return 'primary';
+      case 'unstyled':
+        return;
+    }
+  }, [iconColor, look, soft]);
   return (
     <Tag ref={ref} className={styles.base({ className })} {...mergeProps(props, focusProps)}>
       {IconBefore && (
-        <IconBefore look={iconLook} size={btnIconSize} className={styles.iconBefore()} color={iconColor} aria-hidden />
+        <IconBefore
+          look={iconLook}
+          size={btnIconSize}
+          className={styles.iconBefore()}
+          color={finalIconColor}
+          aria-hidden
+        />
       )}
       <span className={styles.text()}>{children}</span>
       {IconAfter && (
-        <IconAfter look={iconLook} size={btnIconSize} className={styles.iconAfter()} color={iconColor} aria-hidden />
+        <IconAfter
+          look={iconLook}
+          size={btnIconSize}
+          className={styles.iconAfter()}
+          color={finalIconColor}
+          aria-hidden
+        />
       )}
     </Tag>
   );
