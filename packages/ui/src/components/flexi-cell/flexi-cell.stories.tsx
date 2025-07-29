@@ -45,7 +45,7 @@ const meta: Meta<typeof FlexiCell> = {
   },
 };
 
-const imgString = 'https://res.cloudinary.com/westpac-gel/image/upload/v1721621971/house-demo-image_e1ycip.png';
+const imgString = 'https://www.westpac.com.au/content/dam/public/gel/images/house-demo-image.png';
 
 export default meta;
 

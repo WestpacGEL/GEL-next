@@ -455,11 +455,11 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="size-5 bg-muted text-muted">
-                        <BpayIcon look="filled" className="size-3 rounded-full bg-muted text-xs text-white" />
+                      <FlexiCellCircle className="size-5 bg-surface-hero text-text-mono">
+                        <BpayIcon color="mono" look="filled" className="size-3 rounded-full text-xs" />
                       </FlexiCellCircle>
                     ) : (
-                      <FlexiCellCircle className="size-5 bg-muted text-white">{initials}</FlexiCellCircle>
+                      <FlexiCellCircle className="size-5 bg-surface-hero text-text-mono">{initials}</FlexiCellCircle>
                     )
                   }
                   after={
@@ -481,11 +481,11 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="size-5 bg-muted text-muted">
-                        <BpayIcon look="filled" className="size-3 rounded-full bg-muted text-xs text-white" />
+                      <FlexiCellCircle className="size-5 bg-surface-hero text-text-mono">
+                        <BpayIcon color="mono" look="filled" className="size-3 rounded-full text-xs" />
                       </FlexiCellCircle>
                     ) : (
-                      <FlexiCellCircle className="size-5 bg-muted text-white">{initials}</FlexiCellCircle>
+                      <FlexiCellCircle className="size-5 bg-surface-hero text-text-mono">{initials}</FlexiCellCircle>
                     )
                   }
                   after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
