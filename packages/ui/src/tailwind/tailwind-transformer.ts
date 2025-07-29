@@ -1,10 +1,15 @@
 import { withTV } from 'tailwind-variants/transformer';
 import { type Config } from 'tailwindcss';
 
-import { WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin } from '@westpac/ui/tailwind';
+import { BrandKey, WestpacUIKitBasePlugin, WestpacUIKitThemesPlugin } from '@westpac/ui/tailwind';
 
-export const withGEL = (config: Config) => {
+type GELConfig = {
+  brands?: BrandKey[];
+} & Config;
+
+export const withGEL = ({ brands, ...config }: GELConfig) => {
   const configPlugins = Array.isArray(config.plugins) ? config.plugins : [config.plugins];
+  const themesPlugin = WestpacUIKitThemesPlugin({ brands });
   return withTV({
     ...config,
     safelist: [
@@ -16,7 +21,7 @@ export const withGEL = (config: Config) => {
     plugins: [
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       WestpacUIKitBasePlugin(config?.options),
-      WestpacUIKitThemesPlugin,
+      themesPlugin,
       ...(config.plugins ? configPlugins : []),
     ],
   });

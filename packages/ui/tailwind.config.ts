@@ -7,7 +7,7 @@ const config: Config = withTV({
   jit: true,
   relative: true,
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-  plugins: [WestpacUIKitBasePlugin({ brandFonts: { src: '/fonts' } }), WestpacUIKitThemesPlugin],
+  plugins: [WestpacUIKitBasePlugin({ brandFonts: { src: '/fonts' } }), WestpacUIKitThemesPlugin({})],
   future: {
     hoverOnlyWhenSupported: true,
   },
