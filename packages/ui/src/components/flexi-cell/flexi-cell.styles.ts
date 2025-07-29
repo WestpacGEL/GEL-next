@@ -3,14 +3,14 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'relative flex bg-surface-white-faint transition-colors',
+      base: 'relative flex transition-colors',
       topBadgeWrapper: 'absolute right-[-1px] top-[-1px]',
       topBadge: 'rounded-br-none rounded-tl-none',
     },
     variants: {
       withBorder: {
         true: {
-          base: 'rounded border border-border-muted-strong',
+          base: 'rounded border border-border-muted-soft bg-surface-white-faint',
         },
         false: { base: '!px-0' },
       },

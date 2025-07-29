@@ -234,7 +234,7 @@ export const ForeignCurrencyPayeeList: Story = {
       <>
         {MOCK_FOREIGNPAYEES.map(({ title, id, payees }) => (
           <div key={id}>
-            <h3 className="mb-3 border-b border-border pb-1 font-normal">{title}</h3>
+            <h3 className="mb-3 border-b border-border-muted-soft pb-1 font-normal">{title}</h3>
             {payees.map(({ name, number, paidAt, bank, code }) =>
               paidAt ? (
                 <FlexiCell
@@ -446,7 +446,7 @@ export const PayeeList: Story = {
       <>
         {MOCK_PAYEES.map(({ title, id, payees }) => (
           <div key={id}>
-            <h3 className="mb-3 border-b border-border pb-1 font-normal">{title}</h3>
+            <h3 className="mb-3 border-b border-border-muted-soft pb-1 font-normal">{title}</h3>
             {payees.map(({ name, initials, bpay, number, paidAt }) =>
               paidAt ? (
                 <FlexiCell
@@ -540,7 +540,7 @@ export const StatusTiles = () => {
         size={{ initial: 'default', md: 'large' }}
       >
         <IdCardIcon className="mb-1 md:hidden" look="outlined" color="hero" />
-        <FlexiCellLabel className="text-hero" tag="h4">
+        <FlexiCellLabel className="text-text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>
@@ -568,7 +568,7 @@ export const StatusTiles = () => {
         size={{ initial: 'default', md: 'large' }}
       >
         <EducationIcon className="mb-1 md:hidden" look="outlined" color="hero" />
-        <FlexiCellLabel className="text-hero" tag="h4">
+        <FlexiCellLabel className="text-text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>
@@ -596,7 +596,7 @@ export const StatusTiles = () => {
         size={{ initial: 'default', md: 'large' }}
       >
         <EmailIcon className="mb-1 md:hidden" look="outlined" color="hero" />
-        <FlexiCellLabel className="text-hero" tag="h4">
+        <FlexiCellLabel className="text-text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>
@@ -625,7 +625,7 @@ export const StatusTiles = () => {
         size={{ initial: 'default', md: 'large' }}
       >
         <HouseIcon className="mb-1 md:hidden" look="outlined" color="hero" />
-        <FlexiCellLabel className="text-hero" tag="h4">
+        <FlexiCellLabel className="text-text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>
