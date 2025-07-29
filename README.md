@@ -80,6 +80,24 @@ Ensure tailwind directives are added to your main CSS file.
 If you have initialized your project with Nx build system follow the official [Nx tailwind documentation](https://nx.dev/recipes/react/using-tailwind-css-in-react#manual-setup-instructions) to configure tailwind.
 Nx based projects requires `__dirname` prefix to the `paths` in the `tailwind.config.js` file and `postcss` file.
 
+### Feature: Brand Filtering Support
+
+You can now pass a `brands: BrandKey[]` parameter to filter which brand-specific CSS variables are included.
+
+```ts
+import { withGEL } from '@westpac/ui/tailwind';
+
+/** @type {import('tailwindcss').Config} */
+const config = withGEL({
+  relative: true,
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
+  safelist: [],
+  brands: ['wbc', 'bom'], // In this scenario, it will import only the css variables of "wbc" and "bom"
+});
+
+export default config;
+```
+
 ### Usage
 
 #### Using brands
