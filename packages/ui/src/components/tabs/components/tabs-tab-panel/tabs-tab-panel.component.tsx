@@ -10,7 +10,7 @@ export function TabsTabPanel({ className, state, look, id, keepMounted = false, 
   const { isFocused, focusProps } = useFocusRing();
   const { tabPanelProps } = useTabPanel({ ...props }, state, ref);
 
-  const isSelected = state.selectedKey === id;
+  const isSelected = state.selectedItem?.key === id;
 
   // if not selected and panel does not needto be retained in DOM, return null
   if (!isSelected && !keepMounted) {

@@ -60,7 +60,13 @@ export function Tabs({
       </div>
 
       {[...state.collection].map(item => (
-        <TabsTabPanel look={look} id={item.key as string} state={state} keepMounted={item.props['keepMounted']} />
+        <TabsTabPanel
+          look={look}
+          key={item.key}
+          id={item.key as string}
+          state={state}
+          keepMounted={(item.props as TabsTabPanelProps)?.keepMounted}
+        />
       ))}
     </div>
   );
