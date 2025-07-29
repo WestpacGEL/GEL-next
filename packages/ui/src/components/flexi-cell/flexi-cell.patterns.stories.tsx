@@ -136,7 +136,7 @@ export const AccountLists: Story = {
       <>
         {MOCK_ACCOUNTS.map(({ title, id, accounts }) => (
           <div key={id}>
-            <h3 className="mb-3 font-normal">{title}</h3>
+            <h3 className="mb-3 font-normal text-text-body">{title}</h3>
             {accounts.map(({ name, amount, number }) => (
               <FlexiCell
                 tag="a"
@@ -234,7 +234,7 @@ export const ForeignCurrencyPayeeList: Story = {
       <>
         {MOCK_FOREIGNPAYEES.map(({ title, id, payees }) => (
           <div key={id}>
-            <h3 className="mb-3 border-b border-border-muted-soft pb-1 font-normal">{title}</h3>
+            <h3 className="mb-3 border-b border-border-muted-soft pb-1 font-normal text-text-body">{title}</h3>
             {payees.map(({ name, number, paidAt, bank, code }) =>
               paidAt ? (
                 <FlexiCell
@@ -446,7 +446,7 @@ export const PayeeList: Story = {
       <>
         {MOCK_PAYEES.map(({ title, id, payees }) => (
           <div key={id}>
-            <h3 className="mb-3 border-b border-border-muted-soft pb-1 font-normal">{title}</h3>
+            <h3 className="mb-3 border-b border-border-muted-soft pb-1 font-normal text-text-body">{title}</h3>
             {payees.map(({ name, initials, bpay, number, paidAt }) =>
               paidAt ? (
                 <FlexiCell
