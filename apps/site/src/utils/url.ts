@@ -1,3 +1,5 @@
+/* eslint-disable sonarjs/slow-regex */
+/* eslint-disable sonarjs/prefer-regexp-exec */
 export const getGetParameters = (url: string): Record<string, string> => {
   const searchParams = url.replace(/.+\?/gi, '');
   return searchParams.split('&').reduce((acc, current) => {

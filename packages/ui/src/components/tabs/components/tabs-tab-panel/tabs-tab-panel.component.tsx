@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import React, { useRef } from 'react';
 import { mergeProps, useFocusRing, useTabPanel } from 'react-aria';
 

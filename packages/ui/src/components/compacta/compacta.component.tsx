@@ -11,11 +11,11 @@ import { VisuallyHidden } from '../index.js';
 import { styles as compactaStyles } from './compacta.styles.js';
 import { type CompactaProps } from './compacta.types.js';
 
-interface Action {
+type Action = {
   id?: string;
   index: number;
   type: string;
-}
+};
 
 const loadAnimations = () => import('./compacta.utils.js').then(res => res.default);
 

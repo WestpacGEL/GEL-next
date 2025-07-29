@@ -267,7 +267,7 @@ describe('InputGroup', () => {
     });
 
     describe('when the value prop is defined', () => {
-      test('then the value of the text input should match the value', async () => {
+      test('then the value of the text input should match the value', () => {
         const handleChange = vi.fn();
         render(
           <InputGroup label="Mock input">

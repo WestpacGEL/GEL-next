@@ -26,7 +26,7 @@ export function BottomSheet({
         secondaryLabel={secondaryLabel}
         primaryOnClick={primaryOnClick}
         secondaryOnClick={secondaryOnClick}
-        onClose={state.close}
+        onClose={() => state.close()}
         title={title}
       >
         {children}

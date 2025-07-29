@@ -1,85 +1,111 @@
-require('@rushstack/eslint-patch/modern-module-resolution');
+import { fixupPluginRules } from '@eslint/compat';
+import tailwindcssPlugin from 'eslint-plugin-tailwindcss';
+import importPlugin from 'eslint-plugin-import';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import promisePlugin from 'eslint-plugin-promise';
+import sonarjsPlugin from 'eslint-plugin-sonarjs';
+import globals from 'globals';
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import * as espree from 'espree';
 
-module.exports = {
-  root: true,
-  env: {
-    es6: true,
-    node: true,
-    jest: true,
-  },
-  parserOptions: { ecmaVersion: 9, sourceType: 'module' },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:tailwindcss/recommended'],
-  plugins: ['import', 'prettier'],
-  ignorePatterns: ['node_modules/*', 'dist/*'],
-  rules: {
-    'prettier/prettier': 'error',
-    'sort-imports': [
-      'error',
-      {
-        ignoreCase: false,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+export default tseslint.config(
+  {
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        ...globals.jest,
       },
-    ],
-    'import/first': 'error',
-    'import/newline-after-import': 'error',
-    'import/no-duplicates': 'error',
-    'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
-        pathGroups: [
-          {
-            pattern: '@/',
-            group: 'internal',
-          },
-        ],
-        'newlines-between': 'always',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
+      ecmaVersion: 9,
+      sourceType: 'module',
+      parserOptions: {
+        projectService: {
+          allowDefaultProject: ['*.js', '*.mjs', '*.cjs'],
         },
-        distinctGroup: true,
-      },
-    ],
-    'tailwindcss/no-custom-classname': [
-      'warn',
-      {
-        ignoredKeys: ['compoundVariants', 'defaultVariants', 'responsiveVariants', 'compoundSlots'],
-      },
-    ],
-    'no-console': 'error',
-  },
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
+        tsconfigRootDir: import.meta.dirname,
         project: ['packages/*/tsconfig.json', 'apps/*/tsconfig.json'],
       },
     },
-  },
-  overrides: [
-    {
-      files: ['**/*.ts', '**/*.tsx'],
-      env: {
-        browser: true,
-        es6: true,
-        node: true,
-        jest: true,
+    settings: {
+      'import/parsers': {
+        '@typescript-eslint/parser': ['.ts', '.tsx'],
       },
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:import/recommended',
-        'plugin:import/typescript',
-        'plugin:promise/recommended',
-        'plugin:typescript-sort-keys/recommended',
-        'plugin:sonarjs/recommended',
-      ],
+
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: ['packages/*/tsconfig.json', 'apps/*/tsconfig.json'],
+        },
+      },
     },
-  ],
-};
+  },
+  js.configs.recommended,
+  tseslint.configs.recommendedTypeChecked,
+  sonarjsPlugin.configs.recommended,
+  eslintPluginPrettierRecommended,
+  ...tseslint.configs.stylistic,
+  ...tseslint.configs.strict,
+  tailwindcssPlugin.configs['flat/recommended'],
+  {
+    plugins: {
+      promise: fixupPluginRules(promisePlugin),
+      import: fixupPluginRules(importPlugin),
+    },
+    rules: {
+      'import/first': 'error',
+      'import/newline-after-import': 'error',
+      'import/no-duplicates': 'error',
+      'import/order': [
+        'error',
+        {
+          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
+          pathGroups: [
+            {
+              pattern: '@/',
+              group: 'internal',
+            },
+          ],
+          'newlines-between': 'always',
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+          distinctGroup: true,
+        },
+      ],
+      'tailwindcss/no-custom-classname': [
+        'warn',
+        {
+          ignoredKeys: ['compoundVariants', 'defaultVariants', 'responsiveVariants', 'compoundSlots'],
+        },
+      ],
+      'sonarjs/todo-tag': 'off',
+      '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
+      'no-console': 'error',
+      'sonarjs/prefer-read-only-props': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
+    },
+  },
+  {
+    files: ['**/*.cjs'],
+    languageOptions: {
+      globals: {
+        ...globals.commonjs,
+      },
+    },
+  },
+  {
+    files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
+    languageOptions: {
+      parser: espree, // Use plain JS parser
+      ecmaVersion: 2022,
+      sourceType: 'module',
+      globals: {
+        ...globals.node,
+      },
+    },
+    rules: Object.fromEntries(Object.keys(tseslint.plugin.rules).map(rule => [`@typescript-eslint/${rule}`, 'off'])),
+  },
+  { ignores: ['node_modules/*', 'dist/*'] },
+);

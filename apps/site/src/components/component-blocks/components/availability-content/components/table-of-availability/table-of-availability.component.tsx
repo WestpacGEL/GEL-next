@@ -6,14 +6,14 @@ import React from 'react';
 
 import { styles as TableOfAvailabilityStyles } from './table-of-availability.styles';
 
-interface TableOfAvailabilityProps {
+type TableOfAvailabilityProps = {
   alternativeGel?: string;
   alternativeLegacyWdp?: string;
   alternativeMesh?: string;
   availableGel: string;
   availableLegacyWdp: string;
   availableMesh: string;
-}
+};
 
 const availabilityMap: Record<
   string,

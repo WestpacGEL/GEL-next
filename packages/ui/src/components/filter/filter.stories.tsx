@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { type Meta, type StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, type StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useMemo, useState } from 'react';
 
 import { FlexiCellAdornment } from '../flexi-cell/components/flexi-cell-adornment/flexi-cell-adornment.component.js';

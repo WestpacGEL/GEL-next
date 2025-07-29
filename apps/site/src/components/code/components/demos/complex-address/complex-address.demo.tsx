@@ -1,4 +1,4 @@
-import { Field, Form, FormGroup, Input, Select, SelectProps } from '@westpac/ui';
+import { Autocomplete, AutocompleteItem, Field, Form, FormGroup, Input, Select, SelectProps } from '@westpac/ui';
 import { Fragment, useState } from 'react';
 
 const AddressManualComplexPattern = ({ property = 'house' }) => {
@@ -47,12 +47,12 @@ const AddressManualComplexPattern = ({ property = 'house' }) => {
       </FormGroup>
       <FormGroup>
         <Field label="Street type">
-          <Select size="large" className="w-full sm:w-5/12">
-            <option>Select</option>
-            <option>Street</option>
-            <option>Road</option>
-            <option>Avenue</option>
-          </Select>
+          <Autocomplete size="large" className="w-full sm:w-5/12">
+            <AutocompleteItem key="select">Select</AutocompleteItem>
+            <AutocompleteItem key="street">Street</AutocompleteItem>
+            <AutocompleteItem key="road">Road</AutocompleteItem>
+            <AutocompleteItem key="avenue">Avenue</AutocompleteItem>
+          </Autocomplete>
         </Field>
       </FormGroup>
       <FormGroup>

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { render, screen } from '@testing-library/react';
 
 import { DatePicker } from './date-picker.component.js';
@@ -21,12 +23,12 @@ vi.mock('@duetds/date-picker/custom-element', () => {
             if (!dateAdapter) {
               return;
             }
-            const formattedDate = dateAdapter?.format(new Date('2029-12-04T00:12:00.000Z'));
+            const formattedDate: string = dateAdapter?.format(new Date('2029-12-04T00:12:00.000Z'));
             p.setAttribute('data-formatted-date', formattedDate);
             const _createDate = (s1: string, s2: string, s3: string) => {
               return `${s1}-${s2}-${s3}T00:00:00.000Z`;
             };
-            const parseDate = dateAdapter?.parse('12-12-2012', _createDate);
+            const parseDate: string = dateAdapter?.parse('12-12-2012', _createDate);
             p.setAttribute('data-parse-date', parseDate);
 
             this.appendChild(p);

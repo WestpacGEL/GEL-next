@@ -1,5 +1,42 @@
 # @westpac/ui
 
+## 0.44.0
+
+### Minor Changes
+
+- 2e9f7bd: Update pagination functionality to support larger number of pages and various pagination bug fixes
+
+### Patch Changes
+
+- a27d5ab: centralise the progress indicator inside of a button
+- 3f756a8: Click on default pagination(button) click triggers form submission when pagination component used under form tab
+- b5f54d8: adjusting the title size in order to place icon on the edges
+
+## 0.43.0
+
+### Minor Changes
+
+- daec52a: addec icons: arrow-thread-reply, fullscreen-exit, replay, volume-off, volume-on, closed-caption; updated icons pause and play
+- dd677c0: added: PayTo symbols
+- 93a3070: added icons: format color, button shape, color filters, tex increase, text bold, text large, and voiceover on
+- d43ef3c: add: panel header now takes react node as children
+
+### Patch Changes
+
+- 9a0e1a0: style updates for autocomplete
+
+## 0.42.3
+
+### Patch Changes
+
+- 7d91d01: focus outlined bug fix
+- 6da1e45: Autocomplete accepts ref
+- 6872395: fixes icon shrink bug on an error message
+- 7e81d8e: most browser has got default button type as submit. if we put popover inside form and click on it, triggers form submit handler
+- 5feefff: Alert with same focus outline style
+- 8024bc6: Selector radio group isDisabled bugfix
+- a9aac5e: updated focus behaviour of radio, checkbox and switch components
+
 ## 0.42.2
 
 ### Patch Changes

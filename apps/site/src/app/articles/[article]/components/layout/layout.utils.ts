@@ -1,4 +1,4 @@
-export const layoutMap: { [key: number]: { span: object; start: { [index: number]: object } } } = {
+export const layoutMap: Record<number, { span: object; start: Record<number, object> }> = {
   // body
   4: {
     span: {

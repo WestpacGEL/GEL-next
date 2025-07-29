@@ -1,4 +1,4 @@
-import { type Meta, type StoryObj } from '@storybook/react';
+import { type Meta, type StoryObj } from '@storybook/react-vite';
 import { useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '../index.js';
@@ -11,7 +11,7 @@ const StoryBottomSheet = ({ children, ...props }: BottomSheetProps) => {
 
   return (
     <>
-      <Button onClick={bottomSheetState.open}> Open Bottom Sheet </Button>
+      <Button onClick={() => bottomSheetState.open()}> Open Bottom Sheet </Button>
       <BottomSheet {...props} state={bottomSheetState}>
         {children}
       </BottomSheet>

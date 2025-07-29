@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { SearchIcon, VisibilityIcon } from '../icon/index.js';
 import { Button, Input, Select, Textarea } from '../index.js';

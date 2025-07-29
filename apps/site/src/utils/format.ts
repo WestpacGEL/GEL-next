@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Item } from '@/app/design-system/components/sidebar/components/navigation/navigation.types';
 
 export function formatComponentSlug(component: string) {

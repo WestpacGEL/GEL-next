@@ -7,6 +7,7 @@ export function TabPanel({ state, ...props }: { state: TabListState<AriaTabProps
   const { tabPanelProps } = useTabPanel(props, state, ref);
   return (
     <div {...tabPanelProps} ref={ref}>
+      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
       {state.selectedItem?.props.children}
     </div>
   );

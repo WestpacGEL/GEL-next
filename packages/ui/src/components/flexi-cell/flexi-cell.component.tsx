@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Ref, forwardRef } from 'react';
+import React, { Ref, forwardRef, useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
 import { ArrowRightIcon } from '../icon/index.js';
@@ -40,6 +40,17 @@ function FlexiCellBase(
     size,
   });
 
+  const content = useMemo(() => {
+    if (dualAction && href) {
+      return (
+        <FlexiCellBody tag="a" href={href}>
+          {children}
+        </FlexiCellBody>
+      );
+    }
+    return body ? <FlexiCellBody>{children}</FlexiCellBody> : <div className="flex-1">{children}</div>;
+  }, [body, children, dualAction, href]);
+
   return (
     <Tag
       {...({ ref } as object)}
@@ -54,16 +65,7 @@ function FlexiCellBase(
         </div>
       )}
       {before}
-
-      {dualAction && href ? (
-        <FlexiCellBody tag="a" href={href}>
-          {children}
-        </FlexiCellBody>
-      ) : body ? (
-        <FlexiCellBody>{children}</FlexiCellBody>
-      ) : (
-        <div className="flex-1">{children}</div>
-      )}
+      {content}
       {after}
       {withArrow && (
         <FlexiCellAdornment align="top">

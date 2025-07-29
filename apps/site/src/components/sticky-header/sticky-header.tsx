@@ -1,7 +1,7 @@
 'use client';
 
 import throttle from 'lodash.throttle';
-import { useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
 import { styles } from './sticky-header.styles';
 
@@ -11,7 +11,7 @@ export function StickyHeader({
   children,
   shadow = 'thick',
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   shadow?: 'thick' | 'thin';
   stickyPosition?: number;

@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { clsx } from 'clsx';
 
 import { Pictogram } from './pictogram.component.js';
@@ -10,7 +10,7 @@ const AllPictogramsExample = (props: PictogramProps) => {
   const { mode } = props;
   const informativePictograms = Object.entries(AllPictograms).reduce(
     (curr, [key, symbol]) => (!key.startsWith('WBC') ? { ...curr, [key]: symbol } : curr),
-    {} as { [index: string]: React.FC<PictogramProps> },
+    {} as Record<string, React.FC<PictogramProps>>,
   );
   return (
     <div className={clsx('grid grid-cols-5 gap-5', mode === 'light' && 'bg-hero text-white')}>

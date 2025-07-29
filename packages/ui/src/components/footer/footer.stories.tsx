@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { SecurityIcon } from '../icon/index.js';
 import { Link } from '../index.js';
@@ -30,7 +30,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const DefaultStory: Story = {
   // for underscored property
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (

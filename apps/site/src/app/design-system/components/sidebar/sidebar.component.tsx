@@ -3,7 +3,7 @@
 import { clsx } from 'clsx';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
-import React, { Key, useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
 import { CloseIcon } from '@/components/code/code.inject-components';
@@ -51,7 +51,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
   const params = useParams();
 
   const handleChange = useCallback(
-    async (key: Key) => {
+    (key: string | number | null) => {
       if (params.component) {
         const componentPath = Array.isArray(params.component) ? params.component.join('/') : params.component;
         router.push(`/design-system/${key}/${componentPath}`, { scroll: false });
@@ -67,7 +67,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
     <>
       <div
         className={clsx(
-          'fixed top-0 z-[60] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 bg-white text-text transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r lg:border-r-border',
+          'fixed top-0 z-[1010] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 bg-white text-text transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r lg:border-r-border',
           {
             '-translate-x-full': !open, //hide sidebar to the left when closed
           },
@@ -123,7 +123,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
       <div
         aria-hidden="true"
         className={clsx({
-          'max-lg:before:bg-black/40 z-[59] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed':
+          'max-lg:before:bg-black/40 z-[1009] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed':
             open,
         })}
       />

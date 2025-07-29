@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'sticky top-0 z-50 flex w-full items-center gap-2 bg-hero px-2 py-3.5 antialiased transition-colors sm:px-4 md:-top-27 md:h-[14.25rem] md:items-end',
+      base: 'sticky top-0 z-[1000] flex w-full items-center gap-2 bg-hero px-2 py-3.5 antialiased transition-colors sm:px-4 md:-top-27 md:h-[14.25rem] md:items-end',
       gridButton: 'flex h-6 items-stretch gap-0.5 p-1 focus-visible:focus-outline',
       gridButtonWrapper: 'fixed right-2 top-2 hidden items-center text-white sm:flex',
       hamburgerButton:

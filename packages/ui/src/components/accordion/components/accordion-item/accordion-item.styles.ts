@@ -4,7 +4,8 @@ export const styles = tv(
   {
     slots: {
       base: 'relative',
-      itemHeader: 'typography-body-9 flex w-full items-center justify-between px-3 py-2',
+      itemHeader: 'typography-body-9 flex w-full flex-1 items-center justify-between px-3 py-2',
+      headerTitleWrapper: 'flex-1 pr-2 text-left',
       indicator: 'size-3 rotate-90',
       content: 'hidden',
     },

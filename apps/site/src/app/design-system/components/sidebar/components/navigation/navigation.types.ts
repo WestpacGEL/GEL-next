@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { type BrandKey } from '@/app/types/brand.types';
 
 export type Item = {
@@ -26,7 +28,7 @@ export type ItemProps = {
 };
 
 export type GroupProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   crumbs: string[];
   label: string;
   level: number;

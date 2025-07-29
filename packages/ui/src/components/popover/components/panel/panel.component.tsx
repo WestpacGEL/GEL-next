@@ -35,7 +35,7 @@ export function BasePanel({
           <Button
             look="link"
             size="small"
-            onClick={state.close}
+            onClick={() => state.close()}
             className={styles.closeBtn()}
             iconAfter={() => <CloseIcon color="muted" size="small" aria-hidden />}
             aria-label="Close popover"

@@ -26,7 +26,7 @@ export const DownloadButton = () => {
 
   return (
     <div>
-      <Button onClick={handleClick}>Download logs</Button>
+      <Button onClick={() => void handleClick()}>Download logs</Button>
       <a className="hidden" ref={ref} download="logs.json" href={downloadUrl}>
         Download Logs
       </a>

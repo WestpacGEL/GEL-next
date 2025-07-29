@@ -23,7 +23,7 @@ export function Popover(props: PopoverProps) {
       {!isNonModal && <div {...underlayProps} className="fixed inset-0" />}
 
       <div {...popoverProps} ref={popoverRef} className={clsx('z-10 bg-white shadow-lg', className)}>
-        {!isNonModal && <DismissButton onDismiss={state.close} />}
+        {!isNonModal && <DismissButton onDismiss={() => state.close()} />}
         <LazyMotion features={loadAnimations}>
           <AnimatePresence initial mode="wait">
             {state.isOpen && (
@@ -48,7 +48,7 @@ export function Popover(props: PopoverProps) {
             )}
           </AnimatePresence>
         </LazyMotion>
-        <DismissButton onDismiss={state.close} />
+        <DismissButton onDismiss={() => state.close()} />
       </div>
     </Overlay>
   );

@@ -3,6 +3,7 @@ import { Grid, GridItem } from '@westpac/ui';
 import { ArrowRightIcon, CubeIcon, GenericFileIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
 import { useParams } from 'next/navigation';
+import { PropsWithChildren } from 'react';
 
 import { Container } from '@/app/design-system/components';
 import { type BrandKey } from '@/app/types/brand.types';
@@ -63,7 +64,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
   );
 }
 
-function Link({ children, ...props }: React.PropsWithChildren<LinkProps>) {
+function Link({ children, ...props }: PropsWithChildren<LinkProps>) {
   return (
     <NextLink
       className="typography-body-10 flex min-h-[3.4375rem] items-center justify-between border-b border-border py-1 outline-offset-[3px] outline-focus hover:text-primary hover:underline"

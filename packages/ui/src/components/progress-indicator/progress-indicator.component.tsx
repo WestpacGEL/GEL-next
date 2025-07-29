@@ -30,11 +30,13 @@ export function ProgressIndicator({
     xsmall: { strokeWidth: 30 },
   };
 
+  // TODO: fix this properly
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
   const strokeHalfWidth = sizeMap[size.toString()].strokeWidth / 2;
 
   return (
     <div aria-label={ariaLabel} className={styles.container()}>
-      <div className="relative">
+      <div className="relative flex items-center justify-center">
         <Icon viewBox="0 0 180 180" fill="none" color={color} className={styles.base({ className })} {...props}>
           <defs>
             <linearGradient id={`${id}-1`}>

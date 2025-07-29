@@ -1,10 +1,13 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useCallback, useState } from 'react';
+import { useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '../button/button.component.js';
-import { ClearIcon, DropDownIcon } from '../icon/index.js';
+import { ClearIcon, DownloadIcon } from '../icon/index.js';
 import { Input } from '../input/input.component.js';
 import { InputGroup } from '../input-group/input-group.component.js';
+import { ModalBody } from '../modal/index.js';
+import { Modal } from '../modal/modal.component.js';
 
 import { ProgressIndicator } from './progress-indicator.component.js';
 
@@ -46,9 +49,9 @@ export const ButtonsUsage = () => {
                 key={`${size}-${look}`}
                 iconAfter={ProgressIndicator}
                 iconSize={size === 'small' ? 'xsmall' : 'small'}
-                iconColor={look === 'faint' ? 'hero' : 'white'}
+                iconColor={look === 'faint' ? 'muted' : 'white'}
               >
-                Loading...{'  '}
+                Loading{'  '}
               </Button>
             ))}
           </div>
@@ -71,7 +74,7 @@ export const InputUsage = () => {
       <InputGroup
         label="Input with left progress indicator"
         before={{
-          icon: ProgressIndicator,
+          icon: () => <ProgressIndicator size="small" color="muted" />,
         }}
         after={{
           inset: true,
@@ -82,16 +85,60 @@ export const InputUsage = () => {
       </InputGroup>
       <InputGroup
         label="Input with right progress indicator"
-        before={{
-          inset: true,
-          element: <Button onClick={clearInput} look="link" iconAfter={DropDownIcon} iconColor="muted" />,
-        }}
         after={{
-          icon: ProgressIndicator,
+          icon: () => <ProgressIndicator size="small" color="muted" />,
         }}
       >
         <Input onChange={({ target: { value } }) => setInputValue(value)} value={inputValue} />
       </InputGroup>
+    </>
+  );
+};
+
+/**
+ * > Button loading usage
+ */
+export const ButtonLoadingUsage = () => {
+  const [loading, setLoading] = useState(false);
+  const handleSubmit = useCallback(async () => {
+    setLoading(true);
+    await new Promise<void>(resolve => {
+      setTimeout(() => resolve(), 3000);
+    });
+    setLoading(false);
+  }, []);
+
+  return (
+    <>
+      <Button
+        disabled={loading}
+        iconAfter={loading ? ProgressIndicator : DownloadIcon}
+        iconColor="white"
+        onClick={() => void handleSubmit()}
+      >
+        Download
+      </Button>
+    </>
+  );
+};
+
+/**
+ * > Usage in loading overlay
+ */
+export const LoadingOverlayUsage = () => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Modal size="full" state={state} aria-label="Loading overlay" className="bg-transparent">
+        <ModalBody
+          onClick={() => state.close()}
+          className="align-center min-h-100vh min-w-100vw flex flex-col justify-center"
+        >
+          <ProgressIndicator color="white" size="large" label="Loading..." />
+        </ModalBody>
+      </Modal>
+      <Button onClick={() => state.open()}>Open Loader</Button>
     </>
   );
 };

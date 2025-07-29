@@ -8,7 +8,7 @@ export type PanelProps = {
   /**
    * The heading of the panel
    */
-  heading?: string;
+  heading?: ReactNode;
   /**
    * Tag for heading defaults to h1
    * @default h1

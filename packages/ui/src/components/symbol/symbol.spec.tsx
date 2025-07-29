@@ -12,6 +12,7 @@ describe('Symbol', () => {
     expect(container).toBeInTheDocument();
   });
 
+  // eslint-disable-next-line sonarjs/no-globals-shadowing
   Object.entries(AllSymbols).forEach(([name, Symbol]) => {
     it(`renders the ${name} components`, () => {
       render(<Symbol />);

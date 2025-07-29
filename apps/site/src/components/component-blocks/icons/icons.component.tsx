@@ -5,21 +5,18 @@ import { Grid, GridItem } from '@westpac/ui/grid';
 import * as AllIcons from '@westpac/ui/icon';
 import { Input } from '@westpac/ui/input';
 import { Select } from '@westpac/ui/select';
-import { ChangeEvent, useCallback, useMemo, useState } from 'react';
+import { ChangeEvent, FC, useCallback, useMemo, useState } from 'react';
 
 export const Icons = () => {
   const [search, setSearch] = useState('');
   const [look, setLook] = useState<AllIcons.IconLook>('filled');
   const filteredIcons = useMemo(() => {
-    return Object.entries(AllIcons).reduce(
-      (acc: { Icon: React.FC<AllIcons.IconProps>; key: string }[], [iconName, Icon]) => {
-        if (iconName.toUpperCase().indexOf(search.toUpperCase()) === -1 || iconName === 'Icon') {
-          return acc;
-        }
-        return [...acc, { key: iconName, Icon }];
-      },
-      [],
-    );
+    return Object.entries(AllIcons).reduce((acc: { Icon: FC<AllIcons.IconProps>; key: string }[], [iconName, Icon]) => {
+      if (iconName.toUpperCase().indexOf(search.toUpperCase()) === -1 || iconName === 'Icon') {
+        return acc;
+      }
+      return [...acc, { key: iconName, Icon }];
+    }, []);
   }, [search]);
 
   const foundText = filteredIcons.length === 1 ? 'Found 1 icon' : `Found ${filteredIcons.length} icons`;

@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
 import { Symbol } from './symbol.component.js';
@@ -42,14 +42,14 @@ export const Offset = () => (
 export const AllSymbols = () => {
   const allSymbols = Object.entries(symbols).reduce(
     (curr, [key, symbol]) => (key.includes('Symbol') ? { ...curr, [key]: symbol } : curr),
-    {} as { [index: string]: React.FC<SymbolProps> },
+    {} as Record<string, React.FC<SymbolProps>>,
   );
 
   return (
     <div className="grid grid-cols-4 gap-5">
-      {Object.entries(allSymbols).map(([key, Symbol]) => (
+      {Object.entries(allSymbols).map(([key, SymbolComponent]) => (
         <div key={key} className=" flex flex-col items-center justify-end">
-          <Symbol />
+          <SymbolComponent />
           <p className="mt-2">{key}</p>
         </div>
       ))}
@@ -60,22 +60,22 @@ export const AllSymbols = () => {
 export const AllLogos = () => {
   const allLogos = Object.entries(symbols).reduce(
     (curr, [key, symbol]) => (key.includes('Logo') ? { ...curr, [key]: symbol } : curr),
-    {} as { [index: string]: React.FC<SymbolProps> },
+    {} as Record<string, React.FC<SymbolProps>>,
   );
 
   const logos = Object.entries(allLogos).reduce(
     (curr, [key, symbol]) => (!key.includes('Multibrand') ? { ...curr, [key]: symbol } : curr),
-    {} as { [index: string]: React.FC<SymbolProps> },
+    {} as Record<string, React.FC<SymbolProps>>,
   );
 
   const multibrandLargeLogos = Object.entries(allLogos).reduce(
     (curr, [key, symbol]) => (key.includes('MultibrandLarge') ? { ...curr, [key]: symbol } : curr),
-    {} as { [index: string]: React.FC<SymbolProps> },
+    {} as Record<string, React.FC<SymbolProps>>,
   );
 
   const multibrandSmallLogos = Object.entries(allLogos).reduce(
     (curr, [key, symbol]) => (key.includes('MultibrandSmall') ? { ...curr, [key]: symbol } : curr),
-    {} as { [index: string]: React.FC<SymbolProps> },
+    {} as Record<string, React.FC<SymbolProps>>,
   );
 
   const align: Align[] = ['left', 'center', 'right'];
@@ -95,7 +95,8 @@ export const AllLogos = () => {
       <h4 className="typography-body-8 mb-4 font-bold">Large</h4>
       <div className="grid grid-cols-4 gap-5">
         {Object.entries(multibrandLargeLogos).map(([key, Logo]) => (
-          <>
+          <div key={key} className="flex flex-col">
+            {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
             <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
               <Logo className="box-content border border-dashed border-border" />
               <p className="mt-2">{`<${key} />`}</p>
@@ -106,13 +107,14 @@ export const AllLogos = () => {
                 <p className="mt-2">{`<${key} align=${align} />`}</p>
               </div>
             ))}
-          </>
+          </div>
         ))}
       </div>
       <h4 className="typography-body-8 my-4 font-bold">Small</h4>
       <div className="grid grid-cols-4 gap-5">
         {Object.entries(multibrandSmallLogos).map(([key, Logo]) => (
           <>
+            {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
             <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
               <Logo className="box-content border border-dashed border-border" />
               <p className="mt-2">{`<${key} />`}</p>

@@ -73,7 +73,7 @@ describe('Tabs', () => {
     });
     expect(getByText('Senatus Populusque Romanus.')).toBeVisible();
   });
-  it('shows the content according to the selectedKey', async () => {
+  it('shows the content according to the selectedKey', () => {
     const { getByText } = render(
       <Tabs selectedKey="MaR">
         <TabsPanel key="FoR" title="Founding of Rome">

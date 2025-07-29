@@ -19,7 +19,7 @@ export function FilterButtons({
 }: FilterButtonsProps) {
   const scrollContainerRef = useRef<HTMLUListElement>(null);
   const [isScrollable, setIsScrollable] = useState({ left: false, right: false });
-  const scrollElementRefs = useRef<ButtonRef[]>(new Array(filterButtons.length));
+  const scrollElementRefs = useRef<ButtonRef[]>(new Array(filterButtons.length) as ButtonRef[]);
   const [scrollTarget, setScrollTarget] = useState({ left: -1, right: -1 });
 
   const styles = filterButtonsStyles();
@@ -30,12 +30,12 @@ export function FilterButtons({
         left: scroll,
         behavior: 'smooth',
       });
-    } else {
-      container.scrollTo({
-        left: scroll,
-        behavior: 'smooth',
-      });
+      return;
     }
+    container.scrollTo({
+      left: scroll,
+      behavior: 'smooth',
+    });
   }, []);
 
   const handleScrollButton = useCallback(
