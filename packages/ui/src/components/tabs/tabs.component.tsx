@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { AriaLinkOptions, Key, useTabList } from 'react-aria';
 import { Item, ItemProps, useTabListState } from 'react-stately';
 
-import { TabsTab, TabsTabPanel } from './components/index.js';
+import { TabsTab, TabsTabPanel, TabsTabPanelProps } from './components/index.js';
 import { styles as tabStyles } from './tabs.styles.js';
 import { type TabsProps } from './tabs.types.js';
 
@@ -58,11 +58,14 @@ export function Tabs({
           />
         ))}
       </div>
-      <TabsTabPanel look={look} key={state.selectedItem?.key} state={state} />
+
+      {[...state.collection].map(item => (
+        <TabsTabPanel look={look} id={item.key as string} state={state} keepMounted={item.props['keepMounted']} />
+      ))}
     </div>
   );
 }
 
 export const TabsPanel = Item as (
-  props: ItemProps<AriaLinkOptions> & AriaLinkOptions & { href?: string },
+  props: ItemProps<AriaLinkOptions> & AriaLinkOptions & { href?: string } & Omit<TabsTabPanelProps, 'state'>,
 ) => JSX.Element;
