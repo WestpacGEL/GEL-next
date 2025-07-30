@@ -73,6 +73,26 @@ export const Invalid: Story = {
 };
 
 /**
+ * > isReadOnly example
+ */
+export const IsReadOnly: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker isReadOnly />;
+  },
+};
+
+/**
+ * > isRequired example
+ */
+export const IsRequiredOnly: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker isRequired />;
+  },
+};
+
+/**
  * > Disabled
  */
 export const Disabled: Story = {
