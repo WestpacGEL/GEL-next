@@ -19,7 +19,6 @@ const exportZip = (zipRoot: string, zipFiles: string[], zipStoragePath: string, 
     const filePath = path.resolve(file);
     const fileData = fs.readFileSync(filePath);
     const relativePath = path.relative('assets', file);
-    console.log(relativePath);
     const zipPathInArchive = path.join(zipRoot, type, relativePath.replace(`${type}/`, ''));
     zip.addFile(zipPathInArchive, fileData);
   });
