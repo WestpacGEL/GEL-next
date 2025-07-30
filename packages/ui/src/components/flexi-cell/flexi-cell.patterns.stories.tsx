@@ -290,7 +290,7 @@ export const ForeignCurrencyPayeeList: Story = {
                       </svg>
                     </FlexiCellAdornment>
                   }
-                  after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
+                  after={<FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />}
                   size={{ initial: 'default', md: 'large' }}
                 >
                   <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
@@ -488,7 +488,7 @@ export const PayeeList: Story = {
                       <FlexiCellCircle className="size-5 bg-surface-hero text-text-mono">{initials}</FlexiCellCircle>
                     )
                   }
-                  after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
+                  after={<FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />}
                   size={{ initial: 'default', md: 'large' }}
                 >
                   <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>

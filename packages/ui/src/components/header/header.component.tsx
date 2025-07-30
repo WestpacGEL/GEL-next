@@ -1,7 +1,7 @@
 'use client';
 
 import throttle from 'lodash.throttle';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import { ArrowLeftIcon, HamburgerMenuIcon } from '../icon/index.js';
 import { Button, SkipLink } from '../index.js';
@@ -24,7 +24,7 @@ import {
 import { styles as headerStyles } from './header.styles.js';
 import { type HeaderProps } from './header.types.js';
 
-const logoMap = {
+const LOGO_MAP = {
   wbc: {
     logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
     largeLogo: (props: SymbolProps) => <WBCMultibrandLargeLogo {...props} />,
@@ -49,7 +49,7 @@ const logoMap = {
     logo: (props: SymbolProps) => <RAMSMultibrandSmallLogo {...props} />,
     largeLogo: (props: SymbolProps) => <RAMSMultibrandLargeLogo {...props} />,
   },
-};
+} as const;
 
 export function Header({
   brand,
@@ -87,8 +87,13 @@ export function Header({
 
   const logoAlignment = logoCenter ? 'center' : 'left';
 
-  const SmallLogo = logoMap[brand].logo;
-  const LargeLogo = logoMap[brand].largeLogo;
+  const finalBrand = useMemo(() => {
+    // Due to brands like 'wbc-light' and 'stg-light'
+    return brand.split('-')[0] as keyof typeof LOGO_MAP;
+  }, []);
+
+  const SmallLogo = LOGO_MAP[finalBrand].logo;
+  const LargeLogo = LOGO_MAP[finalBrand].largeLogo;
 
   const ButtonIcon = leftIcon === 'arrow' ? ArrowLeftIcon : HamburgerMenuIcon;
 
