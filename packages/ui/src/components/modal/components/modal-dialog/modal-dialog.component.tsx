@@ -29,7 +29,7 @@ export function ModalDialog({ className, body, onClose, size = 'md', ...props }:
     <div {...dialogProps} ref={ref} className={styles.base({ className })}>
       {onClose && (
         <button className={styles.close()} onClick={onClose} aria-label="Close modal" {...focusProps}>
-          <CloseIcon className="block" size="small" />
+          <CloseIcon color="primary" className="block" size="small" />
         </button>
       )}
       {props.title && (

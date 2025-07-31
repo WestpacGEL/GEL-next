@@ -14,7 +14,7 @@ export const styles = tv(
       },
       active: {
         true: 'z-10 border-border-hero bg-surface-hero text-text-mono',
-        false: 'hover:bg-surface-muted-faint',
+        false: 'hover:bg-surface-muted-faint bg-surface-white-pale',
       },
       disabled: {
         true: 'cursor-not-allowed bg-surface-muted-faint text-text-muted opacity-50',
