@@ -1,5 +1,5 @@
 import { clsx } from 'clsx';
-import { AnimatePresence, LazyMotion, m } from 'framer-motion';
+import { AnimatePresence, LazyMotion, m } from 'motion/react';
 import { useRef } from 'react';
 import { DismissButton, Overlay, usePopover } from 'react-aria';
 

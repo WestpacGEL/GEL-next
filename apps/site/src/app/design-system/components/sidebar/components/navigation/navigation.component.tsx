@@ -1,17 +1,17 @@
 'use client';
 
 import { AddIcon, RemoveIcon } from '@westpac/ui/icon';
-import { AnimatePresence, LazyMotion, m } from 'framer-motion';
+import { AnimatePresence, LazyMotion, m } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-
-import { formatComponentSlug, sortDeveloperMenu } from '@/utils/format';
 
 import { useSidebar } from '../../sidebar.context';
 
 import { itemStyles } from './navigation.styles';
 import { GroupProps, ItemProps, Level, ListProps, NavigationProps } from './navigation.types';
+
+import { formatComponentSlug, sortDeveloperMenu } from '@/utils/format';
 
 const loadAnimations = () => import('./navigation.utils').then(res => res.default);
 

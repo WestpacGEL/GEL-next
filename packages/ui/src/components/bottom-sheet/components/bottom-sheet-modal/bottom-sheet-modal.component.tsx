@@ -1,4 +1,4 @@
-import { PanInfo, motion, useAnimation } from 'framer-motion';
+import { PanInfo, motion, useAnimation } from 'motion/react';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Overlay, useModalOverlay } from 'react-aria';
 
