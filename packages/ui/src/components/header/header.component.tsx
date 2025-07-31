@@ -112,7 +112,7 @@ export function Header({
               onClick={leftOnClick}
               aria-label={leftAssistiveText}
               className={styles.leftButton()}
-              iconColor="muted"
+              iconColor="muted-vivid"
             />
           </div>
         )}
