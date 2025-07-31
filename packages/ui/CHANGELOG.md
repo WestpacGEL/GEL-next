@@ -1,5 +1,20 @@
 # @westpac/ui
 
+## 0.45.0
+
+### Minor Changes
+
+- f45b1c3: ESLint configuration upgraded to use ESLint v9 with stricter rules and Bottom sheet now supports an optional zIndex prop for customizable stacking in different scenarios.
+- 5cbea89: updated borderDark value for WBG theme
+- 605e1c7: storybook and vitest/vite upgrade
+- 685cbe8: You can now pass a `brands: BrandKey[]` parameter to generate CSS variables only for the specified brands. This helps reduce output size and improves performance by excluding unused brand tokens.
+
+### Patch Changes
+
+- 39562c4: Fixes the responsive approach on pagination size
+- 5bbd25c: Tabpanel body should support to keep the it mounted in dom to keep state preerved. Default is false. If consumer wants to keep it mounted on DOM, can apply keepMounted true at panel level
+- c0ba4a9: Updated the ButtonGroup to conditionally omit the label element when not provided, preventing unnecessary spacing and content shifting
+
 ## 0.44.0
 
 ### Minor Changes
