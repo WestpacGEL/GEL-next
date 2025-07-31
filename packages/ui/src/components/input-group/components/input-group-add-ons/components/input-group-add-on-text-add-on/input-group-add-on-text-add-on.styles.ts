@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'relative box-border whitespace-nowrap border border-border-muted-strong bg-surface-muted-faint',
+    base: 'relative box-border whitespace-nowrap border border-border-muted-strong bg-surface-muted-pale',
     variants: {
       position: {
         before: 'rounded-l',
