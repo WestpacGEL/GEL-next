@@ -8,6 +8,44 @@
  */
 module.exports = function transformer(file, api) {
   const tints = ['-5', '-10', '-20', '-30', '-40', '-50', '-60', '-70', '-80', '-90'];
+
+  const generateBorderTokens = () => {
+    const pieces = ['', '-l', '-r', '-t', '-b'];
+    const colors = [
+      'border',
+      'background',
+      'borderDark',
+      'focus',
+      'heading',
+      'hero',
+      'light',
+      'link',
+      'muted',
+      'neutral',
+      'pop',
+      'primary',
+      'text',
+      'success',
+      'info',
+      'warning',
+      'danger',
+      'system',
+    ];
+
+    const deprecatedColors = ['background', 'heading', 'light', 'link', 'neutral', 'pop', 'text', 'system'];
+
+    const borderTokens = pieces.reduce((acc, currentPiece) => {
+      return [
+        ...acc,
+        ...colors.map(color => ({
+          [`border${currentPiece}-${color}`]: `border-border${currentPiece}-${color}${deprecatedColors.includes(color) ? '[REPLACE_TOKEN]' : ''}`,
+        })),
+      ];
+    }, []);
+
+    return borderTokens;
+  };
+
   const REPLACEMENTS = {
     'bg-background': 'bg-surface-muted-pale',
     'bg-border': 'bg-surface-muted-soft',
@@ -48,32 +86,14 @@ module.exports = function transformer(file, api) {
     'text-danger': 'text-text-danger',
     'text-system': 'text-text-system-error',
     'text-white': 'text-text-mono',
-    'border-border': 'border-muted-soft',
-    'border-background': 'border-background[REPLACE_TOKEN]',
-    'border-borderDark': 'border-muted-strong',
-    'border-focus': 'border-border-focus',
-    'border-heading': 'border-heading[REPLACE_TOKEN]',
-    'border-hero': 'border-border-hero',
-    'border-light': 'border-light[REPLACE_TOKEN]',
-    'border-link': 'border-link[REPLACE_TOKEN]',
-    'border-muted': 'border-border-muted',
-    'border-neutral': 'border-neutral[REPLACE_TOKEN]',
-    'border-pop': 'border-pop[REPLACE_TOKEN]',
-    'border-primary': 'border-border-primary',
-    'border-text': 'border-text[REPLACE_TOKEN]',
-    'border-success': 'border-border-success',
-    'border-info': 'border-border-info',
-    'border-warning': 'border-border-warning',
-    'border-danger': 'border-border-danger',
-    'border-system': 'border-system[REPLACE_TOKEN]',
-    
+    ...generateBorderTokens(),
   };
 
   const BLACK_AND_WHITE = {
     'bg-black': 'bg-black[REPLACE_TOKEN]',
     'bg-white': 'bg-white[REPLACE_TOKEN]',
     'text-black': 'text-black[REPLACE_TOKEN]',
-    // 'text-white': 'text-white[REPLACE_TOKEN]',
+    'text-white': 'text-white[REPLACE_TOKEN]',
     'border-black': 'border-black[REPLACE_TOKEN]',
     'border-white': 'border-border-mono',
   };

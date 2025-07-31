@@ -3,9 +3,9 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'relative overflow-hidden border-t border-t-border',
+      base: 'relative overflow-hidden border-t border-t-border-muted-soft bg-surface-white-faint',
       wrapper: 'pt-3 max-md:px-2 max-md:pb-3 md:px-4 md:pb-4',
-      topRow: '',
+      topRow: 'text-text-muted',
       link: 'float-right block',
     },
     variants: {
