@@ -93,7 +93,6 @@ module.exports = function transformer(file, api) {
     'bg-black': 'bg-black[REPLACE_TOKEN]',
     'bg-white': 'bg-white[REPLACE_TOKEN]',
     'text-black': 'text-black[REPLACE_TOKEN]',
-    'text-white': 'text-white[REPLACE_TOKEN]',
     'border-black': 'border-black[REPLACE_TOKEN]',
     'border-white': 'border-border-mono',
   };
