@@ -43,9 +43,6 @@ module.exports = function transformer(file, api) {
       ];
     }, []);
 
-    return borderTokens;
-  };
-
   const REPLACEMENTS = {
     'bg-background': 'bg-surface-muted-pale',
     'bg-border': 'bg-surface-muted-soft',
