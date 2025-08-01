@@ -35,13 +35,17 @@ module.exports = function transformer(file, api) {
     const deprecatedColors = ['background', 'heading', 'light', 'link', 'neutral', 'pop', 'text', 'system'];
 
     const borderTokens = pieces.reduce((acc, currentPiece) => {
-      return [
-        ...acc,
-        ...colors.map(color => ({
-          [`border${currentPiece}-${color}`]: `border-border${currentPiece}-${color}${deprecatedColors.includes(color) ? '[REPLACE_TOKEN]' : ''}`,
-        })),
-      ];
+      return colors.reduce(
+        (acc2, color) => ({
+          ...acc2,
+          [`border${currentPiece}-${color}`]: `border${currentPiece}-border-${color}${deprecatedColors.includes(color) ? '[REPLACE_TOKEN]' : ''}`,
+        }),
+        acc,
+      );
     }, []);
+
+    return borderTokens;
+  };
 
   const REPLACEMENTS = {
     'bg-background': 'bg-surface-muted-pale',
@@ -85,6 +89,8 @@ module.exports = function transformer(file, api) {
     'text-white': 'text-text-mono',
     ...generateBorderTokens(),
   };
+
+  console.log('REPLACEMENTS', REPLACEMENTS);
 
   const BLACK_AND_WHITE = {
     'bg-black': 'bg-black[REPLACE_TOKEN]',

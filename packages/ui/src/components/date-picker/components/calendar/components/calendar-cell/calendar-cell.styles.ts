@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     base: 'flex items-center justify-center',
-    text: 'size-6 rounded-full border border-white text-center leading-[2.125rem]',
+    text: 'size-6 rounded-full border border-[transparent] text-center leading-[2.125rem] text-text-body',
   },
   variants: {
     isDisabled: {
@@ -11,7 +11,7 @@ export const styles = tv({
         text: 'cursor-default line-through opacity-50',
       },
       false: {
-        text: 'hover:bg-primary/5',
+        text: 'hover:bg-surface-primary/5',
       },
     },
     isUnavailable: {
@@ -27,14 +27,14 @@ export const styles = tv({
     },
     isToday: {
       true: {
-        text: 'border-primary bg-primary/5',
+        text: 'border-border-primary bg-surface-primary/5',
       },
     },
     isSelected: {
       true: {
-        text: 'bg-primary text-white hover:bg-primary',
+        text: 'bg-surface-primary text-text-mono hover:bg-surface-primary border-border-mono',
       },
-      false: 'bg-white',
+      false: 'bg-white[REPLACE_TOKEN]',
     },
   },
 });

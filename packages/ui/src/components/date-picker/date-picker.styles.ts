@@ -3,9 +3,9 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      input: 'form-control flex items-center border-borderDark disabled:form-control-disabled',
+      input: 'form-control flex items-center border-border-borderDark disabled:form-control-disabled',
       button:
-        'flex h-auto items-center justify-center rounded-l-none border-y-0 border-l border-r-0 border-l-borderDark bg-light',
+        'flex h-auto items-center justify-center rounded-l-none border-y-0 border-l border-r-0 border-l-border-borderDark bg-surface-muted-pale',
     },
     variants: {
       size: {
@@ -28,7 +28,7 @@ export const styles = tv(
       },
       isInvalid: {
         true: {
-          input: 'border-danger',
+          input: 'border-border-danger',
         },
         false: {},
       },

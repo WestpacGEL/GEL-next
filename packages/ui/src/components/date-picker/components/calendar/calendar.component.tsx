@@ -89,12 +89,12 @@ export function Calendar({ value, ...props }: CalendarProps) {
         </div>
         <div className="flex gap-2">
           <Button look="unstyled" {...newPrevButtonProps}>
-            <Circle>
+            <Circle className='bg-surface-muted-pale'>
               <ArrowLeftIcon size="small" color="primary" />
             </Circle>
           </Button>
           <Button look="unstyled" {...newNextButtonProps}>
-            <Circle>
+            <Circle className='bg-surface-muted-pale'>
               <ArrowRightIcon size="small" color="primary" />
             </Circle>
           </Button>
