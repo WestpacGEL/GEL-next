@@ -6,7 +6,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'items-center justify-center rounded transition-[background] disabled:pointer-events-none disabled:opacity-50 group-first/add-on-before:rounded-r-none group-last/add-on-after:rounded-l-none',
+      base: 'items-center justify-center rounded border transition-[background] disabled:pointer-events-none disabled:opacity-50 group-first/add-on-before:rounded-r-none group-last/add-on-after:rounded-l-none',
       iconBefore: '',
       iconAfter: '',
       dropdown: 'ml-[0.4em]',
@@ -29,15 +29,15 @@ export const styles = tv(
       },
       look: {
         primary: {
-          base: 'relative bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-primary-faint active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop',
+          base: 'relative border-border-primary bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-hit-primary active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop',
         },
         hero: {
-          base: 'bg-surface-hero text-text-mono hover:bg-surface-hover-hero active:bg-surface-hero/50',
+          base: 'border-border-hero bg-surface-hero text-text-mono hover:bg-surface-hover-hero active:bg-surface-hit-hero',
         },
         faint: {
-          base: 'border border-border-muted-strong bg-surface-muted-pale text-text-muted hover:bg-surface-hover-mono active:bg-surface-muted-faint/50',
+          base: 'border-border-muted-strong bg-surface-muted-pale text-text-muted hover:bg-surface-hover-mono active:bg-surface-hit-mono',
         },
-        link: { base: 'text-text-link underline' },
+        link: { base: 'border-0 text-text-link underline' },
         unstyled: { base: 'p-0 text-left' },
       },
       soft: {
@@ -65,19 +65,20 @@ export const styles = tv(
         look: 'primary',
         soft: true,
         className:
-          'border border-border-primary bg-surface-white-faint text-text-body hover:bg-surface-hover-primary-faint active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono',
+          'border-border-primary bg-surface-white-faint text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-hit-primary-faint active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono',
       },
       {
         slots: ['base'],
         look: 'hero',
         soft: true,
-        className: 'border border-border-hero bg-surface-white-faint text-text-body hover:bg-surface-hover-hero-faint',
+        className:
+          'border-border-hero bg-surface-white-faint text-text-body hover:bg-surface-hover-hero-faint active:bg-surface-hit-hero-faint',
       },
       {
         slots: ['base'],
         look: 'faint',
         soft: true,
-        className: 'bg-surface-white-faint hover:bg-surface-muted-pale active:bg-surface-muted-faint',
+        className: 'bg-surface-white-faint hover:bg-surface-hover-muted-pale active:bg-surface-hit-muted-pale',
       },
       {
         slots: ['iconBefore'],
