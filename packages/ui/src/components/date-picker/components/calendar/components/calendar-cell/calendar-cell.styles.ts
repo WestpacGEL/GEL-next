@@ -32,7 +32,7 @@ export const styles = tv({
     },
     isSelected: {
       true: {
-        text: 'bg-surface-primary text-text-mono hover:bg-surface-primary border-border-mono',
+        text: 'border-border-mono bg-surface-primary text-text-mono hover:bg-surface-primary',
       },
       false: 'bg-white[REPLACE_TOKEN]',
     },
