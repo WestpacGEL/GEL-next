@@ -30,7 +30,7 @@ export const AccessibilityDemo = ({ content }: AccessibilityDemoProps) => {
   return (
     <>
       <div className="flex items-center bg-light p-4">
-        <label htmlFor={id} className="mr-[1rem] whitespace-nowrap">
+        <label htmlFor={id} className="mr-4 whitespace-nowrap">
           Select filter
         </label>
         <Select

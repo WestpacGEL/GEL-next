@@ -10,7 +10,7 @@ import {
   TableHeaderRow,
   TableRow,
 } from '@westpac/ui';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import { useBrand } from '@/app/design-system/hooks/use-brand';
 import { ComponentTitle } from '@/components/document-renderer/component-title';

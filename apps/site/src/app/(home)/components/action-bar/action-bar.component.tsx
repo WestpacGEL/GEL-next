@@ -21,7 +21,7 @@ export function ActionBar() {
             <GELLogo className="mb-2 block h-3 w-[45px] text-gel-text" />
             <p className="mb-1 flex items-end">
               Design System
-              <ArrowRightIcon className="ml-0 mr-2 md:ml-2 md:mr-[1rem]" />
+              <ArrowRightIcon className="ml-0 mr-2 md:ml-2 md:mr-4" />
             </p>
           </div>
           <ul role="list" className="flex gap-2">

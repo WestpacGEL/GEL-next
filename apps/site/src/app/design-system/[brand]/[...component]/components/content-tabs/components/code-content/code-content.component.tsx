@@ -44,7 +44,7 @@ export function CodeContent({
           <Grid className="gap-y-5.5">
             <GridItem span={{ initial: 12, sm: 7 }}>
               {description && (
-                <p className="typography-body-8 mb-7 font-light leading-[1.5] sm:typography-body-7 sm:leading-[1.5]">
+                <p className="typography-body-8 mb-7 font-light leading-normal sm:typography-body-7 sm:leading-normal">
                   {description}
                 </p>
               )}

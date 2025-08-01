@@ -32,7 +32,7 @@ export const Symbols = () => {
         <Grid>
           <GridItem span={{ initial: 12, sm: 6 }}>
             <div className="flex flex-col items-start sm:flex-row sm:items-center">
-              <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="filter-icons">
+              <label className="mb-2 mr-4 sm:mb-0" htmlFor="filter-icons">
                 Filter by name
               </label>
               <Input id="filter-icon" value={search} onChange={handleOnChange} className="w-full" />

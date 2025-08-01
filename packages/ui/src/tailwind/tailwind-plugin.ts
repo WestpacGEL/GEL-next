@@ -27,6 +27,12 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
        */
       addBase({
         html: { color: theme('colors.text.DEFAULT') },
+        '@starting-style': {
+          '.popover:popover-open': {
+            opacity: '0',
+            transform: 'scaleX(0) scaleY(0)',
+          },
+        },
       });
 
       if (options?.brandFonts?.src) {
@@ -127,6 +133,24 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
                 transform: 'translateY(0)',
               },
             },
+            fadeInUp: {
+              '0%': {
+                opacity: '0',
+                transform: 'translateY(10vh)',
+              },
+              '100%': {
+                opacity: '1',
+                transform: 'translateY(0)',
+              },
+            },
+            slideUp: {
+              '0%': {
+                transform: 'translateY(100%)',
+              },
+              '100%': {
+                transform: 'translateY(0)',
+              },
+            },
             maxHeightIn: {
               '0%': { maxHeight: '0' },
             },
@@ -135,6 +159,8 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
             skeleton: 'waveLines 2s infinite ease-out',
             fadeIn: 'fadeIn 0.2s ease',
             fadeInDown: 'fadeInDown 0.4s ease',
+            fadeInUp: 'fadeInUp 0.4s ease',
+            slideUp: 'slideUp 0.4s ease',
             maxHeightIn: 'maxHeightIn 0.4s ease',
           },
           boxShadow: {

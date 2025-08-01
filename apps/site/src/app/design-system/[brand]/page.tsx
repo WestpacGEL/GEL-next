@@ -26,7 +26,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
       <Section>
         <SectionHeading>Accessible by design</SectionHeading>
         <Grid>
-          <SectionItem className="flex flex-col gap-2 leading-[2]">
+          <SectionItem className="flex flex-col gap-2 leading-loose">
             <p>Accessibility and inclusive design is a strong part of the GEL Design System.</p>
             <p>
               The system supports teams to deliver to the Group accessibility commitment, to provide meaningful banking
@@ -45,7 +45,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         <SectionHeading>Built on React</SectionHeading>
         <Grid>
           <SectionItem>
-            <p className="mb-5 leading-[2] sm:mb-7">
+            <p className="mb-5 leading-loose sm:mb-7">
               The GEL Design System is now using React. You can still access HTML/CSS but with React at its core we can
               showcase so much more and deliver even higher-quality, more accessible code.
             </p>
@@ -71,7 +71,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         <SectionHeading>Subscribe to GEL updates</SectionHeading>
         <Grid>
           <SectionItem>
-            <p className="mb-5 leading-[2] sm:mb-7">
+            <p className="mb-5 leading-loose sm:mb-7">
               Get the latest brand and component updates as well as access to new resources and helpful tips.
             </p>
             <form
@@ -121,8 +121,12 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         <SectionHeading>Downloads &amp; links</SectionHeading>
         <Grid className="mb-5 sm:mb-9">
           <SectionItem className="flex flex-col gap-2">
-            <p className="leading-[2]">Design on-brand with greater efficiency and accuracy using the Sketch UI Kit.</p>
-            <p className="leading-[2]">Visit GitHub to follow Westpac GEL Design System code updates and log issues.</p>
+            <p className="leading-loose">
+              Design on-brand with greater efficiency and accuracy using the Sketch UI Kit.
+            </p>
+            <p className="leading-loose">
+              Visit GitHub to follow Westpac GEL Design System code updates and log issues.
+            </p>
           </SectionItem>
         </Grid>
         <Grid className="gap-y-4 text-left xsl:gap-x-5 sm:gap-x-8 md:gap-x-10">
@@ -132,7 +136,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
               <li className="border-b border-border">
                 <Link
                   href="/articles/figma-libraries"
-                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
+                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
                 >
                   Figma UI Kits
                   <FigmaLogo />
@@ -147,7 +151,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
                 <Link
                   href="https://github.com/WestpacGEL/GEL-next/"
                   target="_blank"
-                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
+                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
                 >
                   Follow Westpac GEL on GitHub
                   <GithubIcon size={{ initial: 'large', lg: 'xlarge' }} color="text" />
