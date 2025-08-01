@@ -34,7 +34,7 @@ export function PassCodeView({
 
   return (
     <Tag className={styles.base({ className })} {...props}>
-      {HeaderIcon && <HeaderIcon className={styles.icon()} />}
+      {HeaderIcon && <HeaderIcon color="muted-vivid" className={styles.icon()} />}
       {header && <h3 className={styles.heading()}>{header}</h3>}
       {loading ? (
         <PassCodeViewLoader length={passCodeLength} />
@@ -49,7 +49,7 @@ export function PassCodeView({
             </p>
           )}
           {errorMessage && (
-            <p className="mt-2 flex items-center gap-1 text-danger">
+            <p className="mt-2 flex items-center gap-1 text-text-danger">
               <AlertIcon size="small" look="outlined" color="danger" />
               {errorMessage}
             </p>

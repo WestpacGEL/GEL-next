@@ -37,7 +37,7 @@ export const styles = tv(
         faint: {
           base: 'border-border-muted-strong bg-surface-muted-pale text-text-muted hover:bg-surface-hover-mono active:bg-surface-hit-mono',
         },
-        link: { base: 'border-0 text-text-link underline' },
+        link: { base: 'border-0 text-text-link underline hover:no-underline' },
         unstyled: { base: 'p-0 text-left' },
       },
       soft: {

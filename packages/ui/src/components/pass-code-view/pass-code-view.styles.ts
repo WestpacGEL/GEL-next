@@ -7,7 +7,7 @@ export const styles = tv(
       heading: 'typography-body-5 mb-3 font-bold text-text-body',
       link: 'ml-1 cursor-pointer',
       passCode: 'my-3',
-      icon: 'mb-3 text-text-body',
+      icon: 'mb-3',
     },
     variants: {},
   },
