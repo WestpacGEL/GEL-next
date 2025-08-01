@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/deprecation */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { useAccordionItem } from '@react-aria/accordion';
 import { AnimatePresence, LazyMotion, m } from 'motion/react';
