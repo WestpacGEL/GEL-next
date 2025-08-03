@@ -85,7 +85,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
       <>
         <div
           className={clsx(
-            'sticky top-0 flex h-9 items-center justify-between z-10 bg-white px-2 py-3 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] xsl:px-4 sm:px-5 md:hidden',
+            'sticky top-0 flex h-9 items-center justify-between z-10 bg-white px-2 py-3  xsl:px-4 sm:px-5 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] md:hidden',
             { 'after:opacity-100': scrolled },
           )}
         >
@@ -106,9 +106,14 @@ export function Sidebar({ children }: { children?: ReactNode }) {
           <>
             <div
               className={clsx(
-                'fixed inset-y-0 w-[300px] overflow-auto overscroll-contain border-l border-border bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] before:pointer-events-none before:sticky before:inset-x-0 before:top-0 before:z-50 before:block before:h-1 before:bg-gradient-to-b before:from-black/[.2] before:from-0% before:opacity-0 before:transition-all before:duration-200 before:will-change-[opacity] max-md:z-[100] md:mt-11',
+                'h-1 w-[300px] sticky inset-y-0 left-full top-[66px] right-0 z-[200] bg-gradient-to-b from-black/[.2] from-0% opacity-0 transition-all duration-200 will-change-[opacity] max-md:hidden',
+                { 'opacity-100': sidebarScrolled },
+              )}
+            />
+            <div
+              className={clsx(
+                'fixed inset-y-0 w-[300px] overflow-auto overscroll-contain border-l border-border bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-md:z-[100] md:mt-11',
                 {
-                  'before:opacity-100': sidebarScrolled,
                   'max-md:translate-x-full': !open,
                   'ml-[1620px]': isMaxWidth,
                   'md:right-[2px] right-0': !isMaxWidth,
@@ -122,13 +127,18 @@ export function Sidebar({ children }: { children?: ReactNode }) {
                   'max-md:hidden': !open,
                 })}
               >
-                <div className="flex flex-row justify-between px-2 py-2.5 md:hidden">
+                <div
+                  className={clsx(
+                    'flex flex-row h-[54px] justify-between justify-items-center px-2 py-2.5 sticky z-[100] top-0 bg-white after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] md:hidden',
+                    { 'after:opacity-100': sidebarScrolled },
+                  )}
+                >
                   <p className="typography-body-10 py-[5px] font-medium">{`Step ${currStep} of ${totalSteps}`}</p>
                   <Button
                     look="link"
-                    iconBefore={CloseIcon}
+                    iconBefore={() => <CloseIcon className='p-0'/>}
                     size="large"
-                    className="p-0"
+                    className="h-auto p-0"
                     onClick={() => setOpen(false)}
                   />
                 </div>
