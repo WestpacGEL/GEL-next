@@ -85,7 +85,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
       <>
         <div
           className={clsx(
-            'sticky top-0 flex h-9 items-center justify-between z-10 bg-white px-2 py-3  xsl:px-4 sm:px-5 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] md:hidden',
+            'sticky top-0 z-10 flex h-9 items-center justify-between bg-white px-2 py-3  after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] xsl:px-4 sm:px-5 md:hidden',
             { 'after:opacity-100': scrolled },
           )}
         >
@@ -106,7 +106,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
           <>
             <div
               className={clsx(
-                'h-1 w-[300px] sticky inset-y-0 left-full top-[66px] right-0 z-[200] bg-gradient-to-b from-black/[.2] from-0% opacity-0 transition-all duration-200 will-change-[opacity] max-md:hidden',
+                'sticky inset-y-0 left-full right-0 top-[66px] z-[200] h-1 w-[300px] bg-gradient-to-b from-black/[.2] from-0% opacity-0 transition-all duration-200 will-change-[opacity] max-md:hidden',
                 { 'opacity-100': sidebarScrolled },
               )}
             />
@@ -129,14 +129,14 @@ export function Sidebar({ children }: { children?: ReactNode }) {
               >
                 <div
                   className={clsx(
-                    'flex flex-row h-[54px] justify-between justify-items-center px-2 py-2.5 sticky z-[100] top-0 bg-white after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] md:hidden',
+                    'sticky top-0 z-[100] flex h-[54px] flex-row justify-between justify-items-center bg-white px-2 py-2.5 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] md:hidden',
                     { 'after:opacity-100': sidebarScrolled },
                   )}
                 >
                   <p className="typography-body-10 py-[5px] font-medium">{`Step ${currStep} of ${totalSteps}`}</p>
                   <Button
                     look="link"
-                    iconBefore={() => <CloseIcon className='p-0'/>}
+                    iconBefore={() => <CloseIcon className="p-0" />}
                     size="large"
                     className="h-auto p-0"
                     onClick={() => setOpen(false)}
