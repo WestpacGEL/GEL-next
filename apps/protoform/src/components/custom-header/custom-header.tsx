@@ -3,10 +3,11 @@
 import { Button, Header } from '@westpac/ui';
 import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import clsx from 'clsx';
+import throttle from 'lodash.throttle';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+
 import { useSidebar } from '../sidebar/context';
-import throttle from 'lodash.throttle';
 
 export function CustomHeader() {
   const router = useRouter();
@@ -47,7 +48,7 @@ export function CustomHeader() {
       leftOnClick={() => router.back()}
       logoLink="/"
       className={clsx(
-        'z-[100] m-auto w-full max-w-[1921px] md:fixed md:top-0 before:pointer-events-none before:absolute before:inset-x-auto before:top-[66px] before:z-10 before:h-1 before:bg-gradient-to-b before:from-black/[.2] before:from-0% before:opacity-0 before:transition-opacity before:duration-200 before:will-change-[opacity]',
+        'z-[100] m-auto w-full max-w-[1921px] before:pointer-events-none before:absolute before:inset-x-auto before:top-[66px] before:z-10 before:h-1 before:bg-gradient-to-b before:from-black/[.2] before:from-0% before:opacity-0 before:transition-opacity before:duration-200 before:will-change-[opacity] md:fixed md:top-0',
         {
           'before:right-[302px]': open,
           'md:before:opacity-100': scrolled,

@@ -2,30 +2,12 @@
 
 import { Grid, GridContainer, GridItem } from '@westpac/ui';
 import { clsx } from 'clsx';
-import throttle from 'lodash.throttle';
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 
 import { useSidebar } from '../sidebar/context';
 
 export function ContentWrapper({ children }: { children: ReactNode }) {
   const { open } = useSidebar();
-  const [scrolled, setScrolled] = useState(false);
-
-  const handleScroll = throttle(() => {
-    let hasScrolled = false;
-    if (window.scrollY > 5) {
-      hasScrolled = true;
-    }
-    setScrolled(hasScrolled);
-  }, 10);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [handleScroll]);
 
   return (
     <section
