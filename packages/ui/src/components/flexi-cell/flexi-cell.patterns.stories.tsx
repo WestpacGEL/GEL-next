@@ -455,7 +455,7 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="size-5 bg-surface-hero text-text-mono">
+                      <FlexiCellCircle className="size-5 bg-surface-hero">
                         <BpayIcon color="mono" look="filled" className="size-3 rounded-full text-xs" />
                       </FlexiCellCircle>
                     ) : (
@@ -481,7 +481,7 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="size-5 bg-surface-hero text-text-mono">
+                      <FlexiCellCircle className="size-5 bg-surface-hero">
                         <BpayIcon color="mono" look="filled" className="size-3 rounded-full text-xs" />
                       </FlexiCellCircle>
                     ) : (
@@ -619,7 +619,7 @@ export const StatusTiles = () => {
             <Badge className="size-fit" color="faint" soft>
               Locked
             </Badge>
-            <PadlockIcon size="small" look="outlined" color="borderDark" />
+            <PadlockIcon size="small" look="outlined" color="muted" />
           </>
         }
         size={{ initial: 'default', md: 'large' }}

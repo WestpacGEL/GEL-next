@@ -49,7 +49,7 @@ export const ButtonsUsage = () => {
                 key={`${size}-${look}`}
                 iconAfter={ProgressIndicator}
                 iconSize={size === 'small' ? 'xsmall' : 'small'}
-                iconColor={look === 'faint' ? 'muted' : 'white'}
+                iconColor={look === 'faint' ? 'muted' : 'mono'}
               >
                 Loading{'  '}
               </Button>
@@ -113,7 +113,7 @@ export const ButtonLoadingUsage = () => {
       <Button
         disabled={loading}
         iconAfter={loading ? ProgressIndicator : DownloadIcon}
-        iconColor="white"
+        iconColor="mono"
         onClick={() => void handleSubmit()}
       >
         Download
