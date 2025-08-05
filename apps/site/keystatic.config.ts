@@ -1,4 +1,4 @@
-/* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable sonarjs/deprecation */
 import { GitHubConfig, LocalConfig, collection, config, fields, singleton } from '@keystatic/core';
 
 import { ArticleComponentBlocks } from '@/components/component-blocks/article-component-blocks';
@@ -14,7 +14,9 @@ const storage: LocalConfig['storage'] | GitHubConfig['storage'] = IS_VERCEL_BUIL
       kind: 'github',
       pathPrefix: 'apps/site',
       repo: {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         owner: process.env.NEXT_PUBLIC_GIT_REPO_OWNER!,
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         name: process.env.NEXT_PUBLIC_GIT_REPO_SLUG!,
       },
     }

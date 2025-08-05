@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useCallback, useState } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
@@ -114,7 +114,7 @@ export const ButtonLoadingUsage = () => {
         disabled={loading}
         iconAfter={loading ? ProgressIndicator : DownloadIcon}
         iconColor="white"
-        onClick={handleSubmit}
+        onClick={() => void handleSubmit()}
       >
         Download
       </Button>
@@ -131,11 +131,14 @@ export const LoadingOverlayUsage = () => {
   return (
     <>
       <Modal size="full" state={state} aria-label="Loading overlay" className="bg-transparent">
-        <ModalBody onClick={state.close} className="align-center min-h-100vh min-w-100vw flex flex-col justify-center">
+        <ModalBody
+          onClick={() => state.close()}
+          className="align-center min-h-100vh min-w-100vw flex flex-col justify-center"
+        >
           <ProgressIndicator color="white" size="large" label="Loading..." />
         </ModalBody>
       </Modal>
-      <Button onClick={state.open}>Open Loader</Button>
+      <Button onClick={() => state.open()}>Open Loader</Button>
     </>
   );
 };

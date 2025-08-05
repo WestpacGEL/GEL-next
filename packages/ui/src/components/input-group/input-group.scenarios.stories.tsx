@@ -1,4 +1,4 @@
-import { type Meta, StoryFn } from '@storybook/react';
+import { type Meta, StoryFn } from '@storybook/react-vite';
 import { useCallback, useMemo, useState } from 'react';
 
 import { ClearIcon, RefreshIcon, SearchIcon, VisibilityIcon, VisibilityOffIcon } from '../icon/index.js';
@@ -192,7 +192,7 @@ export const CurrencyAndFrequency = () => {
 };
 
 /**
- * > Search Textarea with character count
+ * > Search Textarea with character count.
  */
 const MAX_LENGTH = 250;
 export const TextareaWithCharacterCount = () => {

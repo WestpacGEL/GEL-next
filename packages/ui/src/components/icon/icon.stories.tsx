@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 
 import { Icon } from './icon.component.js';
@@ -40,7 +40,7 @@ const AllIconsExample = (props: AllIcons.IconProps) => {
       <div className="flex flex-row flex-wrap justify-center gap-2">
         {filteredIcons.map(({ key, Icon }) => (
           <button
-            onClick={() => handleOnClick(key)}
+            onClick={() => void handleOnClick(key)}
             className="flex h-15 w-23 flex-col items-center justify-center gap-2 border border-border"
             key={key}
           >

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Children, ReactElement, cloneElement, createContext, useContext } from 'react';
+import React, { Children, ReactElement, cloneElement, createContext, useContext, useMemo } from 'react';
 
 import { styles as listStyles } from './list.styles.js';
 import { ListContextState, type ListProps } from './list.types.js';
@@ -17,10 +17,12 @@ export function List({ assistiveText, className, children, look, nested, icon, t
     nested = (typeof state.nested === 'number' && state.nested + 1) || 0;
   }
 
+  const defaultAssistiveText = useMemo(() => {
+    return `The following items are ${type === 'tick' ? 'ticked' : 'crossed'}`;
+  }, [type]);
+
   assistiveText =
-    (type === 'tick' || type === 'cross') && nested === 0
-      ? assistiveText || `The following items are ${type === 'tick' ? 'ticked' : 'crossed'}`
-      : undefined;
+    (type === 'tick' || type === 'cross') && nested === 0 ? assistiveText || defaultAssistiveText : undefined;
 
   const styles = listStyles({ type: stateValues.type, nested: typeof state.nested === 'number' });
 

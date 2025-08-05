@@ -1,5 +1,5 @@
-import { action } from '@storybook/addon-actions';
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { action } from 'storybook/actions';
 
 import { PassCodeView } from './pass-code-view.component.js';
 

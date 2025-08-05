@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 import { Field } from '../field/field.component.js';
@@ -58,7 +58,7 @@ export const Controlled = () => {
     <DatePicker
       onChange={value => {
         console.log(value.target.value);
-        setValue(value.target.value);
+        setValue(value.target.value as string);
       }}
       onOpen={() => {
         console.log('onOpen');
@@ -127,7 +127,7 @@ export const FormField = () => {
       <DatePicker
         onChange={value => {
           console.log(value.target.value);
-          setValue(value.target.value);
+          setValue(value.target.value as string);
         }}
         onOpen={() => {
           console.log('onOpen');

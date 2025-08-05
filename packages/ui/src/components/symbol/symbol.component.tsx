@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-globals-shadowing */
 import React from 'react';
 
 import { styles } from './symbol.styles.js';

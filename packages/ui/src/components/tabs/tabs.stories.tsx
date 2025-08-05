@@ -1,4 +1,4 @@
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { Tabs, TabsPanel } from './tabs.component.js';
 
@@ -50,6 +50,26 @@ export const Justify: Story = {
         Arma virumque cano, Troiae qui primus ab oris.
       </TabsPanel>,
       <TabsPanel key="MaR" title="Monarchy and Republic">
+        Senatus Populusque Romanus.
+      </TabsPanel>,
+      <TabsPanel key="Emp" title="Empire">
+        Alea jacta est.
+      </TabsPanel>,
+    ],
+  },
+};
+
+/**
+ * > KeppTabPanelMounted usage example
+ */
+export const KeppTabPanelMounted: Story = {
+  args: {
+    justify: true,
+    children: [
+      <TabsPanel key="FoR" title="Founding of Rome" keepMounted={true}>
+        Arma virumque cano, Troiae qui primus ab oris.
+      </TabsPanel>,
+      <TabsPanel key="MaR" title="Monarchy and Republic" keepMounted={true}>
         Senatus Populusque Romanus.
       </TabsPanel>,
       <TabsPanel key="Emp" title="Empire">

@@ -28,10 +28,10 @@
     "migrate": "node script.cjs"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.25.2",
+    "@changesets/cli": "^2.29.5",
     "@westpac/eslint-config": "workspace:~",
     "@westpac/ts-config": "workspace:~",
-    "eslint-config-turbo": "^0.0.7",
+    "eslint-config-turbo": "^2.5.4",
     "husky": "^8.0.3",
     "prettier": "^3.2.5",
     "shx": "^0.3.4",

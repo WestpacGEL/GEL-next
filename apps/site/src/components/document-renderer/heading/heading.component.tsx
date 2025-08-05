@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-base-to-string */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useMemo } from 'react';
 
 import { styles } from './heading.style';
@@ -6,9 +8,10 @@ import { type HeadingProps } from './heading.types';
 export const Heading = ({ children, level = 3, textAlign = 'left', className }: HeadingProps) => {
   const Tag = useMemo(() => `h${level}` as keyof JSX.IntrinsicElements, [level]);
   const id = useMemo(() => {
-    const text = Array.isArray(children) ? children[0].props.node.text : children?.toString();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const text: string | undefined = Array.isArray(children) ? children[0].props.node.text : children?.toString();
     return text
-      .replace(/[^a-zA-Z0-9\s]/g, '')
+      ?.replace(/[^a-zA-Z0-9\s]/g, '')
       .toLowerCase()
       .split(' ')
       .join('-');

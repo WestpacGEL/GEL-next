@@ -22,7 +22,7 @@ describe('Collapsible', () => {
     const user = userEvent.setup();
     const { getByText, getByRole } = render(<Collapsible text="test button">Test Text</Collapsible>);
     expect(screen.queryByText('Test Text')).not.toBeInTheDocument();
-    await act(() => {
+    act(() => {
       user.click(getByRole('button', { name: 'test button' }));
     });
     await waitFor(() => expect(getByText('Test Text')).toBeInTheDocument());
@@ -36,7 +36,7 @@ describe('Collapsible', () => {
         Test Text
       </Collapsible>,
     );
-    await act(() => {
+    act(() => {
       user.click(getByRole('button', { name: 'test button' }));
     });
     await waitFor(() => expect(onClick).toBeCalled());

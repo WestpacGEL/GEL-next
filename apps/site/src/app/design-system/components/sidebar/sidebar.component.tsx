@@ -3,7 +3,7 @@
 import { clsx } from 'clsx';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
-import React, { Key, useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
 import { CloseIcon } from '@/components/code/code.inject-components';
@@ -51,7 +51,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
   const params = useParams();
 
   const handleChange = useCallback(
-    async (key: string | number | null) => {
+    (key: string | number | null) => {
       if (params.component) {
         const componentPath = Array.isArray(params.component) ? params.component.join('/') : params.component;
         router.push(`/design-system/${key}/${componentPath}`, { scroll: false });

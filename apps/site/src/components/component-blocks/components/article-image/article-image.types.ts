@@ -4,5 +4,5 @@ export type ArticleImageProps = {
   caption?: string;
   image: CloudImageProps;
   index: number;
-  spacing?: 'default' | 'reduced' | undefined;
+  spacing?: 'default' | 'reduced';
 };

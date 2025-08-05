@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { useAccordionItem } from '@react-aria/accordion';
 import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import React, { useRef } from 'react';
-import { Key, mergeProps, useFocusRing, useHover, useLocale } from 'react-aria';
+import { mergeProps, useFocusRing, useHover, useLocale } from 'react-aria';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../../../icon/index.js';
 
@@ -20,8 +21,8 @@ export function AccordionItem<T = HTMLElement>({
   const { state, item } = props;
   const { buttonProps, regionProps } = useAccordionItem<T>(props, state, ref);
   const { isFocusVisible, focusProps } = useFocusRing();
-  const isOpen = state.expandedKeys.has(item.key as Key);
-  const isDisabled = state.disabledKeys.has(item.key as Key);
+  const isOpen = state.expandedKeys.has(item.key);
+  const isDisabled = state.disabledKeys.has(item.key);
   const { hoverProps } = useHover({ isDisabled });
   const { direction } = useLocale();
   const styles = accordionItemStyles({ isOpen, isDisabled, look, isFocusVisible });

@@ -21,7 +21,7 @@ export function CustomFooter() {
           <SecurityIcon size="small" className="float-left mr-1 shrink-0" color="muted" />
         </div>
         <div className="flex">
-          <p className="relative flex-1 typography-body-10 text-muted">
+          <p className="typography-body-10 relative flex-1 text-muted">
             Our site and your transactions are secure. You can read our{' '}
             <Link href="#" type="inline">
               security information

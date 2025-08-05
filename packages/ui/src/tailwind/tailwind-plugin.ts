@@ -1,10 +1,13 @@
+/* eslint-disable @typescript-eslint/unbound-method */
 import plugin from 'tailwindcss/plugin.js';
 import createThemes from 'tailwindcss-themer';
+import { ThemeConfig } from 'tailwindcss-themer/lib/utils/optionsUtils.js';
 
 import { BREAKPOINTS } from './constants/breakpoints.js';
 import { COLORS, DEFAULT_BODY_TYPOGRAPHY, FONT_TYPES, SPACING } from './constants/index.js';
 import { THEMES } from './themes/index.js';
 import { theme as WBCTheme } from './themes/wbc.js';
+import { BrandKey } from './types/brand.types.js';
 import { type PluginOptions } from './types/tailwind.types.js';
 import { generateDatePicker } from './utils/generate-date-picker-component.js';
 import { generateLinearLoader } from './utils/generate-linear-loader.js';
@@ -41,7 +44,9 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
        */
       addUtilities(
         {
+          // eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions
           '.focus-outline': { [`@apply ${theme('focusOutline')}`]: {} },
+          // eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions
           '.background-transition': { [`@apply ${theme('backgroundTransition')}`]: {} },
           '.select-caret': {
             backgroundImage:
@@ -236,14 +241,20 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
 /**
  * Multiple Theme plugin with all the brands variation
  */
-export const WestpacUIKitThemesPlugin = createThemes({
-  defaultTheme: {
-    extend: {
-      colors: WBCTheme.colors,
-      fontFamily: {
-        brand: [WBCTheme.brandFont, ...DEFAULT_BODY_TYPOGRAPHY],
+export const WestpacUIKitThemesPlugin = ({ brands }: { brands?: BrandKey[] }) =>
+  createThemes({
+    defaultTheme: {
+      extend: {
+        colors: WBCTheme.colors,
+        fontFamily: {
+          brand: [WBCTheme.brandFont, ...DEFAULT_BODY_TYPOGRAPHY],
+        },
       },
     },
-  },
-  themes: THEMES,
-});
+    // themes: THEMES,
+    themes: brands?.length
+      ? (brands
+          .map(brand => THEMES.find(({ name }) => name === brand.toUpperCase()))
+          .filter(theme => theme) as ThemeConfig[])
+      : THEMES,
+  });

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useListBoxSection } from 'react-aria';
 
 import { Option } from '../list-box-option';
@@ -21,8 +20,8 @@ export function ListBoxSection({ section, state }: ListBoxSectionProps) {
         )}
 
         <ul {...groupProps}>
-          {[...section.childNodes].map(node => (
-            <Option key={node.key} item={node} state={state} />
+          {[...state.collection].map(item => (
+            <Option key={item.key} item={item} state={state} />
           ))}
         </ul>
       </li>

@@ -1,7 +1,7 @@
 import { cookies, draftMode } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-export async function GET(req: Request) {
+export function GET(req: Request) {
   const url = new URL(req.url);
   const params = url.searchParams;
   const branch = params.get('branch');

@@ -3,14 +3,14 @@
 import { Grid, GridItem } from '@westpac/ui/grid';
 import { Input } from '@westpac/ui/input';
 import * as AllLogos from '@westpac/ui/symbol';
-import { ChangeEvent, useCallback, useMemo, useState } from 'react';
+import { ChangeEvent, FC, useCallback, useMemo, useState } from 'react';
 
 export const Symbols = () => {
   const [search, setSearch] = useState('');
 
   const filteredSymbols = useMemo(() => {
     return Object.entries(AllLogos).reduce(
-      (acc: { Logo: React.FC<AllLogos.SymbolProps>; key: string }[], [logoName, Logo]) => {
+      (acc: { Logo: FC<AllLogos.SymbolProps>; key: string }[], [logoName, Logo]) => {
         if (logoName.toUpperCase().indexOf(search.toUpperCase()) === -1 || !logoName.includes('Symbol')) {
           return acc;
         }

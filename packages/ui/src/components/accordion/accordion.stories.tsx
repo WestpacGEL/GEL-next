@@ -1,5 +1,5 @@
 import { type Key } from '@react-types/shared';
-import { type Meta, StoryFn, type StoryObj } from '@storybook/react';
+import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 import { AccountIcon, CreditCardsIcon, InvoiceIcon, ShareIosIcon } from '../icon/index.js';

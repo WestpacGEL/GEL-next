@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 import { styles as AvailabilityContentStyles } from './availability-content.styles';
 import { TableOfAvailability } from './components/table-of-availability';
 

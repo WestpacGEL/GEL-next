@@ -13,7 +13,7 @@ describe('ButtonDropdown', () => {
   it('should show panel when button clicked', async () => {
     const user = userEvent.setup();
     const { getByRole, getByText } = render(<ButtonDropdown text="test dropdown">Test content</ButtonDropdown>);
-    await act(() => {
+    act(() => {
       user.click(getByRole('button', { name: 'test dropdown' }));
     });
     await waitFor(() => expect(getByText('Test content')).toBeInTheDocument());
@@ -22,11 +22,11 @@ describe('ButtonDropdown', () => {
   it('should close panel when esc key pressed', async () => {
     const user = userEvent.setup();
     const { getByRole, getByText, queryByText } = render(<ButtonDropdown text="test esc">Test esc</ButtonDropdown>);
-    await act(() => {
+    act(() => {
       user.click(getByRole('button', { name: 'test esc' }));
     });
     await waitFor(() => expect(getByText('Test esc')).toBeInTheDocument());
-    await act(() => {
+    act(() => {
       user.keyboard('[Escape]');
     });
     await waitFor(() => expect(queryByText('Test esc')).not.toBeInTheDocument());
@@ -40,11 +40,11 @@ describe('ButtonDropdown', () => {
         <input type="number" />
       </>,
     );
-    await act(() => {
+    act(() => {
       user.click(getByRole('button', { name: 'test focus' }));
     });
     await waitFor(() => expect(getByText('Test focus')).toBeInTheDocument());
-    await act(() => {
+    act(() => {
       user.tab();
     });
     await waitFor(() => expect(queryByText('Test focus')).not.toBeInTheDocument());
@@ -57,13 +57,13 @@ describe('ButtonDropdown', () => {
         <ButtonDropdownHeading>Dropdown heading</ButtonDropdownHeading>
       </ButtonDropdown>,
     );
-    await act(() => {
+    act(() => {
       user.click(getByRole('button', { name: 'test heading' }));
     });
     await waitFor(() => expect(getByText('Dropdown heading')).toBeInTheDocument());
   });
 
-  it('should have correct styling when block', async () => {
+  it('should have correct styling when block', () => {
     const { getByRole } = render(
       <ButtonDropdown text="test block" block>
         Test block

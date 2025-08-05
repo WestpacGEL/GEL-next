@@ -10,7 +10,7 @@ export function Modal({ children, title, role, body, size, className, fullscreen
     <ModalBackdrop size={size} {...props}>
       <ModalDialog
         fullscreen={fullscreen}
-        onClose={props.isDismissable ? props.state.close : undefined}
+        onClose={props.isDismissable ? () => props.state.close() : undefined}
         title={title}
         role={role}
         body={body}

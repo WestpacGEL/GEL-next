@@ -1,6 +1,6 @@
 'use client';
 
-import { Dispatch, SetStateAction, createContext, useContext, useState } from 'react';
+import { Dispatch, ReactNode, SetStateAction, createContext, useContext, useState } from 'react';
 
 type SidebarContextType = { open: boolean | null; setOpen: Dispatch<SetStateAction<boolean>> };
 
@@ -16,7 +16,7 @@ export const useSidebar = () => {
   return context;
 };
 
-export function SidebarContextProvider({ children }: { children: React.ReactNode }) {
+export function SidebarContextProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
 
   return <SidebarContext.Provider value={{ open, setOpen }}>{children}</SidebarContext.Provider>;

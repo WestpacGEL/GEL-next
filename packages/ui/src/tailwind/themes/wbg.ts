@@ -3,7 +3,7 @@ import { type BrandConfig } from '../index.js';
 import { generateColorTints } from '../utils/generate-color-tints.js';
 
 const HERO = '#000';
-const BORDER_DARK = '#91979A';
+const BORDER_DARK = '#8F9598';
 
 export const theme: BrandConfig = {
   code: 'WBG',

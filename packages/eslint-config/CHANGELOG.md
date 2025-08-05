@@ -1,5 +1,11 @@
 # @westpac/eslint-config
 
+## 1.0.0
+
+### Major Changes
+
+- f45b1c3: ESLint configuration upgraded to use ESLint v9 with stricter rules and Bottom sheet now supports an optional zIndex prop for customizable stacking in different scenarios.
+
 ## 0.5.0
 
 ### Minor Changes

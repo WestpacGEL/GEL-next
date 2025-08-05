@@ -29,10 +29,10 @@ export function ArticlePage({ article }: ArticlePageProps) {
                 <figure>
                   <Image
                     priority
-                    alt={article.image.alt}
-                    src={article.image.src}
-                    height={article.image.height || undefined}
-                    width={article.image.width || undefined}
+                    alt={article.image.alt.trim()}
+                    src={article.image.src.trim()}
+                    height={article.image.height || 600}
+                    width={article.image.width || 1000}
                     className="block h-auto w-full"
                   />
                 </figure>

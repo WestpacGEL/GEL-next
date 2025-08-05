@@ -12,11 +12,11 @@ import { VisuallyHidden } from '../index.js';
 import { styles as repeaterStyles } from './repeater.styles.js';
 import { type RepeaterProps } from './repeater.types.js';
 
-interface Action {
+type Action = {
   id?: string;
   index: number;
   type: string;
-}
+};
 
 const loadAnimations = () => import('./repeater.utils.js').then(res => res.default);
 

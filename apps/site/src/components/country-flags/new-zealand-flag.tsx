@@ -7,7 +7,7 @@ export function NewZealandFlag({ className = 'h-4 w-4' }: { className?: string }
       xmlns="http://www.w3.org/2000/svg"
       aria-label="New Zealand flag"
     >
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H640V480H0V0Z" fill="#00247D" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M0 0H640V480H0V0Z" fill="#00247D" />
       <path d="M490.425 107.189V122.358L520.763 107.189H490.425Z" fill="white" />
       <path d="M496.888 124.048L487.972 111.775L521.433 106.215L496.888 124.048Z" fill="white" />
       <path d="M490.425 107.189V122.358L460.086 107.189H490.425Z" fill="white" />
