@@ -3,8 +3,8 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'group/radio-option text-left max-sm:mb-0 max-sm:gap-2 max-sm:p-2 sm:mb-0 sm:gap-3 sm:p-3',
-      icon: 'mr-[-6px] text-text-primary transition-transform',
+      base: 'group/radio-option text-left text-text-body max-sm:mb-0 max-sm:gap-2 max-sm:p-2 sm:mb-0 sm:gap-3 sm:p-3',
+      icon: 'mr-[-6px] text-surface-primary transition-transform',
     },
     variants: {
       isFocusVisible: {
@@ -15,7 +15,7 @@ export const styles = tv(
       },
       isSelected: {
         true: {
-          base: 'border-border-hero shadow-[0_0_0_2px_inset]',
+          base: 'border-border-hero',
         },
         false: {},
       },

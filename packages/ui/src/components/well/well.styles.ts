@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'rounded border border-border-muted-soft p-2 sm:p-4',
+    base: 'rounded border border-border-muted-soft p-2 text-text-body sm:p-4',
     variants: {
       color: {
         light: 'bg-surface-muted-faint',

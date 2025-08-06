@@ -24,15 +24,9 @@ export function Popover({ state, children, showAsBottomSheet, ...props }: Popove
       <div {...popoverProps} ref={ref} className={styles.popover()}>
         <div className={styles.header()}>
           <p className={styles.headerLabel()}>Choose a date</p>
-          <Button
-            aria-label="Close widow"
-            size="small"
-            look="unstyled"
-            onClick={() => state.close()}
-            iconAfter={CloseIcon}
-            iconColor="muted"
-            className={styles.closeButton()}
-          />
+          <button className={styles.closeButton()} onClick={() => state.close()} aria-label="Close window">
+            <CloseIcon color="primary" className="block" size="small" />
+          </button>
         </div>
         {children}
       </div>

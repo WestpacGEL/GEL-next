@@ -175,10 +175,10 @@ describe('Table', () => {
     );
     const starterCells = getAllByTestId('cell-start');
     const endCells = getAllByTestId('cell-end');
-    expect(getByTestId('row')).toHaveClass('border border-primary border-l-[6px] border-b-[3px] border-r-0');
+    expect(getByTestId('row')).toHaveClass('border border-primary border-l-2 border-b-[3px] border-r-0');
     starterCells.forEach(cell =>
-      expect(cell).toHaveClass('border border-l-primary border-l-[6px] border-b-[3px] border-b-primary border-b-[3px]'),
+      expect(cell).toHaveClass('border border-l-primary border-l-2 border-b-2 border-b-primary border-b-[3px]'),
     );
-    endCells.forEach(cell => expect(cell).toHaveClass('border border-b-primary border-b-[3px]'));
+    endCells.forEach(cell => expect(cell).toHaveClass('border border-b-primary border-b-2'));
   });
 });

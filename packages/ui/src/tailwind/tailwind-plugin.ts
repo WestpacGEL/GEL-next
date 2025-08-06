@@ -54,7 +54,7 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
           '.background-transition': { [`@apply ${theme('backgroundTransition')}`]: {} },
           '.select-caret': {
             backgroundImage:
-              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='8' style='color: rgb(89,87,103);'><path fill='currentColor' d='M0 0l7 8 7-8z'/></svg>\")",
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='8' style='color: rgba(var(--colors-surface-muted-vivid), var(--tw-bg-opacity, 1));'><path fill='currentColor' d='M0 0l7 8 7-8z'/></svg>\")",
           },
         },
         { respectPrefix: true, respectImportant: true },

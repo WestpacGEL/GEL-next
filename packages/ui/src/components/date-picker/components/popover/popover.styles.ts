@@ -4,10 +4,10 @@ export const styles = tv(
   {
     slots: {
       underlay: 'fixed inset-0',
-      popover: 'bg-surface-white-pale',
+      popover: 'bg-surface-white-faint',
       header: '',
       headerLabel: '',
-      closeButton: '',
+      closeButton: 'flex items-center justify-center focus-outline',
     },
     variants: {
       showAsBottomSheet: {

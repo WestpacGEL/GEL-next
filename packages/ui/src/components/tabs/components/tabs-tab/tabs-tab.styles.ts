@@ -32,7 +32,7 @@ export const styles = tv(
       {
         look: 'default',
         selected: false,
-        className: 'bg-surface-muted-faint',
+        className: 'bg-screen-background-faint',
       },
       {
         orientation: 'horizontal',
@@ -108,7 +108,7 @@ export const styles = tv(
         look: 'material',
         selected: true,
         orientation: 'vertical',
-        className: 'border-b-border border-l-primary',
+        className: 'border-b-border border-l-border-primary',
       },
       {
         color: 'hero',

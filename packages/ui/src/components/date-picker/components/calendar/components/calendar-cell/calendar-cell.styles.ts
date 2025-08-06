@@ -8,15 +8,15 @@ export const styles = tv({
   variants: {
     isDisabled: {
       true: {
-        text: 'cursor-default line-through opacity-50',
+        text: 'cursor-default text-text-muted line-through',
       },
       false: {
-        text: 'hover:bg-surface-primary/5',
+        text: 'hover:bg-surface-primary-faint',
       },
     },
     isUnavailable: {
       true: {
-        text: 'cursor-default line-through opacity-50',
+        text: 'cursor-default text-text-muted line-through',
       },
       false: {},
     },
@@ -27,14 +27,14 @@ export const styles = tv({
     },
     isToday: {
       true: {
-        text: 'border-border-primary bg-surface-primary/5',
+        text: 'border-border-primary bg-surface-primary-faint',
       },
     },
     isSelected: {
       true: {
         text: 'border-border-mono bg-surface-primary text-text-mono hover:bg-surface-primary',
       },
-      false: 'bg-white[REPLACE_TOKEN]',
+      false: '',
     },
   },
 });
