@@ -36,7 +36,7 @@ export const styles = tv(
         'current-visited': {
           base: '',
           circleWrapper:
-            'before:absolute before:inset-y-0 before:left-1 before:z-[1] before:block before:translate-y-[1.25rem] before:border-l-2 before:border-border-primary before:transition-colors',
+            'text-text-body before:absolute before:inset-y-0 before:left-1 before:z-[1] before:block before:translate-y-[1.25rem] before:border-l-2 before:border-border-primary before:transition-colors',
           circle: 'border-[3px] border-border-primary bg-surface-white-pale',
         },
       },
