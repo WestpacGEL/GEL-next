@@ -2,17 +2,17 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'inline-block w-fit whitespace-nowrap border text-center',
+    base: 'inline-block w-fit whitespace-nowrap text-center',
     variants: {
       color: {
-        danger: 'border-border-danger bg-surface-danger text-text-mono',
-        faint: 'border-border-muted-soft bg-surface-muted-soft text-text-muted',
-        hero: 'border-border-hero bg-surface-hero text-text-mono',
-        info: 'border-border-info bg-surface-info text-text-mono',
-        muted: 'border-border-muted bg-surface-muted text-text-mono',
-        primary: 'border-border-primary bg-surface-primary text-text-mono',
-        success: 'border-border-success bg-surface-success text-text-mono',
-        warning: 'border-border-warning bg-surface-warning text-text-mono',
+        danger: 'bg-surface-danger text-text-mono',
+        faint: 'bg-surface-muted-soft text-text-muted',
+        hero: 'bg-surface-hero text-text-mono',
+        info: 'bg-surface-info text-text-mono',
+        muted: 'bg-surface-muted text-text-mono',
+        primary: 'bg-surface-primary text-text-mono',
+        success: 'bg-surface-success text-text-mono',
+        warning: 'bg-surface-warning text-text-mono',
         'danger-inverted': 'border-none bg-surface-mono text-text-danger',
         'faint-inverted': 'border-none bg-surface-mono text-text-muted',
         'hero-inverted': 'border-none bg-surface-mono text-text-hero',
@@ -26,7 +26,7 @@ export const styles = tv(
         default: 'h-[1.25rem] rounded-sm px-1 text-[0.75rem] leading-[1.125rem]',
       },
       soft: {
-        true: '',
+        true: 'border',
         false: '',
       },
     },
@@ -39,7 +39,7 @@ export const styles = tv(
       {
         color: 'faint',
         soft: true,
-        className: 'bg-surface-body-faint text-text-body',
+        className: 'bg-surface-muted-faint text-text-body',
       },
       {
         color: 'hero',

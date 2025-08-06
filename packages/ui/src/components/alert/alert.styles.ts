@@ -7,7 +7,7 @@ export const styles = tv(
       icon: 'float-left flex-none',
       body: 'relative flex-1 overflow-hidden xsl:top-[0.125rem] [&_a]:underline',
       heading: 'typography-body-9 mb-1 font-bold',
-      close: 'absolute right-0.5 top-0.5 h-5.5 p-1 hover:opacity-80',
+      close: 'absolute right-0.5 top-0.5 h-5.5 p-1',
     },
     variants: {
       look: {

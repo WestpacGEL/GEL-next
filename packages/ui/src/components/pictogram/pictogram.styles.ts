@@ -13,7 +13,7 @@ export const fill = tv({
   variants: {
     mode: {
       dark: 'fill-pictogram-dark',
-      light: 'fill-white',
+      light: 'fill-surface-white-pale',
       duo: '',
     },
     highlight: {
@@ -27,12 +27,12 @@ export const fill = tv({
     {
       mode: 'duo',
       highlight: true,
-      className: 'fill-pictogram-duo-highlight',
+      className: 'fill-surface-pictogram-accent',
     },
     {
       mode: 'duo',
       outline: true,
-      className: 'fill-pictogram-duo-outline',
+      className: 'fill-surface-pictogram-base',
     },
   ],
 });

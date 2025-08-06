@@ -49,14 +49,14 @@ export function ButtonDropdown({
     if (look === 'faint') {
       return 'muted';
     }
-    return soft ? 'mono' : 'muted-vivid';
+    return soft ? 'muted-vivid' : 'mono';
   }, [look, soft]);
 
   return (
     <>
       <Button
         ref={ref}
-        iconAfter={(props: IconProps) => <DropDownIcon color={iconColor} aria-hidden {...props} />}
+        iconAfter={(props: IconProps) => <DropDownIcon {...props} color={iconColor} aria-hidden />}
         iconBefore={IconBefore}
         size={size}
         look={look}

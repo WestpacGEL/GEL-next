@@ -2,10 +2,10 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'group flex cursor-pointer items-center justify-between bg-surface-white-faint p-2 px-3 text-sm text-text-body transition-colors hover:bg-surface-hero hover:text-text-mono focus:bg-surface-hero focus:text-text-mono',
+    base: 'group flex cursor-pointer items-center justify-between bg-surface-white-faint p-2 px-3 text-sm text-text-body transition-colors',
     variants: {
       isFocused: {
-        true: 'is-focused bg-surface-hero !text-text-mono',
+        true: 'is-focused bg-surface-muted-pale',
       },
       isSelected: {
         true: 'font-bold',

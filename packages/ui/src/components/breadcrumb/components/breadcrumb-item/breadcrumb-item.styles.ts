@@ -2,15 +2,15 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'text-[0.8125rem]',
+    base: 'text-[0.8125rem] text-text-body',
     variants: {
       isCurrent: {
-        true: '',
+        true: 'text-text-muted',
         false: '',
       },
       isDisabled: {
         true: 'text-text-muted',
-        false: 'text-text-body',
+        false: '',
       },
     },
     compoundVariants: [

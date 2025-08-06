@@ -16,7 +16,7 @@ export const styles = tv(
         },
         lego: {
           itemHeader:
-            'border-l-[0.375rem] border-border-muted-soft bg-surface-muted-faint shadow-[inset_0_1px_0_var(--tw-shadow-color)] !shadow-border transition-colors',
+            'border-l-[0.375rem] border-border-muted-soft border-t-border-muted-soft bg-surface-muted-faint shadow-[inset_0_1px_0_var(--tw-shadow-color)] !shadow-border-muted-soft transition-colors',
         },
       },
       isOpen: {
