@@ -1,31 +1,30 @@
-### Default
+### Sizes
 
-Use this progress indicator to show a process is running.
+Use this Large size Progress indicator for page loads, this size can also include an icon and/or a label. See [Loading guide](/guides/loading) for page load patterns.
 
 ```tsx
 () => {
-  return (
-    <div className="p-1 rounded-md flex items-end justify-center" >
-      <ProgressIndicator size="xlarge" />
-    </div>
-  );
+  return <div className="flex items-top justify-center gap-3">
+      <ProgressIndicator size="large" />
+      <ProgressIndicator size="large" label="Loading..." />
+      <ProgressIndicator size="large" icon={PadlockTickIcon} />
+      <ProgressIndicator size="large" label="Signing in" icon={FingerprintIcon} />
+    </div>;
 }
 ```
 
-### Sizes
-
-The indicator comes in various sizes (Xs, Sm, Md, Lg and Xl) suitable for buttons, fields, or full-page loading.
+The smaller sizes are suitable for use in components ie buttons or fields.  See [Loading guide](/guides/loading#loading-within-components) for component patterns.
 
 ```tsx
 () => {
-  return (
-    <div className="p-1 rounded-md flex items-end justify-center" >
-      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator size={size} className="mr-2" />
-      ))}
-    </div>
-  );
-};
+  return <div className="flex items-top justify-left gap-1">
+
+  <Button size="xlarge" iconAfter={ProgressIndicator} iconColor="white">Xlarge</Button> 
+  <Button size="large" iconAfter={ProgressIndicator} iconColor="white">Large</Button>  
+  <Button size="medium" iconAfter={ProgressIndicator} iconColor="white">Medium</Button>
+  <Button size="small" iconAfter={ProgressIndicator} iconColor="white">Small</Button>
+    </div>;
+}
 ```
 
 ### Dark backgrounds
@@ -34,8 +33,11 @@ The indicator can appear white for use on dark backgrounds.
 
 ```tsx
 () => {
-  return <div className="rounded-md bg-black flex items-end justify-center">
-      <ProgressIndicator size="xlarge" color="white" className="mr-2 mb-2 mt-2" />)}
+  return <div className="p-5 bg-black rounded-md flex items-top justify-center gap-3">
+      <ProgressIndicator size="large" color="white" />
+      <ProgressIndicator size="large" color="white" label="Loading..." />
+      <ProgressIndicator size="large" color="white" icon={PadlockTickIcon} />
+      <ProgressIndicator size="large" color="white" label="Signing in" icon={FingerprintIcon} />
     </div>;
 }
 ```

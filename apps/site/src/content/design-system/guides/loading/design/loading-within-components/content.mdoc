@@ -49,14 +49,22 @@ When indicating loading for very small elements we use an animated icon embedded
 #### In button
 
 ```jsx
+
 () => {
-  return <div className="flex gap-2 py-2">
-<Button size='large' look='primary'  iconAfter={DownloadIcon} iconSize='small' iconColor='white'>
-                Download{'  '}
-              </Button>
-              <Button size='large' look='primary'  iconAfter={ProgressIndicator} disabled iconSize='small' iconColor='white'>
-                Downloading{'  '}
-              </Button>
-    </div>;
-}
+  const [loading, setLoading] = useState(false);
+  const handleSubmit = useCallback(async () => {
+    setLoading(true);
+    await new Promise<void>((resolve) => {
+      setTimeout(() => { resolve() }, 3000);  
+    })
+    setLoading(false);
+  }, []);
+
+  return (
+    <>
+      <Button disabled={loading} iconAfter={loading ? ProgressIndicator : DownloadIcon} iconColor="white" onClick={handleSubmit}>Download</Button>
+    </>
+  );
+};
+ 
 ```

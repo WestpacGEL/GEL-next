@@ -6,16 +6,11 @@ description: >-
   wait times. 
 namedExport:
   discriminant: false
-excludeFromNavbar: true
+excludeFromNavbar: false
 design:
   - title:
       name: Page loading
       slug: loading-options
-    noTitle: false
-    noDemo: false
-  - title:
-      name: Page section loading
-      slug: page-section-loading
     noTitle: false
     noDemo: false
   - title:

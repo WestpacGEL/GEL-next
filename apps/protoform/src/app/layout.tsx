@@ -21,8 +21,8 @@ export default function RootLayout({
     <html lang="en" data-theme="wbc">
       <body>
         <main className="m-auto max-w-[1923px] overscroll-y-none border border-y-0 border-border">
-          <CustomHeader />
           <SidebarContextProvider>
+            <CustomHeader />
             <Sidebar />
             <ContentWrapper>{children}</ContentWrapper>
             <CustomFooter />
