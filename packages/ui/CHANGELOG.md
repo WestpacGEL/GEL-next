@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.46.0
+
+### Minor Changes
+
+- 96c11c4: removed decorative pictogram, updated folder structure of pictogram component
+
 ## 0.45.0
 
 ### Minor Changes
