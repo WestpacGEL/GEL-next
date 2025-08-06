@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/deprecation */
 'use client';
 
 import { AriaAccordionProps, useAccordion } from '@react-aria/accordion';
@@ -51,7 +52,7 @@ function Accordion<T extends object>(
       ref={domRef}
       className={styles({ className, rounded })}
     >
-      <div className="ml-[-1px] mt-[-1px]">
+      <div className="-ml-px -mt-px">
         {[...state.collection].map(item => (
           <AccordionItemContent<T> key={item.key} item={item} state={state} look={look} />
         ))}
