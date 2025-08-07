@@ -89,15 +89,43 @@ export const FormField: Story = {
 };
 
 /**
+ * > Size field example
+ */
+export const Sizes: Story = {
+  args: {},
+  render: () => {
+    return (
+      <div className="flex flex-col gap-2">
+        {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
+          <Select size={size} key={size}>
+            <option value="option-1">option 1</option>
+            <option value="option-2">option 2</option>
+            <option value="option-3">option 3</option>
+            <option value="option-4">option 4</option>
+          </Select>
+        ))}
+      </div>
+    );
+  },
+};
+
+/**
  * > Fixed widths usage example
  */
 export const FixedWidths = () => {
   return (
     <div className="flex flex-col gap-2">
-      {FIXED_WIDTHS.map(width => (
-        <Select width={width} key={width}>
-          <option>{width.toString()}</option>
-        </Select>
+      {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
+        <div className="flex flex-col" key={size}>
+          <h2 className="typography-body-8 text-text-body py-3 border-t border-t-border-muted">{size}</h2>
+          <div className="flex flex-col gap-2">
+            {FIXED_WIDTHS.map(width => (
+              <Select width={width} key={width}>
+                <option>{width}</option>
+              </Select>
+            ))}
+          </div>
+        </div>
       ))}
     </div>
   );
