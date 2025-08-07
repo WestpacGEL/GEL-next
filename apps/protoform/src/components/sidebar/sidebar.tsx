@@ -11,9 +11,8 @@ import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { useSidebar } from './context';
 
 export function Sidebar({ children }: { children?: ReactNode }) {
-  const { open, setOpen, ropeData, ropeStep } = useSidebar();
+  const { open, setOpen, ropeData, ropeStep, sidebarScrolled, setSidebarScrolled } = useSidebar();
   const [scrolled, setScrolled] = useState(false);
-  const [sidebarScrolled, setSidebarScrolled] = useState(false);
   const [totalSteps, setTotalSteps] = useState(0);
   const [isMaxWidth, setIsMaxWidth] = useState(true);
   const sidebarContent = useRef<HTMLDivElement>(null);
@@ -104,12 +103,6 @@ export function Sidebar({ children }: { children?: ReactNode }) {
 
         <>
           <>
-            <div
-              className={clsx(
-                'sticky inset-y-0 left-full right-0 top-[66px] z-[200] h-1 w-[300px] bg-gradient-to-b from-black/[.2] from-0% opacity-0 transition-all duration-200 will-change-[opacity] max-md:hidden',
-                { 'opacity-100': sidebarScrolled },
-              )}
-            />
             <div
               className={clsx(
                 'fixed inset-y-0 w-[300px] overflow-auto overscroll-contain border-l border-border bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-md:z-[100] md:mt-11',

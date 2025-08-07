@@ -12,6 +12,10 @@ export type HeaderProps = {
    */
   fixed?: boolean;
   /**
+   * Used with fixed to show drop shadow when something on screen is scrolled that should trigger drop shadow but doesn't
+   */
+  isScrolled?: boolean;
+  /**
    * Visually hidden text for left button
    */
   leftAssistiveText?: string;
