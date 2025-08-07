@@ -52,10 +52,6 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
           '.focus-outline': { [`@apply ${theme('focusOutline')}`]: {} },
           // eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions
           '.background-transition': { [`@apply ${theme('backgroundTransition')}`]: {} },
-          '.select-caret': {
-            backgroundImage:
-              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='8' style='color: rgba(var(--colors-surface-muted-vivid), var(--tw-bg-opacity, 1));'><path fill='currentColor' d='M0 0l7 8 7-8z'/></svg>\")",
-          },
         },
         { respectPrefix: true, respectImportant: true },
       );
