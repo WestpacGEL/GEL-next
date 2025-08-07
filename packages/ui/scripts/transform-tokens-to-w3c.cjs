@@ -287,6 +287,159 @@ function generateThemes(primaryTokens, modeTokens, themes) {
 
   return finalThemes;
 }
+/**
+ * Converts a hex color string to an RGB array.
+ * @param {string} hex - Hexadecimal color string (e.g. "#fff" or "#ffffff").
+ * @returns {[number, number, number]} - RGB components.
+ */
+function hexToRgb(hex) {
+  let normalizedHex = hex.replace(/^#/, '');
+
+  if (normalizedHex.length === 3) {
+    normalizedHex = normalizedHex
+      .split('')
+      .map(char => char + char)
+      .join('');
+  }
+
+  const r = parseInt(normalizedHex.slice(0, 2), 16);
+  const g = parseInt(normalizedHex.slice(2, 4), 16);
+  const b = parseInt(normalizedHex.slice(4, 6), 16);
+
+  return [r, g, b];
+}
+
+/**
+ * Converts RGBA values to a hex color string.
+ * @param {number} r - Red (0–255).
+ * @param {number} g - Green (0–255).
+ * @param {number} b - Blue (0–255).
+ * @param {number} a - Alpha (0–1).
+ * @returns {string} - Hex color string with alpha (e.g. "#ffffffcc").
+ */
+function rgbaToHex(r, g, b, a = 1) {
+  const toHex = value => {
+    const hex = Math.round(Math.min(255, Math.max(0, value))).toString(16);
+    return hex.padStart(2, '0');
+  };
+
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}${toHex(a * 255)}`;
+}
+
+/**
+ * Parses an RGB(A) or hex color string into a token-friendly object.
+ * @param {string} colorValue - A valid color string (hex, rgb, rgba).
+ * @returns {{
+ *   colorSpace: string,
+ *   components: number[],
+ *   alpha: number,
+ *   hex: string
+ * }}
+ */
+function parseColorValue(colorValue) {
+  if (colorValue.startsWith('#')) {
+    return {
+      colorSpace: 'srgb',
+      components: hexToRgb(colorValue),
+      alpha: 1,
+      hex: colorValue,
+    };
+  }
+
+  const extractValues = (str, type) => str.replace(`${type}(`, '').replace(')', '').split(',').map(Number);
+
+  if (colorValue.startsWith('rgba')) {
+    const [r, g, b, a] = extractValues(colorValue, 'rgba');
+    return {
+      colorSpace: 'srgb',
+      components: [r, g, b],
+      alpha: a,
+      hex: rgbaToHex(r, g, b, a),
+    };
+  }
+
+  if (colorValue.startsWith('rgb')) {
+    const [r, g, b] = extractValues(colorValue, 'rgb');
+    return {
+      colorSpace: 'srgb',
+      components: [r, g, b],
+      alpha: 1,
+      hex: rgbaToHex(r, g, b, 1),
+    };
+  }
+
+  throw new Error(`Unsupported color value: "${colorValue}"`);
+}
+
+/**
+ * Builds a color token value from a color string.
+ * @param {string} colorValue
+ * @returns {object}
+ */
+function buildColorTokenValue(colorValue) {
+  return parseColorValue(colorValue);
+}
+
+/**
+ * Builds a border token object from a raw border value.
+ * @param {string | number} borderValue
+ * @returns {{ value: string | number, unit: string }}
+ */
+function buildBorderTokenValue(borderValue) {
+  return { value: borderValue, unit: 'px' };
+}
+
+/**
+ * Normalizes a deeply nested theme object into token format.
+ * @param {object} themes
+ * @returns {object}
+ */
+function normalizeValues(themes) {
+  const normalizedBrands = {};
+
+  for (const [brandKey, brand] of Object.entries(themes)) {
+    const modes = {};
+
+    for (const [modeName, mode] of Object.entries(brand)) {
+      const normalizedMode = { ...mode };
+
+      // Normalize color tokens
+      const normalizedColors = {};
+      for (const [groupName, group] of Object.entries(mode.color)) {
+        const tokens = {};
+        for (const [tokenName, token] of Object.entries(group)) {
+          tokens[tokenName] = {
+            ...token,
+            $value: buildColorTokenValue(token.$value),
+          };
+        }
+        normalizedColors[groupName] = tokens;
+      }
+      normalizedMode.color = normalizedColors;
+
+      // Normalize border tokens
+      const normalizedBorders = {};
+      for (const [groupName, group] of Object.entries(mode.border)) {
+        const tokens = {};
+        for (const [tokenName, token] of Object.entries(group)) {
+          tokens[tokenName] = {
+            ...token,
+            $type: 'dimension',
+            $value: buildBorderTokenValue(token.$value),
+          };
+        }
+        normalizedBorders[groupName] = tokens;
+      }
+      normalizedMode.border = normalizedBorders;
+
+      modes[modeName] = normalizedMode;
+    }
+
+    normalizedBrands[brandKey] = modes;
+  }
+
+  return normalizedBrands;
+}
 
 const flattenColorThemes = finalThemes => {
   const brands = {};
@@ -323,7 +476,7 @@ async function saveJSONToFile(filename, data) {
 }
 
 // Generate final resolved theme tree
-const finalThemes = generateThemes(primaryTokens, modeTokens, themes);
+const finalThemes = normalizeValues(generateThemes(primaryTokens, modeTokens, themes));
 Object.entries(finalThemes).forEach(([themeKey, theme]) => {
   saveJSONToFile(`./w3c-tokens/${themeKey}.json`, theme);
 });
