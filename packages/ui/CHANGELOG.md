@@ -1,5 +1,13 @@
 # @westpac/ui
 
+## 0.47.0
+
+### Minor Changes
+
+- 238c381: New isScrolled prop for Header component to be used when fixed for drop shadow control. Minor style update on fixed header to have bottom border transparent when fixed + scrolled to stop header from shifting slightly
+- efca078: minor style changes to autocomplete popover
+- 7904d15: Update dependencies to support React 19
+
 ## 0.46.0
 
 ### Minor Changes

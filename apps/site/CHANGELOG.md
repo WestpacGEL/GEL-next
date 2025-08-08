@@ -1,5 +1,14 @@
 # site
 
+## 0.3.33
+
+### Patch Changes
+
+- Updated dependencies [238c381]
+- Updated dependencies [efca078]
+- Updated dependencies [7904d15]
+  - @westpac/ui@0.47.0
+
 ## 0.3.32
 
 ### Patch Changes
