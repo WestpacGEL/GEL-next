@@ -56,7 +56,7 @@ export const styles = tv(
       {
         slots: ['content'],
         look: 'lego',
-        className: 'border-l-[0.375rem] border-l-border',
+        className: 'shadow-[inset_0.375rem_0_0_var(--tw-shadow-color)] !shadow-border-muted-soft',
       },
     ],
   },

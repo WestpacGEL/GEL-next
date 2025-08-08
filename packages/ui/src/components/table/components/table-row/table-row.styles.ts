@@ -5,7 +5,7 @@ export const styles = tv(
     slots: { base: 'group/row' },
     variants: {
       striped: { true: { base: 'even:bg-surface-muted-faint' }, false: { base: 'hover:bg-surface-muted-pale' } },
-      highlightedRow: { true: { base: 'border border-b-2 border-l-2 border-r-0 border-border-primary' } },
+      highlightedRow: { true: { base: 'border-b-2 border-r-0 border-border-primary' } },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },

@@ -10,7 +10,7 @@ export const styles = tv(
         true: { base: 'border-x' },
       },
       highlighted: { true: { base: 'border border-b-2 border-b-border-primary' } },
-      highlightStart: { true: { base: 'border border-b-2 border-l-2 border-l-border-primary' } },
+      highlightStart: { true: { base: 'border border-b-2' } },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
