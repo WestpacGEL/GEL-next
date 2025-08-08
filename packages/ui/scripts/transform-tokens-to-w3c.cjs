@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const fs = require('fs/promises');
 
 /**
@@ -115,6 +116,7 @@ function transformDesignTokens(root) {
  * @param {DesignTokensRoot} root
  * @returns {JSONTokenTree}
  */
+// eslint-disable-next-line sonarjs/cognitive-complexity
 function transformThemesDesignTokens(root) {
   const themes = {};
 
@@ -187,6 +189,7 @@ function resolveReference(path, source) {
  * @param {JSONTokenTree} themes
  * @returns {JSONTokenTree}
  */
+// eslint-disable-next-line sonarjs/cognitive-complexity
 function generateThemes(primaryTokens, modeTokens, themes) {
   const resolvedBrands = {};
 
@@ -390,10 +393,20 @@ function buildBorderTokenValue(borderValue) {
 }
 
 /**
+ * Transform normal string to kebab-case
+ * @param {string} str
+ * @returns {string}
+ */
+function transformToKebabCase(str) {
+  return str.split(' ').join('-').toLowerCase();
+}
+
+/**
  * Normalizes a deeply nested theme object into token format.
  * @param {object} themes
  * @returns {object}
  */
+// eslint-disable-next-line sonarjs/cognitive-complexity
 function normalizeValues(themes) {
   const normalizedBrands = {};
 
@@ -432,7 +445,7 @@ function normalizeValues(themes) {
       }
       normalizedMode.border = normalizedBorders;
 
-      modes[modeName] = normalizedMode;
+      modes[transformToKebabCase(modeName)] = normalizedMode;
     }
 
     normalizedBrands[brandKey] = modes;
