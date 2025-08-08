@@ -95,7 +95,9 @@ describe('Table', () => {
     );
     expect(getByTestId('header-cell')).toHaveClass('border-x border-t border-x-border border-t-border');
     expect(getByTestId('cell')).toHaveClass('border-x');
-    expect(getByText('Footer goes here and should colSpan all columns')).toHaveClass('border-border border');
+    expect(getByText('Footer goes here and should colSpan all columns')).toHaveClass(
+      'typography-body-10 p-2 text-left text-text-muted border border-border-muted-soft',
+    );
   });
 
   it('should render table with correct styling when striped', () => {
@@ -122,7 +124,7 @@ describe('Table', () => {
         </TableBody>
       </Table>,
     );
-    expect(getByTestId('row-2')).toHaveClass('even:bg-light');
+    expect(getByTestId('row-2')).toHaveClass('even:bg-surface-muted-faint');
   });
 
   it('should render table with correct styling with highlighting options', () => {
@@ -175,10 +177,18 @@ describe('Table', () => {
     );
     const starterCells = getAllByTestId('cell-start');
     const endCells = getAllByTestId('cell-end');
-    expect(getByTestId('row')).toHaveClass('border border-primary border-l-2 border-b-[3px] border-r-0');
-    starterCells.forEach(cell =>
-      expect(cell).toHaveClass('border border-l-primary border-l-2 border-b-2 border-b-primary border-b-[3px]'),
+    expect(getByTestId('row')).toHaveClass(
+      'group/row hover:bg-surface-muted-pale border border-b-2 border-l-2 border-r-0 border-border-primary',
     );
-    endCells.forEach(cell => expect(cell).toHaveClass('border border-b-primary border-b-2'));
+    starterCells.forEach(cell =>
+      expect(cell).toHaveClass(
+        'typography-body-10 border-border-muted-soft p-2 text-left align-top text-text-body border-x border-b-border-primary border border-b-2 border-l-2 border-l-border-primary',
+      ),
+    );
+    endCells.forEach(cell =>
+      expect(cell).toHaveClass(
+        '  typography-body-10 border-border-muted-soft p-2 text-left align-top text-text-body border-x border border-b-2 border-b-border-primary',
+      ),
+    );
   });
 });

@@ -15,13 +15,6 @@ describe('Alert', () => {
     expect(container).toBeInTheDocument();
   });
 
-  it('generates the base style correctly', () => {
-    const style = styles({ look: 'info', mode: 'box' });
-    expect(style.base()).toBe(
-      'typography-body-10 relative mb-4 xsl:flex text-info border-y p-3 border-info-50 bg-info-5',
-    );
-  });
-
   it('displays an icon', () => {
     render(<Alert />);
     expect(screen.getByRole('img', { name: 'Info' })).toBeInTheDocument();

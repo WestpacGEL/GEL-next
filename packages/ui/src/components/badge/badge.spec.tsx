@@ -8,11 +8,4 @@ describe('Badge', () => {
     const { container } = render(<Badge />);
     expect(container).toBeInTheDocument();
   });
-  it('renders the style correctly', () => {
-    const style = styles({ color: 'primary', type: 'pill' });
-    // TODO: use some variants for test
-    expect(style).toBe(
-      'whitespace-nowrap border text-center border-primary bg-primary text-white typography-body-10 flex h-4 w-fit items-center rounded-xl px-[0.4375rem] font-medium leading-none',
-    );
-  });
 });

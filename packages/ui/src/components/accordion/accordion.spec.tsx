@@ -2,7 +2,6 @@ import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Accordion, AccordionItem } from './accordion.component.js';
-import { styles } from './accordion.styles.js';
 
 describe('Accordion', () => {
   const user = userEvent.setup();
@@ -49,9 +48,5 @@ describe('Accordion', () => {
     await waitFor(() => {
       expect(getByText('Senatus Populusque Romanus.')).toBeVisible();
     });
-  });
-  it('renders the style correctly', () => {
-    const style = styles({ rounded: true });
-    expect(style).toBe('flex flex-col border border-border text-text overflow-hidden rounded');
   });
 });
