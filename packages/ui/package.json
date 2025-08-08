@@ -283,12 +283,12 @@
   },
   "dependencies": {
     "@duetds/date-picker": "~1.4.0",
-    "@react-aria/accordion": "3.0.0-alpha.27",
+    "@react-aria/accordion": "3.0.0-alpha.37",
     "@react-aria/utils": "~3.29.1",
     "@react-spectrum/utils": "~3.11.5",
     "clsx": "^1.2.1",
-    "framer-motion": "~10.12.16",
     "lodash.throttle": "~4.1.1",
+    "motion": "~12.23.12",
     "react-aria": "~3.41.1",
     "react-stately": "~3.39.0"
   },

@@ -79,7 +79,7 @@ describe('Compacta', () => {
   });
 
   it('should display input values when collapsed', async () => {
-    // This test inconsistently shows a warning, it is likely related to framer-motion
+    // This test inconsistently shows a warning, it is likely related to motion
     const user = userEvent.setup();
     const { getByText, getByLabelText, queryByText, getByTestId } = render(<TestCompacta />);
 

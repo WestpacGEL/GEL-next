@@ -1,4 +1,4 @@
-import { Button, Grid, GridItem, Input } from '@westpac/ui';
+import { Grid, GridItem } from '@westpac/ui';
 import { GithubIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
 
@@ -68,60 +68,10 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         </Grid>
       </Section>
       <Section>
-        <SectionHeading>Subscribe to GEL updates</SectionHeading>
-        <Grid>
-          <SectionItem>
-            <p className="mb-5 leading-[2] sm:mb-7">
-              Get the latest brand and component updates as well as access to new resources and helpful tips.
-            </p>
-            <form
-              action="//westpac.us11.list-manage.com/subscribe/post?u=d3cf7e940bf311ace99e397b7&amp;id=c78955f1b4"
-              method="post"
-              id="mc-embedded-subscribe-form"
-              name="mc-embedded-subscribe-form"
-              target="_blank"
-              noValidate
-            >
-              <Grid className="text-left">
-                <GridItem span={{ initial: 10, sm: 5, md: 4 }} start={{ initial: 2, sm: 3, md: 4 }}>
-                  <label htmlFor="mce-EMAIL" className="mb-2 inline-block w-full">
-                    Enter your e-mail address
-                  </label>
-                  <Input
-                    size="large"
-                    type="email"
-                    id="mce-EMAIL"
-                    name="EMAIL"
-                    autoComplete="email"
-                    className="w-full"
-                  />
-                </GridItem>
-                <GridItem
-                  span={{ initial: 10, sm: 2 }}
-                  start={{ initial: 2 }}
-                  className="flex items-end sm:col-start-auto"
-                >
-                  <Button
-                    look="primary"
-                    type="submit"
-                    size="large"
-                    name="subscribe"
-                    id="mc-embedded-subscribe"
-                    block={{ initial: true, sm: false }}
-                  >
-                    Subscribe
-                  </Button>
-                </GridItem>
-              </Grid>
-            </form>
-          </SectionItem>
-        </Grid>
-      </Section>
-      <Section background>
         <SectionHeading>Downloads &amp; links</SectionHeading>
         <Grid className="mb-5 sm:mb-9">
           <SectionItem className="flex flex-col gap-2">
-            <p className="leading-[2]">Design on-brand with greater efficiency and accuracy using the Sketch UI Kit.</p>
+            <p className="leading-[2]">Design on-brand with greater efficiency and accuracy using the Figma UI Kit.</p>
             <p className="leading-[2]">Visit GitHub to follow Westpac GEL Design System code updates and log issues.</p>
           </SectionItem>
         </Grid>

@@ -166,12 +166,12 @@ importers:
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
-      framer-motion:
-        specifier: ~10.12.16
-        version: 10.12.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       lodash.throttle:
         specifier: ~4.1.1
         version: 4.1.1
+      motion:
+        specifier: ~12.23.12
+        version: 12.23.12(@emotion/is-prop-valid@0.8.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next:
         specifier: ^14.2.30
         version: 14.2.30(@babel/core@7.28.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -341,8 +341,8 @@ importers:
         specifier: ~1.4.0
         version: 1.4.0
       '@react-aria/accordion':
-        specifier: 3.0.0-alpha.27
-        version: 3.0.0-alpha.27(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 3.0.0-alpha.37
+        version: 3.0.0-alpha.37(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils':
         specifier: ~3.29.1
         version: 3.29.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -352,12 +352,12 @@ importers:
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
-      framer-motion:
-        specifier: ~10.12.16
-        version: 10.12.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       lodash.throttle:
         specifier: ~4.1.1
         version: 4.1.1
+      motion:
+        specifier: ~12.23.12
+        version: 12.23.12(@emotion/is-prop-valid@0.8.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-aria:
         specifier: ~3.41.1
         version: 3.41.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1376,11 +1376,11 @@ packages:
     resolution: {integrity: sha512-YLT9Zo3oNPJoBjBc4q8G2mjU4tqIbf5CEOORbUUr48dCD9q3umJ3IPlVqOqDakPfd2HuwccBaqlGhN4Gmr5OWg==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@react-aria/accordion@3.0.0-alpha.27':
-    resolution: {integrity: sha512-FC+pH6pOi4tSddsjh6eTi4dkuDjk/sHzliHmO8zzKuxoa4FWTWXREt7o2Pb/90e0u3bra7dU8WkDShKsWVQZyQ==}
+  '@react-aria/accordion@3.0.0-alpha.37':
+    resolution: {integrity: sha512-vtNB2B6hSzRec1KnIdTFcJTX/we5Yy09zzxSqq42YIsz91tcqA24+22tBTj/15W4hrmlK9z3CV1ITe2KhoeY6Q==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
   '@react-aria/actiongroup@3.7.18':
     resolution: {integrity: sha512-dEF4CheaPn9PKtqyDpAwZ42u1LBSUiH0G72GoYE/Y9RTxI2ImABg+fxPGhF9z+ZxVNz2df8yyhBJFOtxwrBSqQ==}
@@ -1838,10 +1838,10 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
 
-  '@react-types/accordion@3.0.0-alpha.19':
-    resolution: {integrity: sha512-WJaitKz56zRKUwBqDM4OOKtmIdD0lr5nruWoM2IlGRO50WUzSFmAy/1aFiodAVZbun1v5IxbjST6/qSV4jPqug==}
+  '@react-types/accordion@3.0.0-alpha.26':
+    resolution: {integrity: sha512-OXf/kXcD2vFlEnkcZy/GG+a/1xO9BN7Uh3/5/Ceuj9z2E/WwD55YwU3GFM5zzkZ4+DMkdowHnZX37XnmbyD3Mg==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
   '@react-types/actionbar@3.1.16':
     resolution: {integrity: sha512-ZdT8gqLZa2kRemBtwoXdj/RT9RO1zb5EXJCy43rtlZzMBD+gDhPUMDdJidXp29HTABhnxST1sg8d1e5g8MkfVg==}
@@ -3919,12 +3919,15 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@10.12.23:
-    resolution: {integrity: sha512-kZWs6Jx84ArdG/UulF6ezVXkn0lKBtnhzWWpEJjQeHesf7ZBCSSgyNUg/Pec4cYENzUCJJA4AuTPwZHqZy2orA==}
+  framer-motion@12.23.12:
+    resolution: {integrity: sha512-6e78rdVtnBvlEVgu6eFEAgG9v3wLnYEboM8I5O5EXvfKC8gxGQB8wXJdhkMy10iVcn05jl6CNw7/HTsTCfwcWg==}
     peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
       react:
         optional: true
       react-dom:
@@ -4899,6 +4902,26 @@ packages:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
     engines: {node: '>=10'}
     hasBin: true
+
+  motion-dom@12.23.12:
+    resolution: {integrity: sha512-RcR4fvMCTESQBD/uKQe49D5RUeDOokkGRmz4ceaJKDBgHYtZtntC/s2vLvY38gqGaytinij/yi3hMcWVcEF5Kw==}
+
+  motion-utils@12.23.6:
+    resolution: {integrity: sha512-eAWoPgr4eFEOFfg2WjIsMoqJTW6Z8MTUCgn/GZ3VRpClWBdnbjryiA3ZSNLyxCTmCQx4RmYX6jX1iWHbenUPNQ==}
+
+  motion@12.23.12:
+    resolution: {integrity: sha512-8jCD8uW5GD1csOoqh1WhH1A6j5APHVE15nuBkFeRiMzYBdRwyAHmSP/oXSuW0WJPZRXTFdBoG4hY9TFWNhhwng==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -7604,13 +7627,13 @@ snapshots:
 
   '@pkgr/core@0.2.7': {}
 
-  '@react-aria/accordion@3.0.0-alpha.27(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@react-aria/accordion@3.0.0-alpha.37(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-aria/button': 3.13.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/selection': 3.24.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.29.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/tree': 3.9.0(react@18.3.1)
-      '@react-types/accordion': 3.0.0-alpha.19(react@18.3.1)
+      '@react-types/accordion': 3.0.0-alpha.26(react@18.3.1)
       '@react-types/shared': 3.30.0(react@18.3.1)
       '@swc/helpers': 0.5.17
       react: 18.3.1
@@ -8520,7 +8543,7 @@ snapshots:
       '@react-types/shared': 3.30.0(react@18.3.1)
       react: 18.3.1
 
-  '@react-types/accordion@3.0.0-alpha.19(react@18.3.1)':
+  '@react-types/accordion@3.0.0-alpha.26(react@18.3.1)':
     dependencies:
       '@react-types/shared': 3.30.0(react@18.3.1)
       react: 18.3.1
@@ -10889,8 +10912,10 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@10.12.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  framer-motion@12.23.12(@emotion/is-prop-valid@0.8.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
+      motion-dom: 12.23.12
+      motion-utils: 12.23.6
       tslib: 2.8.1
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
@@ -12125,6 +12150,21 @@ snapshots:
   minipass@7.1.2: {}
 
   mkdirp@1.0.4: {}
+
+  motion-dom@12.23.12:
+    dependencies:
+      motion-utils: 12.23.6
+
+  motion-utils@12.23.6: {}
+
+  motion@12.23.12(@emotion/is-prop-valid@0.8.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      framer-motion: 12.23.12(@emotion/is-prop-valid@0.8.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      tslib: 2.8.1
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   mri@1.2.0: {}
 
