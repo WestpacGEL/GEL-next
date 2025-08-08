@@ -149,8 +149,12 @@ function Autocomplete<T extends object>(
           portalContainer={portalContainer}
           triggerRef={outerRef}
         >
-          <div className="px-3 py-2">{noOptionsMessage}</div>
-          {footer && <div className="border-t border-t-border px-3 py-2">{footer}</div>}
+          <div className="bg-surface-white-faint px-3 py-2 text-text-muted">{noOptionsMessage}</div>
+          {footer && (
+            <div className="rounded-b border-t border-t-border-muted-soft bg-surface-white-faint px-3 py-2 text-text-muted">
+              {footer}
+            </div>
+          )}
         </AutocompletePopover>
       )}
       {state.isOpen && (
@@ -168,7 +172,11 @@ function Autocomplete<T extends object>(
             listBoxRef={listBoxRef}
             state={state}
           />
-          {footer && <div className="border-t border-t-border px-3 py-2">{footer}</div>}
+          {footer && (
+            <div className="rounded-b border-t border-t-border-muted-soft bg-surface-white-faint px-3 py-2 text-text-muted">
+              {footer}
+            </div>
+          )}
         </AutocompletePopover>
       )}
     </div>

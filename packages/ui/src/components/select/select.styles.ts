@@ -6,7 +6,7 @@ export const styles = tv(
       root: 'relative flex',
       select:
         'form-control flex-1 bg-no-repeat disabled:form-control-disabled group-first/add-on-before:!rounded-l group-first/add-on-before:rounded-r-none group-first/add-on-before:!border-x group-last/add-on-after:!rounded-r group-last/add-on-after:rounded-l-none group-last/add-on-after:!border-x group-[.input-group-after]:rounded-r-none group-[.input-group-before]:rounded-l-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:border-l-0',
-      caret: 'absolute right-2 top-1/2 -translate-y-1/2',
+      caret: 'absolute right-2 top-1/2 -translate-y-1/2 text-surface-muted-vivid',
     },
     variants: {
       size: {
@@ -30,6 +30,11 @@ export const styles = tv(
       invalid: {
         true: { select: 'border-border-danger' },
         false: { select: 'border-border-muted-strong' },
+      },
+      disabled: {
+        true: {
+          caret: 'text-surface-muted',
+        },
       },
       isFocusVisible: {
         true: { select: 'focus-outline' },

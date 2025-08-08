@@ -39,7 +39,7 @@ export const styles = tv(
       {
         color: 'faint',
         soft: true,
-        className: 'bg-surface-muted-faint text-text-body',
+        className: 'border-border-muted-soft bg-surface-muted-faint text-text-muted',
       },
       {
         color: 'hero',

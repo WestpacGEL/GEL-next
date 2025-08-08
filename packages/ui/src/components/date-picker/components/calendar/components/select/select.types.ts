@@ -1,3 +1,3 @@
-import { SelectProps as StandardSelectProps } from '../../../../../select/select.types.js';
+import { SelectHTMLAttributes } from 'react';
 
-export type SelectProps = StandardSelectProps;
+export type SelectProps = SelectHTMLAttributes<HTMLSelectElement>;

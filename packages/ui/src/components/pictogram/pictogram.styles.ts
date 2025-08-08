@@ -12,8 +12,8 @@ export const fill = tv({
   base: '',
   variants: {
     mode: {
-      dark: 'fill-pictogram-dark',
-      light: 'fill-surface-white-pale',
+      dark: 'fill-surface-pictogram-base',
+      light: 'fill-surface-mono',
       duo: '',
     },
     highlight: {
