@@ -10,8 +10,8 @@ import { SelectProps } from './select.types.js';
  * @private
  */
 export function Select({ ...props }: SelectProps) {
-  const { isFocused, isFocusVisible, focusProps } = useFocusRing();
-  const styles = selectStyles({ isFocused, isFocusVisible });
+  const { isFocusVisible, focusProps } = useFocusRing();
+  const styles = selectStyles({ isFocusVisible });
   return (
     <div className="relative">
       <select {...focusProps} className={styles.base({ className: props.className })} {...props} />
