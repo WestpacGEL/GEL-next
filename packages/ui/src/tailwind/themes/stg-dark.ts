@@ -5,4 +5,4 @@ export const theme = {
   colors: colors.StGeorge.dark.color,
   brandFont: 'Dragon Bold',
   name: 'St.George',
-};
+} as const;

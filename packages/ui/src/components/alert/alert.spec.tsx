@@ -5,7 +5,6 @@ import { vi } from 'vitest';
 import { TelephoneIcon } from '../icon/index.js';
 
 import { Alert } from './alert.component.js';
-import { styles } from './alert.styles.js';
 
 describe('Alert', () => {
   const user = userEvent.setup();

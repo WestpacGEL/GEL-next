@@ -5,4 +5,4 @@ export const theme = {
   colors: colors.Westpac.dark.color,
   brandFont: 'Westpac',
   name: 'Westpac',
-};
+} as const;

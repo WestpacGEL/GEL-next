@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { Overlay, usePopover } from 'react-aria';
 
-import { Button } from '../../../button/button.component.js';
 import { CloseIcon } from '../../../icon/index.js';
 
 import { styles as popoverStyles } from './popover.styles.js';

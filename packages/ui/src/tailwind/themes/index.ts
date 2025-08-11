@@ -15,14 +15,15 @@ import { theme as WBCTheme } from './wbc.js';
 import { theme as WBGTheme } from './wbg.js';
 
 // ALL_THEMES, THEMES are used for documentation and as per GEL Team request we dont display BTPL Theme in any public documentation i.e. storybook, site etc
+// TODO: add other themes later
 export const ALL_THEMES = [
-  BOMTheme,
-  BSATheme,
-  BTFGTheme,
-  RAMSTheme,
-  STGTheme,
-  WBCTheme,
-  WBGTheme,
+  // BOMTheme,
+  // BSATheme,
+  // BTFGTheme,
+  // RAMSTheme,
+  // STGTheme,
+  // WBCTheme,
+  // WBGTheme,
   WBCLightTheme,
   WBCDarkTheme,
   STGDarkTheme,

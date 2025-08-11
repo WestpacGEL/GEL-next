@@ -15,21 +15,21 @@ export const styles = tv(
     variants: {
       size: {
         small: {
-          base: 'typography-body-10 h-5 px-1.5 active-theme-rams:before:h-[0.0625rem]',
+          base: 'active-theme-rams:before:h-[0.0625rem] typography-body-10 h-5 px-1.5',
         },
         medium: {
-          base: 'typography-body-9 h-6 px-2 active-theme-rams:before:h-0.5',
+          base: 'active-theme-rams:before:h-0.5 typography-body-9 h-6 px-2',
         },
         large: {
-          base: 'typography-body-9 h-7 px-2.5 active-theme-rams:before:h-0.5',
+          base: 'active-theme-rams:before:h-0.5 typography-body-9 h-7 px-2.5',
         },
         xlarge: {
-          base: 'typography-body-8 h-8 px-3 active-theme-rams:before:h-1',
+          base: 'active-theme-rams:before:h-1 typography-body-8 h-8 px-3',
         },
       },
       look: {
         primary: {
-          base: 'relative border-border-primary bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-hit-primary active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop',
+          base: 'active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop relative border-border-primary bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-hit-primary',
         },
         hero: {
           base: 'border-border-hero bg-surface-hero text-text-mono hover:bg-surface-hover-hero active:bg-surface-hit-hero',
@@ -65,7 +65,7 @@ export const styles = tv(
         look: 'primary',
         soft: true,
         className:
-          'border-border-primary bg-surface-white-faint text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-hit-primary-faint active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono',
+          'active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono border-border-primary bg-surface-white-faint text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-hit-primary-faint',
       },
       {
         slots: ['base'],

@@ -14,7 +14,6 @@ describe('Button', () => {
     expect(container).toBeInTheDocument();
   });
 
-
   it('renders an iconBefore when passed', () => {
     render(<Button iconBefore={ArrowRightIcon} />);
     expect(screen.getByRole('img', { hidden: true })).toBeInTheDocument();
