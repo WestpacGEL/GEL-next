@@ -93,7 +93,7 @@ export function Header({
 
   const ButtonIcon = leftIcon === 'arrow' ? ArrowLeftIcon : HamburgerMenuIcon;
 
-  const styles = headerStyles({ logoCenter, fixed, leftIcon, scrolled: isScrolled ?? scrolled });
+  const styles = headerStyles({ logoCenter, fixed, leftIcon, scrolled: isScrolled || scrolled });
 
   return (
     <header className={styles.base({ className })} {...props}>
