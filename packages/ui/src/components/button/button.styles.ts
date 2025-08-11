@@ -29,13 +29,13 @@ export const styles = tv(
       },
       look: {
         primary: {
-          base: 'active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop relative border-border-primary bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-hit-primary',
+          base: 'active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop relative border-border-primary bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-active-primary',
         },
         hero: {
-          base: 'border-border-hero bg-surface-hero text-text-mono hover:bg-surface-hover-hero active:bg-surface-hit-hero',
+          base: 'border-border-hero bg-surface-hero text-text-mono hover:bg-surface-hover-hero active:bg-surface-active-hero',
         },
         faint: {
-          base: 'border-border-muted-strong bg-surface-muted-pale text-text-muted hover:bg-surface-hover-mono active:bg-surface-hit-mono',
+          base: 'border-border-muted-strong bg-surface-muted-pale text-text-muted hover:bg-surface-hover-mono active:bg-surface-active-mono',
         },
         link: { base: 'border-0 text-text-link underline hover:no-underline' },
         unstyled: { base: 'border-none p-0 text-left' },
@@ -65,20 +65,20 @@ export const styles = tv(
         look: 'primary',
         soft: true,
         className:
-          'active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono border-border-primary bg-surface-white-faint text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-hit-primary-faint',
+          'active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono border-border-primary bg-surface-white-faint text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-active-primary-faint',
       },
       {
         slots: ['base'],
         look: 'hero',
         soft: true,
         className:
-          'border-border-hero bg-surface-white-faint text-text-body hover:bg-surface-hover-hero-faint active:bg-surface-hit-hero-faint',
+          'border-border-hero bg-surface-white-faint text-text-body hover:bg-surface-hover-hero-faint active:bg-surface-active-hero-faint',
       },
       {
         slots: ['base'],
         look: 'faint',
         soft: true,
-        className: 'bg-surface-white-faint hover:bg-surface-hover-muted-pale active:bg-surface-hit-muted-pale',
+        className: 'bg-surface-white-faint hover:bg-surface-hover-muted-pale active:bg-surface-active-muted-pale',
       },
       {
         slots: ['iconBefore'],

@@ -6,7 +6,7 @@ export const styles = tv(
     variants: {
       color: {
         danger: 'bg-surface-danger text-text-mono',
-        faint: 'bg-surface-muted-soft text-text-muted',
+        faint: 'bg-surface-muted-soft text-text-body',
         hero: 'bg-surface-hero text-text-mono',
         info: 'bg-surface-info text-text-mono',
         muted: 'bg-surface-muted text-text-mono',

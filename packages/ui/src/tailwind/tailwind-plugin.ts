@@ -239,18 +239,18 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
           look: {
             base: {
               primary:
-                'border border-border-primary bg-surface-primary text-white hover:bg-surface-primary-70 active:bg-surface-hit-primary',
-              hero: 'border border-border-hero bg-surface-hero text-white hover:bg-surface-hero-70 active:bg-surface-hit-hero',
+                'border border-border-primary bg-surface-primary text-white hover:bg-surface-primary-70 active:bg-surface-active-primary',
+              hero: 'border border-border-hero bg-surface-hero text-white hover:bg-surface-hero-70 active:bg-surface-active-hero',
               faint:
-                'border border-border-muted bg-surface-light text-muted hover:bg-surface-white active:bg-surface-hit-white',
+                'border border-border-muted bg-surface-light text-muted hover:bg-surface-white active:bg-surface-active-white',
               link: 'text-link underline',
             },
             soft: {
               primary:
-                'border border-border-primary bg-surface-white text-text hover:text-white hover:bg-surface-primary-70 active:bg-surface-hit-primary',
-              hero: 'border border-border-hero bg-surface-hero bg-surface-white text-text hover:text-white hover:bg-surface-hero-70 active:bg-surface-hit-hero',
+                'border border-border-primary bg-surface-white text-text hover:text-white hover:bg-surface-primary-70 active:bg-surface-active-primary',
+              hero: 'border border-border-hero bg-surface-hero bg-surface-white text-text hover:text-white hover:bg-surface-hero-70 active:bg-surface-active-hero',
               faint:
-                'border border-border-muted bg-surface-white text-muted hover:bg-surface-light active:bg-surface-hit-light',
+                'border border-border-muted bg-surface-white text-muted hover:bg-surface-light active:bg-surface-active-light',
             },
           },
         },
