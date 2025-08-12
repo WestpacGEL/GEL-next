@@ -6,6 +6,9 @@ on:
       - develop
       - main
 
+permissions:
+  contents: read
+
 jobs:
   test:
     name: Test
