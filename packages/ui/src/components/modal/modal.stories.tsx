@@ -147,3 +147,32 @@ export const Responsive = () => {
     </>
   );
 };
+
+/**
+ * > Example showing how to use an onClose callback with the modal to be called when Modal is closed
+ */
+export const WithOnCloseCallback = () => {
+  const onClose = () => {
+    // eslint-disable-next-line no-console
+    console.log('Modal closed');
+  };
+  const state = useOverlayTriggerState({
+    onOpenChange: isOpen => {
+      if (!isOpen) onClose();
+    },
+  });
+  return (
+    <>
+      <Modal title="Title" isDismissable state={state} aria-label="Modal title" body>
+        {`
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+    `}
+      </Modal>
+      <Button onClick={() => state.open()}>Open Modal</Button>
+    </>
+  );
+};

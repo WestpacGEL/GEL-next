@@ -4,7 +4,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { type ComponentProps } from '@westpac/ui';
-import json from '@westpac/ui/component-type.json' with { type: 'json' };
+import json from '@westpac/ui/component-type.json';
 import { Metadata } from 'next';
 
 import { reader } from '@/app/reader';

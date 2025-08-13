@@ -1,4 +1,4 @@
-### Progress indicator
+### Default
 
 ```tsx
 () => {
@@ -10,26 +10,48 @@
 
 ```tsx
 () => {
-  return (
-    <>
-      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator size={size} className="mr-2" />
-      ))}
-    </>
-  );
-};
+  return <div className="flex items-top justify-center gap-3">
+     <ProgressIndicator size="small" />
+     <ProgressIndicator size="medium" />
+     <ProgressIndicator size="large" />
+    </div>;
+}
 ```
 
 ### Dark background
 
 ```tsx
 () => {
-  return (
-    <div className="bg-black w-fit">
-      {(['xsmall', 'small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <ProgressIndicator size={size} color={'white'} className="mr-2" />
-      ))}
-    </div>
-  );
-};
+  return <div className="p-3 bg-black rounded-md flex items-top justify-center gap-3">
+     <ProgressIndicator color="white" size="small" />
+     <ProgressIndicator color="white" size="medium" />
+     <ProgressIndicator color="white" size="large" />
+    </div>;
+}
+```
+
+### Labels and icons
+
+```tsx
+() => {
+  return <div className="flex items-top justify-center gap-3">
+      <ProgressIndicator size="large" label="Loading..." />
+      <ProgressIndicator size="large" icon={PadlockTickIcon} />
+      <ProgressIndicator size="large" label="Signing in" icon={FingerprintIcon} />
+    </div>;
+}
+```
+
+### Components
+
+```tsx
+() => {
+  return <div className="flex items-top justify-left gap-1">
+
+  <Button size="xlarge" iconAfter={ProgressIndicator} iconColor="white">Xlarge</Button> 
+  <Button size="large" iconAfter={ProgressIndicator} iconColor="white">Large</Button>  
+  <Button size="medium" iconAfter={ProgressIndicator} iconColor="white">Medium</Button>
+  <Button size="small" iconAfter={ProgressIndicator} iconColor="white">Small</Button>
+    </div>;
+}
 ```

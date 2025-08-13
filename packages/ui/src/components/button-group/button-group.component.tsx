@@ -97,7 +97,7 @@ export function ButtonGroup({
 
   return (
     <div className={styles.base({ className })} {...radioGroupProps}>
-      <Label {...labelProps}>{label}</Label>
+      {label && <Label {...labelProps}>{label}</Label>}
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       <div className={styles.buttonWrapper()}>

@@ -16,6 +16,7 @@ export type TabsTabPanelProps<T = object> = {
    * Look of tab panel
    */
   look?: Variants['look'];
+  keepMounted?: boolean;
   /**
    * Tab list state
    */

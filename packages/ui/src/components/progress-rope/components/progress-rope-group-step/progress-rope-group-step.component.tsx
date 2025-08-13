@@ -1,4 +1,4 @@
-import { AnimatePresence, LazyMotion, m } from 'framer-motion';
+import { AnimatePresence, LazyMotion, m } from 'motion/react';
 import React, { useId, useMemo } from 'react';
 import { useFocusRing } from 'react-aria';
 
