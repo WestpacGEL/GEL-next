@@ -53,7 +53,7 @@ export function getColorPalette({ brand, palette }: { brand: BrandKeyWithThemes;
       });
     }
   } else if (palette === 'data_visualisation') {
-    const typedBrand = brand as Exclude<BrandKey, 'btfg'>;
+    const typedBrand = brand as Exclude<BrandKeyWithThemes, 'btfg-light' | 'btfg-dark'>;
     Object.entries(DATA_VIS_COLORS[typedBrand]).forEach(([name, hex]) => {
       const hexStr = hex;
       const rgb = hexToRgb(hexStr) || [];

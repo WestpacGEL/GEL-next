@@ -70,7 +70,7 @@ export const styles = tv(
       {
         look: 'material',
         orientation: 'horizontal',
-        className: 'border-b-4 border-r border-b-white border-r-border last:border-r-0',
+        className: 'border-b-4 border-r border-b-white border-r-border-muted-soft last:border-r-0',
       },
       {
         look: 'material',
@@ -94,14 +94,14 @@ export const styles = tv(
         look: 'material',
         selected: true,
         orientation: 'horizontal',
-        className: 'border-b-primary border-r-border',
+        className: 'border-b-primary border-r-border-muted-soft',
       },
       {
         color: 'hero',
         look: 'material',
         selected: true,
         orientation: 'horizontal',
-        className: 'border-b-hero border-r-border',
+        className: 'border-b-hero border-r-border-muted-soft',
       },
       {
         color: 'primary',

@@ -45,5 +45,5 @@ export function IconSizesDemo() {
 }
 
 function Item({ children }: { children: ReactNode }) {
-  return <GridItem className="justify-self-center text-muted">{children}</GridItem>;
+  return <GridItem className='justify-self-center text-text-muted'>{children}</GridItem>;
 }

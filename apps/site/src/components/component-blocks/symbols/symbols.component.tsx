@@ -28,7 +28,7 @@ export const Symbols = () => {
 
   return (
     <div>
-      <div className="mb-4 bg-light p-4">
+      <div className='mb-4 bg-surface-muted-faint p-4'>
         <Grid>
           <GridItem span={{ initial: 12, sm: 6 }}>
             <div className="flex flex-col items-start sm:flex-row sm:items-center">
@@ -42,13 +42,13 @@ export const Symbols = () => {
       </div>
       <Grid>
         <GridItem span={12}>
-          <p className="text-right italic text-muted">{foundText}</p>
+          <p className='text-right italic text-text-muted'>{foundText}</p>
         </GridItem>
         {filteredSymbols.map(({ key, Logo }) => (
           <GridItem key={key} span={{ initial: 12, sm: 6, md: 4, lg: 3 }} className="flex">
-            <div className="mb-2 flex grow flex-col items-center justify-center bg-white px-2 pb-3 pt-6 xsl:mb-4">
+            <div className='mb-2 flex grow flex-col items-center justify-center bg-surface-white-pale px-2 pb-3 pt-6 xsl:mb-4'>
               <Logo className="mb-6 grow" />
-              <span className="text-[0.6875rem] text-muted">{key}</span>
+              <span className='text-[0.6875rem] text-text-muted'>{key}</span>
             </div>
           </GridItem>
         ))}

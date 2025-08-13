@@ -14,7 +14,7 @@ export function ListBoxSection({ section, state }: ListBoxSectionProps) {
     <>
       <li {...itemProps} className="pt-2">
         {section.rendered && (
-          <span {...headingProps} className="mx-3 text-xs font-bold uppercase text-text">
+          <span {...headingProps} className='mx-3 text-xs font-bold uppercase text-text-body'>
             {section.rendered}
           </span>
         )}

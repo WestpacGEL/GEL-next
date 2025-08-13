@@ -1,5 +1,6 @@
+import clsx from 'clsx';
 import { ReactNode } from 'react';
 
-export function SectionHeading({ children }: { children: ReactNode }) {
-  return <h2 className="typography-body-6 mb-2 font-bold sm:mb-3">{children}</h2>;
+export function SectionHeading({ children, className }: { children: ReactNode, className?: string; }) {
+  return <h2 className={clsx('typography-body-6 mb-2 font-bold sm:mb-3', className )}>{children}</h2>;
 }

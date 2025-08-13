@@ -48,7 +48,7 @@ export function CodeContent({
                   {description}
                 </p>
               )}
-              <table className="typography-body-11 table w-full bg-[#f2f8fc] text-info">
+              <table className='typography-body-11 table w-full bg-[#f2f8fc] text-text-info'>
                 <tbody>
                   <tr>
                     <th className="w-10 border-y border-gel-icon p-3 text-left font-semibold">Version</th>
@@ -74,14 +74,14 @@ export function CodeContent({
                   </tr>
                   <tr>
                     <th className="w-10 border-y border-gel-icon p-3 text-left font-semibold">Install</th>
-                    <td className="border-y border-gel-icon p-3 text-black">
+                    <td className='border-y border-gel-icon p-3 text-black[REPLACE_TOKEN]'>
                       <Code>npm install @westpac/ui</Code>
                     </td>
                   </tr>
                   {componentProps && (
                     <tr>
                       <th className="w-10 border-y border-gel-icon p-3 text-left font-semibold">Usage</th>
-                      <td className="border-y border-gel-icon p-3 text-black">
+                      <td className='border-y border-gel-icon p-3 text-black[REPLACE_TOKEN]'>
                         <Code>{`import { ... } from @westpac/ui/${pascalToKebab(componentProps.displayName)}`}</Code>
                       </td>
                     </tr>
@@ -119,7 +119,7 @@ export function CodeContent({
         );
       })}
       {componentProps && (
-        <section className="border-t border-t-border bg-white py-7 sm:pb-10 sm:pt-15">
+        <section className='border-t border-t-border-muted-soft bg-surface-white-pale py-7 sm:pb-10 sm:pt-15'>
           <Container>
             <Heading level={2} className="!mb-4 sm:!mb-7">
               Props

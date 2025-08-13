@@ -15,7 +15,7 @@ export const BANK_OPTIONS = [
     fontName: 'Dragon',
     icon: STGDragonLogo,
     homePageClasses: 'block h-[2.375rem] w-9',
-    designSystemPageClasses: 'block -mr-2 h-[2.375rem] w-9',
+    designSystemPageClasses: 'block -mr-1 h-[2.375rem] w-9',
   },
   {
     key: 'bom',

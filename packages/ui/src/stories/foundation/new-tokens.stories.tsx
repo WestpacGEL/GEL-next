@@ -57,7 +57,6 @@ const LOAD_COLORS = {
     'bg-surface-muted-soft',
     'bg-surface-muted-pale',
     'bg-surface-muted-faint',
-    'bg-surface-white-soft',
     'bg-surface-white-pale',
     'bg-surface-white-faint',
     'bg-surface-mono',

@@ -1,3 +1,5 @@
+'use client';
+
 import { Button, Grid, GridItem, Input } from '@westpac/ui';
 import { GithubIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
@@ -17,16 +19,31 @@ import {
 } from '@/components/logos';
 
 import { Hero, Section, SectionHeading, SectionItem } from '../components';
+import { useEffect } from 'react';
+import { useDarkMode } from '@westpac/ui/hook';
+import { useThemeMode } from '@/hooks/theme-mode.hook';
 
 export default function DesignSystemHomePage({ params }: { params: { brand: string } }) {
+  const { getSystemPreference, setMode } = useDarkMode();
+  
+  useEffect(() => {
+    const { mode } = useThemeMode.getState();
+    if(mode === 'system'){
+      const systemPreference = getSystemPreference();
+      setMode(systemPreference);
+      return;
+    }
+    setMode(mode);
+  }, []);
+
   const brand = (params.brand || 'wbc') as BrandKey;
   return (
-    <div tabIndex={-1} id="content" className="focus:outline-none">
+    <div tabIndex={-1} id="content" className="focus:outline-none bg-surface-white-pale">
       <Hero brand={brand} />
       <Section>
         <SectionHeading>Accessible by design</SectionHeading>
         <Grid>
-          <SectionItem className="flex flex-col gap-2 leading-loose">
+          <SectionItem className="flex flex-col gap-2 leading-loose text-text-body">
             <p>Accessibility and inclusive design is a strong part of the GEL Design System.</p>
             <p>
               The system supports teams to deliver to the Group accessibility commitment, to provide meaningful banking
@@ -50,7 +67,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
               showcase so much more and deliver even higher-quality, more accessible code.
             </p>
             <h3 className="typography-body-8 mb-5 border-b pb-2 font-bold">Who else is using React?</h3>
-            <Grid tag="ul" className="items-center gap-y-4 text-neutral-70 sm:gap-x-4 sm:gap-y-8">
+            <Grid tag="ul" className='items-center gap-y-4 text-neutral[REPLACE_TOKEN]-70[REPLACE_TOKEN] sm:gap-x-4 sm:gap-y-8'>
               {[GovLogo, MicrosoftLogo, MyobLogo, IBMLogo, AtlassianLogo, FacebookLogo, TwitterLogo, ShopifyLogo].map(
                 (Logo, i) => (
                   <GridItem
@@ -68,10 +85,10 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         </Grid>
       </Section>
       <Section>
-        <SectionHeading>Subscribe to GEL updates</SectionHeading>
+        <SectionHeading className='text-text-body'>Subscribe to GEL updates</SectionHeading>
         <Grid>
           <SectionItem>
-            <p className="mb-5 leading-loose sm:mb-7">
+            <p className="mb-5 leading-loose sm:mb-7 text-text-body">
               Get the latest brand and component updates as well as access to new resources and helpful tips.
             </p>
             <form
@@ -84,7 +101,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
             >
               <Grid className="text-left">
                 <GridItem span={{ initial: 10, sm: 5, md: 4 }} start={{ initial: 2, sm: 3, md: 4 }}>
-                  <label htmlFor="mce-EMAIL" className="mb-2 inline-block w-full">
+                  <label htmlFor="mce-EMAIL" className="mb-2 inline-block w-full text-text-body">
                     Enter your e-mail address
                   </label>
                   <Input
@@ -131,12 +148,12 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         </Grid>
         <Grid className="gap-y-4 text-left xsl:gap-x-5 sm:gap-x-8 md:gap-x-10">
           <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2, md: 2 }} className="xsl:col-start-auto">
-            <h3 className="typography-body-8 border-b border-neutral pb-3 font-bold sm:mb-2">Downloads</h3>
+            <h3 className='typography-body-8 border-b border-border-muted-strong pb-3 font-bold sm:mb-2'>Downloads</h3>
             <ul className="typography-body-10">
-              <li className="border-b border-border">
+              <li className='border-b border-border-muted-soft'>
                 <Link
                   href="/articles/figma-libraries"
-                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
+                  className='box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5'
                 >
                   Figma UI Kits
                   <FigmaLogo />
@@ -145,13 +162,13 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
             </ul>
           </GridItem>
           <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2 }} className="xsl:col-start-auto">
-            <h3 className="typography-body-8 border-b border-neutral pb-3 font-bold sm:mb-2">Links</h3>
+            <h3 className='typography-body-8 border-b border-border-muted-strong pb-3 font-bold sm:mb-2'>Links</h3>
             <ul className="typography-body-10">
-              <li className="border-b border-border">
+              <li className='border-b border-border-muted-soft'>
                 <Link
                   href="https://github.com/WestpacGEL/GEL-next/"
                   target="_blank"
-                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
+                  className='box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5'
                 >
                   Follow Westpac GEL on GitHub
                   <GithubIcon size={{ initial: 'large', lg: 'xlarge' }} color="text" />

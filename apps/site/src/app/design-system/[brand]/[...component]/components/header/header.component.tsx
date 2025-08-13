@@ -7,6 +7,8 @@ import { useSidebar } from '@/app/design-system/components/sidebar/sidebar.conte
 import { BrandKey } from '@/app/types/brand.types';
 
 import { styles as headerStyles } from './header.styles';
+import { ButtonDropdown, RadioGroup } from '@westpac/ui';
+import { ThemeDropDown } from '@/components/theme-dropdown/theme-dropdown.component';
 
 const FIXED_HEADER = 162; // 228 - 66 = height to stick
 
@@ -33,12 +35,15 @@ export function Header({ className, title, brand }: { brand: string; className?:
     <header className={styles.base()}>
       {/* The tab order on the original site was the grid button before wrapper when coming from the browser bar */}
       <button className={styles.hamburgerButton()} onClick={() => setOpen(open => !open)}>
-        <HamburgerMenuIcon color="white" className="mx-auto" />
+        <HamburgerMenuIcon color="white-pale" className="mx-auto" />
       </button>
 
-      <h2 className={styles.title()} ref={headerRef} id="header" aria-hidden tabIndex={-1}>
-        {title}
-      </h2>
+      <div className="flex flex-1 justify-between items-center">
+        <h2 className={styles.title()} ref={headerRef} id="header" aria-hidden tabIndex={-1}>
+          {title}
+        </h2>
+        <ThemeDropDown />
+      </div>
     </header>
   );
 }
