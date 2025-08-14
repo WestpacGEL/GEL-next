@@ -152,3 +152,5 @@ export const SPACING_SCALE = [
 ];
 export const VARIATION_MARGIN_PADDING = ['', 'x', 'y', 't', 'r', 'b', 'l'];
 export const SPACING_DEFAULT_CLASSES = 'h-3 w-0 bg-primary';
+
+export { useBrand } from '@/app/design-system/hooks/use-brand';
