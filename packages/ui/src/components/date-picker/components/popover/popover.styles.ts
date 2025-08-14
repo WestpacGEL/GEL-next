@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       underlay: 'fixed inset-0',
-      popover: 'bg-surface-white-faint',
+      popover: 'bg-surface-white-pale',
       header: '',
       headerLabel: '',
       closeButton: 'flex items-center justify-center focus-outline',
