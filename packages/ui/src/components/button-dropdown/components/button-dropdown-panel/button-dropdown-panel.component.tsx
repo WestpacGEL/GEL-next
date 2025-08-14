@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import { DismissButton, FocusScope, mergeProps, useFocusRing, usePopover } from 'react-aria';
+import { createPortal } from 'react-dom';
 
 import { styles as panelStyles } from './button-dropdown-panel.styles.js';
 import { type ButtonDropdownPanelProps } from './button-dropdown-panel.types.js';
-import { createPortal } from 'react-dom';
 
 /**
  * @private
