@@ -65,20 +65,20 @@ export const styles = tv(
         look: 'primary',
         soft: true,
         className:
-          'active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono border-border-primary bg-surface-white-faint text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-active-primary-faint',
+          'active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono border-border-primary bg-surface-white-pale text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-active-primary-faint',
       },
       {
         slots: ['base'],
         look: 'hero',
         soft: true,
         className:
-          'border-border-hero bg-surface-white-faint text-text-body hover:bg-surface-hover-hero-faint active:bg-surface-active-hero-faint',
+          'border-border-hero bg-surface-white-pale text-text-body hover:bg-surface-hover-hero-faint active:bg-surface-active-hero-faint',
       },
       {
         slots: ['base'],
         look: 'faint',
         soft: true,
-        className: 'bg-surface-white-faint hover:bg-surface-hover-muted-pale active:bg-surface-active-muted-pale',
+        className: 'bg-surface-white-pale hover:bg-surface-hover-muted-pale active:bg-surface-active-muted-pale',
       },
       {
         slots: ['iconBefore'],
