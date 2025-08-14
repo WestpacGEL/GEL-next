@@ -1,3 +1,5 @@
+'use client';
+
 import { AnimatePresence, LazyMotion, m } from 'motion/react';
 import React, { useEffect } from 'react';
 import { mergeProps, useButton, useDisclosure, useFocusRing, useHover, useId, useLocale } from 'react-aria';
