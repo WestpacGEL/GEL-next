@@ -1,4 +1,4 @@
-import { BrandKeyWithThemes, type BrandKey } from '@westpac/ui/tailwind';
+import { BrandKeyWithThemes } from '@westpac/ui/tailwind';
 import { ALL_THEMES } from '@westpac/ui/themes';
 import { BASE_COLORS, DATA_VIS_COLORS } from '@westpac/ui/themes-constants';
 

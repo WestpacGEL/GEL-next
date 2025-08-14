@@ -49,7 +49,7 @@ export const styles = tv(
       {
         fixed: true,
         scrolled: true,
-        className: { inner: 'border-b-0 after:opacity-100' },
+        className: { inner: 'border-b-[transparent] after:opacity-100' },
       },
     ],
   },

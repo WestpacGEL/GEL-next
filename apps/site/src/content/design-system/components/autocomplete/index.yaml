@@ -17,6 +17,11 @@ design:
     noTitle: false
     noDemo: false
   - title:
+      name: Variants
+      slug: variants
+    noTitle: false
+    noDemo: false
+  - title:
       name: Error state
       slug: error-state
     noTitle: false
