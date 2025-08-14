@@ -1,5 +1,11 @@
 # @westpac/eslint-config
 
+## 1.0.1
+
+### Patch Changes
+
+- b06122c: Update dependencies to fix security alert issues
+
 ## 1.0.0
 
 ### Major Changes
