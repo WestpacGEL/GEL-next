@@ -93,7 +93,9 @@ describe('Table', () => {
         <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
       </Table>,
     );
-    expect(getByTestId('header-cell')).toHaveClass('border-x border-t border-x-border border-t-border');
+    expect(getByTestId('header-cell')).toHaveClass(
+      'typography-body-10 border border-b-[3px] border-border-hero p-2 text-left align-bottom text-text-body group-[:nth-child(1)_&]/row:border-b group-[:nth-child(1)_&]/row:border-b-border-muted-soft border-x border-t border-x-border-muted-soft border-t-border-muted-soft',
+    );
     expect(getByTestId('cell')).toHaveClass('border-x');
     expect(getByText('Footer goes here and should colSpan all columns')).toHaveClass(
       'typography-body-10 p-2 text-left text-text-muted border border-border-muted-soft',
@@ -178,11 +180,11 @@ describe('Table', () => {
     const starterCells = getAllByTestId('cell-start');
     const endCells = getAllByTestId('cell-end');
     expect(getByTestId('row')).toHaveClass(
-      'group/row hover:bg-surface-muted-pale border border-b-2 border-l-2 border-r-0 border-border-primary',
+      'group/row hover:bg-surface-muted-pale border-b-2 border-r-0 border-border-primary',
     );
     starterCells.forEach(cell =>
       expect(cell).toHaveClass(
-        'typography-body-10 border-border-muted-soft p-2 text-left align-top text-text-body border-x border-b-border-primary border border-b-2 border-l-2 border-l-border-primary',
+        'typography-body-10 border-border-muted-soft p-2 text-left align-top text-text-body border-x border-b-border-primary border border-b-2',
       ),
     );
     endCells.forEach(cell =>
