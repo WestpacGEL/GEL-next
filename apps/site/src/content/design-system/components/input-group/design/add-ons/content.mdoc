@@ -166,7 +166,7 @@ Add-on elements can be used either before or after an input, they can provide cl
   return (
     <Fragment>
       <InputGroup width={10} name="example-text" label="Total amount (in whole dollars)" before="AUD" after=".00">
-        <Input defaultValue="" />
+        <Input defaultValue="" type="number" />
       </InputGroup>
 
       <InputGroup
@@ -188,7 +188,7 @@ Add-on elements can be used either before or after an input, they can provide cl
           </Select>
         }
       >
-        <Input />
+        <Input type="number"/>
       </InputGroup>
 
       <InputGroup size="large" width={30} name="example-button" label="Search" after={<Button size="large" >Go</Button>}>
@@ -219,7 +219,7 @@ Add-on elements can be used either before or after an input, they can provide cl
           </Select>
         }
       >
-        <Input />
+        <Input type="number" />
       </InputGroup>
 
       <InputGroup
@@ -238,7 +238,7 @@ Add-on elements can be used either before or after an input, they can provide cl
           </Button>
         }
       >
-        <Input value={value} onChange={event => setValue(event.target.value)} />
+        <Input value={value} type="number" onChange={event => setValue(parseInt(event.target.value))} />
       </InputGroup>
     </Fragment>
   );

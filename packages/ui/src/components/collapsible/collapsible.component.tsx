@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, LazyMotion, m } from 'framer-motion';
+import { AnimatePresence, LazyMotion, m } from 'motion/react';
 import React, { useCallback, useId, useState } from 'react';
 
 import { Button } from '../button/index.js';

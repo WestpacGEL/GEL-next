@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { Pictogram } from './pictogram.component.js';
 
 import * as AllPictograms from './index.js';
-import { PictogramProps, WBCBankCardPictogram } from './index.js';
+import { PictogramProps } from './index.js';
 
 const AllPictogramsExample = (props: PictogramProps) => {
   const { mode } = props;
@@ -46,5 +46,3 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {},
 };
-
-export const Decorative = () => <WBCBankCardPictogram />;

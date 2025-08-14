@@ -1,7 +1,7 @@
 'use client';
 
 import { AddIcon, RemoveIcon } from '@westpac/ui/icon';
-import { AnimatePresence, LazyMotion, m } from 'framer-motion';
+import { AnimatePresence, LazyMotion, m } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';

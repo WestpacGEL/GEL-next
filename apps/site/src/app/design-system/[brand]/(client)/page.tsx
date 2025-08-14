@@ -128,12 +128,8 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         <SectionHeading>Downloads &amp; links</SectionHeading>
         <Grid className="mb-5 sm:mb-9">
           <SectionItem className="flex flex-col gap-2">
-            <p className="leading-loose">
-              Design on-brand with greater efficiency and accuracy using the Sketch UI Kit.
-            </p>
-            <p className="leading-loose">
-              Visit GitHub to follow Westpac GEL Design System code updates and log issues.
-            </p>
+            <p className="leading-[2]">Design on-brand with greater efficiency and accuracy using the Sketch UI Kit.</p>
+            <p className="leading-[2]">Visit GitHub to follow Westpac GEL Design System code updates and log issues.</p>
           </SectionItem>
         </Grid>
         <Grid className="gap-y-4 text-left xsl:gap-x-5 sm:gap-x-8 md:gap-x-10">
@@ -161,7 +157,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
                   className="box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
                 >
                   Follow Westpac GEL on GitHub
-                  <GithubIcon size={{ initial: 'large', lg: 'xlarge' }} color="text" />
+                  <GithubIcon size={{ initial: 'large', lg: 'xlarge' }} color="muted" />
                 </Link>
               </li>
             </ul>
