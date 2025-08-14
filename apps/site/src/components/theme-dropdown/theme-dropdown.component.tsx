@@ -22,7 +22,8 @@ export function ThemeDropDown() {
     [getSystemPreference, setMode, setModeOnDOM],
   );
 
-  const portal: Element | boolean = useMemo(() => {
+  // eslint-disable-next-line sonarjs/function-return-type
+  const portal: Element | true = useMemo(() => {
     if (typeof window !== 'undefined') {
       return getBrandContainer() || true;
     }

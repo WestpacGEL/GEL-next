@@ -5,6 +5,7 @@ import { ReactNode, useEffect } from 'react';
 
 import { useThemeMode } from '@/hooks/theme-mode.hook';
 
+// eslint-disable-next-line sonarjs/function-return-type
 export default function DesignSystemLayout({ children }: { children: ReactNode }) {
   const { getSystemPreference, setMode } = useDarkMode();
 
@@ -16,6 +17,7 @@ export default function DesignSystemLayout({ children }: { children: ReactNode }
       return;
     }
     setMode(mode);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return children;

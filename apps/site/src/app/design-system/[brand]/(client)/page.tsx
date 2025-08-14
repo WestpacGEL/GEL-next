@@ -23,7 +23,7 @@ import { Hero, Section, SectionHeading, SectionItem } from '../../components';
 export default function DesignSystemHomePage({ params }: { params: { brand: string } }) {
   const brand = (params.brand || 'wbc') as BrandKey;
   return (
-    <div tabIndex={-1} id="content" className="bg-surface-white-pale focus:outline-none">
+    <div tabIndex={-1} id="content" className="bg-surface-white-faint focus:outline-none">
       <Hero brand={brand} />
       <Section>
         <SectionHeading>Accessible by design</SectionHeading>
@@ -51,7 +51,9 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
               The GEL Design System is now using React. You can still access HTML/CSS but with React at its core we can
               showcase so much more and deliver even higher-quality, more accessible code.
             </p>
-            <h3 className="typography-body-8 mb-5 border-b pb-2 font-bold">Who else is using React?</h3>
+            <h3 className="typography-body-8 mb-5 border-b border-b-border-hero pb-2 font-bold text-text-heading">
+              Who else is using React?
+            </h3>
             <Grid
               tag="ul"
               className="text-neutral[REPLACE_TOKEN]-70[REPLACE_TOKEN] items-center gap-y-4 sm:gap-x-4 sm:gap-y-8"
@@ -73,7 +75,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         </Grid>
       </Section>
       <Section>
-        <SectionHeading className="text-text-body">Subscribe to GEL updates</SectionHeading>
+        <SectionHeading>Subscribe to GEL updates</SectionHeading>
         <Grid>
           <SectionItem>
             <p className="mb-5 leading-loose text-text-body sm:mb-7">
