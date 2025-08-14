@@ -9,16 +9,19 @@ export const styles = tv(
       hamburgerButton:
         'fixed left-0 top-0 block -translate-y-0.5 px-2 py-3.5 focus-visible:!outline-offset-[-2px] focus-visible:focus-outline sm:left-2 lg:hidden',
       title: 'typography-brand-7 pl-6 font-normal leading-none text-text-mono focus:outline-none sm:pl-6 lg:pl-0',
+      titleWrapper: 'flex flex-1 justify-between',
     },
     variants: {
       fixed: {
         true: {
           base: 'items-center shadow-[0_2px_5px_rgba(0,0,0,0.3)]',
           title: '',
+          titleWrapper: 'items-end',
         },
         false: {
           base: '',
           title: 'md:typography-brand-2 md:px-2 md:pb-4.5 md:pt-5 md:leading-none lg:ml-2',
+          titleWrapper: 'items-center',
         },
       },
       brand: {

@@ -38,6 +38,25 @@ export const Default: Story = {
 };
 
 /**
+ * > Default usage example
+ */
+export const Portal: Story = {
+  args: {
+    text: 'Portal Dropdown',
+    portal: true,
+    children: (
+      <p className="text-text-body">
+        Example dropdown
+        <a href="#" className="text-[blue] underline">
+          content
+        </a>
+        ...
+      </p>
+    ),
+  },
+};
+
+/**
  * > Standard looks of button
  */
 export const StandardLooks = () => (

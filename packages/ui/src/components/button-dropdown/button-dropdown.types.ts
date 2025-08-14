@@ -32,5 +32,9 @@ export type ButtonDropdownProps = {
    * Button text
    */
   text: string;
+  /**
+   * Uses portal to render popover
+   */
+  portal?: boolean | Element;
 } & ButtonHTMLAttributes<Element> &
   Pick<ButtonProps, 'size' | 'iconBefore' | 'block'>;

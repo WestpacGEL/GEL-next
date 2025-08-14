@@ -5,10 +5,9 @@ import { useLayoutEffect, useRef, useState } from 'react';
 
 import { useSidebar } from '@/app/design-system/components/sidebar/sidebar.context';
 import { BrandKey } from '@/app/types/brand.types';
+import { ThemeDropDown } from '@/components/theme-dropdown/theme-dropdown.component';
 
 import { styles as headerStyles } from './header.styles';
-import { ButtonDropdown, RadioGroup } from '@westpac/ui';
-import { ThemeDropDown } from '@/components/theme-dropdown/theme-dropdown.component';
 
 const FIXED_HEADER = 162; // 228 - 66 = height to stick
 
@@ -38,7 +37,7 @@ export function Header({ className, title, brand }: { brand: string; className?:
         <HamburgerMenuIcon color="white-pale" className="mx-auto" />
       </button>
 
-      <div className="flex flex-1 justify-between items-center">
+      <div className={styles.titleWrapper()}>
         <h2 className={styles.title()} ref={headerRef} id="header" aria-hidden tabIndex={-1}>
           {title}
         </h2>

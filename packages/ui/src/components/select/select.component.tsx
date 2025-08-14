@@ -1,6 +1,6 @@
 'use client';
 
-import { ForwardedRef, forwardRef } from 'react';
+import React, { ForwardedRef, forwardRef } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
 import { styles as selectStyles } from './select.styles.js';

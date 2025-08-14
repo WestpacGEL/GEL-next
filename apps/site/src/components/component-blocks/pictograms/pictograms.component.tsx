@@ -38,7 +38,7 @@ export const Pictograms = () => {
 
   return (
     <div>
-      <div className='mb-4 bg-surface-muted-faint p-4'>
+      <div className="mb-4 bg-surface-muted-faint p-4">
         <Grid>
           <GridItem span={{ initial: 12, sm: 6 }}>
             <div className="flex flex-col items-start sm:flex-row sm:items-center">
@@ -70,7 +70,7 @@ export const Pictograms = () => {
       </div>
       <Grid>
         <GridItem span={12}>
-          <p className='text-right italic text-text-muted'>{foundText}</p>
+          <p className="text-right italic text-text-muted">{foundText}</p>
         </GridItem>
         {filteredPictograms.map(({ key, Pictogram }) => (
           <GridItem key={key} span={{ initial: 12, sm: 6, md: 4, lg: 3 }}>
@@ -83,7 +83,11 @@ export const Pictograms = () => {
             >
               <Pictogram mode={mode} className="mb-6" />
               <span
-                className={clsx('text-[0.6875rem]', mode === 'light' && 'text-text-mono', mode !== 'light' && 'text-text-muted')}
+                className={clsx(
+                  'text-[0.6875rem]',
+                  mode === 'light' && 'text-text-mono',
+                  mode !== 'light' && 'text-text-muted',
+                )}
               >
                 {key}
               </span>

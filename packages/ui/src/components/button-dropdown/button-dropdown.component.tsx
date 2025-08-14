@@ -22,6 +22,7 @@ export function ButtonDropdown({
   look = 'hero',
   soft = false,
   block = false,
+  portal = false,
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const panelId = useId();
@@ -77,6 +78,7 @@ export function ButtonDropdown({
           state={state}
           block={block}
           id={panelId}
+          portal={portal}
         >
           {children}
         </ButtonDropdownPanel>

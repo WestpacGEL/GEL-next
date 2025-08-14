@@ -27,7 +27,7 @@ export function Popover(props: PopoverProps) {
           <AnimatePresence initial mode="wait">
             {state.isOpen && (
               <m.div
-                className='overflow-hidden border border-border-muted-soft'
+                className="overflow-hidden border border-border-muted-soft"
                 initial={{
                   height: 0,
                   opacity: 0,

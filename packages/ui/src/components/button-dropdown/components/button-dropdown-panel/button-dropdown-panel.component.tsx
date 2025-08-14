@@ -1,13 +1,14 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { DismissButton, mergeProps, useFocusRing, usePopover } from 'react-aria';
+import { DismissButton, FocusScope, mergeProps, useFocusRing, usePopover } from 'react-aria';
 
 import { styles as panelStyles } from './button-dropdown-panel.styles.js';
 import { type ButtonDropdownPanelProps } from './button-dropdown-panel.types.js';
+import { createPortal } from 'react-dom';
 
 /**
  * @private
  */
-export function ButtonDropdownPanel({ className, children, state, block, id, ...props }: ButtonDropdownPanelProps) {
+export function BaseButtonDropdownPanel({ className, children, state, block, id, ...props }: ButtonDropdownPanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const { popoverProps } = usePopover({ popoverRef, shouldFlip: false, isNonModal: true, ...props }, state);
   const { isFocused, focusProps } = useFocusRing();
@@ -56,16 +57,29 @@ export function ButtonDropdownPanel({ className, children, state, block, id, ...
   }, [clickHandler, focusHandler]);
 
   return (
-    <div
-      {...mergeProps(popoverProps, focusProps)}
-      id={id}
-      style={{ ...popoverProps.style, width: block && width ? `${width}px` : undefined }}
-      ref={popoverRef}
-      className={styles.base({ className })}
-    >
-      <DismissButton onDismiss={() => state.close()} />
-      <div className={styles.dialog()}>{children}</div>
-      <DismissButton onDismiss={() => state.close()} />
-    </div>
+    <FocusScope autoFocus restoreFocus>
+      <div
+        {...mergeProps(popoverProps, focusProps)}
+        id={id}
+        style={{ ...popoverProps.style, width: block && width ? `${width}px` : undefined }}
+        ref={popoverRef}
+        className={styles.base({ className })}
+      >
+        <DismissButton onDismiss={() => state.close()} />
+        <div className={styles.dialog()}>{children}</div>
+        <DismissButton onDismiss={() => state.close()} />
+      </div>
+    </FocusScope>
   );
+}
+
+/**
+ * @private
+ */
+export function ButtonDropdownPanel({ portal, ...props }: ButtonDropdownPanelProps) {
+  if (portal) {
+    const portalValue = typeof portal === 'boolean' ? document.body : portal;
+    return createPortal(<BaseButtonDropdownPanel {...props} portal={portalValue} />, portalValue);
+  }
+  return <BaseButtonDropdownPanel portal={portal} {...props} />;
 }

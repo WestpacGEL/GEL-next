@@ -13,7 +13,7 @@ export function Hero() {
             <GELHeroLogo />
           </div>
           <div className="col-span-10 col-start-2 row-start-2 row-end-[span_1] mb-7 xsl:col-span-9 xsl:col-start-3 xsl:mb-9 sm:mb-14 md:mb-15 lg:mb-16">
-            <p className='font-gel-serif text-[1.125rem] leading-[1.33] text-text-mono antialiased sm:text-[1.5rem] sm:leading-[1.38]'>
+            <p className="font-gel-serif text-[1.125rem] leading-[1.33] text-text-mono antialiased sm:text-[1.5rem] sm:leading-[1.38]">
               The Global Experience Language is our single source of truth communicating how we design for the digital
               channel. It provides tools and guidelines to create and deliver consistent, coherent customer experiences
               across our entire digital landscape faster, and with less effort.

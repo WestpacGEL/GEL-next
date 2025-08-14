@@ -18,27 +18,12 @@ import {
   TwitterLogo,
 } from '@/components/logos';
 
-import { Hero, Section, SectionHeading, SectionItem } from '../components';
-import { useEffect } from 'react';
-import { useDarkMode } from '@westpac/ui/hook';
-import { useThemeMode } from '@/hooks/theme-mode.hook';
+import { Hero, Section, SectionHeading, SectionItem } from '../../components';
 
 export default function DesignSystemHomePage({ params }: { params: { brand: string } }) {
-  const { getSystemPreference, setMode } = useDarkMode();
-  
-  useEffect(() => {
-    const { mode } = useThemeMode.getState();
-    if(mode === 'system'){
-      const systemPreference = getSystemPreference();
-      setMode(systemPreference);
-      return;
-    }
-    setMode(mode);
-  }, []);
-
   const brand = (params.brand || 'wbc') as BrandKey;
   return (
-    <div tabIndex={-1} id="content" className="focus:outline-none bg-surface-white-pale">
+    <div tabIndex={-1} id="content" className="bg-surface-white-pale focus:outline-none">
       <Hero brand={brand} />
       <Section>
         <SectionHeading>Accessible by design</SectionHeading>
@@ -67,7 +52,10 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
               showcase so much more and deliver even higher-quality, more accessible code.
             </p>
             <h3 className="typography-body-8 mb-5 border-b pb-2 font-bold">Who else is using React?</h3>
-            <Grid tag="ul" className='items-center gap-y-4 text-neutral[REPLACE_TOKEN]-70[REPLACE_TOKEN] sm:gap-x-4 sm:gap-y-8'>
+            <Grid
+              tag="ul"
+              className="text-neutral[REPLACE_TOKEN]-70[REPLACE_TOKEN] items-center gap-y-4 sm:gap-x-4 sm:gap-y-8"
+            >
               {[GovLogo, MicrosoftLogo, MyobLogo, IBMLogo, AtlassianLogo, FacebookLogo, TwitterLogo, ShopifyLogo].map(
                 (Logo, i) => (
                   <GridItem
@@ -85,10 +73,10 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         </Grid>
       </Section>
       <Section>
-        <SectionHeading className='text-text-body'>Subscribe to GEL updates</SectionHeading>
+        <SectionHeading className="text-text-body">Subscribe to GEL updates</SectionHeading>
         <Grid>
           <SectionItem>
-            <p className="mb-5 leading-loose sm:mb-7 text-text-body">
+            <p className="mb-5 leading-loose text-text-body sm:mb-7">
               Get the latest brand and component updates as well as access to new resources and helpful tips.
             </p>
             <form
@@ -148,12 +136,12 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         </Grid>
         <Grid className="gap-y-4 text-left xsl:gap-x-5 sm:gap-x-8 md:gap-x-10">
           <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2, md: 2 }} className="xsl:col-start-auto">
-            <h3 className='typography-body-8 border-b border-border-muted-strong pb-3 font-bold sm:mb-2'>Downloads</h3>
+            <h3 className="typography-body-8 border-b border-border-muted-strong pb-3 font-bold sm:mb-2">Downloads</h3>
             <ul className="typography-body-10">
-              <li className='border-b border-border-muted-soft'>
+              <li className="border-b border-border-muted-soft">
                 <Link
                   href="/articles/figma-libraries"
-                  className='box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5'
+                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
                 >
                   Figma UI Kits
                   <FigmaLogo />
@@ -162,13 +150,13 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
             </ul>
           </GridItem>
           <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2 }} className="xsl:col-start-auto">
-            <h3 className='typography-body-8 border-b border-border-muted-strong pb-3 font-bold sm:mb-2'>Links</h3>
+            <h3 className="typography-body-8 border-b border-border-muted-strong pb-3 font-bold sm:mb-2">Links</h3>
             <ul className="typography-body-10">
-              <li className='border-b border-border-muted-soft'>
+              <li className="border-b border-border-muted-soft">
                 <Link
                   href="https://github.com/WestpacGEL/GEL-next/"
                   target="_blank"
-                  className='box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5'
+                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
                 >
                   Follow Westpac GEL on GitHub
                   <GithubIcon size={{ initial: 'large', lg: 'xlarge' }} color="text" />
