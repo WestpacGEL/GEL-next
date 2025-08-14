@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'absolute z-0 hidden sm:block', // hero
+    base: 'absolute z-0 hidden sm:block touch-none pointer-events-none', // hero
     header: 'absolute -z-10 sm:hidden', //sticky header
   },
   variants: {
