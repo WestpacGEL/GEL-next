@@ -9,7 +9,7 @@ import { PopoverProps } from './popover.types.js';
 /**
  * @private
  */
-export function Popover({ state, children, showAsBottomSheet, ...props }: PopoverProps) {
+export function Popover({ state, portalContainer, children, showAsBottomSheet, ...props }: PopoverProps) {
   const ref = useRef(null);
   const { popoverProps, underlayProps } = usePopover(
     { ...props, popoverRef: ref, containerPadding: 0, offset: 0 },
@@ -18,7 +18,7 @@ export function Popover({ state, children, showAsBottomSheet, ...props }: Popove
   const styles = popoverStyles({ showAsBottomSheet });
 
   return (
-    <Overlay>
+    <Overlay portalContainer={portalContainer}>
       <div {...underlayProps} className={styles.underlay()} />
       <div {...popoverProps} ref={ref} className={styles.popover()}>
         <div className={styles.header()}>

@@ -5,6 +5,11 @@ import { Button, Grid, GridItem } from '@westpac/ui';
 import { NewWindowIcon } from '@westpac/ui/icon';
 import { useMemo } from 'react';
 
+import { DOCUMENT_RENDERERS } from '../document-renderer';
+import { TableOfContents } from '../intro/components';
+
+import { type CodeContentProps } from '.';
+
 import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
 import { ShortCode } from '@/components/component-blocks/components/short-code';
@@ -14,11 +19,6 @@ import { Section } from '@/components/content-blocks/section';
 import { Code } from '@/components/content-blocks/typography';
 import { Heading } from '@/components/document-renderer';
 import { pascalToKebab } from '@/utils/format-string';
-
-import { DOCUMENT_RENDERERS } from '../document-renderer';
-import { TableOfContents } from '../intro/components';
-
-import { type CodeContentProps } from '.';
 
 export function CodeContent({
   codeSections = [],
@@ -48,46 +48,50 @@ export function CodeContent({
                   {description}
                 </p>
               )}
-              <table className="typography-body-11 table w-full bg-[#f2f8fc] text-text-info">
-                <tbody>
-                  <tr>
-                    <th className="w-10 border-y border-gel-icon p-3 text-left font-semibold">Version</th>
-                    <td className="border-y border-gel-icon p-3">{westpacUIInfo?.currentVersion}</td>
-                  </tr>
-                  <tr>
-                    <th className="w-10 border-y border-gel-icon p-3 text-left font-semibold">History</th>
-                    <td className="border-y border-gel-icon p-3">
-                      <Button
-                        tag="a"
-                        size="small"
-                        className="p-0 leading-none"
-                        look="link"
-                        target="_blank"
-                        href={westpacUIInfo?.changelog || '#'}
-                      >
-                        <div className="flex items-center gap-1">
-                          <span>View changes</span>
-                          <NewWindowIcon size="xsmall" />
-                        </div>
-                      </Button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th className="w-10 border-y border-gel-icon p-3 text-left font-semibold">Install</th>
-                    <td className="text-black[REPLACE_TOKEN] border-y border-gel-icon p-3">
-                      <Code>npm install @westpac/ui</Code>
-                    </td>
-                  </tr>
-                  {componentProps && (
+              <div className="rounded-lg border border-border-info-mild">
+                <table className="typography-body-11 table w-full rounded-lg bg-surface-info-faint text-text-info">
+                  <tbody>
                     <tr>
-                      <th className="w-10 border-y border-gel-icon p-3 text-left font-semibold">Usage</th>
-                      <td className="text-black[REPLACE_TOKEN] border-y border-gel-icon p-3">
-                        <Code>{`import { ... } from @westpac/ui/${pascalToKebab(componentProps.displayName)}`}</Code>
+                      <th className="w-10 border-b border-border-info-mild p-3 text-left font-semibold">Version</th>
+                      <td className="border-b border-border-info-mild p-3 text-right">
+                        {westpacUIInfo?.currentVersion}
                       </td>
                     </tr>
-                  )}
-                </tbody>
-              </table>
+                    <tr>
+                      <th className="w-10 border-b border-border-info-mild p-3 text-left font-semibold">History</th>
+                      <td className="border-b border-border-info-mild p-3 text-right">
+                        <Button
+                          tag="a"
+                          size="small"
+                          className="p-0 leading-none"
+                          look="link"
+                          target="_blank"
+                          href={westpacUIInfo?.changelog || '#'}
+                        >
+                          <div className="flex items-center gap-1">
+                            <span>View changes</span>
+                            <NewWindowIcon size="xsmall" />
+                          </div>
+                        </Button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th className="w-10 border-b border-border-info-mild p-3 text-left font-semibold">Install</th>
+                      <td className="border-b border-border-info-mild p-3 text-right">
+                        <Code>npm install @westpac/ui</Code>
+                      </td>
+                    </tr>
+                    {componentProps && (
+                      <tr>
+                        <th className="w-10 p-3 text-left font-semibold">Usage</th>
+                        <td className="p-3 text-right">
+                          <Code>{`import { ... } from @westpac/ui/${pascalToKebab(componentProps.displayName)}`}</Code>
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
             </GridItem>
             {sectionNames.length > 0 && (
               <GridItem span={{ initial: 12, sm: 4 }} start={{ initial: 1, sm: 9 }}>

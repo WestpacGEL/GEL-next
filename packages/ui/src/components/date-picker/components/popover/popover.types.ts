@@ -6,4 +6,5 @@ export type PopoverProps = Omit<AriaPopoverProps, 'popoverRef'> & {
   children: ReactNode;
   showAsBottomSheet?: boolean;
   state: OverlayTriggerState;
+  portalContainer?: Element;
 };

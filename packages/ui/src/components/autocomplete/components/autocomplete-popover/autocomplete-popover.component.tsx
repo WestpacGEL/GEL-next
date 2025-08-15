@@ -23,7 +23,9 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
   const brandContainer = useMemo(() => {
     if (typeof window !== 'undefined') {
       return (
-        document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]') || document.body
+        document.querySelector('[data-theme]') ||
+        document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
+        document.body
       );
     }
   }, []);

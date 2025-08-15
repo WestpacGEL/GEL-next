@@ -6,7 +6,7 @@ import { useCallback, useMemo } from 'react';
 
 import { useThemeMode } from '@/hooks/theme-mode.hook';
 
-export function ThemeDropDown() {
+export function ThemeDropDown({ className }: { className?: string }) {
   const { mode, setMode } = useThemeMode();
   const { setMode: setModeOnDOM, getSystemPreference, getBrandContainer } = useDarkMode();
 
@@ -23,15 +23,15 @@ export function ThemeDropDown() {
   );
 
   // eslint-disable-next-line sonarjs/function-return-type
-  const portal: Element | true = useMemo(() => {
+  const portal: Element | false = useMemo(() => {
     if (typeof window !== 'undefined') {
-      return getBrandContainer() || true;
+      return getBrandContainer() || false;
     }
-    return true;
+    return false;
   }, [getBrandContainer]);
 
   return (
-    <ButtonDropdown portal={portal} color="primary" soft text="Theme" className="relative z-20">
+    <ButtonDropdown portal={portal} color="primary" soft text="Theme" className={className}>
       <RadioGroup
         defaultValue={mode}
         onChange={handleOnChange}

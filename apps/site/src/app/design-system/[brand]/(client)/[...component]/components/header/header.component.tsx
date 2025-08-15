@@ -3,11 +3,11 @@
 import { HamburgerMenuIcon } from '@westpac/ui/icon';
 import { useLayoutEffect, useRef, useState } from 'react';
 
+import { styles as headerStyles } from './header.styles';
+
 import { useSidebar } from '@/app/design-system/components/sidebar/sidebar.context';
 import { BrandKey } from '@/app/types/brand.types';
 import { ThemeDropDown } from '@/components/theme-dropdown/theme-dropdown.component';
-
-import { styles as headerStyles } from './header.styles';
 
 const FIXED_HEADER = 162; // 228 - 66 = height to stick
 
@@ -37,10 +37,11 @@ export function Header({ className, title, brand }: { brand: string; className?:
         <HamburgerMenuIcon color="white-pale" className="mx-auto" />
       </button>
 
-      <div className={styles.titleWrapper()}>
-        <h2 className={styles.title()} ref={headerRef} id="header" aria-hidden tabIndex={-1}>
-          {title}
-        </h2>
+      <h2 className={styles.title()} ref={headerRef} id="header" aria-hidden tabIndex={-1}>
+        {title}
+      </h2>
+
+      <div className="fixed right-2 top-2.5">
         <ThemeDropDown />
       </div>
     </header>

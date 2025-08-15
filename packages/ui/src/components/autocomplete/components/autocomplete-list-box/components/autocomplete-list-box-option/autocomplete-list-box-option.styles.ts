@@ -5,7 +5,7 @@ export const styles = tv(
     base: 'group flex cursor-pointer items-center justify-between bg-surface-white-pale p-2 px-3 text-sm text-text-body transition-colors',
     variants: {
       isFocused: {
-        true: 'is-focused bg-surface-muted-pale',
+        true: 'is-focused bg-surface-hover-muted-pale',
       },
       isSelected: {
         true: 'font-bold',

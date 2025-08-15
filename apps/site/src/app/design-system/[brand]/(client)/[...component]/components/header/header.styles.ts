@@ -8,7 +8,7 @@ export const styles = tv(
       gridButtonWrapper: 'fixed right-2 top-2 hidden items-center text-white sm:flex',
       hamburgerButton:
         'fixed left-0 top-0 block -translate-y-0.5 px-2 py-3.5 focus-visible:!outline-offset-[-2px] focus-visible:focus-outline sm:left-2 lg:hidden',
-      title: 'typography-brand-7 -mb-1 pl-6 font-normal leading-none text-text-mono focus:outline-none sm:pl-6 lg:pl-0',
+      title: 'typography-brand-7 pl-6 font-normal text-text-mono focus:outline-none sm:pl-6 lg:pl-0',
       titleWrapper: 'flex flex-1 justify-between',
     },
     variants: {
