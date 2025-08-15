@@ -1,5 +1,20 @@
 # @westpac/ui
 
+## 0.47.0
+
+### Minor Changes
+
+- 238c381: New isScrolled prop for Header component to be used when fixed for drop shadow control. Minor style update on fixed header to have bottom border transparent when fixed + scrolled to stop header from shifting slightly
+- efca078: minor style changes to autocomplete popover
+- cbeffcb: removed onClose prop from base modal that wasn't doing anything
+- 7904d15: Update dependencies to support React 19
+
+### Patch Changes
+
+- 117af7d: fixed issue where adding custom scroll trigger to fixed header would only trigger the drop shadow style when the custom trigger was scrolled when it should be used as an additional trigger, not a replacement
+- b06122c: Update dependencies to fix security alert issues
+- 026dde9: refactor depenencies of ui package
+
 ## 0.46.0
 
 ### Minor Changes
