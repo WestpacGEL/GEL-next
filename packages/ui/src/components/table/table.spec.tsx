@@ -93,9 +93,7 @@ describe('Table', () => {
         <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
       </Table>,
     );
-    expect(getByTestId('header-cell')).toHaveClass(
-      'typography-body-10 border border-b-[3px] border-border-hero p-2 text-left align-bottom text-text-body group-[:nth-child(1)_&]/row:border-b group-[:nth-child(1)_&]/row:border-b-border-muted-soft border-x border-t border-x-border-muted-soft border-t-border-muted-soft',
-    );
+    expect(getByTestId('header-cell')).toHaveClass('border-x border-t border-x-border-muted-soft');
     expect(getByTestId('cell')).toHaveClass('border-x');
     expect(getByText('Footer goes here and should colSpan all columns')).toHaveClass(
       'typography-body-10 p-2 text-left text-text-muted border border-border-muted-soft',

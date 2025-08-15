@@ -21,14 +21,13 @@ export function Popover(props: PopoverProps) {
   return (
     <Overlay portalContainer={portalContainer}>
       {!isNonModal && <div {...underlayProps} className="fixed inset-0" />}
-
-      <div {...popoverProps} ref={popoverRef} className={clsx('z-10 bg-white shadow-lg', className)}>
+      <div {...popoverProps} ref={popoverRef} className={clsx('z-10 bg-surface-white-pale shadow-lg', className)}>
         {!isNonModal && <DismissButton onDismiss={() => state.close()} />}
         <LazyMotion features={loadAnimations}>
           <AnimatePresence initial mode="wait">
             {state.isOpen && (
               <m.div
-                className="overflow-hidden border border-border"
+                className="overflow-hidden border border-border-muted-soft"
                 initial={{
                   height: 0,
                   opacity: 0,

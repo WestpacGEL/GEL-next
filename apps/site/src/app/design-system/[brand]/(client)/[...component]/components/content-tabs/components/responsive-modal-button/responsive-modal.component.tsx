@@ -16,10 +16,10 @@ export function ResponsiveModal({ children, ...props }: ResponsiveModalProps) {
             Viewport: <span className="font-light">{width}px</span>
           </h2>
           <div className="relative mb-3 mt-4 flex justify-center">
-            <div className="absolute inset-x-0 top-2 flex h-4 w-full items-center justify-between before:h-full before:border-l before:border-l-border after:h-full after:border-l after:border-l-border">
-              <div className="flex-1 border-t border-t-border" />
+            <div className="absolute inset-x-0 top-2 flex h-4 w-full items-center justify-between before:h-full before:border-l before:border-l-border-muted-soft after:h-full after:border-l after:border-l-border-muted-soft">
+              <div className="flex-1 border-t border-t-border-muted" />
             </div>
-            <div className="z-10 flex h-8 w-12 items-center justify-center rounded-[5.625rem] border border-border bg-white font-black">
+            <div className="z-10 flex h-8 w-12 items-center justify-center rounded-[5.625rem] border border-border-muted bg-surface-white-pale font-black">
               <span className="xsl:hidden">Xs</span>
               <span className="hidden xsl:max-sm:block">Xsl</span>
               <span className="hidden sm:max-md:block">Sm</span>
@@ -33,7 +33,7 @@ export function ResponsiveModal({ children, ...props }: ResponsiveModalProps) {
             <div className="pointer-events-none absolute inset-0 touch-none">
               <Grid className="absolute inset-0">
                 {new Array(12).fill(null).map((_, index) => (
-                  <GridItem key={index} span={1} className="bg-background" />
+                  <GridItem key={index} span={1} className="bg-surface-muted-pale" />
                 ))}
               </Grid>
             </div>

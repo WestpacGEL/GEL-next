@@ -226,7 +226,7 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
           },
         },
         formControl: {
-          base: 'no-inner-spin-button box-border w-fit appearance-none overflow-visible rounded border bg-surface-white-faint align-middle text-text-body transition placeholder:font-light placeholder:opacity-100 disabled:form-control-disabled border-border-muted-strong',
+          base: 'no-inner-spin-button box-border w-fit appearance-none overflow-visible rounded border bg-surface-white-pale align-middle text-text-body transition placeholder:font-light placeholder:opacity-100 disabled:form-control-disabled border-border-muted-strong',
           disabled: 'cursor-not-allowed border-dashed bg-surface-muted-pale text-text-muted',
           sizes: {
             // Some of the values are not following the spacing so we needed to use static values as following
@@ -241,18 +241,18 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
           look: {
             base: {
               primary:
-                'border border-border-primary bg-surface-primary text-white hover:bg-surface-primary-70 active:bg-surface-hit-primary',
-              hero: 'border border-border-hero bg-surface-hero text-white hover:bg-surface-hero-70 active:bg-surface-hit-hero',
+                'border border-border-primary bg-surface-primary text-white hover:bg-surface-primary-70 active:bg-surface-active-primary',
+              hero: 'border border-border-hero bg-surface-hero text-white hover:bg-surface-hero-70 active:bg-surface-active-hero',
               faint:
-                'border border-border-muted bg-surface-light text-muted hover:bg-surface-white active:bg-surface-hit-white',
+                'border border-border-muted bg-surface-light text-muted hover:bg-surface-white active:bg-surface-active-white',
               link: 'text-link underline',
             },
             soft: {
               primary:
-                'border border-border-primary bg-surface-white text-text hover:text-white hover:bg-surface-primary-70 active:bg-surface-hit-primary',
-              hero: 'border border-border-hero bg-surface-hero bg-surface-white text-text hover:text-white hover:bg-surface-hero-70 active:bg-surface-hit-hero',
+                'border border-border-primary bg-surface-white text-text hover:text-white hover:bg-surface-primary-70 active:bg-surface-active-primary',
+              hero: 'border border-border-hero bg-surface-hero bg-surface-white text-text hover:text-white hover:bg-surface-hero-70 active:bg-surface-active-hero',
               faint:
-                'border border-border-muted bg-surface-white text-muted hover:bg-surface-light active:bg-surface-hit-light',
+                'border border-border-muted bg-surface-white text-muted hover:bg-surface-light active:bg-surface-active-light',
             },
           },
         },

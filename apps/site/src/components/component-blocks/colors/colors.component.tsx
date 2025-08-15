@@ -1,6 +1,7 @@
 'use client';
 
 import { Grid, GridItem } from '@westpac/ui';
+import { useDarkMode } from '@westpac/ui/hook';
 import { type BrandKey } from '@westpac/ui/tailwind';
 import { useParams } from 'next/navigation';
 
@@ -10,14 +11,16 @@ import { getColorPalette } from './colors.utils';
 
 export function Colors({ palette, tab }: { palette: string; tab?: string }) {
   const params = useParams();
+  const { getMode } = useDarkMode();
   const brand = (params.brand ?? 'wbc') as BrandKey;
-  const colorPalette = getColorPalette({ brand, palette });
+  const mode = getMode() ?? 'light';
+  const colorPalette = getColorPalette({ brand: `${brand}-${mode}`, palette });
   return (
     <Grid tag="ul" className="mt-2">
       {palette === 'data_visualisation'
         ? colorPalette.map(color => (
             <GridItem key={color.name} tag="li" span={{ initial: 12, xsl: 6, sm: 4, md: 4 }}>
-              <div className="flex flex-row items-center bg-white p-4 xsl:flex-col xsl:items-stretch ">
+              <div className="flex flex-row items-center bg-surface-white-pale p-4 xsl:flex-col xsl:items-stretch ">
                 <Svg viewBox="0 0 132 132" width={132} height={132}>
                   <circle fill={color.hex} cx="66" cy="66" r="66" />
                 </Svg>
@@ -43,7 +46,7 @@ export function Colors({ palette, tab }: { palette: string; tab?: string }) {
           ))
         : colorPalette.map(color => (
             <GridItem key={color.name} tag="li" span={{ initial: 12, xsl: 6, sm: 4, md: 3 }}>
-              <div className="flex flex-row items-center bg-white p-4 xsl:flex-col xsl:items-stretch">
+              <div className="flex flex-row items-center bg-surface-white-pale p-4 xsl:flex-col xsl:items-stretch">
                 <Svg viewBox="0 0 132 132" width={132} height={132}>
                   <circle fill={color.hex} cx="66" cy="66" r="66" />
                 </Svg>

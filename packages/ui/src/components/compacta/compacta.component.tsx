@@ -142,6 +142,7 @@ export function Compacta({
                 </Tag>
                 <Button
                   className={styles.toggleBtn()}
+                  iconColor="primary"
                   iconAfter={item.open ? ExpandLessIcon : ExpandMoreIcon}
                   look="link"
                   size="large"

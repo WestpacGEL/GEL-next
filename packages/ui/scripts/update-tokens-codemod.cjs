@@ -32,7 +32,7 @@ module.exports = function transformer(file, api) {
       'system',
     ];
 
-    const deprecatedColors = ['background', 'heading', 'light', 'link', 'neutral', 'pop', 'text', 'system'];
+    const deprecatedColors = ['background', 'heading', 'light', 'link', 'neutral', 'pop', 'text', 'system', 'border'];
 
     const borderTokens = pieces.reduce((acc, currentPiece) => {
       return colors.reduce(
@@ -48,7 +48,7 @@ module.exports = function transformer(file, api) {
   };
 
   const REPLACEMENTS = {
-    'bg-background': 'bg-surface-muted-pale',
+    'bg-background': 'bg-surface-muted-faint',
     'bg-border': 'bg-surface-muted-soft',
     'bg-borderDark': 'bg-surface-muted-strong',
     'bg-focus': 'bg-focus[REPLACE_TOKEN]',
@@ -88,9 +88,12 @@ module.exports = function transformer(file, api) {
     'text-system': 'text-text-system-error',
     'text-white': 'text-text-mono',
     ...generateBorderTokens(),
+    'border-border': 'border-border-muted-soft',
+    'border-l-border': 'border-l-border-muted-soft',
+    'border-r-border': 'border-r-border-muted-soft',
+    'border-t-border': 'border-t-border-muted-soft',
+    'border-b-border': 'border-b-border-muted-soft',
   };
-
-  console.log('REPLACEMENTS', REPLACEMENTS);
 
   const BLACK_AND_WHITE = {
     'bg-black': 'bg-black[REPLACE_TOKEN]',

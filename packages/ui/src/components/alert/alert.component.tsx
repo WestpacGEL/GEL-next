@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, LazyMotion, m } from 'motion/react';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useState, useMemo } from 'react';
 
 import { Button } from '../button/button.component.js';
 import { AlertIcon, CloseIcon, InfoIcon, LimitIcon, SuccessIcon, WarningIcon } from '../icon/index.js';

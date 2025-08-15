@@ -4,7 +4,7 @@ export const linkStyles = tv({
   base: 'underline focus-visible:focus-outline',
   variants: {
     color: {
-      default: 'text-primary',
+      default: 'text-text-primary',
       blue: 'text-gel-icon',
     },
   },
