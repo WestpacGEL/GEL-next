@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.47.1
+
+### Patch Changes
+
+- 7920a49: colorjs dependency fix
+
 ## 0.47.0
 
 ### Minor Changes
