@@ -3,8 +3,8 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'relative',
-      itemHeader: 'typography-body-9 flex w-full flex-1 items-center justify-between px-3 py-2',
+      base: 'group',
+      itemHeader: 'typography-body-9 flex w-full flex-1 items-center justify-between px-3 py-2 group-first:border-t-0',
       headerTitleWrapper: 'flex-1 pr-2 text-left',
       indicator: 'size-3 rotate-90',
       content: 'hidden',
@@ -40,6 +40,11 @@ export const styles = tv(
           itemHeader: 'outline-none',
         },
       },
+      rounded: {
+        true: {
+          itemHeader: 'group-first:rounded-t-sm group-last:rounded-b-sm',
+        },
+      },
     },
     compoundSlots: [
       {
@@ -57,6 +62,12 @@ export const styles = tv(
         slots: ['content'],
         look: 'lego',
         className: 'shadow-[inset_0.375rem_0_0_var(--tw-shadow-color)] !shadow-border-muted-soft',
+      },
+      {
+        slots: ['itemHeader'],
+        isOpen: true,
+        rounded: true,
+        className: 'group-last:rounded-none',
       },
     ],
   },
