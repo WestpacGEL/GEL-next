@@ -361,6 +361,9 @@ importers:
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
+      colorjs.io:
+        specifier: ~0.4.5
+        version: 0.4.5
       lodash.throttle:
         specifier: ~4.1.1
         version: 4.1.1
@@ -464,9 +467,6 @@ importers:
       chokidar:
         specifier: ^3.5.3
         version: 3.6.0
-      colorjs.io:
-        specifier: ~0.4.5
-        version: 0.4.5
       cross-env:
         specifier: ~7.0.3
         version: 7.0.3
