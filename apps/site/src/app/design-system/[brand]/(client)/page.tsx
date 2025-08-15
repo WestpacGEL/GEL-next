@@ -4,6 +4,8 @@ import { Button, Grid, GridItem, Input } from '@westpac/ui';
 import { GithubIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
 
+import { Hero, Section, SectionHeading, SectionItem } from '../../components';
+
 import { BrandKey } from '@/app/types/brand.types';
 import {
   AtlassianLogo,
@@ -17,8 +19,6 @@ import {
   ShopifyLogo,
   TwitterLogo,
 } from '@/components/logos';
-
-import { Hero, Section, SectionHeading, SectionItem } from '../../components';
 
 export default function DesignSystemHomePage({ params }: { params: { brand: string } }) {
   const brand = (params.brand || 'wbc') as BrandKey;
@@ -54,10 +54,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
             <h3 className="typography-body-8 mb-5 border-b border-b-border-hero pb-2 font-bold text-text-heading">
               Who else is using React?
             </h3>
-            <Grid
-              tag="ul"
-              className="text-neutral[REPLACE_TOKEN]-70[REPLACE_TOKEN] items-center gap-y-4 sm:gap-x-4 sm:gap-y-8"
-            >
+            <Grid tag="ul" className="items-center gap-y-4 sm:gap-x-4 sm:gap-y-8">
               {[GovLogo, MicrosoftLogo, MyobLogo, IBMLogo, AtlassianLogo, FacebookLogo, TwitterLogo, ShopifyLogo].map(
                 (Logo, i) => (
                   <GridItem
