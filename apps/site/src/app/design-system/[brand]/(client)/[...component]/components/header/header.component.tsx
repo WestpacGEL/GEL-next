@@ -3,11 +3,11 @@
 import { HamburgerMenuIcon } from '@westpac/ui/icon';
 import { useLayoutEffect, useRef, useState } from 'react';
 
-import { styles as headerStyles } from './header.styles';
-
 import { useSidebar } from '@/app/design-system/components/sidebar/sidebar.context';
 import { BrandKey } from '@/app/types/brand.types';
 import { ThemeDropDown } from '@/components/theme-dropdown/theme-dropdown.component';
+
+import { styles as headerStyles } from './header.styles';
 
 const FIXED_HEADER = 162; // 228 - 66 = height to stick
 

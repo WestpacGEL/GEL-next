@@ -166,10 +166,10 @@
       {item => (
         <AutocompleteItem key={item.name} textValue={item.name}>
           <div className="flex items-center gap-2">
-            <Circle className="size-5 bg-muted text-white">{item.initials}</Circle>
+            <Circle className="size-5 bg-muted text-text-mono">{item.initials}</Circle>
             <div className="flex flex-col ">
               <h3 className="typography-body-9">{item.name}</h3>
-              <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
+              <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
                 {item.role}
               </p>
             </div>
@@ -203,7 +203,7 @@
           <div className="flex items-center gap-2">
             <div className="flex flex-col ">
               <h3 className="typography-body-9">{item.name}</h3>
-              <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
+              <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
                 {item.abn}
               </p>
             </div>
@@ -231,12 +231,12 @@
   </AutocompleteItem>
   <AutocompleteItem key="staff">
     <div className="flex items-center gap-2">
-      <Circle className="size-5 bg-muted text-white group-[.is-focused]:bg-white group-[.is-focused]:text-muted">
+      <Circle className="size-5 bg-muted text-text-mono group-[.is-focused]:bg-surface-white-pale group-[.is-focused]:text-text-muted">
         SN
       </Circle>
       <div className="flex flex-col ">
         <h3 className="typography-body-9">Staff Name</h3>
-        <p className="typography-body-10 text-borderDark group-hover:text-white group-[.is-focused]:text-white">
+        <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
           Staff role, staff business area
         </p>
       </div>

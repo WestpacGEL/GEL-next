@@ -2,7 +2,7 @@
 
 ```jsx
 <div>
-  <h1 className="typography-body-10 mb-2 italic text-muted">Default list</h1>
+  <h1 className="typography-body-10 mb-2 italic text-text-muted">Default list</h1>
   <List type="bullet">
     <ListItem>Styled bullet list</ListItem>
     <ListItem>Styled bullet list</ListItem>
@@ -20,7 +20,7 @@
     </List>
     <ListItem>Styled bullet list</ListItem>
   </List>
-  <h1 className="typography-body-10 mb-2 italic text-muted">Look</h1>
+  <h1 className="typography-body-10 mb-2 italic text-text-muted">Look</h1>
   <List type="bullet" look="primary" className="mb-4">
     <ListItem>Styled bullet list - primary</ListItem>
     <ListItem>Styled bullet list - primary</ListItem>
@@ -39,7 +39,7 @@
   const TYPES = ['bullet', 'link', 'tick', 'ordered', 'unstyled', 'icon'];
   return TYPES.map(type => (
     <div key={type}>
-      <h1 className="typography-body-10 mb-2 italic text-muted">{`${type[0].toUpperCase()}${type.slice(1)} List`}</h1>
+      <h1 className="typography-body-10 mb-2 italic text-text-muted">{`${type[0].toUpperCase()}${type.slice(1)} List`}</h1>
       <List type={type} icon={type === 'icon' ? GithubIcon : undefined}>
         <ListItem>Styled {type} list</ListItem>
         <ListItem>Styled {type} list</ListItem>
@@ -54,13 +54,13 @@
 
 ```jsx
 <div>
-  <h1 className="typography-body-10 mb-2 italic text-muted">Medium</h1>
+  <h1 className="typography-body-10 mb-2 italic text-text-muted">Medium</h1>
   <List type="bullet" className="mb-4" spacing="medium">
     <ListItem>Styled bullet list</ListItem>
     <ListItem>Styled bullet list</ListItem>
     <ListItem>Styled bullet list</ListItem>
   </List>
-  <h1 className="typography-body-10 mb-2 italic text-muted">Large</h1>
+  <h1 className="typography-body-10 mb-2 italic text-text-muted">Large</h1>
   <List type="bullet" className="mb-4" spacing="large">
     <ListItem>Styled bullet list</ListItem>
     <ListItem>Styled bullet list</ListItem>

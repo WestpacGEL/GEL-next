@@ -5,11 +5,6 @@ import { Button, Grid, GridItem } from '@westpac/ui';
 import { NewWindowIcon } from '@westpac/ui/icon';
 import { useMemo } from 'react';
 
-import { DOCUMENT_RENDERERS } from '../document-renderer';
-import { TableOfContents } from '../intro/components';
-
-import { type CodeContentProps } from '.';
-
 import { Container } from '@/app/design-system/components';
 import { Colors } from '@/components/component-blocks/colors/colors.component';
 import { ShortCode } from '@/components/component-blocks/components/short-code';
@@ -19,6 +14,11 @@ import { Section } from '@/components/content-blocks/section';
 import { Code } from '@/components/content-blocks/typography';
 import { Heading } from '@/components/document-renderer';
 import { pascalToKebab } from '@/utils/format-string';
+
+import { DOCUMENT_RENDERERS } from '../document-renderer';
+import { TableOfContents } from '../intro/components';
+
+import { type CodeContentProps } from '.';
 
 export function CodeContent({
   codeSections = [],
