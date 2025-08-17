@@ -52,10 +52,12 @@ const logoMap = {
 };
 
 export function Header({
+  anchorTarget,
   brand,
   className,
   children,
   fixed = false,
+  fixedMaxWidth,
   isScrolled,
   leftIcon,
   leftOnClick,
@@ -97,7 +99,7 @@ export function Header({
 
   return (
     <header className={styles.base({ className })} {...props}>
-      <div className={styles.inner()}>
+      <div className={styles.inner()} style={{ maxWidth: fixed ? fixedMaxWidth : undefined }}>
         {skipToContentId && <SkipLink href={skipToContentId}>{skipLinkContent}</SkipLink>}
         {leftIcon && (
           <div className={styles.leftContent()}>
@@ -113,7 +115,7 @@ export function Header({
           </div>
         )}
         {/* useFocusRing was causing this link to need two clicks to activate so focus-visible styling is used instead */}
-        <a href={logoLink} className={styles.logoLink()} onClick={logoOnClick}>
+        <a href={logoLink} target={anchorTarget} className={styles.logoLink()} onClick={logoOnClick}>
           <SmallLogo align={logoAlignment} aria-label={logoAssistiveText} className={styles.smallLogo()} />
           <LargeLogo aria-label={logoAssistiveText} className={styles.largeLogo()} />
         </a>
