@@ -32,7 +32,7 @@ export const styles = tv(
       {
         look: 'default',
         selected: false,
-        className: 'bg-screen-background-faint',
+        className: 'bg-surface-muted-faint',
       },
       {
         orientation: 'horizontal',
