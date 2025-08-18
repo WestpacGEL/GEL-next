@@ -1,8 +1,13 @@
-import { HTMLAttributes } from 'react';
+import { Property } from 'csstype';
+import { HTMLAttributeAnchorTarget, HTMLAttributes } from 'react';
 
 import { BrandKey } from '../../tailwind/index.js';
 
 export type HeaderProps = {
+  /**
+   * Target for the logo link
+   */
+  anchorTarget?: HTMLAttributeAnchorTarget;
   /**
    * Icon for brand
    */
@@ -11,6 +16,11 @@ export type HeaderProps = {
    * Enable fixed header
    */
   fixed?: boolean;
+  /**
+   * Set max width for fixed header for certain layouts
+   * NOTE: Using max-w in classname will work for non-fixed headers
+   */
+  fixedMaxWidth?: Property.MaxWidth;
   /**
    * Used with fixed to show drop shadow when something on screen is scrolled that should trigger drop shadow but doesn't
    */
