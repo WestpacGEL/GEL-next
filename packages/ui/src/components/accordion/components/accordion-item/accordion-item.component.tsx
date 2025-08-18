@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { useAccordionItem } from '@react-aria/accordion';
 import { AnimatePresence, LazyMotion, m } from 'motion/react';
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { mergeProps, useFocusRing, useHover, useLocale } from 'react-aria';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../../../icon/index.js';
@@ -26,7 +26,8 @@ export function AccordionItem<T = HTMLElement>({
   const isDisabled = state.disabledKeys.has(item.key);
   const { hoverProps } = useHover({ isDisabled });
   const { direction } = useLocale();
-  const styles = accordionItemStyles({ isOpen, isDisabled, look, isFocusVisible });
+  const isFirst = useMemo(() => item.index === 0, [item]);
+  const styles = accordionItemStyles({ isFirst, isOpen, isDisabled, look, isFocusVisible });
 
   return (
     <Tag className={styles.base({ className })}>

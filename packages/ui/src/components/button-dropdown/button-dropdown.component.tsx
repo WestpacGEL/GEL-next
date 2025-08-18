@@ -13,6 +13,7 @@ import { ButtonDropdownPanel } from './components/button-dropdown-panel/button-d
 
 export function ButtonDropdown({
   className,
+  portalClassName,
   dropdownSize = 'medium',
   iconBefore: IconBefore,
   open = false,
@@ -65,14 +66,14 @@ export function ButtonDropdown({
         block={block}
         aria-expanded={state.isOpen}
         aria-controls={panelId}
-        className={styles.base()}
+        className={styles.base({ className })}
         {...buttonProps}
       >
         {text}
       </Button>
       {state.isOpen && (
         <ButtonDropdownPanel
-          className={styles.panel({ className })}
+          className={styles.panel({ className: portalClassName })}
           placement="bottom start"
           triggerRef={ref}
           state={state}

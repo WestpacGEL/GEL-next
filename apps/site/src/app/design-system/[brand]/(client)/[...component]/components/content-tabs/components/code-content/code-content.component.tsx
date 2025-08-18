@@ -63,7 +63,7 @@ export function CodeContent({
                         <Button
                           tag="a"
                           size="small"
-                          className="p-0 leading-none"
+                          className="p-0 leading-none text-text-info"
                           look="link"
                           target="_blank"
                           href={westpacUIInfo?.changelog || '#'}

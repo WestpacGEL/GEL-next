@@ -4,11 +4,11 @@ Responsive buttons can change appearance based on breakpoint. For example, the b
 <Fragment>
   <ComponentTitle>Medium size button becomes Extra large from the MD breakpoint</ComponentTitle>
   <Button size={{ initial: 'medium', md: 'xlarge' }}>Medium → Extra large</Button>
-  <hr className="border-t border-t-border my-4" />
+  <hr className="border-t border-t-border-muted-soft my-4" />
 
   <ComponentTitle>Extra large size button becomes small from the SM breakpoint</ComponentTitle>
   <Button size={{ initial: 'xlarge', sm: 'small' }}>Extra large → Small</Button>
-  <hr className="border-t border-t-border my-4" />
+  <hr className="border-t border-t-border-muted-soft my-4" />
 
   <ComponentTitle>
     Small size button becomes medium at the SM breakpoint, large at the MD breakpoint and Extra large at the LG
@@ -17,7 +17,7 @@ Responsive buttons can change appearance based on breakpoint. For example, the b
   <Button size={{ initial: 'small', sm: 'medium', md: 'large', lg: 'xlarge' }}>
     Small → Medium → Large → Extra large
   </Button>
-  <hr className="border-t border-t-border my-4" />
+  <hr className="border-t border-t-border-muted-soft my-4" />
 
   <ComponentTitle>Block button becomes non-block from the SM breakpoint</ComponentTitle>
   <Button block={{ initial: true, sm: false }}>Block → Non-block</Button>

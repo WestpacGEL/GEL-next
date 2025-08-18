@@ -19,6 +19,11 @@ export const styles = tv(
             'border-l-[0.375rem] border-border-muted-soft border-t-border-muted-soft bg-surface-muted-faint shadow-[inset_0_1px_0_var(--tw-shadow-color)] !shadow-border-muted-soft transition-colors',
         },
       },
+      isFirst: {
+        true: {
+          itemHeader: 'border-t-0',
+        },
+      },
       isOpen: {
         true: {
           content: 'block border-t border-border-muted-soft p-3',

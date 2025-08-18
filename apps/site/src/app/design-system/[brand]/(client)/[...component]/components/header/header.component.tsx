@@ -42,7 +42,7 @@ export function Header({ className, title, brand }: { brand: string; className?:
       </h2>
 
       <div className="fixed right-2 top-2.5">
-        <ThemeDropDown />
+        <ThemeDropDown className="!border-0" />
       </div>
     </header>
   );
