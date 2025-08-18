@@ -56,6 +56,13 @@ const LOAD_COLORS = {
     'bg-surface-muted-mild',
     'bg-surface-hover-primary',
     'bg-surface-hover-primary-faint',
+    'bg-surface-active-primary-faint',
+    'bg-surface-hover-hero-faint',
+    'bg-surface-active-muted-pale',
+    'bg-surface-hover-mono',
+    'bg-surface-active-hero-faint',
+    'bg-surface-hover-mono',
+    'bg-surface-active-mono',
     'bg-surface-active-primary',
     'bg-surface-muted-soft',
     'bg-surface-muted-pale',
@@ -135,6 +142,18 @@ const LOAD_COLORS = {
     'bg-surface-data-e-solid',
     'bg-surface-data-e-tint',
     'bg-surface-data-e-opacity',
+    'bg-data-a-solid/50',
+    'bg-data-b-solid/60',
+    'bg-data-c-solid/45',
+    'bg-data-d-solid/50',
+    'bg-data-e-solid/50',
+    'bg-data-f-solid/45',
+    'bg-data-a-solid/50',
+    'bg-data-b-solid/60',
+    'bg-data-c-solid/45',
+    'bg-data-d-solid/50',
+    'bg-data-e-solid/50',
+    'bg-data-f-solid/45',
     'bg-surface-data-f-solid',
     'bg-surface-data-f-tint',
     'bg-surface-data-f-opacity',
@@ -338,19 +357,39 @@ export const DataColors: Story = {
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
           <div className="flex flex-wrap bg-screen-background-white">
-            {dataColors.map(color => (
-              <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
-                <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
-                <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
-                  <div className="pb-2 font-bold text-text-body">{color}</div>
-                  <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: bg-${color}`}</div>
-                  {/* Below comments to get rid of type nightmare when trying to get hex value */}
-                  {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                  {/* @ts-ignore */}
-                  <div className="typography-body-10 pt-2 font-light text-text-body">{currColors[color]} sdassaad</div>
+            {dataColors.map(color => {
+              /* Below comments to get rid of type nightmare when trying to get hex value */
+              /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+              /* @ts-ignore */
+              const currentColor = currColors[color];
+              if (currentColor.indexOf('rgba') !== -1) {
+                const opacity = +currentColor.replace('rgba(', '').replace(')', '').split(',').at(-1) * 100;
+                const className = `bg-${color.replace('-opacity', '')}-solid/${opacity}`;
+
+                return (
+                  <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
+                    <div className={`${className} h-[80px] border border-b-0 border-border-muted-soft`} />
+                    <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+                      <div className="pb-2 font-bold text-text-body">{color}</div>
+                      <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: ${className}`}</div>
+
+                      <div className="typography-body-10 pt-2 font-light text-text-body">{currentColor}</div>
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
+                  <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
+                  <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+                    <div className="pb-2 font-bold text-text-body">{color}</div>
+                    <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: bg-${color}`}</div>
+
+                    <div className="typography-body-10 pt-2 font-light text-text-body">{currentColor}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </>
       );
