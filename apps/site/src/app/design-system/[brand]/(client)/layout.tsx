@@ -13,7 +13,6 @@ export default function DesignSystemLayout({ children }: { children: ReactNode }
     const { mode } = useThemeMode.getState();
     if (mode === 'system') {
       const systemPreference = getSystemPreference();
-      console.log('systemPreference', systemPreference);
       setMode(systemPreference);
       return;
     }

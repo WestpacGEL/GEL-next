@@ -4,12 +4,12 @@ import { Grid, GridItem } from '@westpac/ui';
 import { useDarkMode } from '@westpac/ui/hook';
 import { type BrandKey } from '@westpac/ui/tailwind';
 import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 import { Svg } from '@/components/svg';
+import { useThemeMode } from '@/hooks/theme-mode.hook';
 
 import { getColorPalette } from './colors.utils';
-import { useEffect, useState } from 'react';
-import { useThemeMode } from '@/hooks/theme-mode.hook';
 
 export function Colors({ palette, tab }: { palette: string; tab?: string }) {
   const params = useParams();
