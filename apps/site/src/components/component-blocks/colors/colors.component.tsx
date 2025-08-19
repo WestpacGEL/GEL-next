@@ -8,12 +8,20 @@ import { useParams } from 'next/navigation';
 import { Svg } from '@/components/svg';
 
 import { getColorPalette } from './colors.utils';
+import { useEffect, useState } from 'react';
+import { useThemeMode } from '@/hooks/theme-mode.hook';
 
 export function Colors({ palette, tab }: { palette: string; tab?: string }) {
   const params = useParams();
   const { getMode } = useDarkMode();
+  const { mode: providerMode } = useThemeMode();
   const brand = (params.brand ?? 'wbc') as BrandKey;
-  const mode = getMode() ?? 'light';
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
+ 
+  useEffect(() => {
+    setMode(getMode() ?? 'light') ;
+  }, [providerMode]);
+
   const colorPalette = getColorPalette({ brand: `${brand}-${mode}`, palette });
   return (
     <Grid tag="ul" className="mt-2">

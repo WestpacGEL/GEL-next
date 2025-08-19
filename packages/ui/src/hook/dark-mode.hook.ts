@@ -24,7 +24,7 @@ export function useDarkMode() {
   }, []);
 
   const getSystemPreference = useCallback(() => {
-    return window?.matchMedia('(prefers-color-scheme: dark)') ? 'dark' : 'light';
+    return window?.matchMedia('(prefers-color-scheme: dark)')?.matches ? 'dark' : 'light';
   }, []);
 
   const setMode = useCallback(
