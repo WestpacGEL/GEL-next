@@ -28,11 +28,11 @@
 ```jsx
 () => {
   const [value, setValue] = useState(today());
+  console.log('value', value);
   return (
     <DatePicker
       onChange={value => {
-        console.log(value.target.value);
-        setValue(value.target.value);
+        setValue(value);
       }}
       onOpen={() => {
         console.log('onOpen');

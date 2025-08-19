@@ -48,8 +48,8 @@ export function CodeContent({
                   {description}
                 </p>
               )}
-              <div className="rounded-lg border border-border-info-mild">
-                <table className="typography-body-11 table w-full rounded-lg bg-surface-info-faint text-text-info">
+              <div className="rounded-xl border border-border-info-mild">
+                <table className="typography-body-11 table w-full rounded-xl bg-surface-info-faint text-text-info">
                   <tbody>
                     <tr>
                       <th className="w-10 border-b border-border-info-mild p-3 text-left font-semibold">Version</th>

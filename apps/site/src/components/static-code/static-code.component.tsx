@@ -8,7 +8,7 @@ export const StaticCode = ({
   language = '', // By default render as plain text (ie. no language).
 }: StaticCodeProps) => {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden rounded-xl">
       <Highlight code={code} language={language} theme={themes.oceanicNext}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={[className, 'p-2'].join(' ')} style={style}>
