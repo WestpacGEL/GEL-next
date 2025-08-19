@@ -1,4 +1,39 @@
-### Default pagination
+### Default pagination with totalPages
+
+```tsx
+() => {
+  const [page, setPage] = useState(1);
+
+  return (
+    <div className="flex flex-col gap-3">
+      <div className="flex flex-col items-start">
+        <ComponentTitle>Declarative</ComponentTitle>
+        <Pagination
+          current={page}
+          onChange={changedPage => {
+            setPage(changedPage);
+          }}
+          totalPages={20}
+        />
+      </div>
+      <div className="flex flex-col items-start">
+        <ComponentTitle>Infinite</ComponentTitle>
+        <Pagination
+          infinite
+          current={page}
+          onChange={changedPage => {
+            setPage(changedPage);
+          }}
+          totalPages={20}
+        />
+      </div>
+    </div>
+  );
+};
+```
+
+
+### Pagination using pages props
 
 ```tsx
 () => {

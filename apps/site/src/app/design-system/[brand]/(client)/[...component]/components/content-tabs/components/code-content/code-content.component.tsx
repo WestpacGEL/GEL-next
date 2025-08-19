@@ -76,8 +76,8 @@ export function CodeContent({
                       </td>
                     </tr>
                     <tr>
-                      <th className="w-10 border-b border-border-info-mild p-3 text-left font-semibold">Install</th>
-                      <td className="border-b border-border-info-mild p-3 text-right">
+                      <th className="w-10 p-3 text-left font-semibold">Install</th>
+                      <td className="p-3 text-right">
                         <Code>npm install @westpac/ui</Code>
                       </td>
                     </tr>
