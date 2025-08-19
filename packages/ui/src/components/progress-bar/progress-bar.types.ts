@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { AriaProgressBarProps } from 'react-aria';
 
 export type ProgressBarProps = {
@@ -20,4 +21,8 @@ export type ProgressBarProps = {
    * @default 0
    */
   value?: number;
+  /**
+   * The progress bar text inside
+   */
+  children?: ReactNode;
 } & Pick<AriaProgressBarProps, 'aria-label' | 'aria-describedby' | 'aria-details' | 'aria-labelledby' | 'id'>;

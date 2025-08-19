@@ -1,5 +1,5 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { Button } from '../button/index.js';
 import { AddIcon, RemoveIcon } from '../icon/index.js';
@@ -67,6 +67,81 @@ export const Controlled = () => {
       <ProgressBar value={barValue} className="mb-2" />
       <h2 className="typography-body-9 mb-1 font-bold">Skinny</h2>
       <ProgressBar look="skinny" value={barValue} className="mb-2" />
+      <div className="flex items-center space-x-1">
+        <Button
+          size="small"
+          disabled={barValue === 0}
+          iconBefore={RemoveIcon}
+          look="faint"
+          soft
+          onClick={() => handleProgress(-10)}
+        >
+          10%
+        </Button>
+        <Button
+          size="small"
+          disabled={barValue === 0}
+          iconBefore={RemoveIcon}
+          look="faint"
+          soft
+          onClick={() => handleProgress(-1)}
+        >
+          1%
+        </Button>
+        <p className="flex-1 text-center">Use the +/- buttons below to demonstrate how the progress bar moves.</p>
+        <Button
+          size="small"
+          disabled={barValue === 100}
+          iconBefore={AddIcon}
+          look="faint"
+          soft
+          onClick={() => handleProgress(+1)}
+        >
+          1%
+        </Button>
+        <Button
+          size="small"
+          disabled={barValue === 100}
+          iconBefore={AddIcon}
+          look="faint"
+          soft
+          onClick={() => handleProgress(+10)}
+        >
+          10%
+        </Button>
+      </div>
+    </>
+  );
+};
+
+/**
+ * Example of Progress Bar using custom text
+ */
+export const CustomTextUsage = () => {
+  const [barValue, setBarValue] = useState(0);
+  const handleProgress = useCallback(
+    (calc: number) => {
+      const progress = barValue + calc;
+      if (progress > 100) return setBarValue(100);
+      if (progress < 0) return setBarValue(0);
+      return setBarValue(progress);
+    },
+    [barValue],
+  );
+  const GOAL = 195.5;
+
+  const text = useMemo(() => {
+    if (barValue >= 100) {
+      return `$${GOAL.toFixed(2)}AUD COMPLETED!`;
+    }
+    return `$${(GOAL * (barValue / 100)).toFixed(2).replace('.00', '')}AUD`;
+  }, [barValue]);
+
+  return (
+    <>
+      <ProgressBar value={barValue} className="mb-2">
+        {text}
+      </ProgressBar>
       <div className="flex items-center space-x-1">
         <Button
           size="small"

@@ -6,7 +6,14 @@ import { mergeProps, useProgressBar } from 'react-aria';
 import { styles as progressBarStyles } from './progress-bar.styles.js';
 import { type ProgressBarProps } from './progress-bar.types.js';
 
-export function ProgressBar({ className, look = 'default', value = 0, noLabel = false, ...props }: ProgressBarProps) {
+export function ProgressBar({
+  className,
+  look = 'default',
+  value = 0,
+  noLabel = false,
+  children,
+  ...props
+}: ProgressBarProps) {
   const roundedValue = Math.round(value);
   const barValue = `${roundedValue}%`;
 
@@ -26,7 +33,7 @@ export function ProgressBar({ className, look = 'default', value = 0, noLabel = 
     >
       <div style={{ width: barValue }} className={styles.innerBar()}>
         <span className={styles.label({ class: `${noLabel || look === 'skinny' ? 'hidden' : ''}` })} {...labelProps}>
-          {barValue}
+          {children || barValue}
         </span>
       </div>
     </div>
