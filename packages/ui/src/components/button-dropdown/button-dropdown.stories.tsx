@@ -139,12 +139,12 @@ export const ButtonSizes = () => (
 export const DropdownSizes = () => (
   <div>
     {DROPDOWNSIZE.map(size => (
-      <>
+      <div key={size}>
         <h3 className="font-bold text-text-body">{size}</h3>
         <ButtonDropdown dropdownSize={size} text={size}>
           {size}
         </ButtonDropdown>
-      </>
+      </div>
     ))}
     <h3 className="font-bold text-text-body">Responsive</h3>
     <ButtonDropdown
