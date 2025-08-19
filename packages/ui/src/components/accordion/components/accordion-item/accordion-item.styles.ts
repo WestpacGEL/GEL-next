@@ -16,7 +16,12 @@ export const styles = tv(
         },
         lego: {
           itemHeader:
-            'border-border-muted-soft border-t-border-muted-soft bg-surface-muted-faint !shadow-border-muted-soft border-l-[0.375rem] shadow-[inset_0_1px_0_var(--tw-shadow-color)] transition-colors',
+            'border-l-[0.375rem] border-border-muted-soft border-t-border-muted-soft bg-surface-muted-faint !shadow-border-muted-soft shadow-[inset_0_1px_0_var(--tw-shadow-color)] transition-colors',
+        },
+      },
+      isFirst: {
+        true: {
+          itemHeader: 'border-t-0 shadow-none',
         },
       },
       isOpen: {
