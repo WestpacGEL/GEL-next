@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       base: 'box-border w-full overflow-hidden border border-border-muted-soft bg-surface-white-pale p-[0.0625rem]',
-      innerBar: 'box-border h-full bg-surface-hero text-right leading-tight transition-[width] duration-[.6s]',
+      innerBar: 'box-border h-full bg-surface-hero text-right leading-tight transition-[width] duration-[.6s] overflow-hidden',
       label: 'typography-body-10 mx-2 my-0 block font-bold text-text-mono',
     },
     variants: {
