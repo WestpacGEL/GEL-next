@@ -17,9 +17,9 @@ export function Colors({ palette, tab }: { palette: string; tab?: string }) {
   const { mode: providerMode } = useThemeMode();
   const brand = (params.brand ?? 'wbc') as BrandKey;
   const [mode, setMode] = useState<'light' | 'dark'>('light');
- 
+
   useEffect(() => {
-    setMode(getMode() ?? 'light') ;
+    setMode(getMode() ?? 'light');
   }, [providerMode]);
 
   const colorPalette = getColorPalette({ brand: `${brand}-${mode}`, palette });
