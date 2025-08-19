@@ -10,7 +10,7 @@ import { type ButtonDropdownPanelProps } from './button-dropdown-panel.types.js'
  */
 export function BaseButtonDropdownPanel({ className, children, state, block, id, ...props }: ButtonDropdownPanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
-  const { popoverProps } = usePopover({ popoverRef, shouldFlip: false, isNonModal: true, ...props }, state);
+  const { popoverProps } = usePopover({ popoverRef, shouldFlip: false, isNonModal: false, ...props }, state);
   const { isFocused, focusProps } = useFocusRing();
   const styles = panelStyles({ isFocused });
   const width = props.triggerRef.current?.getBoundingClientRect().width;
