@@ -21,7 +21,7 @@ export const styles = tv(
       },
       isFirst: {
         true: {
-          itemHeader: 'border-t-0',
+          itemHeader: 'border-t-0 shadow-none',
         },
       },
       isOpen: {
