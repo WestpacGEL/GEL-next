@@ -30,7 +30,8 @@ export function CustomHeader() {
       logoLink="/"
       fixed={!isMobile}
       isScrolled={sidebarScrolled}
-      className={'z-[100] m-auto w-full max-w-[1921px]'}
+      fixedMaxWidth="1921px"
+      className={'z-[100] m-auto w-full'}
     >
       <Button look="faint" size={{ initial: 'small', sm: 'medium' }} soft>
         Sign Out
