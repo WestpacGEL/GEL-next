@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.48.0
+
+### Minor Changes
+
+- 0b4cb90: added props to header to control fixed header max width and anchor target for logo link
+
 ## 0.47.1
 
 ### Patch Changes
