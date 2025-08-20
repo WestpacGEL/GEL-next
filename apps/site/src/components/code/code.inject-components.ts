@@ -151,6 +151,6 @@ export const SPACING_SCALE = [
   { value: 20, className: 'pr-20' },
 ];
 export const VARIATION_MARGIN_PADDING = ['', 'x', 'y', 't', 'r', 'b', 'l'];
-export const SPACING_DEFAULT_CLASSES = 'h-3 w-0 bg-primary';
+export const SPACING_DEFAULT_CLASSES = 'h-3 w-0 bg-surface-info';
 
 export { useBrand } from '@/app/design-system/hooks/use-brand';

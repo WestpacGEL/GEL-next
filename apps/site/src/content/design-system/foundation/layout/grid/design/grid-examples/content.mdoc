@@ -5,19 +5,19 @@ This 3 column layout stacks on xs* (each column takes up full width) but on the 
 ```tsx
 <div className="relative">
   <Grid>
-    <GridItem span={12} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem span={12} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column A
     </GridItem>
-    <GridItem span={12} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem span={12} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column B
     </GridItem>
-    <GridItem span={12} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem span={12} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column C
     </GridItem>
   </Grid>
   <Grid className="absolute top-0 left-0 right-0 bottom-0 opacity-50">
     {new Array(12).fill(null).map((_, index) => (
-      <GridItem key={index} span={1} className="bg-success/20 p-2 text-center text-text-text-primary" />
+      <GridItem key={index} span={1} className="bg-surface-info/15 p-2 text-center text-text-mono" />
     ))}
   </Grid>
 </div>
@@ -30,16 +30,16 @@ This 3 column layout stacks on xs* (each column takes up full width) but on the 
 ```tsx
 <div className="relative">
   <Grid>
-    <GridItem span={{ initial: 4, md: 12 }} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem span={{ initial: 4, md: 12 }} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column 12 at MD
     </GridItem>
-    <GridItem span={4} className="bg-surface-primary-faint p-2 text-center text-text-text-primary row-start-2">
+    <GridItem span={4} className="bg-surface-info/50 p-2 text-center text-text-mono row-start-2">
       Column 4
     </GridItem>
   </Grid>
   <Grid className="absolute top-0 left-0 right-0 bottom-0">
     {new Array(12).fill(null).map((_, index) => (
-      <GridItem key={index} span={1} className="bg-success/10 p-2 text-center text-text-text-primary" />
+      <GridItem key={index} span={1} className="bg-success/10 p-2 text-center text-text-mono" />
     ))}
   </Grid>
 </div>
@@ -52,22 +52,22 @@ Columns can be nested inside columns to achieve greater complexity and structure
 ```tsx
 <div className="relative">
   <Grid>
-    <GridItem span={12} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem span={12} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column A
     </GridItem>
-    <GridItem span={4} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem span={4} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column B
     </GridItem>
-    <GridItem span={4} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem span={4} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column C
     </GridItem>
-    <GridItem span={4} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem span={4} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column D
     </GridItem>
   </Grid>
   <Grid className="absolute top-0 left-0 right-0 bottom-0 opacity-50">
     {new Array(12).fill(null).map((_, index) => (
-      <GridItem key={index} span={1} className="bg-success/20 p-2 text-center text-text-text-primary" />
+      <GridItem key={index} span={1} className="bg-surface-info/15 p-2 text-center text-text-mono" />
     ))}
   </Grid>
 </div>
@@ -80,19 +80,19 @@ If a pull-right class is added to the first column it will be the top most colum
 ```tsx
 <div className="relative">
   <Grid>
-    <GridItem span={4} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem span={4} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column A
     </GridItem>
-    <GridItem span={4} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem span={4} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column B
     </GridItem>
-    <GridItem span={4} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem span={4} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column C
     </GridItem>
   </Grid>
   <Grid className="absolute top-0 left-0 right-0 bottom-0 opacity-50">
     {new Array(12).fill(null).map((_, index) => (
-      <GridItem key={index} span={1} className="bg-success/20 p-2 text-center text-text-text-primary" />
+      <GridItem key={index} span={1} className="bg-surface-info/15 p-2 text-center text-text-mono" />
     ))}
   </Grid>
 </div>
@@ -105,13 +105,13 @@ Columns can be offset to create empty space.
 ```tsx
 <div className="relative">
   <Grid>
-    <GridItem start={2} span={11} className="bg-surface-primary-faint p-2 text-center text-text-text-primary">
+    <GridItem start={2} span={11} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column A
     </GridItem>
   </Grid>
   <Grid className="absolute top-0 left-0 right-0 bottom-0 opacity-50">
     {new Array(12).fill(null).map((_, index) => (
-      <GridItem key={index} span={1} className="bg-success/20 p-2 text-center text-text-text-primary" />
+      <GridItem key={index} span={1} className="bg-surface-info/15 p-2 text-center text-text-mono" />
     ))}
   </Grid>
 </div>
