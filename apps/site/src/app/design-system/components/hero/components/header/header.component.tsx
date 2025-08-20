@@ -52,7 +52,7 @@ export function Header({ brand }: { brand: BrandKey }) {
           <strong>GEL</strong> Design System
         </h1>
       </div>
-      <ThemeDropDown />
+      <ThemeDropDown className="!border-0" />
     </header>
   );
 }

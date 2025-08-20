@@ -33,4 +33,8 @@ export type DatePickerProps<T extends DateValue = DateValue> = DatePickerStateOp
      * Separator character used in the date field. Defaults to "/".
      */
     separator?: string;
+    /**
+     * portal container for date picker
+     */
+    portalContainer?: Element;
   };

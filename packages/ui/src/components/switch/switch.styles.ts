@@ -34,7 +34,7 @@ export const styles = tv(
             'border-border-hero bg-surface-hero after:left-full after:-translate-x-full after:border after:border-surface-hero after:bg-surface-white-faint',
         },
         false: {
-          switchDiv: 'bg-surface-muted-pale after:border after:border-surface-white-faint after:bg-surface-hero',
+          switchDiv: 'bg-surface-white-pale after:border after:border-surface-white-faint after:bg-surface-hero',
         },
       },
       isDisabled: {

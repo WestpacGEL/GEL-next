@@ -20,30 +20,51 @@
 ### Icon color
 
 ```tsx
-<Fragment>
-  <AtmIcon
-    color="primary"
-    className="mr-4"
-  />
-  <EftposIcon
-    color="hero"
-    className="mr-4"
-  />
-  <PadlockIcon
-    color="border"
-    className="mr-4"
-  />
-  <BusinessPersonIcon
-    color="muted"
-    className="mr-4"
-  />
-  <SecurityIcon
-    color="info"
-    className="mr-4"
-  />
-  <VerifiedIcon
-    color="text"
-    className="mr-4"
-  />
-</Fragment>
+() => {
+  const ALL_COLORS = [
+    'muted',
+    'muted-vivid',
+    'muted-strong',
+    'muted-mild',
+    'muted-soft',
+    'muted-pale',
+    'muted-faint',
+    'white-pale',
+    'white-faint',
+    'mono',
+    'primary',
+    'primary-faint',
+    'hero',
+    'hero-faint',
+    'pop',
+    'pop-faint',
+    'holler',
+    'holler-faint',
+    'sing',
+    'sing-faint',
+    'dance',
+    'dance-faint',
+    'success',
+    'success-faint',
+    'info',
+    'info-faint',
+    'warning',
+    'warning-faint',
+    'danger',
+    'danger-faint',
+    'system-error',
+    'system-error-dark',
+  ] as const;
+
+  return (
+    <div className="flex flex-wrap justify-center gap-2">
+      {ALL_COLORS.map(color => (
+        <div key={color} className="flex flex-col items-center gap-1 w-14">
+          <TickCircleIcon key={color} color={color} />
+          <p className="typography-body-11 text-text-body text-center">{color}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
 ```

@@ -1,9 +1,10 @@
 import { BrandKeyWithThemes, type ColorsKey } from '@westpac/ui/tailwind';
 
 export const PRIMARY_COLORS: ColorsKey[] = [
-  'screen-background-white',
-  'screen-background-faint',
-  'screen-background-pale',
+  'screen-background-white-black',
+  'screen-background-pale-black',
+  'screen-background-white-pale',
+  'screen-background-pale-faint',
   'surface-muted',
   'surface-muted-vivid',
   'surface-muted-strong',

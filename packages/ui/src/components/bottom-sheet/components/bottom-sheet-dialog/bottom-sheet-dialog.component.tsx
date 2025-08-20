@@ -24,7 +24,7 @@ export function BottomSheetDialog({
 
   return (
     <div {...dialogProps} className={styles.base({ className })} ref={ref}>
-      <header>
+      <header className={styles.header()}>
         <h3 className={styles.title()} {...titleProps}>
           {title}
         </h3>

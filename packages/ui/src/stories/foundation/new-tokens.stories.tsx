@@ -24,7 +24,7 @@ const meta: Meta = {
             }}
             className="pl-2"
           />
-          <div className="bg-screen-background-white p-2">
+          <div className="bg-screen-background-white-black p-2">
             <p className="font-bold text-text-warning">
               NOTE: These tokens are not final and this is for example purposes
             </p>
@@ -47,13 +47,23 @@ const meta: Meta = {
 
 const LOAD_COLORS = {
   colors: [
-    'bg-screen-background-white',
+    'bg-screen-background-white-black',
     'bg-screen-background-faint',
     'bg-screen-background-pale',
     'bg-surface-muted',
     'bg-surface-muted-vivid',
     'bg-surface-muted-strong',
     'bg-surface-muted-mild',
+    'bg-surface-hover-primary',
+    'bg-surface-hover-primary-faint',
+    'bg-surface-active-primary-faint',
+    'bg-surface-hover-hero-faint',
+    'bg-surface-active-muted-pale',
+    'bg-surface-hover-mono',
+    'bg-surface-active-hero-faint',
+    'bg-surface-hover-mono',
+    'bg-surface-active-mono',
+    'bg-surface-active-primary',
     'bg-surface-muted-soft',
     'bg-surface-muted-pale',
     'bg-surface-muted-faint',
@@ -63,6 +73,8 @@ const LOAD_COLORS = {
     'bg-surface-primary',
     'bg-surface-primary-faint',
     'bg-surface-hero',
+    'bg-surface-hover-hero',
+    'bg-surface-active-hero',
     'bg-surface-hero-faint',
     'bg-surface-pop',
     'bg-surface-pop-faint',
@@ -115,26 +127,38 @@ const LOAD_COLORS = {
     'bg-border-danger-mild',
     'bg-border-reversed',
     'bg-border-focus',
-    'bg-data-a-solid',
-    'bg-data-a-tint',
-    'bg-data-a-opacity',
-    'bg-data-b-solid',
-    'bg-data-b-tint',
-    'bg-data-b-opacity',
-    'bg-data-c-solid',
-    'bg-data-c-tint',
-    'bg-data-c-opacity',
-    'bg-data-d-solid',
-    'bg-data-d-tint',
-    'bg-data-d-opacity',
-    'bg-data-e-solid',
-    'bg-data-e-tint',
-    'bg-data-e-opacity',
-    'bg-data-f-solid',
-    'bg-data-f-tint',
-    'bg-data-f-opacity',
-    'bg-pictogram-base',
-    'bg-pictogram-accent',
+    'bg-surface-data-a-solid',
+    'bg-surface-data-a-tint',
+    'bg-surface-data-a-opacity',
+    'bg-surface-data-b-solid',
+    'bg-surface-data-b-tint',
+    'bg-surface-data-b-opacity',
+    'bg-surface-data-c-solid',
+    'bg-surface-data-c-tint',
+    'bg-surface-data-c-opacity',
+    'bg-surface-data-d-solid',
+    'bg-surface-data-d-tint',
+    'bg-surface-data-d-opacity',
+    'bg-surface-data-e-solid',
+    'bg-surface-data-e-tint',
+    'bg-surface-data-e-opacity',
+    'bg-data-a-solid/50',
+    'bg-data-b-solid/60',
+    'bg-data-c-solid/45',
+    'bg-data-d-solid/50',
+    'bg-data-e-solid/50',
+    'bg-data-f-solid/45',
+    'bg-data-a-solid/50',
+    'bg-data-b-solid/60',
+    'bg-data-c-solid/45',
+    'bg-data-d-solid/50',
+    'bg-data-e-solid/50',
+    'bg-data-f-solid/45',
+    'bg-surface-data-f-solid',
+    'bg-surface-data-f-tint',
+    'bg-surface-data-f-opacity',
+    'bg-surface-pictogram-base',
+    'bg-surface-pictogram-accent',
   ],
 };
 
@@ -153,10 +177,10 @@ export const ScreenColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="bg-screen-background-white p-2">
+          <div className="bg-screen-background-white-black p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-screen-background-white">
+          <div className="flex flex-wrap bg-screen-background-white-black">
             {screenColors.map(color => (
               <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
                 <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -197,10 +221,10 @@ export const SurfaceColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="bg-screen-background-white p-2">
+          <div className="bg-screen-background-white-black p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-screen-background-white">
+          <div className="flex flex-wrap bg-screen-background-white-black">
             {surfaceColors.map(color => (
               <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
                 <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -241,10 +265,10 @@ export const TextColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="bg-screen-background-white p-2">
+          <div className="bg-screen-background-white-black p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-screen-background-white">
+          <div className="flex flex-wrap bg-screen-background-white-black">
             {textColors.map(color => (
               <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
                 <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -285,10 +309,10 @@ export const BorderColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="bg-screen-background-white p-2">
+          <div className="bg-screen-background-white-black p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-screen-background-white">
+          <div className="flex flex-wrap bg-screen-background-white-black">
             {borderColors.map(color => (
               <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
                 <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -329,23 +353,43 @@ export const DataColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="bg-screen-background-white p-2">
+          <div className="bg-screen-background-white-black p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-screen-background-white">
-            {dataColors.map(color => (
-              <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
-                <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
-                <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
-                  <div className="pb-2 font-bold text-text-body">{color}</div>
-                  <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: bg-${color}`}</div>
-                  {/* Below comments to get rid of type nightmare when trying to get hex value */}
-                  {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                  {/* @ts-ignore */}
-                  <div className="typography-body-10 pt-2 font-light text-text-body">{currColors[color]}</div>
+          <div className="flex flex-wrap bg-screen-background-white-black">
+            {dataColors.map(color => {
+              /* Below comments to get rid of type nightmare when trying to get hex value */
+              /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+              /* @ts-ignore */
+              const currentColor = currColors[color];
+              if (currentColor.indexOf('rgba') !== -1) {
+                const opacity = +currentColor.replace('rgba(', '').replace(')', '').split(',').at(-1) * 100;
+                const className = `bg-${color.replace('-opacity', '')}-solid/${opacity}`;
+
+                return (
+                  <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
+                    <div className={`${className} h-[80px] border border-b-0 border-border-muted-soft`} />
+                    <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+                      <div className="pb-2 font-bold text-text-body">{color}</div>
+                      <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: ${className}`}</div>
+
+                      <div className="typography-body-10 pt-2 font-light text-text-body">{currentColor}</div>
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
+                  <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
+                  <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+                    <div className="pb-2 font-bold text-text-body">{color}</div>
+                    <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: bg-${color}`}</div>
+
+                    <div className="typography-body-10 pt-2 font-light text-text-body">{currentColor}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </>
       );

@@ -12,20 +12,20 @@ export const styles = tv(
     variants: {
       look: {
         soft: {
-          itemHeader: 'border-t border-border-muted-soft bg-surface-muted-faint',
+          itemHeader: 'border-border-muted-soft bg-surface-muted-faint border-t',
         },
         lego: {
           itemHeader:
-            'border-l-[0.375rem] border-border-muted-soft border-t-border-muted-soft bg-surface-muted-faint shadow-[inset_0_1px_0_var(--tw-shadow-color)] !shadow-border-muted-soft transition-colors',
+            'border-border-muted-soft border-t-border-muted-soft bg-surface-muted-faint !shadow-border-muted-soft border-l-[0.375rem] shadow-[inset_0_1px_0_var(--tw-shadow-color)] transition-colors',
         },
       },
       isOpen: {
         true: {
-          content: 'block border-t border-border-muted-soft p-3',
+          content: 'border-border-muted-soft block border-t p-3',
         },
         false: {
           base: '',
-          itemHeader: 'background-transition hover:bg-surface-hover-muted-pale',
+          itemHeader: 'hover:bg-surface-hover-muted-pale background-transition',
         },
       },
       isDisabled: {
@@ -61,7 +61,7 @@ export const styles = tv(
       {
         slots: ['content'],
         look: 'lego',
-        className: 'shadow-[inset_0.375rem_0_0_var(--tw-shadow-color)] !shadow-border-muted-soft',
+        className: '!shadow-border-muted-soft shadow-[inset_0.375rem_0_0_var(--tw-shadow-color)]',
       },
       {
         slots: ['itemHeader'],

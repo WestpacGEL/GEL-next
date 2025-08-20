@@ -7,15 +7,15 @@ Badges come in 2 different types:
 
 ```tsx
 <Fragment>
-  <p className="typography-body-10 text-muted">
+  <p className="typography-body-10 text-text-muted">
     <em>Default</em>
   </p>
   <p className="my-2">
-    <Badge color="primary">Primary</Badge> <Badge color="hero">Hero</Badge> <Badge color="neutral">Neutral</Badge>{' '}
+    <Badge color="primary">Primary</Badge> <Badge color="hero">Hero</Badge>
     <Badge color="faint">Faint</Badge> <Badge color="success">Success</Badge> <Badge color="info">Info</Badge>{' '}
     <Badge color="warning">Warning</Badge> <Badge color="danger">Danger</Badge>
   </p>
-  <p className="typography-body-10 text-muted">
+  <p className="typography-body-10 text-text-muted">
     <em>Soft</em>
   </p>
   <p className="my-2">
@@ -24,9 +24,6 @@ Badges come in 2 different types:
     </Badge>{' '}
     <Badge color="hero" soft>
       Hero
-    </Badge>{' '}
-    <Badge color="neutral" soft>
-      Neutral
     </Badge>{' '}
     <Badge color="faint" soft>
       Faint
@@ -51,13 +48,12 @@ Badges come in 2 different types:
 
 ```tsx
 <Fragment>
-          <p className="mb-2 typography-body-10 text-muted">
+          <p className="mb-2 typography-body-10 text-text-muted">
             <em>Default</em>
           </p>
                 <div className="flex gap-1">
     <Badge color="primary" type="pill">88</Badge>{" "}
     <Badge color="hero" type="pill">88</Badge>{" "}
-    <Badge color="neutral" type="pill">88</Badge>{" "}
     <Badge color="faint" type="pill">88</Badge>{" "}
 
     <Badge color="success" type="pill">88</Badge>{" "}
@@ -65,13 +61,12 @@ Badges come in 2 different types:
     <Badge color="warning"  type="pill">88</Badge>{" "}
     <Badge color="danger"  type="pill">88</Badge>
   </p>
-          <p className="mb-2 mt-2 typography-body-10 text-muted">
+          <p className="mb-2 mt-2 typography-body-10 text-text-muted">
             <em>Soft</em>
           </p>
                   <div className="flex gap-1">
     <Badge color="primary"  type="pill" soft>88</Badge>{" "}
     <Badge color="hero" type="pill" soft>88</Badge>{" "}
-    <Badge color="neutral" type="pill" soft>88</Badge>{" "}
     <Badge color="faint" type="pill" soft>88</Badge>{" "}
     <Badge color="success" type="pill" soft>88</Badge>{" "}
     <Badge color="info" type="pill" soft>88</Badge>{" "}
@@ -85,13 +80,12 @@ Badges come in 2 different types:
 
 ```tsx
 () => {
-  const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'primary', 'success', 'warning'] as const;
+  const COLORS = ['danger', 'faint', 'hero', 'info', 'primary', 'success', 'warning'] as const;
   const INVERTED_COLORS = [
     'danger-inverted',
     'faint-inverted',
     'hero-inverted',
     'info-inverted',
-    'neutral-inverted',
     'primary-inverted',
     'success-inverted',
     'warning-inverted',
@@ -100,7 +94,7 @@ Badges come in 2 different types:
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <p className="mb-2 typography-body-10 text-muted">
+        <p className="mb-2 typography-body-10 text-text-muted">
           <em>Examples showing pill style badge</em>
         </p>
         <div className="flex gap-2">
@@ -129,7 +123,7 @@ Badges come in 2 different types:
         </div>
       </div>
       <div>
-        <p className="mb-2 typography-body-10 text-muted">
+        <p className="mb-2 typography-body-10 text-text-muted">
           <em>Examples showing basic style badge</em>
         </p>
 

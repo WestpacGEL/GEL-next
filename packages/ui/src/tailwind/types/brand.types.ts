@@ -5,9 +5,10 @@ export type BrandKeyWithThemes = `${BrandKey}-${Mode}`;
 type ColorShade = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 'DEFAULT';
 type ColorValue = Record<'DEFAULT' | ColorShade, string>;
 export type ColorsKey =
-  | 'screen-background-white'
-  | 'screen-background-faint'
-  | 'screen-background-pale'
+  | 'screen-background-white-black'
+  | 'screen-background-pale-black'
+  | 'screen-background-white-pale'
+  | 'screen-background-pale-faint'
   | 'surface-white-pale'
   | 'surface-white-faint'
   | 'surface-muted'

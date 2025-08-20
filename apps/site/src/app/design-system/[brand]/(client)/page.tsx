@@ -54,10 +54,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
             <h3 className="typography-body-8 mb-5 border-b border-b-border-hero pb-2 font-bold text-text-heading">
               Who else is using React?
             </h3>
-            <Grid
-              tag="ul"
-              className="text-neutral[REPLACE_TOKEN]-70[REPLACE_TOKEN] items-center gap-y-4 sm:gap-x-4 sm:gap-y-8"
-            >
+            <Grid tag="ul" className="items-center gap-y-4 sm:gap-x-4 sm:gap-y-8">
               {[GovLogo, MicrosoftLogo, MyobLogo, IBMLogo, AtlassianLogo, FacebookLogo, TwitterLogo, ShopifyLogo].map(
                 (Logo, i) => (
                   <GridItem

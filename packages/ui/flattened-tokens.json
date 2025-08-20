@@ -2,9 +2,10 @@
   "Westpac": {
     "light": {
       "color": {
-        "screen-background-white": "#ffffff",
-        "screen-background-faint": "#f9f9fa",
-        "screen-background-pale": "#f5f5f6",
+        "screen-background-white-black": "#ffffff",
+        "screen-background-pale-black": "#f5f5f6",
+        "screen-background-white-pale": "#ffffff",
+        "screen-background-pale-faint": "#f5f5f6",
         "surface-white-pale": "#ffffff",
         "surface-white-faint": "#ffffff",
         "surface-mono": "#ffffff",
@@ -14,7 +15,7 @@
         "surface-muted-mild": "#b6b6bc",
         "surface-muted-soft": "#dedee1",
         "surface-muted-pale": "#f5f5f6",
-        "surface-muted-faint": "#f5f5f6",
+        "surface-muted-faint": "#f9f9fa",
         "surface-primary": "#da1710",
         "surface-primary-faint": "#fff0f0",
         "surface-hero": "#1f1c4f",
@@ -116,9 +117,10 @@
     },
     "dark": {
       "color": {
-        "screen-background-white": "#000000",
-        "screen-background-faint": "#000000",
-        "screen-background-pale": "#000000",
+        "screen-background-white-black": "#000000",
+        "screen-background-pale-black": "#000000",
+        "screen-background-white-pale": "#1c1c1f",
+        "screen-background-pale-faint": "#161619",
         "surface-white-pale": "#1c1c1f",
         "surface-white-faint": "#161619",
         "surface-mono": "#000000",
@@ -151,7 +153,7 @@
         "surface-danger-faint": "#4e0000",
         "surface-system-error": "#404000",
         "surface-system-error-dark": "#ffff00",
-        "text-body": "#ffffff",
+        "text-body": "#dedee1",
         "text-heading": "#a9a5df",
         "text-muted": "#8e8d98",
         "text-primary": "#f1423c",
@@ -232,9 +234,10 @@
   "StGeorge": {
     "light": {
       "color": {
-        "screen-background-white": "#ffffff",
-        "screen-background-faint": "#fbfbfa",
-        "screen-background-pale": "#f5f5f4",
+        "screen-background-white-black": "#ffffff",
+        "screen-background-pale-black": "#f5f5f4",
+        "screen-background-white-pale": "#ffffff",
+        "screen-background-pale-faint": "#f5f5f4",
         "surface-white-pale": "#ffffff",
         "surface-white-faint": "#ffffff",
         "surface-mono": "#ffffff",
@@ -244,7 +247,7 @@
         "surface-muted-mild": "#bbbbb4",
         "surface-muted-soft": "#e1e1de",
         "surface-muted-pale": "#f5f5f4",
-        "surface-muted-faint": "#f5f5f4",
+        "surface-muted-faint": "#fbfbfa",
         "surface-primary": "#e30000",
         "surface-primary-faint": "#fef2f2",
         "surface-hero": "#008739",
@@ -346,9 +349,10 @@
     },
     "dark": {
       "color": {
-        "screen-background-white": "#000000",
-        "screen-background-faint": "#000000",
-        "screen-background-pale": "#000000",
+        "screen-background-white-black": "#000000",
+        "screen-background-pale-black": "#000000",
+        "screen-background-white-pale": "#2e2d28",
+        "screen-background-pale-faint": "#1d1c19",
         "surface-white-pale": "#2e2d28",
         "surface-white-faint": "#1d1c19",
         "surface-mono": "#000000",
@@ -381,7 +385,7 @@
         "surface-danger-faint": "#4e0000",
         "surface-system-error": "#404000",
         "surface-system-error-dark": "#ffff00",
-        "text-body": "#ffffff",
+        "text-body": "#e1e1de",
         "text-heading": "#bcdf90",
         "text-muted": "#95958a",
         "text-primary": "#f18080",

@@ -37,11 +37,12 @@ export function Header({ className, title, brand }: { brand: string; className?:
         <HamburgerMenuIcon color="white-pale" className="mx-auto" />
       </button>
 
-      <div className={styles.titleWrapper()}>
-        <h2 className={styles.title()} ref={headerRef} id="header" aria-hidden tabIndex={-1}>
-          {title}
-        </h2>
-        <ThemeDropDown />
+      <h2 className={styles.title()} ref={headerRef} id="header" aria-hidden tabIndex={-1}>
+        {title}
+      </h2>
+
+      <div className="fixed right-2 top-2.5">
+        <ThemeDropDown className="!border-0" />
       </div>
     </header>
   );

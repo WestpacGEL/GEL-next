@@ -26,6 +26,7 @@ export function DatePicker({
   disableDaysOfWeek,
   disableWeekends,
   separator,
+  portalContainer,
   ...props
 }: DatePickerProps) {
   const { locale } = useLocale();
@@ -72,6 +73,14 @@ export function DatePicker({
 
   const { buttonProps: newButtonProps } = useButton(buttonProps, buttonRef);
 
+  const brandContainer = useMemo(() => {
+    return (
+      document.querySelector('[data-theme]') ||
+      document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
+      undefined
+    );
+  }, []);
+
   return (
     <>
       <div {...labelProps}>{props.label}</div>
@@ -88,7 +97,13 @@ export function DatePicker({
         />
       </div>
       {state.isOpen && (
-        <Popover showAsBottomSheet={showAsBottomSheet} state={state} triggerRef={ref} placement="bottom left">
+        <Popover
+          portalContainer={portalContainer || brandContainer}
+          showAsBottomSheet={showAsBottomSheet}
+          state={state}
+          triggerRef={ref}
+          placement="bottom left"
+        >
           <Dialog {...dialogProps}>
             <Calendar {...calendarProps} firstDayOfWeek={props.firstDayOfWeek} />
           </Dialog>
