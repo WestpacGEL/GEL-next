@@ -55,7 +55,7 @@ export function Footer({
   const finalBrand = useMemo(() => {
     // Due to brands like 'wbc-light' and 'stg-light'
     return brand.split('-')[0] as keyof typeof LOGO_MAP;
-  }, []);
+  }, [brand]);
 
   const Logo = LOGO_MAP[finalBrand].logo;
 

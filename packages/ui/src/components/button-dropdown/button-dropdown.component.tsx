@@ -23,13 +23,14 @@ export function ButtonDropdown({
   look = 'hero',
   soft = false,
   block = false,
-  portal = false,
+  portalContainer,
+  placement = 'bottom start',
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const panelId = useId();
   const styles = buttonDropdownStyles({ block, dropdownSize });
   const state = useOverlayTriggerState({ defaultOpen: open });
-  const { triggerProps } = useOverlayTrigger({ type: 'menu' }, state, ref);
+  const { triggerProps, overlayProps } = useOverlayTrigger({ type: 'menu' }, state, ref);
   const { buttonProps } = useButton(triggerProps, ref);
 
   // React Aria does not check for escape key press unless panel is focused so this is needed
@@ -54,6 +55,17 @@ export function ButtonDropdown({
     return soft ? 'muted-vivid' : 'mono';
   }, [look, soft]);
 
+  // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
+  const brandContainer = useMemo(() => {
+    if (typeof window !== 'undefined') {
+      return (
+        document.querySelector('[data-theme]') ||
+        document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
+        document.body
+      );
+    }
+  }, []);
+
   return (
     <>
       <Button
@@ -74,12 +86,13 @@ export function ButtonDropdown({
       {state.isOpen && (
         <ButtonDropdownPanel
           className={styles.panel({ className: portalClassName })}
-          placement="bottom start"
+          placement={placement}
           triggerRef={ref}
           state={state}
           block={block}
           id={panelId}
-          portal={portal}
+          portalContainer={portalContainer || brandContainer}
+          {...overlayProps}
         >
           {children}
         </ButtonDropdownPanel>

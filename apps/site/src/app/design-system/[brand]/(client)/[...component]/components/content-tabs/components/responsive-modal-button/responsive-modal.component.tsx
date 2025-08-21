@@ -1,16 +1,19 @@
 'use client';
 
-import { Grid, GridContainer, GridItem, Modal, ModalBody } from '@westpac/ui';
+import { Button, Grid, GridContainer, GridItem, Modal, ModalBody } from '@westpac/ui';
 import { useWindowSize } from 'usehooks-ts';
 
 import { ResponsiveModalProps } from '.';
 
-export function ResponsiveModal({ children, ...props }: ResponsiveModalProps) {
+export function ResponsiveModal({ children, state, ...props }: ResponsiveModalProps) {
   const { width = 0 } = useWindowSize();
 
   return (
-    <Modal isDismissable {...props}>
-      <ModalBody className="flex flex-1 flex-col bg-screen-background-white-pale px-0">
+    <Modal isDismissable={false} state={state} {...props}>
+      <ModalBody className="relative flex flex-1 flex-col bg-screen-background-white-pale px-0">
+        <Button className="absolute right-3 top-3" look="primary" soft onClick={() => state.close()}>
+          Close
+        </Button>
         <GridContainer fixed className="flex flex-1 flex-col pt-5">
           <h2 className="typography-body-7 font-black text-text-heading xsl:typography-body-6">
             Viewport: <span className="font-light">{width}px</span>
@@ -33,7 +36,7 @@ export function ResponsiveModal({ children, ...props }: ResponsiveModalProps) {
             <div className="pointer-events-none absolute inset-0 touch-none">
               <Grid className="absolute inset-0">
                 {new Array(12).fill(null).map((_, index) => (
-                  <GridItem key={index} span={1} className="bg-surface-info-faint" />
+                  <GridItem key={index} span={1} className="bg-surface-muted-faint" />
                 ))}
               </Grid>
             </div>

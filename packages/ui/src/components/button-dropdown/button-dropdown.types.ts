@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { Placement } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
 import { ButtonProps } from '../button/index.js';
@@ -35,10 +36,14 @@ export type ButtonDropdownProps = {
   /**
    * Uses portal to render popover
    */
-  portal?: boolean | Element;
+  portalContainer?: Element;
   /**
    * portal className
    */
   portalClassName?: string;
+  /**
+   * placement of the popover
+   */
+  placement?: Placement;
 } & ButtonHTMLAttributes<Element> &
   Pick<ButtonProps, 'size' | 'iconBefore' | 'block'>;
