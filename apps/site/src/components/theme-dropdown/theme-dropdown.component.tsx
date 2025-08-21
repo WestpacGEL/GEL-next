@@ -2,13 +2,18 @@
 
 import { ButtonDropdown, RadioGroup } from '@westpac/ui';
 import { useDarkMode } from '@westpac/ui/hook';
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useThemeMode } from '@/hooks/theme-mode.hook';
 
 export function ThemeDropDown({ className }: { className?: string }) {
   const { mode, setMode } = useThemeMode();
   const { setMode: setModeOnDOM, getSystemPreference, getBrandContainer } = useDarkMode();
+  const [portalContainer, setPortalContainer] = useState<Element | undefined>();
+
+  useEffect(() => {
+    setPortalContainer(getBrandContainer() || undefined);
+  }, []);
 
   const handleOnChange = useCallback(
     (value: string) => {
@@ -21,13 +26,6 @@ export function ThemeDropDown({ className }: { className?: string }) {
     },
     [getSystemPreference, setMode, setModeOnDOM],
   );
-
-  const portalContainer: Element | undefined = useMemo(() => {
-    if (typeof window !== 'undefined') {
-      return getBrandContainer() || undefined;
-    }
-    return undefined;
-  }, [getBrandContainer]);
 
   return (
     <ButtonDropdown
