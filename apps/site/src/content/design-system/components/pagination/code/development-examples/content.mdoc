@@ -1,68 +1,78 @@
-### Default pagination with totalPages
+### Pagination with totalPages
+
+The recommended way to use the Pagination component is by providing the `totalPages` prop. This defines the total number of pages available for navigation.
 
 ```tsx
 () => {
   const [page, setPage] = useState(1);
 
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex flex-col items-start">
-        <ComponentTitle>Declarative</ComponentTitle>
-        <Pagination
-          current={page}
-          onChange={changedPage => {
-            setPage(changedPage);
-          }}
-          totalPages={20}
-        />
-      </div>
-      <div className="flex flex-col items-start">
-        <ComponentTitle>Infinite</ComponentTitle>
-        <Pagination
-          infinite
-          current={page}
-          onChange={changedPage => {
-            setPage(changedPage);
-          }}
-          totalPages={20}
-        />
-      </div>
-    </div>
+    <Pagination
+      current={page}
+      onChange={changedPage => {
+        setPage(changedPage);
+      }}
+      totalPages={20}
+    />
   );
 };
 ```
 
+When using totalPages, you can enable URL-based pagination with the onPageItemProps callback:
 
-### Pagination using pages props
+```tsx
+() => {
+  const page = useMemo(() => {
+    // In here you should be adding the logic to get the url parameter
+    return 1;
+  }, []);
+
+  return (
+    <Pagination current={page} totalPages={20} onPageItemProps={page => ({ text: page, href: `#page-${page}` })} />
+  );
+};
+```
+
+The `onPageItemProps` function receives the page number and should return an object with text and href, allowing you to generate links for each page.
+
+### Pagination with pages
+
+Alternatively, you can provide an explicit list of pages using the pages prop. This accepts an array of objects containing the page text.
 
 ```tsx
 () => {
   const [page, setPage] = useState(1);
 
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex flex-col items-start">
-        <ComponentTitle>Declarative</ComponentTitle>
-        <Pagination
-          current={page}
-          onChange={changedPage => {
-            setPage(changedPage);
-          }}
-          pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
-        />
-      </div>
-      <div className="flex flex-col items-start">
-        <ComponentTitle>Infinite</ComponentTitle>
-        <Pagination
-          infinite
-          current={page}
-          onChange={changedPage => {
-            setPage(changedPage);
-          }}
-          pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
-        />
-      </div>
-    </div>
+    <Pagination
+      current={page}
+      onChange={changedPage => {
+        setPage(changedPage);
+      }}
+      pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
+    />
+  );
+};
+```
+
+You can also include an `href` for each page to support URL-based navigation:
+
+```tsx
+() => {
+  const page = useMemo(() => {
+    // In here you should be adding the logic to get the url parameter
+    return 1;
+  }, []);
+
+  return (
+    <Pagination
+      current={page}
+      pages={[
+        { text: '1', href: '#page-1' },
+        { text: '2', href: '#page-1' },
+        { text: '3', href: '#page-1' },
+      ]}
+    />
   );
 };
 ```
@@ -86,3 +96,51 @@
   );
 };
 ```
+
+### Using the `boundaryCount` and `siblingCount`
+
+#### boundaryCount
+
+- **Type:** `number | Partial<Record<Breakpoint | 'initial', number>>`
+- **Default:** `1`
+
+Defines the number of **always-visible page buttons** at the beginning and end of the pagination.
+
+For example, with `boundaryCount={1}`, the first and last page will always be shown. Increasing this value will show more page numbers at the boundaries.
+
+You can also provide a responsive configuration by passing an object keyed by breakpoints (or `'initial'` for the default).
+
+**Example:**
+
+```tsx
+<Pagination current={5} totalPages={20} boundaryCount={{ initial: 1, md: 2, lg: 3 }} />
+```
+
+In this example:
+
+- On small screens, 1 boundary page is shown (1 … 5 … 20).
+- On medium screens, 2 boundary pages are shown (1 2 … 5 … 19 20).
+- On large screens, 3 boundary pages are shown (1 2 3 … 5 … 18 19 20).
+
+#### siblingCount
+
+- **Type:** `number | Partial<Record<Breakpoint | 'initial', number>>`
+- **Default:** `2`
+
+Defines the number of page buttons displayed adjacent to the current page.
+
+For example, with siblingCount={1}, one page before and one page after the current page will be shown. Increasing this value will show more surrounding pages.
+
+Like boundaryCount, this prop also supports responsive configuration.
+
+**Example:**
+
+```tsx
+<Pagination current={5} totalPages={20} siblingCount={{ initial: 1, md: 2, lg: 3 }} />
+```
+
+In this example:
+
+- On small screens, pages 4 5 6 are shown.
+- On medium screens, pages 3 4 5 6 7 are shown.
+- On large screens, pages 2 3 4 5 6 7 8 are shown.

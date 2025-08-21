@@ -94,7 +94,7 @@ export function PaginationTotalPages({
     return {
       ...defaultBackProps,
       tag: linkComponent || 'a',
-      href: fowardOnly ? onPageItemProps(totalPages).href : onPageItemProps(current - 1)?.href,
+      href: fowardOnly ? onPageItemProps?.(totalPages).href : onPageItemProps?.(current - 1)?.href,
     };
   }, [
     current,
@@ -146,7 +146,7 @@ export function PaginationTotalPages({
     return {
       ...defaultNextProps,
       tag: linkComponent || 'a',
-      href: backwardsOnly ? onPageItemProps(1)?.href : onPageItemProps(current || 0)?.href,
+      href: backwardsOnly ? onPageItemProps?.(1)?.href : onPageItemProps?.(current || 0)?.href,
     };
   }, [
     current,

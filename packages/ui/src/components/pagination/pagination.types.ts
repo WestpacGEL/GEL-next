@@ -23,7 +23,7 @@ export type PaginationBase = {
    */
   backLabel?: ReactNode;
   /**
-   * boundaryCount
+   * Defines the number of **always-visible page buttons** at the beginning and end of the pagination.  
    * @default 1
    */
   boundaryCount?: number | Partial<Record<Breakpoint | 'initial', number>>;
@@ -51,8 +51,8 @@ export type PaginationBase = {
    */
   nextLabel?: ReactNode;
   /**
-   * siblingCount
-   * @default 1
+   * Defines the number of page buttons displayed adjacent to the current page.
+   * @default 2
    */
   siblingCount?: number | Partial<Record<Breakpoint | 'initial', number>>;
   /**
