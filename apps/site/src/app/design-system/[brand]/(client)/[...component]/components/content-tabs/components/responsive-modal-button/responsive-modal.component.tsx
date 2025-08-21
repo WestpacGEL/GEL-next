@@ -14,7 +14,7 @@ export function ResponsiveModal({ children, state, ...props }: ResponsiveModalPr
         <Button className="absolute right-3 top-3" look="primary" soft onClick={() => state.close()}>
           Close
         </Button>
-        <GridContainer fixed className="flex flex-1 flex-col pt-5">
+        <GridContainer fixed className="flex flex-1 flex-col pt-5" id="demo-content">
           <h2 className="typography-body-7 font-black text-text-heading xsl:typography-body-6">
             Viewport: <span className="font-light">{width}px</span>
           </h2>
