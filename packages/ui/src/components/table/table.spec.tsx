@@ -178,7 +178,7 @@ describe('Table', () => {
     const starterCells = getAllByTestId('cell-start');
     const endCells = getAllByTestId('cell-end');
     expect(getByTestId('row')).toHaveClass(
-      'group/row hover:bg-surface-muted-pale border-b-2 border-r-0 border-border-primary',
+      'group/row hover:bg-surface-hover-muted-pale border-b-2 border-r-0 border-border-primary',
     );
     starterCells.forEach(cell =>
       expect(cell).toHaveClass(
