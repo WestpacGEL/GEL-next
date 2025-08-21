@@ -23,11 +23,11 @@ export const styles = tv(
       },
       type: {
         pill: 'typography-body-10 flex h-4 w-fit items-center rounded-xl px-[0.4375rem] font-medium leading-none',
-        default: 'h-[1.25rem] rounded-sm px-1 text-[0.75rem] leading-[1.25rem]',
+        default: 'h-[1.25rem] rounded-sm px-1 text-[0.75rem]',
       },
       soft: {
-        true: 'border',
-        false: '',
+        true: 'border leading-[1.125rem]',
+        false: 'leading-5',
       },
     },
     compoundVariants: [
