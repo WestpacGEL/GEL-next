@@ -6,4 +6,8 @@ export type AutocompleteItemProps<T = HTMLElement> = ItemProps<T> & {
    * AutocompleteItem body content
    */
   children?: ReactNode;
+  /**
+   * className
+   */
+  className?: string;
 };
