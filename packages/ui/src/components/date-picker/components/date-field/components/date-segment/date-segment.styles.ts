@@ -13,7 +13,7 @@ export const styles = tv(
         false: '',
       },
       isSeparator: {
-        true: 'text-text-body-50[REPLACE_TOKEN] px-0.5',
+        true: 'px-0.5 text-text-body/50',
         false: '',
       },
     },

@@ -12,7 +12,7 @@ export type ButtonDropdownPanelProps = {
   /**
    * Uses portal to render popover
    */
-  portal?: boolean | Element;
+  portalContainer?: Element;
 } & HTMLAttributes<Element> &
   Omit<AriaPopoverProps, 'popoverRef'> &
   Pick<ButtonProps, 'block'>;

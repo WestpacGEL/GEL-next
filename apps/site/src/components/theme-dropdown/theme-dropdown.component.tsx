@@ -22,16 +22,22 @@ export function ThemeDropDown({ className }: { className?: string }) {
     [getSystemPreference, setMode, setModeOnDOM],
   );
 
-  // eslint-disable-next-line sonarjs/function-return-type
-  const portal: Element | false = useMemo(() => {
+  const portalContainer: Element | undefined = useMemo(() => {
     if (typeof window !== 'undefined') {
-      return getBrandContainer() || false;
+      return getBrandContainer() || undefined;
     }
-    return false;
+    return undefined;
   }, [getBrandContainer]);
 
   return (
-    <ButtonDropdown portal={portal} color="primary" soft text="Theme" className={className}>
+    <ButtonDropdown
+      placement="bottom right"
+      portalContainer={portalContainer}
+      color="primary"
+      soft
+      text="Theme"
+      className={className}
+    >
       <RadioGroup
         defaultValue={mode}
         onChange={handleOnChange}

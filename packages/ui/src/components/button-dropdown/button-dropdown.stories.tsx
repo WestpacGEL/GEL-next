@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { AndroidIcon } from '../icon/index.js';
-import { ButtonDropdownHeading, List, ListItem } from '../index.js';
+import { Button, ButtonDropdownHeading, List, ListItem, RadioGroup } from '../index.js';
 
 import { ButtonDropdown } from './button-dropdown.component.js';
 
@@ -25,25 +25,6 @@ const DROPDOWNSIZE = ['small', 'medium', 'large'] as const;
 export const Default: Story = {
   args: {
     text: 'Default Dropdown',
-    children: (
-      <p className="text-text-body">
-        Example dropdown
-        <a href="#" className="text-[blue] underline">
-          content
-        </a>
-        ...
-      </p>
-    ),
-  },
-};
-
-/**
- * > Default usage example
- */
-export const Portal: Story = {
-  args: {
-    text: 'Portal Dropdown',
-    portal: true,
     children: (
       <p className="text-text-body">
         Example dropdown
@@ -264,3 +245,23 @@ export const DropdownWithHeadingsAndContent = () => (
     </ButtonDropdown>
   </div>
 );
+
+/**
+ * > RagioGroup
+ */
+export const RadioGroupExample = () => {
+  return (
+    <div>
+      <ButtonDropdown text="Default test">
+        <RadioGroup
+          radios={[
+            { value: 'Option 1', label: 'Option 1' },
+            { value: 'Option 2', label: 'Option 2' },
+            { value: 'Option 3', label: 'Option 3' },
+          ]}
+        />
+      </ButtonDropdown>
+      <Button>Test</Button>
+    </div>
+  );
+};

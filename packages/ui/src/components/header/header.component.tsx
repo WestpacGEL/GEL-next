@@ -93,7 +93,7 @@ export function Header({
   const finalBrand = useMemo(() => {
     // Due to brands like 'wbc-light' and 'stg-light'
     return brand.split('-')[0] as keyof typeof LOGO_MAP;
-  }, []);
+  }, [brand]);
 
   const SmallLogo = LOGO_MAP[finalBrand].logo;
   const LargeLogo = LOGO_MAP[finalBrand].largeLogo;
