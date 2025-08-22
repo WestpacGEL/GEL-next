@@ -149,9 +149,9 @@ function Autocomplete<T extends object>(
           portalContainer={portalContainer}
           triggerRef={outerRef}
         >
-          <div className="bg-surface-white-faint px-3 py-2 text-text-muted">{noOptionsMessage}</div>
+          <div className="bg-background-white-faint px-3 py-2 text-text-muted">{noOptionsMessage}</div>
           {footer && (
-            <div className="rounded-b border-t border-t-border-muted-soft bg-surface-white-faint px-3 py-2 text-text-muted">
+            <div className="rounded-b border-t border-t-border-muted-soft bg-background-white-faint px-3 py-2 text-text-muted">
               {footer}
             </div>
           )}
@@ -173,7 +173,7 @@ function Autocomplete<T extends object>(
             state={state}
           />
           {footer && (
-            <div className="rounded-b border-t border-t-border-muted-soft bg-surface-white-faint px-3 py-2 text-text-muted">
+            <div className="rounded-b border-t border-t-border-muted-soft bg-background-white-faint px-3 py-2 text-text-muted">
               {footer}
             </div>
           )}

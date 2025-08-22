@@ -31,7 +31,7 @@ export const Icons = () => {
 
   return (
     <div>
-      <div className="mb-4 flex flex-wrap gap-3 rounded-md border border-border-muted-soft bg-surface-white-pale p-4 align-bottom">
+      <div className="mb-4 flex flex-wrap gap-3 rounded-md border border-border-muted-soft bg-background-white-pale p-4 align-bottom">
         <div className="flex w-full shrink-0 grow flex-col items-start sm:w-auto sm:flex-row sm:items-center">
           <label className="mb-2 mr-4 sm:mb-0" htmlFor="filter-icons">
             Filter by name
@@ -60,7 +60,7 @@ export const Icons = () => {
         </GridItem>
         {filteredIcons.map(({ key, Icon }) => (
           <GridItem key={key} span={{ initial: 12, sm: 3, lg: 2 }}>
-            <div className="mb-2 flex flex-col items-center justify-center rounded-md border border-border-muted-soft bg-surface-white-pale px-2 pb-3 pt-6 xsl:mb-4">
+            <div className="mb-2 flex flex-col items-center justify-center rounded-md border border-border-muted-soft bg-background-white-pale px-2 pb-3 pt-6 xsl:mb-4">
               <Icon look={look} className="mb-6" color="muted" />
               <span className="text-[0.6875rem] text-text-muted">{key}</span>
             </div>

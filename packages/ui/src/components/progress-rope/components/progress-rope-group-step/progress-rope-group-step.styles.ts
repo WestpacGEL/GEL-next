@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       base: '',
-      circle: 'relative z-10 size-[14px] border-2 bg-surface-white-pale transition-colors',
+      circle: 'relative z-10 size-[14px] border-2 bg-background-white-pale transition-colors',
       circleWrapper:
         'typography-body-9 relative flex w-full cursor-pointer items-center gap-2 pb-[1.625rem] pt-1 leading-loose transition-colors ',
       stepsWrapper: 'relative transition-all',
@@ -19,7 +19,7 @@ export const styles = tv(
       state: {
         current: {
           base: 'font-bold text-text-primary',
-          circle: 'border-border-primary bg-surface-white-pale',
+          circle: 'border-border-primary bg-background-white-pale',
           circleWrapper: '',
         },
         visited: {
@@ -31,13 +31,13 @@ export const styles = tv(
         'non-visited': {
           base: '',
           circleWrapper: 'text-text-muted/90',
-          circle: 'border-border-muted-strong bg-surface-white-pale',
+          circle: 'border-border-muted-strong bg-background-white-pale',
         },
         'current-visited': {
           base: '',
           circleWrapper:
             'text-text-body before:absolute before:inset-y-0 before:left-1 before:z-[1] before:block before:translate-y-[1.25rem] before:border-l-2 before:border-border-primary before:transition-colors',
-          circle: 'border-[3px] border-border-primary bg-surface-white-pale',
+          circle: 'border-[3px] border-border-primary bg-background-white-pale',
         },
       },
       isFocusVisible: {

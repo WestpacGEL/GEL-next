@@ -23,7 +23,7 @@ import { Hero, Section, SectionHeading, SectionItem } from '../../components';
 export default function DesignSystemHomePage({ params }: { params: { brand: string } }) {
   const brand = (params.brand || 'wbc') as BrandKey;
   return (
-    <div tabIndex={-1} id="content" className="bg-surface-white-faint focus:outline-none">
+    <div tabIndex={-1} id="content" className="bg-background-white-faint focus:outline-none">
       <Hero brand={brand} />
       <Section>
         <SectionHeading>Accessible by design</SectionHeading>

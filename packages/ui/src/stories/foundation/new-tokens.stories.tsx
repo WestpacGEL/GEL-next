@@ -24,7 +24,7 @@ const meta: Meta = {
             }}
             className="pl-2"
           />
-          <div className="bg-screen-background-white-black p-2">
+          <div className="bg-background-white-black p-2">
             <p className="font-bold text-text-warning">
               NOTE: These tokens are not final and this is for example purposes
             </p>
@@ -47,9 +47,9 @@ const meta: Meta = {
 
 const LOAD_COLORS = {
   colors: [
-    'bg-screen-background-white-black',
-    'bg-screen-background-faint',
-    'bg-screen-background-pale',
+    'bg-background-white-black',
+    'bg-background-faint',
+    'bg-background-pale',
     'bg-surface-muted',
     'bg-surface-muted-vivid',
     'bg-surface-muted-strong',
@@ -67,8 +67,8 @@ const LOAD_COLORS = {
     'bg-surface-muted-soft',
     'bg-surface-muted-pale',
     'bg-surface-muted-faint',
-    'bg-surface-white-pale',
-    'bg-surface-white-faint',
+    'bg-background-white-pale',
+    'bg-background-white-faint',
     'bg-surface-mono',
     'bg-surface-primary',
     'bg-surface-primary-faint',
@@ -177,10 +177,10 @@ export const ScreenColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="bg-screen-background-white-black p-2">
+          <div className="bg-background-white-black p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-screen-background-white-black">
+          <div className="flex flex-wrap bg-background-white-black">
             {screenColors.map(color => (
               <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
                 <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -221,10 +221,10 @@ export const SurfaceColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="bg-screen-background-white-black p-2">
+          <div className="bg-background-white-black p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-screen-background-white-black">
+          <div className="flex flex-wrap bg-background-white-black">
             {surfaceColors.map(color => (
               <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
                 <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -265,10 +265,10 @@ export const TextColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="bg-screen-background-white-black p-2">
+          <div className="bg-background-white-black p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-screen-background-white-black">
+          <div className="flex flex-wrap bg-background-white-black">
             {textColors.map(color => (
               <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
                 <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -309,10 +309,10 @@ export const BorderColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="bg-screen-background-white-black p-2">
+          <div className="bg-background-white-black p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-screen-background-white-black">
+          <div className="flex flex-wrap bg-background-white-black">
             {borderColors.map(color => (
               <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
                 <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -353,10 +353,10 @@ export const DataColors: Story = {
     if (theme.includes('LIGHT') || theme.includes('DARK')) {
       return (
         <>
-          <div className="bg-screen-background-white-black p-2">
+          <div className="bg-background-white-black p-2">
             <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-screen-background-white-black">
+          <div className="flex flex-wrap bg-background-white-black">
             {dataColors.map(color => {
               /* Below comments to get rid of type nightmare when trying to get hex value */
               /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */

@@ -38,7 +38,7 @@ export const Pictograms = () => {
 
   return (
     <div>
-      <div className="mb-4 rounded-md border border-border-muted-soft bg-surface-white-pale p-4">
+      <div className="mb-4 rounded-md border border-border-muted-soft bg-background-white-pale p-4">
         <Grid>
           <GridItem span={{ initial: 12, sm: 6 }}>
             <div className="flex flex-col items-start sm:flex-row sm:items-center">
@@ -78,7 +78,7 @@ export const Pictograms = () => {
               className={clsx(
                 'mb-2 flex flex-col items-center justify-center rounded-md border border-border-muted-soft pb-3 pt-6 xsl:mb-4',
                 mode === 'light' && 'bg-surface-hero',
-                mode !== 'light' && 'bg-surface-white-pale',
+                mode !== 'light' && 'bg-background-white-pale',
               )}
             >
               <Pictogram mode={mode} className="mb-6" />

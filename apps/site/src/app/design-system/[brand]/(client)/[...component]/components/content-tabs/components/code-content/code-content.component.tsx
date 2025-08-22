@@ -123,7 +123,7 @@ export function CodeContent({
         );
       })}
       {componentProps && (
-        <section className="border-t border-t-border-muted-soft bg-surface-white-pale py-7 sm:pb-10 sm:pt-15">
+        <section className="border-t border-t-border-muted-soft bg-background-white-pale py-7 sm:pb-10 sm:pt-15">
           <Container>
             <Heading level={2} className="!mb-4 sm:!mb-7">
               Props

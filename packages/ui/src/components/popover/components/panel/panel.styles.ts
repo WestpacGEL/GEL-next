@@ -5,13 +5,13 @@ export const styles = tv(
     slots: {
       base: '',
       popover:
-        'absolute z-[999] rounded-[3px] border border-border-muted-strong bg-surface-white-pale shadow-[0_5px_10px_rgba(0,0,0,0.2)]',
+        'absolute z-[999] rounded-[3px] border border-border-muted-strong bg-background-white-pale shadow-[0_5px_10px_rgba(0,0,0,0.2)]',
       arrow: `absolute -z-10 size-0
         before:absolute before:left-[1px] before:top-[0.5px] before:size-0 before:border-x-[7px] before:border-t-[12px] before:border-x-[transparent] before:border-t-border-muted-strong after:absolute
-        after:left-[1.5px] after:top-0 after:size-0 after:border-x-[6.5px] after:border-t-[11px] after:border-x-[transparent] after:border-t-surface-white-pale
+        after:left-[1.5px] after:top-0 after:size-0 after:border-x-[6.5px] after:border-t-[11px] after:border-x-[transparent] after:border-t-background-white-pale
       `,
       closeBtn: 'absolute right-1 top-1 h-3 p-0',
-      content: 'w-[17.625rem] rounded-[3px] bg-surface-white-pale py-4 pl-3 pr-5',
+      content: 'w-[17.625rem] rounded-[3px] bg-background-white-pale py-4 pl-3 pr-5',
       heading: 'typography-body-9 mb-2 font-medium text-text-body',
       body: 'typography-body-10 text-text-body',
     },

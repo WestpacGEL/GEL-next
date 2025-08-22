@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       underlay: 'fixed inset-0',
-      popover: 'bg-surface-white-pale',
+      popover: 'bg-background-white-pale',
       header: '',
       headerLabel: '',
       closeButton: 'flex items-center justify-center focus-outline',
@@ -20,10 +20,10 @@ export const styles = tv(
         false: {
           underlay: '',
           closeButton:
-            'pointer-events-none absolute right-0 top-0 size-5 -translate-y-1/2 translate-x-1/2 touch-none rounded-full border border-border-muted-mild bg-surface-white-pale opacity-0 focus:pointer-events-auto focus:touch-auto focus:opacity-100',
+            'pointer-events-none absolute right-0 top-0 size-5 -translate-y-1/2 translate-x-1/2 touch-none rounded-full border border-border-muted-mild bg-background-white-pale opacity-0 focus:pointer-events-auto focus:touch-auto focus:opacity-100',
           headerLabel: 'hidden',
           popover:
-            'absolute mt-1 scale-100 animate-fadeIn rounded border border-border-muted-soft bg-surface-white-pale opacity-100 shadow-[0_5px_10px_rgba(0,0,0,0.2)]',
+            'absolute mt-1 scale-100 animate-fadeIn rounded border border-border-muted-soft bg-background-white-pale opacity-100 shadow-[0_5px_10px_rgba(0,0,0,0.2)]',
         },
       },
     },

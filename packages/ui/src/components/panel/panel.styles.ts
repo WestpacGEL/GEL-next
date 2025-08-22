@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'group/panel overflow-hidden rounded border border-border-hero bg-surface-white-pale text-text-body',
+      base: 'group/panel overflow-hidden rounded border border-border-hero bg-background-white-pale text-text-body',
       header: 'px-2 py-[0.625rem] sm:px-4',
     },
     variants: {
