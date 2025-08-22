@@ -26,8 +26,8 @@ export const styles = tv(
         default: 'h-[1.25rem] rounded-sm px-1 text-[0.75rem] leading-5',
       },
       soft: {
-        true: 'border',
-        false: '',
+        true: 'border leading-[1.125rem]',
+        false: 'leading-5',
       },
     },
     compoundVariants: [

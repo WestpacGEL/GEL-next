@@ -67,7 +67,7 @@ module.exports = function transformer(file, api) {
     'bg-warning': 'bg-surface-warning',
     'bg-danger': 'bg-surface-danger',
     'bg-system': 'bg-surface-system-error',
-    'bg-white': 'bg-surface-white-pale',
+    'bg-white': 'bg-background-white-pale',
     'text-text': 'text-text-body',
     'text-background': 'text-background[REPLACE_TOKEN]',
     'text-border': 'text-border[REPLACE_TOKEN]',

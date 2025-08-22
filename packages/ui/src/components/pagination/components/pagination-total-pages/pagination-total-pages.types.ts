@@ -15,7 +15,7 @@ export type PaginationAsLinkProps = {
   /**
    * Pages items
    */
-  onPageItemProps: (page: number) => Omit<PageToRenderHref, 'page'>;
+  onPageItemProps?: (page: number) => Omit<PageToRenderHref, 'page'>;
 };
 
 export type PaginationAsButtonProps = {

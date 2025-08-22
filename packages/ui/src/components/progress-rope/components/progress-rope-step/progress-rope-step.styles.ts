@@ -4,13 +4,13 @@ export const styles = tv(
   {
     slots: {
       base: 'typography-body-10 relative flex w-full cursor-pointer items-center gap-2 pb-[0.875rem] pt-[0.5rem] leading-loose transition-colors',
-      circle: 'relative z-10 bg-surface-white-pale transition-colors',
+      circle: 'relative z-10 bg-background-white-pale transition-colors',
     },
     variants: {
       state: {
         current: {
           base: 'font-bold text-text-primary',
-          circle: 'border-[3px] border-border-primary bg-surface-white-pale',
+          circle: 'border-[3px] border-border-primary bg-background-white-pale',
         },
         visited: {
           base: 'text-text-body before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:border-border-primary before:transition-colors',
@@ -20,7 +20,7 @@ export const styles = tv(
         },
         'non-visited': {
           base: 'text-text-muted/90',
-          circle: 'border-2 border-border-muted-strong bg-surface-white-pale',
+          circle: 'border-2 border-border-muted-strong bg-background-white-pale',
         },
         'current-visited': {
           base: 'font-bold text-text-primary before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:border-border-primary before:transition-colors',
@@ -54,7 +54,7 @@ export const styles = tv(
         false: {},
       },
       furthestVisited: {
-        true: { base: 'text-text-body', circle: 'border-[3px] border-border-primary bg-surface-white-pale' },
+        true: { base: 'text-text-body', circle: 'border-[3px] border-border-primary bg-background-white-pale' },
         false: {},
       },
       size: {

@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'group flex cursor-pointer items-center justify-between bg-surface-white-pale p-2 px-3 text-sm text-text-body transition-colors',
+    base: 'group flex cursor-pointer items-center justify-between bg-background-white-pale p-2 px-3 text-sm text-text-body transition-colors',
     variants: {
       isFocused: {
         true: 'is-focused bg-surface-hover-muted-pale',
