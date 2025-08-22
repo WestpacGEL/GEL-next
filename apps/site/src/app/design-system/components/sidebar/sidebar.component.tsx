@@ -81,9 +81,12 @@ export function Sidebar({ items, brand }: SidebarProps) {
           })}
         >
           <div
-            className={clsx('sticky top-0 bg-background-white-pale transition-shadow delay-0 duration-200 ease-[ease]', {
-              'shadow-[0_2px_5px_rgba(0,0,0,0.3)]': scrolled,
-            })}
+            className={clsx(
+              'sticky top-0 bg-background-white-pale transition-shadow delay-0 duration-200 ease-[ease]',
+              {
+                'shadow-[0_2px_5px_rgba(0,0,0,0.3)]': scrolled,
+              },
+            )}
           >
             <button
               className="absolute right-1 top-1 block size-6 p-1 outline-focus lg:hidden"

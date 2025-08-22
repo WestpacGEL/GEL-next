@@ -23,7 +23,7 @@ export type PaginationBase = {
    */
   backLabel?: ReactNode;
   /**
-   * Defines the number of **always-visible page buttons** at the beginning and end of the pagination.  
+   * Defines the number of **always-visible page buttons** at the beginning and end of the pagination.
    * @default 1
    */
   boundaryCount?: number | Partial<Record<Breakpoint | 'initial', number>>;
