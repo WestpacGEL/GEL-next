@@ -1,20 +1,15 @@
-import { HTMLAttributes, ReactNode } from 'react';
+import { HTMLAttributes } from 'react';
 
 export type CompactaProps = {
   /**
-   * Text for add button
+   * on add callback
+   */
+  onAdd?: () => unknown;
+  /**
+   * Add text
    */
   addText?: string;
-  /**
-   * Component to repeat
-   */
-  children: (...props: ContentProps[]) => ReactNode;
-  /**
-   * Tag for primary title
-   * @default h3
-   */
-  titleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-} & Omit<HTMLAttributes<Element>, 'children'>;
+} & HTMLAttributes<Element>;
 
 type ContentProps = {
   id: string;

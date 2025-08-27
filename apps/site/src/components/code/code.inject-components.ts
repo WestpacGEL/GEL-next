@@ -77,6 +77,7 @@ export {
   Repeater,
   SkipLink,
   Compacta,
+  CompactaItem,
   Form,
   FormGroup,
   FormLabel,
