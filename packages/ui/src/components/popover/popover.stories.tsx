@@ -73,8 +73,8 @@ export const NoHeading: Story = {
  */
 export const AsInlineLinkAppearance = () => (
   <>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
-    <p className="mb-4">
+    <h3 className="typography-body-7 mb-2 font-bold text-text-body">Inside paragraph</h3>
+    <p className="mb-4 text-text-body">
       {' '}
       This is an example of using a popover that looks like an inline link.{' '}
       <Popover linkStyling heading="Heading" content={popoverContent} size="small">
@@ -82,11 +82,11 @@ export const AsInlineLinkAppearance = () => (
       </Popover>{' '}
       To test popover.
     </p>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <h3 className="typography-body-7 mb-2 font-bold text-text-danger">Inside hint</h3>
     <Field
       label="Example with field."
       hintMessage={
-        <p>
+        <p className="text-text-body">
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
           <Popover linkStyling heading="Heading" content={popoverContent} size="small">
@@ -105,8 +105,8 @@ export const AsInlineLinkAppearance = () => (
  */
 export const StackingOrderWithPortal = () => (
   <>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
-    <p className="mb-4">
+    <h3 className="typography-body-7 mb-2 font-bold text-text-body">Inside paragraph</h3>
+    <p className="mb-4 text-text-body">
       {' '}
       This is an example of using a popover that looks like an inline link.{' '}
       <Popover portal linkStyling heading="Heading" content={popoverContent} size="small">
@@ -114,7 +114,7 @@ export const StackingOrderWithPortal = () => (
       </Popover>{' '}
       To test popover.
     </p>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <h3 className="typography-body-7 mb-2 font-bold text-text-body">Inside hint</h3>
     <Field
       label="Example with field."
       hintMessage={
@@ -137,7 +137,7 @@ export const StackingOrderWithPortal = () => (
  */
 export const AutoAdjustment = () => (
   <>
-    <div>
+    <div className="text-text-body">
       If no placement prop is used the popover will not automatically adjust itself to the top or bottom. It will always
       adjust it self if it is too close to either edge of the screen.
     </div>
@@ -165,7 +165,7 @@ export const AutoAdjustment = () => (
  */
 export const PopoverPlacement = () => (
   <>
-    <div>
+    <div className="text-text-body">
       If the placement prop is used the popover will not automatically adjust itself to the top or bottom but will still
       adjust left and right if too close to the edge.
     </div>
@@ -201,15 +201,15 @@ export const PopoverPlacement = () => (
  */
 export const WhenThereIsALongScrollWithPortal = () => (
   <>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
+    <h3 className="typography-body-7 mb-2 font-bold text-text-body">Inside paragraph</h3>
     {[...Array(20)].map((_, index) => (
-      <p key={index}>
+      <p key={index} className="text-text-body">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis provident, porro dolor error nemo expedita
         non mollitia est fugiat officiis deleniti harum dignissimos doloribus accusantium maxime optio libero. Ut,
         laboriosam!
       </p>
     ))}
-    <p className="mb-4">
+    <p className="mb-4 text-text-body">
       {' '}
       This is an example of using a popover that looks like an inline link.{' '}
       <Popover portal linkStyling heading="Heading" placement="top" content={popoverContent} size="small">
@@ -217,7 +217,7 @@ export const WhenThereIsALongScrollWithPortal = () => (
       </Popover>{' '}
       To test popover.
     </p>
-    <p className="mb-4">
+    <p className="mb-4 text-text-body">
       {' '}
       This is an example of using a popover that looks like an inline link.{' '}
       <Popover portal linkStyling heading="Heading" placement="bottom" content={popoverContent} size="small">
@@ -226,17 +226,17 @@ export const WhenThereIsALongScrollWithPortal = () => (
       To test popover.
     </p>
     {[...Array(10)].map((_, index) => (
-      <p key={index}>
+      <p key={index} className="text-text-body">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis provident, porro dolor error nemo expedita
         non mollitia est fugiat officiis deleniti harum dignissimos doloribus accusantium maxime optio libero. Ut,
         laboriosam!
       </p>
     ))}
-    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <h3 className="typography-body-7 mb-2 font-bold text-text-body">Inside hint</h3>
     <Field
       label="Example with field."
       hintMessage={
-        <p>
+        <p className="text-text-body">
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
           <Popover linkStyling heading="Heading" content={popoverContent} size="small">
@@ -248,17 +248,17 @@ export const WhenThereIsALongScrollWithPortal = () => (
       <Input />
     </Field>
     {[...Array(10)].map((_, index) => (
-      <p key={index}>
+      <p className="text-text-body" key={index}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis provident, porro dolor error nemo expedita
         non mollitia est fugiat officiis deleniti harum dignissimos doloribus accusantium maxime optio libero. Ut,
         laboriosam!
       </p>
     ))}
-    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <h3 className="typography-body-7 mb-2 font-bold text-text-body">Inside hint</h3>
     <Field
       label="Example with field."
       hintMessage={
-        <p>
+        <p className="text-text-body">
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
           <Popover placement="top" linkStyling heading="Heading" content={popoverContent} size="small">

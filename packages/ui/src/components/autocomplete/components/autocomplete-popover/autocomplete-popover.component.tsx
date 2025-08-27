@@ -23,7 +23,9 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
   const brandContainer = useMemo(() => {
     if (typeof window !== 'undefined') {
       return (
-        document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]') || document.body
+        document.querySelector('[data-theme]') ||
+        document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
+        document.body
       );
     }
   }, []);
@@ -35,10 +37,17 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
 
       <div
         {...popoverProps}
-        style={{ ...popoverProps.style, width: width ? `${width}px` : undefined }}
+        style={{
+          ...popoverProps.style,
+          width: width ? `${width}px` : undefined,
+          maxHeight:
+            popoverProps.style?.maxHeight && +popoverProps.style?.maxHeight <= 400
+              ? +popoverProps.style.maxHeight
+              : 400,
+        }}
         ref={popoverRef}
         className={clsx(
-          'z-10 mt-1 max-h-[400px] overflow-auto rounded border border-border bg-white shadow-lg',
+          'z-10 mt-1 max-h-[400px] overflow-auto rounded border border-border-muted-soft shadow-[0_2px_12px_rgba(0,0,0,0.2)]',
           className,
         )}
       >

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useFocusRing } from 'react-aria';
 
 import { Grid, GridItem, VisuallyHidden } from '../index.js';
@@ -17,6 +17,27 @@ import {
 import { styles as footerStyles } from './footer.styles.js';
 import { type FooterProps } from './footer.types.js';
 
+const LOGO_MAP = {
+  wbc: {
+    logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
+  },
+  stg: {
+    logo: (props: SymbolProps) => <STGMultibrandSmallLogo {...props} />,
+  },
+  bom: {
+    logo: (props: SymbolProps) => <BOMMultibrandSmallLogo {...props} />,
+  },
+  bsa: {
+    logo: (props: SymbolProps) => <BSAMultibrandSmallLogo {...props} />,
+  },
+  wbg: {
+    logo: (props: SymbolProps) => <WBGMultibrandSmallLogo {...props} />,
+  },
+  rams: {
+    logo: (props: SymbolProps) => <RAMSMultibrandSmallLogo {...props} />,
+  },
+} as const;
+
 export function Footer({
   brand,
   logoLink = '#',
@@ -30,27 +51,14 @@ export function Footer({
 }: FooterProps) {
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = footerStyles({ offsetSidebar, isFocusVisible });
-  const logoMap = {
-    wbc: {
-      logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
-    },
-    stg: {
-      logo: (props: SymbolProps) => <STGMultibrandSmallLogo {...props} />,
-    },
-    bom: {
-      logo: (props: SymbolProps) => <BOMMultibrandSmallLogo {...props} />,
-    },
-    bsa: {
-      logo: (props: SymbolProps) => <BSAMultibrandSmallLogo {...props} />,
-    },
-    wbg: {
-      logo: (props: SymbolProps) => <WBGMultibrandSmallLogo {...props} />,
-    },
-    rams: {
-      logo: (props: SymbolProps) => <RAMSMultibrandSmallLogo {...props} />,
-    },
-  };
-  const Logo = logoMap[brand].logo;
+
+  const finalBrand = useMemo(() => {
+    // Due to brands like 'wbc-light' and 'stg-light'
+    return brand.split('-')[0] as keyof typeof LOGO_MAP;
+  }, [brand]);
+
+  const Logo = LOGO_MAP[finalBrand].logo;
+
   return (
     <footer className={styles.base({ className })} {...props}>
       <div className={styles.wrapper()}>

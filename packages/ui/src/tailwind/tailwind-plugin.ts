@@ -29,6 +29,12 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
        */
       addBase({
         html: { color: theme('colors.text.DEFAULT') },
+        '@starting-style': {
+          '.popover:popover-open': {
+            opacity: '0',
+            transform: 'scaleX(0) scaleY(0)',
+          },
+        },
       });
 
       if (options?.brandFonts?.src) {
@@ -48,10 +54,6 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
           '.focus-outline': { [`@apply ${theme('focusOutline')}`]: {} },
           // eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions
           '.background-transition': { [`@apply ${theme('backgroundTransition')}`]: {} },
-          '.select-caret': {
-            backgroundImage:
-              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='8' style='color: rgb(89,87,103);'><path fill='currentColor' d='M0 0l7 8 7-8z'/></svg>\")",
-          },
         },
         { respectPrefix: true, respectImportant: true },
       );
@@ -129,6 +131,24 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
                 transform: 'translateY(0)',
               },
             },
+            fadeInUp: {
+              '0%': {
+                opacity: '0',
+                transform: 'translateY(10vh)',
+              },
+              '100%': {
+                opacity: '1',
+                transform: 'translateY(0)',
+              },
+            },
+            slideUp: {
+              '0%': {
+                transform: 'translateY(100%)',
+              },
+              '100%': {
+                transform: 'translateY(0)',
+              },
+            },
             maxHeightIn: {
               '0%': { maxHeight: '0' },
             },
@@ -137,6 +157,8 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
             skeleton: 'waveLines 2s infinite ease-out',
             fadeIn: 'fadeIn 0.2s ease',
             fadeInDown: 'fadeInDown 0.4s ease',
+            fadeInUp: 'fadeInUp 0.4s ease',
+            slideUp: 'slideUp 0.4s ease',
             maxHeightIn: 'maxHeightIn 0.4s ease',
           },
           boxShadow: {
@@ -204,8 +226,8 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
           },
         },
         formControl: {
-          base: 'no-inner-spin-button box-border w-fit appearance-none overflow-visible rounded border bg-white align-middle text-text transition placeholder:font-light placeholder:text-text-50 placeholder:opacity-100 disabled:form-control-disabled',
-          disabled: 'cursor-not-allowed border-dashed bg-background text-muted',
+          base: 'no-inner-spin-button box-border w-fit appearance-none overflow-visible rounded border bg-background-white-pale align-middle text-text-body transition placeholder:font-light placeholder:opacity-100 disabled:form-control-disabled border-border-muted-strong',
+          disabled: 'cursor-not-allowed border-dashed bg-surface-muted-pale text-text-muted',
           sizes: {
             // Some of the values are not following the spacing so we needed to use static values as following
             small: 'px-[0.5625rem] pb-[0.25rem] pt-[0.1875rem] text-sm leading-[1.3rem]',
@@ -218,16 +240,19 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
           base: 'inline-flex items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-last/add-on-after:rounded-l-none group-first/add-on-before:rounded-r-none',
           look: {
             base: {
-              primary: 'border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50',
-              hero: 'border border-hero bg-hero text-white hover:bg-hero-70 active:bg-hero-50',
-              faint: 'border border-border bg-light text-muted hover:bg-white active:bg-white',
+              primary:
+                'border border-border-primary bg-surface-primary text-white hover:bg-surface-primary-70 active:bg-surface-active-primary',
+              hero: 'border border-border-hero bg-surface-hero text-white hover:bg-surface-hero-70 active:bg-surface-active-hero',
+              faint:
+                'border border-border-muted bg-surface-light text-muted hover:bg-surface-white active:bg-surface-active-white',
               link: 'text-link underline',
             },
             soft: {
               primary:
-                'border border-primary bg-white text-text hover:text-white hover:bg-primary-70 active:bg-primary-50',
-              hero: 'border border-hero bg-hero bg-white text-text hover:text-white hover:bg-hero-70 active:bg-hero-50',
-              faint: 'border border-border bg-white text-muted hover:bg-light active:bg-light',
+                'border border-border-primary bg-surface-white text-text hover:text-white hover:bg-surface-primary-70 active:bg-surface-active-primary',
+              hero: 'border border-border-hero bg-surface-hero bg-surface-white text-text hover:text-white hover:bg-surface-hero-70 active:bg-surface-active-hero',
+              faint:
+                'border border-border-muted bg-surface-white text-muted hover:bg-surface-light active:bg-surface-active-light',
             },
           },
         },

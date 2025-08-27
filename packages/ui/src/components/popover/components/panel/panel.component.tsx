@@ -37,7 +37,7 @@ export function BasePanel({
             size="small"
             onClick={() => state.close()}
             className={styles.closeBtn()}
-            iconAfter={() => <CloseIcon color="muted" size="small" aria-hidden />}
+            iconAfter={() => <CloseIcon color="primary" size="small" aria-hidden />}
             aria-label="Close popover"
           />
         </div>

@@ -136,7 +136,7 @@ export const AccountLists: Story = {
       <>
         {MOCK_ACCOUNTS.map(({ title, id, accounts }) => (
           <div key={id}>
-            <h3 className="mb-3 font-normal">{title}</h3>
+            <h3 className="mb-3 font-normal text-text-body">{title}</h3>
             {accounts.map(({ name, amount, number }) => (
               <FlexiCell
                 tag="a"
@@ -234,7 +234,7 @@ export const ForeignCurrencyPayeeList: Story = {
       <>
         {MOCK_FOREIGNPAYEES.map(({ title, id, payees }) => (
           <div key={id}>
-            <h3 className="mb-3 border-b border-border pb-1 font-normal">{title}</h3>
+            <h3 className="mb-3 border-b border-border-muted-soft pb-1 font-normal text-text-body">{title}</h3>
             {payees.map(({ name, number, paidAt, bank, code }) =>
               paidAt ? (
                 <FlexiCell
@@ -290,7 +290,7 @@ export const ForeignCurrencyPayeeList: Story = {
                       </svg>
                     </FlexiCellAdornment>
                   }
-                  after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
+                  after={<FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />}
                   size={{ initial: 'default', md: 'large' }}
                 >
                   <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
@@ -446,7 +446,7 @@ export const PayeeList: Story = {
       <>
         {MOCK_PAYEES.map(({ title, id, payees }) => (
           <div key={id}>
-            <h3 className="mb-3 border-b border-border pb-1 font-normal">{title}</h3>
+            <h3 className="mb-3 border-b border-border-muted-soft pb-1 font-normal text-text-body">{title}</h3>
             {payees.map(({ name, initials, bpay, number, paidAt }) =>
               paidAt ? (
                 <FlexiCell
@@ -455,11 +455,11 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="size-5 bg-muted text-muted">
-                        <BpayIcon look="filled" className="size-3 rounded-full bg-muted text-xs text-white" />
+                      <FlexiCellCircle className="size-5 bg-surface-hero">
+                        <BpayIcon color="mono" look="filled" className="size-3 rounded-full text-xs" />
                       </FlexiCellCircle>
                     ) : (
-                      <FlexiCellCircle className="size-5 bg-muted text-white">{initials}</FlexiCellCircle>
+                      <FlexiCellCircle className="size-5 bg-surface-hero text-text-mono">{initials}</FlexiCellCircle>
                     )
                   }
                   after={
@@ -481,14 +481,14 @@ export const PayeeList: Story = {
                   key={name}
                   before={
                     bpay ? (
-                      <FlexiCellCircle className="size-5 bg-muted text-muted">
-                        <BpayIcon look="filled" className="size-3 rounded-full bg-muted text-xs text-white" />
+                      <FlexiCellCircle className="size-5 bg-surface-hero">
+                        <BpayIcon color="mono" look="filled" className="size-3 rounded-full text-xs" />
                       </FlexiCellCircle>
                     ) : (
-                      <FlexiCellCircle className="size-5 bg-muted text-white">{initials}</FlexiCellCircle>
+                      <FlexiCellCircle className="size-5 bg-surface-hero text-text-mono">{initials}</FlexiCellCircle>
                     )
                   }
-                  after={<FlexiCellButton icon={() => <InfoIcon look="outlined" />} />}
+                  after={<FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />}
                   size={{ initial: 'default', md: 'large' }}
                 >
                   <FlexiCellLabel tag="h4">{name}</FlexiCellLabel>
@@ -540,7 +540,7 @@ export const StatusTiles = () => {
         size={{ initial: 'default', md: 'large' }}
       >
         <IdCardIcon className="mb-1 md:hidden" look="outlined" color="hero" />
-        <FlexiCellLabel className="text-hero" tag="h4">
+        <FlexiCellLabel className="text-text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>
@@ -568,7 +568,7 @@ export const StatusTiles = () => {
         size={{ initial: 'default', md: 'large' }}
       >
         <EducationIcon className="mb-1 md:hidden" look="outlined" color="hero" />
-        <FlexiCellLabel className="text-hero" tag="h4">
+        <FlexiCellLabel className="text-text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>
@@ -596,7 +596,7 @@ export const StatusTiles = () => {
         size={{ initial: 'default', md: 'large' }}
       >
         <EmailIcon className="mb-1 md:hidden" look="outlined" color="hero" />
-        <FlexiCellLabel className="text-hero" tag="h4">
+        <FlexiCellLabel className="text-text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>
@@ -619,13 +619,13 @@ export const StatusTiles = () => {
             <Badge className="size-fit" color="faint" soft>
               Locked
             </Badge>
-            <PadlockIcon size="small" look="outlined" color="borderDark" />
+            <PadlockIcon size="small" look="outlined" color="muted" />
           </>
         }
         size={{ initial: 'default', md: 'large' }}
       >
         <HouseIcon className="mb-1 md:hidden" look="outlined" color="hero" />
-        <FlexiCellLabel className="text-hero" tag="h4">
+        <FlexiCellLabel className="text-text-hero" tag="h4">
           {title}
         </FlexiCellLabel>
         <FlexiCellHint>{subtitle}</FlexiCellHint>

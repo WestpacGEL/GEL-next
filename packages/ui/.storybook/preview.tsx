@@ -17,7 +17,7 @@ const withThemeProvider: Decorator = (Story, context) => {
   }, [theme]);
   // Note: Not using padding for grid demos as it affects the proper grid visuals i.e. breakpoints, paddings, margins etc.
   return (
-    <div className={clsx(!(context.componentId === 'foundation-grid') && 'p-4')}>
+    <div className={clsx(!(context.componentId === 'foundation-grid') && 'p-4 bg-surface-mono')}>
       <Story />
     </div>
   );
@@ -78,7 +78,7 @@ const preview: Preview = {
         title: 'Theme',
         icon: 'paintbrush',
         // Array of plain string values or MenuItem shape (see below)
-        items: ['BOM', 'BSA', 'BTFG', 'RAMS', 'STG', 'WBC', 'WBG'],
+        items: ['BOM', 'BSA', 'BTFG', 'RAMS', 'STG', 'WBC', 'WBG', 'WBC-LIGHT', 'WBC-DARK', 'STG-LIGHT', 'STG-DARK'],
         // Change title based on selected value
         dynamicTitle: true,
       },

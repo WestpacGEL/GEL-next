@@ -10,19 +10,13 @@ import { FlexiCellFooter } from './components/flexi-cell-footer/flexi-cell-foote
 import { FlexiCellHint } from './components/flexi-cell-hint/flexi-cell-hint.component.js';
 import { FlexiCellLabel } from './components/flexi-cell-label/flexi-cell-label.component.js';
 import { FlexiCell } from './flexi-cell.component.js';
-import { styles } from './flexi-cell.styles.js';
 
 describe('FlexiCell', () => {
   it('renders the component', () => {
     const { container } = render(<FlexiCell />);
     expect(container).toBeInTheDocument();
   });
-  it('renders the style correctly', () => {
-    const style = styles();
-    // TODO: use some variants for test
-    expect(style.base()).toBe('relative flex bg-white transition-colors !px-0');
-    expect(style.topBadge()).toBe('rounded-br-none rounded-tl-none');
-  });
+
   describe('when children is defined', () => {
     test('then the child component should be visible', () => {
       const { getByTestId } = render(

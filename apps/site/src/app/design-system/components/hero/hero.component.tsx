@@ -28,7 +28,7 @@ export function Hero({ brand }: { brand: BrandKey }) {
             <p className="typography-body-8 mb-2">Simplify your projects with reusable components and patterns</p>
           </GridItem>
         </Grid>
-        <Grid tag="ul" className="typography-body-8 mb-[1rem] gap-x-0 gap-y-4 xsl:gap-x-5 sm:!gap-5">
+        <Grid tag="ul" className="typography-body-8 mb-4 gap-x-0 gap-y-4 xsl:gap-x-5 sm:!gap-5">
           <GridItem tag="li" span={{ initial: 12, xsl: 4 }} className=" flex flex-col items-center ">
             <div className="mb-3">
               <StopwatchPictogram mode="light" className="hidden sm:inline-block" />

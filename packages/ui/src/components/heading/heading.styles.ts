@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: '',
+    base: 'text-text-body',
     variants: {
       size: {
         1: 'typography-body-1',

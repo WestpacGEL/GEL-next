@@ -63,6 +63,7 @@ export function CompactaItem({
           <Button
             className={styles.toggleBtn()}
             iconAfter={state.isExpanded ? ExpandLessIcon : ExpandMoreIcon}
+            iconColor="primary"
             look="link"
             size="large"
             aria-label={state.isExpanded ? `Collapse ${counter}` : `Expand ${counter}`}

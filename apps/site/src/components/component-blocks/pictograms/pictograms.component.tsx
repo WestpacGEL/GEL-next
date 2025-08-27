@@ -38,11 +38,11 @@ export const Pictograms = () => {
 
   return (
     <div>
-      <div className="mb-4 bg-light p-4">
+      <div className="border-border-muted-soft bg-background-white-pale mb-4 rounded-md border p-4">
         <Grid>
           <GridItem span={{ initial: 12, sm: 6 }}>
             <div className="flex flex-col items-start sm:flex-row sm:items-center">
-              <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="filter-pictograms">
+              <label className="mb-2 mr-4 sm:mb-0" htmlFor="filter-pictograms">
                 Filter by name
               </label>
               <Input id="filter-pictograms" value={search} onChange={handleOnChange} className="w-full" />
@@ -50,7 +50,7 @@ export const Pictograms = () => {
           </GridItem>
           <GridItem span={{ initial: 12, sm: 3 }}>
             <div className="flex flex-col items-start sm:flex-row sm:items-center">
-              <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="pictogram-mode">
+              <label className="mb-2 mr-4 sm:mb-0" htmlFor="pictogram-mode">
                 Mode
               </label>
               <Select id="pictogram-mode" value={mode} onChange={handleModeChange} className="w-full sm:w-fit">
@@ -70,20 +70,24 @@ export const Pictograms = () => {
       </div>
       <Grid>
         <GridItem span={12}>
-          <p className="text-right italic text-muted">{foundText}</p>
+          <p className="text-text-muted text-right italic">{foundText}</p>
         </GridItem>
         {filteredPictograms.map(({ key, Pictogram }) => (
           <GridItem key={key} span={{ initial: 12, sm: 6, md: 4, lg: 3 }}>
             <div
               className={clsx(
-                'mb-2 flex flex-col items-center justify-center pb-3 pt-6 xsl:mb-4',
-                mode === 'light' && 'bg-hero',
-                mode !== 'light' && 'bg-white',
+                'border-border-muted-soft mb-2 flex flex-col items-center justify-center rounded-md border pb-3 pt-6 xsl:mb-4',
+                mode === 'light' && 'bg-surface-hero',
+                mode !== 'light' && 'bg-background-white-pale',
               )}
             >
               <Pictogram mode={mode} className="mb-6" />
               <span
-                className={clsx('text-[0.6875rem]', mode === 'light' && 'text-white', mode !== 'light' && 'text-muted')}
+                className={clsx(
+                  'text-[0.6875rem]',
+                  mode === 'light' && 'text-text-mono',
+                  mode !== 'light' && 'text-text-muted',
+                )}
               >
                 {key}
               </span>

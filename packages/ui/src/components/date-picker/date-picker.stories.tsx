@@ -1,15 +1,19 @@
-/* eslint-disable no-console */
+import { DateValue, getLocalTimeZone, isWeekend, today } from '@internationalized/date';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
-import { useState } from 'react';
-
-import { Field } from '../field/field.component.js';
+import { useLocale } from 'react-aria';
 
 import { DatePicker } from './date-picker.component.js';
 
 const meta: Meta<typeof DatePicker> = {
-  title: 'Components/DatePicker',
+  title: 'Components/Datepicker',
   component: DatePicker,
   tags: ['autodocs'],
+  argTypes: {
+    isRequired: {
+      description: 'isRequired',
+      type: { name: 'boolean' },
+    },
+  },
   decorators: [
     (Story: StoryFn) => (
       <div className="h-30">
@@ -30,6 +34,15 @@ export const Default: Story = {
 };
 
 /**
+ * > Custom separator usage example
+ */
+export const CustomSeparator: Story = {
+  args: {
+    separator: '-',
+  },
+};
+
+/**
  * > Different sizes example
  */
 export const Sizes: Story = {
@@ -37,7 +50,7 @@ export const Sizes: Story = {
   render: () => {
     return (
       <>
-        {(['sm', 'md', 'lg', 'xl'] as const).map(size => {
+        {(['small', 'medium', 'large', 'xlarge'] as const).map(size => {
           return (
             <div className="py-2" key={size}>
               <DatePicker size={size} />
@@ -50,99 +63,134 @@ export const Sizes: Story = {
 };
 
 /**
- * > Controlled value
+ * > Invalid example
  */
-export const Controlled = () => {
-  const [value, setValue] = useState('2023-08-01');
-  return (
-    <DatePicker
-      onChange={value => {
-        console.log(value.target.value);
-        setValue(value.target.value as string);
-      }}
-      onOpen={() => {
-        console.log('onOpen');
-      }}
-      onClose={() => {
-        console.log('onClose');
-      }}
-      onBlur={() => {
-        console.log('onBlur');
-      }}
-      onFocus={() => {
-        console.log('onFocus');
-      }}
-      value={value}
-    />
-  );
+export const Invalid: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker isInvalid />;
+  },
 };
 
 /**
- * > Different  date format (dd/MM/yyyy)
+ * > isReadOnly example
  */
-export const DifferentDateFormat: Story = {
-  args: { dateFormat: 'dd/MM/yyyy' },
+export const IsReadOnly: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker isReadOnly />;
+  },
+};
+
+/**
+ * > isRequired example
+ */
+export const IsRequiredOnly: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker isRequired />;
+  },
+};
+
+/**
+ * > Disabled
+ */
+export const Disabled: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker isDisabled />;
+  },
+};
+
+/**
+ * > Disabled dates
+ */
+export const DisabledDates: Story = {
+  args: {},
+  render: () => {
+    const now = today(getLocalTimeZone());
+    const disabledRanges = [
+      [now, now.add({ days: 5 })],
+      [now.add({ days: 14 }), now.add({ days: 16 })],
+      [now.add({ days: 23 }), now.add({ days: 24 })],
+    ];
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { locale } = useLocale();
+    const isDateUnavailable = (date: DateValue) =>
+      isWeekend(date, locale) ||
+      disabledRanges.some(interval => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0);
+
+    return <DatePicker isDateUnavailable={isDateUnavailable} />;
+  },
 };
 
 /**
  * > Disable weekends
  */
-export const DisableWeekends: Story = {
-  args: { disableWeekends: true },
+export const DisabledWeekendsDates: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker disableWeekends />;
+  },
 };
 
 /**
- * > Disable days of the week (Mon, Wed, Fri in example)
+ * > Disable weekends
  */
-export const DisableDaysOfWeek: Story = {
-  args: { disableDaysOfWeek: [1, 3, 5] },
+export const DisabledWeekdays: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker disableDaysOfWeek={[0, 1, 2]} />;
+  },
 };
 
 /**
- * > Disable specific dates (2023-10-10 in example)
+ * > Disable weekends
  */
-export const DisableSpecificDates: Story = {
-  args: { disableDates: ['2023-10-10'] },
+export const DisabledWeekdaysWeekendsAndCustom: Story = {
+  args: {},
+  render: () => {
+    const now = today(getLocalTimeZone());
+    const disabledRanges = [
+      [now, now.add({ days: 5 })],
+      [now.add({ days: 14 }), now.add({ days: 16 })],
+      [now.add({ days: 23 }), now.add({ days: 24 })],
+    ];
+
+    const isDateUnavailable = (date: DateValue) =>
+      disabledRanges.some(interval => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0);
+
+    return <DatePicker isDateUnavailable={isDateUnavailable} disableDaysOfWeek={[0, 1, 2]} disableWeekends />;
+  },
 };
 
 /**
- * > Invalid state
+ * > Show as bottom sheet
  */
-export const InvalidState: Story = {
-  args: { invalid: true },
+export const ShowAsBottomSheet: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker bottomSheetView />;
+  },
 };
 
 /**
- * > Form field example
+ * > Always as popover view
  */
-export const FormField = () => {
-  const [value, setValue] = useState('2023-08-01');
+export const NeverShowAsBottomSheet: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker bottomSheetView={false} />;
+  },
+};
 
-  return (
-    <Field
-      label="Are you an existing customer?"
-      hintMessage="Hint: choose from one of the following options"
-      errorMessage="This is an inline error message"
-    >
-      <DatePicker
-        onChange={value => {
-          console.log(value.target.value);
-          setValue(value.target.value as string);
-        }}
-        onOpen={() => {
-          console.log('onOpen');
-        }}
-        onClose={() => {
-          console.log('onClose');
-        }}
-        onBlur={() => {
-          console.log('onBlur');
-        }}
-        onFocus={() => {
-          console.log('onFocus');
-        }}
-        value={value}
-      />
-    </Field>
-  );
+/**
+ * > Show as bottom sheet
+ */
+export const ShowAsBottomSheetResponsive: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker bottomSheetView={{ initial: false, lg: true }} />;
+  },
 };

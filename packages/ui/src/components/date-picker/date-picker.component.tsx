@@ -1,130 +1,114 @@
 'use client';
 
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { useFocusVisible } from 'react-aria';
+import { DateValue, getDayOfWeek, isWeekend } from '@internationalized/date';
+import React, { useMemo, useRef } from 'react';
+import { useButton, useDatePicker, useLocale } from 'react-aria';
+import { useDatePickerState } from 'react-stately';
 
-import { styles } from './date-picker.styles.js';
-import { type DatePickerProps, DuetDatePickerElement } from './date-picker.types.js';
-import { formatDate, isDateDisabled, useListener } from './date-picker.utils.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { Breakpoint } from '../../tailwind/constants/index.js';
+import { Button } from '../button/index.js';
+import { CalendarIcon } from '../icon/index.js';
 
+import { Calendar } from './components/calendar/calendar.component.js';
+import { DateField } from './components/date-field/date-field.component.js';
+import { Dialog } from './components/dialog/dialog.component.js';
+import { Popover } from './components/popover/popover.component.js';
+import { styles as datePickerStyles } from './date-picker.styles.js';
+import { type DatePickerProps } from './date-picker.types.js';
+
+const BREAKPOINTS_DECRECENT = ['xl', 'lg', 'md', 'sm', 'xsl', 'initial'] as const;
 export function DatePicker({
-  dateFormat = 'dd-MM-yyyy',
-  disableWeekends,
+  size = 'medium',
+  className,
+  bottomSheetView = { initial: true, xsl: false },
+  isDateUnavailable,
   disableDaysOfWeek,
-  disableDates,
-  placeholder,
-  onChange,
-  onFocus,
-  onBlur,
-  onOpen,
-  onClose,
-  min,
-  max,
-  value,
-  id,
-  size = 'md',
-  name,
-  block = false,
-  invalid = false,
+  disableWeekends,
+  separator,
+  portalContainer,
   ...props
 }: DatePickerProps) {
-  const [initialized, setInitialized] = useState(false);
-  const { isFocusVisible } = useFocusVisible();
+  const { locale } = useLocale();
 
-  useEffect(() => {
-    const initDatePicker = async () => {
-      const { defineCustomElements } = await import('@duetds/date-picker/custom-element/index.js');
-      defineCustomElements(window);
-      setInitialized(true);
-    };
-    void initDatePicker();
-  }, []);
-
-  const ref = useRef<DuetDatePickerElement>(null);
-
-  useListener(ref, 'duetChange', onChange);
-  useListener(ref, 'duetFocus', onFocus);
-  useListener(ref, 'duetBlur', onBlur);
-  useListener(ref, 'duetOpen', onOpen);
-  useListener(ref, 'duetClose', onClose);
-
-  const dateAdapter = useMemo(
-    () => ({
-      parse(value = '', createDate: (year: string, month: string, day: string) => Date) {
-        const matches = /^(\d{1,2})[-/](\d{1,2})[-/](\d{4})$/.exec(value);
-        if (matches) {
-          return createDate(matches[3], matches[2], matches[1]);
+  const enhancedIsDateUnavailable = useMemo(() => {
+    return disableDaysOfWeek || disableWeekends
+      ? (date: DateValue) => {
+          let conditions = [isDateUnavailable?.(date) || false];
+          if (disableDaysOfWeek) {
+            conditions = [disableDaysOfWeek.indexOf(getDayOfWeek(date, locale)) !== -1, ...conditions];
+          }
+          if (disableWeekends) {
+            conditions = [isWeekend(date, locale), ...conditions];
+          }
+          return conditions.some(condition => condition);
         }
-      },
-      format(date: Date) {
-        return formatDate(date, dateFormat);
-      },
-    }),
-    [dateFormat],
+      : isDateUnavailable;
+  }, [disableDaysOfWeek, disableWeekends, isDateUnavailable, locale]);
+
+  const state = useDatePickerState({ isDateUnavailable: enhancedIsDateUnavailable, ...props });
+  const styles = datePickerStyles({ size, isInvalid: state.isInvalid, isDisabled: props.isDisabled });
+  const breakpoint = useBreakpoint();
+  const ref = useRef(null);
+
+  const { groupProps, labelProps, fieldProps, buttonProps, dialogProps, calendarProps } = useDatePicker(
+    { isDateUnavailable: enhancedIsDateUnavailable, ...props },
+    state,
+    ref,
   );
 
-  const localization = useMemo(() => {
-    return {
-      buttonLabel: 'Choose date',
-      placeholder,
-      selectedDateMessage: 'Selected date is',
-      prevMonthLabel: 'Previous month',
-      nextMonthLabel: 'Next month',
-      monthSelectLabel: 'Month',
-      yearSelectLabel: 'Year',
-      closeLabel: 'Close window',
-      calendarHeading: 'Choose a date',
-      dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      monthNames: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-      ],
-      monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    };
-  }, [placeholder]);
-
-  useLayoutEffect(() => {
-    if (!ref.current) {
-      return;
+  const showAsBottomSheet: boolean = useMemo(() => {
+    if (typeof bottomSheetView === 'boolean') {
+      return bottomSheetView;
     }
-    ref.current.dateAdapter = dateAdapter;
-    ref.current.localization = localization;
+    const currentBreakpointIndex = BREAKPOINTS_DECRECENT.findIndex(bp => bp === breakpoint);
+    const finalBreakPoint = [breakpoint, ...BREAKPOINTS_DECRECENT.slice(currentBreakpointIndex)].find(
+      currentBreakpoint => bottomSheetView[currentBreakpoint] !== undefined,
+    ) as Breakpoint | 'initial';
 
-    ref.current.value = value;
-    ref.current.identifier = id;
-    ref.current.name = name;
+    return bottomSheetView[finalBreakPoint] || false;
+  }, [bottomSheetView, breakpoint]);
 
-    ref.current.isDateDisabled = (date: Date) => {
-      return isDateDisabled(date, disableWeekends, disableDaysOfWeek, disableDates);
-    };
-  }, [ref, initialized, dateAdapter, localization, value, id, name, disableWeekends, disableDaysOfWeek, disableDates]);
+  const buttonRef = useRef(null);
 
-  useLayoutEffect(() => {
-    if (!ref.current) {
-      return;
-    }
-    ref.current.value = value;
-  }, [value, ref]);
+  const { buttonProps: newButtonProps } = useButton(buttonProps, buttonRef);
 
-  useLayoutEffect(() => {
-    if (!ref.current) {
-      return;
-    }
-    ref.current.max = max;
-    ref.current.min = min;
-  }, [max, min, initialized, ref]);
+  const brandContainer = useMemo(() => {
+    return (
+      document.querySelector('[data-theme]') ||
+      document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
+      undefined
+    );
+  }, []);
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  return <duet-date-picker class={styles({ size, block, invalid, isFocusVisible })} ref={ref} {...props} />;
+  return (
+    <>
+      <div {...labelProps}>{props.label}</div>
+      <div {...props} {...groupProps} ref={ref} className={styles.input({ className })}>
+        <DateField separator={separator} {...fieldProps} />
+        <Button
+          look="faint"
+          className={styles.button()}
+          iconColor="muted"
+          size={size}
+          iconAfter={CalendarIcon}
+          {...newButtonProps}
+          aria-labelledby={undefined}
+        />
+      </div>
+      {state.isOpen && (
+        <Popover
+          portalContainer={portalContainer || brandContainer}
+          showAsBottomSheet={showAsBottomSheet}
+          state={state}
+          triggerRef={ref}
+          placement="bottom left"
+        >
+          <Dialog {...dialogProps}>
+            <Calendar {...calendarProps} firstDayOfWeek={props.firstDayOfWeek} />
+          </Dialog>
+        </Popover>
+      )}
+    </>
+  );
 }

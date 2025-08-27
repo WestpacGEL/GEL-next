@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { AndroidIcon } from '../icon/index.js';
-import { ButtonDropdownHeading, List, ListItem } from '../index.js';
+import { Button, ButtonDropdownHeading, List, ListItem, RadioGroup } from '../index.js';
 
 import { ButtonDropdown } from './button-dropdown.component.js';
 
@@ -26,7 +26,7 @@ export const Default: Story = {
   args: {
     text: 'Default Dropdown',
     children: (
-      <p>
+      <p className="text-text-body">
         Example dropdown
         <a href="#" className="text-[blue] underline">
           content
@@ -44,7 +44,7 @@ export const StandardLooks = () => (
   <div className="flex gap-2">
     {LOOKS.map(look => (
       <ButtonDropdown key={look} look={look} text={look}>
-        <p>
+        <p className="text-text-body">
           Example dropdown
           <a href="#" className="text-[blue] underline">
             content
@@ -63,7 +63,7 @@ export const SoftLooks = () => (
   <div className="flex gap-2">
     {LOOKS.map(look => (
       <ButtonDropdown key={look} look={look} soft text={look}>
-        <p>
+        <p className="text-text-body">
           Example dropdown
           <a href="#" className="text-[blue] underline">
             content
@@ -81,10 +81,10 @@ export const SoftLooks = () => (
 export const ButtonSizes = () => (
   <div>
     {SIZES.map(size => (
-      <>
-        <h3 className="font-bold">{size}</h3>
+      <div key={size}>
+        <h3 className="font-bold text-text-body">{size}</h3>
         <ButtonDropdown size={size} text={size}>
-          <p>
+          <p className="text-text-body">
             Example dropdown
             <a href="#" className="text-[blue] underline">
               content
@@ -92,9 +92,9 @@ export const ButtonSizes = () => (
             ...
           </p>
         </ButtonDropdown>
-      </>
+      </div>
     ))}
-    <h3 className="font-bold">Responsive</h3>
+    <h3 className="font-bold text-text-body">Responsive</h3>
     <ButtonDropdown
       size={{
         initial: 'small',
@@ -103,7 +103,7 @@ export const ButtonSizes = () => (
       }}
       text="responsive"
     >
-      <p>
+      <p className="text-text-body">
         Example dropdown
         <a href="#" className="text-[blue] underline">
           content
@@ -120,14 +120,14 @@ export const ButtonSizes = () => (
 export const DropdownSizes = () => (
   <div>
     {DROPDOWNSIZE.map(size => (
-      <>
-        <h3 className="font-bold">{size}</h3>
+      <div key={size}>
+        <h3 className="font-bold text-text-body">{size}</h3>
         <ButtonDropdown dropdownSize={size} text={size}>
           {size}
         </ButtonDropdown>
-      </>
+      </div>
     ))}
-    <h3 className="font-bold">Responsive</h3>
+    <h3 className="font-bold text-text-body">Responsive</h3>
     <ButtonDropdown
       dropdownSize={{
         initial: 'large',
@@ -146,11 +146,11 @@ export const DropdownSizes = () => (
  */
 export const BlockDropdownButton = () => (
   <div>
-    <h3 className="font-bold">Block</h3>
+    <h3 className="font-bold text-text-body">Block</h3>
     <ButtonDropdown block={true} text="Block">
       Block
     </ButtonDropdown>
-    <h3 className="font-bold">Responsive Block</h3>
+    <h3 className="font-bold text-text-body">Responsive Block</h3>
     <ButtonDropdown
       block={{
         initial: false,
@@ -171,7 +171,7 @@ export const DropdownButtonWithIcons: Story = {
     iconBefore: AndroidIcon,
     text: 'Icon Dropdown',
     children: (
-      <p>
+      <p className="text-text-body">
         Example dropdown
         <a href="#" className="text-[blue] underline">
           content
@@ -209,7 +209,7 @@ export const Open: Story = {
     open: true,
     text: 'Default Dropdown',
     children: (
-      <p>
+      <p className="text-text-body">
         Example dropdown
         <a href="#" className="text-[blue] underline">
           content
@@ -245,3 +245,23 @@ export const DropdownWithHeadingsAndContent = () => (
     </ButtonDropdown>
   </div>
 );
+
+/**
+ * > RagioGroup
+ */
+export const RadioGroupExample = () => {
+  return (
+    <div>
+      <ButtonDropdown text="Default test">
+        <RadioGroup
+          radios={[
+            { value: 'Option 1', label: 'Option 1' },
+            { value: 'Option 2', label: 'Option 2' },
+            { value: 'Option 3', label: 'Option 3' },
+          ]}
+        />
+      </ButtonDropdown>
+      <Button>Test</Button>
+    </div>
+  );
+};

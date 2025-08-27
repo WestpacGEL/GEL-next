@@ -67,7 +67,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
     <>
       <div
         className={clsx(
-          'fixed top-0 z-[1010] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 bg-white text-text transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r lg:border-r-border',
+          'bg-background-white-pale text-text-body lg:border-r-border-muted-soft fixed top-0 z-[1010] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r',
           {
             '-translate-x-full': !open, //hide sidebar to the left when closed
           },
@@ -81,16 +81,19 @@ export function Sidebar({ items, brand }: SidebarProps) {
           })}
         >
           <div
-            className={clsx('sticky top-0 bg-white transition-shadow delay-0 duration-200 ease-[ease]', {
-              'shadow-[0_2px_5px_rgba(0,0,0,0.3)]': scrolled,
-            })}
+            className={clsx(
+              'bg-background-white-pale sticky top-0 transition-shadow delay-0 duration-200 ease-[ease]',
+              {
+                'shadow-[0_2px_5px_rgba(0,0,0,0.3)]': scrolled,
+              },
+            )}
           >
             <button
               className="absolute right-1 top-1 block size-6 p-1 outline-focus lg:hidden"
               onClick={() => setOpen(false)}
               ref={focusRef}
             >
-              <CloseIcon className="block text-muted" />
+              <CloseIcon className="text-text-muted block" />
             </button>
             <Link
               href="/"
@@ -99,7 +102,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
             >
               <Logo brand={brand} />
             </Link>
-            <div className="border-b border-b-border">
+            <div className="border-b-border-muted-soft border-b">
               <SidebarSelect selectedKey={brand} onSelectionChange={handleChange} aria-label="Change brand">
                 {BANK_OPTIONS.map(({ icon: Icon, designSystemPageClasses, key, label }) => (
                   <SidebarSelect.Option key={key} textValue={label}>
@@ -123,7 +126,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
       <div
         aria-hidden="true"
         className={clsx({
-          'max-lg:before:bg-black/40 z-[1009] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed':
+          'max-lg:before:bg-black[REPLACE_TOKEN]/40 z-[1009] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed':
             open,
         })}
       />

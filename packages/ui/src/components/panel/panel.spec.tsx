@@ -22,8 +22,8 @@ describe('Panel', () => {
         <PanelFooter>Test footer</PanelFooter>
       </Panel>,
     );
-    expect(getByTestId('panel')).toHaveClass('border-hero');
-    expect(getByText('test heading')).toHaveClass('bg-hero text-white');
+    expect(getByTestId('panel')).toHaveClass('border-border-hero');
+    expect(getByText('test heading')).toHaveClass('bg-surface-hero text-text-mono');
   });
 
   it('should have the correct faint styling', () => {
@@ -33,7 +33,9 @@ describe('Panel', () => {
         <PanelFooter>Test footer</PanelFooter>
       </Panel>,
     );
-    expect(getByTestId('panel')).toHaveClass('border-border');
-    expect(getByText('test heading')).toHaveClass('text-text bg-background border-b-border border-0 border-b');
+    expect(getByTestId('panel')).toHaveClass('border-border-muted-soft');
+    expect(getByText('test heading')).toHaveClass(
+      'border-b border-b-border-muted-soft bg-surface-muted-faint text-text-body',
+    );
   });
 });

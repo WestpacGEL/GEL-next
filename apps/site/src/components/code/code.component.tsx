@@ -1,4 +1,5 @@
 'use client';
+import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
 import React, { Fragment, useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { LiveProvider } from 'react-live';
 import { useOverlayTriggerState } from 'react-stately';
@@ -14,6 +15,9 @@ const LIVE_SCOPE = {
   useLayoutEffect,
   useRef,
   useState,
+  CalendarDate,
+  today,
+  getLocalTimeZone,
   useCallback,
   useMemo,
   useOverlayTriggerState,

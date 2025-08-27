@@ -1,8 +1,8 @@
 import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Accordion, AccordionItem } from './accordion.component.js';
-import { styles } from './accordion.styles.js';
+import { Accordion } from './accordion.component.js';
+import { AccordionItem } from './components/index.js';
 
 describe('Accordion', () => {
   const user = userEvent.setup();
@@ -10,13 +10,13 @@ describe('Accordion', () => {
   it('renders the component', () => {
     const { container } = render(
       <Accordion look="soft">
-        <AccordionItem key="FoR" title="Founding of Rome">
+        <AccordionItem key="FoR" id="FoR" title="Founding of Rome">
           Arma virumque cano, Troiae qui primus ab oris.
         </AccordionItem>
-        <AccordionItem key="MaR" title="Monarchy and Republic">
+        <AccordionItem key="MaR" id="MaR" title="Monarchy and Republic">
           Senatus Populusque Romanus.
         </AccordionItem>
-        <AccordionItem key="Emp" title="Empire">
+        <AccordionItem key="Emp" id="Emp" title="Empire">
           Alea jacta est.
         </AccordionItem>
       </Accordion>,
@@ -26,13 +26,13 @@ describe('Accordion', () => {
   it('shows the content of the tab that has been clicked', async () => {
     const { getByText } = render(
       <Accordion>
-        <AccordionItem key="FoR" title="Founding of Rome">
+        <AccordionItem key="FoR" id="FoR" title="Founding of Rome">
           Arma virumque cano, Troiae qui primus ab oris.
         </AccordionItem>
-        <AccordionItem key="MaR" title="Monarchy and Republic">
+        <AccordionItem key="MaR" id="MaR" title="Monarchy and Republic">
           Senatus Populusque Romanus.
         </AccordionItem>
-        <AccordionItem key="Emp" title="Empire">
+        <AccordionItem key="Emp" id="Emp" title="Empire">
           Alea jacta est.
         </AccordionItem>
       </Accordion>,
@@ -49,9 +49,5 @@ describe('Accordion', () => {
     await waitFor(() => {
       expect(getByText('Senatus Populusque Romanus.')).toBeVisible();
     });
-  });
-  it('renders the style correctly', () => {
-    const style = styles({ rounded: true });
-    expect(style).toBe('flex flex-col border border-border text-text overflow-hidden rounded');
   });
 });

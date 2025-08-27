@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useId, useRef } from 'react';
+import React, { useCallback, useEffect, useId, useMemo, useRef } from 'react';
 import { useButton, useOverlayTrigger } from 'react-aria';
 import { useOverlayTriggerState } from 'react-stately';
 
@@ -13,6 +13,7 @@ import { ButtonDropdownPanel } from './components/button-dropdown-panel/button-d
 
 export function ButtonDropdown({
   className,
+  portalClassName,
   dropdownSize = 'medium',
   iconBefore: IconBefore,
   open = false,
@@ -22,12 +23,14 @@ export function ButtonDropdown({
   look = 'hero',
   soft = false,
   block = false,
+  portalContainer,
+  placement = 'bottom start',
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const panelId = useId();
   const styles = buttonDropdownStyles({ block, dropdownSize });
   const state = useOverlayTriggerState({ defaultOpen: open });
-  const { triggerProps } = useOverlayTrigger({ type: 'menu' }, state, ref);
+  const { triggerProps, overlayProps } = useOverlayTrigger({ type: 'menu' }, state, ref);
   const { buttonProps } = useButton(triggerProps, ref);
 
   // React Aria does not check for escape key press unless panel is focused so this is needed
@@ -45,11 +48,29 @@ export function ButtonDropdown({
     };
   }, [keyHandler]);
 
+  const iconColor = useMemo(() => {
+    if (look === 'faint') {
+      return 'muted';
+    }
+    return soft ? 'muted-vivid' : 'mono';
+  }, [look, soft]);
+
+  // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
+  const brandContainer = useMemo(() => {
+    if (typeof window !== 'undefined') {
+      return (
+        document.querySelector('[data-theme]') ||
+        document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
+        document.body
+      );
+    }
+  }, []);
+
   return (
     <>
       <Button
         ref={ref}
-        iconAfter={(props: IconProps) => <DropDownIcon aria-hidden {...props} />}
+        iconAfter={(props: IconProps) => <DropDownIcon {...props} color={iconColor} aria-hidden />}
         iconBefore={IconBefore}
         size={size}
         look={look}
@@ -57,19 +78,21 @@ export function ButtonDropdown({
         block={block}
         aria-expanded={state.isOpen}
         aria-controls={panelId}
-        className={styles.base()}
+        className={styles.base({ className })}
         {...buttonProps}
       >
         {text}
       </Button>
       {state.isOpen && (
         <ButtonDropdownPanel
-          className={styles.panel({ className })}
-          placement="bottom start"
+          className={styles.panel({ className: portalClassName })}
+          placement={placement}
           triggerRef={ref}
           state={state}
           block={block}
           id={panelId}
+          portalContainer={portalContainer || brandContainer}
+          {...overlayProps}
         >
           {children}
         </ButtonDropdownPanel>

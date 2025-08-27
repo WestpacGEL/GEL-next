@@ -18,7 +18,7 @@ export type ListItemProps = {
   /**
    * The look of the bullet, icon, tick and cross lists
    */
-  look?: 'primary' | 'hero' | 'neutral' | 'success' | 'danger' | 'link';
+  look?: 'primary' | 'hero' | 'success' | 'danger' | 'link';
   /**
    * The level of nesting
    */

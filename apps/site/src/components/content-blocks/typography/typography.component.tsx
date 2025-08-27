@@ -50,5 +50,5 @@ export function Link({
 }
 
 export function Code({ children }: { children?: ReactNode }) {
-  return <code className="bg-white px-0.5 font-monospace text-info">{children}</code>;
+  return <code className="bg-background-white-pale text-text-info p-1 font-monospace">{children}</code>;
 }

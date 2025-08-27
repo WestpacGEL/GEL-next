@@ -16,12 +16,12 @@ export function ActionBar() {
   return (
     <StickyHeader>
       <GridContainer fixed className="px-4 lg:max-w-gel-lg-container lg:px-10">
-        <div className="hidden h-17 items-end bg-white pb-2 sm:flex">
+        <div className="bg-background-white-pale hidden h-17 items-end pb-2 sm:flex">
           <div className="mr-4 flex h-full flex-col justify-end border-r border-gel-border">
             <GELLogo className="mb-2 block h-3 w-[45px] text-gel-text" />
             <p className="mb-1 flex items-end">
               Design System
-              <ArrowRightIcon className="ml-0 mr-2 md:ml-2 md:mr-[1rem]" />
+              <ArrowRightIcon className="ml-0 mr-2 md:ml-2 md:mr-4" />
             </p>
           </div>
           <ul role="list" className="flex gap-2">
@@ -36,7 +36,7 @@ export function ActionBar() {
             ))}
           </ul>
         </div>
-        <div className="block bg-white sm:hidden">
+        <div className="bg-background-white-pale block sm:hidden">
           <BrandSelect
             selectedKey={undefined}
             onSelectionChange={() => {

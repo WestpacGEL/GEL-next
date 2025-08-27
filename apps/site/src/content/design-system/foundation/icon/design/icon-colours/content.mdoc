@@ -1,12 +1,25 @@
 Icons can be used with any brand colour. You can also invert them to appear as white on a dark background.
 
 ```tsx
-<div className="flex gap-4">
-  <AtmIcon color="primary" />
-  <EftposIcon color="hero" />
-  <PadlockIcon color="border" />
-  <BusinessPersonIcon color="muted" />
-  <SecurityIcon color="info" />
-  <VerifiedIcon color="text" />
-</div>
+() => {
+  const ALL_COLORS = [
+    'primary',
+    'hero',
+    'pop',
+    'holler',
+    'muted',
+    'muted-vivid',
+  ] as const;
+
+  return (
+    <div className="flex flex-wrap justify-center gap-2">
+      {ALL_COLORS.map(color => (
+        <div key={color} className="flex flex-col items-center gap-1 w-14">
+          <TickCircleIcon key={color} color={color} />
+          <p className="typography-body-11 text-text-body text-center">{color}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
 ```

@@ -5,7 +5,7 @@ export const styles = tv(
     slots: {
       base: 'relative pl-[1.1875rem]',
       bullet: 'absolute left-0 block border',
-      link: 'text-text hover:cursor-pointer hover:underline',
+      link: 'text-text-body hover:cursor-pointer hover:underline',
     },
     variants: {
       icon: {
@@ -21,22 +21,19 @@ export const styles = tv(
       },
       look: {
         primary: {
-          bullet: 'border-primary bg-primary after:border-primary',
+          bullet: 'border-border-primary bg-surface-primary after:border-border-primary',
         },
         hero: {
-          bullet: 'border-hero bg-hero after:border-hero',
-        },
-        neutral: {
-          bullet: 'border-neutral bg-neutral after:border-neutral',
+          bullet: 'border-border-hero bg-surface-hero after:border-border-hero',
         },
         success: {
-          bullet: 'border-success bg-success after:border-success',
+          bullet: 'border-border-success bg-surface-success after:border-border-success',
         },
         danger: {
-          bullet: 'border-danger bg-danger after:border-danger',
+          bullet: 'border-border-danger bg-surface-danger after:border-border-danger',
         },
         link: {
-          bullet: 'border-link bg-link after:border-link',
+          bullet: 'border-border-primary bg-surface-primary after:border-border-primary',
         },
       },
       type: {

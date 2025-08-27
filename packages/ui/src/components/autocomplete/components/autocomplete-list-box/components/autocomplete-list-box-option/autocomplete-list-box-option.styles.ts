@@ -2,16 +2,16 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'group flex cursor-pointer items-center justify-between border-t border-t-border bg-white p-2 px-3 text-sm text-text transition-colors first:border-t-0 hover:bg-hero hover:text-white focus:bg-hero focus:text-white',
+    base: 'group flex cursor-pointer items-center justify-between bg-background-white-pale p-2 px-3 text-sm text-text-body transition-colors',
     variants: {
       isFocused: {
-        true: 'is-focused bg-hero !text-white',
+        true: 'is-focused bg-surface-hover-muted-pale',
       },
       isSelected: {
         true: 'font-bold',
       },
       isDisabled: {
-        true: 'text-muted',
+        true: 'text-text-muted',
       },
     },
   },

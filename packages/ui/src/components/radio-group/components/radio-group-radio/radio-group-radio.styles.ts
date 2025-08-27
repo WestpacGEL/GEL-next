@@ -5,15 +5,16 @@ export const styles = tv(
     slots: {
       base: 'flex',
       textWrapper: 'flex flex-col justify-center',
-      labelText: 'typography-body-10 py-[2px] pl-1',
-      hintText: 'typography-body-10 pl-1 text-muted',
-      selector: 'flex size-4 shrink-0 items-center justify-center rounded-full border border-hero',
+      labelText: 'typography-body-10 py-[2px] pl-1 text-text-body',
+      hintText: 'typography-body-10 pl-1 text-text-muted',
+      selector:
+        'flex size-4 shrink-0 items-center justify-center rounded-full border border-border-hero bg-background-white-pale',
     },
     variants: {
       isDisabled: {
         true: {
-          labelText: 'text-muted',
-          selector: 'border-border bg-border-20 before:bg-border',
+          labelText: 'text-text-muted',
+          selector: 'border-border-muted-soft bg-surface-muted-faint before:bg-surface-muted-soft',
         },
         false: {
           base: 'hover:cursor-pointer',
@@ -21,7 +22,7 @@ export const styles = tv(
       },
       isSelected: {
         true: {
-          selector: 'before:block before:size-2 before:rounded-full before:bg-hero',
+          selector: 'before:block before:size-2 before:rounded-full before:bg-surface-hero',
         },
       },
       isFocusVisible: {

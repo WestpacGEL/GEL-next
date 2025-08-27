@@ -9,6 +9,10 @@ export type ButtonDropdownPanelProps = {
    * State for the panel
    */
   state: OverlayTriggerState;
+  /**
+   * Uses portal to render popover
+   */
+  portalContainer?: Element;
 } & HTMLAttributes<Element> &
   Omit<AriaPopoverProps, 'popoverRef'> &
   Pick<ButtonProps, 'block'>;

@@ -1,4 +1,4 @@
-import { SelectHTMLAttributes } from 'react';
+import { HTMLAttributes, SelectHTMLAttributes } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './select.styles.js';
@@ -21,4 +21,9 @@ export type SelectProps = {
    * @default auto
    */
   width?: Variants['width'];
+  /**
+   * Width of select
+   * @default auto
+   */
+  wrapperProps?: HTMLAttributes<HTMLDivElement>;
 } & Omit<SelectHTMLAttributes<HTMLSelectElement>, 'size'>;

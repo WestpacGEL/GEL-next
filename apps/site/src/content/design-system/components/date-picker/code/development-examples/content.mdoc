@@ -1,13 +1,7 @@
 ### Default
 
 ```jsx
-<DatePicker
-  onBlur={function Ma(){}}
-  onChange={function Ma(){}}
-  onClose={function Ma(){}}
-  onFocus={function Ma(){}}
-  onOpen={function Ma(){}}
-/>
+<DatePicker />
 ```
 
 ### Sizes
@@ -15,10 +9,10 @@
 ```jsx
 () => {
   const sizes = [
-    { label: 'Small', size: 'sm' },
-    { label: 'Medium (default)', size: 'md' },
-    { label: 'Large', size: 'lg' },
-    { label: 'XLarge', size: 'xl' },
+    { label: 'Small', size: 'small' },
+    { label: 'Medium (default)', size: 'medium' },
+    { label: 'Large', size: 'large' },
+    { label: 'XLarge', size: 'xlarge' },
   ];
   return sizes.map(({ label, size }) => (
     <div className="py-4 border-t border-t-border first:border-t-0" key={size}>
@@ -33,20 +27,29 @@
 
 ```jsx
 () => {
-  const [value, setValue] = useState('2023-08-01');
-  return <DatePicker onChange={value => {
-    console.log(value.target.value);
-    setValue(value.target.value);
-  }} onOpen={() => {
-    console.log('onOpen');
-  }} onClose={() => {
-    console.log('onClose');
-  }} onBlur={() => {
-    console.log('onBlur');
-  }} onFocus={() => {
-    console.log('onFocus');
-  }} value={value} />;
-}
+  const [value, setValue] = useState(today());
+  console.log('value', value);
+  return (
+    <DatePicker
+      onChange={value => {
+        setValue(value);
+      }}
+      onOpen={() => {
+        console.log('onOpen');
+      }}
+      onClose={() => {
+        console.log('onClose');
+      }}
+      onBlur={() => {
+        console.log('onBlur');
+      }}
+      onFocus={() => {
+        console.log('onFocus');
+      }}
+      value={value}
+    />
+  );
+};
 ```
 
 ### Different date format
@@ -54,27 +57,13 @@
 Different date format (dd/MM/yyyy)
 
 ```jsx
-<DatePicker
-  dateFormat="dd/MM/yyyy"
-  onBlur={function Ma(){}}
-  onChange={function Ma(){}}
-  onClose={function Ma(){}}
-  onFocus={function Ma(){}}
-  onOpen={function Ma(){}}
-/>
+<DatePicker />
 ```
 
 ### Disabled weekends
 
 ```jsx
-<DatePicker
-  disableWeekends
-  onBlur={function Ma(){}}
-  onChange={function Ma(){}}
-  onClose={function Ma(){}}
-  onFocus={function Ma(){}}
-  onOpen={function Ma(){}}
-/>
+<DatePicker disableWeekends />
 ```
 
 ### Disabled days of the week
@@ -82,70 +71,72 @@ Different date format (dd/MM/yyyy)
 Disable days of the week (Mon, Wed, Fri in example)
 
 ```jsx
-<DatePicker
-  disableDaysOfWeek={[
-    1,
-    3,
-    5
-  ]}
-  onBlur={function Ma(){}}
-  onChange={function Ma(){}}
-  onClose={function Ma(){}}
-  onFocus={function Ma(){}}
-  onOpen={function Ma(){}}
-/>
+<DatePicker disableDaysOfWeek={[0, 2, 4]} />
 ```
 
 ### Disabled specific dates
 
-Disable specific dates (2023-10-10 in example)
+Disable specific dates
 
 ```jsx
-<DatePicker
-  disableDates={[
-    '2023-10-10'
-  ]}
-  onBlur={function Ma(){}}
-  onChange={function Ma(){}}
-  onClose={function Ma(){}}
-  onFocus={function Ma(){}}
-  onOpen={function Ma(){}}
-/>
+() => {
+  const now = today(getLocalTimeZone());
+  const disabledRanges = [
+    [now, now.add({ days: 5 })],
+    [now.add({ days: 14 }), now.add({ days: 16 })],
+    [now.add({ days: 23 }), now.add({ days: 24 })],
+  ];
+
+  const isDateUnavailable = (date: DateValue) =>
+    disabledRanges.some(interval => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0);
+
+  return (
+    <DatePicker
+      isDateUnavailable={isDateUnavailable}
+    />
+  )
+}
 ```
 
 ### Invalid state
 
 ```jsx
-<DatePicker
-  invalid
-  onBlur={function Ma(){}}
-  onChange={function Ma(){}}
-  onClose={function Ma(){}}
-  onFocus={function Ma(){}}
-  onOpen={function Ma(){}}
-/>
+<DatePicker isInvalid />
 ```
 
 ### Form field
 
 ```jsx
 () => {
-  const [value, setValue] = useState('2023-08-01');
-  return <Field label="Are you an existing customer?" hintMessage="Hint: choose from one of the following options" errorMessage="This is an inline error message">
-      <DatePicker onChange={value => {
-      console.log(value.target.value);
-      setValue(value.target.value);
-    }} onOpen={() => {
-      console.log('onOpen');
-    }} onClose={() => {
-      console.log('onClose');
-    }} onBlur={() => {
-      console.log('onBlur');
-    }} onFocus={() => {
-      console.log('onFocus');
-    }} value={value} />
-    </Field>;
-}
+  const [value, setValue] = useState(new CalendarDate(2023, 8, 1));
+  return (
+    <Field
+      label="Are you an existing customer?"
+      hintMessage="Hint: choose from one of the following options"
+      errorMessage="This is an inline error message"
+    >
+      <DatePicker
+        onChange={value => {
+          console.log(value);
+          setValue(value);
+        }}
+        onOpen={() => {
+          console.log('onOpen');
+        }}
+        onClose={() => {
+          console.log('onClose');
+        }}
+        onBlur={() => {
+          console.log('onBlur');
+        }}
+        onFocus={() => {
+          console.log('onFocus');
+        }}
+        value={value}
+      />
+    </Field>
+  );
+};
 ```
 
 ### Range

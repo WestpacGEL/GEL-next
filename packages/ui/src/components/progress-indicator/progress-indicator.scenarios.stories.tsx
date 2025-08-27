@@ -49,7 +49,7 @@ export const ButtonsUsage = () => {
                 key={`${size}-${look}`}
                 iconAfter={ProgressIndicator}
                 iconSize={size === 'small' ? 'xsmall' : 'small'}
-                iconColor={look === 'faint' ? 'muted' : 'white'}
+                iconColor={look === 'faint' ? 'muted' : 'mono'}
               >
                 Loading{'  '}
               </Button>
@@ -113,7 +113,7 @@ export const ButtonLoadingUsage = () => {
       <Button
         disabled={loading}
         iconAfter={loading ? ProgressIndicator : DownloadIcon}
-        iconColor="white"
+        iconColor="mono"
         onClick={() => void handleSubmit()}
       >
         Download
@@ -130,12 +130,12 @@ export const LoadingOverlayUsage = () => {
 
   return (
     <>
-      <Modal size="full" state={state} aria-label="Loading overlay" className="bg-transparent">
+      <Modal size="full" state={state} aria-label="Loading overlay" className="bg-[transparent]">
         <ModalBody
           onClick={() => state.close()}
-          className="align-center min-h-100vh min-w-100vw flex flex-col justify-center"
+          className="flex min-h-screen min-w-[100vw] flex-col items-center justify-center"
         >
-          <ProgressIndicator color="white" size="large" label="Loading..." />
+          <ProgressIndicator color="mono" size="large" label="Loading..." />
         </ModalBody>
       </Modal>
       <Button onClick={() => state.open()}>Open Loader</Button>

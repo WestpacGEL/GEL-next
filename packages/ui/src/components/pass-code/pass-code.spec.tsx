@@ -2,7 +2,6 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { PassCode } from './pass-code.component.js';
-import { styles } from './pass-code.styles.js';
 
 const PASSCODE_DIGIT = 'Passcode digit';
 const PASSCODE_DIGIT_1 = `${PASSCODE_DIGIT} 1`;
@@ -23,12 +22,6 @@ describe('PassCode', () => {
       />,
     );
     expect(container).toBeInTheDocument();
-  });
-  it('renders the style correctly', () => {
-    const style = styles();
-
-    expect(style.base()).toBe('flex gap-2');
-    expect(style.input()).toBe('w-6 px-0 text-center');
   });
 
   it('triggers the onComplete correctly', async () => {

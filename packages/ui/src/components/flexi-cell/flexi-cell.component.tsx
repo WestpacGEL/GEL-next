@@ -69,7 +69,7 @@ function FlexiCellBase(
       {after}
       {withArrow && (
         <FlexiCellAdornment align="top">
-          <ArrowRightIcon color="link" aria-hidden="true" />
+          <ArrowRightIcon color="primary" aria-hidden="true" />
         </FlexiCellAdornment>
       )}
     </Tag>

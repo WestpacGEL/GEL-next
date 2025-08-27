@@ -16,7 +16,7 @@ const meta: Meta<typeof List> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const LOOKS = ['primary', 'hero', 'neutral', 'success', 'danger', 'link'] as const;
+const LOOKS = ['primary', 'hero', 'success', 'danger', 'link'] as const;
 const TYPES = ['bullet', 'link', 'tick', 'cross', 'unstyled', 'icon', 'ordered'] as const;
 
 /**

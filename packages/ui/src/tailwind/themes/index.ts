@@ -6,12 +6,29 @@ import { theme as BSATheme } from './bsa.js';
 import { theme as BTFGTheme } from './btfg.js';
 import { theme as BTPLTheme } from './btpl.js';
 import { theme as RAMSTheme } from './rams.js';
+import { theme as STGDarkTheme } from './stg-dark.js';
+import { theme as STGLightTheme } from './stg-light.js';
 import { theme as STGTheme } from './stg.js';
+import { theme as WBCDarkTheme } from './wbc-dark.js';
+import { theme as WBCLightTheme } from './wbc-light.js';
 import { theme as WBCTheme } from './wbc.js';
 import { theme as WBGTheme } from './wbg.js';
 
 // ALL_THEMES, THEMES are used for documentation and as per GEL Team request we dont display BTPL Theme in any public documentation i.e. storybook, site etc
-export const ALL_THEMES = [BOMTheme, BSATheme, BTFGTheme, RAMSTheme, STGTheme, WBCTheme, WBGTheme];
+// TODO: add other themes later
+export const ALL_THEMES = [
+  // BOMTheme,
+  // BSATheme,
+  // BTFGTheme,
+  // RAMSTheme,
+  // STGTheme,
+  // WBCTheme,
+  // WBGTheme,
+  WBCLightTheme,
+  WBCDarkTheme,
+  STGDarkTheme,
+  STGLightTheme,
+];
 
 export const THEMES = ALL_THEMES.map(theme => {
   return {

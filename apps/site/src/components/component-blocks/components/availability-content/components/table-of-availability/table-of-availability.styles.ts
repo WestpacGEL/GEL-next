@@ -7,16 +7,16 @@ export const styles = tv({
   variants: {
     color: {
       success: {
-        text: 'text-success',
+        text: 'text-text-success',
       },
       warning: {
-        text: 'text-warning',
+        text: 'text-text-warning',
       },
       info: {
         text: 'text-info',
       },
       danger: {
-        text: 'text-danger',
+        text: 'text-text-danger',
       },
     },
   },

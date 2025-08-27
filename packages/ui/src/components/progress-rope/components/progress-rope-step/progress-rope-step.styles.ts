@@ -4,35 +4,35 @@ export const styles = tv(
   {
     slots: {
       base: 'typography-body-10 relative flex w-full cursor-pointer items-center gap-2 pb-[0.875rem] pt-[0.5rem] leading-loose transition-colors',
-      circle: 'relative z-10 bg-white transition-colors',
+      circle: 'relative z-10 bg-background-white-pale transition-colors',
     },
     variants: {
       state: {
         current: {
-          base: 'font-bold text-primary',
-          circle: 'border-[3px] border-primary bg-white',
+          base: 'font-bold text-text-primary',
+          circle: 'border-[3px] border-border-primary bg-background-white-pale',
         },
         visited: {
-          base: 'text-text before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:border-primary before:transition-colors',
+          base: 'text-text-body before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:border-border-primary before:transition-colors',
           // Can't use a const without getting tailwind errors, compound slots/variants don't work correctly for this
 
-          circle: 'border-[3px] border-primary bg-primary',
+          circle: 'border-[3px] border-border-primary bg-surface-primary',
         },
         'non-visited': {
-          base: 'text-muted-90',
-          circle: 'border-2 border-borderDark bg-white',
+          base: 'text-text-muted/90',
+          circle: 'border-2 border-border-muted-strong bg-background-white-pale',
         },
         'current-visited': {
-          base: 'font-bold text-primary before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:border-primary before:transition-colors',
-          circle: 'border-[3px] border-primary bg-primary',
+          base: 'font-bold text-text-primary before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:border-border-primary before:transition-colors',
+          circle: 'border-[3px] border-border-primary bg-surface-primary',
         },
         'last-visited': {
-          base: 'text-text after:absolute after:inset-y-[0.875rem] after:left-1 after:z-[1] after:block after:translate-y-[-0.875rem] after:border-l-2 after:border-primary after:transition-colors',
-          circle: 'border-[3px] border-primary bg-primary',
+          base: 'text-text-body after:absolute after:inset-y-[0.875rem] after:left-1 after:z-[1] after:block after:translate-y-[-0.875rem] after:border-l-2 after:border-border-primary after:transition-colors',
+          circle: 'border-[3px] border-border-primary bg-surface-primary',
         },
         'last-current': {
-          base: 'font-bold text-primary ',
-          circle: 'border-[3px] border-primary bg-primary',
+          base: 'font-bold text-text-primary ',
+          circle: 'border-[3px] border-border-primary bg-surface-primary',
         },
       },
       firstItem: {
@@ -54,7 +54,7 @@ export const styles = tv(
         false: {},
       },
       furthestVisited: {
-        true: { base: 'text-text', circle: 'border-[3px] border-primary bg-white' },
+        true: { base: 'text-text-body', circle: 'border-[3px] border-border-primary bg-background-white-pale' },
         false: {},
       },
       size: {
@@ -68,7 +68,7 @@ export const styles = tv(
       },
       previousStepGroup: {
         true: {
-          base: 'after:absolute after:inset-y-[0.875rem] after:left-1 after:z-[1] after:block after:translate-y-[-0.875rem] after:border-l-2 after:border-primary after:transition-colors',
+          base: 'after:absolute after:inset-y-[0.875rem] after:left-1 after:z-[1] after:block after:translate-y-[-0.875rem] after:border-l-2 after:border-border-primary after:transition-colors',
         },
         false: {},
       },

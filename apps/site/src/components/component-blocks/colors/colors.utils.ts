@@ -1,4 +1,4 @@
-import { type BrandConfig, type BrandKey } from '@westpac/ui/tailwind';
+import { BrandKeyWithThemes } from '@westpac/ui/tailwind';
 import { ALL_THEMES } from '@westpac/ui/themes';
 import { BASE_COLORS, DATA_VIS_COLORS } from '@westpac/ui/themes-constants';
 
@@ -11,16 +11,16 @@ const hexToRgb = (hex: string) =>
     ?.match(/.{2}/g)
     ?.map(x => parseInt(x, 16));
 
-const filterTheme = (brand: BrandKey) =>
-  ALL_THEMES.find((brandTheme: BrandConfig) => brandTheme.code === brand.toUpperCase())?.colors;
+const filterTheme = (brand: BrandKeyWithThemes) =>
+  ALL_THEMES.find(brandTheme => brandTheme.code === brand.toUpperCase())?.colors;
 
-export function getColorPalette({ brand, palette }: { brand: BrandKey; palette: string }) {
+export function getColorPalette({ brand, palette }: { brand: BrandKeyWithThemes; palette: string }) {
   const colorPalette: { hex: string; name: string; rgb: string }[] = [];
   if (palette === 'primary') {
     const theme = filterTheme(brand);
     if (theme) {
       PRIMARY_COLORS.forEach(color => {
-        const hex = theme[color].DEFAULT;
+        const hex = theme[color];
         const rgb = hexToRgb(hex) || [];
         colorPalette.push({
           name: color[0].toUpperCase() + color.slice(1),
@@ -43,7 +43,7 @@ export function getColorPalette({ brand, palette }: { brand: BrandKey; palette: 
     const theme = filterTheme(brand);
     if (theme) {
       ACCESSIBILITY_COLORS.forEach(color => {
-        const hex = theme[color].DEFAULT;
+        const hex = theme[color];
         const rgb = hexToRgb(hex) || [];
         colorPalette.push({
           name: color[0].toUpperCase() + color.slice(1),
@@ -53,7 +53,7 @@ export function getColorPalette({ brand, palette }: { brand: BrandKey; palette: 
       });
     }
   } else if (palette === 'data_visualisation') {
-    const typedBrand = brand as Exclude<BrandKey, 'btfg'>;
+    const typedBrand = brand as Exclude<BrandKeyWithThemes, 'btfg-light' | 'btfg-dark'>;
     Object.entries(DATA_VIS_COLORS[typedBrand]).forEach(([name, hex]) => {
       const hexStr = hex;
       const rgb = hexToRgb(hexStr) || [];

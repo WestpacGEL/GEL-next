@@ -14,7 +14,7 @@ export function ErrorValidationAlert({ errors }: { errors: ValidationErrorType[]
       <List type="unstyled">
         {errors.map(error => (
           <ListItem key={error.id}>
-            <Link type="inline" href={`#${error.id}`} className="text-danger">
+            <Link type="inline" href={`#${error.id}`} className="text-text-danger">
               {error.label}
             </Link>
           </ListItem>

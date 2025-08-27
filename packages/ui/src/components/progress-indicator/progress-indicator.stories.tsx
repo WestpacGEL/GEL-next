@@ -46,7 +46,7 @@ export const Inverted = () => {
   return (
     <div className="flex items-center justify-center gap-1 rounded bg-black">
       {(['xsmall', 'small', 'medium', 'large'] as const).map(size => (
-        <ProgressIndicator key={size} size={size} color="white" />
+        <ProgressIndicator key={size} size={size} color="mono" />
       ))}
     </div>
   );

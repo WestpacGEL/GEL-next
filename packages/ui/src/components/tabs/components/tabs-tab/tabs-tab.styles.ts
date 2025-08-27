@@ -2,15 +2,15 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'typography-body-9 flex cursor-pointer px-3 py-2 text-text transition-colors',
+    base: 'typography-body-9 flex cursor-pointer px-3 py-2 text-text-body transition-colors',
     variants: {
       look: {
-        default: 'border border-border bg-white',
+        default: 'border border-border-muted-soft bg-surface-muted-faint',
         material: '',
       },
       selected: {
-        true: 'bg-white',
-        false: 'background-transition hover:bg-background',
+        true: 'bg-background-white-pale',
+        false: 'background-transition hover:bg-surface-hover-muted-pale',
       },
       orientation: {
         horizontal: '',
@@ -32,7 +32,7 @@ export const styles = tv(
       {
         look: 'default',
         selected: false,
-        className: 'bg-light',
+        className: 'bg-surface-muted-faint',
       },
       {
         orientation: 'horizontal',
@@ -58,19 +58,19 @@ export const styles = tv(
         color: 'primary',
         look: 'default',
         selected: false,
-        className: 'border-primary-90 bg-primary text-white hover:bg-primary-70',
+        className: 'border-border-primary/90 bg-surface-primary text-text-mono hover:bg-surface-hover-primary',
       },
       {
         color: 'hero',
         selected: false,
         look: 'default',
-        className: 'border-hero-90 bg-hero text-white hover:bg-hero-70',
+        className: 'border-border-hero/90 bg-surface-hero text-text-mono hover:bg-surface-hover-hero',
       },
       // Material look design
       {
         look: 'material',
         orientation: 'horizontal',
-        className: 'border-b-4 border-r border-b-white border-r-border last:border-r-0',
+        className: 'border-b-4 border-r border-b-white border-r-border-muted-soft last:border-r-0',
       },
       {
         look: 'material',
@@ -81,34 +81,34 @@ export const styles = tv(
         look: 'material',
         selected: true,
         orientation: 'horizontal',
-        className: 'border-bottom border-b-white text-text',
+        className: 'border-bottom border-b-white text-text-body',
       },
       {
         look: 'material',
         selected: true,
         orientation: 'vertical',
-        className: 'border-left border-l-transparent text-text',
+        className: 'border-left border-l-transparent text-text-body',
       },
       {
         color: 'primary',
         look: 'material',
         selected: true,
         orientation: 'horizontal',
-        className: 'border-b-primary border-r-border',
+        className: 'border-b-primary border-r-border-muted-soft',
       },
       {
         color: 'hero',
         look: 'material',
         selected: true,
         orientation: 'horizontal',
-        className: 'border-b-hero border-r-border',
+        className: 'border-b-hero border-r-border-muted-soft',
       },
       {
         color: 'primary',
         look: 'material',
         selected: true,
         orientation: 'vertical',
-        className: 'border-b-border border-l-primary',
+        className: 'border-b-border border-l-border-primary',
       },
       {
         color: 'hero',

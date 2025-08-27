@@ -32,7 +32,9 @@ const OccupationSelect = (props: SelectProps) => (
   </Select>
 );
 
-const Wrapper = (props: HTMLAttributes<HTMLDivElement>) => <div className="border-t border-t-border pt-6" {...props} />;
+const Wrapper = (props: HTMLAttributes<HTMLDivElement>) => (
+  <div className="border-t-border-muted border-t pt-6" {...props} />
+);
 
 export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
   const error = showErrors ? 'Error message goes here if activated' : '';

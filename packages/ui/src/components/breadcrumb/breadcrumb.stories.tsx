@@ -31,3 +31,22 @@ export const Default: Story = {
     ],
   },
 };
+
+/**
+ * > Default usage example
+ */
+export const DisabledInTheMiddle: Story = {
+  args: {
+    children: [
+      <BreadcrumbItem key="one" tag="button" onClick={() => alert('Folder 1')}>
+        About us
+      </BreadcrumbItem>,
+      <BreadcrumbItem key="two" tag="a" href="#nogo" isDisabled>
+        Innovation
+      </BreadcrumbItem>,
+      <BreadcrumbItem key="three" tag="a" href="#loko">
+        Principal investments
+      </BreadcrumbItem>,
+    ],
+  },
+};

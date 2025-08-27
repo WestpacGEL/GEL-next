@@ -20,7 +20,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
   const params = useParams();
   const brand = (params.brand ?? 'wbc') as BrandKey;
   return (
-    <Section className="bg-white">
+    <Section className="bg-background-white-pale">
       <Container className="">
         <Heading level={2} className="mb-4 sm:mb-7">
           Related information
@@ -28,7 +28,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
         <Grid>
           {!relatedComponentsEmpty && (
             <GridItem span={{ initial: 12, xsl: 4 }}>
-              <h3 className="typography-body-8 flex items-center justify-between border-b border-neutral pb-3 font-bold">
+              <h3 className="border-border-muted-soft typography-body-8 flex items-center justify-between border-b pb-3 font-bold">
                 Components
                 <CubeIcon color="muted" />
               </h3>
@@ -45,7 +45,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
           )}
           {relatedArticles && (
             <GridItem span={12} start={{ initial: 1, xsl: relatedComponentsEmpty ? 1 : 6 }}>
-              <h3 className="typography-body-8 flex items-center justify-between border-b border-neutral pb-3 font-bold">
+              <h3 className="border-border-muted-soft typography-body-8 flex items-center justify-between border-b pb-3 font-bold">
                 Articles
                 <GenericFileIcon color="muted" />
               </h3>
@@ -67,7 +67,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
 function Link({ children, ...props }: PropsWithChildren<LinkProps>) {
   return (
     <NextLink
-      className="typography-body-10 flex min-h-[3.4375rem] items-center justify-between border-b border-border py-1 outline-offset-[3px] outline-focus hover:text-primary hover:underline"
+      className="border-border-muted-soft hover:text-text-primary typography-body-10 flex min-h-[3.4375rem] items-center justify-between border-b py-1 outline-offset-[3px] outline-focus hover:underline"
       {...props}
     >
       {children}

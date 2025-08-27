@@ -32,15 +32,15 @@ export const Sizes = () => (
   <div>
     {SIZES.map(size => (
       <div className="mb-2" key={size}>
-        <h2 className="typography-body-8 mb-1 font-bold">{size}</h2>
-        <p>
+        <h2 className="typography-body-8 mb-1 font-bold text-text-body">{size}</h2>
+        <p className="text-text-body">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur illum quidem neque quod impedit,
           praesentium maiores unde perspiciatis accusantium non, quae debitis ut aliquid numquam ipsa hic tempora
           deleniti deserunt!
         </p>
 
         <Collapsible text="Toggle collapsible" size={size}>
-          <p>
+          <p className="text-text-body">
             Hello vivamus sagittis lacus vel augue laoreet rutrum faucibus. Lorem ipsum dolor sit amet, consectetur
             adipisicing elit. Nesciunt laboriosam, mollitia magnam ad magni consequuntur hic et quos optio corrupti
             praesentium veniam aspernatur minima aperiam ut quas, possimus non architecto. Lorem ipsum dolor sit amet,
@@ -49,7 +49,7 @@ export const Sizes = () => (
           </p>
         </Collapsible>
 
-        <p>
+        <p className="text-text-body">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur illum quidem neque quod impedit,
           praesentium maiores unde perspiciatis accusantium non, quae debitis ut aliquid numquam ipsa hic tempora
           deleniti deserunt!
@@ -66,15 +66,15 @@ export const Open = () => (
   <div>
     {SIZES.map(size => (
       <div className="mb-2" key={size}>
-        <h2 className="typography-body-8 mb-1 font-bold">{size}</h2>
-        <p>
+        <h2 className="typography-body-8 mb-1 font-bold text-text-body">{size}</h2>
+        <p className="text-text-body">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur illum quidem neque quod impedit,
           praesentium maiores unde perspiciatis accusantium non, quae debitis ut aliquid numquam ipsa hic tempora
           deleniti deserunt!
         </p>
 
         <Collapsible text="Toggle collapsible" size={size} open>
-          <p>
+          <p className="text-text-body">
             Hello vivamus sagittis lacus vel augue laoreet rutrum faucibus. Lorem ipsum dolor sit amet, consectetur
             adipisicing elit. Nesciunt laboriosam, mollitia magnam ad magni consequuntur hic et quos optio corrupti
             praesentium veniam aspernatur minima aperiam ut quas, possimus non architecto. Lorem ipsum dolor sit amet,
@@ -83,7 +83,7 @@ export const Open = () => (
           </p>
         </Collapsible>
 
-        <p>
+        <p className="text-text-body">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur illum quidem neque quod impedit,
           praesentium maiores unde perspiciatis accusantium non, quae debitis ut aliquid numquam ipsa hic tempora
           deleniti deserunt!

@@ -24,13 +24,13 @@ export function BottomSheetDialog({
 
   return (
     <div {...dialogProps} className={styles.base({ className })} ref={ref}>
-      <header>
+      <header className={styles.header()}>
         <h3 className={styles.title()} {...titleProps}>
           {title}
         </h3>
         {onClose && (
           <Button size="small" look="link" onClick={onClose} aria-label="close" className={styles.closeBtn()}>
-            <CloseIcon color="muted" size="small" />
+            <CloseIcon color="primary" size="small" />
           </Button>
         )}
       </header>

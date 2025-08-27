@@ -123,7 +123,7 @@ export function CheckboxGroup({
             onClick={() => setHiddenOptions(false)}
             className={styles.revealButton()}
             look="link"
-            iconAfter={() => <ExpandMoreIcon size="small" color="link" />}
+            iconAfter={() => <ExpandMoreIcon size="small" color="primary" />}
             aria-controls={panelId}
             aria-expanded={!hiddenOptions}
             {...focusProps}

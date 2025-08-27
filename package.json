@@ -25,7 +25,8 @@
     "ci:build": "pnpm install --frozen-lockfile && pnpm format && pnpm build && pnpm lint && pnpm check-types && pnpm test",
     "ci:publish": "pnpm build && changeset publish",
     "ci:test": "pnpm format && pnpm lint && pnpm check-types && pnpm test",
-    "migrate": "node script.cjs"
+    "migrate": "node script.cjs",
+    "codemod:tokens": "node run-codemod.cjs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.5",
@@ -43,6 +44,7 @@
   "packageManager": "pnpm@9.1.2",
   "dependencies": {
     "adm-zip": "~0.5.16",
+    "glob": "~10.3.3",
     "typescript": "~5.5.4"
   },
   "pnpm": {

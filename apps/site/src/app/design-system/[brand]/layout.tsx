@@ -13,7 +13,7 @@ export default async function DesignSystemLayout({
   params,
 }: {
   children: ReactNode;
-  params: { brand: string };
+  params: { brand: string; mode: string };
 }) {
   const allContent = await reader().collections.designSystem.all();
   const formattedItems = sortMenu(
@@ -23,14 +23,15 @@ export default async function DesignSystemLayout({
     ),
   );
 
+  const mode = params?.mode ?? 'light';
   const brand = (params?.brand ?? 'wbc') as BrandKey; // double check this is the best way to do this.
 
   return (
-    <div data-theme={brand?.toLowerCase()}>
+    <div data-theme={`${brand?.toLowerCase()}-${mode}`} className="bg-background-white-faint">
       <SkipLink href="#content" className="z-[100]">
         Skip to content
       </SkipLink>
-      <div className="flex min-h-screen flex-col text-text active-theme-stg:text-heading">
+      <div className="active-theme-stg:text-text-heading text-text-body flex min-h-screen flex-col">
         <SidebarContextProvider>
           <Suspense>
             <Sidebar items={formattedItems} brand={brand} />

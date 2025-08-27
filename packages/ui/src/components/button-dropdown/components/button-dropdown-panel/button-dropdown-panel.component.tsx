@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { DismissButton, mergeProps, useFocusRing, usePopover } from 'react-aria';
+import { DismissButton, FocusScope, Overlay, useFocusRing, usePopover } from 'react-aria';
 
 import { styles as panelStyles } from './button-dropdown-panel.styles.js';
 import { type ButtonDropdownPanelProps } from './button-dropdown-panel.types.js';
@@ -7,10 +7,21 @@ import { type ButtonDropdownPanelProps } from './button-dropdown-panel.types.js'
 /**
  * @private
  */
-export function ButtonDropdownPanel({ className, children, state, block, id, ...props }: ButtonDropdownPanelProps) {
+export function ButtonDropdownPanel({
+  className,
+  children,
+  state,
+  block,
+  id,
+  portalContainer,
+  ...props
+}: ButtonDropdownPanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
-  const { popoverProps } = usePopover({ popoverRef, shouldFlip: false, isNonModal: true, ...props }, state);
-  const { isFocused, focusProps } = useFocusRing();
+  const { popoverProps } = usePopover(
+    { popoverRef, shouldFlip: false, isNonModal: true, shouldCloseOnInteractOutside: () => false, ...props },
+    state,
+  );
+  const { isFocused } = useFocusRing({ autoFocus: true });
   const styles = panelStyles({ isFocused });
   const width = props.triggerRef.current?.getBoundingClientRect().width;
 
@@ -56,16 +67,20 @@ export function ButtonDropdownPanel({ className, children, state, block, id, ...
   }, [clickHandler, focusHandler]);
 
   return (
-    <div
-      {...mergeProps(popoverProps, focusProps)}
-      id={id}
-      style={{ ...popoverProps.style, width: block && width ? `${width}px` : undefined }}
-      ref={popoverRef}
-      className={styles.base({ className })}
-    >
-      <DismissButton onDismiss={() => state.close()} />
-      <div className={styles.dialog()}>{children}</div>
-      <DismissButton onDismiss={() => state.close()} />
-    </div>
+    <Overlay portalContainer={portalContainer}>
+      <FocusScope autoFocus restoreFocus>
+        <div
+          {...popoverProps}
+          id={id}
+          style={{ ...popoverProps.style, width: block && width ? `${width}px` : undefined }}
+          ref={popoverRef}
+          className={styles.base({ className })}
+        >
+          <DismissButton onDismiss={() => state.close()} />
+          <div className={styles.dialog()}>{children}</div>
+          <DismissButton onDismiss={() => state.close()} />
+        </div>
+      </FocusScope>
+    </Overlay>
   );
 }

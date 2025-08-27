@@ -6,7 +6,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'items-center justify-center rounded transition-[background] disabled:pointer-events-none disabled:opacity-50 group-first/add-on-before:rounded-r-none group-last/add-on-after:rounded-l-none',
+      base: 'items-center justify-center rounded border transition-[background] disabled:pointer-events-none disabled:opacity-50 group-first/add-on-before:h-auto group-first/add-on-before:rounded-r-none group-last/add-on-after:h-auto group-last/add-on-after:rounded-l-none',
       iconBefore: '',
       iconAfter: '',
       dropdown: 'ml-[0.4em]',
@@ -15,29 +15,34 @@ export const styles = tv(
     variants: {
       size: {
         small: {
-          base: 'typography-body-10 h-5 px-1.5 active-theme-rams:before:h-[0.0625rem]',
+          base: 'active-theme-rams:before:h-[0.0625rem] typography-body-10 h-5 px-1.5',
         },
         medium: {
-          base: 'typography-body-9 h-6 px-2 active-theme-rams:before:h-0.5',
+          base: 'active-theme-rams:before:h-0.5 typography-body-9 h-6 px-2',
         },
         large: {
-          base: 'typography-body-9 h-7 px-2.5 active-theme-rams:before:h-0.5',
+          base: 'active-theme-rams:before:h-0.5 typography-body-9 h-7 px-2.5',
         },
         xlarge: {
-          base: 'typography-body-8 h-8 px-3 active-theme-rams:before:h-1',
+          base: 'active-theme-rams:before:h-1 typography-body-8 h-8 px-3',
         },
       },
       look: {
         primary: {
-          base: 'relative border border-primary bg-primary text-white hover:bg-primary-70 active:bg-primary-50 active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-pop',
+          base: 'active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop relative border-border-primary bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-active-primary',
         },
-        hero: { base: 'border border-hero bg-hero text-white hover:bg-hero-70 active:bg-hero-50' },
-        faint: { base: 'border border-borderDark bg-light text-muted hover:bg-white active:bg-white' },
-        link: { base: 'text-link underline' },
-        unstyled: { base: 'p-0 text-left' },
+        hero: {
+          base: 'border-border-hero bg-surface-hero text-text-mono hover:bg-surface-hover-hero active:bg-surface-active-hero',
+        },
+        faint: {
+          base: 'border-border-muted-strong bg-surface-muted-pale text-text-muted hover:bg-surface-hover-mono active:bg-surface-active-mono',
+        },
+        link: { base: 'border-0 text-text-link underline hover:no-underline' },
+        unstyled: { base: 'border-none p-0 text-left' },
       },
       soft: {
-        true: { base: 'bg-white' },
+        true: {},
+        false: {},
       },
       block: {
         true: { base: 'flex w-full' },
@@ -59,19 +64,21 @@ export const styles = tv(
         slots: ['base'],
         look: 'primary',
         soft: true,
-        className: 'text-text hover:text-white active-theme-rams:text-primary active-theme-rams:hover:text-white',
+        className:
+          'active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono border-border-primary bg-background-white-pale text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-active-primary-faint',
       },
       {
         slots: ['base'],
         look: 'hero',
         soft: true,
-        className: 'text-text hover:text-white',
+        className:
+          'border-border-hero bg-background-white-pale text-text-body hover:bg-surface-hover-hero-faint active:bg-surface-active-hero-faint',
       },
       {
         slots: ['base'],
         look: 'faint',
         soft: true,
-        className: 'hover:bg-light active:bg-light',
+        className: 'bg-background-white-pale hover:bg-surface-hover-muted-pale active:bg-surface-active-muted-pale',
       },
       {
         slots: ['iconBefore'],

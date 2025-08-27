@@ -7,24 +7,24 @@ export const styles = tv(
       icon: 'float-left flex-none',
       body: 'relative flex-1 overflow-hidden xsl:top-[0.125rem] [&_a]:underline',
       heading: 'typography-body-9 mb-1 font-bold',
-      close: 'absolute right-0.5 top-0.5 h-5.5 p-1 hover:opacity-80',
+      close: 'absolute right-0.5 top-0.5 h-5.5 p-1',
     },
     variants: {
       look: {
         info: {
-          base: 'text-info',
+          base: 'text-text-info',
         },
         success: {
-          base: 'text-success',
+          base: 'text-text-success',
         },
         warning: {
-          base: 'text-warning',
+          base: 'text-text-warning',
         },
         danger: {
-          base: 'text-danger',
+          base: 'text-text-danger',
         },
         system: {
-          base: 'text-black',
+          base: 'text-text-system-error',
         },
       },
       mode: {
@@ -67,31 +67,31 @@ export const styles = tv(
         slots: ['base'],
         look: 'info',
         mode: 'box',
-        className: 'border-info-50 bg-info-5',
+        className: 'border-border-info-mild bg-surface-info-faint',
       },
       {
         slots: ['base'],
         look: 'success',
         mode: 'box',
-        className: 'border-success-50 bg-success-5',
+        className: 'border-border-success-mild bg-surface-success-faint',
       },
       {
         slots: ['base'],
         look: 'warning',
         mode: 'box',
-        className: 'border-warning-50 bg-warning-5',
+        className: 'border-border-warning-mild bg-surface-warning-faint',
       },
       {
         slots: ['base'],
         look: 'danger',
         mode: 'box',
-        className: 'border-danger-50 bg-danger-5',
+        className: 'border-border-danger-mild bg-surface-danger-faint',
       },
       {
         slots: ['base'],
         look: 'system',
         mode: 'box',
-        className: 'border-system bg-system',
+        className: 'border-y-0 bg-surface-system-error',
       },
       {
         slots: ['base'],

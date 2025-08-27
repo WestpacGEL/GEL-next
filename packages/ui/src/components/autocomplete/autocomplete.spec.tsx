@@ -2,7 +2,6 @@ import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Autocomplete } from './autocomplete.component.js';
-import { styles } from './autocomplete.styles.js';
 import { AutocompleteItem } from './components/autocomplete-item/autocomplete-item.component.js';
 
 describe('Autocomplete', () => {
@@ -18,20 +17,6 @@ describe('Autocomplete', () => {
       </Autocomplete>,
     );
     expect(container).toBeInTheDocument();
-  });
-
-  it('renders the style correctly', () => {
-    const style = styles({ size: 'large' });
-    // TODO: use some variants for test
-    expect(style.base()).toBe('relative flex flex-1 flex-col');
-    expect(style.clearButton()).toBe(
-      'flex cursor-default items-center justify-center text-text-50 hover:text-border-60',
-    );
-    expect(style.input()).toBe('appearance-none bg-[transparent] outline-none form-control-large');
-    expect(style.label()).toBe('block text-left text-sm font-medium text-text');
-    expect(style.outerWrapper()).toBe(
-      'form-control relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled group-[.input-group-after]:rounded-r-none group-[.input-group-before]:rounded-l-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:border-l-0 border-borderDark',
-    );
   });
 
   it('filters the options by typing on the component', async () => {

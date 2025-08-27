@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="wbc">
+    <html lang="en" data-theme="wbc-light">
       <body>
         <main className="m-auto max-w-[1923px] overscroll-y-none border border-y-0 border-border">
           <SidebarContextProvider>
