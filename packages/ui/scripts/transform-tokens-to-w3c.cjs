@@ -488,13 +488,23 @@ async function saveJSONToFile(filename, data) {
   }
 }
 
+async function createFolder(folderPath) {
+  try {
+    await fs.mkdir(folderPath, { recursive: true });
+    console.log('Folder created:', folderPath);
+  } catch (err) {
+    console.error('Error creating folder:', err);
+  }
+}
+const DIST_FOLDER = './dist';
+createFolder(`${DIST_FOLDER}/w3c-tokens`);
 // Generate final resolved theme tree
 const finalThemes = normalizeValues(generateThemes(primaryTokens, modeTokens, themes));
 Object.entries(finalThemes).forEach(([themeKey, theme]) => {
-  saveJSONToFile(`./w3c-tokens/${themeKey}.json`, theme);
+  saveJSONToFile(`${DIST_FOLDER}/w3c-tokens/${themeKey}.json`, theme);
 });
 
 const flattenColorsFinalThemes = flattenColorThemes(finalThemes);
 Object.entries(flattenColorsFinalThemes).forEach(([themeKey, theme]) => {
-  saveJSONToFile(`./w3c-tokens/${themeKey}-flatten.json`, theme);
+  saveJSONToFile(`${DIST_FOLDER}/w3c-tokens/${themeKey}-flatten.json`, theme);
 });

@@ -16,6 +16,12 @@
     ".": {
       "default": "./dist/index.js"
     },
+    "./w3c-tokens/*": {
+      "default": "./dist/w3c-tokens/*.json"
+    },
+    "./flattened-tokens.json": {
+      "default": "./dist/flattened-tokens.json"
+    },
     "./component-type.json": {
       "default": "./dist/component-type.json"
     },
@@ -214,7 +220,8 @@
     "build:watch": "pnpm clean && pnpm build:types && pnpm build:esm -w && pnpm build:css:all",
     "build:type-table": "node generate-component-types.cjs",
     "build:svg-zip": "node --loader ts-node/esm ./utils/build-svg-zip/index.ts",
-    "build": "pnpm clean && pnpm build:types && pnpm build:esm && pnpm build:css:all && pnpm build:type-table",
+    "build:tokens": "node ./scripts/flatten-tokens-script.cjs && node ./scripts/transform-tokens-to-w3c.cjs",
+    "build": "pnpm clean && pnpm build:types && pnpm build:esm && pnpm build:css:all && pnpm build:type-table && pnpm build:tokens",
     "check-types": "tsc --noemit --emitDeclarationOnly false",
     "lint": "eslint \"./src/**/*.{ts,tsx,js,jsx}\"",
     "lint:fix": "eslint \"./src/**/*.{ts,tsx,js,jsx}\" --fix",

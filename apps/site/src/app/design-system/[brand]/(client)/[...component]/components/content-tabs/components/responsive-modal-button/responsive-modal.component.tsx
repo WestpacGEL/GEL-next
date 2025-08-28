@@ -32,7 +32,7 @@ export function ResponsiveModal({ children, state, ...props }: ResponsiveModalPr
             </div>
           </div>
           <div className="relative flex-1 overflow-auto">
-            <div className="relative z-10">{children}</div>
+            <div className="relative z-10 py-7">{children}</div>
             <div className="pointer-events-none absolute inset-0 touch-none">
               <Grid className="absolute inset-0">
                 {new Array(12).fill(null).map((_, index) => (
