@@ -7,18 +7,13 @@ import { useThemeMode } from '@/hooks/theme-mode.hook';
 
 // eslint-disable-next-line sonarjs/function-return-type
 export default function DesignSystemLayout({ children }: { children: ReactNode }) {
-  const { getSystemPreference, setMode } = useDarkMode();
+  const { setMode } = useDarkMode();
+  const { mode } = useThemeMode();
 
   useEffect(() => {
-    const { mode } = useThemeMode.getState();
-    if (mode === 'system') {
-      const systemPreference = getSystemPreference();
-      setMode(systemPreference);
-      return;
-    }
     setMode(mode);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [mode]);
 
   return children;
 }

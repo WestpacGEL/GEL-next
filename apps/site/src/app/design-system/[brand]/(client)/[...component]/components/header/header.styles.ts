@@ -31,13 +31,13 @@ export const styles = tv(
           base: 'bg-[url(/imgs/backgrounds/bsa-background.svg),_linear-gradient(to_right,#002f6c,#00adbd)] bg-cover',
         },
         rams: {
-          base: 'bg-heading',
+          base: 'bg-surface-hero',
         },
         stg: {
-          base: 'bg-heading bg-[url(/imgs/backgrounds/stg-background.svg)] bg-cover',
+          base: 'bg-surface-hero bg-[url(/imgs/backgrounds/stg-background.svg)] bg-cover',
         },
         wbc: {
-          base: 'bg-primary bg-[url(/imgs/backgrounds/wbc-background.svg)] bg-contain bg-right-bottom bg-no-repeat',
+          base: 'bg-surface-primary bg-[url(/imgs/backgrounds/wbc-background.svg)] bg-contain bg-right-bottom bg-no-repeat',
           title: 'uppercase',
         },
       },
