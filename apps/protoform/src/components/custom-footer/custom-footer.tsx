@@ -11,7 +11,7 @@ export function CustomFooter() {
   return (
     <Footer
       brand="wbc"
-      className={clsx('relative bottom-0 z-10 w-full border-t-border bg-white pb-0', {
+      className={clsx('relative bottom-0 z-10 w-full border-t-border-muted-soft bg-white pb-0', {
         'md:w-[calc(100%-301px)]': open,
       })}
       hideLogo

@@ -68,7 +68,7 @@ export const Default: Story = {
           </FormSection>
         </Form>
 
-        <hr className="my-4 border-t border-t-border" />
+        <hr className="my-4 border-t border-t-border-muted-soft" />
 
         <h2 className="typography-body-7 my-4 font-bold text-text-body">Large size with large spacing</h2>
         <Form spacing="large">

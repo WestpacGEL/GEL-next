@@ -9,7 +9,7 @@ The date picker can be used in various sizes to match the UI direction.
     { label: 'XLarge', size: 'xlarge' },
   ];
   return sizes.map(({ label, size }) => (
-    <div className="py-4 border-t border-t-border first:border-t-0" key={size}>
+    <div className="py-4 border-t border-t-border-muted-soft first:border-t-0" key={size}>
       <ComponentTitle>{label}</ComponentTitle>
       <DatePicker size={size} />
     </div>
