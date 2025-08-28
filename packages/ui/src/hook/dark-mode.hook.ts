@@ -32,7 +32,7 @@ export function useDarkMode() {
       const themeWithoutMode = getTheme()?.replace('-light', '').replace('-dark', '');
       getBrandContainer()?.setAttribute('data-theme', `${themeWithoutMode}-${mode}`);
     },
-    [getTheme],
+    [getBrandContainer, getTheme],
   );
 
   const toggleDarkMode = useCallback(() => {

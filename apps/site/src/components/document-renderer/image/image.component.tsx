@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { useMemo } from 'react';
 
+import { useThemeMode } from '@/hooks/theme-mode.hook';
+
 import { styles as imageStyles } from './image.style';
 import { type ImageProps } from './image.types';
-
-import { useThemeMode } from '@/hooks/theme-mode.hook';
 
 export const Image = ({ alt, src, darkModeSrc, title, className }: ImageProps) => {
   const { mode } = useThemeMode();
