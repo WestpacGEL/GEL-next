@@ -2,17 +2,14 @@
 
 ```tsx
 () => {
-  const [inputs, setInputs] = useState({});
-
-  const handleChange = e => {
-    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const [items, setItems] = useState([{ primary: '', secondary: '', tertiary: '' }]);
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ primary: '', accountNumber: '', amount: 0 }] },
+  });
+  const items = watch('items');
 
   const handleAdd = useCallback(() => {
-    setItems([...items, { primary: '', secondary: '', tertiary: '' }]);
-  }, [items]);
+    setValue('items', [...items, { primary: '', accountNumber: '', amount: 0 }]);
+  }, [items, setValue]);
 
   return (
     <Form>
@@ -20,21 +17,14 @@
         {items.map((item, index) => (
           <CompactaItem
             key={index}
-            title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
+            title={{ primary: item.primary, secondary: item.accountNumber, tertiary: item.amount }}
             onRemove={() => {
-              setItems([...items.slice(0, index), ...items.slice(index + 1)]);
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
             }}
           >
             <FormGroup>
-              <Field
-                label="Primary"
-                hintMessage="Select your card insitution"
-              >
-                <Select
-                  name={`input-primary`}
-                  onChange={e => {}}
-                  width={30}
-                >
+              <Field label="Primary" hintMessage="Select your card insitution">
+                <Select onChange={e => {}} width={30} {...register(`items.${index}.primary`)}>
                   <option>Select</option>
                   <option>AMP Bank</option>
                   <option>ANZ - Australia and New Zealand Banking Group</option>
@@ -48,26 +38,13 @@
               </Field>
             </FormGroup>
             <FormGroup>
-              <Field
-                label="Account number"
-                hintMessage="Refer to a statement from the card’s financial institution"
-              >
-                <Input
-                  name={`input-secondary`}
-                  onChange={e => {}}
-                  width={30}
-                />
+              <Field label="Account number" hintMessage="Refer to a statement from the card’s financial institution">
+                <Input onChange={e => {}} width={30} {...register(`items.${index}.accountNumber`)} />
               </Field>
             </FormGroup>
             <FormGroup>
-              <InputGroup
-                name={`input-tertiary`}
-                onChange={e => {}}
-                width={20}
-                before="$"
-                label="Amount to transfer"
-              >
-                <Input  />
+              <InputGroup onChange={e => {}} width={20} before="$" label="Amount to transfer">
+                <Input {...register(`items.${index}.amount`, { valueAsNumber: true })} />
               </InputGroup>
             </FormGroup>
           </CompactaItem>

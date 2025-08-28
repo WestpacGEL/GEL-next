@@ -8,7 +8,7 @@ export const styles = tv(
       button:
         'relative flex h-11 cursor-pointer flex-row items-stretch overflow-hidden pl-3 pr-4 shadow-sm outline-none',
       popover: '-ml-2 w-[18.75rem]',
-      iconWrapper: 'border-l-border-muted-soft text-text-primary flex items-center border-l pl-4',
+      iconWrapper: 'flex items-center border-l border-l-border-muted-soft pl-4 text-text-primary',
       textWrapper: 'flex flex-1 items-center pr-2',
     },
     variants: {

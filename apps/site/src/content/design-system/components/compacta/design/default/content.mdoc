@@ -2,10 +2,14 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
 
 ```tsx
 () => {
-  const [items, setItems] = useState([{ primary: '', secondary: '', tertiary: '' }]);
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ primary: '', secondary: '', tertiary: '' }] },
+  });
+  const items = watch('items');
+
   const handleAdd = useCallback(() => {
-    setItems([...items, { primary: '', secondary: '', tertiary: '' }]);
-  }, [items]);
+    setValue('items', [...items, { primary: '', secondary: '', tertiary: '' }]);
+  }, [items, setValue]);
 
   return (
     <Form>
@@ -15,23 +19,23 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
             key={index}
             title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
             onRemove={() => {
-              setItems([...items.slice(0, index), ...items.slice(index + 1)]);
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
             }}
           >
             <FormGroup>
-              <FormLabel htmlFor={`primary[${index}]`}>Primary</FormLabel>
+              <FormLabel htmlFor={`primary.${index}.primary`}>Primary</FormLabel>
               <FormHint id={`primary-hint`}>Primary title text</FormHint>
-              <Input aria-describedby={`primary-hint`} />
+              <Input aria-describedby={`primary-hint`} {...register(`items.${index}.primary`)} />
             </FormGroup>
             <FormGroup>
-              <FormLabel htmlFor={`secondary[${index}]`}>Secondary</FormLabel>
+              <FormLabel htmlFor={`secondary.${index}.secondary`}>Secondary</FormLabel>
               <FormHint id={`secondary-hint`}>Secondary title text</FormHint>
-              <Input aria-describedby={`secondary-hint`} />
+              <Input aria-describedby={`secondary-hint`} {...register(`items.${index}.secondary`)} />
             </FormGroup>
             <FormGroup>
-              <FormLabel htmlFor={`tertiary[${index}]`}>Tertiary</FormLabel>
+              <FormLabel htmlFor={`tertiary.${index}.tertiary`}>Tertiary</FormLabel>
               <FormHint id={`tertiary-hint`}>Tertiary title text</FormHint>
-              <Input aria-describedby={`tertiary-hint`} id={`tertiary`} />
+              <Input aria-describedby={`tertiary-hint`} id={`tertiary`} {...register(`items.${index}.tertiary`)} />
             </FormGroup>
           </CompactaItem>
         ))}

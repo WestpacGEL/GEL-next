@@ -67,7 +67,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
     <>
       <div
         className={clsx(
-          'bg-background-white-pale text-text-body lg:border-r-border-muted-soft fixed top-0 z-[1010] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r',
+          'fixed top-0 z-[1010] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 bg-background-white-pale text-text-body transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r lg:border-r-border-muted-soft',
           {
             '-translate-x-full': !open, //hide sidebar to the left when closed
           },
@@ -82,7 +82,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
         >
           <div
             className={clsx(
-              'bg-background-white-pale sticky top-0 transition-shadow delay-0 duration-200 ease-[ease]',
+              'sticky top-0 bg-background-white-pale transition-shadow delay-0 duration-200 ease-[ease]',
               {
                 'shadow-[0_2px_5px_rgba(0,0,0,0.3)]': scrolled,
               },
@@ -93,7 +93,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
               onClick={() => setOpen(false)}
               ref={focusRef}
             >
-              <CloseIcon className="text-text-muted block" />
+              <CloseIcon className="block text-text-muted" />
             </button>
             <Link
               href="/"
@@ -102,7 +102,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
             >
               <Logo brand={brand} />
             </Link>
-            <div className="border-b-border-muted-soft border-b">
+            <div className="border-b border-b-border-muted-soft">
               <SidebarSelect selectedKey={brand} onSelectionChange={handleChange} aria-label="Change brand">
                 {BANK_OPTIONS.map(({ icon: Icon, designSystemPageClasses, key, label }) => (
                   <SidebarSelect.Option key={key} textValue={label}>

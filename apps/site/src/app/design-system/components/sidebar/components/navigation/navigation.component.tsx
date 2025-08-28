@@ -19,7 +19,7 @@ export function Navigation({ items, brand }: NavigationProps) {
   const path = usePathname();
   const crumbs = path.split('/');
   return (
-    <ul className="text-text-body typography-body-10">
+    <ul className="typography-body-10 text-text-body">
       <Item label="Home" level={0} path="" crumbs={crumbs} brand={brand} />
       <List items={items} crumbs={crumbs} brand={brand} />
     </ul>

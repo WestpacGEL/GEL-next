@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const itemStyles = tv({
-  base: 'hover:bg-surface-hover-muted-pale flex flex-row items-center py-2.5 pr-5 !outline-offset-[-2px] transition-[background] duration-200 ease-[ease] focus-visible:focus-outline ',
+  base: 'flex flex-row items-center py-2.5 pr-5 !outline-offset-[-2px] transition-[background] duration-200 ease-[ease] hover:bg-surface-hover-muted-pale focus-visible:focus-outline ',
   variants: {
     level: {
       '0': 'pl-6',
@@ -16,7 +16,7 @@ export const itemStyles = tv({
       true: 'text-text-muted',
     },
     active: {
-      true: 'text-text-primary font-bold',
+      true: 'font-bold text-text-primary',
     },
   },
 });

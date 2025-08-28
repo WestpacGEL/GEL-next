@@ -48,22 +48,22 @@ export function CodeContent({
                   {description}
                 </p>
               )}
-              <div className="border-border-info-mild rounded-xl border">
-                <table className="bg-surface-info-faint text-text-info typography-body-11 table w-full rounded-xl">
+              <div className="rounded-xl border border-border-info-mild">
+                <table className="typography-body-11 table w-full rounded-xl bg-surface-info-faint text-text-info">
                   <tbody>
                     <tr>
-                      <th className="border-border-info-mild w-10 border-b p-3 text-left font-semibold">Version</th>
-                      <td className="border-border-info-mild border-b p-3 text-right">
+                      <th className="w-10 border-b border-border-info-mild p-3 text-left font-semibold">Version</th>
+                      <td className="border-b border-border-info-mild p-3 text-right">
                         {westpacUIInfo?.currentVersion}
                       </td>
                     </tr>
                     <tr>
-                      <th className="border-border-info-mild w-10 border-b p-3 text-left font-semibold">History</th>
-                      <td className="border-border-info-mild border-b p-3 text-right">
+                      <th className="w-10 border-b border-border-info-mild p-3 text-left font-semibold">History</th>
+                      <td className="border-b border-border-info-mild p-3 text-right">
                         <Button
                           tag="a"
                           size="small"
-                          className="text-text-info p-0 leading-none"
+                          className="p-0 leading-none text-text-info"
                           look="link"
                           target="_blank"
                           href={westpacUIInfo?.changelog || '#'}
@@ -123,7 +123,7 @@ export function CodeContent({
         );
       })}
       {componentProps && (
-        <section className="border-t-border-muted-soft bg-background-white-pale border-t py-7 sm:pb-10 sm:pt-15">
+        <section className="border-t border-t-border-muted-soft bg-background-white-pale py-7 sm:pb-10 sm:pt-15">
           <Container>
             <Heading level={2} className="!mb-4 sm:!mb-7">
               Props

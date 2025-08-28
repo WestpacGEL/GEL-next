@@ -35,7 +35,7 @@ export function ComponentPropsTable({ className, componentProps, ...props }: Com
                 <TableCell className="w-1/12">{key}</TableCell>
                 <TableCell className="w-1/12">
                   {type && (
-                    <Badge tag="code" color="faint" className="bg-surface-muted-pale whitespace-normal text-left">
+                    <Badge tag="code" color="faint" className="whitespace-normal bg-surface-muted-pale text-left">
                       {type}
                     </Badge>
                   )}

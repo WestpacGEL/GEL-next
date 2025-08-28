@@ -87,7 +87,7 @@ export function LiveCode({
         {enableLiveCode && (
           <div className={styles.buttonWrapper({})}>
             <button
-              className="border-l-border-muted-soft typography-body-10 flex items-center gap-1 border-l p-3 transition-opacity hover:opacity-100 focus-visible:focus-outline"
+              className="typography-body-10 flex items-center gap-1 border-l border-l-border-muted-soft p-3 transition-opacity hover:opacity-100 focus-visible:focus-outline"
               ref={liveCodeToggleButton}
               onClick={() => toggleIsCodeVisible(state => !state)}
               aria-controls={codeId}

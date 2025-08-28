@@ -30,7 +30,7 @@ export const Logos = () => {
 
   return (
     <div>
-      <div className="border-border-muted-soft bg-background-white-pale mb-4 rounded-md border p-4">
+      <div className="mb-4 rounded-md border border-border-muted-soft bg-background-white-pale p-4">
         <Grid>
           <GridItem span={{ initial: 12, sm: 6 }}>
             <div className="flex flex-col items-start sm:flex-row sm:items-center">
@@ -51,13 +51,13 @@ export const Logos = () => {
       </div>
       <Grid>
         <GridItem span={12}>
-          <p className="text-text-muted text-right italic">{foundText}</p>
+          <p className="text-right italic text-text-muted">{foundText}</p>
         </GridItem>
         {filteredLogos.map(({ key, Logo }) => (
           <GridItem key={key} span={{ initial: 12, sm: 6, md: 4, lg: 3 }} className="flex">
-            <div className="border-border-muted-soft bg-background-white-pale mb-2 flex grow flex-col items-center justify-center rounded-md border px-2 pb-3 pt-6 xsl:mb-4">
+            <div className="mb-2 flex grow flex-col items-center justify-center rounded-md border border-border-muted-soft bg-background-white-pale px-2 pb-3 pt-6 xsl:mb-4">
               <Logo className="mb-6 grow" />
-              <span className="text-text-muted text-[0.6875rem]">{key}</span>
+              <span className="text-[0.6875rem] text-text-muted">{key}</span>
             </div>
           </GridItem>
         ))}

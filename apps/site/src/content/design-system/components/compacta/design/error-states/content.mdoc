@@ -2,11 +2,12 @@ When a user attempts to progress through the form, errors are captured at this p
 
 ```tsx
 () => {
-  const [items, setItems] = useState([{ primary: '', secondary: '', tertiary: '' }]);
+  const { register, watch, setValue } = useForm<Inputs>({ defaultValues: { items: [{ primary: '', accountNumber: '', amount: 0 }] } });
+  const items = watch('items');
 
   const handleAdd = useCallback(() => {
-    setItems([...items, { primary: '', secondary: '', tertiary: '' }]);
-  }, [items]);
+    setValue('items', [...items, { primary: '', accountNumber: '', amount: 0 }]);
+  }, [items, setValue]);
 
   return (
     <Form>
@@ -14,9 +15,9 @@ When a user attempts to progress through the form, errors are captured at this p
         {items.map((item, index) => (
           <CompactaItem
             key={index}
-            title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
+            title={{ primary: item.primary, secondary: item.accountNumber, tertiary: item.amount }}
             onRemove={() => {
-              setItems([...items.slice(0, index), ...items.slice(index + 1)]);
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
             }}
           >
             <FormGroup>
@@ -26,10 +27,10 @@ When a user attempts to progress through the form, errors are captured at this p
                 errorMessage="If there is an error it can go here"
               >
                 <Select
-                  name={`input-primary`}
                   onChange={e => {}}
                   width={30}
                   invalid
+                  {...register(`items.${index}.primary`)}
                 >
                   <option>Select</option>
                   <option>AMP Bank</option>
@@ -50,16 +51,15 @@ When a user attempts to progress through the form, errors are captured at this p
                 errorMessage="If there is an error it can go here"
               >
                 <Input
-                  name={`input-secondary`}
                   onChange={e => {}}
                   width={30}
                   invalid
+                  {...register(`items.${index}.accountNumber`)}
                 />
               </Field>
             </FormGroup>
             <FormGroup>
               <InputGroup
-                name={`input-tertiary`}
                 onChange={e => {}}
                 width={20}
                 invalid
@@ -67,7 +67,7 @@ When a user attempts to progress through the form, errors are captured at this p
                 before="$"
                 label="Amount to transfer"
               >
-                <Input invalid />
+                <Input {...register(`items.${index}.amount`, { valueAsNumber: true })} invalid />
               </InputGroup>
             </FormGroup>
           </CompactaItem>
