@@ -1,0 +1,22 @@
+{
+  "name": "@westpac/tailwind-config",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./shared-styles.css",
+    "./theme-wbc": "./theme/theme-wbc.css",
+    "./theme-stg": "./theme/theme-stg.css",
+    "./postcss": "./postcss.config.js"
+  },
+  "devDependencies": {
+    "handlebars": "~4.7.8",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.5"
+  },
+  "scripts": {
+    "build:w3c": "node transformers/w3c.cjs",
+    "build:css": "node transformers/css.cjs",
+    "build:tailwind": "node transformers/colors.cjs"
+  }
+}
