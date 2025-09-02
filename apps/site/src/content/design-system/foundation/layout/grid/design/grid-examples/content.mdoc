@@ -3,7 +3,7 @@
 This 3 column layout stacks on xs* (each column takes up full width) but on the other breakpoints it adapts to different widths.
 
 ```tsx
-<div className="relative">
+<div className="relative py-7">
   <Grid>
     <GridItem span={12} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column A
@@ -28,7 +28,7 @@ This 3 column layout stacks on xs* (each column takes up full width) but on the 
 This 3 column layout stacks on xs* (each column takes up full width) but on the other breakpoints it adapts to different widths.
 
 ```tsx
-<div className="relative">
+<div className="relative py-7">
   <Grid>
     <GridItem span={{ initial: 4, md: 12 }} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column 12 at MD
@@ -50,7 +50,7 @@ This 3 column layout stacks on xs* (each column takes up full width) but on the 
 Columns can be nested inside columns to achieve greater complexity and structure the page. In effect, each column can be sub-divided into further 12 columns. The nested columns align to their own 12 col grid based on the width of the parent column.
 
 ```tsx
-<div className="relative">
+<div className="relative py-7">
   <Grid>
     <GridItem span={12} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column A
@@ -78,7 +78,7 @@ Columns can be nested inside columns to achieve greater complexity and structure
 If a pull-right class is added to the first column it will be the top most column when stacked but displays at the far right on larger views. On xs the source order is honoured.
 
 ```tsx
-<div className="relative">
+<div className="relative py-7">
   <Grid>
     <GridItem span={4} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column A
@@ -103,7 +103,7 @@ If a pull-right class is added to the first column it will be the top most colum
 Columns can be offset to create empty space.
 
 ```tsx
-<div className="relative">
+<div className="relative py-7">
   <Grid>
     <GridItem start={2} span={11} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column A

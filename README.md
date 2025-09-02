@@ -184,6 +184,37 @@ Update the `jest.config.js` file if you have initialized your project with [Nx b
 }
 ```
 
+### Codemods
+
+Codemods are provided to help migrate your codebase when GEL introduces breaking changes or API updates.
+
+#### Running a codemod
+
+We use [jscodeshift](https://github.com/facebook/jscodeshift) to run codemods.  
+To apply a codemod, install `jscodeshift` if you don’t already have it:
+
+```bash
+npm install -g jscodeshift
+```
+
+Then run the codemod against your source files. For example:
+
+```bash
+npx jscodeshift -t ./codemods/update-date-picker.js src/
+```
+
+-t points to the codemod file.
+
+src/ is the folder you want to transform (adjust as needed).
+
+Example
+
+```bash
+npx jscodeshift -t https://raw.githubusercontent.com/WestpacGEL/GEL-next/refs/heads/main/packages/ui/scripts/update-tokens-codemod.cjs "to/your/files/**/*.tsx"
+```
+
+This will apply the update-pagination codemod to all .tsx files in your project.
+
 ## Documentation
 
 Visit [https://gel.westpacgroup.com.au/design-system](https://gel.westpacgroup.com.au/design-system) to view the full documentation.

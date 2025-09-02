@@ -32,13 +32,13 @@ const SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'] as const;
  */
 export const Standalone = () => (
   <div className="space-y-1">
-    <h1 className="font-bold">Default</h1>
+    <h1 className="font-bold text-text-body">Default</h1>
     <Link href="#">Look I&#39;m a standalone link</Link>
-    <h1 className="font-bold">Icon Before override</h1>
+    <h1 className="font-bold text-text-body">Icon Before override</h1>
     <Link href="#" iconBefore={PdfFileIcon}>
       Look I&#39;m a standalone link
     </Link>
-    <h1 className="font-bold">Icon Before override</h1>
+    <h1 className="font-bold text-text-body">Icon Before override</h1>
     <Link href="#" iconAfter={ArrowRightIcon}>
       Look I&#39;m a standalone link
     </Link>
@@ -50,7 +50,7 @@ export const Standalone = () => (
  */
 export const Inline = () => (
   <div className="space-y-1">
-    <p className="typography-body-10">
+    <p className="typography-body-10 text-text-body">
       Lorem ipsum dolor{' '}
       <Link href="#" type="inline">
         look, I&#39;m an inline link
@@ -58,7 +58,7 @@ export const Inline = () => (
       sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
       doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
     </p>
-    <p className="typography-body-10">
+    <p className="typography-body-10 text-text-body">
       Lorem ipsum dolor{' '}
       <Link href="#" type="inline" underline={false}>
         look, I&#39;m an inline link with no underline
@@ -66,7 +66,7 @@ export const Inline = () => (
       sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
       doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
     </p>
-    <p className="typography-body-10">
+    <p className="typography-body-10 text-text-body">
       Lorem ipsum dolor{' '}
       <Link href="#" type="inline" iconBefore={PdfFileIcon}>
         look, I&#39;m an inline link
@@ -74,7 +74,7 @@ export const Inline = () => (
       sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
       doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
     </p>
-    <p className="typography-body-10">
+    <p className="typography-body-10 text-text-body">
       Lorem ipsum dolor{' '}
       <Link href="#" type="inline" iconAfter={PdfFileIcon}>
         look, I&#39;m an inline link
@@ -99,7 +99,7 @@ export const IconSizes = () => (
         <Link href="#" iconSize={size} iconBefore={PdfFileIcon} iconAfter={PdfFileIcon}>
           Look I&#39;m a standalone link
         </Link>
-        <p className="typography-body-10">
+        <p className="typography-body-10 text-text-body">
           Lorem ipsum dolor{' '}
           <Link href="#" type="inline" iconSize={size} iconBefore={PdfFileIcon} iconAfter={PdfFileIcon}>
             look, I&#39;m an inline link

@@ -121,6 +121,18 @@ brands.forEach(brand => {
   flattenedTokens[brand] = tempModeObj;
 });
 
+function createFolder(folderPath) {
+  if (!fs.existsSync(folderPath)) {
+    fs.mkdirSync(folderPath, { recursive: true });
+    console.log('Folder created:', folderPath);
+  } else {
+    console.log('Folder already exists:', folderPath);
+  }
+}
+
 const outputPath = path.resolve(__dirname, '../flattened-tokens.json');
+const distFolderPath = path.resolve(__dirname, '../dist/flattened-tokens.json');
+createFolder(path.resolve(__dirname, '../dist'));
 
 fs.writeFileSync(outputPath, JSON.stringify(flattenedTokens, null, 2));
+fs.writeFileSync(distFolderPath, JSON.stringify(flattenedTokens, null, 2));
