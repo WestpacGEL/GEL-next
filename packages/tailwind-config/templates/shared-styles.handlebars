@@ -3,10 +3,22 @@
 /* Manually setting the dark variant selector */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-/* Set the default values for the color tokens to avoid unresolved references on initial load, falling back to wbc */
+/* Set the default values for the color tokens to avoid unresolved references on initial load, falling back to wbc
+- Decide on appropriate default fallback scenario...
+  - scenarios
+    - data-brand is not present
+    - data-brand is present but theme is not included so var(--x) will resolve to nothing
+*/
+
 @layer theme {
   :root,
   :host {
+    /* Reserved colors */
+    {{#each reserved}}
+    --{{@key}}: {{this}};
+    {{/each}}
+
+    /* Fallback colors */
     --surface-primary: #da1710;
   }
 }
@@ -29,13 +41,16 @@
   }
 }
 
-/* Reserved colors, scoped to global */
-/* Should this be inline too? */
-@theme {
-  --color-green-500: #008000;
-}
+/* Tailwind theme variables  */
+/* TODO
+    - double check use of inline and static 
+    - add 
+        - border 
+        - font/typography
+        - breakpoints/container
+        - spacing
 
-/* double check use of inline and static */
+*/
 @theme inline static {
     {{#each light}}
     --color-{{@key}}: var(--{{@key}});

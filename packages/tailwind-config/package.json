@@ -16,7 +16,6 @@
   },
   "scripts": {
     "build:w3c": "node transformers/w3c.cjs",
-    "build:css": "node transformers/css.cjs",
-    "build:tailwind": "node transformers/colors.cjs"
+    "build:css": "node transformers/css.cjs"
   }
 }
