@@ -61,7 +61,16 @@ export function AccordionItem<T = HTMLElement>({
                 }}
                 transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }}
               >
-                <div className={styles.content()}>{item.props.children}</div>
+                <div
+                  className={styles.content()}
+                  // TODO: Remove below with updated accordion that uses disclosure as the issue doesn't happen with that version
+                  // Need to call stopPropagation here as some events from children are bubbling up and focusing the accordion i.e. inputs
+                  onBlur={e => {
+                    e.stopPropagation();
+                  }}
+                >
+                  {item.props.children}
+                </div>
               </m.div>
             )}
           </AnimatePresence>
