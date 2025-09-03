@@ -4,6 +4,7 @@ import { type VariantProps } from 'tailwind-variants';
 import { IconProps } from '../icon/index.js';
 
 import { styles } from './button.styles.js';
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -14,7 +15,7 @@ export type ButtonProps = {
    * Fit button width to its parent width.
    * @default false
    */
-  block?: Variants['block'];
+  block?: ResponsiveVariants<Variants['block']>;
   /**
    * Badge body content
    */
@@ -53,16 +54,16 @@ export type ButtonProps = {
    * Button look
    * @default hero
    */
-  look?: Variants['look'];
+  look?: ResponsiveVariants<Variants['look']>;
   /**
    * Size of the button
    * @default medium
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
   /**
    * Removes background colour and adjusts text colour.
    */
-  soft?: Variants['soft'];
+  soft?: ResponsiveVariants<Variants['soft']>;
   /**
    * Tag to render
    * @default button

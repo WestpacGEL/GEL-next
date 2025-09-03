@@ -16,6 +16,9 @@
     ".": {
       "default": "./dist/index.js"
     },
+    "./utils": {
+      "default": "./dist/utils/index.js"
+    },
     "./w3c-tokens/*": {
       "default": "./dist/w3c-tokens/*.json"
     },
