@@ -2,6 +2,7 @@ import { AriaCheckboxProps } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './switch.styles.js';
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -9,7 +10,7 @@ export type SwitchProps = {
   /**
    * Whether to display switch as block
    */
-  block?: Variants['block'];
+  block?: ResponsiveVariants<Variants['block']>;
   /**
    * Default checked
    */
@@ -25,5 +26,5 @@ export type SwitchProps = {
   /**
    * Size of switch
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
 } & Omit<AriaCheckboxProps, 'children'>;

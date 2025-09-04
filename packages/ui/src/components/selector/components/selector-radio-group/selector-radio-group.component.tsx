@@ -9,6 +9,8 @@ import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { styles } from './selector-radio-group.styles.js';
 import { type SelectorRadioGroupContextState, type SelectorRadioGroupProps } from './selector-radio-group.types.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 export const SelectorRadioGroupContext = createContext<SelectorRadioGroupContextState>({
   orientation: 'vertical',
@@ -79,9 +81,11 @@ export function SelectorRadioGroup({
   description,
   ...props
 }: SelectorRadioGroupProps) {
-  const state = useRadioGroupState({ ...props, errorMessage, label, orientation });
+  const breakpoint = useBreakpoint();
+  const resolvedOrientation = resolveResponsiveVariant(orientation, breakpoint);
+  const state = useRadioGroupState({ ...props, errorMessage, label, orientation: resolvedOrientation });
   const { radioGroupProps, labelProps, errorMessageProps, descriptionProps } = useRadioGroup(
-    { ...props, label, orientation },
+    { ...props, label, orientation: resolvedOrientation },
     state,
   );
 
@@ -90,8 +94,8 @@ export function SelectorRadioGroup({
       {label && <Label {...labelProps}>{label}</Label>}
       {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
-      <div className={styles({ className, orientation })} {...radioGroupProps}>
-        <SelectorRadioGroupContext.Provider value={{ state, orientation }}>
+      <div className={styles({ className, orientation: resolvedOrientation })} {...radioGroupProps}>
+        <SelectorRadioGroupContext.Provider value={{ state, orientation: resolvedOrientation }}>
           {children}
         </SelectorRadioGroupContext.Provider>
       </div>

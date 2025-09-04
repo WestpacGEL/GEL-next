@@ -3,6 +3,7 @@ import { AriaFieldProps } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './selector-button-group.styles.js';
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -14,7 +15,7 @@ export type SelectorButtonGroupProps = {
   /**
    * Orientation of radio
    */
-  orientation?: Variants['orientation'];
+  orientation?: ResponsiveVariants<Variants['orientation']>;
   /**
    * Tag to render
    */

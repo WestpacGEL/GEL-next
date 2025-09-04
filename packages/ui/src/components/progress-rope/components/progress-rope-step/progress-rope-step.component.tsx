@@ -5,6 +5,8 @@ import { Circle, VisuallyHidden } from '../../../index.js';
 
 import { styles as progressRopeStyles } from './progress-rope-step.styles.js';
 import { type ProgressRopeStepProps } from './progress-rope-step.types.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 /**
  * @private
@@ -42,11 +44,12 @@ export function ProgressRopeStep({
     return 'non-visited';
   }, [current, lastItemInRope, visited]);
   const { isFocusVisible, focusProps } = useFocusRing();
+  const breakpoint = useBreakpoint();
 
   const styles = progressRopeStyles({
     className,
     state,
-    size,
+    size: resolveResponsiveVariant(size, breakpoint),
     firstItem,
     lastItemInGroup,
     lastItemInRope: lastItemInRope && !previousStepGroup,

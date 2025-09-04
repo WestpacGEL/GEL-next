@@ -5,6 +5,8 @@ import { Label } from '../label/label.component.js';
 
 import { styles as ProgressIndicatorStyles } from './progress-indicator.styles.js';
 import { ProgressIndicatorProps } from './progress-indicator.types.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function ProgressIndicator({
   color = 'hero',
@@ -15,9 +17,10 @@ export function ProgressIndicator({
   'aria-label': ariaLabel = 'Loading',
   ...props
 }: ProgressIndicatorProps) {
+  const breakpoint = useBreakpoint();
   const styles = ProgressIndicatorStyles({
-    size,
-    color,
+    size: resolveResponsiveVariant(size, breakpoint),
+    color: resolveResponsiveVariant(color, breakpoint),
   });
 
   const id = useId();

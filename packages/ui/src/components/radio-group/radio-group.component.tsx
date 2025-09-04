@@ -11,6 +11,8 @@ import { ErrorMessage, Hint, Label, RadioGroupRadio } from '../index.js';
 
 import { styles as radioGroupStyles } from './radio-group.styles.js';
 import { type RadioGroupContextState, type RadioGroupProps } from './radio-group.types.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export const RadioGroupContext = createContext<RadioGroupContextState>({
   orientation: 'vertical',
@@ -83,16 +85,19 @@ export function RadioGroup({
   hintMessage,
   ...props
 }: RadioGroupProps) {
-  const state = useRadioGroupState({ ...props, label, orientation });
+  const breakpoint = useBreakpoint();
+  const resolvedOrientation = resolveResponsiveVariant(orientation, breakpoint);
+  const resolvedSize = resolveResponsiveVariant(size, breakpoint);
+  const state = useRadioGroupState({ ...props, label, orientation: resolvedOrientation });
   const { radioGroupProps, labelProps, errorMessageProps, descriptionProps } = useRadioGroup(
-    { ...props, label, orientation },
+    { ...props, label, orientation: resolvedOrientation },
     state,
   );
   const { isFocusVisible, focusProps } = useFocusRing();
   const [hiddenOptions, setHiddenOptions] = useState<boolean>(showAmount > 0);
   const firstNewRadioRef = useRef<HTMLLabelElement>(null);
   const revealAmount = radios && radios.length - showAmount;
-  const styles = radioGroupStyles({ orientation, isFocusVisible });
+  const styles = radioGroupStyles({ orientation: resolvedOrientation, isFocusVisible });
   const panelId = useId();
   const childrenToRender = useMemo(() => {
     const newChildren = radios.map((radio, index) => (
@@ -114,7 +119,9 @@ export function RadioGroup({
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       <div className={styles.radioWrapper()} id={panelId}>
-        <RadioGroupContext.Provider value={{ state, orientation, size }}>{childrenToRender}</RadioGroupContext.Provider>
+        <RadioGroupContext.Provider value={{ state, orientation: resolvedOrientation, size: resolvedSize }}>
+          {childrenToRender}
+        </RadioGroupContext.Provider>
         {hiddenOptions && (
           <Button
             onClick={() => setHiddenOptions(false)}

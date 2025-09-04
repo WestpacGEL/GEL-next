@@ -8,6 +8,8 @@ import { CloseIcon } from '../../../icon/index.js';
 import { usePanel } from './panel.hook.js';
 import { styles as panelStyles } from './panel.styles.js';
 import { type PanelProps } from './panel.types.js';
+import { resolveResponsiveVariant } from 'src/utils/breakpoint.util.js';
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 export function BasePanel({
   state,
@@ -21,9 +23,11 @@ export function BasePanel({
 }: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
-  const { popoverPosition, arrowPosition } = usePanel({ state, placement, triggerRef, portal });
+  const breakpoint = useBreakpoint();
+  const resolvedPlacement = resolveResponsiveVariant(placement, breakpoint);
+  const { popoverPosition, arrowPosition } = usePanel({ state, placement: resolvedPlacement, triggerRef, portal });
 
-  const styles = panelStyles({ placement });
+  const styles = panelStyles({ placement: resolvedPlacement });
   return (
     <FocusScope autoFocus restoreFocus>
       <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef}>

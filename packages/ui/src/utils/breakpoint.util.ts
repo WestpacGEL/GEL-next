@@ -14,9 +14,9 @@ export function resolveResponsiveVariant<T = any>(
   variant: Partial<Record<Breakpoint | 'initial', T>> | T,
   breakpoint: Breakpoint | 'initial',
 ) {
-  if (typeof variant !== 'object') {
-    return variant;
-  }
+  // if (typeof variant !== 'object') {
+  //   return variant as T;
+  // }
   const finalBreakpoint = ensureBreakpoint(
     Object.keys(variant as Record<Breakpoint | 'initial', T>) as (Breakpoint | 'initial')[],
     breakpoint,

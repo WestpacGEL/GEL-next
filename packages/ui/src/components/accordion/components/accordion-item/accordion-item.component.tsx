@@ -9,8 +9,8 @@ import { ArrowLeftIcon, ArrowRightIcon } from '../../../icon/index.js';
 
 import { styles as accordionItemStyles } from './accordion-item.styles.js';
 import { type AccordionItemProps } from './accordion-item.types.js';
-import { resolveResponsiveVariant } from 'src/utils/breakpoint.util.js';
-import { useBreakpoint } from 'src/hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 const loadAnimations = () => import('./accordion-item.utils.js').then(res => res.default);
 

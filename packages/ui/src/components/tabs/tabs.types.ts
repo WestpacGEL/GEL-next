@@ -4,6 +4,7 @@ import { type VariantProps } from 'tailwind-variants';
 
 import { TabsTabProps } from './components/index.js';
 import { styles } from './tabs.styles.js';
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -23,15 +24,15 @@ export type TabsProps<T = object> = SpectrumTabsProps<T> & {
   /**
    * Look of tabs
    */
-  look?: Variants['look'];
+  look?: ResponsiveVariants<Variants['look']>;
   /**
    * Orientation of tabs
    */
-  orientation?: Variants['orientation'];
+  orientation?: ResponsiveVariants<Variants['orientation']>;
   /**
    * Sticky
    */
-  sticky?: Variants['sticky'];
+  sticky?: ResponsiveVariants<Variants['sticky']>;
   /**
    * set the offset for the sticky tab
    */

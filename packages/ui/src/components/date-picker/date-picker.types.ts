@@ -6,6 +6,7 @@ import { VariantProps } from 'tailwind-variants';
 import { Breakpoint } from '../../tailwind/constants/index.js';
 
 import { styles } from './date-picker.styles.js';
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -37,4 +38,8 @@ export type DatePickerProps<T extends DateValue = DateValue> = DatePickerStateOp
      * portal container for date picker
      */
     portalContainer?: Element;
+    /**
+     * size
+     */
+    size?: ResponsiveVariants<Variants['size']>;
   };

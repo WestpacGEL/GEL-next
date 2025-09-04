@@ -16,6 +16,7 @@ import { Dialog } from './components/dialog/dialog.component.js';
 import { Popover } from './components/popover/popover.component.js';
 import { styles as datePickerStyles } from './date-picker.styles.js';
 import { type DatePickerProps } from './date-picker.types.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 
 const BREAKPOINTS_DECRECENT = ['xl', 'lg', 'md', 'sm', 'xsl', 'initial'] as const;
 export function DatePicker({
@@ -47,8 +48,13 @@ export function DatePicker({
   }, [disableDaysOfWeek, disableWeekends, isDateUnavailable, locale]);
 
   const state = useDatePickerState({ isDateUnavailable: enhancedIsDateUnavailable, ...props });
-  const styles = datePickerStyles({ size, isInvalid: state.isInvalid, isDisabled: props.isDisabled });
   const breakpoint = useBreakpoint();
+  const resolvedSize = resolveResponsiveVariant(size, breakpoint);
+  const styles = datePickerStyles({
+    size: resolvedSize,
+    isInvalid: state.isInvalid,
+    isDisabled: props.isDisabled,
+  });
   const ref = useRef(null);
 
   const { groupProps, labelProps, fieldProps, buttonProps, dialogProps, calendarProps } = useDatePicker(
@@ -90,7 +96,7 @@ export function DatePicker({
           look="faint"
           className={styles.button()}
           iconColor="muted"
-          size={size}
+          size={resolvedSize}
           iconAfter={CalendarIcon}
           {...newButtonProps}
           aria-labelledby={undefined}

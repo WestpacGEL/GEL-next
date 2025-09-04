@@ -9,6 +9,8 @@ import { ModalDialogBody } from './components/modal-dialog-body/index.js';
 import { ModalDialogFooter } from './components/modal-dialog-footer/index.js';
 import { styles as dialogStyles } from './modal-dialog.styles.js';
 import { ModalDialogContextValue, type ModalDialogProps } from './modal-dialog.types.js';
+import { resolveResponsiveVariant } from 'src/utils/breakpoint.util.js';
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 const ModalDialogContext = createContext<ModalDialogContextValue>({ size: 'md' });
 
@@ -19,7 +21,8 @@ export const useModalDialogContext = () => useContext(ModalDialogContext);
 export function ModalDialog({ className, body, onClose, size = 'md', ...props }: ModalDialogProps) {
   const { children } = props;
   const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = dialogStyles({ size, isFocusVisible });
+  const breakpoint = useBreakpoint();
+  const styles = dialogStyles({ size: resolveResponsiveVariant(size, breakpoint), isFocusVisible });
 
   const ref = useRef(null);
 

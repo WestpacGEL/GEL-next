@@ -4,6 +4,7 @@ import { VariantProps } from 'tailwind-variants';
 import { BadgeProps } from '../index.js';
 
 import { styles } from './flexi-cell.styles.js';
+import type { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -43,7 +44,7 @@ type BaseFlexiCellProps = {
    * Large adds more padding/spacing to the Flex Cell
    * @default default
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
   /**
    * The native tag that flexicell will be rendered
    * @default div
@@ -61,7 +62,7 @@ type BaseFlexiCellProps = {
    * Adds a border radius and a border
    * @default false
    */
-  withBorder?: boolean;
+  withBorder?: ResponsiveVariants<boolean>;
 } & HTMLAttributes<HTMLOrSVGElement>;
 
 type FlexiCellAsLinkProps = {

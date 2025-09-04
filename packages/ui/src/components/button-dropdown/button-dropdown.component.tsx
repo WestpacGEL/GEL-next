@@ -10,6 +10,8 @@ import { DropDownIcon, IconProps } from '../icon/index.js';
 import { styles as buttonDropdownStyles } from './button-dropdown.styles.js';
 import { type ButtonDropdownProps } from './button-dropdown.types.js';
 import { ButtonDropdownPanel } from './components/button-dropdown-panel/button-dropdown-panel.component.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function ButtonDropdown({
   className,
@@ -28,7 +30,11 @@ export function ButtonDropdown({
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const panelId = useId();
-  const styles = buttonDropdownStyles({ block, dropdownSize });
+  const breakpoint = useBreakpoint();
+  const styles = buttonDropdownStyles({
+    block: resolveResponsiveVariant(block, breakpoint),
+    dropdownSize: resolveResponsiveVariant(dropdownSize, breakpoint),
+  });
   const state = useOverlayTriggerState({ defaultOpen: open });
   const { triggerProps, overlayProps } = useOverlayTrigger({ type: 'menu' }, state, ref);
   const { buttonProps } = useButton(triggerProps, ref);

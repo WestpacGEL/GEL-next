@@ -7,6 +7,7 @@ import { HintProps, InputProps } from '../index.js';
 
 import { styles } from './autocomplete.styles.js';
 import { AutocompletePopoverProps } from './components/index.js';
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -58,10 +59,10 @@ export type AutocompleteProps<T extends object> = {
   /**
    * Size of autocomplete
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
   /**
    * Width of autocomplete
    */
-  width?: InputProps['width'];
+  width?: ResponsiveVariants<Variants['width']>;
 } & ComboBoxProps<T> &
   AriaLabelingProps;

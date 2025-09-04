@@ -1,12 +1,8 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv(
-  {
-    base: 'inline-block shrink-0 leading-none',
-    variants: {},
-  },
-  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
-);
+export const styles = tv({
+  base: 'inline-block shrink-0 leading-none',
+});
 
 export const fill = tv({
   base: '',

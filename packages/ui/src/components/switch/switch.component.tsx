@@ -6,6 +6,8 @@ import { useToggleState } from 'react-stately';
 
 import { styles as switchStyles } from './switch.styles.js';
 import { type SwitchProps } from './switch.types.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function Switch({
   className,
@@ -26,7 +28,14 @@ export function Switch({
     ref,
   );
   const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = switchStyles({ block, isFocusVisible, isSelected, isDisabled, size });
+  const breakpoint = useBreakpoint();
+  const styles = switchStyles({
+    block: resolveResponsiveVariant(block, breakpoint),
+    isFocusVisible,
+    isSelected,
+    isDisabled,
+    size: resolveResponsiveVariant(size, breakpoint),
+  });
 
   return (
     <label className={styles.base({ className })} {...labelProps}>

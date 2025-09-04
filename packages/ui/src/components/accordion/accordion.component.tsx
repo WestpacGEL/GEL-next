@@ -11,7 +11,7 @@ import { Item, type ItemProps, TreeProps, useTreeState } from 'react-stately';
 import { styles } from './accordion.styles.js';
 import { type AccordionProps } from './accordion.types.js';
 import { AccordionItem as AccordionItemContent } from './components/index.js';
-import { resolveResponsiveVariant } from 'src/utils/breakpoint.util.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 function Accordion<T extends object>(
