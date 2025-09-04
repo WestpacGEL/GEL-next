@@ -5,6 +5,7 @@ import { type VariantProps } from 'tailwind-variants';
 import { ButtonProps } from '../button/index.js';
 
 import { styles } from './button-dropdown.styles.js';
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -16,7 +17,7 @@ export type ButtonDropdownProps = {
   /**
    * Size of the dropdown panel
    */
-  dropdownSize?: Variants['dropdownSize'];
+  dropdownSize?: ResponsiveVariants<Variants['dropdownSize']>;
   /**
    * Look for button
    */
