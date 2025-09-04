@@ -12,7 +12,7 @@ const withThemeProvider: Decorator = (Story, context) => {
   // workaround for modal
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      document.querySelector('html')?.setAttribute('data-theme', theme.toLowerCase());
+      document.querySelector('html')?.setAttribute('data-brand', theme.toLowerCase());
     }
   }, [theme]);
   // Note: Not using padding for grid demos as it affects the proper grid visuals i.e. breakpoints, paddings, margins etc.

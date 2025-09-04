@@ -4,9 +4,9 @@
   "type": "module",
   "private": true,
   "exports": {
-    ".": "./shared-styles.css",
-    "./theme-wbc": "./theme/theme-wbc.css",
-    "./theme-stg": "./theme/theme-stg.css",
+    ".": "./styles.css",
+    "./theme-wbc": "./themes/theme-wbc.css",
+    "./theme-stg": "./themes/theme-stg.css",
     "./postcss": "./postcss.config.js"
   },
   "devDependencies": {
