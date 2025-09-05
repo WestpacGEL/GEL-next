@@ -46,14 +46,14 @@ export function StickyFooter() {
         <span className="hidden text-text-body sm:mr-3 sm:inline-block">Talk to us</span>
         <div className={styles.icons()}>
           <Link href="mailto:gel@westpac.com.au" className="outline-offset-[3px] outline-focus">
-            <EmailIcon />
+            <EmailIcon color="muted" />
           </Link>
           <Link
             target="_blank"
             href="https://github.com/WestpacGEL/GEL-next"
             className="outline-offset-[3px] outline-focus"
           >
-            <GithubIcon />
+            <GithubIcon color="muted" />
           </Link>
         </div>
       </div>

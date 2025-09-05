@@ -1,0 +1,8 @@
+name: Border tokens
+description: >-
+  Description for border tokens
+design:
+  - title:
+      name: Title
+      slug: title
+accessibility: []
