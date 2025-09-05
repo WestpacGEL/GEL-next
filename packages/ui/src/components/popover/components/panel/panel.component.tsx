@@ -8,7 +8,7 @@ import { CloseIcon } from '../../../icon/index.js';
 import { usePanel } from './panel.hook.js';
 import { styles as panelStyles } from './panel.styles.js';
 import { type PanelProps } from './panel.types.js';
-import { resolveResponsiveVariant } from 'src/utils/breakpoint.util.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 export function BasePanel({

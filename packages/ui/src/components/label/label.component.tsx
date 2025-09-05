@@ -4,7 +4,7 @@ import { VisuallyHidden } from '../index.js';
 
 import { styles } from './label.styles.js';
 import { type LabelProps } from './label.types.js';
-import { resolveResponsiveVariant } from 'src/utils/breakpoint.util.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function Label({

@@ -1,17 +1,13 @@
-import { SpectrumAccordionProps } from '@react-types/accordion';
 import { HTMLAttributes } from 'react';
+import { DisclosureGroupProps } from 'react-stately';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './accordion.styles.js';
 import { AccordionItemProps } from './components/index.js';
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
-type Variants = VariantProps<typeof styles>;
-export type AccordionProps<T = HTMLElement> = SpectrumAccordionProps<T> & {
-  /**
-   * <AccordionItem /> as a collection
-   */
-  children?: SpectrumAccordionProps<T>['children'];
+export type Variants = VariantProps<typeof styles>;
+export type AccordionProps = {
   /**
    * Stretch the tab to fill the whole content
    * @default false
@@ -21,10 +17,11 @@ export type AccordionProps<T = HTMLElement> = SpectrumAccordionProps<T> & {
    * The look of the accordion
    * @default soft
    */
-  look?: AccordionItemProps['look'];
+  look?: ResponsiveVariants<AccordionItemProps['look']>;
   /**
    * Whether the accordion is rounded
    * @default true
    */
   rounded?: ResponsiveVariants<Variants['rounded']>;
-} & Omit<HTMLAttributes<HTMLDivElement>, 'color'>;
+} & Omit<DisclosureGroupProps, 'allowsMultipleExpanded'> &
+  Omit<HTMLAttributes<HTMLDivElement>, 'color'>;

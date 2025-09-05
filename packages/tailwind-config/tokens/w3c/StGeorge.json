@@ -1,0 +1,2920 @@
+{
+  "light-mode": {
+    "color": {
+      "background": {
+        "background-pale-black": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              245,
+              245,
+              244
+            ],
+            "alpha": 1,
+            "hex": "#f5f5f4"
+          },
+          "$description": "Use for screen backgrounds to establish correct emphasis:  Pale in Light Mode,  Black in Dark Mode"
+        },
+        "background-white-black": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 1,
+            "hex": "#ffffff"
+          },
+          "$description": "Use for screen backgrounds to establish correct emphasis: White in Light Mode, Black in Dark Mode"
+        },
+        "background-white-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 1,
+            "hex": "#ffffff"
+          },
+          "$description": "All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode."
+        },
+        "background-pale-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              245,
+              245,
+              244
+            ],
+            "alpha": 1,
+            "hex": "#f5f5f4"
+          },
+          "$description": "Use for screen backgrounds to establish correct emphasis: Pale in Light Mode, Faint in Dark Mode"
+        },
+        "background-white-pale": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 1,
+            "hex": "#ffffff"
+          },
+          "$description": "All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode."
+        }
+      },
+      "surface": {
+        "surface-mono": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 1,
+            "hex": "#ffffff"
+          },
+          "$description": "Use surface-mono when you want to switch from white to black."
+        },
+        "surface-muted-vivid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              23,
+              23,
+              23
+            ],
+            "alpha": 1,
+            "hex": "#171717"
+          },
+          "$description": "Use for icons that need to be text colour."
+        },
+        "surface-muted": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              114,
+              113,
+              99
+            ],
+            "alpha": 1,
+            "hex": "#727163"
+          },
+          "$description": "Muted is now slightly lighter but remains accessible in all required scenarios."
+        },
+        "surface-muted-strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              141,
+              140,
+              129
+            ],
+            "alpha": 1,
+            "hex": "#8d8c81"
+          },
+          "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed."
+        },
+        "surface-muted-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              178,
+              178,
+              174
+            ],
+            "alpha": 1,
+            "hex": "#b2b2ae"
+          },
+          "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed."
+        },
+        "surface-muted-soft": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              225,
+              225,
+              224
+            ],
+            "alpha": 1,
+            "hex": "#e1e1e0"
+          },
+          "$description": "This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed."
+        },
+        "surface-muted-pale": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              245,
+              245,
+              244
+            ],
+            "alpha": 1,
+            "hex": "#f5f5f4"
+          },
+          "$description": "This colour is used for backgrounds"
+        },
+        "surface-muted-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              249,
+              249,
+              249
+            ],
+            "alpha": 1,
+            "hex": "#f9f9f9"
+          },
+          "$description": "This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes."
+        },
+        "surface-primary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              227,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#e30000"
+          }
+        },
+        "surface-primary-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              254,
+              242,
+              242
+            ],
+            "alpha": 1,
+            "hex": "#fef2f2"
+          },
+          "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines."
+        },
+        "surface-hero": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              135,
+              57
+            ],
+            "alpha": 1,
+            "hex": "#008739"
+          }
+        },
+        "surface-hero-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              225,
+              246,
+              228
+            ],
+            "alpha": 1,
+            "hex": "#e1f6e4"
+          },
+          "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines."
+        },
+        "surface-pop": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              120,
+              190,
+              32
+            ],
+            "alpha": 1,
+            "hex": "#78be20"
+          },
+          "$description": "This colour should be used very sparingly. It is for embellishment only."
+        },
+        "surface-pop-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              248,
+              252,
+              244
+            ],
+            "alpha": 1,
+            "hex": "#f8fcf4"
+          },
+          "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines."
+        },
+        "surface-holler": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              63,
+              195,
+              235
+            ],
+            "alpha": 1,
+            "hex": "#3fc3eb"
+          },
+          "$description": "This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand."
+        },
+        "surface-holler-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              245,
+              252,
+              254
+            ],
+            "alpha": 1,
+            "hex": "#f5fcfe"
+          },
+          "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines."
+        },
+        "surface-sing": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              80,
+              45,
+              121
+            ],
+            "alpha": 1,
+            "hex": "#502d79"
+          },
+          "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "surface-sing-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              246,
+              245,
+              248
+            ],
+            "alpha": 1,
+            "hex": "#f6f5f8"
+          },
+          "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "surface-dance": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              127,
+              41
+            ],
+            "alpha": 1,
+            "hex": "#ff7f29"
+          },
+          "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "surface-dance-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              249,
+              244
+            ],
+            "alpha": 1,
+            "hex": "#fff9f4"
+          },
+          "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "surface-success": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              128,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#008000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the success messaging component."
+        },
+        "surface-success-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              242,
+              249,
+              242
+            ],
+            "alpha": 1,
+            "hex": "#f2f9f2"
+          },
+          "$description": "This is a reserved colour. It must only be used for the success messaging component."
+        },
+        "surface-info": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              116,
+              196
+            ],
+            "alpha": 1,
+            "hex": "#0074c4"
+          },
+          "$description": "This is a reserved colour. It must only be used for the info messaging component."
+        },
+        "surface-info-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              242,
+              248,
+              252
+            ],
+            "alpha": 1,
+            "hex": "#f2f8fc"
+          },
+          "$description": "This is a reserved colour. It must only be used for the info messaging component."
+        },
+        "surface-warning": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              197,
+              59,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#c53b00"
+          },
+          "$description": "This is a reserved colour. It must only be used for the warning messaging component."
+        },
+        "surface-warning-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              252,
+              245,
+              242
+            ],
+            "alpha": 1,
+            "hex": "#fcf5f2"
+          },
+          "$description": "This is a reserved colour. It must only be used for the warning messaging component."
+        },
+        "surface-danger": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              196,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#c40000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the danger messaging component."
+        },
+        "surface-danger-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              252,
+              242,
+              242
+            ],
+            "alpha": 1,
+            "hex": "#fcf2f2"
+          },
+          "$description": "This is a reserved colour. It must only be used for the danger messaging component."
+        },
+        "surface-system-error": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              255,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#ffff00"
+          },
+          "$description": "This is a reserved colour. It must only be used for the system error messaging component."
+        },
+        "surface-system-error-dark": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              64,
+              64,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#404000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the system error messaging component."
+        }
+      },
+      "text": {
+        "text-body": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              72,
+              51
+            ],
+            "alpha": 1,
+            "hex": "#004833"
+          },
+          "$description": "Use for body text, button labels, form labels etc. Can also be used for headings if required."
+        },
+        "text-heading": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              115,
+              48
+            ],
+            "alpha": 1,
+            "hex": "#007330"
+          },
+          "$description": "Use for headings to ensure that multi-brand switching remains accurate."
+        },
+        "text-muted": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              114,
+              113,
+              99
+            ],
+            "alpha": 1,
+            "hex": "#727163"
+          },
+          "$description": "Use for text that needs less emphasis - Hint text, sub labels etc."
+        },
+        "text-primary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              227,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#e30000"
+          },
+          "$description": "This is not currently used in the Design System."
+        },
+        "text-hero": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              135,
+              57
+            ],
+            "alpha": 1,
+            "hex": "#008739"
+          },
+          "$description": "This is not currently used in the Design System"
+        },
+        "text-holler": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              63,
+              195,
+              235
+            ],
+            "alpha": 1,
+            "hex": "#3fc3eb"
+          },
+          "$description": "This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand."
+        },
+        "text-link": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              227,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#e30000"
+          },
+          "$description": "Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance."
+        },
+        "text-success": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              128,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#008000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the success messaging component."
+        },
+        "text-info": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              116,
+              196
+            ],
+            "alpha": 1,
+            "hex": "#0074c4"
+          },
+          "$description": "This is a reserved colour. It must only be used for the info messaging component."
+        },
+        "text-warning": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              197,
+              59,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#c53b00"
+          },
+          "$description": "This is a reserved colour. It must only be used for the warning messaging component."
+        },
+        "text-danger": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              196,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#c40000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the danger messaging component."
+        },
+        "text-system-error": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              64,
+              64,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#404000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the system error messaging component."
+        },
+        "text-mono": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 1,
+            "hex": "#ffffff"
+          },
+          "$description": "This colour is used for text on solid backgrounds. Buttons, panels etc."
+        }
+      },
+      "border": {
+        "border-muted": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              114,
+              113,
+              99
+            ],
+            "alpha": 1,
+            "hex": "#727163"
+          },
+          "$description": "This border colour is not currently used in the Design System."
+        },
+        "border-muted-strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              141,
+              140,
+              129
+            ],
+            "alpha": 1,
+            "hex": "#8d8c81"
+          },
+          "$description": "This colour replaces the old \"BorderDark\". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements."
+        },
+        "border-muted-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              178,
+              178,
+              174
+            ],
+            "alpha": 1,
+            "hex": "#b2b2ae"
+          },
+          "$description": "This border colour is not currently used in the Design System. Accessibility is not guaranteed."
+        },
+        "border-muted-soft": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              225,
+              225,
+              224
+            ],
+            "alpha": 1,
+            "hex": "#e1e1e0"
+          },
+          "$description": "This colour replaces the old \"Border\". It can be used for borders and design embellishment that does not have to be accessible."
+        },
+        "border-hero": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              135,
+              57
+            ],
+            "alpha": 1,
+            "hex": "#008739"
+          },
+          "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines."
+        },
+        "border-primary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              227,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#e30000"
+          },
+          "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines."
+        },
+        "border-pop": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              120,
+              190,
+              32
+            ],
+            "alpha": 1,
+            "hex": "#78be20"
+          },
+          "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines."
+        },
+        "border-holler": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              63,
+              195,
+              235
+            ],
+            "alpha": 1,
+            "hex": "#3fc3eb"
+          },
+          "$description": "This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand."
+        },
+        "border-sing": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              80,
+              45,
+              121
+            ],
+            "alpha": 1,
+            "hex": "#502d79"
+          },
+          "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "border-dance": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              127,
+              41
+            ],
+            "alpha": 1,
+            "hex": "#ff7f29"
+          },
+          "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "border-success": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              128,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#008000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the success messaging component."
+        },
+        "border-success-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              71,
+              164,
+              71
+            ],
+            "alpha": 1,
+            "hex": "#47a447"
+          },
+          "$description": "This is a reserved colour. It must only be used for the success messaging component."
+        },
+        "border-info": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              116,
+              196
+            ],
+            "alpha": 1,
+            "hex": "#0074c4"
+          },
+          "$description": "This is a reserved colour. It must only be used for the info messaging component."
+        },
+        "border-info-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              69,
+              154,
+              212
+            ],
+            "alpha": 1,
+            "hex": "#459ad4"
+          },
+          "$description": "This is a reserved colour. It must only be used for the info messaging component."
+        },
+        "border-warning": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              197,
+              59,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#c53b00"
+          },
+          "$description": "This is a reserved colour. It must only be used for the warning messaging component."
+        },
+        "border-warning-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              215,
+              120,
+              79
+            ],
+            "alpha": 1,
+            "hex": "#d7784f"
+          },
+          "$description": "This is a reserved colour. It must only be used for the warning messaging component."
+        },
+        "border-danger": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              196,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#c40000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the danger messaging component."
+        },
+        "border-danger-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              219,
+              99,
+              99
+            ],
+            "alpha": 1,
+            "hex": "#db6363"
+          },
+          "$description": "This is a reserved colour. It must only be used for the danger messaging component."
+        },
+        "border-mono": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 1,
+            "hex": "#ffffff"
+          },
+          "$description": "This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements."
+        },
+        "border-focus": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              169,
+              228,
+              246
+            ],
+            "alpha": 1,
+            "hex": "#a9e4f6"
+          },
+          "$description": "This is a reserved colour. It must only be used for the focus state keyboard navigation."
+        }
+      },
+      "data": {
+        "data-a-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              227,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#e30000"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-a-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              248,
+              191,
+              191
+            ],
+            "alpha": 1,
+            "hex": "#f8bfbf"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-a-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              227,
+              0,
+              0
+            ],
+            "alpha": 0.3,
+            "hex": "#e300004d"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-b-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              135,
+              57
+            ],
+            "alpha": 1,
+            "hex": "#008739"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-b-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              47,
+              168,
+              84
+            ],
+            "alpha": 1,
+            "hex": "#2fa854"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-b-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              135,
+              57
+            ],
+            "alpha": 0.45,
+            "hex": "#00873973"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-c-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              120,
+              190,
+              32
+            ],
+            "alpha": 1,
+            "hex": "#78be20"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-c-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              188,
+              223,
+              144
+            ],
+            "alpha": 1,
+            "hex": "#bcdf90"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-c-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              120,
+              190,
+              32
+            ],
+            "alpha": 0.45,
+            "hex": "#78be2073"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-d-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              63,
+              195,
+              235
+            ],
+            "alpha": 1,
+            "hex": "#3fc3eb"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-d-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              207,
+              240,
+              250
+            ],
+            "alpha": 1,
+            "hex": "#cff0fa"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-d-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              63,
+              195,
+              235
+            ],
+            "alpha": 0.3,
+            "hex": "#3fc3eb4d"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-e-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              80,
+              45,
+              121
+            ],
+            "alpha": 1,
+            "hex": "#502d79"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-e-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              168,
+              150,
+              188
+            ],
+            "alpha": 1,
+            "hex": "#a896bc"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-e-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              80,
+              45,
+              121
+            ],
+            "alpha": 0.3,
+            "hex": "#502d794d"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-f-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              127,
+              41
+            ],
+            "alpha": 1,
+            "hex": "#ff7f29"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-f-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              191,
+              148
+            ],
+            "alpha": 1,
+            "hex": "#ffbf94"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-f-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              127,
+              41
+            ],
+            "alpha": 0.4,
+            "hex": "#ff7f2966"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        }
+      },
+      "pictogram": {
+        "surface-pictogram-base": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              72,
+              51
+            ],
+            "alpha": 1,
+            "hex": "#004833"
+          },
+          "$description": "This is a reserved component colour token. It must only be used for Pictograms."
+        },
+        "surface-pictogram-accent": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              120,
+              190,
+              32
+            ],
+            "alpha": 1,
+            "hex": "#78be20"
+          },
+          "$description": "This is a reserved component colour token. It must only be used for Pictograms."
+        }
+      },
+      "state": {
+        "surface-hover-primary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              234,
+              64,
+              64
+            ],
+            "alpha": 1,
+            "hex": "#ea4040"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-active-primary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              248,
+              191,
+              191
+            ],
+            "alpha": 1,
+            "hex": "#f8bfbf"
+          }
+        },
+        "surface-hover-hero": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              33,
+              157,
+              75
+            ],
+            "alpha": 1,
+            "hex": "#219d4b"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-active-hero": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              47,
+              168,
+              84
+            ],
+            "alpha": 1,
+            "hex": "#2fa854"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-hover-primary-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              254,
+              242,
+              242
+            ],
+            "alpha": 1,
+            "hex": "#fef2f2"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-active-primary-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              252,
+              230,
+              230
+            ],
+            "alpha": 1,
+            "hex": "#fce6e6"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-hover-hero-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              225,
+              246,
+              228
+            ],
+            "alpha": 1,
+            "hex": "#e1f6e4"
+          }
+        },
+        "surface-active-hero-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              203,
+              238,
+              210
+            ],
+            "alpha": 1,
+            "hex": "#cbeed2"
+          }
+        },
+        "surface-hover-muted-pale": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              245,
+              245,
+              244
+            ],
+            "alpha": 1,
+            "hex": "#f5f5f4"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-active-muted-pale": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              178,
+              178,
+              174
+            ],
+            "alpha": 1,
+            "hex": "#b2b2ae"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-hover-mono": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              255,
+              255
+            ],
+            "alpha": 1,
+            "hex": "#ffffff"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-active-mono": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              225,
+              225,
+              224
+            ],
+            "alpha": 1,
+            "hex": "#e1e1e0"
+          },
+          "$description": "This token is for hover states."
+        }
+      }
+    },
+    "border": {
+      "radius": {
+        "none": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "sm": {
+          "$type": "dimension",
+          "$value": {
+            "value": 4,
+            "unit": "px"
+          }
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": {
+            "value": 12,
+            "unit": "px"
+          }
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": {
+            "value": 24,
+            "unit": "px"
+          }
+        },
+        "xl": {
+          "$type": "dimension",
+          "$value": {
+            "value": 99,
+            "unit": "px"
+          }
+        },
+        "full": {
+          "$type": "dimension",
+          "$value": {
+            "value": 99,
+            "unit": "px"
+          }
+        }
+      }
+    }
+  },
+  "dark-mode": {
+    "color": {
+      "background": {
+        "background-pale-black": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#000000"
+          },
+          "$description": "Use for screen backgrounds to establish correct emphasis:  Pale in Light Mode,  Black in Dark Mode"
+        },
+        "background-white-black": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#000000"
+          },
+          "$description": "Use for screen backgrounds to establish correct emphasis: White in Light Mode, Black in Dark Mode"
+        },
+        "background-white-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              23,
+              23,
+              23
+            ],
+            "alpha": 1,
+            "hex": "#171717"
+          },
+          "$description": "All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode."
+        },
+        "background-pale-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              23,
+              23,
+              23
+            ],
+            "alpha": 1,
+            "hex": "#171717"
+          },
+          "$description": "Use for screen backgrounds to establish correct emphasis: Pale in Light Mode, Faint in Dark Mode"
+        },
+        "background-white-pale": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              36,
+              36,
+              36
+            ],
+            "alpha": 1,
+            "hex": "#242424"
+          },
+          "$description": "All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode."
+        }
+      },
+      "surface": {
+        "surface-mono": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#000000"
+          },
+          "$description": "Use surface-mono when you want to switch from white to black."
+        },
+        "surface-muted-vivid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              249,
+              249,
+              249
+            ],
+            "alpha": 1,
+            "hex": "#f9f9f9"
+          },
+          "$description": "Use for icons that need to be text colour."
+        },
+        "surface-muted": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              141,
+              140,
+              129
+            ],
+            "alpha": 1,
+            "hex": "#8d8c81"
+          },
+          "$description": "Muted is now slightly lighter but remains accessible in all required scenarios."
+        },
+        "surface-muted-strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              94,
+              93,
+              85
+            ],
+            "alpha": 1,
+            "hex": "#5e5d55"
+          },
+          "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed."
+        },
+        "surface-muted-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              76,
+              76,
+              72
+            ],
+            "alpha": 1,
+            "hex": "#4c4c48"
+          },
+          "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed."
+        },
+        "surface-muted-soft": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              57,
+              57,
+              55
+            ],
+            "alpha": 1,
+            "hex": "#393937"
+          },
+          "$description": "This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed."
+        },
+        "surface-muted-pale": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              36,
+              36,
+              36
+            ],
+            "alpha": 1,
+            "hex": "#242424"
+          },
+          "$description": "This colour is used for backgrounds"
+        },
+        "surface-muted-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              23,
+              23,
+              23
+            ],
+            "alpha": 1,
+            "hex": "#171717"
+          },
+          "$description": "This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes."
+        },
+        "surface-primary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              234,
+              64,
+              64
+            ],
+            "alpha": 1,
+            "hex": "#ea4040"
+          }
+        },
+        "surface-primary-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              57,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#390000"
+          },
+          "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines."
+        },
+        "surface-hero": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              47,
+              168,
+              84
+            ],
+            "alpha": 1,
+            "hex": "#2fa854"
+          }
+        },
+        "surface-hero-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              50,
+              36
+            ],
+            "alpha": 1,
+            "hex": "#003224"
+          },
+          "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines."
+        },
+        "surface-pop": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              120,
+              190,
+              32
+            ],
+            "alpha": 1,
+            "hex": "#78be20"
+          },
+          "$description": "This colour should be used very sparingly. It is for embellishment only."
+        },
+        "surface-pop-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              30,
+              48,
+              8
+            ],
+            "alpha": 1,
+            "hex": "#1e3008"
+          },
+          "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines."
+        },
+        "surface-holler": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              111,
+              210,
+              240
+            ],
+            "alpha": 1,
+            "hex": "#6fd2f0"
+          },
+          "$description": "This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand."
+        },
+        "surface-holler-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              16,
+              49,
+              59
+            ],
+            "alpha": 1,
+            "hex": "#10313b"
+          },
+          "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines."
+        },
+        "surface-sing": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              32,
+              18,
+              48
+            ],
+            "alpha": 1,
+            "hex": "#201230"
+          },
+          "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "surface-sing-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              20,
+              11,
+              30
+            ],
+            "alpha": 1,
+            "hex": "#140b1e"
+          },
+          "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "surface-dance": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              127,
+              41
+            ],
+            "alpha": 1,
+            "hex": "#ff7f29"
+          },
+          "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "surface-dance-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              102,
+              51,
+              16
+            ],
+            "alpha": 1,
+            "hex": "#663310"
+          },
+          "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "surface-success": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              36,
+              146,
+              36
+            ],
+            "alpha": 1,
+            "hex": "#249224"
+          },
+          "$description": "This is a reserved colour. It must only be used for the success messaging component."
+        },
+        "surface-success-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              51,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#003300"
+          },
+          "$description": "This is a reserved colour. It must only be used for the success messaging component."
+        },
+        "surface-info": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              36,
+              135,
+              204
+            ],
+            "alpha": 1,
+            "hex": "#2487cc"
+          },
+          "$description": "This is a reserved colour. It must only be used for the info messaging component."
+        },
+        "surface-info-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              46,
+              78
+            ],
+            "alpha": 1,
+            "hex": "#002e4e"
+          },
+          "$description": "This is a reserved colour. It must only be used for the info messaging component."
+        },
+        "surface-warning": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              206,
+              88,
+              38
+            ],
+            "alpha": 1,
+            "hex": "#ce5826"
+          },
+          "$description": "This is a reserved colour. It must only be used for the warning messaging component."
+        },
+        "surface-warning-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              79,
+              24,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#4f1800"
+          },
+          "$description": "This is a reserved colour. It must only be used for the warning messaging component."
+        },
+        "surface-danger": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              219,
+              99,
+              99
+            ],
+            "alpha": 1,
+            "hex": "#db6363"
+          },
+          "$description": "This is a reserved colour. It must only be used for the danger messaging component."
+        },
+        "surface-danger-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              78,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#4e0000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the danger messaging component."
+        },
+        "surface-system-error": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              64,
+              64,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#404000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the system error messaging component."
+        },
+        "surface-system-error-dark": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              255,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#ffff00"
+          },
+          "$description": "This is a reserved colour. It must only be used for the system error messaging component."
+        }
+      },
+      "text": {
+        "text-body": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              225,
+              225,
+              224
+            ],
+            "alpha": 1,
+            "hex": "#e1e1e0"
+          },
+          "$description": "Use for body text, button labels, form labels etc. Can also be used for headings if required."
+        },
+        "text-heading": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              47,
+              168,
+              84
+            ],
+            "alpha": 1,
+            "hex": "#2fa854"
+          },
+          "$description": "Use for headings to ensure that multi-brand switching remains accurate."
+        },
+        "text-muted": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              141,
+              140,
+              129
+            ],
+            "alpha": 1,
+            "hex": "#8d8c81"
+          },
+          "$description": "Use for text that needs less emphasis - Hint text, sub labels etc."
+        },
+        "text-primary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              241,
+              128,
+              128
+            ],
+            "alpha": 1,
+            "hex": "#f18080"
+          },
+          "$description": "This is not currently used in the Design System."
+        },
+        "text-hero": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              118,
+              200,
+              136
+            ],
+            "alpha": 1,
+            "hex": "#76c888"
+          },
+          "$description": "This is not currently used in the Design System"
+        },
+        "text-holler": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              169,
+              228,
+              246
+            ],
+            "alpha": 1,
+            "hex": "#a9e4f6"
+          },
+          "$description": "This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand."
+        },
+        "text-link": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              241,
+              128,
+              128
+            ],
+            "alpha": 1,
+            "hex": "#f18080"
+          },
+          "$description": "Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance."
+        },
+        "text-success": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              71,
+              164,
+              71
+            ],
+            "alpha": 1,
+            "hex": "#47a447"
+          },
+          "$description": "This is a reserved colour. It must only be used for the success messaging component."
+        },
+        "text-info": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              69,
+              154,
+              212
+            ],
+            "alpha": 1,
+            "hex": "#459ad4"
+          },
+          "$description": "This is a reserved colour. It must only be used for the info messaging component."
+        },
+        "text-warning": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              215,
+              120,
+              79
+            ],
+            "alpha": 1,
+            "hex": "#d7784f"
+          },
+          "$description": "This is a reserved colour. It must only be used for the warning messaging component."
+        },
+        "text-danger": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              219,
+              99,
+              99
+            ],
+            "alpha": 1,
+            "hex": "#db6363"
+          },
+          "$description": "This is a reserved colour. It must only be used for the danger messaging component."
+        },
+        "text-system-error": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              255,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#ffff00"
+          },
+          "$description": "This is a reserved colour. It must only be used for the system error messaging component."
+        },
+        "text-mono": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#000000"
+          },
+          "$description": "This colour is used for text on solid backgrounds. Buttons, panels etc."
+        }
+      },
+      "border": {
+        "border-muted": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              114,
+              113,
+              99
+            ],
+            "alpha": 1,
+            "hex": "#727163"
+          },
+          "$description": "This border colour is not currently used in the Design System."
+        },
+        "border-muted-strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              114,
+              113,
+              99
+            ],
+            "alpha": 1,
+            "hex": "#727163"
+          },
+          "$description": "This colour replaces the old \"BorderDark\". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements."
+        },
+        "border-muted-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              76,
+              76,
+              72
+            ],
+            "alpha": 1,
+            "hex": "#4c4c48"
+          },
+          "$description": "This border colour is not currently used in the Design System. Accessibility is not guaranteed."
+        },
+        "border-muted-soft": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              76,
+              76,
+              72
+            ],
+            "alpha": 1,
+            "hex": "#4c4c48"
+          },
+          "$description": "This colour replaces the old \"Border\". It can be used for borders and design embellishment that does not have to be accessible."
+        },
+        "border-hero": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              47,
+              168,
+              84
+            ],
+            "alpha": 1,
+            "hex": "#2fa854"
+          },
+          "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines."
+        },
+        "border-primary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              234,
+              64,
+              64
+            ],
+            "alpha": 1,
+            "hex": "#ea4040"
+          },
+          "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines."
+        },
+        "border-pop": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              66,
+              105,
+              18
+            ],
+            "alpha": 1,
+            "hex": "#426912"
+          },
+          "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines."
+        },
+        "border-holler": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              111,
+              210,
+              240
+            ],
+            "alpha": 1,
+            "hex": "#6fd2f0"
+          },
+          "$description": "This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand."
+        },
+        "border-sing": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              80,
+              45,
+              121
+            ],
+            "alpha": 1,
+            "hex": "#502d79"
+          },
+          "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "border-dance": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              127,
+              41
+            ],
+            "alpha": 1,
+            "hex": "#ff7f29"
+          },
+          "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else."
+        },
+        "border-success": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              128,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#008000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the success messaging component."
+        },
+        "border-success-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              90,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#005a00"
+          },
+          "$description": "This is a reserved colour. It must only be used for the success messaging component."
+        },
+        "border-info": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              116,
+              196
+            ],
+            "alpha": 1,
+            "hex": "#0074c4"
+          },
+          "$description": "This is a reserved colour. It must only be used for the info messaging component."
+        },
+        "border-info-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              81,
+              137
+            ],
+            "alpha": 1,
+            "hex": "#005189"
+          },
+          "$description": "This is a reserved colour. It must only be used for the info messaging component."
+        },
+        "border-warning": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              197,
+              59,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#c53b00"
+          },
+          "$description": "This is a reserved colour. It must only be used for the warning messaging component."
+        },
+        "border-warning-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              138,
+              41,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#8a2900"
+          },
+          "$description": "This is a reserved colour. It must only be used for the warning messaging component."
+        },
+        "border-danger": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              196,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#c40000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the danger messaging component."
+        },
+        "border-danger-mild": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              137,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#890000"
+          },
+          "$description": "This is a reserved colour. It must only be used for the danger messaging component."
+        },
+        "border-mono": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#000000"
+          },
+          "$description": "This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements."
+        },
+        "border-focus": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              111,
+              210,
+              240
+            ],
+            "alpha": 1,
+            "hex": "#6fd2f0"
+          },
+          "$description": "This is a reserved colour. It must only be used for the focus state keyboard navigation."
+        }
+      },
+      "data": {
+        "data-a-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              227,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#e30000"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-a-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              248,
+              191,
+              191
+            ],
+            "alpha": 1,
+            "hex": "#f8bfbf"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-a-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              227,
+              0,
+              0
+            ],
+            "alpha": 0.3,
+            "hex": "#e300004d"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-b-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              47,
+              168,
+              84
+            ],
+            "alpha": 1,
+            "hex": "#2fa854"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-b-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              118,
+              200,
+              136
+            ],
+            "alpha": 1,
+            "hex": "#76c888"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-b-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              135,
+              57
+            ],
+            "alpha": 0.45,
+            "hex": "#00873973"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-c-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              120,
+              190,
+              32
+            ],
+            "alpha": 1,
+            "hex": "#78be20"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-c-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              188,
+              223,
+              144
+            ],
+            "alpha": 1,
+            "hex": "#bcdf90"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-c-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              120,
+              190,
+              32
+            ],
+            "alpha": 0.45,
+            "hex": "#78be2073"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-d-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              63,
+              195,
+              235
+            ],
+            "alpha": 1,
+            "hex": "#3fc3eb"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-d-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              207,
+              240,
+              250
+            ],
+            "alpha": 1,
+            "hex": "#cff0fa"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-d-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              63,
+              195,
+              235
+            ],
+            "alpha": 0.3,
+            "hex": "#3fc3eb4d"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-e-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              80,
+              45,
+              121
+            ],
+            "alpha": 1,
+            "hex": "#502d79"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-e-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              168,
+              150,
+              188
+            ],
+            "alpha": 1,
+            "hex": "#a896bc"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-e-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              80,
+              45,
+              121
+            ],
+            "alpha": 0.3,
+            "hex": "#502d794d"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-f-solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              127,
+              41
+            ],
+            "alpha": 1,
+            "hex": "#ff7f29"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-f-tint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              191,
+              148
+            ],
+            "alpha": 1,
+            "hex": "#ffbf94"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        },
+        "data-f-opacity": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              255,
+              127,
+              41
+            ],
+            "alpha": 0.4,
+            "hex": "#ff7f2966"
+          },
+          "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+        }
+      },
+      "pictogram": {
+        "surface-pictogram-base": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              33,
+              157,
+              75
+            ],
+            "alpha": 1,
+            "hex": "#219d4b"
+          },
+          "$description": "This is a reserved component colour token. It must only be used for Pictograms."
+        },
+        "surface-pictogram-accent": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              154,
+              206,
+              88
+            ],
+            "alpha": 1,
+            "hex": "#9ace58"
+          },
+          "$description": "This is a reserved component colour token. It must only be used for Pictograms."
+        }
+      },
+      "state": {
+        "surface-hover-primary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              248,
+              191,
+              191
+            ],
+            "alpha": 1,
+            "hex": "#f8bfbf"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-active-primary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              252,
+              230,
+              230
+            ],
+            "alpha": 1,
+            "hex": "#fce6e6"
+          }
+        },
+        "surface-hover-hero": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              118,
+              200,
+              136
+            ],
+            "alpha": 1,
+            "hex": "#76c888"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-active-hero": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              203,
+              238,
+              210
+            ],
+            "alpha": 1,
+            "hex": "#cbeed2"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-hover-primary-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              91,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#5b0000"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-active-primary-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              125,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#7d0000"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-hover-hero-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              72,
+              51
+            ],
+            "alpha": 1,
+            "hex": "#004833"
+          }
+        },
+        "surface-active-hero-faint": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              33,
+              157,
+              75
+            ],
+            "alpha": 1,
+            "hex": "#219d4b"
+          }
+        },
+        "surface-hover-muted-pale": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              57,
+              57,
+              55
+            ],
+            "alpha": 1,
+            "hex": "#393937"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-active-muted-pale": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              94,
+              93,
+              85
+            ],
+            "alpha": 1,
+            "hex": "#5e5d55"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-hover-mono": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 1,
+            "hex": "#000000"
+          },
+          "$description": "This token is for hover states."
+        },
+        "surface-active-mono": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              57,
+              57,
+              55
+            ],
+            "alpha": 1,
+            "hex": "#393937"
+          },
+          "$description": "This token is for hover states."
+        }
+      }
+    },
+    "border": {
+      "radius": {
+        "none": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "sm": {
+          "$type": "dimension",
+          "$value": {
+            "value": 4,
+            "unit": "px"
+          }
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": {
+            "value": 12,
+            "unit": "px"
+          }
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": {
+            "value": 24,
+            "unit": "px"
+          }
+        },
+        "xl": {
+          "$type": "dimension",
+          "$value": {
+            "value": 99,
+            "unit": "px"
+          }
+        },
+        "full": {
+          "$type": "dimension",
+          "$value": {
+            "value": 99,
+            "unit": "px"
+          }
+        }
+      }
+    }
+  }
+}

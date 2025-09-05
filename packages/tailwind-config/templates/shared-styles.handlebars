@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+@import './common/common-styles.css';
+
+/* Manually setting the dark variant selector */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Set the default values for the color tokens to avoid unresolved references on initial load, falling back to wbc
+- Decide on appropriate default fallback scenario...
+  - scenarios
+    - data-brand is not present
+    - data-brand is present but theme is not included so var(--x) will resolve to nothing
+*/
+
+@layer theme {
+  :root,
+  :host {
+    /* Reserved colors */
+    {{#each reserved}}
+    --{{@key}}: {{this}};
+    {{/each}}
+
+    /* Fallback colors */
+    --surface-primary: #da1710;
+  }
+}
+
+/* Token definitions  */
+@layer theme {
+  :root,
+  :host {
+    [data-brand] {
+      {{#each light}}
+      --{{@key}}: {{this}};
+      {{/each}}
+
+      @variant dark {
+        {{#each dark}}
+        --{{@key}}: {{this}};
+        {{/each}}
+      }
+    }
+  }
+}
+
+/* Tailwind theme variables  */
+/* TODO
+    - double check use of inline and static 
+    - add 
+        - border 
+        - font/typography
+        - breakpoints/container
+        - spacing
+
+*/
+@theme inline static {
+    {{#each light}}
+    --color-{{@key}}: var(--{{@key}});
+    {{/each}}
+}

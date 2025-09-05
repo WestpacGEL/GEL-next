@@ -1,5 +1,5 @@
 import { HTMLAttributes, ReactNode } from 'react';
-import { Node, TreeState } from 'react-stately';
+import { DisclosureProps } from 'react-stately';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './accordion-item.styles.js';
@@ -7,25 +7,26 @@ import type { ResponsiveVariants } from '../../../../types/responsive-variants.t
 
 type Variants = VariantProps<typeof styles>;
 
-export type AccordionItemProps<T = HTMLElement> = {
+export type AccordionItemProps = {
   /**
    * AccordionItem body content
    */
   children?: ReactNode;
   /**
-   * Node from react-stately
+   * Whether specific item is disabled
    */
-  item: Node<T>;
+  isDisabled?: boolean;
   /**
    * Look of the item
    */
-  look?: ResponsiveVariants<Variants['look']>;
-  /**
-   * Tree state
-   */
-  state: TreeState<T>;
+  look?: Variants['look'];
   /**
    * Tag to render
    */
   tag?: keyof JSX.IntrinsicElements;
-} & HTMLAttributes<Element>;
+  /**
+   * Title for item
+   */
+  title?: ReactNode;
+} & DisclosureProps &
+  Omit<HTMLAttributes<HTMLElement>, 'title'>;

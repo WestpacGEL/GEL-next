@@ -9,6 +9,10 @@
     {
       "files": "*.mdoc",
       "options": { "parser": "markdown" }
+    },
+    {
+      "files": "*.handlebars",
+      "options": { "parser": "css" }
     }
   ]
 }

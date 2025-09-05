@@ -1,4 +1,6 @@
-@tailwind base;
+@import 'tailwindcss';
+
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -6,4 +8,4 @@
   body {
     @apply typography-body-11;
   }
-}
+} */
