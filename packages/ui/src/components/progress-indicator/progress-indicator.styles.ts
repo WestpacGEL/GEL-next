@@ -145,6 +145,10 @@ export const styles = tv(
           base: 'text-surface-system-error-dark',
           label: 'text-surface-system-error-dark',
         },
+        reversed: {
+          base: 'text-surface-reversed',
+          label: 'text-surface-reversed',
+        },
       },
     },
   },
