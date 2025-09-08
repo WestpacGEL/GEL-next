@@ -12,20 +12,20 @@ export const styles = tv({
         heading: 'text-[3rem] uppercase sm:text-[4.5rem]',
       },
       stg: {
-        base: 'sm:bg-surface-hero',
+        base: 'sm:bg-background-hero',
         heading: 'text-text-hero',
       },
       bom: {
-        base: 'sm:bg-surface-hero',
+        base: 'sm:bg-background-hero',
       },
       bsa: {
         base: 'from-hero via-[#00468e] to-[#00adbd] sm:bg-gradient-to-r',
       },
       wbg: {
-        base: 'sm:bg-surface-hero',
+        base: 'sm:bg-background-hero',
       },
       rams: {
-        base: 'sm:bg-surface-primary',
+        base: 'sm:bg-background-primary',
       },
       btfg: {},
     },
