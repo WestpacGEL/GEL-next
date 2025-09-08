@@ -31,7 +31,7 @@ export function ThemeDropDown({ className }: { className?: string }) {
     <ButtonDropdown
       placement="bottom right"
       portalContainer={portalContainer}
-      color="primary"
+      color="hero"
       soft
       text="Theme"
       className={className}

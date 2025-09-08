@@ -296,7 +296,9 @@ export const UsingCustomItems: Story = {
           <Circle className="size-5 bg-surface-muted text-white">SN</Circle>
           <div className="flex flex-col">
             <h3 className="typography-body-9">Staff Name</h3>
-            <p className="typography-body-10 text-text-muted">Staff role, staff business area</p>
+            <p className="typography-body-10 text-text-muted group-[.is-focused]:text-text-mono">
+              Staff role, staff business area
+            </p>
           </div>
         </div>
       </AutocompleteItem>,

@@ -45,10 +45,10 @@ export function Header({ brand }: { brand: BrandKey }) {
         className="z-10 flex items-center px-2 focus-visible:!outline-offset-[-2px] focus-visible:focus-outline lg:hidden"
         onClick={() => setOpen(open => !open)}
       >
-        <HamburgerMenuIcon />
+        <HamburgerMenuIcon color="reversed" />
       </button>
       <div className={heading()}>
-        <h1 className="typography-body-9" id="header" tabIndex={-1}>
+        <h1 className="typography-body-9 text-text-reversed" id="header" tabIndex={-1}>
           <strong>GEL</strong> Design System
         </h1>
       </div>

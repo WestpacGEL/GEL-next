@@ -43,6 +43,7 @@ export const styles = tv({
       'danger-faint': 'text-surface-danger-faint',
       'system-error': 'text-surface-system-error',
       'system-error-dark': 'text-surface-system-error-dark',
+      reversed: 'text-surface-reversed',
     },
   },
 });
