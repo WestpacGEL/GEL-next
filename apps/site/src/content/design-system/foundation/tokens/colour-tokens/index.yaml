@@ -1,8 +1,6 @@
 name: Colour tokens
-description: >-
-  Description for colour tokens
 design:
   - title:
-      name: Title
-      slug: title
+      name: Coming soon
+      slug: coming-soon
 accessibility: []

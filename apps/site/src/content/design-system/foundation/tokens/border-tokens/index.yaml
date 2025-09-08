@@ -1,8 +1,6 @@
 name: Border tokens
-description: >-
-  Description for border tokens
 design:
   - title:
-      name: Title
-      slug: title
+      name: Coming soon
+      slug: coming-soon
 accessibility: []

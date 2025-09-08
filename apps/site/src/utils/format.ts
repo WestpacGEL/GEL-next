@@ -62,7 +62,18 @@ export function sortMenu(menuItems: Item[]) {
     'design tokens',
   ];
 
-  return orderMenu(menuItems, topLevelMenuOrder);
+  const foundationMenuOrder = ['tokens', 'icons', 'logos', 'pictograms', 'layout', 'fonts', 'text styling'];
+
+  const topLevelMenuOrdered = orderMenu(menuItems, topLevelMenuOrder);
+  return topLevelMenuOrdered.map(item => {
+    if (item.label === 'foundation') {
+      return {
+        ...item,
+        children: orderMenu(menuItems.find(({ label }) => label === 'foundation')?.children || [], foundationMenuOrder),
+      };
+    }
+    return item;
+  });
 }
 
 export function sortDeveloperMenu(menuItems: Item[]) {
