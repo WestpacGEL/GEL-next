@@ -352,6 +352,9 @@ importers:
       '@tanstack/react-table':
         specifier: ~8.21.3
         version: 8.21.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-virtual':
+        specifier: ~3.13.12
+        version: 3.13.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
@@ -380,6 +383,9 @@ importers:
       '@eslint/js':
         specifier: ~9.30.0
         version: 9.30.1
+      '@faker-js/faker':
+        specifier: ~10.0.0
+        version: 10.0.0
       '@react-types/accordion':
         specifier: 3.0.0-alpha.14
         version: 3.0.0-alpha.14(react@18.3.1)
@@ -1109,6 +1115,10 @@ packages:
   '@eslint/plugin-kit@0.3.4':
     resolution: {integrity: sha512-Ul5l+lHEcw3L5+k8POx6r74mxEYKG5kOb6Xpy2gCRW6zweT6TEhAf8vhxGgjhqrd/VO/Dirhsb+1hNpD1ue9hw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@faker-js/faker@10.0.0':
+    resolution: {integrity: sha512-UollFEUkVXutsaP+Vndjxar40Gs5JL2HeLcl8xO1QAjJgOdhc3OmBFWyEylS+RddWaaBiAzH+5/17PLQJwDiLw==}
+    engines: {node: ^20.19.0 || ^22.13.0 || ^23.5.0 || >=24.0.0, npm: '>=10'}
 
   '@floating-ui/core@1.7.2':
     resolution: {integrity: sha512-wNB5ooIKHQc+Kui96jE/n69rHFWAVoxn5CAzL1Xdd8FG03cgY3MLO+GF9U3W737fYDSgPWA6MReKhBQBop6Pcw==}
@@ -2320,9 +2330,18 @@ packages:
       react: '>=16.8'
       react-dom: '>=16.8'
 
+  '@tanstack/react-virtual@3.13.12':
+    resolution: {integrity: sha512-Gd13QdxPSukP8ZrkbgS2RwoZseTTbQPLnQEn7HY/rqtM+8Zt95f7xKC7N0EsKs7aoz0WzZ+fditZux+F8EzYxA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   '@tanstack/table-core@8.21.3':
     resolution: {integrity: sha512-ldZXEhOBb8Is7xLs01fR3YEc3DERiz5silj8tnGkFZytt1abEvl/GhUmCE0PMLaMPTa3Jk4HbKmRlHmu+gCftg==}
     engines: {node: '>=12'}
+
+  '@tanstack/virtual-core@3.13.12':
+    resolution: {integrity: sha512-1YBOJfRHV4sXUmWsFSf5rQor4Ss82G8dQWLRbnk3GA4jeP8hQt1hxXh0tmflpC0dz3VgEv/1+qwPyLeWkQuPFA==}
 
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
@@ -7185,6 +7204,8 @@ snapshots:
       '@eslint/core': 0.15.1
       levn: 0.4.1
 
+  '@faker-js/faker@10.0.0': {}
+
   '@floating-ui/core@1.7.2':
     dependencies:
       '@floating-ui/utils': 0.2.10
@@ -8975,7 +8996,15 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
+  '@tanstack/react-virtual@3.13.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/virtual-core': 3.13.12
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   '@tanstack/table-core@8.21.3': {}
+
+  '@tanstack/virtual-core@3.13.12': {}
 
   '@testing-library/dom@10.4.0':
     dependencies:
