@@ -26,7 +26,7 @@ export const styles = tv({
     },
     soft: {
       true: 'border leading-[1.125rem]',
-      false: 'leading-5',
+      false: 'leading-[1.25rem]',
     },
   },
   compoundVariants: [
