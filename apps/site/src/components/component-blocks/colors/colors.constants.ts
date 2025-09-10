@@ -46,7 +46,7 @@ export const PRIMARY_COLORS: ColorsKey[] = [
   'text-success',
   'text-info',
   'text-warning',
-  'text-text-danger',
+  'text-danger',
   'text-system-error',
   'text-mono',
   'border-muted',
