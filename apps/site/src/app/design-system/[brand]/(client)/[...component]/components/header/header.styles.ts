@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'sticky top-0 z-[1000] flex w-full items-center gap-2 bg-surface-hero px-2 py-2.5 antialiased transition-colors sm:px-4 md:-top-27 md:h-[14.25rem] md:items-end',
+      base: 'sticky top-0 z-[1000] flex w-full items-center gap-2 bg-background-hero px-2 py-2.5 antialiased transition-colors sm:px-4 md:-top-27 md:h-[14.25rem] md:items-end',
       gridButton: 'flex h-6 items-stretch gap-0.5 p-1 focus-visible:focus-outline',
       gridButtonWrapper: 'fixed right-2 top-2 hidden items-center text-white sm:flex',
       hamburgerButton:
@@ -31,13 +31,13 @@ export const styles = tv(
           base: 'bg-[url(/imgs/backgrounds/bsa-background.svg),_linear-gradient(to_right,#002f6c,#00adbd)] bg-cover',
         },
         rams: {
-          base: 'bg-surface-hero',
+          base: 'bg-background-hero',
         },
         stg: {
-          base: 'bg-surface-hero bg-[url(/imgs/backgrounds/stg-background.svg)] bg-cover',
+          base: 'bg-background-hero bg-[url(/imgs/backgrounds/stg-background.svg)] bg-cover',
         },
         wbc: {
-          base: 'bg-surface-primary bg-[url(/imgs/backgrounds/wbc-background.svg)] bg-contain bg-right-bottom bg-no-repeat',
+          base: 'bg-background-primary bg-[url(/imgs/backgrounds/wbc-background.svg)] bg-contain bg-right-bottom bg-no-repeat',
           title: 'uppercase',
         },
       },
