@@ -35,6 +35,7 @@ const BREAKPOINTS_MEDIA: Record<Breakpoint | 'initial', string> = BREAKPOINTS_EN
   } as Record<Breakpoint | 'initial', string>,
 );
 
+// TODO: improve to have only one listener for all the components, using zustand perhaps.
 export function useBreakpoint() {
   const [breakpoint, setBreakpoint] = useState<Breakpoint | 'initial'>(checkBreakpoint());
 

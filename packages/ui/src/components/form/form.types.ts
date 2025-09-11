@@ -1,4 +1,5 @@
 import { FormHTMLAttributes } from 'react';
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 
 export type FormContextValue = {
   /**
@@ -11,4 +12,13 @@ export type FormContextValue = {
   spacing?: 'medium' | 'large';
 };
 
-export type FormProps = FormContextValue & FormHTMLAttributes<HTMLFormElement>;
+export type FormProps = {
+  /**
+   * Whether form is inline
+   */
+  inline?: ResponsiveVariants<FormContextValue['inline']>;
+  /**
+   * Spacing of Form
+   */
+  spacing?: ResponsiveVariants<FormContextValue['spacing']>;
+} & FormHTMLAttributes<HTMLFormElement>;

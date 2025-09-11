@@ -8,7 +8,7 @@ import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
-export type TabsProps<T = object> = SpectrumTabsProps<T> & {
+export type TabsProps<T = object> = Omit<SpectrumTabsProps<T>, 'orientation'> & {
   /**
    * Children
    */

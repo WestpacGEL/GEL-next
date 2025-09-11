@@ -18,8 +18,9 @@ export function ProgressIndicator({
   ...props
 }: ProgressIndicatorProps) {
   const breakpoint = useBreakpoint();
+  const resolvedSize = resolveResponsiveVariant(size, breakpoint) || 'medium';
   const styles = ProgressIndicatorStyles({
-    size: resolveResponsiveVariant(size, breakpoint),
+    size: resolveResponsiveVariant(resolvedSize, breakpoint),
     color: resolveResponsiveVariant(color, breakpoint),
   });
 
@@ -35,7 +36,7 @@ export function ProgressIndicator({
 
   // TODO: fix this properly
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  const strokeHalfWidth = sizeMap[size.toString()].strokeWidth / 2;
+  const strokeHalfWidth = sizeMap[resolvedSize.toString()].strokeWidth / 2;
 
   return (
     <div aria-label={ariaLabel} className={styles.container()}>
@@ -64,9 +65,9 @@ export function ProgressIndicator({
             </>
           </g>
         </Icon>
-        {EmbedIcon && size === 'large' && <EmbedIcon size="large" color={color} className={styles.icon()} />}
+        {EmbedIcon && resolvedSize === 'large' && <EmbedIcon size="large" color={color} className={styles.icon()} />}
       </div>
-      {label && size === 'large' && <Label className={styles.label()}>{label}</Label>}
+      {label && resolvedSize === 'large' && <Label className={styles.label()}>{label}</Label>}
     </div>
   );
 }

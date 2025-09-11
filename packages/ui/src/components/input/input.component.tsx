@@ -13,7 +13,7 @@ export function BaseInput(
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   const breakpoint = useBreakpoint();
-  const { isFocusVisible, isFocused, focusProps } = useFocusRing();
+  const { isFocusVisible, focusProps } = useFocusRing();
   return (
     <input
       ref={ref}
@@ -22,7 +22,6 @@ export function BaseInput(
         size: resolveResponsiveVariant(size, breakpoint),
         invalid,
         isFocusVisible,
-        isFocused,
         width: resolveResponsiveVariant(width, breakpoint),
       })}
       aria-invalid={invalid}

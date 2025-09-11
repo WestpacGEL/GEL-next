@@ -31,6 +31,8 @@ export function ButtonDropdown({
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const panelId = useId();
   const breakpoint = useBreakpoint();
+  const resolvedLook = resolveResponsiveVariant(look, breakpoint);
+  const resolvedSoft = resolveResponsiveVariant(soft, breakpoint);
   const styles = buttonDropdownStyles({
     block: resolveResponsiveVariant(block, breakpoint),
     dropdownSize: resolveResponsiveVariant(dropdownSize, breakpoint),
@@ -55,11 +57,11 @@ export function ButtonDropdown({
   }, [keyHandler]);
 
   const iconColor = useMemo(() => {
-    if (look === 'faint') {
+    if (resolvedLook === 'faint') {
       return 'muted';
     }
-    return soft ? 'muted-vivid' : 'mono';
-  }, [look, soft]);
+    return resolvedSoft ? 'muted-vivid' : 'mono';
+  }, [resolvedLook, resolvedSoft]);
 
   // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
   const brandContainer = useMemo(() => {

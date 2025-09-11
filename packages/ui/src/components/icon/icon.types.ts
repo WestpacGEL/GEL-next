@@ -8,7 +8,7 @@ type Variants = VariantProps<typeof styles>;
 
 export type IconLook = 'filled' | 'outlined';
 
-export type IconProps = SVGAttributes<SVGElement> & {
+export type IconProps = Omit<SVGAttributes<SVGElement>, 'color'> & {
   /**
    * children prop
    */

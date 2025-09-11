@@ -9,9 +9,8 @@ import { styles } from './date-picker.styles.js';
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
-
 export type DatePickerProps<T extends DateValue = DateValue> = DatePickerStateOptions<T> &
-  Variants &
+  Omit<Variants, 'size'> &
   Omit<HTMLAttributes<HTMLDivElement>, 'invalid'> & {
     /**
      * Determines whether to display the component as a bottom sheet view.

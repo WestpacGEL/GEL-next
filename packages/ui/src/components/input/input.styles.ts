@@ -16,7 +16,6 @@ export const styles = tv({
     isFocusVisible: {
       true: 'focus-outline',
     },
-    isFocused: {},
     width: {
       full: 'w-full',
       1: 'box-content w-[1.81ex]',

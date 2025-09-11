@@ -49,7 +49,7 @@ export type ButtonProps = {
    * When true, children will use flex justify-between
    * @default false
    */
-  justify?: Variants['justify'];
+  justify?: ResponsiveVariants<Variants['justify']>;
   /**
    * Button look
    * @default hero

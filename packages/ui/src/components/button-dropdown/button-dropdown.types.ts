@@ -21,7 +21,7 @@ export type ButtonDropdownProps = {
   /**
    * Look for button
    */
-  look?: 'primary' | 'hero' | 'faint';
+  look?: ButtonProps['look'];
   /**
    * State of whether the Popover is open
    */
@@ -29,7 +29,7 @@ export type ButtonDropdownProps = {
   /**
    * Soft look button
    */
-  soft?: boolean;
+  soft?: ButtonProps['soft'];
   /**
    * Button text
    */
