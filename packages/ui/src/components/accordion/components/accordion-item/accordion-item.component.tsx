@@ -16,6 +16,7 @@ export function AccordionItem<T = HTMLElement>({
   className,
   tag: Tag = 'div',
   look = 'soft',
+  rounded = true,
   ...props
 }: AccordionItemProps<T>) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -26,7 +27,7 @@ export function AccordionItem<T = HTMLElement>({
   const isDisabled = state.disabledKeys.has(item.key);
   const { hoverProps } = useHover({ isDisabled });
   const { direction } = useLocale();
-  const styles = accordionItemStyles({ isOpen, isDisabled, look, isFocusVisible });
+  const styles = accordionItemStyles({ isOpen, isDisabled, look, isFocusVisible, rounded });
 
   return (
     <Tag className={styles.base({ className })}>
