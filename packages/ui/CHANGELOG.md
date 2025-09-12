@@ -1,5 +1,17 @@
 # @westpac/ui
 
+## 0.48.0
+
+### Minor Changes
+
+- 0b4cb90: added props to header to control fixed header max width and anchor target for logo link
+- 5fe55df: updated alert styling, updated according styling (focus ring, lego), added backdropStyle prop to modal
+
+### Patch Changes
+
+- 33391a7: fix spacing on top when the label is not passed
+- b9ffa7c: fixed issue with accordion children and bubbling events
+
 ## 0.47.1
 
 ### Patch Changes
