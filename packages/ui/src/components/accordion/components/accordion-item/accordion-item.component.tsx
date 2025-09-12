@@ -16,6 +16,7 @@ export function AccordionItem<T = HTMLElement>({
   className,
   tag: Tag = 'div',
   look = 'soft',
+  rounded = true,
   ...props
 }: AccordionItemProps<T>) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -26,7 +27,7 @@ export function AccordionItem<T = HTMLElement>({
   const isDisabled = state.disabledKeys.has(item.key);
   const { hoverProps } = useHover({ isDisabled });
   const { direction } = useLocale();
-  const styles = accordionItemStyles({ isOpen, isDisabled, look, isFocusVisible });
+  const styles = accordionItemStyles({ isOpen, isDisabled, look, isFocusVisible, rounded });
 
   return (
     <Tag className={styles.base({ className })}>
@@ -61,7 +62,16 @@ export function AccordionItem<T = HTMLElement>({
                 }}
                 transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }}
               >
-                <div className={styles.content()}>{item.props.children}</div>
+                <div
+                  className={styles.content()}
+                  // TODO: Remove below with updated accordion that uses disclosure as the issue doesn't happen with that version
+                  // Need to call stopPropagation here as some events from children are bubbling up and focusing the accordion i.e. inputs
+                  onBlur={e => {
+                    e.stopPropagation();
+                  }}
+                >
+                  {item.props.children}
+                </div>
               </m.div>
             )}
           </AnimatePresence>

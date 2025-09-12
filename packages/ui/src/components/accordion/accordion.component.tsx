@@ -50,11 +50,11 @@ function Accordion<T extends object>(
       {...filterDOMProps(finalProps as DOMProps)}
       {...accordionProps}
       ref={domRef}
-      className={styles({ className, rounded })}
+      className={styles({ className, rounded, lego: look === 'lego' })}
     >
-      <div className="-ml-px -mt-px">
+      <div>
         {[...state.collection].map(item => (
-          <AccordionItemContent<T> key={item.key} item={item} state={state} look={look} />
+          <AccordionItemContent<T> key={item.key} item={item} rounded={rounded} state={state} look={look} />
         ))}
       </div>
     </div>

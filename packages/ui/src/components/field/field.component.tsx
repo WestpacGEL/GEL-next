@@ -37,9 +37,11 @@ export function Field({
 
   return (
     <Tag className={styles({ className })} {...props}>
-      <Label size={labelSize} {...labelProps}>
-        {label}
-      </Label>
+      {label && (
+        <Label size={labelSize} {...labelProps}>
+          {label}
+        </Label>
+      )}
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       {renderChildren()}

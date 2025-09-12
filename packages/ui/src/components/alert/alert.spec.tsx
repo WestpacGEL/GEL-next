@@ -18,7 +18,7 @@ describe('Alert', () => {
   it('generates the base style correctly', () => {
     const style = styles({ look: 'info', mode: 'box' });
     expect(style.base()).toBe(
-      'typography-body-10 relative mb-4 xsl:flex text-info border-y p-3 border-info-50 bg-info-5',
+      'typography-body-10 relative mb-5 xsl:flex text-info border-y p-3 border-info-50 bg-info-5',
     );
   });
 

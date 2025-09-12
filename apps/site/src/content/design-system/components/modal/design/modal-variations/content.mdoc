@@ -2,12 +2,13 @@ Modals are configurable. Choose how they are dismissed, whether they have a foot
 
 ```jsx
 () => {
+  const portalContainer = document.getElementById('demo-content');
   const noFooterState = useOverlayTriggerState({});
   const noDismissState = useOverlayTriggerState({});
 
   return (
     <div className="flex justify-center gap-2">
-      <Modal state={noFooterState} title="Modal title" isDismissable onClose={noFooterState.close}>
+      <Modal state={noFooterState} backdropStyle="lg:left-[18.75rem]" title="Modal title" isDismissable onClose={noFooterState.close} portalContainer={portalContainer ?? undefined}>
         <ModalBody>
           <p>
             The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
@@ -18,7 +19,7 @@ Modals are configurable. Choose how they are dismissed, whether they have a foot
       <Button soft look="primary" onClick={noFooterState.open}>
         No footer
       </Button>
-      <Modal isKeyboardDismissDisabled state={noDismissState} title="Modal title">
+      <Modal isKeyboardDismissDisabled backdropStyle="lg:left-[18.75rem]" state={noDismissState} title="Modal title" portalContainer={portalContainer ?? undefined}>
         <ModalBody>
           <p>
             The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
