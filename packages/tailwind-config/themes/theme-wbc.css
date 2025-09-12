@@ -1,6 +1,5 @@
 @custom-variant wbc (&:where([data-brand=wbc], [data-brand=wbc] *));
 
-/* For some reason data-brand is not being generated here */
 @layer theme {
   [data-brand='wbc'] {
     /* Primitive Colors */

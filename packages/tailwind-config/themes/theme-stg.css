@@ -1,8 +1,6 @@
 @custom-variant stg (&:where([data-brand=stg], [data-brand=stg] *));
 
 @layer theme {
-  :root,
-  :host {
     [data-brand="stg"] {
       /* Primitive Colors */
       --stg-grey-50: #f9f9f9;
@@ -261,5 +259,4 @@
       --reserved-system-900: var(--reserved-yellow-900);
       --reserved-system-950: var(--reserved-yellow-950);
     }
-  }
 }

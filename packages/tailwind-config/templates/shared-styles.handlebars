@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import './common/common-styles.css';
+@import './common/theme-variables.css';
 
 /* Manually setting the dark variant selector */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -26,8 +26,6 @@
 
 /* Token definitions  */
 @layer theme {
-  :root,
-  :host {
     [data-brand] {
       {{#each light}}
       --{{@key}}: {{this}};
@@ -39,7 +37,6 @@
         {{/each}}
       }
     }
-  }
 }
 
 /* Tailwind theme variables  */

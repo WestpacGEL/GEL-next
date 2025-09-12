@@ -1,5 +1,7 @@
 @import 'tailwindcss';
-@import './common/common-styles.css';
+@import './common/theme.css';
+@import './common/utilities.css';
+
 /* Manually setting the dark variant selector */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -10,6 +12,7 @@
     - data-brand is present but theme is not included so var(--x) will resolve to nothing
 */
 
+/* Should these be in the root? */
 @layer theme {
   :root,
   :host {

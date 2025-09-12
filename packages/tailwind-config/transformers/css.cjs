@@ -173,7 +173,7 @@ const brandOutputDir = path.resolve(__dirname, '../themes');
   );
 });
 
-const sharedOutputFile = path.resolve(__dirname, '../shared-styles.css');
+const sharedOutputFile = path.resolve(__dirname, '../styles.css');
 fs.writeFileSync(
   sharedOutputFile,
   sharedStylesTemplate({
