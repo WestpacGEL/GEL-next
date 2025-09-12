@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { create } from 'zustand';
 
 import { BREAKPOINTS, Breakpoint } from '../tailwind/constants/index.js';
 
@@ -35,16 +36,32 @@ const BREAKPOINTS_MEDIA: Record<Breakpoint | 'initial', string> = BREAKPOINTS_EN
   } as Record<Breakpoint | 'initial', string>,
 );
 
-// TODO: improve to have only one listener for all the components, using zustand perhaps.
-export function useBreakpoint() {
-  const [breakpoint, setBreakpoint] = useState<Breakpoint | 'initial'>(checkBreakpoint());
+type BreakpointState = {
+  breakpoint: Breakpoint | 'initial';
+  mediaQueryListeners:
+    | {
+        mq: MediaQueryList;
+        listener: (e: MediaQueryListEvent) => void;
+      }[]
+    | null;
+  initialised: boolean;
+  ensureInitialized: () => void;
+  removeListeners: () => void;
+};
 
-  useEffect(() => {
+export const useThemeStore = create<BreakpointState>()((set, get) => ({
+  breakpoint: 'initial',
+  mediaQueryListeners: null,
+  initialised: false,
+  ensureInitialized: () => {
+    if (get().initialised) {
+      return;
+    }
     const listeners = Object.entries(BREAKPOINTS_MEDIA).map(([label, query]) => {
       const mq = window.matchMedia(query);
       const listener = (e: MediaQueryListEvent) => {
         if (e.matches) {
-          setBreakpoint(label as Breakpoint);
+          set({ breakpoint: label as Breakpoint });
         }
       };
       mq.addEventListener('change', listener);
@@ -53,12 +70,19 @@ export function useBreakpoint() {
         listener,
       };
     });
+    set({ mediaQueryListeners: listeners, initialised: true });
+  },
+  removeListeners: () => {
+    get().mediaQueryListeners?.forEach(({ mq, listener }) => {
+      mq.removeEventListener('change', listener);
+    });
+  },
+}));
 
-    return () => {
-      listeners.forEach(({ mq, listener }) => {
-        mq.removeEventListener('change', listener);
-      });
-    };
+export function useBreakpoint() {
+  const { breakpoint, ensureInitialized: initIfNotInitialised } = useThemeStore();
+  useEffect(() => {
+    initIfNotInitialised();
   }, []);
 
   return breakpoint;
