@@ -28,8 +28,9 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
        * Base
        */
       addBase({
-        html: { color: theme('colors.text.DEFAULT') },
+        html: { color: theme('colors.text.DEFAULT') }, // DONE
         '@starting-style': {
+          // IS THIS EVEN BEING APPLIED?
           '.popover:popover-open': {
             opacity: '0',
             transform: 'scaleX(0) scaleY(0)',
@@ -49,6 +50,7 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
        * Utilities
        */
       addUtilities(
+        // DONE
         {
           // eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions
           '.focus-outline': { [`@apply ${theme('focusOutline')}`]: {} },
@@ -61,11 +63,12 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
       /**
        * Components
        */
-      addComponents(generateLinearLoader(), { respectPrefix: true, respectImportant: true });
+      addComponents(generateLinearLoader(), { respectPrefix: true, respectImportant: true }); // DONE
       addComponents(generateFontComponents(theme('typographySizes'), theme), {
         respectPrefix: true,
         respectImportant: true,
       });
+      // DONE
       addComponents(generateFormControlComponents(theme('formControl')), {
         respectPrefix: true,
         respectImportant: true,
@@ -86,21 +89,23 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
   function () {
     return {
       theme: {
-        screens: BREAKPOINTS,
+        screens: BREAKPOINTS, // DONE
         fontFamily: {
           sans: DEFAULT_BODY_TYPOGRAPHY,
           brand: DEFAULT_BODY_TYPOGRAPHY,
         },
-        gap: SPACING,
-        spacing: SPACING,
-        colors: COLORS,
+        gap: SPACING, // DONE
+        spacing: SPACING, //DONE
+        colors: COLORS, //DONE
         extend: {
+          // DONE
           lineHeight: {
             tight: '1.2',
             normal: '1.4',
             // See https://stackoverflow.com/questions/19982651/why-does-bootstrap-set-the-line-height-property-to-1-428571429 for below line height reasoning
             loose: '1.428571429',
           },
+          // TO DO with updated tokens
           borderRadius: {
             DEFAULT: '0.1875rem',
           },
@@ -108,6 +113,7 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
             5: '0.3125rem',
           },
           fontSize: createFontSizes(FONT_TYPES),
+          // DONE
           keyframes: {
             waveLines: {
               '0%': {
@@ -161,10 +167,12 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
             slideUp: 'slideUp 0.4s ease',
             maxHeightIn: 'maxHeightIn 0.4s ease',
           },
+          // TODO: Confirm if this is still needed? latest switch doesnt have it?
           boxShadow: {
             switch: '0.1875rem 0 0.375rem 0 rgba(0,0,0,0.53)',
           },
           maxWidth: {
+            // TODO: Check the breakpoints mapping i.e. if xsl actually maps to the new container variable we are setting
             xsl: BREAKPOINTS.xsl,
             sm: BREAKPOINTS.sm,
             md: BREAKPOINTS.md,
@@ -225,6 +233,7 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
             lineHeight: 'loose',
           },
         },
+        // DONE
         formControl: {
           base: 'no-inner-spin-button box-border w-fit appearance-none overflow-visible rounded border bg-background-white-pale align-middle text-text-body transition placeholder:font-light placeholder:opacity-100 disabled:form-control-disabled border-border-muted-strong',
           disabled: 'cursor-not-allowed border-dashed bg-surface-muted-pale text-text-muted',
@@ -236,6 +245,7 @@ export const WestpacUIKitBasePlugin = plugin.withOptions(
             xlarge: 'px-3 pb-[0.625rem] pt-[0.5625rem] text-lg leading-[1.685rem]',
           },
         },
+        // TODO: Is this still used?
         button: {
           base: 'inline-flex items-center justify-center rounded leading-[1.5] transition-[background] disabled:pointer-events-none disabled:opacity-50 group-last/add-on-after:rounded-l-none group-first/add-on-before:rounded-r-none',
           look: {

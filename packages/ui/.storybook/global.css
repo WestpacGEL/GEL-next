@@ -1,3 +1,4 @@
 @import 'tailwindcss';
 @import '@westpac/tailwind-config';
 @import '@westpac/tailwind-config/theme-wbc';
+@import '../src/css/global.css';

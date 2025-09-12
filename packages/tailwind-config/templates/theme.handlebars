@@ -1,8 +1,6 @@
 @custom-variant {{brand}} (&:where([data-brand={{brand}}], [data-brand={{brand}}] *));
 
 @layer theme {
-  :root,
-  :host {
     [data-brand="{{brand}}"] {
       /* Primitive Colors */
       {{#each primitiveColors}}
@@ -14,5 +12,4 @@
       --{{@key}}: {{this}};
       {{/each}}
     }
-  }
 }

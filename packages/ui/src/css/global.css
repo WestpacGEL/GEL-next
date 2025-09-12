@@ -1,11 +1,52 @@
 @import 'tailwindcss';
+/* Can I do this without the @reference */
+@reference '@westpac/tailwind-config';
 
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  body {
-    @apply typography-body-11;
+@layer components {
+  .linear-gradient-style {
+    @apply overflow-hidden flex bg-surface-muted-faint;
   }
-} */
+
+  .linear-gradient-style::before {
+    @apply translate-x-0 block w-full h-full animate-skeleton;
+    content: '';
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.7) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .form-control {
+    @apply box-border w-fit appearance-none overflow-visible rounded border bg-background-white-pale align-middle text-text-body transition placeholder:font-light placeholder:opacity-100 border-border-muted-strong;
+    /* @apply no-inner-spin-button box-border w-fit appearance-none overflow-visible rounded border bg-background-white-pale align-middle text-text-body transition placeholder:font-light placeholder:opacity-100 disabled:form-control-disabled border-border-muted-strong; */
+  }
+
+  .form-control-small {
+    @apply px-[0.5625rem] pb-[0.25rem] pt-[0.1875rem] text-sm leading-[1.3rem];
+  }
+
+  .form-control-medium {
+    /* @apply typography-body-9 px-2 py-[0.3125rem] leading-6; */
+    @apply px-2 py-[0.3125rem] leading-6;
+  }
+
+  .form-control-large {
+    @apply px-[0.9375rem] py-[0.5rem] text-base;
+  }
+
+  .form-control-xlarge {
+    @apply px-3 pb-[0.625rem] pt-[0.5625rem] text-lg leading-[1.685rem];
+  }
+
+  .form-control-disabled {
+    @apply cursor-not-allowed border-dashed bg-surface-muted-pale text-text-muted;
+  }
+
+  .no-inner-spin-button::-webkit-outer-spin-button,
+  .no-inner-spin-button::-webkit-inner-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+}
