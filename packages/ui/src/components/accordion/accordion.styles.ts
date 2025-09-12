@@ -5,7 +5,10 @@ export const styles = tv(
     base: 'flex flex-col border border-border text-text',
     variants: {
       rounded: {
-        true: 'overflow-hidden rounded',
+        true: 'rounded',
+      },
+      lego: {
+        true: 'border-0',
       },
     },
   },
