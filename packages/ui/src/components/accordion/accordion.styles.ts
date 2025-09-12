@@ -8,7 +8,7 @@ export const styles = tv(
         true: 'rounded',
       },
       lego: {
-        true: 'border-0',
+        true: 'border-0 border-b',
       },
     },
   },
