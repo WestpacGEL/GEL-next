@@ -23,6 +23,8 @@ import {
 
 import { styles as headerStyles } from './header.styles.js';
 import { type HeaderProps } from './header.types.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 const LOGO_MAP = {
   wbc: {
@@ -100,7 +102,14 @@ export function Header({
 
   const ButtonIcon = leftIcon === 'arrow' ? ArrowLeftIcon : HamburgerMenuIcon;
 
-  const styles = headerStyles({ logoCenter, fixed, leftIcon, scrolled: isScrolled || scrolled });
+  const breakpoint = useBreakpoint();
+
+  const styles = headerStyles({
+    logoCenter: resolveResponsiveVariant(logoCenter, breakpoint),
+    fixed: resolveResponsiveVariant(fixed, breakpoint),
+    leftIcon: resolveResponsiveVariant(leftIcon, breakpoint),
+    scrolled: isScrolled || scrolled,
+  });
 
   return (
     <header className={styles.base({ className })} {...props}>

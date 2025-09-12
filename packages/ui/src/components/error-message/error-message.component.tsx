@@ -4,6 +4,7 @@ import { AlertIcon } from '../../components/icon/index.js';
 
 import { styles as errorMessageStyles } from './error-message.styles.js';
 import { type ErrorMessageProps } from './error-message.types.js';
+import { clsx } from 'clsx';
 
 export function ErrorMessage({ className, tag: Tag = 'div', icon: Icon, message, ...props }: ErrorMessageProps) {
   const styles = errorMessageStyles({});
@@ -19,7 +20,7 @@ export function ErrorMessage({ className, tag: Tag = 'div', icon: Icon, message,
       ))}
     </ul>
   ) : (
-    <Tag className={styles.base({ className: `${className} mb-2` })} {...props}>
+    <Tag className={styles.base({ className: clsx(className, 'mb-2') })} {...props}>
       <FinalIcon color="danger" copyrightYear="2023" className={styles.icon({})} size="xsmall" look="outlined" />
       {message as ReactNode}
     </Tag>

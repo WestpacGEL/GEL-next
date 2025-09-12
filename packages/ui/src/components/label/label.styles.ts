@@ -1,40 +1,37 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv(
-  {
-    base: 'typography-body-9 block font-medium leading-loose text-text-body',
-    variants: {
-      spacing: {
-        medium: '',
-        large: '',
-      },
-      size: {
-        small: 'typography-body-10',
-        medium: 'typography-body-9',
-      },
+export const styles = tv({
+  base: 'typography-body-9 block font-medium leading-loose text-text-body',
+  variants: {
+    spacing: {
+      medium: '',
+      large: '',
     },
-    compoundVariants: [
-      {
-        size: 'medium',
-        spacing: 'medium',
-        className: 'mb-2',
-      },
-      {
-        size: 'medium',
-        spacing: 'large',
-        className: 'mb-3',
-      },
-      {
-        size: 'small',
-        spacing: 'medium',
-        className: 'mb-2',
-      },
-      {
-        size: 'small',
-        spacing: 'large',
-        className: 'mb-3',
-      },
-    ],
+    size: {
+      small: 'typography-body-10',
+      medium: 'typography-body-9',
+    },
   },
-  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
-);
+  compoundVariants: [
+    {
+      size: 'medium',
+      spacing: 'medium',
+      className: 'mb-2',
+    },
+    {
+      size: 'medium',
+      spacing: 'large',
+      className: 'mb-3',
+    },
+    {
+      size: 'small',
+      spacing: 'medium',
+      className: 'mb-2',
+    },
+    {
+      size: 'small',
+      spacing: 'large',
+      className: 'mb-3',
+    },
+  ],
+});

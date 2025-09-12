@@ -1,12 +1,8 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv(
-  {
-    base: 'inline-block shrink-0 leading-none',
-    variants: {},
-  },
-  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
-);
+export const styles = tv({
+  base: 'inline-block shrink-0 leading-none',
+});
 
 export const fill = tv({
   base: '',
@@ -14,6 +10,7 @@ export const fill = tv({
     mode: {
       dark: 'fill-surface-pictogram-base',
       light: 'fill-surface-mono',
+      reversed: 'fill-surface-reversed',
       duo: '',
     },
     highlight: {

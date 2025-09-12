@@ -11,6 +11,8 @@ import { ErrorMessage, Hint, Label, ProgressIndicator } from '../index.js';
 import { styles as autocompleteStyles } from './autocomplete.styles.js';
 import { type AutocompleteProps } from './autocomplete.types.js';
 import { AutocompleteListBox, AutocompletePopover } from './components/index.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 const STATIC_IS_OPEN_STATE = {
   isOpen: true,
@@ -65,12 +67,12 @@ function Autocomplete<T extends object>(
     },
     state,
   );
-
+  const breakpoint = useBreakpoint();
   const { clearButton: clearButtonStyle, ...styles } = autocompleteStyles({
-    width,
+    width: resolveResponsiveVariant(width, breakpoint),
     isDisabled,
     isInputFocusVisible,
-    size,
+    size: resolveResponsiveVariant(size, breakpoint),
     invalid,
     isFocusVisible,
   });

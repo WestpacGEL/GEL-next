@@ -9,6 +9,8 @@ import { ButtonGroupButton, ErrorMessage, Hint, Label } from '../index.js';
 
 import { styles as buttonGroupStyles } from './button-group.styles.js';
 import { ButtonGroupContextState, type ButtonGroupProps } from './button-group.types.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export const ButtonGroupContext = createContext<ButtonGroupContextState>({
   block: false,
@@ -93,6 +95,7 @@ export function ButtonGroup({
     },
     state,
   );
+  const breakpoint = useBreakpoint();
   const styles = buttonGroupStyles({});
 
   return (
@@ -101,7 +104,14 @@ export function ButtonGroup({
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       <div className={styles.buttonWrapper()}>
-        <ButtonGroupContext.Provider value={{ state, size, look, block }}>
+        <ButtonGroupContext.Provider
+          value={{
+            state,
+            size,
+            look: resolveResponsiveVariant(look, breakpoint),
+            block: resolveResponsiveVariant(block, breakpoint),
+          }}
+        >
           {buttons.map((button, index) => (
             <ButtonGroupButton key={index} className="group/buttons" {...button} />
           ))}

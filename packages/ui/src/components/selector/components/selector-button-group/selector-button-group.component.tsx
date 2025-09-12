@@ -7,6 +7,8 @@ import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { styles } from './selector-button-group.styles.js';
 import { SelectorButtonGroupContextState, SelectorButtonGroupProps } from './selector-button-group.types.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 export const SelectorButtonContext = createContext<SelectorButtonGroupContextState>({
   value: '',
@@ -27,6 +29,8 @@ export function SelectorButtonGroup({
   ...props
 }: SelectorButtonGroupProps) {
   const [selected, setSelected] = useState(value);
+  const breakpoint = useBreakpoint();
+  const resolvedOrientation = resolveResponsiveVariant(orientation, breakpoint);
 
   const handleChange = useCallback(
     (id: string) => {
@@ -58,7 +62,7 @@ export function SelectorButtonGroup({
       {label && <Label {...labelProps}>{label}</Label>}
       {description && <Hint {...descriptionProps}>{description}</Hint>}
       {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
-      <div className={styles({ className, orientation })} {...fieldProps}>
+      <div className={styles({ className, orientation: resolvedOrientation })} {...fieldProps}>
         <SelectorButtonContext.Provider value={state}>{children}</SelectorButtonContext.Provider>
       </div>
     </>

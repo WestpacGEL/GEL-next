@@ -10,6 +10,8 @@ import { DropDownIcon, IconProps } from '../icon/index.js';
 import { styles as buttonDropdownStyles } from './button-dropdown.styles.js';
 import { type ButtonDropdownProps } from './button-dropdown.types.js';
 import { ButtonDropdownPanel } from './components/button-dropdown-panel/button-dropdown-panel.component.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function ButtonDropdown({
   className,
@@ -28,7 +30,13 @@ export function ButtonDropdown({
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const panelId = useId();
-  const styles = buttonDropdownStyles({ block, dropdownSize });
+  const breakpoint = useBreakpoint();
+  const resolvedLook = resolveResponsiveVariant(look, breakpoint);
+  const resolvedSoft = resolveResponsiveVariant(soft, breakpoint);
+  const styles = buttonDropdownStyles({
+    block: resolveResponsiveVariant(block, breakpoint),
+    dropdownSize: resolveResponsiveVariant(dropdownSize, breakpoint),
+  });
   const state = useOverlayTriggerState({ defaultOpen: open });
   const { triggerProps, overlayProps } = useOverlayTrigger({ type: 'menu' }, state, ref);
   const { buttonProps } = useButton(triggerProps, ref);
@@ -49,11 +57,11 @@ export function ButtonDropdown({
   }, [keyHandler]);
 
   const iconColor = useMemo(() => {
-    if (look === 'faint') {
+    if (resolvedLook === 'faint') {
       return 'muted';
     }
-    return soft ? 'muted-vivid' : 'mono';
-  }, [look, soft]);
+    return resolvedSoft ? 'muted-vivid' : 'mono';
+  }, [resolvedLook, resolvedSoft]);
 
   // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
   const brandContainer = useMemo(() => {

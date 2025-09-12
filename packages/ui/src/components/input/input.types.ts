@@ -2,6 +2,7 @@ import { InputHTMLAttributes } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './input.styles.js';
+import type { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -15,10 +16,10 @@ export type InputProps = {
    * Size of input
    * @default medium
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
   /**
    * width of input
    * @default full
    */
-  width?: Variants['width'];
+  width?: ResponsiveVariants<Variants['width']>;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'width'>;

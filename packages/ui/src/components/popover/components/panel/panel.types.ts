@@ -1,5 +1,6 @@
 import { HTMLAttributes, RefObject } from 'react';
 import { OverlayTriggerState } from 'react-stately';
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 export type PanelProps = {
   /**
@@ -17,7 +18,7 @@ export type PanelProps = {
   /**
    * Placement of popover. If no placement provided it will default to top unless there is no space then will appear on bottom.
    */
-  placement?: 'top' | 'bottom';
+  placement?: ResponsiveVariants<'top' | 'bottom'>;
   /**
    * Uses portal to render popover
    */

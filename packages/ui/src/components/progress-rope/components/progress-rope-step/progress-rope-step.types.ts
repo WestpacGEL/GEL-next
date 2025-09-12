@@ -4,6 +4,7 @@ import { type VariantProps } from 'tailwind-variants';
 import { ProgressRopeStepItem } from '../../progress-rope.types.js';
 
 import { styles } from './progress-rope-step.styles.js';
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -35,7 +36,7 @@ export type ProgressRopeStepProps = {
   /**
    * Size of step
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
   /**
    * Tag to render
    */

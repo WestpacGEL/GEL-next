@@ -4,6 +4,7 @@ import { fn, expect } from 'storybook/test';
 import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon } from '../icon/index.js';
 
 import { Button } from './button.component.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -274,4 +275,37 @@ export const Disabled: Story = {
     children: 'Disabled button',
     disabled: true,
   },
+};
+
+/**
+ * > Test Breakpoints styles
+ */
+export const TestBreakpointsSize = () => {
+  const breakpoint = useBreakpoint();
+  return (
+    <div>
+      <div className="py-2">
+        <h3>BREAKPOINT:{breakpoint}</h3>
+        <Button size="large">Responsive Button</Button>
+
+        <Button
+          look="primary"
+          size={{ initial: 'large', lg: 'small', md: 'medium' }}
+          soft={{ initial: false, sm: true }}
+        >
+          Responsive Button
+        </Button>
+      </div>
+      {/* <Button
+        iconAfter={BurgerIcon}
+        size={{
+          initial: 'small',
+          md: 'large',
+          lg: 'xlarge',
+        }}
+      >
+        Responsive Button with icon
+      </Button> */}
+    </div>
+  );
 };

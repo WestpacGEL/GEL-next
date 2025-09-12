@@ -8,6 +8,8 @@ import { ArrowRightIcon } from '../icon/index.js';
 import { FlexiCellAdornment, FlexiCellBody } from './components/index.js';
 import { styles as flexiCellStyles } from './flexi-cell.styles.js';
 import { type FlexiCellProps } from './flexi-cell.types.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 function FlexiCellBase(
   {
@@ -30,14 +32,15 @@ function FlexiCellBase(
   ref: Ref<HTMLElement>,
 ) {
   const { isFocusVisible, focusProps } = useFocusRing();
+  const breakpoint = useBreakpoint();
 
   const styles = flexiCellStyles({
     className,
-    withBorder,
     isLink: !!href,
     isFocusVisible,
     shouldHoverEffect: !withBorder && !dualAction,
-    size,
+    withBorder: resolveResponsiveVariant(withBorder, breakpoint),
+    size: resolveResponsiveVariant(size, breakpoint),
   });
 
   const content = useMemo(() => {

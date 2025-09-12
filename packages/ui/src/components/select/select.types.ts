@@ -2,6 +2,7 @@ import { HTMLAttributes, SelectHTMLAttributes } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './select.styles.js';
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -15,12 +16,12 @@ export type SelectProps = {
    * Size of select
    * @default medium
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
   /**
    * Width of select
    * @default auto
    */
-  width?: Variants['width'];
+  width?: ResponsiveVariants<Variants['width']>;
   /**
    * Width of select
    * @default auto

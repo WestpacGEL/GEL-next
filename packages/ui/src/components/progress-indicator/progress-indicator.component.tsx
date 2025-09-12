@@ -5,6 +5,8 @@ import { Label } from '../label/label.component.js';
 
 import { styles as ProgressIndicatorStyles } from './progress-indicator.styles.js';
 import { ProgressIndicatorProps } from './progress-indicator.types.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function ProgressIndicator({
   color = 'hero',
@@ -15,9 +17,11 @@ export function ProgressIndicator({
   'aria-label': ariaLabel = 'Loading',
   ...props
 }: ProgressIndicatorProps) {
+  const breakpoint = useBreakpoint();
+  const resolvedSize = resolveResponsiveVariant(size, breakpoint) || 'medium';
   const styles = ProgressIndicatorStyles({
-    size,
-    color,
+    size: resolveResponsiveVariant(resolvedSize, breakpoint),
+    color: resolveResponsiveVariant(color, breakpoint),
   });
 
   const id = useId();
@@ -32,7 +36,7 @@ export function ProgressIndicator({
 
   // TODO: fix this properly
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  const strokeHalfWidth = sizeMap[size.toString()].strokeWidth / 2;
+  const strokeHalfWidth = sizeMap[resolvedSize.toString()].strokeWidth / 2;
 
   return (
     <div aria-label={ariaLabel} className={styles.container()}>
@@ -61,9 +65,9 @@ export function ProgressIndicator({
             </>
           </g>
         </Icon>
-        {EmbedIcon && size === 'large' && <EmbedIcon size="large" color={color} className={styles.icon()} />}
+        {EmbedIcon && resolvedSize === 'large' && <EmbedIcon size="large" color={color} className={styles.icon()} />}
       </div>
-      {label && size === 'large' && <Label className={styles.label()}>{label}</Label>}
+      {label && resolvedSize === 'large' && <Label className={styles.label()}>{label}</Label>}
     </div>
   );
 }

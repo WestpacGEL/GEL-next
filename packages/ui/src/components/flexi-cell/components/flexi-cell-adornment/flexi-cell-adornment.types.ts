@@ -1,10 +1,11 @@
 import { type HTMLAttributes, type ReactNode } from 'react';
+import type { ResponsiveVariants } from '../../../../types/responsive-variants.types.js';
 
 export type FlexiCellAdornmentProps = {
   /**
    * Define the alignment of content
    */
-  align?: 'center' | 'top' | 'bottom';
+  align?: ResponsiveVariants<'center' | 'top' | 'bottom'>;
   /**
    * Children attribute
    */

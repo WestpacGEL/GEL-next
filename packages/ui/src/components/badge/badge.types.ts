@@ -2,6 +2,7 @@ import { HTMLAttributes, ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './badge.styles.js';
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -14,12 +15,12 @@ export type BadgeProps = {
    * Color of badge
    * @default hero
    */
-  color?: Variants['color'];
+  color?: ResponsiveVariants<Variants['color']>;
   /**
    * Removes background colour and adjusts text colour.
    * @default false
    */
-  soft?: Variants['soft'];
+  soft?: ResponsiveVariants<Variants['soft']>;
   /**
    * Tag to render
    * @default div
@@ -29,5 +30,5 @@ export type BadgeProps = {
    * Type of badge
    * @default default
    */
-  type?: Variants['type'];
+  type?: ResponsiveVariants<Variants['type']>;
 } & Omit<HTMLAttributes<Element>, 'color' | 'type'>;

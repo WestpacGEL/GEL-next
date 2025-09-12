@@ -3,6 +3,7 @@ import { DisclosureProps } from 'react-stately';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './accordion-item.styles.js';
+import type { ResponsiveVariants } from '../../../../types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 

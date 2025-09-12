@@ -33,11 +33,11 @@ The indicator can appear white for use on dark backgrounds.
 
 ```tsx
 () => {
-  return <div className="p-5 bg-black rounded-md flex items-top justify-center gap-3">
-      <ProgressIndicator size="large" color="white" />
-      <ProgressIndicator size="large" color="white" label="Loading..." />
-      <ProgressIndicator size="large" color="white" icon={PadlockTickIcon} />
-      <ProgressIndicator size="large" color="white" label="Signing in" icon={FingerprintIcon} />
+  return <div className="p-5 bg-surface-hero rounded-md flex items-top justify-center gap-3">
+      <ProgressIndicator size="large" color="mono" />
+      <ProgressIndicator size="large" color="mono" label="Loading..." />
+      <ProgressIndicator size="large" color="mono" icon={PadlockTickIcon} />
+      <ProgressIndicator size="large" color="mono" label="Signing in" icon={FingerprintIcon} />
     </div>;
 }
 ```

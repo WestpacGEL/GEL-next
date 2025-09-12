@@ -7,12 +7,12 @@ export const styles = tv({
   },
   variants: {
     brand: {
-      wbc: { base: 'bg-surface-primary' },
-      stg: { base: 'bg-surface-hero' },
-      bom: { base: 'bg-surface-hero' },
+      wbc: { base: 'bg-background-primary' },
+      stg: { base: 'bg-background-hero' },
+      bom: { base: 'bg-background-hero' },
       bsa: { base: 'bg-gradient-to-r from-hero via-[#00468e] to-[#00adbd]' },
-      wbg: { base: 'bg-surface-hero' },
-      rams: { base: 'bg-surface-primary' },
+      wbg: { base: 'bg-background-hero' },
+      rams: { base: 'bg-background-primary' },
       btfg: {},
     },
     fixed: {
