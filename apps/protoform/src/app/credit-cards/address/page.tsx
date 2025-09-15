@@ -76,6 +76,7 @@ export default function Address() {
               instanceId="housingLength"
               errorMessage={housingLengthError}
               size="large"
+              width={{ initial: 'full', md: 5 }}
             >
               <Select name="housingLength" defaultValue={data.housingLength} invalid={!!housingLengthError}>
                 <option value="">Select</option>

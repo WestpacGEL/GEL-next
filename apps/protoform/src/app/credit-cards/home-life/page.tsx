@@ -78,6 +78,7 @@ export default function HomeLife() {
               label="What is your current housing situation?"
               errorMessage={housingError}
               size="large"
+              width={{ initial: 'full', md: 9 }}
             >
               <Select name="housing" defaultValue={data.housing} invalid={!!housingError}>
                 <option value="">Select</option>
@@ -111,6 +112,7 @@ export default function HomeLife() {
               instanceId="dependants"
               errorMessage={dependantsError}
               size="large"
+              width={{ initial: 'full', md: 3 }}
             >
               <Select name="dependants" invalid={!!dependantsError} defaultValue={data.dependants}>
                 <option value="">Select</option>
@@ -130,6 +132,7 @@ export default function HomeLife() {
               errorMessage={expensesError || expenseFreqError}
               instanceId="expenses"
               before="$"
+              width={{ initial: 'full', md: 10 }}
               after={
                 <Select
                   name="expenseFreq"

@@ -86,6 +86,7 @@ Choose your credit card limit or have one allocated for you."
                 before="$"
                 errorMessage={cardLimitError}
                 instanceId="cardLimit"
+                width={{ initial: 'full', md: 10 }}
               >
                 <Input name="cardLimit" invalid={!!cardLimitError} defaultValue={data.cardLimit} />
               </InputGroup>

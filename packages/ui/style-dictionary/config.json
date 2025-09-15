@@ -1,0 +1,68 @@
+{
+  "source": ["tokens/**/*.json"],
+  "transform": {
+    "custom": {
+      "transforms": ["attribute/cti", "name/cti/kebab", "custom-schema-to-sd", "custom-value"]
+    }
+  },
+  "platforms": {
+    "android": {
+      "transformGroup": "custom",
+      "buildPath": "build/android/",
+      "files": [
+        {
+          "destination": "colors.xml",
+          "format": "android/colors"
+        },
+        {
+          "destination": "dimens.xml",
+          "format": "android/dimens"
+        }
+      ]
+    },
+    "ios": {
+      "transformGroup": "custom",
+      "buildPath": "build/ios/",
+      "files": [
+        {
+          "destination": "StyleDictionaryColor.swift",
+          "format": "ios-swift/class.swift",
+          "className": "StyleDictionaryColor",
+          "filter": {
+            "attributes": {
+              "category": "color"
+            }
+          }
+        },
+        {
+          "destination": "StyleDictionarySize.swift",
+          "format": "ios-swift/class.swift",
+          "className": "StyleDictionarySize",
+          "filter": {
+            "attributes": {
+              "category": "size"
+            }
+          }
+        }
+      ]
+    },
+    "web": {
+      "transformGroup": "custom",
+      "buildPath": "build/web/",
+      "files": [
+        {
+          "destination": "variables.css",
+          "format": "css/variables"
+        },
+        {
+          "destination": "tokens.js",
+          "format": "javascript/es6"
+        },
+        {
+          "destination": "tokens.custom.json",
+          "format": "custom-schema"
+        }
+      ]
+    }
+  }
+}

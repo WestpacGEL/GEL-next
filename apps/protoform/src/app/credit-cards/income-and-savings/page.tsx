@@ -67,6 +67,7 @@ export default function IncomeAndSavings() {
                 errorMessage={incomeError || freqError}
                 instanceId="income"
                 before="$"
+                width={{ initial: 'full', md: 10 }}
                 after={
                   <Select name="incomeFreq" id="incomeFreq" defaultValue={data.incomeFreq} invalid={!!freqError}>
                     <option value="">Select</option>
@@ -90,6 +91,7 @@ export default function IncomeAndSavings() {
               instanceId="totalBal"
               errorMessage={balanceError}
               before="$"
+              width={{ initial: 'full', md: 10 }}
             >
               <Input invalid={!!balanceError} name="totalBal" defaultValue={data.totalBal} />
             </InputGroup>

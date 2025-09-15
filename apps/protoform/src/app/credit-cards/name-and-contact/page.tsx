@@ -71,14 +71,23 @@ export default function NameAndContact() {
   return (
     <div>
       <BackButton onClick={() => router.push('/credit-cards/credit-limit')}>Back to Credit limit</BackButton>
-      <CustomHeading groupHeading="Your details" leadText="[Dummy lead text to be replaced later]">
+      <CustomHeading
+        groupHeading="Your details"
+        leadText="We just need a few more details to confirm who you are and get you the right services."
+      >
         Name & contact
       </CustomHeading>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
       <Form id="credit-card" spacing="large" onSubmit={handleSubmit}>
         <FormSection className="border-none !p-0">
           <FormGroup>
-            <InputGroup label="Title" size="large" errorMessage={titleError} instanceId="title">
+            <InputGroup
+              width={{ initial: 'full', md: 5 }}
+              label="Title"
+              size="large"
+              errorMessage={titleError}
+              instanceId="title"
+            >
               <Select name="title" defaultValue={data.title} invalid={!!titleError}>
                 <option value="">Select</option>
                 <option value="Mr">Mr</option>

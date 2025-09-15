@@ -78,6 +78,7 @@ export default function IncomeAndSavings() {
               instanceId="repayments"
               errorMessage={repaymentFrequencyError || repaymentsError}
               before="$"
+              width={{ initial: 'full', md: 10 }}
               after={
                 <Select
                   name="repaymentFreq"
@@ -122,6 +123,7 @@ export default function IncomeAndSavings() {
                 hint="Enter a dollar value"
                 errorMessage={totalBalanceError}
                 before="$"
+                width={{ initial: 'full', md: 10 }}
               >
                 <Input invalid={!!totalBalanceError} name="totalBal" defaultValue={data.totalBal} />
               </InputGroup>

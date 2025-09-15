@@ -93,7 +93,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
             <Button
               look="link"
               iconAfter={MoreVertIcon}
-              className="typography-body-10 no-underline"
+              className="typography-body-10 no-underline px-0"
               onClick={() => setOpen(true)}
             >
               Show all steps

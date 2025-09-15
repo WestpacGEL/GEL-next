@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="wbc">
       <body>
-        <main className="m-auto max-w-[1923px] overscroll-y-none border border-y-0 border-border">
+        <main className="m-auto min-h-screen max-w-[1923px] overscroll-y-none border border-y-0 border-border flex flex-col">
           <SidebarContextProvider>
             <CustomHeader />
             <Sidebar />

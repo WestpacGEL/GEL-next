@@ -11,7 +11,7 @@ export function ContentWrapper({ children }: { children: ReactNode }) {
 
   return (
     <section
-      className={clsx('min-h-[90vh]', {
+      className={clsx('flex-1', {
         'md:mr-[300px]': open,
       })}
       id="content-wrapper"
