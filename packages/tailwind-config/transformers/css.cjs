@@ -15,7 +15,7 @@ const tokens = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
 
 const themeTemplatePath = path.resolve(__dirname, '../templates/theme.handlebars');
 const themeTemplateSource = fs.readFileSync(themeTemplatePath, 'utf8');
-const sharedStylesTemplatePath = path.resolve(__dirname, '../templates/shared-styles.handlebars');
+const sharedStylesTemplatePath = path.resolve(__dirname, '../templates/colors.handlebars');
 const sharedStylesTemplateSource = fs.readFileSync(sharedStylesTemplatePath, 'utf8');
 
 const themeTemplate = Handlebars.compile(themeTemplateSource);
@@ -160,7 +160,7 @@ if (tokensBlock) {
   }
 }
 
-const brandOutputDir = path.resolve(__dirname, '../themes');
+const brandOutputDir = path.resolve(__dirname, '../css/themes');
 ['wbc', 'stg'].forEach(brand => {
   const brandFile = path.resolve(brandOutputDir, `theme-${brand}.css`);
   fs.writeFileSync(
@@ -173,9 +173,9 @@ const brandOutputDir = path.resolve(__dirname, '../themes');
   );
 });
 
-const sharedOutputFile = path.resolve(__dirname, '../styles.css');
+const colorsOutputFile = path.resolve(__dirname, '../css/shared/colors.css');
 fs.writeFileSync(
-  sharedOutputFile,
+  colorsOutputFile,
   sharedStylesTemplate({
     reserved: colorsObj.reserved?.primitives || {},
     light: tokensObj.light || {},

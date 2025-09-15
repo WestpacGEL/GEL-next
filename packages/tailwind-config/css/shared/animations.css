@@ -1,0 +1,65 @@
+@theme inline static {
+  --animate-skeleton: waveLines 2s infinite ease-out;
+  --animate-waveLines: waveLines;
+  --animate-fadeIn: fadeIn 0.2s ease;
+  --animate-fadeInDown: fadeInDown 0.4s ease;
+  --animate-fadeInUp: fadeInUp 0.4s ease;
+  --animate-slideUp: slideUp 0.4s ease;
+  --animate-maxHeightIn: maxHeightIn 0.4s ease;
+}
+
+/* Keyframes */
+@keyframes waveLines {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes maxHeightIn {
+  0% {
+    max-height: 0;
+  }
+}

@@ -1,6 +1,3 @@
-@import 'tailwindcss';
-@import './common/theme-variables.css';
-
 /* Manually setting the dark variant selector */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -40,15 +37,6 @@
 }
 
 /* Tailwind theme variables  */
-/* TODO
-    - double check use of inline and static 
-    - add 
-        - border 
-        - font/typography
-        - breakpoints/container
-        - spacing
-
-*/
 @theme inline static {
     {{#each light}}
     --color-{{@key}}: var(--{{@key}});

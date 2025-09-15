@@ -5,8 +5,8 @@
   "private": true,
   "exports": {
     ".": "./styles.css",
-    "./theme-wbc": "./themes/theme-wbc.css",
-    "./theme-stg": "./themes/theme-stg.css",
+    "./theme-wbc": "./css/themes/theme-wbc.css",
+    "./theme-stg": "./css/themes/theme-stg.css",
     "./postcss": "./postcss.config.js"
   },
   "devDependencies": {
