@@ -1,27 +1,18 @@
 'use client';
 
 import { Form, FormGroup, FormSection, Input, InputGroup } from '@westpac/ui';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { FormEvent, useEffect, useState } from 'react';
-
-import { BackButton } from '@/components/back-button/back-button';
-import { Cta } from '@/components/cta/cta';
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
-import { ErrorValidationAlert, ValidationErrorType } from '@/components/error-validation-alert/error-validation-alert';
-import { useSidebar } from '@/components/sidebar/context';
+import { FormEvent, useState } from 'react';
 import { getFormData } from '@/utils/getFormData';
+import { defaultError } from '@/constants/form-contsants';
+import { ErrorValidationAlert, ValidationErrorType } from '@/components/error-validation-alert/error-validation-alert';
+import { Cta } from '@/components/cta/cta';
+import router from 'next/router';
 
-import { defaultError } from '../../constants/form-contsants';
-
-import { useCreditCard } from './context';
-
-export default function CreditCards() {
-  const { setRopeStep } = useSidebar();
-  const { data, setData } = useCreditCard();
+export default function SuccessPage() {
   const [nameError, setNameError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
-  const searchParams = useSearchParams();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,23 +25,22 @@ export default function CreditCards() {
         ...(!email ? [{ id: 'email', label: 'Email address' }] : []),
       ]);
     } else {
-      setData({ ...data, name, email });
-      const isFlattenRope = searchParams.get('flatten');
-      router.push(`/credit-cards/income-and-savings${isFlattenRope ? '?flatten=true' : ''}`);
+      // TODO: do something
     }
   };
 
-  useEffect(() => {
-    setRopeStep(0);
-  }, [setRopeStep]);
-
-  const router = useRouter();
-
   return (
     <div>
-      <BackButton onClick={() => router.push('/')}>Back to dashboard</BackButton>
-      <CustomHeading groupHeading="Get started" leadText="To begin, we just need a few details.">
-        Quick contact
+      <CustomHeading
+        leadText="Lead text relating to this heading."
+        beforeContent={
+          <div className="mb-3 flex gap-1">
+            <h3 className="text-muted typography-body-11">[Company/Individual name]:</h3>
+            <span className="typography-body-11">1234567890</span>
+          </div>
+        }
+      >
+        Title
       </CustomHeading>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
       <Form id="credit-card" spacing="large" className="p-0" onSubmit={handleSubmit}>
@@ -63,12 +53,12 @@ export default function CreditCards() {
               hint="To help us verify your identity online, please enter your name exactly as it appears on your ID."
               errorMessage={nameError}
             >
-              <Input name="name" defaultValue={data.name} invalid={!!nameError} />
+              <Input name="name" invalid={!!nameError} />
             </InputGroup>
           </FormGroup>
           <FormGroup>
             <InputGroup size="large" instanceId="email" label="Email address" errorMessage={emailError}>
-              <Input name="email" defaultValue={data.email} invalid={!!emailError} />
+              <Input name="email" invalid={!!emailError} />
             </InputGroup>
           </FormGroup>
         </FormSection>

@@ -1,7 +1,7 @@
 'use client';
 
 import { Field, Form, FormGroup, FormSection, Input, InputGroup, Select } from '@westpac/ui';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent, useEffect, useState } from 'react';
 
 import { BackButton } from '@/components/back-button/back-button';
@@ -25,6 +25,8 @@ export default function NameAndContact() {
   const [dobYearError, setDobYearError] = useState('');
   const [mobileError, setMobileError] = useState('');
   const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
+  const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
 
   // eslint-disable-next-line sonarjs/cognitive-complexity
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -58,7 +60,7 @@ export default function NameAndContact() {
       ]);
     } else {
       setData({ ...data, title, givenName, middleName, familyName, dobDay, dobMonth, dobYear, mobileNumber });
-      router.push('/credit-cards/address');
+      router.push(`/credit-cards/address${isFlattenRope ? '?flatten=true' : ''}`);
     }
   };
 
@@ -70,7 +72,9 @@ export default function NameAndContact() {
 
   return (
     <div>
-      <BackButton onClick={() => router.push('/credit-cards/credit-limit')}>Back to Credit limit</BackButton>
+      <BackButton onClick={() => router.push(`/credit-cards/credit-limit${isFlattenRope ? '?flatten=true' : ''}`)}>
+        Back to Credit limit
+      </BackButton>
       <CustomHeading
         groupHeading="Your details"
         leadText="We just need a few more details to confirm who you are and get you the right services."

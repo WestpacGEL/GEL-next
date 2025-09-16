@@ -1,7 +1,7 @@
 'use client';
 
 import { ButtonGroup, Form, FormGroup, FormSection, Input, InputGroup, Select } from '@westpac/ui';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent, useEffect, useState } from 'react';
 
 import { BackButton } from '@/components/back-button/back-button';
@@ -24,6 +24,9 @@ export default function HomeLife() {
   const [sharedExpensesError, setSharedExpensesError] = useState('');
   const [sharedExpenses, setSharedExpenses] = useState('');
   const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
+
+  const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
 
   // eslint-disable-next-line sonarjs/cognitive-complexity
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -50,7 +53,7 @@ export default function HomeLife() {
       ]);
     } else {
       setData({ ...data, housing, dependants, expenseFreq, expenses, sharedExpenses });
-      router.push('/credit-cards/credit-limit');
+      router.push(`/credit-cards/credit-limit${isFlattenRope ? '?flatten=true' : ''}`);
     }
   };
 
@@ -62,7 +65,9 @@ export default function HomeLife() {
 
   return (
     <div>
-      <BackButton onClick={() => router.push('/credit-cards/loans-and-cards')}>Back to Loans and cards</BackButton>
+      <BackButton onClick={() => router.push(`/credit-cards/loans-and-cards${isFlattenRope ? '?flatten=true' : ''}`)}>
+        Back to Loans and cards
+      </BackButton>
       <CustomHeading
         groupHeading="Your finances"
         leadText="Tell us more about your general expenses and living situation."

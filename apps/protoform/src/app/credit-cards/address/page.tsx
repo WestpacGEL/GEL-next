@@ -1,7 +1,7 @@
 'use client';
 
 import { Autocomplete, AutocompleteItem, Form, FormGroup, FormSection, InputGroup, Select } from '@westpac/ui';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent, useEffect, useState } from 'react';
 
 import { BackButton } from '@/components/back-button/back-button';
@@ -20,6 +20,8 @@ export default function Address() {
   const [addressError, setAddressError] = useState('');
   const [housingLengthError, setHousingLengthError] = useState('');
   const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
+  const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,7 +35,7 @@ export default function Address() {
       ]);
     } else {
       setData({ ...data, address, housingLength });
-      router.push('/credit-cards/review-and-submit');
+      router.push(`/credit-cards/review-and-submit${isFlattenRope ? '?flatten=true' : ''}`);
     }
   };
 
@@ -45,7 +47,9 @@ export default function Address() {
 
   return (
     <div>
-      <BackButton onClick={() => router.push('/credit-cards/name-and-contact')}>Back to Name & contact</BackButton>
+      <BackButton onClick={() => router.push(`/credit-cards/name-and-contact${isFlattenRope ? '?flatten=true' : ''}`)}>
+        Back to Name & contact
+      </BackButton>
       <CustomHeading
         groupHeading="Your details"
         leadText="Tell us more about where you live and how long you've been there."

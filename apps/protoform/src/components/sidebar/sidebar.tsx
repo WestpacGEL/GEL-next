@@ -72,7 +72,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
         } else if (ropeType === 'group') {
           stepCount += 1;
         } else {
-          stepCount += ropeData.length;
+          stepCount++;
         }
       });
     }

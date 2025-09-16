@@ -1,7 +1,7 @@
 'use client';
 
 import { ButtonGroup, Form, FormGroup, FormSection, Input, InputGroup } from '@westpac/ui';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent, useEffect, useState } from 'react';
 
 import { BackButton } from '@/components/back-button/back-button';
@@ -21,6 +21,8 @@ export default function CreditLimit() {
   const [cardLimitError, setCardLimitError] = useState('');
   const [creditLimitType, setCreditLimitType] = useState('');
   const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
+  const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,7 +40,7 @@ export default function CreditLimit() {
       ]);
     } else {
       setData({ ...data, creditLimitType, cardLimit });
-      router.push('/credit-cards/name-and-contact');
+      router.push(`/credit-cards/name-and-contact${isFlattenRope ? '?flatten=true' : ''}`);
     }
   };
 
@@ -50,7 +52,9 @@ export default function CreditLimit() {
 
   return (
     <div>
-      <BackButton onClick={() => router.push('/credit-cards/home-life')}>Back to Home life</BackButton>
+      <BackButton onClick={() => router.push(`/credit-cards/home-life${isFlattenRope ? '?flatten=true' : ''}`)}>
+        Back to Home life
+      </BackButton>
       <CustomHeading
         groupHeading="Your card"
         leadText="

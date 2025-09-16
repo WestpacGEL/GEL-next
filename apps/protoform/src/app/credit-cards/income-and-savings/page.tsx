@@ -1,7 +1,7 @@
 'use client';
 
 import { Form, FormGroup, FormSection, Input, InputGroup, Repeater, Select } from '@westpac/ui';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent, useEffect, useState } from 'react';
 
 import { BackButton } from '@/components/back-button/back-button';
@@ -21,6 +21,8 @@ export default function IncomeAndSavings() {
   const [freqError, setFreqError] = useState('');
   const [balanceError, setBalanceError] = useState('');
   const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
+  const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,7 +42,7 @@ export default function IncomeAndSavings() {
       ]);
     } else {
       setData({ ...data, totalBal, incomeFreq, income });
-      router.push('/credit-cards/loans-and-cards');
+      router.push(`/credit-cards/loans-and-cards${isFlattenRope ? '?flatten=true' : ''}`);
     }
   };
 
@@ -52,7 +54,9 @@ export default function IncomeAndSavings() {
 
   return (
     <div>
-      <BackButton onClick={() => router.push('/credit-cards')}>Back to Quick contact</BackButton>
+      <BackButton onClick={() => router.push(`/credit-cards${isFlattenRope ? '?flatten=true' : ''}`)}>
+        Back to Quick contact
+      </BackButton>
       <CustomHeading groupHeading="Your finances" leadText="Tell us about your income and any savings you have.">
         Income & savings
       </CustomHeading>

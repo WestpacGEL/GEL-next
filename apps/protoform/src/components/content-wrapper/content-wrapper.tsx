@@ -4,15 +4,11 @@ import { Grid, GridContainer, GridItem } from '@westpac/ui';
 import { clsx } from 'clsx';
 import { ReactNode } from 'react';
 
-import { useSidebar } from '../sidebar/context';
-
-export function ContentWrapper({ children }: { children: ReactNode }) {
-  const { open } = useSidebar();
-
+export function ContentWrapper({ children, isSidebarOpen }: { children: ReactNode; isSidebarOpen?: boolean }) {
   return (
     <section
       className={clsx('flex-1', {
-        'md:mr-[300px]': open,
+        'md:mr-[300px]': isSidebarOpen,
       })}
       id="content-wrapper"
     >

@@ -6,7 +6,9 @@ export function CustomHeading({
   tag: Tag = 'h1',
   groupHeading,
   leadText,
+  beforeContent,
 }: {
+  beforeContent?: ReactNode;
   children: ReactNode;
   groupHeading?: string;
   leadText?: string;
@@ -20,6 +22,7 @@ export function CustomHeading({
         'pt-0 pb-5': Tag === 'h3' || Tag === 'h4' || Tag === 'h5' || Tag === 'h6',
       })}
     >
+      {beforeContent}
       {groupHeading && (
         <h3 className=" typography-body-10 pb-1 text-[11px] font-medium uppercase text-muted md:hidden">
           {groupHeading}

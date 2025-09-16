@@ -1,7 +1,7 @@
 'use client';
 
 import { ButtonGroup, Form, FormGroup, FormSection, Input, InputGroup, Select } from '@westpac/ui';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent, useEffect, useState } from 'react';
 
 import { BackButton } from '@/components/back-button/back-button';
@@ -23,6 +23,8 @@ export default function IncomeAndSavings() {
   const [totalBalanceError, setTotalBalanceError] = useState('');
   const [otherCards, setOtherCards] = useState('');
   const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
+  const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
 
   // eslint-disable-next-line sonarjs/cognitive-complexity
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -47,7 +49,7 @@ export default function IncomeAndSavings() {
       ]);
     } else {
       setData({ ...data, repaymentFreq, repayments, totalBal, nonWestpacCards: otherCards });
-      router.push('/credit-cards/home-life');
+      router.push(`/credit-cards/home-life${isFlattenRope ? '?flatten=true' : ''}`);
     }
   };
 
@@ -59,7 +61,9 @@ export default function IncomeAndSavings() {
 
   return (
     <div>
-      <BackButton onClick={() => router.push('/credit-cards/income-and-savings')}>
+      <BackButton
+        onClick={() => router.push(`/credit-cards/income-and-savings${isFlattenRope ? '?flatten=true' : ''}`)}
+      >
         Back to Income and savings
       </BackButton>
       <CustomHeading

@@ -5,12 +5,9 @@ import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import { useSidebar } from '../sidebar/context';
-
-export function CustomHeader() {
+export function CustomHeader({ isSidebarScrolled }: { isSidebarScrolled?: boolean }) {
   const router = useRouter();
   const [isMobile, setIsMobile] = useState(true);
-  const { sidebarScrolled } = useSidebar();
 
   const updateSize = () => {
     setIsMobile(window.innerWidth < parseInt(BREAKPOINTS.md));
@@ -29,7 +26,7 @@ export function CustomHeader() {
       leftOnClick={() => router.back()}
       logoLink="/"
       fixed={!isMobile}
-      isScrolled={sidebarScrolled}
+      isScrolled={isSidebarScrolled}
       fixedMaxWidth="1921px"
       className={'z-[100] m-auto w-full'}
     >
