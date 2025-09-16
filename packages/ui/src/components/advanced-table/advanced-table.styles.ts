@@ -11,22 +11,31 @@ export const styles = tv({
     resizeBar: 'absolute right-0 h-3 w-[2px] cursor-col-resize select-none rounded bg-border',
     tableBody: '',
     bodyRow: '',
-    td: 'border-b border-border p-2',
+    td: 'border-b border-border bg-white p-2',
   },
   variants: {
-    virtualized: {
+    scrollableRows: {
       true: {
-        container: '',
-        table: '',
-        tableHeader: 'table table-fixed',
+        container: 'relative h-[500px]',
+        table: 'grid h-[500px] overflow-auto',
+        tableHeader: 'sticky top-0 z-[1] grid',
         headerRow: '',
         th: '',
-        tableBody: 'relative block table-fixed overflow-auto',
-        bodyRow: 'absolute',
-        td: '',
+        tableBody: 'relative grid',
+        bodyRow: 'absolute flex w-full',
+        td: 'flex',
       },
-      false: {
-        container: '',
+    },
+    scrollableColumns: {
+      true: {
+        container: 'flex w-[700px]',
+        table: 'block w-[700px] overflow-auto',
+        tableHeader: 'table table-fixed',
+        headerRow: 'flex',
+        th: '',
+        tableBody: 'relative table-fixed',
+        bodyRow: 'flex',
+        td: '',
       },
     },
   },

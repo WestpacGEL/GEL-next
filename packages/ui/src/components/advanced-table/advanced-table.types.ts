@@ -57,6 +57,14 @@ export type AdvancedTableProps<T> = {
    */
   rowCount?: number;
   /**
+   * Sets table to use virtualized scrollable columns
+   */
+  scrollableColumns?: boolean;
+  /**
+   * Sets table to use virtualized scrollable rows rather than pagination
+   */
+  scrollableRows?: boolean;
+  /**
    * Enables all columns to be sortable. Can also be done per-column in required columns array.
    */
   sortable?: boolean;
@@ -64,5 +72,4 @@ export type AdvancedTableProps<T> = {
    * If using expandable rows, this key will be used to identify the sub-rows
    */
   subRowKey?: string;
-  virtualized?: boolean;
 };

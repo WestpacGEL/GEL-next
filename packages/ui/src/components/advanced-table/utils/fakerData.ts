@@ -42,3 +42,17 @@ export function makePersonData(...lens: number[]) {
 
   return makeDataLevel();
 }
+
+export const makeColumns = (num: number) =>
+  [...Array(num)].map((_, i) => {
+    return {
+      key: i.toString(),
+      title: 'Column ' + i.toString(),
+      size: Math.floor(Math.random() * 150) + 100,
+    };
+  });
+
+export const makeDataFromCols = (num: number, columns: ReturnType<typeof makeColumns>) =>
+  [...Array(num)].map(() => ({
+    ...Object.fromEntries(columns.map(col => [col.key, faker.person.firstName()])),
+  }));

@@ -2,7 +2,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { AdvancedTable } from './advanced-table.component.js';
 import { AdvancedColumnProps } from './advanced-table.types.js';
-import { AdvancedPerson, makePersonData } from './utils/fakerData.js';
+import { AdvancedPerson, makeColumns, makeDataFromCols, makePersonData } from './utils/fakerData.js';
 
 const columns: AdvancedColumnProps<AdvancedPerson>[] = [
   {
@@ -43,17 +43,27 @@ const meta: Meta<typeof AdvancedTable> = {
 
 const defaultData = makePersonData(100);
 
+const manyCols = makeColumns(100);
+const dataForCols = makeDataFromCols(100, manyCols);
+
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <AdvancedTable<AdvancedPerson>
-      data={defaultData}
-      columns={columns}
+    <AdvancedTable<AdvancedPerson> data={defaultData} columns={columns} resizable sortable subRowKey="subRows" />
+  ),
+};
+
+export const Virtualized: Story = {
+  render: () => (
+    <AdvancedTable<ReturnType<typeof makeDataFromCols>[0]>
+      data={dataForCols}
+      columns={manyCols}
       resizable
       sortable
-      virtualized
+      scrollableColumns
+      scrollableRows
       subRowKey="subRows"
     />
   ),
