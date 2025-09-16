@@ -21,7 +21,7 @@ describe('InputGroup', () => {
   it('renders the style correctly', () => {
     const style = styles();
     // TODO: use some variants for test
-    expect(style.base()).toBe('group m-0 mb-5 border-none p-0');
+    expect(style.base()).toBe('group m-0 border-none p-0');
   });
 
   describe('when the label prop is defined', () => {
