@@ -7,7 +7,7 @@ import { RopeDataSetter } from '@/components/rope-data-setter/rope-data-setter';
 
 import { CreditCardContextProvider } from './context';
 import { useMemo } from 'react';
-import { SidebarContextProvider, useSidebar } from '@/components/sidebar/context';
+import { useSidebar } from '@/components/sidebar/context';
 import { CustomHeader } from '@/components/custom-header/custom-header';
 import { Sidebar } from '@/components/sidebar/sidebar';
 import { ContentWrapper } from '@/components/content-wrapper/content-wrapper';
