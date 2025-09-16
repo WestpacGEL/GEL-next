@@ -1,0 +1,28 @@
+@layer theme {
+  :root, 
+  :host {
+    {{#each borders}}
+    --{{@key}}: {{this}};
+    {{/each}}
+  }
+
+  /* Token definitions  */
+  [data-brand] {
+    {{#each light}}
+    --{{@key}}: {{this}};
+    {{/each}}
+
+    @variant dark {
+      {{#each dark}}
+      --{{@key}}: {{this}};
+      {{/each}}
+    }
+  }
+}
+
+/* Tailwind theme variables  */
+@theme inline static {
+  {{#each radius}}
+  --{{@key}}: {{@this}};
+  {{/each}}
+}

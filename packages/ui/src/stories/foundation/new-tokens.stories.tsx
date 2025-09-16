@@ -25,10 +25,10 @@ const meta: Meta = {
             className="pl-2"
           />
           <div className="bg-background-white-black p-2">
-            <p className="font-bold text-text-warning">
+            <p className="text-text-warning font-bold">
               NOTE: These tokens are not final and this is for example purposes
             </p>
-            <p className="font-bold text-text-warning">
+            <p className="text-text-warning font-bold">
               NOTE: When toggling the hex value displayed will not change, you need to change theme at the top to change
               the displayed hex value.
             </p>
@@ -162,6 +162,117 @@ const LOAD_COLORS = {
   ],
 };
 
+const colors = {
+  background: [
+    'bg-background-white-black',
+    'bg-background-faint',
+    'bg-background-pale',
+    'bg-background-white-pale',
+    'bg-background-white-faint',
+  ],
+  surface: [
+    'bg-surface-muted',
+    'bg-surface-muted-vivid',
+    'bg-surface-muted-strong',
+    'bg-surface-muted-mild',
+    'bg-surface-hover-primary',
+    'bg-surface-hover-primary-faint',
+    'bg-surface-active-primary-faint',
+    'bg-surface-hover-hero-faint',
+    'bg-surface-active-muted-pale',
+    'bg-surface-hover-mono',
+    'bg-surface-active-hero-faint',
+    'bg-surface-hover-mono',
+    'bg-surface-active-mono',
+    'bg-surface-active-primary',
+    'bg-surface-muted-soft',
+    'bg-surface-muted-pale',
+    'bg-surface-muted-faint',
+    'bg-surface-mono',
+    'bg-surface-primary',
+    'bg-surface-primary-faint',
+    'bg-surface-hero',
+    'bg-surface-hover-hero',
+    'bg-surface-active-hero',
+    'bg-surface-hero-faint',
+    'bg-surface-pop',
+    'bg-surface-pop-faint',
+    'bg-surface-holler',
+    'bg-surface-holler-faint',
+    'bg-surface-sing',
+    'bg-surface-sing-faint',
+    'bg-surface-dance',
+    'bg-surface-dance-faint',
+    'bg-surface-success',
+    'bg-surface-success-faint',
+    'bg-surface-info',
+    'bg-surface-info-faint',
+    'bg-surface-warning',
+    'bg-surface-warning-faint',
+    'bg-surface-danger',
+    'bg-surface-danger-faint',
+    'bg-surface-system-error',
+    'bg-surface-system-error-dark',
+    'bg-surface-data-a-solid',
+    'bg-surface-data-a-tint',
+    'bg-surface-data-a-opacity',
+    'bg-surface-data-b-solid',
+    'bg-surface-data-b-tint',
+    'bg-surface-data-b-opacity',
+    'bg-surface-data-c-solid',
+    'bg-surface-data-c-tint',
+    'bg-surface-data-c-opacity',
+    'bg-surface-data-d-solid',
+    'bg-surface-data-d-tint',
+    'bg-surface-data-d-opacity',
+    'bg-surface-data-e-solid',
+    'bg-surface-data-e-tint',
+    'bg-surface-data-e-opacity',
+    'bg-surface-data-f-solid',
+    'bg-surface-data-f-tint',
+    'bg-surface-data-f-opacity',
+    'bg-surface-pictogram-base',
+    'bg-surface-pictogram-accent',
+  ],
+  text: [
+    'bg-text-body',
+    'bg-text-heading',
+    'bg-text-muted',
+    'bg-text-primary',
+    'bg-text-hero',
+    'bg-text-holler',
+    'bg-text-link',
+    'bg-text-success',
+    'bg-text-info',
+    'bg-text-warning',
+    'bg-text-danger',
+    'bg-text-system-error',
+    'bg-text-mono',
+  ],
+  border: [
+    'bg-border-muted',
+    'bg-border-muted-strong',
+    'bg-border-muted-mild',
+    'bg-border-muted-soft',
+    'bg-border-hero',
+    'bg-border-primary',
+    'bg-border-pop',
+    'bg-border-holler',
+    'bg-border-sing',
+    'bg-border-dance',
+    'bg-border-success',
+    'bg-border-success-mild',
+    'bg-border-info',
+    'bg-border-info-mild',
+    'bg-border-warning',
+    'bg-border-warning-mild',
+    'bg-border-danger',
+    'bg-border-danger-mild',
+    'bg-border-reversed',
+    'bg-border-focus',
+  ],
+};
+
 export default meta;
 type Story = StoryObj<typeof meta>;
 
@@ -178,19 +289,19 @@ export const ScreenColors: Story = {
       return (
         <>
           <div className="bg-background-white-black p-2">
-            <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
+            <p className="text-text-body font-bold">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-background-white-black">
+          <div className="bg-background-white-black flex flex-wrap">
             {screenColors.map(color => (
-              <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
-                <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
-                <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
-                  <div className="pb-2 font-bold text-text-body">{color}</div>
-                  <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: bg-${color}`}</div>
+              <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
+                <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
+                <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
+                  <div className="text-text-body pb-2 font-bold">{color}</div>
+                  <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind eg: bg-${color}`}</div>
                   {/* Below comments to get rid of type nightmare when trying to get hex value */}
                   {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                   {/* @ts-ignore */}
-                  <div className="typography-body-10 pt-2 font-light text-text-body">{currColors[color]}</div>
+                  <div className="typography-body-10 text-text-body pt-2 font-light">{currColors[color]}</div>
                 </div>
               </div>
             ))}
@@ -200,13 +311,34 @@ export const ScreenColors: Story = {
     } else {
       return (
         <div>
-          <p className="pb-2 font-bold text-text-body">
+          <p className="text-text-body pb-2 font-bold">
             This story only works with the new themes, please change to one of the new themes with the theme switcher
           </p>
         </div>
       );
     }
   },
+};
+
+export const Surface = () => {
+  return (
+    <>
+      <div className="bg-background-white-black p-2">
+        <p className="text-text-body font-bold">All colors used in this example are using new color tokens</p>
+      </div>
+      <div className="bg-background-white-black flex flex-wrap">
+        {colors.surface.map(color => (
+          <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
+            <div className={`${color} border-border-muted-soft h-[80px] border border-b-0`} />
+            <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
+              <div className="text-text-body pb-2 font-bold">{color}</div>
+              <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind class: ${color}`}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 };
 
 /**
@@ -222,19 +354,19 @@ export const SurfaceColors: Story = {
       return (
         <>
           <div className="bg-background-white-black p-2">
-            <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
+            <p className="text-text-body font-bold">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-background-white-black">
+          <div className="bg-background-white-black flex flex-wrap">
             {surfaceColors.map(color => (
-              <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
-                <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
-                <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
-                  <div className="pb-2 font-bold text-text-body">{color}</div>
-                  <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: bg-${color}`}</div>
+              <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
+                <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
+                <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
+                  <div className="text-text-body pb-2 font-bold">{color}</div>
+                  <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind eg: bg-${color}`}</div>
                   {/* Below comments to get rid of type nightmare when trying to get hex value */}
                   {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                   {/* @ts-ignore */}
-                  <div className="typography-body-10 pt-2 font-light text-text-body">{currColors[color]}</div>
+                  <div className="typography-body-10 text-text-body pt-2 font-light">{currColors[color]}</div>
                 </div>
               </div>
             ))}
@@ -244,7 +376,7 @@ export const SurfaceColors: Story = {
     } else {
       return (
         <div>
-          <p className="pb-2 font-bold text-text-body">
+          <p className="text-text-body pb-2 font-bold">
             This story only works with the new themes, please change to one of the new themes with the theme switcher
           </p>
         </div>
@@ -266,19 +398,19 @@ export const TextColors: Story = {
       return (
         <>
           <div className="bg-background-white-black p-2">
-            <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
+            <p className="text-text-body font-bold">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-background-white-black">
+          <div className="bg-background-white-black flex flex-wrap">
             {textColors.map(color => (
-              <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
-                <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
-                <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
-                  <div className="pb-2 font-bold text-text-body">{color}</div>
-                  <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: text-${color}`}</div>
+              <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
+                <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
+                <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
+                  <div className="text-text-body pb-2 font-bold">{color}</div>
+                  <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind eg: text-${color}`}</div>
                   {/* Below comments to get rid of type nightmare when trying to get hex value */}
                   {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                   {/* @ts-ignore */}
-                  <div className="typography-body-10 pt-2 font-light text-text-body">{currColors[color]}</div>
+                  <div className="typography-body-10 text-text-body pt-2 font-light">{currColors[color]}</div>
                 </div>
               </div>
             ))}
@@ -288,7 +420,7 @@ export const TextColors: Story = {
     } else {
       return (
         <div>
-          <p className="pb-2 font-bold text-text-body">
+          <p className="text-text-body pb-2 font-bold">
             This story only works with the new themes, please change to one of the new themes with the theme switcher
           </p>
         </div>
@@ -310,19 +442,19 @@ export const BorderColors: Story = {
       return (
         <>
           <div className="bg-background-white-black p-2">
-            <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
+            <p className="text-text-body font-bold">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-background-white-black">
+          <div className="bg-background-white-black flex flex-wrap">
             {borderColors.map(color => (
-              <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
-                <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
-                <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
-                  <div className="pb-2 font-bold text-text-body">{color}</div>
-                  <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: border-${color}`}</div>
+              <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
+                <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
+                <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
+                  <div className="text-text-body pb-2 font-bold">{color}</div>
+                  <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind eg: border-${color}`}</div>
                   {/* Below comments to get rid of type nightmare when trying to get hex value */}
                   {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                   {/* @ts-ignore */}
-                  <div className="typography-body-10 pt-2 font-light text-text-body">{currColors[color]}</div>
+                  <div className="typography-body-10 text-text-body pt-2 font-light">{currColors[color]}</div>
                 </div>
               </div>
             ))}
@@ -332,7 +464,7 @@ export const BorderColors: Story = {
     } else {
       return (
         <div>
-          <p className="pb-2 font-bold text-text-body">
+          <p className="text-text-body pb-2 font-bold">
             This story only works with the new themes, please change to one of the new themes with the theme switcher
           </p>
         </div>
@@ -354,9 +486,9 @@ export const DataColors: Story = {
       return (
         <>
           <div className="bg-background-white-black p-2">
-            <p className="font-bold text-text-body">All colors used in this example are using new color tokens</p>
+            <p className="text-text-body font-bold">All colors used in this example are using new color tokens</p>
           </div>
-          <div className="flex flex-wrap bg-background-white-black">
+          <div className="bg-background-white-black flex flex-wrap">
             {dataColors.map(color => {
               /* Below comments to get rid of type nightmare when trying to get hex value */
               /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
@@ -367,25 +499,25 @@ export const DataColors: Story = {
                 const className = `bg-${color.replace('-opacity', '')}-solid/${opacity}`;
 
                 return (
-                  <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
-                    <div className={`${className} h-[80px] border border-b-0 border-border-muted-soft`} />
-                    <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
-                      <div className="pb-2 font-bold text-text-body">{color}</div>
-                      <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: ${className}`}</div>
+                  <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
+                    <div className={`${className} border-border-muted-soft h-[80px] border border-b-0`} />
+                    <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
+                      <div className="text-text-body pb-2 font-bold">{color}</div>
+                      <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind eg: ${className}`}</div>
 
-                      <div className="typography-body-10 pt-2 font-light text-text-body">{currentColor}</div>
+                      <div className="typography-body-10 text-text-body pt-2 font-light">{currentColor}</div>
                     </div>
                   </div>
                 );
               }
               return (
-                <div className="w-[33%] min-w-[200px] max-w-[300px] p-2" key={color}>
-                  <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
-                  <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
-                    <div className="pb-2 font-bold text-text-body">{color}</div>
-                    <div className="typography-body-10 py-2 font-light text-text-body">{`Tailwind eg: bg-${color}`}</div>
+                <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
+                  <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
+                  <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
+                    <div className="text-text-body pb-2 font-bold">{color}</div>
+                    <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind eg: bg-${color}`}</div>
 
-                    <div className="typography-body-10 pt-2 font-light text-text-body">{currentColor}</div>
+                    <div className="typography-body-10 text-text-body pt-2 font-light">{currentColor}</div>
                   </div>
                 </div>
               );
@@ -396,7 +528,7 @@ export const DataColors: Story = {
     } else {
       return (
         <div>
-          <p className="pb-2 font-bold text-text-body">
+          <p className="text-text-body pb-2 font-bold">
             This story only works with the new themes, please change to one of the new themes with the theme switcher
           </p>
         </div>

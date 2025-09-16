@@ -8,8 +8,8 @@ const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
 
-const tokensPath = path.resolve(__dirname, '../tokens/figma-tokens.json');
-const outputPath = path.resolve(__dirname, '../tokens/primitive-colors.css');
+// const tokensPath = path.resolve(__dirname, '../tokens/figma-tokens.json');
+const tokensPath = path.resolve(__dirname, '../tokens/GEL-tokens-figma.json');
 
 const tokens = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
 
@@ -21,7 +21,25 @@ const sharedStylesTemplateSource = fs.readFileSync(sharedStylesTemplatePath, 'ut
 const themeTemplate = Handlebars.compile(themeTemplateSource);
 const sharedStylesTemplate = Handlebars.compile(sharedStylesTemplateSource);
 
-// Helper to flatten color objects
+// rename these
+const colorsObj = {};
+const tokensObj = {};
+
+const brandNameMap = {
+  westpac: 'wbc',
+  stgeorge: 'stg',
+};
+
+// Mapping for Brand font family
+const brandFontMap = {
+  wbc: 'Westpac',
+  stg: 'Dragon Bold',
+};
+
+// --------------------------------------------------------------------------
+// Helpers
+// --------------------------------------------------------------------------
+// Flatten color objects
 function flattenColors(obj, parentKey = '', result = {}) {
   for (const key in obj) {
     if (typeof obj[key] === 'object' && obj[key] !== null && !obj[key].$value) {
@@ -35,27 +53,6 @@ function flattenColors(obj, parentKey = '', result = {}) {
     }
   }
   return result;
-}
-
-const cssBlocks = [];
-
-// rename these
-const colorsObj = {};
-const tokensObj = {};
-
-const brandNameMap = {
-  westpac: 'wbc',
-  stgeorge: 'stg',
-};
-
-// Primitives
-const primitives = tokens.find(t => t.Primitives)?.Primitives?.modes?.['Mode 1']?.color;
-if (primitives) {
-  for (const parentKey in primitives) {
-    const colors = flattenColors(primitives[parentKey], parentKey.toLowerCase());
-    colorsObj[parentKey.toLowerCase()] = colorsObj[parentKey.toLowerCase()] || {};
-    colorsObj[parentKey.toLowerCase()].primitives = colors;
-  }
 }
 
 // Helper to convert a reference string to a primitive CSS variable name
@@ -82,7 +79,55 @@ function refToVar(ref) {
   return ref;
 }
 
-// Themes for each brand
+// Format border radius object for tailwind use
+// - replace key 'rounded' with 'radius'
+// - remove radius-none and radius-full and use the default tailwind values
+function formatBorderRadius(obj) {
+  const remapped = {};
+  for (const key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      const newKey = key.replace(/^rounded/, 'radius');
+      // Skip 'radius-none' and 'radius-full'
+      if (newKey === 'radius-none' || newKey === 'radius-full') continue;
+      let value = obj[key];
+      if (typeof value === 'string') {
+        value = value.replace(/border-radius/g, 'rounded');
+      }
+      remapped[newKey] = value;
+    }
+  }
+  return remapped;
+}
+// --------------------------------------------------------------------------
+// Primitive Values
+// --------------------------------------------------------------------------
+const primitives = tokens.find(t => t.Primitives)?.Primitives?.modes?.['Mode 1']?.color;
+if (primitives) {
+  for (const parentKey in primitives) {
+    const colors = flattenColors(primitives[parentKey], parentKey.toLowerCase());
+    colorsObj[parentKey.toLowerCase()] = colorsObj[parentKey.toLowerCase()] || {};
+    colorsObj[parentKey.toLowerCase()].primitives = colors;
+  }
+}
+
+// Function to extract border radius primitives and generate CSS variables
+function getBorderPrimitives(tokens) {
+  const primitives = tokens.find(t => t.Primitives)?.Primitives?.modes?.['Mode 1']?.border?.radius;
+  if (!primitives) return {};
+  const borderVars = {};
+  for (const key in primitives) {
+    if (primitives[key]?.$value !== undefined) {
+      // Convert key to kebab-case for CSS variable
+      const varName = `border-radius-${key.replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
+      borderVars[varName] = `${primitives[key].$value}px`;
+    }
+  }
+  return borderVars;
+}
+
+// --------------------------------------------------------------------------
+// Theme values
+// --------------------------------------------------------------------------
 const themes = tokens.find(t => t.Themes)?.Themes?.modes;
 if (themes) {
   for (const brand in themes) {
@@ -116,7 +161,42 @@ if (themes) {
   }
 }
 
+// Function to extract border radii from each brand in the themes object and generate CSS variables
+function getThemeBrandBorders(tokens) {
+  const themes = tokens.find(t => t.Themes)?.Themes?.modes;
+  if (!themes) return {};
+  const brandBorders = {};
+  for (const brand in themes) {
+    const borderRadii = themes[brand]?.border?.radius;
+    if (borderRadii) {
+      const cssVars = {};
+      for (const key in borderRadii) {
+        if (borderRadii[key]?.$value !== undefined) {
+          // Convert key to kebab-case for CSS variable
+          const varName = `border-radius-${key.replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
+          let value = borderRadii[key].$value;
+          // If value is a reference, convert to CSS var reference
+          if (typeof value === 'string' && value.startsWith('{border.radius.')) {
+            const ref = value.match(/\{border\.radius\.([^.}]+)\}/i);
+            if (ref) {
+              const refVar = `--border-radius-${ref[1].replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
+              value = `var(${refVar})`;
+            }
+          } else if (typeof value === 'number') {
+            value = `${value}px`;
+          }
+          cssVars[varName] = value;
+        }
+      }
+      brandBorders[brandNameMap[brand.toLowerCase()] || brand.toLowerCase()] = cssVars;
+    }
+  }
+  return brandBorders;
+}
+
+// --------------------------------------------------------------------------
 // Tokens
+// --------------------------------------------------------------------------
 const tokensBlock = tokens.find(t => t.Tokens)?.Tokens?.modes;
 if (tokensBlock) {
   for (const mode in tokensBlock) {
@@ -160,6 +240,48 @@ if (tokensBlock) {
   }
 }
 
+// Function to extract border radii for light mode and dark mode and generate CSS variables
+function getModeBorders(tokens) {
+  const modes = tokens.find(t => t.Tokens)?.Tokens?.modes;
+  if (!modes) return {};
+  const modeBorders = {};
+  for (const modeName in modes) {
+    const borderRadii = modes[modeName]?.border?.radius;
+    if (borderRadii) {
+      const cssVars = {};
+      for (const key in borderRadii) {
+        if (borderRadii[key]?.$value !== undefined) {
+          // Convert key to kebab-case for CSS variable
+          const varName = `${key.replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
+          let value = borderRadii[key].$value;
+          // If value is a reference, convert to CSS var reference
+          if (typeof value === 'string' && value.startsWith('{border.radius.')) {
+            const ref = value.match(/\{border\.radius\.([^.}]+)\}/i);
+            if (ref) {
+              const refVar = `--border-radius-${ref[1].replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
+              value = `var(${refVar})`;
+            }
+          } else if (typeof value === 'number') {
+            value = `${value}px`;
+          }
+          cssVars[varName] = value;
+        }
+      }
+      // Use 'light' and 'dark' as keys for easier access
+      const modeKey = modeName.toLowerCase().includes('dark') ? 'dark' : 'light';
+      modeBorders[modeKey] = cssVars;
+    }
+  }
+  return modeBorders;
+}
+
+// --------------------------------------------------------------------------
+// Output CSS files
+// --------------------------------------------------------------------------
+const themeBorderRadius = getThemeBrandBorders(tokens);
+const modeBorderRadius = getModeBorders(tokens);
+
+// Colors
 const brandOutputDir = path.resolve(__dirname, '../css/themes');
 ['wbc', 'stg'].forEach(brand => {
   const brandFile = path.resolve(brandOutputDir, `theme-${brand}.css`);
@@ -169,6 +291,8 @@ const brandOutputDir = path.resolve(__dirname, '../css/themes');
       brand,
       primitiveColors: colorsObj[brand]?.primitives || {},
       themeColors: colorsObj[brand]?.theme || {},
+      borderRadius: themeBorderRadius[brand] || {},
+      fontFamily: brandFontMap[brand] || '',
     }),
   );
 });
@@ -182,3 +306,20 @@ fs.writeFileSync(
     dark: tokensObj.dark || {},
   }),
 );
+
+// Borders
+const bordersTemplatePath = path.resolve(__dirname, '../templates/borders.handlebars');
+const bordersTemplateSource = fs.readFileSync(bordersTemplatePath, 'utf8');
+const bordersTemplate = Handlebars.compile(bordersTemplateSource);
+
+const borderPrimitives = getBorderPrimitives(tokens);
+const borderOutputFile = path.resolve(__dirname, '../css/shared/borders.css');
+const borderCss = bordersTemplate({
+  borders: borderPrimitives,
+  light: modeBorderRadius.light || {},
+  dark: modeBorderRadius.dark || {},
+  radius: formatBorderRadius(modeBorderRadius.light || {}),
+});
+fs.writeFileSync(borderOutputFile, borderCss);
+
+console.log;

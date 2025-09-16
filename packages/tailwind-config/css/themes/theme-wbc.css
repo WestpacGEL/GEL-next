@@ -9,9 +9,9 @@
       --wbc-grey-300: #b6b6bc;
       --wbc-grey-400: #8e8d98;
       --wbc-grey-500: #706f7c;
-      --wbc-grey-600: #3e3d44;
-      --wbc-grey-700: #323238;
-      --wbc-grey-800: #27272b;
+      --wbc-grey-600: #5b5b6a;
+      --wbc-grey-700: #464651;
+      --wbc-grey-800: #323238;
       --wbc-grey-900: #1c1c1f;
       --wbc-grey-950: #161619;
       --wbc-red-50: #fff0f0;
@@ -63,28 +63,28 @@
       --wbc-purple-950: #2e0840;
       --wbc-purple-opacity: rgba(153, 26, 214, 0.5);
       --wbc-dark-red-50: #faf2f2;
-      --wbc-dark-red-100: #f5e5e5;
-      --wbc-dark-red-200: #e6bfbf;
-      --wbc-dark-red-300: #cc8080;
-      --wbc-dark-red-400: #b34040;
+      --wbc-dark-red-100: #f5d9d9;
+      --wbc-dark-red-200: #efa2a2;
+      --wbc-dark-red-300: #e76969;
+      --wbc-dark-red-400: #cf2c2c;
       --wbc-dark-red-500: #990000;
-      --wbc-dark-red-600: #820000;
-      --wbc-dark-red-700: #6b0000;
-      --wbc-dark-red-800: #540000;
-      --wbc-dark-red-900: #3d0000;
-      --wbc-dark-red-950: #260000;
+      --wbc-dark-red-600: #860000;
+      --wbc-dark-red-700: #710000;
+      --wbc-dark-red-800: #5d0000;
+      --wbc-dark-red-900: #4d0000;
+      --wbc-dark-red-950: #410000;
       --wbc-dark-red-opacity: rgba(153, 0, 0, 0.5);
-      --wbc-orange-50: #fff8f3;
-      --wbc-orange-100: #fef2e7;
-      --wbc-orange-200: #fddec3;
-      --wbc-orange-300: #fabc87;
-      --wbc-orange-400: #f89b4b;
+      --wbc-orange-50: #fef4eb;
+      --wbc-orange-100: #fde7d3;
+      --wbc-orange-200: #fbcba2;
+      --wbc-orange-300: #f9b071;
+      --wbc-orange-400: #f79540;
       --wbc-orange-500: #f57a0f;
-      --wbc-orange-600: #d0680d;
-      --wbc-orange-700: #ac550b;
-      --wbc-orange-800: #874308;
-      --wbc-orange-900: #623106;
-      --wbc-orange-950: #3d1f04;
+      --wbc-orange-600: #ce6409;
+      --wbc-orange-700: #9d4c07;
+      --wbc-orange-800: #713705;
+      --wbc-orange-900: #401f03;
+      --wbc-orange-950: #2c1502;
       --wbc-orange-opacity: rgba(245, 122, 15, 0.45);
 
       /* Theme Colors */
@@ -92,10 +92,14 @@
       --text-body-dm: var(--muted-200);
       --text-heading-lm: var(--hero-500);
       --text-heading-dm: var(--hero-200);
+      --text-hero-lm: var(--hero-500);
+      --text-hero-dm: var(--hero-200);
       --surface-pictogram-base-lm: var(--hero-500);
       --surface-pictogram-base-dm: var(--hero-300);
       --surface-pictogram-accent-lm: var(--primary-500);
       --surface-pictogram-accent-dm: var(--primary-600);
+      --surface-muted-vivid-lm: var(--muted-950);
+      --surface-muted-vivid-dm: var(--muted-50);
       --muted-50: var(--wbc-grey-50);
       --muted-100: var(--wbc-grey-100);
       --muted-200: var(--wbc-grey-200);
@@ -236,5 +240,20 @@
       --reserved-system-800: var(--reserved-yellow-800);
       --reserved-system-900: var(--reserved-yellow-900);
       --reserved-system-950: var(--reserved-yellow-950);
+
+      /* Theme Border Radius */
+      --border-radius-none: var(--border-radius-none);
+      --border-radius-sm: var(--border-radius-3);
+      --border-radius-md: var(--border-radius-4);
+      --border-radius-lg: var(--border-radius-5);
+      --border-radius-xl: var(--border-radius-6);
+      --border-radius-2xl: var(--border-radius-8);
+      --border-radius-3xl: var(--border-radius-12);
+      --border-radius-4xl: var(--border-radius-16);
+      --border-radius-5xl: var(--border-radius-24);
+      --border-radius-full: var(--border-radius-full);
+
+      /* Font Family */
+      --font-brand: Westpac;
     }
 }

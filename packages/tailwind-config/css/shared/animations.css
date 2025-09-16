@@ -1,4 +1,4 @@
-@theme inline static {
+@theme {
   --animate-skeleton: waveLines 2s infinite ease-out;
   --animate-waveLines: waveLines;
   --animate-fadeIn: fadeIn 0.2s ease;
