@@ -67,7 +67,7 @@ export default function IncomeAndSavings() {
         Back to Income and savings
       </BackButton>
       <CustomHeading
-        groupHeading="Your finances"
+        groupHeading={!isFlattenRope && 'Your finances'}
         leadText="Provide the total balances of any non-Westpac loans and credit cards you have."
       >
         Loans & cards

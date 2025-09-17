@@ -56,7 +56,7 @@ export default function CreditLimit() {
         Back to Home life
       </BackButton>
       <CustomHeading
-        groupHeading="Your card"
+        groupHeading={!isFlattenRope && 'Your card'}
         leadText="
 Choose your credit card limit or have one allocated for you."
       >

@@ -22,17 +22,11 @@ export function CustomHeader({ isSidebarScrolled }: { isSidebarScrolled?: boolea
   return (
     <Header
       brand="wbc"
-      leftIcon={'arrow'}
-      leftOnClick={() => router.back()}
       logoLink="/"
       fixed={!isMobile}
       isScrolled={isSidebarScrolled}
       fixedMaxWidth="1921px"
       className={'z-[100] m-auto w-full'}
-    >
-      <Button look="faint" size={{ initial: 'small', sm: 'medium' }} soft>
-        Sign Out
-      </Button>
-    </Header>
+    />
   );
 }

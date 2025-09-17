@@ -57,7 +57,10 @@ export default function IncomeAndSavings() {
       <BackButton onClick={() => router.push(`/credit-cards${isFlattenRope ? '?flatten=true' : ''}`)}>
         Back to Quick contact
       </BackButton>
-      <CustomHeading groupHeading="Your finances" leadText="Tell us about your income and any savings you have.">
+      <CustomHeading
+        groupHeading={!isFlattenRope && 'Your finances'}
+        leadText="Tell us about your income and any savings you have."
+      >
         Income & savings
       </CustomHeading>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}

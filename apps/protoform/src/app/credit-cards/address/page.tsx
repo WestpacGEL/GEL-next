@@ -51,7 +51,7 @@ export default function Address() {
         Back to Name & contact
       </BackButton>
       <CustomHeading
-        groupHeading="Your details"
+        groupHeading={!isFlattenRope && 'Your details'}
         leadText="Tell us more about where you live and how long you've been there."
       >
         Address

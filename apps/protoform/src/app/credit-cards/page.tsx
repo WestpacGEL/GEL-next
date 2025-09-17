@@ -22,6 +22,7 @@ export default function CreditCards() {
   const [emailError, setEmailError] = useState('');
   const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
   const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -35,7 +36,6 @@ export default function CreditCards() {
       ]);
     } else {
       setData({ ...data, name, email });
-      const isFlattenRope = searchParams.get('flatten');
       router.push(`/credit-cards/income-and-savings${isFlattenRope ? '?flatten=true' : ''}`);
     }
   };
@@ -48,8 +48,8 @@ export default function CreditCards() {
 
   return (
     <div>
-      <BackButton onClick={() => router.push('/')}>Back to dashboard</BackButton>
-      <CustomHeading groupHeading="Get started" leadText="To begin, we just need a few details.">
+      <BackButton onClick={() => router.push('/')}>Back to GEL forms framework</BackButton>
+      <CustomHeading groupHeading={!isFlattenRope && 'Get started'} leadText="To begin, we just need a few details.">
         Quick contact
       </CustomHeading>
       {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}

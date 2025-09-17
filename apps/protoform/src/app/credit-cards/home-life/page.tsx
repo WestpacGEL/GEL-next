@@ -69,7 +69,7 @@ export default function HomeLife() {
         Back to Loans and cards
       </BackButton>
       <CustomHeading
-        groupHeading="Your finances"
+        groupHeading={!isFlattenRope && 'Your finances'}
         leadText="Tell us more about your general expenses and living situation."
       >
         Home life

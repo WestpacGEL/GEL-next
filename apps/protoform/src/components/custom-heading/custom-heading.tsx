@@ -10,7 +10,7 @@ export function CustomHeading({
 }: {
   beforeContent?: ReactNode;
   children: ReactNode;
-  groupHeading?: string;
+  groupHeading?: ReactNode;
   leadText?: string;
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }) {

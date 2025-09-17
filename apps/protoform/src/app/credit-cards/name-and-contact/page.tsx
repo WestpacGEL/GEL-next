@@ -76,7 +76,7 @@ export default function NameAndContact() {
         Back to Credit limit
       </BackButton>
       <CustomHeading
-        groupHeading="Your details"
+        groupHeading={!isFlattenRope && 'Your details'}
         leadText="We just need a few more details to confirm who you are and get you the right services."
       >
         Name & contact
