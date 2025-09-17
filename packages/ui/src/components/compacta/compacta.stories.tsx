@@ -1,9 +1,11 @@
 import { type Meta, StoryFn } from '@storybook/react-vite';
-import { ChangeEvent, useState } from 'react';
+import { useCallback } from 'react';
+import { useForm } from 'react-hook-form';
 
 import { Form, FormGroup, Hint, Input, Label } from '../index.js';
 
 import { Compacta } from './compacta.component.js';
+import { CompactaItem } from './components/compacta-item/compacta-item.component.js';
 
 const meta: Meta<typeof Compacta> = {
   title: 'Components/Compacta',
@@ -15,63 +17,54 @@ const meta: Meta<typeof Compacta> = {
 
 export default meta;
 
+type Inputs = {
+  items: {
+    primary?: string;
+    secondary?: string;
+    tertiary?: string;
+  }[];
+};
+
 /**
  * > Default usage example
  */
 export const Default = () => {
-  const [inputs, setInputs] = useState({});
+  const { register, watch, setValue } = useForm<Inputs>({ defaultValues: { items: [] } });
+  const items = watch('items');
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputs((prev: object) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { primary: '', secondary: '', tertiary: '' }]);
+  }, [items, setValue]);
+
   return (
-    <Compacta>
-      {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
-        <Form>
-          <FormGroup>
-            <Label htmlFor={`primary-${id}`}>Primary</Label>
-            <Hint id={`primary-hint-${id}`}>Primary title text</Hint>
-            <Input
-              aria-describedby={`primary-hint-${id}`}
-              name={`primary-${id}`}
-              id={`primary-${id}`}
-              value={inputs[`primary-${id}` as keyof typeof inputs] || ''}
-              onChange={e => {
-                handleChange(e);
-                setPrimaryTitle(e.target.value);
-              }}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor={`secondary-${id}`}>Secondary</Label>
-            <Hint id={`secondary-hint-${id}`}>Secondary title text</Hint>
-            <Input
-              aria-describedby={`secondary-hint-${id}`}
-              name={`secondary-${id}`}
-              id={`secondary-${id}`}
-              value={inputs[`secondary-${id}` as keyof typeof inputs] || ''}
-              onChange={e => {
-                handleChange(e);
-                setSecondaryTitle(e.target.value);
-              }}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor={`tertiary-${id}`}>Tertiary</Label>
-            <Hint id={`tertiary-hint-${id}`}>Tertiary title text</Hint>
-            <Input
-              aria-describedby={`tertiary-hint-${id}`}
-              name={`tertiary-${id}`}
-              id={`tertiary-${id}`}
-              value={inputs[`tertiary-${id}` as keyof typeof inputs] || ''}
-              onChange={e => {
-                handleChange(e);
-                setTertiaryTitle(e.target.value);
-              }}
-            />
-          </FormGroup>
-        </Form>
-      )}
-    </Compacta>
+    <Form>
+      <Compacta onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <CompactaItem
+            key={index}
+            title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <FormGroup>
+              <Label htmlFor={`primary[${index}]`}>Primary</Label>
+              <Hint id={`primary-hint`}>Primary title text</Hint>
+              <Input aria-describedby={`primary-hint`} {...register(`items.${index}.primary`)} />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor={`secondary[${index}]`}>Secondary</Label>
+              <Hint id={`secondary-hint`}>Secondary title text</Hint>
+              <Input aria-describedby={`secondary-hint`} {...register(`items.${index}.secondary`)} />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor={`tertiary[${index}]`}>Tertiary</Label>
+              <Hint id={`tertiary-hint`}>Tertiary title text</Hint>
+              <Input aria-describedby={`tertiary-hint`} id={`tertiary`} {...register(`items.${index}.tertiary`)} />
+            </FormGroup>
+          </CompactaItem>
+        ))}
+      </Compacta>
+    </Form>
   );
 };
