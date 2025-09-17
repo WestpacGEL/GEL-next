@@ -2,9 +2,10 @@ import { HTMLAttributes } from 'react';
 import { DisclosureGroupProps } from 'react-stately';
 import { type VariantProps } from 'tailwind-variants';
 
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
 import { styles } from './accordion.styles.js';
 import { AccordionItemProps } from './components/index.js';
-import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 export type Variants = VariantProps<typeof styles>;
 export type AccordionProps = {

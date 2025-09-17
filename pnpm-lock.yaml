@@ -549,8 +549,8 @@ importers:
         specifier: 9.0.17
         version: 9.0.17(@testing-library/dom@10.4.0)(bufferutil@4.0.9)(prettier@3.6.2)(utf-8-validate@6.0.5)
       tailwind-variants:
-        specifier: ~3.1.0
-        version: 3.1.0(tailwindcss@4.1.12)
+        specifier: 0.2.1
+        version: 0.2.1(tailwindcss@4.1.12)
       tailwindcss:
         specifier: ~4.1.12
         version: 4.1.12
@@ -6072,16 +6072,6 @@ packages:
     engines: {node: '>=16.x', pnpm: '>=7.x'}
     peerDependencies:
       tailwindcss: '*'
-
-  tailwind-variants@3.1.0:
-    resolution: {integrity: sha512-ieiYaEfUr+sNhw/k++dosmZfVA4VIG5bV+G1eGdJSC4FcflqQv0iSIlOLj/RbzRuTu/VrIiNSlwh1esBM3BXUg==}
-    engines: {node: '>=16.x', pnpm: '>=7.x'}
-    peerDependencies:
-      tailwind-merge: '>=3.0.0'
-      tailwindcss: '*'
-    peerDependenciesMeta:
-      tailwind-merge:
-        optional: true
 
   tailwindcss-themer@3.1.3:
     resolution: {integrity: sha512-P9f0cBXNZ744EdbEdCta56mGsoWWRLyTaek2D2KAhqeIpOoPzDTohh+F3hfPQpM/qw4kVlitptXiwdl0tFgipg==}
@@ -13558,10 +13548,6 @@ snapshots:
   tailwind-variants@0.2.1(tailwindcss@4.1.12):
     dependencies:
       tailwind-merge: 2.6.0
-      tailwindcss: 4.1.12
-
-  tailwind-variants@3.1.0(tailwindcss@4.1.12):
-    dependencies:
       tailwindcss: 4.1.12
 
   tailwindcss-themer@3.1.3(tailwindcss@4.1.12):
