@@ -44,15 +44,18 @@ export function makePersonData(...lens: number[]) {
 }
 
 export const makeColumns = (num: number) =>
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   [...Array(num)].map((_, i) => {
     return {
       key: i.toString(),
       title: 'Column ' + i.toString(),
+      // eslint-disable-next-line sonarjs/pseudo-random
       size: Math.floor(Math.random() * 150) + 100,
     };
   });
 
 export const makeDataFromCols = (num: number, columns: ReturnType<typeof makeColumns>) =>
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   [...Array(num)].map(() => ({
     ...Object.fromEntries(columns.map(col => [col.key, faker.person.firstName()])),
   }));

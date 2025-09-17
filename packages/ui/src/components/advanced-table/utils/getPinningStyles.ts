@@ -8,7 +8,8 @@ export const getCommonPinningStyles = <T>(column: Column<T>): CSSProperties => {
   return {
     boxShadow: isLastLeftPinnedColumn
       ? '-4px 0 4px -4px gray inset'
-      : isFirstRightPinnedColumn
+      : // eslint-disable-next-line sonarjs/no-nested-conditional
+        isFirstRightPinnedColumn
         ? '4px 0 4px -4px gray inset'
         : undefined,
     left: isPinned === 'left' ? `${column.getStart('left')}px` : undefined,
