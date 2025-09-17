@@ -12,10 +12,12 @@
   "devDependencies": {
     "handlebars": "~4.7.8",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.1.12",
+    "style-dictionary": "~5.0.4"
   },
   "scripts": {
     "build:w3c": "node transformers/w3c.cjs",
+    "build:style-dictionary": "node ./scripts/transform-tokens-to-w3c.cjs",
     "build:css": "node transformers/css.cjs"
   }
 }

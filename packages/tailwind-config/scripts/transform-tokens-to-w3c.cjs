@@ -7,7 +7,7 @@ const StyleDictionary = require('style-dictionary').default;
  * @typedef {import('./design-tokens-root-type').DesignTokensRoot} DesignTokensRoot
  */
 
-const tokens = require('./tokens.json');
+const tokens = require('../tokens/figma-tokens.json');
 
 // ==============================
 // Constants
