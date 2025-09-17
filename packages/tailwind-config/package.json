@@ -7,7 +7,10 @@
     ".": "./styles.css",
     "./theme-wbc": "./themes/theme-wbc.css",
     "./theme-stg": "./themes/theme-stg.css",
-    "./postcss": "./postcss.config.js"
+    "./postcss": "./postcss.config.js",
+    "./w3c-tokens/*": {
+      "default": "./dist/w3c-tokens/*.json"
+    }
   },
   "devDependencies": {
     "handlebars": "~4.7.8",
