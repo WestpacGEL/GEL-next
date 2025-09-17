@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const fs = require('fs/promises');
+const StyleDictionary = require('style-dictionary').default;
 
 /**
  * @typedef {import('design-tokens-format-module').JSONTokenTree} JSONTokenTree
@@ -140,8 +141,126 @@ async function createFolder(folderPath) {
   }
 }
 
+const BRANDS_KEYS = [
+  {
+    themeName: 'Westpac',
+    primitiveName: 'WBC',
+  },
+  {
+    themeName: 'StGeorge',
+    primitiveName: 'STG',
+  },
+];
+
+function separateValuesPerBrand(themeName, primitiveName, tokens) {
+  return {
+    Primitives: {
+      ...tokens.Primitives,
+      color: { Reserved: tokens.Primitives.color.Reserved, [primitiveName]: tokens.Primitives.color[primitiveName] },
+    },
+    Tokens: {
+      ...tokens.Tokens[themeName],
+    },
+    Themes: {
+      [themeName]: tokens.Themes[themeName],
+    },
+  };
+}
+
+const STYLE_DICTIONARY_CONFIG = {
+  source: [`${DIST_FOLDER}/w3c-tokens/ALL_BRANDS.json`],
+  platforms: {
+    css: {
+      transforms: ['size/pxToRem'],
+      transformGroup: 'css',
+      files: [
+        {
+          destination: 'dist/style-dictionary/AllBrands/css/vars.css',
+          format: ['css/variables'],
+          options: {
+            outputReferences: true,
+          },
+        },
+      ],
+    },
+    android: {
+      transforms: ['size/pxToRem', 'attribute/cti', 'name/kebab', 'color/hex', 'size/remToSp', 'size/remToDp'],
+      buildPath: 'dist/style-dictionary/AllBrands/android/',
+      files: [
+        {
+          destination: 'style_dictionary_colors.xml',
+          format: 'android/colors',
+        },
+        {
+          destination: 'style_dictionary_dimensions.xml',
+          format: 'android/dimens',
+        },
+      ],
+    },
+    ios: {
+      transforms: [
+        'size/pxToRem',
+        'attribute/cti',
+        'name/camel',
+        'color/UIColorSwift',
+        'content/swift/literal',
+        'asset/swift/literal',
+        'size/swift/remToCGFloat',
+      ],
+      buildPath: 'dist/style-dictionary/AllBrands/ios/',
+      files: [
+        {
+          destination: 'style_dictionary_colors.swift',
+          format: 'ios-swift/class.swift',
+        },
+      ],
+    },
+  },
+};
+
 (async () => {
   await createFolder(`${DIST_FOLDER}/w3c-tokens`);
   const mergedTokens = mergeTokens();
-  await saveJSONToFile(`${DIST_FOLDER}/w3c-tokens/all-brands.json`, mergedTokens);
+  await saveJSONToFile(`${DIST_FOLDER}/w3c-tokens/ALL_BRANDS.json`, mergedTokens);
+  const myStyleDictionary = new StyleDictionary({
+    ...STYLE_DICTIONARY_CONFIG,
+  });
+  await myStyleDictionary.buildAllPlatforms();
+
+  for (const { themeName, primitiveName } of BRANDS_KEYS) {
+    const brandTokens = separateValuesPerBrand(themeName, primitiveName, mergedTokens);
+    await saveJSONToFile(`${DIST_FOLDER}/w3c-tokens/${primitiveName}.json`, brandTokens);
+    const myStyleDictionary = new StyleDictionary({
+      source: [`${DIST_FOLDER}/w3c-tokens/${primitiveName}.json`],
+      platforms: {
+        css: {
+          ...STYLE_DICTIONARY_CONFIG.platforms.css,
+          files: [
+            {
+              destination: `dist/style-dictionary/${primitiveName}/css/style.css`,
+              format: ['css/variables'],
+              options: {
+                outputReferences: true,
+              },
+            },
+          ],
+        },
+        android: {
+          ...STYLE_DICTIONARY_CONFIG.platforms.android,
+          buildPath: `dist/style-dictionary/${primitiveName}/android/`,
+        },
+        ios: {
+          ...STYLE_DICTIONARY_CONFIG.platforms.ios,
+          buildPath: `dist/style-dictionary/${primitiveName}/ios/`,
+          files: [
+            {
+              destination: 'style_dictionary_colors.swift',
+              format: 'ios-swift/class.swift',
+            },
+          ],
+        },
+      },
+    });
+    await myStyleDictionary.buildAllPlatforms();
+  }
 })();
