@@ -1,10 +1,10 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'typography-body-9 flex cursor-pointer px-3 py-2 text-text-body transition-colors',
+  base: 'typography-body-9 text-text-body flex cursor-pointer px-3 py-2 transition-colors',
   variants: {
     look: {
-      default: 'border border-border-muted-soft bg-surface-muted-faint',
+      default: 'border-border-muted-soft bg-surface-muted-faint border',
       material: '',
     },
     selected: {
@@ -36,7 +36,7 @@ export const styles = tv({
     {
       orientation: 'horizontal',
       look: 'default',
-      className: 'rounded-t',
+      className: 'rounded-t-xl',
     },
     {
       orientation: 'vertical',
@@ -69,24 +69,24 @@ export const styles = tv({
     {
       look: 'material',
       orientation: 'horizontal',
-      className: 'border-b-4 border-r border-b-white border-r-border-muted-soft last:border-r-0',
+      className: 'border-r-border-muted-soft border-r border-b-4 border-b-white last:border-r-0',
     },
     {
       look: 'material',
       orientation: 'vertical',
-      className: 'border-b border-l-4 border-b-border border-l-white last:border-b-0',
+      className: 'border-b-border border-b border-l-4 border-l-white last:border-b-0',
     },
     {
       look: 'material',
       selected: true,
       orientation: 'horizontal',
-      className: 'border-bottom border-b-white text-text-body',
+      className: 'border-bottom text-text-body border-b-white',
     },
     {
       look: 'material',
       selected: true,
       orientation: 'vertical',
-      className: 'border-left border-l-transparent text-text-body',
+      className: 'border-left text-text-body border-l-transparent',
     },
     {
       color: 'primary',

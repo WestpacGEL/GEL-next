@@ -14,7 +14,7 @@ export function ButtonGroupButton({ className, label, ...props }: ButtonGroupBut
   const ref = useRef(null);
   const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children: label }, state, ref);
   const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = buttonStyles({ block, isDisabled, isFocusVisible });
+  const styles = buttonStyles({ block, isDisabled, isFocusVisible, size });
 
   return (
     <label className={styles.base({ className })}>

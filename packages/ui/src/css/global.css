@@ -13,6 +13,7 @@
   --form-control-padding-x-small: 0.5625rem;
   --form-control-padding-top-small: 0.1875rem;
   --form-control-padding-bottom-small: 0.25rem;
+  --form-control-border-radius-small: var(--rounded-sm);
 
   /* Medium */
   /* --form-control-font-size-medium: 1rem; */
@@ -20,6 +21,7 @@
   --form-control-padding-x-medium: 0.75rem;
   --form-control-padding-top-medium: 0.3125rem;
   --form-control-padding-bottom-medium: 0.3125rem;
+  --form-control-border-radius-medium: var(--rounded-md);
 
   /* Large */
   --form-control-font-size-large: var(--text-base);
@@ -27,6 +29,7 @@
   --form-control-padding-x-large: 0.9375rem;
   --form-control-padding-top-large: 0.5rem;
   --form-control-padding-bottom-large: 0.5rem;
+  --form-control-border-radius-large: var(--rounded-lg);
 
   /* X-Large */
   --form-control-font-size-xlarge: var(--text-lg);
@@ -34,6 +37,7 @@
   --form-control-padding-x-xlarge: 1.125rem;
   --form-control-padding-top-xlarge: 0.5625rem;
   --form-control-padding-bottom-xlarge: 0.625rem;
+  --form-control-border-radius-xlarge: var(--rounded-xl);
 }
 
 @utility form-control-* {
@@ -43,6 +47,7 @@
   padding-right: --value(--form-control-padding-x-*);
   padding-top: --value(--form-control-padding-top-*);
   padding-bottom: --value(--form-control-padding-bottom-*);
+  border-radius: --value(--form-control-border-radius-*);
 }
 
 @utility form-control-disabled {

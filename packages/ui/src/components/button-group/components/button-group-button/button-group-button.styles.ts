@@ -4,7 +4,7 @@ export const styles = tv({
   slots: {
     base: '',
     button:
-      'active-theme-rams:border-b-primary active-theme-rams:before:hidden pointer-events-none rounded-none hover:cursor-pointer group-first/buttons:rounded-l group-last/buttons:rounded-r group-[:not(:first-child)]/buttons:border-l-0',
+      'active-theme-rams:border-b-primary active-theme-rams:before:hidden pointer-events-none rounded-none group-[:not(:first-child)]/buttons:border-l-0 hover:cursor-pointer',
   },
   variants: {
     isDisabled: {
@@ -14,7 +14,7 @@ export const styles = tv({
     },
     isFocusVisible: {
       true: {
-        button: 'relative focus-outline',
+        button: 'focus-outline relative',
       },
     },
     block: {
@@ -29,6 +29,20 @@ export const styles = tv({
       },
       false: {
         button: 'pointer-events-none',
+      },
+    },
+    size: {
+      small: {
+        button: 'group-first/buttons:rounded-l-sm group-last/buttons:rounded-r-sm',
+      },
+      medium: {
+        button: 'group-first/buttons:rounded-l-md group-last/buttons:rounded-r-md',
+      },
+      large: {
+        button: 'group-first/buttons:rounded-l-lg group-last/buttons:rounded-r-lg',
+      },
+      xlarge: {
+        button: 'group-first/buttons:rounded-l-xl group-last/buttons:rounded-r-xl',
       },
     },
   },

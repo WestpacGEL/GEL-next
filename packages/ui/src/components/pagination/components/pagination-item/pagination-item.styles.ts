@@ -1,22 +1,22 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'typography-body-10 relative block min-w-7 border border-border-muted-soft px-2 py-1.5 text-center text-text-body',
+  base: 'typography-body-10 border-border-muted-soft text-text-body relative block min-w-7 border px-2 py-1.5 text-center',
   variants: {
     firstItem: {
-      true: 'rounded-l',
+      true: 'rounded-l-md',
       false: 'ml-[-1px]',
     },
     lastItem: {
-      true: 'rounded-r',
+      true: 'rounded-r-md',
       false: '',
     },
     active: {
-      true: 'z-10 border-border-hero bg-surface-hero text-text-mono',
+      true: 'border-border-hero bg-surface-hero text-text-mono z-10',
       false: 'bg-background-white-pale hover:bg-surface-muted-faint',
     },
     disabled: {
-      true: 'cursor-not-allowed bg-surface-muted-faint text-text-muted opacity-50',
+      true: 'bg-surface-muted-faint text-text-muted cursor-not-allowed opacity-50',
       false: 'cursor-pointer',
     },
   },

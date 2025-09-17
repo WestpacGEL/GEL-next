@@ -3,11 +3,12 @@
 import React from 'react';
 import { DisclosureGroupState, useDisclosureGroupState } from 'react-stately';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { styles } from './accordion.styles.js';
 import { Variants, type AccordionProps } from './accordion.types.js';
 import { AccordionItemProps } from './components/index.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export const AccordionContext = React.createContext<
   ({ look: AccordionItemProps['look']; rounded: Variants['rounded'] } & DisclosureGroupState) | null

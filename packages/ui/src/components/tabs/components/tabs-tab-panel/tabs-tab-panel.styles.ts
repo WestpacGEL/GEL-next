@@ -1,14 +1,17 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'flex-1 bg-background-white-pale p-4 text-text-body',
+  base: 'bg-background-white-pale text-text-body flex-1 rounded-b-xl p-4',
   variants: {
     look: {
-      default: 'border border-border-muted-soft',
+      default: 'border-border-muted-soft border',
       material: '',
     },
     isFocused: {
       true: 'outline-none',
+    },
+    justify: {
+      false: 'rounded-tr-2xl',
     },
   },
 });
