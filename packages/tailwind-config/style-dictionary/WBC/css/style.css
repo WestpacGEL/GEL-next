@@ -1,0 +1,522 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --primitives-color-reserved-green-50: #f2f9f2;
+  --primitives-color-reserved-green-100: #d9ecd9;
+  --primitives-color-reserved-green-200: #99cc99;
+  --primitives-color-reserved-green-300: #47a447;
+  --primitives-color-reserved-green-400: #249224;
+  --primitives-color-reserved-green-500: #008000;
+  --primitives-color-reserved-green-600: #006d00;
+  --primitives-color-reserved-green-700: #005a00;
+  --primitives-color-reserved-green-800: #004600;
+  --primitives-color-reserved-green-900: #003300;
+  --primitives-color-reserved-green-950: #002000;
+  --primitives-color-reserved-blue-50: #f2f8fc;
+  --primitives-color-reserved-blue-100: #d9eaf6;
+  --primitives-color-reserved-blue-200: #99c7e7;
+  --primitives-color-reserved-blue-300: #459ad4;
+  --primitives-color-reserved-blue-400: #2487cc;
+  --primitives-color-reserved-blue-500: #0074c4;
+  --primitives-color-reserved-blue-600: #0063a7;
+  --primitives-color-reserved-blue-700: #005189;
+  --primitives-color-reserved-blue-800: #00406c;
+  --primitives-color-reserved-blue-900: #002e4e;
+  --primitives-color-reserved-blue-950: #001d31;
+  --primitives-color-reserved-orange-50: #fcf5f2;
+  --primitives-color-reserved-orange-100: #f3d8cc;
+  --primitives-color-reserved-orange-200: #e8b199;
+  --primitives-color-reserved-orange-300: #d7784f;
+  --primitives-color-reserved-orange-400: #ce5826;
+  --primitives-color-reserved-orange-500: #c53b00;
+  --primitives-color-reserved-orange-600: #a73200;
+  --primitives-color-reserved-orange-700: #8a2900;
+  --primitives-color-reserved-orange-800: #6c2000;
+  --primitives-color-reserved-orange-900: #4f1800;
+  --primitives-color-reserved-orange-950: #310f00;
+  --primitives-color-reserved-red-50: #fcf2f2;
+  --primitives-color-reserved-red-100: #f9e6e6;
+  --primitives-color-reserved-red-200: #eaa6a6;
+  --primitives-color-reserved-red-300: #db6363;
+  --primitives-color-reserved-red-400: #d03333;
+  --primitives-color-reserved-red-500: #c40000;
+  --primitives-color-reserved-red-600: #a70000;
+  --primitives-color-reserved-red-700: #890000;
+  --primitives-color-reserved-red-800: #6c0000;
+  --primitives-color-reserved-red-900: #4e0000;
+  --primitives-color-reserved-red-950: #310000;
+  --primitives-color-reserved-yellow-50: #fffff2;
+  --primitives-color-reserved-yellow-100: #ffffe6;
+  --primitives-color-reserved-yellow-200: #ffffbf;
+  --primitives-color-reserved-yellow-300: #ffff80;
+  --primitives-color-reserved-yellow-400: #ffff40;
+  --primitives-color-reserved-yellow-500: #ffff00;
+  --primitives-color-reserved-yellow-600: #d9d900;
+  --primitives-color-reserved-yellow-700: #b3b300;
+  --primitives-color-reserved-yellow-800: #8c8c00;
+  --primitives-color-reserved-yellow-900: #666600;
+  --primitives-color-reserved-yellow-950: #404000;
+  --primitives-color-wbc-grey-50: #f9f9fa;
+  --primitives-color-wbc-grey-100: #f5f5f6;
+  --primitives-color-wbc-grey-200: #dedee1;
+  --primitives-color-wbc-grey-300: #b6b6bc;
+  --primitives-color-wbc-grey-400: #8e8d98;
+  --primitives-color-wbc-grey-500: #706f7c;
+  --primitives-color-wbc-grey-600: #3e3d44;
+  --primitives-color-wbc-grey-700: #323238;
+  --primitives-color-wbc-grey-800: #27272b;
+  --primitives-color-wbc-grey-900: #1c1c1f;
+  --primitives-color-wbc-grey-950: #161619;
+  --primitives-color-wbc-red-50: #fff0f0;
+  --primitives-color-wbc-red-100: #facccb;
+  --primitives-color-wbc-red-200: #f46e69;
+  --primitives-color-wbc-red-300: #f1423c;
+  --primitives-color-wbc-red-400: #ee221b;
+  --primitives-color-wbc-red-500: #da1710;
+  --primitives-color-wbc-red-600: #b9140e;
+  --primitives-color-wbc-red-700: #99100b;
+  --primitives-color-wbc-red-800: #780d09;
+  --primitives-color-wbc-red-900: #570906;
+  --primitives-color-wbc-red-950: #370604;
+  --primitives-color-wbc-red-opacity: rgba(218, 23, 16, 0.5);
+  --primitives-color-wbc-pink-50: #fff5fd;
+  --primitives-color-wbc-pink-100: #ffecfb;
+  --primitives-color-wbc-pink-200: #ffcff6;
+  --primitives-color-wbc-pink-300: #ff9eed;
+  --primitives-color-wbc-pink-400: #ff6ee4;
+  --primitives-color-wbc-pink-500: #ff3ddb;
+  --primitives-color-wbc-pink-600: #d934ba;
+  --primitives-color-wbc-pink-700: #b32b99;
+  --primitives-color-wbc-pink-800: #8c2278;
+  --primitives-color-wbc-pink-900: #59154d;
+  --primitives-color-wbc-pink-950: #330c2c;
+  --primitives-color-wbc-pink-opacity: rgba(255, 61, 219, 0.45);
+  --primitives-color-wbc-navy-50: #f1f0fa;
+  --primitives-color-wbc-navy-100: #e2e1f4;
+  --primitives-color-wbc-navy-200: #a9a5df;
+  --primitives-color-wbc-navy-300: #6f69c9;
+  --primitives-color-wbc-navy-400: #423c97;
+  --primitives-color-wbc-navy-500: #1f1c4f;
+  --primitives-color-wbc-navy-600: #18144d;
+  --primitives-color-wbc-navy-700: #130f48;
+  --primitives-color-wbc-navy-800: #0d093e;
+  --primitives-color-wbc-navy-900: #090538;
+  --primitives-color-wbc-navy-950: #060236;
+  --primitives-color-wbc-navy-opacity: rgba(58, 52, 147, 0.6);
+  --primitives-color-wbc-purple-50: #faf1fd;
+  --primitives-color-wbc-purple-100: #ebcdf9;
+  --primitives-color-wbc-purple-200: #ce84f0;
+  --primitives-color-wbc-purple-300: #bc57eb;
+  --primitives-color-wbc-purple-400: #ad32e6;
+  --primitives-color-wbc-purple-500: #991ad6;
+  --primitives-color-wbc-purple-600: #8717ba;
+  --primitives-color-wbc-purple-700: #70139b;
+  --primitives-color-wbc-purple-800: #5c0f7f;
+  --primitives-color-wbc-purple-900: #450c5f;
+  --primitives-color-wbc-purple-950: #2e0840;
+  --primitives-color-wbc-purple-opacity: rgba(153, 26, 214, 0.5);
+  --primitives-color-wbc-dark-red-50: #faf2f2;
+  --primitives-color-wbc-dark-red-100: #f5e5e5;
+  --primitives-color-wbc-dark-red-200: #e6bfbf;
+  --primitives-color-wbc-dark-red-300: #cc8080;
+  --primitives-color-wbc-dark-red-400: #b34040;
+  --primitives-color-wbc-dark-red-500: #990000;
+  --primitives-color-wbc-dark-red-600: #820000;
+  --primitives-color-wbc-dark-red-700: #6b0000;
+  --primitives-color-wbc-dark-red-800: #540000;
+  --primitives-color-wbc-dark-red-900: #3d0000;
+  --primitives-color-wbc-dark-red-950: #260000;
+  --primitives-color-wbc-dark-red-opacity: rgba(153, 0, 0, 0.5);
+  --primitives-color-wbc-orange-50: #fff8f3;
+  --primitives-color-wbc-orange-100: #fef2e7;
+  --primitives-color-wbc-orange-200: #fddec3;
+  --primitives-color-wbc-orange-300: #fabc87;
+  --primitives-color-wbc-orange-400: #f89b4b;
+  --primitives-color-wbc-orange-500: #f57a0f;
+  --primitives-color-wbc-orange-600: #d0680d;
+  --primitives-color-wbc-orange-700: #ac550b;
+  --primitives-color-wbc-orange-800: #874308;
+  --primitives-color-wbc-orange-900: #623106;
+  --primitives-color-wbc-orange-950: #3d1f04;
+  --primitives-color-wbc-orange-opacity: rgba(245, 122, 15, 0.45);
+  --primitives-border-radius-100: 2;
+  --primitives-border-radius-200: 4;
+  --primitives-border-radius-300: 6;
+  --primitives-border-radius-400: 8;
+  --primitives-border-radius-500: 12;
+  --primitives-border-radius-600: 16;
+  --primitives-border-radius-700: 24;
+  --primitives-border-radius-800: 32;
+  --primitives-border-radius-900: 99;
+  --primitives-border-radius-none: 0;
+  --primitives-border-width-default: 1;
+  --primitives-border-width-thick: 3;
+  --themes-westpac-color-mono-white: #ffffff;
+  --themes-westpac-color-mono-black: #000000;
+  --tokens-light-mode-color-background-background-white-black: var(--themes-westpac-color-mono-white); /** Use for screen backgrounds to establish correct emphasis: White in Light Mode, Black in Dark Mode */
+  --tokens-light-mode-color-background-background-white-faint: var(--themes-westpac-color-mono-white); /** All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode. */
+  --tokens-light-mode-color-background-background-white-pale: var(--themes-westpac-color-mono-white); /** All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode. */
+  --tokens-light-mode-color-surface-surface-mono: var(--themes-westpac-color-mono-white); /** Use surface-mono when you want to switch from white to black. */
+  --tokens-light-mode-color-text-text-mono: var(--themes-westpac-color-mono-white); /** This colour is used for text on solid backgrounds. Buttons, panels etc. */
+  --tokens-light-mode-color-border-border-mono: var(--themes-westpac-color-mono-white); /** This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
+  --tokens-light-mode-color-state-surface-hover-mono: var(--themes-westpac-color-mono-white); /** This token is for hover states. */
+  --tokens-dark-mode-color-background-background-pale-black: var(--themes-westpac-color-mono-black); /** Use for screen backgrounds to establish correct emphasis:  Pale in Light Mode,  Black in Dark Mode */
+  --tokens-dark-mode-color-background-background-white-black: var(--themes-westpac-color-mono-black); /** Use for screen backgrounds to establish correct emphasis: White in Light Mode, Black in Dark Mode */
+  --tokens-dark-mode-color-surface-surface-mono: var(--themes-westpac-color-mono-black); /** Use surface-mono when you want to switch from white to black. */
+  --tokens-dark-mode-color-text-text-mono: var(--themes-westpac-color-mono-black); /** This colour is used for text on solid backgrounds. Buttons, panels etc. */
+  --tokens-dark-mode-color-border-border-mono: var(--themes-westpac-color-mono-black); /** This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
+  --tokens-dark-mode-color-state-surface-hover-mono: var(--themes-westpac-color-mono-black); /** This token is for hover states. */
+  --themes-westpac-color-muted-50: var(--primitives-color-wbc-grey-50);
+  --themes-westpac-color-muted-100: var(--primitives-color-wbc-grey-100);
+  --themes-westpac-color-muted-200: var(--primitives-color-wbc-grey-200);
+  --themes-westpac-color-muted-300: var(--primitives-color-wbc-grey-300);
+  --themes-westpac-color-muted-400: var(--primitives-color-wbc-grey-400);
+  --themes-westpac-color-muted-500: var(--primitives-color-wbc-grey-500);
+  --themes-westpac-color-muted-600: var(--primitives-color-wbc-grey-600);
+  --themes-westpac-color-muted-700: var(--primitives-color-wbc-grey-700);
+  --themes-westpac-color-muted-800: var(--primitives-color-wbc-grey-800);
+  --themes-westpac-color-muted-900: var(--primitives-color-wbc-grey-900);
+  --themes-westpac-color-muted-950: var(--primitives-color-wbc-grey-950);
+  --themes-westpac-color-primary-50: var(--primitives-color-wbc-red-50);
+  --themes-westpac-color-primary-100: var(--primitives-color-wbc-red-100);
+  --themes-westpac-color-primary-200: var(--primitives-color-wbc-red-200);
+  --themes-westpac-color-primary-300: var(--primitives-color-wbc-red-300);
+  --themes-westpac-color-primary-400: var(--primitives-color-wbc-red-400);
+  --themes-westpac-color-primary-500: var(--primitives-color-wbc-red-500);
+  --themes-westpac-color-primary-600: var(--primitives-color-wbc-red-600);
+  --themes-westpac-color-primary-700: var(--primitives-color-wbc-red-700);
+  --themes-westpac-color-primary-800: var(--primitives-color-wbc-red-800);
+  --themes-westpac-color-primary-900: var(--primitives-color-wbc-red-900);
+  --themes-westpac-color-primary-950: var(--primitives-color-wbc-red-950);
+  --themes-westpac-color-primary-opacity: var(--primitives-color-wbc-red-opacity);
+  --themes-westpac-color-hero-50: var(--primitives-color-wbc-navy-50);
+  --themes-westpac-color-hero-100: var(--primitives-color-wbc-navy-100);
+  --themes-westpac-color-hero-200: var(--primitives-color-wbc-navy-200);
+  --themes-westpac-color-hero-300: var(--primitives-color-wbc-navy-300);
+  --themes-westpac-color-hero-400: var(--primitives-color-wbc-navy-400);
+  --themes-westpac-color-hero-500: var(--primitives-color-wbc-navy-500);
+  --themes-westpac-color-hero-600: var(--primitives-color-wbc-navy-600);
+  --themes-westpac-color-hero-700: var(--primitives-color-wbc-navy-700);
+  --themes-westpac-color-hero-800: var(--primitives-color-wbc-navy-800);
+  --themes-westpac-color-hero-900: var(--primitives-color-wbc-navy-900);
+  --themes-westpac-color-hero-950: var(--primitives-color-wbc-navy-950);
+  --themes-westpac-color-hero-opacity: var(--primitives-color-wbc-navy-opacity);
+  --themes-westpac-color-pop-50: var(--primitives-color-wbc-pink-50);
+  --themes-westpac-color-pop-100: var(--primitives-color-wbc-pink-100);
+  --themes-westpac-color-pop-200: var(--primitives-color-wbc-pink-200);
+  --themes-westpac-color-pop-300: var(--primitives-color-wbc-pink-300);
+  --themes-westpac-color-pop-400: var(--primitives-color-wbc-pink-400);
+  --themes-westpac-color-pop-500: var(--primitives-color-wbc-pink-500);
+  --themes-westpac-color-pop-600: var(--primitives-color-wbc-pink-600);
+  --themes-westpac-color-pop-700: var(--primitives-color-wbc-pink-700);
+  --themes-westpac-color-pop-800: var(--primitives-color-wbc-pink-800);
+  --themes-westpac-color-pop-900: var(--primitives-color-wbc-pink-900);
+  --themes-westpac-color-pop-950: var(--primitives-color-wbc-pink-950);
+  --themes-westpac-color-pop-opacity: var(--primitives-color-wbc-pink-opacity);
+  --themes-westpac-color-holler-50: var(--primitives-color-wbc-purple-50);
+  --themes-westpac-color-holler-100: var(--primitives-color-wbc-purple-100);
+  --themes-westpac-color-holler-200: var(--primitives-color-wbc-purple-200);
+  --themes-westpac-color-holler-300: var(--primitives-color-wbc-purple-300);
+  --themes-westpac-color-holler-400: var(--primitives-color-wbc-purple-400);
+  --themes-westpac-color-holler-500: var(--primitives-color-wbc-purple-500);
+  --themes-westpac-color-holler-600: var(--primitives-color-wbc-purple-600);
+  --themes-westpac-color-holler-700: var(--primitives-color-wbc-purple-700);
+  --themes-westpac-color-holler-800: var(--primitives-color-wbc-purple-800);
+  --themes-westpac-color-holler-900: var(--primitives-color-wbc-purple-900);
+  --themes-westpac-color-holler-950: var(--primitives-color-wbc-purple-950);
+  --themes-westpac-color-holler-opacity: var(--primitives-color-wbc-purple-opacity);
+  --themes-westpac-color-sing-50: var(--primitives-color-wbc-dark-red-50);
+  --themes-westpac-color-sing-100: var(--primitives-color-wbc-dark-red-100);
+  --themes-westpac-color-sing-200: var(--primitives-color-wbc-dark-red-200);
+  --themes-westpac-color-sing-300: var(--primitives-color-wbc-dark-red-300);
+  --themes-westpac-color-sing-400: var(--primitives-color-wbc-dark-red-400);
+  --themes-westpac-color-sing-500: var(--primitives-color-wbc-dark-red-500);
+  --themes-westpac-color-sing-600: var(--primitives-color-wbc-dark-red-600);
+  --themes-westpac-color-sing-700: var(--primitives-color-wbc-dark-red-700);
+  --themes-westpac-color-sing-800: var(--primitives-color-wbc-dark-red-800);
+  --themes-westpac-color-sing-900: var(--primitives-color-wbc-dark-red-900);
+  --themes-westpac-color-sing-950: var(--primitives-color-wbc-dark-red-950);
+  --themes-westpac-color-sing-opacity: var(--primitives-color-wbc-dark-red-opacity);
+  --themes-westpac-color-dance-50: var(--primitives-color-wbc-orange-50);
+  --themes-westpac-color-dance-100: var(--primitives-color-wbc-orange-100);
+  --themes-westpac-color-dance-200: var(--primitives-color-wbc-orange-200);
+  --themes-westpac-color-dance-300: var(--primitives-color-wbc-orange-300);
+  --themes-westpac-color-dance-400: var(--primitives-color-wbc-orange-400);
+  --themes-westpac-color-dance-500: var(--primitives-color-wbc-orange-500);
+  --themes-westpac-color-dance-600: var(--primitives-color-wbc-orange-600);
+  --themes-westpac-color-dance-700: var(--primitives-color-wbc-orange-700);
+  --themes-westpac-color-dance-800: var(--primitives-color-wbc-orange-800);
+  --themes-westpac-color-dance-900: var(--primitives-color-wbc-orange-900);
+  --themes-westpac-color-dance-950: var(--primitives-color-wbc-orange-950);
+  --themes-westpac-color-dance-opacity: var(--primitives-color-wbc-orange-opacity);
+  --themes-westpac-color-reserved-success-50: var(--primitives-color-reserved-green-50);
+  --themes-westpac-color-reserved-success-100: var(--primitives-color-reserved-green-100);
+  --themes-westpac-color-reserved-success-200: var(--primitives-color-reserved-green-200);
+  --themes-westpac-color-reserved-success-300: var(--primitives-color-reserved-green-300);
+  --themes-westpac-color-reserved-success-400: var(--primitives-color-reserved-green-400);
+  --themes-westpac-color-reserved-success-500: var(--primitives-color-reserved-green-500);
+  --themes-westpac-color-reserved-success-600: var(--primitives-color-reserved-green-600);
+  --themes-westpac-color-reserved-success-700: var(--primitives-color-reserved-green-700);
+  --themes-westpac-color-reserved-success-800: var(--primitives-color-reserved-green-800);
+  --themes-westpac-color-reserved-success-900: var(--primitives-color-reserved-green-900);
+  --themes-westpac-color-reserved-success-950: var(--primitives-color-reserved-green-950);
+  --themes-westpac-color-reserved-info-50: var(--primitives-color-reserved-blue-50);
+  --themes-westpac-color-reserved-info-100: var(--primitives-color-reserved-blue-100);
+  --themes-westpac-color-reserved-info-200: var(--primitives-color-reserved-blue-200);
+  --themes-westpac-color-reserved-info-300: var(--primitives-color-reserved-blue-300);
+  --themes-westpac-color-reserved-info-400: var(--primitives-color-reserved-blue-400);
+  --themes-westpac-color-reserved-info-500: var(--primitives-color-reserved-blue-500);
+  --themes-westpac-color-reserved-info-600: var(--primitives-color-reserved-blue-600);
+  --themes-westpac-color-reserved-info-700: var(--primitives-color-reserved-blue-700);
+  --themes-westpac-color-reserved-info-800: var(--primitives-color-reserved-blue-800);
+  --themes-westpac-color-reserved-info-900: var(--primitives-color-reserved-blue-900);
+  --themes-westpac-color-reserved-info-950: var(--primitives-color-reserved-blue-950);
+  --themes-westpac-color-reserved-warning-50: var(--primitives-color-reserved-orange-50);
+  --themes-westpac-color-reserved-warning-100: var(--primitives-color-reserved-orange-100);
+  --themes-westpac-color-reserved-warning-200: var(--primitives-color-reserved-orange-200);
+  --themes-westpac-color-reserved-warning-300: var(--primitives-color-reserved-orange-300);
+  --themes-westpac-color-reserved-warning-400: var(--primitives-color-reserved-orange-400);
+  --themes-westpac-color-reserved-warning-500: var(--primitives-color-reserved-orange-500);
+  --themes-westpac-color-reserved-warning-600: var(--primitives-color-reserved-orange-600);
+  --themes-westpac-color-reserved-warning-700: var(--primitives-color-reserved-orange-700);
+  --themes-westpac-color-reserved-warning-800: var(--primitives-color-reserved-orange-800);
+  --themes-westpac-color-reserved-warning-900: var(--primitives-color-reserved-orange-900);
+  --themes-westpac-color-reserved-warning-950: var(--primitives-color-reserved-orange-950);
+  --themes-westpac-color-reserved-danger-50: var(--primitives-color-reserved-red-50);
+  --themes-westpac-color-reserved-danger-100: var(--primitives-color-reserved-red-100);
+  --themes-westpac-color-reserved-danger-200: var(--primitives-color-reserved-red-200);
+  --themes-westpac-color-reserved-danger-300: var(--primitives-color-reserved-red-300);
+  --themes-westpac-color-reserved-danger-400: var(--primitives-color-reserved-red-400);
+  --themes-westpac-color-reserved-danger-500: var(--primitives-color-reserved-red-500);
+  --themes-westpac-color-reserved-danger-600: var(--primitives-color-reserved-red-600);
+  --themes-westpac-color-reserved-danger-700: var(--primitives-color-reserved-red-700);
+  --themes-westpac-color-reserved-danger-800: var(--primitives-color-reserved-red-800);
+  --themes-westpac-color-reserved-danger-900: var(--primitives-color-reserved-red-900);
+  --themes-westpac-color-reserved-danger-950: var(--primitives-color-reserved-red-950);
+  --themes-westpac-color-reserved-system-50: var(--primitives-color-reserved-yellow-50);
+  --themes-westpac-color-reserved-system-100: var(--primitives-color-reserved-yellow-100);
+  --themes-westpac-color-reserved-system-200: var(--primitives-color-reserved-yellow-200);
+  --themes-westpac-color-reserved-system-300: var(--primitives-color-reserved-yellow-300);
+  --themes-westpac-color-reserved-system-400: var(--primitives-color-reserved-yellow-400);
+  --themes-westpac-color-reserved-system-500: var(--primitives-color-reserved-yellow-500);
+  --themes-westpac-color-reserved-system-600: var(--primitives-color-reserved-yellow-600);
+  --themes-westpac-color-reserved-system-700: var(--primitives-color-reserved-yellow-700);
+  --themes-westpac-color-reserved-system-800: var(--primitives-color-reserved-yellow-800);
+  --themes-westpac-color-reserved-system-900: var(--primitives-color-reserved-yellow-900);
+  --themes-westpac-color-reserved-system-950: var(--primitives-color-reserved-yellow-950);
+  --themes-westpac-border-radius-none: var(--primitives-border-radius-none);
+  --themes-westpac-border-radius-small: var(--primitives-border-radius-100);
+  --themes-westpac-border-radius-medium: var(--primitives-border-radius-300);
+  --themes-westpac-border-radius-large: var(--primitives-border-radius-500);
+  --themes-westpac-border-radius-xlarge: var(--primitives-border-radius-700);
+  --themes-westpac-border-radius-full: var(--primitives-border-radius-900);
+  --tokens-light-mode-color-background-background-pale-black: var(--themes-westpac-color-muted-100); /** Use for screen backgrounds to establish correct emphasis:  Pale in Light Mode,  Black in Dark Mode */
+  --tokens-light-mode-color-background-background-pale-faint: var(--themes-westpac-color-muted-100); /** Use for screen backgrounds to establish correct emphasis: Pale in Light Mode, Faint in Dark Mode */
+  --tokens-light-mode-color-surface-surface-muted-vivid: var(--themes-westpac-color-muted-950); /** Use for icons that need to be text colour. */
+  --tokens-light-mode-color-surface-surface-muted: var(--themes-westpac-color-muted-500); /** Muted is now slightly lighter but remains accessible in all required scenarios. */
+  --tokens-light-mode-color-surface-surface-muted-strong: var(--themes-westpac-color-muted-400); /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
+  --tokens-light-mode-color-surface-surface-muted-mild: var(--themes-westpac-color-muted-300); /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
+  --tokens-light-mode-color-surface-surface-muted-soft: var(--themes-westpac-color-muted-200); /** This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
+  --tokens-light-mode-color-surface-surface-muted-pale: var(--themes-westpac-color-muted-100); /** This colour is used for backgrounds */
+  --tokens-light-mode-color-surface-surface-muted-faint: var(--themes-westpac-color-muted-50); /** This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes. */
+  --tokens-light-mode-color-surface-surface-primary: var(--themes-westpac-color-primary-500);
+  --tokens-light-mode-color-surface-surface-primary-faint: var(--themes-westpac-color-primary-50); /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
+  --tokens-light-mode-color-surface-surface-hero: var(--themes-westpac-color-hero-500);
+  --tokens-light-mode-color-surface-surface-hero-faint: var(--themes-westpac-color-hero-50); /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
+  --tokens-light-mode-color-surface-surface-pop: var(--themes-westpac-color-pop-500); /** This colour should be used very sparingly. It is for embellishment only. */
+  --tokens-light-mode-color-surface-surface-pop-faint: var(--themes-westpac-color-pop-50); /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
+  --tokens-light-mode-color-surface-surface-holler: var(--themes-westpac-color-holler-500); /** This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
+  --tokens-light-mode-color-surface-surface-holler-faint: var(--themes-westpac-color-holler-50); /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
+  --tokens-light-mode-color-surface-surface-sing: var(--themes-westpac-color-sing-500); /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-light-mode-color-surface-surface-sing-faint: var(--themes-westpac-color-sing-50); /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-light-mode-color-surface-surface-dance: var(--themes-westpac-color-dance-500); /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-light-mode-color-surface-surface-dance-faint: var(--themes-westpac-color-dance-50); /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-light-mode-color-surface-surface-success: var(--themes-westpac-color-reserved-success-500); /** This is a reserved colour. It must only be used for the success messaging component. */
+  --tokens-light-mode-color-surface-surface-success-faint: var(--themes-westpac-color-reserved-success-50); /** This is a reserved colour. It must only be used for the success messaging component. */
+  --tokens-light-mode-color-surface-surface-info: var(--themes-westpac-color-reserved-info-500); /** This is a reserved colour. It must only be used for the info messaging component. */
+  --tokens-light-mode-color-surface-surface-info-faint: var(--themes-westpac-color-reserved-info-50); /** This is a reserved colour. It must only be used for the info messaging component. */
+  --tokens-light-mode-color-surface-surface-warning: var(--themes-westpac-color-reserved-warning-500); /** This is a reserved colour. It must only be used for the warning messaging component. */
+  --tokens-light-mode-color-surface-surface-warning-faint: var(--themes-westpac-color-reserved-warning-50); /** This is a reserved colour. It must only be used for the warning messaging component. */
+  --tokens-light-mode-color-surface-surface-danger: var(--themes-westpac-color-reserved-danger-500); /** This is a reserved colour. It must only be used for the danger messaging component. */
+  --tokens-light-mode-color-surface-surface-danger-faint: var(--themes-westpac-color-reserved-danger-50); /** This is a reserved colour. It must only be used for the danger messaging component. */
+  --tokens-light-mode-color-surface-surface-system-error: var(--themes-westpac-color-reserved-system-500); /** This is a reserved colour. It must only be used for the system error messaging component. */
+  --tokens-light-mode-color-surface-surface-system-error-dark: var(--themes-westpac-color-reserved-system-950); /** This is a reserved colour. It must only be used for the system error messaging component. */
+  --tokens-light-mode-color-text-text-muted: var(--themes-westpac-color-muted-500); /** Use for text that needs less emphasis - Hint text, sub labels etc. */
+  --tokens-light-mode-color-text-text-primary: var(--themes-westpac-color-primary-500); /** This is not currently used in the Design System. */
+  --tokens-light-mode-color-text-text-hero: var(--themes-westpac-color-hero-500); /** This is not currently used in the Design System */
+  --tokens-light-mode-color-text-text-holler: var(--themes-westpac-color-holler-500); /** This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
+  --tokens-light-mode-color-text-text-link: var(--themes-westpac-color-primary-500); /** Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
+  --tokens-light-mode-color-text-text-success: var(--themes-westpac-color-reserved-success-500); /** This is a reserved colour. It must only be used for the success messaging component. */
+  --tokens-light-mode-color-text-text-info: var(--themes-westpac-color-reserved-info-500); /** This is a reserved colour. It must only be used for the info messaging component. */
+  --tokens-light-mode-color-text-text-warning: var(--themes-westpac-color-reserved-warning-500); /** This is a reserved colour. It must only be used for the warning messaging component. */
+  --tokens-light-mode-color-text-text-danger: var(--themes-westpac-color-reserved-danger-500); /** This is a reserved colour. It must only be used for the danger messaging component. */
+  --tokens-light-mode-color-text-text-system-error: var(--themes-westpac-color-reserved-system-950); /** This is a reserved colour. It must only be used for the system error messaging component. */
+  --tokens-light-mode-color-border-border-muted: var(--themes-westpac-color-muted-500); /** This border colour is not currently used in the Design System. */
+  --tokens-light-mode-color-border-border-muted-strong: var(--themes-westpac-color-muted-400); /** This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
+  --tokens-light-mode-color-border-border-muted-mild: var(--themes-westpac-color-muted-300); /** This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
+  --tokens-light-mode-color-border-border-muted-soft: var(--themes-westpac-color-muted-200); /** This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
+  --tokens-light-mode-color-border-border-hero: var(--themes-westpac-color-hero-500); /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
+  --tokens-light-mode-color-border-border-primary: var(--themes-westpac-color-primary-500); /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
+  --tokens-light-mode-color-border-border-pop: var(--themes-westpac-color-pop-500); /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
+  --tokens-light-mode-color-border-border-holler: var(--themes-westpac-color-holler-500); /** This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
+  --tokens-light-mode-color-border-border-sing: var(--themes-westpac-color-sing-500); /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-light-mode-color-border-border-dance: var(--themes-westpac-color-dance-500); /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-light-mode-color-border-border-success: var(--themes-westpac-color-reserved-success-500); /** This is a reserved colour. It must only be used for the success messaging component. */
+  --tokens-light-mode-color-border-border-success-mild: var(--themes-westpac-color-reserved-success-300); /** This is a reserved colour. It must only be used for the success messaging component. */
+  --tokens-light-mode-color-border-border-info: var(--themes-westpac-color-reserved-info-500); /** This is a reserved colour. It must only be used for the info messaging component. */
+  --tokens-light-mode-color-border-border-info-mild: var(--themes-westpac-color-reserved-info-300); /** This is a reserved colour. It must only be used for the info messaging component. */
+  --tokens-light-mode-color-border-border-warning: var(--themes-westpac-color-reserved-warning-500); /** This is a reserved colour. It must only be used for the warning messaging component. */
+  --tokens-light-mode-color-border-border-warning-mild: var(--themes-westpac-color-reserved-warning-300); /** This is a reserved colour. It must only be used for the warning messaging component. */
+  --tokens-light-mode-color-border-border-danger: var(--themes-westpac-color-reserved-danger-500); /** This is a reserved colour. It must only be used for the danger messaging component. */
+  --tokens-light-mode-color-border-border-danger-mild: var(--themes-westpac-color-reserved-danger-300); /** This is a reserved colour. It must only be used for the danger messaging component. */
+  --tokens-light-mode-color-border-border-focus: var(--themes-westpac-color-holler-300); /** This is a reserved colour. It must only be used for the focus state keyboard navigation. */
+  --tokens-light-mode-color-data-data-a-solid: var(--themes-westpac-color-primary-500); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-a-tint: var(--themes-westpac-color-primary-200); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-a-opacity: var(--themes-westpac-color-primary-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-b-solid: var(--themes-westpac-color-hero-500); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-b-tint: var(--themes-westpac-color-hero-300); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-b-opacity: var(--themes-westpac-color-hero-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-c-solid: var(--themes-westpac-color-pop-500); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-c-tint: var(--themes-westpac-color-pop-300); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-c-opacity: var(--themes-westpac-color-pop-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-d-solid: var(--themes-westpac-color-holler-500); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-d-tint: var(--themes-westpac-color-holler-200); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-d-opacity: var(--themes-westpac-color-holler-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-e-solid: var(--themes-westpac-color-sing-500); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-e-tint: var(--themes-westpac-color-sing-300); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-e-opacity: var(--themes-westpac-color-sing-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-f-solid: var(--themes-westpac-color-dance-500); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-f-tint: var(--themes-westpac-color-dance-300); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-data-data-f-opacity: var(--themes-westpac-color-dance-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-light-mode-color-state-surface-hover-primary: var(--themes-westpac-color-primary-400); /** This token is for hover states. */
+  --tokens-light-mode-color-state-surface-active-primary: var(--themes-westpac-color-primary-200);
+  --tokens-light-mode-color-state-surface-hover-hero: var(--themes-westpac-color-hero-400); /** This token is for hover states. */
+  --tokens-light-mode-color-state-surface-active-hero: var(--themes-westpac-color-hero-300); /** This token is for hover states. */
+  --tokens-light-mode-color-state-surface-hover-primary-faint: var(--themes-westpac-color-primary-50); /** This token is for hover states. */
+  --tokens-light-mode-color-state-surface-active-primary-faint: var(--themes-westpac-color-primary-100); /** This token is for hover states. */
+  --tokens-light-mode-color-state-surface-hover-hero-faint: var(--themes-westpac-color-hero-50);
+  --tokens-light-mode-color-state-surface-active-hero-faint: var(--themes-westpac-color-hero-100);
+  --tokens-light-mode-color-state-surface-hover-muted-pale: var(--themes-westpac-color-muted-100); /** This token is for hover states. */
+  --tokens-light-mode-color-state-surface-active-muted-pale: var(--themes-westpac-color-muted-300); /** This token is for hover states. */
+  --tokens-light-mode-color-state-surface-active-mono: var(--themes-westpac-color-muted-200); /** This token is for hover states. */
+  --tokens-light-mode-border-radius-none: var(--themes-westpac-border-radius-none);
+  --tokens-light-mode-border-radius-sm: var(--themes-westpac-border-radius-small);
+  --tokens-light-mode-border-radius-md: var(--themes-westpac-border-radius-medium);
+  --tokens-light-mode-border-radius-lg: var(--themes-westpac-border-radius-large);
+  --tokens-light-mode-border-radius-xl: var(--themes-westpac-border-radius-xlarge);
+  --tokens-light-mode-border-radius-full: var(--themes-westpac-border-radius-full);
+  --tokens-dark-mode-color-background-background-white-faint: var(--themes-westpac-color-muted-950); /** All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode. */
+  --tokens-dark-mode-color-background-background-pale-faint: var(--themes-westpac-color-muted-950); /** Use for screen backgrounds to establish correct emphasis: Pale in Light Mode, Faint in Dark Mode */
+  --tokens-dark-mode-color-background-background-white-pale: var(--themes-westpac-color-muted-900); /** All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode. */
+  --tokens-dark-mode-color-surface-surface-muted-vivid: var(--themes-westpac-color-muted-50); /** Use for icons that need to be text colour. */
+  --tokens-dark-mode-color-surface-surface-muted: var(--themes-westpac-color-muted-400); /** Muted is now slightly lighter but remains accessible in all required scenarios. */
+  --tokens-dark-mode-color-surface-surface-muted-strong: var(--themes-westpac-color-muted-600); /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
+  --tokens-dark-mode-color-surface-surface-muted-mild: var(--themes-westpac-color-muted-700); /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
+  --tokens-dark-mode-color-surface-surface-muted-soft: var(--themes-westpac-color-muted-800); /** This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
+  --tokens-dark-mode-color-surface-surface-muted-pale: var(--themes-westpac-color-muted-900); /** This colour is used for backgrounds */
+  --tokens-dark-mode-color-surface-surface-muted-faint: var(--themes-westpac-color-muted-950); /** This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes. */
+  --tokens-dark-mode-color-surface-surface-primary: var(--themes-westpac-color-primary-400);
+  --tokens-dark-mode-color-surface-surface-primary-faint: var(--themes-westpac-color-primary-950); /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
+  --tokens-dark-mode-color-surface-surface-hero: var(--themes-westpac-color-hero-300);
+  --tokens-dark-mode-color-surface-surface-hero-faint: var(--themes-westpac-color-hero-950); /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
+  --tokens-dark-mode-color-surface-surface-pop: var(--themes-westpac-color-pop-500); /** This colour should be used very sparingly. It is for embellishment only. */
+  --tokens-dark-mode-color-surface-surface-pop-faint: var(--themes-westpac-color-pop-950); /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
+  --tokens-dark-mode-color-surface-surface-holler: var(--themes-westpac-color-holler-400); /** This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
+  --tokens-dark-mode-color-surface-surface-holler-faint: var(--themes-westpac-color-holler-950); /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
+  --tokens-dark-mode-color-surface-surface-sing: var(--themes-westpac-color-sing-900); /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-dark-mode-color-surface-surface-sing-faint: var(--themes-westpac-color-sing-950); /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-dark-mode-color-surface-surface-dance: var(--themes-westpac-color-dance-500); /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-dark-mode-color-surface-surface-dance-faint: var(--themes-westpac-color-dance-900); /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-dark-mode-color-surface-surface-success: var(--themes-westpac-color-reserved-success-400); /** This is a reserved colour. It must only be used for the success messaging component. */
+  --tokens-dark-mode-color-surface-surface-success-faint: var(--themes-westpac-color-reserved-success-900); /** This is a reserved colour. It must only be used for the success messaging component. */
+  --tokens-dark-mode-color-surface-surface-info: var(--themes-westpac-color-reserved-info-400); /** This is a reserved colour. It must only be used for the info messaging component. */
+  --tokens-dark-mode-color-surface-surface-info-faint: var(--themes-westpac-color-reserved-info-900); /** This is a reserved colour. It must only be used for the info messaging component. */
+  --tokens-dark-mode-color-surface-surface-warning: var(--themes-westpac-color-reserved-warning-400); /** This is a reserved colour. It must only be used for the warning messaging component. */
+  --tokens-dark-mode-color-surface-surface-warning-faint: var(--themes-westpac-color-reserved-warning-900); /** This is a reserved colour. It must only be used for the warning messaging component. */
+  --tokens-dark-mode-color-surface-surface-danger: var(--themes-westpac-color-reserved-danger-300); /** This is a reserved colour. It must only be used for the danger messaging component. */
+  --tokens-dark-mode-color-surface-surface-danger-faint: var(--themes-westpac-color-reserved-danger-900); /** This is a reserved colour. It must only be used for the danger messaging component. */
+  --tokens-dark-mode-color-surface-surface-system-error: var(--themes-westpac-color-reserved-system-950); /** This is a reserved colour. It must only be used for the system error messaging component. */
+  --tokens-dark-mode-color-surface-surface-system-error-dark: var(--themes-westpac-color-reserved-system-500); /** This is a reserved colour. It must only be used for the system error messaging component. */
+  --tokens-dark-mode-color-text-text-muted: var(--themes-westpac-color-muted-400); /** Use for text that needs less emphasis - Hint text, sub labels etc. */
+  --tokens-dark-mode-color-text-text-primary: var(--themes-westpac-color-primary-300); /** This is not currently used in the Design System. */
+  --tokens-dark-mode-color-text-text-hero: var(--themes-westpac-color-hero-200); /** This is not currently used in the Design System */
+  --tokens-dark-mode-color-text-text-holler: var(--themes-westpac-color-holler-300); /** This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
+  --tokens-dark-mode-color-text-text-link: var(--themes-westpac-color-primary-300); /** Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
+  --tokens-dark-mode-color-text-text-success: var(--themes-westpac-color-reserved-success-300); /** This is a reserved colour. It must only be used for the success messaging component. */
+  --tokens-dark-mode-color-text-text-info: var(--themes-westpac-color-reserved-info-300); /** This is a reserved colour. It must only be used for the info messaging component. */
+  --tokens-dark-mode-color-text-text-warning: var(--themes-westpac-color-reserved-warning-300); /** This is a reserved colour. It must only be used for the warning messaging component. */
+  --tokens-dark-mode-color-text-text-danger: var(--themes-westpac-color-reserved-danger-300); /** This is a reserved colour. It must only be used for the danger messaging component. */
+  --tokens-dark-mode-color-text-text-system-error: var(--themes-westpac-color-reserved-system-500); /** This is a reserved colour. It must only be used for the system error messaging component. */
+  --tokens-dark-mode-color-border-border-muted: var(--themes-westpac-color-muted-500); /** This border colour is not currently used in the Design System. */
+  --tokens-dark-mode-color-border-border-muted-strong: var(--themes-westpac-color-muted-500); /** This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
+  --tokens-dark-mode-color-border-border-muted-mild: var(--themes-westpac-color-muted-700); /** This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
+  --tokens-dark-mode-color-border-border-muted-soft: var(--themes-westpac-color-muted-700); /** This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
+  --tokens-dark-mode-color-border-border-hero: var(--themes-westpac-color-hero-300); /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
+  --tokens-dark-mode-color-border-border-primary: var(--themes-westpac-color-primary-400); /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
+  --tokens-dark-mode-color-border-border-pop: var(--themes-westpac-color-pop-800); /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
+  --tokens-dark-mode-color-border-border-holler: var(--themes-westpac-color-holler-400); /** This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
+  --tokens-dark-mode-color-border-border-sing: var(--themes-westpac-color-sing-500); /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-dark-mode-color-border-border-dance: var(--themes-westpac-color-dance-500); /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
+  --tokens-dark-mode-color-border-border-success: var(--themes-westpac-color-reserved-success-500); /** This is a reserved colour. It must only be used for the success messaging component. */
+  --tokens-dark-mode-color-border-border-success-mild: var(--themes-westpac-color-reserved-success-700); /** This is a reserved colour. It must only be used for the success messaging component. */
+  --tokens-dark-mode-color-border-border-info: var(--themes-westpac-color-reserved-info-500); /** This is a reserved colour. It must only be used for the info messaging component. */
+  --tokens-dark-mode-color-border-border-info-mild: var(--themes-westpac-color-reserved-info-700); /** This is a reserved colour. It must only be used for the info messaging component. */
+  --tokens-dark-mode-color-border-border-warning: var(--themes-westpac-color-reserved-warning-500); /** This is a reserved colour. It must only be used for the warning messaging component. */
+  --tokens-dark-mode-color-border-border-warning-mild: var(--themes-westpac-color-reserved-warning-700); /** This is a reserved colour. It must only be used for the warning messaging component. */
+  --tokens-dark-mode-color-border-border-danger: var(--themes-westpac-color-reserved-danger-500); /** This is a reserved colour. It must only be used for the danger messaging component. */
+  --tokens-dark-mode-color-border-border-danger-mild: var(--themes-westpac-color-reserved-danger-700); /** This is a reserved colour. It must only be used for the danger messaging component. */
+  --tokens-dark-mode-color-border-border-focus: var(--themes-westpac-color-holler-400); /** This is a reserved colour. It must only be used for the focus state keyboard navigation. */
+  --tokens-dark-mode-color-data-data-a-solid: var(--themes-westpac-color-primary-500); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-a-tint: var(--themes-westpac-color-primary-200); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-a-opacity: var(--themes-westpac-color-primary-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-b-solid: var(--themes-westpac-color-hero-300); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-b-tint: var(--themes-westpac-color-hero-200); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-b-opacity: var(--themes-westpac-color-hero-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-c-solid: var(--themes-westpac-color-pop-500); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-c-tint: var(--themes-westpac-color-pop-300); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-c-opacity: var(--themes-westpac-color-pop-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-d-solid: var(--themes-westpac-color-holler-500); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-d-tint: var(--themes-westpac-color-holler-200); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-d-opacity: var(--themes-westpac-color-holler-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-e-solid: var(--themes-westpac-color-sing-500); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-e-tint: var(--themes-westpac-color-sing-300); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-e-opacity: var(--themes-westpac-color-sing-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-f-solid: var(--themes-westpac-color-dance-500); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-f-tint: var(--themes-westpac-color-dance-300); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-data-data-f-opacity: var(--themes-westpac-color-dance-opacity); /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --tokens-dark-mode-color-state-surface-hover-primary: var(--themes-westpac-color-primary-200); /** This token is for hover states. */
+  --tokens-dark-mode-color-state-surface-active-primary: var(--themes-westpac-color-primary-100);
+  --tokens-dark-mode-color-state-surface-hover-hero: var(--themes-westpac-color-hero-200); /** This token is for hover states. */
+  --tokens-dark-mode-color-state-surface-active-hero: var(--themes-westpac-color-hero-100); /** This token is for hover states. */
+  --tokens-dark-mode-color-state-surface-hover-primary-faint: var(--themes-westpac-color-primary-900); /** This token is for hover states. */
+  --tokens-dark-mode-color-state-surface-active-primary-faint: var(--themes-westpac-color-primary-800); /** This token is for hover states. */
+  --tokens-dark-mode-color-state-surface-hover-hero-faint: var(--themes-westpac-color-hero-800);
+  --tokens-dark-mode-color-state-surface-active-hero-faint: var(--themes-westpac-color-hero-400);
+  --tokens-dark-mode-color-state-surface-hover-muted-pale: var(--themes-westpac-color-muted-800); /** This token is for hover states. */
+  --tokens-dark-mode-color-state-surface-active-muted-pale: var(--themes-westpac-color-muted-600); /** This token is for hover states. */
+  --tokens-dark-mode-color-state-surface-active-mono: var(--themes-westpac-color-muted-800); /** This token is for hover states. */
+  --tokens-dark-mode-border-radius-none: var(--themes-westpac-border-radius-none);
+  --tokens-dark-mode-border-radius-sm: var(--themes-westpac-border-radius-small);
+  --tokens-dark-mode-border-radius-md: var(--themes-westpac-border-radius-medium);
+  --tokens-dark-mode-border-radius-lg: var(--themes-westpac-border-radius-large);
+  --tokens-dark-mode-border-radius-xl: var(--themes-westpac-border-radius-xlarge);
+  --tokens-dark-mode-border-radius-full: var(--themes-westpac-border-radius-full);
+  --themes-westpac-color-alias-text-body-lm: var(--themes-westpac-color-muted-950);
+  --themes-westpac-color-alias-text-body-dm: var(--themes-westpac-color-muted-200);
+  --themes-westpac-color-alias-text-heading-lm: var(--themes-westpac-color-hero-500);
+  --themes-westpac-color-alias-text-heading-dm: var(--themes-westpac-color-hero-200);
+  --themes-westpac-color-alias-surface-pictogram-base-lm: var(--themes-westpac-color-hero-500);
+  --themes-westpac-color-alias-surface-pictogram-base-dm: var(--themes-westpac-color-hero-300);
+  --themes-westpac-color-alias-surface-pictogram-accent-lm: var(--themes-westpac-color-primary-500);
+  --themes-westpac-color-alias-surface-pictogram-accent-dm: var(--themes-westpac-color-primary-600);
+  --tokens-light-mode-color-text-text-body: var(--themes-westpac-color-alias-text-body-lm); /** Use for body text, button labels, form labels etc. Can also be used for headings if required. */
+  --tokens-light-mode-color-text-text-heading: var(--themes-westpac-color-alias-text-heading-lm); /** Use for headings to ensure that multi-brand switching remains accurate. */
+  --tokens-light-mode-color-pictogram-surface-pictogram-base: var(--themes-westpac-color-alias-surface-pictogram-base-lm); /** This is a reserved component colour token. It must only be used for Pictograms. */
+  --tokens-light-mode-color-pictogram-surface-pictogram-accent: var(--themes-westpac-color-alias-surface-pictogram-accent-lm); /** This is a reserved component colour token. It must only be used for Pictograms. */
+  --tokens-dark-mode-color-text-text-body: var(--themes-westpac-color-alias-text-body-dm); /** Use for body text, button labels, form labels etc. Can also be used for headings if required. */
+  --tokens-dark-mode-color-text-text-heading: var(--themes-westpac-color-alias-text-heading-dm); /** Use for headings to ensure that multi-brand switching remains accurate. */
+  --tokens-dark-mode-color-pictogram-surface-pictogram-base: var(--themes-westpac-color-alias-surface-pictogram-base-dm); /** This is a reserved component colour token. It must only be used for Pictograms. */
+  --tokens-dark-mode-color-pictogram-surface-pictogram-accent: var(--themes-westpac-color-alias-surface-pictogram-accent-dm); /** This is a reserved component colour token. It must only be used for Pictograms. */
+}

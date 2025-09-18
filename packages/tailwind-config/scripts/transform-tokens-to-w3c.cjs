@@ -28,7 +28,7 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
       transformGroup: 'css',
       files: [
         {
-          destination: 'dist/style-dictionary/AllBrands/css/vars.css',
+          destination: `${DIST_FOLDER}/style-dictionary/AllBrands/css/vars.css`,
           format: ['css/variables'],
           options: { outputReferences: true },
         },
@@ -36,7 +36,7 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
     },
     android: {
       transforms: ['size/pxToRem', 'attribute/cti', 'name/kebab', 'color/hex', 'size/remToSp', 'size/remToDp'],
-      buildPath: 'dist/style-dictionary/AllBrands/android/',
+      buildPath: `${DIST_FOLDER}/style-dictionary/AllBrands/android/`,
       files: [
         { destination: 'style_dictionary_colors.xml', format: 'android/colors' },
         { destination: 'style_dictionary_dimensions.xml', format: 'android/dimens' },
@@ -52,7 +52,7 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
         'asset/swift/literal',
         'size/swift/remToCGFloat',
       ],
-      buildPath: 'dist/style-dictionary/AllBrands/ios/',
+      buildPath: `${DIST_FOLDER}/style-dictionary/AllBrands/ios/`,
       files: [{ destination: 'style_dictionary_colors.swift', format: 'ios-swift/class.swift' }],
     },
   },
@@ -235,7 +235,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.css,
           files: [
             {
-              destination: `dist/style-dictionary/${primitiveName}/css/style.css`,
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/css/style.css`,
               format: ['css/variables'],
               options: { outputReferences: true },
             },
@@ -243,11 +243,11 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
         },
         android: {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.android,
-          buildPath: `dist/style-dictionary/${primitiveName}/android/`,
+          buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/android/`,
         },
         ios: {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.ios,
-          buildPath: `dist/style-dictionary/${primitiveName}/ios/`,
+          buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/`,
           files: [{ destination: 'style_dictionary_colors.swift', format: 'ios-swift/class.swift' }],
         },
       },

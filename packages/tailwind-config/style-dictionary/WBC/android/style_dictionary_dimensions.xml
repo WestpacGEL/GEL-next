@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <dimen name="tokens-light-mode-border-radius-none">0</dimen>
+  <dimen name="tokens-light-mode-border-radius-sm">2</dimen>
+  <dimen name="tokens-light-mode-border-radius-md">6</dimen>
+  <dimen name="tokens-light-mode-border-radius-lg">12</dimen>
+  <dimen name="tokens-light-mode-border-radius-xl">24</dimen>
+  <dimen name="tokens-light-mode-border-radius-full">99</dimen>
+  <dimen name="tokens-dark-mode-border-radius-none">0</dimen>
+  <dimen name="tokens-dark-mode-border-radius-sm">2</dimen>
+  <dimen name="tokens-dark-mode-border-radius-md">6</dimen>
+  <dimen name="tokens-dark-mode-border-radius-lg">12</dimen>
+  <dimen name="tokens-dark-mode-border-radius-xl">24</dimen>
+  <dimen name="tokens-dark-mode-border-radius-full">99</dimen>
+  <dimen name="themes-westpac-border-radius-none">0</dimen>
+  <dimen name="themes-westpac-border-radius-small">2</dimen>
+  <dimen name="themes-westpac-border-radius-medium">6</dimen>
+  <dimen name="themes-westpac-border-radius-large">12</dimen>
+  <dimen name="themes-westpac-border-radius-xlarge">24</dimen>
+  <dimen name="themes-westpac-border-radius-full">99</dimen>
+</resources>

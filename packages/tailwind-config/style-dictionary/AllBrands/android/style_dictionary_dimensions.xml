@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <dimen name="tokens-westpac-light-mode-border-radius-none">0</dimen>
+  <dimen name="tokens-westpac-light-mode-border-radius-sm">2</dimen>
+  <dimen name="tokens-westpac-light-mode-border-radius-md">6</dimen>
+  <dimen name="tokens-westpac-light-mode-border-radius-lg">12</dimen>
+  <dimen name="tokens-westpac-light-mode-border-radius-xl">24</dimen>
+  <dimen name="tokens-westpac-light-mode-border-radius-full">99</dimen>
+  <dimen name="tokens-westpac-dark-mode-border-radius-none">0</dimen>
+  <dimen name="tokens-westpac-dark-mode-border-radius-sm">2</dimen>
+  <dimen name="tokens-westpac-dark-mode-border-radius-md">6</dimen>
+  <dimen name="tokens-westpac-dark-mode-border-radius-lg">12</dimen>
+  <dimen name="tokens-westpac-dark-mode-border-radius-xl">24</dimen>
+  <dimen name="tokens-westpac-dark-mode-border-radius-full">99</dimen>
+  <dimen name="tokens-st-george-light-mode-border-radius-none">0</dimen>
+  <dimen name="tokens-st-george-light-mode-border-radius-sm">4</dimen>
+  <dimen name="tokens-st-george-light-mode-border-radius-md">12</dimen>
+  <dimen name="tokens-st-george-light-mode-border-radius-lg">24</dimen>
+  <dimen name="tokens-st-george-light-mode-border-radius-xl">99</dimen>
+  <dimen name="tokens-st-george-light-mode-border-radius-full">99</dimen>
+  <dimen name="tokens-st-george-dark-mode-border-radius-none">0</dimen>
+  <dimen name="tokens-st-george-dark-mode-border-radius-sm">4</dimen>
+  <dimen name="tokens-st-george-dark-mode-border-radius-md">12</dimen>
+  <dimen name="tokens-st-george-dark-mode-border-radius-lg">24</dimen>
+  <dimen name="tokens-st-george-dark-mode-border-radius-xl">99</dimen>
+  <dimen name="tokens-st-george-dark-mode-border-radius-full">99</dimen>
+  <dimen name="themes-westpac-border-radius-none">0</dimen>
+  <dimen name="themes-westpac-border-radius-small">2</dimen>
+  <dimen name="themes-westpac-border-radius-medium">6</dimen>
+  <dimen name="themes-westpac-border-radius-large">12</dimen>
+  <dimen name="themes-westpac-border-radius-xlarge">24</dimen>
+  <dimen name="themes-westpac-border-radius-full">99</dimen>
+  <dimen name="themes-st-george-border-radius-none">0</dimen>
+  <dimen name="themes-st-george-border-radius-small">4</dimen>
+  <dimen name="themes-st-george-border-radius-medium">12</dimen>
+  <dimen name="themes-st-george-border-radius-large">24</dimen>
+  <dimen name="themes-st-george-border-radius-xlarge">99</dimen>
+  <dimen name="themes-st-george-border-radius-full">99</dimen>
+</resources>
