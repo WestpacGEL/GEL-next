@@ -20,7 +20,13 @@ export const styles = tv(
       titleSecondary: 'mt-1 items-center',
       titleTertiary: 'mt-1 items-center',
     },
-    variants: {},
+    variants: {
+      isFocusVisible: {
+        true: {
+          toggleBtn: 'focus-outline',
+        },
+      },
+    },
     compoundSlots: [
       {
         slots: ['titlePrimary', 'titleSecondary', 'titleTertiary'],

@@ -2,61 +2,45 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
 
 ```tsx
 () => {
-  const [inputs, setInputs] = useState({});
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ primary: '', secondary: '', tertiary: '' }] },
+  });
+  const items = watch('items');
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputs((prev: object) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { primary: '', secondary: '', tertiary: '' }]);
+  }, [items, setValue]);
 
   return (
-    <Compacta>
-      {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
-        <Form>
-          <FormGroup>
-            <FormLabel htmlFor={`primary-default-${id}`}>Primary</FormLabel>
-            <FormHint id={`primary-default-hint-${id}`}>Primary title text</FormHint>
-            <Input
-              id={`primary-default-${id}`}
-              aria-describedby={`primary-default-hint-${id}`}
-              name={`primary-default-${id}`}
-              value={inputs[`primary-default-${id}` as keyof typeof inputs] || ''}
-              onChange={e => {
-                handleChange(e);
-                setPrimaryTitle(e.target.value);
-              }}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormLabel htmlFor={`secondary-default-${id}`}>Secondary</FormLabel>
-            <FormHint id={`secondary-default-hint-${id}`}>Secondary title text</FormHint>
-            <Input
-              id={`secondary-default-${id}`}
-              aria-describedby={`secondary-default-hint-${id}`}
-              name={`secondary-default-${id}`}
-              value={inputs[`secondary-default-${id}` as keyof typeof inputs] || ''}
-              onChange={e => {
-                handleChange(e);
-                setSecondaryTitle(e.target.value);
-              }}
-            />
-          </FormGroup>
-          <FormGroup>
-            <FormLabel htmlFor={`tertiary-default-${id}`}>Tertiary</FormLabel>
-            <FormHint id={`tertiary-default-hint-${id}`}>Tertiary title text</FormHint>
-            <Input
-              id={`tertiary-default-${id}`}
-              aria-describedby={`tertiary-default-hint-${id}`}
-              name={`tertiary-default-${id}`}
-              value={inputs[`tertiary-default-${id}` as keyof typeof inputs] || ''}
-              onChange={e => {
-                handleChange(e);
-                setTertiaryTitle(e.target.value);
-              }}
-            />
-          </FormGroup>
-        </Form>
-      )}
-    </Compacta>
+    <Form>
+      <Compacta onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <CompactaItem
+            key={index}
+            title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <FormGroup>
+              <FormLabel htmlFor={`primary.${index}.primary`}>Primary</FormLabel>
+              <FormHint id={`primary-hint`}>Primary title text</FormHint>
+              <Input aria-describedby={`primary-hint`} {...register(`items.${index}.primary`)} />
+            </FormGroup>
+            <FormGroup>
+              <FormLabel htmlFor={`secondary.${index}.secondary`}>Secondary</FormLabel>
+              <FormHint id={`secondary-hint`}>Secondary title text</FormHint>
+              <Input aria-describedby={`secondary-hint`} {...register(`items.${index}.secondary`)} />
+            </FormGroup>
+            <FormGroup>
+              <FormLabel htmlFor={`tertiary.${index}.tertiary`}>Tertiary</FormLabel>
+              <FormHint id={`tertiary-hint`}>Tertiary title text</FormHint>
+              <Input aria-describedby={`tertiary-hint`} id={`tertiary`} {...register(`items.${index}.tertiary`)} />
+            </FormGroup>
+          </CompactaItem>
+        ))}
+      </Compacta>
+    </Form>
   );
 };
 ```
