@@ -72,7 +72,6 @@ export function sortMenu(menuItems: Item[]) {
       return {
         ...item,
         children: orderedFoundationMenu.map(foundationMenuItem => {
-          console.log('foundationMenuItem.label', foundationMenuItem.label);
           if (foundationMenuItem.label === 'tokens') {
             return {
               ...foundationMenuItem,
