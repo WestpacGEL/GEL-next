@@ -5,12 +5,12 @@ import { useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
 import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { ButtonGroupButton, ErrorMessage, Hint, Label } from '../index.js';
 
 import { styles as buttonGroupStyles } from './button-group.styles.js';
 import { ButtonGroupContextState, type ButtonGroupProps } from './button-group.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export const ButtonGroupContext = createContext<ButtonGroupContextState>({
   block: false,

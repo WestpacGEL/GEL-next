@@ -3,13 +3,13 @@
 import { AnimatePresence, LazyMotion, m } from 'motion/react';
 import React, { useCallback, useEffect, useState, useMemo } from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { Button } from '../button/button.component.js';
 import { AlertIcon, CloseIcon, InfoIcon, LimitIcon, SuccessIcon, WarningIcon } from '../icon/index.js';
 
 import { styles as alertStyles } from './alert.styles.js';
 import { type AlertProps } from './alert.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 const loadAnimations = () => import('./alert.utils.js').then(res => res.default);
 
