@@ -50,7 +50,7 @@ function orderMenu(menuItems: Item[], order: string[]) {
 
 // This had to be made as a separate function as adding some to formatNavItems too cognitively complex
 export function sortMenu(menuItems: Item[]) {
-  const topLevelMenuOrder = [
+  const TOPO_LEVEL_MENU_ORDER = [
     'home',
     'get-started',
     'foundation',
@@ -62,14 +62,24 @@ export function sortMenu(menuItems: Item[]) {
     'design tokens',
   ];
 
-  const foundationMenuOrder = ['tokens', 'icons', 'logos', 'pictograms', 'layout', 'fonts', 'text styling'];
+  const FOUNDATION_MENU_ORDER = ['tokens', 'icons', 'logos', 'pictograms', 'layout', 'fonts', 'text styling'];
+  const TOKENS_MENU_ORDER = ['colour tokens', 'border tokens'];
 
-  const topLevelMenuOrdered = orderMenu(menuItems, topLevelMenuOrder);
+  const topLevelMenuOrdered = orderMenu(menuItems, TOPO_LEVEL_MENU_ORDER);
   return topLevelMenuOrdered.map(item => {
     if (item.label === 'foundation') {
+      const orderedFoundationMenu = orderMenu(item.children || [], FOUNDATION_MENU_ORDER);
       return {
         ...item,
-        children: orderMenu(menuItems.find(({ label }) => label === 'foundation')?.children || [], foundationMenuOrder),
+        children: orderedFoundationMenu.map(foundationMenuItem => {
+          if (foundationMenuItem.label === 'tokens') {
+            return {
+              ...foundationMenuItem,
+              children: orderMenu(foundationMenuItem.children || [], TOKENS_MENU_ORDER),
+            };
+          }
+          return foundationMenuItem;
+        }),
       };
     }
     return item;
