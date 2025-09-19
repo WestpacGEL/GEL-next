@@ -22,6 +22,7 @@ export function ButtonDropdown({
   look = 'hero',
   soft = false,
   block = false,
+  shouldFlip,
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const panelId = useId();
@@ -70,6 +71,7 @@ export function ButtonDropdown({
           state={state}
           block={block}
           id={panelId}
+          shouldFlip={shouldFlip}
         >
           {children}
         </ButtonDropdownPanel>
