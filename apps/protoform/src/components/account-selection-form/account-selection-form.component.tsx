@@ -1,4 +1,13 @@
-import { ButtonGroup, Field, Form, FormGroup, Selector, SelectorCheckbox, SelectorHint, SelectorLabel } from '@westpac/ui';
+import {
+  ButtonGroup,
+  Field,
+  Form,
+  FormGroup,
+  Selector,
+  SelectorCheckbox,
+  SelectorHint,
+  SelectorLabel,
+} from '@westpac/ui';
 import { Controller, useForm } from 'react-hook-form';
 
 import { defaultError } from '@/constants/form-contsants';
@@ -54,7 +63,7 @@ export function AccountSelectionForm({
   return (
     <Form id="credit-card" spacing="large" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
       <FormGroup>
-        <Field aria-label='Account type' errorMessage={errors.accountType?.message}>
+        <Field aria-label="Account type" errorMessage={errors.accountType?.message}>
           <Controller
             control={control}
             name="accountType"
@@ -78,7 +87,7 @@ export function AccountSelectionForm({
         </Field>
       </FormGroup>
       <FormGroup>
-        <Field aria-label='Accounts' errorMessage={errors.accounts?.message}>
+        <Field aria-label="Accounts" errorMessage={errors.accounts?.message}>
           <Controller
             control={control}
             name="accounts"
