@@ -2,7 +2,7 @@
 
 import { ProgressRopeProps } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 
 import { ContentWrapper } from '@/components/content-wrapper/content-wrapper';
 import { CustomFooter } from '@/components/custom-footer/custom-footer';
@@ -12,7 +12,7 @@ import { Sidebar } from '@/components/sidebar/sidebar';
 
 import { CreditCardContextProvider } from './context';
 
-export default function CreditCardsLayout({
+function CreditCardsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -70,13 +70,27 @@ export default function CreditCardsLayout({
 
   return (
     <>
-      <CustomHeader />
-      <Sidebar />
       <ContentWrapper isSidebarOpen={open}>
         <CreditCardContextProvider>
           <div>{children}</div>
         </CreditCardContextProvider>
       </ContentWrapper>
+    </>
+  );
+}
+
+export default function CreditCardsLayoutWrapper({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <>
+      <CustomHeader />
+      <Sidebar />
+      <Suspense>
+        <CreditCardsLayout>{children}</CreditCardsLayout>
+      </Suspense>
       <CustomFooter />
     </>
   );
