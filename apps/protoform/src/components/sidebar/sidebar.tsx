@@ -60,7 +60,8 @@ export function Sidebar({ children }: { children?: ReactNode }) {
 
     window.addEventListener('resize', updateOpen);
     return () => window.removeEventListener('resize', updateOpen);
-  }, [ropeData, setOpen, updateOpen]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const ropeType = ropeData && ropeData[0].type;
@@ -77,7 +78,8 @@ export function Sidebar({ children }: { children?: ReactNode }) {
       });
     }
     setTotalSteps(stepCount);
-  }, [ropeData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     !isDashboard && (
@@ -93,7 +95,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
             <Button
               look="link"
               iconAfter={MoreVertIcon}
-              className="typography-body-10 no-underline px-0"
+              className="typography-body-10 px-0 no-underline"
               onClick={() => setOpen(true)}
             >
               Show all steps

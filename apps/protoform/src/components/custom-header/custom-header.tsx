@@ -2,11 +2,15 @@
 
 import { Button, Header } from '@westpac/ui';
 import { BREAKPOINTS } from '@westpac/ui/themes-constants';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-export function CustomHeader({ isSidebarScrolled }: { isSidebarScrolled?: boolean }) {
-  const router = useRouter();
+export function CustomHeader({
+  isSidebarScrolled,
+  withSignout,
+}: {
+  isSidebarScrolled?: boolean;
+  withSignout?: boolean;
+}) {
   const [isMobile, setIsMobile] = useState(true);
 
   const updateSize = () => {
@@ -27,6 +31,12 @@ export function CustomHeader({ isSidebarScrolled }: { isSidebarScrolled?: boolea
       isScrolled={isSidebarScrolled}
       fixedMaxWidth="1921px"
       className={'z-[100] m-auto w-full'}
-    />
+    >
+      {withSignout && (
+        <Button look="faint" size={{ initial: 'small', sm: 'medium' }} soft>
+          Sign Out
+        </Button>
+      )}
+    </Header>
   );
 }

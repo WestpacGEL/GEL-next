@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@westpac/ui": "workspace:~",
@@ -15,6 +16,7 @@
     "next": "14.2.30",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "~7.62.0",
     "zustand": "~4.5.4"
   },
   "devDependencies": {

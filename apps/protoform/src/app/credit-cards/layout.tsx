@@ -2,26 +2,27 @@
 
 import { ProgressRopeProps } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
 
-import { RopeDataSetter } from '@/components/rope-data-setter/rope-data-setter';
-
-import { CreditCardContextProvider } from './context';
-import { ReactNode, Suspense, useMemo } from 'react';
-import { useSidebar } from '@/components/sidebar/context';
-import { CustomHeader } from '@/components/custom-header/custom-header';
-import { Sidebar } from '@/components/sidebar/sidebar';
 import { ContentWrapper } from '@/components/content-wrapper/content-wrapper';
 import { CustomFooter } from '@/components/custom-footer/custom-footer';
+import { CustomHeader } from '@/components/custom-header/custom-header';
+import { useSidebar } from '@/components/sidebar/context';
+import { Sidebar } from '@/components/sidebar/sidebar';
 
-function CreditCardsLayout({
+import { CreditCardContextProvider } from './context';
+
+export default function CreditCardsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const searchParams = useSearchParams();
+  const { open, setRopeData } = useSidebar();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
 
-  const GROUPED_CREDIT_CARD_PROGRESS_ROPE: ProgressRopeProps['data'] = [
+  const CREDIT_CARD_PROGRESS_ROPE: ProgressRopeProps['data'] = [
     {
       type: 'group',
       text: 'Get started',
@@ -52,42 +53,31 @@ function CreditCardsLayout({
     { text: 'Review and Submit', onClick: () => router.push('/credit-cards/review-and-submit') },
   ];
 
-  const FLATTEN_CREDIT_CARD_PROGRESS_ROPE: ProgressRopeProps['data'] = [
-    { text: 'Quick contact', onClick: () => router.push('/credit-cards?flatten=true') },
-    { text: 'Income & savings', onClick: () => router.push('/credit-cards/income-and-savings?flatten=true') },
-    { text: 'Loans & cards', onClick: () => router.push('/credit-cards/loans-and-cards?flatten=true') },
-    { text: 'Home life', onClick: () => router.push('/credit-cards/home-life?flatten=true') },
-    { text: 'Credit limit', onClick: () => router.push('/credit-cards/credit-limit?flatten=true') },
-    { text: 'Name & contact', onClick: () => router.push('/credit-cards/name-and-contact?flatten=true') },
-    { text: 'Address', onClick: () => router.push('/credit-cards/address?flatten=true') },
-    { text: 'Review and Submit', onClick: () => router.push('/credit-cards/review-and-submit?flatten=true') },
-  ];
+  const CREDIT_CARD_PROGRESS_FLATTEN = CREDIT_CARD_PROGRESS_ROPE.reduce(
+    (acc, current) => {
+      if ('steps' in current) {
+        return [...acc, ...current.steps];
+      }
+      return [...acc, current];
+    },
+    [] as Exclude<ProgressRopeProps['data'], undefined>,
+  );
 
-  const ropeData = useMemo(() => {
-    return searchParams.get('flatten') ? FLATTEN_CREDIT_CARD_PROGRESS_ROPE : GROUPED_CREDIT_CARD_PROGRESS_ROPE;
-  }, [searchParams]);
-
-  const { sidebarScrolled, open } = useSidebar();
+  useEffect(() => {
+    setRopeData(isFlattenRope ? CREDIT_CARD_PROGRESS_FLATTEN : CREDIT_CARD_PROGRESS_ROPE);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isFlattenRope]);
 
   return (
     <>
-      <CustomHeader isSidebarScrolled={sidebarScrolled} />
+      <CustomHeader />
       <Sidebar />
       <ContentWrapper isSidebarOpen={open}>
         <CreditCardContextProvider>
-          <RopeDataSetter data={ropeData} />
           <div>{children}</div>
         </CreditCardContextProvider>
       </ContentWrapper>
-      <CustomFooter isSidebarOpen={open} />
+      <CustomFooter />
     </>
-  );
-}
-
-export default function CreditCardsLayoutWithSuspense({ children }: { children: ReactNode }) {
-  return (
-    <Suspense fallback={null}>
-      <CreditCardsLayout>{children}</CreditCardsLayout>
-    </Suspense>
   );
 }

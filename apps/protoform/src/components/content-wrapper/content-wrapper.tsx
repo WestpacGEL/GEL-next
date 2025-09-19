@@ -7,7 +7,7 @@ import { ReactNode } from 'react';
 export function ContentWrapper({ children, isSidebarOpen }: { children: ReactNode; isSidebarOpen?: boolean }) {
   return (
     <section
-      className={clsx('flex-1', {
+      className={clsx('flex-1 pb-10', {
         'md:mr-[300px]': isSidebarOpen,
       })}
       id="content-wrapper"

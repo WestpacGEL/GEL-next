@@ -1,50 +1,56 @@
 'use client';
 
-import { Form, FormGroup, FormSection, Input, InputGroup } from '@westpac/ui';
+import { Form, FormGroup, Input, InputGroup } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { FormEvent, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
 
 import { BackButton } from '@/components/back-button/back-button';
 import { Cta } from '@/components/cta/cta';
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
-import { ErrorValidationAlert, ValidationErrorType } from '@/components/error-validation-alert/error-validation-alert';
+import { ErrorValidationAlert } from '@/components/error-validation-alert/error-validation-alert';
 import { useSidebar } from '@/components/sidebar/context';
-import { getFormData } from '@/utils/getFormData';
-
-import { defaultError } from '../../constants/form-contsants';
+import { defaultError } from '@/constants/form-contsants';
 
 import { useCreditCard } from './context';
+
+type FormData = {
+  name: string;
+  email: string;
+};
+
+const FIELDS_LABELS = {
+  name: 'Name',
+  email: 'Email',
+};
 
 export default function CreditCards() {
   const { setRopeStep } = useSidebar();
   const { data, setData } = useCreditCard();
-  const [nameError, setNameError] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid, isSubmitted },
+  } = useForm<FormData>();
+
   const searchParams = useSearchParams();
   const isFlattenRope = searchParams.get('flatten');
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const { name, email } = getFormData(e.currentTarget) as { email: string; name: string };
-    if (!name || !email) {
-      setNameError(!name ? defaultError : '');
-      setEmailError(!email ? defaultError : '');
-      setValidationErrors([
-        ...(!name ? [{ id: 'name', label: 'Given name' }] : []),
-        ...(!email ? [{ id: 'email', label: 'Email address' }] : []),
-      ]);
-    } else {
-      setData({ ...data, name, email });
+  const router = useRouter();
+
+  const onSubmit = useCallback(
+    (formData: FormData) => {
+      setData({ ...data, ...formData });
       router.push(`/credit-cards/income-and-savings${isFlattenRope ? '?flatten=true' : ''}`);
-    }
-  };
+    },
+    [data, isFlattenRope, router, setData],
+  );
 
   useEffect(() => {
     setRopeStep(0);
-  }, [setRopeStep]);
-
-  const router = useRouter();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
@@ -52,26 +58,34 @@ export default function CreditCards() {
       <CustomHeading groupHeading={!isFlattenRope && 'Get started'} leadText="To begin, we just need a few details.">
         Quick contact
       </CustomHeading>
-      {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
-      <Form id="credit-card" spacing="large" className="p-0" onSubmit={handleSubmit}>
-        <FormSection className="border-none !p-0">
-          <FormGroup>
-            <InputGroup
-              size="large"
-              instanceId="name"
-              label="Given name"
-              hint="To help us verify your identity online, please enter your name exactly as it appears on your ID."
-              errorMessage={nameError}
-            >
-              <Input name="name" defaultValue={data.name} invalid={!!nameError} />
-            </InputGroup>
-          </FormGroup>
-          <FormGroup>
-            <InputGroup size="large" instanceId="email" label="Email address" errorMessage={emailError}>
-              <Input name="email" defaultValue={data.email} invalid={!!emailError} />
-            </InputGroup>
-          </FormGroup>
-        </FormSection>
+      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
+      <Form id="credit-card" spacing="large" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <FormGroup>
+          <InputGroup
+            size="large"
+            instanceId="name"
+            label="Given name"
+            hint="To help us verify your identity online, please enter your name exactly as it appears on your ID."
+            errorMessage={errors.name?.message}
+          >
+            <Input
+              {...register('name', { required: defaultError })}
+              id="name"
+              defaultValue={data.name}
+              invalid={!!errors.name?.message}
+            />
+          </InputGroup>
+        </FormGroup>
+        <FormGroup>
+          <InputGroup size="large" instanceId="email" label="Email address" errorMessage={errors.email?.message}>
+            <Input
+              {...register('email', { required: defaultError })}
+              id="email"
+              defaultValue={data.email}
+              invalid={!!errors.email?.message}
+            />
+          </InputGroup>
+        </FormGroup>
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>

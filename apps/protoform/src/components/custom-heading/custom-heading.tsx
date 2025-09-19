@@ -11,7 +11,7 @@ export function CustomHeading({
   beforeContent?: ReactNode;
   children: ReactNode;
   groupHeading?: ReactNode;
-  leadText?: string;
+  leadText?: ReactNode;
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }) {
   return (
