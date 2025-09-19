@@ -1,4 +1,4 @@
-import { ButtonGroup, Form, FormGroup, Selector, SelectorCheckbox, SelectorHint, SelectorLabel } from '@westpac/ui';
+import { ButtonGroup, Field, Form, FormGroup, Selector, SelectorCheckbox, SelectorHint, SelectorLabel } from '@westpac/ui';
 import { Controller, useForm } from 'react-hook-form';
 
 import { defaultError } from '@/constants/form-contsants';
@@ -54,47 +54,51 @@ export function AccountSelectionForm({
   return (
     <Form id="credit-card" spacing="large" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
       <FormGroup>
-        <Controller
-          control={control}
-          name="accountType"
-          rules={{ required: defaultError }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <ButtonGroup
-              aria-label="Account type"
-              size="large"
-              onChange={onChange} // send value to hook form
-              onBlur={onBlur} // notify when input is touched/blur
-              value={value}
-              block={{ initial: true, md: false }}
-              errorMessage={errors.accountType?.message}
-              buttons={[
-                { value: 'active', label: 'Active' },
-                { value: 'closed', label: 'Closed' },
-              ]}
-            />
-          )}
-        />
+        <Field aria-label='Account type' errorMessage={errors.accountType?.message}>
+          <Controller
+            control={control}
+            name="accountType"
+            rules={{ required: defaultError }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <ButtonGroup
+                aria-label="Account type"
+                size="large"
+                onChange={onChange} // send value to hook form
+                onBlur={onBlur} // notify when input is touched/blur
+                value={value}
+                block={{ initial: true, md: false }}
+                errorMessage={errors.accountType?.message}
+                buttons={[
+                  { value: 'active', label: 'Active' },
+                  { value: 'closed', label: 'Closed' },
+                ]}
+              />
+            )}
+          />
+        </Field>
       </FormGroup>
       <FormGroup>
-        <Controller
-          control={control}
-          name="accounts"
-          rules={{ required: defaultError }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <Selector type="checkbox" onChange={onChange} onBlur={onBlur} value={value} aria-label="Accounts">
-              {ACCOUNTS.map(({ accountName, accountNumber, balance }) => (
-                <SelectorCheckbox
-                  key={accountNumber}
-                  value={accountNumber}
-                  after={<SelectorLabel>{formatter.format(balance).replace('A', '')}</SelectorLabel>}
-                >
-                  <SelectorLabel>{accountName}</SelectorLabel>
-                  <SelectorHint>{accountNumber}</SelectorHint>
-                </SelectorCheckbox>
-              ))}
-            </Selector>
-          )}
-        />
+        <Field aria-label='Accounts' errorMessage={errors.accounts?.message}>
+          <Controller
+            control={control}
+            name="accounts"
+            rules={{ required: defaultError }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <Selector type="checkbox" onChange={onChange} onBlur={onBlur} value={value} aria-label="Accounts">
+                {ACCOUNTS.map(({ accountName, accountNumber, balance }) => (
+                  <SelectorCheckbox
+                    key={accountNumber}
+                    value={accountNumber}
+                    after={<SelectorLabel>{formatter.format(balance).replace('A', '')}</SelectorLabel>}
+                  >
+                    <SelectorLabel>{accountName}</SelectorLabel>
+                    <SelectorHint>{accountNumber}</SelectorHint>
+                  </SelectorCheckbox>
+                ))}
+              </Selector>
+            )}
+          />
+        </Field>
       </FormGroup>
       <Cta primaryType="submit" tertiaryOnClick={onCancel} tertiary="Cancel">
         Continue
