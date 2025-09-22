@@ -3,11 +3,11 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     base: 'relative flex flex-1 flex-col',
-    label: 'block text-left text-sm font-medium text-text-body',
+    label: 'text-text-body block text-left text-sm font-medium',
     outerWrapper:
-      'form-control relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 disabled:form-control-disabled group-[.input-group-after]:rounded-r-none group-[.input-group-before]:rounded-l-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:border-l-0',
+      'form-control disabled:form-control-disabled relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 group-[.input-group-after]:rounded-r-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:rounded-l-none group-[.input-group-before]:border-l-0',
     input: 'appearance-none bg-[transparent] outline-none',
-    clearButton: 'flex cursor-default items-center justify-center text-surface-muted',
+    clearButton: 'text-surface-muted flex cursor-default items-center justify-center',
     iconWrapper: 'flex flex-col justify-center',
   },
   variants: {
@@ -21,18 +21,22 @@ export const styles = tv({
     },
     size: {
       small: {
+        outerWrapper: 'rounded-sm',
         input: 'form-control-small',
         iconWrapper: 'pl-1',
       },
       medium: {
+        outerWrapper: 'rounded-md',
         input: 'form-control-medium',
         iconWrapper: 'pl-1.5',
       },
       large: {
+        outerWrapper: 'rounded-lg',
         input: 'form-control-large',
         iconWrapper: 'pl-1.5',
       },
       xlarge: {
+        outerWrapper: 'rounded-xl',
         input: 'form-control-xlarge',
         iconWrapper: 'pl-2',
       },

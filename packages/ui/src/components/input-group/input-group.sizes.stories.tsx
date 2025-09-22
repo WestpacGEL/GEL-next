@@ -24,7 +24,7 @@ export const InputGroupWithDifferentSizes: Story = {
     return (
       <>
         {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
-          <div key={size} className="border-b border-b-border py-3">
+          <div key={size} className="border-b-border border-b py-3">
             <h3 className="typography-body-7 mb-4 font-bold">Size: {size}</h3>
             <InputGroup
               size={size}
@@ -74,8 +74,8 @@ export const InputGroupWithDifferentSizes: Story = {
               label="Button"
               hint="I am a hint"
               supportingText="I am supporting text"
-              before={<Button>Check</Button>}
-              after={<Button>Check</Button>}
+              before={<Button size={size}>Check</Button>}
+              after={<Button size={size}>Check</Button>}
             >
               <Input />
             </InputGroup>
@@ -86,12 +86,12 @@ export const InputGroupWithDifferentSizes: Story = {
               hint="I am a hint"
               supportingText="I am supporting text"
               before={
-                <Select>
+                <Select size={size}>
                   <option value="Select">Select</option>
                 </Select>
               }
               after={
-                <Select>
+                <Select size={size}>
                   <option value="Select">Select</option>
                 </Select>
               }

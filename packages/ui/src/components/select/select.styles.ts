@@ -4,25 +4,29 @@ export const styles = tv({
   slots: {
     root: 'relative flex',
     select:
-      'form-control flex-1 bg-no-repeat disabled:form-control-disabled group-first/add-on-before:!rounded-l group-first/add-on-before:rounded-r-none group-first/add-on-before:!border-x group-last/add-on-after:!rounded-r group-last/add-on-after:rounded-l-none group-last/add-on-after:!border-x group-[.input-group-after]:rounded-r-none group-[.input-group-before]:rounded-l-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:border-l-0 overflow-hidden text-ellipsis',
-    caret: 'absolute right-2 top-1/2 -translate-y-1/2 text-surface-muted-vivid',
+      'form-control disabled:form-control-disabled flex-1 overflow-hidden  bg-no-repeat text-ellipsis  group-first/add-on-before:rounded-r-none group-first/add-on-before:!border-x group-last/add-on-after:rounded-l-none group-last/add-on-after:!border-x group-[.input-group-after]:rounded-r-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:rounded-l-none group-[.input-group-before]:border-l-0',
+    caret: 'text-surface-muted-vivid absolute top-1/2 right-2 -translate-y-1/2',
   },
   variants: {
     size: {
       small: {
-        select: 'form-control-small bg-[right_0.5625rem_center] pr-[calc(0.5rem+14px+0.5625rem)]',
+        select:
+          'form-control-small bg-[right_0.5625rem_center] pr-[calc(0.5rem+14px+0.5625rem)] group-first/add-on-before:!rounded-l-sm group-last/add-on-after:!rounded-r-sm',
         root: 'text-sm',
       },
       medium: {
-        select: 'form-control-medium bg-[right_0.75rem_center] pr-[calc(0.5rem+14px+0.75rem)]',
+        select:
+          'form-control-medium bg-[right_0.75rem_center] pr-[calc(0.5rem+14px+0.75rem)] group-first/add-on-before:!rounded-l-md group-last/add-on-after:!rounded-r-md',
         root: 'typography-body-9',
       },
       large: {
-        select: 'form-control-large bg-[right_0.9375rem_center] pr-[calc(0.5rem+14px+0.9375rem)]',
+        select:
+          'form-control-large bg-[right_0.9375rem_center] pr-[calc(0.5rem+14px+0.9375rem)] group-first/add-on-before:!rounded-l-lg group-last/add-on-after:!rounded-r-lg',
         root: 'text-base',
       },
       xlarge: {
-        select: 'form-control-xlarge bg-[right_1.125rem_center] pr-[calc(0.5rem+14px+1.125rem)]',
+        select:
+          'form-control-xlarge bg-[right_1.125rem_center] pr-[calc(0.5rem+14px+1.125rem)] group-first/add-on-before:!rounded-l-xl group-last/add-on-after:!rounded-r-xl',
         root: 'text-lg',
       },
     },
