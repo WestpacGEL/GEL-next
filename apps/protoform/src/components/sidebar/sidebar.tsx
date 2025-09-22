@@ -6,14 +6,13 @@ import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { clsx } from 'clsx';
 import throttle from 'lodash.throttle';
 import { usePathname } from 'next/navigation';
-import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { useSidebar } from './context';
 
 export function Sidebar({ children }: { children?: ReactNode }) {
   const { open, setOpen, ropeData, ropeStep, sidebarScrolled, setSidebarScrolled } = useSidebar();
   const [scrolled, setScrolled] = useState(false);
-  const [totalSteps, setTotalSteps] = useState(0);
   const [isMaxWidth, setIsMaxWidth] = useState(true);
   const sidebarContent = useRef<HTMLDivElement>(null);
 
@@ -63,7 +62,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
+  const totalSteps = useMemo(() => {
     const ropeType = ropeData && ropeData[0].type;
     let stepCount = 0;
     if (ropeData) {
@@ -77,9 +76,8 @@ export function Sidebar({ children }: { children?: ReactNode }) {
         }
       });
     }
-    setTotalSteps(stepCount);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    return stepCount;
+  }, [ropeData]);
 
   return (
     !isDashboard && (
