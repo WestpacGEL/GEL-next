@@ -2,7 +2,7 @@
   outline-style: solid;
   outline-width: 2px;
   outline-offset: 3px;
-  outline-color: var(--color-border-focus);
+  outline-color: var(--border-focus);
 }
 
 @utility background-transition {

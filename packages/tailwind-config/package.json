@@ -4,18 +4,23 @@
   "type": "module",
   "private": true,
   "exports": {
-    ".": "./styles.css",
-    "./theme-wbc": "./css/themes/theme-wbc.css",
-    "./theme-stg": "./css/themes/theme-stg.css",
-    "./postcss": "./postcss.config.js"
+    ".": "./dist/css/styles.css",
+    "./theme-wbc": "./dist/css/themes/theme-wbc.css",
+    "./theme-stg": "./dist/css/themes/theme-stg.css",
+    "./postcss": "./postcss.config.js",
+    "./tokens": "./dist/tokens/tokens.js"
   },
   "devDependencies": {
     "handlebars": "~4.7.8",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.1.12",
+    "typescript": "~5.9.2"
   },
   "scripts": {
-    "build:w3c": "node transformers/w3c.cjs",
-    "build:css": "node transformers/css.cjs"
+    "build:w3c": "node ./utils/transformers/w3c.cjs",
+    "build:css": "node ./utils/transformers/css.cjs",
+    "build:css:copy": "cp -a ./src/css ./dist/",
+    "build:ts": "tsc",
+    "build": "pnpm build:css && pnpm build:ts && pnpm build:css:copy"
   }
 }

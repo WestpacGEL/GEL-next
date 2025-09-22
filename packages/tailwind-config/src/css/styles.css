@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+@import './shared/animations.css';
+@import './shared/borders.css';
+@import './shared/colors.css';
+@import './shared/layout.css';
+@import './shared/typography.css';
+@import './shared/utilities.css';
+
+/* TODO: Font-face src implementation */
+@import './shared/brand-fonts.css';

@@ -1,15 +1,12 @@
 /*
 TO DO
-- rename into functions the make sense lol
-- convert from cjs?
-- document the hell out of this
+- refactor/cleanup
 */
 const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
 
-// const tokensPath = path.resolve(__dirname, '../tokens/figma-tokens.json');
-const tokensPath = path.resolve(__dirname, '../tokens/GEL-tokens-figma.json');
+const tokensPath = path.resolve(__dirname, '../../src/tokens/GEL-tokens-figma.json');
 
 const tokens = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
 
@@ -282,7 +279,7 @@ const themeBorderRadius = getThemeBrandBorders(tokens);
 const modeBorderRadius = getModeBorders(tokens);
 
 // Colors
-const brandOutputDir = path.resolve(__dirname, '../css/themes');
+const brandOutputDir = path.resolve(__dirname, '../../src/css/themes');
 ['wbc', 'stg'].forEach(brand => {
   const brandFile = path.resolve(brandOutputDir, `theme-${brand}.css`);
   fs.writeFileSync(
@@ -297,7 +294,7 @@ const brandOutputDir = path.resolve(__dirname, '../css/themes');
   );
 });
 
-const colorsOutputFile = path.resolve(__dirname, '../css/shared/colors.css');
+const colorsOutputFile = path.resolve(__dirname, '../../src/css/shared/colors.css');
 fs.writeFileSync(
   colorsOutputFile,
   sharedStylesTemplate({
@@ -313,7 +310,7 @@ const bordersTemplateSource = fs.readFileSync(bordersTemplatePath, 'utf8');
 const bordersTemplate = Handlebars.compile(bordersTemplateSource);
 
 const borderPrimitives = getBorderPrimitives(tokens);
-const borderOutputFile = path.resolve(__dirname, '../css/shared/borders.css');
+const borderOutputFile = path.resolve(__dirname, '../../src/css/shared/borders.css');
 const borderCss = bordersTemplate({
   borders: borderPrimitives,
   light: modeBorderRadius.light || {},

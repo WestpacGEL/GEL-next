@@ -1,12 +1,4 @@
-/* Manually setting the dark variant selector */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
-/* Set the default values for the color tokens to avoid unresolved references on initial load, falling back to wbc
-- Decide on appropriate default fallback scenario...
-  - scenarios
-    - data-brand is not present
-    - data-brand is present but theme is not included so var(--x) will resolve to nothing
-*/
 
 @layer theme {
   :root,
@@ -67,9 +59,6 @@
     --reserved-yellow-800: #8c8c00;
     --reserved-yellow-900: #666600;
     --reserved-yellow-950: #404000;
-
-    /* Fallback colors */
-    --surface-primary: #da1710;
   }
 
   /* Token definitions  */

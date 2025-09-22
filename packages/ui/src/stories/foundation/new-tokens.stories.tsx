@@ -1,6 +1,8 @@
 import { type Meta, StoryFn, StoryObj } from '@storybook/react-vite';
+import { ALL_BRANDS } from '@westpac/tailwind-config/tokens';
 import { useState } from 'react';
 
+// import WBC_TOKENS from '../../../w3c-tokens/wbc.json' with { type: 'json' };
 import { Switch } from '../../components/switch/switch.component.js';
 import { ALL_THEMES } from '../../tailwind/themes/index.js';
 
@@ -171,29 +173,17 @@ const colors = {
     'bg-background-white-faint',
   ],
   surface: [
-    'bg-surface-muted',
+    'bg-surface-mono',
     'bg-surface-muted-vivid',
+    'bg-surface-muted',
     'bg-surface-muted-strong',
     'bg-surface-muted-mild',
-    'bg-surface-hover-primary',
-    'bg-surface-hover-primary-faint',
-    'bg-surface-active-primary-faint',
-    'bg-surface-hover-hero-faint',
-    'bg-surface-active-muted-pale',
-    'bg-surface-hover-mono',
-    'bg-surface-active-hero-faint',
-    'bg-surface-hover-mono',
-    'bg-surface-active-mono',
-    'bg-surface-active-primary',
     'bg-surface-muted-soft',
     'bg-surface-muted-pale',
     'bg-surface-muted-faint',
-    'bg-surface-mono',
     'bg-surface-primary',
     'bg-surface-primary-faint',
     'bg-surface-hero',
-    'bg-surface-hover-hero',
-    'bg-surface-active-hero',
     'bg-surface-hero-faint',
     'bg-surface-pop',
     'bg-surface-pop-faint',
@@ -213,26 +203,6 @@ const colors = {
     'bg-surface-danger-faint',
     'bg-surface-system-error',
     'bg-surface-system-error-dark',
-    'bg-surface-data-a-solid',
-    'bg-surface-data-a-tint',
-    'bg-surface-data-a-opacity',
-    'bg-surface-data-b-solid',
-    'bg-surface-data-b-tint',
-    'bg-surface-data-b-opacity',
-    'bg-surface-data-c-solid',
-    'bg-surface-data-c-tint',
-    'bg-surface-data-c-opacity',
-    'bg-surface-data-d-solid',
-    'bg-surface-data-d-tint',
-    'bg-surface-data-d-opacity',
-    'bg-surface-data-e-solid',
-    'bg-surface-data-e-tint',
-    'bg-surface-data-e-opacity',
-    'bg-surface-data-f-solid',
-    'bg-surface-data-f-tint',
-    'bg-surface-data-f-opacity',
-    'bg-surface-pictogram-base',
-    'bg-surface-pictogram-accent',
   ],
   text: [
     'bg-text-body',
@@ -321,15 +291,19 @@ export const ScreenColors: Story = {
 };
 
 export const Surface = () => {
+  // Replace with relevant brand?
+  const surfaceColors = Object.keys(ALL_BRANDS.Tokens.Westpac['light-mode'].color.surface);
+  // console.log(Object.keys(WBC_TOKENS.Tokens['light-mode'].color.surface));
+
   return (
     <>
       <div className="bg-background-white-black p-2">
         <p className="text-text-body font-bold">All colors used in this example are using new color tokens</p>
       </div>
       <div className="bg-background-white-black flex flex-wrap">
-        {colors.surface.map(color => (
+        {surfaceColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
-            <div className={`${color} border-border-muted-soft h-[80px] border border-b-0`} />
+            <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
             <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
               <div className="text-text-body pb-2 font-bold">{color}</div>
               <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind class: ${color}`}</div>
