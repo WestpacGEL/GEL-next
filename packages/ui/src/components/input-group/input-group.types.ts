@@ -68,4 +68,20 @@ export type InputGroupProps = {
    * width of input
    */
   width?: InputProps['width'];
+  /**
+   * id
+   */
+  id?: string;
+  /**
+   * aria-labelledby
+   */
+  'aria-labelledby'?: string;
+  /**
+   * aria-describedby
+   */
+  'aria-describedby'?: string;
+  /**
+   * aria-label
+   */
+  'aria-label'?: string;
 };

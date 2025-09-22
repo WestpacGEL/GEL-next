@@ -1,5 +1,16 @@
 # @westpac/ui
 
+## 0.49.0
+
+### Minor Changes
+
+- 53a19b8: Allow button-dropdown to show at the top of the btn when not enough space below
+
+### Patch Changes
+
+- b2214b2: InputGroup with Field passing the props properly
+- 8c21c8d: removing the margin-bottom on input-group
+
 ## 0.48.0
 
 ### Minor Changes
