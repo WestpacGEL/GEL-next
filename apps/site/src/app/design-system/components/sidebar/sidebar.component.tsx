@@ -6,12 +6,12 @@ import { useParams, useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
+import { CloseIcon } from '@/components/code/code.inject-components';
+import { BANK_OPTIONS } from '@/constants/bank-options';
+
 import { BackToGelSvg, Logo, Navigation, SidebarSelect } from './components';
 import { useSidebar } from './sidebar.context';
 import { SidebarProps } from './sidebar.types';
-
-import { CloseIcon } from '@/components/code/code.inject-components';
-import { BANK_OPTIONS } from '@/constants/bank-options';
 
 // Credits: https://github.com/jmarioste/next-responsive-sidebar-tailwind
 
