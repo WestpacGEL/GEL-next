@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import '@westpac/tailwind-config';
-@import '@westpac/tailwind-config/theme-wbc';
-@import '@westpac/tailwind-config/theme-stg';
+@import '@westpac/style-config';
+@import '@westpac/style-config/theme-wbc';
+@import '@westpac/style-config/theme-stg';
 @import '../src/css/global.css';

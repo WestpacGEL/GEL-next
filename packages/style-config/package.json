@@ -1,10 +1,10 @@
 {
-  "name": "@westpac/tailwind-config",
+  "name": "@westpac/style-config",
   "version": "0.0.0",
   "type": "module",
   "private": true,
   "exports": {
-    ".": "./dist/css/styles.css",
+    "./tailwind": "./dist/css/styles.css",
     "./theme-wbc": "./dist/css/themes/theme-wbc.css",
     "./theme-stg": "./dist/css/themes/theme-stg.css",
     "./postcss": "./postcss.config.js",

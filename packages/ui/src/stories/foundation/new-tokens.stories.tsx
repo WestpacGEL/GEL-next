@@ -1,5 +1,5 @@
 import { type Meta, StoryFn, StoryObj } from '@storybook/react-vite';
-import { ALL_BRANDS } from '@westpac/tailwind-config/tokens';
+import { ALL_BRANDS } from '@westpac/style-config/tokens';
 import { useState } from 'react';
 
 // import WBC_TOKENS from '../../../w3c-tokens/wbc.json' with { type: 'json' };

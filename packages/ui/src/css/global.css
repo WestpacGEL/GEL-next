@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 /* Can I do this without the @reference */
-@reference '@westpac/tailwind-config';
+@reference '@westpac/style-config';
 
 /* TODO: Separate out into separate files? */
 /* -------------------------------------------------------------------------- */
