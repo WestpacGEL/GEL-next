@@ -1,16 +1,17 @@
 'use client';
 
-import { Button, Header } from '@westpac/ui';
+import { Button, Header, HeaderProps } from '@westpac/ui';
 import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { useEffect, useState } from 'react';
 
 export function CustomHeader({
   isSidebarScrolled,
   withSignout,
+  ...props
 }: {
   isSidebarScrolled?: boolean;
   withSignout?: boolean;
-}) {
+} & Omit<HeaderProps, 'brand'>) {
   const [isMobile, setIsMobile] = useState(true);
 
   const updateSize = () => {
@@ -31,6 +32,7 @@ export function CustomHeader({
       isScrolled={isSidebarScrolled}
       fixedMaxWidth="1921px"
       className={'z-[100] m-auto w-full'}
+      {...props}
     >
       {withSignout && (
         <Button look="faint" size={{ initial: 'small', sm: 'medium' }} soft>

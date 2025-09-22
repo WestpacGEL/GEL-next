@@ -1,8 +1,9 @@
 'use client';
 
 import { ProgressRopeProps } from '@westpac/ui';
+import { useBreakpoint } from '@westpac/ui/hook';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, useMemo } from 'react';
 
 import { ContentWrapper } from '@/components/content-wrapper/content-wrapper';
 import { CustomFooter } from '@/components/custom-footer/custom-footer';
@@ -84,9 +85,21 @@ export default function CreditCardsLayoutWrapper({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const bp = useBreakpoint();
+  const router = useRouter();
+
+  const headerLeftIconProps = useMemo(() => {
+    return ['initial', 'sm', 'xsl'].includes(bp)
+      ? ({
+          leftIcon: 'arrow',
+          leftOnClick: () => router.back(),
+        } as const)
+      : {};
+  }, [bp, router]);
+
   return (
     <>
-      <CustomHeader />
+      <CustomHeader {...headerLeftIconProps} />
       <Sidebar />
       <Suspense>
         <CreditCardsLayout>{children}</CreditCardsLayout>
