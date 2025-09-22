@@ -8,6 +8,7 @@ import {
   AccountSelectionForm,
   AccountSelectionFormData,
 } from '@/components/account-selection-form/account-selection-form.component';
+import { BackButton } from '@/components/back-button/back-button';
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
 
 export default function ExtraCareCustomerPage() {
@@ -22,6 +23,7 @@ export default function ExtraCareCustomerPage() {
 
   return (
     <div>
+      <BackButton onClick={() => router.push('/')}>Back to GEL forms framework</BackButton>
       <CustomHeading
         beforeContent={
           <div className="mb-5 flex items-center gap-1">
@@ -33,7 +35,7 @@ export default function ExtraCareCustomerPage() {
       >
         Account selection
       </CustomHeading>
-      <AccountSelectionForm onSubmit={handleSubmit} />
+      <AccountSelectionForm onSubmit={handleSubmit} onCancel={() => router.push('/')} />
     </div>
   );
 }

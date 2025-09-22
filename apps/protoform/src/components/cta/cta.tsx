@@ -29,7 +29,7 @@ export function Cta({
         </Button>
       )}
       {tertiary && (
-        <Button size="large" className="no-underline" type="button" look="link" onClick={tertiaryOnClick}>
+        <Button size="large" type="button" look="link" onClick={tertiaryOnClick}>
           {tertiary}
         </Button>
       )}

@@ -19,7 +19,7 @@ export default function ErrorPage() {
         }
         beforeContent={
           <span className="mb-3 block">
-            <ErrorIcon look="outlined" size="xlarge" />
+            <ErrorIcon color="heading" look="outlined" size="xlarge" />
           </span>
         }
       >

@@ -1,16 +1,5 @@
-import {
-  ButtonGroup,
-  Field,
-  Form,
-  FormGroup,
-  Selector,
-  SelectorCheckbox,
-  SelectorHint,
-  SelectorLabel,
-} from '@westpac/ui';
+import { Field, Form, FormGroup, Selector, SelectorCheckbox, SelectorHint, SelectorLabel } from '@westpac/ui';
 import { Controller, useForm } from 'react-hook-form';
-
-import { defaultError } from '@/constants/form-contsants';
 
 import { Cta } from '../cta/cta';
 
@@ -43,7 +32,6 @@ const ACCOUNTS = [
 ];
 
 export type AccountSelectionFormData = {
-  accountType: 'closed' | 'active';
   accounts: string[];
 };
 
@@ -63,35 +51,10 @@ export function AccountSelectionForm({
   return (
     <Form id="credit-card" spacing="large" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
       <FormGroup>
-        <Field aria-label="Account type" errorMessage={errors.accountType?.message}>
-          <Controller
-            control={control}
-            name="accountType"
-            rules={{ required: defaultError }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <ButtonGroup
-                aria-label="Account type"
-                size="large"
-                onChange={onChange} // send value to hook form
-                onBlur={onBlur} // notify when input is touched/blur
-                value={value}
-                block={{ initial: true, md: false }}
-                errorMessage={errors.accountType?.message}
-                buttons={[
-                  { value: 'active', label: 'Active' },
-                  { value: 'closed', label: 'Closed' },
-                ]}
-              />
-            )}
-          />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field aria-label="Accounts" errorMessage={errors.accounts?.message}>
+        <Field aria-label="Accounts" errorMessage={errors.accounts?.message} label="Select accounts">
           <Controller
             control={control}
             name="accounts"
-            rules={{ required: defaultError }}
             render={({ field: { onChange, onBlur, value } }) => (
               <Selector type="checkbox" onChange={onChange} onBlur={onBlur} value={value} aria-label="Accounts">
                 {ACCOUNTS.map(({ accountName, accountNumber, balance }) => (

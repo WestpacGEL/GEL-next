@@ -10,7 +10,7 @@ export default function SuccessPage() {
   return (
     <div>
       <CustomHeading
-        leadText="Your application has been  conditionally approved"
+        leadText="Reference number: 1234 56789"
         beforeContent={
           <span className="mb-3 block">
             <TickCircleIcon size="xlarge" color="success" />
@@ -19,7 +19,7 @@ export default function SuccessPage() {
       >
         Your application has been conditionally approved
       </CustomHeading>
-      <div className="mb-5">
+      <div className="mb-5 flex flex-col gap-3">
         <p className="typography-body-9">Thanks for your application.</p>
         <p className="typography-body-9">
           Will be in touch within the next two business days to clarify a few things and discuss next steps.

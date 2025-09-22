@@ -15,8 +15,18 @@ export default function Home() {
       <ContentWrapper>
         <CustomHeading
           tag="h1"
-          leadText="The GEL Design System form pattern framework has been designed to create a simple, scalable approach for collecting customer information. It includes standardised form validation and various navigational options based on the length and complexity of the form. 
-See examples below (the content in these examples is for UI demonstration purposed only):"
+          leadText={
+            <>
+              <p className="mb-3">
+                The GEL Design System Forms Pattern Framework provides a simple, scalable approach for collecting
+                customer information. It includes standardised form validation and offers different navigational options
+                depending on the form’s length and complexity.
+              </p>
+              <p>
+                See examples below <i>(the content in these examples is for UI demonstration purposed only)</i>:
+              </p>
+            </>
+          }
         >
           GEL forms framework
         </CustomHeading>
@@ -30,9 +40,8 @@ See examples below (the content in these examples is for UI demonstration purpos
                   <GELLink className="typography-body-9">Default progress rope</GELLink>
                 </Link>
                 <p className="typography-body-9 text-muted">
-                  Use the Default progress rope for forms with up to approximately eight pages, the page items listed
-                  within the rope inform the customer how many steps there are and provide an idea of the sort of
-                  information they will be asked.
+                  Use the default progress rope for forms with up to around eight pages. It shows customers how many
+                  steps they are and give them a sense of the information required.
                 </p>
               </ListItem>
 
@@ -41,9 +50,8 @@ See examples below (the content in these examples is for UI demonstration purpos
                   <GELLink className="typography-body-9">Grouped progress rope</GELLink>
                 </Link>
                 <p className="typography-body-9 text-muted">
-                  Use the Grouped progress rope for complex forms with more than eight pages. The page items collapse
-                  under categories within the rope, so as not to overwhelm the customer as soon as they arrive on the
-                  page.
+                  For complex forms with more than eight pages, use the Grouped progress rope. In this version pages are
+                  collapsed under categories so customers aren't overwhelmed when they first arrive at the from.
                 </p>
               </ListItem>
 
@@ -52,7 +60,7 @@ See examples below (the content in these examples is for UI demonstration purpos
                   <GELLink className="typography-body-9">No progress rope</GELLink>
                 </Link>
                 <p className="typography-body-9 text-muted">
-                  If you have a very simple one or two page form, you do not need to use a Progress rope at all.
+                  For very simple forms with just one or two pages, a progress rope isn't needed.
                 </p>
               </ListItem>
             </List>
@@ -63,13 +71,15 @@ See examples below (the content in these examples is for UI demonstration purpos
             </h3>
             <List type="link" className="flex flex-col gap-1">
               <Link href="/personal-customer" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1">Personal customer</ListItem>
+                <ListItem className="typography-body-9 flex flex-col gap-1">Personal customer</ListItem>
               </Link>
               <Link href="/business-customer" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1">Business customer</ListItem>
+                <ListItem className="typography-body-9 flex flex-col gap-1">Business customer</ListItem>
               </Link>
               <Link href="/extra-care-customer" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1">Extra-care customer (Staff facing only)</ListItem>
+                <ListItem className="typography-body-9 flex flex-col gap-1">
+                  Extra-care customer (Staff facing only)
+                </ListItem>
               </Link>
             </List>
           </div>
@@ -79,13 +89,13 @@ See examples below (the content in these examples is for UI demonstration purpos
             </h3>
             <List type="link" className="flex flex-col gap-1">
               <Link href="/error" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1">Error messaging page</ListItem>
+                <ListItem className="typography-body-9 flex flex-col gap-1">Error messaging page</ListItem>
               </Link>
               <Link href="/success" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1">Success messaging page</ListItem>
+                <ListItem className="typography-body-9 flex flex-col gap-1">Success messaging page</ListItem>
               </Link>
               <Link href="/task-completion-messaging" passHref legacyBehavior>
-                <ListItem className="flex flex-col gap-1">Task completion messaging page</ListItem>
+                <ListItem className="typography-body-9 flex flex-col gap-1">Task completion messaging page</ListItem>
               </Link>
             </List>
           </div>

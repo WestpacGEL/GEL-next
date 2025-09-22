@@ -20,8 +20,8 @@ type FormData = {
 };
 
 const FIELDS_LABELS = {
-  name: 'Name',
-  email: 'Email',
+  name: 'Given name',
+  email: 'Email address',
 };
 
 export default function CreditCards() {

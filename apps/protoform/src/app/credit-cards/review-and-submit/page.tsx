@@ -95,7 +95,12 @@ export default function Address() {
         <h3 className="typography-body-8 pb-5 font-bold text-heading">Help protect your application</h3>
         <p>Before continuing we’ll send you a one-time passcode to your mobile for added security.</p>
       </div>
-      <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
+      <Cta
+        primaryType="submit"
+        primaryOnClick={() => router.push('/')}
+        tertiaryOnClick={() => router.push('/')}
+        tertiary="Cancel"
+      >
         Send SMS code
       </Cta>
     </div>
