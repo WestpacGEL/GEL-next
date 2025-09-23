@@ -100,7 +100,7 @@
 @utility typography-body-* {
   font-size: --value(--typography-body-size-*);
   line-height: --value(--typography-body-line-height-*);
-  font-family: var(--font-sans);
+  font-family: var(--font-family-sans);
 }
 
 @utility typography-brand-* {
