@@ -172,6 +172,9 @@ importers:
       '@vercel/postgres':
         specifier: ~0.9.0
         version: 0.9.0
+      '@westpac/style-config':
+        specifier: workspace:~
+        version: link:../../packages/style-config
       '@westpac/ui':
         specifier: workspace:~
         version: link:../../packages/ui

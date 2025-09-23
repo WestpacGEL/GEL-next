@@ -1,6 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import '@westpac/style-config/tailwind';
+@import '@westpac/style-config/theme-wbc';
+@import '@westpac/style-config/theme-stg';
+
+@source "../../../node_modules/@westpac/ui/src";
+@source "../../content";
+
+@theme inline static {
+  --color-gel-primary: #c80038;
+  --color-gel-background: #f3f5f6;
+  --color-gel-border: #cfd8dc;
+  --color-gel-icon: #1976d2;
+  --color-gel-text: #122935;
+  --color-gel-link: #1871c9;
+  --color-gel-muted: #575f65;
+  --color-gel-hover: #f9fafb;
+
+  --container-gel-container: 71.5rem;
+  --container-gel-lg-container: 82.5rem;
+
+  --container-container-xs: 35.35rem;
+  --container-container-xsl: 47.25rem;
+}
 
 /* TEMP FIX: Increasing width for section editor dialogs as the toolbar options overlap when adding the custom component block option */
 section.ksv-dialog-root {

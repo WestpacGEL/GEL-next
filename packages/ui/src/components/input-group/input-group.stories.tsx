@@ -122,8 +122,9 @@ export const FixedWidths = () => {
           after={<Button>Check</Button>}
           before="$AUD"
           width={width}
+          aria-label="blabla"
         >
-          <Input placeholder={width.toString()} />
+          <Input aria-label="potato" placeholder={width.toString()} />
         </InputGroup>
       ))}
       <h3 className="typography-body-7 mb-3">Input sizes with icon</h3>
