@@ -4,11 +4,12 @@
   "type": "module",
   "private": true,
   "exports": {
+    ".": "./dist/tokens/index.js",
     "./tailwind": "./dist/css/styles.css",
     "./theme-wbc": "./dist/css/themes/theme-wbc.css",
     "./theme-stg": "./dist/css/themes/theme-stg.css",
     "./postcss": "./postcss.config.js",
-    "./tokens": "./dist/tokens/tokens.js"
+    "./tokens": "./dist/tokens/index.js"
   },
   "devDependencies": {
     "handlebars": "~4.7.8",
@@ -17,10 +18,11 @@
     "typescript": "~5.9.2"
   },
   "scripts": {
+    "clean": "shx rm -rf dist",
     "build:w3c": "node ./utils/transformers/w3c.cjs",
     "build:css": "node ./utils/transformers/css.cjs",
     "build:css:copy": "cp -a ./src/css ./dist/",
     "build:ts": "tsc",
-    "build": "pnpm build:css && pnpm build:ts && pnpm build:css:copy"
+    "build": "pnpm clean && pnpm build:css && pnpm build:ts && pnpm build:css:copy"
   }
 }
