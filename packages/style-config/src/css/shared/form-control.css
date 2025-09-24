@@ -3,7 +3,7 @@
 /* -------------------------------------------------------------------------- */
 /* Form Control                                                               */
 /* -------------------------------------------------------------------------- */
-@theme {
+@theme inline static {
   /* Small */
   --form-control-font-size-small: var(--text-sm);
   --form-control-line-height-small: 1.3rem;
