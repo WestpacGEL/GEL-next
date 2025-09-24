@@ -7,8 +7,11 @@ Use this pagination component for navigation within both finite (a set number) a
   return (
     <Pagination
       totalPages={20}
+      siblingCount={{ initial: 0, sm: 2, md: 3 }}
+      boundaryCount={{ initial: 0, sm: 2, md: 3 }}
       onChange={value => {
         setCurrent(value);
+        action('onChange')(value);
       }}
       current={current}
     />
