@@ -91,19 +91,19 @@ export const AllLogos = () => {
           </div>
         ))}
       </div>
-      <h3 className="typography-body-7 mb-2 mt-6 font-bold">Multi-brand logos</h3>
+      <h3 className="typography-body-7 mt-6 mb-2 font-bold">Multi-brand logos</h3>
       <h4 className="typography-body-8 mb-4 font-bold">Large</h4>
       <div className="grid grid-cols-4 gap-5">
         {Object.entries(multibrandLargeLogos).map(([key, Logo]) => (
           <div key={key} className="flex flex-col">
             {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
             <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-              <Logo className="box-content border border-dashed border-border" />
+              <Logo className="border-border-muted box-content border border-dashed" />
               <p className="mt-2">{`<${key} />`}</p>
             </div>
             {align.map(align => (
               <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-                <Logo align={align} className="box-content border border-dashed border-border" />
+                <Logo align={align} className="border-border-muted box-content border border-dashed" />
                 <p className="mt-2">{`<${key} align=${align} />`}</p>
               </div>
             ))}
@@ -116,12 +116,12 @@ export const AllLogos = () => {
           <>
             {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
             <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-              <Logo className="box-content border border-dashed border-border" />
+              <Logo className="border-border-muted box-content border border-dashed" />
               <p className="mt-2">{`<${key} />`}</p>
             </div>
             {align.map(align => (
               <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-                <Logo align={align} className="box-content border border-dashed border-border" />
+                <Logo align={align} className="border-border-muted box-content border border-dashed" />
                 <p className="mt-2">{`<${key} align=${align} />`}</p>
               </div>
             ))}

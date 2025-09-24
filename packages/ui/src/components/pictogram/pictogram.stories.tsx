@@ -13,7 +13,7 @@ const AllPictogramsExample = (props: PictogramProps) => {
     {} as Record<string, React.FC<PictogramProps>>,
   );
   return (
-    <div className={clsx('grid grid-cols-5 gap-5', mode === 'light' && 'bg-hero text-white')}>
+    <div className={clsx('grid grid-cols-5 gap-5', mode === 'light' && 'bg-surface-hero text-white')}>
       {Object.entries(informativePictograms).map(([key, Pictogram]) => (
         <div key={key} className="flex flex-col items-center justify-end">
           <Pictogram {...props} />

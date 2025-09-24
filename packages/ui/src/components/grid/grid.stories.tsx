@@ -14,7 +14,10 @@ const meta: Meta<typeof Grid> = {
 export default meta;
 
 const Item = (props: GridItemProps) => (
-  <GridItem className="flex h-10 items-center justify-center border border-border bg-light" {...props} />
+  <GridItem
+    className="border-border-muted-soft bg-surface-muted-faint typography-body-10 flex h-10 items-center justify-center border"
+    {...props}
+  />
 );
 
 export const Default = () => {
