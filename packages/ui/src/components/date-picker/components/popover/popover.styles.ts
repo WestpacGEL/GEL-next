@@ -16,6 +16,8 @@ export const styles = tv(
           popover: '!fixed inset-x-0 !bottom-0 !left-0 !top-auto animate-slideUp overflow-auto rounded-t px-[8%] pb-3',
           header: 'mx-[-8vw] flex items-center justify-between border-b border-b-border-muted-soft px-3.5 py-2',
           headerLabel: 'typography-body-10 text-text-body',
+          closeButton:
+            'pointer-events-none touch-none rounded-full bg-background-white-pale opacity-0 focus:pointer-events-auto focus:touch-auto focus:opacity-100',
         },
         false: {
           underlay: '',
