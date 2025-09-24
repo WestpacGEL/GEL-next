@@ -28,7 +28,7 @@ infinite (unknown number) of views.
   return (
     <>
       <Pagination
-        pages={Array.from({ length: 20 }, (_, i) => i + 1).map(page => ({ text: page }))}
+        pages={Array.from({ length: 15 }, (_, i) => i + 1).map(page => ({ text: page }))}
         siblingCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
         boundaryCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
         onChange={value => {
