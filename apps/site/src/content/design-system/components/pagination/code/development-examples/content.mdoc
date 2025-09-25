@@ -73,11 +73,10 @@
 ### Link usage example
 
 ```tsx
-() => {
-  args: {
-    current: 1,
-    onChange: undefined,
-    pages: [
+    
+<Pagination   
+    current={1}
+    pages={[
       {
         text: '1',
         href: '#page-1',
@@ -158,9 +157,8 @@
         text: '30',
         href: '#page-30',
       },
-    ],
-  },
-};
+    ]}
+  />
    
 ```
 
