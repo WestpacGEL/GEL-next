@@ -1,6 +1,14 @@
-import { ColumnDef, GroupColumnDef, PaginationState, Updater } from '@tanstack/react-table';
+import {
+  ColumnDef,
+  ExpandedState,
+  GroupColumnDef,
+  PaginationState,
+  TableOptions,
+  Updater,
+} from '@tanstack/react-table';
+import { CSSProperties } from 'react';
 
-export type AdvancedColumnProps<T> = Omit<ColumnDef<T>, 'cell' | 'header' | 'meta' | 'id' | 'footer'> & {
+export type AdvancedColumnProps<T> = Omit<ColumnDef<T>, 'header' | 'meta' | 'id' | 'footer'> & {
   key: string;
   title: string;
   columns?: AdvancedColumnProps<T>[];
@@ -14,6 +22,23 @@ export type GroupedColumnProps<T> = Omit<
   title: string;
 };
 
+export type TanstackTableOptions<T> = Omit<
+  TableOptions<T>,
+  | 'data'
+  | 'columns'
+  | 'columnResizeMode'
+  | 'columnResizeDirection'
+  | 'defaultColumn'
+  | 'getExpandedRowModel'
+  | 'getFacetedRowModel'
+  | 'getFilteredRowModel'
+  | 'getGroupedRowModel'
+  | 'getPaginationRowModel'
+  | 'getSortedRowModel'
+  | 'getCoreRowModel'
+  | 'groupedColumnMode'
+>;
+
 export type AdvancedTableProps<T> = {
   /**
    * The data to be displayed in the table should share type passed to table
@@ -23,10 +48,16 @@ export type AdvancedTableProps<T> = {
    * Column information for table
    */
   columns: AdvancedColumnProps<T>[];
+  expandedState?: ExpandedState;
+  fixedHeight?: CSSProperties['height'];
+  fixedWidth?: CSSProperties['width'];
+  groupable?: boolean;
+  tableOptions?: TanstackTableOptions<T>;
   /**
    * Whether manual pagination should be enabled for server side pagination
    */
   manualPagination?: boolean;
+  onExpandedChange?: (expanded: Updater<ExpandedState>) => void;
   /**
    * Callback function to be called when pagination changes
    */
@@ -56,6 +87,7 @@ export type AdvancedTableProps<T> = {
    * Number of rows of data, can be used instead of page count to determine number of pages for manual pagination when used with page size
    */
   rowCount?: number;
+  selectable?: boolean;
   /**
    * Sets table to use virtualized scrollable columns
    */

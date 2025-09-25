@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { ExpandLessIcon, ExpandMoreIcon } from '../../../icon/index.js';
 import { AdvancedTableContext } from '../../advanced-table.component.js';
 import { getCommonPinningStyles } from '../../utils/getPinningStyles.js';
+import { MenuButton } from '../advanced-table-menu/components/menu-button/menu-button.component.js';
 
 import { styles as AdvancedTableHeadCellStyles } from './advanced-table-head-cell.styles.js';
 import { AdvancedTableHeadCellProps } from './advanced-table-head-cell.types.js';
@@ -45,6 +46,18 @@ export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: Advanced
           sortingIcon(header.column.getIsSorted(), () => {
             header.column.toggleSorting(undefined, true);
           })}
+        {header.column.getCanGroup() && !header.isPlaceholder && (
+          <button onClick={header.column.getToggleGroupingHandler()}>
+            <p>can group</p>
+          </button>
+        )}
+        {header.column.getCanFilter() && !header.isPlaceholder && (
+          <MenuButton
+            filterVal={header.column.getFilterValue() as string}
+            onInputChange={header.column.setFilterValue}
+            onAction={action => console.log(action)}
+          />
+        )}
         {resizable && !header.isPlaceholder && (
           <div
             {...{
@@ -56,7 +69,7 @@ export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: Advanced
           />
         )}
       </div>
-      {!header.isPlaceholder && header.column.getCanPin() && (
+      {!header.isPlaceholder && header.column.getCanPin() && header.column.id !== 'select-column' && (
         <div className="flex gap-1 justify-center">
           {header.column.getIsPinned() !== 'left' ? (
             <button
@@ -105,6 +118,18 @@ export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: Advanced
           sortingIcon(header.column.getIsSorted(), () => {
             header.column.toggleSorting(undefined, true);
           })}
+        {header.column.getCanGroup() && !header.isPlaceholder && (
+          <button onClick={header.column.getToggleGroupingHandler()}>
+            <p>can group</p>
+          </button>
+        )}
+        {header.column.getCanFilter() && !header.isPlaceholder && (
+          <MenuButton
+            filterVal={header.column.getFilterValue() as string}
+            onInputChange={header.column.setFilterValue}
+            onAction={action => console.log(action)}
+          />
+        )}
         {resizable && !header.isPlaceholder && (
           <div
             {...{

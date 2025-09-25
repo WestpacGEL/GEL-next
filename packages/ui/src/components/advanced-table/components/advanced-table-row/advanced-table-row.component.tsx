@@ -13,7 +13,6 @@ export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer }: A
 
   return scrollableRows ? (
     <tr
-      key={localVirtualRow?.id}
       data-index={virtualRow?.index}
       ref={node => {
         rowVirtualizer?.measureElement(node); // measure dynamic row height
@@ -24,13 +23,13 @@ export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer }: A
       }}
     >
       {localVirtualRow?.getVisibleCells().map(cell => (
-        <AdvancedTableCell cell={cell} />
+        <AdvancedTableCell key={cell.id} cell={cell} />
       ))}
     </tr>
   ) : (
-    <tr key={row?.id} className={styles.bodyRow()}>
+    <tr className={styles.bodyRow()}>
       {row?.getVisibleCells().map(cell => (
-        <AdvancedTableCell cell={cell} />
+        <AdvancedTableCell key={cell.id} cell={cell} />
       ))}
     </tr>
   );

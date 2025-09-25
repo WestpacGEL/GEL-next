@@ -31,7 +31,14 @@ export function AdvancedTableBody<T>({ table, tableRef }: AdvancedTableBodyProps
       style={{ width: table.getTotalSize(), height: rowVirtualizer.getTotalSize() }}
     >
       {rowVirtualizer.getVirtualItems().map(virtualRow => {
-        return <AdvancedTableRow<T> rows={rows} virtualRow={virtualRow} rowVirtualizer={rowVirtualizer} />;
+        return (
+          <AdvancedTableRow<T>
+            key={rows[virtualRow.index].id}
+            rows={rows}
+            virtualRow={virtualRow}
+            rowVirtualizer={rowVirtualizer}
+          />
+        );
       })}
     </tbody>
   ) : (

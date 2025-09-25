@@ -8,14 +8,14 @@ export const styles = tv({
   variants: {
     scrollableRows: {
       true: {
-        container: 'relative h-[500px]',
-        table: 'grid h-[500px] overflow-auto',
+        container: 'relative',
+        table: 'grid h-full overflow-auto',
       },
     },
     scrollableColumns: {
       true: {
-        container: 'flex w-[700px]',
-        table: 'block w-[700px] overflow-auto',
+        container: 'flex',
+        table: 'block overflow-auto',
       },
     },
   },

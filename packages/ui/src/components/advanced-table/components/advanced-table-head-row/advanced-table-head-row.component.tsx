@@ -1,6 +1,3 @@
-import { useContext } from 'react';
-
-import { AdvancedTableContext } from '../../advanced-table.component.js';
 import { AdvancedTableHeadCell } from '../advanced-table-head-cell/advanced-table-head-cell.component.js';
 
 import { styles as AdvancedTableHeadRowStyles } from './advanced-table-head-row.styles.js';
@@ -12,8 +9,6 @@ export function AdvancedTableHeadRow<T>({
   table,
   columnVirtualizer,
 }: AdvancedTableHeadRowProps<T>) {
-  const { columnPinning } = useContext(AdvancedTableContext);
-
   const visibleColumns = table.getVisibleLeafColumns();
 
   const virtualColumns = columnVirtualizer.getVirtualItems();
@@ -24,12 +19,16 @@ export function AdvancedTableHeadRow<T>({
 
   if (columnVirtualizer && virtualColumns?.length) {
     const leftPadding = () => {
-      const pinnedColLength = columnPinning?.left?.length;
-      const totalLeftPinned =
-        columnPinning?.left?.reduce((acc, col) => acc + visibleColumns[Number(col)].getSize(), 0) ?? 0;
-      const totalRightPinned =
-        columnPinning?.right?.reduce((acc, col) => acc + visibleColumns[Number(col)].getSize(), 0) ?? 0;
-      if (pinnedColLength && pinnedColLength > 0 && columnPinning?.left) {
+      const leftColumns = table.getLeftLeafColumns();
+      const rightColumns = table.getRightLeafColumns();
+      const pinnedColLength = leftColumns.length;
+      const totalLeftPinned = leftColumns.reduce((acc, col) => {
+        return acc + (visibleColumns.find(i => i.id === col.id)?.getSize() ?? 0);
+      }, 0);
+      const totalRightPinned = rightColumns.reduce((acc, col) => {
+        return acc + (visibleColumns.find(i => i.id === col.id)?.getSize() ?? 0);
+      }, 0);
+      if (pinnedColLength && pinnedColLength > 0 && leftColumns) {
         const pinnedWidth = virtualColumns[pinnedColLength].start - totalLeftPinned + totalRightPinned;
         const firstPagePadding = virtualColumns[pinnedColLength].start - virtualColumns[pinnedColLength - 1].end;
 

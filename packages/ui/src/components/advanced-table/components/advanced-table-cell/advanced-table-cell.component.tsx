@@ -11,14 +11,9 @@ export function AdvancedTableCell<T>({ cell }: AdvancedTableCellProps<T>) {
   const { scrollableRows } = useContext(AdvancedTableContext);
 
   const styles = AdvancedTableCellStyles({ scrollableRows });
-
   return (
-    <td
-      key={cell.id}
-      className={styles.td()}
-      style={{ width: cell.column.getSize(), ...getCommonPinningStyles(cell.column) }}
-    >
-      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+    <td className={styles.td()} style={{ width: cell.column.getSize(), ...getCommonPinningStyles(cell.column) }}>
+      {!cell.getIsPlaceholder() ? flexRender(cell.column.columnDef.cell, cell.getContext()) : null}
     </td>
   );
 }

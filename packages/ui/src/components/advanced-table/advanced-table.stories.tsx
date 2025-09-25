@@ -1,7 +1,9 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { ColumnPinningState } from '@tanstack/react-table';
+import { useState } from 'react';
 
 import { AdvancedTable } from './advanced-table.component.js';
-import { AdvancedColumnProps } from './advanced-table.types.js';
+import { AdvancedColumnProps, TanstackTableOptions } from './advanced-table.types.js';
 import { AdvancedPerson, makeColumns, makeDataFromCols, makePersonData } from './utils/fakerData.js';
 
 const columns: AdvancedColumnProps<AdvancedPerson>[] = [
@@ -9,6 +11,7 @@ const columns: AdvancedColumnProps<AdvancedPerson>[] = [
     key: 'name',
     title: 'Name',
     enableSorting: false,
+    enableGrouping: false,
     columns: [
       { key: 'firstName', title: 'First Name' },
       { key: 'lastName', title: 'Last Name' },
@@ -18,12 +21,14 @@ const columns: AdvancedColumnProps<AdvancedPerson>[] = [
     key: 'information',
     title: 'Information',
     enableSorting: false,
+    enableGrouping: false,
     columns: [
       { key: 'age', title: 'Age' },
       {
         key: 'moreInfo',
         title: 'More Info',
         enableSorting: false,
+        enableGrouping: false,
         columns: [
           { key: 'visits', title: 'Visits' },
           { key: 'status', title: 'Status' },
@@ -41,7 +46,7 @@ const meta: Meta<typeof AdvancedTable> = {
   decorators: [(Story: StoryFn) => <Story />],
 };
 
-const defaultData = makePersonData(100);
+const defaultData = makePersonData(100, 20);
 
 const manyCols = makeColumns(100);
 const dataForCols = makeDataFromCols(100, manyCols);
@@ -51,7 +56,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <AdvancedTable<AdvancedPerson> data={defaultData} columns={columns} resizable sortable subRowKey="subRows" />
+    <AdvancedTable<AdvancedPerson>
+      data={defaultData}
+      selectable
+      columns={columns}
+      resizable
+      sortable
+      subRowKey="subRows"
+    />
   ),
 };
 
@@ -62,9 +74,34 @@ export const Virtualized: Story = {
       columns={manyCols}
       resizable
       sortable
+      selectable
       scrollableColumns
       scrollableRows
       subRowKey="subRows"
     />
   ),
+};
+
+export const TestControlled = () => {
+  const [pinned, setPinned] = useState<ColumnPinningState>({});
+  const tableProps: TanstackTableOptions<ReturnType<typeof makeDataFromCols>[0]> = {
+    state: {
+      columnPinning: pinned,
+    },
+    onColumnPinningChange: setPinned,
+  };
+
+  return (
+    <AdvancedTable<ReturnType<typeof makeDataFromCols>[0]>
+      data={dataForCols}
+      columns={manyCols}
+      resizable
+      sortable
+      selectable
+      scrollableColumns
+      scrollableRows
+      tableOptions={tableProps}
+      subRowKey="subRows"
+    />
+  );
 };
