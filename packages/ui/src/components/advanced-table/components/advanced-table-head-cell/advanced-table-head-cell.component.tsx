@@ -55,6 +55,7 @@ export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: Advanced
           <MenuButton
             filterVal={header.column.getFilterValue() as string}
             onInputChange={header.column.setFilterValue}
+            // eslint-disable-next-line no-console
             onAction={action => console.log(action)}
           />
         )}
@@ -127,6 +128,7 @@ export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: Advanced
           <MenuButton
             filterVal={header.column.getFilterValue() as string}
             onInputChange={header.column.setFilterValue}
+            // eslint-disable-next-line no-console
             onAction={action => console.log(action)}
           />
         )}
