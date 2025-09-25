@@ -48,32 +48,31 @@ export function AccordionItem<T = HTMLElement>({
       <div {...regionProps}>
         <LazyMotion features={loadAnimations}>
           <AnimatePresence initial={false}>
-            {isOpen && (
-              <m.div
-                className="overflow-hidden"
-                initial={{
-                  height: 0,
+            <m.div
+              className="overflow-hidden"
+              initial={{
+                height: 0,
+              }}
+              animate={{
+                height: 'auto',
+              }}
+              exit={{
+                height: 0,
+              }}
+              transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }}
+              key={`${item.index}-${isOpen}`}
+            >
+              <div
+                className={styles.content()}
+                // TODO: Remove below with updated accordion that uses disclosure as the issue doesn't happen with that version
+                // Need to call stopPropagation here as some events from children are bubbling up and focusing the accordion i.e. inputs
+                onBlur={e => {
+                  e.stopPropagation();
                 }}
-                animate={{
-                  height: 'auto',
-                }}
-                exit={{
-                  height: 0,
-                }}
-                transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }}
               >
-                <div
-                  className={styles.content()}
-                  // TODO: Remove below with updated accordion that uses disclosure as the issue doesn't happen with that version
-                  // Need to call stopPropagation here as some events from children are bubbling up and focusing the accordion i.e. inputs
-                  onBlur={e => {
-                    e.stopPropagation();
-                  }}
-                >
-                  {item.props.children}
-                </div>
-              </m.div>
-            )}
+                {item.props.children}
+              </div>
+            </m.div>
           </AnimatePresence>
         </LazyMotion>
       </div>

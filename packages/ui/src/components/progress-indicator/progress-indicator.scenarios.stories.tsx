@@ -133,7 +133,7 @@ export const LoadingOverlayUsage = () => {
       <Modal size="full" state={state} aria-label="Loading overlay" className="bg-transparent">
         <ModalBody
           onClick={() => state.close()}
-          className="align-center min-h-100vh min-w-100vw flex flex-col justify-center"
+          className="min-h-100vh min-w-100vw flex flex-col items-center justify-center"
         >
           <ProgressIndicator color="white" size="large" label="Loading..." />
         </ModalBody>
