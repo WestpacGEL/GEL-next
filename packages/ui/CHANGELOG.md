@@ -1,5 +1,15 @@
 # @westpac/ui
 
+## 0.50.0
+
+### Minor Changes
+
+- 380b5cd: introducing DatePickerBeta, datepicker using react-aria hooks
+
+### Patch Changes
+
+- 604f080: fixed issue where accordion content was unmounting on close
+
 ## 0.49.0
 
 ### Minor Changes
