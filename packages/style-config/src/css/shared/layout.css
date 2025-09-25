@@ -7,11 +7,11 @@
   --breakpoint-xl: 1584px;
 
   /* Container Sizes */
-  --container-container-xs: 35.35rem;
-  --container-container-xsl: 47.25rem;
-  --container-container-sm: 60.75rem;
-  --container-container-md: 72.75rem;
-  --container-container-lg: 97.5rem;
+  --container-xs: 35.35rem;
+  --container-xsl: 47.25rem;
+  --container-sm: 60.75rem;
+  --container-md: 72.75rem;
+  --container-lg: 97.5rem;
 
   /* Spacing */
   --spacing: 0.375rem;
