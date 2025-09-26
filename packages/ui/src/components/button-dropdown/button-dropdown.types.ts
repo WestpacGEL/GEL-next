@@ -2,10 +2,11 @@ import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { Placement } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
 import { ButtonProps } from '../button/index.js';
 
 import { styles } from './button-dropdown.styles.js';
-import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 

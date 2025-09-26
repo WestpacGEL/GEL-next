@@ -78,7 +78,9 @@ const preview: Preview = {
         title: 'Theme',
         icon: 'paintbrush',
         // Array of plain string values or MenuItem shape (see below)
-        items: ['BOM', 'BSA', 'BTFG', 'RAMS', 'STG', 'WBC', 'WBG', 'WBC-LIGHT', 'WBC-DARK', 'STG-LIGHT', 'STG-DARK'],
+        // TODO: Re-enable other brands once tokens have been created
+        // items: ['BOM', 'BSA', 'BTFG', 'RAMS', 'STG', 'WBC', 'WBG'],
+        items: ['STG', 'WBC'],
         // Change title based on selected value
         dynamicTitle: true,
       },

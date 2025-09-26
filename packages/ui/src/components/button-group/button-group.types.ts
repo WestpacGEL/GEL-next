@@ -2,11 +2,12 @@ import { AriaRadioGroupProps } from 'react-aria';
 import { RadioGroupState } from 'react-stately';
 import { VariantProps } from 'tailwind-variants';
 
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
 import { type ButtonProps } from '../button/index.js';
 
 import { styles } from './components/button-group-button/button-group-button.styles.js';
 import { ButtonGroupButtonProps } from './components/button-group-button/button-group-button.types.js';
-import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 

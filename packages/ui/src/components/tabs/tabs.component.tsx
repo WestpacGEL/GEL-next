@@ -4,11 +4,12 @@ import React, { useRef } from 'react';
 import { AriaLinkOptions, Key, useTabList } from 'react-aria';
 import { Item, ItemProps, useTabListState } from 'react-stately';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { TabsTab, TabsTabPanel, TabsTabPanelProps } from './components/index.js';
 import { styles as tabStyles } from './tabs.styles.js';
 import { type TabsProps } from './tabs.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function Tabs({
   className,
@@ -74,6 +75,7 @@ export function Tabs({
           key={item.key}
           id={item.key as string}
           state={state}
+          justify={justify}
           keepMounted={(item.props as TabsTabPanelProps)?.keepMounted}
         />
       ))}

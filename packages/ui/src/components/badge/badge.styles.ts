@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'inline-block w-fit whitespace-nowrap text-center',
+  base: 'inline-block w-fit text-center whitespace-nowrap',
   variants: {
     color: {
       danger: 'bg-surface-danger text-text-mono',
@@ -12,16 +12,16 @@ export const styles = tv({
       primary: 'bg-surface-primary text-text-mono',
       success: 'bg-surface-success text-text-mono',
       warning: 'bg-surface-warning text-text-mono',
-      'danger-inverted': 'border-none bg-surface-mono text-text-danger',
-      'faint-inverted': 'border-none bg-surface-mono text-text-muted',
-      'hero-inverted': 'border-none bg-surface-mono text-text-hero',
-      'info-inverted': 'border-none bg-surface-mono text-text-info',
-      'primary-inverted': 'border-none bg-surface-mono text-text-primary',
-      'success-inverted': 'border-none bg-surface-mono text-text-success',
-      'warning-inverted': 'border-none bg-surface-mono text-text-warning',
+      'danger-inverted': 'bg-surface-mono text-text-danger border-none',
+      'faint-inverted': 'bg-surface-mono text-text-muted border-none',
+      'hero-inverted': 'bg-surface-mono text-text-hero border-none',
+      'info-inverted': 'bg-surface-mono text-text-info border-none',
+      'primary-inverted': 'bg-surface-mono text-text-primary border-none',
+      'success-inverted': 'bg-surface-mono text-text-success border-none',
+      'warning-inverted': 'bg-surface-mono text-text-warning border-none',
     },
     type: {
-      pill: 'typography-body-10 flex h-4 w-fit items-center rounded-xl px-[0.4375rem] font-medium leading-none',
+      pill: 'typography-body-10 flex h-4 w-fit items-center rounded-full px-[0.4375rem] leading-none font-medium',
       default: 'h-[1.25rem] rounded-sm px-1 text-[0.75rem]',
     },
     soft: {

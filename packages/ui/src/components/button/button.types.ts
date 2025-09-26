@@ -1,10 +1,10 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 import { IconProps } from '../icon/index.js';
 
 import { styles } from './button.styles.js';
-import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;
 

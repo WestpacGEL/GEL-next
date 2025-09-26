@@ -1,10 +1,10 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'flex flex-col border border-border-muted-soft text-text-body',
+  base: 'border-border-muted-soft text-text-body flex flex-col border',
   variants: {
     rounded: {
-      true: 'rounded',
+      true: 'rounded-2xl',
     },
   },
 });

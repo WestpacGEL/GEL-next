@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+'use client';
+
+import { useEffect } from 'react';
 import { create } from 'zustand';
 
 import { BREAKPOINTS, Breakpoint } from '../tailwind/constants/index.js';
@@ -70,7 +72,7 @@ export const useThemeStore = create<BreakpointState>()((set, get) => ({
         listener,
       };
     });
-    set({ mediaQueryListeners: listeners, initialised: true });
+    set({ mediaQueryListeners: listeners, initialised: true, breakpoint: checkBreakpoint() });
   },
   removeListeners: () => {
     get().mediaQueryListeners?.forEach(({ mq, listener }) => {

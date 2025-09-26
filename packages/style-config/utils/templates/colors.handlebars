@@ -1,0 +1,31 @@
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer theme {
+  :root,
+  :host {
+    /* Reserved colors */
+    {{#each reserved}}
+    --{{@key}}: {{this}};
+    {{/each}}
+  }
+
+  /* Token definitions  */
+  [data-brand] {
+      {{#each light}}
+      --{{@key}}: {{this}};
+      {{/each}}
+
+      @variant dark {
+        {{#each dark}}
+        --{{@key}}: {{this}};
+        {{/each}}
+      }
+    }
+}
+
+/* Tailwind theme variables  */
+@theme inline static {
+    {{#each light}}
+    --color-{{@key}}: var(--{{@key}});
+    {{/each}}
+}

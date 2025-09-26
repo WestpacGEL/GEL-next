@@ -29,7 +29,9 @@ type Inputs = {
  * > Default usage example
  */
 export const Default = () => {
-  const { register, watch, setValue } = useForm<Inputs>({ defaultValues: { items: [] } });
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ primary: '', secondary: '', tertiary: '' }] },
+  });
   const items = watch('items');
 
   const handleAdd = useCallback(() => {

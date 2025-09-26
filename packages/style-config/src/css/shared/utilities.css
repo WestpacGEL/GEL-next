@@ -1,0 +1,12 @@
+@utility focus-outline {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 3px;
+  outline-color: var(--border-focus);
+}
+
+@utility background-transition {
+  transition-property: background;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}

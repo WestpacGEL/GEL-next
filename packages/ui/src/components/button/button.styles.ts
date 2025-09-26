@@ -5,7 +5,7 @@ import { tv } from 'tailwind-variants';
  */
 export const styles = tv({
   slots: {
-    base: 'items-center justify-center rounded border transition-[background] disabled:pointer-events-none disabled:opacity-50 group-first/add-on-before:h-auto group-first/add-on-before:rounded-r-none group-last/add-on-after:h-auto group-last/add-on-after:rounded-l-none cursor-pointer',
+    base: 'cursor-pointer items-center justify-center border transition-[background] group-first/add-on-before:h-auto group-first/add-on-before:rounded-r-none group-last/add-on-after:h-auto group-last/add-on-after:rounded-l-none disabled:pointer-events-none disabled:opacity-50',
     iconBefore: '',
     iconAfter: '',
     dropdown: 'ml-[0.4em]',
@@ -14,21 +14,21 @@ export const styles = tv({
   variants: {
     size: {
       small: {
-        base: 'active-theme-rams:before:h-[0.0625rem] typography-body-10 h-5 px-1.5',
+        base: 'active-theme-rams:before:h-[0.0625rem] typography-body-10 h-5 rounded-sm px-1.5',
       },
       medium: {
-        base: 'active-theme-rams:before:h-0.5 typography-body-9 h-6 px-2',
+        base: 'active-theme-rams:before:h-0.5 typography-body-9 h-6 rounded-md px-2',
       },
       large: {
-        base: 'active-theme-rams:before:h-0.5 typography-body-9 h-7 px-2.5',
+        base: 'active-theme-rams:before:h-0.5 typography-body-9 h-7 rounded-lg px-2.5',
       },
       xlarge: {
-        base: 'active-theme-rams:before:h-1 typography-body-8 h-8 px-3',
+        base: 'active-theme-rams:before:h-1 typography-body-8 h-8 rounded-xl px-3',
       },
     },
     look: {
       primary: {
-        base: 'active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop relative border-border-primary bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-active-primary',
+        base: 'active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop border-border-primary bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-active-primary relative',
       },
       hero: {
         base: 'border-border-hero bg-surface-hero text-text-mono hover:bg-surface-hover-hero active:bg-surface-active-hero',
@@ -36,7 +36,7 @@ export const styles = tv({
       faint: {
         base: 'border-border-muted-strong bg-surface-muted-pale text-text-muted hover:bg-surface-hover-mono active:bg-surface-active-mono',
       },
-      link: { base: 'border-0 text-text-link underline hover:no-underline' },
+      link: { base: 'text-text-link border-0 underline hover:no-underline' },
       unstyled: { base: 'border-none p-0 text-left' },
     },
     soft: {
