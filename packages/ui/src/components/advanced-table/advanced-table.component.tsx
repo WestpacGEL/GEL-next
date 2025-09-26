@@ -15,6 +15,7 @@ import { Pagination } from '../pagination/pagination.component.js';
 import { styles as advancedTableStyles } from './advanced-table.styles.js';
 import { AdvancedTableProps } from './advanced-table.types.js';
 import { AdvancedTableBody } from './components/advanced-table-body/advanced-table-body.component.js';
+import { AdvancedTableDefaultCell } from './components/advanced-table-default-cell/advanced-table-default-cell.component.js';
 import { AdvancedTableHead } from './components/advanced-table-head/advanced-table-head.component.js';
 import { columnGenerator } from './utils/column-generator.js';
 import { useVirtualizedColumns } from './utils/column-virtualizer.hook.js';
@@ -49,19 +50,15 @@ export function AdvancedTable<T>({
   const styles = advancedTableStyles({ scrollableColumns, scrollableRows });
 
   useLayoutEffect(() => {
-    const paginationWidth = document.getElementById('test-id')?.getBoundingClientRect().width;
+    const paginationWidth = document.getElementById('pagination')?.getBoundingClientRect().width;
     setPaginationWidth(paginationWidth);
   }, []);
 
   const finalColumns = columnGenerator<T>({
-    selectable,
     sortable,
     groupable,
     columns,
   });
-
-  const { state, ...restTableOptions } = tableOptions || {};
-  const { columnPinning, ...restState } = state || {};
 
   const table = useReactTable<T>({
     data: localData,
@@ -70,15 +67,11 @@ export function AdvancedTable<T>({
     columnResizeDirection: 'ltr',
     initialState: {
       columnPinning: {
-        left: selectable ? ['select-column'] : [],
+        left: selectable && scrollableColumns ? ['select-column'] : [],
       },
     },
-    state: {
-      columnPinning: {
-        left: selectable ? ['select-column', ...(columnPinning?.left ?? [])] : columnPinning?.left,
-        right: columnPinning?.right,
-      },
-      ...restState,
+    defaultColumn: {
+      cell: props => <AdvancedTableDefaultCell {...props} selectable={selectable} />,
     },
     // issue with the library and typing of subrows not working well with custom subrow types https://github.com/TanStack/table/discussions/4484
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
@@ -89,7 +82,7 @@ export function AdvancedTable<T>({
     getExpandedRowModel: getExpandedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: scrollableRows ? undefined : getPaginationRowModel(),
-    ...restTableOptions,
+    ...tableOptions,
   });
 
   // used for performant resizing https://tanstack.com/table/latest/docs/framework/react/examples/column-resizing-performant
@@ -140,7 +133,7 @@ export function AdvancedTable<T>({
           {!scrollableRows && (
             <Pagination
               totalPages={table.getPageCount()}
-              id="test-id"
+              id="pagination"
               current={currentPage}
               onChange={pageIndex => table.setPageIndex(pageIndex - 1)}
               className="pt-2 absolute"

@@ -1,37 +1,21 @@
 import { ColumnDef } from '@tanstack/react-table';
 
-import { ArrowRightIcon, ExpandMoreIcon } from '../../icon/index.js';
 import { AdvancedColumnProps } from '../advanced-table.types.js';
 
 export function columnGenerator<T>({
-  selectable,
   sortable,
   groupable,
   columns,
 }: {
-  selectable?: boolean;
   sortable?: boolean;
   groupable?: boolean;
   columns: AdvancedColumnProps<T>[];
 }) {
-  const firstColumnIndex = selectable ? 1 : 0;
-
   const columnUpdate = (obj: AdvancedColumnProps<T>): ColumnDef<T> => {
     return {
       ...obj,
       id: obj.key,
       accessorKey: obj.key,
-      cell: ({ row, getValue, column }) => (
-        <div style={{ paddingLeft: `${row.depth * 2}rem` }} className="flex flex-row gap-1">
-          {(row.getCanExpand() || row.getIsGrouped()) && column.getIndex() === firstColumnIndex ? (
-            <button onClick={row.getToggleExpandedHandler()}>
-              {row.getIsExpanded() ? <ExpandMoreIcon size="small" /> : <ArrowRightIcon size="small" />}
-            </button>
-          ) : null}
-          {getValue<boolean>()}
-          {row.getIsGrouped() && column.getIndex() === firstColumnIndex ? `(${row.subRows.length})` : null}
-        </div>
-      ),
       enableSorting: obj.enableSorting ?? sortable,
       enableGrouping: obj.enableGrouping ?? groupable,
       header: () => <h2 className="whitespace-nowrap font-medium">{obj.title}</h2>,
