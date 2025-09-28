@@ -1,9 +1,10 @@
 import React from 'react';
 
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
+
 import { styles as adornmentStyles } from './flexi-cell-adornment.styles.js';
 import { type FlexiCellAdornmentProps } from './flexi-cell-adornment.types.js';
-import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 /** Flexi Cell Adornment: Flexi Cell Adornment */
 export const FlexiCellAdornment = ({

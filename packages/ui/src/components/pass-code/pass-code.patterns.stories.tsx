@@ -65,8 +65,8 @@ export const SMS = () => {
   return (
     <div className="flex w-[350px] flex-col items-center">
       <PadlockIcon className="mb-3" color="muted" />
-      <h3 className="typography-body-5 mb-3 font-bold text-text-body">Enter SMS code</h3>
-      <p className="mb-3 text-center text-text-body">
+      <h3 className="typography-body-5 text-text-body mb-3 font-bold">Enter SMS code</h3>
+      <p className="text-text-body mb-3 text-center">
         Your security code (1234) has been sent to your mobile number **** **** *XXXX{' '}
       </p>
       {error && (
@@ -135,8 +135,8 @@ export const SMSWithSubmit = () => {
   return (
     <div className="flex w-[350px] flex-col items-center">
       <PadlockIcon className="mb-3" color="muted" />
-      <h3 className="typography-body-5 mb-3 font-bold text-text-body">Enter SMS code</h3>
-      <p className="mb-3 text-center text-text-body">
+      <h3 className="typography-body-5 text-text-body mb-3 font-bold">Enter SMS code</h3>
+      <p className="text-text-body mb-3 text-center">
         Your security code (1234) has been sent to your mobile number **** **** *XXXX{' '}
       </p>
       {error && (
@@ -146,7 +146,7 @@ export const SMSWithSubmit = () => {
       )}
       <PassCode ref={ref} className="mb-3" length={4} value={value} onChange={handleChange} />
       {alert && <Alert>A text message with a new verification code was just sent to your mobile.</Alert>}
-      <p className="mb-3 text-text-body">
+      <p className="text-text-body mb-3">
         Didn&apos;t receive your code?
         <Button look="link" size="small" onClick={handleResend}>
           Send it again

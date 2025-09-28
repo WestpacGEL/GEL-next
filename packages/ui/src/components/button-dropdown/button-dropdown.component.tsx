@@ -4,14 +4,14 @@ import React, { useCallback, useEffect, useId, useMemo, useRef } from 'react';
 import { useButton, useOverlayTrigger } from 'react-aria';
 import { useOverlayTriggerState } from 'react-stately';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { Button } from '../button/index.js';
 import { DropDownIcon, IconProps } from '../icon/index.js';
 
 import { styles as buttonDropdownStyles } from './button-dropdown.styles.js';
 import { type ButtonDropdownProps } from './button-dropdown.types.js';
 import { ButtonDropdownPanel } from './components/button-dropdown-panel/button-dropdown-panel.component.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function ButtonDropdown({
   className,

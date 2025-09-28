@@ -3,6 +3,10 @@
   :host {
     color: var(--text-body);
   }
+
+  body {
+    @apply typography-body-11;
+  }
 }
 
 @layer theme {

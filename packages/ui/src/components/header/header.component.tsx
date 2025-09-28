@@ -3,6 +3,8 @@
 import throttle from 'lodash.throttle';
 import React, { useEffect, useMemo, useState } from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { ArrowLeftIcon, HamburgerMenuIcon } from '../icon/index.js';
 import { Button, SkipLink } from '../index.js';
 import {
@@ -23,8 +25,6 @@ import {
 
 import { styles as headerStyles } from './header.styles.js';
 import { type HeaderProps } from './header.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 const LOGO_MAP = {
   wbc: {

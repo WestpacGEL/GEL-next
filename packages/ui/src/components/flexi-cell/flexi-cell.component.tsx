@@ -3,13 +3,13 @@
 import React, { Ref, forwardRef, useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { ArrowRightIcon } from '../icon/index.js';
 
 import { FlexiCellAdornment, FlexiCellBody } from './components/index.js';
 import { styles as flexiCellStyles } from './flexi-cell.styles.js';
 import { type FlexiCellProps } from './flexi-cell.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 function FlexiCellBase(
   {

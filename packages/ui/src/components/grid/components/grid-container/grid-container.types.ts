@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react';
+
 import { ResponsiveVariants } from '../../../../types/responsive-variants.types.js';
 
 export type GridContainerProps = {

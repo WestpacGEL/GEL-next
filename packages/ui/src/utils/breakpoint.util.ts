@@ -1,4 +1,4 @@
-import { Breakpoint, BREAKPOINTS } from '../tailwind/constants/index.js';
+import { Breakpoint, BREAKPOINTS } from '@westpac/style-config/constants';
 
 const BREAKPOINTS_DECRESCENT = Object.keys(BREAKPOINTS).reverse();
 

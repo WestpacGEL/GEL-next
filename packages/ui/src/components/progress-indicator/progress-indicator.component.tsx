@@ -1,12 +1,12 @@
 import React, { useId } from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { Icon } from '../icon/icon.component.js';
 import { Label } from '../label/label.component.js';
 
 import { styles as ProgressIndicatorStyles } from './progress-indicator.styles.js';
 import { ProgressIndicatorProps } from './progress-indicator.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function ProgressIndicator({
   color = 'hero',
@@ -35,7 +35,7 @@ export function ProgressIndicator({
   };
 
   // TODO: fix this properly
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
   const strokeHalfWidth = sizeMap[resolvedSize.toString()].strokeWidth / 2;
 
   return (

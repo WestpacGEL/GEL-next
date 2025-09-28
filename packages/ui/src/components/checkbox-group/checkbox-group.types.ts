@@ -1,12 +1,13 @@
 import { AriaCheckboxGroupProps } from 'react-aria';
 import { CheckboxGroupState } from 'react-stately';
+import { VariantProps } from 'tailwind-variants';
+
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 import { HintProps } from '../index.js';
 
-import { CheckboxGroupCheckboxProps } from './components/checkbox-group-checkbox/checkbox-group-checkbox.types.js';
-import { VariantProps } from 'tailwind-variants';
 import { styles } from './checkbox-group.styles.js';
-import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+import { CheckboxGroupCheckboxProps } from './components/checkbox-group-checkbox/checkbox-group-checkbox.types.js';
 
 type Variant = VariantProps<typeof styles>;
 

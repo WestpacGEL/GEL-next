@@ -1,4 +1,5 @@
 import { type Meta, StoryFn } from '@storybook/react-vite';
+import { SPACING_UNIT } from '@westpac/style-config/constants';
 import { clsx } from 'clsx';
 
 import {
@@ -12,7 +13,6 @@ import {
   TableHeaderRow,
   TableRow,
 } from '../../components/index.js';
-import { SPACING_UNIT } from '../../tailwind/constants/index.js';
 
 const meta: Meta = {
   title: 'Foundation/Spacing',

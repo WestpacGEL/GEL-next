@@ -1,5 +1,6 @@
 import { HTMLAttributes, RefObject } from 'react';
 import { OverlayTriggerState } from 'react-stately';
+
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 export type PanelProps = {

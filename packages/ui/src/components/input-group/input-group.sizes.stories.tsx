@@ -24,7 +24,7 @@ export const InputGroupWithDifferentSizes: Story = {
     return (
       <>
         {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
-          <div key={size} className="border-b-border border-b py-3">
+          <div key={size} className="border-border-muted border-b py-3">
             <h3 className="typography-body-7 mb-4 font-bold">Size: {size}</h3>
             <InputGroup
               size={size}

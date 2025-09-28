@@ -3,10 +3,11 @@
 import React from 'react';
 import { mergeProps, useProgressBar } from 'react-aria';
 
+import { useBreakpoint } from '../..//hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../..//utils/breakpoint.util.js';
+
 import { styles as progressBarStyles } from './progress-bar.styles.js';
 import { type ProgressBarProps } from './progress-bar.types.js';
-import { resolveResponsiveVariant } from '../..//utils/breakpoint.util.js';
-import { useBreakpoint } from '../..//hook/breakpoints.hook.js';
 
 export function ProgressBar({ className, look = 'default', value = 0, noLabel = false, ...props }: ProgressBarProps) {
   const roundedValue = Math.round(value);

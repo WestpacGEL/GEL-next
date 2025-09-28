@@ -2,10 +2,11 @@
 
 import React from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { ModalBackdrop, ModalDialog } from './components/index.js';
 import { type ModalProps } from './modal.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function Modal({ children, title, role, body, size, className, fullscreen, ...props }: ModalProps) {
   const breakpoint = useBreakpoint();

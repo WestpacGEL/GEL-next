@@ -2,14 +2,14 @@ import React, { useRef } from 'react';
 import { FocusScope } from 'react-aria';
 import { createPortal } from 'react-dom';
 
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { Button } from '../../../button/index.js';
 import { CloseIcon } from '../../../icon/index.js';
 
 import { usePanel } from './panel.hook.js';
 import { styles as panelStyles } from './panel.styles.js';
 import { type PanelProps } from './panel.types.js';
-import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 export function BasePanel({
   state,

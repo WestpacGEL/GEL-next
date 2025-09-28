@@ -1,5 +1,6 @@
+import { Breakpoint } from '@westpac/style-config/constants';
+
 import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { Breakpoint } from '../../tailwind/constants/index.js';
 
 export function getSiblingOrBoundaryCount(
   count: Partial<Record<Breakpoint | 'initial', number>>,

@@ -37,19 +37,19 @@ export const styles = tv({
     },
     type: {
       bullet: {
-        bullet: 'left-[0.25rem] top-1 size-[0.5rem] rounded-full',
+        bullet: 'top-1 left-[0.25rem] size-[0.5rem] rounded-full',
       },
       link: {
         bullet:
-          'left-[0.125rem] top-1 size-[0.5rem] rotate-45 border-b-0 border-l-0 border-r-[0.125rem] border-t-[0.125rem] bg-[transparent]',
+          'top-1 left-[0.125rem] size-[0.5rem] rotate-45 border-t-[0.125rem] border-r-[0.125rem] border-b-0 border-l-0 bg-[transparent]',
       },
       tick: {
         bullet:
-          ' left-[0.125rem] top-[0.3125rem] h-1 w-2 rotate-[-44deg] border-b-[0.125rem] border-l-[0.125rem] border-r-0 border-t-0 bg-[transparent]',
+          ' top-[0.3125rem] left-[0.125rem] h-1 w-2 rotate-[-44deg] border-t-0 border-r-0 border-b-[0.125rem] border-l-[0.125rem] bg-[transparent]',
       },
       cross: {
         bullet:
-          'left-1 top-[0.25rem] h-2 w-0 -rotate-45 border-y-0 border-l-[0.125rem] border-r-0 bg-[transparent] after:absolute after:left-[-0.125rem] after:block after:h-2 after:w-0 after:rotate-90 after:border-y-0 after:border-l-[0.125rem] after:border-r-0',
+          'top-[0.25rem] left-1 h-2 w-0 -rotate-45 border-y-0 border-r-0 border-l-[0.125rem] bg-[transparent] after:absolute after:left-[-0.125rem] after:block after:h-2 after:w-0 after:rotate-90 after:border-y-0 after:border-r-0 after:border-l-[0.125rem]',
       },
       unstyled: {
         base: 'pl-0',
@@ -75,7 +75,7 @@ export const styles = tv({
       slots: ['bullet'],
       type: 'link',
       icon: true,
-      className: 'left-0 top-0 size-3 rotate-0 border-none bg-[transparent]',
+      className: 'top-0 left-0 size-3 rotate-0 border-none bg-[transparent]',
     },
     {
       slots: ['base'],

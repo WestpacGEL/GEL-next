@@ -4,13 +4,13 @@ import React, { createContext, useContext, useRef } from 'react';
 import { useDialog, useFocusRing } from 'react-aria';
 
 import { CloseIcon } from '../../../../components/icon/index.js';
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 
 import { ModalDialogBody } from './components/modal-dialog-body/index.js';
 import { ModalDialogFooter } from './components/modal-dialog-footer/index.js';
 import { styles as dialogStyles } from './modal-dialog.styles.js';
 import { ModalDialogContextValue, type ModalDialogProps } from './modal-dialog.types.js';
-import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 const ModalDialogContext = createContext<ModalDialogContextValue>({ size: 'md' });
 

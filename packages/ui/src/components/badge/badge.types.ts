@@ -1,8 +1,9 @@
 import { HTMLAttributes, ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
-import { styles } from './badge.styles.js';
 import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
+
+import { styles } from './badge.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 

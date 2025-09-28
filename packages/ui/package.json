@@ -16,15 +16,6 @@
     ".": {
       "default": "./dist/index.js"
     },
-    "./utils": {
-      "default": "./dist/utils/index.js"
-    },
-    "./w3c-tokens/*": {
-      "default": "./dist/w3c-tokens/*.json"
-    },
-    "./flattened-tokens.json": {
-      "default": "./dist/flattened-tokens.json"
-    },
     "./component-type.json": {
       "default": "./dist/component-type.json"
     },
@@ -33,15 +24,6 @@
     },
     "./hook": {
       "default": "./dist/hook/index.js"
-    },
-    "./tailwind": {
-      "default": "./dist/tailwind/index.js"
-    },
-    "./themes": {
-      "default": "./dist/tailwind/themes/index.js"
-    },
-    "./themes-constants": {
-      "default": "./dist/tailwind/constants/index.js"
     },
     "./accordion": {
       "default": "./dist/components/accordion/index.js"
@@ -103,12 +85,6 @@
     "./form": {
       "default": "./dist/components/form/index.js"
     },
-    "./hint": {
-      "default": "./dist/components/hint/index.js"
-    },
-    "./label": {
-      "default": "./dist/components/label/index.js"
-    },
     "./grid": {
       "default": "./dist/components/grid/index.js"
     },
@@ -118,6 +94,9 @@
     "./heading": {
       "default": "./dist/components/heading/index.js"
     },
+    "./hint": {
+      "default": "./dist/components/hint/index.js"
+    },
     "./icon": {
       "default": "./dist/components/icon/index.js"
     },
@@ -126,6 +105,9 @@
     },
     "./input-group": {
       "default": "./dist/components/input-group/index.js"
+    },
+    "./label": {
+      "default": "./dist/components/label/index.js"
     },
     "./link": {
       "default": "./dist/components/link/index.js"
@@ -219,7 +201,7 @@
     "build:types": "tsc --project tsconfig.build.json",
     "build:esm": "swc ./src -d dist --no-swcrc --config-file .swcrc",
     "build:icons": "node --loader ts-node/esm ./utils/build-icons/index.ts",
-    "build:exports": "ts-node --esm ./utils/build-exports/index.ts && prettier --write package.json",
+    "build:exports": "node --loader ts-node/esm ./utils/build-exports/index.ts && prettier --write package.json",
     "build:watch": "pnpm clean && pnpm build:types && pnpm build:esm -w && pnpm build:css:all",
     "build:type-table": "node generate-component-types.cjs",
     "build:svg-zip": "node --loader ts-node/esm ./utils/build-svg-zip/index.ts",

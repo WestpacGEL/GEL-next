@@ -3,12 +3,12 @@
 import { createContext, useCallback, useMemo, useState } from 'react';
 import { useField } from 'react-aria';
 
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { styles } from './selector-button-group.styles.js';
 import { SelectorButtonGroupContextState, SelectorButtonGroupProps } from './selector-button-group.types.js';
-import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 export const SelectorButtonContext = createContext<SelectorButtonGroupContextState>({
   value: '',

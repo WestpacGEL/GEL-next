@@ -1,4 +1,5 @@
 import { type HTMLAttributes, type ReactNode } from 'react';
+
 import type { ResponsiveVariants } from '../../../../types/responsive-variants.types.js';
 
 export type FlexiCellAdornmentProps = {

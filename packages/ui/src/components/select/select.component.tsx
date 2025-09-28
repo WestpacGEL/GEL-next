@@ -3,10 +3,11 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { styles as selectStyles } from './select.styles.js';
 import { type SelectProps } from './select.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 function BaseSelect(
   {

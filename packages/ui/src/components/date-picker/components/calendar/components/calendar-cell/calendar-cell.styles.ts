@@ -3,12 +3,12 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     base: 'flex items-center justify-center',
-    text: 'size-6 rounded-full border border-[transparent] text-center leading-[2.125rem] text-text-body',
+    text: 'text-text-body size-6 rounded-full border border-[transparent] text-center leading-[2.125rem]',
   },
   variants: {
     isDisabled: {
       true: {
-        text: 'cursor-default text-text-muted line-through',
+        text: 'text-text-muted cursor-default line-through',
       },
       false: {
         text: 'hover:bg-surface-primary-faint',
@@ -16,13 +16,13 @@ export const styles = tv({
     },
     isUnavailable: {
       true: {
-        text: 'cursor-default text-text-muted line-through',
+        text: 'text-text-muted cursor-default line-through',
       },
       false: {},
     },
     isFocused: {
       true: {
-        text: '!outline-offset-0 focus-outline',
+        text: 'focus-outline !outline-offset-0',
       },
     },
     isToday: {

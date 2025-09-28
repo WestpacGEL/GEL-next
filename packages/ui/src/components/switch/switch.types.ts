@@ -1,8 +1,9 @@
 import { AriaCheckboxProps } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
-import { styles } from './switch.styles.js';
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
+import { styles } from './switch.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
