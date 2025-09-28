@@ -84,6 +84,7 @@ describe('DatePicker component', () => {
   });
 
   it('passes className correctly to input div', () => {
+    // eslint-disable-next-line tailwindcss/no-custom-classname
     render(<DatePicker label="Test Label" className="custom-class" />);
     const inputDiv = screen.getByText('Test Label').nextSibling as HTMLElement;
     expect(inputDiv.className).toContain('custom-class');

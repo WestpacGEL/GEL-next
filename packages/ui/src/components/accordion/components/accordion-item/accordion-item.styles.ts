@@ -14,10 +14,6 @@ export const styles = tv({
       soft: {
         itemHeader: 'border-border-muted-soft bg-surface-muted-faint border-t',
       },
-      // lego: {
-      //   itemHeader:
-      //     'border-border-muted-soft border-t-border-muted-soft bg-surface-muted-faint !shadow-border-muted-soft border-l-[0.375rem] shadow-[inset_0_1px_0_var(--tw-shadow-color)] transition-colors',
-      // },
       lego: {
         itemHeader:
           'border-border-muted-soft bg-surface-muted-faint !shadow-border mb-[-1px] border-r border-l-[0.375rem] shadow-[inset_0px_1px_0_0_var(--border-muted-soft),inset_0_-1px_0_0_var(--border-muted-soft)] transition-colors',
