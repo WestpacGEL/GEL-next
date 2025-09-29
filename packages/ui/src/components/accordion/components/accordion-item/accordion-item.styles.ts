@@ -7,7 +7,7 @@ export const styles = tv(
       itemHeader: 'typography-body-9 flex w-full flex-1 items-center justify-between px-3 py-2 group-first:border-t-0',
       headerTitleWrapper: 'flex-1 pr-2 text-left',
       indicator: 'size-3 rotate-90',
-      content: 'hidden',
+      content: '',
     },
     variants: {
       look: {
@@ -19,13 +19,17 @@ export const styles = tv(
             'mb-[-1px] border-l-[0.375rem] border-r border-border bg-light shadow-[inset_0px_1px_0_0_var(--tw-shadow-color),inset_0_-1px_0_0_var(--tw-shadow-color)] !shadow-border transition-colors',
         },
       },
+      isOpenState: {
+        false: {
+          itemHeader: 'background-transition hover:bg-background',
+        },
+      },
       isOpen: {
         true: {
-          content: 'block border-border p-3',
+          content: 'visible block border-border p-3',
         },
         false: {
-          base: '',
-          itemHeader: 'background-transition hover:bg-background',
+          content: 'hidden',
         },
       },
       isDisabled: {
@@ -45,13 +49,13 @@ export const styles = tv(
     compoundSlots: [
       {
         slots: ['indicator'],
-        isOpen: true,
+        isOpenState: true,
         className: '-rotate-90',
       },
       {
         slots: ['itemHeader'],
         look: 'lego',
-        isOpen: true,
+        isOpenState: true,
         className: 'border-l-hero',
       },
       {
