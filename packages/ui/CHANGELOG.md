@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.50.2
+
+### Patch Changes
+
+- cfcd3f4: refactored accordion animations so content in accordion no longer gets unmounted
+
 ## 0.50.1
 
 ### Patch Changes
