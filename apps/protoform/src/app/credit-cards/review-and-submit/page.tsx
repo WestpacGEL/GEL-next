@@ -1,7 +1,7 @@
 'use client';
 
 import { PhoneIcon } from '@westpac/ui/icon';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 
 import { BackButton } from '@/components/back-button/back-button';
@@ -78,10 +78,14 @@ export default function Address() {
   }, [setRopeStep]);
 
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
 
   return (
     <div>
-      <BackButton onClick={() => router.push('/credit-cards/address')}>Back to Address</BackButton>
+      <BackButton onClick={() => router.push(`/credit-cards/address${isFlattenRope ? '?flatten=true' : ''}`)}>
+        Back to Address
+      </BackButton>
       <CustomHeading leadText="Make suure all your details are correct before you submit your application.">
         Review and submit
       </CustomHeading>
@@ -91,7 +95,12 @@ export default function Address() {
         <h3 className="typography-body-8 pb-5 font-bold text-heading">Help protect your application</h3>
         <p>Before continuing we’ll send you a one-time passcode to your mobile for added security.</p>
       </div>
-      <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
+      <Cta
+        primaryType="submit"
+        primaryOnClick={() => router.push('/')}
+        tertiaryOnClick={() => router.push('/')}
+        tertiary="Cancel"
+      >
         Send SMS code
       </Cta>
     </div>

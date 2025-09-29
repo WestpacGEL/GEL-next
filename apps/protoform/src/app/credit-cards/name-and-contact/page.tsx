@@ -1,162 +1,188 @@
 'use client';
 
-import { Field, Form, FormGroup, FormSection, Input, InputGroup, Select } from '@westpac/ui';
-import { useRouter } from 'next/navigation';
-import { FormEvent, useEffect, useState } from 'react';
+import { Field, Form, FormGroup, Input, InputGroup, Select } from '@westpac/ui';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useCallback, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
 
 import { BackButton } from '@/components/back-button/back-button';
 import { Cta } from '@/components/cta/cta';
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
-import { ErrorValidationAlert, ValidationErrorType } from '@/components/error-validation-alert/error-validation-alert';
+import { ErrorValidationAlert } from '@/components/error-validation-alert/error-validation-alert';
 import { useSidebar } from '@/components/sidebar/context';
 import { defaultError } from '@/constants/form-contsants';
-import { getFormData } from '@/utils/getFormData';
 
 import { useCreditCard } from '../context';
+
+type FormData = {
+  title: string;
+  givenName: string;
+  middleName: string;
+  familyName: string;
+  dob: string;
+  dobDay: number;
+  dobMonth: number;
+  dobYear: number;
+  mobileNumber: string;
+};
+const FIELDS_LABELS = {
+  title: 'Title',
+  givenName: 'Given name',
+  middleName: 'Middle name(s) (if any)',
+  familyName: 'Family name',
+  dob: 'Date of birth',
+  dobDay: 'Day',
+  dobMonth: 'Month',
+  dobYear: 'Year',
+  mobileNumber: 'Mobile number',
+};
 
 export default function NameAndContact() {
   const { setRopeStep } = useSidebar();
   const { data, setData } = useCreditCard();
-  const [titleError, setTitleError] = useState('');
-  const [givenNameError, setGivenNameError] = useState('');
-  const [familyNameError, setFamilyNameError] = useState('');
-  const [dobDayError, setDobDayError] = useState('');
-  const [dobMonthError, setDobMonthError] = useState('');
-  const [dobYearError, setDobYearError] = useState('');
-  const [mobileError, setMobileError] = useState('');
-  const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
+  const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
 
-  // eslint-disable-next-line sonarjs/cognitive-complexity
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const { title, givenName, middleName, familyName, dobDay, dobMonth, dobYear, mobileNumber } = getFormData(
-      e.currentTarget,
-    ) as {
-      dobDay: string;
-      dobMonth: string;
-      dobYear: string;
-      familyName: string;
-      givenName: string;
-      middleName: string;
-      mobileNumber: string;
-      title: string;
-    };
-    if (!title || !givenName || !familyName || !dobDay || !dobMonth || !dobYear || !mobileNumber) {
-      setTitleError(!title ? defaultError : '');
-      setGivenNameError(!givenName ? defaultError : '');
-      setFamilyNameError(!familyName ? defaultError : '');
-      setDobDayError(!dobDay ? defaultError : '');
-      setDobMonthError(!dobMonth ? defaultError : '');
-      setDobYearError(!dobYear ? defaultError : '');
-      setMobileError(!mobileNumber ? defaultError : '');
-      setValidationErrors([
-        ...(!title ? [{ id: 'title', label: 'Title' }] : []),
-        ...(!givenName ? [{ id: 'givenName', label: 'Given name' }] : []),
-        ...(!familyName ? [{ id: 'familyName', label: 'Family name' }] : []),
-        ...(!dobDay || !dobMonth || !dobYear ? [{ id: 'dob', label: 'Date of birth' }] : []),
-        ...(!mobileNumber ? [{ id: 'mobileNumber', label: 'Mobile number' }] : []),
-      ]);
-    } else {
-      setData({ ...data, title, givenName, middleName, familyName, dobDay, dobMonth, dobYear, mobileNumber });
-      router.push('/credit-cards/address');
-    }
-  };
-
-  useEffect(() => {
-    setRopeStep(5);
-  }, [setRopeStep]);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid, isSubmitted },
+  } = useForm<FormData>();
 
   const router = useRouter();
 
+  const onSubmit = useCallback(
+    (formData: FormData) => {
+      setData({ ...data, ...formData });
+      router.push(`/credit-cards/address${isFlattenRope ? '?flatten=true' : ''}`);
+    },
+    [data, isFlattenRope, router, setData],
+  );
+
+  useEffect(() => {
+    setRopeStep(5);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div>
-      <BackButton onClick={() => router.push('/credit-cards/credit-limit')}>Back to Credit limit</BackButton>
-      <CustomHeading groupHeading="Your details" leadText="[Dummy lead text to be replaced later]">
+      <BackButton onClick={() => router.push(`/credit-cards/credit-limit${isFlattenRope ? '?flatten=true' : ''}`)}>
+        Back to Credit limit
+      </BackButton>
+      <CustomHeading
+        groupHeading={!isFlattenRope && 'Your details'}
+        leadText="We just need a few more details to confirm who you are and get you the right services."
+      >
         Name & contact
       </CustomHeading>
-      {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
-      <Form id="credit-card" spacing="large" onSubmit={handleSubmit}>
-        <FormSection className="border-none !p-0">
-          <FormGroup>
-            <InputGroup label="Title" size="large" errorMessage={titleError} instanceId="title">
-              <Select name="title" defaultValue={data.title} invalid={!!titleError}>
-                <option value="">Select</option>
-                <option value="Mr">Mr</option>
-                <option value="Mrs">Mrs</option>
-                <option value="Ms">Ms</option>
-              </Select>
-            </InputGroup>
-          </FormGroup>
-
-          <FormGroup>
-            <InputGroup size="large" label="Given name" instanceId="givenName" errorMessage={givenNameError}>
-              <Input name="givenName" defaultValue={data.givenName} invalid={!!givenNameError} />
-            </InputGroup>
-          </FormGroup>
-
-          <FormGroup>
-            <InputGroup size="large" label="Middle name(s) (if any)">
-              <Input name="middleName" defaultValue={data.middleName} />
-            </InputGroup>
-          </FormGroup>
-
-          <FormGroup>
-            <InputGroup size="large" instanceId="familyName" label="Family name" errorMessage={familyNameError}>
-              <Input name="familyName" defaultValue={data.familyName} invalid={!!familyNameError} />
-            </InputGroup>
-          </FormGroup>
-
-          <FormGroup>
-            <InputGroup
-              size="large"
-              label="Date of birth"
-              hint="For example 31 3 1980"
-              instanceId="dob"
-              errorMessage={dobDayError || dobMonthError || dobYearError}
+      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
+      <Form id="credit-card" spacing="large" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <FormGroup>
+          <InputGroup
+            width={{ initial: 'full', md: 5 }}
+            label="Title"
+            size="large"
+            errorMessage={errors.title?.message}
+          >
+            <Select
+              {...register('title', { required: defaultError })}
+              id="title"
+              defaultValue={data.title}
+              invalid={!!errors.title?.message}
             >
-              <Field className="mr-2" label="Day">
-                <Input
-                  name="dobDay"
-                  width={{ initial: 'full', md: 2 }}
-                  size="large"
-                  defaultValue={data.dobDay}
-                  invalid={!!dobDayError}
-                />
-              </Field>
-              <Field className="mr-2" label="Month">
-                <Input
-                  name="dobMonth"
-                  width={{ initial: 'full', md: 2 }}
-                  size="large"
-                  defaultValue={data.dobMonth}
-                  invalid={!!dobMonthError}
-                />
-              </Field>
-              <Field label="Year">
-                <Input
-                  name="dobYear"
-                  width={{ initial: 'full', md: 4 }}
-                  size="large"
-                  defaultValue={data.dobYear}
-                  invalid={!!dobYearError}
-                />
-              </Field>
-            </InputGroup>
-          </FormGroup>
+              <option value="">Select</option>
+              <option value="Mr">Mr</option>
+              <option value="Mrs">Mrs</option>
+              <option value="Ms">Ms</option>
+            </Select>
+          </InputGroup>
+        </FormGroup>
 
-          <FormGroup>
-            <InputGroup
-              size="large"
-              label="Mobile number"
-              hint="We’ll send a verification code to your divhone later, to create your account."
-              errorMessage={mobileError}
-              before="AUS +61"
-              instanceId="mobileNumber"
-            >
-              <Input name="mobileNumber" defaultValue={data.mobileNumber} invalid={!!mobileError} />
-            </InputGroup>
-          </FormGroup>
-        </FormSection>
+        <FormGroup>
+          <InputGroup size="large" label="Given name" errorMessage={errors.givenName?.message}>
+            <Input
+              {...register('givenName', { required: defaultError })}
+              id="givenName"
+              defaultValue={data.givenName}
+              invalid={!!errors.givenName?.message}
+            />
+          </InputGroup>
+        </FormGroup>
+
+        <FormGroup>
+          <InputGroup size="large" label="Middle name(s) (if any)">
+            <Input {...register('middleName')} id="middleName" defaultValue={data.middleName} />
+          </InputGroup>
+        </FormGroup>
+
+        <FormGroup>
+          <InputGroup size="large" label="Family name" errorMessage={errors.familyName?.message}>
+            <Input
+              {...register('familyName', { required: defaultError })}
+              id="familyName"
+              defaultValue={data.familyName}
+              invalid={!!errors.familyName?.message}
+            />
+          </InputGroup>
+        </FormGroup>
+
+        <FormGroup>
+          <InputGroup
+            size="large"
+            label="Date of birth"
+            hint="For example 31 3 1980"
+            errorMessage={errors.dobDay?.message || errors.dobMonth?.message || errors.dobYear?.message}
+          >
+            <Field className="mr-2" label="Day">
+              <Input
+                {...register('dobDay', { required: defaultError, valueAsNumber: true })}
+                id="dobDay"
+                width={{ initial: 'full', md: 2 }}
+                size="large"
+                defaultValue={data.dobDay}
+                invalid={!!errors.dobDay?.message}
+              />
+            </Field>
+            <Field className="mr-2" label="Month">
+              <Input
+                {...register('dobMonth', { required: defaultError, valueAsNumber: true })}
+                id="dobMonth"
+                width={{ initial: 'full', md: 2 }}
+                size="large"
+                defaultValue={data.dobMonth}
+                invalid={!!errors.dobMonth?.message}
+              />
+            </Field>
+            <Field label="Year">
+              <Input
+                {...register('dobYear', { required: defaultError, valueAsNumber: true })}
+                id="dobYear"
+                width={{ initial: 'full', md: 4 }}
+                size="large"
+                defaultValue={data.dobYear}
+                invalid={!!errors.dobYear?.message}
+              />
+            </Field>
+          </InputGroup>
+        </FormGroup>
+
+        <FormGroup>
+          <InputGroup
+            size="large"
+            label="Mobile number"
+            hint="We’ll send a verification code to your divhone later, to create your account."
+            errorMessage={errors.mobileNumber?.message}
+            before="AUS +61"
+          >
+            <Input
+              {...register('mobileNumber', { required: defaultError })}
+              id="mobileNumber"
+              defaultValue={data.mobileNumber}
+              invalid={!!errors.mobileNumber?.message}
+            />
+          </InputGroup>
+        </FormGroup>
+
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
