@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "0.50.0",
+  "version": "0.50.2",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -296,7 +296,8 @@
     "lodash.throttle": "~4.1.1",
     "motion": "~12.23.12",
     "react-aria": "~3.41.1",
-    "react-stately": "~3.39.0"
+    "react-stately": "~3.39.0",
+    "zustand": "~4.5.4"
   },
   "overrides": {
     "react-aria": {
