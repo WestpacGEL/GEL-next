@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.50.1
+
+### Patch Changes
+
+- b8c8876: Footer component: removing unused nodes inside
+
 ## 0.50.0
 
 ### Minor Changes
