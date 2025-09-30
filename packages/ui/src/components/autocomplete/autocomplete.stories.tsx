@@ -254,13 +254,10 @@ export const AsyncDynamicCollections = () => {
     children,
   });
 
-  // open menu when new items arrive
-  const prevCount = useRef(0);
   useEffect(() => {
-    if (prevCount.current === 0 && items.length > 0) {
+    if (items.length > 0) {
       state.open(null, 'manual'); // 👈 force open
     }
-    prevCount.current = items.length;
   }, [items, state]);
 
   const fetchAnimals = async (query: string) => {
