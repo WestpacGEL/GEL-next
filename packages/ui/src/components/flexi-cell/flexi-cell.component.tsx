@@ -3,6 +3,8 @@
 import React, { Ref, forwardRef, useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { ArrowRightIcon } from '../icon/index.js';
 
 import { FlexiCellAdornment, FlexiCellBody } from './components/index.js';
@@ -30,14 +32,15 @@ function FlexiCellBase(
   ref: Ref<HTMLElement>,
 ) {
   const { isFocusVisible, focusProps } = useFocusRing();
+  const breakpoint = useBreakpoint();
 
   const styles = flexiCellStyles({
     className,
-    withBorder,
     isLink: !!href,
     isFocusVisible,
     shouldHoverEffect: !withBorder && !dualAction,
-    size,
+    withBorder: resolveResponsiveVariant(withBorder, breakpoint),
+    size: resolveResponsiveVariant(size, breakpoint),
   });
 
   const content = useMemo(() => {

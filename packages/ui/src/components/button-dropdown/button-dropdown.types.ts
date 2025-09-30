@@ -2,6 +2,8 @@ import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { Placement } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
 import { ButtonProps } from '../button/index.js';
 
 import { styles } from './button-dropdown.styles.js';
@@ -16,11 +18,11 @@ export type ButtonDropdownProps = {
   /**
    * Size of the dropdown panel
    */
-  dropdownSize?: Variants['dropdownSize'];
+  dropdownSize?: ResponsiveVariants<Variants['dropdownSize']>;
   /**
    * Look for button
    */
-  look?: 'primary' | 'hero' | 'faint';
+  look?: ButtonProps['look'];
   /**
    * State of whether the Popover is open
    */
@@ -28,7 +30,7 @@ export type ButtonDropdownProps = {
   /**
    * Soft look button
    */
-  soft?: boolean;
+  soft?: ButtonProps['soft'];
   /**
    * Button text
    */

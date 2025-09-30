@@ -3,6 +3,9 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { styles as selectStyles } from './select.styles.js';
 import { type SelectProps } from './select.types.js';
 
@@ -20,7 +23,15 @@ function BaseSelect(
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
   const { isFocused, isFocusVisible, focusProps } = useFocusRing();
-  const styles = selectStyles({ size, disabled, invalid, isFocused, isFocusVisible, width });
+  const breakpoint = useBreakpoint();
+  const styles = selectStyles({
+    size: resolveResponsiveVariant(size, breakpoint),
+    disabled,
+    invalid,
+    isFocused,
+    isFocusVisible,
+    width: resolveResponsiveVariant(width, breakpoint),
+  });
   return (
     <div {...wrapperProps} className={styles.root({ className: wrapperProps?.className })}>
       <select ref={ref} disabled={disabled} className={styles.select({ className })} {...mergeProps(props, focusProps)}>

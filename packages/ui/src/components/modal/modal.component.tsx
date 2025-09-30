@@ -2,19 +2,23 @@
 
 import React from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { ModalBackdrop, ModalDialog } from './components/index.js';
 import { type ModalProps } from './modal.types.js';
 
 export function Modal({ children, title, role, body, size, className, fullscreen, ...props }: ModalProps) {
+  const breakpoint = useBreakpoint();
   return (
-    <ModalBackdrop size={size} {...props}>
+    <ModalBackdrop size={resolveResponsiveVariant(size, breakpoint)} {...props}>
       <ModalDialog
         fullscreen={fullscreen}
         onClose={props.isDismissable ? () => props.state.close() : undefined}
         title={title}
         role={role}
         body={body}
-        size={size}
+        size={resolveResponsiveVariant(size, breakpoint)}
         className={className}
       >
         {children}

@@ -1,16 +1,16 @@
+import { Breakpoint } from '@westpac/style-config/constants';
 import { HTMLAttributes } from 'react';
 import { DateValue } from 'react-aria';
 import { DatePickerStateOptions } from 'react-stately';
 import { VariantProps } from 'tailwind-variants';
 
-import { Breakpoint } from '../../tailwind/constants/index.js';
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 import { styles } from './date-picker.styles.js';
 
 type Variants = VariantProps<typeof styles>;
-
 export type DatePickerProps<T extends DateValue = DateValue> = DatePickerStateOptions<T> &
-  Variants &
+  Omit<Variants, 'size'> &
   Omit<HTMLAttributes<HTMLDivElement>, 'invalid'> & {
     /**
      * Determines whether to display the component as a bottom sheet view.
@@ -37,4 +37,8 @@ export type DatePickerProps<T extends DateValue = DateValue> = DatePickerStateOp
      * portal container for date picker
      */
     portalContainer?: Element;
+    /**
+     * size
+     */
+    size?: ResponsiveVariants<Variants['size']>;
   };

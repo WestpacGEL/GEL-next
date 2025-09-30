@@ -22,7 +22,7 @@ export const Default: Story = {
   render: () => {
     return (
       <>
-        <h2 className="typography-body-7 my-4 font-bold text-text-body">Default size and spacing</h2>
+        <h2 className="typography-body-7 text-text-body my-4 font-bold">Default size and spacing</h2>
         <Form>
           <FormSection>
             <FormChitChat>
@@ -68,9 +68,9 @@ export const Default: Story = {
           </FormSection>
         </Form>
 
-        <hr className="my-4 border-t border-t-border-muted-soft" />
+        <hr className="border-t-border-muted-soft my-4 border-t" />
 
-        <h2 className="typography-body-7 my-4 font-bold text-text-body">Large size with large spacing</h2>
+        <h2 className="typography-body-7 text-text-body my-4 font-bold">Large size with large spacing</h2>
         <Form spacing="large">
           <FormSection>
             <FormChitChat>

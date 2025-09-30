@@ -1,17 +1,17 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv(
-  {
-    base: 'flex-1 bg-background-white-pale p-4 text-text-body',
-    variants: {
-      look: {
-        default: 'border border-border-muted-soft',
-        material: '',
-      },
-      isFocused: {
-        true: 'outline-none',
-      },
+export const styles = tv({
+  base: 'bg-background-white-pale text-text-body flex-1 rounded-b-2xl p-4',
+  variants: {
+    look: {
+      default: 'border-border-muted-soft border',
+      material: '',
+    },
+    isFocused: {
+      true: 'outline-none',
+    },
+    justify: {
+      false: 'rounded-tr-2xl',
     },
   },
-  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
-);
+});

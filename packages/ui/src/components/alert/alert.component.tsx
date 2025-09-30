@@ -3,11 +3,13 @@
 import { AnimatePresence, LazyMotion, m } from 'motion/react';
 import React, { useCallback, useEffect, useState, useMemo } from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { Button } from '../button/button.component.js';
 import { AlertIcon, CloseIcon, InfoIcon, LimitIcon, SuccessIcon, WarningIcon } from '../icon/index.js';
 
 import { styles as alertStyles } from './alert.styles.js';
-import { type AlertProps, type Look } from './alert.types.js';
+import { type AlertProps } from './alert.types.js';
 
 const loadAnimations = () => import('./alert.utils.js').then(res => res.default);
 
@@ -28,18 +30,24 @@ export function Alert({
 }: AlertProps) {
   const [open, setOpen] = useState(isOpen);
 
-  const iconMap: Record<Look, React.ElementType> = {
+  const iconMap = {
     info: InfoIcon,
     success: SuccessIcon,
     warning: WarningIcon,
     danger: AlertIcon,
     system: LimitIcon,
-  };
+  } as const;
 
+  const breakpoint = useBreakpoint();
+  const resolvedLook = resolveResponsiveVariant(look, breakpoint);
   // A11y: Only info look allows a custom icon
-  const Icon = look === 'info' && icon ? icon : iconMap[look];
-
-  const styles = alertStyles({ look, mode, dismissible, iconSize });
+  const Icon = resolvedLook === 'info' && icon ? icon : iconMap[resolvedLook || 'info'];
+  const styles = alertStyles({
+    look: resolvedLook,
+    mode: resolveResponsiveVariant(mode, breakpoint),
+    dismissible,
+    iconSize: resolveResponsiveVariant(iconSize, breakpoint),
+  });
 
   useEffect(() => {
     setOpen(isOpen);
@@ -51,11 +59,11 @@ export function Alert({
   }, [onClose]);
 
   const iconColor = useMemo(() => {
-    if (look === 'system') {
+    if (resolvedLook === 'system') {
       return 'system-error-dark';
     }
-    return look;
-  }, [look]);
+    return resolvedLook;
+  }, [resolvedLook]);
 
   return (
     <LazyMotion features={loadAnimations}>

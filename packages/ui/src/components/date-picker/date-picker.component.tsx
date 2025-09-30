@@ -1,12 +1,13 @@
 'use client';
 
 import { DateValue, getDayOfWeek, isWeekend } from '@internationalized/date';
+import { Breakpoint } from '@westpac/style-config/constants';
 import React, { useMemo, useRef } from 'react';
 import { useButton, useDatePicker, useLocale } from 'react-aria';
 import { useDatePickerState } from 'react-stately';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
-import { Breakpoint } from '../../tailwind/constants/index.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { Button } from '../button/index.js';
 import { CalendarIcon } from '../icon/index.js';
 
@@ -47,8 +48,13 @@ export function DatePicker({
   }, [disableDaysOfWeek, disableWeekends, isDateUnavailable, locale]);
 
   const state = useDatePickerState({ isDateUnavailable: enhancedIsDateUnavailable, ...props });
-  const styles = datePickerStyles({ size, isInvalid: state.isInvalid, isDisabled: props.isDisabled });
   const breakpoint = useBreakpoint();
+  const resolvedSize = resolveResponsiveVariant(size, breakpoint);
+  const styles = datePickerStyles({
+    size: resolvedSize,
+    isInvalid: state.isInvalid,
+    isDisabled: props.isDisabled,
+  });
   const ref = useRef(null);
 
   const { groupProps, labelProps, fieldProps, buttonProps, dialogProps, calendarProps } = useDatePicker(
@@ -90,7 +96,7 @@ export function DatePicker({
           look="faint"
           className={styles.button()}
           iconColor="muted"
-          size={size}
+          size={resolvedSize}
           iconAfter={CalendarIcon}
           {...newButtonProps}
           aria-labelledby={undefined}

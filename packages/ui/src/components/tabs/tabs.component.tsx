@@ -4,6 +4,9 @@ import React, { useRef } from 'react';
 import { AriaLinkOptions, Key, useTabList } from 'react-aria';
 import { Item, ItemProps, useTabListState } from 'react-stately';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { TabsTab, TabsTabPanel, TabsTabPanelProps } from './components/index.js';
 import { styles as tabStyles } from './tabs.styles.js';
 import { type TabsProps } from './tabs.types.js';
@@ -22,6 +25,9 @@ export function Tabs({
   defaultSelectedKey,
   ...props
 }: TabsProps) {
+  const breakpoint = useBreakpoint();
+  const resolvedOrientation = resolveResponsiveVariant(orientation, breakpoint);
+  const resolvedLook = resolveResponsiveVariant(look, breakpoint);
   const state = useTabListState({
     ...props,
     disabledKeys: disabledKeys as Iterable<Key>,
@@ -29,7 +35,11 @@ export function Tabs({
     defaultSelectedKey: defaultSelectedKey as Key,
     children,
   });
-  const styles = tabStyles({ orientation, look, sticky });
+  const styles = tabStyles({
+    orientation: resolvedOrientation,
+    look: resolvedLook,
+    sticky: resolveResponsiveVariant(sticky, breakpoint),
+  });
 
   const ref = useRef(null);
   const { tabListProps } = useTabList(
@@ -38,7 +48,7 @@ export function Tabs({
       disabledKeys: disabledKeys as Iterable<Key>,
       selectedKey: selectedKey as Key,
       defaultSelectedKey: defaultSelectedKey as Key,
-      orientation,
+      orientation: resolvedOrientation,
     },
     state,
     ref,
@@ -51,20 +61,21 @@ export function Tabs({
             key={item.key}
             item={item}
             state={state}
-            orientation={orientation}
+            orientation={resolvedOrientation}
             justify={justify}
             color={color}
-            look={look}
+            look={resolvedLook}
           />
         ))}
       </div>
 
       {[...state.collection].map(item => (
         <TabsTabPanel
-          look={look}
+          look={resolvedLook}
           key={item.key}
           id={item.key as string}
           state={state}
+          justify={justify}
           keepMounted={(item.props as TabsTabPanelProps)?.keepMounted}
         />
       ))}

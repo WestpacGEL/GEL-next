@@ -4,6 +4,7 @@ import { dirname, join } from 'node:path';
 import { mergeConfig } from 'vite';
 
 import type { StorybookConfig } from '@storybook/react-vite';
+import { get } from 'node:http';
 
 const require = createRequire(import.meta.url);
 
@@ -15,6 +16,7 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-docs'),
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-a11y'),
+    getAbsolutePath('@vueless/storybook-dark-mode'),
   ],
 
   framework: {

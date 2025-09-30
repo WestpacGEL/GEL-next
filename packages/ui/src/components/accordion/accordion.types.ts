@@ -2,10 +2,12 @@ import { HTMLAttributes } from 'react';
 import { DisclosureGroupProps } from 'react-stately';
 import { type VariantProps } from 'tailwind-variants';
 
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
 import { styles } from './accordion.styles.js';
 import { AccordionItemProps } from './components/index.js';
 
-type Variants = VariantProps<typeof styles>;
+export type Variants = VariantProps<typeof styles>;
 export type AccordionProps = {
   /**
    * Stretch the tab to fill the whole content
@@ -16,11 +18,11 @@ export type AccordionProps = {
    * The look of the accordion
    * @default soft
    */
-  look?: AccordionItemProps['look'];
+  look?: ResponsiveVariants<AccordionItemProps['look']>;
   /**
    * Whether the accordion is rounded
    * @default true
    */
-  rounded?: Variants['rounded'];
+  rounded?: ResponsiveVariants<Variants['rounded']>;
 } & Omit<DisclosureGroupProps, 'allowsMultipleExpanded'> &
   Omit<HTMLAttributes<HTMLDivElement>, 'color'>;

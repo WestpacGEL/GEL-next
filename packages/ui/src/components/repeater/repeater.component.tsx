@@ -4,7 +4,8 @@ import { AnimatePresence, LazyMotion, m } from 'motion/react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useFocusRing } from 'react-aria';
 
-import { generateID } from '../../utils/index.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { generateID, resolveResponsiveVariant } from '../../utils/index.js';
 import { Button } from '../button/index.js';
 import { AddCircleIcon, IconProps, RemoveCircleIcon } from '../icon/index.js';
 import { VisuallyHidden } from '../index.js';
@@ -27,6 +28,8 @@ export function Repeater({
   separator = false,
   className,
 }: RepeaterProps) {
+  const breakpoint = useBreakpoint();
+  const resolvedSeparator = resolveResponsiveVariant(separator, breakpoint);
   const [items, setItems] = useState([{ id: generateID() }]);
   const [action, setAction] = useState<Action>({ type: '', index: 0 });
   const [status, setStatus] = useState('');
@@ -61,8 +64,8 @@ export function Repeater({
     }
   }, [items.length, action]);
 
-  const Tag = separator ? 'ol' : 'ul';
-  const styles = repeaterStyles({ separator, isFocused });
+  const Tag = resolvedSeparator ? 'ol' : 'ul';
+  const styles = repeaterStyles({ separator: resolvedSeparator, isFocused });
 
   return (
     <div className={styles.base({ className })}>
@@ -86,7 +89,7 @@ export function Repeater({
                     className={styles.item()}
                     {...focusProps}
                   >
-                    {separator && <ItemIndex className={styles.itemIndex()}>{index + 1}.</ItemIndex>}
+                    {resolvedSeparator && <ItemIndex className={styles.itemIndex()}>{index + 1}.</ItemIndex>}
                     <div className={styles.content()}>{children}</div>
                     {items.length > 1 && (
                       <Button

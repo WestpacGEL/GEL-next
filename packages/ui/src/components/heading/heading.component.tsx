@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { styles } from './heading.styles.js';
 import { type HeadingProps } from './heading.types.js';
 
@@ -16,10 +19,19 @@ export function Heading({ className, tag, brandHeading, size, children, uppercas
     9: 'h6',
     10: 'h6',
   };
+  const breakpoint = useBreakpoint();
   const Tag = typeof size === 'number' && !tag ? (sizeToTag[size] as keyof HeadingProps['tag']) : tag || 'h6';
 
   return (
-    <Tag className={styles({ className, brandHeading, size, uppercase })} {...props}>
+    <Tag
+      className={styles({
+        className,
+        brandHeading: resolveResponsiveVariant(brandHeading, breakpoint),
+        size: resolveResponsiveVariant(size, breakpoint),
+        uppercase,
+      })}
+      {...props}
+    >
       {children}
     </Tag>
   );

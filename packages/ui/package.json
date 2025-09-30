@@ -16,12 +16,6 @@
     ".": {
       "default": "./dist/index.js"
     },
-    "./w3c-tokens/*": {
-      "default": "./dist/w3c-tokens/*.json"
-    },
-    "./flattened-tokens.json": {
-      "default": "./dist/flattened-tokens.json"
-    },
     "./component-type.json": {
       "default": "./dist/component-type.json"
     },
@@ -30,15 +24,6 @@
     },
     "./hook": {
       "default": "./dist/hook/index.js"
-    },
-    "./tailwind": {
-      "default": "./dist/tailwind/index.js"
-    },
-    "./themes": {
-      "default": "./dist/tailwind/themes/index.js"
-    },
-    "./themes-constants": {
-      "default": "./dist/tailwind/constants/index.js"
     },
     "./accordion": {
       "default": "./dist/components/accordion/index.js"
@@ -100,12 +85,6 @@
     "./form": {
       "default": "./dist/components/form/index.js"
     },
-    "./hint": {
-      "default": "./dist/components/hint/index.js"
-    },
-    "./label": {
-      "default": "./dist/components/label/index.js"
-    },
     "./grid": {
       "default": "./dist/components/grid/index.js"
     },
@@ -115,6 +94,9 @@
     "./heading": {
       "default": "./dist/components/heading/index.js"
     },
+    "./hint": {
+      "default": "./dist/components/hint/index.js"
+    },
     "./icon": {
       "default": "./dist/components/icon/index.js"
     },
@@ -123,6 +105,9 @@
     },
     "./input-group": {
       "default": "./dist/components/input-group/index.js"
+    },
+    "./label": {
+      "default": "./dist/components/label/index.js"
     },
     "./link": {
       "default": "./dist/components/link/index.js"
@@ -216,12 +201,12 @@
     "build:types": "tsc --project tsconfig.build.json",
     "build:esm": "swc ./src -d dist --no-swcrc --config-file .swcrc",
     "build:icons": "node --loader ts-node/esm ./utils/build-icons/index.ts",
-    "build:exports": "ts-node --esm ./utils/build-exports/index.ts && prettier --write package.json",
+    "build:exports": "node --loader ts-node/esm ./utils/build-exports/index.ts && prettier --write package.json",
     "build:watch": "pnpm clean && pnpm build:types && pnpm build:esm -w && pnpm build:css:all",
     "build:type-table": "node generate-component-types.cjs",
     "build:svg-zip": "node --loader ts-node/esm ./utils/build-svg-zip/index.ts",
-    "build:tokens": "node ./scripts/flatten-tokens-script.cjs && node ./scripts/transform-tokens-to-w3c.cjs",
-    "build": "pnpm clean && pnpm build:types && pnpm build:esm && pnpm build:css:all && pnpm build:type-table && pnpm build:tokens",
+    "build:style-config": "cd ../style-config && pnpm build",
+    "build": "pnpm clean && pnpm build:style-config && pnpm build:types && pnpm build:esm && pnpm build:css:all && pnpm build:type-table",
     "check-types": "tsc --noemit --emitDeclarationOnly false",
     "lint": "eslint \"./src/**/*.{ts,tsx,js,jsx}\"",
     "lint:fix": "eslint \"./src/**/*.{ts,tsx,js,jsx}\" --fix",
@@ -246,6 +231,7 @@
     "@storybook/react-vite": "9.0.17",
     "@swc/cli": "^0.1.62",
     "@swc/core": "^1.3.35",
+    "@tailwindcss/postcss": "~4.1.12",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^15.0.6",
     "@testing-library/user-event": "~14.4.3",
@@ -258,7 +244,9 @@
     "@types/testing-library__jest-dom": "^5.14.5",
     "@vitejs/plugin-react-swc": "^3.7.0",
     "@vitest/coverage-v8": "~3.2.4",
+    "@vueless/storybook-dark-mode": "~9.0.8",
     "@westpac/eslint-config": "workspace:~",
+    "@westpac/style-config": "workspace:~",
     "@westpac/test-config": "workspace:~",
     "@westpac/ts-config": "workspace:~",
     "chokidar": "^3.5.3",
@@ -269,7 +257,7 @@
     "glob": "~10.3.3",
     "jsdom": "^22.1.0",
     "plop": "~3.1.2",
-    "postcss": "~8.4.31",
+    "postcss": "~8.5.6",
     "postcss-cli": "~10.1.0",
     "prettier": "^3.2.5",
     "prop-types": "^15.8.1",
@@ -279,8 +267,8 @@
     "react-hook-form": "~7.62.0",
     "shx": "^0.3.4",
     "storybook": "9.0.17",
-    "tailwind-variants": "~0.2.1",
-    "tailwindcss": "~3.4.15",
+    "tailwind-variants": "0.2.1",
+    "tailwindcss": "~4.1.12",
     "tailwindcss-themer": "~3.1.0",
     "ts-node": "~10.9.1",
     "typescript": "^5.5.4",
@@ -297,7 +285,8 @@
     "lodash.throttle": "~4.1.1",
     "motion": "~12.23.12",
     "react-aria": "~3.41.1",
-    "react-stately": "~3.39.0"
+    "react-stately": "~3.39.0",
+    "zustand": "~4.5.4"
   },
   "overrides": {
     "react-aria": {
@@ -307,8 +296,7 @@
   "peerDependencies": {
     "@internationalized/date": "~3.8.2",
     "react": ">=18.2.0",
-    "tailwind-variants": "~0.2.1",
-    "tailwindcss": "~3.4.15",
+    "tailwindcss": "~4.1.12",
     "tailwindcss-themer": "~3.1.0"
   }
 }

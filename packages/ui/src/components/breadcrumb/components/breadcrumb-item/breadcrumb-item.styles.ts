@@ -1,25 +1,22 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv(
-  {
-    base: 'text-[0.8125rem] text-text-body',
-    variants: {
-      isCurrent: {
-        true: 'text-text-muted',
-        false: '',
-      },
-      isDisabled: {
-        true: 'text-text-muted',
-        false: '',
-      },
+export const styles = tv({
+  base: 'text-text-body text-[0.8125rem]',
+  variants: {
+    isCurrent: {
+      true: 'text-text-muted',
+      false: '',
     },
-    compoundVariants: [
-      {
-        isCurrent: false,
-        isDisabled: false,
-        className: 'cursor-pointer hover:underline',
-      },
-    ],
+    isDisabled: {
+      true: 'text-text-muted',
+      false: '',
+    },
   },
-  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
-);
+  compoundVariants: [
+    {
+      isCurrent: false,
+      isDisabled: false,
+      className: 'cursor-pointer hover:underline',
+    },
+  ],
+});

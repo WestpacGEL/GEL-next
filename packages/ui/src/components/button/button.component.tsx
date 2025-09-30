@@ -3,6 +3,9 @@
 import React, { Ref, forwardRef, useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { styles as buttonStyles } from './button.styles.js';
 import { type ButtonProps, ButtonRef } from './button.types.js';
 import { getIconSize } from './button.utils.js';
@@ -28,12 +31,13 @@ function BaseButton(
 ) {
   const { isFocusVisible, focusProps } = useFocusRing();
   const btnIconSize = useMemo(() => iconSize || getIconSize(size), [iconSize, size]);
+  const breakpoint = useBreakpoint();
   const styles = buttonStyles({
-    size,
-    look,
-    soft,
-    block,
-    justify,
+    size: resolveResponsiveVariant(size, breakpoint),
+    look: resolveResponsiveVariant(look, breakpoint),
+    soft: resolveResponsiveVariant(soft, breakpoint),
+    block: resolveResponsiveVariant(block, breakpoint),
+    justify: resolveResponsiveVariant(justify, breakpoint),
     isFocusVisible,
     hasChildren: !!children,
   });

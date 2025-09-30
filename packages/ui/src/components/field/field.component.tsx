@@ -5,7 +5,6 @@ import { useField } from 'react-aria';
 
 import { ErrorMessage, Hint, Label } from '../index.js';
 
-import { styles } from './field.styles.js';
 import { type FieldProps } from './field.types.js';
 
 export function Field({
@@ -36,7 +35,7 @@ export function Field({
   }, [children, fieldProps]);
 
   return (
-    <Tag className={styles({ className })} {...props}>
+    <Tag className={className} {...props}>
       <Label size={labelSize} {...labelProps}>
         {label}
       </Label>

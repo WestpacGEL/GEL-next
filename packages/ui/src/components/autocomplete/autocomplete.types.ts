@@ -3,7 +3,8 @@ import { type AriaLabelingProps } from '@react-types/shared';
 import { type ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
-import { HintProps, InputProps } from '../index.js';
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
+import { HintProps } from '../index.js';
 
 import { styles } from './autocomplete.styles.js';
 import { AutocompletePopoverProps } from './components/index.js';
@@ -58,10 +59,10 @@ export type AutocompleteProps<T extends object> = {
   /**
    * Size of autocomplete
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
   /**
    * Width of autocomplete
    */
-  width?: InputProps['width'];
+  width?: ResponsiveVariants<Variants['width']>;
 } & ComboBoxProps<T> &
   AriaLabelingProps;

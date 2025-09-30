@@ -3,6 +3,9 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { styles } from './textarea.styles.js';
 import { type TextareaProps } from './textarea.types.js';
 
@@ -11,10 +14,18 @@ function BaseTextarea(
   ref: ForwardedRef<HTMLTextAreaElement>,
 ) {
   const { isFocused, isFocusVisible, focusProps } = useFocusRing();
+  const breakpoint = useBreakpoint();
   return (
     <textarea
       ref={ref}
-      className={styles({ className, size, invalid, isFocused, isFocusVisible, width })}
+      className={styles({
+        className,
+        size: resolveResponsiveVariant(size, breakpoint),
+        invalid,
+        isFocused,
+        isFocusVisible,
+        width: resolveResponsiveVariant(width, breakpoint),
+      })}
       {...mergeProps(props, focusProps)}
     />
   );

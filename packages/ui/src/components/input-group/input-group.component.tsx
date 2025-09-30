@@ -11,6 +11,8 @@ import React, {
   useMemo,
 } from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { ErrorMessage, Hint, Label } from '../index.js';
 
 import { InputGroupSupportingText } from './components/index.js';
@@ -36,6 +38,9 @@ export function InputGroup({
 }: InputGroupProps) {
   const _id = useId();
   const id = useMemo(() => instanceId || `gel-field-${_id}`, [_id, instanceId]);
+  const breakpoint = useBreakpoint();
+  const resolvedWidth = resolveResponsiveVariant(width, breakpoint);
+  const resolvedSize = resolveResponsiveVariant(size, breakpoint);
 
   const ariaDescribedByValue = useMemo(() => {
     const arr = [
@@ -86,14 +91,14 @@ export function InputGroup({
     return Children.map<ReactNode, ReactNode>(children, child => {
       if (isValidElement(child)) {
         return cloneElement(child, {
-          size,
+          size: resolvedSize,
           id,
           'aria-describedby': ariaDescribedByValue,
-          ...(width !== 'full' ? { width: width } : {}),
+          ...(resolvedWidth !== 'full' ? { width: resolvedWidth } : {}),
         } as Partial<unknown> & Attributes);
       }
     });
-  }, [children, size, id, ariaDescribedByValue, width]);
+  }, [children, resolvedSize, id, ariaDescribedByValue, resolvedWidth]);
 
   const isFieldset = useMemo(() => Tag === 'fieldset', [Tag]);
 
@@ -102,7 +107,7 @@ export function InputGroup({
     after: !!after,
     afterInset,
     beforeInset,
-    width: width,
+    width: resolvedWidth,
   });
 
   return (
@@ -116,13 +121,13 @@ export function InputGroup({
       {errorMessage && <ErrorMessage id={`${id}-error`} message={errorMessage} />}
       <div className={styles.input()}>
         {before && (
-          <InputGroupAddOn position="before" size={size} inset={beforeInset} icon={beforeIcon} id={id}>
+          <InputGroupAddOn position="before" size={resolvedSize} inset={beforeInset} icon={beforeIcon} id={id}>
             {beforeElement}
           </InputGroupAddOn>
         )}
         {renderChildren()}
         {after && (
-          <InputGroupAddOn position="after" size={size} inset={afterInset} icon={afterIcon} id={id}>
+          <InputGroupAddOn position="after" size={resolvedSize} inset={afterInset} icon={afterIcon} id={id}>
             {afterElement}
           </InputGroupAddOn>
         )}

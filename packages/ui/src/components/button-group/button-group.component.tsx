@@ -5,6 +5,8 @@ import { useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
 import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { ButtonGroupButton, ErrorMessage, Hint, Label } from '../index.js';
 
 import { styles as buttonGroupStyles } from './button-group.styles.js';
@@ -93,6 +95,7 @@ export function ButtonGroup({
     },
     state,
   );
+  const breakpoint = useBreakpoint();
   const styles = buttonGroupStyles({});
 
   return (
@@ -101,7 +104,14 @@ export function ButtonGroup({
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       <div className={styles.buttonWrapper()}>
-        <ButtonGroupContext.Provider value={{ state, size, look, block }}>
+        <ButtonGroupContext.Provider
+          value={{
+            state,
+            size,
+            look: resolveResponsiveVariant(look, breakpoint),
+            block: resolveResponsiveVariant(block, breakpoint),
+          }}
+        >
           {buttons.map((button, index) => (
             <ButtonGroupButton key={index} className="group/buttons" {...button} />
           ))}

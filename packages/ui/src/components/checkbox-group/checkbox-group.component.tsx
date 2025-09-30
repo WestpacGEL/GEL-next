@@ -5,6 +5,8 @@ import { useCheckboxGroup, useFocusRing } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
 import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
 import { CheckboxGroupCheckbox, ErrorMessage, Hint, Label } from '../index.js';
@@ -93,7 +95,8 @@ export function CheckboxGroup({
   const [hiddenOptions, setHiddenOptions] = useState<boolean>(showAmount > 0);
   const firstNewCheckboxRef = useRef<HTMLLabelElement>(null);
   const revealAmount = checkboxes && checkboxes.length - showAmount;
-  const styles = checkboxStyles({ orientation, isFocusVisible });
+  const breakpoint = useBreakpoint();
+  const styles = checkboxStyles({ orientation: resolveResponsiveVariant(orientation, breakpoint), isFocusVisible });
   const panelId = useId();
   const childrenToRender = useMemo(() => {
     const newChildren = checkboxes.map((checkbox, index) => (
@@ -115,7 +118,13 @@ export function CheckboxGroup({
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
       {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
       <div className={styles.itemWrapper()} id={panelId}>
-        <CheckboxGroupContext.Provider value={{ state, orientation, size }}>
+        <CheckboxGroupContext.Provider
+          value={{
+            state,
+            orientation: resolveResponsiveVariant(orientation, breakpoint) || 'vertical',
+            size: resolveResponsiveVariant(size, breakpoint) || 'medium',
+          }}
+        >
           {childrenToRender}
         </CheckboxGroupContext.Provider>
         {hiddenOptions && (

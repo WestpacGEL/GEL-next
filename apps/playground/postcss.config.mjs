@@ -1,8 +1,3 @@
-/** @type {import('postcss-load-config').Config} */
-const config = {
-  plugins: {
-    tailwindcss: {},
-  },
-};
+import { postcssConfig } from '@westpac/tailwind-config/postcss';
 
-export default config;
+export default postcssConfig;

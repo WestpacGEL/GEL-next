@@ -1,0 +1,54 @@
+@layer theme {
+  :root, 
+  :host {
+    --border-radius-none: 0px;
+    --border-radius-3: 3px;
+    --border-radius-4: 4px;
+    --border-radius-5: 5px;
+    --border-radius-6: 6px;
+    --border-radius-8: 8px;
+    --border-radius-12: 12px;
+    --border-radius-16: 16px;
+    --border-radius-24: 24px;
+    --border-radius-full: 999px;
+  }
+
+  /* Token definitions  */
+  [data-brand] {
+    --rounded-none: var(--border-radius-none);
+    --rounded-sm: var(--border-radius-sm);
+    --rounded-md: var(--border-radius-md);
+    --rounded-lg: var(--border-radius-lg);
+    --rounded-xl: var(--border-radius-xl);
+    --rounded-2xl: var(--border-radius-2xl);
+    --rounded-3xl: var(--border-radius-3xl);
+    --rounded-4xl: var(--border-radius-4xl);
+    --rounded-5xl: var(--border-radius-5xl);
+    --rounded-full: var(--border-radius-full);
+
+    @variant dark {
+      --rounded-none: var(--border-radius-none);
+      --rounded-sm: var(--border-radius-sm);
+      --rounded-md: var(--border-radius-md);
+      --rounded-lg: var(--border-radius-lg);
+      --rounded-xl: var(--border-radius-xl);
+      --rounded-2xl: var(--border-radius-2xl);
+      --rounded-3xl: var(--border-radius-3xl);
+      --rounded-4xl: var(--border-radius-4xl);
+      --rounded-5xl: var(--border-radius-5xl);
+      --rounded-full: var(--border-radius-full);
+    }
+  }
+}
+
+/* Tailwind theme variables  */
+@theme inline static {
+  --radius-sm: var(--rounded-sm);
+  --radius-md: var(--rounded-md);
+  --radius-lg: var(--rounded-lg);
+  --radius-xl: var(--rounded-xl);
+  --radius-2xl: var(--rounded-2xl);
+  --radius-3xl: var(--rounded-3xl);
+  --radius-4xl: var(--rounded-4xl);
+  --radius-5xl: var(--rounded-5xl);
+}

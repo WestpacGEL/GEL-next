@@ -1,13 +1,10 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv(
-  {
-    slots: { base: 'typography-body-10 bg-background-white-pale p-2 text-left text-text-muted' },
-    variants: {
-      bordered: {
-        true: { base: 'border border-border-muted-soft' },
-      },
+export const styles = tv({
+  slots: { base: 'typography-body-10 bg-background-white-pale text-text-muted p-2 text-left' },
+  variants: {
+    bordered: {
+      true: { base: 'border-border-muted-soft border' },
     },
   },
-  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
-);
+});

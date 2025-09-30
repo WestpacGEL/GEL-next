@@ -1,5 +1,7 @@
 import { HTMLAttributes } from 'react';
 
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
 export type RepeaterProps = {
   /**
    * Text for add button
@@ -16,5 +18,5 @@ export type RepeaterProps = {
   /**
    * Enable separator version
    */
-  separator?: boolean;
+  separator?: ResponsiveVariants<boolean>;
 } & HTMLAttributes<Element>;

@@ -1,4 +1,5 @@
 import { type Meta, StoryFn } from '@storybook/react-vite';
+import { SPACING_UNIT } from '@westpac/style-config/constants';
 import { clsx } from 'clsx';
 
 import {
@@ -12,7 +13,6 @@ import {
   TableHeaderRow,
   TableRow,
 } from '../../components/index.js';
-import { SPACING_UNIT } from '../../tailwind/constants/index.js';
 
 const meta: Meta = {
   title: 'Foundation/Spacing',
@@ -85,7 +85,7 @@ const SPACING_SCALE = [
   { value: 30, className: 'pr-30' },
 ];
 const VARIATION_MARGIN_PADDING = ['', 'x', 'y', 't', 'r', 'b', 'l'];
-const SPACING_DEFAULT_CLASSES = 'h-3 w-0 bg-primary';
+const SPACING_DEFAULT_CLASSES = 'h-3 w-0 bg-surface-primary';
 
 /**
  * Margin scale

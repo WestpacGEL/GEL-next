@@ -12,18 +12,24 @@ const meta: Meta = {
 export default meta;
 
 /**
- * Providing themeing is a matter of wrapping with HTML or div with data-theme="theme-name", see code of story for example
+ * Providing brand theming is a matter of wrapping with HTML or div with data-brand="theme-name" and for light/dark mode with data-theme="light|dark" see code of story for example
  */
 export const Theme = () => (
   /**
-   * Valid theme tokens:
-   * bom
-   * bsa
-   * btfg
-   * rams
-   * stg
-   * wbc
-   * wbg
+   * Valid brand tokens:
+   * - bom
+   * - bsa
+   * - btfg
+   * - rams
+   * - stg
+   * - wbc
+   * - wbg
+   *
+   * Valid theme tokens
+   * - light
+   * - dark
    */
-  <div data-theme="wbc">Click on show code</div>
+  <div data-brand="wbc" data-theme="light">
+    Click on show code
+  </div>
 );

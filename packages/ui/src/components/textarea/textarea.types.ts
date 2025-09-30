@@ -1,6 +1,8 @@
 import { TextareaHTMLAttributes } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
 import { styles } from './textarea.styles.js';
 
 type Variants = VariantProps<typeof styles>;
@@ -13,9 +15,9 @@ export type TextareaProps = {
   /**
    * Size of text area
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
   /**
    * width of text area
    */
-  width?: Variants['width'];
+  width?: ResponsiveVariants<Variants['width']>;
 } & Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'>;

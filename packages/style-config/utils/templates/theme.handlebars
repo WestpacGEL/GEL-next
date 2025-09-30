@@ -1,0 +1,23 @@
+@custom-variant {{brand}} (&:where([data-brand={{brand}}], [data-brand={{brand}}] *));
+
+@layer theme {
+    [data-brand="{{brand}}"] {
+      /* Primitive Colors */
+      {{#each primitiveColors}}
+      --{{@key}}: {{this}};
+      {{/each}}
+
+      /* Theme Colors */
+      {{#each themeColors}}
+      --{{@key}}: {{this}};
+      {{/each}}
+
+      /* Theme Border Radius */
+      {{#each borderRadius}}
+      --{{@key}}: {{this}};
+      {{/each}}
+
+      /* Font Family */
+      --font-brand: {{fontFamily}};
+    }
+}

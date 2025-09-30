@@ -1,6 +1,5 @@
+import { Breakpoint } from '@westpac/style-config/constants';
 import { ReactNode } from 'react';
-
-import { Breakpoint } from '../../tailwind/constants/breakpoints.js';
 
 import { PaginationItemProps } from './components/index.js';
 import { PaginationPageProps } from './components/pagination-pages/pagination-pages.types.js';

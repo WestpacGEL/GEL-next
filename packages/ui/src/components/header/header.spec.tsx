@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { BrandKey } from '../../tailwind/index.js';
+import { BrandKey } from '../../types/brand-types.js';
 
 import { Header } from './header.component.js';
 

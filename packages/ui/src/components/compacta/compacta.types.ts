@@ -10,10 +10,3 @@ export type CompactaProps = {
    */
   addText?: string;
 } & HTMLAttributes<Element>;
-
-type ContentProps = {
-  id: string;
-  setPrimaryTitle: (title: string) => unknown;
-  setSecondaryTitle: (title: string) => unknown;
-  setTertiaryTitle: (title: string) => unknown;
-};
