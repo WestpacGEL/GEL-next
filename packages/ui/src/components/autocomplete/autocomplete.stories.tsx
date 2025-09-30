@@ -300,6 +300,7 @@ export const AsyncForceOpen = () => {
           void fetchAnimals(val);
         }}
         label="Choose an animal"
+        items={items}
       >
         {(item: { id: string; name: string }) => <AutocompleteItem key={item.id}>{item.name}</AutocompleteItem>}
       </Autocomplete>
@@ -348,6 +349,7 @@ export const AsyncForceClosed = () => {
           void fetchAnimals(val);
         }}
         label="Choose an animal"
+        items={items}
       >
         {(item: { id: string; name: string }) => <AutocompleteItem key={item.id}>{item.name}</AutocompleteItem>}
       </Autocomplete>
