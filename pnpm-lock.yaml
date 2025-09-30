@@ -99,6 +99,9 @@ importers:
 
   apps/protoform:
     dependencies:
+      '@westpac/style-config':
+        specifier: workspace:~
+        version: link:../../packages/style-config
       '@westpac/ui':
         specifier: workspace:~
         version: link:../../packages/ui

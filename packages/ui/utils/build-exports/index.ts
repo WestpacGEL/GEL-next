@@ -14,6 +14,9 @@ const exportMap: Record<string, { default: string }> = {
   './hook': {
     default: './dist/hook/index.js',
   },
+  './types': {
+    default: './dist/types/index.js',
+  },
 };
 
 const main = async () => {

@@ -1,8 +1,8 @@
 /* eslint-disable sonarjs/function-return-type */
 'use client';
+import { BREAKPOINTS } from '@westpac/style-config/constants';
 import { Button, ProgressRope } from '@westpac/ui';
 import { CloseIcon, MoreVertIcon } from '@westpac/ui/icon';
-import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { clsx } from 'clsx';
 import throttle from 'lodash.throttle';
 import { usePathname } from 'next/navigation';
@@ -84,7 +84,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
       <>
         <div
           className={clsx(
-            'sticky top-0 z-10 flex h-9 items-center justify-between bg-white px-2 py-3  after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] xsl:px-4 sm:px-5 md:hidden',
+            'xsl:px-4 sticky top-0 z-10 flex h-9 items-center justify-between bg-white px-2  py-3 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] sm:px-5 md:hidden',
             { 'after:opacity-100': scrolled },
           )}
         >
@@ -105,7 +105,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
           <>
             <div
               className={clsx(
-                'fixed inset-y-0 w-[300px] overflow-auto overscroll-contain border-l border-border bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-md:z-[100] md:mt-11',
+                'border-border fixed inset-y-0 w-[300px] overflow-auto overscroll-contain border-l bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-md:z-[100] md:mt-11',
                 {
                   'max-md:translate-x-full': !open,
                   'ml-[1620px]': isMaxWidth,
