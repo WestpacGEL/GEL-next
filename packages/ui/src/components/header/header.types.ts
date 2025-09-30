@@ -1,9 +1,11 @@
 import { Property } from 'csstype';
 import { HTMLAttributeAnchorTarget, HTMLAttributes } from 'react';
-
-import { BrandKey } from '../../tailwind/index.js';
-import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 import { VariantProps } from 'tailwind-variants';
+
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
+import { BrandKey } from '../../types/brand-types.js';
+
 import { styles } from './header.styles.js';
 
 type Variant = VariantProps<typeof styles>;

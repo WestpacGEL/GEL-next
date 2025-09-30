@@ -34,25 +34,22 @@ export const DefaultStory: Story = {
   render: ({ brand: _, ...rest }, { globals: { theme } }) => {
     const brand = theme ? theme.toLowerCase() : 'wbc';
     return (
-      <>
-        ``
-        <Footer brand={brand === 'btfg' ? 'wbc' : brand} hideLogo {...rest}>
-          <div className="relative">
-            <div className="float-left flex-none">
-              <SecurityIcon size="small" className="float-left mr-1 shrink-0" color="muted" />
-            </div>
-            <div className="flex">
-              <p className="relative flex-1 text-text-muted">
-                Our site and your transactions are secure. You can read our{' '}
-                <Link href="#" type="inline">
-                  security information
-                </Link>
-                . © 2023 Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714.
-              </p>
-            </div>
+      <Footer brand={brand === 'btfg' ? 'wbc' : brand} hideLogo {...rest}>
+        <div className="relative">
+          <div className="float-left flex-none">
+            <SecurityIcon size="small" className="float-left mr-1 shrink-0" color="muted" />
           </div>
-        </Footer>
-      </>
+          <div className="flex">
+            <p className="text-text-muted relative flex-1">
+              Our site and your transactions are secure. You can read our{' '}
+              <Link href="#" type="inline">
+                security information
+              </Link>
+              . © 2023 Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian credit licence 233714.
+            </p>
+          </div>
+        </div>
+      </Footer>
     );
   },
 };

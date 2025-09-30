@@ -1,9 +1,8 @@
 'use client';
 
+import { Breakpoint, BREAKPOINTS } from '@westpac/style-config/constants';
 import { useEffect } from 'react';
 import { create } from 'zustand';
-
-import { BREAKPOINTS, Breakpoint } from '../tailwind/constants/index.js';
 
 function checkBreakpoint(): Breakpoint | 'initial' {
   if (typeof window === 'undefined') {
@@ -85,6 +84,7 @@ export function useBreakpoint() {
   const { breakpoint, ensureInitialized: initIfNotInitialised } = useThemeStore();
   useEffect(() => {
     initIfNotInitialised();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return breakpoint;

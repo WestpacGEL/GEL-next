@@ -11,14 +11,14 @@ import React, {
   useMemo,
 } from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { ErrorMessage, Hint, Label } from '../index.js';
 
 import { InputGroupSupportingText } from './components/index.js';
 import { InputGroupAddOn } from './components/input-group-add-ons/input-group-add-ons.component.js';
 import { styles as inputGroupStyles } from './input-group.styles.js';
 import { type InputGroupProps } from './input-group.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function InputGroup({
   label,

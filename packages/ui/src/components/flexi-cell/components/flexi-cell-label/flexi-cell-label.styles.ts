@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'typography-body-9 mb-0 content-start font-medium text-text-body transition-colors',
+  base: 'typography-body-9 text-text-body mb-0 content-start font-medium transition-colors',
   variants: {
     truncateText: {
       true: 'truncate whitespace-nowrap',

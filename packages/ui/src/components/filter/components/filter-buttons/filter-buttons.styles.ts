@@ -4,7 +4,7 @@ export const styles = tv({
   slots: {
     base: 'relative flex justify-start',
     buttonList: 'flex w-full touch-pan-x gap-1 overflow-x-auto overflow-y-visible whitespace-nowrap',
-    scrollButton: 'absolute rounded-none from-surface-mono to-[transparent] contrast-more:bg-surface-mono',
+    scrollButton: 'from-surface-mono contrast-more:bg-surface-mono absolute rounded-none to-[transparent]',
   },
   variants: {
     position: {
@@ -13,7 +13,7 @@ export const styles = tv({
       },
       right: {
         scrollButton:
-          '-right-1 bg-[linear-gradient(to_left,_var(--tw-gradient-from)_66%,_var(--tw-gradient-to))] bg-gradient-to-l pr-0',
+          '-right-1 bg-gradient-to-l bg-[linear-gradient(to_left,_var(--tw-gradient-from)_66%,_var(--tw-gradient-to))] pr-0',
       },
     },
     hidden: {

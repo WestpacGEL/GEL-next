@@ -5,12 +5,12 @@ import { useRadioGroup } from 'react-aria';
 import { useRadioGroupState } from 'react-stately';
 
 import { FUNCTION_NOT_IMPLEMENTED } from '../../../../constants/message.js';
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { styles } from './selector-radio-group.styles.js';
 import { type SelectorRadioGroupContextState, type SelectorRadioGroupProps } from './selector-radio-group.types.js';
-import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 export const SelectorRadioGroupContext = createContext<SelectorRadioGroupContextState>({
   orientation: 'vertical',

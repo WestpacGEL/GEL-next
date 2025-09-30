@@ -4,6 +4,7 @@ import { VariantProps } from 'tailwind-variants';
 import { BadgeProps } from '../index.js';
 
 import { styles } from './flexi-cell.styles.js';
+
 import type { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;

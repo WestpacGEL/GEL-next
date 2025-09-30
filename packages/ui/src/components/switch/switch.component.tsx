@@ -4,10 +4,11 @@ import React, { useId, useRef } from 'react';
 import { VisuallyHidden, mergeProps, useCheckbox, useFocusRing } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { styles as switchStyles } from './switch.styles.js';
 import { type SwitchProps } from './switch.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function Switch({
   className,

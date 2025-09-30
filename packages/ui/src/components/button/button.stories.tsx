@@ -1,10 +1,10 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { fn, expect } from 'storybook/test';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 import { ArrowLeftIcon, ArrowRightIcon, BurgerIcon } from '../icon/index.js';
 
 import { Button } from './button.component.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',

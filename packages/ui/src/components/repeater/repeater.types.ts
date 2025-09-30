@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react';
+
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 export type RepeaterProps = {

@@ -1,5 +1,6 @@
 import { tv } from 'tailwind-variants';
 
+// eslint-disable-next-line tailwindcss/no-custom-classname
 export const styles = tv({
   slots: {
     base: 'group',
@@ -15,7 +16,7 @@ export const styles = tv({
       },
       lego: {
         itemHeader:
-          'border-border-muted-soft border-t-border-muted-soft bg-surface-muted-faint !shadow-border-muted-soft border-l-[0.375rem] shadow-[inset_0_1px_0_var(--tw-shadow-color)] transition-colors',
+          'border-border-muted-soft bg-surface-muted-faint !shadow-border mb-[-1px] border-r border-l-[0.375rem] shadow-[inset_0px_1px_0_0_var(--border-muted-soft),inset_0_-1px_0_0_var(--border-muted-soft)] transition-colors',
       },
     },
     isFirst: {
@@ -62,11 +63,7 @@ export const styles = tv({
       isOpen: true,
       className: 'border-l-border-hero',
     },
-    {
-      slots: ['content'],
-      look: 'lego',
-      className: '!shadow-border-muted-soft shadow-[inset_0.375rem_0_0_var(--tw-shadow-color)]',
-    },
+    { slots: ['content'], isOpen: true, look: 'lego', className: 'mt-[1px] border-t-0 border-r border-l-[0.375rem]' },
     {
       slots: ['itemHeader'],
       isOpen: true,

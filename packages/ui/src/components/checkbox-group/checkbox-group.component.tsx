@@ -5,14 +5,14 @@ import { useCheckboxGroup, useFocusRing } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
 import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { Button } from '../button/index.js';
 import { ExpandMoreIcon } from '../icon/index.js';
 import { CheckboxGroupCheckbox, ErrorMessage, Hint, Label } from '../index.js';
 
 import { styles as checkboxStyles } from './checkbox-group.styles.js';
 import { type CheckboxGroupContextState, type CheckboxGroupProps } from './checkbox-group.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
   orientation: 'vertical',

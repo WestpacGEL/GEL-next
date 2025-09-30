@@ -2,9 +2,9 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    input: 'form-control flex items-center border-border-muted-strong disabled:form-control-disabled',
+    input: 'form-control border-border-muted-strong disabled:form-control-disabled flex items-center',
     button:
-      'flex h-auto items-center justify-center rounded-l-none border-y-0 border-l border-r-0 border-l-border-muted-strong bg-surface-muted-pale',
+      'border-l-border-muted-strong bg-surface-muted-pale flex h-auto items-center justify-center rounded-l-none border-y-0 border-r-0 border-l',
   },
   variants: {
     size: {

@@ -1,8 +1,9 @@
 import { HTMLAttributes } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
-import { styles } from './grid-item.styles.js';
 import { ResponsiveVariants } from '../../../../types/responsive-variants.types.js';
+
+import { styles } from './grid-item.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 

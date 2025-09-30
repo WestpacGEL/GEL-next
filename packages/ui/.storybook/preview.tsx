@@ -4,17 +4,32 @@ import * as React from 'react';
 import { useEffect } from 'react';
 
 import type { Decorator, Preview } from '@storybook/react-vite';
+import { useDarkMode } from '@vueless/storybook-dark-mode';
 
 import './global.css';
 
 const withThemeProvider: Decorator = (Story, context) => {
   const theme = context.globals?.theme || 'WBC';
+  const isDarkMode = useDarkMode();
   // workaround for modal
   useEffect(() => {
     if (typeof window !== 'undefined') {
       document.querySelector('html')?.setAttribute('data-brand', theme.toLowerCase());
     }
   }, [theme]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      document.querySelector('html')?.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+    }
+  }, [isDarkMode]);
+
+  // Setting default background color of preview iframe body
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      document.body.classList.add('bg-surface-mono');
+    }
+  }, []);
   // Note: Not using padding for grid demos as it affects the proper grid visuals i.e. breakpoints, paddings, margins etc.
   return (
     <div className={clsx(!(context.componentId === 'foundation-grid') && 'p-4 bg-surface-mono')}>
@@ -97,6 +112,13 @@ const preview: Preview = {
     layout: 'fullscreen',
     viewport: {
       options: VIEWPORTS,
+    },
+    backgrounds: {
+      disable: true,
+    },
+    darkMode: {
+      current: 'light',
+      stylePreview: true,
     },
   },
   decorators: [withThemeProvider],

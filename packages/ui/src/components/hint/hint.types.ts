@@ -1,6 +1,8 @@
 import { HTMLAttributes } from 'react';
 import { VariantProps } from 'tailwind-variants';
+
 import { styles } from './hint.styles.js';
+
 import type { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 
 type Variant = VariantProps<typeof styles>;

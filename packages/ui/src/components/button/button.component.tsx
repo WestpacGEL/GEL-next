@@ -3,11 +3,12 @@
 import React, { Ref, forwardRef, useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { styles as buttonStyles } from './button.styles.js';
 import { type ButtonProps, ButtonRef } from './button.types.js';
 import { getIconSize } from './button.utils.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 
 function BaseButton(
   {

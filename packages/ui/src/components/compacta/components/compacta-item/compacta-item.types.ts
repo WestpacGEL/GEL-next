@@ -48,10 +48,3 @@ export type CompactaItemProps<T = HTMLElement> = {
   expandOnMount?: boolean;
 } & DisclosureProps &
   Omit<HTMLAttributes<Element>, 'children' | 'title'>;
-
-type ContentProps = {
-  id: string;
-  setPrimaryTitle: (title: string) => unknown;
-  setSecondaryTitle: (title: string) => unknown;
-  setTertiaryTitle: (title: string) => unknown;
-};

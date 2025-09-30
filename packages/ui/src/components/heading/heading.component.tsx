@@ -1,9 +1,10 @@
 import React from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { styles } from './heading.styles.js';
 import { type HeadingProps } from './heading.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function Heading({ className, tag, brandHeading, size, children, uppercase, ...props }: HeadingProps) {
   const sizeToTag = {
