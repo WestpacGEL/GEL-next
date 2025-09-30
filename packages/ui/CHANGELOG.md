@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.50.3
+
+### Patch Changes
+
+- cb3e3ab: add open option for autocomplete component
+
 ## 0.50.2
 
 ### Patch Changes
