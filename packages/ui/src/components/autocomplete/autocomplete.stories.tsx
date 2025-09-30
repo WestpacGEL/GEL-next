@@ -258,7 +258,8 @@ export const AsyncDynamicCollections = () => {
     if (items.length > 0) {
       state.open(null, 'manual'); // 👈 force open
     }
-  }, [items, state]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [items]);
 
   const fetchAnimals = async (query: string) => {
     // fake async fetch
