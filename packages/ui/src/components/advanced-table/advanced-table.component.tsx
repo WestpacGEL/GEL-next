@@ -4,7 +4,6 @@ import {
   useReactTable,
   getExpandedRowModel,
   getPaginationRowModel,
-  ColumnPinningState,
   getGroupedRowModel,
   getFilteredRowModel,
 } from '@tanstack/react-table';
@@ -21,29 +20,29 @@ import { columnGenerator } from './utils/column-generator.js';
 import { useVirtualizedColumns } from './utils/column-virtualizer.hook.js';
 
 export const AdvancedTableContext = createContext<{
-  resizable?: boolean;
-  columnPinning?: ColumnPinningState;
   tableRef?: React.RefObject<HTMLDivElement>;
-  selectable?: boolean;
+  enableRowSelection?: boolean;
   scrollableRows?: boolean;
   scrollableColumns?: boolean;
-}>({ resizable: false, columnPinning: undefined });
+}>({});
 
 export function AdvancedTable<T>({
   data,
   columns,
-  groupable = false,
-  resizable,
-  selectable,
+  enableColumnFilter = false,
+  enableColumnPinning = false,
+  enableGrouping = false,
+  enableResizing = false,
+  enableRowSelection = false,
+  enableSorting = false,
   scrollableColumns,
   scrollableRows,
-  sortable = false,
   subRowKey,
   fixedHeight = '500px',
   fixedWidth = '700px',
   tableOptions,
 }: AdvancedTableProps<T>) {
-  const [localData] = useState(() => [...data]);
+  // const [localData] = useState(() => [...data]);
   const [paginationWidth, setPaginationWidth] = useState<number | undefined>(undefined);
 
   const outerTableRef = useRef<HTMLTableElement>(null);
@@ -54,28 +53,30 @@ export function AdvancedTable<T>({
     setPaginationWidth(paginationWidth);
   }, []);
 
-  const finalColumns = columnGenerator<T>({
-    sortable,
-    groupable,
-    columns,
-  });
+  const finalColumns = columnGenerator<T>({ columns });
 
   const table = useReactTable<T>({
-    data: localData,
+    data,
     columns: finalColumns,
     columnResizeMode: 'onChange',
     columnResizeDirection: 'ltr',
     initialState: {
       columnPinning: {
-        left: selectable && scrollableColumns ? ['select-column'] : [],
+        left: enableRowSelection && scrollableColumns ? ['select-column'] : [],
       },
     },
     defaultColumn: {
-      cell: props => <AdvancedTableDefaultCell {...props} selectable={selectable} />,
+      cell: props => <AdvancedTableDefaultCell {...props} enableRowSelection={enableRowSelection} />,
     },
     // issue with the library and typing of subrows not working well with custom subrow types https://github.com/TanStack/table/discussions/4484
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
     getSubRows: subRowKey ? (row: any) => row[subRowKey] : undefined,
+    enableColumnFilters: enableColumnFilter,
+    enableColumnPinning,
+    enableSorting,
+    enableGrouping,
+    enableColumnResizing: enableResizing,
+    enableRowSelection,
     getGroupedRowModel: getGroupedRowModel(),
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -102,11 +103,10 @@ export function AdvancedTable<T>({
   return (
     <AdvancedTableContext.Provider
       value={{
-        resizable,
         tableRef: outerTableRef,
         scrollableRows,
         scrollableColumns,
-        selectable,
+        enableRowSelection,
       }}
     >
       <div>

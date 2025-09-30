@@ -4,7 +4,8 @@ import { useState } from 'react';
 
 import { AdvancedTable } from './advanced-table.component.js';
 import { AdvancedColumnProps, TanstackTableOptions } from './advanced-table.types.js';
-import { AdvancedPerson, makeColumns, makeDataFromCols, makePersonData } from './utils/fakerData.js';
+import { AdvancedPerson, makeColumns, makeDataFromCols, makePersonData } from './story-utils/fakerData.js';
+import { columnsExample, dataExample } from './story-utils/otherData.js';
 
 const columns: AdvancedColumnProps<AdvancedPerson>[] = [
   {
@@ -56,12 +57,25 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <AdvancedTable<AdvancedPerson>
+    <AdvancedTable
       data={defaultData}
-      selectable
+      enableRowSelection
       columns={columns}
-      resizable
-      sortable
+      enableResizing
+      enableSorting
+      subRowKey="subRows"
+    />
+  ),
+};
+
+export const ExampleCopy: Story = {
+  render: () => (
+    <AdvancedTable
+      data={dataExample}
+      enableRowSelection
+      columns={columnsExample}
+      enableResizing
+      enableSorting
       subRowKey="subRows"
     />
   ),
@@ -69,12 +83,13 @@ export const Default: Story = {
 
 export const Virtualized: Story = {
   render: () => (
-    <AdvancedTable<ReturnType<typeof makeDataFromCols>[0]>
+    <AdvancedTable
       data={dataForCols}
       columns={manyCols}
-      resizable
-      sortable
-      selectable
+      enableResizing
+      enableColumnPinning
+      enableSorting
+      enableRowSelection
       scrollableColumns
       scrollableRows
       subRowKey="subRows"
@@ -92,12 +107,13 @@ export const TestControlled = () => {
   };
 
   return (
-    <AdvancedTable<ReturnType<typeof makeDataFromCols>[0]>
+    <AdvancedTable
       data={dataForCols}
       columns={manyCols}
-      resizable
-      sortable
-      selectable
+      enableResizing
+      enableColumnPinning
+      enableSorting
+      enableRowSelection
       scrollableColumns
       scrollableRows
       tableOptions={tableProps}

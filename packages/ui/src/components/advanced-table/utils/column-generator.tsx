@@ -2,22 +2,12 @@ import { ColumnDef } from '@tanstack/react-table';
 
 import { AdvancedColumnProps } from '../advanced-table.types.js';
 
-export function columnGenerator<T>({
-  sortable,
-  groupable,
-  columns,
-}: {
-  sortable?: boolean;
-  groupable?: boolean;
-  columns: AdvancedColumnProps<T>[];
-}) {
+export function columnGenerator<T>({ columns }: { columns: AdvancedColumnProps<T>[] }) {
   const columnUpdate = (obj: AdvancedColumnProps<T>): ColumnDef<T> => {
     return {
       ...obj,
       id: obj.key,
       accessorKey: obj.key,
-      enableSorting: obj.enableSorting ?? sortable,
-      enableGrouping: obj.enableGrouping ?? groupable,
       header: () => <h2 className="whitespace-nowrap font-medium">{obj.title}</h2>,
     };
   };

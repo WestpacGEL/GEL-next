@@ -1,25 +1,10 @@
-import {
-  ColumnDef,
-  ExpandedState,
-  GroupColumnDef,
-  PaginationState,
-  TableOptions,
-  Updater,
-} from '@tanstack/react-table';
+import { ColumnDef, TableOptions } from '@tanstack/react-table';
 import { CSSProperties } from 'react';
 
 export type AdvancedColumnProps<T> = Omit<ColumnDef<T>, 'header' | 'meta' | 'id' | 'footer'> & {
   key: string;
   title: string;
   columns?: AdvancedColumnProps<T>[];
-};
-
-export type GroupedColumnProps<T> = Omit<
-  GroupColumnDef<T>,
-  'columns' | 'accessorFn' | 'cell' | 'header' | 'meta' | 'id' | 'footer'
-> & {
-  key: string;
-  title: string;
 };
 
 export type TanstackTableOptions<T> = Omit<
@@ -37,6 +22,12 @@ export type TanstackTableOptions<T> = Omit<
   | 'getSortedRowModel'
   | 'getCoreRowModel'
   | 'groupedColumnMode'
+  | 'enableColumnFilters'
+  | 'enableColumnPinning'
+  | 'enableSorting'
+  | 'enableGrouping'
+  | 'enableColumnResizing'
+  | 'enableRowSelection'
 >;
 
 export type AdvancedTableProps<T> = {
@@ -48,46 +39,21 @@ export type AdvancedTableProps<T> = {
    * Column information for table
    */
   columns: AdvancedColumnProps<T>[];
-  expandedState?: ExpandedState;
-  fixedHeight?: CSSProperties['height'];
-  fixedWidth?: CSSProperties['width'];
-  groupable?: boolean;
-  tableOptions?: TanstackTableOptions<T>;
-  /**
-   * Whether manual pagination should be enabled for server side pagination
-   */
-  manualPagination?: boolean;
-  onExpandedChange?: (expanded: Updater<ExpandedState>) => void;
-  /**
-   * Callback function to be called when pagination changes
-   */
-  onPaginationChange?: (pagination: Updater<PaginationState>) => void;
-  /**
-   * Number of pages for pagination. Only needs to be used with manual pagination
-   */
-  pageCount?: number;
-  /**
-   * Pagination state
-   */
-  pagination?: {
-    /**
-     * Current page index
-     */
-    pageIndex: number;
-    /**
-     * Page size
-     */
-    pageSize: number;
-  };
+  enableColumnFilter?: boolean;
+  enableColumnPinning?: boolean;
+  enableGrouping?: boolean;
   /**
    * Enables all columns to be resizable. Can also be done per-column in required columns array.
    */
-  resizable?: boolean;
+  enableResizing?: boolean;
+  enableRowSelection?: boolean;
   /**
-   * Number of rows of data, can be used instead of page count to determine number of pages for manual pagination when used with page size
+   * Enables all columns to be sortable. Can also be done per-column in required columns array.
    */
-  rowCount?: number;
-  selectable?: boolean;
+  enableSorting?: boolean;
+  fixedHeight?: CSSProperties['height'];
+  fixedWidth?: CSSProperties['width'];
+  tableOptions?: TanstackTableOptions<T>;
   /**
    * Sets table to use virtualized scrollable columns
    */
@@ -96,10 +62,6 @@ export type AdvancedTableProps<T> = {
    * Sets table to use virtualized scrollable rows rather than pagination
    */
   scrollableRows?: boolean;
-  /**
-   * Enables all columns to be sortable. Can also be done per-column in required columns array.
-   */
-  sortable?: boolean;
   /**
    * If using expandable rows, this key will be used to identify the sub-rows
    */

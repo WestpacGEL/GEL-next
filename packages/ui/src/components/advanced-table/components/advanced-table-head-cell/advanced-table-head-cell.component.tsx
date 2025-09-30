@@ -1,8 +1,6 @@
 import { flexRender, SortDirection } from '@tanstack/react-table';
-import { useContext } from 'react';
 
 import { ExpandLessIcon, ExpandMoreIcon } from '../../../icon/index.js';
-import { AdvancedTableContext } from '../../advanced-table.component.js';
 import { getCommonPinningStyles } from '../../utils/getPinningStyles.js';
 import { MenuButton } from '../advanced-table-menu/components/menu-button/menu-button.component.js';
 
@@ -10,7 +8,6 @@ import { styles as AdvancedTableHeadCellStyles } from './advanced-table-head-cel
 import { AdvancedTableHeadCellProps } from './advanced-table-head-cell.types.js';
 
 export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: AdvancedTableHeadCellProps<T>) {
-  const { resizable } = useContext(AdvancedTableContext);
   const sortingIcon = (sorted: SortDirection | false, onClick: () => void) => {
     return (
       <button onClick={onClick} className="cursor-pointer flex flex-col">
@@ -59,7 +56,7 @@ export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: Advanced
             onAction={action => console.log(action)}
           />
         )}
-        {resizable && !header.isPlaceholder && (
+        {header.column.getCanResize() && !header.isPlaceholder && (
           <div
             {...{
               onDoubleClick: () => header.column.resetSize(),
@@ -132,7 +129,7 @@ export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: Advanced
             onAction={action => console.log(action)}
           />
         )}
-        {resizable && !header.isPlaceholder && (
+        {header.column.getCanResize() && !header.isPlaceholder && (
           <div
             {...{
               onDoubleClick: () => header.column.resetSize(),

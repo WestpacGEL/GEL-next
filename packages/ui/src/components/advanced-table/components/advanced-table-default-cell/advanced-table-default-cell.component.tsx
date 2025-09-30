@@ -6,9 +6,9 @@ export function AdvancedTableDefaultCell<T>({
   row,
   getValue,
   column,
-  selectable,
-}: CellContext<T, unknown> & { selectable?: boolean }) {
-  const firstColumnIndex = selectable ? 1 : 0;
+  enableRowSelection,
+}: CellContext<T, unknown> & { enableRowSelection?: boolean }) {
+  const firstColumnIndex = enableRowSelection ? 1 : 0;
 
   return (
     <div style={{ paddingLeft: `${row.depth * 2}rem` }} className="flex flex-row gap-1">
