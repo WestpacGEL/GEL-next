@@ -15,42 +15,38 @@ const tokens = require(`${__dirname}/../../src/tokens/GEL-tokens-figma.json`);
 
 StyleDictionary.registerFormat({
   name: 'css/mode-wrapped-all-brands',
-  format: function({ dictionary }) {
+  format: function ({ dictionary, options: { brands } }) {
     const primitiveTokens = dictionary.allTokens.filter(
-      (t) => !(t.name.indexOf('light-mode') !== -1 || t.name.indexOf('dark-mode') !== -1)
+      t => !(t.name.indexOf('light-mode') !== -1 || t.name.indexOf('dark-mode') !== -1),
     );
-    const lightTokensPerBrand = dictionary.allTokens.filter(
-      (t) => t.name.indexOf('light-mode') !== -1
-    ).reduce((acc, current) => {
-      const [brand, tokenName] = current.name.split('-light-mode-');
-      return {
-        ...acc,
-        [brand]: [
-          ...(acc[brand] || []),
-          { ...current, name: tokenName },
-        ]
-      }
-    }, {});
+    const lightTokensPerBrand = dictionary.allTokens
+      .filter(t => t.name.indexOf('light-mode') !== -1)
+      .reduce((acc, current) => {
+        const [splitBrand, tokenName] = current.name.split('-light-mode-');
+        const brand = brands?.[splitBrand] || splitBrand;
+        return {
+          ...acc,
+          [brand]: [...(acc[brand] || []), { ...current, name: tokenName }],
+        };
+      }, {});
 
-    const darkTokensPerBrand = dictionary.allTokens.filter(
-      (t) => t.name.indexOf('dark-mode') !== -1
-    ).reduce((acc, current) => {
-      const [brand, tokenName] = current.name.split('-dark-mode-');
-      return {
-        ...acc,
-        [brand]: [
-          ...(acc[brand] || []),
-          { ...current, name: tokenName },
-        ]
-      }
-    }, {});
+    const darkTokensPerBrand = dictionary.allTokens
+      .filter(t => t.name.indexOf('dark-mode') !== -1)
+      .reduce((acc, current) => {
+        const [splitBrand, tokenName] = current.name.split('-dark-mode-');
+        const brand = brands?.[splitBrand] || splitBrand;
+        return {
+          ...acc,
+          [brand]: [...(acc[brand] || []), { ...current, name: tokenName }],
+        };
+      }, {});
 
     let output = '';
 
     // Light mode (default, not wrapped)
     if (primitiveTokens.length) {
       output += ':root, :host {\n';
-      primitiveTokens.forEach((token) => {
+      primitiveTokens.forEach(token => {
         const description = token.original.$description;
         output += `  --${token.name}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
       });
@@ -61,7 +57,7 @@ StyleDictionary.registerFormat({
     if (Object.entries(lightTokensPerBrand).length) {
       Object.entries(lightTokensPerBrand).forEach(([brand, tokens]) => {
         output += `[data-brand="${brand}"] {\n`;
-        tokens.forEach((token) => {
+        tokens.forEach(token => {
           const description = token.original.$description;
           output += `  --${token.name}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
         });
@@ -73,7 +69,7 @@ StyleDictionary.registerFormat({
     if (Object.entries(darkTokensPerBrand).length) {
       Object.entries(darkTokensPerBrand).forEach(([brand, tokens]) => {
         output += `[data-brand="${brand}"][data-mode="dark"] {\n`;
-        tokens.forEach((token) => {
+        tokens.forEach(token => {
           const description = token.original.$description;
           output += `  --${token.name}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
         });
@@ -81,30 +77,26 @@ StyleDictionary.registerFormat({
       });
     }
     return output;
-  }
+  },
 });
 
 StyleDictionary.registerFormat({
   name: 'css/mode-wrapped-single-brand',
-  format: function({ dictionary, options }) {
+  format: function ({ dictionary, options }) {
     const primitiveTokens = dictionary.allTokens.filter(
-      (t) => !(t.name.indexOf('light-mode') !== -1 || t.name.indexOf('dark-mode') !== -1)
+      t => !(t.name.indexOf('light-mode') !== -1 || t.name.indexOf('dark-mode') !== -1),
     );
 
-    const lightTokens = dictionary.allTokens.filter(
-      (t) => t.name.indexOf('light-mode') !== -1
-    )
+    const lightTokens = dictionary.allTokens.filter(t => t.name.indexOf('light-mode') !== -1);
 
-    const darkTokens = dictionary.allTokens.filter(
-      (t) => t.name.indexOf('dark-mode') !== -1
-    );
+    const darkTokens = dictionary.allTokens.filter(t => t.name.indexOf('dark-mode') !== -1);
 
     let output = '';
 
     // Light mode (default, not wrapped)
     if (primitiveTokens.length) {
       output += ':root, :host {\n';
-      primitiveTokens.forEach((token) => {
+      primitiveTokens.forEach(token => {
         const description = token.original.$description;
         output += `  --${token.name}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
       });
@@ -114,7 +106,7 @@ StyleDictionary.registerFormat({
     // Light mode (default, not wrapped)
     if (lightTokens.length) {
       output += `[data-brand="${options.brand}"] {\n`;
-      lightTokens.forEach((token) => {
+      lightTokens.forEach(token => {
         const description = token.original.$description;
         output += `  --${token.name.replace('light-mode-', '')}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
       });
@@ -124,14 +116,14 @@ StyleDictionary.registerFormat({
     // Dark mode (wrapped in selector)
     if (darkTokens.length) {
       output += `[data-brand="${options.brand}"][data-mode="dark"] {\n`;
-      darkTokens.forEach((token) => {
+      darkTokens.forEach(token => {
         const description = token.original.$description;
         output += `  --${token.name.replace('dark-mode-', '')}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
       });
       output += '}\n\n';
     }
     return output;
-  }
+  },
 });
 
 // ==============================
@@ -258,7 +250,7 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
         {
           destination: `${DIST_FOLDER}/style-dictionary/AllBrands/css/vars.css`,
           format: ['css/mode-wrapped-all-brands'],
-          options: { outputReferences: true },
+          options: { brands: { 'st-george': 'stg', westpac: 'wbc' } },
         },
       ],
     },
