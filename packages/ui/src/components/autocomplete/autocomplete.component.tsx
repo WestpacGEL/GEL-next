@@ -77,11 +77,17 @@ function Autocomplete<T extends object>(
   });
 
   React.useEffect(() => {
-    if (open) {
-      state.open();
+    if (typeof open === 'boolean') {
+      if (open) {
+        state.open();
+      } else {
+        state.close();
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
+
+  const isDropdownOpen = state.isOpen && (open === undefined || open);
 
   // Get props for the clear button from useSearchField
   const searchProps = {
@@ -103,12 +109,12 @@ function Autocomplete<T extends object>(
   const isNoOptionPopOverOpen = useMemo(() => {
     return !!(
       noOptionsMessage &&
-      ((!state.isOpen && state.isFocused && searchProps.value.length > 0 && !state.selectedItem) ||
+      ((!isDropdownOpen && state.isFocused && searchProps.value.length > 0 && !state.selectedItem) ||
         (state.collection.size === 0 && searchProps.value.length > 0))
     );
   }, [
     noOptionsMessage,
-    state.isOpen,
+    isDropdownOpen,
     state.isFocused,
     state.selectedItem,
     state.collection.size,
@@ -161,7 +167,7 @@ function Autocomplete<T extends object>(
           {footer && <div className="border-t border-t-border px-3 py-2">{footer}</div>}
         </AutocompletePopover>
       )}
-      {state.isOpen && (
+      {isDropdownOpen && (
         <AutocompletePopover
           popoverRef={popoverRef}
           triggerRef={outerRef}

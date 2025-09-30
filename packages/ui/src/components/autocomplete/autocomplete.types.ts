@@ -64,7 +64,9 @@ export type AutocompleteProps<T extends object> = {
    */
   width?: InputProps['width'];
   /**
-   * Flag to force dropdown state open when true
+   * Flag to force dropdown state open or controlled.
+   * If undefined, control of dropdown left up to
+   * user interaction.
    */
   open?: boolean;
 } & ComboBoxProps<T> &
