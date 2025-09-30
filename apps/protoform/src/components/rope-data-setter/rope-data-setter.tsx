@@ -10,7 +10,8 @@ export function RopeDataSetter({ data }: { data?: ProgressRopeProps['data'] }) {
 
   useEffect(() => {
     setRopeData(data);
-  }, [data, setRopeData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return <></>;
 }

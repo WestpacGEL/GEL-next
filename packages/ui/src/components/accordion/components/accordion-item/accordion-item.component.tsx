@@ -1,8 +1,8 @@
 /* eslint-disable sonarjs/deprecation */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { useAccordionItem } from '@react-aria/accordion';
-import { AnimatePresence, LazyMotion, m } from 'motion/react';
-import React, { useRef } from 'react';
+import { LazyMotion, m, useAnimate } from 'motion/react';
+import React, { useEffect, useRef, useState } from 'react';
 import { mergeProps, useFocusRing, useHover, useLocale } from 'react-aria';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '../../../icon/index.js';
@@ -23,11 +23,44 @@ export function AccordionItem<T = HTMLElement>({
   const { state, item } = props;
   const { buttonProps, regionProps } = useAccordionItem<T>(props, state, ref);
   const { isFocusVisible, focusProps } = useFocusRing();
-  const isOpen = state.expandedKeys.has(item.key);
+  const isOpenState = state.expandedKeys.has(item.key);
   const isDisabled = state.disabledKeys.has(item.key);
   const { hoverProps } = useHover({ isDisabled });
   const { direction } = useLocale();
-  const styles = accordionItemStyles({ isOpen, isDisabled, look, isFocusVisible, rounded });
+  // Open/close animation needs to be done with useAnimate as AnimatePresence will unmount component
+  const [scope, animate] = useAnimate();
+  const [enableOpenStyle, setEnableOpenStyle] = useState(false);
+
+  const styles = accordionItemStyles({
+    isOpen: enableOpenStyle,
+    isOpenState,
+    isDisabled,
+    look,
+    isFocusVisible,
+    rounded,
+  });
+
+  useEffect(() => {
+    // setEnableStyle here as opening animation isn't working correctly if done below
+    if (isOpenState) setEnableOpenStyle(true);
+
+    if (enableOpenStyle) {
+      animate(scope.current, { height: 'auto' }, { duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] });
+    }
+    if (!isOpenState) {
+      animate(
+        scope.current,
+        { height: '0px' },
+        {
+          duration: 0.3,
+          ease: [0.25, 0.1, 0.25, 1.0],
+          // set some styles after animation completes so content doesn't disappear on close
+          onComplete: () => setEnableOpenStyle(false),
+        },
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpenState, enableOpenStyle]);
 
   return (
     <Tag className={styles.base({ className })}>
@@ -47,33 +80,18 @@ export function AccordionItem<T = HTMLElement>({
       </h3>
       <div {...regionProps}>
         <LazyMotion features={loadAnimations}>
-          <AnimatePresence initial={false}>
-            <m.div
-              className="overflow-hidden"
-              initial={{
-                height: 0,
+          <m.div className="overflow-hidden" initial={{ height: isOpenState ? 'auto' : 0 }} ref={scope}>
+            <div
+              className={styles.content()}
+              // TODO: Remove below with updated accordion that uses disclosure as the issue doesn't happen with that version
+              // Need to call stopPropagation here as some events from children are bubbling up and focusing the accordion i.e. inputs
+              onBlur={e => {
+                e.stopPropagation();
               }}
-              animate={{
-                height: 'auto',
-              }}
-              exit={{
-                height: 0,
-              }}
-              transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }}
-              key={`${item.index}-${isOpen}`}
             >
-              <div
-                className={styles.content()}
-                // TODO: Remove below with updated accordion that uses disclosure as the issue doesn't happen with that version
-                // Need to call stopPropagation here as some events from children are bubbling up and focusing the accordion i.e. inputs
-                onBlur={e => {
-                  e.stopPropagation();
-                }}
-              >
-                {item.props.children}
-              </div>
-            </m.div>
-          </AnimatePresence>
+              {item.props.children}
+            </div>
+          </m.div>
         </LazyMotion>
       </div>
     </Tag>
