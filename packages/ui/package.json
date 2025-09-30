@@ -244,6 +244,7 @@
     "@types/testing-library__jest-dom": "^5.14.5",
     "@vitejs/plugin-react-swc": "^3.7.0",
     "@vitest/coverage-v8": "~3.2.4",
+    "@vueless/storybook-dark-mode": "~9.0.8",
     "@westpac/eslint-config": "workspace:~",
     "@westpac/style-config": "workspace:~",
     "@westpac/test-config": "workspace:~",
