@@ -80,7 +80,8 @@ function Autocomplete<T extends object>(
     if (open) {
       state.open();
     }
-  }, [open, state]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
 
   // Get props for the clear button from useSearchField
   const searchProps = {
