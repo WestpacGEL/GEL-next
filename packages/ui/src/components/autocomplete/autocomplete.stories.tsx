@@ -1,6 +1,7 @@
 import { Key } from '@react-types/shared';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useEffect, useRef, useState } from 'react';
+import { useFilter } from 'react-aria';
 import { useComboBoxState } from 'react-stately';
 
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';
@@ -265,9 +266,12 @@ export const AsyncForceOpen = () => {
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState<{ id: string; name: string }[]>([]);
 
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const { contains } = useFilter({ sensitivity: 'base' });
   const state = useComboBoxState({
     items,
     label: 'Choose an animal',
+    defaultFilter: contains,
   });
 
   // 👇 Force-open mechanism
@@ -315,9 +319,12 @@ export const AsyncForceClosed = () => {
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState<{ id: string; name: string }[]>([]);
 
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const { contains } = useFilter({ sensitivity: 'base' });
   const state = useComboBoxState({
     items,
     label: 'Choose an animal',
+    defaultFilter: contains,
   });
 
   // 👇 Force-close mechanism: keep menu closed even when items load
