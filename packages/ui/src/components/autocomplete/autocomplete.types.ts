@@ -63,5 +63,9 @@ export type AutocompleteProps<T extends object> = {
    * Width of autocomplete
    */
   width?: InputProps['width'];
+  /**
+   * Flag to force dropdown state open when true
+   */
+  open?: boolean;
 } & ComboBoxProps<T> &
   AriaLabelingProps;

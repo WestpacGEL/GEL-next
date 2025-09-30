@@ -41,6 +41,7 @@ function Autocomplete<T extends object>(
     className,
     width = 'full',
     loadingState,
+    open,
     ...props
   }: AutocompleteProps<T>,
   ref: ForwardedRef<HTMLInputElement>,
@@ -74,6 +75,12 @@ function Autocomplete<T extends object>(
     invalid,
     isFocusVisible,
   });
+
+  React.useEffect(() => {
+    if (open) {
+      state.open();
+    }
+  }, [open, state]);
 
   // Get props for the clear button from useSearchField
   const searchProps = {
