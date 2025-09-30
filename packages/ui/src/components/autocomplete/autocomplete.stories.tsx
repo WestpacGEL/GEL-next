@@ -1,6 +1,7 @@
 import { Key } from '@react-types/shared';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useComboBoxState } from 'react-stately';
 
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';
 import { Circle } from '../circle/circle.component.js';
@@ -263,26 +264,20 @@ export const AsyncDynamicCollections = () => {
 export const AsyncForceOpen = () => {
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState<{ id: string; name: string }[]>([]);
-  const [inputValue, setInputValue] = useState('');
-  const [selectedKey, setSelectedKey] = useState<string | null>(null);
+
+  const state = useComboBoxState({
+    items,
+    label: 'Choose an animal',
+  });
 
   // 👇 Force-open mechanism
-  const [forceOpen, setForceOpen] = useState(false);
   const prevCount = useRef(0);
-
   useEffect(() => {
     if (prevCount.current === 0 && items.length > 0) {
-      setForceOpen(true);
+      state.open(); // directly call open on the external state
     }
     prevCount.current = items.length;
-  }, [items]);
-
-  useEffect(() => {
-    if (forceOpen) {
-      const id = setTimeout(() => setForceOpen(false), 0);
-      return () => clearTimeout(id);
-    }
-  }, [forceOpen]);
+  }, [items, state]);
 
   const fetchAnimals = async (query: string) => {
     setLoading(true);
@@ -298,17 +293,60 @@ export const AsyncForceOpen = () => {
   return (
     <div className="flex flex-col gap-2">
       <Autocomplete
-        open={forceOpen} // 👈 force dropdown to open when items appear
-        items={items}
-        inputValue={inputValue}
-        selectedKey={selectedKey}
+        comboBoxState={state}
         loadingState={loading}
         onInputChange={val => {
-          setInputValue(val);
-          // eslint-disable-next-line @typescript-eslint/no-floating-promises
-          fetchAnimals(val);
+          state.setInputValue(val);
+          void fetchAnimals(val);
         }}
-        onSelectionChange={key => setSelectedKey(key as string)}
+        label="Choose an animal"
+      >
+        {(item: { id: string; name: string }) => <AutocompleteItem key={item.id}>{item.name}</AutocompleteItem>}
+      </Autocomplete>
+    </div>
+  );
+};
+
+/**
+ * > Async collections with force-closed dropdown
+ */
+export const AsyncForceClosed = () => {
+  const [loading, setLoading] = useState(false);
+  const [items, setItems] = useState<{ id: string; name: string }[]>([]);
+
+  const state = useComboBoxState({
+    items,
+    label: 'Choose an animal',
+  });
+
+  // 👇 Force-close mechanism: keep menu closed even when items load
+  useEffect(() => {
+    if (state.isOpen) {
+      state.close();
+    }
+  }, [items, state]);
+
+  // eslint-disable-next-line sonarjs/no-identical-functions
+  const fetchAnimals = async (query: string) => {
+    setLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    setItems(
+      ['Red Panda', 'Cat', 'Dog', 'Aardvark', 'Kangaroo', 'Snake']
+        .filter(name => name.toLowerCase().includes(query.toLowerCase()))
+        .map(name => ({ id: name.toLowerCase(), name })),
+    );
+    setLoading(false);
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      <Autocomplete
+        comboBoxState={state}
+        loadingState={loading}
+        onInputChange={val => {
+          state.setInputValue(val);
+          void fetchAnimals(val);
+        }}
         label="Choose an animal"
       >
         {(item: { id: string; name: string }) => <AutocompleteItem key={item.id}>{item.name}</AutocompleteItem>}
