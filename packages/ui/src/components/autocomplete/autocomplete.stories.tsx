@@ -233,6 +233,7 @@ export const DynamicCollections = () => {
  * > Async collections that automatically open when results arrive
  */
 export const AsyncDynamicCollections = () => {
+  const [loading, setLoading] = useState<boolean>(false);
   const [items, setItems] = useState<{ id: string; name: string }[]>([]);
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -263,17 +264,19 @@ export const AsyncDynamicCollections = () => {
 
   const fetchAnimals = async (query: string) => {
     // fake async fetch
+    setLoading(true);
     await new Promise(resolve => setTimeout(resolve, 300));
     setItems(
       ['Red Panda', 'Cat', 'Dog', 'Aardvark', 'Kangaroo', 'Snake']
         .filter(name => name.toLowerCase().includes(query.toLowerCase()))
         .map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-'), name })),
     );
+    setLoading(false);
   };
 
   return (
     <div className="flex flex-col gap-2">
-      <Autocomplete comboBoxState={state} loadingState={false} {...sharedProps}>
+      <Autocomplete comboBoxState={state} loadingState={loading} {...sharedProps}>
         {children}
       </Autocomplete>
     </div>
