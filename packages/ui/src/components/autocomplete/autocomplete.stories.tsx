@@ -230,135 +230,53 @@ export const DynamicCollections = () => {
 };
 
 /**
- * > Dynamic collections with Async call
- */
-export const AsyncDynamicCollections = () => {
-  // For example purposes async call is made on focus of input rather than when page loads
-  const [loading, setLoading] = useState(false);
-  const [items, setItems] = useState<{ id: string; name: string }[]>([]);
-  const getCollection = async () => {
-    setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 3000));
-    setItems([
-      { id: 'red panda', name: 'Red Panda' },
-      { id: 'cat', name: 'Cat' },
-      { id: 'dog', name: 'Dog' },
-      { id: 'aardvark', name: 'Aardvark' },
-      { id: 'kangaroo', name: 'Kangaroo' },
-      { id: 'snake', name: 'Snake' },
-    ]);
-    setLoading(false);
-  };
-
-  return (
-    <div className="flex flex-col gap-2">
-      <Autocomplete items={items} onFocus={() => void getCollection()} loadingState={loading}>
-        {item => <AutocompleteItem>{item.name}</AutocompleteItem>}
-      </Autocomplete>
-    </div>
-  );
-};
-
-/**
  * > Async collections that automatically open when results arrive
  */
-export const AsyncForceOpen = () => {
-  const [loading, setLoading] = useState(false);
+export const AsyncDynamicCollections = () => {
   const [items, setItems] = useState<{ id: string; name: string }[]>([]);
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const { contains } = useFilter({ sensitivity: 'base' });
-  const state = useComboBoxState({
+
+  const children = (item: { id: string; name: string }) => <AutocompleteItem>{item.name}</AutocompleteItem>;
+  const sharedProps = {
     items,
     label: 'Choose an animal',
+    onInputChange: (val: string) => {
+      void fetchAnimals(val);
+    },
+  };
+
+  const state = useComboBoxState({
     defaultFilter: contains,
+    ...sharedProps,
+    menuTrigger: 'manual', // allow manual open
+    children,
   });
 
-  // 👇 Force-open mechanism
+  // open menu when new items arrive
   const prevCount = useRef(0);
   useEffect(() => {
     if (prevCount.current === 0 && items.length > 0) {
-      state.open(); // directly call open on the external state
+      state.open(null, 'manual'); // 👈 force open
     }
     prevCount.current = items.length;
   }, [items, state]);
 
   const fetchAnimals = async (query: string) => {
-    setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // fake async fetch
+    await new Promise(resolve => setTimeout(resolve, 300));
     setItems(
       ['Red Panda', 'Cat', 'Dog', 'Aardvark', 'Kangaroo', 'Snake']
         .filter(name => name.toLowerCase().includes(query.toLowerCase()))
-        .map(name => ({ id: name.toLowerCase(), name })),
+        .map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-'), name })),
     );
-    setLoading(false);
   };
 
   return (
     <div className="flex flex-col gap-2">
-      <Autocomplete
-        comboBoxState={state}
-        loadingState={loading}
-        onInputChange={val => {
-          state.setInputValue(val);
-          void fetchAnimals(val);
-        }}
-        label="Choose an animal"
-        items={items}
-      >
-        {(item: { id: string; name: string }) => <AutocompleteItem key={item.id}>{item.name}</AutocompleteItem>}
-      </Autocomplete>
-    </div>
-  );
-};
-
-/**
- * > Async collections with force-closed dropdown
- */
-export const AsyncForceClosed = () => {
-  const [loading, setLoading] = useState(false);
-  const [items, setItems] = useState<{ id: string; name: string }[]>([]);
-
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  const { contains } = useFilter({ sensitivity: 'base' });
-  const state = useComboBoxState({
-    items,
-    label: 'Choose an animal',
-    defaultFilter: contains,
-  });
-
-  // 👇 Force-close mechanism: keep menu closed even when items load
-  useEffect(() => {
-    if (state.isOpen) {
-      state.close();
-    }
-  }, [items, state]);
-
-  // eslint-disable-next-line sonarjs/no-identical-functions
-  const fetchAnimals = async (query: string) => {
-    setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setItems(
-      ['Red Panda', 'Cat', 'Dog', 'Aardvark', 'Kangaroo', 'Snake']
-        .filter(name => name.toLowerCase().includes(query.toLowerCase()))
-        .map(name => ({ id: name.toLowerCase(), name })),
-    );
-    setLoading(false);
-  };
-
-  return (
-    <div className="flex flex-col gap-2">
-      <Autocomplete
-        comboBoxState={state}
-        loadingState={loading}
-        onInputChange={val => {
-          state.setInputValue(val);
-          void fetchAnimals(val);
-        }}
-        label="Choose an animal"
-        items={items}
-      >
-        {(item: { id: string; name: string }) => <AutocompleteItem key={item.id}>{item.name}</AutocompleteItem>}
+      <Autocomplete comboBoxState={state} loadingState={false} {...sharedProps}>
+        {children}
       </Autocomplete>
     </div>
   );
