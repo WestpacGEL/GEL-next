@@ -1,6 +1,7 @@
 import { type ComboBoxProps } from '@react-types/combobox';
 import { type AriaLabelingProps } from '@react-types/shared';
 import { type ReactNode } from 'react';
+import { ComboBoxState } from 'react-stately';
 import { type VariantProps } from 'tailwind-variants';
 
 import { HintProps, InputProps } from '../index.js';
@@ -64,10 +65,9 @@ export type AutocompleteProps<T extends object> = {
    */
   width?: InputProps['width'];
   /**
-   * Flag to force dropdown state open or controlled.
-   * If undefined, control of dropdown left up to
-   * user interaction.
+   * Pass through comboBox state from consuming component. If not specified,
+   * will be handled internally.
    */
-  open?: boolean;
+  comboBoxState?: ComboBoxState<T>;
 } & ComboBoxProps<T> &
   AriaLabelingProps;
