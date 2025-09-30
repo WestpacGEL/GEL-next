@@ -10,6 +10,87 @@ const StyleDictionary = require('style-dictionary').default;
 const tokens = require(`${__dirname}/../../src/tokens/GEL-tokens-figma.json`);
 
 // ==============================
+// Transforms
+// ==============================
+
+StyleDictionary.registerTransform({
+  type: 'name',
+  transitive: true,
+  name: `strip-ios-prefix`,
+  transform: token => {
+    const prefixesToRemoveIOS = [
+      'ColorBackground',
+      'ColorSurface',
+      'ColorText',
+      'ColorBorder',
+      'ColorData',
+      'ColorState',
+      'ColorAlias',
+      'ColorPictogram',
+      'ColorSurface',
+      'ColorBackground',
+      'ColorReserved',
+      'Color',
+      'themes',
+      'tokens',
+    ];
+
+    return prefixesToRemoveIOS.reduce((name, prefix) => name.replace(prefix, ''), token.name);
+  },
+});
+
+StyleDictionary.registerTransform({
+  type: 'name',
+  transitive: true,
+  name: `strip-ios-dark-or-light-prefix`,
+  transform: token => {
+    const prefixesToRemoveIOS = ['DarkMode', 'LightMode'];
+
+    return prefixesToRemoveIOS.reduce((name, prefix) => name.replace(prefix, ''), token.name);
+  },
+});
+
+StyleDictionary.registerTransform({
+  type: 'name',
+  transitive: true,
+  name: `strip-css-prefix`,
+  transform: token => {
+    if (token.path[0] === 'Primitives' && token.path[1] === 'color') {
+      return token.name.replace('primitives-color', 'primitives');
+    }
+    const prefixesToRemove = [
+      'tokens-',
+      '-color-background',
+      '-color-surface',
+      '-color-text',
+      '-color-border',
+      '-color-data',
+      '-color-state',
+      '-color-alias',
+      '-color-pictogram',
+      '-color-surface',
+      '-color-background',
+      '-color-reserved',
+      '-color',
+      'themes-',
+    ];
+    // token.value will be resolved and transformed at this point
+    return prefixesToRemove.reduce((name, prefix) => name.replace(prefix, ''), token.name);
+  },
+});
+
+StyleDictionary.registerTransform({
+  type: 'name',
+  transitive: true,
+  name: `strip-css-dark-or-light-prefix`,
+  transform: token => {
+    const prefixesToRemove = ['dark-mode-', 'light-mode-'];
+    // token.value will be resolved and transformed at this point
+    return prefixesToRemove.reduce((name, prefix) => name.replace(prefix, ''), token.name);
+  },
+});
+
+// ==============================
 // Constants
 // ==============================
 
@@ -22,9 +103,31 @@ const BRANDS = [
 
 const STYLE_DICTIONARY_BASE_CONFIG = {
   source: [`${DIST_FOLDER}/w3c-tokens/ALL_BRANDS.json`],
+  hooks: {
+    filters: {
+      'light-mode': token => {
+        return token.path?.includes('light-mode');
+      },
+      'dark-mode': token => {
+        return token.path?.includes('dark-mode');
+      },
+      'light-mode-and-color': token => {
+        return token.path?.includes('light-mode') && token.$type === 'color';
+      },
+      'dark-mode-and-color': token => {
+        return token.path?.includes('dark-mode') && token.$type === 'color';
+      },
+      'light-mode-and-dimension': token => {
+        return token.path?.includes('light-mode') && (token.$type === 'float' || token.$type === 'dimension');
+      },
+      'dark-mode-and-dimension': token => {
+        return token.path?.includes('dark-mode') && (token.$type === 'float' || token.$type === 'dimension');
+      },
+    },
+  },
   platforms: {
     css: {
-      transforms: ['size/pxToRem'],
+      transforms: ['size/pxToRem', 'strip-css-prefix'],
       transformGroup: 'css',
       files: [
         {
@@ -35,11 +138,19 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
       ],
     },
     android: {
-      transforms: ['size/pxToRem', 'attribute/cti', 'name/kebab', 'color/hex', 'size/remToSp', 'size/remToDp'],
+      transforms: [
+        'size/pxToRem',
+        'attribute/cti',
+        'name/kebab',
+        'color/hex',
+        'size/remToSp',
+        'size/remToDp',
+        'strip-css-prefix',
+      ],
       buildPath: `${DIST_FOLDER}/style-dictionary/AllBrands/android/`,
       files: [
-        { destination: 'style_dictionary_colors.xml', format: 'android/colors' },
-        { destination: 'style_dictionary_dimensions.xml', format: 'android/dimens' },
+        { destination: 'all-colors.xml', format: 'android/colors' },
+        { destination: 'all-dimensions.xml', format: 'android/dimens' },
       ],
     },
     ios: {
@@ -51,9 +162,12 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
         'content/swift/literal',
         'asset/swift/literal',
         'size/swift/remToCGFloat',
+        'strip-ios-prefix',
       ],
       buildPath: `${DIST_FOLDER}/style-dictionary/AllBrands/ios/`,
-      files: [{ destination: 'style_dictionary_colors.swift', format: 'ios-swift/class.swift' }],
+      files: [
+        { destination: 'all-colors.swift', format: 'ios-swift/class.swift', options: { outputReferences: true } },
+      ],
     },
   },
 };
@@ -229,6 +343,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
     await saveJSON(brandFile, brandTokens);
 
     const brandDictionary = new StyleDictionary({
+      ...STYLE_DICTIONARY_BASE_CONFIG,
       source: [brandFile],
       platforms: {
         css: {
@@ -248,11 +363,102 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
         ios: {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.ios,
           buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/`,
-          files: [{ destination: 'style_dictionary_colors.swift', format: 'ios-swift/class.swift' }],
         },
+      },
+      log: {
+        warnings: 'warn', // 'warn' | 'error' | 'disabled'
+        verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
       },
     });
 
     await brandDictionary.buildAllPlatforms();
+
+    const lightAndDarkModeDictionary = new StyleDictionary({
+      ...STYLE_DICTIONARY_BASE_CONFIG,
+      source: [brandFile],
+      platforms: {
+        css: {
+          ...STYLE_DICTIONARY_BASE_CONFIG.platforms.css,
+          files: [
+            {
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/css/style.css`,
+              format: ['css/variables'],
+              options: { outputReferences: true },
+            },
+          ],
+        },
+        android: {
+          ...STYLE_DICTIONARY_BASE_CONFIG.platforms.android,
+          transforms: [
+            'size/pxToRem',
+            'attribute/cti',
+            'name/kebab',
+            'color/hex',
+            'size/remToSp',
+            'size/remToDp',
+            'strip-css-prefix',
+            'strip-css-dark-or-light-prefix',
+          ],
+          buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/android/`,
+          files: [
+            {
+              destination: 'colors-light-mode.xml',
+              format: 'android/colors',
+              filter: 'light-mode',
+            },
+            {
+              destination: 'colors-dark-mode.xml',
+              format: 'android/colors',
+              filter: 'dark-mode',
+            },
+            { destination: 'dimensions-light-mode.xml', format: 'android/dimens', filter: 'light-mode' },
+            { destination: 'dimensions-dark-mode.xml', format: 'android/dimens', filter: 'dark-mode' },
+          ],
+        },
+        ios: {
+          ...STYLE_DICTIONARY_BASE_CONFIG.platforms.ios,
+          transforms: [
+            'size/pxToRem',
+            'attribute/cti',
+            'name/camel',
+            'color/UIColorSwift',
+            'content/swift/literal',
+            'asset/swift/literal',
+            'size/swift/remToCGFloat',
+            'strip-ios-prefix',
+            'strip-ios-dark-or-light-prefix',
+          ],
+          buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/`,
+          files: [
+            {
+              destination: 'colors-light-mode.swift',
+              format: 'ios-swift/class.swift',
+              filter: 'light-mode-and-color',
+            },
+            {
+              destination: 'colors-dark-mode.xswift',
+              format: 'ios-swift/class.swift',
+              filter: 'dark-mode-and-color',
+            },
+            {
+              destination: 'dimensions-light-mode.swift',
+              format: 'ios-swift/class.swift',
+              filter: 'light-mode-and-dimension',
+            },
+            {
+              destination: 'dimensions-dark-mode.xswift',
+              format: 'ios-swift/class.swift',
+              filter: 'dark-mode-and-dimension',
+            },
+          ],
+        },
+      },
+      log: {
+        warnings: 'warn', // 'warn' | 'error' | 'disabled'
+        verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
+      },
+    });
+
+    await lightAndDarkModeDictionary.buildAllPlatforms();
   }
 })();
