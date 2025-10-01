@@ -6,6 +6,7 @@ import { BrandKey } from '@/app/types/brand.types';
 import { StickyFooter } from '@/components/sticky-footer';
 import { formatNavItems, sortMenu } from '@/utils/format';
 
+// eslint-disable-next-line import/order
 import { Sidebar, SidebarContextProvider } from '../components';
 
 export default async function DesignSystemLayout({
@@ -23,15 +24,14 @@ export default async function DesignSystemLayout({
     ),
   );
 
-  const mode = params?.mode ?? 'light';
   const brand = (params?.brand ?? 'wbc') as BrandKey; // double check this is the best way to do this.
 
   return (
-    <div data-theme={`${brand?.toLowerCase()}-${mode}`} className="bg-background-white-faint">
+    <div data-brand={brand?.toLowerCase()} className="bg-background-white-faint">
       <SkipLink href="#content" className="z-[100]">
         Skip to content
       </SkipLink>
-      <div className="active-theme-stg:text-text-heading flex min-h-screen flex-col text-text-body">
+      <div className="active-theme-stg:text-text-heading text-text-body flex min-h-screen flex-col">
         <SidebarContextProvider>
           <Suspense>
             <Sidebar items={formattedItems} brand={brand} />

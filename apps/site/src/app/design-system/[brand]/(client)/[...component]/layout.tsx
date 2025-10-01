@@ -20,7 +20,7 @@ export default async function ComponentLayout({
         <Header title={content.name} brand={brand} />
       </Suspense>
       <div className="flex flex-1 flex-col p-5">
-        <div className="-m-5 flex flex-1 flex-col bg-surface-muted-pale focus:outline-none" id="content">
+        <div className="bg-surface-muted-pale -m-5 flex flex-1 flex-col focus:outline-none" id="content">
           {children}
         </div>
       </div>

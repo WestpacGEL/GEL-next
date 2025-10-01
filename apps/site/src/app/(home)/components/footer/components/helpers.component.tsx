@@ -8,7 +8,7 @@ export function Title({ children }: { children: ReactNode }) {
 }
 
 export function Link(props: PropsWithChildren<LinkProps>) {
-  return <NextLink className="group flex gap-2 focus-visible:focus-outline lg:gap-3" {...props} />;
+  return <NextLink className="group focus-visible:focus-outline flex gap-2 lg:gap-3" {...props} />;
 }
 
 export function Circle({ children }: { children: ReactNode }) {
@@ -18,5 +18,5 @@ export function Circle({ children }: { children: ReactNode }) {
 }
 
 export function Text({ children }: { children: ReactNode }) {
-  return <div className="inline-flex grow items-center border-b border-gel-border leading-loose">{children}</div>;
+  return <div className="border-gel-border inline-flex grow items-center border-b leading-loose">{children}</div>;
 }

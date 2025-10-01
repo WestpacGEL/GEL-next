@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const linkStyles = tv({
-  base: 'underline focus-visible:focus-outline',
+  base: 'focus-visible:focus-outline underline',
   variants: {
     color: {
       default: 'text-text-primary',

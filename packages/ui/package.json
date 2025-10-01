@@ -25,6 +25,9 @@
     "./hook": {
       "default": "./dist/hook/index.js"
     },
+    "./types": {
+      "default": "./dist/types/index.js"
+    },
     "./accordion": {
       "default": "./dist/components/accordion/index.js"
     },
