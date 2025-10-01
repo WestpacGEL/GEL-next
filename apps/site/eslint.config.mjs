@@ -1,3 +1,6 @@
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
 import eslintConfig from '@westpac/eslint-config/nextjs';
 import { defineConfig } from 'eslint/config';
 

@@ -8,7 +8,7 @@ export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = 
   block: {
     divider: () => <Divider className="w-full sm:w-9/12" />,
     paragraph: props => <Paragraph {...props} className="w-full sm:w-9/12" />,
-    code: props => <Code className="mb-5 mt-1 sm:mb-8 sm:mt-2" {...props} showCode />,
+    code: props => <Code className="mt-1 mb-5 sm:mt-2 sm:mb-8" {...props} showCode />,
     heading: Heading,
     list: props => <List {...props} className="sm:w-9/12" />,
     layout: Layout,
