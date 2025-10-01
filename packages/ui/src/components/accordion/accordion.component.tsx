@@ -21,7 +21,13 @@ export function Accordion({ className, rounded = true, look = 'soft', ...props }
   const resolvedRounded = resolveResponsiveVariant(rounded, breakpoint);
 
   return (
-    <div className={styles({ className, rounded: resolvedRounded })}>
+    <div
+      className={styles({
+        className,
+        rounded: resolveResponsiveVariant(rounded, breakpoint),
+        look: resolveResponsiveVariant(look, breakpoint),
+      })}
+    >
       <AccordionContext.Provider
         value={{ look: resolveResponsiveVariant(look, breakpoint), rounded: resolvedRounded, ...state }}
       >

@@ -19,9 +19,6 @@
     "./utils": {
       "default": "./dist/utils/index.js"
     },
-    "./flattened-tokens.json": {
-      "default": "./dist/flattened-tokens.json"
-    },
     "./component-type.json": {
       "default": "./dist/component-type.json"
     },
@@ -31,14 +28,8 @@
     "./hook": {
       "default": "./dist/hook/index.js"
     },
-    "./tailwind": {
-      "default": "./dist/tailwind/index.js"
-    },
-    "./themes": {
-      "default": "./dist/tailwind/themes/index.js"
-    },
-    "./themes-constants": {
-      "default": "./dist/tailwind/constants/index.js"
+    "./types": {
+      "default": "./dist/types/index.js"
     },
     "./accordion": {
       "default": "./dist/components/accordion/index.js"
@@ -100,12 +91,6 @@
     "./form": {
       "default": "./dist/components/form/index.js"
     },
-    "./hint": {
-      "default": "./dist/components/hint/index.js"
-    },
-    "./label": {
-      "default": "./dist/components/label/index.js"
-    },
     "./grid": {
       "default": "./dist/components/grid/index.js"
     },
@@ -115,6 +100,9 @@
     "./heading": {
       "default": "./dist/components/heading/index.js"
     },
+    "./hint": {
+      "default": "./dist/components/hint/index.js"
+    },
     "./icon": {
       "default": "./dist/components/icon/index.js"
     },
@@ -123,6 +111,9 @@
     },
     "./input-group": {
       "default": "./dist/components/input-group/index.js"
+    },
+    "./label": {
+      "default": "./dist/components/label/index.js"
     },
     "./link": {
       "default": "./dist/components/link/index.js"
@@ -216,12 +207,12 @@
     "build:types": "tsc --project tsconfig.build.json",
     "build:esm": "swc ./src -d dist --no-swcrc --config-file .swcrc",
     "build:icons": "node --loader ts-node/esm ./utils/build-icons/index.ts",
-    "build:exports": "ts-node --esm ./utils/build-exports/index.ts && prettier --write package.json",
+    "build:exports": "node --loader ts-node/esm ./utils/build-exports/index.ts && prettier --write package.json",
     "build:watch": "pnpm clean && pnpm build:types && pnpm build:esm -w && pnpm build:css:all",
     "build:type-table": "node generate-component-types.cjs",
     "build:svg-zip": "node --loader ts-node/esm ./utils/build-svg-zip/index.ts",
     "build:style-config": "cd ../style-config && pnpm build",
-    "build": "pnpm clean && pnpm build:types && pnpm build:esm && pnpm build:css:all && pnpm build:type-table && pnpm build:style-config",
+    "build": "pnpm clean && pnpm build:style-config && pnpm build:types && pnpm build:esm && pnpm build:css:all && pnpm build:type-table",
     "check-types": "tsc --noemit --emitDeclarationOnly false",
     "lint": "eslint \"./src/**/*.{ts,tsx,js,jsx}\"",
     "lint:fix": "eslint \"./src/**/*.{ts,tsx,js,jsx}\" --fix",
@@ -259,6 +250,7 @@
     "@types/testing-library__jest-dom": "^5.14.5",
     "@vitejs/plugin-react-swc": "^3.7.0",
     "@vitest/coverage-v8": "~3.2.4",
+    "@vueless/storybook-dark-mode": "~9.0.8",
     "@westpac/eslint-config": "workspace:~",
     "@westpac/style-config": "workspace:~",
     "@westpac/test-config": "workspace:~",

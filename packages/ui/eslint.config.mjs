@@ -63,6 +63,7 @@ export default defineConfig([
   {
     settings: {
       tailwindcss: {
+        config: false,
         cssConfigPath: dirname(fileURLToPath(import.meta.url)) + '/src/css/global.css',
       },
     },

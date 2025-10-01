@@ -1,7 +1,7 @@
 'use client';
 
 import { HamburgerMenuIcon } from '@westpac/ui/icon';
-import { type BrandKey } from '@westpac/ui/tailwind';
+import { type BrandKey } from '@westpac/ui/types';
 import throttle from 'lodash.throttle';
 import { useLayoutEffect, useRef, useState } from 'react';
 
@@ -42,7 +42,7 @@ export function Header({ brand }: { brand: BrandKey }) {
     <header ref={ref} className={base()}>
       <BackgroundImage brand={brand} type="header" fixed={fixed} />
       <button
-        className="z-10 flex items-center px-2 focus-visible:!outline-offset-[-2px] focus-visible:focus-outline lg:hidden"
+        className="focus-visible:focus-outline z-10 flex items-center px-2 focus-visible:!outline-offset-[-2px] lg:hidden"
         onClick={() => setOpen(open => !open)}
       >
         <HamburgerMenuIcon color="reversed" />

@@ -9,7 +9,8 @@
     "./theme-wbc": "./dist/css/themes/theme-wbc.css",
     "./theme-stg": "./dist/css/themes/theme-stg.css",
     "./postcss": "./postcss.config.js",
-    "./tokens": "./dist/tokens/index.js"
+    "./tokens": "./dist/tokens/index.js",
+    "./constants": "./dist/constants/index.js"
   },
   "devDependencies": {
     "handlebars": "~4.7.8",

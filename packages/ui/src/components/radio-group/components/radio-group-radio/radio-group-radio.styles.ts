@@ -4,10 +4,10 @@ export const styles = tv({
   slots: {
     base: 'flex',
     textWrapper: 'flex flex-col justify-center',
-    labelText: 'typography-body-10 py-[2px] pl-1 text-text-body',
-    hintText: 'typography-body-10 pl-1 text-text-muted',
+    labelText: 'typography-body-10 text-text-body py-[2px] pl-1',
+    hintText: 'typography-body-10 text-text-muted pl-1',
     selector:
-      'flex size-4 shrink-0 items-center justify-center rounded-full border border-border-hero bg-background-white-pale',
+      'border-border-hero bg-background-white-pale flex size-4 shrink-0 items-center justify-center rounded-full border',
   },
   variants: {
     isDisabled: {
@@ -21,7 +21,7 @@ export const styles = tv({
     },
     isSelected: {
       true: {
-        selector: 'before:block before:size-2 before:rounded-full before:bg-surface-hero',
+        selector: 'before:bg-surface-hero before:block before:size-2 before:rounded-full',
       },
     },
     isFocusVisible: {

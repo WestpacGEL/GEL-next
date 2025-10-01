@@ -1,7 +1,7 @@
 'use client';
 
+import { BREAKPOINTS } from '@westpac/style-config/constants';
 import { Button, Header } from '@westpac/ui';
-import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 

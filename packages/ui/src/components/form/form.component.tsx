@@ -2,9 +2,10 @@
 
 import React, { createContext, useContext } from 'react';
 
-import { FormContextValue, type FormProps } from './form.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
+import { FormContextValue, type FormProps } from './form.types.js';
 
 // ==============================
 // Context and consumer hook

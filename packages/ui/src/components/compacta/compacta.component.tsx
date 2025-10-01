@@ -48,7 +48,6 @@ export function Compacta({ children, onAdd, addText = 'Add another', ...props }:
             look="link"
             size="small"
             soft
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
             onClick={() => onAdd()}
           >
             {addText}

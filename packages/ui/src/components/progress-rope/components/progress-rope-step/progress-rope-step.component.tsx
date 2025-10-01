@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { Circle, VisuallyHidden } from '../../../index.js';
 
 import { styles as progressRopeStyles } from './progress-rope-step.styles.js';
 import { type ProgressRopeStepProps } from './progress-rope-step.types.js';
-import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 /**
  * @private

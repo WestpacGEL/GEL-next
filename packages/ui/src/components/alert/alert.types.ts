@@ -1,7 +1,10 @@
 import React, { HTMLAttributes } from 'react';
-import { IconProps } from '../icon/icon.types.js';
-import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 import { VariantProps } from 'tailwind-variants';
+
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
+import { IconProps } from '../icon/icon.types.js';
+
 import { styles } from './alert.styles.js';
 
 export type Variant = VariantProps<typeof styles>;

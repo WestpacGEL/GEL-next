@@ -41,7 +41,7 @@ export function Header({ className, title, brand }: { brand: string; className?:
         {title}
       </h2>
 
-      <div className="fixed right-2 top-2.5">
+      <div className="fixed top-2.5 right-2">
         <ThemeDropDown className="!border-0" />
       </div>
     </header>

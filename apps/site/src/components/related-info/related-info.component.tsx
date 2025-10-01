@@ -28,7 +28,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
         <Grid>
           {!relatedComponentsEmpty && (
             <GridItem span={{ initial: 12, xsl: 4 }}>
-              <h3 className="typography-body-8 flex items-center justify-between border-b border-border-muted-soft pb-3 font-bold">
+              <h3 className="typography-body-8 border-border-muted-soft flex items-center justify-between border-b pb-3 font-bold">
                 Components
                 <CubeIcon color="muted" />
               </h3>
@@ -45,7 +45,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
           )}
           {relatedArticles && (
             <GridItem span={12} start={{ initial: 1, xsl: relatedComponentsEmpty ? 1 : 6 }}>
-              <h3 className="typography-body-8 flex items-center justify-between border-b border-border-muted-soft pb-3 font-bold">
+              <h3 className="typography-body-8 border-border-muted-soft flex items-center justify-between border-b pb-3 font-bold">
                 Articles
                 <GenericFileIcon color="muted" />
               </h3>
@@ -67,7 +67,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
 function Link({ children, ...props }: PropsWithChildren<LinkProps>) {
   return (
     <NextLink
-      className="typography-body-10 flex min-h-[3.4375rem] items-center justify-between border-b border-border-muted-soft py-1 outline-offset-[3px] outline-focus hover:text-text-primary hover:underline"
+      className="typography-body-10 border-border-muted-soft outline-focus hover:text-text-primary flex min-h-[3.4375rem] items-center justify-between border-b py-1 outline-offset-[3px] hover:underline"
       {...props}
     >
       {children}

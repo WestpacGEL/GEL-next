@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-const exports: Record<string, { default: string }> = {
+const exportMap: Record<string, { default: string }> = {
   '.': {
     default: './dist/index.js',
   },
@@ -14,14 +14,8 @@ const exports: Record<string, { default: string }> = {
   './hook': {
     default: './dist/hook/index.js',
   },
-  './tailwind': {
-    default: './dist/tailwind/index.js',
-  },
-  './themes': {
-    default: './dist/tailwind/themes/index.js',
-  },
-  './themes-constants': {
-    default: './dist/tailwind/constants/index.js',
+  './types': {
+    default: './dist/types/index.js',
   },
 };
 
@@ -31,13 +25,13 @@ const main = async () => {
     .map(dirent => dirent.name);
 
   components.forEach(component => {
-    exports[`./${component}`] = { default: `./dist/components/${component}/index.js` };
+    exportMap[`./${component}`] = { default: `./dist/components/${component}/index.js` };
   });
 
   const pkgJsonPath = path.join(process.cwd(), 'package.json');
   const data = await fs.readFile(pkgJsonPath, 'utf-8');
   const pkgJson = JSON.parse(data);
-  pkgJson.exports = exports;
+  pkgJson.exports = exportMap;
   await fs.writeFile(pkgJsonPath, JSON.stringify(pkgJson));
 };
 

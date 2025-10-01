@@ -1,10 +1,10 @@
+import { clsx } from 'clsx';
 import React, { ReactNode } from 'react';
 
 import { AlertIcon } from '../../components/icon/index.js';
 
 import { styles as errorMessageStyles } from './error-message.styles.js';
 import { type ErrorMessageProps } from './error-message.types.js';
-import { clsx } from 'clsx';
 
 export function ErrorMessage({ className, tag: Tag = 'div', icon: Icon, message, ...props }: ErrorMessageProps) {
   const styles = errorMessageStyles({});

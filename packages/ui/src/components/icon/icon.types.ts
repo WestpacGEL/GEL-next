@@ -2,6 +2,7 @@ import { type ReactNode, type SVGAttributes } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
 import { styles } from './icon.styles.js';
+
 import type { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 type Variants = VariantProps<typeof styles>;

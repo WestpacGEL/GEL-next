@@ -6,5 +6,9 @@ export const styles = tv({
     rounded: {
       true: 'rounded-2xl',
     },
+    look: {
+      lego: 'border-0 border-b',
+      soft: '',
+    },
   },
 });

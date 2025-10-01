@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    default: 'flex flex-col gap-2 rounded-xl border border-border-muted-soft bg-background-white-pale p-6',
-    table: 'mb-5 mt-4 max-w-5xl rounded-xl border border-border-muted-soft bg-background-white-pale p-6',
+    default: 'border-border-muted-soft bg-background-white-pale flex flex-col gap-2 rounded-xl border p-6',
+    table: 'border-border-muted-soft bg-background-white-pale mt-4 mb-5 max-w-5xl rounded-xl border p-6',
   },
 });

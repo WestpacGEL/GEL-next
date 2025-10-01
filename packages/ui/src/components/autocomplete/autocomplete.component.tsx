@@ -5,14 +5,14 @@ import { ForwardedRef, forwardRef, useMemo } from 'react';
 import { mergeProps, useButton, useComboBox, useFilter, useFocusRing, useSearchField } from 'react-aria';
 import { useComboBoxState, useSearchFieldState } from 'react-stately';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { ClearIcon, SearchIcon } from '../icon/index.js';
 import { ErrorMessage, Hint, Label, ProgressIndicator } from '../index.js';
 
 import { styles as autocompleteStyles } from './autocomplete.styles.js';
 import { type AutocompleteProps } from './autocomplete.types.js';
 import { AutocompleteListBox, AutocompletePopover } from './components/index.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 const STATIC_IS_OPEN_STATE = {
   isOpen: true,
@@ -151,9 +151,9 @@ function Autocomplete<T extends object>(
           portalContainer={portalContainer}
           triggerRef={outerRef}
         >
-          <div className="bg-background-white-faint px-3 py-2 text-text-muted">{noOptionsMessage}</div>
+          <div className="bg-background-white-faint text-text-muted px-3 py-2">{noOptionsMessage}</div>
           {footer && (
-            <div className="rounded-b border-t border-t-border-muted-soft bg-background-white-faint px-3 py-2 text-text-muted">
+            <div className="border-t-border-muted-soft bg-background-white-faint text-text-muted rounded-b border-t px-3 py-2">
               {footer}
             </div>
           )}
@@ -175,7 +175,7 @@ function Autocomplete<T extends object>(
             state={state}
           />
           {footer && (
-            <div className="rounded-b border-t border-t-border-muted-soft bg-background-white-faint px-3 py-2 text-text-muted">
+            <div className="border-t-border-muted-soft bg-background-white-faint text-text-muted rounded-b border-t px-3 py-2">
               {footer}
             </div>
           )}

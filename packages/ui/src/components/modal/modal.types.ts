@@ -1,4 +1,5 @@
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
 import { type ModalBackdropProps, ModalDialogProps } from './components/index.js';
 
 export type ModalProps = Omit<ModalBackdropProps, 'size'> &

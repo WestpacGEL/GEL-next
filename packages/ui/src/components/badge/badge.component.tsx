@@ -2,10 +2,11 @@
 
 import React, { Ref, forwardRef } from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { styles } from './badge.styles.js';
 import { type BadgeProps } from './badge.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 export function BaseBadge(
   { className, tag: Tag = 'div', color = 'hero', type = 'default', soft = false, children, ...props }: BadgeProps,

@@ -1,4 +1,4 @@
-import { type BrandKey } from '@westpac/ui/tailwind';
+import { type BrandKey } from '@westpac/ui/types';
 
 const WOFF2_TYPE = 'font/woff2';
 export const getFontFilesPerBrand = (brandKey: BrandKey) => {

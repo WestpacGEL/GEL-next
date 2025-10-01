@@ -1,12 +1,13 @@
 'use client';
 
 import { DateValue, getDayOfWeek, isWeekend } from '@internationalized/date';
+import { Breakpoint } from '@westpac/style-config/constants';
 import React, { useMemo, useRef } from 'react';
 import { useButton, useDatePicker, useLocale } from 'react-aria';
 import { useDatePickerState } from 'react-stately';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
-import { Breakpoint } from '../../tailwind/constants/index.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { Button } from '../button/index.js';
 import { CalendarIcon } from '../icon/index.js';
 
@@ -16,7 +17,6 @@ import { Dialog } from './components/dialog/dialog.component.js';
 import { Popover } from './components/popover/popover.component.js';
 import { styles as datePickerStyles } from './date-picker.styles.js';
 import { type DatePickerProps } from './date-picker.types.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 
 const BREAKPOINTS_DECRECENT = ['xl', 'lg', 'md', 'sm', 'xsl', 'initial'] as const;
 export function DatePicker({

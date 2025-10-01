@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'typography-body-9 block font-medium leading-loose text-text-body',
+  base: 'typography-body-9 text-text-body block leading-loose font-medium',
   variants: {
     spacing: {
       medium: '',

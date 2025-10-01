@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'relative border-t border-t-border-muted-soft first:border-t-0 [&:not(:first-of-type)]:pt-5 md:[&:not(:first-of-type)]:pt-6 [&:not(:last-child)]:pb-1',
+  base: 'border-t-border-muted-soft relative border-t first:border-t-0 [&:not(:first-of-type)]:pt-5 md:[&:not(:first-of-type)]:pt-6 [&:not(:last-child)]:pb-1',
   variants: {
     noPadding: {
       true: '',

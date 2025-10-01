@@ -3,12 +3,12 @@
 import { createContext } from 'react';
 import { useField } from 'react-aria';
 
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { ErrorMessage, Hint, Label } from '../../../index.js';
 
 import { styles } from './selector-link-group.styles.js';
 import { SelectorLinkGroupProps } from './selector-link-group.types.js';
-import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
-import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
 
 export const SelectorLinkContext = createContext<{ isDisabled?: boolean }>({
   isDisabled: undefined,

@@ -4,6 +4,7 @@ import { AnimatePresence, LazyMotion, m } from 'motion/react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useFocusRing } from 'react-aria';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 import { generateID, resolveResponsiveVariant } from '../../utils/index.js';
 import { Button } from '../button/index.js';
 import { AddCircleIcon, IconProps, RemoveCircleIcon } from '../icon/index.js';
@@ -11,7 +12,6 @@ import { VisuallyHidden } from '../index.js';
 
 import { styles as repeaterStyles } from './repeater.styles.js';
 import { type RepeaterProps } from './repeater.types.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 
 type Action = {
   id?: string;

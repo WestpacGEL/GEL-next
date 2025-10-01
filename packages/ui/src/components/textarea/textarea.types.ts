@@ -1,8 +1,9 @@
 import { TextareaHTMLAttributes } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
-import { styles } from './textarea.styles.js';
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
+import { styles } from './textarea.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
