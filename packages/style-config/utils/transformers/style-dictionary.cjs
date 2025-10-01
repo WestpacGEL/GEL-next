@@ -2,6 +2,12 @@
 const fs = require('fs/promises');
 const StyleDictionary = require('style-dictionary').default;
 
+const tokens = require(`${__dirname}/../../src/tokens/GEL-tokens-figma.json`);
+
+// ==============================
+// Helpers
+// ==============================
+
 /**
  * Converts a camelCase string into kebab-case
  * @param {string} str
@@ -18,8 +24,12 @@ function camelToKebab(str) {
  * @typedef {import('./design-tokens-root-type').DesignTokensRoot} DesignTokensRoot
  */
 
-const tokens = require(`${__dirname}/../../src/tokens/GEL-tokens-figma.json`);
-
+/**
+ * Remove prefixes
+ * @param {string} tokenName
+ * @param {string[]} prefixes
+ * @returns {string}
+ */
 function removePrefixes(tokenName, prefixes) {
   return prefixes.reduce((name, prefix) => name.replace(prefix, ''), tokenName);
 }
@@ -92,7 +102,6 @@ StyleDictionary.registerFormat({
 
     let output = '';
 
-    // Light mode (default, not wrapped)
     if (primitiveTokens.length) {
       output += ':root, :host {\n';
       primitiveTokens.forEach(token => {
@@ -102,7 +111,7 @@ StyleDictionary.registerFormat({
       output += '}\n\n';
     }
 
-    // Light mode (default, not wrapped)
+    // Light mode (default, wrapped in data-brand)
     if (Object.entries(lightTokensPerBrand).length) {
       Object.entries(lightTokensPerBrand).forEach(([brand, tokens]) => {
         output += `[data-brand="${brand}"] {\n`;
@@ -178,7 +187,6 @@ StyleDictionary.registerFormat({
 
     let output = '';
 
-    // Light mode (default, not wrapped)
     if (primitiveTokens.length) {
       output += ':root, :host {\n';
       primitiveTokens.forEach(token => {
@@ -188,7 +196,7 @@ StyleDictionary.registerFormat({
       output += '}\n\n';
     }
 
-    // Light mode (default, not wrapped)
+    // Light mode (wrapped in data-brand)
     if (lightTokens.length) {
       output += `[data-brand="${options.brand}"] {\n`;
       lightTokens.forEach(token => {
