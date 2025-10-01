@@ -7,7 +7,7 @@ export const styles = tv({
     itemHeader: 'typography-body-9 flex w-full flex-1 items-center justify-between px-3 py-2 group-first:border-t-0',
     headerTitleWrapper: 'flex-1 pr-2 text-left',
     indicator: 'size-3 rotate-90',
-    content: 'hidden',
+    content: '',
   },
   variants: {
     look: {
@@ -16,7 +16,7 @@ export const styles = tv({
       },
       lego: {
         itemHeader:
-          'border-border-muted-soft bg-surface-muted-faint !shadow-border mb-[-1px] border-r border-l-[0.375rem] shadow-[inset_0px_1px_0_0_var(--border-muted-soft),inset_0_-1px_0_0_var(--border-muted-soft)] transition-colors',
+          'border-border-muted-soft bg-surface-muted-faint !shadow-border-muted-soft mb-[-1px] border-r border-l-[0.375rem] shadow-[inset_0px_1px_0_0_var(--border-muted-soft),inset_0_-1px_0_0_var(--border-muted-soft)] transition-colors',
       },
     },
     isFirst: {
@@ -24,13 +24,17 @@ export const styles = tv({
         itemHeader: 'border-t-0 shadow-none',
       },
     },
+    isExpanded: {
+      false: {
+        itemHeader: 'background-transition hover:bg-surface-hover-muted-pale',
+      },
+    },
     isOpen: {
       true: {
-        content: 'border-border-muted-soft block border-t p-3',
+        content: 'visible block border-border-muted-soft p-3',
       },
       false: {
-        base: '',
-        itemHeader: 'background-transition hover:bg-surface-hover-muted-pale',
+        content: 'hidden',
       },
     },
     isDisabled: {
@@ -54,16 +58,22 @@ export const styles = tv({
   compoundSlots: [
     {
       slots: ['indicator'],
-      isOpen: true,
+      isExpanded: true,
       className: '-rotate-90',
     },
     {
       slots: ['itemHeader'],
       look: 'lego',
-      isOpen: true,
+      isExpanded: true,
       className: 'border-l-border-hero',
     },
     { slots: ['content'], isOpen: true, look: 'lego', className: 'mt-[1px] border-t-0 border-r border-l-[0.375rem]' },
+    {
+      slots: ['content'],
+      look: 'soft',
+      isOpen: true,
+      className: 'border-t',
+    },
     {
       slots: ['itemHeader'],
       isOpen: true,
