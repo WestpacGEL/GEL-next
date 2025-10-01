@@ -3,30 +3,66 @@ const fs = require('fs/promises');
 const StyleDictionary = require('style-dictionary').default;
 
 /**
+ * Converts a camelCase string into kebab-case
+ * @param {string} str
+ * @returns {string}
+ */
+function camelToKebab(str) {
+  return str
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2') // insert dash before capital letters
+    .toLowerCase(); // make everything lowercase
+}
+
+/**
  * @typedef {import('design-tokens-format-module').JSONTokenTree} JSONTokenTree
  * @typedef {import('./design-tokens-root-type').DesignTokensRoot} DesignTokensRoot
  */
 
 const tokens = require(`${__dirname}/../../src/tokens/GEL-tokens-figma.json`);
 
+function removePrefixes(tokenName, prefixes) {
+  return prefixes.reduce((name, prefix) => name.replace(prefix, ''), tokenName);
+}
 // ==============================
 // Formats
 // ==============================
 
+const PREFIXES_TO_REMOVE_PRIMITIVES = ['-reserved', '-alias'];
+
 StyleDictionary.registerFormat({
   name: 'css/mode-wrapped-all-brands',
   format: function ({ dictionary, options: { brands } }) {
-    const primitiveTokens = dictionary.allTokens.filter(
-      t => !(t.name.indexOf('light-mode') !== -1 || t.name.indexOf('dark-mode') !== -1),
-    );
+    const primitiveTokens = dictionary.allTokens
+      .filter(t => !(t.name.indexOf('light-mode') !== -1 || t.name.indexOf('dark-mode') !== -1))
+      .reduce((acc, current) => {
+        const newToken = {
+          ...current,
+          name: removePrefixes(current.name, PREFIXES_TO_REMOVE_PRIMITIVES),
+        };
+        return [...acc, newToken];
+      }, []);
+
     const lightTokensPerBrand = dictionary.allTokens
       .filter(t => t.name.indexOf('light-mode') !== -1)
       .reduce((acc, current) => {
         const [splitBrand, tokenName] = current.name.split('-light-mode-');
-        const brand = brands?.[splitBrand] || splitBrand;
+        const brand = brands?.[splitBrand.replace('tokens-', '')] || splitBrand.replace('tokens-', '');
+        const kebabCasedValue = camelToKebab(current.original.$value.replace('{', '').replace('}', ''))
+          .split('.')
+          .join('-');
+        const finalTokenValue = `var(--${kebabCasedValue})`;
+        const tokenNamePieces = tokenName.split('-');
+        tokenNamePieces.splice(1, 1);
         return {
           ...acc,
-          [brand]: [...(acc[brand] || []), { ...current, name: tokenName }],
+          [brand]: [
+            ...(acc[brand] || []),
+            {
+              ...current,
+              name: tokenNamePieces.join('-'),
+              $value: removePrefixes(finalTokenValue, PREFIXES_TO_REMOVE_PRIMITIVES),
+            },
+          ],
         };
       }, {});
 
@@ -34,10 +70,23 @@ StyleDictionary.registerFormat({
       .filter(t => t.name.indexOf('dark-mode') !== -1)
       .reduce((acc, current) => {
         const [splitBrand, tokenName] = current.name.split('-dark-mode-');
-        const brand = brands?.[splitBrand] || splitBrand;
+        const brand = brands?.[splitBrand.replace('tokens-', '')] || splitBrand.replace('tokens-', '');
+        const kebabCasedValue = camelToKebab(current.original.$value.replace('{', '').replace('}', ''))
+          .split('.')
+          .join('-');
+        const finalTokenValue = `var(--${kebabCasedValue})`;
+        const tokenNamePieces = tokenName.split('-');
+        tokenNamePieces.splice(1, 1);
         return {
           ...acc,
-          [brand]: [...(acc[brand] || []), { ...current, name: tokenName }],
+          [brand]: [
+            ...(acc[brand] || []),
+            {
+              ...current,
+              name: tokenNamePieces.join('-'),
+              $value: removePrefixes(finalTokenValue, PREFIXES_TO_REMOVE_PRIMITIVES),
+            },
+          ],
         };
       }, {});
 
@@ -83,13 +132,49 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'css/mode-wrapped-single-brand',
   format: function ({ dictionary, options }) {
-    const primitiveTokens = dictionary.allTokens.filter(
-      t => !(t.name.indexOf('light-mode') !== -1 || t.name.indexOf('dark-mode') !== -1),
-    );
+    const primitiveTokens = dictionary.allTokens
+      .filter(t => !(t.name.indexOf('light-mode') !== -1 || t.name.indexOf('dark-mode') !== -1))
+      .reduce((acc, current) => {
+        const newToken = {
+          ...current,
+          name: removePrefixes(current.name, PREFIXES_TO_REMOVE_PRIMITIVES),
+        };
+        return [...acc, newToken];
+      }, []);
 
-    const lightTokens = dictionary.allTokens.filter(t => t.name.indexOf('light-mode') !== -1);
+    const lightTokens = dictionary.allTokens
+      .filter(t => t.name.indexOf('light-mode') !== -1)
+      .map(current => {
+        const [, tokenName] = current.name.split('-light-mode-');
+        const kebabCasedValue = camelToKebab(current.original.$value.replace('{', '').replace('}', ''))
+          .split('.')
+          .join('-');
+        const finalTokenValue = `var(--${kebabCasedValue})`;
+        const tokenNamePieces = tokenName.split('-');
+        tokenNamePieces.splice(1, 1);
+        return {
+          ...current,
+          name: tokenNamePieces.join('-'),
+          $value: removePrefixes(finalTokenValue, PREFIXES_TO_REMOVE_PRIMITIVES),
+        };
+      });
 
-    const darkTokens = dictionary.allTokens.filter(t => t.name.indexOf('dark-mode') !== -1);
+    const darkTokens = dictionary.allTokens
+      .filter(t => t.name.indexOf('dark-mode') !== -1)
+      .map(current => {
+        const [, tokenName] = current.name.split('-dark-mode-');
+        const kebabCasedValue = camelToKebab(current.original.$value.replace('{', '').replace('}', ''))
+          .split('.')
+          .join('-');
+        const finalTokenValue = `var(--${kebabCasedValue})`;
+        const tokenNamePieces = tokenName.split('-');
+        tokenNamePieces.splice(1, 1);
+        return {
+          ...current,
+          name: tokenNamePieces.join('-'),
+          $value: removePrefixes(finalTokenValue, PREFIXES_TO_REMOVE_PRIMITIVES),
+        };
+      });
 
     let output = '';
 
@@ -244,7 +329,7 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
   },
   platforms: {
     css: {
-      transforms: ['size/pxToRem', 'strip-css-prefix'],
+      transforms: ['size/pxToRem'],
       transformGroup: 'css',
       files: [
         {
@@ -469,7 +554,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
             {
               destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/css/style.css`,
               format: ['css/mode-wrapped-all-brands'],
-              options: { outputReferences: true },
+              options: { outputReferences: true, brands: { 'st-george': 'stg', westpac: 'wbc' } },
             },
           ],
         },
