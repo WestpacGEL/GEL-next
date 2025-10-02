@@ -1,6 +1,6 @@
 
 //
-// dimensions-dark-mode.xswift
+// ./src/tokens/style-dictionary/WBC/ios/dimensions-light-mode.swift
 //
 
 // Do not edit directly, this file was auto-generated.

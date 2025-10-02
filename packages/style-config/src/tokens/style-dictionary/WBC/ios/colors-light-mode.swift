@@ -1,6 +1,6 @@
 
 //
-// colors-light-mode.swift
+// ./src/tokens/style-dictionary/WBC/ios/colors-light-mode.swift
 //
 
 // Do not edit directly, this file was auto-generated.

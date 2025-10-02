@@ -1,6 +1,6 @@
 
 //
-// dimensions-light-mode.swift
+// ./src/tokens/style-dictionary/STG/ios/dimensions-light-mode.swift
 //
 
 // Do not edit directly, this file was auto-generated.

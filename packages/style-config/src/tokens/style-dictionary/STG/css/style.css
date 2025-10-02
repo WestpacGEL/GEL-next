@@ -439,7 +439,7 @@
   --border-rounded-full: var(--themes-st-george-border-radius-full);
 }
 
-[data-brand="stg"][data-mode="dark"] {
+[data-brand="stg"][data-theme="dark"] {
   --color-background-pale-black: var(--themes-st-george-color-mono-black); /* Use for screen backgrounds to establish correct emphasis. */
   --color-background-white-black: var(--themes-st-george-color-mono-black); /* Use for screen backgrounds to establish correct emphasis. */
   --color-background-white-faint: var(--themes-st-george-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */

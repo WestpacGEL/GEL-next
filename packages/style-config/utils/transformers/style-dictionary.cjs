@@ -140,7 +140,7 @@ StyleDictionary.registerFormat({
     // Dark mode (wrapped in selector)
     if (Object.entries(darkTokensPerBrand).length) {
       Object.entries(darkTokensPerBrand).forEach(([brand, tokens]) => {
-        output += `[data-brand="${brand}"][data-mode="dark"] {\n`;
+        output += `[data-brand="${brand}"][data-theme="dark"] {\n`;
         tokens.forEach(token => {
           const description = token.original.$description;
           output += `  --${token.name}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
@@ -222,7 +222,7 @@ StyleDictionary.registerFormat({
 
     // Dark mode (wrapped in selector)
     if (darkTokens.length) {
-      output += `[data-brand="${options.brand}"][data-mode="dark"] {\n`;
+      output += `[data-brand="${options.brand}"][data-theme="dark"] {\n`;
       darkTokens.forEach(token => {
         const description = token.original.$description;
         output += `  --${token.name.replace('dark-mode-', '')}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
@@ -386,7 +386,11 @@ StyleDictionary.registerFormat({
   name: 'ios/enum-dimensions',
   format: function ({ dictionary, options: { prefixToRemove, enumName } }) {
     const primitiveTokens = dictionary.allTokens
-      .filter(t => !(t.path.includes('light-mode') || t.path.includes('dark-mode')) && (t.$type === 'float' || t.$type === 'dimension') )
+      .filter(
+        t =>
+          !(t.path.includes('light-mode') || t.path.includes('dark-mode')) &&
+          (t.$type === 'float' || t.$type === 'dimension'),
+      )
       .map(token => {
         return {
           ...token,
@@ -526,6 +530,7 @@ StyleDictionary.registerTransform({
 // ==============================
 
 const DIST_FOLDER = './dist';
+const INTERNAL_FOLDER = './src/tokens/style-dictionary';
 
 const BRANDS = [
   { themeName: 'Westpac', primitiveName: 'WBC' },
@@ -566,6 +571,11 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
           format: ['css/mode-wrapped-all-brands'],
           options: { brands: { 'st-george': 'stg', westpac: 'wbc' } },
         },
+        {
+          destination: `${INTERNAL_FOLDER}/AllBrands/css/vars.css`,
+          format: ['css/mode-wrapped-all-brands'],
+          options: { brands: { 'st-george': 'stg', westpac: 'wbc' } },
+        },
       ],
     },
     android: {
@@ -578,10 +588,15 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
         'size/remToDp',
         'strip-android-prefix',
       ],
-      buildPath: `${DIST_FOLDER}/style-dictionary/AllBrands/android/`,
       files: [
-        { destination: 'all-colors.xml', format: 'android/colors' },
-        { destination: 'all-dimensions.xml', format: 'android/dimens' },
+        { destination: `${DIST_FOLDER}/style-dictionary/AllBrands/android/all-colors.xml`, format: 'android/colors' },
+        {
+          destination: `${DIST_FOLDER}/style-dictionary/AllBrands/android/all-dimensions.xml`,
+          format: 'android/dimens',
+        },
+
+        { destination: `${INTERNAL_FOLDER}/AllBrands/android/all-colors.xml`, format: 'android/colors' },
+        { destination: `${INTERNAL_FOLDER}/AllBrands/android/all-dimensions.xml`, format: 'android/dimens' },
       ],
     },
     ios: {
@@ -593,10 +608,28 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
         'asset/swift/literal',
         'size/swift/remToCGFloat',
       ],
-      buildPath: `${DIST_FOLDER}/style-dictionary/AllBrands/ios/`,
       files: [
-        { destination: 'all-colors.swift', format: 'ios/enum-colors', options: { enumName: 'AllBrands' } },
-        { destination: 'all-dimensions.swift', format: 'ios/enum-dimensions', options: { enumName: 'AllBrands' } },
+        {
+          destination: `${DIST_FOLDER}/style-dictionary/AllBrands/ios/all-colors.swift`,
+          format: 'ios/enum-colors',
+          options: { enumName: 'AllBrands' },
+        },
+        {
+          destination: `${DIST_FOLDER}/style-dictionary/AllBrands/ios/all-dimensions.swift`,
+          format: 'ios/enum-dimensions',
+          options: { enumName: 'AllBrands' },
+        },
+
+        {
+          destination: `${INTERNAL_FOLDER}/AllBrands/ios/all-colors.swift`,
+          format: 'ios/enum-colors',
+          options: { enumName: 'AllBrands' },
+        },
+        {
+          destination: `${INTERNAL_FOLDER}/AllBrands/ios/all-dimensions.swift`,
+          format: 'ios/enum-dimensions',
+          options: { enumName: 'AllBrands' },
+        },
       ],
     },
   },
@@ -795,7 +828,11 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/`,
           files: [
             { destination: 'all-colors.swift', format: 'ios/enum-colors', options: { enumName: primitiveName } },
-            { destination: 'all-dimensions.swift', format: 'ios/enum-dimensions', options: { enumName: primitiveName } }
+            {
+              destination: 'all-dimensions.swift',
+              format: 'ios/enum-dimensions',
+              options: { enumName: primitiveName },
+            },
           ],
         },
       },
@@ -819,6 +856,11 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
               format: ['css/mode-wrapped-single-brand'],
               options: { brand: primitiveName.toLowerCase() },
             },
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/css/style.css`,
+              format: ['css/mode-wrapped-single-brand'],
+              options: { brand: primitiveName.toLowerCase() },
+            },
           ],
         },
         android: {
@@ -833,20 +875,48 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
             'strip-android-prefix',
             'strip-css-dark-or-light-prefix',
           ],
-          buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/android/`,
           files: [
             {
-              destination: 'colors-light-mode.xml',
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/android/colors-light-mode.xml`,
               format: 'android/colors',
               filter: 'light-mode',
             },
             {
-              destination: 'colors-dark-mode.xml',
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/android/colors-dark-mode.xml`,
               format: 'android/colors',
               filter: 'dark-mode',
             },
-            { destination: 'dimensions-light-mode.xml', format: 'android/dimens', filter: 'light-mode' },
-            { destination: 'dimensions-dark-mode.xml', format: 'android/dimens', filter: 'dark-mode' },
+            {
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/android/dimensions-light-mode.xml`,
+              format: 'android/dimens',
+              filter: 'light-mode',
+            },
+            {
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/android/dimensions-dark-mode.xml`,
+              format: 'android/dimens',
+              filter: 'dark-mode',
+            },
+
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/android/colors-light-mode.xml`,
+              format: 'android/colors',
+              filter: 'light-mode',
+            },
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/android/colors-dark-mode.xml`,
+              format: 'android/colors',
+              filter: 'dark-mode',
+            },
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/android/dimensions-light-mode.xml`,
+              format: 'android/dimens',
+              filter: 'light-mode',
+            },
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/android/dimensions-dark-mode.xml`,
+              format: 'android/dimens',
+              filter: 'dark-mode',
+            },
           ],
         },
         ios: {
@@ -862,25 +932,46 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
             'strip-ios-prefix',
             'strip-ios-dark-or-light-prefix',
           ],
-          buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/`,
           files: [
             {
-              destination: 'colors-light-mode.swift',
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/colors-light-mode.swift`,
               format: 'ios-swift/class.swift',
               filter: 'light-mode-and-color',
             },
             {
-              destination: 'colors-dark-mode.xswift',
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/colors-dark-mode.xswift`,
               format: 'ios-swift/class.swift',
               filter: 'dark-mode-and-color',
             },
             {
-              destination: 'dimensions-light-mode.swift',
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/dimensions-light-mode.swift`,
               format: 'ios-swift/class.swift',
               filter: 'light-mode-and-dimension',
             },
             {
-              destination: 'dimensions-dark-mode.xswift',
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/dimensions-dark-mode.xswift`,
+              format: 'ios-swift/class.swift',
+              filter: 'dark-mode-and-dimension',
+            },
+
+            // INTERNAL_FOLDER
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/ios/colors-light-mode.swift`,
+              format: 'ios-swift/class.swift',
+              filter: 'light-mode-and-color',
+            },
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/ios/colors-dark-mode.xswift`,
+              format: 'ios-swift/class.swift',
+              filter: 'dark-mode-and-color',
+            },
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/ios/dimensions-light-mode.swift`,
+              format: 'ios-swift/class.swift',
+              filter: 'light-mode-and-dimension',
+            },
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/ios/dimensions-dark-mode.xswift`,
               format: 'ios-swift/class.swift',
               filter: 'dark-mode-and-dimension',
             },
