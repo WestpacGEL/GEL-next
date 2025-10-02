@@ -1,7 +1,7 @@
 'use client';
 
-import { AnimatePresence, LazyMotion, m } from 'motion/react';
-import React, { useEffect } from 'react';
+import { LazyMotion, m, useAnimate } from 'motion/react';
+import React, { useEffect, useState } from 'react';
 import { mergeProps, useButton, useDisclosure, useFocusRing, useHover, useId, useLocale } from 'react-aria';
 import { useDisclosureState } from 'react-stately';
 
@@ -42,8 +42,12 @@ export function AccordionItem({ className, tag: Tag = 'div', children, ...props 
   const { isFocusVisible, focusProps } = useFocusRing();
   const { hoverProps } = useHover({ isDisabled });
   const { direction } = useLocale();
+  const [scope, animate] = useAnimate();
+  const [enableOpenStyle, setEnableOpenStyle] = useState(false);
+
   const styles = accordionItemStyles({
-    isOpen: isExpanded,
+    isOpen: enableOpenStyle,
+    isExpanded,
     isDisabled,
     look: groupState?.look,
     rounded: groupState?.rounded,
@@ -51,9 +55,31 @@ export function AccordionItem({ className, tag: Tag = 'div', children, ...props 
   });
 
   useEffect(() => {
-    // There was an issue with exit animations for closing an accordion that adding this fixed
+    // There was an issue with animations for closing an accordion that adding this fixed
     panelRef.current?.removeAttribute('hidden');
   }, [isExpanded]);
+
+  useEffect(() => {
+    // setEnableStyle here as opening animation isn't working correctly if done below
+    if (isExpanded) setEnableOpenStyle(true);
+
+    if (enableOpenStyle) {
+      animate(scope.current, { height: 'auto' }, { duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] });
+    }
+    if (!isExpanded) {
+      animate(
+        scope.current,
+        { height: '0px' },
+        {
+          duration: 0.3,
+          ease: [0.25, 0.1, 0.25, 1.0],
+          // set some styles after animation completes so content doesn't disappear on close
+          onComplete: () => setEnableOpenStyle(false),
+        },
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isExpanded, enableOpenStyle]);
 
   return (
     <Tag className={styles.base({ className })}>
@@ -73,26 +99,16 @@ export function AccordionItem({ className, tag: Tag = 'div', children, ...props 
       </h3>
       <div ref={panelRef} {...panelProps}>
         <LazyMotion features={loadAnimations}>
-          <AnimatePresence initial={false}>
-            {isExpanded && (
-              <m.div
-                className="overflow-hidden"
-                initial={{
-                  height: 0,
-                }}
-                animate={{
-                  height: 'auto',
-                }}
-                exit={{
-                  height: 0,
-                }}
-                transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }}
-                key={id}
-              >
-                <div className={styles.content()}>{children}</div>
-              </m.div>
-            )}
-          </AnimatePresence>
+          <m.div
+            className="overflow-hidden"
+            initial={{
+              height: isExpanded ? 'auto' : 0,
+            }}
+            ref={scope}
+            key={id}
+          >
+            <div className={styles.content()}>{children}</div>
+          </m.div>
         </LazyMotion>
       </div>
     </Tag>
