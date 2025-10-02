@@ -1,561 +1,1567 @@
-
-//
-// all-colors.swift
-//
-
 // Do not edit directly, this file was auto-generated.
-
 
 import UIKit
 
-public class {
-    public static let primitivesGreen50 = UIColor(red: 0.949, green: 0.976, blue: 0.949, alpha: 1)
-    public static let primitivesGreen100 = UIColor(red: 0.851, green: 0.925, blue: 0.851, alpha: 1)
-    public static let primitivesGreen200 = UIColor(red: 0.600, green: 0.800, blue: 0.600, alpha: 1)
-    public static let primitivesGreen300 = UIColor(red: 0.278, green: 0.643, blue: 0.278, alpha: 1)
-    public static let primitivesGreen400 = UIColor(red: 0.141, green: 0.573, blue: 0.141, alpha: 1)
-    public static let primitivesGreen500 = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
-    public static let primitivesGreen600 = UIColor(red: 0.000, green: 0.427, blue: 0.000, alpha: 1)
-    public static let primitivesGreen700 = UIColor(red: 0.000, green: 0.353, blue: 0.000, alpha: 1)
-    public static let primitivesGreen800 = UIColor(red: 0.000, green: 0.275, blue: 0.000, alpha: 1)
-    public static let primitivesGreen900 = UIColor(red: 0.000, green: 0.200, blue: 0.000, alpha: 1)
-    public static let primitivesGreen950 = UIColor(red: 0.000, green: 0.125, blue: 0.000, alpha: 1)
-    public static let primitivesBlue50 = UIColor(red: 0.949, green: 0.973, blue: 0.988, alpha: 1)
-    public static let primitivesBlue100 = UIColor(red: 0.851, green: 0.918, blue: 0.965, alpha: 1)
-    public static let primitivesBlue200 = UIColor(red: 0.600, green: 0.780, blue: 0.906, alpha: 1)
-    public static let primitivesBlue300 = UIColor(red: 0.271, green: 0.604, blue: 0.831, alpha: 1)
-    public static let primitivesBlue400 = UIColor(red: 0.141, green: 0.529, blue: 0.800, alpha: 1)
-    public static let primitivesBlue500 = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
-    public static let primitivesBlue600 = UIColor(red: 0.000, green: 0.388, blue: 0.655, alpha: 1)
-    public static let primitivesBlue700 = UIColor(red: 0.000, green: 0.318, blue: 0.537, alpha: 1)
-    public static let primitivesBlue800 = UIColor(red: 0.000, green: 0.251, blue: 0.424, alpha: 1)
-    public static let primitivesBlue900 = UIColor(red: 0.000, green: 0.180, blue: 0.306, alpha: 1)
-    public static let primitivesBlue950 = UIColor(red: 0.000, green: 0.114, blue: 0.192, alpha: 1)
-    public static let primitivesOrange50 = UIColor(red: 0.988, green: 0.961, blue: 0.949, alpha: 1)
-    public static let primitivesOrange100 = UIColor(red: 0.953, green: 0.847, blue: 0.800, alpha: 1)
-    public static let primitivesOrange200 = UIColor(red: 0.910, green: 0.694, blue: 0.600, alpha: 1)
-    public static let primitivesOrange300 = UIColor(red: 0.843, green: 0.471, blue: 0.310, alpha: 1)
-    public static let primitivesOrange400 = UIColor(red: 0.808, green: 0.345, blue: 0.149, alpha: 1)
-    public static let primitivesOrange500 = UIColor(red: 0.773, green: 0.231, blue: 0.000, alpha: 1)
-    public static let primitivesOrange600 = UIColor(red: 0.655, green: 0.196, blue: 0.000, alpha: 1)
-    public static let primitivesOrange700 = UIColor(red: 0.541, green: 0.161, blue: 0.000, alpha: 1)
-    public static let primitivesOrange800 = UIColor(red: 0.424, green: 0.125, blue: 0.000, alpha: 1)
-    public static let primitivesOrange900 = UIColor(red: 0.310, green: 0.094, blue: 0.000, alpha: 1)
-    public static let primitivesOrange950 = UIColor(red: 0.192, green: 0.059, blue: 0.000, alpha: 1)
-    public static let primitivesRed50 = UIColor(red: 0.988, green: 0.949, blue: 0.949, alpha: 1)
-    public static let primitivesRed100 = UIColor(red: 0.976, green: 0.902, blue: 0.902, alpha: 1)
-    public static let primitivesRed200 = UIColor(red: 0.918, green: 0.651, blue: 0.651, alpha: 1)
-    public static let primitivesRed300 = UIColor(red: 0.859, green: 0.388, blue: 0.388, alpha: 1)
-    public static let primitivesRed400 = UIColor(red: 0.816, green: 0.200, blue: 0.200, alpha: 1)
-    public static let primitivesRed500 = UIColor(red: 0.769, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesRed600 = UIColor(red: 0.655, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesRed700 = UIColor(red: 0.537, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesRed800 = UIColor(red: 0.424, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesRed900 = UIColor(red: 0.306, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesRed950 = UIColor(red: 0.192, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesYellow50 = UIColor(red: 1.000, green: 1.000, blue: 0.949, alpha: 1)
-    public static let primitivesYellow100 = UIColor(red: 1.000, green: 1.000, blue: 0.902, alpha: 1)
-    public static let primitivesYellow200 = UIColor(red: 1.000, green: 1.000, blue: 0.749, alpha: 1)
-    public static let primitivesYellow300 = UIColor(red: 1.000, green: 1.000, blue: 0.502, alpha: 1)
-    public static let primitivesYellow400 = UIColor(red: 1.000, green: 1.000, blue: 0.251, alpha: 1)
-    public static let primitivesYellow500 = UIColor(red: 1.000, green: 1.000, blue: 0.000, alpha: 1)
-    public static let primitivesYellow600 = UIColor(red: 0.851, green: 0.851, blue: 0.000, alpha: 1)
-    public static let primitivesYellow700 = UIColor(red: 0.702, green: 0.702, blue: 0.000, alpha: 1)
-    public static let primitivesYellow800 = UIColor(red: 0.549, green: 0.549, blue: 0.000, alpha: 1)
-    public static let primitivesYellow900 = UIColor(red: 0.400, green: 0.400, blue: 0.000, alpha: 1)
-    public static let primitivesYellow950 = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
-    public static let primitivesStgGrey50 = UIColor(red: 0.976, green: 0.976, blue: 0.976, alpha: 1)
-    public static let primitivesStgGrey100 = UIColor(red: 0.961, green: 0.961, blue: 0.957, alpha: 1)
-    public static let primitivesStgGrey200 = UIColor(red: 0.882, green: 0.882, blue: 0.878, alpha: 1)
-    public static let primitivesStgGrey300 = UIColor(red: 0.698, green: 0.698, blue: 0.682, alpha: 1)
-    public static let primitivesStgGrey400 = UIColor(red: 0.553, green: 0.549, blue: 0.506, alpha: 1)
-    public static let primitivesStgGrey500 = UIColor(red: 0.447, green: 0.443, blue: 0.388, alpha: 1)
-    public static let primitivesStgGrey600 = UIColor(red: 0.369, green: 0.365, blue: 0.333, alpha: 1)
-    public static let primitivesStgGrey700 = UIColor(red: 0.298, green: 0.298, blue: 0.282, alpha: 1)
-    public static let primitivesStgGrey800 = UIColor(red: 0.224, green: 0.224, blue: 0.216, alpha: 1)
-    public static let primitivesStgGrey900 = UIColor(red: 0.122, green: 0.122, blue: 0.122, alpha: 1)
-    public static let primitivesStgGrey950 = UIColor(red: 0.090, green: 0.090, blue: 0.090, alpha: 1)
-    public static let primitivesStgRed50 = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
-    public static let primitivesStgRed100 = UIColor(red: 1.000, green: 0.780, blue: 0.780, alpha: 1)
-    public static let primitivesStgRed200 = UIColor(red: 0.973, green: 0.447, blue: 0.447, alpha: 1)
-    public static let primitivesStgRed300 = UIColor(red: 0.957, green: 0.263, blue: 0.263, alpha: 1)
-    public static let primitivesStgRed400 = UIColor(red: 0.949, green: 0.094, blue: 0.094, alpha: 1)
-    public static let primitivesStgRed500 = UIColor(red: 0.890, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesStgRed600 = UIColor(red: 0.737, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesStgRed700 = UIColor(red: 0.596, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesStgRed800 = UIColor(red: 0.459, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesStgRed900 = UIColor(red: 0.357, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesStgRed950 = UIColor(red: 0.220, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesStgRedOpacity = UIColor(red: 0.890, green: 0.000, blue: 0.000, alpha: 0.3)
-    public static let primitivesStgAccessGreen50 = UIColor(red: 0.925, green: 0.973, blue: 0.941, alpha: 1)
-    public static let primitivesStgAccessGreen100 = UIColor(red: 0.761, green: 0.918, blue: 0.808, alpha: 1)
-    public static let primitivesStgAccessGreen200 = UIColor(red: 0.427, green: 0.796, blue: 0.537, alpha: 1)
-    public static let primitivesStgAccessGreen300 = UIColor(red: 0.184, green: 0.659, blue: 0.329, alpha: 1)
-    public static let primitivesStgAccessGreen400 = UIColor(red: 0.129, green: 0.616, blue: 0.294, alpha: 1)
-    public static let primitivesStgAccessGreen500 = UIColor(red: 0.000, green: 0.529, blue: 0.224, alpha: 1)
-    public static let primitivesStgAccessGreen600 = UIColor(red: 0.000, green: 0.451, blue: 0.204, alpha: 1)
-    public static let primitivesStgAccessGreen700 = UIColor(red: 0.000, green: 0.373, blue: 0.196, alpha: 1)
-    public static let primitivesStgAccessGreen800 = UIColor(red: 0.000, green: 0.282, blue: 0.200, alpha: 1)
-    public static let primitivesStgAccessGreen900 = UIColor(red: 0.000, green: 0.200, blue: 0.137, alpha: 1)
-    public static let primitivesStgAccessGreen950 = UIColor(red: 0.000, green: 0.165, blue: 0.110, alpha: 1)
-    public static let primitivesStgAccessGreenOpacity = UIColor(red: 0.000, green: 0.529, blue: 0.224, alpha: 0.45)
-    public static let primitivesStgGreen50 = UIColor(red: 0.945, green: 0.984, blue: 0.898, alpha: 1)
-    public static let primitivesStgGreen100 = UIColor(red: 0.898, green: 0.969, blue: 0.812, alpha: 1)
-    public static let primitivesStgGreen200 = UIColor(red: 0.761, green: 0.925, blue: 0.557, alpha: 1)
-    public static let primitivesStgGreen300 = UIColor(red: 0.671, green: 0.898, blue: 0.384, alpha: 1)
-    public static let primitivesStgGreen400 = UIColor(red: 0.576, green: 0.847, blue: 0.231, alpha: 1)
-    public static let primitivesStgGreen500 = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 1)
-    public static let primitivesStgGreen600 = UIColor(red: 0.380, green: 0.608, blue: 0.094, alpha: 1)
-    public static let primitivesStgGreen700 = UIColor(red: 0.294, green: 0.475, blue: 0.063, alpha: 1)
-    public static let primitivesStgGreen800 = UIColor(red: 0.212, green: 0.349, blue: 0.035, alpha: 1)
-    public static let primitivesStgGreen900 = UIColor(red: 0.133, green: 0.231, blue: 0.016, alpha: 1)
-    public static let primitivesStgGreen950 = UIColor(red: 0.075, green: 0.141, blue: 0.008, alpha: 1)
-    public static let primitivesStgGreenOpacity = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 0.45)
-    public static let primitivesStgSky50 = UIColor(red: 0.929, green: 0.973, blue: 0.996, alpha: 1)
-    public static let primitivesStgSky100 = UIColor(red: 0.882, green: 0.957, blue: 0.996, alpha: 1)
-    public static let primitivesStgSky200 = UIColor(red: 0.725, green: 0.902, blue: 0.988, alpha: 1)
-    public static let primitivesStgSky300 = UIColor(red: 0.569, green: 0.863, blue: 0.984, alpha: 1)
-    public static let primitivesStgSky400 = UIColor(red: 0.353, green: 0.824, blue: 0.980, alpha: 1)
-    public static let primitivesStgSky500 = UIColor(red: 0.247, green: 0.765, blue: 0.922, alpha: 1)
-    public static let primitivesStgSky600 = UIColor(red: 0.192, green: 0.612, blue: 0.741, alpha: 1)
-    public static let primitivesStgSky700 = UIColor(red: 0.137, green: 0.463, blue: 0.561, alpha: 1)
-    public static let primitivesStgSky800 = UIColor(red: 0.082, green: 0.322, blue: 0.392, alpha: 1)
-    public static let primitivesStgSky900 = UIColor(red: 0.035, green: 0.188, blue: 0.235, alpha: 1)
-    public static let primitivesStgSky950 = UIColor(red: 0.016, green: 0.129, blue: 0.165, alpha: 1)
-    public static let primitivesStgSkyOpacity = UIColor(red: 0.247, green: 0.765, blue: 0.922, alpha: 0.3)
-    public static let primitivesStgPlum50 = UIColor(red: 0.961, green: 0.949, blue: 0.984, alpha: 1)
-    public static let primitivesStgPlum100 = UIColor(red: 0.902, green: 0.875, blue: 0.961, alpha: 1)
-    public static let primitivesStgPlum200 = UIColor(red: 0.733, green: 0.639, blue: 0.886, alpha: 1)
-    public static let primitivesStgPlum300 = UIColor(red: 0.608, green: 0.451, blue: 0.824, alpha: 1)
-    public static let primitivesStgPlum400 = UIColor(red: 0.475, green: 0.278, blue: 0.706, alpha: 1)
-    public static let primitivesStgPlum500 = UIColor(red: 0.314, green: 0.176, blue: 0.475, alpha: 1)
-    public static let primitivesStgPlum600 = UIColor(red: 0.275, green: 0.153, blue: 0.420, alpha: 1)
-    public static let primitivesStgPlum700 = UIColor(red: 0.243, green: 0.133, blue: 0.373, alpha: 1)
-    public static let primitivesStgPlum800 = UIColor(red: 0.204, green: 0.106, blue: 0.314, alpha: 1)
-    public static let primitivesStgPlum900 = UIColor(red: 0.173, green: 0.086, blue: 0.271, alpha: 1)
-    public static let primitivesStgPlum950 = UIColor(red: 0.153, green: 0.075, blue: 0.243, alpha: 1)
-    public static let primitivesStgPlumOpacity = UIColor(red: 0.314, green: 0.176, blue: 0.475, alpha: 0.3)
-    public static let primitivesStgAmber50 = UIColor(red: 1.000, green: 0.953, blue: 0.922, alpha: 1)
-    public static let primitivesStgAmber100 = UIColor(red: 1.000, green: 0.906, blue: 0.839, alpha: 1)
-    public static let primitivesStgAmber200 = UIColor(red: 1.000, green: 0.796, blue: 0.659, alpha: 1)
-    public static let primitivesStgAmber300 = UIColor(red: 1.000, green: 0.702, blue: 0.502, alpha: 1)
-    public static let primitivesStgAmber400 = UIColor(red: 1.000, green: 0.592, blue: 0.322, alpha: 1)
-    public static let primitivesStgAmber500 = UIColor(red: 1.000, green: 0.498, blue: 0.161, alpha: 1)
-    public static let primitivesStgAmber600 = UIColor(red: 0.812, green: 0.384, blue: 0.000, alpha: 1)
-    public static let primitivesStgAmber700 = UIColor(red: 0.616, green: 0.282, blue: 0.000, alpha: 1)
-    public static let primitivesStgAmber800 = UIColor(red: 0.431, green: 0.192, blue: 0.000, alpha: 1)
-    public static let primitivesStgAmber900 = UIColor(red: 0.259, green: 0.102, blue: 0.000, alpha: 1)
-    public static let primitivesStgAmber950 = UIColor(red: 0.173, green: 0.059, blue: 0.000, alpha: 1)
-    public static let primitivesStgAmberOpacity = UIColor(red: 1.000, green: 0.498, blue: 0.161, alpha: 0.4)
-    public static let primitivesStgYellow50 = UIColor(red: 1.000, green: 0.980, blue: 0.898, alpha: 1)
-    public static let primitivesStgYellow100 = UIColor(red: 1.000, green: 0.961, blue: 0.800, alpha: 1)
-    public static let primitivesStgYellow200 = UIColor(red: 1.000, green: 0.922, blue: 0.600, alpha: 1)
-    public static let primitivesStgYellow300 = UIColor(red: 1.000, green: 0.882, blue: 0.400, alpha: 1)
-    public static let primitivesStgYellow400 = UIColor(red: 1.000, green: 0.843, blue: 0.200, alpha: 1)
-    public static let primitivesStgYellow500 = UIColor(red: 1.000, green: 0.804, blue: 0.000, alpha: 1)
-    public static let primitivesStgYellow600 = UIColor(red: 0.800, green: 0.643, blue: 0.000, alpha: 1)
-    public static let primitivesStgYellow700 = UIColor(red: 0.600, green: 0.482, blue: 0.000, alpha: 1)
-    public static let primitivesStgYellow800 = UIColor(red: 0.400, green: 0.322, blue: 0.000, alpha: 1)
-    public static let primitivesStgYellow900 = UIColor(red: 0.200, green: 0.161, blue: 0.000, alpha: 1)
-    public static let primitivesStgYellow950 = UIColor(red: 0.102, green: 0.082, blue: 0.000, alpha: 1)
-    public static let primitivesBorderRadiusNone = 0
-    public static let primitivesBorderRadius3px = 3
-    public static let primitivesBorderRadius4px = 4
-    public static let primitivesBorderRadius5px = 5
-    public static let primitivesBorderRadius6px = 6
-    public static let primitivesBorderRadius8px = 8
-    public static let primitivesBorderRadius12px = 12
-    public static let primitivesBorderRadius16px = 16
-    public static let primitivesBorderRadius24px = 24
-    public static let primitivesBorderRadiusFull = 999
-    public static let StGeorgeMonoWhite = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-    public static let StGeorgeMonoBlack = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
-    public static let LightModeBackgroundWhiteBlack = StGeorgeMonoWhite /** Use for screen backgrounds to establish correct emphasis. */
-    public static let LightModeBackgroundWhiteFaint = StGeorgeMonoWhite /** Use for screen backgrounds to establish correct emphasis. */
-    public static let LightModeBackgroundWhitePale = StGeorgeMonoWhite /** Use for screen backgrounds to establish correct emphasis. */
-    public static let LightModeSurfaceMono = StGeorgeMonoWhite /** Use surface-mono when you want to switch from white to black. */
-    public static let LightModeSurfaceReversed = StGeorgeMonoWhite /** Use with caution. This will be white in both Light and Dark Mode. */
-    public static let LightModeTextMono = StGeorgeMonoWhite /** Use text-mono when you want to switch from white to black. */
-    public static let LightModeTextReversed = StGeorgeMonoWhite /** Use with caution. Text will be white in both light and dark modes */
-    public static let LightModeBorderMono = StGeorgeMonoWhite /** This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
-    public static let LightModeSurfaceHoverMono = StGeorgeMonoWhite /** This token is for hover states. */
-    public static let DarkModeBackgroundPaleBlack = StGeorgeMonoBlack /** Use for screen backgrounds to establish correct emphasis. */
-    public static let DarkModeBackgroundWhiteBlack = StGeorgeMonoBlack /** Use for screen backgrounds to establish correct emphasis. */
-    public static let DarkModeSurfaceMono = StGeorgeMonoBlack /** Use surface-mono when you want to switch from white to black. */
-    public static let DarkModeSurfaceReversed = StGeorgeMonoWhite /** Use with caution. This will be white in both Light and Dark Mode. */
-    public static let DarkModeTextMono = StGeorgeMonoBlack /** Use text-mono when you want to switch from white to black. */
-    public static let DarkModeTextReversed = StGeorgeMonoWhite /** Use with caution. Text will be white in both light and dark modes */
-    public static let DarkModeBorderMono = StGeorgeMonoBlack /** This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
-    public static let DarkModeSurfaceHoverMono = StGeorgeMonoBlack /** This token is for hover states. */
-    public static let StGeorgeMuted50 = primitivesStgGrey50
-    public static let StGeorgeMuted100 = primitivesStgGrey100
-    public static let StGeorgeMuted200 = primitivesStgGrey200
-    public static let StGeorgeMuted300 = primitivesStgGrey300
-    public static let StGeorgeMuted400 = primitivesStgGrey400
-    public static let StGeorgeMuted500 = primitivesStgGrey500
-    public static let StGeorgeMuted600 = primitivesStgGrey600
-    public static let StGeorgeMuted700 = primitivesStgGrey700
-    public static let StGeorgeMuted800 = primitivesStgGrey800
-    public static let StGeorgeMuted900 = primitivesStgGrey900
-    public static let StGeorgeMuted950 = primitivesStgGrey950
-    public static let StGeorgePrimary50 = primitivesStgRed50
-    public static let StGeorgePrimary100 = primitivesStgRed100
-    public static let StGeorgePrimary200 = primitivesStgRed200
-    public static let StGeorgePrimary300 = primitivesStgRed300
-    public static let StGeorgePrimary400 = primitivesStgRed400
-    public static let StGeorgePrimary500 = primitivesStgRed500
-    public static let StGeorgePrimary600 = primitivesStgRed600
-    public static let StGeorgePrimary700 = primitivesStgRed700
-    public static let StGeorgePrimary800 = primitivesStgRed800
-    public static let StGeorgePrimary900 = primitivesStgRed900
-    public static let StGeorgePrimary950 = primitivesStgRed950
-    public static let StGeorgePrimaryOpacity = primitivesStgRedOpacity
-    public static let StGeorgeHero50 = primitivesStgAccessGreen50
-    public static let StGeorgeHero100 = primitivesStgAccessGreen100
-    public static let StGeorgeHero200 = primitivesStgAccessGreen200
-    public static let StGeorgeHero300 = primitivesStgAccessGreen300
-    public static let StGeorgeHero400 = primitivesStgAccessGreen400
-    public static let StGeorgeHero500 = primitivesStgAccessGreen500
-    public static let StGeorgeHero600 = primitivesStgAccessGreen600
-    public static let StGeorgeHero700 = primitivesStgAccessGreen700
-    public static let StGeorgeHero800 = primitivesStgAccessGreen800
-    public static let StGeorgeHero900 = primitivesStgAccessGreen900
-    public static let StGeorgeHero950 = primitivesStgAccessGreen950
-    public static let StGeorgeHeroOpacity = primitivesStgAccessGreenOpacity
-    public static let StGeorgePop50 = primitivesStgGreen50
-    public static let StGeorgePop100 = primitivesStgGreen100
-    public static let StGeorgePop200 = primitivesStgGreen200
-    public static let StGeorgePop300 = primitivesStgGreen300
-    public static let StGeorgePop400 = primitivesStgGreen400
-    public static let StGeorgePop500 = primitivesStgGreen500
-    public static let StGeorgePop600 = primitivesStgGreen600
-    public static let StGeorgePop700 = primitivesStgGreen700
-    public static let StGeorgePop800 = primitivesStgGreen800
-    public static let StGeorgePop900 = primitivesStgGreen900
-    public static let StGeorgePop950 = primitivesStgGreen950
-    public static let StGeorgePopOpacity = primitivesStgGreenOpacity
-    public static let StGeorgeHoller50 = primitivesStgPlum50
-    public static let StGeorgeHoller100 = primitivesStgPlum100
-    public static let StGeorgeHoller200 = primitivesStgPlum200
-    public static let StGeorgeHoller300 = primitivesStgPlum300
-    public static let StGeorgeHoller400 = primitivesStgPlum400
-    public static let StGeorgeHoller500 = primitivesStgPlum500
-    public static let StGeorgeHoller600 = primitivesStgPlum600
-    public static let StGeorgeHoller700 = primitivesStgPlum700
-    public static let StGeorgeHoller800 = primitivesStgPlum800
-    public static let StGeorgeHoller900 = primitivesStgPlum900
-    public static let StGeorgeHoller950 = primitivesStgPlum950
-    public static let StGeorgeHollerOpacity = primitivesStgPlumOpacity
-    public static let StGeorgeSing50 = primitivesStgSky50
-    public static let StGeorgeSing100 = primitivesStgSky100
-    public static let StGeorgeSing200 = primitivesStgSky200
-    public static let StGeorgeSing300 = primitivesStgSky300
-    public static let StGeorgeSing400 = primitivesStgSky400
-    public static let StGeorgeSing500 = primitivesStgSky500
-    public static let StGeorgeSing600 = primitivesStgSky600
-    public static let StGeorgeSing700 = primitivesStgSky700
-    public static let StGeorgeSing800 = primitivesStgSky800
-    public static let StGeorgeSing900 = primitivesStgSky900
-    public static let StGeorgeSing950 = primitivesStgSky950
-    public static let StGeorgeSingOpacity = primitivesStgSkyOpacity
-    public static let StGeorgeDance50 = primitivesStgAmber50
-    public static let StGeorgeDance100 = primitivesStgAmber100
-    public static let StGeorgeDance200 = primitivesStgAmber200
-    public static let StGeorgeDance300 = primitivesStgAmber300
-    public static let StGeorgeDance400 = primitivesStgAmber400
-    public static let StGeorgeDance500 = primitivesStgAmber500
-    public static let StGeorgeDance600 = primitivesStgAmber600
-    public static let StGeorgeDance700 = primitivesStgAmber700
-    public static let StGeorgeDance800 = primitivesStgAmber800
-    public static let StGeorgeDance900 = primitivesStgAmber900
-    public static let StGeorgeDance950 = primitivesStgAmber950
-    public static let StGeorgeDanceOpacity = primitivesStgAmberOpacity
-    public static let StGeorgeSuccess50 = primitivesGreen50
-    public static let StGeorgeSuccess100 = primitivesGreen100
-    public static let StGeorgeSuccess200 = primitivesGreen200
-    public static let StGeorgeSuccess300 = primitivesGreen300
-    public static let StGeorgeSuccess400 = primitivesGreen400
-    public static let StGeorgeSuccess500 = primitivesGreen500
-    public static let StGeorgeSuccess600 = primitivesGreen600
-    public static let StGeorgeSuccess700 = primitivesGreen700
-    public static let StGeorgeSuccess800 = primitivesGreen800
-    public static let StGeorgeSuccess900 = primitivesGreen900
-    public static let StGeorgeSuccess950 = primitivesGreen950
-    public static let StGeorgeInfo50 = primitivesBlue50
-    public static let StGeorgeInfo100 = primitivesBlue100
-    public static let StGeorgeInfo200 = primitivesBlue200
-    public static let StGeorgeInfo300 = primitivesBlue300
-    public static let StGeorgeInfo400 = primitivesBlue400
-    public static let StGeorgeInfo500 = primitivesBlue500
-    public static let StGeorgeInfo600 = primitivesBlue600
-    public static let StGeorgeInfo700 = primitivesBlue700
-    public static let StGeorgeInfo800 = primitivesBlue800
-    public static let StGeorgeInfo900 = primitivesBlue900
-    public static let StGeorgeInfo950 = primitivesBlue950
-    public static let StGeorgeWarning50 = primitivesOrange50
-    public static let StGeorgeWarning100 = primitivesOrange100
-    public static let StGeorgeWarning200 = primitivesOrange200
-    public static let StGeorgeWarning300 = primitivesOrange300
-    public static let StGeorgeWarning400 = primitivesOrange400
-    public static let StGeorgeWarning500 = primitivesOrange500
-    public static let StGeorgeWarning600 = primitivesOrange600
-    public static let StGeorgeWarning700 = primitivesOrange700
-    public static let StGeorgeWarning800 = primitivesOrange800
-    public static let StGeorgeWarning900 = primitivesOrange900
-    public static let StGeorgeWarning950 = primitivesOrange950
-    public static let StGeorgeDanger50 = primitivesRed50
-    public static let StGeorgeDanger100 = primitivesRed100
-    public static let StGeorgeDanger200 = primitivesRed200
-    public static let StGeorgeDanger300 = primitivesRed300
-    public static let StGeorgeDanger400 = primitivesRed400
-    public static let StGeorgeDanger500 = primitivesRed500
-    public static let StGeorgeDanger600 = primitivesRed600
-    public static let StGeorgeDanger700 = primitivesRed700
-    public static let StGeorgeDanger800 = primitivesRed800
-    public static let StGeorgeDanger900 = primitivesRed900
-    public static let StGeorgeDanger950 = primitivesRed950
-    public static let StGeorgeSystem50 = primitivesYellow50
-    public static let StGeorgeSystem100 = primitivesYellow100
-    public static let StGeorgeSystem200 = primitivesYellow200
-    public static let StGeorgeSystem300 = primitivesYellow300
-    public static let StGeorgeSystem400 = primitivesYellow400
-    public static let StGeorgeSystem500 = primitivesYellow500
-    public static let StGeorgeSystem600 = primitivesYellow600
-    public static let StGeorgeSystem700 = primitivesYellow700
-    public static let StGeorgeSystem800 = primitivesYellow800
-    public static let StGeorgeSystem900 = primitivesYellow900
-    public static let StGeorgeSystem950 = primitivesYellow950
-    public static let StGeorgeBorderRadiusNone = primitivesBorderRadiusNone
-    public static let StGeorgeBorderRadiusSm = primitivesBorderRadius3px
-    public static let StGeorgeBorderRadiusMd = primitivesBorderRadius4px
-    public static let StGeorgeBorderRadiusLg = primitivesBorderRadius5px
-    public static let StGeorgeBorderRadiusXl = primitivesBorderRadius6px
-    public static let StGeorgeBorderRadius2xl = primitivesBorderRadius8px
-    public static let StGeorgeBorderRadius3xl = primitivesBorderRadius12px
-    public static let StGeorgeBorderRadius4xl = primitivesBorderRadius16px
-    public static let StGeorgeBorderRadius5xl = primitivesBorderRadius24px
-    public static let StGeorgeBorderRadiusFull = primitivesBorderRadiusFull
-    public static let LightModeBackgroundPaleBlack = StGeorgeMuted100 /** Use for screen backgrounds to establish correct emphasis. */
-    public static let LightModeBackgroundPaleFaint = StGeorgeMuted100 /** Use for screen backgrounds to establish correct emphasis. */
-    public static let LightModeBackgroundPrimary = StGeorgePrimary500 /** Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-    public static let LightModeBackgroundHero = StGeorgeHero500 /** Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-    public static let LightModeSurfaceMuted = StGeorgeMuted500 /** Muted is now slightly lighter but remains accessible in all required scenarios. */
-    public static let LightModeSurfaceMutedStrong = StGeorgeMuted400 /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let LightModeSurfaceMutedMild = StGeorgeMuted300 /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let LightModeSurfaceMutedSoft = StGeorgeMuted200 /** This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let LightModeSurfaceMutedPale = StGeorgeMuted100 /** This colour is used for backgrounds */
-    public static let LightModeSurfaceMutedFaint = StGeorgeMuted50 /** This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes. */
-    public static let LightModeSurfacePrimary = StGeorgePrimary500
-    public static let LightModeSurfacePrimaryFaint = StGeorgePrimary50 /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-    public static let LightModeSurfaceHero = StGeorgeHero500
-    public static let LightModeSurfaceHeroFaint = StGeorgeHero50 /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-    public static let LightModeSurfacePop = StGeorgePop500 /** This colour should be used very sparingly. It is for embellishment only. */
-    public static let LightModeSurfacePopFaint = StGeorgePop50 /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-    public static let LightModeSurfaceHoller = StGeorgeHoller500 /** This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-    public static let LightModeSurfaceHollerFaint = StGeorgeHoller50 /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-    public static let LightModeSurfaceSing = StGeorgeSing500 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeSurfaceSingFaint = StGeorgeSing50 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeSurfaceDance = StGeorgeDance500 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeSurfaceDanceFaint = StGeorgeDance50 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeSurfaceSuccess = StGeorgeSuccess500 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let LightModeSurfaceSuccessFaint = StGeorgeSuccess50 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let LightModeSurfaceInfo = StGeorgeInfo500 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let LightModeSurfaceInfoFaint = StGeorgeInfo50 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let LightModeSurfaceWarning = StGeorgeWarning500 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let LightModeSurfaceWarningFaint = StGeorgeWarning50 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let LightModeSurfaceDanger = StGeorgeDanger500 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let LightModeSurfaceDangerFaint = StGeorgeDanger50 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let LightModeSurfaceSystemError = StGeorgeSystem500 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let LightModeSurfaceSystemErrorDark = StGeorgeSystem950 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let LightModeTextMuted = StGeorgeMuted500 /** Use for text that needs less emphasis - Hint text, sub labels etc. */
-    public static let LightModeTextPrimary = StGeorgePrimary500 /** This is not currently used in the Design System. */
-    public static let LightModeTextHoller = StGeorgeHoller500 /** This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
-    public static let LightModeTextLink = StGeorgePrimary500 /** Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
-    public static let LightModeTextSuccess = StGeorgeSuccess500 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let LightModeTextInfo = StGeorgeInfo500 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let LightModeTextWarning = StGeorgeWarning500 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let LightModeTextDanger = StGeorgeDanger500 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let LightModeTextSystemError = StGeorgeSystem950 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let LightModeBorderMuted = StGeorgeMuted500 /** This border colour is not currently used in the Design System. */
-    public static let LightModeBorderMutedStrong = StGeorgeMuted400 /** This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
-    public static let LightModeBorderMutedMild = StGeorgeMuted300 /** This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
-    public static let LightModeBorderMutedSoft = StGeorgeMuted200 /** This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
-    public static let LightModeBorderHero = StGeorgeHero500 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let LightModeBorderPrimary = StGeorgePrimary500 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let LightModeBorderPop = StGeorgePop500 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let LightModeBorderHoller = StGeorgeHoller500 /** This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-    public static let LightModeBorderSing = StGeorgeSing500 /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeBorderDance = StGeorgeDance500 /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeBorderSuccess = StGeorgeSuccess500 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let LightModeBorderSuccessMild = StGeorgeSuccess300 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let LightModeBorderInfo = StGeorgeInfo500 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let LightModeBorderInfoMild = StGeorgeInfo300 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let LightModeBorderWarning = StGeorgeWarning500 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let LightModeBorderWarningMild = StGeorgeWarning300 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let LightModeBorderDanger = StGeorgeDanger500 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let LightModeBorderDangerMild = StGeorgeDanger300 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let LightModeBorderFocus = StGeorgeHoller300 /** This is a reserved colour. It must only be used for the focus state keyboard navigation. */
-    public static let LightModeDataASolid = StGeorgePrimary500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataATint = StGeorgePrimary200 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataAOpacity = StGeorgePrimaryOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataBSolid = StGeorgeHero500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataBTint = StGeorgeHero300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataBOpacity = StGeorgeHeroOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataCSolid = StGeorgePop500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataCTint = StGeorgePop300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataCOpacity = StGeorgePopOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataDSolid = StGeorgeHoller500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataDTint = StGeorgeHoller200 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataDOpacity = StGeorgeHollerOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataESolid = StGeorgeSing500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataETint = StGeorgeSing300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataEOpacity = StGeorgeSingOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataFSolid = StGeorgeDance500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataFTint = StGeorgeDance300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataFOpacity = StGeorgeDanceOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeSurfaceHoverPrimary = StGeorgePrimary400 /** This token is for hover states. */
-    public static let LightModeSurfaceActivePrimary = StGeorgePrimary200
-    public static let LightModeSurfaceHoverHero = StGeorgeHero400 /** This token is for hover states. */
-    public static let LightModeSurfaceActiveHero = StGeorgeHero300 /** This token is for hover states. */
-    public static let LightModeSurfaceHoverPrimaryFaint = StGeorgePrimary50 /** This token is for hover states. */
-    public static let LightModeSurfaceActivePrimaryFaint = StGeorgePrimary100 /** This token is for hover states. */
-    public static let LightModeSurfaceHoverHeroFaint = StGeorgeHero50
-    public static let LightModeSurfaceActiveHeroFaint = StGeorgeHero100
-    public static let LightModeSurfaceHoverMutedPale = StGeorgeMuted100 /** This token is for hover states. */
-    public static let LightModeSurfaceActiveMutedPale = StGeorgeMuted300 /** This token is for hover states. */
-    public static let LightModeSurfaceActiveMono = StGeorgeMuted200 /** This token is for hover states. */
-    public static let LightModeBorderRadiusRoundedNone = StGeorgeBorderRadiusNone
-    public static let LightModeBorderRadiusRoundedSm = StGeorgeBorderRadiusSm
-    public static let LightModeBorderRadiusRoundedMd = StGeorgeBorderRadiusMd
-    public static let LightModeBorderRadiusRoundedLg = StGeorgeBorderRadiusLg
-    public static let LightModeBorderRadiusRoundedXl = StGeorgeBorderRadiusXl
-    public static let LightModeBorderRadiusRounded2xl = StGeorgeBorderRadius2xl
-    public static let LightModeBorderRadiusRounded3xl = StGeorgeBorderRadius3xl
-    public static let LightModeBorderRadiusRounded4xl = StGeorgeBorderRadius4xl
-    public static let LightModeBorderRadiusRounded5xl = StGeorgeBorderRadius5xl
-    public static let LightModeBorderRadiusRoundedFull = StGeorgeBorderRadiusFull
-    public static let DarkModeBackgroundWhiteFaint = StGeorgeMuted950 /** Use for screen backgrounds to establish correct emphasis. */
-    public static let DarkModeBackgroundPaleFaint = StGeorgeMuted950 /** Use for screen backgrounds to establish correct emphasis. */
-    public static let DarkModeBackgroundWhitePale = StGeorgeMuted900 /** Use for screen backgrounds to establish correct emphasis. */
-    public static let DarkModeBackgroundPrimary = StGeorgePrimary500 /** Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-    public static let DarkModeBackgroundHero = StGeorgeHero500 /** Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-    public static let DarkModeSurfaceMuted = StGeorgeMuted400 /** Muted is now slightly lighter but remains accessible in all required scenarios. */
-    public static let DarkModeSurfaceMutedStrong = StGeorgeMuted600 /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let DarkModeSurfaceMutedMild = StGeorgeMuted700 /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let DarkModeSurfaceMutedSoft = StGeorgeMuted800 /** This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let DarkModeSurfaceMutedPale = StGeorgeMuted900 /** This colour is used for backgrounds */
-    public static let DarkModeSurfaceMutedFaint = StGeorgeMuted950 /** This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes. */
-    public static let DarkModeSurfacePrimary = StGeorgePrimary400
-    public static let DarkModeSurfacePrimaryFaint = StGeorgePrimary950 /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-    public static let DarkModeSurfaceHero = StGeorgeHero300
-    public static let DarkModeSurfaceHeroFaint = StGeorgeHero950 /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-    public static let DarkModeSurfacePop = StGeorgePop500 /** This colour should be used very sparingly. It is for embellishment only. */
-    public static let DarkModeSurfacePopFaint = StGeorgePop950 /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-    public static let DarkModeSurfaceHoller = StGeorgeHoller400 /** This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-    public static let DarkModeSurfaceHollerFaint = StGeorgeHoller950 /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-    public static let DarkModeSurfaceSing = StGeorgeSing900 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeSurfaceSingFaint = StGeorgeSing950 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeSurfaceDance = StGeorgeDance500 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeSurfaceDanceFaint = StGeorgeDance900 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeSurfaceSuccess = StGeorgeSuccess400 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let DarkModeSurfaceSuccessFaint = StGeorgeSuccess900 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let DarkModeSurfaceInfo = StGeorgeInfo400 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let DarkModeSurfaceInfoFaint = StGeorgeInfo900 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let DarkModeSurfaceWarning = StGeorgeWarning400 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let DarkModeSurfaceWarningFaint = StGeorgeWarning900 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let DarkModeSurfaceDanger = StGeorgeDanger300 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let DarkModeSurfaceDangerFaint = StGeorgeDanger900 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let DarkModeSurfaceSystemError = StGeorgeSystem950 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let DarkModeSurfaceSystemErrorDark = StGeorgeSystem500 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let DarkModeTextMuted = StGeorgeMuted400 /** Use for text that needs less emphasis - Hint text, sub labels etc. */
-    public static let DarkModeTextPrimary = StGeorgePrimary300 /** This is not currently used in the Design System. */
-    public static let DarkModeTextHoller = StGeorgeHoller300 /** This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
-    public static let DarkModeTextLink = StGeorgePrimary300 /** Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
-    public static let DarkModeTextSuccess = StGeorgeSuccess300 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let DarkModeTextInfo = StGeorgeInfo300 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let DarkModeTextWarning = StGeorgeWarning300 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let DarkModeTextDanger = StGeorgeDanger300 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let DarkModeTextSystemError = StGeorgeSystem500 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let DarkModeBorderMuted = StGeorgeMuted500 /** This border colour is not currently used in the Design System. */
-    public static let DarkModeBorderMutedStrong = StGeorgeMuted500 /** This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
-    public static let DarkModeBorderMutedMild = StGeorgeMuted700 /** This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
-    public static let DarkModeBorderMutedSoft = StGeorgeMuted800 /** This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
-    public static let DarkModeBorderHero = StGeorgeHero300 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let DarkModeBorderPrimary = StGeorgePrimary400 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let DarkModeBorderPop = StGeorgePop800 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let DarkModeBorderHoller = StGeorgeHoller400 /** This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-    public static let DarkModeBorderSing = StGeorgeSing500 /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeBorderDance = StGeorgeDance500 /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeBorderSuccess = StGeorgeSuccess500 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let DarkModeBorderSuccessMild = StGeorgeSuccess700 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let DarkModeBorderInfo = StGeorgeInfo500 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let DarkModeBorderInfoMild = StGeorgeInfo700 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let DarkModeBorderWarning = StGeorgeWarning500 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let DarkModeBorderWarningMild = StGeorgeWarning700 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let DarkModeBorderDanger = StGeorgeDanger500 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let DarkModeBorderDangerMild = StGeorgeDanger700 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let DarkModeBorderFocus = StGeorgeHoller400 /** This is a reserved colour. It must only be used for the focus state keyboard navigation. */
-    public static let DarkModeDataASolid = StGeorgePrimary500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataATint = StGeorgePrimary200 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataAOpacity = StGeorgePrimaryOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataBSolid = StGeorgeHero300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataBTint = StGeorgeHero200 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataBOpacity = StGeorgeHeroOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataCSolid = StGeorgePop500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataCTint = StGeorgePop300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataCOpacity = StGeorgePopOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataDSolid = StGeorgeHoller500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataDTint = StGeorgeHoller200 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataDOpacity = StGeorgeHollerOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataESolid = StGeorgeSing500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataETint = StGeorgeSing300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataEOpacity = StGeorgeSingOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataFSolid = StGeorgeDance500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataFTint = StGeorgeDance300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataFOpacity = StGeorgeDanceOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeSurfaceHoverPrimary = StGeorgePrimary200 /** This token is for hover states. */
-    public static let DarkModeSurfaceActivePrimary = StGeorgePrimary100
-    public static let DarkModeSurfaceHoverHero = StGeorgeHero200 /** This token is for hover states. */
-    public static let DarkModeSurfaceActiveHero = StGeorgeHero100 /** This token is for hover states. */
-    public static let DarkModeSurfaceHoverPrimaryFaint = StGeorgePrimary900 /** This token is for hover states. */
-    public static let DarkModeSurfaceActivePrimaryFaint = StGeorgePrimary800 /** This token is for hover states. */
-    public static let DarkModeSurfaceHoverHeroFaint = StGeorgeHero800
-    public static let DarkModeSurfaceActiveHeroFaint = StGeorgeHero400
-    public static let DarkModeSurfaceHoverMutedPale = StGeorgeMuted800 /** This token is for hover states. */
-    public static let DarkModeSurfaceActiveMutedPale = StGeorgeMuted600 /** This token is for hover states. */
-    public static let DarkModeSurfaceActiveMono = StGeorgeMuted800 /** This token is for hover states. */
-    public static let DarkModeBorderRadiusRoundedNone = StGeorgeBorderRadiusNone
-    public static let DarkModeBorderRadiusRoundedSm = StGeorgeBorderRadiusSm
-    public static let DarkModeBorderRadiusRoundedMd = StGeorgeBorderRadiusMd
-    public static let DarkModeBorderRadiusRoundedLg = StGeorgeBorderRadiusLg
-    public static let DarkModeBorderRadiusRoundedXl = StGeorgeBorderRadiusXl
-    public static let DarkModeBorderRadiusRounded2xl = StGeorgeBorderRadius2xl
-    public static let DarkModeBorderRadiusRounded3xl = StGeorgeBorderRadius3xl
-    public static let DarkModeBorderRadiusRounded4xl = StGeorgeBorderRadius4xl
-    public static let DarkModeBorderRadiusRounded5xl = StGeorgeBorderRadius5xl
-    public static let DarkModeBorderRadiusRoundedFull = StGeorgeBorderRadiusFull
-    public static let StGeorgeTextBodyLm = StGeorgeHero800
-    public static let StGeorgeTextBodyDm = StGeorgeMuted200
-    public static let StGeorgeTextHeadingLm = StGeorgeHero600
-    public static let StGeorgeTextHeadingDm = StGeorgeHero300
-    public static let StGeorgeTextHeroLm = StGeorgeHero600
-    public static let StGeorgeTextHeroDm = StGeorgeHero300
-    public static let StGeorgeSurfacePictogramBaseLm = StGeorgeHero800
-    public static let StGeorgeSurfacePictogramBaseDm = StGeorgeHero400
-    public static let StGeorgeSurfacePictogramAccentLm = StGeorgePop500
-    public static let StGeorgeSurfacePictogramAccentDm = StGeorgePop400
-    public static let StGeorgeSurfaceMutedVividLm = StGeorgeHero800
-    public static let StGeorgeSurfaceMutedVividDm = StGeorgeMuted50
-    public static let LightModeSurfaceMutedVivid = StGeorgeSurfaceMutedVividLm /** Use for icons that need to be text colour. */
-    public static let LightModeTextBody = StGeorgeTextBodyLm /** Use for body text, button labels, form labels etc. Can also be used for headings if required. */
-    public static let LightModeTextHeading = StGeorgeTextHeadingLm /** Use for headings to ensure that multi-brand switching remains accurate. */
-    public static let LightModeTextHero = StGeorgeTextHeroLm /** This is not currently used in the Design System */
-    public static let LightModeSurfacePictogramBase = StGeorgeSurfacePictogramBaseLm /** This is a reserved component colour token. It must only be used for Pictograms. */
-    public static let LightModeSurfacePictogramAccent = StGeorgeSurfacePictogramAccentLm /** This is a reserved component colour token. It must only be used for Pictograms. */
-    public static let DarkModeSurfaceMutedVivid = StGeorgeSurfaceMutedVividDm /** Use for icons that need to be text colour. */
-    public static let DarkModeTextBody = StGeorgeTextBodyDm /** Use for body text, button labels, form labels etc. Can also be used for headings if required. */
-    public static let DarkModeTextHeading = StGeorgeTextHeadingDm /** Use for headings to ensure that multi-brand switching remains accurate. */
-    public static let DarkModeTextHero = StGeorgeTextHeroDm /** This is not currently used in the Design System */
-    public static let DarkModeSurfacePictogramBase = StGeorgeSurfacePictogramBaseDm /** This is a reserved component colour token. It must only be used for Pictograms. */
-    public static let DarkModeSurfacePictogramAccent = StGeorgeSurfacePictogramAccentDm /** This is a reserved component colour token. It must only be used for Pictograms. */
+public enum STGPrimitivesColors {
+  public static let PrimitivesReservedGreen50 = UIColor(red: 0.949, green: 0.976, blue: 0.949, alpha: 1)
+  public static let PrimitivesReservedGreen100 = UIColor(red: 0.851, green: 0.925, blue: 0.851, alpha: 1)
+  public static let PrimitivesReservedGreen200 = UIColor(red: 0.600, green: 0.800, blue: 0.600, alpha: 1)
+  public static let PrimitivesReservedGreen300 = UIColor(red: 0.278, green: 0.643, blue: 0.278, alpha: 1)
+  public static let PrimitivesReservedGreen400 = UIColor(red: 0.141, green: 0.573, blue: 0.141, alpha: 1)
+  public static let PrimitivesReservedGreen500 = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedGreen600 = UIColor(red: 0.000, green: 0.427, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedGreen700 = UIColor(red: 0.000, green: 0.353, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedGreen800 = UIColor(red: 0.000, green: 0.275, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedGreen900 = UIColor(red: 0.000, green: 0.200, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedGreen950 = UIColor(red: 0.000, green: 0.125, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedBlue50 = UIColor(red: 0.949, green: 0.973, blue: 0.988, alpha: 1)
+  public static let PrimitivesReservedBlue100 = UIColor(red: 0.851, green: 0.918, blue: 0.965, alpha: 1)
+  public static let PrimitivesReservedBlue200 = UIColor(red: 0.600, green: 0.780, blue: 0.906, alpha: 1)
+  public static let PrimitivesReservedBlue300 = UIColor(red: 0.271, green: 0.604, blue: 0.831, alpha: 1)
+  public static let PrimitivesReservedBlue400 = UIColor(red: 0.141, green: 0.529, blue: 0.800, alpha: 1)
+  public static let PrimitivesReservedBlue500 = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
+  public static let PrimitivesReservedBlue600 = UIColor(red: 0.000, green: 0.388, blue: 0.655, alpha: 1)
+  public static let PrimitivesReservedBlue700 = UIColor(red: 0.000, green: 0.318, blue: 0.537, alpha: 1)
+  public static let PrimitivesReservedBlue800 = UIColor(red: 0.000, green: 0.251, blue: 0.424, alpha: 1)
+  public static let PrimitivesReservedBlue900 = UIColor(red: 0.000, green: 0.180, blue: 0.306, alpha: 1)
+  public static let PrimitivesReservedBlue950 = UIColor(red: 0.000, green: 0.114, blue: 0.192, alpha: 1)
+  public static let PrimitivesReservedOrange50 = UIColor(red: 0.988, green: 0.961, blue: 0.949, alpha: 1)
+  public static let PrimitivesReservedOrange100 = UIColor(red: 0.953, green: 0.847, blue: 0.800, alpha: 1)
+  public static let PrimitivesReservedOrange200 = UIColor(red: 0.910, green: 0.694, blue: 0.600, alpha: 1)
+  public static let PrimitivesReservedOrange300 = UIColor(red: 0.843, green: 0.471, blue: 0.310, alpha: 1)
+  public static let PrimitivesReservedOrange400 = UIColor(red: 0.808, green: 0.345, blue: 0.149, alpha: 1)
+  public static let PrimitivesReservedOrange500 = UIColor(red: 0.773, green: 0.231, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedOrange600 = UIColor(red: 0.655, green: 0.196, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedOrange700 = UIColor(red: 0.541, green: 0.161, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedOrange800 = UIColor(red: 0.424, green: 0.125, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedOrange900 = UIColor(red: 0.310, green: 0.094, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedOrange950 = UIColor(red: 0.192, green: 0.059, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed50 = UIColor(red: 0.988, green: 0.949, blue: 0.949, alpha: 1)
+  public static let PrimitivesReservedRed100 = UIColor(red: 0.976, green: 0.902, blue: 0.902, alpha: 1)
+  public static let PrimitivesReservedRed200 = UIColor(red: 0.918, green: 0.651, blue: 0.651, alpha: 1)
+  public static let PrimitivesReservedRed300 = UIColor(red: 0.859, green: 0.388, blue: 0.388, alpha: 1)
+  public static let PrimitivesReservedRed400 = UIColor(red: 0.816, green: 0.200, blue: 0.200, alpha: 1)
+  public static let PrimitivesReservedRed500 = UIColor(red: 0.769, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed600 = UIColor(red: 0.655, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed700 = UIColor(red: 0.537, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed800 = UIColor(red: 0.424, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed900 = UIColor(red: 0.306, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed950 = UIColor(red: 0.192, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow50 = UIColor(red: 1.000, green: 1.000, blue: 0.949, alpha: 1)
+  public static let PrimitivesReservedYellow100 = UIColor(red: 1.000, green: 1.000, blue: 0.902, alpha: 1)
+  public static let PrimitivesReservedYellow200 = UIColor(red: 1.000, green: 1.000, blue: 0.749, alpha: 1)
+  public static let PrimitivesReservedYellow300 = UIColor(red: 1.000, green: 1.000, blue: 0.502, alpha: 1)
+  public static let PrimitivesReservedYellow400 = UIColor(red: 1.000, green: 1.000, blue: 0.251, alpha: 1)
+  public static let PrimitivesReservedYellow500 = UIColor(red: 1.000, green: 1.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow600 = UIColor(red: 0.851, green: 0.851, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow700 = UIColor(red: 0.702, green: 0.702, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow800 = UIColor(red: 0.549, green: 0.549, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow900 = UIColor(red: 0.400, green: 0.400, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow950 = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGGrey50 = UIColor(red: 0.976, green: 0.976, blue: 0.976, alpha: 1)
+  public static let PrimitivesSTGGrey100 = UIColor(red: 0.961, green: 0.961, blue: 0.957, alpha: 1)
+  public static let PrimitivesSTGGrey200 = UIColor(red: 0.882, green: 0.882, blue: 0.878, alpha: 1)
+  public static let PrimitivesSTGGrey300 = UIColor(red: 0.698, green: 0.698, blue: 0.682, alpha: 1)
+  public static let PrimitivesSTGGrey400 = UIColor(red: 0.553, green: 0.549, blue: 0.506, alpha: 1)
+  public static let PrimitivesSTGGrey500 = UIColor(red: 0.447, green: 0.443, blue: 0.388, alpha: 1)
+  public static let PrimitivesSTGGrey600 = UIColor(red: 0.369, green: 0.365, blue: 0.333, alpha: 1)
+  public static let PrimitivesSTGGrey700 = UIColor(red: 0.298, green: 0.298, blue: 0.282, alpha: 1)
+  public static let PrimitivesSTGGrey800 = UIColor(red: 0.224, green: 0.224, blue: 0.216, alpha: 1)
+  public static let PrimitivesSTGGrey900 = UIColor(red: 0.122, green: 0.122, blue: 0.122, alpha: 1)
+  public static let PrimitivesSTGGrey950 = UIColor(red: 0.090, green: 0.090, blue: 0.090, alpha: 1)
+  public static let PrimitivesSTGRed50 = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
+  public static let PrimitivesSTGRed100 = UIColor(red: 1.000, green: 0.780, blue: 0.780, alpha: 1)
+  public static let PrimitivesSTGRed200 = UIColor(red: 0.973, green: 0.447, blue: 0.447, alpha: 1)
+  public static let PrimitivesSTGRed300 = UIColor(red: 0.957, green: 0.263, blue: 0.263, alpha: 1)
+  public static let PrimitivesSTGRed400 = UIColor(red: 0.949, green: 0.094, blue: 0.094, alpha: 1)
+  public static let PrimitivesSTGRed500 = UIColor(red: 0.890, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGRed600 = UIColor(red: 0.737, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGRed700 = UIColor(red: 0.596, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGRed800 = UIColor(red: 0.459, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGRed900 = UIColor(red: 0.357, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGRed950 = UIColor(red: 0.220, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGRedOpacity = UIColor(red: 0.890, green: 0.000, blue: 0.000, alpha: 0.3)
+  public static let PrimitivesSTGAccessGreen50 = UIColor(red: 0.925, green: 0.973, blue: 0.941, alpha: 1)
+  public static let PrimitivesSTGAccessGreen100 = UIColor(red: 0.761, green: 0.918, blue: 0.808, alpha: 1)
+  public static let PrimitivesSTGAccessGreen200 = UIColor(red: 0.427, green: 0.796, blue: 0.537, alpha: 1)
+  public static let PrimitivesSTGAccessGreen300 = UIColor(red: 0.184, green: 0.659, blue: 0.329, alpha: 1)
+  public static let PrimitivesSTGAccessGreen400 = UIColor(red: 0.129, green: 0.616, blue: 0.294, alpha: 1)
+  public static let PrimitivesSTGAccessGreen500 = UIColor(red: 0.000, green: 0.529, blue: 0.224, alpha: 1)
+  public static let PrimitivesSTGAccessGreen600 = UIColor(red: 0.000, green: 0.451, blue: 0.204, alpha: 1)
+  public static let PrimitivesSTGAccessGreen700 = UIColor(red: 0.000, green: 0.373, blue: 0.196, alpha: 1)
+  public static let PrimitivesSTGAccessGreen800 = UIColor(red: 0.000, green: 0.282, blue: 0.200, alpha: 1)
+  public static let PrimitivesSTGAccessGreen900 = UIColor(red: 0.000, green: 0.200, blue: 0.137, alpha: 1)
+  public static let PrimitivesSTGAccessGreen950 = UIColor(red: 0.000, green: 0.165, blue: 0.110, alpha: 1)
+  public static let PrimitivesSTGAccessGreenOpacity = UIColor(red: 0.000, green: 0.529, blue: 0.224, alpha: 0.45)
+  public static let PrimitivesSTGGreen50 = UIColor(red: 0.945, green: 0.984, blue: 0.898, alpha: 1)
+  public static let PrimitivesSTGGreen100 = UIColor(red: 0.898, green: 0.969, blue: 0.812, alpha: 1)
+  public static let PrimitivesSTGGreen200 = UIColor(red: 0.761, green: 0.925, blue: 0.557, alpha: 1)
+  public static let PrimitivesSTGGreen300 = UIColor(red: 0.671, green: 0.898, blue: 0.384, alpha: 1)
+  public static let PrimitivesSTGGreen400 = UIColor(red: 0.576, green: 0.847, blue: 0.231, alpha: 1)
+  public static let PrimitivesSTGGreen500 = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 1)
+  public static let PrimitivesSTGGreen600 = UIColor(red: 0.380, green: 0.608, blue: 0.094, alpha: 1)
+  public static let PrimitivesSTGGreen700 = UIColor(red: 0.294, green: 0.475, blue: 0.063, alpha: 1)
+  public static let PrimitivesSTGGreen800 = UIColor(red: 0.212, green: 0.349, blue: 0.035, alpha: 1)
+  public static let PrimitivesSTGGreen900 = UIColor(red: 0.133, green: 0.231, blue: 0.016, alpha: 1)
+  public static let PrimitivesSTGGreen950 = UIColor(red: 0.075, green: 0.141, blue: 0.008, alpha: 1)
+  public static let PrimitivesSTGGreenOpacity = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 0.45)
+  public static let PrimitivesSTGSky50 = UIColor(red: 0.929, green: 0.973, blue: 0.996, alpha: 1)
+  public static let PrimitivesSTGSky100 = UIColor(red: 0.882, green: 0.957, blue: 0.996, alpha: 1)
+  public static let PrimitivesSTGSky200 = UIColor(red: 0.725, green: 0.902, blue: 0.988, alpha: 1)
+  public static let PrimitivesSTGSky300 = UIColor(red: 0.569, green: 0.863, blue: 0.984, alpha: 1)
+  public static let PrimitivesSTGSky400 = UIColor(red: 0.353, green: 0.824, blue: 0.980, alpha: 1)
+  public static let PrimitivesSTGSky500 = UIColor(red: 0.247, green: 0.765, blue: 0.922, alpha: 1)
+  public static let PrimitivesSTGSky600 = UIColor(red: 0.192, green: 0.612, blue: 0.741, alpha: 1)
+  public static let PrimitivesSTGSky700 = UIColor(red: 0.137, green: 0.463, blue: 0.561, alpha: 1)
+  public static let PrimitivesSTGSky800 = UIColor(red: 0.082, green: 0.322, blue: 0.392, alpha: 1)
+  public static let PrimitivesSTGSky900 = UIColor(red: 0.035, green: 0.188, blue: 0.235, alpha: 1)
+  public static let PrimitivesSTGSky950 = UIColor(red: 0.016, green: 0.129, blue: 0.165, alpha: 1)
+  public static let PrimitivesSTGSkyOpacity = UIColor(red: 0.247, green: 0.765, blue: 0.922, alpha: 0.3)
+  public static let PrimitivesSTGPlum50 = UIColor(red: 0.961, green: 0.949, blue: 0.984, alpha: 1)
+  public static let PrimitivesSTGPlum100 = UIColor(red: 0.902, green: 0.875, blue: 0.961, alpha: 1)
+  public static let PrimitivesSTGPlum200 = UIColor(red: 0.733, green: 0.639, blue: 0.886, alpha: 1)
+  public static let PrimitivesSTGPlum300 = UIColor(red: 0.608, green: 0.451, blue: 0.824, alpha: 1)
+  public static let PrimitivesSTGPlum400 = UIColor(red: 0.475, green: 0.278, blue: 0.706, alpha: 1)
+  public static let PrimitivesSTGPlum500 = UIColor(red: 0.314, green: 0.176, blue: 0.475, alpha: 1)
+  public static let PrimitivesSTGPlum600 = UIColor(red: 0.275, green: 0.153, blue: 0.420, alpha: 1)
+  public static let PrimitivesSTGPlum700 = UIColor(red: 0.243, green: 0.133, blue: 0.373, alpha: 1)
+  public static let PrimitivesSTGPlum800 = UIColor(red: 0.204, green: 0.106, blue: 0.314, alpha: 1)
+  public static let PrimitivesSTGPlum900 = UIColor(red: 0.173, green: 0.086, blue: 0.271, alpha: 1)
+  public static let PrimitivesSTGPlum950 = UIColor(red: 0.153, green: 0.075, blue: 0.243, alpha: 1)
+  public static let PrimitivesSTGPlumOpacity = UIColor(red: 0.314, green: 0.176, blue: 0.475, alpha: 0.3)
+  public static let PrimitivesSTGAmber50 = UIColor(red: 1.000, green: 0.953, blue: 0.922, alpha: 1)
+  public static let PrimitivesSTGAmber100 = UIColor(red: 1.000, green: 0.906, blue: 0.839, alpha: 1)
+  public static let PrimitivesSTGAmber200 = UIColor(red: 1.000, green: 0.796, blue: 0.659, alpha: 1)
+  public static let PrimitivesSTGAmber300 = UIColor(red: 1.000, green: 0.702, blue: 0.502, alpha: 1)
+  public static let PrimitivesSTGAmber400 = UIColor(red: 1.000, green: 0.592, blue: 0.322, alpha: 1)
+  public static let PrimitivesSTGAmber500 = UIColor(red: 1.000, green: 0.498, blue: 0.161, alpha: 1)
+  public static let PrimitivesSTGAmber600 = UIColor(red: 0.812, green: 0.384, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGAmber700 = UIColor(red: 0.616, green: 0.282, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGAmber800 = UIColor(red: 0.431, green: 0.192, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGAmber900 = UIColor(red: 0.259, green: 0.102, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGAmber950 = UIColor(red: 0.173, green: 0.059, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGAmberOpacity = UIColor(red: 1.000, green: 0.498, blue: 0.161, alpha: 0.4)
+  public static let PrimitivesSTGYellow50 = UIColor(red: 1.000, green: 0.980, blue: 0.898, alpha: 1)
+  public static let PrimitivesSTGYellow100 = UIColor(red: 1.000, green: 0.961, blue: 0.800, alpha: 1)
+  public static let PrimitivesSTGYellow200 = UIColor(red: 1.000, green: 0.922, blue: 0.600, alpha: 1)
+  public static let PrimitivesSTGYellow300 = UIColor(red: 1.000, green: 0.882, blue: 0.400, alpha: 1)
+  public static let PrimitivesSTGYellow400 = UIColor(red: 1.000, green: 0.843, blue: 0.200, alpha: 1)
+  public static let PrimitivesSTGYellow500 = UIColor(red: 1.000, green: 0.804, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGYellow600 = UIColor(red: 0.800, green: 0.643, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGYellow700 = UIColor(red: 0.600, green: 0.482, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGYellow800 = UIColor(red: 0.400, green: 0.322, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGYellow900 = UIColor(red: 0.200, green: 0.161, blue: 0.000, alpha: 1)
+  public static let PrimitivesSTGYellow950 = UIColor(red: 0.102, green: 0.082, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeAliasTextBodyLm = UIColor(red: 0.000, green: 0.282, blue: 0.200, alpha: 1)
+  public static let ThemesStGeorgeAliasTextBodyDm = UIColor(red: 0.882, green: 0.882, blue: 0.878, alpha: 1)
+  public static let ThemesStGeorgeAliasTextHeadingLm = UIColor(red: 0.000, green: 0.451, blue: 0.204, alpha: 1)
+  public static let ThemesStGeorgeAliasTextHeadingDm = UIColor(red: 0.184, green: 0.659, blue: 0.329, alpha: 1)
+  public static let ThemesStGeorgeAliasTextHeroLM = UIColor(red: 0.000, green: 0.451, blue: 0.204, alpha: 1)
+  public static let ThemesStGeorgeAliasTextHeroDM = UIColor(red: 0.184, green: 0.659, blue: 0.329, alpha: 1)
+  public static let ThemesStGeorgeAliasSurfacePictogramBaseLm = UIColor(red: 0.000, green: 0.282, blue: 0.200, alpha: 1)
+  public static let ThemesStGeorgeAliasSurfacePictogramBaseDm = UIColor(red: 0.129, green: 0.616, blue: 0.294, alpha: 1)
+  public static let ThemesStGeorgeAliasSurfacePictogramAccentLm = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 1)
+  public static let ThemesStGeorgeAliasSurfacePictogramAccentDM = UIColor(red: 0.576, green: 0.847, blue: 0.231, alpha: 1)
+  public static let ThemesStGeorgeAliasSurfaceMutedVividLM = UIColor(red: 0.000, green: 0.282, blue: 0.200, alpha: 1)
+  public static let ThemesStGeorgeAliasSurfaceMutedVividDM = UIColor(red: 0.976, green: 0.976, blue: 0.976, alpha: 1)
+  public static let ThemesStGeorgeMuted50 = UIColor(red: 0.976, green: 0.976, blue: 0.976, alpha: 1)
+  public static let ThemesStGeorgeMuted100 = UIColor(red: 0.961, green: 0.961, blue: 0.957, alpha: 1)
+  public static let ThemesStGeorgeMuted200 = UIColor(red: 0.882, green: 0.882, blue: 0.878, alpha: 1)
+  public static let ThemesStGeorgeMuted300 = UIColor(red: 0.698, green: 0.698, blue: 0.682, alpha: 1)
+  public static let ThemesStGeorgeMuted400 = UIColor(red: 0.553, green: 0.549, blue: 0.506, alpha: 1)
+  public static let ThemesStGeorgeMuted500 = UIColor(red: 0.447, green: 0.443, blue: 0.388, alpha: 1)
+  public static let ThemesStGeorgeMuted600 = UIColor(red: 0.369, green: 0.365, blue: 0.333, alpha: 1)
+  public static let ThemesStGeorgeMuted700 = UIColor(red: 0.298, green: 0.298, blue: 0.282, alpha: 1)
+  public static let ThemesStGeorgeMuted800 = UIColor(red: 0.224, green: 0.224, blue: 0.216, alpha: 1)
+  public static let ThemesStGeorgeMuted900 = UIColor(red: 0.122, green: 0.122, blue: 0.122, alpha: 1)
+  public static let ThemesStGeorgeMuted950 = UIColor(red: 0.090, green: 0.090, blue: 0.090, alpha: 1)
+  public static let ThemesStGeorgePrimary50 = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
+  public static let ThemesStGeorgePrimary100 = UIColor(red: 1.000, green: 0.780, blue: 0.780, alpha: 1)
+  public static let ThemesStGeorgePrimary200 = UIColor(red: 0.973, green: 0.447, blue: 0.447, alpha: 1)
+  public static let ThemesStGeorgePrimary300 = UIColor(red: 0.957, green: 0.263, blue: 0.263, alpha: 1)
+  public static let ThemesStGeorgePrimary400 = UIColor(red: 0.949, green: 0.094, blue: 0.094, alpha: 1)
+  public static let ThemesStGeorgePrimary500 = UIColor(red: 0.890, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgePrimary600 = UIColor(red: 0.737, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgePrimary700 = UIColor(red: 0.596, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgePrimary800 = UIColor(red: 0.459, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgePrimary900 = UIColor(red: 0.357, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgePrimary950 = UIColor(red: 0.220, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgePrimaryOpacity = UIColor(red: 0.890, green: 0.000, blue: 0.000, alpha: 0.3)
+  public static let ThemesStGeorgeHero50 = UIColor(red: 0.925, green: 0.973, blue: 0.941, alpha: 1)
+  public static let ThemesStGeorgeHero100 = UIColor(red: 0.761, green: 0.918, blue: 0.808, alpha: 1)
+  public static let ThemesStGeorgeHero200 = UIColor(red: 0.427, green: 0.796, blue: 0.537, alpha: 1)
+  public static let ThemesStGeorgeHero300 = UIColor(red: 0.184, green: 0.659, blue: 0.329, alpha: 1)
+  public static let ThemesStGeorgeHero400 = UIColor(red: 0.129, green: 0.616, blue: 0.294, alpha: 1)
+  public static let ThemesStGeorgeHero500 = UIColor(red: 0.000, green: 0.529, blue: 0.224, alpha: 1)
+  public static let ThemesStGeorgeHero600 = UIColor(red: 0.000, green: 0.451, blue: 0.204, alpha: 1)
+  public static let ThemesStGeorgeHero700 = UIColor(red: 0.000, green: 0.373, blue: 0.196, alpha: 1)
+  public static let ThemesStGeorgeHero800 = UIColor(red: 0.000, green: 0.282, blue: 0.200, alpha: 1)
+  public static let ThemesStGeorgeHero900 = UIColor(red: 0.000, green: 0.200, blue: 0.137, alpha: 1)
+  public static let ThemesStGeorgeHero950 = UIColor(red: 0.000, green: 0.165, blue: 0.110, alpha: 1)
+  public static let ThemesStGeorgeHeroOpacity = UIColor(red: 0.000, green: 0.529, blue: 0.224, alpha: 0.45)
+  public static let ThemesStGeorgePop50 = UIColor(red: 0.945, green: 0.984, blue: 0.898, alpha: 1)
+  public static let ThemesStGeorgePop100 = UIColor(red: 0.898, green: 0.969, blue: 0.812, alpha: 1)
+  public static let ThemesStGeorgePop200 = UIColor(red: 0.761, green: 0.925, blue: 0.557, alpha: 1)
+  public static let ThemesStGeorgePop300 = UIColor(red: 0.671, green: 0.898, blue: 0.384, alpha: 1)
+  public static let ThemesStGeorgePop400 = UIColor(red: 0.576, green: 0.847, blue: 0.231, alpha: 1)
+  public static let ThemesStGeorgePop500 = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 1)
+  public static let ThemesStGeorgePop600 = UIColor(red: 0.380, green: 0.608, blue: 0.094, alpha: 1)
+  public static let ThemesStGeorgePop700 = UIColor(red: 0.294, green: 0.475, blue: 0.063, alpha: 1)
+  public static let ThemesStGeorgePop800 = UIColor(red: 0.212, green: 0.349, blue: 0.035, alpha: 1)
+  public static let ThemesStGeorgePop900 = UIColor(red: 0.133, green: 0.231, blue: 0.016, alpha: 1)
+  public static let ThemesStGeorgePop950 = UIColor(red: 0.075, green: 0.141, blue: 0.008, alpha: 1)
+  public static let ThemesStGeorgePopOpacity = UIColor(red: 0.471, green: 0.745, blue: 0.125, alpha: 0.45)
+  public static let ThemesStGeorgeHoller50 = UIColor(red: 0.961, green: 0.949, blue: 0.984, alpha: 1)
+  public static let ThemesStGeorgeHoller100 = UIColor(red: 0.902, green: 0.875, blue: 0.961, alpha: 1)
+  public static let ThemesStGeorgeHoller200 = UIColor(red: 0.733, green: 0.639, blue: 0.886, alpha: 1)
+  public static let ThemesStGeorgeHoller300 = UIColor(red: 0.608, green: 0.451, blue: 0.824, alpha: 1)
+  public static let ThemesStGeorgeHoller400 = UIColor(red: 0.475, green: 0.278, blue: 0.706, alpha: 1)
+  public static let ThemesStGeorgeHoller500 = UIColor(red: 0.314, green: 0.176, blue: 0.475, alpha: 1)
+  public static let ThemesStGeorgeHoller600 = UIColor(red: 0.275, green: 0.153, blue: 0.420, alpha: 1)
+  public static let ThemesStGeorgeHoller700 = UIColor(red: 0.243, green: 0.133, blue: 0.373, alpha: 1)
+  public static let ThemesStGeorgeHoller800 = UIColor(red: 0.204, green: 0.106, blue: 0.314, alpha: 1)
+  public static let ThemesStGeorgeHoller900 = UIColor(red: 0.173, green: 0.086, blue: 0.271, alpha: 1)
+  public static let ThemesStGeorgeHoller950 = UIColor(red: 0.153, green: 0.075, blue: 0.243, alpha: 1)
+  public static let ThemesStGeorgeHollerOpacity = UIColor(red: 0.314, green: 0.176, blue: 0.475, alpha: 0.3)
+  public static let ThemesStGeorgeSing50 = UIColor(red: 0.929, green: 0.973, blue: 0.996, alpha: 1)
+  public static let ThemesStGeorgeSing100 = UIColor(red: 0.882, green: 0.957, blue: 0.996, alpha: 1)
+  public static let ThemesStGeorgeSing200 = UIColor(red: 0.725, green: 0.902, blue: 0.988, alpha: 1)
+  public static let ThemesStGeorgeSing300 = UIColor(red: 0.569, green: 0.863, blue: 0.984, alpha: 1)
+  public static let ThemesStGeorgeSing400 = UIColor(red: 0.353, green: 0.824, blue: 0.980, alpha: 1)
+  public static let ThemesStGeorgeSing500 = UIColor(red: 0.247, green: 0.765, blue: 0.922, alpha: 1)
+  public static let ThemesStGeorgeSing600 = UIColor(red: 0.192, green: 0.612, blue: 0.741, alpha: 1)
+  public static let ThemesStGeorgeSing700 = UIColor(red: 0.137, green: 0.463, blue: 0.561, alpha: 1)
+  public static let ThemesStGeorgeSing800 = UIColor(red: 0.082, green: 0.322, blue: 0.392, alpha: 1)
+  public static let ThemesStGeorgeSing900 = UIColor(red: 0.035, green: 0.188, blue: 0.235, alpha: 1)
+  public static let ThemesStGeorgeSing950 = UIColor(red: 0.016, green: 0.129, blue: 0.165, alpha: 1)
+  public static let ThemesStGeorgeSingOpacity = UIColor(red: 0.247, green: 0.765, blue: 0.922, alpha: 0.3)
+  public static let ThemesStGeorgeDance50 = UIColor(red: 1.000, green: 0.953, blue: 0.922, alpha: 1)
+  public static let ThemesStGeorgeDance100 = UIColor(red: 1.000, green: 0.906, blue: 0.839, alpha: 1)
+  public static let ThemesStGeorgeDance200 = UIColor(red: 1.000, green: 0.796, blue: 0.659, alpha: 1)
+  public static let ThemesStGeorgeDance300 = UIColor(red: 1.000, green: 0.702, blue: 0.502, alpha: 1)
+  public static let ThemesStGeorgeDance400 = UIColor(red: 1.000, green: 0.592, blue: 0.322, alpha: 1)
+  public static let ThemesStGeorgeDance500 = UIColor(red: 1.000, green: 0.498, blue: 0.161, alpha: 1)
+  public static let ThemesStGeorgeDance600 = UIColor(red: 0.812, green: 0.384, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeDance700 = UIColor(red: 0.616, green: 0.282, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeDance800 = UIColor(red: 0.431, green: 0.192, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeDance900 = UIColor(red: 0.259, green: 0.102, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeDance950 = UIColor(red: 0.173, green: 0.059, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeDanceOpacity = UIColor(red: 1.000, green: 0.498, blue: 0.161, alpha: 0.4)
+  public static let ThemesStGeorgeMonoWhite = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
+  public static let ThemesStGeorgeMonoBlack = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSuccess50 = UIColor(red: 0.949, green: 0.976, blue: 0.949, alpha: 1)
+  public static let ThemesStGeorgeReservedSuccess100 = UIColor(red: 0.851, green: 0.925, blue: 0.851, alpha: 1)
+  public static let ThemesStGeorgeReservedSuccess200 = UIColor(red: 0.600, green: 0.800, blue: 0.600, alpha: 1)
+  public static let ThemesStGeorgeReservedSuccess300 = UIColor(red: 0.278, green: 0.643, blue: 0.278, alpha: 1)
+  public static let ThemesStGeorgeReservedSuccess400 = UIColor(red: 0.141, green: 0.573, blue: 0.141, alpha: 1)
+  public static let ThemesStGeorgeReservedSuccess500 = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSuccess600 = UIColor(red: 0.000, green: 0.427, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSuccess700 = UIColor(red: 0.000, green: 0.353, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSuccess800 = UIColor(red: 0.000, green: 0.275, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSuccess900 = UIColor(red: 0.000, green: 0.200, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSuccess950 = UIColor(red: 0.000, green: 0.125, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedInfo50 = UIColor(red: 0.949, green: 0.973, blue: 0.988, alpha: 1)
+  public static let ThemesStGeorgeReservedInfo100 = UIColor(red: 0.851, green: 0.918, blue: 0.965, alpha: 1)
+  public static let ThemesStGeorgeReservedInfo200 = UIColor(red: 0.600, green: 0.780, blue: 0.906, alpha: 1)
+  public static let ThemesStGeorgeReservedInfo300 = UIColor(red: 0.271, green: 0.604, blue: 0.831, alpha: 1)
+  public static let ThemesStGeorgeReservedInfo400 = UIColor(red: 0.141, green: 0.529, blue: 0.800, alpha: 1)
+  public static let ThemesStGeorgeReservedInfo500 = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
+  public static let ThemesStGeorgeReservedInfo600 = UIColor(red: 0.000, green: 0.388, blue: 0.655, alpha: 1)
+  public static let ThemesStGeorgeReservedInfo700 = UIColor(red: 0.000, green: 0.318, blue: 0.537, alpha: 1)
+  public static let ThemesStGeorgeReservedInfo800 = UIColor(red: 0.000, green: 0.251, blue: 0.424, alpha: 1)
+  public static let ThemesStGeorgeReservedInfo900 = UIColor(red: 0.000, green: 0.180, blue: 0.306, alpha: 1)
+  public static let ThemesStGeorgeReservedInfo950 = UIColor(red: 0.000, green: 0.114, blue: 0.192, alpha: 1)
+  public static let ThemesStGeorgeReservedWarning50 = UIColor(red: 0.988, green: 0.961, blue: 0.949, alpha: 1)
+  public static let ThemesStGeorgeReservedWarning100 = UIColor(red: 0.953, green: 0.847, blue: 0.800, alpha: 1)
+  public static let ThemesStGeorgeReservedWarning200 = UIColor(red: 0.910, green: 0.694, blue: 0.600, alpha: 1)
+  public static let ThemesStGeorgeReservedWarning300 = UIColor(red: 0.843, green: 0.471, blue: 0.310, alpha: 1)
+  public static let ThemesStGeorgeReservedWarning400 = UIColor(red: 0.808, green: 0.345, blue: 0.149, alpha: 1)
+  public static let ThemesStGeorgeReservedWarning500 = UIColor(red: 0.773, green: 0.231, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedWarning600 = UIColor(red: 0.655, green: 0.196, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedWarning700 = UIColor(red: 0.541, green: 0.161, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedWarning800 = UIColor(red: 0.424, green: 0.125, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedWarning900 = UIColor(red: 0.310, green: 0.094, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedWarning950 = UIColor(red: 0.192, green: 0.059, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedDanger50 = UIColor(red: 0.988, green: 0.949, blue: 0.949, alpha: 1)
+  public static let ThemesStGeorgeReservedDanger100 = UIColor(red: 0.976, green: 0.902, blue: 0.902, alpha: 1)
+  public static let ThemesStGeorgeReservedDanger200 = UIColor(red: 0.918, green: 0.651, blue: 0.651, alpha: 1)
+  public static let ThemesStGeorgeReservedDanger300 = UIColor(red: 0.859, green: 0.388, blue: 0.388, alpha: 1)
+  public static let ThemesStGeorgeReservedDanger400 = UIColor(red: 0.816, green: 0.200, blue: 0.200, alpha: 1)
+  public static let ThemesStGeorgeReservedDanger500 = UIColor(red: 0.769, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedDanger600 = UIColor(red: 0.655, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedDanger700 = UIColor(red: 0.537, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedDanger800 = UIColor(red: 0.424, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedDanger900 = UIColor(red: 0.306, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedDanger950 = UIColor(red: 0.192, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSystem50 = UIColor(red: 1.000, green: 1.000, blue: 0.949, alpha: 1)
+  public static let ThemesStGeorgeReservedSystem100 = UIColor(red: 1.000, green: 1.000, blue: 0.902, alpha: 1)
+  public static let ThemesStGeorgeReservedSystem200 = UIColor(red: 1.000, green: 1.000, blue: 0.749, alpha: 1)
+  public static let ThemesStGeorgeReservedSystem300 = UIColor(red: 1.000, green: 1.000, blue: 0.502, alpha: 1)
+  public static let ThemesStGeorgeReservedSystem400 = UIColor(red: 1.000, green: 1.000, blue: 0.251, alpha: 1)
+  public static let ThemesStGeorgeReservedSystem500 = UIColor(red: 1.000, green: 1.000, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSystem600 = UIColor(red: 0.851, green: 0.851, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSystem700 = UIColor(red: 0.702, green: 0.702, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSystem800 = UIColor(red: 0.549, green: 0.549, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSystem900 = UIColor(red: 0.400, green: 0.400, blue: 0.000, alpha: 1)
+  public static let ThemesStGeorgeReservedSystem950 = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
+}
+
+
+public enum STGLightColors {
+  public static let BackgroundPaleBlack = STGPrimitivesColors.ThemesStGeorgeMuted100
+  public static let BackgroundWhiteBlack = STGPrimitivesColors.ThemesStGeorgeMonoWhite
+  public static let BackgroundWhiteFaint = STGPrimitivesColors.ThemesStGeorgeMonoWhite
+  public static let BackgroundPaleFaint = STGPrimitivesColors.ThemesStGeorgeMuted100
+  public static let BackgroundWhitePale = STGPrimitivesColors.ThemesStGeorgeMonoWhite
+  public static let BackgroundPrimary = STGPrimitivesColors.ThemesStGeorgePrimary500
+  public static let BackgroundHero = STGPrimitivesColors.ThemesStGeorgeHero500
+  public static let SurfaceMutedVivid = STGPrimitivesColors.ThemesStGeorgeAliasSurfaceMutedVividLM
+  public static let SurfaceMuted = STGPrimitivesColors.ThemesStGeorgeMuted500
+  public static let SurfaceMutedStrong = STGPrimitivesColors.ThemesStGeorgeMuted400
+  public static let SurfaceMutedMild = STGPrimitivesColors.ThemesStGeorgeMuted300
+  public static let SurfaceMutedSoft = STGPrimitivesColors.ThemesStGeorgeMuted200
+  public static let SurfaceMutedPale = STGPrimitivesColors.ThemesStGeorgeMuted100
+  public static let SurfaceMutedFaint = STGPrimitivesColors.ThemesStGeorgeMuted50
+  public static let SurfacePrimary = STGPrimitivesColors.ThemesStGeorgePrimary500
+  public static let SurfacePrimaryFaint = STGPrimitivesColors.ThemesStGeorgePrimary50
+  public static let SurfaceHero = STGPrimitivesColors.ThemesStGeorgeHero500
+  public static let SurfaceHeroFaint = STGPrimitivesColors.ThemesStGeorgeHero50
+  public static let SurfacePop = STGPrimitivesColors.ThemesStGeorgePop500
+  public static let SurfacePopFaint = STGPrimitivesColors.ThemesStGeorgePop50
+  public static let SurfaceHoller = STGPrimitivesColors.ThemesStGeorgeHoller500
+  public static let SurfaceHollerFaint = STGPrimitivesColors.ThemesStGeorgeHoller50
+  public static let SurfaceSing = STGPrimitivesColors.ThemesStGeorgeSing500
+  public static let SurfaceSingFaint = STGPrimitivesColors.ThemesStGeorgeSing50
+  public static let SurfaceDance = STGPrimitivesColors.ThemesStGeorgeDance500
+  public static let SurfaceDanceFaint = STGPrimitivesColors.ThemesStGeorgeDance50
+  public static let SurfaceSuccess = STGPrimitivesColors.ThemesStGeorgeReservedSuccess500
+  public static let SurfaceSuccessFaint = STGPrimitivesColors.ThemesStGeorgeReservedSuccess50
+  public static let SurfaceInfo = STGPrimitivesColors.ThemesStGeorgeReservedInfo500
+  public static let SurfaceInfoFaint = STGPrimitivesColors.ThemesStGeorgeReservedInfo50
+  public static let SurfaceWarning = STGPrimitivesColors.ThemesStGeorgeReservedWarning500
+  public static let SurfaceWarningFaint = STGPrimitivesColors.ThemesStGeorgeReservedWarning50
+  public static let SurfaceDanger = STGPrimitivesColors.ThemesStGeorgeReservedDanger500
+  public static let SurfaceDangerFaint = STGPrimitivesColors.ThemesStGeorgeReservedDanger50
+  public static let SurfaceSystemError = STGPrimitivesColors.ThemesStGeorgeReservedSystem500
+  public static let SurfaceSystemErrorDark = STGPrimitivesColors.ThemesStGeorgeReservedSystem950
+  public static let SurfaceMono = STGPrimitivesColors.ThemesStGeorgeMonoWhite
+  public static let SurfaceReversed = STGPrimitivesColors.ThemesStGeorgeMonoWhite
+  public static let TextBody = STGPrimitivesColors.ThemesStGeorgeAliasTextBodyLm
+  public static let TextHeading = STGPrimitivesColors.ThemesStGeorgeAliasTextHeadingLm
+  public static let TextMuted = STGPrimitivesColors.ThemesStGeorgeMuted500
+  public static let TextPrimary = STGPrimitivesColors.ThemesStGeorgePrimary500
+  public static let TextHero = STGPrimitivesColors.ThemesStGeorgeAliasTextHeroLM
+  public static let TextHoller = STGPrimitivesColors.ThemesStGeorgeHoller500
+  public static let TextLink = STGPrimitivesColors.ThemesStGeorgePrimary500
+  public static let TextSuccess = STGPrimitivesColors.ThemesStGeorgeReservedSuccess500
+  public static let TextInfo = STGPrimitivesColors.ThemesStGeorgeReservedInfo500
+  public static let TextWarning = STGPrimitivesColors.ThemesStGeorgeReservedWarning500
+  public static let TextDanger = STGPrimitivesColors.ThemesStGeorgeReservedDanger500
+  public static let TextSystemError = STGPrimitivesColors.ThemesStGeorgeReservedSystem950
+  public static let TextMono = STGPrimitivesColors.ThemesStGeorgeMonoWhite
+  public static let TextReversed = STGPrimitivesColors.ThemesStGeorgeMonoWhite
+  public static let BorderMuted = STGPrimitivesColors.ThemesStGeorgeMuted500
+  public static let BorderMutedStrong = STGPrimitivesColors.ThemesStGeorgeMuted400
+  public static let BorderMutedMild = STGPrimitivesColors.ThemesStGeorgeMuted300
+  public static let BorderMutedSoft = STGPrimitivesColors.ThemesStGeorgeMuted200
+  public static let BorderHero = STGPrimitivesColors.ThemesStGeorgeHero500
+  public static let BorderPrimary = STGPrimitivesColors.ThemesStGeorgePrimary500
+  public static let BorderPop = STGPrimitivesColors.ThemesStGeorgePop500
+  public static let BorderHoller = STGPrimitivesColors.ThemesStGeorgeHoller500
+  public static let BorderSing = STGPrimitivesColors.ThemesStGeorgeSing500
+  public static let BorderDance = STGPrimitivesColors.ThemesStGeorgeDance500
+  public static let BorderSuccess = STGPrimitivesColors.ThemesStGeorgeReservedSuccess500
+  public static let BorderSuccessMild = STGPrimitivesColors.ThemesStGeorgeReservedSuccess300
+  public static let BorderInfo = STGPrimitivesColors.ThemesStGeorgeReservedInfo500
+  public static let BorderInfoMild = STGPrimitivesColors.ThemesStGeorgeReservedInfo300
+  public static let BorderWarning = STGPrimitivesColors.ThemesStGeorgeReservedWarning500
+  public static let BorderWarningMild = STGPrimitivesColors.ThemesStGeorgeReservedWarning300
+  public static let BorderDanger = STGPrimitivesColors.ThemesStGeorgeReservedDanger500
+  public static let BorderDangerMild = STGPrimitivesColors.ThemesStGeorgeReservedDanger300
+  public static let BorderMono = STGPrimitivesColors.ThemesStGeorgeMonoWhite
+  public static let BorderFocus = STGPrimitivesColors.ThemesStGeorgeHoller300
+  public static let DataASolid = STGPrimitivesColors.ThemesStGeorgePrimary500
+  public static let DataATint = STGPrimitivesColors.ThemesStGeorgePrimary200
+  public static let DataAOpacity = STGPrimitivesColors.ThemesStGeorgePrimaryOpacity
+  public static let DataBSolid = STGPrimitivesColors.ThemesStGeorgeHero500
+  public static let DataBTint = STGPrimitivesColors.ThemesStGeorgeHero300
+  public static let DataBOpacity = STGPrimitivesColors.ThemesStGeorgeHeroOpacity
+  public static let DataCSolid = STGPrimitivesColors.ThemesStGeorgePop500
+  public static let DataCTint = STGPrimitivesColors.ThemesStGeorgePop300
+  public static let DataCOpacity = STGPrimitivesColors.ThemesStGeorgePopOpacity
+  public static let DataDSolid = STGPrimitivesColors.ThemesStGeorgeHoller500
+  public static let DataDTint = STGPrimitivesColors.ThemesStGeorgeHoller200
+  public static let DataDOpacity = STGPrimitivesColors.ThemesStGeorgeHollerOpacity
+  public static let DataESolid = STGPrimitivesColors.ThemesStGeorgeSing500
+  public static let DataETint = STGPrimitivesColors.ThemesStGeorgeSing300
+  public static let DataEOpacity = STGPrimitivesColors.ThemesStGeorgeSingOpacity
+  public static let DataFSolid = STGPrimitivesColors.ThemesStGeorgeDance500
+  public static let DataFTint = STGPrimitivesColors.ThemesStGeorgeDance300
+  public static let DataFOpacity = STGPrimitivesColors.ThemesStGeorgeDanceOpacity
+  public static let PictogramPictogramBase = STGPrimitivesColors.ThemesStGeorgeAliasSurfacePictogramBaseLm
+  public static let PictogramPictogramAccent = STGPrimitivesColors.ThemesStGeorgeAliasSurfacePictogramAccentLm
+  public static let StateHoverPrimary = STGPrimitivesColors.ThemesStGeorgePrimary400
+  public static let StateActivePrimary = STGPrimitivesColors.ThemesStGeorgePrimary200
+  public static let StateHoverHero = STGPrimitivesColors.ThemesStGeorgeHero400
+  public static let StateActiveHero = STGPrimitivesColors.ThemesStGeorgeHero300
+  public static let StateHoverPrimaryFaint = STGPrimitivesColors.ThemesStGeorgePrimary50
+  public static let StateActivePrimaryFaint = STGPrimitivesColors.ThemesStGeorgePrimary100
+  public static let StateHoverHeroFaint = STGPrimitivesColors.ThemesStGeorgeHero50
+  public static let StateActiveHeroFaint = STGPrimitivesColors.ThemesStGeorgeHero100
+  public static let StateHoverMutedPale = STGPrimitivesColors.ThemesStGeorgeMuted100
+  public static let StateActiveMutedPale = STGPrimitivesColors.ThemesStGeorgeMuted300
+  public static let StateHoverMono = STGPrimitivesColors.ThemesStGeorgeMonoWhite
+  public static let StateActiveMono = STGPrimitivesColors.ThemesStGeorgeMuted200
+}
+
+
+public enum STGDarkColors {
+  public static let BackgroundPaleBlack = STGPrimitivesColors.ThemesStGeorgeMonoBlack
+  public static let BackgroundWhiteBlack = STGPrimitivesColors.ThemesStGeorgeMonoBlack
+  public static let BackgroundWhiteFaint = STGPrimitivesColors.ThemesStGeorgeMuted950
+  public static let BackgroundPaleFaint = STGPrimitivesColors.ThemesStGeorgeMuted950
+  public static let BackgroundWhitePale = STGPrimitivesColors.ThemesStGeorgeMuted900
+  public static let BackgroundPrimary = STGPrimitivesColors.ThemesStGeorgePrimary500
+  public static let BackgroundHero = STGPrimitivesColors.ThemesStGeorgeHero500
+  public static let SurfaceMutedVivid = STGPrimitivesColors.ThemesStGeorgeAliasSurfaceMutedVividDM
+  public static let SurfaceMuted = STGPrimitivesColors.ThemesStGeorgeMuted400
+  public static let SurfaceMutedStrong = STGPrimitivesColors.ThemesStGeorgeMuted600
+  public static let SurfaceMutedMild = STGPrimitivesColors.ThemesStGeorgeMuted700
+  public static let SurfaceMutedSoft = STGPrimitivesColors.ThemesStGeorgeMuted800
+  public static let SurfaceMutedPale = STGPrimitivesColors.ThemesStGeorgeMuted900
+  public static let SurfaceMutedFaint = STGPrimitivesColors.ThemesStGeorgeMuted950
+  public static let SurfacePrimary = STGPrimitivesColors.ThemesStGeorgePrimary400
+  public static let SurfacePrimaryFaint = STGPrimitivesColors.ThemesStGeorgePrimary950
+  public static let SurfaceHero = STGPrimitivesColors.ThemesStGeorgeHero300
+  public static let SurfaceHeroFaint = STGPrimitivesColors.ThemesStGeorgeHero950
+  public static let SurfacePop = STGPrimitivesColors.ThemesStGeorgePop500
+  public static let SurfacePopFaint = STGPrimitivesColors.ThemesStGeorgePop950
+  public static let SurfaceHoller = STGPrimitivesColors.ThemesStGeorgeHoller400
+  public static let SurfaceHollerFaint = STGPrimitivesColors.ThemesStGeorgeHoller950
+  public static let SurfaceSing = STGPrimitivesColors.ThemesStGeorgeSing900
+  public static let SurfaceSingFaint = STGPrimitivesColors.ThemesStGeorgeSing950
+  public static let SurfaceDance = STGPrimitivesColors.ThemesStGeorgeDance500
+  public static let SurfaceDanceFaint = STGPrimitivesColors.ThemesStGeorgeDance900
+  public static let SurfaceSuccess = STGPrimitivesColors.ThemesStGeorgeReservedSuccess400
+  public static let SurfaceSuccessFaint = STGPrimitivesColors.ThemesStGeorgeReservedSuccess900
+  public static let SurfaceInfo = STGPrimitivesColors.ThemesStGeorgeReservedInfo400
+  public static let SurfaceInfoFaint = STGPrimitivesColors.ThemesStGeorgeReservedInfo900
+  public static let SurfaceWarning = STGPrimitivesColors.ThemesStGeorgeReservedWarning400
+  public static let SurfaceWarningFaint = STGPrimitivesColors.ThemesStGeorgeReservedWarning900
+  public static let SurfaceDanger = STGPrimitivesColors.ThemesStGeorgeReservedDanger300
+  public static let SurfaceDangerFaint = STGPrimitivesColors.ThemesStGeorgeReservedDanger900
+  public static let SurfaceSystemError = STGPrimitivesColors.ThemesStGeorgeReservedSystem950
+  public static let SurfaceSystemErrorDark = STGPrimitivesColors.ThemesStGeorgeReservedSystem500
+  public static let SurfaceMono = STGPrimitivesColors.ThemesStGeorgeMonoBlack
+  public static let SurfaceReversed = STGPrimitivesColors.ThemesStGeorgeMonoWhite
+  public static let TextBody = STGPrimitivesColors.ThemesStGeorgeAliasTextBodyDm
+  public static let TextHeading = STGPrimitivesColors.ThemesStGeorgeAliasTextHeadingDm
+  public static let TextMuted = STGPrimitivesColors.ThemesStGeorgeMuted400
+  public static let TextPrimary = STGPrimitivesColors.ThemesStGeorgePrimary300
+  public static let TextHero = STGPrimitivesColors.ThemesStGeorgeAliasTextHeroDM
+  public static let TextHoller = STGPrimitivesColors.ThemesStGeorgeHoller300
+  public static let TextLink = STGPrimitivesColors.ThemesStGeorgePrimary300
+  public static let TextSuccess = STGPrimitivesColors.ThemesStGeorgeReservedSuccess300
+  public static let TextInfo = STGPrimitivesColors.ThemesStGeorgeReservedInfo300
+  public static let TextWarning = STGPrimitivesColors.ThemesStGeorgeReservedWarning300
+  public static let TextDanger = STGPrimitivesColors.ThemesStGeorgeReservedDanger300
+  public static let TextSystemError = STGPrimitivesColors.ThemesStGeorgeReservedSystem500
+  public static let TextMono = STGPrimitivesColors.ThemesStGeorgeMonoBlack
+  public static let TextReversed = STGPrimitivesColors.ThemesStGeorgeMonoWhite
+  public static let BorderMuted = STGPrimitivesColors.ThemesStGeorgeMuted500
+  public static let BorderMutedStrong = STGPrimitivesColors.ThemesStGeorgeMuted500
+  public static let BorderMutedMild = STGPrimitivesColors.ThemesStGeorgeMuted700
+  public static let BorderMutedSoft = STGPrimitivesColors.ThemesStGeorgeMuted800
+  public static let BorderHero = STGPrimitivesColors.ThemesStGeorgeHero300
+  public static let BorderPrimary = STGPrimitivesColors.ThemesStGeorgePrimary400
+  public static let BorderPop = STGPrimitivesColors.ThemesStGeorgePop800
+  public static let BorderHoller = STGPrimitivesColors.ThemesStGeorgeHoller400
+  public static let BorderSing = STGPrimitivesColors.ThemesStGeorgeSing500
+  public static let BorderDance = STGPrimitivesColors.ThemesStGeorgeDance500
+  public static let BorderSuccess = STGPrimitivesColors.ThemesStGeorgeReservedSuccess500
+  public static let BorderSuccessMild = STGPrimitivesColors.ThemesStGeorgeReservedSuccess700
+  public static let BorderInfo = STGPrimitivesColors.ThemesStGeorgeReservedInfo500
+  public static let BorderInfoMild = STGPrimitivesColors.ThemesStGeorgeReservedInfo700
+  public static let BorderWarning = STGPrimitivesColors.ThemesStGeorgeReservedWarning500
+  public static let BorderWarningMild = STGPrimitivesColors.ThemesStGeorgeReservedWarning700
+  public static let BorderDanger = STGPrimitivesColors.ThemesStGeorgeReservedDanger500
+  public static let BorderDangerMild = STGPrimitivesColors.ThemesStGeorgeReservedDanger700
+  public static let BorderMono = STGPrimitivesColors.ThemesStGeorgeMonoBlack
+  public static let BorderFocus = STGPrimitivesColors.ThemesStGeorgeHoller400
+  public static let DataASolid = STGPrimitivesColors.ThemesStGeorgePrimary500
+  public static let DataATint = STGPrimitivesColors.ThemesStGeorgePrimary200
+  public static let DataAOpacity = STGPrimitivesColors.ThemesStGeorgePrimaryOpacity
+  public static let DataBSolid = STGPrimitivesColors.ThemesStGeorgeHero300
+  public static let DataBTint = STGPrimitivesColors.ThemesStGeorgeHero200
+  public static let DataBOpacity = STGPrimitivesColors.ThemesStGeorgeHeroOpacity
+  public static let DataCSolid = STGPrimitivesColors.ThemesStGeorgePop500
+  public static let DataCTint = STGPrimitivesColors.ThemesStGeorgePop300
+  public static let DataCOpacity = STGPrimitivesColors.ThemesStGeorgePopOpacity
+  public static let DataDSolid = STGPrimitivesColors.ThemesStGeorgeHoller500
+  public static let DataDTint = STGPrimitivesColors.ThemesStGeorgeHoller200
+  public static let DataDOpacity = STGPrimitivesColors.ThemesStGeorgeHollerOpacity
+  public static let DataESolid = STGPrimitivesColors.ThemesStGeorgeSing500
+  public static let DataETint = STGPrimitivesColors.ThemesStGeorgeSing300
+  public static let DataEOpacity = STGPrimitivesColors.ThemesStGeorgeSingOpacity
+  public static let DataFSolid = STGPrimitivesColors.ThemesStGeorgeDance500
+  public static let DataFTint = STGPrimitivesColors.ThemesStGeorgeDance300
+  public static let DataFOpacity = STGPrimitivesColors.ThemesStGeorgeDanceOpacity
+  public static let PictogramPictogramBase = STGPrimitivesColors.ThemesStGeorgeAliasSurfacePictogramBaseDm
+  public static let PictogramPictogramAccent = STGPrimitivesColors.ThemesStGeorgeAliasSurfacePictogramAccentDM
+  public static let StateHoverPrimary = STGPrimitivesColors.ThemesStGeorgePrimary200
+  public static let StateActivePrimary = STGPrimitivesColors.ThemesStGeorgePrimary100
+  public static let StateHoverHero = STGPrimitivesColors.ThemesStGeorgeHero200
+  public static let StateActiveHero = STGPrimitivesColors.ThemesStGeorgeHero100
+  public static let StateHoverPrimaryFaint = STGPrimitivesColors.ThemesStGeorgePrimary900
+  public static let StateActivePrimaryFaint = STGPrimitivesColors.ThemesStGeorgePrimary800
+  public static let StateHoverHeroFaint = STGPrimitivesColors.ThemesStGeorgeHero800
+  public static let StateActiveHeroFaint = STGPrimitivesColors.ThemesStGeorgeHero400
+  public static let StateHoverMutedPale = STGPrimitivesColors.ThemesStGeorgeMuted800
+  public static let StateActiveMutedPale = STGPrimitivesColors.ThemesStGeorgeMuted600
+  public static let StateHoverMono = STGPrimitivesColors.ThemesStGeorgeMonoBlack
+  public static let StateActiveMono = STGPrimitivesColors.ThemesStGeorgeMuted800
+}
+
+
+public enum STGColors {
+  public static var BackgroundPaleBlack: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BackgroundPaleBlack
+        default:
+          return STGLightColors.BackgroundPaleBlack
+      }
+    }
+  }
+  public static var BackgroundWhiteBlack: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BackgroundWhiteBlack
+        default:
+          return STGLightColors.BackgroundWhiteBlack
+      }
+    }
+  }
+  public static var BackgroundWhiteFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BackgroundWhiteFaint
+        default:
+          return STGLightColors.BackgroundWhiteFaint
+      }
+    }
+  }
+  public static var BackgroundPaleFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BackgroundPaleFaint
+        default:
+          return STGLightColors.BackgroundPaleFaint
+      }
+    }
+  }
+  public static var BackgroundWhitePale: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BackgroundWhitePale
+        default:
+          return STGLightColors.BackgroundWhitePale
+      }
+    }
+  }
+  public static var BackgroundPrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BackgroundPrimary
+        default:
+          return STGLightColors.BackgroundPrimary
+      }
+    }
+  }
+  public static var BackgroundHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BackgroundHero
+        default:
+          return STGLightColors.BackgroundHero
+      }
+    }
+  }
+  public static var SurfaceMutedVivid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceMutedVivid
+        default:
+          return STGLightColors.SurfaceMutedVivid
+      }
+    }
+  }
+  public static var SurfaceMuted: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceMuted
+        default:
+          return STGLightColors.SurfaceMuted
+      }
+    }
+  }
+  public static var SurfaceMutedStrong: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceMutedStrong
+        default:
+          return STGLightColors.SurfaceMutedStrong
+      }
+    }
+  }
+  public static var SurfaceMutedMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceMutedMild
+        default:
+          return STGLightColors.SurfaceMutedMild
+      }
+    }
+  }
+  public static var SurfaceMutedSoft: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceMutedSoft
+        default:
+          return STGLightColors.SurfaceMutedSoft
+      }
+    }
+  }
+  public static var SurfaceMutedPale: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceMutedPale
+        default:
+          return STGLightColors.SurfaceMutedPale
+      }
+    }
+  }
+  public static var SurfaceMutedFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceMutedFaint
+        default:
+          return STGLightColors.SurfaceMutedFaint
+      }
+    }
+  }
+  public static var SurfacePrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfacePrimary
+        default:
+          return STGLightColors.SurfacePrimary
+      }
+    }
+  }
+  public static var SurfacePrimaryFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfacePrimaryFaint
+        default:
+          return STGLightColors.SurfacePrimaryFaint
+      }
+    }
+  }
+  public static var SurfaceHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceHero
+        default:
+          return STGLightColors.SurfaceHero
+      }
+    }
+  }
+  public static var SurfaceHeroFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceHeroFaint
+        default:
+          return STGLightColors.SurfaceHeroFaint
+      }
+    }
+  }
+  public static var SurfacePop: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfacePop
+        default:
+          return STGLightColors.SurfacePop
+      }
+    }
+  }
+  public static var SurfacePopFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfacePopFaint
+        default:
+          return STGLightColors.SurfacePopFaint
+      }
+    }
+  }
+  public static var SurfaceHoller: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceHoller
+        default:
+          return STGLightColors.SurfaceHoller
+      }
+    }
+  }
+  public static var SurfaceHollerFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceHollerFaint
+        default:
+          return STGLightColors.SurfaceHollerFaint
+      }
+    }
+  }
+  public static var SurfaceSing: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceSing
+        default:
+          return STGLightColors.SurfaceSing
+      }
+    }
+  }
+  public static var SurfaceSingFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceSingFaint
+        default:
+          return STGLightColors.SurfaceSingFaint
+      }
+    }
+  }
+  public static var SurfaceDance: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceDance
+        default:
+          return STGLightColors.SurfaceDance
+      }
+    }
+  }
+  public static var SurfaceDanceFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceDanceFaint
+        default:
+          return STGLightColors.SurfaceDanceFaint
+      }
+    }
+  }
+  public static var SurfaceSuccess: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceSuccess
+        default:
+          return STGLightColors.SurfaceSuccess
+      }
+    }
+  }
+  public static var SurfaceSuccessFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceSuccessFaint
+        default:
+          return STGLightColors.SurfaceSuccessFaint
+      }
+    }
+  }
+  public static var SurfaceInfo: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceInfo
+        default:
+          return STGLightColors.SurfaceInfo
+      }
+    }
+  }
+  public static var SurfaceInfoFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceInfoFaint
+        default:
+          return STGLightColors.SurfaceInfoFaint
+      }
+    }
+  }
+  public static var SurfaceWarning: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceWarning
+        default:
+          return STGLightColors.SurfaceWarning
+      }
+    }
+  }
+  public static var SurfaceWarningFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceWarningFaint
+        default:
+          return STGLightColors.SurfaceWarningFaint
+      }
+    }
+  }
+  public static var SurfaceDanger: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceDanger
+        default:
+          return STGLightColors.SurfaceDanger
+      }
+    }
+  }
+  public static var SurfaceDangerFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceDangerFaint
+        default:
+          return STGLightColors.SurfaceDangerFaint
+      }
+    }
+  }
+  public static var SurfaceSystemError: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceSystemError
+        default:
+          return STGLightColors.SurfaceSystemError
+      }
+    }
+  }
+  public static var SurfaceSystemErrorDark: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceSystemErrorDark
+        default:
+          return STGLightColors.SurfaceSystemErrorDark
+      }
+    }
+  }
+  public static var SurfaceMono: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceMono
+        default:
+          return STGLightColors.SurfaceMono
+      }
+    }
+  }
+  public static var SurfaceReversed: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.SurfaceReversed
+        default:
+          return STGLightColors.SurfaceReversed
+      }
+    }
+  }
+  public static var TextBody: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextBody
+        default:
+          return STGLightColors.TextBody
+      }
+    }
+  }
+  public static var TextHeading: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextHeading
+        default:
+          return STGLightColors.TextHeading
+      }
+    }
+  }
+  public static var TextMuted: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextMuted
+        default:
+          return STGLightColors.TextMuted
+      }
+    }
+  }
+  public static var TextPrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextPrimary
+        default:
+          return STGLightColors.TextPrimary
+      }
+    }
+  }
+  public static var TextHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextHero
+        default:
+          return STGLightColors.TextHero
+      }
+    }
+  }
+  public static var TextHoller: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextHoller
+        default:
+          return STGLightColors.TextHoller
+      }
+    }
+  }
+  public static var TextLink: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextLink
+        default:
+          return STGLightColors.TextLink
+      }
+    }
+  }
+  public static var TextSuccess: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextSuccess
+        default:
+          return STGLightColors.TextSuccess
+      }
+    }
+  }
+  public static var TextInfo: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextInfo
+        default:
+          return STGLightColors.TextInfo
+      }
+    }
+  }
+  public static var TextWarning: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextWarning
+        default:
+          return STGLightColors.TextWarning
+      }
+    }
+  }
+  public static var TextDanger: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextDanger
+        default:
+          return STGLightColors.TextDanger
+      }
+    }
+  }
+  public static var TextSystemError: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextSystemError
+        default:
+          return STGLightColors.TextSystemError
+      }
+    }
+  }
+  public static var TextMono: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextMono
+        default:
+          return STGLightColors.TextMono
+      }
+    }
+  }
+  public static var TextReversed: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.TextReversed
+        default:
+          return STGLightColors.TextReversed
+      }
+    }
+  }
+  public static var BorderMuted: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderMuted
+        default:
+          return STGLightColors.BorderMuted
+      }
+    }
+  }
+  public static var BorderMutedStrong: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderMutedStrong
+        default:
+          return STGLightColors.BorderMutedStrong
+      }
+    }
+  }
+  public static var BorderMutedMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderMutedMild
+        default:
+          return STGLightColors.BorderMutedMild
+      }
+    }
+  }
+  public static var BorderMutedSoft: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderMutedSoft
+        default:
+          return STGLightColors.BorderMutedSoft
+      }
+    }
+  }
+  public static var BorderHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderHero
+        default:
+          return STGLightColors.BorderHero
+      }
+    }
+  }
+  public static var BorderPrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderPrimary
+        default:
+          return STGLightColors.BorderPrimary
+      }
+    }
+  }
+  public static var BorderPop: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderPop
+        default:
+          return STGLightColors.BorderPop
+      }
+    }
+  }
+  public static var BorderHoller: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderHoller
+        default:
+          return STGLightColors.BorderHoller
+      }
+    }
+  }
+  public static var BorderSing: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderSing
+        default:
+          return STGLightColors.BorderSing
+      }
+    }
+  }
+  public static var BorderDance: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderDance
+        default:
+          return STGLightColors.BorderDance
+      }
+    }
+  }
+  public static var BorderSuccess: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderSuccess
+        default:
+          return STGLightColors.BorderSuccess
+      }
+    }
+  }
+  public static var BorderSuccessMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderSuccessMild
+        default:
+          return STGLightColors.BorderSuccessMild
+      }
+    }
+  }
+  public static var BorderInfo: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderInfo
+        default:
+          return STGLightColors.BorderInfo
+      }
+    }
+  }
+  public static var BorderInfoMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderInfoMild
+        default:
+          return STGLightColors.BorderInfoMild
+      }
+    }
+  }
+  public static var BorderWarning: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderWarning
+        default:
+          return STGLightColors.BorderWarning
+      }
+    }
+  }
+  public static var BorderWarningMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderWarningMild
+        default:
+          return STGLightColors.BorderWarningMild
+      }
+    }
+  }
+  public static var BorderDanger: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderDanger
+        default:
+          return STGLightColors.BorderDanger
+      }
+    }
+  }
+  public static var BorderDangerMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderDangerMild
+        default:
+          return STGLightColors.BorderDangerMild
+      }
+    }
+  }
+  public static var BorderMono: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderMono
+        default:
+          return STGLightColors.BorderMono
+      }
+    }
+  }
+  public static var BorderFocus: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.BorderFocus
+        default:
+          return STGLightColors.BorderFocus
+      }
+    }
+  }
+  public static var DataASolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataASolid
+        default:
+          return STGLightColors.DataASolid
+      }
+    }
+  }
+  public static var DataATint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataATint
+        default:
+          return STGLightColors.DataATint
+      }
+    }
+  }
+  public static var DataAOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataAOpacity
+        default:
+          return STGLightColors.DataAOpacity
+      }
+    }
+  }
+  public static var DataBSolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataBSolid
+        default:
+          return STGLightColors.DataBSolid
+      }
+    }
+  }
+  public static var DataBTint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataBTint
+        default:
+          return STGLightColors.DataBTint
+      }
+    }
+  }
+  public static var DataBOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataBOpacity
+        default:
+          return STGLightColors.DataBOpacity
+      }
+    }
+  }
+  public static var DataCSolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataCSolid
+        default:
+          return STGLightColors.DataCSolid
+      }
+    }
+  }
+  public static var DataCTint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataCTint
+        default:
+          return STGLightColors.DataCTint
+      }
+    }
+  }
+  public static var DataCOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataCOpacity
+        default:
+          return STGLightColors.DataCOpacity
+      }
+    }
+  }
+  public static var DataDSolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataDSolid
+        default:
+          return STGLightColors.DataDSolid
+      }
+    }
+  }
+  public static var DataDTint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataDTint
+        default:
+          return STGLightColors.DataDTint
+      }
+    }
+  }
+  public static var DataDOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataDOpacity
+        default:
+          return STGLightColors.DataDOpacity
+      }
+    }
+  }
+  public static var DataESolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataESolid
+        default:
+          return STGLightColors.DataESolid
+      }
+    }
+  }
+  public static var DataETint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataETint
+        default:
+          return STGLightColors.DataETint
+      }
+    }
+  }
+  public static var DataEOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataEOpacity
+        default:
+          return STGLightColors.DataEOpacity
+      }
+    }
+  }
+  public static var DataFSolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataFSolid
+        default:
+          return STGLightColors.DataFSolid
+      }
+    }
+  }
+  public static var DataFTint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataFTint
+        default:
+          return STGLightColors.DataFTint
+      }
+    }
+  }
+  public static var DataFOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.DataFOpacity
+        default:
+          return STGLightColors.DataFOpacity
+      }
+    }
+  }
+  public static var PictogramPictogramBase: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.PictogramPictogramBase
+        default:
+          return STGLightColors.PictogramPictogramBase
+      }
+    }
+  }
+  public static var PictogramPictogramAccent: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.PictogramPictogramAccent
+        default:
+          return STGLightColors.PictogramPictogramAccent
+      }
+    }
+  }
+  public static var StateHoverPrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateHoverPrimary
+        default:
+          return STGLightColors.StateHoverPrimary
+      }
+    }
+  }
+  public static var StateActivePrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateActivePrimary
+        default:
+          return STGLightColors.StateActivePrimary
+      }
+    }
+  }
+  public static var StateHoverHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateHoverHero
+        default:
+          return STGLightColors.StateHoverHero
+      }
+    }
+  }
+  public static var StateActiveHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateActiveHero
+        default:
+          return STGLightColors.StateActiveHero
+      }
+    }
+  }
+  public static var StateHoverPrimaryFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateHoverPrimaryFaint
+        default:
+          return STGLightColors.StateHoverPrimaryFaint
+      }
+    }
+  }
+  public static var StateActivePrimaryFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateActivePrimaryFaint
+        default:
+          return STGLightColors.StateActivePrimaryFaint
+      }
+    }
+  }
+  public static var StateHoverHeroFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateHoverHeroFaint
+        default:
+          return STGLightColors.StateHoverHeroFaint
+      }
+    }
+  }
+  public static var StateActiveHeroFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateActiveHeroFaint
+        default:
+          return STGLightColors.StateActiveHeroFaint
+      }
+    }
+  }
+  public static var StateHoverMutedPale: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateHoverMutedPale
+        default:
+          return STGLightColors.StateHoverMutedPale
+      }
+    }
+  }
+  public static var StateActiveMutedPale: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateActiveMutedPale
+        default:
+          return STGLightColors.StateActiveMutedPale
+      }
+    }
+  }
+  public static var StateHoverMono: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateHoverMono
+        default:
+          return STGLightColors.StateHoverMono
+      }
+    }
+  }
+  public static var StateActiveMono: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return STGDarkColors.StateActiveMono
+        default:
+          return STGLightColors.StateActiveMono
+      }
+    }
+  }
 }

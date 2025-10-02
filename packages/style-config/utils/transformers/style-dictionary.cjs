@@ -8,6 +8,20 @@ const tokens = require(`${__dirname}/../../src/tokens/GEL-tokens-figma.json`);
 // Helpers
 // ==============================
 
+function splitByUppercase(str) {
+  return str.split(/(?=[A-Z])/);
+}
+
+function kebabToPascal(str) {
+  return str
+    .split('-') // split on dashes
+    .map((word, index) => {
+      // uppercase first letter, lowercase the rest
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join('');
+}
+
 /**
  * Converts a camelCase string into kebab-case
  * @param {string} str
@@ -260,29 +274,136 @@ StyleDictionary.registerTransform({
   },
 });
 
+function generateNameForIOS(str) {
+  return kebabToPascal(
+    splitByUppercase(str.replace('{', '').replace('}', '').replaceAll('.', '-').replaceAll(' ', '-')).join('-'),
+  ).replace('Color', '');
+}
+
+StyleDictionary.registerFormat({
+  name: 'ios/enum',
+  format: function ({ dictionary, options: { prefixToRemove, enumName } }) {
+    const primitiveTokens = dictionary.allTokens
+      .filter(t => !(t.path.includes('light-mode') || t.path.includes('dark-mode')) && t.$type === 'color')
+      .map(token => {
+        return {
+          ...token,
+          name: generateNameForIOS(token.key),
+        };
+      });
+
+    const lightTokens = dictionary.allTokens
+      .filter(t => t.path.includes('light-mode') && t.$type === 'color')
+      .map(current => {
+        let tokenName = generateNameForIOS(current.key);
+        if (enumName !== 'AllBrands') {
+          let [, splittedTokenName] = tokenName.split('LightMode');
+          const tokenNamePieces = splitByUppercase(splittedTokenName);
+          tokenNamePieces.splice(1, 1);
+          tokenName = tokenNamePieces.join('');
+        } else {
+          const tokenNamePieces = splitByUppercase(tokenName);
+          tokenNamePieces.splice(4, 1);
+          tokenName = tokenNamePieces.join('').replace('tokens', '');
+        }
+        return {
+          ...current,
+          name: tokenName,
+        };
+      });
+
+    const darkTokens = dictionary.allTokens
+      .filter(t => t.path.includes('dark-mode') && t.$type === 'color')
+      .map(current => {
+        let tokenName = generateNameForIOS(current.key);
+        if (enumName !== 'AllBrands') {
+          let [, splittedTokenName] = tokenName.split('DarkMode');
+          const tokenNamePieces = splitByUppercase(splittedTokenName);
+          tokenNamePieces.splice(1, 1);
+          tokenName = tokenNamePieces.join('');
+        } else {
+          const tokenNamePieces = splitByUppercase(tokenName);
+          tokenNamePieces.splice(4, 1);
+          tokenName = tokenNamePieces.join('').replace('tokens', '');
+        }
+        return {
+          ...current,
+          name: tokenName,
+        };
+      });
+
+    const primitiveColorEnum = `${enumName}PrimitivesColors`;
+    let output = '';
+    output += `// Do not edit directly, this file was auto-generated.\n\n`;
+    output += `import UIKit\n\n`;
+    output += `public enum ${primitiveColorEnum} {\n`;
+    primitiveTokens.forEach(primitiveToken => {
+      output += `  public static let ${primitiveToken.name} = ${primitiveToken.$value}\n`;
+    });
+    output += '}\n';
+
+    output += '\n\n';
+
+    output += `public enum ${enumName}LightColors {\n`;
+    lightTokens.forEach(lightToken => {
+      output += `  public static let ${lightToken.name} = ${primitiveColorEnum}.${generateNameForIOS(lightToken.original.$value)}\n`;
+    });
+    output += '}\n';
+
+    output += '\n\n';
+
+    output += `public enum ${enumName}DarkColors {\n`;
+    darkTokens.forEach(darkToken => {
+      output += `  public static let ${darkToken.name} = ${primitiveColorEnum}.${generateNameForIOS(darkToken.original.$value)}\n`;
+    });
+    output += '}\n';
+
+    if (enumName === 'AllBrands') {
+      return output;
+    }
+
+    output += '\n\n';
+    output += `public enum ${enumName}Colors {\n`;
+    lightTokens.forEach(lightToken => {
+      output += `  public static var ${lightToken.name}: UIColor {\n`;
+      output += `    return UIColor { traitCollection in\n`;
+      output += `      switch traitCollection.userInterfaceStyle {\n`;
+      output += `        case .dark:\n`;
+      output += `          return ${enumName}DarkColors.${lightToken.name}\n`;
+      output += `        default:\n`;
+      output += `          return ${enumName}LightColors.${lightToken.name}\n`;
+      output += `      }\n`;
+      output += `    }\n`;
+      output += `  }\n`;
+    });
+    output += '}\n';
+
+    return output;
+  },
+});
+
 StyleDictionary.registerTransform({
   type: 'name',
   transitive: true,
-  name: `strip-css-prefix`,
+  name: `strip-android-prefix`,
   transform: token => {
     if (token.path[0] === 'Primitives' && token.path[1] === 'color') {
       return token.name.replace('primitives-color', 'primitives');
     }
     const prefixesToRemove = [
-      'tokens-',
-      '-color-background',
-      '-color-surface',
-      '-color-text',
-      '-color-border',
-      '-color-data',
-      '-color-state',
-      '-color-alias',
-      '-color-pictogram',
-      '-color-surface',
-      '-color-background',
-      '-color-reserved',
-      '-color',
-      'themes-',
+      'tokens_',
+      '_color_background',
+      '_color_surface',
+      '_color_text',
+      '_color_border',
+      '_color_data',
+      '_color_state',
+      '_color_alias',
+      '_color_pictogram',
+      '_color_surface',
+      '_color_reserved',
+      '_color',
+      'themes_',
     ];
     // token.value will be resolved and transformed at this point
     return prefixesToRemove.reduce((name, prefix) => name.replace(prefix, ''), token.name);
@@ -294,7 +415,7 @@ StyleDictionary.registerTransform({
   transitive: true,
   name: `strip-css-dark-or-light-prefix`,
   transform: token => {
-    const prefixesToRemove = ['dark-mode-', 'light-mode-'];
+    const prefixesToRemove = ['dark_mode_', 'light_mode_'];
     // token.value will be resolved and transformed at this point
     return prefixesToRemove.reduce((name, prefix) => name.replace(prefix, ''), token.name);
   },
@@ -351,11 +472,11 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
       transforms: [
         'size/pxToRem',
         'attribute/cti',
-        'name/kebab',
+        'name/snake',
         'color/hex',
         'size/remToSp',
         'size/remToDp',
-        'strip-css-prefix',
+        'strip-android-prefix',
       ],
       buildPath: `${DIST_FOLDER}/style-dictionary/AllBrands/android/`,
       files: [
@@ -367,17 +488,13 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
       transforms: [
         'size/pxToRem',
         'attribute/cti',
-        'name/camel',
         'color/UIColorSwift',
         'content/swift/literal',
         'asset/swift/literal',
         'size/swift/remToCGFloat',
-        'strip-ios-prefix',
       ],
       buildPath: `${DIST_FOLDER}/style-dictionary/AllBrands/ios/`,
-      files: [
-        { destination: 'all-colors.swift', format: 'ios-swift/class.swift', options: { outputReferences: true } },
-      ],
+      files: [{ destination: 'all-colors.swift', format: 'ios/enum', options: { enumName: 'AllBrands' } }],
     },
   },
 };
@@ -573,6 +690,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
         ios: {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.ios,
           buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/`,
+          files: [{ destination: 'all-colors.swift', format: 'ios/enum', options: { enumName: primitiveName } }],
         },
       },
       log: {
@@ -602,11 +720,11 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           transforms: [
             'size/pxToRem',
             'attribute/cti',
-            'name/kebab',
+            'name/snake',
             'color/hex',
             'size/remToSp',
             'size/remToDp',
-            'strip-css-prefix',
+            'strip-android-prefix',
             'strip-css-dark-or-light-prefix',
           ],
           buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/android/`,

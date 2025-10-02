@@ -1,550 +1,1556 @@
-
-//
-// all-colors.swift
-//
-
 // Do not edit directly, this file was auto-generated.
-
 
 import UIKit
 
-public class {
-    public static let primitivesGreen50 = UIColor(red: 0.949, green: 0.976, blue: 0.949, alpha: 1)
-    public static let primitivesGreen100 = UIColor(red: 0.851, green: 0.925, blue: 0.851, alpha: 1)
-    public static let primitivesGreen200 = UIColor(red: 0.600, green: 0.800, blue: 0.600, alpha: 1)
-    public static let primitivesGreen300 = UIColor(red: 0.278, green: 0.643, blue: 0.278, alpha: 1)
-    public static let primitivesGreen400 = UIColor(red: 0.141, green: 0.573, blue: 0.141, alpha: 1)
-    public static let primitivesGreen500 = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
-    public static let primitivesGreen600 = UIColor(red: 0.000, green: 0.427, blue: 0.000, alpha: 1)
-    public static let primitivesGreen700 = UIColor(red: 0.000, green: 0.353, blue: 0.000, alpha: 1)
-    public static let primitivesGreen800 = UIColor(red: 0.000, green: 0.275, blue: 0.000, alpha: 1)
-    public static let primitivesGreen900 = UIColor(red: 0.000, green: 0.200, blue: 0.000, alpha: 1)
-    public static let primitivesGreen950 = UIColor(red: 0.000, green: 0.125, blue: 0.000, alpha: 1)
-    public static let primitivesBlue50 = UIColor(red: 0.949, green: 0.973, blue: 0.988, alpha: 1)
-    public static let primitivesBlue100 = UIColor(red: 0.851, green: 0.918, blue: 0.965, alpha: 1)
-    public static let primitivesBlue200 = UIColor(red: 0.600, green: 0.780, blue: 0.906, alpha: 1)
-    public static let primitivesBlue300 = UIColor(red: 0.271, green: 0.604, blue: 0.831, alpha: 1)
-    public static let primitivesBlue400 = UIColor(red: 0.141, green: 0.529, blue: 0.800, alpha: 1)
-    public static let primitivesBlue500 = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
-    public static let primitivesBlue600 = UIColor(red: 0.000, green: 0.388, blue: 0.655, alpha: 1)
-    public static let primitivesBlue700 = UIColor(red: 0.000, green: 0.318, blue: 0.537, alpha: 1)
-    public static let primitivesBlue800 = UIColor(red: 0.000, green: 0.251, blue: 0.424, alpha: 1)
-    public static let primitivesBlue900 = UIColor(red: 0.000, green: 0.180, blue: 0.306, alpha: 1)
-    public static let primitivesBlue950 = UIColor(red: 0.000, green: 0.114, blue: 0.192, alpha: 1)
-    public static let primitivesOrange50 = UIColor(red: 0.988, green: 0.961, blue: 0.949, alpha: 1)
-    public static let primitivesOrange100 = UIColor(red: 0.953, green: 0.847, blue: 0.800, alpha: 1)
-    public static let primitivesOrange200 = UIColor(red: 0.910, green: 0.694, blue: 0.600, alpha: 1)
-    public static let primitivesOrange300 = UIColor(red: 0.843, green: 0.471, blue: 0.310, alpha: 1)
-    public static let primitivesOrange400 = UIColor(red: 0.808, green: 0.345, blue: 0.149, alpha: 1)
-    public static let primitivesOrange500 = UIColor(red: 0.773, green: 0.231, blue: 0.000, alpha: 1)
-    public static let primitivesOrange600 = UIColor(red: 0.655, green: 0.196, blue: 0.000, alpha: 1)
-    public static let primitivesOrange700 = UIColor(red: 0.541, green: 0.161, blue: 0.000, alpha: 1)
-    public static let primitivesOrange800 = UIColor(red: 0.424, green: 0.125, blue: 0.000, alpha: 1)
-    public static let primitivesOrange900 = UIColor(red: 0.310, green: 0.094, blue: 0.000, alpha: 1)
-    public static let primitivesOrange950 = UIColor(red: 0.192, green: 0.059, blue: 0.000, alpha: 1)
-    public static let primitivesRed50 = UIColor(red: 0.988, green: 0.949, blue: 0.949, alpha: 1)
-    public static let primitivesRed100 = UIColor(red: 0.976, green: 0.902, blue: 0.902, alpha: 1)
-    public static let primitivesRed200 = UIColor(red: 0.918, green: 0.651, blue: 0.651, alpha: 1)
-    public static let primitivesRed300 = UIColor(red: 0.859, green: 0.388, blue: 0.388, alpha: 1)
-    public static let primitivesRed400 = UIColor(red: 0.816, green: 0.200, blue: 0.200, alpha: 1)
-    public static let primitivesRed500 = UIColor(red: 0.769, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesRed600 = UIColor(red: 0.655, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesRed700 = UIColor(red: 0.537, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesRed800 = UIColor(red: 0.424, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesRed900 = UIColor(red: 0.306, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesRed950 = UIColor(red: 0.192, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesYellow50 = UIColor(red: 1.000, green: 1.000, blue: 0.949, alpha: 1)
-    public static let primitivesYellow100 = UIColor(red: 1.000, green: 1.000, blue: 0.902, alpha: 1)
-    public static let primitivesYellow200 = UIColor(red: 1.000, green: 1.000, blue: 0.749, alpha: 1)
-    public static let primitivesYellow300 = UIColor(red: 1.000, green: 1.000, blue: 0.502, alpha: 1)
-    public static let primitivesYellow400 = UIColor(red: 1.000, green: 1.000, blue: 0.251, alpha: 1)
-    public static let primitivesYellow500 = UIColor(red: 1.000, green: 1.000, blue: 0.000, alpha: 1)
-    public static let primitivesYellow600 = UIColor(red: 0.851, green: 0.851, blue: 0.000, alpha: 1)
-    public static let primitivesYellow700 = UIColor(red: 0.702, green: 0.702, blue: 0.000, alpha: 1)
-    public static let primitivesYellow800 = UIColor(red: 0.549, green: 0.549, blue: 0.000, alpha: 1)
-    public static let primitivesYellow900 = UIColor(red: 0.400, green: 0.400, blue: 0.000, alpha: 1)
-    public static let primitivesYellow950 = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
-    public static let primitivesWbcGrey50 = UIColor(red: 0.976, green: 0.976, blue: 0.980, alpha: 1)
-    public static let primitivesWbcGrey100 = UIColor(red: 0.961, green: 0.961, blue: 0.965, alpha: 1)
-    public static let primitivesWbcGrey200 = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
-    public static let primitivesWbcGrey300 = UIColor(red: 0.714, green: 0.714, blue: 0.737, alpha: 1)
-    public static let primitivesWbcGrey400 = UIColor(red: 0.557, green: 0.553, blue: 0.596, alpha: 1)
-    public static let primitivesWbcGrey500 = UIColor(red: 0.439, green: 0.435, blue: 0.486, alpha: 1)
-    public static let primitivesWbcGrey600 = UIColor(red: 0.357, green: 0.357, blue: 0.416, alpha: 1)
-    public static let primitivesWbcGrey700 = UIColor(red: 0.275, green: 0.275, blue: 0.318, alpha: 1)
-    public static let primitivesWbcGrey800 = UIColor(red: 0.196, green: 0.196, blue: 0.220, alpha: 1)
-    public static let primitivesWbcGrey900 = UIColor(red: 0.110, green: 0.110, blue: 0.122, alpha: 1)
-    public static let primitivesWbcGrey950 = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
-    public static let primitivesWbcRed50 = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
-    public static let primitivesWbcRed100 = UIColor(red: 0.980, green: 0.800, blue: 0.796, alpha: 1)
-    public static let primitivesWbcRed200 = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
-    public static let primitivesWbcRed300 = UIColor(red: 0.945, green: 0.259, blue: 0.235, alpha: 1)
-    public static let primitivesWbcRed400 = UIColor(red: 0.933, green: 0.133, blue: 0.106, alpha: 1)
-    public static let primitivesWbcRed500 = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-    public static let primitivesWbcRed600 = UIColor(red: 0.725, green: 0.078, blue: 0.055, alpha: 1)
-    public static let primitivesWbcRed700 = UIColor(red: 0.600, green: 0.063, blue: 0.043, alpha: 1)
-    public static let primitivesWbcRed800 = UIColor(red: 0.471, green: 0.051, blue: 0.035, alpha: 1)
-    public static let primitivesWbcRed900 = UIColor(red: 0.341, green: 0.035, blue: 0.024, alpha: 1)
-    public static let primitivesWbcRed950 = UIColor(red: 0.216, green: 0.024, blue: 0.016, alpha: 1)
-    public static let primitivesWbcRedOpacity = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 0.5)
-    public static let primitivesWbcPink50 = UIColor(red: 1.000, green: 0.961, blue: 0.992, alpha: 1)
-    public static let primitivesWbcPink100 = UIColor(red: 1.000, green: 0.925, blue: 0.984, alpha: 1)
-    public static let primitivesWbcPink200 = UIColor(red: 1.000, green: 0.812, blue: 0.965, alpha: 1)
-    public static let primitivesWbcPink300 = UIColor(red: 1.000, green: 0.620, blue: 0.929, alpha: 1)
-    public static let primitivesWbcPink400 = UIColor(red: 1.000, green: 0.431, blue: 0.894, alpha: 1)
-    public static let primitivesWbcPink500 = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 1)
-    public static let primitivesWbcPink600 = UIColor(red: 0.851, green: 0.204, blue: 0.729, alpha: 1)
-    public static let primitivesWbcPink700 = UIColor(red: 0.702, green: 0.169, blue: 0.600, alpha: 1)
-    public static let primitivesWbcPink800 = UIColor(red: 0.549, green: 0.133, blue: 0.471, alpha: 1)
-    public static let primitivesWbcPink900 = UIColor(red: 0.349, green: 0.082, blue: 0.302, alpha: 1)
-    public static let primitivesWbcPink950 = UIColor(red: 0.200, green: 0.047, blue: 0.173, alpha: 1)
-    public static let primitivesWbcPinkOpacity = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 0.45)
-    public static let primitivesWbcNavy50 = UIColor(red: 0.945, green: 0.941, blue: 0.980, alpha: 1)
-    public static let primitivesWbcNavy100 = UIColor(red: 0.886, green: 0.882, blue: 0.957, alpha: 1)
-    public static let primitivesWbcNavy200 = UIColor(red: 0.663, green: 0.647, blue: 0.875, alpha: 1)
-    public static let primitivesWbcNavy300 = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
-    public static let primitivesWbcNavy400 = UIColor(red: 0.259, green: 0.235, blue: 0.592, alpha: 1)
-    public static let primitivesWbcNavy500 = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-    public static let primitivesWbcNavy600 = UIColor(red: 0.094, green: 0.078, blue: 0.302, alpha: 1)
-    public static let primitivesWbcNavy700 = UIColor(red: 0.075, green: 0.059, blue: 0.282, alpha: 1)
-    public static let primitivesWbcNavy800 = UIColor(red: 0.051, green: 0.035, blue: 0.243, alpha: 1)
-    public static let primitivesWbcNavy900 = UIColor(red: 0.035, green: 0.020, blue: 0.220, alpha: 1)
-    public static let primitivesWbcNavy950 = UIColor(red: 0.024, green: 0.008, blue: 0.212, alpha: 1)
-    public static let primitivesWbcNavyOpacity = UIColor(red: 0.227, green: 0.204, blue: 0.576, alpha: 0.6)
-    public static let primitivesWbcPurple50 = UIColor(red: 0.980, green: 0.945, blue: 0.992, alpha: 1)
-    public static let primitivesWbcPurple100 = UIColor(red: 0.922, green: 0.804, blue: 0.976, alpha: 1)
-    public static let primitivesWbcPurple200 = UIColor(red: 0.808, green: 0.518, blue: 0.941, alpha: 1)
-    public static let primitivesWbcPurple300 = UIColor(red: 0.737, green: 0.341, blue: 0.922, alpha: 1)
-    public static let primitivesWbcPurple400 = UIColor(red: 0.678, green: 0.196, blue: 0.902, alpha: 1)
-    public static let primitivesWbcPurple500 = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
-    public static let primitivesWbcPurple600 = UIColor(red: 0.529, green: 0.090, blue: 0.729, alpha: 1)
-    public static let primitivesWbcPurple700 = UIColor(red: 0.439, green: 0.075, blue: 0.608, alpha: 1)
-    public static let primitivesWbcPurple800 = UIColor(red: 0.361, green: 0.059, blue: 0.498, alpha: 1)
-    public static let primitivesWbcPurple900 = UIColor(red: 0.271, green: 0.047, blue: 0.373, alpha: 1)
-    public static let primitivesWbcPurple950 = UIColor(red: 0.180, green: 0.031, blue: 0.251, alpha: 1)
-    public static let primitivesWbcPurpleOpacity = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 0.5)
-    public static let primitivesWbcDarkRed50 = UIColor(red: 0.980, green: 0.949, blue: 0.949, alpha: 1)
-    public static let primitivesWbcDarkRed100 = UIColor(red: 0.961, green: 0.851, blue: 0.851, alpha: 1)
-    public static let primitivesWbcDarkRed200 = UIColor(red: 0.937, green: 0.635, blue: 0.635, alpha: 1)
-    public static let primitivesWbcDarkRed300 = UIColor(red: 0.906, green: 0.412, blue: 0.412, alpha: 1)
-    public static let primitivesWbcDarkRed400 = UIColor(red: 0.812, green: 0.173, blue: 0.173, alpha: 1)
-    public static let primitivesWbcDarkRed500 = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesWbcDarkRed600 = UIColor(red: 0.525, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesWbcDarkRed700 = UIColor(red: 0.443, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesWbcDarkRed800 = UIColor(red: 0.365, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesWbcDarkRed900 = UIColor(red: 0.302, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesWbcDarkRed950 = UIColor(red: 0.255, green: 0.000, blue: 0.000, alpha: 1)
-    public static let primitivesWbcDarkRedOpacity = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 0.5)
-    public static let primitivesWbcOrange50 = UIColor(red: 0.996, green: 0.957, blue: 0.922, alpha: 1)
-    public static let primitivesWbcOrange100 = UIColor(red: 0.992, green: 0.906, blue: 0.827, alpha: 1)
-    public static let primitivesWbcOrange200 = UIColor(red: 0.984, green: 0.796, blue: 0.635, alpha: 1)
-    public static let primitivesWbcOrange300 = UIColor(red: 0.976, green: 0.690, blue: 0.443, alpha: 1)
-    public static let primitivesWbcOrange400 = UIColor(red: 0.969, green: 0.584, blue: 0.251, alpha: 1)
-    public static let primitivesWbcOrange500 = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 1)
-    public static let primitivesWbcOrange600 = UIColor(red: 0.808, green: 0.392, blue: 0.035, alpha: 1)
-    public static let primitivesWbcOrange700 = UIColor(red: 0.616, green: 0.298, blue: 0.027, alpha: 1)
-    public static let primitivesWbcOrange800 = UIColor(red: 0.443, green: 0.216, blue: 0.020, alpha: 1)
-    public static let primitivesWbcOrange900 = UIColor(red: 0.251, green: 0.122, blue: 0.012, alpha: 1)
-    public static let primitivesWbcOrange950 = UIColor(red: 0.173, green: 0.082, blue: 0.008, alpha: 1)
-    public static let primitivesWbcOrangeOpacity = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 0.45)
-    public static let primitivesBorderRadiusNone = 0
-    public static let primitivesBorderRadius3px = 3
-    public static let primitivesBorderRadius4px = 4
-    public static let primitivesBorderRadius5px = 5
-    public static let primitivesBorderRadius6px = 6
-    public static let primitivesBorderRadius8px = 8
-    public static let primitivesBorderRadius12px = 12
-    public static let primitivesBorderRadius16px = 16
-    public static let primitivesBorderRadius24px = 24
-    public static let primitivesBorderRadiusFull = 999
-    public static let WestpacMonoWhite = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-    public static let WestpacMonoBlack = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
-    public static let LightModeBackgroundWhiteBlack = WestpacMonoWhite /** Use for screen backgrounds to establish correct emphasis. */
-    public static let LightModeBackgroundWhiteFaint = WestpacMonoWhite /** Use for screen backgrounds to establish correct emphasis. */
-    public static let LightModeBackgroundWhitePale = WestpacMonoWhite /** Use for screen backgrounds to establish correct emphasis. */
-    public static let LightModeSurfaceMono = WestpacMonoWhite /** Use surface-mono when you want to switch from white to black. */
-    public static let LightModeSurfaceReversed = WestpacMonoWhite /** Use with caution. This will be white in both Light and Dark Mode. */
-    public static let LightModeTextMono = WestpacMonoWhite /** Use text-mono when you want to switch from white to black. */
-    public static let LightModeTextReversed = WestpacMonoWhite /** Use with caution. Text will be white in both light and dark modes */
-    public static let LightModeBorderMono = WestpacMonoWhite /** This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
-    public static let LightModeSurfaceHoverMono = WestpacMonoWhite /** This token is for hover states. */
-    public static let DarkModeBackgroundPaleBlack = WestpacMonoBlack /** Use for screen backgrounds to establish correct emphasis. */
-    public static let DarkModeBackgroundWhiteBlack = WestpacMonoBlack /** Use for screen backgrounds to establish correct emphasis. */
-    public static let DarkModeSurfaceMono = WestpacMonoBlack /** Use surface-mono when you want to switch from white to black. */
-    public static let DarkModeSurfaceReversed = WestpacMonoWhite /** Use with caution. This will be white in both Light and Dark Mode. */
-    public static let DarkModeTextMono = WestpacMonoBlack /** Use text-mono when you want to switch from white to black. */
-    public static let DarkModeTextReversed = WestpacMonoWhite /** Use with caution. Text will be white in both light and dark modes */
-    public static let DarkModeBorderMono = WestpacMonoBlack /** This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
-    public static let DarkModeSurfaceHoverMono = WestpacMonoBlack /** This token is for hover states. */
-    public static let WestpacMuted50 = primitivesWbcGrey50
-    public static let WestpacMuted100 = primitivesWbcGrey100
-    public static let WestpacMuted200 = primitivesWbcGrey200
-    public static let WestpacMuted300 = primitivesWbcGrey300
-    public static let WestpacMuted400 = primitivesWbcGrey400
-    public static let WestpacMuted500 = primitivesWbcGrey500
-    public static let WestpacMuted600 = primitivesWbcGrey600
-    public static let WestpacMuted700 = primitivesWbcGrey700
-    public static let WestpacMuted800 = primitivesWbcGrey800
-    public static let WestpacMuted900 = primitivesWbcGrey900
-    public static let WestpacMuted950 = primitivesWbcGrey950
-    public static let WestpacPrimary50 = primitivesWbcRed50
-    public static let WestpacPrimary100 = primitivesWbcRed100
-    public static let WestpacPrimary200 = primitivesWbcRed200
-    public static let WestpacPrimary300 = primitivesWbcRed300
-    public static let WestpacPrimary400 = primitivesWbcRed400
-    public static let WestpacPrimary500 = primitivesWbcRed500
-    public static let WestpacPrimary600 = primitivesWbcRed600
-    public static let WestpacPrimary700 = primitivesWbcRed700
-    public static let WestpacPrimary800 = primitivesWbcRed800
-    public static let WestpacPrimary900 = primitivesWbcRed900
-    public static let WestpacPrimary950 = primitivesWbcRed950
-    public static let WestpacPrimaryOpacity = primitivesWbcRedOpacity
-    public static let WestpacHero50 = primitivesWbcNavy50
-    public static let WestpacHero100 = primitivesWbcNavy100
-    public static let WestpacHero200 = primitivesWbcNavy200
-    public static let WestpacHero300 = primitivesWbcNavy300
-    public static let WestpacHero400 = primitivesWbcNavy400
-    public static let WestpacHero500 = primitivesWbcNavy500
-    public static let WestpacHero600 = primitivesWbcNavy600
-    public static let WestpacHero700 = primitivesWbcNavy700
-    public static let WestpacHero800 = primitivesWbcNavy800
-    public static let WestpacHero900 = primitivesWbcNavy900
-    public static let WestpacHero950 = primitivesWbcNavy950
-    public static let WestpacHeroOpacity = primitivesWbcNavyOpacity
-    public static let WestpacPop50 = primitivesWbcPink50
-    public static let WestpacPop100 = primitivesWbcPink100
-    public static let WestpacPop200 = primitivesWbcPink200
-    public static let WestpacPop300 = primitivesWbcPink300
-    public static let WestpacPop400 = primitivesWbcPink400
-    public static let WestpacPop500 = primitivesWbcPink500
-    public static let WestpacPop600 = primitivesWbcPink600
-    public static let WestpacPop700 = primitivesWbcPink700
-    public static let WestpacPop800 = primitivesWbcPink800
-    public static let WestpacPop900 = primitivesWbcPink900
-    public static let WestpacPop950 = primitivesWbcPink950
-    public static let WestpacPopOpacity = primitivesWbcPinkOpacity
-    public static let WestpacHoller50 = primitivesWbcPurple50
-    public static let WestpacHoller100 = primitivesWbcPurple100
-    public static let WestpacHoller200 = primitivesWbcPurple200
-    public static let WestpacHoller300 = primitivesWbcPurple300
-    public static let WestpacHoller400 = primitivesWbcPurple400
-    public static let WestpacHoller500 = primitivesWbcPurple500
-    public static let WestpacHoller600 = primitivesWbcPurple600
-    public static let WestpacHoller700 = primitivesWbcPurple700
-    public static let WestpacHoller800 = primitivesWbcPurple800
-    public static let WestpacHoller900 = primitivesWbcPurple900
-    public static let WestpacHoller950 = primitivesWbcPurple950
-    public static let WestpacHollerOpacity = primitivesWbcPurpleOpacity
-    public static let WestpacSing50 = primitivesWbcDarkRed50
-    public static let WestpacSing100 = primitivesWbcDarkRed100
-    public static let WestpacSing200 = primitivesWbcDarkRed200
-    public static let WestpacSing300 = primitivesWbcDarkRed300
-    public static let WestpacSing400 = primitivesWbcDarkRed400
-    public static let WestpacSing500 = primitivesWbcDarkRed500
-    public static let WestpacSing600 = primitivesWbcDarkRed600
-    public static let WestpacSing700 = primitivesWbcDarkRed700
-    public static let WestpacSing800 = primitivesWbcDarkRed800
-    public static let WestpacSing900 = primitivesWbcDarkRed900
-    public static let WestpacSing950 = primitivesWbcDarkRed950
-    public static let WestpacSingOpacity = primitivesWbcDarkRedOpacity
-    public static let WestpacDance50 = primitivesWbcOrange50
-    public static let WestpacDance100 = primitivesWbcOrange100
-    public static let WestpacDance200 = primitivesWbcOrange200
-    public static let WestpacDance300 = primitivesWbcOrange300
-    public static let WestpacDance400 = primitivesWbcOrange400
-    public static let WestpacDance500 = primitivesWbcOrange500
-    public static let WestpacDance600 = primitivesWbcOrange600
-    public static let WestpacDance700 = primitivesWbcOrange700
-    public static let WestpacDance800 = primitivesWbcOrange800
-    public static let WestpacDance900 = primitivesWbcOrange900
-    public static let WestpacDance950 = primitivesWbcOrange950
-    public static let WestpacDanceOpacity = primitivesWbcOrangeOpacity
-    public static let WestpacSuccess50 = primitivesGreen50
-    public static let WestpacSuccess100 = primitivesGreen100
-    public static let WestpacSuccess200 = primitivesGreen200
-    public static let WestpacSuccess300 = primitivesGreen300
-    public static let WestpacSuccess400 = primitivesGreen400
-    public static let WestpacSuccess500 = primitivesGreen500
-    public static let WestpacSuccess600 = primitivesGreen600
-    public static let WestpacSuccess700 = primitivesGreen700
-    public static let WestpacSuccess800 = primitivesGreen800
-    public static let WestpacSuccess900 = primitivesGreen900
-    public static let WestpacSuccess950 = primitivesGreen950
-    public static let WestpacInfo50 = primitivesBlue50
-    public static let WestpacInfo100 = primitivesBlue100
-    public static let WestpacInfo200 = primitivesBlue200
-    public static let WestpacInfo300 = primitivesBlue300
-    public static let WestpacInfo400 = primitivesBlue400
-    public static let WestpacInfo500 = primitivesBlue500
-    public static let WestpacInfo600 = primitivesBlue600
-    public static let WestpacInfo700 = primitivesBlue700
-    public static let WestpacInfo800 = primitivesBlue800
-    public static let WestpacInfo900 = primitivesBlue900
-    public static let WestpacInfo950 = primitivesBlue950
-    public static let WestpacWarning50 = primitivesOrange50
-    public static let WestpacWarning100 = primitivesOrange100
-    public static let WestpacWarning200 = primitivesOrange200
-    public static let WestpacWarning300 = primitivesOrange300
-    public static let WestpacWarning400 = primitivesOrange400
-    public static let WestpacWarning500 = primitivesOrange500
-    public static let WestpacWarning600 = primitivesOrange600
-    public static let WestpacWarning700 = primitivesOrange700
-    public static let WestpacWarning800 = primitivesOrange800
-    public static let WestpacWarning900 = primitivesOrange900
-    public static let WestpacWarning950 = primitivesOrange950
-    public static let WestpacDanger50 = primitivesRed50
-    public static let WestpacDanger100 = primitivesRed100
-    public static let WestpacDanger200 = primitivesRed200
-    public static let WestpacDanger300 = primitivesRed300
-    public static let WestpacDanger400 = primitivesRed400
-    public static let WestpacDanger500 = primitivesRed500
-    public static let WestpacDanger600 = primitivesRed600
-    public static let WestpacDanger700 = primitivesRed700
-    public static let WestpacDanger800 = primitivesRed800
-    public static let WestpacDanger900 = primitivesRed900
-    public static let WestpacDanger950 = primitivesRed950
-    public static let WestpacSystem50 = primitivesYellow50
-    public static let WestpacSystem100 = primitivesYellow100
-    public static let WestpacSystem200 = primitivesYellow200
-    public static let WestpacSystem300 = primitivesYellow300
-    public static let WestpacSystem400 = primitivesYellow400
-    public static let WestpacSystem500 = primitivesYellow500
-    public static let WestpacSystem600 = primitivesYellow600
-    public static let WestpacSystem700 = primitivesYellow700
-    public static let WestpacSystem800 = primitivesYellow800
-    public static let WestpacSystem900 = primitivesYellow900
-    public static let WestpacSystem950 = primitivesYellow950
-    public static let WestpacBorderRadiusNone = primitivesBorderRadiusNone
-    public static let WestpacBorderRadiusSm = primitivesBorderRadius3px
-    public static let WestpacBorderRadiusMd = primitivesBorderRadius4px
-    public static let WestpacBorderRadiusLg = primitivesBorderRadius5px
-    public static let WestpacBorderRadiusXl = primitivesBorderRadius6px
-    public static let WestpacBorderRadius2xl = primitivesBorderRadius8px
-    public static let WestpacBorderRadius3xl = primitivesBorderRadius12px
-    public static let WestpacBorderRadius4xl = primitivesBorderRadius16px
-    public static let WestpacBorderRadius5xl = primitivesBorderRadius24px
-    public static let WestpacBorderRadiusFull = primitivesBorderRadiusFull
-    public static let LightModeBackgroundPaleBlack = WestpacMuted100 /** Use for screen backgrounds to establish correct emphasis. */
-    public static let LightModeBackgroundPaleFaint = WestpacMuted100 /** Use for screen backgrounds to establish correct emphasis. */
-    public static let LightModeBackgroundPrimary = WestpacPrimary500 /** Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-    public static let LightModeBackgroundHero = WestpacHero500 /** Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-    public static let LightModeSurfaceMuted = WestpacMuted500 /** Muted is now slightly lighter but remains accessible in all required scenarios. */
-    public static let LightModeSurfaceMutedStrong = WestpacMuted400 /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let LightModeSurfaceMutedMild = WestpacMuted300 /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let LightModeSurfaceMutedSoft = WestpacMuted200 /** This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let LightModeSurfaceMutedPale = WestpacMuted100 /** This colour is used for backgrounds */
-    public static let LightModeSurfaceMutedFaint = WestpacMuted50 /** This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes. */
-    public static let LightModeSurfacePrimary = WestpacPrimary500
-    public static let LightModeSurfacePrimaryFaint = WestpacPrimary50 /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-    public static let LightModeSurfaceHero = WestpacHero500
-    public static let LightModeSurfaceHeroFaint = WestpacHero50 /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-    public static let LightModeSurfacePop = WestpacPop500 /** This colour should be used very sparingly. It is for embellishment only. */
-    public static let LightModeSurfacePopFaint = WestpacPop50 /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-    public static let LightModeSurfaceHoller = WestpacHoller500 /** This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-    public static let LightModeSurfaceHollerFaint = WestpacHoller50 /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-    public static let LightModeSurfaceSing = WestpacSing500 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeSurfaceSingFaint = WestpacSing50 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeSurfaceDance = WestpacDance500 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeSurfaceDanceFaint = WestpacDance50 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeSurfaceSuccess = WestpacSuccess500 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let LightModeSurfaceSuccessFaint = WestpacSuccess50 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let LightModeSurfaceInfo = WestpacInfo500 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let LightModeSurfaceInfoFaint = WestpacInfo50 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let LightModeSurfaceWarning = WestpacWarning500 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let LightModeSurfaceWarningFaint = WestpacWarning50 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let LightModeSurfaceDanger = WestpacDanger500 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let LightModeSurfaceDangerFaint = WestpacDanger50 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let LightModeSurfaceSystemError = WestpacSystem500 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let LightModeSurfaceSystemErrorDark = WestpacSystem950 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let LightModeTextMuted = WestpacMuted500 /** Use for text that needs less emphasis - Hint text, sub labels etc. */
-    public static let LightModeTextPrimary = WestpacPrimary500 /** This is not currently used in the Design System. */
-    public static let LightModeTextHoller = WestpacHoller500 /** This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
-    public static let LightModeTextLink = WestpacPrimary500 /** Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
-    public static let LightModeTextSuccess = WestpacSuccess500 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let LightModeTextInfo = WestpacInfo500 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let LightModeTextWarning = WestpacWarning500 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let LightModeTextDanger = WestpacDanger500 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let LightModeTextSystemError = WestpacSystem950 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let LightModeBorderMuted = WestpacMuted500 /** This border colour is not currently used in the Design System. */
-    public static let LightModeBorderMutedStrong = WestpacMuted400 /** This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
-    public static let LightModeBorderMutedMild = WestpacMuted300 /** This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
-    public static let LightModeBorderMutedSoft = WestpacMuted200 /** This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
-    public static let LightModeBorderHero = WestpacHero500 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let LightModeBorderPrimary = WestpacPrimary500 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let LightModeBorderPop = WestpacPop500 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let LightModeBorderHoller = WestpacHoller500 /** This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-    public static let LightModeBorderSing = WestpacSing500 /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeBorderDance = WestpacDance500 /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let LightModeBorderSuccess = WestpacSuccess500 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let LightModeBorderSuccessMild = WestpacSuccess300 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let LightModeBorderInfo = WestpacInfo500 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let LightModeBorderInfoMild = WestpacInfo300 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let LightModeBorderWarning = WestpacWarning500 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let LightModeBorderWarningMild = WestpacWarning300 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let LightModeBorderDanger = WestpacDanger500 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let LightModeBorderDangerMild = WestpacDanger300 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let LightModeBorderFocus = WestpacHoller300 /** This is a reserved colour. It must only be used for the focus state keyboard navigation. */
-    public static let LightModeDataASolid = WestpacPrimary500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataATint = WestpacPrimary200 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataAOpacity = WestpacPrimaryOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataBSolid = WestpacHero500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataBTint = WestpacHero300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataBOpacity = WestpacHeroOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataCSolid = WestpacPop500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataCTint = WestpacPop300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataCOpacity = WestpacPopOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataDSolid = WestpacHoller500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataDTint = WestpacHoller200 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataDOpacity = WestpacHollerOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataESolid = WestpacSing500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataETint = WestpacSing300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataEOpacity = WestpacSingOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataFSolid = WestpacDance500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataFTint = WestpacDance300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeDataFOpacity = WestpacDanceOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let LightModeSurfaceHoverPrimary = WestpacPrimary400 /** This token is for hover states. */
-    public static let LightModeSurfaceActivePrimary = WestpacPrimary200
-    public static let LightModeSurfaceHoverHero = WestpacHero400 /** This token is for hover states. */
-    public static let LightModeSurfaceActiveHero = WestpacHero300 /** This token is for hover states. */
-    public static let LightModeSurfaceHoverPrimaryFaint = WestpacPrimary50 /** This token is for hover states. */
-    public static let LightModeSurfaceActivePrimaryFaint = WestpacPrimary100 /** This token is for hover states. */
-    public static let LightModeSurfaceHoverHeroFaint = WestpacHero50
-    public static let LightModeSurfaceActiveHeroFaint = WestpacHero100
-    public static let LightModeSurfaceHoverMutedPale = WestpacMuted100 /** This token is for hover states. */
-    public static let LightModeSurfaceActiveMutedPale = WestpacMuted300 /** This token is for hover states. */
-    public static let LightModeSurfaceActiveMono = WestpacMuted200 /** This token is for hover states. */
-    public static let LightModeBorderRadiusRoundedNone = WestpacBorderRadiusNone
-    public static let LightModeBorderRadiusRoundedSm = WestpacBorderRadiusSm
-    public static let LightModeBorderRadiusRoundedMd = WestpacBorderRadiusMd
-    public static let LightModeBorderRadiusRoundedLg = WestpacBorderRadiusLg
-    public static let LightModeBorderRadiusRoundedXl = WestpacBorderRadiusXl
-    public static let LightModeBorderRadiusRounded2xl = WestpacBorderRadius2xl
-    public static let LightModeBorderRadiusRounded3xl = WestpacBorderRadius3xl
-    public static let LightModeBorderRadiusRounded4xl = WestpacBorderRadius4xl
-    public static let LightModeBorderRadiusRounded5xl = WestpacBorderRadius5xl
-    public static let LightModeBorderRadiusRoundedFull = WestpacBorderRadiusFull
-    public static let DarkModeBackgroundWhiteFaint = WestpacMuted950 /** Use for screen backgrounds to establish correct emphasis. */
-    public static let DarkModeBackgroundPaleFaint = WestpacMuted950 /** Use for screen backgrounds to establish correct emphasis. */
-    public static let DarkModeBackgroundWhitePale = WestpacMuted900 /** Use for screen backgrounds to establish correct emphasis. */
-    public static let DarkModeBackgroundPrimary = WestpacPrimary500 /** Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-    public static let DarkModeBackgroundHero = WestpacHero500 /** Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-    public static let DarkModeSurfaceMuted = WestpacMuted400 /** Muted is now slightly lighter but remains accessible in all required scenarios. */
-    public static let DarkModeSurfaceMutedStrong = WestpacMuted600 /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let DarkModeSurfaceMutedMild = WestpacMuted700 /** This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let DarkModeSurfaceMutedSoft = WestpacMuted800 /** This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
-    public static let DarkModeSurfaceMutedPale = WestpacMuted900 /** This colour is used for backgrounds */
-    public static let DarkModeSurfaceMutedFaint = WestpacMuted950 /** This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes. */
-    public static let DarkModeSurfacePrimary = WestpacPrimary400
-    public static let DarkModeSurfacePrimaryFaint = WestpacPrimary950 /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-    public static let DarkModeSurfaceHero = WestpacHero300
-    public static let DarkModeSurfaceHeroFaint = WestpacHero950 /** This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-    public static let DarkModeSurfacePop = WestpacPop500 /** This colour should be used very sparingly. It is for embellishment only. */
-    public static let DarkModeSurfacePopFaint = WestpacPop950 /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-    public static let DarkModeSurfaceHoller = WestpacHoller400 /** This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-    public static let DarkModeSurfaceHollerFaint = WestpacHoller950 /** This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-    public static let DarkModeSurfaceSing = WestpacSing900 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeSurfaceSingFaint = WestpacSing950 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeSurfaceDance = WestpacDance500 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeSurfaceDanceFaint = WestpacDance900 /** This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeSurfaceSuccess = WestpacSuccess400 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let DarkModeSurfaceSuccessFaint = WestpacSuccess900 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let DarkModeSurfaceInfo = WestpacInfo400 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let DarkModeSurfaceInfoFaint = WestpacInfo900 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let DarkModeSurfaceWarning = WestpacWarning400 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let DarkModeSurfaceWarningFaint = WestpacWarning900 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let DarkModeSurfaceDanger = WestpacDanger300 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let DarkModeSurfaceDangerFaint = WestpacDanger900 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let DarkModeSurfaceSystemError = WestpacSystem950 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let DarkModeSurfaceSystemErrorDark = WestpacSystem500 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let DarkModeTextMuted = WestpacMuted400 /** Use for text that needs less emphasis - Hint text, sub labels etc. */
-    public static let DarkModeTextPrimary = WestpacPrimary300 /** This is not currently used in the Design System. */
-    public static let DarkModeTextHoller = WestpacHoller300 /** This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
-    public static let DarkModeTextLink = WestpacPrimary300 /** Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
-    public static let DarkModeTextSuccess = WestpacSuccess300 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let DarkModeTextInfo = WestpacInfo300 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let DarkModeTextWarning = WestpacWarning300 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let DarkModeTextDanger = WestpacDanger300 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let DarkModeTextSystemError = WestpacSystem500 /** This is a reserved colour. It must only be used for the system error messaging component. */
-    public static let DarkModeBorderMuted = WestpacMuted500 /** This border colour is not currently used in the Design System. */
-    public static let DarkModeBorderMutedStrong = WestpacMuted500 /** This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
-    public static let DarkModeBorderMutedMild = WestpacMuted700 /** This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
-    public static let DarkModeBorderMutedSoft = WestpacMuted800 /** This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
-    public static let DarkModeBorderHero = WestpacHero300 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let DarkModeBorderPrimary = WestpacPrimary400 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let DarkModeBorderPop = WestpacPop800 /** This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-    public static let DarkModeBorderHoller = WestpacHoller400 /** This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-    public static let DarkModeBorderSing = WestpacSing500 /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeBorderDance = WestpacDance500 /** This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-    public static let DarkModeBorderSuccess = WestpacSuccess500 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let DarkModeBorderSuccessMild = WestpacSuccess700 /** This is a reserved colour. It must only be used for the success messaging component. */
-    public static let DarkModeBorderInfo = WestpacInfo500 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let DarkModeBorderInfoMild = WestpacInfo700 /** This is a reserved colour. It must only be used for the info messaging component. */
-    public static let DarkModeBorderWarning = WestpacWarning500 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let DarkModeBorderWarningMild = WestpacWarning700 /** This is a reserved colour. It must only be used for the warning messaging component. */
-    public static let DarkModeBorderDanger = WestpacDanger500 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let DarkModeBorderDangerMild = WestpacDanger700 /** This is a reserved colour. It must only be used for the danger messaging component. */
-    public static let DarkModeBorderFocus = WestpacHoller400 /** This is a reserved colour. It must only be used for the focus state keyboard navigation. */
-    public static let DarkModeDataASolid = WestpacPrimary500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataATint = WestpacPrimary200 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataAOpacity = WestpacPrimaryOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataBSolid = WestpacHero300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataBTint = WestpacHero200 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataBOpacity = WestpacHeroOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataCSolid = WestpacPop500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataCTint = WestpacPop300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataCOpacity = WestpacPopOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataDSolid = WestpacHoller500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataDTint = WestpacHoller200 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataDOpacity = WestpacHollerOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataESolid = WestpacSing500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataETint = WestpacSing300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataEOpacity = WestpacSingOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataFSolid = WestpacDance500 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataFTint = WestpacDance300 /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeDataFOpacity = WestpacDanceOpacity /** This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-    public static let DarkModeSurfaceHoverPrimary = WestpacPrimary200 /** This token is for hover states. */
-    public static let DarkModeSurfaceActivePrimary = WestpacPrimary100
-    public static let DarkModeSurfaceHoverHero = WestpacHero200 /** This token is for hover states. */
-    public static let DarkModeSurfaceActiveHero = WestpacHero100 /** This token is for hover states. */
-    public static let DarkModeSurfaceHoverPrimaryFaint = WestpacPrimary900 /** This token is for hover states. */
-    public static let DarkModeSurfaceActivePrimaryFaint = WestpacPrimary800 /** This token is for hover states. */
-    public static let DarkModeSurfaceHoverHeroFaint = WestpacHero800
-    public static let DarkModeSurfaceActiveHeroFaint = WestpacHero400
-    public static let DarkModeSurfaceHoverMutedPale = WestpacMuted800 /** This token is for hover states. */
-    public static let DarkModeSurfaceActiveMutedPale = WestpacMuted600 /** This token is for hover states. */
-    public static let DarkModeSurfaceActiveMono = WestpacMuted800 /** This token is for hover states. */
-    public static let DarkModeBorderRadiusRoundedNone = WestpacBorderRadiusNone
-    public static let DarkModeBorderRadiusRoundedSm = WestpacBorderRadiusSm
-    public static let DarkModeBorderRadiusRoundedMd = WestpacBorderRadiusMd
-    public static let DarkModeBorderRadiusRoundedLg = WestpacBorderRadiusLg
-    public static let DarkModeBorderRadiusRoundedXl = WestpacBorderRadiusXl
-    public static let DarkModeBorderRadiusRounded2xl = WestpacBorderRadius2xl
-    public static let DarkModeBorderRadiusRounded3xl = WestpacBorderRadius3xl
-    public static let DarkModeBorderRadiusRounded4xl = WestpacBorderRadius4xl
-    public static let DarkModeBorderRadiusRounded5xl = WestpacBorderRadius5xl
-    public static let DarkModeBorderRadiusRoundedFull = WestpacBorderRadiusFull
-    public static let WestpacTextBodyLm = WestpacMuted950
-    public static let WestpacTextBodyDm = WestpacMuted200
-    public static let WestpacTextHeadingLm = WestpacHero500
-    public static let WestpacTextHeadingDm = WestpacHero200
-    public static let WestpacTextHeroLm = WestpacHero500
-    public static let WestpacTextHeroDm = WestpacHero200
-    public static let WestpacSurfacePictogramBaseLm = WestpacHero500
-    public static let WestpacSurfacePictogramBaseDm = WestpacHero300
-    public static let WestpacSurfacePictogramAccentLm = WestpacPrimary500
-    public static let WestpacSurfacePictogramAccentDm = WestpacPrimary600
-    public static let WestpacSurfaceMutedVividLm = WestpacMuted950
-    public static let WestpacSurfaceMutedVividDm = WestpacMuted50
-    public static let LightModeSurfaceMutedVivid = WestpacSurfaceMutedVividLm /** Use for icons that need to be text colour. */
-    public static let LightModeTextBody = WestpacTextBodyLm /** Use for body text, button labels, form labels etc. Can also be used for headings if required. */
-    public static let LightModeTextHeading = WestpacTextHeadingLm /** Use for headings to ensure that multi-brand switching remains accurate. */
-    public static let LightModeTextHero = WestpacTextHeroLm /** This is not currently used in the Design System */
-    public static let LightModeSurfacePictogramBase = WestpacSurfacePictogramBaseLm /** This is a reserved component colour token. It must only be used for Pictograms. */
-    public static let LightModeSurfacePictogramAccent = WestpacSurfacePictogramAccentLm /** This is a reserved component colour token. It must only be used for Pictograms. */
-    public static let DarkModeSurfaceMutedVivid = WestpacSurfaceMutedVividDm /** Use for icons that need to be text colour. */
-    public static let DarkModeTextBody = WestpacTextBodyDm /** Use for body text, button labels, form labels etc. Can also be used for headings if required. */
-    public static let DarkModeTextHeading = WestpacTextHeadingDm /** Use for headings to ensure that multi-brand switching remains accurate. */
-    public static let DarkModeTextHero = WestpacTextHeroDm /** This is not currently used in the Design System */
-    public static let DarkModeSurfacePictogramBase = WestpacSurfacePictogramBaseDm /** This is a reserved component colour token. It must only be used for Pictograms. */
-    public static let DarkModeSurfacePictogramAccent = WestpacSurfacePictogramAccentDm /** This is a reserved component colour token. It must only be used for Pictograms. */
+public enum WBCPrimitivesColors {
+  public static let PrimitivesReservedGreen50 = UIColor(red: 0.949, green: 0.976, blue: 0.949, alpha: 1)
+  public static let PrimitivesReservedGreen100 = UIColor(red: 0.851, green: 0.925, blue: 0.851, alpha: 1)
+  public static let PrimitivesReservedGreen200 = UIColor(red: 0.600, green: 0.800, blue: 0.600, alpha: 1)
+  public static let PrimitivesReservedGreen300 = UIColor(red: 0.278, green: 0.643, blue: 0.278, alpha: 1)
+  public static let PrimitivesReservedGreen400 = UIColor(red: 0.141, green: 0.573, blue: 0.141, alpha: 1)
+  public static let PrimitivesReservedGreen500 = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedGreen600 = UIColor(red: 0.000, green: 0.427, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedGreen700 = UIColor(red: 0.000, green: 0.353, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedGreen800 = UIColor(red: 0.000, green: 0.275, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedGreen900 = UIColor(red: 0.000, green: 0.200, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedGreen950 = UIColor(red: 0.000, green: 0.125, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedBlue50 = UIColor(red: 0.949, green: 0.973, blue: 0.988, alpha: 1)
+  public static let PrimitivesReservedBlue100 = UIColor(red: 0.851, green: 0.918, blue: 0.965, alpha: 1)
+  public static let PrimitivesReservedBlue200 = UIColor(red: 0.600, green: 0.780, blue: 0.906, alpha: 1)
+  public static let PrimitivesReservedBlue300 = UIColor(red: 0.271, green: 0.604, blue: 0.831, alpha: 1)
+  public static let PrimitivesReservedBlue400 = UIColor(red: 0.141, green: 0.529, blue: 0.800, alpha: 1)
+  public static let PrimitivesReservedBlue500 = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
+  public static let PrimitivesReservedBlue600 = UIColor(red: 0.000, green: 0.388, blue: 0.655, alpha: 1)
+  public static let PrimitivesReservedBlue700 = UIColor(red: 0.000, green: 0.318, blue: 0.537, alpha: 1)
+  public static let PrimitivesReservedBlue800 = UIColor(red: 0.000, green: 0.251, blue: 0.424, alpha: 1)
+  public static let PrimitivesReservedBlue900 = UIColor(red: 0.000, green: 0.180, blue: 0.306, alpha: 1)
+  public static let PrimitivesReservedBlue950 = UIColor(red: 0.000, green: 0.114, blue: 0.192, alpha: 1)
+  public static let PrimitivesReservedOrange50 = UIColor(red: 0.988, green: 0.961, blue: 0.949, alpha: 1)
+  public static let PrimitivesReservedOrange100 = UIColor(red: 0.953, green: 0.847, blue: 0.800, alpha: 1)
+  public static let PrimitivesReservedOrange200 = UIColor(red: 0.910, green: 0.694, blue: 0.600, alpha: 1)
+  public static let PrimitivesReservedOrange300 = UIColor(red: 0.843, green: 0.471, blue: 0.310, alpha: 1)
+  public static let PrimitivesReservedOrange400 = UIColor(red: 0.808, green: 0.345, blue: 0.149, alpha: 1)
+  public static let PrimitivesReservedOrange500 = UIColor(red: 0.773, green: 0.231, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedOrange600 = UIColor(red: 0.655, green: 0.196, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedOrange700 = UIColor(red: 0.541, green: 0.161, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedOrange800 = UIColor(red: 0.424, green: 0.125, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedOrange900 = UIColor(red: 0.310, green: 0.094, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedOrange950 = UIColor(red: 0.192, green: 0.059, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed50 = UIColor(red: 0.988, green: 0.949, blue: 0.949, alpha: 1)
+  public static let PrimitivesReservedRed100 = UIColor(red: 0.976, green: 0.902, blue: 0.902, alpha: 1)
+  public static let PrimitivesReservedRed200 = UIColor(red: 0.918, green: 0.651, blue: 0.651, alpha: 1)
+  public static let PrimitivesReservedRed300 = UIColor(red: 0.859, green: 0.388, blue: 0.388, alpha: 1)
+  public static let PrimitivesReservedRed400 = UIColor(red: 0.816, green: 0.200, blue: 0.200, alpha: 1)
+  public static let PrimitivesReservedRed500 = UIColor(red: 0.769, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed600 = UIColor(red: 0.655, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed700 = UIColor(red: 0.537, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed800 = UIColor(red: 0.424, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed900 = UIColor(red: 0.306, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedRed950 = UIColor(red: 0.192, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow50 = UIColor(red: 1.000, green: 1.000, blue: 0.949, alpha: 1)
+  public static let PrimitivesReservedYellow100 = UIColor(red: 1.000, green: 1.000, blue: 0.902, alpha: 1)
+  public static let PrimitivesReservedYellow200 = UIColor(red: 1.000, green: 1.000, blue: 0.749, alpha: 1)
+  public static let PrimitivesReservedYellow300 = UIColor(red: 1.000, green: 1.000, blue: 0.502, alpha: 1)
+  public static let PrimitivesReservedYellow400 = UIColor(red: 1.000, green: 1.000, blue: 0.251, alpha: 1)
+  public static let PrimitivesReservedYellow500 = UIColor(red: 1.000, green: 1.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow600 = UIColor(red: 0.851, green: 0.851, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow700 = UIColor(red: 0.702, green: 0.702, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow800 = UIColor(red: 0.549, green: 0.549, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow900 = UIColor(red: 0.400, green: 0.400, blue: 0.000, alpha: 1)
+  public static let PrimitivesReservedYellow950 = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
+  public static let PrimitivesWBCGrey50 = UIColor(red: 0.976, green: 0.976, blue: 0.980, alpha: 1)
+  public static let PrimitivesWBCGrey100 = UIColor(red: 0.961, green: 0.961, blue: 0.965, alpha: 1)
+  public static let PrimitivesWBCGrey200 = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
+  public static let PrimitivesWBCGrey300 = UIColor(red: 0.714, green: 0.714, blue: 0.737, alpha: 1)
+  public static let PrimitivesWBCGrey400 = UIColor(red: 0.557, green: 0.553, blue: 0.596, alpha: 1)
+  public static let PrimitivesWBCGrey500 = UIColor(red: 0.439, green: 0.435, blue: 0.486, alpha: 1)
+  public static let PrimitivesWBCGrey600 = UIColor(red: 0.357, green: 0.357, blue: 0.416, alpha: 1)
+  public static let PrimitivesWBCGrey700 = UIColor(red: 0.275, green: 0.275, blue: 0.318, alpha: 1)
+  public static let PrimitivesWBCGrey800 = UIColor(red: 0.196, green: 0.196, blue: 0.220, alpha: 1)
+  public static let PrimitivesWBCGrey900 = UIColor(red: 0.110, green: 0.110, blue: 0.122, alpha: 1)
+  public static let PrimitivesWBCGrey950 = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
+  public static let PrimitivesWBCRed50 = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
+  public static let PrimitivesWBCRed100 = UIColor(red: 0.980, green: 0.800, blue: 0.796, alpha: 1)
+  public static let PrimitivesWBCRed200 = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
+  public static let PrimitivesWBCRed300 = UIColor(red: 0.945, green: 0.259, blue: 0.235, alpha: 1)
+  public static let PrimitivesWBCRed400 = UIColor(red: 0.933, green: 0.133, blue: 0.106, alpha: 1)
+  public static let PrimitivesWBCRed500 = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
+  public static let PrimitivesWBCRed600 = UIColor(red: 0.725, green: 0.078, blue: 0.055, alpha: 1)
+  public static let PrimitivesWBCRed700 = UIColor(red: 0.600, green: 0.063, blue: 0.043, alpha: 1)
+  public static let PrimitivesWBCRed800 = UIColor(red: 0.471, green: 0.051, blue: 0.035, alpha: 1)
+  public static let PrimitivesWBCRed900 = UIColor(red: 0.341, green: 0.035, blue: 0.024, alpha: 1)
+  public static let PrimitivesWBCRed950 = UIColor(red: 0.216, green: 0.024, blue: 0.016, alpha: 1)
+  public static let PrimitivesWBCRedOpacity = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 0.5)
+  public static let PrimitivesWBCPink50 = UIColor(red: 1.000, green: 0.961, blue: 0.992, alpha: 1)
+  public static let PrimitivesWBCPink100 = UIColor(red: 1.000, green: 0.925, blue: 0.984, alpha: 1)
+  public static let PrimitivesWBCPink200 = UIColor(red: 1.000, green: 0.812, blue: 0.965, alpha: 1)
+  public static let PrimitivesWBCPink300 = UIColor(red: 1.000, green: 0.620, blue: 0.929, alpha: 1)
+  public static let PrimitivesWBCPink400 = UIColor(red: 1.000, green: 0.431, blue: 0.894, alpha: 1)
+  public static let PrimitivesWBCPink500 = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 1)
+  public static let PrimitivesWBCPink600 = UIColor(red: 0.851, green: 0.204, blue: 0.729, alpha: 1)
+  public static let PrimitivesWBCPink700 = UIColor(red: 0.702, green: 0.169, blue: 0.600, alpha: 1)
+  public static let PrimitivesWBCPink800 = UIColor(red: 0.549, green: 0.133, blue: 0.471, alpha: 1)
+  public static let PrimitivesWBCPink900 = UIColor(red: 0.349, green: 0.082, blue: 0.302, alpha: 1)
+  public static let PrimitivesWBCPink950 = UIColor(red: 0.200, green: 0.047, blue: 0.173, alpha: 1)
+  public static let PrimitivesWBCPinkOpacity = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 0.45)
+  public static let PrimitivesWBCNavy50 = UIColor(red: 0.945, green: 0.941, blue: 0.980, alpha: 1)
+  public static let PrimitivesWBCNavy100 = UIColor(red: 0.886, green: 0.882, blue: 0.957, alpha: 1)
+  public static let PrimitivesWBCNavy200 = UIColor(red: 0.663, green: 0.647, blue: 0.875, alpha: 1)
+  public static let PrimitivesWBCNavy300 = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
+  public static let PrimitivesWBCNavy400 = UIColor(red: 0.259, green: 0.235, blue: 0.592, alpha: 1)
+  public static let PrimitivesWBCNavy500 = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
+  public static let PrimitivesWBCNavy600 = UIColor(red: 0.094, green: 0.078, blue: 0.302, alpha: 1)
+  public static let PrimitivesWBCNavy700 = UIColor(red: 0.075, green: 0.059, blue: 0.282, alpha: 1)
+  public static let PrimitivesWBCNavy800 = UIColor(red: 0.051, green: 0.035, blue: 0.243, alpha: 1)
+  public static let PrimitivesWBCNavy900 = UIColor(red: 0.035, green: 0.020, blue: 0.220, alpha: 1)
+  public static let PrimitivesWBCNavy950 = UIColor(red: 0.024, green: 0.008, blue: 0.212, alpha: 1)
+  public static let PrimitivesWBCNavyOpacity = UIColor(red: 0.227, green: 0.204, blue: 0.576, alpha: 0.6)
+  public static let PrimitivesWBCPurple50 = UIColor(red: 0.980, green: 0.945, blue: 0.992, alpha: 1)
+  public static let PrimitivesWBCPurple100 = UIColor(red: 0.922, green: 0.804, blue: 0.976, alpha: 1)
+  public static let PrimitivesWBCPurple200 = UIColor(red: 0.808, green: 0.518, blue: 0.941, alpha: 1)
+  public static let PrimitivesWBCPurple300 = UIColor(red: 0.737, green: 0.341, blue: 0.922, alpha: 1)
+  public static let PrimitivesWBCPurple400 = UIColor(red: 0.678, green: 0.196, blue: 0.902, alpha: 1)
+  public static let PrimitivesWBCPurple500 = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
+  public static let PrimitivesWBCPurple600 = UIColor(red: 0.529, green: 0.090, blue: 0.729, alpha: 1)
+  public static let PrimitivesWBCPurple700 = UIColor(red: 0.439, green: 0.075, blue: 0.608, alpha: 1)
+  public static let PrimitivesWBCPurple800 = UIColor(red: 0.361, green: 0.059, blue: 0.498, alpha: 1)
+  public static let PrimitivesWBCPurple900 = UIColor(red: 0.271, green: 0.047, blue: 0.373, alpha: 1)
+  public static let PrimitivesWBCPurple950 = UIColor(red: 0.180, green: 0.031, blue: 0.251, alpha: 1)
+  public static let PrimitivesWBCPurpleOpacity = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 0.5)
+  public static let PrimitivesWBCDarkRed50 = UIColor(red: 0.980, green: 0.949, blue: 0.949, alpha: 1)
+  public static let PrimitivesWBCDarkRed100 = UIColor(red: 0.961, green: 0.851, blue: 0.851, alpha: 1)
+  public static let PrimitivesWBCDarkRed200 = UIColor(red: 0.937, green: 0.635, blue: 0.635, alpha: 1)
+  public static let PrimitivesWBCDarkRed300 = UIColor(red: 0.906, green: 0.412, blue: 0.412, alpha: 1)
+  public static let PrimitivesWBCDarkRed400 = UIColor(red: 0.812, green: 0.173, blue: 0.173, alpha: 1)
+  public static let PrimitivesWBCDarkRed500 = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesWBCDarkRed600 = UIColor(red: 0.525, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesWBCDarkRed700 = UIColor(red: 0.443, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesWBCDarkRed800 = UIColor(red: 0.365, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesWBCDarkRed900 = UIColor(red: 0.302, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesWBCDarkRed950 = UIColor(red: 0.255, green: 0.000, blue: 0.000, alpha: 1)
+  public static let PrimitivesWBCDarkRedOpacity = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 0.5)
+  public static let PrimitivesWBCOrange50 = UIColor(red: 0.996, green: 0.957, blue: 0.922, alpha: 1)
+  public static let PrimitivesWBCOrange100 = UIColor(red: 0.992, green: 0.906, blue: 0.827, alpha: 1)
+  public static let PrimitivesWBCOrange200 = UIColor(red: 0.984, green: 0.796, blue: 0.635, alpha: 1)
+  public static let PrimitivesWBCOrange300 = UIColor(red: 0.976, green: 0.690, blue: 0.443, alpha: 1)
+  public static let PrimitivesWBCOrange400 = UIColor(red: 0.969, green: 0.584, blue: 0.251, alpha: 1)
+  public static let PrimitivesWBCOrange500 = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 1)
+  public static let PrimitivesWBCOrange600 = UIColor(red: 0.808, green: 0.392, blue: 0.035, alpha: 1)
+  public static let PrimitivesWBCOrange700 = UIColor(red: 0.616, green: 0.298, blue: 0.027, alpha: 1)
+  public static let PrimitivesWBCOrange800 = UIColor(red: 0.443, green: 0.216, blue: 0.020, alpha: 1)
+  public static let PrimitivesWBCOrange900 = UIColor(red: 0.251, green: 0.122, blue: 0.012, alpha: 1)
+  public static let PrimitivesWBCOrange950 = UIColor(red: 0.173, green: 0.082, blue: 0.008, alpha: 1)
+  public static let PrimitivesWBCOrangeOpacity = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 0.45)
+  public static let ThemesWestpacAliasTextBodyLm = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
+  public static let ThemesWestpacAliasTextBodyDm = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
+  public static let ThemesWestpacAliasTextHeadingLm = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
+  public static let ThemesWestpacAliasTextHeadingDm = UIColor(red: 0.663, green: 0.647, blue: 0.875, alpha: 1)
+  public static let ThemesWestpacAliasTextHeroLM = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
+  public static let ThemesWestpacAliasTextHeroDM = UIColor(red: 0.663, green: 0.647, blue: 0.875, alpha: 1)
+  public static let ThemesWestpacAliasSurfacePictogramBaseLm = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
+  public static let ThemesWestpacAliasSurfacePictogramBaseDm = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
+  public static let ThemesWestpacAliasSurfacePictogramAccentLm = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
+  public static let ThemesWestpacAliasSurfacePictogramAccentDM = UIColor(red: 0.725, green: 0.078, blue: 0.055, alpha: 1)
+  public static let ThemesWestpacAliasSurfaceMutedVividLM = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
+  public static let ThemesWestpacAliasSurfaceMutedVividDM = UIColor(red: 0.976, green: 0.976, blue: 0.980, alpha: 1)
+  public static let ThemesWestpacMuted50 = UIColor(red: 0.976, green: 0.976, blue: 0.980, alpha: 1)
+  public static let ThemesWestpacMuted100 = UIColor(red: 0.961, green: 0.961, blue: 0.965, alpha: 1)
+  public static let ThemesWestpacMuted200 = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
+  public static let ThemesWestpacMuted300 = UIColor(red: 0.714, green: 0.714, blue: 0.737, alpha: 1)
+  public static let ThemesWestpacMuted400 = UIColor(red: 0.557, green: 0.553, blue: 0.596, alpha: 1)
+  public static let ThemesWestpacMuted500 = UIColor(red: 0.439, green: 0.435, blue: 0.486, alpha: 1)
+  public static let ThemesWestpacMuted600 = UIColor(red: 0.357, green: 0.357, blue: 0.416, alpha: 1)
+  public static let ThemesWestpacMuted700 = UIColor(red: 0.275, green: 0.275, blue: 0.318, alpha: 1)
+  public static let ThemesWestpacMuted800 = UIColor(red: 0.196, green: 0.196, blue: 0.220, alpha: 1)
+  public static let ThemesWestpacMuted900 = UIColor(red: 0.110, green: 0.110, blue: 0.122, alpha: 1)
+  public static let ThemesWestpacMuted950 = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
+  public static let ThemesWestpacPrimary50 = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
+  public static let ThemesWestpacPrimary100 = UIColor(red: 0.980, green: 0.800, blue: 0.796, alpha: 1)
+  public static let ThemesWestpacPrimary200 = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
+  public static let ThemesWestpacPrimary300 = UIColor(red: 0.945, green: 0.259, blue: 0.235, alpha: 1)
+  public static let ThemesWestpacPrimary400 = UIColor(red: 0.933, green: 0.133, blue: 0.106, alpha: 1)
+  public static let ThemesWestpacPrimary500 = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
+  public static let ThemesWestpacPrimary600 = UIColor(red: 0.725, green: 0.078, blue: 0.055, alpha: 1)
+  public static let ThemesWestpacPrimary700 = UIColor(red: 0.600, green: 0.063, blue: 0.043, alpha: 1)
+  public static let ThemesWestpacPrimary800 = UIColor(red: 0.471, green: 0.051, blue: 0.035, alpha: 1)
+  public static let ThemesWestpacPrimary900 = UIColor(red: 0.341, green: 0.035, blue: 0.024, alpha: 1)
+  public static let ThemesWestpacPrimary950 = UIColor(red: 0.216, green: 0.024, blue: 0.016, alpha: 1)
+  public static let ThemesWestpacPrimaryOpacity = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 0.5)
+  public static let ThemesWestpacHero50 = UIColor(red: 0.945, green: 0.941, blue: 0.980, alpha: 1)
+  public static let ThemesWestpacHero100 = UIColor(red: 0.886, green: 0.882, blue: 0.957, alpha: 1)
+  public static let ThemesWestpacHero200 = UIColor(red: 0.663, green: 0.647, blue: 0.875, alpha: 1)
+  public static let ThemesWestpacHero300 = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
+  public static let ThemesWestpacHero400 = UIColor(red: 0.259, green: 0.235, blue: 0.592, alpha: 1)
+  public static let ThemesWestpacHero500 = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
+  public static let ThemesWestpacHero600 = UIColor(red: 0.094, green: 0.078, blue: 0.302, alpha: 1)
+  public static let ThemesWestpacHero700 = UIColor(red: 0.075, green: 0.059, blue: 0.282, alpha: 1)
+  public static let ThemesWestpacHero800 = UIColor(red: 0.051, green: 0.035, blue: 0.243, alpha: 1)
+  public static let ThemesWestpacHero900 = UIColor(red: 0.035, green: 0.020, blue: 0.220, alpha: 1)
+  public static let ThemesWestpacHero950 = UIColor(red: 0.024, green: 0.008, blue: 0.212, alpha: 1)
+  public static let ThemesWestpacHeroOpacity = UIColor(red: 0.227, green: 0.204, blue: 0.576, alpha: 0.6)
+  public static let ThemesWestpacPop50 = UIColor(red: 1.000, green: 0.961, blue: 0.992, alpha: 1)
+  public static let ThemesWestpacPop100 = UIColor(red: 1.000, green: 0.925, blue: 0.984, alpha: 1)
+  public static let ThemesWestpacPop200 = UIColor(red: 1.000, green: 0.812, blue: 0.965, alpha: 1)
+  public static let ThemesWestpacPop300 = UIColor(red: 1.000, green: 0.620, blue: 0.929, alpha: 1)
+  public static let ThemesWestpacPop400 = UIColor(red: 1.000, green: 0.431, blue: 0.894, alpha: 1)
+  public static let ThemesWestpacPop500 = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 1)
+  public static let ThemesWestpacPop600 = UIColor(red: 0.851, green: 0.204, blue: 0.729, alpha: 1)
+  public static let ThemesWestpacPop700 = UIColor(red: 0.702, green: 0.169, blue: 0.600, alpha: 1)
+  public static let ThemesWestpacPop800 = UIColor(red: 0.549, green: 0.133, blue: 0.471, alpha: 1)
+  public static let ThemesWestpacPop900 = UIColor(red: 0.349, green: 0.082, blue: 0.302, alpha: 1)
+  public static let ThemesWestpacPop950 = UIColor(red: 0.200, green: 0.047, blue: 0.173, alpha: 1)
+  public static let ThemesWestpacPopOpacity = UIColor(red: 1.000, green: 0.239, blue: 0.859, alpha: 0.45)
+  public static let ThemesWestpacHoller50 = UIColor(red: 0.980, green: 0.945, blue: 0.992, alpha: 1)
+  public static let ThemesWestpacHoller100 = UIColor(red: 0.922, green: 0.804, blue: 0.976, alpha: 1)
+  public static let ThemesWestpacHoller200 = UIColor(red: 0.808, green: 0.518, blue: 0.941, alpha: 1)
+  public static let ThemesWestpacHoller300 = UIColor(red: 0.737, green: 0.341, blue: 0.922, alpha: 1)
+  public static let ThemesWestpacHoller400 = UIColor(red: 0.678, green: 0.196, blue: 0.902, alpha: 1)
+  public static let ThemesWestpacHoller500 = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 1)
+  public static let ThemesWestpacHoller600 = UIColor(red: 0.529, green: 0.090, blue: 0.729, alpha: 1)
+  public static let ThemesWestpacHoller700 = UIColor(red: 0.439, green: 0.075, blue: 0.608, alpha: 1)
+  public static let ThemesWestpacHoller800 = UIColor(red: 0.361, green: 0.059, blue: 0.498, alpha: 1)
+  public static let ThemesWestpacHoller900 = UIColor(red: 0.271, green: 0.047, blue: 0.373, alpha: 1)
+  public static let ThemesWestpacHoller950 = UIColor(red: 0.180, green: 0.031, blue: 0.251, alpha: 1)
+  public static let ThemesWestpacHollerOpacity = UIColor(red: 0.600, green: 0.102, blue: 0.839, alpha: 0.5)
+  public static let ThemesWestpacSing50 = UIColor(red: 0.980, green: 0.949, blue: 0.949, alpha: 1)
+  public static let ThemesWestpacSing100 = UIColor(red: 0.961, green: 0.851, blue: 0.851, alpha: 1)
+  public static let ThemesWestpacSing200 = UIColor(red: 0.937, green: 0.635, blue: 0.635, alpha: 1)
+  public static let ThemesWestpacSing300 = UIColor(red: 0.906, green: 0.412, blue: 0.412, alpha: 1)
+  public static let ThemesWestpacSing400 = UIColor(red: 0.812, green: 0.173, blue: 0.173, alpha: 1)
+  public static let ThemesWestpacSing500 = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacSing600 = UIColor(red: 0.525, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacSing700 = UIColor(red: 0.443, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacSing800 = UIColor(red: 0.365, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacSing900 = UIColor(red: 0.302, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacSing950 = UIColor(red: 0.255, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacSingOpacity = UIColor(red: 0.600, green: 0.000, blue: 0.000, alpha: 0.5)
+  public static let ThemesWestpacDance50 = UIColor(red: 0.996, green: 0.957, blue: 0.922, alpha: 1)
+  public static let ThemesWestpacDance100 = UIColor(red: 0.992, green: 0.906, blue: 0.827, alpha: 1)
+  public static let ThemesWestpacDance200 = UIColor(red: 0.984, green: 0.796, blue: 0.635, alpha: 1)
+  public static let ThemesWestpacDance300 = UIColor(red: 0.976, green: 0.690, blue: 0.443, alpha: 1)
+  public static let ThemesWestpacDance400 = UIColor(red: 0.969, green: 0.584, blue: 0.251, alpha: 1)
+  public static let ThemesWestpacDance500 = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 1)
+  public static let ThemesWestpacDance600 = UIColor(red: 0.808, green: 0.392, blue: 0.035, alpha: 1)
+  public static let ThemesWestpacDance700 = UIColor(red: 0.616, green: 0.298, blue: 0.027, alpha: 1)
+  public static let ThemesWestpacDance800 = UIColor(red: 0.443, green: 0.216, blue: 0.020, alpha: 1)
+  public static let ThemesWestpacDance900 = UIColor(red: 0.251, green: 0.122, blue: 0.012, alpha: 1)
+  public static let ThemesWestpacDance950 = UIColor(red: 0.173, green: 0.082, blue: 0.008, alpha: 1)
+  public static let ThemesWestpacDanceOpacity = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 0.45)
+  public static let ThemesWestpacMonoWhite = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
+  public static let ThemesWestpacMonoBlack = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSuccess50 = UIColor(red: 0.949, green: 0.976, blue: 0.949, alpha: 1)
+  public static let ThemesWestpacReservedSuccess100 = UIColor(red: 0.851, green: 0.925, blue: 0.851, alpha: 1)
+  public static let ThemesWestpacReservedSuccess200 = UIColor(red: 0.600, green: 0.800, blue: 0.600, alpha: 1)
+  public static let ThemesWestpacReservedSuccess300 = UIColor(red: 0.278, green: 0.643, blue: 0.278, alpha: 1)
+  public static let ThemesWestpacReservedSuccess400 = UIColor(red: 0.141, green: 0.573, blue: 0.141, alpha: 1)
+  public static let ThemesWestpacReservedSuccess500 = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSuccess600 = UIColor(red: 0.000, green: 0.427, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSuccess700 = UIColor(red: 0.000, green: 0.353, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSuccess800 = UIColor(red: 0.000, green: 0.275, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSuccess900 = UIColor(red: 0.000, green: 0.200, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSuccess950 = UIColor(red: 0.000, green: 0.125, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedInfo50 = UIColor(red: 0.949, green: 0.973, blue: 0.988, alpha: 1)
+  public static let ThemesWestpacReservedInfo100 = UIColor(red: 0.851, green: 0.918, blue: 0.965, alpha: 1)
+  public static let ThemesWestpacReservedInfo200 = UIColor(red: 0.600, green: 0.780, blue: 0.906, alpha: 1)
+  public static let ThemesWestpacReservedInfo300 = UIColor(red: 0.271, green: 0.604, blue: 0.831, alpha: 1)
+  public static let ThemesWestpacReservedInfo400 = UIColor(red: 0.141, green: 0.529, blue: 0.800, alpha: 1)
+  public static let ThemesWestpacReservedInfo500 = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
+  public static let ThemesWestpacReservedInfo600 = UIColor(red: 0.000, green: 0.388, blue: 0.655, alpha: 1)
+  public static let ThemesWestpacReservedInfo700 = UIColor(red: 0.000, green: 0.318, blue: 0.537, alpha: 1)
+  public static let ThemesWestpacReservedInfo800 = UIColor(red: 0.000, green: 0.251, blue: 0.424, alpha: 1)
+  public static let ThemesWestpacReservedInfo900 = UIColor(red: 0.000, green: 0.180, blue: 0.306, alpha: 1)
+  public static let ThemesWestpacReservedInfo950 = UIColor(red: 0.000, green: 0.114, blue: 0.192, alpha: 1)
+  public static let ThemesWestpacReservedWarning50 = UIColor(red: 0.988, green: 0.961, blue: 0.949, alpha: 1)
+  public static let ThemesWestpacReservedWarning100 = UIColor(red: 0.953, green: 0.847, blue: 0.800, alpha: 1)
+  public static let ThemesWestpacReservedWarning200 = UIColor(red: 0.910, green: 0.694, blue: 0.600, alpha: 1)
+  public static let ThemesWestpacReservedWarning300 = UIColor(red: 0.843, green: 0.471, blue: 0.310, alpha: 1)
+  public static let ThemesWestpacReservedWarning400 = UIColor(red: 0.808, green: 0.345, blue: 0.149, alpha: 1)
+  public static let ThemesWestpacReservedWarning500 = UIColor(red: 0.773, green: 0.231, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedWarning600 = UIColor(red: 0.655, green: 0.196, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedWarning700 = UIColor(red: 0.541, green: 0.161, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedWarning800 = UIColor(red: 0.424, green: 0.125, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedWarning900 = UIColor(red: 0.310, green: 0.094, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedWarning950 = UIColor(red: 0.192, green: 0.059, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedDanger50 = UIColor(red: 0.988, green: 0.949, blue: 0.949, alpha: 1)
+  public static let ThemesWestpacReservedDanger100 = UIColor(red: 0.976, green: 0.902, blue: 0.902, alpha: 1)
+  public static let ThemesWestpacReservedDanger200 = UIColor(red: 0.918, green: 0.651, blue: 0.651, alpha: 1)
+  public static let ThemesWestpacReservedDanger300 = UIColor(red: 0.859, green: 0.388, blue: 0.388, alpha: 1)
+  public static let ThemesWestpacReservedDanger400 = UIColor(red: 0.816, green: 0.200, blue: 0.200, alpha: 1)
+  public static let ThemesWestpacReservedDanger500 = UIColor(red: 0.769, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedDanger600 = UIColor(red: 0.655, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedDanger700 = UIColor(red: 0.537, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedDanger800 = UIColor(red: 0.424, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedDanger900 = UIColor(red: 0.306, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedDanger950 = UIColor(red: 0.192, green: 0.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSystem50 = UIColor(red: 1.000, green: 1.000, blue: 0.949, alpha: 1)
+  public static let ThemesWestpacReservedSystem100 = UIColor(red: 1.000, green: 1.000, blue: 0.902, alpha: 1)
+  public static let ThemesWestpacReservedSystem200 = UIColor(red: 1.000, green: 1.000, blue: 0.749, alpha: 1)
+  public static let ThemesWestpacReservedSystem300 = UIColor(red: 1.000, green: 1.000, blue: 0.502, alpha: 1)
+  public static let ThemesWestpacReservedSystem400 = UIColor(red: 1.000, green: 1.000, blue: 0.251, alpha: 1)
+  public static let ThemesWestpacReservedSystem500 = UIColor(red: 1.000, green: 1.000, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSystem600 = UIColor(red: 0.851, green: 0.851, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSystem700 = UIColor(red: 0.702, green: 0.702, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSystem800 = UIColor(red: 0.549, green: 0.549, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSystem900 = UIColor(red: 0.400, green: 0.400, blue: 0.000, alpha: 1)
+  public static let ThemesWestpacReservedSystem950 = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
+}
+
+
+public enum WBCLightColors {
+  public static let BackgroundPaleBlack = WBCPrimitivesColors.ThemesWestpacMuted100
+  public static let BackgroundWhiteBlack = WBCPrimitivesColors.ThemesWestpacMonoWhite
+  public static let BackgroundWhiteFaint = WBCPrimitivesColors.ThemesWestpacMonoWhite
+  public static let BackgroundPaleFaint = WBCPrimitivesColors.ThemesWestpacMuted100
+  public static let BackgroundWhitePale = WBCPrimitivesColors.ThemesWestpacMonoWhite
+  public static let BackgroundPrimary = WBCPrimitivesColors.ThemesWestpacPrimary500
+  public static let BackgroundHero = WBCPrimitivesColors.ThemesWestpacHero500
+  public static let SurfaceMutedVivid = WBCPrimitivesColors.ThemesWestpacAliasSurfaceMutedVividLM
+  public static let SurfaceMuted = WBCPrimitivesColors.ThemesWestpacMuted500
+  public static let SurfaceMutedStrong = WBCPrimitivesColors.ThemesWestpacMuted400
+  public static let SurfaceMutedMild = WBCPrimitivesColors.ThemesWestpacMuted300
+  public static let SurfaceMutedSoft = WBCPrimitivesColors.ThemesWestpacMuted200
+  public static let SurfaceMutedPale = WBCPrimitivesColors.ThemesWestpacMuted100
+  public static let SurfaceMutedFaint = WBCPrimitivesColors.ThemesWestpacMuted50
+  public static let SurfacePrimary = WBCPrimitivesColors.ThemesWestpacPrimary500
+  public static let SurfacePrimaryFaint = WBCPrimitivesColors.ThemesWestpacPrimary50
+  public static let SurfaceHero = WBCPrimitivesColors.ThemesWestpacHero500
+  public static let SurfaceHeroFaint = WBCPrimitivesColors.ThemesWestpacHero50
+  public static let SurfacePop = WBCPrimitivesColors.ThemesWestpacPop500
+  public static let SurfacePopFaint = WBCPrimitivesColors.ThemesWestpacPop50
+  public static let SurfaceHoller = WBCPrimitivesColors.ThemesWestpacHoller500
+  public static let SurfaceHollerFaint = WBCPrimitivesColors.ThemesWestpacHoller50
+  public static let SurfaceSing = WBCPrimitivesColors.ThemesWestpacSing500
+  public static let SurfaceSingFaint = WBCPrimitivesColors.ThemesWestpacSing50
+  public static let SurfaceDance = WBCPrimitivesColors.ThemesWestpacDance500
+  public static let SurfaceDanceFaint = WBCPrimitivesColors.ThemesWestpacDance50
+  public static let SurfaceSuccess = WBCPrimitivesColors.ThemesWestpacReservedSuccess500
+  public static let SurfaceSuccessFaint = WBCPrimitivesColors.ThemesWestpacReservedSuccess50
+  public static let SurfaceInfo = WBCPrimitivesColors.ThemesWestpacReservedInfo500
+  public static let SurfaceInfoFaint = WBCPrimitivesColors.ThemesWestpacReservedInfo50
+  public static let SurfaceWarning = WBCPrimitivesColors.ThemesWestpacReservedWarning500
+  public static let SurfaceWarningFaint = WBCPrimitivesColors.ThemesWestpacReservedWarning50
+  public static let SurfaceDanger = WBCPrimitivesColors.ThemesWestpacReservedDanger500
+  public static let SurfaceDangerFaint = WBCPrimitivesColors.ThemesWestpacReservedDanger50
+  public static let SurfaceSystemError = WBCPrimitivesColors.ThemesWestpacReservedSystem500
+  public static let SurfaceSystemErrorDark = WBCPrimitivesColors.ThemesWestpacReservedSystem950
+  public static let SurfaceMono = WBCPrimitivesColors.ThemesWestpacMonoWhite
+  public static let SurfaceReversed = WBCPrimitivesColors.ThemesWestpacMonoWhite
+  public static let TextBody = WBCPrimitivesColors.ThemesWestpacAliasTextBodyLm
+  public static let TextHeading = WBCPrimitivesColors.ThemesWestpacAliasTextHeadingLm
+  public static let TextMuted = WBCPrimitivesColors.ThemesWestpacMuted500
+  public static let TextPrimary = WBCPrimitivesColors.ThemesWestpacPrimary500
+  public static let TextHero = WBCPrimitivesColors.ThemesWestpacAliasTextHeroLM
+  public static let TextHoller = WBCPrimitivesColors.ThemesWestpacHoller500
+  public static let TextLink = WBCPrimitivesColors.ThemesWestpacPrimary500
+  public static let TextSuccess = WBCPrimitivesColors.ThemesWestpacReservedSuccess500
+  public static let TextInfo = WBCPrimitivesColors.ThemesWestpacReservedInfo500
+  public static let TextWarning = WBCPrimitivesColors.ThemesWestpacReservedWarning500
+  public static let TextDanger = WBCPrimitivesColors.ThemesWestpacReservedDanger500
+  public static let TextSystemError = WBCPrimitivesColors.ThemesWestpacReservedSystem950
+  public static let TextMono = WBCPrimitivesColors.ThemesWestpacMonoWhite
+  public static let TextReversed = WBCPrimitivesColors.ThemesWestpacMonoWhite
+  public static let BorderMuted = WBCPrimitivesColors.ThemesWestpacMuted500
+  public static let BorderMutedStrong = WBCPrimitivesColors.ThemesWestpacMuted400
+  public static let BorderMutedMild = WBCPrimitivesColors.ThemesWestpacMuted300
+  public static let BorderMutedSoft = WBCPrimitivesColors.ThemesWestpacMuted200
+  public static let BorderHero = WBCPrimitivesColors.ThemesWestpacHero500
+  public static let BorderPrimary = WBCPrimitivesColors.ThemesWestpacPrimary500
+  public static let BorderPop = WBCPrimitivesColors.ThemesWestpacPop500
+  public static let BorderHoller = WBCPrimitivesColors.ThemesWestpacHoller500
+  public static let BorderSing = WBCPrimitivesColors.ThemesWestpacSing500
+  public static let BorderDance = WBCPrimitivesColors.ThemesWestpacDance500
+  public static let BorderSuccess = WBCPrimitivesColors.ThemesWestpacReservedSuccess500
+  public static let BorderSuccessMild = WBCPrimitivesColors.ThemesWestpacReservedSuccess300
+  public static let BorderInfo = WBCPrimitivesColors.ThemesWestpacReservedInfo500
+  public static let BorderInfoMild = WBCPrimitivesColors.ThemesWestpacReservedInfo300
+  public static let BorderWarning = WBCPrimitivesColors.ThemesWestpacReservedWarning500
+  public static let BorderWarningMild = WBCPrimitivesColors.ThemesWestpacReservedWarning300
+  public static let BorderDanger = WBCPrimitivesColors.ThemesWestpacReservedDanger500
+  public static let BorderDangerMild = WBCPrimitivesColors.ThemesWestpacReservedDanger300
+  public static let BorderMono = WBCPrimitivesColors.ThemesWestpacMonoWhite
+  public static let BorderFocus = WBCPrimitivesColors.ThemesWestpacHoller300
+  public static let DataASolid = WBCPrimitivesColors.ThemesWestpacPrimary500
+  public static let DataATint = WBCPrimitivesColors.ThemesWestpacPrimary200
+  public static let DataAOpacity = WBCPrimitivesColors.ThemesWestpacPrimaryOpacity
+  public static let DataBSolid = WBCPrimitivesColors.ThemesWestpacHero500
+  public static let DataBTint = WBCPrimitivesColors.ThemesWestpacHero300
+  public static let DataBOpacity = WBCPrimitivesColors.ThemesWestpacHeroOpacity
+  public static let DataCSolid = WBCPrimitivesColors.ThemesWestpacPop500
+  public static let DataCTint = WBCPrimitivesColors.ThemesWestpacPop300
+  public static let DataCOpacity = WBCPrimitivesColors.ThemesWestpacPopOpacity
+  public static let DataDSolid = WBCPrimitivesColors.ThemesWestpacHoller500
+  public static let DataDTint = WBCPrimitivesColors.ThemesWestpacHoller200
+  public static let DataDOpacity = WBCPrimitivesColors.ThemesWestpacHollerOpacity
+  public static let DataESolid = WBCPrimitivesColors.ThemesWestpacSing500
+  public static let DataETint = WBCPrimitivesColors.ThemesWestpacSing300
+  public static let DataEOpacity = WBCPrimitivesColors.ThemesWestpacSingOpacity
+  public static let DataFSolid = WBCPrimitivesColors.ThemesWestpacDance500
+  public static let DataFTint = WBCPrimitivesColors.ThemesWestpacDance300
+  public static let DataFOpacity = WBCPrimitivesColors.ThemesWestpacDanceOpacity
+  public static let PictogramPictogramBase = WBCPrimitivesColors.ThemesWestpacAliasSurfacePictogramBaseLm
+  public static let PictogramPictogramAccent = WBCPrimitivesColors.ThemesWestpacAliasSurfacePictogramAccentLm
+  public static let StateHoverPrimary = WBCPrimitivesColors.ThemesWestpacPrimary400
+  public static let StateActivePrimary = WBCPrimitivesColors.ThemesWestpacPrimary200
+  public static let StateHoverHero = WBCPrimitivesColors.ThemesWestpacHero400
+  public static let StateActiveHero = WBCPrimitivesColors.ThemesWestpacHero300
+  public static let StateHoverPrimaryFaint = WBCPrimitivesColors.ThemesWestpacPrimary50
+  public static let StateActivePrimaryFaint = WBCPrimitivesColors.ThemesWestpacPrimary100
+  public static let StateHoverHeroFaint = WBCPrimitivesColors.ThemesWestpacHero50
+  public static let StateActiveHeroFaint = WBCPrimitivesColors.ThemesWestpacHero100
+  public static let StateHoverMutedPale = WBCPrimitivesColors.ThemesWestpacMuted100
+  public static let StateActiveMutedPale = WBCPrimitivesColors.ThemesWestpacMuted300
+  public static let StateHoverMono = WBCPrimitivesColors.ThemesWestpacMonoWhite
+  public static let StateActiveMono = WBCPrimitivesColors.ThemesWestpacMuted200
+}
+
+
+public enum WBCDarkColors {
+  public static let BackgroundPaleBlack = WBCPrimitivesColors.ThemesWestpacMonoBlack
+  public static let BackgroundWhiteBlack = WBCPrimitivesColors.ThemesWestpacMonoBlack
+  public static let BackgroundWhiteFaint = WBCPrimitivesColors.ThemesWestpacMuted950
+  public static let BackgroundPaleFaint = WBCPrimitivesColors.ThemesWestpacMuted950
+  public static let BackgroundWhitePale = WBCPrimitivesColors.ThemesWestpacMuted900
+  public static let BackgroundPrimary = WBCPrimitivesColors.ThemesWestpacPrimary500
+  public static let BackgroundHero = WBCPrimitivesColors.ThemesWestpacHero500
+  public static let SurfaceMutedVivid = WBCPrimitivesColors.ThemesWestpacAliasSurfaceMutedVividDM
+  public static let SurfaceMuted = WBCPrimitivesColors.ThemesWestpacMuted400
+  public static let SurfaceMutedStrong = WBCPrimitivesColors.ThemesWestpacMuted600
+  public static let SurfaceMutedMild = WBCPrimitivesColors.ThemesWestpacMuted700
+  public static let SurfaceMutedSoft = WBCPrimitivesColors.ThemesWestpacMuted800
+  public static let SurfaceMutedPale = WBCPrimitivesColors.ThemesWestpacMuted900
+  public static let SurfaceMutedFaint = WBCPrimitivesColors.ThemesWestpacMuted950
+  public static let SurfacePrimary = WBCPrimitivesColors.ThemesWestpacPrimary400
+  public static let SurfacePrimaryFaint = WBCPrimitivesColors.ThemesWestpacPrimary950
+  public static let SurfaceHero = WBCPrimitivesColors.ThemesWestpacHero300
+  public static let SurfaceHeroFaint = WBCPrimitivesColors.ThemesWestpacHero950
+  public static let SurfacePop = WBCPrimitivesColors.ThemesWestpacPop500
+  public static let SurfacePopFaint = WBCPrimitivesColors.ThemesWestpacPop950
+  public static let SurfaceHoller = WBCPrimitivesColors.ThemesWestpacHoller400
+  public static let SurfaceHollerFaint = WBCPrimitivesColors.ThemesWestpacHoller950
+  public static let SurfaceSing = WBCPrimitivesColors.ThemesWestpacSing900
+  public static let SurfaceSingFaint = WBCPrimitivesColors.ThemesWestpacSing950
+  public static let SurfaceDance = WBCPrimitivesColors.ThemesWestpacDance500
+  public static let SurfaceDanceFaint = WBCPrimitivesColors.ThemesWestpacDance900
+  public static let SurfaceSuccess = WBCPrimitivesColors.ThemesWestpacReservedSuccess400
+  public static let SurfaceSuccessFaint = WBCPrimitivesColors.ThemesWestpacReservedSuccess900
+  public static let SurfaceInfo = WBCPrimitivesColors.ThemesWestpacReservedInfo400
+  public static let SurfaceInfoFaint = WBCPrimitivesColors.ThemesWestpacReservedInfo900
+  public static let SurfaceWarning = WBCPrimitivesColors.ThemesWestpacReservedWarning400
+  public static let SurfaceWarningFaint = WBCPrimitivesColors.ThemesWestpacReservedWarning900
+  public static let SurfaceDanger = WBCPrimitivesColors.ThemesWestpacReservedDanger300
+  public static let SurfaceDangerFaint = WBCPrimitivesColors.ThemesWestpacReservedDanger900
+  public static let SurfaceSystemError = WBCPrimitivesColors.ThemesWestpacReservedSystem950
+  public static let SurfaceSystemErrorDark = WBCPrimitivesColors.ThemesWestpacReservedSystem500
+  public static let SurfaceMono = WBCPrimitivesColors.ThemesWestpacMonoBlack
+  public static let SurfaceReversed = WBCPrimitivesColors.ThemesWestpacMonoWhite
+  public static let TextBody = WBCPrimitivesColors.ThemesWestpacAliasTextBodyDm
+  public static let TextHeading = WBCPrimitivesColors.ThemesWestpacAliasTextHeadingDm
+  public static let TextMuted = WBCPrimitivesColors.ThemesWestpacMuted400
+  public static let TextPrimary = WBCPrimitivesColors.ThemesWestpacPrimary300
+  public static let TextHero = WBCPrimitivesColors.ThemesWestpacAliasTextHeroDM
+  public static let TextHoller = WBCPrimitivesColors.ThemesWestpacHoller300
+  public static let TextLink = WBCPrimitivesColors.ThemesWestpacPrimary300
+  public static let TextSuccess = WBCPrimitivesColors.ThemesWestpacReservedSuccess300
+  public static let TextInfo = WBCPrimitivesColors.ThemesWestpacReservedInfo300
+  public static let TextWarning = WBCPrimitivesColors.ThemesWestpacReservedWarning300
+  public static let TextDanger = WBCPrimitivesColors.ThemesWestpacReservedDanger300
+  public static let TextSystemError = WBCPrimitivesColors.ThemesWestpacReservedSystem500
+  public static let TextMono = WBCPrimitivesColors.ThemesWestpacMonoBlack
+  public static let TextReversed = WBCPrimitivesColors.ThemesWestpacMonoWhite
+  public static let BorderMuted = WBCPrimitivesColors.ThemesWestpacMuted500
+  public static let BorderMutedStrong = WBCPrimitivesColors.ThemesWestpacMuted500
+  public static let BorderMutedMild = WBCPrimitivesColors.ThemesWestpacMuted700
+  public static let BorderMutedSoft = WBCPrimitivesColors.ThemesWestpacMuted800
+  public static let BorderHero = WBCPrimitivesColors.ThemesWestpacHero300
+  public static let BorderPrimary = WBCPrimitivesColors.ThemesWestpacPrimary400
+  public static let BorderPop = WBCPrimitivesColors.ThemesWestpacPop800
+  public static let BorderHoller = WBCPrimitivesColors.ThemesWestpacHoller400
+  public static let BorderSing = WBCPrimitivesColors.ThemesWestpacSing500
+  public static let BorderDance = WBCPrimitivesColors.ThemesWestpacDance500
+  public static let BorderSuccess = WBCPrimitivesColors.ThemesWestpacReservedSuccess500
+  public static let BorderSuccessMild = WBCPrimitivesColors.ThemesWestpacReservedSuccess700
+  public static let BorderInfo = WBCPrimitivesColors.ThemesWestpacReservedInfo500
+  public static let BorderInfoMild = WBCPrimitivesColors.ThemesWestpacReservedInfo700
+  public static let BorderWarning = WBCPrimitivesColors.ThemesWestpacReservedWarning500
+  public static let BorderWarningMild = WBCPrimitivesColors.ThemesWestpacReservedWarning700
+  public static let BorderDanger = WBCPrimitivesColors.ThemesWestpacReservedDanger500
+  public static let BorderDangerMild = WBCPrimitivesColors.ThemesWestpacReservedDanger700
+  public static let BorderMono = WBCPrimitivesColors.ThemesWestpacMonoBlack
+  public static let BorderFocus = WBCPrimitivesColors.ThemesWestpacHoller400
+  public static let DataASolid = WBCPrimitivesColors.ThemesWestpacPrimary500
+  public static let DataATint = WBCPrimitivesColors.ThemesWestpacPrimary200
+  public static let DataAOpacity = WBCPrimitivesColors.ThemesWestpacPrimaryOpacity
+  public static let DataBSolid = WBCPrimitivesColors.ThemesWestpacHero300
+  public static let DataBTint = WBCPrimitivesColors.ThemesWestpacHero200
+  public static let DataBOpacity = WBCPrimitivesColors.ThemesWestpacHeroOpacity
+  public static let DataCSolid = WBCPrimitivesColors.ThemesWestpacPop500
+  public static let DataCTint = WBCPrimitivesColors.ThemesWestpacPop300
+  public static let DataCOpacity = WBCPrimitivesColors.ThemesWestpacPopOpacity
+  public static let DataDSolid = WBCPrimitivesColors.ThemesWestpacHoller500
+  public static let DataDTint = WBCPrimitivesColors.ThemesWestpacHoller200
+  public static let DataDOpacity = WBCPrimitivesColors.ThemesWestpacHollerOpacity
+  public static let DataESolid = WBCPrimitivesColors.ThemesWestpacSing500
+  public static let DataETint = WBCPrimitivesColors.ThemesWestpacSing300
+  public static let DataEOpacity = WBCPrimitivesColors.ThemesWestpacSingOpacity
+  public static let DataFSolid = WBCPrimitivesColors.ThemesWestpacDance500
+  public static let DataFTint = WBCPrimitivesColors.ThemesWestpacDance300
+  public static let DataFOpacity = WBCPrimitivesColors.ThemesWestpacDanceOpacity
+  public static let PictogramPictogramBase = WBCPrimitivesColors.ThemesWestpacAliasSurfacePictogramBaseDm
+  public static let PictogramPictogramAccent = WBCPrimitivesColors.ThemesWestpacAliasSurfacePictogramAccentDM
+  public static let StateHoverPrimary = WBCPrimitivesColors.ThemesWestpacPrimary200
+  public static let StateActivePrimary = WBCPrimitivesColors.ThemesWestpacPrimary100
+  public static let StateHoverHero = WBCPrimitivesColors.ThemesWestpacHero200
+  public static let StateActiveHero = WBCPrimitivesColors.ThemesWestpacHero100
+  public static let StateHoverPrimaryFaint = WBCPrimitivesColors.ThemesWestpacPrimary900
+  public static let StateActivePrimaryFaint = WBCPrimitivesColors.ThemesWestpacPrimary800
+  public static let StateHoverHeroFaint = WBCPrimitivesColors.ThemesWestpacHero800
+  public static let StateActiveHeroFaint = WBCPrimitivesColors.ThemesWestpacHero400
+  public static let StateHoverMutedPale = WBCPrimitivesColors.ThemesWestpacMuted800
+  public static let StateActiveMutedPale = WBCPrimitivesColors.ThemesWestpacMuted600
+  public static let StateHoverMono = WBCPrimitivesColors.ThemesWestpacMonoBlack
+  public static let StateActiveMono = WBCPrimitivesColors.ThemesWestpacMuted800
+}
+
+
+public enum WBCColors {
+  public static var BackgroundPaleBlack: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BackgroundPaleBlack
+        default:
+          return WBCLightColors.BackgroundPaleBlack
+      }
+    }
+  }
+  public static var BackgroundWhiteBlack: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BackgroundWhiteBlack
+        default:
+          return WBCLightColors.BackgroundWhiteBlack
+      }
+    }
+  }
+  public static var BackgroundWhiteFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BackgroundWhiteFaint
+        default:
+          return WBCLightColors.BackgroundWhiteFaint
+      }
+    }
+  }
+  public static var BackgroundPaleFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BackgroundPaleFaint
+        default:
+          return WBCLightColors.BackgroundPaleFaint
+      }
+    }
+  }
+  public static var BackgroundWhitePale: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BackgroundWhitePale
+        default:
+          return WBCLightColors.BackgroundWhitePale
+      }
+    }
+  }
+  public static var BackgroundPrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BackgroundPrimary
+        default:
+          return WBCLightColors.BackgroundPrimary
+      }
+    }
+  }
+  public static var BackgroundHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BackgroundHero
+        default:
+          return WBCLightColors.BackgroundHero
+      }
+    }
+  }
+  public static var SurfaceMutedVivid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceMutedVivid
+        default:
+          return WBCLightColors.SurfaceMutedVivid
+      }
+    }
+  }
+  public static var SurfaceMuted: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceMuted
+        default:
+          return WBCLightColors.SurfaceMuted
+      }
+    }
+  }
+  public static var SurfaceMutedStrong: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceMutedStrong
+        default:
+          return WBCLightColors.SurfaceMutedStrong
+      }
+    }
+  }
+  public static var SurfaceMutedMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceMutedMild
+        default:
+          return WBCLightColors.SurfaceMutedMild
+      }
+    }
+  }
+  public static var SurfaceMutedSoft: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceMutedSoft
+        default:
+          return WBCLightColors.SurfaceMutedSoft
+      }
+    }
+  }
+  public static var SurfaceMutedPale: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceMutedPale
+        default:
+          return WBCLightColors.SurfaceMutedPale
+      }
+    }
+  }
+  public static var SurfaceMutedFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceMutedFaint
+        default:
+          return WBCLightColors.SurfaceMutedFaint
+      }
+    }
+  }
+  public static var SurfacePrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfacePrimary
+        default:
+          return WBCLightColors.SurfacePrimary
+      }
+    }
+  }
+  public static var SurfacePrimaryFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfacePrimaryFaint
+        default:
+          return WBCLightColors.SurfacePrimaryFaint
+      }
+    }
+  }
+  public static var SurfaceHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceHero
+        default:
+          return WBCLightColors.SurfaceHero
+      }
+    }
+  }
+  public static var SurfaceHeroFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceHeroFaint
+        default:
+          return WBCLightColors.SurfaceHeroFaint
+      }
+    }
+  }
+  public static var SurfacePop: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfacePop
+        default:
+          return WBCLightColors.SurfacePop
+      }
+    }
+  }
+  public static var SurfacePopFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfacePopFaint
+        default:
+          return WBCLightColors.SurfacePopFaint
+      }
+    }
+  }
+  public static var SurfaceHoller: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceHoller
+        default:
+          return WBCLightColors.SurfaceHoller
+      }
+    }
+  }
+  public static var SurfaceHollerFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceHollerFaint
+        default:
+          return WBCLightColors.SurfaceHollerFaint
+      }
+    }
+  }
+  public static var SurfaceSing: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceSing
+        default:
+          return WBCLightColors.SurfaceSing
+      }
+    }
+  }
+  public static var SurfaceSingFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceSingFaint
+        default:
+          return WBCLightColors.SurfaceSingFaint
+      }
+    }
+  }
+  public static var SurfaceDance: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceDance
+        default:
+          return WBCLightColors.SurfaceDance
+      }
+    }
+  }
+  public static var SurfaceDanceFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceDanceFaint
+        default:
+          return WBCLightColors.SurfaceDanceFaint
+      }
+    }
+  }
+  public static var SurfaceSuccess: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceSuccess
+        default:
+          return WBCLightColors.SurfaceSuccess
+      }
+    }
+  }
+  public static var SurfaceSuccessFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceSuccessFaint
+        default:
+          return WBCLightColors.SurfaceSuccessFaint
+      }
+    }
+  }
+  public static var SurfaceInfo: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceInfo
+        default:
+          return WBCLightColors.SurfaceInfo
+      }
+    }
+  }
+  public static var SurfaceInfoFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceInfoFaint
+        default:
+          return WBCLightColors.SurfaceInfoFaint
+      }
+    }
+  }
+  public static var SurfaceWarning: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceWarning
+        default:
+          return WBCLightColors.SurfaceWarning
+      }
+    }
+  }
+  public static var SurfaceWarningFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceWarningFaint
+        default:
+          return WBCLightColors.SurfaceWarningFaint
+      }
+    }
+  }
+  public static var SurfaceDanger: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceDanger
+        default:
+          return WBCLightColors.SurfaceDanger
+      }
+    }
+  }
+  public static var SurfaceDangerFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceDangerFaint
+        default:
+          return WBCLightColors.SurfaceDangerFaint
+      }
+    }
+  }
+  public static var SurfaceSystemError: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceSystemError
+        default:
+          return WBCLightColors.SurfaceSystemError
+      }
+    }
+  }
+  public static var SurfaceSystemErrorDark: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceSystemErrorDark
+        default:
+          return WBCLightColors.SurfaceSystemErrorDark
+      }
+    }
+  }
+  public static var SurfaceMono: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceMono
+        default:
+          return WBCLightColors.SurfaceMono
+      }
+    }
+  }
+  public static var SurfaceReversed: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.SurfaceReversed
+        default:
+          return WBCLightColors.SurfaceReversed
+      }
+    }
+  }
+  public static var TextBody: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextBody
+        default:
+          return WBCLightColors.TextBody
+      }
+    }
+  }
+  public static var TextHeading: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextHeading
+        default:
+          return WBCLightColors.TextHeading
+      }
+    }
+  }
+  public static var TextMuted: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextMuted
+        default:
+          return WBCLightColors.TextMuted
+      }
+    }
+  }
+  public static var TextPrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextPrimary
+        default:
+          return WBCLightColors.TextPrimary
+      }
+    }
+  }
+  public static var TextHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextHero
+        default:
+          return WBCLightColors.TextHero
+      }
+    }
+  }
+  public static var TextHoller: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextHoller
+        default:
+          return WBCLightColors.TextHoller
+      }
+    }
+  }
+  public static var TextLink: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextLink
+        default:
+          return WBCLightColors.TextLink
+      }
+    }
+  }
+  public static var TextSuccess: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextSuccess
+        default:
+          return WBCLightColors.TextSuccess
+      }
+    }
+  }
+  public static var TextInfo: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextInfo
+        default:
+          return WBCLightColors.TextInfo
+      }
+    }
+  }
+  public static var TextWarning: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextWarning
+        default:
+          return WBCLightColors.TextWarning
+      }
+    }
+  }
+  public static var TextDanger: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextDanger
+        default:
+          return WBCLightColors.TextDanger
+      }
+    }
+  }
+  public static var TextSystemError: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextSystemError
+        default:
+          return WBCLightColors.TextSystemError
+      }
+    }
+  }
+  public static var TextMono: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextMono
+        default:
+          return WBCLightColors.TextMono
+      }
+    }
+  }
+  public static var TextReversed: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.TextReversed
+        default:
+          return WBCLightColors.TextReversed
+      }
+    }
+  }
+  public static var BorderMuted: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderMuted
+        default:
+          return WBCLightColors.BorderMuted
+      }
+    }
+  }
+  public static var BorderMutedStrong: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderMutedStrong
+        default:
+          return WBCLightColors.BorderMutedStrong
+      }
+    }
+  }
+  public static var BorderMutedMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderMutedMild
+        default:
+          return WBCLightColors.BorderMutedMild
+      }
+    }
+  }
+  public static var BorderMutedSoft: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderMutedSoft
+        default:
+          return WBCLightColors.BorderMutedSoft
+      }
+    }
+  }
+  public static var BorderHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderHero
+        default:
+          return WBCLightColors.BorderHero
+      }
+    }
+  }
+  public static var BorderPrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderPrimary
+        default:
+          return WBCLightColors.BorderPrimary
+      }
+    }
+  }
+  public static var BorderPop: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderPop
+        default:
+          return WBCLightColors.BorderPop
+      }
+    }
+  }
+  public static var BorderHoller: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderHoller
+        default:
+          return WBCLightColors.BorderHoller
+      }
+    }
+  }
+  public static var BorderSing: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderSing
+        default:
+          return WBCLightColors.BorderSing
+      }
+    }
+  }
+  public static var BorderDance: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderDance
+        default:
+          return WBCLightColors.BorderDance
+      }
+    }
+  }
+  public static var BorderSuccess: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderSuccess
+        default:
+          return WBCLightColors.BorderSuccess
+      }
+    }
+  }
+  public static var BorderSuccessMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderSuccessMild
+        default:
+          return WBCLightColors.BorderSuccessMild
+      }
+    }
+  }
+  public static var BorderInfo: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderInfo
+        default:
+          return WBCLightColors.BorderInfo
+      }
+    }
+  }
+  public static var BorderInfoMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderInfoMild
+        default:
+          return WBCLightColors.BorderInfoMild
+      }
+    }
+  }
+  public static var BorderWarning: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderWarning
+        default:
+          return WBCLightColors.BorderWarning
+      }
+    }
+  }
+  public static var BorderWarningMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderWarningMild
+        default:
+          return WBCLightColors.BorderWarningMild
+      }
+    }
+  }
+  public static var BorderDanger: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderDanger
+        default:
+          return WBCLightColors.BorderDanger
+      }
+    }
+  }
+  public static var BorderDangerMild: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderDangerMild
+        default:
+          return WBCLightColors.BorderDangerMild
+      }
+    }
+  }
+  public static var BorderMono: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderMono
+        default:
+          return WBCLightColors.BorderMono
+      }
+    }
+  }
+  public static var BorderFocus: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.BorderFocus
+        default:
+          return WBCLightColors.BorderFocus
+      }
+    }
+  }
+  public static var DataASolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataASolid
+        default:
+          return WBCLightColors.DataASolid
+      }
+    }
+  }
+  public static var DataATint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataATint
+        default:
+          return WBCLightColors.DataATint
+      }
+    }
+  }
+  public static var DataAOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataAOpacity
+        default:
+          return WBCLightColors.DataAOpacity
+      }
+    }
+  }
+  public static var DataBSolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataBSolid
+        default:
+          return WBCLightColors.DataBSolid
+      }
+    }
+  }
+  public static var DataBTint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataBTint
+        default:
+          return WBCLightColors.DataBTint
+      }
+    }
+  }
+  public static var DataBOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataBOpacity
+        default:
+          return WBCLightColors.DataBOpacity
+      }
+    }
+  }
+  public static var DataCSolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataCSolid
+        default:
+          return WBCLightColors.DataCSolid
+      }
+    }
+  }
+  public static var DataCTint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataCTint
+        default:
+          return WBCLightColors.DataCTint
+      }
+    }
+  }
+  public static var DataCOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataCOpacity
+        default:
+          return WBCLightColors.DataCOpacity
+      }
+    }
+  }
+  public static var DataDSolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataDSolid
+        default:
+          return WBCLightColors.DataDSolid
+      }
+    }
+  }
+  public static var DataDTint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataDTint
+        default:
+          return WBCLightColors.DataDTint
+      }
+    }
+  }
+  public static var DataDOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataDOpacity
+        default:
+          return WBCLightColors.DataDOpacity
+      }
+    }
+  }
+  public static var DataESolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataESolid
+        default:
+          return WBCLightColors.DataESolid
+      }
+    }
+  }
+  public static var DataETint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataETint
+        default:
+          return WBCLightColors.DataETint
+      }
+    }
+  }
+  public static var DataEOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataEOpacity
+        default:
+          return WBCLightColors.DataEOpacity
+      }
+    }
+  }
+  public static var DataFSolid: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataFSolid
+        default:
+          return WBCLightColors.DataFSolid
+      }
+    }
+  }
+  public static var DataFTint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataFTint
+        default:
+          return WBCLightColors.DataFTint
+      }
+    }
+  }
+  public static var DataFOpacity: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.DataFOpacity
+        default:
+          return WBCLightColors.DataFOpacity
+      }
+    }
+  }
+  public static var PictogramPictogramBase: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.PictogramPictogramBase
+        default:
+          return WBCLightColors.PictogramPictogramBase
+      }
+    }
+  }
+  public static var PictogramPictogramAccent: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.PictogramPictogramAccent
+        default:
+          return WBCLightColors.PictogramPictogramAccent
+      }
+    }
+  }
+  public static var StateHoverPrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateHoverPrimary
+        default:
+          return WBCLightColors.StateHoverPrimary
+      }
+    }
+  }
+  public static var StateActivePrimary: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateActivePrimary
+        default:
+          return WBCLightColors.StateActivePrimary
+      }
+    }
+  }
+  public static var StateHoverHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateHoverHero
+        default:
+          return WBCLightColors.StateHoverHero
+      }
+    }
+  }
+  public static var StateActiveHero: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateActiveHero
+        default:
+          return WBCLightColors.StateActiveHero
+      }
+    }
+  }
+  public static var StateHoverPrimaryFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateHoverPrimaryFaint
+        default:
+          return WBCLightColors.StateHoverPrimaryFaint
+      }
+    }
+  }
+  public static var StateActivePrimaryFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateActivePrimaryFaint
+        default:
+          return WBCLightColors.StateActivePrimaryFaint
+      }
+    }
+  }
+  public static var StateHoverHeroFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateHoverHeroFaint
+        default:
+          return WBCLightColors.StateHoverHeroFaint
+      }
+    }
+  }
+  public static var StateActiveHeroFaint: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateActiveHeroFaint
+        default:
+          return WBCLightColors.StateActiveHeroFaint
+      }
+    }
+  }
+  public static var StateHoverMutedPale: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateHoverMutedPale
+        default:
+          return WBCLightColors.StateHoverMutedPale
+      }
+    }
+  }
+  public static var StateActiveMutedPale: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateActiveMutedPale
+        default:
+          return WBCLightColors.StateActiveMutedPale
+      }
+    }
+  }
+  public static var StateHoverMono: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateHoverMono
+        default:
+          return WBCLightColors.StateHoverMono
+      }
+    }
+  }
+  public static var StateActiveMono: UIColor {
+    return UIColor { traitCollection in
+      switch traitCollection.userInterfaceStyle {
+        case .dark:
+          return WBCDarkColors.StateActiveMono
+        default:
+          return WBCLightColors.StateActiveMono
+      }
+    }
+  }
 }
