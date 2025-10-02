@@ -281,7 +281,7 @@ function generateNameForIOS(str) {
 }
 
 StyleDictionary.registerFormat({
-  name: 'ios/enum',
+  name: 'ios/enum-colors',
   format: function ({ dictionary, options: { prefixToRemove, enumName } }) {
     const primitiveTokens = dictionary.allTokens
       .filter(t => !(t.path.includes('light-mode') || t.path.includes('dark-mode')) && t.$type === 'color')
@@ -375,6 +375,106 @@ StyleDictionary.registerFormat({
       output += `      }\n`;
       output += `    }\n`;
       output += `  }\n`;
+    });
+    output += '}\n';
+
+    return output;
+  },
+});
+
+StyleDictionary.registerFormat({
+  name: 'ios/enum-dimensions',
+  format: function ({ dictionary, options: { prefixToRemove, enumName } }) {
+    const primitiveTokens = dictionary.allTokens
+      .filter(t => !(t.path.includes('light-mode') || t.path.includes('dark-mode')) && (t.$type === 'float' || t.$type === 'dimension') )
+      .map(token => {
+        return {
+          ...token,
+          name: generateNameForIOS(token.key),
+        };
+      });
+
+    const lightTokens = dictionary.allTokens
+      .filter(t => t.path.includes('light-mode') && (t.$type === 'float' || t.$type === 'dimension'))
+      .map(current => {
+        let tokenName = generateNameForIOS(current.key);
+        if (enumName !== 'AllBrands') {
+          let [, splittedTokenName] = tokenName.split('LightMode');
+          const tokenNamePieces = splitByUppercase(splittedTokenName);
+          tokenNamePieces.splice(1, 1);
+          tokenName = tokenNamePieces.join('');
+        } else {
+          const tokenNamePieces = splitByUppercase(tokenName);
+          tokenNamePieces.splice(4, 1);
+          tokenName = tokenNamePieces.join('').replace('Tokens', '');
+        }
+        return {
+          ...current,
+          name: tokenName,
+        };
+      });
+
+    const darkTokens = dictionary.allTokens
+      .filter(t => t.path.includes('dark-mode') && (t.$type === 'float' || t.$type === 'dimension'))
+      .map(current => {
+        let tokenName = generateNameForIOS(current.key);
+        if (enumName !== 'AllBrands') {
+          let [, splittedTokenName] = tokenName.split('DarkMode');
+          const tokenNamePieces = splitByUppercase(splittedTokenName);
+          tokenNamePieces.splice(1, 1);
+          tokenName = tokenNamePieces.join('');
+        } else {
+          const tokenNamePieces = splitByUppercase(tokenName);
+          tokenNamePieces.splice(4, 1);
+          tokenName = tokenNamePieces.join('').replace('Tokens', '');
+        }
+        return {
+          ...current,
+          name: tokenName,
+        };
+      });
+
+    const primitiveDimensionEnum = `${enumName}PrimitivesDimension`;
+    let output = '';
+    output += `// Do not edit directly, this file was auto-generated.\n\n`;
+    output += `import UIKit \n\n`;
+    output += `public enum ${primitiveDimensionEnum} {\n`;
+    primitiveTokens.forEach(primitiveToken => {
+      output += `  public static let ${primitiveToken.name} = ${primitiveToken.$value}\n`;
+    });
+    output += '}\n';
+
+    output += '\n\n';
+
+    output += `public enum ${enumName}LightDimensions {\n`;
+    lightTokens.forEach(lightToken => {
+      output += `  public static let ${lightToken.name} = ${primitiveDimensionEnum}.${generateNameForIOS(lightToken.original.$value)}\n`;
+    });
+    output += '}\n';
+
+    output += '\n\n';
+
+    output += `public enum ${enumName}DarkDimensions {\n`;
+    darkTokens.forEach(darkToken => {
+      output += `  public static let ${darkToken.name} = ${primitiveDimensionEnum}.${generateNameForIOS(darkToken.original.$value)}\n`;
+    });
+    output += '}\n';
+
+    if (enumName === 'AllBrands') {
+      return output;
+    }
+
+    output += '\n\n';
+    output += `public enum ${enumName}Dimensions {\n\n`;
+    lightTokens.forEach(lightToken => {
+      output += `  public static var ${lightToken.name}: Double {\n`;
+      output += `    switch UIScreen.main.traitCollection.userInterfaceStyle {\n`;
+      output += `    case .dark:\n`;
+      output += `      return Double(${enumName}DarkDimensions.${lightToken.name})\n`;
+      output += `    default:\n`;
+      output += `      return Double(${enumName}LightDimensions.${lightToken.name})\n`;
+      output += `    }\n`;
+      output += `  }\n\n`;
     });
     output += '}\n';
 
@@ -494,7 +594,10 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
         'size/swift/remToCGFloat',
       ],
       buildPath: `${DIST_FOLDER}/style-dictionary/AllBrands/ios/`,
-      files: [{ destination: 'all-colors.swift', format: 'ios/enum', options: { enumName: 'AllBrands' } }],
+      files: [
+        { destination: 'all-colors.swift', format: 'ios/enum-colors', options: { enumName: 'AllBrands' } },
+        { destination: 'all-dimensions.swift', format: 'ios/enum-dimensions', options: { enumName: 'AllBrands' } },
+      ],
     },
   },
 };
@@ -690,7 +793,10 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
         ios: {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.ios,
           buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/`,
-          files: [{ destination: 'all-colors.swift', format: 'ios/enum', options: { enumName: primitiveName } }],
+          files: [
+            { destination: 'all-colors.swift', format: 'ios/enum-colors', options: { enumName: primitiveName } },
+            { destination: 'all-dimensions.swift', format: 'ios/enum-dimensions', options: { enumName: primitiveName } }
+          ],
         },
       },
       log: {
