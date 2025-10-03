@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <dimen name="light_mode_border_radius_rounded_none">0</dimen>
+  <dimen name="light_mode_border_radius_rounded_sm">3</dimen>
+  <dimen name="light_mode_border_radius_rounded_md">4</dimen>
+  <dimen name="light_mode_border_radius_rounded_lg">5</dimen>
+  <dimen name="light_mode_border_radius_rounded_xl">6</dimen>
+  <dimen name="light_mode_border_radius_rounded_2xl">8</dimen>
+  <dimen name="light_mode_border_radius_rounded_3xl">12</dimen>
+  <dimen name="light_mode_border_radius_rounded_4xl">16</dimen>
+  <dimen name="light_mode_border_radius_rounded_5xl">24</dimen>
+  <dimen name="light_mode_border_radius_rounded_full">999</dimen>
+  <dimen name="dark_mode_border_radius_rounded_none">0</dimen>
+  <dimen name="dark_mode_border_radius_rounded_sm">3</dimen>
+  <dimen name="dark_mode_border_radius_rounded_md">4</dimen>
+  <dimen name="dark_mode_border_radius_rounded_lg">5</dimen>
+  <dimen name="dark_mode_border_radius_rounded_xl">6</dimen>
+  <dimen name="dark_mode_border_radius_rounded_2xl">8</dimen>
+  <dimen name="dark_mode_border_radius_rounded_3xl">12</dimen>
+  <dimen name="dark_mode_border_radius_rounded_4xl">16</dimen>
+  <dimen name="dark_mode_border_radius_rounded_5xl">24</dimen>
+  <dimen name="dark_mode_border_radius_rounded_full">999</dimen>
+  <dimen name="westpac_border_radius_none">0</dimen>
+  <dimen name="westpac_border_radius_sm">3</dimen>
+  <dimen name="westpac_border_radius_md">4</dimen>
+  <dimen name="westpac_border_radius_lg">5</dimen>
+  <dimen name="westpac_border_radius_xl">6</dimen>
+  <dimen name="westpac_border_radius_2xl">8</dimen>
+  <dimen name="westpac_border_radius_3xl">12</dimen>
+  <dimen name="westpac_border_radius_4xl">16</dimen>
+  <dimen name="westpac_border_radius_5xl">24</dimen>
+  <dimen name="westpac_border_radius_full">999</dimen>
+</resources>

@@ -16,11 +16,13 @@
     "handlebars": "~4.7.8",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.12",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "style-dictionary": "~5.0.4"
   },
   "scripts": {
     "clean": "shx rm -rf dist",
     "build:w3c": "node ./utils/transformers/w3c.cjs",
+    "build:style-dictionary": "node ./utils/transformers/style-dictionary.cjs",
     "build:css": "node ./utils/transformers/css.cjs",
     "build:css:copy": "cp -a ./src/css ./dist/",
     "build:ts": "tsc",
