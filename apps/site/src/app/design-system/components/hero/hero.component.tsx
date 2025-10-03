@@ -30,7 +30,7 @@ export function Hero({ brand }: { brand: BrandKey }) {
             </p>
           </GridItem>
         </Grid>
-        <Grid tag="ul" className="typography-body-8 xsl:gap-x-5 mb-4 gap-x-0 gap-y-4 sm:!gap-5">
+        <Grid tag="ul" className="typography-body-8 xsl:gap-x-5 mb-[1rem] gap-x-0 gap-y-4 sm:!gap-5">
           <GridItem tag="li" span={{ initial: 12, xsl: 4 }} className=" flex flex-col items-center ">
             <div className="mb-3">
               <StopwatchPictogram mode="reversed" className="hidden sm:inline-block" />

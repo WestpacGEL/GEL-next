@@ -28,7 +28,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
       <Section>
         <SectionHeading>Accessible by design</SectionHeading>
         <Grid>
-          <SectionItem className="text-text-body flex flex-col gap-2 leading-loose">
+          <SectionItem className="text-text-body flex flex-col gap-2 leading-[2]">
             <p>Accessibility and inclusive design is a strong part of the GEL Design System.</p>
             <p>
               The system supports teams to deliver to the Group accessibility commitment, to provide meaningful banking
@@ -47,7 +47,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         <SectionHeading>Built on React</SectionHeading>
         <Grid>
           <SectionItem>
-            <p className="mb-5 leading-loose sm:mb-7">
+            <p className="mb-5 leading-[2] sm:mb-7">
               The GEL Design System is now using React. You can still access HTML/CSS but with React at its core we can
               showcase so much more and deliver even higher-quality, more accessible code.
             </p>
@@ -75,10 +75,10 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         <SectionHeading>Downloads &amp; links</SectionHeading>
         <Grid className="mb-5 sm:mb-9">
           <SectionItem className="flex flex-col gap-2">
-            <p className="leading-loose">
+            <p className="leading-[2]">
               Design on-brand with greater efficiency and accuracy using the Figma UI Kit.
             </p>
-            <p className="leading-loose">
+            <p className="leading-[2]">
               Visit GitHub to follow Westpac GEL Design System code updates and log issues.
             </p>
           </SectionItem>
@@ -90,7 +90,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
               <li className="border-border-muted-soft border-b">
                 <Link
                   href="/articles/figma-libraries"
-                  className="outline-focus hover:text-text-primary box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
+                  className="outline-focus hover:text-text-primary box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
                 >
                   Figma UI Kits
                   <FigmaLogo />
@@ -105,7 +105,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
                 <Link
                   href="https://github.com/WestpacGEL/GEL-next/"
                   target="_blank"
-                  className="outline-focus hover:text-text-primary box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
+                  className="outline-focus hover:text-text-primary box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
                 >
                   Follow Westpac GEL on GitHub
                   <GithubIcon size={{ initial: 'large', lg: 'xlarge' }} color="muted" />

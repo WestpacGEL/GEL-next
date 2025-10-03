@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       base: 'border-t-border-muted-soft border-t first:border-t-0',
-      link: 'hover:bg-light focus:bg-light flex h-10 cursor-pointer items-center justify-between bg-white px-1 py-2.5 transition-colors',
+      link: 'hover:bg-light focus:bg-light flex h-10 cursor-pointer items-center justify-between bg-white px-1 py-[0.625rem] transition-colors',
     },
     variants: {
       isFocused: {
