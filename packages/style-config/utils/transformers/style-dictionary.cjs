@@ -817,19 +817,50 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
               format: ['css/mode-wrapped-all-brands'],
               options: { outputReferences: true, brands: { 'st-george': 'stg', westpac: 'wbc' } },
             },
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/css/style.css`,
+              format: ['css/mode-wrapped-all-brands'],
+              options: { outputReferences: true, brands: { 'st-george': 'stg', westpac: 'wbc' } },
+            },
           ],
         },
         android: {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.android,
-          buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/android/`,
+          files: [
+            {
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/android/all-colors.xml`,
+              format: 'android/colors',
+            },
+            {
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/android/all-dimensions.xml`,
+              format: 'android/dimens',
+            },
+
+            { destination: `${INTERNAL_FOLDER}/${primitiveName}/android/all-colors.xml`, format: 'android/colors' },
+            { destination: `${INTERNAL_FOLDER}/${primitiveName}/android/all-dimensions.xml`, format: 'android/dimens' },
+          ],
         },
         ios: {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.ios,
-          buildPath: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/`,
           files: [
-            { destination: 'all-colors.swift', format: 'ios/enum-colors', options: { enumName: primitiveName } },
             {
-              destination: 'all-dimensions.swift',
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/all-colors.swift`,
+              format: 'ios/enum-colors',
+              options: { enumName: primitiveName },
+            },
+            {
+              destination: `${DIST_FOLDER}/style-dictionary/${primitiveName}/ios/all-dimensions.swift`,
+              format: 'ios/enum-dimensions',
+              options: { enumName: primitiveName },
+            },
+
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/ios/all-colors.swift`,
+              format: 'ios/enum-colors',
+              options: { enumName: primitiveName },
+            },
+            {
+              destination: `${INTERNAL_FOLDER}/${primitiveName}/ios/all-dimensions.swift`,
               format: 'ios/enum-dimensions',
               options: { enumName: primitiveName },
             },
