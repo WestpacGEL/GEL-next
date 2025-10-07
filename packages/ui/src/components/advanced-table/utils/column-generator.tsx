@@ -2,13 +2,22 @@ import { ColumnDef } from '@tanstack/react-table';
 
 import { AdvancedColumnProps } from '../advanced-table.types.js';
 
-export function columnGenerator<T>({ columns }: { columns: AdvancedColumnProps<T>[] }) {
+export function columnGenerator<T>({
+  columns,
+  enableRowSelection,
+}: {
+  columns: AdvancedColumnProps<T>[];
+  enableRowSelection?: boolean;
+}) {
   const columnUpdate = (obj: AdvancedColumnProps<T>): ColumnDef<T> => {
     return {
       ...obj,
       id: obj.key,
       accessorKey: obj.key,
       header: () => <h2 className="whitespace-nowrap font-medium">{obj.title}</h2>,
+      meta: {
+        editable: obj.editable,
+      },
     };
   };
 
@@ -25,6 +34,7 @@ export function columnGenerator<T>({ columns }: { columns: AdvancedColumnProps<T
     });
   };
 
+  // TODO: Convert to function column, might include expansion arrow?
   const selectableColumn = (): ColumnDef<T> => {
     return {
       id: 'select-column',
@@ -55,5 +65,5 @@ export function columnGenerator<T>({ columns }: { columns: AdvancedColumnProps<T
   };
 
   const finalColumns = [selectableColumn(), ...generateLocalColumns(columns)];
-  return finalColumns;
+  return enableRowSelection ? finalColumns : generateLocalColumns(columns);
 }

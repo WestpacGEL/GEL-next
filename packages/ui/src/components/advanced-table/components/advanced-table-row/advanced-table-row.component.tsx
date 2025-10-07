@@ -1,3 +1,4 @@
+import { horizontalListSortingStrategy, SortableContext } from '@dnd-kit/sortable';
 import { useContext } from 'react';
 
 import { AdvancedTableContext } from '../../advanced-table.component.js';
@@ -7,7 +8,7 @@ import { styles as AdvancedTableRowStyles } from './advanced-table-row.styles.js
 import { AdvancedTableRowProps } from './advanced-table-row.types.js';
 
 export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer }: AdvancedTableRowProps<T>) {
-  const { scrollableRows, scrollableColumns } = useContext(AdvancedTableContext);
+  const { scrollableRows, scrollableColumns, columnOrder } = useContext(AdvancedTableContext);
   const styles = AdvancedTableRowStyles({ scrollableRows, scrollableColumns });
   const localVirtualRow = rows && rows[virtualRow?.index ?? 0];
 
@@ -29,7 +30,9 @@ export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer }: A
   ) : (
     <tr className={styles.bodyRow()}>
       {row?.getVisibleCells().map(cell => (
-        <AdvancedTableCell key={cell.id} cell={cell} />
+        <SortableContext key={cell.id} items={columnOrder ?? []} strategy={horizontalListSortingStrategy}>
+          <AdvancedTableCell key={cell.id} cell={cell} />
+        </SortableContext>
       ))}
     </tr>
   );

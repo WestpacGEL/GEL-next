@@ -1,5 +1,5 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
-import { ColumnPinningState } from '@tanstack/react-table';
+import { ColumnPinningState, Table } from '@tanstack/react-table';
 import { useState } from 'react';
 
 import { AdvancedTable } from './advanced-table.component.js';
@@ -7,12 +7,10 @@ import { AdvancedColumnProps, TanstackTableOptions } from './advanced-table.type
 import { AdvancedPerson, makeColumns, makeDataFromCols, makePersonData } from './story-utils/fakerData.js';
 import { columnsExample, dataExample } from './story-utils/otherData.js';
 
-const columns: AdvancedColumnProps<AdvancedPerson>[] = [
+const multLevelColumns: AdvancedColumnProps<AdvancedPerson>[] = [
   {
     key: 'name',
     title: 'Name',
-    enableSorting: false,
-    enableGrouping: false,
     columns: [
       { key: 'firstName', title: 'First Name' },
       { key: 'lastName', title: 'Last Name' },
@@ -21,15 +19,11 @@ const columns: AdvancedColumnProps<AdvancedPerson>[] = [
   {
     key: 'information',
     title: 'Information',
-    enableSorting: false,
-    enableGrouping: false,
     columns: [
       { key: 'age', title: 'Age' },
       {
         key: 'moreInfo',
         title: 'More Info',
-        enableSorting: false,
-        enableGrouping: false,
         columns: [
           { key: 'visits', title: 'Visits' },
           { key: 'status', title: 'Status' },
@@ -40,6 +34,15 @@ const columns: AdvancedColumnProps<AdvancedPerson>[] = [
   },
 ];
 
+const columns: AdvancedColumnProps<AdvancedPerson>[] = [
+  { key: 'firstName', title: 'First Name', editable: true },
+  { key: 'lastName', title: 'Last Name' },
+  { key: 'age', title: 'Age' },
+  { key: 'visits', title: 'Visits' },
+  { key: 'status', title: 'Status' },
+  { key: 'progress', title: 'Profile Progress' },
+];
+
 const meta: Meta<typeof AdvancedTable> = {
   title: 'Components/Advanced Table',
   component: AdvancedTable,
@@ -47,7 +50,7 @@ const meta: Meta<typeof AdvancedTable> = {
   decorators: [(Story: StoryFn) => <Story />],
 };
 
-const defaultData = makePersonData(100, 20);
+const defaultData = makePersonData(100);
 
 const manyCols = makeColumns(100);
 const dataForCols = makeDataFromCols(100, manyCols);
@@ -55,29 +58,25 @@ const dataForCols = makeDataFromCols(100, manyCols);
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  render: () => (
-    <AdvancedTable
-      data={defaultData}
-      enableRowSelection
-      columns={columns}
-      enableResizing
-      enableSorting
-      subRowKey="subRows"
-    />
-  ),
+export const BasicTable: Story = {
+  render: () => <AdvancedTable data={defaultData} columns={columns} />,
+};
+
+export const Resizeable: Story = {
+  render: () => <AdvancedTable data={defaultData} columns={columns} enableResizing />,
+};
+
+export const Sortable: Story = {
+  render: () => <AdvancedTable data={defaultData} columns={columns} enableSorting />,
+};
+
+export const SelectableRows: Story = {
+  render: () => <AdvancedTable data={defaultData} columns={columns} enableRowSelection />,
 };
 
 export const ExampleCopy: Story = {
   render: () => (
-    <AdvancedTable
-      data={dataExample}
-      enableRowSelection
-      columns={columnsExample}
-      enableResizing
-      enableSorting
-      subRowKey="subRows"
-    />
+    <AdvancedTable data={dataExample} enableRowSelection columns={columnsExample} enableResizing enableSorting />
   ),
 };
 
@@ -98,26 +97,8 @@ export const Virtualized: Story = {
 };
 
 export const TestControlled = () => {
-  const [pinned, setPinned] = useState<ColumnPinningState>({});
-  const tableProps: TanstackTableOptions<ReturnType<typeof makeDataFromCols>[0]> = {
-    state: {
-      columnPinning: pinned,
-    },
-    onColumnPinningChange: setPinned,
-  };
+  const [testData, setTestData] = useState(defaultData);
+  const [_, setTable] = useState<Table<AdvancedPerson>>();
 
-  return (
-    <AdvancedTable
-      data={dataForCols}
-      columns={manyCols}
-      enableResizing
-      enableColumnPinning
-      enableSorting
-      enableRowSelection
-      scrollableColumns
-      scrollableRows
-      tableOptions={tableProps}
-      subRowKey="subRows"
-    />
-  );
+  return <AdvancedTable data={testData} columns={columns} onDataChange={setTestData} onTableReady={setTable} />;
 };

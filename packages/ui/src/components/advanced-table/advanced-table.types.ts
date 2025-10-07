@@ -1,9 +1,20 @@
-import { ColumnDef, TableOptions } from '@tanstack/react-table';
+import { ColumnDef, RowData, Table, TableOptions } from '@tanstack/react-table';
 import { CSSProperties } from 'react';
+
+declare module '@tanstack/react-table' {
+  interface TableMeta<TData extends RowData> {
+    updateData: (rowIndex: number, columnId: string, value: unknown) => void;
+    deleteRow: (rowIndex: number) => void;
+  }
+  interface ColumnMeta<TData extends RowData, TValue> {
+    editable?: boolean;
+  }
+}
 
 export type AdvancedColumnProps<T> = Omit<ColumnDef<T>, 'header' | 'meta' | 'id' | 'footer'> & {
   key: string;
   title: string;
+  editable?: boolean;
   columns?: AdvancedColumnProps<T>[];
 };
 
@@ -53,6 +64,8 @@ export type AdvancedTableProps<T> = {
   enableSorting?: boolean;
   fixedHeight?: CSSProperties['height'];
   fixedWidth?: CSSProperties['width'];
+  onDataChange?: (data: T[]) => void;
+  onTableReady?: (table: Table<T>) => void;
   tableOptions?: TanstackTableOptions<T>;
   /**
    * Sets table to use virtualized scrollable columns

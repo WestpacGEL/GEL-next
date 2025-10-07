@@ -1,4 +1,7 @@
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import { flexRender, SortDirection } from '@tanstack/react-table';
+import { CSSProperties } from 'react';
 
 import { ExpandLessIcon, ExpandMoreIcon } from '../../../icon/index.js';
 import { getCommonPinningStyles } from '../../utils/getPinningStyles.js';
@@ -8,6 +11,15 @@ import { styles as AdvancedTableHeadCellStyles } from './advanced-table-head-cel
 import { AdvancedTableHeadCellProps } from './advanced-table-head-cell.types.js';
 
 export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: AdvancedTableHeadCellProps<T>) {
+  const { attributes, isDragging, listeners, setNodeRef, transform } = useSortable({ id: header.column.id });
+  const dndStyles: CSSProperties = {
+    opacity: isDragging ? 0.8 : 1,
+    position: 'relative',
+    transform: CSS.Translate.toString(transform), // translate instead of transform to avoid squishing
+    transition: 'width transform 0.2s ease-in-out',
+    whiteSpace: 'nowrap',
+    zIndex: isDragging ? 1 : 0,
+  };
   const sortingIcon = (sorted: SortDirection | false, onClick: () => void) => {
     return (
       <button onClick={onClick} className="cursor-pointer flex flex-col">
@@ -35,6 +47,7 @@ export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: Advanced
       key={header.id}
       colSpan={header.colSpan}
       className={styles.th()}
+      ref={setNodeRef}
     >
       <div className={styles.headerContent()}>
         {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
@@ -104,13 +117,18 @@ export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: Advanced
     </th>
   ) : (
     <th
-      style={{ width: `calc(var(--header-${header.id}-size) * 1px)` }}
+      style={{ width: `calc(var(--header-${header.id}-size) * 1px)`, ...dndStyles }}
       key={header.id}
       colSpan={header.colSpan}
       className={styles.th()}
+      ref={setNodeRef}
     >
       <div className={styles.headerContent()}>
-        {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+        {header.isPlaceholder ? null : (
+          <button {...attributes} {...listeners}>
+            {flexRender(header.column.columnDef.header, header.getContext())}
+          </button>
+        )}
         {header.column.getCanSort() &&
           !header.isPlaceholder &&
           sortingIcon(header.column.getIsSorted(), () => {
