@@ -1,6 +1,8 @@
 import { Key } from '@react-types/shared';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useFilter } from 'react-aria';
+import { useComboBoxState } from 'react-stately';
 
 import { FIXED_WIDTHS } from '../../constants/input-widths.js';
 import { Circle } from '../circle/circle.component.js';
@@ -228,30 +230,54 @@ export const DynamicCollections = () => {
 };
 
 /**
- * > Dynamic collections with Async call
+ * > Async collections that automatically open when results arrive
  */
 export const AsyncDynamicCollections = () => {
-  // For example purposes async call is made on focus of input rather than when page loads
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [items, setItems] = useState<{ id: string; name: string }[]>([]);
-  const getCollection = async () => {
+
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  const { contains } = useFilter({ sensitivity: 'base' });
+
+  const children = (item: { id: string; name: string }) => <AutocompleteItem>{item.name}</AutocompleteItem>;
+  const sharedProps = {
+    items,
+    label: 'Choose an animal',
+    onInputChange: (val: string) => {
+      void fetchAnimals(val);
+    },
+  };
+
+  const state = useComboBoxState({
+    defaultFilter: contains,
+    ...sharedProps,
+    menuTrigger: 'manual', // allow manual open
+    children,
+  });
+
+  useEffect(() => {
+    if (items.length > 0) {
+      state.open(null, 'manual'); // 👈 force open
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [items]);
+
+  const fetchAnimals = async (query: string) => {
+    // fake async fetch
     setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 3000));
-    setItems([
-      { id: 'red panda', name: 'Red Panda' },
-      { id: 'cat', name: 'Cat' },
-      { id: 'dog', name: 'Dog' },
-      { id: 'aardvark', name: 'Aardvark' },
-      { id: 'kangaroo', name: 'Kangaroo' },
-      { id: 'snake', name: 'Snake' },
-    ]);
+    await new Promise(resolve => setTimeout(resolve, 300));
+    setItems(
+      ['Red Panda', 'Cat', 'Dog', 'Aardvark', 'Kangaroo', 'Snake']
+        .filter(name => name.toLowerCase().includes(query.toLowerCase()))
+        .map(name => ({ id: name.toLowerCase().replace(/\s+/g, '-'), name })),
+    );
     setLoading(false);
   };
 
   return (
     <div className="flex flex-col gap-2">
-      <Autocomplete items={items} onFocus={() => void getCollection()} loadingState={loading}>
-        {item => <AutocompleteItem>{item.name}</AutocompleteItem>}
+      <Autocomplete comboBoxState={state} loadingState={loading} {...sharedProps}>
+        {children}
       </Autocomplete>
     </div>
   );
