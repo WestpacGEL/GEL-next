@@ -3,3 +3,9 @@
 @import '@westpac/style-config/theme-wbc';
 @import '@westpac/style-config/theme-stg';
 @import '../src/css/global.css';
+
+@layer base {
+  body {
+    @apply typography-body-11;
+  }
+}
