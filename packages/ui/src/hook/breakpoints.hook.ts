@@ -50,11 +50,7 @@ type BreakpointState = {
   removeListeners: () => void;
 };
 
-<<<<<<< HEAD
 export const useThemeStore = create<BreakpointState>()((set, get) => ({
-=======
-const useBreakpointStore = create<BreakpointState>()((set, get) => ({
->>>>>>> main
   breakpoint: 'initial',
   mediaQueryListeners: null,
   initialised: false,
@@ -85,16 +81,10 @@ const useBreakpointStore = create<BreakpointState>()((set, get) => ({
 }));
 
 export function useBreakpoint() {
-<<<<<<< HEAD
   const { breakpoint, ensureInitialized: initIfNotInitialised } = useThemeStore();
   useEffect(() => {
     initIfNotInitialised();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-=======
-  const { breakpoint, ensureInitialized: initIfNotInitialised } = useBreakpointStore();
-  useEffect(() => {
-    initIfNotInitialised();
->>>>>>> main
   }, []);
 
   return breakpoint;
