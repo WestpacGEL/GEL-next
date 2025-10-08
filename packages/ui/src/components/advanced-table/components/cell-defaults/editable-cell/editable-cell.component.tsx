@@ -1,9 +1,9 @@
 import { CellContext } from '@tanstack/react-table';
 import { useState } from 'react';
 
-import { ArrowRightIcon, ExpandMoreIcon } from '../../../icon/index.js';
+import { ArrowRightIcon, ExpandMoreIcon } from '../../../../icon/index.js';
 
-export function AdvancedTableEditableCell<T>({
+export function EditableCell<T>({
   row,
   getValue,
   column,

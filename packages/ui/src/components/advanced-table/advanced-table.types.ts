@@ -50,22 +50,55 @@ export type AdvancedTableProps<T> = {
    * Column information for table
    */
   columns: AdvancedColumnProps<T>[];
+  /**
+   * Enables column reordering via drag and drop.
+   */
+  enableColumnReordering?: boolean;
+  /**
+   * Enables column filtering. Can also be done per-column in required columns array.
+   */
   enableColumnFilter?: boolean;
+  /**
+   * Enables column pinning. Can also be done per-column in required columns array.
+   */
   enableColumnPinning?: boolean;
+  /**
+   * Enables grouping of rows by column values. Can also be done per-column in required columns array.
+   */
   enableGrouping?: boolean;
   /**
    * Enables all columns to be resizable. Can also be done per-column in required columns array.
    */
   enableResizing?: boolean;
+  /**
+   * Enables row selection.
+   */
   enableRowSelection?: boolean;
   /**
    * Enables all columns to be sortable. Can also be done per-column in required columns array.
    */
   enableSorting?: boolean;
+  /**
+   * Used with scrollableRows. Sets fixed height for the table.
+   * @default 500px
+   */
   fixedHeight?: CSSProperties['height'];
+  /**
+   * Used with scrollableColumns. Sets fixed width for the table.
+   * @default 700px
+   */
   fixedWidth?: CSSProperties['width'];
+  /**
+   * For use with editable cells/removable rows. Returns the updated data.
+   */
   onDataChange?: (data: T[]) => void;
+  /**
+   * Provides user with the table instance when it's ready for custom use cases.
+   */
   onTableReady?: (table: Table<T>) => void;
+  /**
+   * Modified tanstack table options.
+   */
   tableOptions?: TanstackTableOptions<T>;
   /**
    * Sets table to use virtualized scrollable columns

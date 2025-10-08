@@ -24,7 +24,9 @@ export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer }: A
       }}
     >
       {localVirtualRow?.getVisibleCells().map(cell => (
-        <AdvancedTableCell key={cell.id} cell={cell} />
+        <SortableContext key={cell.id} items={columnOrder ?? []} strategy={horizontalListSortingStrategy}>
+          <AdvancedTableCell key={cell.id} cell={cell} />
+        </SortableContext>
       ))}
     </tr>
   ) : (

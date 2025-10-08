@@ -12,7 +12,6 @@ export function AdvancedTableBody<T>({ table, tableRef }: AdvancedTableBodyProps
   const styles = AdvancedTableBodyStyles({ scrollableRows, scrollableColumns });
   const { rows } = table.getRowModel();
 
-  // Important: Keep the row virtualizer in the lowest component possible to avoid unnecessary re-renders.
   const rowVirtualizer = useVirtualizer<HTMLDivElement, HTMLTableRowElement>({
     count: rows.length,
     estimateSize: () => 45, //estimate row height for accurate scrollbar dragging
@@ -32,7 +31,7 @@ export function AdvancedTableBody<T>({ table, tableRef }: AdvancedTableBodyProps
     >
       {rowVirtualizer.getVirtualItems().map(virtualRow => {
         return (
-          <AdvancedTableRow<T>
+          <AdvancedTableRow
             key={rows[virtualRow.index].id}
             rows={rows}
             virtualRow={virtualRow}
@@ -44,7 +43,7 @@ export function AdvancedTableBody<T>({ table, tableRef }: AdvancedTableBodyProps
   ) : (
     <tbody className={styles.tableBody()}>
       {table.getRowModel().rows.map(row => (
-        <AdvancedTableRow<T> key={row.id} row={row} />
+        <AdvancedTableRow key={row.id} row={row} />
       ))}
     </tbody>
   );

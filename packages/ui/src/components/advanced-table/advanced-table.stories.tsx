@@ -1,11 +1,11 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
-import { ColumnPinningState, Table } from '@tanstack/react-table';
+import { Table } from '@tanstack/react-table';
 import { useState } from 'react';
 
-import { AdvancedTable } from './advanced-table.component.js';
-import { AdvancedColumnProps, TanstackTableOptions } from './advanced-table.types.js';
 import { AdvancedPerson, makeColumns, makeDataFromCols, makePersonData } from './story-utils/fakerData.js';
 import { columnsExample, dataExample } from './story-utils/otherData.js';
+
+import { AdvancedColumnProps, AdvancedTable } from './index.js';
 
 const multLevelColumns: AdvancedColumnProps<AdvancedPerson>[] = [
   {
@@ -51,6 +51,7 @@ const meta: Meta<typeof AdvancedTable> = {
 };
 
 const defaultData = makePersonData(100);
+const expandableData = makePersonData(100, 2);
 
 const manyCols = makeColumns(100);
 const dataForCols = makeDataFromCols(100, manyCols);
@@ -74,13 +75,33 @@ export const SelectableRows: Story = {
   render: () => <AdvancedTable data={defaultData} columns={columns} enableRowSelection />,
 };
 
+export const ExpandableRows: Story = {
+  render: () => <AdvancedTable data={expandableData} columns={columns} subRowKey="subRows" />,
+};
+
+export const Grouping: Story = {
+  render: () => <AdvancedTable data={defaultData} columns={columns} enableGrouping />,
+};
+
 export const ExampleCopy: Story = {
   render: () => (
     <AdvancedTable data={dataExample} enableRowSelection columns={columnsExample} enableResizing enableSorting />
   ),
 };
 
-export const Virtualized: Story = {
+export const ReorderColumns: Story = {
+  render: () => <AdvancedTable data={defaultData} columns={columns} enableColumnReordering />,
+};
+
+export const ScrollableColumns: Story = {
+  render: () => <AdvancedTable data={dataForCols} columns={manyCols} scrollableColumns />,
+};
+
+export const ScrollableRows: Story = {
+  render: () => <AdvancedTable data={dataForCols} columns={manyCols} scrollableRows />,
+};
+
+export const ScrollableRowsAndColumns: Story = {
   render: () => (
     <AdvancedTable
       data={dataForCols}
@@ -98,7 +119,7 @@ export const Virtualized: Story = {
 
 export const TestControlled = () => {
   const [testData, setTestData] = useState(defaultData);
-  const [_, setTable] = useState<Table<AdvancedPerson>>();
+  const [, setTable] = useState<Table<AdvancedPerson>>();
 
   return <AdvancedTable data={testData} columns={columns} onDataChange={setTestData} onTableReady={setTable} />;
 };

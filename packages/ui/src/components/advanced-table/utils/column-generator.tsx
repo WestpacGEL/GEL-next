@@ -1,6 +1,7 @@
 import { ColumnDef } from '@tanstack/react-table';
 
 import { AdvancedColumnProps } from '../advanced-table.types.js';
+import { DefaultHeadCell } from '../components/cell-defaults/default-head-cell/default-head-cell.component.js';
 
 export function columnGenerator<T>({
   columns,
@@ -14,7 +15,7 @@ export function columnGenerator<T>({
       ...obj,
       id: obj.key,
       accessorKey: obj.key,
-      header: () => <h2 className="whitespace-nowrap font-medium">{obj.title}</h2>,
+      header: ({ header }) => <DefaultHeadCell header={header} title={obj.title} />,
       meta: {
         editable: obj.editable,
       },

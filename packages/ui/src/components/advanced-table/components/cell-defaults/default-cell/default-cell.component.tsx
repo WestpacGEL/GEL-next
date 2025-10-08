@@ -1,8 +1,8 @@
 import { CellContext } from '@tanstack/react-table';
 
-import { ArrowRightIcon, ExpandMoreIcon } from '../../../icon/index.js';
+import { ArrowRightIcon, ExpandMoreIcon } from '../../../../icon/index.js';
 
-export function AdvancedTableDefaultCell<T>({
+export function DefaultCell<T>({
   row,
   getValue,
   column,

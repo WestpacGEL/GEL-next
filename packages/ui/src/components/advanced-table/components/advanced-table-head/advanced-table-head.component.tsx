@@ -14,7 +14,7 @@ export function AdvancedTableHead<T>({
   return (
     <thead className={styles.tableHeader()}>
       {table.getHeaderGroups().map(headerGroup => (
-        <AdvancedTableHeadRow<T>
+        <AdvancedTableHeadRow
           columnVirtualizer={columnVirtualizer}
           key={headerGroup.id}
           headerGroup={headerGroup}
