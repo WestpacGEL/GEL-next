@@ -7,16 +7,16 @@ type CreditCardFormData = {
   cardLimit?: string;
   creditLimitType: string;
   dependants: string;
-  dobDay: string;
-  dobMonth: string;
-  dobYear: string;
+  dobDay?: number;
+  dobMonth?: number;
+  dobYear?: number;
   email: string;
   expenseFreq: string;
   expenses: string;
   familyName: string;
   givenName: string;
   housing: string;
-  housingLength: string;
+  housingLength?: number;
   income: string;
   incomeFreq: string;
   middleName?: string;
@@ -53,16 +53,16 @@ export function CreditCardContextProvider({ children }: { children: React.ReactN
     address: '',
     creditLimitType: '',
     dependants: '',
-    dobDay: '',
-    dobMonth: '',
-    dobYear: '',
+    dobDay: undefined,
+    dobMonth: undefined,
+    dobYear: undefined,
     email: '',
     expenseFreq: 'Monthly',
     expenses: '',
     familyName: '',
     givenName: '',
     housing: '',
-    housingLength: '',
+    housingLength: undefined,
     income: '',
     incomeFreq: 'Monthly',
     mobileNumber: '',

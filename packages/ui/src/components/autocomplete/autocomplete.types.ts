@@ -1,6 +1,7 @@
 import { type ComboBoxProps } from '@react-types/combobox';
 import { type AriaLabelingProps } from '@react-types/shared';
 import { type ReactNode } from 'react';
+import { ComboBoxState } from 'react-stately';
 import { type VariantProps } from 'tailwind-variants';
 
 import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
@@ -64,5 +65,10 @@ export type AutocompleteProps<T extends object> = {
    * Width of autocomplete
    */
   width?: ResponsiveVariants<Variants['width']>;
+  /**
+   * Pass through comboBox state from consuming component. If not specified,
+   * will be handled internally.
+   */
+  comboBoxState?: ComboBoxState<T>;
 } & ComboBoxProps<T> &
   AriaLabelingProps;

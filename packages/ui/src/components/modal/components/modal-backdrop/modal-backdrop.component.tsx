@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useMemo, useRef } from 'react';
 import { Overlay, useModalOverlay } from 'react-aria';
 
@@ -13,7 +12,7 @@ export function ModalBackdrop({ zIndex = 100, portalContainer, size, ...props }:
   const { children, state, className } = props;
 
   const ref = useRef(null);
-  const styles = backdropStyles({ className, fullscreen: size === 'full', fluid: size === 'fluid' });
+  const styles = backdropStyles({ fullscreen: size === 'full', fluid: size === 'fluid' });
 
   const { modalProps, underlayProps } = useModalOverlay(props, state, ref);
 
@@ -35,7 +34,7 @@ export function ModalBackdrop({ zIndex = 100, portalContainer, size, ...props }:
 
   return (
     <Overlay portalContainer={portalContainer || brandContainer}>
-      <div style={{ zIndex }} className={styles.base()} {...underlayProps}>
+      <div className={styles.base({ className })} style={{ zIndex }} {...underlayProps}>
         <div {...modalProps} ref={ref} className={styles.modal()}>
           {children}
         </div>

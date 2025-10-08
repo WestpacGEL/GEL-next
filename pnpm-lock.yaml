@@ -120,6 +120,12 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
+      react-hook-form:
+        specifier: ~7.62.0
+        version: 7.62.0(react@18.3.1)
+      zustand:
+        specifier: ~4.5.4
+        version: 4.5.7(@types/react@18.3.23)(immer@9.0.21)(react@18.3.1)
     devDependencies:
       '@types/lodash.throttle':
         specifier: ~4.1.7
@@ -376,9 +382,12 @@ importers:
 
   packages/ui:
     dependencies:
+      '@duetds/date-picker':
+        specifier: ~1.4.0
+        version: 1.4.0
       '@internationalized/date':
-        specifier: ~3.8.2
-        version: 3.8.2
+        specifier: ~3.9.0
+        version: 3.9.0
       '@react-aria/accordion':
         specifier: 3.0.0-alpha.37
         version: 3.0.0-alpha.37(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -746,6 +755,10 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
+  '@duetds/date-picker@1.4.0':
+    resolution: {integrity: sha512-jx4oSIrZAVsXYLyQGXbEmuo0gEXAqrNIGp3rG8L03XSxFFFca/bTpCj5v6yd48vVWOtAXD8y04S/+flOimra0A==}
+    engines: {node: '>= 12.17.0', npm: '>= 6.14.0'}
+
   '@emnapi/core@1.4.3':
     resolution: {integrity: sha512-4m62DuCE07lw01soJwPiBGC0nAww0Q+RY70VZ+n49yDIO13yyinhbWCeNnaob0lakDtWQzSdtNWzJeOJt2ma+g==}
 
@@ -1064,6 +1077,9 @@ packages:
 
   '@internationalized/date@3.8.2':
     resolution: {integrity: sha512-/wENk7CbvLbkUvX1tu0mwq49CVkkWpkXubGel6birjRPyo6uQ4nQpnq5xZu823zRCwwn82zgHrvgF1vZyvmVgA==}
+
+  '@internationalized/date@3.9.0':
+    resolution: {integrity: sha512-yaN3brAnHRD+4KyyOsJyk49XUvj2wtbNACSqg0bz3u8t2VuzhC8Q5dfRnrSxjnnbDb+ienBnkn1TzQfE154vyg==}
 
   '@internationalized/message@3.1.8':
     resolution: {integrity: sha512-Rwk3j/TlYZhn3HQ6PyXUV0XP9Uv42jqZGNegt0BXlxjE6G3+LwHjbQZAGHhCnCPdaA6Tvd3ma/7QzLlLkJxAWA==}
@@ -2045,6 +2061,11 @@ packages:
   '@sindresorhus/transliterate@0.1.2':
     resolution: {integrity: sha512-5/kmIOY9FF32nicXH+5yLNTX4NJ4atl7jRgqAJuIn/iyDFXBktOKDxCvyGE/EzmF4ngSUvjXxQUQlQiZ5lfw+w==}
     engines: {node: '>=10'}
+
+  '@stencil/core@2.22.3':
+    resolution: {integrity: sha512-kmVA0M/HojwsfkeHsifvHVIYe4l5tin7J5+DLgtl8h6WWfiMClND5K3ifCXXI2ETDNKiEk21p6jql3Fx9o2rng==}
+    engines: {node: '>=12.10.0', npm: '>=6.0.0'}
+    hasBin: true
 
   '@storybook/addon-a11y@9.0.17':
     resolution: {integrity: sha512-9cXNK3q/atx3hwJAt9HkJbd9vUxCXfKKiNNuSACbf8h9/j6u3jktulKOf6Xjc3B8lwn6ZpdK/x1HHZN2kTqsvg==}
@@ -6973,6 +6994,10 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
+  '@duetds/date-picker@1.4.0':
+    dependencies:
+      '@stencil/core': 2.22.3
+
   '@emnapi/core@1.4.3':
     dependencies:
       '@emnapi/wasi-threads': 1.0.2
@@ -7250,6 +7275,10 @@ snapshots:
   '@humanwhocodes/retry@0.4.3': {}
 
   '@internationalized/date@3.8.2':
+    dependencies:
+      '@swc/helpers': 0.5.17
+
+  '@internationalized/date@3.9.0':
     dependencies:
       '@swc/helpers': 0.5.17
 
@@ -7890,7 +7919,7 @@ snapshots:
 
   '@react-aria/i18n@3.12.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@internationalized/date': 3.8.2
+      '@internationalized/date': 3.9.0
       '@internationalized/message': 3.1.8
       '@internationalized/number': 3.6.3
       '@internationalized/string': 3.2.7
@@ -8311,7 +8340,7 @@ snapshots:
 
   '@react-stately/calendar@3.8.2(react@18.3.1)':
     dependencies:
-      '@internationalized/date': 3.8.2
+      '@internationalized/date': 3.9.0
       '@react-stately/utils': 3.10.7(react@18.3.1)
       '@react-types/calendar': 3.7.2(react@18.3.1)
       '@react-types/shared': 3.30.0(react@18.3.1)
@@ -8367,7 +8396,7 @@ snapshots:
 
   '@react-stately/datepicker@3.14.2(react@18.3.1)':
     dependencies:
-      '@internationalized/date': 3.8.2
+      '@internationalized/date': 3.9.0
       '@internationalized/string': 3.2.7
       '@react-stately/form': 3.1.5(react@18.3.1)
       '@react-stately/overlays': 3.6.17(react@18.3.1)
@@ -8622,7 +8651,7 @@ snapshots:
 
   '@react-types/datepicker@3.12.2(react@18.3.1)':
     dependencies:
-      '@internationalized/date': 3.8.2
+      '@internationalized/date': 3.9.0
       '@react-types/calendar': 3.7.2(react@18.3.1)
       '@react-types/overlays': 3.8.16(react@18.3.1)
       '@react-types/shared': 3.30.0(react@18.3.1)
@@ -8818,6 +8847,8 @@ snapshots:
     dependencies:
       escape-string-regexp: 2.0.0
       lodash.deburr: 4.1.0
+
+  '@stencil/core@2.22.3': {}
 
   '@storybook/addon-a11y@9.0.17(storybook@9.0.17(@testing-library/dom@10.4.0)(bufferutil@4.0.9)(prettier@3.6.2)(utf-8-validate@6.0.5))':
     dependencies:

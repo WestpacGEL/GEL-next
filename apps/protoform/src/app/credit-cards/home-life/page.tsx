@@ -1,153 +1,178 @@
 'use client';
 
-import { ButtonGroup, Form, FormGroup, FormSection, Input, InputGroup, Select } from '@westpac/ui';
-import { useRouter } from 'next/navigation';
-import { FormEvent, useEffect, useState } from 'react';
+import { ButtonGroup, Form, FormGroup, Input, InputGroup, Select } from '@westpac/ui';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useCallback, useEffect } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 
 import { BackButton } from '@/components/back-button/back-button';
 import { Cta } from '@/components/cta/cta';
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
-import { ErrorValidationAlert, ValidationErrorType } from '@/components/error-validation-alert/error-validation-alert';
+import { ErrorValidationAlert } from '@/components/error-validation-alert/error-validation-alert';
 import { useSidebar } from '@/components/sidebar/context';
 import { defaultError } from '@/constants/form-contsants';
-import { getFormData } from '@/utils/getFormData';
 
 import { useCreditCard } from '../context';
+
+type FormData = {
+  dependants: string;
+  expenseFreq: string;
+  expenses: string;
+  housing: string;
+  sharedExpenses: string;
+};
+
+const FIELDS_LABELS = {
+  dependants: 'How many dependants do you have?',
+  expenseFreq: 'Do you share household expenses?',
+  expenses: 'All other expenses',
+  housing: 'What is your current housing situation?',
+  sharedExpenses: 'Do you share household expenses?',
+};
 
 export default function HomeLife() {
   const { setRopeStep } = useSidebar();
   const { data, setData } = useCreditCard();
-  const [dependantsError, setdependantsError] = useState('');
-  const [expenseFreqError, setExpenseFreqError] = useState('');
-  const [expensesError, setExpensesError] = useState('');
-  const [housingError, setHousingError] = useState('');
-  const [sharedExpensesError, setSharedExpensesError] = useState('');
-  const [sharedExpenses, setSharedExpenses] = useState('');
-  const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
 
-  // eslint-disable-next-line sonarjs/cognitive-complexity
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const { housing, dependants, expenseFreq, expenses } = getFormData(e.currentTarget) as {
-      dependants: string;
-      expenseFreq: string;
-      expenses: string;
-      housing: string;
-    };
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors, isValid, isSubmitted },
+  } = useForm<FormData>();
 
-    if (!housing || !dependants || !expenseFreq || !expenses || !sharedExpenses) {
-      setHousingError(!housing ? defaultError : '');
-      setdependantsError(!dependants ? defaultError : '');
-      setExpenseFreqError(!expenseFreq ? defaultError : '');
-      setExpensesError(!expenses ? defaultError : '');
-      setSharedExpensesError(!sharedExpenses ? defaultError : '');
-      setValidationErrors([
-        ...(!housing ? [{ id: 'housing', label: 'Housing situation' }] : []),
-        ...(!dependants ? [{ id: 'dependants', label: 'Dependants' }] : []),
-        ...(!expenseFreq ? [{ id: 'expenseFreq', label: 'Expense frequency' }] : []),
-        ...(!expenses ? [{ id: 'expenses', label: 'Expenses' }] : []),
-        ...(!sharedExpenses ? [{ id: 'sharedExpenses', label: 'Shared expenses' }] : []),
-      ]);
-    } else {
-      setData({ ...data, housing, dependants, expenseFreq, expenses, sharedExpenses });
-      router.push('/credit-cards/credit-limit');
-    }
-  };
+  const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
+  const router = useRouter();
+
+  const onSubmit = useCallback(
+    (formData: FormData) => {
+      setData({ ...data, ...formData });
+      router.push(`/credit-cards/credit-limit${isFlattenRope ? '?flatten=true' : ''}`);
+    },
+    [data, isFlattenRope, router, setData],
+  );
 
   useEffect(() => {
     setRopeStep(3);
-  }, [setRopeStep]);
-
-  const router = useRouter();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
-      <BackButton onClick={() => router.push('/credit-cards/loans-and-cards')}>Back to Loans and cards</BackButton>
+      <BackButton onClick={() => router.push(`/credit-cards/loans-and-cards${isFlattenRope ? '?flatten=true' : ''}`)}>
+        Back to Loans and cards
+      </BackButton>
       <CustomHeading
-        groupHeading="Your finances"
+        groupHeading={!isFlattenRope && 'Your finances'}
         leadText="Tell us more about your general expenses and living situation."
       >
         Home life
       </CustomHeading>
-      {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
-      <Form id="credit-card" spacing="large" onSubmit={handleSubmit}>
-        <FormSection className="border-none !p-0">
-          <FormGroup>
-            <InputGroup
-              instanceId="housing"
-              label="What is your current housing situation?"
-              errorMessage={housingError}
-              size="large"
+      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
+      <Form id="credit-card" spacing="large" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <FormGroup>
+          <InputGroup
+            instanceId="housing"
+            label="What is your current housing situation?"
+            errorMessage={errors.housing?.message}
+            size="large"
+            width={{ initial: 'full', md: 9 }}
+          >
+            <Select
+              {...register('housing', { required: defaultError })}
+              id="housing"
+              defaultValue={data.housing}
+              invalid={!!errors.housing?.message}
             >
-              <Select name="housing" defaultValue={data.housing} invalid={!!housingError}>
-                <option value="">Select</option>
-                <option value="Renting">Renting</option>
-                <option value="OwnerOccupied">Owner occupied</option>
-              </Select>
-            </InputGroup>
-          </FormGroup>
+              <option value="">Select</option>
+              <option value="Renting">Renting</option>
+              <option value="OwnerOccupied">Owner occupied</option>
+            </Select>
+          </InputGroup>
+        </FormGroup>
 
-          <FormGroup>
-            <ButtonGroup
-              label="Do you share household expenses?"
-              hintMessage="For example utility bills"
-              id="sharedExpenses"
-              errorMessage={sharedExpensesError}
-              defaultValue={data.sharedExpenses}
-              size="large"
-              block={{ initial: true, md: false }}
-              buttons={[
-                { value: 'Yes', label: 'Yes' },
-                { value: 'No', label: 'No' },
-              ]}
-              onChange={setSharedExpenses}
+        <FormGroup>
+          <Controller
+            control={control}
+            name="sharedExpenses"
+            rules={{ required: defaultError }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <ButtonGroup
+                label="Do you share household expenses?"
+                hintMessage="For example utility bills"
+                errorMessage={errors.sharedExpenses?.message}
+                defaultValue={data.sharedExpenses}
+                size="large"
+                block={{ initial: true, md: false }}
+                buttons={[
+                  { value: 'Yes', label: 'Yes' },
+                  { value: 'No', label: 'No' },
+                ]}
+                onChange={onChange}
+                onBlur={onBlur}
+                value={value}
+              />
+            )}
+          />
+        </FormGroup>
+
+        <FormGroup>
+          <InputGroup
+            label="How many dependants do you have?"
+            hint="Excluding spouse"
+            instanceId="dependants"
+            errorMessage={errors.dependants?.message}
+            size="large"
+            width={{ initial: 'full', md: 3 }}
+          >
+            <Select
+              {...register('dependants', { required: defaultError })}
+              id="dependants"
+              invalid={!!errors.dependants?.message}
+              defaultValue={data.dependants}
+            >
+              <option value="">Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </Select>
+          </InputGroup>
+        </FormGroup>
+
+        <FormGroup>
+          <InputGroup
+            size="large"
+            label="All other expenses"
+            hint="For example Food, regular bills. transport, Insurance, Child support. Enter a dollar value and choose a frequency"
+            errorMessage={errors.expenses?.message || errors.expenseFreq?.message}
+            instanceId="expenses"
+            before="$"
+            width={{ initial: 'full', md: 10 }}
+            after={
+              <Select
+                {...register('expenseFreq', { required: defaultError })}
+                id="expenseFreq"
+                invalid={!!errors.expenseFreq?.message}
+                defaultValue={data.expenseFreq}
+              >
+                <option value="">Select</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Fortnightly">Fortnightly</option>
+                <option value="Monthly">Monthly</option>
+              </Select>
+            }
+          >
+            <Input
+              {...register('expenses', { required: defaultError })}
+              id="expenses"
+              invalid={!!errors.expenses?.message}
+              defaultValue={data.expenses}
             />
-          </FormGroup>
+          </InputGroup>
+        </FormGroup>
 
-          <FormGroup>
-            <InputGroup
-              label="How many dependants do you have?"
-              hint="Excluding spouse"
-              instanceId="dependants"
-              errorMessage={dependantsError}
-              size="large"
-            >
-              <Select name="dependants" invalid={!!dependantsError} defaultValue={data.dependants}>
-                <option value="">Select</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </Select>
-            </InputGroup>
-          </FormGroup>
-
-          <FormGroup>
-            <InputGroup
-              size="large"
-              label="All other expenses"
-              hint="For example Food, regular bills. transport, Insurance, Child support. Enter a dollar value and choose a frequency"
-              errorMessage={expensesError || expenseFreqError}
-              instanceId="expenses"
-              before="$"
-              after={
-                <Select
-                  name="expenseFreq"
-                  id="expenseFreq"
-                  invalid={!!expenseFreqError}
-                  defaultValue={data.expenseFreq}
-                >
-                  <option value="">Select</option>
-                  <option value="Weekly">Weekly</option>
-                  <option value="Fortnightly">Fortnightly</option>
-                  <option value="Monthly">Monthly</option>
-                </Select>
-              }
-            >
-              <Input invalid={!!expensesError} name="expenses" defaultValue={data.expenses} />
-            </InputGroup>
-          </FormGroup>
-        </FormSection>
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>

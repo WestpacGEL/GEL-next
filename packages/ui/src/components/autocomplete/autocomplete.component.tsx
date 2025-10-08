@@ -43,13 +43,15 @@ function Autocomplete<T extends object>(
     className,
     width = 'full',
     loadingState,
+    comboBoxState,
     ...props
   }: AutocompleteProps<T>,
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const { contains } = useFilter({ sensitivity: 'base' });
-  const state = useComboBoxState({ isDisabled, ...props, defaultFilter: contains });
+  const internalState = useComboBoxState({ isDisabled, ...props, defaultFilter: contains });
+  const state = comboBoxState ?? internalState;
   const { isFocusVisible, focusProps } = useFocusRing();
   const { isFocusVisible: isInputFocusVisible, focusProps: inputFocusProps } = useFocusRing();
   const inputRef = React.useRef<HTMLInputElement>(null);

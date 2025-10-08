@@ -34,6 +34,10 @@ export function InputGroup({
   tag: Tag = 'div',
   className,
   width = 'full',
+  id: propID,
+  'aria-labelledby': ariaLabelledBy,
+  'aria-describedby': ariaDescribedBy,
+  'aria-label': ariaLabel,
   ...props
 }: InputGroupProps) {
   const _id = useId();
@@ -92,13 +96,15 @@ export function InputGroup({
       if (isValidElement(child)) {
         return cloneElement(child, {
           size: resolvedSize,
-          id,
-          'aria-describedby': ariaDescribedByValue,
+          id: propID || id,
+          'aria-labelledby': ariaLabelledBy,
+          'aria-describedby': ariaDescribedBy || ariaDescribedByValue,
+          'aria-label': ariaLabel,
           ...(resolvedWidth !== 'full' ? { width: resolvedWidth } : {}),
         } as Partial<unknown> & Attributes);
       }
     });
-  }, [children, resolvedSize, id, ariaDescribedByValue, resolvedWidth]);
+  }, [children, size, propID, id, ariaLabelledBy, ariaDescribedBy, ariaDescribedByValue, ariaLabel, width]);
 
   const isFieldset = useMemo(() => Tag === 'fieldset', [Tag]);
 
