@@ -180,25 +180,23 @@ export const BorderedAndStriped: Story = {
           </TableHeaderRow>
         </TableHeader>
         <TableBody>
-          <TableRow highlighted>
+          <TableRow>
             <TableCell>Games</TableCell>
             <TableCell>File folder</TableCell>
             <TableCell>6/7/2020</TableCell>
           </TableRow>
-          <TableRow highlighted={[0, 2]}>
+          <TableRow>
             <TableCell>Program Files</TableCell>
             <TableCell>File folder</TableCell>
             <TableCell>4/7/2021</TableCell>
           </TableRow>
-          <TableRow highlighted={[1, 2]}>
+          <TableRow>
             <TableCell>bootmgr</TableCell>
             <TableCell>System file</TableCell>
             <TableCell>11/20/2010</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell highlightStart highlighted>
-              log.txt
-            </TableCell>
+            <TableCell>log.txt</TableCell>
             <TableCell>Text Document</TableCell>
             <TableCell>1/18/2016</TableCell>
           </TableRow>

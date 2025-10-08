@@ -16,12 +16,12 @@ export const styles = tv({
       10: 'typography-body-10',
     },
     brandHeading: {
-      true: {},
-      false: {},
+      true: '',
+      false: '',
     },
     uppercase: {
       true: 'uppercase',
-      false: {},
+      false: '',
     },
   },
   compoundVariants: [
