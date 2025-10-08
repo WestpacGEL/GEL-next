@@ -264,7 +264,7 @@ export const RadioGroupExample = () => {
       <Button>Test</Button>
     </div>
   );
-}
+};
 
 /*
  * > Button fixed to the bottom of the viewport so the dropdown must flip upward.
