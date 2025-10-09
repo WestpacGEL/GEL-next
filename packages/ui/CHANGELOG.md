@@ -1,5 +1,56 @@
 # @westpac/ui
 
+## 0.50.3
+
+### Patch Changes
+
+- cb3e3ab: add open option for autocomplete component
+
+## 0.50.2
+
+### Patch Changes
+
+- cfcd3f4: refactored accordion animations so content in accordion no longer gets unmounted
+
+## 0.50.1
+
+### Patch Changes
+
+- b8c8876: Footer component: removing unused nodes inside
+
+## 0.50.0
+
+### Minor Changes
+
+- 380b5cd: introducing DatePickerBeta, datepicker using react-aria hooks
+
+### Patch Changes
+
+- 604f080: fixed issue where accordion content was unmounting on close
+
+## 0.49.0
+
+### Minor Changes
+
+- 53a19b8: Allow button-dropdown to show at the top of the btn when not enough space below
+
+### Patch Changes
+
+- b2214b2: InputGroup with Field passing the props properly
+- 8c21c8d: removing the margin-bottom on input-group
+
+## 0.48.0
+
+### Minor Changes
+
+- 0b4cb90: added props to header to control fixed header max width and anchor target for logo link
+- 5fe55df: updated alert styling, updated according styling (focus ring, lego), added backdropStyle prop to modal
+
+### Patch Changes
+
+- 33391a7: fix spacing on top when the label is not passed
+- b9ffa7c: fixed issue with accordion children and bubbling events
+
 ## 0.47.1
 
 ### Patch Changes

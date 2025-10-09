@@ -60,9 +60,9 @@ export const Justify: Story = {
 };
 
 /**
- * > KeppTabPanelMounted usage example
+ * > KeepTabPanelMounted usage example
  */
-export const KeppTabPanelMounted: Story = {
+export const KeepTabPanelMounted: Story = {
   args: {
     justify: true,
     children: [

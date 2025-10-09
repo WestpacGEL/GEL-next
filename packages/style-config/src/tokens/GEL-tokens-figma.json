@@ -4183,23 +4183,7 @@
         "Light mode": {
           "color": {
             "background": {
-              "background-pale-black": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "Use for screen backgrounds to establish correct emphasis.",
-                "$type": "color",
-                "$libraryName": "",
-                "$collectionName": "Themes",
-                "$value": "{color.muted.100}"
-              },
-              "background-white-black": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "Use for screen backgrounds to establish correct emphasis.",
-                "$type": "color",
-                "$libraryName": "",
-                "$collectionName": "Themes",
-                "$value": "{color.mono.white}"
-              },
-              "background-white-faint": {
+              "background-white-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen backgrounds to establish correct emphasis.",
                 "$type": "color",
@@ -4215,17 +4199,45 @@
                 "$collectionName": "Themes",
                 "$value": "{color.muted.100}"
               },
-              "background-white-pale": {
+              "background-faint-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen backgrounds to establish correct emphasis.",
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
+                "$value": "{color.muted.50}"
+              },
+              "background-white-faint": {
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$description": "Use for screen backgrounds to establish correct emphasis.",
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Themes",
                 "$value": "{color.mono.white}"
+              },
+              "background-white-black": {
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$description": "This token is reserved. Do not use.",
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Themes",
+                "$value": "{color.mono.white}"
+              },
+              "background-pale-black": {
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$description": "This token is reserved. Do not use.",
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Themes",
+                "$value": "{color.muted.100}"
               },
               "background-primary": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4234,6 +4246,7 @@
               "background-hero": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4251,7 +4264,7 @@
               },
               "surface-muted": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "Muted is now slightly lighter but remains accessible in all required scenarios.",
+                "$description": "Replaces current \"Muted\" style",
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4259,7 +4272,8 @@
               },
               "surface-muted-strong": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed.",
+                "$description": "Reserved. Please do not use",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4267,7 +4281,8 @@
               },
               "surface-muted-mild": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed.",
+                "$description": "This token is reserved. Please do not use.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4276,6 +4291,7 @@
               "surface-muted-soft": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4283,7 +4299,7 @@
               },
               "surface-muted-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This colour is used for backgrounds",
+                "$description": "Replaces the current \"Background\" Style.",
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4291,7 +4307,7 @@
               },
               "surface-muted-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes.",
+                "$description": "Replaces the current \"Light\" style.",
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4307,6 +4323,7 @@
               "surface-primary-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4322,6 +4339,7 @@
               "surface-hero-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4362,6 +4380,7 @@
               "surface-sing": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4370,6 +4389,7 @@
               "surface-sing-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4378,6 +4398,7 @@
               "surface-dance": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4386,6 +4407,7 @@
               "surface-dance-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4402,6 +4424,7 @@
               "surface-success-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4418,6 +4441,7 @@
               "surface-info-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4434,6 +4458,7 @@
               "surface-warning-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4450,6 +4475,7 @@
               "surface-danger-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4458,6 +4484,7 @@
               "surface-system-error": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4466,6 +4493,7 @@
               "surface-system-error-dark": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4621,7 +4649,8 @@
               },
               "border-muted-mild": {
                 "$scopes": ["STROKE_COLOR"],
-                "$description": "This border colour is not currently used in the Design System. Accessibility is not guaranteed.",
+                "$description": "This token is reserved. Consult GEL team before use. This border colour is not currently used in the Design System. Accessibility is not guaranteed.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4670,6 +4699,7 @@
               "border-sing": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4678,6 +4708,7 @@
               "border-dance": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4686,6 +4717,7 @@
               "border-success": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4694,6 +4726,7 @@
               "border-success-mild": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4702,6 +4735,7 @@
               "border-info": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4710,6 +4744,7 @@
               "border-info-mild": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4718,6 +4753,7 @@
               "border-warning": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4726,6 +4762,7 @@
               "border-warning-mild": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4734,6 +4771,7 @@
               "border-danger": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4742,6 +4780,7 @@
               "border-danger-mild": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4758,6 +4797,7 @@
               "border-focus": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the focus state keyboard navigation.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4914,6 +4954,7 @@
               "surface-pictogram-base": {
                 "$scopes": ["SHAPE_FILL"],
                 "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4922,6 +4963,7 @@
               "surface-pictogram-accent": {
                 "$scopes": ["SHAPE_FILL"],
                 "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4932,6 +4974,7 @@
               "surface-hover-primary": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4939,6 +4982,7 @@
               },
               "surface-active-primary": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4947,6 +4991,7 @@
               "surface-hover-hero": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4955,6 +5000,7 @@
               "surface-active-hero": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4963,6 +5009,7 @@
               "surface-hover-primary-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4971,6 +5018,7 @@
               "surface-active-primary-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4978,6 +5026,7 @@
               },
               "surface-hover-hero-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4985,6 +5034,7 @@
               },
               "surface-active-hero-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -4993,6 +5043,7 @@
               "surface-hover-muted-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5001,6 +5052,7 @@
               "surface-active-muted-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5009,6 +5061,7 @@
               "surface-hover-mono": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5017,6 +5070,7 @@
               "surface-active-mono": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5102,29 +5156,13 @@
         "Dark mode": {
           "color": {
             "background": {
-              "background-pale-black": {
+              "background-white-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen backgrounds to establish correct emphasis.",
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
-                "$value": "{color.mono.black}"
-              },
-              "background-white-black": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "Use for screen backgrounds to establish correct emphasis.",
-                "$type": "color",
-                "$libraryName": "",
-                "$collectionName": "Themes",
-                "$value": "{color.mono.black}"
-              },
-              "background-white-faint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "Use for screen backgrounds to establish correct emphasis.",
-                "$type": "color",
-                "$libraryName": "",
-                "$collectionName": "Themes",
-                "$value": "{color.muted.950}"
+                "$value": "{color.muted.900}"
               },
               "background-pale-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -5134,7 +5172,7 @@
                 "$collectionName": "Themes",
                 "$value": "{color.muted.950}"
               },
-              "background-white-pale": {
+              "background-faint-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen backgrounds to establish correct emphasis.",
                 "$type": "color",
@@ -5142,9 +5180,37 @@
                 "$collectionName": "Themes",
                 "$value": "{color.muted.900}"
               },
+              "background-white-faint": {
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$description": "Use for screen backgrounds to establish correct emphasis.",
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Themes",
+                "$value": "{color.muted.950}"
+              },
+              "background-white-black": {
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$description": "This token is reserved. Do not use.",
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Themes",
+                "$value": "{color.mono.black}"
+              },
+              "background-pale-black": {
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$description": "This token is reserved. Do not use.",
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Themes",
+                "$value": "{color.mono.black}"
+              },
               "background-primary": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5153,6 +5219,7 @@
               "background-hero": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5170,7 +5237,7 @@
               },
               "surface-muted": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "Muted is now slightly lighter but remains accessible in all required scenarios.",
+                "$description": "Replaces current \"Muted\" style",
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5178,7 +5245,8 @@
               },
               "surface-muted-strong": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed.",
+                "$description": "Reserved. Please do not use",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5186,7 +5254,8 @@
               },
               "surface-muted-mild": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed.",
+                "$description": "This token is reserved. Please do not use.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5195,6 +5264,7 @@
               "surface-muted-soft": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5202,7 +5272,7 @@
               },
               "surface-muted-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This colour is used for backgrounds",
+                "$description": "Replaces the current \"Background\" Style.",
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5210,7 +5280,7 @@
               },
               "surface-muted-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes.",
+                "$description": "Replaces the current \"Light\" style.",
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5226,6 +5296,7 @@
               "surface-primary-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5241,6 +5312,7 @@
               "surface-hero-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5281,6 +5353,7 @@
               "surface-sing": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5289,6 +5362,7 @@
               "surface-sing-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5297,6 +5371,7 @@
               "surface-dance": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5305,6 +5380,7 @@
               "surface-dance-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5321,6 +5397,7 @@
               "surface-success-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5337,6 +5414,7 @@
               "surface-info-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5353,6 +5431,7 @@
               "surface-warning-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5369,6 +5448,7 @@
               "surface-danger-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5377,6 +5457,7 @@
               "surface-system-error": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5385,6 +5466,7 @@
               "surface-system-error-dark": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5540,7 +5622,8 @@
               },
               "border-muted-mild": {
                 "$scopes": ["STROKE_COLOR"],
-                "$description": "This border colour is not currently used in the Design System. Accessibility is not guaranteed.",
+                "$description": "This token is reserved. Consult GEL team before use. This border colour is not currently used in the Design System. Accessibility is not guaranteed.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5589,6 +5672,7 @@
               "border-sing": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5597,6 +5681,7 @@
               "border-dance": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5605,6 +5690,7 @@
               "border-success": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5613,6 +5699,7 @@
               "border-success-mild": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5621,6 +5708,7 @@
               "border-info": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5629,6 +5717,7 @@
               "border-info-mild": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5637,6 +5726,7 @@
               "border-warning": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5645,6 +5735,7 @@
               "border-warning-mild": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5653,6 +5744,7 @@
               "border-danger": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5661,6 +5753,7 @@
               "border-danger-mild": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5677,6 +5770,7 @@
               "border-focus": {
                 "$scopes": ["STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for the focus state keyboard navigation.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5833,6 +5927,7 @@
               "surface-pictogram-base": {
                 "$scopes": ["SHAPE_FILL"],
                 "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5841,6 +5936,7 @@
               "surface-pictogram-accent": {
                 "$scopes": ["SHAPE_FILL"],
                 "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5851,6 +5947,7 @@
               "surface-hover-primary": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5858,6 +5955,7 @@
               },
               "surface-active-primary": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5866,6 +5964,7 @@
               "surface-hover-hero": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5874,6 +5973,7 @@
               "surface-active-hero": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5882,6 +5982,7 @@
               "surface-hover-primary-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5890,6 +5991,7 @@
               "surface-active-primary-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5897,6 +5999,7 @@
               },
               "surface-hover-hero-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5904,6 +6007,7 @@
               },
               "surface-active-hero-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5912,6 +6016,7 @@
               "surface-hover-muted-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5920,6 +6025,7 @@
               "surface-active-muted-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5928,6 +6034,7 @@
               "surface-hover-mono": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
@@ -5936,6 +6043,7 @@
               "surface-active-mono": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "This token is for hover states.",
+                "$hiddenFromPublishing": true,
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",

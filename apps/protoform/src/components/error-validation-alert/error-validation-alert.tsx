@@ -1,24 +1,28 @@
 import { Alert, Link, List, ListItem } from '@westpac/ui';
+import { FieldErrors } from 'react-hook-form';
 
-export type ValidationErrorType = {
-  id: string;
-  label: string;
-};
-
-export function ErrorValidationAlert({ errors }: { errors: ValidationErrorType[] }) {
-  const errorAmount = errors.length;
-
+export function ErrorValidationAlert<T extends string = string>({
+  errors,
+  labels,
+}: {
+  errors: FieldErrors<Record<T, unknown>>;
+  labels?: Record<T, string>;
+}) {
+  const errorAmount = Object.entries(errors).length;
   return (
     <Alert look="danger">
       <strong>{`Please fix the ${errorAmount} errors listed below`}</strong>
       <List type="unstyled">
-        {errors.map(error => (
-          <ListItem key={error.id}>
-            <Link type="inline" href={`#${error.id}`} className="text-text-danger">
-              {error.label}
-            </Link>
-          </ListItem>
-        ))}
+        {Object.entries(errors)
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          .filter(([_, value]) => value?.message)
+          .map(([key]) => (
+            <ListItem key={key}>
+              <Link type="inline" href={`#${key}`} className="text-danger">
+                {(labels && labels[key as T]) || key}
+              </Link>
+            </ListItem>
+          ))}
       </List>
     </Alert>
   );

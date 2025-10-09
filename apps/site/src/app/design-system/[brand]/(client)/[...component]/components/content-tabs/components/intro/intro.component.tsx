@@ -14,7 +14,7 @@ export function Intro({ description, sectionNames }: IntroProps) {
       <Container>
         <Grid>
           <GridItem span={{ initial: 12, sm: 7 }}>
-            <p className="typography-body-8 sm:typography-body-7 leading-normal font-light sm:leading-normal">
+            <p className="typography-body-8 sm:typography-body-7 leading-[1.5] font-light sm:leading-[1.5]">
               {description}
             </p>
           </GridItem>

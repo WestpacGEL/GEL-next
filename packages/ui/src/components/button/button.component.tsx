@@ -47,12 +47,17 @@ function BaseButton(
     if (iconColor !== undefined) {
       return iconColor;
     }
-    if (!soft && look === 'faint') {
-      return 'muted';
-    }
+
     if (!soft) {
-      return 'mono';
+      if (look === 'faint') {
+        return 'muted';
+      } else if (look === 'link') {
+        return 'primary';
+      } else {
+        return 'mono';
+      }
     }
+
     switch (look) {
       case 'primary':
       case 'hero':
@@ -65,6 +70,7 @@ function BaseButton(
         return;
     }
   }, [iconColor, look, soft]);
+
   return (
     <Tag ref={ref} className={styles.base({ className })} {...mergeProps(props, focusProps)}>
       {IconBefore && (

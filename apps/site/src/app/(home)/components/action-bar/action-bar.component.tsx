@@ -21,7 +21,7 @@ export function ActionBar() {
             <GELLogo className="text-gel-text mb-2 block h-3 w-[45px]" />
             <p className="mb-1 flex items-end">
               Design System
-              <ArrowRightIcon className="mr-2 ml-0 md:mr-4 md:ml-2" />
+              <ArrowRightIcon className="mr-2 ml-0 md:mr-[1rem] md:ml-2" />
             </p>
           </div>
           <ul role="list" className="flex gap-2">
@@ -38,8 +38,8 @@ export function ActionBar() {
         </div>
         <div className="bg-background-white-pale block sm:hidden">
           <BrandSelect
-            selectedKey={undefined}
-            onSelectionChange={() => {
+            value={undefined}
+            onChange={() => {
               return;
             }}
             aria-label="Change brand"

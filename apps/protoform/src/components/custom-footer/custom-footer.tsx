@@ -4,15 +4,12 @@ import { Footer, Link } from '@westpac/ui';
 import { SecurityIcon } from '@westpac/ui/icon';
 import { clsx } from 'clsx';
 
-import { useSidebar } from '../sidebar/context';
-
-export function CustomFooter() {
-  const { open } = useSidebar();
+export function CustomFooter({ isSidebarOpen }: { isSidebarOpen?: boolean }) {
   return (
     <Footer
       brand="wbc"
       className={clsx('relative bottom-0 z-10 w-full border-t-border-muted-soft bg-white pb-0', {
-        'md:w-[calc(100%-301px)]': open,
+        'md:w-[calc(100%-301px)]': isSidebarOpen,
       })}
       hideLogo
     >
