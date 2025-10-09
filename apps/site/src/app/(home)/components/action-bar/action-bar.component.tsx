@@ -38,8 +38,8 @@ export function ActionBar() {
         </div>
         <div className="bg-background-white-pale block sm:hidden">
           <BrandSelect
-            selectedKey={undefined}
-            onSelectionChange={() => {
+            value={undefined}
+            onChange={() => {
               return;
             }}
             aria-label="Change brand"

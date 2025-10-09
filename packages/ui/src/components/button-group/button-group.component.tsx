@@ -71,6 +71,7 @@ export const ButtonGroupContext = createContext<ButtonGroupContextState>({
     commitValidation: function (): void {
       throw new Error(FUNCTION_NOT_IMPLEMENTED);
     },
+    defaultSelectedValue: null,
   },
 });
 

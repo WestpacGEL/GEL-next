@@ -6,6 +6,7 @@ export const styles = tv({
     wrapper: 'pt-3 max-md:px-2 max-md:pb-3 md:px-4 md:pb-4',
     topRow: 'text-text-muted',
     link: 'float-right block',
+    logoWrapper: 'flex justify-end',
   },
   variants: {
     offsetSidebar: {

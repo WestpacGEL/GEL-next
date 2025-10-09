@@ -76,6 +76,7 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
     commitValidation: function (): void {
       throw new Error(FUNCTION_NOT_IMPLEMENTED);
     },
+    defaultValue: [],
   },
 });
 export function CheckboxGroup({

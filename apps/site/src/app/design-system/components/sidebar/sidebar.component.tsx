@@ -103,7 +103,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
               <Logo brand={brand} />
             </Link>
             <div className="border-b-border-muted-soft border-b">
-              <SidebarSelect selectedKey={brand} onSelectionChange={handleChange} aria-label="Change brand">
+              <SidebarSelect value={brand} onChange={handleChange} aria-label="Change brand">
                 {BANK_OPTIONS.map(({ icon: Icon, designSystemPageClasses, key, label }) => (
                   <SidebarSelect.Option key={key} textValue={label}>
                     <div className="flex w-full items-center justify-between">

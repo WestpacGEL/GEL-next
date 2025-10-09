@@ -1,3 +1,3 @@
-import { AriaCalendarProps, DateValue } from 'react-aria';
+import { AriaCalendarProps, type DateValue } from 'react-aria';
 
 export type CalendarProps<T extends DateValue = DateValue> = AriaCalendarProps<T>;

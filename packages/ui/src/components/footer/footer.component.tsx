@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useFocusRing } from 'react-aria';
 
 import { VisuallyHidden } from '../index.js';
