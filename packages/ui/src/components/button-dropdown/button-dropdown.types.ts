@@ -7,6 +7,7 @@ import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 import { ButtonProps } from '../button/index.js';
 
 import { styles } from './button-dropdown.styles.js';
+import { ButtonDropdownPanelProps } from './components/button-dropdown-panel/button-dropdown-panel.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -48,4 +49,5 @@ export type ButtonDropdownProps = {
    */
   placement?: Placement;
 } & ButtonHTMLAttributes<Element> &
-  Pick<ButtonProps, 'size' | 'iconBefore' | 'block'>;
+  Pick<ButtonProps, 'size' | 'iconBefore' | 'block'> &
+  Pick<ButtonDropdownPanelProps, 'shouldFlip'>;

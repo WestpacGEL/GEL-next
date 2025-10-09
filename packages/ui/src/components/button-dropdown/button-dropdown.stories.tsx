@@ -247,7 +247,7 @@ export const DropdownWithHeadingsAndContent = () => (
 );
 
 /**
- * > RagioGroup
+ * > RadioGroup
  */
 export const RadioGroupExample = () => {
   return (
@@ -264,4 +264,27 @@ export const RadioGroupExample = () => {
       <Button>Test</Button>
     </div>
   );
+};
+
+/*
+ * > Button fixed to the bottom of the viewport so the dropdown must flip upward.
+ */
+export const DropdownAtBottomFlipsUp: Story = {
+  parameters: { layout: 'fullscreen' },
+  render: () => (
+    <div style={{ position: 'fixed', bottom: 8, left: '50%', transform: 'translateX(-50%)' }}>
+      <ButtonDropdown text="Flips up" open shouldFlip look="primary">
+        <List type="link" spacing="medium">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <ListItem key={i} href="#">
+              Menu item {i + 1}
+            </ListItem>
+          ))}
+        </List>
+        <p className="text-neutral-600 mt-2 text-sm">
+          There is no space below the button so the popover should appear above.
+        </p>
+      </ButtonDropdown>
+    </div>
+  ),
 };

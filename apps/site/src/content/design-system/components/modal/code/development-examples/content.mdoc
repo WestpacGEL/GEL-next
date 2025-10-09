@@ -5,7 +5,8 @@
   const state = useOverlayTriggerState({});
   return (
     <>
-      <Modal isDismissable state={state} aria-label="Modal heading" title="Title" body>
+      {/* backdropStyle used to for inset so modal appears centered while sidebar open */}
+      <Modal backdropStyle="lg:left-[18.75rem]" isDismissable state={state} aria-label="Modal heading" title="Title" body>
         ‘It was much pleasanter at home’, thought poor Alice, ‘when one wasn’t always growing larger and smaller, and
         being ordered about by mice and rabbits. I almost wish I hadn’t gone down that rabbit-hole — and yet — and yet —
         it’s rather curious, you know, this sort of life! I do wonder what can have happened to me! When I used to read
@@ -44,7 +45,8 @@
         { size: 'lg', label: 'Large' },
       ].map(({ size, label }: { size: string; label: string }) => (
         <Fragment key={size}>
-          <Modal isDismissable size={size} state={states[size as 'sm' | 'md' | 'lg']} title="Sudden and magnificent">
+          {/* backdropStyle used to for inset so modal appears centered while sidebar open */}
+          <Modal isDismissable backdropStyle="lg:left-[18.75rem]" size={size} state={states[size as 'sm' | 'md' | 'lg']} title="Sudden and magnificent">
             <ModalBody>
               <p>
                 The line of the horizon was clear and hard against the sky, and in one particular quarter it showed
@@ -76,7 +78,8 @@
 
   return (
     <Fragment>
-      <Modal state={state} title="Title" isDismissable={true}>
+      {/* backdropStyle used to for inset so modal appears centered while sidebar open */}
+      <Modal backdropStyle="lg:left-[18.75rem]" state={state} title="Title" isDismissable={true}>
         <ModalBody>I'm children</ModalBody>
         <ModalFooter
           primaryLabel="Label"
@@ -101,7 +104,8 @@
 
   return (
     <Fragment>
-      <Modal isKeyboardDismissDisabled state={state} title="Modal title">
+      {/* backdropStyle used to for inset so modal appears centered while sidebar open */}
+      <Modal backdropStyle="lg:left-[18.75rem]" isKeyboardDismissDisabled state={state} title="Modal title">
         <ModalBody>I'm children</ModalBody>
         <ModalFooter
           primaryLabel="Label"

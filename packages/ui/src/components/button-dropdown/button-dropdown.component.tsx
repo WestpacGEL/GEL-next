@@ -27,6 +27,7 @@ export function ButtonDropdown({
   block = false,
   portalContainer,
   placement = 'bottom start',
+  shouldFlip,
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const panelId = useId();
@@ -101,6 +102,7 @@ export function ButtonDropdown({
           id={panelId}
           portalContainer={portalContainer || brandContainer}
           {...overlayProps}
+          shouldFlip={shouldFlip}
         >
           {children}
         </ButtonDropdownPanel>

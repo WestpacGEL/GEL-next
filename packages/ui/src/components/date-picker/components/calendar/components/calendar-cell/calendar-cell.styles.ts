@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     base: 'flex items-center justify-center',
-    text: 'text-text-body size-6 rounded-full border border-[transparent] text-center leading-[2.125rem]',
+    text: 'text-text-body size-[2.375rem] rounded-full border border-[transparent] text-center leading-[2.25rem]',
   },
   variants: {
     isDisabled: {

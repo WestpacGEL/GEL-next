@@ -12,6 +12,7 @@ export function TabsTabPanel({
   id,
   keepMounted = false,
   justify,
+  orientation,
   ...props
 }: TabsTabPanelProps) {
   const ref = useRef(null);
@@ -28,7 +29,7 @@ export function TabsTabPanel({
     <div
       {...mergeProps(tabPanelProps, focusProps)}
       ref={ref}
-      className={styles({ className, look, isFocused, justify })}
+      className={styles({ className, look, isFocused, justify, orientation })}
       hidden={!isSelected}
       aria-hidden={!isSelected}
     >

@@ -11,7 +11,7 @@ export default function Home() {
       <ul className="flex w-1/2 flex-col gap-5">
         <div className="flex flex-col gap-2">
           <label className="font-bold">Select brand</label>
-          <div className="w-[250px] h-[250px] bg-surface-primary" />
+          <div className="bg-surface-primary h-[250px] w-[250px]" />
           <select value={activeThemeKey} onChange={e => setTheme(e.target.value as BrandKey)} className="border p-2">
             <option value="wbc">Westpac</option>
             <option value="stg">St. George</option>

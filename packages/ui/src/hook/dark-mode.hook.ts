@@ -6,7 +6,7 @@ export function useDarkMode() {
   }, []);
 
   const getMode = useCallback(() => {
-     return document.querySelector('[data-theme]')?.getAttribute('data-theme') || 'light';
+    return document.querySelector('[data-theme]')?.getAttribute('data-theme') || 'light';
   }, []);
 
   const getBrandContainer = useCallback(() => {

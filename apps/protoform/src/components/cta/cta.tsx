@@ -19,7 +19,7 @@ export function Cta({
   tertiaryOnClick?: () => void;
 }) {
   return (
-    <div className="flex gap-2 pb-9 pt-5 max-md:flex-col">
+    <div className="flex gap-2 pb-10 pt-5 max-md:flex-col">
       <Button size="large" look="primary" className="md:px-2.5" onClick={primaryOnClick} type={primaryType}>
         {children}
       </Button>
@@ -29,7 +29,7 @@ export function Cta({
         </Button>
       )}
       {tertiary && (
-        <Button size="large" className="no-underline" type="button" look="link" onClick={tertiaryOnClick}>
+        <Button size="large" type="button" look="link" onClick={tertiaryOnClick}>
           {tertiary}
         </Button>
       )}

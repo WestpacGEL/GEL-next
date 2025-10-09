@@ -17,11 +17,8 @@ export function ButtonDropdownPanel({
   ...props
 }: ButtonDropdownPanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
-  const { popoverProps } = usePopover(
-    { popoverRef, shouldFlip: false, isNonModal: true, shouldCloseOnInteractOutside: () => false, ...props },
-    state,
-  );
-  const { isFocused } = useFocusRing({ autoFocus: true });
+  const { popoverProps } = usePopover({ popoverRef, isNonModal: true, ...props }, state);
+  const { isFocused } = useFocusRing();
   const styles = panelStyles({ isFocused });
   const width = props.triggerRef.current?.getBoundingClientRect().width;
 

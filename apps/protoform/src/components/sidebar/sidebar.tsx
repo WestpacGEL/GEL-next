@@ -6,14 +6,13 @@ import { CloseIcon, MoreVertIcon } from '@westpac/ui/icon';
 import { clsx } from 'clsx';
 import throttle from 'lodash.throttle';
 import { usePathname } from 'next/navigation';
-import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { useSidebar } from './context';
 
 export function Sidebar({ children }: { children?: ReactNode }) {
   const { open, setOpen, ropeData, ropeStep, sidebarScrolled, setSidebarScrolled } = useSidebar();
   const [scrolled, setScrolled] = useState(false);
-  const [totalSteps, setTotalSteps] = useState(0);
   const [isMaxWidth, setIsMaxWidth] = useState(true);
   const sidebarContent = useRef<HTMLDivElement>(null);
 
@@ -60,9 +59,10 @@ export function Sidebar({ children }: { children?: ReactNode }) {
 
     window.addEventListener('resize', updateOpen);
     return () => window.removeEventListener('resize', updateOpen);
-  }, [ropeData, setOpen, updateOpen]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  useEffect(() => {
+  const totalSteps = useMemo(() => {
     const ropeType = ropeData && ropeData[0].type;
     let stepCount = 0;
     if (ropeData) {
@@ -72,11 +72,11 @@ export function Sidebar({ children }: { children?: ReactNode }) {
         } else if (ropeType === 'group') {
           stepCount += 1;
         } else {
-          stepCount += ropeData.length;
+          stepCount++;
         }
       });
     }
-    setTotalSteps(stepCount);
+    return stepCount;
   }, [ropeData]);
 
   return (
@@ -93,7 +93,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
             <Button
               look="link"
               iconAfter={MoreVertIcon}
-              className="typography-body-10 no-underline"
+              className="typography-body-10 px-0 no-underline"
               onClick={() => setOpen(true)}
             >
               Show all steps

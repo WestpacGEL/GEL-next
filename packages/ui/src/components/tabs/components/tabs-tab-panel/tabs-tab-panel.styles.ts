@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'bg-background-white-pale text-text-body flex-1 rounded-b-2xl p-4',
+  base: 'bg-background-white-pale text-text-body flex-1 p-4',
   variants: {
     look: {
       default: 'border-border-muted-soft border',
@@ -12,6 +12,10 @@ export const styles = tv({
     },
     justify: {
       false: 'rounded-tr-2xl',
+    },
+    orientation: {
+      vertical: 'rounded-r-2xl',
+      horizontal: 'rounded-b-2xl',
     },
   },
 });
