@@ -77,6 +77,7 @@ export function Tabs({
           state={state}
           justify={justify}
           keepMounted={(item.props as TabsTabPanelProps)?.keepMounted}
+          orientation={resolvedOrientation}
         />
       ))}
     </div>
