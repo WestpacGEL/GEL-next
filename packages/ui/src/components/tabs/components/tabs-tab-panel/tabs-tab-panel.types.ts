@@ -33,6 +33,6 @@ export type TabsTabPanelProps<T = object> = {
   /**
    * orientation of the tabs
    */
-  orientation?: TabsProps['orientation'];
+  orientation?: 'horizontal' | 'vertical';
 } & AriaTabPanelProps &
   HTMLAttributes<Element>;
