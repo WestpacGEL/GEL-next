@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <dimen name="borderRadiusRoundedNone">0</dimen>
+  <dimen name="borderRadiusRoundedSm">3</dimen>
+  <dimen name="borderRadiusRoundedMd">4</dimen>
+  <dimen name="borderRadiusRoundedLg">5</dimen>
+  <dimen name="borderRadiusRoundedXl">6</dimen>
+  <dimen name="borderRadiusRounded2xl">8</dimen>
+  <dimen name="borderRadiusRounded3xl">12</dimen>
+  <dimen name="borderRadiusRounded4xl">16</dimen>
+  <dimen name="borderRadiusRounded5xl">24</dimen>
+  <dimen name="borderRadiusRoundedFull">999</dimen>
+</resources>

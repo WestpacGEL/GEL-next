@@ -13,11 +13,12 @@
     "./constants": "./dist/constants/index.js"
   },
   "devDependencies": {
+    "fs-extra": "~11.3.2",
     "handlebars": "~4.7.8",
     "postcss": "^8.5.3",
+    "style-dictionary": "~5.0.4",
     "tailwindcss": "^4.1.12",
-    "typescript": "~5.9.2",
-    "style-dictionary": "~5.0.4"
+    "typescript": "~5.9.2"
   },
   "scripts": {
     "clean": "shx rm -rf dist",
