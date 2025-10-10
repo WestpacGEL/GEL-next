@@ -20,8 +20,8 @@ function kebabToCamel(str) {
   return str
     .split('-') // split on dashes
     .map((word, index) => {
-      if(index === 0){
-        return word.charAt(0).toLowerCase() + word.slice(1).toLowerCase();  
+      if (index === 0) {
+        return word.charAt(0).toLowerCase() + word.slice(1).toLowerCase();
       }
       // uppercase first letter, lowercase the rest
       return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
@@ -350,7 +350,7 @@ StyleDictionary.registerFormat({
         output += `  public static let ${primitiveToken.name} = ${primitiveToken.$value}\n`;
       });
       output += '}\n';
-  
+
       output += '\n\n';
     }
 
@@ -454,14 +454,14 @@ StyleDictionary.registerFormat({
     let output = '';
     output += `// Do not edit directly, this file was auto-generated.\n\n`;
     output += `import UIKit \n\n`;
-    
-    if(enumName === 'AllBrands'){
+
+    if (enumName === 'AllBrands') {
       output += `public enum ${primitiveDimensionEnum} {\n`;
       primitiveTokens.forEach(primitiveToken => {
         output += `  public static let ${primitiveToken.name} = ${primitiveToken.$value}\n`;
       });
       output += '}\n';
-  
+
       output += '\n\n';
     }
 
@@ -499,6 +499,172 @@ StyleDictionary.registerFormat({
     });
     output += '}\n';
 
+    return output;
+  },
+});
+
+StyleDictionary.registerFormat({
+  name: 'android/colors-custom',
+  format: function ({ dictionary, options: { brandName } }) {
+    const primitiveTokens = dictionary.allTokens
+      .filter(t => !(t.path.includes('light-mode') || t.path.includes('dark-mode')) && t.$type === 'color')
+      .map(token => {
+        return {
+          ...token,
+          name: generateNameForIOS(token.key),
+        };
+      });
+
+    const lightTokens = dictionary.allTokens
+      .filter(t => t.path.includes('light-mode') && t.$type === 'color')
+      .map(current => {
+        let tokenName = generateNameForIOS(current.key);
+        if (brandName !== 'AllBrands') {
+          let [, splittedTokenName] = tokenName.split('LightMode');
+          const tokenNamePieces = splitByUppercase(splittedTokenName);
+          tokenNamePieces.splice(1, 1);
+          tokenName = [brandName, ...tokenNamePieces].join('');
+        } else {
+          const tokenNamePieces = splitByUppercase(tokenName);
+          tokenNamePieces.splice(4, 1);
+          tokenName = [brandName, ...tokenNamePieces].join('').replace('Tokens', '');
+        }
+        return {
+          ...current,
+          name: tokenName,
+        };
+      });
+
+    const darkTokens = dictionary.allTokens
+      .filter(t => t.path.includes('dark-mode') && t.$type === 'color')
+      .map(current => {
+        let tokenName = generateNameForIOS(current.key);
+        if (brandName !== 'AllBrands') {
+          let [, splittedTokenName] = tokenName.split('DarkMode');
+          const tokenNamePieces = splitByUppercase(splittedTokenName);
+          tokenNamePieces.splice(1, 1);
+          tokenName = [brandName, ...tokenNamePieces].join('');
+        } else {
+          const tokenNamePieces = splitByUppercase(tokenName);
+          tokenNamePieces.splice(4, 1);
+          tokenName = [brandName, ...tokenNamePieces].join('').replace('Tokens', '');
+        }
+        return {
+          ...current,
+          name: tokenName,
+        };
+      });
+
+    const primitiveDimensionEnum = `${brandName}PrimitivesDimension`;
+    let output = '';
+    output += '<?xml version="1.0" encoding="UTF-8"?>\n\n';
+    output += '<!--\n';
+    output += '  Do not edit directly, this file was auto-generated.\n';
+    output += '-->\n';
+    output += '<resources>\n';
+
+    if (brandName === 'AllBrands') {
+      output += `public enum ${primitiveDimensionEnum} {\n`;
+      primitiveTokens.forEach(primitiveToken => {
+        output += `  public static let ${primitiveToken.name} = ${primitiveToken.$value}\n`;
+      });
+      output += '}\n';
+
+      output += '\n\n';
+    }
+
+    lightTokens.forEach(lightToken => {
+      output += `  <color name="${lightToken.name}">${lightToken.$value}</color>\n`;
+    });
+
+    darkTokens.forEach(darkToken => {
+      output += `  <color name="${darkToken.name}">${darkToken.$value}</color>\n`;
+    });
+
+    output += '</resources>\n';
+    return output;
+  },
+});
+
+StyleDictionary.registerFormat({
+  name: 'android/dimens-custom',
+  format: function ({ dictionary, options: { brandName } }) {
+    const primitiveTokens = dictionary.allTokens
+      .filter(t => !(t.path.includes('light-mode') || t.path.includes('dark-mode')) && t.$type === 'color')
+      .map(token => {
+        return {
+          ...token,
+          name: generateNameForIOS(token.key),
+        };
+      });
+
+    const lightTokens = dictionary.allTokens
+      .filter(t => t.path.includes('light-mode') && t.$type === 'color')
+      .map(current => {
+        let tokenName = generateNameForIOS(current.key);
+        if (brandName !== 'AllBrands') {
+          let [, splittedTokenName] = tokenName.split('LightMode');
+          const tokenNamePieces = splitByUppercase(splittedTokenName);
+          tokenNamePieces.splice(1, 1);
+          tokenName = [brandName, ...tokenNamePieces].join('');
+        } else {
+          const tokenNamePieces = splitByUppercase(tokenName);
+          tokenNamePieces.splice(4, 1);
+          tokenName = [brandName, ...tokenNamePieces].join('').replace('Tokens', '');
+        }
+        return {
+          ...current,
+          name: tokenName,
+        };
+      });
+
+    const darkTokens = dictionary.allTokens
+      .filter(t => t.path.includes('dark-mode') && t.$type === 'color')
+      .map(current => {
+        let tokenName = generateNameForIOS(current.key);
+        if (brandName !== 'AllBrands') {
+          let [, splittedTokenName] = tokenName.split('DarkMode');
+          const tokenNamePieces = splitByUppercase(splittedTokenName);
+          tokenNamePieces.splice(1, 1);
+          tokenName = [brandName, ...tokenNamePieces].join('');
+        } else {
+          const tokenNamePieces = splitByUppercase(tokenName);
+          tokenNamePieces.splice(4, 1);
+          tokenName = [brandName, ...tokenNamePieces].join('').replace('Tokens', '');
+        }
+        return {
+          ...current,
+          name: tokenName,
+        };
+      });
+
+    const primitiveDimensionEnum = `${brandName}PrimitivesDimension`;
+    let output = '';
+    output += '<?xml version="1.0" encoding="UTF-8"?>\n\n';
+    output += '<!--\n';
+    output += '  Do not edit directly, this file was auto-generated.\n';
+    output += '-->\n';
+    output += '<resources>\n';
+
+    if (brandName === 'AllBrands') {
+      output += `public enum ${primitiveDimensionEnum} {\n`;
+      primitiveTokens.forEach(primitiveToken => {
+        output += `  public static let ${primitiveToken.name} = ${primitiveToken.$value}\n`;
+      });
+      output += '}\n';
+
+      output += '\n\n';
+    }
+
+    lightTokens.forEach(lightToken => {
+      output += `  <dimen name="${lightToken.name}">${lightToken.$value}</dimen>\n`;
+    });
+
+    darkTokens.forEach(darkToken => {
+      output += `  <dimen name="${darkToken.name}">${darkToken.$value}</dimen>\n`;
+    });
+
+    output += '</resources>\n';
     return output;
   },
 });
@@ -889,22 +1055,26 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           files: [
             {
               destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values/${brandName}_colors.xml`,
-              format: 'android/colors',
+              format: 'android/colors-custom',
+              options: { brandName },
               filter: 'light-mode',
             },
             {
               destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values-night/${brandName}_colors.xml`,
-              format: 'android/colors',
+              format: 'android/colors-custom',
+              options: { brandName },
               filter: 'dark-mode',
             },
             {
               destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values/${brandName}_dimens.xml`,
-              format: 'android/dimens',
+              format: 'android/dimens-custom',
+              options: { brandName },
               filter: 'light-mode',
             },
             {
               destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values-night/${brandName}_dimens.xml`,
-              format: 'android/dimens',
+              format: 'android/dimens-custom',
+              options: { brandName },
               filter: 'dark-mode',
             },
           ],
