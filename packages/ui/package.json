@@ -16,6 +16,9 @@
     ".": {
       "default": "./dist/index.js"
     },
+    "./utils": {
+      "default": "./dist/utils/index.js"
+    },
     "./component-type.json": {
       "default": "./dist/component-type.json"
     },
