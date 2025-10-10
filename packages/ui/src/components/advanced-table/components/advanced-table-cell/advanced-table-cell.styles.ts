@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    td: 'border-b border-border bg-white p-2',
+    td: 'border-b border-border p-2 outline-offset-[-1px] focus:outline-focus',
   },
   variants: {
     scrollableRows: {
@@ -13,6 +13,11 @@ export const styles = tv({
     scrollableColumns: {
       true: {
         td: '',
+      },
+    },
+    isPinned: {
+      true: {
+        td: 'bg-white',
       },
     },
   },

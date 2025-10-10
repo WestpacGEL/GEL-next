@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    bodyRow: '',
+    bodyRow: 'outline-offset-[-1px] focus:outline-focus',
   },
   variants: {
     scrollableRows: {

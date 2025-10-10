@@ -1,5 +1,5 @@
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 
 import { AdvancedTableContext } from '../../advanced-table.component.js';
 import { AdvancedTableRow } from '../advanced-table-row/advanced-table-row.component.js';
@@ -11,6 +11,7 @@ export function AdvancedTableBody<T>({ table, tableRef }: AdvancedTableBodyProps
   const { scrollableRows, scrollableColumns } = useContext(AdvancedTableContext);
   const styles = AdvancedTableBodyStyles({ scrollableRows, scrollableColumns });
   const { rows } = table.getRowModel();
+  const bodyRef = useRef(null);
 
   const rowVirtualizer = useVirtualizer<HTMLDivElement, HTMLTableRowElement>({
     count: rows.length,
@@ -28,6 +29,7 @@ export function AdvancedTableBody<T>({ table, tableRef }: AdvancedTableBodyProps
     <tbody
       className={styles.tableBody()}
       style={{ width: table.getTotalSize(), height: rowVirtualizer.getTotalSize() }}
+      ref={bodyRef}
     >
       {rowVirtualizer.getVirtualItems().map(virtualRow => {
         return (
@@ -41,9 +43,9 @@ export function AdvancedTableBody<T>({ table, tableRef }: AdvancedTableBodyProps
       })}
     </tbody>
   ) : (
-    <tbody className={styles.tableBody()}>
+    <tbody className={styles.tableBody()} ref={bodyRef}>
       {table.getRowModel().rows.map(row => (
-        <AdvancedTableRow key={row.id} row={row} />
+        <AdvancedTableRow key={row.id} row={row} tbodyRef={bodyRef} />
       ))}
     </tbody>
   );

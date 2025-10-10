@@ -49,8 +49,6 @@ export const makeColumns = (num: number) =>
     return {
       key: i.toString(),
       title: 'Column ' + i.toString(),
-      // eslint-disable-next-line sonarjs/pseudo-random
-      size: Math.floor(Math.random() * 150) + 100,
     };
   });
 

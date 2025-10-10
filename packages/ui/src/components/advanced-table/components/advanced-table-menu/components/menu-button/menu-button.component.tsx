@@ -35,6 +35,7 @@ export function MenuButton<T extends object>({
             />
           </div>
           <MenuList {...props} {...menuProps}>
+            <Item key="note">NOTE: Below items don't do anything, just example</Item>
             <Item key="sort-asc">Sort Ascending</Item>
             <Item key="sort-desc">Sort Descending</Item>
             <Item key="group">Group Column</Item>

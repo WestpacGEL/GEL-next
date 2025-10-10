@@ -7,7 +7,7 @@ import { columnsExample, dataExample } from './story-utils/otherData.js';
 
 import { AdvancedColumnProps, AdvancedTable } from './index.js';
 
-const multLevelColumns: AdvancedColumnProps<AdvancedPerson>[] = [
+const multiLevelColumns: AdvancedColumnProps<AdvancedPerson>[] = [
   {
     key: 'name',
     title: 'Name',
@@ -35,12 +35,21 @@ const multLevelColumns: AdvancedColumnProps<AdvancedPerson>[] = [
 ];
 
 const columns: AdvancedColumnProps<AdvancedPerson>[] = [
-  { key: 'firstName', title: 'First Name', editable: true },
+  { key: 'firstName', title: 'First Name' },
   { key: 'lastName', title: 'Last Name' },
   { key: 'age', title: 'Age' },
   { key: 'visits', title: 'Visits' },
   { key: 'status', title: 'Status' },
   { key: 'progress', title: 'Profile Progress' },
+];
+
+const editableColumns: AdvancedColumnProps<AdvancedPerson>[] = [
+  { key: 'firstName', title: 'First Name', editable: true },
+  { key: 'lastName', title: 'Last Name', editable: true },
+  { key: 'age', title: 'Age', editable: true },
+  { key: 'visits', title: 'Visits', editable: true },
+  { key: 'status', title: 'Status', editable: true },
+  { key: 'progress', title: 'Profile Progress', editable: true },
 ];
 
 const meta: Meta<typeof AdvancedTable> = {
@@ -51,7 +60,7 @@ const meta: Meta<typeof AdvancedTable> = {
 };
 
 const defaultData = makePersonData(100);
-const expandableData = makePersonData(100, 2);
+const expandableData = makePersonData(100, 10, 10);
 
 const manyCols = makeColumns(100);
 const dataForCols = makeDataFromCols(100, manyCols);
@@ -79,14 +88,33 @@ export const ExpandableRows: Story = {
   render: () => <AdvancedTable data={expandableData} columns={columns} subRowKey="subRows" />,
 };
 
+export const EditableCells = () => {
+  const [localData, setLocalData] = useState(defaultData);
+
+  return <AdvancedTable data={localData} columns={editableColumns} onDataChange={setLocalData} />;
+};
+
+export const ExpandableRowsNotPaginating: Story = {
+  render: () => (
+    <AdvancedTable
+      data={expandableData}
+      columns={columns}
+      subRowKey="subRows"
+      tableOptions={{ paginateExpandedRows: false }}
+    />
+  ),
+};
+
 export const Grouping: Story = {
   render: () => <AdvancedTable data={defaultData} columns={columns} enableGrouping />,
 };
 
-export const ExampleCopy: Story = {
-  render: () => (
-    <AdvancedTable data={dataExample} enableRowSelection columns={columnsExample} enableResizing enableSorting />
-  ),
+export const MultiLevelColumnHeader: Story = {
+  render: () => <AdvancedTable data={defaultData} columns={multiLevelColumns} />,
+};
+
+export const Filter: Story = {
+  render: () => <AdvancedTable data={defaultData} columns={columns} enableColumnFilter />,
 };
 
 export const ReorderColumns: Story = {
@@ -102,24 +130,54 @@ export const ScrollableRows: Story = {
 };
 
 export const ScrollableRowsAndColumns: Story = {
+  render: () => <AdvancedTable data={dataForCols} columns={manyCols} scrollableColumns scrollableRows />,
+};
+
+export const ScrollableRowsAndColumnsWithDifferentWidthAndHeight: Story = {
   render: () => (
     <AdvancedTable
       data={dataForCols}
       columns={manyCols}
-      enableResizing
-      enableColumnPinning
-      enableSorting
-      enableRowSelection
       scrollableColumns
       scrollableRows
-      subRowKey="subRows"
+      fixedHeight="700px"
+      fixedWidth="500px"
     />
   ),
 };
 
-export const TestControlled = () => {
-  const [testData, setTestData] = useState(defaultData);
+export const PinnableColumns: Story = {
+  render: () => (
+    <AdvancedTable data={dataForCols} columns={manyCols} scrollableColumns scrollableRows enableColumnPinning />
+  ),
+};
+
+export const KitchenSink: Story = {
+  render: () => (
+    <AdvancedTable
+      data={dataForCols}
+      columns={manyCols}
+      enableRowSelection
+      enableSorting
+      enableResizing
+      enableColumnPinning
+      enableColumnFilter
+      enableColumnReordering
+      enableGrouping
+      scrollableColumns
+      scrollableRows
+    />
+  ),
+};
+
+export const Controlled = () => {
   const [, setTable] = useState<Table<AdvancedPerson>>();
 
-  return <AdvancedTable data={testData} columns={columns} onDataChange={setTestData} onTableReady={setTable} />;
+  return <AdvancedTable data={defaultData} columns={columns} onTableReady={setTable} />;
+};
+
+export const ExampleCopy: Story = {
+  render: () => (
+    <AdvancedTable data={dataExample} enableRowSelection columns={columnsExample} enableResizing enableSorting />
+  ),
 };
