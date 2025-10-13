@@ -8,6 +8,7 @@ export const styles = tv(
       headerTitleWrapper: 'flex-1 pr-2 text-left',
       indicator: 'size-3 rotate-90',
       content: '',
+      motionContent: '',
     },
     variants: {
       look: {
@@ -30,6 +31,14 @@ export const styles = tv(
         },
         false: {
           content: 'hidden',
+        },
+      },
+      isClosed: {
+        true: {
+          motionContent: 'overflow-hidden',
+        },
+        false: {
+          motionContent: 'overflow-visible',
         },
       },
       isDisabled: {
