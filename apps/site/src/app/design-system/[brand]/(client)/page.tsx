@@ -28,7 +28,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
       <Section>
         <SectionHeading>Accessible by design</SectionHeading>
         <Grid>
-          <SectionItem className="flex flex-col gap-2 leading-loose text-text-body">
+          <SectionItem className="text-text-body flex flex-col gap-2 leading-[2]">
             <p>Accessibility and inclusive design is a strong part of the GEL Design System.</p>
             <p>
               The system supports teams to deliver to the Group accessibility commitment, to provide meaningful banking
@@ -47,11 +47,11 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         <SectionHeading>Built on React</SectionHeading>
         <Grid>
           <SectionItem>
-            <p className="mb-5 leading-loose sm:mb-7">
+            <p className="mb-5 leading-[2] sm:mb-7">
               The GEL Design System is now using React. You can still access HTML/CSS but with React at its core we can
               showcase so much more and deliver even higher-quality, more accessible code.
             </p>
-            <h3 className="typography-body-8 mb-5 border-b border-b-border-hero pb-2 font-bold text-text-heading">
+            <h3 className="typography-body-8 border-b-border-hero text-text-heading mb-5 border-b pb-2 font-bold">
               Who else is using React?
             </h3>
             <Grid tag="ul" className="items-center gap-y-4 sm:gap-x-4 sm:gap-y-8">
@@ -75,22 +75,18 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
         <SectionHeading>Downloads &amp; links</SectionHeading>
         <Grid className="mb-5 sm:mb-9">
           <SectionItem className="flex flex-col gap-2">
-            <p className="leading-loose">
-              Design on-brand with greater efficiency and accuracy using the Figma UI Kit.
-            </p>
-            <p className="leading-loose">
-              Visit GitHub to follow Westpac GEL Design System code updates and log issues.
-            </p>
+            <p className="leading-[2]">Design on-brand with greater efficiency and accuracy using the Figma UI Kit.</p>
+            <p className="leading-[2]">Visit GitHub to follow Westpac GEL Design System code updates and log issues.</p>
           </SectionItem>
         </Grid>
-        <Grid className="gap-y-4 text-left xsl:gap-x-5 sm:gap-x-8 md:gap-x-10">
+        <Grid className="xsl:gap-x-5 gap-y-4 text-left sm:gap-x-8 md:gap-x-10">
           <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2, md: 2 }} className="xsl:col-start-auto">
-            <h3 className="typography-body-8 border-b border-border-muted-strong pb-3 font-bold sm:mb-2">Downloads</h3>
+            <h3 className="typography-body-8 border-border-muted-strong border-b pb-3 font-bold sm:mb-2">Downloads</h3>
             <ul className="typography-body-10">
-              <li className="border-b border-border-muted-soft">
+              <li className="border-border-muted-soft border-b">
                 <Link
                   href="/articles/figma-libraries"
-                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
+                  className="outline-focus hover:text-text-primary box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
                 >
                   Figma UI Kits
                   <FigmaLogo />
@@ -99,13 +95,13 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
             </ul>
           </GridItem>
           <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2 }} className="xsl:col-start-auto">
-            <h3 className="typography-body-8 border-b border-border-muted-strong pb-3 font-bold sm:mb-2">Links</h3>
+            <h3 className="typography-body-8 border-border-muted-strong border-b pb-3 font-bold sm:mb-2">Links</h3>
             <ul className="typography-body-10">
-              <li className="border-b border-border-muted-soft">
+              <li className="border-border-muted-soft border-b">
                 <Link
                   href="https://github.com/WestpacGEL/GEL-next/"
                   target="_blank"
-                  className="box-border flex min-h-[3.4375rem] items-center justify-between py-4 outline-offset-[3px] outline-focus hover:text-text-primary hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
+                  className="outline-focus hover:text-text-primary box-border flex min-h-[3.4375rem] items-center justify-between py-[1rem] outline-offset-[3px] hover:underline sm:min-h-12 sm:py-1.5 sm:pr-1.5"
                 >
                   Follow Westpac GEL on GitHub
                   <GithubIcon size={{ initial: 'large', lg: 'xlarge' }} color="muted" />

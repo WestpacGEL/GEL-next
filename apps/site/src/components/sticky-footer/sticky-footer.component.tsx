@@ -43,15 +43,15 @@ export function StickyFooter() {
   return (
     <footer className={styles.footer()}>
       <div className="flex items-center">
-        <span className="hidden text-text-body sm:mr-3 sm:inline-block">Talk to us</span>
+        <span className="text-text-body hidden sm:mr-3 sm:inline-block">Talk to us</span>
         <div className={styles.icons()}>
-          <Link href="mailto:gel@westpac.com.au" className="outline-offset-[3px] outline-focus">
+          <Link href="mailto:gel@westpac.com.au" className="outline-focus outline-offset-[3px]">
             <EmailIcon color="muted" />
           </Link>
           <Link
             target="_blank"
             href="https://github.com/WestpacGEL/GEL-next"
-            className="outline-offset-[3px] outline-focus"
+            className="outline-focus outline-offset-[3px]"
           >
             <GithubIcon color="muted" />
           </Link>
@@ -65,7 +65,7 @@ export function StickyFooter() {
         className={styles.button()}
         aria-label="Go to top"
       >
-        <span className="pr-1 text-text-body">Top</span>
+        <span className="text-text-body pr-1">Top</span>
       </Button>
     </footer>
   );

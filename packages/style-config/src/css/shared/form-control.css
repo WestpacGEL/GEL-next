@@ -1,0 +1,79 @@
+/* -------------------------------------------------------------------------- */
+/* Form Control                                                               */
+/* -------------------------------------------------------------------------- */
+@theme inline static {
+  /* Small */
+  --form-control-font-size-small: 0.875rem;
+  --form-control-line-height-small: 1.3rem;
+  --form-control-padding-x-small: 0.5625rem;
+  --form-control-padding-top-small: 0.1875rem;
+  --form-control-padding-bottom-small: 0.25rem;
+  --form-control-border-radius-small: var(--rounded-sm);
+
+  /* Medium */
+  --form-control-font-size-medium: 1rem;
+  --form-control-line-height-medium: 1.5rem;
+  --form-control-padding-x-medium: 0.75rem;
+  --form-control-padding-top-medium: 0.3125rem;
+  --form-control-padding-bottom-medium: 0.3125rem;
+  --form-control-border-radius-medium: var(--rounded-md);
+
+  /* Large */
+  --form-control-font-size-large: 1rem;
+  --form-control-line-height-large: 1.5rem;
+  --form-control-padding-x-large: 0.9375rem;
+  --form-control-padding-top-large: 0.5rem;
+  --form-control-padding-bottom-large: 0.5rem;
+  --form-control-border-radius-large: var(--rounded-lg);
+
+  /* X-Large */
+  --form-control-font-size-xlarge: 1.125rem;
+  --form-control-line-height-xlarge: 1.685rem;
+  --form-control-padding-x-xlarge: 1.125rem;
+  --form-control-padding-top-xlarge: 0.5625rem;
+  --form-control-padding-bottom-xlarge: 0.625rem;
+  --form-control-border-radius-xlarge: var(--rounded-xl);
+}
+
+@utility form-control-* {
+  font-size: --value(--form-control-font-size-*);
+  line-height: --value(--form-control-line-height-*);
+  padding-left: --value(--form-control-padding-x-*);
+  padding-right: --value(--form-control-padding-x-*);
+  padding-top: --value(--form-control-padding-top-*);
+  padding-bottom: --value(--form-control-padding-bottom-*);
+  border-radius: --value(--form-control-border-radius-*);
+}
+
+@utility form-control-disabled {
+  cursor: not-allowed;
+  border-style: dashed;
+  background-color: var(--surface-muted-pale);
+  color: var(--text-muted);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Components                                                                 */
+/* -------------------------------------------------------------------------- */
+@layer components {
+  .form-control {
+    @apply box-border w-fit appearance-none overflow-visible rounded border
+      bg-background-white-pale align-middle text-text-body transition
+      placeholder:font-light placeholder:text-text-body/50 placeholder:opacity-100 border-border-muted-strong outline-none;
+  }
+
+  .linear-gradient-style {
+    @apply flex overflow-hidden bg-surface-muted-faint;
+
+    &::before {
+      @apply block h-full w-full animate-skeleton translate-x-0;
+      content: '';
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.7) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+}

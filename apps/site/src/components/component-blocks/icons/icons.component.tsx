@@ -31,15 +31,15 @@ export const Icons = () => {
 
   return (
     <div>
-      <div className="mb-4 flex flex-wrap gap-3 rounded-md border border-border-muted-soft bg-background-white-pale p-4 align-bottom">
+      <div className="border-border-muted-soft bg-background-white-pale mb-4 flex flex-wrap gap-3 rounded-2xl border p-4 align-bottom">
         <div className="flex w-full shrink-0 grow flex-col items-start sm:w-auto sm:flex-row sm:items-center">
-          <label className="mb-2 mr-4 sm:mb-0" htmlFor="filter-icons">
+          <label className="mr-[1rem] mb-2 sm:mb-0" htmlFor="filter-icons">
             Filter by name
           </label>
           <Input id="filter-icon" value={search} onChange={handleOnChange} className="w-full" />
         </div>
-        <div className="flex w-full flex-col items-start xsl:w-auto sm:flex-row sm:items-center">
-          <label className="mb-2 mr-4 sm:mb-0" htmlFor="icon-look">
+        <div className="xsl:w-auto flex w-full flex-col items-start sm:flex-row sm:items-center">
+          <label className="mr-[1rem] mb-2 sm:mb-0" htmlFor="icon-look">
             Look
           </label>
           <Select id="icon-look" value={look} onChange={handleLookChange} className="w-full sm:w-fit">
@@ -56,13 +56,13 @@ export const Icons = () => {
       </div>
       <Grid>
         <GridItem span={12}>
-          <p className="text-right italic text-text-muted">{foundText}</p>
+          <p className="text-text-muted text-right italic">{foundText}</p>
         </GridItem>
         {filteredIcons.map(({ key, Icon }) => (
           <GridItem key={key} span={{ initial: 12, sm: 3, lg: 2 }}>
-            <div className="mb-2 flex flex-col items-center justify-center rounded-md border border-border-muted-soft bg-background-white-pale px-2 pb-3 pt-6 xsl:mb-4">
+            <div className="border-border-muted-soft bg-background-white-pale xsl:mb-4 mb-2 flex flex-col items-center justify-center rounded-2xl border px-2 pt-6 pb-3">
               <Icon look={look} className="mb-6" color="muted" />
-              <span className="text-[0.6875rem] text-text-muted">{key}</span>
+              <span className="text-text-muted text-[0.6875rem]">{key}</span>
             </div>
           </GridItem>
         ))}

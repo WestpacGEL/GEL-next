@@ -42,7 +42,7 @@ export function DesignContent({
                   block: {
                     ...DOCUMENT_RENDERERS.block,
                     code: props => (
-                      <Code className="mb-5 mt-4" enableLiveCode={false} showResponsiveDemo={!noDemo} {...props} />
+                      <Code className="mt-4 mb-5" enableLiveCode={false} showResponsiveDemo={!noDemo} {...props} />
                     ),
                   },
                 }}

@@ -3,9 +3,9 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     footer:
-      'fixed inset-x-0 z-10 flex h-8 items-center justify-between border-t border-t-border-muted-soft bg-background-white-pale py-1 pl-4 pr-3 leading-none transition-[bottom] duration-[0.4s] ease-[ease]',
+      'border-t-border-muted-soft bg-background-white-pale fixed inset-x-0 z-10 flex h-8 items-center justify-between border-t py-1 pr-3 pl-4 leading-none transition-[bottom] duration-[0.4s] ease-[ease]',
     icons: 'flex gap-2',
-    button: 'no-underline focus-visible:focus-outline',
+    button: 'focus-visible:focus-outline no-underline',
   },
   variants: {
     isDesignSystem: {

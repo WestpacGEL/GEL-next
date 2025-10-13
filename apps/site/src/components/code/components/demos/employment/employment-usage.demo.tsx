@@ -33,7 +33,7 @@ const OccupationSelect = (props: SelectProps) => (
 );
 
 const Wrapper = (props: HTMLAttributes<HTMLDivElement>) => (
-  <div className="border-t border-t-border-muted pt-6" {...props} />
+  <div className="border-t-border-muted border-t pt-6" {...props} />
 );
 
 export const EmploymentSelectFullPattern = ({ showErrors = false }) => {

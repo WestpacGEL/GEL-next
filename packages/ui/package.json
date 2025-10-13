@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "0.47.1",
+  "version": "0.50.3",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -24,6 +24,9 @@
     },
     "./hook": {
       "default": "./dist/hook/index.js"
+    },
+    "./types": {
+      "default": "./dist/types/index.js"
     },
     "./accordion": {
       "default": "./dist/components/accordion/index.js"
@@ -66,6 +69,9 @@
     },
     "./date-picker": {
       "default": "./dist/components/date-picker/index.js"
+    },
+    "./date-picker-beta": {
+      "default": "./dist/components/date-picker-beta/index.js"
     },
     "./error-message": {
       "default": "./dist/components/error-message/index.js"
@@ -276,7 +282,8 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@internationalized/date": "~3.8.2",
+    "@duetds/date-picker": "~1.4.0",
+    "@internationalized/date": "~3.10.0",
     "@react-aria/accordion": "3.0.0-alpha.37",
     "@react-aria/utils": "~3.29.1",
     "@react-spectrum/utils": "~3.11.5",
@@ -284,17 +291,12 @@
     "colorjs.io": "~0.4.5",
     "lodash.throttle": "~4.1.1",
     "motion": "~12.23.12",
-    "react-aria": "~3.41.1",
-    "react-stately": "~3.39.0",
+    "react-aria": "~3.44.0",
+    "react-stately": "~3.42.0",
     "zustand": "~4.5.4"
   },
-  "overrides": {
-    "react-aria": {
-      "@types/react": "$@types/react"
-    }
-  },
   "peerDependencies": {
-    "@internationalized/date": "~3.8.2",
+    "@internationalized/date": "~3.10.0",
     "react": ">=18.2.0",
     "tailwindcss": "~4.1.12",
     "tailwindcss-themer": "~3.1.0"

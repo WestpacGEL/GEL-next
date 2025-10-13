@@ -1,3 +1,5 @@
+'use client';
+
 import { Breakpoint, BREAKPOINTS } from '@westpac/style-config/constants';
 import { useEffect } from 'react';
 import { create } from 'zustand';
@@ -69,7 +71,7 @@ export const useThemeStore = create<BreakpointState>()((set, get) => ({
         listener,
       };
     });
-    set({ mediaQueryListeners: listeners, initialised: true });
+    set({ mediaQueryListeners: listeners, initialised: true, breakpoint: checkBreakpoint() });
   },
   removeListeners: () => {
     get().mediaQueryListeners?.forEach(({ mq, listener }) => {

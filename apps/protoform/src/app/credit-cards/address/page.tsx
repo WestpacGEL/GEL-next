@@ -1,93 +1,105 @@
 'use client';
 
-import { Autocomplete, AutocompleteItem, Form, FormGroup, FormSection, InputGroup, Select } from '@westpac/ui';
-import { useRouter } from 'next/navigation';
-import { FormEvent, useEffect, useState } from 'react';
+import { Autocomplete, AutocompleteItem, Form, FormGroup, InputGroup, Select } from '@westpac/ui';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useCallback, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
 
 import { BackButton } from '@/components/back-button/back-button';
 import { Cta } from '@/components/cta/cta';
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
-import { ErrorValidationAlert, ValidationErrorType } from '@/components/error-validation-alert/error-validation-alert';
+import { ErrorValidationAlert } from '@/components/error-validation-alert/error-validation-alert';
 import { useSidebar } from '@/components/sidebar/context';
 import { defaultError } from '@/constants/form-contsants';
-import { getFormData } from '@/utils/getFormData';
 
 import { useCreditCard } from '../context';
+
+type FormData = {
+  address: string;
+  housingLength: number;
+};
+
+const FIELDS_LABELS = {
+  address: 'Hme address',
+  housingLength: 'How long have you lived there?',
+};
 
 export default function Address() {
   const { setRopeStep } = useSidebar();
   const { data, setData } = useCreditCard();
-  const [addressError, setAddressError] = useState('');
-  const [housingLengthError, setHousingLengthError] = useState('');
-  const [validationErrors, setValidationErrors] = useState<ValidationErrorType[]>([]);
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const { housingLength, address } = getFormData(e.currentTarget) as { address: string; housingLength: string };
-    if (!address || !housingLength) {
-      setAddressError(!address ? defaultError : '');
-      setHousingLengthError(!housingLength ? defaultError : '');
-      setValidationErrors([
-        ...(!address ? [{ id: 'address', label: 'Address' }] : []),
-        ...(!housingLength ? [{ id: 'housingLength', label: 'Housing length' }] : []),
-      ]);
-    } else {
-      setData({ ...data, address, housingLength });
-      router.push('/credit-cards/review-and-submit');
-    }
-  };
-
-  useEffect(() => {
-    setRopeStep(6);
-  }, [setRopeStep]);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid, isSubmitted },
+  } = useForm<FormData>();
+  const searchParams = useSearchParams();
+  const isFlattenRope = searchParams.get('flatten');
 
   const router = useRouter();
 
+  const onSubmit = useCallback(
+    (formData: FormData) => {
+      setData({ ...data, ...formData });
+      router.push(`/credit-cards/review-and-submit${isFlattenRope ? '?flatten=true' : ''}`);
+    },
+    [data, isFlattenRope, router, setData],
+  );
+
+  useEffect(() => {
+    setRopeStep(6);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div>
-      <BackButton onClick={() => router.push('/credit-cards/name-and-contact')}>Back to Name & contact</BackButton>
+      <BackButton onClick={() => router.push(`/credit-cards/name-and-contact${isFlattenRope ? '?flatten=true' : ''}`)}>
+        Back to Name & contact
+      </BackButton>
       <CustomHeading
-        groupHeading="Your details"
+        groupHeading={!isFlattenRope && 'Your details'}
         leadText="Tell us more about where you live and how long you've been there."
       >
         Address
       </CustomHeading>
-      {validationErrors.length >= 1 && <ErrorValidationAlert errors={validationErrors} />}
-      <Form id="credit-card" spacing="large" onSubmit={handleSubmit}>
-        <FormSection className="border-none !p-0">
-          <FormGroup>
-            <InputGroup size="large" errorMessage={addressError} instanceId="address">
-              <Autocomplete
-                noOptionsMessage="No options found"
-                label="Search for you home address"
-                hintMessage="Not a PO Box"
-                defaultInputValue={data.address}
-                invalid={!!addressError}
-                name="address"
-              >
-                <AutocompleteItem>123 Fake Street</AutocompleteItem>
-              </Autocomplete>
-            </InputGroup>
-          </FormGroup>
-
-          <FormGroup>
-            <InputGroup
-              label="How long have you lived there?"
-              instanceId="housingLength"
-              errorMessage={housingLengthError}
-              size="large"
+      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
+      <Form id="credit-card" spacing="large" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <FormGroup>
+          <InputGroup size="large" errorMessage={errors.address?.message} instanceId="address">
+            <Autocomplete
+              noOptionsMessage="No options found"
+              label="Search for you home address"
+              hintMessage="Not a PO Box"
+              defaultInputValue={data.address}
+              invalid={!!errors.address?.message}
+              {...register('address', { required: defaultError })}
             >
-              <Select name="housingLength" defaultValue={data.housingLength} invalid={!!housingLengthError}>
-                <option value="">Select</option>
-                <option value="1">1 Year</option>
-                <option value="2">2 Years</option>
-                <option value="3">3 Years</option>
-                <option value="4">4 Years</option>
-                <option value="5">5 Years</option>
-              </Select>
-            </InputGroup>
-          </FormGroup>
-        </FormSection>
+              <AutocompleteItem>123 Fake Street</AutocompleteItem>
+            </Autocomplete>
+          </InputGroup>
+        </FormGroup>
+
+        <FormGroup>
+          <InputGroup
+            label="How long have you lived there?"
+            errorMessage={errors.housingLength?.message}
+            size="large"
+            width={{ initial: 'full', md: 5 }}
+          >
+            <Select
+              defaultValue={data.housingLength}
+              invalid={!!errors.housingLength?.message}
+              {...register('housingLength', { required: defaultError, valueAsNumber: true })}
+              id="housingLength"
+            >
+              <option value="">Select</option>
+              <option value="1">1 Year</option>
+              <option value="2">2 Years</option>
+              <option value="3">3 Years</option>
+              <option value="4">4 Years</option>
+              <option value="5">5 Years</option>
+            </Select>
+          </InputGroup>
+        </FormGroup>
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>

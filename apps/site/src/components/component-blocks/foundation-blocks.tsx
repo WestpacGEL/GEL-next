@@ -43,7 +43,7 @@ export const foundationBlocksComponents = {
   colors: (props: { palette: string }) => <Colors palette={props.palette} />,
   linkList: LinkList,
   designSystemBodyImage: (props: any) => (
-    <div className="mb-5 mt-1">
+    <div className="mt-1 mb-5">
       <Image {...props} />
     </div>
   ),

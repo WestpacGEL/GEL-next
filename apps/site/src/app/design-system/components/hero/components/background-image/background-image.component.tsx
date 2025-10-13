@@ -1,4 +1,4 @@
-import { BrandKey } from '@westpac/ui/tailwind';
+import { BrandKey } from '@westpac/ui/types';
 import { clsx } from 'clsx';
 
 import { styles } from './background-image.styles';

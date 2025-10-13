@@ -71,6 +71,7 @@ export const RadioGroupContext = createContext<RadioGroupContextState>({
     commitValidation: function (): void {
       throw new Error(FUNCTION_NOT_IMPLEMENTED);
     },
+    defaultSelectedValue: null,
   },
 });
 

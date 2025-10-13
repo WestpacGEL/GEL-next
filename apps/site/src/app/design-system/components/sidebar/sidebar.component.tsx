@@ -67,7 +67,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
     <>
       <div
         className={clsx(
-          'fixed top-0 z-[1010] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 bg-background-white-pale text-text-body transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r lg:border-r-border-muted-soft',
+          'bg-background-white-pale text-text-body lg:border-r-border-muted-soft fixed top-0 z-[1010] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r',
           {
             '-translate-x-full': !open, //hide sidebar to the left when closed
           },
@@ -82,28 +82,28 @@ export function Sidebar({ items, brand }: SidebarProps) {
         >
           <div
             className={clsx(
-              'sticky top-0 bg-background-white-pale transition-shadow delay-0 duration-200 ease-[ease]',
+              'bg-background-white-pale sticky top-0 transition-shadow delay-0 duration-200 ease-[ease]',
               {
                 'shadow-[0_2px_5px_rgba(0,0,0,0.3)]': scrolled,
               },
             )}
           >
             <button
-              className="absolute right-1 top-1 block size-6 p-1 outline-focus lg:hidden"
+              className="outline-focus absolute top-1 right-1 block size-6 p-1 lg:hidden"
               onClick={() => setOpen(false)}
               ref={focusRef}
             >
-              <CloseIcon className="block text-text-muted" />
+              <CloseIcon className="text-text-muted block" />
             </button>
             <Link
               href="/"
-              className="flex h-15 items-center px-3 outline-offset-[-1px] outline-focus"
+              className="outline-focus flex h-15 items-center px-3 outline-offset-[-1px]"
               aria-label="GEL home"
             >
               <Logo brand={brand} />
             </Link>
-            <div className="border-b border-b-border-muted-soft">
-              <SidebarSelect selectedKey={brand} onSelectionChange={handleChange} aria-label="Change brand">
+            <div className="border-b-border-muted-soft border-b">
+              <SidebarSelect value={brand} onChange={handleChange} aria-label="Change brand">
                 {BANK_OPTIONS.map(({ icon: Icon, designSystemPageClasses, key, label }) => (
                   <SidebarSelect.Option key={key} textValue={label}>
                     <div className="flex w-full items-center justify-between">
@@ -115,8 +115,8 @@ export function Sidebar({ items, brand }: SidebarProps) {
               </SidebarSelect>
             </div>
           </div>
-          <nav ref={listRef} className="flex-1 overflow-y-auto overflow-x-hidden pb-4 transition-all">
-            <Link href="/" className="block outline-offset-[-1px] outline-focus" aria-label="Back to GEL">
+          <nav ref={listRef} className="flex-1 overflow-x-hidden overflow-y-auto pb-4 transition-all">
+            <Link href="/" className="outline-focus block outline-offset-[-1px]" aria-label="Back to GEL">
               <BackToGelSvg />
             </Link>
             <Navigation items={items} brand={brand} />

@@ -15,16 +15,16 @@ import { type ArticlePageProps } from './article-page.types';
 export function ArticlePage({ article }: ArticlePageProps) {
   return (
     <>
-      <div className="bg-gradient-to-b from-white from-25% to-gel-background">
-        <GridContainer fixed className=" pt-8 xsl:pt-10 sm:pt-11 lg:max-w-gel-lg-container lg:px-10">
-          <Grid className="gap-y-5 xsl:gap-y-6 sm:gap-y-8">
+      <div className="to-gel-background bg-gradient-to-b from-white from-25%">
+        <GridContainer fixed className=" xsl:pt-10 lg:max-w-gel-lg-container pt-8 sm:pt-11 lg:px-10">
+          <Grid className="xsl:gap-y-6 gap-y-5 sm:gap-y-8">
             <div className="col-span-12">
-              <h1 className="typography-site-6 mb-2 font-black !leading-[1.1] tracking-[-1px] xsl:typography-site-3 xsl:mb-3">
+              <h1 className="typography-site-6 xsl:typography-site-3 xsl:mb-3 mb-2 !leading-[1.1] font-black tracking-[-1px]">
                 {article.name}
               </h1>
               <p className="typography-site-9 text-gel-muted">{article.author}</p>
             </div>
-            <div className="col-span-12 mb-7 xsl:mb-9">
+            <div className="xsl:mb-9 col-span-12 mb-7">
               {article.image && (
                 <figure>
                   <Image
@@ -41,8 +41,8 @@ export function ArticlePage({ article }: ArticlePageProps) {
           </Grid>
         </GridContainer>
       </div>
-      <GridContainer fixed className="pb-8 xsl:pb-10 sm:pb-11 lg:max-w-gel-lg-container lg:px-10">
-        <Grid className="gap-y-0 xsl:gap-y-0 sm:gap-y-0">
+      <GridContainer fixed className="xsl:pb-10 lg:max-w-gel-lg-container pb-8 sm:pb-11 lg:px-10">
+        <Grid className="xsl:gap-y-0 gap-y-0 sm:gap-y-0">
           <LeadingText text={article.description} />
           <DocumentRenderer
             document={article.content}

@@ -7,5 +7,5 @@ export const styles = tv({
       graphik: 'typography-site-8 sm:typography-site-7',
     },
   },
-  base: 'mb-6 font-normal !leading-10',
+  base: 'mb-6 !leading-10 font-normal',
 });

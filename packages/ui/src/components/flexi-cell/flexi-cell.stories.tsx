@@ -135,7 +135,15 @@ export const ImageBleedHorizontal = () => {
   return (
     <>
       {new Array(3).fill(null).map((_, index) => (
-        <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{ initial: 'default', md: 'large' }}>
+        <FlexiCell
+          body={false}
+          key={index}
+          tag="a"
+          href="#"
+          withBorder
+          size={{ initial: 'default', md: 'large' }}
+          className="overflow-hidden"
+        >
           <div className="flex gap-2">
             <img
               src={imgString}

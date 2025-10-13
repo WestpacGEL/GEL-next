@@ -24,7 +24,7 @@ export function Popover(props: PopoverProps) {
       <div
         {...popoverProps}
         ref={popoverRef}
-        className={clsx('z-10 overflow-hidden bg-background-white-pale shadow-[rgba(0,0,0,0.24)_0_8px_8px]', className)}
+        className={clsx('bg-background-white-pale z-10 overflow-hidden shadow-[rgba(0,0,0,0.24)_0_8px_8px]', className)}
       >
         {!isNonModal && <DismissButton onDismiss={() => state.close()} />}
         <LazyMotion features={loadAnimations}>

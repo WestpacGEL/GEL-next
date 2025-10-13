@@ -14,7 +14,7 @@ export const HomePage = ({ articleRows }: HomePageProps) => {
     <>
       <GridContainer
         fixed
-        className="mb-8 mt-5 flex flex-col gap-4 px-4 xsl:mt-6 sm:mt-8 md:mt-9 lg:mt-10 lg:max-w-gel-lg-container lg:px-10"
+        className="xsl:mt-6 lg:max-w-gel-lg-container mt-5 mb-8 flex flex-col gap-4 px-4 sm:mt-8 md:mt-9 lg:mt-10 lg:px-10"
       >
         {articleRows.map(({ articles, layout }, index) => (
           <div key={index} className={articleWrapperStyles({ layout })}>

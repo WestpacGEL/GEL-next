@@ -2,8 +2,8 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'relative mb-7 xsl:mb-9',
+    base: 'xsl:mb-9 relative mb-7',
     img: 'block w-full',
-    caption: 'typography-site-10 mt-2 text-gel-muted',
+    caption: 'typography-site-10 text-gel-muted mt-2',
   },
 });

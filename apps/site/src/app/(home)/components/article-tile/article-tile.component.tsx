@@ -1,7 +1,7 @@
 'use client';
 
+import { BREAKPOINTS } from '@westpac/style-config/constants';
 import { ArrowRightIcon } from '@westpac/ui/icon';
-import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import Image from 'next/image';
 import Link from 'next/link';
 

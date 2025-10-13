@@ -15,19 +15,19 @@ import { logoMap, logoStyles } from '../utils';
 export function ActionBar() {
   return (
     <StickyHeader>
-      <GridContainer fixed className="px-4 lg:max-w-gel-lg-container lg:px-10">
-        <div className="hidden h-17 items-end bg-background-white-pale pb-2 sm:flex">
-          <div className="mr-4 flex h-full flex-col justify-end border-r border-gel-border">
-            <GELLogo className="mb-2 block h-3 w-[45px] text-gel-text" />
+      <GridContainer fixed className="lg:max-w-gel-lg-container px-4 lg:px-10">
+        <div className="hidden h-17 items-end pb-2 sm:flex">
+          <div className="border-gel-border mr-4 flex h-full flex-col justify-end border-r">
+            <GELLogo className="text-gel-text mb-2 block h-3 w-[45px]" />
             <p className="mb-1 flex items-end">
               Design System
-              <ArrowRightIcon className="ml-0 mr-2 md:ml-2 md:mr-4" />
+              <ArrowRightIcon className="mr-2 ml-0 md:mr-[1rem] md:ml-2" />
             </p>
           </div>
           <ul role="list" className="flex gap-2">
             {Object.entries(logoMap).map(([key, { logo: Logo, name }]) => (
               <li key={key}>
-                <Link href={`/design-system/${key}`} className="outline-offset-[3px] outline-focus">
+                <Link href={`/design-system/${key}`} className="outline-focus outline-offset-[3px]">
                   <CircleLogo>
                     <Logo aria-label={`${name} Design System`} className={logoStyles({ brand: key as BrandKey })} />
                   </CircleLogo>
@@ -36,10 +36,10 @@ export function ActionBar() {
             ))}
           </ul>
         </div>
-        <div className="block bg-background-white-pale sm:hidden">
+        <div className="bg-background-white-pale block sm:hidden">
           <BrandSelect
-            selectedKey={undefined}
-            onSelectionChange={() => {
+            value={undefined}
+            onChange={() => {
               return;
             }}
             aria-label="Change brand"

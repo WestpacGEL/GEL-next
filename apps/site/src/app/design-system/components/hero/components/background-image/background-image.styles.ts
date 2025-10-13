@@ -13,11 +13,11 @@ export const styles = tv({
       wbg: {},
       stg: {
         base: 'bottom-0 left-0 w-[75.125rem]',
-        header: 'bottom-0 left-0 w-[37.5625rem] xsl:w-[75.125rem]',
+        header: 'xsl:w-[75.125rem] bottom-0 left-0 w-[37.5625rem]',
       },
       bsa: {
-        base: 'bottom-0 right-0 w-[63.5rem]',
-        header: 'bottom-0 right-0 w-[31.75rem] xsl:w-[63.5rem]',
+        base: 'right-0 bottom-0 w-[63.5rem]',
+        header: 'xsl:w-[63.5rem] right-0 bottom-0 w-[31.75rem]',
       },
       bom: {},
       btfg: {},

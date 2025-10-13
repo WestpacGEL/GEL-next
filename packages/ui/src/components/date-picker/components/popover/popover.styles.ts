@@ -20,7 +20,7 @@ export const styles = tv({
       false: {
         underlay: '',
         closeButton:
-          'border-border-muted-mild bg-background-white-pale pointer-events-none absolute top-0 right-0 size-5 translate-x-1/2 -translate-y-1/2 touch-none rounded-full border opacity-0 focus:pointer-events-auto focus:touch-auto focus:opacity-100',
+          'bg-background-white-pale pointer-events-none absolute top-0 right-0 touch-none rounded-full opacity-0 focus:pointer-events-auto focus:touch-auto focus:opacity-100',
         headerLabel: 'hidden',
         popover:
           'animate-fadeIn border-border-muted-soft bg-background-white-pale absolute mt-1 scale-100 rounded-2xl border opacity-100 shadow-[0_5px_10px_rgba(0,0,0,0.2)]',

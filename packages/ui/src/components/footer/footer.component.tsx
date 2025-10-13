@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useFocusRing } from 'react-aria';
 
-import { Grid, GridItem, VisuallyHidden } from '../index.js';
+import { VisuallyHidden } from '../index.js';
 import {
   BOMMultibrandSmallLogo,
   BSAMultibrandSmallLogo,
@@ -52,28 +52,19 @@ export function Footer({
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = footerStyles({ offsetSidebar, isFocusVisible });
 
-  const finalBrand = useMemo(() => {
-    // Due to brands like 'wbc-light' and 'stg-light'
-    return brand.split('-')[0] as keyof typeof LOGO_MAP;
-  }, [brand]);
-
-  const Logo = LOGO_MAP[finalBrand].logo;
+  const Logo = LOGO_MAP[brand].logo;
 
   return (
     <footer className={styles.base({ className })} {...props}>
       <div className={styles.wrapper()}>
-        <Grid className={styles.topRow()}>
-          <GridItem span={12}>{children}</GridItem>
-        </Grid>
+        <div>{children}</div>
         {!hideLogo && (
-          <Grid>
-            <GridItem span={{ initial: 12, md: 1 }}>
-              <a href={logoLink} className={styles.link()} {...focusProps}>
-                {srOnlyText && <VisuallyHidden>{srOnlyText}</VisuallyHidden>}
-                <Logo align="right" aria-label={logoAssistiveText} />
-              </a>
-            </GridItem>
-          </Grid>
+          <div className={styles.logoWrapper()}>
+            <a href={logoLink} className={styles.link()} {...focusProps}>
+              {srOnlyText && <VisuallyHidden>{srOnlyText}</VisuallyHidden>}
+              <Logo align="right" aria-label={logoAssistiveText} />
+            </a>
+          </div>
         )}
       </div>
     </footer>

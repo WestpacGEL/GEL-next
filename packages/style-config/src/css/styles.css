@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import './shared/animations.css';
 @import './shared/borders.css';
+@import './shared/form-control.css';
 @import './shared/colors.css';
 @import './shared/layout.css';
 @import './shared/typography.css';

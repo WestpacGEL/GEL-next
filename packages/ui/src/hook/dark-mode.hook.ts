@@ -1,26 +1,16 @@
 import { useCallback } from 'react';
 
 export function useDarkMode() {
-  const getTheme = useCallback(() => {
-    const dataTheme = document.querySelector('[data-theme]')?.getAttribute('data-theme');
-    if (dataTheme) {
-      return dataTheme;
-    }
-    return Array.from(document.querySelector('[class^="theme-"], [class*=" theme-"]')?.classList || [])
-      ?.find(cls => cls.startsWith('theme-'))
-      ?.replace('theme-', '');
+  const getBrand = useCallback(() => {
+    return document.querySelector('[data-brand]')?.getAttribute('data-brand');
   }, []);
 
   const getMode = useCallback(() => {
-    const theme = getTheme();
-    if (!theme) {
-      return;
-    }
-    return theme.endsWith('-dark') ? 'dark' : 'light';
-  }, [getTheme]);
+    return document.querySelector('[data-theme]')?.getAttribute('data-theme') || 'light';
+  }, []);
 
   const getBrandContainer = useCallback(() => {
-    return document.querySelector('[data-theme]') || document.querySelector('[class^="theme-"], [class*=" theme-"]');
+    return document.querySelector('[data-brand]');
   }, []);
 
   const getSystemPreference = useCallback(() => {
@@ -29,10 +19,9 @@ export function useDarkMode() {
 
   const setMode = useCallback(
     (mode: 'light' | 'dark') => {
-      const themeWithoutMode = getTheme()?.replace('-light', '').replace('-dark', '');
-      getBrandContainer()?.setAttribute('data-theme', `${themeWithoutMode}-${mode}`);
+      getBrandContainer()?.setAttribute('data-theme', mode);
     },
-    [getBrandContainer, getTheme],
+    [getBrandContainer],
   );
 
   const toggleDarkMode = useCallback(() => {
@@ -41,7 +30,7 @@ export function useDarkMode() {
   }, [setMode, getMode]);
 
   return {
-    getTheme,
+    getBrand,
     getMode,
     getBrandContainer,
     getSystemPreference,

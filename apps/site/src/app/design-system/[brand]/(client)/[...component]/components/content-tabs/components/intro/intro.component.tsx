@@ -10,11 +10,11 @@ import { IntroProps } from '.';
 
 export function Intro({ description, sectionNames }: IntroProps) {
   return (
-    <section className="py-7 sm:pb-10 sm:pt-15">
+    <section className="py-7 sm:pt-15 sm:pb-10">
       <Container>
         <Grid>
           <GridItem span={{ initial: 12, sm: 7 }}>
-            <p className="typography-body-8 font-light leading-normal sm:typography-body-7 sm:leading-normal">
+            <p className="typography-body-8 sm:typography-body-7 leading-[1.5] font-light sm:leading-[1.5]">
               {description}
             </p>
           </GridItem>

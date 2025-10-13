@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'fixed inset-x-0 top-0 z-20 flex h-11 items-center overflow-hidden pr-2 text-text-mono sm:static sm:px-2 lg:left-[18.75rem] lg:px-5',
+    base: 'text-text-mono fixed inset-x-0 top-0 z-20 flex h-11 items-center overflow-hidden pr-2 sm:static sm:px-2 lg:left-[18.75rem] lg:px-5',
     heading: 'z-10 flex grow items-center',
   },
   variants: {
@@ -10,7 +10,7 @@ export const styles = tv({
       wbc: { base: 'bg-background-primary' },
       stg: { base: 'bg-background-hero' },
       bom: { base: 'bg-background-hero' },
-      bsa: { base: 'bg-gradient-to-r from-hero via-[#00468e] to-[#00adbd]' },
+      bsa: { base: 'from-hero bg-gradient-to-r via-[#00468e] to-[#00adbd]' },
       wbg: { base: 'bg-background-hero' },
       rams: { base: 'bg-background-primary' },
       btfg: {},
