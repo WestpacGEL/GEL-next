@@ -1,6 +1,6 @@
 # @westpac/ui
 
-## 0.51.0
+## 1.0.0-canary.1
 
 ### Minor Changes
 
