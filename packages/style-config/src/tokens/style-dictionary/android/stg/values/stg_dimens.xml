@@ -4,7 +4,7 @@
   Do not edit directly, this file was auto-generated.
 -->
 <resources>
-  <dimen name="stgBorderRoundedNone">0.00dpdp</dimen>
+  <dimen name="stgBorderRoundedNone">0dp</dimen>
   <dimen name="stgBorderRoundedSm">3dp</dimen>
   <dimen name="stgBorderRoundedMd">4dp</dimen>
   <dimen name="stgBorderRoundedLg">5dp</dimen>

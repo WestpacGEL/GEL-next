@@ -4,7 +4,7 @@
   Do not edit directly, this file was auto-generated.
 -->
 <resources>
-  <dimen name="wbcBorderRoundedNone">0.00dpdp</dimen>
+  <dimen name="wbcBorderRoundedNone">0dp</dimen>
   <dimen name="wbcBorderRoundedSm">3dp</dimen>
   <dimen name="wbcBorderRoundedMd">4dp</dimen>
   <dimen name="wbcBorderRoundedLg">5dp</dimen>

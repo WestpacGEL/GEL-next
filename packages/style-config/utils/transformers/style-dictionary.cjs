@@ -651,16 +651,16 @@ StyleDictionary.registerFormat({
 
     if (brandName === 'AllBrands') {
       primitiveTokens.forEach(primitiveToken => {
-        output += `  <dimen name="${primitiveToken.name}">${primitiveToken.$value.replace('dp', '')}dp</dimen>\n`;
+        output += `  <dimen name="${primitiveToken.name}">${primitiveToken.$value.toString().replace('dp', '')}dp</dimen>\n`;
       });
     }
 
     lightTokens.forEach(lightToken => {
-      output += `  <dimen name="${lightToken.name}">${lightToken.$value.replace('dp', '')}dp</dimen>\n`;
+      output += `  <dimen name="${lightToken.name}">${lightToken.$value.toString().replace('dp', '')}dp</dimen>\n`;
     });
 
     darkTokens.forEach(darkToken => {
-      output += `  <dimen name="${darkToken.name}">${darkToken.$value.replace('dp', '')}dp</dimen>\n`;
+      output += `  <dimen name="${darkToken.name}">${darkToken.$value.toString().replace('dp', '')}dp</dimen>\n`;
     });
 
     output += '</resources>\n';
