@@ -149,15 +149,15 @@
   --primitives-color-stg-yellow-900: #332900;
   --primitives-color-stg-yellow-950: #1a1500;
   --primitives-border-radius-none: 0;
-  --primitives-border-radius-3px: 3;
-  --primitives-border-radius-4px: 4;
-  --primitives-border-radius-5px: 5;
-  --primitives-border-radius-6px: 6;
-  --primitives-border-radius-8px: 8;
-  --primitives-border-radius-12px: 12;
-  --primitives-border-radius-16px: 16;
-  --primitives-border-radius-24px: 24;
-  --primitives-border-radius-full: 999;
+  --primitives-border-radius-3px: 0.1875rem;
+  --primitives-border-radius-4px: 0.25rem;
+  --primitives-border-radius-5px: 0.3125rem;
+  --primitives-border-radius-6px: 0.375rem;
+  --primitives-border-radius-8px: 0.5rem;
+  --primitives-border-radius-12px: 0.75rem;
+  --primitives-border-radius-16px: 1rem;
+  --primitives-border-radius-24px: 1.5rem;
+  --primitives-border-radius-full: 62.4375rem;
   --themes-st-george-color-text-body-lm: #004833;
   --themes-st-george-color-text-body-dm: #e1e1e0;
   --themes-st-george-color-text-heading-lm: #007334;
@@ -311,15 +311,15 @@
   --themes-st-george-color-system-900: #666600;
   --themes-st-george-color-system-950: #404000;
   --themes-st-george-border-radius-none: 0;
-  --themes-st-george-border-radius-sm: 3;
-  --themes-st-george-border-radius-md: 4;
-  --themes-st-george-border-radius-lg: 5;
-  --themes-st-george-border-radius-xl: 6;
-  --themes-st-george-border-radius-2xl: 8;
-  --themes-st-george-border-radius-3xl: 12;
-  --themes-st-george-border-radius-4xl: 16;
-  --themes-st-george-border-radius-5xl: 24;
-  --themes-st-george-border-radius-full: 999;
+  --themes-st-george-border-radius-sm: 0.1875rem;
+  --themes-st-george-border-radius-md: 0.25rem;
+  --themes-st-george-border-radius-lg: 0.3125rem;
+  --themes-st-george-border-radius-xl: 0.375rem;
+  --themes-st-george-border-radius-2xl: 0.5rem;
+  --themes-st-george-border-radius-3xl: 0.75rem;
+  --themes-st-george-border-radius-4xl: 1rem;
+  --themes-st-george-border-radius-5xl: 1.5rem;
+  --themes-st-george-border-radius-full: 62.4375rem;
 }
 
 [data-brand="stg"] {

@@ -3,30 +3,30 @@
 import UIKit 
 
 public enum WBCLightDimensions {
-  public static let BorderRoundedNone = 0
-  public static let BorderRoundedSm = 3
-  public static let BorderRoundedMd = 4
-  public static let BorderRoundedLg = 5
-  public static let BorderRoundedXl = 6
-  public static let BorderRounded2xl = 8
-  public static let BorderRounded3xl = 12
-  public static let BorderRounded4xl = 16
-  public static let BorderRounded5xl = 24
-  public static let BorderRoundedFull = 999
+  public static let BorderRoundedNone = CGFloat(0.00)
+  public static let BorderRoundedSm = CGFloat(3.00)
+  public static let BorderRoundedMd = CGFloat(4.00)
+  public static let BorderRoundedLg = CGFloat(5.00)
+  public static let BorderRoundedXl = CGFloat(6.00)
+  public static let BorderRounded2xl = CGFloat(8.00)
+  public static let BorderRounded3xl = CGFloat(12.00)
+  public static let BorderRounded4xl = CGFloat(16.00)
+  public static let BorderRounded5xl = CGFloat(24.00)
+  public static let BorderRoundedFull = CGFloat(999.00)
 }
 
 
 public enum WBCDarkDimensions {
-  public static let BorderRoundedNone = 0
-  public static let BorderRoundedSm = 3
-  public static let BorderRoundedMd = 4
-  public static let BorderRoundedLg = 5
-  public static let BorderRoundedXl = 6
-  public static let BorderRounded2xl = 8
-  public static let BorderRounded3xl = 12
-  public static let BorderRounded4xl = 16
-  public static let BorderRounded5xl = 24
-  public static let BorderRoundedFull = 999
+  public static let BorderRoundedNone = CGFloat(0.00)
+  public static let BorderRoundedSm = CGFloat(3.00)
+  public static let BorderRoundedMd = CGFloat(4.00)
+  public static let BorderRoundedLg = CGFloat(5.00)
+  public static let BorderRoundedXl = CGFloat(6.00)
+  public static let BorderRounded2xl = CGFloat(8.00)
+  public static let BorderRounded3xl = CGFloat(12.00)
+  public static let BorderRounded4xl = CGFloat(16.00)
+  public static let BorderRounded5xl = CGFloat(24.00)
+  public static let BorderRoundedFull = CGFloat(999.00)
 }
 
 
