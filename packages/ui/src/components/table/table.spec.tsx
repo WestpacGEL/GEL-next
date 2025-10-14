@@ -182,12 +182,12 @@ describe('Table', () => {
     );
     starterCells.forEach(cell =>
       expect(cell).toHaveClass(
-        'typography-body-10 border-border-muted-soft p-2 text-left align-top text-text-body border-x border-b-border-primary border border-b-2',
+        'typography-body-10 border-border-muted-soft text-text-body p-2 text-left align-top border-b-border-primary border border-b-2',
       ),
     );
     endCells.forEach(cell =>
       expect(cell).toHaveClass(
-        '  typography-body-10 border-border-muted-soft p-2 text-left align-top text-text-body border-x border border-b-2 border-b-border-primary',
+        'typography-body-10 border-border-muted-soft text-text-body p-2 text-left align-top border-b-border-primary border border-b-2',
       ),
     );
   });
