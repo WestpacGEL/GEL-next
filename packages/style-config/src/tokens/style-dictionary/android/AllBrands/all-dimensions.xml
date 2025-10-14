@@ -4,7 +4,8 @@
   Do not edit directly, this file was auto-generated.
 -->
 <resources>
-  <dimen name="westpacBorderRadiusNone">0</dimen>
+  <dimen name="primitivesBorderRadiusNone">0.00dp</dimen>
+  <dimen name="westpacBorderRadiusNone">0.00dp</dimen>
   <dimen name="westpacBorderRadiusSm">3</dimen>
   <dimen name="westpacBorderRadiusMd">4</dimen>
   <dimen name="westpacBorderRadiusLg">5</dimen>
@@ -14,7 +15,7 @@
   <dimen name="westpacBorderRadius4xl">16</dimen>
   <dimen name="westpacBorderRadius5xl">24</dimen>
   <dimen name="westpacBorderRadiusFull">999</dimen>
-  <dimen name="stGeorgeBorderRadiusNone">0</dimen>
+  <dimen name="stGeorgeBorderRadiusNone">0.00dp</dimen>
   <dimen name="stGeorgeBorderRadiusSm">3</dimen>
   <dimen name="stGeorgeBorderRadiusMd">4</dimen>
   <dimen name="stGeorgeBorderRadiusLg">5</dimen>
@@ -24,7 +25,7 @@
   <dimen name="stGeorgeBorderRadius4xl">16</dimen>
   <dimen name="stGeorgeBorderRadius5xl">24</dimen>
   <dimen name="stGeorgeBorderRadiusFull">999</dimen>
-  <dimen name="westpacLightModeBorderRadiusRoundedNone">0</dimen>
+  <dimen name="westpacLightModeBorderRadiusRoundedNone">0.00dp</dimen>
   <dimen name="westpacLightModeBorderRadiusRoundedSm">3</dimen>
   <dimen name="westpacLightModeBorderRadiusRoundedMd">4</dimen>
   <dimen name="westpacLightModeBorderRadiusRoundedLg">5</dimen>
@@ -34,7 +35,7 @@
   <dimen name="westpacLightModeBorderRadiusRounded4xl">16</dimen>
   <dimen name="westpacLightModeBorderRadiusRounded5xl">24</dimen>
   <dimen name="westpacLightModeBorderRadiusRoundedFull">999</dimen>
-  <dimen name="westpacDarkModeBorderRadiusRoundedNone">0</dimen>
+  <dimen name="westpacDarkModeBorderRadiusRoundedNone">0.00dp</dimen>
   <dimen name="westpacDarkModeBorderRadiusRoundedSm">3</dimen>
   <dimen name="westpacDarkModeBorderRadiusRoundedMd">4</dimen>
   <dimen name="westpacDarkModeBorderRadiusRoundedLg">5</dimen>
@@ -44,7 +45,7 @@
   <dimen name="westpacDarkModeBorderRadiusRounded4xl">16</dimen>
   <dimen name="westpacDarkModeBorderRadiusRounded5xl">24</dimen>
   <dimen name="westpacDarkModeBorderRadiusRoundedFull">999</dimen>
-  <dimen name="stGeorgeLightModeBorderRadiusRoundedNone">0</dimen>
+  <dimen name="stGeorgeLightModeBorderRadiusRoundedNone">0.00dp</dimen>
   <dimen name="stGeorgeLightModeBorderRadiusRoundedSm">3</dimen>
   <dimen name="stGeorgeLightModeBorderRadiusRoundedMd">4</dimen>
   <dimen name="stGeorgeLightModeBorderRadiusRoundedLg">5</dimen>
@@ -54,7 +55,7 @@
   <dimen name="stGeorgeLightModeBorderRadiusRounded4xl">16</dimen>
   <dimen name="stGeorgeLightModeBorderRadiusRounded5xl">24</dimen>
   <dimen name="stGeorgeLightModeBorderRadiusRoundedFull">999</dimen>
-  <dimen name="stGeorgeDarkModeBorderRadiusRoundedNone">0</dimen>
+  <dimen name="stGeorgeDarkModeBorderRadiusRoundedNone">0.00dp</dimen>
   <dimen name="stGeorgeDarkModeBorderRadiusRoundedSm">3</dimen>
   <dimen name="stGeorgeDarkModeBorderRadiusRoundedMd">4</dimen>
   <dimen name="stGeorgeDarkModeBorderRadiusRoundedLg">5</dimen>

@@ -4,14 +4,14 @@
   Do not edit directly, this file was auto-generated.
 -->
 <resources>
-  <dimen name="borderRadiusRoundedNone">0</dimen>
-  <dimen name="borderRadiusRoundedSm">3</dimen>
-  <dimen name="borderRadiusRoundedMd">4</dimen>
-  <dimen name="borderRadiusRoundedLg">5</dimen>
-  <dimen name="borderRadiusRoundedXl">6</dimen>
-  <dimen name="borderRadiusRounded2xl">8</dimen>
-  <dimen name="borderRadiusRounded3xl">12</dimen>
-  <dimen name="borderRadiusRounded4xl">16</dimen>
-  <dimen name="borderRadiusRounded5xl">24</dimen>
-  <dimen name="borderRadiusRoundedFull">999</dimen>
+  <dimen name="stgBorderRoundedNone">0.00dpdp</dimen>
+  <dimen name="stgBorderRoundedSm">3dp</dimen>
+  <dimen name="stgBorderRoundedMd">4dp</dimen>
+  <dimen name="stgBorderRoundedLg">5dp</dimen>
+  <dimen name="stgBorderRoundedXl">6dp</dimen>
+  <dimen name="stgBorderRounded2xl">8dp</dimen>
+  <dimen name="stgBorderRounded3xl">12dp</dimen>
+  <dimen name="stgBorderRounded4xl">16dp</dimen>
+  <dimen name="stgBorderRounded5xl">24dp</dimen>
+  <dimen name="stgBorderRoundedFull">999dp</dimen>
 </resources>

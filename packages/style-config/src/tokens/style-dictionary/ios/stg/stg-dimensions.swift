@@ -3,7 +3,7 @@
 import UIKit 
 
 public enum STGLightDimensions {
-  public static let BorderRoundedNone = 0
+  public static let BorderRoundedNone = CGFloat(0.00)
   public static let BorderRoundedSm = 3
   public static let BorderRoundedMd = 4
   public static let BorderRoundedLg = 5
@@ -17,7 +17,7 @@ public enum STGLightDimensions {
 
 
 public enum STGDarkDimensions {
-  public static let BorderRoundedNone = 0
+  public static let BorderRoundedNone = CGFloat(0.00)
   public static let BorderRoundedSm = 3
   public static let BorderRoundedMd = 4
   public static let BorderRoundedLg = 5

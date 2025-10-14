@@ -590,7 +590,11 @@ StyleDictionary.registerFormat({
   name: 'android/dimens-custom',
   format: function ({ dictionary, options: { brandName } }) {
     const primitiveTokens = dictionary.allTokens
-      .filter(t => !(t.path.includes('light-mode') || t.path.includes('dark-mode')) && t.$type === 'color')
+      .filter(
+        t =>
+          !(t.path.includes('light-mode') || t.path.includes('dark-mode')) &&
+          (t.$type === 'float' || t.$type === 'dimension'),
+      )
       .map(token => {
         return {
           ...token,
@@ -599,7 +603,7 @@ StyleDictionary.registerFormat({
       });
 
     const lightTokens = dictionary.allTokens
-      .filter(t => t.path.includes('light-mode') && t.$type === 'color')
+      .filter(t => t.path.includes('light-mode') && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
         let tokenName = generateNameForIOS(current.key);
         if (brandName !== 'AllBrands') {
@@ -619,7 +623,7 @@ StyleDictionary.registerFormat({
       });
 
     const darkTokens = dictionary.allTokens
-      .filter(t => t.path.includes('dark-mode') && t.$type === 'color')
+      .filter(t => t.path.includes('dark-mode') && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
         let tokenName = generateNameForIOS(current.key);
         if (brandName !== 'AllBrands') {
@@ -638,7 +642,6 @@ StyleDictionary.registerFormat({
         };
       });
 
-    const primitiveDimensionEnum = `${brandName}PrimitivesDimension`;
     let output = '';
     output += '<?xml version="1.0" encoding="UTF-8"?>\n\n';
     output += '<!--\n';
@@ -647,21 +650,17 @@ StyleDictionary.registerFormat({
     output += '<resources>\n';
 
     if (brandName === 'AllBrands') {
-      output += `public enum ${primitiveDimensionEnum} {\n`;
       primitiveTokens.forEach(primitiveToken => {
-        output += `  public static let ${primitiveToken.name} = ${primitiveToken.$value}\n`;
+        output += `  <dimen name="${primitiveToken.name}">${primitiveToken.$value.replace('dp', '')}dp</dimen>\n`;
       });
-      output += '}\n';
-
-      output += '\n\n';
     }
 
     lightTokens.forEach(lightToken => {
-      output += `  <dimen name="${lightToken.name}">${lightToken.$value}</dimen>\n`;
+      output += `  <dimen name="${lightToken.name}">${lightToken.$value.replace('dp', '')}dp</dimen>\n`;
     });
 
     darkTokens.forEach(darkToken => {
-      output += `  <dimen name="${darkToken.name}">${darkToken.$value}</dimen>\n`;
+      output += `  <dimen name="${darkToken.name}">${darkToken.$value.replace('dp', '')}dp</dimen>\n`;
     });
 
     output += '</resources>\n';
