@@ -4,8 +4,6 @@ import { Grid, GridItem } from '@westpac/ui';
 import { GithubIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
 
-import { Hero, Section, SectionHeading, SectionItem } from '../../components';
-
 import { BrandKey } from '@/app/types/brand.types';
 import {
   AtlassianLogo,
@@ -19,6 +17,8 @@ import {
   ShopifyLogo,
   TwitterLogo,
 } from '@/components/logos';
+
+import { Hero, Section, SectionHeading, SectionItem } from '../../components';
 
 export default function DesignSystemHomePage({ params }: { params: { brand: string } }) {
   const brand = (params.brand || 'wbc') as BrandKey;

@@ -3,8 +3,6 @@ import { AriaTabPanelProps } from 'react-aria';
 import { TabListState } from 'react-stately';
 import { type VariantProps } from 'tailwind-variants';
 
-import { TabsProps } from '../../tabs.types.js';
-
 import { styles } from './tabs-tab-panel.styles.js';
 
 type Variants = VariantProps<typeof styles>;
