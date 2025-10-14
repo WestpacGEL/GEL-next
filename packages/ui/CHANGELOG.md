@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.50.5
+
+### Patch Changes
+
+- 7c08b53: added min width to pill badge
+
 ## 0.50.4
 
 ### Patch Changes
