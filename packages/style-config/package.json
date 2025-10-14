@@ -1,8 +1,7 @@
 {
   "name": "@westpac/style-config",
-  "version": "0.0.0",
+  "version": "1.0.0-canary.1",
   "type": "module",
-  "private": true,
   "exports": {
     ".": "./dist/tokens/index.js",
     "./tailwind": "./dist/css/styles.css",

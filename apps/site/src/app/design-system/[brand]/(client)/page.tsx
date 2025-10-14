@@ -80,7 +80,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
           </SectionItem>
         </Grid>
         <Grid className="xsl:gap-x-5 gap-y-4 text-left sm:gap-x-8 md:gap-x-10">
-          <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2, md: 2 }} className="xsl:col-start-auto">
+          <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2, md: 2, xsl: 'auto' }}>
             <h3 className="typography-body-8 border-border-muted-strong border-b pb-3 font-bold sm:mb-2">Downloads</h3>
             <ul className="typography-body-10">
               <li className="border-border-muted-soft border-b">
@@ -94,7 +94,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
               </li>
             </ul>
           </GridItem>
-          <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2 }} className="xsl:col-start-auto">
+          <GridItem span={{ initial: 10, xsl: 6, md: 5 }} start={{ initial: 2, xsl: 'auto' }}>
             <h3 className="typography-body-8 border-border-muted-strong border-b pb-3 font-bold sm:mb-2">Links</h3>
             <ul className="typography-body-10">
               <li className="border-border-muted-soft border-b">

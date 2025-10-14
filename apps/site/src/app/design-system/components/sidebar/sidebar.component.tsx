@@ -126,7 +126,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
       <div
         aria-hidden="true"
         className={clsx({
-          'max-lg:before:bg-black[REPLACE_TOKEN]/40 z-[1009] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed':
+          'max-lg:before:bg-black/40 z-[1009] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed':
             open,
         })}
       />

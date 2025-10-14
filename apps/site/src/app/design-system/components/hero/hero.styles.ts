@@ -8,7 +8,7 @@ export const styles = tv({
   variants: {
     brand: {
       wbc: {
-        base: 'before:bg-pop sm:bg-background-primary before:absolute before:top-15 before:bottom-0 before:left-0 before:block before:w-2 sm:before:w-4',
+        base: 'before:bg-surface-pop sm:bg-background-primary before:absolute before:top-15 before:bottom-0 before:left-0 before:block before:w-2 sm:before:w-4',
         heading: 'text-[3rem] uppercase sm:text-[4.5rem]',
       },
       stg: {

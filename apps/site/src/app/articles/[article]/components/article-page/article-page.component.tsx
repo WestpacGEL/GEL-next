@@ -16,7 +16,7 @@ export function ArticlePage({ article }: ArticlePageProps) {
   return (
     <>
       <div className="to-gel-background bg-gradient-to-b from-white from-25%">
-        <GridContainer fixed className=" xsl:pt-10 lg:max-w-gel-lg-container pt-8 sm:pt-11 lg:px-10">
+        <GridContainer fixed className="xsl:pt-10 lg:!max-w-gel-lg-container pt-8 sm:pt-11 lg:px-10">
           <Grid className="xsl:gap-y-6 gap-y-5 sm:gap-y-8">
             <div className="col-span-12">
               <h1 className="typography-site-6 xsl:typography-site-3 xsl:mb-3 mb-2 !leading-[1.1] font-black tracking-[-1px]">
@@ -41,7 +41,7 @@ export function ArticlePage({ article }: ArticlePageProps) {
           </Grid>
         </GridContainer>
       </div>
-      <GridContainer fixed className="xsl:pb-10 lg:max-w-gel-lg-container pb-8 sm:pb-11 lg:px-10">
+      <GridContainer fixed className="xsl:pb-10 lg:!max-w-gel-lg-container pb-8 sm:pb-11 lg:px-10">
         <Grid className="xsl:gap-y-0 gap-y-0 sm:gap-y-0">
           <LeadingText text={article.description} />
           <DocumentRenderer

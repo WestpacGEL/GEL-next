@@ -2,6 +2,7 @@
   "name": "@westpac/ui",
   "version": "0.50.3",
   "license": "MIT",
+  "private": true,
   "sideEffects": false,
   "type": "module",
   "typesVersions": {
@@ -276,7 +277,7 @@
     "react-hook-form": "~7.62.0",
     "shx": "^0.3.4",
     "storybook": "9.0.17",
-    "tailwind-variants": "0.2.1",
+    "tailwind-variants": "~3.1.1",
     "tailwindcss": "~4.1.12",
     "tailwindcss-themer": "~3.1.0",
     "ts-node": "~10.9.1",
