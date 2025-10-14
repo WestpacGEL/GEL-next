@@ -1,6 +1,5 @@
 'use client';
 
-import { LazyMotion, m, useAnimate } from 'motion/react';
 import React, { useEffect, useState } from 'react';
 import { mergeProps, useButton, useDisclosure, useFocusRing, useHover, useId, useLocale } from 'react-aria';
 import { useDisclosureState } from 'react-stately';
@@ -10,8 +9,6 @@ import { AccordionContext } from '../../accordion.component.js';
 
 import { styles as accordionItemStyles } from './accordion-item.styles.js';
 import { type AccordionItemProps } from './accordion-item.types.js';
-
-const loadAnimations = () => import('./accordion-item.utils.js').then(res => res.default);
 
 export function AccordionItem({ className, tag: Tag = 'div', children, ...props }: AccordionItemProps) {
   const defaultId = useId();
@@ -42,11 +39,9 @@ export function AccordionItem({ className, tag: Tag = 'div', children, ...props 
   const { isFocusVisible, focusProps } = useFocusRing();
   const { hoverProps } = useHover({ isDisabled });
   const { direction } = useLocale();
-  const [scope, animate] = useAnimate();
-  const [enableOpenStyle, setEnableOpenStyle] = useState(false);
+  const [overflowVisible, setOverflowVisible] = useState(false);
 
   const styles = accordionItemStyles({
-    isOpen: enableOpenStyle,
     isExpanded,
     isDisabled,
     look: groupState?.look,
@@ -55,31 +50,9 @@ export function AccordionItem({ className, tag: Tag = 'div', children, ...props 
   });
 
   useEffect(() => {
-    // There was an issue with animations for closing an accordion that adding this fixed
-    panelRef.current?.removeAttribute('hidden');
+    // hides overflow again when collapsing
+    if (!isExpanded) setOverflowVisible(false);
   }, [isExpanded]);
-
-  useEffect(() => {
-    // setEnableStyle here as opening animation isn't working correctly if done below
-    if (isExpanded) setEnableOpenStyle(true);
-
-    if (enableOpenStyle) {
-      animate(scope.current, { height: 'auto' }, { duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] });
-    }
-    if (!isExpanded) {
-      animate(
-        scope.current,
-        { height: '0px' },
-        {
-          duration: 0.3,
-          ease: [0.25, 0.1, 0.25, 1.0],
-          // set some styles after animation completes so content doesn't disappear on close
-          onComplete: () => setEnableOpenStyle(false),
-        },
-      );
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isExpanded, enableOpenStyle]);
 
   return (
     <Tag className={styles.base({ className })}>
@@ -97,19 +70,19 @@ export function AccordionItem({ className, tag: Tag = 'div', children, ...props 
           )}
         </button>
       </h3>
-      <div ref={panelRef} {...panelProps}>
-        <LazyMotion features={loadAnimations}>
-          <m.div
-            className="overflow-hidden"
-            initial={{
-              height: isExpanded ? 'auto' : 0,
-            }}
-            ref={scope}
-            key={id}
-          >
-            <div className={styles.content()}>{children}</div>
-          </m.div>
-        </LazyMotion>
+      <div
+        ref={panelRef}
+        {...panelProps}
+        className={styles.panel()}
+        // when open shows overflow for things like popover, datepicker, etc. Overflow hidden for animation
+        style={{ overflow: overflowVisible ? 'visible' : 'hidden' }}
+        onTransitionEnd={() => {
+          if (isExpanded) {
+            setOverflowVisible(true);
+          }
+        }}
+      >
+        <div className={styles.content()}>{children}</div>
       </div>
     </Tag>
   );
