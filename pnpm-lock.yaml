@@ -279,8 +279,8 @@ importers:
         specifier: ~8.4.31
         version: 8.4.49
       tailwind-variants:
-        specifier: ~0.2.1
-        version: 0.2.1(tailwindcss@4.1.12)
+        specifier: ~3.1.1
+        version: 3.1.1(tailwind-merge@3.3.1)(tailwindcss@4.1.12)
       tailwindcss:
         specifier: ~4.1.12
         version: 4.1.12
@@ -570,8 +570,8 @@ importers:
         specifier: 9.0.17
         version: 9.0.17(@testing-library/dom@10.4.0)(bufferutil@4.0.9)(prettier@3.6.2)(utf-8-validate@6.0.5)
       tailwind-variants:
-        specifier: 0.2.1
-        version: 0.2.1(tailwindcss@4.1.12)
+        specifier: ~3.1.1
+        version: 3.1.1(tailwind-merge@3.3.1)(tailwindcss@4.1.12)
       tailwindcss:
         specifier: ~4.1.12
         version: 4.1.12
@@ -1162,6 +1162,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.30':
     resolution: {integrity: sha512-GQ7Nw5G2lTu/BtHTKfXhKHok2WGetd4XYcVKGx00SjAk8GMwgJM3zr6zORiPGuOE+/vkc90KtTosSSvaCjKb2Q==}
+
+  '@jridgewell/trace-mapping@0.3.31':
+    resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
@@ -6585,14 +6588,18 @@ packages:
     peerDependencies:
       tailwindcss: ^3.3.0 || ^4.0.0 || ^4.0.0-beta
 
-  tailwind-merge@2.6.0:
-    resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
+  tailwind-merge@3.3.1:
+    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
 
-  tailwind-variants@0.2.1:
-    resolution: {integrity: sha512-2xmhAf4UIc3PijOUcJPA1LP4AbxhpcHuHM2C26xM0k81r0maAO6uoUSHl3APmvHZcY5cZCY/bYuJdfFa4eGoaw==}
+  tailwind-variants@3.1.1:
+    resolution: {integrity: sha512-ftLXe3krnqkMHsuBTEmaVUXYovXtPyTK7ckEfDRXS8PBZx0bAUas+A0jYxuKA5b8qg++wvQ3d2MQ7l/xeZxbZQ==}
     engines: {node: '>=16.x', pnpm: '>=7.x'}
     peerDependencies:
+      tailwind-merge: '>=3.0.0'
       tailwindcss: '*'
+    peerDependenciesMeta:
+      tailwind-merge:
+        optional: true
 
   tailwindcss-themer@3.1.3:
     resolution: {integrity: sha512-P9f0cBXNZ744EdbEdCta56mGsoWWRLyTaek2D2KAhqeIpOoPzDTohh+F3hfPQpM/qw4kVlitptXiwdl0tFgipg==}
@@ -7844,7 +7851,7 @@ snapshots:
   '@jridgewell/source-map@0.3.11':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.13
-      '@jridgewell/trace-mapping': 0.3.30
+      '@jridgewell/trace-mapping': 0.3.31
     optional: true
 
   '@jridgewell/sourcemap-codec@1.5.4': {}
@@ -7860,6 +7867,12 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@jridgewell/trace-mapping@0.3.31':
+    dependencies:
+      '@jridgewell/resolve-uri': 3.1.2
+      '@jridgewell/sourcemap-codec': 1.5.5
+    optional: true
 
   '@jridgewell/trace-mapping@0.3.9':
     dependencies:
@@ -14942,12 +14955,14 @@ snapshots:
       local-pkg: 1.1.2
       tailwindcss: 4.1.13
 
-  tailwind-merge@2.6.0: {}
+  tailwind-merge@3.3.1:
+    optional: true
 
-  tailwind-variants@0.2.1(tailwindcss@4.1.12):
+  tailwind-variants@3.1.1(tailwind-merge@3.3.1)(tailwindcss@4.1.12):
     dependencies:
-      tailwind-merge: 2.6.0
       tailwindcss: 4.1.12
+    optionalDependencies:
+      tailwind-merge: 3.3.1
 
   tailwindcss-themer@3.1.3(tailwindcss@4.1.12):
     dependencies:

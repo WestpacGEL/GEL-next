@@ -38,6 +38,7 @@ export const styles = tv({
       10: 'col-start-10',
       11: 'col-start-11',
       12: 'col-start-12',
+      auto: 'col-start-auto',
     },
   },
 });

@@ -19,7 +19,7 @@ export const styles = tv({
       },
       false: {
         base: '',
-        title: 'md:typography-brand-2 md:px-2 md:pt-5 md:pb-4.5 md:leading-none lg:ml-2',
+        title: 'md:typography-brand-2 md:px-2 md:pt-5 md:pb-5.5 md:leading-none lg:ml-2',
         titleWrapper: 'items-center',
       },
     },
