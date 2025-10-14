@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.50.4
+
+### Patch Changes
+
+- 442d84c: fix issues with overflow and focus for accordion content
+
 ## 0.50.3
 
 ### Patch Changes
