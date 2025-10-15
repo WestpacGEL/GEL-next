@@ -50,4 +50,4 @@ export type ButtonDropdownProps = {
   placement?: Placement;
 } & ButtonHTMLAttributes<Element> &
   Pick<ButtonProps, 'size' | 'iconBefore' | 'block'> &
-  Pick<ButtonDropdownPanelProps, 'shouldFlip'>;
+  Pick<ButtonDropdownPanelProps, 'shouldFlip' | 'shouldCloseOnInteractOutside'>;
