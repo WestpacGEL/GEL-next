@@ -10,114 +10,237 @@ You can read more about GEL in [https://gel.westpacgroup.com.au/articles/what-is
 
 ### Pre-requisites
 
-All GEL components have a couple of dependencies so please ensure the following are installed:
+All GEL components have a couple of dependencies so please ensure the following are installed using your preferred package manager (`npm`, `yarn` or `pnpm`):
 
 ```
 npm i react@^18.2.0
-npm i -D tailwindcss@~3.4.15 postcss autoprefixer
+npm i -D tailwindcss @tailwindcss/postcss postcss
 ```
 
-GEL is using [Tailwind](https://tailwindcss.com/) for styling. Visit the [Tailwind docs](https://tailwindcss.com/docs/installation/framework-guides) to learn more about installation and usage.
+GEL is using [Tailwind](https://tailwindcss.com/) for styling. Visit the [Tailwind docs](https://tailwindcss.com/docs/installation/framework-guides) and follow the relevant instructions for installation.
 
 ### Installation
 
-GEL can be installed using a package manager like `npm`, `yarn` or `pnpm`.
+The GEL is separated out into 2 packages.
+
+- `@westpac/ui` - React components
+- `@westpac/style-config` - Tailwind/CSS/tokens
+
+Install the GEL packages using preferred package manager (`npm`, `yarn` or `pnpm`):
 
 ```
-npm i @westpac/ui
+npm i @westpac/ui @westpac/style-config
 ```
 
-Update `tailwind.config.js` to use the `withGEL` helper exported by `@westpac/ui` as follows.
-
-```ts
-import { withGEL } from '@westpac/ui/tailwind';
-
-/** @type {import('tailwindcss').Config} */
-const config = withGEL({
-  relative: true,
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
-  safelist: [],
-});
-
-export default config;
-```
-
-Also, you have to create a `postcss.config.js` on the root of your application as follows.
+Create a `postcss.config.mjs` on the root of your application as follows.
 
 ```js
-module.exports = {
+export default {
   plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
+    '@tailwindcss/postcss': {},
   },
 };
 ```
 
-For applications using `brand fonts` add the following options config to the `withGEL` helper.
-
-```ts
-const config = withGEL({
-  relative: true,
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
-  safelist: [],
-  options: {
-    brandFonts: {
-      src: '/fonts', // path to font files
-      brands: ['wbc', 'stg'], // takes a single brand string e.g. 'wbc' or an array of brands. If no brands are specified will import all brands by default
-    },
-  },
-});
-```
-
-Ensure tailwind directives are added to your main CSS file.
+In your main CSS file, import the Tailwind directives and GEL styles:
 
 ```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import '@westpac/style-config';
+```
+
+For brand theming, import the required brand stylesheets:
+
+```css
+@import '@westpac/style-config/theme-wbc';
+@import '@westpac/style-config/theme-stg';
 ```
 
 If you have initialized your project with Nx build system follow the official [Nx tailwind documentation](https://nx.dev/recipes/react/using-tailwind-css-in-react#manual-setup-instructions) to configure tailwind.
-Nx based projects requires `__dirname` prefix to the `paths` in the `tailwind.config.js` file and `postcss` file.
 
-### Feature: Brand Filtering Support
+### Theming
 
-You can now pass a `brands: BrandKey[]` parameter to filter which brand-specific CSS variables are included.
+To switch between brands, set the `data-brand` attribute on a parent element:
 
-```ts
-import { withGEL } from '@westpac/ui/tailwind';
+```html
+<div data-brand="wbc">
+  <!-- Your app content -->
+</div>
+```
 
-/** @type {import('tailwindcss').Config} */
-const config = withGEL({
-  relative: true,
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './node_modules/@westpac/ui/src/**/*.{js,ts,jsx,tsx,mdx}'],
-  safelist: [],
-  brands: ['wbc', 'bom'], // In this scenario, it will import only the css variables of "wbc" and "bom"
-});
+To toggle between light and dark mode, set the `data-theme` attribute:
 
-export default config;
+```html
+<div data-brand="wbc" data-theme="dark">
+  <!-- Your app content -->
+</div>
 ```
 
 ### Usage
 
 #### Using brands
 
-Add a custom attribute tag `data-theme="brand_name"` to `html` tag. Note that instead of adding the custom attribute to html tag, you can add it to the parent tag of your application as well.
+Add a custom attribute tag `data-brand="brand_name"` to `html` tag. Note that instead of adding the custom attribute to html tag, you can add it to the parent tag of your application as well.
 
-Following example shows adding `wbc` theme. You can add other valid brand names such as `stg`, `bom`, `bsa`, `rams`, `wbg` etc. as the value.
+Following example shows adding `wbc` brand. You can add other valid brand names such as `stg`, `bom`, `bsa`, `rams`, `wbg` etc. as the value.
 
 ```html
 <!doctype html>
-<html lang="en" data-theme="wbc">
+<html lang="en" data-brand="wbc">
   ...
 </html>
 ```
 
-**NOTE:** There are some components that use portals `Modal`, `BottomSheet`, `AutoComplete`. These components will default their portal to where you add your `data-theme` attribute tag so these components can make use of branding. This can be overridden using their `portalContainer` props if you require the portal to be located elsewhere.
+For theme modes (light/dark), use the `data-theme` attribute:
+
+```html
+<!doctype html>
+<html lang="en" data-brand="wbc" data-theme="light">
+  ...
+</html>
+```
+
+**NOTE:** There are some components that use portals `Modal`, `BottomSheet`, `AutoComplete`. These components will default their portal to where you add your `data-brand` attribute tag so these components can make use of branding. This can be overridden using their `portalContainer` props if you require the portal to be located elsewhere.
 
 Now you can start using the GEL components in your `React.js` application. The following examples show how to use the `Button` component.
 
 For detailed documentation refer to [https://gel.westpacgroup.com.au/design-system](https://gel.westpacgroup.com.au/design-system).
+
+### Tokens
+
+All brand tokens are also exported in the [W3C design tokens format](https://www.designtokens.org/tr/drafts/format/)
+
+```js
+import { ALL_BRANDS } from '@westpac/style-config/tokens';
+```
+
+#### Tokens usage with Tailwind
+
+All brand tokens have been mapped to a color theme variable in the tailwind config and can be used in the relevant tailwind classname e.g. `bg-surface-mono text-text-body`
+
+All available color tokens can be viewed in the [GEL storybook](https://gel-next-storybook-git-release-100-westpacgel.vercel.app/?path=/docs/foundation-colours--docs).
+
+### Brand fonts
+
+In order to use brand-fonts add the relevant font face declarations from the below example and update the src to the font file locations in your application.
+
+```css
+/* BOM fonts */
+@font-face {
+  src:
+    url('/fonts/lineto-brown-pro-light.woff2') format('woff2'),
+    url('/fonts/lineto-brown-pro-light.woff') format('woff');
+  font-family: 'Brown Pro';
+  font-weight: 100 300;
+  font-style: normal;
+}
+@font-face {
+  src:
+    url('/fonts/lineto-brown-pro-regular.woff2') format('woff2'),
+    url('/fonts/lineto-brown-pro-regular.woff') format('woff');
+  font-family: 'Brown Pro';
+  font-weight: 400 600;
+  font-style: normal;
+}
+@font-face {
+  src:
+    url('/fonts/lineto-brown-pro-bold.woff2') format('woff2'),
+    url('/fonts/lineto-brown-pro-bold.woff') format('woff');
+  font-family: 'Brown Pro';
+  font-weight: 700 900;
+  font-style: normal;
+}
+
+/* BSA fonts */
+@font-face {
+  src:
+    url('/fonts/Aller_Lt.woff2') format('woff2'),
+    url('/fonts/Aller_Lt.woff') format('woff');
+  font-family: 'Aller';
+  font-weight: 100 600;
+  font-style: normal;
+}
+@font-face {
+  src:
+    url('/fonts/Aller_Bd.woff2') format('woff2'),
+    url('/fonts/Aller_Bd.woff') format('woff');
+  font-family: 'Aller';
+  font-weight: 700 900;
+  font-style: normal;
+}
+
+/* RAMS fonts */
+@font-face {
+  src:
+    url('/fonts/source-sans-pro-v14-latin-regular.woff2') format('woff2'),
+    url('/fonts/source-sans-pro-v14-latin-regular.woff') format('woff');
+  font-family: 'Source Sans Pro';
+  font-weight: 100 500;
+  font-style: normal;
+}
+@font-face {
+  src:
+    url('/fonts/source-sans-pro-v14-latin-600.woff2') format('woff2'),
+    url('/fonts/source-sans-pro-v14-latin-600.woff') format('woff');
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  src:
+    url('/fonts/source-sans-pro-v14-latin-700.woff2') format('woff2'),
+    url('/fonts/source-sans-pro-v14-latin-700.woff') format('woff');
+  font-family: 'Source Sans Pro';
+  font-weight: 700 900;
+  font-style: normal;
+}
+
+/* STG fonts */
+@font-face {
+  src:
+    url('/fonts/dragonbold-bold-webfont.woff2') format('woff2'),
+    url('/fonts/dragonbold-bold-webfont.woff') format('woff');
+  font-family: 'Dragon Bold';
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* WBC fonts */
+@font-face {
+  src:
+    url('/fonts/Westpac-Bold-v2.007.woff2') format('woff2'),
+    url('/fonts/Westpac-Bold-v2.007.woff') format('woff');
+  font-family: 'Westpac';
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* WBG fonts */
+@font-face {
+  src:
+    url('/fonts/montserrat-v14-latin-300.woff2') format('woff2'),
+    url('/fonts/montserrat-v14-latin-300.woff') format('woff');
+  font-family: 'Montserrat';
+  font-weight: 100 300;
+  font-style: normal;
+}
+@font-face {
+  src:
+    url('/fonts/montserrat-v14-latin-regular.woff2') format('woff2'),
+    url('/fonts/montserrat-v14-latin-regular.woff') format('woff');
+  font-family: 'Montserrat';
+  font-weight: 400 600;
+  font-style: normal;
+}
+@font-face {
+  src:
+    url('/fonts/montserrat-v14-latin-700.woff2') format('woff2'),
+    url('/fonts/montserrat-v14-latin-700.woff') format('woff');
+  font-family: 'Montserrat';
+  font-weight: 700 900;
+  font-style: normal;
+}
+```
 
 #### Individual package import
 
@@ -180,7 +303,7 @@ Update the `jest.config.js` file if you have initialized your project with [Nx b
    transform: {
      '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nrwl/react/babel'] }]
    },
-   transformIgnorePatterns: ['node_modules/(?!@westpac/ui)']
+   transformIgnorePatterns: ['node_modules/(?!(@westpac/ui|@westpac/style-config))']
 }
 ```
 
@@ -229,7 +352,7 @@ Visit [https://gel.westpacgroup.com.au/design-system](https://gel.westpacgroup.c
 
 #### To develop locally (common for all the packages and apps)
 
-1. Install Node.js 18.x or above. We recommend [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm) to install Node.js.
+1. Install Node.js 22.x or above. We recommend [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm) to install Node.js.
 
 2. Clone the Next.js repository:
    ```
