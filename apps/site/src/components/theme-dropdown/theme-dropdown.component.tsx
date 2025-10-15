@@ -35,6 +35,7 @@ export function ThemeDropDown({ className }: { className?: string }) {
       soft
       text="Theme"
       className={className}
+      shouldCloseOnInteractOutside={() => false}
     >
       <RadioGroup
         defaultValue={mode}
