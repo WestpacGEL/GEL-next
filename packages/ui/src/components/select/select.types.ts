@@ -7,6 +7,12 @@ type Variants = VariantProps<typeof styles>;
 
 export type SelectProps = {
   /**
+   * Whether to set the title for the select to the currently selected option for use with truncation.
+   * Optional for accessibility reasons as it should only be enabled when required.
+   * @default false
+   */
+  enableTruncatedTitle?: boolean;
+  /**
    * Whether select is invalid
    * @default false
    */
