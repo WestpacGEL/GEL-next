@@ -1,5 +1,26 @@
-```jsx
-<Repeater>
-  <h3>Repeater</h3>
-</Repeater>
+```tsx
+() => {
+  const [items, setItems] = useState(['Repeater']);
+
+  const handleAdd = useCallback(() => {
+    setItems([...items, 'Repeater']);
+  }, [items, setItems]);
+
+  return (
+    <Form>
+      <Repeater onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <RepeaterItem
+            key={index}
+            onRemove={() => {
+              setItems([...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <h3>{item}</h3>
+          </RepeaterItem>
+        ))}
+      </Repeater>
+    </Form>
+  );
+};
 ```
