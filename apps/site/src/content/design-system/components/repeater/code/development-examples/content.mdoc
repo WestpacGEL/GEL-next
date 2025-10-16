@@ -7,20 +7,18 @@
   }, [items, setItems]);
 
   return (
-    <Form>
-      <Repeater onAdd={handleAdd}>
-        {items.map((item, index) => (
-          <RepeaterItem
-            key={index}
-            onRemove={() => {
-              setItems([...items.slice(0, index), ...items.slice(index + 1)]);
-            }}
-          >
-            <h3>{item}</h3>
-          </RepeaterItem>
-        ))}
-      </Repeater>
-    </Form>
+    <Repeater onAdd={handleAdd}>
+      {items.map((item, index) => (
+        <RepeaterItem
+          key={index}
+          onRemove={() => {
+            setItems([...items.slice(0, index), ...items.slice(index + 1)]);
+          }}
+        >
+          <h3>{item}</h3>
+        </RepeaterItem>
+      ))}
+    </Repeater>
   );
 };
 ```
