@@ -1,9 +1,16 @@
 /* eslint-disable no-console */
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { useCallback } from 'react';
+import { useForm } from 'react-hook-form';
 
-import { FormGroup, Hint, Input, Label } from '../index.js';
+import { Form, FormGroup, Hint, Input, Label } from '../index.js';
 
+import { RepeaterItem } from './components/repeater-item/repeater-item.component.js';
 import { Repeater } from './repeater.component.js';
+
+type Inputs = {
+  items: string[];
+};
 
 const meta: Meta<typeof Repeater> = {
   title: 'Components/Repeater',
@@ -29,11 +36,77 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {
   args: {},
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { register, watch, setValue } = useForm<Inputs>({
+      defaultValues: { items: [''] },
+    });
+    const items = watch('items');
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const handleAdd = useCallback(() => {
+      setValue('items', [...items, '']);
+    }, [items, setValue]);
+
+    return (
+      <Form>
+        <Repeater onAdd={handleAdd}>
+          {items.map((item, index) => (
+            <RepeaterItem
+              key={index}
+              onRemove={() => {
+                setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+              }}
+            >
+              <FormGroup spacing="none">
+                <Label htmlFor={`primary[${index}]`}>Primary</Label>
+                <Hint id={`primary-hint`}>Primary title text</Hint>
+                <Input aria-describedby={`primary-hint`} {...register(`items.${index}`)} />
+              </FormGroup>
+            </RepeaterItem>
+          ))}
+        </Repeater>
+      </Form>
+    );
+  },
 };
 
 /**
- * > Example using the separator prop
+ * > Separator usage example
  */
 export const Separator: Story = {
-  args: { separator: true },
+  args: {},
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { register, watch, setValue } = useForm<Inputs>({
+      defaultValues: { items: [''] },
+    });
+    const items = watch('items');
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const handleAdd = useCallback(() => {
+      setValue('items', [...items, '']);
+    }, [items, setValue]);
+
+    return (
+      <Form>
+        <Repeater separator onAdd={handleAdd}>
+          {items.map((item, index) => (
+            <RepeaterItem
+              key={index}
+              onRemove={() => {
+                setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+              }}
+            >
+              <FormGroup spacing="none">
+                <Label htmlFor={`primary[${index}]`}>Primary</Label>
+                <Hint id={`primary-hint`}>Primary title text</Hint>
+                <Input aria-describedby={`primary-hint`} {...register(`items.${index}`)} />
+              </FormGroup>
+            </RepeaterItem>
+          ))}
+        </Repeater>
+      </Form>
+    );
+  },
 };

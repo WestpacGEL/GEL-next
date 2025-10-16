@@ -1,31 +1,72 @@
-```jsx
-<Repeater>
-<FormGroup>
-          <FormLabel htmlFor="formInput">Mobile number</FormLabel>
-          <Input aria-describedby="formHint" width="20" id="formInput" name="test" />
-        </FormGroup>
-</Repeater>
-```
-
-```jsx
+```tsx
 () => {
-  const groupOneId = React.useId();
-  const groupTwoId = React.useId();
+  const { register, watch, setValue } = useForm({
+    defaultValues: { items: [{ mobileNumber: '' }] },
+  });
+  const items = watch('items');
+
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { mobileNumber: '' }]);
+  }, [items, setValue]);
 
   return (
-    <Repeater separator>
-      <FormGroup>
-        <div className="mb-4" width="6">
-            <FormLabel htmlFor={`input${groupOneId}`}>BSB</FormLabel>
-            <Input aria-describedby={`inputHint${groupOneId}`} width="10" id={`input${groupOneId}`} name={`input${groupOneId}`} />
-        </div>
-        <div>
-            <FormLabel htmlFor={`input${groupTwoId}`}>Account number</FormLabel>
-            <FormHint id={`inputHint${groupTwoId}`}>Account number should have 10 digits</FormHint>
-            <Input aria-describedby={`inputHint${groupTwoId}`}  width="18" id={`input${groupTwoId}`} name={`input${groupTwoId}`} />
-        </div>
-      </FormGroup>
-    </Repeater>
+    <Form>
+      <Repeater onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <RepeaterItem
+            key={index}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <FormGroup spacing="none">
+              <Field label="Mobile number">
+                <Input {...register(`items.${index}.mobileNumber`)} width={10} />
+              </Field>
+            </FormGroup>
+          </RepeaterItem>
+        ))}
+      </Repeater>
+    </Form>
+  );
+};
+```
+
+```tsx
+() => {
+  const { register, watch, setValue } = useForm({
+    defaultValues: { items: [{ bsb: '', accountNumber: '' }] },
+  });
+  const items = watch('items');
+
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { bsb: '', accountNumber: '' }]);
+  }, [items, setValue]);
+
+  return (
+    <Form>
+      <Repeater separator onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <RepeaterItem
+            key={index}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <FormGroup>
+              <Field label="BSB">
+                <Input {...register(`items.${index}.bsb`)} width={10} />
+              </Field>
+            </FormGroup>
+            <FormGroup spacing="none">
+              <Field label="Account number" hintMessage="Account number should have 10 digits">
+                <Input {...register(`items.${index}.accountNumber`)} width={18} />
+              </Field>
+            </FormGroup>
+          </RepeaterItem>
+        ))}
+      </Repeater>
+    </Form>
   );
 };
 ```
