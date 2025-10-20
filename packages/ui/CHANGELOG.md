@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.51.0
+
+### Minor Changes
+
+- 2dad153: added functionality to disable logo link on Header component
+
 ## 0.50.5
 
 ### Patch Changes
