@@ -13,6 +13,11 @@ export type HeaderProps = {
    */
   brand: Exclude<BrandKey, 'btfg'>;
   /**
+   * Removes anchor link from logo
+   * @default false
+   */
+  disableLogoLink?: boolean;
+  /**
    * Enable fixed header
    */
   fixed?: boolean;
@@ -46,7 +51,8 @@ export type HeaderProps = {
    */
   logoCenter?: boolean;
   /**
-   * Link for logo
+   * Link for logo, can be disabled with disableLogoLink
+   * @default '#'
    */
   logoLink?: string;
   /**

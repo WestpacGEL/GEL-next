@@ -56,6 +56,7 @@ export function Header({
   brand,
   className,
   children,
+  disableLogoLink = false,
   fixed = false,
   fixedMaxWidth,
   isScrolled,
@@ -97,6 +98,13 @@ export function Header({
 
   const styles = headerStyles({ logoCenter, fixed, leftIcon, scrolled: isScrolled || scrolled });
 
+  const HeaderLogo = () => (
+    <>
+      <SmallLogo align={logoAlignment} aria-label={logoAssistiveText} className={styles.smallLogo()} />
+      <LargeLogo aria-label={logoAssistiveText} className={styles.largeLogo()} />
+    </>
+  );
+
   return (
     <header className={styles.base({ className })} {...props}>
       <div className={styles.inner()} style={{ maxWidth: fixed ? fixedMaxWidth : undefined }}>
@@ -115,10 +123,15 @@ export function Header({
           </div>
         )}
         {/* useFocusRing was causing this link to need two clicks to activate so focus-visible styling is used instead */}
-        <a href={logoLink} target={anchorTarget} className={styles.logoLink()} onClick={logoOnClick}>
-          <SmallLogo align={logoAlignment} aria-label={logoAssistiveText} className={styles.smallLogo()} />
-          <LargeLogo aria-label={logoAssistiveText} className={styles.largeLogo()} />
-        </a>
+        {disableLogoLink ? (
+          <div className={styles.logoLink()}>
+            <HeaderLogo />
+          </div>
+        ) : (
+          <a href={logoLink} target={anchorTarget} className={styles.logoLink()} onClick={logoOnClick}>
+            <HeaderLogo />
+          </a>
+        )}
         {children && <div className={styles.rightContent()}>{children}</div>}
       </div>
     </header>
