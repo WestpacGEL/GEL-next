@@ -231,6 +231,7 @@
     "@eslint/eslintrc": "~3.3.1",
     "@eslint/js": "~9.30.0",
     "@react-types/accordion": "3.0.0-alpha.14",
+    "@react-types/button": "~3.14.1",
     "@react-types/combobox": "~3.13.6",
     "@react-types/shared": "~3.30.0",
     "@react-types/tabs": "~3.3.16",
@@ -286,13 +287,11 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@duetds/date-picker": "~1.4.0",
     "@internationalized/date": "~3.10.0",
     "@react-aria/accordion": "3.0.0-alpha.37",
     "@react-aria/utils": "~3.29.1",
     "@react-spectrum/utils": "~3.11.5",
     "clsx": "^1.2.1",
-    "colorjs.io": "~0.4.5",
     "lodash.throttle": "~4.1.1",
     "motion": "~12.23.12",
     "react-aria": "~3.44.0",
