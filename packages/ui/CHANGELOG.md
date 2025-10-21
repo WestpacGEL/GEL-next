@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.51.1
+
+### Patch Changes
+
+- 54d3693: fixed issue where close button on bottom sheet wasn't positioned correctly
+
 ## 0.51.0
 
 ### Minor Changes
