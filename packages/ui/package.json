@@ -279,7 +279,7 @@
     "tailwindcss-themer": "~3.1.0",
     "ts-node": "~10.9.1",
     "typescript": "^5.5.4",
-    "vite": "^7.0.5",
+    "vite": "^7.0.8",
     "vitest": "^3.2.4"
   },
   "dependencies": {
