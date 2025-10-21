@@ -6,7 +6,6 @@ import { BrandKey } from '@/app/types/brand.types';
 import { StickyFooter } from '@/components/sticky-footer';
 import { formatNavItems, sortMenu } from '@/utils/format';
 
-// eslint-disable-next-line import/order
 import { Sidebar, SidebarContextProvider } from '../components';
 
 export default async function DesignSystemLayout({
