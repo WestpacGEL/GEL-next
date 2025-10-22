@@ -19,7 +19,7 @@ export default function TaskCompletionMessagingPage() {
         Card activated
       </CustomHeading>
       <p>Your new card is good to go. You can now set or change your pin.</p>
-      <div className="mt-5 flex flex-col gap-2 xsl:flex-row">
+      <div className="xsl:flex-row mt-5 flex flex-col gap-2">
         <Link href="/" passHref legacyBehavior>
           <Button size="large" look="primary">
             Set PIN

@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-brand="wbc">
       <body>
-        <main className="m-auto flex min-h-screen max-w-[1923px] flex-col overscroll-y-none border border-y-0 border-border">
+        <main className="border-border m-auto flex min-h-screen max-w-[1923px] flex-col overscroll-y-none border border-y-0">
           {children}
         </main>
       </body>

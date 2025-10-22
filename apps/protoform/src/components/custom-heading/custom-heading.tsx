@@ -24,12 +24,12 @@ export function CustomHeading({
     >
       {beforeContent}
       {groupHeading && (
-        <h3 className=" typography-body-10 pb-1 text-[11px] font-medium uppercase text-muted md:hidden">
+        <h3 className=" typography-body-10 text-muted pb-1 text-[11px] font-medium uppercase md:hidden">
           {groupHeading}
         </h3>
       )}
       <Tag
-        className={clsx('font-bold text-heading', {
+        className={clsx('text-heading font-bold', {
           'max-md:typography-body-6 typography-body-5': Tag === 'h1',
           'max-md:typography-body-7 typography-body-6': Tag === 'h2',
           'max-md:typography-body-8 typography-body-7': Tag === 'h3',

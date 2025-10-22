@@ -8,7 +8,7 @@ export function CustomFooter({ isSidebarOpen }: { isSidebarOpen?: boolean }) {
   return (
     <Footer
       brand="wbc"
-      className={clsx('relative bottom-0 z-10 w-full border-t-border-muted-soft bg-white pb-0', {
+      className={clsx('border-t-border-muted-soft relative bottom-0 z-10 w-full bg-white pb-0', {
         'md:w-[calc(100%-301px)]': isSidebarOpen,
       })}
       hideLogo
@@ -18,7 +18,7 @@ export function CustomFooter({ isSidebarOpen }: { isSidebarOpen?: boolean }) {
           <SecurityIcon size="small" className="float-left mr-1 shrink-0" color="muted" />
         </div>
         <div className="flex">
-          <p className="typography-body-10 relative flex-1 text-muted">
+          <p className="typography-body-10 text-muted relative flex-1">
             Our site and your transactions are secure. You can read our{' '}
             <Link href="#" type="inline">
               security information

@@ -1,5 +1,4 @@
-import { AriaRadioGroupProps, AriaToggleButtonGroupProps } from 'react-aria';
-import { RadioGroupState } from 'react-stately';
+import { AriaToggleButtonGroupProps } from 'react-aria';
 import { VariantProps } from 'tailwind-variants';
 
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
@@ -7,6 +6,7 @@ import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 import { type ButtonProps } from '../button/index.js';
 
 import { styles } from './components/button-group-button/button-group-button.styles.js';
+import { ButtonHTMLAttributes } from 'react';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -24,8 +24,5 @@ export type ButtonGroupProps = {
    * size
    */
   size?: ButtonProps['size'];
-  /**
-   * className
-   */
-  className?: string;
-} & AriaToggleButtonGroupProps;
+} & AriaToggleButtonGroupProps &
+  ButtonHTMLAttributes<Element>;
