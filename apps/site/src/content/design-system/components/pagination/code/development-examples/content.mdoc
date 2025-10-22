@@ -1,38 +1,168 @@
-### Default pagination
+### Default
 
 ```tsx
 () => {
-  const [page, setPage] = useState(1);
+  const [current, setCurrent] = useState(1);
 
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex flex-col items-start">
-        <ComponentTitle>Declarative</ComponentTitle>
-        <Pagination
-          current={page}
-          onChange={changedPage => {
-            setPage(changedPage);
-          }}
-          pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
-        />
-      </div>
-      <div className="flex flex-col items-start">
-        <ComponentTitle>Infinite</ComponentTitle>
-        <Pagination
-          infinite
-          current={page}
-          onChange={changedPage => {
-            setPage(changedPage);
-          }}
-          pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
-        />
-      </div>
-    </div>
+    <Pagination
+      totalPages={20}
+      onChange={value => {
+        setCurrent(value);
+        action('onChange')(value);
+      }}
+      current={current}
+    />
   );
 };
 ```
 
-### Custom next and back buttons
+### Responsive using totalPages
+
+```tsx
+() => {
+  const [current, setCurrent] = useState(1);
+
+  return (
+    <Pagination
+      totalPages={20}
+      siblingCount={{ initial: 0, sm: 2, md: 3 }}
+      boundaryCount={{ initial: 0, sm: 2, md: 3 }}
+      onChange={value => {
+        setCurrent(value);
+        action('onChange')(value);
+      }}
+      current={current}
+    />
+  );
+};
+```
+
+### Responsive using pages
+
+```tsx
+() => {
+  const [current, setCurrent] = useState(1);
+
+  return (
+    <>
+      <Pagination
+        pages={Array.from({ length: 20 }, (_, i) => i + 1).map(page => ({ text: page }))}
+        siblingCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
+        boundaryCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
+        onChange={value => {
+          setCurrent(value);
+          action('onChange')(value);
+        }}
+        current={current}
+      />
+    </>
+  );
+};
+```
+
+### Button usage example
+
+```tsx
+() => {
+  return <Pagination totalPages={20} onPageItemProps={page => ({ text: page, href: `#page-${page}` })} current={20} />;
+};
+   
+```
+
+### Link usage example
+
+```tsx
+    
+<Pagination   
+    current={1}
+    pages={[
+      {
+        text: '1',
+        href: '#page-1',
+      },
+      {
+        text: '2',
+        href: '#page-2',
+      },
+      {
+        text: '3',
+        href: '#page-3',
+      },
+      {
+        text: '4',
+        href: '#page-4',
+      },
+      {
+        text: '5',
+        href: '#page-5',
+      },
+      {
+        text: '6',
+        href: '#page-6',
+      },
+      {
+        text: '7',
+        href: '#page-7',
+      },
+      {
+        text: '8',
+        href: '#page-8',
+      },
+      {
+        text: '9',
+        href: '#page-9',
+      },
+      {
+        text: '10',
+        href: '#page-10',
+      },
+      {
+        text: '21',
+        href: '#page-21',
+      },
+      {
+        text: '22',
+        href: '#page-22',
+      },
+      {
+        text: '23',
+        href: '#page-23',
+      },
+      {
+        text: '24',
+        href: '#page-24',
+      },
+      {
+        text: '25',
+        href: '#page-25',
+      },
+      {
+        text: '26',
+        href: '#page-26',
+      },
+      {
+        text: '27',
+        href: '#page-27',
+      },
+      {
+        text: '28',
+        href: '#page-28',
+      },
+      {
+        text: '29',
+        href: '#page-29',
+      },
+      {
+        text: '30',
+        href: '#page-30',
+      },
+    ]}
+  />
+   
+```
+
+### Using useState as example
 
 ```tsx
 () => {
@@ -40,9 +170,46 @@
 
   return (
     <Pagination
-      backLabel="Go back"
-      nextLabel="Go fourth"
       current={page}
+      onChange={changedPage => {
+        setPage(changedPage);
+      }}
+      pages={Array.from({ length: 19 }, (_, i) => i + 1).map(page => ({ text: page }))}
+    />
+  );
+};
+```
+
+### Using InfiniteState as example
+
+```tsx
+() => {
+  const [page, setPage] = useState(1);
+
+  return (
+    <Pagination
+      current={page}
+      infinite
+      onChange={changedPage => {
+        setPage(changedPage);
+      }}
+      pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
+    />
+  );
+};
+```
+
+### Using custom back and next label
+
+```tsx
+() => {
+  const [page, setPage] = useState(1);
+
+  return (
+    <Pagination
+      current={page}
+      backLabel="Custom back"
+      nextLabel="Custom next"
       onChange={changedPage => {
         setPage(changedPage);
       }}
