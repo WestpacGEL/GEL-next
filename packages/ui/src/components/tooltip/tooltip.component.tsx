@@ -1,4 +1,6 @@
-import { useEffect, useId, useState } from 'react';
+'use client';
+
+import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { mergeProps, useHover, useFocusRing } from 'react-aria';
 
 import { TooltipContent } from './components/tooltip-content/tooltip-content.component.js';
@@ -9,26 +11,27 @@ import { TooltipProps } from './tooltip.types.js';
 export function Tooltip({ children, tooltip, id, className }: TooltipProps) {
   const localId = useId();
   const [isOpen, setIsOpen] = useState(false);
-  let tooltipWaitTime: NodeJS.Timeout;
+  const tooltipWaitTime = useRef<NodeJS.Timeout | null>(null);
 
-  const startTimer = () => {
-    tooltipWaitTime = setTimeout(() => {
-      setIsOpen(true);
-    }, 1000);
-  };
-  const stopTimer = () => {
-    if (tooltipWaitTime) {
-      clearTimeout(tooltipWaitTime);
-      setIsOpen(false);
-    }
-  };
   const handleKeyDown = (e: KeyboardEvent) => {
-    if ('key' in e && e.key === 'Escape' && isOpen) {
+    if (e.key === 'Escape' && isOpen) {
       setIsOpen(false);
     }
   };
   const { hoverProps, isHovered } = useHover({});
   const { isFocusVisible, focusProps } = useFocusRing({ within: true });
+
+  const startTimer = useCallback(() => {
+    tooltipWaitTime.current = setTimeout(() => {
+      setIsOpen(true);
+    }, 1000);
+  }, []);
+
+  const stopTimer = useCallback(() => {
+    if (tooltipWaitTime.current) {
+      clearTimeout(tooltipWaitTime.current);
+    }
+  }, []);
 
   useEffect(() => {
     setIsOpen(isFocusVisible);
@@ -36,7 +39,10 @@ export function Tooltip({ children, tooltip, id, className }: TooltipProps) {
 
   useEffect(() => {
     if (isHovered && !isOpen) startTimer();
+    if (!isHovered) setIsOpen(false);
+
     return () => stopTimer();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isHovered]);
 

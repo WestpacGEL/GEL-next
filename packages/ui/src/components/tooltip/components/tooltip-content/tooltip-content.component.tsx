@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { styles } from './tooltip-content.styles.js';
 import { TooltipContentProps } from './tooltip-content.types.js';
 
