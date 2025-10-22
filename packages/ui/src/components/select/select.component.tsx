@@ -13,14 +13,8 @@ function BaseSelect(
   ref: ForwardedRef<HTMLSelectElement>,
 ) {
   const { isFocused, isFocusVisible, focusProps } = useFocusRing();
-  // const { pressProps } = usePress({
-  //   onPress: () => {
-  //     setIsOpen(true);
-  //   },
-  // });
-  // const { onKeyDown, onKeyDownCapture, onKeyUp, onKeyUpCapture, ...restPressProps } = pressProps;
+
   const [selectedOption, setSelectedOption] = useState('');
-  // const [isOpen, setIsOpen] = useState(false);
   const styles = selectStyles({ className, size, invalid, isFocused, isFocusVisible, width });
 
   return enableTooltip ? (
@@ -30,7 +24,6 @@ function BaseSelect(
         className={styles.base()}
         onChange={e => {
           setSelectedOption(e.target.options[e.target.selectedIndex].text);
-          // setIsOpen(false);
         }}
         {...mergeProps(props, focusProps)}
       >

@@ -5,7 +5,7 @@ import { TooltipContent } from './components/tooltip-content/tooltip-content.com
 import { styles } from './tooltip.styles.js';
 import { TooltipProps } from './tooltip.types.js';
 
-// TODO: Complete component
+// TODO: Complete component/replace with a library that works (react-tooltip if can find a way to remove aria-described by for select)
 export function Tooltip({ children, tooltip, id, className }: TooltipProps) {
   const localId = useId();
   const [isOpen, setIsOpen] = useState(false);
