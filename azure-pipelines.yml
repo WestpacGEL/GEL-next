@@ -52,7 +52,7 @@ stages:
                   --env SNYK_TOKEN \
                   --env DEBUG=1 \
                   -v $(Build.SourcesDirectory):/app \
-                  snyk/snyk:node-20 snyk ${SNYK_CMD} --severity-threshold=critical --all-projects --org=${SNYK_ORG_ID} --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
+                  snyk/snyk:node-22 snyk ${SNYK_CMD} --severity-threshold=critical --all-projects --org=${SNYK_ORG_ID} --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
             env:
               SNYK_TOKEN: $(SNYK_TOKEN)
               SNYK_ORG_ID: $(SNYK_ORG_ID)
