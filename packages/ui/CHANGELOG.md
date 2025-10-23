@@ -1,5 +1,40 @@
 # @westpac/ui
 
+## 0.52.0
+
+### Minor Changes
+
+- 7fe448f: added truncation/new prop to show truncated value as title for Select
+
+### Patch Changes
+
+- 5386bd6: exporting ModalDialogFooterProps
+- 6a12908: screen reader accessibility for popover fixes
+
+## 0.51.1
+
+### Patch Changes
+
+- 54d3693: fixed issue where close button on bottom sheet wasn't positioned correctly
+
+## 0.51.0
+
+### Minor Changes
+
+- 2dad153: added functionality to disable logo link on Header component
+
+## 0.50.5
+
+### Patch Changes
+
+- 7c08b53: added min width to pill badge
+
+## 0.50.4
+
+### Patch Changes
+
+- 442d84c: fix issues with overflow and focus for accordion content
+
 ## 0.50.3
 
 ### Patch Changes

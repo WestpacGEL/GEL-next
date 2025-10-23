@@ -29,10 +29,12 @@ export function AccordionItem<T = HTMLElement>({
   const { direction } = useLocale();
   // Open/close animation needs to be done with useAnimate as AnimatePresence will unmount component
   const [scope, animate] = useAnimate();
-  const [enableOpenStyle, setEnableOpenStyle] = useState(false);
+  const [enableOpenStyle, setEnableOpenStyle] = useState(isOpenState); // styles for opening accordion
+  const [enableCloseStyle, setEnableCloseStyle] = useState(!isOpenState); // styles for closing accordion
 
   const styles = accordionItemStyles({
     isOpen: enableOpenStyle,
+    isClosed: enableCloseStyle,
     isOpenState,
     isDisabled,
     look,
@@ -44,9 +46,16 @@ export function AccordionItem<T = HTMLElement>({
     // setEnableStyle here as opening animation isn't working correctly if done below
     if (isOpenState) setEnableOpenStyle(true);
 
+    // animates opening accordion
     if (enableOpenStyle) {
-      animate(scope.current, { height: 'auto' }, { duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] });
+      animate(
+        scope.current,
+        { height: 'auto' },
+        { duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0], onComplete: () => setEnableCloseStyle(false) },
+      );
     }
+
+    // animates closing accordion
     if (!isOpenState) {
       animate(
         scope.current,
@@ -55,7 +64,12 @@ export function AccordionItem<T = HTMLElement>({
           duration: 0.3,
           ease: [0.25, 0.1, 0.25, 1.0],
           // set some styles after animation completes so content doesn't disappear on close
-          onComplete: () => setEnableOpenStyle(false),
+          onPlay: () => {
+            setEnableCloseStyle(true);
+          },
+          onComplete: () => {
+            setEnableOpenStyle(false);
+          },
         },
       );
     }
@@ -79,13 +93,17 @@ export function AccordionItem<T = HTMLElement>({
         </button>
       </h3>
       <div {...regionProps}>
+        {/* NOTE: Can potentially replace animation in the future with React 19.2 Activity and AnimateActivity from motion/react once fully released https://motion.dev/docs/react-animate-activity */}
         <LazyMotion features={loadAnimations}>
-          <m.div className="overflow-hidden" initial={{ height: isOpenState ? 'auto' : 0 }} ref={scope}>
+          <m.div className={styles.motionContent()} initial={{ height: isOpenState ? 'auto' : 0 }} ref={scope}>
             <div
               className={styles.content()}
               // TODO: Remove below with updated accordion that uses disclosure as the issue doesn't happen with that version
               // Need to call stopPropagation here as some events from children are bubbling up and focusing the accordion i.e. inputs
               onBlur={e => {
+                e.stopPropagation();
+              }}
+              onFocus={e => {
                 e.stopPropagation();
               }}
             >
