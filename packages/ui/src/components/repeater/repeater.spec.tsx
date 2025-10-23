@@ -1,14 +1,30 @@
 import { render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { useCallback, useState } from 'react';
 
+import { RepeaterItem } from './components/repeater-item/repeater-item.component.js';
 import { Repeater } from './repeater.component.js';
 
 describe('Repeater', () => {
   const queryText = /Test child/;
   const TestRepeater = () => {
+    const [items, setItems] = useState(['Test child']);
+
+    const handleAdd = useCallback(() => {
+      setItems(items => [...items, 'Test child']);
+    }, []);
+
+    const handleRemove = useCallback((index: number) => {
+      setItems(items => [...items.slice(0, index), ...items.slice(index + 1)]);
+    }, []);
+
     return (
-      <Repeater>
-        <p>Test child</p>
+      <Repeater onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <RepeaterItem key={item} onRemove={() => handleRemove(index)}>
+            <p>{item}</p>
+          </RepeaterItem>
+        ))}
       </Repeater>
     );
   };
@@ -28,18 +44,20 @@ describe('Repeater', () => {
 
   it('should remove new repeater when button pressed', async () => {
     const user = userEvent.setup();
-    const { queryAllByText, getByRole } = render(<TestRepeater />);
+    const { queryAllByText, getByRole, findByRole } = render(<TestRepeater />);
     expect(queryAllByText(queryText)).toHaveLength(1);
     user.click(getByRole('button', { name: 'Add another item' }));
     await waitFor(() => expect(queryAllByText(queryText)).toHaveLength(2));
-    user.click(getByRole('button', { name: 'remove item 2' }));
+    user.click(await findByRole('button', { name: 'Remove item 2' }));
     await waitFor(() => expect(queryAllByText(queryText)).toHaveLength(1));
   });
 
   it('should have correct styling with separator prop passed', () => {
     const { getByText } = render(
       <Repeater separator>
-        <p>Test child</p>
+        <RepeaterItem>
+          <p>Test child</p>
+        </RepeaterItem>
       </Repeater>,
     );
     expect(getByText('1.')).toBeInTheDocument();

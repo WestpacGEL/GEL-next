@@ -8,6 +8,7 @@ export const styles = tv({
       false: '',
     },
     spacing: {
+      none: '',
       medium: 'mb-3',
       large: 'mb-4',
     },
