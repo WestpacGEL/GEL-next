@@ -22,16 +22,19 @@ export function BasePanel({
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
   const { popoverPosition, arrowPosition } = usePanel({ state, placement, triggerRef, portal });
-
   const styles = panelStyles({ placement });
   return (
     <FocusScope autoFocus restoreFocus>
       <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef}>
-        <div className={styles.content()}>
-          <Tag tabIndex={0} className={styles.heading()}>
-            {heading}
-          </Tag>
-          <div className={styles.body()}>{content}</div>
+        <div className={styles.content()} role="dialog">
+          {heading && (
+            <Tag className={styles.heading()} tabIndex={0}>
+              {heading}
+            </Tag>
+          )}
+          <div className={styles.body()} tabIndex={0}>
+            {content}
+          </div>
           <Button
             look="link"
             size="small"
