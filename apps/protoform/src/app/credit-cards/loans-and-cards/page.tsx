@@ -121,8 +121,8 @@ export default function IncomeAndSavings() {
                 block={{ initial: true, md: false }}
                 defaultSelectedKeys={data.nonWestpacCards}
                 id="otherCards"
-                onSelectionChange={(value) => onChange(Array.from(value)[0])}
-                selectedKeys={[value]}
+                onSelectionChange={onChange}
+                selectedKeys={value}
                 onBlur={onBlur}
               >
                 <ButtonGroupButton id="Yes">Yes</ButtonGroupButton>

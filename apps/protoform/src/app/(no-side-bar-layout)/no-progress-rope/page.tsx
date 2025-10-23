@@ -44,7 +44,7 @@ export default function NoProgressRopePage() {
           </InputGroup>
         </Field>
         <Field label="Family name (Optional)" errorMessage={errors.familyName?.message}>
-          <InputGroup size="large" >
+          <InputGroup size="large">
             <Input {...register('familyName')} />
           </InputGroup>
         </Field>

@@ -66,7 +66,7 @@ export default function IncomeAndSavings() {
         Income & savings
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <form id="credit-card" className='flex flex-col gap-4' onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
         <Repeater>
           <Field
             label="Income, salary, pension (after tax)"

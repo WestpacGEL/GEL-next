@@ -14,7 +14,6 @@ import { ErrorValidationAlert } from '@/components/error-validation-alert/error-
 import { useSidebar } from '@/components/sidebar/context';
 import { defaultError } from '@/constants/form-contsants';
 
-
 type FormData = {
   dependants: string;
   expenseFreq: string;
