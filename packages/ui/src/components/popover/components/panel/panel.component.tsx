@@ -26,7 +26,7 @@ export function BasePanel({
   return (
     <FocusScope autoFocus restoreFocus>
       <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef}>
-        <div className={styles.content()} role="dialog">
+        <div className={styles.content()}>
           {heading && (
             <Tag className={styles.heading()} tabIndex={0}>
               {heading}
