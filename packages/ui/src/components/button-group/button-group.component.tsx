@@ -14,11 +14,20 @@ export const ToggleButtonGroupContext = React.createContext<
       size: ButtonGroupProps['size'];
       look: ButtonGroupProps['look'];
       block: ButtonGroupProps['block'];
+      orientation: ButtonGroupProps['orientation'];
     })
   | null
 >(null);
 
-export function ButtonGroup({ size, look, block, children, onSelect, ...props }: ButtonGroupProps) {
+export function ButtonGroup({
+  size,
+  look,
+  block,
+  children,
+  onSelect,
+  orientation = 'horizontal',
+  ...props
+}: ButtonGroupProps) {
   /**
    * Normalizes key sets depending on selection mode.
    */
@@ -60,6 +69,7 @@ export function ButtonGroup({ size, look, block, children, onSelect, ...props }:
   const { groupProps } = useToggleButtonGroup(
     {
       ...props,
+      orientation,
       onSelectionChange: handleSelectionChange,
       defaultSelectedKeys: finalDefaultSelectedKeys,
       selectedKeys: finalSelectedKeys,
@@ -68,11 +78,11 @@ export function ButtonGroup({ size, look, block, children, onSelect, ...props }:
     ref,
   );
 
-  const styles = buttonGroupStyles({});
+  const styles = buttonGroupStyles({ orientation });
 
   return (
     <div {...props} {...groupProps} className={styles.base({ className: props.className })} ref={ref}>
-      <ToggleButtonGroupContext.Provider value={{ ...state, size, look, block }}>
+      <ToggleButtonGroupContext.Provider value={{ ...state, size, look, block, orientation }}>
         {children}
       </ToggleButtonGroupContext.Provider>
     </div>

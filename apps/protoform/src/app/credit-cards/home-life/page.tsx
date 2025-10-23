@@ -90,6 +90,7 @@ export default function HomeLife() {
           control={control}
           name="sharedExpenses"
           rules={{ required: defaultError }}
+          defaultValue={data.sharedExpenses}
           render={({ field: { onChange, value } }) => (
             <Field
               label="Do you share household expenses?"
@@ -97,7 +98,6 @@ export default function HomeLife() {
               errorMessage={errors.sharedExpenses?.message}
             >
               <ButtonGroup
-                defaultSelectedKeys={data.sharedExpenses}
                 size="large"
                 block={{ initial: true, md: false }}
                 onSelectionChange={onChange}

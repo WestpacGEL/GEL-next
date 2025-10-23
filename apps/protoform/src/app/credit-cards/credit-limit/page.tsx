@@ -69,7 +69,7 @@ Choose your credit card limit or have one allocated for you."
         Credit limit
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <form id="credit-card" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
         <Controller
           control={control}
           name="creditLimitType"

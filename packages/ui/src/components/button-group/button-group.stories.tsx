@@ -215,3 +215,18 @@ export const DefaultSelectionMultipleSelectionState = () => {
     </ButtonGroup>
   );
 };
+
+/**
+ * Default selection MultipleSelectionState button group
+ */
+export const VerticalOrientation = () => {
+  return (
+    <ButtonGroup orientation="vertical">
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
+};

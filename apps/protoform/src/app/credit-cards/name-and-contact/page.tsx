@@ -76,7 +76,7 @@ export default function NameAndContact() {
         Name & contact
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <form id="credit-card" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
         <Field label="Title" errorMessage={errors.title?.message}>
           <InputGroup width={{ initial: 'full', md: 5 }} size="large">
             <Select
@@ -126,36 +126,38 @@ export default function NameAndContact() {
           hintMessage="For example 31 3 1980"
           errorMessage={errors.dobDay?.message || errors.dobMonth?.message || errors.dobYear?.message}
         >
-          <Field className="mr-2" label="Day">
-            <Input
-              {...register('dobDay', { required: defaultError, valueAsNumber: true })}
-              id="dobDay"
-              width={{ initial: 'full', md: 2 }}
-              size="large"
-              defaultValue={data.dobDay}
-              invalid={!!errors.dobDay?.message}
-            />
-          </Field>
-          <Field className="mr-2" label="Month">
-            <Input
-              {...register('dobMonth', { required: defaultError, valueAsNumber: true })}
-              id="dobMonth"
-              width={{ initial: 'full', md: 2 }}
-              size="large"
-              defaultValue={data.dobMonth}
-              invalid={!!errors.dobMonth?.message}
-            />
-          </Field>
-          <Field label="Year">
-            <Input
-              {...register('dobYear', { required: defaultError, valueAsNumber: true })}
-              id="dobYear"
-              width={{ initial: 'full', md: 4 }}
-              size="large"
-              defaultValue={data.dobYear}
-              invalid={!!errors.dobYear?.message}
-            />
-          </Field>
+          <div className="flex">
+            <Field className="mr-2" label="Day">
+              <Input
+                {...register('dobDay', { required: defaultError, valueAsNumber: true })}
+                id="dobDay"
+                width={{ initial: 'full', md: 2 }}
+                size="large"
+                defaultValue={data.dobDay}
+                invalid={!!errors.dobDay?.message}
+              />
+            </Field>
+            <Field className="mr-2" label="Month">
+              <Input
+                {...register('dobMonth', { required: defaultError, valueAsNumber: true })}
+                id="dobMonth"
+                width={{ initial: 'full', md: 2 }}
+                size="large"
+                defaultValue={data.dobMonth}
+                invalid={!!errors.dobMonth?.message}
+              />
+            </Field>
+            <Field label="Year">
+              <Input
+                {...register('dobYear', { required: defaultError, valueAsNumber: true })}
+                id="dobYear"
+                width={{ initial: 'full', md: 4 }}
+                size="large"
+                defaultValue={data.dobYear}
+                invalid={!!errors.dobYear?.message}
+              />
+            </Field>
+          </div>
         </Field>
 
         <Field

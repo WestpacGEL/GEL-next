@@ -62,7 +62,7 @@ export default function Address() {
         Address
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <form id="credit-card" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
         <Field errorMessage={errors.address?.message}>
           <InputGroup size="large" instanceId="address">
             <Autocomplete
