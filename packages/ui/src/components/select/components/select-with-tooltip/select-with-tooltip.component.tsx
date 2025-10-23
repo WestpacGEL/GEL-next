@@ -17,7 +17,7 @@ function BaseSelectWithTooltip(
         ref={ref}
         onChange={e => {
           setSelectedOption(e.target.options[e.target.selectedIndex].text);
-          if (onChange) onChange(e);
+          onChange?.(e);
         }}
         width={width}
         {...props}
