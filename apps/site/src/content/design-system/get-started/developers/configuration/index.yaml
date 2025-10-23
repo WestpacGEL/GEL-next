@@ -1,6 +1,6 @@
-name: ESLint configuration
+name: Configuration
 description: >-
-  We suggest following the Westpac Group ESLint configuration.
+  We suggest using the following the Westpac Group configurations.
 design:
   - title:
       name: ESLint Configuration

@@ -87,7 +87,7 @@ export function sortMenu(menuItems: Item[]) {
 }
 
 export function sortDeveloperMenu(menuItems: Item[]) {
-  const developersMenuOrder = ['set up', 'using components', 'using brands', 'eslint configuration', 'unit testing'];
+  const developersMenuOrder = ['installation', 'theming', 'components', 'configuration', 'unit testing', 'migration'];
 
   return orderMenu(menuItems, developersMenuOrder);
 }

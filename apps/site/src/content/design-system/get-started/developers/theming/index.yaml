@@ -1,0 +1,21 @@
+name: Theming
+description: >-
+  In order to allow for the most flexibility when theming your application, you
+  can easily change your application to use any of Westpac Group's brands.
+design:
+  - title:
+      name: Using brands
+      slug: using-brands
+  - title:
+      name: Brand tokens
+      slug: brand-tokens
+  - title:
+      name: Brand fonts
+      slug: brand-fonts
+  - title:
+      name: Light and dark mode
+      slug: light-dark-mode
+  - title:
+      name: Brand specific CSS
+      slug: brand-specific-css
+accessibility: []
