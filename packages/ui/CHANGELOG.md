@@ -1,5 +1,16 @@
 # @westpac/ui
 
+## 0.52.0
+
+### Minor Changes
+
+- 7fe448f: added truncation/new prop to show truncated value as title for Select
+
+### Patch Changes
+
+- 5386bd6: exporting ModalDialogFooterProps
+- 6a12908: screen reader accessibility for popover fixes
+
 ## 0.51.1
 
 ### Patch Changes
