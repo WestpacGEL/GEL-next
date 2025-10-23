@@ -1,4 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
+import { Key } from 'react-aria';
 
 import { Field } from '../field/field.component.js';
 
@@ -39,19 +41,16 @@ const ITEMS = [
 /**
  * > Default usage example
  */
-export const Default: Story = {
-  args: {},
-  render: () => {
-    return (
-      <ButtonGroup>
-        {ITEMS.map(({ id, text }) => (
-          <ButtonGroupButton id={id} key={id}>
-            {text}
-          </ButtonGroupButton>
-        ))}
-      </ButtonGroup>
-    );
-  },
+export const Default = () => {
+  return (
+    <ButtonGroup>
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
 };
 
 /**
@@ -93,24 +92,22 @@ export const Sizes = () => (
 /**
  * Button group responsive sizing
  */
-export const ResponsiveSize: Story = {
-  render: () => {
-    return (
-      <ButtonGroup
-        size={{
-          initial: 'small',
-          md: 'large',
-          lg: 'xlarge',
-        }}
-      >
-        {ITEMS.map(({ id, text }) => (
-          <ButtonGroupButton id={id} key={id}>
-            {text}
-          </ButtonGroupButton>
-        ))}
-      </ButtonGroup>
-    );
-  },
+export const ResponsiveSize = () => {
+  return (
+    <ButtonGroup
+      size={{
+        initial: 'small',
+        md: 'large',
+        lg: 'xlarge',
+      }}
+    >
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
 };
 
 /**
@@ -135,16 +132,86 @@ export const Block = () => (
 /**
  * Disabled button group
  */
-export const Disabled: Story = {
-  render: () => {
-    return (
-      <ButtonGroup isDisabled>
-        {ITEMS.map(({ id, text }) => (
-          <ButtonGroupButton id={id} key={id}>
-            {text}
-          </ButtonGroupButton>
-        ))}
-      </ButtonGroup>
-    );
-  },
+export const Disabled = () => {
+  return (
+    <ButtonGroup isDisabled>
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
+};
+
+/**
+ * SingleSelectionState button group
+ */
+export const SingleSelectionState = () => {
+  const [selectedKey, setSelectedKey] = useState<Key>();
+  return (
+    <ButtonGroup onSelectionChange={value => setSelectedKey(value)} selectedKeys={selectedKey}>
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
+};
+
+/**
+ * Default selection SingleSelectionState button group
+ */
+export const DefaultSelectedSingleSelectionState = () => {
+  const [selectedKey, setSelectedKey] = useState<Key>('1');
+  return (
+    <ButtonGroup onSelectionChange={value => setSelectedKey(value)} selectedKeys={selectedKey}>
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
+};
+
+/**
+ * MultipleSelectionState button group
+ */
+export const MultipleSelectionState = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Iterable<Key>>();
+  return (
+    <ButtonGroup
+      selectionMode="multiple"
+      onSelectionChange={value => setSelectedKeys(value)}
+      selectedKeys={selectedKeys}
+    >
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
+};
+
+/**
+ * Default selection MultipleSelectionState button group
+ */
+export const DefaultSelectionMultipleSelectionState = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Iterable<Key>>(['1', '2']);
+  return (
+    <ButtonGroup
+      selectionMode="multiple"
+      onSelectionChange={value => setSelectedKeys(value)}
+      selectedKeys={selectedKeys}
+    >
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
 };

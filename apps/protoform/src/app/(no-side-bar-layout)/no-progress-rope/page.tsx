@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Field, Form, FormGroup, Input, InputGroup, Textarea } from '@westpac/ui';
+import { Button, Field, Input, InputGroup, Textarea } from '@westpac/ui';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
@@ -37,22 +37,20 @@ export default function NoProgressRopePage() {
       <CustomHeading leadText="We’d love your feedback! Please take a moment to share your thoughts so we can keep improving and making things better for you.">
         Feedback
       </CustomHeading>
-      <Form id="credit-card" spacing="large" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <FormGroup>
-          <InputGroup size="large" label="Given name (Optional)" errorMessage={errors.givenName?.message}>
+      <form id="credit-card" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <Field label="Given name (Optional)" errorMessage={errors.givenName?.message}>
+          <InputGroup size="large">
             <Input {...register('givenName')} />
           </InputGroup>
-        </FormGroup>
-        <FormGroup>
-          <InputGroup size="large" label="Family name (Optional)" errorMessage={errors.familyName?.message}>
+        </Field>
+        <Field label="Family name (Optional)" errorMessage={errors.familyName?.message}>
+          <InputGroup size="large" >
             <Input {...register('familyName')} />
           </InputGroup>
-        </FormGroup>
-        <FormGroup>
-          <Field label="Your comments:" errorMessage={errors.comment?.message}>
-            <Textarea size="large" {...register('comment', { required: 'This field is required' })} />
-          </Field>
-        </FormGroup>
+        </Field>
+        <Field label="Your comments:" errorMessage={errors.comment?.message}>
+          <Textarea size="large" {...register('comment', { required: 'This field is required' })} />
+        </Field>
         <div className="xsl:flex-row mt-5 flex flex-col gap-2">
           <Button type="submit" size="large" look="primary">
             Send feedback
@@ -61,7 +59,7 @@ export default function NoProgressRopePage() {
             Cancel
           </Button>
         </div>
-      </Form>
+      </form>
     </div>
   );
 }

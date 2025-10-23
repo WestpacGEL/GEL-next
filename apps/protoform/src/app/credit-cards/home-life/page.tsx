@@ -1,9 +1,11 @@
 'use client';
 
-import { ButtonGroup, ButtonGroupButton, Field, Form, FormGroup, Input, InputGroup, Select } from '@westpac/ui';
+import { ButtonGroup, ButtonGroupButton, Field, Input, InputGroup, Select } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+
+import { useCreditCard } from '../context';
 
 import { BackButton } from '@/components/back-button/back-button';
 import { Cta } from '@/components/cta/cta';
@@ -12,7 +14,6 @@ import { ErrorValidationAlert } from '@/components/error-validation-alert/error-
 import { useSidebar } from '@/components/sidebar/context';
 import { defaultError } from '@/constants/form-contsants';
 
-import { useCreditCard } from '../context';
 
 type FormData = {
   dependants: string;
@@ -70,15 +71,9 @@ export default function HomeLife() {
         Home life
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <Form id="credit-card" spacing="large" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <FormGroup>
-          <InputGroup
-            instanceId="housing"
-            label="What is your current housing situation?"
-            errorMessage={errors.housing?.message}
-            size="large"
-            width={{ initial: 'full', md: 9 }}
-          >
+      <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <Field label="What is your current housing situation?" errorMessage={errors.housing?.message}>
+          <InputGroup instanceId="housing" size="large" width={{ initial: 'full', md: 9 }}>
             <Select
               {...register('housing', { required: defaultError })}
               id="housing"
@@ -90,43 +85,38 @@ export default function HomeLife() {
               <option value="OwnerOccupied">Owner occupied</option>
             </Select>
           </InputGroup>
-        </FormGroup>
+        </Field>
 
-        <FormGroup>
-          <Controller
-            control={control}
-            name="sharedExpenses"
-            rules={{ required: defaultError }}
-            render={({ field: { onChange, value } }) => (
-              <Field
-                label="Do you share household expenses?"
-                hintMessage="For example utility bills"
-                errorMessage={errors.sharedExpenses?.message}
+        <Controller
+          control={control}
+          name="sharedExpenses"
+          rules={{ required: defaultError }}
+          render={({ field: { onChange, value } }) => (
+            <Field
+              label="Do you share household expenses?"
+              hintMessage="For example utility bills"
+              errorMessage={errors.sharedExpenses?.message}
+            >
+              <ButtonGroup
+                defaultSelectedKeys={data.sharedExpenses}
+                size="large"
+                block={{ initial: true, md: false }}
+                onSelectionChange={onChange}
+                selectedKeys={value}
               >
-                <ButtonGroup
-                  defaultSelectedKeys={data.sharedExpenses}
-                  size="large"
-                  block={{ initial: true, md: false }}
-                  onSelectionChange={onChange}
-                  selectedKeys={value}
-                >
-                  <ButtonGroupButton id="Yes">Yes</ButtonGroupButton>
-                  <ButtonGroupButton id="No">No</ButtonGroupButton>
-                </ButtonGroup>
-              </Field>
-            )}
-          />
-        </FormGroup>
+                <ButtonGroupButton id="Yes">Yes</ButtonGroupButton>
+                <ButtonGroupButton id="No">No</ButtonGroupButton>
+              </ButtonGroup>
+            </Field>
+          )}
+        />
 
-        <FormGroup>
-          <InputGroup
-            label="How many dependants do you have?"
-            hint="Excluding spouse"
-            instanceId="dependants"
-            errorMessage={errors.dependants?.message}
-            size="large"
-            width={{ initial: 'full', md: 3 }}
-          >
+        <Field
+          label="How many dependants do you have?"
+          hintMessage="Excluding spouse"
+          errorMessage={errors.dependants?.message}
+        >
+          <InputGroup instanceId="dependants" size="large" width={{ initial: 'full', md: 3 }}>
             <Select
               {...register('dependants', { required: defaultError })}
               id="dependants"
@@ -140,14 +130,15 @@ export default function HomeLife() {
               <option value="4">4</option>
             </Select>
           </InputGroup>
-        </FormGroup>
+        </Field>
 
-        <FormGroup>
+        <Field
+          label="All other expenses"
+          hintMessage="For example Food, regular bills. transport, Insurance, Child support. Enter a dollar value and choose a frequency"
+          errorMessage={errors.expenses?.message || errors.expenseFreq?.message}
+        >
           <InputGroup
             size="large"
-            label="All other expenses"
-            hint="For example Food, regular bills. transport, Insurance, Child support. Enter a dollar value and choose a frequency"
-            errorMessage={errors.expenses?.message || errors.expenseFreq?.message}
             instanceId="expenses"
             before="$"
             width={{ initial: 'full', md: 10 }}
@@ -172,12 +163,12 @@ export default function HomeLife() {
               defaultValue={data.expenses}
             />
           </InputGroup>
-        </FormGroup>
+        </Field>
 
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
-      </Form>
+      </form>
     </div>
   );
 }

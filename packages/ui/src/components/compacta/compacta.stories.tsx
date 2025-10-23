@@ -2,7 +2,7 @@ import { type Meta, StoryFn } from '@storybook/react-vite';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { Form, FormGroup, Hint, Input, Label } from '../index.js';
+import { Field, Input } from '../index.js';
 
 import { Compacta } from './compacta.component.js';
 import { CompactaItem } from './components/compacta-item/compacta-item.component.js';
@@ -39,7 +39,7 @@ export const Default = () => {
   }, [items, setValue]);
 
   return (
-    <Form>
+    <form>
       <Compacta onAdd={handleAdd}>
         {items.map((item, index) => (
           <CompactaItem
@@ -49,24 +49,18 @@ export const Default = () => {
               setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
             }}
           >
-            <FormGroup>
-              <Label htmlFor={`primary[${index}]`}>Primary</Label>
-              <Hint id={`primary-hint`}>Primary title text</Hint>
-              <Input aria-describedby={`primary-hint`} {...register(`items.${index}.primary`)} />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor={`secondary[${index}]`}>Secondary</Label>
-              <Hint id={`secondary-hint`}>Secondary title text</Hint>
-              <Input aria-describedby={`secondary-hint`} {...register(`items.${index}.secondary`)} />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor={`tertiary[${index}]`}>Tertiary</Label>
-              <Hint id={`tertiary-hint`}>Tertiary title text</Hint>
-              <Input aria-describedby={`tertiary-hint`} id={`tertiary`} {...register(`items.${index}.tertiary`)} />
-            </FormGroup>
+            <Field label="Primary" hintMessage="Primary title text">
+              <Input {...register(`items.${index}.primary`)} />
+            </Field>
+            <Field label="Secondary" hintMessage="Secondary title text">
+              <Input {...register(`items.${index}.secondary`)} />
+            </Field>
+            <Field label="Tertiary" hintMessage="Tertiary title text">
+              <Input {...register(`items.${index}.tertiary`)} />
+            </Field>
           </CompactaItem>
         ))}
       </Compacta>
-    </Form>
+    </form>
   );
 };

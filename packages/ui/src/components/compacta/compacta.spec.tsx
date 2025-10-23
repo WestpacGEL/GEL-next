@@ -3,8 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { FormGroup } from '../form/index.js';
-import { CompactaProps, Hint, Label } from '../index.js';
+import { CompactaProps, Field } from '../index.js';
 import { Input } from '../input/index.js';
 
 import { Compacta } from './compacta.component.js';
@@ -45,34 +44,15 @@ describe('Compacta', () => {
             title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
             onRemove={() => (props.onRemove ? props.onRemove(index) : handleRemove(index))}
           >
-            <FormGroup>
-              <Label htmlFor={`primary[${index}]`}>Primary</Label>
-              <Hint id={`primary-hint`}>Primary title text</Hint>
-              <Input
-                data-testid="input-one"
-                aria-describedby={`primary-hint`}
-                {...register(`items.${index}.primary`)}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor={`secondary[${index}]`}>Secondary</Label>
-              <Hint id={`secondary-hint`}>Secondary title text</Hint>
-              <Input
-                data-testid="input-two"
-                aria-describedby={`secondary-hint`}
-                {...register(`items.${index}.secondary`)}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor={`tertiary[${index}]`}>Tertiary</Label>
-              <Hint id={`tertiary-hint`}>Tertiary title text</Hint>
-              <Input
-                data-testid="input-three"
-                aria-describedby={`tertiary-hint`}
-                id={`tertiary`}
-                {...register(`items.${index}.tertiary`)}
-              />
-            </FormGroup>
+            <Field label="Primary" hintMessage="Primary title text">
+              <Input {...register(`items.${index}.primary`)} />
+            </Field>
+            <Field label="Secondary" hintMessage="Secondary title text">
+              <Input {...register(`items.${index}.secondary`)} />
+            </Field>
+            <Field label="Tertiary" hintMessage="Tertiary title text">
+              <Input id={`tertiary`} {...register(`items.${index}.tertiary`)} />
+            </Field>
           </CompactaItem>
         ))}
       </Compacta>

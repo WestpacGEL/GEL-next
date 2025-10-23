@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
-import { FormGroup, Hint, Input, Label } from '../index.js';
+import { Field, Input } from '../index.js';
 
 import { Repeater } from './repeater.component.js';
 
@@ -12,11 +12,9 @@ const meta: Meta<typeof Repeater> = {
   decorators: [(Story: StoryFn) => <Story />],
   args: {
     children: (
-      <FormGroup>
-        <Label htmlFor={`test`}>Primary</Label>
-        <Hint>Primary title text</Hint>
+      <Field label="Primary" hintMessage="Primary title text">
         <Input className="w-full" name="test" onChange={e => console.log(e)} />
-      </FormGroup>
+      </Field>
     ),
   },
 };

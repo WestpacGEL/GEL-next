@@ -1,9 +1,11 @@
 'use client';
 
-import { Field, Form, FormGroup, Input, InputGroup, Select } from '@westpac/ui';
+import { Field, Input, InputGroup, Select } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+
+import { useCreditCard } from '../context';
 
 import { BackButton } from '@/components/back-button/back-button';
 import { Cta } from '@/components/cta/cta';
@@ -11,8 +13,6 @@ import { CustomHeading } from '@/components/custom-heading/custom-heading';
 import { ErrorValidationAlert } from '@/components/error-validation-alert/error-validation-alert';
 import { useSidebar } from '@/components/sidebar/context';
 import { defaultError } from '@/constants/form-contsants';
-
-import { useCreditCard } from '../context';
 
 type FormData = {
   title: string;
@@ -76,14 +76,9 @@ export default function NameAndContact() {
         Name & contact
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <Form id="credit-card" spacing="large" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <FormGroup>
-          <InputGroup
-            width={{ initial: 'full', md: 5 }}
-            label="Title"
-            size="large"
-            errorMessage={errors.title?.message}
-          >
+      <form id="credit-card" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <Field label="Title" errorMessage={errors.title?.message}>
+          <InputGroup width={{ initial: 'full', md: 5 }} size="large">
             <Select
               {...register('title', { required: defaultError })}
               id="title"
@@ -96,9 +91,9 @@ export default function NameAndContact() {
               <option value="Ms">Ms</option>
             </Select>
           </InputGroup>
-        </FormGroup>
+        </Field>
 
-        <FormGroup>
+        <Field>
           <InputGroup size="large" label="Given name" errorMessage={errors.givenName?.message}>
             <Input
               {...register('givenName', { required: defaultError })}
@@ -107,16 +102,16 @@ export default function NameAndContact() {
               invalid={!!errors.givenName?.message}
             />
           </InputGroup>
-        </FormGroup>
+        </Field>
 
-        <FormGroup>
-          <InputGroup size="large" label="Middle name(s) (if any)">
+        <Field label="Middle name(s) (if any)">
+          <InputGroup size="large">
             <Input {...register('middleName')} id="middleName" defaultValue={data.middleName} />
           </InputGroup>
-        </FormGroup>
+        </Field>
 
-        <FormGroup>
-          <InputGroup size="large" label="Family name" errorMessage={errors.familyName?.message}>
+        <Field label="Family name" errorMessage={errors.familyName?.message}>
+          <InputGroup size="large">
             <Input
               {...register('familyName', { required: defaultError })}
               id="familyName"
@@ -124,56 +119,51 @@ export default function NameAndContact() {
               invalid={!!errors.familyName?.message}
             />
           </InputGroup>
-        </FormGroup>
+        </Field>
 
-        <FormGroup>
-          <InputGroup
-            size="large"
-            label="Date of birth"
-            hint="For example 31 3 1980"
-            errorMessage={errors.dobDay?.message || errors.dobMonth?.message || errors.dobYear?.message}
-          >
-            <Field className="mr-2" label="Day">
-              <Input
-                {...register('dobDay', { required: defaultError, valueAsNumber: true })}
-                id="dobDay"
-                width={{ initial: 'full', md: 2 }}
-                size="large"
-                defaultValue={data.dobDay}
-                invalid={!!errors.dobDay?.message}
-              />
-            </Field>
-            <Field className="mr-2" label="Month">
-              <Input
-                {...register('dobMonth', { required: defaultError, valueAsNumber: true })}
-                id="dobMonth"
-                width={{ initial: 'full', md: 2 }}
-                size="large"
-                defaultValue={data.dobMonth}
-                invalid={!!errors.dobMonth?.message}
-              />
-            </Field>
-            <Field label="Year">
-              <Input
-                {...register('dobYear', { required: defaultError, valueAsNumber: true })}
-                id="dobYear"
-                width={{ initial: 'full', md: 4 }}
-                size="large"
-                defaultValue={data.dobYear}
-                invalid={!!errors.dobYear?.message}
-              />
-            </Field>
-          </InputGroup>
-        </FormGroup>
+        <Field
+          label="Date of birth"
+          hintMessage="For example 31 3 1980"
+          errorMessage={errors.dobDay?.message || errors.dobMonth?.message || errors.dobYear?.message}
+        >
+          <Field className="mr-2" label="Day">
+            <Input
+              {...register('dobDay', { required: defaultError, valueAsNumber: true })}
+              id="dobDay"
+              width={{ initial: 'full', md: 2 }}
+              size="large"
+              defaultValue={data.dobDay}
+              invalid={!!errors.dobDay?.message}
+            />
+          </Field>
+          <Field className="mr-2" label="Month">
+            <Input
+              {...register('dobMonth', { required: defaultError, valueAsNumber: true })}
+              id="dobMonth"
+              width={{ initial: 'full', md: 2 }}
+              size="large"
+              defaultValue={data.dobMonth}
+              invalid={!!errors.dobMonth?.message}
+            />
+          </Field>
+          <Field label="Year">
+            <Input
+              {...register('dobYear', { required: defaultError, valueAsNumber: true })}
+              id="dobYear"
+              width={{ initial: 'full', md: 4 }}
+              size="large"
+              defaultValue={data.dobYear}
+              invalid={!!errors.dobYear?.message}
+            />
+          </Field>
+        </Field>
 
-        <FormGroup>
-          <InputGroup
-            size="large"
-            label="Mobile number"
-            hint="We’ll send a verification code to your divhone later, to create your account."
-            errorMessage={errors.mobileNumber?.message}
-            before="AUS +61"
-          >
+        <Field
+          label="Mobile number"
+          hintMessage="We’ll send a verification code to your divhone later, to create your account."
+          errorMessage={errors.mobileNumber?.message}
+        >
+          <InputGroup size="large" before="AUS +61">
             <Input
               {...register('mobileNumber', { required: defaultError })}
               id="mobileNumber"
@@ -181,12 +171,12 @@ export default function NameAndContact() {
               invalid={!!errors.mobileNumber?.message}
             />
           </InputGroup>
-        </FormGroup>
+        </Field>
 
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
-      </Form>
+      </form>
     </div>
   );
 }

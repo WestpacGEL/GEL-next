@@ -74,9 +74,6 @@
     "./date-picker": {
       "default": "./dist/components/date-picker/index.js"
     },
-    "./date-picker-beta": {
-      "default": "./dist/components/date-picker-beta/index.js"
-    },
     "./error-message": {
       "default": "./dist/components/error-message/index.js"
     },
@@ -91,9 +88,6 @@
     },
     "./footer": {
       "default": "./dist/components/footer/index.js"
-    },
-    "./form": {
-      "default": "./dist/components/form/index.js"
     },
     "./grid": {
       "default": "./dist/components/grid/index.js"
