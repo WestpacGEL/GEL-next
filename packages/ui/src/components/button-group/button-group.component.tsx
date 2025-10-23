@@ -19,29 +19,23 @@ export const ToggleButtonGroupContext = React.createContext<
 >(null);
 
 export function ButtonGroup({ size, look, block, children, onSelect, ...props }: ButtonGroupProps) {
-  const finalSelectedKeys = useMemo(() => {
-    if (props.selectedKeys === undefined) {
-      return props.selectedKeys;
-    }
-    if (props.selectionMode === 'single' || props.selectionMode === undefined) {
-      return new Set([props.selectedKeys]);
-    }
-    if (props.selectionMode === 'multiple') {
-      return props.selectedKeys;
-    }
-  }, [props.selectedKeys, props.selectionMode]);
+  /**
+   * Normalizes key sets depending on selection mode.
+   */
+  const normalizeKeys = useCallback(
+    (keys?: Key | Iterable<Key>) => {
+      if (keys === undefined) return undefined;
+      if (props.selectionMode === 'multiple') return new Set(keys as Iterable<Key>);
+      return new Set([keys as Key]);
+    },
+    [props.selectionMode],
+  );
 
-  const finalDefaultSelectedKeys = useMemo(() => {
-    if (props.defaultSelectedKeys === undefined) {
-      return props.defaultSelectedKeys;
-    }
-    if (props.selectionMode === 'single' || props.selectionMode === undefined) {
-      return new Set([props.defaultSelectedKeys]);
-    }
-    if (props.selectionMode === 'multiple') {
-      return props.defaultSelectedKeys;
-    }
-  }, [props.defaultSelectedKeys, props.selectionMode]);
+  const finalSelectedKeys = useMemo(() => normalizeKeys(props.selectedKeys), [normalizeKeys, props.selectedKeys]);
+  const finalDefaultSelectedKeys = useMemo(
+    () => normalizeKeys(props.defaultSelectedKeys),
+    [normalizeKeys, props.defaultSelectedKeys],
+  );
 
   const handleSelectionChange = useCallback(
     (value: Set<Key>) => {
