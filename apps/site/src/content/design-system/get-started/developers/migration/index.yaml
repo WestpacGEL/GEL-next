@@ -1,0 +1,11 @@
+name: Migration
+description: >-
+  Migrating to v1 is key to ensuring that your applications will be compatible with new design tokens and receive all future updates. This guide will help you get started with migrating your applications.
+design:
+  - title:
+      name: Updating packages
+      slug: update-packages
+  - title:
+      name: Running the codemod
+      slug: running-codemod
+accessibility: []

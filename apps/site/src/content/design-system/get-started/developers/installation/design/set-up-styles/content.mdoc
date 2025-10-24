@@ -1,0 +1,21 @@
+In your main css file add the following imports
+
+```html
+<StaticCode language="css" code={`
+@import 'tailwindcss';
+@import '@westpac/style-config/tailwind';   /* GEL theme configurations e.g. typography, spacing etc */
+@import '@westpac/style-config/theme-wbc';  /* Brand color tokens */
+
+@source "./node_modules/@westpac/ui/src";   /* Enable tailwind to scan component class names */
+`} />
+```
+
+Enable theming by adding the `data-brand` attribute to a parent element in your HTML
+
+```html
+<StaticCode language="jsx" code={`
+<div data-brand="wbc">
+  <!-- Your app content -->
+</div>
+`} />
+```

@@ -1,0 +1,35 @@
+To use brands in your project, make sure you import the required brand themes into your main css file.
+
+```html
+<StaticCode language="css" code={`
+@import '@westpac/style-config/theme-wbc';
+@import '@westpac/style-config/theme-stg';
+`} />
+```
+
+Add the custom attribute tag `data-brand="brand_name"` to your HTML tag or parent container. You can use the following valid brand names:
+
+- `wbc`: Westpac Banking Corporation
+- `stg`: St.George Bank
+- `bom`: Bank of Melbourne
+- `bsa`: BankSA
+- `rams`: RAMS Home Loans
+- `wbg`: Westpac Group
+
+```html
+<StaticCode language="jsx" code={`
+<div data-brand="wbc">
+  <!-- Your app content -->
+</div>
+`} />
+```
+
+For multibrand applications use the `data-brand` attribute to dynamically switch between brands
+
+```html
+<StaticCode language="jsx" code={`
+<div data-brand={currentBrand}>
+  <!-- Your app content -->
+</div>
+`} />
+```
