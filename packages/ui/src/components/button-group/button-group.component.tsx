@@ -53,13 +53,10 @@ export function ButtonGroup({
 
   const handleSelectionChange = useCallback(
     (value: Set<Key>) => {
-      console.log('selectionMode', selectionMode);
       if (selectionMode === 'single' || selectionMode === undefined) {
         return onSelectionChange?.(value ? [...(value || [])][0] : value);
       }
       if (selectionMode === 'multiple') {
-        console.log('PASO');
-        console.log('value', value);
         onSelectionChange?.(value);
       }
     },
