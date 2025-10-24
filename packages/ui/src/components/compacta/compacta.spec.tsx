@@ -19,10 +19,11 @@ type Inputs = {
 
 describe('Compacta', () => {
   const textToQuery = 'Primary title text';
-  const TestCompacta = (
-    props: Partial<CompactaProps & { onRemove?: (index: number) => unknown; items?: Inputs['items'] }>,
-  ) => {
-    const { register, watch, setValue } = useForm<Inputs>({ defaultValues: { items: props.items || [] } });
+  const TestCompacta = ({
+    items: itemsProps,
+    ...props
+  }: Partial<CompactaProps & { onRemove?: (index: number) => unknown; items?: Inputs['items'] }>) => {
+    const { register, watch, setValue } = useForm<Inputs>({ defaultValues: { items: itemsProps || [] } });
     const items = watch('items');
 
     const handleAdd = useCallback(() => {
@@ -45,13 +46,13 @@ describe('Compacta', () => {
             onRemove={() => (props.onRemove ? props.onRemove(index) : handleRemove(index))}
           >
             <Field label="Primary" hintMessage="Primary title text">
-              <Input {...register(`items.${index}.primary`)} />
+              <Input data-testid="input-one" {...register(`items.${index}.primary`)} />
             </Field>
             <Field label="Secondary" hintMessage="Secondary title text">
-              <Input {...register(`items.${index}.secondary`)} />
+              <Input data-testid="input-two" {...register(`items.${index}.secondary`)} />
             </Field>
             <Field label="Tertiary" hintMessage="Tertiary title text">
-              <Input id={`tertiary`} {...register(`items.${index}.tertiary`)} />
+              <Input data-testid="input-three" {...register(`items.${index}.tertiary`)} />
             </Field>
           </CompactaItem>
         ))}
