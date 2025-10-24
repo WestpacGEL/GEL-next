@@ -1,4 +1,4 @@
-import { Alert, ErrorMessage, Field, FormGroup, FormLabel, Input, Select, SelectProps } from '@westpac/ui';
+import { Alert, Field, Input, Select, SelectProps } from '@westpac/ui';
 import { ChangeEvent, Fragment, HTMLAttributes, useState } from 'react';
 
 import { EmploymentSelect, IndustrySelect } from './employment.demo';
@@ -47,36 +47,26 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
   const employed = ['full', 'part', 'casual-seasonal', 'self'];
 
   return (
-    <Fragment>
-      <FormGroup>
-        <Field label="Employment type">
-          <EmploymentSelect value={employment} onChange={e => setEmployment(e.target.value)} />
-        </Field>
-      </FormGroup>
+    <div className="flex flex-col gap-4">
+      <Field label="Employment type">
+        <EmploymentSelect value={employment} onChange={e => setEmployment(e.target.value)} />
+      </Field>
 
       {employed.includes(employment || '') && (
         <Fragment>
-          <FormGroup>
-            <Field label="Occupation category">
-              <IndustrySelect className="w-full" />
-            </Field>
-          </FormGroup>
-          <FormGroup>
-            <Field label="Occupation">
-              <OccupationSelect className="w-full" />
-            </Field>
-          </FormGroup>
-          <FormGroup>
-            <Field
-              label={`${employment === 'self' ? 'Company' : 'Employer'}’s legal business name`}
-              errorMessage={error}
-            >
-              <Input className="w-full" size="large" invalid={invalid} />
-            </Field>
-          </FormGroup>
-          <FormGroup>
-            <FormLabel>Length of time with this {employment === 'self' ? 'company' : 'employer'}</FormLabel>
-            {error && <ErrorMessage message={error} />}
+          <Field label="Occupation category">
+            <IndustrySelect className="w-full" />
+          </Field>
+          <Field label="Occupation">
+            <OccupationSelect className="w-full" />
+          </Field>
+          <Field label={`${employment === 'self' ? 'Company' : 'Employer'}’s legal business name`} errorMessage={error}>
+            <Input className="w-full" size="large" invalid={invalid} />
+          </Field>
+          <Field
+            label={`Length of time with this ${employment === 'self' ? 'company' : 'employer'}`}
+            errorMessage={error}
+          >
             <fieldset className="flex gap-3">
               <Field label="Years" labelSize="small">
                 <Select
@@ -99,7 +89,7 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
                 </Select>
               </Field>
             </fieldset>
-          </FormGroup>
+          </Field>
         </Fragment>
       )}
 
@@ -109,34 +99,27 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
             As you have only been with your current employer for less than x years, we need to capture your previous
             employment details.
           </Alert>
-          <FormGroup>
-            <Field label="Previous employment type">
-              <EmploymentSelect
-                value={prevEmployment}
-                onChange={(e: ChangeEvent<HTMLSelectElement>) => setPrevEmployment(e.target.value)}
-              />
-            </Field>
-          </FormGroup>
-          <FormGroup>
-            <Field label="Previous industry category">
-              <IndustrySelect />
-            </Field>
-          </FormGroup>
-          <FormGroup>
-            <Field label="Previous occupation">
-              <Select size="large">
-                <option>Select</option>
-              </Select>
-            </Field>
-          </FormGroup>
-          <FormGroup>
-            <Field label={`${prevEmployment === 'self' ? 'Company' : 'Employer'}’s legal business name`}>
-              <Input size="large" />
-            </Field>
-          </FormGroup>
-          <FormGroup>
-            <FormLabel>Length of time with this {prevEmployment === 'self' ? 'company' : 'employer'}</FormLabel>
-            {error && <ErrorMessage message={error} />}
+          <Field label="Previous employment type">
+            <EmploymentSelect
+              value={prevEmployment}
+              onChange={(e: ChangeEvent<HTMLSelectElement>) => setPrevEmployment(e.target.value)}
+            />
+          </Field>
+          <Field label="Previous industry category">
+            <IndustrySelect />
+          </Field>
+          <Field label="Previous occupation">
+            <Select size="large">
+              <option>Select</option>
+            </Select>
+          </Field>
+          <Field label={`${prevEmployment === 'self' ? 'Company' : 'Employer'}’s legal business name`}>
+            <Input size="large" />
+          </Field>
+          <Field
+            label={`Length of time with this ${prevEmployment === 'self' ? 'company' : 'employer'}`}
+            errorMessage={error}
+          >
             <fieldset className="flex gap-3">
               <Field label="Years" labelSize="small">
                 <Select size="large">
@@ -153,9 +136,9 @@ export const EmploymentSelectFullPattern = ({ showErrors = false }) => {
                 </Select>
               </Field>
             </fieldset>
-          </FormGroup>
+          </Field>
         </Wrapper>
       )}
-    </Fragment>
+    </div>
   );
 };
