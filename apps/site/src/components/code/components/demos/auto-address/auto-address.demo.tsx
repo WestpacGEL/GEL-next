@@ -1,4 +1,4 @@
-import { Autocomplete, AutocompleteItem, Field, FormGroup, Input, Link } from '@westpac/ui';
+import { Autocomplete, AutocompleteItem, Field, Input, Link } from '@westpac/ui';
 import { Fragment, RefObject, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 const StreetHint = ({ manual, onClick }: { manual?: boolean; onClick: (manual: boolean) => any }) => (
@@ -50,41 +50,37 @@ export function ManualAddress({
   const errorMessage = useMemo(() => (withError ? 'Error message goes here if activated' : undefined), [withError]);
 
   return (
-    <div>
-      <FormGroup>
-        <Field
-          errorMessage={errorMessage}
-          label="Street"
-          hintMessage={
-            <StreetHint
-              manual={manual}
-              onClick={() => {
-                onClick(manual);
-              }}
-            />
-          }
-        >
-          <Input size="large" invalid={withError} className="w-full" ref={streetLegendRef} />
-        </Field>
-        <Field>
-          <Input size="large" className="w-full" />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field errorMessage={errorMessage} label="Suburb">
-          <Input size="large" invalid={withError} className="w-full sm:w-8/12" />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field errorMessage={errorMessage} label="State">
-          <Input size="large" invalid={withError} />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field errorMessage={errorMessage} label="Postcode">
-          <Input size="large" invalid={withError} className="w-full sm:w-2/12" />
-        </Field>
-      </FormGroup>
+    <div className="flex flex-col gap-4">
+      <Field
+        errorMessage={errorMessage}
+        label="Street"
+        hintMessage={
+          <StreetHint
+            manual={manual}
+            onClick={() => {
+              onClick(manual);
+            }}
+          />
+        }
+      >
+        <Input size="large" invalid={withError} className="w-full" ref={streetLegendRef} />
+      </Field>
+
+      <Field>
+        <Input size="large" className="w-full" />
+      </Field>
+
+      <Field errorMessage={errorMessage} label="Suburb">
+        <Input size="large" invalid={withError} className="w-full sm:w-8/12" />
+      </Field>
+
+      <Field errorMessage={errorMessage} label="State">
+        <Input size="large" invalid={withError} />
+      </Field>
+
+      <Field errorMessage={errorMessage} label="Postcode">
+        <Input size="large" invalid={withError} className="w-full sm:w-2/12" />
+      </Field>
     </div>
   );
 }
@@ -130,61 +126,56 @@ export function InternationalAddress({
   const errorMessage = useMemo(() => (withError ? 'Error message goes here if activated' : undefined), [withError]);
 
   return (
-    <div>
-      <FormGroup>
-        <Field errorMessage={errorMessage} label="Street">
-          <Input invalid={withError} className="w-full" ref={streetLegendRef} />
-        </Field>
-        <Field>
-          <Input className="w-full" />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field errorMessage={errorMessage} label="City, town or suburb">
-          <Input invalid={withError} className="w-full sm:w-8/12" />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field errorMessage={errorMessage} label="State, province or region">
-          <Input invalid={withError} className="w-full sm:w-8/12" />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field errorMessage={errorMessage} label="Postcode or Zip code">
-          <Input invalid={withError} className="w-full sm:w-2/12" />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field
-          errorMessage={withError ? 'Invalid country. Start typing and select your country from the list' : undefined}
-          label="Search for your country"
-          hintMessage="Start typing your country and select from the list"
+    <div className="flex flex-col gap-4">
+      <Field errorMessage={errorMessage} label="Street">
+        <Input invalid={withError} className="w-full" ref={streetLegendRef} />
+      </Field>
+
+      <Field>
+        <Input className="w-full" />
+      </Field>
+
+      <Field errorMessage={errorMessage} label="City, town or suburb">
+        <Input invalid={withError} className="w-full sm:w-8/12" />
+      </Field>
+
+      <Field errorMessage={errorMessage} label="State, province or region">
+        <Input invalid={withError} className="w-full sm:w-8/12" />
+      </Field>
+
+      <Field errorMessage={errorMessage} label="Postcode or Zip code">
+        <Input invalid={withError} className="w-full sm:w-2/12" />
+      </Field>
+
+      <Field
+        errorMessage={withError ? 'Invalid country. Start typing and select your country from the list' : undefined}
+        label="Search for your country"
+        hintMessage="Start typing your country and select from the list"
+      >
+        <Autocomplete
+          size="large"
+          invalid={withError}
+          footer={
+            <Fragment>
+              Can&apos;t find your country?{' '}
+              <Link
+                type="inline"
+                onClick={e => {
+                  e.preventDefault();
+                  onClick(manual);
+                }}
+              >
+                Enter it manually
+              </Link>
+            </Fragment>
+          }
+          noOptionsMessage="None found"
         >
-          <Autocomplete
-            size="large"
-            invalid={withError}
-            footer={
-              <Fragment>
-                Can&apos;t find your country?{' '}
-                <Link
-                  type="inline"
-                  onClick={e => {
-                    e.preventDefault();
-                    onClick(manual);
-                  }}
-                >
-                  Enter it manually
-                </Link>
-              </Fragment>
-            }
-            noOptionsMessage="None found"
-          >
-            {COUNTRIES.map(country => (
-              <AutocompleteItem key={country.value}>{country.value}</AutocompleteItem>
-            ))}
-          </Autocomplete>
-        </Field>
-      </FormGroup>
+          {COUNTRIES.map(country => (
+            <AutocompleteItem key={country.value}>{country.value}</AutocompleteItem>
+          ))}
+        </Autocomplete>
+      </Field>
     </div>
   );
 }
@@ -204,24 +195,22 @@ export function AutoAddressDemo({ errorMessage }: { errorMessage?: string }) {
       {manual ? (
         <ManualAddress manual={manual} onClick={() => setManual(manual => !manual)} streetLegendRef={streetLegendRef} />
       ) : (
-        <FormGroup>
-          <Field
-            label="Search for your home address"
-            hintMessage={<StreetHint manual={manual} onClick={() => setManual(manual => !manual)} />}
-            errorMessage={errorMessage}
+        <Field
+          label="Search for your home address"
+          hintMessage={<StreetHint manual={manual} onClick={() => setManual(manual => !manual)} />}
+          errorMessage={errorMessage}
+        >
+          <Autocomplete
+            size="large"
+            footer={<Footer manual={manual} onClick={() => setManual(manual => !manual)} />}
+            noOptionsMessage="None found"
           >
-            <Autocomplete
-              size="large"
-              footer={<Footer manual={manual} onClick={() => setManual(manual => !manual)} />}
-              noOptionsMessage="None found"
-            >
-              <AutocompleteItem key="1">123 Sesame Street, Hornsby, NSW, 2077</AutocompleteItem>
-              <AutocompleteItem key="2">742 Evergreen Terrace , Chatswood, NSW, 2067</AutocompleteItem>
-              <AutocompleteItem key="3">42 Wallaby Way, Sydney, NSW, 2000</AutocompleteItem>
-              <AutocompleteItem key="4">124 Conch Street, Marrickville, NSW, 2204</AutocompleteItem>
-            </Autocomplete>
-          </Field>
-        </FormGroup>
+            <AutocompleteItem key="1">123 Sesame Street, Hornsby, NSW, 2077</AutocompleteItem>
+            <AutocompleteItem key="2">742 Evergreen Terrace , Chatswood, NSW, 2067</AutocompleteItem>
+            <AutocompleteItem key="3">42 Wallaby Way, Sydney, NSW, 2000</AutocompleteItem>
+            <AutocompleteItem key="4">124 Conch Street, Marrickville, NSW, 2204</AutocompleteItem>
+          </Autocomplete>
+        </Field>
       )}
     </div>
   );

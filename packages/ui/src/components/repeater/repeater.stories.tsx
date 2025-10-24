@@ -3,7 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { Form, FormGroup, Hint, Input, Label } from '../index.js';
+import { Field, Input } from '../index.js';
 
 import { RepeaterItem } from './components/repeater-item/repeater-item.component.js';
 import { Repeater } from './repeater.component.js';
@@ -19,11 +19,9 @@ const meta: Meta<typeof Repeater> = {
   decorators: [(Story: StoryFn) => <Story />],
   args: {
     children: (
-      <FormGroup>
-        <Label htmlFor={`test`}>Primary</Label>
-        <Hint>Primary title text</Hint>
+      <Field label="Primary" hintMessage="Primary title text">
         <Input className="w-full" name="test" onChange={e => console.log(e)} />
-      </FormGroup>
+      </Field>
     ),
   },
 };
@@ -49,7 +47,7 @@ export const Default: Story = {
     }, [items, setValue]);
 
     return (
-      <Form>
+      <form>
         <Repeater onAdd={handleAdd}>
           {items.map((item, index) => (
             <RepeaterItem
@@ -58,15 +56,13 @@ export const Default: Story = {
                 setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
               }}
             >
-              <FormGroup spacing="none">
-                <Label htmlFor={`primary[${index}]`}>Primary</Label>
-                <Hint id={`primary-hint`}>Primary title text</Hint>
+              <Field label="Primary" hintMessage="Primary title text">
                 <Input aria-describedby={`primary-hint`} {...register(`items.${index}`)} />
-              </FormGroup>
+              </Field>
             </RepeaterItem>
           ))}
         </Repeater>
-      </Form>
+      </form>
     );
   },
 };
@@ -89,7 +85,7 @@ export const Separator: Story = {
     }, [items, setValue]);
 
     return (
-      <Form>
+      <form>
         <Repeater separator onAdd={handleAdd}>
           {items.map((item, index) => (
             <RepeaterItem
@@ -98,15 +94,13 @@ export const Separator: Story = {
                 setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
               }}
             >
-              <FormGroup spacing="none">
-                <Label htmlFor={`primary[${index}]`}>Primary</Label>
-                <Hint id={`primary-hint`}>Primary title text</Hint>
-                <Input aria-describedby={`primary-hint`} {...register(`items.${index}`)} />
-              </FormGroup>
+              <Field label="Primary" hintMessage="Primary title text">
+                <Input {...register(`items.${index}`)} />
+              </Field>
             </RepeaterItem>
           ))}
         </Repeater>
-      </Form>
+      </form>
     );
   },
 };

@@ -28,7 +28,7 @@ export default function ExtraCareCustomerPage() {
         beforeContent={
           <div className="mb-5 flex items-center gap-1">
             <Circle className="typography-body-11 bg-primary font-bold text-white">EC</Circle>
-            <h3 className="typography-body-11 text-muted font-bold">Phillip Minchin:</h3>
+            <h3 className="typography-body-11 text-text-muted font-bold">Phillip Minchin:</h3>
             <span className="typography-body-11">1234567890</span>
           </div>
         }

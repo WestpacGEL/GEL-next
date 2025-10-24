@@ -31,7 +31,7 @@ export default function PersonalCustomerPage() {
             <Circle className="bg-muted">
               <PersonIcon color="white" size="xsmall" />
             </Circle>
-            <h3 className="typography-body-11 text-muted font-bold">Bella Harrison:</h3>
+            <h3 className="typography-body-11 text-text-muted font-bold">Bella Harrison:</h3>
             <span className="typography-body-11">1234567890</span>
           </div>
         }

@@ -1,12 +1,4 @@
-import {
-  Autocomplete,
-  AutocompleteItem,
-  type AutocompleteProps,
-  Field,
-  FormGroup,
-  Select,
-  SelectProps,
-} from '@westpac/ui';
+import { Autocomplete, AutocompleteItem, type AutocompleteProps, Field, Select, SelectProps } from '@westpac/ui';
 import { Fragment, useState } from 'react';
 
 export const EmploymentSelect = (props: SelectProps) => (
@@ -94,27 +86,22 @@ export const EmploymentAutocompletePattern = () => {
   const employed = ['full', 'part', 'casual-seasonal', 'self'];
 
   return (
-    <Fragment>
-      <FormGroup>
-        <Field label="Employment type">
-          <EmploymentSelect value={employment} onChange={e => setEmployment(e.target.value)} />
-        </Field>
-      </FormGroup>
+    <div className="flex flex-col gap-4">
+      <Field label="Employment type">
+        <EmploymentSelect value={employment} onChange={e => setEmployment(e.target.value)} />
+      </Field>
 
       {employed.includes(employment || '') && (
         <Fragment>
-          <FormGroup>
-            <Field label="Occupation category">
-              <IndustrySelect />
-            </Field>
-          </FormGroup>
-          <FormGroup>
-            <Field label="Search for your occupation">
-              <OccupationAutocomplete />
-            </Field>
-          </FormGroup>
+          <Field label="Occupation category">
+            <IndustrySelect />
+          </Field>
+
+          <Field label="Search for your occupation">
+            <OccupationAutocomplete />
+          </Field>
         </Fragment>
       )}
-    </Fragment>
+    </div>
   );
 };

@@ -1,6 +1,6 @@
 'use client';
 
-import { Autocomplete, AutocompleteItem, Form, FormGroup, InputGroup, Select } from '@westpac/ui';
+import { Autocomplete, AutocompleteItem, Field, InputGroup, Select } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
@@ -62,9 +62,9 @@ export default function Address() {
         Address
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <Form id="credit-card" spacing="large" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <FormGroup>
-          <InputGroup size="large" errorMessage={errors.address?.message} instanceId="address">
+      <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <Field errorMessage={errors.address?.message}>
+          <InputGroup size="large" instanceId="address">
             <Autocomplete
               noOptionsMessage="No options found"
               label="Search for you home address"
@@ -76,15 +76,10 @@ export default function Address() {
               <AutocompleteItem>123 Fake Street</AutocompleteItem>
             </Autocomplete>
           </InputGroup>
-        </FormGroup>
+        </Field>
 
-        <FormGroup>
-          <InputGroup
-            label="How long have you lived there?"
-            errorMessage={errors.housingLength?.message}
-            size="large"
-            width={{ initial: 'full', md: 5 }}
-          >
+        <Field label="How long have you lived there?" errorMessage={errors.housingLength?.message}>
+          <InputGroup size="large" width={{ initial: 'full', md: 5 }}>
             <Select
               defaultValue={data.housingLength}
               invalid={!!errors.housingLength?.message}
@@ -99,11 +94,11 @@ export default function Address() {
               <option value="5">5 Years</option>
             </Select>
           </InputGroup>
-        </FormGroup>
+        </Field>
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
-      </Form>
+      </form>
     </div>
   );
 }

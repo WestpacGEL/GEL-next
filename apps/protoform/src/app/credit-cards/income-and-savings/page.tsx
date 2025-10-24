@@ -1,6 +1,6 @@
 'use client';
 
-import { Form, FormGroup, Input, InputGroup, Repeater, Select } from '@westpac/ui';
+import { Field, Input, InputGroup, Repeater, Select } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
@@ -66,13 +66,14 @@ export default function IncomeAndSavings() {
         Income & savings
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <Form id="credit-card" spacing="large" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <FormGroup>
-          <Repeater className="mb-5">
+      <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <Repeater>
+          <Field
+            label="Income, salary, pension (after tax)"
+            hintMessage="Enter a dollar value and choose a frequency"
+            errorMessage={errors.income?.message || errors.incomeFreq?.message}
+          >
             <InputGroup
-              label="Income, salary, pension (after tax)"
-              hint="Enter a dollar value and choose a frequency"
-              errorMessage={errors.income?.message || errors.incomeFreq?.message}
               instanceId="income"
               before="$"
               width={{ initial: 'full', md: 10 }}
@@ -97,19 +98,15 @@ export default function IncomeAndSavings() {
                 defaultValue={data.income}
               />
             </InputGroup>
-          </Repeater>
-        </FormGroup>
+          </Field>
+        </Repeater>
 
-        <FormGroup>
-          <InputGroup
-            size="large"
-            label="Total balances in savings & investment accounts (if any)"
-            hint="Enter a dollar value"
-            instanceId="totalBal"
-            errorMessage={errors.totalBal?.message}
-            before="$"
-            width={{ initial: 'full', md: 10 }}
-          >
+        <Field
+          label="Total balances in savings & investment accounts (if any)"
+          hintMessage="Enter a dollar value"
+          errorMessage={errors.totalBal?.message}
+        >
+          <InputGroup size="large" instanceId="totalBal" before="$" width={{ initial: 'full', md: 10 }}>
             <Input
               invalid={!!errors.totalBal?.message}
               {...register('totalBal', { required: defaultError })}
@@ -117,12 +114,12 @@ export default function IncomeAndSavings() {
               defaultValue={data.totalBal}
             />
           </InputGroup>
-        </FormGroup>
+        </Field>
 
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
-      </Form>
+      </form>
     </div>
   );
 }

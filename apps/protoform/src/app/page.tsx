@@ -7,6 +7,7 @@ import { ContentWrapper } from '@/components/content-wrapper/content-wrapper';
 import { CustomFooter } from '@/components/custom-footer/custom-footer';
 import { CustomHeader } from '@/components/custom-header/custom-header';
 import { CustomHeading } from '@/components/custom-heading/custom-heading';
+import { LeadText } from '@/components/lead-text/lead-text.component';
 
 export default function Home() {
   return (
@@ -14,17 +15,16 @@ export default function Home() {
       <CustomHeader />
       <ContentWrapper>
         <CustomHeading
-          tag="h1"
-          leadText={
+          afterContent={
             <>
-              <p className="mb-3">
+              <LeadText className="mb-3">
                 The GEL Forms Framework provides a simple, scalable approach for collecting customer information. It
                 includes standardised form validation and offers different navigational options depending on the form’s
                 length and complexity.
-              </p>
-              <p>
+              </LeadText>
+              <LeadText>
                 See examples below <i>(the content in these examples is for UI demonstration purposed only)</i>:
-              </p>
+              </LeadText>
             </>
           }
         >
@@ -33,13 +33,15 @@ export default function Home() {
 
         <div className="flex flex-col gap-5">
           <div>
-            <h3 className="typography-body-7 text-heading xl:typography-body-6 mb-5 font-bold">Navigation options</h3>
+            <h3 className="typography-body-7 text-text-heading xl:typography-body-6 mb-5 font-bold">
+              Navigation options
+            </h3>
             <List type="unstyled" className="flex flex-col gap-3">
               <ListItem className="flex flex-col gap-1">
                 <Link href="/credit-cards?flatten=true" passHref legacyBehavior>
                   <GELLink className="typography-body-9">Default progress rope</GELLink>
                 </Link>
-                <p className="typography-body-9 text-muted">
+                <p className="typography-body-9 text-text-muted">
                   Use the default progress rope for forms with up to around eight pages. It shows customers how many
                   steps they are and give them a sense of the information required.
                 </p>
@@ -49,7 +51,7 @@ export default function Home() {
                 <Link href="/credit-cards" passHref legacyBehavior>
                   <GELLink className="typography-body-9">Grouped progress rope</GELLink>
                 </Link>
-                <p className="typography-body-9 text-muted">
+                <p className="typography-body-9 text-text-muted">
                   For complex forms with more than eight pages, use the Grouped progress rope. In this version pages are
                   collapsed under categories so customers aren't overwhelmed when they first arrive at the from.
                 </p>
@@ -59,14 +61,14 @@ export default function Home() {
                 <Link href="/no-progress-rope" passHref legacyBehavior>
                   <GELLink className="typography-body-9">No progress rope</GELLink>
                 </Link>
-                <p className="typography-body-9 text-muted">
+                <p className="typography-body-9 text-text-muted">
                   For very simple forms with just one or two pages, a progress rope isn't needed.
                 </p>
               </ListItem>
             </List>
           </div>
           <div>
-            <h3 className="typography-body-7 text-heading xl:typography-body-6 mb-5 font-bold">
+            <h3 className="typography-body-7 text-text-heading xl:typography-body-6 mb-5 font-bold">
               Profile indicator examples
             </h3>
             <p className="typography-body-9 text-text mb-5">
@@ -89,7 +91,7 @@ export default function Home() {
             </List>
           </div>
           <div>
-            <h3 className="typography-body-7 text-heading xl:typography-body-6 mb-5 font-bold">
+            <h3 className="typography-body-7 text-text-heading xl:typography-body-6 mb-5 font-bold">
               Messaging page examples
             </h3>
             <List type="link" className="flex flex-col gap-1">

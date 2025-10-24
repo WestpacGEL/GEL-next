@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    button: 'not-last:border-r-none not-first:rounded-l-none not-first:border-l-0 not-last:rounded-r-none',
+    button: '',
   },
   variants: {
     isDisabled: {
@@ -31,6 +31,14 @@ export const styles = tv({
       },
       xlarge: {
         button: 'rounded-l-xl rounded-r-xl',
+      },
+    },
+    orientation: {
+      horizontal: {
+        button: 'not-last:border-r-none not-first:rounded-l-none not-first:border-l-0 not-last:rounded-r-none',
+      },
+      vertical: {
+        button: 'not-last:border-b-none not-first:rounded-t-none not-first:border-t-0 not-last:rounded-b-none',
       },
     },
   },
