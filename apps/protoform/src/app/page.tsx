@@ -33,7 +33,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-5">
           <div>
-            <h3 className="typography-body-7 mb-5 font-bold text-heading xl:typography-body-6">Navigation options</h3>
+            <h3 className="typography-body-7 text-heading xl:typography-body-6 mb-5 font-bold">Navigation options</h3>
             <List type="unstyled" className="flex flex-col gap-3">
               <ListItem className="flex flex-col gap-1">
                 <Link href="/credit-cards?flatten=true" passHref legacyBehavior>
@@ -66,10 +66,10 @@ export default function Home() {
             </List>
           </div>
           <div>
-            <h3 className="typography-body-7 mb-5 font-bold text-heading xl:typography-body-6">
+            <h3 className="typography-body-7 text-heading xl:typography-body-6 mb-5 font-bold">
               Profile indicator examples
             </h3>
-            <p className="mb-5 typography-body-9 text-text">
+            <p className="typography-body-9 text-text mb-5">
               When customers have multiple profiles (such as business and personal), indicators at the top of the form
               clearly show which profile they are working in. The Extra-care indicator is used only for staff facing
               processes.
@@ -89,7 +89,7 @@ export default function Home() {
             </List>
           </div>
           <div>
-            <h3 className="typography-body-7 mb-5 font-bold text-heading xl:typography-body-6">
+            <h3 className="typography-body-7 text-heading xl:typography-body-6 mb-5 font-bold">
               Messaging page examples
             </h3>
             <List type="link" className="flex flex-col gap-1">

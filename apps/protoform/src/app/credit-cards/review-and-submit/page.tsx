@@ -92,7 +92,7 @@ export default function Address() {
       <ReviewSection baseEditRoute="/credit-cards" sections={SECTION_ITEMS} />
       <div className="border-t-border-muted-soft border-t pt-5">
         <PhoneIcon color="primary" size="large" className="mb-5" />
-        <h3 className="typography-body-8 pb-5 font-bold text-heading">Help protect your application</h3>
+        <h3 className="typography-body-8 text-heading pb-5 font-bold">Help protect your application</h3>
         <p>Before continuing we’ll send you a one-time passcode to your mobile for added security.</p>
       </div>
       <Cta

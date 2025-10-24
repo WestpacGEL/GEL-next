@@ -2,47 +2,35 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: '',
-    button:
-      'active-theme-rams:border-b-primary active-theme-rams:before:hidden pointer-events-none rounded-none group-[:not(:first-child)]/buttons:border-l-0 hover:cursor-pointer',
+    button: 'not-last:border-r-none not-first:rounded-l-none not-first:border-l-0 not-last:rounded-r-none',
   },
   variants: {
     isDisabled: {
       true: {
-        button: 'pointer-events-none opacity-50',
+        button: 'pointer-events-none touch-none opacity-50',
       },
     },
     isFocusVisible: {
       true: {
-        button: 'focus-outline relative',
+        button: 'focus-outline relative z-10',
       },
     },
     block: {
-      true: {
-        base: 'w-full',
-      },
-      false: { base: 'w-auto' },
-    },
-    hasTransition: {
-      true: {
-        button: 'pointer-events-auto',
-      },
-      false: {
-        button: 'pointer-events-none',
-      },
+      true: {},
+      false: {},
     },
     size: {
       small: {
-        button: 'group-first/buttons:rounded-l-sm group-last/buttons:rounded-r-sm',
+        button: 'rounded-l-sm rounded-r-sm',
       },
       medium: {
-        button: 'group-first/buttons:rounded-l-md group-last/buttons:rounded-r-md',
+        button: 'rounded-l-md rounded-r-md',
       },
       large: {
-        button: 'group-first/buttons:rounded-l-lg group-last/buttons:rounded-r-lg',
+        button: 'rounded-l-lg rounded-r-lg',
       },
       xlarge: {
-        button: 'group-first/buttons:rounded-l-xl group-last/buttons:rounded-r-xl',
+        button: 'rounded-l-xl rounded-r-xl',
       },
     },
   },

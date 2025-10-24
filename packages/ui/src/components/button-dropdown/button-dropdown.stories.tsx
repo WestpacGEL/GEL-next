@@ -281,7 +281,7 @@ export const DropdownAtBottomFlipsUp: Story = {
             </ListItem>
           ))}
         </List>
-        <p className="text-neutral-600 mt-2 text-sm">
+        <p className="mt-2 text-sm text-neutral-600">
           There is no space below the button so the popover should appear above.
         </p>
       </ButtonDropdown>

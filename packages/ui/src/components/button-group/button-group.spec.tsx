@@ -2,50 +2,27 @@ import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ButtonGroup } from './button-group.component.js';
+import { ButtonGroupButton } from './components/button-group-button/button-group-button.component.js';
 
 describe('ButtonGroup', () => {
   it('renders the component', () => {
     const { container } = render(
-      <ButtonGroup
-        label="test"
-        buttons={[
-          {
-            value: 'Option 1',
-            label: 'Option 1',
-          },
-          {
-            value: 'Option 2',
-            label: 'Option 2',
-          },
-          {
-            value: 'Option 3',
-            label: 'Option 3',
-          },
-        ]}
-      />,
+      <ButtonGroup>
+        <ButtonGroupButton id="1">Option 1</ButtonGroupButton>
+        <ButtonGroupButton id="2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton id="3">Option 3</ButtonGroupButton>
+      </ButtonGroup>,
     );
     expect(container).toBeInTheDocument();
   });
 
   it('should render buttons when passed as in buttons prop', () => {
     const { getByText } = render(
-      <ButtonGroup
-        label="test"
-        buttons={[
-          {
-            value: 'Option 1',
-            label: 'Option 1',
-          },
-          {
-            value: 'Option 2',
-            label: 'Option 2',
-          },
-          {
-            value: 'Option 3',
-            label: 'Option 3',
-          },
-        ]}
-      />,
+      <ButtonGroup>
+        <ButtonGroupButton id="1">Option 1</ButtonGroupButton>
+        <ButtonGroupButton id="2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton id="3">Option 3</ButtonGroupButton>
+      </ButtonGroup>,
     );
     expect(getByText('Option 1')).toBeInTheDocument();
     expect(getByText('Option 2')).toBeInTheDocument();
@@ -54,24 +31,11 @@ describe('ButtonGroup', () => {
 
   it('should disable options when isDisabled prop passed', () => {
     const { getAllByRole } = render(
-      <ButtonGroup
-        label="test"
-        isDisabled
-        buttons={[
-          {
-            value: 'Option 1',
-            label: 'Option 1',
-          },
-          {
-            value: 'Option 2',
-            label: 'Option 2',
-          },
-          {
-            value: 'Option 3',
-            label: 'Option 3',
-          },
-        ]}
-      />,
+      <ButtonGroup isDisabled>
+        <ButtonGroupButton id="1">Option 1</ButtonGroupButton>
+        <ButtonGroupButton id="2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton id="3">Option 3</ButtonGroupButton>
+      </ButtonGroup>,
     );
     const radios = getAllByRole('radio');
     expect(radios[0]).toBeDisabled();
@@ -84,24 +48,11 @@ describe('ButtonGroup', () => {
     const onChange = vi.fn();
 
     const { getByText } = render(
-      <ButtonGroup
-        onChange={onChange}
-        label="test"
-        buttons={[
-          {
-            value: 'Option 1',
-            label: 'Option 1',
-          },
-          {
-            value: 'Option 2',
-            label: 'Option 2',
-          },
-          {
-            value: 'Option 3',
-            label: 'Option 3',
-          },
-        ]}
-      />,
+      <ButtonGroup onSelectionChange={onChange}>
+        <ButtonGroupButton id="1">Option 1</ButtonGroupButton>
+        <ButtonGroupButton id="2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton id="3">Option 3</ButtonGroupButton>
+      </ButtonGroup>,
     );
     await act(() => user.click(getByText('Option 1')));
     expect(onChange).toBeCalled();
@@ -111,23 +62,11 @@ describe('ButtonGroup', () => {
     const user = userEvent.setup();
 
     const { getByText, getByRole } = render(
-      <ButtonGroup
-        label="test"
-        buttons={[
-          {
-            value: 'Option 1',
-            label: 'Option 1',
-          },
-          {
-            value: 'Option 2',
-            label: 'Option 2',
-          },
-          {
-            value: 'Option 3',
-            label: 'Option 3',
-          },
-        ]}
-      />,
+      <ButtonGroup>
+        <ButtonGroupButton id="1">Option 1</ButtonGroupButton>
+        <ButtonGroupButton id="2">Option 2</ButtonGroupButton>
+        <ButtonGroupButton id="3">Option 3</ButtonGroupButton>
+      </ButtonGroup>,
     );
     await act(() => user.click(getByText('Option 1')));
     expect(getByRole('radio', { name: 'Option 1' })).toBeChecked();

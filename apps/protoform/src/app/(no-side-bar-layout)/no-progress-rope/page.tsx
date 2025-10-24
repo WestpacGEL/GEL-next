@@ -53,7 +53,7 @@ export default function NoProgressRopePage() {
             <Textarea size="large" {...register('comment', { required: 'This field is required' })} />
           </Field>
         </FormGroup>
-        <div className="mt-5 flex flex-col gap-2 xsl:flex-row">
+        <div className="xsl:flex-row mt-5 flex flex-col gap-2">
           <Button type="submit" size="large" look="primary">
             Send feedback
           </Button>

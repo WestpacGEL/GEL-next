@@ -7,6 +7,7 @@
 - 2a687f9: button dropdown with portal and focus
 - 95deb81: Datepicker using react-aria API
 - 6a44948: Refactored Compacta to use react-aria for improved accessibility and separated responsibilities into Compacta (container) and CompactaItem (individual item) components.
+- Button group using useToggleButtonGroup
 
 ## 0.50.3
 

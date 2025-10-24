@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonGroup, Form, FormGroup, Input, InputGroup, Select } from '@westpac/ui';
+import { ButtonGroup, ButtonGroupButton, Field, Form, FormGroup, Input, InputGroup, Select } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -111,22 +111,24 @@ export default function IncomeAndSavings() {
             name="otherCards"
             rules={{ required: defaultError }}
             render={({ field: { onChange, onBlur, value } }) => (
-              <ButtonGroup
+              <Field
                 label="Do you have any non-Westpac credit cards?"
                 hintMessage="Including store and charge cards, lines of credit"
-                size="large"
-                block={{ initial: true, md: false }}
                 errorMessage={errors.otherCards?.message}
-                defaultValue={data.nonWestpacCards}
-                buttons={[
-                  { value: 'Yes', label: 'Yes' },
-                  { value: 'No', label: 'No' },
-                ]}
-                id="otherCards"
-                onChange={onChange}
-                onBlur={onBlur}
-                value={value}
-              />
+              >
+                <ButtonGroup
+                  size="large"
+                  block={{ initial: true, md: false }}
+                  defaultSelectedKeys={data.nonWestpacCards}
+                  id="otherCards"
+                  onSelectionChange={onChange}
+                  onBlur={onBlur}
+                  selectedKeys={value}
+                >
+                  <ButtonGroupButton id="Yes">Yes</ButtonGroupButton>
+                  <ButtonGroupButton id="No">No</ButtonGroupButton>
+                </ButtonGroup>
+              </Field>
             )}
           />
         </FormGroup>

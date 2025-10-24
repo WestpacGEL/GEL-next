@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonGroup, Form, FormGroup, Input, InputGroup, Select } from '@westpac/ui';
+import { ButtonGroup, ButtonGroupButton, Field, Form, FormGroup, Input, InputGroup, Select } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -97,22 +97,23 @@ export default function HomeLife() {
             control={control}
             name="sharedExpenses"
             rules={{ required: defaultError }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <ButtonGroup
+            render={({ field: { onChange, value } }) => (
+              <Field
                 label="Do you share household expenses?"
                 hintMessage="For example utility bills"
                 errorMessage={errors.sharedExpenses?.message}
-                defaultValue={data.sharedExpenses}
-                size="large"
-                block={{ initial: true, md: false }}
-                buttons={[
-                  { value: 'Yes', label: 'Yes' },
-                  { value: 'No', label: 'No' },
-                ]}
-                onChange={onChange}
-                onBlur={onBlur}
-                value={value}
-              />
+              >
+                <ButtonGroup
+                  defaultSelectedKeys={data.sharedExpenses}
+                  size="large"
+                  block={{ initial: true, md: false }}
+                  onSelectionChange={onChange}
+                  selectedKeys={value}
+                >
+                  <ButtonGroupButton id="Yes">Yes</ButtonGroupButton>
+                  <ButtonGroupButton id="No">No</ButtonGroupButton>
+                </ButtonGroup>
+              </Field>
             )}
           />
         </FormGroup>
