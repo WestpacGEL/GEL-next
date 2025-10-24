@@ -19,7 +19,7 @@ export function ButtonGroupButton({ className, ...props }: ButtonGroupButtonProp
   const { size, look, block, ...state } = useContext(ToggleButtonGroupContext)!;
   const { buttonProps, isPressed, isSelected } = useToggleButtonGroupItem(props, state, ref);
   const breakpoint = useBreakpoint();
-  const { isFocusVisible } = useFocusRing();
+  const { isFocusVisible, focusProps } = useFocusRing();
   const resolvedSize = resolveResponsiveVariant(size, breakpoint);
   const resolvedBlock = resolveResponsiveVariant(block, breakpoint);
 
@@ -32,6 +32,7 @@ export function ButtonGroupButton({ className, ...props }: ButtonGroupButtonProp
   return (
     <Button
       {...buttonProps}
+      {...focusProps}
       className={styles.button({ className })}
       soft={!isSelected}
       data-pressed={isPressed}
