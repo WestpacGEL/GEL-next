@@ -39,6 +39,20 @@ export const DefaultStory: Story = {
 };
 
 /**
+ * > Example of header with no logo link
+ */
+export const NoLogoLink: Story = {
+  render: ({ brand: _, ...rest }, { globals: { theme } }) => {
+    const brand = theme ? theme.toLowerCase() : 'wbc';
+    return (
+      <>
+        <Header disableLogoLink brand={brand === 'btfg' ? 'wbc' : brand} {...rest} />
+      </>
+    );
+  },
+};
+
+/**
  * > Example with a button on the right
  */
 export const RightButton: Story = {

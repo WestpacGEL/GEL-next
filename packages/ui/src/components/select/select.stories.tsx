@@ -130,3 +130,15 @@ export const FixedWidths = () => {
     </div>
   );
 };
+
+/**
+ * Example of Select that has truncated long text with the tooltip enabled
+ */
+export const TruncatedWithTooltip = () => {
+  return (
+    <Select width={3} enableTooltip>
+      <option>Select</option>
+      <option>Very long option text that will be truncated</option>
+    </Select>
+  );
+};

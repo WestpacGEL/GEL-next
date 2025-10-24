@@ -4,7 +4,7 @@ export const styles = tv({
   slots: {
     root: 'relative inline-flex',
     select:
-      'form-control disabled:form-control-disabled flex-1 overflow-hidden  bg-no-repeat text-ellipsis  group-first/add-on-before:rounded-r-none group-first/add-on-before:!border-x group-last/add-on-after:rounded-l-none group-last/add-on-after:!border-x group-[.input-group-after]:rounded-r-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:rounded-l-none group-[.input-group-before]:border-l-0',
+      'form-control disabled:form-control-disabled flex-1 overflow-hidden bg-no-repeat text-ellipsis  group-first/add-on-before:rounded-r-none group-first/add-on-before:!border-x group-last/add-on-after:rounded-l-none group-last/add-on-after:!border-x group-[.input-group-after]:rounded-r-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:rounded-l-none group-[.input-group-before]:border-l-0',
     caret: 'text-surface-muted-vivid absolute top-1/2 right-2 -translate-y-1/2',
   },
   variants: {
@@ -40,7 +40,7 @@ export const styles = tv({
       },
     },
     isFocusVisible: {
-      true: { select: 'focus-outline' },
+      true: { root: 'focus-outline rounded-sm' },
     },
     isFocused: {
       true: { select: 'outline-none' },
