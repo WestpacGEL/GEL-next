@@ -1,9 +1,7 @@
 import { Breakpoint } from '@westpac/style-config/constants';
-import { ReactNode } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
 import { PaginationItemProps } from './components/index.js';
-import { PaginationPageProps } from './components/pagination-pages/pagination-pages.types.js';
-import { PaginationTotalPagesProps } from './components/pagination-total-pages/pagination-total-pages.types.js';
 
 export type PageProps = {
   href: string;
@@ -61,10 +59,50 @@ export type PaginationBase = {
   tag?: keyof JSX.IntrinsicElements;
 };
 
+export type PaginationAsLinkProps = {
+  /**
+   * on page change
+   */
+  onChange?: never;
+  /**
+   * Pages items
+   */
+  onPageItemProps?: (page: number) => Omit<PageToRenderHref, 'page'>;
+};
+
+export type PaginationAsButtonProps = {
+  /**
+   * on page change
+   */
+  onChange: (page: number) => unknown;
+  /**
+   * Pages items
+   */
+  onPageItemProps?: (page: number) => Omit<PageToRenderBase, 'page'>;
+};
+
+export type PaginationProps = {
+  /**
+   * total of pages
+   */
+  totalPages: number;
+} & PaginationBase &
+  (PaginationAsLinkProps | PaginationAsButtonProps) &
+  Omit<HTMLAttributes<Element>, 'onChange'>;
+
+export type PageToRenderBase = {
+  'aria-label'?: string;
+  page: number;
+  text: React.ReactNode;
+};
+export type PageToRenderHref = PageToRenderBase & {
+  href: string;
+};
+
+// Hooks props
+
 export type PaginationHookProps = {
   defaultCurrent?: number;
   infinite?: boolean;
-  pages: (Omit<PageProps, 'href'> & { href?: string })[];
+  totalPages: number;
 };
-
-export type PaginationProps = PaginationPageProps | PaginationTotalPagesProps;

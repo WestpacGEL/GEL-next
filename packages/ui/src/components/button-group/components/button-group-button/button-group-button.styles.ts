@@ -12,7 +12,7 @@ export const styles = tv({
     },
     isFocusVisible: {
       true: {
-        button: 'focus-outline relative',
+        button: 'focus-outline relative z-10',
       },
     },
     block: {

@@ -21,7 +21,7 @@ export const styles = tv({
       'warning-inverted': 'bg-surface-mono text-text-warning border-none',
     },
     type: {
-      pill: 'typography-body-10 flex h-4 w-fit items-center rounded-full px-[0.4375rem] leading-none font-medium',
+      pill: 'typography-body-10 flex h-4 w-fit min-w-4 items-center justify-center rounded-full px-[0.4375rem] leading-none font-medium',
       default: 'h-[1.25rem] rounded-sm px-1 text-[0.75rem]',
     },
     soft: {

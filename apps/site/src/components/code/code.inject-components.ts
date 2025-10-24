@@ -75,6 +75,7 @@ export {
   Pagination,
   Popover,
   Repeater,
+  RepeaterItem,
   SkipLink,
   Compacta,
   CompactaItem,

@@ -3,3 +3,4 @@ export { ModalDialogFooter as ModalFooter } from './components/modal-dialog/comp
 
 export { Modal } from './modal.component.js';
 export { type ModalProps } from './modal.types.js';
+export { type ModalDialogFooterProps } from './components/index.js';

@@ -2,37 +2,80 @@
 
 Use the default Repeater in situations where the user may need to repeat a single component or field, e.g. for multiple phone number entries.
 
-```jsx
-<Repeater>
-<FormGroup>
-          <FormLabel htmlFor="formInput">Label</FormLabel>
-          <Input aria-describedby="formHint" className="w-full" id="formInput" name="test" />
-        </FormGroup>
-</Repeater>
+```tsx
+() => {
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ label: '' }] },
+  });
+  const items = watch('items');
+
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { label: '' }]);
+  }, [items, setValue]);
+
+  return (
+    <Form>
+      <Repeater onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <RepeaterItem
+            key={index}
+            title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <FormGroup>
+              <Field label="Label">
+                <Input {...register(`items.${index}.label`)} />
+              </Field>
+            </FormGroup>
+          </RepeaterItem>
+        ))}
+      </Repeater>
+    </Form>
+  );
+};
 ```
 
 ### With separator
 
-Use the Repeater with separator when the user may need to repeat a set of  components or fields, e.g. for multiple sets of credit card or account details.
+Use the Repeater with separator when the user may need to repeat a set of components or fields, e.g. for multiple sets of credit card or account details.
 
-```jsx
+```tsx
 () => {
-  const groupOneId = React.useId();
-  const groupTwoId = React.useId();
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ label: '', label2: '' }] },
+  });
+  const items = watch('items');
+
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { label: '', label2: '' }]);
+  }, [items, setValue]);
 
   return (
-    <Repeater separator>
-      <FormGroup>
-        <div className="mb-4">
-            <FormLabel htmlFor={`input${groupOneId}`}>Label 1</FormLabel>
-            <Input aria-describedby={`inputHint${groupOneId}`} className="w-full" id={`input${groupOneId}`} name={`input${groupOneId}`} />
-        </div>
-        <div>
-            <FormLabel htmlFor={`input${groupTwoId}`}>Label 2</FormLabel>
-            <Input aria-describedby={`inputHint${groupTwoId}`} className="w-full" id={`input${groupTwoId}`} name={`input${groupTwoId}`} />
-        </div>
-      </FormGroup>
-    </Repeater>
+    <Form>
+      <Repeater separator onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <RepeaterItem
+            key={index}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <FormGroup>
+              <Field label="Label 1">
+                <Input {...register(`items.${index}.label`)} />
+              </Field>
+            </FormGroup>
+            <FormGroup>
+              <Field label="Label 2">
+                <Input {...register(`items.${index}.label2`)} />
+              </Field>
+            </FormGroup>
+          </RepeaterItem>
+        ))}
+      </Repeater>
+    </Form>
   );
 };
 ```
