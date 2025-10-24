@@ -20,10 +20,14 @@ export type HeaderProps = {
    */
   brand: Exclude<BrandKey, 'btfg'>;
   /**
+   * Removes anchor link from logo
+   * @default false
+   */
+  disableLogoLink?: boolean;
+  /**
    * Enable fixed header
    */
   fixed?: ResponsiveVariants<Variant['fixed']>;
-
   /**
    * Set max width for fixed header for certain layouts
    * NOTE: Using max-w in classname will work for non-fixed headers
@@ -54,7 +58,8 @@ export type HeaderProps = {
    */
   logoCenter?: ResponsiveVariants<Variant['logoCenter']>;
   /**
-   * Link for logo
+   * Link for logo, can be disabled with disableLogoLink
+   * @default '#'
    */
   logoLink?: string;
   /**
