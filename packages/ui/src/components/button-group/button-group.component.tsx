@@ -26,6 +26,11 @@ export function ButtonGroup({
   children,
   onSelect,
   orientation = 'horizontal',
+  selectionMode,
+  selectedKeys,
+  defaultSelectedKeys,
+  onSelectionChange,
+  className,
   ...props
 }: ButtonGroupProps) {
   /**
@@ -34,28 +39,28 @@ export function ButtonGroup({
   const normalizeKeys = useCallback(
     (keys?: Key | Iterable<Key>) => {
       if (keys === undefined) return undefined;
-      if (props.selectionMode === 'multiple') return new Set(keys as Iterable<Key>);
+      if (selectionMode === 'multiple') return new Set(keys as Iterable<Key>);
       return new Set([keys as Key]);
     },
-    [props.selectionMode],
+    [selectionMode],
   );
 
-  const finalSelectedKeys = useMemo(() => normalizeKeys(props.selectedKeys), [normalizeKeys, props.selectedKeys]);
+  const finalSelectedKeys = useMemo(() => normalizeKeys(selectedKeys), [normalizeKeys, selectedKeys]);
   const finalDefaultSelectedKeys = useMemo(
-    () => normalizeKeys(props.defaultSelectedKeys),
-    [normalizeKeys, props.defaultSelectedKeys],
+    () => normalizeKeys(defaultSelectedKeys),
+    [normalizeKeys, defaultSelectedKeys],
   );
 
   const handleSelectionChange = useCallback(
     (value: Set<Key>) => {
-      if (props.selectionMode === 'single' || props.selectionMode === undefined) {
-        return props.onSelectionChange?.(value ? [...(value || [])][0] : value);
+      if (selectionMode === 'single' || selectionMode === undefined) {
+        return onSelectionChange?.(value ? [...(value || [])][0] : value);
       }
-      if (props.selectionMode === 'multiple') {
-        props.onSelectionChange?.(value);
+      if (selectionMode === 'multiple') {
+        onSelectionChange?.(value);
       }
     },
-    [props],
+    [onSelectionChange, selectionMode],
   );
 
   const state = useToggleGroupState({
@@ -81,7 +86,7 @@ export function ButtonGroup({
   const styles = buttonGroupStyles({ orientation });
 
   return (
-    <div {...props} {...groupProps} className={styles.base({ className: props.className })} ref={ref}>
+    <div {...props} {...groupProps} className={styles.base({ className: className })} ref={ref}>
       <ToggleButtonGroupContext.Provider value={{ ...state, size, look, block, orientation }}>
         {children}
       </ToggleButtonGroupContext.Provider>
