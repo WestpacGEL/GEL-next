@@ -18,7 +18,7 @@ export function ReviewSection({
       <div className="flex flex-col gap-5">
         {section.items.map((item, j) => (
           <div key={j} className="flex flex-col gap-1">
-            <p className="typography-body-10 text-muted">{item.label}</p>
+            <p className="typography-body-10 text-text-muted">{item.label}</p>
             <p>{item.value}</p>
           </div>
         ))}

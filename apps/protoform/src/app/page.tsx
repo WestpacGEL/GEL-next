@@ -41,7 +41,7 @@ export default function Home() {
                 <Link href="/credit-cards?flatten=true" passHref legacyBehavior>
                   <GELLink className="typography-body-9">Default progress rope</GELLink>
                 </Link>
-                <p className="typography-body-9 text-muted">
+                <p className="typography-body-9 text-text-muted">
                   Use the default progress rope for forms with up to around eight pages. It shows customers how many
                   steps they are and give them a sense of the information required.
                 </p>
@@ -51,7 +51,7 @@ export default function Home() {
                 <Link href="/credit-cards" passHref legacyBehavior>
                   <GELLink className="typography-body-9">Grouped progress rope</GELLink>
                 </Link>
-                <p className="typography-body-9 text-muted">
+                <p className="typography-body-9 text-text-muted">
                   For complex forms with more than eight pages, use the Grouped progress rope. In this version pages are
                   collapsed under categories so customers aren't overwhelmed when they first arrive at the from.
                 </p>
@@ -61,7 +61,7 @@ export default function Home() {
                 <Link href="/no-progress-rope" passHref legacyBehavior>
                   <GELLink className="typography-body-9">No progress rope</GELLink>
                 </Link>
-                <p className="typography-body-9 text-muted">
+                <p className="typography-body-9 text-text-muted">
                   For very simple forms with just one or two pages, a progress rope isn't needed.
                 </p>
               </ListItem>
