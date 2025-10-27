@@ -12,7 +12,7 @@
   }, [items, setValue]);
 
   return (
-    <Form>
+    <form>
       <Compacta onAdd={handleAdd}>
         {items.map((item, index) => (
           <CompactaItem
@@ -22,7 +22,7 @@
               setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
             }}
           >
-            <FormGroup>
+            <div className="flex flex-col gap-4">
               <Field label="Primary" hintMessage="Select your card insitution">
                 <Select onChange={e => {}} width={30} {...register(`items.${index}.primary`)}>
                   <option>Select</option>
@@ -36,21 +36,17 @@
                   <option>Westpac Bank</option>
                 </Select>
               </Field>
-            </FormGroup>
-            <FormGroup>
               <Field label="Account number" hintMessage="Refer to a statement from the card’s financial institution">
                 <Input onChange={e => {}} width={30} {...register(`items.${index}.accountNumber`)} />
               </Field>
-            </FormGroup>
-            <FormGroup>
               <InputGroup onChange={e => {}} width={20} before="$" label="Amount to transfer">
                 <Input {...register(`items.${index}.amount`, { valueAsNumber: true })} />
               </InputGroup>
-            </FormGroup>
+            </div>
           </CompactaItem>
         ))}
       </Compacta>
-    </Form>
+    </form>
   );
 };
 ```

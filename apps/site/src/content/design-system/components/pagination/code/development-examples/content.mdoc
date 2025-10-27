@@ -49,7 +49,7 @@ Alternatively, you can provide an explicit list of pages using the pages prop. T
       onChange={changedPage => {
         setPage(changedPage);
       }}
-      pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
+      totalPages={3}
     />
   );
 };
@@ -64,16 +64,7 @@ You can also include an `href` for each page to support URL-based navigation:
     return 1;
   }, []);
 
-  return (
-    <Pagination
-      current={page}
-      pages={[
-        { text: '1', href: '#page-1' },
-        { text: '2', href: '#page-1' },
-        { text: '3', href: '#page-1' },
-      ]}
-    />
-  );
+  return <Pagination current={page} totalPages={3} onPageItemProps={page => ({ href: `#page-${page}`, text: page })} />;
 };
 ```
 
@@ -91,7 +82,7 @@ You can also include an `href` for each page to support URL-based navigation:
       onChange={changedPage => {
         setPage(changedPage);
       }}
-      pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
+      totalPages={3}
     />
   );
 };

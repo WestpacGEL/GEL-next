@@ -1,38 +1,32 @@
 ### ButtonGroup sizes
 
 ```jsx
-<ButtonGroup 
-  buttons={[
-    { value: "Left", label: "Left"}, 
-    { value: "Middle", label: "Middle" }, 
-    { value: "Right", label: "Right"}
-  ]} 
-/>
-
+<ButtonGroup>
+  <ButtonGroupButton id="Left">Left</ButtonGroupButton>
+  <ButtonGroupButton id="Middle">Middle</ButtonGroupButton>
+  <ButtonGroupButton id="Right">Right</ButtonGroupButton>
+</ButtonGroup>
 ```
 
 ### ButtonGroup looks
 
 ```jsx
 <div className="grid gap-3">
-  <ButtonGroup
-    defaultValue={0}
-    label={<p className="typography-body-10 text-text-muted italic mb-[0.875rem]">Index (integer)</p>}
-    buttons={[
-      { value: 0, label: "Left" }, 
-      { value: 1, label: "Middle" }, 
-      { value: 2, label: "Right"}
-    ]}
-  />
-  <ButtonGroup
-    defaultValue="right"
-    label={<p className="typography-body-10 text-text-muted italic mb-[0.875rem]">Key (string)</p>}
-    buttons={[
-      { value: "left", label: "Left" }, 
-      { value: "middle", label: "Middle" }, 
-      { value: "right", label: "Right"}
-    ]}
-  />
+  <Field label={<p className="typography-body-10 text-text-muted italic mb-[0.875rem]">Index (integer)</p>}>
+    <ButtonGroup defaultValue={0}>
+      <ButtonGroupButton id={0}>Left</ButtonGroupButton>
+      <ButtonGroupButton id={1}>Middle</ButtonGroupButton>
+      <ButtonGroupButton id={2}>Right</ButtonGroupButton>
+    </ButtonGroup>
+  </Field>
+
+  <Field label={<p className="typography-body-10 text-text-muted italic mb-[0.875rem]">Key (string)</p>}>
+    <ButtonGroup defaultValue="left">
+      <ButtonGroupButton id="left">Left</ButtonGroupButton>
+      <ButtonGroupButton id="middle">Middle</ButtonGroupButton>
+      <ButtonGroupButton id="right">Right</ButtonGroupButton>
+    </ButtonGroup>
+  </Field>
 </div>
 ```
 
@@ -58,15 +52,14 @@
           reset
         </Button>
       </div>
-      <ButtonGroup 
-        look="hero" 
-        value={controlled}
-        buttons={[
-          { value: "yes", label: "Yes"}, 
-          { value: "maybe", label: "Maybe" }, 
-          { value: "no", label: "No"}
-        ]}
-      />
+      <ButtonGroup
+        look="hero"
+        selectedKeys={controlled}
+      >
+        <ButtonGroupButton id="yes">Yes</ButtonGroupButton>
+        <ButtonGroupButton id="maybe">Maybe</ButtonGroupButton>
+        <ButtonGroupButton id="no">No</ButtonGroupButton>
+      </ButtonGroup>
     </div>
   );
 };

@@ -3,16 +3,13 @@ The error message should always sit above the input field to give context. The e
 ### Simple name with error
 
 ```tsx
-<Form spacing="large">
-  <FormGroup>
-    <Field label="Given name">
-      <Input size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-  <FormGroup>
-    <Field label="Family name" errorMessage="Error message goes here if activated">
-      <Input invalid size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-</Form>
+<form className="flex flex-col gap-4">
+  <Field label="Given name">
+    <Input size="large" className="w-6/12" />
+  </Field>
+
+  <Field label="Family name" errorMessage="Error message goes here if activated">
+    <Input invalid size="large" className="w-6/12" />
+  </Field>
+</form>
 ```

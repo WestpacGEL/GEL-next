@@ -14,7 +14,7 @@ Use the default Repeater in situations where the user may need to repeat a singl
   }, [items, setValue]);
 
   return (
-    <Form>
+    <form>
       <Repeater onAdd={handleAdd}>
         {items.map((item, index) => (
           <RepeaterItem
@@ -24,15 +24,13 @@ Use the default Repeater in situations where the user may need to repeat a singl
               setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
             }}
           >
-            <FormGroup>
-              <Field label="Label">
-                <Input {...register(`items.${index}.label`)} />
-              </Field>
-            </FormGroup>
+            <Field label="Label">
+              <Input {...register(`items.${index}.label`)} />
+            </Field>
           </RepeaterItem>
         ))}
       </Repeater>
-    </Form>
+    </form>
   );
 };
 ```
@@ -53,7 +51,7 @@ Use the Repeater with separator when the user may need to repeat a set of compon
   }, [items, setValue]);
 
   return (
-    <Form>
+    <form>
       <Repeater separator onAdd={handleAdd}>
         {items.map((item, index) => (
           <RepeaterItem
@@ -62,20 +60,18 @@ Use the Repeater with separator when the user may need to repeat a set of compon
               setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
             }}
           >
-            <FormGroup>
+            <div className="flex flex-col gap-4">
               <Field label="Label 1">
                 <Input {...register(`items.${index}.label`)} />
               </Field>
-            </FormGroup>
-            <FormGroup>
               <Field label="Label 2">
                 <Input {...register(`items.${index}.label2`)} />
               </Field>
-            </FormGroup>
+            </div>
           </RepeaterItem>
         ))}
       </Repeater>
-    </Form>
+    </form>
   );
 };
 ```

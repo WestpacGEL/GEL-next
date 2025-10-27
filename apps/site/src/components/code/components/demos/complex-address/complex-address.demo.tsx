@@ -93,7 +93,11 @@ export const ComplexAddressDemo = () => {
       <Field label="Property type" hintMessage="Must be a residential address">
         <PropertySelect value={property} onChange={e => setProperty(e.target.value)} />
       </Field>
-      {property && <AddressManualComplexPattern property={property} />}
+      {property && (
+        <div className="pt-4">
+          <AddressManualComplexPattern property={property} />
+        </div>
+      )}
     </form>
   );
 };

@@ -3,18 +3,14 @@
 On a standard form, error messages should be displayed between label and input. They should be visibly distinct from inputs without errors. This distinction is created with the ⚠ icon, a message in red text, and a red keyline for input fields and selects.
 
 ```tsx
-<Form spacing="large">
-  <FormGroup>
-    <Field label="Given name">
-      <Input size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-  <FormGroup>
-    <Field label="Family name" errorMessage="Error message goes here if activated">
-      <Input invalid size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-</Form>
+<form className="flex flex-col gap-4">
+  <Field label="Given name">
+    <Input size="large" className="w-6/12" />
+  </Field>
+  <Field label="Family name" errorMessage="Error message goes here if activated">
+    <Input invalid size="large" className="w-6/12" />
+  </Field>
+</form>
 ```
 
 There are some instances where the red keyline is not used, such as radio buttons, check boxes and button groups.
@@ -22,7 +18,7 @@ There are some instances where the red keyline is not used, such as radio button
 ```tsx
 <Grid>
   <GridItem span={{ initial: 12, sm: 6 }}>
-    <Form>
+    <form>
       <Field label="Label" hintMessage="If there is hint text, it can go here">
         <CheckboxGroup 
           orientation="vertical"
@@ -33,10 +29,10 @@ There are some instances where the red keyline is not used, such as radio button
           ]}
         />
       </Field>
-    </Form>
+    </form>
   </GridItem>
   <GridItem span={{ initial: 12, sm: 6 }}>
-    <Form>
+    <form>
       <Field
         label="Label"
         hintMessage="If there is hint text, it can go here"
@@ -51,7 +47,7 @@ There are some instances where the red keyline is not used, such as radio button
           ]}
         />
       </Field>
-    </Form>
+    </form>
   </GridItem>
 </Grid>
 ```

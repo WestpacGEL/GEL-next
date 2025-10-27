@@ -16,7 +16,9 @@ export const styles = tv({
       },
     },
     block: {
-      true: {},
+      true: {
+        button: 'flex-1',
+      },
       false: {},
     },
     size: {

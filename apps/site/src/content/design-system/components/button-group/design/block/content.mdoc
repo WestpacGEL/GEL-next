@@ -2,17 +2,12 @@ Using block-level button groups will allow the button group to stretch the full 
 
 ```jsx
 <div className="grid gap-3">
-  <ButtonGroup 
-hintMessage="This is a responsive block button group"
-    label="How would you like us to contact you?"
-    look="hero" 
-    block
-      size="large"
-    buttons={[
-      { value: "Email", label: "Email"}, 
-      { value: "Phone", label: "Phone" },
-      { value: "SMS", label: "SMS" }
-    ]}
-  />
+  <Field hintMessage="This is a responsive block button group" label="How would you like us to contact you?">
+    <ButtonGroup look="hero" block size="large">
+      <ButtonGroupButton id="Email">Email</ButtonGroupButton>
+      <ButtonGroupButton id="Phone">Phone</ButtonGroupButton>
+      <ButtonGroupButton id="SMS">SMS</ButtonGroupButton>
+    </ButtonGroup>
+  </Field>
 </div>
 ```
