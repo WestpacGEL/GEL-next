@@ -11,6 +11,17 @@ export const styles = tv(
         sm: { base: 'px-5 pb-7' },
         fluid: { base: 'px-5 pb-7' },
       },
+      canScroll: {
+        true: {
+          base: ' shadow-[0_-6px_6px_0_inset] shadow-border',
+        },
+      },
+      scrolled: {
+        true: { base: ' shadow-[0_-6px_6px_0_inset,0_6px_6px_0_inset] shadow-border' },
+      },
+      scrollAtBottom: {
+        true: { base: 'shadow-[0_6px_6px_0_inset,0_0_0_0_inset]' },
+      },
     },
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
