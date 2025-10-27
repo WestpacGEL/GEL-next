@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
 
 import { useModalDialogContext } from '../../modal-dialog.component.js';
