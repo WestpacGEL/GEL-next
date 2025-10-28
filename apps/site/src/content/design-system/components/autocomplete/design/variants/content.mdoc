@@ -3,39 +3,40 @@ Autocomplete items support customisable styling, see some examples:
 ```jsx
 () => {
   const options = [
-  { name: 'Oliver Bennett', initials: 'OB', role: 'Compliance Officer, Legal' },
-  { name: 'Mia Chandler', initials: 'MC', role: 'Financial Analyst, Finance' },
-  { name: 'Zoe Chang', initials: 'ZC', role: 'UX Designer, Product Design' },
-  { name: "Lucas D'Souza", initials: 'LD', role: 'Cybersecurity Specialist, Information Security' },
-  { name: 'Leo Hartman', initials: 'LH', role: 'Software Engineer, IT & Development' },
-  { name: 'Isla Morrison', initials: 'IM', role: 'Data Scientist, Business Intelligence' },
-  { name: 'Ava Nguyen', initials: 'AN', role: 'HR Coordinator, Human Resources' },
-  { name: 'Ethan Patel', initials: 'EP', role: 'Marketing Strategist, Marketing' },
-  { name: 'Noah Rivera', initials: 'NR', role: 'Project Manager, Operations' },
-  { name: 'Harper Singh', initials: 'HS', role: 'Sales Executive, Sales' },
-];
+    { name: 'Oliver Bennett', initials: 'OB', role: 'Compliance Officer, Legal' },
+    { name: 'Mia Chandler', initials: 'MC', role: 'Financial Analyst, Finance' },
+    { name: 'Zoe Chang', initials: 'ZC', role: 'UX Designer, Product Design' },
+    { name: "Lucas D'Souza", initials: 'LD', role: 'Cybersecurity Specialist, Information Security' },
+    { name: 'Leo Hartman', initials: 'LH', role: 'Software Engineer, IT & Development' },
+    { name: 'Isla Morrison', initials: 'IM', role: 'Data Scientist, Business Intelligence' },
+    { name: 'Ava Nguyen', initials: 'AN', role: 'HR Coordinator, Human Resources' },
+    { name: 'Ethan Patel', initials: 'EP', role: 'Marketing Strategist, Marketing' },
+    { name: 'Noah Rivera', initials: 'NR', role: 'Project Manager, Operations' },
+    { name: 'Harper Singh', initials: 'HS', role: 'Sales Executive, Sales' },
+  ];
   return (
-      <Autocomplete 
+    <Autocomplete
       hintMessage="Search for a staff member"
       label="Staff directory"
       noOptionsMessage="No options found, try a different spelling"
-      width="30" 
-      aria-label="Staff directory" 
-      defaultItems={options}>
-        {item => (
-          <AutocompleteItem key={item.name} textValue={item.name}>
-            <div className="flex items-center gap-2">
-              <Circle className="size-5 bg-muted text-text-mono">{item.initials}</Circle>
-              <div className="flex flex-col ">
-                <h3 className="typography-body-9">{item.name}</h3>
-                <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
-                  {item.role}
-                </p>
-              </div>
+      width="30"
+      aria-label="Staff directory"
+      defaultItems={options}
+    >
+      {item => (
+        <AutocompleteItem key={item.name} textValue={item.name}>
+          <div className="flex items-center gap-2">
+            <Circle className="size-5 bg-surface-muted text-text-mono">{item.initials}</Circle>
+            <div className="flex flex-col ">
+              <h3 className="typography-body-9">{item.name}</h3>
+              <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
+                {item.role}
+              </p>
             </div>
-          </AutocompleteItem>
-        )}
-      </Autocomplete>
+          </div>
+        </AutocompleteItem>
+      )}
+    </Autocomplete>
   );
 };
 ```
@@ -43,38 +44,39 @@ Autocomplete items support customisable styling, see some examples:
 ```jsx
 () => {
   const options = [
-  { name: 'Nimbus Analytics Pty Ltd', abn: '123 456 789' },
-  { name: 'Blueleaf Financial Group', abn: '987 654 321' },
-  { name: 'Ironclad Risk Solutions', abn: '456 789 123' },
-  { name: 'Summit Edge Advisory', abn: '321 654 987' },
-  { name: 'Crimson Ledger Partners', abn: '159 753 486' },
-  { name: 'EchoWave Consulting', abn: '753 159 246' },
-  { name: 'Brightspire Capital', abn: '246 135 789' },
-  { name: 'Veridian Strategy Co.', abn: '864 213 579' },
-  { name: 'Oak & Sage Holdings', abn: '135 246 975' },
-  { name: 'Silverline Ventures', abn: '579 864 312' },
-];
+    { name: 'Nimbus Analytics Pty Ltd', abn: '123 456 789' },
+    { name: 'Blueleaf Financial Group', abn: '987 654 321' },
+    { name: 'Ironclad Risk Solutions', abn: '456 789 123' },
+    { name: 'Summit Edge Advisory', abn: '321 654 987' },
+    { name: 'Crimson Ledger Partners', abn: '159 753 486' },
+    { name: 'EchoWave Consulting', abn: '753 159 246' },
+    { name: 'Brightspire Capital', abn: '246 135 789' },
+    { name: 'Veridian Strategy Co.', abn: '864 213 579' },
+    { name: 'Oak & Sage Holdings', abn: '135 246 975' },
+    { name: 'Silverline Ventures', abn: '579 864 312' },
+  ];
   return (
-      <Autocomplete 
+    <Autocomplete
       hintMessage="Search for a Business"
       label="Find your business"
       noOptionsMessage="No options found, try a different spelling"
-      width="30" 
-      aria-label="Business directory" 
-      defaultItems={options}>
-        {item => (
-          <AutocompleteItem key={item.name} textValue={item.name}>
-            <div className="flex items-center gap-2">
-              <div className="flex flex-col ">
-                <h3 className="typography-body-9">{item.name}</h3>
-                <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
-                  {item.abn}
-                </p>
-              </div>
+      width="30"
+      aria-label="Business directory"
+      defaultItems={options}
+    >
+      {item => (
+        <AutocompleteItem key={item.name} textValue={item.name}>
+          <div className="flex items-center gap-2">
+            <div className="flex flex-col ">
+              <h3 className="typography-body-9">{item.name}</h3>
+              <p className="typography-body-10 text-borderDark group-hover:text-text-mono group-[.is-focused]:text-text-mono">
+                {item.abn}
+              </p>
             </div>
-          </AutocompleteItem>
-        )}
-      </Autocomplete>
+          </div>
+        </AutocompleteItem>
+      )}
+    </Autocomplete>
   );
 };
 ```
