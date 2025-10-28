@@ -3,6 +3,10 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   base: 'typography-body-10 border-border-muted-soft text-text-body relative block min-w-7 border px-2 py-1.5 text-center',
   variants: {
+    isFocusVisible: {
+      true: 'focus-outline',
+      false: '',
+    },
     firstItem: {
       true: 'rounded-l-md',
       false: 'ml-[-1px]',

@@ -1,3 +1,4 @@
+import { ButtonHTMLAttributes } from 'react';
 import { AriaToggleButtonGroupProps } from 'react-aria';
 import { VariantProps } from 'tailwind-variants';
 
@@ -6,7 +7,6 @@ import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 import { type ButtonProps } from '../button/index.js';
 
 import { styles } from './components/button-group-button/button-group-button.styles.js';
-import { ButtonHTMLAttributes } from 'react';
 
 type Variants = VariantProps<typeof styles>;
 
