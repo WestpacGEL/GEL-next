@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { AriaButtonOptions, mergeProps, useButton, useFocusRing } from 'react-aria';
 
 import { styles } from './pagination-item.styles.js';
