@@ -11,7 +11,7 @@ import { type DateFieldProps } from './date-field.types.js';
 /**
  * @private
  */
-export function DateField({ separator, ...props }: DateFieldProps) {
+export function DateField({ separator, className, ...props }: DateFieldProps) {
   const { locale } = useLocale();
   const state = useDateFieldState({
     ...props,
@@ -23,7 +23,7 @@ export function DateField({ separator, ...props }: DateFieldProps) {
   const { fieldProps } = useDateField(props, state, ref);
 
   return (
-    <div {...fieldProps} ref={ref}>
+    <div {...fieldProps} className={className} ref={ref}>
       {state.segments.map((segment, i) => (
         <DateSegment separator={separator} key={i} segment={segment} state={state} />
       ))}

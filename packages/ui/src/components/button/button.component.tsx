@@ -40,6 +40,7 @@ function BaseButton(
     justify: resolveResponsiveVariant(justify, breakpoint),
     isFocusVisible,
     hasChildren: !!children,
+    hasIcon: !!IconBefore || !!IconAfter,
   });
 
   // eslint-disable-next-line sonarjs/function-return-type

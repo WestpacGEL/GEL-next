@@ -194,3 +194,13 @@ export const ShowAsBottomSheetResponsive: Story = {
     return <DatePicker bottomSheetView={{ initial: false, lg: true }} />;
   },
 };
+
+/**
+ * > DatePicker block
+ */
+export const DatePickerBlock: Story = {
+  args: {},
+  render: () => {
+    return <DatePicker aria-label="date picker block" block={{ initial: true }} />;
+  },
+};

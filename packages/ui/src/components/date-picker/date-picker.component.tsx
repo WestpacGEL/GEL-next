@@ -23,6 +23,7 @@ export function DatePicker({
   size = 'medium',
   className,
   bottomSheetView = { initial: true, xsl: false },
+  block,
   isDateUnavailable,
   disableDaysOfWeek,
   disableWeekends,
@@ -50,7 +51,9 @@ export function DatePicker({
   const state = useDatePickerState({ isDateUnavailable: enhancedIsDateUnavailable, ...props });
   const breakpoint = useBreakpoint();
   const resolvedSize = resolveResponsiveVariant(size, breakpoint);
+  const resolvedBlock = resolveResponsiveVariant(block, breakpoint);
   const styles = datePickerStyles({
+    block: resolvedBlock,
     size: resolvedSize,
     isInvalid: state.isInvalid,
     isDisabled: props.isDisabled,
@@ -89,9 +92,9 @@ export function DatePicker({
 
   return (
     <>
-      <div {...labelProps}>{props.label}</div>
+      {props.label && <div {...labelProps}>{props.label}</div>}
       <div {...props} {...groupProps} ref={ref} className={styles.input({ className })}>
-        <DateField separator={separator} {...fieldProps} />
+        <DateField className={styles.dateField()} separator={separator} {...fieldProps} />
         <Button
           look="faint"
           className={styles.button()}
