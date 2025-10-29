@@ -5,15 +5,29 @@ This version of the Flexi-cell has a responsive content layout, use the demo but
 - **Xs - Sm:** Tile padding 12px
 - **Md +:** Tile padding 18px
 
-```
- () => {
-  return <>
-      {new Array(3).fill(null).map((_, index) => <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{
-      initial: 'default',
-      md: 'large'
-    }}>
+```tsx
+() => {
+  return (
+    <>
+      {new Array(3).fill(null).map((_, index) => (
+        <FlexiCell
+          body={false}
+          key={index}
+          tag="a"
+          href="#"
+          withBorder
+          size={{
+            initial: 'default',
+            md: 'large',
+          }}
+          className="overflow-hidden"
+        >
           <div className="flex gap-2">
-            <img src="https://www.westpac.com.au/content/dam/public/gel/images/house-demo-image.png" alt="background" className="-my-2 -ml-2 block w-[10rem] object-cover md:-my-3 md:-ml-3" />
+            <img
+              src="https://www.westpac.com.au/content/dam/public/gel/images/house-demo-image.png"
+              alt="background"
+              className="-my-2 -ml-2 block w-[10rem] object-cover md:-my-3 md:-ml-3"
+            />
             <FlexiCellBody>
               <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
               <FlexiCellHint>Descriptive information</FlexiCellHint>
@@ -25,9 +39,11 @@ This version of the Flexi-cell has a responsive content layout, use the demo but
               </div>
             </FlexiCellBody>
           </div>
-        </FlexiCell>)}
-    </>;
-}
+        </FlexiCell>
+      ))}
+    </>
+  );
+};
 ```
 
 ### Vertical
@@ -35,30 +51,43 @@ This version of the Flexi-cell has a responsive content layout, use the demo but
 - **Xs - Sm:** Tile padding 12px
 - **Md +:** Tile padding 18px
 
-```
-
-      <Grid>
-        {new Array(3).fill(null).map((_, index) => <GridItem key={index} span={4}>
-            <FlexiCell className="overflow-hidden" body={false} key={index} tag="a" href="#" withBorder size={{
+```tsx
+<Grid>
+  {new Array(3).fill(null).map((_, index) => (
+    <GridItem key={index} span={4}>
+      <FlexiCell
+        className="overflow-hidden"
+        body={false}
+        key={index}
+        tag="a"
+        href="#"
+        withBorder
+        size={{
           initial: 'default',
-          md: 'large'
-        }}>
-              <div className="flex flex-col gap-2">
-                <div className="-mx-2 -mt-2 md:-mx-3 md:-mt-3">
-                  <img src="https://www.westpac.com.au/content/dam/public/gel/images/house-demo-image.png" alt="background" className="block h-[8.75rem] w-full object-cover" />
-                </div>
-                <FlexiCellBody>
-                  <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
-                  <FlexiCellHint>Description</FlexiCellHint>
-                  <div className="mt-3 flex gap-1">
-                    <Badge color="hero">Label</Badge>
-                    <Badge color="faint" soft>
-                      Label
-                    </Badge>
-                  </div>
-                </FlexiCellBody>
-              </div>
-            </FlexiCell>
-          </GridItem>)}
-      </Grid>
+          md: 'large',
+        }}
+      >
+        <div className="flex flex-col gap-2">
+          <div className="-mx-2 -mt-2 md:-mx-3 md:-mt-3">
+            <img
+              src="https://www.westpac.com.au/content/dam/public/gel/images/house-demo-image.png"
+              alt="background"
+              className="block h-[8.75rem] w-full object-cover"
+            />
+          </div>
+          <FlexiCellBody>
+            <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+            <FlexiCellHint>Description</FlexiCellHint>
+            <div className="mt-3 flex gap-1">
+              <Badge color="hero">Label</Badge>
+              <Badge color="faint" soft>
+                Label
+              </Badge>
+            </div>
+          </FlexiCellBody>
+        </div>
+      </FlexiCell>
+    </GridItem>
+  ))}
+</Grid>
 ```

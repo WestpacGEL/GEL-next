@@ -33,7 +33,7 @@ export function ThemeDropDown({ className }: { className?: string }) {
       portalContainer={portalContainer}
       color="hero"
       soft
-      text="Theme"
+      text="Mode"
       className={className}
       shouldCloseOnInteractOutside={() => false}
     >

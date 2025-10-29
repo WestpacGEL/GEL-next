@@ -59,10 +59,12 @@ export const Icons = () => {
           <p className="text-text-muted text-right italic">{foundText}</p>
         </GridItem>
         {filteredIcons.map(({ key, Icon }) => (
-          <GridItem key={key} span={{ initial: 12, sm: 3, lg: 2 }}>
-            <div className="border-border-muted-soft bg-background-white-pale xsl:mb-4 mb-2 flex flex-col items-center justify-center rounded-2xl border px-2 pt-6 pb-3">
+          <GridItem key={key} span={{ initial: 12, sm: 3, lg: 2 }} className="flex flex-col">
+            <div className="border-border-muted-soft bg-background-white-pale xsl:mb-4 mb-2 flex flex-1 flex-col items-center justify-center rounded-2xl border px-2 pt-6 pb-3">
               <Icon look={look} className="mb-6" color="muted" />
-              <span className="text-text-muted text-[0.6875rem]">{key}</span>
+              <span className="text-text-muted w-full max-w-full text-[0.6875rem] break-words whitespace-normal text-center">
+                {key}
+              </span>
             </div>
           </GridItem>
         ))}

@@ -97,7 +97,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
             </button>
             <Link
               href="/"
-              className="outline-focus flex h-15 items-center px-3 outline-offset-[-1px]"
+              className="focus-visible:focus-outline flex h-15 items-center px-3 !outline-offset-[-2px]"
               aria-label="GEL home"
             >
               <Logo brand={brand} />
@@ -116,7 +116,11 @@ export function Sidebar({ items, brand }: SidebarProps) {
             </div>
           </div>
           <nav ref={listRef} className="flex-1 overflow-x-hidden overflow-y-auto pb-4 transition-all">
-            <Link href="/" className="outline-focus block outline-offset-[-1px]" aria-label="Back to GEL">
+            <Link
+              href="/"
+              className="focus-visible:focus-outline block !outline-offset-[-2px]"
+              aria-label="Back to GEL"
+            >
               <BackToGelSvg />
             </Link>
             <Navigation items={items} brand={brand} />

@@ -55,8 +55,8 @@ export const Logos = () => {
         </GridItem>
         {filteredLogos.map(({ key, Logo }) => (
           <GridItem key={key} span={{ initial: 12, sm: 6, md: 4, lg: 3 }} className="flex">
-            <div className="border-border-muted-soft bg-background-white-pale xsl:mb-4 mb-2 flex grow flex-col items-center justify-center rounded-md border px-2 pt-6 pb-3">
-              <Logo className="mb-6 grow" />
+            <div className="border-border-muted-soft bg-background-white-pale xsl:mb-4 mb-2 flex w-full grow flex-col items-center justify-center rounded-md border px-2 pt-6 pb-3">
+              <Logo className="mb-6 max-w-full grow" />
               <span className="text-text-muted text-[0.6875rem]">{key}</span>
             </div>
           </GridItem>
