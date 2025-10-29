@@ -102,7 +102,12 @@ export function Sidebar({ items, brand }: SidebarProps) {
             >
               <Logo brand={brand} />
             </Link>
-            <div className="border-b-border-muted-soft border-b">
+            <div
+              className={clsx('border-b', {
+                'border-b-border-mono': scrolled,
+                'border-b-border-muted-soft': !scrolled,
+              })}
+            >
               <SidebarSelect value={brand} onChange={handleChange} aria-label="Change brand">
                 {BANK_OPTIONS.map(({ icon: Icon, designSystemPageClasses, key, label }) => (
                   <SidebarSelect.Option key={key} textValue={label}>
