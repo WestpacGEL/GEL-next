@@ -10,8 +10,8 @@ import { styles } from './date-picker.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 export type DatePickerProps<T extends DateValue = DateValue> = DatePickerStateOptions<T> &
-  Omit<Variants, 'size'> &
-  Omit<HTMLAttributes<HTMLDivElement>, 'invalid'> & {
+  Omit<Variants, 'size' | 'block'> &
+  Omit<HTMLAttributes<HTMLDivElement>, 'invalid' | 'block'> & {
     /**
      * Determines whether to display the component as a bottom sheet view.
      * Can also accept an object to conditionally enable the bottom sheet based on breakpoints.
@@ -41,4 +41,8 @@ export type DatePickerProps<T extends DateValue = DateValue> = DatePickerStateOp
      * size
      */
     size?: ResponsiveVariants<Variants['size']>;
+    /**
+     * size
+     */
+    block?: ResponsiveVariants<Variants['block']>;
   };
