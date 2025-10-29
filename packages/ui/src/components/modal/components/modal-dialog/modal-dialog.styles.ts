@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       base: 'relative mx-auto flex max-h-[80vh] max-w-full flex-col overflow-hidden rounded bg-white text-text outline-none',
-      title: 'typography-body-7 pb-4 pt-9 font-bold text-text',
+      title: 'typography-body-7 font-bold text-text',
       close: 'absolute right-0 top-0 block p-3',
     },
     variants: {
@@ -12,11 +12,11 @@ export const styles = tv(
         full: {
           base: 'max-h-screen w-full flex-1',
           close: 'p-2',
-          title: 'px-4 py-3',
+          title: 'px-4',
         },
         lg: {
           base: 'w-[50rem]',
-          title: 'px-12 pt-12',
+          title: 'px-12',
         },
         md: {
           base: 'w-[37.5rem]',

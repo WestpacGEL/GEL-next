@@ -9,11 +9,11 @@ export const styles = tv(
     },
     variants: {
       size: {
-        full: { base: 'px-4 py-3' },
-        lg: { base: 'px-12 pb-12 pt-6' },
-        md: { base: 'px-7 pb-7 pt-2' },
-        sm: { base: 'flex-col px-5 pb-5 pt-2' },
-        fluid: { base: 'px-5 pb-5 pt-2 max-md:flex-col' },
+        full: { base: 'px-4 pt-3' },
+        lg: { base: 'px-12 pt-6' },
+        md: { base: 'px-7 pt-2' },
+        sm: { base: 'flex-col px-5 pt-2' },
+        fluid: { base: 'px-5 pt-2 max-md:flex-col' },
       },
     },
   },

@@ -1,3 +1,4 @@
+import { RefObject } from 'react';
 import { type AriaDialogProps } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
@@ -27,6 +28,10 @@ export type ModalDialogProps = {
    */
   onClose?: () => unknown;
   /**
+   * Ref to use for scrolling animations when not using the body prop to wrap children
+   */
+  scrollingBodyRef?: RefObject<HTMLDivElement>;
+  /**
    * Size of dialog
    */
   size?: Variants['size'];
@@ -41,4 +46,8 @@ export type ModalDialogContextValue = {
    * Size of dialog
    */
   size?: Variants['size'];
+  /**
+   * Ref to use for scrolling animations when not using the body prop to wrap children
+   */
+  scrollingBodyRef?: RefObject<HTMLDivElement>;
 };

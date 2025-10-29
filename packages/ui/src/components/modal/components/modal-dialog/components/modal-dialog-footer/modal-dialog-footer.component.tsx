@@ -1,5 +1,6 @@
 'use client';
 
+import { useMotionValueEvent, useScroll, useTransform, m } from 'motion/react';
 import React from 'react';
 
 import { Button } from '../../../../../button/index.js';
@@ -16,10 +17,43 @@ export function ModalDialogFooter({
   secondaryOnClick,
   ...props
 }: ModalDialogFooterProps) {
-  const { size } = useModalDialogContext();
+  const { size, scrollingBodyRef } = useModalDialogContext();
   const styles = modalFooterStyles({ size });
+
+  const { scrollY } = useScroll({ container: scrollingBodyRef?.current ? scrollingBodyRef : undefined });
+
+  let initialPaddingBottom: string;
+  switch (size) {
+    case 'lg':
+      initialPaddingBottom = '72px';
+      break;
+    case 'full':
+      initialPaddingBottom = '18px';
+      break;
+    case 'md':
+      initialPaddingBottom = '42px';
+      break;
+    case 'sm':
+    case 'fluid':
+    default:
+      initialPaddingBottom = '30px';
+      break;
+  }
+
+  const paddingBottom = useTransform(scrollY, [0, 100], [initialPaddingBottom, '12px']);
+  const [currPaddingBottom, setCurrPaddingBottom] = React.useState(''); // used for updating key so animation works
+
+  useMotionValueEvent(paddingBottom, 'change', latest => {
+    setCurrPaddingBottom(latest);
+  });
+
   return (
-    <div className={styles.base({ className })} {...props}>
+    <m.div
+      key={`footer-${currPaddingBottom}`}
+      className={styles.base({ className })}
+      style={{ paddingBottom }}
+      {...props}
+    >
       <Button look="primary" size="large" className={styles.primaryBtn()} onClick={primaryOnClick}>
         {primaryLabel}
       </Button>
@@ -28,6 +62,6 @@ export function ModalDialogFooter({
           {secondaryLabel}
         </Button>
       )}
-    </div>
+    </m.div>
   );
 }

@@ -14,6 +14,7 @@ export function Modal({
   size,
   className,
   fullscreen,
+  scrollingBodyRef,
   ...props
 }: ModalProps) {
   return (
@@ -26,6 +27,7 @@ export function Modal({
         body={body}
         size={size}
         className={className}
+        scrollingBodyRef={scrollingBodyRef}
       >
         {children}
       </ModalDialog>
