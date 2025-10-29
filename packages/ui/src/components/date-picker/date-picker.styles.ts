@@ -5,6 +5,7 @@ export const styles = tv({
     input: 'form-control border-border-muted-strong disabled:form-control-disabled flex items-center',
     button:
       'border-l-border-muted-strong bg-surface-muted-pale flex h-auto items-center justify-center rounded-l-none border-y-0 border-r-0 border-l',
+    dateField: 'flex-1',
   },
   variants: {
     size: {
@@ -23,6 +24,14 @@ export const styles = tv({
       xlarge: {
         input: 'form-control-xlarge gap-3',
         button: '-my-1.5 -mr-3 mb-[-0.625rem] min-h-8 py-1.5',
+      },
+    },
+    block: {
+      true: {
+        input: 'w-full',
+      },
+      false: {
+        input: '',
       },
     },
     isInvalid: {

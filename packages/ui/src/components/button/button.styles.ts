@@ -12,6 +12,10 @@ export const styles = tv({
     text: 'overflow-hidden text-ellipsis',
   },
   variants: {
+    hasIcon: {
+      true: {},
+      false: {},
+    },
     size: {
       small: {
         base: 'active-theme-rams:before:h-[0.0625rem] typography-body-10 h-5 rounded-sm px-1.5',
@@ -36,7 +40,7 @@ export const styles = tv({
       faint: {
         base: 'border-border-muted-strong bg-surface-muted-pale text-text-muted hover:bg-surface-hover-mono active:bg-surface-active-mono',
       },
-      link: { base: 'text-text-link border-0 underline hover:no-underline' },
+      link: { base: 'text-text-link border-0' },
       unstyled: { base: 'border-none p-0 text-left' },
     },
     soft: {
@@ -100,6 +104,18 @@ export const styles = tv({
       size: 'xlarge',
       hasChildren: true,
       className: 'ml-1.5',
+    },
+    {
+      slots: ['text'],
+      look: 'link',
+      hasIcon: true,
+      className: 'hover:underline',
+    },
+    {
+      slots: ['text'],
+      look: 'link',
+      hasIcon: false,
+      className: 'underline hover:no-underline',
     },
   ],
 });
