@@ -21,7 +21,6 @@ export function Option({ item, state }: OptionProps) {
     state,
     ref,
   );
-  console.log('isFocusVisible', isFocusVisible);
 
   return (
     <li
