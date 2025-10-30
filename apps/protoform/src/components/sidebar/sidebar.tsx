@@ -105,7 +105,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
           <>
             <div
               className={clsx(
-                'border-border fixed inset-y-0 w-[300px] overflow-auto overscroll-contain border-l bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-md:z-[100] md:mt-11',
+                'border-border-border fixed inset-y-0 w-[300px] overflow-auto overscroll-contain border-l bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-md:z-[100] md:mt-11',
                 {
                   'max-md:translate-x-full': !open,
                   'ml-[1620px]': isMaxWidth,

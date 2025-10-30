@@ -6,18 +6,27 @@ The payee tile has a few configurations, it can come with an icon to represent t
 
 ```tsx
 <Grid>
-  <GridItem span={{ initial: 12, sm: 6 }}>      
- <FlexiCell after={<FlexiCellAdornment align="center">
-              <FlexiCellLabel tag="h3" rightLabel>
-                Fri 5 Aug
-              </FlexiCellLabel>
-            </FlexiCellAdornment>} before={<FlexiCellAdornment>
-              <BpayIcon color="hero" />
-            </FlexiCellAdornment>} tag="a" href="#">
-          <FlexiCellLabel tag="h3"> Payee name</FlexiCellLabel>
-          <FlexiCellHint>Payee account details</FlexiCellHint>
-        </FlexiCell>
-</GridItem>
+  <GridItem span={{ initial: 12, sm: 6 }}>
+    <FlexiCell
+      after={
+        <FlexiCellAdornment align="center">
+          <FlexiCellLabel tag="h3" rightLabel>
+            Fri 5 Aug
+          </FlexiCellLabel>
+        </FlexiCellAdornment>
+      }
+      before={
+        <FlexiCellAdornment>
+          <BpayIcon color="hero" />
+        </FlexiCellAdornment>
+      }
+      tag="a"
+      href="#"
+    >
+      <FlexiCellLabel tag="h3"> Payee name</FlexiCellLabel>
+      <FlexiCellHint>Payee account details</FlexiCellHint>
+    </FlexiCell>
+  </GridItem>
 </Grid>
 ```
 
@@ -25,15 +34,24 @@ The payee tile has a few configurations, it can come with an icon to represent t
 
 ```tsx
 <Grid>
-  <GridItem span={{ initial: 12, sm: 6 }}>           
-<FlexiCell after={<FlexiCellAdornment align="center">
-              <FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />
-            </FlexiCellAdornment>} before={<FlexiCellCircle className="bg-muted text-text-mono" aria-label="Walter White">
-              PN
-            </FlexiCellCircle>} dualAction href="#">
-          <FlexiCellLabel tag="h3">Payee name</FlexiCellLabel>
-          <FlexiCellHint>Payee account details</FlexiCellHint>
-        </FlexiCell>
-</GridItem>
+  <GridItem span={{ initial: 12, sm: 6 }}>
+    <FlexiCell
+      after={
+        <FlexiCellAdornment align="center">
+          <FlexiCellButton icon={() => <InfoIcon color="muted" look="outlined" />} />
+        </FlexiCellAdornment>
+      }
+      before={
+        <FlexiCellCircle className="bg-surface-muted text-text-mono" aria-label="Walter White">
+          PN
+        </FlexiCellCircle>
+      }
+      dualAction
+      href="#"
+    >
+      <FlexiCellLabel tag="h3">Payee name</FlexiCellLabel>
+      <FlexiCellHint>Payee account details</FlexiCellHint>
+    </FlexiCell>
+  </GridItem>
 </Grid>
 ```
