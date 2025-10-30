@@ -4,14 +4,14 @@
   Do not edit directly, this file was auto-generated.
 -->
 <resources>
-  <dimen name="wbcBorderRoundedNone">0.00dp</dimen>
-  <dimen name="wbcBorderRoundedSm">3.00dp</dimen>
-  <dimen name="wbcBorderRoundedMd">4.00dp</dimen>
-  <dimen name="wbcBorderRoundedLg">5.00dp</dimen>
-  <dimen name="wbcBorderRoundedXl">6.00dp</dimen>
-  <dimen name="wbcBorderRounded2xl">8.00dp</dimen>
-  <dimen name="wbcBorderRounded3xl">12.00dp</dimen>
-  <dimen name="wbcBorderRounded4xl">16.00dp</dimen>
-  <dimen name="wbcBorderRounded5xl">24.00dp</dimen>
-  <dimen name="wbcBorderRoundedFull">999.00dp</dimen>
+  <dimen name="wbcBorderRoundedNone">0dp</dimen>
+  <dimen name="wbcBorderRoundedSm">3dp</dimen>
+  <dimen name="wbcBorderRoundedMd">4dp</dimen>
+  <dimen name="wbcBorderRoundedLg">5dp</dimen>
+  <dimen name="wbcBorderRoundedXl">6dp</dimen>
+  <dimen name="wbcBorderRounded2xl">8dp</dimen>
+  <dimen name="wbcBorderRounded3xl">12dp</dimen>
+  <dimen name="wbcBorderRounded4xl">16dp</dimen>
+  <dimen name="wbcBorderRounded5xl">24dp</dimen>
+  <dimen name="wbcBorderRoundedFull">999dp</dimen>
 </resources>

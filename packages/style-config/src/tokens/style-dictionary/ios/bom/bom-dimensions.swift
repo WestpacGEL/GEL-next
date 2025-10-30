@@ -2,7 +2,7 @@
 
 import UIKit 
 
-public enum WBCLightDimensions {
+public enum BOMLightDimensions {
   public static let BorderRoundedNone = 0
   public static let BorderRoundedSm = 3
   public static let BorderRoundedMd = 4
@@ -16,7 +16,7 @@ public enum WBCLightDimensions {
 }
 
 
-public enum WBCDarkDimensions {
+public enum BOMDarkDimensions {
   public static let BorderRoundedNone = 0
   public static let BorderRoundedSm = 3
   public static let BorderRoundedMd = 4
@@ -30,95 +30,95 @@ public enum WBCDarkDimensions {
 }
 
 
-public enum WBCDimensions {
+public enum BOMDimensions {
 
   public static var BorderRoundedNone: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBCDarkDimensions.BorderRoundedNone)
+      return Double(BOMDarkDimensions.BorderRoundedNone)
     default:
-      return Double(WBCLightDimensions.BorderRoundedNone)
+      return Double(BOMLightDimensions.BorderRoundedNone)
     }
   }
 
   public static var BorderRoundedSm: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBCDarkDimensions.BorderRoundedSm)
+      return Double(BOMDarkDimensions.BorderRoundedSm)
     default:
-      return Double(WBCLightDimensions.BorderRoundedSm)
+      return Double(BOMLightDimensions.BorderRoundedSm)
     }
   }
 
   public static var BorderRoundedMd: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBCDarkDimensions.BorderRoundedMd)
+      return Double(BOMDarkDimensions.BorderRoundedMd)
     default:
-      return Double(WBCLightDimensions.BorderRoundedMd)
+      return Double(BOMLightDimensions.BorderRoundedMd)
     }
   }
 
   public static var BorderRoundedLg: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBCDarkDimensions.BorderRoundedLg)
+      return Double(BOMDarkDimensions.BorderRoundedLg)
     default:
-      return Double(WBCLightDimensions.BorderRoundedLg)
+      return Double(BOMLightDimensions.BorderRoundedLg)
     }
   }
 
   public static var BorderRoundedXl: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBCDarkDimensions.BorderRoundedXl)
+      return Double(BOMDarkDimensions.BorderRoundedXl)
     default:
-      return Double(WBCLightDimensions.BorderRoundedXl)
+      return Double(BOMLightDimensions.BorderRoundedXl)
     }
   }
 
   public static var BorderRounded2xl: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBCDarkDimensions.BorderRounded2xl)
+      return Double(BOMDarkDimensions.BorderRounded2xl)
     default:
-      return Double(WBCLightDimensions.BorderRounded2xl)
+      return Double(BOMLightDimensions.BorderRounded2xl)
     }
   }
 
   public static var BorderRounded3xl: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBCDarkDimensions.BorderRounded3xl)
+      return Double(BOMDarkDimensions.BorderRounded3xl)
     default:
-      return Double(WBCLightDimensions.BorderRounded3xl)
+      return Double(BOMLightDimensions.BorderRounded3xl)
     }
   }
 
   public static var BorderRounded4xl: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBCDarkDimensions.BorderRounded4xl)
+      return Double(BOMDarkDimensions.BorderRounded4xl)
     default:
-      return Double(WBCLightDimensions.BorderRounded4xl)
+      return Double(BOMLightDimensions.BorderRounded4xl)
     }
   }
 
   public static var BorderRounded5xl: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBCDarkDimensions.BorderRounded5xl)
+      return Double(BOMDarkDimensions.BorderRounded5xl)
     default:
-      return Double(WBCLightDimensions.BorderRounded5xl)
+      return Double(BOMLightDimensions.BorderRounded5xl)
     }
   }
 
   public static var BorderRoundedFull: Double {
     switch UIScreen.main.traitCollection.userInterfaceStyle {
     case .dark:
-      return Double(WBCDarkDimensions.BorderRoundedFull)
+      return Double(BOMDarkDimensions.BorderRoundedFull)
     default:
-      return Double(WBCLightDimensions.BorderRoundedFull)
+      return Double(BOMLightDimensions.BorderRoundedFull)
     }
   }
 

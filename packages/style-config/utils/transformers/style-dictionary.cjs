@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const StyleDictionary = require('style-dictionary').default;
 
 const tokens = require(`${__dirname}/../../src/tokens/GEL-tokens-figma.json`);
+const BRANDS = require(`${__dirname}/../../src/constants/brands.json`);
 
 // ==============================
 // Helpers
@@ -14,6 +15,14 @@ function splitByUppercase(str) {
 
 function pascalToCamel(str) {
   return `${str[0].toLocaleLowerCase()}${str.slice(1)}`;
+}
+
+function pascalToKebab(str) {
+  return str
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2') // Add hyphen between lower/number → Upper
+    .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2') // Handle consecutive capitals correctly
+    .replaceAll(' ', '-')
+    .toLowerCase();
 }
 
 function kebabToCamel(str) {
@@ -37,6 +46,7 @@ function kebabToCamel(str) {
 function camelToKebab(str) {
   return str
     .replace(/([a-z0-9])([A-Z])/g, '$1-$2') // insert dash before capital letters
+    .replaceAll(' ', '-')
     .toLowerCase(); // make everything lowercase
 }
 
@@ -716,10 +726,12 @@ StyleDictionary.registerTransform({
 const DIST_FOLDER = './dist';
 const INTERNAL_FOLDER = './src/tokens/style-dictionary';
 
-const BRANDS = [
-  { themeName: 'Westpac', primitiveName: 'WBC' },
-  { themeName: 'StGeorge', primitiveName: 'STG' },
-];
+const BRANDS_KEBAB_CASE = BRANDS.reduce((acc, { themeName, primitiveName }) => {
+  return {
+    ...acc,
+    [pascalToKebab(themeName)]: primitiveName.toLowerCase(),
+  };
+}, {});
 
 const STYLE_DICTIONARY_BASE_CONFIG = {
   source: [`${DIST_FOLDER}/w3c-tokens/ALL_BRANDS.json`],
@@ -753,7 +765,7 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
         {
           destination: `${DIST_FOLDER}/style-dictionary/css/AllBrands/vars.css`,
           format: ['css/mode-wrapped-all-brands'],
-          options: { brands: { 'st-george': 'stg', westpac: 'wbc' } },
+          options: { brands: BRANDS_KEBAB_CASE },
         },
       ],
     },
@@ -837,6 +849,7 @@ function normalizeTokenGroup(group, brandName) {
  * Processes theme tokens for a given brand.
  */
 function processThemeModes(brandModes, brandName) {
+  delete brandModes.Logo;
   return Object.fromEntries(
     Object.entries(brandModes).map(([propGroup, categories]) => [
       propGroup,
@@ -983,7 +996,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
             {
               destination: `${DIST_FOLDER}/style-dictionary/css/${brandName}/style.css`,
               format: ['css/mode-wrapped-all-brands'],
-              options: { outputReferences: true, brands: { 'st-george': 'stg', westpac: 'wbc' } },
+              options: { outputReferences: true, brands: BRANDS_KEBAB_CASE },
             },
           ],
         },

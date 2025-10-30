@@ -95,7 +95,7 @@ const preview: Preview = {
         // Array of plain string values or MenuItem shape (see below)
         // TODO: Re-enable other brands once tokens have been created
         // items: ['BOM', 'BSA', 'BTFG', 'RAMS', 'STG', 'WBC', 'WBG'],
-        items: ['STG', 'WBC'],
+        items: ['STG', 'WBC', 'BOM', 'BSA'],
         // Change title based on selected value
         dynamicTitle: true,
       },
