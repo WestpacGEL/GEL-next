@@ -1228,7 +1228,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for screen backgrounds to establish correct emphasis.",
+            "$description": "Use for screen and container background fills. If your screen background is white use this token.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1239,7 +1239,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for screen backgrounds to establish correct emphasis.",
+            "$description": "Use for screen and container background fills. Replaces current style: Background",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1250,7 +1250,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for screen backgrounds to establish correct emphasis.",
+            "$description": "Use for screen and container background fills. Replaces current style: Light",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1297,7 +1297,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -1309,7 +1309,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -1323,7 +1323,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for icons that need to be text colour.",
+            "$description": "Use for fills that need to be text colour.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1334,7 +1334,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Replaces current \"Muted\" style",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1345,8 +1345,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Reserved. Please do not use",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1357,8 +1356,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This token is reserved. Please do not use.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1369,8 +1367,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1381,7 +1378,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Replaces the current \"Background\" Style.",
+            "$description": "Replaces current style: Background",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1392,7 +1389,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Replaces the current \"Light\" style.",
+            "$description": "Replaces current style: Light",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1403,6 +1400,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1413,8 +1411,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1425,6 +1422,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
+            "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1435,8 +1433,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1447,7 +1444,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour should be used very sparingly. It is for embellishment only.",
+            "$description": "Replaces current style: Pop. Use sparingly, embellishment only.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1458,7 +1455,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines.",
+            "$description": "Use sparingly, in accordance with the brand guidelines. For embellishment only.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1469,7 +1466,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1480,7 +1477,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1491,8 +1488,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1503,8 +1499,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1515,8 +1510,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1527,8 +1521,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1539,7 +1532,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1550,8 +1543,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1562,7 +1554,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1573,8 +1565,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1585,7 +1576,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1596,8 +1587,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1608,7 +1598,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1619,8 +1609,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1631,8 +1620,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1643,8 +1631,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the System messaging component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1655,7 +1642,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use surface-mono when you want to switch from white to black.",
+            "$description": "Mono is either White or Black",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1666,7 +1653,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use with caution. This will be white in both Light and Dark Mode.",
+            "$description": "Reserved is always white.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1678,7 +1665,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use for body text, button labels, form labels etc. Can also be used for headings if required.",
+            "$description": "Replaces current style: Text",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1688,7 +1675,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use for headings to ensure that multi-brand switching remains accurate.",
+            "$description": "Replaces current style: Heading",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1698,7 +1685,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use for text that needs less emphasis - Hint text, sub labels etc.",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1708,7 +1695,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is not currently used in the Design System.",
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1718,7 +1705,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is not currently used in the Design System",
+            "$description": "Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1728,7 +1715,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1738,7 +1725,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance.",
+            "$description": "Replaces current style: Link",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1748,7 +1735,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1758,7 +1745,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1768,7 +1755,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1778,7 +1765,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1788,7 +1775,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+            "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1798,7 +1785,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use text-mono when you want to switch from white to black.",
+            "$description": "Mono text is either White or Black",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1808,7 +1795,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use with caution. Text will be white in both light and dark modes",
+            "$description": "Reversed text is always white",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1820,7 +1807,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is not currently used in the Design System.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1830,7 +1817,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This colour replaces the old \"BorderDark\". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements.",
+            "$description": "Replaces current style: Border Dark",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1840,8 +1827,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This token is reserved. Consult GEL team before use. This border colour is not currently used in the Design System. Accessibility is not guaranteed.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1851,7 +1837,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This colour replaces the old \"Border\". It can be used for borders and design embellishment that does not have to be accessible.",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1861,7 +1847,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1871,7 +1857,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1881,7 +1867,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1891,7 +1877,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1901,8 +1887,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1912,8 +1897,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1923,8 +1907,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1934,8 +1917,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1945,8 +1927,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1956,8 +1937,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1967,8 +1947,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1978,8 +1957,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1989,8 +1967,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2000,8 +1977,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2011,7 +1987,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements.",
+            "$description": "Mono border is either White or Black",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2021,8 +1997,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the focus state keyboard navigation.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Only for use with focus state keyboard navigation.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2234,8 +2209,7 @@
             "$scopes": [
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2245,8 +2219,7 @@
             "$scopes": [
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2500,7 +2473,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for screen backgrounds to establish correct emphasis.",
+            "$description": "Use for screen and container background fills. If your screen background is white use this token.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2511,7 +2484,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for screen backgrounds to establish correct emphasis.",
+            "$description": "Use for screen and container background fills. Replaces current style: Background",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2522,7 +2495,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for screen backgrounds to establish correct emphasis.",
+            "$description": "Use for screen and container background fills. Replaces current style: Light",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2569,7 +2542,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -2581,7 +2554,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -2595,7 +2568,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use for icons that need to be text colour.",
+            "$description": "Use for fills that need to be text colour.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2606,7 +2579,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Replaces current \"Muted\" style",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2617,8 +2590,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Reserved. Please do not use",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2629,8 +2601,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This token is reserved. Please do not use.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2641,8 +2612,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2653,7 +2623,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Replaces the current \"Background\" Style.",
+            "$description": "Replaces current style: Background",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2664,7 +2634,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Replaces the current \"Light\" style.",
+            "$description": "Replaces current style: Light",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2675,6 +2645,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2685,8 +2656,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2697,6 +2667,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
+            "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2707,8 +2678,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2719,7 +2689,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour should be used very sparingly. It is for embellishment only.",
+            "$description": "Replaces current style: Pop. Use sparingly, embellishment only.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2730,7 +2700,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines.",
+            "$description": "Use sparingly, in accordance with the brand guidelines. For embellishment only.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2741,7 +2711,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2752,7 +2722,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2763,8 +2733,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2775,8 +2744,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2787,8 +2755,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2799,8 +2766,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2811,7 +2777,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2822,8 +2788,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2834,7 +2799,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2845,8 +2810,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2857,7 +2821,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2868,8 +2832,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2880,7 +2843,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2891,8 +2854,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2903,8 +2865,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2915,8 +2876,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the System messaging component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2927,7 +2887,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use surface-mono when you want to switch from white to black.",
+            "$description": "Mono is either White or Black",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2938,7 +2898,7 @@
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
-            "$description": "Use with caution. This will be white in both Light and Dark Mode.",
+            "$description": "Reserved is always white.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2950,7 +2910,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use for body text, button labels, form labels etc. Can also be used for headings if required.",
+            "$description": "Replaces current style: Text",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2960,7 +2920,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use for headings to ensure that multi-brand switching remains accurate.",
+            "$description": "Replaces current style: Heading",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2970,7 +2930,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use for text that needs less emphasis - Hint text, sub labels etc.",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2980,7 +2940,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is not currently used in the Design System.",
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2990,7 +2950,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is not currently used in the Design System",
+            "$description": "Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3000,7 +2960,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3010,7 +2970,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance.",
+            "$description": "Replaces current style: Link",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3020,7 +2980,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3030,7 +2990,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3040,7 +3000,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3050,7 +3010,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3060,7 +3020,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+            "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3070,7 +3030,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use text-mono when you want to switch from white to black.",
+            "$description": "Mono text is either White or Black",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3080,7 +3040,7 @@
             "$scopes": [
               "TEXT_FILL"
             ],
-            "$description": "Use with caution. Text will be white in both light and dark modes",
+            "$description": "Reversed text is always white",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3092,7 +3052,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is not currently used in the Design System.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3102,7 +3062,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This colour replaces the old \"BorderDark\". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements.",
+            "$description": "Replaces current style: Border Dark",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3112,8 +3072,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This token is reserved. Consult GEL team before use. This border colour is not currently used in the Design System. Accessibility is not guaranteed.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3123,7 +3082,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This colour replaces the old \"Border\". It can be used for borders and design embellishment that does not have to be accessible.",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3133,7 +3092,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3143,7 +3102,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3153,7 +3112,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3163,7 +3122,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3173,8 +3132,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3184,8 +3142,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3195,8 +3152,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3206,8 +3162,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3217,8 +3172,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3228,8 +3182,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3239,8 +3192,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3250,8 +3202,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3261,8 +3212,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3272,8 +3222,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3283,7 +3232,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements.",
+            "$description": "Mono border is either White or Black",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3293,8 +3242,7 @@
             "$scopes": [
               "STROKE_COLOR"
             ],
-            "$description": "This is a reserved colour. It must only be used for the focus state keyboard navigation.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Only for use with focus state keyboard navigation.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3506,8 +3454,7 @@
             "$scopes": [
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3517,8 +3464,7 @@
             "$scopes": [
               "SHAPE_FILL"
             ],
-            "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
-            "$hiddenFromPublishing": true,
+            "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -5416,6 +5362,65 @@
             "$libraryName": "",
             "$collectionName": "Primitives",
             "$value": "{Primitives.border.radius.full}"
+          }
+        }
+      },
+      "Logo": {
+        "$scopes": {
+          "0": {
+            "0": "A",
+            "1": "L",
+            "2": "L",
+            "3": "_",
+            "4": "S",
+            "5": "C",
+            "6": "O",
+            "7": "P",
+            "8": "E",
+            "9": "S"
+          }
+        },
+        "$type": {
+          "0": {
+            "0": "s"
+          },
+          "1": {
+            "0": "t"
+          },
+          "2": {
+            "0": "r"
+          },
+          "3": {
+            "0": "i"
+          },
+          "4": {
+            "0": "n"
+          },
+          "5": {
+            "0": "g"
+          }
+        },
+        "$value": {
+          "0": {
+            "0": "W"
+          },
+          "1": {
+            "0": "e"
+          },
+          "2": {
+            "0": "s"
+          },
+          "3": {
+            "0": "t"
+          },
+          "4": {
+            "0": "p"
+          },
+          "5": {
+            "0": "a"
+          },
+          "6": {
+            "0": "c"
           }
         }
       }

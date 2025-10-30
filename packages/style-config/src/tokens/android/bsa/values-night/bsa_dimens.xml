@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <dimen name="bsaBorderRoundedNone">0dp</dimen>
+  <dimen name="bsaBorderRoundedSm">3dp</dimen>
+  <dimen name="bsaBorderRoundedMd">4dp</dimen>
+  <dimen name="bsaBorderRoundedLg">5dp</dimen>
+  <dimen name="bsaBorderRoundedXl">6dp</dimen>
+  <dimen name="bsaBorderRounded2xl">8dp</dimen>
+  <dimen name="bsaBorderRounded3xl">12dp</dimen>
+  <dimen name="bsaBorderRounded4xl">16dp</dimen>
+  <dimen name="bsaBorderRounded5xl">24dp</dimen>
+  <dimen name="bsaBorderRoundedFull">999dp</dimen>
+</resources>

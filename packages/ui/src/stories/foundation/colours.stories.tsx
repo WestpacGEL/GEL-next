@@ -13,12 +13,54 @@ const meta: Meta = {
 const brandMap = {
   WBC: 'Westpac',
   STG: 'StGeorge',
+  BOM: 'Bank of Melbourne',
+  BSA: 'Bank SA',
 };
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// NOTE: Although unused this needs to be here so tailwind will load all the colors
-const LOAD_COLORS = {
+// Helper function to generate Tailwind CSS color classes for all color tokens across all brands
+function generateLoadColors() {
+  const loadColors: Record<string, string[]> = {};
+
+  // Get all unique color categories across all brands
+  const allColorCategories = new Set<string>();
+
+  // Iterate through all brands to collect color categories
+  Object.values(ALL_BRANDS.Tokens).forEach(brand => {
+    if (brand['light-mode']?.color) {
+      Object.keys(brand['light-mode'].color).forEach(category => {
+        allColorCategories.add(category);
+      });
+    }
+  });
+
+  // For each category, collect all unique token names
+  allColorCategories.forEach(category => {
+    const tokenNames = new Set<string>();
+
+    Object.values(ALL_BRANDS.Tokens).forEach(brand => {
+      const colorSection = brand['light-mode']?.color as Record<string, Record<string, unknown>> | undefined;
+      if (colorSection?.[category]) {
+        Object.keys(colorSection[category]).forEach(tokenName => {
+          tokenNames.add(tokenName);
+        });
+      }
+    });
+
+    // Convert to bg- classes
+    loadColors[category] = Array.from(tokenNames).map(token => `bg-${token}`);
+  });
+
+  return loadColors;
+}
+
+// Note: Use the following to re-generate LOADED_COLORS when needed
+// const LOAD_COLORS = generateLoadColors();
+// console.log('Generated LOAD_COLORS:', LOAD_COLORS);
+
+// NOTE: Although unused this needs to be here so tailwind will include all the colors i.e. tailwind doesn't generate dynamic classes
+const LOADED_COLORS = {
   background: [
     'bg-background-white-pale',
     'bg-background-pale-faint',
@@ -30,7 +72,6 @@ const LOAD_COLORS = {
     'bg-background-hero',
   ],
   surface: [
-    'bg-surface-mono',
     'bg-surface-muted-vivid',
     'bg-surface-muted',
     'bg-surface-muted-strong',
@@ -60,6 +101,8 @@ const LOAD_COLORS = {
     'bg-surface-danger-faint',
     'bg-surface-system-error',
     'bg-surface-system-error-dark',
+    'bg-surface-mono',
+    'bg-surface-reversed',
   ],
   text: [
     'bg-text-body',
@@ -75,6 +118,7 @@ const LOAD_COLORS = {
     'bg-text-danger',
     'bg-text-system-error',
     'bg-text-mono',
+    'bg-text-reversed',
   ],
   border: [
     'bg-border-muted',

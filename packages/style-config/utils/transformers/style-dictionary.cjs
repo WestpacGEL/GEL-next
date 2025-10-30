@@ -713,12 +713,13 @@ StyleDictionary.registerTransform({
 // Constants
 // ==============================
 
-const DIST_FOLDER = './dist';
 const SRC_FOLDER = './src/tokens';
 
 const BRANDS = [
   { themeName: 'Westpac', primitiveName: 'WBC' },
   { themeName: 'StGeorge', primitiveName: 'STG' },
+  { themeName: 'Bank of Melbourne', primitiveName: 'BOM' },
+  { themeName: 'Bank SA', primitiveName: 'BSA' },
 ];
 
 const STYLE_DICTIONARY_BASE_CONFIG = {
@@ -809,6 +810,12 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
  */
 function applyValuePrefix(tokenProps, brandName) {
   const prefix = tokenProps.$collectionName === 'Primitives' ? 'Primitives' : `Themes.${brandName}`;
+
+  // Safety check for undefined $value
+  if (!tokenProps.$value) {
+    console.warn('Warning: tokenProps.$value is undefined for token:', tokenProps);
+    return tokenProps;
+  }
 
   return {
     ...tokenProps,
@@ -952,20 +959,6 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
 // ==============================
 // Main
 // ==============================
-/*
-// TODO 
--  switch output to src folder only
-- create pnpm script to copy to dist
-- remove unnecessary scripts and pnpm scripts
-  - transformers - w3c.cjs
-
-Folder structure
-- tokens
-  - android
-  - css
-  - ios
-  - w3c
-*/
 (async () => {
   const mergedTokens = mergeTokens();
   await saveJSON(`${SRC_FOLDER}/w3c/all_brands.json`, mergedTokens);

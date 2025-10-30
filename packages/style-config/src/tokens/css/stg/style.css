@@ -63,8 +63,8 @@
   --primitives-color-stg-grey-600: #5e5d55;
   --primitives-color-stg-grey-700: #4c4c48;
   --primitives-color-stg-grey-800: #393937;
-  --primitives-color-stg-grey-900: #1f1f1f;
-  --primitives-color-stg-grey-950: #171717;
+  --primitives-color-stg-grey-900: #1c1c1c;
+  --primitives-color-stg-grey-950: #141414;
   --primitives-color-stg-red-50: #fff0f0;
   --primitives-color-stg-red-100: #ffc7c7;
   --primitives-color-stg-red-200: #f87272;
@@ -179,8 +179,8 @@
   --themes-st-george-color-muted-600: #5e5d55;
   --themes-st-george-color-muted-700: #4c4c48;
   --themes-st-george-color-muted-800: #393937;
-  --themes-st-george-color-muted-900: #1f1f1f;
-  --themes-st-george-color-muted-950: #171717;
+  --themes-st-george-color-muted-900: #1c1c1c;
+  --themes-st-george-color-muted-950: #141414;
   --themes-st-george-color-primary-50: #fff0f0;
   --themes-st-george-color-primary-100: #ffc7c7;
   --themes-st-george-color-primary-200: #f87272;
@@ -320,82 +320,83 @@
   --themes-st-george-border-radius-4xl: 16;
   --themes-st-george-border-radius-5xl: 24;
   --themes-st-george-border-radius-full: 999;
+  --themes-st-george-logo: [object Object];
 }
 
 [data-brand="stg"] {
-  --color-background-white-pale: var(--themes-st-george-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-pale-faint: var(--themes-st-george-color-muted-100); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-faint-pale: var(--themes-st-george-color-muted-50); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-pale: var(--themes-st-george-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-st-george-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-st-george-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-white-faint: var(--themes-st-george-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
   --color-background-white-black: var(--themes-st-george-color-mono-white); /* This token is reserved. Do not use. */
   --color-background-pale-black: var(--themes-st-george-color-muted-100); /* This token is reserved. Do not use. */
-  --color-background-primary: var(--themes-st-george-color-primary-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-background-hero: var(--themes-st-george-color-hero-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-surface-muted-vivid: var(--themes-st-george-color-surface-muted-vivid-lm); /* Use for icons that need to be text colour. */
-  --color-surface-muted: var(--themes-st-george-color-muted-500); /* Replaces current "Muted" style */
-  --color-surface-muted-strong: var(--themes-st-george-color-muted-400); /* Reserved. Please do not use */
-  --color-surface-muted-mild: var(--themes-st-george-color-muted-300); /* This token is reserved. Please do not use. */
-  --color-surface-muted-soft: var(--themes-st-george-color-muted-200); /* This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
-  --color-surface-muted-pale: var(--themes-st-george-color-muted-100); /* Replaces the current "Background" Style. */
-  --color-surface-muted-faint: var(--themes-st-george-color-muted-50); /* Replaces the current "Light" style. */
-  --color-surface-primary: var(--themes-st-george-color-primary-500);
-  --color-surface-primary-faint: var(--themes-st-george-color-primary-50); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-hero: var(--themes-st-george-color-hero-500);
-  --color-surface-hero-faint: var(--themes-st-george-color-hero-50); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-pop: var(--themes-st-george-color-pop-500); /* This colour should be used very sparingly. It is for embellishment only. */
-  --color-surface-pop-faint: var(--themes-st-george-color-pop-50); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-holler: var(--themes-st-george-color-holler-500); /* This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-surface-holler-faint: var(--themes-st-george-color-holler-50); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-sing: var(--themes-st-george-color-sing-500); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-sing-faint: var(--themes-st-george-color-sing-50); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance: var(--themes-st-george-color-dance-500); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance-faint: var(--themes-st-george-color-dance-50); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-success: var(--themes-st-george-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-success-faint: var(--themes-st-george-color-success-50); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-info: var(--themes-st-george-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-info-faint: var(--themes-st-george-color-info-50); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-warning: var(--themes-st-george-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-warning-faint: var(--themes-st-george-color-warning-50); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-danger: var(--themes-st-george-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-danger-faint: var(--themes-st-george-color-danger-50); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-system-error: var(--themes-st-george-color-system-500); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-system-error-dark: var(--themes-st-george-color-system-950); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-mono: var(--themes-st-george-color-mono-white); /* Use surface-mono when you want to switch from white to black. */
-  --color-surface-reversed: var(--themes-st-george-color-mono-white); /* Use with caution. This will be white in both Light and Dark Mode. */
-  --color-text-body: var(--themes-st-george-color-text-body-lm); /* Use for body text, button labels, form labels etc. Can also be used for headings if required. */
-  --color-text-heading: var(--themes-st-george-color-text-heading-lm); /* Use for headings to ensure that multi-brand switching remains accurate. */
-  --color-text-muted: var(--themes-st-george-color-muted-500); /* Use for text that needs less emphasis - Hint text, sub labels etc. */
-  --color-text-primary: var(--themes-st-george-color-primary-500); /* This is not currently used in the Design System. */
-  --color-text-hero: var(--themes-st-george-color-text-hero-lm); /* This is not currently used in the Design System */
-  --color-text-holler: var(--themes-st-george-color-holler-500); /* This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
-  --color-text-link: var(--themes-st-george-color-primary-500); /* Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
-  --color-text-success: var(--themes-st-george-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-text-info: var(--themes-st-george-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-text-warning: var(--themes-st-george-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-text-danger: var(--themes-st-george-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-text-system-error: var(--themes-st-george-color-system-950); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-text-mono: var(--themes-st-george-color-mono-white); /* Use text-mono when you want to switch from white to black. */
-  --color-text-reversed: var(--themes-st-george-color-mono-white); /* Use with caution. Text will be white in both light and dark modes */
-  --color-border-muted: var(--themes-st-george-color-muted-500); /* This border colour is not currently used in the Design System. */
-  --color-border-muted-strong: var(--themes-st-george-color-muted-400); /* This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
-  --color-border-muted-mild: var(--themes-st-george-color-muted-300); /* This token is reserved. Consult GEL team before use. This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
-  --color-border-muted-soft: var(--themes-st-george-color-muted-200); /* This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
-  --color-border-hero: var(--themes-st-george-color-hero-500); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-primary: var(--themes-st-george-color-primary-500); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-pop: var(--themes-st-george-color-pop-500); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-holler: var(--themes-st-george-color-holler-500); /* This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-border-sing: var(--themes-st-george-color-sing-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-dance: var(--themes-st-george-color-dance-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-success: var(--themes-st-george-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-success-mild: var(--themes-st-george-color-success-300); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-info: var(--themes-st-george-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-info-mild: var(--themes-st-george-color-info-300); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-warning: var(--themes-st-george-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-warning-mild: var(--themes-st-george-color-warning-300); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-danger: var(--themes-st-george-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-danger-mild: var(--themes-st-george-color-danger-300); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-mono: var(--themes-st-george-color-mono-white); /* This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
-  --color-border-focus: var(--themes-st-george-color-holler-300); /* This is a reserved colour. It must only be used for the focus state keyboard navigation. */
+  --color-background-primary: var(--themes-st-george-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-st-george-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-st-george-color-surface-muted-vivid-lm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-st-george-color-muted-500); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-st-george-color-muted-400); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-st-george-color-muted-300); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-st-george-color-muted-200); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-st-george-color-muted-100); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-st-george-color-muted-50); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-st-george-color-primary-500); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-st-george-color-primary-50); /* Reserved do not use */
+  --color-surface-hero: var(--themes-st-george-color-hero-500); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-st-george-color-hero-50); /* Reserved do not use */
+  --color-surface-pop: var(--themes-st-george-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-st-george-color-pop-50); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-st-george-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-st-george-color-holler-50); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-st-george-color-sing-500); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-st-george-color-sing-50); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-st-george-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-st-george-color-dance-50); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-st-george-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-st-george-color-success-50); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-st-george-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-st-george-color-info-50); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-st-george-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-st-george-color-warning-50); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-st-george-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-st-george-color-danger-50); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-st-george-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-st-george-color-system-950); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-st-george-color-mono-white); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-st-george-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-st-george-color-text-body-lm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-st-george-color-text-heading-lm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-st-george-color-muted-500); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-st-george-color-primary-500); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-st-george-color-text-hero-lm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-st-george-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-st-george-color-primary-500); /* Replaces current style: Link */
+  --color-text-success: var(--themes-st-george-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-st-george-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-st-george-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-st-george-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-st-george-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-st-george-color-mono-white); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-st-george-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-st-george-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-st-george-color-muted-400); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-st-george-color-muted-300); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-st-george-color-muted-200); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-st-george-color-hero-500); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-st-george-color-primary-500); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-st-george-color-pop-500); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-st-george-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-st-george-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-st-george-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-st-george-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-st-george-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-st-george-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-st-george-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-st-george-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-st-george-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-st-george-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-st-george-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-st-george-color-mono-white); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-st-george-color-holler-300); /* Reserved. Only for use with focus state keyboard navigation. */
   --color-data-a-solid: var(--themes-st-george-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-tint: var(--themes-st-george-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-opacity: var(--themes-st-george-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
@@ -414,8 +415,8 @@
   --color-data-f-solid: var(--themes-st-george-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-tint: var(--themes-st-george-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-opacity: var(--themes-st-george-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-surface-pictogram-base: var(--themes-st-george-color-surface-pictogram-base-lm); /* This is a reserved component colour token. It must only be used for Pictograms. */
-  --color-surface-pictogram-accent: var(--themes-st-george-color-surface-pictogram-accent-lm); /* This is a reserved component colour token. It must only be used for Pictograms. */
+  --color-surface-pictogram-base: var(--themes-st-george-color-surface-pictogram-base-lm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-st-george-color-surface-pictogram-accent-lm); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--themes-st-george-color-primary-400); /* This token is for hover states. */
   --color-surface-active-primary: var(--themes-st-george-color-primary-200);
   --color-surface-hover-hero: var(--themes-st-george-color-hero-400); /* This token is for hover states. */
@@ -441,79 +442,79 @@
 }
 
 [data-brand="stg"][data-theme="dark"] {
-  --color-background-white-pale: var(--themes-st-george-color-muted-900); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-pale-faint: var(--themes-st-george-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-faint-pale: var(--themes-st-george-color-muted-900); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-pale: var(--themes-st-george-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-st-george-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-st-george-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-white-faint: var(--themes-st-george-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
   --color-background-white-black: var(--themes-st-george-color-mono-black); /* This token is reserved. Do not use. */
   --color-background-pale-black: var(--themes-st-george-color-mono-black); /* This token is reserved. Do not use. */
-  --color-background-primary: var(--themes-st-george-color-primary-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-background-hero: var(--themes-st-george-color-hero-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-surface-muted-vivid: var(--themes-st-george-color-surface-muted-vivid-dm); /* Use for icons that need to be text colour. */
-  --color-surface-muted: var(--themes-st-george-color-muted-400); /* Replaces current "Muted" style */
-  --color-surface-muted-strong: var(--themes-st-george-color-muted-600); /* Reserved. Please do not use */
-  --color-surface-muted-mild: var(--themes-st-george-color-muted-700); /* This token is reserved. Please do not use. */
-  --color-surface-muted-soft: var(--themes-st-george-color-muted-800); /* This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
-  --color-surface-muted-pale: var(--themes-st-george-color-muted-900); /* Replaces the current "Background" Style. */
-  --color-surface-muted-faint: var(--themes-st-george-color-muted-950); /* Replaces the current "Light" style. */
-  --color-surface-primary: var(--themes-st-george-color-primary-400);
-  --color-surface-primary-faint: var(--themes-st-george-color-primary-950); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-hero: var(--themes-st-george-color-hero-300);
-  --color-surface-hero-faint: var(--themes-st-george-color-hero-950); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-pop: var(--themes-st-george-color-pop-500); /* This colour should be used very sparingly. It is for embellishment only. */
-  --color-surface-pop-faint: var(--themes-st-george-color-pop-950); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-holler: var(--themes-st-george-color-holler-400); /* This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-surface-holler-faint: var(--themes-st-george-color-holler-950); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-sing: var(--themes-st-george-color-sing-900); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-sing-faint: var(--themes-st-george-color-sing-950); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance: var(--themes-st-george-color-dance-500); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance-faint: var(--themes-st-george-color-dance-900); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-success: var(--themes-st-george-color-success-400); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-success-faint: var(--themes-st-george-color-success-900); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-info: var(--themes-st-george-color-info-400); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-info-faint: var(--themes-st-george-color-info-900); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-warning: var(--themes-st-george-color-warning-400); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-warning-faint: var(--themes-st-george-color-warning-900); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-danger: var(--themes-st-george-color-danger-300); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-danger-faint: var(--themes-st-george-color-danger-900); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-system-error: var(--themes-st-george-color-system-950); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-system-error-dark: var(--themes-st-george-color-system-500); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-mono: var(--themes-st-george-color-mono-black); /* Use surface-mono when you want to switch from white to black. */
-  --color-surface-reversed: var(--themes-st-george-color-mono-white); /* Use with caution. This will be white in both Light and Dark Mode. */
-  --color-text-body: var(--themes-st-george-color-text-body-dm); /* Use for body text, button labels, form labels etc. Can also be used for headings if required. */
-  --color-text-heading: var(--themes-st-george-color-text-heading-dm); /* Use for headings to ensure that multi-brand switching remains accurate. */
-  --color-text-muted: var(--themes-st-george-color-muted-400); /* Use for text that needs less emphasis - Hint text, sub labels etc. */
-  --color-text-primary: var(--themes-st-george-color-primary-300); /* This is not currently used in the Design System. */
-  --color-text-hero: var(--themes-st-george-color-text-hero-dm); /* This is not currently used in the Design System */
-  --color-text-holler: var(--themes-st-george-color-holler-300); /* This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
-  --color-text-link: var(--themes-st-george-color-primary-300); /* Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
-  --color-text-success: var(--themes-st-george-color-success-300); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-text-info: var(--themes-st-george-color-info-300); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-text-warning: var(--themes-st-george-color-warning-300); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-text-danger: var(--themes-st-george-color-danger-300); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-text-system-error: var(--themes-st-george-color-system-500); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-text-mono: var(--themes-st-george-color-mono-black); /* Use text-mono when you want to switch from white to black. */
-  --color-text-reversed: var(--themes-st-george-color-mono-white); /* Use with caution. Text will be white in both light and dark modes */
-  --color-border-muted: var(--themes-st-george-color-muted-500); /* This border colour is not currently used in the Design System. */
-  --color-border-muted-strong: var(--themes-st-george-color-muted-500); /* This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
-  --color-border-muted-mild: var(--themes-st-george-color-muted-700); /* This token is reserved. Consult GEL team before use. This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
-  --color-border-muted-soft: var(--themes-st-george-color-muted-800); /* This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
-  --color-border-hero: var(--themes-st-george-color-hero-300); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-primary: var(--themes-st-george-color-primary-400); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-pop: var(--themes-st-george-color-pop-800); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-holler: var(--themes-st-george-color-holler-400); /* This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-border-sing: var(--themes-st-george-color-sing-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-dance: var(--themes-st-george-color-dance-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-success: var(--themes-st-george-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-success-mild: var(--themes-st-george-color-success-700); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-info: var(--themes-st-george-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-info-mild: var(--themes-st-george-color-info-700); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-warning: var(--themes-st-george-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-warning-mild: var(--themes-st-george-color-warning-700); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-danger: var(--themes-st-george-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-danger-mild: var(--themes-st-george-color-danger-700); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-mono: var(--themes-st-george-color-mono-black); /* This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
-  --color-border-focus: var(--themes-st-george-color-holler-400); /* This is a reserved colour. It must only be used for the focus state keyboard navigation. */
+  --color-background-primary: var(--themes-st-george-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-st-george-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-st-george-color-surface-muted-vivid-dm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-st-george-color-muted-400); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-st-george-color-muted-600); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-st-george-color-muted-700); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-st-george-color-muted-800); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-st-george-color-muted-900); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-st-george-color-muted-950); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-st-george-color-primary-400); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-st-george-color-primary-950); /* Reserved do not use */
+  --color-surface-hero: var(--themes-st-george-color-hero-300); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-st-george-color-hero-950); /* Reserved do not use */
+  --color-surface-pop: var(--themes-st-george-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-st-george-color-pop-950); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-st-george-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-st-george-color-holler-950); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-st-george-color-sing-900); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-st-george-color-sing-950); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-st-george-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-st-george-color-dance-900); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-st-george-color-success-400); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-st-george-color-success-900); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-st-george-color-info-400); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-st-george-color-info-900); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-st-george-color-warning-400); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-st-george-color-warning-900); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-st-george-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-st-george-color-danger-900); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-st-george-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-st-george-color-system-500); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-st-george-color-mono-black); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-st-george-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-st-george-color-text-body-dm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-st-george-color-text-heading-dm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-st-george-color-muted-400); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-st-george-color-primary-300); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-st-george-color-text-hero-dm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-st-george-color-holler-300); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-st-george-color-primary-300); /* Replaces current style: Link */
+  --color-text-success: var(--themes-st-george-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-st-george-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-st-george-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-st-george-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-st-george-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-st-george-color-mono-black); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-st-george-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-st-george-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-st-george-color-muted-500); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-st-george-color-muted-700); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-st-george-color-muted-800); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-st-george-color-hero-300); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-st-george-color-primary-400); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-st-george-color-pop-800); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-st-george-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-st-george-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-st-george-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-st-george-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-st-george-color-success-700); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-st-george-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-st-george-color-info-700); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-st-george-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-st-george-color-warning-700); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-st-george-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-st-george-color-danger-700); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-st-george-color-mono-black); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-st-george-color-holler-400); /* Reserved. Only for use with focus state keyboard navigation. */
   --color-data-a-solid: var(--themes-st-george-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-tint: var(--themes-st-george-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-opacity: var(--themes-st-george-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
@@ -532,8 +533,8 @@
   --color-data-f-solid: var(--themes-st-george-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-tint: var(--themes-st-george-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-opacity: var(--themes-st-george-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-surface-pictogram-base: var(--themes-st-george-color-surface-pictogram-base-dm); /* This is a reserved component colour token. It must only be used for Pictograms. */
-  --color-surface-pictogram-accent: var(--themes-st-george-color-surface-pictogram-accent-dm); /* This is a reserved component colour token. It must only be used for Pictograms. */
+  --color-surface-pictogram-base: var(--themes-st-george-color-surface-pictogram-base-dm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-st-george-color-surface-pictogram-accent-dm); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--themes-st-george-color-primary-200); /* This token is for hover states. */
   --color-surface-active-primary: var(--themes-st-george-color-primary-100);
   --color-surface-hover-hero: var(--themes-st-george-color-hero-200); /* This token is for hover states. */

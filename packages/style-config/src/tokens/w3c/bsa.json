@@ -453,7 +453,7 @@
           }
         }
       },
-      "STG": {
+      "BSA": {
         "Grey": {
           "50": {
             "$scopes": [
@@ -461,7 +461,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f9f9f9"
+            "$value": "#f9f9fa"
           },
           "100": {
             "$scopes": [
@@ -469,7 +469,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f5f5f4"
+            "$value": "#f5f5f6"
           },
           "200": {
             "$scopes": [
@@ -477,7 +477,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#e1e1e0"
+            "$value": "#dedee1"
           },
           "300": {
             "$scopes": [
@@ -485,7 +485,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#b2b2ae"
+            "$value": "#b6b6bc"
           },
           "400": {
             "$scopes": [
@@ -493,7 +493,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#8d8c81"
+            "$value": "#8e8d98"
           },
           "500": {
             "$scopes": [
@@ -501,7 +501,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#727163"
+            "$value": "#706f7c"
           },
           "600": {
             "$scopes": [
@@ -509,7 +509,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#5e5d55"
+            "$value": "#5b5b6a"
           },
           "700": {
             "$scopes": [
@@ -517,7 +517,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#4c4c48"
+            "$value": "#464651"
           },
           "800": {
             "$scopes": [
@@ -525,7 +525,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#393937"
+            "$value": "#323238"
           },
           "900": {
             "$scopes": [
@@ -533,7 +533,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#1c1c1c"
+            "$value": "#1c1c1f"
           },
           "950": {
             "$scopes": [
@@ -541,17 +541,17 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#141414"
+            "$value": "#161619"
           }
         },
-        "Red": {
+        "Desert": {
           "50": {
             "$scopes": [
               "ALL_SCOPES"
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#fff0f0"
+            "$value": "#fef0f1"
           },
           "100": {
             "$scopes": [
@@ -559,7 +559,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#ffc7c7"
+            "$value": "#fccbcc"
           },
           "200": {
             "$scopes": [
@@ -567,7 +567,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f87272"
+            "$value": "#f96a6f"
           },
           "300": {
             "$scopes": [
@@ -575,7 +575,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f44343"
+            "$value": "#f9434f"
           },
           "400": {
             "$scopes": [
@@ -583,7 +583,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f21818"
+            "$value": "#ed1f30"
           },
           "500": {
             "$scopes": [
@@ -591,7 +591,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#e30000"
+            "$value": "#d81b2b"
           },
           "600": {
             "$scopes": [
@@ -599,7 +599,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#bc0000"
+            "$value": "#b61523"
           },
           "700": {
             "$scopes": [
@@ -607,7 +607,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#980000"
+            "$value": "#98101b"
           },
           "800": {
             "$scopes": [
@@ -615,7 +615,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#750000"
+            "$value": "#7a0a14"
           },
           "900": {
             "$scopes": [
@@ -623,7 +623,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#5b0000"
+            "$value": "#56050b"
           },
           "950": {
             "$scopes": [
@@ -631,7 +631,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#380000"
+            "$value": "#380205"
           },
           "opacity": {
             "$scopes": [
@@ -639,17 +639,17 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "rgba(227, 0, 0, 0.3)"
+            "$value": "rgba(216, 27, 43, 0.5)"
           }
         },
-        "Access Green": {
+        "Ocean": {
           "50": {
             "$scopes": [
               "ALL_SCOPES"
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#ecf8f0"
+            "$value": "#e9f1fb"
           },
           "100": {
             "$scopes": [
@@ -657,7 +657,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#c2eace"
+            "$value": "#b5d0f2"
           },
           "200": {
             "$scopes": [
@@ -665,7 +665,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#6dcb89"
+            "$value": "#4c8de1"
           },
           "300": {
             "$scopes": [
@@ -673,7 +673,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#2fa854"
+            "$value": "#2574da"
           },
           "400": {
             "$scopes": [
@@ -681,7 +681,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#219d4b"
+            "$value": "#1050a2"
           },
           "500": {
             "$scopes": [
@@ -689,7 +689,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#008739"
+            "$value": "#002f6c"
           },
           "600": {
             "$scopes": [
@@ -697,7 +697,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#007334"
+            "$value": "#00285e"
           },
           "700": {
             "$scopes": [
@@ -705,7 +705,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#005f32"
+            "$value": "#002657"
           },
           "800": {
             "$scopes": [
@@ -713,7 +713,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#004833"
+            "$value": "#001f47"
           },
           "900": {
             "$scopes": [
@@ -721,7 +721,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#003323"
+            "$value": "#001b3d"
           },
           "950": {
             "$scopes": [
@@ -729,7 +729,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#002a1c"
+            "$value": "#001838"
           },
           "opacity": {
             "$scopes": [
@@ -737,17 +737,17 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "rgba(0, 135, 57, 0.45)"
+            "$value": "rgba(0, 47, 108, 0.55)"
           }
         },
-        "Green": {
+        "Bight": {
           "50": {
             "$scopes": [
               "ALL_SCOPES"
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f1fbe5"
+            "$value": "#e3fafc"
           },
           "100": {
             "$scopes": [
@@ -755,7 +755,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#e5f7cf"
+            "$value": "#c1f6fa"
           },
           "200": {
             "$scopes": [
@@ -763,7 +763,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#c2ec8e"
+            "$value": "#69ebf7"
           },
           "300": {
             "$scopes": [
@@ -771,7 +771,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#abe562"
+            "$value": "#09d9ec"
           },
           "400": {
             "$scopes": [
@@ -779,7 +779,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#93d83b"
+            "$value": "#00c9db"
           },
           "500": {
             "$scopes": [
@@ -787,7 +787,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#78be20"
+            "$value": "#00adbd"
           },
           "600": {
             "$scopes": [
@@ -795,7 +795,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#619b18"
+            "$value": "#00919e"
           },
           "700": {
             "$scopes": [
@@ -803,7 +803,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#4b7910"
+            "$value": "#007580"
           },
           "800": {
             "$scopes": [
@@ -811,7 +811,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#365909"
+            "$value": "#00545c"
           },
           "900": {
             "$scopes": [
@@ -819,7 +819,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#223b04"
+            "$value": "#00383d"
           },
           "950": {
             "$scopes": [
@@ -827,7 +827,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#132402"
+            "$value": "#002529"
           },
           "opacity": {
             "$scopes": [
@@ -835,17 +835,17 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "rgba(120, 190, 32, 0.45)"
+            "$value": "rgba(0, 173, 189, 0.5)"
           }
         },
-        "Sky": {
+        "Gum": {
           "50": {
             "$scopes": [
               "ALL_SCOPES"
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#edf8fe"
+            "$value": "#eff9ec"
           },
           "100": {
             "$scopes": [
@@ -853,7 +853,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#e1f4fe"
+            "$value": "#d2edc9"
           },
           "200": {
             "$scopes": [
@@ -861,7 +861,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#b9e6fc"
+            "$value": "#b5e2a7"
           },
           "300": {
             "$scopes": [
@@ -869,7 +869,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#91dcfb"
+            "$value": "#95d581"
           },
           "400": {
             "$scopes": [
@@ -877,7 +877,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#5ad2fa"
+            "$value": "#78ca5e"
           },
           "500": {
             "$scopes": [
@@ -885,7 +885,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#3fc3eb"
+            "$value": "#5cbb3e"
           },
           "600": {
             "$scopes": [
@@ -893,7 +893,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#319cbd"
+            "$value": "#4d9d34"
           },
           "700": {
             "$scopes": [
@@ -901,7 +901,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#23768f"
+            "$value": "#3c7b29"
           },
           "800": {
             "$scopes": [
@@ -909,7 +909,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#155264"
+            "$value": "#2d5c1e"
           },
           "900": {
             "$scopes": [
@@ -917,7 +917,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#09303c"
+            "$value": "#1e3d14"
           },
           "950": {
             "$scopes": [
@@ -925,7 +925,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#04212a"
+            "$value": "#172e0f"
           },
           "opacity": {
             "$scopes": [
@@ -933,17 +933,17 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "rgba(63, 195, 235, 0.3)"
+            "$value": "rgba(92, 187, 62, 0.5)"
           }
         },
-        "Plum": {
+        "Outback": {
           "50": {
             "$scopes": [
               "ALL_SCOPES"
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f5f2fb"
+            "$value": "#fef1e1"
           },
           "100": {
             "$scopes": [
@@ -951,7 +951,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#e6dff5"
+            "$value": "#fde0bf"
           },
           "200": {
             "$scopes": [
@@ -959,7 +959,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#bba3e2"
+            "$value": "#fbcd98"
           },
           "300": {
             "$scopes": [
@@ -967,7 +967,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#9b73d2"
+            "$value": "#faba70"
           },
           "400": {
             "$scopes": [
@@ -975,7 +975,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#7947b4"
+            "$value": "#f8a444"
           },
           "500": {
             "$scopes": [
@@ -983,7 +983,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#502d79"
+            "$value": "#f7921e"
           },
           "600": {
             "$scopes": [
@@ -991,7 +991,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#46276b"
+            "$value": "#d97708"
           },
           "700": {
             "$scopes": [
@@ -999,7 +999,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#3e225f"
+            "$value": "#ac5f06"
           },
           "800": {
             "$scopes": [
@@ -1007,7 +1007,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#341b50"
+            "$value": "#7b4404"
           },
           "900": {
             "$scopes": [
@@ -1015,7 +1015,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#2c1645"
+            "$value": "#4a2903"
           },
           "950": {
             "$scopes": [
@@ -1023,7 +1023,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#27133e"
+            "$value": "#311b02"
           },
           "opacity": {
             "$scopes": [
@@ -1031,17 +1031,17 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "rgba(80, 45, 121, 0.3)"
+            "$value": "rgba(247, 146, 30, 0.5)"
           }
         },
-        "Amber": {
+        "Grape": {
           "50": {
             "$scopes": [
               "ALL_SCOPES"
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#fff3eb"
+            "$value": "#fbeef6"
           },
           "100": {
             "$scopes": [
@@ -1049,7 +1049,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#ffe7d6"
+            "$value": "#f4cce3"
           },
           "200": {
             "$scopes": [
@@ -1057,7 +1057,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#ffcba8"
+            "$value": "#e689bd"
           },
           "300": {
             "$scopes": [
@@ -1065,7 +1065,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#ffb380"
+            "$value": "#db529e"
           },
           "400": {
             "$scopes": [
@@ -1073,7 +1073,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#ff9752"
+            "$value": "#cf2b86"
           },
           "500": {
             "$scopes": [
@@ -1081,7 +1081,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#ff7f29"
+            "$value": "#a22269"
           },
           "600": {
             "$scopes": [
@@ -1089,7 +1089,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#cf6200"
+            "$value": "#871c57"
           },
           "700": {
             "$scopes": [
@@ -1097,7 +1097,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#9d4800"
+            "$value": "#6e1747"
           },
           "800": {
             "$scopes": [
@@ -1105,7 +1105,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#6e3100"
+            "$value": "#541237"
           },
           "900": {
             "$scopes": [
@@ -1113,7 +1113,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#421a00"
+            "$value": "#3b0c26"
           },
           "950": {
             "$scopes": [
@@ -1121,7 +1121,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#2c0f00"
+            "$value": "#2e0a1e"
           },
           "opacity": {
             "$scopes": [
@@ -1129,97 +1129,7 @@
             ],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "rgba(255, 127, 41, 0.4)"
-          }
-        },
-        "Yellow": {
-          "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#fffae5"
-          },
-          "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#fff5cc"
-          },
-          "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ffeb99"
-          },
-          "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ffe166"
-          },
-          "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ffd733"
-          },
-          "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ffcd00"
-          },
-          "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#cca400"
-          },
-          "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#997b00"
-          },
-          "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#665200"
-          },
-          "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#332900"
-          },
-          "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#1a1500"
+            "$value": "rgba(162, 34, 105, 0.5)"
           }
         }
       }
@@ -1322,7 +1232,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
+            "$value": "{Themes.Bank SA.color.mono.white}"
           },
           "background-pale-faint": {
             "$scopes": [
@@ -1333,7 +1243,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.100}"
+            "$value": "{Themes.Bank SA.color.muted.100}"
           },
           "background-faint-pale": {
             "$scopes": [
@@ -1344,7 +1254,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.50}"
+            "$value": "{Themes.Bank SA.color.muted.50}"
           },
           "background-white-faint": {
             "$scopes": [
@@ -1356,7 +1266,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
+            "$value": "{Themes.Bank SA.color.mono.white}"
           },
           "background-white-black": {
             "$scopes": [
@@ -1368,7 +1278,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
+            "$value": "{Themes.Bank SA.color.mono.white}"
           },
           "background-pale-black": {
             "$scopes": [
@@ -1380,7 +1290,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.100}"
+            "$value": "{Themes.Bank SA.color.muted.100}"
           },
           "background-primary": {
             "$scopes": [
@@ -1392,7 +1302,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.500}"
+            "$value": "{Themes.Bank SA.color.primary.500}"
           },
           "background-hero": {
             "$scopes": [
@@ -1404,7 +1314,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.500}"
+            "$value": "{Themes.Bank SA.color.hero.500}"
           }
         },
         "surface": {
@@ -1417,7 +1327,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.surface-muted-vivid-LM}"
+            "$value": "{Themes.Bank SA.color.alias.surface-muted-vivid-LM}"
           },
           "surface-muted": {
             "$scopes": [
@@ -1428,7 +1338,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.500}"
+            "$value": "{Themes.Bank SA.color.muted.500}"
           },
           "surface-muted-strong": {
             "$scopes": [
@@ -1439,7 +1349,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.400}"
+            "$value": "{Themes.Bank SA.color.muted.400}"
           },
           "surface-muted-mild": {
             "$scopes": [
@@ -1450,7 +1360,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.300}"
+            "$value": "{Themes.Bank SA.color.muted.300}"
           },
           "surface-muted-soft": {
             "$scopes": [
@@ -1461,7 +1371,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.200}"
+            "$value": "{Themes.Bank SA.color.muted.200}"
           },
           "surface-muted-pale": {
             "$scopes": [
@@ -1472,7 +1382,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.100}"
+            "$value": "{Themes.Bank SA.color.muted.100}"
           },
           "surface-muted-faint": {
             "$scopes": [
@@ -1483,7 +1393,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.50}"
+            "$value": "{Themes.Bank SA.color.muted.50}"
           },
           "surface-primary": {
             "$scopes": [
@@ -1494,7 +1404,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.500}"
+            "$value": "{Themes.Bank SA.color.primary.500}"
           },
           "surface-primary-faint": {
             "$scopes": [
@@ -1505,7 +1415,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.50}"
+            "$value": "{Themes.Bank SA.color.primary.50}"
           },
           "surface-hero": {
             "$scopes": [
@@ -1516,7 +1426,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.500}"
+            "$value": "{Themes.Bank SA.color.hero.500}"
           },
           "surface-hero-faint": {
             "$scopes": [
@@ -1527,7 +1437,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.50}"
+            "$value": "{Themes.Bank SA.color.hero.50}"
           },
           "surface-pop": {
             "$scopes": [
@@ -1538,7 +1448,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.500}"
+            "$value": "{Themes.Bank SA.color.pop.500}"
           },
           "surface-pop-faint": {
             "$scopes": [
@@ -1549,7 +1459,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.50}"
+            "$value": "{Themes.Bank SA.color.pop.50}"
           },
           "surface-holler": {
             "$scopes": [
@@ -1560,7 +1470,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.500}"
+            "$value": "{Themes.Bank SA.color.holler.500}"
           },
           "surface-holler-faint": {
             "$scopes": [
@@ -1571,7 +1481,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.50}"
+            "$value": "{Themes.Bank SA.color.holler.50}"
           },
           "surface-sing": {
             "$scopes": [
@@ -1582,7 +1492,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.500}"
+            "$value": "{Themes.Bank SA.color.sing.500}"
           },
           "surface-sing-faint": {
             "$scopes": [
@@ -1593,7 +1503,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.50}"
+            "$value": "{Themes.Bank SA.color.sing.50}"
           },
           "surface-dance": {
             "$scopes": [
@@ -1604,7 +1514,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.500}"
+            "$value": "{Themes.Bank SA.color.dance.500}"
           },
           "surface-dance-faint": {
             "$scopes": [
@@ -1615,7 +1525,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.50}"
+            "$value": "{Themes.Bank SA.color.dance.50}"
           },
           "surface-success": {
             "$scopes": [
@@ -1626,7 +1536,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.success.500}"
+            "$value": "{Themes.Bank SA.color.reserved.success.500}"
           },
           "surface-success-faint": {
             "$scopes": [
@@ -1637,7 +1547,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.success.50}"
+            "$value": "{Themes.Bank SA.color.reserved.success.50}"
           },
           "surface-info": {
             "$scopes": [
@@ -1648,7 +1558,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.info.500}"
+            "$value": "{Themes.Bank SA.color.reserved.info.500}"
           },
           "surface-info-faint": {
             "$scopes": [
@@ -1659,7 +1569,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.info.50}"
+            "$value": "{Themes.Bank SA.color.reserved.info.50}"
           },
           "surface-warning": {
             "$scopes": [
@@ -1670,7 +1580,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.warning.500}"
+            "$value": "{Themes.Bank SA.color.reserved.warning.500}"
           },
           "surface-warning-faint": {
             "$scopes": [
@@ -1681,7 +1591,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.warning.50}"
+            "$value": "{Themes.Bank SA.color.reserved.warning.50}"
           },
           "surface-danger": {
             "$scopes": [
@@ -1692,7 +1602,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.danger.500}"
+            "$value": "{Themes.Bank SA.color.reserved.danger.500}"
           },
           "surface-danger-faint": {
             "$scopes": [
@@ -1703,7 +1613,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.danger.50}"
+            "$value": "{Themes.Bank SA.color.reserved.danger.50}"
           },
           "surface-system-error": {
             "$scopes": [
@@ -1714,7 +1624,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.system.500}"
+            "$value": "{Themes.Bank SA.color.reserved.system.500}"
           },
           "surface-system-error-dark": {
             "$scopes": [
@@ -1725,7 +1635,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.system.950}"
+            "$value": "{Themes.Bank SA.color.reserved.system.950}"
           },
           "surface-mono": {
             "$scopes": [
@@ -1736,7 +1646,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
+            "$value": "{Themes.Bank SA.color.mono.white}"
           },
           "surface-reversed": {
             "$scopes": [
@@ -1747,7 +1657,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
+            "$value": "{Themes.Bank SA.color.mono.white}"
           }
         },
         "text": {
@@ -1759,7 +1669,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.text-body-Lm}"
+            "$value": "{Themes.Bank SA.color.alias.text-body-Lm}"
           },
           "text-heading": {
             "$scopes": [
@@ -1769,7 +1679,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.text-heading-Lm}"
+            "$value": "{Themes.Bank SA.color.alias.text-heading-Lm}"
           },
           "text-muted": {
             "$scopes": [
@@ -1779,7 +1689,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.500}"
+            "$value": "{Themes.Bank SA.color.muted.500}"
           },
           "text-primary": {
             "$scopes": [
@@ -1789,7 +1699,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.500}"
+            "$value": "{Themes.Bank SA.color.primary.500}"
           },
           "text-hero": {
             "$scopes": [
@@ -1799,7 +1709,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.text-hero-LM}"
+            "$value": "{Themes.Bank SA.color.alias.text-hero-LM}"
           },
           "text-holler": {
             "$scopes": [
@@ -1809,7 +1719,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.500}"
+            "$value": "{Themes.Bank SA.color.holler.500}"
           },
           "text-link": {
             "$scopes": [
@@ -1819,7 +1729,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.500}"
+            "$value": "{Themes.Bank SA.color.primary.500}"
           },
           "text-success": {
             "$scopes": [
@@ -1829,7 +1739,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.success.500}"
+            "$value": "{Themes.Bank SA.color.reserved.success.500}"
           },
           "text-info": {
             "$scopes": [
@@ -1839,7 +1749,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.info.500}"
+            "$value": "{Themes.Bank SA.color.reserved.info.500}"
           },
           "text-warning": {
             "$scopes": [
@@ -1849,7 +1759,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.warning.500}"
+            "$value": "{Themes.Bank SA.color.reserved.warning.500}"
           },
           "text-danger": {
             "$scopes": [
@@ -1859,7 +1769,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.danger.500}"
+            "$value": "{Themes.Bank SA.color.reserved.danger.500}"
           },
           "text-system-error": {
             "$scopes": [
@@ -1869,7 +1779,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.system.950}"
+            "$value": "{Themes.Bank SA.color.reserved.system.950}"
           },
           "text-mono": {
             "$scopes": [
@@ -1879,7 +1789,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
+            "$value": "{Themes.Bank SA.color.mono.white}"
           },
           "text-reversed": {
             "$scopes": [
@@ -1889,7 +1799,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
+            "$value": "{Themes.Bank SA.color.mono.white}"
           }
         },
         "border": {
@@ -1901,7 +1811,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.500}"
+            "$value": "{Themes.Bank SA.color.muted.500}"
           },
           "border-muted-strong": {
             "$scopes": [
@@ -1911,7 +1821,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.400}"
+            "$value": "{Themes.Bank SA.color.muted.400}"
           },
           "border-muted-mild": {
             "$scopes": [
@@ -1921,7 +1831,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.300}"
+            "$value": "{Themes.Bank SA.color.muted.300}"
           },
           "border-muted-soft": {
             "$scopes": [
@@ -1931,7 +1841,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.200}"
+            "$value": "{Themes.Bank SA.color.muted.200}"
           },
           "border-hero": {
             "$scopes": [
@@ -1941,7 +1851,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.500}"
+            "$value": "{Themes.Bank SA.color.hero.500}"
           },
           "border-primary": {
             "$scopes": [
@@ -1951,7 +1861,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.500}"
+            "$value": "{Themes.Bank SA.color.primary.500}"
           },
           "border-pop": {
             "$scopes": [
@@ -1961,7 +1871,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.500}"
+            "$value": "{Themes.Bank SA.color.pop.500}"
           },
           "border-holler": {
             "$scopes": [
@@ -1971,7 +1881,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.500}"
+            "$value": "{Themes.Bank SA.color.holler.500}"
           },
           "border-sing": {
             "$scopes": [
@@ -1981,7 +1891,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.500}"
+            "$value": "{Themes.Bank SA.color.sing.500}"
           },
           "border-dance": {
             "$scopes": [
@@ -1991,7 +1901,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.500}"
+            "$value": "{Themes.Bank SA.color.dance.500}"
           },
           "border-success": {
             "$scopes": [
@@ -2001,7 +1911,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.success.500}"
+            "$value": "{Themes.Bank SA.color.reserved.success.500}"
           },
           "border-success-mild": {
             "$scopes": [
@@ -2011,7 +1921,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.success.300}"
+            "$value": "{Themes.Bank SA.color.reserved.success.300}"
           },
           "border-info": {
             "$scopes": [
@@ -2021,7 +1931,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.info.500}"
+            "$value": "{Themes.Bank SA.color.reserved.info.500}"
           },
           "border-info-mild": {
             "$scopes": [
@@ -2031,7 +1941,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.info.300}"
+            "$value": "{Themes.Bank SA.color.reserved.info.300}"
           },
           "border-warning": {
             "$scopes": [
@@ -2041,7 +1951,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.warning.500}"
+            "$value": "{Themes.Bank SA.color.reserved.warning.500}"
           },
           "border-warning-mild": {
             "$scopes": [
@@ -2051,7 +1961,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.warning.300}"
+            "$value": "{Themes.Bank SA.color.reserved.warning.300}"
           },
           "border-danger": {
             "$scopes": [
@@ -2061,7 +1971,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.danger.500}"
+            "$value": "{Themes.Bank SA.color.reserved.danger.500}"
           },
           "border-danger-mild": {
             "$scopes": [
@@ -2071,7 +1981,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.danger.300}"
+            "$value": "{Themes.Bank SA.color.reserved.danger.300}"
           },
           "border-mono": {
             "$scopes": [
@@ -2081,7 +1991,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
+            "$value": "{Themes.Bank SA.color.mono.white}"
           },
           "border-focus": {
             "$scopes": [
@@ -2091,7 +2001,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.300}"
+            "$value": "{Themes.Bank SA.color.holler.300}"
           }
         },
         "data": {
@@ -2104,7 +2014,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.500}"
+            "$value": "{Themes.Bank SA.color.primary.500}"
           },
           "data-a-tint": {
             "$scopes": [
@@ -2115,7 +2025,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.200}"
+            "$value": "{Themes.Bank SA.color.primary.200}"
           },
           "data-a-opacity": {
             "$scopes": [
@@ -2126,7 +2036,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.opacity}"
+            "$value": "{Themes.Bank SA.color.primary.opacity}"
           },
           "data-b-solid": {
             "$scopes": [
@@ -2137,7 +2047,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.500}"
+            "$value": "{Themes.Bank SA.color.hero.500}"
           },
           "data-b-tint": {
             "$scopes": [
@@ -2148,7 +2058,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.300}"
+            "$value": "{Themes.Bank SA.color.hero.300}"
           },
           "data-b-opacity": {
             "$scopes": [
@@ -2159,7 +2069,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.opacity}"
+            "$value": "{Themes.Bank SA.color.hero.opacity}"
           },
           "data-c-solid": {
             "$scopes": [
@@ -2170,7 +2080,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.500}"
+            "$value": "{Themes.Bank SA.color.pop.500}"
           },
           "data-c-tint": {
             "$scopes": [
@@ -2181,7 +2091,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.300}"
+            "$value": "{Themes.Bank SA.color.pop.300}"
           },
           "data-c-opacity": {
             "$scopes": [
@@ -2192,7 +2102,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.opacity}"
+            "$value": "{Themes.Bank SA.color.pop.opacity}"
           },
           "data-d-solid": {
             "$scopes": [
@@ -2203,7 +2113,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.500}"
+            "$value": "{Themes.Bank SA.color.holler.500}"
           },
           "data-d-tint": {
             "$scopes": [
@@ -2214,7 +2124,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.200}"
+            "$value": "{Themes.Bank SA.color.holler.200}"
           },
           "data-d-opacity": {
             "$scopes": [
@@ -2225,7 +2135,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.opacity}"
+            "$value": "{Themes.Bank SA.color.holler.opacity}"
           },
           "data-e-solid": {
             "$scopes": [
@@ -2236,7 +2146,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.500}"
+            "$value": "{Themes.Bank SA.color.sing.500}"
           },
           "data-e-tint": {
             "$scopes": [
@@ -2247,7 +2157,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.300}"
+            "$value": "{Themes.Bank SA.color.sing.300}"
           },
           "data-e-opacity": {
             "$scopes": [
@@ -2258,7 +2168,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.opacity}"
+            "$value": "{Themes.Bank SA.color.sing.opacity}"
           },
           "data-f-solid": {
             "$scopes": [
@@ -2269,7 +2179,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.500}"
+            "$value": "{Themes.Bank SA.color.dance.500}"
           },
           "data-f-tint": {
             "$scopes": [
@@ -2280,7 +2190,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.300}"
+            "$value": "{Themes.Bank SA.color.dance.300}"
           },
           "data-f-opacity": {
             "$scopes": [
@@ -2291,7 +2201,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.opacity}"
+            "$value": "{Themes.Bank SA.color.dance.opacity}"
           }
         },
         "pictogram": {
@@ -2303,7 +2213,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.surface-pictogram-base-Lm}"
+            "$value": "{Themes.Bank SA.color.alias.surface-pictogram-base-Lm}"
           },
           "surface-pictogram-accent": {
             "$scopes": [
@@ -2313,7 +2223,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.surface-pictogram-accent-Lm}"
+            "$value": "{Themes.Bank SA.color.alias.surface-pictogram-accent-Lm}"
           }
         },
         "state": {
@@ -2327,7 +2237,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.400}"
+            "$value": "{Themes.Bank SA.color.primary.400}"
           },
           "surface-active-primary": {
             "$scopes": [
@@ -2338,7 +2248,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.200}"
+            "$value": "{Themes.Bank SA.color.primary.200}"
           },
           "surface-hover-hero": {
             "$scopes": [
@@ -2350,7 +2260,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.400}"
+            "$value": "{Themes.Bank SA.color.hero.400}"
           },
           "surface-active-hero": {
             "$scopes": [
@@ -2362,7 +2272,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.300}"
+            "$value": "{Themes.Bank SA.color.hero.300}"
           },
           "surface-hover-primary-faint": {
             "$scopes": [
@@ -2374,7 +2284,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.50}"
+            "$value": "{Themes.Bank SA.color.primary.50}"
           },
           "surface-active-primary-faint": {
             "$scopes": [
@@ -2386,7 +2296,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.100}"
+            "$value": "{Themes.Bank SA.color.primary.100}"
           },
           "surface-hover-hero-faint": {
             "$scopes": [
@@ -2397,7 +2307,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.50}"
+            "$value": "{Themes.Bank SA.color.hero.50}"
           },
           "surface-active-hero-faint": {
             "$scopes": [
@@ -2408,7 +2318,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.100}"
+            "$value": "{Themes.Bank SA.color.hero.100}"
           },
           "surface-hover-muted-pale": {
             "$scopes": [
@@ -2420,7 +2330,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.100}"
+            "$value": "{Themes.Bank SA.color.muted.100}"
           },
           "surface-active-muted-pale": {
             "$scopes": [
@@ -2432,7 +2342,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.300}"
+            "$value": "{Themes.Bank SA.color.muted.300}"
           },
           "surface-hover-mono": {
             "$scopes": [
@@ -2444,7 +2354,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
+            "$value": "{Themes.Bank SA.color.mono.white}"
           },
           "surface-active-mono": {
             "$scopes": [
@@ -2456,7 +2366,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.200}"
+            "$value": "{Themes.Bank SA.color.muted.200}"
           }
         }
       },
@@ -2469,7 +2379,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.none}"
+            "$value": "{Themes.Bank SA.border.radius.none}"
           },
           "rounded-sm": {
             "$scopes": [
@@ -2478,7 +2388,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.sm}"
+            "$value": "{Themes.Bank SA.border.radius.sm}"
           },
           "rounded-md": {
             "$scopes": [
@@ -2487,7 +2397,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.md}"
+            "$value": "{Themes.Bank SA.border.radius.md}"
           },
           "rounded-lg": {
             "$scopes": [
@@ -2496,7 +2406,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.lg}"
+            "$value": "{Themes.Bank SA.border.radius.lg}"
           },
           "rounded-xl": {
             "$scopes": [
@@ -2505,7 +2415,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.xl}"
+            "$value": "{Themes.Bank SA.border.radius.xl}"
           },
           "rounded-2xl": {
             "$scopes": [
@@ -2514,7 +2424,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.2xl}"
+            "$value": "{Themes.Bank SA.border.radius.2xl}"
           },
           "rounded-3xl": {
             "$scopes": [
@@ -2523,7 +2433,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.3xl}"
+            "$value": "{Themes.Bank SA.border.radius.3xl}"
           },
           "rounded-4xl": {
             "$scopes": [
@@ -2532,7 +2442,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.4xl}"
+            "$value": "{Themes.Bank SA.border.radius.4xl}"
           },
           "rounded-5xl": {
             "$scopes": [
@@ -2541,7 +2451,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.5xl}"
+            "$value": "{Themes.Bank SA.border.radius.5xl}"
           },
           "rounded-full": {
             "$scopes": [
@@ -2550,7 +2460,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.full}"
+            "$value": "{Themes.Bank SA.border.radius.full}"
           }
         }
       }
@@ -2567,7 +2477,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.900}"
+            "$value": "{Themes.Bank SA.color.muted.900}"
           },
           "background-pale-faint": {
             "$scopes": [
@@ -2578,7 +2488,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.950}"
+            "$value": "{Themes.Bank SA.color.muted.950}"
           },
           "background-faint-pale": {
             "$scopes": [
@@ -2589,7 +2499,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.900}"
+            "$value": "{Themes.Bank SA.color.muted.900}"
           },
           "background-white-faint": {
             "$scopes": [
@@ -2601,7 +2511,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.950}"
+            "$value": "{Themes.Bank SA.color.muted.950}"
           },
           "background-white-black": {
             "$scopes": [
@@ -2613,7 +2523,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.black}"
+            "$value": "{Themes.Bank SA.color.mono.black}"
           },
           "background-pale-black": {
             "$scopes": [
@@ -2625,7 +2535,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.black}"
+            "$value": "{Themes.Bank SA.color.mono.black}"
           },
           "background-primary": {
             "$scopes": [
@@ -2637,7 +2547,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.500}"
+            "$value": "{Themes.Bank SA.color.primary.500}"
           },
           "background-hero": {
             "$scopes": [
@@ -2649,7 +2559,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.500}"
+            "$value": "{Themes.Bank SA.color.hero.500}"
           }
         },
         "surface": {
@@ -2662,7 +2572,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.surface-muted-vivid-DM}"
+            "$value": "{Themes.Bank SA.color.alias.surface-muted-vivid-DM}"
           },
           "surface-muted": {
             "$scopes": [
@@ -2673,7 +2583,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.400}"
+            "$value": "{Themes.Bank SA.color.muted.400}"
           },
           "surface-muted-strong": {
             "$scopes": [
@@ -2684,7 +2594,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.600}"
+            "$value": "{Themes.Bank SA.color.muted.600}"
           },
           "surface-muted-mild": {
             "$scopes": [
@@ -2695,7 +2605,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.700}"
+            "$value": "{Themes.Bank SA.color.muted.700}"
           },
           "surface-muted-soft": {
             "$scopes": [
@@ -2706,7 +2616,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.800}"
+            "$value": "{Themes.Bank SA.color.muted.800}"
           },
           "surface-muted-pale": {
             "$scopes": [
@@ -2717,7 +2627,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.900}"
+            "$value": "{Themes.Bank SA.color.muted.900}"
           },
           "surface-muted-faint": {
             "$scopes": [
@@ -2728,7 +2638,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.950}"
+            "$value": "{Themes.Bank SA.color.muted.950}"
           },
           "surface-primary": {
             "$scopes": [
@@ -2739,7 +2649,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.400}"
+            "$value": "{Themes.Bank SA.color.primary.400}"
           },
           "surface-primary-faint": {
             "$scopes": [
@@ -2750,7 +2660,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.950}"
+            "$value": "{Themes.Bank SA.color.primary.950}"
           },
           "surface-hero": {
             "$scopes": [
@@ -2761,7 +2671,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.300}"
+            "$value": "{Themes.Bank SA.color.hero.300}"
           },
           "surface-hero-faint": {
             "$scopes": [
@@ -2772,7 +2682,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.950}"
+            "$value": "{Themes.Bank SA.color.hero.950}"
           },
           "surface-pop": {
             "$scopes": [
@@ -2783,7 +2693,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.500}"
+            "$value": "{Themes.Bank SA.color.pop.500}"
           },
           "surface-pop-faint": {
             "$scopes": [
@@ -2794,7 +2704,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.950}"
+            "$value": "{Themes.Bank SA.color.pop.950}"
           },
           "surface-holler": {
             "$scopes": [
@@ -2805,7 +2715,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.400}"
+            "$value": "{Themes.Bank SA.color.holler.400}"
           },
           "surface-holler-faint": {
             "$scopes": [
@@ -2816,7 +2726,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.950}"
+            "$value": "{Themes.Bank SA.color.holler.950}"
           },
           "surface-sing": {
             "$scopes": [
@@ -2827,7 +2737,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.900}"
+            "$value": "{Themes.Bank SA.color.sing.900}"
           },
           "surface-sing-faint": {
             "$scopes": [
@@ -2838,7 +2748,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.950}"
+            "$value": "{Themes.Bank SA.color.sing.950}"
           },
           "surface-dance": {
             "$scopes": [
@@ -2849,7 +2759,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.500}"
+            "$value": "{Themes.Bank SA.color.dance.500}"
           },
           "surface-dance-faint": {
             "$scopes": [
@@ -2860,7 +2770,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.900}"
+            "$value": "{Themes.Bank SA.color.dance.900}"
           },
           "surface-success": {
             "$scopes": [
@@ -2871,7 +2781,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.success.400}"
+            "$value": "{Themes.Bank SA.color.reserved.success.400}"
           },
           "surface-success-faint": {
             "$scopes": [
@@ -2882,7 +2792,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.success.900}"
+            "$value": "{Themes.Bank SA.color.reserved.success.900}"
           },
           "surface-info": {
             "$scopes": [
@@ -2893,7 +2803,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.info.400}"
+            "$value": "{Themes.Bank SA.color.reserved.info.400}"
           },
           "surface-info-faint": {
             "$scopes": [
@@ -2904,7 +2814,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.info.900}"
+            "$value": "{Themes.Bank SA.color.reserved.info.900}"
           },
           "surface-warning": {
             "$scopes": [
@@ -2915,7 +2825,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.warning.400}"
+            "$value": "{Themes.Bank SA.color.reserved.warning.400}"
           },
           "surface-warning-faint": {
             "$scopes": [
@@ -2926,7 +2836,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.warning.900}"
+            "$value": "{Themes.Bank SA.color.reserved.warning.900}"
           },
           "surface-danger": {
             "$scopes": [
@@ -2937,7 +2847,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.danger.300}"
+            "$value": "{Themes.Bank SA.color.reserved.danger.300}"
           },
           "surface-danger-faint": {
             "$scopes": [
@@ -2948,7 +2858,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.danger.900}"
+            "$value": "{Themes.Bank SA.color.reserved.danger.900}"
           },
           "surface-system-error": {
             "$scopes": [
@@ -2959,7 +2869,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.system.950}"
+            "$value": "{Themes.Bank SA.color.reserved.system.950}"
           },
           "surface-system-error-dark": {
             "$scopes": [
@@ -2970,7 +2880,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.system.500}"
+            "$value": "{Themes.Bank SA.color.reserved.system.500}"
           },
           "surface-mono": {
             "$scopes": [
@@ -2981,7 +2891,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.black}"
+            "$value": "{Themes.Bank SA.color.mono.black}"
           },
           "surface-reversed": {
             "$scopes": [
@@ -2992,7 +2902,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
+            "$value": "{Themes.Bank SA.color.mono.white}"
           }
         },
         "text": {
@@ -3004,7 +2914,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.text-body-Dm}"
+            "$value": "{Themes.Bank SA.color.alias.text-body-Dm}"
           },
           "text-heading": {
             "$scopes": [
@@ -3014,7 +2924,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.text-heading-Dm}"
+            "$value": "{Themes.Bank SA.color.alias.text-heading-Dm}"
           },
           "text-muted": {
             "$scopes": [
@@ -3024,7 +2934,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.400}"
+            "$value": "{Themes.Bank SA.color.muted.400}"
           },
           "text-primary": {
             "$scopes": [
@@ -3034,7 +2944,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.300}"
+            "$value": "{Themes.Bank SA.color.primary.300}"
           },
           "text-hero": {
             "$scopes": [
@@ -3044,7 +2954,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.text-hero-DM}"
+            "$value": "{Themes.Bank SA.color.alias.text-hero-DM}"
           },
           "text-holler": {
             "$scopes": [
@@ -3054,7 +2964,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.300}"
+            "$value": "{Themes.Bank SA.color.holler.300}"
           },
           "text-link": {
             "$scopes": [
@@ -3064,7 +2974,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.300}"
+            "$value": "{Themes.Bank SA.color.primary.300}"
           },
           "text-success": {
             "$scopes": [
@@ -3074,7 +2984,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.success.300}"
+            "$value": "{Themes.Bank SA.color.reserved.success.300}"
           },
           "text-info": {
             "$scopes": [
@@ -3084,7 +2994,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.info.300}"
+            "$value": "{Themes.Bank SA.color.reserved.info.300}"
           },
           "text-warning": {
             "$scopes": [
@@ -3094,7 +3004,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.warning.300}"
+            "$value": "{Themes.Bank SA.color.reserved.warning.300}"
           },
           "text-danger": {
             "$scopes": [
@@ -3104,7 +3014,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.danger.300}"
+            "$value": "{Themes.Bank SA.color.reserved.danger.300}"
           },
           "text-system-error": {
             "$scopes": [
@@ -3114,7 +3024,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.system.500}"
+            "$value": "{Themes.Bank SA.color.reserved.system.500}"
           },
           "text-mono": {
             "$scopes": [
@@ -3124,7 +3034,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.black}"
+            "$value": "{Themes.Bank SA.color.mono.black}"
           },
           "text-reversed": {
             "$scopes": [
@@ -3134,7 +3044,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
+            "$value": "{Themes.Bank SA.color.mono.white}"
           }
         },
         "border": {
@@ -3146,7 +3056,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.500}"
+            "$value": "{Themes.Bank SA.color.muted.500}"
           },
           "border-muted-strong": {
             "$scopes": [
@@ -3156,7 +3066,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.500}"
+            "$value": "{Themes.Bank SA.color.muted.500}"
           },
           "border-muted-mild": {
             "$scopes": [
@@ -3166,7 +3076,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.700}"
+            "$value": "{Themes.Bank SA.color.muted.700}"
           },
           "border-muted-soft": {
             "$scopes": [
@@ -3176,7 +3086,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.800}"
+            "$value": "{Themes.Bank SA.color.muted.800}"
           },
           "border-hero": {
             "$scopes": [
@@ -3186,7 +3096,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.300}"
+            "$value": "{Themes.Bank SA.color.hero.300}"
           },
           "border-primary": {
             "$scopes": [
@@ -3196,7 +3106,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.400}"
+            "$value": "{Themes.Bank SA.color.primary.400}"
           },
           "border-pop": {
             "$scopes": [
@@ -3206,7 +3116,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.800}"
+            "$value": "{Themes.Bank SA.color.pop.800}"
           },
           "border-holler": {
             "$scopes": [
@@ -3216,7 +3126,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.400}"
+            "$value": "{Themes.Bank SA.color.holler.400}"
           },
           "border-sing": {
             "$scopes": [
@@ -3226,7 +3136,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.500}"
+            "$value": "{Themes.Bank SA.color.sing.500}"
           },
           "border-dance": {
             "$scopes": [
@@ -3236,7 +3146,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.500}"
+            "$value": "{Themes.Bank SA.color.dance.500}"
           },
           "border-success": {
             "$scopes": [
@@ -3246,7 +3156,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.success.500}"
+            "$value": "{Themes.Bank SA.color.reserved.success.500}"
           },
           "border-success-mild": {
             "$scopes": [
@@ -3256,7 +3166,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.success.700}"
+            "$value": "{Themes.Bank SA.color.reserved.success.700}"
           },
           "border-info": {
             "$scopes": [
@@ -3266,7 +3176,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.info.500}"
+            "$value": "{Themes.Bank SA.color.reserved.info.500}"
           },
           "border-info-mild": {
             "$scopes": [
@@ -3276,7 +3186,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.info.700}"
+            "$value": "{Themes.Bank SA.color.reserved.info.700}"
           },
           "border-warning": {
             "$scopes": [
@@ -3286,7 +3196,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.warning.500}"
+            "$value": "{Themes.Bank SA.color.reserved.warning.500}"
           },
           "border-warning-mild": {
             "$scopes": [
@@ -3296,7 +3206,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.warning.700}"
+            "$value": "{Themes.Bank SA.color.reserved.warning.700}"
           },
           "border-danger": {
             "$scopes": [
@@ -3306,7 +3216,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.danger.500}"
+            "$value": "{Themes.Bank SA.color.reserved.danger.500}"
           },
           "border-danger-mild": {
             "$scopes": [
@@ -3316,7 +3226,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.reserved.danger.700}"
+            "$value": "{Themes.Bank SA.color.reserved.danger.700}"
           },
           "border-mono": {
             "$scopes": [
@@ -3326,7 +3236,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.black}"
+            "$value": "{Themes.Bank SA.color.mono.black}"
           },
           "border-focus": {
             "$scopes": [
@@ -3336,7 +3246,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.400}"
+            "$value": "{Themes.Bank SA.color.holler.400}"
           }
         },
         "data": {
@@ -3349,7 +3259,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.500}"
+            "$value": "{Themes.Bank SA.color.primary.500}"
           },
           "data-a-tint": {
             "$scopes": [
@@ -3360,7 +3270,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.200}"
+            "$value": "{Themes.Bank SA.color.primary.200}"
           },
           "data-a-opacity": {
             "$scopes": [
@@ -3371,7 +3281,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.opacity}"
+            "$value": "{Themes.Bank SA.color.primary.opacity}"
           },
           "data-b-solid": {
             "$scopes": [
@@ -3382,7 +3292,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.300}"
+            "$value": "{Themes.Bank SA.color.hero.300}"
           },
           "data-b-tint": {
             "$scopes": [
@@ -3393,7 +3303,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.200}"
+            "$value": "{Themes.Bank SA.color.hero.200}"
           },
           "data-b-opacity": {
             "$scopes": [
@@ -3404,7 +3314,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.opacity}"
+            "$value": "{Themes.Bank SA.color.hero.opacity}"
           },
           "data-c-solid": {
             "$scopes": [
@@ -3415,7 +3325,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.500}"
+            "$value": "{Themes.Bank SA.color.pop.500}"
           },
           "data-c-tint": {
             "$scopes": [
@@ -3426,7 +3336,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.300}"
+            "$value": "{Themes.Bank SA.color.pop.300}"
           },
           "data-c-opacity": {
             "$scopes": [
@@ -3437,7 +3347,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.opacity}"
+            "$value": "{Themes.Bank SA.color.pop.opacity}"
           },
           "data-d-solid": {
             "$scopes": [
@@ -3448,7 +3358,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.500}"
+            "$value": "{Themes.Bank SA.color.holler.500}"
           },
           "data-d-tint": {
             "$scopes": [
@@ -3459,7 +3369,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.200}"
+            "$value": "{Themes.Bank SA.color.holler.200}"
           },
           "data-d-opacity": {
             "$scopes": [
@@ -3470,7 +3380,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.holler.opacity}"
+            "$value": "{Themes.Bank SA.color.holler.opacity}"
           },
           "data-e-solid": {
             "$scopes": [
@@ -3481,7 +3391,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.500}"
+            "$value": "{Themes.Bank SA.color.sing.500}"
           },
           "data-e-tint": {
             "$scopes": [
@@ -3492,7 +3402,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.300}"
+            "$value": "{Themes.Bank SA.color.sing.300}"
           },
           "data-e-opacity": {
             "$scopes": [
@@ -3503,7 +3413,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.sing.opacity}"
+            "$value": "{Themes.Bank SA.color.sing.opacity}"
           },
           "data-f-solid": {
             "$scopes": [
@@ -3514,7 +3424,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.500}"
+            "$value": "{Themes.Bank SA.color.dance.500}"
           },
           "data-f-tint": {
             "$scopes": [
@@ -3525,7 +3435,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.300}"
+            "$value": "{Themes.Bank SA.color.dance.300}"
           },
           "data-f-opacity": {
             "$scopes": [
@@ -3536,7 +3446,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.dance.opacity}"
+            "$value": "{Themes.Bank SA.color.dance.opacity}"
           }
         },
         "pictogram": {
@@ -3548,7 +3458,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.surface-pictogram-base-Dm}"
+            "$value": "{Themes.Bank SA.color.alias.surface-pictogram-base-Dm}"
           },
           "surface-pictogram-accent": {
             "$scopes": [
@@ -3558,7 +3468,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.alias.surface-pictogram-accent-DM}"
+            "$value": "{Themes.Bank SA.color.alias.surface-pictogram-accent-DM}"
           }
         },
         "state": {
@@ -3572,7 +3482,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.200}"
+            "$value": "{Themes.Bank SA.color.primary.200}"
           },
           "surface-active-primary": {
             "$scopes": [
@@ -3583,7 +3493,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.100}"
+            "$value": "{Themes.Bank SA.color.primary.100}"
           },
           "surface-hover-hero": {
             "$scopes": [
@@ -3595,7 +3505,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.200}"
+            "$value": "{Themes.Bank SA.color.hero.200}"
           },
           "surface-active-hero": {
             "$scopes": [
@@ -3607,7 +3517,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.100}"
+            "$value": "{Themes.Bank SA.color.hero.100}"
           },
           "surface-hover-primary-faint": {
             "$scopes": [
@@ -3619,7 +3529,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.900}"
+            "$value": "{Themes.Bank SA.color.primary.900}"
           },
           "surface-active-primary-faint": {
             "$scopes": [
@@ -3631,7 +3541,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.primary.800}"
+            "$value": "{Themes.Bank SA.color.primary.800}"
           },
           "surface-hover-hero-faint": {
             "$scopes": [
@@ -3642,7 +3552,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.800}"
+            "$value": "{Themes.Bank SA.color.hero.800}"
           },
           "surface-active-hero-faint": {
             "$scopes": [
@@ -3653,7 +3563,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.400}"
+            "$value": "{Themes.Bank SA.color.hero.400}"
           },
           "surface-hover-muted-pale": {
             "$scopes": [
@@ -3665,7 +3575,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.800}"
+            "$value": "{Themes.Bank SA.color.muted.800}"
           },
           "surface-active-muted-pale": {
             "$scopes": [
@@ -3677,7 +3587,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.600}"
+            "$value": "{Themes.Bank SA.color.muted.600}"
           },
           "surface-hover-mono": {
             "$scopes": [
@@ -3689,7 +3599,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.black}"
+            "$value": "{Themes.Bank SA.color.mono.black}"
           },
           "surface-active-mono": {
             "$scopes": [
@@ -3701,7 +3611,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.800}"
+            "$value": "{Themes.Bank SA.color.muted.800}"
           }
         }
       },
@@ -3714,7 +3624,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.none}"
+            "$value": "{Themes.Bank SA.border.radius.none}"
           },
           "rounded-sm": {
             "$scopes": [
@@ -3723,7 +3633,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.sm}"
+            "$value": "{Themes.Bank SA.border.radius.sm}"
           },
           "rounded-md": {
             "$scopes": [
@@ -3732,7 +3642,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.md}"
+            "$value": "{Themes.Bank SA.border.radius.md}"
           },
           "rounded-lg": {
             "$scopes": [
@@ -3741,7 +3651,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.lg}"
+            "$value": "{Themes.Bank SA.border.radius.lg}"
           },
           "rounded-xl": {
             "$scopes": [
@@ -3750,7 +3660,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.xl}"
+            "$value": "{Themes.Bank SA.border.radius.xl}"
           },
           "rounded-2xl": {
             "$scopes": [
@@ -3759,7 +3669,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.2xl}"
+            "$value": "{Themes.Bank SA.border.radius.2xl}"
           },
           "rounded-3xl": {
             "$scopes": [
@@ -3768,7 +3678,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.3xl}"
+            "$value": "{Themes.Bank SA.border.radius.3xl}"
           },
           "rounded-4xl": {
             "$scopes": [
@@ -3777,7 +3687,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.4xl}"
+            "$value": "{Themes.Bank SA.border.radius.4xl}"
           },
           "rounded-5xl": {
             "$scopes": [
@@ -3786,7 +3696,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.5xl}"
+            "$value": "{Themes.Bank SA.border.radius.5xl}"
           },
           "rounded-full": {
             "$scopes": [
@@ -3795,14 +3705,14 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.border.radius.full}"
+            "$value": "{Themes.Bank SA.border.radius.full}"
           }
         }
       }
     }
   },
   "Themes": {
-    "StGeorge": {
+    "Bank SA": {
       "color": {
         "alias": {
           "text-body-Lm": {
@@ -3812,8 +3722,8 @@
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.800}"
+            "$collectionName": "Primitives",
+            "$value": "{Primitives.color.BSA.Grey.800}"
           },
           "text-body-Dm": {
             "$scopes": [
@@ -3823,7 +3733,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.200}"
+            "$value": "{Themes.Bank SA.color.muted.200}"
           },
           "text-heading-Lm": {
             "$scopes": [
@@ -3833,7 +3743,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.600}"
+            "$value": "{Themes.Bank SA.color.hero.500}"
           },
           "text-heading-Dm": {
             "$scopes": [
@@ -3843,7 +3753,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.300}"
+            "$value": "{Themes.Bank SA.color.hero.200}"
           },
           "text-hero-LM": {
             "$scopes": [
@@ -3853,7 +3763,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.600}"
+            "$value": "{Themes.Bank SA.color.hero.500}"
           },
           "text-hero-DM": {
             "$scopes": [
@@ -3863,7 +3773,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.300}"
+            "$value": "{Themes.Bank SA.color.hero.200}"
           },
           "surface-pictogram-base-Lm": {
             "$scopes": [
@@ -3873,7 +3783,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.800}"
+            "$value": "{Themes.Bank SA.color.hero.500}"
           },
           "surface-pictogram-base-Dm": {
             "$scopes": [
@@ -3883,7 +3793,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.400}"
+            "$value": "{Themes.Bank SA.color.hero.300}"
           },
           "surface-pictogram-accent-Lm": {
             "$scopes": [
@@ -3893,7 +3803,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.500}"
+            "$value": "{Themes.Bank SA.color.pop.500}"
           },
           "surface-pictogram-accent-DM": {
             "$scopes": [
@@ -3903,7 +3813,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.pop.400}"
+            "$value": "{Themes.Bank SA.color.pop.300}"
           },
           "surface-muted-vivid-LM": {
             "$scopes": [
@@ -3912,8 +3822,8 @@
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.hero.800}"
+            "$collectionName": "Primitives",
+            "$value": "{Primitives.color.BSA.Grey.800}"
           },
           "surface-muted-vivid-DM": {
             "$scopes": [
@@ -3923,7 +3833,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.50}"
+            "$value": "{Themes.Bank SA.color.muted.50}"
           }
         },
         "muted": {
@@ -3935,7 +3845,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Grey.50}"
+            "$value": "{Primitives.color.BSA.Grey.50}"
           },
           "100": {
             "$scopes": [
@@ -3945,7 +3855,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Grey.100}"
+            "$value": "{Primitives.color.BSA.Grey.100}"
           },
           "200": {
             "$scopes": [
@@ -3955,7 +3865,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Grey.200}"
+            "$value": "{Primitives.color.BSA.Grey.200}"
           },
           "300": {
             "$scopes": [
@@ -3965,7 +3875,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Grey.300}"
+            "$value": "{Primitives.color.BSA.Grey.300}"
           },
           "400": {
             "$scopes": [
@@ -3975,7 +3885,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Grey.400}"
+            "$value": "{Primitives.color.BSA.Grey.400}"
           },
           "500": {
             "$scopes": [
@@ -3985,7 +3895,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Grey.500}"
+            "$value": "{Primitives.color.BSA.Grey.500}"
           },
           "600": {
             "$scopes": [
@@ -3995,7 +3905,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Grey.600}"
+            "$value": "{Primitives.color.BSA.Grey.600}"
           },
           "700": {
             "$scopes": [
@@ -4005,7 +3915,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Grey.700}"
+            "$value": "{Primitives.color.BSA.Grey.700}"
           },
           "800": {
             "$scopes": [
@@ -4015,7 +3925,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Grey.800}"
+            "$value": "{Primitives.color.BSA.Grey.800}"
           },
           "900": {
             "$scopes": [
@@ -4025,7 +3935,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Grey.900}"
+            "$value": "{Primitives.color.BSA.Grey.900}"
           },
           "950": {
             "$scopes": [
@@ -4035,7 +3945,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Grey.950}"
+            "$value": "{Primitives.color.BSA.Grey.950}"
           }
         },
         "primary": {
@@ -4047,7 +3957,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.50}"
+            "$value": "{Primitives.color.BSA.Desert.50}"
           },
           "100": {
             "$scopes": [
@@ -4057,7 +3967,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.100}"
+            "$value": "{Primitives.color.BSA.Desert.100}"
           },
           "200": {
             "$scopes": [
@@ -4067,7 +3977,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.200}"
+            "$value": "{Primitives.color.BSA.Desert.200}"
           },
           "300": {
             "$scopes": [
@@ -4077,7 +3987,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.300}"
+            "$value": "{Primitives.color.BSA.Desert.300}"
           },
           "400": {
             "$scopes": [
@@ -4087,7 +3997,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.400}"
+            "$value": "{Primitives.color.BSA.Desert.400}"
           },
           "500": {
             "$scopes": [
@@ -4097,7 +4007,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.500}"
+            "$value": "{Primitives.color.BSA.Desert.500}"
           },
           "600": {
             "$scopes": [
@@ -4107,7 +4017,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.600}"
+            "$value": "{Primitives.color.BSA.Desert.600}"
           },
           "700": {
             "$scopes": [
@@ -4117,7 +4027,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.700}"
+            "$value": "{Primitives.color.BSA.Desert.700}"
           },
           "800": {
             "$scopes": [
@@ -4127,7 +4037,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.800}"
+            "$value": "{Primitives.color.BSA.Desert.800}"
           },
           "900": {
             "$scopes": [
@@ -4137,7 +4047,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.900}"
+            "$value": "{Primitives.color.BSA.Desert.900}"
           },
           "950": {
             "$scopes": [
@@ -4147,7 +4057,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.950}"
+            "$value": "{Primitives.color.BSA.Desert.950}"
           },
           "opacity": {
             "$scopes": [
@@ -4157,7 +4067,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Red.opacity}"
+            "$value": "{Primitives.color.BSA.Desert.opacity}"
           }
         },
         "hero": {
@@ -4169,7 +4079,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.50}"
+            "$value": "{Primitives.color.BSA.Ocean.50}"
           },
           "100": {
             "$scopes": [
@@ -4179,7 +4089,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.100}"
+            "$value": "{Primitives.color.BSA.Ocean.100}"
           },
           "200": {
             "$scopes": [
@@ -4189,7 +4099,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.200}"
+            "$value": "{Primitives.color.BSA.Ocean.200}"
           },
           "300": {
             "$scopes": [
@@ -4199,7 +4109,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.300}"
+            "$value": "{Primitives.color.BSA.Ocean.300}"
           },
           "400": {
             "$scopes": [
@@ -4209,7 +4119,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.400}"
+            "$value": "{Primitives.color.BSA.Ocean.400}"
           },
           "500": {
             "$scopes": [
@@ -4219,7 +4129,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.500}"
+            "$value": "{Primitives.color.BSA.Ocean.500}"
           },
           "600": {
             "$scopes": [
@@ -4229,7 +4139,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.600}"
+            "$value": "{Primitives.color.BSA.Ocean.600}"
           },
           "700": {
             "$scopes": [
@@ -4239,7 +4149,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.700}"
+            "$value": "{Primitives.color.BSA.Ocean.700}"
           },
           "800": {
             "$scopes": [
@@ -4249,7 +4159,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.800}"
+            "$value": "{Primitives.color.BSA.Ocean.800}"
           },
           "900": {
             "$scopes": [
@@ -4259,7 +4169,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.900}"
+            "$value": "{Primitives.color.BSA.Ocean.900}"
           },
           "950": {
             "$scopes": [
@@ -4269,7 +4179,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.950}"
+            "$value": "{Primitives.color.BSA.Ocean.950}"
           },
           "opacity": {
             "$scopes": [
@@ -4279,7 +4189,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Access Green.opacity}"
+            "$value": "{Primitives.color.BSA.Ocean.opacity}"
           }
         },
         "pop": {
@@ -4291,7 +4201,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.50}"
+            "$value": "{Primitives.color.BSA.Bight.50}"
           },
           "100": {
             "$scopes": [
@@ -4301,7 +4211,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.100}"
+            "$value": "{Primitives.color.BSA.Bight.100}"
           },
           "200": {
             "$scopes": [
@@ -4311,7 +4221,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.200}"
+            "$value": "{Primitives.color.BSA.Bight.200}"
           },
           "300": {
             "$scopes": [
@@ -4321,7 +4231,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.300}"
+            "$value": "{Primitives.color.BSA.Bight.300}"
           },
           "400": {
             "$scopes": [
@@ -4331,7 +4241,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.400}"
+            "$value": "{Primitives.color.BSA.Bight.400}"
           },
           "500": {
             "$scopes": [
@@ -4341,7 +4251,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.500}"
+            "$value": "{Primitives.color.BSA.Bight.500}"
           },
           "600": {
             "$scopes": [
@@ -4351,7 +4261,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.600}"
+            "$value": "{Primitives.color.BSA.Bight.600}"
           },
           "700": {
             "$scopes": [
@@ -4361,7 +4271,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.700}"
+            "$value": "{Primitives.color.BSA.Bight.700}"
           },
           "800": {
             "$scopes": [
@@ -4371,7 +4281,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.800}"
+            "$value": "{Primitives.color.BSA.Bight.800}"
           },
           "900": {
             "$scopes": [
@@ -4381,7 +4291,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.900}"
+            "$value": "{Primitives.color.BSA.Bight.900}"
           },
           "950": {
             "$scopes": [
@@ -4391,7 +4301,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.950}"
+            "$value": "{Primitives.color.BSA.Bight.950}"
           },
           "opacity": {
             "$scopes": [
@@ -4401,7 +4311,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Green.opacity}"
+            "$value": "{Primitives.color.BSA.Bight.opacity}"
           }
         },
         "holler": {
@@ -4413,7 +4323,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.50}"
+            "$value": "{Primitives.color.BSA.Grape.50}"
           },
           "100": {
             "$scopes": [
@@ -4423,7 +4333,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.100}"
+            "$value": "{Primitives.color.BSA.Grape.100}"
           },
           "200": {
             "$scopes": [
@@ -4433,7 +4343,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.200}"
+            "$value": "{Primitives.color.BSA.Grape.200}"
           },
           "300": {
             "$scopes": [
@@ -4443,7 +4353,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.300}"
+            "$value": "{Primitives.color.BSA.Grape.300}"
           },
           "400": {
             "$scopes": [
@@ -4453,7 +4363,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.400}"
+            "$value": "{Primitives.color.BSA.Grape.400}"
           },
           "500": {
             "$scopes": [
@@ -4463,7 +4373,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.500}"
+            "$value": "{Primitives.color.BSA.Grape.500}"
           },
           "600": {
             "$scopes": [
@@ -4473,7 +4383,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.600}"
+            "$value": "{Primitives.color.BSA.Grape.600}"
           },
           "700": {
             "$scopes": [
@@ -4483,7 +4393,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.700}"
+            "$value": "{Primitives.color.BSA.Grape.700}"
           },
           "800": {
             "$scopes": [
@@ -4493,7 +4403,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.800}"
+            "$value": "{Primitives.color.BSA.Grape.800}"
           },
           "900": {
             "$scopes": [
@@ -4503,7 +4413,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.900}"
+            "$value": "{Primitives.color.BSA.Grape.900}"
           },
           "950": {
             "$scopes": [
@@ -4513,7 +4423,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.950}"
+            "$value": "{Primitives.color.BSA.Grape.950}"
           },
           "opacity": {
             "$scopes": [
@@ -4523,7 +4433,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Plum.opacity}"
+            "$value": "{Primitives.color.BSA.Grape.opacity}"
           }
         },
         "sing": {
@@ -4535,7 +4445,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.50}"
+            "$value": "{Primitives.color.BSA.Gum.50}"
           },
           "100": {
             "$scopes": [
@@ -4545,7 +4455,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.100}"
+            "$value": "{Primitives.color.BSA.Gum.100}"
           },
           "200": {
             "$scopes": [
@@ -4555,7 +4465,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.200}"
+            "$value": "{Primitives.color.BSA.Gum.200}"
           },
           "300": {
             "$scopes": [
@@ -4565,7 +4475,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.300}"
+            "$value": "{Primitives.color.BSA.Gum.300}"
           },
           "400": {
             "$scopes": [
@@ -4575,7 +4485,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.400}"
+            "$value": "{Primitives.color.BSA.Gum.400}"
           },
           "500": {
             "$scopes": [
@@ -4585,7 +4495,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.500}"
+            "$value": "{Primitives.color.BSA.Gum.500}"
           },
           "600": {
             "$scopes": [
@@ -4595,7 +4505,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.600}"
+            "$value": "{Primitives.color.BSA.Gum.600}"
           },
           "700": {
             "$scopes": [
@@ -4605,7 +4515,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.700}"
+            "$value": "{Primitives.color.BSA.Gum.700}"
           },
           "800": {
             "$scopes": [
@@ -4615,7 +4525,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.800}"
+            "$value": "{Primitives.color.BSA.Gum.800}"
           },
           "900": {
             "$scopes": [
@@ -4625,7 +4535,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.900}"
+            "$value": "{Primitives.color.BSA.Gum.900}"
           },
           "950": {
             "$scopes": [
@@ -4635,7 +4545,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.950}"
+            "$value": "{Primitives.color.BSA.Gum.950}"
           },
           "opacity": {
             "$scopes": [
@@ -4645,7 +4555,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Sky.opacity}"
+            "$value": "{Primitives.color.BSA.Gum.opacity}"
           }
         },
         "dance": {
@@ -4657,7 +4567,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.50}"
+            "$value": "{Primitives.color.BSA.Outback.50}"
           },
           "100": {
             "$scopes": [
@@ -4667,7 +4577,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.100}"
+            "$value": "{Primitives.color.BSA.Outback.100}"
           },
           "200": {
             "$scopes": [
@@ -4677,7 +4587,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.200}"
+            "$value": "{Primitives.color.BSA.Outback.200}"
           },
           "300": {
             "$scopes": [
@@ -4687,7 +4597,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.300}"
+            "$value": "{Primitives.color.BSA.Outback.300}"
           },
           "400": {
             "$scopes": [
@@ -4697,7 +4607,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.400}"
+            "$value": "{Primitives.color.BSA.Outback.400}"
           },
           "500": {
             "$scopes": [
@@ -4707,7 +4617,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.500}"
+            "$value": "{Primitives.color.BSA.Outback.500}"
           },
           "600": {
             "$scopes": [
@@ -4717,7 +4627,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.600}"
+            "$value": "{Primitives.color.BSA.Outback.600}"
           },
           "700": {
             "$scopes": [
@@ -4727,7 +4637,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.700}"
+            "$value": "{Primitives.color.BSA.Outback.700}"
           },
           "800": {
             "$scopes": [
@@ -4737,7 +4647,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.800}"
+            "$value": "{Primitives.color.BSA.Outback.800}"
           },
           "900": {
             "$scopes": [
@@ -4747,7 +4657,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.900}"
+            "$value": "{Primitives.color.BSA.Outback.900}"
           },
           "950": {
             "$scopes": [
@@ -4757,7 +4667,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.950}"
+            "$value": "{Primitives.color.BSA.Outback.950}"
           },
           "opacity": {
             "$scopes": [
@@ -4767,7 +4677,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.STG.Amber.opacity}"
+            "$value": "{Primitives.color.BSA.Outback.opacity}"
           }
         },
         "mono": {
@@ -5492,28 +5402,25 @@
         },
         "$value": {
           "0": {
-            "0": "S"
+            "0": "B"
           },
           "1": {
-            "0": "t"
+            "0": "a"
           },
           "2": {
-            "0": "G"
+            "0": "n"
           },
           "3": {
-            "0": "e"
+            "0": "k"
           },
           "4": {
-            "0": "o"
+            "0": " "
           },
           "5": {
-            "0": "r"
+            "0": "S"
           },
           "6": {
-            "0": "g"
-          },
-          "7": {
-            "0": "e"
+            "0": "a"
           }
         }
       }

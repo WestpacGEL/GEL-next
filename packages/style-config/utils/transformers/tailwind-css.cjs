@@ -110,8 +110,12 @@ function extractThemes(tokens, brandNameMap) {
           }
           cleanedColors[unprefixed] = value;
         }
-        colorsObj[brandNameMap[brand.toLowerCase()]] = colorsObj[brandNameMap[brand.toLowerCase()]] || {};
-        colorsObj[brandNameMap[brand.toLowerCase()]].theme = cleanedColors;
+        const brandKey = brand.toLowerCase().replace(/\s+/g, '');
+        const mappedBrand = brandNameMap[brandKey];
+        if (mappedBrand) {
+          colorsObj[mappedBrand] = colorsObj[mappedBrand] || {};
+          colorsObj[mappedBrand].theme = cleanedColors;
+        }
       }
     }
   }
@@ -142,7 +146,11 @@ function getThemeBrandBorders(tokens, brandNameMap) {
           cssVars[varName] = value;
         }
       }
-      brandBorders[brandNameMap[brand.toLowerCase()] || brand.toLowerCase()] = cssVars;
+      const brandKey = brand.toLowerCase().replace(/\s+/g, '');
+      const mappedBrand = brandNameMap[brandKey];
+      if (mappedBrand) {
+        brandBorders[mappedBrand] = cssVars;
+      }
     }
   }
   return brandBorders;
@@ -234,7 +242,7 @@ function writeBrandThemeCSS(tokens, brandNameMap, brandFontMap, themeTemplate, o
   const primitivesObj = extractPrimitives(tokens);
   const themeBorderRadius = getThemeBrandBorders(tokens, brandNameMap);
 
-  ['wbc', 'stg'].forEach(brand => {
+  ['wbc', 'stg', 'bom', 'bsa'].forEach(brand => {
     const brandFile = path.resolve(outputDir, `theme-${brand}.css`);
     fs.writeFileSync(
       brandFile,
@@ -288,8 +296,18 @@ function transformCSS() {
   const sharedStylesTemplate = Handlebars.compile(sharedStylesTemplateSource);
   const bordersTemplate = Handlebars.compile(bordersTemplateSource);
 
-  const brandNameMap = { westpac: 'wbc', stgeorge: 'stg' };
-  const brandFontMap = { wbc: 'Westpac', stg: 'Dragon Bold' };
+  const brandNameMap = {
+    westpac: 'wbc',
+    stgeorge: 'stg',
+    bankofmelbourne: 'bom',
+    banksa: 'bsa',
+  };
+  const brandFontMap = {
+    wbc: 'Westpac',
+    stg: 'Dragon Bold',
+    bom: 'Brown Pro',
+    bsa: 'Aller',
+  };
 
   const colorsObj = extractPrimitives(tokens);
   const tokensObj = extractTokens(tokens);

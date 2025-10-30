@@ -4,10 +4,10 @@
   Do not edit directly, this file was auto-generated.
 -->
 <resources>
-  <color name="stgBackgroundWhitePale">#1f1f1f</color>
-  <color name="stgBackgroundPaleFaint">#171717</color>
-  <color name="stgBackgroundFaintPale">#1f1f1f</color>
-  <color name="stgBackgroundWhiteFaint">#171717</color>
+  <color name="stgBackgroundWhitePale">#1c1c1c</color>
+  <color name="stgBackgroundPaleFaint">#141414</color>
+  <color name="stgBackgroundFaintPale">#1c1c1c</color>
+  <color name="stgBackgroundWhiteFaint">#141414</color>
   <color name="stgBackgroundWhiteBlack">#000000</color>
   <color name="stgBackgroundPaleBlack">#000000</color>
   <color name="stgBackgroundPrimary">#e30000</color>
@@ -17,8 +17,8 @@
   <color name="stgSurfaceMutedStrong">#5e5d55</color>
   <color name="stgSurfaceMutedMild">#4c4c48</color>
   <color name="stgSurfaceMutedSoft">#393937</color>
-  <color name="stgSurfaceMutedPale">#1f1f1f</color>
-  <color name="stgSurfaceMutedFaint">#171717</color>
+  <color name="stgSurfaceMutedPale">#1c1c1c</color>
+  <color name="stgSurfaceMutedFaint">#141414</color>
   <color name="stgSurfacePrimary">#f21818</color>
   <color name="stgSurfacePrimaryFaint">#380000</color>
   <color name="stgSurfaceHero">#2fa854</color>

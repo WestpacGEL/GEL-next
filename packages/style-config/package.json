@@ -7,6 +7,8 @@
     "./tailwind": "./dist/css/styles.css",
     "./theme-wbc": "./dist/css/themes/theme-wbc.css",
     "./theme-stg": "./dist/css/themes/theme-stg.css",
+    "./theme-bom": "./dist/css/themes/theme-bom.css",
+    "./theme-bsa": "./dist/css/themes/theme-bsa.css",
     "./postcss": "./postcss.config.js",
     "./tokens": "./dist/tokens/index.js",
     "./constants": "./dist/constants/index.js"
@@ -25,6 +27,6 @@
     "build:css": "node ./utils/transformers/tailwind-css.cjs",
     "build:css:copy": "cp -a ./src/css ./dist/",
     "build:ts": "tsc",
-    "build": "pnpm clean && pnpm build:css && pnpm build:ts && pnpm build:css:copy"
+    "build": "pnpm clean && pnpm build:style-dictionary && pnpm build:css && pnpm build:ts && pnpm build:css:copy"
   }
 }
