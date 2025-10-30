@@ -1,0 +1,550 @@
+:root, :host {
+  --primitives-color-green-50: #f2f9f2;
+  --primitives-color-green-100: #d9ecd9;
+  --primitives-color-green-200: #99cc99;
+  --primitives-color-green-300: #47a447;
+  --primitives-color-green-400: #249224;
+  --primitives-color-green-500: #008000;
+  --primitives-color-green-600: #006d00;
+  --primitives-color-green-700: #005a00;
+  --primitives-color-green-800: #004600;
+  --primitives-color-green-900: #003300;
+  --primitives-color-green-950: #002000;
+  --primitives-color-blue-50: #f2f8fc;
+  --primitives-color-blue-100: #d9eaf6;
+  --primitives-color-blue-200: #99c7e7;
+  --primitives-color-blue-300: #459ad4;
+  --primitives-color-blue-400: #2487cc;
+  --primitives-color-blue-500: #0074c4;
+  --primitives-color-blue-600: #0063a7;
+  --primitives-color-blue-700: #005189;
+  --primitives-color-blue-800: #00406c;
+  --primitives-color-blue-900: #002e4e;
+  --primitives-color-blue-950: #001d31;
+  --primitives-color-orange-50: #fcf5f2;
+  --primitives-color-orange-100: #f3d8cc;
+  --primitives-color-orange-200: #e8b199;
+  --primitives-color-orange-300: #d7784f;
+  --primitives-color-orange-400: #ce5826;
+  --primitives-color-orange-500: #c53b00;
+  --primitives-color-orange-600: #a73200;
+  --primitives-color-orange-700: #8a2900;
+  --primitives-color-orange-800: #6c2000;
+  --primitives-color-orange-900: #4f1800;
+  --primitives-color-orange-950: #310f00;
+  --primitives-color-red-50: #fcf2f2;
+  --primitives-color-red-100: #f9e6e6;
+  --primitives-color-red-200: #eaa6a6;
+  --primitives-color-red-300: #db6363;
+  --primitives-color-red-400: #d03333;
+  --primitives-color-red-500: #c40000;
+  --primitives-color-red-600: #a70000;
+  --primitives-color-red-700: #890000;
+  --primitives-color-red-800: #6c0000;
+  --primitives-color-red-900: #4e0000;
+  --primitives-color-red-950: #310000;
+  --primitives-color-yellow-50: #fffff2;
+  --primitives-color-yellow-100: #ffffe6;
+  --primitives-color-yellow-200: #ffffbf;
+  --primitives-color-yellow-300: #ffff80;
+  --primitives-color-yellow-400: #ffff40;
+  --primitives-color-yellow-500: #ffff00;
+  --primitives-color-yellow-600: #d9d900;
+  --primitives-color-yellow-700: #b3b300;
+  --primitives-color-yellow-800: #8c8c00;
+  --primitives-color-yellow-900: #666600;
+  --primitives-color-yellow-950: #404000;
+  --primitives-color-bsa-grey-50: #f9f9fa;
+  --primitives-color-bsa-grey-100: #f5f5f6;
+  --primitives-color-bsa-grey-200: #dedee1;
+  --primitives-color-bsa-grey-300: #b6b6bc;
+  --primitives-color-bsa-grey-400: #8e8d98;
+  --primitives-color-bsa-grey-500: #706f7c;
+  --primitives-color-bsa-grey-600: #5b5b6a;
+  --primitives-color-bsa-grey-700: #464651;
+  --primitives-color-bsa-grey-800: #323238;
+  --primitives-color-bsa-grey-900: #1c1c1f;
+  --primitives-color-bsa-grey-950: #161619;
+  --primitives-color-bsa-desert-50: #fef0f1;
+  --primitives-color-bsa-desert-100: #fccbcc;
+  --primitives-color-bsa-desert-200: #f96a6f;
+  --primitives-color-bsa-desert-300: #f9434f;
+  --primitives-color-bsa-desert-400: #ed1f30;
+  --primitives-color-bsa-desert-500: #d81b2b;
+  --primitives-color-bsa-desert-600: #b61523;
+  --primitives-color-bsa-desert-700: #98101b;
+  --primitives-color-bsa-desert-800: #7a0a14;
+  --primitives-color-bsa-desert-900: #56050b;
+  --primitives-color-bsa-desert-950: #380205;
+  --primitives-color-bsa-desert-opacity: rgba(216, 27, 43, 0.5);
+  --primitives-color-bsa-ocean-50: #e9f1fb;
+  --primitives-color-bsa-ocean-100: #b5d0f2;
+  --primitives-color-bsa-ocean-200: #4c8de1;
+  --primitives-color-bsa-ocean-300: #2574da;
+  --primitives-color-bsa-ocean-400: #1050a2;
+  --primitives-color-bsa-ocean-500: #002f6c;
+  --primitives-color-bsa-ocean-600: #00285e;
+  --primitives-color-bsa-ocean-700: #002657;
+  --primitives-color-bsa-ocean-800: #001f47;
+  --primitives-color-bsa-ocean-900: #001b3d;
+  --primitives-color-bsa-ocean-950: #001838;
+  --primitives-color-bsa-ocean-opacity: rgba(0, 47, 108, 0.55);
+  --primitives-color-bsa-bight-50: #e3fafc;
+  --primitives-color-bsa-bight-100: #c1f6fa;
+  --primitives-color-bsa-bight-200: #69ebf7;
+  --primitives-color-bsa-bight-300: #09d9ec;
+  --primitives-color-bsa-bight-400: #00c9db;
+  --primitives-color-bsa-bight-500: #00adbd;
+  --primitives-color-bsa-bight-600: #00919e;
+  --primitives-color-bsa-bight-700: #007580;
+  --primitives-color-bsa-bight-800: #00545c;
+  --primitives-color-bsa-bight-900: #00383d;
+  --primitives-color-bsa-bight-950: #002529;
+  --primitives-color-bsa-bight-opacity: rgba(0, 173, 189, 0.5);
+  --primitives-color-bsa-gum-50: #eff9ec;
+  --primitives-color-bsa-gum-100: #d2edc9;
+  --primitives-color-bsa-gum-200: #b5e2a7;
+  --primitives-color-bsa-gum-300: #95d581;
+  --primitives-color-bsa-gum-400: #78ca5e;
+  --primitives-color-bsa-gum-500: #5cbb3e;
+  --primitives-color-bsa-gum-600: #4d9d34;
+  --primitives-color-bsa-gum-700: #3c7b29;
+  --primitives-color-bsa-gum-800: #2d5c1e;
+  --primitives-color-bsa-gum-900: #1e3d14;
+  --primitives-color-bsa-gum-950: #172e0f;
+  --primitives-color-bsa-gum-opacity: rgba(92, 187, 62, 0.5);
+  --primitives-color-bsa-outback-50: #fef1e1;
+  --primitives-color-bsa-outback-100: #fde0bf;
+  --primitives-color-bsa-outback-200: #fbcd98;
+  --primitives-color-bsa-outback-300: #faba70;
+  --primitives-color-bsa-outback-400: #f8a444;
+  --primitives-color-bsa-outback-500: #f7921e;
+  --primitives-color-bsa-outback-600: #d97708;
+  --primitives-color-bsa-outback-700: #ac5f06;
+  --primitives-color-bsa-outback-800: #7b4404;
+  --primitives-color-bsa-outback-900: #4a2903;
+  --primitives-color-bsa-outback-950: #311b02;
+  --primitives-color-bsa-outback-opacity: rgba(247, 146, 30, 0.5);
+  --primitives-color-bsa-grape-50: #fbeef6;
+  --primitives-color-bsa-grape-100: #f4cce3;
+  --primitives-color-bsa-grape-200: #e689bd;
+  --primitives-color-bsa-grape-300: #db529e;
+  --primitives-color-bsa-grape-400: #cf2b86;
+  --primitives-color-bsa-grape-500: #a22269;
+  --primitives-color-bsa-grape-600: #871c57;
+  --primitives-color-bsa-grape-700: #6e1747;
+  --primitives-color-bsa-grape-800: #541237;
+  --primitives-color-bsa-grape-900: #3b0c26;
+  --primitives-color-bsa-grape-950: #2e0a1e;
+  --primitives-color-bsa-grape-opacity: rgba(162, 34, 105, 0.5);
+  --primitives-border-radius-none: 0;
+  --primitives-border-radius-3px: 3;
+  --primitives-border-radius-4px: 4;
+  --primitives-border-radius-5px: 5;
+  --primitives-border-radius-6px: 6;
+  --primitives-border-radius-8px: 8;
+  --primitives-border-radius-12px: 12;
+  --primitives-border-radius-16px: 16;
+  --primitives-border-radius-24px: 24;
+  --primitives-border-radius-full: 999;
+  --themes-bank-sa-color-text-body-lm: #323238;
+  --themes-bank-sa-color-text-body-dm: #dedee1;
+  --themes-bank-sa-color-text-heading-lm: #002f6c;
+  --themes-bank-sa-color-text-heading-dm: #4c8de1;
+  --themes-bank-sa-color-text-hero-lm: #002f6c;
+  --themes-bank-sa-color-text-hero-dm: #4c8de1;
+  --themes-bank-sa-color-surface-pictogram-base-lm: #002f6c;
+  --themes-bank-sa-color-surface-pictogram-base-dm: #2574da;
+  --themes-bank-sa-color-surface-pictogram-accent-lm: #00adbd;
+  --themes-bank-sa-color-surface-pictogram-accent-dm: #09d9ec;
+  --themes-bank-sa-color-surface-muted-vivid-lm: #323238;
+  --themes-bank-sa-color-surface-muted-vivid-dm: #f9f9fa;
+  --themes-bank-sa-color-muted-50: #f9f9fa;
+  --themes-bank-sa-color-muted-100: #f5f5f6;
+  --themes-bank-sa-color-muted-200: #dedee1;
+  --themes-bank-sa-color-muted-300: #b6b6bc;
+  --themes-bank-sa-color-muted-400: #8e8d98;
+  --themes-bank-sa-color-muted-500: #706f7c;
+  --themes-bank-sa-color-muted-600: #5b5b6a;
+  --themes-bank-sa-color-muted-700: #464651;
+  --themes-bank-sa-color-muted-800: #323238;
+  --themes-bank-sa-color-muted-900: #1c1c1f;
+  --themes-bank-sa-color-muted-950: #161619;
+  --themes-bank-sa-color-primary-50: #fef0f1;
+  --themes-bank-sa-color-primary-100: #fccbcc;
+  --themes-bank-sa-color-primary-200: #f96a6f;
+  --themes-bank-sa-color-primary-300: #f9434f;
+  --themes-bank-sa-color-primary-400: #ed1f30;
+  --themes-bank-sa-color-primary-500: #d81b2b;
+  --themes-bank-sa-color-primary-600: #b61523;
+  --themes-bank-sa-color-primary-700: #98101b;
+  --themes-bank-sa-color-primary-800: #7a0a14;
+  --themes-bank-sa-color-primary-900: #56050b;
+  --themes-bank-sa-color-primary-950: #380205;
+  --themes-bank-sa-color-primary-opacity: rgba(216, 27, 43, 0.5);
+  --themes-bank-sa-color-hero-50: #e9f1fb;
+  --themes-bank-sa-color-hero-100: #b5d0f2;
+  --themes-bank-sa-color-hero-200: #4c8de1;
+  --themes-bank-sa-color-hero-300: #2574da;
+  --themes-bank-sa-color-hero-400: #1050a2;
+  --themes-bank-sa-color-hero-500: #002f6c;
+  --themes-bank-sa-color-hero-600: #00285e;
+  --themes-bank-sa-color-hero-700: #002657;
+  --themes-bank-sa-color-hero-800: #001f47;
+  --themes-bank-sa-color-hero-900: #001b3d;
+  --themes-bank-sa-color-hero-950: #001838;
+  --themes-bank-sa-color-hero-opacity: rgba(0, 47, 108, 0.55);
+  --themes-bank-sa-color-pop-50: #e3fafc;
+  --themes-bank-sa-color-pop-100: #c1f6fa;
+  --themes-bank-sa-color-pop-200: #69ebf7;
+  --themes-bank-sa-color-pop-300: #09d9ec;
+  --themes-bank-sa-color-pop-400: #00c9db;
+  --themes-bank-sa-color-pop-500: #00adbd;
+  --themes-bank-sa-color-pop-600: #00919e;
+  --themes-bank-sa-color-pop-700: #007580;
+  --themes-bank-sa-color-pop-800: #00545c;
+  --themes-bank-sa-color-pop-900: #00383d;
+  --themes-bank-sa-color-pop-950: #002529;
+  --themes-bank-sa-color-pop-opacity: rgba(0, 173, 189, 0.5);
+  --themes-bank-sa-color-holler-50: #fbeef6;
+  --themes-bank-sa-color-holler-100: #f4cce3;
+  --themes-bank-sa-color-holler-200: #e689bd;
+  --themes-bank-sa-color-holler-300: #db529e;
+  --themes-bank-sa-color-holler-400: #cf2b86;
+  --themes-bank-sa-color-holler-500: #a22269;
+  --themes-bank-sa-color-holler-600: #871c57;
+  --themes-bank-sa-color-holler-700: #6e1747;
+  --themes-bank-sa-color-holler-800: #541237;
+  --themes-bank-sa-color-holler-900: #3b0c26;
+  --themes-bank-sa-color-holler-950: #2e0a1e;
+  --themes-bank-sa-color-holler-opacity: rgba(162, 34, 105, 0.5);
+  --themes-bank-sa-color-sing-50: #eff9ec;
+  --themes-bank-sa-color-sing-100: #d2edc9;
+  --themes-bank-sa-color-sing-200: #b5e2a7;
+  --themes-bank-sa-color-sing-300: #95d581;
+  --themes-bank-sa-color-sing-400: #78ca5e;
+  --themes-bank-sa-color-sing-500: #5cbb3e;
+  --themes-bank-sa-color-sing-600: #4d9d34;
+  --themes-bank-sa-color-sing-700: #3c7b29;
+  --themes-bank-sa-color-sing-800: #2d5c1e;
+  --themes-bank-sa-color-sing-900: #1e3d14;
+  --themes-bank-sa-color-sing-950: #172e0f;
+  --themes-bank-sa-color-sing-opacity: rgba(92, 187, 62, 0.5);
+  --themes-bank-sa-color-dance-50: #fef1e1;
+  --themes-bank-sa-color-dance-100: #fde0bf;
+  --themes-bank-sa-color-dance-200: #fbcd98;
+  --themes-bank-sa-color-dance-300: #faba70;
+  --themes-bank-sa-color-dance-400: #f8a444;
+  --themes-bank-sa-color-dance-500: #f7921e;
+  --themes-bank-sa-color-dance-600: #d97708;
+  --themes-bank-sa-color-dance-700: #ac5f06;
+  --themes-bank-sa-color-dance-800: #7b4404;
+  --themes-bank-sa-color-dance-900: #4a2903;
+  --themes-bank-sa-color-dance-950: #311b02;
+  --themes-bank-sa-color-dance-opacity: rgba(247, 146, 30, 0.5);
+  --themes-bank-sa-color-mono-white: #ffffff;
+  --themes-bank-sa-color-mono-black: #000000;
+  --themes-bank-sa-color-success-50: #f2f9f2;
+  --themes-bank-sa-color-success-100: #d9ecd9;
+  --themes-bank-sa-color-success-200: #99cc99;
+  --themes-bank-sa-color-success-300: #47a447;
+  --themes-bank-sa-color-success-400: #249224;
+  --themes-bank-sa-color-success-500: #008000;
+  --themes-bank-sa-color-success-600: #006d00;
+  --themes-bank-sa-color-success-700: #005a00;
+  --themes-bank-sa-color-success-800: #004600;
+  --themes-bank-sa-color-success-900: #003300;
+  --themes-bank-sa-color-success-950: #002000;
+  --themes-bank-sa-color-info-50: #f2f8fc;
+  --themes-bank-sa-color-info-100: #d9eaf6;
+  --themes-bank-sa-color-info-200: #99c7e7;
+  --themes-bank-sa-color-info-300: #459ad4;
+  --themes-bank-sa-color-info-400: #2487cc;
+  --themes-bank-sa-color-info-500: #0074c4;
+  --themes-bank-sa-color-info-600: #0063a7;
+  --themes-bank-sa-color-info-700: #005189;
+  --themes-bank-sa-color-info-800: #00406c;
+  --themes-bank-sa-color-info-900: #002e4e;
+  --themes-bank-sa-color-info-950: #001d31;
+  --themes-bank-sa-color-warning-50: #fcf5f2;
+  --themes-bank-sa-color-warning-100: #f3d8cc;
+  --themes-bank-sa-color-warning-200: #e8b199;
+  --themes-bank-sa-color-warning-300: #d7784f;
+  --themes-bank-sa-color-warning-400: #ce5826;
+  --themes-bank-sa-color-warning-500: #c53b00;
+  --themes-bank-sa-color-warning-600: #a73200;
+  --themes-bank-sa-color-warning-700: #8a2900;
+  --themes-bank-sa-color-warning-800: #6c2000;
+  --themes-bank-sa-color-warning-900: #4f1800;
+  --themes-bank-sa-color-warning-950: #310f00;
+  --themes-bank-sa-color-danger-50: #fcf2f2;
+  --themes-bank-sa-color-danger-100: #f9e6e6;
+  --themes-bank-sa-color-danger-200: #eaa6a6;
+  --themes-bank-sa-color-danger-300: #db6363;
+  --themes-bank-sa-color-danger-400: #d03333;
+  --themes-bank-sa-color-danger-500: #c40000;
+  --themes-bank-sa-color-danger-600: #a70000;
+  --themes-bank-sa-color-danger-700: #890000;
+  --themes-bank-sa-color-danger-800: #6c0000;
+  --themes-bank-sa-color-danger-900: #4e0000;
+  --themes-bank-sa-color-danger-950: #310000;
+  --themes-bank-sa-color-system-50: #fffff2;
+  --themes-bank-sa-color-system-100: #ffffe6;
+  --themes-bank-sa-color-system-200: #ffffbf;
+  --themes-bank-sa-color-system-300: #ffff80;
+  --themes-bank-sa-color-system-400: #ffff40;
+  --themes-bank-sa-color-system-500: #ffff00;
+  --themes-bank-sa-color-system-600: #d9d900;
+  --themes-bank-sa-color-system-700: #b3b300;
+  --themes-bank-sa-color-system-800: #8c8c00;
+  --themes-bank-sa-color-system-900: #666600;
+  --themes-bank-sa-color-system-950: #404000;
+  --themes-bank-sa-border-radius-none: 0;
+  --themes-bank-sa-border-radius-sm: 3;
+  --themes-bank-sa-border-radius-md: 4;
+  --themes-bank-sa-border-radius-lg: 5;
+  --themes-bank-sa-border-radius-xl: 6;
+  --themes-bank-sa-border-radius-2xl: 8;
+  --themes-bank-sa-border-radius-3xl: 12;
+  --themes-bank-sa-border-radius-4xl: 16;
+  --themes-bank-sa-border-radius-5xl: 24;
+  --themes-bank-sa-border-radius-full: 999;
+  --themes-bank-sa-logo: [object Object];
+}
+
+[data-brand="bsa"] {
+  --color-background-white-pale: var(--themes-bank sa-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-bank sa-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-bank sa-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
+  --color-background-white-faint: var(--themes-bank sa-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-black: var(--themes-bank sa-color-mono-white); /* This token is reserved. Do not use. */
+  --color-background-pale-black: var(--themes-bank sa-color-muted-100); /* This token is reserved. Do not use. */
+  --color-background-primary: var(--themes-bank sa-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-bank sa-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-bank sa-color-surface-muted-vivid-lm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-bank sa-color-muted-500); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-bank sa-color-muted-400); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-bank sa-color-muted-300); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-bank sa-color-muted-200); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-bank sa-color-muted-100); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-bank sa-color-muted-50); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-bank sa-color-primary-500); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-bank sa-color-primary-50); /* Reserved do not use */
+  --color-surface-hero: var(--themes-bank sa-color-hero-500); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-bank sa-color-hero-50); /* Reserved do not use */
+  --color-surface-pop: var(--themes-bank sa-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-bank sa-color-pop-50); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-bank sa-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-bank sa-color-holler-50); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-bank sa-color-sing-500); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-bank sa-color-sing-50); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-bank sa-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-bank sa-color-dance-50); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-bank sa-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-bank sa-color-success-50); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-bank sa-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-bank sa-color-info-50); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-bank sa-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-bank sa-color-warning-50); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-bank sa-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-bank sa-color-danger-50); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-bank sa-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-bank sa-color-system-950); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-bank sa-color-mono-white); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-bank sa-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-bank sa-color-text-body-lm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-bank sa-color-text-heading-lm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-bank sa-color-muted-500); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-bank sa-color-primary-500); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-bank sa-color-text-hero-lm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-bank sa-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-bank sa-color-primary-500); /* Replaces current style: Link */
+  --color-text-success: var(--themes-bank sa-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-bank sa-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-bank sa-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-bank sa-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-bank sa-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-bank sa-color-mono-white); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-bank sa-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-bank sa-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-bank sa-color-muted-400); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-bank sa-color-muted-300); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-bank sa-color-muted-200); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-bank sa-color-hero-500); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-bank sa-color-primary-500); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-bank sa-color-pop-500); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-bank sa-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-bank sa-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-bank sa-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-bank sa-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-bank sa-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-bank sa-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-bank sa-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-bank sa-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-bank sa-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-bank sa-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-bank sa-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-bank sa-color-mono-white); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-bank sa-color-holler-300); /* Reserved. Only for use with focus state keyboard navigation. */
+  --color-data-a-solid: var(--themes-bank sa-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-tint: var(--themes-bank sa-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-opacity: var(--themes-bank sa-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-solid: var(--themes-bank sa-color-hero-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-tint: var(--themes-bank sa-color-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-opacity: var(--themes-bank sa-color-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-solid: var(--themes-bank sa-color-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-tint: var(--themes-bank sa-color-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-opacity: var(--themes-bank sa-color-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-solid: var(--themes-bank sa-color-holler-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-tint: var(--themes-bank sa-color-holler-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-opacity: var(--themes-bank sa-color-holler-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-solid: var(--themes-bank sa-color-sing-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-tint: var(--themes-bank sa-color-sing-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-opacity: var(--themes-bank sa-color-sing-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-solid: var(--themes-bank sa-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-tint: var(--themes-bank sa-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-opacity: var(--themes-bank sa-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-surface-pictogram-base: var(--themes-bank sa-color-surface-pictogram-base-lm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-bank sa-color-surface-pictogram-accent-lm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-hover-primary: var(--themes-bank sa-color-primary-400); /* This token is for hover states. */
+  --color-surface-active-primary: var(--themes-bank sa-color-primary-200);
+  --color-surface-hover-hero: var(--themes-bank sa-color-hero-400); /* This token is for hover states. */
+  --color-surface-active-hero: var(--themes-bank sa-color-hero-300); /* This token is for hover states. */
+  --color-surface-hover-primary-faint: var(--themes-bank sa-color-primary-50); /* This token is for hover states. */
+  --color-surface-active-primary-faint: var(--themes-bank sa-color-primary-100); /* This token is for hover states. */
+  --color-surface-hover-hero-faint: var(--themes-bank sa-color-hero-50);
+  --color-surface-active-hero-faint: var(--themes-bank sa-color-hero-100);
+  --color-surface-hover-muted-pale: var(--themes-bank sa-color-muted-100); /* This token is for hover states. */
+  --color-surface-active-muted-pale: var(--themes-bank sa-color-muted-300); /* This token is for hover states. */
+  --color-surface-hover-mono: var(--themes-bank sa-color-mono-white); /* This token is for hover states. */
+  --color-surface-active-mono: var(--themes-bank sa-color-muted-200); /* This token is for hover states. */
+  --border-rounded-none: var(--themes-bank sa-border-radius-none);
+  --border-rounded-sm: var(--themes-bank sa-border-radius-sm);
+  --border-rounded-md: var(--themes-bank sa-border-radius-md);
+  --border-rounded-lg: var(--themes-bank sa-border-radius-lg);
+  --border-rounded-xl: var(--themes-bank sa-border-radius-xl);
+  --border-rounded-2xl: var(--themes-bank sa-border-radius-2xl);
+  --border-rounded-3xl: var(--themes-bank sa-border-radius-3xl);
+  --border-rounded-4xl: var(--themes-bank sa-border-radius-4xl);
+  --border-rounded-5xl: var(--themes-bank sa-border-radius-5xl);
+  --border-rounded-full: var(--themes-bank sa-border-radius-full);
+}
+
+[data-brand="bsa"][data-theme="dark"] {
+  --color-background-white-pale: var(--themes-bank sa-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-bank sa-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-bank sa-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
+  --color-background-white-faint: var(--themes-bank sa-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-black: var(--themes-bank sa-color-mono-black); /* This token is reserved. Do not use. */
+  --color-background-pale-black: var(--themes-bank sa-color-mono-black); /* This token is reserved. Do not use. */
+  --color-background-primary: var(--themes-bank sa-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-bank sa-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-bank sa-color-surface-muted-vivid-dm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-bank sa-color-muted-400); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-bank sa-color-muted-600); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-bank sa-color-muted-700); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-bank sa-color-muted-800); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-bank sa-color-muted-900); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-bank sa-color-muted-950); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-bank sa-color-primary-400); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-bank sa-color-primary-950); /* Reserved do not use */
+  --color-surface-hero: var(--themes-bank sa-color-hero-300); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-bank sa-color-hero-950); /* Reserved do not use */
+  --color-surface-pop: var(--themes-bank sa-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-bank sa-color-pop-950); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-bank sa-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-bank sa-color-holler-950); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-bank sa-color-sing-900); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-bank sa-color-sing-950); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-bank sa-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-bank sa-color-dance-900); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-bank sa-color-success-400); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-bank sa-color-success-900); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-bank sa-color-info-400); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-bank sa-color-info-900); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-bank sa-color-warning-400); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-bank sa-color-warning-900); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-bank sa-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-bank sa-color-danger-900); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-bank sa-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-bank sa-color-system-500); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-bank sa-color-mono-black); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-bank sa-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-bank sa-color-text-body-dm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-bank sa-color-text-heading-dm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-bank sa-color-muted-400); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-bank sa-color-primary-300); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-bank sa-color-text-hero-dm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-bank sa-color-holler-300); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-bank sa-color-primary-300); /* Replaces current style: Link */
+  --color-text-success: var(--themes-bank sa-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-bank sa-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-bank sa-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-bank sa-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-bank sa-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-bank sa-color-mono-black); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-bank sa-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-bank sa-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-bank sa-color-muted-500); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-bank sa-color-muted-700); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-bank sa-color-muted-800); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-bank sa-color-hero-300); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-bank sa-color-primary-400); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-bank sa-color-pop-800); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-bank sa-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-bank sa-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-bank sa-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-bank sa-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-bank sa-color-success-700); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-bank sa-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-bank sa-color-info-700); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-bank sa-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-bank sa-color-warning-700); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-bank sa-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-bank sa-color-danger-700); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-bank sa-color-mono-black); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-bank sa-color-holler-400); /* Reserved. Only for use with focus state keyboard navigation. */
+  --color-data-a-solid: var(--themes-bank sa-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-tint: var(--themes-bank sa-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-opacity: var(--themes-bank sa-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-solid: var(--themes-bank sa-color-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-tint: var(--themes-bank sa-color-hero-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-opacity: var(--themes-bank sa-color-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-solid: var(--themes-bank sa-color-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-tint: var(--themes-bank sa-color-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-opacity: var(--themes-bank sa-color-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-solid: var(--themes-bank sa-color-holler-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-tint: var(--themes-bank sa-color-holler-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-opacity: var(--themes-bank sa-color-holler-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-solid: var(--themes-bank sa-color-sing-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-tint: var(--themes-bank sa-color-sing-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-opacity: var(--themes-bank sa-color-sing-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-solid: var(--themes-bank sa-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-tint: var(--themes-bank sa-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-opacity: var(--themes-bank sa-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-surface-pictogram-base: var(--themes-bank sa-color-surface-pictogram-base-dm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-bank sa-color-surface-pictogram-accent-dm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-hover-primary: var(--themes-bank sa-color-primary-200); /* This token is for hover states. */
+  --color-surface-active-primary: var(--themes-bank sa-color-primary-100);
+  --color-surface-hover-hero: var(--themes-bank sa-color-hero-200); /* This token is for hover states. */
+  --color-surface-active-hero: var(--themes-bank sa-color-hero-100); /* This token is for hover states. */
+  --color-surface-hover-primary-faint: var(--themes-bank sa-color-primary-900); /* This token is for hover states. */
+  --color-surface-active-primary-faint: var(--themes-bank sa-color-primary-800); /* This token is for hover states. */
+  --color-surface-hover-hero-faint: var(--themes-bank sa-color-hero-800);
+  --color-surface-active-hero-faint: var(--themes-bank sa-color-hero-400);
+  --color-surface-hover-muted-pale: var(--themes-bank sa-color-muted-800); /* This token is for hover states. */
+  --color-surface-active-muted-pale: var(--themes-bank sa-color-muted-600); /* This token is for hover states. */
+  --color-surface-hover-mono: var(--themes-bank sa-color-mono-black); /* This token is for hover states. */
+  --color-surface-active-mono: var(--themes-bank sa-color-muted-800); /* This token is for hover states. */
+  --border-rounded-none: var(--themes-bank sa-border-radius-none);
+  --border-rounded-sm: var(--themes-bank sa-border-radius-sm);
+  --border-rounded-md: var(--themes-bank sa-border-radius-md);
+  --border-rounded-lg: var(--themes-bank sa-border-radius-lg);
+  --border-rounded-xl: var(--themes-bank sa-border-radius-xl);
+  --border-rounded-2xl: var(--themes-bank sa-border-radius-2xl);
+  --border-rounded-3xl: var(--themes-bank sa-border-radius-3xl);
+  --border-rounded-4xl: var(--themes-bank sa-border-radius-4xl);
+  --border-rounded-5xl: var(--themes-bank sa-border-radius-5xl);
+  --border-rounded-full: var(--themes-bank sa-border-radius-full);
+}
+
