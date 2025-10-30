@@ -76,13 +76,13 @@ export function Sidebar({ items, brand }: SidebarProps) {
       >
         {/* Below div required to hide so the transform still happens while still hiding the sidebar below large, otherwise users could tab into it when closed */}
         <div
-          className={clsx({
+          className={clsx('flex flex-col overflow-hidden', {
             'max-lg:hidden': !open,
           })}
         >
           <div
             className={clsx(
-              'bg-background-white-pale sticky top-0 transition-shadow delay-0 duration-200 ease-[ease]',
+              'bg-background-white-pale sticky flex-0 transition-shadow delay-0 duration-200 ease-[ease]',
               {
                 'shadow-[0_2px_5px_rgba(0,0,0,0.3)]': scrolled,
               },
