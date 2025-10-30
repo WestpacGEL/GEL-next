@@ -75,7 +75,6 @@ export const Sizes = () => {
   const stateLG = useOverlayTriggerState({});
   const stateFull = useOverlayTriggerState({});
   const stateFluid = useOverlayTriggerState({});
-  const bodyRef = useRef(null);
 
   const states = useMemo(() => {
     return {
@@ -91,8 +90,8 @@ export const Sizes = () => {
     <div className="flex gap-2">
       {(['sm', 'md', 'lg', 'full', 'fluid'] as const).map(size => (
         <Fragment key={size}>
-          <Modal isDismissable size={size} state={states[size]} title={`Modal ${size}`} scrollingBodyRef={bodyRef}>
-            <ModalBody ref={bodyRef}>
+          <Modal isDismissable size={size} state={states[size]} title={`Modal ${size}`}>
+            <ModalBody>
               {`
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?

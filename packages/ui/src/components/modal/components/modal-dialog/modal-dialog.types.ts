@@ -28,7 +28,8 @@ export type ModalDialogProps = {
    */
   onClose?: () => unknown;
   /**
-   * Ref to use for scrolling animations when not using the body prop to wrap children
+   * Ref to use for scrolling animations when not using the ModalBody component or the body prop.
+   * Ref should be the scrollable container that contains the content
    */
   scrollingBodyRef?: RefObject<HTMLDivElement>;
   /**
@@ -47,7 +48,7 @@ export type ModalDialogContextValue = {
    */
   size?: Variants['size'];
   /**
-   * Ref to use for scrolling animations when not using the body prop to wrap children
+   * Ref to use for scrolling animations
    */
-  scrollingBodyRef?: RefObject<HTMLDivElement>;
+  scrollingRef?: RefObject<HTMLDivElement>;
 };

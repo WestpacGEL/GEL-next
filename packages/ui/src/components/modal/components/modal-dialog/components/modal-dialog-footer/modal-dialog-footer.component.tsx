@@ -17,11 +17,12 @@ export function ModalDialogFooter({
   secondaryOnClick,
   ...props
 }: ModalDialogFooterProps) {
-  const { size, scrollingBodyRef } = useModalDialogContext();
+  const { size, scrollingRef } = useModalDialogContext();
   const styles = modalFooterStyles({ size });
 
-  const { scrollY } = useScroll({ container: scrollingBodyRef?.current ? scrollingBodyRef : undefined });
+  const { scrollY } = useScroll({ container: scrollingRef?.current ? scrollingRef : undefined });
 
+  // pixel amounts based on spacing values
   let initialPaddingBottom: string;
   switch (size) {
     case 'lg':

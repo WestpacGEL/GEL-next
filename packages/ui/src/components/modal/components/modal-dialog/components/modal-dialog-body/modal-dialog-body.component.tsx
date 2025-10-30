@@ -1,31 +1,30 @@
 'use client';
 
-import React, { useState, useEffect, useRef, Ref, useImperativeHandle, forwardRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import { useModalDialogContext } from '../../modal-dialog.component.js';
 
 import { styles as modalBodyStyles } from './modal-dialog-body.styles.js';
 import { type ModalDialogBodyProps } from './modal-dialog-body.types.js';
 
-function BaseModalDialogBody({ className, children, ...props }: ModalDialogBodyProps, ref: Ref<HTMLDivElement>) {
-  const { size } = useModalDialogContext();
-  const modalBodyRef = useRef<HTMLDivElement>(null);
+export function ModalDialogBody({ className, children, ...props }: ModalDialogBodyProps) {
+  const { size, scrollingRef } = useModalDialogContext();
   const [canScroll, setCanScroll] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrollAtBottom, setScrollAtBottom] = useState(false);
 
-  const handleScroll = () => {
-    if (modalBodyRef.current) {
-      const { scrollTop, scrollHeight, clientHeight } = modalBodyRef.current;
+  const handleScroll = useCallback(() => {
+    if (scrollingRef?.current) {
+      const { scrollTop, scrollHeight, clientHeight } = scrollingRef.current;
       setScrolled(scrollTop > 0);
       setScrollAtBottom(scrollTop + clientHeight >= scrollHeight - 10);
     }
-  };
+  }, [scrollingRef]);
 
   const styles = modalBodyStyles({ size, canScroll, scrolled, scrollAtBottom });
 
   useEffect(() => {
-    const bodyElement = modalBodyRef.current;
+    const bodyElement = scrollingRef?.current;
 
     if (bodyElement) {
       setCanScroll(bodyElement.scrollHeight > bodyElement.clientHeight);
@@ -35,17 +34,12 @@ function BaseModalDialogBody({ className, children, ...props }: ModalDialogBodyP
         bodyElement.removeEventListener('scroll', handleScroll);
       };
     }
-  }, []);
-
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  useImperativeHandle(ref, () => modalBodyRef.current!);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scrollingRef]);
 
   return (
-    <div className={styles.base({ className })} ref={modalBodyRef} {...props}>
+    <div className={styles.base({ className })} ref={scrollingRef} {...props}>
       {children}
     </div>
   );
 }
-
-export const ModalDialogBody = forwardRef<HTMLDivElement, ModalDialogBodyProps>(BaseModalDialogBody);
-ModalDialogBody.displayName = 'ModalDialogBody';

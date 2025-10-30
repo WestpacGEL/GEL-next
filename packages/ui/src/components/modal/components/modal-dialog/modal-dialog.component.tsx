@@ -1,12 +1,12 @@
 'use client';
 
-import { useMotionValueEvent, useScroll, useTransform, m } from 'motion/react';
+import { useMotionValueEvent, useScroll, useTransform, m, HTMLMotionProps } from 'motion/react';
 import React, { createContext, useContext, useRef, useState } from 'react';
 import { useDialog, useFocusRing } from 'react-aria';
 
 import { CloseIcon } from '../../../../components/icon/index.js';
 
-import { ModalDialogBody, ModalDialogBodyProps } from './components/modal-dialog-body/index.js';
+import { ModalDialogBody } from './components/modal-dialog-body/index.js';
 import { ModalDialogFooter } from './components/modal-dialog-footer/index.js';
 import { styles as dialogStyles } from './modal-dialog.styles.js';
 import { ModalDialogContextValue, type ModalDialogProps } from './modal-dialog.types.js';
@@ -14,6 +14,8 @@ import { ModalDialogContextValue, type ModalDialogProps } from './modal-dialog.t
 const ModalDialogContext = createContext<ModalDialogContextValue>({ size: 'md' });
 
 export const useModalDialogContext = () => useContext(ModalDialogContext);
+const SCROLL_PROGRESS_MAX = 0.1;
+const SCROLL_PROGRESS_START = 0;
 /**
  * @private
  */
@@ -27,9 +29,9 @@ export function ModalDialog({ className, body, onClose, size = 'md', scrollingBo
 
   const { dialogProps, titleProps } = useDialog(props, ref);
   const scrollingRef = scrollingBodyRef ?? bodyRef;
-  const { scrollY } = useScroll({ container: scrollingRef.current ? scrollingRef : undefined });
+  const { scrollYProgress } = useScroll({ container: scrollingRef.current ? scrollingRef : undefined });
 
-  // Set initialPaddingTop based on size prop
+  // pixel amounts based on spacing values
   let initialPaddingTop: string;
   switch (size) {
     case 'lg':
@@ -46,13 +48,26 @@ export function ModalDialog({ className, body, onClose, size = 'md', scrollingBo
       break;
   }
 
-  const paddingTop = useTransform(scrollY, [0, 200], [initialPaddingTop, '12px']);
-  const paddingBottom = useTransform(scrollY, [0, 200], [size === 'full' ? '18px' : '24px', '12px']);
+  const paddingTop = useTransform(
+    scrollYProgress,
+    [SCROLL_PROGRESS_START, SCROLL_PROGRESS_MAX],
+    [initialPaddingTop, '16px'],
+  );
+  const paddingBottom = useTransform(
+    scrollYProgress,
+    [SCROLL_PROGRESS_START, SCROLL_PROGRESS_MAX],
+    [size === 'full' ? '18px' : '24px', '16px'],
+  );
+  const fontSize = useTransform(scrollYProgress, [SCROLL_PROGRESS_START, SCROLL_PROGRESS_MAX], ['1.5rem', '1.125rem']);
+  const lineHeight = useTransform(scrollYProgress, [SCROLL_PROGRESS_START, SCROLL_PROGRESS_MAX], ['tight', 'normal']);
+
   const [currPadding, setCurrPadding] = useState(''); // used for updating key so animation works
 
   useMotionValueEvent(paddingTop, 'change', latest => {
     setCurrPadding(latest);
   });
+
+  const MotionHeading = m.create('h3');
   return (
     <div {...dialogProps} ref={ref} className={styles.base({ className })}>
       {onClose && (
@@ -61,18 +76,21 @@ export function ModalDialog({ className, body, onClose, size = 'md', scrollingBo
         </button>
       )}
       {props.title && (
-        <m.div key={`title-${currPadding}`} style={{ paddingTop, paddingBottom }}>
-          <h3 {...titleProps} className={styles.title()}>
-            {props.title}
-          </h3>
-        </m.div>
+        <MotionHeading
+          {...(titleProps as HTMLMotionProps<'h3'>)}
+          className={styles.title()}
+          key={`title-${currPadding}`}
+          style={{ fontSize, lineHeight, paddingBottom, paddingTop }}
+        >
+          {props.title}
+        </MotionHeading>
       )}
 
-      <ModalDialogContext.Provider value={{ size, scrollingBodyRef }}>
-        {body ? <ModalDialogBody ref={bodyRef}>{children}</ModalDialogBody> : children}
+      <ModalDialogContext.Provider value={{ size, scrollingRef }}>
+        {body ? <ModalDialogBody>{children}</ModalDialogBody> : children}
       </ModalDialogContext.Provider>
     </div>
   );
 }
-ModalDialog.Body = (props: ModalDialogBodyProps) => <ModalDialogBody {...props} />;
+ModalDialog.Body = ModalDialogBody;
 ModalDialog.Footer = ModalDialogFooter;
