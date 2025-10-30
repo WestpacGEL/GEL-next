@@ -20,11 +20,14 @@ type Story = StoryObj<typeof meta>;
 // NOTE: Although unused this needs to be here so tailwind will load all the colors
 const LOAD_COLORS = {
   background: [
-    'bg-background-pale-black',
-    'bg-background-white-black',
-    'bg-background-white-faint',
-    'bg-background-pale-faint',
     'bg-background-white-pale',
+    'bg-background-pale-faint',
+    'bg-background-faint-pale',
+    'bg-background-white-faint',
+    'bg-background-white-black',
+    'bg-background-pale-black',
+    'bg-background-primary',
+    'bg-background-hero',
   ],
   surface: [
     'bg-surface-mono',

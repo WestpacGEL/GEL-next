@@ -714,7 +714,7 @@ StyleDictionary.registerTransform({
 // ==============================
 
 const DIST_FOLDER = './dist';
-const INTERNAL_FOLDER = './src/tokens/style-dictionary';
+const SRC_FOLDER = './src/tokens';
 
 const BRANDS = [
   { themeName: 'Westpac', primitiveName: 'WBC' },
@@ -722,7 +722,7 @@ const BRANDS = [
 ];
 
 const STYLE_DICTIONARY_BASE_CONFIG = {
-  source: [`${DIST_FOLDER}/w3c-tokens/ALL_BRANDS.json`],
+  source: [`${SRC_FOLDER}/w3c/ALL_BRANDS.json`],
   hooks: {
     filters: {
       'light-mode': token => {
@@ -751,7 +751,7 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
       transformGroup: 'css',
       files: [
         {
-          destination: `${DIST_FOLDER}/style-dictionary/css/AllBrands/vars.css`,
+          destination: `${SRC_FOLDER}/css/all-brands/vars.css`,
           format: ['css/mode-wrapped-all-brands'],
           options: { brands: { 'st-george': 'stg', westpac: 'wbc' } },
         },
@@ -768,9 +768,9 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
         'strip-android-prefix',
       ],
       files: [
-        { destination: `${DIST_FOLDER}/style-dictionary/android/AllBrands/all-colors.xml`, format: 'android/colors' },
+        { destination: `${SRC_FOLDER}/android/all-brands/all-colors.xml`, format: 'android/colors' },
         {
-          destination: `${DIST_FOLDER}/style-dictionary/android/AllBrands/all-dimensions.xml`,
+          destination: `${SRC_FOLDER}/android/all-brands/all-dimensions.xml`,
           format: 'android/dimens',
         },
       ],
@@ -786,12 +786,12 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
       ],
       files: [
         {
-          destination: `${DIST_FOLDER}/style-dictionary/ios/AllBrands/all-colors.swift`,
+          destination: `${SRC_FOLDER}/ios/all-brands/all-colors.swift`,
           format: 'ios/enum-colors',
           options: { enumName: 'AllBrands' },
         },
         {
-          destination: `${DIST_FOLDER}/style-dictionary/ios/AllBrands/all-dimensions.swift`,
+          destination: `${SRC_FOLDER}/ios/all-brands/all-dimensions.swift`,
           format: 'ios/enum-dimensions',
           options: { enumName: 'AllBrands' },
         },
@@ -952,14 +952,23 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
 // ==============================
 // Main
 // ==============================
+/*
+// TODO 
+-  switch output to src folder only
+- create pnpm script to copy to dist
+- remove unnecessary scripts and pnpm scripts
+  - transformers - w3c.cjs
 
+Folder structure
+- tokens
+  - android
+  - css
+  - ios
+  - w3c
+*/
 (async () => {
-  await fs.rm(`${DIST_FOLDER}/style-dictionary`, { recursive: true, force: true });
-  await fs.rm(`${INTERNAL_FOLDER}`, { recursive: true, force: true });
-  await ensureFolderExists(`${DIST_FOLDER}/w3c-tokens`);
-
   const mergedTokens = mergeTokens();
-  await saveJSON(`${DIST_FOLDER}/w3c-tokens/ALL_BRANDS.json`, mergedTokens);
+  await saveJSON(`${SRC_FOLDER}/w3c/all_brands.json`, mergedTokens);
 
   // Build all brands
   const baseDictionary = new StyleDictionary(STYLE_DICTIONARY_BASE_CONFIG);
@@ -969,7 +978,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
   for (const { themeName, primitiveName } of BRANDS) {
     const brandTokens = extractBrandTokens(themeName, primitiveName, mergedTokens);
     const brandName = primitiveName.toLowerCase();
-    const brandFile = `${DIST_FOLDER}/w3c-tokens/${brandName}.json`;
+    const brandFile = `${SRC_FOLDER}/w3c/${brandName}.json`;
 
     await saveJSON(brandFile, brandTokens);
 
@@ -981,7 +990,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.css,
           files: [
             {
-              destination: `${DIST_FOLDER}/style-dictionary/css/${brandName}/style.css`,
+              destination: `${SRC_FOLDER}/css/${brandName}/style.css`,
               format: ['css/mode-wrapped-all-brands'],
               options: { outputReferences: true, brands: { 'st-george': 'stg', westpac: 'wbc' } },
             },
@@ -1005,12 +1014,12 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.ios,
           files: [
             {
-              destination: `${DIST_FOLDER}/style-dictionary/ios/${brandName}/${brandName}-colors.swift`,
+              destination: `${SRC_FOLDER}/ios/${brandName}/${brandName}-colors.swift`,
               format: 'ios/enum-colors',
               options: { enumName: brandName.toUpperCase() },
             },
             {
-              destination: `${DIST_FOLDER}/style-dictionary/ios/${brandName}/${brandName}-dimensions.swift`,
+              destination: `${SRC_FOLDER}/ios/${brandName}/${brandName}-dimensions.swift`,
               format: 'ios/enum-dimensions',
               options: { enumName: brandName.toUpperCase() },
             },
@@ -1033,7 +1042,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.css,
           files: [
             {
-              destination: `${DIST_FOLDER}/style-dictionary/css/${brandName}/style.css`,
+              destination: `${SRC_FOLDER}/css/${brandName}/style.css`,
               format: ['css/mode-wrapped-single-brand'],
               options: { brand: brandName.toLowerCase() },
             },
@@ -1053,25 +1062,25 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           ],
           files: [
             {
-              destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values/${brandName}_colors.xml`,
+              destination: `${SRC_FOLDER}/android/${brandName}/values/${brandName}_colors.xml`,
               format: 'android/colors-custom',
               options: { brandName },
               filter: 'light-mode',
             },
             {
-              destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values-night/${brandName}_colors.xml`,
+              destination: `${SRC_FOLDER}/android/${brandName}/values-night/${brandName}_colors.xml`,
               format: 'android/colors-custom',
               options: { brandName },
               filter: 'dark-mode',
             },
             {
-              destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values/${brandName}_dimens.xml`,
+              destination: `${SRC_FOLDER}/android/${brandName}/values/${brandName}_dimens.xml`,
               format: 'android/dimens-custom',
               options: { brandName },
               filter: 'light-mode',
             },
             {
-              destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values-night/${brandName}_dimens.xml`,
+              destination: `${SRC_FOLDER}/android/${brandName}/values-night/${brandName}_dimens.xml`,
               format: 'android/dimens-custom',
               options: { brandName },
               filter: 'dark-mode',
@@ -1122,6 +1131,5 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
     });
 
     await lightAndDarkModeDictionary.buildAllPlatforms();
-    await fs.copy(`${DIST_FOLDER}/style-dictionary`, INTERNAL_FOLDER);
   }
 })();
