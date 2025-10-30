@@ -7,6 +7,8 @@
     "./tailwind": "./dist/css/styles.css",
     "./theme-wbc": "./dist/css/themes/theme-wbc.css",
     "./theme-stg": "./dist/css/themes/theme-stg.css",
+    "./theme-bsa": "./dist/css/themes/theme-bsa.css",
+    "./theme-bom": "./dist/css/themes/theme-bom.css",
     "./postcss": "./postcss.config.js",
     "./tokens": "./dist/tokens/index.js",
     "./constants": "./dist/constants/index.js"
