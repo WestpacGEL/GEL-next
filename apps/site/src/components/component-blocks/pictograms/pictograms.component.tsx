@@ -38,7 +38,7 @@ export const Pictograms = () => {
 
   return (
     <div>
-      <div className="border-border-muted-soft bg-background-white-pale mb-4 rounded-md border p-4">
+      <div className="border-border-muted-soft bg-background-white-pale mb-4 rounded-2xl border p-4">
         <Grid>
           <GridItem span={{ initial: 12, sm: 6 }}>
             <div className="flex flex-col items-start sm:flex-row sm:items-center">
@@ -76,7 +76,7 @@ export const Pictograms = () => {
           <GridItem key={key} span={{ initial: 12, sm: 6, md: 4, lg: 3 }}>
             <div
               className={clsx(
-                'border-border-muted-soft xsl:mb-4 mb-2 flex flex-col items-center justify-center rounded-md border pt-6 pb-3',
+                'border-border-muted-soft xsl:mb-4 mb-2 flex flex-col items-center justify-center rounded-2xl border pt-6 pb-3',
                 mode === 'light' && 'bg-surface-hero',
                 mode !== 'light' && 'bg-background-white-pale',
               )}

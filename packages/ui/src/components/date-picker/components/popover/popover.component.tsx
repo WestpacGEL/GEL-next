@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Overlay, usePopover } from 'react-aria';
 
+import { Button } from '../../../button/index.js';
 import { CloseIcon } from '../../../icon/index.js';
 
 import { styles as popoverStyles } from './popover.styles.js';
@@ -23,9 +24,13 @@ export function Popover({ state, portalContainer, children, showAsBottomSheet, .
       <div {...popoverProps} ref={ref} className={styles.popover()}>
         <div className={styles.header()}>
           <p className={styles.headerLabel()}>Choose a date</p>
-          <button className={styles.closeButton()} onClick={() => state.close()} aria-label="Close window">
-            <CloseIcon color="primary" className="block" size="small" />
-          </button>
+          <Button
+            iconBefore={CloseIcon}
+            look="link"
+            onClick={() => state.close()}
+            aria-label="Close window"
+            className={styles.closeButton()}
+          />
         </div>
         {children}
       </div>
