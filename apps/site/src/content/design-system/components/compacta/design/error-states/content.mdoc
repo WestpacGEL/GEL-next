@@ -2,7 +2,9 @@ When a user attempts to progress through the form, errors are captured at this p
 
 ```tsx
 () => {
-  const { register, watch, setValue } = useForm<Inputs>({ defaultValues: { items: [{ primary: '', accountNumber: '', amount: 0 }] } });
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ primary: '', accountNumber: '', amount: 0 }] },
+  });
   const items = watch('items');
 
   const handleAdd = useCallback(() => {
@@ -10,7 +12,7 @@ When a user attempts to progress through the form, errors are captured at this p
   }, [items, setValue]);
 
   return (
-    <Form>
+    <form>
       <Compacta onAdd={handleAdd}>
         {items.map((item, index) => (
           <CompactaItem
@@ -20,18 +22,13 @@ When a user attempts to progress through the form, errors are captured at this p
               setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
             }}
           >
-            <FormGroup>
+            <div className="flex flex-col gap-4">
               <Field
                 label="Primary"
                 hintMessage="Select your card insitution"
                 errorMessage="If there is an error it can go here"
               >
-                <Select
-                  onChange={e => {}}
-                  width={30}
-                  invalid
-                  {...register(`items.${index}.primary`)}
-                >
+                <Select onChange={e => {}} width={30} invalid {...register(`items.${index}.primary`)}>
                   <option>Select</option>
                   <option>AMP Bank</option>
                   <option>ANZ - Australia and New Zealand Banking Group</option>
@@ -43,22 +40,15 @@ When a user attempts to progress through the form, errors are captured at this p
                   <option>Westpac Bank</option>
                 </Select>
               </Field>
-            </FormGroup>
-            <FormGroup>
+
               <Field
                 label="Account number"
                 hintMessage="Refer to a statement from the card’s financial institution"
                 errorMessage="If there is an error it can go here"
               >
-                <Input
-                  onChange={e => {}}
-                  width={30}
-                  invalid
-                  {...register(`items.${index}.accountNumber`)}
-                />
+                <Input onChange={e => {}} width={30} invalid {...register(`items.${index}.accountNumber`)} />
               </Field>
-            </FormGroup>
-            <FormGroup>
+
               <InputGroup
                 onChange={e => {}}
                 width={20}
@@ -69,11 +59,11 @@ When a user attempts to progress through the form, errors are captured at this p
               >
                 <Input {...register(`items.${index}.amount`, { valueAsNumber: true })} invalid />
               </InputGroup>
-            </FormGroup>
+            </div>
           </CompactaItem>
         ))}
       </Compacta>
-    </Form>
+    </form>
   );
 };
 ```

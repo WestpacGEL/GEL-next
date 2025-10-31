@@ -25,9 +25,11 @@ export function SidebarSelect(props: SidebarSelectProps) {
   const styles = sidebarSelectStyles({ isFocusVisible });
   return (
     <div className={styles.base()}>
-      <div {...labelProps} className={styles.label()}>
-        {props.label}
-      </div>
+      {props.label && (
+        <div {...labelProps} className={styles.label()}>
+          {props.label}
+        </div>
+      )}
 
       <HiddenSelect state={state} triggerRef={ref} label={props.label} name={props.name} />
 

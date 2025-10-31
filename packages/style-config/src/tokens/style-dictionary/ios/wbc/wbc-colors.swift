@@ -94,20 +94,20 @@ public enum WBCLightColors {
   public static let dataFSolid = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 1)
   public static let dataFTint = UIColor(red: 0.976, green: 0.690, blue: 0.443, alpha: 1)
   public static let dataFOpacity = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 0.45)
-  public static let pictogramPictogramBase = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
-  public static let pictogramPictogramAccent = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
-  public static let stateHoverPrimary = UIColor(red: 0.933, green: 0.133, blue: 0.106, alpha: 1)
-  public static let stateActivePrimary = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
-  public static let stateHoverHero = UIColor(red: 0.259, green: 0.235, blue: 0.592, alpha: 1)
-  public static let stateActiveHero = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
-  public static let stateHoverPrimaryFaint = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
-  public static let stateActivePrimaryFaint = UIColor(red: 0.980, green: 0.800, blue: 0.796, alpha: 1)
-  public static let stateHoverHeroFaint = UIColor(red: 0.945, green: 0.941, blue: 0.980, alpha: 1)
-  public static let stateActiveHeroFaint = UIColor(red: 0.886, green: 0.882, blue: 0.957, alpha: 1)
-  public static let stateHoverMutedPale = UIColor(red: 0.961, green: 0.961, blue: 0.965, alpha: 1)
-  public static let stateActiveMutedPale = UIColor(red: 0.714, green: 0.714, blue: 0.737, alpha: 1)
-  public static let stateHoverMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let stateActiveMono = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
+  public static let surfacePictogramBase = UIColor(red: 0.122, green: 0.110, blue: 0.310, alpha: 1)
+  public static let surfacePictogramAccent = UIColor(red: 0.855, green: 0.090, blue: 0.063, alpha: 1)
+  public static let surfaceHoverPrimary = UIColor(red: 0.933, green: 0.133, blue: 0.106, alpha: 1)
+  public static let surfaceActivePrimary = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
+  public static let surfaceHoverHero = UIColor(red: 0.259, green: 0.235, blue: 0.592, alpha: 1)
+  public static let surfaceActiveHero = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
+  public static let surfaceHoverPrimaryFaint = UIColor(red: 1.000, green: 0.941, blue: 0.941, alpha: 1)
+  public static let surfaceActivePrimaryFaint = UIColor(red: 0.980, green: 0.800, blue: 0.796, alpha: 1)
+  public static let surfaceHoverHeroFaint = UIColor(red: 0.945, green: 0.941, blue: 0.980, alpha: 1)
+  public static let surfaceActiveHeroFaint = UIColor(red: 0.886, green: 0.882, blue: 0.957, alpha: 1)
+  public static let surfaceHoverMutedPale = UIColor(red: 0.961, green: 0.961, blue: 0.965, alpha: 1)
+  public static let surfaceActiveMutedPale = UIColor(red: 0.714, green: 0.714, blue: 0.737, alpha: 1)
+  public static let surfaceHoverMono = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
+  public static let surfaceActiveMono = UIColor(red: 0.871, green: 0.871, blue: 0.882, alpha: 1)
 }
 
 
@@ -203,20 +203,20 @@ public enum WBCDarkColors {
   public static let dataFSolid = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 1)
   public static let dataFTint = UIColor(red: 0.976, green: 0.690, blue: 0.443, alpha: 1)
   public static let dataFOpacity = UIColor(red: 0.961, green: 0.478, blue: 0.059, alpha: 0.45)
-  public static let pictogramPictogramBase = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
-  public static let pictogramPictogramAccent = UIColor(red: 0.725, green: 0.078, blue: 0.055, alpha: 1)
-  public static let stateHoverPrimary = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
-  public static let stateActivePrimary = UIColor(red: 0.980, green: 0.800, blue: 0.796, alpha: 1)
-  public static let stateHoverHero = UIColor(red: 0.663, green: 0.647, blue: 0.875, alpha: 1)
-  public static let stateActiveHero = UIColor(red: 0.886, green: 0.882, blue: 0.957, alpha: 1)
-  public static let stateHoverPrimaryFaint = UIColor(red: 0.341, green: 0.035, blue: 0.024, alpha: 1)
-  public static let stateActivePrimaryFaint = UIColor(red: 0.471, green: 0.051, blue: 0.035, alpha: 1)
-  public static let stateHoverHeroFaint = UIColor(red: 0.051, green: 0.035, blue: 0.243, alpha: 1)
-  public static let stateActiveHeroFaint = UIColor(red: 0.259, green: 0.235, blue: 0.592, alpha: 1)
-  public static let stateHoverMutedPale = UIColor(red: 0.196, green: 0.196, blue: 0.220, alpha: 1)
-  public static let stateActiveMutedPale = UIColor(red: 0.357, green: 0.357, blue: 0.416, alpha: 1)
-  public static let stateHoverMono = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
-  public static let stateActiveMono = UIColor(red: 0.196, green: 0.196, blue: 0.220, alpha: 1)
+  public static let surfacePictogramBase = UIColor(red: 0.435, green: 0.412, blue: 0.788, alpha: 1)
+  public static let surfacePictogramAccent = UIColor(red: 0.725, green: 0.078, blue: 0.055, alpha: 1)
+  public static let surfaceHoverPrimary = UIColor(red: 0.957, green: 0.431, blue: 0.412, alpha: 1)
+  public static let surfaceActivePrimary = UIColor(red: 0.980, green: 0.800, blue: 0.796, alpha: 1)
+  public static let surfaceHoverHero = UIColor(red: 0.663, green: 0.647, blue: 0.875, alpha: 1)
+  public static let surfaceActiveHero = UIColor(red: 0.886, green: 0.882, blue: 0.957, alpha: 1)
+  public static let surfaceHoverPrimaryFaint = UIColor(red: 0.341, green: 0.035, blue: 0.024, alpha: 1)
+  public static let surfaceActivePrimaryFaint = UIColor(red: 0.471, green: 0.051, blue: 0.035, alpha: 1)
+  public static let surfaceHoverHeroFaint = UIColor(red: 0.051, green: 0.035, blue: 0.243, alpha: 1)
+  public static let surfaceActiveHeroFaint = UIColor(red: 0.259, green: 0.235, blue: 0.592, alpha: 1)
+  public static let surfaceHoverMutedPale = UIColor(red: 0.196, green: 0.196, blue: 0.220, alpha: 1)
+  public static let surfaceActiveMutedPale = UIColor(red: 0.357, green: 0.357, blue: 0.416, alpha: 1)
+  public static let surfaceHoverMono = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
+  public static let surfaceActiveMono = UIColor(red: 0.196, green: 0.196, blue: 0.220, alpha: 1)
 }
 
 
@@ -1131,143 +1131,143 @@ public enum WBCColors {
       }
     }
   }
-  public static var pictogramPictogramBase: UIColor {
+  public static var surfacePictogramBase: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.pictogramPictogramBase
+          return WBCDarkColors.surfacePictogramBase
         default:
-          return WBCLightColors.pictogramPictogramBase
+          return WBCLightColors.surfacePictogramBase
       }
     }
   }
-  public static var pictogramPictogramAccent: UIColor {
+  public static var surfacePictogramAccent: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.pictogramPictogramAccent
+          return WBCDarkColors.surfacePictogramAccent
         default:
-          return WBCLightColors.pictogramPictogramAccent
+          return WBCLightColors.surfacePictogramAccent
       }
     }
   }
-  public static var stateHoverPrimary: UIColor {
+  public static var surfaceHoverPrimary: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateHoverPrimary
+          return WBCDarkColors.surfaceHoverPrimary
         default:
-          return WBCLightColors.stateHoverPrimary
+          return WBCLightColors.surfaceHoverPrimary
       }
     }
   }
-  public static var stateActivePrimary: UIColor {
+  public static var surfaceActivePrimary: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateActivePrimary
+          return WBCDarkColors.surfaceActivePrimary
         default:
-          return WBCLightColors.stateActivePrimary
+          return WBCLightColors.surfaceActivePrimary
       }
     }
   }
-  public static var stateHoverHero: UIColor {
+  public static var surfaceHoverHero: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateHoverHero
+          return WBCDarkColors.surfaceHoverHero
         default:
-          return WBCLightColors.stateHoverHero
+          return WBCLightColors.surfaceHoverHero
       }
     }
   }
-  public static var stateActiveHero: UIColor {
+  public static var surfaceActiveHero: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateActiveHero
+          return WBCDarkColors.surfaceActiveHero
         default:
-          return WBCLightColors.stateActiveHero
+          return WBCLightColors.surfaceActiveHero
       }
     }
   }
-  public static var stateHoverPrimaryFaint: UIColor {
+  public static var surfaceHoverPrimaryFaint: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateHoverPrimaryFaint
+          return WBCDarkColors.surfaceHoverPrimaryFaint
         default:
-          return WBCLightColors.stateHoverPrimaryFaint
+          return WBCLightColors.surfaceHoverPrimaryFaint
       }
     }
   }
-  public static var stateActivePrimaryFaint: UIColor {
+  public static var surfaceActivePrimaryFaint: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateActivePrimaryFaint
+          return WBCDarkColors.surfaceActivePrimaryFaint
         default:
-          return WBCLightColors.stateActivePrimaryFaint
+          return WBCLightColors.surfaceActivePrimaryFaint
       }
     }
   }
-  public static var stateHoverHeroFaint: UIColor {
+  public static var surfaceHoverHeroFaint: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateHoverHeroFaint
+          return WBCDarkColors.surfaceHoverHeroFaint
         default:
-          return WBCLightColors.stateHoverHeroFaint
+          return WBCLightColors.surfaceHoverHeroFaint
       }
     }
   }
-  public static var stateActiveHeroFaint: UIColor {
+  public static var surfaceActiveHeroFaint: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateActiveHeroFaint
+          return WBCDarkColors.surfaceActiveHeroFaint
         default:
-          return WBCLightColors.stateActiveHeroFaint
+          return WBCLightColors.surfaceActiveHeroFaint
       }
     }
   }
-  public static var stateHoverMutedPale: UIColor {
+  public static var surfaceHoverMutedPale: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateHoverMutedPale
+          return WBCDarkColors.surfaceHoverMutedPale
         default:
-          return WBCLightColors.stateHoverMutedPale
+          return WBCLightColors.surfaceHoverMutedPale
       }
     }
   }
-  public static var stateActiveMutedPale: UIColor {
+  public static var surfaceActiveMutedPale: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateActiveMutedPale
+          return WBCDarkColors.surfaceActiveMutedPale
         default:
-          return WBCLightColors.stateActiveMutedPale
+          return WBCLightColors.surfaceActiveMutedPale
       }
     }
   }
-  public static var stateHoverMono: UIColor {
+  public static var surfaceHoverMono: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateHoverMono
+          return WBCDarkColors.surfaceHoverMono
         default:
-          return WBCLightColors.stateHoverMono
+          return WBCLightColors.surfaceHoverMono
       }
     }
   }
-  public static var stateActiveMono: UIColor {
+  public static var surfaceActiveMono: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return WBCDarkColors.stateActiveMono
+          return WBCDarkColors.surfaceActiveMono
         default:
-          return WBCLightColors.stateActiveMono
+          return WBCLightColors.surfaceActiveMono
       }
     }
   }

@@ -89,7 +89,7 @@
 #### Icons in buttons
 
 ```jsx
-<Fragment>
+<div className="flex flex-col gap-4">
   <InputGroup
     label="Icon button before"
     hint="I am a hint"
@@ -115,13 +115,13 @@
   >
     <Input />
   </InputGroup>
-</Fragment>
+</div>
 ```
 
 #### Button add ons
 
 ```jsx
-<Fragment>
+<div className="flex flex-col gap-4">
   <InputGroup
     label="Button before"
     hint="I am a hint"
@@ -163,7 +163,7 @@
   >
     <Input />
   </InputGroup>
-</Fragment>
+</div>
 ```
 
 #### Select add ons
@@ -199,87 +199,89 @@
 #### Different sizes
 
 ```jsx
- <Fragment>
+ <div className="flex flex-col gap-4">
   {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
     <div key={size} className="border-b border-b-border-muted-soft py-3">
       <h3 className="typography-body-7 mb-4 font-bold">Size: {size}</h3>
-      <InputGroup
-        size={size}
-        label="Text"
-        hint="I am a hint"
-        supportingText="I am supporting text"
-        before="$AUD"
-        after="Text"
-      >
-        <Input />
-      </InputGroup>
+      <div className="flex flex-col gap-4">
+        <InputGroup
+          size={size}
+          label="Text"
+          hint="I am a hint"
+          supportingText="I am supporting text"
+          before="$AUD"
+          after="Text"
+        >
+          <Input />
+        </InputGroup>
 
-      <InputGroup
-        size={size}
-        label="Icon"
-        hint="I am a hint"
-        supportingText="I am supporting text"
-        before={{ icon: VisibilityIcon, inset: true }}
-        after={{ icon: VisibilityIcon, inset: true }}
-      >
-        <Input />
-      </InputGroup>
+        <InputGroup
+          size={size}
+          label="Icon"
+          hint="I am a hint"
+          supportingText="I am supporting text"
+          before={{ icon: VisibilityIcon, inset: true }}
+          after={{ icon: VisibilityIcon, inset: true }}
+        >
+          <Input />
+        </InputGroup>
 
-      <InputGroup
-        size={size}
-        label="Icon Button"
-        hint="I am a hint"
-        supportingText="I am supporting text"
-        before={{
-          element: <Button size={size} look="link" iconAfter={() => <VisibilityIcon size="small" color="pop" />} />,
-          inset: true,
-        }}
-        after={{
-          element: <Button size={size} look="link" iconAfter={() => <VisibilityIcon size="small" color="pop" />} />,
-          inset: true,
-        }}
-      >
-        <Input />
-      </InputGroup>
+        <InputGroup
+          size={size}
+          label="Icon Button"
+          hint="I am a hint"
+          supportingText="I am supporting text"
+          before={{
+            element: <Button size={size} look="link" iconAfter={() => <VisibilityIcon size="small" color="pop" />} />,
+            inset: true,
+          }}
+          after={{
+            element: <Button size={size} look="link" iconAfter={() => <VisibilityIcon size="small" color="pop" />} />,
+            inset: true,
+          }}
+        >
+          <Input />
+        </InputGroup>
 
-      <InputGroup
-        size={size}
-        label="Button"
-        hint="I am a hint"
-        supportingText="I am supporting text"
-        before={<Button size={size}>Check</Button>}
-        after={<Button size={size}>Check</Button>}
-      >
-        <Input />
-      </InputGroup>
+        <InputGroup
+          size={size}
+          label="Button"
+          hint="I am a hint"
+          supportingText="I am supporting text"
+          before={<Button size={size}>Check</Button>}
+          after={<Button size={size}>Check</Button>}
+        >
+          <Input />
+        </InputGroup>
 
-      <InputGroup
-        size={size}
-        label="Select"
-        hint="I am a hint"
-        supportingText="I am supporting text"
-        before={
-          <Select size={size}>
-            <option value="Select">Select</option>
-          </Select>
-        }
-        after={
-          <Select size={size}>
-            <option value="Select">Select</option>
-          </Select>
-        }
-      >
-        <Input />
-      </InputGroup>
+        <InputGroup
+          size={size}
+          label="Select"
+          hint="I am a hint"
+          supportingText="I am supporting text"
+          before={
+            <Select size={size}>
+              <option value="Select">Select</option>
+            </Select>
+          }
+          after={
+            <Select size={size}>
+              <option value="Select">Select</option>
+            </Select>
+          }
+        >
+          <Input />
+        </InputGroup>
+      </div>
     </div>
   ))}
-</Fragment>
+</div>
 ```
 
 #### Invalid with error message/s
 
 ```jsx
-<Fragment>
+<div className="flex flex-col gap-4">
   <InputGroup
     label="Text after"
     hint="I am a hint"
@@ -337,13 +339,13 @@
   >
     <Input invalid />
   </InputGroup>
-</Fragment>
+</div>
 ```
 
 #### Input field with disabled state
 
 ```jsx
-<Fragment>
+<div className="flex flex-col gap-4">
   <InputGroup
     label="Text after"
     hint="I am a hint"
@@ -356,13 +358,13 @@
   <InputGroup label="Text after" hint="I am a hint" supportingText="I am supporting text" before="$AUD" after="Text">
     <Input disabled />
   </InputGroup>
-</Fragment>
+</div>
 ```
 
 #### Input field with read-only state
 
 ```jsx
-<Fragment>
+<div className="flex flex-col gap-4">
   <InputGroup
     label="Text after"
     hint="I am a hint"
@@ -375,7 +377,7 @@
   <InputGroup label="Text after" hint="I am a hint" supportingText="I am supporting text" before="$AUD" after="Text">
     <Input readOnly />
   </InputGroup>
-</Fragment>
+</div>
 ```
 
 #### Number of dependents

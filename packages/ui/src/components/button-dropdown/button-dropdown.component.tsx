@@ -28,7 +28,7 @@ export function ButtonDropdown({
   portalContainer,
   placement = 'bottom start',
   shouldFlip,
-  shouldCloseOnInteractOutside,
+  shouldCloseOnInteractOutside = () => false,
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const panelId = useId();

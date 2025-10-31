@@ -12,40 +12,34 @@ The summary is a useful feature for all users, as it acts as a second method of 
 ```jsx
 <Grid>
   <GridItem span={{ initial: 12, sm: 6 }}>
-
-<Alert look="danger" 
-  heading="Please fix the following 3 errors"
-  onClose={function Ya(){}}
->
-<p><a href="#">Title</a></p>
-<p><a href="#">Given name</a></p>
-<p><a href="#">Family name</a></p>
-</Alert>
-      <Form id="credit-card" spacing="large" className="p-0" >
-        <FormSection className="border-none !p-0">
-<FormGroup>
-<Field label="Title" errorMessage="Select a title">
-        <Select invalid >
-<option value="option-1">Select</option>          
-<option value="option-1">Mrs</option>
+    <Alert look="danger" heading="Please fix the following 3 errors" onClose={function Ya() {}}>
+      <p>
+        <a href="#">Title</a>
+      </p>
+      <p>
+        <a href="#">Given name</a>
+      </p>
+      <p>
+        <a href="#">Family name</a>
+      </p>
+    </Alert>
+    <form id="credit-card" spacing="large" className="flex flex-col gap-4">
+      <Field label="Title" errorMessage="Select a title">
+        <Select invalid>
+          <option value="option-1">Select</option>
+          <option value="option-1">Mrs</option>
           <option value="option-2">Mr</option>
           <option value="option-3">Miss</option>
           <option value="option-4">Ms</option>
         </Select>
       </Field>
-</FormGroup>
-<FormGroup>
- <InputGroup width={20} label="Given name" errorMessage="Enter your given name">
-          <Input invalid />
-        </InputGroup>
-</FormGroup>
-<FormGroup>
- <InputGroup width={20} label="Family name" errorMessage="Enter your family name">
-          <Input invalid />
-        </InputGroup>
-</FormGroup>
-        </FormSection>
-      </Form>
+      <InputGroup width={20} label="Given name" errorMessage="Enter your given name">
+        <Input invalid />
+      </InputGroup>
+      <InputGroup width={20} label="Family name" errorMessage="Enter your family name">
+        <Input invalid />
+      </InputGroup>
+    </form>
   </GridItem>
 </Grid>
 ```

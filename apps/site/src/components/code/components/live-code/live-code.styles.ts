@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     base: 'border-border-muted-soft bg-background-white-pale max-w-5xl rounded-3xl border p-6 pb-0',
-    displayWrapper: 'border-border-muted-soft relative -mx-6 -mt-6 px-6',
+    displayWrapper: 'border-border-muted-soft relative -mx-6 -mt-6 px-6 overflow-auto',
     error: 'bg-danger-10 text-text-danger flex gap-2 rounded-md p-2',
     buttonWrapper: '-mx-6 -mb-6 flex items-center justify-end ',
     codeWrapper:

@@ -3,25 +3,19 @@ The error message should always sit above the input field to give context. The e
 ### Simple phone number with errors
 
 ```tsx
-<Form spacing="large">
-  <FormGroup>
-    <Field label="Home number" hintMessage="Include the 2 digit area code">
-      <Input type="number" size="large" className="w-5/12" />
-    </Field>
-  </FormGroup>
-  <FormGroup>
-    <Field
-      errorMessage="Error message goes here if activated"
-      label="Work number"
-      hintMessage="Include the 2 digit area code"
-    >
-      <Input invalid type="number" size="large" className="w-5/12" />
-    </Field>
-  </FormGroup>
-  <FormGroup>
-    <Field label="Mobile number">
-      <Input type="number" size="large" className="w-5/12" />
-    </Field>
-  </FormGroup>
-</Form>
+<form className="flex flex-col gap-4">
+  <Field label="Home number" hintMessage="Include the 2 digit area code">
+    <Input type="number" size="large" className="w-5/12" />
+  </Field>
+  <Field
+    errorMessage="Error message goes here if activated"
+    label="Work number"
+    hintMessage="Include the 2 digit area code"
+  >
+    <Input invalid type="number" size="large" className="w-5/12" />
+  </Field>
+  <Field label="Mobile number">
+    <Input type="number" size="large" className="w-5/12" />
+  </Field>
+</form>
 ```

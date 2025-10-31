@@ -31,7 +31,7 @@ export default function BusinessCustomerPage() {
             <Circle className="bg-surface-muted">
               <OfficeIcon color="white" size="xsmall" />
             </Circle>
-            <h3 className="typography-body-11 text-muted font-bold">Green thumbs gardens:</h3>
+            <h3 className="typography-body-11 text-text-muted font-bold">Green thumbs gardens:</h3>
             <span className="typography-body-11">1234567890</span>
           </div>
         }

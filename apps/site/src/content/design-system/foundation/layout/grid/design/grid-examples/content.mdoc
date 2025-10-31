@@ -3,7 +3,7 @@
 This 3 column layout stacks on xs* (each column takes up full width) but on the other breakpoints it adapts to different widths.
 
 ```tsx
-<div className="relative py-7">
+<div className="relative w-full py-7">
   <Grid>
     <GridItem span={12} className="bg-surface-info/50 p-2 text-center text-text-mono">
       Column A
@@ -17,7 +17,7 @@ This 3 column layout stacks on xs* (each column takes up full width) but on the 
   </Grid>
   <Grid className="absolute top-0 left-0 right-0 bottom-0 opacity-50">
     {new Array(12).fill(null).map((_, index) => (
-      <GridItem key={index} span={1} className="bg-surface-info/15 p-2 text-center text-text-mono" />
+      <GridItem key={index} span={1} className="bg-surface-info/15 text-center text-text-mono" />
     ))}
   </Grid>
 </div>
@@ -39,7 +39,7 @@ This 3 column layout stacks on xs* (each column takes up full width) but on the 
   </Grid>
   <Grid className="absolute top-0 left-0 right-0 bottom-0">
     {new Array(12).fill(null).map((_, index) => (
-      <GridItem key={index} span={1} className="bg-surface-info/15 p-2 text-center text-text-mono" />
+      <GridItem key={index} span={1} className="bg-surface-info/15 text-center text-text-mono" />
     ))}
   </Grid>
 </div>
@@ -67,7 +67,7 @@ Columns can be nested inside columns to achieve greater complexity and structure
   </Grid>
   <Grid className="absolute top-0 left-0 right-0 bottom-0 opacity-50">
     {new Array(12).fill(null).map((_, index) => (
-      <GridItem key={index} span={1} className="bg-surface-info/15 p-2 text-center text-text-mono" />
+      <GridItem key={index} span={1} className="bg-surface-info/15 text-center text-text-mono" />
     ))}
   </Grid>
 </div>
@@ -92,7 +92,7 @@ If a pull-right class is added to the first column it will be the top most colum
   </Grid>
   <Grid className="absolute top-0 left-0 right-0 bottom-0 opacity-50">
     {new Array(12).fill(null).map((_, index) => (
-      <GridItem key={index} span={1} className="bg-surface-info/15 p-2 text-center text-text-mono" />
+      <GridItem key={index} span={1} className="bg-surface-info/15 text-center text-text-mono" />
     ))}
   </Grid>
 </div>
@@ -111,7 +111,7 @@ Columns can be offset to create empty space.
   </Grid>
   <Grid className="absolute top-0 left-0 right-0 bottom-0 opacity-50">
     {new Array(12).fill(null).map((_, index) => (
-      <GridItem key={index} span={1} className="bg-surface-info/15 p-2 text-center text-text-mono" />
+      <GridItem key={index} span={1} className="bg-surface-info/15 text-center text-text-mono" />
     ))}
   </Grid>
 </div>

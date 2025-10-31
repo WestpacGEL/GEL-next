@@ -146,8 +146,8 @@
   --primitives-color-stg-grey-600: #5e5d55;
   --primitives-color-stg-grey-700: #4c4c48;
   --primitives-color-stg-grey-800: #393937;
-  --primitives-color-stg-grey-900: #1f1f1f;
-  --primitives-color-stg-grey-950: #171717;
+  --primitives-color-stg-grey-900: #1c1c1c;
+  --primitives-color-stg-grey-950: #141414;
   --primitives-color-stg-red-50: #fff0f0;
   --primitives-color-stg-red-100: #ffc7c7;
   --primitives-color-stg-red-200: #f87272;
@@ -231,16 +231,194 @@
   --primitives-color-stg-yellow-800: #665200;
   --primitives-color-stg-yellow-900: #332900;
   --primitives-color-stg-yellow-950: #1a1500;
+  --primitives-color-bom-grey-50: #fbfbfd;
+  --primitives-color-bom-grey-100: #f7f7f7;
+  --primitives-color-bom-grey-200: #dedee1;
+  --primitives-color-bom-grey-300: #b6b6bc;
+  --primitives-color-bom-grey-400: #8e8d98;
+  --primitives-color-bom-grey-500: #706f7c;
+  --primitives-color-bom-grey-600: #5b5b6a;
+  --primitives-color-bom-grey-700: #464651;
+  --primitives-color-bom-grey-800: #323238;
+  --primitives-color-bom-grey-900: #1c1c1f;
+  --primitives-color-bom-grey-950: #161619;
+  --primitives-color-bom-orange-50: #fff4f3;
+  --primitives-color-bom-orange-100: #ffcbc7;
+  --primitives-color-bom-orange-200: #ff7c6a;
+  --primitives-color-bom-orange-300: #f24300;
+  --primitives-color-bom-orange-400: #e43f00;
+  --primitives-color-bom-orange-500: #d13900;
+  --primitives-color-bom-orange-600: #b02f00;
+  --primitives-color-bom-orange-700: #8f2400;
+  --primitives-color-bom-orange-800: #6f1a00;
+  --primitives-color-bom-orange-900: #501000;
+  --primitives-color-bom-orange-950: #380900;
+  --primitives-color-bom-orange-opacity: rgba(209, 57, 0, 0.5);
+  --primitives-color-bom-melbourne-purple-50: #f6f5ff;
+  --primitives-color-bom-melbourne-purple-100: #dad6fe;
+  --primitives-color-bom-melbourne-purple-200: #c6c0fd;
+  --primitives-color-bom-melbourne-purple-300: #a094fc;
+  --primitives-color-bom-melbourne-purple-400: #685ac0;
+  --primitives-color-bom-melbourne-purple-500: #534891;
+  --primitives-color-bom-melbourne-purple-600: #433781;
+  --primitives-color-bom-melbourne-purple-700: #33286a;
+  --primitives-color-bom-melbourne-purple-800: #261b58;
+  --primitives-color-bom-melbourne-purple-900: #20024e;
+  --primitives-color-bom-melbourne-purple-950: #1b0045;
+  --primitives-color-bom-melbourne-purple-opacity: rgba(83, 72, 145, 0.5);
+  --primitives-color-bom-dark-purple-50: #f6f6fa;
+  --primitives-color-bom-dark-purple-100: #dad8eb;
+  --primitives-color-bom-dark-purple-200: #a6a1ce;
+  --primitives-color-bom-dark-purple-300: #877eb9;
+  --primitives-color-bom-dark-purple-400: #433781;
+  --primitives-color-bom-dark-purple-500: #20024e;
+  --primitives-color-bom-dark-purple-600: #1b0045;
+  --primitives-color-bom-dark-purple-700: #180040;
+  --primitives-color-bom-dark-purple-800: #16003b;
+  --primitives-color-bom-dark-purple-900: #130036;
+  --primitives-color-bom-dark-purple-950: #110031;
+  --primitives-color-bom-dark-purple-opacity: rgba(32, 2, 78, 0.25);
+  --primitives-color-bom-mid-purple-50: #eeedf8;
+  --primitives-color-bom-mid-purple-100: #dfddf3;
+  --primitives-color-bom-mid-purple-200: #c1bce8;
+  --primitives-color-bom-mid-purple-300: #a39cdc;
+  --primitives-color-bom-mid-purple-400: #8379cf;
+  --primitives-color-bom-mid-purple-500: #685ac0;
+  --primitives-color-bom-mid-purple-600: #5141ac;
+  --primitives-color-bom-mid-purple-700: #3f3288;
+  --primitives-color-bom-mid-purple-800: #2b2162;
+  --primitives-color-bom-mid-purple-900: #19123e;
+  --primitives-color-bom-mid-purple-950: #0e0928;
+  --primitives-color-bom-mid-purple-opacity: rgba(104, 90, 192, 0.5);
+  --primitives-color-bom-light-purple-50: #f6f5ff;
+  --primitives-color-bom-light-purple-100: #ebe9fe;
+  --primitives-color-bom-light-purple-200: #dad6fe;
+  --primitives-color-bom-light-purple-300: #c6c0fd;
+  --primitives-color-bom-light-purple-400: #b2aafd;
+  --primitives-color-bom-light-purple-500: #a094fc;
+  --primitives-color-bom-light-purple-600: #7d67fa;
+  --primitives-color-bom-light-purple-700: #5b31f8;
+  --primitives-color-bom-light-purple-800: #3d0dc0;
+  --primitives-color-bom-light-purple-900: #200470;
+  --primitives-color-bom-light-purple-950: #140250;
+  --primitives-color-bom-light-purple-opacity: rgba(160, 148, 252, 0.5);
+  --primitives-color-bom-ochre-50: #fff1ea;
+  --primitives-color-bom-ochre-100: #fee3d4;
+  --primitives-color-bom-ochre-200: #fec6a3;
+  --primitives-color-bom-ochre-300: #fda85f;
+  --primitives-color-bom-ochre-400: #ed9019;
+  --primitives-color-bom-ochre-500: #d17e15;
+  --primitives-color-bom-ochre-600: #a5620e;
+  --primitives-color-bom-ochre-700: #7c4908;
+  --primitives-color-bom-ochre-800: #553004;
+  --primitives-color-bom-ochre-900: #321a01;
+  --primitives-color-bom-ochre-950: #210f01;
+  --primitives-color-bom-ochre-opacity: rgba(209, 126, 21, 0.5);
+  --primitives-color-bom-terracotta-50: #ffe9e7;
+  --primitives-color-bom-terracotta-100: #ffcfcb;
+  --primitives-color-bom-terracotta-200: #ff9b90;
+  --primitives-color-bom-terracotta-300: #ff6244;
+  --primitives-color-bom-terracotta-400: #d63c00;
+  --primitives-color-bom-terracotta-500: #9e2a00;
+  --primitives-color-bom-terracotta-600: #822100;
+  --primitives-color-bom-terracotta-700: #671800;
+  --primitives-color-bom-terracotta-800: #490e00;
+  --primitives-color-bom-terracotta-900: #300700;
+  --primitives-color-bom-terracotta-950: #230400;
+  --primitives-color-bom-terracotta-opacity: rgba(158, 42, 0, 0.5);
+  --primitives-color-bsa-grey-50: #f9f9fa;
+  --primitives-color-bsa-grey-100: #f5f5f6;
+  --primitives-color-bsa-grey-200: #dedee1;
+  --primitives-color-bsa-grey-300: #b6b6bc;
+  --primitives-color-bsa-grey-400: #8e8d98;
+  --primitives-color-bsa-grey-500: #706f7c;
+  --primitives-color-bsa-grey-600: #5b5b6a;
+  --primitives-color-bsa-grey-700: #464651;
+  --primitives-color-bsa-grey-800: #323238;
+  --primitives-color-bsa-grey-900: #1c1c1f;
+  --primitives-color-bsa-grey-950: #161619;
+  --primitives-color-bsa-desert-50: #fef0f1;
+  --primitives-color-bsa-desert-100: #fccbcc;
+  --primitives-color-bsa-desert-200: #f96a6f;
+  --primitives-color-bsa-desert-300: #f9434f;
+  --primitives-color-bsa-desert-400: #ed1f30;
+  --primitives-color-bsa-desert-500: #d81b2b;
+  --primitives-color-bsa-desert-600: #b61523;
+  --primitives-color-bsa-desert-700: #98101b;
+  --primitives-color-bsa-desert-800: #7a0a14;
+  --primitives-color-bsa-desert-900: #56050b;
+  --primitives-color-bsa-desert-950: #380205;
+  --primitives-color-bsa-desert-opacity: rgba(216, 27, 43, 0.5);
+  --primitives-color-bsa-ocean-50: #e9f1fb;
+  --primitives-color-bsa-ocean-100: #b5d0f2;
+  --primitives-color-bsa-ocean-200: #4c8de1;
+  --primitives-color-bsa-ocean-300: #2574da;
+  --primitives-color-bsa-ocean-400: #1050a2;
+  --primitives-color-bsa-ocean-500: #002f6c;
+  --primitives-color-bsa-ocean-600: #00285e;
+  --primitives-color-bsa-ocean-700: #002657;
+  --primitives-color-bsa-ocean-800: #001f47;
+  --primitives-color-bsa-ocean-900: #001b3d;
+  --primitives-color-bsa-ocean-950: #001838;
+  --primitives-color-bsa-ocean-opacity: rgba(0, 47, 108, 0.55);
+  --primitives-color-bsa-bight-50: #e3fafc;
+  --primitives-color-bsa-bight-100: #c1f6fa;
+  --primitives-color-bsa-bight-200: #69ebf7;
+  --primitives-color-bsa-bight-300: #09d9ec;
+  --primitives-color-bsa-bight-400: #00c9db;
+  --primitives-color-bsa-bight-500: #00adbd;
+  --primitives-color-bsa-bight-600: #00919e;
+  --primitives-color-bsa-bight-700: #007580;
+  --primitives-color-bsa-bight-800: #00545c;
+  --primitives-color-bsa-bight-900: #00383d;
+  --primitives-color-bsa-bight-950: #002529;
+  --primitives-color-bsa-bight-opacity: rgba(0, 173, 189, 0.5);
+  --primitives-color-bsa-gum-50: #eff9ec;
+  --primitives-color-bsa-gum-100: #d2edc9;
+  --primitives-color-bsa-gum-200: #b5e2a7;
+  --primitives-color-bsa-gum-300: #95d581;
+  --primitives-color-bsa-gum-400: #78ca5e;
+  --primitives-color-bsa-gum-500: #5cbb3e;
+  --primitives-color-bsa-gum-600: #4d9d34;
+  --primitives-color-bsa-gum-700: #3c7b29;
+  --primitives-color-bsa-gum-800: #2d5c1e;
+  --primitives-color-bsa-gum-900: #1e3d14;
+  --primitives-color-bsa-gum-950: #172e0f;
+  --primitives-color-bsa-gum-opacity: rgba(92, 187, 62, 0.5);
+  --primitives-color-bsa-outback-50: #fef1e1;
+  --primitives-color-bsa-outback-100: #fde0bf;
+  --primitives-color-bsa-outback-200: #fbcd98;
+  --primitives-color-bsa-outback-300: #faba70;
+  --primitives-color-bsa-outback-400: #f8a444;
+  --primitives-color-bsa-outback-500: #f7921e;
+  --primitives-color-bsa-outback-600: #d97708;
+  --primitives-color-bsa-outback-700: #ac5f06;
+  --primitives-color-bsa-outback-800: #7b4404;
+  --primitives-color-bsa-outback-900: #4a2903;
+  --primitives-color-bsa-outback-950: #311b02;
+  --primitives-color-bsa-outback-opacity: rgba(247, 146, 30, 0.5);
+  --primitives-color-bsa-grape-50: #fbeef6;
+  --primitives-color-bsa-grape-100: #f4cce3;
+  --primitives-color-bsa-grape-200: #e689bd;
+  --primitives-color-bsa-grape-300: #db529e;
+  --primitives-color-bsa-grape-400: #cf2b86;
+  --primitives-color-bsa-grape-500: #a22269;
+  --primitives-color-bsa-grape-600: #871c57;
+  --primitives-color-bsa-grape-700: #6e1747;
+  --primitives-color-bsa-grape-800: #541237;
+  --primitives-color-bsa-grape-900: #3b0c26;
+  --primitives-color-bsa-grape-950: #2e0a1e;
+  --primitives-color-bsa-grape-opacity: rgba(162, 34, 105, 0.5);
   --primitives-border-radius-none: 0;
-  --primitives-border-radius-3px: 0.1875rem;
-  --primitives-border-radius-4px: 0.25rem;
-  --primitives-border-radius-5px: 0.3125rem;
-  --primitives-border-radius-6px: 0.375rem;
-  --primitives-border-radius-8px: 0.5rem;
-  --primitives-border-radius-12px: 0.75rem;
-  --primitives-border-radius-16px: 1rem;
-  --primitives-border-radius-24px: 1.5rem;
-  --primitives-border-radius-full: 62.4375rem;
+  --primitives-border-radius-3px: 3;
+  --primitives-border-radius-4px: 4;
+  --primitives-border-radius-5px: 5;
+  --primitives-border-radius-6px: 6;
+  --primitives-border-radius-8px: 8;
+  --primitives-border-radius-12px: 12;
+  --primitives-border-radius-16px: 16;
+  --primitives-border-radius-24px: 24;
+  --primitives-border-radius-full: 999;
   --themes-westpac-color-text-body-lm: #161619;
   --themes-westpac-color-text-body-dm: #dedee1;
   --themes-westpac-color-text-heading-lm: #1f1c4f;
@@ -394,15 +572,15 @@
   --themes-westpac-color-system-900: #666600;
   --themes-westpac-color-system-950: #404000;
   --themes-westpac-border-radius-none: 0;
-  --themes-westpac-border-radius-sm: 0.1875rem;
-  --themes-westpac-border-radius-md: 0.25rem;
-  --themes-westpac-border-radius-lg: 0.3125rem;
-  --themes-westpac-border-radius-xl: 0.375rem;
-  --themes-westpac-border-radius-2xl: 0.5rem;
-  --themes-westpac-border-radius-3xl: 0.75rem;
-  --themes-westpac-border-radius-4xl: 1rem;
-  --themes-westpac-border-radius-5xl: 1.5rem;
-  --themes-westpac-border-radius-full: 62.4375rem;
+  --themes-westpac-border-radius-sm: 3;
+  --themes-westpac-border-radius-md: 4;
+  --themes-westpac-border-radius-lg: 5;
+  --themes-westpac-border-radius-xl: 6;
+  --themes-westpac-border-radius-2xl: 8;
+  --themes-westpac-border-radius-3xl: 12;
+  --themes-westpac-border-radius-4xl: 16;
+  --themes-westpac-border-radius-5xl: 24;
+  --themes-westpac-border-radius-full: 999;
   --themes-st-george-color-text-body-lm: #004833;
   --themes-st-george-color-text-body-dm: #e1e1e0;
   --themes-st-george-color-text-heading-lm: #007334;
@@ -424,8 +602,8 @@
   --themes-st-george-color-muted-600: #5e5d55;
   --themes-st-george-color-muted-700: #4c4c48;
   --themes-st-george-color-muted-800: #393937;
-  --themes-st-george-color-muted-900: #1f1f1f;
-  --themes-st-george-color-muted-950: #171717;
+  --themes-st-george-color-muted-900: #1c1c1c;
+  --themes-st-george-color-muted-950: #141414;
   --themes-st-george-color-primary-50: #fff0f0;
   --themes-st-george-color-primary-100: #ffc7c7;
   --themes-st-george-color-primary-200: #f87272;
@@ -556,91 +734,415 @@
   --themes-st-george-color-system-900: #666600;
   --themes-st-george-color-system-950: #404000;
   --themes-st-george-border-radius-none: 0;
-  --themes-st-george-border-radius-sm: 0.1875rem;
-  --themes-st-george-border-radius-md: 0.25rem;
-  --themes-st-george-border-radius-lg: 0.3125rem;
-  --themes-st-george-border-radius-xl: 0.375rem;
-  --themes-st-george-border-radius-2xl: 0.5rem;
-  --themes-st-george-border-radius-3xl: 0.75rem;
-  --themes-st-george-border-radius-4xl: 1rem;
-  --themes-st-george-border-radius-5xl: 1.5rem;
-  --themes-st-george-border-radius-full: 62.4375rem;
+  --themes-st-george-border-radius-sm: 3;
+  --themes-st-george-border-radius-md: 4;
+  --themes-st-george-border-radius-lg: 5;
+  --themes-st-george-border-radius-xl: 6;
+  --themes-st-george-border-radius-2xl: 8;
+  --themes-st-george-border-radius-3xl: 12;
+  --themes-st-george-border-radius-4xl: 16;
+  --themes-st-george-border-radius-5xl: 24;
+  --themes-st-george-border-radius-full: 999;
+  --themes-bank-of-melbourne-color-text-body-lm: #20024e;
+  --themes-bank-of-melbourne-color-text-body-dm: #dedee1;
+  --themes-bank-of-melbourne-color-text-heading-lm: #534891;
+  --themes-bank-of-melbourne-color-text-heading-dm: #a094fc;
+  --themes-bank-of-melbourne-color-text-hero-lm: #534891;
+  --themes-bank-of-melbourne-color-text-hero-dm: #a094fc;
+  --themes-bank-of-melbourne-color-surface-pictogram-base-lm: #534891;
+  --themes-bank-of-melbourne-color-surface-pictogram-base-dm: #685ac0;
+  --themes-bank-of-melbourne-color-surface-pictogram-accent-lm: #a094fc;
+  --themes-bank-of-melbourne-color-surface-pictogram-accent-dm: #b2aafd;
+  --themes-bank-of-melbourne-color-surface-muted-vivid-lm: #20024e;
+  --themes-bank-of-melbourne-color-surface-muted-vivid-dm: #fbfbfd;
+  --themes-bank-of-melbourne-color-muted-50: #fbfbfd;
+  --themes-bank-of-melbourne-color-muted-100: #f7f7f7;
+  --themes-bank-of-melbourne-color-muted-200: #dedee1;
+  --themes-bank-of-melbourne-color-muted-300: #b6b6bc;
+  --themes-bank-of-melbourne-color-muted-400: #8e8d98;
+  --themes-bank-of-melbourne-color-muted-500: #706f7c;
+  --themes-bank-of-melbourne-color-muted-600: #5b5b6a;
+  --themes-bank-of-melbourne-color-muted-700: #464651;
+  --themes-bank-of-melbourne-color-muted-800: #323238;
+  --themes-bank-of-melbourne-color-muted-900: #1c1c1f;
+  --themes-bank-of-melbourne-color-muted-950: #161619;
+  --themes-bank-of-melbourne-color-primary-50: #fff4f3;
+  --themes-bank-of-melbourne-color-primary-100: #ffcbc7;
+  --themes-bank-of-melbourne-color-primary-200: #ff7c6a;
+  --themes-bank-of-melbourne-color-primary-300: #f24300;
+  --themes-bank-of-melbourne-color-primary-400: #e43f00;
+  --themes-bank-of-melbourne-color-primary-500: #d13900;
+  --themes-bank-of-melbourne-color-primary-600: #b02f00;
+  --themes-bank-of-melbourne-color-primary-700: #8f2400;
+  --themes-bank-of-melbourne-color-primary-800: #6f1a00;
+  --themes-bank-of-melbourne-color-primary-900: #501000;
+  --themes-bank-of-melbourne-color-primary-950: #380900;
+  --themes-bank-of-melbourne-color-primary-opacity: rgba(209, 57, 0, 0.5);
+  --themes-bank-of-melbourne-color-hero-50: #f6f5ff;
+  --themes-bank-of-melbourne-color-hero-100: #dad6fe;
+  --themes-bank-of-melbourne-color-hero-200: #c6c0fd;
+  --themes-bank-of-melbourne-color-hero-300: #a094fc;
+  --themes-bank-of-melbourne-color-hero-400: #685ac0;
+  --themes-bank-of-melbourne-color-hero-500: #534891;
+  --themes-bank-of-melbourne-color-hero-600: #433781;
+  --themes-bank-of-melbourne-color-hero-700: #33286a;
+  --themes-bank-of-melbourne-color-hero-800: #261b58;
+  --themes-bank-of-melbourne-color-hero-900: #20024e;
+  --themes-bank-of-melbourne-color-hero-950: #1b0045;
+  --themes-bank-of-melbourne-color-hero-opacity: rgba(83, 72, 145, 0.5);
+  --themes-bank-of-melbourne-color-pop-50: #f6f5ff;
+  --themes-bank-of-melbourne-color-pop-100: #ebe9fe;
+  --themes-bank-of-melbourne-color-pop-200: #dad6fe;
+  --themes-bank-of-melbourne-color-pop-300: #c6c0fd;
+  --themes-bank-of-melbourne-color-pop-400: #b2aafd;
+  --themes-bank-of-melbourne-color-pop-500: #a094fc;
+  --themes-bank-of-melbourne-color-pop-600: #7d67fa;
+  --themes-bank-of-melbourne-color-pop-700: #5b31f8;
+  --themes-bank-of-melbourne-color-pop-800: #3d0dc0;
+  --themes-bank-of-melbourne-color-pop-900: #200470;
+  --themes-bank-of-melbourne-color-pop-950: #140250;
+  --themes-bank-of-melbourne-color-pop-opacity: rgba(160, 148, 252, 0.5);
+  --themes-bank-of-melbourne-color-holler-50: #eeedf8;
+  --themes-bank-of-melbourne-color-holler-100: #dfddf3;
+  --themes-bank-of-melbourne-color-holler-200: #c1bce8;
+  --themes-bank-of-melbourne-color-holler-300: #a39cdc;
+  --themes-bank-of-melbourne-color-holler-400: #8379cf;
+  --themes-bank-of-melbourne-color-holler-500: #685ac0;
+  --themes-bank-of-melbourne-color-holler-600: #5141ac;
+  --themes-bank-of-melbourne-color-holler-700: #3f3288;
+  --themes-bank-of-melbourne-color-holler-800: #2b2162;
+  --themes-bank-of-melbourne-color-holler-900: #19123e;
+  --themes-bank-of-melbourne-color-holler-950: #0e0928;
+  --themes-bank-of-melbourne-color-holler-opacity: rgba(104, 90, 192, 0.5);
+  --themes-bank-of-melbourne-color-sing-50: #fff1ea;
+  --themes-bank-of-melbourne-color-sing-100: #fee3d4;
+  --themes-bank-of-melbourne-color-sing-200: #fec6a3;
+  --themes-bank-of-melbourne-color-sing-300: #fda85f;
+  --themes-bank-of-melbourne-color-sing-400: #ed9019;
+  --themes-bank-of-melbourne-color-sing-500: #d17e15;
+  --themes-bank-of-melbourne-color-sing-600: #a5620e;
+  --themes-bank-of-melbourne-color-sing-700: #7c4908;
+  --themes-bank-of-melbourne-color-sing-800: #553004;
+  --themes-bank-of-melbourne-color-sing-900: #321a01;
+  --themes-bank-of-melbourne-color-sing-950: #210f01;
+  --themes-bank-of-melbourne-color-sing-opacity: rgba(209, 126, 21, 0.5);
+  --themes-bank-of-melbourne-color-dance-50: #ffe9e7;
+  --themes-bank-of-melbourne-color-dance-100: #ffcfcb;
+  --themes-bank-of-melbourne-color-dance-200: #ff9b90;
+  --themes-bank-of-melbourne-color-dance-300: #ff6244;
+  --themes-bank-of-melbourne-color-dance-400: #d63c00;
+  --themes-bank-of-melbourne-color-dance-500: #9e2a00;
+  --themes-bank-of-melbourne-color-dance-600: #822100;
+  --themes-bank-of-melbourne-color-dance-700: #671800;
+  --themes-bank-of-melbourne-color-dance-800: #490e00;
+  --themes-bank-of-melbourne-color-dance-900: #300700;
+  --themes-bank-of-melbourne-color-dance-950: #230400;
+  --themes-bank-of-melbourne-color-dance-opacity: rgba(158, 42, 0, 0.5);
+  --themes-bank-of-melbourne-color-mono-white: #ffffff;
+  --themes-bank-of-melbourne-color-mono-black: #000000;
+  --themes-bank-of-melbourne-color-success-50: #f2f9f2;
+  --themes-bank-of-melbourne-color-success-100: #d9ecd9;
+  --themes-bank-of-melbourne-color-success-200: #99cc99;
+  --themes-bank-of-melbourne-color-success-300: #47a447;
+  --themes-bank-of-melbourne-color-success-400: #249224;
+  --themes-bank-of-melbourne-color-success-500: #008000;
+  --themes-bank-of-melbourne-color-success-600: #006d00;
+  --themes-bank-of-melbourne-color-success-700: #005a00;
+  --themes-bank-of-melbourne-color-success-800: #004600;
+  --themes-bank-of-melbourne-color-success-900: #003300;
+  --themes-bank-of-melbourne-color-success-950: #002000;
+  --themes-bank-of-melbourne-color-info-50: #f2f8fc;
+  --themes-bank-of-melbourne-color-info-100: #d9eaf6;
+  --themes-bank-of-melbourne-color-info-200: #99c7e7;
+  --themes-bank-of-melbourne-color-info-300: #459ad4;
+  --themes-bank-of-melbourne-color-info-400: #2487cc;
+  --themes-bank-of-melbourne-color-info-500: #0074c4;
+  --themes-bank-of-melbourne-color-info-600: #0063a7;
+  --themes-bank-of-melbourne-color-info-700: #005189;
+  --themes-bank-of-melbourne-color-info-800: #00406c;
+  --themes-bank-of-melbourne-color-info-900: #002e4e;
+  --themes-bank-of-melbourne-color-info-950: #001d31;
+  --themes-bank-of-melbourne-color-warning-50: #fcf5f2;
+  --themes-bank-of-melbourne-color-warning-100: #f3d8cc;
+  --themes-bank-of-melbourne-color-warning-200: #e8b199;
+  --themes-bank-of-melbourne-color-warning-300: #d7784f;
+  --themes-bank-of-melbourne-color-warning-400: #ce5826;
+  --themes-bank-of-melbourne-color-warning-500: #c53b00;
+  --themes-bank-of-melbourne-color-warning-600: #a73200;
+  --themes-bank-of-melbourne-color-warning-700: #8a2900;
+  --themes-bank-of-melbourne-color-warning-800: #6c2000;
+  --themes-bank-of-melbourne-color-warning-900: #4f1800;
+  --themes-bank-of-melbourne-color-warning-950: #310f00;
+  --themes-bank-of-melbourne-color-danger-50: #fcf2f2;
+  --themes-bank-of-melbourne-color-danger-100: #f9e6e6;
+  --themes-bank-of-melbourne-color-danger-200: #eaa6a6;
+  --themes-bank-of-melbourne-color-danger-300: #db6363;
+  --themes-bank-of-melbourne-color-danger-400: #d03333;
+  --themes-bank-of-melbourne-color-danger-500: #c40000;
+  --themes-bank-of-melbourne-color-danger-600: #a70000;
+  --themes-bank-of-melbourne-color-danger-700: #890000;
+  --themes-bank-of-melbourne-color-danger-800: #6c0000;
+  --themes-bank-of-melbourne-color-danger-900: #4e0000;
+  --themes-bank-of-melbourne-color-danger-950: #310000;
+  --themes-bank-of-melbourne-color-system-50: #fffff2;
+  --themes-bank-of-melbourne-color-system-100: #ffffe6;
+  --themes-bank-of-melbourne-color-system-200: #ffffbf;
+  --themes-bank-of-melbourne-color-system-300: #ffff80;
+  --themes-bank-of-melbourne-color-system-400: #ffff40;
+  --themes-bank-of-melbourne-color-system-500: #ffff00;
+  --themes-bank-of-melbourne-color-system-600: #d9d900;
+  --themes-bank-of-melbourne-color-system-700: #b3b300;
+  --themes-bank-of-melbourne-color-system-800: #8c8c00;
+  --themes-bank-of-melbourne-color-system-900: #666600;
+  --themes-bank-of-melbourne-color-system-950: #404000;
+  --themes-bank-of-melbourne-border-radius-none: 0;
+  --themes-bank-of-melbourne-border-radius-sm: 3;
+  --themes-bank-of-melbourne-border-radius-md: 4;
+  --themes-bank-of-melbourne-border-radius-lg: 5;
+  --themes-bank-of-melbourne-border-radius-xl: 6;
+  --themes-bank-of-melbourne-border-radius-2xl: 8;
+  --themes-bank-of-melbourne-border-radius-3xl: 12;
+  --themes-bank-of-melbourne-border-radius-4xl: 16;
+  --themes-bank-of-melbourne-border-radius-5xl: 24;
+  --themes-bank-of-melbourne-border-radius-full: 999;
+  --themes-bank-sa-color-text-body-lm: #323238;
+  --themes-bank-sa-color-text-body-dm: #dedee1;
+  --themes-bank-sa-color-text-heading-lm: #002f6c;
+  --themes-bank-sa-color-text-heading-dm: #4c8de1;
+  --themes-bank-sa-color-text-hero-lm: #002f6c;
+  --themes-bank-sa-color-text-hero-dm: #4c8de1;
+  --themes-bank-sa-color-surface-pictogram-base-lm: #002f6c;
+  --themes-bank-sa-color-surface-pictogram-base-dm: #2574da;
+  --themes-bank-sa-color-surface-pictogram-accent-lm: #00adbd;
+  --themes-bank-sa-color-surface-pictogram-accent-dm: #09d9ec;
+  --themes-bank-sa-color-surface-muted-vivid-lm: #323238;
+  --themes-bank-sa-color-surface-muted-vivid-dm: #f9f9fa;
+  --themes-bank-sa-color-muted-50: #f9f9fa;
+  --themes-bank-sa-color-muted-100: #f5f5f6;
+  --themes-bank-sa-color-muted-200: #dedee1;
+  --themes-bank-sa-color-muted-300: #b6b6bc;
+  --themes-bank-sa-color-muted-400: #8e8d98;
+  --themes-bank-sa-color-muted-500: #706f7c;
+  --themes-bank-sa-color-muted-600: #5b5b6a;
+  --themes-bank-sa-color-muted-700: #464651;
+  --themes-bank-sa-color-muted-800: #323238;
+  --themes-bank-sa-color-muted-900: #1c1c1f;
+  --themes-bank-sa-color-muted-950: #161619;
+  --themes-bank-sa-color-primary-50: #fef0f1;
+  --themes-bank-sa-color-primary-100: #fccbcc;
+  --themes-bank-sa-color-primary-200: #f96a6f;
+  --themes-bank-sa-color-primary-300: #f9434f;
+  --themes-bank-sa-color-primary-400: #ed1f30;
+  --themes-bank-sa-color-primary-500: #d81b2b;
+  --themes-bank-sa-color-primary-600: #b61523;
+  --themes-bank-sa-color-primary-700: #98101b;
+  --themes-bank-sa-color-primary-800: #7a0a14;
+  --themes-bank-sa-color-primary-900: #56050b;
+  --themes-bank-sa-color-primary-950: #380205;
+  --themes-bank-sa-color-primary-opacity: rgba(216, 27, 43, 0.5);
+  --themes-bank-sa-color-hero-50: #e9f1fb;
+  --themes-bank-sa-color-hero-100: #b5d0f2;
+  --themes-bank-sa-color-hero-200: #4c8de1;
+  --themes-bank-sa-color-hero-300: #2574da;
+  --themes-bank-sa-color-hero-400: #1050a2;
+  --themes-bank-sa-color-hero-500: #002f6c;
+  --themes-bank-sa-color-hero-600: #00285e;
+  --themes-bank-sa-color-hero-700: #002657;
+  --themes-bank-sa-color-hero-800: #001f47;
+  --themes-bank-sa-color-hero-900: #001b3d;
+  --themes-bank-sa-color-hero-950: #001838;
+  --themes-bank-sa-color-hero-opacity: rgba(0, 47, 108, 0.55);
+  --themes-bank-sa-color-pop-50: #e3fafc;
+  --themes-bank-sa-color-pop-100: #c1f6fa;
+  --themes-bank-sa-color-pop-200: #69ebf7;
+  --themes-bank-sa-color-pop-300: #09d9ec;
+  --themes-bank-sa-color-pop-400: #00c9db;
+  --themes-bank-sa-color-pop-500: #00adbd;
+  --themes-bank-sa-color-pop-600: #00919e;
+  --themes-bank-sa-color-pop-700: #007580;
+  --themes-bank-sa-color-pop-800: #00545c;
+  --themes-bank-sa-color-pop-900: #00383d;
+  --themes-bank-sa-color-pop-950: #002529;
+  --themes-bank-sa-color-pop-opacity: rgba(0, 173, 189, 0.5);
+  --themes-bank-sa-color-holler-50: #fbeef6;
+  --themes-bank-sa-color-holler-100: #f4cce3;
+  --themes-bank-sa-color-holler-200: #e689bd;
+  --themes-bank-sa-color-holler-300: #db529e;
+  --themes-bank-sa-color-holler-400: #cf2b86;
+  --themes-bank-sa-color-holler-500: #a22269;
+  --themes-bank-sa-color-holler-600: #871c57;
+  --themes-bank-sa-color-holler-700: #6e1747;
+  --themes-bank-sa-color-holler-800: #541237;
+  --themes-bank-sa-color-holler-900: #3b0c26;
+  --themes-bank-sa-color-holler-950: #2e0a1e;
+  --themes-bank-sa-color-holler-opacity: rgba(162, 34, 105, 0.5);
+  --themes-bank-sa-color-sing-50: #eff9ec;
+  --themes-bank-sa-color-sing-100: #d2edc9;
+  --themes-bank-sa-color-sing-200: #b5e2a7;
+  --themes-bank-sa-color-sing-300: #95d581;
+  --themes-bank-sa-color-sing-400: #78ca5e;
+  --themes-bank-sa-color-sing-500: #5cbb3e;
+  --themes-bank-sa-color-sing-600: #4d9d34;
+  --themes-bank-sa-color-sing-700: #3c7b29;
+  --themes-bank-sa-color-sing-800: #2d5c1e;
+  --themes-bank-sa-color-sing-900: #1e3d14;
+  --themes-bank-sa-color-sing-950: #172e0f;
+  --themes-bank-sa-color-sing-opacity: rgba(92, 187, 62, 0.5);
+  --themes-bank-sa-color-dance-50: #fef1e1;
+  --themes-bank-sa-color-dance-100: #fde0bf;
+  --themes-bank-sa-color-dance-200: #fbcd98;
+  --themes-bank-sa-color-dance-300: #faba70;
+  --themes-bank-sa-color-dance-400: #f8a444;
+  --themes-bank-sa-color-dance-500: #f7921e;
+  --themes-bank-sa-color-dance-600: #d97708;
+  --themes-bank-sa-color-dance-700: #ac5f06;
+  --themes-bank-sa-color-dance-800: #7b4404;
+  --themes-bank-sa-color-dance-900: #4a2903;
+  --themes-bank-sa-color-dance-950: #311b02;
+  --themes-bank-sa-color-dance-opacity: rgba(247, 146, 30, 0.5);
+  --themes-bank-sa-color-mono-white: #ffffff;
+  --themes-bank-sa-color-mono-black: #000000;
+  --themes-bank-sa-color-success-50: #f2f9f2;
+  --themes-bank-sa-color-success-100: #d9ecd9;
+  --themes-bank-sa-color-success-200: #99cc99;
+  --themes-bank-sa-color-success-300: #47a447;
+  --themes-bank-sa-color-success-400: #249224;
+  --themes-bank-sa-color-success-500: #008000;
+  --themes-bank-sa-color-success-600: #006d00;
+  --themes-bank-sa-color-success-700: #005a00;
+  --themes-bank-sa-color-success-800: #004600;
+  --themes-bank-sa-color-success-900: #003300;
+  --themes-bank-sa-color-success-950: #002000;
+  --themes-bank-sa-color-info-50: #f2f8fc;
+  --themes-bank-sa-color-info-100: #d9eaf6;
+  --themes-bank-sa-color-info-200: #99c7e7;
+  --themes-bank-sa-color-info-300: #459ad4;
+  --themes-bank-sa-color-info-400: #2487cc;
+  --themes-bank-sa-color-info-500: #0074c4;
+  --themes-bank-sa-color-info-600: #0063a7;
+  --themes-bank-sa-color-info-700: #005189;
+  --themes-bank-sa-color-info-800: #00406c;
+  --themes-bank-sa-color-info-900: #002e4e;
+  --themes-bank-sa-color-info-950: #001d31;
+  --themes-bank-sa-color-warning-50: #fcf5f2;
+  --themes-bank-sa-color-warning-100: #f3d8cc;
+  --themes-bank-sa-color-warning-200: #e8b199;
+  --themes-bank-sa-color-warning-300: #d7784f;
+  --themes-bank-sa-color-warning-400: #ce5826;
+  --themes-bank-sa-color-warning-500: #c53b00;
+  --themes-bank-sa-color-warning-600: #a73200;
+  --themes-bank-sa-color-warning-700: #8a2900;
+  --themes-bank-sa-color-warning-800: #6c2000;
+  --themes-bank-sa-color-warning-900: #4f1800;
+  --themes-bank-sa-color-warning-950: #310f00;
+  --themes-bank-sa-color-danger-50: #fcf2f2;
+  --themes-bank-sa-color-danger-100: #f9e6e6;
+  --themes-bank-sa-color-danger-200: #eaa6a6;
+  --themes-bank-sa-color-danger-300: #db6363;
+  --themes-bank-sa-color-danger-400: #d03333;
+  --themes-bank-sa-color-danger-500: #c40000;
+  --themes-bank-sa-color-danger-600: #a70000;
+  --themes-bank-sa-color-danger-700: #890000;
+  --themes-bank-sa-color-danger-800: #6c0000;
+  --themes-bank-sa-color-danger-900: #4e0000;
+  --themes-bank-sa-color-danger-950: #310000;
+  --themes-bank-sa-color-system-50: #fffff2;
+  --themes-bank-sa-color-system-100: #ffffe6;
+  --themes-bank-sa-color-system-200: #ffffbf;
+  --themes-bank-sa-color-system-300: #ffff80;
+  --themes-bank-sa-color-system-400: #ffff40;
+  --themes-bank-sa-color-system-500: #ffff00;
+  --themes-bank-sa-color-system-600: #d9d900;
+  --themes-bank-sa-color-system-700: #b3b300;
+  --themes-bank-sa-color-system-800: #8c8c00;
+  --themes-bank-sa-color-system-900: #666600;
+  --themes-bank-sa-color-system-950: #404000;
+  --themes-bank-sa-border-radius-none: 0;
+  --themes-bank-sa-border-radius-sm: 3;
+  --themes-bank-sa-border-radius-md: 4;
+  --themes-bank-sa-border-radius-lg: 5;
+  --themes-bank-sa-border-radius-xl: 6;
+  --themes-bank-sa-border-radius-2xl: 8;
+  --themes-bank-sa-border-radius-3xl: 12;
+  --themes-bank-sa-border-radius-4xl: 16;
+  --themes-bank-sa-border-radius-5xl: 24;
+  --themes-bank-sa-border-radius-full: 999;
 }
 
 [data-brand="wbc"] {
-  --color-background-white-pale: var(--themes-westpac-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-pale-faint: var(--themes-westpac-color-muted-100); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-faint-pale: var(--themes-westpac-color-muted-50); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-pale: var(--themes-westpac-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-westpac-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-westpac-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-white-faint: var(--themes-westpac-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
   --color-background-white-black: var(--themes-westpac-color-mono-white); /* This token is reserved. Do not use. */
   --color-background-pale-black: var(--themes-westpac-color-muted-100); /* This token is reserved. Do not use. */
-  --color-background-primary: var(--themes-westpac-color-primary-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-background-hero: var(--themes-westpac-color-hero-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-surface-muted-vivid: var(--themes-westpac-color-surface-muted-vivid-lm); /* Use for icons that need to be text colour. */
-  --color-surface-muted: var(--themes-westpac-color-muted-500); /* Replaces current "Muted" style */
-  --color-surface-muted-strong: var(--themes-westpac-color-muted-400); /* Reserved. Please do not use */
-  --color-surface-muted-mild: var(--themes-westpac-color-muted-300); /* This token is reserved. Please do not use. */
-  --color-surface-muted-soft: var(--themes-westpac-color-muted-200); /* This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
-  --color-surface-muted-pale: var(--themes-westpac-color-muted-100); /* Replaces the current "Background" Style. */
-  --color-surface-muted-faint: var(--themes-westpac-color-muted-50); /* Replaces the current "Light" style. */
-  --color-surface-primary: var(--themes-westpac-color-primary-500);
-  --color-surface-primary-faint: var(--themes-westpac-color-primary-50); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-hero: var(--themes-westpac-color-hero-500);
-  --color-surface-hero-faint: var(--themes-westpac-color-hero-50); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-pop: var(--themes-westpac-color-pop-500); /* This colour should be used very sparingly. It is for embellishment only. */
-  --color-surface-pop-faint: var(--themes-westpac-color-pop-50); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-holler: var(--themes-westpac-color-holler-500); /* This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-surface-holler-faint: var(--themes-westpac-color-holler-50); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-sing: var(--themes-westpac-color-sing-500); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-sing-faint: var(--themes-westpac-color-sing-50); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance: var(--themes-westpac-color-dance-500); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance-faint: var(--themes-westpac-color-dance-50); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-success: var(--themes-westpac-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-success-faint: var(--themes-westpac-color-success-50); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-info: var(--themes-westpac-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-info-faint: var(--themes-westpac-color-info-50); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-warning: var(--themes-westpac-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-warning-faint: var(--themes-westpac-color-warning-50); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-danger: var(--themes-westpac-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-danger-faint: var(--themes-westpac-color-danger-50); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-system-error: var(--themes-westpac-color-system-500); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-system-error-dark: var(--themes-westpac-color-system-950); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-mono: var(--themes-westpac-color-mono-white); /* Use surface-mono when you want to switch from white to black. */
-  --color-surface-reversed: var(--themes-westpac-color-mono-white); /* Use with caution. This will be white in both Light and Dark Mode. */
-  --color-text-body: var(--themes-westpac-color-text-body-lm); /* Use for body text, button labels, form labels etc. Can also be used for headings if required. */
-  --color-text-heading: var(--themes-westpac-color-text-heading-lm); /* Use for headings to ensure that multi-brand switching remains accurate. */
-  --color-text-muted: var(--themes-westpac-color-muted-500); /* Use for text that needs less emphasis - Hint text, sub labels etc. */
-  --color-text-primary: var(--themes-westpac-color-primary-500); /* This is not currently used in the Design System. */
-  --color-text-hero: var(--themes-westpac-color-text-hero-lm); /* This is not currently used in the Design System */
-  --color-text-holler: var(--themes-westpac-color-holler-500); /* This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
-  --color-text-link: var(--themes-westpac-color-primary-500); /* Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
-  --color-text-success: var(--themes-westpac-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-text-info: var(--themes-westpac-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-text-warning: var(--themes-westpac-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-text-danger: var(--themes-westpac-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-text-system-error: var(--themes-westpac-color-system-950); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-text-mono: var(--themes-westpac-color-mono-white); /* Use text-mono when you want to switch from white to black. */
-  --color-text-reversed: var(--themes-westpac-color-mono-white); /* Use with caution. Text will be white in both light and dark modes */
-  --color-border-muted: var(--themes-westpac-color-muted-500); /* This border colour is not currently used in the Design System. */
-  --color-border-muted-strong: var(--themes-westpac-color-muted-400); /* This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
-  --color-border-muted-mild: var(--themes-westpac-color-muted-300); /* This token is reserved. Consult GEL team before use. This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
-  --color-border-muted-soft: var(--themes-westpac-color-muted-200); /* This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
-  --color-border-hero: var(--themes-westpac-color-hero-500); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-primary: var(--themes-westpac-color-primary-500); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-pop: var(--themes-westpac-color-pop-500); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-holler: var(--themes-westpac-color-holler-500); /* This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-border-sing: var(--themes-westpac-color-sing-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-dance: var(--themes-westpac-color-dance-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-success: var(--themes-westpac-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-success-mild: var(--themes-westpac-color-success-300); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-info: var(--themes-westpac-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-info-mild: var(--themes-westpac-color-info-300); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-warning: var(--themes-westpac-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-warning-mild: var(--themes-westpac-color-warning-300); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-danger: var(--themes-westpac-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-danger-mild: var(--themes-westpac-color-danger-300); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-mono: var(--themes-westpac-color-mono-white); /* This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
-  --color-border-focus: var(--themes-westpac-color-holler-300); /* This is a reserved colour. It must only be used for the focus state keyboard navigation. */
+  --color-background-primary: var(--themes-westpac-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-westpac-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-westpac-color-surface-muted-vivid-lm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-westpac-color-muted-500); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-westpac-color-muted-400); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-westpac-color-muted-300); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-westpac-color-muted-200); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-westpac-color-muted-100); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-westpac-color-muted-50); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-westpac-color-primary-500); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-westpac-color-primary-50); /* Reserved do not use */
+  --color-surface-hero: var(--themes-westpac-color-hero-500); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-westpac-color-hero-50); /* Reserved do not use */
+  --color-surface-pop: var(--themes-westpac-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-westpac-color-pop-50); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-westpac-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-westpac-color-holler-50); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-westpac-color-sing-500); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-westpac-color-sing-50); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-westpac-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-westpac-color-dance-50); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-westpac-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-westpac-color-success-50); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-westpac-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-westpac-color-info-50); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-westpac-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-westpac-color-warning-50); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-westpac-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-westpac-color-danger-50); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-westpac-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-westpac-color-system-950); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-westpac-color-mono-white); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-westpac-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-westpac-color-text-body-lm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-westpac-color-text-heading-lm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-westpac-color-muted-500); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-westpac-color-primary-500); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-westpac-color-text-hero-lm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-westpac-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-westpac-color-primary-500); /* Replaces current style: Link */
+  --color-text-success: var(--themes-westpac-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-westpac-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-westpac-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-westpac-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-westpac-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-westpac-color-mono-white); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-westpac-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-westpac-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-westpac-color-muted-400); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-westpac-color-muted-300); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-westpac-color-muted-200); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-westpac-color-hero-500); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-westpac-color-primary-500); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-westpac-color-pop-500); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-westpac-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-westpac-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-westpac-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-westpac-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-westpac-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-westpac-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-westpac-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-westpac-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-westpac-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-westpac-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-westpac-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-westpac-color-mono-white); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-westpac-color-holler-300); /* Reserved. Only for use with focus state keyboard navigation. */
   --color-data-a-solid: var(--themes-westpac-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-tint: var(--themes-westpac-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-opacity: var(--themes-westpac-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
@@ -659,8 +1161,8 @@
   --color-data-f-solid: var(--themes-westpac-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-tint: var(--themes-westpac-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-opacity: var(--themes-westpac-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-surface-pictogram-base: var(--themes-westpac-color-surface-pictogram-base-lm); /* This is a reserved component colour token. It must only be used for Pictograms. */
-  --color-surface-pictogram-accent: var(--themes-westpac-color-surface-pictogram-accent-lm); /* This is a reserved component colour token. It must only be used for Pictograms. */
+  --color-surface-pictogram-base: var(--themes-westpac-color-surface-pictogram-base-lm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-westpac-color-surface-pictogram-accent-lm); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--themes-westpac-color-primary-400); /* This token is for hover states. */
   --color-surface-active-primary: var(--themes-westpac-color-primary-200);
   --color-surface-hover-hero: var(--themes-westpac-color-hero-400); /* This token is for hover states. */
@@ -686,79 +1188,79 @@
 }
 
 [data-brand="stg"] {
-  --color-background-white-pale: var(--themes-st-george-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-pale-faint: var(--themes-st-george-color-muted-100); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-faint-pale: var(--themes-st-george-color-muted-50); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-pale: var(--themes-st-george-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-st-george-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-st-george-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-white-faint: var(--themes-st-george-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
   --color-background-white-black: var(--themes-st-george-color-mono-white); /* This token is reserved. Do not use. */
   --color-background-pale-black: var(--themes-st-george-color-muted-100); /* This token is reserved. Do not use. */
-  --color-background-primary: var(--themes-st-george-color-primary-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-background-hero: var(--themes-st-george-color-hero-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-surface-muted-vivid: var(--themes-st-george-color-surface-muted-vivid-lm); /* Use for icons that need to be text colour. */
-  --color-surface-muted: var(--themes-st-george-color-muted-500); /* Replaces current "Muted" style */
-  --color-surface-muted-strong: var(--themes-st-george-color-muted-400); /* Reserved. Please do not use */
-  --color-surface-muted-mild: var(--themes-st-george-color-muted-300); /* This token is reserved. Please do not use. */
-  --color-surface-muted-soft: var(--themes-st-george-color-muted-200); /* This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
-  --color-surface-muted-pale: var(--themes-st-george-color-muted-100); /* Replaces the current "Background" Style. */
-  --color-surface-muted-faint: var(--themes-st-george-color-muted-50); /* Replaces the current "Light" style. */
-  --color-surface-primary: var(--themes-st-george-color-primary-500);
-  --color-surface-primary-faint: var(--themes-st-george-color-primary-50); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-hero: var(--themes-st-george-color-hero-500);
-  --color-surface-hero-faint: var(--themes-st-george-color-hero-50); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-pop: var(--themes-st-george-color-pop-500); /* This colour should be used very sparingly. It is for embellishment only. */
-  --color-surface-pop-faint: var(--themes-st-george-color-pop-50); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-holler: var(--themes-st-george-color-holler-500); /* This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-surface-holler-faint: var(--themes-st-george-color-holler-50); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-sing: var(--themes-st-george-color-sing-500); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-sing-faint: var(--themes-st-george-color-sing-50); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance: var(--themes-st-george-color-dance-500); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance-faint: var(--themes-st-george-color-dance-50); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-success: var(--themes-st-george-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-success-faint: var(--themes-st-george-color-success-50); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-info: var(--themes-st-george-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-info-faint: var(--themes-st-george-color-info-50); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-warning: var(--themes-st-george-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-warning-faint: var(--themes-st-george-color-warning-50); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-danger: var(--themes-st-george-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-danger-faint: var(--themes-st-george-color-danger-50); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-system-error: var(--themes-st-george-color-system-500); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-system-error-dark: var(--themes-st-george-color-system-950); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-mono: var(--themes-st-george-color-mono-white); /* Use surface-mono when you want to switch from white to black. */
-  --color-surface-reversed: var(--themes-st-george-color-mono-white); /* Use with caution. This will be white in both Light and Dark Mode. */
-  --color-text-body: var(--themes-st-george-color-text-body-lm); /* Use for body text, button labels, form labels etc. Can also be used for headings if required. */
-  --color-text-heading: var(--themes-st-george-color-text-heading-lm); /* Use for headings to ensure that multi-brand switching remains accurate. */
-  --color-text-muted: var(--themes-st-george-color-muted-500); /* Use for text that needs less emphasis - Hint text, sub labels etc. */
-  --color-text-primary: var(--themes-st-george-color-primary-500); /* This is not currently used in the Design System. */
-  --color-text-hero: var(--themes-st-george-color-text-hero-lm); /* This is not currently used in the Design System */
-  --color-text-holler: var(--themes-st-george-color-holler-500); /* This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
-  --color-text-link: var(--themes-st-george-color-primary-500); /* Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
-  --color-text-success: var(--themes-st-george-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-text-info: var(--themes-st-george-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-text-warning: var(--themes-st-george-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-text-danger: var(--themes-st-george-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-text-system-error: var(--themes-st-george-color-system-950); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-text-mono: var(--themes-st-george-color-mono-white); /* Use text-mono when you want to switch from white to black. */
-  --color-text-reversed: var(--themes-st-george-color-mono-white); /* Use with caution. Text will be white in both light and dark modes */
-  --color-border-muted: var(--themes-st-george-color-muted-500); /* This border colour is not currently used in the Design System. */
-  --color-border-muted-strong: var(--themes-st-george-color-muted-400); /* This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
-  --color-border-muted-mild: var(--themes-st-george-color-muted-300); /* This token is reserved. Consult GEL team before use. This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
-  --color-border-muted-soft: var(--themes-st-george-color-muted-200); /* This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
-  --color-border-hero: var(--themes-st-george-color-hero-500); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-primary: var(--themes-st-george-color-primary-500); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-pop: var(--themes-st-george-color-pop-500); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-holler: var(--themes-st-george-color-holler-500); /* This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-border-sing: var(--themes-st-george-color-sing-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-dance: var(--themes-st-george-color-dance-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-success: var(--themes-st-george-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-success-mild: var(--themes-st-george-color-success-300); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-info: var(--themes-st-george-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-info-mild: var(--themes-st-george-color-info-300); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-warning: var(--themes-st-george-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-warning-mild: var(--themes-st-george-color-warning-300); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-danger: var(--themes-st-george-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-danger-mild: var(--themes-st-george-color-danger-300); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-mono: var(--themes-st-george-color-mono-white); /* This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
-  --color-border-focus: var(--themes-st-george-color-holler-300); /* This is a reserved colour. It must only be used for the focus state keyboard navigation. */
+  --color-background-primary: var(--themes-st-george-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-st-george-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-st-george-color-surface-muted-vivid-lm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-st-george-color-muted-500); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-st-george-color-muted-400); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-st-george-color-muted-300); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-st-george-color-muted-200); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-st-george-color-muted-100); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-st-george-color-muted-50); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-st-george-color-primary-500); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-st-george-color-primary-50); /* Reserved do not use */
+  --color-surface-hero: var(--themes-st-george-color-hero-500); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-st-george-color-hero-50); /* Reserved do not use */
+  --color-surface-pop: var(--themes-st-george-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-st-george-color-pop-50); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-st-george-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-st-george-color-holler-50); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-st-george-color-sing-500); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-st-george-color-sing-50); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-st-george-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-st-george-color-dance-50); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-st-george-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-st-george-color-success-50); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-st-george-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-st-george-color-info-50); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-st-george-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-st-george-color-warning-50); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-st-george-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-st-george-color-danger-50); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-st-george-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-st-george-color-system-950); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-st-george-color-mono-white); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-st-george-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-st-george-color-text-body-lm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-st-george-color-text-heading-lm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-st-george-color-muted-500); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-st-george-color-primary-500); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-st-george-color-text-hero-lm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-st-george-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-st-george-color-primary-500); /* Replaces current style: Link */
+  --color-text-success: var(--themes-st-george-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-st-george-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-st-george-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-st-george-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-st-george-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-st-george-color-mono-white); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-st-george-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-st-george-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-st-george-color-muted-400); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-st-george-color-muted-300); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-st-george-color-muted-200); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-st-george-color-hero-500); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-st-george-color-primary-500); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-st-george-color-pop-500); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-st-george-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-st-george-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-st-george-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-st-george-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-st-george-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-st-george-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-st-george-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-st-george-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-st-george-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-st-george-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-st-george-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-st-george-color-mono-white); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-st-george-color-holler-300); /* Reserved. Only for use with focus state keyboard navigation. */
   --color-data-a-solid: var(--themes-st-george-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-tint: var(--themes-st-george-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-opacity: var(--themes-st-george-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
@@ -777,8 +1279,8 @@
   --color-data-f-solid: var(--themes-st-george-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-tint: var(--themes-st-george-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-opacity: var(--themes-st-george-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-surface-pictogram-base: var(--themes-st-george-color-surface-pictogram-base-lm); /* This is a reserved component colour token. It must only be used for Pictograms. */
-  --color-surface-pictogram-accent: var(--themes-st-george-color-surface-pictogram-accent-lm); /* This is a reserved component colour token. It must only be used for Pictograms. */
+  --color-surface-pictogram-base: var(--themes-st-george-color-surface-pictogram-base-lm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-st-george-color-surface-pictogram-accent-lm); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--themes-st-george-color-primary-400); /* This token is for hover states. */
   --color-surface-active-primary: var(--themes-st-george-color-primary-200);
   --color-surface-hover-hero: var(--themes-st-george-color-hero-400); /* This token is for hover states. */
@@ -803,80 +1305,316 @@
   --border-rounded-full: var(--themes-st-george-border-radius-full);
 }
 
+[data-brand="bom"] {
+  --color-background-white-pale: var(--themes-bank-of-melbourne-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-bank-of-melbourne-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-bank-of-melbourne-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
+  --color-background-white-faint: var(--themes-bank-of-melbourne-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-black: var(--themes-bank-of-melbourne-color-mono-white); /* This token is reserved. Do not use. */
+  --color-background-pale-black: var(--themes-bank-of-melbourne-color-muted-100); /* This token is reserved. Do not use. */
+  --color-background-primary: var(--themes-bank-of-melbourne-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-bank-of-melbourne-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-bank-of-melbourne-color-surface-muted-vivid-lm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-bank-of-melbourne-color-muted-500); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-bank-of-melbourne-color-muted-400); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-bank-of-melbourne-color-muted-300); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-bank-of-melbourne-color-muted-200); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-bank-of-melbourne-color-muted-100); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-bank-of-melbourne-color-muted-50); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-bank-of-melbourne-color-primary-500); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-bank-of-melbourne-color-primary-50); /* Reserved do not use */
+  --color-surface-hero: var(--themes-bank-of-melbourne-color-hero-500); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-bank-of-melbourne-color-hero-50); /* Reserved do not use */
+  --color-surface-pop: var(--themes-bank-of-melbourne-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-bank-of-melbourne-color-pop-50); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-bank-of-melbourne-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-bank-of-melbourne-color-holler-50); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-bank-of-melbourne-color-sing-500); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-bank-of-melbourne-color-sing-50); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-bank-of-melbourne-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-bank-of-melbourne-color-dance-50); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-bank-of-melbourne-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-bank-of-melbourne-color-success-50); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-bank-of-melbourne-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-bank-of-melbourne-color-info-50); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-bank-of-melbourne-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-bank-of-melbourne-color-warning-50); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-bank-of-melbourne-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-bank-of-melbourne-color-danger-50); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-bank-of-melbourne-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-bank-of-melbourne-color-system-950); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-bank-of-melbourne-color-mono-white); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-bank-of-melbourne-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-bank-of-melbourne-color-text-body-lm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-bank-of-melbourne-color-text-heading-lm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-bank-of-melbourne-color-muted-500); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-bank-of-melbourne-color-primary-500); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-bank-of-melbourne-color-text-hero-lm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-bank-of-melbourne-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-bank-of-melbourne-color-primary-500); /* Replaces current style: Link */
+  --color-text-success: var(--themes-bank-of-melbourne-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-bank-of-melbourne-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-bank-of-melbourne-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-bank-of-melbourne-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-bank-of-melbourne-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-bank-of-melbourne-color-mono-white); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-bank-of-melbourne-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-bank-of-melbourne-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-bank-of-melbourne-color-muted-400); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-bank-of-melbourne-color-muted-300); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-bank-of-melbourne-color-muted-200); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-bank-of-melbourne-color-hero-500); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-bank-of-melbourne-color-primary-500); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-bank-of-melbourne-color-pop-500); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-bank-of-melbourne-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-bank-of-melbourne-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-bank-of-melbourne-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-bank-of-melbourne-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-bank-of-melbourne-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-bank-of-melbourne-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-bank-of-melbourne-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-bank-of-melbourne-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-bank-of-melbourne-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-bank-of-melbourne-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-bank-of-melbourne-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-bank-of-melbourne-color-mono-white); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-bank-of-melbourne-color-holler-300); /* Reserved. Only for use with focus state keyboard navigation. */
+  --color-data-a-solid: var(--themes-bank-of-melbourne-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-tint: var(--themes-bank-of-melbourne-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-opacity: var(--themes-bank-of-melbourne-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-solid: var(--themes-bank-of-melbourne-color-hero-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-tint: var(--themes-bank-of-melbourne-color-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-opacity: var(--themes-bank-of-melbourne-color-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-solid: var(--themes-bank-of-melbourne-color-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-tint: var(--themes-bank-of-melbourne-color-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-opacity: var(--themes-bank-of-melbourne-color-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-solid: var(--themes-bank-of-melbourne-color-holler-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-tint: var(--themes-bank-of-melbourne-color-holler-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-opacity: var(--themes-bank-of-melbourne-color-holler-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-solid: var(--themes-bank-of-melbourne-color-sing-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-tint: var(--themes-bank-of-melbourne-color-sing-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-opacity: var(--themes-bank-of-melbourne-color-sing-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-solid: var(--themes-bank-of-melbourne-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-tint: var(--themes-bank-of-melbourne-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-opacity: var(--themes-bank-of-melbourne-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-surface-pictogram-base: var(--themes-bank-of-melbourne-color-surface-pictogram-base-lm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-bank-of-melbourne-color-surface-pictogram-accent-lm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-hover-primary: var(--themes-bank-of-melbourne-color-primary-400); /* This token is for hover states. */
+  --color-surface-active-primary: var(--themes-bank-of-melbourne-color-primary-200);
+  --color-surface-hover-hero: var(--themes-bank-of-melbourne-color-hero-400); /* This token is for hover states. */
+  --color-surface-active-hero: var(--themes-bank-of-melbourne-color-hero-300); /* This token is for hover states. */
+  --color-surface-hover-primary-faint: var(--themes-bank-of-melbourne-color-primary-50); /* This token is for hover states. */
+  --color-surface-active-primary-faint: var(--themes-bank-of-melbourne-color-primary-100); /* This token is for hover states. */
+  --color-surface-hover-hero-faint: var(--themes-bank-of-melbourne-color-hero-50);
+  --color-surface-active-hero-faint: var(--themes-bank-of-melbourne-color-hero-100);
+  --color-surface-hover-muted-pale: var(--themes-bank-of-melbourne-color-muted-100); /* This token is for hover states. */
+  --color-surface-active-muted-pale: var(--themes-bank-of-melbourne-color-muted-300); /* This token is for hover states. */
+  --color-surface-hover-mono: var(--themes-bank-of-melbourne-color-mono-white); /* This token is for hover states. */
+  --color-surface-active-mono: var(--themes-bank-of-melbourne-color-muted-200); /* This token is for hover states. */
+  --border-rounded-none: var(--themes-bank-of-melbourne-border-radius-none);
+  --border-rounded-sm: var(--themes-bank-of-melbourne-border-radius-sm);
+  --border-rounded-md: var(--themes-bank-of-melbourne-border-radius-md);
+  --border-rounded-lg: var(--themes-bank-of-melbourne-border-radius-lg);
+  --border-rounded-xl: var(--themes-bank-of-melbourne-border-radius-xl);
+  --border-rounded-2xl: var(--themes-bank-of-melbourne-border-radius-2xl);
+  --border-rounded-3xl: var(--themes-bank-of-melbourne-border-radius-3xl);
+  --border-rounded-4xl: var(--themes-bank-of-melbourne-border-radius-4xl);
+  --border-rounded-5xl: var(--themes-bank-of-melbourne-border-radius-5xl);
+  --border-rounded-full: var(--themes-bank-of-melbourne-border-radius-full);
+}
+
+[data-brand="bsa"] {
+  --color-background-white-pale: var(--themes-bank-sa-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-bank-sa-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-bank-sa-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
+  --color-background-white-faint: var(--themes-bank-sa-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-black: var(--themes-bank-sa-color-mono-white); /* This token is reserved. Do not use. */
+  --color-background-pale-black: var(--themes-bank-sa-color-muted-100); /* This token is reserved. Do not use. */
+  --color-background-primary: var(--themes-bank-sa-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-bank-sa-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-bank-sa-color-surface-muted-vivid-lm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-bank-sa-color-muted-500); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-bank-sa-color-muted-400); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-bank-sa-color-muted-300); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-bank-sa-color-muted-200); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-bank-sa-color-muted-100); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-bank-sa-color-muted-50); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-bank-sa-color-primary-500); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-bank-sa-color-primary-50); /* Reserved do not use */
+  --color-surface-hero: var(--themes-bank-sa-color-hero-500); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-bank-sa-color-hero-50); /* Reserved do not use */
+  --color-surface-pop: var(--themes-bank-sa-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-bank-sa-color-pop-50); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-bank-sa-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-bank-sa-color-holler-50); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-bank-sa-color-sing-500); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-bank-sa-color-sing-50); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-bank-sa-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-bank-sa-color-dance-50); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-bank-sa-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-bank-sa-color-success-50); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-bank-sa-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-bank-sa-color-info-50); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-bank-sa-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-bank-sa-color-warning-50); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-bank-sa-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-bank-sa-color-danger-50); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-bank-sa-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-bank-sa-color-system-950); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-bank-sa-color-mono-white); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-bank-sa-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-bank-sa-color-text-body-lm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-bank-sa-color-text-heading-lm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-bank-sa-color-muted-500); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-bank-sa-color-primary-500); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-bank-sa-color-text-hero-lm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-bank-sa-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-bank-sa-color-primary-500); /* Replaces current style: Link */
+  --color-text-success: var(--themes-bank-sa-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-bank-sa-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-bank-sa-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-bank-sa-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-bank-sa-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-bank-sa-color-mono-white); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-bank-sa-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-bank-sa-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-bank-sa-color-muted-400); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-bank-sa-color-muted-300); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-bank-sa-color-muted-200); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-bank-sa-color-hero-500); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-bank-sa-color-primary-500); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-bank-sa-color-pop-500); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-bank-sa-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-bank-sa-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-bank-sa-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-bank-sa-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-bank-sa-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-bank-sa-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-bank-sa-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-bank-sa-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-bank-sa-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-bank-sa-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-bank-sa-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-bank-sa-color-mono-white); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-bank-sa-color-holler-300); /* Reserved. Only for use with focus state keyboard navigation. */
+  --color-data-a-solid: var(--themes-bank-sa-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-tint: var(--themes-bank-sa-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-opacity: var(--themes-bank-sa-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-solid: var(--themes-bank-sa-color-hero-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-tint: var(--themes-bank-sa-color-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-opacity: var(--themes-bank-sa-color-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-solid: var(--themes-bank-sa-color-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-tint: var(--themes-bank-sa-color-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-opacity: var(--themes-bank-sa-color-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-solid: var(--themes-bank-sa-color-holler-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-tint: var(--themes-bank-sa-color-holler-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-opacity: var(--themes-bank-sa-color-holler-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-solid: var(--themes-bank-sa-color-sing-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-tint: var(--themes-bank-sa-color-sing-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-opacity: var(--themes-bank-sa-color-sing-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-solid: var(--themes-bank-sa-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-tint: var(--themes-bank-sa-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-opacity: var(--themes-bank-sa-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-surface-pictogram-base: var(--themes-bank-sa-color-surface-pictogram-base-lm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-bank-sa-color-surface-pictogram-accent-lm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-hover-primary: var(--themes-bank-sa-color-primary-400); /* This token is for hover states. */
+  --color-surface-active-primary: var(--themes-bank-sa-color-primary-200);
+  --color-surface-hover-hero: var(--themes-bank-sa-color-hero-400); /* This token is for hover states. */
+  --color-surface-active-hero: var(--themes-bank-sa-color-hero-300); /* This token is for hover states. */
+  --color-surface-hover-primary-faint: var(--themes-bank-sa-color-primary-50); /* This token is for hover states. */
+  --color-surface-active-primary-faint: var(--themes-bank-sa-color-primary-100); /* This token is for hover states. */
+  --color-surface-hover-hero-faint: var(--themes-bank-sa-color-hero-50);
+  --color-surface-active-hero-faint: var(--themes-bank-sa-color-hero-100);
+  --color-surface-hover-muted-pale: var(--themes-bank-sa-color-muted-100); /* This token is for hover states. */
+  --color-surface-active-muted-pale: var(--themes-bank-sa-color-muted-300); /* This token is for hover states. */
+  --color-surface-hover-mono: var(--themes-bank-sa-color-mono-white); /* This token is for hover states. */
+  --color-surface-active-mono: var(--themes-bank-sa-color-muted-200); /* This token is for hover states. */
+  --border-rounded-none: var(--themes-bank-sa-border-radius-none);
+  --border-rounded-sm: var(--themes-bank-sa-border-radius-sm);
+  --border-rounded-md: var(--themes-bank-sa-border-radius-md);
+  --border-rounded-lg: var(--themes-bank-sa-border-radius-lg);
+  --border-rounded-xl: var(--themes-bank-sa-border-radius-xl);
+  --border-rounded-2xl: var(--themes-bank-sa-border-radius-2xl);
+  --border-rounded-3xl: var(--themes-bank-sa-border-radius-3xl);
+  --border-rounded-4xl: var(--themes-bank-sa-border-radius-4xl);
+  --border-rounded-5xl: var(--themes-bank-sa-border-radius-5xl);
+  --border-rounded-full: var(--themes-bank-sa-border-radius-full);
+}
+
 [data-brand="wbc"][data-theme="dark"] {
-  --color-background-white-pale: var(--themes-westpac-color-muted-900); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-pale-faint: var(--themes-westpac-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-faint-pale: var(--themes-westpac-color-muted-900); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-pale: var(--themes-westpac-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-westpac-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-westpac-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-white-faint: var(--themes-westpac-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
   --color-background-white-black: var(--themes-westpac-color-mono-black); /* This token is reserved. Do not use. */
   --color-background-pale-black: var(--themes-westpac-color-mono-black); /* This token is reserved. Do not use. */
-  --color-background-primary: var(--themes-westpac-color-primary-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-background-hero: var(--themes-westpac-color-hero-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-surface-muted-vivid: var(--themes-westpac-color-surface-muted-vivid-dm); /* Use for icons that need to be text colour. */
-  --color-surface-muted: var(--themes-westpac-color-muted-400); /* Replaces current "Muted" style */
-  --color-surface-muted-strong: var(--themes-westpac-color-muted-600); /* Reserved. Please do not use */
-  --color-surface-muted-mild: var(--themes-westpac-color-muted-700); /* This token is reserved. Please do not use. */
-  --color-surface-muted-soft: var(--themes-westpac-color-muted-800); /* This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
-  --color-surface-muted-pale: var(--themes-westpac-color-muted-900); /* Replaces the current "Background" Style. */
-  --color-surface-muted-faint: var(--themes-westpac-color-muted-950); /* Replaces the current "Light" style. */
-  --color-surface-primary: var(--themes-westpac-color-primary-400);
-  --color-surface-primary-faint: var(--themes-westpac-color-primary-950); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-hero: var(--themes-westpac-color-hero-300);
-  --color-surface-hero-faint: var(--themes-westpac-color-hero-950); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-pop: var(--themes-westpac-color-pop-500); /* This colour should be used very sparingly. It is for embellishment only. */
-  --color-surface-pop-faint: var(--themes-westpac-color-pop-950); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-holler: var(--themes-westpac-color-holler-400); /* This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-surface-holler-faint: var(--themes-westpac-color-holler-950); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-sing: var(--themes-westpac-color-sing-900); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-sing-faint: var(--themes-westpac-color-sing-950); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance: var(--themes-westpac-color-dance-500); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance-faint: var(--themes-westpac-color-dance-900); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-success: var(--themes-westpac-color-success-400); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-success-faint: var(--themes-westpac-color-success-900); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-info: var(--themes-westpac-color-info-400); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-info-faint: var(--themes-westpac-color-info-900); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-warning: var(--themes-westpac-color-warning-400); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-warning-faint: var(--themes-westpac-color-warning-900); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-danger: var(--themes-westpac-color-danger-300); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-danger-faint: var(--themes-westpac-color-danger-900); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-system-error: var(--themes-westpac-color-system-950); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-system-error-dark: var(--themes-westpac-color-system-500); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-mono: var(--themes-westpac-color-mono-black); /* Use surface-mono when you want to switch from white to black. */
-  --color-surface-reversed: var(--themes-westpac-color-mono-white); /* Use with caution. This will be white in both Light and Dark Mode. */
-  --color-text-body: var(--themes-westpac-color-text-body-dm); /* Use for body text, button labels, form labels etc. Can also be used for headings if required. */
-  --color-text-heading: var(--themes-westpac-color-text-heading-dm); /* Use for headings to ensure that multi-brand switching remains accurate. */
-  --color-text-muted: var(--themes-westpac-color-muted-400); /* Use for text that needs less emphasis - Hint text, sub labels etc. */
-  --color-text-primary: var(--themes-westpac-color-primary-300); /* This is not currently used in the Design System. */
-  --color-text-hero: var(--themes-westpac-color-text-hero-dm); /* This is not currently used in the Design System */
-  --color-text-holler: var(--themes-westpac-color-holler-300); /* This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
-  --color-text-link: var(--themes-westpac-color-primary-300); /* Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
-  --color-text-success: var(--themes-westpac-color-success-300); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-text-info: var(--themes-westpac-color-info-300); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-text-warning: var(--themes-westpac-color-warning-300); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-text-danger: var(--themes-westpac-color-danger-300); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-text-system-error: var(--themes-westpac-color-system-500); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-text-mono: var(--themes-westpac-color-mono-black); /* Use text-mono when you want to switch from white to black. */
-  --color-text-reversed: var(--themes-westpac-color-mono-white); /* Use with caution. Text will be white in both light and dark modes */
-  --color-border-muted: var(--themes-westpac-color-muted-500); /* This border colour is not currently used in the Design System. */
-  --color-border-muted-strong: var(--themes-westpac-color-muted-500); /* This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
-  --color-border-muted-mild: var(--themes-westpac-color-muted-700); /* This token is reserved. Consult GEL team before use. This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
-  --color-border-muted-soft: var(--themes-westpac-color-muted-800); /* This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
-  --color-border-hero: var(--themes-westpac-color-hero-300); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-primary: var(--themes-westpac-color-primary-400); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-pop: var(--themes-westpac-color-pop-800); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-holler: var(--themes-westpac-color-holler-400); /* This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-border-sing: var(--themes-westpac-color-sing-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-dance: var(--themes-westpac-color-dance-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-success: var(--themes-westpac-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-success-mild: var(--themes-westpac-color-success-700); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-info: var(--themes-westpac-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-info-mild: var(--themes-westpac-color-info-700); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-warning: var(--themes-westpac-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-warning-mild: var(--themes-westpac-color-warning-700); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-danger: var(--themes-westpac-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-danger-mild: var(--themes-westpac-color-danger-700); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-mono: var(--themes-westpac-color-mono-black); /* This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
-  --color-border-focus: var(--themes-westpac-color-holler-400); /* This is a reserved colour. It must only be used for the focus state keyboard navigation. */
+  --color-background-primary: var(--themes-westpac-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-westpac-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-westpac-color-surface-muted-vivid-dm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-westpac-color-muted-400); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-westpac-color-muted-600); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-westpac-color-muted-700); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-westpac-color-muted-800); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-westpac-color-muted-900); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-westpac-color-muted-950); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-westpac-color-primary-400); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-westpac-color-primary-950); /* Reserved do not use */
+  --color-surface-hero: var(--themes-westpac-color-hero-300); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-westpac-color-hero-950); /* Reserved do not use */
+  --color-surface-pop: var(--themes-westpac-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-westpac-color-pop-950); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-westpac-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-westpac-color-holler-950); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-westpac-color-sing-900); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-westpac-color-sing-950); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-westpac-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-westpac-color-dance-900); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-westpac-color-success-400); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-westpac-color-success-900); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-westpac-color-info-400); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-westpac-color-info-900); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-westpac-color-warning-400); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-westpac-color-warning-900); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-westpac-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-westpac-color-danger-900); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-westpac-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-westpac-color-system-500); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-westpac-color-mono-black); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-westpac-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-westpac-color-text-body-dm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-westpac-color-text-heading-dm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-westpac-color-muted-400); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-westpac-color-primary-300); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-westpac-color-text-hero-dm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-westpac-color-holler-300); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-westpac-color-primary-300); /* Replaces current style: Link */
+  --color-text-success: var(--themes-westpac-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-westpac-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-westpac-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-westpac-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-westpac-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-westpac-color-mono-black); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-westpac-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-westpac-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-westpac-color-muted-500); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-westpac-color-muted-700); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-westpac-color-muted-800); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-westpac-color-hero-300); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-westpac-color-primary-400); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-westpac-color-pop-800); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-westpac-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-westpac-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-westpac-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-westpac-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-westpac-color-success-700); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-westpac-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-westpac-color-info-700); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-westpac-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-westpac-color-warning-700); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-westpac-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-westpac-color-danger-700); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-westpac-color-mono-black); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-westpac-color-holler-400); /* Reserved. Only for use with focus state keyboard navigation. */
   --color-data-a-solid: var(--themes-westpac-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-tint: var(--themes-westpac-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-opacity: var(--themes-westpac-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
@@ -895,8 +1633,8 @@
   --color-data-f-solid: var(--themes-westpac-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-tint: var(--themes-westpac-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-opacity: var(--themes-westpac-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-surface-pictogram-base: var(--themes-westpac-color-surface-pictogram-base-dm); /* This is a reserved component colour token. It must only be used for Pictograms. */
-  --color-surface-pictogram-accent: var(--themes-westpac-color-surface-pictogram-accent-dm); /* This is a reserved component colour token. It must only be used for Pictograms. */
+  --color-surface-pictogram-base: var(--themes-westpac-color-surface-pictogram-base-dm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-westpac-color-surface-pictogram-accent-dm); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--themes-westpac-color-primary-200); /* This token is for hover states. */
   --color-surface-active-primary: var(--themes-westpac-color-primary-100);
   --color-surface-hover-hero: var(--themes-westpac-color-hero-200); /* This token is for hover states. */
@@ -922,79 +1660,79 @@
 }
 
 [data-brand="stg"][data-theme="dark"] {
-  --color-background-white-pale: var(--themes-st-george-color-muted-900); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-pale-faint: var(--themes-st-george-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-faint-pale: var(--themes-st-george-color-muted-900); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-pale: var(--themes-st-george-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-st-george-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-st-george-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-white-faint: var(--themes-st-george-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
   --color-background-white-black: var(--themes-st-george-color-mono-black); /* This token is reserved. Do not use. */
   --color-background-pale-black: var(--themes-st-george-color-mono-black); /* This token is reserved. Do not use. */
-  --color-background-primary: var(--themes-st-george-color-primary-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-background-hero: var(--themes-st-george-color-hero-500); /* Use for screen backgrounds and embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-surface-muted-vivid: var(--themes-st-george-color-surface-muted-vivid-dm); /* Use for icons that need to be text colour. */
-  --color-surface-muted: var(--themes-st-george-color-muted-400); /* Replaces current "Muted" style */
-  --color-surface-muted-strong: var(--themes-st-george-color-muted-600); /* Reserved. Please do not use */
-  --color-surface-muted-mild: var(--themes-st-george-color-muted-700); /* This token is reserved. Please do not use. */
-  --color-surface-muted-soft: var(--themes-st-george-color-muted-800); /* This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed. */
-  --color-surface-muted-pale: var(--themes-st-george-color-muted-900); /* Replaces the current "Background" Style. */
-  --color-surface-muted-faint: var(--themes-st-george-color-muted-950); /* Replaces the current "Light" style. */
-  --color-surface-primary: var(--themes-st-george-color-primary-400);
-  --color-surface-primary-faint: var(--themes-st-george-color-primary-950); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-hero: var(--themes-st-george-color-hero-300);
-  --color-surface-hero-faint: var(--themes-st-george-color-hero-950); /* This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines. */
-  --color-surface-pop: var(--themes-st-george-color-pop-500); /* This colour should be used very sparingly. It is for embellishment only. */
-  --color-surface-pop-faint: var(--themes-st-george-color-pop-950); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-holler: var(--themes-st-george-color-holler-400); /* This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-surface-holler-faint: var(--themes-st-george-color-holler-950); /* This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines. */
-  --color-surface-sing: var(--themes-st-george-color-sing-900); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-sing-faint: var(--themes-st-george-color-sing-950); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance: var(--themes-st-george-color-dance-500); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-dance-faint: var(--themes-st-george-color-dance-900); /* This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-surface-success: var(--themes-st-george-color-success-400); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-success-faint: var(--themes-st-george-color-success-900); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-surface-info: var(--themes-st-george-color-info-400); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-info-faint: var(--themes-st-george-color-info-900); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-surface-warning: var(--themes-st-george-color-warning-400); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-warning-faint: var(--themes-st-george-color-warning-900); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-surface-danger: var(--themes-st-george-color-danger-300); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-danger-faint: var(--themes-st-george-color-danger-900); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-surface-system-error: var(--themes-st-george-color-system-950); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-system-error-dark: var(--themes-st-george-color-system-500); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-surface-mono: var(--themes-st-george-color-mono-black); /* Use surface-mono when you want to switch from white to black. */
-  --color-surface-reversed: var(--themes-st-george-color-mono-white); /* Use with caution. This will be white in both Light and Dark Mode. */
-  --color-text-body: var(--themes-st-george-color-text-body-dm); /* Use for body text, button labels, form labels etc. Can also be used for headings if required. */
-  --color-text-heading: var(--themes-st-george-color-text-heading-dm); /* Use for headings to ensure that multi-brand switching remains accurate. */
-  --color-text-muted: var(--themes-st-george-color-muted-400); /* Use for text that needs less emphasis - Hint text, sub labels etc. */
-  --color-text-primary: var(--themes-st-george-color-primary-300); /* This is not currently used in the Design System. */
-  --color-text-hero: var(--themes-st-george-color-text-hero-dm); /* This is not currently used in the Design System */
-  --color-text-holler: var(--themes-st-george-color-holler-300); /* This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand. */
-  --color-text-link: var(--themes-st-george-color-primary-300); /* Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance. */
-  --color-text-success: var(--themes-st-george-color-success-300); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-text-info: var(--themes-st-george-color-info-300); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-text-warning: var(--themes-st-george-color-warning-300); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-text-danger: var(--themes-st-george-color-danger-300); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-text-system-error: var(--themes-st-george-color-system-500); /* This is a reserved colour. It must only be used for the system error messaging component. */
-  --color-text-mono: var(--themes-st-george-color-mono-black); /* Use text-mono when you want to switch from white to black. */
-  --color-text-reversed: var(--themes-st-george-color-mono-white); /* Use with caution. Text will be white in both light and dark modes */
-  --color-border-muted: var(--themes-st-george-color-muted-500); /* This border colour is not currently used in the Design System. */
-  --color-border-muted-strong: var(--themes-st-george-color-muted-500); /* This colour replaces the old "BorderDark". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements. */
-  --color-border-muted-mild: var(--themes-st-george-color-muted-700); /* This token is reserved. Consult GEL team before use. This border colour is not currently used in the Design System. Accessibility is not guaranteed. */
-  --color-border-muted-soft: var(--themes-st-george-color-muted-800); /* This colour replaces the old "Border". It can be used for borders and design embellishment that does not have to be accessible. */
-  --color-border-hero: var(--themes-st-george-color-hero-300); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-primary: var(--themes-st-george-color-primary-400); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-pop: var(--themes-st-george-color-pop-800); /* This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines. */
-  --color-border-holler: var(--themes-st-george-color-holler-400); /* This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand. */
-  --color-border-sing: var(--themes-st-george-color-sing-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-dance: var(--themes-st-george-color-dance-500); /* This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else. */
-  --color-border-success: var(--themes-st-george-color-success-500); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-success-mild: var(--themes-st-george-color-success-700); /* This is a reserved colour. It must only be used for the success messaging component. */
-  --color-border-info: var(--themes-st-george-color-info-500); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-info-mild: var(--themes-st-george-color-info-700); /* This is a reserved colour. It must only be used for the info messaging component. */
-  --color-border-warning: var(--themes-st-george-color-warning-500); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-warning-mild: var(--themes-st-george-color-warning-700); /* This is a reserved colour. It must only be used for the warning messaging component. */
-  --color-border-danger: var(--themes-st-george-color-danger-500); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-danger-mild: var(--themes-st-george-color-danger-700); /* This is a reserved colour. It must only be used for the danger messaging component. */
-  --color-border-mono: var(--themes-st-george-color-mono-black); /* This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements. */
-  --color-border-focus: var(--themes-st-george-color-holler-400); /* This is a reserved colour. It must only be used for the focus state keyboard navigation. */
+  --color-background-primary: var(--themes-st-george-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-st-george-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-st-george-color-surface-muted-vivid-dm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-st-george-color-muted-400); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-st-george-color-muted-600); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-st-george-color-muted-700); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-st-george-color-muted-800); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-st-george-color-muted-900); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-st-george-color-muted-950); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-st-george-color-primary-400); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-st-george-color-primary-950); /* Reserved do not use */
+  --color-surface-hero: var(--themes-st-george-color-hero-300); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-st-george-color-hero-950); /* Reserved do not use */
+  --color-surface-pop: var(--themes-st-george-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-st-george-color-pop-950); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-st-george-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-st-george-color-holler-950); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-st-george-color-sing-900); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-st-george-color-sing-950); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-st-george-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-st-george-color-dance-900); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-st-george-color-success-400); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-st-george-color-success-900); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-st-george-color-info-400); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-st-george-color-info-900); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-st-george-color-warning-400); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-st-george-color-warning-900); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-st-george-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-st-george-color-danger-900); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-st-george-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-st-george-color-system-500); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-st-george-color-mono-black); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-st-george-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-st-george-color-text-body-dm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-st-george-color-text-heading-dm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-st-george-color-muted-400); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-st-george-color-primary-300); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-st-george-color-text-hero-dm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-st-george-color-holler-300); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-st-george-color-primary-300); /* Replaces current style: Link */
+  --color-text-success: var(--themes-st-george-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-st-george-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-st-george-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-st-george-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-st-george-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-st-george-color-mono-black); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-st-george-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-st-george-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-st-george-color-muted-500); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-st-george-color-muted-700); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-st-george-color-muted-800); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-st-george-color-hero-300); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-st-george-color-primary-400); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-st-george-color-pop-800); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-st-george-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-st-george-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-st-george-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-st-george-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-st-george-color-success-700); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-st-george-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-st-george-color-info-700); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-st-george-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-st-george-color-warning-700); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-st-george-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-st-george-color-danger-700); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-st-george-color-mono-black); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-st-george-color-holler-400); /* Reserved. Only for use with focus state keyboard navigation. */
   --color-data-a-solid: var(--themes-st-george-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-tint: var(--themes-st-george-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-opacity: var(--themes-st-george-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
@@ -1013,8 +1751,8 @@
   --color-data-f-solid: var(--themes-st-george-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-tint: var(--themes-st-george-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-opacity: var(--themes-st-george-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-surface-pictogram-base: var(--themes-st-george-color-surface-pictogram-base-dm); /* This is a reserved component colour token. It must only be used for Pictograms. */
-  --color-surface-pictogram-accent: var(--themes-st-george-color-surface-pictogram-accent-dm); /* This is a reserved component colour token. It must only be used for Pictograms. */
+  --color-surface-pictogram-base: var(--themes-st-george-color-surface-pictogram-base-dm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-st-george-color-surface-pictogram-accent-dm); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--themes-st-george-color-primary-200); /* This token is for hover states. */
   --color-surface-active-primary: var(--themes-st-george-color-primary-100);
   --color-surface-hover-hero: var(--themes-st-george-color-hero-200); /* This token is for hover states. */
@@ -1037,5 +1775,241 @@
   --border-rounded-4xl: var(--themes-st-george-border-radius-4xl);
   --border-rounded-5xl: var(--themes-st-george-border-radius-5xl);
   --border-rounded-full: var(--themes-st-george-border-radius-full);
+}
+
+[data-brand="bom"][data-theme="dark"] {
+  --color-background-white-pale: var(--themes-bank-of-melbourne-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-bank-of-melbourne-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-bank-of-melbourne-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
+  --color-background-white-faint: var(--themes-bank-of-melbourne-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-black: var(--themes-bank-of-melbourne-color-mono-black); /* This token is reserved. Do not use. */
+  --color-background-pale-black: var(--themes-bank-of-melbourne-color-mono-black); /* This token is reserved. Do not use. */
+  --color-background-primary: var(--themes-bank-of-melbourne-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-bank-of-melbourne-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-bank-of-melbourne-color-surface-muted-vivid-dm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-bank-of-melbourne-color-muted-400); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-bank-of-melbourne-color-muted-600); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-bank-of-melbourne-color-muted-700); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-bank-of-melbourne-color-muted-800); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-bank-of-melbourne-color-muted-900); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-bank-of-melbourne-color-muted-950); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-bank-of-melbourne-color-primary-400); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-bank-of-melbourne-color-primary-950); /* Reserved do not use */
+  --color-surface-hero: var(--themes-bank-of-melbourne-color-hero-300); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-bank-of-melbourne-color-hero-950); /* Reserved do not use */
+  --color-surface-pop: var(--themes-bank-of-melbourne-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-bank-of-melbourne-color-pop-950); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-bank-of-melbourne-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-bank-of-melbourne-color-holler-950); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-bank-of-melbourne-color-sing-900); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-bank-of-melbourne-color-sing-950); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-bank-of-melbourne-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-bank-of-melbourne-color-dance-900); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-bank-of-melbourne-color-success-400); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-bank-of-melbourne-color-success-900); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-bank-of-melbourne-color-info-400); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-bank-of-melbourne-color-info-900); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-bank-of-melbourne-color-warning-400); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-bank-of-melbourne-color-warning-900); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-bank-of-melbourne-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-bank-of-melbourne-color-danger-900); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-bank-of-melbourne-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-bank-of-melbourne-color-system-500); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-bank-of-melbourne-color-mono-black); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-bank-of-melbourne-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-bank-of-melbourne-color-text-body-dm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-bank-of-melbourne-color-text-heading-dm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-bank-of-melbourne-color-muted-400); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-bank-of-melbourne-color-primary-300); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-bank-of-melbourne-color-text-hero-dm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-bank-of-melbourne-color-holler-300); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-bank-of-melbourne-color-primary-300); /* Replaces current style: Link */
+  --color-text-success: var(--themes-bank-of-melbourne-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-bank-of-melbourne-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-bank-of-melbourne-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-bank-of-melbourne-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-bank-of-melbourne-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-bank-of-melbourne-color-mono-black); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-bank-of-melbourne-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-bank-of-melbourne-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-bank-of-melbourne-color-muted-500); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-bank-of-melbourne-color-muted-700); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-bank-of-melbourne-color-muted-800); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-bank-of-melbourne-color-hero-300); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-bank-of-melbourne-color-primary-400); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-bank-of-melbourne-color-pop-800); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-bank-of-melbourne-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-bank-of-melbourne-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-bank-of-melbourne-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-bank-of-melbourne-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-bank-of-melbourne-color-success-700); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-bank-of-melbourne-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-bank-of-melbourne-color-info-700); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-bank-of-melbourne-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-bank-of-melbourne-color-warning-700); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-bank-of-melbourne-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-bank-of-melbourne-color-danger-700); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-bank-of-melbourne-color-mono-black); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-bank-of-melbourne-color-holler-400); /* Reserved. Only for use with focus state keyboard navigation. */
+  --color-data-a-solid: var(--themes-bank-of-melbourne-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-tint: var(--themes-bank-of-melbourne-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-opacity: var(--themes-bank-of-melbourne-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-solid: var(--themes-bank-of-melbourne-color-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-tint: var(--themes-bank-of-melbourne-color-hero-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-opacity: var(--themes-bank-of-melbourne-color-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-solid: var(--themes-bank-of-melbourne-color-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-tint: var(--themes-bank-of-melbourne-color-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-opacity: var(--themes-bank-of-melbourne-color-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-solid: var(--themes-bank-of-melbourne-color-holler-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-tint: var(--themes-bank-of-melbourne-color-holler-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-opacity: var(--themes-bank-of-melbourne-color-holler-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-solid: var(--themes-bank-of-melbourne-color-sing-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-tint: var(--themes-bank-of-melbourne-color-sing-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-opacity: var(--themes-bank-of-melbourne-color-sing-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-solid: var(--themes-bank-of-melbourne-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-tint: var(--themes-bank-of-melbourne-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-opacity: var(--themes-bank-of-melbourne-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-surface-pictogram-base: var(--themes-bank-of-melbourne-color-surface-pictogram-base-dm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-bank-of-melbourne-color-surface-pictogram-accent-dm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-hover-primary: var(--themes-bank-of-melbourne-color-primary-200); /* This token is for hover states. */
+  --color-surface-active-primary: var(--themes-bank-of-melbourne-color-primary-100);
+  --color-surface-hover-hero: var(--themes-bank-of-melbourne-color-hero-200); /* This token is for hover states. */
+  --color-surface-active-hero: var(--themes-bank-of-melbourne-color-hero-100); /* This token is for hover states. */
+  --color-surface-hover-primary-faint: var(--themes-bank-of-melbourne-color-primary-900); /* This token is for hover states. */
+  --color-surface-active-primary-faint: var(--themes-bank-of-melbourne-color-primary-800); /* This token is for hover states. */
+  --color-surface-hover-hero-faint: var(--themes-bank-of-melbourne-color-hero-800);
+  --color-surface-active-hero-faint: var(--themes-bank-of-melbourne-color-hero-400);
+  --color-surface-hover-muted-pale: var(--themes-bank-of-melbourne-color-muted-800); /* This token is for hover states. */
+  --color-surface-active-muted-pale: var(--themes-bank-of-melbourne-color-muted-600); /* This token is for hover states. */
+  --color-surface-hover-mono: var(--themes-bank-of-melbourne-color-mono-black); /* This token is for hover states. */
+  --color-surface-active-mono: var(--themes-bank-of-melbourne-color-muted-800); /* This token is for hover states. */
+  --border-rounded-none: var(--themes-bank-of-melbourne-border-radius-none);
+  --border-rounded-sm: var(--themes-bank-of-melbourne-border-radius-sm);
+  --border-rounded-md: var(--themes-bank-of-melbourne-border-radius-md);
+  --border-rounded-lg: var(--themes-bank-of-melbourne-border-radius-lg);
+  --border-rounded-xl: var(--themes-bank-of-melbourne-border-radius-xl);
+  --border-rounded-2xl: var(--themes-bank-of-melbourne-border-radius-2xl);
+  --border-rounded-3xl: var(--themes-bank-of-melbourne-border-radius-3xl);
+  --border-rounded-4xl: var(--themes-bank-of-melbourne-border-radius-4xl);
+  --border-rounded-5xl: var(--themes-bank-of-melbourne-border-radius-5xl);
+  --border-rounded-full: var(--themes-bank-of-melbourne-border-radius-full);
+}
+
+[data-brand="bsa"][data-theme="dark"] {
+  --color-background-white-pale: var(--themes-bank-sa-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale-faint: var(--themes-bank-sa-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint-pale: var(--themes-bank-sa-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
+  --color-background-white-faint: var(--themes-bank-sa-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
+  --color-background-white-black: var(--themes-bank-sa-color-mono-black); /* This token is reserved. Do not use. */
+  --color-background-pale-black: var(--themes-bank-sa-color-mono-black); /* This token is reserved. Do not use. */
+  --color-background-primary: var(--themes-bank-sa-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--themes-bank-sa-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--themes-bank-sa-color-surface-muted-vivid-dm); /* Use for fills that need to be text colour. */
+  --color-surface-muted: var(--themes-bank-sa-color-muted-400); /* Replaces current style: Muted */
+  --color-surface-muted-strong: var(--themes-bank-sa-color-muted-600); /* Reserved. Do not use */
+  --color-surface-muted-mild: var(--themes-bank-sa-color-muted-700); /* Reserved. Do not use */
+  --color-surface-muted-soft: var(--themes-bank-sa-color-muted-800); /* Reserved. Do not use */
+  --color-surface-muted-pale: var(--themes-bank-sa-color-muted-900); /* Replaces current style: Background */
+  --color-surface-muted-faint: var(--themes-bank-sa-color-muted-950); /* Replaces current style: Light */
+  --color-surface-primary: var(--themes-bank-sa-color-primary-400); /* Replaces current style: Primary */
+  --color-surface-primary-faint: var(--themes-bank-sa-color-primary-950); /* Reserved do not use */
+  --color-surface-hero: var(--themes-bank-sa-color-hero-300); /* Replaces current style: Hero */
+  --color-surface-hero-faint: var(--themes-bank-sa-color-hero-950); /* Reserved do not use */
+  --color-surface-pop: var(--themes-bank-sa-color-pop-500); /* Replaces current style: Pop. Use sparingly, embellishment only. */
+  --color-surface-pop-faint: var(--themes-bank-sa-color-pop-950); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
+  --color-surface-holler: var(--themes-bank-sa-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-holler-faint: var(--themes-bank-sa-color-holler-950); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-surface-sing: var(--themes-bank-sa-color-sing-900); /* Reserved. Do not use */
+  --color-surface-sing-faint: var(--themes-bank-sa-color-sing-950); /* Reserved. Do not use */
+  --color-surface-dance: var(--themes-bank-sa-color-dance-500); /* Reserved. Do not use */
+  --color-surface-dance-faint: var(--themes-bank-sa-color-dance-900); /* Reserved. Do not use */
+  --color-surface-success: var(--themes-bank-sa-color-success-400); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-success-faint: var(--themes-bank-sa-color-success-900); /* Reserved. Must only be used for the Success alert component. */
+  --color-surface-info: var(--themes-bank-sa-color-info-400); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-info-faint: var(--themes-bank-sa-color-info-900); /* Reserved. Must only be used for the Info alert component. */
+  --color-surface-warning: var(--themes-bank-sa-color-warning-400); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-warning-faint: var(--themes-bank-sa-color-warning-900); /* Reserved. Must only be used for the Warning alert component. */
+  --color-surface-danger: var(--themes-bank-sa-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-danger-faint: var(--themes-bank-sa-color-danger-900); /* Reserved. Must only be used for the Danger alert component. */
+  --color-surface-system-error: var(--themes-bank-sa-color-system-950); /* Reserved. Must only be used for the System alert component. */
+  --color-surface-system-error-dark: var(--themes-bank-sa-color-system-500); /* Reserved. Must only be used for the System messaging component. */
+  --color-surface-mono: var(--themes-bank-sa-color-mono-black); /* Mono is either White or Black */
+  --color-surface-reversed: var(--themes-bank-sa-color-mono-white); /* Reserved is always white. */
+  --color-text-body: var(--themes-bank-sa-color-text-body-dm); /* Replaces current style: Text */
+  --color-text-heading: var(--themes-bank-sa-color-text-heading-dm); /* Replaces current style: Heading */
+  --color-text-muted: var(--themes-bank-sa-color-muted-400); /* Replaces current style: Muted */
+  --color-text-primary: var(--themes-bank-sa-color-primary-300); /* Replaces current style: Primary */
+  --color-text-hero: var(--themes-bank-sa-color-text-hero-dm); /* Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands. */
+  --color-text-holler: var(--themes-bank-sa-color-holler-300); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-text-link: var(--themes-bank-sa-color-primary-300); /* Replaces current style: Link */
+  --color-text-success: var(--themes-bank-sa-color-success-300); /* Reserved. Must only be used for the Success alert component. */
+  --color-text-info: var(--themes-bank-sa-color-info-300); /* Reserved. Must only be used for the Info alert component. */
+  --color-text-warning: var(--themes-bank-sa-color-warning-300); /* Reserved. Must only be used for the Warning alert component. */
+  --color-text-danger: var(--themes-bank-sa-color-danger-300); /* Reserved. Must only be used for the Danger alert component. */
+  --color-text-system-error: var(--themes-bank-sa-color-system-500); /* Reserved. Must only be used for the System alert component. */
+  --color-text-mono: var(--themes-bank-sa-color-mono-black); /* Mono text is either White or Black */
+  --color-text-reversed: var(--themes-bank-sa-color-mono-white); /* Reversed text is always white */
+  --color-border-muted: var(--themes-bank-sa-color-muted-500); /* Reserved. Do not use */
+  --color-border-muted-strong: var(--themes-bank-sa-color-muted-500); /* Replaces current style: Border Dark */
+  --color-border-muted-mild: var(--themes-bank-sa-color-muted-700); /* Reserved. Do not use */
+  --color-border-muted-soft: var(--themes-bank-sa-color-muted-800); /* Replaces current style: Muted */
+  --color-border-hero: var(--themes-bank-sa-color-hero-300); /* Replaces current style: Hero */
+  --color-border-primary: var(--themes-bank-sa-color-primary-400); /* Replaces current style: Primary */
+  --color-border-pop: var(--themes-bank-sa-color-pop-800); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
+  --color-border-holler: var(--themes-bank-sa-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
+  --color-border-sing: var(--themes-bank-sa-color-sing-500); /* Reserved. Do not use */
+  --color-border-dance: var(--themes-bank-sa-color-dance-500); /* Reserved. Do not use */
+  --color-border-success: var(--themes-bank-sa-color-success-500); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-success-mild: var(--themes-bank-sa-color-success-700); /* Reserved. Must only be used for the Success alert component. */
+  --color-border-info: var(--themes-bank-sa-color-info-500); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-info-mild: var(--themes-bank-sa-color-info-700); /* Reserved. Must only be used for the Info alert component. */
+  --color-border-warning: var(--themes-bank-sa-color-warning-500); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-warning-mild: var(--themes-bank-sa-color-warning-700); /* Reserved. Must only be used for the Warning alert component. */
+  --color-border-danger: var(--themes-bank-sa-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--themes-bank-sa-color-danger-700); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-mono: var(--themes-bank-sa-color-mono-black); /* Mono border is either White or Black */
+  --color-border-focus: var(--themes-bank-sa-color-holler-400); /* Reserved. Only for use with focus state keyboard navigation. */
+  --color-data-a-solid: var(--themes-bank-sa-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-tint: var(--themes-bank-sa-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-opacity: var(--themes-bank-sa-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-solid: var(--themes-bank-sa-color-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-tint: var(--themes-bank-sa-color-hero-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-opacity: var(--themes-bank-sa-color-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-solid: var(--themes-bank-sa-color-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-tint: var(--themes-bank-sa-color-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-opacity: var(--themes-bank-sa-color-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-solid: var(--themes-bank-sa-color-holler-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-tint: var(--themes-bank-sa-color-holler-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-opacity: var(--themes-bank-sa-color-holler-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-solid: var(--themes-bank-sa-color-sing-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-tint: var(--themes-bank-sa-color-sing-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-opacity: var(--themes-bank-sa-color-sing-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-solid: var(--themes-bank-sa-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-tint: var(--themes-bank-sa-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-opacity: var(--themes-bank-sa-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-surface-pictogram-base: var(--themes-bank-sa-color-surface-pictogram-base-dm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--themes-bank-sa-color-surface-pictogram-accent-dm); /* Reserved. Only for use on Pictograms. */
+  --color-surface-hover-primary: var(--themes-bank-sa-color-primary-200); /* This token is for hover states. */
+  --color-surface-active-primary: var(--themes-bank-sa-color-primary-100);
+  --color-surface-hover-hero: var(--themes-bank-sa-color-hero-200); /* This token is for hover states. */
+  --color-surface-active-hero: var(--themes-bank-sa-color-hero-100); /* This token is for hover states. */
+  --color-surface-hover-primary-faint: var(--themes-bank-sa-color-primary-900); /* This token is for hover states. */
+  --color-surface-active-primary-faint: var(--themes-bank-sa-color-primary-800); /* This token is for hover states. */
+  --color-surface-hover-hero-faint: var(--themes-bank-sa-color-hero-800);
+  --color-surface-active-hero-faint: var(--themes-bank-sa-color-hero-400);
+  --color-surface-hover-muted-pale: var(--themes-bank-sa-color-muted-800); /* This token is for hover states. */
+  --color-surface-active-muted-pale: var(--themes-bank-sa-color-muted-600); /* This token is for hover states. */
+  --color-surface-hover-mono: var(--themes-bank-sa-color-mono-black); /* This token is for hover states. */
+  --color-surface-active-mono: var(--themes-bank-sa-color-muted-800); /* This token is for hover states. */
+  --border-rounded-none: var(--themes-bank-sa-border-radius-none);
+  --border-rounded-sm: var(--themes-bank-sa-border-radius-sm);
+  --border-rounded-md: var(--themes-bank-sa-border-radius-md);
+  --border-rounded-lg: var(--themes-bank-sa-border-radius-lg);
+  --border-rounded-xl: var(--themes-bank-sa-border-radius-xl);
+  --border-rounded-2xl: var(--themes-bank-sa-border-radius-2xl);
+  --border-rounded-3xl: var(--themes-bank-sa-border-radius-3xl);
+  --border-rounded-4xl: var(--themes-bank-sa-border-radius-4xl);
+  --border-rounded-5xl: var(--themes-bank-sa-border-radius-5xl);
+  --border-rounded-full: var(--themes-bank-sa-border-radius-full);
 }
 

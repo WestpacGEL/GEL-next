@@ -1,41 +1,33 @@
 ### Base pattern
 
-This pattern is kept as simple as possible yet captures more data points than Simple name (see below) should business requirements call for more details. The labels *Given name* and *Family name* are used, as *First name* and *Last name* do not translate consistently across cultures.
+This pattern is kept as simple as possible yet captures more data points than Simple name (see below) should business requirements call for more details. The labels _Given name_ and _Family name_ are used, as _First name_ and _Last name_ do not translate consistently across cultures.
 
 **Why not one field?** Arguments for inclusivity and user control may suggest just one field for name capture, however this poses some issues when it comes to parsing a name for a database (e.g Peter van den Elshout). More often than not these databases need to speak to external agencies which ask for specific data points for such tasks as ID verification for example, as well as aligning with other business criteria.
 
 **Title:** Only ask for a title if absolutely necessary. Gender, and how we identify ourselves is a personal topic so reasons for capture need to be clear.
 
 ```tsx
-<Form spacing="large">
-  <FormGroup>
-    <Field label="Title">
-      <Select name="title" size="large">
-        <option>Select</option>
-        <option>Mrs</option>
-        <option>Mr</option>
-        <option>Miss</option>
-        <option>Ms</option>
-        <option>Dr</option>
-      </Select>
-    </Field>
-  </FormGroup>
-  <FormGroup>
-    <Field label="Given name">
-      <Input name="given-name" size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-  <FormGroup>
-    <Field label="Middle names (if any)">
-      <Input name="middle-name" size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-  <FormGroup>
-    <Field label="Family name">
-      <Input name="family-name" size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-</Form>
+<form className="flex flex-col gap-4">
+  <Field label="Title">
+    <Select name="title" size="large">
+      <option>Select</option>
+      <option>Mrs</option>
+      <option>Mr</option>
+      <option>Miss</option>
+      <option>Ms</option>
+      <option>Dr</option>
+    </Select>
+  </Field>
+  <Field label="Given name">
+    <Input name="given-name" size="large" className="w-6/12" />
+  </Field>
+  <Field label="Middle names (if any)">
+    <Input name="middle-name" size="large" className="w-6/12" />
+  </Field>
+  <Field label="Family name">
+    <Input name="family-name" size="large" className="w-6/12" />
+  </Field>
+</form>
 ```
 
 ### Example usage
@@ -47,56 +39,44 @@ This example shows the base pattern used with additional questions when further 
   const [differentName, setDifferentName] = useState('');
 
   return (
-    <Form spacing="large">
-      <FormGroup>
-        <Field label="Title">
-          <Select name="title" size="large">
-            <option>Select</option>
-            <option>Mrs</option>
-            <option>Mr</option>
-            <option>Miss</option>
-            <option>Ms</option>
-            <option>Dr</option>
-          </Select>
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field label="Given name">
-          <Input name="given-name" size="large" className="w-6/12" />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field label="Middle names (if any)">
-          <Input name="middle-name" size="large" className="w-6/12" />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field label="Family name">
-          <Input name="family-name" size="large" className="w-6/12" />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field label="Have you ever been known by a name different to the one provided above?">
-          <ButtonGroup 
-            size="large" 
-            onChange={value => setDifferentName(value)} 
-            value={differentName} 
-            look="hero"
-            buttons={[
-              { value: "yes", label: "Yes" }, 
-              { value: "no", label: "No" }
-            ]}
-          />
-        </Field>
-      </FormGroup>
+    <form className="flex flex-col gap-4">
+      <Field label="Title">
+        <Select name="title" size="large">
+          <option>Select</option>
+          <option>Mrs</option>
+          <option>Mr</option>
+          <option>Miss</option>
+          <option>Ms</option>
+          <option>Dr</option>
+        </Select>
+      </Field>
+      <Field label="Given name">
+        <Input name="given-name" size="large" className="w-6/12" />
+      </Field>
+      <Field label="Middle names (if any)">
+        <Input name="middle-name" size="large" className="w-6/12" />
+      </Field>
+      <Field label="Family name">
+        <Input name="family-name" size="large" className="w-6/12" />
+      </Field>
+      <Field label="Have you ever been known by a name different to the one provided above?">
+        <ButtonGroup
+          size="large"
+          onChange={value => setDifferentName(value)}
+          value={differentName}
+          look="hero"
+          buttons={[
+            { value: 'yes', label: 'Yes' },
+            { value: 'no', label: 'No' },
+          ]}
+        />
+      </Field>
       {differentName === 'yes' && (
-        <FormGroup>
-          <Field label="Other names">
-            <Input name="other-name" size="large" className="w-6/12" />
-          </Field>
-        </FormGroup>
+        <Field label="Other names">
+          <Input name="other-name" size="large" className="w-6/12" />
+        </Field>
       )}
-    </Form>
+    </form>
   );
 };
 ```

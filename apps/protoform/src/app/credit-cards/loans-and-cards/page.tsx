@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonGroup, ButtonGroupButton, Field, Form, FormGroup, Input, InputGroup, Select } from '@westpac/ui';
+import { ButtonGroup, ButtonGroupButton, Field, Input, InputGroup, Select } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -73,12 +73,13 @@ export default function IncomeAndSavings() {
         Loans & cards
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <Form id="credit-card" spacing="large" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <FormGroup>
+      <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <Field
+          label="Your loan repayments (if any)"
+          hintMessage="For example Home, Investment or Personal loans, overdrafts"
+          errorMessage={errors.repaymentFreq?.message || errors.repayments?.message}
+        >
           <InputGroup
-            label="Your loan repayments (if any)"
-            hint="For example Home, Investment or Personal loans, overdrafts"
-            errorMessage={errors.repaymentFreq?.message || errors.repayments?.message}
             before="$"
             width={{ initial: 'full', md: 10 }}
             after={
@@ -103,46 +104,40 @@ export default function IncomeAndSavings() {
               defaultValue={data.repayments}
             />
           </InputGroup>
-        </FormGroup>
+        </Field>
 
-        <FormGroup>
-          <Controller
-            control={control}
-            name="otherCards"
-            rules={{ required: defaultError }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <Field
-                label="Do you have any non-Westpac credit cards?"
-                hintMessage="Including store and charge cards, lines of credit"
-                errorMessage={errors.otherCards?.message}
-              >
-                <ButtonGroup
-                  size="large"
-                  block={{ initial: true, md: false }}
-                  defaultSelectedKeys={data.nonWestpacCards}
-                  id="otherCards"
-                  onSelectionChange={onChange}
-                  onBlur={onBlur}
-                  selectedKeys={value}
-                >
-                  <ButtonGroupButton id="Yes">Yes</ButtonGroupButton>
-                  <ButtonGroupButton id="No">No</ButtonGroupButton>
-                </ButtonGroup>
-              </Field>
-            )}
-          />
-        </FormGroup>
-        {otherCards === 'Yes' && (
-          <FormGroup>
-            <InputGroup
-              instanceId="totalBal"
-              size="large"
-              label="Total balances of non-Westpac cards"
-              hint="Enter a dollar value"
-              errorMessage={errors.totalBal?.message}
-              before="$"
-              width={{ initial: 'full', md: 10 }}
+        <Controller
+          control={control}
+          name="otherCards"
+          rules={{ required: defaultError }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <Field
+              label="Do you have any non-Westpac credit cards?"
+              hintMessage="Including store and charge cards, lines of credit"
+              errorMessage={errors.otherCards?.message}
             >
+              <ButtonGroup
+                size="large"
+                block={{ initial: true, md: false }}
+                defaultSelectedKeys={data.nonWestpacCards}
+                id="otherCards"
+                onSelectionChange={onChange}
+                selectedKeys={value}
+                onBlur={onBlur}
+              >
+                <ButtonGroupButton id="Yes">Yes</ButtonGroupButton>
+                <ButtonGroupButton id="No">No</ButtonGroupButton>
+              </ButtonGroup>
+            </Field>
+          )}
+        />
+        {otherCards === 'Yes' && (
+          <Field
+            label="Total balances of non-Westpac cards"
+            hintMessage="Enter a dollar value"
+            errorMessage={errors.totalBal?.message}
+          >
+            <InputGroup instanceId="totalBal" size="large" before="$" width={{ initial: 'full', md: 10 }}>
               <Input
                 invalid={!!errors.totalBal?.message}
                 {...register('totalBal', { required: defaultError })}
@@ -150,13 +145,13 @@ export default function IncomeAndSavings() {
                 defaultValue={data.totalBal}
               />
             </InputGroup>
-          </FormGroup>
+          </Field>
         )}
 
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
-      </Form>
+      </form>
     </div>
   );
 }

@@ -16,16 +16,13 @@ This is email capture at its simplest with the hint text doing some of the work 
 If email communication is critical to the success of the form, requiring the user to confirm their details, may yield better results by managing mistakes - despite the higher level of user effort required to input their email address twice.
 
 ```tsx
-<Form spacing="large">
-  <FormGroup>
-    <Field label="Email address">
-      <Input size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-  <FormGroup>
-    <Field label="Confirm email address">
-      <Input size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-</Form>
+<form className="flex flex-col gap-4">
+  <Field label="Email address">
+    <Input size="large" className="w-6/12" />
+  </Field>
+
+  <Field label="Confirm email address">
+    <Input size="large" className="w-6/12" />
+  </Field>
+</form>
 ```

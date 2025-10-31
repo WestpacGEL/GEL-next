@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
-import { AriaToggleButtonGroupProps } from 'react-aria';
+import { AriaToggleButtonGroupProps, Key } from 'react-aria';
 import { VariantProps } from 'tailwind-variants';
 
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
@@ -10,7 +10,7 @@ import { styles } from './components/button-group-button/button-group-button.sty
 
 type Variants = VariantProps<typeof styles>;
 
-export type ButtonGroupProps = {
+type BaseButtonGroupProps = {
   children: React.ReactNode;
   /**
    * Controls look of `Button` components, can't be applied directly to `Button`
@@ -24,5 +24,27 @@ export type ButtonGroupProps = {
    * size
    */
   size?: ButtonProps['size'];
-} & AriaToggleButtonGroupProps &
+} & Omit<AriaToggleButtonGroupProps, 'selectionMode' | 'defaultSelectedKeys' | 'selectedKeys' | 'onSelectionChange'> &
   ButtonHTMLAttributes<Element>;
+
+type ButtonGroupPropsPerSelectionMode = {
+  single: BaseButtonGroupProps & {
+    selectionMode?: 'single';
+    selectedKeys?: Key;
+    defaultSelectedKeys?: Key;
+    /** Handler that is called when the selection changes. */
+    onSelectionChange?: (key: Key) => void;
+    batata?: string;
+  };
+  multiple: BaseButtonGroupProps & {
+    selectionMode: 'multiple';
+    selectedKeys?: Iterable<Key>;
+    defaultSelectedKeys?: Iterable<Key>;
+    /** Handler that is called when the selection changes. */
+    onSelectionChange?: (keys: Set<Key>) => void;
+  };
+};
+
+type SelectionModes = keyof ButtonGroupPropsPerSelectionMode;
+
+export type ButtonGroupProps<T extends SelectionModes = SelectionModes> = ButtonGroupPropsPerSelectionMode[T];
