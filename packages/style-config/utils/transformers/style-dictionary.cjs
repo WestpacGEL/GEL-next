@@ -291,7 +291,7 @@ StyleDictionary.registerTransform({
   },
 });
 
-function generateNameForIOS(str) {
+function generateNameForIOSOrAndroid(str) {
   return kebabToCamel(
     splitByUppercase(str.replace('{', '').replace('}', '').replaceAll('.', '-').replaceAll(' ', '-')).join('-'),
   ).replace('Color', '');
@@ -305,18 +305,18 @@ StyleDictionary.registerFormat({
       .map(token => {
         return {
           ...token,
-          name: generateNameForIOS(token.key),
+          name: generateNameForIOSOrAndroid(token.key),
         };
       });
 
     const lightTokens = dictionary.allTokens
       .filter(t => t.path.includes('light-mode') && t.$type === 'color')
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (enumName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('LightMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
-          tokenNamePieces.splice(1, 1);
+          tokenNamePieces.splice(0, 1);
           tokenName = tokenNamePieces.join('');
         } else {
           const tokenNamePieces = splitByUppercase(tokenName);
@@ -332,11 +332,11 @@ StyleDictionary.registerFormat({
     const darkTokens = dictionary.allTokens
       .filter(t => t.path.includes('dark-mode') && t.$type === 'color')
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (enumName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('DarkMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
-          tokenNamePieces.splice(1, 1);
+          tokenNamePieces.splice(0, 1);
           tokenName = tokenNamePieces.join('');
         } else {
           const tokenNamePieces = splitByUppercase(tokenName);
@@ -416,14 +416,14 @@ StyleDictionary.registerFormat({
       .map(token => {
         return {
           ...token,
-          name: generateNameForIOS(token.key),
+          name: generateNameForIOSOrAndroid(token.key),
         };
       });
 
     const lightTokens = dictionary.allTokens
       .filter(t => t.path.includes('light-mode') && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (enumName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('LightMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
@@ -443,7 +443,7 @@ StyleDictionary.registerFormat({
     const darkTokens = dictionary.allTokens
       .filter(t => t.path.includes('dark-mode') && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (enumName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('DarkMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
@@ -521,18 +521,18 @@ StyleDictionary.registerFormat({
       .map(token => {
         return {
           ...token,
-          name: generateNameForIOS(token.key),
+          name: generateNameForIOSOrAndroid(token.key),
         };
       });
 
     const lightTokens = dictionary.allTokens
       .filter(t => t.path.includes('light-mode') && t.$type === 'color')
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (brandName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('LightMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
-          tokenNamePieces.splice(1, 1);
+          tokenNamePieces.splice(0, 1);
           tokenName = [brandName, ...tokenNamePieces].join('');
         } else {
           const tokenNamePieces = splitByUppercase(tokenName);
@@ -548,11 +548,11 @@ StyleDictionary.registerFormat({
     const darkTokens = dictionary.allTokens
       .filter(t => t.path.includes('dark-mode') && t.$type === 'color')
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (brandName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('DarkMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
-          tokenNamePieces.splice(1, 1);
+          tokenNamePieces.splice(0, 1);
           tokenName = [brandName, ...tokenNamePieces].join('');
         } else {
           const tokenNamePieces = splitByUppercase(tokenName);
@@ -608,14 +608,14 @@ StyleDictionary.registerFormat({
       .map(token => {
         return {
           ...token,
-          name: generateNameForIOS(token.key),
+          name: generateNameForIOSOrAndroid(token.key),
         };
       });
 
     const lightTokens = dictionary.allTokens
       .filter(t => t.path.includes('light-mode') && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (brandName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('LightMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
@@ -635,7 +635,7 @@ StyleDictionary.registerFormat({
     const darkTokens = dictionary.allTokens
       .filter(t => t.path.includes('dark-mode') && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (brandName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('DarkMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
@@ -965,6 +965,10 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
 // ==============================
 // Main
 // ==============================
+const LOG_CONFIG = {
+  warnings: 'warn', // 'warn' | 'error' | 'disabled'
+  verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
+};
 
 (async () => {
   await fs.rm(`${DIST_FOLDER}/style-dictionary`, { recursive: true, force: true });
@@ -1030,10 +1034,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           ],
         },
       },
-      log: {
-        warnings: 'warn', // 'warn' | 'error' | 'disabled'
-        verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
-      },
+      log: LOG_CONFIG,
     });
 
     await brandDictionary.buildAllPlatforms();
@@ -1128,10 +1129,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           ],
         },
       },
-      log: {
-        warnings: 'warn', // 'warn' | 'error' | 'disabled'
-        verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
-      },
+      log: LOG_CONFIG,
     });
 
     await lightAndDarkModeDictionary.buildAllPlatforms();
