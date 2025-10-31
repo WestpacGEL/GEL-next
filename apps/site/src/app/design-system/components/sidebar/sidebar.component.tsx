@@ -32,12 +32,12 @@ export function Sidebar({ items, brand }: SidebarProps) {
       return;
     }
     const listener = () => {
-      const y = outsideRef.current?.scrollTop || 0;
+      const y = listRef.current?.scrollTop || 0;
       setScrolled(y > 0);
     };
-    outsideRef.current.addEventListener('scroll', listener);
+    listRef?.current?.addEventListener('scroll', listener);
     return () => {
-      outsideRef.current?.removeEventListener('scroll', listener);
+      listRef?.current?.removeEventListener('scroll', listener);
     };
   }, []);
 
