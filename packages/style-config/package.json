@@ -5,10 +5,7 @@
   "exports": {
     ".": "./dist/tokens/index.js",
     "./tailwind": "./dist/css/styles.css",
-    "./theme-wbc": "./dist/css/themes/theme-wbc.css",
-    "./theme-stg": "./dist/css/themes/theme-stg.css",
-    "./theme-bsa": "./dist/css/themes/theme-bsa.css",
-    "./theme-bom": "./dist/css/themes/theme-bom.css",
+    "./themes/*.css": "./dist/css/themes/theme-*.css",
     "./postcss": "./postcss.config.js",
     "./tokens": "./dist/tokens/index.js",
     "./constants": "./dist/constants/index.js"
@@ -23,11 +20,10 @@
   },
   "scripts": {
     "clean": "shx rm -rf dist",
-    "build:w3c": "node ./utils/transformers/w3c.cjs",
     "build:style-dictionary": "node ./utils/transformers/style-dictionary.cjs",
     "build:css": "node ./utils/transformers/css.cjs",
     "build:css:copy": "cp -a ./src/css ./dist/",
     "build:ts": "tsc",
-    "build": "pnpm clean && pnpm build:css && pnpm build:ts && pnpm build:css:copy"
+    "build": "pnpm clean && pnpm build:style-dictionary && pnpm build:css && pnpm build:ts && pnpm build:css:copy"
   }
 }

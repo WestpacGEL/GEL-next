@@ -343,19 +343,19 @@
           }
         }
       },
-      "WBC": {
+      "BOM": {
         "Grey": {
           "50": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f9f9fa"
+            "$value": "#fbfbfd"
           },
           "100": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f5f5f6"
+            "$value": "#f7f7f7"
           },
           "200": {
             "$scopes": ["ALL_SCOPES"],
@@ -412,448 +412,522 @@
             "$value": "#161619"
           }
         },
-        "Red": {
-          "50": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#fff0f0"
-          },
-          "100": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#facccb"
-          },
-          "200": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#f46e69"
-          },
-          "300": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#f1423c"
-          },
-          "400": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ee221b"
-          },
-          "500": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#da1710"
-          },
-          "600": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#b9140e"
-          },
-          "700": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#99100b"
-          },
-          "800": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#780d09"
-          },
-          "900": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#570906"
-          },
-          "950": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#370604"
-          },
-          "opacity": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "rgba(218, 23, 16, 0.5)"
-          }
-        },
-        "Pink": {
-          "50": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#fff5fd"
-          },
-          "100": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ffecfb"
-          },
-          "200": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ffcff6"
-          },
-          "300": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ff9eed"
-          },
-          "400": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ff6ee4"
-          },
-          "500": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ff3ddb"
-          },
-          "600": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#d934ba"
-          },
-          "700": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#b32b99"
-          },
-          "800": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#8c2278"
-          },
-          "900": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#59154d"
-          },
-          "950": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#330c2c"
-          },
-          "opacity": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "rgba(255, 61, 219, 0.45)"
-          }
-        },
-        "Navy": {
-          "50": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#f1f0fa"
-          },
-          "100": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#e2e1f4"
-          },
-          "200": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#a9a5df"
-          },
-          "300": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#6f69c9"
-          },
-          "400": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#423c97"
-          },
-          "500": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#1f1c4f"
-          },
-          "600": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#18144d"
-          },
-          "700": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#130f48"
-          },
-          "800": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#0d093e"
-          },
-          "900": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#090538"
-          },
-          "950": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#060236"
-          },
-          "opacity": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "rgba(58, 52, 147, 0.6)"
-          }
-        },
-        "Purple": {
-          "50": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#faf1fd"
-          },
-          "100": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ebcdf9"
-          },
-          "200": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ce84f0"
-          },
-          "300": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#bc57eb"
-          },
-          "400": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#ad32e6"
-          },
-          "500": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#991ad6"
-          },
-          "600": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#8717ba"
-          },
-          "700": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#70139b"
-          },
-          "800": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#5c0f7f"
-          },
-          "900": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#450c5f"
-          },
-          "950": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#2e0840"
-          },
-          "opacity": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "rgba(153, 26, 214, 0.5)"
-          }
-        },
-        "Dark Red": {
-          "50": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#faf2f2"
-          },
-          "100": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#f5d9d9"
-          },
-          "200": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#efa2a2"
-          },
-          "300": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#e76969"
-          },
-          "400": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#cf2c2c"
-          },
-          "500": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#990000"
-          },
-          "600": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#860000"
-          },
-          "700": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#710000"
-          },
-          "800": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#5d0000"
-          },
-          "900": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#4d0000"
-          },
-          "950": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "#410000"
-          },
-          "opacity": {
-            "$scopes": ["ALL_SCOPES"],
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$value": "rgba(153, 0, 0, 0.5)"
-          }
-        },
         "Orange": {
           "50": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#fef4eb"
+            "$value": "#fff4f3"
           },
           "100": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#fde7d3"
+            "$value": "#ffcbc7"
           },
           "200": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#fbcba2"
+            "$value": "#ff7c6a"
           },
           "300": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f9b071"
+            "$value": "#f24300"
           },
           "400": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f79540"
+            "$value": "#e43f00"
           },
           "500": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f57a0f"
+            "$value": "#d13900"
           },
           "600": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#ce6409"
+            "$value": "#b02f00"
           },
           "700": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#9d4c07"
+            "$value": "#8f2400"
           },
           "800": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#713705"
+            "$value": "#6f1a00"
           },
           "900": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#401f03"
+            "$value": "#501000"
           },
           "950": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#2c1502"
+            "$value": "#380900"
           },
           "opacity": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "rgba(245, 122, 15, 0.45)"
+            "$value": "rgba(209, 57, 0, 0.5)"
+          }
+        },
+        "Melbourne Purple": {
+          "50": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#f6f5ff"
+          },
+          "100": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#dad6fe"
+          },
+          "200": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#c6c0fd"
+          },
+          "300": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#a094fc"
+          },
+          "400": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#685ac0"
+          },
+          "500": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#534891"
+          },
+          "600": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#433781"
+          },
+          "700": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#33286a"
+          },
+          "800": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#261b58"
+          },
+          "900": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#20024e"
+          },
+          "950": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#1b0045"
+          },
+          "opacity": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "rgba(83, 72, 145, 0.5)"
+          }
+        },
+        "Dark Purple": {
+          "50": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#f6f6fa"
+          },
+          "100": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#dad8eb"
+          },
+          "200": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#a6a1ce"
+          },
+          "300": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#877eb9"
+          },
+          "400": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#433781"
+          },
+          "500": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#20024e"
+          },
+          "600": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#1b0045"
+          },
+          "700": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#180040"
+          },
+          "800": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#16003b"
+          },
+          "900": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#130036"
+          },
+          "950": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#110031"
+          },
+          "opacity": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "rgba(32, 2, 78, 0.25)"
+          }
+        },
+        "Mid Purple": {
+          "50": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#eeedf8"
+          },
+          "100": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#dfddf3"
+          },
+          "200": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#c1bce8"
+          },
+          "300": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#a39cdc"
+          },
+          "400": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#8379cf"
+          },
+          "500": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#685ac0"
+          },
+          "600": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#5141ac"
+          },
+          "700": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#3f3288"
+          },
+          "800": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#2b2162"
+          },
+          "900": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#19123e"
+          },
+          "950": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#0e0928"
+          },
+          "opacity": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "rgba(104, 90, 192, 0.5)"
+          }
+        },
+        "Light Purple": {
+          "50": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#f6f5ff"
+          },
+          "100": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#ebe9fe"
+          },
+          "200": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#dad6fe"
+          },
+          "300": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#c6c0fd"
+          },
+          "400": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#b2aafd"
+          },
+          "500": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#a094fc"
+          },
+          "600": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#7d67fa"
+          },
+          "700": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#5b31f8"
+          },
+          "800": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#3d0dc0"
+          },
+          "900": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#200470"
+          },
+          "950": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#140250"
+          },
+          "opacity": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "rgba(160, 148, 252, 0.5)"
+          }
+        },
+        "Ochre": {
+          "50": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#fff1ea"
+          },
+          "100": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#fee3d4"
+          },
+          "200": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#fec6a3"
+          },
+          "300": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#fda85f"
+          },
+          "400": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#ed9019"
+          },
+          "500": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#d17e15"
+          },
+          "600": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#a5620e"
+          },
+          "700": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#7c4908"
+          },
+          "800": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#553004"
+          },
+          "900": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#321a01"
+          },
+          "950": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#210f01"
+          },
+          "opacity": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "rgba(209, 126, 21, 0.5)"
+          }
+        },
+        "Terracotta": {
+          "50": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#ffe9e7"
+          },
+          "100": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#ffcfcb"
+          },
+          "200": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#ff9b90"
+          },
+          "300": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#ff6244"
+          },
+          "400": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#d63c00"
+          },
+          "500": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#9e2a00"
+          },
+          "600": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#822100"
+          },
+          "700": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#671800"
+          },
+          "800": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#490e00"
+          },
+          "900": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#300700"
+          },
+          "950": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "#230400"
+          },
+          "opacity": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$value": "rgba(158, 42, 0, 0.5)"
           }
         }
       }
@@ -933,7 +1007,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.white}"
           },
           "background-pale-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -941,7 +1015,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.100}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.100}"
           },
           "background-faint-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -949,7 +1023,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.50}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.50}"
           },
           "background-white-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -958,7 +1032,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.white}"
           },
           "background-white-black": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -967,7 +1041,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.white}"
           },
           "background-pale-black": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -976,7 +1050,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.100}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.100}"
           },
           "background-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -985,7 +1059,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.500}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.500}"
           },
           "background-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -994,7 +1068,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.500}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.500}"
           }
         },
         "surface": {
@@ -1004,7 +1078,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.surface-muted-vivid-LM}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.surface-muted-vivid-LM}"
           },
           "surface-muted": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1012,7 +1086,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.500}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.500}"
           },
           "surface-muted-strong": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1020,7 +1094,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.400}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.400}"
           },
           "surface-muted-mild": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1028,7 +1102,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.300}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.300}"
           },
           "surface-muted-soft": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1036,7 +1110,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.200}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.200}"
           },
           "surface-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1044,7 +1118,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.100}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.100}"
           },
           "surface-muted-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1052,7 +1126,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.50}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.50}"
           },
           "surface-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1060,7 +1134,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.500}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.500}"
           },
           "surface-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1068,7 +1142,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.50}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.50}"
           },
           "surface-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1076,7 +1150,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.500}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.500}"
           },
           "surface-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1084,7 +1158,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.50}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.50}"
           },
           "surface-pop": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1092,7 +1166,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.500}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.500}"
           },
           "surface-pop-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1100,7 +1174,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.50}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.50}"
           },
           "surface-holler": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1108,7 +1182,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.500}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.500}"
           },
           "surface-holler-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1116,7 +1190,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.50}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.50}"
           },
           "surface-sing": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1124,7 +1198,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.500}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.500}"
           },
           "surface-sing-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1132,7 +1206,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.50}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.50}"
           },
           "surface-dance": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1140,7 +1214,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.500}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.500}"
           },
           "surface-dance-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1148,7 +1222,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.50}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.50}"
           },
           "surface-success": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1156,7 +1230,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.success.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.success.500}"
           },
           "surface-success-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1164,7 +1238,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.success.50}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.success.50}"
           },
           "surface-info": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1172,7 +1246,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.info.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.info.500}"
           },
           "surface-info-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1180,7 +1254,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.info.50}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.info.50}"
           },
           "surface-warning": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1188,7 +1262,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.warning.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.warning.500}"
           },
           "surface-warning-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1196,7 +1270,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.warning.50}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.warning.50}"
           },
           "surface-danger": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1204,7 +1278,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.danger.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.danger.500}"
           },
           "surface-danger-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1212,7 +1286,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.danger.50}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.danger.50}"
           },
           "surface-system-error": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1220,7 +1294,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.system.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.system.500}"
           },
           "surface-system-error-dark": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1228,7 +1302,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.system.950}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.system.950}"
           },
           "surface-mono": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1236,7 +1310,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.white}"
           },
           "surface-reversed": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1244,7 +1318,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.white}"
           }
         },
         "text": {
@@ -1254,7 +1328,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.text-body-Lm}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.text-body-Lm}"
           },
           "text-heading": {
             "$scopes": ["TEXT_FILL"],
@@ -1262,7 +1336,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.text-heading-Lm}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.text-heading-Lm}"
           },
           "text-muted": {
             "$scopes": ["TEXT_FILL"],
@@ -1270,7 +1344,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.500}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.500}"
           },
           "text-primary": {
             "$scopes": ["TEXT_FILL"],
@@ -1278,7 +1352,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.500}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.500}"
           },
           "text-hero": {
             "$scopes": ["TEXT_FILL"],
@@ -1286,7 +1360,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.text-hero-LM}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.text-hero-LM}"
           },
           "text-holler": {
             "$scopes": ["TEXT_FILL"],
@@ -1294,7 +1368,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.500}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.500}"
           },
           "text-link": {
             "$scopes": ["TEXT_FILL"],
@@ -1302,7 +1376,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.500}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.500}"
           },
           "text-success": {
             "$scopes": ["TEXT_FILL"],
@@ -1310,7 +1384,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.success.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.success.500}"
           },
           "text-info": {
             "$scopes": ["TEXT_FILL"],
@@ -1318,7 +1392,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.info.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.info.500}"
           },
           "text-warning": {
             "$scopes": ["TEXT_FILL"],
@@ -1326,7 +1400,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.warning.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.warning.500}"
           },
           "text-danger": {
             "$scopes": ["TEXT_FILL"],
@@ -1334,7 +1408,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.danger.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.danger.500}"
           },
           "text-system-error": {
             "$scopes": ["TEXT_FILL"],
@@ -1342,7 +1416,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.system.950}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.system.950}"
           },
           "text-mono": {
             "$scopes": ["TEXT_FILL"],
@@ -1350,7 +1424,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.white}"
           },
           "text-reversed": {
             "$scopes": ["TEXT_FILL"],
@@ -1358,7 +1432,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.white}"
           }
         },
         "border": {
@@ -1368,7 +1442,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.500}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.500}"
           },
           "border-muted-strong": {
             "$scopes": ["STROKE_COLOR"],
@@ -1376,7 +1450,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.400}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.400}"
           },
           "border-muted-mild": {
             "$scopes": ["STROKE_COLOR"],
@@ -1384,7 +1458,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.300}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.300}"
           },
           "border-muted-soft": {
             "$scopes": ["STROKE_COLOR"],
@@ -1392,7 +1466,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.200}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.200}"
           },
           "border-hero": {
             "$scopes": ["STROKE_COLOR"],
@@ -1400,7 +1474,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.500}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.500}"
           },
           "border-primary": {
             "$scopes": ["STROKE_COLOR"],
@@ -1408,7 +1482,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.500}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.500}"
           },
           "border-pop": {
             "$scopes": ["STROKE_COLOR"],
@@ -1416,7 +1490,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.500}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.500}"
           },
           "border-holler": {
             "$scopes": ["STROKE_COLOR"],
@@ -1424,7 +1498,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.500}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.500}"
           },
           "border-sing": {
             "$scopes": ["STROKE_COLOR"],
@@ -1432,7 +1506,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.500}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.500}"
           },
           "border-dance": {
             "$scopes": ["STROKE_COLOR"],
@@ -1440,7 +1514,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.500}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.500}"
           },
           "border-success": {
             "$scopes": ["STROKE_COLOR"],
@@ -1448,7 +1522,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.success.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.success.500}"
           },
           "border-success-mild": {
             "$scopes": ["STROKE_COLOR"],
@@ -1456,7 +1530,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.success.300}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.success.300}"
           },
           "border-info": {
             "$scopes": ["STROKE_COLOR"],
@@ -1464,7 +1538,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.info.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.info.500}"
           },
           "border-info-mild": {
             "$scopes": ["STROKE_COLOR"],
@@ -1472,7 +1546,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.info.300}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.info.300}"
           },
           "border-warning": {
             "$scopes": ["STROKE_COLOR"],
@@ -1480,7 +1554,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.warning.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.warning.500}"
           },
           "border-warning-mild": {
             "$scopes": ["STROKE_COLOR"],
@@ -1488,7 +1562,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.warning.300}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.warning.300}"
           },
           "border-danger": {
             "$scopes": ["STROKE_COLOR"],
@@ -1496,7 +1570,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.danger.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.danger.500}"
           },
           "border-danger-mild": {
             "$scopes": ["STROKE_COLOR"],
@@ -1504,7 +1578,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.danger.300}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.danger.300}"
           },
           "border-mono": {
             "$scopes": ["STROKE_COLOR"],
@@ -1512,7 +1586,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.white}"
           },
           "border-focus": {
             "$scopes": ["STROKE_COLOR"],
@@ -1520,7 +1594,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.300}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.300}"
           }
         },
         "data": {
@@ -1530,7 +1604,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.500}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.500}"
           },
           "data-a-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1538,7 +1612,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.200}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.200}"
           },
           "data-a-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1546,7 +1620,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.opacity}"
           },
           "data-b-solid": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1554,7 +1628,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.500}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.500}"
           },
           "data-b-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1562,7 +1636,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.300}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.300}"
           },
           "data-b-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1570,7 +1644,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.opacity}"
           },
           "data-c-solid": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1578,7 +1652,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.500}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.500}"
           },
           "data-c-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1586,7 +1660,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.300}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.300}"
           },
           "data-c-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1594,7 +1668,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.opacity}"
           },
           "data-d-solid": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1602,7 +1676,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.500}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.500}"
           },
           "data-d-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1610,7 +1684,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.200}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.200}"
           },
           "data-d-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1618,7 +1692,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.opacity}"
           },
           "data-e-solid": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1626,7 +1700,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.500}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.500}"
           },
           "data-e-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1634,7 +1708,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.300}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.300}"
           },
           "data-e-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1642,7 +1716,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.opacity}"
           },
           "data-f-solid": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1650,7 +1724,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.500}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.500}"
           },
           "data-f-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1658,7 +1732,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.300}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.300}"
           },
           "data-f-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1666,7 +1740,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.opacity}"
           }
         },
         "pictogram": {
@@ -1676,7 +1750,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.surface-pictogram-base-Lm}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.surface-pictogram-base-Lm}"
           },
           "surface-pictogram-accent": {
             "$scopes": ["SHAPE_FILL"],
@@ -1684,7 +1758,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.surface-pictogram-accent-Lm}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.surface-pictogram-accent-Lm}"
           }
         },
         "state": {
@@ -1695,7 +1769,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.400}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.400}"
           },
           "surface-active-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1703,7 +1777,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.200}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.200}"
           },
           "surface-hover-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1712,7 +1786,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.400}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.400}"
           },
           "surface-active-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1721,7 +1795,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.300}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.300}"
           },
           "surface-hover-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1730,7 +1804,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.50}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.50}"
           },
           "surface-active-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1739,7 +1813,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.100}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.100}"
           },
           "surface-hover-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1747,7 +1821,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.50}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.50}"
           },
           "surface-active-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1755,7 +1829,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.100}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.100}"
           },
           "surface-hover-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1764,7 +1838,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.100}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.100}"
           },
           "surface-active-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1773,7 +1847,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.300}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.300}"
           },
           "surface-hover-mono": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1782,7 +1856,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.white}"
           },
           "surface-active-mono": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1791,7 +1865,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.200}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.200}"
           }
         }
       },
@@ -1802,70 +1876,70 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.none}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.none}"
           },
           "rounded-sm": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.sm}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.sm}"
           },
           "rounded-md": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.md}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.md}"
           },
           "rounded-lg": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.lg}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.lg}"
           },
           "rounded-xl": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.xl}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.xl}"
           },
           "rounded-2xl": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.2xl}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.2xl}"
           },
           "rounded-3xl": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.3xl}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.3xl}"
           },
           "rounded-4xl": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.4xl}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.4xl}"
           },
           "rounded-5xl": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.5xl}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.5xl}"
           },
           "rounded-full": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.full}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.full}"
           }
         }
       }
@@ -1879,7 +1953,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.900}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.900}"
           },
           "background-pale-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1887,7 +1961,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.950}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.950}"
           },
           "background-faint-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1895,7 +1969,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.900}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.900}"
           },
           "background-white-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1904,7 +1978,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.950}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.950}"
           },
           "background-white-black": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1913,7 +1987,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.black}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.black}"
           },
           "background-pale-black": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1922,7 +1996,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.black}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.black}"
           },
           "background-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1931,7 +2005,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.500}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.500}"
           },
           "background-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1940,7 +2014,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.500}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.500}"
           }
         },
         "surface": {
@@ -1950,7 +2024,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.surface-muted-vivid-DM}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.surface-muted-vivid-DM}"
           },
           "surface-muted": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1958,7 +2032,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.400}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.400}"
           },
           "surface-muted-strong": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1966,7 +2040,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.600}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.600}"
           },
           "surface-muted-mild": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1974,7 +2048,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.700}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.700}"
           },
           "surface-muted-soft": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1982,7 +2056,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.800}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.800}"
           },
           "surface-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1990,7 +2064,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.900}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.900}"
           },
           "surface-muted-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -1998,7 +2072,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.950}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.950}"
           },
           "surface-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2006,7 +2080,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.400}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.400}"
           },
           "surface-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2014,7 +2088,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.950}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.950}"
           },
           "surface-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2022,7 +2096,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.300}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.300}"
           },
           "surface-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2030,7 +2104,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.950}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.950}"
           },
           "surface-pop": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2038,7 +2112,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.500}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.500}"
           },
           "surface-pop-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2046,7 +2120,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.950}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.950}"
           },
           "surface-holler": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2054,7 +2128,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.400}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.400}"
           },
           "surface-holler-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2062,7 +2136,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.950}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.950}"
           },
           "surface-sing": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2070,7 +2144,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.900}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.900}"
           },
           "surface-sing-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2078,7 +2152,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.950}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.950}"
           },
           "surface-dance": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2086,7 +2160,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.500}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.500}"
           },
           "surface-dance-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2094,7 +2168,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.900}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.900}"
           },
           "surface-success": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2102,7 +2176,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.success.400}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.success.400}"
           },
           "surface-success-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2110,7 +2184,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.success.900}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.success.900}"
           },
           "surface-info": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2118,7 +2192,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.info.400}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.info.400}"
           },
           "surface-info-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2126,7 +2200,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.info.900}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.info.900}"
           },
           "surface-warning": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2134,7 +2208,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.warning.400}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.warning.400}"
           },
           "surface-warning-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2142,7 +2216,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.warning.900}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.warning.900}"
           },
           "surface-danger": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2150,7 +2224,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.danger.300}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.danger.300}"
           },
           "surface-danger-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2158,7 +2232,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.danger.900}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.danger.900}"
           },
           "surface-system-error": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2166,7 +2240,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.system.950}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.system.950}"
           },
           "surface-system-error-dark": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2174,7 +2248,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.system.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.system.500}"
           },
           "surface-mono": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2182,7 +2256,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.black}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.black}"
           },
           "surface-reversed": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2190,7 +2264,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.white}"
           }
         },
         "text": {
@@ -2200,7 +2274,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.text-body-Dm}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.text-body-Dm}"
           },
           "text-heading": {
             "$scopes": ["TEXT_FILL"],
@@ -2208,7 +2282,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.text-heading-Dm}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.text-heading-Dm}"
           },
           "text-muted": {
             "$scopes": ["TEXT_FILL"],
@@ -2216,7 +2290,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.400}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.400}"
           },
           "text-primary": {
             "$scopes": ["TEXT_FILL"],
@@ -2224,7 +2298,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.300}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.300}"
           },
           "text-hero": {
             "$scopes": ["TEXT_FILL"],
@@ -2232,7 +2306,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.text-hero-DM}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.text-hero-DM}"
           },
           "text-holler": {
             "$scopes": ["TEXT_FILL"],
@@ -2240,7 +2314,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.300}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.300}"
           },
           "text-link": {
             "$scopes": ["TEXT_FILL"],
@@ -2248,7 +2322,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.300}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.300}"
           },
           "text-success": {
             "$scopes": ["TEXT_FILL"],
@@ -2256,7 +2330,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.success.300}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.success.300}"
           },
           "text-info": {
             "$scopes": ["TEXT_FILL"],
@@ -2264,7 +2338,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.info.300}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.info.300}"
           },
           "text-warning": {
             "$scopes": ["TEXT_FILL"],
@@ -2272,7 +2346,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.warning.300}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.warning.300}"
           },
           "text-danger": {
             "$scopes": ["TEXT_FILL"],
@@ -2280,7 +2354,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.danger.300}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.danger.300}"
           },
           "text-system-error": {
             "$scopes": ["TEXT_FILL"],
@@ -2288,7 +2362,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.system.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.system.500}"
           },
           "text-mono": {
             "$scopes": ["TEXT_FILL"],
@@ -2296,7 +2370,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.black}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.black}"
           },
           "text-reversed": {
             "$scopes": ["TEXT_FILL"],
@@ -2304,7 +2378,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.white}"
           }
         },
         "border": {
@@ -2314,7 +2388,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.500}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.500}"
           },
           "border-muted-strong": {
             "$scopes": ["STROKE_COLOR"],
@@ -2322,7 +2396,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.500}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.500}"
           },
           "border-muted-mild": {
             "$scopes": ["STROKE_COLOR"],
@@ -2330,7 +2404,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.700}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.700}"
           },
           "border-muted-soft": {
             "$scopes": ["STROKE_COLOR"],
@@ -2338,7 +2412,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.800}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.800}"
           },
           "border-hero": {
             "$scopes": ["STROKE_COLOR"],
@@ -2346,7 +2420,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.300}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.300}"
           },
           "border-primary": {
             "$scopes": ["STROKE_COLOR"],
@@ -2354,7 +2428,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.400}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.400}"
           },
           "border-pop": {
             "$scopes": ["STROKE_COLOR"],
@@ -2362,7 +2436,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.800}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.800}"
           },
           "border-holler": {
             "$scopes": ["STROKE_COLOR"],
@@ -2370,7 +2444,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.400}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.400}"
           },
           "border-sing": {
             "$scopes": ["STROKE_COLOR"],
@@ -2378,7 +2452,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.500}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.500}"
           },
           "border-dance": {
             "$scopes": ["STROKE_COLOR"],
@@ -2386,7 +2460,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.500}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.500}"
           },
           "border-success": {
             "$scopes": ["STROKE_COLOR"],
@@ -2394,7 +2468,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.success.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.success.500}"
           },
           "border-success-mild": {
             "$scopes": ["STROKE_COLOR"],
@@ -2402,7 +2476,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.success.700}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.success.700}"
           },
           "border-info": {
             "$scopes": ["STROKE_COLOR"],
@@ -2410,7 +2484,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.info.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.info.500}"
           },
           "border-info-mild": {
             "$scopes": ["STROKE_COLOR"],
@@ -2418,7 +2492,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.info.700}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.info.700}"
           },
           "border-warning": {
             "$scopes": ["STROKE_COLOR"],
@@ -2426,7 +2500,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.warning.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.warning.500}"
           },
           "border-warning-mild": {
             "$scopes": ["STROKE_COLOR"],
@@ -2434,7 +2508,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.warning.700}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.warning.700}"
           },
           "border-danger": {
             "$scopes": ["STROKE_COLOR"],
@@ -2442,7 +2516,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.danger.500}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.danger.500}"
           },
           "border-danger-mild": {
             "$scopes": ["STROKE_COLOR"],
@@ -2450,7 +2524,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.reserved.danger.700}"
+            "$value": "{Themes.Bank of Melbourne.color.reserved.danger.700}"
           },
           "border-mono": {
             "$scopes": ["STROKE_COLOR"],
@@ -2458,7 +2532,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.black}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.black}"
           },
           "border-focus": {
             "$scopes": ["STROKE_COLOR"],
@@ -2466,7 +2540,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.400}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.400}"
           }
         },
         "data": {
@@ -2476,7 +2550,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.500}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.500}"
           },
           "data-a-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2484,7 +2558,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.200}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.200}"
           },
           "data-a-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2492,7 +2566,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.opacity}"
           },
           "data-b-solid": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2500,7 +2574,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.300}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.300}"
           },
           "data-b-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2508,7 +2582,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.200}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.200}"
           },
           "data-b-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2516,7 +2590,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.opacity}"
           },
           "data-c-solid": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2524,7 +2598,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.500}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.500}"
           },
           "data-c-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2532,7 +2606,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.300}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.300}"
           },
           "data-c-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2540,7 +2614,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.pop.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.opacity}"
           },
           "data-d-solid": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2548,7 +2622,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.500}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.500}"
           },
           "data-d-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2556,7 +2630,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.200}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.200}"
           },
           "data-d-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2564,7 +2638,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.holler.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.holler.opacity}"
           },
           "data-e-solid": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2572,7 +2646,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.500}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.500}"
           },
           "data-e-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2580,7 +2654,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.300}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.300}"
           },
           "data-e-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2588,7 +2662,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.sing.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.sing.opacity}"
           },
           "data-f-solid": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2596,7 +2670,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.500}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.500}"
           },
           "data-f-tint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2604,7 +2678,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.300}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.300}"
           },
           "data-f-opacity": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2612,7 +2686,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.dance.opacity}"
+            "$value": "{Themes.Bank of Melbourne.color.dance.opacity}"
           }
         },
         "pictogram": {
@@ -2622,7 +2696,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.surface-pictogram-base-Dm}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.surface-pictogram-base-Dm}"
           },
           "surface-pictogram-accent": {
             "$scopes": ["SHAPE_FILL"],
@@ -2630,7 +2704,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.alias.surface-pictogram-accent-DM}"
+            "$value": "{Themes.Bank of Melbourne.color.alias.surface-pictogram-accent-DM}"
           }
         },
         "state": {
@@ -2641,7 +2715,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.200}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.200}"
           },
           "surface-active-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2649,7 +2723,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.100}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.100}"
           },
           "surface-hover-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2658,7 +2732,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.200}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.200}"
           },
           "surface-active-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2667,7 +2741,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.100}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.100}"
           },
           "surface-hover-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2676,7 +2750,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.900}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.900}"
           },
           "surface-active-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2685,7 +2759,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.800}"
+            "$value": "{Themes.Bank of Melbourne.color.primary.800}"
           },
           "surface-hover-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2693,7 +2767,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.800}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.800}"
           },
           "surface-active-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2701,7 +2775,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.400}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.400}"
           },
           "surface-hover-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2710,7 +2784,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.800}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.800}"
           },
           "surface-active-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2719,7 +2793,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.600}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.600}"
           },
           "surface-hover-mono": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2728,7 +2802,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.black}"
+            "$value": "{Themes.Bank of Melbourne.color.mono.black}"
           },
           "surface-active-mono": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -2737,7 +2811,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.800}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.800}"
           }
         }
       },
@@ -2748,77 +2822,77 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.none}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.none}"
           },
           "rounded-sm": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.sm}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.sm}"
           },
           "rounded-md": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.md}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.md}"
           },
           "rounded-lg": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.lg}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.lg}"
           },
           "rounded-xl": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.xl}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.xl}"
           },
           "rounded-2xl": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.2xl}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.2xl}"
           },
           "rounded-3xl": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.3xl}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.3xl}"
           },
           "rounded-4xl": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.4xl}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.4xl}"
           },
           "rounded-5xl": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.5xl}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.5xl}"
           },
           "rounded-full": {
             "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.full}"
+            "$value": "{Themes.Bank of Melbourne.border.radius.full}"
           }
         }
       }
     }
   },
   "Themes": {
-    "Westpac": {
+    "Bank of Melbourne": {
       "color": {
         "alias": {
           "text-body-Lm": {
@@ -2827,7 +2901,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.950}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.900}"
           },
           "text-body-Dm": {
             "$scopes": ["ALL_SCOPES"],
@@ -2835,7 +2909,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.200}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.200}"
           },
           "text-heading-Lm": {
             "$scopes": ["ALL_SCOPES"],
@@ -2843,7 +2917,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.500}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.500}"
           },
           "text-heading-Dm": {
             "$scopes": ["ALL_SCOPES"],
@@ -2851,7 +2925,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.200}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.300}"
           },
           "text-hero-LM": {
             "$scopes": ["ALL_SCOPES"],
@@ -2859,7 +2933,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.500}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.500}"
           },
           "text-hero-DM": {
             "$scopes": ["ALL_SCOPES"],
@@ -2867,7 +2941,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.200}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.300}"
           },
           "surface-pictogram-base-Lm": {
             "$scopes": ["ALL_SCOPES"],
@@ -2875,7 +2949,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.500}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.500}"
           },
           "surface-pictogram-base-Dm": {
             "$scopes": ["ALL_SCOPES"],
@@ -2883,7 +2957,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.300}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.400}"
           },
           "surface-pictogram-accent-Lm": {
             "$scopes": ["ALL_SCOPES"],
@@ -2891,7 +2965,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.500}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.500}"
           },
           "surface-pictogram-accent-DM": {
             "$scopes": ["ALL_SCOPES"],
@@ -2899,7 +2973,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.primary.600}"
+            "$value": "{Themes.Bank of Melbourne.color.pop.400}"
           },
           "surface-muted-vivid-LM": {
             "$scopes": ["ALL_SCOPES"],
@@ -2907,7 +2981,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.950}"
+            "$value": "{Themes.Bank of Melbourne.color.hero.900}"
           },
           "surface-muted-vivid-DM": {
             "$scopes": ["ALL_SCOPES"],
@@ -2915,7 +2989,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.50}"
+            "$value": "{Themes.Bank of Melbourne.color.muted.50}"
           }
         },
         "muted": {
@@ -2925,7 +2999,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Grey.50}"
+            "$value": "{Primitives.color.BOM.Grey.50}"
           },
           "100": {
             "$scopes": ["ALL_SCOPES"],
@@ -2933,7 +3007,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Grey.100}"
+            "$value": "{Primitives.color.BOM.Grey.100}"
           },
           "200": {
             "$scopes": ["ALL_SCOPES"],
@@ -2941,7 +3015,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Grey.200}"
+            "$value": "{Primitives.color.BOM.Grey.200}"
           },
           "300": {
             "$scopes": ["ALL_SCOPES"],
@@ -2949,7 +3023,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Grey.300}"
+            "$value": "{Primitives.color.BOM.Grey.300}"
           },
           "400": {
             "$scopes": ["ALL_SCOPES"],
@@ -2957,7 +3031,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Grey.400}"
+            "$value": "{Primitives.color.BOM.Grey.400}"
           },
           "500": {
             "$scopes": ["ALL_SCOPES"],
@@ -2965,7 +3039,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Grey.500}"
+            "$value": "{Primitives.color.BOM.Grey.500}"
           },
           "600": {
             "$scopes": ["ALL_SCOPES"],
@@ -2973,7 +3047,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Grey.600}"
+            "$value": "{Primitives.color.BOM.Grey.600}"
           },
           "700": {
             "$scopes": ["ALL_SCOPES"],
@@ -2981,7 +3055,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Grey.700}"
+            "$value": "{Primitives.color.BOM.Grey.700}"
           },
           "800": {
             "$scopes": ["ALL_SCOPES"],
@@ -2989,7 +3063,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Grey.800}"
+            "$value": "{Primitives.color.BOM.Grey.800}"
           },
           "900": {
             "$scopes": ["ALL_SCOPES"],
@@ -2997,7 +3071,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Grey.900}"
+            "$value": "{Primitives.color.BOM.Grey.900}"
           },
           "950": {
             "$scopes": ["ALL_SCOPES"],
@@ -3005,7 +3079,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Grey.950}"
+            "$value": "{Primitives.color.BOM.Grey.950}"
           }
         },
         "primary": {
@@ -3015,7 +3089,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.50}"
+            "$value": "{Primitives.color.BOM.Orange.50}"
           },
           "100": {
             "$scopes": ["ALL_SCOPES"],
@@ -3023,7 +3097,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.100}"
+            "$value": "{Primitives.color.BOM.Orange.100}"
           },
           "200": {
             "$scopes": ["ALL_SCOPES"],
@@ -3031,7 +3105,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.200}"
+            "$value": "{Primitives.color.BOM.Orange.200}"
           },
           "300": {
             "$scopes": ["ALL_SCOPES"],
@@ -3039,7 +3113,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.300}"
+            "$value": "{Primitives.color.BOM.Orange.300}"
           },
           "400": {
             "$scopes": ["ALL_SCOPES"],
@@ -3047,7 +3121,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.400}"
+            "$value": "{Primitives.color.BOM.Orange.400}"
           },
           "500": {
             "$scopes": ["ALL_SCOPES"],
@@ -3055,7 +3129,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.500}"
+            "$value": "{Primitives.color.BOM.Orange.500}"
           },
           "600": {
             "$scopes": ["ALL_SCOPES"],
@@ -3063,7 +3137,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.600}"
+            "$value": "{Primitives.color.BOM.Orange.600}"
           },
           "700": {
             "$scopes": ["ALL_SCOPES"],
@@ -3071,7 +3145,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.700}"
+            "$value": "{Primitives.color.BOM.Orange.700}"
           },
           "800": {
             "$scopes": ["ALL_SCOPES"],
@@ -3079,7 +3153,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.800}"
+            "$value": "{Primitives.color.BOM.Orange.800}"
           },
           "900": {
             "$scopes": ["ALL_SCOPES"],
@@ -3087,7 +3161,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.900}"
+            "$value": "{Primitives.color.BOM.Orange.900}"
           },
           "950": {
             "$scopes": ["ALL_SCOPES"],
@@ -3095,7 +3169,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.950}"
+            "$value": "{Primitives.color.BOM.Orange.950}"
           },
           "opacity": {
             "$scopes": ["ALL_SCOPES"],
@@ -3103,7 +3177,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Red.opacity}"
+            "$value": "{Primitives.color.BOM.Orange.opacity}"
           }
         },
         "hero": {
@@ -3113,7 +3187,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.50}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.50}"
           },
           "100": {
             "$scopes": ["ALL_SCOPES"],
@@ -3121,7 +3195,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.100}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.100}"
           },
           "200": {
             "$scopes": ["ALL_SCOPES"],
@@ -3129,7 +3203,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.200}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.200}"
           },
           "300": {
             "$scopes": ["ALL_SCOPES"],
@@ -3137,7 +3211,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.300}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.300}"
           },
           "400": {
             "$scopes": ["ALL_SCOPES"],
@@ -3145,7 +3219,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.400}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.400}"
           },
           "500": {
             "$scopes": ["ALL_SCOPES"],
@@ -3153,7 +3227,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.500}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.500}"
           },
           "600": {
             "$scopes": ["ALL_SCOPES"],
@@ -3161,7 +3235,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.600}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.600}"
           },
           "700": {
             "$scopes": ["ALL_SCOPES"],
@@ -3169,7 +3243,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.700}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.700}"
           },
           "800": {
             "$scopes": ["ALL_SCOPES"],
@@ -3177,7 +3251,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.800}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.800}"
           },
           "900": {
             "$scopes": ["ALL_SCOPES"],
@@ -3185,7 +3259,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.900}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.900}"
           },
           "950": {
             "$scopes": ["ALL_SCOPES"],
@@ -3193,7 +3267,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.950}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.950}"
           },
           "opacity": {
             "$scopes": ["ALL_SCOPES"],
@@ -3201,7 +3275,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Navy.opacity}"
+            "$value": "{Primitives.color.BOM.Melbourne Purple.opacity}"
           }
         },
         "pop": {
@@ -3211,7 +3285,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.50}"
+            "$value": "{Primitives.color.BOM.Light Purple.50}"
           },
           "100": {
             "$scopes": ["ALL_SCOPES"],
@@ -3219,7 +3293,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.100}"
+            "$value": "{Primitives.color.BOM.Light Purple.100}"
           },
           "200": {
             "$scopes": ["ALL_SCOPES"],
@@ -3227,7 +3301,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.200}"
+            "$value": "{Primitives.color.BOM.Light Purple.200}"
           },
           "300": {
             "$scopes": ["ALL_SCOPES"],
@@ -3235,7 +3309,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.300}"
+            "$value": "{Primitives.color.BOM.Light Purple.300}"
           },
           "400": {
             "$scopes": ["ALL_SCOPES"],
@@ -3243,7 +3317,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.400}"
+            "$value": "{Primitives.color.BOM.Light Purple.400}"
           },
           "500": {
             "$scopes": ["ALL_SCOPES"],
@@ -3251,7 +3325,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.500}"
+            "$value": "{Primitives.color.BOM.Light Purple.500}"
           },
           "600": {
             "$scopes": ["ALL_SCOPES"],
@@ -3259,7 +3333,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.600}"
+            "$value": "{Primitives.color.BOM.Light Purple.600}"
           },
           "700": {
             "$scopes": ["ALL_SCOPES"],
@@ -3267,7 +3341,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.700}"
+            "$value": "{Primitives.color.BOM.Light Purple.700}"
           },
           "800": {
             "$scopes": ["ALL_SCOPES"],
@@ -3275,7 +3349,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.800}"
+            "$value": "{Primitives.color.BOM.Light Purple.800}"
           },
           "900": {
             "$scopes": ["ALL_SCOPES"],
@@ -3283,7 +3357,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.900}"
+            "$value": "{Primitives.color.BOM.Light Purple.900}"
           },
           "950": {
             "$scopes": ["ALL_SCOPES"],
@@ -3291,7 +3365,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.950}"
+            "$value": "{Primitives.color.BOM.Light Purple.950}"
           },
           "opacity": {
             "$scopes": ["ALL_SCOPES"],
@@ -3299,7 +3373,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Pink.opacity}"
+            "$value": "{Primitives.color.BOM.Light Purple.opacity}"
           }
         },
         "holler": {
@@ -3309,7 +3383,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.50}"
+            "$value": "{Primitives.color.BOM.Mid Purple.50}"
           },
           "100": {
             "$scopes": ["ALL_SCOPES"],
@@ -3317,7 +3391,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.100}"
+            "$value": "{Primitives.color.BOM.Mid Purple.100}"
           },
           "200": {
             "$scopes": ["ALL_SCOPES"],
@@ -3325,7 +3399,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.200}"
+            "$value": "{Primitives.color.BOM.Mid Purple.200}"
           },
           "300": {
             "$scopes": ["ALL_SCOPES"],
@@ -3333,7 +3407,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.300}"
+            "$value": "{Primitives.color.BOM.Mid Purple.300}"
           },
           "400": {
             "$scopes": ["ALL_SCOPES"],
@@ -3341,7 +3415,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.400}"
+            "$value": "{Primitives.color.BOM.Mid Purple.400}"
           },
           "500": {
             "$scopes": ["ALL_SCOPES"],
@@ -3349,7 +3423,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.500}"
+            "$value": "{Primitives.color.BOM.Mid Purple.500}"
           },
           "600": {
             "$scopes": ["ALL_SCOPES"],
@@ -3357,7 +3431,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.600}"
+            "$value": "{Primitives.color.BOM.Mid Purple.600}"
           },
           "700": {
             "$scopes": ["ALL_SCOPES"],
@@ -3365,7 +3439,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.700}"
+            "$value": "{Primitives.color.BOM.Mid Purple.700}"
           },
           "800": {
             "$scopes": ["ALL_SCOPES"],
@@ -3373,7 +3447,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.800}"
+            "$value": "{Primitives.color.BOM.Mid Purple.800}"
           },
           "900": {
             "$scopes": ["ALL_SCOPES"],
@@ -3381,7 +3455,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.900}"
+            "$value": "{Primitives.color.BOM.Mid Purple.900}"
           },
           "950": {
             "$scopes": ["ALL_SCOPES"],
@@ -3389,7 +3463,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.950}"
+            "$value": "{Primitives.color.BOM.Mid Purple.950}"
           },
           "opacity": {
             "$scopes": ["ALL_SCOPES"],
@@ -3397,7 +3471,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Purple.opacity}"
+            "$value": "{Primitives.color.BOM.Mid Purple.opacity}"
           }
         },
         "sing": {
@@ -3407,7 +3481,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.50}"
+            "$value": "{Primitives.color.BOM.Ochre.50}"
           },
           "100": {
             "$scopes": ["ALL_SCOPES"],
@@ -3415,7 +3489,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.100}"
+            "$value": "{Primitives.color.BOM.Ochre.100}"
           },
           "200": {
             "$scopes": ["ALL_SCOPES"],
@@ -3423,7 +3497,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.200}"
+            "$value": "{Primitives.color.BOM.Ochre.200}"
           },
           "300": {
             "$scopes": ["ALL_SCOPES"],
@@ -3431,7 +3505,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.300}"
+            "$value": "{Primitives.color.BOM.Ochre.300}"
           },
           "400": {
             "$scopes": ["ALL_SCOPES"],
@@ -3439,7 +3513,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.400}"
+            "$value": "{Primitives.color.BOM.Ochre.400}"
           },
           "500": {
             "$scopes": ["ALL_SCOPES"],
@@ -3447,7 +3521,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.500}"
+            "$value": "{Primitives.color.BOM.Ochre.500}"
           },
           "600": {
             "$scopes": ["ALL_SCOPES"],
@@ -3455,7 +3529,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.600}"
+            "$value": "{Primitives.color.BOM.Ochre.600}"
           },
           "700": {
             "$scopes": ["ALL_SCOPES"],
@@ -3463,7 +3537,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.700}"
+            "$value": "{Primitives.color.BOM.Ochre.700}"
           },
           "800": {
             "$scopes": ["ALL_SCOPES"],
@@ -3471,7 +3545,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.800}"
+            "$value": "{Primitives.color.BOM.Ochre.800}"
           },
           "900": {
             "$scopes": ["ALL_SCOPES"],
@@ -3479,7 +3553,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.900}"
+            "$value": "{Primitives.color.BOM.Ochre.900}"
           },
           "950": {
             "$scopes": ["ALL_SCOPES"],
@@ -3487,7 +3561,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.950}"
+            "$value": "{Primitives.color.BOM.Ochre.950}"
           },
           "opacity": {
             "$scopes": ["ALL_SCOPES"],
@@ -3495,7 +3569,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Dark Red.opacity}"
+            "$value": "{Primitives.color.BOM.Ochre.opacity}"
           }
         },
         "dance": {
@@ -3505,7 +3579,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.50}"
+            "$value": "{Primitives.color.BOM.Terracotta.50}"
           },
           "100": {
             "$scopes": ["ALL_SCOPES"],
@@ -3513,7 +3587,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.100}"
+            "$value": "{Primitives.color.BOM.Terracotta.100}"
           },
           "200": {
             "$scopes": ["ALL_SCOPES"],
@@ -3521,7 +3595,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.200}"
+            "$value": "{Primitives.color.BOM.Terracotta.200}"
           },
           "300": {
             "$scopes": ["ALL_SCOPES"],
@@ -3529,7 +3603,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.300}"
+            "$value": "{Primitives.color.BOM.Terracotta.300}"
           },
           "400": {
             "$scopes": ["ALL_SCOPES"],
@@ -3537,7 +3611,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.400}"
+            "$value": "{Primitives.color.BOM.Terracotta.400}"
           },
           "500": {
             "$scopes": ["ALL_SCOPES"],
@@ -3545,7 +3619,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.500}"
+            "$value": "{Primitives.color.BOM.Terracotta.500}"
           },
           "600": {
             "$scopes": ["ALL_SCOPES"],
@@ -3553,7 +3627,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.600}"
+            "$value": "{Primitives.color.BOM.Terracotta.600}"
           },
           "700": {
             "$scopes": ["ALL_SCOPES"],
@@ -3561,7 +3635,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.700}"
+            "$value": "{Primitives.color.BOM.Terracotta.700}"
           },
           "800": {
             "$scopes": ["ALL_SCOPES"],
@@ -3569,7 +3643,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.800}"
+            "$value": "{Primitives.color.BOM.Terracotta.800}"
           },
           "900": {
             "$scopes": ["ALL_SCOPES"],
@@ -3577,7 +3651,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.900}"
+            "$value": "{Primitives.color.BOM.Terracotta.900}"
           },
           "950": {
             "$scopes": ["ALL_SCOPES"],
@@ -3585,7 +3659,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.950}"
+            "$value": "{Primitives.color.BOM.Terracotta.950}"
           },
           "opacity": {
             "$scopes": ["ALL_SCOPES"],
@@ -3593,7 +3667,7 @@
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.color.WBC.Orange.opacity}"
+            "$value": "{Primitives.color.BOM.Terracotta.opacity}"
           }
         },
         "mono": {

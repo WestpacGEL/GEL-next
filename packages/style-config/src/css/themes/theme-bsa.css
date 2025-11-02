@@ -1,3 +1,7 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
 @custom-variant bsa (&:where([data-brand=bsa], [data-brand=bsa] *));
 
 @layer theme {
@@ -254,6 +258,6 @@
       --border-radius-full: var(--border-radius-full);
 
       /* Font Family */
-      --font-brand: BSA Font;
+      --font-brand: Brown Pro;
     }
 }

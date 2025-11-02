@@ -1,3 +1,7 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
 @custom-variant stg (&:where([data-brand=stg], [data-brand=stg] *));
 
 @layer theme {
