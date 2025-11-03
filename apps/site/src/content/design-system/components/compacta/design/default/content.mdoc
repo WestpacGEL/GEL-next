@@ -12,7 +12,7 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
   }, [items, setValue]);
 
   return (
-    <Form>
+    <form>
       <Compacta onAdd={handleAdd}>
         {items.map((item, index) => (
           <CompactaItem
@@ -22,25 +22,21 @@ Below is an example of how a Compacta may be used with fields and inputs. Any fo
               setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
             }}
           >
-            <FormGroup>
-              <FormLabel htmlFor={`primary.${index}.primary`}>Primary</FormLabel>
-              <FormHint id={`primary-hint`}>Primary title text</FormHint>
-              <Input aria-describedby={`primary-hint`} {...register(`items.${index}.primary`)} />
-            </FormGroup>
-            <FormGroup>
-              <FormLabel htmlFor={`secondary.${index}.secondary`}>Secondary</FormLabel>
-              <FormHint id={`secondary-hint`}>Secondary title text</FormHint>
-              <Input aria-describedby={`secondary-hint`} {...register(`items.${index}.secondary`)} />
-            </FormGroup>
-            <FormGroup>
-              <FormLabel htmlFor={`tertiary.${index}.tertiary`}>Tertiary</FormLabel>
-              <FormHint id={`tertiary-hint`}>Tertiary title text</FormHint>
-              <Input aria-describedby={`tertiary-hint`} id={`tertiary`} {...register(`items.${index}.tertiary`)} />
-            </FormGroup>
+            <div className="flex flex-col gap-4">
+              <Field label="Primary" hintMessage="Primary title text">
+                <Input {...register(`items.${index}.primary`)} />
+              </Field>
+              <Field label="Secondary" hintMessage="Secondary title text">
+                <Input {...register(`items.${index}.secondary`)} />
+              </Field>
+              <Field label="Tertiary" hintMessage="Tertiary title text">
+                <Input {...register(`items.${index}.tertiary`)} />
+              </Field>
+            </div>
           </CompactaItem>
         ))}
       </Compacta>
-    </Form>
+    </form>
   );
 };
 ```

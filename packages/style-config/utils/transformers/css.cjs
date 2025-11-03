@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
+const BRANDS = require(path.resolve(__dirname, '../../src/constants/brands.json'));
 
 // --------------------------------------------------------------------------
 // Helpers
@@ -234,7 +235,8 @@ function writeBrandThemeCSS(tokens, brandNameMap, brandFontMap, themeTemplate, o
   const primitivesObj = extractPrimitives(tokens);
   const themeBorderRadius = getThemeBrandBorders(tokens, brandNameMap);
 
-  ['wbc', 'stg'].forEach(brand => {
+  BRANDS.forEach(({ primitiveName }) => {
+    const brand = primitiveName.toLowerCase();
     const brandFile = path.resolve(outputDir, `theme-${brand}.css`);
     fs.writeFileSync(
       brandFile,
@@ -288,8 +290,19 @@ function transformCSS() {
   const sharedStylesTemplate = Handlebars.compile(sharedStylesTemplateSource);
   const bordersTemplate = Handlebars.compile(bordersTemplateSource);
 
-  const brandNameMap = { westpac: 'wbc', stgeorge: 'stg' };
-  const brandFontMap = { wbc: 'Westpac', stg: 'Dragon Bold' };
+  const brandNameMap = BRANDS.reduce((acc, { themeName, primitiveName }) => {
+    return {
+      ...acc,
+      [themeName.toLowerCase()]: primitiveName.toLowerCase(),
+    };
+  }, {});
+
+  const brandFontMap = BRANDS.reduce((acc, { fontName, primitiveName }) => {
+    return {
+      ...acc,
+      [primitiveName.toLowerCase()]: fontName,
+    };
+  }, {});
 
   const colorsObj = extractPrimitives(tokens);
   const tokensObj = extractTokens(tokens);

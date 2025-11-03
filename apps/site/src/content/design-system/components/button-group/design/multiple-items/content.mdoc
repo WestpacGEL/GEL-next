@@ -2,25 +2,19 @@ We recommend only using up to 3 items in a button group, any more can become too
 
 ```tsx
 <div className="grid gap-6">
-  <ButtonGroup 
-    label="Would you like to receive eStatements"
-    look="hero" 
-      size="large"
-    buttons={[
-      { value: "Yes", label: "Yes"}, 
-      { value: "No", label: "No" }
-    ]}
-  />
+  <Field label="Would you like to receive eStatements">
+    <ButtonGroup look="hero" size="large">
+      <ButtonGroupButton id="Yes">Yes</ButtonGroupButton>
+      <ButtonGroupButton id="No">No</ButtonGroupButton>
+    </ButtonGroup>
+  </Field>
 
-  <ButtonGroup 
-    label="How would you like us to contact you?"
-    look="hero" 
-      size="large"
-    buttons={[
-      { value: "Email", label: "Email"}, 
-      { value: "Phone", label: "Phone" },
-      { value: "SMS", label: "SMS" }
-    ]}
-  />
+  <Field label="How would you like us to contact you?">
+    <ButtonGroup look="hero" size="large">
+      <ButtonGroupButton id="Email">Email</ButtonGroupButton>
+      <ButtonGroupButton id="Phone">Phone</ButtonGroupButton>
+      <ButtonGroupButton id="SMS">SMS</ButtonGroupButton>
+    </ButtonGroup>
+  </Field>
 </div>
 ```

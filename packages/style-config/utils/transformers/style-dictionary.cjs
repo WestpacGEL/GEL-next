@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const StyleDictionary = require('style-dictionary').default;
 
 const tokens = require(`${__dirname}/../../src/tokens/GEL-tokens-figma.json`);
+const BRANDS = require(`${__dirname}/../../src/constants/brands.json`);
 
 // ==============================
 // Helpers
@@ -14,6 +15,14 @@ function splitByUppercase(str) {
 
 function pascalToCamel(str) {
   return `${str[0].toLocaleLowerCase()}${str.slice(1)}`;
+}
+
+function pascalToKebab(str) {
+  return str
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2') // Add hyphen between lower/number → Upper
+    .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2') // Handle consecutive capitals correctly
+    .replaceAll(' ', '-')
+    .toLowerCase();
 }
 
 function kebabToCamel(str) {
@@ -37,6 +46,7 @@ function kebabToCamel(str) {
 function camelToKebab(str) {
   return str
     .replace(/([a-z0-9])([A-Z])/g, '$1-$2') // insert dash before capital letters
+    .replaceAll(' ', '-')
     .toLowerCase(); // make everything lowercase
 }
 
@@ -121,7 +131,10 @@ StyleDictionary.registerFormat({
         };
       }, {});
 
-    let output = '';
+    let output = ''; 
+    output += '/**\n';
+    output += ' * Do not edit directly, this file was auto-generated.\n';
+    output += ' */\n\n';
 
     if (primitiveTokens.length) {
       output += ':root, :host {\n';
@@ -281,7 +294,7 @@ StyleDictionary.registerTransform({
   },
 });
 
-function generateNameForIOS(str) {
+function generateNameForIOSOrAndroid(str) {
   return kebabToCamel(
     splitByUppercase(str.replace('{', '').replace('}', '').replaceAll('.', '-').replaceAll(' ', '-')).join('-'),
   ).replace('Color', '');
@@ -295,18 +308,18 @@ StyleDictionary.registerFormat({
       .map(token => {
         return {
           ...token,
-          name: generateNameForIOS(token.key),
+          name: generateNameForIOSOrAndroid(token.key),
         };
       });
 
     const lightTokens = dictionary.allTokens
       .filter(t => t.path.includes('light-mode') && t.$type === 'color')
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (enumName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('LightMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
-          tokenNamePieces.splice(1, 1);
+          tokenNamePieces.splice(0, 1);
           tokenName = tokenNamePieces.join('');
         } else {
           const tokenNamePieces = splitByUppercase(tokenName);
@@ -322,11 +335,11 @@ StyleDictionary.registerFormat({
     const darkTokens = dictionary.allTokens
       .filter(t => t.path.includes('dark-mode') && t.$type === 'color')
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (enumName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('DarkMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
-          tokenNamePieces.splice(1, 1);
+          tokenNamePieces.splice(0, 1);
           tokenName = tokenNamePieces.join('');
         } else {
           const tokenNamePieces = splitByUppercase(tokenName);
@@ -406,14 +419,14 @@ StyleDictionary.registerFormat({
       .map(token => {
         return {
           ...token,
-          name: generateNameForIOS(token.key),
+          name: generateNameForIOSOrAndroid(token.key),
         };
       });
 
     const lightTokens = dictionary.allTokens
       .filter(t => t.path.includes('light-mode') && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (enumName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('LightMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
@@ -433,7 +446,7 @@ StyleDictionary.registerFormat({
     const darkTokens = dictionary.allTokens
       .filter(t => t.path.includes('dark-mode') && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (enumName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('DarkMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
@@ -511,18 +524,18 @@ StyleDictionary.registerFormat({
       .map(token => {
         return {
           ...token,
-          name: generateNameForIOS(token.key),
+          name: generateNameForIOSOrAndroid(token.key),
         };
       });
 
     const lightTokens = dictionary.allTokens
       .filter(t => t.path.includes('light-mode') && t.$type === 'color')
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (brandName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('LightMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
-          tokenNamePieces.splice(1, 1);
+          tokenNamePieces.splice(0, 1);
           tokenName = [brandName, ...tokenNamePieces].join('');
         } else {
           const tokenNamePieces = splitByUppercase(tokenName);
@@ -538,11 +551,11 @@ StyleDictionary.registerFormat({
     const darkTokens = dictionary.allTokens
       .filter(t => t.path.includes('dark-mode') && t.$type === 'color')
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (brandName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('DarkMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
-          tokenNamePieces.splice(1, 1);
+          tokenNamePieces.splice(0, 1);
           tokenName = [brandName, ...tokenNamePieces].join('');
         } else {
           const tokenNamePieces = splitByUppercase(tokenName);
@@ -598,14 +611,14 @@ StyleDictionary.registerFormat({
       .map(token => {
         return {
           ...token,
-          name: generateNameForIOS(token.key),
+          name: generateNameForIOSOrAndroid(token.key),
         };
       });
 
     const lightTokens = dictionary.allTokens
       .filter(t => t.path.includes('light-mode') && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (brandName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('LightMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
@@ -625,7 +638,7 @@ StyleDictionary.registerFormat({
     const darkTokens = dictionary.allTokens
       .filter(t => t.path.includes('dark-mode') && (t.$type === 'float' || t.$type === 'dimension'))
       .map(current => {
-        let tokenName = generateNameForIOS(current.key);
+        let tokenName = generateNameForIOSOrAndroid(current.key);
         if (brandName !== 'AllBrands') {
           let [, splittedTokenName] = tokenName.split('DarkMode');
           const tokenNamePieces = splitByUppercase(splittedTokenName);
@@ -713,16 +726,17 @@ StyleDictionary.registerTransform({
 // Constants
 // ==============================
 
-const DIST_FOLDER = './dist';
-const INTERNAL_FOLDER = './src/tokens/style-dictionary';
+const SRC_FOLDER = './src/tokens';
 
-const BRANDS = [
-  { themeName: 'Westpac', primitiveName: 'WBC' },
-  { themeName: 'StGeorge', primitiveName: 'STG' },
-];
+const BRANDS_KEBAB_CASE = BRANDS.reduce((acc, { themeName, primitiveName }) => {
+  return {
+    ...acc,
+    [pascalToKebab(themeName)]: primitiveName.toLowerCase(),
+  };
+}, {});
 
 const STYLE_DICTIONARY_BASE_CONFIG = {
-  source: [`${DIST_FOLDER}/w3c-tokens/ALL_BRANDS.json`],
+  source: [`${SRC_FOLDER}/w3c/all-brands.json`],
   hooks: {
     filters: {
       'light-mode': token => {
@@ -751,9 +765,9 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
       transformGroup: 'css',
       files: [
         {
-          destination: `${DIST_FOLDER}/style-dictionary/css/AllBrands/vars.css`,
+          destination: `${SRC_FOLDER}/css/all-brands/vars.css`,
           format: ['css/mode-wrapped-all-brands'],
-          options: { brands: { 'st-george': 'stg', westpac: 'wbc' } },
+          options: { brands: BRANDS_KEBAB_CASE },
         },
       ],
     },
@@ -768,9 +782,9 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
         'strip-android-prefix',
       ],
       files: [
-        { destination: `${DIST_FOLDER}/style-dictionary/android/AllBrands/all-colors.xml`, format: 'android/colors' },
+        { destination: `${SRC_FOLDER}/android/all-brands/all-colors.xml`, format: 'android/colors' },
         {
-          destination: `${DIST_FOLDER}/style-dictionary/android/AllBrands/all-dimensions.xml`,
+          destination: `${SRC_FOLDER}/android/all-brands/all-dimensions.xml`,
           format: 'android/dimens',
         },
       ],
@@ -786,12 +800,12 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
       ],
       files: [
         {
-          destination: `${DIST_FOLDER}/style-dictionary/ios/AllBrands/all-colors.swift`,
+          destination: `${SRC_FOLDER}/ios/all-brands/all-colors.swift`,
           format: 'ios/enum-colors',
           options: { enumName: 'AllBrands' },
         },
         {
-          destination: `${DIST_FOLDER}/style-dictionary/ios/AllBrands/all-dimensions.swift`,
+          destination: `${SRC_FOLDER}/ios/all-brands/all-dimensions.swift`,
           format: 'ios/enum-dimensions',
           options: { enumName: 'AllBrands' },
         },
@@ -837,6 +851,7 @@ function normalizeTokenGroup(group, brandName) {
  * Processes theme tokens for a given brand.
  */
 function processThemeModes(brandModes, brandName) {
+  delete brandModes.Logo;
   return Object.fromEntries(
     Object.entries(brandModes).map(([propGroup, categories]) => [
       propGroup,
@@ -952,14 +967,16 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
 // ==============================
 // Main
 // ==============================
+const LOG_CONFIG = {
+  warnings: 'warn', // 'warn' | 'error' | 'disabled'
+  verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
+};
 
 (async () => {
-  await fs.rm(`${DIST_FOLDER}/style-dictionary`, { recursive: true, force: true });
-  await fs.rm(`${INTERNAL_FOLDER}`, { recursive: true, force: true });
-  await ensureFolderExists(`${DIST_FOLDER}/w3c-tokens`);
+  await ensureFolderExists(`${SRC_FOLDER}/w3c`);
 
   const mergedTokens = mergeTokens();
-  await saveJSON(`${DIST_FOLDER}/w3c-tokens/ALL_BRANDS.json`, mergedTokens);
+  await saveJSON(`${SRC_FOLDER}/w3c/all-brands.json`, mergedTokens);
 
   // Build all brands
   const baseDictionary = new StyleDictionary(STYLE_DICTIONARY_BASE_CONFIG);
@@ -969,7 +986,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
   for (const { themeName, primitiveName } of BRANDS) {
     const brandTokens = extractBrandTokens(themeName, primitiveName, mergedTokens);
     const brandName = primitiveName.toLowerCase();
-    const brandFile = `${DIST_FOLDER}/w3c-tokens/${brandName}.json`;
+    const brandFile = `${SRC_FOLDER}/w3c/${brandName}.json`;
 
     await saveJSON(brandFile, brandTokens);
 
@@ -981,46 +998,29 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.css,
           files: [
             {
-              destination: `${DIST_FOLDER}/style-dictionary/css/${brandName}/style.css`,
+              destination: `${SRC_FOLDER}/css/${brandName}/style.css`,
               format: ['css/mode-wrapped-all-brands'],
-              options: { outputReferences: true, brands: { 'st-george': 'stg', westpac: 'wbc' } },
+              options: { outputReferences: true, brands: BRANDS_KEBAB_CASE },
             },
           ],
         },
-        // Output for all colors
-        // android: {
-        //   ...STYLE_DICTIONARY_BASE_CONFIG.platforms.android,
-        //   files: [
-        //     {
-        //       destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/all-colors.xml`,
-        //       format: 'android/colors',
-        //     },
-        //     {
-        //       destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/all-dimensions.xml`,
-        //       format: 'android/dimens',
-        //     },
-        //   ],
-        // },
         ios: {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.ios,
           files: [
             {
-              destination: `${DIST_FOLDER}/style-dictionary/ios/${brandName}/${brandName}-colors.swift`,
+              destination: `${SRC_FOLDER}/ios/${brandName}/${brandName}-colors.swift`,
               format: 'ios/enum-colors',
               options: { enumName: brandName.toUpperCase() },
             },
             {
-              destination: `${DIST_FOLDER}/style-dictionary/ios/${brandName}/${brandName}-dimensions.swift`,
+              destination: `${SRC_FOLDER}/ios/${brandName}/${brandName}-dimensions.swift`,
               format: 'ios/enum-dimensions',
               options: { enumName: brandName.toUpperCase() },
             },
           ],
         },
       },
-      log: {
-        warnings: 'warn', // 'warn' | 'error' | 'disabled'
-        verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
-      },
+      log: LOG_CONFIG,
     });
 
     await brandDictionary.buildAllPlatforms();
@@ -1033,7 +1033,7 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           ...STYLE_DICTIONARY_BASE_CONFIG.platforms.css,
           files: [
             {
-              destination: `${DIST_FOLDER}/style-dictionary/css/${brandName}/style.css`,
+              destination: `${SRC_FOLDER}/css/${brandName}/style.css`,
               format: ['css/mode-wrapped-single-brand'],
               options: { brand: brandName.toLowerCase() },
             },
@@ -1053,75 +1053,35 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
           ],
           files: [
             {
-              destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values/${brandName}_colors.xml`,
+              destination: `${SRC_FOLDER}/android/${brandName}/values/${brandName}_colors.xml`,
               format: 'android/colors-custom',
               options: { brandName },
               filter: 'light-mode',
             },
             {
-              destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values-night/${brandName}_colors.xml`,
+              destination: `${SRC_FOLDER}/android/${brandName}/values-night/${brandName}_colors.xml`,
               format: 'android/colors-custom',
               options: { brandName },
               filter: 'dark-mode',
             },
             {
-              destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values/${brandName}_dimens.xml`,
+              destination: `${SRC_FOLDER}/android/${brandName}/values/${brandName}_dimens.xml`,
               format: 'android/dimens-custom',
               options: { brandName },
               filter: 'light-mode',
             },
             {
-              destination: `${DIST_FOLDER}/style-dictionary/android/${brandName}/values-night/${brandName}_dimens.xml`,
+              destination: `${SRC_FOLDER}/android/${brandName}/values-night/${brandName}_dimens.xml`,
               format: 'android/dimens-custom',
               options: { brandName },
               filter: 'dark-mode',
             },
           ],
         },
-        ios: {
-          ...STYLE_DICTIONARY_BASE_CONFIG.platforms.ios,
-          transforms: [
-            'size/pxToRem',
-            'attribute/cti',
-            'name/camel',
-            'color/UIColorSwift',
-            'content/swift/literal',
-            'asset/swift/literal',
-            'size/swift/remToCGFloat',
-            'strip-ios-prefix',
-            'strip-ios-dark-or-light-prefix',
-          ],
-          files: [
-            // {
-            //   destination: `${DIST_FOLDER}/style-dictionary/ios/${brandName}/colors-light-mode.swift`,
-            //   format: 'ios-swift/class.swift',
-            //   filter: 'light-mode-and-color',
-            // },
-            // {
-            //   destination: `${DIST_FOLDER}/style-dictionary/ios/${brandName}/colors-dark-mode.xswift`,
-            //   format: 'ios-swift/class.swift',
-            //   filter: 'dark-mode-and-color',
-            // },
-            // {
-            //   destination: `${DIST_FOLDER}/style-dictionary/ios/${brandName}/dimensions-light-mode.swift`,
-            //   format: 'ios-swift/class.swift',
-            //   filter: 'light-mode-and-dimension',
-            // },
-            // {
-            //   destination: `${DIST_FOLDER}/style-dictionary/ios/${brandName}/dimensions-dark-mode.xswift`,
-            //   format: 'ios-swift/class.swift',
-            //   filter: 'dark-mode-and-dimension',
-            // },
-          ],
-        },
       },
-      log: {
-        warnings: 'warn', // 'warn' | 'error' | 'disabled'
-        verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
-      },
+      log: LOG_CONFIG,
     });
 
     await lightAndDarkModeDictionary.buildAllPlatforms();
-    await fs.copy(`${DIST_FOLDER}/style-dictionary`, INTERNAL_FOLDER);
   }
 })();

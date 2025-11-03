@@ -3,23 +3,17 @@
 Keep the collection of simple phone numbers easy, use hint text to indicate when you require an area code to be included. When using within an application form, only capture the minimum information you require. This base pattern can be broken down to only ask for one or two of the numbers displayed, or used with additional fields and questions for specific use cases, ie when asking the user to update their details within our secure environment, you may need to allow them to add multiple phone numbers.
 
 ```tsx
-<Form spacing="large">
-  <FormGroup>
-    <Field label="Home number" hintMessage="Include the 2 digit area code">
-      <Input type="number" size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-  <FormGroup>
-    <Field label="Work number" hintMessage="Include the 2 digit area code">
-      <Input type="number" size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-  <FormGroup>
-    <Field label="Mobile number">
-      <Input type="number" size="large" className="w-6/12" />
-    </Field>
-  </FormGroup>
-</Form>
+<form className="flex flex-col gap-4">
+  <Field label="Home number" hintMessage="Include the 2 digit area code">
+    <Input type="number" size="large" className="w-6/12" />
+  </Field>
+  <Field label="Work number" hintMessage="Include the 2 digit area code">
+    <Input type="number" size="large" className="w-6/12" />
+  </Field>
+  <Field label="Mobile number">
+    <Input type="number" size="large" className="w-6/12" />
+  </Field>
+</form>
 ```
 
 ### Usage example
@@ -27,21 +21,19 @@ Keep the collection of simple phone numbers easy, use hint text to indicate when
 **International phone number:** Use this component only when it’s absolutely necessary to capture an international phone number, eg. in the scenario where it is required to deliver or service a product. The dropdown allows the user to select from a list of country codes, rather than have to know the date format required.
 
 ```tsx
-<Form spacing="large">
-  <FormGroup>
-    <InputGroup
-      size="large"
-      label="Phone number"
-      className="w-7/12"
-      before={
-        <Select>
-          <option>Select</option>
-          <option>AU +61</option>
-        </Select>
-      }
-    >
-      <Input size="large" />
-    </InputGroup>
-  </FormGroup>
-</Form>
+<form className="flex flex-col gap-4">
+  <InputGroup
+    size="large"
+    label="Phone number"
+    className="w-7/12"
+    before={
+      <Select>
+        <option>Select</option>
+        <option>AU +61</option>
+      </Select>
+    }
+  >
+    <Input size="large" />
+  </InputGroup>
+</form>
 ```

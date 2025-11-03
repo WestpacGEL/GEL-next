@@ -5,22 +5,24 @@ The error message should always sit above the input field to give context. The e
   const [hasDifferentMailingAddress, setHasDifferentMailingAddress] = useState('yes');
 
   return (
-    <Form className="w-full lg:w-7/12" spacing="large">
-      <FormGroup>
-        <Field label="Do you have a different mailing address?">
-          <ButtonGroup 
-            size="large" 
-            value={hasDifferentMailingAddress} 
-            onChange={value => setHasDifferentMailingAddress(value)}
-            buttons={[
-              { value: 'yes', label: "Yes" }, 
-              { value: 'no', label: "No" }
-            ]}
-          />
-        </Field>
-        <FormGroup>{hasDifferentMailingAddress === 'yes' && <ManualAddress withError />}</FormGroup>
-      </FormGroup>
-    </Form>
+    <form className="w-full lg:w-7/12" spacing="large">
+      <Field label="Do you have a different mailing address?">
+        <ButtonGroup
+          size="large"
+          value={hasDifferentMailingAddress}
+          onChange={value => setHasDifferentMailingAddress(value)}
+          buttons={[
+            { value: 'yes', label: 'Yes' },
+            { value: 'no', label: 'No' },
+          ]}
+        />
+      </Field>
+      {hasDifferentMailingAddress === 'yes' && (
+        <div className="pt-4">
+          <ManualAddress withError />
+        </div>
+      )}
+    </form>
   );
 };
 ```

@@ -10,7 +10,7 @@
   }, [items, setValue]);
 
   return (
-    <Form>
+    <form>
       <Repeater onAdd={handleAdd}>
         {items.map((item, index) => (
           <RepeaterItem
@@ -19,15 +19,13 @@
               setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
             }}
           >
-            <FormGroup spacing="none">
-              <Field label="Mobile number">
-                <Input {...register(`items.${index}.mobileNumber`)} width={10} />
-              </Field>
-            </FormGroup>
+            <Field label="Mobile number">
+              <Input {...register(`items.${index}.mobileNumber`)} width={10} />
+            </Field>
           </RepeaterItem>
         ))}
       </Repeater>
-    </Form>
+    </form>
   );
 };
 ```
@@ -44,7 +42,7 @@
   }, [items, setValue]);
 
   return (
-    <Form>
+    <form>
       <Repeater separator onAdd={handleAdd}>
         {items.map((item, index) => (
           <RepeaterItem
@@ -53,20 +51,18 @@
               setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
             }}
           >
-            <FormGroup>
+            <div className="flex flex-col gap-4">
               <Field label="BSB">
                 <Input {...register(`items.${index}.bsb`)} width={10} />
               </Field>
-            </FormGroup>
-            <FormGroup spacing="none">
               <Field label="Account number" hintMessage="Account number should have 10 digits">
                 <Input {...register(`items.${index}.accountNumber`)} width={18} />
               </Field>
-            </FormGroup>
+            </div>
           </RepeaterItem>
         ))}
       </Repeater>
-    </Form>
+    </form>
   );
 };
 ```

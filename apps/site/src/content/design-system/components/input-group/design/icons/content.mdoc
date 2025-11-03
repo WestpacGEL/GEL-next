@@ -1,25 +1,25 @@
 ### Types
 
 ```tsx
-<Fragment>
-  <h4 className="typography-body-10 text-text-muted italic mb-3">Icon before</h4>
+<div className="flex flex-col gap-4">
+  <h4 className="typography-body-10 text-text-muted italic">Icon before</h4>
   <InputGroup width={20} before={{ icon: () => <SearchIcon size="small" color="muted" /> }}>
     <Input />
   </InputGroup>
 
-  <h4 className="typography-body-10 text-text-muted italic mb-3">Icon after</h4>
+  <h4 className="typography-body-10 text-text-muted italic">Icon after</h4>
   <InputGroup width={20} after={{ icon: TickIcon }}>
     <Input />
   </InputGroup>
 
-  <h4 className="typography-body-10 text-text-muted italic mb-3">Button icon after</h4>
+  <h4 className="typography-body-10 text-text-muted italic">Button icon after</h4>
   <InputGroup
     width={20}
     after={{ inset: true, element: <Button look="link" iconAfter={ClearIcon} iconColor="muted" /> }}
   >
     <Input />
   </InputGroup>
-</Fragment>
+</div>
 ```
 
 ### Usage examples

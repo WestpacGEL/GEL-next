@@ -7,7 +7,7 @@ import { ReactNode } from 'react';
 export function ContentWrapper({ children, isSidebarOpen }: { children: ReactNode; isSidebarOpen?: boolean }) {
   return (
     <section
-      className={clsx('flex-1 pb-10', {
+      className={clsx('flex-1 pt-20 pb-10', {
         'md:mr-[300px]': isSidebarOpen,
       })}
       id="content-wrapper"
@@ -15,7 +15,6 @@ export function ContentWrapper({ children, isSidebarOpen }: { children: ReactNod
       <GridContainer>
         <Grid>
           <GridItem span={{ initial: 12, sm: 8, md: 8, lg: 6 }} start={{ initial: 1, sm: 3, md: 3, lg: 4 }}>
-            <div className="overscroll-x-none md:h-10"></div>
             {children}
           </GridItem>
         </Grid>

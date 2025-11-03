@@ -1,13 +1,8 @@
 ```tsx
-  <ButtonGroup 
-  label="Label"
-errorMessage="If there is an error it can go here"   
-  validationState="invalid"
-    hintMessage="This is a small button group 30px"
-    size="large"
-    buttons={[
-      { value: "Left", label: "Left" }, 
-      { value: "Right", label: "Right" }
-    ]}
-  />
+<Field label="Label" errorMessage="If there is an error it can go here" hintMessage="This is a small button group 30px">
+  <ButtonGroup size="large">
+    <ButtonGroupButton id="Left">Left</ButtonGroupButton>
+    <ButtonGroupButton id="Right">Right</ButtonGroupButton>
+  </ButtonGroup>
+</Field>
 ```

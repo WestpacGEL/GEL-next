@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <dimen name="bomBorderRoundedNone">0dp</dimen>
+  <dimen name="bomBorderRoundedSm">3dp</dimen>
+  <dimen name="bomBorderRoundedMd">4dp</dimen>
+  <dimen name="bomBorderRoundedLg">5dp</dimen>
+  <dimen name="bomBorderRoundedXl">6dp</dimen>
+  <dimen name="bomBorderRounded2xl">8dp</dimen>
+  <dimen name="bomBorderRounded3xl">12dp</dimen>
+  <dimen name="bomBorderRounded4xl">16dp</dimen>
+  <dimen name="bomBorderRounded5xl">24dp</dimen>
+  <dimen name="bomBorderRoundedFull">999dp</dimen>
+</resources>

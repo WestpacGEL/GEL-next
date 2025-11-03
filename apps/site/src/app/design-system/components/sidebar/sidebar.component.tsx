@@ -32,12 +32,12 @@ export function Sidebar({ items, brand }: SidebarProps) {
       return;
     }
     const listener = () => {
-      const y = outsideRef.current?.scrollTop || 0;
+      const y = listRef.current?.scrollTop || 0;
       setScrolled(y > 0);
     };
-    outsideRef.current.addEventListener('scroll', listener);
+    listRef?.current?.addEventListener('scroll', listener);
     return () => {
-      outsideRef.current?.removeEventListener('scroll', listener);
+      listRef?.current?.removeEventListener('scroll', listener);
     };
   }, []);
 
@@ -76,13 +76,13 @@ export function Sidebar({ items, brand }: SidebarProps) {
       >
         {/* Below div required to hide so the transform still happens while still hiding the sidebar below large, otherwise users could tab into it when closed */}
         <div
-          className={clsx({
+          className={clsx('flex flex-col overflow-hidden', {
             'max-lg:hidden': !open,
           })}
         >
           <div
             className={clsx(
-              'bg-background-white-pale sticky top-0 transition-shadow delay-0 duration-200 ease-[ease]',
+              'bg-background-white-pale sticky flex-0 transition-shadow delay-0 duration-200 ease-[ease]',
               {
                 'shadow-[0_2px_5px_rgba(0,0,0,0.3)]': scrolled,
               },
@@ -97,12 +97,17 @@ export function Sidebar({ items, brand }: SidebarProps) {
             </button>
             <Link
               href="/"
-              className="outline-focus flex h-15 items-center px-3 outline-offset-[-1px]"
+              className="focus-visible:focus-outline flex h-15 items-center px-3 !outline-offset-[-2px]"
               aria-label="GEL home"
             >
               <Logo brand={brand} />
             </Link>
-            <div className="border-b-border-muted-soft border-b">
+            <div
+              className={clsx('border-b', {
+                'border-b-border-mono': scrolled,
+                'border-b-border-muted-soft': !scrolled,
+              })}
+            >
               <SidebarSelect value={brand} onChange={handleChange} aria-label="Change brand">
                 {BANK_OPTIONS.map(({ icon: Icon, designSystemPageClasses, key, label }) => (
                   <SidebarSelect.Option key={key} textValue={label}>
@@ -116,7 +121,11 @@ export function Sidebar({ items, brand }: SidebarProps) {
             </div>
           </div>
           <nav ref={listRef} className="flex-1 overflow-x-hidden overflow-y-auto pb-4 transition-all">
-            <Link href="/" className="outline-focus block outline-offset-[-1px]" aria-label="Back to GEL">
+            <Link
+              href="/"
+              className="focus-visible:focus-outline block !outline-offset-[-2px]"
+              aria-label="Back to GEL"
+            >
               <BackToGelSvg />
             </Link>
             <Navigation items={items} brand={brand} />

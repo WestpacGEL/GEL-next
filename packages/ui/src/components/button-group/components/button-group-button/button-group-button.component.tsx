@@ -16,7 +16,7 @@ import type { ButtonGroupButtonProps } from './button-group-button.types.js';
 export function ButtonGroupButton({ className, ...props }: ButtonGroupButtonProps) {
   const ref = useRef<ButtonRef | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const { size, look, block, ...state } = useContext(ToggleButtonGroupContext)!;
+  const { size, look, block, orientation, ...state } = useContext(ToggleButtonGroupContext)!;
   const { buttonProps, isPressed, isSelected } = useToggleButtonGroupItem(props, state, ref);
   const breakpoint = useBreakpoint();
   const { isFocusVisible, focusProps } = useFocusRing();
@@ -27,6 +27,7 @@ export function ButtonGroupButton({ className, ...props }: ButtonGroupButtonProp
     block: resolvedBlock,
     isFocusVisible,
     size: resolvedSize,
+    orientation,
   });
 
   return (

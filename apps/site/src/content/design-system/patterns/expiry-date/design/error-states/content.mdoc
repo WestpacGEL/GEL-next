@@ -5,11 +5,7 @@ The Expiry date pattern can isolate which field carries the error and highlight 
 ### Text inputs with errors
 
 ```tsx
-<FormGroup>
-  <FormLabel>Expiry date</FormLabel>
-  <FormHint>Example: 03 2020</FormHint>
-  <ErrorMessage message="Month must be valid" />
-  <ErrorMessage message="Year must be valid" />
+<Field label="Expiry date" hintMessage="Example: 03 2020" errorMessage={['Month must be valid', 'Year must be valid']}>
   <fieldset className="flex gap-2">
     <Field label="Month" labelSize="small">
       <Input invalid type="number" size="large" pattern="[0-9]*" min="1" max="12" autoComplete="bday-month" />
@@ -18,15 +14,13 @@ The Expiry date pattern can isolate which field carries the error and highlight 
       <Input invalid className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" />
     </Field>
   </fieldset>
-</FormGroup>
+</Field>
 ```
 
 ### Selects with errors
 
 ```tsx
-<FormGroup>
-  <FormLabel>Expiry date</FormLabel>
-  <ErrorMessage message="Error message goes here if activated" />
+<Field label="Expiry date" errorMessage="Error message goes here if activated">
   <fieldset className="flex gap-2">
     <Field label="Month" labelSize="small">
       <Select invalid size="large">
@@ -45,5 +39,5 @@ The Expiry date pattern can isolate which field carries the error and highlight 
       </Select>
     </Field>
   </fieldset>
-</FormGroup>
+</Field>
 ```

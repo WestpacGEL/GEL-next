@@ -1,7 +1,9 @@
 @import 'tailwindcss';
 @import '@westpac/style-config/tailwind';
-@import '@westpac/style-config/theme-wbc';
-@import '@westpac/style-config/theme-stg';
+@import '@westpac/style-config/themes/wbc.css';
+@import '@westpac/style-config/themes/stg.css';
+@import '@westpac/style-config/themes/bom.css';
+@import '@westpac/style-config/themes/bsa.css';
 @import '../src/css/global.css';
 
 @layer base {

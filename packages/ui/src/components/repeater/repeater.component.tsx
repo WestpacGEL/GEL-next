@@ -54,7 +54,7 @@ export function Repeater({ children, onAdd, addText = 'Add another item', separa
             look="link"
             size="small"
             soft
-            onClick={() => onAdd()}
+            onClick={() => onAdd?.()}
           >
             {addText}
           </Button>

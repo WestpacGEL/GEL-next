@@ -385,19 +385,19 @@
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#3e3d44"
+            "$value": "#5b5b6a"
           },
           "700": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#323238"
+            "$value": "#464651"
           },
           "800": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#27272b"
+            "$value": "#323238"
           },
           "900": {
             "$scopes": ["ALL_SCOPES"],
@@ -719,25 +719,25 @@
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f5e5e5"
+            "$value": "#f5d9d9"
           },
           "200": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#e6bfbf"
+            "$value": "#efa2a2"
           },
           "300": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#cc8080"
+            "$value": "#e76969"
           },
           "400": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#b34040"
+            "$value": "#cf2c2c"
           },
           "500": {
             "$scopes": ["ALL_SCOPES"],
@@ -749,31 +749,31 @@
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#820000"
+            "$value": "#860000"
           },
           "700": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#6b0000"
+            "$value": "#710000"
           },
           "800": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#540000"
+            "$value": "#5d0000"
           },
           "900": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#3d0000"
+            "$value": "#4d0000"
           },
           "950": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#260000"
+            "$value": "#410000"
           },
           "opacity": {
             "$scopes": ["ALL_SCOPES"],
@@ -787,31 +787,31 @@
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#fff8f3"
+            "$value": "#fef4eb"
           },
           "100": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#fef2e7"
+            "$value": "#fde7d3"
           },
           "200": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#fddec3"
+            "$value": "#fbcba2"
           },
           "300": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#fabc87"
+            "$value": "#f9b071"
           },
           "400": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#f89b4b"
+            "$value": "#f79540"
           },
           "500": {
             "$scopes": ["ALL_SCOPES"],
@@ -823,31 +823,31 @@
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#d0680d"
+            "$value": "#ce6409"
           },
           "700": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#ac550b"
+            "$value": "#9d4c07"
           },
           "800": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#874308"
+            "$value": "#713705"
           },
           "900": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#623106"
+            "$value": "#401f03"
           },
           "950": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
-            "$value": "#3d1f04"
+            "$value": "#2c1502"
           },
           "opacity": {
             "$scopes": ["ALL_SCOPES"],
@@ -860,79 +860,65 @@
     },
     "border": {
       "radius": {
-        "100": {
-          "$scopes": ["STROKE_FLOAT"],
+        "none": {
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
-          "$value": 2
+          "$value": 0
         },
-        "200": {
-          "$scopes": ["STROKE_FLOAT"],
+        "3px": {
+          "$scopes": ["CORNER_RADIUS"],
+          "$hiddenFromPublishing": true,
+          "$type": "float",
+          "$value": 3
+        },
+        "4px": {
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 4
         },
-        "300": {
-          "$scopes": ["STROKE_FLOAT"],
+        "5px": {
+          "$scopes": ["CORNER_RADIUS"],
+          "$hiddenFromPublishing": true,
+          "$type": "float",
+          "$value": 5
+        },
+        "6px": {
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 6
         },
-        "400": {
-          "$scopes": ["STROKE_FLOAT"],
+        "8px": {
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 8
         },
-        "500": {
-          "$scopes": ["STROKE_FLOAT"],
+        "12px": {
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 12
         },
-        "600": {
-          "$scopes": ["STROKE_FLOAT"],
+        "16px": {
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 16
         },
-        "700": {
-          "$scopes": ["STROKE_FLOAT"],
+        "24px": {
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 24
         },
-        "800": {
-          "$scopes": ["STROKE_FLOAT"],
+        "full": {
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
-          "$value": 32
-        },
-        "900": {
-          "$scopes": ["STROKE_FLOAT"],
-          "$hiddenFromPublishing": true,
-          "$type": "float",
-          "$value": 99
-        },
-        "none": {
-          "$scopes": ["STROKE_FLOAT"],
-          "$hiddenFromPublishing": true,
-          "$type": "float",
-          "$value": 0
-        }
-      },
-      "width": {
-        "default": {
-          "$scopes": ["STROKE_FLOAT"],
-          "$hiddenFromPublishing": true,
-          "$type": "float",
-          "$value": 1
-        },
-        "thick": {
-          "$scopes": ["STROKE_FLOAT"],
-          "$hiddenFromPublishing": true,
-          "$type": "float",
-          "$value": 3
+          "$value": 999
         }
       }
     }
@@ -941,25 +927,9 @@
     "light-mode": {
       "color": {
         "background": {
-          "background-pale-black": {
+          "background-white-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Use for screen backgrounds to establish correct emphasis:  Pale in Light Mode,  Black in Dark Mode",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.100}"
-          },
-          "background-white-black": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Use for screen backgrounds to establish correct emphasis: White in Light Mode, Black in Dark Mode",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
-          },
-          "background-white-faint": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode.",
+            "$description": "Use for screen and container background fills. If your screen background is white use this token.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -967,41 +937,78 @@
           },
           "background-pale-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Use for screen backgrounds to establish correct emphasis: Pale in Light Mode, Faint in Dark Mode",
+            "$description": "Use for screen and container background fills. Replaces current style: Background",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Westpac.color.muted.100}"
           },
-          "background-white-pale": {
+          "background-faint-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode.",
+            "$description": "Use for screen and container background fills. Replaces current style: Light",
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.muted.50}"
+          },
+          "background-white-faint": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Use for screen backgrounds to establish correct emphasis.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Westpac.color.mono.white}"
+          },
+          "background-white-black": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "This token is reserved. Do not use.",
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.mono.white}"
+          },
+          "background-pale-black": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "This token is reserved. Do not use.",
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.muted.100}"
+          },
+          "background-primary": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.primary.500}"
+          },
+          "background-hero": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.hero.500}"
           }
         },
         "surface": {
-          "surface-mono": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Use surface-mono when you want to switch from white to black.",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.white}"
-          },
           "surface-muted-vivid": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Use for icons that need to be text colour.",
+            "$description": "Use for fills that need to be text colour.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.950}"
+            "$value": "{Themes.Westpac.color.alias.surface-muted-vivid-LM}"
           },
           "surface-muted": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Muted is now slightly lighter but remains accessible in all required scenarios.",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1009,7 +1016,7 @@
           },
           "surface-muted-strong": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1017,7 +1024,7 @@
           },
           "surface-muted-mild": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1025,7 +1032,7 @@
           },
           "surface-muted-soft": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1033,7 +1040,7 @@
           },
           "surface-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is used for backgrounds",
+            "$description": "Replaces current style: Background",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1041,7 +1048,7 @@
           },
           "surface-muted-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes.",
+            "$description": "Replaces current style: Light",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1049,6 +1056,7 @@
           },
           "surface-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1056,7 +1064,7 @@
           },
           "surface-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
+            "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1064,6 +1072,7 @@
           },
           "surface-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1071,7 +1080,7 @@
           },
           "surface-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
+            "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1079,7 +1088,7 @@
           },
           "surface-pop": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour should be used very sparingly. It is for embellishment only.",
+            "$description": "Replaces current style: Pop. Use sparingly, embellishment only.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1087,7 +1096,7 @@
           },
           "surface-pop-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines.",
+            "$description": "Use sparingly, in accordance with the brand guidelines. For embellishment only.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1095,7 +1104,7 @@
           },
           "surface-holler": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1103,7 +1112,7 @@
           },
           "surface-holler-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1111,7 +1120,7 @@
           },
           "surface-sing": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1119,7 +1128,7 @@
           },
           "surface-sing-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1127,7 +1136,7 @@
           },
           "surface-dance": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1135,7 +1144,7 @@
           },
           "surface-dance-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1143,7 +1152,7 @@
           },
           "surface-success": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1151,7 +1160,7 @@
           },
           "surface-success-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1159,7 +1168,7 @@
           },
           "surface-info": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1167,7 +1176,7 @@
           },
           "surface-info-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1175,7 +1184,7 @@
           },
           "surface-warning": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1183,7 +1192,7 @@
           },
           "surface-warning-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1191,7 +1200,7 @@
           },
           "surface-danger": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1199,7 +1208,7 @@
           },
           "surface-danger-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1207,7 +1216,7 @@
           },
           "surface-system-error": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+            "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1215,17 +1224,33 @@
           },
           "surface-system-error-dark": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+            "$description": "Reserved. Must only be used for the System messaging component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Westpac.color.reserved.system.950}"
+          },
+          "surface-mono": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Mono is either White or Black",
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.mono.white}"
+          },
+          "surface-reversed": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Reserved is always white.",
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.mono.white}"
           }
         },
         "text": {
           "text-body": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "Use for body text, button labels, form labels etc. Can also be used for headings if required.",
+            "$description": "Replaces current style: Text",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1233,7 +1258,7 @@
           },
           "text-heading": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "Use for headings to ensure that multi-brand switching remains accurate.",
+            "$description": "Replaces current style: Heading",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1241,7 +1266,7 @@
           },
           "text-muted": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "Use for text that needs less emphasis - Hint text, sub labels etc.",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1249,7 +1274,7 @@
           },
           "text-primary": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is not currently used in the Design System.",
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1257,15 +1282,15 @@
           },
           "text-hero": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is not currently used in the Design System",
+            "$description": "Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.500}"
+            "$value": "{Themes.Westpac.color.alias.text-hero-LM}"
           },
           "text-holler": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1273,7 +1298,7 @@
           },
           "text-link": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance.",
+            "$description": "Replaces current style: Link",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1281,7 +1306,7 @@
           },
           "text-success": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1289,7 +1314,7 @@
           },
           "text-info": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1297,7 +1322,7 @@
           },
           "text-warning": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1305,7 +1330,7 @@
           },
           "text-danger": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1313,7 +1338,7 @@
           },
           "text-system-error": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+            "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1321,7 +1346,15 @@
           },
           "text-mono": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This colour is used for text on solid backgrounds. Buttons, panels etc.",
+            "$description": "Mono text is either White or Black",
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.mono.white}"
+          },
+          "text-reversed": {
+            "$scopes": ["TEXT_FILL"],
+            "$description": "Reversed text is always white",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1331,7 +1364,7 @@
         "border": {
           "border-muted": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is not currently used in the Design System.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1339,7 +1372,7 @@
           },
           "border-muted-strong": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This colour replaces the old \"BorderDark\". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements.",
+            "$description": "Replaces current style: Border Dark",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1347,7 +1380,7 @@
           },
           "border-muted-mild": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is not currently used in the Design System. Accessibility is not guaranteed.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1355,7 +1388,7 @@
           },
           "border-muted-soft": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This colour replaces the old \"Border\". It can be used for borders and design embellishment that does not have to be accessible.",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1363,7 +1396,7 @@
           },
           "border-hero": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1371,7 +1404,7 @@
           },
           "border-primary": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1379,7 +1412,7 @@
           },
           "border-pop": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1387,7 +1420,7 @@
           },
           "border-holler": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1395,7 +1428,7 @@
           },
           "border-sing": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1403,7 +1436,7 @@
           },
           "border-dance": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1411,7 +1444,7 @@
           },
           "border-success": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1419,7 +1452,7 @@
           },
           "border-success-mild": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1427,7 +1460,7 @@
           },
           "border-info": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1435,7 +1468,7 @@
           },
           "border-info-mild": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1443,7 +1476,7 @@
           },
           "border-warning": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1451,7 +1484,7 @@
           },
           "border-warning-mild": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1459,7 +1492,7 @@
           },
           "border-danger": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1467,7 +1500,7 @@
           },
           "border-danger-mild": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1475,7 +1508,7 @@
           },
           "border-mono": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements.",
+            "$description": "Mono border is either White or Black",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1483,7 +1516,7 @@
           },
           "border-focus": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the focus state keyboard navigation.",
+            "$description": "Reserved. Only for use with focus state keyboard navigation.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1639,7 +1672,7 @@
         "pictogram": {
           "surface-pictogram-base": {
             "$scopes": ["SHAPE_FILL"],
-            "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
+            "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1647,7 +1680,7 @@
           },
           "surface-pictogram-accent": {
             "$scopes": ["SHAPE_FILL"],
-            "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
+            "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1658,6 +1691,7 @@
           "surface-hover-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1665,6 +1699,7 @@
           },
           "surface-active-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1673,6 +1708,7 @@
           "surface-hover-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1681,6 +1717,7 @@
           "surface-active-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1689,6 +1726,7 @@
           "surface-hover-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1697,6 +1735,7 @@
           "surface-active-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1704,6 +1743,7 @@
           },
           "surface-hover-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1711,6 +1751,7 @@
           },
           "surface-active-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1719,6 +1760,7 @@
           "surface-hover-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1727,6 +1769,7 @@
           "surface-active-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1735,6 +1778,7 @@
           "surface-hover-mono": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1743,6 +1787,7 @@
           "surface-active-mono": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1752,43 +1797,71 @@
       },
       "border": {
         "radius": {
-          "none": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-none": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Westpac.border.radius.none}"
           },
-          "sm": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-sm": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.small}"
+            "$value": "{Themes.Westpac.border.radius.sm}"
           },
-          "md": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-md": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.medium}"
+            "$value": "{Themes.Westpac.border.radius.md}"
           },
-          "lg": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-lg": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.large}"
+            "$value": "{Themes.Westpac.border.radius.lg}"
           },
-          "xl": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-xl": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.xlarge}"
+            "$value": "{Themes.Westpac.border.radius.xl}"
           },
-          "full": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-2xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.border.radius.2xl}"
+          },
+          "rounded-3xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.border.radius.3xl}"
+          },
+          "rounded-4xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.border.radius.4xl}"
+          },
+          "rounded-5xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.border.radius.5xl}"
+          },
+          "rounded-full": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1800,67 +1873,88 @@
     "dark-mode": {
       "color": {
         "background": {
-          "background-pale-black": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Use for screen backgrounds to establish correct emphasis:  Pale in Light Mode,  Black in Dark Mode",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.black}"
-          },
-          "background-white-black": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Use for screen backgrounds to establish correct emphasis: White in Light Mode, Black in Dark Mode",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.mono.black}"
-          },
-          "background-white-faint": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode.",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.950}"
-          },
-          "background-pale-faint": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Use for screen backgrounds to establish correct emphasis: Pale in Light Mode, Faint in Dark Mode",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.950}"
-          },
           "background-white-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "All the surface-white tokens default to white in light mode, however when switched to dark mode they adopt the correct shade value. Example usage includes soft buttons, button groups, switches etc which have to be white in light mode but need more emphasis in dark mode.",
+            "$description": "Use for screen and container background fills. If your screen background is white use this token.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Westpac.color.muted.900}"
-          }
-        },
-        "surface": {
-          "surface-mono": {
+          },
+          "background-pale-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Use surface-mono when you want to switch from white to black.",
+            "$description": "Use for screen and container background fills. Replaces current style: Background",
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.muted.950}"
+          },
+          "background-faint-pale": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Use for screen and container background fills. Replaces current style: Light",
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.muted.900}"
+          },
+          "background-white-faint": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Use for screen backgrounds to establish correct emphasis.",
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.muted.950}"
+          },
+          "background-white-black": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "This token is reserved. Do not use.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Westpac.color.mono.black}"
           },
-          "surface-muted-vivid": {
+          "background-pale-black": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Use for icons that need to be text colour.",
+            "$description": "This token is reserved. Do not use.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.50}"
+            "$value": "{Themes.Westpac.color.mono.black}"
+          },
+          "background-primary": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.primary.500}"
+          },
+          "background-hero": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.hero.500}"
+          }
+        },
+        "surface": {
+          "surface-muted-vivid": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Use for fills that need to be text colour.",
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.alias.surface-muted-vivid-DM}"
           },
           "surface-muted": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Muted is now slightly lighter but remains accessible in all required scenarios.",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1868,7 +1962,7 @@
           },
           "surface-muted-strong": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1876,7 +1970,7 @@
           },
           "surface-muted-mild": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is currently not used as a surface fill in the Design System. Accessibility is not guaranteed.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1884,7 +1978,7 @@
           },
           "surface-muted-soft": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is not currently used as a surface fill in the Design System. Accessibility is not guaranteed.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1892,7 +1986,7 @@
           },
           "surface-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is used for backgrounds",
+            "$description": "Replaces current style: Background",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1900,7 +1994,7 @@
           },
           "surface-muted-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is used for backgrounds. Note; In Light Mode this token references the same colour variable as surface-muted-pale (muted100). This is so we can maintain the correct emphasis for both Light and Dark Modes.",
+            "$description": "Replaces current style: Light",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1908,6 +2002,7 @@
           },
           "surface-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1915,7 +2010,7 @@
           },
           "surface-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
+            "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1923,6 +2018,7 @@
           },
           "surface-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1930,7 +2026,7 @@
           },
           "surface-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is used for soft badges. It should not be used as a background as this is not specified in the brand guidelines.",
+            "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1938,7 +2034,7 @@
           },
           "surface-pop": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour should be used very sparingly. It is for embellishment only.",
+            "$description": "Replaces current style: Pop. Use sparingly, embellishment only.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1946,7 +2042,7 @@
           },
           "surface-pop-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines.",
+            "$description": "Use sparingly, in accordance with the brand guidelines. For embellishment only.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1954,7 +2050,7 @@
           },
           "surface-holler": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is for data visualisation, however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1962,7 +2058,7 @@
           },
           "surface-holler-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour should be used very sparingly. It is for embellishment only. It can be used as a background in accordance with the brand guidelines.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1970,7 +2066,7 @@
           },
           "surface-sing": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1978,7 +2074,7 @@
           },
           "surface-sing-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1986,7 +2082,7 @@
           },
           "surface-dance": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -1994,7 +2090,7 @@
           },
           "surface-dance-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2002,7 +2098,7 @@
           },
           "surface-success": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2010,7 +2106,7 @@
           },
           "surface-success-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2018,7 +2114,7 @@
           },
           "surface-info": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2026,7 +2122,7 @@
           },
           "surface-info-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2034,7 +2130,7 @@
           },
           "surface-warning": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2042,7 +2138,7 @@
           },
           "surface-warning-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2050,7 +2146,7 @@
           },
           "surface-danger": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2058,7 +2154,7 @@
           },
           "surface-danger-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2066,7 +2162,7 @@
           },
           "surface-system-error": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+            "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2074,17 +2170,33 @@
           },
           "surface-system-error-dark": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+            "$description": "Reserved. Must only be used for the System messaging component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Westpac.color.reserved.system.500}"
+          },
+          "surface-mono": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Mono is either White or Black",
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.mono.black}"
+          },
+          "surface-reversed": {
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$description": "Reserved is always white.",
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.mono.white}"
           }
         },
         "text": {
           "text-body": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "Use for body text, button labels, form labels etc. Can also be used for headings if required.",
+            "$description": "Replaces current style: Text",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2092,7 +2204,7 @@
           },
           "text-heading": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "Use for headings to ensure that multi-brand switching remains accurate.",
+            "$description": "Replaces current style: Heading",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2100,7 +2212,7 @@
           },
           "text-muted": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "Use for text that needs less emphasis - Hint text, sub labels etc.",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2108,7 +2220,7 @@
           },
           "text-primary": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is not currently used in the Design System.",
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2116,15 +2228,15 @@
           },
           "text-hero": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is not currently used in the Design System",
+            "$description": "Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.hero.200}"
+            "$value": "{Themes.Westpac.color.alias.text-hero-DM}"
           },
           "text-holler": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is not currently used in the Design System, however ION use this text colour in the App. GEL can not endorse the use of this text colour until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2132,7 +2244,7 @@
           },
           "text-link": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "Use this colour for plain text links that do not have an additional visual cue (arrow, icon etc). link text should also be underlined for accessibility compliance.",
+            "$description": "Replaces current style: Link",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2140,7 +2252,7 @@
           },
           "text-success": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2148,7 +2260,7 @@
           },
           "text-info": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2156,7 +2268,7 @@
           },
           "text-warning": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2164,7 +2276,7 @@
           },
           "text-danger": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2172,7 +2284,7 @@
           },
           "text-system-error": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This is a reserved colour. It must only be used for the system error messaging component.",
+            "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2180,17 +2292,25 @@
           },
           "text-mono": {
             "$scopes": ["TEXT_FILL"],
-            "$description": "This colour is used for text on solid backgrounds. Buttons, panels etc.",
+            "$description": "Mono text is either White or Black",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Westpac.color.mono.black}"
+          },
+          "text-reversed": {
+            "$scopes": ["TEXT_FILL"],
+            "$description": "Reversed text is always white",
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.mono.white}"
           }
         },
         "border": {
           "border-muted": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is not currently used in the Design System.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2198,7 +2318,7 @@
           },
           "border-muted-strong": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This colour replaces the old \"BorderDark\". It's used for UI elements (form input fields) to ensure that they comply with AA accessible requirements.",
+            "$description": "Replaces current style: Border Dark",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2206,7 +2326,7 @@
           },
           "border-muted-mild": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is not currently used in the Design System. Accessibility is not guaranteed.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2214,15 +2334,15 @@
           },
           "border-muted-soft": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This colour replaces the old \"Border\". It can be used for borders and design embellishment that does not have to be accessible.",
+            "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.color.muted.700}"
+            "$value": "{Themes.Westpac.color.muted.800}"
           },
           "border-hero": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2230,7 +2350,7 @@
           },
           "border-primary": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2238,7 +2358,7 @@
           },
           "border-pop": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is a subtle way to add colour to the UI. Use sparingly and in accordance with the brand guidelines.",
+            "$description": "Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2246,7 +2366,7 @@
           },
           "border-holler": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. however ION use it for other purposes in the App. GEL can not endorse the use of this colour for anything other than data visualisation until it's approved and documented as part of the Master Brand.",
+            "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2254,7 +2374,7 @@
           },
           "border-sing": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2262,7 +2382,7 @@
           },
           "border-dance": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is strictly for data visualisation - graphs and charts. It must not be used for anything else.",
+            "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2270,7 +2390,7 @@
           },
           "border-success": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2278,7 +2398,7 @@
           },
           "border-success-mild": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the success messaging component.",
+            "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2286,7 +2406,7 @@
           },
           "border-info": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2294,7 +2414,7 @@
           },
           "border-info-mild": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the info messaging component.",
+            "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2302,7 +2422,7 @@
           },
           "border-warning": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2310,7 +2430,7 @@
           },
           "border-warning-mild": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the warning messaging component.",
+            "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2318,7 +2438,7 @@
           },
           "border-danger": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2326,7 +2446,7 @@
           },
           "border-danger-mild": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the danger messaging component.",
+            "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2334,7 +2454,7 @@
           },
           "border-mono": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This border colour is used for borders on solid backgrounds. It's not currently used in the Design System. Use in accordance with the brand guidelines and accessibility requirements.",
+            "$description": "Mono border is either White or Black",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2342,7 +2462,7 @@
           },
           "border-focus": {
             "$scopes": ["STROKE_COLOR"],
-            "$description": "This is a reserved colour. It must only be used for the focus state keyboard navigation.",
+            "$description": "Reserved. Only for use with focus state keyboard navigation.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2498,7 +2618,7 @@
         "pictogram": {
           "surface-pictogram-base": {
             "$scopes": ["SHAPE_FILL"],
-            "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
+            "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2506,7 +2626,7 @@
           },
           "surface-pictogram-accent": {
             "$scopes": ["SHAPE_FILL"],
-            "$description": "This is a reserved component colour token. It must only be used for Pictograms.",
+            "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2517,6 +2637,7 @@
           "surface-hover-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2524,6 +2645,7 @@
           },
           "surface-active-primary": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2532,6 +2654,7 @@
           "surface-hover-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2540,6 +2663,7 @@
           "surface-active-hero": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2548,6 +2672,7 @@
           "surface-hover-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2556,6 +2681,7 @@
           "surface-active-primary-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2563,6 +2689,7 @@
           },
           "surface-hover-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2570,6 +2697,7 @@
           },
           "surface-active-hero-faint": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2578,6 +2706,7 @@
           "surface-hover-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2586,6 +2715,7 @@
           "surface-active-muted-pale": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2594,6 +2724,7 @@
           "surface-hover-mono": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2602,6 +2733,7 @@
           "surface-active-mono": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
+            "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2611,43 +2743,71 @@
       },
       "border": {
         "radius": {
-          "none": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-none": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Westpac.border.radius.none}"
           },
-          "sm": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-sm": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.small}"
+            "$value": "{Themes.Westpac.border.radius.sm}"
           },
-          "md": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-md": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.medium}"
+            "$value": "{Themes.Westpac.border.radius.md}"
           },
-          "lg": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-lg": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.large}"
+            "$value": "{Themes.Westpac.border.radius.lg}"
           },
-          "xl": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-xl": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
-            "$value": "{Themes.Westpac.border.radius.xlarge}"
+            "$value": "{Themes.Westpac.border.radius.xl}"
           },
-          "full": {
-            "$scopes": ["ALL_SCOPES"],
+          "rounded-2xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.border.radius.2xl}"
+          },
+          "rounded-3xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.border.radius.3xl}"
+          },
+          "rounded-4xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.border.radius.4xl}"
+          },
+          "rounded-5xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.border.radius.5xl}"
+          },
+          "rounded-full": {
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2693,6 +2853,22 @@
             "$collectionName": "Themes",
             "$value": "{Themes.Westpac.color.hero.200}"
           },
+          "text-hero-LM": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.hero.500}"
+          },
+          "text-hero-DM": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.hero.200}"
+          },
           "surface-pictogram-base-Lm": {
             "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
@@ -2724,6 +2900,22 @@
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Westpac.color.primary.600}"
+          },
+          "surface-muted-vivid-LM": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.muted.950}"
+          },
+          "surface-muted-vivid-DM": {
+            "$scopes": ["ALL_SCOPES"],
+            "$hiddenFromPublishing": true,
+            "$type": "color",
+            "$libraryName": "",
+            "$collectionName": "Themes",
+            "$value": "{Themes.Westpac.color.muted.50}"
           }
         },
         "muted": {
@@ -3881,37 +4073,69 @@
             "$collectionName": "Primitives",
             "$value": "{Primitives.border.radius.none}"
           },
-          "small": {
+          "sm": {
             "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.border.radius.100}"
+            "$value": "{Primitives.border.radius.3px}"
           },
-          "medium": {
+          "md": {
             "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.border.radius.300}"
+            "$value": "{Primitives.border.radius.4px}"
           },
-          "large": {
+          "lg": {
             "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.border.radius.500}"
+            "$value": "{Primitives.border.radius.5px}"
           },
-          "xlarge": {
+          "xl": {
             "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.border.radius.700}"
+            "$value": "{Primitives.border.radius.6px}"
+          },
+          "2xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$hiddenFromPublishing": true,
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Primitives",
+            "$value": "{Primitives.border.radius.8px}"
+          },
+          "3xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$hiddenFromPublishing": true,
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Primitives",
+            "$value": "{Primitives.border.radius.12px}"
+          },
+          "4xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$hiddenFromPublishing": true,
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Primitives",
+            "$value": "{Primitives.border.radius.16px}"
+          },
+          "5xl": {
+            "$scopes": ["CORNER_RADIUS"],
+            "$hiddenFromPublishing": true,
+            "$type": "dimension",
+            "$libraryName": "",
+            "$collectionName": "Primitives",
+            "$value": "{Primitives.border.radius.24px}"
           },
           "full": {
             "$scopes": ["CORNER_RADIUS"],
@@ -3919,7 +4143,7 @@
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Primitives",
-            "$value": "{Primitives.border.radius.900}"
+            "$value": "{Primitives.border.radius.full}"
           }
         }
       }

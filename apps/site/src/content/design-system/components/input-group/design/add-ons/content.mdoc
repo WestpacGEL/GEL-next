@@ -7,152 +7,156 @@ Add-on elements can be used either before or after an input, they can provide cl
   const [value, setValue] = useState(0);
 
   return (
-    <Fragment>
-      <h4 className="typography-body-10 text-text-muted italic mb-3">Text add-ons</h4>
-      <InputGroup width={10} size="small" name="example-text" before="Text" after="Text">
-        <Input defaultValue="Small" />
-      </InputGroup>
+    <div className="flex flex-col gap-4">
+      <h4 className="typography-body-10 text-text-muted italic">Text add-ons</h4>
+      <div className="flex flex-col gap-4">
+        <InputGroup width={10} size="small" name="example-text" before="Text" after="Text">
+          <Input defaultValue="Small" />
+        </InputGroup>
 
-      <InputGroup width={10} size="medium" name="example-text" before="Text" after="Text">
-        <Input defaultValue="Medium" />
-      </InputGroup>
+        <InputGroup width={10} size="medium" name="example-text" before="Text" after="Text">
+          <Input defaultValue="Medium" />
+        </InputGroup>
 
-      <InputGroup width={10} size="large" name="example-text" before="Text" after="Text">
-        <Input defaultValue="Large" />
-      </InputGroup>
+        <InputGroup width={10} size="large" name="example-text" before="Text" after="Text">
+          <Input defaultValue="Large" />
+        </InputGroup>
 
-      <InputGroup width={10} size="xlarge" name="example-text" before="Text" after="Text">
-        <Input defaultValue="XLarge" />
-      </InputGroup>
+        <InputGroup width={10} size="xlarge" name="example-text" before="Text" after="Text">
+          <Input defaultValue="XLarge" />
+        </InputGroup>
+      </div>
 
-      <h4 className="typography-body-10 text-text-muted italic mb-3">Select add-ons</h4>
+      <h4 className="typography-body-10 text-text-muted italic">Select add-ons</h4>
+      <div className="flex flex-col gap-4">
+        <InputGroup
+          width={10}
+          size="small"
+          before={
+            <Select size="small">
+              <option>Select</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Select>
+          }
+          after={
+            <Select size="small">
+              <option>Select</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Select>
+          }
+        >
+          <Input defaultValue="Small" />
+        </InputGroup>
 
-      <InputGroup
-        width={10}
-        size="small"
-        before={
-          <Select size="small">
-            <option>Select</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </Select>
-        }
-        after={
-          <Select size="small">
-            <option>Select</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </Select>
-        }
-      >
-        <Input defaultValue="Small" />
-      </InputGroup>
+        <InputGroup
+          width={10}
+          size="medium"
+          before={
+            <Select size="medium">
+              <option>Select</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Select>
+          }
+          after={
+            <Select size="medium">
+              <option>Select</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Select>
+          }
+        >
+          <Input defaultValue="Medium" />
+        </InputGroup>
 
-      <InputGroup
-        width={10}
-        size="medium"
-        before={
-          <Select size="medium">
-            <option>Select</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </Select>
-        }
-        after={
-          <Select size="medium">
-            <option>Select</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </Select>
-        }
-      >
-        <Input defaultValue="Medium" />
-      </InputGroup>
+        <InputGroup
+          width={10}
+          size="large"
+          before={
+            <Select size="large">
+              <option>Select</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Select>
+          }
+          after={
+            <Select size="large">
+              <option>Select</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Select>
+          }
+        >
+          <Input defaultValue="Large" />
+        </InputGroup>
 
-      <InputGroup
-        width={10}
-        size="large"
-        before={
-          <Select size="large">
-            <option>Select</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </Select>
-        }
-        after={
-          <Select size="large">
-            <option>Select</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </Select>
-        }
-      >
-        <Input defaultValue="Large" />
-      </InputGroup>
+        <InputGroup
+          width={10}
+          size="xlarge"
+          before={
+            <Select size="xlarge">
+              <option>Select</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Select>
+          }
+          after={
+            <Select size="xlarge">
+              <option>Select</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </Select>
+          }
+        >
+          <Input defaultValue="XLarge" />
+        </InputGroup>
+      </div>
+      <h4 className="typography-body-10 text-text-muted italic">Button add-ons</h4>
 
-      <InputGroup
-        width={10}
-        size="xlarge"
-        before={
-          <Select size="xlarge">
-            <option>Select</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </Select>
-        }
-        after={
-          <Select size="xlarge">
-            <option>Select</option>
-            <option>Option 1</option>
-            <option>Option 2</option>
-          </Select>
-        }
-      >
-        <Input defaultValue="XLarge" />
-      </InputGroup>
+      <div className="flex flex-col gap-4">
+        <InputGroup
+          width={10}
+          size="small"
+          name="example-text"
+          before={<Button size="small">Button</Button>}
+          after={<Button size="small">Button</Button>}
+        >
+          <Input defaultValue="Small" />
+        </InputGroup>
 
-      <h4 className="typography-body-10 text-text-muted italic mb-3">Button add-ons</h4>
+        <InputGroup
+          width={10}
+          size="medium"
+          name="example-text"
+          before={<Button size="medium">Button</Button>}
+          after={<Button size="medium">Button</Button>}
+        >
+          <Input defaultValue="Medium" />
+        </InputGroup>
 
-      <InputGroup
-        width={10}
-        size="small"
-        name="example-text"
-        before={<Button size="small">Button</Button>}
-        after={<Button size="small">Button</Button>}
-      >
-        <Input defaultValue="Small" />
-      </InputGroup>
+        <InputGroup
+          width={10}
+          size="large"
+          name="example-text"
+          before={<Button size="large">Button</Button>}
+          after={<Button size="large">Button</Button>}
+        >
+          <Input defaultValue="Large" />
+        </InputGroup>
 
-      <InputGroup
-        width={10}
-        size="medium"
-        name="example-text"
-        before={<Button size="medium">Button</Button>}
-        after={<Button size="medium">Button</Button>}
-      >
-        <Input defaultValue="Medium" />
-      </InputGroup>
-
-      <InputGroup
-        width={10}
-        size="large"
-        name="example-text"
-        before={<Button size="large">Button</Button>}
-        after={<Button size="large">Button</Button>}
-      >
-        <Input defaultValue="Large" />
-      </InputGroup>
-
-      <InputGroup
-        width={10}
-        size="xlarge"
-        name="example-text"
-        before={<Button size="xlarge">Button</Button>}
-        after={<Button size="xlarge">Button</Button>}
-      >
-        <Input defaultValue="XLarge" />
-      </InputGroup>
-    </Fragment>
+        <InputGroup
+          width={10}
+          size="xlarge"
+          name="example-text"
+          before={<Button size="xlarge">Button</Button>}
+          after={<Button size="xlarge">Button</Button>}
+        >
+          <Input defaultValue="XLarge" />
+        </InputGroup>
+      </div>
+    </div>
   );
 };
 ```
@@ -164,7 +168,7 @@ Add-on elements can be used either before or after an input, they can provide cl
   const [value, setValue] = useState(0);
 
   return (
-    <Fragment>
+    <div className="flex flex-col gap-4">
       <InputGroup width={10} name="example-text" label="Total amount (in whole dollars)" before="AUD" after=".00">
         <Input defaultValue="" type="number" />
       </InputGroup>
@@ -188,10 +192,10 @@ Add-on elements can be used either before or after an input, they can provide cl
           </Select>
         }
       >
-        <Input type="number"/>
+        <Input type="number" />
       </InputGroup>
 
-      <InputGroup size="large" width={30} name="example-button" label="Search" after={<Button size="large" >Go</Button>}>
+      <InputGroup size="large" width={30} name="example-button" label="Search" after={<Button size="large">Go</Button>}>
         <Input defaultValue="" />
       </InputGroup>
 
@@ -240,7 +244,7 @@ Add-on elements can be used either before or after an input, they can provide cl
       >
         <Input value={value} type="number" onChange={event => setValue(parseInt(event.target.value))} />
       </InputGroup>
-    </Fragment>
+    </div>
   );
 };
 ```
@@ -248,62 +252,64 @@ Add-on elements can be used either before or after an input, they can provide cl
 ### Error state
 
 ```tsx
- () => {
-      const [value, setValue] = useState(0);
-    
-      return (
-        <Fragment>
-          <h4 className="typography-body-10 text-text-muted italic mb-3">Text add-ons with errors</h4>
+() => {
+  const [value, setValue] = useState(0);
 
-    
-          <InputGroup width={10} size="medium" name="example-text" before="Text" after="Text" label="Label" errorMessage="If there is an error, it can go here">
-            <Input invalid defaultValue="" />
-          </InputGroup>
+  return (
+    <div className="flex flex-col gap-4">
+      <h4 className="typography-body-10 text-text-muted italic">Text add-ons with errors</h4>
 
-    
-          <h4 className="typography-body-10 text-text-muted italic mb-3">Select add-ons with errors</h4>
-    
-    
-    
-          <InputGroup
-            width={10}
-            size="medium"
-label="Label" errorMessage="If there is an error, it can go here"
-            before={
-              <Select invalid size="medium" errorMessage="If there is an error, it can go here">
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-              </Select>
-            }
-            after={
-              <Select invalid size="medium" errorMessage="If there is an error, it can go here">
-                <option>Select</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-              </Select>
-            }
-          >
-            <Input invalid errorMessage="If there is an error, it can go here"defaultValue="" />
-          </InputGroup>
-    
-    
-    
-          <h4 className="typography-body-10 text-text-muted italic mb-3">Button add-ons with errors</h4>
-    
-    
-          <InputGroup
-            width={10}
-            size="medium"
-label="Label" errorMessage="If there is an error, it can go here"
-            name="example-text"
-            before={<Button size="medium">Button</Button>}
-            after={<Button size="medium">Button</Button>}
-          >
-            <Input invalid defaultValue="" />
-          </InputGroup>
-    
-        </Fragment>
-      );
-    };
+      <InputGroup
+        width={10}
+        size="medium"
+        name="example-text"
+        before="Text"
+        after="Text"
+        label="Label"
+        errorMessage="If there is an error, it can go here"
+      >
+        <Input invalid defaultValue="" />
+      </InputGroup>
+
+      <h4 className="typography-body-10 text-text-muted italic">Select add-ons with errors</h4>
+
+      <InputGroup
+        width={10}
+        size="medium"
+        label="Label"
+        errorMessage="If there is an error, it can go here"
+        before={
+          <Select invalid size="medium" errorMessage="If there is an error, it can go here">
+            <option>Select</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </Select>
+        }
+        after={
+          <Select invalid size="medium" errorMessage="If there is an error, it can go here">
+            <option>Select</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </Select>
+        }
+      >
+        <Input invalid errorMessage="If there is an error, it can go here" defaultValue="" />
+      </InputGroup>
+
+      <h4 className="typography-body-10 text-text-muted italic">Button add-ons with errors</h4>
+
+      <InputGroup
+        width={10}
+        size="medium"
+        label="Label"
+        errorMessage="If there is an error, it can go here"
+        name="example-text"
+        before={<Button size="medium">Button</Button>}
+        after={<Button size="medium">Button</Button>}
+      >
+        <Input invalid defaultValue="" />
+      </InputGroup>
+    </div>
+  );
+};
 ```

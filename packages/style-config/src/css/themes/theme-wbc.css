@@ -1,3 +1,7 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
 @custom-variant wbc (&:where([data-brand=wbc], [data-brand=wbc] *));
 
 @layer theme {

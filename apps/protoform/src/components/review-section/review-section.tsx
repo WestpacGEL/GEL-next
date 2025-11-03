@@ -14,11 +14,11 @@ export function ReviewSection({
   const router = useRouter();
   return sections.map((section, i) => (
     <div key={i} className="border-b-border border-b py-5">
-      <h3 className="typography-body-7 text-heading pb-5 font-bold">{section.sectionName}</h3>
+      <h3 className="typography-body-7 text-text-heading pb-5 font-bold">{section.sectionName}</h3>
       <div className="flex flex-col gap-5">
         {section.items.map((item, j) => (
           <div key={j} className="flex flex-col gap-1">
-            <p className="typography-body-10 text-muted">{item.label}</p>
+            <p className="typography-body-10 text-text-muted">{item.label}</p>
             <p>{item.value}</p>
           </div>
         ))}

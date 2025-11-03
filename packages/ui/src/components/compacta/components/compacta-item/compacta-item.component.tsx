@@ -53,7 +53,7 @@ export function CompactaItem({
   const counter = useMemo(() => (index || 0) + 1, [index]);
 
   return (
-    <div className={styles.item()} {...props}>
+    <div className={styles.item({ className })} {...props}>
       <div className={styles.header()}>
         <div className={styles.headerTitle()}>
           <Tag className={styles.primaryHeading()}>
@@ -72,8 +72,8 @@ export function CompactaItem({
         </div>
         {!state.isExpanded && (
           <div className={styles.secondaryHeading()}>
-            {title?.secondary && <div className={styles.titleSecondary()}>{title?.secondary}</div>}
-            {title?.tertiary && <div className={styles.titleTertiary()}>{title?.tertiary}</div>}
+            {!!title?.secondary && <div className={styles.titleSecondary()}>{title?.secondary}</div>}
+            {!!title?.tertiary && <div className={styles.titleTertiary()}>{title?.tertiary}</div>}
           </div>
         )}
       </div>

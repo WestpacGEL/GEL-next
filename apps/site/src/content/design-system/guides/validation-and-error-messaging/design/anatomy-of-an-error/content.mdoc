@@ -1,19 +1,19 @@
-When we alert users to something that requires their attention, we use the [reserved colours](/components/foundation/colour) in our colour palette, these colours are designed to stand out from our brand colours, rather than blend in. Validation errors that appear in origination forms use the colour *Danger*, along with an alert icon. The associated icon that displays with an error message is crucial for accessibility, as using colour alone to differentiate from the rest of the text on the page is insufficient to meet the accessibility guidelines that support users with colour vision impairments.&nbsp;
+When we alert users to something that requires their attention, we use the [reserved colours](/components/foundation/colour) in our colour palette, these colours are designed to stand out from our brand colours, rather than blend in. Validation errors that appear in origination forms use the colour _Danger_, along with an alert icon. The associated icon that displays with an error message is crucial for accessibility, as using colour alone to differentiate from the rest of the text on the page is insufficient to meet the accessibility guidelines that support users with colour vision impairments.&nbsp;
 
 ```jsx
-  <InputGroup width={20} label="Label" hint="Hint text"  errorMessage="If there is an error it can go here">
-          <Input invalid />
-        </InputGroup>
+<InputGroup width={20} label="Label" hint="Hint text" errorMessage="If there is an error it can go here">
+  <Input invalid />
+</InputGroup>
 ```
 
 Some of the questions presented to users have multiple inputs e.g., Date of birth – Day, Month and Year. Each input has its own error which appears stacked.&nbsp;
 
 ```tsx
-<FormGroup>
-  <FormLabel>Date of birth</FormLabel>
-  <FormHint>Example: 31 3 1980</FormHint>
-  <ErrorMessage message="Day must be valid" />
-  <ErrorMessage message="Year must be valid" />
+<Field
+  label="Date of birth"
+  hintMessage="Example: 31 3 1980"
+  errorMessage={['Day must be valid', 'Year must be valid']}
+>
   <fieldset className="flex gap-4">
     <Field label="Day" labelSize="small">
       <Input type="number" size="large" pattern="[0-9]*" min="1" max="31" autoComplete="bday-day" invalid />
@@ -25,5 +25,5 @@ Some of the questions presented to users have multiple inputs e.g., Date of birt
       <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" invalid />
     </Field>
   </fieldset>
-</FormGroup>
+</Field>
 ```
