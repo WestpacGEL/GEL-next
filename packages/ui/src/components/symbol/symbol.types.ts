@@ -2,7 +2,11 @@ import { type SVGAttributes } from 'react';
 
 export type Align = 'left' | 'center' | 'right';
 
-export type SymbolProps = Omit<SVGAttributes<SVGElement>, 'offset'> & {
+export type SymbolProps = Omit<SVGAttributes<SVGElement>, 'offset' | 'mode'> & {
+  /**
+   * mode
+   */
+  mode?: 'light' | 'dark' | 'auto';
   /**
    * SVG alignment
    */
