@@ -19,7 +19,7 @@ export const styles = tv({
         base: 'sm:bg-background-hero',
       },
       bsa: {
-        base: 'from-hero via-[#00468e] to-[#00adbd] sm:bg-gradient-to-r',
+        base: 'from-surface-hero via-[#00468e] to-[#00adbd] sm:bg-gradient-to-r',
       },
       wbg: {
         base: 'sm:bg-background-hero',
