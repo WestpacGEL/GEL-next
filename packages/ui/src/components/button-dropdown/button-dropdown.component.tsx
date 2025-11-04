@@ -19,6 +19,8 @@ export function ButtonDropdown({
   text,
   children,
   size,
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelBy,
   look = 'hero',
   soft = false,
   block = false,
@@ -59,6 +61,8 @@ export function ButtonDropdown({
         look={look}
         soft={soft}
         block={block}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelBy}
         aria-expanded={state.isOpen}
         aria-controls={panelId}
         className={styles.base()}
