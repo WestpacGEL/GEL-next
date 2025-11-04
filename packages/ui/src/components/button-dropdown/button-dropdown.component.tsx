@@ -22,6 +22,7 @@ export function ButtonDropdown({
   look = 'hero',
   soft = false,
   block = false,
+  dropDownIcon: Icon = DropDownIcon,
   shouldFlip,
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
@@ -50,7 +51,9 @@ export function ButtonDropdown({
     <>
       <Button
         ref={ref}
-        iconAfter={(props: IconProps) => <DropDownIcon aria-hidden {...props} />}
+        iconAfter={
+          !(look === 'link' || look === 'unstyled') ? (props: IconProps) => <Icon aria-hidden {...props} /> : undefined
+        }
         iconBefore={IconBefore}
         size={size}
         look={look}
