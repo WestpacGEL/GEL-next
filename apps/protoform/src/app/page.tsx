@@ -33,7 +33,12 @@ export default function Home() {
 
         <div className="flex flex-col gap-5">
           <div>
-            <h3 className="typography-body-7 text-text-heading xl:typography-body-6 mb-5 font-bold">
+            <h3
+              className={`
+                mb-5 typography-body-7 font-bold text-text-heading
+                xl:typography-body-6
+              `}
+            >
               Navigation options
             </h3>
             <List type="unstyled" className="flex flex-col gap-3">
@@ -68,41 +73,51 @@ export default function Home() {
             </List>
           </div>
           <div>
-            <h3 className="typography-body-7 text-text-heading xl:typography-body-6 mb-5 font-bold">
+            <h3
+              className={`
+                mb-5 typography-body-7 font-bold text-text-heading
+                xl:typography-body-6
+              `}
+            >
               Profile indicator examples
             </h3>
-            <p className="typography-body-9 text-text mb-5">
+            <p className="mb-5 typography-body-9 text-text-body">
               When customers have multiple profiles (such as business and personal), indicators at the top of the form
               clearly show which profile they are working in. The Extra-care indicator is used only for staff facing
               processes.
             </p>
             <List type="link" className="flex flex-col gap-1">
               <Link href="/personal-customer" passHref legacyBehavior>
-                <ListItem className="typography-body-9 flex flex-col gap-1">Personal customer</ListItem>
+                <ListItem className="flex flex-col gap-1 typography-body-9">Personal customer</ListItem>
               </Link>
               <Link href="/business-customer" passHref legacyBehavior>
-                <ListItem className="typography-body-9 flex flex-col gap-1">Business customer</ListItem>
+                <ListItem className="flex flex-col gap-1 typography-body-9">Business customer</ListItem>
               </Link>
               <Link href="/extra-care-customer" passHref legacyBehavior>
-                <ListItem className="typography-body-9 flex flex-col gap-1">
+                <ListItem className="flex flex-col gap-1 typography-body-9">
                   Extra-care customer (Staff facing only)
                 </ListItem>
               </Link>
             </List>
           </div>
           <div>
-            <h3 className="typography-body-7 text-text-heading xl:typography-body-6 mb-5 font-bold">
+            <h3
+              className={`
+                mb-5 typography-body-7 font-bold text-text-heading
+                xl:typography-body-6
+              `}
+            >
               Messaging page examples
             </h3>
             <List type="link" className="flex flex-col gap-1">
               <Link href="/error" passHref legacyBehavior>
-                <ListItem className="typography-body-9 flex flex-col gap-1">Error messaging page</ListItem>
+                <ListItem className="flex flex-col gap-1 typography-body-9">Error messaging page</ListItem>
               </Link>
               <Link href="/success" passHref legacyBehavior>
-                <ListItem className="typography-body-9 flex flex-col gap-1">Success messaging page</ListItem>
+                <ListItem className="flex flex-col gap-1 typography-body-9">Success messaging page</ListItem>
               </Link>
               <Link href="/task-completion-messaging" passHref legacyBehavior>
-                <ListItem className="typography-body-9 flex flex-col gap-1">Task completion messaging page</ListItem>
+                <ListItem className="flex flex-col gap-1 typography-body-9">Task completion messaging page</ListItem>
               </Link>
             </List>
           </div>

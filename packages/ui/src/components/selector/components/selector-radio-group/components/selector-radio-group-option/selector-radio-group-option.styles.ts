@@ -8,7 +8,7 @@ export const styles = tv({
   variants: {
     checkIcon: {
       arrow: {
-        icon: 'text-text-primary mr-[-6px]',
+        icon: 'mr-[-6px] text-text-primary',
       },
       checkbox: {},
     },
@@ -28,7 +28,7 @@ export const styles = tv({
       true: {
         base: 'opacity-50',
       },
-      false: { base: 'hover:border-border-hero cursor-pointer' },
+      false: { base: 'cursor-pointer hover:border-border-hero' },
     },
   },
   compoundVariants: [

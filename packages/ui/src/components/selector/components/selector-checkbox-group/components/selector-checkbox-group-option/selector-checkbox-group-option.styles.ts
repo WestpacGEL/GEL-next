@@ -8,7 +8,7 @@ export const styles = tv({
   variants: {
     checkIcon: {
       arrow: {
-        icon: 'text-surface-primary mr-[-6px]',
+        icon: 'mr-[-6px] text-surface-primary',
       },
       checkbox: {},
     },
@@ -29,7 +29,7 @@ export const styles = tv({
         base: 'opacity-50',
       },
       false: {
-        base: 'hover:border-border-hero cursor-pointer',
+        base: 'cursor-pointer hover:border-border-hero',
       },
     },
   },

@@ -2,15 +2,15 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'bg-background-white-pale flex-none',
+    base: 'flex-none bg-background-white-pale',
     inner:
-      'border-b-border-muted-soft bg-background-white-pale mx-auto flex w-full flex-1 border border-x-0 border-t-0 text-left transition-[border-bottom-width] duration-200 will-change-[border-bottom-width] after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] max-sm:h-9 max-sm:px-2 sm:h-11 sm:px-4',
-    logoLink: 'focus-visible:focus-outline inline-flex items-center',
+      'mx-auto flex w-full flex-1 border border-x-0 border-t-0 border-b-border-muted-soft bg-background-white-pale text-left transition-[border-bottom-width] duration-200 will-change-[border-bottom-width] after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] max-sm:h-9 max-sm:px-2 sm:h-11 sm:px-4',
+    logoLink: 'inline-flex items-center focus-visible:focus-outline',
     smallLogo: 'sm:hidden',
     largeLogo: 'max-sm:hidden',
     leftContent: 'flex items-center',
     leftButton:
-      'border-border-muted-soft my-1 rounded-none border-r p-0 max-sm:mr-2 max-sm:-ml-2 max-sm:h-7 max-sm:min-w-7 sm:mr-3 sm:-ml-4 sm:h-[3.3125rem] sm:min-w-10',
+      'my-1 rounded-none border-r border-border-muted-soft p-0 max-sm:mr-2 max-sm:-ml-2 max-sm:h-7 max-sm:min-w-7 sm:mr-3 sm:-ml-4 sm:h-[3.3125rem] sm:min-w-10',
     rightContent: 'ml-auto flex items-center',
   },
   variants: {

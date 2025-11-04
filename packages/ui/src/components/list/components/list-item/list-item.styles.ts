@@ -45,7 +45,7 @@ export const styles = tv({
       },
       tick: {
         bullet:
-          ' top-[0.3125rem] left-[0.125rem] h-1 w-2 rotate-[-44deg] border-t-0 border-r-0 border-b-[0.125rem] border-l-[0.125rem] bg-[transparent]',
+          'top-[0.3125rem] left-[0.125rem] h-1 w-2 rotate-[-44deg] border-t-0 border-r-0 border-b-[0.125rem] border-l-[0.125rem] bg-[transparent]',
       },
       cross: {
         bullet:
@@ -53,7 +53,7 @@ export const styles = tv({
       },
       unstyled: {
         base: 'pl-0',
-        bullet: 'pl-[1.1875rem] ',
+        bullet: 'pl-[1.1875rem]',
       },
       icon: {
         base: 'pl-[1.4375rem]',

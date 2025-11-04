@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'text-text-body disabled:form-control-disabled rounded-sm font-light',
+  base: 'rounded-sm font-light text-text-body disabled:form-control-disabled',
   variants: {
     isPlaceholder: {
       true: 'text-text-muted/50 opacity-100',
@@ -12,7 +12,7 @@ export const styles = tv({
       false: '',
     },
     isSeparator: {
-      true: 'text-text-body/50 px-0.5',
+      true: 'px-0.5 text-text-body/50',
       false: '',
     },
   },

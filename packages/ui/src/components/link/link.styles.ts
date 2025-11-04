@@ -9,12 +9,12 @@ export const styles = tv({
   variants: {
     type: {
       inline: {
-        base: 'text-text-link items-baseline',
+        base: 'items-baseline text-text-link',
         iconBefore: 'self-center',
         iconAfter: 'self-center',
       },
       standalone: {
-        base: 'text-text-body items-center',
+        base: 'items-center text-text-body',
       },
     },
     underline: {

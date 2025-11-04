@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'typography-body-10 border-border-muted-soft text-text-body relative block min-w-7 border px-2 py-1.5 text-center',
+  base: 'relative block min-w-7 border border-border-muted-soft px-2 py-1.5 text-center typography-body-10 text-text-body',
   variants: {
     isFocusVisible: {
       true: 'focus-outline',
@@ -16,11 +16,11 @@ export const styles = tv({
       false: '',
     },
     active: {
-      true: 'border-border-hero bg-surface-hero text-text-mono z-10',
+      true: 'z-10 border-border-hero bg-surface-hero text-text-mono',
       false: 'bg-background-white-pale hover:bg-surface-muted-faint',
     },
     disabled: {
-      true: 'bg-surface-muted-faint text-text-muted cursor-not-allowed opacity-50',
+      true: 'cursor-not-allowed bg-surface-muted-faint text-text-muted opacity-50',
       false: 'cursor-pointer',
     },
   },

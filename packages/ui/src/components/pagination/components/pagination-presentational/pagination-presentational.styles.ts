@@ -5,6 +5,6 @@ export const styles = tv({
     base: 'flex flex-col items-center',
     ul: 'flex',
     emptyItem:
-      'typography-body-10 border-border-muted-soft text-text-body relative block min-w-7 cursor-default border-y px-2 py-1.5 text-center',
+      'relative block min-w-7 cursor-default border-y border-border-muted-soft px-2 py-1.5 text-center typography-body-10 text-text-body',
   },
 });

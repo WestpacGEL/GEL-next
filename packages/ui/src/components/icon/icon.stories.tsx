@@ -34,7 +34,7 @@ const AllIconsExample = (props: AllIcons.IconProps) => {
   return (
     <div className="flex flex-col gap-2">
       <input
-        className="border-border-muted-soft rounded-sm border px-3 py-2"
+        className="rounded-sm border border-border-muted-soft px-3 py-2"
         onChange={handleOnChange}
         placeholder="e.g: Accessibiliy"
       />
@@ -42,7 +42,7 @@ const AllIconsExample = (props: AllIcons.IconProps) => {
         {filteredIcons.map(({ key, Icon }) => (
           <button
             onClick={() => void handleOnClick(key)}
-            className="border-border-muted-soft flex h-15 w-23 flex-col items-center justify-center gap-2 border"
+            className="flex h-15 w-23 flex-col items-center justify-center gap-2 border border-border-muted-soft"
             key={key}
           >
             <Icon {...props} />

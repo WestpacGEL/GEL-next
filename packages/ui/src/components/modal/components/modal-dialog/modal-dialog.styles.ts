@@ -2,8 +2,8 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'bg-background-white-pale text-text-body relative mx-auto flex max-w-full flex-col overflow-hidden rounded-3xl outline-none',
-    title: 'typography-body-7 text-text-body pt-9 pb-4 font-bold',
+    base: 'relative mx-auto flex max-w-full flex-col overflow-hidden rounded-3xl bg-background-white-pale text-text-body outline-none',
+    title: 'pt-9 pb-4 typography-body-7 font-bold text-text-body',
     close: 'absolute top-0 right-0 block p-3',
   },
   variants: {
@@ -19,7 +19,7 @@ export const styles = tv({
       },
       md: {
         base: 'w-[37.5rem]',
-        title: 'px-7 ',
+        title: 'px-7',
       },
       sm: {
         base: 'w-[25rem]',

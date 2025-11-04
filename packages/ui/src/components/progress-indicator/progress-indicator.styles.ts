@@ -5,7 +5,7 @@ export const styles = tv({
     icon: 'absolute inset-0 m-auto',
     base: 'animate-[spin_0.7s_linear_infinite]',
     container: 'flex flex-col items-center',
-    label: 'typography-body-9 mt-1.5',
+    label: 'mt-1.5 typography-body-9',
   },
   variants: {
     size: {

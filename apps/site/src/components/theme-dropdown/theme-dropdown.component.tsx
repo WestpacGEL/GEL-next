@@ -13,6 +13,7 @@ export function ThemeDropDown({ className }: { className?: string }) {
 
   useEffect(() => {
     setPortalContainer(getBrandContainer() || undefined);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleOnChange = useCallback(

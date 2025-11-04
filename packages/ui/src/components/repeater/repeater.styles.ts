@@ -17,10 +17,10 @@ export const styles = tv({
         list: 'gap-5',
       },
       true: {
-        item: 'border-border-muted-strong border-t-2 pt-[0.625rem]',
+        item: 'border-t-2 border-border-muted-strong pt-[0.625rem]',
         content: 'px-0 pt-0 pb-7 md:px-6',
         removeBtn: 'relative mb-5 md:ml-6',
-        footer: 'border-border-muted-strong border-t-2',
+        footer: 'border-t-2 border-border-muted-strong',
       },
     },
     isFocused: {

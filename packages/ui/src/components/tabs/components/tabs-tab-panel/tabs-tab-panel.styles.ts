@@ -1,10 +1,10 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'bg-background-white-pale text-text-body flex-1 p-4',
+  base: 'flex-1 bg-background-white-pale p-4 text-text-body',
   variants: {
     look: {
-      default: 'border-border-muted-soft border',
+      default: 'border border-border-muted-soft',
       material: '',
     },
     isFocused: {

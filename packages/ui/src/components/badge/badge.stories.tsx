@@ -113,7 +113,7 @@ export const Links = () => (
   <div className="flex flex-col gap-2">
     {COLORS.map(color => (
       <div key={color} className="flex items-center">
-        <a className="text-text-link flex items-center" href="#">
+        <a className="flex items-center text-text-link" href="#">
           <div className="underline">Product feature</div>
           <Badge color={color} type="pill" className="ml-1">
             NEW

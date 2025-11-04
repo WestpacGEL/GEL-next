@@ -40,7 +40,7 @@ export const DefaultStory: Story = {
             <SecurityIcon size="small" className="float-left mr-1 shrink-0" color="muted" />
           </div>
           <div className="flex">
-            <p className="text-text-muted relative flex-1">
+            <p className="relative flex-1 text-text-muted">
               Our site and your transactions are secure. You can read our{' '}
               <Link href="#" type="inline">
                 security information

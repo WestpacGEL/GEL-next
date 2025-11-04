@@ -32,13 +32,13 @@ const SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'] as const;
  */
 export const Standalone = () => (
   <div className="space-y-1">
-    <h1 className="text-text-body font-bold">Default</h1>
+    <h1 className="font-bold text-text-body">Default</h1>
     <Link href="#">Look I&#39;m a standalone link</Link>
-    <h1 className="text-text-body font-bold">Icon Before override</h1>
+    <h1 className="font-bold text-text-body">Icon Before override</h1>
     <Link href="#" iconBefore={PdfFileIcon}>
       Look I&#39;m a standalone link
     </Link>
-    <h1 className="text-text-body font-bold">Icon Before override</h1>
+    <h1 className="font-bold text-text-body">Icon Before override</h1>
     <Link href="#" iconAfter={ArrowRightIcon}>
       Look I&#39;m a standalone link
     </Link>

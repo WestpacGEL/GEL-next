@@ -1,17 +1,17 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'border-border-muted-strong bg-surface-muted-pale relative box-border border whitespace-nowrap',
+  base: 'relative box-border border border-border-muted-strong bg-surface-muted-pale whitespace-nowrap',
   variants: {
     position: {
       before: 'rounded-l',
       after: 'rounded-r',
     },
     size: {
-      small: 'typography-body-10 h-5 px-1.5 pt-0.5 pb-[0.25rem]',
-      medium: 'typography-body-9 h-6 px-2 py-[0.3125rem]',
-      large: 'typography-body-9 h-7 px-2.5 py-[0.5rem]',
-      xlarge: 'typography-body-8 h-8 px-3 py-1.5 pb-[0.625rem]',
+      small: 'h-5 px-1.5 pt-0.5 pb-[0.25rem] typography-body-10',
+      medium: 'h-6 px-2 py-[0.3125rem] typography-body-9',
+      large: 'h-7 px-2.5 py-[0.5rem] typography-body-9',
+      xlarge: 'h-8 px-3 py-1.5 pb-[0.625rem] typography-body-8',
     },
   },
   compoundVariants: [

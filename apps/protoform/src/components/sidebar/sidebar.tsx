@@ -84,7 +84,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
       <>
         <div
           className={clsx(
-            'xsl:px-4 sticky top-0 z-10 flex h-9 items-center justify-between bg-surface-mono px-2  py-3 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] sm:px-5 md:hidden -mb-9',
+            'sticky top-0 z-10 -mb-9 flex h-9 items-center justify-between bg-surface-mono px-2 py-3 after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:z-10 after:block after:h-1 after:bg-gradient-to-b after:from-black/[.2] after:from-0% after:opacity-0 after:transition-all after:duration-200 after:will-change-[opacity] xsl:px-4 sm:px-5 md:hidden',
             { 'after:opacity-100': scrolled },
           )}
         >
@@ -93,7 +93,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
             <Button
               look="link"
               iconAfter={MoreVertIcon}
-              className="typography-body-10 px-0 no-underline"
+              className="px-0 typography-body-10 no-underline"
               onClick={() => setOpen(true)}
             >
               Show all steps
@@ -105,11 +105,11 @@ export function Sidebar({ children }: { children?: ReactNode }) {
           <>
             <div
               className={clsx(
-                'border-border-border fixed inset-y-0 w-[300px] overflow-auto overscroll-contain border-l bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-md:z-[100] md:mt-11',
+                'fixed inset-y-0 w-[300px] overflow-auto overscroll-contain border-l border-border-muted-soft bg-white transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-md:z-[100] md:mt-11',
                 {
                   'max-md:translate-x-full': !open,
                   'ml-[1620px]': isMaxWidth,
-                  'md:right-[2px] right-0': !isMaxWidth,
+                  'right-0 md:right-[2px]': !isMaxWidth,
                 },
               )}
               id="sidebar-content"
@@ -126,7 +126,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
                     { 'after:opacity-100': sidebarScrolled },
                   )}
                 >
-                  <p className="typography-body-10 py-[5px] font-medium">{`Step ${currStep} of ${totalSteps}`}</p>
+                  <p className="py-[5px] typography-body-10 font-medium">{`Step ${currStep} of ${totalSteps}`}</p>
                   <Button
                     look="link"
                     iconBefore={() => <CloseIcon className="p-0" />}
@@ -153,7 +153,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
           <div
             aria-hidden="true"
             className={clsx({
-              'h-auto md:hidden max-md:before:bg-black/70 before:z-[59] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed':
+              'h-auto before:fixed before:top-0 before:right-0 before:bottom-0 before:left-0 before:z-[59] max-md:before:bg-black/70 md:hidden':
                 open,
             })}
           />

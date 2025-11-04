@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'text-text-body inset-y-0',
+  base: 'inset-y-0 text-text-body',
   variants: {
     isInset: {
       true: 'absolute',
@@ -9,7 +9,7 @@ export const styles = tv({
     },
     position: {
       before: 'group/add-on-before',
-      after: ' group/add-on-after',
+      after: 'group/add-on-after',
     },
   },
   compoundVariants: [

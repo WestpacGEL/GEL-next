@@ -1,13 +1,13 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'form-control read-only:form-control-disabled disabled:form-control-disabled w-full rounded-xl',
+  base: 'form-control w-full rounded-xl read-only:form-control-disabled disabled:form-control-disabled',
   variants: {
     size: {
-      small: 'form-control-small min-h-9',
-      medium: 'form-control-medium min-h-9',
-      large: 'form-control-large min-h-11',
-      xlarge: 'form-control-xlarge min-h-12',
+      small: 'min-h-9 form-control-small',
+      medium: 'min-h-9 form-control-medium',
+      large: 'min-h-11 form-control-large',
+      xlarge: 'min-h-12 form-control-xlarge',
     },
     invalid: {
       true: 'border-border-danger',

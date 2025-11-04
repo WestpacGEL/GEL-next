@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { component, fields } from '@keystatic/core';
 
 export const designSystemBodyImage = component({

@@ -111,7 +111,7 @@ export const WithFieldset: Story = {
 export const FixedWidths = () => {
   return (
     <div className="flex flex-col gap-2">
-      <h3 className="typography-body-7 mb-3">Input sizes</h3>
+      <h3 className="mb-3 typography-body-7">Input sizes</h3>
       {FIXED_WIDTHS.map(width => (
         <InputGroup
           key={width}
@@ -126,7 +126,7 @@ export const FixedWidths = () => {
           <Input placeholder={width.toString()} />
         </InputGroup>
       ))}
-      <h3 className="typography-body-7 mb-3">Input sizes with icon</h3>
+      <h3 className="mb-3 typography-body-7">Input sizes with icon</h3>
       {FIXED_WIDTHS.map(width => (
         <InputGroup
           key={width}
@@ -139,7 +139,7 @@ export const FixedWidths = () => {
           <Input placeholder={width.toString()} />
         </InputGroup>
       ))}
-      <h3 className="typography-body-7 mb-3">Select sizes</h3>
+      <h3 className="mb-3 typography-body-7">Select sizes</h3>
       {FIXED_WIDTHS.map(width => (
         <InputGroup
           key={width}
@@ -156,7 +156,7 @@ export const FixedWidths = () => {
           </Select>
         </InputGroup>
       ))}
-      <h3 className="typography-body-7 mb-3">Autocomplete sizes</h3>
+      <h3 className="mb-3 typography-body-7">Autocomplete sizes</h3>
       {FIXED_WIDTHS.map(width => (
         <InputGroup
           key={width}
@@ -178,7 +178,7 @@ export const FixedWidths = () => {
           </Autocomplete>
         </InputGroup>
       ))}
-      <h3 className="typography-body-7 mb-3">Responsive input widths</h3>
+      <h3 className="mb-3 typography-body-7">Responsive input widths</h3>
       <InputGroup
         key="responsive width"
         tag="fieldset"

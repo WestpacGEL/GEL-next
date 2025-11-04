@@ -6,7 +6,7 @@ export function BackButton({ children, ...props }: ButtonProps) {
     <Button
       iconBefore={ArrowLeftIcon}
       look="link"
-      className="p-0 font-normal no-underline hidden md:block mb-9"
+      className="mb-9 hidden p-0 font-normal no-underline md:block"
       {...props}
     >
       {children}

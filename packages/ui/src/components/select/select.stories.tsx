@@ -117,7 +117,7 @@ export const FixedWidths = () => {
     <div className="flex flex-col gap-2">
       {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
         <div className="flex flex-col" key={size}>
-          <h2 className="typography-body-8 border-t-border-muted text-text-body border-t py-3">{size}</h2>
+          <h2 className="border-t border-t-border-muted py-3 typography-body-8 text-text-body">{size}</h2>
           <div className="flex flex-col gap-2">
             {FIXED_WIDTHS.map(width => (
               <Select width={width} key={width}>

@@ -1,3 +1,4 @@
+/* eslint-disable better-tailwindcss/no-unregistered-classes */
 import { type Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { ALL_BRANDS } from '@westpac/style-config/tokens';
 
@@ -185,13 +186,13 @@ export const Background: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const backgroundColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.background);
     return (
-      <div className="bg-background-white-black flex flex-wrap">
+      <div className="flex flex-wrap bg-background-white-black">
         {backgroundColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
-            <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
-            <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
-              <div className="text-text-body pb-2 font-bold">{color}</div>
-              <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind class: ${color}`}</div>
+            <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
+            <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+              <div className="pb-2 font-bold text-text-body">{color}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
             </div>
           </div>
         ))}
@@ -209,13 +210,13 @@ export const Surface: Story = {
     );
 
     return (
-      <div className="bg-background-white-black flex flex-wrap">
+      <div className="flex flex-wrap bg-background-white-black">
         {surfaceColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
-            <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
-            <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
-              <div className="text-text-body pb-2 font-bold">{color}</div>
-              <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind class: ${color}`}</div>
+            <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
+            <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+              <div className="pb-2 font-bold text-text-body">{color}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
             </div>
           </div>
         ))}
@@ -230,13 +231,13 @@ export const Text: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const textColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.text);
     return (
-      <div className="bg-background-white-black flex flex-wrap">
+      <div className="flex flex-wrap bg-background-white-black">
         {textColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
-            <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
-            <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
-              <div className="text-text-body pb-2 font-bold">{color}</div>
-              <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind class: ${color}`}</div>
+            <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
+            <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+              <div className="pb-2 font-bold text-text-body">{color}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
             </div>
           </div>
         ))}
@@ -251,13 +252,13 @@ export const Border: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const borderColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.border);
     return (
-      <div className="bg-background-white-black flex flex-wrap">
+      <div className="flex flex-wrap bg-background-white-black">
         {borderColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
-            <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
-            <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
-              <div className="text-text-body pb-2 font-bold">{color}</div>
-              <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind class: ${color}`}</div>
+            <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
+            <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+              <div className="pb-2 font-bold text-text-body">{color}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
             </div>
           </div>
         ))}
@@ -272,13 +273,13 @@ export const Data: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const dataColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.data);
     return (
-      <div className="bg-background-white-black flex flex-wrap">
+      <div className="flex flex-wrap bg-background-white-black">
         {dataColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
-            <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
-            <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
-              <div className="text-text-body pb-2 font-bold">{color}</div>
-              <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind class: ${color}`}</div>
+            <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
+            <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+              <div className="pb-2 font-bold text-text-body">{color}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
             </div>
           </div>
         ))}
@@ -293,13 +294,13 @@ export const Pictogram: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const pictogramColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.pictogram);
     return (
-      <div className="bg-background-white-black flex flex-wrap">
+      <div className="flex flex-wrap bg-background-white-black">
         {pictogramColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
-            <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
-            <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
-              <div className="text-text-body pb-2 font-bold">{color}</div>
-              <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind class: ${color}`}</div>
+            <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
+            <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+              <div className="pb-2 font-bold text-text-body">{color}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
             </div>
           </div>
         ))}
@@ -314,13 +315,13 @@ export const State: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const stateColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.state);
     return (
-      <div className="bg-background-white-black flex flex-wrap">
+      <div className="flex flex-wrap bg-background-white-black">
         {stateColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
-            <div className={`bg-${color} border-border-muted-soft h-[80px] border border-b-0`} />
-            <div className="divide-border-muted-soft border-border-muted-soft divide-y border p-2">
-              <div className="text-text-body pb-2 font-bold">{color}</div>
-              <div className="typography-body-10 text-text-body py-2 font-light">{`Tailwind class: ${color}`}</div>
+            <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
+            <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
+              <div className="pb-2 font-bold text-text-body">{color}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
             </div>
           </div>
         ))}

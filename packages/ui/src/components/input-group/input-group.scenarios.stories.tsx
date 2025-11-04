@@ -159,7 +159,7 @@ export const CurrencyAndFrequency = () => {
   const [selectedCurrency, setSelectedCurrency] = useState<string>('EUR');
 
   const selectCurrency = (
-    <div className="border-border-muted-strong flex flex-row items-center justify-center rounded-l border pl-2 ">
+    <div className="flex flex-row items-center justify-center rounded-l border border-border-muted-strong pl-2">
       <span>{selectedCurrency === 'USD' ? AMERICAN_FLAG : FRENCH_FLAG}</span>
       <Select className="border-none" value={selectedCurrency} onChange={e => setSelectedCurrency(e.target.value)}>
         <option value="EUR">EUR</option>
