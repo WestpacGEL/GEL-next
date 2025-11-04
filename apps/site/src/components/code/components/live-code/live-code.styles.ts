@@ -10,7 +10,7 @@ export const styles = tv({
       'relative -mx-6 border-t border-muted-50 bg-[#282c34] p-[0.875rem] font-monospace text-base leading-loose',
     arrowIcon: 'transition-transform',
     copyCodeButton:
-      'typography-body-10 absolute right-0 top-0 p-1 pr-2 text-white opacity-50 transition-opacity hover:opacity-100',
+      'typography-body-10 absolute right-0 top-0 p-1 pr-2 text-white opacity-50 transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:!outline-offset-[-2px] focus-visible:focus-outline',
   },
   variants: {
     language: {

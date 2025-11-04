@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { AndroidIcon } from '../icon/index.js';
-import { ButtonDropdownHeading, List, ListItem } from '../index.js';
+import { ButtonDropdownHeading, Link, List, ListItem } from '../index.js';
 
 import { ButtonDropdown } from './button-dropdown.component.js';
 
@@ -27,10 +27,10 @@ export const Default: Story = {
     text: 'Default Dropdown',
     children: (
       <p>
-        Example dropdown
-        <a href="#" className="text-[blue] underline">
+        Example dropdown{' '}
+        <Link href="#" type="inline">
           content
-        </a>
+        </Link>
         ...
       </p>
     ),
@@ -45,10 +45,10 @@ export const StandardLooks = () => (
     {LOOKS.map(look => (
       <ButtonDropdown key={look} look={look} text={look}>
         <p>
-          Example dropdown
-          <a href="#" className="text-[blue] underline">
+          Example dropdown{' '}
+          <Link href="#" type="inline">
             content
-          </a>
+          </Link>
           ...
         </p>
       </ButtonDropdown>
@@ -64,10 +64,10 @@ export const SoftLooks = () => (
     {LOOKS.map(look => (
       <ButtonDropdown key={look} look={look} soft text={look}>
         <p>
-          Example dropdown
-          <a href="#" className="text-[blue] underline">
+          Example dropdown{' '}
+          <Link href="#" type="inline">
             content
-          </a>
+          </Link>
           ...
         </p>
       </ButtonDropdown>
@@ -85,10 +85,10 @@ export const ButtonSizes = () => (
         <h3 className="font-bold">{size}</h3>
         <ButtonDropdown size={size} text={size}>
           <p>
-            Example dropdown
-            <a href="#" className="text-[blue] underline">
+            Example dropdown{' '}
+            <Link href="#" type="inline">
               content
-            </a>
+            </Link>
             ...
           </p>
         </ButtonDropdown>
@@ -104,10 +104,10 @@ export const ButtonSizes = () => (
       text="responsive"
     >
       <p>
-        Example dropdown
-        <a href="#" className="text-[blue] underline">
+        Example dropdown{' '}
+        <Link href="#" type="inline">
           content
-        </a>
+        </Link>
         ...
       </p>
     </ButtonDropdown>
@@ -173,9 +173,9 @@ export const DropdownButtonWithIcons: Story = {
     children: (
       <p>
         Example dropdown
-        <a href="#" className="text-[blue] underline">
+        <Link href="#" type="inline">
           content
-        </a>
+        </Link>
         ...
       </p>
     ),
@@ -211,9 +211,9 @@ export const Open: Story = {
     children: (
       <p>
         Example dropdown
-        <a href="#" className="text-[blue] underline">
+        <Link href="#" type="inline">
           content
-        </a>
+        </Link>
         ...
       </p>
     ),
