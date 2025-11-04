@@ -29,7 +29,7 @@
     "codemod:tokens": "node run-codemod.cjs"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.5",
+    "@changesets/cli": "^2.29.7",
     "@westpac/eslint-config": "workspace:~",
     "@westpac/ts-config": "workspace:~",
     "eslint-config-turbo": "^2.5.4",

@@ -10,7 +10,7 @@ export const styles = tv({
       wbc: { base: 'bg-background-primary' },
       stg: { base: 'bg-background-hero' },
       bom: { base: 'bg-background-hero' },
-      bsa: { base: 'from-hero bg-gradient-to-r via-[#00468e] to-[#00adbd]' },
+      bsa: { base: 'from-background-hero bg-gradient-to-r via-[#00468e] to-[#00adbd]' },
       wbg: { base: 'bg-background-hero' },
       rams: { base: 'bg-background-primary' },
       btfg: {},
