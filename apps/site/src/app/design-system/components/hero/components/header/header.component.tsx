@@ -42,7 +42,11 @@ export function Header({ brand }: { brand: BrandKey }) {
     <header ref={ref} className={base()}>
       <BackgroundImage brand={brand} type="header" fixed={fixed} />
       <button
-        className="focus-visible:focus-outline z-10 flex items-center px-2 focus-visible:!outline-offset-[-2px] lg:hidden"
+        className={`
+          z-10 flex items-center px-2
+          focus-visible:focus-outline focus-visible:!outline-offset-[-2px]
+          lg:hidden
+        `}
         onClick={() => setOpen(open => !open)}
       >
         <HamburgerMenuIcon color="reversed" />

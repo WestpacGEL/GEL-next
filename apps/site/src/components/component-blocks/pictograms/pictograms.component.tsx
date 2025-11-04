@@ -38,22 +38,57 @@ export const Pictograms = () => {
 
   return (
     <div>
-      <div className="border-border-muted-soft bg-background-white-pale mb-4 rounded-2xl border p-4">
+      <div
+        className={`
+          mb-4 rounded-2xl border border-border-muted-soft
+          bg-background-white-pale p-4
+        `}
+      >
         <Grid>
           <GridItem span={{ initial: 12, sm: 6 }}>
-            <div className="flex flex-col items-start sm:flex-row sm:items-center">
-              <label className="mr-[1rem] mb-2 sm:mb-0" htmlFor="filter-pictograms">
+            <div
+              className={`
+                flex flex-col items-start
+                sm:flex-row sm:items-center
+              `}
+            >
+              <label
+                className={`
+                  mr-[1rem] mb-2
+                  sm:mb-0
+                `}
+                htmlFor="filter-pictograms"
+              >
                 Filter by name
               </label>
-              <Input id="filter-pictograms" value={search} onChange={handleOnChange} className="w-full" />
+              <Input id="filter-pictograms" value={search} onChange={handleOnChange} className={`w-full`} />
             </div>
           </GridItem>
           <GridItem span={{ initial: 12, sm: 3 }}>
-            <div className="flex flex-col items-start sm:flex-row sm:items-center">
-              <label className="mr-[1rem] mb-2 sm:mb-0" htmlFor="pictogram-mode">
+            <div
+              className={`
+                flex flex-col items-start
+                sm:flex-row sm:items-center
+              `}
+            >
+              <label
+                className={`
+                  mr-[1rem] mb-2
+                  sm:mb-0
+                `}
+                htmlFor="pictogram-mode"
+              >
                 Mode
               </label>
-              <Select id="pictogram-mode" value={mode} onChange={handleModeChange} className="w-full sm:w-fit">
+              <Select
+                id="pictogram-mode"
+                value={mode}
+                onChange={handleModeChange}
+                className={`
+                  w-full
+                  sm:w-fit
+                `}
+              >
                 <option value="duo">Duo</option>
                 <option value="dark">Dark</option>
                 <option value="light">Light</option>
@@ -70,13 +105,17 @@ export const Pictograms = () => {
       </div>
       <Grid>
         <GridItem span={12}>
-          <p className="text-text-muted text-right italic">{foundText}</p>
+          <p className="text-right text-text-muted italic">{foundText}</p>
         </GridItem>
         {filteredPictograms.map(({ key, Pictogram }) => (
           <GridItem key={key} span={{ initial: 12, sm: 6, md: 4, lg: 3 }}>
             <div
               className={clsx(
-                'border-border-muted-soft xsl:mb-4 mb-2 flex flex-col items-center justify-center rounded-2xl border pt-6 pb-3',
+                `
+                  mb-2 flex flex-col items-center justify-center rounded-2xl
+                  border border-border-muted-soft pt-6 pb-3
+                  xsl:mb-4
+                `,
                 mode === 'light' && 'bg-surface-hero',
                 mode !== 'light' && 'bg-background-white-pale',
               )}

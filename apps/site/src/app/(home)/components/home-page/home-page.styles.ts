@@ -1,7 +1,10 @@
 import { tv } from 'tailwind-variants';
 
 export const articleWrapperStyles = tv({
-  base: 'xsl:grid xsl:grid-flow-row flex flex-col gap-4',
+  base: `
+    flex flex-col gap-4
+    xsl:grid xsl:grid-flow-row
+  `,
   variants: {
     layout: {
       '1x1': 'grid-cols-2',

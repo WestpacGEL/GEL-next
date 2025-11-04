@@ -67,7 +67,13 @@ export function Sidebar({ items, brand }: SidebarProps) {
     <>
       <div
         className={clsx(
-          'bg-background-white-pale text-text-body lg:border-r-border-muted-soft fixed top-0 z-[1010] flex h-full w-[18.75rem] grow-0 flex-col overflow-x-hidden border-r-0 transition-transform ease-in-out lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r',
+          `
+            fixed top-0 z-[1010] flex h-full w-[18.75rem] grow-0 flex-col
+            overflow-x-hidden border-r-0 bg-background-white-pale text-text-body
+            transition-transform ease-in-out
+            lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r
+            lg:border-r-border-muted-soft
+          `,
           {
             '-translate-x-full': !open, //hide sidebar to the left when closed
           },
@@ -82,22 +88,31 @@ export function Sidebar({ items, brand }: SidebarProps) {
         >
           <div
             className={clsx(
-              'bg-background-white-pale sticky flex-0 transition-shadow delay-0 duration-200 ease-[ease]',
+              `
+                sticky flex-0 bg-background-white-pale transition-shadow delay-0
+                duration-200 ease-[ease]
+              `,
               {
                 'shadow-[0_2px_5px_rgba(0,0,0,0.3)]': scrolled,
               },
             )}
           >
             <button
-              className="outline-focus absolute top-1 right-1 block size-6 p-1 lg:hidden"
+              className={`
+                absolute top-1 right-1 block size-6 p-1
+                lg:hidden
+              `}
               onClick={() => setOpen(false)}
               ref={focusRef}
             >
-              <CloseIcon className="text-text-muted block" />
+              <CloseIcon className="block text-text-muted" />
             </button>
             <Link
               href="/"
-              className="focus-visible:focus-outline flex h-15 items-center px-3 !outline-offset-[-2px]"
+              className={`
+                flex h-15 items-center px-3 !outline-offset-[-2px]
+                focus-visible:focus-outline
+              `}
               aria-label="GEL home"
             >
               <Logo brand={brand} />
@@ -120,10 +135,18 @@ export function Sidebar({ items, brand }: SidebarProps) {
               </SidebarSelect>
             </div>
           </div>
-          <nav ref={listRef} className="flex-1 overflow-x-hidden overflow-y-auto pb-4 transition-all">
+          <nav
+            ref={listRef}
+            className={`
+              flex-1 overflow-x-hidden overflow-y-auto pb-4 transition-all
+            `}
+          >
             <Link
               href="/"
-              className="focus-visible:focus-outline block !outline-offset-[-2px]"
+              className={`
+                block !outline-offset-[-2px]
+                focus-visible:focus-outline
+              `}
               aria-label="Back to GEL"
             >
               <BackToGelSvg />
@@ -135,7 +158,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
       <div
         aria-hidden="true"
         className={clsx({
-          'max-lg:before:bg-black/40 z-[1009] before:top-0 before:left-0 before:right-0 before:bottom-0 before:fixed':
+          'z-[1009] before:fixed before:top-0 before:right-0 before:bottom-0 before:left-0 max-lg:before:bg-black/40':
             open,
         })}
       />

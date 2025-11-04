@@ -11,7 +11,7 @@ import { BrandKey } from '@/app/types/brand.types';
 import { linkStyles } from './typography.styles';
 
 export function Text({ children }: { children?: ReactNode }) {
-  return <p className="typography-body-9 mb-2 leading-[2]">{children}</p>;
+  return <p className="mb-2 typography-body-9 leading-[2]">{children}</p>;
 }
 
 export function Link({
@@ -50,5 +50,5 @@ export function Link({
 }
 
 export function Code({ children }: { children?: ReactNode }) {
-  return <code className="bg-background-white-pale font-monospace text-text-info p-1">{children}</code>;
+  return <code className={`bg-background-white-pale p-1 font-mono text-text-info`}>{children}</code>;
 }

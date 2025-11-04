@@ -30,7 +30,7 @@ export default async function Homepage() {
   );
 
   return (
-    <main className="font-gel-sans text-gel-text pb-8" data-brand="wbc">
+    <main className="pb-8 font-gel-sans text-gel-text" data-brand="wbc">
       <Hero />
       <ActionBar />
       <HomePageContent articleRows={articleRows} />

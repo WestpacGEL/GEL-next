@@ -1,6 +1,3 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
 import eslintConfig from '@westpac/eslint-config/nextjs';
 import { defineConfig } from 'eslint/config';
 
@@ -8,9 +5,9 @@ export default defineConfig([
   ...eslintConfig,
   {
     settings: {
-      tailwindcss: {
-        config: false,
-        cssConfigPath: dirname(fileURLToPath(import.meta.url)) + '/src/app/styles/globals.css',
+      'better-tailwindcss': {
+        // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
+        entryPoint: 'src/app/globals.css',
       },
     },
   },

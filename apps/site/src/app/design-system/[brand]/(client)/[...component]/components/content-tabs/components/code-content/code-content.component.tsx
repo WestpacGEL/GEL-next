@@ -39,31 +39,68 @@ export function CodeContent({
 
   return (
     <>
-      <section className="py-7 sm:pt-15 sm:pb-10">
+      <section
+        className={`
+          py-7
+          sm:pt-15 sm:pb-10
+        `}
+      >
         <Container>
           <Grid className="gap-y-5.5">
             <GridItem span={{ initial: 12, sm: 7 }}>
               {description && (
-                <p className="typography-body-8 sm:typography-body-7 mb-7 leading-[1.5] font-light sm:leading-[1.5]">
+                <p
+                  className={`
+                    mb-7 typography-body-8 leading-[1.5] font-light
+                    sm:typography-body-7 sm:leading-[1.5]
+                  `}
+                >
                   {description}
                 </p>
               )}
-              <div className="border-border-info-mild rounded-2xl border">
-                <table className="typography-body-11 bg-surface-info-faint text-text-info table w-full rounded-2xl">
+              <div className="rounded-2xl border border-border-info-mild">
+                <table
+                  className={`
+                    table w-full rounded-2xl bg-surface-info-faint
+                    typography-body-11 text-text-info
+                  `}
+                >
                   <tbody>
                     <tr>
-                      <th className="border-border-info-mild w-10 border-b p-3 text-left font-semibold">Version</th>
-                      <td className="border-border-info-mild border-b p-3 text-right">
+                      <th
+                        className={`
+                          w-10 border-b border-border-info-mild p-3 text-left
+                          font-semibold
+                        `}
+                      >
+                        Version
+                      </th>
+                      <td
+                        className={`
+                          border-b border-border-info-mild p-3 text-right
+                        `}
+                      >
                         {westpacUIInfo?.currentVersion}
                       </td>
                     </tr>
                     <tr>
-                      <th className="border-border-info-mild w-10 border-b p-3 text-left font-semibold">History</th>
-                      <td className="border-border-info-mild border-b p-3 text-right">
+                      <th
+                        className={`
+                          w-10 border-b border-border-info-mild p-3 text-left
+                          font-semibold
+                        `}
+                      >
+                        History
+                      </th>
+                      <td
+                        className={`
+                          border-b border-border-info-mild p-3 text-right
+                        `}
+                      >
                         <Button
                           tag="a"
                           size="small"
-                          className="text-text-info p-0 leading-none"
+                          className="p-0 leading-none text-text-info"
                           look="link"
                           target="_blank"
                           href={westpacUIInfo?.changelog || '#'}
@@ -123,9 +160,20 @@ export function CodeContent({
         );
       })}
       {componentProps && (
-        <section className="border-t-border-muted-soft bg-background-white-pale border-t py-7 sm:pt-15 sm:pb-10">
+        <section
+          className={`
+            border-t border-t-border-muted-soft bg-background-white-pale py-7
+            sm:pt-15 sm:pb-10
+          `}
+        >
           <Container>
-            <Heading level={2} className="!mb-4 sm:!mb-7">
+            <Heading
+              level={2}
+              className={`
+                !mb-4
+                sm:!mb-7
+              `}
+            >
               Props
             </Heading>
             <div className="flex flex-col gap-6">

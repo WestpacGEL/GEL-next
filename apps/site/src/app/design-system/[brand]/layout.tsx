@@ -30,12 +30,19 @@ export default async function DesignSystemLayout({
       <SkipLink href="#content" className="z-[100]">
         Skip to content
       </SkipLink>
-      <div className="active-theme-stg:text-text-heading text-text-body flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col text-text-body">
         <SidebarContextProvider>
           <Suspense>
             <Sidebar items={formattedItems} brand={brand} />
           </Suspense>
-          <div className="mb-8 flex flex-1 flex-col lg:ml-[18.75rem]">{children}</div>
+          <div
+            className={`
+              mb-8 flex flex-1 flex-col
+              lg:ml-[18.75rem]
+            `}
+          >
+            {children}
+          </div>
         </SidebarContextProvider>
       </div>
       <StickyFooter />

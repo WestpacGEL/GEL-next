@@ -12,7 +12,7 @@ export const StaticCode = ({
       <Highlight code={code} language={language} theme={themes.oceanicNext}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={[className, 'p-2'].join(' ')} style={style}>
-            <code className="font-monospace text-base leading-loose">
+            <code className="font-mono text-base leading-loose">
               {tokens.map((line, lineKey) => (
                 <div key={lineKey} {...getLineProps({ line, key: lineKey })}>
                   {line.map((token, tokenKey) => (
@@ -25,7 +25,11 @@ export const StaticCode = ({
         )}
       </Highlight>
       <button
-        className="typography-body-10 absolute top-0 right-0 p-1 pr-2 text-white opacity-50 transition-opacity hover:opacity-100"
+        className={`
+          absolute top-0 right-0 p-1 pr-2 typography-body-10 text-white
+          opacity-50 transition-opacity
+          hover:opacity-100
+        `}
         onClick={() => {
           void copy(code);
         }}

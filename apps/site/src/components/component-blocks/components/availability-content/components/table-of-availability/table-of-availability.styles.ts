@@ -13,7 +13,7 @@ export const styles = tv({
         text: 'text-text-warning',
       },
       info: {
-        text: 'text-info',
+        text: 'text-text-info',
       },
       danger: {
         text: 'text-text-danger',

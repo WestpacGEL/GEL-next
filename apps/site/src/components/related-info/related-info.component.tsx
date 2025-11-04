@@ -22,13 +22,24 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
   return (
     <Section className="bg-background-white-pale">
       <Container className="">
-        <Heading level={2} className="mb-4 sm:mb-7">
+        <Heading
+          level={2}
+          className={`
+            mb-4
+            sm:mb-7
+          `}
+        >
           Related information
         </Heading>
         <Grid>
           {!relatedComponentsEmpty && (
             <GridItem span={{ initial: 12, xsl: 4 }}>
-              <h3 className="typography-body-8 border-border-muted-soft flex items-center justify-between border-b pb-3 font-bold">
+              <h3
+                className={`
+                  flex items-center justify-between border-b
+                  border-border-muted-soft pb-3 typography-body-8 font-bold
+                `}
+              >
                 Components
                 <CubeIcon color="muted" />
               </h3>
@@ -45,7 +56,12 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
           )}
           {relatedArticles && (
             <GridItem span={12} start={{ initial: 1, xsl: relatedComponentsEmpty ? 1 : 6 }}>
-              <h3 className="typography-body-8 border-border-muted-soft flex items-center justify-between border-b pb-3 font-bold">
+              <h3
+                className={`
+                  flex items-center justify-between border-b
+                  border-border-muted-soft pb-3 typography-body-8 font-bold
+                `}
+              >
                 Articles
                 <GenericFileIcon color="muted" />
               </h3>
@@ -67,7 +83,11 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
 function Link({ children, ...props }: PropsWithChildren<LinkProps>) {
   return (
     <NextLink
-      className="typography-body-10 border-border-muted-soft outline-focus hover:text-text-primary flex min-h-[3.4375rem] items-center justify-between border-b py-1 outline-offset-[3px] hover:underline"
+      className={`
+        flex min-h-[3.4375rem] items-center justify-between border-b
+        border-border-muted-soft py-1 typography-body-10 outline-offset-[3px]
+        hover:text-text-primary hover:underline
+      `}
       {...props}
     >
       {children}

@@ -62,9 +62,9 @@ export default defineConfig([
   },
   {
     settings: {
-      tailwindcss: {
-        config: false,
-        cssConfigPath: dirname(fileURLToPath(import.meta.url)) + '/src/css/global.css',
+      'better-tailwindcss': {
+        // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
+        entryPoint: 'src/css/global.css',
       },
     },
   },
