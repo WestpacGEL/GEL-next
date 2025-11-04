@@ -22,5 +22,9 @@ module.exports = {
         project: ['packages/*/tsconfig.json', 'apps/*/tsconfig.json'],
       },
     },
+    'better-tailwindcss': {
+      // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
+      entryPoint: 'src/css/global.css',
+    },
   },
 };

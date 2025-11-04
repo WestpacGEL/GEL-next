@@ -44,7 +44,7 @@ export function SidebarSelect(props: SidebarSelectProps) {
         className={styles.button()}
       >
         <div className={styles.textWrapper()}>
-          <div className="typography-body-11 w-full text-left leading-normal" {...valueProps}>
+          <div className="w-full text-left typography-body-11 leading-normal" {...valueProps}>
             Change brand
           </div>
         </div>

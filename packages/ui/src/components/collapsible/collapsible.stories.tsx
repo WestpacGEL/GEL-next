@@ -32,7 +32,7 @@ export const Sizes = () => (
   <div>
     {SIZES.map(size => (
       <div className="mb-2" key={size}>
-        <h2 className="typography-body-8 text-text-body mb-1 font-bold">{size}</h2>
+        <h2 className="mb-1 typography-body-8 font-bold text-text-body">{size}</h2>
         <p className="text-text-body">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur illum quidem neque quod impedit,
           praesentium maiores unde perspiciatis accusantium non, quae debitis ut aliquid numquam ipsa hic tempora
@@ -66,7 +66,7 @@ export const Open = () => (
   <div>
     {SIZES.map(size => (
       <div className="mb-2" key={size}>
-        <h2 className="typography-body-8 text-text-body mb-1 font-bold">{size}</h2>
+        <h2 className="mb-1 typography-body-8 font-bold text-text-body">{size}</h2>
         <p className="text-text-body">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur illum quidem neque quod impedit,
           praesentium maiores unde perspiciatis accusantium non, quae debitis ut aliquid numquam ipsa hic tempora

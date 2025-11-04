@@ -49,7 +49,7 @@ export function PassCodeView({
             </p>
           )}
           {errorMessage && (
-            <p className="text-text-danger mt-2 flex items-center gap-1">
+            <p className="mt-2 flex items-center gap-1 text-text-danger">
               <AlertIcon size="small" look="outlined" color="danger" />
               {errorMessage}
             </p>

@@ -48,7 +48,7 @@ export const AllSymbols = () => {
   return (
     <div className="grid grid-cols-4 gap-5">
       {Object.entries(allSymbols).map(([key, SymbolComponent]) => (
-        <div key={key} className=" flex flex-col items-center justify-end">
+        <div key={key} className="flex flex-col items-center justify-end">
           <SymbolComponent />
           <p className="mt-2">{key}</p>
         </div>
@@ -82,46 +82,46 @@ export const AllLogos = () => {
 
   return (
     <>
-      <h3 className="typography-body-7 mb-4 font-bold">Logos</h3>
+      <h3 className="mb-4 typography-body-7 font-bold">Logos</h3>
       <div className="grid grid-cols-4 gap-5">
         {Object.entries(logos).map(([key, Logo]) => (
-          <div key={key} className=" flex flex-col items-center justify-end">
+          <div key={key} className="flex flex-col items-center justify-end">
             <Logo />
             <p className="mt-2">{`<${key} />`}</p>
           </div>
         ))}
       </div>
-      <h3 className="typography-body-7 mt-6 mb-2 font-bold">Multi-brand logos</h3>
-      <h4 className="typography-body-8 mb-4 font-bold">Large</h4>
+      <h3 className="mt-6 mb-2 typography-body-7 font-bold">Multi-brand logos</h3>
+      <h4 className="mb-4 typography-body-8 font-bold">Large</h4>
       <div className="grid grid-cols-4 gap-5">
         {Object.entries(multibrandLargeLogos).map(([key, Logo]) => (
           <div key={key} className="flex flex-col">
             {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
-            <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-              <Logo className="border-border-muted box-content border border-dashed" />
+            <div key={`${key}-${align}`} className="flex flex-col items-center justify-end">
+              <Logo className="box-content border border-dashed border-border-muted" />
               <p className="mt-2">{`<${key} />`}</p>
             </div>
             {align.map(align => (
-              <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-                <Logo align={align} className="border-border-muted box-content border border-dashed" />
+              <div key={`${key}-${align}`} className="flex flex-col items-center justify-end">
+                <Logo align={align} className="box-content border border-dashed border-border-muted" />
                 <p className="mt-2">{`<${key} align=${align} />`}</p>
               </div>
             ))}
           </div>
         ))}
       </div>
-      <h4 className="typography-body-8 my-4 font-bold">Small</h4>
+      <h4 className="my-4 typography-body-8 font-bold">Small</h4>
       <div className="grid grid-cols-4 gap-5">
         {Object.entries(multibrandSmallLogos).map(([key, Logo]) => (
           <>
             {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
-            <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-              <Logo className="border-border-muted box-content border border-dashed" />
+            <div key={`${key}-${align}`} className="flex flex-col items-center justify-end">
+              <Logo className="box-content border border-dashed border-border-muted" />
               <p className="mt-2">{`<${key} />`}</p>
             </div>
             {align.map(align => (
-              <div key={`${key}-${align}`} className=" flex flex-col items-center justify-end">
-                <Logo align={align} className="border-border-muted box-content border border-dashed" />
+              <div key={`${key}-${align}`} className="flex flex-col items-center justify-end">
+                <Logo align={align} className="box-content border border-dashed border-border-muted" />
                 <p className="mt-2">{`<${key} align=${align} />`}</p>
               </div>
             ))}

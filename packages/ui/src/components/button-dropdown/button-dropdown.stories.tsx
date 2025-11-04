@@ -82,7 +82,7 @@ export const ButtonSizes = () => (
   <div>
     {SIZES.map(size => (
       <div key={size}>
-        <h3 className="text-text-body font-bold">{size}</h3>
+        <h3 className="font-bold text-text-body">{size}</h3>
         <ButtonDropdown size={size} text={size}>
           <p className="text-text-body">
             Example dropdown
@@ -94,7 +94,7 @@ export const ButtonSizes = () => (
         </ButtonDropdown>
       </div>
     ))}
-    <h3 className="text-text-body font-bold">Responsive</h3>
+    <h3 className="font-bold text-text-body">Responsive</h3>
     <ButtonDropdown
       size={{
         initial: 'small',
@@ -121,13 +121,13 @@ export const DropdownSizes = () => (
   <div>
     {DROPDOWNSIZE.map(size => (
       <div key={size}>
-        <h3 className="text-text-body font-bold">{size}</h3>
+        <h3 className="font-bold text-text-body">{size}</h3>
         <ButtonDropdown dropdownSize={size} text={size}>
           {size}
         </ButtonDropdown>
       </div>
     ))}
-    <h3 className="text-text-body font-bold">Responsive</h3>
+    <h3 className="font-bold text-text-body">Responsive</h3>
     <ButtonDropdown
       dropdownSize={{
         initial: 'large',
@@ -146,11 +146,11 @@ export const DropdownSizes = () => (
  */
 export const BlockDropdownButton = () => (
   <div>
-    <h3 className="text-text-body font-bold">Block</h3>
+    <h3 className="font-bold text-text-body">Block</h3>
     <ButtonDropdown block={true} text="Block">
       Block
     </ButtonDropdown>
-    <h3 className="text-text-body font-bold">Responsive Block</h3>
+    <h3 className="font-bold text-text-body">Responsive Block</h3>
     <ButtonDropdown
       block={{
         initial: false,

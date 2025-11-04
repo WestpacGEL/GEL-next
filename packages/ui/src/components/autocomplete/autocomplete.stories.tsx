@@ -319,7 +319,7 @@ export const UsingCustomItems: Story = {
       </AutocompleteItem>,
       <AutocompleteItem key="staff" textValue="Staff Name">
         <div className="flex items-center gap-2">
-          <Circle className="bg-surface-muted size-5 text-white">SN</Circle>
+          <Circle className="size-5 bg-surface-muted text-white">SN</Circle>
           <div className="flex flex-col">
             <h3 className="typography-body-9">Staff Name</h3>
             <p className="typography-body-10 text-text-muted group-[.is-focused]:text-text-mono">

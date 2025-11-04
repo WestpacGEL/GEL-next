@@ -6,7 +6,12 @@ export const ArticleLinkList = ({ links }: LinkListProps) => {
   return (
     <List
       look="primary"
-      className="xsl:col-span-10 xsl:col-start-2 xsl:mb-9 col-span-12 mb-7 md:col-span-8 md:col-start-3 [&:has(+_p,_+_ul,_+_ol)]:mb-2"
+      className={`
+        col-span-12 mb-7
+        xsl:col-span-10 xsl:col-start-2 xsl:mb-9
+        md:col-span-8 md:col-start-3
+        [&:has(+_p,_+_ul,_+_ol)]:mb-2
+      `}
     >
       {links.map(link => (
         <ListItem
@@ -14,7 +19,11 @@ export const ArticleLinkList = ({ links }: LinkListProps) => {
           href={link.url}
           target={link.type}
           key={link.label}
-          className="typography-site-9 [&>a]:text-gel-text [&>div]:border-gel-link"
+          className={`
+            typography-site-9
+            [&>a]:text-gel-text
+            [&>div]:border-gel-link
+          `}
         >
           {link.label}
         </ListItem>

@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'form-control read-only:form-control-disabled disabled:form-control-disabled flex-1 group-[.input-group-after]:rounded-r-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:rounded-l-none group-[.input-group-before]:border-l-0',
+  base: 'form-control flex-1 group-[.input-group-after]:rounded-r-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:rounded-l-none group-[.input-group-before]:border-l-0 read-only:form-control-disabled disabled:form-control-disabled',
   variants: {
     size: {
       small: 'form-control-small group-[.input-group-inset-after]:pr-6 group-[.input-group-inset-before]:pl-6',

@@ -4,6 +4,6 @@ export const styles = tv({
   slots: {
     base: 'relative',
     img: 'block',
-    caption: 'typography-site-10 text-gel-muted mt-2',
+    caption: 'mt-2 typography-site-10 text-gel-muted',
   },
 });

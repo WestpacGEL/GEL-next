@@ -2,10 +2,10 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'border-border-muted-soft bg-background-white-pale box-border w-full overflow-hidden border p-[0.0625rem]',
+    base: 'box-border w-full overflow-hidden border border-border-muted-soft bg-background-white-pale p-[0.0625rem]',
     innerBar:
-      'bg-surface-hero box-border h-full overflow-hidden text-right leading-tight transition-[width] duration-[.6s]',
-    label: 'typography-body-10 text-text-mono mx-2 my-0 block font-bold',
+      'box-border h-full overflow-hidden bg-surface-hero text-right leading-tight transition-[width] duration-[.6s]',
+    label: 'mx-2 my-0 block typography-body-10 font-bold text-text-mono',
   },
   variants: {
     look: {

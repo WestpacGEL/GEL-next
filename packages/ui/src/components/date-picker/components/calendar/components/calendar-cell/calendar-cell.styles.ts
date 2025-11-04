@@ -3,12 +3,12 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     base: 'flex items-center justify-center',
-    text: 'text-text-body size-[2.375rem] rounded-full border border-[transparent] text-center leading-[2.25rem]',
+    text: 'size-[2.375rem] rounded-full border border-[transparent] text-center leading-[2.25rem] text-text-body',
   },
   variants: {
     isDisabled: {
       true: {
-        text: 'text-text-muted cursor-default line-through',
+        text: 'cursor-default text-text-muted line-through',
       },
       false: {
         text: 'hover:bg-surface-primary-faint',
@@ -16,7 +16,7 @@ export const styles = tv({
     },
     isUnavailable: {
       true: {
-        text: 'text-text-muted cursor-default line-through',
+        text: 'cursor-default text-text-muted line-through',
       },
       false: {},
     },

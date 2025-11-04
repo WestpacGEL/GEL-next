@@ -1,3 +1,4 @@
+/* eslint-disable better-tailwindcss/no-unregistered-classes */
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({

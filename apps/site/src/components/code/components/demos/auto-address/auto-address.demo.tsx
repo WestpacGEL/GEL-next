@@ -71,7 +71,14 @@ export function ManualAddress({
       </Field>
 
       <Field errorMessage={errorMessage} label="Suburb">
-        <Input size="large" invalid={withError} className="w-full sm:w-8/12" />
+        <Input
+          size="large"
+          invalid={withError}
+          className={`
+            w-full
+            sm:w-8/12
+          `}
+        />
       </Field>
 
       <Field errorMessage={errorMessage} label="State">
@@ -79,7 +86,14 @@ export function ManualAddress({
       </Field>
 
       <Field errorMessage={errorMessage} label="Postcode">
-        <Input size="large" invalid={withError} className="w-full sm:w-2/12" />
+        <Input
+          size="large"
+          invalid={withError}
+          className={`
+            w-full
+            sm:w-2/12
+          `}
+        />
       </Field>
     </div>
   );
@@ -136,15 +150,33 @@ export function InternationalAddress({
       </Field>
 
       <Field errorMessage={errorMessage} label="City, town or suburb">
-        <Input invalid={withError} className="w-full sm:w-8/12" />
+        <Input
+          invalid={withError}
+          className={`
+            w-full
+            sm:w-8/12
+          `}
+        />
       </Field>
 
       <Field errorMessage={errorMessage} label="State, province or region">
-        <Input invalid={withError} className="w-full sm:w-8/12" />
+        <Input
+          invalid={withError}
+          className={`
+            w-full
+            sm:w-8/12
+          `}
+        />
       </Field>
 
       <Field errorMessage={errorMessage} label="Postcode or Zip code">
-        <Input invalid={withError} className="w-full sm:w-2/12" />
+        <Input
+          invalid={withError}
+          className={`
+            w-full
+            sm:w-2/12
+          `}
+        />
       </Field>
 
       <Field
@@ -191,7 +223,12 @@ export function AutoAddressDemo({ errorMessage }: { errorMessage?: string }) {
   }, [manual, streetLegendRef]);
 
   return (
-    <div className="w-full sm:w-7/12">
+    <div
+      className={`
+        w-full
+        sm:w-7/12
+      `}
+    >
       {manual ? (
         <ManualAddress manual={manual} onClick={() => setManual(manual => !manual)} streetLegendRef={streetLegendRef} />
       ) : (

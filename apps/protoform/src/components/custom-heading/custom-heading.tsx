@@ -19,11 +19,11 @@ export function CustomHeading({
     <div className="pb-9">
       {beforeContent}
       {groupHeading && (
-        <h3 className=" typography-body-10 text-text-muted pb-1 text-[11px] font-medium uppercase md:hidden">
+        <h3 className="pb-1 typography-body-10 text-[11px] font-medium text-text-muted uppercase md:hidden">
           {groupHeading}
         </h3>
       )}
-      <h1 className="text-text-heading max-md:typography-body-6 typography-body-5 font-bold">{children}</h1>
+      <h1 className="typography-body-5 font-bold text-text-heading max-md:typography-body-6">{children}</h1>
       {leadText && <LeadText>{leadText}</LeadText>}
       {afterContent}
     </div>

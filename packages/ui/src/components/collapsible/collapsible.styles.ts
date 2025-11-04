@@ -2,8 +2,8 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'text-text-body px-0 no-underline hover:underline',
-    content: 'typography-body-10 text-text-body mb-2 block',
+    base: 'px-0 text-text-body no-underline hover:underline',
+    content: 'mb-2 block typography-body-10 text-text-body',
   },
   variants: {
     open: {

@@ -29,7 +29,7 @@ export const AccessibilityDemo = ({ content }: AccessibilityDemoProps) => {
 
   return (
     <>
-      <div className="bg-surface-muted-faint flex items-center p-4">
+      <div className="flex items-center bg-surface-muted-faint p-4">
         <label htmlFor={id} className="mr-[1rem] whitespace-nowrap">
           Select filter
         </label>
@@ -55,7 +55,7 @@ export const AccessibilityDemo = ({ content }: AccessibilityDemoProps) => {
             ...DOCUMENT_RENDERERS,
             block: {
               ...DOCUMENT_RENDERERS.block,
-              code: props => <Code {...props} live showCode={false} className="my-4" enableLiveCode={false} />,
+              code: props => <Code {...props} live showCode={false} className={`my-4`} enableLiveCode={false} />,
             },
           }}
         />

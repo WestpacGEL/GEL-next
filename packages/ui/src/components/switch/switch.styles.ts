@@ -4,8 +4,8 @@ export const styles = tv({
   slots: {
     base: 'mb-1 inline-flex items-center hover:cursor-pointer',
     switchDiv:
-      'border-border-muted-strong relative box-content overflow-hidden border transition duration-[.3s] after:absolute after:top-0 after:left-0 after:block after:rounded-full after:transition-all after:duration-[.3s]',
-    label: 'text-text-body pr-1',
+      'relative box-content overflow-hidden border border-border-muted-strong transition duration-[.3s] after:absolute after:top-0 after:left-0 after:block after:rounded-full after:transition-all after:duration-[.3s]',
+    label: 'pr-1 text-text-body',
   },
   variants: {
     size: {
@@ -30,10 +30,10 @@ export const styles = tv({
     isSelected: {
       true: {
         switchDiv:
-          'border-border-hero bg-surface-hero after:border-surface-hero after:bg-background-white-pale after:left-full after:-translate-x-full after:border',
+          'border-border-hero bg-surface-hero after:left-full after:-translate-x-full after:border after:border-surface-hero after:bg-background-white-pale',
       },
       false: {
-        switchDiv: 'bg-background-white-pale after:border-background-white-pale after:bg-surface-muted after:border',
+        switchDiv: 'bg-background-white-pale after:border after:border-background-white-pale after:bg-surface-muted',
       },
     },
     isDisabled: {

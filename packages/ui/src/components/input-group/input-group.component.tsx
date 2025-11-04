@@ -104,7 +104,17 @@ export function InputGroup({
         } as Partial<unknown> & Attributes);
       }
     });
-  }, [children, size, propID, id, ariaLabelledBy, ariaDescribedBy, ariaDescribedByValue, ariaLabel, width]);
+  }, [
+    children,
+    resolvedSize,
+    propID,
+    id,
+    ariaLabelledBy,
+    ariaDescribedBy,
+    ariaDescribedByValue,
+    ariaLabel,
+    resolvedWidth,
+  ]);
 
   const isFieldset = useMemo(() => Tag === 'fieldset', [Tag]);
 

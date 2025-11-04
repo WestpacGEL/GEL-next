@@ -3,11 +3,11 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     base: 'relative flex flex-1 flex-col',
-    label: 'text-text-body block text-left text-sm font-medium',
+    label: 'block text-left text-sm font-medium text-text-body',
     outerWrapper:
-      'form-control disabled:form-control-disabled relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 group-[.input-group-after]:rounded-r-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:rounded-l-none group-[.input-group-before]:border-l-0',
+      'form-control relative flex flex-1 flex-row items-stretch overflow-hidden pr-2 group-[.input-group-after]:rounded-r-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:rounded-l-none group-[.input-group-before]:border-l-0 disabled:form-control-disabled',
     input: 'appearance-none bg-[transparent] outline-none',
-    clearButton: 'text-surface-muted flex cursor-default items-center justify-center',
+    clearButton: 'flex cursor-default items-center justify-center text-surface-muted',
     iconWrapper: 'flex flex-col justify-center',
   },
   variants: {

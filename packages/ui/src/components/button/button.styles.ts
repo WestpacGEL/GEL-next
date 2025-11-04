@@ -18,21 +18,21 @@ export const styles = tv({
     },
     size: {
       small: {
-        base: 'active-theme-rams:before:h-[0.0625rem] typography-body-10 h-5 rounded-sm px-1.5',
+        base: 'h-5 rounded-sm px-1.5 typography-body-10',
       },
       medium: {
-        base: 'active-theme-rams:before:h-0.5 typography-body-9 h-6 rounded-md px-2',
+        base: 'h-6 rounded-md px-2 typography-body-9',
       },
       large: {
-        base: 'active-theme-rams:before:h-0.5 typography-body-9 h-7 rounded-lg px-2.5',
+        base: 'h-7 rounded-lg px-2.5 typography-body-9',
       },
       xlarge: {
-        base: 'active-theme-rams:before:h-1 typography-body-8 h-8 rounded-xl px-3',
+        base: 'h-8 rounded-xl px-3 typography-body-8',
       },
     },
     look: {
       primary: {
-        base: 'active-theme-rams:border-b-pop active-theme-rams:before:absolute active-theme-rams:before:bottom-0 active-theme-rams:before:block active-theme-rams:before:w-full active-theme-rams:before:bg-surface-pop border-border-primary bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-active-primary relative',
+        base: 'relative border-border-primary bg-surface-primary text-text-mono hover:bg-surface-hover-primary active:bg-surface-active-primary',
       },
       hero: {
         base: 'border-border-hero bg-surface-hero text-text-mono hover:bg-surface-hover-hero active:bg-surface-active-hero',
@@ -40,7 +40,7 @@ export const styles = tv({
       faint: {
         base: 'border-border-muted-strong bg-surface-muted-pale text-text-muted hover:bg-surface-hover-mono active:bg-surface-active-mono',
       },
-      link: { base: 'text-text-link border-0' },
+      link: { base: 'border-0 text-text-link' },
       unstyled: { base: 'border-none p-0 text-left' },
     },
     soft: {
@@ -68,7 +68,7 @@ export const styles = tv({
       look: 'primary',
       soft: true,
       className:
-        'active-theme-rams:text-text-primary active-theme-rams:hover:text-text-mono border-border-primary bg-background-white-pale text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-active-primary-faint',
+        'border-border-primary bg-background-white-pale text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-active-primary-faint',
     },
     {
       slots: ['base'],

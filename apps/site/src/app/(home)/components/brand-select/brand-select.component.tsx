@@ -45,13 +45,18 @@ export function BrandSelect(props: BrandSelectProps) {
         className={styles.button()}
       >
         <div className={styles.textWrapper()}>
-          <div className="flex w-full items-end gap-2.5 overflow-hidden py-2 text-ellipsis" {...valueProps}>
+          <div
+            className={`
+              flex w-full items-end gap-2.5 overflow-hidden py-2 text-ellipsis
+            `}
+            {...valueProps}
+          >
             <GELLogo className="w-7.5 shrink-0" />
             <span className="mb-[-0.2rem] shrink truncate leading-4">Design System</span>
           </div>
         </div>
         <div aria-hidden="true" className={styles.iconWrapper()}>
-          {state.isOpen ? <ExpandLessIcon className="text-gel-link" /> : <ExpandMoreIcon className="text-gel-link" />}
+          {state.isOpen ? <ExpandLessIcon className="text-gel-link" /> : <ExpandMoreIcon className={`text-gel-link`} />}
         </div>
       </button>
       <div ref={portalContainreRef} />

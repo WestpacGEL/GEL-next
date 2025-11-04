@@ -12,7 +12,7 @@ export const styles = tv({
     },
     isFocusVisible: {
       true: {
-        button: 'focus-outline relative z-10',
+        button: 'relative z-10 focus-outline',
       },
     },
     block: {
@@ -37,10 +37,10 @@ export const styles = tv({
     },
     orientation: {
       horizontal: {
-        button: 'not-last:border-r-none not-first:rounded-l-none not-first:border-l-0 not-last:rounded-r-none',
+        button: 'not-first:rounded-l-none not-first:border-l-0 not-last:rounded-r-none not-last:border-r-0',
       },
       vertical: {
-        button: 'not-last:border-b-none not-first:rounded-t-none not-first:border-t-0 not-last:rounded-b-none',
+        button: 'not-first:rounded-t-none not-first:border-t-0 not-last:rounded-b-none not-last:border-b-0',
       },
     },
   },

@@ -31,23 +31,64 @@ export const Icons = () => {
 
   return (
     <div>
-      <div className="border-border-muted-soft bg-background-white-pale mb-4 flex flex-wrap gap-3 rounded-2xl border p-4 align-bottom">
-        <div className="flex w-full shrink-0 grow flex-col items-start sm:w-auto sm:flex-row sm:items-center">
-          <label className="mr-[1rem] mb-2 sm:mb-0" htmlFor="filter-icons">
+      <div
+        className={`
+          mb-4 flex flex-wrap gap-3 rounded-2xl border border-border-muted-soft
+          bg-background-white-pale p-4 align-bottom
+        `}
+      >
+        <div
+          className={`
+            flex w-full shrink-0 grow flex-col items-start
+            sm:w-auto sm:flex-row sm:items-center
+          `}
+        >
+          <label
+            className={`
+              mr-[1rem] mb-2
+              sm:mb-0
+            `}
+            htmlFor="filter-icons"
+          >
             Filter by name
           </label>
-          <Input id="filter-icon" value={search} onChange={handleOnChange} className="w-full" />
+          <Input id="filter-icon" value={search} onChange={handleOnChange} className={`w-full`} />
         </div>
-        <div className="xsl:w-auto flex w-full flex-col items-start sm:flex-row sm:items-center">
-          <label className="mr-[1rem] mb-2 sm:mb-0" htmlFor="icon-look">
+        <div
+          className={`
+            flex w-full flex-col items-start
+            xsl:w-auto
+            sm:flex-row sm:items-center
+          `}
+        >
+          <label
+            className={`
+              mr-[1rem] mb-2
+              sm:mb-0
+            `}
+            htmlFor="icon-look"
+          >
             Look
           </label>
-          <Select id="icon-look" value={look} onChange={handleLookChange} className="w-full sm:w-fit">
+          <Select
+            id="icon-look"
+            value={look}
+            onChange={handleLookChange}
+            className={`
+              w-full
+              sm:w-fit
+            `}
+          >
             <option value="filled">Filled</option>
             <option value="outlined">Outlined</option>
           </Select>
         </div>
-        <div className="flex w-full items-end sm:w-auto">
+        <div
+          className={`
+            flex w-full items-end
+            sm:w-auto
+          `}
+        >
           <input type="hidden" name="asset" value="icon" />
           <Button tag="a" look="primary" iconBefore={AllIcons.DownloadIcon} soft href="/assets/GEL_Icons.zip" download>
             Download all SVGs
@@ -56,13 +97,25 @@ export const Icons = () => {
       </div>
       <Grid>
         <GridItem span={12}>
-          <p className="text-text-muted text-right italic">{foundText}</p>
+          <p className="text-right text-text-muted italic">{foundText}</p>
         </GridItem>
         {filteredIcons.map(({ key, Icon }) => (
-          <GridItem key={key} span={{ initial: 12, sm: 3, lg: 3, xl: 2 }} className="flex flex-col">
-            <div className="border-border-muted-soft bg-background-white-pale xsl:mb-4 mb-2 flex flex-1 flex-col items-center justify-center rounded-2xl border px-2 pt-6 pb-3">
+          <GridItem key={key} span={{ initial: 12, sm: 3, lg: 3, xl: 2 }} className={`flex flex-col`}>
+            <div
+              className={`
+                mb-2 flex flex-1 flex-col items-center justify-center
+                rounded-2xl border border-border-muted-soft
+                bg-background-white-pale px-2 pt-6 pb-3
+                xsl:mb-4
+              `}
+            >
               <Icon look={look} className="mb-6" color="muted" />
-              <span className="text-text-muted w-full max-w-full text-[0.6875rem] break-words whitespace-normal text-center">
+              <span
+                className={`
+                  w-full max-w-full text-center text-[0.6875rem] break-words
+                  whitespace-normal text-text-muted
+                `}
+              >
                 {key}
               </span>
             </div>

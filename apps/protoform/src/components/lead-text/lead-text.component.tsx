@@ -10,7 +10,7 @@ type LeadTextProps = {
 
 export function LeadText({ children, className, ...props }: LeadTextProps) {
   return (
-    <p className={clsx('typography-body-9 text-text-heading pt-4 max-md:pt-3', className)} {...props}>
+    <p className={clsx('pt-4 typography-body-9 text-text-heading max-md:pt-3', className)} {...props}>
       {children}
     </p>
   );

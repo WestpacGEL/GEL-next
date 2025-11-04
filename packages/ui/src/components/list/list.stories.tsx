@@ -107,13 +107,13 @@ export const Nested = () => (
  */
 export const Spacing = () => (
   <div>
-    <h1 className="typography-body-10 mb-2">Medium</h1>
+    <h1 className="mb-2 typography-body-10">Medium</h1>
     <List type="bullet" className="mb-4" spacing="medium">
       <ListItem>Styled bullet list</ListItem>
       <ListItem>Styled bullet list</ListItem>
       <ListItem>Styled bullet list</ListItem>
     </List>
-    <h1 className="typography-body-10 mb-2">Large</h1>
+    <h1 className="mb-2 typography-body-10">Large</h1>
     <List type="bullet" className="mb-4" spacing="large">
       <ListItem>Styled bullet list</ListItem>
       <ListItem>Styled bullet list</ListItem>

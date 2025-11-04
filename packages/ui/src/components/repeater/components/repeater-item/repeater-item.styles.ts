@@ -12,7 +12,7 @@ export const styles = tv({
     separator: {
       true: {
         removeBtn: 'mb-5 md:ml-6',
-        item: 'border-y-border-muted-strong border-y-2',
+        item: 'border-y-2 border-y-border-muted-strong',
         content: 'pb-7 md:px-6',
       },
       false: {

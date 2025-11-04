@@ -25,7 +25,7 @@ export const BorderRadius = () => (
   <div className="flex flex-wrap gap-6">
     {borderRadii.map(({ label, className }) => (
       <div key={label} className="flex min-w-[100px] flex-col items-center">
-        <div className={`bg-surface-muted-faint border-border-muted-mild h-16 w-16 border-2 ${className} mb-2`} />
+        <div className={`h-16 w-16 border-2 border-border-muted-mild bg-surface-muted-faint ${className} mb-2`} />
         <code className="typography-body-10">{className}</code>
       </div>
     ))}

@@ -2,36 +2,36 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'typography-body-10 relative flex w-full cursor-pointer items-center gap-2 pt-[0.5rem] pb-[0.875rem] leading-loose transition-colors',
-    circle: 'bg-background-white-pale relative z-10 transition-colors',
+    base: 'relative flex w-full cursor-pointer items-center gap-2 pt-[0.5rem] pb-[0.875rem] typography-body-10 leading-loose transition-colors',
+    circle: 'relative z-10 bg-background-white-pale transition-colors',
   },
   variants: {
     state: {
       current: {
-        base: 'text-text-primary font-bold',
-        circle: 'border-border-primary bg-background-white-pale border-[3px]',
+        base: 'font-bold text-text-primary',
+        circle: 'border-[3px] border-border-primary bg-background-white-pale',
       },
       visited: {
-        base: 'text-text-body before:border-border-primary before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:transition-colors',
+        base: 'text-text-body before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:border-border-primary before:transition-colors',
         // Can't use a const without getting tailwind errors, compound slots/variants don't work correctly for this
 
-        circle: 'border-border-primary bg-surface-primary border-[3px]',
+        circle: 'border-[3px] border-border-primary bg-surface-primary',
       },
       'non-visited': {
         base: 'text-text-muted/90',
-        circle: 'border-border-muted-strong bg-background-white-pale border-2',
+        circle: 'border-2 border-border-muted-strong bg-background-white-pale',
       },
       'current-visited': {
-        base: 'text-text-primary before:border-border-primary font-bold before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:transition-colors',
-        circle: 'border-border-primary bg-surface-primary border-[3px]',
+        base: 'font-bold text-text-primary before:absolute before:inset-y-0 before:left-1 before:z-10 before:block before:translate-y-[1.25rem] before:border-l-2 before:border-border-primary before:transition-colors',
+        circle: 'border-[3px] border-border-primary bg-surface-primary',
       },
       'last-visited': {
-        base: 'text-text-body after:border-border-primary after:absolute after:inset-y-[0.875rem] after:left-1 after:z-[1] after:block after:translate-y-[-0.875rem] after:border-l-2 after:transition-colors',
-        circle: 'border-border-primary bg-surface-primary border-[3px]',
+        base: 'text-text-body after:absolute after:inset-y-[0.875rem] after:left-1 after:z-[1] after:block after:translate-y-[-0.875rem] after:border-l-2 after:border-border-primary after:transition-colors',
+        circle: 'border-[3px] border-border-primary bg-surface-primary',
       },
       'last-current': {
-        base: 'text-text-primary font-bold ',
-        circle: 'border-border-primary bg-surface-primary border-[3px]',
+        base: 'font-bold text-text-primary',
+        circle: 'border-[3px] border-border-primary bg-surface-primary',
       },
     },
     firstItem: {
@@ -53,7 +53,7 @@ export const styles = tv({
       false: {},
     },
     furthestVisited: {
-      true: { base: 'text-text-body', circle: 'border-border-primary bg-background-white-pale border-[3px]' },
+      true: { base: 'text-text-body', circle: 'border-[3px] border-border-primary bg-background-white-pale' },
       false: {},
     },
     size: {
@@ -67,7 +67,7 @@ export const styles = tv({
     },
     previousStepGroup: {
       true: {
-        base: 'after:border-border-primary after:absolute after:inset-y-[0.875rem] after:left-1 after:z-[1] after:block after:translate-y-[-0.875rem] after:border-l-2 after:transition-colors',
+        base: 'after:absolute after:inset-y-[0.875rem] after:left-1 after:z-[1] after:block after:translate-y-[-0.875rem] after:border-l-2 after:border-border-primary after:transition-colors',
       },
       false: {},
     },

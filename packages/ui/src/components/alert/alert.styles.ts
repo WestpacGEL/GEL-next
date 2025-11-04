@@ -2,10 +2,10 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'typography-body-10 xsl:flex relative mb-5',
+    base: 'relative mb-5 typography-body-10 xsl:flex',
     icon: 'float-left flex-none',
-    body: 'xsl:top-[0.125rem] relative flex-1 overflow-hidden [&_a]:underline',
-    heading: 'typography-body-9 mb-1 font-bold',
+    body: 'relative flex-1 overflow-hidden xsl:top-[0.125rem] [&_a]:underline',
+    heading: 'mb-1 typography-body-9 font-bold',
     close: 'absolute top-0.5 right-0.5 h-5.5 p-1',
   },
   variants: {
@@ -40,7 +40,7 @@ export const styles = tv({
     hasSize: {
       true: {},
       false: {
-        icon: 'xsl:mr-2 mr-1',
+        icon: 'mr-1 xsl:mr-2',
       },
     },
     iconSize: {
@@ -90,7 +90,7 @@ export const styles = tv({
       slots: ['base'],
       look: 'system',
       mode: 'box',
-      className: 'bg-surface-system-error border-y-0',
+      className: 'border-y-0 bg-surface-system-error',
     },
     {
       slots: ['base'],

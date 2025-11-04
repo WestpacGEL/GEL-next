@@ -1,5 +1,5 @@
 import { fixupPluginRules } from '@eslint/compat';
-import tailwindcssPlugin from 'eslint-plugin-tailwindcss';
+import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
 import importPlugin from 'eslint-plugin-import';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import promisePlugin from 'eslint-plugin-promise';
@@ -46,11 +46,11 @@ export default tseslint.config(
   eslintPluginPrettierRecommended,
   ...tseslint.configs.stylistic,
   ...tseslint.configs.strict,
-  tailwindcssPlugin.configs['flat/recommended'],
   {
     plugins: {
       promise: fixupPluginRules(promisePlugin),
       import: fixupPluginRules(importPlugin),
+      'better-tailwindcss': eslintPluginBetterTailwindcss,
     },
     rules: {
       'import/first': 'error',
@@ -74,12 +74,12 @@ export default tseslint.config(
           distinctGroup: true,
         },
       ],
-      'tailwindcss/no-custom-classname': [
-        'warn',
-        {
-          ignoredKeys: ['compoundVariants', 'defaultVariants', 'responsiveVariants', 'compoundSlots'],
-        },
-      ],
+      // enable all recommended rules to report a warning
+      ...eslintPluginBetterTailwindcss.configs['recommended-warn'].rules,
+      // enable all recommended rules to report an error
+      ...eslintPluginBetterTailwindcss.configs['recommended-error'].rules,
+      'better-tailwindcss/enforce-consistent-line-wrapping': 'off',
+      'better-tailwindcss/no-unregistered-classes': ['error', { ignore: ['form-control', 'linear-gradient'] }],
       'sonarjs/todo-tag': 'off',
       '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
       'no-console': 'error',

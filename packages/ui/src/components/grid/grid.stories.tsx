@@ -15,7 +15,7 @@ export default meta;
 
 const Item = (props: GridItemProps) => (
   <GridItem
-    className="border-border-muted-soft bg-surface-muted-faint typography-body-10 flex h-10 items-center justify-center border"
+    className="flex h-10 items-center justify-center border border-border-muted-soft bg-surface-muted-faint typography-body-10"
     {...props}
   />
 );

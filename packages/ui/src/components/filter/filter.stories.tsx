@@ -370,7 +370,7 @@ export const FilterWithContent = () => {
       <div>
         {filteredAccounts.map(({ title, id, payees }) => (
           <div key={id}>
-            <h3 className="border-border-muted-soft text-text-body mb-3 border-b pb-1 font-normal">{title}</h3>
+            <h3 className="mb-3 border-b border-border-muted-soft pb-1 font-normal text-text-body">{title}</h3>
             {payees.map(({ name, number, paidAt, bank, code }) =>
               paidAt ? (
                 <FlexiCell

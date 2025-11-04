@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'text-text-body text-[0.8125rem]',
+  base: 'text-[0.8125rem] text-text-body',
   variants: {
     isCurrent: {
       true: 'text-text-muted',
