@@ -1,6 +1,6 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
-import { AndroidIcon } from '../icon/index.js';
+import { AndroidIcon, MoreVertIcon } from '../icon/index.js';
 import { ButtonDropdownHeading, Link, List, ListItem } from '../index.js';
 
 import { ButtonDropdown } from './button-dropdown.component.js';
@@ -15,7 +15,7 @@ const meta: Meta<typeof ButtonDropdown> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const LOOKS = ['primary', 'hero', 'faint'] as const;
+const LOOKS = ['primary', 'hero', 'faint', 'link'] as const;
 const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 const DROPDOWNSIZE = ['small', 'medium', 'large'] as const;
 
@@ -35,6 +35,40 @@ export const Default: Story = {
       </p>
     ),
   },
+};
+
+/**
+ * > Default usage example
+ */
+export const SwappingDropDownIcon = () => {
+  return (
+    <ButtonDropdown text="primary" look="primary" dropDownIcon={MoreVertIcon}>
+      <p>
+        Example dropdown{' '}
+        <Link href="#" type="inline">
+          content
+        </Link>
+        ...
+      </p>
+    </ButtonDropdown>
+  );
+};
+
+/**
+ * > Default usage example
+ */
+export const IconOnly = () => {
+  return (
+    <ButtonDropdown text={<MoreVertIcon />} look="unstyled">
+      <p>
+        Example dropdown{' '}
+        <Link href="#" type="inline">
+          content
+        </Link>
+        ...
+      </p>
+    </ButtonDropdown>
+  );
 };
 
 /**
@@ -81,7 +115,7 @@ export const SoftLooks = () => (
 export const ButtonSizes = () => (
   <div>
     {SIZES.map(size => (
-      <>
+      <div key={size}>
         <h3 className="font-bold">{size}</h3>
         <ButtonDropdown size={size} text={size}>
           <p>
@@ -92,7 +126,7 @@ export const ButtonSizes = () => (
             ...
           </p>
         </ButtonDropdown>
-      </>
+      </div>
     ))}
     <h3 className="font-bold">Responsive</h3>
     <ButtonDropdown

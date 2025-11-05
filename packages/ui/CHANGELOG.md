@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.52.1
+
+### Patch Changes
+
+- 35af96a: filter buttons focus styling fix
+
 ## 0.52.0
 
 ### Minor Changes
