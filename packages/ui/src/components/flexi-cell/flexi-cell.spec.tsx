@@ -20,7 +20,7 @@ describe('FlexiCell', () => {
   it('renders the style correctly', () => {
     const style = styles();
     // TODO: use some variants for test
-    expect(style.base()).toBe('relative flex bg-white transition-colors !px-0');
+    expect(style.base()).toBe('relative flex bg-white transition-colors [&_:focus-visible]:focus-outline !px-0');
     expect(style.topBadge()).toBe('rounded-br-none rounded-tl-none');
   });
   describe('when children is defined', () => {

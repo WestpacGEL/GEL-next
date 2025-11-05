@@ -4,6 +4,10 @@ export const styles = tv(
   {
     base: 'typography-body-10 relative block min-w-7 border border-border px-2 py-1.5 text-center text-text',
     variants: {
+      isFocusVisible: {
+        true: 'z-10 focus-outline',
+        false: '',
+      },
       firstItem: {
         true: 'rounded-l',
         false: 'ml-[-1px]',
@@ -13,7 +17,7 @@ export const styles = tv(
         false: '',
       },
       active: {
-        true: 'z-10 border-hero bg-hero text-white',
+        true: 'border-hero bg-hero text-white',
         false: 'hover:bg-light',
       },
       disabled: {

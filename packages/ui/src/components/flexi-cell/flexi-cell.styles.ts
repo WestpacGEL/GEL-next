@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'relative flex bg-white transition-colors',
+      base: 'relative flex bg-white transition-colors [&_:focus-visible]:focus-outline',
       topBadgeWrapper: 'absolute right-[-1px] top-[-1px]',
       topBadge: 'rounded-br-none rounded-tl-none',
     },
