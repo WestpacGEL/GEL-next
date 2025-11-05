@@ -24,7 +24,7 @@ export const styles = tv(
         hero: '',
       },
       isFocusVisible: {
-        true: 'focus-outline',
+        true: 'z-10 focus-outline',
         false: 'outline-none',
       },
     },

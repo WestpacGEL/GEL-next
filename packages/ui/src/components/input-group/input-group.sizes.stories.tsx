@@ -74,8 +74,8 @@ export const InputGroupWithDifferentSizes: Story = {
               label="Button"
               hint="I am a hint"
               supportingText="I am supporting text"
-              before={<Button>Check</Button>}
-              after={<Button>Check</Button>}
+              before={<Button size={size}>Check</Button>}
+              after={<Button size={size}>Check</Button>}
             >
               <Input />
             </InputGroup>

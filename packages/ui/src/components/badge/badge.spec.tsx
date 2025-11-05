@@ -12,7 +12,7 @@ describe('Badge', () => {
     const style = styles({ color: 'primary', type: 'pill' });
     // TODO: use some variants for test
     expect(style).toBe(
-      'whitespace-nowrap border text-center border-primary bg-primary text-white typography-body-10 flex h-4 min-w-4 w-fit items-center justify-center rounded-xl px-[0.4375rem] font-medium leading-none',
+      'whitespace-nowrap border text-center [&_:focus-visible]:focus-outline border-primary bg-primary text-white typography-body-10 inline-flex h-4 w-fit min-w-4 items-center justify-center rounded-xl px-[0.4375rem] font-medium leading-none',
     );
   });
 });

@@ -1,5 +1,5 @@
-import { AnimatePresence, LazyMotion, m } from 'motion/react';
-import React, { useId, useMemo } from 'react';
+import { LazyMotion, m, useAnimate } from 'motion/react';
+import React, { useEffect, useId, useMemo, useState } from 'react';
 import { useFocusRing } from 'react-aria';
 
 import { Circle, VisuallyHidden } from '../../../index.js';
@@ -23,6 +23,8 @@ export function ProgressRopeGroupStep({
   onToggle,
   tag: Tag,
 }: ProgressRopeGroupStepProps) {
+  // Handling expanding animation this way for focus ring on steps
+  const [scope, animate] = useAnimate();
   const id = useId();
   const stepsContainerID = `progress-rope-group-steps-container-${id}`;
 
@@ -60,6 +62,38 @@ export function ProgressRopeGroupStep({
   }, [current, visited]);
 
   const styles = progressRopeGroupStyles({ firstItem, state, isFocusVisible });
+  const [overflowVisible, setOverflowVisible] = useState(false);
+
+  useEffect(() => {
+    // Animates expanding/collapsing steps
+    if (opened) {
+      animate(
+        scope.current,
+        { height: 'auto' },
+        {
+          duration: 0.2,
+          ease: 'easeInOut',
+          onComplete: () => {
+            setOverflowVisible(true);
+          },
+        },
+      );
+    } else {
+      animate(
+        scope.current,
+        { height: 0 },
+        {
+          duration: 0.2,
+          ease: 'easeInOut',
+          onPlay: () => {
+            setOverflowVisible(false);
+          },
+        },
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [opened]);
+
   return (
     <Tag>
       <button
@@ -74,42 +108,32 @@ export function ProgressRopeGroupStep({
         <VisuallyHidden>{visuallyHiddenMessage}</VisuallyHidden>
       </button>
       <LazyMotion features={loadAnimations}>
-        <AnimatePresence initial={false}>
-          {opened && (
-            <m.div
-              initial={{
-                height: 0,
-                overflow: 'hidden',
-              }}
-              animate={{
-                height: 'auto',
-              }}
-              exit={{
-                height: 0,
-                overflow: 'hidden',
-              }}
-              transition={{ duration: 0.2, ease: 'easeInOut' }}
-            >
-              <ol className={styles.stepsWrapper({})} id={stepsContainerID} aria-hidden={!opened}>
-                {steps.map((step, index) => (
-                  <li key={step.index}>
-                    <ProgressRopeStep
-                      firstItem={index === 0}
-                      lastItemInGroup={index === steps.length - 1}
-                      size="small"
-                      onClick={(furthestVisitedStep || 0) >= step.index ? step.onClick : undefined}
-                      current={step.index === currentKey}
-                      visited={(furthestVisitedStep || 0) > step.index}
-                      furthest={furthestVisitedStep === step.index}
-                    >
-                      {step.text}
-                    </ProgressRopeStep>
-                  </li>
-                ))}
-              </ol>
-            </m.div>
-          )}
-        </AnimatePresence>
+        <m.div
+          ref={scope}
+          initial={{ height: opened ? 'auto' : 0 }}
+          style={{
+            overflow: overflowVisible ? 'visible' : 'hidden', // to show focus ring correctly when expanded
+          }}
+        >
+          <ol className={styles.stepsWrapper({})} id={stepsContainerID} aria-hidden={!opened}>
+            {steps.map((step, index) => (
+              <li key={step.index}>
+                <ProgressRopeStep
+                  firstItem={index === 0}
+                  lastItemInGroup={index === steps.length - 1}
+                  size="small"
+                  onClick={(furthestVisitedStep || 0) >= step.index ? step.onClick : undefined}
+                  current={step.index === currentKey}
+                  visited={(furthestVisitedStep || 0) > step.index}
+                  furthest={furthestVisitedStep === step.index}
+                  tabIndex={opened ? 0 : -1} // Using hidden/visibility breaks styles
+                >
+                  {step.text}
+                </ProgressRopeStep>
+              </li>
+            ))}
+          </ol>
+        </m.div>
       </LazyMotion>
     </Tag>
   );

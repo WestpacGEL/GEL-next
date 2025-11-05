@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       base: 'px-0 text-text no-underline hover:underline',
-      content: 'typography-body-10 mb-2 block',
+      content: 'typography-body-10 mb-2 block [&_:focus-visible]:focus-outline',
     },
     variants: {
       open: {

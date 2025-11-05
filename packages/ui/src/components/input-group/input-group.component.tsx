@@ -96,6 +96,7 @@ export function InputGroup({
           'aria-describedby': ariaDescribedBy || ariaDescribedByValue,
           'aria-label': ariaLabel,
           ...(width !== 'full' ? { width: width } : {}),
+          className: 'focus:z-10', // for focus ring visibility
         } as Partial<unknown> & Attributes);
       }
     });
