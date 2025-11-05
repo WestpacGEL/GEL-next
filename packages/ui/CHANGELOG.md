@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.53.1
+
+### Patch Changes
+
+- d7523fa: Removing the horizontal padding from Button look="link"
+
 ## 0.53.0
 
 ### Minor Changes
