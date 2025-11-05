@@ -21,8 +21,8 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {
   args: {
-    look: 'default',
-    color: undefined,
+    look: 'material',
+    color: 'primary',
     orientation: 'horizontal',
     'aria-label': 'History of Ancient Rome',
     children: [

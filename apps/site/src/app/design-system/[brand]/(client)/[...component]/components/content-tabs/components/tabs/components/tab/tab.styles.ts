@@ -7,7 +7,6 @@ export const styles = tv({
     after:absolute after:inset-x-0 after:bottom-0 after:h-0 after:border-b-[3px]
     after:border-[transparent]
     last:border-r-0
-    focus-visible:outline-none
     sm:h-11 sm:grow-0 sm:px-10 sm:last:border-r
     md:typography-body-9
   `,
@@ -24,6 +23,7 @@ export const styles = tv({
         focus:focus-outline
         focus-visible:focus-outline
       `,
+      false: 'outline-none',
     },
   },
 });
