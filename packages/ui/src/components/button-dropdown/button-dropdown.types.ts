@@ -40,4 +40,4 @@ export type ButtonDropdownProps = {
   dropDownIcon?: (props: IconProps) => ReactNode;
 } & ButtonHTMLAttributes<Element> &
   Pick<ButtonProps, 'size' | 'iconBefore' | 'block'> &
-  Pick<ButtonDropdownPanelProps, 'shouldFlip' | 'shouldCloseOnInteractOutside'>;
+  Pick<ButtonDropdownPanelProps, 'shouldFlip'>;
