@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import { DismissButton, FocusScope, Overlay, useFocusRing, usePopover } from 'react-aria';
 
-import { styles as panelStyles } from './button-dropdown-panel.styles.js';
-import { type ButtonDropdownPanelProps } from './button-dropdown-panel.types.js';
+import { styles as panelStyles } from './dropdown-panel.styles.js';
+import { type DropdownPanelProps } from './dropdown-panel.types.js';
 
 /**
  * @private
  */
-export function ButtonDropdownPanel({
+export function DropdownPanel({
   className,
   children,
   state,
@@ -15,7 +15,7 @@ export function ButtonDropdownPanel({
   id,
   portalContainer,
   ...props
-}: ButtonDropdownPanelProps) {
+}: DropdownPanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const { popoverProps } = usePopover({ popoverRef, isNonModal: true, ...props }, state);
   const { isFocused } = useFocusRing();

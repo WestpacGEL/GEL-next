@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonDropdown, RadioGroup } from '@westpac/ui';
+import { Dropdown, RadioGroup } from '@westpac/ui';
 import { useDarkMode } from '@westpac/ui/hook';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -29,7 +29,7 @@ export function ThemeDropDown({ className }: { className?: string }) {
   );
 
   return (
-    <ButtonDropdown
+    <Dropdown
       placement="bottom right"
       portalContainer={portalContainer}
       color="hero"
@@ -48,6 +48,6 @@ export function ThemeDropDown({ className }: { className?: string }) {
           { value: 'system', label: 'System' },
         ]}
       />
-    </ButtonDropdown>
+    </Dropdown>
   );
 }

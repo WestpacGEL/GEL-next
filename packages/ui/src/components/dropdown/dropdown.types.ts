@@ -2,28 +2,24 @@ import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { Placement } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
-import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
-
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 import { ButtonProps } from '../button/index.js';
+import { IconProps } from '../icon/icon.types.js';
 
-import { styles } from './button-dropdown.styles.js';
-import { ButtonDropdownPanelProps } from './components/button-dropdown-panel/button-dropdown-panel.types.js';
+import { DropdownPanelProps } from './components/dropdown-panel/dropdown-panel.types.js';
+import { styles } from './dropdown.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
-export type ButtonDropdownProps = {
+export type DropdownProps = {
   /**
-   * ButtonDropdown body content
+   * Dropdown body content
    */
   children?: ReactNode;
   /**
    * Size of the dropdown panel
    */
   dropdownSize?: ResponsiveVariants<Variants['dropdownSize']>;
-  /**
-   * Look for button
-   */
-  look?: ButtonProps['look'];
   /**
    * State of whether the Popover is open
    */
@@ -32,10 +28,6 @@ export type ButtonDropdownProps = {
    * Soft look button
    */
   soft?: ButtonProps['soft'];
-  /**
-   * Button text
-   */
-  text: string;
   /**
    * Uses portal to render popover
    */
@@ -48,6 +40,18 @@ export type ButtonDropdownProps = {
    * placement of the popover
    */
   placement?: Placement;
+  /**
+   * Look for button
+   */
+  look?: 'primary' | 'hero' | 'faint' | 'unstyled' | 'link';
+  /**
+   * Button text
+   */
+  text?: ReactNode;
+  /**
+   * Dropdown icon
+   */
+  dropDownIcon?: (props: IconProps) => ReactNode;
 } & ButtonHTMLAttributes<Element> &
   Pick<ButtonProps, 'size' | 'iconBefore' | 'block'> &
-  Pick<ButtonDropdownPanelProps, 'shouldFlip' | 'shouldCloseOnInteractOutside'>;
+  Pick<DropdownPanelProps, 'shouldFlip' | 'shouldCloseOnInteractOutside'>;

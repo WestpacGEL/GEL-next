@@ -1,8 +1,8 @@
 import { HTMLAttributes, ReactNode } from 'react';
 
-export type ButtonDropdownHeadingProps = {
+export type DropdownHeadingProps = {
   /**
-   * ButtonDropdownHeading content
+   * DropdownHeading content
    */
   children?: ReactNode;
   /**
