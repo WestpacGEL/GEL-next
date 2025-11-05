@@ -226,9 +226,9 @@ export const DropdownWithHeadings: Story = {
     children: (
       <>
         <DropdownHeading>Dropdown heading #1</DropdownHeading>
-        Example dropdown content...
+        <p className="text-text-body">Example dropdown content...</p>
         <DropdownHeading>Dropdown heading #2</DropdownHeading>
-        Example dropdown content...
+        <p className="text-text-body">Example dropdown content...</p>
       </>
     ),
   },
