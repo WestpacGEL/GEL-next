@@ -1,5 +1,16 @@
 # @westpac/ui
 
+## 0.53.0
+
+### Minor Changes
+
+- a28c062: Button Dropdown: adding the option to use only icon or changing the caret icon
+
+### Patch Changes
+
+- bd8c375: focus state for pagination item
+- d601d5d: fixes to focus outlines
+
 ## 0.52.1
 
 ### Patch Changes
