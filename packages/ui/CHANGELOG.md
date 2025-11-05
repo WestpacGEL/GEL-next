@@ -2,13 +2,253 @@
 
 ## 1.0.0-canary.1
 
-### Minor Changes
+### 📦 Major Changes — @westpac/ui & @westpac/style-config
 
-- 2a687f9: button dropdown with portal and focus
-- 95deb81: Datepicker using react-aria API
-- 6a44948: Refactored Compacta to use react-aria for improved accessibility and separated responsibilities into Compacta (container) and CompactaItem (individual item) components.
-- Button group using useToggleButtonGroup
-- focus outline of skip-link fix
+We are introducing a new architecture separating UI components from style configuration:
+
+- @westpac/style-config now provides:
+  - Tailwind tokens
+  - Light/dark theming
+  - CSS + W3C design tokens
+
+To enable brand + theme switching, ensure your root HTML element includes:
+
+```html
+<html data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</html>
+or
+<div data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</div>
+```
+
+---
+
+### 🚨 Migration Steps
+
+1. Remove your existing tailwind.config.js
+
+2. Install the updated dependencies:
+
+```bash
+npm i @westpac/ui @westpac/style-config tailwindcss@4 postcss tailwind-variants@~3.1.1
+```
+
+3. Import global styles in your main CSS file:
+
+```css
+@import 'tailwindcss';
+@import '@westpac/style-config';
+
+/* For brand theming, import the required brand stylesheets: */
+@import '@westpac/style-config/theme-wbc';
+@import '@westpac/style-config/theme-stg';
+
+/* Also the fonts required for each theme: */
+/* WBC fonts */
+@font-face {
+  src:
+    url('/fonts/Westpac-Bold-v2.007.woff2') format('woff2'),
+    url('/fonts/Westpac-Bold-v2.007.woff') format('woff');
+  font-family: 'Westpac';
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* STG fonts */
+@font-face {
+  src:
+    url('/fonts/dragonbold-bold-webfont.woff2') format('woff2'),
+    url('/fonts/dragonbold-bold-webfont.woff') format('woff');
+  font-family: 'Dragon Bold';
+  font-weight: 100 900;
+  font-style: normal;
+}
+```
+
+4. Update your `eslint.config.mjs` file
+
+```mjs
+import eslintConfig from '@westpac/eslint-config/nextjs';
+import { defineConfig } from 'eslint/config';
+
+export default defineConfig([
+  ...eslintConfig,
+  {
+    settings: {
+      'better-tailwindcss': {
+        // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
+        entryPoint: 'src/globals.css',
+      },
+    },
+  },
+]);
+```
+
+### ✅ Token Updates
+
+We introduced new token names to support a multi-brand + dual-theme system.
+
+##### Before
+
+```tsx
+<div className="bg-white">
+  <div className="bg-primary rounded-full">
+    <AccountIcon color="white" />
+  </div>
+  <h2 className="text-text">
+    My title
+    <BankIcon color="link" className="ml-2" />
+  </h2>
+  <p className="text-text">Lorem ipsum dolor sit amet</p>
+</div>
+```
+
+##### After
+
+```tsx
+<div className="bg-background-white-pale">
+  <div className="bg-surface-primary rounded-full">
+    <AccountIcon color="mono" />
+  </div>
+  <h2 className="text-text-body">
+    My title
+    <BankIcon color="primary" className="ml-2" />
+  </h2>
+  <p className="text-text-body">Lorem ipsum dolor sit amet</p>
+</div>
+```
+
+---
+
+### 🆕 Additional Improvements
+
+- Full support for TailwindCSS v4 and its [latest features](https://tailwindcss.com/blog/tailwindcss-v4)
+- Dark mode supported for BOM and BankSA logos
+
+#### Repeater aligned with Compacta specification
+
+##### Before
+
+```jsx
+<Repeater>
+  <FormGroup>
+    <div className="mb-4">
+      <FormLabel htmlFor={`input${groupOneId}`}>Label 1</FormLabel>
+      <Input
+        aria-describedby={`inputHint${groupOneId}`}
+        className="w-full"
+        id={`input${groupOneId}`}
+        name={`input${groupOneId}`}
+      />
+    </div>
+    <div>
+      <FormLabel htmlFor={`input${groupTwoId}`}>Label 2</FormLabel>
+      <Input
+        aria-describedby={`inputHint${groupTwoId}`}
+        className="w-full"
+        id={`input${groupTwoId}`}
+        name={`input${groupTwoId}`}
+      />
+    </div>
+  </FormGroup>
+</Repeater>
+```
+
+#### After
+
+```tsx
+() => {
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ label: '' }] },
+  });
+  const items = watch('items');
+
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { label: '' }]);
+  }, [items, setValue]);
+
+  return (
+    <form>
+      <Repeater onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <RepeaterItem
+            key={index}
+            title={{
+              primary: item.primary,
+              secondary: item.secondary,
+              tertiary: item.tertiary,
+            }}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <Field label="Label">
+              <Input {...register(`items.${index}.label`)} />
+            </Field>
+          </RepeaterItem>
+        ))}
+      </Repeater>
+    </form>
+  );
+};
+```
+
+### ButtonGroup now uses useButtonGroupToggle from react-aria
+
+#### Before
+
+```jsx
+<ButtonGroup
+  value={value}
+  buttons={[
+    { value: 'Left', label: 'Left' },
+    { value: 'Middle', label: 'Middle' },
+    { value: 'Right', label: 'Right' },
+  ]}
+/>
+```
+
+#### After
+
+```jsx
+<ButtonGroup selectedKeys={value}>
+  <ButtonGroupButton id="Left">Left</ButtonGroupButton>
+  <ButtonGroupButton id="Middle">Middle</ButtonGroupButton>
+  <ButtonGroupButton id="Right">Right</ButtonGroupButton>
+</ButtonGroup>
+```
+
+### New Datepicker using react-aria hooks
+
+#### Before
+
+```jsx
+<DatePicker disableDates={['2023-10-10']} />
+```
+
+#### After
+
+```jsx
+() => {
+  const disableDates = ["2023-10-20"];
+  const isDateUnavailable = (date: DateValue) =>
+    disableDates.some(
+      (disableDate) => disableDate.toString() === date.toString()
+    );
+
+  return <DatePicker isDateUnavailable={isDateUnavailable} />;
+};
+```
+
+### 🗑️ Deprecated Components & APIs
+
+| Deprecated                                         | Replacement / Notes                                                  |
+| -------------------------------------------------- | -------------------------------------------------------------------- |
+| `ButtonDropdown`                                   | Replaced by `Dropdown`                                               |
+| `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
+| `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
 
 ## 0.50.3
 
