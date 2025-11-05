@@ -19,9 +19,12 @@ export function ButtonDropdown({
   text,
   children,
   size,
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelBy,
   look = 'hero',
   soft = false,
   block = false,
+  dropDownIcon: Icon = DropDownIcon,
   shouldFlip,
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
@@ -50,12 +53,16 @@ export function ButtonDropdown({
     <>
       <Button
         ref={ref}
-        iconAfter={(props: IconProps) => <DropDownIcon aria-hidden {...props} />}
+        iconAfter={
+          !(look === 'link' || look === 'unstyled') ? (props: IconProps) => <Icon aria-hidden {...props} /> : undefined
+        }
         iconBefore={IconBefore}
         size={size}
         look={look}
         soft={soft}
         block={block}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelBy}
         aria-expanded={state.isOpen}
         aria-controls={panelId}
         className={styles.base()}
