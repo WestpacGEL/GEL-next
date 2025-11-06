@@ -1,18 +1,18 @@
 import { act, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { ButtonDropdown } from './button-dropdown.component.js';
-import { ButtonDropdownHeading } from './components/button-dropdown-heading/button-dropdown-heading.component.js';
+import { DropdownHeading } from './components/dropdown-heading/dropdown-heading.component.js';
+import { Dropdown } from './dropdown.component.js';
 
-describe('ButtonDropdown', () => {
+describe('Dropdown', () => {
   it('renders the component', () => {
-    const { container } = render(<ButtonDropdown text="test dropdown">Test content</ButtonDropdown>);
+    const { container } = render(<Dropdown text="test dropdown">Test content</Dropdown>);
     expect(container).toBeInTheDocument();
   });
 
   it('should show panel when button clicked', async () => {
     const user = userEvent.setup();
-    const { getByRole, getByText } = render(<ButtonDropdown text="test dropdown">Test content</ButtonDropdown>);
+    const { getByRole, getByText } = render(<Dropdown text="test dropdown">Test content</Dropdown>);
     act(() => {
       user.click(getByRole('button', { name: 'test dropdown' }));
     });
@@ -21,7 +21,7 @@ describe('ButtonDropdown', () => {
 
   it('should close panel when esc key pressed', async () => {
     const user = userEvent.setup();
-    const { getByRole, getByText, queryByText } = render(<ButtonDropdown text="test esc">Test esc</ButtonDropdown>);
+    const { getByRole, getByText, queryByText } = render(<Dropdown text="test esc">Test esc</Dropdown>);
     act(() => {
       user.click(getByRole('button', { name: 'test esc' }));
     });
@@ -36,7 +36,7 @@ describe('ButtonDropdown', () => {
     const user = userEvent.setup();
     const { getByRole, getByText, queryByText } = render(
       <>
-        <ButtonDropdown text="test focus">Test focus</ButtonDropdown>
+        <Dropdown text="test focus">Test focus</Dropdown>
         <input type="number" />
       </>,
     );
@@ -53,9 +53,9 @@ describe('ButtonDropdown', () => {
   it('should render heading when heading added as child', async () => {
     const user = userEvent.setup();
     const { getByRole, getByText } = render(
-      <ButtonDropdown text="test heading">
-        <ButtonDropdownHeading>Dropdown heading</ButtonDropdownHeading>
-      </ButtonDropdown>,
+      <Dropdown text="test heading">
+        <DropdownHeading>Dropdown heading</DropdownHeading>
+      </Dropdown>,
     );
     act(() => {
       user.click(getByRole('button', { name: 'test heading' }));
@@ -65,9 +65,9 @@ describe('ButtonDropdown', () => {
 
   it('should have correct styling when block', () => {
     const { getByRole } = render(
-      <ButtonDropdown text="test block" block>
+      <Dropdown text="test block" block>
         Test block
-      </ButtonDropdown>,
+      </Dropdown>,
     );
 
     expect(getByRole('button', { name: 'test block' })).toHaveClass('w-full');

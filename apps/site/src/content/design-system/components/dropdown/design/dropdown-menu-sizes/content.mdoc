@@ -1,47 +1,47 @@
 ### Menu sizes
 
-The button dropdown menus come in three sizes or widths. They are triggered by the dropdown button which comes in all the same styles and sizes as the [Button](/design-system/components/button) component.
+The dropdown menus come in three sizes or widths. They are triggered by the dropdown button which comes in all the same styles and sizes as the [Button](/design-system/components/button) component.
 
 ```jsx
 <div className="flex gap-1">
-  <ButtonDropdown text="Small" dropdownSize="small" look="hero">
-    <ButtonDropdownHeading>Small menu</ButtonDropdownHeading>
+  <Dropdown text="Small" dropdownSize="small" look="hero">
+    <DropdownHeading>Small menu</DropdownHeading>
     <List type="link" spacing="large">
       <ListItem href="#">List item</ListItem>
       <ListItem href="#">List item</ListItem>
     </List>
-    <ButtonDropdownHeading>Sub heading</ButtonDropdownHeading>
+    <DropdownHeading>Sub heading</DropdownHeading>
     <List type="link" spacing="large">
       <ListItem href="#">List item</ListItem>
       <ListItem href="#">List item</ListItem>
     </List>
-  </ButtonDropdown>
+  </Dropdown>
 
-  <ButtonDropdown text="Medium " dropdownSize="medium" look="hero">
-    <ButtonDropdownHeading>Medium menu</ButtonDropdownHeading>
+  <Dropdown text="Medium " dropdownSize="medium" look="hero">
+    <DropdownHeading>Medium menu</DropdownHeading>
     <List type="link" spacing="large">
       <ListItem href="#">List item</ListItem>
       <ListItem href="#">List item</ListItem>
     </List>
-    <ButtonDropdownHeading>Sub heading</ButtonDropdownHeading>
+    <DropdownHeading>Sub heading</DropdownHeading>
     <List type="link" spacing="large">
       <ListItem href="#">List item</ListItem>
       <ListItem href="#">List item</ListItem>
     </List>
-  </ButtonDropdown>
+  </Dropdown>
 
-  <ButtonDropdown text="Large dropdown" dropdownSize="large" look="hero">
-    <ButtonDropdownHeading>Large menu</ButtonDropdownHeading>
+  <Dropdown text="Large dropdown" dropdownSize="large" look="hero">
+    <DropdownHeading>Large menu</DropdownHeading>
     <List type="link" spacing="large">
       <ListItem href="#">List item</ListItem>
       <ListItem href="#">List item</ListItem>
     </List>
-    <ButtonDropdownHeading>With headings</ButtonDropdownHeading>
+    <DropdownHeading>With headings</DropdownHeading>
     <List type="link" spacing="large">
       <ListItem href="#">List item</ListItem>
       <ListItem href="#">List item</ListItem>
     </List>
-  </ButtonDropdown>
+  </Dropdown>
 </div>
 ```
 
@@ -49,8 +49,8 @@ The button dropdown menus come in three sizes or widths. They are triggered by t
 
 ```jsx
 <div className="flex gap-1">
-  <ButtonDropdown text="Checkboxes" look="primary">
-    <ButtonDropdownHeading>Checkboxes</ButtonDropdownHeading>
+  <Dropdown text="Checkboxes" look="primary">
+    <DropdownHeading>Checkboxes</DropdownHeading>
     <CheckboxGroup 
       defaultValue={['Option 1']}
       checkboxes={[
@@ -59,7 +59,7 @@ The button dropdown menus come in three sizes or widths. They are triggered by t
         { value: "Option 3", label: "Option 3" },
       ]}
     />
-    <ButtonDropdownHeading>Options</ButtonDropdownHeading>
+    <DropdownHeading>Options</DropdownHeading>
     <CheckboxGroup 
       defaultValue={['Option 1']}
       checkboxes={[
@@ -68,9 +68,9 @@ The button dropdown menus come in three sizes or widths. They are triggered by t
         { value: "Option 3", label: "Option 3" },
       ]}
     />
-  </ButtonDropdown>
+  </Dropdown>
 
-  <ButtonDropdown text="Switches" look="primary">
+  <Dropdown text="Switches" look="primary">
     <div>
       <Switch block label="Option 1" size="small" />
     </div>
@@ -80,14 +80,14 @@ The button dropdown menus come in three sizes or widths. They are triggered by t
     <div>
       <Switch block label="Option 3" size="small" />
     </div>
-  </ButtonDropdown>
+  </Dropdown>
 
-  <ButtonDropdown text="Links" dropdownSize="large" look="primary">
-    <ButtonDropdownHeading>Links</ButtonDropdownHeading>
+  <Dropdown text="Links" dropdownSize="large" look="primary">
+    <DropdownHeading>Links</DropdownHeading>
     <List type="link" spacing="large">
       <ListItem href="#">List item</ListItem>
       <ListItem href="#">List item</ListItem>
     </List>
-  </ButtonDropdown>
+  </Dropdown>
 </div>
 ```

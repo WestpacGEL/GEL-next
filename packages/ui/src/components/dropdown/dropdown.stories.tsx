@@ -1,13 +1,13 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
-import { AndroidIcon } from '../icon/index.js';
-import { Button, ButtonDropdownHeading, List, ListItem, RadioGroup } from '../index.js';
+import { AndroidIcon, MoreVertIcon } from '../icon/index.js';
+import { Button, DropdownHeading, List, ListItem, RadioGroup } from '../index.js';
 
-import { ButtonDropdown } from './button-dropdown.component.js';
+import { Dropdown } from './dropdown.component.js';
 
-const meta: Meta<typeof ButtonDropdown> = {
-  title: 'Components/ButtonDropdown',
-  component: ButtonDropdown,
+const meta: Meta<typeof Dropdown> = {
+  title: 'Components/Dropdown',
+  component: Dropdown,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
 };
@@ -15,7 +15,7 @@ const meta: Meta<typeof ButtonDropdown> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const LOOKS = ['primary', 'hero', 'faint'] as const;
+const LOOKS = ['primary', 'hero', 'faint', 'link'] as const;
 const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 const DROPDOWNSIZE = ['small', 'medium', 'large'] as const;
 
@@ -38,12 +38,46 @@ export const Default: Story = {
 };
 
 /**
+ * > Swapping Dropdown icon usage example
+ */
+export const SwappingDropDownIcon = () => {
+  return (
+    <Dropdown text="primary" look="primary" dropDownIcon={MoreVertIcon}>
+      <p className="text-text-body">
+        Example dropdown
+        <a href="#" className="text-[blue] underline">
+          content
+        </a>
+        ...
+      </p>
+    </Dropdown>
+  );
+};
+
+/**
+ * > Icon only usage example
+ */
+export const IconOnly = () => {
+  return (
+    <Dropdown text={<MoreVertIcon />} look="unstyled">
+      <p className="text-text-body">
+        Example dropdown
+        <a href="#" className="text-[blue] underline">
+          content
+        </a>
+        ...
+      </p>
+    </Dropdown>
+  );
+};
+
+/**
  * > Standard looks of button
  */
 export const StandardLooks = () => (
   <div className="flex gap-2">
     {LOOKS.map(look => (
-      <ButtonDropdown key={look} look={look} text={look}>
+      <Dropdown key={look} look={look} text={look}>
         <p className="text-text-body">
           Example dropdown
           <a href="#" className="text-[blue] underline">
@@ -51,7 +85,7 @@ export const StandardLooks = () => (
           </a>
           ...
         </p>
-      </ButtonDropdown>
+      </Dropdown>
     ))}
   </div>
 );
@@ -62,7 +96,7 @@ export const StandardLooks = () => (
 export const SoftLooks = () => (
   <div className="flex gap-2">
     {LOOKS.map(look => (
-      <ButtonDropdown key={look} look={look} soft text={look}>
+      <Dropdown key={look} look={look} soft text={look}>
         <p className="text-text-body">
           Example dropdown
           <a href="#" className="text-[blue] underline">
@@ -70,7 +104,7 @@ export const SoftLooks = () => (
           </a>
           ...
         </p>
-      </ButtonDropdown>
+      </Dropdown>
     ))}
   </div>
 );
@@ -83,7 +117,7 @@ export const ButtonSizes = () => (
     {SIZES.map(size => (
       <div key={size}>
         <h3 className="font-bold text-text-body">{size}</h3>
-        <ButtonDropdown size={size} text={size}>
+        <Dropdown size={size} text={size}>
           <p className="text-text-body">
             Example dropdown
             <a href="#" className="text-[blue] underline">
@@ -91,11 +125,11 @@ export const ButtonSizes = () => (
             </a>
             ...
           </p>
-        </ButtonDropdown>
+        </Dropdown>
       </div>
     ))}
     <h3 className="font-bold text-text-body">Responsive</h3>
-    <ButtonDropdown
+    <Dropdown
       size={{
         initial: 'small',
         md: 'large',
@@ -110,7 +144,7 @@ export const ButtonSizes = () => (
         </a>
         ...
       </p>
-    </ButtonDropdown>
+    </Dropdown>
   </div>
 );
 
@@ -122,13 +156,13 @@ export const DropdownSizes = () => (
     {DROPDOWNSIZE.map(size => (
       <div key={size}>
         <h3 className="font-bold text-text-body">{size}</h3>
-        <ButtonDropdown dropdownSize={size} text={size}>
+        <Dropdown dropdownSize={size} text={size}>
           {size}
-        </ButtonDropdown>
+        </Dropdown>
       </div>
     ))}
     <h3 className="font-bold text-text-body">Responsive</h3>
-    <ButtonDropdown
+    <Dropdown
       dropdownSize={{
         initial: 'large',
         md: 'small',
@@ -137,7 +171,7 @@ export const DropdownSizes = () => (
       text="Responsive"
     >
       Responive
-    </ButtonDropdown>
+    </Dropdown>
   </div>
 );
 
@@ -147,11 +181,11 @@ export const DropdownSizes = () => (
 export const BlockDropdownButton = () => (
   <div>
     <h3 className="font-bold text-text-body">Block</h3>
-    <ButtonDropdown block={true} text="Block">
+    <Dropdown block={true} text="Block">
       Block
-    </ButtonDropdown>
+    </Dropdown>
     <h3 className="font-bold text-text-body">Responsive Block</h3>
-    <ButtonDropdown
+    <Dropdown
       block={{
         initial: false,
         lg: true,
@@ -159,7 +193,7 @@ export const BlockDropdownButton = () => (
       text="Responsive Block"
     >
       Responive Block
-    </ButtonDropdown>
+    </Dropdown>
   </div>
 );
 
@@ -191,10 +225,10 @@ export const DropdownWithHeadings: Story = {
     block: false,
     children: (
       <>
-        <ButtonDropdownHeading>Dropdown heading #1</ButtonDropdownHeading>
-        Example dropdown content...
-        <ButtonDropdownHeading>Dropdown heading #2</ButtonDropdownHeading>
-        Example dropdown content...
+        <DropdownHeading>Dropdown heading #1</DropdownHeading>
+        <p className="text-text-body">Example dropdown content...</p>
+        <DropdownHeading>Dropdown heading #2</DropdownHeading>
+        <p className="text-text-body">Example dropdown content...</p>
       </>
     ),
   },
@@ -225,24 +259,24 @@ export const Open: Story = {
  */
 export const DropdownWithHeadingsAndContent = () => (
   <div className="flex gap-4">
-    <ButtonDropdown text="Products" look="primary">
-      <ButtonDropdownHeading>Credit cards</ButtonDropdownHeading>
+    <Dropdown text="Products" look="primary">
+      <DropdownHeading>Credit cards</DropdownHeading>
       <List type="link" spacing="large">
         <ListItem href="#">Rewards</ListItem>
         <ListItem href="#">Low rate</ListItem>
       </List>
-      <ButtonDropdownHeading>Bank accounts</ButtonDropdownHeading>
+      <DropdownHeading>Bank accounts</DropdownHeading>
       <List type="link" spacing="large">
         <ListItem href="#">Savings</ListItem>
         <ListItem href="#">Transaction</ListItem>
       </List>
-    </ButtonDropdown>
-    <ButtonDropdown text="Credit cards" look="primary">
+    </Dropdown>
+    <Dropdown text="Credit cards" look="primary">
       <List type="link" spacing="large">
         <ListItem href="#">Rewards</ListItem>
         <ListItem href="#">Low rate</ListItem>
       </List>
-    </ButtonDropdown>
+    </Dropdown>
   </div>
 );
 
@@ -252,7 +286,7 @@ export const DropdownWithHeadingsAndContent = () => (
 export const RadioGroupExample = () => {
   return (
     <div>
-      <ButtonDropdown text="Default test">
+      <Dropdown text="Default test">
         <RadioGroup
           radios={[
             { value: 'Option 1', label: 'Option 1' },
@@ -260,7 +294,7 @@ export const RadioGroupExample = () => {
             { value: 'Option 3', label: 'Option 3' },
           ]}
         />
-      </ButtonDropdown>
+      </Dropdown>
       <Button>Test</Button>
     </div>
   );
@@ -273,7 +307,7 @@ export const DropdownAtBottomFlipsUp: Story = {
   parameters: { layout: 'fullscreen' },
   render: () => (
     <div style={{ position: 'fixed', bottom: 8, left: '50%', transform: 'translateX(-50%)' }}>
-      <ButtonDropdown text="Flips up" open shouldFlip look="primary">
+      <Dropdown text="Flips up" open shouldFlip look="primary">
         <List type="link" spacing="medium">
           {Array.from({ length: 10 }).map((_, i) => (
             <ListItem key={i} href="#">
@@ -284,7 +318,7 @@ export const DropdownAtBottomFlipsUp: Story = {
         <p className="mt-2 text-sm text-neutral-600">
           There is no space below the button so the popover should appear above.
         </p>
-      </ButtonDropdown>
+      </Dropdown>
     </div>
   ),
 };

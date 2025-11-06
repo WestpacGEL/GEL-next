@@ -4,7 +4,7 @@ import { OverlayTriggerState } from 'react-stately';
 
 import { ButtonProps } from '../../../button/index.js';
 
-export type ButtonDropdownPanelProps = {
+export type DropdownPanelProps = {
   /**
    * State for the panel
    */

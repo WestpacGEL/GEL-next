@@ -9,11 +9,11 @@ import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { Button } from '../button/index.js';
 import { DropDownIcon, IconProps } from '../icon/index.js';
 
-import { styles as buttonDropdownStyles } from './button-dropdown.styles.js';
-import { type ButtonDropdownProps } from './button-dropdown.types.js';
-import { ButtonDropdownPanel } from './components/button-dropdown-panel/button-dropdown-panel.component.js';
+import { DropdownPanel } from './components/dropdown-panel/dropdown-panel.component.js';
+import { styles as dropdownStyles } from './dropdown.styles.js';
+import { type DropdownProps } from './dropdown.types.js';
 
-export function ButtonDropdown({
+export function Dropdown({
   className,
   portalClassName,
   dropdownSize = 'medium',
@@ -26,16 +26,19 @@ export function ButtonDropdown({
   soft = false,
   block = false,
   portalContainer,
+  dropDownIcon: Icon = DropDownIcon,
   placement = 'bottom start',
   shouldFlip,
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelBy,
   shouldCloseOnInteractOutside = () => false,
-}: ButtonDropdownProps) {
+}: DropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
   const panelId = useId();
   const breakpoint = useBreakpoint();
   const resolvedLook = resolveResponsiveVariant(look, breakpoint);
   const resolvedSoft = resolveResponsiveVariant(soft, breakpoint);
-  const styles = buttonDropdownStyles({
+  const styles = dropdownStyles({
     block: resolveResponsiveVariant(block, breakpoint),
     dropdownSize: resolveResponsiveVariant(dropdownSize, breakpoint),
   });
@@ -80,12 +83,18 @@ export function ButtonDropdown({
     <>
       <Button
         ref={ref}
-        iconAfter={(props: IconProps) => <DropDownIcon {...props} color={iconColor} aria-hidden />}
+        iconAfter={
+          !(look === 'link' || look === 'unstyled')
+            ? (props: IconProps) => <Icon aria-hidden color={iconColor} {...props} />
+            : undefined
+        }
         iconBefore={IconBefore}
         size={size}
         look={look}
         soft={soft}
         block={block}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelBy}
         aria-expanded={state.isOpen}
         aria-controls={panelId}
         className={styles.base({ className })}
@@ -94,7 +103,7 @@ export function ButtonDropdown({
         {text}
       </Button>
       {state.isOpen && (
-        <ButtonDropdownPanel
+        <DropdownPanel
           className={styles.panel({ className: portalClassName })}
           placement={placement}
           triggerRef={ref}
@@ -107,7 +116,7 @@ export function ButtonDropdown({
           shouldFlip={shouldFlip}
         >
           {children}
-        </ButtonDropdownPanel>
+        </DropdownPanel>
       )}
     </>
   );
