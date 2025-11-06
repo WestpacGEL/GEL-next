@@ -195,6 +195,48 @@ We introduced new token names to support a multi-brand + dual-theme system.
 };
 ```
 
+### Accordion now uses useDisclose from react-aria
+
+#### Before
+
+```jsx
+<Accordion rounded>
+  <AccordionItem title="Mole">
+    The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with
+    dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash;
+  </AccordionItem>
+  <AccordionItem title="Rat">
+    The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat
+    which the Mole had not observed.
+  </AccordionItem>
+  <AccordionItem title="Toad">
+    ‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals
+    looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and took
+    to punting.
+  </AccordionItem>
+</Accordion>
+```
+
+#### After
+
+```jsx
+<Accordion rounded>
+  <AccordionItem id="mole" title="Mole">
+    The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with
+    dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash;
+  </AccordionItem>
+  <AccordionItem id="rat" title="Rat">
+    The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat
+    which the Mole had not observed.
+  </AccordionItem>
+  <AccordionItem id="toad" title="Toad">
+    ‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals
+    looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and took
+    to punting.
+  </AccordionItem>
+</Accordion>
+```
+
 ### ButtonGroup now uses useButtonGroupToggle from react-aria
 
 #### Before
