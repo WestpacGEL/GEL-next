@@ -1,0 +1,41 @@
+We introduced new token names to support a multi-brand + dual-theme system.
+
+#### Before
+
+```html
+<StaticCode
+  language="jsx"
+  code={`
+<div className="bg-white">
+  <div className="bg-primary rounded-full">
+    <AccountIcon color="white" />
+  </div>
+  <h2 className="text-text">
+    My title
+    <BankIcon color="link" className="ml-2" />
+  </h2>
+  <p className="text-text">Lorem ipsum dolor sit amet</p>
+</div>
+  `}
+/>
+```
+
+#### After
+
+```html
+<StaticCode
+  language="jsx"
+  code={`
+<div className="bg-background-white-pale">
+  <div className="bg-surface-primary rounded-full">
+    <AccountIcon color="mono" />
+  </div>
+  <h2 className="text-text-body">
+    My title
+    <BankIcon color="primary" className="ml-2" />
+  </h2>
+  <p className="text-text-body">Lorem ipsum dolor sit amet</p>
+</div>
+  `}
+/>
+```
