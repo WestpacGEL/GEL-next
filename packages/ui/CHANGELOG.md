@@ -120,6 +120,8 @@ We introduced new token names to support a multi-brand + dual-theme system.
 </div>
 ```
 
+For more information please go to our [Tokens section](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens)
+
 ---
 
 ### 🆕 Additional Improvements

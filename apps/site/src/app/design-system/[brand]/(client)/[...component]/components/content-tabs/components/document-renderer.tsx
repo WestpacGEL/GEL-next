@@ -57,7 +57,7 @@ export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = 
                 <th
                   colSpan={headItem.colSpan}
                   rowSpan={headItem.rowSpan}
-                  className="text-left text-text-body p-2 font-bold border-b border-border-muted-soft"
+                  className="border-b border-border-muted-soft p-2 text-left font-bold text-text-body"
                 >
                   {headItem.children}
                 </th>
@@ -71,7 +71,7 @@ export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = 
                   <td
                     colSpan={td.colSpan}
                     rowSpan={td.rowSpan}
-                    className="text-left text-text-body p-2 border-y border-border-muted-soft"
+                    className="border-y border-border-muted-soft p-2 text-left text-text-body"
                   >
                     {td.children}
                   </td>
