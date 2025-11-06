@@ -120,11 +120,23 @@ We introduced new token names to support a multi-brand + dual-theme system.
 </div>
 ```
 
+To support migration, a codemod is available to automate this transition.
+
+```bash
+npx jscodeshift -t https://raw.githubusercontent.com/WestpacGEL/GEL-next/refs/heads/main/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs "to/your/files/**/*.tsx"
+```
+
+This will apply the codemod to all .tsx files in your project.
+
+For classes we are unable to replace with the equivalent token the code will inject a `[REPLACE_TOKEN]` string where it will require working with your project designer to manual update it to the correct color token.
+
 For more information please go to our [Tokens section](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens)
 
 ---
 
 ### 🆕 Additional Improvements
+
+#### Component Updates
 
 - Full support for TailwindCSS v4 and its [latest features](https://tailwindcss.com/blog/tailwindcss-v4)
 - Dark mode supported for BOM and BankSA logos
