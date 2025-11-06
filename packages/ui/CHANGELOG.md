@@ -284,6 +284,90 @@ We introduced new token names to support a multi-brand + dual-theme system.
 };
 ```
 
+### Form, FormGroup, FormSection, FormChitchat deprecated
+
+The `Form` component has been deprecated. Its primary functionality was to manage vertical spacing between `FormGroup` elements using margin-bottom, which led to limitations and layout inconsistencies in more complex form structures. 
+
+To ensure greater flexibility and maintainability, we are phasing out this component and its related abstractions. Spacing should now be applied directly using Tailwind CSS utility classes.
+
+#### Before
+
+```jsx
+() => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  return (
+    <Form id="credit-card" spacing="large" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <FormGroup>
+        <InputGroup size="large" label="Given name (Optional)" errorMessage={errors.givenName?.message}>
+          <Input {...register('givenName')} />
+        </InputGroup>
+      </FormGroup>
+      <FormGroup>
+        <InputGroup size="large" label="Family name (Optional)" errorMessage={errors.familyName?.message}>
+          <Input {...register('familyName')} />
+        </InputGroup>
+      </FormGroup>
+      <FormGroup>
+        <Field label="Your comments:" errorMessage={errors.comment?.message}>
+          <Textarea size="large" {...register('comment', { required: 'This field is required' })} />
+        </Field>
+      </FormGroup>
+      <div className="mt-5 flex flex-col gap-2 xsl:flex-row">
+        <Button type="submit" size="large" look="primary">
+          Send feedback
+        </Button>
+        <Button type="reset" size="large" look="link">
+          Cancel
+        </Button>
+      </div>
+    </Form>
+  );
+};
+```
+
+#### After
+
+```jsx
+() => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  return (
+    <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <Field label="Given name (Optional)" errorMessage={errors.givenName?.message}>
+        <InputGroup size="large">
+          <Input {...register('givenName')} />
+        </InputGroup>
+      </Field>
+      <Field label="Family name (Optional)" errorMessage={errors.familyName?.message}>
+        <InputGroup size="large">
+          <Input {...register('familyName')} />
+        </InputGroup>
+      </Field>
+      <Field label="Your comments:" errorMessage={errors.comment?.message}>
+        <Textarea size="large" {...register('comment', { required: 'This field is required' })} />
+      </Field>
+      <div className="mt-5 flex flex-col gap-2 xsl:flex-row">
+        <Button type="submit" size="large" look="primary">
+          Send feedback
+        </Button>
+        <Button type="reset" size="large" look="link">
+          Cancel
+        </Button>
+      </div>
+    </form>
+  );
+};
+```
+
 ### 🗑️ Deprecated Components & APIs
 
 | Deprecated                                         | Replacement / Notes                                                  |
