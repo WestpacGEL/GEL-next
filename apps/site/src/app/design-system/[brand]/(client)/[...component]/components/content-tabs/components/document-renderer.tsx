@@ -50,24 +50,38 @@ export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = 
     ),
     table: ({ head, body }) => {
       return (
-        <table className='table'>
+        <table className="table">
           <thead>
             <tr>
-              {head?.map((headItem) => <th colSpan={headItem.colSpan} rowSpan={headItem.rowSpan} className='text-left text-text-body p-2 font-bold border-b border-border-muted-soft'>{headItem.children}</th>)}
+              {head?.map(headItem => (
+                <th
+                  colSpan={headItem.colSpan}
+                  rowSpan={headItem.rowSpan}
+                  className="text-left text-text-body p-2 font-bold border-b border-border-muted-soft"
+                >
+                  {headItem.children}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
             {body.map((tr, index) => (
               <tr key={index}>
-                {tr.map((td) => (
-                  <td colSpan={td.colSpan} rowSpan={td.rowSpan} className='text-left text-text-body p-2 border-y border-border-muted-soft' >{td.children}</td>
+                {tr.map(td => (
+                  <td
+                    colSpan={td.colSpan}
+                    rowSpan={td.rowSpan}
+                    className="text-left text-text-body p-2 border-y border-border-muted-soft"
+                  >
+                    {td.children}
+                  </td>
                 ))}
               </tr>
             ))}
           </tbody>
         </table>
-      )
-    }
+      );
+    },
   },
   inline: {
     code: InlineCode,
