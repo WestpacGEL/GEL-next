@@ -52,10 +52,10 @@ export function StickyFooter() {
           Talk to us
         </span>
         <div className={styles.icons()}>
-          <Link href="mailto:gel@westpac.com.au">
+          <Link href="mailto:gel@westpac.com.au" className="focus-visible:focus-outline">
             <EmailIcon color="muted" />
           </Link>
-          <Link target="_blank" href="https://github.com/WestpacGEL/GEL-next">
+          <Link target="_blank" href="https://github.com/WestpacGEL/GEL-next" className="focus-visible:focus-outline">
             <GithubIcon color="muted" />
           </Link>
         </div>

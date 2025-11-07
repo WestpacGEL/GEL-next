@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'inline-block w-fit text-center whitespace-nowrap',
+  base: 'inline-block w-fit text-center whitespace-nowrap [&_:focus-visible]:focus-outline',
   variants: {
     color: {
       danger: 'bg-surface-danger text-text-mono',
@@ -21,7 +21,7 @@ export const styles = tv({
       'warning-inverted': 'border-none bg-surface-mono text-text-warning',
     },
     type: {
-      pill: 'flex h-4 w-fit min-w-4 items-center justify-center rounded-full px-[0.4375rem] typography-body-10 leading-none font-medium',
+      pill: 'inline-flex h-4 w-fit min-w-4 items-center justify-center rounded-full px-[0.4375rem] typography-body-10 leading-none font-medium',
       default: 'h-[1.25rem] rounded-sm px-1 text-[0.75rem]',
     },
     soft: {

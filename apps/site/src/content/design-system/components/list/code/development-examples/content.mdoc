@@ -37,16 +37,19 @@
 ```jsx
 () => {
   const TYPES = ['bullet', 'link', 'tick', 'ordered', 'unstyled', 'icon'];
-  return TYPES.map(type => (
-    <div key={type}>
-      <h1 className="typography-body-10 mb-2 italic text-text-muted">{`${type[0].toUpperCase()}${type.slice(1)} List`}</h1>
-      <List type={type} icon={type === 'icon' ? GithubIcon : undefined}>
-        <ListItem>Styled {type} list</ListItem>
-        <ListItem>Styled {type} list</ListItem>
-        <ListItem>Styled {type} list</ListItem>
-      </List>
-    </div>
-  ));
+  return TYPES.map(type => {
+    const href = type === 'link' ? '#' : undefined;
+
+    return (
+      <div key={type}>
+        <h1 className="typography-body-10 mb-2 italic text-text-muted">{`${type[0].toUpperCase()}${type.slice(1)} List`}</h1>
+        <List type={type} icon={type === 'icon' ? GithubIcon : undefined}>
+          <ListItem href={href}>Styled {type} list</ListItem>
+          <ListItem href={href}>Styled {type} list</ListItem>
+          <ListItem href={href}>Styled {type} list</ListItem>
+        </List>
+      </div>
+    )});
 };
 ```
 

@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'inset-y-0 text-text-body',
+  base: 'inset-y-0 text-text-body focus-within:z-20',
   variants: {
     isInset: {
       true: 'absolute',
@@ -16,12 +16,12 @@ export const styles = tv({
     {
       isInset: true,
       position: 'before',
-      className: 'left-0',
+      className: 'left-0 z-[11]',
     },
     {
       isInset: true,
       position: 'after',
-      className: 'right-0',
+      className: 'right-0 z-[11]',
     },
   ],
 });

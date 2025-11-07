@@ -5,7 +5,7 @@ export const styles = tv({
     root: 'relative inline-flex',
     select:
       'form-control flex-1 overflow-hidden bg-no-repeat text-ellipsis group-first/add-on-before:rounded-r-none group-first/add-on-before:!border-x group-last/add-on-after:rounded-l-none group-last/add-on-after:!border-x group-[.input-group-after]:rounded-r-none group-[.input-group-after]:border-r-0 group-[.input-group-before]:rounded-l-none group-[.input-group-before]:border-l-0 disabled:form-control-disabled',
-    caret: 'absolute top-1/2 right-2 -translate-y-1/2 text-surface-muted-vivid',
+    caret: 'absolute top-1/2 right-2 z-100 -translate-y-1/2 text-surface-muted-vivid', // z-index to ensure caret displays correctly in certain focus states
   },
   variants: {
     size: {
@@ -40,7 +40,7 @@ export const styles = tv({
       },
     },
     isFocusVisible: {
-      true: { root: 'rounded-sm focus-outline' },
+      true: { select: 'rounded-sm !focus-outline' },
     },
     isFocused: {
       true: { select: 'outline-none' },

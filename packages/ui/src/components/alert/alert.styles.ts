@@ -4,7 +4,7 @@ export const styles = tv({
   slots: {
     base: 'relative mb-5 typography-body-10 xsl:flex',
     icon: 'float-left flex-none',
-    body: 'relative flex-1 overflow-hidden xsl:top-[0.125rem] [&_a]:underline',
+    body: 'relative flex-1 xsl:top-[0.125rem] [&_:focus-visible]:focus-outline [&_a]:underline',
     heading: 'mb-1 typography-body-9 font-bold',
     close: 'absolute top-0.5 right-0.5 h-5.5 p-1',
   },

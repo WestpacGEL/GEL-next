@@ -5,13 +5,13 @@ export const styles = tv({
     base: '',
     circle: 'relative z-10 size-[14px] border-2 bg-background-white-pale transition-colors',
     circleWrapper:
-      'relative flex w-full cursor-pointer items-center gap-2 pt-1 pb-[1.625rem] typography-body-9 leading-loose transition-colors',
+      'relative flex w-full cursor-pointer items-center gap-2 pt-1 pb-[1.625rem] typography-body-9 leading-loose outline-transparent transition-colors',
     stepsWrapper: 'relative transition-all',
   },
   variants: {
     firstItem: {
       true: {
-        circleWrapper: 'after:first:hidden',
+        circleWrapper: 'after:!hidden',
       },
       false: {},
     },
@@ -25,7 +25,7 @@ export const styles = tv({
         base: '',
         circle: 'border-[3px] border-border-primary bg-surface-primary',
         circleWrapper:
-          'text-text-body before:absolute before:inset-y-0 before:left-1 before:z-[1] before:block before:translate-y-[1.25rem] before:border-l-2 before:border-border-primary before:transition-colors after:absolute after:inset-y-[1.25rem] after:left-1 after:z-[1] after:block after:translate-y-[-1.25rem] after:border-l-2 after:border-border-primary after:transition-colors',
+          'text-text-body before:absolute before:inset-y-0 before:left-1 before:z-[1] before:block before:translate-y-[1.25rem] before:border-l-2 before:border-border-primary before:transition-colors after:absolute after:inset-y-[1.25rem] after:left-1 after:z-[1] after:block after:translate-y-[-1.25rem] after:border-l-2 after:border-border-primary after:transition-colors', // TODO: this is the spot
       },
       'non-visited': {
         base: '',
@@ -40,7 +40,7 @@ export const styles = tv({
       },
     },
     isFocusVisible: {
-      true: { circleWrapper: 'focus-outline' },
+      true: { circleWrapper: '!focus-outline' },
     },
   },
 });

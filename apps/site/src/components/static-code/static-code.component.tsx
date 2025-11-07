@@ -26,9 +26,9 @@ export const StaticCode = ({
       </Highlight>
       <button
         className={`
-          absolute top-0 right-0 p-1 pr-2 typography-body-10 text-white
-          opacity-50 transition-opacity
-          hover:opacity-100
+          absolute top-0 right-0 p-1 pr-2 typography-body-10 text-white opacity-50 transition-opacity hover:opacity-100
+          focus-visible:opacity-100 focus-visible:focus-outline
+          focus-visible:!outline-offset-[-2px]
         `}
         onClick={() => {
           void copy(code);

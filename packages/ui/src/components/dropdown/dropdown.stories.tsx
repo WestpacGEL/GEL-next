@@ -1,7 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { AndroidIcon, MoreVertIcon } from '../icon/index.js';
-import { Button, DropdownHeading, List, ListItem, RadioGroup } from '../index.js';
+import { Button, DropdownHeading, Link, List, ListItem, RadioGroup } from '../index.js';
 
 import { Dropdown } from './dropdown.component.js';
 
@@ -27,10 +27,10 @@ export const Default: Story = {
     text: 'Default Dropdown',
     children: (
       <p className="text-text-body">
-        Example dropdown
-        <a href="#" className="text-[blue] underline">
+        Example dropdown{' '}
+        <Link href="#" type="inline">
           content
-        </a>
+        </Link>
         ...
       </p>
     ),
@@ -45,9 +45,9 @@ export const SwappingDropDownIcon = () => {
     <Dropdown text="primary" look="primary" dropDownIcon={MoreVertIcon}>
       <p className="text-text-body">
         Example dropdown
-        <a href="#" className="text-[blue] underline">
+        <Link href="#" type="inline">
           content
-        </a>
+        </Link>
         ...
       </p>
     </Dropdown>
@@ -62,9 +62,9 @@ export const IconOnly = () => {
     <Dropdown text={<MoreVertIcon />} look="unstyled">
       <p className="text-text-body">
         Example dropdown
-        <a href="#" className="text-[blue] underline">
+        <Link href="#" type="inline">
           content
-        </a>
+        </Link>
         ...
       </p>
     </Dropdown>
@@ -79,10 +79,10 @@ export const StandardLooks = () => (
     {LOOKS.map(look => (
       <Dropdown key={look} look={look} text={look}>
         <p className="text-text-body">
-          Example dropdown
-          <a href="#" className="text-[blue] underline">
+          Example dropdown{' '}
+          <Link href="#" type="inline">
             content
-          </a>
+          </Link>
           ...
         </p>
       </Dropdown>
@@ -98,10 +98,10 @@ export const SoftLooks = () => (
     {LOOKS.map(look => (
       <Dropdown key={look} look={look} soft text={look}>
         <p className="text-text-body">
-          Example dropdown
-          <a href="#" className="text-[blue] underline">
+          Example dropdown{' '}
+          <Link href="#" type="inline">
             content
-          </a>
+          </Link>
           ...
         </p>
       </Dropdown>
@@ -119,10 +119,10 @@ export const ButtonSizes = () => (
         <h3 className="font-bold text-text-body">{size}</h3>
         <Dropdown size={size} text={size}>
           <p className="text-text-body">
-            Example dropdown
-            <a href="#" className="text-[blue] underline">
+            Example dropdown{' '}
+            <Link href="#" type="inline">
               content
-            </a>
+            </Link>
             ...
           </p>
         </Dropdown>
@@ -138,10 +138,10 @@ export const ButtonSizes = () => (
       text="responsive"
     >
       <p className="text-text-body">
-        Example dropdown
-        <a href="#" className="text-[blue] underline">
+        Example dropdown{' '}
+        <Link href="#" type="inline">
           content
-        </a>
+        </Link>
         ...
       </p>
     </Dropdown>
@@ -206,10 +206,10 @@ export const DropdownButtonWithIcons: Story = {
     text: 'Icon Dropdown',
     children: (
       <p className="text-text-body">
-        Example dropdown
-        <a href="#" className="text-[blue] underline">
+        Example dropdown{' '}
+        <Link href="#" type="inline">
           content
-        </a>
+        </Link>
         ...
       </p>
     ),
@@ -244,10 +244,10 @@ export const Open: Story = {
     text: 'Default Dropdown',
     children: (
       <p className="text-text-body">
-        Example dropdown
-        <a href="#" className="text-[blue] underline">
+        Example dropdown{' '}
+        <Link href="#" type="inline">
           content
-        </a>
+        </Link>
         ...
       </p>
     ),

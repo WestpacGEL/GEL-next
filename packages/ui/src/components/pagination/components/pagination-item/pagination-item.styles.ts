@@ -4,7 +4,7 @@ export const styles = tv({
   base: 'relative block min-w-7 border border-border-muted-soft px-2 py-1.5 text-center typography-body-10 text-text-body',
   variants: {
     isFocusVisible: {
-      true: 'focus-outline',
+      true: 'z-10 focus-outline',
       false: '',
     },
     firstItem: {
@@ -16,7 +16,7 @@ export const styles = tv({
       false: '',
     },
     active: {
-      true: 'z-10 border-border-hero bg-surface-hero text-text-mono',
+      true: 'border-border-hero bg-surface-hero text-text-mono',
       false: 'bg-background-white-pale hover:bg-surface-muted-faint',
     },
     disabled: {

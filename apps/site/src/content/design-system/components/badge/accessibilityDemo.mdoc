@@ -34,14 +34,14 @@
                 <span>Label</span>
               </div>
             </Button>
-            <a className="text-link flex items-center" href="#">
-                <div className="underline">
-                  Product feature
-                </div>
-                <Badge color="muted" type="pill" className="ml-1 no-underline">
+            <div>
+              <Link type="inline" href="#">
+                Product feature
+              </Link>
+              <Badge color="muted" type="pill" className="ml-1">
                   12
-                </Badge>
-              </a>
+              </Badge>
+            </div>
           </div>
         </div>
         <div>
@@ -49,7 +49,7 @@
             <em>Examples showing basic style badge</em>
           </p>
   
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
             <Button look="primary" soft>
               <div className="flex gap-1 items-center">
                 <span>Label</span>
@@ -64,12 +64,14 @@
               </div>
             </Button>
   
-            <a className="text-link underline" href="#">
+            <div>
+              <Link type="inline" href="#">
                 Product feature
-                <Badge color="muted" className="ml-1">
+              </Link>
+              <Badge color="muted" className="ml-1">
                   NEW
-                </Badge>
-              </a>
+              </Badge>
+            </div>
 
           </div>
         </div>

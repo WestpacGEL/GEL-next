@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'relative overflow-hidden border-t border-t-border-muted-soft bg-background-white-pale',
+    base: 'relative overflow-hidden border-t border-t-border-muted-soft bg-background-white-pale [&_:focus-visible]:focus-outline',
     wrapper: 'pt-3 max-md:px-2 max-md:pb-3 md:px-4 md:pb-4',
     topRow: 'text-text-muted',
     link: 'float-right block',

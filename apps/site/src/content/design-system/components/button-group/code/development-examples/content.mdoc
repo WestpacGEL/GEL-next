@@ -13,7 +13,7 @@
 ```jsx
 <div className="grid gap-3">
   <Field label={<p className="typography-body-10 text-text-muted italic mb-[0.875rem]">Index (integer)</p>}>
-    <ButtonGroup defaultValue={0}>
+    <ButtonGroup selectedKeys={0}>
       <ButtonGroupButton id={0}>Left</ButtonGroupButton>
       <ButtonGroupButton id={1}>Middle</ButtonGroupButton>
       <ButtonGroupButton id={2}>Right</ButtonGroupButton>
@@ -21,7 +21,7 @@
   </Field>
 
   <Field label={<p className="typography-body-10 text-text-muted italic mb-[0.875rem]">Key (string)</p>}>
-    <ButtonGroup defaultValue="left">
+    <ButtonGroup selectedKeys="left">
       <ButtonGroupButton id="left">Left</ButtonGroupButton>
       <ButtonGroupButton id="middle">Middle</ButtonGroupButton>
       <ButtonGroupButton id="right">Right</ButtonGroupButton>

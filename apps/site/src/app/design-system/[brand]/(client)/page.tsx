@@ -135,8 +135,8 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
                   href="/articles/figma-libraries"
                   className={`
                     box-border flex min-h-[3.4375rem] items-center
-                    justify-between py-[1rem] outline-offset-[3px]
-                    hover:text-text-primary hover:underline
+                    justify-between py-[1rem] hover:text-text-primary
+                    hover:underline focus-visible:focus-outline
                     sm:min-h-12 sm:py-1.5 sm:pr-1.5
                   `}
                 >
@@ -164,7 +164,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
                   className={`
                     box-border flex min-h-[3.4375rem] items-center
                     justify-between py-[1rem] outline-offset-[3px]
-                    hover:text-text-primary hover:underline
+                    hover:text-text-primary hover:underline focus-visible:focus-outline
                     sm:min-h-12 sm:py-1.5 sm:pr-1.5
                   `}
                 >

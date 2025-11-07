@@ -20,7 +20,7 @@ export const styles = tv({
     },
     isFocusVisible: {
       true: {
-        base: 'focus-outline',
+        base: '!focus-outline', // needs to overwrite outline-none on flexicell because of transition-colors
       },
       false: {},
     },

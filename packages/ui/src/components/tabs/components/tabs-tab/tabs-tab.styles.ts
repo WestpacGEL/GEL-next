@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'flex cursor-pointer px-3 py-2 typography-body-9 text-text-body transition-colors',
+  base: 'flex cursor-pointer px-3 py-2 typography-body-9 text-text-body outline-transparent transition-colors',
   variants: {
     look: {
       default: 'border border-border-muted-soft bg-surface-muted-faint',
@@ -23,7 +23,7 @@ export const styles = tv({
       hero: '',
     },
     isFocusVisible: {
-      true: 'focus-outline',
+      true: 'z-10 !focus-outline',
       false: 'outline-none',
     },
   },

@@ -97,7 +97,7 @@ Badges come in 2 different types:
         <p className="mb-2 typography-body-10 text-text-muted">
           <em>Examples showing pill style badge</em>
         </p>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           <Button look="primary" soft>
             <div className="flex gap-1">
               <Badge color="hero" type="pill">
@@ -114,12 +114,14 @@ Badges come in 2 different types:
               <span>Label</span>
             </div>
           </Button>
-          <a className="text-link underline" href="#">
-            Messages{' '}
-          </a>
-          <Badge color="muted" type="pill" className="ml-.5">
-            12
-          </Badge>
+          <div>
+            <Link type="inline" href="#">
+              Product feature
+            </Link>
+            <Badge color="muted" type="pill" className="ml-1">
+                12
+            </Badge>
+          </div>
         </div>
       </div>
       <div>
@@ -127,7 +129,7 @@ Badges come in 2 different types:
           <em>Examples showing basic style badge</em>
         </p>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           <Button look="primary" soft>
             <div className="flex gap-1 items-center">
               <span>Label</span>
@@ -144,12 +146,14 @@ Badges come in 2 different types:
             </div>
           </Button>
 
-          <a className="text-link underline" href="#">
-            Product feature
-          </a>
-          <Badge color="muted" className="ml-.5">
-            New
-          </Badge>
+          <div>
+            <Link type="inline" href="#">
+              Product feature
+            </Link>
+            <Badge color="muted" className="ml-1">
+                NEW
+            </Badge>
+          </div>
         </div>
       </div>
     </div>
