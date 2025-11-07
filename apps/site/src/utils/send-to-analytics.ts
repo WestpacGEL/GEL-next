@@ -9,7 +9,7 @@ const ANALYTICS_CONFIG: AnalyticsConfig = {
   journeyType: 'pub',
   loginStatus: 'logged out',
   pageStatus: 'pub',
-  siteBrand: 'wbg',
+  siteBrand: 'wbc',
   siteDomain: SITE,
   siteEnv: 'test',
   siteVersion: '4.0',

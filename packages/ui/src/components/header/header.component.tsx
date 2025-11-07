@@ -12,15 +12,11 @@ import {
   BOMMultibrandSmallLogo,
   BSAMultibrandLargeLogo,
   BSAMultibrandSmallLogo,
-  RAMSMultibrandLargeLogo,
-  RAMSMultibrandSmallLogo,
   STGMultibrandLargeLogo,
   STGMultibrandSmallLogo,
   SymbolProps,
   WBCMultibrandLargeLogo,
   WBCMultibrandSmallLogo,
-  WBGMultibrandLargeLogo,
-  WBGMultibrandSmallLogo,
 } from '../symbol/index.js';
 
 import { styles as headerStyles } from './header.styles.js';
@@ -42,14 +38,6 @@ const LOGO_MAP = {
   bsa: {
     logo: (props: SymbolProps) => <BSAMultibrandSmallLogo {...props} />,
     largeLogo: (props: SymbolProps) => <BSAMultibrandLargeLogo {...props} />,
-  },
-  wbg: {
-    logo: (props: SymbolProps) => <WBGMultibrandSmallLogo {...props} />,
-    largeLogo: (props: SymbolProps) => <WBGMultibrandLargeLogo {...props} />,
-  },
-  rams: {
-    logo: (props: SymbolProps) => <RAMSMultibrandSmallLogo {...props} />,
-    largeLogo: (props: SymbolProps) => <RAMSMultibrandLargeLogo {...props} />,
   },
 } as const;
 

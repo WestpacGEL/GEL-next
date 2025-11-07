@@ -1,4 +1,4 @@
-import { BOMShieldLogo, BSAStackedLogo, RAMSLogo, STGDragonLogo, WBCLogo, WBGLogo } from '@westpac/ui/symbol';
+import { BOMShieldLogo, BSAStackedLogo, STGDragonLogo, WBCLogo } from '@westpac/ui/symbol';
 
 export const BANK_OPTIONS = [
   {
@@ -32,21 +32,5 @@ export const BANK_OPTIONS = [
     icon: BSAStackedLogo,
     homePageClasses: 'mr-[1rem] block h-[2.875rem] w-[1.6875rem]',
     designSystemPageClasses: 'block mr-[0.5rem] h-[2.875rem] w-[1.6875rem]',
-  },
-  {
-    key: 'wbg',
-    label: 'Westpac Group',
-    fontName: 'Montserrat',
-    icon: WBGLogo,
-    homePageClasses: 'mr-[-0.5rem] block h-[0.5625rem] w-[4.375rem]',
-    designSystemPageClasses: 'mr-[-0.5rem] block h-[0.5625rem] w-[4.375rem]',
-  },
-  {
-    key: 'rams',
-    label: 'RAMS',
-    fontName: 'Source Sans Pro',
-    icon: RAMSLogo,
-    homePageClasses: 'mr-[-0.3125rem] block h-5 w-[3.4375rem]',
-    designSystemPageClasses: 'mr-[-0.5625rem] block h-6 w-[4.375rem]',
   },
 ] as const;

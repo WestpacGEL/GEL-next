@@ -33,12 +33,6 @@ export const getFontFilesPerBrand = (brandKey: BrandKey) => {
       return [{ href: '/fonts/dragonbold-bold-webfont.woff2', type: WOFF2_TYPE }];
     case 'wbc':
       return [{ href: '/fonts/Westpac-Bold-v2.007.woff2', type: WOFF2_TYPE }];
-    case 'wbg':
-      return [
-        { href: '/fonts/montserrat-v14-latin-300.woff2', type: WOFF2_TYPE },
-        { href: '/fonts/montserrat-v14-latin-700.woff2', type: WOFF2_TYPE },
-        { href: '/fonts/montserrat-v14-latin-regular.woff2', type: WOFF2_TYPE },
-      ];
     case 'btfg':
     default:
       return [];

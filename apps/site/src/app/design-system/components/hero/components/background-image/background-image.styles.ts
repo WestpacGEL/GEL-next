@@ -19,7 +19,6 @@ export const styles = tv({
           sm:top-auto sm:h-[14.25rem]
         `,
       },
-      wbg: {},
       stg: {
         base: 'bottom-0 left-0 w-[75.125rem]',
         header: `
@@ -36,7 +35,6 @@ export const styles = tv({
       },
       bom: {},
       btfg: {},
-      rams: {},
     },
     fixed: {
       true: { header: 'sm:block' },

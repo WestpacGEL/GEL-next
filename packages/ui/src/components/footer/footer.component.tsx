@@ -7,11 +7,9 @@ import { VisuallyHidden } from '../index.js';
 import {
   BOMMultibrandSmallLogo,
   BSAMultibrandSmallLogo,
-  RAMSMultibrandSmallLogo,
   STGMultibrandSmallLogo,
   SymbolProps,
   WBCMultibrandSmallLogo,
-  WBGMultibrandSmallLogo,
 } from '../symbol/index.js';
 
 import { styles as footerStyles } from './footer.styles.js';
@@ -29,12 +27,6 @@ const LOGO_MAP = {
   },
   bsa: {
     logo: (props: SymbolProps) => <BSAMultibrandSmallLogo {...props} />,
-  },
-  wbg: {
-    logo: (props: SymbolProps) => <WBGMultibrandSmallLogo {...props} />,
-  },
-  rams: {
-    logo: (props: SymbolProps) => <RAMSMultibrandSmallLogo {...props} />,
   },
 } as const;
 

@@ -18,8 +18,6 @@ export const styles = tv({
       bsa: {
         base: `bg-gradient-to-r from-background-hero via-[#00468e] to-[#00adbd]`,
       },
-      wbg: { base: 'bg-background-hero' },
-      rams: { base: 'bg-background-primary' },
       btfg: {},
     },
     fixed: {

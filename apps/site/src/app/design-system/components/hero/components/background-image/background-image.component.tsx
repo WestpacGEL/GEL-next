@@ -15,12 +15,10 @@ export function BackgroundImage({
 }) {
   const imageMap = {
     wbc: WbcBackgroundSvg,
-    wbg: null,
     stg: StgBackgroundSvg,
     bsa: BsaBackgroundSvg,
     bom: null,
     btfg: null,
-    rams: null,
   };
 
   let BgImage = imageMap[brand];

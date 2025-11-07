@@ -47,16 +47,12 @@ export const styles = tv({
       },
     },
     brand: {
-      wbg: {},
       bom: {},
       bsa: {
         base: `
           bg-[url(/imgs/backgrounds/bsa-background.svg),_linear-gradient(to_right,#002f6c,#00adbd)]
           bg-cover
         `,
-      },
-      rams: {
-        base: 'bg-background-hero',
       },
       stg: {
         base: `
