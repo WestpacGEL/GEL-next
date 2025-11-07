@@ -4,30 +4,18 @@
 
 ### 📦 Major Changes — @westpac/ui & @westpac/style-config
 
-We are introducing a new architecture separating UI components from style configuration:
+We are introducing a new architecture separating UI (@westpac/ui) components from style configuration (@westpac/style-config):
 
 - @westpac/style-config now provides:
   - Tailwind tokens
   - Light/dark theming
   - CSS + W3C design tokens
 
-To enable brand + theme switching, ensure your root HTML element includes:
-
-```html
-<html data-brand="wbc" data-theme="dark|light">
-  <!-- Your app content -->
-</html>
-or
-<div data-brand="wbc" data-theme="dark|light">
-  <!-- Your app content -->
-</div>
-```
-
 ---
 
 ### 🚨 Migration Steps
 
-1. Remove your existing tailwind.config.js
+1. Remove your existing tailwind.config.js and Follow the update instruction at [Tailwind CSS Upgrade Guide.](https://tailwindcss.com/docs/upgrade-guide)
 
 2. Install the updated dependencies:
 
@@ -67,7 +55,19 @@ npm i @westpac/ui @westpac/style-config tailwindcss@4 postcss tailwind-variants@
 }
 ```
 
-4. Update your `eslint.config.mjs` file
+4. After including the css file to enable brand + theme switching, ensure your root HTML element includes:
+
+```html
+<html data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</html>
+or
+<div data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</div>
+```
+
+5. Update your `eslint.config.mjs` file
 
 ```mjs
 import eslintConfig from '@westpac/eslint-config/nextjs';

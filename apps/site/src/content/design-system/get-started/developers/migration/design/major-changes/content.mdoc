@@ -1,25 +1,6 @@
-We are introducing a new architecture separating UI components from style configuration:
+We are introducing a new architecture separating UI components (@westpac/ui) from style configuration (@westpac/style-config):
 
 - @westpac/style-config now provides:
   - Tailwind tokens
   - Light/dark theming
   - CSS + W3C design tokens
-
-To enable brand + theme switching, ensure your root HTML element includes:
-
-```html
-<StaticCode
-  language="html"
-  code={`
-<html data-brand="wbc" data-theme="dark|light">
-  <!-- Your app content -->
-</html>
-
-<!-- or -->
-
-<div data-brand="wbc" data-theme="dark|light">
-  <!-- Your app content -->
-</div>
-  `}
-/>
-```

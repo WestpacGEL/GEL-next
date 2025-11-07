@@ -15,12 +15,9 @@ design:
       name: 🆕 Additional Improvements
       slug: additional-improvements
   - title:
-      name: 🗑️ Deprecated Components & APIs
-      slug: deprecated-components
-  - title:
-      name: Updating packages
-      slug: update-packages
-  - title:
       name: Running the codemod
       slug: running-codemod
+  - title:
+      name: 🗑️ Deprecated Components & APIs
+      slug: deprecated-components
 accessibility: []

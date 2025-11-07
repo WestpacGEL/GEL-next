@@ -1,4 +1,4 @@
-1. Remove your existing tailwind.config.js
+1. Remove your existing tailwind.config.js and Follow the update instruction at [Tailwind CSS Upgrade Guide.](https://tailwindcss.com/docs/upgrade-guide)
 2. Install the updated dependencies:
 
 ```html
@@ -39,7 +39,27 @@
 `} />
 ```
 
-4. Update your `eslint.config.mjs` file
+4. To enable brand + theme switching, ensure your root HTML element includes:
+
+```html
+<StaticCode
+  language="html"
+  code={`
+<html data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</html>
+
+<!-- or -->
+
+<div data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</div>
+  `}
+/>
+```
+
+
+5. Update your `eslint.config.mjs` file
 
 ```html
 <StaticCode
