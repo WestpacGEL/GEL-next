@@ -37,10 +37,10 @@ export const styles = tv({
     },
     orientation: {
       horizontal: {
-        button: 'not-first:rounded-l-none not-first:border-l-0 not-last:rounded-r-none not-last:border-r-0',
+        button: 'not-first:rounded-l-none not-first:border-l-0 not-last:rounded-r-none',
       },
       vertical: {
-        button: 'not-first:rounded-t-none not-first:border-t-0 not-last:rounded-b-none not-last:border-b-0',
+        button: 'not-first:rounded-t-none not-first:border-t-0 not-last:rounded-b-none',
       },
     },
   },
