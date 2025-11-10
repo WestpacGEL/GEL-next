@@ -8,7 +8,17 @@ import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { ModalBackdrop, ModalDialog } from './components/index.js';
 import { type ModalProps } from './modal.types.js';
 
-export function Modal({ children, backdropStyle, title, role, body, size, className, fullscreen, ...props }: ModalProps) {
+export function Modal({
+  children,
+  backdropStyle,
+  title,
+  role,
+  body,
+  size,
+  className,
+  fullscreen,
+  ...props
+}: ModalProps) {
   const breakpoint = useBreakpoint();
   return (
     <ModalBackdrop size={resolveResponsiveVariant(size, breakpoint)} className={backdropStyle} {...props}>
