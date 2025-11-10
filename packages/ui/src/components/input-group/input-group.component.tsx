@@ -100,6 +100,7 @@ export function InputGroup({
           'aria-labelledby': ariaLabelledBy,
           'aria-describedby': ariaDescribedBy || ariaDescribedByValue,
           'aria-label': ariaLabel,
+          className: 'focus:z-10', // for focus ring visibility
           ...(resolvedWidth !== 'full' ? { width: resolvedWidth } : {}),
         } as Partial<unknown> & Attributes);
       }

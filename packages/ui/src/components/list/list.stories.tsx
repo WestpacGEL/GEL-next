@@ -36,22 +36,25 @@ export const Default: Story = {
  * > Type of list
  */
 export const Types = () =>
-  TYPES.map(type => (
-    <div className="mb-2" key={type}>
-      <h1 className="typography-body-8">{type}</h1>
-      <List type={type} icon={type === 'icon' ? AndroidIcon : undefined}>
-        <ListItem href={type === 'link' ? '#' : undefined}>Styled {type} list</ListItem>
-        <ListItem href={type === 'link' ? '#' : undefined}>Styled {type} list</ListItem>
-        <ListItem href={type === 'link' ? '#' : undefined}>Styled {type} list</ListItem>
-        <List icon={type === 'link' ? AndroidIcon : undefined}>
-          <ListItem>Styled {type} list</ListItem>
-          <ListItem>Styled {type} list</ListItem>
-          <ListItem>Styled {type} list</ListItem>
+  TYPES.map(type => {
+    const href = type === 'link' ? '#' : undefined;
+    return (
+      <div className="mb-2" key={type}>
+        <h1 className="typography-body-8">{type}</h1>
+        <List type={type} icon={type === 'icon' ? AndroidIcon : undefined}>
+          <ListItem href={href}>Styled {type} list</ListItem>
+          <ListItem href={href}>Styled {type} list</ListItem>
+          <ListItem href={href}>Styled {type} list</ListItem>
+          <List icon={type === 'link' ? AndroidIcon : undefined} type={type}>
+            <ListItem href={href}>Styled {type} list</ListItem>
+            <ListItem href={href}>Styled {type} list</ListItem>
+            <ListItem href={href}>Styled {type} list</ListItem>
+          </List>
+          <ListItem href={href}>Styled {type} list</ListItem>
         </List>
-        <ListItem>Styled {type} list</ListItem>
-      </List>
-    </div>
-  ));
+      </div>
+    );
+  });
 
 /**
  * > Type of list

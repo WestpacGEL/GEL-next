@@ -31,7 +31,7 @@ export const styles = tv({
       },
     },
     isFocusVisible: {
-      true: { close: 'focus-outline' },
+      true: { close: 'focus-outline !outline-offset-[-4px]' },
       false: { close: 'outline-none' },
     },
   },

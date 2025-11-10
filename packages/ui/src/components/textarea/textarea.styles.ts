@@ -14,7 +14,7 @@ export const styles = tv({
       false: 'border-border-muted-strong',
     },
     isFocusVisible: {
-      true: 'focus-outline',
+      true: '!focus-outline', // needs to overwrite outline-none on form-control style because of transition
     },
     isFocused: {
       true: 'outline-none',

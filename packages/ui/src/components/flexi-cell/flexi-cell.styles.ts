@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'relative flex transition-colors',
+    base: 'relative flex outline-transparent transition-colors [&_:focus-visible]:!focus-outline',
     topBadgeWrapper: 'absolute top-[-1px] right-[-1px]',
     topBadge: 'rounded-tl-none rounded-br-none',
   },
@@ -19,7 +19,7 @@ export const styles = tv({
       },
       false: '',
     },
-    isFocusVisible: { true: { base: 'focus-outline' }, false: {} },
+    isFocusVisible: { true: { base: '!focus-outline' }, false: {} },
     shouldHoverEffect: {
       true: {
         base: 'group/noborder',

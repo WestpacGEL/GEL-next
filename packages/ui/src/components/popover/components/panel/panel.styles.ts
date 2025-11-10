@@ -11,8 +11,8 @@ export const styles = tv({
       `,
     closeBtn: 'absolute top-1 right-1 h-3 p-0',
     content: 'w-[17.625rem] rounded-xl bg-background-white-pale py-4 pr-5 pl-3',
-    heading: 'mb-2 typography-body-9 font-medium text-text-body',
-    body: 'typography-body-10 text-text-body',
+    heading: 'mb-2 typography-body-9 font-medium text-text-body focus-visible:focus-outline',
+    body: 'typography-body-10 text-text-body focus-visible:focus-outline',
   },
   variants: {
     placement: {

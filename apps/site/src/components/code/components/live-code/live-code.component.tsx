@@ -89,9 +89,10 @@ export function LiveCode({
             <button
               className={`
                 flex items-center gap-1 border-l border-l-border-muted-soft p-3
-                typography-body-10 transition-opacity
+                typography-body-10 !outline-offset-[-2px]
+                transition-opacity
                 hover:opacity-100
-                focus-visible:focus-outline
+                focus-visible:z-10 focus-visible:focus-outline
               `}
               ref={liveCodeToggleButton}
               onClick={() => toggleIsCodeVisible(state => !state)}

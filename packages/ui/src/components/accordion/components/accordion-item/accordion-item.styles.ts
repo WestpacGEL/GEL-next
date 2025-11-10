@@ -14,7 +14,7 @@ export const styles = tv({
       h-(--disclosure-panel-height) transition-[height] duration-300
       ease-[cubic-bezier(0.25,0.1,0.25,1)]
     `,
-    content: 'block border-border-muted-soft p-3',
+    content: 'block border-border-muted-soft p-3 [&_:focus-visible]:focus-outline',
   },
   variants: {
     look: {

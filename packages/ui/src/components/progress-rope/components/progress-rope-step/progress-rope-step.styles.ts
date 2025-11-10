@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'relative flex w-full cursor-pointer items-center gap-2 pt-[0.5rem] pb-[0.875rem] typography-body-10 leading-loose transition-colors',
+    base: 'relative flex w-full cursor-pointer items-center gap-2 pt-[0.5rem] pb-[0.875rem] typography-body-10 leading-loose outline-transparent transition-colors',
     circle: 'relative z-10 bg-background-white-pale transition-colors',
   },
   variants: {
@@ -72,7 +72,7 @@ export const styles = tv({
       false: {},
     },
     isFocusVisible: {
-      true: { base: 'focus-outline' },
+      true: { base: '!focus-outline' },
     },
   },
 });

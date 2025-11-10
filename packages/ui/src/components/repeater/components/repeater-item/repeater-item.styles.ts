@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    item: 'overflow-hidden pt-1.5',
+    item: 'pt-1.5',
     itemIndex: 'mb-3 font-bold',
     removeBtn: 'h-auto p-0 no-underline hover:underline',
     collapsible: 'relative',

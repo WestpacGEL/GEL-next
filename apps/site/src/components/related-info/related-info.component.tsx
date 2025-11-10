@@ -85,8 +85,8 @@ function Link({ children, ...props }: PropsWithChildren<LinkProps>) {
     <NextLink
       className={`
         flex min-h-[3.4375rem] items-center justify-between border-b
-        border-border-muted-soft py-1 typography-body-10 outline-offset-[3px]
-        hover:text-text-primary hover:underline
+        border-border-muted-soft py-1 typography-body-10 hover:text-text-primary
+        hover:underline focus-visible:focus-outline
       `}
       {...props}
     >
