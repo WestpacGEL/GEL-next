@@ -2,13 +2,373 @@
 
 ## 1.0.0-canary.1
 
-### Minor Changes
+### 📦 Major Changes — @westpac/ui & @westpac/style-config
 
-- 2a687f9: button dropdown with portal and focus
-- 95deb81: Datepicker using react-aria API
-- 6a44948: Refactored Compacta to use react-aria for improved accessibility and separated responsibilities into Compacta (container) and CompactaItem (individual item) components.
-- Button group using useToggleButtonGroup
-- focus outline of skip-link fix
+We are introducing a new architecture separating UI (@westpac/ui) components from style configuration (@westpac/style-config):
+
+- @westpac/style-config now provides:
+  - Tailwind tokens
+  - Light/dark theming
+  - CSS + W3C design tokens
+
+---
+
+### 🚨 Migration Steps
+
+1. Remove your existing tailwind.config.js and Follow the update instruction at [Tailwind CSS Upgrade Guide.](https://tailwindcss.com/docs/upgrade-guide)
+
+2. Install the updated dependencies:
+
+```bash
+npm i @westpac/ui @westpac/style-config tailwindcss@4 postcss tailwind-variants@~3.1.1
+```
+
+3. Import global styles in your main CSS file:
+
+```css
+@import 'tailwindcss';
+@import '@westpac/style-config';
+
+/* For brand theming, import the required brand stylesheets: */
+@import '@westpac/style-config/theme-wbc';
+@import '@westpac/style-config/theme-stg';
+
+/* Also the fonts required for each theme: */
+/* WBC fonts */
+@font-face {
+  src:
+    url('/fonts/Westpac-Bold-v2.007.woff2') format('woff2'),
+    url('/fonts/Westpac-Bold-v2.007.woff') format('woff');
+  font-family: 'Westpac';
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* STG fonts */
+@font-face {
+  src:
+    url('/fonts/dragonbold-bold-webfont.woff2') format('woff2'),
+    url('/fonts/dragonbold-bold-webfont.woff') format('woff');
+  font-family: 'Dragon Bold';
+  font-weight: 100 900;
+  font-style: normal;
+}
+```
+
+4. After including the css file to enable brand + theme switching, ensure your root HTML element includes:
+
+```html
+<html data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</html>
+or
+<div data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</div>
+```
+
+5. Update your `eslint.config.mjs` file
+
+```mjs
+import eslintConfig from '@westpac/eslint-config/nextjs';
+import { defineConfig } from 'eslint/config';
+
+export default defineConfig([
+  ...eslintConfig,
+  {
+    settings: {
+      'better-tailwindcss': {
+        // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
+        entryPoint: 'src/globals.css',
+      },
+    },
+  },
+]);
+```
+
+### ✅ Token Updates
+
+We introduced new token names to support a multi-brand + dual-theme system.
+
+##### Before
+
+```tsx
+<div className="bg-white">
+  <div className="bg-primary rounded-full">
+    <AccountIcon color="white" />
+  </div>
+  <h2 className="text-text">
+    My title
+    <BankIcon color="link" className="ml-2" />
+  </h2>
+  <p className="text-text">Lorem ipsum dolor sit amet</p>
+</div>
+```
+
+##### After
+
+```tsx
+<div className="bg-background-white-pale">
+  <div className="bg-surface-primary rounded-full">
+    <AccountIcon color="mono" />
+  </div>
+  <h2 className="text-text-body">
+    My title
+    <BankIcon color="primary" className="ml-2" />
+  </h2>
+  <p className="text-text-body">Lorem ipsum dolor sit amet</p>
+</div>
+```
+
+To support migration, a codemod is available to automate this transition.
+
+```bash
+npx jscodeshift -t https://raw.githubusercontent.com/WestpacGEL/GEL-next/refs/heads/main/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs "to/your/files/**/*.tsx"
+```
+
+This will apply the codemod to all .tsx files in your project.
+
+For classes we are unable to replace with the equivalent token the code will inject a `[REPLACE_TOKEN]` string where it will require working with your project designer to manual update it to the correct color token.
+
+For more information please go to our [Tokens section](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens)
+
+---
+
+### 🆕 Additional Improvements
+
+#### Component Updates
+
+- Full support for TailwindCSS v4 and its [latest features](https://tailwindcss.com/blog/tailwindcss-v4)
+- Dark mode supported for BOM and BankSA logos
+
+#### Repeater aligned with Compacta specification
+
+##### Before
+
+```jsx
+<Repeater>
+  <FormGroup>
+    <div className="mb-4">
+      <FormLabel htmlFor={`input${groupOneId}`}>Label 1</FormLabel>
+      <Input
+        aria-describedby={`inputHint${groupOneId}`}
+        className="w-full"
+        id={`input${groupOneId}`}
+        name={`input${groupOneId}`}
+      />
+    </div>
+    <div>
+      <FormLabel htmlFor={`input${groupTwoId}`}>Label 2</FormLabel>
+      <Input
+        aria-describedby={`inputHint${groupTwoId}`}
+        className="w-full"
+        id={`input${groupTwoId}`}
+        name={`input${groupTwoId}`}
+      />
+    </div>
+  </FormGroup>
+</Repeater>
+```
+
+#### After
+
+```tsx
+() => {
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ label: '' }] },
+  });
+  const items = watch('items');
+
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { label: '' }]);
+  }, [items, setValue]);
+
+  return (
+    <form>
+      <Repeater onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <RepeaterItem
+            key={index}
+            title={{
+              primary: item.primary,
+              secondary: item.secondary,
+              tertiary: item.tertiary,
+            }}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <Field label="Label">
+              <Input {...register(`items.${index}.label`)} />
+            </Field>
+          </RepeaterItem>
+        ))}
+      </Repeater>
+    </form>
+  );
+};
+```
+
+### Accordion now uses useDisclose from react-aria
+
+defaultExpandedKeys prop now works off the id value of the AccordionItem
+
+#### Before
+
+```jsx
+<Accordion defaultExpandedKeys={['keyValue']}>
+  <AccordionItem key="keyValue">Content</AccordionItem>
+</Accordion>
+```
+
+#### After
+
+```jsx
+<Accordion defaultExpandedKeys={['idValue']}>
+  <AccordionItem key="keyValue" id="idValue">
+    Content
+  </AccordionItem>
+</Accordion>
+```
+
+### ButtonGroup now uses useButtonGroupToggle from react-aria
+
+#### Before
+
+```jsx
+<ButtonGroup
+  value={value}
+  buttons={[
+    { value: 'Left', label: 'Left' },
+    { value: 'Middle', label: 'Middle' },
+    { value: 'Right', label: 'Right' },
+  ]}
+/>
+```
+
+#### After
+
+```jsx
+<ButtonGroup selectedKeys={value}>
+  <ButtonGroupButton id="Left">Left</ButtonGroupButton>
+  <ButtonGroupButton id="Middle">Middle</ButtonGroupButton>
+  <ButtonGroupButton id="Right">Right</ButtonGroupButton>
+</ButtonGroup>
+```
+
+### New Datepicker using react-aria hooks
+
+#### Before
+
+```jsx
+<DatePicker disableDates={['2023-10-10']} />
+```
+
+#### After
+
+```jsx
+() => {
+  const disableDates = ["2023-10-20"];
+  const isDateUnavailable = (date: DateValue) =>
+    disableDates.some(
+      (disableDate) => disableDate.toString() === date.toString()
+    );
+
+  return <DatePicker isDateUnavailable={isDateUnavailable} />;
+};
+```
+
+### Form, FormGroup, FormSection, FormChitchat deprecated
+
+The `Form` component has been deprecated. Its primary functionality was to manage vertical spacing between `FormGroup` elements using margin-bottom, which led to limitations and layout inconsistencies in more complex form structures.
+
+To ensure greater flexibility and maintainability, we are phasing out this component and its related abstractions. Spacing should now be applied directly using Tailwind CSS utility classes.
+
+#### Before
+
+```jsx
+() => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  return (
+    <Form id="credit-card" spacing="large" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <FormGroup>
+        <InputGroup size="large" label="Given name (Optional)" errorMessage={errors.givenName?.message}>
+          <Input {...register('givenName')} />
+        </InputGroup>
+      </FormGroup>
+      <FormGroup>
+        <InputGroup size="large" label="Family name (Optional)" errorMessage={errors.familyName?.message}>
+          <Input {...register('familyName')} />
+        </InputGroup>
+      </FormGroup>
+      <FormGroup>
+        <Field label="Your comments:" errorMessage={errors.comment?.message}>
+          <Textarea size="large" {...register('comment', { required: 'This field is required' })} />
+        </Field>
+      </FormGroup>
+      <div className="mt-5 flex flex-col gap-2 xsl:flex-row">
+        <Button type="submit" size="large" look="primary">
+          Send feedback
+        </Button>
+        <Button type="reset" size="large" look="link">
+          Cancel
+        </Button>
+      </div>
+    </Form>
+  );
+};
+```
+
+#### After
+
+```jsx
+() => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  return (
+    <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <Field label="Given name (Optional)" errorMessage={errors.givenName?.message}>
+        <InputGroup size="large">
+          <Input {...register('givenName')} />
+        </InputGroup>
+      </Field>
+      <Field label="Family name (Optional)" errorMessage={errors.familyName?.message}>
+        <InputGroup size="large">
+          <Input {...register('familyName')} />
+        </InputGroup>
+      </Field>
+      <Field label="Your comments:" errorMessage={errors.comment?.message}>
+        <Textarea size="large" {...register('comment', { required: 'This field is required' })} />
+      </Field>
+      <div className="mt-5 flex flex-col gap-2 xsl:flex-row">
+        <Button type="submit" size="large" look="primary">
+          Send feedback
+        </Button>
+        <Button type="reset" size="large" look="link">
+          Cancel
+        </Button>
+      </div>
+    </form>
+  );
+};
+```
+
+### 🗑️ Deprecated Components & APIs
+
+| Deprecated                                         | Replacement / Notes                                                  |
+| -------------------------------------------------- | -------------------------------------------------------------------- |
+| `ButtonDropdown`                                   | Replaced by `Dropdown`                                               |
+| `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
+| `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
 
 ## 0.50.3
 

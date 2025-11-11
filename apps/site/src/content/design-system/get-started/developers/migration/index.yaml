@@ -3,9 +3,21 @@ description: >-
   Migrating to v1 is key to ensuring that your applications will be compatible with new design tokens and receive all future updates. This guide will help you get started with migrating your applications.
 design:
   - title:
-      name: Updating packages
-      slug: update-packages
+      name: 📦 Major Changes — @westpac/ui & @westpac/style-config
+      slug: major-changes
+  - title:
+      name: 🚨 Migration Steps
+      slug: migration-steps
+  - title:
+      name: ✅ Token Updates
+      slug: token-updates
+  - title:
+      name: 🆕 Additional Improvements
+      slug: additional-improvements
   - title:
       name: Running the codemod
       slug: running-codemod
+  - title:
+      name: 🗑️ Deprecated Components & APIs
+      slug: deprecated-components
 accessibility: []

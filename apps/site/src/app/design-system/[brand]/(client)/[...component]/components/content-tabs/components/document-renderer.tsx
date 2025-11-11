@@ -48,6 +48,40 @@ export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = 
     blockquote: ({ children }) => (
       <blockquote className="mx-6.5 my-2.5 typography-body-9 font-light">{children}</blockquote>
     ),
+    table: ({ head, body }) => {
+      return (
+        <table className="table">
+          <thead>
+            <tr>
+              {head?.map(headItem => (
+                <th
+                  colSpan={headItem.colSpan}
+                  rowSpan={headItem.rowSpan}
+                  className="border-b border-border-muted-soft p-2 text-left font-bold text-text-body"
+                >
+                  {headItem.children}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {body.map((tr, index) => (
+              <tr key={index}>
+                {tr.map(td => (
+                  <td
+                    colSpan={td.colSpan}
+                    rowSpan={td.rowSpan}
+                    className="border-y border-border-muted-soft p-2 text-left text-text-body"
+                  >
+                    {td.children}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      );
+    },
   },
   inline: {
     code: InlineCode,

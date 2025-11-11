@@ -1,0 +1,84 @@
+1. Remove your existing tailwind.config.js and Follow the update instruction at [Tailwind CSS Upgrade Guide.](https://tailwindcss.com/docs/upgrade-guide)
+2. Install the updated dependencies:
+
+```html
+<StaticCode language="bash" code={`npm i @westpac/ui @westpac/style-config tailwindcss@4 postcss tailwind-variants@~3.1.1`} />
+```
+
+3. Import global styles in your main CSS file:
+
+```html
+<StaticCode language="css" code={`
+@import 'tailwindcss';
+@import '@westpac/style-config';
+
+/* For brand theming, import the required brand stylesheets: */
+@import '@westpac/style-config/theme-wbc';
+@import '@westpac/style-config/theme-stg';
+
+/* Also the fonts required for each theme: */
+/* WBC fonts */
+@font-face {
+  src:
+    url('/fonts/Westpac-Bold-v2.007.woff2') format('woff2'),
+    url('/fonts/Westpac-Bold-v2.007.woff') format('woff');
+  font-family: 'Westpac';
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* STG fonts */
+@font-face {
+  src:
+    url('/fonts/dragonbold-bold-webfont.woff2') format('woff2'),
+    url('/fonts/dragonbold-bold-webfont.woff') format('woff');
+  font-family: 'Dragon Bold';
+  font-weight: 100 900;
+  font-style: normal;
+}
+`} />
+```
+
+4. To enable brand + theme switching, ensure your root HTML element includes:
+
+```html
+<StaticCode
+  language="html"
+  code={`
+<html data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</html>
+
+<!-- or -->
+
+<div data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</div>
+  `}
+/>
+```
+
+
+5. Update your `eslint.config.mjs` file
+
+```html
+<StaticCode
+  language="jsx"
+  code={`
+import eslintConfig from '@westpac/eslint-config/nextjs';
+import { defineConfig } from 'eslint/config';
+
+export default defineConfig([
+  ...eslintConfig,
+  {
+    settings: {
+      'better-tailwindcss': {
+        // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: \`src/global.css\`)
+        entryPoint: 'src/globals.css',
+      },
+    },
+  },
+]);
+  `}
+/>
+```
