@@ -10,7 +10,7 @@ import { type ModalProps } from './modal.types.js';
 
 export function Modal({
   children,
-  backdropStyle,
+  backdropClassName,
   title,
   role,
   body,
@@ -21,7 +21,7 @@ export function Modal({
 }: ModalProps) {
   const breakpoint = useBreakpoint();
   return (
-    <ModalBackdrop size={resolveResponsiveVariant(size, breakpoint)} className={backdropStyle} {...props}>
+    <ModalBackdrop size={resolveResponsiveVariant(size, breakpoint)} className={backdropClassName} {...props}>
       <ModalDialog
         fullscreen={fullscreen}
         onClose={props.isDismissable ? () => props.state.close() : undefined}

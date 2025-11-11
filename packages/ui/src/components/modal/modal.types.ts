@@ -7,7 +7,7 @@ export type ModalProps = Omit<ModalBackdropProps, 'size'> &
     /**
      * Provide inset styles for the backdrop for centering in certain containers
      */
-    backdropStyle?: string;
+    backdropClassName?: string;
     /**
      * Whether the modal is fullscreen
      */
