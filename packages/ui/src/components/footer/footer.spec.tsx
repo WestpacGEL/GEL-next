@@ -11,8 +11,8 @@ describe('Footer', () => {
   });
 
   it('should render correct brand logo', () => {
-    const brandList: Exclude<BrandKey, 'btfg'>[] = ['wbc', 'stg', 'bom', 'bsa', 'wbg', 'rams'];
-    const brandNames = ['Westpac', 'St.George', 'Bank of Melbourne', 'Bank SA', 'Westpac Group', 'RAMS'];
+    const brandList: Exclude<BrandKey, 'btfg'>[] = ['wbc', 'stg', 'bom', 'bsa'];
+    const brandNames = ['Westpac', 'St.George', 'Bank of Melbourne', 'Bank SA'];
     brandList.forEach((brand, index) => {
       const { container } = render(<Footer brand={brand}>Test</Footer>);
       expect(container.querySelector(`[aria-label="${brandNames[index]}"`)).toBeInTheDocument();

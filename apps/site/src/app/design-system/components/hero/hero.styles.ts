@@ -38,12 +38,6 @@ export const styles = tv({
           sm:bg-gradient-to-r
         `,
       },
-      wbg: {
-        base: 'sm:bg-background-hero',
-      },
-      rams: {
-        base: 'sm:bg-background-primary',
-      },
       btfg: {},
     },
   },

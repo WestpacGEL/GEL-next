@@ -20,10 +20,8 @@ export const Theme = () => (
    * - bom
    * - bsa
    * - btfg
-   * - rams
    * - stg
    * - wbc
-   * - wbg
    *
    * Valid theme tokens
    * - light

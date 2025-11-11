@@ -68,7 +68,7 @@ For brand theming, import the required brand stylesheets:
 
 Add a custom attribute tag `data-brand="brand_name"` to `html` tag. Note that instead of adding the custom attribute to html tag, you can add it to the parent tag of your application as well.
 
-Following example shows adding `wbc` brand. You can add other valid brand names such as `stg`, `bom`, `bsa`, `rams`, `wbg` etc. as the value.
+Following example shows adding `wbc` brand. You can add other valid brand names such as `stg`, `bom`, `bsa` etc. as the value.
 
 ```html
 <!doctype html>
@@ -149,32 +149,6 @@ In order to use brand-fonts add the relevant font face declarations from the bel
   font-style: normal;
 }
 
-/* RAMS fonts */
-@font-face {
-  src:
-    url('/fonts/source-sans-pro-v14-latin-regular.woff2') format('woff2'),
-    url('/fonts/source-sans-pro-v14-latin-regular.woff') format('woff');
-  font-family: 'Source Sans Pro';
-  font-weight: 100 500;
-  font-style: normal;
-}
-@font-face {
-  src:
-    url('/fonts/source-sans-pro-v14-latin-600.woff2') format('woff2'),
-    url('/fonts/source-sans-pro-v14-latin-600.woff') format('woff');
-  font-family: 'Source Sans Pro';
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  src:
-    url('/fonts/source-sans-pro-v14-latin-700.woff2') format('woff2'),
-    url('/fonts/source-sans-pro-v14-latin-700.woff') format('woff');
-  font-family: 'Source Sans Pro';
-  font-weight: 700 900;
-  font-style: normal;
-}
-
 /* STG fonts */
 @font-face {
   src:
@@ -192,32 +166,6 @@ In order to use brand-fonts add the relevant font face declarations from the bel
     url('/fonts/Westpac-Bold-v2.007.woff') format('woff');
   font-family: 'Westpac';
   font-weight: 100 900;
-  font-style: normal;
-}
-
-/* WBG fonts */
-@font-face {
-  src:
-    url('/fonts/montserrat-v14-latin-300.woff2') format('woff2'),
-    url('/fonts/montserrat-v14-latin-300.woff') format('woff');
-  font-family: 'Montserrat';
-  font-weight: 100 300;
-  font-style: normal;
-}
-@font-face {
-  src:
-    url('/fonts/montserrat-v14-latin-regular.woff2') format('woff2'),
-    url('/fonts/montserrat-v14-latin-regular.woff') format('woff');
-  font-family: 'Montserrat';
-  font-weight: 400 600;
-  font-style: normal;
-}
-@font-face {
-  src:
-    url('/fonts/montserrat-v14-latin-700.woff2') format('woff2'),
-    url('/fonts/montserrat-v14-latin-700.woff') format('woff');
-  font-family: 'Montserrat';
-  font-weight: 700 900;
   font-style: normal;
 }
 ```
