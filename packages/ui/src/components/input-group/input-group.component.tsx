@@ -1,5 +1,6 @@
 'use client';
 
+import { clsx } from 'clsx';
 import React, {
   Attributes,
   Children,
@@ -17,7 +18,6 @@ import { InputGroupSupportingText } from './components/index.js';
 import { InputGroupAddOn } from './components/input-group-add-ons/input-group-add-ons.component.js';
 import { styles as inputGroupStyles } from './input-group.styles.js';
 import { type InputGroupProps } from './input-group.types.js';
-import { clsx } from 'clsx';
 
 export function InputGroup({
   label,
@@ -97,6 +97,7 @@ export function InputGroup({
           'aria-describedby': ariaDescribedBy || ariaDescribedByValue,
           'aria-label': ariaLabel,
           ...(width !== 'full' ? { width: width } : {}),
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-argument
           className: clsx(child.props.className, 'focus:z-10'), // for focus ring visibility
         } as Partial<unknown> & Attributes);
       }
