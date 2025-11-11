@@ -1,0 +1,15 @@
+{
+  "name": "create-my-boilerplate",
+  "version": "1.0.0",
+  "bin": {
+    "create-my-boilerplate": "index.js"
+  },
+  "type": "module",
+  "devDependencies": {
+    "fs-extra": "~11.3.2"
+  },
+  "dependencies": {
+    "inquirer": "~12.11.0",
+    "minimist": "~1.2.8"
+  }
+}

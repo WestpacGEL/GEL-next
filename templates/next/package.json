@@ -1,0 +1,42 @@
+{
+  "name": "next-protoform",
+  "version": "0.2.37",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "check-types": "tsc --noemit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "@westpac/ui": "workspace:~",
+    "@westpac/style-config": "workspace:~",
+    "clsx": "^1.2.1",
+    "lodash.throttle": "~4.1.1",
+    "next": "14.2.32",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "~7.62.0",
+    "zustand": "~4.5.4"
+  },
+  "devDependencies": {
+    "@types/lodash.throttle": "~4.1.7",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@westpac/eslint-config": "workspace:~",
+    "@westpac/ts-config": "workspace:~",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^9.32.0",
+    "eslint-config-next": "15.3.4",
+    "eslint-config-turbo": "^2.5.4",
+    "postcss": "^8",
+    "tailwindcss": "~4.1.12",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "json5": "1.0.2"
+  }
+}

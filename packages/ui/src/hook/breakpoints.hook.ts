@@ -50,7 +50,7 @@ type BreakpointState = {
   removeListeners: () => void;
 };
 
-export const useThemeStore = create<BreakpointState>()((set, get) => ({
+export const useThemeStore = create<BreakpointState>((set, get) => ({
   breakpoint: 'initial',
   mediaQueryListeners: null,
   initialised: false,
