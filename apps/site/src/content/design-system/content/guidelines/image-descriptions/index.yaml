@@ -7,7 +7,12 @@ description: >-
 namedExport:
   discriminant: false
 excludeFromNavbar: false
-design: []
+design:
+  - title:
+      name: Image descriptions
+      slug: image-descriptions
+    noTitle: true
+    noDemo: false
 accessibility: []
 relatedComponents: []
 code: []
