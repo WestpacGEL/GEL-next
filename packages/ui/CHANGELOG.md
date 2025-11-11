@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.53.2
+
+### Patch Changes
+
+- 5ca405f: fix: input group children rendering the classNames as expected
+
 ## 0.53.1
 
 ### Patch Changes
