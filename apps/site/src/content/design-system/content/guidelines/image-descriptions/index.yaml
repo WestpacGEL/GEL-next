@@ -1,0 +1,13 @@
+name: Image descriptions
+description: >-
+  Alt text enables screen readers to audibly describe a visual non-text item
+  like an
+
+  image or graph.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design: []
+accessibility: []
+relatedComponents: []
+code: []
