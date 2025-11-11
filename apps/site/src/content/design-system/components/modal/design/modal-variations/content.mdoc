@@ -8,7 +8,7 @@ Modals are configurable. Choose how they are dismissed, whether they have a foot
 
   return (
     <div className="flex justify-center gap-2">
-      <Modal zIndex={1020} state={noFooterState} backdropStyle="lg:left-[18.75rem]" title="Modal title" isDismissable onClose={noFooterState.close} portalContainer={portalContainer ?? undefined}>
+      <Modal zIndex={1020} state={noFooterState} title="Modal title" isDismissable onClose={noFooterState.close} portalContainer={portalContainer ?? undefined}>
         <ModalBody>
           <p>
             The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
@@ -19,7 +19,7 @@ Modals are configurable. Choose how they are dismissed, whether they have a foot
       <Button soft look="primary" onClick={noFooterState.open}>
         No footer
       </Button>
-      <Modal zIndex={1020} isKeyboardDismissDisabled backdropStyle="lg:left-[18.75rem]" state={noDismissState} title="Modal title" portalContainer={portalContainer ?? undefined}>
+      <Modal zIndex={1020} isKeyboardDismissDisabled state={noDismissState} title="Modal title" portalContainer={portalContainer ?? undefined}>
         <ModalBody>
           <p>
             The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
