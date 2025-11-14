@@ -1,15 +1,18 @@
-import React from 'react';
+import { clsx } from 'clsx';
+import React, { useMemo } from 'react';
 
-import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
-import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
+import { resolveSimpleResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 
-import { styles } from './grid-container.styles.js';
+import { BASE_CLASSES, BREAKPOINT_CLASSES } from './grid-container.styles.js';
 import { type GridContainerProps } from './grid-container.types.js';
 
 export function GridContainer({ className, tag: Tag = 'div', fixed = false, children, ...props }: GridContainerProps) {
-  const breakpoint = useBreakpoint();
+  const fixedClasses = useMemo(() => {
+    return resolveSimpleResponsiveVariant(fixed ? 'true' : 'false', BREAKPOINT_CLASSES.fixed);
+  }, [fixed]);
+
   return (
-    <Tag className={styles({ fixed: resolveResponsiveVariant(fixed, breakpoint), className })} {...props}>
+    <Tag className={clsx(BASE_CLASSES, fixedClasses)} {...props}>
       {children}
     </Tag>
   );

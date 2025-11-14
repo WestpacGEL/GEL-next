@@ -35,4 +35,8 @@ export type ListItemProps = {
    * The list style
    */
   type?: 'bullet' | 'link' | 'tick' | 'cross' | 'unstyled' | 'icon' | 'ordered';
+  /**
+   * Custom link component
+   */
+  linkComponent?: (props: any) => ReactNode;
 } & HTMLAttributes<Element>;

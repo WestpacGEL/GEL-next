@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Ref, forwardRef, useContext } from 'react';
+import React, { Ref, forwardRef, useContext, useMemo } from 'react';
 import { useFocusRing } from 'react-aria';
 
 import { ListContext } from '../../list.component.js';
@@ -10,7 +10,7 @@ import { styles as itemStyles } from './list-item.styles.js';
 import { type ListItemProps } from './list-item.types.js';
 
 export function BaseListItem(
-  { className, children, href, target, look, type, spacing, icon, ...props }: ListItemProps,
+  { className, children, href, target, look, type, spacing, icon, linkComponent, ...props }: ListItemProps,
   ref: Ref<HTMLAnchorElement>,
 ) {
   const state = useContext(ListContext);
@@ -43,13 +43,17 @@ export function BaseListItem(
     return <div className={styles.bullet()} data-testid={type} />;
   };
 
+  const LinkComponent = useMemo(() => {
+    return linkComponent || 'a';
+  }, [linkComponent]);
+
   return (
     <li className={styles.base({ className })} {...props} key={state.nested}>
       {bulletToRender()}
       {type === 'link' ? (
-        <a href={href} target={target} className={styles.link()} ref={ref} {...focusProps}>
+        <LinkComponent href={href} target={target} className={styles.link()} ref={ref} {...focusProps}>
           {children}
-        </a>
+        </LinkComponent>
       ) : (
         children
       )}

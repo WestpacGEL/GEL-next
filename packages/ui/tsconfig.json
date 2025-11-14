@@ -14,7 +14,7 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "emitDeclarationOnly": true,
     "outDir": "dist",
     "rootDir": "src",

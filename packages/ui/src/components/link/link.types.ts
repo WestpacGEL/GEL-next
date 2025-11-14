@@ -35,5 +35,9 @@ export type LinkProps = {
    * @default true
    */
   underline?: boolean;
+  /**
+   * Custom link component
+   */
+  linkComponent?: (props: any) => ReactNode;
 } & Omit<AriaLinkOptions, 'isDisabled' | 'elementType'> &
   AnchorHTMLAttributes<Element>;

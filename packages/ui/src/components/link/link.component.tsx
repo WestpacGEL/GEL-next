@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ForwardedRef, RefObject, forwardRef } from 'react';
+import React, { ForwardedRef, RefObject, forwardRef, useMemo } from 'react';
 import { mergeProps, useFocusRing, useLink } from 'react-aria';
 
 import { ArrowRightIcon } from '../icon/index.js';
@@ -19,6 +19,7 @@ export function BaseLink(
     target,
     type = 'standalone',
     underline = true,
+    linkComponent,
     ...props
   }: LinkProps,
   ref: ForwardedRef<HTMLAnchorElement>,
@@ -31,8 +32,13 @@ export function BaseLink(
     IconBefore = ArrowRightIcon;
   }
 
+  // eslint-disable-next-line sonarjs/function-return-type
+  const LinkComponent = useMemo(() => {
+    return linkComponent || 'a';
+  }, [linkComponent]);
+
   return (
-    <a
+    <LinkComponent
       {...mergeProps(linkProps, focusProps)}
       ref={ref}
       href={href}
@@ -42,7 +48,7 @@ export function BaseLink(
       {IconBefore && <IconBefore size={iconSize} color="primary" className={styles.iconBefore()} />}
       <span>{children}</span>
       {IconAfter && <IconAfter size={iconSize} color="primary" className={styles.iconAfter()} />}
-    </a>
+    </LinkComponent>
   );
 }
 

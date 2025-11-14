@@ -1,25 +1,20 @@
 import { HTMLAttributes } from 'react';
-import { type VariantProps } from 'tailwind-variants';
 
 import { ResponsiveVariants } from '../../../../types/responsive-variants.types.js';
-
-import { styles } from './grid-item.styles.js';
-
-type Variants = VariantProps<typeof styles>;
 
 export type GridItemProps = {
   /**
    * Controls height of item based on amount of grid spaces to cover
    */
-  rowSpan?: ResponsiveVariants<Variants['rowSpan']>;
+  rowSpan?: ResponsiveVariants<1 | 2 | 3 | 4 | 5 | 6>;
   /**
    * Controls width of item based on amount of grid spaces to cover
    */
-  span?: ResponsiveVariants<Variants['span']>;
+  span?: ResponsiveVariants<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12>;
   /**
    * Position item should start in grid
    */
-  start?: ResponsiveVariants<Variants['start']>;
+  start?: ResponsiveVariants<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'auto'>;
   /**
    * Tag to render
    */
