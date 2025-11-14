@@ -88,22 +88,6 @@ export const styles = tv({
         base: 'text-surface-holler-faint',
         label: 'text-surface-holler-faint',
       },
-      sing: {
-        base: 'text-surface-sing',
-        label: 'text-surface-sing',
-      },
-      'sing-faint': {
-        base: 'text-surface-sing-faint',
-        label: 'text-surface-sing-faint',
-      },
-      dance: {
-        base: 'text-surface-dance',
-        label: 'text-surface-dance',
-      },
-      'dance-faint': {
-        base: 'text-surface-dance-faint',
-        label: 'text-surface-dance-faint',
-      },
       success: {
         base: 'text-surface-success',
         label: 'text-surface-success',
