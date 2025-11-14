@@ -1192,38 +1192,6 @@
             "$collectionName": "Themes",
             "$value": "{Themes.Bank of Melbourne.color.holler.50}"
           },
-          "surface-sing": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.sing.500}"
-          },
-          "surface-sing-faint": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.sing.50}"
-          },
-          "surface-dance": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.dance.500}"
-          },
-          "surface-dance-faint": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.dance.50}"
-          },
           "surface-success": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Success alert component.",
@@ -1499,22 +1467,6 @@
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Bank of Melbourne.color.holler.500}"
-          },
-          "border-sing": {
-            "$scopes": ["STROKE_COLOR"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.sing.500}"
-          },
-          "border-dance": {
-            "$scopes": ["STROKE_COLOR"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.dance.500}"
           },
           "border-success": {
             "$scopes": ["STROKE_COLOR"],
@@ -2138,38 +2090,6 @@
             "$collectionName": "Themes",
             "$value": "{Themes.Bank of Melbourne.color.holler.950}"
           },
-          "surface-sing": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.sing.900}"
-          },
-          "surface-sing-faint": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.sing.950}"
-          },
-          "surface-dance": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.dance.500}"
-          },
-          "surface-dance-faint": {
-            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.dance.900}"
-          },
           "surface-success": {
             "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Success alert component.",
@@ -2445,22 +2365,6 @@
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.Bank of Melbourne.color.holler.400}"
-          },
-          "border-sing": {
-            "$scopes": ["STROKE_COLOR"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.sing.500}"
-          },
-          "border-dance": {
-            "$scopes": ["STROKE_COLOR"],
-            "$description": "Reserved. Do not use",
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.Bank of Melbourne.color.dance.500}"
           },
           "border-success": {
             "$scopes": ["STROKE_COLOR"],

@@ -335,10 +335,6 @@
   --color-surface-pop-faint: var(--themes-westpac-color-pop-50); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
   --color-surface-holler: var(--themes-westpac-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
   --color-surface-holler-faint: var(--themes-westpac-color-holler-50); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
-  --color-surface-sing: var(--themes-westpac-color-sing-500); /* Reserved. Do not use */
-  --color-surface-sing-faint: var(--themes-westpac-color-sing-50); /* Reserved. Do not use */
-  --color-surface-dance: var(--themes-westpac-color-dance-500); /* Reserved. Do not use */
-  --color-surface-dance-faint: var(--themes-westpac-color-dance-50); /* Reserved. Do not use */
   --color-surface-success: var(--themes-westpac-color-success-500); /* Reserved. Must only be used for the Success alert component. */
   --color-surface-success-faint: var(--themes-westpac-color-success-50); /* Reserved. Must only be used for the Success alert component. */
   --color-surface-info: var(--themes-westpac-color-info-500); /* Reserved. Must only be used for the Info alert component. */
@@ -373,8 +369,6 @@
   --color-border-primary: var(--themes-westpac-color-primary-500); /* Replaces current style: Primary */
   --color-border-pop: var(--themes-westpac-color-pop-500); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
   --color-border-holler: var(--themes-westpac-color-holler-500); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
-  --color-border-sing: var(--themes-westpac-color-sing-500); /* Reserved. Do not use */
-  --color-border-dance: var(--themes-westpac-color-dance-500); /* Reserved. Do not use */
   --color-border-success: var(--themes-westpac-color-success-500); /* Reserved. Must only be used for the Success alert component. */
   --color-border-success-mild: var(--themes-westpac-color-success-300); /* Reserved. Must only be used for the Success alert component. */
   --color-border-info: var(--themes-westpac-color-info-500); /* Reserved. Must only be used for the Info alert component. */
@@ -453,10 +447,6 @@
   --color-surface-pop-faint: var(--themes-westpac-color-pop-950); /* Use sparingly, in accordance with the brand guidelines. For embellishment only. */
   --color-surface-holler: var(--themes-westpac-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
   --color-surface-holler-faint: var(--themes-westpac-color-holler-950); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
-  --color-surface-sing: var(--themes-westpac-color-sing-900); /* Reserved. Do not use */
-  --color-surface-sing-faint: var(--themes-westpac-color-sing-950); /* Reserved. Do not use */
-  --color-surface-dance: var(--themes-westpac-color-dance-500); /* Reserved. Do not use */
-  --color-surface-dance-faint: var(--themes-westpac-color-dance-900); /* Reserved. Do not use */
   --color-surface-success: var(--themes-westpac-color-success-400); /* Reserved. Must only be used for the Success alert component. */
   --color-surface-success-faint: var(--themes-westpac-color-success-900); /* Reserved. Must only be used for the Success alert component. */
   --color-surface-info: var(--themes-westpac-color-info-400); /* Reserved. Must only be used for the Info alert component. */
@@ -491,8 +481,6 @@
   --color-border-primary: var(--themes-westpac-color-primary-400); /* Replaces current style: Primary */
   --color-border-pop: var(--themes-westpac-color-pop-800); /* Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines. */
   --color-border-holler: var(--themes-westpac-color-holler-400); /* CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand. */
-  --color-border-sing: var(--themes-westpac-color-sing-500); /* Reserved. Do not use */
-  --color-border-dance: var(--themes-westpac-color-dance-500); /* Reserved. Do not use */
   --color-border-success: var(--themes-westpac-color-success-500); /* Reserved. Must only be used for the Success alert component. */
   --color-border-success-mild: var(--themes-westpac-color-success-700); /* Reserved. Must only be used for the Success alert component. */
   --color-border-info: var(--themes-westpac-color-info-500); /* Reserved. Must only be used for the Info alert component. */

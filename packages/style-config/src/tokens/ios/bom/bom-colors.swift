@@ -26,10 +26,6 @@ public enum BOMLightColors {
   public static let surfacePopFaint = UIColor(red: 0.965, green: 0.961, blue: 1.000, alpha: 1)
   public static let surfaceHoller = UIColor(red: 0.408, green: 0.353, blue: 0.753, alpha: 1)
   public static let surfaceHollerFaint = UIColor(red: 0.933, green: 0.929, blue: 0.973, alpha: 1)
-  public static let surfaceSing = UIColor(red: 0.820, green: 0.494, blue: 0.082, alpha: 1)
-  public static let surfaceSingFaint = UIColor(red: 1.000, green: 0.945, blue: 0.918, alpha: 1)
-  public static let surfaceDance = UIColor(red: 0.620, green: 0.165, blue: 0.000, alpha: 1)
-  public static let surfaceDanceFaint = UIColor(red: 1.000, green: 0.914, blue: 0.906, alpha: 1)
   public static let surfaceSuccess = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
   public static let surfaceSuccessFaint = UIColor(red: 0.949, green: 0.976, blue: 0.949, alpha: 1)
   public static let surfaceInfo = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
@@ -64,8 +60,6 @@ public enum BOMLightColors {
   public static let borderPrimary = UIColor(red: 0.820, green: 0.224, blue: 0.000, alpha: 1)
   public static let borderPop = UIColor(red: 0.627, green: 0.580, blue: 0.988, alpha: 1)
   public static let borderHoller = UIColor(red: 0.408, green: 0.353, blue: 0.753, alpha: 1)
-  public static let borderSing = UIColor(red: 0.820, green: 0.494, blue: 0.082, alpha: 1)
-  public static let borderDance = UIColor(red: 0.620, green: 0.165, blue: 0.000, alpha: 1)
   public static let borderSuccess = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
   public static let borderSuccessMild = UIColor(red: 0.278, green: 0.643, blue: 0.278, alpha: 1)
   public static let borderInfo = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
@@ -135,10 +129,6 @@ public enum BOMDarkColors {
   public static let surfacePopFaint = UIColor(red: 0.078, green: 0.008, blue: 0.314, alpha: 1)
   public static let surfaceHoller = UIColor(red: 0.514, green: 0.475, blue: 0.812, alpha: 1)
   public static let surfaceHollerFaint = UIColor(red: 0.055, green: 0.035, blue: 0.157, alpha: 1)
-  public static let surfaceSing = UIColor(red: 0.196, green: 0.102, blue: 0.004, alpha: 1)
-  public static let surfaceSingFaint = UIColor(red: 0.129, green: 0.059, blue: 0.004, alpha: 1)
-  public static let surfaceDance = UIColor(red: 0.620, green: 0.165, blue: 0.000, alpha: 1)
-  public static let surfaceDanceFaint = UIColor(red: 0.188, green: 0.027, blue: 0.000, alpha: 1)
   public static let surfaceSuccess = UIColor(red: 0.141, green: 0.573, blue: 0.141, alpha: 1)
   public static let surfaceSuccessFaint = UIColor(red: 0.000, green: 0.200, blue: 0.000, alpha: 1)
   public static let surfaceInfo = UIColor(red: 0.141, green: 0.529, blue: 0.800, alpha: 1)
@@ -173,8 +163,6 @@ public enum BOMDarkColors {
   public static let borderPrimary = UIColor(red: 0.894, green: 0.247, blue: 0.000, alpha: 1)
   public static let borderPop = UIColor(red: 0.239, green: 0.051, blue: 0.753, alpha: 1)
   public static let borderHoller = UIColor(red: 0.514, green: 0.475, blue: 0.812, alpha: 1)
-  public static let borderSing = UIColor(red: 0.820, green: 0.494, blue: 0.082, alpha: 1)
-  public static let borderDance = UIColor(red: 0.620, green: 0.165, blue: 0.000, alpha: 1)
   public static let borderSuccess = UIColor(red: 0.000, green: 0.502, blue: 0.000, alpha: 1)
   public static let borderSuccessMild = UIColor(red: 0.000, green: 0.353, blue: 0.000, alpha: 1)
   public static let borderInfo = UIColor(red: 0.000, green: 0.455, blue: 0.769, alpha: 1)
@@ -448,46 +436,6 @@ public enum BOMColors {
           return BOMDarkColors.surfaceHollerFaint
         default:
           return BOMLightColors.surfaceHollerFaint
-      }
-    }
-  }
-  public static var surfaceSing: UIColor {
-    return UIColor { traitCollection in
-      switch traitCollection.userInterfaceStyle {
-        case .dark:
-          return BOMDarkColors.surfaceSing
-        default:
-          return BOMLightColors.surfaceSing
-      }
-    }
-  }
-  public static var surfaceSingFaint: UIColor {
-    return UIColor { traitCollection in
-      switch traitCollection.userInterfaceStyle {
-        case .dark:
-          return BOMDarkColors.surfaceSingFaint
-        default:
-          return BOMLightColors.surfaceSingFaint
-      }
-    }
-  }
-  public static var surfaceDance: UIColor {
-    return UIColor { traitCollection in
-      switch traitCollection.userInterfaceStyle {
-        case .dark:
-          return BOMDarkColors.surfaceDance
-        default:
-          return BOMLightColors.surfaceDance
-      }
-    }
-  }
-  public static var surfaceDanceFaint: UIColor {
-    return UIColor { traitCollection in
-      switch traitCollection.userInterfaceStyle {
-        case .dark:
-          return BOMDarkColors.surfaceDanceFaint
-        default:
-          return BOMLightColors.surfaceDanceFaint
       }
     }
   }
@@ -828,26 +776,6 @@ public enum BOMColors {
           return BOMDarkColors.borderHoller
         default:
           return BOMLightColors.borderHoller
-      }
-    }
-  }
-  public static var borderSing: UIColor {
-    return UIColor { traitCollection in
-      switch traitCollection.userInterfaceStyle {
-        case .dark:
-          return BOMDarkColors.borderSing
-        default:
-          return BOMLightColors.borderSing
-      }
-    }
-  }
-  public static var borderDance: UIColor {
-    return UIColor { traitCollection in
-      switch traitCollection.userInterfaceStyle {
-        case .dark:
-          return BOMDarkColors.borderDance
-        default:
-          return BOMLightColors.borderDance
       }
     }
   }

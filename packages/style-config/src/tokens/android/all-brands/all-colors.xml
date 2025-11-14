@@ -1045,10 +1045,6 @@
   <color name="westpacLightModeSurfacePopFaint">#fff5fd</color>
   <color name="westpacLightModeSurfaceHoller">#991ad6</color>
   <color name="westpacLightModeSurfaceHollerFaint">#faf1fd</color>
-  <color name="westpacLightModeSurfaceSing">#990000</color>
-  <color name="westpacLightModeSurfaceSingFaint">#faf2f2</color>
-  <color name="westpacLightModeSurfaceDance">#f57a0f</color>
-  <color name="westpacLightModeSurfaceDanceFaint">#fef4eb</color>
   <color name="westpacLightModeSurfaceSuccess">#008000</color>
   <color name="westpacLightModeSurfaceSuccessFaint">#f2f9f2</color>
   <color name="westpacLightModeSurfaceInfo">#0074c4</color>
@@ -1083,8 +1079,6 @@
   <color name="westpacLightModeBorderPrimary">#da1710</color>
   <color name="westpacLightModeBorderPop">#ff3ddb</color>
   <color name="westpacLightModeBorderHoller">#991ad6</color>
-  <color name="westpacLightModeBorderSing">#990000</color>
-  <color name="westpacLightModeBorderDance">#f57a0f</color>
   <color name="westpacLightModeBorderSuccess">#008000</color>
   <color name="westpacLightModeBorderSuccessMild">#47a447</color>
   <color name="westpacLightModeBorderInfo">#0074c4</color>
@@ -1150,10 +1144,6 @@
   <color name="westpacDarkModeSurfacePopFaint">#330c2c</color>
   <color name="westpacDarkModeSurfaceHoller">#ad32e6</color>
   <color name="westpacDarkModeSurfaceHollerFaint">#2e0840</color>
-  <color name="westpacDarkModeSurfaceSing">#4d0000</color>
-  <color name="westpacDarkModeSurfaceSingFaint">#410000</color>
-  <color name="westpacDarkModeSurfaceDance">#f57a0f</color>
-  <color name="westpacDarkModeSurfaceDanceFaint">#401f03</color>
   <color name="westpacDarkModeSurfaceSuccess">#249224</color>
   <color name="westpacDarkModeSurfaceSuccessFaint">#003300</color>
   <color name="westpacDarkModeSurfaceInfo">#2487cc</color>
@@ -1188,8 +1178,6 @@
   <color name="westpacDarkModeBorderPrimary">#ee221b</color>
   <color name="westpacDarkModeBorderPop">#8c2278</color>
   <color name="westpacDarkModeBorderHoller">#ad32e6</color>
-  <color name="westpacDarkModeBorderSing">#990000</color>
-  <color name="westpacDarkModeBorderDance">#f57a0f</color>
   <color name="westpacDarkModeBorderSuccess">#008000</color>
   <color name="westpacDarkModeBorderSuccessMild">#005a00</color>
   <color name="westpacDarkModeBorderInfo">#0074c4</color>
@@ -1255,10 +1243,6 @@
   <color name="stGeorgeLightModeSurfacePopFaint">#f1fbe5</color>
   <color name="stGeorgeLightModeSurfaceHoller">#502d79</color>
   <color name="stGeorgeLightModeSurfaceHollerFaint">#f5f2fb</color>
-  <color name="stGeorgeLightModeSurfaceSing">#3fc3eb</color>
-  <color name="stGeorgeLightModeSurfaceSingFaint">#edf8fe</color>
-  <color name="stGeorgeLightModeSurfaceDance">#ff7f29</color>
-  <color name="stGeorgeLightModeSurfaceDanceFaint">#fff3eb</color>
   <color name="stGeorgeLightModeSurfaceSuccess">#008000</color>
   <color name="stGeorgeLightModeSurfaceSuccessFaint">#f2f9f2</color>
   <color name="stGeorgeLightModeSurfaceInfo">#0074c4</color>
@@ -1293,8 +1277,6 @@
   <color name="stGeorgeLightModeBorderPrimary">#e30000</color>
   <color name="stGeorgeLightModeBorderPop">#78be20</color>
   <color name="stGeorgeLightModeBorderHoller">#502d79</color>
-  <color name="stGeorgeLightModeBorderSing">#3fc3eb</color>
-  <color name="stGeorgeLightModeBorderDance">#ff7f29</color>
   <color name="stGeorgeLightModeBorderSuccess">#008000</color>
   <color name="stGeorgeLightModeBorderSuccessMild">#47a447</color>
   <color name="stGeorgeLightModeBorderInfo">#0074c4</color>
@@ -1360,10 +1342,6 @@
   <color name="stGeorgeDarkModeSurfacePopFaint">#132402</color>
   <color name="stGeorgeDarkModeSurfaceHoller">#7947b4</color>
   <color name="stGeorgeDarkModeSurfaceHollerFaint">#27133e</color>
-  <color name="stGeorgeDarkModeSurfaceSing">#09303c</color>
-  <color name="stGeorgeDarkModeSurfaceSingFaint">#04212a</color>
-  <color name="stGeorgeDarkModeSurfaceDance">#ff7f29</color>
-  <color name="stGeorgeDarkModeSurfaceDanceFaint">#421a00</color>
   <color name="stGeorgeDarkModeSurfaceSuccess">#249224</color>
   <color name="stGeorgeDarkModeSurfaceSuccessFaint">#003300</color>
   <color name="stGeorgeDarkModeSurfaceInfo">#2487cc</color>
@@ -1398,8 +1376,6 @@
   <color name="stGeorgeDarkModeBorderPrimary">#f21818</color>
   <color name="stGeorgeDarkModeBorderPop">#365909</color>
   <color name="stGeorgeDarkModeBorderHoller">#7947b4</color>
-  <color name="stGeorgeDarkModeBorderSing">#3fc3eb</color>
-  <color name="stGeorgeDarkModeBorderDance">#ff7f29</color>
   <color name="stGeorgeDarkModeBorderSuccess">#008000</color>
   <color name="stGeorgeDarkModeBorderSuccessMild">#005a00</color>
   <color name="stGeorgeDarkModeBorderInfo">#0074c4</color>
@@ -1465,10 +1441,6 @@
   <color name="bankOfMelbourneLightModeSurfacePopFaint">#f6f5ff</color>
   <color name="bankOfMelbourneLightModeSurfaceHoller">#685ac0</color>
   <color name="bankOfMelbourneLightModeSurfaceHollerFaint">#eeedf8</color>
-  <color name="bankOfMelbourneLightModeSurfaceSing">#d17e15</color>
-  <color name="bankOfMelbourneLightModeSurfaceSingFaint">#fff1ea</color>
-  <color name="bankOfMelbourneLightModeSurfaceDance">#9e2a00</color>
-  <color name="bankOfMelbourneLightModeSurfaceDanceFaint">#ffe9e7</color>
   <color name="bankOfMelbourneLightModeSurfaceSuccess">#008000</color>
   <color name="bankOfMelbourneLightModeSurfaceSuccessFaint">#f2f9f2</color>
   <color name="bankOfMelbourneLightModeSurfaceInfo">#0074c4</color>
@@ -1503,8 +1475,6 @@
   <color name="bankOfMelbourneLightModeBorderPrimary">#d13900</color>
   <color name="bankOfMelbourneLightModeBorderPop">#a094fc</color>
   <color name="bankOfMelbourneLightModeBorderHoller">#685ac0</color>
-  <color name="bankOfMelbourneLightModeBorderSing">#d17e15</color>
-  <color name="bankOfMelbourneLightModeBorderDance">#9e2a00</color>
   <color name="bankOfMelbourneLightModeBorderSuccess">#008000</color>
   <color name="bankOfMelbourneLightModeBorderSuccessMild">#47a447</color>
   <color name="bankOfMelbourneLightModeBorderInfo">#0074c4</color>
@@ -1570,10 +1540,6 @@
   <color name="bankOfMelbourneDarkModeSurfacePopFaint">#140250</color>
   <color name="bankOfMelbourneDarkModeSurfaceHoller">#8379cf</color>
   <color name="bankOfMelbourneDarkModeSurfaceHollerFaint">#0e0928</color>
-  <color name="bankOfMelbourneDarkModeSurfaceSing">#321a01</color>
-  <color name="bankOfMelbourneDarkModeSurfaceSingFaint">#210f01</color>
-  <color name="bankOfMelbourneDarkModeSurfaceDance">#9e2a00</color>
-  <color name="bankOfMelbourneDarkModeSurfaceDanceFaint">#300700</color>
   <color name="bankOfMelbourneDarkModeSurfaceSuccess">#249224</color>
   <color name="bankOfMelbourneDarkModeSurfaceSuccessFaint">#003300</color>
   <color name="bankOfMelbourneDarkModeSurfaceInfo">#2487cc</color>
@@ -1608,8 +1574,6 @@
   <color name="bankOfMelbourneDarkModeBorderPrimary">#e43f00</color>
   <color name="bankOfMelbourneDarkModeBorderPop">#3d0dc0</color>
   <color name="bankOfMelbourneDarkModeBorderHoller">#8379cf</color>
-  <color name="bankOfMelbourneDarkModeBorderSing">#d17e15</color>
-  <color name="bankOfMelbourneDarkModeBorderDance">#9e2a00</color>
   <color name="bankOfMelbourneDarkModeBorderSuccess">#008000</color>
   <color name="bankOfMelbourneDarkModeBorderSuccessMild">#005a00</color>
   <color name="bankOfMelbourneDarkModeBorderInfo">#0074c4</color>
@@ -1675,10 +1639,6 @@
   <color name="bankSaLightModeSurfacePopFaint">#e3fafc</color>
   <color name="bankSaLightModeSurfaceHoller">#a22269</color>
   <color name="bankSaLightModeSurfaceHollerFaint">#fbeef6</color>
-  <color name="bankSaLightModeSurfaceSing">#5cbb3e</color>
-  <color name="bankSaLightModeSurfaceSingFaint">#eff9ec</color>
-  <color name="bankSaLightModeSurfaceDance">#f7921e</color>
-  <color name="bankSaLightModeSurfaceDanceFaint">#fef1e1</color>
   <color name="bankSaLightModeSurfaceSuccess">#008000</color>
   <color name="bankSaLightModeSurfaceSuccessFaint">#f2f9f2</color>
   <color name="bankSaLightModeSurfaceInfo">#0074c4</color>
@@ -1713,8 +1673,6 @@
   <color name="bankSaLightModeBorderPrimary">#d81b2b</color>
   <color name="bankSaLightModeBorderPop">#00adbd</color>
   <color name="bankSaLightModeBorderHoller">#a22269</color>
-  <color name="bankSaLightModeBorderSing">#5cbb3e</color>
-  <color name="bankSaLightModeBorderDance">#f7921e</color>
   <color name="bankSaLightModeBorderSuccess">#008000</color>
   <color name="bankSaLightModeBorderSuccessMild">#47a447</color>
   <color name="bankSaLightModeBorderInfo">#0074c4</color>
@@ -1780,10 +1738,6 @@
   <color name="bankSaDarkModeSurfacePopFaint">#002529</color>
   <color name="bankSaDarkModeSurfaceHoller">#cf2b86</color>
   <color name="bankSaDarkModeSurfaceHollerFaint">#2e0a1e</color>
-  <color name="bankSaDarkModeSurfaceSing">#1e3d14</color>
-  <color name="bankSaDarkModeSurfaceSingFaint">#172e0f</color>
-  <color name="bankSaDarkModeSurfaceDance">#f7921e</color>
-  <color name="bankSaDarkModeSurfaceDanceFaint">#4a2903</color>
   <color name="bankSaDarkModeSurfaceSuccess">#249224</color>
   <color name="bankSaDarkModeSurfaceSuccessFaint">#003300</color>
   <color name="bankSaDarkModeSurfaceInfo">#2487cc</color>
@@ -1818,8 +1772,6 @@
   <color name="bankSaDarkModeBorderPrimary">#ed1f30</color>
   <color name="bankSaDarkModeBorderPop">#00545c</color>
   <color name="bankSaDarkModeBorderHoller">#cf2b86</color>
-  <color name="bankSaDarkModeBorderSing">#5cbb3e</color>
-  <color name="bankSaDarkModeBorderDance">#f7921e</color>
   <color name="bankSaDarkModeBorderSuccess">#008000</color>
   <color name="bankSaDarkModeBorderSuccessMild">#005a00</color>
   <color name="bankSaDarkModeBorderInfo">#0074c4</color>

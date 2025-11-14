@@ -27,10 +27,6 @@
   <color name="stgSurfacePopFaint">#132402</color>
   <color name="stgSurfaceHoller">#7947b4</color>
   <color name="stgSurfaceHollerFaint">#27133e</color>
-  <color name="stgSurfaceSing">#09303c</color>
-  <color name="stgSurfaceSingFaint">#04212a</color>
-  <color name="stgSurfaceDance">#ff7f29</color>
-  <color name="stgSurfaceDanceFaint">#421a00</color>
   <color name="stgSurfaceSuccess">#249224</color>
   <color name="stgSurfaceSuccessFaint">#003300</color>
   <color name="stgSurfaceInfo">#2487cc</color>
@@ -65,8 +61,6 @@
   <color name="stgBorderPrimary">#f21818</color>
   <color name="stgBorderPop">#365909</color>
   <color name="stgBorderHoller">#7947b4</color>
-  <color name="stgBorderSing">#3fc3eb</color>
-  <color name="stgBorderDance">#ff7f29</color>
   <color name="stgBorderSuccess">#008000</color>
   <color name="stgBorderSuccessMild">#005a00</color>
   <color name="stgBorderInfo">#0074c4</color>

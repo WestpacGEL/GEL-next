@@ -27,10 +27,6 @@
   <color name="bomSurfacePopFaint">#f6f5ff</color>
   <color name="bomSurfaceHoller">#685ac0</color>
   <color name="bomSurfaceHollerFaint">#eeedf8</color>
-  <color name="bomSurfaceSing">#d17e15</color>
-  <color name="bomSurfaceSingFaint">#fff1ea</color>
-  <color name="bomSurfaceDance">#9e2a00</color>
-  <color name="bomSurfaceDanceFaint">#ffe9e7</color>
   <color name="bomSurfaceSuccess">#008000</color>
   <color name="bomSurfaceSuccessFaint">#f2f9f2</color>
   <color name="bomSurfaceInfo">#0074c4</color>
@@ -65,8 +61,6 @@
   <color name="bomBorderPrimary">#d13900</color>
   <color name="bomBorderPop">#a094fc</color>
   <color name="bomBorderHoller">#685ac0</color>
-  <color name="bomBorderSing">#d17e15</color>
-  <color name="bomBorderDance">#9e2a00</color>
   <color name="bomBorderSuccess">#008000</color>
   <color name="bomBorderSuccessMild">#47a447</color>
   <color name="bomBorderInfo">#0074c4</color>

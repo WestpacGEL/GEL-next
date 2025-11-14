@@ -27,10 +27,6 @@
   <color name="bsaSurfacePopFaint">#002529</color>
   <color name="bsaSurfaceHoller">#cf2b86</color>
   <color name="bsaSurfaceHollerFaint">#2e0a1e</color>
-  <color name="bsaSurfaceSing">#1e3d14</color>
-  <color name="bsaSurfaceSingFaint">#172e0f</color>
-  <color name="bsaSurfaceDance">#f7921e</color>
-  <color name="bsaSurfaceDanceFaint">#4a2903</color>
   <color name="bsaSurfaceSuccess">#249224</color>
   <color name="bsaSurfaceSuccessFaint">#003300</color>
   <color name="bsaSurfaceInfo">#2487cc</color>
@@ -65,8 +61,6 @@
   <color name="bsaBorderPrimary">#ed1f30</color>
   <color name="bsaBorderPop">#00545c</color>
   <color name="bsaBorderHoller">#cf2b86</color>
-  <color name="bsaBorderSing">#5cbb3e</color>
-  <color name="bsaBorderDance">#f7921e</color>
   <color name="bsaBorderSuccess">#008000</color>
   <color name="bsaBorderSuccessMild">#005a00</color>
   <color name="bsaBorderInfo">#0074c4</color>
