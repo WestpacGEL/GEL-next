@@ -33,7 +33,7 @@ export function BaseBreadcrumbItem(
     ref as RefObject<HTMLElement>,
   );
   return (
-    <li className="inline-flex items-center">
+    <li className="inline-flex items-center [&_:focus-visible]:focus-outline">
       <FinalTag
         {...({ ...itemProps, ref: propRef, href: FinalTag === 'a' ? href : undefined } as object)}
         className={styles({ className, isDisabled, isCurrent })}

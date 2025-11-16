@@ -7,7 +7,7 @@ export const styles = tv(
       list: 'm-0 flex list-none flex-col pl-0',
       item: 'relative',
       itemIndex: 'mb-3 font-bold',
-      content: '',
+      content: '[&_:focus-visible]:focus-outline',
       removeBtn: 'absolute right-0 top-0 h-auto p-0 no-underline hover:underline',
       footer: 'flex justify-between pt-[0.875rem]',
       addBtn: 'h-auto p-0 no-underline hover:underline',

@@ -11,8 +11,8 @@ export const styles = tv(
       `,
       closeBtn: 'absolute right-1 top-1 h-3 p-0 hover:opacity-80',
       content: 'w-[17.625rem] rounded-[3px] bg-white py-4 pl-3 pr-5',
-      heading: 'typography-body-9 mb-2 font-medium text-text',
-      body: 'typography-body-10 text-text',
+      heading: 'typography-body-9 mb-2 font-medium text-text focus-visible:focus-outline',
+      body: 'typography-body-10 text-text focus-visible:focus-outline',
     },
     variants: {
       placement: {

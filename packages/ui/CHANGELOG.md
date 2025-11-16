@@ -1,5 +1,34 @@
 # @westpac/ui
 
+## 0.53.2
+
+### Patch Changes
+
+- 5ca405f: fix: input group children rendering the classNames as expected
+
+## 0.53.1
+
+### Patch Changes
+
+- d7523fa: Removing the horizontal padding from Button look="link"
+
+## 0.53.0
+
+### Minor Changes
+
+- a28c062: Button Dropdown: adding the option to use only icon or changing the caret icon
+
+### Patch Changes
+
+- bd8c375: focus state for pagination item
+- d601d5d: fixes to focus outlines
+
+## 0.52.1
+
+### Patch Changes
+
+- 35af96a: filter buttons focus styling fix
+
 ## 0.52.0
 
 ### Minor Changes

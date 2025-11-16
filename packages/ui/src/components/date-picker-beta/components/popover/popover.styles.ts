@@ -22,7 +22,7 @@ export const styles = tv(
         false: {
           underlay: '',
           closeButton:
-            'border-border pointer-events-none absolute right-0 top-0 size-5 -translate-y-1/2 translate-x-1/2 touch-none rounded-full border bg-white opacity-0 focus:pointer-events-auto focus:touch-auto focus:opacity-100',
+            'pointer-events-none absolute right-0 top-0 size-5 -translate-y-1/2 translate-x-1/2 touch-none rounded-full border border-border bg-white opacity-0 focus:pointer-events-auto focus:touch-auto focus:opacity-100',
           headerLabel: 'hidden',
           popover:
             'absolute mt-1 scale-100 animate-fadeIn rounded border border-border bg-white opacity-100 shadow-[0_5px_10px_rgba(0,0,0,0.2)]',

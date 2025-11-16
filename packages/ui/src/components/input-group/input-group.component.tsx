@@ -1,5 +1,6 @@
 'use client';
 
+import { clsx } from 'clsx';
 import React, {
   Attributes,
   Children,
@@ -96,6 +97,8 @@ export function InputGroup({
           'aria-describedby': ariaDescribedBy || ariaDescribedByValue,
           'aria-label': ariaLabel,
           ...(width !== 'full' ? { width: width } : {}),
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-argument
+          className: clsx(child.props.className, 'focus:z-10'), // for focus ring visibility
         } as Partial<unknown> & Attributes);
       }
     });

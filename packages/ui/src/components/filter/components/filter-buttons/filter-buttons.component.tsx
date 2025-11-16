@@ -46,7 +46,7 @@ export function FilterButtons({
         let targetElement;
         let scrollX;
         let scrollBy = true;
-        const buttonPaddingOffset = 20;
+        const buttonPaddingOffset = 26;
         if (direction === 'left') {
           if (scrollTarget.left === -1) {
             scrollX = -container.clientWidth;
@@ -204,7 +204,6 @@ export function FilterButtons({
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
-          overflowX: 'scroll',
         }}
         {...props}
         ref={scrollContainerRef}
