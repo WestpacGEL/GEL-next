@@ -90,10 +90,6 @@
       --surface-pop-faint: var(--pop-50);
       --surface-holler: var(--holler-500);
       --surface-holler-faint: var(--holler-50);
-      --surface-sing: var(--sing-500);
-      --surface-sing-faint: var(--sing-50);
-      --surface-dance: var(--dance-500);
-      --surface-dance-faint: var(--dance-50);
       --surface-success: var(--reserved-success-500);
       --surface-success-faint: var(--reserved-success-50);
       --surface-info: var(--reserved-info-500);
@@ -128,8 +124,6 @@
       --border-primary: var(--primary-500);
       --border-pop: var(--pop-500);
       --border-holler: var(--holler-500);
-      --border-sing: var(--sing-500);
-      --border-dance: var(--dance-500);
       --border-success: var(--reserved-success-500);
       --border-success-mild: var(--reserved-success-300);
       --border-info: var(--reserved-info-500);
@@ -197,10 +191,6 @@
         --surface-pop-faint: var(--pop-950);
         --surface-holler: var(--holler-400);
         --surface-holler-faint: var(--holler-950);
-        --surface-sing: var(--sing-900);
-        --surface-sing-faint: var(--sing-950);
-        --surface-dance: var(--dance-500);
-        --surface-dance-faint: var(--dance-900);
         --surface-success: var(--reserved-success-400);
         --surface-success-faint: var(--reserved-success-900);
         --surface-info: var(--reserved-info-400);
@@ -235,8 +225,6 @@
         --border-primary: var(--primary-400);
         --border-pop: var(--pop-800);
         --border-holler: var(--holler-400);
-        --border-sing: var(--sing-500);
-        --border-dance: var(--dance-500);
         --border-success: var(--reserved-success-500);
         --border-success-mild: var(--reserved-success-700);
         --border-info: var(--reserved-info-500);
@@ -308,10 +296,6 @@
     --color-surface-pop-faint: var(--surface-pop-faint);
     --color-surface-holler: var(--surface-holler);
     --color-surface-holler-faint: var(--surface-holler-faint);
-    --color-surface-sing: var(--surface-sing);
-    --color-surface-sing-faint: var(--surface-sing-faint);
-    --color-surface-dance: var(--surface-dance);
-    --color-surface-dance-faint: var(--surface-dance-faint);
     --color-surface-success: var(--surface-success);
     --color-surface-success-faint: var(--surface-success-faint);
     --color-surface-info: var(--surface-info);
@@ -346,8 +330,6 @@
     --color-border-primary: var(--border-primary);
     --color-border-pop: var(--border-pop);
     --color-border-holler: var(--border-holler);
-    --color-border-sing: var(--border-sing);
-    --color-border-dance: var(--border-dance);
     --color-border-success: var(--border-success);
     --color-border-success-mild: var(--border-success-mild);
     --color-border-info: var(--border-info);

@@ -851,7 +851,7 @@ function normalizeTokenGroup(group, brandName) {
  * Processes theme tokens for a given brand.
  */
 function processThemeModes(brandModes, brandName) {
-  delete brandModes.Logo;
+  delete brandModes.misc;
   return Object.fromEntries(
     Object.entries(brandModes).map(([propGroup, categories]) => [
       propGroup,

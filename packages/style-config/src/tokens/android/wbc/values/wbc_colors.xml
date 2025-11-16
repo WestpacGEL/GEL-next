@@ -27,10 +27,6 @@
   <color name="wbcSurfacePopFaint">#fff5fd</color>
   <color name="wbcSurfaceHoller">#991ad6</color>
   <color name="wbcSurfaceHollerFaint">#faf1fd</color>
-  <color name="wbcSurfaceSing">#990000</color>
-  <color name="wbcSurfaceSingFaint">#faf2f2</color>
-  <color name="wbcSurfaceDance">#f57a0f</color>
-  <color name="wbcSurfaceDanceFaint">#fef4eb</color>
   <color name="wbcSurfaceSuccess">#008000</color>
   <color name="wbcSurfaceSuccessFaint">#f2f9f2</color>
   <color name="wbcSurfaceInfo">#0074c4</color>
@@ -65,8 +61,6 @@
   <color name="wbcBorderPrimary">#da1710</color>
   <color name="wbcBorderPop">#ff3ddb</color>
   <color name="wbcBorderHoller">#991ad6</color>
-  <color name="wbcBorderSing">#990000</color>
-  <color name="wbcBorderDance">#f57a0f</color>
   <color name="wbcBorderSuccess">#008000</color>
   <color name="wbcBorderSuccessMild">#47a447</color>
   <color name="wbcBorderInfo">#0074c4</color>
