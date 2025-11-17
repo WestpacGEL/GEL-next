@@ -1,5 +1,4 @@
-import { HTMLMotionProps } from 'motion/react';
-import { ReactNode } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
 export type ModalDialogFooterProps = {
   /**
@@ -22,4 +21,4 @@ export type ModalDialogFooterProps = {
    * onClick for secondary button
    */
   secondaryOnClick?: () => void;
-} & HTMLMotionProps<'div'>;
+} & HTMLAttributes<HTMLDivElement>;

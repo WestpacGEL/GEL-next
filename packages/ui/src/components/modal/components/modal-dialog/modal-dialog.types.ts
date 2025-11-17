@@ -28,6 +28,10 @@ export type ModalDialogProps = {
    */
   onClose?: () => unknown;
   /**
+   * Whether padding on the modal should be reduced to a preset value (30px)
+   */
+  reducePadding?: boolean;
+  /**
    * Ref to use for scrolling animations when not using the ModalBody component or the body prop.
    * Ref should be the scrollable container that contains the content
    */
@@ -43,6 +47,14 @@ export type ModalDialogProps = {
 } & AriaDialogProps;
 
 export type ModalDialogContextValue = {
+  /**
+   * Whether container can scroll
+   */
+  canScroll?: boolean;
+  /**
+   * Whether padding on the modal should be reduced to a preset value (30px)
+   */
+  reducePadding?: boolean;
   /**
    * Size of dialog
    */

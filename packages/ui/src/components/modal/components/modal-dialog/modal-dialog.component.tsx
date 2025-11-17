@@ -1,7 +1,7 @@
 'use client';
 
 import { useMotionValueEvent, useScroll, useTransform, m, HTMLMotionProps } from 'motion/react';
-import React, { createContext, useContext, useRef, useState } from 'react';
+import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { useDialog, useFocusRing } from 'react-aria';
 
 import { CloseIcon } from '../../../../components/icon/index.js';
@@ -19,10 +19,20 @@ const SCROLL_PROGRESS_START = 0;
 /**
  * @private
  */
-export function ModalDialog({ className, body, onClose, size = 'md', scrollingBodyRef, ...props }: ModalDialogProps) {
+export function ModalDialog({
+  className,
+  body,
+  onClose,
+  size = 'md',
+  scrollingBodyRef,
+  reducePadding,
+  ...props
+}: ModalDialogProps) {
+  // TODO: Handle resizing modal and scrolling
   const { children } = props;
   const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = dialogStyles({ size, isFocusVisible });
+  const styles = dialogStyles({ size, isFocusVisible, reducePadding });
+  const [canScroll, setCanScroll] = useState(false);
 
   const ref = useRef(null);
   const bodyRef = useRef(null);
@@ -35,7 +45,7 @@ export function ModalDialog({ className, body, onClose, size = 'md', scrollingBo
   let initialPaddingTop: string;
   switch (size) {
     case 'lg':
-      initialPaddingTop = '72px';
+      initialPaddingTop = reducePadding ? '54px' : '72px';
       break;
     case 'full':
       initialPaddingTop = '18px';
@@ -67,6 +77,15 @@ export function ModalDialog({ className, body, onClose, size = 'md', scrollingBo
     setCurrPadding(latest);
   });
 
+  useEffect(() => {
+    const bodyElement = scrollingRef?.current;
+
+    if (bodyElement) {
+      setCanScroll(bodyElement.scrollHeight > bodyElement.clientHeight);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scrollingRef]);
+
   const MotionHeading = m.create('h3');
   return (
     <div {...dialogProps} ref={ref} className={styles.base({ className })}>
@@ -75,18 +94,23 @@ export function ModalDialog({ className, body, onClose, size = 'md', scrollingBo
           <CloseIcon className="block" size="small" />
         </button>
       )}
-      {props.title && (
-        <MotionHeading
-          {...(titleProps as HTMLMotionProps<'h3'>)}
-          className={styles.title()}
-          key={`title-${currPadding}`}
-          style={{ fontSize, lineHeight, paddingBottom, paddingTop }}
-        >
-          {props.title}
-        </MotionHeading>
-      )}
+      {props.title &&
+        (canScroll ? (
+          <MotionHeading
+            {...(titleProps as HTMLMotionProps<'h3'>)}
+            className={styles.title()}
+            key={`title-${currPadding}`}
+            style={{ fontSize, lineHeight, paddingBottom, paddingTop }}
+          >
+            {props.title}
+          </MotionHeading>
+        ) : (
+          <h3 {...titleProps} className={styles.title()}>
+            {props.title}
+          </h3>
+        ))}
 
-      <ModalDialogContext.Provider value={{ size, scrollingRef }}>
+      <ModalDialogContext.Provider value={{ size, scrollingRef, reducePadding, canScroll }}>
         {body ? <ModalDialogBody>{children}</ModalDialogBody> : children}
       </ModalDialogContext.Provider>
     </div>

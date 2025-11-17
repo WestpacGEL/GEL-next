@@ -14,6 +14,7 @@ export function Modal({
   size,
   className,
   fullscreen,
+  reducePadding,
   scrollingBodyRef,
   ...props
 }: ModalProps) {
@@ -26,6 +27,7 @@ export function Modal({
         role={role}
         body={body}
         size={size}
+        reducePadding={reducePadding}
         className={className}
         scrollingBodyRef={scrollingBodyRef}
       >

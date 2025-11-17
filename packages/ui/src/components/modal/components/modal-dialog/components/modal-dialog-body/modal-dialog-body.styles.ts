@@ -11,6 +11,10 @@ export const styles = tv(
         sm: { base: 'px-5 pb-7' },
         fluid: { base: 'px-5 pb-7' },
       },
+      reducePadding: {
+        true: '',
+        false: '',
+      },
       canScroll: {
         true: {
           base: ' shadow-[0_-6px_6px_0_inset] shadow-border',
@@ -23,6 +27,14 @@ export const styles = tv(
         true: { base: 'shadow-[0_6px_6px_0_inset,0_0_0_0_inset]' },
       },
     },
+    compoundSlots: [
+      {
+        slots: ['base'],
+        size: ['lg', 'md'],
+        reducePadding: true,
+        className: 'px-5',
+      },
+    ],
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
 );
