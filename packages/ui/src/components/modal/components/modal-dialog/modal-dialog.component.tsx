@@ -1,6 +1,5 @@
 'use client';
 
-import { useMotionValueEvent, useScroll, useTransform, m, HTMLMotionProps } from 'motion/react';
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { useDialog, useFocusRing } from 'react-aria';
 
@@ -28,7 +27,6 @@ export function ModalDialog({
   reducePadding,
   ...props
 }: ModalDialogProps) {
-  // TODO: Handle resizing modal and scrolling
   const { children } = props;
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = dialogStyles({ size, isFocusVisible, reducePadding });
@@ -39,54 +37,31 @@ export function ModalDialog({
 
   const { dialogProps, titleProps } = useDialog(props, ref);
   const scrollingRef = scrollingBodyRef ?? bodyRef;
-  const { scrollYProgress } = useScroll({ container: scrollingRef.current ? scrollingRef : undefined });
-
-  // pixel amounts based on spacing values
-  let initialPaddingTop: string;
-  switch (size) {
-    case 'lg':
-      initialPaddingTop = reducePadding ? '54px' : '72px';
-      break;
-    case 'full':
-      initialPaddingTop = '18px';
-      break;
-    case 'md':
-    case 'sm':
-    case 'fluid':
-    default:
-      initialPaddingTop = '54px';
-      break;
-  }
-
-  const paddingTop = useTransform(
-    scrollYProgress,
-    [SCROLL_PROGRESS_START, SCROLL_PROGRESS_MAX],
-    [initialPaddingTop, '16px'],
-  );
-  const paddingBottom = useTransform(
-    scrollYProgress,
-    [SCROLL_PROGRESS_START, SCROLL_PROGRESS_MAX],
-    [size === 'full' ? '18px' : '24px', '16px'],
-  );
-  const fontSize = useTransform(scrollYProgress, [SCROLL_PROGRESS_START, SCROLL_PROGRESS_MAX], ['1.5rem', '1.125rem']);
-  const lineHeight = useTransform(scrollYProgress, [SCROLL_PROGRESS_START, SCROLL_PROGRESS_MAX], ['tight', 'normal']);
-
-  const [currPadding, setCurrPadding] = useState(''); // used for updating key so animation works
-
-  useMotionValueEvent(paddingTop, 'change', latest => {
-    setCurrPadding(latest);
-  });
 
   useEffect(() => {
     const bodyElement = scrollingRef?.current;
 
-    if (bodyElement) {
-      setCanScroll(bodyElement.scrollHeight > bodyElement.clientHeight);
+    if (!bodyElement) {
+      setCanScroll(false);
+      return;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    const updateCanScroll = () => {
+      setCanScroll(bodyElement.scrollHeight > bodyElement.clientHeight);
+    };
+
+    updateCanScroll();
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateCanScroll();
+    });
+    resizeObserver.observe(bodyElement);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, [scrollingRef]);
 
-  const MotionHeading = m.create('h3');
   return (
     <div {...dialogProps} ref={ref} className={styles.base({ className })}>
       {onClose && (
@@ -94,21 +69,11 @@ export function ModalDialog({
           <CloseIcon className="block" size="small" />
         </button>
       )}
-      {props.title &&
-        (canScroll ? (
-          <MotionHeading
-            {...(titleProps as HTMLMotionProps<'h3'>)}
-            className={styles.title()}
-            key={`title-${currPadding}`}
-            style={{ fontSize, lineHeight, paddingBottom, paddingTop }}
-          >
-            {props.title}
-          </MotionHeading>
-        ) : (
-          <h3 {...titleProps} className={styles.title()}>
-            {props.title}
-          </h3>
-        ))}
+      {props.title && (
+        <h3 {...titleProps} className={styles.title()}>
+          {props.title}
+        </h3>
+      )}
 
       <ModalDialogContext.Provider value={{ size, scrollingRef, reducePadding, canScroll }}>
         {body ? <ModalDialogBody>{children}</ModalDialogBody> : children}

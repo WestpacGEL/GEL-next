@@ -16,7 +16,7 @@ export function ModalDialogBody({ className, children, ...props }: ModalDialogBo
     if (scrollingRef?.current) {
       const { scrollTop, scrollHeight, clientHeight } = scrollingRef.current;
       setScrolled(scrollTop > 0);
-      setScrollAtBottom(scrollTop + clientHeight >= scrollHeight - 10);
+      setScrollAtBottom(scrollTop + clientHeight >= scrollHeight);
     }
   }, [scrollingRef]);
 

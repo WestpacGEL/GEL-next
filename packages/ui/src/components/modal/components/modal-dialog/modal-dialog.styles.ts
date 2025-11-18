@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'relative mx-auto flex max-h-[80vh] max-w-full flex-col overflow-hidden rounded bg-white text-text outline-none',
+      base: 'relative flex max-h-full max-w-full flex-col rounded bg-white text-text outline-none',
       title: 'typography-body-7 pb-4 pt-9 font-bold text-text',
       close: 'absolute right-0 top-0 block p-3',
     },

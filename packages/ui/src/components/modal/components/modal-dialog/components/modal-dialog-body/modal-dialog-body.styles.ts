@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    slots: { base: 'flex-1 overflow-auto' },
+    slots: { base: 'flex-1' },
     variants: {
       size: {
         full: { base: 'px-4 py-3' },
