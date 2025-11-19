@@ -52,14 +52,14 @@ export function ModalDialog({
 
     updateCanScroll();
 
-    const resizeObserver = new ResizeObserver(() => {
-      updateCanScroll();
-    });
-    resizeObserver.observe(bodyElement);
+    // const resizeObserver = new ResizeObserver(() => {
+    //   updateCanScroll();
+    // });
+    // resizeObserver.observe(bodyElement);
 
-    return () => {
-      resizeObserver.disconnect();
-    };
+    // return () => {
+    //   resizeObserver.disconnect();
+    // };
   }, [scrollingRef]);
 
   return (
