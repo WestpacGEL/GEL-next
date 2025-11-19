@@ -24,12 +24,12 @@ export function ModalDialog({
   onClose,
   size = 'md',
   scrollingBodyRef,
-  reducePadding,
+  compact,
   ...props
 }: ModalDialogProps) {
   const { children } = props;
   const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = dialogStyles({ size, isFocusVisible, reducePadding });
+  const styles = dialogStyles({ size, isFocusVisible, compact });
   const [canScroll, setCanScroll] = useState(false);
 
   const ref = useRef(null);
@@ -38,6 +38,7 @@ export function ModalDialog({
   const { dialogProps, titleProps } = useDialog(props, ref);
   const scrollingRef = scrollingBodyRef ?? bodyRef;
 
+  //TODO: Handle resize again
   useEffect(() => {
     const bodyElement = scrollingRef?.current;
 
@@ -75,7 +76,7 @@ export function ModalDialog({
         </h3>
       )}
 
-      <ModalDialogContext.Provider value={{ size, scrollingRef, reducePadding, canScroll }}>
+      <ModalDialogContext.Provider value={{ size, scrollingRef, canScroll, compact }}>
         {body ? <ModalDialogBody>{children}</ModalDialogBody> : children}
       </ModalDialogContext.Provider>
     </div>

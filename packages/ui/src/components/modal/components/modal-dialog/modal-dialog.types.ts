@@ -20,6 +20,11 @@ export type ModalDialogProps = {
    */
   className?: string;
   /**
+   * For medium and large sizes.
+   * Keeps entire modal in view by adding internal scrolling.
+   */
+  compact?: boolean;
+  /**
    * Full screen
    */
   fullscreen?: boolean;
@@ -27,10 +32,6 @@ export type ModalDialogProps = {
    * onClose callback
    */
   onClose?: () => unknown;
-  /**
-   * Whether padding on the modal should be reduced to a preset value (30px)
-   */
-  reducePadding?: boolean;
   /**
    * Ref to use for scrolling animations when not using the ModalBody component or the body prop.
    * Ref should be the scrollable container that contains the content
@@ -52,9 +53,10 @@ export type ModalDialogContextValue = {
    */
   canScroll?: boolean;
   /**
-   * Whether padding on the modal should be reduced to a preset value (30px)
+   * For medium and large sizes.
+   * Keeps entire modal in view by adding internal scrolling.
    */
-  reducePadding?: boolean;
+  compact?: boolean;
   /**
    * Size of dialog
    */

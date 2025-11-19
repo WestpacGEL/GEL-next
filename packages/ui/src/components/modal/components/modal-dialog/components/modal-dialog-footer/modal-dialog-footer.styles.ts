@@ -20,7 +20,7 @@ export const styles = tv(
           base: 'pb-5',
         },
       },
-      reducePadding: {
+      compact: {
         true: '',
         false: '',
       },
@@ -28,15 +28,9 @@ export const styles = tv(
     compoundSlots: [
       {
         slots: ['base'],
-        size: 'lg',
-        canScroll: true,
-        className: 'pt-2',
-      },
-      {
-        slots: ['base'],
         size: ['lg', 'md'],
-        reducePadding: true,
-        className: 'px-5 pb-5 pt-2',
+        compact: true,
+        className: 'min-h-[90px] px-5 pb-5 pt-3',
       },
     ],
   },

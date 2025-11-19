@@ -14,12 +14,12 @@ export function Modal({
   size,
   className,
   fullscreen,
-  reducePadding,
   scrollingBodyRef,
+  compact = false,
   ...props
 }: ModalProps) {
   return (
-    <ModalBackdrop size={size} className={backdropStyle} {...props}>
+    <ModalBackdrop size={size} className={backdropStyle} compact={compact} {...props}>
       <ModalDialog
         fullscreen={fullscreen}
         onClose={props.isDismissable ? () => props.state.close() : undefined}
@@ -27,9 +27,9 @@ export function Modal({
         role={role}
         body={body}
         size={size}
-        reducePadding={reducePadding}
         className={className}
         scrollingBodyRef={scrollingBodyRef}
+        compact={compact}
       >
         {children}
       </ModalDialog>

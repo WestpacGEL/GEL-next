@@ -35,17 +35,23 @@ export const styles = tv(
         true: { close: '!outline-offset-[-3px] focus-outline' },
         false: { close: 'outline-none' },
       },
-      reducePadding: {
+      compact: {
         true: '',
         false: '',
       },
     },
     compoundSlots: [
       {
+        slots: ['base'],
+        size: ['md', 'lg'],
+        compact: true,
+        className: 'max-h-[80vh] overflow-hidden',
+      },
+      {
         slots: ['title'],
         size: ['lg', 'md'],
-        reducePadding: true,
-        className: 'px-5',
+        compact: true,
+        className: 'min-h-[90px] px-5 pb-4 pt-6',
       },
     ],
   },

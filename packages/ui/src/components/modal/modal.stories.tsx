@@ -171,7 +171,7 @@ Phasellus elementum, augue in tempor imperdiet, justo mauris porttitor elit, ac 
 /**
  * > Examples of all sizes with reduced padding
  */
-export const ReducePaddingSizes = () => {
+export const CompactSizes = () => {
   const stateSM = useOverlayTriggerState({});
   const stateMD = useOverlayTriggerState({});
   const stateLG = useOverlayTriggerState({});
@@ -192,7 +192,7 @@ export const ReducePaddingSizes = () => {
     <div className="flex gap-2">
       {(['sm', 'md', 'lg', 'full', 'fluid'] as const).map(size => (
         <Fragment key={size}>
-          <Modal reducePadding isDismissable size={size} state={states[size]} title={`Modal ${getSizeTitle(size)}`}>
+          <Modal compact isDismissable size={size} state={states[size]} title={`Modal ${getSizeTitle(size)}`}>
             <ModalBody>
               {`
      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis fermentum elit, non scelerisque diam sagittis eget. Nullam auctor pharetra risus eu pulvinar. Cras vel risus vel ex lobortis ullamcorper vel ut erat. Duis ornare turpis vel tempus malesuada. Nullam auctor sed risus ultricies vestibulum. Quisque suscipit eros sem, id cursus dolor porttitor sit amet. Quisque euismod risus nec est gravida aliquet. Sed sodales ante et ligula fringilla tristique.

@@ -13,6 +13,11 @@ export type ModalBackdropProps = {
    */
   className?: string;
   /**
+   * For medium and large sizes.
+   * Keeps entire modal in view by adding internal scrolling.
+   */
+  compact?: boolean;
+  /**
    * Element where backdrop will be placed
    */
   portalContainer?: Element;
