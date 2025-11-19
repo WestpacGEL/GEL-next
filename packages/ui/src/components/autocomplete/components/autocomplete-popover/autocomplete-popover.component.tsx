@@ -47,7 +47,7 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
         }}
         ref={popoverRef}
         className={clsx(
-          'z-10 my-1 max-h-[400px] overflow-auto rounded-xl border border-border-muted-soft shadow-[0_2px_12px_rgba(0,0,0,0.2)]',
+          'z-10 my-1 rounded-xl border border-border-muted-soft shadow-[0_2px_12px_rgba(0,0,0,0.2)]',
           className,
         )}
       >
