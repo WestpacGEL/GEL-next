@@ -7,7 +7,6 @@ import { styles as optionStyles } from './option.styles.js';
 import { OptionProps } from './option.types.js';
 
 export function Option({ selectionMode, filterText, item, state }: OptionProps) {
-  console.log('item', item);
   const ref = useRef<HTMLLIElement>(null);
   const { optionProps, isDisabled, isSelected, isFocused } = useOption({ key: item.key }, state, ref);
   const { isFocusVisible } = useFocusVisible();
