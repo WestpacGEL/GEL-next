@@ -7,7 +7,8 @@ export const styles = tv({
     label: 'block text-left text-sm font-medium text-gray-700',
     control: 'form-control relative inline-flex w-full flex-row overflow-hidden rounded-md',
     input: 'w-full outline-none',
-    selection: 'flex-1 text-left',
+    selection: 'flex flex-1 items-center overflow-hidden pr-4.5 text-left whitespace-nowrap',
+    selectionSpan: 'w-full overflow-hidden text-ellipsis',
     hint: 'typography-body-10 text-text-muted',
     searchInputWrapper: 'border-b border-b-border-muted-soft p-2',
     button:

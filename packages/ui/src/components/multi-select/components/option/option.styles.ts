@@ -2,21 +2,34 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    root: 'group flex cursor-pointer justify-between gap-1 bg-background-white-pale p-2 text-sm text-text-body transition-colors',
-    checkbox: 'flex size-4 items-center justify-center rounded border border-border-muted-strong',
-    body: '-mt-0.5 flex-1',
+    root: 'group flex cursor-pointer justify-between gap-1 bg-background-white-pale p-2 text-sm text-text-body transition-colors hover:bg-surface-muted-faint',
+    checkbox: 'size-4',
+    body: '-mt-0.5 flex flex-1 items-center',
     flexZero: 'flex-0',
   },
   variants: {
+    selectionMode: {
+      none: {},
+      multiple: {
+        checkbox: 'flex items-center justify-center rounded border border-border-muted-strong',
+      },
+      single: {
+        checkbox: '',
+      },
+    },
     focused: {
       true: {
-        // eslint-disable-next-line better-tailwindcss/no-unregistered-classes
-        root: 'is-focused bg-surface-hero text-text-mono',
+        root: 'bg-surface-muted-faint',
+      },
+    },
+    isFocusVisible: {
+      true: {
+        root: 'focus-outline -outline-offset-2',
       },
     },
     selected: {
       true: {
-        root: 'font-bold',
+        root: '',
       },
     },
     disabled: {
@@ -31,7 +44,7 @@ export const styles = tv({
       selected: true,
       focused: true,
       className: {
-        root: 'text-text-mono',
+        root: '',
       },
     },
   ],

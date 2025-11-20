@@ -1,10 +1,11 @@
-import React, { useRef, useState, useMemo, useEffect, useCallback } from 'react';
-import { useButton, useOverlayTrigger } from 'react-aria';
+import React, { useRef, useState, useMemo, useEffect, useCallback, KeyboardEvent } from 'react';
+import { mergeProps, useButton, useFocusRing, useOverlayTrigger } from 'react-aria';
 import { useListState, useOverlayTriggerState } from 'react-stately';
 
-import { DropDownIcon, SearchIcon } from '../../components/icon/index.js';
+import { ClearIcon, DropDownIcon, SearchIcon } from '../../components/icon/index.js';
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { Button } from '../button/button.component.js';
 import { Input } from '../input/input.component.js';
 import { InputGroup } from '../input-group/input-group.component.js';
 
@@ -19,21 +20,35 @@ export { Item, Section } from 'react-stately';
 export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   size = 'medium',
   listBoxProps,
+  selectionMode = 'multiple',
+  selectedKeys,
+  onSelectionChange,
   ...props
 }: MultiSelectProps<T>) {
   const breakpoint = useBreakpoint();
   // local filter string for the search input
   const [filterText, setFilterText] = useState('');
+  // const filter = useFilter({ sensitivity: 'base' });
 
   // useListState supports selectionMode: 'multiple' and accepts a filter function
   const listState = useListState<T>({
     ...props,
-    selectionMode: 'multiple',
+    selectedKeys,
+    selectionMode,
+    onSelectionChange,
+    // In theory this should work but there is a bug when there is a section
+    // https://github.com/adobe/react-spectrum/issues/4930
+    // filter: nodes => {
+    //   if (!filterText) return nodes;
+    //   return [...nodes].filter(node => {
+    //     return filter.contains(node.textValue ?? '', filterText);
+    //   });
+    // },
   });
   const overlayState = useOverlayTriggerState({});
 
   // refs
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const listBoxRef = useRef<HTMLUListElement | null>(null);
   const popoverRef = useRef<HTMLDivElement | null>(null);
@@ -41,6 +56,8 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   // overlay trigger (useOverlayTrigger gives the props to open/close overlays)
   const { triggerProps } = useOverlayTrigger({ type: 'listbox' }, overlayState, buttonRef);
   const { buttonProps } = useButton(triggerProps, buttonRef);
+  const { focusProps, isFocusVisible } = useFocusRing();
+  const finalButtonProps = mergeProps(props, focusProps, buttonProps);
 
   // React Aria does not check for escape key press unless panel is focused so this is needed
   const keyHandler = useCallback(
@@ -55,7 +72,8 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     return () => {
       window.document.removeEventListener('keydown', keyHandler);
     };
-  }, [keyHandler]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (overlayState.isOpen) {
@@ -67,15 +85,16 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
 
   const styles = multiSelectStyles({
     size: resolveResponsiveVariant(size, breakpoint),
+    isFocusVisible,
   });
 
   // Helper: get an array of selected nodes (for rendering tags)
   const selectedNodes = useMemo(() => {
     const keys = [...listState.selectionManager.selectedKeys];
     return keys.map(key => listState.collection.getItem(key)).filter(key => !!key);
-  }, [listState.selectionManager.selectedKeys, listState.collection]);
+  }, [listState]);
 
-  const handleInputKeyDown = useCallback((e: React.KeyboardEvent) => {
+  const handleInputKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       listBoxRef.current?.focus();
@@ -84,15 +103,30 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
 
   return (
     <div className={styles.root()}>
-      <button className={styles.control()} ref={buttonRef} {...buttonProps}>
-        {/* Selected items */}
-        <div className={styles.selection()}>{selectedNodes.map(node => node.textValue || '').join(', ')}</div>
+      <div className="relative w-full">
+        <button className={styles.control()} ref={buttonRef} {...finalButtonProps}>
+          {/* Selected items */}
+          <div className={styles.selection()}>
+            <span className={styles.selectionSpan()}>{selectedNodes.map(node => node.textValue || '').join(', ')}</span>
+          </div>
 
-        {/* dropdown toggle */}
-        <div className={styles.button()}>
-          <DropDownIcon color="muted" size="small" aria-hidden="true" />
-        </div>
-      </button>
+          {/* dropdown toggle */}
+          <div className={styles.button()}>
+            <DropDownIcon color="muted" size="small" aria-hidden="true" />
+          </div>
+        </button>
+        {selectedNodes.length > 0 && (
+          <Button
+            className="absolute top-0 right-6.5 bottom-0 flex !h-auto items-center justify-center"
+            look="unstyled"
+            onClick={() => {
+              listState.selectionManager.clearSelection();
+            }}
+          >
+            <ClearIcon className="-mt-0.5" size="small" color="muted" />
+          </Button>
+        )}
+      </div>
       {selectedNodes.length > 0 && (
         <p className={styles.hint()}>
           {selectedNodes.length} item{selectedNodes.length > 1 && 's'} selected
@@ -114,6 +148,23 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
               before={{
                 icon: SearchIcon,
               }}
+              after={
+                filterText.length > 0 && {
+                  inset: true,
+                  element: (
+                    <Button
+                      onClick={() => {
+                        setFilterText('');
+                        inputRef.current?.focus();
+                      }}
+                      look="unstyled"
+                      className="-mt-0.5 px-2"
+                    >
+                      <ClearIcon color="muted" size="small" />
+                    </Button>
+                  ),
+                }
+              }
             >
               <Input
                 ref={inputRef}
@@ -125,7 +176,13 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
               />
             </InputGroup>
           </div>
-          <ListBox {...listBoxProps} filterText={filterText} listBoxRef={listBoxRef} state={listState} />
+          <ListBox
+            {...listBoxProps}
+            selectionMode={selectionMode}
+            filterText={filterText}
+            listBoxRef={listBoxRef}
+            state={listState}
+          />
         </Popover>
       )}
     </div>

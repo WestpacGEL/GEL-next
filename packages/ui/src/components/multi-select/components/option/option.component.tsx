@@ -1,21 +1,24 @@
-import React from 'react';
-import { useFilter, useOption } from 'react-aria';
+import React, { useRef } from 'react';
+import { useFilter, useFocusVisible, useOption } from 'react-aria';
 
 import { TickIcon } from '../../../icon/index.js';
 
 import { styles as optionStyles } from './option.styles.js';
 import { OptionProps } from './option.types.js';
 
-export function Option({ filterText, item, state }: OptionProps) {
-  const ref = React.useRef<HTMLLIElement>(null);
-
+export function Option({ selectionMode, filterText, item, state }: OptionProps) {
+  console.log('item', item);
+  const ref = useRef<HTMLLIElement>(null);
   const { optionProps, isDisabled, isSelected, isFocused } = useOption({ key: item.key }, state, ref);
+  const { isFocusVisible } = useFocusVisible();
   const filter = useFilter({ sensitivity: 'base' });
 
   const styles = optionStyles({
     focused: isFocused,
     selected: isSelected,
     disabled: isDisabled,
+    selectionMode,
+    isFocusVisible: isFocused && isFocusVisible,
   });
 
   if (filterText && !filter.contains(item.textValue, filterText)) {
@@ -27,7 +30,9 @@ export function Option({ filterText, item, state }: OptionProps) {
       <div className={styles.flexZero()}>
         <div className={styles.checkbox()}>{isSelected && <TickIcon size="small" aria-hidden="true" />}</div>
       </div>
-      <div className={styles.body()}>{item.rendered}</div>
+      <div className={styles.body()}>
+        <div>{item.rendered}</div>
+      </div>
     </li>
   );
 }

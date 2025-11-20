@@ -17,5 +17,5 @@ export type MultiSelectProps<T extends object = object> = {
   /**
    * listbox props
    */
-  listBoxProps?: Omit<ListBoxProps, 'state'>;
+  listBoxProps?: Omit<ListBoxProps, 'state' | 'selectionMode'>;
 } & ListProps<T>;
