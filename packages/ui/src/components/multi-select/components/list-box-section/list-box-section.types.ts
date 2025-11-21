@@ -5,7 +5,6 @@ import type { ListState } from 'react-stately';
 
 export type SectionProps = {
   selectionMode: MultiSelectProps['selectionMode'];
-  filterText?: string;
   section: Node<unknown>;
   state: ListState<unknown>;
 };

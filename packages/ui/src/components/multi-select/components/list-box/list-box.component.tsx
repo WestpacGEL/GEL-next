@@ -34,9 +34,11 @@ export function ListBox({ filterText, ...props }: ListBoxProps) {
     [state.selectionManager.selectedKeys],
   );
 
+  const stateCollection = [...state.collection];
+
   return (
     <ul {...listBoxProps} ref={listBoxRef} className={styles.ul()}>
-      {selectionMode === 'multiple' && (
+      {selectionMode === 'multiple' && stateCollection.length > 0 && (
         <li
           className={`border-b border-b-border-muted-soft ${isFocused ? 'bg-background-faint-pale' : ''}`}
           {...optionProps}
@@ -44,34 +46,34 @@ export function ListBox({ filterText, ...props }: ListBoxProps) {
           <button
             className="flex w-full cursor-pointer items-center gap-1 p-2"
             onClick={() => {
-              if (!filterText) {
-                if (!allItemsAreSelected) {
-                  return state.selectionManager.selectAll();
-                }
-                return state.selectionManager.clearSelection();
+              if (!allItemsAreSelected) {
+                // This is because selectAll send a string called 'all' when it is called.
+                state.selectionManager.setSelectedKeys(state.selectionManager.collection.getKeys());
+                return;
               }
+              return state.selectionManager.clearSelection();
             }}
           >
             <div className={styles.checkbox()}>
               {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" />}
-              {!allItemsAreSelected && withOneSelectionOrMore && <p>-</p>}
+              {!allItemsAreSelected && withOneSelectionOrMore && (
+                <div role="presentation" className="block w-3/5 border-t-2 border-t-border-muted" />
+              )}
             </div>
             <span>Select all</span>
           </button>
         </li>
       )}
-      {[...state.collection].map(item =>
-        item.type === 'section' ? (
-          <ListBoxSection
-            selectionMode={selectionMode}
-            filterText={filterText}
-            key={item.key}
-            section={item}
-            state={state}
-          />
-        ) : (
-          <Option selectionMode={selectionMode} filterText={filterText} key={item.key} item={item} state={state} />
-        ),
+      {stateCollection.length > 0 ? (
+        [...state.collection].map(item =>
+          item.type === 'section' ? (
+            <ListBoxSection selectionMode={selectionMode} key={item.key} section={item} state={state} />
+          ) : (
+            <Option selectionMode={selectionMode} key={item.key} item={item} state={state} />
+          ),
+        )
+      ) : (
+        <p className="px-2 py-4 typography-body-9 text-text-body">No items found</p>
       )}
     </ul>
   );

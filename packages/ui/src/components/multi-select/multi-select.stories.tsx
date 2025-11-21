@@ -42,7 +42,25 @@ const OTHER_OPTIONS = [
  */
 export const Default = (props: PaginationProps) => {
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+  return (
+    <div className="flex flex-col gap-2">
+      <MultiSelect
+        listBoxProps={{ 'aria-label': 'multiselect options' }}
+        selectedKeys={selectedKeys}
+        onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+      >
+        {OPTIONS.map(option => (
+          <Item key={option.id} textValue={option.name}>
+            {option.name} <p>My paragraph s</p>
+          </Item>
+        ))}
+      </MultiSelect>
+    </div>
+  );
+};
 
+export const WithSection = (props: PaginationProps) => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
   return (
     <div className="flex flex-col gap-2">
       <MultiSelect
@@ -52,6 +70,13 @@ export const Default = (props: PaginationProps) => {
       >
         <Section title="Transaction">
           {OPTIONS.map(option => (
+            <Item key={option.id} textValue={option.name}>
+              {option.name} <p>My paragraph s</p>
+            </Item>
+          ))}
+        </Section>
+        <Section title="Another Section">
+          {OTHER_OPTIONS.map(option => (
             <Item key={option.id} textValue={option.name}>
               {option.name} <p>My paragraph s</p>
             </Item>

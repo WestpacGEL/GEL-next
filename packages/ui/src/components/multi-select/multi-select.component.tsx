@@ -1,6 +1,6 @@
-import React, { useRef, useState, useMemo, useEffect, useCallback, KeyboardEvent } from 'react';
-import { mergeProps, useButton, useFocusRing, useOverlayTrigger } from 'react-aria';
-import { useListState, useOverlayTriggerState } from 'react-stately';
+import React, { useRef, useState, useMemo, useEffect, useCallback, KeyboardEvent, Children, ReactElement } from 'react';
+import { mergeProps, useButton, useFilter, useFocusRing, useOverlayTrigger } from 'react-aria';
+import { ItemProps, SectionProps, useListState, useOverlayTriggerState } from 'react-stately';
 
 import { ClearIcon, DropDownIcon, SearchIcon } from '../../components/icon/index.js';
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
@@ -25,14 +25,59 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   onSelectionChange,
   ...props
 }: MultiSelectProps<T>) {
+  const isItemElement = useCallback((el: ReactElement<any>): el is ReactElement<ItemProps<T>> => {
+    return !!el.props && 'textValue' in el.props;
+  }, []);
+
+  const isSectionElement = useCallback((el: ReactElement<any>): el is ReactElement<SectionProps<T>> => {
+    return !!el.props && 'children' in el.props && !('textValue' in el.props);
+  }, []);
+
   const breakpoint = useBreakpoint();
   // local filter string for the search input
   const [filterText, setFilterText] = useState('');
-  // const filter = useFilter({ sensitivity: 'base' });
+  const filter = useFilter({ sensitivity: 'base' });
 
-  // useListState supports selectionMode: 'multiple' and accepts a filter function
+  const filteredChildren = useMemo(() => {
+    const newChildren: ReactElement[] = [];
+
+    Children.forEach(props.children, child => {
+      if (!React.isValidElement(child)) return;
+
+      if (isItemElement(child)) {
+        if (filter.contains(child.props.textValue ?? '', filterText)) {
+          newChildren.push(child);
+        }
+        return;
+      }
+
+      if (isSectionElement(child)) {
+        const subItems: ReactElement[] = [];
+
+        Children.forEach(child.props.children, sub => {
+          if (React.isValidElement(sub) && isItemElement(sub)) {
+            if (filter.contains(sub.props.textValue ?? '', filterText)) {
+              subItems.push(sub);
+            }
+          }
+        });
+
+        if (subItems.length > 0) {
+          newChildren.push(
+            React.cloneElement(child, {
+              children: subItems,
+            }),
+          );
+        }
+      }
+    });
+
+    return newChildren;
+  }, [props.children, isItemElement, isSectionElement, filter, filterText]);
+
   const listState = useListState<T>({
     ...props,
+    children: filteredChildren,
     selectedKeys,
     selectionMode,
     onSelectionChange,
@@ -90,9 +135,30 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
 
   // Helper: get an array of selected nodes (for rendering tags)
   const selectedNodes = useMemo(() => {
-    const keys = [...listState.selectionManager.selectedKeys];
-    return keys.map(key => listState.collection.getItem(key)).filter(key => !!key);
-  }, [listState]);
+    if (!selectedKeys || typeof selectedKeys === 'string') {
+      return [];
+    }
+    const items: { key: string | null; textValue?: string }[] = [];
+
+    Children.forEach(props.children, child => {
+      if (!React.isValidElement(child)) return;
+
+      if (isItemElement(child)) {
+        items.push({ ...child.props, key: child.key });
+        return;
+      }
+
+      if (isSectionElement(child)) {
+        Children.forEach(child.props.children, sub => {
+          if (React.isValidElement(sub) && isItemElement(sub)) {
+            items.push({ ...sub.props, key: sub.key });
+          }
+        });
+      }
+    });
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
+    return [...selectedKeys].map(key => items.find(item => item.key === key));
+  }, [isItemElement, isSectionElement, props.children, selectedKeys]);
 
   const handleInputKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
@@ -107,7 +173,9 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
         <button className={styles.control()} ref={buttonRef} {...finalButtonProps}>
           {/* Selected items */}
           <div className={styles.selection()}>
-            <span className={styles.selectionSpan()}>{selectedNodes.map(node => node.textValue || '').join(', ')}</span>
+            <span className={styles.selectionSpan()}>
+              {selectedNodes.map(node => node?.textValue || '').join(', ')}
+            </span>
           </div>
 
           {/* dropdown toggle */}
@@ -142,6 +210,8 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
           isNonModal
           placement="bottom"
           className={styles.popover()}
+          shouldFlip
+          shouldCloseOnInteractOutside={() => false}
         >
           <div className={styles.searchInputWrapper()}>
             <InputGroup

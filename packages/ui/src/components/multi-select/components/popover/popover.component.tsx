@@ -26,7 +26,6 @@ export function Popover(props: PopoverProps) {
       ...otherProps,
       popoverRef,
       isNonModal,
-      shouldFlip: false,
     },
     state,
   );
