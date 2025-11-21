@@ -13,8 +13,7 @@ export function ModalBackdrop({ zIndex = 100, portalContainer, size, compact, ..
 
   const ref = useRef(null);
   const styles = backdropStyles({
-    fullscreen: size === 'full',
-    fluid: size === 'fluid',
+    size,
     compact: compact && (size === 'md' || size === 'lg'),
   });
 

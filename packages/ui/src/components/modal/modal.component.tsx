@@ -11,10 +11,9 @@ export function Modal({
   title,
   role,
   body,
-  size,
+  size = 'md',
   className,
   fullscreen,
-  scrollingBodyRef,
   compact = false,
   ...props
 }: ModalProps) {
@@ -28,7 +27,6 @@ export function Modal({
         body={body}
         size={size}
         className={className}
-        scrollingBodyRef={scrollingBodyRef}
         compact={compact}
       >
         {children}

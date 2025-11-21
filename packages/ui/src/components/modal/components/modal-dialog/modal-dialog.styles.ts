@@ -10,7 +10,7 @@ export const styles = tv(
     variants: {
       size: {
         full: {
-          base: 'max-h-screen w-full flex-1',
+          base: 'h-screen max-h-screen w-full flex-1 rounded-none',
           close: 'p-2',
           title: 'px-4 py-3',
         },
@@ -27,7 +27,7 @@ export const styles = tv(
           title: 'px-5',
         },
         fluid: {
-          base: 'w-full',
+          base: 'w-screen',
           title: 'px-5',
         },
       },

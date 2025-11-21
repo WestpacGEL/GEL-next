@@ -3,9 +3,9 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'flex gap-1 bg-white',
+      base: 'flex gap-1 rounded-b-[3px] bg-white',
       primaryBtn: '',
-      secondaryBtn: 'no-underline hover:underline',
+      secondaryBtn: '',
     },
     variants: {
       size: {
