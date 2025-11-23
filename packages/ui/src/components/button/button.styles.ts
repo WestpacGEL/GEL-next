@@ -33,7 +33,7 @@ export const styles = tv(
         },
         hero: { base: 'border border-hero bg-hero text-white hover:bg-hero-70 active:bg-hero-50' },
         faint: { base: 'border border-borderDark bg-light text-muted hover:bg-white active:bg-white' },
-        link: { base: 'px-0 text-link underline' },
+        link: { base: 'text-link underline' },
         unstyled: { base: 'p-0 text-left' },
       },
       soft: {
@@ -52,6 +52,9 @@ export const styles = tv(
       isFocusVisible: {
         true: { base: 'focus-outline' },
         false: { base: 'outline-none' },
+      },
+      removeLinkPadding: {
+        true: '',
       },
     },
     compoundSlots: [
@@ -72,6 +75,12 @@ export const styles = tv(
         look: 'faint',
         soft: true,
         className: 'hover:bg-light active:bg-light',
+      },
+      {
+        slots: ['base'],
+        look: 'link',
+        removeLinkPadding: true,
+        className: 'px-0',
       },
       {
         slots: ['iconBefore'],
