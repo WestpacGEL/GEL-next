@@ -35,25 +35,26 @@ npm i @westpac/ui @westpac/style-config
 Create a `postcss.config.mjs` on the root of your application as follows.
 
 ```js
-export default {
-  plugins: {
-    '@tailwindcss/postcss': {},
-  },
-};
+import { postcssConfig } from '@westpac/style-config/postcss';
+
+export default postcssConfig;
 ```
 
 In your main CSS file, import the Tailwind directives and GEL styles:
 
 ```css
 @import 'tailwindcss';
+/* Tailwind setup */
+@import '@westpac/style-config/tailwind';
+/* Other setups */
 @import '@westpac/style-config';
 ```
 
 For brand theming, import the required brand stylesheets:
 
 ```css
-@import '@westpac/style-config/theme-wbc';
-@import '@westpac/style-config/theme-stg';
+@import '@westpac/style-config/themes/wbc.css';
+@import '@westpac/style-config/themes/stg.css';
 ```
 
 If you have initialized your project with Nx build system follow the official [Nx tailwind documentation](https://nx.dev/recipes/react/using-tailwind-css-in-react#manual-setup-instructions) to configure tailwind.
