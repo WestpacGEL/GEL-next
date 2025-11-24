@@ -16,8 +16,8 @@ export function ModalDialogFooter({
   secondaryOnClick,
   ...props
 }: ModalDialogFooterProps) {
-  const { size, canScroll, compact } = useModalDialogContext();
-  const styles = modalFooterStyles({ size, canScroll, compact });
+  const { size, compact } = useModalDialogContext();
+  const styles = modalFooterStyles({ size, compact });
 
   return (
     <div className={styles.base({ className })} {...props}>
