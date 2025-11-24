@@ -29,7 +29,7 @@ The GEL is separated out into 2 packages.
 Install the GEL packages using preferred package manager (`npm`, `yarn` or `pnpm`):
 
 ```
-npm i @westpac/ui @westpac/style-config
+npm i @westpac/ui@canary @westpac/style-config@canary
 ```
 
 Create a `postcss.config.mjs` on the root of your application as follows.
@@ -48,6 +48,8 @@ In your main CSS file, import the Tailwind directives and GEL styles:
 @import '@westpac/style-config/tailwind';
 /* Other setups */
 @import '@westpac/style-config';
+/* Register GEL components source for tailwind */
+@source "<relative_path>/node_modules/@westpac/ui/src";
 ```
 
 For brand theming, import the required brand stylesheets:

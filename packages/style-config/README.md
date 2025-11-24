@@ -18,7 +18,7 @@ This package serves as the single source of truth for design consistency across 
 Install the GEL style config using your preferred package manager i.e. `npm`, `yarn` or `pnpm`.
 
 ```sh
-npm i @westpac/style-config
+npm i @westpac/style-config@canary
 ```
 
 If using tailwind also install the following:
