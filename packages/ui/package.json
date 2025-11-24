@@ -287,6 +287,7 @@
     "motion": "~12.23.12",
     "react-aria": "~3.44.0",
     "react-stately": "~3.42.0",
+    "tailwind-merge": "~3.4.0",
     "tailwind-variants": "~3.1.1",
     "zustand": "~4.5.4"
   },

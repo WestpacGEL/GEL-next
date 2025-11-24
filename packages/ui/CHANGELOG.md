@@ -31,6 +31,8 @@ npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tail
 @import '@westpac/style-config/tailwind';
 /* Other setups */
 @import '@westpac/style-config';
+/* Register GEL components source for Tailwind */
+@source "<relative_path>/node_modules/@westpac/ui/src";
 
 /* For brand theming, import the required brand stylesheets: */
 @import '@westpac/style-config/themes/wbc.css';

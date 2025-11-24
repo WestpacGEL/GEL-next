@@ -48,6 +48,8 @@ In your main CSS file, import the Tailwind directives and GEL styles:
 @import '@westpac/style-config/tailwind';
 /* Other setups */
 @import '@westpac/style-config';
+/* Register GEL components source for tailwind */
+@source "<relative_path>/node_modules/@westpac/ui/src";
 ```
 
 For brand theming, import the required brand stylesheets:
