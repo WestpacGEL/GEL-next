@@ -20,7 +20,7 @@ We are introducing a new architecture separating UI (@westpac/ui) components fro
 2. Install the updated dependencies:
 
 ```bash
-npm i @westpac/ui @westpac/style-config tailwindcss@4 postcss tailwind-variants@~3.1.1
+npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tailwind-variants@~3.1.1
 ```
 
 3. Import global styles in your main CSS file:
