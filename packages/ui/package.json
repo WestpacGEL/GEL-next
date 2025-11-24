@@ -2,7 +2,6 @@
   "name": "@westpac/ui",
   "version": "1.0.0-canary.1",
   "license": "MIT",
-  "private": true,
   "sideEffects": false,
   "type": "module",
   "typesVersions": {

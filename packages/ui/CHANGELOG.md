@@ -27,11 +27,14 @@ npm i @westpac/ui @westpac/style-config tailwindcss@4 postcss tailwind-variants@
 
 ```css
 @import 'tailwindcss';
+/* Tailwind setup */
+@import '@westpac/style-config/tailwind';
+/* Other setups */
 @import '@westpac/style-config';
 
 /* For brand theming, import the required brand stylesheets: */
-@import '@westpac/style-config/theme-wbc';
-@import '@westpac/style-config/theme-stg';
+@import '@westpac/style-config/themes/wbc.css';
+@import '@westpac/style-config/themes/stg.css';
 
 /* Also the fonts required for each theme: */
 /* WBC fonts */
