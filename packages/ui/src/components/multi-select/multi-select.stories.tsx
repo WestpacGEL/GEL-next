@@ -89,18 +89,23 @@ export const WithSection = (props: PaginationProps) => {
 /**
  * > Sizes example
  */
+
+const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
 export const Sizes = (props: PaginationProps) => {
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
 
   return (
     <div className="flex flex-col gap-2">
-      {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
+      {SIZES.map(size => (
         <div key={size}>
           <p className="mb-2 typography-body-10 font-bold text-text-body uppercase">{size}</p>
           <MultiSelect
+            key={size}
             size={size}
             selectedKeys={selectedKeys}
-            onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+            onSelectionChange={keys => {
+              setSelectedKeys(keys as Set<string>);
+            }}
           >
             <Section title="Transaction">
               {OPTIONS.map(option => (
@@ -143,7 +148,7 @@ export const SingleSelect = (props: PaginationProps) => {
             <Section title="Transaction">
               {OPTIONS.map(option => (
                 <Item key={option.id} textValue={option.name}>
-                  {option.name} <p>My paragraph s</p>
+                  {option.name} <p>My paragraph</p>
                 </Item>
               ))}
             </Section>

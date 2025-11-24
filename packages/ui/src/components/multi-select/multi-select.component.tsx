@@ -1,5 +1,15 @@
-import React, { useRef, useState, useMemo, useEffect, useCallback, KeyboardEvent, Children, ReactElement } from 'react';
-import { mergeProps, useButton, useFilter, useFocusRing, useOverlayTrigger } from 'react-aria';
+import React, {
+  useRef,
+  useState,
+  useMemo,
+  useEffect,
+  useCallback,
+  KeyboardEvent,
+  Children,
+  ReactElement,
+  memo,
+} from 'react';
+import { Key, mergeProps, useButton, useFilter, useFocusRing, useOverlayTrigger } from 'react-aria';
 import { ItemProps, SectionProps, useListState, useOverlayTriggerState } from 'react-stately';
 
 import { ClearIcon, DropDownIcon, SearchIcon } from '../../components/icon/index.js';
@@ -17,7 +27,7 @@ import type { MultiSelectProps, MultiSelectValue } from './multi-select.types.js
 
 export { Item, Section } from 'react-stately';
 
-export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
+export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   size = 'medium',
   listBoxProps,
   selectionMode = 'multiple',
@@ -90,13 +100,22 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     //   });
     // },
   });
-  const overlayState = useOverlayTriggerState({});
 
   // refs
   const inputRef = useRef<HTMLInputElement>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const listBoxRef = useRef<HTMLUListElement | null>(null);
   const popoverRef = useRef<HTMLDivElement | null>(null);
+
+  const overlayState = useOverlayTriggerState({
+    onOpenChange: isOpen => {
+      if (isOpen) {
+        requestAnimationFrame(() => {
+          inputRef.current?.focus();
+        });
+      }
+    },
+  });
 
   // overlay trigger (useOverlayTrigger gives the props to open/close overlays)
   const { triggerProps } = useOverlayTrigger({ type: 'listbox' }, overlayState, buttonRef);
@@ -107,6 +126,7 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   // React Aria does not check for escape key press unless panel is focused so this is needed
   const keyHandler = useCallback(
     (event: globalThis.KeyboardEvent) => {
+      event.stopPropagation();
       if (overlayState.isOpen && event.key === 'Escape') overlayState.close();
     },
     [overlayState],
@@ -120,14 +140,6 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    if (overlayState.isOpen) {
-      requestAnimationFrame(() => {
-        inputRef.current?.focus();
-      });
-    }
-  }, [overlayState.isOpen]);
-
   const styles = multiSelectStyles({
     size: resolveResponsiveVariant(size, breakpoint),
     isFocusVisible,
@@ -138,7 +150,7 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     if (!selectedKeys || typeof selectedKeys === 'string') {
       return [];
     }
-    const items: { key: string | null; textValue?: string }[] = [];
+    const items: { key: Key | null; textValue?: string }[] = [];
 
     Children.forEach(props.children, child => {
       if (!React.isValidElement(child)) return;
@@ -156,7 +168,7 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
         });
       }
     });
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
+
     return [...selectedKeys].map(key => items.find(item => item.key === key));
   }, [isItemElement, isSectionElement, props.children, selectedKeys]);
 
@@ -248,6 +260,8 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
           </div>
           <ListBox
             {...listBoxProps}
+            aria-label="multiselect list"
+            escapeKeyBehavior="none"
             selectionMode={selectionMode}
             filterText={filterText}
             listBoxRef={listBoxRef}
@@ -258,3 +272,4 @@ export function MultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     </div>
   );
 }
+export const MultiSelect = memo(BaseMultiSelect);
