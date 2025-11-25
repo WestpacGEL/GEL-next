@@ -128,14 +128,20 @@ We introduced new token names to support a multi-brand + dual-theme system.
 To support migration, a codemod is available to automate this transition.
 
 ```bash
-npx jscodeshift -t https://raw.githubusercontent.com/WestpacGEL/GEL-next/refs/heads/main/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs "to/your/files/**/*.tsx"
+npx jscodeshift --parser=tsx -t node_modules/@westpac/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs <path>/**/*.tsx
 ```
 
-This will apply the codemod to all .tsx files in your project.
+NOTE: The parser parameter might be different based on your project, if you see a lot of errors, try another parser (babel, flow, ts, tsx)
 
-For classes we are unable to replace with the equivalent token the code will inject a `[REPLACE_TOKEN]` string where it will require working with your project designer to manual update it to the correct color token.
+This will apply the codemod to all specified files in your project. You may have to run this script more than once depending on your project structure and the files you store styles in.
 
-For more information please go to our [Tokens section](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens)
+For classes we are unable to replace with the equivalent token the code will inject a `[REPLACE_TOKEN]` string where it will require working with your project designer to manually update it to the correct color token.
+
+If you want to test the upgrade while waiting for your designers we recommened replacing with a token that is close or the hex value i.e. text-black = text-[#000].
+
+To see all the new tokens you can check the canary branch [Storybook](https://gel-next-storybook-git-release-100-westpacgel.vercel.app/?path=/docs/foundation-colours--docs)
+
+You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-next/blob/release/1.0.0/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs)
 
 ---
 
