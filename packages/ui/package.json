@@ -292,7 +292,7 @@
     "colorjs.io": "~0.4.5",
     "lodash.throttle": "~4.1.1",
     "motion": "~12.23.12",
-    "react-aria": "~3.41.1",
+    "react-aria": "~3.44.0",
     "react-stately": "~3.39.0",
     "zustand": "~4.5.4"
   },

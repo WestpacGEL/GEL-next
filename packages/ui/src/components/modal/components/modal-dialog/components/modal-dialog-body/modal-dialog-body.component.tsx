@@ -37,12 +37,7 @@ export function ModalDialogBody({ className, children, ...props }: ModalDialogBo
   }, [scrollingRef]);
 
   return (
-    <div
-      className={styles.base({ className })}
-      ref={scrollingRef}
-      style={{ WebkitOverflowScrolling: 'touch' }}
-      {...props}
-    >
+    <div className={styles.base({ className })} ref={scrollingRef} {...props}>
       {children}
     </div>
   );
