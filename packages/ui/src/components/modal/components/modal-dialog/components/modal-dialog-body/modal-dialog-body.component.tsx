@@ -10,7 +10,7 @@ import { type ModalDialogBodyProps } from './modal-dialog-body.types.js';
 const SCROLL_BUFFER = 10;
 
 export function ModalDialogBody({ className, children, ...props }: ModalDialogBodyProps) {
-  const { size, scrollingRef, canScroll, compact } = useModalDialogContext();
+  const { size, scrollingRef, canScroll, compact, footerPresent } = useModalDialogContext();
   const [scrolled, setScrolled] = useState(false);
   const [scrollAtBottom, setScrollAtBottom] = useState(false);
 
@@ -22,7 +22,7 @@ export function ModalDialogBody({ className, children, ...props }: ModalDialogBo
     }
   }, [scrollingRef]);
 
-  const styles = modalBodyStyles({ size, canScroll, scrolled, scrollAtBottom, compact });
+  const styles = modalBodyStyles({ size, canScroll, scrolled, scrollAtBottom, compact, footerPresent });
 
   useEffect(() => {
     const bodyElement = scrollingRef?.current;

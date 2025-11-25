@@ -6,8 +6,8 @@ export const styles = tv(
     variants: {
       size: {
         full: { base: 'px-4 py-3' },
-        lg: { base: 'px-12 pb-6' },
-        md: { base: 'px-7 pb-5' },
+        lg: { base: 'px-12 pb-12' },
+        md: { base: 'px-7 pb-7' },
         sm: { base: 'px-5 pb-5' },
         fluid: { base: 'px-5 pb-5' },
       },
@@ -26,6 +26,10 @@ export const styles = tv(
         true: '',
         false: '',
       },
+      footerPresent: {
+        true: '',
+        false: '',
+      },
     },
     compoundSlots: [
       {
@@ -39,6 +43,18 @@ export const styles = tv(
         size: ['md'],
         compact: true,
         className: 'overflow-y-scroll px-5 pb-2',
+      },
+      {
+        slots: ['base'],
+        size: ['md'],
+        footerPresent: true,
+        className: 'pb-5',
+      },
+      {
+        slots: ['base'],
+        size: ['lg'],
+        footerPresent: true,
+        className: 'pb-6',
       },
     ],
   },

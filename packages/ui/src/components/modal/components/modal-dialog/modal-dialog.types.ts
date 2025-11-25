@@ -53,6 +53,14 @@ export type ModalDialogContextValue = {
    */
   compact?: boolean;
   /**
+   * Whether footer is present for styling
+   */
+  footerPresent?: boolean;
+  /**
+   * Sets whether footer is present for styling
+   */
+  setFooterPresent?: (present: boolean) => void;
+  /**
    * Size of dialog
    */
   size?: Variants['size'];

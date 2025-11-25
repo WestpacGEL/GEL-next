@@ -22,6 +22,7 @@ export function ModalDialog({ className, body, onClose, size, compact, ...props 
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = dialogStyles({ size, isFocusVisible, compact });
   const [canScroll, setCanScroll] = useState(false);
+  const [footerPresent, setFooterPresent] = useState<boolean>(false);
 
   const ref = useRef(null);
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -65,7 +66,9 @@ export function ModalDialog({ className, body, onClose, size, compact, ...props 
         </h3>
       )}
 
-      <ModalDialogContext.Provider value={{ size, scrollingRef: bodyRef, canScroll, compact }}>
+      <ModalDialogContext.Provider
+        value={{ size, scrollingRef: bodyRef, canScroll, compact, footerPresent, setFooterPresent }}
+      >
         {body ? <ModalDialogBody>{children}</ModalDialogBody> : children}
       </ModalDialogContext.Provider>
     </div>
