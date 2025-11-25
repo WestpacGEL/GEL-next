@@ -293,7 +293,7 @@
     "lodash.throttle": "~4.1.1",
     "motion": "~12.23.12",
     "react-aria": "~3.44.0",
-    "react-stately": "~3.39.0",
+    "react-stately": "~3.42.0",
     "zustand": "~4.5.4"
   },
   "overrides": {

@@ -374,8 +374,8 @@ importers:
         specifier: ~3.44.0
         version: 3.44.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-stately:
-        specifier: ~3.39.0
-        version: 3.39.0(react@18.3.1)
+        specifier: ~3.42.0
+        version: 3.42.0(react@18.3.1)
       zustand:
         specifier: ~4.5.4
         version: 4.5.7(@types/react@18.3.23)(immer@9.0.21)(react@18.3.1)
@@ -2036,6 +2036,11 @@ packages:
 
   '@react-stately/data@3.13.1':
     resolution: {integrity: sha512-hKEvHCM/nHM6FFJz3gT6Ms85H+qNhXfHDYP/TU7XiDoeVHzUpj2Yc3xGsIty6/K2k7jrblUj+LuKmdvidd9mug==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+
+  '@react-stately/data@3.14.1':
+    resolution: {integrity: sha512-lDNc4gZ6kVZcrABeeQZPTTnP+1ykNylSvFzAC/Hq1fs8+s54xLRvoENWIyG+yK19N9TIGEoA0AOFG8PoAun43g==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
@@ -6089,6 +6094,11 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
+  react-stately@3.42.0:
+    resolution: {integrity: sha512-lYt2o1dd6dK8Bb4GRh08RG/2u64bSA1cqtRqtw4jEMgxC7Q17RFcIumBbChErndSdLzafEG/UBwV6shOfig6yw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
@@ -9542,6 +9552,12 @@ snapshots:
   '@react-stately/data@3.13.1(react@18.3.1)':
     dependencies:
       '@react-types/shared': 3.30.0(react@18.3.1)
+      '@swc/helpers': 0.5.17
+      react: 18.3.1
+
+  '@react-stately/data@3.14.1(react@18.3.1)':
+    dependencies:
+      '@react-types/shared': 3.32.1(react@18.3.1)
       '@swc/helpers': 0.5.17
       react: 18.3.1
 
@@ -14443,6 +14459,36 @@ snapshots:
       '@react-stately/tooltip': 3.5.5(react@18.3.1)
       '@react-stately/tree': 3.9.0(react@18.3.1)
       '@react-types/shared': 3.30.0(react@18.3.1)
+      react: 18.3.1
+
+  react-stately@3.42.0(react@18.3.1):
+    dependencies:
+      '@react-stately/calendar': 3.9.0(react@18.3.1)
+      '@react-stately/checkbox': 3.7.2(react@18.3.1)
+      '@react-stately/collections': 3.12.8(react@18.3.1)
+      '@react-stately/color': 3.9.2(react@18.3.1)
+      '@react-stately/combobox': 3.12.0(react@18.3.1)
+      '@react-stately/data': 3.14.1(react@18.3.1)
+      '@react-stately/datepicker': 3.15.2(react@18.3.1)
+      '@react-stately/disclosure': 3.0.8(react@18.3.1)
+      '@react-stately/dnd': 3.7.1(react@18.3.1)
+      '@react-stately/form': 3.2.2(react@18.3.1)
+      '@react-stately/list': 3.13.1(react@18.3.1)
+      '@react-stately/menu': 3.9.8(react@18.3.1)
+      '@react-stately/numberfield': 3.10.2(react@18.3.1)
+      '@react-stately/overlays': 3.6.20(react@18.3.1)
+      '@react-stately/radio': 3.11.2(react@18.3.1)
+      '@react-stately/searchfield': 3.5.16(react@18.3.1)
+      '@react-stately/select': 3.8.0(react@18.3.1)
+      '@react-stately/selection': 3.20.6(react@18.3.1)
+      '@react-stately/slider': 3.7.2(react@18.3.1)
+      '@react-stately/table': 3.15.1(react@18.3.1)
+      '@react-stately/tabs': 3.8.6(react@18.3.1)
+      '@react-stately/toast': 3.1.2(react@18.3.1)
+      '@react-stately/toggle': 3.9.2(react@18.3.1)
+      '@react-stately/tooltip': 3.5.8(react@18.3.1)
+      '@react-stately/tree': 3.9.3(react@18.3.1)
+      '@react-types/shared': 3.32.1(react@18.3.1)
       react: 18.3.1
 
   react@18.3.1:
