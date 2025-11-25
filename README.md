@@ -284,10 +284,10 @@ src/ is the folder you want to transform (adjust as needed).
 Example
 
 ```bash
-npx jscodeshift -t https://raw.githubusercontent.com/WestpacGEL/GEL-next/refs/heads/main/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs "to/your/files/**/*.tsx"
+npx jscodeshift --parser=tsx -t node_modules/@westpac/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs <path>/**/*.tsx
 ```
 
-This will apply the update-pagination codemod to all .tsx files in your project.
+This will apply the gel-tokens-v1 codemod to all .tsx files in your project.
 
 ## Documentation
 
