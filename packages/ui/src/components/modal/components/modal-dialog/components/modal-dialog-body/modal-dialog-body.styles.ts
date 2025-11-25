@@ -6,10 +6,10 @@ export const styles = tv(
     variants: {
       size: {
         full: { base: 'px-4 py-3' },
-        lg: { base: 'px-12 pb-3' },
-        md: { base: 'px-7 pb-2' },
-        sm: { base: 'px-5 pb-2' },
-        fluid: { base: 'px-5 pb-2' },
+        lg: { base: 'px-12 pb-6' },
+        md: { base: 'px-7 pb-5' },
+        sm: { base: 'px-5 pb-5' },
+        fluid: { base: 'px-5 pb-5' },
       },
       canScroll: {
         true: {
@@ -30,9 +30,15 @@ export const styles = tv(
     compoundSlots: [
       {
         slots: ['base'],
-        size: ['lg', 'md'],
+        size: ['lg'],
         compact: true,
-        className: 'overflow-auto px-5',
+        className: 'overflow-y-scroll px-5 pb-3',
+      },
+      {
+        slots: ['base'],
+        size: ['md'],
+        compact: true,
+        className: 'overflow-y-scroll px-5 pb-2',
       },
     ],
   },
