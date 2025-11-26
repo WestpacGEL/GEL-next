@@ -31,7 +31,8 @@ export type HeaderProps = {
    */
   isScrolled?: boolean;
   /**
-   * Visually hidden text for left button
+   * Aria-label for the arrow/hamburger button
+   * @default leftIcon === 'arrow' ? 'Back' : 'Menu'
    */
   leftAssistiveText?: string;
   /**

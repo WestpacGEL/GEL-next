@@ -168,6 +168,7 @@ export const WithHamburger: Story = {
     return (
       <>
         <Header leftIcon="hamburger" brand={brand === 'btfg' ? 'wbc' : brand} {...rest} />
+        <p>NOTE: Hamburger button only shows in sm breakpoint or smaller</p>
       </>
     );
   },
@@ -188,6 +189,7 @@ export const WithHamburgerOnClick: Story = {
           brand={brand === 'btfg' ? 'wbc' : brand}
           {...rest}
         />
+        <p>NOTE: Hamburger button only shows in sm breakpoint or smaller</p>
       </>
     );
   },
