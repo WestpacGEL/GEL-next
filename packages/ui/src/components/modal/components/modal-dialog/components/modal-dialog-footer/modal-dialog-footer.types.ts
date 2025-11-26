@@ -21,4 +21,4 @@ export type ModalDialogFooterProps = {
    * onClick for secondary button
    */
   secondaryOnClick?: () => void;
-} & HTMLAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLElement>;

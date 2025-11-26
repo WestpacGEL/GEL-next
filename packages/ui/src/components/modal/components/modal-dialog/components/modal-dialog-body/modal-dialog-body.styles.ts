@@ -13,14 +13,14 @@ export const styles = tv(
       },
       canScroll: {
         true: {
-          base: ' shadow-[0_-6px_6px_0_inset] shadow-border',
+          base: ' shadow-[-1px_-6px_6px_-1px_inset] shadow-black/25',
         },
       },
       scrolled: {
-        true: { base: ' shadow-[0_-6px_6px_0_inset,0_6px_6px_0_inset] shadow-border' },
+        true: { base: ' shadow-[-1px_-6px_6px_-1px_inset,-1px_6px_6px_-1px_inset] shadow-black/25' },
       },
       scrollAtBottom: {
-        true: { base: 'shadow-[0_6px_6px_0_inset,0_0_0_0_inset]' },
+        true: { base: 'shadow-[-1px_6px_6px_-1px_inset,0_0_0_0_inset]' },
       },
       compact: {
         true: '',

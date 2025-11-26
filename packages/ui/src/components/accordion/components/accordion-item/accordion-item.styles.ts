@@ -79,6 +79,12 @@ export const styles = tv(
         rounded: true,
         className: 'group-last:rounded-none',
       },
+      {
+        slots: ['content'],
+        isOpen: true,
+        rounded: true,
+        className: 'group-last:rounded-b',
+      },
       { slots: ['content'], isOpen: true, look: 'lego', className: 'mt-[1px] border-l-[0.375rem] border-r' },
     ],
   },
