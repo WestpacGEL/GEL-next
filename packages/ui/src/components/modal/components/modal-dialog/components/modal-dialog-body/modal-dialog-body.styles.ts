@@ -36,13 +36,13 @@ export const styles = tv(
         slots: ['base'],
         size: ['lg'],
         compact: true,
-        className: 'overflow-y-scroll px-5 pb-3',
+        className: 'overflow-y-auto px-5 pb-3',
       },
       {
         slots: ['base'],
         size: ['md'],
         compact: true,
-        className: 'overflow-y-scroll px-5 pb-2',
+        className: 'overflow-y-auto px-5 pb-2',
       },
       {
         slots: ['base'],
