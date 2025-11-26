@@ -35,8 +35,10 @@ npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tail
 @source "<relative_path>/node_modules/@westpac/ui/src";
 
 /* For brand theming, import the required brand stylesheets: */
-@import '@westpac/style-config/themes/wbc.css';
-@import '@westpac/style-config/themes/stg.css';
+@import '@westpac/style-config/themes/wbc';
+@import '@westpac/style-config/themes/stg';
+@import '@westpac/style-config/themes/bom';
+@import '@westpac/style-config/themes/bsa';
 
 /* Also the fonts required for each theme: */
 /* WBC fonts */
