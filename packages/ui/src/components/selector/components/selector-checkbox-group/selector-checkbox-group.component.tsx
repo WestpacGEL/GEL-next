@@ -15,6 +15,7 @@ import {
 
 export const SelectorCheckboxGroupContext = createContext<SelectorCheckboxGroupContextState>({
   value: [],
+  defaultValue: [],
   isDisabled: false,
   isReadOnly: false,
   isSelected: () => false,

@@ -105,6 +105,8 @@ export function Header({
     </>
   );
 
+  const defaultAssistiveText = leftIcon === 'arrow' ? 'Back' : 'Menu';
+
   return (
     <header className={styles.base({ className })} {...props}>
       <div className={styles.inner()} style={{ maxWidth: fixed ? fixedMaxWidth : undefined }}>
@@ -116,7 +118,7 @@ export function Header({
               iconAfter={ButtonIcon}
               iconSize={leftIcon === 'arrow' ? 'medium' : 'small'}
               onClick={leftOnClick}
-              aria-label={leftAssistiveText}
+              aria-label={leftAssistiveText ?? defaultAssistiveText}
               className={styles.leftButton()}
               iconColor="text"
             />

@@ -22,6 +22,7 @@ function BaseButton(
     iconColor,
     iconSize,
     children,
+    removeLinkPadding,
     ...props
   }: ButtonProps,
   ref: Ref<ButtonRef>,
@@ -36,6 +37,7 @@ function BaseButton(
     justify,
     isFocusVisible,
     hasChildren: !!children,
+    removeLinkPadding,
   });
 
   return (

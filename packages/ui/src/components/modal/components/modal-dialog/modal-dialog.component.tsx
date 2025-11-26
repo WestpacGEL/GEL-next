@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useRef } from 'react';
+import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { useDialog, useFocusRing } from 'react-aria';
 
 import { CloseIcon } from '../../../../components/icon/index.js';
@@ -13,17 +13,45 @@ import { ModalDialogContextValue, type ModalDialogProps } from './modal-dialog.t
 const ModalDialogContext = createContext<ModalDialogContextValue>({ size: 'md' });
 
 export const useModalDialogContext = () => useContext(ModalDialogContext);
+
 /**
  * @private
  */
-export function ModalDialog({ className, body, onClose, size = 'md', ...props }: ModalDialogProps) {
+export function ModalDialog({ className, body, onClose, size, compact, ...props }: ModalDialogProps) {
   const { children } = props;
   const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = dialogStyles({ size, isFocusVisible });
+  const styles = dialogStyles({ size, isFocusVisible, compact });
+  const [canScroll, setCanScroll] = useState(false);
+  const [footerPresent, setFooterPresent] = useState<boolean>(false);
 
   const ref = useRef(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
 
   const { dialogProps, titleProps } = useDialog(props, ref);
+
+  useEffect(() => {
+    const bodyElement = bodyRef.current;
+
+    if (!bodyElement) {
+      setCanScroll(false);
+      return;
+    }
+
+    const updateCanScroll = () => {
+      setCanScroll(bodyElement.scrollHeight > bodyElement.clientHeight);
+    };
+
+    updateCanScroll();
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateCanScroll();
+    });
+    resizeObserver.observe(bodyElement);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
 
   return (
     <div {...dialogProps} ref={ref} className={styles.base({ className })}>
@@ -37,12 +65,14 @@ export function ModalDialog({ className, body, onClose, size = 'md', ...props }:
           {props.title}
         </h3>
       )}
-      <ModalDialogContext.Provider value={{ size }}>
+
+      <ModalDialogContext.Provider
+        value={{ size, scrollingRef: bodyRef, canScroll, compact, footerPresent, setFooterPresent }}
+      >
         {body ? <ModalDialogBody>{children}</ModalDialogBody> : children}
       </ModalDialogContext.Provider>
     </div>
   );
 }
-
 ModalDialog.Body = ModalDialogBody;
 ModalDialog.Footer = ModalDialogFooter;
