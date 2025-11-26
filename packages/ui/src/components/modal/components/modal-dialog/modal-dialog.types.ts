@@ -20,8 +20,9 @@ export type ModalDialogProps = {
    */
   className?: string;
   /**
-   * For medium and large sizes.
-   * Keeps entire modal in view by adding internal scrolling.
+   * Alternate styling for **medium** and **large** sizes. Other sizes will continue to scroll within the backdrop.
+   *
+   * Keeps entire modal in view by adding internal scrolling and reducing internal padding.
    */
   compact?: boolean;
   /**
@@ -48,8 +49,9 @@ export type ModalDialogContextValue = {
    */
   canScroll?: boolean;
   /**
-   * For medium and large sizes.
-   * Keeps entire modal in view by adding internal scrolling.
+   * Alternate styling for **medium** and **large** sizes. Other sizes will continue to scroll within the backdrop.
+   *
+   * Keeps entire modal in view by adding internal scrolling and reducing internal padding.
    */
   compact?: boolean;
   /**
