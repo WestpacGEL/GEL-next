@@ -1,3 +1,4 @@
+import { RefObject } from 'react';
 import { type AriaDialogProps } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
@@ -19,6 +20,11 @@ export type ModalDialogProps = {
    */
   className?: string;
   /**
+   * For medium and large sizes.
+   * Keeps entire modal in view by adding internal scrolling.
+   */
+  compact?: boolean;
+  /**
    * Full screen
    */
   fullscreen?: boolean;
@@ -38,7 +44,28 @@ export type ModalDialogProps = {
 
 export type ModalDialogContextValue = {
   /**
+   * Whether container can scroll
+   */
+  canScroll?: boolean;
+  /**
+   * For medium and large sizes.
+   * Keeps entire modal in view by adding internal scrolling.
+   */
+  compact?: boolean;
+  /**
+   * Whether footer is present for styling
+   */
+  footerPresent?: boolean;
+  /**
+   * Sets whether footer is present for styling
+   */
+  setFooterPresent?: (present: boolean) => void;
+  /**
    * Size of dialog
    */
   size?: Variants['size'];
+  /**
+   * Ref to use for scrolling animations
+   */
+  scrollingRef?: RefObject<HTMLDivElement>;
 };

@@ -1,10 +1,23 @@
 import { type Meta, StoryFn } from '@storybook/react-vite';
-import { Fragment, useMemo } from 'react';
+import { Fragment, useMemo, useRef } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
-import { Button, ModalBody, ModalFooter } from '../index.js';
+import { Button, ModalBody, ModalFooter, ModalProps } from '../index.js';
 
 import { Modal } from './modal.component.js';
+
+const getSizeTitle = (size: ModalProps['size']) => {
+  switch (size) {
+    case 'sm':
+      return 'small';
+    case 'md':
+      return 'medium';
+    case 'lg':
+      return 'large';
+    default:
+      return size as string;
+  }
+};
 
 const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
@@ -24,11 +37,7 @@ export const Default = () => {
     <>
       <Modal title="Title" isDismissable state={state} aria-label="Modal title" body>
         {`
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
     `}
       </Modal>
       <Button onClick={() => state.open()}>Open Modal</Button>
@@ -82,8 +91,12 @@ export const Sizes = () => {
     <div className="flex gap-2">
       {(['sm', 'md', 'lg', 'full', 'fluid'] as const).map(size => (
         <Fragment key={size}>
-          <Modal isDismissable size={size} state={states[size]} title={`Modal ${size}`}>
-            <ModalBody>{`Type something but keep it simple. Modals should be easy to digest so that the user can quickly get back to what they were doing.`}</ModalBody>
+          <Modal isDismissable size={size} state={states[size]} title={`Modal ${getSizeTitle(size)}`}>
+            <ModalBody>
+              {`
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis fermentum elit, non scelerisque diam sagittis eget. Nullam auctor pharetra risus eu pulvinar. Cras vel risus vel ex lobortis ullamcorper vel ut erat. Duis ornare turpis vel tempus malesuada. Nullam auctor sed risus ultricies vestibulum. Quisque suscipit eros sem, id cursus dolor porttitor sit amet. Quisque euismod risus nec est gravida aliquet. Sed sodales ante et ligula fringilla tristique.
+Phasellus elementum, augue in tempor imperdiet, justo mauris porttitor elit, ac ornare mauris tellus ac ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In ante mi, rhoncus in nisl id, convallis aliquet quam. Pellentesque non sem metus. Curabitur fermentum feugiat justo, quis gravida dui convallis ut. Fusce lorem magna, fringilla id auctor eu, faucibus vitae magna. Etiam vehicula dictum lorem, vel vestibulum magna consequat sed. Fusce hendrerit diam vel massa feugiat elementum. Nunc eget diam eu tortor quam. Pellentesque non sem metus. Curabitur fermentum feugiat justo, quis gravida dui convallis ut. Fusce lorem magna, fringilla id auctor eu, faucibus vitae magna. Etiam vehicula dictum lorem, vel vestibulum magna consequat sed. Fusce hendrerit diam vel massa feugiat elementum. Nunc eget diam eu tortor Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis fermentum elit, non scelerisque diam sagittis eget. Nullam auctor pharetra risus eu pulvinar. Cras vel risus vel ex lobortis ullamcorper vel ut erat. Duis ornare turpis vel tempus malesuada. Nullam auctor sed risus ultricies vestibulum. Quisque suscipit eros sem, id cursus dolor porttitor sit amet. Quisque euismod risus nec est gravida aliquet. Sed sodales ante et ligula fringilla tristique.    `}
+            </ModalBody>
             <ModalFooter
               primaryLabel="Label"
               primaryOnClick={() => states[size].close()}
@@ -91,7 +104,46 @@ export const Sizes = () => {
               secondaryOnClick={() => states[size].close()}
             />
           </Modal>
-          <Button onClick={() => states[size].open()}>Open Modal {size}</Button>
+          <Button onClick={() => states[size].open()}>Open Modal {getSizeTitle(size)}</Button>
+        </Fragment>
+      ))}
+    </div>
+  );
+};
+
+/**
+ * > Examples of all sizes with reduced padding
+ */
+export const CompactSizes = () => {
+  const stateMD = useOverlayTriggerState({});
+  const stateLG = useOverlayTriggerState({});
+
+  const states = useMemo(() => {
+    return {
+      md: stateMD,
+      lg: stateLG,
+    };
+  }, [stateMD, stateLG]);
+
+  return (
+    <div className="flex gap-2">
+      {(['md', 'lg'] as const).map(size => (
+        <Fragment key={size}>
+          <Modal compact isDismissable size={size} state={states[size]} title={`Modal ${getSizeTitle(size)}`}>
+            <ModalBody>
+              {`
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis fermentum elit, non scelerisque diam sagittis eget. Nullam auctor pharetra risus eu pulvinar. Cras vel risus vel ex lobortis ullamcorper vel ut erat. Duis ornare turpis vel tempus malesuada. Nullam auctor sed risus ultricies vestibulum. Quisque suscipit eros sem, id cursus dolor porttitor sit amet. Quisque euismod risus nec est gravida aliquet. Sed sodales ante et ligula fringilla tristique.
+Phasellus elementum, augue in tempor imperdiet, justo mauris porttitor elit, ac ornare mauris tellus ac ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In ante mi, rhoncus in nisl id, convallis aliquet quam. Pellentesque non sem metus. Curabitur fermentum feugiat justo, quis gravida dui convallis ut. Fusce lorem magna, fringilla id auctor eu, faucibus vitae magna. Etiam vehicula dictum lorem, vel vestibulum magna consequat sed. Fusce hendrerit diam vel massa feugiat elementum. Nunc eget diam eu tortor quam. Pellentesque non sem metus. Curabitur fermentum feugiat justo, quis gravida dui convallis ut. Fusce lorem magna, fringilla id auctor eu, faucibus vitae magna. Etiam vehicula dictum lorem, vel vestibulum magna consequat sed. Fusce hendrerit diam vel massa feugiat elementum. Nunc eget diam eu tortor Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis fermentum elit, non scelerisque diam sagittis eget. Nullam auctor pharetra risus eu pulvinar. Cras vel risus vel ex lobortis ullamcorper vel ut erat. Duis ornare turpis vel tempus malesuada. Nullam auctor sed risus ultricies vestibulum. Quisque suscipit eros sem, id cursus dolor porttitor sit amet. Quisque euismod risus nec est gravida aliquet. Sed sodales ante et ligula fringilla tristique.
+    `}
+            </ModalBody>
+            <ModalFooter
+              primaryLabel="Label"
+              primaryOnClick={() => states[size].close()}
+              secondaryLabel="Label"
+              secondaryOnClick={() => states[size].close()}
+            />
+          </Modal>
+          <Button onClick={() => states[size].open()}>Open Modal {getSizeTitle(size)}</Button>
         </Fragment>
       ))}
     </div>

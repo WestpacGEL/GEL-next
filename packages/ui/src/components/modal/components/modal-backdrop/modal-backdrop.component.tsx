@@ -8,11 +8,14 @@ import { type ModalBackdropProps } from './modal-backdrop.types.js';
 /**
  * @private
  */
-export function ModalBackdrop({ zIndex = 100, portalContainer, size, ...props }: ModalBackdropProps) {
+export function ModalBackdrop({ zIndex = 100, portalContainer, size, compact, ...props }: ModalBackdropProps) {
   const { children, state, className } = props;
 
   const ref = useRef(null);
-  const styles = backdropStyles({ fullscreen: size === 'full', fluid: size === 'fluid' });
+  const styles = backdropStyles({
+    size,
+    compact: compact && (size === 'md' || size === 'lg'),
+  });
 
   const { modalProps, underlayProps } = useModalOverlay(props, state, ref);
 

@@ -1,7 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
+import { useBreakpoint } from '../../../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../../../utils/breakpoint.util.js';
 import { Button } from '../../../../../button/index.js';
 import { useModalDialogContext } from '../../modal-dialog.component.js';
 
@@ -16,8 +18,15 @@ export function ModalDialogFooter({
   secondaryOnClick,
   ...props
 }: ModalDialogFooterProps) {
-  const { size } = useModalDialogContext();
-  const styles = modalFooterStyles({ size });
+  const { size, compact, setFooterPresent } = useModalDialogContext();
+  const breakpoint = useBreakpoint();
+
+  const styles = modalFooterStyles({ size: resolveResponsiveVariant(size, breakpoint), compact });
+
+  useEffect(() => {
+    setFooterPresent?.(true);
+  }, [setFooterPresent]);
+
   return (
     <div className={styles.base({ className })} {...props}>
       <Button look="primary" size="large" className={styles.primaryBtn()} onClick={primaryOnClick}>

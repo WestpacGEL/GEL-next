@@ -14,14 +14,20 @@ export function Modal({
   title,
   role,
   body,
-  size,
+  size = 'md',
   className,
   fullscreen,
+  compact = false,
   ...props
 }: ModalProps) {
   const breakpoint = useBreakpoint();
   return (
-    <ModalBackdrop size={resolveResponsiveVariant(size, breakpoint)} className={backdropClassName} {...props}>
+    <ModalBackdrop
+      size={resolveResponsiveVariant(size, breakpoint)}
+      compact={compact}
+      className={backdropClassName}
+      {...props}
+    >
       <ModalDialog
         fullscreen={fullscreen}
         onClose={props.isDismissable ? () => props.state.close() : undefined}
@@ -30,6 +36,7 @@ export function Modal({
         body={body}
         size={resolveResponsiveVariant(size, breakpoint)}
         className={className}
+        compact={compact}
       >
         {children}
       </ModalDialog>
