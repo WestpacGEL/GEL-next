@@ -4,7 +4,7 @@ export const styles = tv(
   {
     slots: {
       base: 'relative flex max-h-full max-w-full flex-col rounded bg-white text-text outline-none',
-      title: 'typography-body-7 pb-4 pt-9 font-bold text-text',
+      title: 'typography-body-7 pb-4 pt-9 font-bold text-text transition-shadow delay-0 duration-200 ease-[ease]',
       close: 'absolute right-0 top-0 block p-3',
     },
     variants: {
@@ -38,6 +38,11 @@ export const styles = tv(
       compact: {
         true: '',
         false: '',
+      },
+      scrolled: {
+        true: {
+          title: 'shadow-[0px_2px_5px_0px] shadow-black/30',
+        },
       },
     },
     compoundSlots: [

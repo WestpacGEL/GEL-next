@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    slots: { base: 'flex-1' },
+    slots: { base: 'flex-1 transition-shadow delay-0 duration-200 ease-[ease]' },
     variants: {
       size: {
         full: { base: 'px-4 py-3' },
@@ -13,14 +13,11 @@ export const styles = tv(
       },
       canScroll: {
         true: {
-          base: ' shadow-[-1px_-6px_6px_-1px_inset] shadow-black/25',
+          base: 'shadow-[0px_-4px_5px_-2px_inset] shadow-black/30',
         },
       },
-      scrolled: {
-        true: { base: ' shadow-[-1px_-6px_6px_-1px_inset,-1px_6px_6px_-1px_inset] shadow-black/25' },
-      },
       scrollAtBottom: {
-        true: { base: 'shadow-[-1px_6px_6px_-1px_inset,0_0_0_0_inset]' },
+        true: { base: 'shadow-[0_0_0_0_inset]' },
       },
       compact: {
         true: '',

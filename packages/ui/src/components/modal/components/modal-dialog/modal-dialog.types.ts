@@ -67,6 +67,10 @@ export type ModalDialogContextValue = {
    */
   size?: Variants['size'];
   /**
+   * Whether scroll is at bottom of the scrollable area
+   */
+  scrollAtBottom?: boolean;
+  /**
    * Ref to use for scrolling animations
    */
   scrollingRef?: RefObject<HTMLDivElement>;
