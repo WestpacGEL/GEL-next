@@ -12,7 +12,7 @@ export const styles = tv({
     },
     canScroll: {
       true: {
-        base: 'shadow-[-3px_-5px_5px_-3px_inset] shadow-black/30 dark:shadow-black/75',
+        base: 'shadow-[0px_-4px_5px_-2px_inset] shadow-black/30 dark:shadow-black/75',
       },
     },
     scrollAtBottom: {

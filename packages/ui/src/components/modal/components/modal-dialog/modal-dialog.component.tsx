@@ -45,6 +45,8 @@ export function ModalDialog({ className, body, onClose, size, compact, ...props 
       return;
     }
 
+    bodyElement.addEventListener('scroll', handleScroll);
+
     const updateCanScroll = () => {
       setCanScroll(bodyElement.scrollHeight > bodyElement.clientHeight);
     };
@@ -58,18 +60,8 @@ export function ModalDialog({ className, body, onClose, size, compact, ...props 
 
     return () => {
       resizeObserver.disconnect();
+      bodyElement.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    const bodyElement = bodyRef?.current;
-
-    if (bodyElement) {
-      bodyElement.addEventListener('scroll', handleScroll);
-      return () => {
-        bodyElement.removeEventListener('scroll', handleScroll);
-      };
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bodyRef]);
 
