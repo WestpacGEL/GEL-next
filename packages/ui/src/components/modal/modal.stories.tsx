@@ -93,9 +93,9 @@ export const Sizes = () => {
         <Fragment key={size}>
           <Modal isDismissable size={size} state={states[size]} title={`Modal ${getSizeTitle(size)}`}>
             <ModalBody>
-              {`
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis fermentum elit, non scelerisque diam sagittis eget. Nullam auctor pharetra risus eu pulvinar. Cras vel risus vel ex lobortis ullamcorper vel ut erat. Duis ornare turpis vel tempus malesuada. Nullam auctor sed risus ultricies vestibulum. Quisque suscipit eros sem, id cursus dolor porttitor sit amet. Quisque euismod risus nec est gravida aliquet. Sed sodales ante et ligula fringilla tristique.
-Phasellus elementum, augue in tempor imperdiet, justo mauris porttitor elit, ac ornare mauris tellus ac ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In ante mi, rhoncus in nisl id, convallis aliquet quam. Pellentesque non sem metus. Curabitur fermentum feugiat justo, quis gravida dui convallis ut. Fusce lorem magna, fringilla id auctor eu, faucibus vitae magna. Etiam vehicula dictum lorem, vel vestibulum magna consequat sed. Fusce hendrerit diam vel massa feugiat elementum. Nunc eget diam eu tortor quam. Pellentesque non sem metus. Curabitur fermentum feugiat justo, quis gravida dui convallis ut. Fusce lorem magna, fringilla id auctor eu, faucibus vitae magna. Etiam vehicula dictum lorem, vel vestibulum magna consequat sed. Fusce hendrerit diam vel massa feugiat elementum. Nunc eget diam eu tortor Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis fermentum elit, non scelerisque diam sagittis eget. Nullam auctor pharetra risus eu pulvinar. Cras vel risus vel ex lobortis ullamcorper vel ut erat. Duis ornare turpis vel tempus malesuada. Nullam auctor sed risus ultricies vestibulum. Quisque suscipit eros sem, id cursus dolor porttitor sit amet. Quisque euismod risus nec est gravida aliquet. Sed sodales ante et ligula fringilla tristique.    `}
+              {`   
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+              `}
             </ModalBody>
             <ModalFooter
               primaryLabel="Label"
