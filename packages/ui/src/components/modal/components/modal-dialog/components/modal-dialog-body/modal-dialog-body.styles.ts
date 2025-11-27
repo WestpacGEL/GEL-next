@@ -12,14 +12,11 @@ export const styles = tv({
     },
     canScroll: {
       true: {
-        base: 'shadow-[-2px_-2px_5px_-2px_inset] shadow-black/30 dark:shadow-black/75',
+        base: 'shadow-[-3px_-5px_5px_-3px_inset] shadow-black/30 dark:shadow-black/75',
       },
     },
-    scrolled: {
-      true: { base: 'shadow-[-2px_-2px_5px_-2px_inset,-2px_2px_5px_-2px_inset] shadow-black/30 dark:shadow-black/75' },
-    },
     scrollAtBottom: {
-      true: { base: 'shadow-[-2px_2px_5px_-2px_inset,0px_0px_0px_0px_inset]' },
+      true: { base: 'shadow-[0px_0px_0px_0px_inset]' },
     },
     compact: {
       true: '',

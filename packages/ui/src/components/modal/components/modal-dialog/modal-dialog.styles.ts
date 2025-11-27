@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     base: 'relative flex max-h-full max-w-full flex-col rounded-3xl bg-background-white-pale text-text-body outline-none',
-    title: 'pt-9 pb-4 typography-body-7 font-bold text-text-body',
+    title: 'pt-9 pb-4 typography-body-7 font-bold text-text-body transition-shadow delay-0 duration-200 ease-[ease]',
     close: 'absolute top-0 right-0 block cursor-pointer p-3',
   },
   variants: {
@@ -37,6 +37,11 @@ export const styles = tv({
     compact: {
       true: '',
       false: '',
+    },
+    scrolled: {
+      true: {
+        title: 'shadow-[0px_2px_5px_0px] shadow-black/30 dark:shadow-black/75',
+      },
     },
   },
   compoundSlots: [
