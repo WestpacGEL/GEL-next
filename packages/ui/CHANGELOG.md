@@ -1,5 +1,21 @@
 # @westpac/ui
 
+## 0.54.0
+
+### Minor Changes
+
+- 97e3ad7: - updated react-aria to fix issue with modal scrolling on iOS
+  - fixed modal not being able to scroll (would just go off screen)
+  - added new 'compact' modal that allows the body to scroll on the 'md' and 'lg' sizes
+  - updated modal styles based on new designs/need to scroll
+  - reverted button 'link' padding removal and added a prop to do the same thing
+  - updated default voice over for header left button
+
+### Patch Changes
+
+- 703d802: fix popover width and autocomplete footer
+- 784c2c0: updated dropshadows on compact modal
+
 ## 0.53.2
 
 ### Patch Changes

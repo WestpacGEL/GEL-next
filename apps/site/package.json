@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "version": "0.3.39",
+  "version": "0.3.40",
   "private": true,
   "scripts": {
     "prebuild": "npm run lint",

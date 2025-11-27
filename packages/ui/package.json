@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "0.53.2",
+  "version": "0.54.0",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -284,7 +284,7 @@
   },
   "dependencies": {
     "@duetds/date-picker": "~1.4.0",
-    "@internationalized/date": "~3.9.0",
+    "@internationalized/date": "~3.10.0",
     "@react-aria/accordion": "3.0.0-alpha.37",
     "@react-aria/utils": "~3.29.1",
     "@react-spectrum/utils": "~3.11.5",
@@ -292,8 +292,8 @@
     "colorjs.io": "~0.4.5",
     "lodash.throttle": "~4.1.1",
     "motion": "~12.23.12",
-    "react-aria": "~3.41.1",
-    "react-stately": "~3.39.0",
+    "react-aria": "~3.44.0",
+    "react-stately": "~3.42.0",
     "zustand": "~4.5.4"
   },
   "overrides": {

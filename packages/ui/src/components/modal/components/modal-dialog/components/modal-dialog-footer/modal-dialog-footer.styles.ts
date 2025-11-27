@@ -2,16 +2,32 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    slots: { base: 'flex gap-1', primaryBtn: '', secondaryBtn: 'no-underline hover:underline' },
+    slots: {
+      base: 'flex gap-1 rounded-b-[3px] bg-white',
+      primaryBtn: '',
+      secondaryBtn: '',
+    },
     variants: {
       size: {
-        full: { base: 'px-4 py-3' },
-        lg: { base: '-mt-6 px-12 pb-12' },
-        md: { base: '-mt-2 px-7 pb-7' },
-        sm: { base: '-mt-2 flex-col px-5 pb-5' },
-        fluid: { base: '-mt-2 px-5 pb-5 max-md:flex-col' },
+        full: { base: 'px-4 pb-3' },
+        lg: { base: 'px-12 pb-12' },
+        md: { base: 'px-7 pb-7' },
+        sm: { base: 'flex-col px-5 pb-5 ' },
+        fluid: { base: 'px-5 pb-5 max-md:flex-col' },
+      },
+      compact: {
+        true: '',
+        false: '',
       },
     },
+    compoundSlots: [
+      {
+        slots: ['base'],
+        size: ['lg', 'md'],
+        compact: true,
+        className: 'min-h-[90px] px-5 pb-5 pt-3',
+      },
+    ],
   },
   { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
 );

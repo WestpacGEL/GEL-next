@@ -16,6 +16,7 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
   orientation: 'vertical',
   size: 'medium',
   state: {
+    defaultValue: [],
     value: [],
     isDisabled: false,
     isReadOnly: false,

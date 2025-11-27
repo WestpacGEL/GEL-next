@@ -17,6 +17,7 @@ export const RadioGroupContext = createContext<RadioGroupContextState>({
   size: 'medium',
   state: {
     name: '',
+    defaultSelectedValue: null,
     isDisabled: false,
     isReadOnly: false,
     isRequired: false,
