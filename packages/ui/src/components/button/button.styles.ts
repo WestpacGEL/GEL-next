@@ -61,6 +61,9 @@ export const styles = tv({
       true: { base: 'focus-outline' },
       false: { base: 'outline-none' },
     },
+    removeLinkPadding: {
+      true: '',
+    },
   },
   compoundSlots: [
     {
@@ -116,6 +119,12 @@ export const styles = tv({
       look: 'link',
       hasIcon: false,
       className: 'underline hover:no-underline',
+    },
+    {
+      slots: ['base'],
+      look: 'link',
+      removeLinkPadding: true,
+      className: 'px-0',
     },
   ],
 });

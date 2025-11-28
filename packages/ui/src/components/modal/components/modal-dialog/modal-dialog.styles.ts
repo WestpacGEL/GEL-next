@@ -2,14 +2,14 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'relative mx-auto flex max-w-full flex-col overflow-hidden rounded-3xl bg-background-white-pale text-text-body outline-none',
-    title: 'pt-9 pb-4 typography-body-7 font-bold text-text-body',
-    close: 'absolute top-0 right-0 block p-3',
+    base: 'relative flex max-h-full max-w-full flex-col rounded-3xl bg-background-white-pale text-text-body outline-none',
+    title: 'pt-9 pb-4 typography-body-7 font-bold text-text-body transition-shadow delay-0 duration-200 ease-[ease]',
+    close: 'absolute top-0 right-0 block cursor-pointer p-3',
   },
   variants: {
     size: {
       full: {
-        base: 'max-h-screen w-full flex-1',
+        base: 'h-screen max-h-screen w-full flex-1 rounded-none',
         close: 'p-2',
         title: 'px-4 py-3',
       },
@@ -26,7 +26,7 @@ export const styles = tv({
         title: 'px-5',
       },
       fluid: {
-        base: 'w-full',
+        base: 'w-screen',
         title: 'px-5',
       },
     },
@@ -34,5 +34,28 @@ export const styles = tv({
       true: { close: 'focus-outline !outline-offset-[-4px]' },
       false: { close: 'outline-none' },
     },
+    compact: {
+      true: '',
+      false: '',
+    },
+    scrolled: {
+      true: {
+        title: 'shadow-[0px_2px_5px_0px] shadow-black/30 dark:shadow-black/75',
+      },
+    },
   },
+  compoundSlots: [
+    {
+      slots: ['base'],
+      size: ['md', 'lg'],
+      compact: true,
+      className: 'max-h-[80vh] overflow-hidden',
+    },
+    {
+      slots: ['title'],
+      size: ['lg', 'md'],
+      compact: true,
+      className: 'min-h-[90px] px-5 pt-6 pb-4',
+    },
+  ],
 });

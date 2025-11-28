@@ -25,6 +25,7 @@ function BaseButton(
     iconColor,
     iconSize,
     children,
+    removeLinkPadding,
     ...props
   }: ButtonProps,
   ref: Ref<ButtonRef>,
@@ -41,6 +42,7 @@ function BaseButton(
     isFocusVisible,
     hasChildren: !!children,
     hasIcon: !!IconBefore || !!IconAfter,
+    removeLinkPadding,
   });
 
   // eslint-disable-next-line sonarjs/function-return-type
