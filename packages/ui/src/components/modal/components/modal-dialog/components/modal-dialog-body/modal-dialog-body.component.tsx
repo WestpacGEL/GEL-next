@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 import { useBreakpoint } from '../../../../../../hook/breakpoints.hook.js';
 import { resolveResponsiveVariant } from '../../../../../../utils/breakpoint.util.js';
 import { useModalDialogContext } from '../../modal-dialog.component.js';
