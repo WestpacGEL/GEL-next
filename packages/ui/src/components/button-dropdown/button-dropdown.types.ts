@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { Placement } from 'react-aria';
 import { type VariantProps } from 'tailwind-variants';
 
 import { ButtonProps } from '../button/index.js';
@@ -6,7 +7,6 @@ import { IconProps } from '../icon/icon.types.js';
 
 import { styles } from './button-dropdown.styles.js';
 import { ButtonDropdownPanelProps } from './components/button-dropdown-panel/button-dropdown-panel.types.js';
-import { Placement } from 'react-aria';
 
 type Variants = VariantProps<typeof styles>;
 
