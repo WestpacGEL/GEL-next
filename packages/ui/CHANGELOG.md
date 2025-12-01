@@ -1,5 +1,15 @@
 # @westpac/ui
 
+## 0.55.0
+
+### Minor Changes
+
+- a0b45cf: - added a prop to handle the panel placement on button dropdown
+
+### Patch Changes
+
+- 2e750ae: add import react to modal dialog body
+
 ## 0.54.0
 
 ### Minor Changes

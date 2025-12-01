@@ -25,6 +25,7 @@ export function ButtonDropdown({
   soft = false,
   block = false,
   dropDownIcon: Icon = DropDownIcon,
+  placement = 'bottom start',
   shouldFlip,
 }: ButtonDropdownProps) {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
@@ -73,7 +74,7 @@ export function ButtonDropdown({
       {state.isOpen && (
         <ButtonDropdownPanel
           className={styles.panel({ className })}
-          placement="bottom start"
+          placement={placement}
           triggerRef={ref}
           state={state}
           block={block}
