@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 import { useModalDialogContext } from '../../modal-dialog.component.js';
 
 import { styles as modalBodyStyles } from './modal-dialog-body.styles.js';
