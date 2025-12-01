@@ -4,89 +4,67 @@
       "Reserved": {
         "Green": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#f2f9f2"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#d9ecd9"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#99cc99"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#47a447"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#249224"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#008000"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#006d00"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#005a00"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#004600"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#003300"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#002000"
@@ -94,89 +72,67 @@
         },
         "Blue": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#f2f8fc"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#d9eaf6"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#99c7e7"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#459ad4"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#2487cc"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#0074c4"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#0063a7"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#005189"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#00406c"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#002e4e"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#001d31"
@@ -184,89 +140,67 @@
         },
         "Orange": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#fcf5f2"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#f3d8cc"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#e8b199"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#d7784f"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ce5826"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#c53b00"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#a73200"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#8a2900"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#6c2000"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#4f1800"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#310f00"
@@ -274,89 +208,67 @@
         },
         "Red": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#fcf2f2"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#f9e6e6"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#eaa6a6"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#db6363"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#d03333"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#c40000"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#a70000"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#890000"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#6c0000"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#4e0000"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#310000"
@@ -364,89 +276,67 @@
         },
         "Yellow": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#fffff2"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffffe6"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffffbf"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffff80"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffff40"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffff00"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#d9d900"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#b3b300"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#8c8c00"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#666600"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#404000"
@@ -456,89 +346,67 @@
       "STG": {
         "Grey": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#f9f9f9"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#f5f5f4"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#e1e1e0"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#b2b2ae"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#8d8c81"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#727163"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#5e5d55"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#4c4c48"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#393937"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#1c1c1c"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#141414"
@@ -546,97 +414,73 @@
         },
         "Red": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#fff0f0"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffc7c7"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#f87272"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#f44343"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#f21818"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#e30000"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#bc0000"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#980000"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#750000"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#5b0000"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#380000"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "rgba(227, 0, 0, 0.3)"
@@ -644,97 +488,73 @@
         },
         "Access Green": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ecf8f0"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#c2eace"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#6dcb89"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#2fa854"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#219d4b"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#008739"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#007334"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#005f32"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#004833"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#003323"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#002a1c"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "rgba(0, 135, 57, 0.45)"
@@ -742,97 +562,73 @@
         },
         "Green": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#f1fbe5"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#e5f7cf"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#c2ec8e"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#abe562"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#93d83b"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#78be20"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#619b18"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#4b7910"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#365909"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#223b04"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#132402"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "rgba(120, 190, 32, 0.45)"
@@ -840,97 +636,73 @@
         },
         "Sky": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#edf8fe"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#e1f4fe"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#b9e6fc"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#91dcfb"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#5ad2fa"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#3fc3eb"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#319cbd"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#23768f"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#155264"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#09303c"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#04212a"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "rgba(63, 195, 235, 0.3)"
@@ -938,97 +710,73 @@
         },
         "Plum": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#f5f2fb"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#e6dff5"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#bba3e2"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#9b73d2"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#7947b4"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#502d79"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#46276b"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#3e225f"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#341b50"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#2c1645"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#27133e"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "rgba(80, 45, 121, 0.3)"
@@ -1036,97 +784,73 @@
         },
         "Amber": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#fff3eb"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffe7d6"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffcba8"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffb380"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ff9752"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ff7f29"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#cf6200"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#9d4800"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#6e3100"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#421a00"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#2c0f00"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "rgba(255, 127, 41, 0.4)"
@@ -1134,89 +858,67 @@
         },
         "Yellow": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#fffae5"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#fff5cc"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffeb99"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffe166"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffd733"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffcd00"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#cca400"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#997b00"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#665200"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#332900"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#1a1500"
@@ -1227,81 +929,61 @@
     "border": {
       "radius": {
         "none": {
-          "$scopes": [
-            "CORNER_RADIUS"
-          ],
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 0
         },
         "3px": {
-          "$scopes": [
-            "CORNER_RADIUS"
-          ],
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 3
         },
         "4px": {
-          "$scopes": [
-            "CORNER_RADIUS"
-          ],
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 4
         },
         "5px": {
-          "$scopes": [
-            "CORNER_RADIUS"
-          ],
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 5
         },
         "6px": {
-          "$scopes": [
-            "CORNER_RADIUS"
-          ],
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 6
         },
         "8px": {
-          "$scopes": [
-            "CORNER_RADIUS"
-          ],
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 8
         },
         "12px": {
-          "$scopes": [
-            "CORNER_RADIUS"
-          ],
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 12
         },
         "16px": {
-          "$scopes": [
-            "CORNER_RADIUS"
-          ],
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 16
         },
         "24px": {
-          "$scopes": [
-            "CORNER_RADIUS"
-          ],
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 24
         },
         "full": {
-          "$scopes": [
-            "CORNER_RADIUS"
-          ],
+          "$scopes": ["CORNER_RADIUS"],
           "$hiddenFromPublishing": true,
           "$type": "float",
           "$value": 999
@@ -1314,10 +996,7 @@
       "color": {
         "background": {
           "background-white-pale": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for screen and container background fills. If your screen background is white use this token.",
             "$type": "color",
             "$libraryName": "",
@@ -1325,10 +1004,7 @@
             "$value": "{Themes.StGeorge.color.mono.white}"
           },
           "background-pale-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for screen and container background fills. Replaces current style: Background",
             "$type": "color",
             "$libraryName": "",
@@ -1336,10 +1012,7 @@
             "$value": "{Themes.StGeorge.color.muted.100}"
           },
           "background-faint-pale": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for screen and container background fills. Replaces current style: Light",
             "$type": "color",
             "$libraryName": "",
@@ -1347,10 +1020,7 @@
             "$value": "{Themes.StGeorge.color.muted.50}"
           },
           "background-white-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for screen backgrounds to establish correct emphasis.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -1359,10 +1029,7 @@
             "$value": "{Themes.StGeorge.color.mono.white}"
           },
           "background-white-black": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is reserved. Do not use.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -1371,10 +1038,7 @@
             "$value": "{Themes.StGeorge.color.mono.white}"
           },
           "background-pale-black": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is reserved. Do not use.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -1383,10 +1047,7 @@
             "$value": "{Themes.StGeorge.color.muted.100}"
           },
           "background-primary": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -1395,10 +1056,7 @@
             "$value": "{Themes.StGeorge.color.primary.500}"
           },
           "background-hero": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -1409,10 +1067,7 @@
         },
         "surface": {
           "surface-muted-vivid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for fills that need to be text colour.",
             "$type": "color",
             "$libraryName": "",
@@ -1420,10 +1075,7 @@
             "$value": "{Themes.StGeorge.color.alias.surface-muted-vivid-LM}"
           },
           "surface-muted": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
@@ -1431,10 +1083,7 @@
             "$value": "{Themes.StGeorge.color.muted.500}"
           },
           "surface-muted-strong": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
@@ -1442,10 +1091,7 @@
             "$value": "{Themes.StGeorge.color.muted.400}"
           },
           "surface-muted-mild": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
@@ -1453,10 +1099,7 @@
             "$value": "{Themes.StGeorge.color.muted.300}"
           },
           "surface-muted-soft": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
@@ -1464,10 +1107,7 @@
             "$value": "{Themes.StGeorge.color.muted.200}"
           },
           "surface-muted-pale": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Background",
             "$type": "color",
             "$libraryName": "",
@@ -1475,10 +1115,7 @@
             "$value": "{Themes.StGeorge.color.muted.100}"
           },
           "surface-muted-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Light",
             "$type": "color",
             "$libraryName": "",
@@ -1486,10 +1123,7 @@
             "$value": "{Themes.StGeorge.color.muted.50}"
           },
           "surface-primary": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
@@ -1497,10 +1131,7 @@
             "$value": "{Themes.StGeorge.color.primary.500}"
           },
           "surface-primary-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
@@ -1508,10 +1139,7 @@
             "$value": "{Themes.StGeorge.color.primary.50}"
           },
           "surface-hero": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
@@ -1519,10 +1147,7 @@
             "$value": "{Themes.StGeorge.color.hero.500}"
           },
           "surface-hero-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
@@ -1530,10 +1155,7 @@
             "$value": "{Themes.StGeorge.color.hero.50}"
           },
           "surface-pop": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Pop. Use sparingly, embellishment only.",
             "$type": "color",
             "$libraryName": "",
@@ -1541,10 +1163,7 @@
             "$value": "{Themes.StGeorge.color.pop.500}"
           },
           "surface-pop-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use sparingly, in accordance with the brand guidelines. For embellishment only.",
             "$type": "color",
             "$libraryName": "",
@@ -1552,10 +1171,7 @@
             "$value": "{Themes.StGeorge.color.pop.50}"
           },
           "surface-holler": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
@@ -1563,10 +1179,7 @@
             "$value": "{Themes.StGeorge.color.holler.500}"
           },
           "surface-holler-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
@@ -1574,10 +1187,7 @@
             "$value": "{Themes.StGeorge.color.holler.50}"
           },
           "surface-success": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1585,10 +1195,7 @@
             "$value": "{Themes.StGeorge.color.reserved.success.500}"
           },
           "surface-success-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1596,10 +1203,7 @@
             "$value": "{Themes.StGeorge.color.reserved.success.50}"
           },
           "surface-info": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1607,10 +1211,7 @@
             "$value": "{Themes.StGeorge.color.reserved.info.500}"
           },
           "surface-info-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1618,10 +1219,7 @@
             "$value": "{Themes.StGeorge.color.reserved.info.50}"
           },
           "surface-warning": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1629,10 +1227,7 @@
             "$value": "{Themes.StGeorge.color.reserved.warning.500}"
           },
           "surface-warning-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1640,10 +1235,7 @@
             "$value": "{Themes.StGeorge.color.reserved.warning.50}"
           },
           "surface-danger": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1651,10 +1243,7 @@
             "$value": "{Themes.StGeorge.color.reserved.danger.500}"
           },
           "surface-danger-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1662,10 +1251,7 @@
             "$value": "{Themes.StGeorge.color.reserved.danger.50}"
           },
           "surface-system-error": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1673,10 +1259,7 @@
             "$value": "{Themes.StGeorge.color.reserved.system.500}"
           },
           "surface-system-error-dark": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the System messaging component.",
             "$type": "color",
             "$libraryName": "",
@@ -1684,10 +1267,7 @@
             "$value": "{Themes.StGeorge.color.reserved.system.950}"
           },
           "surface-mono": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Mono is either White or Black",
             "$type": "color",
             "$libraryName": "",
@@ -1695,10 +1275,7 @@
             "$value": "{Themes.StGeorge.color.mono.white}"
           },
           "surface-reversed": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved is always white.",
             "$type": "color",
             "$libraryName": "",
@@ -1708,9 +1285,7 @@
         },
         "text": {
           "text-body": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Text",
             "$type": "color",
             "$libraryName": "",
@@ -1718,9 +1293,7 @@
             "$value": "{Themes.StGeorge.color.alias.text-body-Lm}"
           },
           "text-heading": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Heading",
             "$type": "color",
             "$libraryName": "",
@@ -1728,9 +1301,7 @@
             "$value": "{Themes.StGeorge.color.alias.text-heading-Lm}"
           },
           "text-muted": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
@@ -1738,9 +1309,7 @@
             "$value": "{Themes.StGeorge.color.muted.500}"
           },
           "text-primary": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
@@ -1748,9 +1317,7 @@
             "$value": "{Themes.StGeorge.color.primary.500}"
           },
           "text-hero": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands.",
             "$type": "color",
             "$libraryName": "",
@@ -1758,9 +1325,7 @@
             "$value": "{Themes.StGeorge.color.alias.text-hero-LM}"
           },
           "text-holler": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
@@ -1768,9 +1333,7 @@
             "$value": "{Themes.StGeorge.color.holler.500}"
           },
           "text-link": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Link",
             "$type": "color",
             "$libraryName": "",
@@ -1778,9 +1341,7 @@
             "$value": "{Themes.StGeorge.color.primary.500}"
           },
           "text-success": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1788,9 +1349,7 @@
             "$value": "{Themes.StGeorge.color.reserved.success.500}"
           },
           "text-info": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1798,9 +1357,7 @@
             "$value": "{Themes.StGeorge.color.reserved.info.500}"
           },
           "text-warning": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1808,9 +1365,7 @@
             "$value": "{Themes.StGeorge.color.reserved.warning.500}"
           },
           "text-danger": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1818,9 +1373,7 @@
             "$value": "{Themes.StGeorge.color.reserved.danger.500}"
           },
           "text-system-error": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1828,9 +1381,7 @@
             "$value": "{Themes.StGeorge.color.reserved.system.950}"
           },
           "text-mono": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Mono text is either White or Black",
             "$type": "color",
             "$libraryName": "",
@@ -1838,9 +1389,7 @@
             "$value": "{Themes.StGeorge.color.mono.white}"
           },
           "text-reversed": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reversed text is always white",
             "$type": "color",
             "$libraryName": "",
@@ -1850,9 +1399,7 @@
         },
         "border": {
           "border-muted": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
@@ -1860,9 +1407,7 @@
             "$value": "{Themes.StGeorge.color.muted.500}"
           },
           "border-muted-strong": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Replaces current style: Border Dark",
             "$type": "color",
             "$libraryName": "",
@@ -1870,9 +1415,7 @@
             "$value": "{Themes.StGeorge.color.muted.400}"
           },
           "border-muted-mild": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
@@ -1880,9 +1423,7 @@
             "$value": "{Themes.StGeorge.color.muted.300}"
           },
           "border-muted-soft": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
@@ -1890,9 +1431,7 @@
             "$value": "{Themes.StGeorge.color.muted.200}"
           },
           "border-hero": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
@@ -1900,9 +1439,7 @@
             "$value": "{Themes.StGeorge.color.hero.500}"
           },
           "border-primary": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
@@ -1910,9 +1447,7 @@
             "$value": "{Themes.StGeorge.color.primary.500}"
           },
           "border-pop": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines.",
             "$type": "color",
             "$libraryName": "",
@@ -1920,9 +1455,7 @@
             "$value": "{Themes.StGeorge.color.pop.500}"
           },
           "border-holler": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
@@ -1930,9 +1463,7 @@
             "$value": "{Themes.StGeorge.color.holler.500}"
           },
           "border-success": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1940,9 +1471,7 @@
             "$value": "{Themes.StGeorge.color.reserved.success.500}"
           },
           "border-success-mild": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1950,9 +1479,7 @@
             "$value": "{Themes.StGeorge.color.reserved.success.300}"
           },
           "border-info": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1960,9 +1487,7 @@
             "$value": "{Themes.StGeorge.color.reserved.info.500}"
           },
           "border-info-mild": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1970,9 +1495,7 @@
             "$value": "{Themes.StGeorge.color.reserved.info.300}"
           },
           "border-warning": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1980,9 +1503,7 @@
             "$value": "{Themes.StGeorge.color.reserved.warning.500}"
           },
           "border-warning-mild": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -1990,9 +1511,7 @@
             "$value": "{Themes.StGeorge.color.reserved.warning.300}"
           },
           "border-danger": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2000,9 +1519,7 @@
             "$value": "{Themes.StGeorge.color.reserved.danger.500}"
           },
           "border-danger-mild": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2010,9 +1527,7 @@
             "$value": "{Themes.StGeorge.color.reserved.danger.300}"
           },
           "border-mono": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Mono border is either White or Black",
             "$type": "color",
             "$libraryName": "",
@@ -2020,9 +1535,7 @@
             "$value": "{Themes.StGeorge.color.mono.white}"
           },
           "border-focus": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Only for use with focus state keyboard navigation.",
             "$type": "color",
             "$libraryName": "",
@@ -2032,10 +1545,7 @@
         },
         "data": {
           "data-a-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2043,10 +1553,7 @@
             "$value": "{Themes.StGeorge.color.primary.500}"
           },
           "data-a-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2054,10 +1561,7 @@
             "$value": "{Themes.StGeorge.color.primary.200}"
           },
           "data-a-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2065,10 +1569,7 @@
             "$value": "{Themes.StGeorge.color.primary.opacity}"
           },
           "data-b-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2076,10 +1577,7 @@
             "$value": "{Themes.StGeorge.color.hero.500}"
           },
           "data-b-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2087,10 +1585,7 @@
             "$value": "{Themes.StGeorge.color.hero.300}"
           },
           "data-b-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2098,10 +1593,7 @@
             "$value": "{Themes.StGeorge.color.hero.opacity}"
           },
           "data-c-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2109,10 +1601,7 @@
             "$value": "{Themes.StGeorge.color.pop.500}"
           },
           "data-c-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2120,10 +1609,7 @@
             "$value": "{Themes.StGeorge.color.pop.300}"
           },
           "data-c-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2131,10 +1617,7 @@
             "$value": "{Themes.StGeorge.color.pop.opacity}"
           },
           "data-d-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2142,10 +1625,7 @@
             "$value": "{Themes.StGeorge.color.holler.500}"
           },
           "data-d-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2153,10 +1633,7 @@
             "$value": "{Themes.StGeorge.color.holler.200}"
           },
           "data-d-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2164,10 +1641,7 @@
             "$value": "{Themes.StGeorge.color.holler.opacity}"
           },
           "data-e-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2175,10 +1649,7 @@
             "$value": "{Themes.StGeorge.color.sing.500}"
           },
           "data-e-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2186,10 +1657,7 @@
             "$value": "{Themes.StGeorge.color.sing.300}"
           },
           "data-e-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2197,10 +1665,7 @@
             "$value": "{Themes.StGeorge.color.sing.opacity}"
           },
           "data-f-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2208,10 +1673,7 @@
             "$value": "{Themes.StGeorge.color.dance.500}"
           },
           "data-f-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2219,10 +1681,7 @@
             "$value": "{Themes.StGeorge.color.dance.300}"
           },
           "data-f-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -2232,9 +1691,7 @@
         },
         "pictogram": {
           "surface-pictogram-base": {
-            "$scopes": [
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["SHAPE_FILL"],
             "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
@@ -2242,9 +1699,7 @@
             "$value": "{Themes.StGeorge.color.alias.surface-pictogram-base-Lm}"
           },
           "surface-pictogram-accent": {
-            "$scopes": [
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["SHAPE_FILL"],
             "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
@@ -2254,10 +1709,7 @@
         },
         "state": {
           "surface-hover-primary": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2266,10 +1718,7 @@
             "$value": "{Themes.StGeorge.color.primary.400}"
           },
           "surface-active-primary": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -2277,10 +1726,7 @@
             "$value": "{Themes.StGeorge.color.primary.200}"
           },
           "surface-hover-hero": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2289,10 +1735,7 @@
             "$value": "{Themes.StGeorge.color.hero.400}"
           },
           "surface-active-hero": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2301,10 +1744,7 @@
             "$value": "{Themes.StGeorge.color.hero.300}"
           },
           "surface-hover-primary-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2313,10 +1753,7 @@
             "$value": "{Themes.StGeorge.color.primary.50}"
           },
           "surface-active-primary-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2325,10 +1762,7 @@
             "$value": "{Themes.StGeorge.color.primary.100}"
           },
           "surface-hover-hero-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -2336,10 +1770,7 @@
             "$value": "{Themes.StGeorge.color.hero.50}"
           },
           "surface-active-hero-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -2347,10 +1778,7 @@
             "$value": "{Themes.StGeorge.color.hero.100}"
           },
           "surface-hover-muted-pale": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2359,10 +1787,7 @@
             "$value": "{Themes.StGeorge.color.muted.100}"
           },
           "surface-active-muted-pale": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2371,10 +1796,7 @@
             "$value": "{Themes.StGeorge.color.muted.300}"
           },
           "surface-hover-mono": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2383,10 +1805,7 @@
             "$value": "{Themes.StGeorge.color.mono.white}"
           },
           "surface-active-mono": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2399,90 +1818,70 @@
       "border": {
         "radius": {
           "rounded-none": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.none}"
           },
           "rounded-sm": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.sm}"
           },
           "rounded-md": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.md}"
           },
           "rounded-lg": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.lg}"
           },
           "rounded-xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.xl}"
           },
           "rounded-2xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.2xl}"
           },
           "rounded-3xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.3xl}"
           },
           "rounded-4xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.4xl}"
           },
           "rounded-5xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.5xl}"
           },
           "rounded-full": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -2495,10 +1894,7 @@
       "color": {
         "background": {
           "background-white-pale": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for screen and container background fills. If your screen background is white use this token.",
             "$type": "color",
             "$libraryName": "",
@@ -2506,10 +1902,7 @@
             "$value": "{Themes.StGeorge.color.muted.900}"
           },
           "background-pale-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for screen and container background fills. Replaces current style: Background",
             "$type": "color",
             "$libraryName": "",
@@ -2517,10 +1910,7 @@
             "$value": "{Themes.StGeorge.color.muted.950}"
           },
           "background-faint-pale": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for screen and container background fills. Replaces current style: Light",
             "$type": "color",
             "$libraryName": "",
@@ -2528,10 +1918,7 @@
             "$value": "{Themes.StGeorge.color.muted.900}"
           },
           "background-white-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for screen backgrounds to establish correct emphasis.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2540,10 +1927,7 @@
             "$value": "{Themes.StGeorge.color.muted.950}"
           },
           "background-white-black": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is reserved. Do not use.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2552,10 +1936,7 @@
             "$value": "{Themes.StGeorge.color.mono.black}"
           },
           "background-pale-black": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is reserved. Do not use.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2564,10 +1945,7 @@
             "$value": "{Themes.StGeorge.color.mono.black}"
           },
           "background-primary": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2576,10 +1954,7 @@
             "$value": "{Themes.StGeorge.color.primary.500}"
           },
           "background-hero": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -2590,10 +1965,7 @@
         },
         "surface": {
           "surface-muted-vivid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use for fills that need to be text colour.",
             "$type": "color",
             "$libraryName": "",
@@ -2601,10 +1973,7 @@
             "$value": "{Themes.StGeorge.color.alias.surface-muted-vivid-DM}"
           },
           "surface-muted": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
@@ -2612,10 +1981,7 @@
             "$value": "{Themes.StGeorge.color.muted.400}"
           },
           "surface-muted-strong": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
@@ -2623,10 +1989,7 @@
             "$value": "{Themes.StGeorge.color.muted.600}"
           },
           "surface-muted-mild": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
@@ -2634,10 +1997,7 @@
             "$value": "{Themes.StGeorge.color.muted.700}"
           },
           "surface-muted-soft": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
@@ -2645,10 +2005,7 @@
             "$value": "{Themes.StGeorge.color.muted.800}"
           },
           "surface-muted-pale": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Background",
             "$type": "color",
             "$libraryName": "",
@@ -2656,10 +2013,7 @@
             "$value": "{Themes.StGeorge.color.muted.900}"
           },
           "surface-muted-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Light",
             "$type": "color",
             "$libraryName": "",
@@ -2667,10 +2021,7 @@
             "$value": "{Themes.StGeorge.color.muted.950}"
           },
           "surface-primary": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
@@ -2678,10 +2029,7 @@
             "$value": "{Themes.StGeorge.color.primary.400}"
           },
           "surface-primary-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
@@ -2689,10 +2037,7 @@
             "$value": "{Themes.StGeorge.color.primary.950}"
           },
           "surface-hero": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
@@ -2700,10 +2045,7 @@
             "$value": "{Themes.StGeorge.color.hero.300}"
           },
           "surface-hero-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved do not use",
             "$type": "color",
             "$libraryName": "",
@@ -2711,10 +2053,7 @@
             "$value": "{Themes.StGeorge.color.hero.950}"
           },
           "surface-pop": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Replaces current style: Pop. Use sparingly, embellishment only.",
             "$type": "color",
             "$libraryName": "",
@@ -2722,10 +2061,7 @@
             "$value": "{Themes.StGeorge.color.pop.500}"
           },
           "surface-pop-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Use sparingly, in accordance with the brand guidelines. For embellishment only.",
             "$type": "color",
             "$libraryName": "",
@@ -2733,10 +2069,7 @@
             "$value": "{Themes.StGeorge.color.pop.950}"
           },
           "surface-holler": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
@@ -2744,10 +2077,7 @@
             "$value": "{Themes.StGeorge.color.holler.400}"
           },
           "surface-holler-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
@@ -2755,10 +2085,7 @@
             "$value": "{Themes.StGeorge.color.holler.950}"
           },
           "surface-success": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2766,10 +2093,7 @@
             "$value": "{Themes.StGeorge.color.reserved.success.400}"
           },
           "surface-success-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2777,10 +2101,7 @@
             "$value": "{Themes.StGeorge.color.reserved.success.900}"
           },
           "surface-info": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2788,10 +2109,7 @@
             "$value": "{Themes.StGeorge.color.reserved.info.400}"
           },
           "surface-info-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2799,10 +2117,7 @@
             "$value": "{Themes.StGeorge.color.reserved.info.900}"
           },
           "surface-warning": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2810,10 +2125,7 @@
             "$value": "{Themes.StGeorge.color.reserved.warning.400}"
           },
           "surface-warning-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2821,10 +2133,7 @@
             "$value": "{Themes.StGeorge.color.reserved.warning.900}"
           },
           "surface-danger": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2832,10 +2141,7 @@
             "$value": "{Themes.StGeorge.color.reserved.danger.300}"
           },
           "surface-danger-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2843,10 +2149,7 @@
             "$value": "{Themes.StGeorge.color.reserved.danger.900}"
           },
           "surface-system-error": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2854,10 +2157,7 @@
             "$value": "{Themes.StGeorge.color.reserved.system.950}"
           },
           "surface-system-error-dark": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved. Must only be used for the System messaging component.",
             "$type": "color",
             "$libraryName": "",
@@ -2865,10 +2165,7 @@
             "$value": "{Themes.StGeorge.color.reserved.system.500}"
           },
           "surface-mono": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Mono is either White or Black",
             "$type": "color",
             "$libraryName": "",
@@ -2876,10 +2173,7 @@
             "$value": "{Themes.StGeorge.color.mono.black}"
           },
           "surface-reversed": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "Reserved is always white.",
             "$type": "color",
             "$libraryName": "",
@@ -2889,9 +2183,7 @@
         },
         "text": {
           "text-body": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Text",
             "$type": "color",
             "$libraryName": "",
@@ -2899,9 +2191,7 @@
             "$value": "{Themes.StGeorge.color.alias.text-body-Dm}"
           },
           "text-heading": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Heading",
             "$type": "color",
             "$libraryName": "",
@@ -2909,9 +2199,7 @@
             "$value": "{Themes.StGeorge.color.alias.text-heading-Dm}"
           },
           "text-muted": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
@@ -2919,9 +2207,7 @@
             "$value": "{Themes.StGeorge.color.muted.400}"
           },
           "text-primary": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
@@ -2929,9 +2215,7 @@
             "$value": "{Themes.StGeorge.color.primary.300}"
           },
           "text-hero": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Hero. Note: This is not the same as text-heading as it behaves differently in other brands.",
             "$type": "color",
             "$libraryName": "",
@@ -2939,9 +2223,7 @@
             "$value": "{Themes.StGeorge.color.alias.text-hero-DM}"
           },
           "text-holler": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
@@ -2949,9 +2231,7 @@
             "$value": "{Themes.StGeorge.color.holler.300}"
           },
           "text-link": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Replaces current style: Link",
             "$type": "color",
             "$libraryName": "",
@@ -2959,9 +2239,7 @@
             "$value": "{Themes.StGeorge.color.primary.300}"
           },
           "text-success": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2969,9 +2247,7 @@
             "$value": "{Themes.StGeorge.color.reserved.success.300}"
           },
           "text-info": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2979,9 +2255,7 @@
             "$value": "{Themes.StGeorge.color.reserved.info.300}"
           },
           "text-warning": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2989,9 +2263,7 @@
             "$value": "{Themes.StGeorge.color.reserved.warning.300}"
           },
           "text-danger": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -2999,9 +2271,7 @@
             "$value": "{Themes.StGeorge.color.reserved.danger.300}"
           },
           "text-system-error": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reserved. Must only be used for the System alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -3009,9 +2279,7 @@
             "$value": "{Themes.StGeorge.color.reserved.system.500}"
           },
           "text-mono": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Mono text is either White or Black",
             "$type": "color",
             "$libraryName": "",
@@ -3019,9 +2287,7 @@
             "$value": "{Themes.StGeorge.color.mono.black}"
           },
           "text-reversed": {
-            "$scopes": [
-              "TEXT_FILL"
-            ],
+            "$scopes": ["TEXT_FILL"],
             "$description": "Reversed text is always white",
             "$type": "color",
             "$libraryName": "",
@@ -3031,9 +2297,7 @@
         },
         "border": {
           "border-muted": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
@@ -3041,9 +2305,7 @@
             "$value": "{Themes.StGeorge.color.muted.500}"
           },
           "border-muted-strong": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Replaces current style: Border Dark",
             "$type": "color",
             "$libraryName": "",
@@ -3051,9 +2313,7 @@
             "$value": "{Themes.StGeorge.color.muted.500}"
           },
           "border-muted-mild": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Do not use",
             "$type": "color",
             "$libraryName": "",
@@ -3061,9 +2321,7 @@
             "$value": "{Themes.StGeorge.color.muted.700}"
           },
           "border-muted-soft": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Replaces current style: Muted",
             "$type": "color",
             "$libraryName": "",
@@ -3071,9 +2329,7 @@
             "$value": "{Themes.StGeorge.color.muted.800}"
           },
           "border-hero": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Replaces current style: Hero",
             "$type": "color",
             "$libraryName": "",
@@ -3081,9 +2337,7 @@
             "$value": "{Themes.StGeorge.color.hero.300}"
           },
           "border-primary": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Replaces current style: Primary",
             "$type": "color",
             "$libraryName": "",
@@ -3091,9 +2345,7 @@
             "$value": "{Themes.StGeorge.color.primary.400}"
           },
           "border-pop": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Replaces current style: Pop. Embellishment only, use sparingly and in accordance with the brand guidelines.",
             "$type": "color",
             "$libraryName": "",
@@ -3101,9 +2353,7 @@
             "$value": "{Themes.StGeorge.color.pop.800}"
           },
           "border-holler": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "CAUTION: GEL can not endorse the use of this colour token until it's approved and documented as part of the Master Brand.",
             "$type": "color",
             "$libraryName": "",
@@ -3111,9 +2361,7 @@
             "$value": "{Themes.StGeorge.color.holler.400}"
           },
           "border-success": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -3121,9 +2369,7 @@
             "$value": "{Themes.StGeorge.color.reserved.success.500}"
           },
           "border-success-mild": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Success alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -3131,9 +2377,7 @@
             "$value": "{Themes.StGeorge.color.reserved.success.700}"
           },
           "border-info": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -3141,9 +2385,7 @@
             "$value": "{Themes.StGeorge.color.reserved.info.500}"
           },
           "border-info-mild": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Info alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -3151,9 +2393,7 @@
             "$value": "{Themes.StGeorge.color.reserved.info.700}"
           },
           "border-warning": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -3161,9 +2401,7 @@
             "$value": "{Themes.StGeorge.color.reserved.warning.500}"
           },
           "border-warning-mild": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Warning alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -3171,9 +2409,7 @@
             "$value": "{Themes.StGeorge.color.reserved.warning.700}"
           },
           "border-danger": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -3181,9 +2417,7 @@
             "$value": "{Themes.StGeorge.color.reserved.danger.500}"
           },
           "border-danger-mild": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Must only be used for the Danger alert component.",
             "$type": "color",
             "$libraryName": "",
@@ -3191,9 +2425,7 @@
             "$value": "{Themes.StGeorge.color.reserved.danger.700}"
           },
           "border-mono": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Mono border is either White or Black",
             "$type": "color",
             "$libraryName": "",
@@ -3201,9 +2433,7 @@
             "$value": "{Themes.StGeorge.color.mono.black}"
           },
           "border-focus": {
-            "$scopes": [
-              "STROKE_COLOR"
-            ],
+            "$scopes": ["STROKE_COLOR"],
             "$description": "Reserved. Only for use with focus state keyboard navigation.",
             "$type": "color",
             "$libraryName": "",
@@ -3213,10 +2443,7 @@
         },
         "data": {
           "data-a-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3224,10 +2451,7 @@
             "$value": "{Themes.StGeorge.color.primary.500}"
           },
           "data-a-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3235,10 +2459,7 @@
             "$value": "{Themes.StGeorge.color.primary.200}"
           },
           "data-a-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3246,10 +2467,7 @@
             "$value": "{Themes.StGeorge.color.primary.opacity}"
           },
           "data-b-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3257,10 +2475,7 @@
             "$value": "{Themes.StGeorge.color.hero.300}"
           },
           "data-b-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3268,10 +2483,7 @@
             "$value": "{Themes.StGeorge.color.hero.200}"
           },
           "data-b-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3279,10 +2491,7 @@
             "$value": "{Themes.StGeorge.color.hero.opacity}"
           },
           "data-c-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3290,10 +2499,7 @@
             "$value": "{Themes.StGeorge.color.pop.500}"
           },
           "data-c-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3301,10 +2507,7 @@
             "$value": "{Themes.StGeorge.color.pop.300}"
           },
           "data-c-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3312,10 +2515,7 @@
             "$value": "{Themes.StGeorge.color.pop.opacity}"
           },
           "data-d-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3323,10 +2523,7 @@
             "$value": "{Themes.StGeorge.color.holler.500}"
           },
           "data-d-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3334,10 +2531,7 @@
             "$value": "{Themes.StGeorge.color.holler.200}"
           },
           "data-d-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3345,10 +2539,7 @@
             "$value": "{Themes.StGeorge.color.holler.opacity}"
           },
           "data-e-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3356,10 +2547,7 @@
             "$value": "{Themes.StGeorge.color.sing.500}"
           },
           "data-e-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3367,10 +2555,7 @@
             "$value": "{Themes.StGeorge.color.sing.300}"
           },
           "data-e-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3378,10 +2563,7 @@
             "$value": "{Themes.StGeorge.color.sing.opacity}"
           },
           "data-f-solid": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3389,10 +2571,7 @@
             "$value": "{Themes.StGeorge.color.dance.500}"
           },
           "data-f-tint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3400,10 +2579,7 @@
             "$value": "{Themes.StGeorge.color.dance.300}"
           },
           "data-f-opacity": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
             "$libraryName": "",
@@ -3413,9 +2589,7 @@
         },
         "pictogram": {
           "surface-pictogram-base": {
-            "$scopes": [
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["SHAPE_FILL"],
             "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
@@ -3423,9 +2597,7 @@
             "$value": "{Themes.StGeorge.color.alias.surface-pictogram-base-Dm}"
           },
           "surface-pictogram-accent": {
-            "$scopes": [
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["SHAPE_FILL"],
             "$description": "Reserved. Only for use on Pictograms.",
             "$type": "color",
             "$libraryName": "",
@@ -3435,10 +2607,7 @@
         },
         "state": {
           "surface-hover-primary": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -3447,10 +2616,7 @@
             "$value": "{Themes.StGeorge.color.primary.200}"
           },
           "surface-active-primary": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3458,10 +2624,7 @@
             "$value": "{Themes.StGeorge.color.primary.100}"
           },
           "surface-hover-hero": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -3470,10 +2633,7 @@
             "$value": "{Themes.StGeorge.color.hero.200}"
           },
           "surface-active-hero": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -3482,10 +2642,7 @@
             "$value": "{Themes.StGeorge.color.hero.100}"
           },
           "surface-hover-primary-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -3494,10 +2651,7 @@
             "$value": "{Themes.StGeorge.color.primary.900}"
           },
           "surface-active-primary-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -3506,10 +2660,7 @@
             "$value": "{Themes.StGeorge.color.primary.800}"
           },
           "surface-hover-hero-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3517,10 +2668,7 @@
             "$value": "{Themes.StGeorge.color.hero.800}"
           },
           "surface-active-hero-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3528,10 +2676,7 @@
             "$value": "{Themes.StGeorge.color.hero.400}"
           },
           "surface-hover-muted-pale": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -3540,10 +2685,7 @@
             "$value": "{Themes.StGeorge.color.muted.800}"
           },
           "surface-active-muted-pale": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -3552,10 +2694,7 @@
             "$value": "{Themes.StGeorge.color.muted.600}"
           },
           "surface-hover-mono": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -3564,10 +2703,7 @@
             "$value": "{Themes.StGeorge.color.mono.black}"
           },
           "surface-active-mono": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
             "$description": "This token is for hover states.",
             "$hiddenFromPublishing": true,
             "$type": "color",
@@ -3580,90 +2716,70 @@
       "border": {
         "radius": {
           "rounded-none": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.none}"
           },
           "rounded-sm": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.sm}"
           },
           "rounded-md": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.md}"
           },
           "rounded-lg": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.lg}"
           },
           "rounded-xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.xl}"
           },
           "rounded-2xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.2xl}"
           },
           "rounded-3xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.3xl}"
           },
           "rounded-4xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.4xl}"
           },
           "rounded-5xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.border.radius.5xl}"
           },
           "rounded-full": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$type": "dimension",
             "$libraryName": "",
             "$collectionName": "Themes",
@@ -3678,9 +2794,7 @@
       "color": {
         "alias": {
           "text-body-Lm": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3688,9 +2802,7 @@
             "$value": "{Themes.StGeorge.color.hero.800}"
           },
           "text-body-Dm": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3698,9 +2810,7 @@
             "$value": "{Themes.StGeorge.color.muted.200}"
           },
           "text-heading-Lm": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3708,9 +2818,7 @@
             "$value": "{Themes.StGeorge.color.hero.600}"
           },
           "text-heading-Dm": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3718,9 +2826,7 @@
             "$value": "{Themes.StGeorge.color.hero.300}"
           },
           "text-hero-LM": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3728,9 +2834,7 @@
             "$value": "{Themes.StGeorge.color.hero.600}"
           },
           "text-hero-DM": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3738,9 +2842,7 @@
             "$value": "{Themes.StGeorge.color.hero.300}"
           },
           "surface-pictogram-base-Lm": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3748,9 +2850,7 @@
             "$value": "{Themes.StGeorge.color.hero.800}"
           },
           "surface-pictogram-base-Dm": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3758,9 +2858,7 @@
             "$value": "{Themes.StGeorge.color.hero.400}"
           },
           "surface-pictogram-accent-Lm": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3768,9 +2866,7 @@
             "$value": "{Themes.StGeorge.color.pop.500}"
           },
           "surface-pictogram-accent-DM": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3778,9 +2874,7 @@
             "$value": "{Themes.StGeorge.color.pop.400}"
           },
           "surface-muted-vivid-LM": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3788,9 +2882,7 @@
             "$value": "{Themes.StGeorge.color.hero.800}"
           },
           "surface-muted-vivid-DM": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3800,9 +2892,7 @@
         },
         "muted": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3810,9 +2900,7 @@
             "$value": "{Primitives.color.STG.Grey.50}"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3820,9 +2908,7 @@
             "$value": "{Primitives.color.STG.Grey.100}"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3830,9 +2916,7 @@
             "$value": "{Primitives.color.STG.Grey.200}"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3840,9 +2924,7 @@
             "$value": "{Primitives.color.STG.Grey.300}"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3850,9 +2932,7 @@
             "$value": "{Primitives.color.STG.Grey.400}"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3860,9 +2940,7 @@
             "$value": "{Primitives.color.STG.Grey.500}"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3870,9 +2948,7 @@
             "$value": "{Primitives.color.STG.Grey.600}"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3880,9 +2956,7 @@
             "$value": "{Primitives.color.STG.Grey.700}"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3890,9 +2964,7 @@
             "$value": "{Primitives.color.STG.Grey.800}"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3900,9 +2972,7 @@
             "$value": "{Primitives.color.STG.Grey.900}"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3912,9 +2982,7 @@
         },
         "primary": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3922,9 +2990,7 @@
             "$value": "{Primitives.color.STG.Red.50}"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3932,9 +2998,7 @@
             "$value": "{Primitives.color.STG.Red.100}"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3942,9 +3006,7 @@
             "$value": "{Primitives.color.STG.Red.200}"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3952,9 +3014,7 @@
             "$value": "{Primitives.color.STG.Red.300}"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3962,9 +3022,7 @@
             "$value": "{Primitives.color.STG.Red.400}"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3972,9 +3030,7 @@
             "$value": "{Primitives.color.STG.Red.500}"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3982,9 +3038,7 @@
             "$value": "{Primitives.color.STG.Red.600}"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -3992,9 +3046,7 @@
             "$value": "{Primitives.color.STG.Red.700}"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4002,9 +3054,7 @@
             "$value": "{Primitives.color.STG.Red.800}"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4012,9 +3062,7 @@
             "$value": "{Primitives.color.STG.Red.900}"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4022,9 +3070,7 @@
             "$value": "{Primitives.color.STG.Red.950}"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4034,9 +3080,7 @@
         },
         "hero": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4044,9 +3088,7 @@
             "$value": "{Primitives.color.STG.Access Green.50}"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4054,9 +3096,7 @@
             "$value": "{Primitives.color.STG.Access Green.100}"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4064,9 +3104,7 @@
             "$value": "{Primitives.color.STG.Access Green.200}"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4074,9 +3112,7 @@
             "$value": "{Primitives.color.STG.Access Green.300}"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4084,9 +3120,7 @@
             "$value": "{Primitives.color.STG.Access Green.400}"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4094,9 +3128,7 @@
             "$value": "{Primitives.color.STG.Access Green.500}"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4104,9 +3136,7 @@
             "$value": "{Primitives.color.STG.Access Green.600}"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4114,9 +3144,7 @@
             "$value": "{Primitives.color.STG.Access Green.700}"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4124,9 +3152,7 @@
             "$value": "{Primitives.color.STG.Access Green.800}"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4134,9 +3160,7 @@
             "$value": "{Primitives.color.STG.Access Green.900}"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4144,9 +3168,7 @@
             "$value": "{Primitives.color.STG.Access Green.950}"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4156,9 +3178,7 @@
         },
         "pop": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4166,9 +3186,7 @@
             "$value": "{Primitives.color.STG.Green.50}"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4176,9 +3194,7 @@
             "$value": "{Primitives.color.STG.Green.100}"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4186,9 +3202,7 @@
             "$value": "{Primitives.color.STG.Green.200}"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4196,9 +3210,7 @@
             "$value": "{Primitives.color.STG.Green.300}"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4206,9 +3218,7 @@
             "$value": "{Primitives.color.STG.Green.400}"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4216,9 +3226,7 @@
             "$value": "{Primitives.color.STG.Green.500}"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4226,9 +3234,7 @@
             "$value": "{Primitives.color.STG.Green.600}"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4236,9 +3242,7 @@
             "$value": "{Primitives.color.STG.Green.700}"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4246,9 +3250,7 @@
             "$value": "{Primitives.color.STG.Green.800}"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4256,9 +3258,7 @@
             "$value": "{Primitives.color.STG.Green.900}"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4266,9 +3266,7 @@
             "$value": "{Primitives.color.STG.Green.950}"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4278,9 +3276,7 @@
         },
         "holler": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4288,9 +3284,7 @@
             "$value": "{Primitives.color.STG.Plum.50}"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4298,9 +3292,7 @@
             "$value": "{Primitives.color.STG.Plum.100}"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4308,9 +3300,7 @@
             "$value": "{Primitives.color.STG.Plum.200}"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4318,9 +3308,7 @@
             "$value": "{Primitives.color.STG.Plum.300}"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4328,9 +3316,7 @@
             "$value": "{Primitives.color.STG.Plum.400}"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4338,9 +3324,7 @@
             "$value": "{Primitives.color.STG.Plum.500}"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4348,9 +3332,7 @@
             "$value": "{Primitives.color.STG.Plum.600}"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4358,9 +3340,7 @@
             "$value": "{Primitives.color.STG.Plum.700}"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4368,9 +3348,7 @@
             "$value": "{Primitives.color.STG.Plum.800}"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4378,9 +3356,7 @@
             "$value": "{Primitives.color.STG.Plum.900}"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4388,9 +3364,7 @@
             "$value": "{Primitives.color.STG.Plum.950}"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4400,9 +3374,7 @@
         },
         "sing": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4410,9 +3382,7 @@
             "$value": "{Primitives.color.STG.Sky.50}"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4420,9 +3390,7 @@
             "$value": "{Primitives.color.STG.Sky.100}"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4430,9 +3398,7 @@
             "$value": "{Primitives.color.STG.Sky.200}"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4440,9 +3406,7 @@
             "$value": "{Primitives.color.STG.Sky.300}"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4450,9 +3414,7 @@
             "$value": "{Primitives.color.STG.Sky.400}"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4460,9 +3422,7 @@
             "$value": "{Primitives.color.STG.Sky.500}"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4470,9 +3430,7 @@
             "$value": "{Primitives.color.STG.Sky.600}"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4480,9 +3438,7 @@
             "$value": "{Primitives.color.STG.Sky.700}"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4490,9 +3446,7 @@
             "$value": "{Primitives.color.STG.Sky.800}"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4500,9 +3454,7 @@
             "$value": "{Primitives.color.STG.Sky.900}"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4510,9 +3462,7 @@
             "$value": "{Primitives.color.STG.Sky.950}"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4522,9 +3472,7 @@
         },
         "dance": {
           "50": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4532,9 +3480,7 @@
             "$value": "{Primitives.color.STG.Amber.50}"
           },
           "100": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4542,9 +3488,7 @@
             "$value": "{Primitives.color.STG.Amber.100}"
           },
           "200": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4552,9 +3496,7 @@
             "$value": "{Primitives.color.STG.Amber.200}"
           },
           "300": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4562,9 +3504,7 @@
             "$value": "{Primitives.color.STG.Amber.300}"
           },
           "400": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4572,9 +3512,7 @@
             "$value": "{Primitives.color.STG.Amber.400}"
           },
           "500": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4582,9 +3520,7 @@
             "$value": "{Primitives.color.STG.Amber.500}"
           },
           "600": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4592,9 +3528,7 @@
             "$value": "{Primitives.color.STG.Amber.600}"
           },
           "700": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4602,9 +3536,7 @@
             "$value": "{Primitives.color.STG.Amber.700}"
           },
           "800": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4612,9 +3544,7 @@
             "$value": "{Primitives.color.STG.Amber.800}"
           },
           "900": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4622,9 +3552,7 @@
             "$value": "{Primitives.color.STG.Amber.900}"
           },
           "950": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4632,9 +3560,7 @@
             "$value": "{Primitives.color.STG.Amber.950}"
           },
           "opacity": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$libraryName": "",
@@ -4644,17 +3570,13 @@
         },
         "mono": {
           "white": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#ffffff"
           },
           "black": {
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
+            "$scopes": ["ALL_SCOPES"],
             "$hiddenFromPublishing": true,
             "$type": "color",
             "$value": "#000000"
@@ -4663,9 +3585,7 @@
         "reserved": {
           "success": {
             "50": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4673,9 +3593,7 @@
               "$value": "{Primitives.color.Reserved.Green.50}"
             },
             "100": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4683,9 +3601,7 @@
               "$value": "{Primitives.color.Reserved.Green.100}"
             },
             "200": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4693,9 +3609,7 @@
               "$value": "{Primitives.color.Reserved.Green.200}"
             },
             "300": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4703,9 +3617,7 @@
               "$value": "{Primitives.color.Reserved.Green.300}"
             },
             "400": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4713,9 +3625,7 @@
               "$value": "{Primitives.color.Reserved.Green.400}"
             },
             "500": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4723,9 +3633,7 @@
               "$value": "{Primitives.color.Reserved.Green.500}"
             },
             "600": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4733,9 +3641,7 @@
               "$value": "{Primitives.color.Reserved.Green.600}"
             },
             "700": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4743,9 +3649,7 @@
               "$value": "{Primitives.color.Reserved.Green.700}"
             },
             "800": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4753,9 +3657,7 @@
               "$value": "{Primitives.color.Reserved.Green.800}"
             },
             "900": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4763,9 +3665,7 @@
               "$value": "{Primitives.color.Reserved.Green.900}"
             },
             "950": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4775,9 +3675,7 @@
           },
           "info": {
             "50": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4785,9 +3683,7 @@
               "$value": "{Primitives.color.Reserved.Blue.50}"
             },
             "100": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4795,9 +3691,7 @@
               "$value": "{Primitives.color.Reserved.Blue.100}"
             },
             "200": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4805,9 +3699,7 @@
               "$value": "{Primitives.color.Reserved.Blue.200}"
             },
             "300": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4815,9 +3707,7 @@
               "$value": "{Primitives.color.Reserved.Blue.300}"
             },
             "400": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4825,9 +3715,7 @@
               "$value": "{Primitives.color.Reserved.Blue.400}"
             },
             "500": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4835,9 +3723,7 @@
               "$value": "{Primitives.color.Reserved.Blue.500}"
             },
             "600": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4845,9 +3731,7 @@
               "$value": "{Primitives.color.Reserved.Blue.600}"
             },
             "700": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4855,9 +3739,7 @@
               "$value": "{Primitives.color.Reserved.Blue.700}"
             },
             "800": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4865,9 +3747,7 @@
               "$value": "{Primitives.color.Reserved.Blue.800}"
             },
             "900": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4875,9 +3755,7 @@
               "$value": "{Primitives.color.Reserved.Blue.900}"
             },
             "950": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4887,9 +3765,7 @@
           },
           "warning": {
             "50": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4897,9 +3773,7 @@
               "$value": "{Primitives.color.Reserved.Orange.50}"
             },
             "100": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4907,9 +3781,7 @@
               "$value": "{Primitives.color.Reserved.Orange.100}"
             },
             "200": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4917,9 +3789,7 @@
               "$value": "{Primitives.color.Reserved.Orange.200}"
             },
             "300": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4927,9 +3797,7 @@
               "$value": "{Primitives.color.Reserved.Orange.300}"
             },
             "400": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4937,9 +3805,7 @@
               "$value": "{Primitives.color.Reserved.Orange.400}"
             },
             "500": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4947,9 +3813,7 @@
               "$value": "{Primitives.color.Reserved.Orange.500}"
             },
             "600": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4957,9 +3821,7 @@
               "$value": "{Primitives.color.Reserved.Orange.600}"
             },
             "700": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4967,9 +3829,7 @@
               "$value": "{Primitives.color.Reserved.Orange.700}"
             },
             "800": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4977,9 +3837,7 @@
               "$value": "{Primitives.color.Reserved.Orange.800}"
             },
             "900": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4987,9 +3845,7 @@
               "$value": "{Primitives.color.Reserved.Orange.900}"
             },
             "950": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -4999,9 +3855,7 @@
           },
           "danger": {
             "50": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5009,9 +3863,7 @@
               "$value": "{Primitives.color.Reserved.Red.50}"
             },
             "100": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5019,9 +3871,7 @@
               "$value": "{Primitives.color.Reserved.Red.100}"
             },
             "200": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5029,9 +3879,7 @@
               "$value": "{Primitives.color.Reserved.Red.200}"
             },
             "300": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5039,9 +3887,7 @@
               "$value": "{Primitives.color.Reserved.Red.300}"
             },
             "400": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5049,9 +3895,7 @@
               "$value": "{Primitives.color.Reserved.Red.400}"
             },
             "500": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5059,9 +3903,7 @@
               "$value": "{Primitives.color.Reserved.Red.500}"
             },
             "600": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5069,9 +3911,7 @@
               "$value": "{Primitives.color.Reserved.Red.600}"
             },
             "700": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5079,9 +3919,7 @@
               "$value": "{Primitives.color.Reserved.Red.700}"
             },
             "800": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5089,9 +3927,7 @@
               "$value": "{Primitives.color.Reserved.Red.800}"
             },
             "900": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5099,9 +3935,7 @@
               "$value": "{Primitives.color.Reserved.Red.900}"
             },
             "950": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5111,9 +3945,7 @@
           },
           "system": {
             "50": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5121,9 +3953,7 @@
               "$value": "{Primitives.color.Reserved.Yellow.50}"
             },
             "100": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5131,9 +3961,7 @@
               "$value": "{Primitives.color.Reserved.Yellow.100}"
             },
             "200": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5141,9 +3969,7 @@
               "$value": "{Primitives.color.Reserved.Yellow.200}"
             },
             "300": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5151,9 +3977,7 @@
               "$value": "{Primitives.color.Reserved.Yellow.300}"
             },
             "400": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5161,9 +3985,7 @@
               "$value": "{Primitives.color.Reserved.Yellow.400}"
             },
             "500": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5171,9 +3993,7 @@
               "$value": "{Primitives.color.Reserved.Yellow.500}"
             },
             "600": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5181,9 +4001,7 @@
               "$value": "{Primitives.color.Reserved.Yellow.600}"
             },
             "700": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5191,9 +4009,7 @@
               "$value": "{Primitives.color.Reserved.Yellow.700}"
             },
             "800": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5201,9 +4017,7 @@
               "$value": "{Primitives.color.Reserved.Yellow.800}"
             },
             "900": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5211,9 +4025,7 @@
               "$value": "{Primitives.color.Reserved.Yellow.900}"
             },
             "950": {
-              "$scopes": [
-                "ALL_SCOPES"
-              ],
+              "$scopes": ["ALL_SCOPES"],
               "$hiddenFromPublishing": true,
               "$type": "color",
               "$libraryName": "",
@@ -5226,9 +4038,7 @@
       "border": {
         "radius": {
           "none": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
@@ -5236,9 +4046,7 @@
             "$value": "{Primitives.border.radius.none}"
           },
           "sm": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
@@ -5246,9 +4054,7 @@
             "$value": "{Primitives.border.radius.3px}"
           },
           "md": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
@@ -5256,9 +4062,7 @@
             "$value": "{Primitives.border.radius.4px}"
           },
           "lg": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
@@ -5266,9 +4070,7 @@
             "$value": "{Primitives.border.radius.5px}"
           },
           "xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
@@ -5276,9 +4078,7 @@
             "$value": "{Primitives.border.radius.6px}"
           },
           "2xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
@@ -5286,9 +4086,7 @@
             "$value": "{Primitives.border.radius.8px}"
           },
           "3xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
@@ -5296,9 +4094,7 @@
             "$value": "{Primitives.border.radius.12px}"
           },
           "4xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
@@ -5306,9 +4102,7 @@
             "$value": "{Primitives.border.radius.16px}"
           },
           "5xl": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
@@ -5316,9 +4110,7 @@
             "$value": "{Primitives.border.radius.24px}"
           },
           "full": {
-            "$scopes": [
-              "CORNER_RADIUS"
-            ],
+            "$scopes": ["CORNER_RADIUS"],
             "$hiddenFromPublishing": true,
             "$type": "dimension",
             "$libraryName": "",
