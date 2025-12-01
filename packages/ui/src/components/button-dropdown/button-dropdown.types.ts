@@ -6,6 +6,7 @@ import { IconProps } from '../icon/icon.types.js';
 
 import { styles } from './button-dropdown.styles.js';
 import { ButtonDropdownPanelProps } from './components/button-dropdown-panel/button-dropdown-panel.types.js';
+import { Placement } from 'react-aria';
 
 type Variants = VariantProps<typeof styles>;
 
@@ -26,6 +27,10 @@ export type ButtonDropdownProps = {
    * State of whether the Popover is open
    */
   open?: boolean;
+  /**
+   * placement of the popover
+   */
+  placement?: Placement;
   /**
    * Soft look button
    */
