@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 @import '@westpac/style-config/tailwind';
-@import '@westpac/style-config/themes/wbc.css';
-@import '@westpac/style-config/themes/stg.css';
-@import '@westpac/style-config/themes/bom.css';
-@import '@westpac/style-config/themes/bsa.css';
+@import '@westpac/style-config/themes/wbc';
+@import '@westpac/style-config/themes/stg';
+@import '@westpac/style-config/themes/bom';
+@import '@westpac/style-config/themes/bsa';
 
 @source "../../node_modules/@westpac/ui/src";

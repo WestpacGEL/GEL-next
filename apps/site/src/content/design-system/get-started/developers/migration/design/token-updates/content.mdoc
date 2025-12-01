@@ -1,22 +1,46 @@
-With the update to GEL v1 there is an entirely new token system meaning previous color classnames e.g. `bg-primary` are incompatible with the new system. To assist with the migration, we have provided a codemod script to automate the process of updating your codebase where possible
+We introduced new token names to support a multi-brand + dual-theme system.
 
-We use [jscodeshift](https://github.com/facebook/jscodeshift) to run codemods. To apply a codemod, install `jscodeshift` if you don’t already have it:
-
-```html
-<StaticCode language="js" code={`npm install -g jscodeshift`} />
-```
-
-Then run the codemod against your source files. For example:
+#### Before
 
 ```html
-<StaticCode language="js" code={`npx jscodeshift -t ./codemods/update-date-picker.js src/`} />
+<StaticCode
+  language="jsx"
+  code={`
+<div className="bg-white">
+  <div className="bg-primary rounded-full">
+    <AccountIcon color="white" />
+  </div>
+  <h2 className="text-text">
+    My title
+    <BankIcon color="link" className="ml-2" />
+  </h2>
+  <p className="text-text">Lorem ipsum dolor sit amet</p>
+</div>
+  `}
+/>
 ```
 
-`-t` points to the codemod file.
+#### After
 
-`src/` is the folder you want to transform (adjust as needed).
+```html
+<StaticCode
+  language="jsx"
+  code={`
+<div className="bg-background-white-pale">
+  <div className="bg-surface-primary rounded-full">
+    <AccountIcon color="mono" />
+  </div>
+  <h2 className="text-text-body">
+    My title
+    <BankIcon color="primary" className="ml-2" />
+  </h2>
+  <p className="text-text-body">Lorem ipsum dolor sit amet</p>
+</div>
+  `}
+/>
+```
 
-Example
+To support migration, a codemod is available to automate this transition.
 
 ```html
 <StaticCode language="js" code={`npx jscodeshift --parser=tsx -t node_modules/@westpac/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs <path>/**/*.tsx`} />

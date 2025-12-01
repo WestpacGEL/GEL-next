@@ -29,31 +29,36 @@ The GEL is separated out into 2 packages.
 Install the GEL packages using preferred package manager (`npm`, `yarn` or `pnpm`):
 
 ```
-npm i @westpac/ui @westpac/style-config
+npm i @westpac/ui@canary @westpac/style-config@canary
 ```
 
 Create a `postcss.config.mjs` on the root of your application as follows.
 
 ```js
-export default {
-  plugins: {
-    '@tailwindcss/postcss': {},
-  },
-};
+import { postcssConfig } from '@westpac/style-config/postcss';
+
+export default postcssConfig;
 ```
 
 In your main CSS file, import the Tailwind directives and GEL styles:
 
 ```css
 @import 'tailwindcss';
+/* Tailwind setup */
+@import '@westpac/style-config/tailwind';
+/* Other setups */
 @import '@westpac/style-config';
+/* Register GEL components source for tailwind */
+@source "<relative_path>/node_modules/@westpac/ui/src";
 ```
 
 For brand theming, import the required brand stylesheets:
 
 ```css
-@import '@westpac/style-config/theme-wbc';
-@import '@westpac/style-config/theme-stg';
+@import '@westpac/style-config/themes/wbc';
+@import '@westpac/style-config/themes/stg';
+@import '@westpac/style-config/themes/bom';
+@import '@westpac/style-config/themes/bsa';
 ```
 
 If you have initialized your project with Nx build system follow the official [Nx tailwind documentation](https://nx.dev/recipes/react/using-tailwind-css-in-react#manual-setup-instructions) to configure tailwind.
@@ -281,10 +286,10 @@ src/ is the folder you want to transform (adjust as needed).
 Example
 
 ```bash
-npx jscodeshift -t https://raw.githubusercontent.com/WestpacGEL/GEL-next/refs/heads/main/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs "to/your/files/**/*.tsx"
+npx jscodeshift --parser=tsx -t node_modules/@westpac/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs <path>/**/*.tsx
 ```
 
-This will apply the update-pagination codemod to all .tsx files in your project.
+This will apply the gel-tokens-v1 codemod to all .tsx files in your project.
 
 ## Documentation
 

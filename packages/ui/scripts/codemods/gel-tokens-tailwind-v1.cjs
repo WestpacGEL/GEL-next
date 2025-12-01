@@ -12,15 +12,14 @@ module.exports = function transformer(file, api) {
   const generateBorderTokens = () => {
     const pieces = ['', '-l', '-r', '-t', '-b'];
     const colors = [
-      'border',
       'background',
+      'muted',
       'borderDark',
       'focus',
       'heading',
       'hero',
       'light',
       'link',
-      'muted',
       'neutral',
       'pop',
       'primary',
@@ -30,15 +29,30 @@ module.exports = function transformer(file, api) {
       'warning',
       'danger',
       'system',
+      'white',
+      'black',
     ];
 
-    const deprecatedColors = ['background', 'heading', 'light', 'link', 'neutral', 'pop', 'text', 'system', 'border'];
+    const deprecatedColors = ['background', 'heading', 'light', 'link', 'neutral', 'pop', 'text', 'system', 'black'];
+
+    const getColorToken = color => {
+      switch (color) {
+        case 'muted':
+          return 'muted-soft';
+        case 'borderDark':
+          return 'muted-strong';
+        case 'white':
+          return 'mono';
+        default:
+          return color;
+      }
+    };
 
     const borderTokens = pieces.reduce((acc, currentPiece) => {
       return colors.reduce(
         (acc2, color) => ({
           ...acc2,
-          [`border${currentPiece}-${color}`]: `border${currentPiece}-border-${color}${deprecatedColors.includes(color) ? '[REPLACE_TOKEN]' : ''}`,
+          [`border${currentPiece}-${color}`]: `border${currentPiece}-border-${getColorToken(color)}${deprecatedColors.includes(color) ? '[REPLACE_TOKEN]' : ''}`,
         }),
         acc,
       );
@@ -67,8 +81,10 @@ module.exports = function transformer(file, api) {
     'bg-warning': 'bg-surface-warning',
     'bg-danger': 'bg-surface-danger',
     'bg-system': 'bg-surface-system-error',
+    'bg-black': 'bg-black[REPLACE_TOKEN]',
     'bg-white': 'bg-background-white-pale',
     'text-text': 'text-text-body',
+    'text-black': 'text-black[REPLACE_TOKEN]',
     'text-background': 'text-background[REPLACE_TOKEN]',
     'text-border': 'text-border[REPLACE_TOKEN]',
     'text-borderDark': 'text-borderDark[REPLACE_TOKEN]',
@@ -95,14 +111,6 @@ module.exports = function transformer(file, api) {
     'border-b-border': 'border-b-border-muted-soft',
   };
 
-  const BLACK_AND_WHITE = {
-    'bg-black': 'bg-black[REPLACE_TOKEN]',
-    'bg-white': 'bg-white[REPLACE_TOKEN]',
-    'text-black': 'text-black[REPLACE_TOKEN]',
-    'border-black': 'border-black[REPLACE_TOKEN]',
-    'border-white': 'border-border-mono',
-  };
-
   const TINTED_COLOURS = {};
   const j = api.jscodeshift;
   const root = j(file.source);
@@ -113,12 +121,12 @@ module.exports = function transformer(file, api) {
     });
   });
 
-  const FINAL_REPLACER = { ...TINTED_COLOURS, ...REPLACEMENTS, ...BLACK_AND_WHITE };
+  const FINAL_REPLACER = { ...TINTED_COLOURS, ...REPLACEMENTS };
 
   // Helper to replace in a string
   function replaceAllTokens(str) {
     return Object.entries(FINAL_REPLACER).reduce(
-      (acc, [from, to]) => acc.replace(new RegExp(`\\b${from}\\b`, 'g'), to),
+      (acc, [from, to]) => acc.replace(new RegExp(`\\b${from}(?!-)\\b`, 'g'), to),
       str,
     );
   }

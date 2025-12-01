@@ -14,7 +14,7 @@ export const styles = tv({
       h-(--disclosure-panel-height) transition-[height] duration-300
       ease-[cubic-bezier(0.25,0.1,0.25,1)]
     `,
-    content: 'block border-border-muted-soft p-3 [&_:focus-visible]:focus-outline',
+    content: 'block border-border-muted-soft bg-background-white-pale p-3 [&_:focus-visible]:focus-outline',
   },
   variants: {
     look: {
@@ -83,6 +83,12 @@ export const styles = tv({
       isExpanded: true,
       rounded: true,
       className: 'group-last:rounded-none',
+    },
+    {
+      slots: ['content'],
+      isExpanded: true,
+      rounded: true,
+      className: 'group-last:rounded-b-2xl',
     },
   ],
 });

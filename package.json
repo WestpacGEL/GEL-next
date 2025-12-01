@@ -23,7 +23,7 @@
     "prepare": "husky install",
     "test": "turbo run test --filter=./packages/* --no-daemon",
     "ci:build": "pnpm install --frozen-lockfile && pnpm format && pnpm build && pnpm lint && pnpm check-types && pnpm test",
-    "ci:publish": "pnpm build && changeset publish",
+    "ci:publish": "pnpm build && changeset publish --tag canary",
     "ci:test": "pnpm format && pnpm lint && pnpm check-types && pnpm test",
     "migrate": "node script.cjs",
     "codemod:tokens": "node run-codemod.cjs"

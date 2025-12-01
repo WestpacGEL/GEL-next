@@ -37,7 +37,7 @@ export function ListBox({ filterText, ...props }: ListBoxProps) {
   const stateCollection = [...state.collection];
 
   return (
-    <ul {...listBoxProps} ref={listBoxRef} className={styles.ul()}>
+    <div className="overflow-auto">
       {selectionMode === 'multiple' && stateCollection.length > 0 && (
         <li
           className={`border-b border-b-border-muted-soft ${isFocused ? 'bg-background-faint-pale' : ''}`}
@@ -53,6 +53,7 @@ export function ListBox({ filterText, ...props }: ListBoxProps) {
               }
               return state.selectionManager.clearSelection();
             }}
+            // tabIndex={1}
           >
             <div className={styles.checkbox()}>
               {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" />}
@@ -64,17 +65,19 @@ export function ListBox({ filterText, ...props }: ListBoxProps) {
           </button>
         </li>
       )}
-      {stateCollection.length > 0 ? (
-        [...state.collection].map(item =>
-          item.type === 'section' ? (
-            <ListBoxSection selectionMode={selectionMode} key={item.key} section={item} state={state} />
-          ) : (
-            <Option selectionMode={selectionMode} key={item.key} item={item} state={state} />
-          ),
-        )
-      ) : (
-        <p className="px-2 py-4 typography-body-9 text-text-body">No items found</p>
-      )}
-    </ul>
+      <ul {...listBoxProps} ref={listBoxRef} className={styles.ul()}>
+        {stateCollection.length > 0 ? (
+          [...state.collection].map(item =>
+            item.type === 'section' ? (
+              <ListBoxSection selectionMode={selectionMode} key={item.key} section={item} state={state} />
+            ) : (
+              <Option selectionMode={selectionMode} key={item.key} item={item} state={state} />
+            ),
+          )
+        ) : (
+          <p className="px-2 py-4 typography-body-9 text-text-body">No items found</p>
+        )}
+      </ul>
+    </div>
   );
 }

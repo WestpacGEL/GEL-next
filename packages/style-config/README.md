@@ -18,7 +18,7 @@ This package serves as the single source of truth for design consistency across 
 Install the GEL style config using your preferred package manager i.e. `npm`, `yarn` or `pnpm`.
 
 ```sh
-npm i @westpac/style-config
+npm i @westpac/style-config@canary
 ```
 
 If using tailwind also install the following:
@@ -30,11 +30,9 @@ npm i tailwindcss @tailwindcss/postcss postcss`
 Create a `postcss.config.mjs` on the root of your application as follows.
 
 ```js
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-  },
-};
+import { postcssConfig } from '@westpac/style-config/postcss';
+
+export default postcssConfig;
 ```
 
 ## Usage
@@ -60,8 +58,10 @@ In your main CSS file, import the Tailwind directives and GEL styles:
 For brand theming, import the required brand stylesheets:
 
 ```css
-@import '@westpac/style-config/theme-wbc';
-@import '@westpac/style-config/theme-stg';
+@import '@westpac/style-config/themes/wbc';
+@import '@westpac/style-config/themes/stg';
+@import '@westpac/style-config/themes/bom';
+@import '@westpac/style-config/themes/bsa';
 ```
 
 #### Using brands

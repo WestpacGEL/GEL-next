@@ -56,6 +56,11 @@ export type ButtonProps = {
    */
   look?: ResponsiveVariants<Variants['look']>;
   /**
+   * Removes horizontal padding from the 'link' look button
+   * @default false
+   */
+  removeLinkPadding?: boolean;
+  /**
    * Size of the button
    * @default medium
    */

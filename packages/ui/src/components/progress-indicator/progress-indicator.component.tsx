@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useId } from 'react';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';

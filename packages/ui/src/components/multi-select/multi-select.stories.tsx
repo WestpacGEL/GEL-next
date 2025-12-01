@@ -200,3 +200,73 @@ export const UsingField = (props: PaginationProps) => {
     </Field>
   );
 };
+
+export const Testing = () => {
+  const [selectedKeysMulti, setSelectedKeysMulti] = useState<Set<string>>(new Set());
+  const [selectedKeysSingle, setSelectedKeysSingle] = useState<Set<string>>(new Set());
+  const [selectedKeysField, setSelectedKeysField] = useState<Set<string>>(new Set());
+
+  return (
+    <div className="flex flex-col gap-2">
+      <p>Multiple selection</p>
+      <MultiSelect
+        listBoxProps={{ 'aria-label': 'multiselect options' }}
+        selectedKeys={selectedKeysMulti}
+        onSelectionChange={keys => setSelectedKeysMulti(keys as Set<string>)}
+      >
+        {OPTIONS.map(option => (
+          <Item key={option.id} textValue={option.name}>
+            {option.name} <p>My paragraph s</p>
+          </Item>
+        ))}
+      </MultiSelect>
+      <p>Single selection</p>
+      <MultiSelect
+        selectionMode="single"
+        selectedKeys={selectedKeysSingle}
+        onSelectionChange={keys => setSelectedKeysSingle(keys as Set<string>)}
+      >
+        <Section title="Transaction">
+          {OPTIONS.map(option => (
+            <Item key={option.id} textValue={option.name}>
+              {option.name} <p>My paragraph</p>
+            </Item>
+          ))}
+        </Section>
+        <Section title="Savings">
+          {OTHER_OPTIONS.map(option => (
+            <Item key={option.id} textValue={option.name}>
+              {option.name} <p>My paragraph</p>
+            </Item>
+          ))}
+        </Section>
+      </MultiSelect>
+      <p>Field</p>
+      <Field label="Select a fruit topping" hintMessage="If there is hint text, it can go here">
+        <MultiSelect
+          listBoxProps={{ 'aria-label': 'multiselect options' }}
+          selectedKeys={selectedKeysField}
+          onSelectionChange={keys => setSelectedKeysField(keys as Set<string>)}
+        >
+          <Item textValue="other key">
+            Other name <p>My paragraph s</p>
+          </Item>
+          <Section title="Transaction">
+            {OPTIONS.map(option => (
+              <Item key={option.id} textValue={option.name}>
+                {option.name} <p>My paragraph s</p>
+              </Item>
+            ))}
+          </Section>
+          <Section title="Other section">
+            {OTHER_OPTIONS.map(option => (
+              <Item key={option.id} textValue={option.name}>
+                {option.name} <p>My paragraph s</p>
+              </Item>
+            ))}
+          </Section>
+        </MultiSelect>
+      </Field>
+    </div>
+  );
+};

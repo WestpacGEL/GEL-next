@@ -1,11 +1,11 @@
 {
   "name": "@westpac/style-config",
-  "version": "0.1.0-canary.1",
+  "version": "0.1.0-canary.3",
   "type": "module",
   "exports": {
     ".": "./dist/tokens/index.js",
     "./tailwind": "./dist/css/styles.css",
-    "./themes/*.css": "./dist/css/themes/theme-*.css",
+    "./themes/*": "./dist/css/themes/theme-*.css",
     "./postcss": "./postcss.config.js",
     "./tokens": "./dist/tokens/index.js",
     "./constants": "./dist/constants/index.js"
