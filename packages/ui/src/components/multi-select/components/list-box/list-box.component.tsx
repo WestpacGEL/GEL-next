@@ -9,7 +9,7 @@ import { styles as listBoxStyles } from './list-box.styles.js';
 
 import type { ListBoxProps } from './list-box.types.js';
 
-export function ListBox({ filterText, ...props }: ListBoxProps) {
+export function ListBox<T>({ filterText, ...props }: ListBoxProps<T>) {
   const ref = useRef<HTMLUListElement>(null);
   const { listBoxRef = ref, state, selectionMode } = props;
   const { listBoxProps } = useListBox(props, state, listBoxRef);
@@ -53,7 +53,6 @@ export function ListBox({ filterText, ...props }: ListBoxProps) {
               }
               return state.selectionManager.clearSelection();
             }}
-            // tabIndex={1}
           >
             <div className={styles.checkbox()}>
               {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" />}

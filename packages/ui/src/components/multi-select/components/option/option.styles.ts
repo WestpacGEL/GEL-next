@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    root: 'group flex cursor-pointer justify-between gap-1 bg-background-white-pale p-2 text-sm text-text-body transition-colors hover:bg-surface-muted-faint',
+    root: 'group flex cursor-pointer flex-col justify-between bg-background-white-pale p-2 text-sm text-text-body transition-colors hover:bg-surface-muted-faint',
     checkbox: 'size-4',
     body: '-mt-0.5 flex flex-1 items-center',
     flexZero: 'flex-0',

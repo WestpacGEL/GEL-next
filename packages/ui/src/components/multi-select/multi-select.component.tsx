@@ -10,7 +10,7 @@ import React, {
   memo,
 } from 'react';
 import { Key, mergeProps, useButton, useFilter, useFocusRing, useOverlayTrigger } from 'react-aria';
-import { ItemProps, SectionProps, useListState, useOverlayTriggerState } from 'react-stately';
+import { ItemProps, Item, SectionProps, useListState, useOverlayTriggerState } from 'react-stately';
 
 import { ClearIcon, DropDownIcon, SearchIcon } from '../../components/icon/index.js';
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
@@ -25,7 +25,7 @@ import { styles as multiSelectStyles } from './multi-select.styles.js';
 
 import type { MultiSelectProps, MultiSelectValue } from './multi-select.types.js';
 
-export { Item, Section } from 'react-stately';
+export { Section } from 'react-stately';
 
 export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   size = 'medium',
@@ -273,3 +273,4 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   );
 }
 export const MultiSelect = memo(BaseMultiSelect);
+export const MultiSelectItem = Item as (props: ItemProps<unknown> & { description?: string }) => JSX.Element;

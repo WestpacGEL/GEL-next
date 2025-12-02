@@ -1,7 +1,6 @@
 import { ListProps } from 'react-stately';
-import { VariantProps } from 'tailwind-variants';
-
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+import { VariantProps } from 'tailwind-variants';
 
 import { ListBoxProps } from './components/list-box/list-box.types.js';
 import { styles } from './multi-select.styles.js';
@@ -17,5 +16,5 @@ export type MultiSelectProps<T extends object = object> = {
   /**
    * listbox props
    */
-  listBoxProps?: Omit<ListBoxProps, 'state' | 'selectionMode'>;
+  listBoxProps?: Omit<ListBoxProps<T>, 'state' | 'selectionMode'>;
 } & ListProps<T>;

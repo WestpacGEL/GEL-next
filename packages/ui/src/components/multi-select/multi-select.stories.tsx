@@ -1,9 +1,9 @@
 import { type Meta, StoryFn } from '@storybook/react-vite';
 import { useState } from 'react';
 
-import { Field, type PaginationProps } from '../index.js';
+import { Field } from '../index.js';
 
-import { Item, MultiSelect, Section } from './multi-select.component.js';
+import { MultiSelect, MultiSelectItem, Section } from './multi-select.component.js';
 
 const meta: Meta<typeof MultiSelect> = {
   title: 'Components/Multiselect',
@@ -40,7 +40,7 @@ const OTHER_OPTIONS = [
 /**
  * > Default usage example
  */
-export const Default = (props: PaginationProps) => {
+export const Default = () => {
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
   return (
     <div className="flex flex-col gap-2">
@@ -50,16 +50,16 @@ export const Default = (props: PaginationProps) => {
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
       >
         {OPTIONS.map(option => (
-          <Item key={option.id} textValue={option.name}>
-            {option.name} <p>My paragraph s</p>
-          </Item>
+          <MultiSelectItem key={option.id} textValue={option.name} description="hello">
+            {option.name}
+          </MultiSelectItem>
         ))}
       </MultiSelect>
     </div>
   );
 };
 
-export const WithSection = (props: PaginationProps) => {
+export const WithSection = () => {
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
   return (
     <div className="flex flex-col gap-2">
@@ -70,16 +70,16 @@ export const WithSection = (props: PaginationProps) => {
       >
         <Section title="Transaction">
           {OPTIONS.map(option => (
-            <Item key={option.id} textValue={option.name}>
+            <MultiSelectItem key={option.id} textValue={option.name}>
               {option.name} <p>My paragraph s</p>
-            </Item>
+            </MultiSelectItem>
           ))}
         </Section>
         <Section title="Another Section">
           {OTHER_OPTIONS.map(option => (
-            <Item key={option.id} textValue={option.name}>
+            <MultiSelectItem key={option.id} textValue={option.name}>
               {option.name} <p>My paragraph s</p>
-            </Item>
+            </MultiSelectItem>
           ))}
         </Section>
       </MultiSelect>
@@ -91,7 +91,7 @@ export const WithSection = (props: PaginationProps) => {
  */
 
 const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
-export const Sizes = (props: PaginationProps) => {
+export const Sizes = () => {
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
 
   return (
@@ -109,16 +109,16 @@ export const Sizes = (props: PaginationProps) => {
           >
             <Section title="Transaction">
               {OPTIONS.map(option => (
-                <Item key={option.id} textValue={option.name}>
+                <MultiSelectItem key={option.id} textValue={option.name}>
                   {option.name} <p>My paragraph s</p>
-                </Item>
+                </MultiSelectItem>
               ))}
             </Section>
             <Section title="Savings">
               {OTHER_OPTIONS.map(option => (
-                <Item key={option.id} textValue={option.name}>
+                <MultiSelectItem key={option.id} textValue={option.name}>
                   {option.name} <p>My paragraph</p>
-                </Item>
+                </MultiSelectItem>
               ))}
             </Section>
           </MultiSelect>
@@ -131,7 +131,7 @@ export const Sizes = (props: PaginationProps) => {
 /**
  * > SingleSelect example
  */
-export const SingleSelect = (props: PaginationProps) => {
+export const SingleSelect = () => {
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
 
   return (
@@ -147,16 +147,16 @@ export const SingleSelect = (props: PaginationProps) => {
           >
             <Section title="Transaction">
               {OPTIONS.map(option => (
-                <Item key={option.id} textValue={option.name}>
+                <MultiSelectItem key={option.id} textValue={option.name}>
                   {option.name} <p>My paragraph</p>
-                </Item>
+                </MultiSelectItem>
               ))}
             </Section>
             <Section title="Savings">
               {OTHER_OPTIONS.map(option => (
-                <Item key={option.id} textValue={option.name}>
+                <MultiSelectItem key={option.id} textValue={option.name}>
                   {option.name} <p>My paragraph</p>
-                </Item>
+                </MultiSelectItem>
               ))}
             </Section>
           </MultiSelect>
@@ -169,7 +169,7 @@ export const SingleSelect = (props: PaginationProps) => {
 /**
  * > Field example
  */
-export const UsingField = (props: PaginationProps) => {
+export const UsingField = () => {
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
 
   return (
@@ -179,21 +179,21 @@ export const UsingField = (props: PaginationProps) => {
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
       >
-        <Item textValue="other key">
+        <MultiSelectItem textValue="other key">
           Other name <p>My paragraph s</p>
-        </Item>
+        </MultiSelectItem>
         <Section title="Transaction">
           {OPTIONS.map(option => (
-            <Item key={option.id} textValue={option.name}>
+            <MultiSelectItem key={option.id} textValue={option.name}>
               {option.name} <p>My paragraph s</p>
-            </Item>
+            </MultiSelectItem>
           ))}
         </Section>
         <Section title="Other section">
           {OTHER_OPTIONS.map(option => (
-            <Item key={option.id} textValue={option.name}>
+            <MultiSelectItem key={option.id} textValue={option.name}>
               {option.name} <p>My paragraph s</p>
-            </Item>
+            </MultiSelectItem>
           ))}
         </Section>
       </MultiSelect>
@@ -216,16 +216,16 @@ export const Testing = () => {
         >
           <Section title="Transaction">
             {OPTIONS.map(option => (
-              <Item key={option.id} textValue={option.name}>
+              <MultiSelectItem key={option.id} textValue={option.name}>
                 {option.name} <p>Supporting information or description</p>
-              </Item>
+              </MultiSelectItem>
             ))}
           </Section>
           <Section title="Savings">
             {OTHER_OPTIONS.map(option => (
-              <Item key={option.id} textValue={option.name}>
+              <MultiSelectItem key={option.id} textValue={option.name}>
                 {option.name} <p>Supporting information or description</p>
-              </Item>
+              </MultiSelectItem>
             ))}
           </Section>
         </MultiSelect>
@@ -239,16 +239,16 @@ export const Testing = () => {
         >
           <Section title="Transaction">
             {OPTIONS.map(option => (
-              <Item key={option.id} textValue={option.name}>
+              <MultiSelectItem key={option.id} textValue={option.name}>
                 {option.name} <p>Supporting information or description</p>
-              </Item>
+              </MultiSelectItem>
             ))}
           </Section>
           <Section title="Savings">
             {OTHER_OPTIONS.map(option => (
-              <Item key={option.id} textValue={option.name}>
+              <MultiSelectItem key={option.id} textValue={option.name}>
                 {option.name} <p>Supporting information or description</p>
-              </Item>
+              </MultiSelectItem>
             ))}
           </Section>
         </MultiSelect>

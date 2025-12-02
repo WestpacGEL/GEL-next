@@ -3,8 +3,12 @@ import { type AriaListBoxOptions } from 'react-aria';
 
 import type { ListState } from 'react-stately';
 
-export type ListBoxProps = {
+/**
+ * Generic ListBox props where `T` is the item value type used by react-stately.
+ * Default is `unknown` so callers must specify a concrete type where needed.
+ */
+export type ListBoxProps<T = unknown> = {
   filterText?: string;
   listBoxRef?: React.RefObject<HTMLUListElement>;
-  state: ListState<unknown>;
-} & AriaListBoxOptions<unknown>;
+  state: ListState<T>;
+} & AriaListBoxOptions<T>;
