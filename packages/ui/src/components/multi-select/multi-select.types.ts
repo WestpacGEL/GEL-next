@@ -1,6 +1,7 @@
 import { ListProps } from 'react-stately';
-import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 import { VariantProps } from 'tailwind-variants';
+
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 import { ListBoxProps } from './components/list-box/list-box.types.js';
 import { styles } from './multi-select.styles.js';
