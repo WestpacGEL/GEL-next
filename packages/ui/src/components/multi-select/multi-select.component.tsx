@@ -18,6 +18,7 @@ import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { Button } from '../button/button.component.js';
 import { Input } from '../input/input.component.js';
 import { InputGroup } from '../input-group/input-group.component.js';
+import { Tooltip } from '../tooltip/tooltip.component.js';
 
 import { ListBox } from './components/list-box/list-box.component.js';
 import { Popover } from './components/popover/popover.component.js';
@@ -179,34 +180,36 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     }
   }, []);
 
+  const selectedValues = selectedNodes.map(node => node?.textValue || '').join(', ');
+
   return (
     <div className={styles.root()}>
-      <div className="relative w-full">
-        <button className={styles.control()} ref={buttonRef} {...finalButtonProps}>
-          {/* Selected items */}
-          <div className={styles.selection()}>
-            <span className={styles.selectionSpan()}>
-              {selectedNodes.map(node => node?.textValue || '').join(', ')}
-            </span>
-          </div>
+      <Tooltip tooltip={selectedValues}>
+        <div className="relative w-full">
+          <button className={styles.control()} ref={buttonRef} {...finalButtonProps}>
+            {/* Selected items */}
+            <div className={styles.selection()}>
+              <span className={styles.selectionSpan()}>{selectedValues}</span>
+            </div>
 
-          {/* dropdown toggle */}
-          <div className={styles.button()}>
-            <DropDownIcon color="muted" size="small" aria-hidden="true" />
-          </div>
-        </button>
-        {selectedNodes.length > 0 && (
-          <Button
-            className="absolute top-0 right-6.5 bottom-0 flex !h-auto items-center justify-center"
-            look="unstyled"
-            onClick={() => {
-              listState.selectionManager.clearSelection();
-            }}
-          >
-            <ClearIcon className="-mt-0.5" size="small" color="muted" />
-          </Button>
-        )}
-      </div>
+            {/* dropdown toggle */}
+            <div className={styles.button()}>
+              <DropDownIcon color="muted" size="small" aria-hidden="true" />
+            </div>
+          </button>
+          {selectedNodes.length > 0 && (
+            <Button
+              className="absolute top-0 right-6.5 bottom-0 flex !h-auto items-center justify-center"
+              look="unstyled"
+              onClick={() => {
+                listState.selectionManager.clearSelection();
+              }}
+            >
+              <ClearIcon className="-mt-0.5" size="small" color="muted" />
+            </Button>
+          )}
+        </div>
+      </Tooltip>
       {selectedNodes.length > 0 && (
         <p className={styles.hint()}>
           {selectedNodes.length} item{selectedNodes.length > 1 && 's'} selected
