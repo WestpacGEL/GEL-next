@@ -149,6 +149,22 @@ You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-ne
 
 ### 🆕 Additional Improvements
 
+#### Style Constants
+
+The constants `BREAKPOINTS` and `SPACING_UNIT` have been moved to `@westpac/style-config/constants`
+
+#### Before
+
+```js
+import { BREAKPOINTS, SPACING_UNIT } from '@westpac/ui/theme-constants';
+```
+
+#### After
+
+```js
+import { BREAKPOINTS, SPACING_UNIT } from '@westpac/style-config/constants';
+```
+
 #### Component Updates
 
 - Full support for TailwindCSS v4 and its [latest features](https://tailwindcss.com/blog/tailwindcss-v4)
@@ -156,7 +172,7 @@ You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-ne
 
 #### Repeater aligned with Compacta specification
 
-##### Before
+#### Before
 
 ```jsx
 <Repeater>
