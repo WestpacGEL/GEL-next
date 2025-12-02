@@ -26,6 +26,7 @@ export function Popover(props: PopoverProps) {
       ...otherProps,
       popoverRef,
       isNonModal,
+      offset: 6,
     },
     state,
   );

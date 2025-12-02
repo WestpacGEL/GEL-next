@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     root: 'relative flex flex-col gap-1',
-    popover: 'mt-1 shadow',
+    popover: 'shadow',
     label: 'block text-left text-sm font-medium text-gray-700',
     control: 'form-control relative box-border inline-flex w-full flex-row overflow-hidden rounded-md',
     input: 'w-full outline-none',

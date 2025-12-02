@@ -27,7 +27,7 @@ export function ListBoxSection<T>({ selectionMode, section, state }: SectionProp
             {section.rendered}
           </span>
         )}
-        <ul {...groupProps}>
+        <ul {...groupProps} className="py-2">
           {childNodes.map(node => (
             <Option selectionMode={selectionMode} key={node.key} item={node} state={state} />
           ))}
