@@ -179,9 +179,6 @@ export const UsingField = () => {
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
       >
-        <MultiSelectItem textValue="other key">
-          Other name <p>My paragraph s</p>
-        </MultiSelectItem>
         <Section title="Transaction">
           {OPTIONS.map(option => (
             <MultiSelectItem key={option.id} textValue={option.name}>
@@ -214,19 +211,27 @@ export const Testing = () => {
           selectedKeys={selectedKeysMulti}
           onSelectionChange={keys => setSelectedKeysMulti(keys as Set<string>)}
         >
-          <Section title="Transaction">
-            {OPTIONS.map(option => (
-              <MultiSelectItem key={option.id} textValue={option.name}>
-                {option.name} <p>Supporting information or description</p>
+          <Section title="Transaction" items={OPTIONS}>
+            {option => (
+              <MultiSelectItem
+                key={option.id}
+                textValue={option.name}
+                description="Supporting information or description"
+              >
+                {option.name}
               </MultiSelectItem>
-            ))}
+            )}
           </Section>
-          <Section title="Savings">
-            {OTHER_OPTIONS.map(option => (
-              <MultiSelectItem key={option.id} textValue={option.name}>
-                {option.name} <p>Supporting information or description</p>
+          <Section title="Savings" items={OTHER_OPTIONS}>
+            {option => (
+              <MultiSelectItem
+                key={option.id}
+                textValue={option.name}
+                description="Supporting information or description"
+              >
+                {option.name}
               </MultiSelectItem>
-            ))}
+            )}
           </Section>
         </MultiSelect>
       </Field>

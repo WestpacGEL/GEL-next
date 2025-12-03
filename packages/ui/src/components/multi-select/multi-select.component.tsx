@@ -1,16 +1,7 @@
-import React, {
-  useRef,
-  useState,
-  useMemo,
-  useEffect,
-  useCallback,
-  KeyboardEvent,
-  Children,
-  ReactElement,
-  memo,
-} from 'react';
-import { Key, mergeProps, useButton, useFilter, useFocusRing, useOverlayTrigger } from 'react-aria';
-import { ItemProps, Item, SectionProps, useListState, useOverlayTriggerState } from 'react-stately';
+import { Node } from '@react-types/shared';
+import React, { useRef, useState, useMemo, useEffect, useCallback, KeyboardEvent, memo } from 'react';
+import { mergeProps, useButton, useFilter, useFocusRing, useOverlayTrigger } from 'react-aria';
+import { ItemProps, Item, useListState, useOverlayTriggerState } from 'react-stately';
 
 import { ClearIcon, DropDownIcon, SearchIcon } from '../../components/icon/index.js';
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
@@ -23,6 +14,7 @@ import { Tooltip } from '../tooltip/tooltip.component.js';
 import { ListBox } from './components/list-box/list-box.component.js';
 import { Popover } from './components/popover/popover.component.js';
 import { styles as multiSelectStyles } from './multi-select.styles.js';
+import { filterNodes } from './utils/filter-nodes.js';
 
 import type { MultiSelectProps, MultiSelectValue } from './multi-select.types.js';
 
@@ -36,70 +28,20 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   onSelectionChange,
   ...props
 }: MultiSelectProps<T>) {
-  const isItemElement = useCallback((el: ReactElement<any>): el is ReactElement<ItemProps<T>> => {
-    return !!el.props && 'textValue' in el.props;
-  }, []);
-
-  const isSectionElement = useCallback((el: ReactElement<any>): el is ReactElement<SectionProps<T>> => {
-    return !!el.props && 'children' in el.props && !('textValue' in el.props);
-  }, []);
-
   const breakpoint = useBreakpoint();
   // local filter string for the search input
   const [filterText, setFilterText] = useState('');
   const filter = useFilter({ sensitivity: 'base' });
 
-  const filteredChildren = useMemo(() => {
-    const newChildren: ReactElement[] = [];
-
-    Children.forEach(props.children, child => {
-      if (!React.isValidElement(child)) return;
-
-      if (isItemElement(child)) {
-        if (filter.contains(child.props.textValue ?? '', filterText)) {
-          newChildren.push(child);
-        }
-        return;
-      }
-
-      if (isSectionElement(child)) {
-        const subItems: ReactElement[] = [];
-
-        Children.forEach(child.props.children, sub => {
-          if (React.isValidElement(sub) && isItemElement(sub)) {
-            if (filter.contains(sub.props.textValue ?? '', filterText)) {
-              subItems.push(sub);
-            }
-          }
-        });
-
-        if (subItems.length > 0) {
-          newChildren.push(
-            React.cloneElement(child, {
-              children: subItems,
-            }),
-          );
-        }
-      }
-    });
-
-    return newChildren;
-  }, [props.children, isItemElement, isSectionElement, filter, filterText]);
-
   const listState = useListState<T>({
     ...props,
-    children: filteredChildren,
     selectedKeys,
     selectionMode,
     onSelectionChange,
-    // In theory this should work but there is a bug when there is a section
+    // Need to provide a custom filter as the default filtering in react-stately does not work with sections
     // https://github.com/adobe/react-spectrum/issues/4930
-    // filter: nodes => {
-    //   if (!filterText) return nodes;
-    //   return [...nodes].filter(node => {
-    //     return filter.contains(node.textValue ?? '', filterText);
-    //   });
-    // },
+    filter: (nodes: Iterable<Node<T>>) =>
+      filterNodes(nodes, filterText, (value, string) => filter.contains(value, string)),
   });
 
   // refs
@@ -147,31 +89,20 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   });
 
   // Helper: get an array of selected nodes (for rendering tags)
-  const selectedNodes = useMemo(() => {
-    if (!selectedKeys || typeof selectedKeys === 'string') {
+  const selectedValues = useMemo(() => {
+    if (!selectedKeys || typeof selectedKeys === 'string' || (selectedKeys instanceof Set && selectedKeys.size === 0)) {
       return [];
     }
-    const items: { key: Key | null; textValue?: string }[] = [];
 
-    Children.forEach(props.children, child => {
-      if (!React.isValidElement(child)) return;
+    return [...selectedKeys].map((key: string) => {
+      // if (selectionMode === 'single') {
+      //   const parentKey = listState.collection.getItem(key)?.parentKey;
+      //   console.log(listState.collection.getItem(parentKey ?? '')?.props.title);
+      // }
 
-      if (isItemElement(child)) {
-        items.push({ ...child.props, key: child.key });
-        return;
-      }
-
-      if (isSectionElement(child)) {
-        Children.forEach(child.props.children, sub => {
-          if (React.isValidElement(sub) && isItemElement(sub)) {
-            items.push({ ...sub.props, key: sub.key });
-          }
-        });
-      }
+      return listState.collection.getItem(key)?.textValue;
     });
-
-    return [...selectedKeys].map(key => items.find(item => item.key === key));
-  }, [isItemElement, isSectionElement, props.children, selectedKeys]);
+  }, [listState.collection, selectedKeys]);
 
   const handleInputKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
@@ -180,16 +111,16 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     }
   }, []);
 
-  const selectedValues = selectedNodes.map(node => node?.textValue || '').join(', ');
+  const valuesString = selectedValues.map(node => node || '').join(', ');
 
   return (
     <div className={styles.root()}>
-      <Tooltip tooltip={selectedValues}>
+      <Tooltip tooltip={valuesString}>
         <div className="relative w-full">
           <button className={styles.control()} ref={buttonRef} {...finalButtonProps}>
             {/* Selected items */}
             <div className={styles.selection()}>
-              <span className={styles.selectionSpan()}>{selectedValues}</span>
+              <span className={styles.selectionSpan()}>{valuesString}</span>
             </div>
 
             {/* dropdown toggle */}
@@ -197,7 +128,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
               <DropDownIcon color="muted" size="small" aria-hidden="true" />
             </div>
           </button>
-          {selectedNodes.length > 0 && (
+          {selectedValues.length > 0 && (
             <Button
               className="absolute top-0 right-6.5 bottom-0 flex !h-auto items-center justify-center"
               look="unstyled"
@@ -210,9 +141,9 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
           )}
         </div>
       </Tooltip>
-      {selectedNodes.length > 0 && (
+      {selectedValues.length > 0 && (
         <p className={styles.hint()}>
-          {selectedNodes.length} item{selectedNodes.length > 1 && 's'} selected
+          {selectedValues.length} item{selectedValues.length > 1 && 's'} selected
         </p>
       )}
 
