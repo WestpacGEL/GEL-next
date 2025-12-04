@@ -15,7 +15,7 @@ We are introducing a new architecture separating UI (@westpac/ui) components fro
 
 ### 🚨 Migration Steps
 
-1. Remove your existing tailwind.config.js and Follow the update instruction at [Tailwind CSS Upgrade Guide.](https://tailwindcss.com/docs/upgrade-guide)
+1. Remove your existing tailwind.config.js and Follow the update instruction at [Tailwind CSS Upgrade Guide.](https://tailwindcss.com/docs/upgrade-guide). If the update command they provide doesn't work scroll down to the manual update instructions and follow those.
 
 2. Install the updated dependencies:
 
@@ -63,6 +63,8 @@ npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tail
 ```
 
 4. After including the css file to enable brand + theme switching, ensure your root HTML element includes:
+
+NOTE: Be sure to pass the brand with data-brand as previously it was data-theme
 
 ```html
 <html data-brand="wbc" data-theme="dark|light">
@@ -128,6 +130,8 @@ We introduced new token names to support a multi-brand + dual-theme system.
 ```
 
 To support migration, a codemod is available to automate this transition.
+
+NOTE: For the path to your files you may not be able to do glob patterns based on system and may have to use something different than what is noted below
 
 ```bash
 npx jscodeshift --parser=tsx -t node_modules/@westpac/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs <path>/**/*.tsx
