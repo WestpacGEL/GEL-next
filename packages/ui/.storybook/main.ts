@@ -10,7 +10,7 @@ const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
   stories: ['../src/stories/intro.stories.tsx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-   features: {
+  features: {
     experimentalComponentsManifest: true,
   },
   addons: [
@@ -27,7 +27,7 @@ const config: StorybookConfig = {
         },
         experimentalFormat: 'markdown',
       },
-    }
+    },
   ],
 
   framework: {
