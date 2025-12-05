@@ -17,14 +17,9 @@ export const styles = tv({
         checkbox: '',
       },
     },
-    focused: {
-      true: {
-        root: 'bg-surface-muted-faint',
-      },
-    },
     isFocusVisible: {
       true: {
-        root: 'focus-outline -outline-offset-2',
+        root: 'bg-surface-muted-faint focus-outline -outline-offset-2',
       },
     },
     selected: {

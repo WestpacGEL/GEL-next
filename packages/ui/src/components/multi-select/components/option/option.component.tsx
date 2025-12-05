@@ -13,7 +13,6 @@ export function Option<T>({ selectionMode, item, state }: OptionProps<T>) {
   const { isFocusVisible } = useFocusVisible();
 
   const styles = optionStyles({
-    focused: isFocused,
     selected: isSelected,
     disabled: isDisabled,
     selectionMode,

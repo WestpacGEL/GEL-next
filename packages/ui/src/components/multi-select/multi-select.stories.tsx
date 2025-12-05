@@ -48,12 +48,13 @@ export const Default = () => {
         listBoxProps={{ 'aria-label': 'multiselect options' }}
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+        items={OPTIONS}
       >
-        {OPTIONS.map(option => (
-          <MultiSelectItem key={option.id} textValue={option.name} description="hello">
+        {option => (
+          <MultiSelectItem key={option.id} textValue={option.name} description="Supporting information or description">
             {option.name}
           </MultiSelectItem>
-        ))}
+        )}
       </MultiSelect>
     </div>
   );
@@ -68,19 +69,27 @@ export const WithSection = () => {
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
       >
-        <Section title="Transaction">
-          {OPTIONS.map(option => (
-            <MultiSelectItem key={option.id} textValue={option.name}>
-              {option.name} <p>My paragraph s</p>
+        <Section title="Transaction" items={OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.id}
+              textValue={option.name}
+              description="Supporting information or description"
+            >
+              {option.name}
             </MultiSelectItem>
-          ))}
+          )}
         </Section>
-        <Section title="Another Section">
-          {OTHER_OPTIONS.map(option => (
-            <MultiSelectItem key={option.id} textValue={option.name}>
-              {option.name} <p>My paragraph s</p>
+        <Section title="Savings" items={OTHER_OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.id}
+              textValue={option.name}
+              description="Supporting information or description"
+            >
+              {option.name}
             </MultiSelectItem>
-          ))}
+          )}
         </Section>
       </MultiSelect>
     </div>
@@ -107,19 +116,27 @@ export const Sizes = () => {
               setSelectedKeys(keys as Set<string>);
             }}
           >
-            <Section title="Transaction">
-              {OPTIONS.map(option => (
-                <MultiSelectItem key={option.id} textValue={option.name}>
-                  {option.name} <p>My paragraph s</p>
+            <Section title="Transaction" items={OPTIONS}>
+              {option => (
+                <MultiSelectItem
+                  key={option.id}
+                  textValue={option.name}
+                  description="Supporting information or description"
+                >
+                  {option.name}
                 </MultiSelectItem>
-              ))}
+              )}
             </Section>
-            <Section title="Savings">
-              {OTHER_OPTIONS.map(option => (
-                <MultiSelectItem key={option.id} textValue={option.name}>
-                  {option.name} <p>My paragraph</p>
+            <Section title="Savings" items={OTHER_OPTIONS}>
+              {option => (
+                <MultiSelectItem
+                  key={option.id}
+                  textValue={option.name}
+                  description="Supporting information or description"
+                >
+                  {option.name}
                 </MultiSelectItem>
-              ))}
+              )}
             </Section>
           </MultiSelect>
         </div>
@@ -145,23 +162,72 @@ export const SingleSelect = () => {
             selectedKeys={selectedKeys}
             onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
           >
-            <Section title="Transaction">
-              {OPTIONS.map(option => (
-                <MultiSelectItem key={option.id} textValue={option.name}>
-                  {option.name} <p>My paragraph</p>
+            <Section title="Transaction" items={OPTIONS}>
+              {option => (
+                <MultiSelectItem
+                  key={option.id}
+                  textValue={option.name}
+                  description="Supporting information or description"
+                >
+                  {option.name}
                 </MultiSelectItem>
-              ))}
+              )}
             </Section>
-            <Section title="Savings">
-              {OTHER_OPTIONS.map(option => (
-                <MultiSelectItem key={option.id} textValue={option.name}>
-                  {option.name} <p>My paragraph</p>
+            <Section title="Savings" items={OTHER_OPTIONS}>
+              {option => (
+                <MultiSelectItem
+                  key={option.id}
+                  textValue={option.name}
+                  description="Supporting information or description"
+                >
+                  {option.name}
                 </MultiSelectItem>
-              ))}
+              )}
             </Section>
           </MultiSelect>
         </div>
       ))}
+    </div>
+  );
+};
+
+/**
+ * > SingleSelect example that shows section title with selection
+ */
+export const SingleSelectWithSectionTitle = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+
+  return (
+    <div className="flex flex-col gap-2">
+      <MultiSelect
+        selectionMode="single"
+        selectedKeys={selectedKeys}
+        onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+        showSingleSectionTitle
+      >
+        <Section title="Transaction" items={OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.id}
+              textValue={option.name}
+              description="Supporting information or description"
+            >
+              {option.name}
+            </MultiSelectItem>
+          )}
+        </Section>
+        <Section title="Savings" items={OTHER_OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.id}
+              textValue={option.name}
+              description="Supporting information or description"
+            >
+              {option.name}
+            </MultiSelectItem>
+          )}
+        </Section>
+      </MultiSelect>
     </div>
   );
 };
@@ -179,19 +245,27 @@ export const UsingField = () => {
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
       >
-        <Section title="Transaction">
-          {OPTIONS.map(option => (
-            <MultiSelectItem key={option.id} textValue={option.name}>
-              {option.name} <p>My paragraph s</p>
+        <Section title="Transaction" items={OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.id}
+              textValue={option.name}
+              description="Supporting information or description"
+            >
+              {option.name}
             </MultiSelectItem>
-          ))}
+          )}
         </Section>
-        <Section title="Other section">
-          {OTHER_OPTIONS.map(option => (
-            <MultiSelectItem key={option.id} textValue={option.name}>
-              {option.name} <p>My paragraph s</p>
+        <Section title="Savings" items={OTHER_OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.id}
+              textValue={option.name}
+              description="Supporting information or description"
+            >
+              {option.name}
             </MultiSelectItem>
-          ))}
+          )}
         </Section>
       </MultiSelect>
     </Field>
@@ -242,19 +316,27 @@ export const Testing = () => {
           selectedKeys={selectedKeysSingle}
           onSelectionChange={keys => setSelectedKeysSingle(keys as Set<string>)}
         >
-          <Section title="Transaction">
-            {OPTIONS.map(option => (
-              <MultiSelectItem key={option.id} textValue={option.name}>
-                {option.name} <p>Supporting information or description</p>
+          <Section title="Transaction" items={OPTIONS}>
+            {option => (
+              <MultiSelectItem
+                key={option.id}
+                textValue={option.name}
+                description="Supporting information or description"
+              >
+                {option.name}
               </MultiSelectItem>
-            ))}
+            )}
           </Section>
-          <Section title="Savings">
-            {OTHER_OPTIONS.map(option => (
-              <MultiSelectItem key={option.id} textValue={option.name}>
-                {option.name} <p>Supporting information or description</p>
+          <Section title="Savings" items={OTHER_OPTIONS}>
+            {option => (
+              <MultiSelectItem
+                key={option.id}
+                textValue={option.name}
+                description="Supporting information or description"
+              >
+                {option.name}
               </MultiSelectItem>
-            ))}
+            )}
           </Section>
         </MultiSelect>
       </Field>

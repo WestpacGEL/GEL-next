@@ -20,6 +20,7 @@ export function SelectAllOption<T>({ state }: { state: ListState<T> }) {
       <button
         className={styles.button()}
         onClick={() => {
+          // TODO: Update this to add whateveris there to the selection instead of replacing it
           if (!allItemsAreSelected) {
             // This is because selectAll send a string called 'all' when it is called.
             state.selectionManager.setSelectedKeys(state.selectionManager.collection.getKeys());
