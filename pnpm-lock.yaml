@@ -317,6 +317,9 @@ importers:
       eslint-import-resolver-typescript:
         specifier: ^4.4.4
         version: 4.4.4(eslint-plugin-import@2.32.0)(eslint@9.33.0(jiti@2.5.1))
+      eslint-plugin-better-tailwindcss:
+        specifier: ^3.7.10
+        version: 3.7.10(eslint@9.33.0(jiti@2.5.1))(tailwindcss@4.1.13)
       eslint-plugin-import:
         specifier: ^2.32.0
         version: 2.32.0(@typescript-eslint/parser@8.35.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.8.3))(eslint-import-resolver-typescript@4.4.4)(eslint@9.33.0(jiti@2.5.1))
@@ -354,9 +357,6 @@ importers:
       '@types/node':
         specifier: '*'
         version: 20.12.14
-      eslint-plugin-better-tailwindcss:
-        specifier: ^3.7.10
-        version: 3.7.10(eslint@9.33.0(jiti@2.5.1))(tailwindcss@4.1.13)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
