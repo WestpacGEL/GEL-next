@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Button } from '../../../../../button/index.js';
 import { useModalDialogContext } from '../../modal-dialog.component.js';
@@ -16,8 +16,13 @@ export function ModalDialogFooter({
   secondaryOnClick,
   ...props
 }: ModalDialogFooterProps) {
-  const { size } = useModalDialogContext();
-  const styles = modalFooterStyles({ size });
+  const { size, compact, setFooterPresent } = useModalDialogContext();
+  const styles = modalFooterStyles({ size, compact });
+
+  useEffect(() => {
+    setFooterPresent?.(true);
+  }, [setFooterPresent]);
+
   return (
     <div className={styles.base({ className })} {...props}>
       <Button look="primary" size="large" className={styles.primaryBtn()} onClick={primaryOnClick}>

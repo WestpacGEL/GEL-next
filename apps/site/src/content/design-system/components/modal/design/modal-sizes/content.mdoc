@@ -19,7 +19,7 @@ Use the appropriate modal size to suit your content. A modal will always respons
     <div className="flex justify-center gap-4">
       {[{ size: 'sm', label: 'Small'}, { size: 'md', label: 'Default'}, { size: 'lg', label: 'Large'}].map(({ size, label }: { size: string; label: string; }) => (
         <Fragment key={size}>
-          <Modal backdropStyle="lg:left-[18.75rem]" isDismissable size={size} state={states[size as 'sm' | 'md' | 'lg']} title="Sudden and magnificent" portalContainer={portalContainer ?? undefined}>
+          <Modal zIndex={1020} isDismissable size={size} state={states[size as 'sm' | 'md' | 'lg']} title="Sudden and magnificent" portalContainer={portalContainer ?? undefined}>
             <ModalBody>
               <p>
                 The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black against a silvery climbing phosphorescence that grew and grew.

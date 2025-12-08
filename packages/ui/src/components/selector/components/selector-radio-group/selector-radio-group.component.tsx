@@ -15,6 +15,7 @@ export const SelectorRadioGroupContext = createContext<SelectorRadioGroupContext
   state: {
     // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
     name: '',
+    defaultSelectedValue: null,
     isDisabled: false,
     isReadOnly: false,
     isRequired: false,

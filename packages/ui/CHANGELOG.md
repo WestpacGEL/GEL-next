@@ -1,5 +1,95 @@
 # @westpac/ui
 
+## 0.55.0
+
+### Minor Changes
+
+- a0b45cf: - added a prop to handle the panel placement on button dropdown
+
+### Patch Changes
+
+- 2e750ae: add import react to modal dialog body
+
+## 0.54.0
+
+### Minor Changes
+
+- 97e3ad7: - updated react-aria to fix issue with modal scrolling on iOS
+  - fixed modal not being able to scroll (would just go off screen)
+  - added new 'compact' modal that allows the body to scroll on the 'md' and 'lg' sizes
+  - updated modal styles based on new designs/need to scroll
+  - reverted button 'link' padding removal and added a prop to do the same thing
+  - updated default voice over for header left button
+
+### Patch Changes
+
+- 703d802: fix popover width and autocomplete footer
+- 784c2c0: updated dropshadows on compact modal
+
+## 0.53.2
+
+### Patch Changes
+
+- 5ca405f: fix: input group children rendering the classNames as expected
+
+## 0.53.1
+
+### Patch Changes
+
+- d7523fa: Removing the horizontal padding from Button look="link"
+
+## 0.53.0
+
+### Minor Changes
+
+- a28c062: Button Dropdown: adding the option to use only icon or changing the caret icon
+
+### Patch Changes
+
+- bd8c375: focus state for pagination item
+- d601d5d: fixes to focus outlines
+
+## 0.52.1
+
+### Patch Changes
+
+- 35af96a: filter buttons focus styling fix
+
+## 0.52.0
+
+### Minor Changes
+
+- 7fe448f: added truncation/new prop to show truncated value as title for Select
+
+### Patch Changes
+
+- 5386bd6: exporting ModalDialogFooterProps
+- 6a12908: screen reader accessibility for popover fixes
+
+## 0.51.1
+
+### Patch Changes
+
+- 54d3693: fixed issue where close button on bottom sheet wasn't positioned correctly
+
+## 0.51.0
+
+### Minor Changes
+
+- 2dad153: added functionality to disable logo link on Header component
+
+## 0.50.5
+
+### Patch Changes
+
+- 7c08b53: added min width to pill badge
+
+## 0.50.4
+
+### Patch Changes
+
+- 442d84c: fix issues with overflow and focus for accordion content
+
 ## 0.50.3
 
 ### Patch Changes

@@ -16,7 +16,7 @@ export function CalendarGrid({ state, weekdayStyle = 'short', ...props }: Calend
       <thead {...headerProps}>
         <tr>
           {weekDays.map((day, index) => (
-            <th key={index} className="text-text size-6 text-center text-[0.75rem] font-semibold leading-9">
+            <th key={index} className="size-6 text-center text-[0.75rem] font-semibold leading-9 text-text">
               {day.toUpperCase().slice(0, 2)}
             </th>
           ))}

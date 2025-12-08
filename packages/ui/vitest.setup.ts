@@ -6,6 +6,7 @@ const noop = () => {
 };
 
 Object.defineProperty(window, 'scrollTo', { value: noop, writable: true });
+
 // See https://github.com/jsdom/jsdom/issues/1721 as to why below property definitions are needed
 Object.defineProperty(window.URL, 'createObjectURL', {
   // Below needs to return unique string
@@ -27,4 +28,18 @@ Object.defineProperty(window, 'matchMedia', {
     removeEventListener: vi.fn(),
     dispatchEvent: vi.fn(),
   })),
+});
+
+beforeAll(() => {
+  global.ResizeObserver = class ResizeObserver {
+    observe() {
+      // do nothing
+    }
+    unobserve() {
+      // do nothing
+    }
+    disconnect() {
+      // do nothing
+    }
+  };
 });
