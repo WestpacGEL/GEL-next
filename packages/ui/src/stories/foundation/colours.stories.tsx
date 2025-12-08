@@ -192,7 +192,7 @@ export const Background: Story = {
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
             <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
               <div className="pb-2 font-bold text-text-body">{color}</div>
-              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: bg-${color}`}</div>
             </div>
           </div>
         ))}
@@ -216,7 +216,7 @@ export const Surface: Story = {
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
             <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
               <div className="pb-2 font-bold text-text-body">{color}</div>
-              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: bg-${color}`}</div>
             </div>
           </div>
         ))}
@@ -237,7 +237,7 @@ export const Text: Story = {
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
             <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
               <div className="pb-2 font-bold text-text-body">{color}</div>
-              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: text-${color}`}</div>
             </div>
           </div>
         ))}
@@ -258,7 +258,7 @@ export const Border: Story = {
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
             <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
               <div className="pb-2 font-bold text-text-body">{color}</div>
-              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: border-${color}`}</div>
             </div>
           </div>
         ))}
@@ -279,7 +279,7 @@ export const Data: Story = {
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
             <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
               <div className="pb-2 font-bold text-text-body">{color}</div>
-              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: bg-${color}`}</div>
             </div>
           </div>
         ))}
@@ -300,7 +300,7 @@ export const Pictogram: Story = {
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
             <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
               <div className="pb-2 font-bold text-text-body">{color}</div>
-              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: bg-${color}`}</div>
             </div>
           </div>
         ))}
@@ -321,7 +321,7 @@ export const State: Story = {
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
             <div className="divide-y divide-border-muted-soft border border-border-muted-soft p-2">
               <div className="pb-2 font-bold text-text-body">{color}</div>
-              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class: ${color}`}</div>
+              <div className="py-2 typography-body-10 font-light text-text-body">{`Tailwind class (should be used with utility classes): bg-${color}`}</div>
             </div>
           </div>
         ))}
