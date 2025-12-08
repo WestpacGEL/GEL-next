@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import { ListState } from 'react-stately';
 
-import { TickIcon } from '../../../../../../components/icon/index.js';
+import { TickIcon } from '../../../../../icon/index.js';
 
-import { styles as selectAllOptionStyles } from './select-all-option.styles.js';
+import { styles as selectAllOptionStyles } from './multi-select-select-all-option.styles.js';
 
-export function SelectAllOption<T>({ state }: { state: ListState<T> }) {
+export function MultiSelectSelectAllOption<T>({ state }: { state: ListState<T> }) {
   const allItemsAreSelected = useMemo(() => state.selectionManager.isSelectAll, [state.selectionManager.isSelectAll]);
 
   const withOneSelectionOrMore = useMemo(
@@ -20,10 +20,12 @@ export function SelectAllOption<T>({ state }: { state: ListState<T> }) {
       <button
         className={styles.button()}
         onClick={() => {
-          // TODO: Update this to add whateveris there to the selection instead of replacing it
           if (!allItemsAreSelected) {
             // This is because selectAll send a string called 'all' when it is called.
-            state.selectionManager.setSelectedKeys(state.selectionManager.collection.getKeys());
+            state.selectionManager.setSelectedKeys(
+              // This makes it so that when filtered select all will add to the currently selected options rather than replacing
+              new Set([...state.selectionManager.selectedKeys, ...state.selectionManager.collection.getKeys()]),
+            );
             return;
           }
           return state.selectionManager.clearSelection();

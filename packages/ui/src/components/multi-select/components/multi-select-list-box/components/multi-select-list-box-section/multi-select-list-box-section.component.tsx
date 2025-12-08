@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react';
 import { useListBoxSection } from 'react-aria';
 
-import { Option } from '../option/option.component.js';
+import { MultiSelectOption } from '../multi-select-option/multi-select-option.component.js';
 
-import { styles as listBoxStyles } from './list-box-section.styles.js';
+import { styles as listBoxStyles } from './multi-select-list-box-section.styles.js';
 
-import type { SectionProps } from './list-box-section.types.js';
+import type { MultiSelectSectionProps } from './multi-select-list-box-section.types.js';
 
-export function ListBoxSection<T>({ selectionMode, section, state }: SectionProps<T>) {
+export function MultiSelectListBoxSection<T>({ selectionMode, section, state }: MultiSelectSectionProps<T>) {
   const { itemProps, headingProps, groupProps } = useListBoxSection({
     heading: section.rendered,
     'aria-label': section['aria-label'],
@@ -29,7 +29,7 @@ export function ListBoxSection<T>({ selectionMode, section, state }: SectionProp
         )}
         <ul {...groupProps} className="py-2">
           {childNodes.map(node => (
-            <Option selectionMode={selectionMode} key={node.key} item={node} state={state} />
+            <MultiSelectOption selectionMode={selectionMode} key={node.key} item={node} state={state} />
           ))}
         </ul>
       </li>

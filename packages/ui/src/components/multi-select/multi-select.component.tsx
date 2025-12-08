@@ -1,24 +1,30 @@
 import { Node } from '@react-types/shared';
-import React, { useRef, useState, useEffect, useCallback, KeyboardEvent, memo } from 'react';
-import { mergeProps, useButton, useFilter, useFocusRing, useOverlayTrigger } from 'react-aria';
+import React, { useRef, useState, useEffect, useCallback, KeyboardEvent, memo, createContext } from 'react';
+import { useFilter } from 'react-aria';
 import { ItemProps, Item, useListState, useOverlayTriggerState } from 'react-stately';
 
-import { ClearIcon, DropDownIcon, SearchIcon } from '../../components/icon/index.js';
-import { useBreakpoint } from '../../hook/breakpoints.hook.js';
-import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+import { ClearIcon, SearchIcon } from '../../components/icon/index.js';
 import { Button } from '../button/button.component.js';
 import { Input } from '../input/input.component.js';
 import { InputGroup } from '../input-group/input-group.component.js';
-import { Tooltip } from '../tooltip/tooltip.component.js';
 
-import { ListBox } from './components/list-box/list-box.component.js';
-import { Popover } from './components/popover/popover.component.js';
+import { MultiSelectListBox } from './components/multi-select-list-box/multi-select-list-box.component.js';
+import { MultiSelectListBoxProps } from './components/multi-select-list-box/multi-select-list-box.types.js';
+import { MultiSelectListBoxTrigger } from './components/multi-select-list-box-trigger/multi-select-list-box-trigger.component.js';
+import { MultiSelectPopover } from './components/multi-select-popover/multi-select-popover.component.js';
 import { styles as multiSelectStyles } from './multi-select.styles.js';
 import { filterNodes } from './utils/filter-nodes.js';
 
 import type { MultiSelectProps, MultiSelectValue } from './multi-select.types.js';
 
-export { Section } from 'react-stately';
+export { Section as MultiSelectSection } from 'react-stately';
+
+// TODO: Break down component more, handle this context better
+export const MultiSelectContext = createContext<{
+  selectedKeys?: MultiSelectListBoxProps['selectedKeys'];
+  selectionMode?: MultiSelectListBoxProps['selectionMode'];
+  showSingleSectionTitle?: boolean;
+}>({});
 
 export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   size = 'medium',
@@ -30,12 +36,9 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   showSingleSectionTitle = false,
   ...props
 }: MultiSelectProps<T>) {
-  const breakpoint = useBreakpoint();
   // local filter string for the search input
   const [filterText, setFilterText] = useState('');
   const filter = useFilter({ sensitivity: 'base' });
-  const [selectedValues, setSelectedValues] = useState<{ key: string; value: string | undefined }[]>([]);
-  const [sectionTitle, setSectionTitle] = useState<string | undefined>(undefined);
 
   const listState = useListState<T>({
     ...props,
@@ -64,12 +67,6 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     },
   });
 
-  // overlay trigger (useOverlayTrigger gives the props to open/close overlays)
-  const { triggerProps } = useOverlayTrigger({ type: 'listbox' }, overlayState, buttonRef);
-  const { buttonProps } = useButton(triggerProps, buttonRef);
-  const { focusProps, isFocusVisible } = useFocusRing();
-  const finalButtonProps = mergeProps(props, focusProps, buttonProps);
-
   // React Aria does not check for escape key press unless panel is focused so this is needed
   const keyHandler = useCallback(
     (event: globalThis.KeyboardEvent) => {
@@ -87,52 +84,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const styles = multiSelectStyles({
-    size: resolveResponsiveVariant(size, breakpoint),
-    isFocusVisible,
-  });
-
-  const getSectionTitle = useCallback(
-    (key?: React.Key | null): string | undefined => {
-      const parentKey = key ?? '';
-      const item = listState.collection.getItem(parentKey as string);
-      if (!item) return undefined;
-      const title = (item.props as { title?: string }).title;
-      return title;
-    },
-    [listState.collection],
-  );
-
-  // Manage selected items state for display
-  useEffect(() => {
-    if (!selectedKeys || typeof selectedKeys === 'string' || (selectedKeys instanceof Set && selectedKeys.size == 0)) {
-      setSelectedValues([]);
-    } else {
-      const currentMap = new Map(selectedValues.map(item => [item.key, item.value]));
-
-      // manages the selected values that should be displayed to work with filtering
-      const next: { key: string; value: string | undefined }[] = [];
-      for (const key of [...selectedKeys] as string[]) {
-        if (currentMap.has(key)) {
-          next.push({ key, value: currentMap.get(key) });
-        } else {
-          next.push({ key, value: listState.collection.getItem(key)?.textValue });
-        }
-      }
-
-      // Handles displaying the section title
-      if (selectionMode === 'single' && showSingleSectionTitle) {
-        const firstKey = ([...selectedKeys] as string[])[0];
-        const parentKey = listState.collection.getItem(firstKey)?.parentKey;
-        const title = parentKey ? getSectionTitle(parentKey) : undefined;
-        setSectionTitle(title);
-      }
-
-      // Replace state in a single update to avoid nested callbacks
-      setSelectedValues(next);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedKeys]);
+  const styles = multiSelectStyles({});
 
   const handleInputKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
@@ -141,48 +93,22 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     }
   }, []);
 
-  const valuesString =
-    selectionMode === 'single' && selectedValues.length > 0 && showSingleSectionTitle && sectionTitle
-      ? `${sectionTitle}: ${selectedValues[0].value}`
-      : selectedValues.map(node => node.value || '').join(', ');
-
   return (
+    // <MultiSelectContext.Provider value={{ selectedKeys, selectionMode, showSingleSectionTitle }}>
     <div className={styles.root()}>
-      <Tooltip tooltip={valuesString}>
-        <div className="relative w-full">
-          <button className={styles.control()} ref={buttonRef} {...finalButtonProps}>
-            {/* Selected items */}
-            <div className={styles.selection()}>
-              <span className={styles.selectionSpan()}>{selectedValues.length > 0 ? valuesString : placeholder}</span>
-            </div>
-
-            {/* dropdown toggle */}
-            <div className={styles.button()}>
-              <DropDownIcon color="muted" size="small" aria-hidden="true" />
-            </div>
-          </button>
-          {selectedValues.length > 0 && (
-            <Button
-              className="absolute top-0 right-6.5 bottom-0 flex !h-auto items-center justify-center"
-              look="unstyled"
-              onClick={() => {
-                listState.selectionManager.clearSelection();
-              }}
-            >
-              <ClearIcon className="-mt-0.5" size="small" color="muted" />
-            </Button>
-          )}
-        </div>
-      </Tooltip>
-      {selectedValues.length > 0 && (
-        <p className={styles.hint()}>
-          {selectedValues.length} item{selectedValues.length > 1 && 's'} selected
-        </p>
-      )}
-
+      <MultiSelectListBoxTrigger
+        size={size}
+        placeholder={placeholder}
+        listState={listState}
+        overlayState={overlayState}
+        buttonRef={buttonRef}
+        selectedKeys={selectedKeys}
+        selectionMode={selectionMode}
+        showSingleSectionTitle={showSingleSectionTitle}
+      />
       {/* Popover + ListBox: keep passing state to ListBox — it will use selectionManager */}
       {overlayState.isOpen && (
-        <Popover
+        <MultiSelectPopover
           popoverRef={popoverRef}
           triggerRef={buttonRef}
           state={overlayState}
@@ -225,7 +151,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
               />
             </InputGroup>
           </div>
-          <ListBox
+          <MultiSelectListBox
             {...listBoxProps}
             aria-label="multiselect list"
             escapeKeyBehavior="none"
@@ -234,9 +160,10 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
             listBoxRef={listBoxRef}
             state={listState}
           />
-        </Popover>
+        </MultiSelectPopover>
       )}
     </div>
+    // </MultiSelectContext.Provider>
   );
 }
 export const MultiSelect = memo(BaseMultiSelect);

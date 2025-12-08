@@ -1,13 +1,12 @@
 import React, { useRef } from 'react';
 import { useFocusVisible, useOption } from 'react-aria';
 
-import { TickIcon } from '../../../icon/index.js';
+import { TickIcon } from '../../../../../icon/index.js';
 
-import { styles as optionStyles } from './option.styles.js';
-import { OptionProps } from './option.types.js';
+import { styles as optionStyles } from './multi-select-option.styles.js';
+import { MultiSelectOptionProps } from './multi-select-option.types.js';
 
-// TODO: Find a way to use this inside the <Item>
-export function Option<T>({ selectionMode, item, state }: OptionProps<T>) {
+export function MultiSelectOption<T>({ selectionMode, item, state }: MultiSelectOptionProps<T>) {
   const ref = useRef<HTMLLIElement>(null);
   const { optionProps, isDisabled, isSelected, isFocused } = useOption({ key: item.key }, state, ref);
   const { isFocusVisible } = useFocusVisible();

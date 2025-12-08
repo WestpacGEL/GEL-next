@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import { useOverlay, DismissButton, Overlay, usePopover } from 'react-aria';
 
-import { styles as popoverStyles } from './popover.styles.js';
+import { styles as popoverStyles } from './multi-select-popover.styles.js';
 
-import type { PopoverProps } from './popover.types.js';
+import type { MultiSelectPopoverProps } from './multi-select-popover.types.js';
 
-export function Popover(props: PopoverProps) {
+export function MultiSelectPopover(props: MultiSelectPopoverProps) {
   const { state, children, className, isNonModal, popoverRef: externalRef, ...otherProps } = props;
 
   // Use provided ref or create our own

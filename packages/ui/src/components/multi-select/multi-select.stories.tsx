@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { Field } from '../index.js';
 
-import { MultiSelect, MultiSelectItem, Section } from './multi-select.component.js';
+import { MultiSelect, MultiSelectItem, MultiSelectSection } from './multi-select.component.js';
 
 const meta: Meta<typeof MultiSelect> = {
   title: 'Components/Multiselect',
@@ -69,7 +69,7 @@ export const WithSection = () => {
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
       >
-        <Section title="Transaction" items={OPTIONS}>
+        <MultiSelectSection title="Transaction" items={OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.id}
@@ -79,8 +79,8 @@ export const WithSection = () => {
               {option.name}
             </MultiSelectItem>
           )}
-        </Section>
-        <Section title="Savings" items={OTHER_OPTIONS}>
+        </MultiSelectSection>
+        <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.id}
@@ -90,7 +90,7 @@ export const WithSection = () => {
               {option.name}
             </MultiSelectItem>
           )}
-        </Section>
+        </MultiSelectSection>
       </MultiSelect>
     </div>
   );
@@ -116,7 +116,7 @@ export const Sizes = () => {
               setSelectedKeys(keys as Set<string>);
             }}
           >
-            <Section title="Transaction" items={OPTIONS}>
+            <MultiSelectSection title="Transaction" items={OPTIONS}>
               {option => (
                 <MultiSelectItem
                   key={option.id}
@@ -126,8 +126,8 @@ export const Sizes = () => {
                   {option.name}
                 </MultiSelectItem>
               )}
-            </Section>
-            <Section title="Savings" items={OTHER_OPTIONS}>
+            </MultiSelectSection>
+            <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
               {option => (
                 <MultiSelectItem
                   key={option.id}
@@ -137,7 +137,7 @@ export const Sizes = () => {
                   {option.name}
                 </MultiSelectItem>
               )}
-            </Section>
+            </MultiSelectSection>
           </MultiSelect>
         </div>
       ))}
@@ -162,7 +162,7 @@ export const SingleSelect = () => {
             selectedKeys={selectedKeys}
             onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
           >
-            <Section title="Transaction" items={OPTIONS}>
+            <MultiSelectSection title="Transaction" items={OPTIONS}>
               {option => (
                 <MultiSelectItem
                   key={option.id}
@@ -172,8 +172,8 @@ export const SingleSelect = () => {
                   {option.name}
                 </MultiSelectItem>
               )}
-            </Section>
-            <Section title="Savings" items={OTHER_OPTIONS}>
+            </MultiSelectSection>
+            <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
               {option => (
                 <MultiSelectItem
                   key={option.id}
@@ -183,7 +183,7 @@ export const SingleSelect = () => {
                   {option.name}
                 </MultiSelectItem>
               )}
-            </Section>
+            </MultiSelectSection>
           </MultiSelect>
         </div>
       ))}
@@ -205,7 +205,7 @@ export const SingleSelectWithSectionTitle = () => {
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
         showSingleSectionTitle
       >
-        <Section title="Transaction" items={OPTIONS}>
+        <MultiSelectSection title="Transaction" items={OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.id}
@@ -215,8 +215,8 @@ export const SingleSelectWithSectionTitle = () => {
               {option.name}
             </MultiSelectItem>
           )}
-        </Section>
-        <Section title="Savings" items={OTHER_OPTIONS}>
+        </MultiSelectSection>
+        <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.id}
@@ -226,7 +226,7 @@ export const SingleSelectWithSectionTitle = () => {
               {option.name}
             </MultiSelectItem>
           )}
-        </Section>
+        </MultiSelectSection>
       </MultiSelect>
     </div>
   );
@@ -245,7 +245,7 @@ export const UsingField = () => {
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
       >
-        <Section title="Transaction" items={OPTIONS}>
+        <MultiSelectSection title="Transaction" items={OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.id}
@@ -255,8 +255,8 @@ export const UsingField = () => {
               {option.name}
             </MultiSelectItem>
           )}
-        </Section>
-        <Section title="Savings" items={OTHER_OPTIONS}>
+        </MultiSelectSection>
+        <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.id}
@@ -266,7 +266,7 @@ export const UsingField = () => {
               {option.name}
             </MultiSelectItem>
           )}
-        </Section>
+        </MultiSelectSection>
       </MultiSelect>
     </Field>
   );
@@ -285,7 +285,7 @@ export const Testing = () => {
           selectedKeys={selectedKeysMulti}
           onSelectionChange={keys => setSelectedKeysMulti(keys as Set<string>)}
         >
-          <Section title="Transaction" items={OPTIONS}>
+          <MultiSelectSection title="Transaction" items={OPTIONS}>
             {option => (
               <MultiSelectItem
                 key={option.id}
@@ -295,8 +295,8 @@ export const Testing = () => {
                 {option.name}
               </MultiSelectItem>
             )}
-          </Section>
-          <Section title="Savings" items={OTHER_OPTIONS}>
+          </MultiSelectSection>
+          <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
             {option => (
               <MultiSelectItem
                 key={option.id}
@@ -306,7 +306,7 @@ export const Testing = () => {
                 {option.name}
               </MultiSelectItem>
             )}
-          </Section>
+          </MultiSelectSection>
         </MultiSelect>
       </Field>
       <p>Single selection</p>
@@ -316,7 +316,7 @@ export const Testing = () => {
           selectedKeys={selectedKeysSingle}
           onSelectionChange={keys => setSelectedKeysSingle(keys as Set<string>)}
         >
-          <Section title="Transaction" items={OPTIONS}>
+          <MultiSelectSection title="Transaction" items={OPTIONS}>
             {option => (
               <MultiSelectItem
                 key={option.id}
@@ -326,8 +326,8 @@ export const Testing = () => {
                 {option.name}
               </MultiSelectItem>
             )}
-          </Section>
-          <Section title="Savings" items={OTHER_OPTIONS}>
+          </MultiSelectSection>
+          <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
             {option => (
               <MultiSelectItem
                 key={option.id}
@@ -337,7 +337,7 @@ export const Testing = () => {
                 {option.name}
               </MultiSelectItem>
             )}
-          </Section>
+          </MultiSelectSection>
         </MultiSelect>
       </Field>
     </div>
