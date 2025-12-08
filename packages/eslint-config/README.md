@@ -10,44 +10,23 @@ This project provides default linting configuration via the `eslint` package.
 pnpm install -D @westpac/eslint-config
 ```
 
-- Create a `.eslintrc.js` file on the root folder of your project.
-- Extend the configuration from `@westpac/eslint-config`.
+- Follow the [Eslint Getting Started](https://eslint.org/docs/latest/use/getting-started) instructions. You may need to follow the manual instructions for config.
 
-Example:
+- You should end up with something that looks like the following (Yours may differ in some places):
 
-```
-module.exports = {
-  root: true,
-  extends: ['@westpac/eslint-config'],
-};
-```
+```mjs
+import eslintConfig from '@westpac/eslint-config/nextjs';
+import { defineConfig } from 'eslint/config';
 
-It is also possible to import specific settings for NextJS, which includes the `next/core-web-vitals` extension.
-
-Example:
-
-```
-module.exports = {
-  root: true,
-  extends: ['@westpac/eslint-config/nextjs'],
-};
-
-
-From here, you can customize the rules as per your project's needs.
-
-Example:
-
-```
-
-module.exports = {
-root: true,
-extends: ['@westpac/eslint-config'],
-rules: {
-'simple-import-sort/imports': 0,
-'simple-import-sort/exports': 0,
-},
-};
-
-```
-
+export default defineConfig([
+  ...eslintConfig,
+  {
+    settings: {
+      'better-tailwindcss': {
+        // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
+        entryPoint: 'src/globals.css',
+      },
+    },
+  },
+]);
 ```
