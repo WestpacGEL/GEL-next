@@ -1,7 +1,8 @@
 import { RefObject } from 'react';
 import { ListProps, ListState, OverlayTriggerState } from 'react-stately';
-import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 import { VariantProps } from 'tailwind-variants';
+
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 import { MultiSelectProps } from '../../multi-select.types.js';
 
