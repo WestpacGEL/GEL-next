@@ -1,3 +1,27 @@
+## Style Constants
+
+The constants `BREAKPOINTS` and `SPACING_UNIT` have been moved to `@westpac/style-config/constants`
+
+#### Before
+
+```html
+<StaticCode
+  language="js"
+  code={`
+import { BREAKPOINTS, SPACING_UNIT } from '@westpac/ui/theme-constants';
+`}/>
+```
+
+#### After
+
+```html
+<StaticCode
+  language="js"
+  code={`
+import { BREAKPOINTS, SPACING_UNIT } from '@westpac/style-config/constants';
+`}/>
+```
+
 ## Component Updates
 
 - Full support for TailwindCSS v4 and its [latest features](https://tailwindcss.com/blog/tailwindcss-v4)

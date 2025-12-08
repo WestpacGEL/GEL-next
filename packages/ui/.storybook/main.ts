@@ -9,13 +9,25 @@ const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
   stories: ['../src/stories/intro.stories.tsx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-
+  features: {
+    experimentalComponentsManifest: true,
+  },
   addons: [
     getAbsolutePath('@chromatic-com/storybook'),
     getAbsolutePath('@storybook/addon-docs'),
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@vueless/storybook-dark-mode'),
+    {
+      name: '@storybook/addon-mcp',
+      options: {
+        toolsets: {
+          dev: true,
+          docs: true,
+        },
+        experimentalFormat: 'markdown',
+      },
+    },
   ],
 
   framework: {
