@@ -1,6 +1,6 @@
 import { ListProps } from 'react-stately';
 
-import { ListBoxProps } from './components/list-box/list-box.types.js';
+import { MultiSelectListBoxProps } from './components/multi-select-list-box/multi-select-list-box.types.js';
 import { MultiSelectListBoxTriggerProps } from './components/multi-select-list-box-trigger/multi-select-list-box-trigger.types.js';
 
 export type MultiSelectValue = { name?: string; id: number };
@@ -8,7 +8,7 @@ export type MultiSelectProps<T extends object = object> = {
   /**
    * listbox props
    */
-  listBoxProps?: Omit<ListBoxProps<T>, 'state' | 'selectionMode'>;
+  listBoxProps?: Omit<MultiSelectListBoxProps<T>, 'state' | 'selectionMode'>;
   /**
    * Placeholder text for the input
    */
