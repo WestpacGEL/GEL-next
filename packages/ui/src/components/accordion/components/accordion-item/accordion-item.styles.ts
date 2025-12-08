@@ -4,9 +4,9 @@ export const styles = tv({
   slots: {
     base: 'group',
     itemHeader: `
-      flex w-full flex-1 items-center justify-between px-3 py-2
-      typography-body-9
-      group-first:border-t-0
+      flex w-full flex-1 cursor-pointer items-center justify-between px-3
+      py-2
+      typography-body-9 group-first:border-t-0
     `,
     headerTitleWrapper: 'flex-1 pr-2 text-left',
     indicator: 'size-3 rotate-90',
