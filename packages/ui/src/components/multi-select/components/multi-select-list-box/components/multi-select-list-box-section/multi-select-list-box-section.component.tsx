@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useContext, useMemo } from 'react';
 import { useListBoxSection } from 'react-aria';
 

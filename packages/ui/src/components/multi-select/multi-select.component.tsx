@@ -1,14 +1,21 @@
+'use client';
+
 import { Node } from '@react-types/shared';
 import React, { useRef, useState, useEffect, useCallback, memo, createContext } from 'react';
 import { useFilter } from 'react-aria';
-import { useListState, useOverlayTriggerState } from 'react-stately';
+import { Item, useListState, useOverlayTriggerState } from 'react-stately';
 
 import { MultiSelectDropdown } from './components/multi-select-dropdown/multi-select-dropdown.component.js';
 import { MultiSelectListBoxTrigger } from './components/multi-select-list-box-trigger/multi-select-list-box-trigger.component.js';
 import { styles as multiSelectStyles } from './multi-select.styles.js';
 import { filterNodes } from './utils/filter-nodes.js';
 
-import type { MultiSelectContextProps, MultiSelectProps, MultiSelectValue } from './multi-select.types.js';
+import type {
+  MultiSelectContextProps,
+  MultiSelectItemProps,
+  MultiSelectProps,
+  MultiSelectValue,
+} from './multi-select.types.js';
 
 export const MultiSelectContext = createContext<MultiSelectContextProps>({
   overlayState: {} as MultiSelectContextProps['overlayState'],
@@ -105,3 +112,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   );
 }
 export const MultiSelect = memo(BaseMultiSelect);
+
+// Exporting react-stately's Item with custom props/naming and Section with custom naming to align with other components
+export const MultiSelectItem = Item as (props: MultiSelectItemProps) => JSX.Element;
+export { Section as MultiSelectSection } from 'react-stately';

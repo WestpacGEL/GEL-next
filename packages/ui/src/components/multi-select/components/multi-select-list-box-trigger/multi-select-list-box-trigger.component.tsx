@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState, Key } from 'react';
 import { mergeProps, useButton, useFocusRing, useOverlayTrigger } from 'react-aria';
 
 import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
@@ -31,7 +31,7 @@ export function MultiSelectListBoxTrigger<T>({
   });
 
   const getSectionTitle = useCallback(
-    (key?: React.Key | null): string | undefined => {
+    (key?: Key): string | undefined => {
       const parentKey = key ?? '';
       const item = listState.collection.getItem(parentKey as string);
       if (!item) return undefined;
@@ -66,7 +66,6 @@ export function MultiSelectListBoxTrigger<T>({
         setSectionTitle(title);
       }
 
-      // Replace state in a single update to avoid nested callbacks
       setSelectedValues(next);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
