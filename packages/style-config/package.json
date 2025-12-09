@@ -1,6 +1,6 @@
 {
   "name": "@westpac/style-config",
-  "version": "0.1.0-canary.3",
+  "version": "0.1.0-canary.4",
   "type": "module",
   "exports": {
     ".": "./dist/tokens/index.js",
