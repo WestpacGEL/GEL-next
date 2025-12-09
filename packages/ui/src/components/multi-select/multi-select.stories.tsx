@@ -3,7 +3,9 @@ import { useState } from 'react';
 
 import { Field } from '../index.js';
 
-import { MultiSelect, MultiSelectItem, MultiSelectSection } from './multi-select.component.js';
+import { MultiSelectValue } from './multi-select.types.js';
+
+import { MultiSelect, MultiSelectItem, MultiSelectSection } from './index.js';
 
 const meta: Meta<typeof MultiSelect> = {
   title: 'Components/Multiselect',
@@ -14,27 +16,27 @@ const meta: Meta<typeof MultiSelect> = {
 
 export default meta;
 
-const OPTIONS = [
-  { id: 1, name: 'Aerospace' },
-  { id: 2, name: 'Mechanical' },
-  { id: 3, name: 'Civil' },
-  { id: 4, name: 'Biomedical' },
-  { id: 5, name: 'Nuclear' },
-  { id: 6, name: 'Industrial' },
-  { id: 7, name: 'Chemical' },
-  { id: 8, name: 'Agricultural' },
-  { id: 9, name: 'Electrical' },
+const OPTIONS: MultiSelectValue[] = [
+  { key: 1, textValue: 'Aerospace' },
+  { key: 2, textValue: 'Mechanical' },
+  { key: 3, textValue: 'Civil' },
+  { key: 4, textValue: 'Biomedical' },
+  { key: 5, textValue: 'Nuclear' },
+  { key: 6, textValue: 'Industrial' },
+  { key: 7, textValue: 'Chemical' },
+  { key: 8, textValue: 'Agricultural' },
+  { key: 9, textValue: 'Electrical' },
 ];
 const OTHER_OPTIONS = [
-  { id: 11, name: 'Other Aerospace' },
-  { id: 12, name: 'Other Mechanical' },
-  { id: 13, name: 'Other Civil' },
-  { id: 14, name: 'Other Biomedical' },
-  { id: 15, name: 'Other Nuclear' },
-  { id: 16, name: 'Other Industrial' },
-  { id: 17, name: 'Other Chemical' },
-  { id: 18, name: 'Other Agricultural' },
-  { id: 19, name: 'Other Electrical' },
+  { key: 11, textValue: 'Other Aerospace' },
+  { key: 12, textValue: 'Other Mechanical' },
+  { key: 13, textValue: 'Other Civil' },
+  { key: 14, textValue: 'Other Biomedical' },
+  { key: 15, textValue: 'Other Nuclear' },
+  { key: 16, textValue: 'Other Industrial' },
+  { key: 17, textValue: 'Other Chemical' },
+  { key: 18, textValue: 'Other Agricultural' },
+  { key: 19, textValue: 'Other Electrical' },
 ];
 
 /**
@@ -45,14 +47,18 @@ export const Default = () => {
   return (
     <div className="flex flex-col gap-2">
       <MultiSelect
+        items={OPTIONS}
         listBoxProps={{ 'aria-label': 'multiselect options' }}
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
-        items={OPTIONS}
       >
         {option => (
-          <MultiSelectItem key={option.id} textValue={option.name} description="Supporting information or description">
-            {option.name}
+          <MultiSelectItem
+            key={option.key}
+            textValue={option.textValue}
+            description="Supporting information or description"
+          >
+            {option.textValue}
           </MultiSelectItem>
         )}
       </MultiSelect>
@@ -72,22 +78,22 @@ export const WithSection = () => {
         <MultiSelectSection title="Transaction" items={OPTIONS}>
           {option => (
             <MultiSelectItem
-              key={option.id}
-              textValue={option.name}
+              key={option.key}
+              textValue={option.textValue}
               description="Supporting information or description"
             >
-              {option.name}
+              {option.textValue}
             </MultiSelectItem>
           )}
         </MultiSelectSection>
         <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
           {option => (
             <MultiSelectItem
-              key={option.id}
-              textValue={option.name}
+              key={option.key}
+              textValue={option.textValue}
               description="Supporting information or description"
             >
-              {option.name}
+              {option.textValue}
             </MultiSelectItem>
           )}
         </MultiSelectSection>
@@ -119,22 +125,22 @@ export const Sizes = () => {
             <MultiSelectSection title="Transaction" items={OPTIONS}>
               {option => (
                 <MultiSelectItem
-                  key={option.id}
-                  textValue={option.name}
+                  key={option.key}
+                  textValue={option.textValue}
                   description="Supporting information or description"
                 >
-                  {option.name}
+                  {option.textValue}
                 </MultiSelectItem>
               )}
             </MultiSelectSection>
             <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
               {option => (
                 <MultiSelectItem
-                  key={option.id}
-                  textValue={option.name}
+                  key={option.key}
+                  textValue={option.textValue}
                   description="Supporting information or description"
                 >
-                  {option.name}
+                  {option.textValue}
                 </MultiSelectItem>
               )}
             </MultiSelectSection>
@@ -165,22 +171,22 @@ export const SingleSelect = () => {
             <MultiSelectSection title="Transaction" items={OPTIONS}>
               {option => (
                 <MultiSelectItem
-                  key={option.id}
-                  textValue={option.name}
+                  key={option.key}
+                  textValue={option.textValue}
                   description="Supporting information or description"
                 >
-                  {option.name}
+                  {option.textValue}
                 </MultiSelectItem>
               )}
             </MultiSelectSection>
             <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
               {option => (
                 <MultiSelectItem
-                  key={option.id}
-                  textValue={option.name}
+                  key={option.key}
+                  textValue={option.textValue}
                   description="Supporting information or description"
                 >
-                  {option.name}
+                  {option.textValue}
                 </MultiSelectItem>
               )}
             </MultiSelectSection>
@@ -208,22 +214,22 @@ export const SingleSelectWithSectionTitle = () => {
         <MultiSelectSection title="Transaction" items={OPTIONS}>
           {option => (
             <MultiSelectItem
-              key={option.id}
-              textValue={option.name}
+              key={option.key}
+              textValue={option.textValue}
               description="Supporting information or description"
             >
-              {option.name}
+              {option.textValue}
             </MultiSelectItem>
           )}
         </MultiSelectSection>
         <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
           {option => (
             <MultiSelectItem
-              key={option.id}
-              textValue={option.name}
+              key={option.key}
+              textValue={option.textValue}
               description="Supporting information or description"
             >
-              {option.name}
+              {option.textValue}
             </MultiSelectItem>
           )}
         </MultiSelectSection>
@@ -248,22 +254,22 @@ export const UsingField = () => {
         <MultiSelectSection title="Transaction" items={OPTIONS}>
           {option => (
             <MultiSelectItem
-              key={option.id}
-              textValue={option.name}
+              key={option.key}
+              textValue={option.textValue}
               description="Supporting information or description"
             >
-              {option.name}
+              {option.textValue}
             </MultiSelectItem>
           )}
         </MultiSelectSection>
         <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
           {option => (
             <MultiSelectItem
-              key={option.id}
-              textValue={option.name}
+              key={option.key}
+              textValue={option.textValue}
               description="Supporting information or description"
             >
-              {option.name}
+              {option.textValue}
             </MultiSelectItem>
           )}
         </MultiSelectSection>
@@ -288,22 +294,22 @@ export const Testing = () => {
           <MultiSelectSection title="Transaction" items={OPTIONS}>
             {option => (
               <MultiSelectItem
-                key={option.id}
-                textValue={option.name}
+                key={option.key}
+                textValue={option.textValue}
                 description="Supporting information or description"
               >
-                {option.name}
+                {option.textValue}
               </MultiSelectItem>
             )}
           </MultiSelectSection>
           <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
             {option => (
               <MultiSelectItem
-                key={option.id}
-                textValue={option.name}
+                key={option.key}
+                textValue={option.textValue}
                 description="Supporting information or description"
               >
-                {option.name}
+                {option.textValue}
               </MultiSelectItem>
             )}
           </MultiSelectSection>
@@ -319,22 +325,22 @@ export const Testing = () => {
           <MultiSelectSection title="Transaction" items={OPTIONS}>
             {option => (
               <MultiSelectItem
-                key={option.id}
-                textValue={option.name}
+                key={option.key}
+                textValue={option.textValue}
                 description="Supporting information or description"
               >
-                {option.name}
+                {option.textValue}
               </MultiSelectItem>
             )}
           </MultiSelectSection>
           <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
             {option => (
               <MultiSelectItem
-                key={option.id}
-                textValue={option.name}
+                key={option.key}
+                textValue={option.textValue}
                 description="Supporting information or description"
               >
-                {option.name}
+                {option.textValue}
               </MultiSelectItem>
             )}
           </MultiSelectSection>

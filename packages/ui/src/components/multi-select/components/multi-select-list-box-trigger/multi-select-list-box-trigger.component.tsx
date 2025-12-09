@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { mergeProps, useButton, useFocusRing, useOverlayTrigger } from 'react-aria';
 
 import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
@@ -6,20 +6,17 @@ import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { Button } from '../../../button/button.component.js';
 import { DropDownIcon, ClearIcon } from '../../../icon/index.js';
 import { Tooltip } from '../../../tooltip/tooltip.component.js';
+import { MultiSelectContext } from '../../multi-select.component.js';
 
 import { styles as triggerStyles } from './multi-select-list-box-trigger.styles.js';
 import { MultiSelectListBoxTriggerProps } from './multi-select-list-box-trigger.types.js';
 
 export function MultiSelectListBoxTrigger<T>({
-  size,
   placeholder,
-  listState,
-  overlayState,
-  buttonRef,
-  selectionMode,
   showSingleSectionTitle,
   selectedKeys,
 }: MultiSelectListBoxTriggerProps<T>) {
+  const { size, selectionMode, overlayState, listState, buttonRef } = useContext(MultiSelectContext);
   const breakpoint = useBreakpoint();
   const { triggerProps } = useOverlayTrigger({ type: 'listbox' }, overlayState, buttonRef);
   const { buttonProps } = useButton(triggerProps, buttonRef);
@@ -83,7 +80,7 @@ export function MultiSelectListBoxTrigger<T>({
   return (
     <>
       <Tooltip tooltip={valuesString} position="top">
-        <div className="relative w-full">
+        <div className={styles.buttonContainer()}>
           <button className={styles.control()} ref={buttonRef} {...finalButtonProps}>
             {/* Selected items */}
             <div className={styles.selection()}>
@@ -97,13 +94,13 @@ export function MultiSelectListBoxTrigger<T>({
           </button>
           {selectedValues.length > 0 && (
             <Button
-              className="absolute top-0 right-6.5 bottom-0 flex !h-auto items-center justify-center"
+              className={styles.clearButton()}
               look="unstyled"
               onClick={() => {
                 listState.selectionManager.clearSelection();
               }}
             >
-              <ClearIcon className="-mt-0.5" size="small" color="muted" />
+              <ClearIcon className={styles.clearIcon()} size="small" color="muted" />
             </Button>
           )}
         </div>

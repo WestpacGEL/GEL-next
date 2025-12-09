@@ -6,6 +6,8 @@ export const styles = tv({
     checkbox: 'size-4',
     body: '-mt-0.5 flex flex-1 items-center',
     flexZero: 'flex-0',
+    itemContainer: 'flex gap-1',
+    description: 'relative ml-5 typography-body-10 text-text-muted',
   },
   variants: {
     selectionMode: {
@@ -22,25 +24,10 @@ export const styles = tv({
         root: 'bg-surface-muted-faint focus-outline -outline-offset-2',
       },
     },
-    selected: {
-      true: {
-        root: '',
-      },
-    },
     disabled: {
       true: {
         root: 'cursor-not-allowed text-text-muted',
       },
     },
   },
-  compoundVariants: [
-    {
-      // Selected + focused -> same pink color
-      selected: true,
-      focused: true,
-      className: {
-        root: '',
-      },
-    },
-  ],
 });

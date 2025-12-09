@@ -1,16 +1,20 @@
-import React, { useMemo } from 'react';
-import { ListState } from 'react-stately';
+import React, { useContext, useMemo } from 'react';
 
 import { TickIcon } from '../../../../../icon/index.js';
+import { MultiSelectContext } from '../../../../multi-select.component.js';
 
 import { styles as selectAllOptionStyles } from './multi-select-select-all-option.styles.js';
 
-export function MultiSelectSelectAllOption<T>({ state }: { state: ListState<T> }) {
-  const allItemsAreSelected = useMemo(() => state.selectionManager.isSelectAll, [state.selectionManager.isSelectAll]);
+export function MultiSelectSelectAllOption() {
+  const { listState } = useContext(MultiSelectContext);
+  const allItemsAreSelected = useMemo(
+    () => listState.selectionManager.isSelectAll,
+    [listState.selectionManager.isSelectAll],
+  );
 
   const withOneSelectionOrMore = useMemo(
-    () => !![...state.selectionManager.selectedKeys].length,
-    [state.selectionManager.selectedKeys],
+    () => !![...listState.selectionManager.selectedKeys].length,
+    [listState.selectionManager.selectedKeys],
   );
 
   const styles = selectAllOptionStyles({ selected: withOneSelectionOrMore });
@@ -22,19 +26,19 @@ export function MultiSelectSelectAllOption<T>({ state }: { state: ListState<T> }
         onClick={() => {
           if (!allItemsAreSelected) {
             // This is because selectAll send a string called 'all' when it is called.
-            state.selectionManager.setSelectedKeys(
+            listState.selectionManager.setSelectedKeys(
               // This makes it so that when filtered select all will add to the currently selected options rather than replacing
-              new Set([...state.selectionManager.selectedKeys, ...state.selectionManager.collection.getKeys()]),
+              new Set([...listState.selectionManager.selectedKeys, ...listState.selectionManager.collection.getKeys()]),
             );
             return;
           }
-          return state.selectionManager.clearSelection();
+          return listState.selectionManager.clearSelection();
         }}
       >
         <div className={styles.checkbox()}>
           {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" />}
           {!allItemsAreSelected && withOneSelectionOrMore && (
-            <div role="presentation" className="block w-3/5 border-t-2 border-t-border-muted" />
+            <div role="presentation" className={styles.indeterminate()} />
           )}
         </div>
         <span>Select all</span>

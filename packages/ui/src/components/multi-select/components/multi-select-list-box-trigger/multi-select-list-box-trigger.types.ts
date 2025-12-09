@@ -1,5 +1,4 @@
-import { RefObject } from 'react';
-import { ListProps, ListState, OverlayTriggerState } from 'react-stately';
+import { ListProps } from 'react-stately';
 import { VariantProps } from 'tailwind-variants';
 
 import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
@@ -10,13 +9,10 @@ import { styles as triggerStyles } from './multi-select-list-box-trigger.styles.
 
 type Variants = VariantProps<typeof triggerStyles>;
 
+export type MultiSelectSize = ResponsiveVariants<Variants['size']>;
+
 export type MultiSelectListBoxTriggerProps<T> = {
-  size: ResponsiveVariants<Variants['size']>;
   placeholder: string;
-  listState: ListState<T>;
-  overlayState: OverlayTriggerState;
-  buttonRef: RefObject<HTMLButtonElement>;
   selectedKeys?: ListProps<T>['selectedKeys'];
-  selectionMode?: ListProps<T>['selectionMode'];
-  showSingleSectionTitle?: MultiSelectProps['showSingleSectionTitle'];
+  showSingleSectionTitle?: MultiSelectProps<T>['showSingleSectionTitle'];
 };

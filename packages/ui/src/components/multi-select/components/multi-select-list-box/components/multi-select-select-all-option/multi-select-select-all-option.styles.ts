@@ -6,6 +6,7 @@ export const styles = tv({
     button:
       'flex w-full cursor-pointer items-center gap-1 p-2 focus-visible:bg-surface-muted-pale focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-border-focus',
     checkbox: 'flex size-4 items-center justify-center rounded border border-border-muted-strong',
+    indeterminate: 'block w-3/5 border-t-2 border-t-border-muted',
   },
   variants: {
     selected: {

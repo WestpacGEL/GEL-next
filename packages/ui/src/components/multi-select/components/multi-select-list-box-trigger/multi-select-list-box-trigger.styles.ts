@@ -2,12 +2,15 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
+    buttonContainer: 'relative w-full',
     control: 'form-control relative box-border inline-flex w-full flex-row overflow-hidden rounded-md',
     selection: 'flex flex-1 items-center overflow-hidden pr-4.5 text-left whitespace-nowrap',
     selectionSpan: 'w-full overflow-hidden text-ellipsis',
     hint: 'typography-body-10 text-text-muted',
     button:
       'flex cursor-default items-center justify-center border-l border-l-border-muted-strong bg-background-white-faint px-1',
+    clearButton: 'absolute top-0 right-6.5 bottom-0 flex !h-auto items-center justify-center',
+    clearIcon: '-mt-0.5',
   },
   variants: {
     size: {

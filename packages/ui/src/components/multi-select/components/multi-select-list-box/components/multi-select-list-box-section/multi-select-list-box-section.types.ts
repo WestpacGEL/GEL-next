@@ -1,10 +1,5 @@
-import { MultiSelectProps } from '../../../../multi-select.types.js';
-
 import type { Node } from '@react-types/shared';
-import type { ListState } from 'react-stately';
 
-export type MultiSelectSectionProps<T = unknown> = {
-  selectionMode: MultiSelectProps['selectionMode'];
+export type MultiSelectSectionProps<T> = {
   section: Node<T>;
-  state: ListState<T>;
 };

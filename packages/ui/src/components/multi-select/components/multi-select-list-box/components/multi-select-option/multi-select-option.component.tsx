@@ -1,18 +1,19 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useFocusVisible, useOption } from 'react-aria';
 
 import { TickIcon } from '../../../../../icon/index.js';
+import { MultiSelectContext } from '../../../../multi-select.component.js';
 
 import { styles as optionStyles } from './multi-select-option.styles.js';
 import { MultiSelectOptionProps } from './multi-select-option.types.js';
 
-export function MultiSelectOption<T>({ selectionMode, item, state }: MultiSelectOptionProps<T>) {
+export function MultiSelectOption<T>({ item }: MultiSelectOptionProps<T>) {
+  const { listState, selectionMode } = useContext(MultiSelectContext);
   const ref = useRef<HTMLLIElement>(null);
-  const { optionProps, isDisabled, isSelected, isFocused } = useOption({ key: item.key }, state, ref);
+  const { optionProps, isDisabled, isSelected, isFocused } = useOption({ key: item.key }, listState, ref);
   const { isFocusVisible } = useFocusVisible();
 
   const styles = optionStyles({
-    selected: isSelected,
     disabled: isDisabled,
     selectionMode,
     isFocusVisible: isFocused && isFocusVisible,
@@ -20,7 +21,7 @@ export function MultiSelectOption<T>({ selectionMode, item, state }: MultiSelect
 
   return (
     <li {...optionProps} ref={ref} className={styles.root()}>
-      <div className="flex gap-1">
+      <div className={styles.itemContainer()}>
         <div className={styles.flexZero()}>
           <div className={styles.checkbox()}>{isSelected && <TickIcon size="small" aria-hidden="true" />}</div>
         </div>
@@ -28,9 +29,7 @@ export function MultiSelectOption<T>({ selectionMode, item, state }: MultiSelect
           <div>{item.rendered}</div>
         </div>
       </div>
-      {item.props?.description && (
-        <div className="relative ml-5 typography-body-10 text-text-muted">{item.props.description}</div>
-      )}
+      {item.props?.description && <div className={styles.description()}>{item.props.description}</div>}
     </li>
   );
 }
