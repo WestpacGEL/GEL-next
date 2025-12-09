@@ -5,7 +5,7 @@ export const styles = tv({
   variants: {
     color: {
       light: 'bg-surface-muted-faint',
-      white: 'bg-background-white-pale',
+      white: 'bg-background-white',
     },
   },
 });

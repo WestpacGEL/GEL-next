@@ -77,7 +77,7 @@ export function ContentTabs({ content, tab }: { brand: string; content: ContentT
 
   if (filteredTabs.length === 1) {
     return (
-      <div className="flex-1 bg-background-pale-faint">
+      <div className="flex-1 bg-background-pale">
         <TabPanelByKey tabKey={filteredTabs[0].key} content={content} />
       </div>
     );
@@ -87,7 +87,7 @@ export function ContentTabs({ content, tab }: { brand: string; content: ContentT
     <Tabs aria-label="GEL design system content" selectedKey={tab} onSelectionChange={handleChange}>
       {filteredTabs.map(tab => (
         <TabsPanel title={tab.label} key={tab.key}>
-          <div className="flex-1 bg-background-pale-faint">
+          <div className="flex-1 bg-background-pale">
             <TabPanelByKey tabKey={tab.key} content={tab.key === 'code' ? { ...content, description: '' } : content} />
           </div>
         </TabsPanel>

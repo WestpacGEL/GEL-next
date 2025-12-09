@@ -7,7 +7,7 @@ export const styles = tv({
     labelText: 'py-[2px] pl-1 typography-body-10 text-text-body',
     hintText: 'pl-1 typography-body-10 text-text-muted',
     selector:
-      'flex size-4 shrink-0 items-center justify-center rounded-full border border-border-hero bg-background-white-pale',
+      'flex size-4 shrink-0 items-center justify-center rounded-full border border-border-hero bg-background-white',
   },
   variants: {
     isDisabled: {

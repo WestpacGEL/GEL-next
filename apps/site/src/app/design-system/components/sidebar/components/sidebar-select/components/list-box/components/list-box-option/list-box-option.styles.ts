@@ -3,11 +3,11 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   base: `
     box-border flex h-10 cursor-pointer items-center justify-between border-t
-    border-t-border-muted-soft bg-background-white-pale px-3 py-[0.625rem]
+    border-t-border-muted-soft bg-background-white px-3 py-[0.625rem]
     transition-colors
     first:border-t-0
-    hover:bg-background-white-faint
-    focus:bg-background-white-faint
+    hover:bg-background-white
+    focus:bg-background-white
   `,
   variants: {
     isFocusVisible: {

@@ -3948,6 +3948,13 @@
           "misc": {
             "brand": {
               "$scopes": ["ALL_SCOPES"],
+              "$hiddenFromPublishing": true,
+              "$type": "string",
+              "$value": "Westpac"
+            },
+            "brand-font": {
+              "$scopes": ["ALL_SCOPES"],
+              "$hiddenFromPublishing": true,
               "$type": "string",
               "$value": "Westpac"
             }
@@ -5285,8 +5292,15 @@
           "misc": {
             "brand": {
               "$scopes": ["ALL_SCOPES"],
+              "$hiddenFromPublishing": true,
               "$type": "string",
               "$value": "StGeorge"
+            },
+            "brand-font": {
+              "$scopes": ["ALL_SCOPES"],
+              "$hiddenFromPublishing": true,
+              "$type": "string",
+              "$value": "Dragon Bold"
             }
           }
         },
@@ -6622,8 +6636,15 @@
           "misc": {
             "brand": {
               "$scopes": ["ALL_SCOPES"],
+              "$hiddenFromPublishing": true,
               "$type": "string",
               "$value": "Bank of Melbourne"
+            },
+            "brand-font": {
+              "$scopes": ["ALL_SCOPES"],
+              "$hiddenFromPublishing": true,
+              "$type": "string",
+              "$value": "Brown"
             }
           }
         },
@@ -7959,8 +7980,15 @@
           "misc": {
             "brand": {
               "$scopes": ["ALL_SCOPES"],
+              "$hiddenFromPublishing": true,
               "$type": "string",
               "$value": "Bank SA"
+            },
+            "brand-font": {
+              "$scopes": ["ALL_SCOPES"],
+              "$hiddenFromPublishing": true,
+              "$type": "string",
+              "$value": "Aller"
             }
           }
         }
@@ -7973,7 +8001,7 @@
         "Light mode": {
           "color": {
             "background": {
-              "background-white-pale": {
+              "background-white": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen and container background fills. If your screen background is white use this token.",
                 "$type": "color",
@@ -7981,7 +8009,7 @@
                 "$collectionName": "Themes",
                 "$value": "{color.mono.white}"
               },
-              "background-pale-faint": {
+              "background-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen and container background fills. Replaces current style: Background",
                 "$type": "color",
@@ -7989,40 +8017,13 @@
                 "$collectionName": "Themes",
                 "$value": "{color.muted.100}"
               },
-              "background-faint-pale": {
+              "background-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen and container background fills. Replaces current style: Light",
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
                 "$value": "{color.muted.50}"
-              },
-              "background-white-faint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "Use for screen backgrounds to establish correct emphasis.",
-                "$hiddenFromPublishing": true,
-                "$type": "color",
-                "$libraryName": "",
-                "$collectionName": "Themes",
-                "$value": "{color.mono.white}"
-              },
-              "background-white-black": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This token is reserved. Do not use.",
-                "$hiddenFromPublishing": true,
-                "$type": "color",
-                "$libraryName": "",
-                "$collectionName": "Themes",
-                "$value": "{color.mono.white}"
-              },
-              "background-pale-black": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This token is reserved. Do not use.",
-                "$hiddenFromPublishing": true,
-                "$type": "color",
-                "$libraryName": "",
-                "$collectionName": "Themes",
-                "$value": "{color.muted.100}"
               },
               "background-primary": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -8523,7 +8524,7 @@
             },
             "data": {
               "data-a-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8531,7 +8532,7 @@
                 "$value": "{color.primary.500}"
               },
               "data-a-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8539,7 +8540,7 @@
                 "$value": "{color.primary.200}"
               },
               "data-a-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8547,7 +8548,7 @@
                 "$value": "{color.primary.opacity}"
               },
               "data-b-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8555,7 +8556,7 @@
                 "$value": "{color.hero.500}"
               },
               "data-b-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8563,7 +8564,7 @@
                 "$value": "{color.hero.300}"
               },
               "data-b-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8571,7 +8572,7 @@
                 "$value": "{color.hero.opacity}"
               },
               "data-c-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8579,7 +8580,7 @@
                 "$value": "{color.pop.500}"
               },
               "data-c-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8587,7 +8588,7 @@
                 "$value": "{color.pop.300}"
               },
               "data-c-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8595,7 +8596,7 @@
                 "$value": "{color.pop.opacity}"
               },
               "data-d-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8603,7 +8604,7 @@
                 "$value": "{color.holler.500}"
               },
               "data-d-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8611,7 +8612,7 @@
                 "$value": "{color.holler.200}"
               },
               "data-d-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8619,7 +8620,7 @@
                 "$value": "{color.holler.opacity}"
               },
               "data-e-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8627,7 +8628,7 @@
                 "$value": "{color.sing.500}"
               },
               "data-e-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8635,7 +8636,7 @@
                 "$value": "{color.sing.300}"
               },
               "data-e-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8643,7 +8644,7 @@
                 "$value": "{color.sing.opacity}"
               },
               "data-f-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8651,7 +8652,7 @@
                 "$value": "{color.dance.500}"
               },
               "data-f-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8659,7 +8660,7 @@
                 "$value": "{color.dance.300}"
               },
               "data-f-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -8866,12 +8867,33 @@
                 "$value": "{border.radius.full}"
               }
             }
+          },
+          "misc": {
+            "multi-brand": {
+              "$scopes": ["ALL_SCOPES"],
+              "$type": "string",
+              "$libraryName": "",
+              "$collectionName": "Themes",
+              "$value": "{misc.brand}"
+            },
+            "mode": {
+              "$scopes": ["ALL_SCOPES"],
+              "$type": "string",
+              "$value": "Light mode"
+            },
+            "brand-font": {
+              "$scopes": ["FONT_FAMILY"],
+              "$type": "string",
+              "$libraryName": "",
+              "$collectionName": "Themes",
+              "$value": "{misc.brand-font}"
+            }
           }
         },
         "Dark mode": {
           "color": {
             "background": {
-              "background-white-pale": {
+              "background-white": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen and container background fills. If your screen background is white use this token.",
                 "$type": "color",
@@ -8879,7 +8901,7 @@
                 "$collectionName": "Themes",
                 "$value": "{color.muted.900}"
               },
-              "background-pale-faint": {
+              "background-pale": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen and container background fills. Replaces current style: Background",
                 "$type": "color",
@@ -8887,40 +8909,13 @@
                 "$collectionName": "Themes",
                 "$value": "{color.muted.950}"
               },
-              "background-faint-pale": {
+              "background-faint": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
                 "$description": "Use for screen and container background fills. Replaces current style: Light",
                 "$type": "color",
                 "$libraryName": "",
                 "$collectionName": "Themes",
                 "$value": "{color.muted.900}"
-              },
-              "background-white-faint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "Use for screen backgrounds to establish correct emphasis.",
-                "$hiddenFromPublishing": true,
-                "$type": "color",
-                "$libraryName": "",
-                "$collectionName": "Themes",
-                "$value": "{color.muted.950}"
-              },
-              "background-white-black": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This token is reserved. Do not use.",
-                "$hiddenFromPublishing": true,
-                "$type": "color",
-                "$libraryName": "",
-                "$collectionName": "Themes",
-                "$value": "{color.mono.black}"
-              },
-              "background-pale-black": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
-                "$description": "This token is reserved. Do not use.",
-                "$hiddenFromPublishing": true,
-                "$type": "color",
-                "$libraryName": "",
-                "$collectionName": "Themes",
-                "$value": "{color.mono.black}"
               },
               "background-primary": {
                 "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
@@ -9421,7 +9416,7 @@
             },
             "data": {
               "data-a-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9429,7 +9424,7 @@
                 "$value": "{color.primary.500}"
               },
               "data-a-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9437,7 +9432,7 @@
                 "$value": "{color.primary.200}"
               },
               "data-a-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9445,7 +9440,7 @@
                 "$value": "{color.primary.opacity}"
               },
               "data-b-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9453,7 +9448,7 @@
                 "$value": "{color.hero.300}"
               },
               "data-b-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9461,7 +9456,7 @@
                 "$value": "{color.hero.200}"
               },
               "data-b-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9469,7 +9464,7 @@
                 "$value": "{color.hero.opacity}"
               },
               "data-c-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9477,7 +9472,7 @@
                 "$value": "{color.pop.500}"
               },
               "data-c-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9485,7 +9480,7 @@
                 "$value": "{color.pop.300}"
               },
               "data-c-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9493,7 +9488,7 @@
                 "$value": "{color.pop.opacity}"
               },
               "data-d-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9501,7 +9496,7 @@
                 "$value": "{color.holler.500}"
               },
               "data-d-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9509,7 +9504,7 @@
                 "$value": "{color.holler.200}"
               },
               "data-d-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9517,7 +9512,7 @@
                 "$value": "{color.holler.opacity}"
               },
               "data-e-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9525,7 +9520,7 @@
                 "$value": "{color.sing.500}"
               },
               "data-e-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9533,7 +9528,7 @@
                 "$value": "{color.sing.300}"
               },
               "data-e-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9541,7 +9536,7 @@
                 "$value": "{color.sing.opacity}"
               },
               "data-f-solid": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9549,7 +9544,7 @@
                 "$value": "{color.dance.500}"
               },
               "data-f-tint": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9557,7 +9552,7 @@
                 "$value": "{color.dance.300}"
               },
               "data-f-opacity": {
-                "$scopes": ["FRAME_FILL", "SHAPE_FILL"],
+                "$scopes": ["FRAME_FILL", "SHAPE_FILL", "STROKE_COLOR"],
                 "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
                 "$type": "color",
                 "$libraryName": "",
@@ -9763,6 +9758,27 @@
                 "$collectionName": "Themes",
                 "$value": "{border.radius.full}"
               }
+            }
+          },
+          "misc": {
+            "multi-brand": {
+              "$scopes": ["ALL_SCOPES"],
+              "$type": "string",
+              "$libraryName": "",
+              "$collectionName": "Themes",
+              "$value": "{misc.brand}"
+            },
+            "mode": {
+              "$scopes": ["ALL_SCOPES"],
+              "$type": "string",
+              "$value": "Dark mode"
+            },
+            "brand-font": {
+              "$scopes": ["FONT_FAMILY"],
+              "$type": "string",
+              "$libraryName": "",
+              "$collectionName": "Themes",
+              "$value": "{misc.brand-font}"
             }
           }
         }

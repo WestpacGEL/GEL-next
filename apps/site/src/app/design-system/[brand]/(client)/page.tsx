@@ -27,7 +27,7 @@ export default function DesignSystemHomePage({ params }: { params: { brand: stri
       tabIndex={-1}
       id="content"
       className={`
-        bg-background-white-faint
+        bg-background-white
         focus:outline-none
       `}
     >

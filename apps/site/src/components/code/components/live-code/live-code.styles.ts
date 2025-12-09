@@ -4,7 +4,7 @@ export const styles = tv({
   slots: {
     base: `
       max-w-5xl rounded-3xl border border-border-muted-soft
-      bg-background-white-pale p-6 pb-0
+      bg-background-white p-6 pb-0
     `,
     displayWrapper: `
       relative -mx-6 -mt-6 overflow-auto border-border-muted-soft px-6

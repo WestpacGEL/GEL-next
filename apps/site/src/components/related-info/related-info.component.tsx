@@ -20,7 +20,7 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
   const params = useParams();
   const brand = (params.brand ?? 'wbc') as BrandKey;
   return (
-    <Section className="bg-background-white-pale">
+    <Section className="bg-background-white">
       <Container className="">
         <Heading
           level={2}

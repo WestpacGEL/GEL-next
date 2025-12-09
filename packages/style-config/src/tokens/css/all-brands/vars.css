@@ -1074,12 +1074,9 @@
 }
 
 [data-brand="wbc"] {
-  --color-background-white-pale: var(--themes-westpac-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
-  --color-background-pale-faint: var(--themes-westpac-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
-  --color-background-faint-pale: var(--themes-westpac-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
-  --color-background-white-faint: var(--themes-westpac-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-white-black: var(--themes-westpac-color-mono-white); /* This token is reserved. Do not use. */
-  --color-background-pale-black: var(--themes-westpac-color-muted-100); /* This token is reserved. Do not use. */
+  --color-background-white: var(--themes-westpac-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale: var(--themes-westpac-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint: var(--themes-westpac-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-primary: var(--themes-westpac-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-background-hero: var(--themes-westpac-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-surface-muted-vivid: var(--themes-westpac-color-surface-muted-vivid-lm); /* Use for fills that need to be text colour. */
@@ -1186,12 +1183,9 @@
 }
 
 [data-brand="stg"] {
-  --color-background-white-pale: var(--themes-st-george-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
-  --color-background-pale-faint: var(--themes-st-george-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
-  --color-background-faint-pale: var(--themes-st-george-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
-  --color-background-white-faint: var(--themes-st-george-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-white-black: var(--themes-st-george-color-mono-white); /* This token is reserved. Do not use. */
-  --color-background-pale-black: var(--themes-st-george-color-muted-100); /* This token is reserved. Do not use. */
+  --color-background-white: var(--themes-st-george-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale: var(--themes-st-george-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint: var(--themes-st-george-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-primary: var(--themes-st-george-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-background-hero: var(--themes-st-george-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-surface-muted-vivid: var(--themes-st-george-color-surface-muted-vivid-lm); /* Use for fills that need to be text colour. */
@@ -1298,12 +1292,9 @@
 }
 
 [data-brand="bom"] {
-  --color-background-white-pale: var(--themes-bank-of-melbourne-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
-  --color-background-pale-faint: var(--themes-bank-of-melbourne-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
-  --color-background-faint-pale: var(--themes-bank-of-melbourne-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
-  --color-background-white-faint: var(--themes-bank-of-melbourne-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-white-black: var(--themes-bank-of-melbourne-color-mono-white); /* This token is reserved. Do not use. */
-  --color-background-pale-black: var(--themes-bank-of-melbourne-color-muted-100); /* This token is reserved. Do not use. */
+  --color-background-white: var(--themes-bank-of-melbourne-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale: var(--themes-bank-of-melbourne-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint: var(--themes-bank-of-melbourne-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-primary: var(--themes-bank-of-melbourne-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-background-hero: var(--themes-bank-of-melbourne-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-surface-muted-vivid: var(--themes-bank-of-melbourne-color-surface-muted-vivid-lm); /* Use for fills that need to be text colour. */
@@ -1410,12 +1401,9 @@
 }
 
 [data-brand="bsa"] {
-  --color-background-white-pale: var(--themes-bank-sa-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
-  --color-background-pale-faint: var(--themes-bank-sa-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
-  --color-background-faint-pale: var(--themes-bank-sa-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
-  --color-background-white-faint: var(--themes-bank-sa-color-mono-white); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-white-black: var(--themes-bank-sa-color-mono-white); /* This token is reserved. Do not use. */
-  --color-background-pale-black: var(--themes-bank-sa-color-muted-100); /* This token is reserved. Do not use. */
+  --color-background-white: var(--themes-bank-sa-color-mono-white); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale: var(--themes-bank-sa-color-muted-100); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint: var(--themes-bank-sa-color-muted-50); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-primary: var(--themes-bank-sa-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-background-hero: var(--themes-bank-sa-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-surface-muted-vivid: var(--themes-bank-sa-color-surface-muted-vivid-lm); /* Use for fills that need to be text colour. */
@@ -1522,12 +1510,9 @@
 }
 
 [data-brand="wbc"][data-theme="dark"] {
-  --color-background-white-pale: var(--themes-westpac-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
-  --color-background-pale-faint: var(--themes-westpac-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
-  --color-background-faint-pale: var(--themes-westpac-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
-  --color-background-white-faint: var(--themes-westpac-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-white-black: var(--themes-westpac-color-mono-black); /* This token is reserved. Do not use. */
-  --color-background-pale-black: var(--themes-westpac-color-mono-black); /* This token is reserved. Do not use. */
+  --color-background-white: var(--themes-westpac-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale: var(--themes-westpac-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint: var(--themes-westpac-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-primary: var(--themes-westpac-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-background-hero: var(--themes-westpac-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-surface-muted-vivid: var(--themes-westpac-color-surface-muted-vivid-dm); /* Use for fills that need to be text colour. */
@@ -1634,12 +1619,9 @@
 }
 
 [data-brand="stg"][data-theme="dark"] {
-  --color-background-white-pale: var(--themes-st-george-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
-  --color-background-pale-faint: var(--themes-st-george-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
-  --color-background-faint-pale: var(--themes-st-george-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
-  --color-background-white-faint: var(--themes-st-george-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-white-black: var(--themes-st-george-color-mono-black); /* This token is reserved. Do not use. */
-  --color-background-pale-black: var(--themes-st-george-color-mono-black); /* This token is reserved. Do not use. */
+  --color-background-white: var(--themes-st-george-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale: var(--themes-st-george-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint: var(--themes-st-george-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-primary: var(--themes-st-george-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-background-hero: var(--themes-st-george-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-surface-muted-vivid: var(--themes-st-george-color-surface-muted-vivid-dm); /* Use for fills that need to be text colour. */
@@ -1746,12 +1728,9 @@
 }
 
 [data-brand="bom"][data-theme="dark"] {
-  --color-background-white-pale: var(--themes-bank-of-melbourne-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
-  --color-background-pale-faint: var(--themes-bank-of-melbourne-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
-  --color-background-faint-pale: var(--themes-bank-of-melbourne-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
-  --color-background-white-faint: var(--themes-bank-of-melbourne-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-white-black: var(--themes-bank-of-melbourne-color-mono-black); /* This token is reserved. Do not use. */
-  --color-background-pale-black: var(--themes-bank-of-melbourne-color-mono-black); /* This token is reserved. Do not use. */
+  --color-background-white: var(--themes-bank-of-melbourne-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale: var(--themes-bank-of-melbourne-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint: var(--themes-bank-of-melbourne-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-primary: var(--themes-bank-of-melbourne-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-background-hero: var(--themes-bank-of-melbourne-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-surface-muted-vivid: var(--themes-bank-of-melbourne-color-surface-muted-vivid-dm); /* Use for fills that need to be text colour. */
@@ -1858,12 +1837,9 @@
 }
 
 [data-brand="bsa"][data-theme="dark"] {
-  --color-background-white-pale: var(--themes-bank-sa-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
-  --color-background-pale-faint: var(--themes-bank-sa-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
-  --color-background-faint-pale: var(--themes-bank-sa-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
-  --color-background-white-faint: var(--themes-bank-sa-color-muted-950); /* Use for screen backgrounds to establish correct emphasis. */
-  --color-background-white-black: var(--themes-bank-sa-color-mono-black); /* This token is reserved. Do not use. */
-  --color-background-pale-black: var(--themes-bank-sa-color-mono-black); /* This token is reserved. Do not use. */
+  --color-background-white: var(--themes-bank-sa-color-muted-900); /* Use for screen and container background fills. If your screen background is white use this token. */
+  --color-background-pale: var(--themes-bank-sa-color-muted-950); /* Use for screen and container background fills. Replaces current style: Background */
+  --color-background-faint: var(--themes-bank-sa-color-muted-900); /* Use for screen and container background fills. Replaces current style: Light */
   --color-background-primary: var(--themes-bank-sa-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-background-hero: var(--themes-bank-sa-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-surface-muted-vivid: var(--themes-bank-sa-color-surface-muted-vivid-dm); /* Use for fills that need to be text colour. */

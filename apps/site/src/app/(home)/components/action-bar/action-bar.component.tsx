@@ -58,7 +58,7 @@ export function ActionBar() {
         </div>
         <div
           className={`
-            block bg-background-white-pale
+            block bg-background-white
             sm:hidden
           `}
         >

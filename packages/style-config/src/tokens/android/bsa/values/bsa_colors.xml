@@ -4,12 +4,9 @@
   Do not edit directly, this file was auto-generated.
 -->
 <resources>
-  <color name="bsaBackgroundWhitePale">#ffffff</color>
-  <color name="bsaBackgroundPaleFaint">#f5f5f6</color>
-  <color name="bsaBackgroundFaintPale">#f9f9fa</color>
-  <color name="bsaBackgroundWhiteFaint">#ffffff</color>
-  <color name="bsaBackgroundWhiteBlack">#ffffff</color>
-  <color name="bsaBackgroundPaleBlack">#f5f5f6</color>
+  <color name="bsaBackgroundWhite">#ffffff</color>
+  <color name="bsaBackgroundPale">#f5f5f6</color>
+  <color name="bsaBackgroundFaint">#f9f9fa</color>
   <color name="bsaBackgroundPrimary">#d81b2b</color>
   <color name="bsaBackgroundHero">#002f6c</color>
   <color name="bsaSurfaceMutedVivid">#323238</color>
