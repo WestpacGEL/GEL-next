@@ -162,7 +162,7 @@ export function CodeContent({
       {componentProps && (
         <section
           className={`
-            border-t border-t-border-muted-soft bg-background-white-pale py-7
+            border-t border-t-border-muted-soft bg-background-white py-7
             sm:pt-15 sm:pb-10
           `}
         >

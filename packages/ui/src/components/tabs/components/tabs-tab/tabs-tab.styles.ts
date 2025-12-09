@@ -8,7 +8,7 @@ export const styles = tv({
       material: '',
     },
     selected: {
-      true: 'bg-background-white-pale',
+      true: 'bg-background-white',
       false: 'background-transition hover:bg-surface-hover-muted-pale',
     },
     orientation: {

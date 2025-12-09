@@ -26,7 +26,7 @@ export default async function DesignSystemLayout({
   const brand = (params?.brand ?? 'wbc') as BrandKey; // double check this is the best way to do this.
 
   return (
-    <div data-brand={brand?.toLowerCase()} className="bg-background-white-faint">
+    <div data-brand={brand?.toLowerCase()} className="bg-background-white">
       <SkipLink href="#content" className="z-[100]">
         Skip to content
       </SkipLink>

@@ -71,20 +71,20 @@ export const styles = tv({
       look: 'primary',
       soft: true,
       className:
-        'border-border-primary bg-background-white-pale text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-active-primary-faint',
+        'border-border-primary bg-background-white text-text-body hover:bg-surface-hover-primary-faint active:bg-surface-active-primary-faint',
     },
     {
       slots: ['base'],
       look: 'hero',
       soft: true,
       className:
-        'border-border-hero bg-background-white-pale text-text-body hover:bg-surface-hover-hero-faint active:bg-surface-active-hero-faint',
+        'border-border-hero bg-background-white text-text-body hover:bg-surface-hover-hero-faint active:bg-surface-active-hero-faint',
     },
     {
       slots: ['base'],
       look: 'faint',
       soft: true,
-      className: 'bg-background-white-pale hover:bg-surface-hover-muted-pale active:bg-surface-active-muted-pale',
+      className: 'bg-background-white hover:bg-surface-hover-muted-pale active:bg-surface-active-muted-pale',
     },
     {
       slots: ['iconBefore'],

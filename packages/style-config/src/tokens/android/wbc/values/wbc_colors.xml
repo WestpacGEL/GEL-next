@@ -4,12 +4,9 @@
   Do not edit directly, this file was auto-generated.
 -->
 <resources>
-  <color name="wbcBackgroundWhitePale">#ffffff</color>
-  <color name="wbcBackgroundPaleFaint">#f5f5f6</color>
-  <color name="wbcBackgroundFaintPale">#f9f9fa</color>
-  <color name="wbcBackgroundWhiteFaint">#ffffff</color>
-  <color name="wbcBackgroundWhiteBlack">#ffffff</color>
-  <color name="wbcBackgroundPaleBlack">#f5f5f6</color>
+  <color name="wbcBackgroundWhite">#ffffff</color>
+  <color name="wbcBackgroundPale">#f5f5f6</color>
+  <color name="wbcBackgroundFaint">#f9f9fa</color>
   <color name="wbcBackgroundPrimary">#da1710</color>
   <color name="wbcBackgroundHero">#1f1c4f</color>
   <color name="wbcSurfaceMutedVivid">#161619</color>

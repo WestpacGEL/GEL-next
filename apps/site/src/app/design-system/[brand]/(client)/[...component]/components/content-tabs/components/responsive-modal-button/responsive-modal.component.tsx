@@ -10,7 +10,7 @@ export function ResponsiveModal({ children, state, ...props }: ResponsiveModalPr
 
   return (
     <Modal isDismissable={false} state={state} {...props}>
-      <ModalBody className={`relative flex flex-1 flex-col bg-background-white-pale px-0`}>
+      <ModalBody className={`relative flex flex-1 flex-col bg-background-white px-0`}>
         <Button className="absolute top-3 right-3" look="primary" soft onClick={() => state.close()}>
           Close
         </Button>
@@ -38,7 +38,7 @@ export function ResponsiveModal({ children, state, ...props }: ResponsiveModalPr
               className={`
                 z-10 flex h-8 w-12 items-center justify-center
                 rounded-[5.625rem] border border-border-muted-mild
-                bg-background-white-pale font-black text-text-body
+                bg-background-white font-black text-text-body
               `}
             >
               <span className="xsl:hidden">Xs</span>

@@ -9,14 +9,14 @@ export const styles = tv({
     link: `
       flex h-10 cursor-pointer items-center justify-between bg-white px-1
       py-[0.625rem] transition-colors
-      hover:bg-background-faint-pale
-      focus:bg-background-faint-pale
+      hover:bg-background-faint
+      focus:bg-background-faint
     `,
   },
   variants: {
     isFocused: {
       true: {
-        link: 'bg-background-faint-pale',
+        link: 'bg-background-faint',
       },
     },
     isSelected: {

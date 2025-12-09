@@ -4,12 +4,9 @@
   Do not edit directly, this file was auto-generated.
 -->
 <resources>
-  <color name="bomBackgroundWhitePale">#ffffff</color>
-  <color name="bomBackgroundPaleFaint">#f7f7f7</color>
-  <color name="bomBackgroundFaintPale">#fbfbfd</color>
-  <color name="bomBackgroundWhiteFaint">#ffffff</color>
-  <color name="bomBackgroundWhiteBlack">#ffffff</color>
-  <color name="bomBackgroundPaleBlack">#f7f7f7</color>
+  <color name="bomBackgroundWhite">#ffffff</color>
+  <color name="bomBackgroundPale">#f7f7f7</color>
+  <color name="bomBackgroundFaint">#fbfbfd</color>
   <color name="bomBackgroundPrimary">#d13900</color>
   <color name="bomBackgroundHero">#534891</color>
   <color name="bomSurfaceMutedVivid">#20024e</color>

@@ -117,7 +117,7 @@ We introduced new token names to support a multi-brand + dual-theme system.
 ##### After
 
 ```tsx
-<div className="bg-background-white-pale">
+<div className="bg-background-white">
   <div className="bg-surface-primary rounded-full">
     <AccountIcon color="mono" />
   </div>

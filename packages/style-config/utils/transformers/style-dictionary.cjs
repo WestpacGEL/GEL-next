@@ -876,7 +876,9 @@ function processTokensSection(tokenSection, brands) {
         return [
           normalizedMode,
           Object.fromEntries(
-            Object.entries(groups).map(([propGroup, categories]) => [
+            // Skip "misc" group as they are figma related tokens NOTE: May need to change in future
+            Object.entries(groups).filter(([propGroup]) => propGroup !== 'misc').map(([propGroup, categories]) => {
+              return [
               propGroup,
               Object.fromEntries(
                 Object.entries(categories).map(([categoryName, tokens]) => [
@@ -889,7 +891,7 @@ function processTokensSection(tokenSection, brands) {
                   ),
                 ]),
               ),
-            ]),
+            ]}),
           ),
         ];
       }),

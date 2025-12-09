@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'flex gap-1 rounded-b-3xl bg-background-white-pale',
+    base: 'flex gap-1 rounded-b-3xl bg-background-white',
     primaryBtn: '',
     secondaryBtn: '',
   },

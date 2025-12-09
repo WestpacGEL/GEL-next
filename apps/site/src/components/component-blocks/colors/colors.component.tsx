@@ -31,7 +31,7 @@ export function Colors({ palette, tab }: { palette: string; tab?: string }) {
 //       {palette === 'data_visualisation'
 //         ? colorPalette.map(color => (
 //             <GridItem key={color.name} tag="li" span={{ initial: 12, xsl: 6, sm: 4, md: 4 }}>
-//               <div className="bg-background-white-pale xsl:flex-col xsl:items-stretch flex flex-row items-center p-4 ">
+//               <div className="bg-background-white xsl:flex-col xsl:items-stretch flex flex-row items-center p-4 ">
 //                 <Svg viewBox="0 0 132 132" width={132} height={132}>
 //                   <circle fill={color.hex} cx="66" cy="66" r="66" />
 //                 </Svg>
@@ -57,7 +57,7 @@ export function Colors({ palette, tab }: { palette: string; tab?: string }) {
 //           ))
 //         : colorPalette.map(color => (
 //             <GridItem key={color.name} tag="li" span={{ initial: 12, xsl: 6, sm: 4, md: 3 }}>
-//               <div className="bg-background-white-pale xsl:flex-col xsl:items-stretch flex flex-row items-center p-4">
+//               <div className="bg-background-white xsl:flex-col xsl:items-stretch flex flex-row items-center p-4">
 //                 <Svg viewBox="0 0 132 132" width={132} height={132}>
 //                   <circle fill={color.hex} cx="66" cy="66" r="66" />
 //                 </Svg>
