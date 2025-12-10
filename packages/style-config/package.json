@@ -25,5 +25,9 @@
     "build:css:copy": "cp -a ./src/css ./dist/",
     "build:ts": "tsc",
     "build": "pnpm clean && pnpm build:style-dictionary && pnpm build:css && pnpm build:ts && pnpm build:css:copy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WestpacGEL/GEL-next.git"
   }
 }

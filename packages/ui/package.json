@@ -296,5 +296,9 @@
     "@internationalized/date": "~3.10.0",
     "react": ">=18.2.0",
     "tailwindcss": "~4.1.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WestpacGEL/GEL-next.git"
   }
 }
