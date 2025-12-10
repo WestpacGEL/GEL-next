@@ -1313,7 +1313,7 @@
     "light-mode": {
       "color": {
         "background": {
-          "background-white-pale": {
+          "background-white": {
             "$scopes": [
               "FRAME_FILL",
               "SHAPE_FILL"
@@ -1324,7 +1324,7 @@
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.color.mono.white}"
           },
-          "background-pale-faint": {
+          "background-pale": {
             "$scopes": [
               "FRAME_FILL",
               "SHAPE_FILL"
@@ -1335,7 +1335,7 @@
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.color.muted.100}"
           },
-          "background-faint-pale": {
+          "background-faint": {
             "$scopes": [
               "FRAME_FILL",
               "SHAPE_FILL"
@@ -1345,42 +1345,6 @@
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.color.muted.50}"
-          },
-          "background-white-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "$description": "Use for screen backgrounds to establish correct emphasis.",
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
-          },
-          "background-white-black": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "$description": "This token is reserved. Do not use.",
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.white}"
-          },
-          "background-pale-black": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "$description": "This token is reserved. Do not use.",
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.100}"
           },
           "background-primary": {
             "$scopes": [
@@ -2034,7 +1998,8 @@
           "data-a-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2045,7 +2010,8 @@
           "data-a-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2056,7 +2022,8 @@
           "data-a-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2067,7 +2034,8 @@
           "data-b-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2078,7 +2046,8 @@
           "data-b-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2089,7 +2058,8 @@
           "data-b-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2100,7 +2070,8 @@
           "data-c-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2111,7 +2082,8 @@
           "data-c-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2122,7 +2094,8 @@
           "data-c-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2133,7 +2106,8 @@
           "data-d-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2144,7 +2118,8 @@
           "data-d-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2155,7 +2130,8 @@
           "data-d-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2166,7 +2142,8 @@
           "data-e-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2177,7 +2154,8 @@
           "data-e-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2188,7 +2166,8 @@
           "data-e-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2199,7 +2178,8 @@
           "data-f-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2210,7 +2190,8 @@
           "data-f-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2221,7 +2202,8 @@
           "data-f-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -2494,7 +2476,7 @@
     "dark-mode": {
       "color": {
         "background": {
-          "background-white-pale": {
+          "background-white": {
             "$scopes": [
               "FRAME_FILL",
               "SHAPE_FILL"
@@ -2505,7 +2487,7 @@
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.color.muted.900}"
           },
-          "background-pale-faint": {
+          "background-pale": {
             "$scopes": [
               "FRAME_FILL",
               "SHAPE_FILL"
@@ -2516,7 +2498,7 @@
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.color.muted.950}"
           },
-          "background-faint-pale": {
+          "background-faint": {
             "$scopes": [
               "FRAME_FILL",
               "SHAPE_FILL"
@@ -2526,42 +2508,6 @@
             "$libraryName": "",
             "$collectionName": "Themes",
             "$value": "{Themes.StGeorge.color.muted.900}"
-          },
-          "background-white-faint": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "$description": "Use for screen backgrounds to establish correct emphasis.",
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.muted.950}"
-          },
-          "background-white-black": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "$description": "This token is reserved. Do not use.",
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.black}"
-          },
-          "background-pale-black": {
-            "$scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "$description": "This token is reserved. Do not use.",
-            "$hiddenFromPublishing": true,
-            "$type": "color",
-            "$libraryName": "",
-            "$collectionName": "Themes",
-            "$value": "{Themes.StGeorge.color.mono.black}"
           },
           "background-primary": {
             "$scopes": [
@@ -3215,7 +3161,8 @@
           "data-a-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3226,7 +3173,8 @@
           "data-a-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3237,7 +3185,8 @@
           "data-a-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3248,7 +3197,8 @@
           "data-b-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3259,7 +3209,8 @@
           "data-b-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3270,7 +3221,8 @@
           "data-b-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3281,7 +3233,8 @@
           "data-c-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3292,7 +3245,8 @@
           "data-c-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3303,7 +3257,8 @@
           "data-c-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3314,7 +3269,8 @@
           "data-d-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3325,7 +3281,8 @@
           "data-d-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3336,7 +3293,8 @@
           "data-d-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3347,7 +3305,8 @@
           "data-e-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3358,7 +3317,8 @@
           "data-e-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3369,7 +3329,8 @@
           "data-e-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3380,7 +3341,8 @@
           "data-f-solid": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3391,7 +3353,8 @@
           "data-f-tint": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",
@@ -3402,7 +3365,8 @@
           "data-f-opacity": {
             "$scopes": [
               "FRAME_FILL",
-              "SHAPE_FILL"
+              "SHAPE_FILL",
+              "STROKE_COLOR"
             ],
             "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts.",
             "$type": "color",

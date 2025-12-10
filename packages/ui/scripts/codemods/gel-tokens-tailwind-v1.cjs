@@ -82,7 +82,7 @@ module.exports = function transformer(file, api) {
     'bg-danger': 'bg-surface-danger',
     'bg-system': 'bg-surface-system-error',
     'bg-black': 'bg-black[REPLACE_TOKEN]',
-    'bg-white': 'bg-background-white-pale',
+    'bg-white': 'bg-background-white',
     'text-text': 'text-text-body',
     'text-black': 'text-black[REPLACE_TOKEN]',
     'text-background': 'text-background[REPLACE_TOKEN]',

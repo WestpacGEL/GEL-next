@@ -45,12 +45,12 @@ export const styles = tv({
         label: 'text-surface-muted-faint',
       },
       'white-pale': {
-        base: 'text-background-white-pale',
-        label: 'text-background-white-pale',
+        base: 'text-background-white',
+        label: 'text-background-white',
       },
       'white-faint': {
-        base: 'text-background-white-faint',
-        label: 'text-background-white-faint',
+        base: 'text-background-white',
+        label: 'text-background-white',
       },
       mono: {
         base: 'text-surface-mono',

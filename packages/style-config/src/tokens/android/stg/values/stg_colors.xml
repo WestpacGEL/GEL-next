@@ -4,12 +4,9 @@
   Do not edit directly, this file was auto-generated.
 -->
 <resources>
-  <color name="stgBackgroundWhitePale">#ffffff</color>
-  <color name="stgBackgroundPaleFaint">#f5f5f4</color>
-  <color name="stgBackgroundFaintPale">#f9f9f9</color>
-  <color name="stgBackgroundWhiteFaint">#ffffff</color>
-  <color name="stgBackgroundWhiteBlack">#ffffff</color>
-  <color name="stgBackgroundPaleBlack">#f5f5f4</color>
+  <color name="stgBackgroundWhite">#ffffff</color>
+  <color name="stgBackgroundPale">#f5f5f4</color>
+  <color name="stgBackgroundFaint">#f9f9f9</color>
   <color name="stgBackgroundPrimary">#e30000</color>
   <color name="stgBackgroundHero">#008739</color>
   <color name="stgSurfaceMutedVivid">#004833</color>

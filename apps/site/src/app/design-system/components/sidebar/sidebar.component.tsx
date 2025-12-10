@@ -69,7 +69,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
         className={clsx(
           `
             fixed top-0 z-[1010] flex h-full w-[18.75rem] grow-0 flex-col
-            overflow-x-hidden border-r-0 bg-background-white-pale text-text-body
+            overflow-x-hidden border-r-0 bg-background-white text-text-body
             transition-transform ease-in-out
             lg:bottom-0 lg:h-auto lg:translate-x-0 lg:border-r
             lg:border-r-border-muted-soft
@@ -89,7 +89,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
           <div
             className={clsx(
               `
-                sticky flex-0 bg-background-white-pale transition-shadow delay-0
+                sticky flex-0 bg-background-white transition-shadow delay-0
                 duration-200 ease-[ease]
               `,
               {

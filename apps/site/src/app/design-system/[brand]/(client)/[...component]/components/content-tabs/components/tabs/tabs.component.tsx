@@ -21,7 +21,7 @@ export function Tabs(props: AriaTabListProps<AriaTabProps>) {
           {...tabListProps}
           ref={ref}
           className={`
-            flex h-11 items-end bg-background-white-pale
+            flex h-11 items-end bg-background-white
             sm:h-15
           `}
         >

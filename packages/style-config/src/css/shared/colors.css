@@ -67,12 +67,9 @@
 
   /* Token definitions  */
   [data-brand] {
-      --background-white-pale: var(--mono-white);
-      --background-pale-faint: var(--muted-100);
-      --background-faint-pale: var(--muted-50);
-      --background-white-faint: var(--mono-white);
-      --background-white-black: var(--mono-white);
-      --background-pale-black: var(--muted-100);
+      --background-white: var(--mono-white);
+      --background-pale: var(--muted-100);
+      --background-faint: var(--muted-50);
       --background-primary: var(--primary-500);
       --background-hero: var(--hero-500);
       --surface-muted-vivid: var(--surface-muted-vivid-lm);
@@ -168,12 +165,9 @@
       --surface-active-mono: var(--muted-200);
 
       @variant dark {
-        --background-white-pale: var(--muted-900);
-        --background-pale-faint: var(--muted-950);
-        --background-faint-pale: var(--muted-900);
-        --background-white-faint: var(--muted-950);
-        --background-white-black: var(--mono-black);
-        --background-pale-black: var(--mono-black);
+        --background-white: var(--muted-900);
+        --background-pale: var(--muted-950);
+        --background-faint: var(--muted-900);
         --background-primary: var(--primary-500);
         --background-hero: var(--hero-500);
         --surface-muted-vivid: var(--surface-muted-vivid-dm);
@@ -273,12 +267,9 @@
 
 /* Tailwind theme variables  */
 @theme inline static {
-    --color-background-white-pale: var(--background-white-pale);
-    --color-background-pale-faint: var(--background-pale-faint);
-    --color-background-faint-pale: var(--background-faint-pale);
-    --color-background-white-faint: var(--background-white-faint);
-    --color-background-white-black: var(--background-white-black);
-    --color-background-pale-black: var(--background-pale-black);
+    --color-background-white: var(--background-white);
+    --color-background-pale: var(--background-pale);
+    --color-background-faint: var(--background-faint);
     --color-background-primary: var(--background-primary);
     --color-background-hero: var(--background-hero);
     --color-surface-muted-vivid: var(--surface-muted-vivid);

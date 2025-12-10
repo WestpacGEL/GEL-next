@@ -34,7 +34,7 @@ export const Icons = () => {
       <div
         className={`
           mb-4 flex flex-wrap gap-3 rounded-2xl border border-border-muted-soft
-          bg-background-white-pale p-4 align-bottom
+          bg-background-white p-4 align-bottom
         `}
       >
         <div
@@ -105,7 +105,7 @@ export const Icons = () => {
               className={`
                 mb-2 flex flex-1 flex-col items-center justify-center
                 rounded-2xl border border-border-muted-soft
-                bg-background-white-pale px-2 pt-6 pb-3
+                bg-background-white px-2 pt-6 pb-3
                 xsl:mb-4
               `}
             >

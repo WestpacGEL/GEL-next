@@ -41,7 +41,7 @@ export const Pictograms = () => {
       <div
         className={`
           mb-4 rounded-2xl border border-border-muted-soft
-          bg-background-white-pale p-4
+          bg-background-white p-4
         `}
       >
         <Grid>
@@ -117,7 +117,7 @@ export const Pictograms = () => {
                   xsl:mb-4
                 `,
                 mode === 'light' && 'bg-surface-hero',
-                mode !== 'light' && 'bg-background-white-pale',
+                mode !== 'light' && 'bg-background-white',
               )}
             >
               <Pictogram mode={mode} className="mb-6" />

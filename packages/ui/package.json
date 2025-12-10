@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "1.0.0-canary.7",
+  "version": "1.0.0-canary.8",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -296,5 +296,9 @@
     "@internationalized/date": "~3.10.0",
     "react": ">=18.2.0",
     "tailwindcss": "~4.1.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WestpacGEL/GEL-next.git"
   }
 }

@@ -3,12 +3,9 @@
 import UIKit
 
 public enum BOMLightColors {
-  public static let backgroundWhitePale = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let backgroundPaleFaint = UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1)
-  public static let backgroundFaintPale = UIColor(red: 0.984, green: 0.984, blue: 0.992, alpha: 1)
-  public static let backgroundWhiteFaint = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let backgroundWhiteBlack = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
-  public static let backgroundPaleBlack = UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1)
+  public static let backgroundWhite = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1)
+  public static let backgroundPale = UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1)
+  public static let backgroundFaint = UIColor(red: 0.984, green: 0.984, blue: 0.992, alpha: 1)
   public static let backgroundPrimary = UIColor(red: 0.820, green: 0.224, blue: 0.000, alpha: 1)
   public static let backgroundHero = UIColor(red: 0.325, green: 0.282, blue: 0.569, alpha: 1)
   public static let surfaceMutedVivid = UIColor(red: 0.125, green: 0.008, blue: 0.306, alpha: 1)
@@ -106,12 +103,9 @@ public enum BOMLightColors {
 
 
 public enum BOMDarkColors {
-  public static let backgroundWhitePale = UIColor(red: 0.110, green: 0.110, blue: 0.122, alpha: 1)
-  public static let backgroundPaleFaint = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
-  public static let backgroundFaintPale = UIColor(red: 0.110, green: 0.110, blue: 0.122, alpha: 1)
-  public static let backgroundWhiteFaint = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
-  public static let backgroundWhiteBlack = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
-  public static let backgroundPaleBlack = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)
+  public static let backgroundWhite = UIColor(red: 0.110, green: 0.110, blue: 0.122, alpha: 1)
+  public static let backgroundPale = UIColor(red: 0.086, green: 0.086, blue: 0.098, alpha: 1)
+  public static let backgroundFaint = UIColor(red: 0.110, green: 0.110, blue: 0.122, alpha: 1)
   public static let backgroundPrimary = UIColor(red: 0.820, green: 0.224, blue: 0.000, alpha: 1)
   public static let backgroundHero = UIColor(red: 0.325, green: 0.282, blue: 0.569, alpha: 1)
   public static let surfaceMutedVivid = UIColor(red: 0.984, green: 0.984, blue: 0.992, alpha: 1)
@@ -209,63 +203,33 @@ public enum BOMDarkColors {
 
 
 public enum BOMColors {
-  public static var backgroundWhitePale: UIColor {
+  public static var backgroundWhite: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return BOMDarkColors.backgroundWhitePale
+          return BOMDarkColors.backgroundWhite
         default:
-          return BOMLightColors.backgroundWhitePale
+          return BOMLightColors.backgroundWhite
       }
     }
   }
-  public static var backgroundPaleFaint: UIColor {
+  public static var backgroundPale: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return BOMDarkColors.backgroundPaleFaint
+          return BOMDarkColors.backgroundPale
         default:
-          return BOMLightColors.backgroundPaleFaint
+          return BOMLightColors.backgroundPale
       }
     }
   }
-  public static var backgroundFaintPale: UIColor {
+  public static var backgroundFaint: UIColor {
     return UIColor { traitCollection in
       switch traitCollection.userInterfaceStyle {
         case .dark:
-          return BOMDarkColors.backgroundFaintPale
+          return BOMDarkColors.backgroundFaint
         default:
-          return BOMLightColors.backgroundFaintPale
-      }
-    }
-  }
-  public static var backgroundWhiteFaint: UIColor {
-    return UIColor { traitCollection in
-      switch traitCollection.userInterfaceStyle {
-        case .dark:
-          return BOMDarkColors.backgroundWhiteFaint
-        default:
-          return BOMLightColors.backgroundWhiteFaint
-      }
-    }
-  }
-  public static var backgroundWhiteBlack: UIColor {
-    return UIColor { traitCollection in
-      switch traitCollection.userInterfaceStyle {
-        case .dark:
-          return BOMDarkColors.backgroundWhiteBlack
-        default:
-          return BOMLightColors.backgroundWhiteBlack
-      }
-    }
-  }
-  public static var backgroundPaleBlack: UIColor {
-    return UIColor { traitCollection in
-      switch traitCollection.userInterfaceStyle {
-        case .dark:
-          return BOMDarkColors.backgroundPaleBlack
-        default:
-          return BOMLightColors.backgroundPaleBlack
+          return BOMLightColors.backgroundFaint
       }
     }
   }

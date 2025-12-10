@@ -30,10 +30,10 @@ export const styles = tv({
     isSelected: {
       true: {
         switchDiv:
-          'border-border-hero bg-surface-hero after:left-full after:-translate-x-full after:border after:border-surface-hero after:bg-background-white-pale',
+          'border-border-hero bg-surface-hero after:left-full after:-translate-x-full after:border after:border-surface-hero after:bg-background-white',
       },
       false: {
-        switchDiv: 'bg-background-white-pale after:border after:border-background-white-pale after:bg-surface-muted',
+        switchDiv: 'bg-background-white after:border after:border-background-white after:bg-surface-muted',
       },
     },
     isDisabled: {

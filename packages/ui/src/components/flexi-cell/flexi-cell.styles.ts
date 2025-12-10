@@ -9,7 +9,7 @@ export const styles = tv({
   variants: {
     withBorder: {
       true: {
-        base: 'rounded-2xl border border-border-muted-soft bg-background-white-pale',
+        base: 'rounded-2xl border border-border-muted-soft bg-background-white',
       },
       false: { base: '!px-0' },
     },

@@ -1,6 +1,6 @@
 {
   "name": "@westpac/style-config",
-  "version": "0.1.0-canary.3",
+  "version": "0.1.0-canary.4",
   "type": "module",
   "exports": {
     ".": "./dist/tokens/index.js",
@@ -25,5 +25,9 @@
     "build:css:copy": "cp -a ./src/css ./dist/",
     "build:ts": "tsc",
     "build": "pnpm clean && pnpm build:style-dictionary && pnpm build:css && pnpm build:ts && pnpm build:css:copy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WestpacGEL/GEL-next.git"
   }
 }

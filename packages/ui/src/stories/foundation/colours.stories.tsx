@@ -63,12 +63,9 @@ function generateLoadColors() {
 // NOTE: Although unused this needs to be here so tailwind will include all the colors i.e. tailwind doesn't generate dynamic classes
 const LOADED_COLORS = {
   background: [
-    'bg-background-white-pale',
-    'bg-background-pale-faint',
-    'bg-background-faint-pale',
-    'bg-background-white-faint',
-    'bg-background-white-black',
-    'bg-background-pale-black',
+    'bg-background-white',
+    'bg-background-pale',
+    'bg-background-faint',
     'bg-background-primary',
     'bg-background-hero',
   ],
@@ -186,7 +183,7 @@ export const Background: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const backgroundColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.background);
     return (
-      <div className="flex flex-wrap bg-background-white-black">
+      <div className="flex flex-wrap bg-background-white">
         {backgroundColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -210,7 +207,7 @@ export const Surface: Story = {
     );
 
     return (
-      <div className="flex flex-wrap bg-background-white-black">
+      <div className="flex flex-wrap bg-background-white">
         {surfaceColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -231,7 +228,7 @@ export const Text: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const textColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.text);
     return (
-      <div className="flex flex-wrap bg-background-white-black">
+      <div className="flex flex-wrap bg-background-white">
         {textColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -252,7 +249,7 @@ export const Border: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const borderColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.border);
     return (
-      <div className="flex flex-wrap bg-background-white-black">
+      <div className="flex flex-wrap bg-background-white">
         {borderColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -273,7 +270,7 @@ export const Data: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const dataColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.data);
     return (
-      <div className="flex flex-wrap bg-background-white-black">
+      <div className="flex flex-wrap bg-background-white">
         {dataColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -294,7 +291,7 @@ export const Pictogram: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const pictogramColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.pictogram);
     return (
-      <div className="flex flex-wrap bg-background-white-black">
+      <div className="flex flex-wrap bg-background-white">
         {pictogramColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />
@@ -315,7 +312,7 @@ export const State: Story = {
     const brandName = brandMap[currThemeToken] as keyof typeof ALL_BRANDS.Tokens;
     const stateColors = Object.keys(ALL_BRANDS.Tokens[brandName]['light-mode'].color.state);
     return (
-      <div className="flex flex-wrap bg-background-white-black">
+      <div className="flex flex-wrap bg-background-white">
         {stateColors.map(color => (
           <div className="w-[33%] max-w-[300px] min-w-[200px] p-2" key={color}>
             <div className={`bg-${color} h-[80px] border border-b-0 border-border-muted-soft`} />

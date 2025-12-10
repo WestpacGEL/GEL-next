@@ -1,11 +1,8 @@
 // import { BrandKeyWithThemes, type ColorsKey } from '@westpac/ui/types';
 
 // export const PRIMARY_COLORS: ColorsKey[] = [
-//   'background-pale-black',
-//   'background-white-black',
-//   'background-white-faint',
-//   'background-pale-faint',
-//   'background-white-pale',
+//   'background-pale',
+//   'background-white',
 //   'surface-muted',
 //   'surface-muted-vivid',
 //   'surface-muted-strong',

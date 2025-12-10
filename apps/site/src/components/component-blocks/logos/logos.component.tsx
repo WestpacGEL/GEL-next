@@ -33,7 +33,7 @@ export const Logos = () => {
       <div
         className={`
           mb-4 rounded-2xl border border-border-muted-soft
-          bg-background-white-pale p-4
+          bg-background-white p-4
         `}
       >
         <Grid>
@@ -75,7 +75,7 @@ export const Logos = () => {
               className={`
                 mb-2 flex w-full grow flex-col items-center justify-center
                 rounded-2xl border border-border-muted-soft
-                bg-background-white-pale px-2 pt-6 pb-3
+                bg-background-white px-2 pt-6 pb-3
                 xsl:mb-4
               `}
             >

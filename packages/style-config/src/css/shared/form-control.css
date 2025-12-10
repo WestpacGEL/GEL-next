@@ -58,7 +58,7 @@
 @layer components {
   .form-control {
     @apply box-border w-fit appearance-none overflow-visible rounded border
-      bg-background-white-pale align-middle text-text-body transition outline-transparent
+      bg-background-white align-middle text-text-body transition outline-transparent
       placeholder:font-light placeholder:text-text-body/50 placeholder:opacity-100 border-border-muted-strong outline-none;
   }
 
