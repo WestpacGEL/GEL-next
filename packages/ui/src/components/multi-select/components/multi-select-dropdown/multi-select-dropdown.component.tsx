@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useRef, KeyboardEvent, useContext } from 'react';
+import React, { useCallback, KeyboardEvent, useContext } from 'react';
 
 import { Button } from '../../../../components/button/index.js';
 import { ClearIcon, SearchIcon } from '../../../../components/icon/index.js';
@@ -14,18 +14,22 @@ import { styles as dropdownStyles } from './multi-select-dropdown.styles.js';
 import { MultiSelectDropdownProps } from './multi-select-dropdown.types.js';
 
 export function MultiSelectDropdown<T extends object = object>({
-  inputRef,
   setFilterText,
   ...props
 }: MultiSelectDropdownProps<T>) {
-  const { filterText, size, overlayState } = useContext(MultiSelectContext);
+  const { filterText, size, overlayState, selectAllRef, listBoxRef, inputRef } = useContext(MultiSelectContext);
   const styles = dropdownStyles({});
-  const listBoxRef = useRef<HTMLUListElement | null>(null);
 
+  // Need to manually handle keyboard accessibility due to component complexity
   const handleInputKeyDown = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      listBoxRef.current?.focus();
+      if (selectAllRef.current) {
+        selectAllRef.current.focus();
+      } else {
+        const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
+        firstItem.focus();
+      }
     }
   }, []);
 
@@ -61,6 +65,7 @@ export function MultiSelectDropdown<T extends object = object>({
             onChange={e => setFilterText(e.target.value)}
             onFocus={() => overlayState.open()}
             onKeyDown={handleInputKeyDown}
+            tabIndex={-1}
           />
         </InputGroup>
       </div>

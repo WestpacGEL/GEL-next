@@ -20,8 +20,11 @@ import type {
 export const MultiSelectContext = createContext<MultiSelectContextProps>({
   overlayState: {} as MultiSelectContextProps['overlayState'],
   listState: {} as MultiSelectContextProps['listState'],
+  listBoxRef: { current: null },
   buttonRef: { current: null },
   popoverRef: { current: null },
+  selectAllRef: { current: null },
+  inputRef: { current: null },
   filterText: '',
 });
 
@@ -54,6 +57,8 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   const inputRef = useRef<HTMLInputElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
+  const selectAllRef = useRef<HTMLButtonElement>(null);
+  const listBoxRef = useRef<HTMLUListElement>(null);
 
   const overlayState = useOverlayTriggerState({
     onOpenChange: isOpen => {
@@ -96,6 +101,9 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
         buttonRef,
         popoverRef,
         placement,
+        selectAllRef,
+        listBoxRef,
+        inputRef,
       }}
     >
       <div className={styles.root()}>
@@ -104,9 +112,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
           selectedKeys={selectedKeys}
           showSingleSectionTitle={showSingleSectionTitle}
         />
-        {overlayState.isOpen && (
-          <MultiSelectDropdown inputRef={inputRef} setFilterText={setFilterText} {...listBoxProps} />
-        )}
+        {overlayState.isOpen && <MultiSelectDropdown setFilterText={setFilterText} {...listBoxProps} />}
       </div>
     </MultiSelectContext.Provider>
   );

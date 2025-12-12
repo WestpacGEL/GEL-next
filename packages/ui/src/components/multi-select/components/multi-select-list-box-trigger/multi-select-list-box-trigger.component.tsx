@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useState, Key } from 'react';
+import React, { useCallback, useContext, useEffect, useState, Key, KeyboardEvent } from 'react';
 import { mergeProps, useButton, useFocusRing, useOverlayTrigger } from 'react-aria';
 
 import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
@@ -11,12 +11,13 @@ import { MultiSelectContext } from '../../multi-select.component.js';
 import { styles as triggerStyles } from './multi-select-list-box-trigger.styles.js';
 import { MultiSelectListBoxTriggerProps } from './multi-select-list-box-trigger.types.js';
 
+// TODO: down/up arrow opens the listbox
 export function MultiSelectListBoxTrigger<T>({
   placeholder,
   showSingleSectionTitle,
   selectedKeys,
 }: MultiSelectListBoxTriggerProps<T>) {
-  const { size, selectionMode, overlayState, listState, buttonRef } = useContext(MultiSelectContext);
+  const { size, selectionMode, overlayState, listState, buttonRef, inputRef } = useContext(MultiSelectContext);
   const breakpoint = useBreakpoint();
   const { triggerProps } = useOverlayTrigger({ type: 'listbox' }, overlayState, buttonRef);
   const { buttonProps } = useButton(triggerProps, buttonRef);
@@ -39,6 +40,18 @@ export function MultiSelectListBoxTrigger<T>({
       return title;
     },
     [listState.collection],
+  );
+
+  const handleTriggerKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLButtonElement>) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        overlayState.open();
+        inputRef.current?.focus();
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [overlayState],
   );
 
   // Manage selected items state for display
@@ -80,7 +93,7 @@ export function MultiSelectListBoxTrigger<T>({
     <>
       <Tooltip tooltip={valuesString} position="top">
         <div className={styles.buttonContainer()}>
-          <button className={styles.control()} ref={buttonRef} {...finalButtonProps}>
+          <button className={styles.control()} ref={buttonRef} {...finalButtonProps} onKeyDown={handleTriggerKeyDown}>
             {/* Selected items */}
             <div className={styles.selection()}>
               <span className={styles.selectionSpan()}>{selectedValues.length > 0 ? valuesString : placeholder}</span>

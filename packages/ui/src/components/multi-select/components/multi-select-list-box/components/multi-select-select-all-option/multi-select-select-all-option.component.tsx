@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext, useMemo } from 'react';
+import React, { useCallback, useContext, useMemo, KeyboardEvent } from 'react';
 
 import { TickIcon } from '../../../../../icon/index.js';
 import { MultiSelectContext } from '../../../../multi-select.component.js';
@@ -8,7 +8,7 @@ import { MultiSelectContext } from '../../../../multi-select.component.js';
 import { styles as selectAllOptionStyles } from './multi-select-select-all-option.styles.js';
 
 export function MultiSelectSelectAllOption() {
-  const { listState } = useContext(MultiSelectContext);
+  const { listState, selectAllRef, listBoxRef, inputRef } = useContext(MultiSelectContext);
   const allItemsAreSelected = useMemo(
     () => listState.selectionManager.isSelectAll,
     [listState.selectionManager.isSelectAll],
@@ -21,8 +21,34 @@ export function MultiSelectSelectAllOption() {
 
   const styles = selectAllOptionStyles({ selected: withOneSelectionOrMore });
 
+  // Need to manually handle keyboard accessibility due to component complexity
+  const handleButtonKeyDown = useCallback((e: KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
+      firstItem.focus();
+    }
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      inputRef.current?.focus();
+    }
+  }, []);
+
+  const ariaChecked = () => {
+    if (allItemsAreSelected) return 'true';
+    if (withOneSelectionOrMore) return 'mixed';
+    return 'false';
+  };
+
   return (
-    <li className={styles.listItem()} key="select-all">
+    <li
+      className={styles.listItem()}
+      key="select-all"
+      itemType="checkbox"
+      role="checkbox"
+      aria-checked={ariaChecked()}
+      aria-label="Select all options"
+    >
       <button
         className={styles.button()}
         onClick={() => {
@@ -36,6 +62,9 @@ export function MultiSelectSelectAllOption() {
           }
           return listState.selectionManager.clearSelection();
         }}
+        ref={selectAllRef}
+        onKeyDown={handleButtonKeyDown}
+        tabIndex={-1}
       >
         <div className={styles.checkbox()}>
           {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" />}

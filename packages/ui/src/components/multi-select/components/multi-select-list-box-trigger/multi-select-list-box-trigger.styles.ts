@@ -8,7 +8,7 @@ export const styles = tv({
     selectionSpan: 'w-full overflow-hidden text-ellipsis',
     hint: 'typography-body-10 text-text-muted',
     button:
-      'flex cursor-default items-center justify-center border-l border-l-border-muted-strong bg-background-white-faint px-1',
+      'flex cursor-default items-center justify-center border-l border-l-border-muted-strong bg-background-white px-1',
     clearButton: 'absolute top-0 right-6.5 bottom-0 flex !h-auto items-center justify-center',
     clearIcon: '-mt-0.5',
   },

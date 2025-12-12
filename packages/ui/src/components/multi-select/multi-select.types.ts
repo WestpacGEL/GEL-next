@@ -9,7 +9,10 @@ export type MultiSelectContextProps<T extends object = object> = {
   overlayState: OverlayTriggerState;
   listState: ListState<T>;
   buttonRef: RefObject<HTMLButtonElement>;
+  listBoxRef: RefObject<HTMLUListElement>;
   popoverRef: RefObject<HTMLDivElement>;
+  selectAllRef: RefObject<HTMLButtonElement>;
+  inputRef: RefObject<HTMLInputElement>;
   selectedKeys?: AriaListBoxProps<T>['selectedKeys'];
   selectionMode?: AriaListBoxProps<T>['selectionMode'];
   filterText: string;
