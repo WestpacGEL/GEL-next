@@ -29,10 +29,10 @@
     "codemod:tokens": "node run-codemod.cjs"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.7",
+    "@changesets/cli": "^2.29.8",
     "@westpac/eslint-config": "workspace:~",
     "@westpac/ts-config": "workspace:~",
-    "eslint-config-turbo": "^2.5.4",
+    "eslint-config-turbo": "^2.5.8",
     "husky": "^8.0.3",
     "prettier": "^3.2.5",
     "shx": "^0.3.4",
@@ -44,7 +44,7 @@
   "packageManager": "pnpm@9.1.2",
   "dependencies": {
     "adm-zip": "~0.5.16",
-    "glob": "~10.3.3",
+    "glob": "~10.5.0",
     "typescript": "~5.5.4"
   },
   "pnpm": {
