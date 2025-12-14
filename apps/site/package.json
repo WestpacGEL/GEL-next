@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "version": "0.3.41",
+  "version": "0.3.42",
   "private": true,
   "scripts": {
     "prebuild": "npm run lint",
@@ -20,7 +20,7 @@
     "clsx": "^1.2.1",
     "lodash.throttle": "~4.1.1",
     "motion": "~12.23.12",
-    "next": "^14.2.30",
+    "next": "^14.2.35",
     "prism-react-renderer": "~2.0.6",
     "react": "^18.2.0",
     "react-aria": "~3.41.1",
@@ -44,7 +44,7 @@
     "autoprefixer": "~10.4.14",
     "eslint": "^9.32.0",
     "eslint-config-next": "15.3.4",
-    "eslint-config-turbo": "^2.5.4",
+    "eslint-config-turbo": "^2.5.8",
     "postcss": "~8.4.31",
     "tailwind-variants": "~0.2.1",
     "tailwindcss": "~3.4.15",

@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.55.1
+
+### Patch Changes
+
+- 7754db9: updated dependencies for security fixes
+
 ## 0.55.0
 
 ### Minor Changes
