@@ -459,8 +459,8 @@ importers:
         specifier: 10.1.4
         version: 10.1.4(react@18.3.1)(storybook@10.1.4(@testing-library/dom@10.4.0)(bufferutil@4.0.9)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.5))
       '@storybook/addon-mcp':
-        specifier: 0.1.4
-        version: 0.1.4(storybook@10.1.4(@testing-library/dom@10.4.0)(bufferutil@4.0.9)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.5))(typescript@5.8.3)
+        specifier: 0.1.6
+        version: 0.1.6(storybook@10.1.4(@testing-library/dom@10.4.0)(bufferutil@4.0.9)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.5))(typescript@5.8.3)
       '@storybook/addon-themes':
         specifier: ~10.1.4
         version: 10.1.4(storybook@10.1.4(@testing-library/dom@10.4.0)(bufferutil@4.0.9)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.5))
@@ -2640,8 +2640,8 @@ packages:
       react:
         optional: true
 
-  '@storybook/addon-mcp@0.1.4':
-    resolution: {integrity: sha512-j9KaZsIPaoWvWVsBmURPBlNChP2l2jSrlipKubwDjmr47cFZWvxe1K9unweftWMAnjf4AvAfGeSECH7HoiQnSw==}
+  '@storybook/addon-mcp@0.1.6':
+    resolution: {integrity: sha512-+EagCHqwIb9tg3DKskEsXpsqQVnMljxgR5Tt3Bu0ZpWweB1HdMy+ok128gzNfTZ3r+5ljksr0q66YCEkrQwdDA==}
     peerDependencies:
       storybook: ^9.1.16 || ^10.0.0 || ^10.1.0-0 || ^10.2.0-0 || ^10.3.0-0 || ^10.4.0-0
 
@@ -2690,8 +2690,8 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@storybook/mcp@0.1.0':
-    resolution: {integrity: sha512-nXsS1x5qDXtUhlwmi8CyzYKLig7biPIUXVQAMrBLymTfy9YSJn/d0Z1BY8Tp68S3Vr92z36USnyxVGLaeTdFGg==}
+  '@storybook/mcp@0.1.1':
+    resolution: {integrity: sha512-+AivFDms1XkY2VUvZBBYy0co5qvRh20eYXYwhaDPQXX2Q4y96arSkWn22e/l3DQwA9Ywzv481vj4gl4zPrCQkg==}
 
   '@storybook/react-dom-shim@10.1.4':
     resolution: {integrity: sha512-PARu2HA5nYU1AkioNJNc430pz0oyaHFSSAdN3NEaWwkoGrCOo9ZpAXP9V7wlJANCi1pndbC84gSuHVnBXJBG6g==}
@@ -7139,8 +7139,8 @@ packages:
     resolution: {integrity: sha512-fcRLaS4H/hrZk9hYwbdRM35D0U8IYMfEClhXxCivOojl+yTRAZH3Zy2sSy6qVCiGbV9YAtPssP6jaChqC9vPCg==}
     engines: {node: '>= 10.13.0'}
 
-  valibot@1.1.0:
-    resolution: {integrity: sha512-Nk8lX30Qhu+9txPYTwM0cFlWLdPFsFr6LblzqIySfbZph9+BFsAHsNvHOymEviUepeIW6KFHzpX8TKhbptBXXw==}
+  valibot@1.2.0:
+    resolution: {integrity: sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
@@ -10502,14 +10502,14 @@ snapshots:
     optionalDependencies:
       react: 18.3.1
 
-  '@storybook/addon-mcp@0.1.4(storybook@10.1.4(@testing-library/dom@10.4.0)(bufferutil@4.0.9)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.5))(typescript@5.8.3)':
+  '@storybook/addon-mcp@0.1.6(storybook@10.1.4(@testing-library/dom@10.4.0)(bufferutil@4.0.9)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.5))(typescript@5.8.3)':
     dependencies:
-      '@storybook/mcp': 0.1.0(typescript@5.8.3)
-      '@tmcp/adapter-valibot': 0.1.5(tmcp@1.18.1(typescript@5.8.3))(valibot@1.1.0(typescript@5.8.3))
+      '@storybook/mcp': 0.1.1(typescript@5.8.3)
+      '@tmcp/adapter-valibot': 0.1.5(tmcp@1.18.1(typescript@5.8.3))(valibot@1.2.0(typescript@5.8.3))
       '@tmcp/transport-http': 0.8.3(tmcp@1.18.1(typescript@5.8.3))
       storybook: 10.1.4(@testing-library/dom@10.4.0)(bufferutil@4.0.9)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(utf-8-validate@6.0.5)
       tmcp: 1.18.1(typescript@5.8.3)
-      valibot: 1.1.0(typescript@5.8.3)
+      valibot: 1.2.0(typescript@5.8.3)
     transitivePeerDependencies:
       - '@tmcp/auth'
       - typescript
@@ -10553,12 +10553,12 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@storybook/mcp@0.1.0(typescript@5.8.3)':
+  '@storybook/mcp@0.1.1(typescript@5.8.3)':
     dependencies:
-      '@tmcp/adapter-valibot': 0.1.5(tmcp@1.18.1(typescript@5.8.3))(valibot@1.1.0(typescript@5.8.3))
+      '@tmcp/adapter-valibot': 0.1.5(tmcp@1.18.1(typescript@5.8.3))(valibot@1.2.0(typescript@5.8.3))
       '@tmcp/transport-http': 0.8.3(tmcp@1.18.1(typescript@5.8.3))
       tmcp: 1.18.1(typescript@5.8.3)
-      valibot: 1.1.0(typescript@5.8.3)
+      valibot: 1.2.0(typescript@5.8.3)
     transitivePeerDependencies:
       - '@tmcp/auth'
       - typescript
@@ -10807,12 +10807,12 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.0
 
-  '@tmcp/adapter-valibot@0.1.5(tmcp@1.18.1(typescript@5.8.3))(valibot@1.1.0(typescript@5.8.3))':
+  '@tmcp/adapter-valibot@0.1.5(tmcp@1.18.1(typescript@5.8.3))(valibot@1.2.0(typescript@5.8.3))':
     dependencies:
       '@standard-schema/spec': 1.0.0
-      '@valibot/to-json-schema': 1.4.0(valibot@1.1.0(typescript@5.8.3))
+      '@valibot/to-json-schema': 1.4.0(valibot@1.2.0(typescript@5.8.3))
       tmcp: 1.18.1(typescript@5.8.3)
-      valibot: 1.1.0(typescript@5.8.3)
+      valibot: 1.2.0(typescript@5.8.3)
 
   '@tmcp/session-manager@0.2.1(tmcp@1.18.1(typescript@5.8.3))':
     dependencies:
@@ -11222,9 +11222,9 @@ snapshots:
       '@urql/core': 5.2.0(graphql@16.11.0)
       wonka: 6.3.5
 
-  '@valibot/to-json-schema@1.4.0(valibot@1.1.0(typescript@5.8.3))':
+  '@valibot/to-json-schema@1.4.0(valibot@1.2.0(typescript@5.8.3))':
     dependencies:
-      valibot: 1.1.0(typescript@5.8.3)
+      valibot: 1.2.0(typescript@5.8.3)
 
   '@vercel/postgres@0.9.0':
     dependencies:
@@ -12226,17 +12226,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.35.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.33.0(jiti@2.5.1)))(eslint@9.33.0(jiti@2.5.1)):
-    dependencies:
-      debug: 3.2.7
-    optionalDependencies:
-      '@typescript-eslint/parser': 8.35.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.8.3)
-      eslint: 9.33.0(jiti@2.5.1)
-      eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.33.0(jiti@2.5.1))
-    transitivePeerDependencies:
-      - supports-color
-
   eslint-module-utils@2.12.1(@typescript-eslint/parser@8.35.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@4.4.4(eslint-plugin-import@2.32.0)(eslint@9.33.0(jiti@2.5.1)))(eslint@9.33.0(jiti@2.5.1)):
     dependencies:
       debug: 3.2.7
@@ -12279,7 +12268,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.33.0(jiti@2.5.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.35.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.33.0(jiti@2.5.1)))(eslint@9.33.0(jiti@2.5.1))
+      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.35.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@4.4.4(eslint-plugin-import@2.32.0)(eslint@9.33.0(jiti@2.5.1)))(eslint@9.33.0(jiti@2.5.1))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -15464,7 +15453,7 @@ snapshots:
       json-rpc-2.0: 1.7.1
       sqids: 0.3.0
       uri-template-matcher: 1.1.2
-      valibot: 1.1.0(typescript@5.8.3)
+      valibot: 1.2.0(typescript@5.8.3)
     transitivePeerDependencies:
       - typescript
 
@@ -15782,7 +15771,7 @@ snapshots:
 
   v8flags@4.0.1: {}
 
-  valibot@1.1.0(typescript@5.8.3):
+  valibot@1.2.0(typescript@5.8.3):
     optionalDependencies:
       typescript: 5.8.3
 
