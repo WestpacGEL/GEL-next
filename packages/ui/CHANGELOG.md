@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.55.2
+
+### Patch Changes
+
+- 4162b09: package update
+
 ## 0.55.1
 
 ### Patch Changes
