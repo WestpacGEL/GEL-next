@@ -8,7 +8,7 @@ import { styles } from './tooltip.styles.js';
 import { TooltipProps } from './tooltip.types.js';
 
 // TODO: Complete component/replace with a library that works (react-tooltip if can find a way to remove aria-described by for select)
-export function Tooltip({ children, tooltip, id, className }: TooltipProps) {
+export function Tooltip({ children, disabled, tooltip, id, className, position = 'bottom' }: TooltipProps) {
   const localId = useId();
   const [isOpen, setIsOpen] = useState(false);
   const tooltipWaitTime = useRef<NodeJS.Timeout | null>(null);
@@ -34,7 +34,7 @@ export function Tooltip({ children, tooltip, id, className }: TooltipProps) {
   }, []);
 
   useEffect(() => {
-    setIsOpen(isFocusVisible);
+    setIsOpen(isFocusVisible && !disabled);
   }, [isFocusVisible]);
 
   useEffect(() => {
@@ -55,7 +55,11 @@ export function Tooltip({ children, tooltip, id, className }: TooltipProps) {
   return (
     <span {...mergeProps(hoverProps, focusProps)} className={styles({ className })}>
       {children}
-      {isOpen && <TooltipContent id={id ?? localId}>{tooltip}</TooltipContent>}
+      {isOpen && (
+        <TooltipContent id={id ?? localId} position={position}>
+          {tooltip}
+        </TooltipContent>
+      )}
     </span>
   );
 }
