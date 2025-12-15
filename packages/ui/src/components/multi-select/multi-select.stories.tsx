@@ -75,7 +75,7 @@ export const WithSection = () => {
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
       >
-        <MultiSelectSection title="Transaction" items={OPTIONS}>
+        <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.key}
@@ -86,7 +86,7 @@ export const WithSection = () => {
             </MultiSelectItem>
           )}
         </MultiSelectSection>
-        <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
+        <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.key}
@@ -122,7 +122,7 @@ export const Sizes = () => {
               setSelectedKeys(keys as Set<string>);
             }}
           >
-            <MultiSelectSection title="Transaction" items={OPTIONS}>
+            <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
               {option => (
                 <MultiSelectItem
                   key={option.key}
@@ -133,7 +133,7 @@ export const Sizes = () => {
                 </MultiSelectItem>
               )}
             </MultiSelectSection>
-            <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
+            <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
               {option => (
                 <MultiSelectItem
                   key={option.key}
@@ -168,7 +168,7 @@ export const SingleSelect = () => {
             selectedKeys={selectedKeys}
             onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
           >
-            <MultiSelectSection title="Transaction" items={OPTIONS}>
+            <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
               {option => (
                 <MultiSelectItem
                   key={option.key}
@@ -179,7 +179,7 @@ export const SingleSelect = () => {
                 </MultiSelectItem>
               )}
             </MultiSelectSection>
-            <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
+            <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
               {option => (
                 <MultiSelectItem
                   key={option.key}
@@ -211,7 +211,7 @@ export const SingleSelectWithSectionTitle = () => {
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
         showSingleSectionTitle
       >
-        <MultiSelectSection title="Transaction" items={OPTIONS}>
+        <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.key}
@@ -222,7 +222,7 @@ export const SingleSelectWithSectionTitle = () => {
             </MultiSelectItem>
           )}
         </MultiSelectSection>
-        <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
+        <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.key}
@@ -251,7 +251,7 @@ export const UsingField = () => {
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
       >
-        <MultiSelectSection title="Transaction" items={OPTIONS}>
+        <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.key}
@@ -262,7 +262,7 @@ export const UsingField = () => {
             </MultiSelectItem>
           )}
         </MultiSelectSection>
-        <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
+        <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.key}
@@ -280,7 +280,9 @@ export const UsingField = () => {
 
 export const Testing = () => {
   const [selectedKeysMulti, setSelectedKeysMulti] = useState<Set<string>>(new Set());
+  const [selectedKeysMultiNoSection, setSelectedKeysMultiNoSection] = useState<Set<string>>(new Set());
   const [selectedKeysSingle, setSelectedKeysSingle] = useState<Set<string>>(new Set());
+  const [selectedKeysSingleNoSection, setSelectedKeysSingleNoSection] = useState<Set<string>>(new Set());
 
   return (
     <div className="flex flex-col gap-2">
@@ -291,7 +293,7 @@ export const Testing = () => {
           selectedKeys={selectedKeysMulti}
           onSelectionChange={keys => setSelectedKeysMulti(keys as Set<string>)}
         >
-          <MultiSelectSection title="Transaction" items={OPTIONS}>
+          <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
             {option => (
               <MultiSelectItem
                 key={option.key}
@@ -302,7 +304,7 @@ export const Testing = () => {
               </MultiSelectItem>
             )}
           </MultiSelectSection>
-          <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
+          <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
             {option => (
               <MultiSelectItem
                 key={option.key}
@@ -315,6 +317,25 @@ export const Testing = () => {
           </MultiSelectSection>
         </MultiSelect>
       </Field>
+      <p>Multiple selection no sections</p>
+      <Field label="Select a fruit topping" hintMessage="If there is hint text, it can go here">
+        <MultiSelect
+          listBoxProps={{ 'aria-label': 'multiselect options' }}
+          selectedKeys={selectedKeysMultiNoSection}
+          onSelectionChange={keys => setSelectedKeysMultiNoSection(keys as Set<string>)}
+          items={OPTIONS}
+        >
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+              description="Supporting information or description"
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelect>
+      </Field>
       <p>Single selection</p>
       <Field label="Select a fruit topping" hintMessage="If there is hint text, it can go here">
         <MultiSelect
@@ -322,7 +343,7 @@ export const Testing = () => {
           selectedKeys={selectedKeysSingle}
           onSelectionChange={keys => setSelectedKeysSingle(keys as Set<string>)}
         >
-          <MultiSelectSection title="Transaction" items={OPTIONS}>
+          <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
             {option => (
               <MultiSelectItem
                 key={option.key}
@@ -333,7 +354,7 @@ export const Testing = () => {
               </MultiSelectItem>
             )}
           </MultiSelectSection>
-          <MultiSelectSection title="Savings" items={OTHER_OPTIONS}>
+          <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
             {option => (
               <MultiSelectItem
                 key={option.key}
@@ -344,6 +365,25 @@ export const Testing = () => {
               </MultiSelectItem>
             )}
           </MultiSelectSection>
+        </MultiSelect>
+      </Field>
+      <p>Single selection no sections</p>
+      <Field label="Select a fruit topping" hintMessage="If there is hint text, it can go here">
+        <MultiSelect
+          selectionMode="single"
+          selectedKeys={selectedKeysSingleNoSection}
+          onSelectionChange={keys => setSelectedKeysSingleNoSection(keys as Set<string>)}
+          items={OPTIONS}
+        >
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+              description="Supporting information or description"
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
         </MultiSelect>
       </Field>
     </div>

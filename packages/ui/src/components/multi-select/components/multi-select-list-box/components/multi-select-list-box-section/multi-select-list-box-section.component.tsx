@@ -27,7 +27,7 @@ export function MultiSelectListBoxSection<T>({ section }: MultiSelectSectionProp
     <>
       <li {...itemProps}>
         {section.rendered && (
-          <span {...headingProps} className={styles.span()}>
+          <span {...headingProps} className={styles.span()} tabIndex={-1}>
             {section.rendered}
           </span>
         )}

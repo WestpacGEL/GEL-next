@@ -41,14 +41,7 @@ export function MultiSelectSelectAllOption() {
   };
 
   return (
-    <li
-      className={styles.listItem()}
-      key="select-all"
-      itemType="checkbox"
-      role="checkbox"
-      aria-checked={ariaChecked()}
-      aria-label="Select all options"
-    >
+    <li className={styles.listItem()} key="select-all">
       <button
         className={styles.button()}
         onClick={() => {
@@ -65,6 +58,10 @@ export function MultiSelectSelectAllOption() {
         ref={selectAllRef}
         onKeyDown={handleButtonKeyDown}
         tabIndex={-1}
+        itemType="checkbox"
+        role="checkbox"
+        aria-checked={ariaChecked()}
+        aria-label="Select all options"
       >
         <div className={styles.checkbox()}>
           {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" />}

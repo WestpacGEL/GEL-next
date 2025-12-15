@@ -17,7 +17,7 @@ export function MultiSelectDropdown<T extends object = object>({
   setFilterText,
   ...props
 }: MultiSelectDropdownProps<T>) {
-  const { filterText, size, overlayState, selectAllRef, listBoxRef, inputRef } = useContext(MultiSelectContext);
+  const { filterText, size, selectAllRef, listBoxRef, inputRef } = useContext(MultiSelectContext);
   const styles = dropdownStyles({});
 
   // Need to manually handle keyboard accessibility due to component complexity
@@ -57,13 +57,14 @@ export function MultiSelectDropdown<T extends object = object>({
               ),
             }
           }
+          aria-label="Filter options"
         >
           <Input
             ref={inputRef}
             size={size}
             value={filterText}
             onChange={e => setFilterText(e.target.value)}
-            onFocus={() => overlayState.open()}
+            // onFocus={() => overlayState.open()}
             onKeyDown={handleInputKeyDown}
             tabIndex={-1}
           />
