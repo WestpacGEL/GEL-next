@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+
 import { TooltipContentProps } from './components/tooltip-content/tooltip-content.types.js';
 
 export type TooltipProps = {
