@@ -1,6 +1,6 @@
 {
   "name": "@westpac/eslint-config",
-  "version": "1.1.0-canary.1",
+  "version": "1.1.0-canary.2",
   "main": "index.js",
   "type": "module",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "eslint": "^9.32.0",
     "eslint-config-next": "15.3.4",
     "eslint-config-prettier": "^10.1.5",
-    "eslint-config-turbo": "^2.5.4",
+    "eslint-config-turbo": "^2.5.8",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-better-tailwindcss": "^3.7.10",
     "eslint-plugin-import": "^2.32.0",
