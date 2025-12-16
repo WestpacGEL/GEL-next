@@ -2,6 +2,7 @@
 
 import React, { useCallback, KeyboardEvent, useContext } from 'react';
 
+import { ButtonRef } from '../../../../components/button/button.types.js';
 import { Button } from '../../../../components/button/index.js';
 import { ClearIcon, SearchIcon } from '../../../../components/icon/index.js';
 import { InputGroup } from '../../../../components/input-group/index.js';
@@ -18,20 +19,34 @@ export function MultiSelectDropdown<T extends object = object>({
   ...props
 }: MultiSelectDropdownProps<T>) {
   const { filterText, size, selectAllRef, listBoxRef, inputRef } = useContext(MultiSelectContext);
+  const closeBtnRef = React.useRef<ButtonRef>(null);
   const styles = dropdownStyles({});
 
   // Need to manually handle keyboard accessibility due to component complexity
-  const handleInputKeyDown = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (selectAllRef.current) {
-        selectAllRef.current.focus();
-      } else {
-        const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
-        firstItem.focus();
+  const handleInputKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (selectAllRef.current) {
+          selectAllRef.current.focus();
+        } else {
+          const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
+          firstItem.focus();
+        }
       }
-    }
-  }, []);
+      if (e.key === 'Escape' && filterText.length > 0) {
+        e.stopPropagation();
+        setFilterText('');
+      }
+      if (e.key === 'Tab' && filterText.length > 0) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeBtnRef.current?.focus();
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [filterText.length],
+  );
 
   return (
     <MultiSelectPopover className={styles.popover()}>
@@ -51,6 +66,8 @@ export function MultiSelectDropdown<T extends object = object>({
                   }}
                   look="unstyled"
                   className={styles.clearButton()}
+                  ref={closeBtnRef}
+                  aria-label="Clear filter text"
                 >
                   <ClearIcon color="muted" size="small" />
                 </Button>
@@ -64,7 +81,6 @@ export function MultiSelectDropdown<T extends object = object>({
             size={size}
             value={filterText}
             onChange={e => setFilterText(e.target.value)}
-            // onFocus={() => overlayState.open()}
             onKeyDown={handleInputKeyDown}
             tabIndex={-1}
           />
