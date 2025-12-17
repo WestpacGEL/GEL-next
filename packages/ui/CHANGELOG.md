@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.55.3
+
+### Patch Changes
+
+- 5dc069e: fix issue with header logo rerendering
+
 ## 0.55.2
 
 ### Patch Changes
