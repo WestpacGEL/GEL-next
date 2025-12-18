@@ -27,7 +27,7 @@ export function DatePickerBeta({
   disableWeekends,
   separator,
   placement = 'bottom left',
-  fullWidth = false,
+  block = false,
   portalContainer,
   ...props
 }: DatePickerBetaProps) {
@@ -53,7 +53,7 @@ export function DatePickerBeta({
     size,
     isInvalid: state.isInvalid,
     isDisabled: props.isDisabled,
-    fullWidth,
+    block,
   });
   const breakpoint = useBreakpoint();
   const ref = useRef(null);

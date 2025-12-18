@@ -26,7 +26,7 @@ export const styles = tv(
           button: '-my-1.5 -mr-3 mb-[-0.625rem] min-h-8 py-1.5',
         },
       },
-      fullWidth: {
+      block: {
         true: {
           input: 'w-full justify-between gap-0',
         },

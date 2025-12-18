@@ -10,8 +10,13 @@ import { styles } from './date-picker.styles.js';
 type Variants = VariantProps<typeof styles>;
 
 export type DatePickerBetaProps<T extends DateValue = DateValue> = DatePickerStateOptions<T> &
-  Omit<Variants, 'fullWidth'> &
+  Omit<Variants, 'block'> &
   Omit<HTMLAttributes<HTMLDivElement>, 'invalid'> & {
+    /**
+     * Allows the input to take the full width of its container.
+     * @default false
+     */
+    block?: boolean;
     /**
      * Determines whether to display the component as a bottom sheet view.
      * Can also accept an object to conditionally enable the bottom sheet based on breakpoints.
@@ -26,11 +31,6 @@ export type DatePickerBetaProps<T extends DateValue = DateValue> = DatePickerSta
      * If true, disables selection of weekend days (Saturday and Sunday).
      */
     disableWeekends?: boolean;
-    /**
-     * Allows the input to take the full width of its container.
-     * @default false
-     */
-    fullWidth?: boolean;
     /**
      * Separator character used in the date field. Defaults to "/".
      */
