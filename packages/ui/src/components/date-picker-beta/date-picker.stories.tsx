@@ -2,6 +2,8 @@ import { DateValue, getLocalTimeZone, isWeekend, today } from '@internationalize
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useLocale } from 'react-aria';
 
+import { Field } from '../index.js';
+
 import { DatePickerBeta } from './date-picker.component.js';
 
 const meta: Meta<typeof DatePickerBeta> = {
@@ -192,5 +194,37 @@ export const ShowAsBottomSheetResponsive: Story = {
   args: {},
   render: () => {
     return <DatePickerBeta bottomSheetView={{ initial: false, lg: true }} />;
+  },
+};
+
+/**
+ * > Different sizes example
+ */
+export const DatePickerBlock: Story = {
+  args: { block: true },
+};
+
+/**
+ * > Placement of popover
+ */
+export const Placement: Story = {
+  args: {},
+  render: () => {
+    return (
+      <div className="mt-[200px] flex flex-col space-y-2">
+        <Field label="Bottom Left">
+          <DatePickerBeta placement="bottom left" block />
+        </Field>
+        <Field label="Bottom Right">
+          <DatePickerBeta placement="bottom right" block />
+        </Field>
+        <Field label="Top Left">
+          <DatePickerBeta placement="top left" block />
+        </Field>
+        <Field label="Top Right">
+          <DatePickerBeta placement="top right" block className="bottom-0" />
+        </Field>
+      </div>
+    );
   },
 };

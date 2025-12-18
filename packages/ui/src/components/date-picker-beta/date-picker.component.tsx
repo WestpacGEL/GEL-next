@@ -26,6 +26,8 @@ export function DatePickerBeta({
   disableDaysOfWeek,
   disableWeekends,
   separator,
+  placement = 'bottom left',
+  block = false,
   portalContainer,
   ...props
 }: DatePickerBetaProps) {
@@ -47,7 +49,12 @@ export function DatePickerBeta({
   }, [disableDaysOfWeek, disableWeekends, isDateUnavailable, locale]);
 
   const state = useDatePickerState({ isDateUnavailable: enhancedIsDateUnavailable, ...props });
-  const styles = datePickerStyles({ size, isInvalid: state.isInvalid, isDisabled: props.isDisabled });
+  const styles = datePickerStyles({
+    size,
+    isInvalid: state.isInvalid,
+    isDisabled: props.isDisabled,
+    block,
+  });
   const breakpoint = useBreakpoint();
   const ref = useRef(null);
 
@@ -102,7 +109,7 @@ export function DatePickerBeta({
           showAsBottomSheet={showAsBottomSheet}
           state={state}
           triggerRef={ref}
-          placement="bottom left"
+          placement={placement}
         >
           <Dialog {...dialogProps}>
             <Calendar {...calendarProps} firstDayOfWeek={props.firstDayOfWeek} />

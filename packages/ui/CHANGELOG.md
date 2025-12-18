@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.56.0
+
+### Minor Changes
+
+- 6950378: added new props to DatePickerBeta to control popover location and make input full width
+
 ## 0.55.3
 
 ### Patch Changes
