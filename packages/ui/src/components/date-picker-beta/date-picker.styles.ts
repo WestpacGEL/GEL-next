@@ -26,6 +26,11 @@ export const styles = tv(
           button: '-my-1.5 -mr-3 mb-[-0.625rem] min-h-8 py-1.5',
         },
       },
+      fullWidth: {
+        true: {
+          input: 'w-full justify-between gap-0',
+        },
+      },
       isInvalid: {
         true: {
           input: 'border-danger',
