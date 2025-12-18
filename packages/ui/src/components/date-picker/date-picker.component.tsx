@@ -29,6 +29,7 @@ export function DatePicker({
   disableWeekends,
   separator,
   portalContainer,
+  placement = 'bottom left',
   ...props
 }: DatePickerProps) {
   const { locale } = useLocale();
@@ -111,7 +112,7 @@ export function DatePicker({
           showAsBottomSheet={showAsBottomSheet}
           state={state}
           triggerRef={ref}
-          placement="bottom left"
+          placement={placement}
         >
           <Dialog {...dialogProps}>
             <Calendar {...calendarProps} firstDayOfWeek={props.firstDayOfWeek} />

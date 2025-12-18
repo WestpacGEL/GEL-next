@@ -34,6 +34,11 @@ export type DatePickerProps<T extends DateValue = DateValue> = DatePickerStateOp
      */
     separator?: string;
     /**
+     * Placement for the datepicker popover.
+     * @default "bottom left"
+     */
+    placement?: 'top left' | 'top right' | 'bottom left' | 'bottom right';
+    /**
      * portal container for date picker
      */
     portalContainer?: Element;

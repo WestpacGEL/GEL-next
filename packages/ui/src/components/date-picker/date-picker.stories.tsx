@@ -2,6 +2,8 @@ import { DateValue, getLocalTimeZone, isWeekend, today } from '@internationalize
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useLocale } from 'react-aria';
 
+import { Field } from '../index.js';
+
 import { DatePicker } from './date-picker.component.js';
 
 const meta: Meta<typeof DatePicker> = {
@@ -202,5 +204,30 @@ export const DatePickerBlock: Story = {
   args: {},
   render: () => {
     return <DatePicker aria-label="date picker block" block={{ initial: true }} />;
+  },
+};
+
+/**
+ * > Placement of popover
+ */
+export const Placement: Story = {
+  args: {},
+  render: () => {
+    return (
+      <div className="mt-[200px] flex flex-col space-y-2">
+        <Field label="Bottom Left">
+          <DatePicker placement="bottom left" block />
+        </Field>
+        <Field label="Bottom Right">
+          <DatePicker placement="bottom right" block />
+        </Field>
+        <Field label="Top Left">
+          <DatePicker placement="top left" block />
+        </Field>
+        <Field label="Top Right">
+          <DatePicker placement="top right" block className="bottom-0" />
+        </Field>
+      </div>
+    );
   },
 };
