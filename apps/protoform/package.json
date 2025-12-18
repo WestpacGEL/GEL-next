@@ -1,6 +1,6 @@
 {
   "name": "protoform",
-  "version": "0.2.42",
+  "version": "0.2.43",
   "private": true,
   "scripts": {
     "dev": "next dev",
