@@ -11,19 +11,19 @@ export const styles = tv({
     size: {
       small: {
         input: 'gap-1.5 form-control-small',
-        button: '-my-0.5 -mr-1.5 mb-[-0.25rem] min-h-5 py-[0.25rem]',
+        button: '-my-0.5 -mr-1.5 mb-[-0.25rem] min-h-[1.75rem]', // height enough to fit inside the border of parent
       },
       medium: {
         input: 'gap-2 form-control-medium',
-        button: 'my-[-0.3125rem] -mr-2 min-h-6 py-[0.3125rem]',
+        button: 'my-[-0.3125rem] -mr-2 min-h-[2.125rem]',
       },
       large: {
         input: 'gap-2.5 form-control-large',
-        button: 'my-[-0.5rem] -mr-2.5 min-h-7 py-[0.5rem]',
+        button: 'my-[-0.5rem] -mr-2.5 min-h-[2.5rem]',
       },
       xlarge: {
         input: 'gap-3 form-control-xlarge',
-        button: '-my-1.5 -mr-3 mb-[-0.625rem] min-h-8 py-1.5',
+        button: '-my-1.5 -mr-3 mb-[-0.625rem] min-h-[2.875rem]',
       },
     },
     block: {
