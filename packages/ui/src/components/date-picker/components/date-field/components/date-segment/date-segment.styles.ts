@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'rounded-sm text-text-body focus:focus-outline disabled:form-control-disabled',
+  base: 'rounded-sm text-text-body uppercase focus:focus-outline disabled:form-control-disabled',
   variants: {
     isFocusVisible: {
       true: 'focus-outline',
