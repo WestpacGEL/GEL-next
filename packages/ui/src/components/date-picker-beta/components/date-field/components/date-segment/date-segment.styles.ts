@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv(
   {
-    base: 'disabled:form-control-disabled focus:focus-outline uppercase',
+    base: 'uppercase disabled:form-control-disabled focus:focus-outline',
     variants: {
       isFocusVisible: {
         true: 'focus-outline',
