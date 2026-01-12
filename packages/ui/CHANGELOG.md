@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.56.1
+
+### Patch Changes
+
+- 727582a: updated some styles for DatePickerBeta (input font weight, removal of placeholder text colour, dd/mm/yyyy capitalised)
+
 ## 0.56.0
 
 ### Minor Changes
