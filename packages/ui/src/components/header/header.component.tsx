@@ -10,6 +10,8 @@ import {
   BOMMultibrandSmallLogo,
   BSAMultibrandLargeLogo,
   BSAMultibrandSmallLogo,
+  BTPanoramaMultibrandLargeLogo,
+  BTPanoramaMultibrandSmallLogo,
   RAMSMultibrandLargeLogo,
   RAMSMultibrandSmallLogo,
   STGMultibrandLargeLogo,
@@ -48,6 +50,10 @@ const logoMap = {
   rams: {
     logo: (props: SymbolProps) => <RAMSMultibrandSmallLogo {...props} />,
     largeLogo: (props: SymbolProps) => <RAMSMultibrandLargeLogo {...props} />,
+  },
+  btpl: {
+    logo: (props: SymbolProps) => <BTPanoramaMultibrandSmallLogo {...props} />,
+    largeLogo: (props: SymbolProps) => <BTPanoramaMultibrandLargeLogo {...props} />,
   },
 };
 
