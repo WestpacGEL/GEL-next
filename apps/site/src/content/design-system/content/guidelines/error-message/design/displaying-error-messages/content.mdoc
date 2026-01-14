@@ -73,12 +73,14 @@ For one-page and multi-page forms, an error summary is the most accessible way o
 ```jsx
 
   <div>
+  <ComponentTitle>Single errors</ComponentTitle>
 <Alert look="danger" >
     <strong>Please fix the following error:</strong>
     <ul className="[&_li]:my-1 [&_li]:underline">
       <li>Enter a given name</li>
     </ul>
   </Alert>
+  <ComponentTitle>Multiple errors</ComponentTitle>
   <Alert look="danger" >
     <strong>Please fix the following 3 errors:</strong>
     <ul className="[&_li]:my-1 [&_li]:underline">
