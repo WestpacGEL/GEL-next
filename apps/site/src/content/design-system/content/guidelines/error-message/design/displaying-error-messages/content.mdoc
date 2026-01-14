@@ -68,18 +68,26 @@ In addition to in-line error messaging, there should also be a summary of errors
 
 The summary allows screen reader users to understand what they must do to recover from the errors. They can proceed by using the links in the error summary, or tab through the error summary and continue onto the page, flowing naturally down and recovering as they go.
 
-For one-page and multi-page forms, an error summary is the most accessible way of managing errors.
-
 ```jsx
 
-  <Alert look="danger" >
-    <strong>Please fix the following 3 errors</strong>
+  <div>
+  <ComponentTitle>Single errors</ComponentTitle>
+<Alert look="danger" >
+    <strong>Please fix the following error:</strong>
     <ul className="[&_li]:my-1 [&_li]:underline">
-      <li>Title</li>
-      <li>Given name</li>
-      <li>Family name</li>
+      <li>Enter a given name</li>
     </ul>
   </Alert>
+  <ComponentTitle>Multiple errors</ComponentTitle>
+  <Alert look="danger" >
+    <strong>Please fix the following 3 errors:</strong>
+    <ul className="[&_li]:my-1 [&_li]:underline">
+      <li>Select a title</li>
+      <li>Enter a given name</li>
+      <li>Enter a family name</li>
+    </ul>
+  </Alert>
+</div>
 ```
 
 ### Avoid disabled or ‘greyed out’ buttons
