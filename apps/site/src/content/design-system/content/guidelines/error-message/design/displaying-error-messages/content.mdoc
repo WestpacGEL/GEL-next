@@ -72,7 +72,8 @@ For one-page and multi-page forms, an error summary is the most accessible way o
 
 ```jsx
 
-  <Alert look="danger" >
+  <div>
+<Alert look="danger" >
     <strong>Please fix the following error:</strong>
     <ul className="[&_li]:my-1 [&_li]:underline">
       <li>Enter a given name</li>
@@ -86,6 +87,7 @@ For one-page and multi-page forms, an error summary is the most accessible way o
       <li>Enter a family name</li>
     </ul>
   </Alert>
+</div>
 ```
 
 ### Avoid disabled or ‘greyed out’ buttons
