@@ -3,4 +3,4 @@
 ---
 
 - updated styles for DatePickerBeta
--=added custom onBlur to provide date for DatePickerBeta
+- added custom onBlur to provide date for DatePickerBeta
