@@ -2,12 +2,11 @@ import { useMemo } from 'react';
 
 import { PanelProps } from './panel.types.js';
 
-const PANEL_WIDTH_SIZE = 282;
+const PANEL_WIDTH_SIZE = 300;
 
-const getVerticalPositionPopover = (element: HTMLDivElement) => {
+const getHorizontalPositionPopover = (element: HTMLDivElement) => {
   const triggerDOMRect = element.getBoundingClientRect();
-
-  const offsetLeftToCenter = (PANEL_WIDTH_SIZE - (triggerDOMRect?.width || 0) / 2) * -1;
+  const offsetLeftToCenter = ((PANEL_WIDTH_SIZE - (triggerDOMRect?.width || 0)) / 2) * -1;
   if (triggerDOMRect.left + offsetLeftToCenter <= 0) {
     return 'left';
   }
@@ -22,9 +21,9 @@ const getVerticalPositionPopover = (element: HTMLDivElement) => {
   }
 };
 
-const getLeftOffsetPerVerticalPosition = (element: HTMLDivElement) => {
+const getLeftOffsetPerHorizontalPosition = (element: HTMLDivElement) => {
   const triggerDOMRect = element.getBoundingClientRect();
-  switch (getVerticalPositionPopover(element)) {
+  switch (getHorizontalPositionPopover(element)) {
     case 'center':
       return ((PANEL_WIDTH_SIZE - (triggerDOMRect?.width || 0)) / 2) * -1;
     case 'right':
@@ -57,7 +56,7 @@ export function usePanel({ state, placement = 'bottom', triggerRef, portal }: Pa
   const popoverPosition = useMemo(() => {
     const triggerDOMRect = triggerRef.current?.getBoundingClientRect();
     // The offset is calculated according if the popover will overflow the window
-    const leftOffset = triggerRef.current ? getLeftOffsetPerVerticalPosition(triggerRef.current) : 0;
+    const leftOffset = triggerRef.current ? getLeftOffsetPerHorizontalPosition(triggerRef.current) : 0;
     // If it is not portal, we can simplify the logic
     if (!portal) {
       switch (placement) {
@@ -98,7 +97,7 @@ export function usePanel({ state, placement = 'bottom', triggerRef, portal }: Pa
 
   const arrowPosition = useMemo(() => {
     const triggerDOMRect = triggerRef.current?.getBoundingClientRect();
-    const leftOffset = triggerRef.current ? getLeftOffsetPerVerticalPosition(triggerRef.current) * -1 : 0;
+    const leftOffset = triggerRef.current ? getLeftOffsetPerHorizontalPosition(triggerRef.current) * -1 : 0;
 
     return {
       left: `${(triggerDOMRect?.width || 0) / 2 + leftOffset}px`,
