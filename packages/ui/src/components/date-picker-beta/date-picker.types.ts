@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, FocusEvent } from 'react';
 import { DateValue } from 'react-aria';
 import { DatePickerStateOptions } from 'react-stately';
 import { VariantProps } from 'tailwind-variants';
@@ -9,9 +9,9 @@ import { styles } from './date-picker.styles.js';
 
 type Variants = VariantProps<typeof styles>;
 
-export type DatePickerBetaProps<T extends DateValue = DateValue> = DatePickerStateOptions<T> &
+export type DatePickerBetaProps<T extends DateValue = DateValue> = Omit<DatePickerStateOptions<T>, 'onBlur'> &
   Omit<Variants, 'block'> &
-  Omit<HTMLAttributes<HTMLDivElement>, 'invalid'> & {
+  Omit<HTMLAttributes<HTMLDivElement>, 'invalid' | 'onBlur'> & {
     /**
      * Allows the input to take the full width of its container.
      * @default false
@@ -35,6 +35,10 @@ export type DatePickerBetaProps<T extends DateValue = DateValue> = DatePickerSta
      * Separator character used in the date field. Defaults to "/".
      */
     separator?: string;
+    /**
+     * Custom onBlur that provides the regular event as the first parameter and the date value in the same format as onChange as the second.
+     */
+    onBlur?: (event: FocusEvent<Element, Element>, date?: T) => void;
     /**
      * Placement for the datepicker popover.
      * @default "bottom left"

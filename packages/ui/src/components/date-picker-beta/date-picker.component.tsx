@@ -53,6 +53,7 @@ export function DatePickerBeta({
     size,
     isInvalid: state.isInvalid,
     isDisabled: props.isDisabled,
+    isReadOnly: props.isReadOnly,
     block,
   });
   const breakpoint = useBreakpoint();
@@ -91,8 +92,19 @@ export function DatePickerBeta({
   return (
     <>
       <div {...labelProps}>{props.label}</div>
-      <div {...props} {...groupProps} ref={ref} className={styles.input({ className })}>
-        <DateField separator={separator} {...fieldProps} />
+      <div
+        {...props}
+        {...groupProps}
+        ref={ref}
+        onBlur={e => {
+          if (state.value) {
+            return props.onBlur?.(e, state.value);
+          }
+          return props.onBlur?.(e);
+        }}
+        className={styles.input({ className })}
+      >
+        <DateField separator={separator} {...fieldProps} className={styles.dateField()} />
         <Button
           look="faint"
           className={styles.button()}
