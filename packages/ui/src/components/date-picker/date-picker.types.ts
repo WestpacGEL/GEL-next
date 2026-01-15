@@ -1,5 +1,5 @@
 import { Breakpoint } from '@westpac/style-config/constants';
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, FocusEvent } from 'react';
 import { DateValue } from 'react-aria';
 import { DatePickerStateOptions } from 'react-stately';
 import { VariantProps } from 'tailwind-variants';
@@ -9,9 +9,9 @@ import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 import { styles } from './date-picker.styles.js';
 
 type Variants = VariantProps<typeof styles>;
-export type DatePickerProps<T extends DateValue = DateValue> = DatePickerStateOptions<T> &
+export type DatePickerProps<T extends DateValue = DateValue> = Omit<DatePickerStateOptions<T>, 'onBlur'> &
   Omit<Variants, 'size' | 'block'> &
-  Omit<HTMLAttributes<HTMLDivElement>, 'invalid' | 'block'> & {
+  Omit<HTMLAttributes<HTMLDivElement>, 'invalid' | 'block' | 'onBlur'> & {
     /**
      * Determines whether to display the component as a bottom sheet view.
      * Can also accept an object to conditionally enable the bottom sheet based on breakpoints.
@@ -33,6 +33,10 @@ export type DatePickerProps<T extends DateValue = DateValue> = DatePickerStateOp
      * Separator character used in the date field. Defaults to "/".
      */
     separator?: string;
+    /**
+     * Custom onBlur that provides the regular event as the first parameter and the date value in the same format as onChange as the second.
+     */
+    onBlur?: (event: FocusEvent<Element, Element>, date?: T) => void;
     /**
      * Placement for the datepicker popover.
      * @default "bottom left"

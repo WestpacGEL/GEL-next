@@ -1,5 +1,6 @@
 import { DateValue, getLocalTimeZone, isWeekend, today } from '@internationalized/date';
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
 import { useLocale } from 'react-aria';
 
 import { Field } from '../index.js';
@@ -92,6 +93,44 @@ export const IsRequiredOnly: Story = {
   render: () => {
     return <DatePicker isRequired />;
   },
+};
+
+/**
+ * > Controlled
+ */
+export const Controlled = () => {
+  const now = today(getLocalTimeZone());
+  const disabledRanges = [
+    [now, now.add({ days: 5 })],
+    [now.add({ days: 14 }), now.add({ days: 16 })],
+    [now.add({ days: 23 }), now.add({ days: 24 })],
+  ];
+
+  const { locale } = useLocale();
+  const [date, setDate] = useState<DateValue | null>(null);
+  const [blurredDate, setBlurredDate] = useState<DateValue | null>(null);
+  const isDateUnavailable = (date: DateValue) =>
+    isWeekend(date, locale) ||
+    disabledRanges.some(interval => date.compare(interval[0]) >= 0 && date.compare(interval[1]) <= 0);
+
+  return (
+    <>
+      <p>onChange Date: {date ? date.toString() : 'None'}</p>
+      <p>
+        onBlur Date (NOTE: Focus returns to button after using calendar so blur event not fired):{' '}
+        {blurredDate ? blurredDate.toString() : 'None'}
+      </p>
+      <DatePicker
+        onBlur={(e, date) => {
+          if (date) setBlurredDate(date);
+        }}
+        onChange={e => {
+          setDate(e as DateValue);
+        }}
+        isDateUnavailable={isDateUnavailable}
+      />
+    </>
+  );
 };
 
 /**

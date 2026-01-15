@@ -57,6 +57,7 @@ export function DatePicker({
     block: resolvedBlock,
     size: resolvedSize,
     isInvalid: state.isInvalid,
+    isReadOnly: props.isReadOnly,
     isDisabled: props.isDisabled,
   });
   const ref = useRef(null);
@@ -94,7 +95,18 @@ export function DatePicker({
   return (
     <>
       {props.label && <div {...labelProps}>{props.label}</div>}
-      <div {...props} {...groupProps} ref={ref} className={styles.input({ className })}>
+      <div
+        {...props}
+        {...groupProps}
+        ref={ref}
+        onBlur={e => {
+          if (state.value) {
+            return props.onBlur?.(e, state.value);
+          }
+          return props.onBlur?.(e);
+        }}
+        className={styles.input({ className })}
+      >
         <DateField className={styles.dateField()} separator={separator} {...fieldProps} />
         <Button
           look="faint"
