@@ -28,13 +28,13 @@ export const FocusOutline: Story = {
         No <code className="border border-border-muted-mild bg-background-pale">focus-visible:focus-outline</code>{' '}
         example
       </h1>
-      <a href="#" className="underline">
+      <a href="#" className="underline hover:no-underline">
         This is a link without the correct styling focus outline
       </a>
       <h1 className="pt-4 pb-2 typography-body-9">
         <code className="border border-border-muted-mild bg-background-pale">focus-visible:focus-outline</code> example
       </h1>
-      <a href="#" className="underline focus-visible:focus-outline">
+      <a href="#" className="underline hover:no-underline focus-visible:focus-outline">
         This is a link without the correct styling focus outline
       </a>
       <p className="pt-4 typography-body-7 text-text-warning">Notice with Tailwind 4 Upgrade</p>
