@@ -1,40 +1,37 @@
-import { useMemo } from 'react';
+import { RefObject, useEffect, useMemo, useState } from 'react';
 
 import { PanelProps } from './panel.types.js';
 
-const PANEL_WIDTH_SIZE = 282;
+const PANEL_WIDTH_SIZE = 300;
 
-const getVerticalPositionPopover = (element: HTMLDivElement) => {
+const getHorizontalPositionPopover = (element: HTMLDivElement, screenWidth: number) => {
   const triggerDOMRect = element.getBoundingClientRect();
-
-  const offsetLeftToCenter = (PANEL_WIDTH_SIZE - (triggerDOMRect?.width || 0) / 2) * -1;
+  const offsetLeftToCenter = ((PANEL_WIDTH_SIZE - (triggerDOMRect?.width || 0)) / 2) * -1;
   if (triggerDOMRect.left + offsetLeftToCenter <= 0) {
     return 'left';
   }
-  if (
-    triggerDOMRect.left + offsetLeftToCenter >= 0 &&
-    triggerDOMRect.right + offsetLeftToCenter * -1 <= window.innerWidth
-  ) {
+  if (triggerDOMRect.left + offsetLeftToCenter >= 0 && triggerDOMRect.right + offsetLeftToCenter * -1 <= screenWidth) {
     return 'center';
   }
-  if (PANEL_WIDTH_SIZE + (triggerDOMRect?.left || 0) >= window.innerWidth) {
+  if (PANEL_WIDTH_SIZE + (triggerDOMRect?.left || 0) >= screenWidth) {
     return 'right';
   }
 };
 
-const getLeftOffsetPerVerticalPosition = (element: HTMLDivElement) => {
+const getLeftOffsetPerHorizontalPosition = (element: HTMLDivElement, screenWidth: number) => {
   const triggerDOMRect = element.getBoundingClientRect();
-  switch (getVerticalPositionPopover(element)) {
+
+  const rightOffset =
+    (PANEL_WIDTH_SIZE + (triggerDOMRect?.left || 0) - screenWidth + (screenWidth - (triggerDOMRect?.right || 0))) * -1;
+  switch (getHorizontalPositionPopover(element, screenWidth)) {
     case 'center':
       return ((PANEL_WIDTH_SIZE - (triggerDOMRect?.width || 0)) / 2) * -1;
     case 'right':
-      return (
-        (PANEL_WIDTH_SIZE +
-          (triggerDOMRect?.left || 0) -
-          window.innerWidth +
-          (window.innerWidth - (triggerDOMRect?.right || 0))) *
-        -1
-      );
+      // For smaller screens, if adjusting for right makes it go off screen on the left, adjust it to have a 16px space from the edge
+      if (triggerDOMRect.left + rightOffset <= 0) {
+        return rightOffset - (triggerDOMRect.left + rightOffset) + 16;
+      }
+      return rightOffset;
     default:
       return 0;
   }
@@ -45,6 +42,7 @@ export type PanelHookProps = {
   portal: PanelProps['portal'];
   state: PanelProps['state'];
   triggerRef: PanelProps['triggerRef'];
+  popoverRef?: RefObject<HTMLDivElement>;
 };
 
 /**
@@ -54,10 +52,27 @@ export type PanelHookProps = {
  * @returns {Object} return.arrowPosition - The calculated position styles for the popover arrow.
  */
 export function usePanel({ state, placement = 'bottom', triggerRef, portal }: PanelHookProps) {
+  // using documentElement to get the width of the viewport excluding scrollbar
+  const [screenWidth, setScreenWidth] = useState<number>(document.documentElement.clientWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      if (portal instanceof Element) {
+        setScreenWidth(portal.clientWidth);
+      } else {
+        setScreenWidth(document.documentElement.clientWidth);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [portal]);
+
   const popoverPosition = useMemo(() => {
     const triggerDOMRect = triggerRef.current?.getBoundingClientRect();
     // The offset is calculated according if the popover will overflow the window
-    const leftOffset = triggerRef.current ? getLeftOffsetPerVerticalPosition(triggerRef.current) : 0;
+    const leftOffset = triggerRef.current ? getLeftOffsetPerHorizontalPosition(triggerRef.current, screenWidth) : 0;
     // If it is not portal, we can simplify the logic
     if (!portal) {
       switch (placement) {
@@ -94,17 +109,19 @@ export function usePanel({ state, placement = 'bottom', triggerRef, portal }: Pa
         };
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [placement, portal, triggerRef, state.isOpen]);
+  }, [placement, portal, triggerRef, state.isOpen, screenWidth]);
 
   const arrowPosition = useMemo(() => {
     const triggerDOMRect = triggerRef.current?.getBoundingClientRect();
-    const leftOffset = triggerRef.current ? getLeftOffsetPerVerticalPosition(triggerRef.current) * -1 : 0;
+    const leftOffset = triggerRef.current
+      ? getLeftOffsetPerHorizontalPosition(triggerRef.current, screenWidth) * -1
+      : 0;
 
     return {
       left: `${(triggerDOMRect?.width || 0) / 2 + leftOffset}px`,
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [triggerRef, state.isOpen]);
+  }, [triggerRef, state.isOpen, screenWidth]);
 
   return {
     popoverPosition,

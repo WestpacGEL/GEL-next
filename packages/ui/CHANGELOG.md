@@ -1,5 +1,17 @@
 # @westpac/ui
 
+## 0.57.0
+
+### Minor Changes
+
+- 7b8eae1: - updated styles for DatePickerBeta
+  - added custom onBlur to provide date for DatePickerBeta
+
+### Patch Changes
+
+- abda05b: updating hover styling on various links across the site and components/examples
+- 59f6662: updated calculation for popover so it correctly stays on screen in some circumstances
+
 ## 0.56.1
 
 ### Patch Changes
