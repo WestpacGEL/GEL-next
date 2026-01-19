@@ -61,6 +61,11 @@ export type ButtonProps = {
    */
   removeLinkPadding?: boolean;
   /**
+   * Removes horizontal padding from the 'link' look button
+   * @default false
+   */
+  removeLinkPadding?: boolean;
+  /**
    * Size of the button
    * @default medium
    */

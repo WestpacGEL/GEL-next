@@ -1,3 +1,5 @@
+// disabling for deprecated react aria stuff that will be/is fixed in 1.0
+/* eslint-disable sonarjs/deprecation */
 'use client';
 
 import { clsx } from 'clsx';

@@ -11,13 +11,23 @@ Used to indicate there are related disclaimers or footnotes.
 
 ---
 
-Where possible, avoid using superscripts and disclaimers by hyperlinking the content to another page.
+Where possible, avoid using superscripts as they are not accessible. When\
+superscripts are used, the customer needs to switch between reading the body\
+copy and where the detail is located, which is usually at the bottom of a page.
+
+Instead, include the detail in the body copy.
 
 ```jsx
 <div>
 <h4 className="typography-body-10 text-text-muted mb-3">For example:</h4>
-<p className="typography-body-10 mb-2 ml-4">You’ll be able to switch to <Link href="#" type="inline">eStatements</Link> for selected accounts linked to your personal banking profile.</p>
+<p className="typography-body-10 mb-2 ml-4"><span className="text-text-danger font-bold">Don't:</span></p>
+<p className="typography-body-10 font-bold mb-2 ml-4">WESTPAC CHOICE BANK ACCOUNT WITH DEBIT CARD</p>
+<p className="typography-body-10 mb-2 ml-4">Westpac Choice is our most popular account. A simple-to-use everyday bank account packed with features. Open now and get $50 cashback!*</p>
+<p className="typography-body-10 mb-3 ml-4"><span className="text-text-success font-bold">Do:</span></p>
+<p className="typography-body-10 font-bold mb-2 ml-4">WESTPAC CHOICE BANK ACCOUNT WITH DEBIT CARD</p>
+<p className="typography-body-10 mb-2 ml-4">Westpac Choice is our most popular account. A simple-to-use everyday bank account packed with features. Open now, spend $50 and you could get $50 cashback! Read on to find out how.</p>
 </div>
+
 ```
 
 ---
