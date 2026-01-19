@@ -1,4 +1,3 @@
-// This file has been automatically migrated to valid ESM format by Storybook.
 import { createRequire } from 'node:module';
 import { dirname, join } from 'node:path';
 
@@ -10,9 +9,6 @@ const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
   stories: ['../src/stories/intro.stories.tsx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  features: {
-    experimentalComponentsManifest: true,
-  },
   features: {
     experimentalComponentsManifest: true,
   },

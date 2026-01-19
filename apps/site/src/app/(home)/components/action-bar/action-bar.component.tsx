@@ -1,18 +1,17 @@
-// disabling for deprecated react aria stuff that will be/is fixed in 1.0
-/* eslint-disable sonarjs/deprecation */
 'use client';
+
 import { GridContainer } from '@westpac/ui';
 import { ArrowRightIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
+
+import { BrandSelect } from '../brand-select/brand-select.component';
+import { CircleLogo } from '../circle-logo/circle-logo.component';
+import { logoMap, logoStyles } from '../utils';
 
 import { BrandKey } from '@/app/types/brand.types';
 import { GELLogo } from '@/components/logos';
 import { StickyHeader } from '@/components/sticky-header';
 import { BANK_OPTIONS } from '@/constants/bank-options';
-
-import { BrandSelect } from '../brand-select/brand-select.component';
-import { CircleLogo } from '../circle-logo/circle-logo.component';
-import { logoMap, logoStyles } from '../utils';
 
 export function ActionBar() {
   return (

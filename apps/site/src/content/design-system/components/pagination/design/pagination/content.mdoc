@@ -2,16 +2,13 @@ Use this responsive pagination component for navigation through multiple pages o
 
 ```tsx
 () => {
-  const [current, setCurrent] = useState(1);
+  const [page, setPage] = useState(1);
 
   return (
     <Pagination
-      totalPages={20}
-      siblingCount={{ initial: 0, sm: 2, md: 3 }}
-      boundaryCount={{ initial: 0, sm: 2, md: 3 }}
-      onChange={value => {
-        setCurrent(value);
-        action('onChange')(value);
+      current={page}
+      onChange={changedPage => {
+        setPage(changedPage);
       }}
       totalPages={3}
     />
