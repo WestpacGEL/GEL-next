@@ -1,16 +1,19 @@
-Use this pagination component for navigation within both finite (a set number) and infinite (unknown number) of views.
+Use this responsive pagination component for navigation through multiple pages or content views.
 
 ```tsx
 () => {
-  const [page, setPage] = useState(1);
+  const [current, setCurrent] = useState(1);
 
   return (
     <Pagination
-      current={page}
-      onChange={changedPage => {
-        setPage(changedPage);
+      totalPages={20}
+      siblingCount={{ initial: 0, sm: 2, md: 3 }}
+      boundaryCount={{ initial: 0, sm: 2, md: 3 }}
+      onChange={value => {
+        setCurrent(value);
+        action('onChange')(value);
       }}
-      pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
+      current={current}
     />
   );
 };
