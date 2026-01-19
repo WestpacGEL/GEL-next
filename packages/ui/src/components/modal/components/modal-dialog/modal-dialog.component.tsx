@@ -13,6 +13,7 @@ const ModalDialogContext = createContext<ModalDialogContextValue>({ size: 'md' }
 const SCROLL_BUFFER = 10;
 
 export const useModalDialogContext = () => useContext(ModalDialogContext);
+
 /**
  * @private
  */
