@@ -72,7 +72,6 @@ export const SelectorCheckboxGroupContext = createContext<SelectorCheckboxGroupC
   commitValidation: function (): void {
     throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
-  defaultValue: [],
 });
 
 export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {
