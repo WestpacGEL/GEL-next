@@ -5,7 +5,7 @@ Errors can also be triggered instantly as the user moves from one field to the n
 Error messages can appear in two places:&nbsp;
 
 1. Descriptive [Alert text](/components/alert) message that sits with the field in error&nbsp;
-1. Page level [Alert box](/components/alert) error summary that sits at the top of the page. The summary lists the errors on the page and anchor links to each. This is only triggered when the user tries to proceed to the next screen while there are active errors,&nbsp;
+1. Page level [Alert box](/components/alert) error summary that sits at the top of the page. The summary lists the errors on the page and anchor links to each. This is only triggered when the user tries to proceed to the next screen while there are active errors.&nbsp;
 
 The summary is a useful feature for all users, as it acts as a second method of exposing error messages and it provides a path forward when someone tries to leave a page with active errors. It is also crucial for accessibility, as it maximises the discoverability of errors on the page in a way that is important for a variety of user groups, such as screen reader users and people with cognitive impairments.&nbsp;
 
@@ -14,12 +14,55 @@ The summary is a useful feature for all users, as it acts as a second method of 
   <GridItem span={{ initial: 12, sm: 6 }}>
 
 <Alert look="danger" 
-  heading="Please fix the 3 errors listed below"
+  heading="Please fix the following error"
+  onClose={function Ya(){}}
+>
+
+<p><a href="#">Enter a given name</a></p>
+
+</Alert>
+      <Form id="credit-card" spacing="large" className="p-0" >
+        <FormSection className="border-none !p-0">
+<FormGroup>
+<Field label="Title">
+        <Select >
+<option value="option-1">Select</option>          
+<option value="option-1">Mrs</option>
+          <option value="option-2">Mr</option>
+          <option value="option-3">Miss</option>
+          <option value="option-4">Ms</option>
+        </Select>
+      </Field>
+</FormGroup>
+<FormGroup>
+ <InputGroup width={20} label="Given name" errorMessage="Enter a given name">
+          <Input invalid />
+        </InputGroup>
+</FormGroup>
+<FormGroup>
+ <InputGroup width={20} label="Family name" >
+          <Input />
+        </InputGroup>
+</FormGroup>
+        </FormSection>
+      </Form>
+  </GridItem>
+
+ 
+</Grid>
+```
+
+```jsx
+<Grid>
+  <GridItem span={{ initial: 12, sm: 6 }}>
+
+<Alert look="danger" 
+  heading="Please fix the following 3 errors"
   onClose={function Ya(){}}
 >
 <p><a href="#" className="hover:no-underline">Select a title</a></p>
-<p><a href="#" className="hover:no-underline">Enter your given name</a></p>
-<p><a href="#" className="hover:no-underline">Enter your family name</a></p>
+<p><a href="#" className="hover:no-underline">Enter a given name</a></p>
+<p><a href="#" className="hover:no-underline">Enter a family name</a></p>
 </Alert>
       <Form id="credit-card" spacing="large" className="p-0" >
         <FormSection className="border-none !p-0">
@@ -35,12 +78,12 @@ The summary is a useful feature for all users, as it acts as a second method of 
       </Field>
 </FormGroup>
 <FormGroup>
- <InputGroup width={20} label="Given name" errorMessage="Enter your given name">
+ <InputGroup width={20} label="Given name" errorMessage="Enter a given name">
           <Input invalid />
         </InputGroup>
 </FormGroup>
 <FormGroup>
- <InputGroup width={20} label="Family name" errorMessage="Enter your family name">
+ <InputGroup width={20} label="Family name" errorMessage="Enter a family name">
           <Input invalid />
         </InputGroup>
 </FormGroup>
