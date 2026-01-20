@@ -17,16 +17,17 @@ export function BottomSheet({
   secondaryLabel,
   primaryOnClick,
   secondaryOnClick,
+  isDismissable = true,
   ...props
 }: BottomSheetProps) {
   return (
-    <BottomSheetModal state={state} {...props}>
+    <BottomSheetModal state={state} isDismissable={isDismissable} {...props}>
       <BottomSheetDialog
         primaryLabel={primaryLabel}
         secondaryLabel={secondaryLabel}
         primaryOnClick={primaryOnClick}
         secondaryOnClick={secondaryOnClick}
-        onClose={() => state.close()}
+        onClose={isDismissable ? () => state.close() : undefined}
         title={title}
       >
         {children}

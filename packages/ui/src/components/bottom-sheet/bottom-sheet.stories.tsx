@@ -88,3 +88,16 @@ export const NoFooter: Story = {
     ),
   },
 };
+
+/**
+ * > Hidden close button example
+ */
+export const HiddenCloseButton: Story = {
+  args: {
+    title: 'Heading',
+    isDismissable: false,
+    primaryLabel: 'Confirm',
+    primaryOnClick: () => null,
+    children: <p>This bottom sheet has no close button. The user must use the primary action to dismiss it.</p>,
+  },
+};
