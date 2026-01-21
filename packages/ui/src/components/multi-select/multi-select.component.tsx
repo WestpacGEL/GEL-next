@@ -96,12 +96,13 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
         overlayProps,
       }}
     >
-      <div className={styles.root()} id={id}>
+      <div className={styles.root()}>
         <MultiSelectListBoxTrigger
           placeholder={placeholder}
           selectedKeys={selectedKeys}
           showSingleSectionTitle={showSingleSectionTitle}
           triggerProps={triggerProps}
+          id={id}
         />
         {overlayState.isOpen && <MultiSelectDropdown setFilterText={setFilterText} {...listBoxProps} />}
       </div>

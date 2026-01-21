@@ -16,6 +16,7 @@ export function MultiSelectListBoxTrigger<T>({
   showSingleSectionTitle,
   selectedKeys,
   triggerProps,
+  id,
 }: MultiSelectListBoxTriggerProps<T>) {
   const { size, selectionMode, overlayState, listState, buttonRef, inputRef } = useContext(MultiSelectContext);
   const breakpoint = useBreakpoint();
@@ -102,6 +103,7 @@ export function MultiSelectListBoxTrigger<T>({
             aria-autocomplete="list"
             tabIndex={undefined}
             aria-haspopup="dialog"
+            id={id}
           >
             {/* Selected items */}
             <div className={styles.selection()}>

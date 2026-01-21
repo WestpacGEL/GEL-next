@@ -46,7 +46,14 @@ export function MultiSelectOption<T>({ item }: MultiSelectOptionProps<T>) {
   );
 
   return (
-    <li {...optionProps} ref={ref} className={styles.root()} onKeyDown={handleButtonKeyDown}>
+    <li
+      {...optionProps}
+      ref={ref}
+      className={styles.root()}
+      onKeyDown={handleButtonKeyDown}
+      aria-checked={selectionMode === 'multiple' ? isSelected : undefined}
+      aria-selected={selectionMode === 'single' ? isSelected : undefined}
+    >
       <div className={styles.itemContainer()}>
         <div className={styles.flexZero()}>
           <div className={styles.checkbox()}>{isSelected && <TickIcon size="small" aria-hidden="true" />}</div>

@@ -13,6 +13,7 @@ type Variants = VariantProps<typeof triggerStyles>;
 export type MultiSelectSize = ResponsiveVariants<Variants['size']>;
 
 export type MultiSelectListBoxTriggerProps<T> = {
+  id?: string;
   placeholder: string;
   selectedKeys?: ListProps<T>['selectedKeys'];
   showSingleSectionTitle?: MultiSelectProps<T>['showSingleSectionTitle'];
