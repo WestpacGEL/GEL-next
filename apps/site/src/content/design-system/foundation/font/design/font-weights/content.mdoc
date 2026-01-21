@@ -3,7 +3,7 @@ The typography system uses numerical values to assign different font weights rat
 ***Note:*** *Do not use 300 (light) on text sizes below 18px or your text may fall out of an accessible colour contrast range.*
 
 ```tsx
-() => {  const typographyScale = [{    className: 'font-light',    fontWeight: '300',  }, {    className: 'font-normal',    fontWeight: '400',  }, {      className: 'font-medium',    fontWeight: '500',  }, {    className: 'font-semibold',    fontWeight: '600',  }, {    className: 'font-bold',    fontWeight: '700',  }];  return <Table className="w-max sm:w-full whitespace-pre">      <TableCaption>GEL body font tokens (Sans serif system font)</TableCaption>      
+() => {  const typographyScale = [{    className: 'font-light',    fontWeight: '300',  }, {    className: 'font-normal',    fontWeight: '400',  }, {      className: 'font-medium',    fontWeight: '500',  }, {    className: 'font-semibold',    fontWeight: '600',  }, {    className: 'font-bold',    fontWeight: '700',  }];  return <Table className="w-max sm:w-full whitespace-pre">      <TableCaption><p>GEL body font weight tokens</p><p>(Sans serif system font)</p></TableCaption>      
 <TableHeader>        
 <TableHeaderRow>          
 <TableHeaderCell>Token</TableHeaderCell>          
