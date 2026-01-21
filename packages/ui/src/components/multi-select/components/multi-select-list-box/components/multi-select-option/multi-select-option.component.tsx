@@ -12,7 +12,11 @@ import { MultiSelectOptionProps } from './multi-select-option.types.js';
 export function MultiSelectOption<T>({ item }: MultiSelectOptionProps<T>) {
   const { listState, selectionMode, selectAllRef, inputRef } = useContext(MultiSelectContext);
   const ref = useRef<HTMLLIElement>(null);
-  const { optionProps, isDisabled, isSelected, isFocused } = useOption({ key: item.key }, listState, ref);
+  const { optionProps, isDisabled, isSelected, isFocused, labelProps, descriptionProps } = useOption(
+    { key: item.key },
+    listState,
+    ref,
+  );
   const { isFocusVisible } = useFocusVisible();
 
   const styles = optionStyles({
@@ -42,16 +46,20 @@ export function MultiSelectOption<T>({ item }: MultiSelectOptionProps<T>) {
   );
 
   return (
-    <li {...optionProps} ref={ref} className={styles.root()} onKeyDown={handleButtonKeyDown} tabIndex={-1}>
+    <li {...optionProps} ref={ref} className={styles.root()} onKeyDown={handleButtonKeyDown}>
       <div className={styles.itemContainer()}>
         <div className={styles.flexZero()}>
           <div className={styles.checkbox()}>{isSelected && <TickIcon size="small" aria-hidden="true" />}</div>
         </div>
-        <div className={styles.body()}>
-          <div>{item.rendered}</div>
+        <div className={styles.body()} {...labelProps}>
+          {item.rendered}
         </div>
       </div>
-      {item.props?.description && <div className={styles.description()}>{item.props.description}</div>}
+      {item.props?.description && (
+        <div className={styles.description()} {...descriptionProps}>
+          {item.props.description}
+        </div>
+      )}
     </li>
   );
 }

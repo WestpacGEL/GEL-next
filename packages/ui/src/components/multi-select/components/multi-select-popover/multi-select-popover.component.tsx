@@ -10,7 +10,7 @@ import { styles as popoverStyles } from './multi-select-popover.styles.js';
 import type { MultiSelectPopoverProps } from './multi-select-popover.types.js';
 
 export function MultiSelectPopover({ children, className, ...props }: MultiSelectPopoverProps) {
-  const { overlayState, popoverRef, buttonRef, placement } = useContext(MultiSelectContext);
+  const { overlayState, overlayProps, popoverRef, buttonRef, placement } = useContext(MultiSelectContext);
 
   const { popoverProps } = usePopover(
     {
@@ -33,6 +33,7 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
     <Overlay disableFocusManagement>
       <div
         {...popoverProps}
+        {...overlayProps}
         ref={popoverRef}
         className={styles.overlay({ className })}
         style={{ ...popoverProps.style, width: width ? `${width}px` : undefined }}
@@ -51,6 +52,9 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
             overlayState.close();
           }
         }}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Options list with filter"
       >
         {children}
         <DismissButton onDismiss={() => overlayState.close()} />
