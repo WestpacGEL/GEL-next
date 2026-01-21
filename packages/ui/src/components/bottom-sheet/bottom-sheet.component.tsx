@@ -17,7 +17,7 @@ export function BottomSheet({
   secondaryLabel,
   primaryOnClick,
   secondaryOnClick,
-  isDismissable = true,
+  isDismissable = false,
   ...props
 }: BottomSheetProps) {
   return (
