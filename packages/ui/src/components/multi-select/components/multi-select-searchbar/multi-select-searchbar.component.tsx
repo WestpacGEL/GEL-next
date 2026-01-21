@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useContext, useCallback, KeyboardEvent } from 'react';
+
 import { Button } from '../../../../components/button/index.js';
 import { ClearIcon, SearchIcon } from '../../../../components/icon/index.js';
 import { InputGroup } from '../../../../components/input-group/index.js';
 import { Input } from '../../../input/index.js';
-import { styles } from './multi-select-searchbar.styles.js';
-const { searchInputWrapper, clearButton } = styles();
-import type { MultiSelectSearchbarProps } from './multi-select-searchbar.types.js';
-import { useContext, useCallback } from 'react';
 import { MultiSelectContext } from '../../multi-select.component.js';
 
-export function MultiSelectSearchbar({ filterText, setFilterText, closeBtnRef }: Pick<MultiSelectSearchbarProps, 'filterText' | 'setFilterText' | 'closeBtnRef'>) {
+import { styles } from './multi-select-searchbar.styles.js';
+
+import type { MultiSelectSearchbarProps } from './multi-select-searchbar.types.js';
+
+const { searchInputWrapper, clearButton } = styles();
+
+export function MultiSelectSearchbar({
+  filterText,
+  setFilterText,
+  closeBtnRef,
+}: Pick<MultiSelectSearchbarProps, 'filterText' | 'setFilterText' | 'closeBtnRef'>) {
   const { size, inputRef, selectAllRef, listBoxRef } = useContext(MultiSelectContext);
   const handleInputKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLInputElement>) => {
+    (e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'ArrowDown') {
         e.preventDefault();
         if (selectAllRef.current) {
