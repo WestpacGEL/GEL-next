@@ -58,13 +58,14 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultState: Story = {
+export const DefaultWithDismiss: Story = {
   args: {
     title: 'Heading',
     primaryLabel: 'Label',
     secondaryLabel: 'Label',
     primaryOnClick: () => null,
     secondaryOnClick: () => null,
+    isDismissable: true,
     children: (
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a
@@ -80,6 +81,7 @@ export const DefaultState: Story = {
 export const NoFooter: Story = {
   args: {
     title: 'Heading',
+    isDismissable: true,
     children: (
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a
@@ -99,7 +101,6 @@ export const NoCloseButton: Story = {
     secondaryLabel: 'Label',
     primaryOnClick: () => null,
     secondaryOnClick: () => null,
-    isDismissable: false,
     children: (
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a
