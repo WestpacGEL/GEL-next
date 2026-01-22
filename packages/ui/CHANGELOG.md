@@ -395,6 +395,29 @@ To ensure greater flexibility and maintainability, we are phasing out this compo
 };
 ```
 
+### Bottom Sheet isDismissable default to false
+
+When creating the `BottomSheet`, being able to hide the dismiss button (like the `Modal`) was missed and always showed the dismiss button.
+When this was fixed in a previous version however isDismissable had to default to true to avoid breaking changes. This is now fixed to align with the `Modal` component in this version.
+
+#### Before
+
+Below would display the dismiss 'x' button:
+
+```jsx
+<BottomSheet title="Title">Content</BottomSheet>
+```
+
+#### After
+
+Now you need to add a prop to display the dismiss 'x' button (matching `Modal` implementation):
+
+```jsx
+<BottomSheet title="Title" isDismissable>
+  Content
+</BottomSheet>
+```
+
 ### 🗑️ Deprecated Components & APIs
 
 | Deprecated                                         | Replacement / Notes                                                  |
@@ -402,6 +425,12 @@ To ensure greater flexibility and maintainability, we are phasing out this compo
 | `ButtonDropdown`                                   | Replaced by `Dropdown`                                               |
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
+
+## 0.57.1
+
+### Patch Changes
+
+- dce0d2d: fix issue where bottom sheet close button couldn't be hidden
 
 ## 0.57.0
 
