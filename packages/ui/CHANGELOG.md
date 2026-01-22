@@ -405,9 +405,7 @@ When this was fixed in a previous version however isDismissable had to default t
 Below would display the dismiss 'x' button:
 
 ```jsx
-<BottomSheet title="Title">
-  Content
-</BottomSheet>
+<BottomSheet title="Title">Content</BottomSheet>
 ```
 
 #### After
