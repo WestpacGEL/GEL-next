@@ -403,6 +403,12 @@ To ensure greater flexibility and maintainability, we are phasing out this compo
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
 
+## 0.57.1
+
+### Patch Changes
+
+- dce0d2d: fix issue where bottom sheet close button couldn't be hidden
+
 ## 0.57.0
 
 ### Minor Changes
