@@ -112,7 +112,7 @@ export function MultiSelectListBoxTrigger<T>({
 
             {/* dropdown toggle */}
             <div className={styles.button()}>
-              <DropDownIcon color="muted" size="small" aria-hidden="true" />
+              <DropDownIcon color="muted-vivid" size="medium" aria-hidden="true" />
             </div>
           </button>
           {selectedValues.length > 0 && (
