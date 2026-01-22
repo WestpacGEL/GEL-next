@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.57.1
+
+### Patch Changes
+
+- dce0d2d: fix issue where bottom sheet close button couldn't be hidden
+
 ## 0.57.0
 
 ### Minor Changes
