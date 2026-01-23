@@ -60,7 +60,7 @@ function formatBorderRadius(obj) {
 // Extraction Functions
 // --------------------------------------------------------------------------
 function extractPrimitives(tokens) {
-  const primitives = tokens.find(t => t.Primitives)?.Primitives?.modes?.['Mode 1']?.color;
+  const primitives = tokens.find(t => t.Primitives)?.Primitives?.color;
   const colorsObj = {};
   if (primitives) {
     for (const parentKey in primitives) {
@@ -73,7 +73,7 @@ function extractPrimitives(tokens) {
 }
 
 function getBorderPrimitives(tokens) {
-  const primitives = tokens.find(t => t.Primitives)?.Primitives?.modes?.['Mode 1']?.border?.radius;
+  const primitives = tokens.find(t => t.Primitives)?.Primitives?.border?.radius;
   if (!primitives) return {};
   const borderVars = {};
   for (const key in primitives) {
@@ -238,11 +238,18 @@ function writeBrandThemeCSS(tokens, brandNameMap, brandFontMap, themeTemplate, o
   BRANDS.forEach(({ primitiveName }) => {
     const brand = primitiveName.toLowerCase();
     const brandFile = path.resolve(outputDir, `theme-${brand}.css`);
+    
+    // Merge brand-specific primitives with shared mono primitives
+    const allPrimitives = {
+      ...(primitivesObj.mono?.primitives || {}),
+      ...(primitivesObj[brand]?.primitives || {})
+    };
+    
     fs.writeFileSync(
       brandFile,
       themeTemplate({
         brand,
-        primitiveColors: primitivesObj[brand]?.primitives || {},
+        primitiveColors: allPrimitives,
         themeColors: themeColorsObj[brand]?.theme || {},
         borderRadius: themeBorderRadius[brand] || {},
         fontFamily: brandFontMap[brand] || '',
@@ -276,8 +283,10 @@ function writeBordersCSS(borderPrimitives, modeBorderRadius, bordersTemplate, ou
 // Main Transformer Function
 // --------------------------------------------------------------------------
 function transformCSS() {
-  const tokensPath = path.resolve(__dirname, '../../src/tokens/GEL-tokens-figma.json');
-  const tokens = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
+  const { transformFigmaRestResponse } = require('./figma-rest-to-tokens.cjs');
+  const figmaRestPath = path.resolve(__dirname, '../../src/tokens/figma-rest-response.json');
+  const figmaRestData = JSON.parse(fs.readFileSync(figmaRestPath, 'utf8'));
+  const tokens = transformFigmaRestResponse(figmaRestData);
 
   const themeTemplatePath = path.resolve(__dirname, '../templates/theme.handlebars');
   const themeTemplateSource = fs.readFileSync(themeTemplatePath, 'utf8');
