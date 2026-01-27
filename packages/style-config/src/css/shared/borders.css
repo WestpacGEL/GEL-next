@@ -29,7 +29,6 @@
     --rounded-4xl: var(--border-radius-16);
     --rounded-5xl: var(--border-radius-24);
     --rounded-full: var(--border-radius-999);
-    
 
     @variant dark {
       --rounded-none: var(--border-radius-0);
@@ -42,19 +41,18 @@
       --rounded-4xl: var(--border-radius-16);
       --rounded-5xl: var(--border-radius-24);
       --rounded-full: var(--border-radius-999);
-      
     }
   }
 }
 
 /* Tailwind theme variables  */
 @theme inline static {
-  --radius-sm: var(--rounded-sm);
-  --radius-md: var(--rounded-md);
-  --radius-lg: var(--rounded-lg);
-  --radius-xl: var(--rounded-xl);
-  --radius-2xl: var(--rounded-2xl);
-  --radius-3xl: var(--rounded-3xl);
-  --radius-4xl: var(--rounded-4xl);
-  --radius-5xl: var(--rounded-5xl);
+  --radius-sm: var(--border-radius-3);
+  --radius-md: var(--border-radius-4);
+  --radius-lg: var(--border-radius-5);
+  --radius-xl: var(--border-radius-6);
+  --radius-2xl: var(--border-radius-8);
+  --radius-3xl: var(--border-radius-12);
+  --radius-4xl: var(--border-radius-16);
+  --radius-5xl: var(--border-radius-24);
 }

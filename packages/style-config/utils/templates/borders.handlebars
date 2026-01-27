@@ -15,25 +15,18 @@
     {{#each light}}
     --{{@key}}: {{this}};
     {{/each}}
-    
 
     @variant dark {
       {{#each dark}}
       --{{@key}}: {{this}};
       {{/each}}
-      
     }
   }
 }
 
 /* Tailwind theme variables  */
 @theme inline static {
-  --radius-sm: var(--rounded-sm);
-  --radius-md: var(--rounded-md);
-  --radius-lg: var(--rounded-lg);
-  --radius-xl: var(--rounded-xl);
-  --radius-2xl: var(--rounded-2xl);
-  --radius-3xl: var(--rounded-3xl);
-  --radius-4xl: var(--rounded-4xl);
-  --radius-5xl: var(--rounded-5xl);
+  {{#each radius}}
+  --{{@key}}: {{this}};
+  {{/each}}
 }

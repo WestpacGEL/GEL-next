@@ -47,9 +47,6 @@ function formatBorderRadius(obj) {
       const newKey = key.replace(/^rounded/, 'radius');
       if (newKey === 'radius-none' || newKey === 'radius-full') continue;
       let value = obj[key];
-      if (typeof value === 'string') {
-        value = value.replace(/border-radius/g, 'rounded');
-      }
       remapped[newKey] = value;
     }
   }
