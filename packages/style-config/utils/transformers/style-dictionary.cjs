@@ -861,7 +861,7 @@ function applyValuePrefix(tokenProps, brandName) {
   return {
     ...tokenProps,
     $type: tokenProps.$type === 'float' ? 'dimension' : tokenProps.$type,
-    $value: valueStr.replace('{', `{${prefix}.`),
+    $value: valueStr.replace(/\{/g, `{${prefix}.`),
   };
 }
 
