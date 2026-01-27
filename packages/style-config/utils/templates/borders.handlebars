@@ -16,34 +16,12 @@
     --{{@key}}: {{this}};
     {{/each}}
     
-    /* Pixel-based aliases for backwards compatibility */
-    --rounded-0: var(--rounded-none);
-    --rounded-3: var(--rounded-sm);
-    --rounded-4: var(--rounded-md);
-    --rounded-5: var(--rounded-lg);
-    --rounded-6: var(--rounded-xl);
-    --rounded-8: var(--rounded-2xl);
-    --rounded-12: var(--rounded-3xl);
-    --rounded-16: var(--rounded-4xl);
-    --rounded-24: var(--rounded-5xl);
-    --rounded-999: var(--rounded-full);
 
     @variant dark {
       {{#each dark}}
       --{{@key}}: {{this}};
       {{/each}}
       
-      /* Pixel-based aliases for backwards compatibility */
-      --rounded-0: var(--rounded-none);
-      --rounded-3: var(--rounded-sm);
-      --rounded-4: var(--rounded-md);
-      --rounded-5: var(--rounded-lg);
-      --rounded-6: var(--rounded-xl);
-      --rounded-8: var(--rounded-2xl);
-      --rounded-12: var(--rounded-3xl);
-      --rounded-16: var(--rounded-4xl);
-      --rounded-24: var(--rounded-5xl);
-      --rounded-999: var(--rounded-full);
     }
   }
 }

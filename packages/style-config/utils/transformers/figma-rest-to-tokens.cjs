@@ -1,6 +1,67 @@
 /* eslint-disable no-console */
 const fs = require('fs-extra');
 
+// Figma API configuration
+const FIGMA_PROJECT_ID = process.env.FIGMA_PROJECT_ID;
+const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
+
+/**
+ * Fetches design tokens from Figma API
+ * @returns {Promise<Object>} Figma REST API response
+ */
+async function fetchFigmaTokens() {
+  if (!FIGMA_PROJECT_ID) {
+    throw new Error('FIGMA_PROJECT_ID environment variable is required');
+  }
+  if (!FIGMA_TOKEN) {
+    throw new Error('FIGMA_TOKEN environment variable is required');
+  }
+
+  const https = require('https');
+  const url = `https://api.figma.com/v1/files/${FIGMA_PROJECT_ID}/variables/local`;
+  
+  return new Promise((resolve, reject) => {
+    console.log('🔄 Fetching tokens from Figma API...');
+    
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-Figma-Token': FIGMA_TOKEN,
+        'User-Agent': 'GEL-Next-Style-Dictionary/1.0'
+      }
+    };
+
+    const req = https.request(url, options, (res) => {
+      let data = '';
+      
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+      
+      res.on('end', () => {
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          try {
+            const jsonData = JSON.parse(data);
+            console.log('✅ Successfully fetched tokens from Figma API');
+            resolve(jsonData);
+          } catch (parseError) {
+            reject(new Error(`Failed to parse JSON response: ${parseError.message}`));
+          }
+        } else {
+          reject(new Error(`Figma API request failed: ${res.statusCode} ${res.statusMessage}\nResponse: ${data}`));
+        }
+      });
+    });
+
+    req.on('error', (error) => {
+      console.error('❌ Failed to fetch tokens from Figma API:', error);
+      reject(error);
+    });
+
+    req.end();
+  });
+}
+
 /**
  * NOTE: This file was generated due a change in formatting to the source file to minimise breaking changes.
  * Transforms Figma REST API response to the format we were originally using
@@ -179,59 +240,6 @@ function transformCollection(collection, variablesMap, allCollections) {
       
       if (variable.description) {
         tokenValue.$description = variable.description;
-      }
-      
-      const nested = pathToNestedObject(pathParts, tokenValue);
-      modeData = deepMerge(modeData, nested);
-    });
-    
-    result.modes[mode.name] = modeData;
-  });
-  
-  return result;
-}
-
-/**
- * Process variable overrides for extension collections
- */
-function processVariableOverrides(collection, variablesMap, allCollections) {
-  if (!collection.variableOverrides || !collection.relatedVariableIds) {
-    return null;
-  }
-  
-  const result = {
-    modes: {}
-  };
-  
-  // Process each mode
-  collection.modes.forEach(mode => {
-    let modeData = {};
-    
-    // Process overrides
-    Object.entries(collection.relatedVariableIds).forEach(([baseVarId, overrideId]) => {
-      const baseVar = variablesMap[baseVarId];
-      if (!baseVar) return;
-      
-      const pathParts = parseVariableName(baseVar.name);
-      
-      // Get the override value
-      const overrideData = collection.variableOverrides[baseVarId];
-      if (!overrideData || !overrideData[mode.modeId]) return;
-      
-      const value = resolveValue(overrideData[mode.modeId], variablesMap, baseVar.resolvedType);
-      if (value === null) return;
-      
-      const tokenValue = {
-        $type: getFigmaType(baseVar.resolvedType),
-        $value: value
-      };
-      
-      if (baseVar.hiddenFromPublishing) {
-        tokenValue.$hiddenFromPublishing = true;
-      }
-      
-      if (baseVar.description) {
-        tokenValue.$description = baseVar.description;
       }
       
       const nested = pathToNestedObject(pathParts, tokenValue);
@@ -430,27 +438,19 @@ function transformFigmaRestResponse(figmaData) {
 }
 
 /**
- * Export the transformation function for use by other scripts
- */
-module.exports = {
-  transformFigmaRestResponse
-};
-
-/**
  * Main execution (optional - only runs if script is executed directly)
  */
 async function main() {
-  const inputPath = './src/tokens/figma-rest-response.json';
   const outputPath = './src/tokens/GEL-tokens-figma.json';
   
   try {
-    console.log('Reading Figma REST API response...');
-    const figmaData = await fs.readJson(inputPath);
+    // Fetch from Figma API instead of reading local file
+    const figmaData = await fetchFigmaTokens();
     
-    console.log('Transforming to GEL tokens format...');
+    console.log('🔄 Transforming to GEL tokens format...');
     const transformed = transformFigmaRestResponse(figmaData);
     
-    console.log('Writing output...');
+    console.log('📝 Writing output...');
     await fs.writeJson(outputPath, transformed, { spaces: 2 });
     
     console.log('✅ Transformation complete!');
@@ -465,5 +465,3 @@ async function main() {
 if (require.main === module) {
   main();
 }
-
-module.exports = { transformFigmaRestResponse };

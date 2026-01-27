@@ -283,10 +283,8 @@ function writeBordersCSS(borderPrimitives, modeBorderRadius, bordersTemplate, ou
 // Main Transformer Function
 // --------------------------------------------------------------------------
 function transformCSS() {
-  const { transformFigmaRestResponse } = require('./figma-rest-to-tokens.cjs');
-  const figmaRestPath = path.resolve(__dirname, '../../src/tokens/figma-rest-response.json');
-  const figmaRestData = JSON.parse(fs.readFileSync(figmaRestPath, 'utf8'));
-  const tokens = transformFigmaRestResponse(figmaRestData);
+  const gelTokensPath = path.resolve(__dirname, '../../src/tokens/GEL-tokens-figma.json');
+  const tokens = JSON.parse(fs.readFileSync(gelTokensPath, 'utf8'));
 
   const themeTemplatePath = path.resolve(__dirname, '../templates/theme.handlebars');
   const themeTemplateSource = fs.readFileSync(themeTemplatePath, 'utf8');

@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 const fs = require('fs-extra');
 const StyleDictionary = require('style-dictionary').default;
-const { transformFigmaRestResponse } = require('./figma-rest-to-tokens.cjs');
 
 const BRANDS = require(`${__dirname}/../../src/constants/brands.json`);
 
@@ -1018,11 +1017,10 @@ const LOG_CONFIG = {
 (async () => {
   await ensureFolderExists(`${SRC_FOLDER}/w3c`);
 
-  // Transform Figma REST API response to GEL tokens format
-  console.log('🔄 Transforming Figma REST API response...');
-  const figmaRestResponse = await fs.readJson(`${SRC_FOLDER}/figma-rest-response.json`);
-  const tokens = transformFigmaRestResponse(figmaRestResponse);
-  console.log('✅ Transformed tokens (in-memory)\n');
+  // Read pre-transformed GEL tokens format
+  console.log('🔄 Reading GEL tokens from file...');
+  const tokens = await fs.readJson(`${SRC_FOLDER}/GEL-tokens-figma.json`);
+  console.log('✅ Loaded tokens from GEL-tokens-figma.json\n');
 
   const mergedTokens = mergeTokens(tokens);
   await saveJSON(`${SRC_FOLDER}/w3c/all-brands.json`, mergedTokens);
