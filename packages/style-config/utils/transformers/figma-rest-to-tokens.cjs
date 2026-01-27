@@ -200,7 +200,7 @@ function getFigmaType(resolvedType) {
 /**
  * Transform a single variable collection
  */
-function transformCollection(collection, variablesMap, allCollections) {
+function transformCollection(collection, variablesMap) {
   const result = {
     modes: {}
   };
@@ -273,7 +273,7 @@ function transformFigmaRestResponse(figmaData) {
   // ========================================
   const primitiveCollection = Object.values(variableCollections).find(c => c.name === 'Primitives');
   if (primitiveCollection) {
-    const transformed = transformCollection(primitiveCollection, variables, variableCollections);
+    const transformed = transformCollection(primitiveCollection, variables);
     // For Primitives, extract the single mode's data (no mode wrapper)
     const primitivesData = transformed.modes[Object.keys(transformed.modes)[0]] || {};
     result.push({
