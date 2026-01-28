@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.57.2
+
+### Patch Changes
+
+- f6f9536: added import of react to SelectorButtonGroup and SelectorLinkGroup
+
 ## 0.57.1
 
 ### Patch Changes
