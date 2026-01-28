@@ -1,7 +1,19 @@
 /* eslint-disable no-console */
+
+/**
+ * NOTE: This file was generated due a change in formatting to the source file to minimise breaking changes.
+ * Transforms Figma REST API response to the format we were originally using
+ * This script converts the raw Figma REST API response into the structure
+ * expected by the style-dictionary script.
+ * 
+ * The Figma rest response currently includes unique IDs for variables and collections, which is another reason for the conversion.
+ * This may be updated in the future if GEL is no longer public.
+ */
+
 const fs = require('fs-extra');
 
 // Figma API configuration
+// Place these values in a .env.local file at the root of style-config package and run pnpm build:tokens-file
 const FIGMA_PROJECT_ID = process.env.FIGMA_PROJECT_ID;
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
 
@@ -61,13 +73,6 @@ async function fetchFigmaTokens() {
     req.end();
   });
 }
-
-/**
- * NOTE: This file was generated due a change in formatting to the source file to minimise breaking changes.
- * Transforms Figma REST API response to the format we were originally using
- * This script converts the raw Figma REST API response into the structure
- * expected by the style-dictionary script.
- */
 
 /**
  * Parse variable name into path components
@@ -281,62 +286,7 @@ function transformFigmaRestResponse(figmaData) {
     });
   }
   
-  // ========================================
-  // 2. Create Themes from Primitives
-  // ========================================
-  // Themes are brand-specific views of the primitives
-  // For each brand, we take their primitive colors and create a theme
-  const themesResult = {
-    Themes: {
-      modes: {}
-    }
-  };
-  
-  Object.entries(BRAND_MAPPING).forEach(([brandName, primitiveCode]) => {
-    themesResult.Themes.modes[brandName] = {};
-    
-    // Get primitive colors for this brand
-    if (primitiveCollection) {
-      const primitiveVars = primitiveCollection.variableIds
-        .map(varId => variables[varId])
-        .filter(v => v && v.name.includes(`/${primitiveCode}/`));
-      
-      primitiveVars.forEach(variable => {
-        const pathParts = parseVariableName(variable.name);
-        // Replace primitive code with generic path
-        // e.g., color/WBC/muted/50 -> color/muted/50
-        const adjustedParts = pathParts.filter(p => p !== primitiveCode);
-        
-        const valueData = variable.valuesByMode[primitiveCollection.modes[0].modeId];
-        if (valueData === undefined || valueData === null) return;
-        
-        const value = resolveValue(valueData, variables, variable.resolvedType);
-        if (value === null) return;
-        
-        // Create alias reference back to primitive
-        const primitiveRef = `{${pathParts.join('.')}}`;
-        
-        const tokenValue = {
-          $type: getFigmaType(variable.resolvedType),
-          $value: primitiveRef,
-          $collectionName: 'Primitives'
-        };
-        
-        if (variable.scopes && variable.scopes.length > 0) {
-          tokenValue.$scopes = ['ALL_SCOPES'];
-        }
-        
-        if (variable.hiddenFromPublishing) {
-          tokenValue.$hiddenFromPublishing = true;
-        }
-        
-        const nested = pathToNestedObject(adjustedParts, tokenValue);
-        themesResult.Themes.modes[brandName] = deepMerge(themesResult.Themes.modes[brandName], nested);
-      });
-    }
-  });
-  
-  result.push(themesResult);
+  // Skip Themes section - Tokens will reference Primitives directly
   
   // ========================================
   // 3. Transform Tokens (semantic token collections)
@@ -374,13 +324,13 @@ function transformFigmaRestResponse(figmaData) {
       
       if (valueData === undefined || valueData === null) return;
       
-      const value = resolveValue(valueData, variables, variable.resolvedType, true); // isTokenCollection = true
+      const value = resolveValue(valueData, variables, variable.resolvedType, false); // Don't convert to theme references
       if (value === null) return;
       
       const tokenValue = {
         $type: getFigmaType(variable.resolvedType),
         $value: value,
-        $collectionName: 'Themes'  // Tokens reference Themes, not Primitives
+        $collectionName: 'Primitives'  // Tokens reference Primitives directly
       };
       
       if (variable.scopes && variable.scopes.length > 0) {
@@ -406,13 +356,13 @@ function transformFigmaRestResponse(figmaData) {
       
       if (valueData === undefined || valueData === null) return;
       
-      const value = resolveValue(valueData, variables, variable.resolvedType, true); // isTokenCollection = true
+      const value = resolveValue(valueData, variables, variable.resolvedType, false); // Don't convert to theme references
       if (value === null) return;
       
       const tokenValue = {
         $type: getFigmaType(variable.resolvedType),
         $value: value,
-        $collectionName: 'Themes'  // Tokens reference Themes, not Primitives
+        $collectionName: 'Primitives'  // Tokens reference Primitives directly
       };
       
       if (variable.scopes && variable.scopes.length > 0) {
@@ -465,3 +415,6 @@ async function main() {
 if (require.main === module) {
   main();
 }
+
+// Export for testing
+module.exports = { transformFigmaRestResponse };

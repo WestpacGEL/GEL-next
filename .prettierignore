@@ -2,7 +2,7 @@ dist
 coverage
 .next
 public
-GEL-tokens-figma.json
 
 # Ignore generated theme json files as they generate with good formatting but don't pass prettier
 w3c
+GEL-tokens-figma.json

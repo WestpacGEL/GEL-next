@@ -149,112 +149,29 @@
   --primitives-color-wbc-dance-900: #401f03;
   --primitives-color-wbc-dance-950: #2c1502;
   --primitives-color-wbc-dance-opacity: rgba(245, 122, 15, 0.45);
-  --themes-westpac-color-muted-50: #f9f9fa;
-  --themes-westpac-color-muted-100: #f5f5f6;
-  --themes-westpac-color-muted-200: #dedee1;
-  --themes-westpac-color-muted-300: #b6b6bc;
-  --themes-westpac-color-muted-400: #8e8d98;
-  --themes-westpac-color-muted-500: #706f7c;
-  --themes-westpac-color-muted-600: #5b5b6a;
-  --themes-westpac-color-muted-700: #464651;
-  --themes-westpac-color-muted-800: #323238;
-  --themes-westpac-color-muted-900: #1c1c1f;
-  --themes-westpac-color-muted-950: #161619;
-  --themes-westpac-color-primary-50: #fff0f0;
-  --themes-westpac-color-primary-100: #facccb;
-  --themes-westpac-color-primary-200: #f46e69;
-  --themes-westpac-color-primary-300: #f1423c;
-  --themes-westpac-color-primary-400: #ee221b;
-  --themes-westpac-color-primary-500: #da1710;
-  --themes-westpac-color-primary-600: #b9140e;
-  --themes-westpac-color-primary-700: #99100b;
-  --themes-westpac-color-primary-800: #780d09;
-  --themes-westpac-color-primary-900: #570906;
-  --themes-westpac-color-primary-950: #370604;
-  --themes-westpac-color-primary-opacity: rgba(218, 23, 16, 0.5);
-  --themes-westpac-color-hero-50: #f1f0fa;
-  --themes-westpac-color-hero-100: #e2e1f4;
-  --themes-westpac-color-hero-200: #a9a5df;
-  --themes-westpac-color-hero-300: #6f69c9;
-  --themes-westpac-color-hero-400: #423c97;
-  --themes-westpac-color-hero-500: #1f1c4f;
-  --themes-westpac-color-hero-600: #18144d;
-  --themes-westpac-color-hero-700: #130f48;
-  --themes-westpac-color-hero-800: #0d093e;
-  --themes-westpac-color-hero-900: #090538;
-  --themes-westpac-color-hero-950: #060236;
-  --themes-westpac-color-hero-opacity: rgba(58, 52, 147, 0.6);
-  --themes-westpac-color-pop-50: #fff5fd;
-  --themes-westpac-color-pop-100: #ffecfb;
-  --themes-westpac-color-pop-200: #ffcff6;
-  --themes-westpac-color-pop-300: #ff9eed;
-  --themes-westpac-color-pop-400: #ff6ee4;
-  --themes-westpac-color-pop-500: #ff3ddb;
-  --themes-westpac-color-pop-600: #d934ba;
-  --themes-westpac-color-pop-700: #b32b99;
-  --themes-westpac-color-pop-800: #8c2278;
-  --themes-westpac-color-pop-900: #59154d;
-  --themes-westpac-color-pop-950: #330c2c;
-  --themes-westpac-color-pop-opacity: rgba(255, 61, 219, 0.45);
-  --themes-westpac-color-holler-50: #faf1fd;
-  --themes-westpac-color-holler-100: #ebcdf9;
-  --themes-westpac-color-holler-200: #ce84f0;
-  --themes-westpac-color-holler-300: #bc57eb;
-  --themes-westpac-color-holler-400: #ad32e6;
-  --themes-westpac-color-holler-500: #991ad6;
-  --themes-westpac-color-holler-600: #8717ba;
-  --themes-westpac-color-holler-700: #70139b;
-  --themes-westpac-color-holler-800: #5c0f7f;
-  --themes-westpac-color-holler-900: #450c5f;
-  --themes-westpac-color-holler-950: #2e0840;
-  --themes-westpac-color-holler-opacity: rgba(153, 26, 214, 0.5);
-  --themes-westpac-color-sing-50: #faf2f2;
-  --themes-westpac-color-sing-100: #f5d9d9;
-  --themes-westpac-color-sing-200: #efa2a2;
-  --themes-westpac-color-sing-300: #e76969;
-  --themes-westpac-color-sing-400: #cf2c2c;
-  --themes-westpac-color-sing-500: #990000;
-  --themes-westpac-color-sing-600: #860000;
-  --themes-westpac-color-sing-700: #710000;
-  --themes-westpac-color-sing-800: #5d0000;
-  --themes-westpac-color-sing-900: #4d0000;
-  --themes-westpac-color-sing-950: #410000;
-  --themes-westpac-color-sing-opacity: rgba(153, 0, 0, 0.5);
-  --themes-westpac-color-dance-50: #fef4eb;
-  --themes-westpac-color-dance-100: #fde7d3;
-  --themes-westpac-color-dance-200: #fbcba2;
-  --themes-westpac-color-dance-300: #f9b071;
-  --themes-westpac-color-dance-400: #f79540;
-  --themes-westpac-color-dance-500: #f57a0f;
-  --themes-westpac-color-dance-600: #ce6409;
-  --themes-westpac-color-dance-700: #9d4c07;
-  --themes-westpac-color-dance-800: #713705;
-  --themes-westpac-color-dance-900: #401f03;
-  --themes-westpac-color-dance-950: #2c1502;
-  --themes-westpac-color-dance-opacity: rgba(245, 122, 15, 0.45);
 }
 
 [data-brand="wbc"] {
   --color-background-white: var(--primitives-color-mono-white); /* If you need a white background use this token */
-  --color-background-pale: var(--themes-westpac-color-muted-100); /* If you need a grey background use this token. Note: this token replaces the current Background colour style. */
-  --color-background-faint: var(--themes-westpac-color-muted-50); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */
-  --color-background-primary: var(--themes-westpac-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-background-hero: var(--themes-westpac-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-surface-muted-vivid: var(--themes-westpac-color-muted-950); /* Use for surfaces that need to be the same colour as body text (icons, arrows etc). */
-  --color-surface-muted: var(--themes-westpac-color-muted-500); /* Replaces the current Muted colour style. */
-  --color-surface-muted-strong: var(--themes-westpac-color-muted-400); /* Reserved do not use. */
-  --color-surface-muted-mild: var(--themes-westpac-color-muted-300); /* Reserved do not use. */
-  --color-surface-muted-soft: var(--themes-westpac-color-muted-200); /* Reserved do not use. */
-  --color-surface-muted-pale: var(--themes-westpac-color-muted-100); /* Replaces the current Background colour style. Tip: In light mode this colour is the same as background-pale however they behave differently in dark mode. */
-  --color-surface-muted-faint: var(--themes-westpac-color-muted-50); /* Replaces the current Light colour style. Tip: In light mode this colour is the same as background-faint however they each behave differently in dark mode. */
-  --color-surface-primary: var(--themes-westpac-color-primary-500); /* Replaces the current Primary colour style. */
-  --color-surface-primary-faint: var(--themes-westpac-color-primary-50); /* Reserved do not use. */
-  --color-surface-hero: var(--themes-westpac-color-hero-500); /* Replaces the current Hero colour style. */
-  --color-surface-hero-faint: var(--themes-westpac-color-hero-50); /* Reserved do not use. */
-  --color-surface-pop: var(--themes-westpac-color-pop-500); /* Replaces the current Pop colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
-  --color-surface-pop-faint: var(--themes-westpac-color-pop-50); /* Replaces the current Pop Light colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
-  --color-surface-holler: var(--themes-westpac-color-holler-500); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
-  --color-surface-holler-faint: var(--themes-westpac-color-holler-50); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-background-pale: var(--primitives-color-wbc-muted-100); /* If you need a grey background use this token. Note: this token replaces the current Background colour style. */
+  --color-background-faint: var(--primitives-color-wbc-muted-50); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */
+  --color-background-primary: var(--primitives-color-wbc-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--primitives-color-wbc-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--primitives-color-wbc-muted-950); /* Use for surfaces that need to be the same colour as body text (icons, arrows etc). */
+  --color-surface-muted: var(--primitives-color-wbc-muted-500); /* Replaces the current Muted colour style. */
+  --color-surface-muted-strong: var(--primitives-color-wbc-muted-400); /* Reserved do not use. */
+  --color-surface-muted-mild: var(--primitives-color-wbc-muted-300); /* Reserved do not use. */
+  --color-surface-muted-soft: var(--primitives-color-wbc-muted-200); /* Reserved do not use. */
+  --color-surface-muted-pale: var(--primitives-color-wbc-muted-100); /* Replaces the current Background colour style. Tip: In light mode this colour is the same as background-pale however they behave differently in dark mode. */
+  --color-surface-muted-faint: var(--primitives-color-wbc-muted-50); /* Replaces the current Light colour style. Tip: In light mode this colour is the same as background-faint however they each behave differently in dark mode. */
+  --color-surface-primary: var(--primitives-color-wbc-primary-500); /* Replaces the current Primary colour style. */
+  --color-surface-primary-faint: var(--primitives-color-wbc-primary-50); /* Reserved do not use. */
+  --color-surface-hero: var(--primitives-color-wbc-hero-500); /* Replaces the current Hero colour style. */
+  --color-surface-hero-faint: var(--primitives-color-wbc-hero-50); /* Reserved do not use. */
+  --color-surface-pop: var(--primitives-color-wbc-pop-500); /* Replaces the current Pop colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
+  --color-surface-pop-faint: var(--primitives-color-wbc-pop-50); /* Replaces the current Pop Light colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
+  --color-surface-holler: var(--primitives-color-wbc-holler-500); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-surface-holler-faint: var(--primitives-color-wbc-holler-50); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-surface-success: var(--primitives-color-success-500); /* Only use for success alert components, do not use for anything else. */
   --color-surface-success-faint: var(--primitives-color-success-50); /* Only use for success alert components, do not use for anything else. Note: this surface should always be used with border-success-mild as shown here. */
   --color-surface-info: var(--primitives-color-info-500); /* Only use for info alert components, do not use for anything else. */
@@ -267,13 +184,13 @@
   --color-surface-system-error-dark: var(--primitives-color-system-950); /* Only use for system alert components, do not use for anything else. */
   --color-surface-mono: var(--primitives-color-mono-white); /* White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode. */
   --color-surface-reversed: var(--primitives-color-mono-white); /* Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode. */
-  --color-text-body: var(--themes-westpac-color-muted-950); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
-  --color-text-heading: var(--themes-westpac-color-hero-500); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
-  --color-text-muted: var(--themes-westpac-color-muted-500); /* Use for text that requires less emphasis like hint text etc. */
-  --color-text-primary: var(--themes-westpac-color-primary-500); /* Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token. */
-  --color-text-hero: var(--themes-westpac-color-hero-500); /* Use for text that requires more emphasis, call outs, quotes etc. */
-  --color-text-holler: var(--themes-westpac-color-holler-500); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
-  --color-text-link: var(--themes-westpac-color-primary-500); /* Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands. */
+  --color-text-body: var(--primitives-color-wbc-muted-950); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
+  --color-text-heading: var(--primitives-color-wbc-hero-500); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
+  --color-text-muted: var(--primitives-color-wbc-muted-500); /* Use for text that requires less emphasis like hint text etc. */
+  --color-text-primary: var(--primitives-color-wbc-primary-500); /* Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token. */
+  --color-text-hero: var(--primitives-color-wbc-hero-500); /* Use for text that requires more emphasis, call outs, quotes etc. */
+  --color-text-holler: var(--primitives-color-wbc-holler-500); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-text-link: var(--primitives-color-wbc-primary-500); /* Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands. */
   --color-text-success: var(--primitives-color-success-500); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-text-info: var(--primitives-color-info-500); /* Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-text-warning: var(--primitives-color-warning-500); /* Only for warning alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
@@ -281,14 +198,14 @@
   --color-text-system-error: var(--primitives-color-system-950); /* Only for system error alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-text-mono: var(--primitives-color-mono-white); /* Similar to surface-mono, text-mono is white in light mode and black in dark mode. It’s typically used for UI elements like buttons, tabs, panel heading etc. */
   --color-text-reversed: var(--primitives-color-mono-white); /* Similar to surface-reversed, text-reversed is always white. Use with caution, in dark mode white creates too much contrast which defeats the object of reducing glare. Tip: Try using text-mono */
-  --color-border-muted: var(--themes-westpac-color-muted-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
-  --color-border-muted-strong: var(--themes-westpac-color-muted-400); /* Replaces the current Border Dark colour style. Use for UI components that require accessible contrast ratios eg. Inputs, Selects etc */
-  --color-border-muted-mild: var(--themes-westpac-color-muted-300); /* Reserved do not use. */
-  --color-border-muted-soft: var(--themes-westpac-color-muted-200); /* Replaces the current Border colour style. Use for UI components and page elements that don’t require accessible borders - Selectors, Flexi-cell, Tabs, section dividers etc */
-  --color-border-hero: var(--themes-westpac-color-hero-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
-  --color-border-primary: var(--themes-westpac-color-primary-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
-  --color-border-pop: var(--themes-westpac-color-pop-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
-  --color-border-holler: var(--themes-westpac-color-holler-500); /* For borders that require more emphasis. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-border-muted: var(--primitives-color-wbc-muted-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-muted-strong: var(--primitives-color-wbc-muted-400); /* Replaces the current Border Dark colour style. Use for UI components that require accessible contrast ratios eg. Inputs, Selects etc */
+  --color-border-muted-mild: var(--primitives-color-wbc-muted-300); /* Reserved do not use. */
+  --color-border-muted-soft: var(--primitives-color-wbc-muted-200); /* Replaces the current Border colour style. Use for UI components and page elements that don’t require accessible borders - Selectors, Flexi-cell, Tabs, section dividers etc */
+  --color-border-hero: var(--primitives-color-wbc-hero-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-primary: var(--primitives-color-wbc-primary-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-pop: var(--primitives-color-wbc-pop-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-holler: var(--primitives-color-wbc-holler-500); /* For borders that require more emphasis. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-border-success: var(--primitives-color-success-500); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-border-success-mild: var(--primitives-color-success-300); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-border-info: var(--primitives-color-info-500); /* Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
@@ -298,39 +215,39 @@
   --color-border-danger: var(--primitives-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
   --color-border-danger-mild: var(--primitives-color-danger-300); /* Only for danger alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-border-mono: var(--primitives-color-mono-white); /* Similar to surface-mono, border-mono is white in light mode and black in dark mode. */
-  --color-border-focus: var(--themes-westpac-color-holler-300); /* Reserved. Only for use with focus state keyboard navigation. */
-  --color-data-a-solid: var(--themes-westpac-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-a-tint: var(--themes-westpac-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-a-opacity: var(--themes-westpac-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-b-solid: var(--themes-westpac-color-hero-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-b-tint: var(--themes-westpac-color-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-b-opacity: var(--themes-westpac-color-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-c-solid: var(--themes-westpac-color-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-c-tint: var(--themes-westpac-color-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-c-opacity: var(--themes-westpac-color-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-d-solid: var(--themes-westpac-color-holler-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-d-tint: var(--themes-westpac-color-holler-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-d-opacity: var(--themes-westpac-color-holler-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-e-solid: var(--themes-westpac-color-sing-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-e-tint: var(--themes-westpac-color-sing-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-e-opacity: var(--themes-westpac-color-sing-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-f-solid: var(--themes-westpac-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-f-tint: var(--themes-westpac-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-f-opacity: var(--themes-westpac-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-surface-pictogram-base: var(--themes-westpac-color-hero-500); /* Reserved. Only for use on Pictograms. */
-  --color-surface-pictogram-accent: var(--themes-westpac-color-primary-500); /* Reserved. Only for use on Pictograms. */
-  --color-surface-hover-primary: var(--themes-westpac-color-primary-400); /* This token is for hover states. */
-  --color-surface-active-primary: var(--themes-westpac-color-primary-200);
-  --color-surface-hover-hero: var(--themes-westpac-color-hero-400); /* This token is for hover states. */
-  --color-surface-active-hero: var(--themes-westpac-color-hero-300); /* This token is for hover states. */
-  --color-surface-hover-primary-faint: var(--themes-westpac-color-primary-50); /* This token is for hover states. */
-  --color-surface-active-primary-faint: var(--themes-westpac-color-primary-100); /* This token is for hover states. */
-  --color-surface-hover-hero-faint: var(--themes-westpac-color-hero-50);
-  --color-surface-active-hero-faint: var(--themes-westpac-color-hero-100);
-  --color-surface-hover-muted-pale: var(--themes-westpac-color-muted-100); /* This token is for hover states. */
-  --color-surface-active-muted-pale: var(--themes-westpac-color-muted-300); /* This token is for hover states. */
+  --color-border-focus: var(--primitives-color-wbc-holler-300); /* Reserved. Only for use with focus state keyboard navigation. */
+  --color-data-a-solid: var(--primitives-color-wbc-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-tint: var(--primitives-color-wbc-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-opacity: var(--primitives-color-wbc-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-solid: var(--primitives-color-wbc-hero-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-tint: var(--primitives-color-wbc-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-opacity: var(--primitives-color-wbc-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-solid: var(--primitives-color-wbc-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-tint: var(--primitives-color-wbc-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-opacity: var(--primitives-color-wbc-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-solid: var(--primitives-color-wbc-holler-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-tint: var(--primitives-color-wbc-holler-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-opacity: var(--primitives-color-wbc-holler-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-solid: var(--primitives-color-wbc-sing-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-tint: var(--primitives-color-wbc-sing-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-opacity: var(--primitives-color-wbc-sing-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-solid: var(--primitives-color-wbc-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-tint: var(--primitives-color-wbc-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-opacity: var(--primitives-color-wbc-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-surface-pictogram-base: var(--primitives-color-wbc-hero-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--primitives-color-wbc-primary-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-hover-primary: var(--primitives-color-wbc-primary-400); /* This token is for hover states. */
+  --color-surface-active-primary: var(--primitives-color-wbc-primary-200);
+  --color-surface-hover-hero: var(--primitives-color-wbc-hero-400); /* This token is for hover states. */
+  --color-surface-active-hero: var(--primitives-color-wbc-hero-300); /* This token is for hover states. */
+  --color-surface-hover-primary-faint: var(--primitives-color-wbc-primary-50); /* This token is for hover states. */
+  --color-surface-active-primary-faint: var(--primitives-color-wbc-primary-100); /* This token is for hover states. */
+  --color-surface-hover-hero-faint: var(--primitives-color-wbc-hero-50);
+  --color-surface-active-hero-faint: var(--primitives-color-wbc-hero-100);
+  --color-surface-hover-muted-pale: var(--primitives-color-wbc-muted-100); /* This token is for hover states. */
+  --color-surface-active-muted-pale: var(--primitives-color-wbc-muted-300); /* This token is for hover states. */
   --color-surface-hover-mono: var(--primitives-color-mono-white); /* This token is for hover states. */
-  --color-surface-active-mono: var(--themes-westpac-color-muted-200); /* This token is for hover states. */
+  --color-surface-active-mono: var(--primitives-color-wbc-muted-200); /* This token is for hover states. */
   --border-rounded-none: var(--primitives-border-radius-0px);
   --border-rounded-sm: var(--primitives-border-radius-3px);
   --border-rounded-md: var(--primitives-border-radius-4px);
@@ -344,26 +261,26 @@
 }
 
 [data-brand="wbc"][data-theme="dark"] {
-  --color-background-white: var(--themes-westpac-color-muted-900); /* If you need a white background use this token */
-  --color-background-pale: var(--themes-westpac-color-muted-950); /* If you need a grey background use this token. Note: this token replaces the current Background colour style. */
-  --color-background-faint: var(--themes-westpac-color-muted-900); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */
-  --color-background-primary: var(--themes-westpac-color-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-background-hero: var(--themes-westpac-color-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-surface-muted-vivid: var(--themes-westpac-color-muted-50); /* Use for surfaces that need to be the same colour as body text (icons, arrows etc). */
-  --color-surface-muted: var(--themes-westpac-color-muted-400); /* Replaces the current Muted colour style. */
-  --color-surface-muted-strong: var(--themes-westpac-color-muted-600); /* Reserved do not use. */
-  --color-surface-muted-mild: var(--themes-westpac-color-muted-700); /* Reserved do not use. */
-  --color-surface-muted-soft: var(--themes-westpac-color-muted-800); /* Reserved do not use. */
-  --color-surface-muted-pale: var(--themes-westpac-color-muted-900); /* Replaces the current Background colour style. Tip: In light mode this colour is the same as background-pale however they behave differently in dark mode. */
-  --color-surface-muted-faint: var(--themes-westpac-color-muted-950); /* Replaces the current Light colour style. Tip: In light mode this colour is the same as background-faint however they each behave differently in dark mode. */
-  --color-surface-primary: var(--themes-westpac-color-primary-400); /* Replaces the current Primary colour style. */
-  --color-surface-primary-faint: var(--themes-westpac-color-primary-950); /* Reserved do not use. */
-  --color-surface-hero: var(--themes-westpac-color-hero-300); /* Replaces the current Hero colour style. */
-  --color-surface-hero-faint: var(--themes-westpac-color-hero-950); /* Reserved do not use. */
-  --color-surface-pop: var(--themes-westpac-color-pop-500); /* Replaces the current Pop colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
-  --color-surface-pop-faint: var(--themes-westpac-color-pop-950); /* Replaces the current Pop Light colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
-  --color-surface-holler: var(--themes-westpac-color-holler-400); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
-  --color-surface-holler-faint: var(--themes-westpac-color-holler-950); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-background-white: var(--primitives-color-wbc-muted-900); /* If you need a white background use this token */
+  --color-background-pale: var(--primitives-color-wbc-muted-950); /* If you need a grey background use this token. Note: this token replaces the current Background colour style. */
+  --color-background-faint: var(--primitives-color-wbc-muted-900); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */
+  --color-background-primary: var(--primitives-color-wbc-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--primitives-color-wbc-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--primitives-color-wbc-muted-50); /* Use for surfaces that need to be the same colour as body text (icons, arrows etc). */
+  --color-surface-muted: var(--primitives-color-wbc-muted-400); /* Replaces the current Muted colour style. */
+  --color-surface-muted-strong: var(--primitives-color-wbc-muted-600); /* Reserved do not use. */
+  --color-surface-muted-mild: var(--primitives-color-wbc-muted-700); /* Reserved do not use. */
+  --color-surface-muted-soft: var(--primitives-color-wbc-muted-800); /* Reserved do not use. */
+  --color-surface-muted-pale: var(--primitives-color-wbc-muted-900); /* Replaces the current Background colour style. Tip: In light mode this colour is the same as background-pale however they behave differently in dark mode. */
+  --color-surface-muted-faint: var(--primitives-color-wbc-muted-950); /* Replaces the current Light colour style. Tip: In light mode this colour is the same as background-faint however they each behave differently in dark mode. */
+  --color-surface-primary: var(--primitives-color-wbc-primary-400); /* Replaces the current Primary colour style. */
+  --color-surface-primary-faint: var(--primitives-color-wbc-primary-950); /* Reserved do not use. */
+  --color-surface-hero: var(--primitives-color-wbc-hero-300); /* Replaces the current Hero colour style. */
+  --color-surface-hero-faint: var(--primitives-color-wbc-hero-950); /* Reserved do not use. */
+  --color-surface-pop: var(--primitives-color-wbc-pop-500); /* Replaces the current Pop colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
+  --color-surface-pop-faint: var(--primitives-color-wbc-pop-950); /* Replaces the current Pop Light colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
+  --color-surface-holler: var(--primitives-color-wbc-holler-400); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-surface-holler-faint: var(--primitives-color-wbc-holler-950); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-surface-success: var(--primitives-color-success-400); /* Only use for success alert components, do not use for anything else. */
   --color-surface-success-faint: var(--primitives-color-success-900); /* Only use for success alert components, do not use for anything else. Note: this surface should always be used with border-success-mild as shown here. */
   --color-surface-info: var(--primitives-color-info-400); /* Only use for info alert components, do not use for anything else. */
@@ -376,13 +293,13 @@
   --color-surface-system-error-dark: var(--primitives-color-system-500); /* Only use for system alert components, do not use for anything else. */
   --color-surface-mono: var(--primitives-color-mono-black); /* White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode. */
   --color-surface-reversed: var(--primitives-color-mono-white); /* Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode. */
-  --color-text-body: var(--themes-westpac-color-muted-200); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
-  --color-text-heading: var(--themes-westpac-color-hero-200); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
-  --color-text-muted: var(--themes-westpac-color-muted-400); /* Use for text that requires less emphasis like hint text etc. */
-  --color-text-primary: var(--themes-westpac-color-primary-300); /* Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token. */
-  --color-text-hero: var(--themes-westpac-color-hero-200); /* Use for text that requires more emphasis, call outs, quotes etc. */
-  --color-text-holler: var(--themes-westpac-color-holler-300); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
-  --color-text-link: var(--themes-westpac-color-primary-300); /* Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands. */
+  --color-text-body: var(--primitives-color-wbc-muted-200); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
+  --color-text-heading: var(--primitives-color-wbc-hero-200); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
+  --color-text-muted: var(--primitives-color-wbc-muted-400); /* Use for text that requires less emphasis like hint text etc. */
+  --color-text-primary: var(--primitives-color-wbc-primary-300); /* Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token. */
+  --color-text-hero: var(--primitives-color-wbc-hero-200); /* Use for text that requires more emphasis, call outs, quotes etc. */
+  --color-text-holler: var(--primitives-color-wbc-holler-300); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-text-link: var(--primitives-color-wbc-primary-300); /* Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands. */
   --color-text-success: var(--primitives-color-success-300); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-text-info: var(--primitives-color-info-300); /* Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-text-warning: var(--primitives-color-warning-300); /* Only for warning alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
@@ -390,14 +307,14 @@
   --color-text-system-error: var(--primitives-color-system-500); /* Only for system error alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-text-mono: var(--primitives-color-mono-black); /* Similar to surface-mono, text-mono is white in light mode and black in dark mode. It’s typically used for UI elements like buttons, tabs, panel heading etc. */
   --color-text-reversed: var(--primitives-color-mono-white); /* Similar to surface-reversed, text-reversed is always white. Use with caution, in dark mode white creates too much contrast which defeats the object of reducing glare. Tip: Try using text-mono */
-  --color-border-muted: var(--themes-westpac-color-muted-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
-  --color-border-muted-strong: var(--themes-westpac-color-muted-500); /* Replaces the current Border Dark colour style. Use for UI components that require accessible contrast ratios eg. Inputs, Selects etc */
-  --color-border-muted-mild: var(--themes-westpac-color-muted-700); /* Reserved do not use. */
-  --color-border-muted-soft: var(--themes-westpac-color-muted-800); /* Replaces the current Border colour style. Use for UI components and page elements that don’t require accessible borders - Selectors, Flexi-cell, Tabs, section dividers etc */
-  --color-border-hero: var(--themes-westpac-color-hero-300); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
-  --color-border-primary: var(--themes-westpac-color-primary-400); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
-  --color-border-pop: var(--themes-westpac-color-pop-800); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
-  --color-border-holler: var(--themes-westpac-color-holler-400); /* For borders that require more emphasis. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-border-muted: var(--primitives-color-wbc-muted-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-muted-strong: var(--primitives-color-wbc-muted-500); /* Replaces the current Border Dark colour style. Use for UI components that require accessible contrast ratios eg. Inputs, Selects etc */
+  --color-border-muted-mild: var(--primitives-color-wbc-muted-700); /* Reserved do not use. */
+  --color-border-muted-soft: var(--primitives-color-wbc-muted-800); /* Replaces the current Border colour style. Use for UI components and page elements that don’t require accessible borders - Selectors, Flexi-cell, Tabs, section dividers etc */
+  --color-border-hero: var(--primitives-color-wbc-hero-300); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-primary: var(--primitives-color-wbc-primary-400); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-pop: var(--primitives-color-wbc-pop-800); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-holler: var(--primitives-color-wbc-holler-400); /* For borders that require more emphasis. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-border-success: var(--primitives-color-success-500); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-border-success-mild: var(--primitives-color-success-700); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-border-info: var(--primitives-color-info-500); /* Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
@@ -407,39 +324,39 @@
   --color-border-danger: var(--primitives-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
   --color-border-danger-mild: var(--primitives-color-danger-700); /* Only for danger alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-border-mono: var(--primitives-color-mono-black); /* Similar to surface-mono, border-mono is white in light mode and black in dark mode. */
-  --color-border-focus: var(--themes-westpac-color-holler-400); /* Reserved. Only for use with focus state keyboard navigation. */
-  --color-data-a-solid: var(--themes-westpac-color-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-a-tint: var(--themes-westpac-color-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-a-opacity: var(--themes-westpac-color-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-b-solid: var(--themes-westpac-color-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-b-tint: var(--themes-westpac-color-hero-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-b-opacity: var(--themes-westpac-color-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-c-solid: var(--themes-westpac-color-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-c-tint: var(--themes-westpac-color-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-c-opacity: var(--themes-westpac-color-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-d-solid: var(--themes-westpac-color-holler-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-d-tint: var(--themes-westpac-color-holler-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-d-opacity: var(--themes-westpac-color-holler-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-e-solid: var(--themes-westpac-color-sing-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-e-tint: var(--themes-westpac-color-sing-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-e-opacity: var(--themes-westpac-color-sing-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-f-solid: var(--themes-westpac-color-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-f-tint: var(--themes-westpac-color-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-f-opacity: var(--themes-westpac-color-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-surface-pictogram-base: var(--themes-westpac-color-hero-300); /* Reserved. Only for use on Pictograms. */
-  --color-surface-pictogram-accent: var(--themes-westpac-color-primary-600); /* Reserved. Only for use on Pictograms. */
-  --color-surface-hover-primary: var(--themes-westpac-color-primary-200); /* This token is for hover states. */
-  --color-surface-active-primary: var(--themes-westpac-color-primary-100);
-  --color-surface-hover-hero: var(--themes-westpac-color-hero-200); /* This token is for hover states. */
-  --color-surface-active-hero: var(--themes-westpac-color-hero-100); /* This token is for hover states. */
-  --color-surface-hover-primary-faint: var(--themes-westpac-color-primary-900); /* This token is for hover states. */
-  --color-surface-active-primary-faint: var(--themes-westpac-color-primary-800); /* This token is for hover states. */
-  --color-surface-hover-hero-faint: var(--themes-westpac-color-hero-800);
-  --color-surface-active-hero-faint: var(--themes-westpac-color-hero-400);
-  --color-surface-hover-muted-pale: var(--themes-westpac-color-muted-800); /* This token is for hover states. */
-  --color-surface-active-muted-pale: var(--themes-westpac-color-muted-600); /* This token is for hover states. */
+  --color-border-focus: var(--primitives-color-wbc-holler-400); /* Reserved. Only for use with focus state keyboard navigation. */
+  --color-data-a-solid: var(--primitives-color-wbc-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-tint: var(--primitives-color-wbc-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-opacity: var(--primitives-color-wbc-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-solid: var(--primitives-color-wbc-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-tint: var(--primitives-color-wbc-hero-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-opacity: var(--primitives-color-wbc-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-solid: var(--primitives-color-wbc-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-tint: var(--primitives-color-wbc-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-opacity: var(--primitives-color-wbc-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-solid: var(--primitives-color-wbc-holler-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-tint: var(--primitives-color-wbc-holler-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-opacity: var(--primitives-color-wbc-holler-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-solid: var(--primitives-color-wbc-sing-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-tint: var(--primitives-color-wbc-sing-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-opacity: var(--primitives-color-wbc-sing-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-solid: var(--primitives-color-wbc-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-tint: var(--primitives-color-wbc-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-opacity: var(--primitives-color-wbc-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-surface-pictogram-base: var(--primitives-color-wbc-hero-300); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--primitives-color-wbc-primary-600); /* Reserved. Only for use on Pictograms. */
+  --color-surface-hover-primary: var(--primitives-color-wbc-primary-200); /* This token is for hover states. */
+  --color-surface-active-primary: var(--primitives-color-wbc-primary-100);
+  --color-surface-hover-hero: var(--primitives-color-wbc-hero-200); /* This token is for hover states. */
+  --color-surface-active-hero: var(--primitives-color-wbc-hero-100); /* This token is for hover states. */
+  --color-surface-hover-primary-faint: var(--primitives-color-wbc-primary-900); /* This token is for hover states. */
+  --color-surface-active-primary-faint: var(--primitives-color-wbc-primary-800); /* This token is for hover states. */
+  --color-surface-hover-hero-faint: var(--primitives-color-wbc-hero-800);
+  --color-surface-active-hero-faint: var(--primitives-color-wbc-hero-400);
+  --color-surface-hover-muted-pale: var(--primitives-color-wbc-muted-800); /* This token is for hover states. */
+  --color-surface-active-muted-pale: var(--primitives-color-wbc-muted-600); /* This token is for hover states. */
   --color-surface-hover-mono: var(--primitives-color-mono-black); /* This token is for hover states. */
-  --color-surface-active-mono: var(--themes-westpac-color-muted-800); /* This token is for hover states. */
+  --color-surface-active-mono: var(--primitives-color-wbc-muted-800); /* This token is for hover states. */
   --border-rounded-none: var(--primitives-border-radius-0px);
   --border-rounded-sm: var(--primitives-border-radius-3px);
   --border-rounded-md: var(--primitives-border-radius-4px);

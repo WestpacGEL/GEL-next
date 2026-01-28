@@ -822,46 +822,27 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
 // ==============================
 
 /**
- * Prefixes token values with either "Primitives" or "Themes.<brandName>".
+ * Prefixes token values with "Primitives".
  */
 function applyValuePrefix(tokenProps, brandName) {
-  // Detect if the reference is to Primitives or Themes
-  // Primitives have brand codes (WBC, STG, BOM, BSA) or special groups (mono, reserved)
-  // Themes have direct semantic names (muted, primary, hero, etc.)
   const valueStr = tokenProps.$value;
   
-  let prefix;
-  if (tokenProps.$collectionName === 'Primitives') {
-    prefix = 'Primitives';
-  } else if (valueStr.includes('{')) {
-    // Parse the reference path to determine collection
-    const pathMatch = valueStr.match(/\{([^}]+)\}/);
-    if (pathMatch) {
-      const path = pathMatch[1];
-      const parts = path.split('.');
-      
-      // Check if this references a primitive collection
-      // Primitives: color.WBC.*, color.STG.*, color.BOM.*, color.BSA.*, color.mono.*, color.reserved.*, border.*
-      if (parts.length >= 2) {
-        const isPrimitive = 
-          ['WBC', 'STG', 'BOM', 'BSA', 'mono', 'reserved'].includes(parts[1]) ||
-          parts[0] === 'border';
-        
-        prefix = isPrimitive ? 'Primitives' : `Themes.${brandName}`;
-      } else {
-        prefix = `Themes.${brandName}`;
-      }
-    } else {
-      prefix = `Themes.${brandName}`;
-    }
-  } else {
-    prefix = `Themes.${brandName}`;
+  // All references should now point to Primitives since Themes section is removed
+  let prefix = 'Primitives';
+
+  // Apply brand-specific token replacement
+  let updatedValue = valueStr;
+  
+  // Replace WBC color references with the current brand for non-WBC brands
+  if (brandName && brandName.toUpperCase() !== 'WBC') {
+    // Replace {color.WBC. with {color.{BRAND}. (uppercase brand names in tokens)
+    updatedValue = updatedValue.replace(/\{color\.WBC\./g, `{color.${brandName.toUpperCase()}.`);
   }
 
   return {
     ...tokenProps,
     $type: tokenProps.$type === 'float' ? 'dimension' : tokenProps.$type,
-    $value: valueStr.replace(/\{/g, `{${prefix}.`),
+    $value: updatedValue.replace(/\{/g, `{${prefix}.`),
   };
 }
 
@@ -882,24 +863,6 @@ function normalizeTokenGroup(group, brandName) {
 }
 
 /**
- * Processes theme tokens for a given brand.
- */
-function processThemeModes(brandModes, brandName) {
-  delete brandModes.misc;
-  return Object.fromEntries(
-    Object.entries(brandModes).map(([propGroup, categories]) => [
-      propGroup,
-      Object.fromEntries(
-        Object.entries(categories).map(([categoryName, tokens]) => [
-          categoryName,
-          normalizeTokenGroup(tokens, brandName),
-        ]),
-      ),
-    ]),
-  );
-}
-
-/**
  * Processes the "Tokens" section for all brands.
  */
 function processTokensSection(tokenSection, brands) {
@@ -907,13 +870,16 @@ function processTokensSection(tokenSection, brands) {
   // We need to convert this to brand-based structure for compatibility
   const result = {};
   
-  brands.forEach(brandName => {
-    result[brandName] = {};
+  brands.forEach(brand => {
+    const themeName = brand.themeName;
+    const primitiveName = brand.primitiveName;
+    
+    result[themeName] = {};
     
     Object.entries(tokenSection.modes).forEach(([modeName, groups]) => {
       const normalizedMode = modeName.replace(/\s+/g, '-').toLowerCase();
       
-      result[brandName][normalizedMode] = Object.fromEntries(
+      result[themeName][normalizedMode] = Object.fromEntries(
         // Skip "misc" group as they are figma related tokens
         Object.entries(groups)
           .filter(([propGroup]) => propGroup !== 'misc')
@@ -925,7 +891,7 @@ function processTokensSection(tokenSection, brands) {
                 Object.fromEntries(
                   Object.entries(tokens).map(([tokenName, tokenValue]) => [
                     tokenName,
-                    applyValuePrefix(tokenValue, brandName),
+                    applyValuePrefix(tokenValue, primitiveName),
                   ]),
                 ),
               ]),
@@ -942,20 +908,16 @@ function processTokensSection(tokenSection, brands) {
  * Merges all token definitions into a resolved token tree.
  */
 function mergeTokens(tokens) {
-  const brands = Object.keys(tokens.find(t => t.Themes).Themes.modes);
+  // Get brands from the constants - using both themeName and primitiveName
+  const brands = BRANDS.map(b => ({
+    themeName: b.themeName,
+    primitiveName: b.primitiveName
+  }));
 
   return tokens.reduce((acc, current) => {
     if (current.Primitives) {
       // Primitives no longer has modes wrapper, use directly
       acc.Primitives = { ...current.Primitives };
-    }
-    if (current.Themes) {
-      acc.Themes = Object.fromEntries(
-        Object.entries(current.Themes.modes).map(([brandName, brandModes]) => [
-          brandName,
-          processThemeModes(brandModes, brandName),
-        ]),
-      );
     }
     if (current.Tokens) {
       acc.Tokens = processTokensSection(current.Tokens, brands);
@@ -998,11 +960,11 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
       color: {
         mono: tokens.Primitives.color.mono,  // Include shared mono colors
         reserved: tokens.Primitives.color.reserved,  // Include shared reserved colors
-        [primitiveName]: tokens.Primitives.color[primitiveName],  // Include brand-specific colors
+        // Include only the specific brand's primitives (no longer need all brands due to token replacement)
+        [primitiveName]: tokens.Primitives.color[primitiveName],
       },
     },
     Tokens: tokens.Tokens[themeName],
-    Themes: { [themeName]: tokens.Themes[themeName] },
   };
 }
 

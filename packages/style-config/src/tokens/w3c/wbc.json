@@ -1244,7 +1244,7 @@
           "background-white": {
             "$type": "color",
             "$value": "{Primitives.color.mono.white}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1252,8 +1252,8 @@
           },
           "background-pale": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.100}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.100}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1261,8 +1261,8 @@
           },
           "background-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.50}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.50}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1270,8 +1270,8 @@
           },
           "background-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1280,8 +1280,8 @@
           },
           "background-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1292,8 +1292,8 @@
         "surface": {
           "surface-muted-vivid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.950}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.950}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1301,8 +1301,8 @@
           },
           "surface-muted": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1310,8 +1310,8 @@
           },
           "surface-muted-strong": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1319,8 +1319,8 @@
           },
           "surface-muted-mild": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1328,8 +1328,8 @@
           },
           "surface-muted-soft": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1337,8 +1337,8 @@
           },
           "surface-muted-pale": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.100}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.100}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1346,8 +1346,8 @@
           },
           "surface-muted-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.50}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.50}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1355,8 +1355,8 @@
           },
           "surface-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1364,8 +1364,8 @@
           },
           "surface-primary-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.50}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.50}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1373,8 +1373,8 @@
           },
           "surface-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1382,8 +1382,8 @@
           },
           "surface-hero-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.50}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.50}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1391,8 +1391,8 @@
           },
           "surface-pop": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1400,8 +1400,8 @@
           },
           "surface-pop-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.50}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.50}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1409,8 +1409,8 @@
           },
           "surface-holler": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1418,8 +1418,8 @@
           },
           "surface-holler-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.50}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.50}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1428,7 +1428,7 @@
           "surface-success": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.success.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1437,7 +1437,7 @@
           "surface-success-faint": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.success.50}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1446,7 +1446,7 @@
           "surface-info": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.info.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1455,7 +1455,7 @@
           "surface-info-faint": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.info.50}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1464,7 +1464,7 @@
           "surface-warning": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.warning.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1473,7 +1473,7 @@
           "surface-warning-faint": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.warning.50}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1482,7 +1482,7 @@
           "surface-danger": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.danger.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1491,7 +1491,7 @@
           "surface-danger-faint": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.danger.50}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1500,7 +1500,7 @@
           "surface-system-error": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.system.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1509,7 +1509,7 @@
           "surface-system-error-dark": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.system.950}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1518,7 +1518,7 @@
           "surface-mono": {
             "$type": "color",
             "$value": "{Primitives.color.mono.white}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1527,7 +1527,7 @@
           "surface-reversed": {
             "$type": "color",
             "$value": "{Primitives.color.mono.white}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1537,8 +1537,8 @@
         "text": {
           "text-body": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.950}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.950}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1546,8 +1546,8 @@
           },
           "text-heading": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1555,8 +1555,8 @@
           },
           "text-muted": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1564,8 +1564,8 @@
           },
           "text-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1573,8 +1573,8 @@
           },
           "text-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1582,8 +1582,8 @@
           },
           "text-holler": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1591,8 +1591,8 @@
           },
           "text-link": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1601,7 +1601,7 @@
           "text-success": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.success.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1610,7 +1610,7 @@
           "text-info": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.info.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1619,7 +1619,7 @@
           "text-warning": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.warning.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1628,7 +1628,7 @@
           "text-danger": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.danger.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1637,7 +1637,7 @@
           "text-system-error": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.system.950}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1646,7 +1646,7 @@
           "text-mono": {
             "$type": "color",
             "$value": "{Primitives.color.mono.white}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1655,7 +1655,7 @@
           "text-reversed": {
             "$type": "color",
             "$value": "{Primitives.color.mono.white}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1665,8 +1665,8 @@
         "border": {
           "border-muted": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1674,8 +1674,8 @@
           },
           "border-muted-strong": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1683,8 +1683,8 @@
           },
           "border-muted-mild": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1692,8 +1692,8 @@
           },
           "border-muted-soft": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1701,8 +1701,8 @@
           },
           "border-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1710,8 +1710,8 @@
           },
           "border-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1719,8 +1719,8 @@
           },
           "border-pop": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1728,8 +1728,8 @@
           },
           "border-holler": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1738,7 +1738,7 @@
           "border-success": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.success.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1747,7 +1747,7 @@
           "border-success-mild": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.success.300}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1756,7 +1756,7 @@
           "border-info": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.info.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1765,7 +1765,7 @@
           "border-info-mild": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.info.300}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1774,7 +1774,7 @@
           "border-warning": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.warning.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1783,7 +1783,7 @@
           "border-warning-mild": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.warning.300}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1792,7 +1792,7 @@
           "border-danger": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.danger.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1801,7 +1801,7 @@
           "border-danger-mild": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.danger.300}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1810,7 +1810,7 @@
           "border-mono": {
             "$type": "color",
             "$value": "{Primitives.color.mono.white}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1818,8 +1818,8 @@
           },
           "border-focus": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1829,8 +1829,8 @@
         "data": {
           "data-a-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1838,8 +1838,8 @@
           },
           "data-a-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1847,8 +1847,8 @@
           },
           "data-a-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1856,8 +1856,8 @@
           },
           "data-b-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1865,8 +1865,8 @@
           },
           "data-b-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1874,8 +1874,8 @@
           },
           "data-b-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1883,8 +1883,8 @@
           },
           "data-c-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1892,8 +1892,8 @@
           },
           "data-c-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1901,8 +1901,8 @@
           },
           "data-c-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1910,8 +1910,8 @@
           },
           "data-d-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1919,8 +1919,8 @@
           },
           "data-d-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1928,8 +1928,8 @@
           },
           "data-d-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1937,8 +1937,8 @@
           },
           "data-e-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.sing.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.sing.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1946,8 +1946,8 @@
           },
           "data-e-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.sing.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.sing.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1955,8 +1955,8 @@
           },
           "data-e-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.sing.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.sing.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1964,8 +1964,8 @@
           },
           "data-f-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.dance.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.dance.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1973,8 +1973,8 @@
           },
           "data-f-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.dance.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.dance.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1982,8 +1982,8 @@
           },
           "data-f-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.dance.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.dance.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -1993,8 +1993,8 @@
         "pictogram": {
           "surface-pictogram-base": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2002,8 +2002,8 @@
           },
           "surface-pictogram-accent": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2013,8 +2013,8 @@
         "state": {
           "surface-hover-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2023,8 +2023,8 @@
           },
           "surface-active-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2032,8 +2032,8 @@
           },
           "surface-hover-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2042,8 +2042,8 @@
           },
           "surface-active-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2052,8 +2052,8 @@
           },
           "surface-hover-primary-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.50}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.50}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2062,8 +2062,8 @@
           },
           "surface-active-primary-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.100}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.100}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2072,8 +2072,8 @@
           },
           "surface-hover-hero-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.50}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.50}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2081,8 +2081,8 @@
           },
           "surface-active-hero-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.100}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.100}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2090,8 +2090,8 @@
           },
           "surface-hover-muted-pale": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.100}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.100}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2100,8 +2100,8 @@
           },
           "surface-active-muted-pale": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2111,7 +2111,7 @@
           "surface-hover-mono": {
             "$type": "color",
             "$value": "{Primitives.color.mono.white}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2120,8 +2120,8 @@
           },
           "surface-active-mono": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2135,7 +2135,7 @@
           "rounded-none": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.0px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -2143,7 +2143,7 @@
           "rounded-sm": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.3px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -2151,7 +2151,7 @@
           "rounded-md": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.4px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -2159,7 +2159,7 @@
           "rounded-lg": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.5px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -2167,7 +2167,7 @@
           "rounded-xl": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.6px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -2175,7 +2175,7 @@
           "rounded-2xl": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.8px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -2183,7 +2183,7 @@
           "rounded-3xl": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.12px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -2191,7 +2191,7 @@
           "rounded-4xl": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.16px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -2199,7 +2199,7 @@
           "rounded-5xl": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.24px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -2207,7 +2207,7 @@
           "rounded-full": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.999px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -2220,8 +2220,8 @@
         "background": {
           "background-white": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.900}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.900}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2229,8 +2229,8 @@
           },
           "background-pale": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.950}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.950}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2238,8 +2238,8 @@
           },
           "background-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.900}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.900}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2247,8 +2247,8 @@
           },
           "background-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2257,8 +2257,8 @@
           },
           "background-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2269,8 +2269,8 @@
         "surface": {
           "surface-muted-vivid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.50}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.50}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2278,8 +2278,8 @@
           },
           "surface-muted": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2287,8 +2287,8 @@
           },
           "surface-muted-strong": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.600}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.600}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2296,8 +2296,8 @@
           },
           "surface-muted-mild": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.700}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.700}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2305,8 +2305,8 @@
           },
           "surface-muted-soft": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.800}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.800}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2314,8 +2314,8 @@
           },
           "surface-muted-pale": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.900}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.900}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2323,8 +2323,8 @@
           },
           "surface-muted-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.950}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.950}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2332,8 +2332,8 @@
           },
           "surface-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2341,8 +2341,8 @@
           },
           "surface-primary-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.950}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.950}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2350,8 +2350,8 @@
           },
           "surface-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2359,8 +2359,8 @@
           },
           "surface-hero-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.950}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.950}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2368,8 +2368,8 @@
           },
           "surface-pop": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2377,8 +2377,8 @@
           },
           "surface-pop-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.950}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.950}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2386,8 +2386,8 @@
           },
           "surface-holler": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2395,8 +2395,8 @@
           },
           "surface-holler-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.950}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.950}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2405,7 +2405,7 @@
           "surface-success": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.success.400}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2414,7 +2414,7 @@
           "surface-success-faint": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.success.900}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2423,7 +2423,7 @@
           "surface-info": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.info.400}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2432,7 +2432,7 @@
           "surface-info-faint": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.info.900}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2441,7 +2441,7 @@
           "surface-warning": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.warning.400}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2450,7 +2450,7 @@
           "surface-warning-faint": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.warning.900}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2459,7 +2459,7 @@
           "surface-danger": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.danger.300}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2468,7 +2468,7 @@
           "surface-danger-faint": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.warning.900}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2477,7 +2477,7 @@
           "surface-system-error": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.system.950}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2486,7 +2486,7 @@
           "surface-system-error-dark": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.system.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2495,7 +2495,7 @@
           "surface-mono": {
             "$type": "color",
             "$value": "{Primitives.color.mono.black}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2504,7 +2504,7 @@
           "surface-reversed": {
             "$type": "color",
             "$value": "{Primitives.color.mono.white}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2514,8 +2514,8 @@
         "text": {
           "text-body": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2523,8 +2523,8 @@
           },
           "text-heading": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2532,8 +2532,8 @@
           },
           "text-muted": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2541,8 +2541,8 @@
           },
           "text-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2550,8 +2550,8 @@
           },
           "text-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2559,8 +2559,8 @@
           },
           "text-holler": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2568,8 +2568,8 @@
           },
           "text-link": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2578,7 +2578,7 @@
           "text-success": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.success.300}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2587,7 +2587,7 @@
           "text-info": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.info.300}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2596,7 +2596,7 @@
           "text-warning": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.warning.300}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2605,7 +2605,7 @@
           "text-danger": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.danger.300}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2614,7 +2614,7 @@
           "text-system-error": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.system.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2623,7 +2623,7 @@
           "text-mono": {
             "$type": "color",
             "$value": "{Primitives.color.mono.black}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2632,7 +2632,7 @@
           "text-reversed": {
             "$type": "color",
             "$value": "{Primitives.color.mono.white}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2642,8 +2642,8 @@
         "border": {
           "border-muted": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2651,8 +2651,8 @@
           },
           "border-muted-strong": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2660,8 +2660,8 @@
           },
           "border-muted-mild": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.700}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.700}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2669,8 +2669,8 @@
           },
           "border-muted-soft": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.800}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.800}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2678,8 +2678,8 @@
           },
           "border-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2687,8 +2687,8 @@
           },
           "border-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2696,8 +2696,8 @@
           },
           "border-pop": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.800}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.800}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2705,8 +2705,8 @@
           },
           "border-holler": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2715,7 +2715,7 @@
           "border-success": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.success.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2724,7 +2724,7 @@
           "border-success-mild": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.success.700}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2733,7 +2733,7 @@
           "border-info": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.info.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2742,7 +2742,7 @@
           "border-info-mild": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.info.700}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2751,7 +2751,7 @@
           "border-warning": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.warning.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2760,7 +2760,7 @@
           "border-warning-mild": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.warning.700}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2769,7 +2769,7 @@
           "border-danger": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.danger.500}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2778,7 +2778,7 @@
           "border-danger-mild": {
             "$type": "color",
             "$value": "{Primitives.color.reserved.danger.700}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2787,7 +2787,7 @@
           "border-mono": {
             "$type": "color",
             "$value": "{Primitives.color.mono.black}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2795,8 +2795,8 @@
           },
           "border-focus": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2806,8 +2806,8 @@
         "data": {
           "data-a-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2815,8 +2815,8 @@
           },
           "data-a-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2824,8 +2824,8 @@
           },
           "data-a-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2833,8 +2833,8 @@
           },
           "data-b-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2842,8 +2842,8 @@
           },
           "data-b-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2851,8 +2851,8 @@
           },
           "data-b-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2860,8 +2860,8 @@
           },
           "data-c-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2869,8 +2869,8 @@
           },
           "data-c-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2878,8 +2878,8 @@
           },
           "data-c-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.pop.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.pop.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2887,8 +2887,8 @@
           },
           "data-d-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2896,8 +2896,8 @@
           },
           "data-d-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2905,8 +2905,8 @@
           },
           "data-d-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.holler.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.holler.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2914,8 +2914,8 @@
           },
           "data-e-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.sing.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.sing.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2923,8 +2923,8 @@
           },
           "data-e-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.sing.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.sing.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2932,8 +2932,8 @@
           },
           "data-e-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.sing.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.sing.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2941,8 +2941,8 @@
           },
           "data-f-solid": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.dance.500}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.dance.500}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2950,8 +2950,8 @@
           },
           "data-f-tint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.dance.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.dance.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2959,8 +2959,8 @@
           },
           "data-f-opacity": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.dance.opacity}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.dance.opacity}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2970,8 +2970,8 @@
         "pictogram": {
           "surface-pictogram-base": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.300}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.300}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2979,8 +2979,8 @@
           },
           "surface-pictogram-accent": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.600}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.600}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -2990,8 +2990,8 @@
         "state": {
           "surface-hover-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3000,8 +3000,8 @@
           },
           "surface-active-primary": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.100}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.100}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3009,8 +3009,8 @@
           },
           "surface-hover-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.200}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.200}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3019,8 +3019,8 @@
           },
           "surface-active-hero": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.100}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.100}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3029,8 +3029,8 @@
           },
           "surface-hover-primary-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.900}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.900}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3039,8 +3039,8 @@
           },
           "surface-active-primary-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.primary.800}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.primary.800}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3049,8 +3049,8 @@
           },
           "surface-hover-hero-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.800}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.800}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3058,8 +3058,8 @@
           },
           "surface-active-hero-faint": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.hero.400}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.hero.400}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3067,8 +3067,8 @@
           },
           "surface-hover-muted-pale": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.800}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.800}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3077,8 +3077,8 @@
           },
           "surface-active-muted-pale": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.600}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.600}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3088,7 +3088,7 @@
           "surface-hover-mono": {
             "$type": "color",
             "$value": "{Primitives.color.mono.black}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3097,8 +3097,8 @@
           },
           "surface-active-mono": {
             "$type": "color",
-            "$value": "{Themes.Westpac.color.muted.800}",
-            "$collectionName": "Themes",
+            "$value": "{Primitives.color.WBC.muted.800}",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ],
@@ -3112,7 +3112,7 @@
           "rounded-none": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.0px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -3120,7 +3120,7 @@
           "rounded-sm": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.3px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -3128,7 +3128,7 @@
           "rounded-md": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.4px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -3136,7 +3136,7 @@
           "rounded-lg": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.5px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -3144,7 +3144,7 @@
           "rounded-xl": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.6px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -3152,7 +3152,7 @@
           "rounded-2xl": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.8px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -3160,7 +3160,7 @@
           "rounded-3xl": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.12px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -3168,7 +3168,7 @@
           "rounded-4xl": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.16px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -3176,7 +3176,7 @@
           "rounded-5xl": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.24px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
@@ -3184,777 +3184,10 @@
           "rounded-full": {
             "$type": "dimension",
             "$value": "{Primitives.border.radius.999px}",
-            "$collectionName": "Themes",
+            "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
             ]
-          }
-        }
-      }
-    }
-  },
-  "Themes": {
-    "Westpac": {
-      "color": {
-        "muted": {
-          "50": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.muted.50}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "100": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.muted.100}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "200": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.muted.200}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "300": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.muted.300}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "400": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.muted.400}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "500": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.muted.500}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "600": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.muted.600}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "700": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.muted.700}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "800": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.muted.800}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "900": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.muted.900}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "950": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.muted.950}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          }
-        },
-        "primary": {
-          "50": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.50}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "100": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.100}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "200": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.200}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "300": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.300}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "400": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.400}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "500": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.500}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "600": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.600}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "700": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.700}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "800": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.800}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "900": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.900}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "950": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.950}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "opacity": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.primary.opacity}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          }
-        },
-        "hero": {
-          "50": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.50}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "100": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.100}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "200": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.200}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "300": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.300}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "400": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.400}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "500": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.500}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "600": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.600}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "700": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.700}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "800": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.800}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "900": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.900}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "950": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.950}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "opacity": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.hero.opacity}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          }
-        },
-        "pop": {
-          "50": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.50}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "100": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.100}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "200": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.200}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "300": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.300}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "400": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.400}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "500": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.500}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "600": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.600}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "700": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.700}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "800": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.800}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "900": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.900}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "950": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.950}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "opacity": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.pop.opacity}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          }
-        },
-        "holler": {
-          "50": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.50}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "100": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.100}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "200": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.200}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "300": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.300}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "400": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.400}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "500": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.500}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "600": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.600}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "700": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.700}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "800": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.800}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "900": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.900}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "950": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.950}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "opacity": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.holler.opacity}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          }
-        },
-        "sing": {
-          "50": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.50}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "100": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.100}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "200": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.200}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "300": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.300}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "400": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.400}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "500": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.500}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "600": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.600}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "700": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.700}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "800": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.800}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "900": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.900}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "950": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.950}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "opacity": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.sing.opacity}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          }
-        },
-        "dance": {
-          "50": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.50}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "100": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.100}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "200": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.200}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "300": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.300}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "400": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.400}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "500": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.500}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "600": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.600}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "700": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.700}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "800": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.800}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "900": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.900}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "950": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.950}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
-          },
-          "opacity": {
-            "$type": "color",
-            "$value": "{Primitives.color.WBC.dance.opacity}",
-            "$collectionName": "Primitives",
-            "$scopes": [
-              "ALL_SCOPES"
-            ],
-            "$hiddenFromPublishing": true
           }
         }
       }
