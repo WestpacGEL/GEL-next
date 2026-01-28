@@ -9,7 +9,7 @@
   <color name="bsaBackgroundFaint">#f9f9fa</color>
   <color name="bsaBackgroundPrimary">#d81b2b</color>
   <color name="bsaBackgroundHero">#002f6c</color>
-  <color name="bsaSurfaceMutedVivid">#323238</color>
+  <color name="bsaSurfaceMutedVivid">#161619</color>
   <color name="bsaSurfaceMuted">#706f7c</color>
   <color name="bsaSurfaceMutedStrong">#8e8d98</color>
   <color name="bsaSurfaceMutedMild">#b6b6bc</color>
@@ -36,7 +36,7 @@
   <color name="bsaSurfaceSystemErrorDark">#404000</color>
   <color name="bsaSurfaceMono">#ffffff</color>
   <color name="bsaSurfaceReversed">#ffffff</color>
-  <color name="bsaTextBody">#323238</color>
+  <color name="bsaTextBody">#161619</color>
   <color name="bsaTextHeading">#002f6c</color>
   <color name="bsaTextMuted">#706f7c</color>
   <color name="bsaTextPrimary">#d81b2b</color>
@@ -87,7 +87,7 @@
   <color name="bsaDataFTint">#faba70</color>
   <color name="bsaDataFOpacity">#f7921e80</color>
   <color name="bsaSurfacePictogramBase">#002f6c</color>
-  <color name="bsaSurfacePictogramAccent">#00adbd</color>
+  <color name="bsaSurfacePictogramAccent">#d81b2b</color>
   <color name="bsaSurfaceHoverPrimary">#ed1f30</color>
   <color name="bsaSurfaceActivePrimary">#f96a6f</color>
   <color name="bsaSurfaceHoverHero">#1050a2</color>

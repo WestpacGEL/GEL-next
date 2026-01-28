@@ -13,23 +13,10 @@
     {{/each}}
   }
 
-  /* Token definitions  */
-  [data-brand] {
-      {{#each light}}
-      --{{@key}}: {{this}};
+  /* Tailwind theme variables  */
+  @theme inline static {
+      {{#each tailwindTokens}}
+      --color-{{@key}}: var(--{{@key}});
       {{/each}}
-
-      @variant dark {
-        {{#each dark}}
-        --{{@key}}: {{this}};
-        {{/each}}
-      }
     }
-}
-
-/* Tailwind theme variables  */
-@theme inline static {
-    {{#each light}}
-    --color-{{@key}}: var(--{{@key}});
-    {{/each}}
 }

@@ -9,7 +9,7 @@
   <color name="bomBackgroundFaint">#fbfbfd</color>
   <color name="bomBackgroundPrimary">#d13900</color>
   <color name="bomBackgroundHero">#534891</color>
-  <color name="bomSurfaceMutedVivid">#20024e</color>
+  <color name="bomSurfaceMutedVivid">#161619</color>
   <color name="bomSurfaceMuted">#706f7c</color>
   <color name="bomSurfaceMutedStrong">#8e8d98</color>
   <color name="bomSurfaceMutedMild">#b6b6bc</color>
@@ -36,7 +36,7 @@
   <color name="bomSurfaceSystemErrorDark">#404000</color>
   <color name="bomSurfaceMono">#ffffff</color>
   <color name="bomSurfaceReversed">#ffffff</color>
-  <color name="bomTextBody">#20024e</color>
+  <color name="bomTextBody">#161619</color>
   <color name="bomTextHeading">#534891</color>
   <color name="bomTextMuted">#706f7c</color>
   <color name="bomTextPrimary">#d13900</color>
@@ -87,7 +87,7 @@
   <color name="bomDataFTint">#ff6244</color>
   <color name="bomDataFOpacity">#9e2a0080</color>
   <color name="bomSurfacePictogramBase">#534891</color>
-  <color name="bomSurfacePictogramAccent">#a094fc</color>
+  <color name="bomSurfacePictogramAccent">#d13900</color>
   <color name="bomSurfaceHoverPrimary">#e43f00</color>
   <color name="bomSurfaceActivePrimary">#ff7c6a</color>
   <color name="bomSurfaceHoverHero">#685ac0</color>

@@ -31,7 +31,7 @@
   <color name="bsaSurfaceWarning">#ce5826</color>
   <color name="bsaSurfaceWarningFaint">#4f1800</color>
   <color name="bsaSurfaceDanger">#db6363</color>
-  <color name="bsaSurfaceDangerFaint">#4e0000</color>
+  <color name="bsaSurfaceDangerFaint">#4f1800</color>
   <color name="bsaSurfaceSystemError">#404000</color>
   <color name="bsaSurfaceSystemErrorDark">#ffff00</color>
   <color name="bsaSurfaceMono">#000000</color>
@@ -87,7 +87,7 @@
   <color name="bsaDataFTint">#faba70</color>
   <color name="bsaDataFOpacity">#f7921e80</color>
   <color name="bsaSurfacePictogramBase">#2574da</color>
-  <color name="bsaSurfacePictogramAccent">#09d9ec</color>
+  <color name="bsaSurfacePictogramAccent">#b61523</color>
   <color name="bsaSurfaceHoverPrimary">#f96a6f</color>
   <color name="bsaSurfaceActivePrimary">#fccbcc</color>
   <color name="bsaSurfaceHoverHero">#4c8de1</color>

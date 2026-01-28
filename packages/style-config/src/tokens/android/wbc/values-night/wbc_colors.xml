@@ -31,7 +31,7 @@
   <color name="wbcSurfaceWarning">#ce5826</color>
   <color name="wbcSurfaceWarningFaint">#4f1800</color>
   <color name="wbcSurfaceDanger">#db6363</color>
-  <color name="wbcSurfaceDangerFaint">#4e0000</color>
+  <color name="wbcSurfaceDangerFaint">#4f1800</color>
   <color name="wbcSurfaceSystemError">#404000</color>
   <color name="wbcSurfaceSystemErrorDark">#ffff00</color>
   <color name="wbcSurfaceMono">#000000</color>
