@@ -127,7 +127,7 @@ function deepMerge(target, source) {
 
 /**
  * Resolve variable value (handle aliases)
- * For Token collections, convert Primitive references to Theme references
+ * Tokens reference Primitives directly
  */
 function resolveValue(valueData, variablesMap, resolvedType, isTokenCollection = false) {
   if (valueData.type === 'VARIABLE_ALIAS') {
@@ -136,12 +136,12 @@ function resolveValue(valueData, variablesMap, resolvedType, isTokenCollection =
       // Return alias reference in curly braces
       let refPath = parseVariableName(referencedVar.name).join('.');
       
-      // If this is a Token collection referencing a Primitive, convert to Theme reference
-      // e.g., color.WBC.primary.500 -> color.primary.500
+      // Note: isTokenCollection parameter is maintained for future flexibility
+      // but all references go directly to Primitives
       if (isTokenCollection) {
         const parts = refPath.split('.');
         if (parts.length >= 3 && ['WBC', 'STG', 'BOM', 'BSA'].includes(parts[1])) {
-          // Remove the brand code to make it a Theme reference
+          // Remove the brand code to make it a direct Primitive reference
           parts.splice(1, 1);
           refPath = parts.join('.');
         }
@@ -203,61 +203,6 @@ function getFigmaType(resolvedType) {
 }
 
 /**
- * Transform a single variable collection
- */
-function transformCollection(collection, variablesMap) {
-  const result = {
-    modes: {}
-  };
-  
-  // Process each mode
-  collection.modes.forEach(mode => {
-    let modeData = {};
-    
-    // Get all variables for this collection
-    const collectionVars = collection.variableIds
-      .map(varId => variablesMap[varId])
-      .filter(v => v != null);
-    
-    // Process each variable
-    collectionVars.forEach(variable => {
-      const pathParts = parseVariableName(variable.name);
-      const valueData = variable.valuesByMode[mode.modeId];
-      
-      if (valueData === undefined || valueData === null) return;
-      
-      const value = resolveValue(valueData, variablesMap, variable.resolvedType);
-      if (value === null) return;
-      
-      const tokenValue = {
-        $type: getFigmaType(variable.resolvedType),
-        $value: value
-      };
-      
-      // Add optional properties
-      if (variable.scopes && variable.scopes.length > 0) {
-        tokenValue.$scopes = ['ALL_SCOPES'];
-      }
-      
-      if (variable.hiddenFromPublishing) {
-        tokenValue.$hiddenFromPublishing = true;
-      }
-      
-      if (variable.description) {
-        tokenValue.$description = variable.description;
-      }
-      
-      const nested = pathToNestedObject(pathParts, tokenValue);
-      modeData = deepMerge(modeData, nested);
-    });
-    
-    result.modes[mode.name] = modeData;
-  });
-  
-  return result;
-}
-
-/**
  * Main transformation function
  */
 function transformFigmaRestResponse(figmaData) {
@@ -265,31 +210,58 @@ function transformFigmaRestResponse(figmaData) {
   
   const result = [];
   
-  // Brand mapping from primitives to themes
-  const BRAND_MAPPING = {
-    'Westpac': 'WBC',
-    'StGeorge': 'STG',
-    'Bank SA': 'BSA',
-    'Bank of Melbourne': 'BOM'
-  };
-  
   // ========================================
   // 1. Transform Primitives
   // ========================================
   const primitiveCollection = Object.values(variableCollections).find(c => c.name === 'Primitives');
   if (primitiveCollection) {
-    const transformed = transformCollection(primitiveCollection, variables);
-    // For Primitives, extract the single mode's data (no mode wrapper)
-    const primitivesData = transformed.modes[Object.keys(transformed.modes)[0]] || {};
-    result.push({
-      Primitives: primitivesData
-    });
+    // Process the single mode for primitives collection
+    const mode = primitiveCollection.modes[0];
+    if (mode) {
+      let primitivesData = {};
+      
+      const collectionVars = primitiveCollection.variableIds
+        .map(varId => variables[varId])
+        .filter(v => v != null);
+      
+      collectionVars.forEach(variable => {
+        const pathParts = parseVariableName(variable.name);
+        const valueData = variable.valuesByMode[mode.modeId];
+        
+        if (valueData === undefined || valueData === null) return;
+        
+        const value = resolveValue(valueData, variables, variable.resolvedType);
+        if (value === null) return;
+        
+        const tokenValue = {
+          $type: getFigmaType(variable.resolvedType),
+          $value: value
+        };
+        
+        if (variable.scopes && variable.scopes.length > 0) {
+          tokenValue.$scopes = ['ALL_SCOPES'];
+        }
+        
+        if (variable.hiddenFromPublishing) {
+          tokenValue.$hiddenFromPublishing = true;
+        }
+        
+        if (variable.description) {
+          tokenValue.$description = variable.description;
+        }
+        
+        const nested = pathToNestedObject(pathParts, tokenValue);
+        primitivesData = deepMerge(primitivesData, nested);
+      });
+      
+      result.push({
+        Primitives: primitivesData
+      });
+    }
   }
-  
-  // Skip Themes section - Tokens will reference Primitives directly
-  
+    
   // ========================================
-  // 3. Transform Tokens (semantic token collections)
+  // 2. Transform Tokens (semantic token collections)
   // ========================================
   const tokenCollections = Object.values(variableCollections).filter(c => 
     ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(c.name)
@@ -324,7 +296,7 @@ function transformFigmaRestResponse(figmaData) {
       
       if (valueData === undefined || valueData === null) return;
       
-      const value = resolveValue(valueData, variables, variable.resolvedType, false); // Don't convert to theme references
+      const value = resolveValue(valueData, variables, variable.resolvedType, false); // Tokens reference Primitives directly
       if (value === null) return;
       
       const tokenValue = {
@@ -356,7 +328,7 @@ function transformFigmaRestResponse(figmaData) {
       
       if (valueData === undefined || valueData === null) return;
       
-      const value = resolveValue(valueData, variables, variable.resolvedType, false); // Don't convert to theme references
+      const value = resolveValue(valueData, variables, variable.resolvedType, false); // Tokens reference Primitives directly
       if (value === null) return;
       
       const tokenValue = {
@@ -415,6 +387,3 @@ async function main() {
 if (require.main === module) {
   main();
 }
-
-// Export for testing
-module.exports = { transformFigmaRestResponse };

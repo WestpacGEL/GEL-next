@@ -368,7 +368,6 @@ StyleDictionary.registerFormat({
 
     output += `public enum ${enumName}LightColors {\n`;
     lightTokens.forEach(lightToken => {
-      // output += `  public static let ${lightToken.name} = ${primitiveColorEnum}.${generateNameForIOS(lightToken.original.$value)}\n`;
       output += `  public static let ${lightToken.name} = ${lightToken.$value}\n`;
     });
     output += '}\n';
@@ -377,7 +376,6 @@ StyleDictionary.registerFormat({
 
     output += `public enum ${enumName}DarkColors {\n`;
     darkTokens.forEach(darkToken => {
-      // output += `  public static let ${darkToken.name} = ${primitiveColorEnum}.${generateNameForIOS(darkToken.original.$value)}\n`;
       output += `  public static let ${darkToken.name} = ${darkToken.$value}\n`;
     });
     output += '}\n';
@@ -462,13 +460,12 @@ StyleDictionary.registerFormat({
         };
       });
 
-    const primitiveDimensionEnum = `${enumName}PrimitivesDimension`;
     let output = '';
     output += `// Do not edit directly, this file was auto-generated.\n\n`;
     output += `import UIKit \n\n`;
 
     if (enumName === 'AllBrands') {
-      output += `public enum ${primitiveDimensionEnum} {\n`;
+      output += `public enum ${enumName}PrimitivesDimension {\n`;
       primitiveTokens.forEach(primitiveToken => {
         output += `  public static let ${primitiveToken.name} = ${primitiveToken.$value}\n`;
       });
@@ -479,7 +476,6 @@ StyleDictionary.registerFormat({
 
     output += `public enum ${enumName}LightDimensions {\n`;
     lightTokens.forEach(lightToken => {
-      // output += `  public static let ${lightToken.name} = ${primitiveDimensionEnum}.${generateNameForIOS(lightToken.original.$value)}\n`;
       output += `  public static let ${lightToken.name} = ${lightToken.$value}\n`;
     });
     output += '}\n';
@@ -488,7 +484,6 @@ StyleDictionary.registerFormat({
 
     output += `public enum ${enumName}DarkDimensions {\n`;
     darkTokens.forEach(darkToken => {
-      // output += `  public static let ${darkToken.name} = ${primitiveDimensionEnum}.${generateNameForIOS(darkToken.original.$value)}\n`;
       output += `  public static let ${darkToken.name} = ${darkToken.$value}\n`;
     });
     output += '}\n';
@@ -827,7 +822,7 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
 function applyValuePrefix(tokenProps, brandName) {
   const valueStr = tokenProps.$value;
   
-  // All references should now point to Primitives since Themes section is removed
+  // All references point to Primitives
   let prefix = 'Primitives';
 
   // Apply brand-specific token replacement
@@ -916,7 +911,7 @@ function mergeTokens(tokens) {
 
   return tokens.reduce((acc, current) => {
     if (current.Primitives) {
-      // Primitives no longer has modes wrapper, use directly
+      // Primitives are directly accessible without modes wrapper
       acc.Primitives = { ...current.Primitives };
     }
     if (current.Tokens) {
@@ -956,11 +951,11 @@ async function ensureFolderExists(folderPath) {
 function extractBrandTokens(themeName, primitiveName, tokens) {
   return {
     Primitives: {
-      border: tokens.Primitives.border, // Include all border primitives
+      border: tokens.Primitives.border, // Include all border primitives (shared across brands)
       color: {
         mono: tokens.Primitives.color.mono,  // Include shared mono colors
         reserved: tokens.Primitives.color.reserved,  // Include shared reserved colors
-        // Include only the specific brand's primitives (no longer need all brands due to token replacement)
+        // Include only the specific brand's primitives for optimized file sizes
         [primitiveName]: tokens.Primitives.color[primitiveName],
       },
     },

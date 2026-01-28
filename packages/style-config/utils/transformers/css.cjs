@@ -82,59 +82,6 @@ function getBorderPrimitives(tokens) {
   return borderVars;
 }
 
-function extractThemes(tokens, brandNameMap) {
-  const primitives = tokens.find(t => t.Primitives)?.Primitives?.color;
-  const colorsObj = {};
-  
-  if (primitives) {
-    // Process each brand's primitives to create theme mappings
-    BRANDS.forEach(({ primitiveName, themeName }) => {
-      const brandKey = primitiveName.toLowerCase();
-      const primitiveKey = primitiveName.toUpperCase(); // WBC, STG, etc.
-      
-      if (primitives[primitiveKey]) {
-        const brandColors = flattenColors(primitives[primitiveKey], '');
-        const cleanedColors = {};
-        
-        for (const name in brandColors) {
-          let unprefixed = name.replace(/^-/, ''); // Remove leading dash
-          let value = brandColors[name];
-          
-          if (typeof value === 'string' && value.startsWith('{color.alias.')) {
-            const aliasMatch = value.match(/\{color\.alias\.([^.]+)\}/i);
-            if (aliasMatch) {
-              const [_, aliasName] = aliasMatch;
-              value = `var(--${aliasName.toLowerCase().replace(/\s+/g, '-')})`;
-            }
-          } else if (typeof value === 'string' && value.startsWith('{color.')) {
-            value = refToVar(value);
-          }
-          
-          cleanedColors[unprefixed] = value;
-        }
-        
-        colorsObj[brandKey] = colorsObj[brandKey] || {};
-        colorsObj[brandKey].theme = cleanedColors;
-      }
-    });
-  }
-  
-  return colorsObj;
-}
-
-function getThemeBrandBorders(tokens, brandNameMap) {
-  const borderPrimitives = getBorderPrimitives(tokens);
-  const brandBorders = {};
-  
-  // Since borders are shared across brands (from primitives), apply to all brands
-  BRANDS.forEach(({ primitiveName }) => {
-    const brandKey = primitiveName.toLowerCase();
-    brandBorders[brandKey] = borderPrimitives;
-  });
-  
-  return brandBorders;
-}
-
 function extractTokens(tokens) {
   const tokensBlock = tokens.find(t => t.Tokens)?.Tokens?.modes;
   const tokensObj = {};
@@ -217,10 +164,9 @@ function getModeBorders(tokens) {
 // --------------------------------------------------------------------------
 // Output Functions
 // --------------------------------------------------------------------------
-function writeBrandThemeCSS(tokens, brandNameMap, brandFontMap, themeTemplate, outputDir) {
-  const themeColorsObj = extractThemes(tokens, brandNameMap);
+function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
   const primitivesObj = extractPrimitives(tokens);
-  const themeBorderRadius = getThemeBrandBorders(tokens, brandNameMap);
+  const borderPrimitives = getBorderPrimitives(tokens);
   const tokensObj = extractTokens(tokens);
 
   BRANDS.forEach(({ primitiveName }) => {
@@ -236,7 +182,6 @@ function writeBrandThemeCSS(tokens, brandNameMap, brandFontMap, themeTemplate, o
     // Create brand-specific semantic tokens by replacing WBC references with current brand
     const brandLightSemanticTokens = {};
     const brandDarkSemanticTokens = {};
-    const brandCode = primitiveName.toUpperCase(); // WBC, STG, BOM, BSA
     
     // Process light mode tokens
     if (tokensObj.light) {
@@ -269,7 +214,7 @@ function writeBrandThemeCSS(tokens, brandNameMap, brandFontMap, themeTemplate, o
         primitiveColors: allPrimitives,
         lightSemanticTokens: brandLightSemanticTokens,
         darkSemanticTokens: brandDarkSemanticTokens,
-        borderRadius: themeBorderRadius[brand] || {},
+        borderRadius: borderPrimitives,
         fontFamily: brandFontMap[brand] || '',
       }),
     );
@@ -281,9 +226,7 @@ function writeSharedColorsCSS(colorsObj, tokensObj, sharedStylesTemplate, output
     outputFile,
     sharedStylesTemplate({
       reserved: colorsObj.reserved?.primitives || {},
-      light: {}, // Remove shared semantic tokens since they're now brand-specific
-      dark: {}, // Remove shared semantic tokens since they're now brand-specific
-      // But keep the token keys for Tailwind theme generation
+      // Tailwind theme variables - using light tokens for reference
       tailwindTokens: tokensObj.light || {},
     }),
   );
@@ -317,13 +260,6 @@ function transformCSS() {
   const sharedStylesTemplate = Handlebars.compile(sharedStylesTemplateSource);
   const bordersTemplate = Handlebars.compile(bordersTemplateSource);
 
-  const brandNameMap = BRANDS.reduce((acc, { themeName, primitiveName }) => {
-    return {
-      ...acc,
-      [themeName.toLowerCase()]: primitiveName.toLowerCase(),
-    };
-  }, {});
-
   const brandFontMap = BRANDS.reduce((acc, { fontName, primitiveName }) => {
     return {
       ...acc,
@@ -335,7 +271,7 @@ function transformCSS() {
   const tokensObj = extractTokens(tokens);
 
   const brandOutputDir = path.resolve(__dirname, '../../src/css/themes');
-  writeBrandThemeCSS(tokens, brandNameMap, brandFontMap, themeTemplate, brandOutputDir);
+  writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, brandOutputDir);
 
   const colorsOutputFile = path.resolve(__dirname, '../../src/css/shared/colors.css');
   writeSharedColorsCSS(colorsObj, tokensObj, sharedStylesTemplate, colorsOutputFile);
