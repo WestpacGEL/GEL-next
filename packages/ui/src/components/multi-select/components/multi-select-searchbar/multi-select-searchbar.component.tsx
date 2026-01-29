@@ -6,11 +6,9 @@ import { InputGroup } from '../../../../components/input-group/index.js';
 import { Input } from '../../../input/index.js';
 import { MultiSelectContext } from '../../multi-select.component.js';
 
-import { styles } from './multi-select-searchbar.styles.js';
+import { styles as searchbarStyles } from './multi-select-searchbar.styles.js';
 
 import type { MultiSelectSearchbarProps } from './multi-select-searchbar.types.js';
-
-const { searchInputWrapper, clearButton } = styles();
 
 export function MultiSelectSearchbar({
   filterText,
@@ -18,6 +16,7 @@ export function MultiSelectSearchbar({
   closeBtnRef,
 }: Pick<MultiSelectSearchbarProps, 'filterText' | 'setFilterText' | 'closeBtnRef'>) {
   const { size, inputRef, selectAllRef, listBoxRef } = useContext(MultiSelectContext);
+  const styles = searchbarStyles();
   const handleInputKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'ArrowDown') {
@@ -42,7 +41,7 @@ export function MultiSelectSearchbar({
     [filterText.length, setFilterText, selectAllRef, listBoxRef, closeBtnRef],
   );
   return (
-    <div className={searchInputWrapper()}>
+    <div className={styles.searchInputWrapper()}>
       <InputGroup
         before={{
           icon: SearchIcon,
@@ -57,7 +56,7 @@ export function MultiSelectSearchbar({
                   inputRef.current?.focus();
                 }}
                 look="unstyled"
-                className={clearButton()}
+                className={styles.clearButton()}
                 ref={closeBtnRef}
                 aria-label="Clear filter text"
               >

@@ -8,7 +8,7 @@ export const styles = tv({
     selectionSpan: 'w-full overflow-hidden text-ellipsis',
     hint: 'typography-body-10 text-text-muted',
     button: 'flex cursor-default items-center justify-center border-l border-l-border-muted-strong bg-background-white',
-    clearButton: 'absolute top-0 right-6.5 bottom-0 flex !h-auto items-center justify-center',
+    clearButton: 'absolute top-0 bottom-0 flex !h-auto items-center justify-center',
     clearIcon: '-mt-0.5',
   },
   variants: {
@@ -17,21 +17,25 @@ export const styles = tv({
         control:
           'min-h-[1.875rem] form-control-small group-[.input-group-inset-after]:pr-6 group-[.input-group-inset-before]:pl-6',
         button: '-mt-0.5 -mr-[0.5625rem] -mb-[0.25rem] px-0.5',
+        clearButton: 'right-6.5',
       },
       medium: {
         control:
           'min-h-[2.25rem] form-control-medium group-[.input-group-inset-after]:pr-7 group-[.input-group-inset-before]:pl-7',
         button: '-my-[0.3125rem] -mr-2 px-1.5',
+        clearButton: 'right-8.5',
       },
       large: {
         control:
           'min-h-[2.625rem] form-control-large group-[.input-group-inset-after]:pr-8 group-[.input-group-inset-before]:pl-8',
         button: '-my-[0.5rem] -mr-2.5 px-1.5',
+        clearButton: 'right-8.5',
       },
       xlarge: {
         control:
           'min-h-[3rem] form-control-xlarge group-[.input-group-inset-after]:pr-9 group-[.input-group-inset-before]:pl-9',
         button: '-mt-[0.5625rem] -mr-3 -mb-[0.625rem] px-2',
+        clearButton: 'right-9.5',
       },
     },
     invalid: {
