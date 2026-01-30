@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState, Key, KeyboardEvent } from 'react';
-import { mergeProps, useButton, useFocusRing, useOverlayTrigger } from 'react-aria';
+import { mergeProps, useButton, useFocusRing } from 'react-aria';
 
 import { Button } from '../../../button/button.component.js';
 import { DropDownIcon, ClearIcon } from '../../../icon/index.js';
@@ -9,14 +9,14 @@ import { MultiSelectContext } from '../../multi-select.component.js';
 import { styles as triggerStyles } from './multi-select-list-box-trigger.styles.js';
 import { MultiSelectListBoxTriggerProps } from './multi-select-list-box-trigger.types.js';
 
-// TODO: down/up arrow opens the listbox
 export function MultiSelectListBoxTrigger<T>({
   placeholder,
   showSingleSectionTitle,
   selectedKeys,
+  triggerProps,
+  id,
 }: MultiSelectListBoxTriggerProps<T>) {
   const { size, selectionMode, overlayState, listState, buttonRef, inputRef } = useContext(MultiSelectContext);
-  const { triggerProps } = useOverlayTrigger({ type: 'listbox' }, overlayState, buttonRef);
   const { buttonProps } = useButton(triggerProps, buttonRef);
   const { focusProps, isFocusVisible } = useFocusRing();
   const [selectedValues, setSelectedValues] = useState<{ key: string; value: string | undefined }[]>([]);
@@ -90,7 +90,18 @@ export function MultiSelectListBoxTrigger<T>({
     <>
       <Tooltip tooltip={valuesString} position="top">
         <div className={styles.buttonContainer()}>
-          <button className={styles.control()} ref={buttonRef} {...finalButtonProps} onKeyDown={handleTriggerKeyDown}>
+          <button
+            className={styles.control()}
+            ref={buttonRef}
+            {...finalButtonProps}
+            onKeyDown={handleTriggerKeyDown}
+            type="button"
+            role="combobox"
+            aria-autocomplete="list"
+            tabIndex={undefined}
+            aria-haspopup="dialog"
+            id={id}
+          >
             {/* Selected items */}
             <div className={styles.selection()}>
               <span className={styles.selectionSpan()}>{selectedValues.length > 0 ? valuesString : placeholder}</span>
@@ -98,7 +109,7 @@ export function MultiSelectListBoxTrigger<T>({
 
             {/* dropdown toggle */}
             <div className={styles.button()}>
-              <DropDownIcon color="muted" size="small" aria-hidden="true" />
+              <DropDownIcon color="muted" size="medium" aria-hidden="true" />
             </div>
           </button>
           {selectedValues.length > 0 && (

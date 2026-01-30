@@ -1,5 +1,6 @@
 import { tv } from 'tailwind-variants';
 
+// eslint-disable-next-line tailwindcss/enforces-negative-arbitrary-values
 export const styles = tv(
   {
     slots: {
@@ -8,8 +9,8 @@ export const styles = tv(
       selection: 'flex flex-1 items-center overflow-hidden whitespace-nowrap pr-4.5 text-left',
       selectionSpan: 'w-full overflow-hidden text-ellipsis',
       hint: 'typography-body-10 text-muted',
-      button: 'flex cursor-default items-center justify-center border-l border-l-borderDark bg-white px-1',
-      clearButton: 'absolute inset-y-0 right-6.5 flex !h-auto items-center justify-center',
+      button: 'flex cursor-default items-center justify-center border-l border-l-borderDark bg-white',
+      clearButton: 'absolute inset-y-0 flex !h-auto items-center justify-center',
       clearIcon: '-mt-0.5',
     },
     variants: {
@@ -17,22 +18,26 @@ export const styles = tv(
         small: {
           control:
             'form-control-small min-h-5 group-[.input-group-inset-after]:pr-6 group-[.input-group-inset-before]:pl-6',
-          button: '-mr-1.5 -mt-0.5 mb-[-0.25rem]',
+          button: '-mb-[0.25rem] -mr-1.5 -mt-0.5 px-0.5',
+          clearButton: 'right-6.5',
         },
         medium: {
           control:
             'form-control-medium min-h-6 group-[.input-group-inset-after]:pr-7 group-[.input-group-inset-before]:pl-7',
-          button: 'my-[-0.3125rem] -mr-2',
+          button: '-my-[0.3125rem] -mr-2 px-1.5',
+          clearButton: 'right-8.5',
         },
         large: {
           control:
             'form-control-large min-h-7 group-[.input-group-inset-after]:pr-8 group-[.input-group-inset-before]:pl-8',
-          button: 'my-[-0.5rem] -mr-2.5',
+          button: '-my-[0.5rem] -mr-2.5 px-1.5',
+          clearButton: 'right-8.5',
         },
         xlarge: {
           control:
             'form-control-xlarge min-h-8 group-[.input-group-inset-after]:pr-9 group-[.input-group-inset-before]:pl-9',
-          button: '-mr-3 -mt-1.5 mb-[-0.625rem]',
+          button: '-mb-[0.625rem] -mr-3 -mt-1.5 px-2',
+          clearButton: 'right-9.5',
         },
       },
       invalid: {

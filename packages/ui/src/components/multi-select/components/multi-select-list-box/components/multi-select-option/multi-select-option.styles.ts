@@ -21,7 +21,7 @@ export const styles = tv({
     },
     isFocusVisible: {
       true: {
-        root: 'bg-background !outline-offset-[-2px] focus-outline',
+        root: 'bg-background -outline-offset-2 focus-outline',
       },
     },
     disabled: {

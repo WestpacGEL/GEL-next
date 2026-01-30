@@ -32,6 +32,7 @@ export function MultiSelectSelectAllOption() {
       e.preventDefault();
       inputRef.current?.focus();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const ariaChecked = () => {
@@ -41,7 +42,7 @@ export function MultiSelectSelectAllOption() {
   };
 
   return (
-    <li className={styles.listItem()} key="select-all">
+    <div className={styles.listItem()} key="select-all">
       <button
         className={styles.button()}
         onClick={() => {
@@ -57,20 +58,17 @@ export function MultiSelectSelectAllOption() {
         }}
         ref={selectAllRef}
         onKeyDown={handleButtonKeyDown}
-        tabIndex={-1}
         itemType="checkbox"
         role="checkbox"
         aria-checked={ariaChecked()}
         aria-label="Select all options"
       >
-        <div className={styles.checkbox()}>
+        <div className={styles.checkbox()} role="presentation">
           {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" />}
-          {!allItemsAreSelected && withOneSelectionOrMore && (
-            <div role="presentation" className={styles.indeterminate()} />
-          )}
+          {!allItemsAreSelected && withOneSelectionOrMore && <div className={styles.indeterminate()} />}
         </div>
         <span>Select all</span>
       </button>
-    </li>
+    </div>
   );
 }

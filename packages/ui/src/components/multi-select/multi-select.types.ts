@@ -1,3 +1,4 @@
+import { DOMProps } from '@react-types/shared';
 import { Key, ReactNode, RefObject } from 'react';
 import { AriaListBoxOptions, AriaListBoxProps, AriaPopoverProps } from 'react-aria';
 import { ItemProps, ListProps, ListState, OverlayTriggerState } from 'react-stately';
@@ -16,6 +17,7 @@ export type MultiSelectContextProps<T extends object = object> = {
   selectedKeys?: AriaListBoxProps<T>['selectedKeys'];
   selectionMode?: AriaListBoxProps<T>['selectionMode'];
   filterText: string;
+  overlayProps: DOMProps;
   placement?: AriaPopoverProps['placement'];
 };
 
@@ -29,6 +31,10 @@ export type MultiSelectProps<T> = {
    * Props for the list box within the multi-select
    */
   listBoxProps?: Omit<AriaListBoxOptions<T>, 'state' | 'selectionMode'>;
+  /**
+   * id for the base multi-select container for accessibility/other uses
+   */
+  id?: string;
   /**
    * Placeholder text for the input
    */

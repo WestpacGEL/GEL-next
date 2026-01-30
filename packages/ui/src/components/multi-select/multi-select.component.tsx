@@ -1,8 +1,8 @@
 'use client';
 
 import { Node } from '@react-types/shared';
-import React, { useRef, useState, useEffect, useCallback, memo, createContext } from 'react';
-import { useFilter } from 'react-aria';
+import React, { useRef, useState, memo, createContext } from 'react';
+import { useFilter, useOverlayTrigger } from 'react-aria';
 import { Item, useListState, useOverlayTriggerState } from 'react-stately';
 
 import { MultiSelectDropdown } from './components/multi-select-dropdown/multi-select-dropdown.component.js';
@@ -26,6 +26,7 @@ export const MultiSelectContext = createContext<MultiSelectContextProps>({
   selectAllRef: { current: null },
   inputRef: { current: null },
   filterText: '',
+  overlayProps: {},
 });
 
 export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
@@ -37,6 +38,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   placeholder = 'Select',
   showSingleSectionTitle = false,
   placement,
+  id,
   ...props
 }: MultiSelectProps<T>) {
   const [filterText, setFilterText] = useState('');
@@ -67,25 +69,12 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
           inputRef.current?.focus();
         });
       }
+      if (!isOpen) {
+        buttonRef.current?.focus();
+      }
     },
   });
-
-  // React Aria does not check for escape key press unless panel is focused so this is needed
-  const keyHandler = useCallback(
-    (event: KeyboardEvent) => {
-      event.stopPropagation();
-      if (overlayState.isOpen && event.key === 'Escape') overlayState.close();
-    },
-    [overlayState],
-  );
-
-  useEffect(() => {
-    window.document.addEventListener('keydown', keyHandler);
-    return () => {
-      window.document.removeEventListener('keydown', keyHandler);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { triggerProps, overlayProps } = useOverlayTrigger({ type: 'dialog' }, overlayState, buttonRef);
 
   const styles = multiSelectStyles({});
 
@@ -104,6 +93,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
         selectAllRef,
         listBoxRef,
         inputRef,
+        overlayProps,
       }}
     >
       <div className={styles.root()}>
@@ -111,6 +101,8 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
           placeholder={placeholder}
           selectedKeys={selectedKeys}
           showSingleSectionTitle={showSingleSectionTitle}
+          triggerProps={triggerProps}
+          id={id}
         />
         {overlayState.isOpen && <MultiSelectDropdown setFilterText={setFilterText} {...listBoxProps} />}
       </div>

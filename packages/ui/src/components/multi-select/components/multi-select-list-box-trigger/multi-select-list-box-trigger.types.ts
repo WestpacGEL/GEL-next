@@ -1,3 +1,4 @@
+import { AriaButtonProps } from 'react-aria';
 import { ListProps } from 'react-stately';
 import { VariantProps } from 'tailwind-variants';
 
@@ -10,7 +11,9 @@ type Variants = VariantProps<typeof triggerStyles>;
 export type MultiSelectSize = Variants['size'];
 
 export type MultiSelectListBoxTriggerProps<T> = {
+  id?: string;
   placeholder: string;
   selectedKeys?: ListProps<T>['selectedKeys'];
   showSingleSectionTitle?: MultiSelectProps<T>['showSingleSectionTitle'];
+  triggerProps: AriaButtonProps<'button'>;
 };

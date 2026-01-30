@@ -21,9 +21,9 @@ export function MultiSelectListBox<T extends object = object>({ listBoxRef, ...p
   const styles = listBoxStyles({ hasSection: stateCollection.some(item => item.type === 'section') });
 
   return (
-    <div className={styles.container()} tabIndex={-1}>
+    <div className={styles.container()}>
       {selectionMode === 'multiple' && stateCollection.length > 0 && <MultiSelectSelectAllOption />}
-      <ul {...listBoxProps} ref={listBoxRef} className={styles.ul()} tabIndex={-1}>
+      <ul {...listBoxProps} ref={listBoxRef} className={styles.ul()}>
         {stateCollection.length > 0 ? (
           stateCollection.map(item =>
             item.type === 'section' ? (

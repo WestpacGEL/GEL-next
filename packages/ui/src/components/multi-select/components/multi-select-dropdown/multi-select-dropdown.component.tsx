@@ -1,91 +1,25 @@
 'use client';
 
-import React, { useCallback, KeyboardEvent, useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 
 import { ButtonRef } from '../../../../components/button/button.types.js';
-import { Button } from '../../../../components/button/index.js';
-import { ClearIcon, SearchIcon } from '../../../../components/icon/index.js';
-import { InputGroup } from '../../../../components/input-group/index.js';
-import { Input } from '../../../input/index.js';
 import { MultiSelectListBox } from '../../components/multi-select-list-box/multi-select-list-box.component.js';
 import { MultiSelectContext } from '../../multi-select.component.js';
 import { MultiSelectPopover } from '../multi-select-popover/multi-select-popover.component.js';
+import { MultiSelectSearchbar } from '../multi-select-searchbar/multi-select-searchbar.component.js';
 
-import { styles as dropdownStyles } from './multi-select-dropdown.styles.js';
 import { MultiSelectDropdownProps } from './multi-select-dropdown.types.js';
 
 export function MultiSelectDropdown<T extends object = object>({
   setFilterText,
   ...props
 }: MultiSelectDropdownProps<T>) {
-  const { filterText, size, selectAllRef, listBoxRef, inputRef } = useContext(MultiSelectContext);
-  const closeBtnRef = React.useRef<ButtonRef>(null);
-  const styles = dropdownStyles({});
-
-  // Need to manually handle keyboard accessibility due to component complexity
-  const handleInputKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLInputElement>) => {
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        if (selectAllRef.current) {
-          selectAllRef.current.focus();
-        } else {
-          const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
-          firstItem.focus();
-        }
-      }
-      if (e.key === 'Escape' && filterText.length > 0) {
-        e.stopPropagation();
-        setFilterText('');
-      }
-      if (e.key === 'Tab' && filterText.length > 0) {
-        e.preventDefault();
-        e.stopPropagation();
-        closeBtnRef.current?.focus();
-      }
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [filterText.length],
-  );
+  const { filterText, listBoxRef } = useContext(MultiSelectContext);
+  const closeBtnRef = useRef<ButtonRef>(null);
 
   return (
-    <MultiSelectPopover className={styles.popover()}>
-      <div className={styles.searchInputWrapper()}>
-        <InputGroup
-          before={{
-            icon: SearchIcon,
-          }}
-          after={
-            filterText.length > 0 && {
-              inset: true,
-              element: (
-                <Button
-                  onClick={() => {
-                    setFilterText('');
-                    inputRef.current?.focus();
-                  }}
-                  look="unstyled"
-                  className={styles.clearButton()}
-                  ref={closeBtnRef}
-                  aria-label="Clear filter text"
-                >
-                  <ClearIcon color="muted" size="small" />
-                </Button>
-              ),
-            }
-          }
-          aria-label="Filter options"
-        >
-          <Input
-            ref={inputRef}
-            size={size}
-            value={filterText}
-            onChange={e => setFilterText(e.target.value)}
-            onKeyDown={handleInputKeyDown}
-            tabIndex={-1}
-          />
-        </InputGroup>
-      </div>
+    <MultiSelectPopover>
+      <MultiSelectSearchbar filterText={filterText} setFilterText={setFilterText} closeBtnRef={closeBtnRef} />
       <MultiSelectListBox {...props} aria-label="multiselect list" escapeKeyBehavior="none" listBoxRef={listBoxRef} />
     </MultiSelectPopover>
   );
