@@ -56,10 +56,8 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
         aria-modal="true"
         aria-label="Options list with filter"
       >
-        <div role="listbox">
-          {children}
-          <DismissButton onDismiss={() => overlayState.close()} />
-        </div>
+        {children}
+        <DismissButton onDismiss={() => overlayState.close()} />
       </div>
     </Overlay>
   );

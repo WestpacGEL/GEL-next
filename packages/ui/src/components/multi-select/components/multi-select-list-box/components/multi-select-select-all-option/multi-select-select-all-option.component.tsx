@@ -59,7 +59,7 @@ export function MultiSelectSelectAllOption() {
         ref={selectAllRef}
         onKeyDown={handleButtonKeyDown}
         itemType="checkbox"
-        role="checkbox"
+        role="option"
         aria-checked={ariaChecked()}
         aria-label="Select all options"
       >

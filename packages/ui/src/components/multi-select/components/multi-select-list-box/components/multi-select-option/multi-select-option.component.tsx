@@ -51,7 +51,7 @@ export function MultiSelectOption<T>({ item }: MultiSelectOptionProps<T>) {
       aria-selected={selectionMode === 'single' ? isSelected : undefined}
       tabIndex={0}
     >
-      <div className={styles.itemContainer()} role="presentation">
+      <div className={styles.itemContainer()}>
         <div className={styles.flexZero()}>
           <div className={styles.checkbox()}>{isSelected && <TickIcon size="small" aria-hidden="true" />}</div>
         </div>
