@@ -179,7 +179,7 @@ In order to use brand-fonts add the relevant font face declarations from the bel
 
 2. Generate a [Figma personal access token](https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens). Ensure the `file_variables:read` scope is selected as it is required by the [API](https://developers.figma.com/docs/rest-api/variables-endpoints/#get-local-variables-endpoint).
 
-3. Create a `.env.local` file in the root of the `style-config` package containing the project ID (found in the url figma.com/design/PROJECT_ID/) and your PAT. The project ID is unique and should be treated securely. The contents should look like:
+3. Create a `.env.local` file in the root of the `style-config` package containing the project ID (found in the url `figma.com/design/PROJECT_ID/`) and your PAT. The project ID is unique and should be treated securely. The contents should look like:
 ```
 FIGMA_PROJECT_ID=ID
 FIGMA_TOKEN=PAT
