@@ -173,8 +173,7 @@ In order to use brand-fonts add the relevant font face declarations from the bel
 
 ### Updating Tokens
 
-#### CAUTION:
-Only generate new tokens at the request of someone from the GEL team as there is no versioning and you may end up with unwanted changes.
+#### CAUTION: Only generate new tokens at the request of someone from the GEL team as there is no versioning and you may end up with unwanted changes.
 
 1. Request access to the Tokens Figma project by contacting someone in the GEL team. Step 2 + 3 can be done before access is approved.
 
