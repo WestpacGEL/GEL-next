@@ -58,7 +58,43 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example
  */
-export const DefaultState: Story = {
+export const DefaultWithDismiss: Story = {
+  args: {
+    title: 'Heading',
+    primaryLabel: 'Label',
+    secondaryLabel: 'Label',
+    primaryOnClick: () => null,
+    secondaryOnClick: () => null,
+    isDismissable: true,
+    children: (
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a
+        ad blanditiis laborum labore repellendus, vero nihil ducimus, aliquam culpa explicabo doloremque corporis.
+      </p>
+    ),
+  },
+};
+
+/**
+ * > No footer example
+ */
+export const NoFooter: Story = {
+  args: {
+    title: 'Heading',
+    isDismissable: true,
+    children: (
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a
+        ad blanditiis laborum labore repellendus, vero nihil ducimus, aliquam culpa explicabo doloremque corporis.
+      </p>
+    ),
+  },
+};
+
+/**
+ * > No close button example
+ */
+export const NoCloseButton: Story = {
   args: {
     title: 'Heading',
     primaryLabel: 'Label',
@@ -75,16 +111,31 @@ export const DefaultState: Story = {
 };
 
 /**
- * > No footer example
+ * > Example showing how to use an onClose callback with the modal to be called when Bottom Sheet is closed
  */
-export const NoFooter: Story = {
-  args: {
-    title: 'Heading',
-    children: (
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a
-        ad blanditiis laborum labore repellendus, vero nihil ducimus, aliquam culpa explicabo doloremque corporis.
-      </p>
-    ),
-  },
+export const WithOnCloseCallback = () => {
+  const onClose = () => {
+    // eslint-disable-next-line no-console
+    console.log('Modal closed');
+  };
+  const state = useOverlayTriggerState({
+    onOpenChange: isOpen => {
+      if (!isOpen) onClose();
+    },
+  });
+
+  return (
+    <>
+      <BottomSheet title="Title" isDismissable state={state} aria-label="Bottom Sheet title">
+        {`
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+    `}
+      </BottomSheet>
+      <Button onClick={() => state.open()}>Open Bottom Sheet</Button>
+    </>
+  );
 };

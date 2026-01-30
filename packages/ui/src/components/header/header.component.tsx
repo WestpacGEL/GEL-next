@@ -1,7 +1,7 @@
 'use client';
 
 import throttle from 'lodash.throttle';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
@@ -100,11 +100,15 @@ export function Header({
     scrolled: isScrolled || scrolled,
   });
 
-  const HeaderLogo = () => (
-    <>
-      <SmallLogo align={logoAlignment} aria-label={logoAssistiveText} className={styles.smallLogo()} />
-      <LargeLogo aria-label={logoAssistiveText} className={styles.largeLogo()} />
-    </>
+  const HeaderLogo = useCallback(
+    () => (
+      <>
+        <SmallLogo align={logoAlignment} aria-label={logoAssistiveText} className={styles.smallLogo()} />
+        <LargeLogo aria-label={logoAssistiveText} className={styles.largeLogo()} />
+      </>
+    ),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [logoAlignment, logoAssistiveText, LargeLogo, SmallLogo],
   );
 
   const defaultAssistiveText = leftIcon === 'arrow' ? 'Back' : 'Menu';

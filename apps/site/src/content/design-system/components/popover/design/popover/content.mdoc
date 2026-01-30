@@ -1,51 +1,67 @@
 These popovers can appear with or without a heading. For accessibility reasons our popovers are designed to only be dismissed by re-selecting the element that triggered them, using the close button, or pressing the Escape key.
 
 ```tsx
-<div><h4 className="typography-body-10 text-text-muted italic mb-3">Icon</h4>
-<div className="flex items-center gap-2">
-  <p>With heading</p>
-  <Popover
-    heading="Heading"
-    content="Small overlays of content for housing secondary information. These are often used to provide explanatory information
-    for complex ideas."
-    icon={() => <HelpIcon look="outlined" color="hero" />}
-  />
-  <p>Without heading</p>
-  <Popover
-    content="Small overlays of content for housing secondary information. These are often used to provide explanatory information
-    for complex ideas."
-    icon={() => <HelpIcon look="outlined" color="hero" />}
-  />
- 
-</div>
-</div>
+() => {
+  const [portalContainer, setPortalContainer] = useState(undefined);
+
+  return (
+    <div>
+      <h4 className="typography-body-10 text-muted italic mb-3">Icon</h4>
+      <div className="flex items-center gap-2">
+        <p>With heading</p>
+        <Popover
+          portal={portalContainer ?? undefined}
+          onClick={() => setPortalContainer(document.getElementById('demo-content'))}
+          heading="Heading"
+          content="Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas."
+          icon={() => <HelpIcon look="outlined" color="hero" />}
+        />
+        <p>Without heading</p>
+        <Popover
+          portal={portalContainer ?? undefined}
+          content="Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas."
+          icon={() => <HelpIcon look="outlined" color="hero" />}
+          onClick={() => setPortalContainer(document.getElementById('demo-content'))}
+        />
+      </div>
+    </div>
+  )
+}
+
 
 ```
 
 ```tsx
+() => {
+  const [portalContainer, setPortalContainer] = useState(undefined);
 
-<div><h4 className="typography-body-10 text-text-muted italic mb-3">Button</h4>
-<div className="flex gap-2">
-<Popover
-  content="Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas."
-  heading="Heading"
-  onClick={function Ya(){}}
->
-  With heading
-</Popover>
-<Popover
-  content="Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas."
-  onClick={function Ya(){}}
->
-  Without heading
-</Popover>
-</div>
-</div>
-
+  return (
+    <div>
+      <h4 className="typography-body-10 text-muted italic mb-3">Button</h4>
+      <div className="flex gap-2">
+        <Popover
+          portal={portalContainer ?? undefined}
+          content="Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas."
+          heading="Heading"
+          onClick={() => setPortalContainer(document.getElementById('demo-content'))}
+        >
+          With heading
+        </Popover>
+        <Popover
+          portal={portalContainer ?? undefined}
+          content="Small overlays of content for housing secondary information. These are often used to provide explanatory information for complex ideas."
+          onClick={() => setPortalContainer(document.getElementById('demo-content'))}
+        >
+          Without heading
+        </Popover>
+      </div>
+    </div>
+  )
+}
 ```
 
 ```tsx
-<div><h4 className="typography-body-10 text-text-muted italic mb-3">Link</h4>
+<div><h4 className="typography-body-10 text-muted italic mb-3">Link</h4>
  <p className="mb-4">    
   The popover can also be triggered by an inline
       <Popover linkStyling className="ml-1" heading="Heading" content="Small overlays of content for housing secondary information. These are often used to provide explanatory information

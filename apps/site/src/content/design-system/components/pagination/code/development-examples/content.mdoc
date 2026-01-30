@@ -68,7 +68,7 @@ You can also include an `href` for each page to support URL-based navigation:
 };
 ```
 
-### Custom next and back buttons
+### Using custom back and next label
 
 ```tsx
 () => {
@@ -76,9 +76,9 @@ You can also include an `href` for each page to support URL-based navigation:
 
   return (
     <Pagination
-      backLabel="Go back"
-      nextLabel="Go fourth"
       current={page}
+      backLabel="Custom back"
+      nextLabel="Custom next"
       onChange={changedPage => {
         setPage(changedPage);
       }}

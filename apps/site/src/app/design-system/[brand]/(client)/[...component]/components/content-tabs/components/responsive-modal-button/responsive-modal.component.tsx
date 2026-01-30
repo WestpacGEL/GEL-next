@@ -10,11 +10,11 @@ export function ResponsiveModal({ children, state, ...props }: ResponsiveModalPr
 
   return (
     <Modal isDismissable={false} state={state} {...props}>
-      <ModalBody className={`relative flex flex-1 flex-col bg-background-white px-0`}>
+      <ModalBody className={`relative flex flex-1 flex-col bg-background-white px-0`} id="demo-content">
         <Button className="absolute top-3 right-3" look="primary" soft onClick={() => state.close()}>
           Close
         </Button>
-        <GridContainer fixed className="flex flex-1 flex-col pt-5" id="demo-content">
+        <GridContainer fixed className="flex flex-1 flex-col pt-5">
           <h2
             className={`
               typography-body-7 font-black text-text-heading

@@ -395,6 +395,29 @@ To ensure greater flexibility and maintainability, we are phasing out this compo
 };
 ```
 
+### Bottom Sheet isDismissable default to false
+
+When creating the `BottomSheet`, being able to hide the dismiss button (like the `Modal`) was missed and always showed the dismiss button.
+When this was fixed in a previous version however isDismissable had to default to true to avoid breaking changes. This is now fixed to align with the `Modal` component in this version.
+
+#### Before
+
+Below would display the dismiss 'x' button:
+
+```jsx
+<BottomSheet title="Title">Content</BottomSheet>
+```
+
+#### After
+
+Now you need to add a prop to display the dismiss 'x' button (matching `Modal` implementation):
+
+```jsx
+<BottomSheet title="Title" isDismissable>
+  Content
+</BottomSheet>
+```
+
 ### 🗑️ Deprecated Components & APIs
 
 | Deprecated                                         | Replacement / Notes                                                  |
@@ -402,6 +425,144 @@ To ensure greater flexibility and maintainability, we are phasing out this compo
 | `ButtonDropdown`                                   | Replaced by `Dropdown`                                               |
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
+
+## 0.57.1
+
+### Patch Changes
+
+- dce0d2d: fix issue where bottom sheet close button couldn't be hidden
+
+## 0.57.0
+
+### Minor Changes
+
+- 7b8eae1: - updated styles for DatePickerBeta
+  - added custom onBlur to provide date for DatePickerBeta
+
+### Patch Changes
+
+- abda05b: updating hover styling on various links across the site and components/examples
+- 59f6662: updated calculation for popover so it correctly stays on screen in some circumstances
+
+## 0.56.1
+
+### Patch Changes
+
+- 727582a: updated some styles for DatePickerBeta (input font weight, removal of placeholder text colour, dd/mm/yyyy capitalised)
+
+## 0.56.0
+
+### Minor Changes
+
+- 6950378: added new props to DatePickerBeta to control popover location and make input full width
+
+## 0.55.3
+
+### Patch Changes
+
+- 5dc069e: fix issue with header logo rerendering
+
+## 0.55.2
+
+### Patch Changes
+
+- 4162b09: package update
+
+## 0.55.1
+
+### Patch Changes
+
+- 7754db9: updated dependencies for security fixes
+
+## 0.55.0
+
+### Minor Changes
+
+- a0b45cf: - added a prop to handle the panel placement on button dropdown
+
+### Patch Changes
+
+- 2e750ae: add import react to modal dialog body
+
+## 0.54.0
+
+### Minor Changes
+
+- 97e3ad7: - updated react-aria to fix issue with modal scrolling on iOS
+  - fixed modal not being able to scroll (would just go off screen)
+  - added new 'compact' modal that allows the body to scroll on the 'md' and 'lg' sizes
+  - updated modal styles based on new designs/need to scroll
+  - reverted button 'link' padding removal and added a prop to do the same thing
+  - updated default voice over for header left button
+
+### Patch Changes
+
+- 703d802: fix popover width and autocomplete footer
+- 784c2c0: updated dropshadows on compact modal
+
+## 0.53.2
+
+### Patch Changes
+
+- 5ca405f: fix: input group children rendering the classNames as expected
+
+## 0.53.1
+
+### Patch Changes
+
+- d7523fa: Removing the horizontal padding from Button look="link"
+
+## 0.53.0
+
+### Minor Changes
+
+- a28c062: Button Dropdown: adding the option to use only icon or changing the caret icon
+
+### Patch Changes
+
+- bd8c375: focus state for pagination item
+- d601d5d: fixes to focus outlines
+
+## 0.52.1
+
+### Patch Changes
+
+- 35af96a: filter buttons focus styling fix
+
+## 0.52.0
+
+### Minor Changes
+
+- 7fe448f: added truncation/new prop to show truncated value as title for Select
+
+### Patch Changes
+
+- 5386bd6: exporting ModalDialogFooterProps
+- 6a12908: screen reader accessibility for popover fixes
+
+## 0.51.1
+
+### Patch Changes
+
+- 54d3693: fixed issue where close button on bottom sheet wasn't positioned correctly
+
+## 0.51.0
+
+### Minor Changes
+
+- 2dad153: added functionality to disable logo link on Header component
+
+## 0.50.5
+
+### Patch Changes
+
+- 7c08b53: added min width to pill badge
+
+## 0.50.4
+
+### Patch Changes
+
+- 442d84c: fix issues with overflow and focus for accordion content
 
 ## 0.50.3
 

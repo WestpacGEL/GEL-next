@@ -2,47 +2,51 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    input: 'form-control flex items-center border-border-muted-strong disabled:form-control-disabled',
-    button:
-      'flex h-auto items-center justify-center rounded-l-none border-y-0 border-r-0 border-l border-l-border-muted-strong bg-surface-muted-pale',
-    dateField: 'flex-1',
+    input: 'form-control flex items-center border-0',
+    dateField: 'rounded rounded-r-none border border-r-0 border-border-muted-strong',
+    button: 'flex items-center justify-center rounded-l-none border-border-muted-strong bg-surface-muted-pale',
   },
   variants: {
     size: {
       small: {
-        input: 'gap-1.5 form-control-small',
-        button: '-my-0.5 -mr-1.5 mb-[-0.25rem] min-h-5 py-[0.25rem]',
+        input: 'max-h-5',
+        dateField: 'h-5 form-control-small',
       },
       medium: {
-        input: 'gap-2 form-control-medium',
-        button: 'my-[-0.3125rem] -mr-2 min-h-6 py-[0.3125rem]',
+        input: 'max-h-6',
+        dateField: 'h-6 form-control-medium',
       },
       large: {
-        input: 'gap-2.5 form-control-large',
-        button: 'my-[-0.5rem] -mr-2.5 min-h-7 py-[0.5rem]',
+        input: 'max-h-7',
+        dateField: 'h-7 form-control-large',
       },
       xlarge: {
-        input: 'gap-3 form-control-xlarge',
-        button: '-my-1.5 -mr-3 mb-[-0.625rem] min-h-8 py-1.5',
+        input: 'max-h-8',
+        dateField: 'h-8 form-control-xlarge',
       },
     },
     block: {
       true: {
-        input: 'w-full',
-      },
-      false: {
-        input: '',
+        input: 'w-full gap-0',
+        dateField: 'w-full',
       },
     },
     isInvalid: {
       true: {
-        input: 'border-border-danger',
+        dateField: 'border-border-danger',
+        button: 'border-border-danger border-l-border-muted-strong',
       },
       false: {},
     },
     isDisabled: {
       true: {
-        input: 'form-control-disabled',
+        dateField: '!form-control-disabled',
+      },
+      false: {},
+    },
+    isReadOnly: {
+      true: {
+        dateField: '!form-control-disabled',
       },
       false: {},
     },

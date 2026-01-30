@@ -18,6 +18,7 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
   orientation: 'vertical',
   size: 'medium',
   state: {
+    defaultValue: [],
     value: [],
     isDisabled: false,
     isReadOnly: false,
@@ -76,7 +77,6 @@ export const CheckboxGroupContext = createContext<CheckboxGroupContextState>({
     commitValidation: function (): void {
       throw new Error(FUNCTION_NOT_IMPLEMENTED);
     },
-    defaultValue: [],
   },
 });
 export function CheckboxGroup({

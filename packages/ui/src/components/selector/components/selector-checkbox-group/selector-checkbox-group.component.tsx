@@ -15,6 +15,7 @@ import {
 
 export const SelectorCheckboxGroupContext = createContext<SelectorCheckboxGroupContextState>({
   value: [],
+  defaultValue: [],
   isDisabled: false,
   isReadOnly: false,
   isSelected: () => false,
@@ -71,7 +72,6 @@ export const SelectorCheckboxGroupContext = createContext<SelectorCheckboxGroupC
   commitValidation: function (): void {
     throw new Error(FUNCTION_NOT_IMPLEMENTED);
   },
-  defaultValue: [],
 });
 
 export function SelectorCheckboxGroup(props: SelectorCheckboxGroupProps) {

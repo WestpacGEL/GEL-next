@@ -23,7 +23,7 @@ export const styles = tv({
           'pointer-events-none absolute top-0 right-0 touch-none rounded-full opacity-0 focus:pointer-events-auto focus:touch-auto focus:opacity-100',
         headerLabel: 'hidden',
         popover:
-          'absolute mt-1 scale-100 animate-fadeIn rounded-2xl border border-border-muted-soft bg-background-white opacity-100 shadow-[0_5px_10px_rgba(0,0,0,0.2)]',
+          'absolute my-1 scale-100 animate-fadeIn rounded-2xl border border-border-muted-soft bg-background-white opacity-100 shadow-[0_5px_10px_rgba(0,0,0,0.2)]',
       },
     },
   },
