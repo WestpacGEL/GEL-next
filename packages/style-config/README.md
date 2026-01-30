@@ -169,3 +169,24 @@ In order to use brand-fonts add the relevant font face declarations from the bel
   font-style: normal;
 }
 ```
+## Developing
+
+### Updating Tokens
+
+#### CAUTION:
+Only generate new tokens at the request of someone from the GEL team as there is no versioning and you may end up with unwanted changes.
+
+1. Request access to the Tokens Figma project by contacting someone in the GEL team. Step 2 + 3 can be done before access is approved.
+
+2. Generate a [Figma personal access token](https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens). Ensure the `file_variables:read` scope is selected as it is required by the [API](https://developers.figma.com/docs/rest-api/variables-endpoints/#get-local-variables-endpoint).
+
+3. Create a `.env.local` file in the root of the `style-config` package containing the project ID (found in the url figma.com/design/PROJECT_ID/) and your PAT. The project ID is unique and should be treated securely. The contents should look like:
+```
+FIGMA_PROJECT_ID=ID
+FIGMA_TOKEN=PAT
+```
+
+4. If you have your access to the project approved you can now run `pnpm build:tokens-file` to generate a new `GEL-tokens-figma.json` file, which is used to build off.
+
+5. You can now run `pnpm build` and update the tokens. Double check the updates to ensure they are all correct before raising a PR.
+
