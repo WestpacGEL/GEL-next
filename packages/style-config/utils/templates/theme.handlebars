@@ -11,17 +11,19 @@
       --{{@key}}: {{this}};
       {{/each}}
 
-      /* Theme Colors */
-      {{#each themeColors}}
-      --{{@key}}: {{this}};
-      {{/each}}
-
-      /* Theme Border Radius */
-      {{#each borderRadius}}
+      /* Light Mode Semantic Tokens */
+      {{#each lightSemanticTokens}}
       --{{@key}}: {{this}};
       {{/each}}
 
       /* Font Family */
       --font-brand: {{fontFamily}};
+    }
+
+    [data-brand="{{brand}}"][data-theme="dark"] {
+      /* Dark Mode Semantic Tokens */
+      {{#each darkSemanticTokens}}
+      --{{@key}}: {{this}};
+      {{/each}}
     }
 }

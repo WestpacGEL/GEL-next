@@ -47,9 +47,6 @@ function formatBorderRadius(obj) {
       const newKey = key.replace(/^rounded/, 'radius');
       if (newKey === 'radius-none' || newKey === 'radius-full') continue;
       let value = obj[key];
-      if (typeof value === 'string') {
-        value = value.replace(/border-radius/g, 'rounded');
-      }
       remapped[newKey] = value;
     }
   }
@@ -60,7 +57,7 @@ function formatBorderRadius(obj) {
 // Extraction Functions
 // --------------------------------------------------------------------------
 function extractPrimitives(tokens) {
-  const primitives = tokens.find(t => t.Primitives)?.Primitives?.modes?.['Mode 1']?.color;
+  const primitives = tokens.find(t => t.Primitives)?.Primitives?.color;
   const colorsObj = {};
   if (primitives) {
     for (const parentKey in primitives) {
@@ -73,7 +70,7 @@ function extractPrimitives(tokens) {
 }
 
 function getBorderPrimitives(tokens) {
-  const primitives = tokens.find(t => t.Primitives)?.Primitives?.modes?.['Mode 1']?.border?.radius;
+  const primitives = tokens.find(t => t.Primitives)?.Primitives?.border?.radius;
   if (!primitives) return {};
   const borderVars = {};
   for (const key in primitives) {
@@ -83,70 +80,6 @@ function getBorderPrimitives(tokens) {
     }
   }
   return borderVars;
-}
-
-function extractThemes(tokens, brandNameMap) {
-  const themes = tokens.find(t => t.Themes)?.Themes?.modes;
-  const colorsObj = {};
-  if (themes) {
-    for (const brand in themes) {
-      const themeColors = themes[brand]?.color;
-      if (themeColors) {
-        const colors = flattenColors(themeColors, brand.toLowerCase());
-        const cleanedColors = {};
-        for (const name in colors) {
-          let unprefixed = name.replace(new RegExp(`^${brand.toLowerCase()}-`), '');
-          if (unprefixed.startsWith('alias-')) {
-            unprefixed = unprefixed.replace(/^alias-/, '');
-          }
-          let value = colors[name];
-          if (typeof value === 'string' && value.startsWith('{color.alias.')) {
-            const aliasMatch = value.match(/\{color\.alias\.([^.]+)\}/i);
-            if (aliasMatch) {
-              const [_, aliasName] = aliasMatch;
-              value = `var(--${aliasName.toLowerCase().replace(/\s+/g, '-')})`;
-            }
-          } else if (typeof value === 'string' && value.startsWith('{color.')) {
-            value = refToVar(value);
-          }
-          cleanedColors[unprefixed] = value;
-        }
-        colorsObj[brandNameMap[brand.toLowerCase()]] = colorsObj[brandNameMap[brand.toLowerCase()]] || {};
-        colorsObj[brandNameMap[brand.toLowerCase()]].theme = cleanedColors;
-      }
-    }
-  }
-  return colorsObj;
-}
-
-function getThemeBrandBorders(tokens, brandNameMap) {
-  const themes = tokens.find(t => t.Themes)?.Themes?.modes;
-  if (!themes) return {};
-  const brandBorders = {};
-  for (const brand in themes) {
-    const borderRadii = themes[brand]?.border?.radius;
-    if (borderRadii) {
-      const cssVars = {};
-      for (const key in borderRadii) {
-        if (borderRadii[key]?.$value !== undefined) {
-          const varName = `border-radius-${key.replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
-          let value = borderRadii[key].$value;
-          if (typeof value === 'string' && value.startsWith('{border.radius.')) {
-            const ref = value.match(/\{border\.radius\.([^.}]+)\}/i);
-            if (ref) {
-              const refVar = `--border-radius-${ref[1].replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
-              value = `var(${refVar})`;
-            }
-          } else if (typeof value === 'number') {
-            value = `${value}px`;
-          }
-          cssVars[varName] = value;
-        }
-      }
-      brandBorders[brandNameMap[brand.toLowerCase()] || brand.toLowerCase()] = cssVars;
-    }
-  }
-  return brandBorders;
 }
 
 function extractTokens(tokens) {
@@ -189,7 +122,8 @@ function extractTokens(tokens) {
           tokenObj[unprefixed] = value;
         });
 
-        tokensObj[mode.toLowerCase().split(' ')[0]] = tokenObj;
+        const processedMode = mode.toLowerCase().split(' ')[0];
+        tokensObj[processedMode] = tokenObj;
       }
     }
   }
@@ -230,21 +164,57 @@ function getModeBorders(tokens) {
 // --------------------------------------------------------------------------
 // Output Functions
 // --------------------------------------------------------------------------
-function writeBrandThemeCSS(tokens, brandNameMap, brandFontMap, themeTemplate, outputDir) {
-  const themeColorsObj = extractThemes(tokens, brandNameMap);
+function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
   const primitivesObj = extractPrimitives(tokens);
-  const themeBorderRadius = getThemeBrandBorders(tokens, brandNameMap);
+  const borderPrimitives = getBorderPrimitives(tokens);
+  const tokensObj = extractTokens(tokens);
 
   BRANDS.forEach(({ primitiveName }) => {
     const brand = primitiveName.toLowerCase();
     const brandFile = path.resolve(outputDir, `theme-${brand}.css`);
+    
+    // Merge brand-specific primitives with shared mono primitives
+    const allPrimitives = {
+      ...(primitivesObj.mono?.primitives || {}),
+      ...(primitivesObj[brand]?.primitives || {})
+    };
+    
+    // Create brand-specific semantic tokens by replacing WBC references with current brand
+    const brandLightSemanticTokens = {};
+    const brandDarkSemanticTokens = {};
+    
+    // Process light mode tokens
+    if (tokensObj.light) {
+      Object.entries(tokensObj.light).forEach(([key, value]) => {
+        if (typeof value === 'string' && value.includes('--wbc-')) {
+          // Replace WBC references with current brand (e.g., --wbc-muted-100 -> --stg-muted-100)
+          brandLightSemanticTokens[key] = value.replace(/--wbc-/g, `--${brand}-`);
+        } else {
+          brandLightSemanticTokens[key] = value;
+        }
+      });
+    }
+
+    // Process dark mode tokens
+    if (tokensObj.dark) {
+      Object.entries(tokensObj.dark).forEach(([key, value]) => {
+        if (typeof value === 'string' && value.includes('--wbc-')) {
+          // Replace WBC references with current brand (e.g., --wbc-muted-100 -> --stg-muted-100)
+          brandDarkSemanticTokens[key] = value.replace(/--wbc-/g, `--${brand}-`);
+        } else {
+          brandDarkSemanticTokens[key] = value;
+        }
+      });
+    }
+    
     fs.writeFileSync(
       brandFile,
       themeTemplate({
         brand,
-        primitiveColors: primitivesObj[brand]?.primitives || {},
-        themeColors: themeColorsObj[brand]?.theme || {},
-        borderRadius: themeBorderRadius[brand] || {},
+        primitiveColors: allPrimitives,
+        lightSemanticTokens: brandLightSemanticTokens,
+        darkSemanticTokens: brandDarkSemanticTokens,
+        borderRadius: borderPrimitives,
         fontFamily: brandFontMap[brand] || '',
       }),
     );
@@ -256,8 +226,8 @@ function writeSharedColorsCSS(colorsObj, tokensObj, sharedStylesTemplate, output
     outputFile,
     sharedStylesTemplate({
       reserved: colorsObj.reserved?.primitives || {},
-      light: tokensObj.light || {},
-      dark: tokensObj.dark || {},
+      // Tailwind theme variables - using light tokens for reference
+      tailwindTokens: tokensObj.light || {},
     }),
   );
 }
@@ -276,8 +246,8 @@ function writeBordersCSS(borderPrimitives, modeBorderRadius, bordersTemplate, ou
 // Main Transformer Function
 // --------------------------------------------------------------------------
 function transformCSS() {
-  const tokensPath = path.resolve(__dirname, '../../src/tokens/GEL-tokens-figma.json');
-  const tokens = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
+  const gelTokensPath = path.resolve(__dirname, '../../src/tokens/GEL-tokens-figma.json');
+  const tokens = JSON.parse(fs.readFileSync(gelTokensPath, 'utf8'));
 
   const themeTemplatePath = path.resolve(__dirname, '../templates/theme.handlebars');
   const themeTemplateSource = fs.readFileSync(themeTemplatePath, 'utf8');
@@ -290,13 +260,6 @@ function transformCSS() {
   const sharedStylesTemplate = Handlebars.compile(sharedStylesTemplateSource);
   const bordersTemplate = Handlebars.compile(bordersTemplateSource);
 
-  const brandNameMap = BRANDS.reduce((acc, { themeName, primitiveName }) => {
-    return {
-      ...acc,
-      [themeName.toLowerCase()]: primitiveName.toLowerCase(),
-    };
-  }, {});
-
   const brandFontMap = BRANDS.reduce((acc, { fontName, primitiveName }) => {
     return {
       ...acc,
@@ -308,7 +271,7 @@ function transformCSS() {
   const tokensObj = extractTokens(tokens);
 
   const brandOutputDir = path.resolve(__dirname, '../../src/css/themes');
-  writeBrandThemeCSS(tokens, brandNameMap, brandFontMap, themeTemplate, brandOutputDir);
+  writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, brandOutputDir);
 
   const colorsOutputFile = path.resolve(__dirname, '../../src/css/shared/colors.css');
   writeSharedColorsCSS(colorsObj, tokensObj, sharedStylesTemplate, colorsOutputFile);

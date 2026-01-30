@@ -3,7 +3,7 @@
 import UIKit 
 
 public enum AllBrandsPrimitivesDimension {
-  public static let primitivesBorderRadiusNone = 0
+  public static let primitivesBorderRadius0px = 0
   public static let primitivesBorderRadius3px = 3
   public static let primitivesBorderRadius4px = 4
   public static let primitivesBorderRadius5px = 5
@@ -12,47 +12,7 @@ public enum AllBrandsPrimitivesDimension {
   public static let primitivesBorderRadius12px = 12
   public static let primitivesBorderRadius16px = 16
   public static let primitivesBorderRadius24px = 24
-  public static let primitivesBorderRadiusFull = 999
-  public static let themesWestpacBorderRadiusNone = 0
-  public static let themesWestpacBorderRadiusSm = 3
-  public static let themesWestpacBorderRadiusMd = 4
-  public static let themesWestpacBorderRadiusLg = 5
-  public static let themesWestpacBorderRadiusXl = 6
-  public static let themesWestpacBorderRadius2xl = 8
-  public static let themesWestpacBorderRadius3xl = 12
-  public static let themesWestpacBorderRadius4xl = 16
-  public static let themesWestpacBorderRadius5xl = 24
-  public static let themesWestpacBorderRadiusFull = 999
-  public static let themesStGeorgeBorderRadiusNone = 0
-  public static let themesStGeorgeBorderRadiusSm = 3
-  public static let themesStGeorgeBorderRadiusMd = 4
-  public static let themesStGeorgeBorderRadiusLg = 5
-  public static let themesStGeorgeBorderRadiusXl = 6
-  public static let themesStGeorgeBorderRadius2xl = 8
-  public static let themesStGeorgeBorderRadius3xl = 12
-  public static let themesStGeorgeBorderRadius4xl = 16
-  public static let themesStGeorgeBorderRadius5xl = 24
-  public static let themesStGeorgeBorderRadiusFull = 999
-  public static let themesBankOfMelbourneBorderRadiusNone = 0
-  public static let themesBankOfMelbourneBorderRadiusSm = 3
-  public static let themesBankOfMelbourneBorderRadiusMd = 4
-  public static let themesBankOfMelbourneBorderRadiusLg = 5
-  public static let themesBankOfMelbourneBorderRadiusXl = 6
-  public static let themesBankOfMelbourneBorderRadius2xl = 8
-  public static let themesBankOfMelbourneBorderRadius3xl = 12
-  public static let themesBankOfMelbourneBorderRadius4xl = 16
-  public static let themesBankOfMelbourneBorderRadius5xl = 24
-  public static let themesBankOfMelbourneBorderRadiusFull = 999
-  public static let themesBankSABorderRadiusNone = 0
-  public static let themesBankSABorderRadiusSm = 3
-  public static let themesBankSABorderRadiusMd = 4
-  public static let themesBankSABorderRadiusLg = 5
-  public static let themesBankSABorderRadiusXl = 6
-  public static let themesBankSABorderRadius2xl = 8
-  public static let themesBankSABorderRadius3xl = 12
-  public static let themesBankSABorderRadius4xl = 16
-  public static let themesBankSABorderRadius5xl = 24
-  public static let themesBankSABorderRadiusFull = 999
+  public static let primitivesBorderRadius999px = 999
 }
 
 
@@ -77,16 +37,6 @@ public enum AllBrandsLightDimensions {
   public static let tokensStGeorgeLightBorderRadiusRounded4xl = 16
   public static let tokensStGeorgeLightBorderRadiusRounded5xl = 24
   public static let tokensStGeorgeLightBorderRadiusRoundedFull = 999
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedNone = 0
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedSm = 3
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedMd = 4
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedLg = 5
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedXl = 6
-  public static let tokensBankOfMelbourneModeBorderRadiusRounded2xl = 8
-  public static let tokensBankOfMelbourneModeBorderRadiusRounded3xl = 12
-  public static let tokensBankOfMelbourneModeBorderRadiusRounded4xl = 16
-  public static let tokensBankOfMelbourneModeBorderRadiusRounded5xl = 24
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedFull = 999
   public static let tokensBankSAModeBorderRadiusRoundedNone = 0
   public static let tokensBankSAModeBorderRadiusRoundedSm = 3
   public static let tokensBankSAModeBorderRadiusRoundedMd = 4
@@ -97,6 +47,16 @@ public enum AllBrandsLightDimensions {
   public static let tokensBankSAModeBorderRadiusRounded4xl = 16
   public static let tokensBankSAModeBorderRadiusRounded5xl = 24
   public static let tokensBankSAModeBorderRadiusRoundedFull = 999
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedNone = 0
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedSm = 3
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedMd = 4
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedLg = 5
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedXl = 6
+  public static let tokensBankOfMelbourneModeBorderRadiusRounded2xl = 8
+  public static let tokensBankOfMelbourneModeBorderRadiusRounded3xl = 12
+  public static let tokensBankOfMelbourneModeBorderRadiusRounded4xl = 16
+  public static let tokensBankOfMelbourneModeBorderRadiusRounded5xl = 24
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedFull = 999
 }
 
 
@@ -121,16 +81,6 @@ public enum AllBrandsDarkDimensions {
   public static let tokensStGeorgeDarkBorderRadiusRounded4xl = 16
   public static let tokensStGeorgeDarkBorderRadiusRounded5xl = 24
   public static let tokensStGeorgeDarkBorderRadiusRoundedFull = 999
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedNone = 0
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedSm = 3
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedMd = 4
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedLg = 5
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedXl = 6
-  public static let tokensBankOfMelbourneModeBorderRadiusRounded2xl = 8
-  public static let tokensBankOfMelbourneModeBorderRadiusRounded3xl = 12
-  public static let tokensBankOfMelbourneModeBorderRadiusRounded4xl = 16
-  public static let tokensBankOfMelbourneModeBorderRadiusRounded5xl = 24
-  public static let tokensBankOfMelbourneModeBorderRadiusRoundedFull = 999
   public static let tokensBankSAModeBorderRadiusRoundedNone = 0
   public static let tokensBankSAModeBorderRadiusRoundedSm = 3
   public static let tokensBankSAModeBorderRadiusRoundedMd = 4
@@ -141,4 +91,14 @@ public enum AllBrandsDarkDimensions {
   public static let tokensBankSAModeBorderRadiusRounded4xl = 16
   public static let tokensBankSAModeBorderRadiusRounded5xl = 24
   public static let tokensBankSAModeBorderRadiusRoundedFull = 999
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedNone = 0
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedSm = 3
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedMd = 4
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedLg = 5
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedXl = 6
+  public static let tokensBankOfMelbourneModeBorderRadiusRounded2xl = 8
+  public static let tokensBankOfMelbourneModeBorderRadiusRounded3xl = 12
+  public static let tokensBankOfMelbourneModeBorderRadiusRounded4xl = 16
+  public static let tokensBankOfMelbourneModeBorderRadiusRounded5xl = 24
+  public static let tokensBankOfMelbourneModeBorderRadiusRoundedFull = 999
 }
