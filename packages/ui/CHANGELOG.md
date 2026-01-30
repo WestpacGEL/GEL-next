@@ -426,6 +426,12 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
 
+## 0.57.2
+
+### Patch Changes
+
+- f6f9536: added import of react to SelectorButtonGroup and SelectorLinkGroup
+
 ## 0.57.1
 
 ### Patch Changes
