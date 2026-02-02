@@ -23,7 +23,7 @@
   <color name="bsaSurfacePop">#00adbd</color>
   <color name="bsaSurfacePopFaint">#002529</color>
   <color name="bsaSurfaceHoller">#cf2b86</color>
-  <color name="bsaSurfaceHollerFaint">#2e0a1e</color>
+  <color name="bsaSurfaceHollerFaint">#3b0c26</color>
   <color name="bsaSurfaceSuccess">#249224</color>
   <color name="bsaSurfaceSuccessFaint">#003300</color>
   <color name="bsaSurfaceInfo">#2487cc</color>
@@ -87,7 +87,7 @@
   <color name="bsaDataFTint">#faba70</color>
   <color name="bsaDataFOpacity">#f7921e80</color>
   <color name="bsaSurfacePictogramBase">#2574da</color>
-  <color name="bsaSurfacePictogramAccent">#b61523</color>
+  <color name="bsaSurfacePictogramAccent">#09d9ec</color>
   <color name="bsaSurfaceHoverPrimary">#f96a6f</color>
   <color name="bsaSurfaceActivePrimary">#fccbcc</color>
   <color name="bsaSurfaceHoverHero">#4c8de1</color>

@@ -126,33 +126,57 @@ function deepMerge(target, source) {
 }
 
 /**
- * Resolve variable value (handle aliases)
- * Tokens reference Primitives directly
+ * Resolve variable value with brand-specific overrides
+ * This function checks for variable overrides first, then falls back to base values
  */
-function resolveValue(valueData, variablesMap, resolvedType, isTokenCollection = false) {
+function resolveValueWithOverrides(valueData, variablesMap, resolvedType, collection, variables, modeId, baseVariableId) {
+  // Check if this collection has variable overrides for this specific variable
+  if (collection.variableOverrides && baseVariableId && collection.variableOverrides[baseVariableId]) {
+    const overrides = collection.variableOverrides[baseVariableId];
+    
+    // Look for override with matching mode ID
+    // The key format matches the full modeId exactly
+    const overrideKey = Object.keys(overrides).find(key => key === modeId);
+    
+    if (overrideKey && overrides[overrideKey]) {
+      // Use the override value
+      const overrideValue = overrides[overrideKey];
+      if (overrideValue.type === 'VARIABLE_ALIAS') {
+        const referencedVar = variables[overrideValue.id];
+        if (referencedVar) {
+          let refPath = parseVariableName(referencedVar.name).join('.');
+          return `{Primitives.${refPath}}`; // Include Primitives prefix
+        }
+      }
+      // Handle direct color values in overrides
+      return resolveDirectValue(overrideValue, resolvedType);
+    }
+  }
+  
+  // Fallback to base resolution
+  return resolveValue(valueData, variablesMap, resolvedType);
+}
+
+/**
+ * Resolve variable value (handle aliases) - original function
+ */
+function resolveValue(valueData, variablesMap, resolvedType) {
   if (valueData.type === 'VARIABLE_ALIAS') {
     const referencedVar = variablesMap[valueData.id];
     if (referencedVar) {
-      // Return alias reference in curly braces
       let refPath = parseVariableName(referencedVar.name).join('.');
-      
-      // Note: isTokenCollection parameter is maintained for future flexibility
-      // but all references go directly to Primitives
-      if (isTokenCollection) {
-        const parts = refPath.split('.');
-        if (parts.length >= 3 && ['WBC', 'STG', 'BOM', 'BSA'].includes(parts[1])) {
-          // Remove the brand code to make it a direct Primitive reference
-          parts.splice(1, 1);
-          refPath = parts.join('.');
-        }
-      }
-      
       return `{${refPath}}`;
     }
     return null;
   }
   
-  // Handle different value types
+  return resolveDirectValue(valueData, resolvedType);
+}
+
+/**
+ * Resolve direct color/value data
+ */
+function resolveDirectValue(valueData, resolvedType) {
   switch (resolvedType) {
     case 'COLOR':
       if (valueData.r !== undefined) {
@@ -263,46 +287,165 @@ function transformFigmaRestResponse(figmaData) {
   // ========================================
   // 2. Transform Tokens (semantic token collections)
   // ========================================
-  const tokenCollections = Object.values(variableCollections).filter(c => 
-    ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(c.name)
+  
+  // Find the base Westpac collection that contains semantic token definitions
+  const westpacCollection = Object.values(variableCollections).find(c => c.name === 'Westpac');
+  
+  // Find brand extension collections that contain variable overrides
+  const brandExtensions = Object.values(variableCollections).filter(c => 
+    ['StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(c.name) && c.isExtension
   );
   
-  const tokensResult = {
+  // Map collection names to brand codes
+  const collectionToBrandCode = {
+    'Westpac': 'WBC',
+    'StGeorge': 'STG', 
+    'Bank SA': 'BSA',
+    'Bank of Melbourne': 'BOM'
+  };
+
+  // Create consolidated tokens structure
+  const consolidatedTokens = {
     Tokens: {
-      modes: {
-        'Light mode': {},
-        'Dark mode': {}
-      }
+      modes: {}
     }
   };
   
-  // Process each collection and merge into Light/Dark modes
-  tokenCollections.forEach(collection => {
+  // Process Westpac (base collection with all semantic tokens)
+  if (westpacCollection) {
+    const lightMode = westpacCollection.modes.find(m => m.name === 'Light mode');
+    const darkMode = westpacCollection.modes.find(m => m.name === 'Dark mode');
+    
+    if (lightMode && darkMode) {
+      // Initialize Westpac brand modes
+      consolidatedTokens.Tokens.modes['Westpac'] = {
+        'light-mode': {},
+        'dark-mode': {}
+      };
+      
+      // Process semantic tokens from base Westpac collection
+      const collectionVars = westpacCollection.variableIds
+        .map(varId => variables[varId])
+        .filter(v => v != null);
+      
+      // Process Light mode for base Westpac collection (no overrides)
+      collectionVars.forEach(variable => {
+        const pathParts = parseVariableName(variable.name);
+        const baseValueData = variable.valuesByMode[lightMode.modeId];
+        
+        if (baseValueData === undefined || baseValueData === null) return;
+        
+        // Use base values (no overrides for Westpac)
+        const value = resolveValue(baseValueData, variables, variable.resolvedType);
+        
+        if (value === null) return;
+        
+        const tokenValue = {
+          $type: getFigmaType(variable.resolvedType),
+          $value: value,
+          $collectionName: 'Primitives'
+        };
+        
+        if (variable.scopes && variable.scopes.length > 0) {
+          tokenValue.$scopes = ['ALL_SCOPES'];
+        }
+        
+        if (variable.hiddenFromPublishing) {
+          tokenValue.$hiddenFromPublishing = true;
+        }
+        
+        if (variable.description) {
+          tokenValue.$description = variable.description;
+        }
+        
+        const nested = pathToNestedObject(pathParts, tokenValue);
+        consolidatedTokens.Tokens.modes['Westpac']['light-mode'] = deepMerge(consolidatedTokens.Tokens.modes['Westpac']['light-mode'], nested);
+      });
+      
+      // Process Dark mode for base Westpac collection (no overrides)
+      collectionVars.forEach(variable => {
+        const pathParts = parseVariableName(variable.name);
+        const baseValueData = variable.valuesByMode[darkMode.modeId];
+        
+        if (baseValueData === undefined || baseValueData === null) return;
+        
+        // Use base values (no overrides for Westpac)
+        const value = resolveValue(baseValueData, variables, variable.resolvedType);
+        
+        if (value === null) return;
+        
+        const tokenValue = {
+          $type: getFigmaType(variable.resolvedType),
+          $value: value,
+          $collectionName: 'Primitives'
+        };
+        
+        if (variable.scopes && variable.scopes.length > 0) {
+          tokenValue.$scopes = ['ALL_SCOPES'];
+        }
+        
+        if (variable.hiddenFromPublishing) {
+          tokenValue.$hiddenFromPublishing = true;
+        }
+        
+        if (variable.description) {
+          tokenValue.$description = variable.description;
+        }
+        
+        const nested = pathToNestedObject(pathParts, tokenValue);
+        consolidatedTokens.Tokens.modes['Westpac']['dark-mode'] = deepMerge(consolidatedTokens.Tokens.modes['Westpac']['dark-mode'], nested);
+      });
+    }
+  }
+
+  // Process each brand extension collection with overrides
+  brandExtensions.forEach(brandCollection => {
+    const brandCode = collectionToBrandCode[brandCollection.name];
+    const brandName = brandCollection.name;
+    if (!brandCode || !westpacCollection) return;
+    
     // Process both light and dark modes
-    const lightMode = collection.modes.find(m => m.name === 'Light mode');
-    const darkMode = collection.modes.find(m => m.name === 'Dark mode');
+    const lightMode = brandCollection.modes.find(m => m.name === 'Light mode');
+    const darkMode = brandCollection.modes.find(m => m.name === 'Dark mode');
     
     if (!lightMode || !darkMode) return;
     
-    // Process variables for this collection
-    const collectionVars = collection.variableIds
+    // Initialize brand modes in consolidated structure
+    consolidatedTokens.Tokens.modes[brandName] = {
+      'light-mode': {},
+      'dark-mode': {}
+    };
+    
+    // Use semantic tokens from base Westpac collection but apply brand overrides
+    const collectionVars = westpacCollection.variableIds
       .map(varId => variables[varId])
       .filter(v => v != null);
     
-    // Process Light mode
+    // Process Light mode with brand overrides
     collectionVars.forEach(variable => {
       const pathParts = parseVariableName(variable.name);
-      const valueData = variable.valuesByMode[lightMode.modeId];
+      // Get base value from the parent mode (Westpac collection)
+      const baseValueData = variable.valuesByMode[lightMode.parentModeId];
       
-      if (valueData === undefined || valueData === null) return;
+      if (baseValueData === undefined || baseValueData === null) return;
       
-      const value = resolveValue(valueData, variables, variable.resolvedType, false); // Tokens reference Primitives directly
+      // Use overrides from brand collection with the brand's mode ID
+      const value = resolveValueWithOverrides(
+        baseValueData, 
+        variables, 
+        variable.resolvedType, 
+        brandCollection,  // Use brand collection for overrides
+        variables, 
+        lightMode.modeId, // Use brand mode ID for override lookup
+        variable.id  // Base variable ID for override lookup
+      );
+      
       if (value === null) return;
       
       const tokenValue = {
         $type: getFigmaType(variable.resolvedType),
         $value: value,
-        $collectionName: 'Primitives'  // Tokens reference Primitives directly
+        $collectionName: 'Primitives'
       };
       
       if (variable.scopes && variable.scopes.length > 0) {
@@ -318,23 +461,34 @@ function transformFigmaRestResponse(figmaData) {
       }
       
       const nested = pathToNestedObject(pathParts, tokenValue);
-      tokensResult.Tokens.modes['Light mode'] = deepMerge(tokensResult.Tokens.modes['Light mode'], nested);
+      consolidatedTokens.Tokens.modes[brandName]['light-mode'] = deepMerge(consolidatedTokens.Tokens.modes[brandName]['light-mode'], nested);
     });
     
-    // Process Dark mode
+    // Process Dark mode with brand overrides
     collectionVars.forEach(variable => {
       const pathParts = parseVariableName(variable.name);
-      const valueData = variable.valuesByMode[darkMode.modeId];
+      // Get base value from the parent mode (Westpac collection)
+      const baseValueData = variable.valuesByMode[darkMode.parentModeId];
       
-      if (valueData === undefined || valueData === null) return;
+      if (baseValueData === undefined || baseValueData === null) return;
       
-      const value = resolveValue(valueData, variables, variable.resolvedType, false); // Tokens reference Primitives directly
+      // Use overrides from brand collection with the brand's mode ID
+      const value = resolveValueWithOverrides(
+        baseValueData, 
+        variables, 
+        variable.resolvedType, 
+        brandCollection,  // Use brand collection for overrides
+        variables, 
+        darkMode.modeId,  // Use brand mode ID for override lookup
+        variable.id  // Base variable ID for override lookup
+      );
+      
       if (value === null) return;
       
       const tokenValue = {
         $type: getFigmaType(variable.resolvedType),
         $value: value,
-        $collectionName: 'Primitives'  // Tokens reference Primitives directly
+        $collectionName: 'Primitives'
       };
       
       if (variable.scopes && variable.scopes.length > 0) {
@@ -350,11 +504,12 @@ function transformFigmaRestResponse(figmaData) {
       }
       
       const nested = pathToNestedObject(pathParts, tokenValue);
-      tokensResult.Tokens.modes['Dark mode'] = deepMerge(tokensResult.Tokens.modes['Dark mode'], nested);
+      consolidatedTokens.Tokens.modes[brandName]['dark-mode'] = deepMerge(consolidatedTokens.Tokens.modes[brandName]['dark-mode'], nested);
     });
   });
   
-  result.push(tokensResult);
+  // Push the consolidated tokens structure
+  result.push(consolidatedTokens);
   
   return result;
 }
@@ -387,3 +542,6 @@ async function main() {
 if (require.main === module) {
   main();
 }
+
+// Export for testing
+module.exports = { transformFigmaRestResponse };

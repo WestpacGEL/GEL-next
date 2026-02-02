@@ -1292,7 +1292,7 @@
         "surface": {
           "surface-muted-vivid": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.muted.950}",
+            "$value": "{Primitives.color.STG.hero.800}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -1537,7 +1537,7 @@
         "text": {
           "text-body": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.muted.950}",
+            "$value": "{Primitives.color.STG.hero.800}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -1546,7 +1546,7 @@
           },
           "text-heading": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.hero.500}",
+            "$value": "{Primitives.color.STG.hero.600}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -1573,7 +1573,7 @@
           },
           "text-hero": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.hero.500}",
+            "$value": "{Primitives.color.STG.hero.600}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -1993,7 +1993,7 @@
         "pictogram": {
           "surface-pictogram-base": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.hero.500}",
+            "$value": "{Primitives.color.STG.hero.800}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2002,7 +2002,7 @@
           },
           "surface-pictogram-accent": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.primary.500}",
+            "$value": "{Primitives.color.STG.pop.500}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2523,7 +2523,7 @@
           },
           "text-heading": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.hero.200}",
+            "$value": "{Primitives.color.STG.hero.300}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2550,7 +2550,7 @@
           },
           "text-hero": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.hero.200}",
+            "$value": "{Primitives.color.STG.hero.300}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2851,7 +2851,7 @@
           },
           "data-b-opacity": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.hero.opacity}",
+            "$value": "{Primitives.color.STG.pop.opacity}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2970,7 +2970,7 @@
         "pictogram": {
           "surface-pictogram-base": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.hero.300}",
+            "$value": "{Primitives.color.STG.hero.400}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2979,7 +2979,7 @@
           },
           "surface-pictogram-accent": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.primary.600}",
+            "$value": "{Primitives.color.STG.pop.400}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"

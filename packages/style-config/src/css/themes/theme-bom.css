@@ -99,7 +99,7 @@
       --background-faint: var(--bom-muted-50);
       --background-primary: var(--bom-primary-500);
       --background-hero: var(--bom-hero-500);
-      --surface-muted-vivid: var(--bom-muted-950);
+      --surface-muted-vivid: var(--bom-hero-900);
       --surface-muted: var(--bom-muted-500);
       --surface-muted-strong: var(--bom-muted-400);
       --surface-muted-mild: var(--bom-muted-300);
@@ -126,7 +126,7 @@
       --surface-system-error-dark: var(--reserved-system-950);
       --surface-mono: var(--mono-white);
       --surface-reversed: var(--mono-white);
-      --text-body: var(--bom-muted-950);
+      --text-body: var(--bom-hero-900);
       --text-heading: var(--bom-hero-500);
       --text-muted: var(--bom-muted-500);
       --text-primary: var(--bom-primary-500);
@@ -177,7 +177,7 @@
       --data-f-tint: var(--bom-dance-300);
       --data-f-opacity: var(--bom-dance-opacity);
       --surface-pictogram-base: var(--bom-hero-500);
-      --surface-pictogram-accent: var(--bom-primary-500);
+      --surface-pictogram-accent: var(--bom-pop-500);
       --surface-hover-primary: var(--bom-primary-400);
       --surface-active-primary: var(--bom-primary-200);
       --surface-hover-hero: var(--bom-hero-400);
@@ -212,11 +212,11 @@
       --surface-primary: var(--bom-primary-400);
       --surface-primary-faint: var(--bom-primary-950);
       --surface-hero: var(--bom-hero-300);
-      --surface-hero-faint: var(--bom-hero-950);
+      --surface-hero-faint: var(--bom-hero-900);
       --surface-pop: var(--bom-pop-500);
       --surface-pop-faint: var(--bom-pop-950);
       --surface-holler: var(--bom-holler-400);
-      --surface-holler-faint: var(--bom-holler-950);
+      --surface-holler-faint: var(--bom-holler-900);
       --surface-success: var(--reserved-success-400);
       --surface-success-faint: var(--reserved-success-900);
       --surface-info: var(--reserved-info-400);
@@ -230,10 +230,10 @@
       --surface-mono: var(--mono-black);
       --surface-reversed: var(--mono-white);
       --text-body: var(--bom-muted-200);
-      --text-heading: var(--bom-hero-200);
+      --text-heading: var(--bom-hero-300);
       --text-muted: var(--bom-muted-400);
       --text-primary: var(--bom-primary-300);
-      --text-hero: var(--bom-hero-200);
+      --text-hero: var(--bom-hero-300);
       --text-holler: var(--bom-holler-300);
       --text-link: var(--bom-primary-300);
       --text-success: var(--reserved-success-300);
@@ -279,8 +279,8 @@
       --data-f-solid: var(--bom-dance-500);
       --data-f-tint: var(--bom-dance-300);
       --data-f-opacity: var(--bom-dance-opacity);
-      --surface-pictogram-base: var(--bom-hero-300);
-      --surface-pictogram-accent: var(--bom-primary-600);
+      --surface-pictogram-base: var(--bom-hero-400);
+      --surface-pictogram-accent: var(--bom-pop-400);
       --surface-hover-primary: var(--bom-primary-200);
       --surface-active-primary: var(--bom-primary-100);
       --surface-hover-hero: var(--bom-hero-200);

@@ -157,7 +157,7 @@
   --color-background-faint: var(--primitives-color-stg-muted-50); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */
   --color-background-primary: var(--primitives-color-stg-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-background-hero: var(--primitives-color-stg-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-surface-muted-vivid: var(--primitives-color-stg-muted-950); /* Use for surfaces that need to be the same colour as body text (icons, arrows etc). */
+  --color-surface-muted-vivid: var(--primitives-color-stg-hero-800); /* Use for surfaces that need to be the same colour as body text (icons, arrows etc). */
   --color-surface-muted: var(--primitives-color-stg-muted-500); /* Replaces the current Muted colour style. */
   --color-surface-muted-strong: var(--primitives-color-stg-muted-400); /* Reserved do not use. */
   --color-surface-muted-mild: var(--primitives-color-stg-muted-300); /* Reserved do not use. */
@@ -184,11 +184,11 @@
   --color-surface-system-error-dark: var(--primitives-color-system-950); /* Only use for system alert components, do not use for anything else. */
   --color-surface-mono: var(--primitives-color-mono-white); /* White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode. */
   --color-surface-reversed: var(--primitives-color-mono-white); /* Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode. */
-  --color-text-body: var(--primitives-color-stg-muted-950); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
-  --color-text-heading: var(--primitives-color-stg-hero-500); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
+  --color-text-body: var(--primitives-color-stg-hero-800); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
+  --color-text-heading: var(--primitives-color-stg-hero-600); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
   --color-text-muted: var(--primitives-color-stg-muted-500); /* Use for text that requires less emphasis like hint text etc. */
   --color-text-primary: var(--primitives-color-stg-primary-500); /* Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token. */
-  --color-text-hero: var(--primitives-color-stg-hero-500); /* Use for text that requires more emphasis, call outs, quotes etc. */
+  --color-text-hero: var(--primitives-color-stg-hero-600); /* Use for text that requires more emphasis, call outs, quotes etc. */
   --color-text-holler: var(--primitives-color-stg-holler-500); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-text-link: var(--primitives-color-stg-primary-500); /* Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands. */
   --color-text-success: var(--primitives-color-success-500); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
@@ -234,8 +234,8 @@
   --color-data-f-solid: var(--primitives-color-stg-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-tint: var(--primitives-color-stg-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-opacity: var(--primitives-color-stg-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-surface-pictogram-base: var(--primitives-color-stg-hero-500); /* Reserved. Only for use on Pictograms. */
-  --color-surface-pictogram-accent: var(--primitives-color-stg-primary-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-base: var(--primitives-color-stg-hero-800); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--primitives-color-stg-pop-500); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--primitives-color-stg-primary-400); /* This token is for hover states. */
   --color-surface-active-primary: var(--primitives-color-stg-primary-200);
   --color-surface-hover-hero: var(--primitives-color-stg-hero-400); /* This token is for hover states. */
@@ -294,10 +294,10 @@
   --color-surface-mono: var(--primitives-color-mono-black); /* White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode. */
   --color-surface-reversed: var(--primitives-color-mono-white); /* Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode. */
   --color-text-body: var(--primitives-color-stg-muted-200); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
-  --color-text-heading: var(--primitives-color-stg-hero-200); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
+  --color-text-heading: var(--primitives-color-stg-hero-300); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
   --color-text-muted: var(--primitives-color-stg-muted-400); /* Use for text that requires less emphasis like hint text etc. */
   --color-text-primary: var(--primitives-color-stg-primary-300); /* Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token. */
-  --color-text-hero: var(--primitives-color-stg-hero-200); /* Use for text that requires more emphasis, call outs, quotes etc. */
+  --color-text-hero: var(--primitives-color-stg-hero-300); /* Use for text that requires more emphasis, call outs, quotes etc. */
   --color-text-holler: var(--primitives-color-stg-holler-300); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-text-link: var(--primitives-color-stg-primary-300); /* Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands. */
   --color-text-success: var(--primitives-color-success-300); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
@@ -330,7 +330,7 @@
   --color-data-a-opacity: var(--primitives-color-stg-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-b-solid: var(--primitives-color-stg-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-b-tint: var(--primitives-color-stg-hero-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-data-b-opacity: var(--primitives-color-stg-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-opacity: var(--primitives-color-stg-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-c-solid: var(--primitives-color-stg-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-c-tint: var(--primitives-color-stg-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-c-opacity: var(--primitives-color-stg-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
@@ -343,8 +343,8 @@
   --color-data-f-solid: var(--primitives-color-stg-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-tint: var(--primitives-color-stg-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-opacity: var(--primitives-color-stg-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-surface-pictogram-base: var(--primitives-color-stg-hero-300); /* Reserved. Only for use on Pictograms. */
-  --color-surface-pictogram-accent: var(--primitives-color-stg-primary-600); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-base: var(--primitives-color-stg-hero-400); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--primitives-color-stg-pop-400); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--primitives-color-stg-primary-200); /* This token is for hover states. */
   --color-surface-active-primary: var(--primitives-color-stg-primary-100);
   --color-surface-hover-hero: var(--primitives-color-stg-hero-200); /* This token is for hover states. */

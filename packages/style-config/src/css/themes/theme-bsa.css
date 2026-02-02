@@ -99,7 +99,7 @@
       --background-faint: var(--bsa-muted-50);
       --background-primary: var(--bsa-primary-500);
       --background-hero: var(--bsa-hero-500);
-      --surface-muted-vivid: var(--bsa-muted-950);
+      --surface-muted-vivid: var(--bsa-muted-800);
       --surface-muted: var(--bsa-muted-500);
       --surface-muted-strong: var(--bsa-muted-400);
       --surface-muted-mild: var(--bsa-muted-300);
@@ -126,7 +126,7 @@
       --surface-system-error-dark: var(--reserved-system-950);
       --surface-mono: var(--mono-white);
       --surface-reversed: var(--mono-white);
-      --text-body: var(--bsa-muted-950);
+      --text-body: var(--bsa-muted-800);
       --text-heading: var(--bsa-hero-500);
       --text-muted: var(--bsa-muted-500);
       --text-primary: var(--bsa-primary-500);
@@ -177,7 +177,7 @@
       --data-f-tint: var(--bsa-dance-300);
       --data-f-opacity: var(--bsa-dance-opacity);
       --surface-pictogram-base: var(--bsa-hero-500);
-      --surface-pictogram-accent: var(--bsa-primary-500);
+      --surface-pictogram-accent: var(--bsa-pop-500);
       --surface-hover-primary: var(--bsa-primary-400);
       --surface-active-primary: var(--bsa-primary-200);
       --surface-hover-hero: var(--bsa-hero-400);
@@ -216,7 +216,7 @@
       --surface-pop: var(--bsa-pop-500);
       --surface-pop-faint: var(--bsa-pop-950);
       --surface-holler: var(--bsa-holler-400);
-      --surface-holler-faint: var(--bsa-holler-950);
+      --surface-holler-faint: var(--bsa-holler-900);
       --surface-success: var(--reserved-success-400);
       --surface-success-faint: var(--reserved-success-900);
       --surface-info: var(--reserved-info-400);
@@ -280,7 +280,7 @@
       --data-f-tint: var(--bsa-dance-300);
       --data-f-opacity: var(--bsa-dance-opacity);
       --surface-pictogram-base: var(--bsa-hero-300);
-      --surface-pictogram-accent: var(--bsa-primary-600);
+      --surface-pictogram-accent: var(--bsa-pop-300);
       --surface-hover-primary: var(--bsa-primary-200);
       --surface-active-primary: var(--bsa-primary-100);
       --surface-hover-hero: var(--bsa-hero-200);

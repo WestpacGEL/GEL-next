@@ -817,45 +817,30 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
 // ==============================
 
 /**
- * Prefixes token values with "Primitives".
+ * Prefixes token values with "Primitives" only if they don't already have it.
  */
 function applyValuePrefix(tokenProps, brandName) {
+  if (!tokenProps || !tokenProps.$value) {
+    console.warn('Invalid token props:', tokenProps);
+    return tokenProps;
+  }
+  
   const valueStr = tokenProps.$value;
   
-  // All references point to Primitives
-  let prefix = 'Primitives';
-
-  // Apply brand-specific token replacement
+  // Skip prefixing if value already has Primitives prefix
   let updatedValue = valueStr;
-  
-  // Replace WBC color references with the current brand for non-WBC brands
-  if (brandName && brandName.toUpperCase() !== 'WBC') {
-    // Replace {color.WBC. with {color.{BRAND}. (uppercase brand names in tokens)
-    updatedValue = updatedValue.replace(/\{color\.WBC\./g, `{color.${brandName.toUpperCase()}.`);
+  if (valueStr.includes('{') && !valueStr.includes('{Primitives.')) {
+    updatedValue = valueStr.replace(/\{/g, '{Primitives.');
   }
 
   return {
     ...tokenProps,
     $type: tokenProps.$type === 'float' ? 'dimension' : tokenProps.$type,
-    $value: updatedValue.replace(/\{/g, `{${prefix}.`),
+    $value: updatedValue,
   };
 }
 
-/**
- * Normalizes a group of tokens by traversing nested groups.
- */
-function normalizeTokenGroup(group, brandName) {
-  return Object.entries(group).reduce((acc, [key, value]) => {
-    if (value.$value) {
-      acc[key] = applyValuePrefix(value, brandName);
-    } else {
-      acc[key] = Object.fromEntries(
-        Object.entries(value).map(([innerKey, innerValue]) => [innerKey, applyValuePrefix(innerValue, brandName)]),
-      );
-    }
-    return acc;
-  }, {});
-}
+
 
 /**
  * Processes the "Tokens" section for all brands.
@@ -909,16 +894,140 @@ function mergeTokens(tokens) {
     primitiveName: b.primitiveName
   }));
 
+  const result = { Tokens: {} };
+  
   return tokens.reduce((acc, current) => {
     if (current.Primitives) {
       // Primitives are directly accessible without modes wrapper
       acc.Primitives = { ...current.Primitives };
     }
-    if (current.Tokens) {
-      acc.Tokens = processTokensSection(current.Tokens, brands);
+    if (current.Tokens && current.Tokens.modes) {
+      // New consolidated structure: all brands are under modes
+      // Extract each brand from the consolidated structure
+      Object.entries(current.Tokens.modes).forEach(([brandName, brandModes]) => {
+        // Convert from brandName back to the brand token structure expected by existing logic
+        const tokenSection = {
+          modes: {
+            'Light mode': brandModes['light-mode'] || {},
+            'Dark mode': brandModes['dark-mode'] || {}
+          }
+        };
+        
+        const processedTokens = processTokensSectionNew(tokenSection, brands);
+        
+        // Merge the processed tokens into the accumulator
+        Object.keys(processedTokens).forEach(brandKey => {
+          acc.Tokens[brandKey] = processedTokens[brandKey];
+        });
+      });
     }
     return acc;
-  }, {});
+  }, result);
+}
+
+/**
+ * Processes brand-specific token sections with proper brand detection
+ */
+function processTokensSectionNew(tokenSection, brands) {
+  // The tokenSection contains modes with Light mode and Dark mode
+  // We need to determine which brand this token section belongs to by examining the token values
+  const result = {};
+  
+  // Try to detect the brand by looking at the first token reference
+  let detectedBrand = null;
+  const firstToken = getFirstTokenValue(tokenSection);
+  
+  if (firstToken && firstToken.$value && typeof firstToken.$value === 'string') {
+    const match = firstToken.$value.match(/\{Primitives\.color\.([A-Z]{3})\./);
+    if (match) {
+      const brandCode = match[1];
+      detectedBrand = brands.find(b => b.primitiveName.toUpperCase() === brandCode);
+    }
+  }
+  
+  // If we can't detect the brand, fall back to processing all brands (old behavior)
+  if (!detectedBrand) {
+    return processTokensSection(tokenSection, brands);
+  }
+  
+  // Process only the detected brand
+  const themeName = detectedBrand.themeName;
+  const primitiveName = detectedBrand.primitiveName;
+  
+  result[themeName] = {};
+  
+  Object.entries(tokenSection.modes).forEach(([modeName, groups]) => {
+    const normalizedMode = modeName.replace(/\s+/g, '-').toLowerCase();
+    
+    result[themeName][normalizedMode] = Object.fromEntries(
+      // Skip "misc" group as they are figma related tokens
+      Object.entries(groups)
+        .filter(([propGroup]) => propGroup !== 'misc')
+        .map(([propGroup, categories]) => [
+          propGroup,
+          Object.fromEntries(
+            Object.entries(categories).map(([categoryName, tokens]) => [
+              categoryName,
+              Object.fromEntries(
+                Object.entries(tokens).map(([tokenName, tokenValue]) => [
+                  tokenName,
+                  applyValuePrefix(tokenValue, primitiveName),
+                ]),
+              ),
+            ]),
+          ),
+        ]),
+    );
+  });
+  
+  return result;
+}
+
+/**
+ * Helper function to get the first token value from a token section
+ */
+function getFirstTokenValue(tokenSection) {
+  if (!tokenSection.modes) return null;
+  
+  // Look for a brand-specific token first
+  for (const mode of Object.values(tokenSection.modes)) {
+    for (const group of Object.values(mode)) {
+      if (typeof group === 'object' && group !== null) {
+        for (const category of Object.values(group)) {
+          if (typeof category === 'object' && category !== null) {
+            for (const token of Object.values(category)) {
+              if (token && token.$value && token.$value.includes('Primitives.color.')) {
+                // Check if this is a brand-specific reference
+                const match = token.$value.match(/\{Primitives\.color\.([A-Z]{3})\./);
+                if (match) {
+                  return token; // Return the first brand-specific token found
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Fallback: return any token
+  for (const mode of Object.values(tokenSection.modes)) {
+    for (const group of Object.values(mode)) {
+      if (typeof group === 'object' && group !== null) {
+        for (const category of Object.values(group)) {
+          if (typeof category === 'object' && category !== null) {
+            for (const token of Object.values(category)) {
+              if (token && token.$value) {
+                return token;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  return null;
 }
 
 /**

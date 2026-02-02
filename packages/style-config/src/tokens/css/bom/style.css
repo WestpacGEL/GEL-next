@@ -157,7 +157,7 @@
   --color-background-faint: var(--primitives-color-bom-muted-50); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */
   --color-background-primary: var(--primitives-color-bom-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
   --color-background-hero: var(--primitives-color-bom-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
-  --color-surface-muted-vivid: var(--primitives-color-bom-muted-950); /* Use for surfaces that need to be the same colour as body text (icons, arrows etc). */
+  --color-surface-muted-vivid: var(--primitives-color-bom-hero-900); /* Use for surfaces that need to be the same colour as body text (icons, arrows etc). */
   --color-surface-muted: var(--primitives-color-bom-muted-500); /* Replaces the current Muted colour style. */
   --color-surface-muted-strong: var(--primitives-color-bom-muted-400); /* Reserved do not use. */
   --color-surface-muted-mild: var(--primitives-color-bom-muted-300); /* Reserved do not use. */
@@ -184,7 +184,7 @@
   --color-surface-system-error-dark: var(--primitives-color-system-950); /* Only use for system alert components, do not use for anything else. */
   --color-surface-mono: var(--primitives-color-mono-white); /* White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode. */
   --color-surface-reversed: var(--primitives-color-mono-white); /* Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode. */
-  --color-text-body: var(--primitives-color-bom-muted-950); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
+  --color-text-body: var(--primitives-color-bom-hero-900); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
   --color-text-heading: var(--primitives-color-bom-hero-500); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
   --color-text-muted: var(--primitives-color-bom-muted-500); /* Use for text that requires less emphasis like hint text etc. */
   --color-text-primary: var(--primitives-color-bom-primary-500); /* Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token. */
@@ -235,7 +235,7 @@
   --color-data-f-tint: var(--primitives-color-bom-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-opacity: var(--primitives-color-bom-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-surface-pictogram-base: var(--primitives-color-bom-hero-500); /* Reserved. Only for use on Pictograms. */
-  --color-surface-pictogram-accent: var(--primitives-color-bom-primary-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--primitives-color-bom-pop-500); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--primitives-color-bom-primary-400); /* This token is for hover states. */
   --color-surface-active-primary: var(--primitives-color-bom-primary-200);
   --color-surface-hover-hero: var(--primitives-color-bom-hero-400); /* This token is for hover states. */
@@ -276,11 +276,11 @@
   --color-surface-primary: var(--primitives-color-bom-primary-400); /* Replaces the current Primary colour style. */
   --color-surface-primary-faint: var(--primitives-color-bom-primary-950); /* Reserved do not use. */
   --color-surface-hero: var(--primitives-color-bom-hero-300); /* Replaces the current Hero colour style. */
-  --color-surface-hero-faint: var(--primitives-color-bom-hero-950); /* Reserved do not use. */
+  --color-surface-hero-faint: var(--primitives-color-bom-hero-900); /* Reserved do not use. */
   --color-surface-pop: var(--primitives-color-bom-pop-500); /* Replaces the current Pop colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
   --color-surface-pop-faint: var(--primitives-color-bom-pop-950); /* Replaces the current Pop Light colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
   --color-surface-holler: var(--primitives-color-bom-holler-400); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
-  --color-surface-holler-faint: var(--primitives-color-bom-holler-950); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-surface-holler-faint: var(--primitives-color-bom-holler-900); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-surface-success: var(--primitives-color-success-400); /* Only use for success alert components, do not use for anything else. */
   --color-surface-success-faint: var(--primitives-color-success-900); /* Only use for success alert components, do not use for anything else. Note: this surface should always be used with border-success-mild as shown here. */
   --color-surface-info: var(--primitives-color-info-400); /* Only use for info alert components, do not use for anything else. */
@@ -294,10 +294,10 @@
   --color-surface-mono: var(--primitives-color-mono-black); /* White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode. */
   --color-surface-reversed: var(--primitives-color-mono-white); /* Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode. */
   --color-text-body: var(--primitives-color-bom-muted-200); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
-  --color-text-heading: var(--primitives-color-bom-hero-200); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
+  --color-text-heading: var(--primitives-color-bom-hero-300); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
   --color-text-muted: var(--primitives-color-bom-muted-400); /* Use for text that requires less emphasis like hint text etc. */
   --color-text-primary: var(--primitives-color-bom-primary-300); /* Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token. */
-  --color-text-hero: var(--primitives-color-bom-hero-200); /* Use for text that requires more emphasis, call outs, quotes etc. */
+  --color-text-hero: var(--primitives-color-bom-hero-300); /* Use for text that requires more emphasis, call outs, quotes etc. */
   --color-text-holler: var(--primitives-color-bom-holler-300); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
   --color-text-link: var(--primitives-color-bom-primary-300); /* Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands. */
   --color-text-success: var(--primitives-color-success-300); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
@@ -343,8 +343,8 @@
   --color-data-f-solid: var(--primitives-color-bom-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-tint: var(--primitives-color-bom-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-f-opacity: var(--primitives-color-bom-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
-  --color-surface-pictogram-base: var(--primitives-color-bom-hero-300); /* Reserved. Only for use on Pictograms. */
-  --color-surface-pictogram-accent: var(--primitives-color-bom-primary-600); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-base: var(--primitives-color-bom-hero-400); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--primitives-color-bom-pop-400); /* Reserved. Only for use on Pictograms. */
   --color-surface-hover-primary: var(--primitives-color-bom-primary-200); /* This token is for hover states. */
   --color-surface-active-primary: var(--primitives-color-bom-primary-100);
   --color-surface-hover-hero: var(--primitives-color-bom-hero-200); /* This token is for hover states. */

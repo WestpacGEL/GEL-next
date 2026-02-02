@@ -99,7 +99,7 @@
       --background-faint: var(--stg-muted-50);
       --background-primary: var(--stg-primary-500);
       --background-hero: var(--stg-hero-500);
-      --surface-muted-vivid: var(--stg-muted-950);
+      --surface-muted-vivid: var(--stg-hero-800);
       --surface-muted: var(--stg-muted-500);
       --surface-muted-strong: var(--stg-muted-400);
       --surface-muted-mild: var(--stg-muted-300);
@@ -126,11 +126,11 @@
       --surface-system-error-dark: var(--reserved-system-950);
       --surface-mono: var(--mono-white);
       --surface-reversed: var(--mono-white);
-      --text-body: var(--stg-muted-950);
-      --text-heading: var(--stg-hero-500);
+      --text-body: var(--stg-hero-800);
+      --text-heading: var(--stg-hero-600);
       --text-muted: var(--stg-muted-500);
       --text-primary: var(--stg-primary-500);
-      --text-hero: var(--stg-hero-500);
+      --text-hero: var(--stg-hero-600);
       --text-holler: var(--stg-holler-500);
       --text-link: var(--stg-primary-500);
       --text-success: var(--reserved-success-500);
@@ -176,8 +176,8 @@
       --data-f-solid: var(--stg-dance-500);
       --data-f-tint: var(--stg-dance-300);
       --data-f-opacity: var(--stg-dance-opacity);
-      --surface-pictogram-base: var(--stg-hero-500);
-      --surface-pictogram-accent: var(--stg-primary-500);
+      --surface-pictogram-base: var(--stg-hero-800);
+      --surface-pictogram-accent: var(--stg-pop-500);
       --surface-hover-primary: var(--stg-primary-400);
       --surface-active-primary: var(--stg-primary-200);
       --surface-hover-hero: var(--stg-hero-400);
@@ -230,10 +230,10 @@
       --surface-mono: var(--mono-black);
       --surface-reversed: var(--mono-white);
       --text-body: var(--stg-muted-200);
-      --text-heading: var(--stg-hero-200);
+      --text-heading: var(--stg-hero-300);
       --text-muted: var(--stg-muted-400);
       --text-primary: var(--stg-primary-300);
-      --text-hero: var(--stg-hero-200);
+      --text-hero: var(--stg-hero-300);
       --text-holler: var(--stg-holler-300);
       --text-link: var(--stg-primary-300);
       --text-success: var(--reserved-success-300);
@@ -266,7 +266,7 @@
       --data-a-opacity: var(--stg-primary-opacity);
       --data-b-solid: var(--stg-hero-300);
       --data-b-tint: var(--stg-hero-200);
-      --data-b-opacity: var(--stg-hero-opacity);
+      --data-b-opacity: var(--stg-pop-opacity);
       --data-c-solid: var(--stg-pop-500);
       --data-c-tint: var(--stg-pop-300);
       --data-c-opacity: var(--stg-pop-opacity);
@@ -279,8 +279,8 @@
       --data-f-solid: var(--stg-dance-500);
       --data-f-tint: var(--stg-dance-300);
       --data-f-opacity: var(--stg-dance-opacity);
-      --surface-pictogram-base: var(--stg-hero-300);
-      --surface-pictogram-accent: var(--stg-primary-600);
+      --surface-pictogram-base: var(--stg-hero-400);
+      --surface-pictogram-accent: var(--stg-pop-400);
       --surface-hover-primary: var(--stg-primary-200);
       --surface-active-primary: var(--stg-primary-100);
       --surface-hover-hero: var(--stg-hero-200);

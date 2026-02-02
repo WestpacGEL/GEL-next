@@ -37,10 +37,10 @@
   <color name="stgSurfaceMono">#000000</color>
   <color name="stgSurfaceReversed">#ffffff</color>
   <color name="stgTextBody">#e1e1e0</color>
-  <color name="stgTextHeading">#6dcb89</color>
+  <color name="stgTextHeading">#2fa854</color>
   <color name="stgTextMuted">#8d8c81</color>
   <color name="stgTextPrimary">#f44848</color>
-  <color name="stgTextHero">#6dcb89</color>
+  <color name="stgTextHero">#2fa854</color>
   <color name="stgTextHoller">#9b73d2</color>
   <color name="stgTextLink">#f44848</color>
   <color name="stgTextSuccess">#47a447</color>
@@ -73,7 +73,7 @@
   <color name="stgDataAOpacity">#e300004d</color>
   <color name="stgDataBSolid">#2fa854</color>
   <color name="stgDataBTint">#6dcb89</color>
-  <color name="stgDataBOpacity">#00873973</color>
+  <color name="stgDataBOpacity">#78be2073</color>
   <color name="stgDataCSolid">#78be20</color>
   <color name="stgDataCTint">#abe562</color>
   <color name="stgDataCOpacity">#78be2073</color>
@@ -86,8 +86,8 @@
   <color name="stgDataFSolid">#ff7f29</color>
   <color name="stgDataFTint">#ffb380</color>
   <color name="stgDataFOpacity">#ff7f2966</color>
-  <color name="stgSurfacePictogramBase">#2fa854</color>
-  <color name="stgSurfacePictogramAccent">#bc0000</color>
+  <color name="stgSurfacePictogramBase">#219d4b</color>
+  <color name="stgSurfacePictogramAccent">#93d83b</color>
   <color name="stgSurfaceHoverPrimary">#f87272</color>
   <color name="stgSurfaceActivePrimary">#ffc7c7</color>
   <color name="stgSurfaceHoverHero">#6dcb89</color>

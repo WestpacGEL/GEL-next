@@ -1292,7 +1292,7 @@
         "surface": {
           "surface-muted-vivid": {
             "$type": "color",
-            "$value": "{Primitives.color.BOM.muted.950}",
+            "$value": "{Primitives.color.BOM.hero.900}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -1537,7 +1537,7 @@
         "text": {
           "text-body": {
             "$type": "color",
-            "$value": "{Primitives.color.BOM.muted.950}",
+            "$value": "{Primitives.color.BOM.hero.900}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2002,7 +2002,7 @@
           },
           "surface-pictogram-accent": {
             "$type": "color",
-            "$value": "{Primitives.color.BOM.primary.500}",
+            "$value": "{Primitives.color.BOM.pop.500}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2359,7 +2359,7 @@
           },
           "surface-hero-faint": {
             "$type": "color",
-            "$value": "{Primitives.color.BOM.hero.950}",
+            "$value": "{Primitives.color.BOM.hero.900}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2395,7 +2395,7 @@
           },
           "surface-holler-faint": {
             "$type": "color",
-            "$value": "{Primitives.color.BOM.holler.950}",
+            "$value": "{Primitives.color.BOM.holler.900}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2523,7 +2523,7 @@
           },
           "text-heading": {
             "$type": "color",
-            "$value": "{Primitives.color.BOM.hero.200}",
+            "$value": "{Primitives.color.BOM.hero.300}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2550,7 +2550,7 @@
           },
           "text-hero": {
             "$type": "color",
-            "$value": "{Primitives.color.BOM.hero.200}",
+            "$value": "{Primitives.color.BOM.hero.300}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2970,7 +2970,7 @@
         "pictogram": {
           "surface-pictogram-base": {
             "$type": "color",
-            "$value": "{Primitives.color.BOM.hero.300}",
+            "$value": "{Primitives.color.BOM.hero.400}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2979,7 +2979,7 @@
           },
           "surface-pictogram-accent": {
             "$type": "color",
-            "$value": "{Primitives.color.BOM.primary.600}",
+            "$value": "{Primitives.color.BOM.pop.400}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
