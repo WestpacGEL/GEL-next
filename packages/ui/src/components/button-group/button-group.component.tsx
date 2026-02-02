@@ -84,7 +84,13 @@ export function ButtonGroup({
   hintMessage,
   ...props
 }: ButtonGroupProps) {
-  const state = useRadioGroupState({ ...props, label, orientation: 'horizontal' });
+  const state = useRadioGroupState({
+    ...props,
+    label,
+    defaultValue: props.defaultValue ? props.defaultValue : undefined, // accounts for empty string defaultValue to treat as if undefined
+    orientation: 'horizontal',
+  });
+
   const { radioGroupProps, labelProps, errorMessageProps, descriptionProps } = useRadioGroup(
     {
       ...props,
