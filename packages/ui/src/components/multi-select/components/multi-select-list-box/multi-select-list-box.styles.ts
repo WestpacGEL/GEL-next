@@ -13,7 +13,7 @@ export const styles = tv({
         ul: '',
       },
       false: {
-        ul: 'py-2',
+        ul: '',
       },
     },
   },

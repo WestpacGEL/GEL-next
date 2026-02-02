@@ -4,7 +4,7 @@ export const styles = tv({
   slots: {
     root: 'flex cursor-pointer flex-col justify-between bg-background-white p-2 text-sm text-text-body transition-[background-color] hover:bg-surface-muted-faint',
     checkbox: 'size-4',
-    body: '-mt-0.5 flex flex-1 items-center',
+    body: '-mt-0.5 flex flex-1 items-center typography-body-9',
     flexZero: 'flex-0',
     itemContainer: 'flex gap-1',
     description: 'relative ml-5 typography-body-10 text-text-muted',
@@ -16,7 +16,7 @@ export const styles = tv({
         checkbox: 'flex items-center justify-center rounded border border-border-muted-strong',
       },
       single: {
-        checkbox: '',
+        checkbox: 'flex items-center justify-center',
       },
     },
     isFocusVisible: {

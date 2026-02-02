@@ -59,7 +59,7 @@ export function MultiSelectSelectAllOption() {
         ref={selectAllRef}
         onKeyDown={handleButtonKeyDown}
         itemType="checkbox"
-        role="option"
+        role="checkbox"
         aria-checked={ariaChecked()}
         aria-label="Select all options"
       >
@@ -67,7 +67,7 @@ export function MultiSelectSelectAllOption() {
           {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" />}
           {!allItemsAreSelected && withOneSelectionOrMore && <div className={styles.indeterminate()} />}
         </div>
-        <span>Select all</span>
+        <span className={styles.label()}>Select all</span>
       </button>
     </div>
   );
