@@ -157,7 +157,7 @@
       --border-danger: var(--reserved-danger-500);
       --border-danger-mild: var(--reserved-danger-300);
       --border-mono: var(--mono-white);
-      --border-focus: var(--bom-holler-300);
+      --border-focus: var(--bom-holler-400);
       --data-a-solid: var(--bom-primary-500);
       --data-a-tint: var(--bom-primary-200);
       --data-a-opacity: var(--bom-primary-opacity);
@@ -224,7 +224,7 @@
       --surface-warning: var(--reserved-warning-400);
       --surface-warning-faint: var(--reserved-warning-900);
       --surface-danger: var(--reserved-danger-300);
-      --surface-danger-faint: var(--reserved-warning-900);
+      --surface-danger-faint: var(--reserved-danger-900);
       --surface-system-error: var(--reserved-system-950);
       --surface-system-error-dark: var(--reserved-system-500);
       --surface-mono: var(--mono-black);

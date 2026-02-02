@@ -127,7 +127,7 @@
   <color name="westpacDarkModeSurfaceWarning">#ce5826</color>
   <color name="westpacDarkModeSurfaceWarningFaint">#4f1800</color>
   <color name="westpacDarkModeSurfaceDanger">#db6363</color>
-  <color name="westpacDarkModeSurfaceDangerFaint">#4f1800</color>
+  <color name="westpacDarkModeSurfaceDangerFaint">#4e0000</color>
   <color name="westpacDarkModeSurfaceSystemError">#404000</color>
   <color name="westpacDarkModeSurfaceSystemErrorDark">#ffff00</color>
   <color name="westpacDarkModeSurfaceMono">#000000</color>
@@ -319,7 +319,7 @@
   <color name="stGeorgeDarkModeSurfaceWarning">#ce5826</color>
   <color name="stGeorgeDarkModeSurfaceWarningFaint">#4f1800</color>
   <color name="stGeorgeDarkModeSurfaceDanger">#db6363</color>
-  <color name="stGeorgeDarkModeSurfaceDangerFaint">#4f1800</color>
+  <color name="stGeorgeDarkModeSurfaceDangerFaint">#4e0000</color>
   <color name="stGeorgeDarkModeSurfaceSystemError">#404000</color>
   <color name="stGeorgeDarkModeSurfaceSystemErrorDark">#ffff00</color>
   <color name="stGeorgeDarkModeSurfaceMono">#000000</color>
@@ -361,7 +361,7 @@
   <color name="stGeorgeDarkModeDataAOpacity">#e300004d</color>
   <color name="stGeorgeDarkModeDataBSolid">#2fa854</color>
   <color name="stGeorgeDarkModeDataBTint">#6dcb89</color>
-  <color name="stGeorgeDarkModeDataBOpacity">#78be2073</color>
+  <color name="stGeorgeDarkModeDataBOpacity">#00873973</color>
   <color name="stGeorgeDarkModeDataCSolid">#78be20</color>
   <color name="stGeorgeDarkModeDataCTint">#abe562</color>
   <color name="stGeorgeDarkModeDataCOpacity">#78be2073</color>
@@ -511,7 +511,7 @@
   <color name="bankSaDarkModeSurfaceWarning">#ce5826</color>
   <color name="bankSaDarkModeSurfaceWarningFaint">#4f1800</color>
   <color name="bankSaDarkModeSurfaceDanger">#db6363</color>
-  <color name="bankSaDarkModeSurfaceDangerFaint">#4f1800</color>
+  <color name="bankSaDarkModeSurfaceDangerFaint">#4e0000</color>
   <color name="bankSaDarkModeSurfaceSystemError">#404000</color>
   <color name="bankSaDarkModeSurfaceSystemErrorDark">#ffff00</color>
   <color name="bankSaDarkModeSurfaceMono">#000000</color>
@@ -643,7 +643,7 @@
   <color name="bankOfMelbourneLightModeBorderDanger">#c40000</color>
   <color name="bankOfMelbourneLightModeBorderDangerMild">#db6363</color>
   <color name="bankOfMelbourneLightModeBorderMono">#ffffff</color>
-  <color name="bankOfMelbourneLightModeBorderFocus">#a39cdc</color>
+  <color name="bankOfMelbourneLightModeBorderFocus">#8379cf</color>
   <color name="bankOfMelbourneLightModeDataASolid">#d13900</color>
   <color name="bankOfMelbourneLightModeDataATint">#ff7c6a</color>
   <color name="bankOfMelbourneLightModeDataAOpacity">#d1390080</color>
@@ -703,7 +703,7 @@
   <color name="bankOfMelbourneDarkModeSurfaceWarning">#ce5826</color>
   <color name="bankOfMelbourneDarkModeSurfaceWarningFaint">#4f1800</color>
   <color name="bankOfMelbourneDarkModeSurfaceDanger">#db6363</color>
-  <color name="bankOfMelbourneDarkModeSurfaceDangerFaint">#4f1800</color>
+  <color name="bankOfMelbourneDarkModeSurfaceDangerFaint">#4e0000</color>
   <color name="bankOfMelbourneDarkModeSurfaceSystemError">#404000</color>
   <color name="bankOfMelbourneDarkModeSurfaceSystemErrorDark">#ffff00</color>
   <color name="bankOfMelbourneDarkModeSurfaceMono">#000000</color>

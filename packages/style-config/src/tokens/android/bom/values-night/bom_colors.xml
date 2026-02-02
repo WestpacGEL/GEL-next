@@ -31,7 +31,7 @@
   <color name="bomSurfaceWarning">#ce5826</color>
   <color name="bomSurfaceWarningFaint">#4f1800</color>
   <color name="bomSurfaceDanger">#db6363</color>
-  <color name="bomSurfaceDangerFaint">#4f1800</color>
+  <color name="bomSurfaceDangerFaint">#4e0000</color>
   <color name="bomSurfaceSystemError">#404000</color>
   <color name="bomSurfaceSystemErrorDark">#ffff00</color>
   <color name="bomSurfaceMono">#000000</color>

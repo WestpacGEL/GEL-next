@@ -215,7 +215,7 @@
   --color-border-danger: var(--primitives-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
   --color-border-danger-mild: var(--primitives-color-danger-300); /* Only for danger alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
   --color-border-mono: var(--primitives-color-mono-white); /* Similar to surface-mono, border-mono is white in light mode and black in dark mode. */
-  --color-border-focus: var(--primitives-color-bom-holler-300); /* Reserved. Only for use with focus state keyboard navigation. */
+  --color-border-focus: var(--primitives-color-bom-holler-400); /* Reserved. Only for use with focus state keyboard navigation. */
   --color-data-a-solid: var(--primitives-color-bom-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-tint: var(--primitives-color-bom-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
   --color-data-a-opacity: var(--primitives-color-bom-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
@@ -288,7 +288,7 @@
   --color-surface-warning: var(--primitives-color-warning-400); /* Only use for warning alert components, do not use for anything else. */
   --color-surface-warning-faint: var(--primitives-color-warning-900); /* Only use for warning alert components, do not use for anything else. Note: this surface should always be used with border-warning-mild as shown here. */
   --color-surface-danger: var(--primitives-color-danger-300); /* Only use for danger alert components, do not use for anything else. */
-  --color-surface-danger-faint: var(--primitives-color-warning-900); /* Only use for danger alert components, do not use for anything else. Note: this surface should always be used with border-danger-mild as shown here. */
+  --color-surface-danger-faint: var(--primitives-color-danger-900); /* Only use for danger alert components, do not use for anything else. Note: this surface should always be used with border-danger-mild as shown here. */
   --color-surface-system-error: var(--primitives-color-system-950); /* Only use for system alert components, do not use for anything else. */
   --color-surface-system-error-dark: var(--primitives-color-system-500); /* Only use for system alert components, do not use for anything else. */
   --color-surface-mono: var(--primitives-color-mono-black); /* White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode. */

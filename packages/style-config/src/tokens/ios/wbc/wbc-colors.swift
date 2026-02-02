@@ -130,7 +130,7 @@ public enum WBCDarkColors {
   public static let surfaceWarning = UIColor(red: 0.808, green: 0.345, blue: 0.149, alpha: 1)
   public static let surfaceWarningFaint = UIColor(red: 0.310, green: 0.094, blue: 0.000, alpha: 1)
   public static let surfaceDanger = UIColor(red: 0.859, green: 0.388, blue: 0.388, alpha: 1)
-  public static let surfaceDangerFaint = UIColor(red: 0.310, green: 0.094, blue: 0.000, alpha: 1)
+  public static let surfaceDangerFaint = UIColor(red: 0.306, green: 0.000, blue: 0.000, alpha: 1)
   public static let surfaceSystemError = UIColor(red: 0.251, green: 0.251, blue: 0.000, alpha: 1)
   public static let surfaceSystemErrorDark = UIColor(red: 1.000, green: 1.000, blue: 0.000, alpha: 1)
   public static let surfaceMono = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1)

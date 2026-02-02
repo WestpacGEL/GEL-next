@@ -2467,7 +2467,7 @@
           },
           "surface-danger-faint": {
             "$type": "color",
-            "$value": "{Primitives.color.reserved.warning.900}",
+            "$value": "{Primitives.color.reserved.danger.900}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"
@@ -2851,7 +2851,7 @@
           },
           "data-b-opacity": {
             "$type": "color",
-            "$value": "{Primitives.color.STG.pop.opacity}",
+            "$value": "{Primitives.color.STG.hero.opacity}",
             "$collectionName": "Primitives",
             "$scopes": [
               "ALL_SCOPES"

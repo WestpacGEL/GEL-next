@@ -31,7 +31,7 @@
   <color name="stgSurfaceWarning">#ce5826</color>
   <color name="stgSurfaceWarningFaint">#4f1800</color>
   <color name="stgSurfaceDanger">#db6363</color>
-  <color name="stgSurfaceDangerFaint">#4f1800</color>
+  <color name="stgSurfaceDangerFaint">#4e0000</color>
   <color name="stgSurfaceSystemError">#404000</color>
   <color name="stgSurfaceSystemErrorDark">#ffff00</color>
   <color name="stgSurfaceMono">#000000</color>
@@ -73,7 +73,7 @@
   <color name="stgDataAOpacity">#e300004d</color>
   <color name="stgDataBSolid">#2fa854</color>
   <color name="stgDataBTint">#6dcb89</color>
-  <color name="stgDataBOpacity">#78be2073</color>
+  <color name="stgDataBOpacity">#00873973</color>
   <color name="stgDataCSolid">#78be20</color>
   <color name="stgDataCTint">#abe562</color>
   <color name="stgDataCOpacity">#78be2073</color>

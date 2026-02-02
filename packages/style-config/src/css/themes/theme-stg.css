@@ -224,7 +224,7 @@
       --surface-warning: var(--reserved-warning-400);
       --surface-warning-faint: var(--reserved-warning-900);
       --surface-danger: var(--reserved-danger-300);
-      --surface-danger-faint: var(--reserved-warning-900);
+      --surface-danger-faint: var(--reserved-danger-900);
       --surface-system-error: var(--reserved-system-950);
       --surface-system-error-dark: var(--reserved-system-500);
       --surface-mono: var(--mono-black);
@@ -266,7 +266,7 @@
       --data-a-opacity: var(--stg-primary-opacity);
       --data-b-solid: var(--stg-hero-300);
       --data-b-tint: var(--stg-hero-200);
-      --data-b-opacity: var(--stg-pop-opacity);
+      --data-b-opacity: var(--stg-hero-opacity);
       --data-c-solid: var(--stg-pop-500);
       --data-c-tint: var(--stg-pop-300);
       --data-c-opacity: var(--stg-pop-opacity);
