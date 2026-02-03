@@ -5,11 +5,11 @@ export const styles = tv(
   {
     slots: {
       buttonContainer: 'relative w-full',
-      control: 'form-control relative box-border inline-flex w-full flex-row overflow-hidden rounded-md',
+      control: 'form-control relative box-border inline-flex w-full flex-row overflow-hidden rounded',
       selection: 'flex flex-1 items-center overflow-hidden whitespace-nowrap pr-4.5 text-left',
       selectionSpan: 'w-full overflow-hidden text-ellipsis',
       hint: 'typography-body-10 text-muted',
-      button: 'flex cursor-default items-center justify-center border-l border-l-borderDark bg-white',
+      button: 'flex cursor-default items-center justify-center rounded-r border-l border-l-borderDark bg-white',
       clearButton: 'absolute inset-y-0 flex !h-auto items-center justify-center',
       clearIcon: '-mt-0.5',
     },
