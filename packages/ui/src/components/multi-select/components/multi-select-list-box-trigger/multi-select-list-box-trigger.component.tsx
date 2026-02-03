@@ -128,7 +128,7 @@ export function MultiSelectListBoxTrigger<T>({
           )}
         </div>
       </Tooltip>
-      {selectedValues.length > 0 && (
+      {selectedValues.length > 0 && selectionMode === 'multiple' && (
         <p className={styles.hint()}>
           {selectedValues.length} item{selectedValues.length > 1 && 's'} selected
         </p>
