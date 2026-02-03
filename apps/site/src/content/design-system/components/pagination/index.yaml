@@ -1,7 +1,7 @@
 name: Pagination
 description: >-
   Pagination is a component capable of helping the user navigate and give access
-  to multiple pages of content, typically used in long form content.
+  to multiple pages of content or data.
 namedExport:
   discriminant: false
 excludeFromNavbar: false

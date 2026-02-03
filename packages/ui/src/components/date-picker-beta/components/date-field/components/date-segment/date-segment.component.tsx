@@ -15,7 +15,6 @@ export function DateSegment({ segment, state, separator, ...props }: DateSegment
   const { segmentProps } = useDateSegment(segment, state, ref);
   const styles = dateSegmentStyles({
     isFocusVisible,
-    isPlaceholder: segment.isPlaceholder,
     isSeparator: segmentProps.role !== 'spinbutton',
   });
   return (

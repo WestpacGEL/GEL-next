@@ -27,13 +27,13 @@ export const FocusOutline: Story = {
       <h1 className="typography-body-9 pb-2 pt-4">
         No <code className="border border-border bg-background">focus-visible:focus-outline</code> example
       </h1>
-      <a href="#" className="underline">
+      <a href="#" className="underline hover:no-underline">
         This is a link without the correct styling focus outline
       </a>
       <h1 className="typography-body-9 pb-2 pt-4">
         <code className="border border-border bg-background">focus-visible:focus-outline</code> example
       </h1>
-      <a href="#" className="underline focus-visible:focus-outline">
+      <a href="#" className="underline hover:no-underline focus-visible:focus-outline">
         This is a link without the correct styling focus outline
       </a>
     </div>

@@ -4,7 +4,7 @@ export { clsx } from 'clsx';
 
 export { DesktopComputerPictogram, DriversLicencePictogram } from '@westpac/ui/pictogram';
 
-export { MastercardAcceptedSymbol, WBCLogo } from '@westpac/ui/symbol';
+export { MastercardAcceptedSymbol, WBCLogo, GoogleStoreSymbol, AppleStoreSymbol } from '@westpac/ui/symbol';
 
 export { StaticCode } from '../static-code/index';
 

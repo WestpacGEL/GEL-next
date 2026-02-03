@@ -1,5 +1,30 @@
 # site
 
+## 0.3.45
+
+### Patch Changes
+
+- 925e9f0: package updates
+- Updated dependencies [925e9f0]
+- Updated dependencies [9a1ae57]
+  - @westpac/ui@0.57.3
+
+## 0.3.44
+
+### Patch Changes
+
+- Updated dependencies [abda05b]
+- Updated dependencies [59f6662]
+- Updated dependencies [7b8eae1]
+  - @westpac/ui@0.57.0
+
+## 0.3.43
+
+### Patch Changes
+
+- Updated dependencies [6950378]
+  - @westpac/ui@0.56.0
+
 ## 0.3.42
 
 ### Patch Changes

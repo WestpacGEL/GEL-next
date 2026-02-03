@@ -17,6 +17,7 @@ export function BottomSheet({
   secondaryLabel,
   primaryOnClick,
   secondaryOnClick,
+  isDismissable = true,
   ...props
 }: BottomSheetProps) {
   return (
@@ -26,7 +27,7 @@ export function BottomSheet({
         secondaryLabel={secondaryLabel}
         primaryOnClick={primaryOnClick}
         secondaryOnClick={secondaryOnClick}
-        onClose={() => state.close()}
+        onClose={isDismissable ? () => state.close() : undefined}
         title={title}
       >
         {children}

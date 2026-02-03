@@ -1,5 +1,54 @@
 # @westpac/ui
 
+## 0.57.3
+
+### Patch Changes
+
+- 925e9f0: package updates
+- 9a1ae57: fixes to focus state/default value for ButtonGroup
+
+## 0.57.2
+
+### Patch Changes
+
+- f6f9536: added import of react to SelectorButtonGroup and SelectorLinkGroup
+
+## 0.57.1
+
+### Patch Changes
+
+- dce0d2d: fix issue where bottom sheet close button couldn't be hidden
+
+## 0.57.0
+
+### Minor Changes
+
+- 7b8eae1: - updated styles for DatePickerBeta
+  - added custom onBlur to provide date for DatePickerBeta
+
+### Patch Changes
+
+- abda05b: updating hover styling on various links across the site and components/examples
+- 59f6662: updated calculation for popover so it correctly stays on screen in some circumstances
+
+## 0.56.1
+
+### Patch Changes
+
+- 727582a: updated some styles for DatePickerBeta (input font weight, removal of placeholder text colour, dd/mm/yyyy capitalised)
+
+## 0.56.0
+
+### Minor Changes
+
+- 6950378: added new props to DatePickerBeta to control popover location and make input full width
+
+## 0.55.3
+
+### Patch Changes
+
+- 5dc069e: fix issue with header logo rerendering
+
 ## 0.55.2
 
 ### Patch Changes
