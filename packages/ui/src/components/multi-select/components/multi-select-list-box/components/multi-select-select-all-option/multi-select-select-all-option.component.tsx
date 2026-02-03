@@ -67,7 +67,7 @@ export function MultiSelectSelectAllOption() {
           {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" />}
           {!allItemsAreSelected && withOneSelectionOrMore && <div className={styles.indeterminate()} />}
         </div>
-        <span>Select all</span>
+        <span className={styles.label()}>Select all</span>
       </button>
     </div>
   );

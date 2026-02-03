@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    span: 'block bg-background px-2.5 py-1 text-hero',
-    ul: 'py-2',
+    span: 'typography-body-10 flex h-6 items-center bg-background px-2.5 py-1 align-middle text-hero',
+    ul: '',
   },
 });
