@@ -5,8 +5,8 @@ export const styles = tv({
     listItem: 'border-b border-b-border-muted-soft hover:bg-surface-muted-faint',
     button:
       'flex w-full cursor-pointer items-center gap-1 p-2 focus-visible:bg-surface-muted-pale focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-border-focus',
-    checkbox: 'flex size-4 items-center justify-center rounded border border-border-muted-strong bg-background-white',
-    indeterminate: 'block w-3/5 border-t-2 border-t-border-muted',
+    checkbox: 'flex size-4 items-center justify-center rounded border border-border-hero bg-background-white',
+    indeterminate: 'block w-3/5 border-t-2 border-t-border-hero',
     label: 'typography-body-9',
   },
   variants: {

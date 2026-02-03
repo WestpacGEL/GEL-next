@@ -64,7 +64,7 @@ export function MultiSelectSelectAllOption() {
         aria-label="Select all options"
       >
         <div className={styles.checkbox()} role="presentation">
-          {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" />}
+          {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" color="hero" />}
           {!allItemsAreSelected && withOneSelectionOrMore && <div className={styles.indeterminate()} />}
         </div>
         <span className={styles.label()}>Select all</span>

@@ -53,7 +53,9 @@ export function MultiSelectOption<T>({ item }: MultiSelectOptionProps<T>) {
     >
       <div className={styles.itemContainer()}>
         <div className={styles.flexZero()}>
-          <div className={styles.checkbox()}>{isSelected && <TickIcon size="small" aria-hidden="true" />}</div>
+          <div className={styles.checkbox()}>
+            {isSelected && <TickIcon size="small" aria-hidden="true" color="hero" />}
+          </div>
         </div>
         <div className={styles.body()}>{item.rendered}</div>
       </div>
