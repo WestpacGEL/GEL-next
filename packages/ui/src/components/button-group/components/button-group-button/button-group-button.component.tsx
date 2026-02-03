@@ -33,8 +33,7 @@ export function ButtonGroupButton({ className, ...props }: ButtonGroupButtonProp
 
   return (
     <Button
-      {...buttonProps}
-      {...focusProps}
+      {...mergeProps(buttonProps, focusProps)}
       className={styles.button({ className })}
       soft={!isSelected}
       data-pressed={isPressed}
