@@ -13,7 +13,7 @@ export const styles = tv({
     selectionMode: {
       none: {},
       multiple: {
-        checkbox: 'flex items-center justify-center rounded border border-hero',
+        checkbox: 'flex items-center justify-center rounded border border-hero bg-white',
       },
       single: {
         checkbox: 'flex items-center justify-center',
