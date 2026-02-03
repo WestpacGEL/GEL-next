@@ -426,6 +426,13 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
 
+## 0.57.3
+
+### Patch Changes
+
+- 925e9f0: package updates
+- 9a1ae57: fixes to focus state/default value for ButtonGroup
+
 ## 0.57.2
 
 ### Patch Changes

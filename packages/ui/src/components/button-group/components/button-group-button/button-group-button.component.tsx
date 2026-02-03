@@ -1,5 +1,6 @@
 'use client';
 
+import { mergeProps } from '@react-aria/utils';
 import React, { useContext, useRef } from 'react';
 import { useFocusRing, useToggleButtonGroupItem } from 'react-aria';
 

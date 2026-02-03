@@ -54,7 +54,11 @@
       "file-entry-cache": "^8.0.0",
       "cross-spawn": ">=6.0.6",
       "form-data": ">=4.0.4",
-      "esbuild": ">=0.25.0"
+      "esbuild": ">=0.25.0",
+      "lodash": ">=4.17.23",
+      "@changesets/parse>js-yaml": ">=4.1.1",
+      "@keystatic/core>js-yaml": ">=4.1.1",
+      "@eslint/eslintrc>js-yaml": ">=4.1.1"
     }
   }
 }
