@@ -44,7 +44,7 @@ export function MultiSelectSearchbar({
     <div className={styles.searchInputWrapper()}>
       <InputGroup
         before={{
-          icon: SearchIcon,
+          icon: props => <SearchIcon {...props} color="muted" />,
         }}
         after={
           filterText.length > 0 && {
