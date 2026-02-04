@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useContext } from 'react';
-import { DismissButton, Overlay, usePopover } from 'react-aria';
+import { DismissButton, mergeProps, Overlay, usePopover } from 'react-aria';
 
 import { MultiSelectContext } from '../../multi-select.component.js';
 
@@ -10,7 +10,8 @@ import { styles as popoverStyles } from './multi-select-popover.styles.js';
 import type { MultiSelectPopoverProps } from './multi-select-popover.types.js';
 
 export function MultiSelectPopover({ children, className, ...props }: MultiSelectPopoverProps) {
-  const { overlayState, overlayProps, popoverRef, buttonRef, placement } = useContext(MultiSelectContext);
+  const { overlayState, overlayProps, popoverRef, buttonRef, placement, portalContainer } =
+    useContext(MultiSelectContext);
 
   const { popoverProps } = usePopover(
     {
@@ -30,10 +31,9 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
   const styles = popoverStyles();
 
   return (
-    <Overlay disableFocusManagement>
+    <Overlay disableFocusManagement portalContainer={portalContainer}>
       <div
-        {...popoverProps}
-        {...overlayProps}
+        {...mergeProps(popoverProps, overlayProps)}
         ref={popoverRef}
         className={styles.overlay({ className })}
         style={{ ...popoverProps.style, width: width ? `${width}px` : undefined }}

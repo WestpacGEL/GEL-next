@@ -39,6 +39,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   showSingleSectionTitle = false,
   placement,
   id,
+  portalContainer,
   ...props
 }: MultiSelectProps<T>) {
   const [filterText, setFilterText] = useState('');
@@ -94,6 +95,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
         listBoxRef,
         inputRef,
         overlayProps,
+        portalContainer,
       }}
     >
       <div className={styles.root()}>
