@@ -23,22 +23,14 @@ export function MultiSelectSelectAllOption() {
 
   // Need to manually handle keyboard accessibility due to component complexity
   const handleButtonKeyDown = useCallback((e: KeyboardEvent<HTMLButtonElement>) => {
-    // Check if the current element has focus - if not, it's likely virtual cursor navigation
-    const currentElementHasFocus = document.activeElement === e.currentTarget;
-
-    if (e.key === 'ArrowDown' && currentElementHasFocus) {
+    if (e.key === 'ArrowDown') {
       e.preventDefault();
       const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
-      firstItem?.focus();
+      firstItem.focus();
     }
-    if (e.key === 'ArrowUp' && currentElementHasFocus) {
+    if (e.key === 'ArrowUp') {
       e.preventDefault();
       inputRef.current?.focus();
-    }
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      // Trigger the click handler
-      (e.target as HTMLButtonElement).click();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
