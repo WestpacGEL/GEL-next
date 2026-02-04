@@ -19,6 +19,7 @@ export type MultiSelectContextProps<T extends object = object> = {
   filterText: string;
   overlayProps: DOMProps;
   placement?: AriaPopoverProps['placement'];
+  portalContainer?: Element;
 };
 
 export type MultiSelectItemProps<T extends object = object> = { description?: string } & ItemProps<T>;
@@ -44,6 +45,10 @@ export type MultiSelectProps<T> = {
    * @default bottom
    */
   placement?: AriaPopoverProps['placement'];
+  /**
+   * Element where the popover will be rendered, by default it will be into the body
+   */
+  portalContainer?: Element;
   /**
    * Whether to show the section for the selected option in the field i.e. "Transaction: Savings" rather than "Savings"
    * NOTE: Only works with single selectionMode multi-selects

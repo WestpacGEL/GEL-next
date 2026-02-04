@@ -38,6 +38,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   placeholder = 'Select',
   showSingleSectionTitle = false,
   placement,
+  portalContainer,
   id,
   ...props
 }: MultiSelectProps<T>) {
@@ -94,6 +95,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
         listBoxRef,
         inputRef,
         overlayProps,
+        portalContainer,
       }}
     >
       <div className={styles.root()}>
