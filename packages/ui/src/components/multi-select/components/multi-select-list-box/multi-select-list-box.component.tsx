@@ -23,19 +23,21 @@ export function MultiSelectListBox<T extends object = object>({ listBoxRef, ...p
 
   return (
     <div className={styles.container()}>
-      {selectionMode === 'multiple' && stateCollection.length > 0 && <MultiSelectSelectAllOption />}
-      <ul {...listBoxProps} ref={listBoxRef} className={styles.ul()}>
-        {stateCollection.length > 0 ? (
-          stateCollection.map(item =>
-            item.type === 'section' ? (
-              <MultiSelectListBoxSection key={item.key} section={item} />
-            ) : (
-              <MultiSelectOption key={item.key} item={item} />
-            ),
-          )
-        ) : (
-          <p className={styles.noItemsText()}>No items found</p>
-        )}
+      <ul>
+        {selectionMode === 'multiple' && stateCollection.length > 0 && <MultiSelectSelectAllOption />}
+        <ul {...listBoxProps} ref={listBoxRef} className={styles.ul()}>
+          {stateCollection.length > 0 ? (
+            stateCollection.map(item =>
+              item.type === 'section' ? (
+                <MultiSelectListBoxSection key={item.key} section={item} />
+              ) : (
+                <MultiSelectOption key={item.key} item={item} />
+              ),
+            )
+          ) : (
+            <p className={styles.noItemsText()}>No items found</p>
+          )}
+        </ul>
       </ul>
     </div>
   );

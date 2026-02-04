@@ -22,7 +22,7 @@ export function MultiSelectSelectAllOption() {
   const styles = selectAllOptionStyles({ selected: withOneSelectionOrMore });
 
   // Need to manually handle keyboard accessibility due to component complexity
-  const handleButtonKeyDown = useCallback((e: KeyboardEvent<HTMLLIElement>) => {
+  const handleButtonKeyDown = useCallback((e: KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
@@ -43,7 +43,7 @@ export function MultiSelectSelectAllOption() {
 
   return (
     <div className={styles.listItem()} key="select-all">
-      <li
+      <button
         className={styles.button()}
         onClick={() => {
           if (!allItemsAreSelected) {
@@ -62,14 +62,13 @@ export function MultiSelectSelectAllOption() {
         role="checkbox"
         aria-checked={ariaChecked()}
         aria-label="Select all options"
-        tabIndex={0}
       >
         <div className={styles.checkbox()} role="presentation">
           {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" color="hero" />}
           {!allItemsAreSelected && withOneSelectionOrMore && <div className={styles.indeterminate()} />}
         </div>
         <span className={styles.label()}>Select all</span>
-      </li>
+      </button>
     </div>
   );
 }
