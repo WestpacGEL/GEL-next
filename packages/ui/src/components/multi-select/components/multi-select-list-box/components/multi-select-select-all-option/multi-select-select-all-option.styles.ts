@@ -3,8 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     listItem: 'border-b border-b-border-muted-soft hover:bg-surface-muted-faint',
-    button:
-      'flex w-full cursor-pointer items-center gap-1 p-2 focus-visible:bg-surface-muted-pale focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-border-focus',
+    button: 'flex w-full cursor-pointer items-center gap-1 p-2',
     checkbox: 'flex size-4 items-center justify-center rounded border border-border-hero bg-background-white',
     indeterminate: 'block w-3/5 border-t-2 border-t-border-hero',
     label: 'typography-body-9',
@@ -13,6 +12,10 @@ export const styles = tv({
     selected: {
       true: { listItem: 'bg-surface-muted-faint' },
       false: { listItem: '' },
+    },
+    isFocusVisible: {
+      true: { button: 'bg-surface-muted-pale outline-2 outline-offset-[-2px] outline-border-focus' },
+      false: {},
     },
   },
 });
