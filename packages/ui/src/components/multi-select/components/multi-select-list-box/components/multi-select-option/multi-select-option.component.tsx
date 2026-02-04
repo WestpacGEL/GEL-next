@@ -10,7 +10,8 @@ import { styles as optionStyles } from './multi-select-option.styles.js';
 import { MultiSelectOptionProps } from './multi-select-option.types.js';
 
 export function MultiSelectOption<T>({ item }: MultiSelectOptionProps<T>) {
-  const { listState, selectionMode, selectAllRef, inputRef } = useContext(MultiSelectContext);
+  const { listState, selectAllRef, inputRef } = useContext(MultiSelectContext);
+  const selectionMode = listState.selectionManager.selectionMode;
   const ref = useRef<HTMLLIElement>(null);
   const { optionProps, isDisabled, isSelected, isFocused } = useOption({ key: item.key }, listState, ref);
   const { isFocusVisible } = useFocusVisible();

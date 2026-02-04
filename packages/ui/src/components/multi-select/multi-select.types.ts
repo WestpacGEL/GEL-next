@@ -1,6 +1,6 @@
 import { DOMProps } from '@react-types/shared';
 import { Key, ReactNode, RefObject } from 'react';
-import { AriaListBoxOptions, AriaListBoxProps, AriaPopoverProps } from 'react-aria';
+import { AriaListBoxOptions, AriaPopoverProps } from 'react-aria';
 import { ItemProps, ListProps, ListState, OverlayTriggerState } from 'react-stately';
 
 import { MultiSelectSize } from './components/multi-select-list-box-trigger/multi-select-list-box-trigger.types.js';
@@ -14,8 +14,6 @@ export type MultiSelectContextProps<T extends object = object> = {
   popoverRef: RefObject<HTMLDivElement>;
   selectAllRef: RefObject<HTMLButtonElement>;
   inputRef: RefObject<HTMLInputElement>;
-  selectedKeys?: AriaListBoxProps<T>['selectedKeys'];
-  selectionMode?: AriaListBoxProps<T>['selectionMode'];
   filterText: string;
   overlayProps: DOMProps;
   placement?: AriaPopoverProps['placement'];
