@@ -82,8 +82,6 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   return (
     <MultiSelectContext.Provider
       value={{
-        selectedKeys,
-        selectionMode,
         filterText,
         size,
         overlayState,

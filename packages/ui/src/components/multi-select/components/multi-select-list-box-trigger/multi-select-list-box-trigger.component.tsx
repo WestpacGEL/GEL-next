@@ -18,7 +18,8 @@ export function MultiSelectListBoxTrigger<T>({
   triggerProps,
   id,
 }: MultiSelectListBoxTriggerProps<T>) {
-  const { size, selectionMode, overlayState, listState, buttonRef, inputRef } = useContext(MultiSelectContext);
+  const { size, overlayState, listState, buttonRef, inputRef } = useContext(MultiSelectContext);
+  const selectionMode = listState.selectionManager.selectionMode;
   const breakpoint = useBreakpoint();
   const { buttonProps } = useButton(triggerProps, buttonRef);
   const { focusProps, isFocusVisible } = useFocusRing();

@@ -13,7 +13,8 @@ import { styles as listBoxStyles } from './multi-select-list-box.styles.js';
 import type { MultiSelectListBoxProps } from './multi-select-list-box.types.js';
 
 export function MultiSelectListBox<T extends object = object>({ listBoxRef, ...props }: MultiSelectListBoxProps<T>) {
-  const { listState, selectionMode } = useContext(MultiSelectContext);
+  const { listState } = useContext(MultiSelectContext);
+  const selectionMode = listState.selectionManager.selectionMode;
   const { listBoxProps } = useListBox({ selectionMode, ...props }, listState, listBoxRef);
 
   const stateCollection = [...listState.collection];
