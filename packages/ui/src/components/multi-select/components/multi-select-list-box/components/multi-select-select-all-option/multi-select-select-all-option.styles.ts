@@ -14,7 +14,7 @@ export const styles = tv({
       false: { listItem: '' },
     },
     isFocusVisible: {
-      true: { button: 'bg-surface-muted-pale outline-2 outline-offset-[-2px] outline-border-focus' },
+      true: { listItem: 'bg-surface-muted-faint focus-outline -outline-offset-2' },
       false: {},
     },
   },

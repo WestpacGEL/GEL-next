@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useCallback, useContext, useMemo, KeyboardEvent } from 'react';
-import { mergeProps, useOption, useFocusRing, useFocusVisible } from 'react-aria';
+import { useOption, useFocusRing, mergeProps } from 'react-aria';
 
 import { TickIcon } from '../../../../../icon/index.js';
 import { MultiSelectContext } from '../../../../multi-select.component.js';
@@ -35,7 +35,7 @@ export function MultiSelectSelectAllOption() {
   }, [allItemsAreSelected, listState.selectionManager]);
 
   // Use React Aria's useOption hook
-  const { optionProps, isFocused } = useOption(
+  const { optionProps } = useOption(
     {
       key: 'select-all',
     },
@@ -43,11 +43,11 @@ export function MultiSelectSelectAllOption() {
     selectAllRef,
   );
 
-  const { isFocusVisible } = useFocusVisible();
+  const { isFocusVisible, focusProps } = useFocusRing();
 
   const styles = selectAllOptionStyles({
     selected: withOneSelectionOrMore,
-    isFocusVisible: isFocused && isFocusVisible,
+    isFocusVisible,
   });
 
   // Need to manually handle keyboard accessibility due to component complexity
@@ -83,7 +83,7 @@ export function MultiSelectSelectAllOption() {
     <div
       className={styles.listItem()}
       key="select-all"
-      {...optionProps}
+      {...mergeProps(optionProps, focusProps)}
       ref={selectAllRef}
       onClick={handleSelectionChange}
       onKeyDown={e => {
