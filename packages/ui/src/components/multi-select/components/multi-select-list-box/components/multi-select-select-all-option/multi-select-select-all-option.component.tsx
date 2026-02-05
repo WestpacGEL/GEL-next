@@ -72,7 +72,7 @@ export function MultiSelectSelectAllOption() {
   return (
     <div className={styles.listItem()} key="select-all">
       <label className={styles.button()} data-focus-visible={isFocusVisible} {...labelProps}>
-        <VisuallyHidden>
+        <VisuallyHidden elementType="span">
           <input {...mergeProps(inputProps, focusProps)} ref={selectAllRef} />
         </VisuallyHidden>
         <div className={styles.checkbox()} role="presentation">
