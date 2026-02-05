@@ -87,6 +87,7 @@ export function ButtonGroup({
   const state = useRadioGroupState({
     ...props,
     label,
+    value: props.value ? props.value : undefined, // accounts for empty string value to treat as if undefined
     defaultValue: props.defaultValue ? props.defaultValue : undefined, // accounts for empty string defaultValue to treat as if undefined
     orientation: 'horizontal',
   });
