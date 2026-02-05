@@ -12,7 +12,7 @@ export type MultiSelectContextProps<T extends object = object> = {
   buttonRef: RefObject<HTMLButtonElement>;
   listBoxRef: RefObject<HTMLUListElement>;
   popoverRef: RefObject<HTMLDivElement>;
-  selectAllRef: RefObject<HTMLButtonElement>;
+  selectAllRef: RefObject<HTMLInputElement>;
   inputRef: RefObject<HTMLInputElement>;
   filterText: string;
   overlayProps: DOMProps;

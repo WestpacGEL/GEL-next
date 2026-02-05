@@ -60,7 +60,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   const inputRef = useRef<HTMLInputElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
-  const selectAllRef = useRef<HTMLButtonElement>(null);
+  const selectAllRef = useRef<HTMLInputElement>(null);
   const listBoxRef = useRef<HTMLUListElement>(null);
 
   const overlayState = useOverlayTriggerState({

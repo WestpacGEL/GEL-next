@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useCallback, useContext, useMemo, KeyboardEvent, useRef } from 'react';
-import { useCheckbox, useFocusRing } from 'react-aria';
+import React, { useCallback, useContext, useMemo, KeyboardEvent } from 'react';
+import { mergeProps, useCheckbox, useFocusRing, VisuallyHidden } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
 import { TickIcon } from '../../../../../icon/index.js';
@@ -11,7 +11,6 @@ import { styles as selectAllOptionStyles } from './multi-select-select-all-optio
 
 export function MultiSelectSelectAllOption() {
   const { listState, selectAllRef, listBoxRef, inputRef } = useContext(MultiSelectContext);
-  const internalInputRef = useRef<HTMLInputElement>(null);
 
   const allItemsAreSelected = useMemo(
     () => listState.selectionManager.isSelectAll,
@@ -45,9 +44,10 @@ export function MultiSelectSelectAllOption() {
       isSelected: allItemsAreSelected,
       isIndeterminate: !allItemsAreSelected && withOneSelectionOrMore,
       'aria-label': 'Select all options',
+      onKeyDown: e => handleInputKeyDown(e),
     },
     state,
-    internalInputRef,
+    selectAllRef,
   );
 
   // Use React Aria's useFocusRing hook for focus management
@@ -71,30 +71,10 @@ export function MultiSelectSelectAllOption() {
 
   return (
     <div className={styles.listItem()} key="select-all">
-      <input
-        {...inputProps}
-        {...focusProps}
-        ref={node => {
-          // Set internal ref
-          (internalInputRef as React.MutableRefObject<HTMLInputElement | null>).current = node;
-
-          // Handle external ref if it exists
-          if (selectAllRef) {
-            if (typeof selectAllRef === 'function') {
-              (selectAllRef as (node: HTMLInputElement | null) => void)(node);
-            } else {
-              (selectAllRef as React.MutableRefObject<HTMLInputElement | null>).current = node;
-            }
-          }
-        }}
-        onKeyDown={e => {
-          inputProps.onKeyDown?.(e);
-          focusProps.onKeyDown?.(e);
-          handleInputKeyDown(e);
-        }}
-        className="sr-only"
-      />
-      <label {...labelProps} className={styles.button()} data-focus-visible={isFocusVisible}>
+      <label className={styles.button()} data-focus-visible={isFocusVisible} {...labelProps}>
+        <VisuallyHidden>
+          <input {...mergeProps(inputProps, focusProps)} ref={selectAllRef} />
+        </VisuallyHidden>
         <div className={styles.checkbox()} role="presentation">
           {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" color="hero" />}
           {!allItemsAreSelected && withOneSelectionOrMore && <div className={styles.indeterminate()} />}
