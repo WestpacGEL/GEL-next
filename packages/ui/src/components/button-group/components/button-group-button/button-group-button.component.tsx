@@ -1,5 +1,6 @@
 'use client';
 
+import { mergeProps } from '@react-aria/utils';
 import React, { useContext, useRef } from 'react';
 import { VisuallyHidden, useFocusRing, useRadio } from 'react-aria';
 
@@ -19,7 +20,7 @@ export function ButtonGroupButton({ className, label, ...props }: ButtonGroupBut
   return (
     <label className={styles.base({ className })}>
       <VisuallyHidden>
-        <input {...inputProps} {...focusProps} ref={ref} />
+        <input {...mergeProps(inputProps, focusProps)} ref={ref} />
       </VisuallyHidden>
       <GELButton
         tag="div"
