@@ -14,5 +14,9 @@ export const styles = tv({
       true: { listItem: 'bg-background' },
       false: { listItem: '' },
     },
+    isFocusVisible: {
+      true: { listItem: 'bg-background !outline-offset-[-2px] focus-outline' },
+      false: {},
+    },
   },
 });

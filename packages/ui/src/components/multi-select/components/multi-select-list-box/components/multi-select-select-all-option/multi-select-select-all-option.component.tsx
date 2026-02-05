@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useCallback, useContext, useMemo, KeyboardEvent } from 'react';
+import { useOption, useFocusRing, mergeProps } from 'react-aria';
 
 import { TickIcon } from '../../../../../icon/index.js';
 import { MultiSelectContext } from '../../../../multi-select.component.js';
@@ -9,6 +10,7 @@ import { styles as selectAllOptionStyles } from './multi-select-select-all-optio
 
 export function MultiSelectSelectAllOption() {
   const { listState, selectAllRef, listBoxRef, inputRef } = useContext(MultiSelectContext);
+
   const allItemsAreSelected = useMemo(
     () => listState.selectionManager.isSelectAll,
     [listState.selectionManager.isSelectAll],
@@ -19,56 +21,85 @@ export function MultiSelectSelectAllOption() {
     [listState.selectionManager.selectedKeys],
   );
 
-  const styles = selectAllOptionStyles({ selected: withOneSelectionOrMore });
+  // Handle selection change
+  const handleSelectionChange = useCallback(() => {
+    if (!allItemsAreSelected) {
+      // This is because selectAll send a string called 'all' when it is called.
+      listState.selectionManager.setSelectedKeys(
+        // This makes it so that when filtered select all will add to the currently selected options rather than replacing
+        new Set([...listState.selectionManager.selectedKeys, ...listState.selectionManager.collection.getKeys()]),
+      );
+      return;
+    }
+    return listState.selectionManager.clearSelection();
+  }, [allItemsAreSelected, listState.selectionManager]);
+
+  // Use React Aria's useOption hook
+  const { optionProps } = useOption(
+    {
+      key: 'select-all',
+    },
+    listState,
+    selectAllRef,
+  );
+
+  const { isFocusVisible, focusProps } = useFocusRing();
+
+  const styles = selectAllOptionStyles({
+    selected: withOneSelectionOrMore,
+    isFocusVisible,
+  });
 
   // Need to manually handle keyboard accessibility due to component complexity
-  const handleButtonKeyDown = useCallback((e: KeyboardEvent<HTMLButtonElement>) => {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
-      firstItem.focus();
-    }
-    if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      inputRef.current?.focus();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const handleInputKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLDivElement>) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
+        firstItem?.focus();
+      }
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        inputRef.current?.focus();
+      }
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleSelectionChange();
+      }
+    },
+    [handleSelectionChange, listBoxRef, inputRef],
+  );
 
-  const ariaChecked = () => {
-    if (allItemsAreSelected) return 'true';
-    if (withOneSelectionOrMore) return 'mixed';
-    return 'false';
-  };
+  let ariaChecked: 'true' | 'false' | 'mixed';
+  if (allItemsAreSelected) {
+    ariaChecked = 'true';
+  } else if (withOneSelectionOrMore) {
+    ariaChecked = 'mixed';
+  } else {
+    ariaChecked = 'false';
+  }
 
   return (
-    <div className={styles.listItem()} key="select-all">
-      <button
-        className={styles.button()}
-        onClick={() => {
-          if (!allItemsAreSelected) {
-            // This is because selectAll send a string called 'all' when it is called.
-            listState.selectionManager.setSelectedKeys(
-              // This makes it so that when filtered select all will add to the currently selected options rather than replacing
-              new Set([...listState.selectionManager.selectedKeys, ...listState.selectionManager.collection.getKeys()]),
-            );
-            return;
-          }
-          return listState.selectionManager.clearSelection();
-        }}
-        ref={selectAllRef}
-        onKeyDown={handleButtonKeyDown}
-        itemType="checkbox"
-        role="checkbox"
-        aria-checked={ariaChecked()}
-        aria-label="Select all options"
-      >
+    <div
+      className={styles.listItem()}
+      key="select-all"
+      {...mergeProps(optionProps, focusProps)}
+      ref={selectAllRef}
+      onClick={handleSelectionChange}
+      onKeyDown={e => {
+        handleInputKeyDown(e);
+      }}
+      role="option"
+      aria-checked={ariaChecked}
+      aria-label="Select all options"
+    >
+      <div className={styles.button()}>
         <div className={styles.checkbox()} role="presentation">
           {allItemsAreSelected && <TickIcon size="small" aria-hidden="true" color="hero" />}
           {!allItemsAreSelected && withOneSelectionOrMore && <div className={styles.indeterminate()} />}
         </div>
         <span className={styles.label()}>Select all</span>
-      </button>
+      </div>
     </div>
   );
 }

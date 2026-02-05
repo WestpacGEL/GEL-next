@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useCallback, useContext, useRef, KeyboardEvent } from 'react';
-import { useFocusVisible, useOption } from 'react-aria';
+import { mergeProps, useFocusRing, useOption } from 'react-aria';
 
 import { TickIcon } from '../../../../../icon/index.js';
 import { MultiSelectContext } from '../../../../multi-select.component.js';
@@ -13,13 +13,13 @@ export function MultiSelectOption<T>({ item }: MultiSelectOptionProps<T>) {
   const { listState, selectAllRef, inputRef } = useContext(MultiSelectContext);
   const selectionMode = listState.selectionManager.selectionMode;
   const ref = useRef<HTMLLIElement>(null);
-  const { optionProps, isDisabled, isSelected, isFocused } = useOption({ key: item.key }, listState, ref);
-  const { isFocusVisible } = useFocusVisible();
+  const { optionProps, isDisabled, isSelected } = useOption({ key: item.key }, listState, ref);
+  const { isFocusVisible, focusProps } = useFocusRing();
 
   const styles = optionStyles({
     disabled: isDisabled,
     selectionMode,
-    isFocusVisible: isFocused && isFocusVisible,
+    isFocusVisible,
   });
 
   // Need to manually handle keyboard accessibility due to component complexity
@@ -44,7 +44,7 @@ export function MultiSelectOption<T>({ item }: MultiSelectOptionProps<T>) {
 
   return (
     <li
-      {...optionProps}
+      {...mergeProps(optionProps, focusProps)}
       ref={ref}
       className={styles.root()}
       onKeyDown={handleButtonKeyDown}
