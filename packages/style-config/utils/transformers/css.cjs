@@ -22,21 +22,41 @@ function flattenColors(obj, parentKey = '', result = {}) {
 }
 
 function refToVar(ref) {
-  let match = ref.match(/\{color\.([^.]+)\.([^.]+)\.([^.]+)\}/i);
+  // Handle new Primitives format: {Primitives.color.brand.palette.shade}
+  let match = ref.match(/\{Primitives\.color\.([^.]+)\.([^.]+)\.([^.]+)\}/i);
   if (match) {
     const [_, brand, color, shade] = match;
     return `var(--${brand.toLowerCase()}-${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
   }
+  
+  // Handle border radius references: {Primitives.border.radius.value}
+  match = ref.match(/\{Primitives\.border\.radius\.([^}]+)\}/i);
+  if (match) {
+    const [_, value] = match;
+    return `var(--border-radius-${value.replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()})`;
+  }
+  
+  // Handle old format: {color.brand.palette.shade}
+  match = ref.match(/\{color\.([^.]+)\.([^.]+)\.([^.]+)\}/i);
+  if (match) {
+    const [_, brand, color, shade] = match;
+    return `var(--${brand.toLowerCase()}-${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
+  }
+  
+  // Handle two-part color references: {color.palette.shade}
   match = ref.match(/\{color\.([^.]+)\.([^.]+)\}/i);
   if (match) {
     const [_, color, shade] = match;
     return `var(--${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
   }
+  
+  // Handle single color references: {color.value}
   match = ref.match(/\{color\.([^.]+)\}/i);
   if (match) {
     const [_, color] = match;
     return `var(--${color.toLowerCase().replace(/\s+/g, '-')})`;
   }
+  
   return ref;
 }
 
@@ -47,9 +67,6 @@ function formatBorderRadius(obj) {
       const newKey = key.replace(/^rounded/, 'radius');
       if (newKey === 'radius-none' || newKey === 'radius-full') continue;
       let value = obj[key];
-      if (typeof value === 'string') {
-        value = value.replace(/border-radius/g, 'rounded');
-      }
       remapped[newKey] = value;
     }
   }
@@ -60,7 +77,7 @@ function formatBorderRadius(obj) {
 // Extraction Functions
 // --------------------------------------------------------------------------
 function extractPrimitives(tokens) {
-  const primitives = tokens.find(t => t.Primitives)?.Primitives?.modes?.['Mode 1']?.color;
+  const primitives = tokens.find(t => t.Primitives)?.Primitives?.color;
   const colorsObj = {};
   if (primitives) {
     for (const parentKey in primitives) {
@@ -73,7 +90,7 @@ function extractPrimitives(tokens) {
 }
 
 function getBorderPrimitives(tokens) {
-  const primitives = tokens.find(t => t.Primitives)?.Primitives?.modes?.['Mode 1']?.border?.radius;
+  const primitives = tokens.find(t => t.Primitives)?.Primitives?.border?.radius;
   if (!primitives) return {};
   const borderVars = {};
   for (const key in primitives) {
@@ -85,111 +102,103 @@ function getBorderPrimitives(tokens) {
   return borderVars;
 }
 
-function extractThemes(tokens, brandNameMap) {
-  const themes = tokens.find(t => t.Themes)?.Themes?.modes;
-  const colorsObj = {};
-  if (themes) {
-    for (const brand in themes) {
-      const themeColors = themes[brand]?.color;
-      if (themeColors) {
-        const colors = flattenColors(themeColors, brand.toLowerCase());
-        const cleanedColors = {};
-        for (const name in colors) {
-          let unprefixed = name.replace(new RegExp(`^${brand.toLowerCase()}-`), '');
-          if (unprefixed.startsWith('alias-')) {
-            unprefixed = unprefixed.replace(/^alias-/, '');
-          }
-          let value = colors[name];
-          if (typeof value === 'string' && value.startsWith('{color.alias.')) {
-            const aliasMatch = value.match(/\{color\.alias\.([^.]+)\}/i);
-            if (aliasMatch) {
-              const [_, aliasName] = aliasMatch;
-              value = `var(--${aliasName.toLowerCase().replace(/\s+/g, '-')})`;
-            }
-          } else if (typeof value === 'string' && value.startsWith('{color.')) {
-            value = refToVar(value);
-          }
-          cleanedColors[unprefixed] = value;
-        }
-        colorsObj[brandNameMap[brand.toLowerCase()]] = colorsObj[brandNameMap[brand.toLowerCase()]] || {};
-        colorsObj[brandNameMap[brand.toLowerCase()]].theme = cleanedColors;
-      }
-    }
-  }
-  return colorsObj;
-}
-
-function getThemeBrandBorders(tokens, brandNameMap) {
-  const themes = tokens.find(t => t.Themes)?.Themes?.modes;
-  if (!themes) return {};
-  const brandBorders = {};
-  for (const brand in themes) {
-    const borderRadii = themes[brand]?.border?.radius;
-    if (borderRadii) {
-      const cssVars = {};
-      for (const key in borderRadii) {
-        if (borderRadii[key]?.$value !== undefined) {
-          const varName = `border-radius-${key.replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
-          let value = borderRadii[key].$value;
-          if (typeof value === 'string' && value.startsWith('{border.radius.')) {
-            const ref = value.match(/\{border\.radius\.([^.}]+)\}/i);
-            if (ref) {
-              const refVar = `--border-radius-${ref[1].replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
-              value = `var(${refVar})`;
-            }
-          } else if (typeof value === 'number') {
-            value = `${value}px`;
-          }
-          cssVars[varName] = value;
-        }
-      }
-      brandBorders[brandNameMap[brand.toLowerCase()] || brand.toLowerCase()] = cssVars;
-    }
-  }
-  return brandBorders;
-}
-
 function extractTokens(tokens) {
   const tokensBlock = tokens.find(t => t.Tokens)?.Tokens?.modes;
   const tokensObj = {};
+  
   if (tokensBlock) {
-    for (const mode in tokensBlock) {
-      const modeColors = tokensBlock[mode]?.color;
-      if (modeColors) {
-        const colors = flattenColors(modeColors, '');
-        const tokenObj = {};
-        function removeDuplicatePrefix(name) {
-          const parts = name.split('-');
-          const result = [parts[0]];
-          for (let i = 1; i < parts.length; i++) {
-            if (parts[i] !== parts[i - 1]) {
-              result.push(parts[i]);
+    // Check if this is the new consolidated structure (brand names as keys)
+    const brandNames = Object.keys(tokensBlock);
+    const isConsolidatedStructure = brandNames.some(name => 
+      ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name)
+    );
+    
+    if (isConsolidatedStructure) {
+      // New consolidated structure: extract from first brand (Westpac) as reference
+      const westpacTokens = tokensBlock['Westpac'];
+      if (westpacTokens) {
+        ['light-mode', 'dark-mode'].forEach(modeKey => {
+          const modeColors = westpacTokens[modeKey]?.color;
+          if (modeColors) {
+            const colors = flattenColors(modeColors, '');
+            const tokenObj = {};
+            
+            function removeDuplicatePrefix(name) {
+              const parts = name.split('-');
+              const result = [parts[0]];
+              for (let i = 1; i < parts.length; i++) {
+                if (parts[i] !== parts[i - 1]) {
+                  result.push(parts[i]);
+                }
+              }
+              if (result[0] === 'state') result.shift();
+              if (result[0] === 'pictogram' && result[1] === 'surface' && result[2] === 'pictogram') result.shift();
+              return result.join('-');
             }
-          }
-          if (result[0] === 'state') result.shift();
-          if (result[0] === 'pictogram' && result[1] === 'surface' && result[2] === 'pictogram') result.shift();
-          return result.join('-');
-        }
 
-        Object.entries(colors).forEach(([name, value]) => {
-          let unprefixed = name.replace(new RegExp(`^${mode.toLowerCase()}-`), '');
-          unprefixed = removeDuplicatePrefix(unprefixed);
-          if (unprefixed.startsWith('alias-')) {
-            unprefixed = unprefixed.replace(/^alias-/, '');
+            Object.entries(colors).forEach(([name, value]) => {
+              let unprefixed = removeDuplicatePrefix(name);
+              if (unprefixed.startsWith('alias-')) {
+                unprefixed = unprefixed.replace(/^alias-/, '');
+              }
+              if (typeof value === 'string' && value.startsWith('{color.alias.')) {
+                const aliasMatch = value.match(/\{color\.alias\.([^.]+)\}/i);
+                if (aliasMatch) {
+                  const [_, aliasName] = aliasMatch;
+                  value = `var(--${aliasName.toLowerCase().replace(/\s+/g, '-')})`;
+                }
+              } else if (typeof value === 'string' && (value.startsWith('{color.') || value.startsWith('{Primitives.'))) {
+                value = refToVar(value);
+              }
+              tokenObj[unprefixed] = value;
+            });
+
+            const processedMode = modeKey === 'light-mode' ? 'light' : 'dark';
+            tokensObj[processedMode] = tokenObj;
           }
-          if (typeof value === 'string' && value.startsWith('{color.alias.')) {
-            const aliasMatch = value.match(/\{color\.alias\.([^.]+)\}/i);
-            if (aliasMatch) {
-              const [_, aliasName] = aliasMatch;
-              value = `var(--${aliasName.toLowerCase().replace(/\s+/g, '-')})`;
-            }
-          } else if (typeof value === 'string' && value.startsWith('{color.')) {
-            value = refToVar(value);
-          }
-          tokenObj[unprefixed] = value;
         });
+      }
+    } else {
+      // Old structure: process as before
+      for (const mode in tokensBlock) {
+        const modeColors = tokensBlock[mode]?.color;
+        if (modeColors) {
+          const colors = flattenColors(modeColors, '');
+          const tokenObj = {};
+          function removeDuplicatePrefix(name) {
+            const parts = name.split('-');
+            const result = [parts[0]];
+            for (let i = 1; i < parts.length; i++) {
+              if (parts[i] !== parts[i - 1]) {
+                result.push(parts[i]);
+              }
+            }
+            if (result[0] === 'state') result.shift();
+            if (result[0] === 'pictogram' && result[1] === 'surface' && result[2] === 'pictogram') result.shift();
+            return result.join('-');
+          }
 
-        tokensObj[mode.toLowerCase().split(' ')[0]] = tokenObj;
+          Object.entries(colors).forEach(([name, value]) => {
+            let unprefixed = name.replace(new RegExp(`^${mode.toLowerCase()}-`), '');
+            unprefixed = removeDuplicatePrefix(unprefixed);
+            if (unprefixed.startsWith('alias-')) {
+              unprefixed = unprefixed.replace(/^alias-/, '');
+            }
+            if (typeof value === 'string' && value.startsWith('{color.alias.')) {
+              const aliasMatch = value.match(/\{color\.alias\.([^.]+)\}/i);
+              if (aliasMatch) {
+                const [_, aliasName] = aliasMatch;
+                value = `var(--${aliasName.toLowerCase().replace(/\s+/g, '-')})`;
+              }
+            } else if (typeof value === 'string' && (value.startsWith('{color.') || value.startsWith('{Primitives.'))) {
+              value = refToVar(value);
+            }
+            tokenObj[unprefixed] = value;
+          });
+
+          const processedMode = mode.toLowerCase().split(' ')[0];
+          tokensObj[processedMode] = tokenObj;
+        }
       }
     }
   }
@@ -199,52 +208,198 @@ function extractTokens(tokens) {
 function getModeBorders(tokens) {
   const modes = tokens.find(t => t.Tokens)?.Tokens?.modes;
   if (!modes) return {};
+  
   const modeBorders = {};
-  for (const modeName in modes) {
-    const borderRadii = modes[modeName]?.border?.radius;
-    if (borderRadii) {
-      const cssVars = {};
-      for (const key in borderRadii) {
-        if (borderRadii[key]?.$value !== undefined) {
-          const varName = `${key.replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
-          let value = borderRadii[key].$value;
-          if (typeof value === 'string' && value.startsWith('{border.radius.')) {
-            const ref = value.match(/\{border\.radius\.([^.}]+)\}/i);
-            if (ref) {
-              const refVar = `--border-radius-${ref[1].replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
-              value = `var(${refVar})`;
+  
+  // Check if this is the new consolidated structure
+  const brandNames = Object.keys(modes);
+  const isConsolidatedStructure = brandNames.some(name => 
+    ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name)
+  );
+  
+  if (isConsolidatedStructure) {
+    // New consolidated structure: extract from first brand (Westpac) as reference
+    const westpacTokens = modes['Westpac'];
+    if (westpacTokens) {
+      ['light-mode', 'dark-mode'].forEach(modeKey => {
+        const borderRadii = westpacTokens[modeKey]?.border?.radius;
+        if (borderRadii) {
+          const cssVars = {};
+          for (const key in borderRadii) {
+            if (borderRadii[key]?.$value !== undefined) {
+              const varName = `${key.replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
+              let value = borderRadii[key].$value;
+              if (typeof value === 'string' && value.startsWith('{border.radius.')) {
+                const ref = value.match(/\{border\.radius\.([^.}]+)\}/i);
+                if (ref) {
+                  const refVar = `--border-radius-${ref[1].replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
+                  value = `var(${refVar})`;
+                }
+              } else if (typeof value === 'number') {
+                value = `${value}px`;
+              }
+              cssVars[varName] = value;
             }
-          } else if (typeof value === 'number') {
-            value = `${value}px`;
           }
-          cssVars[varName] = value;
+          const outputModeKey = modeKey === 'light-mode' ? 'light' : 'dark';
+          modeBorders[outputModeKey] = cssVars;
         }
+      });
+    }
+  } else {
+    // Old structure: process as before
+    for (const modeName in modes) {
+      const borderRadii = modes[modeName]?.border?.radius;
+      if (borderRadii) {
+        const cssVars = {};
+        for (const key in borderRadii) {
+          if (borderRadii[key]?.$value !== undefined) {
+            const varName = `${key.replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
+            let value = borderRadii[key].$value;
+            if (typeof value === 'string' && value.startsWith('{border.radius.')) {
+              const ref = value.match(/\{border\.radius\.([^.}]+)\}/i);
+              if (ref) {
+                const refVar = `--border-radius-${ref[1].replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()}`;
+                value = `var(${refVar})`;
+              }
+            } else if (typeof value === 'number') {
+              value = `${value}px`;
+            }
+            cssVars[varName] = value;
+          }
+        }
+        const modeKey = modeName.toLowerCase().includes('dark') ? 'dark' : 'light';
+        modeBorders[modeKey] = cssVars;
       }
-      const modeKey = modeName.toLowerCase().includes('dark') ? 'dark' : 'light';
-      modeBorders[modeKey] = cssVars;
     }
   }
+  
   return modeBorders;
 }
 
 // --------------------------------------------------------------------------
 // Output Functions
 // --------------------------------------------------------------------------
-function writeBrandThemeCSS(tokens, brandNameMap, brandFontMap, themeTemplate, outputDir) {
-  const themeColorsObj = extractThemes(tokens, brandNameMap);
+function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
   const primitivesObj = extractPrimitives(tokens);
-  const themeBorderRadius = getThemeBrandBorders(tokens, brandNameMap);
+  const borderPrimitives = getBorderPrimitives(tokens);
+  
+  // Check if this is the new consolidated structure
+  const modes = tokens.find(t => t.Tokens)?.Tokens?.modes;
+  const isConsolidatedStructure = modes && Object.keys(modes).some(name => 
+    ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name)
+  );
 
-  BRANDS.forEach(({ primitiveName }) => {
+  BRANDS.forEach(({ primitiveName, themeName }) => {
     const brand = primitiveName.toLowerCase();
     const brandFile = path.resolve(outputDir, `theme-${brand}.css`);
+    
+    // Merge brand-specific primitives with shared mono primitives
+    const allPrimitives = {
+      ...(primitivesObj.mono?.primitives || {}),
+      ...(primitivesObj[brand]?.primitives || {})
+    };
+    
+    let brandLightSemanticTokens = {};
+    let brandDarkSemanticTokens = {};
+    
+    if (isConsolidatedStructure && modes) {
+      // New consolidated structure: extract brand-specific tokens directly
+      const brandTokens = modes[themeName];
+      if (brandTokens) {
+        // Extract light mode semantic tokens
+        if (brandTokens['light-mode']?.color) {
+          const colors = flattenColors(brandTokens['light-mode'].color, '');
+          Object.entries(colors).forEach(([name, value]) => {
+            function removeDuplicatePrefix(name) {
+              const parts = name.split('-');
+              const result = [parts[0]];
+              for (let i = 1; i < parts.length; i++) {
+                if (parts[i] !== parts[i - 1]) {
+                  result.push(parts[i]);
+                }
+              }
+              if (result[0] === 'state') result.shift();
+              if (result[0] === 'pictogram' && result[1] === 'surface' && result[2] === 'pictogram') result.shift();
+              return result.join('-');
+            }
+            
+            let unprefixed = removeDuplicatePrefix(name);
+            if (unprefixed.startsWith('alias-')) {
+              unprefixed = unprefixed.replace(/^alias-/, '');
+            }
+            if (typeof value === 'string' && (value.startsWith('{color.') || value.startsWith('{Primitives.'))) {
+              value = refToVar(value);
+            }
+            brandLightSemanticTokens[unprefixed] = value;
+          });
+        }
+        
+        // Extract dark mode semantic tokens  
+        if (brandTokens['dark-mode']?.color) {
+          const colors = flattenColors(brandTokens['dark-mode'].color, '');
+          Object.entries(colors).forEach(([name, value]) => {
+            function removeDuplicatePrefix(name) {
+              const parts = name.split('-');
+              const result = [parts[0]];
+              for (let i = 1; i < parts.length; i++) {
+                if (parts[i] !== parts[i - 1]) {
+                  result.push(parts[i]);
+                }
+              }
+              if (result[0] === 'state') result.shift();
+              if (result[0] === 'pictogram' && result[1] === 'surface' && result[2] === 'pictogram') result.shift();
+              return result.join('-');
+            }
+            
+            let unprefixed = removeDuplicatePrefix(name);
+            if (unprefixed.startsWith('alias-')) {
+              unprefixed = unprefixed.replace(/^alias-/, '');
+            }
+            if (typeof value === 'string' && (value.startsWith('{color.') || value.startsWith('{Primitives.'))) {
+              value = refToVar(value);
+            }
+            brandDarkSemanticTokens[unprefixed] = value;
+          });
+        }
+      }
+    } else {
+      // Fallback to old behavior for non-consolidated structure
+      const tokensObj = extractTokens(tokens);
+      
+      // Process light mode tokens
+      if (tokensObj.light) {
+        Object.entries(tokensObj.light).forEach(([key, value]) => {
+          if (typeof value === 'string' && value.includes('--wbc-')) {
+            // Replace WBC references with current brand (e.g., --wbc-muted-100 -> --stg-muted-100)
+            brandLightSemanticTokens[key] = value.replace(/--wbc-/g, `--${brand}-`);
+          } else {
+            brandLightSemanticTokens[key] = value;
+          }
+        });
+      }
+
+      // Process dark mode tokens
+      if (tokensObj.dark) {
+        Object.entries(tokensObj.dark).forEach(([key, value]) => {
+          if (typeof value === 'string' && value.includes('--wbc-')) {
+            // Replace WBC references with current brand (e.g., --wbc-muted-100 -> --stg-muted-100)
+            brandDarkSemanticTokens[key] = value.replace(/--wbc-/g, `--${brand}-`);
+          } else {
+            brandDarkSemanticTokens[key] = value;
+          }
+        });
+      }
+    }
+    
     fs.writeFileSync(
       brandFile,
       themeTemplate({
         brand,
-        primitiveColors: primitivesObj[brand]?.primitives || {},
-        themeColors: themeColorsObj[brand]?.theme || {},
-        borderRadius: themeBorderRadius[brand] || {},
+        primitiveColors: allPrimitives,
+        lightSemanticTokens: brandLightSemanticTokens,
+        darkSemanticTokens: brandDarkSemanticTokens,
+        borderRadius: borderPrimitives,
         fontFamily: brandFontMap[brand] || '',
       }),
     );
@@ -256,8 +411,8 @@ function writeSharedColorsCSS(colorsObj, tokensObj, sharedStylesTemplate, output
     outputFile,
     sharedStylesTemplate({
       reserved: colorsObj.reserved?.primitives || {},
-      light: tokensObj.light || {},
-      dark: tokensObj.dark || {},
+      // Tailwind theme variables - using light tokens for reference
+      tailwindTokens: tokensObj.light || {},
     }),
   );
 }
@@ -276,8 +431,8 @@ function writeBordersCSS(borderPrimitives, modeBorderRadius, bordersTemplate, ou
 // Main Transformer Function
 // --------------------------------------------------------------------------
 function transformCSS() {
-  const tokensPath = path.resolve(__dirname, '../../src/tokens/GEL-tokens-figma.json');
-  const tokens = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
+  const gelTokensPath = path.resolve(__dirname, '../../src/tokens/GEL-tokens-figma.json');
+  const tokens = JSON.parse(fs.readFileSync(gelTokensPath, 'utf8'));
 
   const themeTemplatePath = path.resolve(__dirname, '../templates/theme.handlebars');
   const themeTemplateSource = fs.readFileSync(themeTemplatePath, 'utf8');
@@ -290,13 +445,6 @@ function transformCSS() {
   const sharedStylesTemplate = Handlebars.compile(sharedStylesTemplateSource);
   const bordersTemplate = Handlebars.compile(bordersTemplateSource);
 
-  const brandNameMap = BRANDS.reduce((acc, { themeName, primitiveName }) => {
-    return {
-      ...acc,
-      [themeName.toLowerCase()]: primitiveName.toLowerCase(),
-    };
-  }, {});
-
   const brandFontMap = BRANDS.reduce((acc, { fontName, primitiveName }) => {
     return {
       ...acc,
@@ -308,7 +456,7 @@ function transformCSS() {
   const tokensObj = extractTokens(tokens);
 
   const brandOutputDir = path.resolve(__dirname, '../../src/css/themes');
-  writeBrandThemeCSS(tokens, brandNameMap, brandFontMap, themeTemplate, brandOutputDir);
+  writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, brandOutputDir);
 
   const colorsOutputFile = path.resolve(__dirname, '../../src/css/shared/colors.css');
   writeSharedColorsCSS(colorsObj, tokensObj, sharedStylesTemplate, colorsOutputFile);

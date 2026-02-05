@@ -2,7 +2,6 @@
 const fs = require('fs-extra');
 const StyleDictionary = require('style-dictionary').default;
 
-const tokens = require(`${__dirname}/../../src/tokens/GEL-tokens-figma.json`);
 const BRANDS = require(`${__dirname}/../../src/constants/brands.json`);
 
 // ==============================
@@ -369,7 +368,6 @@ StyleDictionary.registerFormat({
 
     output += `public enum ${enumName}LightColors {\n`;
     lightTokens.forEach(lightToken => {
-      // output += `  public static let ${lightToken.name} = ${primitiveColorEnum}.${generateNameForIOS(lightToken.original.$value)}\n`;
       output += `  public static let ${lightToken.name} = ${lightToken.$value}\n`;
     });
     output += '}\n';
@@ -378,7 +376,6 @@ StyleDictionary.registerFormat({
 
     output += `public enum ${enumName}DarkColors {\n`;
     darkTokens.forEach(darkToken => {
-      // output += `  public static let ${darkToken.name} = ${primitiveColorEnum}.${generateNameForIOS(darkToken.original.$value)}\n`;
       output += `  public static let ${darkToken.name} = ${darkToken.$value}\n`;
     });
     output += '}\n';
@@ -463,13 +460,12 @@ StyleDictionary.registerFormat({
         };
       });
 
-    const primitiveDimensionEnum = `${enumName}PrimitivesDimension`;
     let output = '';
     output += `// Do not edit directly, this file was auto-generated.\n\n`;
     output += `import UIKit \n\n`;
 
     if (enumName === 'AllBrands') {
-      output += `public enum ${primitiveDimensionEnum} {\n`;
+      output += `public enum ${enumName}PrimitivesDimension {\n`;
       primitiveTokens.forEach(primitiveToken => {
         output += `  public static let ${primitiveToken.name} = ${primitiveToken.$value}\n`;
       });
@@ -480,7 +476,6 @@ StyleDictionary.registerFormat({
 
     output += `public enum ${enumName}LightDimensions {\n`;
     lightTokens.forEach(lightToken => {
-      // output += `  public static let ${lightToken.name} = ${primitiveDimensionEnum}.${generateNameForIOS(lightToken.original.$value)}\n`;
       output += `  public static let ${lightToken.name} = ${lightToken.$value}\n`;
     });
     output += '}\n';
@@ -489,7 +484,6 @@ StyleDictionary.registerFormat({
 
     output += `public enum ${enumName}DarkDimensions {\n`;
     darkTokens.forEach(darkToken => {
-      // output += `  public static let ${darkToken.name} = ${primitiveDimensionEnum}.${generateNameForIOS(darkToken.original.$value)}\n`;
       output += `  public static let ${darkToken.name} = ${darkToken.$value}\n`;
     });
     output += '}\n';
@@ -737,6 +731,10 @@ const BRANDS_KEBAB_CASE = BRANDS.reduce((acc, { themeName, primitiveName }) => {
 
 const STYLE_DICTIONARY_BASE_CONFIG = {
   source: [`${SRC_FOLDER}/w3c/all-brands.json`],
+  log: {
+    warnings: 'disabled',
+    verbosity: 'default'
+  },
   hooks: {
     filters: {
       'light-mode': token => {
@@ -819,110 +817,217 @@ const STYLE_DICTIONARY_BASE_CONFIG = {
 // ==============================
 
 /**
- * Prefixes token values with either "Primitives" or "Themes.<brandName>".
+ * Prefixes token values with "Primitives" only if they don't already have it.
  */
 function applyValuePrefix(tokenProps, brandName) {
-  const prefix = tokenProps.$collectionName === 'Primitives' ? 'Primitives' : `Themes.${brandName}`;
+  if (!tokenProps || !tokenProps.$value) {
+    console.warn('Invalid token props:', tokenProps);
+    return tokenProps;
+  }
+  
+  const valueStr = tokenProps.$value;
+  
+  // Skip prefixing if value already has Primitives prefix
+  let updatedValue = valueStr;
+  if (valueStr.includes('{') && !valueStr.includes('{Primitives.')) {
+    updatedValue = valueStr.replace(/\{/g, '{Primitives.');
+  }
 
   return {
     ...tokenProps,
     $type: tokenProps.$type === 'float' ? 'dimension' : tokenProps.$type,
-    $value: tokenProps.$value.replace('{', `{${prefix}.`),
+    $value: updatedValue,
   };
 }
 
-/**
- * Normalizes a group of tokens by traversing nested groups.
- */
-function normalizeTokenGroup(group, brandName) {
-  return Object.entries(group).reduce((acc, [key, value]) => {
-    if (value.$value) {
-      acc[key] = applyValuePrefix(value, brandName);
-    } else {
-      acc[key] = Object.fromEntries(
-        Object.entries(value).map(([innerKey, innerValue]) => [innerKey, applyValuePrefix(innerValue, brandName)]),
-      );
-    }
-    return acc;
-  }, {});
-}
 
-/**
- * Processes theme tokens for a given brand.
- */
-function processThemeModes(brandModes, brandName) {
-  delete brandModes.misc;
-  return Object.fromEntries(
-    Object.entries(brandModes).map(([propGroup, categories]) => [
-      propGroup,
-      Object.fromEntries(
-        Object.entries(categories).map(([categoryName, tokens]) => [
-          categoryName,
-          normalizeTokenGroup(tokens, brandName),
-        ]),
-      ),
-    ]),
-  );
-}
 
 /**
  * Processes the "Tokens" section for all brands.
  */
 function processTokensSection(tokenSection, brands) {
-  return brands.reduce((acc, brandName) => {
-    acc[brandName] = Object.fromEntries(
-      Object.entries(tokenSection.modes).map(([modeName, groups]) => {
-        const normalizedMode = modeName.replace(/\s+/g, '-').toLowerCase();
-        return [
-          normalizedMode,
-          Object.fromEntries(
-            // Skip "misc" group as they are figma related tokens NOTE: May need to change in future
-            Object.entries(groups).filter(([propGroup]) => propGroup !== 'misc').map(([propGroup, categories]) => {
-              return [
-              propGroup,
-              Object.fromEntries(
-                Object.entries(categories).map(([categoryName, tokens]) => [
-                  categoryName,
-                  Object.fromEntries(
-                    Object.entries(tokens).map(([tokenName, tokenValue]) => [
-                      tokenName,
-                      applyValuePrefix(tokenValue, brandName),
-                    ]),
-                  ),
-                ]),
-              ),
-            ]}),
-          ),
-        ];
-      }),
-    );
-    return acc;
-  }, {});
+  // New structure: tokenSection.modes = { 'Light mode': {...}, 'Dark mode': {...} }
+  // We need to convert this to brand-based structure for compatibility
+  const result = {};
+  
+  brands.forEach(brand => {
+    const themeName = brand.themeName;
+    const primitiveName = brand.primitiveName;
+    
+    result[themeName] = {};
+    
+    Object.entries(tokenSection.modes).forEach(([modeName, groups]) => {
+      const normalizedMode = modeName.replace(/\s+/g, '-').toLowerCase();
+      
+      result[themeName][normalizedMode] = Object.fromEntries(
+        // Skip "misc" group as they are figma related tokens
+        Object.entries(groups)
+          .filter(([propGroup]) => propGroup !== 'misc')
+          .map(([propGroup, categories]) => [
+            propGroup,
+            Object.fromEntries(
+              Object.entries(categories).map(([categoryName, tokens]) => [
+                categoryName,
+                Object.fromEntries(
+                  Object.entries(tokens).map(([tokenName, tokenValue]) => [
+                    tokenName,
+                    applyValuePrefix(tokenValue, primitiveName),
+                  ]),
+                ),
+              ]),
+            ),
+          ]),
+      );
+    });
+  });
+  
+  return result;
 }
 
 /**
  * Merges all token definitions into a resolved token tree.
  */
-function mergeTokens() {
-  const brands = Object.keys(tokens.find(t => t.Themes).Themes.modes);
+function mergeTokens(tokens) {
+  // Get brands from the constants - using both themeName and primitiveName
+  const brands = BRANDS.map(b => ({
+    themeName: b.themeName,
+    primitiveName: b.primitiveName
+  }));
 
+  const result = { Tokens: {} };
+  
   return tokens.reduce((acc, current) => {
     if (current.Primitives) {
-      acc.Primitives = { ...current.Primitives.modes['Mode 1'] };
+      // Primitives are directly accessible without modes wrapper
+      acc.Primitives = { ...current.Primitives };
     }
-    if (current.Themes) {
-      acc.Themes = Object.fromEntries(
-        Object.entries(current.Themes.modes).map(([brandName, brandModes]) => [
-          brandName,
-          processThemeModes(brandModes, brandName),
-        ]),
-      );
-    }
-    if (current.Tokens) {
-      acc.Tokens = processTokensSection(current.Tokens, brands);
+    if (current.Tokens && current.Tokens.modes) {
+      // New consolidated structure: all brands are under modes
+      // Extract each brand from the consolidated structure
+      Object.entries(current.Tokens.modes).forEach(([brandName, brandModes]) => {
+        // Convert from brandName back to the brand token structure expected by existing logic
+        const tokenSection = {
+          modes: {
+            'Light mode': brandModes['light-mode'] || {},
+            'Dark mode': brandModes['dark-mode'] || {}
+          }
+        };
+        
+        const processedTokens = processTokensSectionWithBrand(tokenSection, brands);
+        
+        // Merge the processed tokens into the accumulator
+        Object.keys(processedTokens).forEach(brandKey => {
+          acc.Tokens[brandKey] = processedTokens[brandKey];
+        });
+      });
     }
     return acc;
-  }, {});
+  }, result);
+}
+
+/**
+ * Processes brand-specific token sections with proper brand detection
+ */
+function processTokensSectionWithBrand(tokenSection, brands) {
+  // The tokenSection contains modes with Light mode and Dark mode
+  // We need to determine which brand this token section belongs to by examining the token values
+  const result = {};
+  
+  // Try to detect the brand by looking at the first token reference
+  let detectedBrand = null;
+  const firstToken = getFirstTokenValue(tokenSection);
+  
+  if (firstToken && firstToken.$value && typeof firstToken.$value === 'string') {
+    const match = firstToken.$value.match(/\{Primitives\.color\.([A-Z]{3})\./);
+    if (match) {
+      const brandCode = match[1];
+      detectedBrand = brands.find(b => b.primitiveName.toUpperCase() === brandCode);
+    }
+  }
+  
+  // If we can't detect the brand, fall back to processing all brands (old behavior)
+  if (!detectedBrand) {
+    return processTokensSection(tokenSection, brands);
+  }
+  
+  // Process only the detected brand
+  const themeName = detectedBrand.themeName;
+  const primitiveName = detectedBrand.primitiveName;
+  
+  result[themeName] = {};
+  
+  Object.entries(tokenSection.modes).forEach(([modeName, groups]) => {
+    const normalizedMode = modeName.replace(/\s+/g, '-').toLowerCase();
+    
+    result[themeName][normalizedMode] = Object.fromEntries(
+      // Skip "misc" group as they are figma related tokens
+      Object.entries(groups)
+        .filter(([propGroup]) => propGroup !== 'misc')
+        .map(([propGroup, categories]) => [
+          propGroup,
+          Object.fromEntries(
+            Object.entries(categories).map(([categoryName, tokens]) => [
+              categoryName,
+              Object.fromEntries(
+                Object.entries(tokens).map(([tokenName, tokenValue]) => [
+                  tokenName,
+                  applyValuePrefix(tokenValue, primitiveName),
+                ]),
+              ),
+            ]),
+          ),
+        ]),
+    );
+  });
+  
+  return result;
+}
+
+/**
+ * Helper function to get the first token value from a token section
+ */
+function getFirstTokenValue(tokenSection) {
+  if (!tokenSection.modes) return null;
+  
+  // Look for a brand-specific token first
+  for (const mode of Object.values(tokenSection.modes)) {
+    for (const group of Object.values(mode)) {
+      if (typeof group === 'object' && group !== null) {
+        for (const category of Object.values(group)) {
+          if (typeof category === 'object' && category !== null) {
+            for (const token of Object.values(category)) {
+              if (token && token.$value && token.$value.includes('Primitives.color.')) {
+                // Check if this is a brand-specific reference
+                const match = token.$value.match(/\{Primitives\.color\.([A-Z]{3})\./);
+                if (match) {
+                  return token; // Return the first brand-specific token found
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Fallback: return any token
+  for (const mode of Object.values(tokenSection.modes)) {
+    for (const group of Object.values(mode)) {
+      if (typeof group === 'object' && group !== null) {
+        for (const category of Object.values(group)) {
+          if (typeof category === 'object' && category !== null) {
+            for (const token of Object.values(category)) {
+              if (token && token.$value) {
+                return token;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  return null;
 }
 
 /**
@@ -955,14 +1060,15 @@ async function ensureFolderExists(folderPath) {
 function extractBrandTokens(themeName, primitiveName, tokens) {
   return {
     Primitives: {
-      ...tokens.Primitives,
+      border: tokens.Primitives.border, // Include all border primitives (shared across brands)
       color: {
-        Reserved: tokens.Primitives.color.Reserved,
+        mono: tokens.Primitives.color.mono,  // Include shared mono colors
+        reserved: tokens.Primitives.color.reserved,  // Include shared reserved colors
+        // Include only the specific brand's primitives for optimized file sizes
         [primitiveName]: tokens.Primitives.color[primitiveName],
       },
     },
     Tokens: tokens.Tokens[themeName],
-    Themes: { [themeName]: tokens.Themes[themeName] },
   };
 }
 
@@ -970,14 +1076,19 @@ function extractBrandTokens(themeName, primitiveName, tokens) {
 // Main
 // ==============================
 const LOG_CONFIG = {
-  warnings: 'warn', // 'warn' | 'error' | 'disabled'
-  verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
+  warnings: 'disabled', // 'warn' | 'error' | 'disabled'
+  verbosity: 'default', // 'default' | 'silent' | 'verbose'
 };
 
 (async () => {
   await ensureFolderExists(`${SRC_FOLDER}/w3c`);
 
-  const mergedTokens = mergeTokens();
+  // Read pre-transformed GEL tokens format
+  console.log('🔄 Reading GEL tokens from file...');
+  const tokens = await fs.readJson(`${SRC_FOLDER}/GEL-tokens-figma.json`);
+  console.log('✅ Loaded tokens from GEL-tokens-figma.json\n');
+
+  const mergedTokens = mergeTokens(tokens);
   await saveJSON(`${SRC_FOLDER}/w3c/all-brands.json`, mergedTokens);
 
   // Build all brands
