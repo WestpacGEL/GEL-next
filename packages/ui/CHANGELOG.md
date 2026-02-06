@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.57.4
+
+### Patch Changes
+
+- 4afcd14: updated ButtonGroup to correctly handle an empty string being passed as a value or defaultValue
+
 ## 0.57.3
 
 ### Patch Changes
