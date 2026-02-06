@@ -87,7 +87,9 @@ export function ButtonGroup({
   const state = useRadioGroupState({
     ...props,
     label,
-    defaultValue: props.defaultValue ? props.defaultValue : undefined, // accounts for empty string defaultValue to treat as if undefined
+    // React Aria seems to not handle empty string values as expected, so we convert empty string to null to ensure accessibility focus behaves as expected
+    value: props.value === '' ? null : props.value,
+    defaultValue: props.defaultValue === '' ? null : props.defaultValue,
     orientation: 'horizontal',
   });
 
