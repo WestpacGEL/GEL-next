@@ -34,7 +34,7 @@ export function MultiSelectListBox<T extends object = object>({ listBoxRef, ...p
             ),
           )
         ) : (
-          <p className={styles.noItemsText()}>No items found</p>
+          <p className={styles.noItemsText()}>No results. Try another search.</p>
         )}
       </ul>
     </div>
