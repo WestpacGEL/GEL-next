@@ -121,6 +121,9 @@
     "./modal": {
       "default": "./dist/components/modal/index.js"
     },
+    "./multi-select": {
+      "default": "./dist/components/multi-select/index.js"
+    },
     "./pagination": {
       "default": "./dist/components/pagination/index.js"
     },

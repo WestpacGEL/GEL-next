@@ -46,3 +46,4 @@ export * from './pass-code-view/index.js';
 export * from './progress-indicator/index.js';
 export * from './header/index.js';
 export * from './footer/index.js';
+export * from './multi-select/index.js';
