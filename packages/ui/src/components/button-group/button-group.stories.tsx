@@ -1,4 +1,7 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
+
+import { Button } from '../button/button.component.js';
 
 import { ButtonGroup } from './button-group.component.js';
 
@@ -217,4 +220,38 @@ export const ErrorMessageAndLabel: Story = {
       },
     ],
   },
+};
+
+export const Controlled = () => {
+  const [controlled, setControlled] = useState<string>('');
+
+  return (
+    <div className="grid gap-2">
+      <div className="flex gap-1">
+        <Button type="button" onClick={() => setControlled('yes')} size="small">
+          Set to "yes"
+        </Button>
+        <Button type="button" onClick={() => setControlled('maybe')} size="small">
+          Set to "maybe"
+        </Button>
+        <Button type="button" onClick={() => setControlled('no')} size="small">
+          Set to "no"
+        </Button>
+        <Button type="button" onClick={() => setControlled('')} size="small">
+          Reset
+        </Button>
+      </div>
+      <ButtonGroup
+        look="hero"
+        value={controlled}
+        buttons={[
+          { value: 'yes', label: 'Yes' },
+          { value: 'maybe', label: 'Maybe' },
+          { value: 'no', label: 'No' },
+        ]}
+        onChange={setControlled}
+      />
+      <p>Selected: {controlled}</p>
+    </div>
+  );
 };
