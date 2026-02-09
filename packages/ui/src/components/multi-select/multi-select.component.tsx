@@ -38,8 +38,8 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   placeholder = 'Select',
   showSingleSectionTitle = false,
   placement,
-  id,
   portalContainer,
+  id,
   ...props
 }: MultiSelectProps<T>) {
   const [filterText, setFilterText] = useState('');
