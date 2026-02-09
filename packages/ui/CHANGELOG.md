@@ -425,6 +425,11 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 | `ButtonDropdown`                                   | Replaced by `Dropdown`                                               |
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
+## 0.58.0
+
+### Minor Changes
+
+- fd7e3d7: Added MultiSelect component
 
 ## 0.57.4
 
