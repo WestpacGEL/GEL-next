@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "0.57.4",
+  "version": "0.58.0",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -129,6 +129,9 @@
     },
     "./modal": {
       "default": "./dist/components/modal/index.js"
+    },
+    "./multi-select": {
+      "default": "./dist/components/multi-select/index.js"
     },
     "./pagination": {
       "default": "./dist/components/pagination/index.js"

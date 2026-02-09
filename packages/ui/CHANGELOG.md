@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.58.0
+
+### Minor Changes
+
+- fd7e3d7: Added MultiSelect component
+
 ## 0.57.4
 
 ### Patch Changes

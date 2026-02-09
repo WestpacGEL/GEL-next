@@ -103,6 +103,9 @@ export {
   Header,
   Footer,
   GridContainer,
+  MultiSelect,
+  MultiSelectItem,
+  MultiSelectSection,
 } from '@westpac/ui';
 
 export * from '@westpac/ui/icon';
