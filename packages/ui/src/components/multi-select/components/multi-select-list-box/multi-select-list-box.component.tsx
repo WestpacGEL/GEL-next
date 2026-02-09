@@ -19,7 +19,7 @@ export function MultiSelectListBox<T extends object = object>({ listBoxRef, ...p
 
   const stateCollection = [...listState.collection];
 
-  const styles = listBoxStyles({ hasSection: stateCollection.some(item => item.type === 'section') });
+  const styles = listBoxStyles();
 
   return (
     <div className={styles.container()}>

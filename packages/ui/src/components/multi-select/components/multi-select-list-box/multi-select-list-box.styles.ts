@@ -7,14 +7,4 @@ export const styles = tv({
     ul: 'w-full outline-none',
     noItemsText: 'typography-body-9 px-2 py-3 text-text',
   },
-  variants: {
-    hasSection: {
-      true: {
-        ul: '',
-      },
-      false: {
-        ul: '',
-      },
-    },
-  },
 });

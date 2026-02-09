@@ -54,7 +54,7 @@ export function MultiSelectListBoxTrigger<T>({
 
   // Manage selected items state for display
   useEffect(() => {
-    if (!selectedKeys || typeof selectedKeys === 'string' || (selectedKeys instanceof Set && selectedKeys.size == 0)) {
+    if (!selectedKeys || typeof selectedKeys === 'string' || (selectedKeys instanceof Set && selectedKeys.size === 0)) {
       setSelectedValues([]);
     } else {
       const currentMap = new Map(selectedValues.map(item => [item.key, item.value]));
