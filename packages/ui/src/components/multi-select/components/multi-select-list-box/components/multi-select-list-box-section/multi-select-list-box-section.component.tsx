@@ -31,7 +31,7 @@ export function MultiSelectListBoxSection<T>({ section }: MultiSelectSectionProp
             {section.rendered}
           </span>
         )}
-        <ul {...groupProps} className={styles.ul()}>
+        <ul {...groupProps}>
           {childNodes.map(node => (
             <MultiSelectOption key={node.key} item={node} />
           ))}

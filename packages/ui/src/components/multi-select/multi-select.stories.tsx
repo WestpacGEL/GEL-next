@@ -278,6 +278,32 @@ export const UsingField = () => {
   );
 };
 
+/**
+ * Example with manually adding MultiSelecItems
+ */
+export const ManualUsage = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+
+  return (
+    <MultiSelect
+      selectedKeys={selectedKeys}
+      onSelectionChange={keys => {
+        setSelectedKeys(keys as Set<string>);
+      }}
+    >
+      <MultiSelectItem key={'aerospace'} textValue={'Aerospace'} description="Supporting information or description">
+        Aerospace
+      </MultiSelectItem>
+      <MultiSelectItem key={'mechanical'} textValue={'Mechanical'} description="Supporting information or description">
+        Mechanical
+      </MultiSelectItem>
+      <MultiSelectItem key={'civil'} textValue={'Civil'} description="Supporting information or description">
+        Civil
+      </MultiSelectItem>
+    </MultiSelect>
+  );
+};
+
 export const Testing = () => {
   const [selectedKeysMulti, setSelectedKeysMulti] = useState<Set<string>>(new Set());
   const [selectedKeysMultiNoSection, setSelectedKeysMultiNoSection] = useState<Set<string>>(new Set());
