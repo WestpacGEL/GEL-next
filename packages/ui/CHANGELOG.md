@@ -425,6 +425,30 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 | `ButtonDropdown`                                   | Replaced by `Dropdown`                                               |
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
+## 0.58.0
+
+### Minor Changes
+
+- fd7e3d7: Added MultiSelect component
+
+## 0.57.4
+
+### Patch Changes
+
+- 4afcd14: updated ButtonGroup to correctly handle an empty string being passed as a value or defaultValue
+
+## 0.57.3
+
+### Patch Changes
+
+- 925e9f0: package updates
+- 9a1ae57: fixes to focus state/default value for ButtonGroup
+
+## 0.57.2
+
+### Patch Changes
+
+- f6f9536: added import of react to SelectorButtonGroup and SelectorLinkGroup
 
 ## 0.57.1
 
