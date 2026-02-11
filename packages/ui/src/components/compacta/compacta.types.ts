@@ -10,6 +10,16 @@ export type CompactaProps = {
    */
   children: (...props: ContentProps[]) => ReactNode;
   /**
+   * The initial compactas to render. Each compacta needs a unique id if you want to pre-fill values.
+   * Each object contained within the array represents a compacta.
+   */
+  initialCompactas?: {
+    // Compacta id
+    id?: string;
+    // Titles to pre-fill, won't be done automatically
+    title?: { primary?: string; secondary?: string; tertiary?: string };
+  }[];
+  /**
    * Tag for primary title
    * @default h3
    */

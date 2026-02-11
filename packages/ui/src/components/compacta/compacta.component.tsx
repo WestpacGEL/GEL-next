@@ -24,6 +24,7 @@ export function Compacta({
   children,
   titleTag: Tag = 'h3',
   addText = 'Add another',
+  initialCompactas,
   ...props
 }: CompactaProps) {
   const [initial, setInitial] = useState(true);
@@ -117,6 +118,26 @@ export function Compacta({
       }
     }
   }, [items.length, action]);
+
+  useEffect(() => {
+    if (initialCompactas) {
+      const newItems = initialCompactas.map((item, index) => {
+        const itemId = item.id ?? `${id}-${generateID()}`;
+        return {
+          id: itemId,
+          open: index === initialCompactas.length - 1 ? true : false,
+          delay: false,
+          title: {
+            primary: item.title?.primary ?? '',
+            secondary: item.title?.secondary ?? '',
+            tertiary: item.title?.tertiary ?? '',
+          },
+        };
+      });
+      setItems(newItems);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const styles = compactaStyles({});
 
