@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.59.0
+
+### Minor Changes
+
+- 8f9cbc5: added new initialCompactas prop to Compacta to enable prefilling
+
 ## 0.58.0
 
 ### Minor Changes
