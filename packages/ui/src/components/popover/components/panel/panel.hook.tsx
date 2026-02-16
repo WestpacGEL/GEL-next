@@ -3,6 +3,7 @@ import { RefObject, useCallback, useEffect, useLayoutEffect, useMemo, useState }
 import { PanelProps } from './panel.types.js';
 
 const PANEL_WIDTH_SIZE = 300;
+const ARROW_HEIGHT = 7; // the border-x value for the before pseudo element in the styles, 2*ARROW_HEIGHT gives the width of the arrow
 
 const getHorizontalPositionPopover = (element: HTMLDivElement, screenWidth: number) => {
   const triggerDOMRect = element.getBoundingClientRect();
@@ -165,10 +166,10 @@ export function usePanel({ state, placement = 'top', triggerRef, portal, popover
       : 0;
 
     return {
-      left: `${(triggerDOMRect?.width || 0) / 2 + leftOffset}px`,
+      left: `${leftOffset - ARROW_HEIGHT + (triggerDOMRect?.width || 0) / 2}px`,
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [triggerRef, state.isOpen, screenWidth]);
+  }, [triggerRef, state.isOpen, screenWidth, originalPosition]);
 
   return {
     popoverPosition,
