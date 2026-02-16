@@ -25,6 +25,8 @@ export function Compacta({
   titleTag: Tag = 'h3',
   addText = 'Add another',
   initialCompactas,
+  onAdd,
+  onRemove,
   ...props
 }: CompactaProps) {
   const [initial, setInitial] = useState(true);
@@ -64,11 +66,16 @@ export function Compacta({
     ]);
 
     setAction({ type: 'add', index: newItems.length });
+
+    onAdd?.();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, items]);
 
   const handleRemove = useCallback((id: string, index: number) => {
     setItems(items => items.filter(item => item.id !== id));
     setAction({ type: 'remove', index, id });
+    onRemove?.(id, index);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleToggle = useCallback(
@@ -125,7 +132,7 @@ export function Compacta({
         const itemId = item.id ?? `${id}-${generateID()}`;
         return {
           id: itemId,
-          open: index === initialCompactas.length - 1 ? true : false,
+          open: item.open ? item.open : index === initialCompactas.length - 1,
           delay: false,
           title: {
             primary: item.title?.primary ?? '',
@@ -198,6 +205,7 @@ export function Compacta({
                     <div className={styles.content()} id={`gel-compacta-content-${item.id}`}>
                       {children({
                         id: item.id,
+                        index,
                         setPrimaryTitle: (title: string) => setTitle(item.id, 'primary', title),
                         setSecondaryTitle: (title: string) => setTitle(item.id, 'secondary', title),
                         setTertiaryTitle: (title: string) => setTitle(item.id, 'tertiary', title),
