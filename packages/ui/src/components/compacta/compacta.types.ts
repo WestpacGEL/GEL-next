@@ -16,9 +16,19 @@ export type CompactaProps = {
   initialCompactas?: {
     // Compacta id
     id?: string;
+    // If compacta should be open on initial render
+    open?: boolean;
     // Titles to pre-fill, won't be done automatically
     title?: { primary?: string; secondary?: string; tertiary?: string };
   }[];
+  /**
+   * Callback when a compacta is added
+   */
+  onAdd?: () => void;
+  /**
+   * Callback when a compacta is removed, provides the id and index of the removed compacta
+   */
+  onRemove?: (id: string, index: number) => void;
   /**
    * Tag for primary title
    * @default h3
@@ -28,6 +38,7 @@ export type CompactaProps = {
 
 type ContentProps = {
   id: string;
+  index: number;
   setPrimaryTitle: (title: string) => unknown;
   setSecondaryTitle: (title: string) => unknown;
   setTertiaryTitle: (title: string) => unknown;

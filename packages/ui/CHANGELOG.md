@@ -1,5 +1,13 @@
 # @westpac/ui
 
+## 0.59.1
+
+### Patch Changes
+
+- efa6a23: Added callbacks to compacta and return index for compacta children
+- f36b6d5: Made Button component default to type="button" to avoid issue with components using button in forms
+- e93a3d4: Fixed issue where popover wasn't automatically flipping vertically, also set the default position back to top
+
 ## 0.59.0
 
 ### Minor Changes
