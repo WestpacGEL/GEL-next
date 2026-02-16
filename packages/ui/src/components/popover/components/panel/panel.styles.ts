@@ -18,11 +18,11 @@ export const styles = tv(
       placement: {
         top: {
           popover: '-mt-2 mb-2',
-          arrow: 'top-full translate-x-[-6px] translate-y-0',
+          arrow: 'top-full translate-x-[-2.5px]',
         },
         bottom: {
           popover: 'mt-2',
-          arrow: 'bottom-full translate-x-[6px] rotate-180 after:bottom-[1px]',
+          arrow: 'bottom-full translate-x-[14px] rotate-180', // rotate-180 moves the arrow to the left, translate needed for centering
         },
       },
     },

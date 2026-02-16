@@ -14,15 +14,21 @@ export function BasePanel({
   heading,
   headingTag: Tag = 'h1',
   content,
-  placement = 'bottom',
+  placement = 'top',
   id,
   triggerRef,
   portal,
 }: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
-  const { popoverPosition, arrowPosition } = usePanel({ state, placement, triggerRef, portal });
-  const styles = panelStyles({ placement });
+  const { popoverPosition, arrowPosition, localPlacement } = usePanel({
+    state,
+    placement,
+    triggerRef,
+    portal,
+    popoverRef,
+  });
+  const styles = panelStyles({ placement: localPlacement });
   return (
     <FocusScope autoFocus restoreFocus>
       <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef}>
