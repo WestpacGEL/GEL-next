@@ -425,6 +425,21 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 | `ButtonDropdown`                                   | Replaced by `Dropdown`                                               |
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
+
+## 0.59.1
+
+### Patch Changes
+
+- efa6a23: Added callbacks to compacta and return index for compacta children
+- f36b6d5: Made Button component default to type="button" to avoid issue with components using button in forms
+- e93a3d4: Fixed issue where popover wasn't automatically flipping vertically, also set the default position back to top
+
+## 0.59.0
+
+### Minor Changes
+
+- 8f9cbc5: added new initialCompactas prop to Compacta to enable prefilling
+
 ## 0.58.0
 
 ### Minor Changes

@@ -32,11 +32,16 @@ type Story = StoryObj<typeof meta>;
 /**
  * > Default usage example NOTE: Does not display correctly in story view please check individual story
  */
-export const Default: Story = {
-  args: {
-    children: 'Click Me',
-  },
-};
+export const Default = () => (
+  <>
+    <p className="typography-body-7 font-bold">
+      Default display is the popover on top but will be bottom here due to not being enough space at top
+    </p>
+    <Popover heading="Heading" content={popoverContent}>
+      Click Me
+    </Popover>
+  </>
+);
 
 /**
  * > Using icon as trigger NOTE: Does not display correctly in story view please check individual story
@@ -69,7 +74,7 @@ export const NoHeading: Story = {
 };
 
 /**
- * > Popover trigger as inline link appearance
+ * > Popover trigger as inline link appearance NOTE: Does not display correctly in story view please check individual story
  */
 export const AsInlineLinkAppearance = () => (
   <>
@@ -89,7 +94,7 @@ export const AsInlineLinkAppearance = () => (
         <p className="text-text-body">
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
-          <Popover linkStyling heading="Heading" content={popoverContent} size="small">
+          <Popover linkStyling placement="bottom" heading="Heading" content={popoverContent} size="small">
             Click here.
           </Popover>
         </p>
@@ -101,7 +106,7 @@ export const AsInlineLinkAppearance = () => (
 );
 
 /**
- * > Popover trigger as inline link appearance
+ * > Popover trigger as inline link appearance NOTE: Does not display correctly in story view please check individual story
  */
 export const StackingOrderWithPortal = () => (
   <>
@@ -121,7 +126,7 @@ export const StackingOrderWithPortal = () => (
         <p>
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
-          <Popover portal linkStyling heading="Heading" content={popoverContent} size="small">
+          <Popover portal placement="bottom" linkStyling heading="Heading" content={popoverContent} size="small">
             Click here.
           </Popover>
         </p>
@@ -146,13 +151,13 @@ export const AutoAdjustment = () => (
     </Popover>
     <div className="mt-[200px] flex flex-col">
       <div className="flex justify-between">
-        <Popover heading="Heading" content={popoverContent}>
+        <Popover placement="bottom" heading="Heading" content={popoverContent}>
           Left Popover
         </Popover>
-        <Popover heading="Heading" content={popoverContent}>
+        <Popover placement="bottom" heading="Heading" content={popoverContent}>
           Center Popover
         </Popover>
-        <Popover heading="Heading" content={popoverContent}>
+        <Popover placement="bottom" heading="Heading" content={popoverContent}>
           Right Popover
         </Popover>
       </div>
@@ -197,7 +202,7 @@ export const PopoverPlacement = () => (
 );
 
 /**
- * > Popover trigger as inline link appearance
+ * > Popover in a long scrolling portal NOTE: Does not display correctly in story view please check individual story
  */
 export const WhenThereIsALongScrollWithPortal = () => (
   <>
@@ -239,7 +244,7 @@ export const WhenThereIsALongScrollWithPortal = () => (
         <p className="text-text-body">
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
-          <Popover linkStyling heading="Heading" content={popoverContent} size="small">
+          <Popover portal linkStyling placement="bottom" heading="Heading" content={popoverContent} size="small">
             Click here. bottom placement
           </Popover>
         </p>
@@ -261,8 +266,8 @@ export const WhenThereIsALongScrollWithPortal = () => (
         <p className="text-text-body">
           {' '}
           This is an example of using a popover that looks like an inline link.{' '}
-          <Popover placement="top" linkStyling heading="Heading" content={popoverContent} size="small">
-            Click here. top
+          <Popover portal placement="bottom" linkStyling heading="Heading" content={popoverContent} size="small">
+            Click here bottom. {`(Will appear on top as there is no space)`}
           </Popover>
         </p>
       }

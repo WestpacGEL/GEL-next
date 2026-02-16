@@ -50,3 +50,86 @@
   );
 };
 ```
+
+### Using initial values
+
+```tsx
+() => {
+  // Imagine this is saved data
+  const [inputs, setInputs] = useState({
+    'primary-1234': 'test',
+  });
+
+  const handleChange = (e) => {
+    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  return (
+    <>
+      <p className="font-bold">
+        All the initial compactas should have a unique id passed that is associated with a compacta if you want to
+        pre-fill information in inputs based on input IDs
+      </p>
+      <br />
+      <Compacta
+        initialCompactas={[
+          {
+            // Unique ID for the individual compacta, doesn't need to be the same as original. Could be saved from provided id from compacta
+            id: '1234',
+            title: { primary: inputs[`primary-1234`] },
+          },
+          // Represents a second compacta with no initial values, doesn't need an id if you don't want to pre-fill values
+          {},
+        ]}
+      >
+        {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
+          <Form>
+            <FormGroup>
+              <Field label="Primary" hintMessage="Primary title text" >
+                <Input
+                  aria-describedby={`primary-hint-${id}`}
+                  name={`primary-${id}`}
+                  id={`primary-${id}`}
+                  value={inputs[`primary-${id}`] || ''}
+                  onChange={e => {
+                    handleChange(e);
+                    setPrimaryTitle(e.target.value);
+                  }}
+                />
+              </Field>
+            </FormGroup>
+            <FormGroup>
+              <Field label="Secondary" hintMessage="Secondary title text">
+                <Input
+                  aria-describedby={`secondary-hint-${id}`}
+                  name={`secondary-${id}`}
+                  id={`secondary-${id}`}
+                  value={inputs[`secondary-${id}`] || ''}
+                  onChange={e => {
+                    handleChange(e);
+                    setSecondaryTitle(e.target.value);
+                  }}
+                />
+              </Field>
+            </FormGroup>
+            <FormGroup>
+              <Field label="Tertiary" hintMessage="Tertiary title text">
+                <Input
+                aria-describedby={`tertiary-hint-${id}`}
+                  name={`tertiary-${id}`}
+                  id={`tertiary-${id}`}
+                  value={inputs[`tertiary-${id}`] || ''}
+                  onChange={e => {
+                    handleChange(e);
+                    setTertiaryTitle(e.target.value);
+                  }}
+                />
+              </Field>
+            </FormGroup>
+          </Form>
+        )}
+      </Compacta>
+    </>
+  );
+};
+```

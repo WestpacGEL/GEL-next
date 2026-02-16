@@ -16,7 +16,7 @@ export function BasePanel({
   heading,
   headingTag: Tag = 'h1',
   content,
-  placement = 'bottom',
+  placement = 'top',
   id,
   triggerRef,
   portal,
