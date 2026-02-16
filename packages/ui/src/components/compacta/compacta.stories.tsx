@@ -88,6 +88,7 @@ export const WithCallbacks = () => {
   };
 
   return (
+    // eslint-disable-next-line no-console
     <Compacta onAdd={() => console.log('added')} onRemove={(id, index) => console.log('removed', id, index)}>
       {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
         <Form>
