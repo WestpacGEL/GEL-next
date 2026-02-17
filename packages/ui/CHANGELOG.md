@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 0.59.2
+
+### Patch Changes
+
+- d2e9dbb: updates to horizontal positioning for popover on smaller screens
+
 ## 0.59.1
 
 ### Patch Changes
