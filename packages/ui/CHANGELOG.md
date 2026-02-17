@@ -548,6 +548,12 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
 
+## 0.59.2
+
+### Patch Changes
+
+- d2e9dbb: updates to horizontal positioning for popover on smaller screens
+
 ## 0.59.1
 
 ### Patch Changes
