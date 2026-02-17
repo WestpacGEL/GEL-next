@@ -562,7 +562,6 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 
 - 8f9cbc5: added new initialCompactas prop to Compacta to enable prefilling
 
-
 ## 0.58.0
 
 ### Minor Changes
