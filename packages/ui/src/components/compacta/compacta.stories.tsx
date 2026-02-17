@@ -22,6 +22,8 @@ type Inputs = {
     primary?: string;
     secondary?: string;
     tertiary?: string;
+    fourth?: string;
+    defaultExpanded?: boolean;
   }[];
 };
 
@@ -57,6 +59,56 @@ export const Default = () => {
             </Field>
             <Field label="Tertiary" hintMessage="Tertiary title text">
               <Input {...register(`items.${index}.tertiary`)} />
+            </Field>
+          </CompactaItem>
+        ))}
+      </Compacta>
+    </form>
+  );
+};
+
+/**
+ * > Example with default values
+ */
+export const DefaultValues = () => {
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: {
+      items: [
+        { primary: 'test', secondary: 'test 2', tertiary: 'test 3', fourth: 'test 4', defaultExpanded: true },
+        { primary: 'test', secondary: 'test 2', tertiary: 'test 3', fourth: 'test 4' },
+        { primary: '', secondary: '', tertiary: '', fourth: '' },
+      ],
+    },
+  });
+  const items = watch('items');
+
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { primary: '', secondary: '', tertiary: '', fourth: '' }]);
+  }, [items, setValue]);
+
+  return (
+    <form>
+      <Compacta onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <CompactaItem
+            key={index}
+            title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+            defaultExpanded={item.defaultExpanded}
+          >
+            <Field label="Primary" hintMessage="Primary title text">
+              <Input {...register(`items.${index}.primary`)} />
+            </Field>
+            <Field label="Secondary" hintMessage="Secondary title text">
+              <Input {...register(`items.${index}.secondary`)} />
+            </Field>
+            <Field label="Tertiary" hintMessage="Tertiary title text">
+              <Input {...register(`items.${index}.tertiary`)} />
+            </Field>
+            <Field label="Fourth" hintMessage="Fourth field">
+              <Input {...register(`items.${index}.fourth`)} />
             </Field>
           </CompactaItem>
         ))}
