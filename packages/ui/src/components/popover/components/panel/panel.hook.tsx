@@ -30,10 +30,18 @@ const getLeftOffsetPerHorizontalPosition = (element: HTMLDivElement, screenWidth
     case 'right':
       // For smaller screens, if adjusting for right makes it go off screen on the left, adjust it to have a 16px space from the edge
       if (triggerDOMRect.left + rightOffset <= 0) {
+        // For extra small screens extra adjustment is needed e.g. <320px wide
+        if (triggerDOMRect.left + rightOffset - PANEL_WIDTH_SIZE <= -screenWidth) {
+          return rightOffset - (triggerDOMRect.left + rightOffset) + (screenWidth - PANEL_WIDTH_SIZE) / 2;
+        }
         return rightOffset - (triggerDOMRect.left + rightOffset) + 16;
       }
       return rightOffset;
     default:
+      // For extra small screens extra adjustment is needed e.g. <320px wide
+      if (triggerDOMRect?.left + PANEL_WIDTH_SIZE >= screenWidth) {
+        return -(triggerDOMRect?.left || 0) + (screenWidth - PANEL_WIDTH_SIZE) / 2;
+      }
       return 0;
   }
 };
