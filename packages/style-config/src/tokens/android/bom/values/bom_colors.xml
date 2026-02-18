@@ -67,7 +67,7 @@
   <color name="bomBorderDanger">#c40000</color>
   <color name="bomBorderDangerMild">#db6363</color>
   <color name="bomBorderMono">#ffffff</color>
-  <color name="bomBorderFocus">#a39cdc</color>
+  <color name="bomBorderFocus">#8379cf</color>
   <color name="bomDataASolid">#d13900</color>
   <color name="bomDataATint">#ff7c6a</color>
   <color name="bomDataAOpacity">#d1390080</color>

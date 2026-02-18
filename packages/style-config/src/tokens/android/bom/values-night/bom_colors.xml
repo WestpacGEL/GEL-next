@@ -19,11 +19,11 @@
   <color name="bomSurfacePrimary">#e43f00</color>
   <color name="bomSurfacePrimaryFaint">#380900</color>
   <color name="bomSurfaceHero">#a094fc</color>
-  <color name="bomSurfaceHeroFaint">#1b0045</color>
+  <color name="bomSurfaceHeroFaint">#20024e</color>
   <color name="bomSurfacePop">#a094fc</color>
   <color name="bomSurfacePopFaint">#140250</color>
   <color name="bomSurfaceHoller">#8379cf</color>
-  <color name="bomSurfaceHollerFaint">#0e0928</color>
+  <color name="bomSurfaceHollerFaint">#19123e</color>
   <color name="bomSurfaceSuccess">#249224</color>
   <color name="bomSurfaceSuccessFaint">#003300</color>
   <color name="bomSurfaceInfo">#2487cc</color>

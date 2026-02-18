@@ -22,7 +22,7 @@
   <color name="stgSurfaceHeroFaint">#002a1c</color>
   <color name="stgSurfacePop">#78be20</color>
   <color name="stgSurfacePopFaint">#132402</color>
-  <color name="stgSurfaceHoller">#7947b4</color>
+  <color name="stgSurfaceHoller">#814ec5</color>
   <color name="stgSurfaceHollerFaint">#27133e</color>
   <color name="stgSurfaceSuccess">#249224</color>
   <color name="stgSurfaceSuccessFaint">#003300</color>
@@ -39,10 +39,10 @@
   <color name="stgTextBody">#e1e1e0</color>
   <color name="stgTextHeading">#2fa854</color>
   <color name="stgTextMuted">#8d8c81</color>
-  <color name="stgTextPrimary">#f44343</color>
+  <color name="stgTextPrimary">#f44848</color>
   <color name="stgTextHero">#2fa854</color>
   <color name="stgTextHoller">#9b73d2</color>
-  <color name="stgTextLink">#f44343</color>
+  <color name="stgTextLink">#f44848</color>
   <color name="stgTextSuccess">#47a447</color>
   <color name="stgTextInfo">#459ad4</color>
   <color name="stgTextWarning">#d7784f</color>
@@ -57,7 +57,7 @@
   <color name="stgBorderHero">#2fa854</color>
   <color name="stgBorderPrimary">#f21818</color>
   <color name="stgBorderPop">#365909</color>
-  <color name="stgBorderHoller">#7947b4</color>
+  <color name="stgBorderHoller">#814ec5</color>
   <color name="stgBorderSuccess">#008000</color>
   <color name="stgBorderSuccessMild">#005a00</color>
   <color name="stgBorderInfo">#0074c4</color>
@@ -67,7 +67,7 @@
   <color name="stgBorderDanger">#c40000</color>
   <color name="stgBorderDangerMild">#890000</color>
   <color name="stgBorderMono">#000000</color>
-  <color name="stgBorderFocus">#7947b4</color>
+  <color name="stgBorderFocus">#814ec5</color>
   <color name="stgDataASolid">#e30000</color>
   <color name="stgDataATint">#f87272</color>
   <color name="stgDataAOpacity">#e300004d</color>
