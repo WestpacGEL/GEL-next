@@ -174,6 +174,128 @@ import { BREAKPOINTS, SPACING_UNIT } from '@westpac/style-config/constants';
 - Full support for TailwindCSS v4 and its [latest features](https://tailwindcss.com/blog/tailwindcss-v4)
 - Dark mode supported for BOM and BankSA logos
 
+#### Compacta usability update
+
+#### Before
+
+```tsx
+() => {
+  const [inputs, setInputs] = useState<Record<string, string>>({
+    'primary-1234': 'test',
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  return (
+      <Compacta
+        initialCompactas={[
+          {
+            id: '1234',
+            title: { primary: inputs[`primary-1234`] },
+          },
+          {},
+        ]}
+        onAdd={() => console.log('add')}
+        onRemove={() => console.log('remove')}
+      >
+        {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
+          <Form>
+            <FormGroup>
+              <Label htmlFor={`primary-${id}`}>Primary</Label>
+              <Hint id={`primary-hint-${id}`}>Primary title text</Hint>
+              <Input
+                aria-describedby={`primary-hint-${id}`}
+                name={`primary-${id}`}
+                id={`primary-${id}`}
+                value={inputs[`primary-${id}`] || ''}
+                onChange={e => {
+                  handleChange(e);
+                  setPrimaryTitle(e.target.value);
+                }}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor={`secondary-${id}`}>Secondary</Label>
+              <Hint id={`secondary-hint-${id}`}>Secondary title text</Hint>
+              <Input
+                aria-describedby={`secondary-hint-${id}`}
+                name={`secondary-${id}`}
+                id={`secondary-${id}`}
+                value={inputs[`secondary-${id}`] || ''}
+                onChange={e => {
+                  handleChange(e);
+                  setSecondaryTitle(e.target.value);
+                }}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor={`tertiary-${id}`}>Tertiary</Label>
+              <Hint id={`tertiary-hint-${id}`}>Tertiary title text</Hint>
+              <Input
+                aria-describedby={`tertiary-hint-${id}`}
+                name={`tertiary-${id}`}
+                id={`tertiary-${id}`}
+                value={inputs[`tertiary-${id}`] || ''}
+                onChange={e => {
+                  handleChange(e);
+                  setTertiaryTitle(e.target.value);
+                }}
+              />
+            </FormGroup>
+          </Form>
+        )}
+      </Compacta>
+    </>
+  );
+};
+```
+
+#### After
+
+```tsx
+() => {
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ primary: 'test', secondary: '', tertiary: '', fourth: '' }] },
+  });
+  const items = watch('items');
+
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { primary: '', secondary: '', tertiary: '', fourth: '' }]);
+  }, [items, setValue]);
+
+  return (
+    <form>
+      <Compacta onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <CompactaItem
+            key={index}
+            title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <Field label="Primary" hintMessage="Primary title text">
+              <Input {...register(`items.${index}.primary`)} />
+            </Field>
+            <Field label="Secondary" hintMessage="Secondary title text">
+              <Input {...register(`items.${index}.secondary`)} />
+            </Field>
+            <Field label="Tertiary" hintMessage="Tertiary title text">
+              <Input {...register(`items.${index}.tertiary`)} />
+            </Field>
+            <Field label="Fourth" hintMessage="Fourth field">
+              <Input {...register(`items.${index}.fourth`)} />
+            </Field>
+          </CompactaItem>
+        ))}
+      </Compacta>
+    </form>
+  );
+};
+```
+
 #### Repeater aligned with Compacta specification
 
 #### Before
@@ -425,6 +547,45 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 | `ButtonDropdown`                                   | Replaced by `Dropdown`                                               |
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
+
+## 0.59.2
+
+### Patch Changes
+
+- d2e9dbb: updates to horizontal positioning for popover on smaller screens
+
+## 0.59.1
+
+### Patch Changes
+
+- efa6a23: Added callbacks to compacta and return index for compacta children
+- f36b6d5: Made Button component default to type="button" to avoid issue with components using button in forms
+- e93a3d4: Fixed issue where popover wasn't automatically flipping vertically, also set the default position back to top
+
+## 0.59.0
+
+### Minor Changes
+
+- 8f9cbc5: added new initialCompactas prop to Compacta to enable prefilling
+
+## 0.58.0
+
+### Minor Changes
+
+- fd7e3d7: Added MultiSelect component
+
+## 0.57.4
+
+### Patch Changes
+
+- 4afcd14: updated ButtonGroup to correctly handle an empty string being passed as a value or defaultValue
+
+## 0.57.3
+
+### Patch Changes
+
+- 925e9f0: package updates
+- 9a1ae57: fixes to focus state/default value for ButtonGroup
 
 ## 0.57.2
 

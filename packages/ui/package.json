@@ -1,6 +1,6 @@
 {
   "name": "@westpac/ui",
-  "version": "1.0.0-canary.16",
+  "version": "1.0.0-canary.17",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
@@ -121,6 +121,9 @@
     "./modal": {
       "default": "./dist/components/modal/index.js"
     },
+    "./multi-select": {
+      "default": "./dist/components/multi-select/index.js"
+    },
     "./pagination": {
       "default": "./dist/components/pagination/index.js"
     },
@@ -228,12 +231,12 @@
     "@react-types/combobox": "~3.13.6",
     "@react-types/shared": "~3.30.0",
     "@react-types/tabs": "~3.3.16",
-    "@storybook/addon-a11y": "10.1.4",
-    "@storybook/addon-docs": "10.1.4",
-    "@storybook/addon-links": "10.1.4",
-    "@storybook/addon-mcp": "0.1.6",
-    "@storybook/addon-themes": "~10.1.4",
-    "@storybook/react-vite": "10.1.4",
+    "@storybook/addon-a11y": "10.2.3",
+    "@storybook/addon-docs": "10.2.3",
+    "@storybook/addon-links": "10.2.3",
+    "@storybook/addon-mcp": "~0.2.2",
+    "@storybook/addon-themes": "~10.2.3",
+    "@storybook/react-vite": "10.2.3",
     "@swc/cli": "^0.1.62",
     "@swc/core": "^1.3.35",
     "@tailwindcss/postcss": "~4.1.12",
@@ -261,7 +264,7 @@
     "eslint-plugin-storybook": "~10.1.4",
     "glob": "~10.5.0",
     "jsdom": "^22.1.0",
-    "plop": "~3.1.2",
+    "plop": "~4.0.5",
     "postcss": "~8.5.6",
     "postcss-cli": "~10.1.0",
     "prettier": "^3.2.5",
@@ -271,7 +274,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "~7.62.0",
     "shx": "^0.3.4",
-    "storybook": "10.1.4",
+    "storybook": "10.2.3",
     "tailwindcss": "~4.1.12",
     "ts-node": "~10.9.1",
     "typescript": "^5.5.4",

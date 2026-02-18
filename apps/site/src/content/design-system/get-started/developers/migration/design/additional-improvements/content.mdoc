@@ -27,6 +27,138 @@ import { BREAKPOINTS, SPACING_UNIT } from '@westpac/style-config/constants';
 - Full support for TailwindCSS v4 and its [latest features](https://tailwindcss.com/blog/tailwindcss-v4)
 - Dark mode supported for BOM and BankSA logos
 
+## Compacta usability update
+
+#### Before
+
+```html
+<StaticCode
+  language="tsx"
+  code={`
+  () => {
+  const [inputs, setInputs] = useState<Record<string, string>>({
+    'primary-1234': 'test',
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  return (
+      <Compacta
+        initialCompactas={[
+          {
+            id: '1234',
+            title: { primary: inputs[\`primary-1234\`] },
+          },
+          {},
+        ]}
+        onAdd={() => console.log('add')}
+        onRemove={() => console.log('remove')}
+      >
+        {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
+          <Form>
+            <FormGroup>
+              <Label htmlFor={\`primary-\${id}\`}>Primary</Label>
+              <Hint id={\`primary-hint-\${id}\`}>Primary title text</Hint>
+              <Input
+                aria-describedby={\`primary-hint-\${id}\`}
+                name={\`primary-\${id}\`}
+                id={\`primary-\${id}\`}
+                value={inputs[\`primary-\${id}\`] || ''}
+                onChange={e => {
+                  handleChange(e);
+                  setPrimaryTitle(e.target.value);
+                }}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor={\`secondary-\${id}\`}>Secondary</Label>
+              <Hint id={\`secondary-hint-\${id}\`}>Secondary title text</Hint>
+              <Input
+                aria-describedby={\`secondary-hint-\${id}\`}
+                name={\`secondary-\${id}\`}
+                id={\`secondary-\${id}\`}
+                value={inputs[\`secondary-\${id}\`] || ''}
+                onChange={e => {
+                  handleChange(e);
+                  setSecondaryTitle(e.target.value);
+                }}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor={\`tertiary-\${id}\`}>Tertiary</Label>
+              <Hint id={\`tertiary-hint-\${id}\`}>Tertiary title text</Hint>
+              <Input
+                aria-describedby={\`tertiary-hint-\${id}\`}
+                name={\`tertiary-\${id}\`}
+                id={\`tertiary-\${id}\`}
+                value={inputs[\`tertiary-\${id}\`] || ''}
+                onChange={e => {
+                  handleChange(e);
+                  setTertiaryTitle(e.target.value);
+                }}
+              />
+            </FormGroup>
+          </Form>
+        )}
+      </Compacta>
+    </>
+  );
+  };
+  `} 
+/>
+```
+
+#### After
+
+```html
+<StaticCode
+  language="tsx"
+  code={`
+    () => {
+      const { register, watch, setValue } = useForm<Inputs>({
+        defaultValues: { items: [{ primary: 'test', secondary: '', tertiary: '', fourth: '' }] },
+       });
+      const items = watch('items');
+
+      const handleAdd = useCallback(() => {
+        setValue('items', [...items, { primary: '', secondary: '', tertiary: '', fourth: '' }]);
+      }, [items, setValue]);
+
+      return (
+        <form>
+          <Compacta onAdd={handleAdd}>
+            {items.map((item, index) => (
+              <CompactaItem
+                key={index}
+                title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
+                onRemove={() => {
+                  setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+                }}
+              >
+                <Field label="Primary" hintMessage="Primary title text">
+                  <Input {...register(\`items.\${index}.primary\`)} />
+                </Field>
+                <Field label="Secondary" hintMessage="Secondary title text">
+                  <Input {...register(\`items.\${index}.secondary\`)} />
+                </Field>
+                <Field label="Tertiary" hintMessage="Tertiary title text">
+                  <Input {...register(\`items.\${index}.tertiary\`)} />
+                </Field>
+                <Field label="Fourth" hintMessage="Fourth field">
+                  <Input {...register(\`items.\${index}.fourth\`)} />
+                </Field>
+              </CompactaItem>
+            ))}
+          </Compacta>
+        </form>
+      );
+    };
+  `} 
+/>
+```
+
 ## Repeater aligned with Compacta specification
 
 #### Before
