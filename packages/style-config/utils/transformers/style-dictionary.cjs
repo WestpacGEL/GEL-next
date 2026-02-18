@@ -913,7 +913,7 @@ function mergeTokens(tokens) {
           }
         };
         
-        const processedTokens = processTokensSectionNew(tokenSection, brands);
+        const processedTokens = processTokensSectionWithBrand(tokenSection, brands);
         
         // Merge the processed tokens into the accumulator
         Object.keys(processedTokens).forEach(brandKey => {
@@ -928,7 +928,7 @@ function mergeTokens(tokens) {
 /**
  * Processes brand-specific token sections with proper brand detection
  */
-function processTokensSectionNew(tokenSection, brands) {
+function processTokensSectionWithBrand(tokenSection, brands) {
   // The tokenSection contains modes with Light mode and Dark mode
   // We need to determine which brand this token section belongs to by examining the token values
   const result = {};
