@@ -2,7 +2,9 @@ import { DOMProps } from '@react-types/shared';
 import { Key, ReactNode, RefObject } from 'react';
 import { AriaListBoxOptions, AriaPopoverProps } from 'react-aria';
 import { ItemProps, ListProps, ListState, OverlayTriggerState } from 'react-stately';
+import { VariantProps } from 'tailwind-variants';
 
+import { styles as TriggerStyles } from './components/multi-select-list-box-trigger/multi-select-list-box-trigger.styles.js';
 import { MultiSelectSize } from './components/multi-select-list-box-trigger/multi-select-list-box-trigger.types.js';
 
 export type MultiSelectContextProps<T extends object = object> = {
@@ -18,12 +20,15 @@ export type MultiSelectContextProps<T extends object = object> = {
   overlayProps: DOMProps;
   placement?: AriaPopoverProps['placement'];
   portalContainer?: Element;
+  width?: VariantProps<typeof TriggerStyles>['width'];
 };
 
 export type MultiSelectItemProps<T extends object = object> = { description?: string } & ItemProps<T>;
 
 // Props for the items that can be passed to the MultiSelect component
 export type MultiSelectValue = { textValue?: string; content?: ReactNode; key: Key; description?: string };
+
+type TriggerVariants = VariantProps<typeof TriggerStyles>;
 
 export type MultiSelectProps<T> = {
   /**
@@ -57,4 +62,9 @@ export type MultiSelectProps<T> = {
    * @default medium
    */
   size?: MultiSelectSize;
+  /**
+   * width of multiselect
+   * @default full
+   */
+  width?: TriggerVariants['width'];
 } & ListProps<T>;

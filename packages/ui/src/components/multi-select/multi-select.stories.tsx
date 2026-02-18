@@ -1,6 +1,7 @@
 import { type Meta, StoryFn } from '@storybook/react-vite';
 import { useState } from 'react';
 
+import { FIXED_WIDTHS } from '../../constants/input-widths.js';
 import { Field } from '../index.js';
 
 import { MultiSelectValue } from './multi-select.types.js';
@@ -117,6 +118,51 @@ export const Sizes = () => {
           <MultiSelect
             key={size}
             size={size}
+            selectedKeys={selectedKeys}
+            onSelectionChange={keys => {
+              setSelectedKeys(keys as Set<string>);
+            }}
+          >
+            <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
+              {option => (
+                <MultiSelectItem
+                  key={option.key}
+                  textValue={option.textValue}
+                  description="Supporting information or description"
+                >
+                  {option.textValue}
+                </MultiSelectItem>
+              )}
+            </MultiSelectSection>
+            <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
+              {option => (
+                <MultiSelectItem
+                  key={option.key}
+                  textValue={option.textValue}
+                  description="Supporting information or description"
+                >
+                  {option.textValue}
+                </MultiSelectItem>
+              )}
+            </MultiSelectSection>
+          </MultiSelect>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export const Widths = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+
+  return (
+    <div className="flex flex-col gap-2">
+      {FIXED_WIDTHS.map(width => (
+        <div key={width}>
+          <p className="typography-body-10 mb-2 font-bold uppercase text-text">{width}</p>
+          <MultiSelect
+            key={width}
+            width={width}
             selectedKeys={selectedKeys}
             onSelectionChange={keys => {
               setSelectedKeys(keys as Set<string>);
