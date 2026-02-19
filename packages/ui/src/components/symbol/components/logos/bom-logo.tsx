@@ -9,7 +9,6 @@ export function BOMLogo({
   copyrightYear = '2025',
   viewBoxWidth = 150,
   viewBoxHeight = 39,
-  mode = 'auto',
   className,
   ...props
 }: SymbolProps) {

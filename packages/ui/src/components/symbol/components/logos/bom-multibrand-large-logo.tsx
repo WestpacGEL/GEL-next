@@ -12,7 +12,6 @@ export function BOMMultibrandLargeLogo({
   align = 'left',
   offset = [null, 15.305, 30.61],
   className,
-  mode = 'auto',
   ...props
 }: SymbolProps) {
   return (
