@@ -20,7 +20,7 @@ export const PayIDSymbol = ({
     viewBoxHeight={viewBoxHeight}
     {...props}
   >
-    <g clip-path="url(#clip0_94_2071)">
+    <g clipPath="url(#clip0_94_2071)">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

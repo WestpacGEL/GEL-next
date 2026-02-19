@@ -21,7 +21,7 @@ export function BOMLogo({
       viewBoxHeight={viewBoxHeight}
       {...props}
     >
-      <g clip-path="url(#clip0_139_1246)">
+      <g clipPath="url(#clip0_139_1246)">
         <path d="M0 0V13L6.5 6.5L0 0Z" fill="#685AC0" />
         <path d="M13 0H0L6.5 6.5L13 0Z" fill="#A094FC" />
         <path d="M13 13V0L6.5 6.5L13 13Z" fill="#685AC0" />

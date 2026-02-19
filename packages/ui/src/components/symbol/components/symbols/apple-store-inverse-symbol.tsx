@@ -21,14 +21,14 @@ export function AppleStoreInverseSymbol({
       viewBoxHeight={viewBoxHeight}
       {...props}
     >
-      <g clip-path="url(#clip0_94_1058)">
+      <g clipPath="url(#clip0_94_1058)">
         <path
           d="M10 0H160C165.523 0 170 4.47715 170 10V48C170 53.5228 165.523 58 160 58H10C4.47715 58 0 53.5228 0 48V10C0 4.47715 4.47715 0 10 0Z"
           className="fill-black dark:fill-[#A6A6A6]"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M10 1C5.02944 1 1 5.02944 1 10V48C1 52.9706 5.02944 57 10 57H160C164.971 57 169 52.9706 169 48V10C169 5.02944 164.971 1 160 1H10Z"
           className="fill-white dark:fill-black"
         />

@@ -13,14 +13,14 @@ export const SamsungPayButtonSymbol = ({
   ...props
 }: SymbolProps) => (
   <Symbol
-    className={clsx('w-[268px] h-[63px]', className)}
+    className={clsx('h-[63px] w-[268px]', className)}
     aria-label={ariaLabel}
     copyrightYear={copyrightYear}
     viewBoxWidth={viewBoxWidth}
     viewBoxHeight={viewBoxHeight}
     {...props}
   >
-    <g clip-path="url(#clip0_94_2479)">
+    <g clipPath="url(#clip0_94_2479)">
       <path
         d="M257.57 0.23999H10.6302C4.89023 0.23999 0.240234 4.88999 0.240234 10.63V52.2C0.240234 57.94 4.89023 62.59 10.6302 62.59H257.57C263.31 62.59 267.96 57.94 267.96 52.2V10.63C267.96 4.88999 263.31 0.23999 257.57 0.23999Z"
         className="fill-black dark:fill-white"

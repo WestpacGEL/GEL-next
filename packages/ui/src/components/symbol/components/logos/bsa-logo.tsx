@@ -21,7 +21,7 @@ export function BSALogo({
       viewBoxHeight={viewBoxHeight}
       {...props}
     >
-      <g clip-path="url(#clip0_139_1244)">
+      <g clipPath="url(#clip0_139_1244)">
         <path
           d="M58 25.5C57.1 25.5 56 25 56 24V2C56 1 57 0 58 0H88C89 0 90 1 90 2V40.2C90 40.7 89.6 41 89.1 41C88.5 41 88.3 40.5 88.2 40.2C79.7 25.5 58.9 25.5 58 25.5Z"
           fill="#E91B2B"

@@ -21,7 +21,7 @@ export function BSAStackedLogo({
       viewBoxHeight={viewBoxHeight}
       {...props}
     >
-      <g clip-path="url(#clip0_139_1245)">
+      <g clipPath="url(#clip0_139_1245)">
         <path
           d="M0.9 39.4C0.4 39.4 0 39 0 38.6V15.8C0 15.4 0.4 15 0.9 15H31.1C31.6 15 32 15.4 32 15.8V53.2C32 53.6 31.8 54 31.1 54C30.5 54 30.3 53.5 30.2 53.3C21.6 38.6 0.9 39.4 0.9 39.4Z"
           fill="#E91B2B"

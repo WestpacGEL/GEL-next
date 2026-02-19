@@ -21,7 +21,7 @@ export function BTPanoramaReversedLogo({
       viewBoxHeight={viewBoxHeight}
       {...props}
     >
-      <g clip-path="url(#clip0_139_1251)">
+      <g clipPath="url(#clip0_139_1251)">
         <path
           d="M37.6182 0.716309V4.59042H43.0716V21.2453H47.1959V4.59042H52.6367V0.716309H37.6182Z"
           className="fill-white dark:fill-black"
