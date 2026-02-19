@@ -547,6 +547,7 @@ If there is a circumstance where you want the dark mode variant in light mode lo
 
 The list of removed symbols and logos is as follows
 Logos:
+
 - BTPanormaMultibrandLargeLogo
 - BTPanormaMultibrandSmallLogo
 - RedAvatarCircleLogo
@@ -554,6 +555,7 @@ Logos:
 - RedAvatarLogo
 
 Symbols:
+
 - GooglePlusSymbol
 - GoogleStoreSymbol
 - MastercardAcceptedSymbol
