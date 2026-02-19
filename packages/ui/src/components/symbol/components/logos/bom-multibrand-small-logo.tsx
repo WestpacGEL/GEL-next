@@ -25,26 +25,26 @@ export function BOMMultibrandSmallLogo({
       viewBoxHeight={viewBoxHeight}
       {...props}
     >
-      <polygon fill="#685AC0" points="0 16.001 6.5 9.501 0 3.001" />
-      <polygon fill="#A094FC" points=".001 3.001 6.501 9.501 13 3.001" />
-      <polygon fill="#685AC0" points="13 16.001 13 3.001 6.5 9.502" />
-      <polygon fill="#20024E" points=".001 16.001 13 16.001 6.5 9.501" />
-      <polygon fill="#C2BFEB" points="13 3.001 13 16.001 19.5 9.501" />
-      <polygon fill="#685AC0" points="26 3.001 13 3.001 19.5 9.501" />
-      <polygon fill="#20024E" points="26 16 26 3 19.5 9.502" />
-      <polygon fill="#685AC0" points="13.001 16.001 26 16.001 19.5 9.501" />
-      <polygon fill="#C2BFEB" points="13 16.001 13 29.001 19.5 22.501" />
-      <polygon fill="#A094FC" points="26 16 13 16.001 19.5 22.501" />
-      <polygon fill="#685AC0" points="26 29 26 16 19.5 22.502" />
-      <polygon fill="#20024E" points="13.001 29.001 26 29 19.5 22.501" />
-      <polygon fill="#685AC0" points="0 29.001 6.5 22.5 0 16" />
-      <polygon fill="#C2BFEB" points=".001 16.001 6.501 22.501 13 16.001" />
-      <polygon fill="#20024E" points="13 29.001 13 16.001 6.5 22.502" />
-      <polygon fill="#A094FC" points=".001 29.001 13 29.001 6.5 22.5" />
-      <polygon fill="#C2BFEB" points="13 42 19.501 35.501 13 29.001" />
-      <polygon fill="#685AC0" points="26 29 13 29 19.5 35.501" />
-      <polygon fill="#C2BFEB" points="0 29 6.501 35.501 13 29" />
-      <polygon fill="#20024E" points="6.5 35.502 13 42 13 29.001" />
+      <path d="M0 16.001L6.5 9.50098L0 3.00098V16.001Z" fill="#685AC0" />
+      <path d="M0.00195312 3.00098L6.50195 9.50098L13.001 3.00098H0.00195312Z" fill="#A094FC" />
+      <path d="M13 16.001V3.00098L6.5 9.50198L13 16.001Z" fill="#685AC0" />
+      <path d="M0.00195312 16.001H13.001L6.50095 9.50098L0.00195312 16.001Z" fill="#20024E" />
+      <path d="M13 3.00098V16.001L19.5 9.50098L13 3.00098Z" fill="#C2BFEB" />
+      <path d="M26 3.00098H13L19.5 9.50098L26 3.00098Z" fill="#685AC0" />
+      <path d="M26 16V3L19.5 9.502L26 16Z" fill="#20024E" />
+      <path d="M13.002 16.001H26.001L19.501 9.50098L13.002 16.001Z" fill="#685AC0" />
+      <path d="M13 16.001V29.001L19.5 22.501L13 16.001Z" fill="#C2BFEB" />
+      <path d="M26 16L13 16.001L19.5 22.501L26 16Z" fill="#A094FC" />
+      <path d="M26 29V16L19.5 22.502L26 29Z" fill="#685AC0" />
+      <path d="M13.002 29.001L26.001 29L19.501 22.501L13.002 29.001Z" fill="#20024E" />
+      <path d="M0 29.001L6.5 22.5L0 16V29.001Z" fill="#685AC0" />
+      <path d="M0.00195312 16.001L6.50195 22.501L13.001 16.001H0.00195312Z" fill="#C2BFEB" />
+      <path d="M13 29.001V16.001L6.5 22.502L13 29.001Z" fill="#20024E" />
+      <path d="M0.00195312 29.001H13.001L6.50095 22.5L0.00195312 29.001Z" fill="#A094FC" />
+      <path d="M13 42L19.501 35.501L13 29.001V42Z" fill="#C2BFEB" />
+      <path d="M26 29H13L19.5 35.501L26 29Z" fill="#685AC0" />
+      <path d="M0 29L6.501 35.501L13 29H0Z" fill="#C2BFEB" />
+      <path d="M6.5 35.502L13 42V29.001L6.5 35.502Z" fill="#20024E" />
     </Symbol>
   );
 }
