@@ -540,6 +540,40 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 </BottomSheet>
 ```
 
+### Removed/Updated Logos and Symbols
+
+We have taken the opportunity to remove and update all the symbols and logos exported from the library. For updates most symbols/logos will have a dark mode variant that turns on when switching to dark mode.
+If there is a circumstance where you want the dark mode variant in light mode look for the 'Inverse' symbols/logos. If your believe there is a symbol/logo that needs an inverse or was removed and you believe it shouldn't be please contact the GEL design team.
+
+The list of removed symbols and logos is as follows
+Logos:
+- BTPanormaMultibrandLargeLogo
+- BTPanormaMultibrandSmallLogo
+- RedAvatarCircleLogo
+- RedAvatarCircleReverseLogo
+- RedAvatarLogo
+
+Symbols:
+- GooglePlusSymbol
+- GoogleStoreSymbol
+- MastercardAcceptedSymbol
+- MastercardHorizontalSymbol
+- MicrosoftStoreSymbol
+- PayToBlackSymbol
+- PayToDarkGreySymbol
+- PayToLightGreySymbol
+- PayToWhiteSymbol
+- PayToWordmarkBlackSymbol
+- PayToWordmarkDarkGreySymbol
+- PayToWordmarkLightGreySymbol
+- PayToWordmarkWhiteSymbol
+- SlackSymbol
+- TwitterSymbol
+- VisaSymbol
+- XMarkInverseSymbol
+- XMarkSymbol
+- YammerSymbol
+
 ### 🗑️ Deprecated Components & APIs
 
 | Deprecated                                         | Replacement / Notes                                                  |
