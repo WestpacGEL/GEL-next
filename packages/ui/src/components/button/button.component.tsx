@@ -26,6 +26,7 @@ function BaseButton(
     iconSize,
     children,
     removeLinkPadding,
+    type = Tag === 'button' ? 'button' : undefined,
     ...props
   }: ButtonProps,
   ref: Ref<ButtonRef>,
@@ -75,7 +76,7 @@ function BaseButton(
   }, [iconColor, look, soft]);
 
   return (
-    <Tag ref={ref} className={styles.base({ className })} {...mergeProps(props, focusProps)}>
+    <Tag ref={ref} className={styles.base({ className })} {...mergeProps(props, focusProps)} type={type}>
       {IconBefore && (
         <IconBefore
           look={iconLook}

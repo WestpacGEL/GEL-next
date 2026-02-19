@@ -43,8 +43,8 @@ export function CompactaItem({
   }, []);
 
   useEffect(() => {
-    const secondLastIndex = totalItems - 2;
-    if (index === secondLastIndex) {
+    const secondLastIndex = totalItems - 1;
+    if (index !== secondLastIndex && !props.defaultExpanded) {
       state.setExpanded(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

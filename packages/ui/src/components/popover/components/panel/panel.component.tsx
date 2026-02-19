@@ -16,7 +16,7 @@ export function BasePanel({
   heading,
   headingTag: Tag = 'h1',
   content,
-  placement = 'bottom',
+  placement = 'top',
   id,
   triggerRef,
   portal,
@@ -24,8 +24,14 @@ export function BasePanel({
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
   const breakpoint = useBreakpoint();
-  const resolvedPlacement = resolveResponsiveVariant(placement, breakpoint);
-  const { popoverPosition, arrowPosition } = usePanel({ state, placement: resolvedPlacement, triggerRef, portal });
+  const { popoverPosition, arrowPosition, localPlacement } = usePanel({
+    state,
+    placement,
+    triggerRef,
+    portal,
+    popoverRef,
+  });
+  const resolvedPlacement = resolveResponsiveVariant(localPlacement, breakpoint);
 
   const styles = panelStyles({ placement: resolvedPlacement });
   return (
