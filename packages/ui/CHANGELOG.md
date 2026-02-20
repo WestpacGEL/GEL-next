@@ -549,7 +549,7 @@ To avoid confusion with dark mode and light mode we have changed the possible va
 ```tsx
 export type PictogramMode = 'dark' | 'light' | 'duo';
 
-<Pictogram mode="dark" />
+<Pictogram mode="dark" />;
 ```
 
 #### After
@@ -557,7 +557,7 @@ export type PictogramMode = 'dark' | 'light' | 'duo';
 ```tsx
 export type PictogramMode = 'base' | 'mono' | 'duo';
 
-<Pictogram mode="base" />
+<Pictogram mode="base" />;
 ```
 
 ### 🗑️ Deprecated Components & APIs
