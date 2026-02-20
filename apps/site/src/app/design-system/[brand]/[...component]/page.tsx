@@ -22,8 +22,9 @@ type MetadataProps = {
 };
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
-  const { component } = params;
-  const content = await reader().collections.designSystem.readOrThrow(component.join('/'));
+  const { component } = await params;
+  const readerInstance = await reader();
+  const content = await readerInstance.collections.designSystem.readOrThrow(component.join('/'));
 
   const title = `${content.name} | GEL Design System`;
   const description = content.description;
@@ -45,7 +46,8 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
 }
 
 export async function generateStaticParams() {
-  const components = await reader().collections.designSystem.all();
+  const readerInstance = await reader();
+  const components = await readerInstance.collections.designSystem.all();
   const params: { brand: string; component: string[] }[] = [];
   BANK_OPTIONS.forEach(bank => {
     components.forEach(component => params.push({ brand: bank.key, component: component.slug.split('/') }));
@@ -60,13 +62,15 @@ export default async function ComponentPage({
   params: { component: string[] };
   searchParams?: Record<string, string | undefined>;
 }) {
-  const brand = searchParams?.brand || 'wbc';
-  const tab = searchParams?.tab || 'design';
-  const { component } = params;
+  const searchParamsAwaited = await searchParams;
+  const brand = searchParamsAwaited?.brand || 'wbc';
+  const tab = searchParamsAwaited?.tab || 'design';
+  const { component } = await params;
+  const readerInstance = await reader();
   const [content, westpacInfo, shortCodes] = await Promise.all([
-    reader().collections.designSystem.readOrThrow(component.join('/')),
-    reader().singletons.westpacUIInfo.readOrThrow(),
-    reader()
+    readerInstance.collections.designSystem.readOrThrow(component.join('/')),
+    readerInstance.singletons.westpacUIInfo.readOrThrow(),
+    readerInstance
       .collections.shortCodes.all()
       .then(shortCodes =>
         Promise.all(

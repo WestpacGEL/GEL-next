@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const { isEnabled } = draftMode();
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const { isEnabled } = await draftMode();
   return (
     <html lang="en" className="scroll-smooth">
       <FontPreloader />
