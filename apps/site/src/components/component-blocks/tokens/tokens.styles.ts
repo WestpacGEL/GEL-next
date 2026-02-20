@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    container: '!gap-0 rounded-3xl bg-background-white mt-4',
+    container: 'mt-4 !gap-0 rounded-3xl bg-background-white',
   },
   variants: {
     size: {
