@@ -58,8 +58,9 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
-  - title: Text inputs
-    slug: components/input
+  links:
+      - title: Text inputs
+        slug: components/input
 code:
   - title:
       name: Development examples

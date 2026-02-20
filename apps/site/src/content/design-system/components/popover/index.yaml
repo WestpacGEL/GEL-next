@@ -40,8 +40,9 @@ accessibility:
       name: Notes on accessibility
       slug: notes-on-accessibility
 relatedComponents:
-  - title: Modals
-    slug: components/modal
+  links:
+      - title: Modals
+        slug: components/modal
 code:
   - title:
       name: Development examples

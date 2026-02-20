@@ -36,12 +36,13 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Accordion
-    slug: components/accordion
-  - title: Wells
-    slug: components/well
-  - title: Panels
-    slug: components/panel
+  links:
+      - title: Accordion
+        slug: components/accordion
+      - title: Wells
+        slug: components/well
+      - title: Panels
+        slug: components/panel
 code:
   - title:
       name: Development examples

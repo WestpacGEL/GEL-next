@@ -51,8 +51,9 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Input groups
-    slug: components/input-group
+  links:
+      - title: Input groups
+        slug: components/input-group
 code:
   - title:
       name: Development examples

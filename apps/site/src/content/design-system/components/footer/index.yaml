@@ -29,10 +29,11 @@ design:
     noDemo: true
 accessibility: []
 relatedComponents:
-  - title: Icons
-    slug: /foundation/icons
-  - title: Headers
-    slug: /components/header
+  links:
+      - title: Icons
+        slug: /foundation/icons
+      - title: Headers
+        slug: /components/header
 code:
   - title:
       name: Development examples

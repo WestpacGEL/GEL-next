@@ -32,10 +32,11 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Breakpoints
-    slug: foundation/layout/breakpoints
-  - title: Spacing
-    slug: foundation/layout/spacing
+  links:
+      - title: Breakpoints
+        slug: foundation/layout/breakpoints
+      - title: Spacing
+        slug: foundation/layout/spacing
 code:
   - title:
       name: Development examples

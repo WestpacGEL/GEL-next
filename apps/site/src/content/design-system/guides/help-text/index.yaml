@@ -28,8 +28,9 @@ design:
     noDemo: false
 accessibility: []
 relatedComponents:
-  - title: Popover
-    slug: /components/popover
-  - title: Icons
-    slug: /components/foundation/icons
+  links:
+      - title: Popover
+        slug: /components/popover
+      - title: Icons
+        slug: /components/foundation/icons
 code: []

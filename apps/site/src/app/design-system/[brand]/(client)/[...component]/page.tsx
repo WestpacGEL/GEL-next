@@ -8,7 +8,7 @@ import json from '@westpac/ui/component-type.json';
 import { Metadata } from 'next';
 
 import { reader } from '@/app/reader';
-import { RelatedInfoLinks } from '@/components/related-info/related-info.types';
+import { RelatedInfoProps } from '@/components/related-info/related-info.types';
 import { BANK_OPTIONS } from '@/constants/bank-options';
 import { ShortCode } from '@/types/short-code.types';
 
@@ -193,7 +193,7 @@ export default async function ComponentPage({
         description: content.description,
         designSections,
         relatedArticles: relatedArticlesIsEmpty ? undefined : relatedArticles,
-        relatedComponents: content.relatedComponents.filter(value => !!value) as RelatedInfoLinks[],
+        relatedComponents: content?.relatedComponents as RelatedInfoProps['relatedComponents'],
         componentProps,
         subComponentProps,
       }}

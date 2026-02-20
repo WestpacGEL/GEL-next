@@ -46,14 +46,15 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Accordions
-    slug: components/accordion
-  - title: Tabs
-    slug: components/tabs
-  - title: Wells
-    slug: components/well
-  - title: Tables
-    slug: components/table
+  links:
+      - title: Accordions
+        slug: components/accordion
+      - title: Tabs
+        slug: components/tabs
+      - title: Wells
+        slug: components/well
+      - title: Tables
+        slug: components/table
 code:
   - title:
       name: Development examples

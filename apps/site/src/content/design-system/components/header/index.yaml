@@ -29,10 +29,11 @@ design:
     noDemo: true
 accessibility: []
 relatedComponents:
-  - title: Logos
-    slug: /components/foundation/logos
-  - title: Footer
-    slug: /components/footers
+  links:
+      - title: Logos
+        slug: /components/foundation/logos
+      - title: Footer
+        slug: /components/footers
 code:
   - title:
       name: Development examples

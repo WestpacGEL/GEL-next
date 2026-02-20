@@ -39,8 +39,9 @@ accessibility:
       name: Notes on accessibility
       slug: notes-on-accessibility
 relatedComponents:
-  - title: Buttons
-    slug: components/button
+  links:
+      - title: Buttons
+        slug: components/button
 code:
   - title:
       name: Development examples

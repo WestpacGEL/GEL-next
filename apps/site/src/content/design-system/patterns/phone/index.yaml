@@ -28,8 +28,9 @@ design:
     noDemo: false
 accessibility: []
 relatedComponents:
-  - title: Alerts
-    slug: components/alert
-  - title: Text inputs
-    slug: components/input
+  links:
+      - title: Alerts
+        slug: components/alert
+      - title: Text inputs
+        slug: components/input
 code: []

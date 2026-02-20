@@ -44,12 +44,13 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
-  - title: Colours
-    slug: foundation/colour
-  - title: Lists
-    slug: components/list
-  - title: Icons
-    slug: foundation/icon
+  links:
+      - title: Colours
+        slug: foundation/colour
+      - title: Lists
+        slug: components/list
+      - title: Icons
+        slug: foundation/icon
 code:
   - title:
       name: Development examples

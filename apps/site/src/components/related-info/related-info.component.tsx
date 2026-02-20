@@ -1,6 +1,6 @@
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Grid, GridItem } from '@westpac/ui';
-import { ArrowRightIcon, CubeIcon, GenericFileIcon } from '@westpac/ui/icon';
+import { ArrowRightIcon, CubeIcon, GenericFileIcon, TagIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
 import { useParams } from 'next/navigation';
 import { PropsWithChildren } from 'react';
@@ -15,10 +15,16 @@ import { Heading } from '../document-renderer';
 import { DOCUMENT_RENDERERS } from './articles-renderer';
 import { RelatedInfoProps } from './related-info.types';
 
-export function RelatedInfo({ relatedComponents = [], relatedArticles }: RelatedInfoProps) {
-  const relatedComponentsEmpty = relatedComponents?.length < 1;
+export function RelatedInfo({ relatedComponents, relatedArticles }: RelatedInfoProps) {
+  const relatedComponentsEmpty = relatedComponents?.links && relatedComponents.links.length < 1;
   const params = useParams();
   const brand = (params.brand ?? 'wbc') as BrandKey;
+  const relatedComponentsIcon = () => {
+    if (relatedComponents?.icon === 'tag') {
+      return <TagIcon look="outlined" color="hero" />;
+    }
+    return <CubeIcon color="hero" />;
+  };
   return (
     <Section className="bg-background-white">
       <Container className="">
@@ -38,13 +44,14 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
                 className={`
                   flex items-center justify-between border-b
                   border-border-muted-soft pb-3 typography-body-8 font-bold
+                  text-text-heading
                 `}
               >
-                Components
-                <CubeIcon color="muted" />
+                {relatedComponents?.heading || 'Components'}
+                {relatedComponentsIcon()}
               </h3>
               <ul>
-                {relatedComponents.map(({ title, slug }) => {
+                {relatedComponents?.links?.map(({ title, slug }) => {
                   return (
                     <li key={title}>
                       <Link href={`/design-system/${brand}/${slug}`}>{title}</Link>
@@ -60,10 +67,11 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
                 className={`
                   flex items-center justify-between border-b
                   border-border-muted-soft pb-3 typography-body-8 font-bold
+                  text-text-heading
                 `}
               >
                 Articles
-                <GenericFileIcon color="muted" />
+                <GenericFileIcon look="outlined" color="hero" />
               </h3>
               <div className="mt-3">
                 <DocumentRenderer
