@@ -9,7 +9,7 @@ export async function GET(req: Request) {
   if (!branch || !to) {
     return new Response('Missing branch or to params', { status: 400 });
   }
-  const {enable} = await draftMode();
+  const { enable } = await draftMode();
   enable();
   const { set } = await cookies();
   set('ks-branch', branch);

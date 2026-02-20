@@ -17,12 +17,12 @@ export default function Home() {
           tag="h1"
           leadText={
             <>
-                The GEL Forms Framework provides a simple, scalable approach for collecting customer information. It
-                includes standardised form validation and offers different navigational options depending on the form’s
-                length and complexity.
-                <br />
-                <br />
-                See examples below <i>(the content in these examples is for UI demonstration purposed only)</i>: 
+              The GEL Forms Framework provides a simple, scalable approach for collecting customer information. It
+              includes standardised form validation and offers different navigational options depending on the form’s
+              length and complexity.
+              <br />
+              <br />
+              See examples below <i>(the content in these examples is for UI demonstration purposed only)</i>:
             </>
           }
         >

@@ -70,25 +70,23 @@ export default async function ComponentPage({
   const [content, westpacInfo, shortCodes] = await Promise.all([
     readerInstance.collections.designSystem.readOrThrow(component.join('/')),
     readerInstance.singletons.westpacUIInfo.readOrThrow(),
-    readerInstance
-      .collections.shortCodes.all()
-      .then(shortCodes =>
-        Promise.all(
-          shortCodes.map(
-            shortCode =>
-              new Promise<ShortCode>(resolve => {
-                // eslint-disable-next-line sonarjs/no-nested-functions
-                return shortCode.entry.content().then(content => {
-                  return resolve({
-                    ...shortCode.entry,
-                    slug: shortCode.slug,
-                    content,
-                  });
+    readerInstance.collections.shortCodes.all().then(shortCodes =>
+      Promise.all(
+        shortCodes.map(
+          shortCode =>
+            new Promise<ShortCode>(resolve => {
+              // eslint-disable-next-line sonarjs/no-nested-functions
+              return shortCode.entry.content().then(content => {
+                return resolve({
+                  ...shortCode.entry,
+                  slug: shortCode.slug,
+                  content,
                 });
-              }),
-          ),
+              });
+            }),
         ),
       ),
+    ),
   ]);
 
   const componentName = component?.[1]
