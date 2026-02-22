@@ -10,7 +10,6 @@ export const fill = tv({
     mode: {
       base: 'fill-surface-pictogram-base',
       mono: 'fill-surface-mono',
-      reversed: 'fill-surface-reversed',
       duo: '',
     },
     highlight: {
