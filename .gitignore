@@ -40,3 +40,6 @@ yarn-error.log*
 .idea
 .vscode
 storybook-static
+
+#next
+next-env.d.ts
