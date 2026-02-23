@@ -24,7 +24,6 @@ export default tseslint.config(
           allowDefaultProject: ['*.js', '*.mjs', '*.cjs'],
         },
         tsconfigRootDir: import.meta.dirname,
-        // project: ['packages/*/tsconfig.json', 'apps/*/tsconfig.json'],
       },
     },
     settings: {

@@ -21,8 +21,8 @@ export const reader = cache(async () => {
   }
 
   if (isDraftModeEnabled) {
-    const cookiesList = await cookies();
-    const branch = cookiesList.get('ks-branch')?.value;
+    const { get } = await cookies();
+    const branch = get('ks-branch')?.value;
 
     if (branch) {
       return createGitHubReader(keystaticConfig, {
@@ -31,7 +31,7 @@ export const reader = cache(async () => {
         pathPrefix: 'apps/site',
         ref: branch,
         // Assuming an existing GitHub app
-        token: cookiesList.get('keystatic-gh-access-token')?.value,
+        token: get('keystatic-gh-access-token')?.value,
       });
     }
   }

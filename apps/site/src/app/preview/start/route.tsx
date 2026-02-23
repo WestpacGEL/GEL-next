@@ -9,8 +9,8 @@ export async function GET(req: Request) {
   if (!branch || !to) {
     return new Response('Missing branch or to params', { status: 400 });
   }
-  const draft = await draftMode();
-  draft.enable();
+  const { enable } = await draftMode();
+  enable();
   const { set } = await cookies();
   set('ks-branch', branch);
   const toUrl = new URL(to.replace(/design-system\//, 'design-system/wbc/'), url.origin);

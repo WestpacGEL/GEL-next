@@ -8,9 +8,9 @@ export async function POST(req: Request) {
   if (!referrer) {
     return new Response('Missing Referer', { status: 400 });
   }
-  const draftDisable = await draftMode();
-  draftDisable.disable();
-  const cookiesDelete = await cookies();
-  cookiesDelete.delete('ks-branch');
+  const { disable } = await draftMode();
+  disable();
+  const { delete: deleteCookie } = await cookies();
+  deleteCookie('ks-branch');
   return Response.redirect(referrer, 303);
 }
