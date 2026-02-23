@@ -90,8 +90,8 @@ export const Pictograms = () => {
                 `}
               >
                 <option value="duo">Duo</option>
-                <option value="dark">Dark</option>
-                <option value="light">Light</option>
+                <option value="base">Base</option>
+                <option value="mono">Mono</option>
               </Select>
             </div>
           </GridItem>
@@ -116,16 +116,16 @@ export const Pictograms = () => {
                   border border-border-muted-soft pt-6 pb-3
                   xsl:mb-4
                 `,
-                mode === 'light' && 'bg-surface-hero',
-                mode !== 'light' && 'bg-background-white',
+                mode === 'mono' && 'bg-surface-hero',
+                mode !== 'mono' && 'bg-background-white',
               )}
             >
               <Pictogram mode={mode} className="mb-6" />
               <span
                 className={clsx(
                   'text-[0.6875rem]',
-                  mode === 'light' && 'text-text-mono',
-                  mode !== 'light' && 'text-text-muted',
+                  mode === 'mono' && 'text-text-mono',
+                  mode !== 'mono' && 'text-text-muted',
                 )}
               >
                 {key}
