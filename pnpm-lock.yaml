@@ -393,6 +393,18 @@ importers:
 
   packages/ui:
     dependencies:
+      '@dnd-kit/core':
+        specifier: ~6.3.1
+        version: 6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@dnd-kit/modifiers':
+        specifier: ~9.0.0
+        version: 9.0.0(@dnd-kit/core@6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      '@dnd-kit/sortable':
+        specifier: ~10.0.0
+        version: 10.0.0(@dnd-kit/core@6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      '@dnd-kit/utilities':
+        specifier: ~3.2.2
+        version: 3.2.2(react@18.3.1)
       '@internationalized/date':
         specifier: ~3.10.0
         version: 3.10.0
@@ -405,6 +417,12 @@ importers:
       '@react-spectrum/utils':
         specifier: ~3.11.5
         version: 3.11.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-table':
+        specifier: ~8.21.3
+        version: 8.21.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-virtual':
+        specifier: ~3.13.18
+        version: 3.13.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
@@ -439,6 +457,9 @@ importers:
       '@eslint/js':
         specifier: ~9.30.0
         version: 9.30.1
+      '@faker-js/faker':
+        specifier: ~10.3.0
+        version: 10.3.0
       '@react-types/accordion':
         specifier: 3.0.0-alpha.14
         version: 3.0.0-alpha.14(react@18.3.1)
@@ -783,6 +804,34 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
+  '@dnd-kit/accessibility@3.1.1':
+    resolution: {integrity: sha512-2P+YgaXF+gRsIihwwY1gCsQSYnu9Zyj2py8kY5fFvUM1qm2WA2u639R6YNVfU4GWr+ZM5mqEsfHZZLoRONbemw==}
+    peerDependencies:
+      react: '>=16.8.0'
+
+  '@dnd-kit/core@6.3.1':
+    resolution: {integrity: sha512-xkGBRQQab4RLwgXxoqETICr6S5JlogafbhNsidmrkVv2YRs5MLwpjoF2qpiGjQt8S9AoxtIV603s0GIUpY5eYQ==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@dnd-kit/modifiers@9.0.0':
+    resolution: {integrity: sha512-ybiLc66qRGuZoC20wdSSG6pDXFikui/dCNGthxv4Ndy8ylErY0N3KVxY2bgo7AWwIbxDmXDg3ylAFmnrjcbVvw==}
+    peerDependencies:
+      '@dnd-kit/core': ^6.3.0
+      react: '>=16.8.0'
+
+  '@dnd-kit/sortable@10.0.0':
+    resolution: {integrity: sha512-+xqhmIIzvAYMGfBYYnbKuNicfSsk4RksY2XdmJhT+HAC01nix6fHCztU68jooFiMUB01Ky3F0FyOvhG/BZrWkg==}
+    peerDependencies:
+      '@dnd-kit/core': ^6.3.0
+      react: '>=16.8.0'
+
+  '@dnd-kit/utilities@3.2.2':
+    resolution: {integrity: sha512-+MKAJEOfaBe5SmV6t34p80MMKhjvUz0vRrvVJbPT0WElzaOJ/1xs+D+KDv+tD/NE5ujfrChEcshd4fLn0wpiqg==}
+    peerDependencies:
+      react: '>=16.8.0'
+
   '@emnapi/core@1.4.3':
     resolution: {integrity: sha512-4m62DuCE07lw01soJwPiBGC0nAww0Q+RY70VZ+n49yDIO13yyinhbWCeNnaob0lakDtWQzSdtNWzJeOJt2ma+g==}
 
@@ -1041,6 +1090,10 @@ packages:
   '@eslint/plugin-kit@0.3.5':
     resolution: {integrity: sha512-Z5kJ+wU3oA7MMIqVR9tyZRtjYPr4OC004Q4Rw7pgOKUOKkJfZ3O24nz3WYfGRpMDNmcOi3TwQOmgm7B7Tpii0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@faker-js/faker@10.3.0':
+    resolution: {integrity: sha512-It0Sne6P3szg7JIi6CgKbvTZoMjxBZhcv91ZrqrNuaZQfB5WoqYYbzCUOq89YR+VY8juY9M1vDWmDDa2TzfXCw==}
+    engines: {node: ^20.19.0 || ^22.13.0 || ^23.5.0 || >=24.0.0, npm: '>=10'}
 
   '@floating-ui/core@1.7.2':
     resolution: {integrity: sha512-wNB5ooIKHQc+Kui96jE/n69rHFWAVoxn5CAzL1Xdd8FG03cgY3MLO+GF9U3W737fYDSgPWA6MReKhBQBop6Pcw==}
@@ -2908,6 +2961,26 @@ packages:
 
   '@tailwindcss/postcss@4.1.12':
     resolution: {integrity: sha512-5PpLYhCAwf9SJEeIsSmCDLgyVfdBhdBpzX1OJ87anT9IVR0Z9pjM0FNixCAUAHGnMBGB8K99SwAheXrT0Kh6QQ==}
+
+  '@tanstack/react-table@8.21.3':
+    resolution: {integrity: sha512-5nNMTSETP4ykGegmVkhjcS8tTLW6Vl4axfEGQN3v0zdHYbK4UfoqfPChclTrJ4EoK9QynqAu9oUf8VEmrpZ5Ww==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+
+  '@tanstack/react-virtual@3.13.18':
+    resolution: {integrity: sha512-dZkhyfahpvlaV0rIKnvQiVoWPyURppl6w4m9IwMDpuIjcJ1sD9YGWrt0wISvgU7ewACXx2Ct46WPgI6qAD4v6A==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  '@tanstack/table-core@8.21.3':
+    resolution: {integrity: sha512-ldZXEhOBb8Is7xLs01fR3YEc3DERiz5silj8tnGkFZytt1abEvl/GhUmCE0PMLaMPTa3Jk4HbKmRlHmu+gCftg==}
+    engines: {node: '>=12'}
+
+  '@tanstack/virtual-core@3.13.18':
+    resolution: {integrity: sha512-Mx86Hqu1k39icq2Zusq+Ey2J6dDWTjDvEv43PJtRCoEYTLyfaPnxIQ6iy7YAOK0NV/qOEmZQ/uCufrppZxTgcg==}
 
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
@@ -7632,6 +7705,38 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
+  '@dnd-kit/accessibility@3.1.1(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      tslib: 2.8.1
+
+  '@dnd-kit/core@6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@dnd-kit/accessibility': 3.1.1(react@18.3.1)
+      '@dnd-kit/utilities': 3.2.2(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tslib: 2.8.1
+
+  '@dnd-kit/modifiers@9.0.0(@dnd-kit/core@6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@dnd-kit/core': 6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@dnd-kit/utilities': 3.2.2(react@18.3.1)
+      react: 18.3.1
+      tslib: 2.8.1
+
+  '@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@dnd-kit/core': 6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@dnd-kit/utilities': 3.2.2(react@18.3.1)
+      react: 18.3.1
+      tslib: 2.8.1
+
+  '@dnd-kit/utilities@3.2.2(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      tslib: 2.8.1
+
   '@emnapi/core@1.4.3':
     dependencies:
       '@emnapi/wasi-threads': 1.0.2
@@ -7844,6 +7949,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.15.2
       levn: 0.4.1
+
+  '@faker-js/faker@10.3.0': {}
 
   '@floating-ui/core@1.7.2':
     dependencies:
@@ -10667,6 +10774,22 @@ snapshots:
       '@tailwindcss/oxide': 4.1.12
       postcss: 8.5.6
       tailwindcss: 4.1.12
+
+  '@tanstack/react-table@8.21.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/table-core': 8.21.3
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@tanstack/react-virtual@3.13.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/virtual-core': 3.13.18
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@tanstack/table-core@8.21.3': {}
+
+  '@tanstack/virtual-core@3.13.18': {}
 
   '@testing-library/dom@10.4.0':
     dependencies:
