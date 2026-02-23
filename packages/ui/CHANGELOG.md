@@ -575,7 +575,6 @@ Logos:
 Symbols:
 
 - GooglePlusSymbol
-- GoogleStoreSymbol
 - MastercardAcceptedSymbol
 - MastercardHorizontalSymbol
 - MicrosoftStoreSymbol

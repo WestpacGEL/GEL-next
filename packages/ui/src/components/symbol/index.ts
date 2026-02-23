@@ -26,6 +26,7 @@ export { FacebookCircularSymbol } from './components/symbols/facebook-circular-s
 export { FacebookSymbol } from './components/symbols/facebook-symbol.js';
 export { GooglePayInverseSymbol } from './components/symbols/google-pay-inverse-symbol.js';
 export { GooglePaySymbol } from './components/symbols/google-pay-symbol.js';
+export { GoogleStoreSymbol } from './components/symbols/google-store-symbol.js';
 export { InstagramSymbol } from './components/symbols/instagram-symbol.js';
 export { LinkedInSymbol } from './components/symbols/linked-in-symbol.js';
 export { MastercardSymbol } from './components/symbols/mastercard-symbol.js';
@@ -33,6 +34,7 @@ export { PayIDInverseSymbol } from './components/symbols/pay-id-inverse-symbol.j
 export { PayIDSymbol } from './components/symbols/pay-id-symbol.js';
 export { PayToInverseSymbol } from './components/symbols/pay-to-inverse-symbol.js';
 export { PayToSymbol } from './components/symbols/pay-to-symbol.js';
+export { SamsungPayButtonInverseSymbol } from './components/symbols/samsung-pay-button-inverse-symbol.js';
 export { SamsungPayButtonSymbol } from './components/symbols/samsung-pay-button-symbol.js';
 export { STGDragonLogo } from './components/logos/stg-dragon-logo.js';
 export { STGLogo } from './components/logos/stg-logo.js';
