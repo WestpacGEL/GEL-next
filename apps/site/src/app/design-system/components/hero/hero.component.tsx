@@ -54,7 +54,7 @@ export function Hero({ brand }: { brand: BrandKey }) {
           <GridItem tag="li" span={{ initial: 12, xsl: 4 }} className={`flex flex-col items-center`}>
             <div className="mb-3">
               <StopwatchPictogram
-                mode="reversed"
+                mode="mono"
                 className={`
                   hidden
                   sm:inline-block
@@ -80,7 +80,7 @@ export function Hero({ brand }: { brand: BrandKey }) {
           <GridItem tag="li" span={{ initial: 12, xsl: 4 }} className={`flex flex-col items-center`}>
             <div className="mb-3">
               <TruckPictogram
-                mode="reversed"
+                mode="mono"
                 className={`
                   hidden
                   sm:inline-block
@@ -106,7 +106,7 @@ export function Hero({ brand }: { brand: BrandKey }) {
           <GridItem tag="li" span={{ initial: 12, xsl: 4 }} className={`flex flex-col items-center`}>
             <div className="mb-3">
               <AccessibilityPictogram
-                mode="reversed"
+                mode="mono"
                 className={`
                   hidden
                   sm:inline-block

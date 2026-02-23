@@ -1,6 +1,6 @@
 import { type SVGAttributes } from 'react';
 
-export type PictogramMode = 'dark' | 'light' | 'duo' | 'reversed';
+export type PictogramMode = 'base' | 'mono' | 'duo';
 
 export type PictogramProps = SVGAttributes<SVGElement> & {
   /**

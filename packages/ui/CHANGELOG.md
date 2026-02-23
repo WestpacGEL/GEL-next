@@ -540,6 +540,26 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 </BottomSheet>
 ```
 
+### Pictogram mode prop value change
+
+To avoid confusion with dark mode and light mode we have changed the possible values for the pictogram mode prop.
+
+#### Before
+
+```tsx
+export type PictogramMode = 'dark' | 'light' | 'duo';
+
+<Pictogram mode="dark" />;
+```
+
+#### After
+
+```tsx
+export type PictogramMode = 'base' | 'mono' | 'duo';
+
+<Pictogram mode="base" />;
+```
+
 ### Removed/Updated Logos and Symbols
 
 We have taken the opportunity to remove and update all the symbols and logos exported from the library. For updates most symbols/logos will have a dark mode variant that turns on when switching to dark mode.
