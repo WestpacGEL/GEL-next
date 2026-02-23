@@ -10,7 +10,7 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
 
   const sortingIcon = (sorted: SortDirection | false, onClick: () => void) => {
     return (
-      <button onClick={onClick} className="cursor-pointer flex flex-col">
+      <button onClick={onClick} className="flex cursor-pointer flex-col">
         <ExpandLessIcon
           size="xsmall"
           className="mb-[-2px]"
@@ -59,10 +59,10 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
         )}
       </div>
       {!header.isPlaceholder && header.column.getCanPin() && header.column.id !== 'select-column' && (
-        <div className="flex gap-1 justify-center">
+        <div className="flex justify-center gap-1">
           {header.column.getIsPinned() !== 'left' ? (
             <button
-              className="border rounded px-2"
+              className="rounded border px-2"
               onClick={() => {
                 header.column.pin('left');
               }}
@@ -72,7 +72,7 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
           ) : null}
           {header.column.getIsPinned() ? (
             <button
-              className="border rounded px-2"
+              className="rounded border px-2"
               onClick={() => {
                 header.column.pin(false);
               }}
@@ -82,7 +82,7 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
           ) : null}
           {header.column.getIsPinned() !== 'right' ? (
             <button
-              className="border rounded px-2"
+              className="rounded border px-2"
               onClick={() => {
                 header.column.pin('right');
               }}
