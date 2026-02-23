@@ -29,8 +29,6 @@ npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tail
 @import 'tailwindcss';
 /* Tailwind setup */
 @import '@westpac/style-config/tailwind';
-/* Other setups */
-@import '@westpac/style-config';
 /* Register GEL components source for Tailwind */
 @source "<relative_path>/node_modules/@westpac/ui/src";
 

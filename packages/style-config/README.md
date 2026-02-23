@@ -48,13 +48,6 @@ In your main css file import the default GEL styles
 
 #### Theming
 
-In your main CSS file, import the Tailwind directives and GEL styles:
-
-```css
-@import 'tailwindcss';
-@import '@westpac/style-config';
-```
-
 For brand theming, import the required brand stylesheets:
 
 ```css
