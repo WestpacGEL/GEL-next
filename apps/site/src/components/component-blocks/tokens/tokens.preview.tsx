@@ -26,7 +26,7 @@ export const tokens = component({
           ],
           defaultValue: 'solid',
         }),
-        reserved: fields.checkbox({ label: 'Reserved token' }),
+        restricted: fields.checkbox({ label: 'Restricted token' }),
         new: fields.checkbox({ label: 'New token' }),
       }),
       { itemLabel: props => props.fields.tokenName.value },

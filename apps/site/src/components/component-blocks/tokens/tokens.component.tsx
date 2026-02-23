@@ -93,9 +93,9 @@ export function Tokens({ title, tokens }: TokensData) {
                 <div className="flex flex-col gap-1 typography-body-10">
                   <strong className="mb-0.5">{token.tokenName}</strong>
                   <p>{token.description}</p>
-                  {(token.reserved || token.new) && (
+                  {(token.restricted || token.new) && (
                     <div className="flex gap-2 pt-1">
-                      {token.reserved && <Badge color="muted">Reserved</Badge>}
+                      {token.restricted && <Badge color="muted">Restricted</Badge>}
                       {token.new && <Badge color="info">New</Badge>}
                     </div>
                   )}

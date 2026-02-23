@@ -53,7 +53,7 @@ export function RelatedInfo({ relatedComponents, relatedArticles }: RelatedInfoP
               <ul>
                 {relatedComponents?.links?.map(({ title, slug }) => {
                   return (
-                    <li key={title}>
+                    <li key={title} className="last:pb-6">
                       <Link href={`/design-system/${brand}/${slug}`}>{title}</Link>
                     </li>
                   );

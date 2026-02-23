@@ -32,7 +32,7 @@ export type TokenItem = {
   strokeColour?: string;
   textColour?: string;
   circleType?: 'solid' | 'borderColour' | 'textColour' | 'border';
-  reserved?: boolean;
+  restricted?: boolean;
   new?: boolean;
 };
 
