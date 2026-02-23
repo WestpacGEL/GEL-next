@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 type MetadataProps = {
-  params: { article: string };
+  params: Promise<{ article: string }>;
 };
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
 }
 
 export default async function ArticleServerPage({ params }: { params: { article: string } }) {
-  const { article: articleParam } = await params;
+  const { article: articleParam } = params;
   const readerInstance = await reader();
   const article = await readerInstance.collections.articles.readOrThrow(articleParam);
 

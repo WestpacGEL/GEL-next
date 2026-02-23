@@ -18,7 +18,7 @@ import { CodeSectionProps } from './components/content-tabs/components/code-cont
 import { DesignSectionProps } from './components/content-tabs/components/design-content/design-content.types';
 
 type MetadataProps = {
-  params: { component: string[] };
+  params: Promise<{ component: string[] }>;
 };
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
@@ -59,8 +59,8 @@ export default async function ComponentPage({
   params,
   searchParams,
 }: {
-  params: { component: string[] };
-  searchParams?: Record<string, string | undefined>;
+  params: Promise<{ component: string[] }>;
+  searchParams?: Promise<Record<string, string | undefined>>;
 }) {
   const searchParamsAwaited = await searchParams;
   const brand = searchParamsAwaited?.brand || 'wbc';

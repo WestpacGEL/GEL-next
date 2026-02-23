@@ -13,7 +13,7 @@ export default async function DesignSystemLayout({
   params,
 }: {
   children: ReactNode;
-  params: { brand: string };
+  params: Promise<{ brand: string }>;
 }) {
   const paramsBrand = await params;
   const readerInstance = await reader();

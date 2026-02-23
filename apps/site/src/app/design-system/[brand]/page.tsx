@@ -18,7 +18,7 @@ import {
 
 import { Hero, Section, SectionHeading, SectionItem } from '../components';
 
-export default async function DesignSystemHomePage({ params }: { params: { brand: string } }) {
+export default async function DesignSystemHomePage({ params }: { params: Promise<{ brand: string }> }) {
   const paramsBrand = await params;
   const brand = (paramsBrand.brand || 'wbc') as BrandKey;
   return (
