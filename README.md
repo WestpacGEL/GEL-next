@@ -46,8 +46,6 @@ In your main CSS file, import the Tailwind directives and GEL styles:
 @import 'tailwindcss';
 /* Tailwind setup */
 @import '@westpac/style-config/tailwind';
-/* Other setups */
-@import '@westpac/style-config';
 /* Register GEL components source for tailwind */
 @source "<relative_path>/node_modules/@westpac/ui/src";
 ```
