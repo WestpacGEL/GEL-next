@@ -2,7 +2,7 @@ import { DocumentElement } from '@keystatic/core';
 
 export type RelatedInfoProps = {
   relatedArticles?: DocumentElement[];
-  relatedComponents?: RelatedInfoLinks[];
+  relatedComponents?: { heading?: string; icon?: 'tag' | 'cube'; links?: RelatedInfoLinks[] };
 };
 
 export type RelatedInfoLinks = {

@@ -16,10 +16,11 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Grid
-    slug: foundation/layout/grid
-  - title: Spacing
-    slug: foundation/layout/spacing
+  links:
+      - title: Grid
+        slug: foundation/layout/grid
+      - title: Spacing
+        slug: foundation/layout/spacing
 code:
   - title:
       name: Development examples

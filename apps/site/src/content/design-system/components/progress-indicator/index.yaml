@@ -28,7 +28,8 @@ accessibility:
   - title:
       name: Notes on accessibility
       slug: notes-on-accessibility
-relatedComponents: []
+relatedComponents:
+  links: []
 code:
   - title:
       name: Development examples

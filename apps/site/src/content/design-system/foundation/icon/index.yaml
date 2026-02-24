@@ -53,12 +53,13 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
-  - title: Logos
-    slug: foundation/logo
-  - title: Colours
-    slug: foundation/colour
-  - title: Pictograms
-    slug: foundation/pictogram
+  links:
+      - title: Logos
+        slug: foundation/logo
+      - title: Colours
+        slug: foundation/colour
+      - title: Pictograms
+        slug: foundation/pictogram
 code:
   - title:
       name: Development examples

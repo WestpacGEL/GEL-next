@@ -29,12 +29,13 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Checkboxes
-    slug: components/checkbox-group
-  - title: Buttons
-    slug: components/button
-  - title: Switches
-    slug: components/switch
+  links:
+      - title: Checkboxes
+        slug: components/checkbox-group
+      - title: Buttons
+        slug: components/button
+      - title: Switches
+        slug: components/switch
 code:
   - title:
       name: Development examples
