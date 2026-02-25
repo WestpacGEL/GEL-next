@@ -15,7 +15,7 @@ The padding properties are used to generate space around an element's content, i
         {SPACING_SCALE.map(spacing => {
         const pixelSize = SPACING_UNIT * spacing.value;
         const remSize = pixelSize / 16;
-        return <TableRow key={spacing.className}>
+        return <TableRow key={`padding-${spacing.className}`}>
               <TableCell className="align-middle">
                 <div className={clsx(spacing.className, SPACING_DEFAULT_CLASSES)} />
               </TableCell>
@@ -23,7 +23,7 @@ The padding properties are used to generate space around an element's content, i
               <TableCell className="align-middle">{remSize}rem</TableCell>
               <TableCell>
                 <div className="flex flex-wrap gap-1 align-middle">
-                  {VARIATION_MARGIN_PADDING.map(v => <Badge color="faint">{`.p${v}-${spacing.value}`}</Badge>)}
+                  {VARIATION_MARGIN_PADDING.map(v => <Badge key={`padding-${spacing.className}-${v}`} color="faint">{`.p${v}-${spacing.value}`}</Badge>)}
                 </div>
               </TableCell>
             </TableRow>;

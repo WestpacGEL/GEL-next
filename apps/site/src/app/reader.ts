@@ -10,17 +10,19 @@ import keystaticConfig from '../../keystatic.config';
 // Force Next.js to package all the markdown files in the content folder. Don't delete this line!
 path.join(process.cwd(), 'src', 'content');
 
-export const reader = cache(() => {
+export const reader = cache(async () => {
   let isDraftModeEnabled = false;
   // draftMode throws in e.g. generateStaticParams
   try {
-    isDraftModeEnabled = draftMode().isEnabled;
+    const { isEnabled } = await draftMode();
+    isDraftModeEnabled = isEnabled;
   } catch {
     // noop
   }
 
   if (isDraftModeEnabled) {
-    const branch = cookies().get('ks-branch')?.value;
+    const { get } = await cookies();
+    const branch = get('ks-branch')?.value;
 
     if (branch) {
       return createGitHubReader(keystaticConfig, {
@@ -29,7 +31,7 @@ export const reader = cache(() => {
         pathPrefix: 'apps/site',
         ref: branch,
         // Assuming an existing GitHub app
-        token: cookies().get('keystatic-gh-access-token')?.value,
+        token: get('keystatic-gh-access-token')?.value,
       });
     }
   }

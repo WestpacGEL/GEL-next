@@ -18,8 +18,9 @@ import {
 
 import { Hero, Section, SectionHeading, SectionItem } from '../components';
 
-export default function DesignSystemHomePage({ params }: { params: { brand: string } }) {
-  const brand = (params.brand || 'wbc') as BrandKey;
+export default async function DesignSystemHomePage({ params }: { params: Promise<{ brand: string }> }) {
+  const paramsBrand = await params;
+  const brand = (paramsBrand.brand || 'wbc') as BrandKey;
   return (
     <div tabIndex={-1} id="content" className="focus:outline-none">
       <Hero brand={brand} />

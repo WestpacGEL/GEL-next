@@ -13,9 +13,11 @@ export default async function DesignSystemLayout({
   params,
 }: {
   children: ReactNode;
-  params: { brand: string };
+  params: Promise<{ brand: string }>;
 }) {
-  const allContent = await reader().collections.designSystem.all();
+  const paramsBrand = await params;
+  const readerInstance = await reader();
+  const allContent = await readerInstance.collections.designSystem.all();
   const formattedItems = sortMenu(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     formatNavItems(
@@ -23,7 +25,7 @@ export default async function DesignSystemLayout({
     ),
   );
 
-  const brand = (params?.brand ?? 'wbc') as BrandKey; // double check this is the best way to do this.
+  const brand = (paramsBrand?.brand ?? 'wbc') as BrandKey; // double check this is the best way to do this.
 
   return (
     <div data-theme={brand?.toLowerCase()}>
