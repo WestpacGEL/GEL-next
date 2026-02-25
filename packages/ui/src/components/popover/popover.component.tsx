@@ -38,9 +38,11 @@ export function Popover({
 
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLElement>) => {
+      if (isOpenDefault) setIsOpenDefault(false);
       onClick(event);
       state.toggle();
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [onClick, state],
   );
 
