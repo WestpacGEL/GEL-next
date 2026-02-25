@@ -95,9 +95,9 @@ export function Popover({
           // Ensures popover heading doesn't get focused if default opened
           open={isOpenDefault}
           onClose={() => {
+            ref.current?.focus();
             // Ensures focus handling works once popover is closed if it was default opened
             if (isOpenDefault) {
-              ref.current?.focus();
               setIsOpenDefault(false);
             }
           }}
