@@ -58,7 +58,7 @@ function BaseSelectorCheckboxGroupOption(
       className={styles.base({})}
     >
       <VisuallyHidden>
-        <input {...mergeProps(inputProps, focusProps)} ref={localRef} />
+        <input {...mergeProps(inputProps, focusProps)} aria-describedby={undefined} ref={localRef} />
       </VisuallyHidden>
       {children}
     </FlexiCell>
