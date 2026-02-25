@@ -42,7 +42,8 @@ export function BasePanel({
   }, [state.isOpen]);
 
   return (
-    <FocusScope restoreFocus>
+    // autoFocus is needed for when there is no heading
+    <FocusScope autoFocus={!open} restoreFocus>
       <div
         style={popoverPosition}
         className={styles.popover()}
