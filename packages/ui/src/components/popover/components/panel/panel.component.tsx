@@ -17,6 +17,8 @@ export function BasePanel({
   placement = 'top',
   id,
   triggerRef,
+  onClose,
+  open,
   portal,
 }: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
@@ -31,14 +33,16 @@ export function BasePanel({
   });
   const styles = panelStyles({ placement: localPlacement });
   useEffect(() => {
-    if (state.isOpen) {
+    if (state.isOpen && !open) {
       if (headingRef.current) {
         headingRef.current.focus();
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.isOpen]);
+
   return (
-    <FocusScope autoFocus restoreFocus>
+    <FocusScope restoreFocus>
       <div
         style={popoverPosition}
         className={styles.popover()}
@@ -49,7 +53,7 @@ export function BasePanel({
       >
         <div className={styles.content()}>
           {heading && (
-            <Tag className={styles.heading()} tabIndex={-1} ref={headingRef} aria-describedby="popover-content">
+            <Tag className={styles.heading()} tabIndex={-1} ref={headingRef}>
               {heading}
             </Tag>
           )}
@@ -59,7 +63,10 @@ export function BasePanel({
           <Button
             look="link"
             size="small"
-            onClick={() => state.close()}
+            onClick={() => {
+              onClose?.();
+              state.close();
+            }}
             className={styles.closeBtn()}
             iconAfter={() => <CloseIcon color="muted" size="small" aria-hidden />}
             aria-label="Close popover"
