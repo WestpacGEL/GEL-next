@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FocusScope } from 'react-aria';
 import { createPortal } from 'react-dom';
 
@@ -21,6 +21,7 @@ export function BasePanel({
 }: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
   const { popoverPosition, arrowPosition, localPlacement } = usePanel({
     state,
     placement,
@@ -29,16 +30,30 @@ export function BasePanel({
     popoverRef,
   });
   const styles = panelStyles({ placement: localPlacement });
+  useEffect(() => {
+    if (state.isOpen) {
+      if (headingRef.current) {
+        headingRef.current.focus();
+      }
+    }
+  }, [state.isOpen]);
   return (
     <FocusScope autoFocus restoreFocus>
-      <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef}>
+      <div
+        style={popoverPosition}
+        className={styles.popover()}
+        test-id="popover"
+        id={id}
+        ref={popoverRef}
+        role="dialog"
+      >
         <div className={styles.content()}>
           {heading && (
-            <Tag className={styles.heading()} tabIndex={0}>
+            <Tag className={styles.heading()} tabIndex={-1} ref={headingRef} aria-describedby="popover-content">
               {heading}
             </Tag>
           )}
-          <div className={styles.body()} tabIndex={0}>
+          <div className={styles.body()} id="popover-content">
             {content}
           </div>
           <Button

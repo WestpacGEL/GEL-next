@@ -70,6 +70,7 @@ export function Popover({
         soft={soft}
         aria-expanded={state.isOpen}
         aria-controls={panelId}
+        aria-haspopup="dialog"
         onClick={handleClick}
         ref={ref}
         size={size}
