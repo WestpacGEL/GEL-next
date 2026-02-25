@@ -5,7 +5,8 @@ import { reader } from '@/app/reader';
 import { ArticlePage } from './components/article-page/article-page.component';
 
 export async function generateStaticParams() {
-  const articles = await reader().collections.articles.all();
+  const readerInstance = await reader();
+  const articles = await readerInstance.collections.articles.all();
 
   return articles.map(article => ({
     article: article.slug,
@@ -13,12 +14,13 @@ export async function generateStaticParams() {
 }
 
 type MetadataProps = {
-  params: { article: string };
+  params: Promise<{ article: string }>;
 };
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
-  const { article: articleParam } = params;
-  const article = await reader().collections.articles.readOrThrow(articleParam);
+  const { article: articleParam } = await params;
+  const readerInstance = await reader();
+  const article = await readerInstance.collections.articles.readOrThrow(articleParam);
 
   const title = `${article.name} | GEL Design System`;
   const description = article.description;
@@ -47,9 +49,10 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
   };
 }
 
-export default async function ArticleServerPage({ params }: { params: { article: string } }) {
-  const { article: articleParam } = params;
-  const article = await reader().collections.articles.readOrThrow(articleParam);
+export default async function ArticleServerPage({ params }: { params: Promise<{ article: string }> }) {
+  const { article: articleParam } = await params;
+  const readerInstance = await reader();
+  const article = await readerInstance.collections.articles.readOrThrow(articleParam);
 
   const articleContent = await article.content();
 

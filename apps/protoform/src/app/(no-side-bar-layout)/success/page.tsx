@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/deprecation */
 'use client';
 
 import { Button, List, ListItem } from '@westpac/ui';
