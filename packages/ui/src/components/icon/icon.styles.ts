@@ -5,11 +5,11 @@ export const styles = tv(
     base: 'inline-block transition-colors disabled:pointer-events-none disabled:opacity-50',
     variants: {
       size: {
-        xsmall: 'size-2',
-        small: 'size-3',
-        medium: 'size-4',
-        large: 'size-6',
-        xlarge: 'size-8',
+        xsmall: 'min-h-2 min-w-2',
+        small: 'min-h-3 min-w-3',
+        medium: 'min-h-4 min-w-4',
+        large: 'min-h-6 min-w-6',
+        xlarge: 'min-h-8 min-w-8',
       },
       color: {
         success: 'text-success',
