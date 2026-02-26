@@ -45,7 +45,6 @@ export function BasePanel({
   }, [state.isOpen]);
 
   return (
-    // autoFocus is needed for when there is no heading
     <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef} role="dialog">
       <div className={styles.content()}>
         {heading && (
