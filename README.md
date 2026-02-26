@@ -71,6 +71,8 @@ To switch between brands, set the `data-brand` attribute on a parent element:
 </div>
 ```
 
+NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
+
 To toggle between light and dark mode, set the `data-theme` attribute:
 
 ```html
@@ -93,6 +95,8 @@ Following example shows adding `wbc` brand. You can add other valid brand names 
   ...
 </html>
 ```
+
+NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
 
 For theme modes (light/dark), use the `data-theme` attribute:
 

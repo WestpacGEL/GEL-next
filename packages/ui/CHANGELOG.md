@@ -63,6 +63,7 @@ npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tail
 4. After including the css file to enable brand + theme switching, ensure your root HTML element includes:
 
 NOTE: Be sure to pass the brand with data-brand as previously it was data-theme
+NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
 
 ```html
 <html data-brand="wbc" data-theme="dark|light">
