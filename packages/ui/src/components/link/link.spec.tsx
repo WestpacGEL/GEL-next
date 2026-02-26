@@ -16,7 +16,7 @@ describe('Link', () => {
         This is a test
       </Link>,
     );
-    expect(getByTestId('test-link')).toHaveClass('text-text items-center hover:underline');
+    expect(getByTestId('test-link')).toHaveClass('text-text hover:underline');
   });
 
   it('should have the correct style when inline', () => {
@@ -25,7 +25,9 @@ describe('Link', () => {
         This is a test
       </Link>,
     );
-    expect(getByTestId('test-link')).toHaveClass('text-link items-baseline underline hover:no-underline');
+    expect(getByTestId('test-link')).toHaveClass(
+      'inline bg-[transparent] text-link outline-none underline hover:no-underline',
+    );
   });
 
   it('should render ArrowRightIcon when type is standalone and no other icon passed in', () => {
