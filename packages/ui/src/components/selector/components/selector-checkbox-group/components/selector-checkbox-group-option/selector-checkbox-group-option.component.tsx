@@ -58,7 +58,12 @@ function BaseSelectorCheckboxGroupOption(
       className={styles.base({})}
     >
       <VisuallyHidden>
-        <input {...mergeProps(inputProps, focusProps)} aria-describedby={undefined} ref={localRef} />
+        <input
+          {...mergeProps(inputProps, focusProps)}
+          // override the aria-describedby to prevent screen readers from reading the content of the option twice, once from the input and once from the cell
+          aria-describedby={undefined}
+          ref={localRef}
+        />
       </VisuallyHidden>
       {children}
     </FlexiCell>
