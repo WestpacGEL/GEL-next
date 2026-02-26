@@ -94,7 +94,7 @@ export const Link = () => {
  */
 export const Button = () => {
   return (
-    <Selector type="button" label="test" description="test description">
+    <Selector type="button">
       {[
         { key: 'A', disabled: false },
         { key: 'B', disabled: false },
