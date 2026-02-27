@@ -14,9 +14,9 @@ export const StaticCode = ({
           <pre className={[className, 'p-2'].join(' ')} style={style}>
             <code className="font-monospace text-base leading-loose">
               {tokens.map((line, lineKey) => (
-                <div key={lineKey} {...getLineProps({ line, key: lineKey })}>
+                <div key={lineKey} {...getLineProps({ line })}>
                   {line.map((token, tokenKey) => (
-                    <span key={tokenKey} {...getTokenProps({ token, key: tokenKey })} />
+                    <span key={tokenKey} {...getTokenProps({ token })} />
                   ))}
                 </div>
               ))}

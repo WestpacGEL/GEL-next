@@ -1,3 +1,4 @@
+// TODO: This component will not work with the Next Link component in Next.js 16+ as legacyBehavior as has been deprecated in 15. Need to find a solution.
 'use client';
 
 import React, { ForwardedRef, RefObject, forwardRef } from 'react';

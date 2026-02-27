@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useId, useLayoutEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
 import { Button } from '../button/index.js';
@@ -34,12 +34,15 @@ export function Popover({
   const panelId = useId();
   const styles = popoverStyles({ linkStyling });
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement & HTMLSpanElement & HTMLDivElement>(null);
+  const [isOpenDefault, setIsOpenDefault] = useState(open);
 
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLElement>) => {
+      if (isOpenDefault) setIsOpenDefault(false);
       onClick(event);
       state.toggle();
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [onClick, state],
   );
 
@@ -59,7 +62,8 @@ export function Popover({
 
   useLayoutEffect(() => {
     if (open) state.setOpen(true);
-  }, [open, state]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
 
   return (
     <div className={styles.base({ className })}>
@@ -70,6 +74,7 @@ export function Popover({
         soft={soft}
         aria-expanded={state.isOpen}
         aria-controls={panelId}
+        aria-haspopup="dialog"
         onClick={handleClick}
         ref={ref}
         size={size}
@@ -87,6 +92,15 @@ export function Popover({
           state={state}
           id={panelId}
           triggerRef={ref}
+          // Ensures popover heading doesn't get focused if default opened
+          open={isOpenDefault}
+          onClose={() => {
+            ref.current?.focus();
+            // Ensures focus handling works once popover is closed if it was default opened
+            if (isOpenDefault) {
+              setIsOpenDefault(false);
+            }
+          }}
         />
       )}
     </div>

@@ -3,19 +3,17 @@ import { tv } from 'tailwind-variants';
 export const styles = tv(
   {
     slots: {
-      base: 'inline-flex bg-[transparent] hover:underline',
-      iconBefore: 'mr-1',
-      iconAfter: 'ml-1',
+      base: 'bg-[transparent] hover:underline',
+      iconBefore: 'relative bottom-[0.1em] mr-1',
+      iconAfter: 'relative bottom-[0.1em] ml-1',
     },
     variants: {
       type: {
         inline: {
-          base: 'items-baseline text-link',
-          iconBefore: 'self-center',
-          iconAfter: 'self-center',
+          base: 'inline text-link',
         },
         standalone: {
-          base: 'items-center text-text',
+          base: 'text-text',
         },
       },
       underline: {

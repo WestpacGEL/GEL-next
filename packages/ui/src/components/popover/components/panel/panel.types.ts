@@ -15,6 +15,14 @@ export type PanelProps = {
    */
   headingTag?: keyof Pick<JSX.IntrinsicElements, 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>;
   /**
+   * onClose callback
+   */
+  onClose?: () => void;
+  /**
+   * Whether the popover is open by default
+   */
+  open?: boolean;
+  /**
    * Placement of popover. If no placement provided it will default to top unless there is no space then will appear on bottom.
    */
   placement?: 'top' | 'bottom';

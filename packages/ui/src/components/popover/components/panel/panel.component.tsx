@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
-import { FocusScope } from 'react-aria';
+import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
+import { ButtonRef } from '../../../button/button.types.js';
 import { Button } from '../../../button/index.js';
 import { CloseIcon } from '../../../icon/index.js';
 
@@ -17,10 +17,14 @@ export function BasePanel({
   placement = 'top',
   id,
   triggerRef,
+  onClose,
+  open,
   portal,
 }: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const buttonRef = useRef<ButtonRef>(null);
   const { popoverPosition, arrowPosition, localPlacement } = usePanel({
     state,
     placement,
@@ -29,30 +33,44 @@ export function BasePanel({
     popoverRef,
   });
   const styles = panelStyles({ placement: localPlacement });
+  useEffect(() => {
+    if (state.isOpen && !open) {
+      if (headingRef.current) {
+        headingRef.current.focus();
+      } else {
+        buttonRef.current?.focus();
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.isOpen]);
+
   return (
-    <FocusScope autoFocus restoreFocus>
-      <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef}>
-        <div className={styles.content()}>
-          {heading && (
-            <Tag className={styles.heading()} tabIndex={0}>
-              {heading}
-            </Tag>
-          )}
-          <div className={styles.body()} tabIndex={0}>
-            {content}
-          </div>
-          <Button
-            look="link"
-            size="small"
-            onClick={() => state.close()}
-            className={styles.closeBtn()}
-            iconAfter={() => <CloseIcon color="muted" size="small" aria-hidden />}
-            aria-label="Close popover"
-          />
+    <div style={popoverPosition} className={styles.popover()} test-id="popover" id={id} ref={popoverRef} role="dialog">
+      <div className={styles.content()}>
+        {heading && (
+          <Tag className={styles.heading()} tabIndex={-1} ref={headingRef}>
+            {heading}
+          </Tag>
+        )}
+        <div className={styles.body()} id="popover-content">
+          {content}
         </div>
-        <div aria-hidden className={styles.arrow()} style={arrowPosition} test-id="arrow" ref={arrowRef} />
+        <Button
+          look="link"
+          tag="button"
+          size="small"
+          ref={buttonRef}
+          onClick={() => {
+            onClose?.();
+            state.close();
+          }}
+          className={styles.closeBtn()}
+          iconAfter={() => <CloseIcon color="muted" size="small" aria-hidden />}
+          aria-label="Close popover"
+        />
       </div>
-    </FocusScope>
+      <div aria-hidden className={styles.arrow()} style={arrowPosition} test-id="arrow" ref={arrowRef} />
+    </div>
   );
 }
 

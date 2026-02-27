@@ -9,10 +9,11 @@ export default async function ComponentLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { brand: string; component: string[] };
+  params: Promise<{ brand: string; component: string[] }>;
 }) {
-  const { brand, component } = params;
-  const content = await reader().collections.designSystem.readOrThrow(component.join('/'));
+  const { brand, component } = await params;
+  const readerInstance = await reader();
+  const content = await readerInstance.collections.designSystem.readOrThrow(component.join('/'));
 
   return (
     <>

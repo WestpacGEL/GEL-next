@@ -1,3 +1,5 @@
+// TODO: Find solution for Link component that doesn't require legacyBehavior and passHref props, and remove eslint disable for sonarjs/deprecation when this is resolved
+/* eslint-disable sonarjs/deprecation */
 'use client';
 
 import { List, ListItem, Link as GELLink } from '@westpac/ui';
@@ -17,14 +19,12 @@ export default function Home() {
           tag="h1"
           leadText={
             <>
-              <p className="mb-3">
-                The GEL Forms Framework provides a simple, scalable approach for collecting customer information. It
-                includes standardised form validation and offers different navigational options depending on the form’s
-                length and complexity.
-              </p>
-              <p>
-                See examples below <i>(the content in these examples is for UI demonstration purposed only)</i>:
-              </p>
+              The GEL Forms Framework provides a simple, scalable approach for collecting customer information. It
+              includes standardised form validation and offers different navigational options depending on the form’s
+              length and complexity.
+              <br />
+              <br />
+              See examples below <i>(the content in these examples is for UI demonstration purposed only)</i>:
             </>
           }
         >
