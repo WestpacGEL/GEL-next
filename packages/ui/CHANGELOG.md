@@ -63,6 +63,7 @@ npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tail
 4. After including the css file to enable brand + theme switching, ensure your root HTML element includes:
 
 NOTE: Be sure to pass the brand with data-brand as previously it was data-theme
+NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
 
 ```html
 <html data-brand="wbc" data-theme="dark|light">
@@ -600,6 +601,17 @@ Symbols:
 | `ButtonDropdown`                                   | Replaced by `Dropdown`                                               |
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
+
+## 0.59.3
+
+### Patch Changes
+
+- b47606f: - Made changes to popover to have better accessibility
+  - Fixed issue with radio and checkbox selector that caused hint to be read multiple times
+  - added min width and min height to icons so they don't shrink in certain cases
+  - fixed issue with Link component not wrapping correctly when content was too long
+  - made adjustments to Link to work better inline along with above changes
+  - added 4 new icons
 
 ## 0.59.2
 

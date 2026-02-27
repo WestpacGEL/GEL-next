@@ -42,6 +42,12 @@ export const Standalone = () => (
     <Link href="#" iconAfter={ArrowRightIcon}>
       Look I&#39;m a standalone link
     </Link>
+    <h1 className="font-bold">Long text in link</h1>
+    <Link href="#">
+      Look I&#39;m a standalone link Look I&#39;m a standalone link Look I&#39;m a standalone link Look I&#39;m a
+      standalone link Look I&#39;m a standalone link Look I&#39;m a standalone link Look I&#39;m a standalone link Look
+      I&#39;m a standalone link Look I&#39;m a standalone link Look I&#39;m a standalone link
+    </Link>
   </div>
 );
 
@@ -69,7 +75,10 @@ export const Inline = () => (
     <p className="typography-body-10 text-text-body">
       Lorem ipsum dolor{' '}
       <Link href="#" type="inline" iconBefore={PdfFileIcon}>
-        look, I&#39;m an inline link
+        look, I&#39;m an inline link look, I&#39;m an inline link look, I&#39;m an inline link look, I&#39;m an inline
+        link look, I&#39;m an inline link look, I&#39;m an inline link look, I&#39;m an inline link look, I&#39;m an
+        inline link look, I&#39;m an inline link look, I&#39;m an inline link look, I&#39;m an inline link look, I&#39;m
+        an inline link look, I&#39;m an inline link
       </Link>{' '}
       sit amet consectetur, adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
       doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
