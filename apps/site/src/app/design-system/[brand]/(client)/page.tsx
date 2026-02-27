@@ -1,8 +1,8 @@
-'use client';
-
 import { Grid, GridItem } from '@westpac/ui';
 import { GithubIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
+
+import { Hero, Section, SectionHeading, SectionItem } from '../../components';
 
 import { BrandKey } from '@/app/types/brand.types';
 import {
@@ -17,8 +17,6 @@ import {
   ShopifyLogo,
   TwitterLogo,
 } from '@/components/logos';
-
-import { Hero, Section, SectionHeading, SectionItem } from '../../components';
 
 export default async function DesignSystemHomePage({ params }: { params: Promise<{ brand: string }> }) {
   const paramsBrand = await params;
