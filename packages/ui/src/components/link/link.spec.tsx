@@ -16,9 +16,7 @@ describe('Link', () => {
         This is a test
       </Link>,
     );
-    expect(getByTestId('test-link')).toHaveClass(
-      'bg-[transparent] hover:underline text-text-body outline-none',
-    );
+    expect(getByTestId('test-link')).toHaveClass('bg-[transparent] hover:underline text-text-body outline-none');
   });
 
   it('should have the correct style when inline', () => {
