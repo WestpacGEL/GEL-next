@@ -1,7 +1,13 @@
 trigger:
-  - main
+  branches:
+    include:
+     - main
+     - release/*
+    exclude:
+     - '*'
 variables:
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+  isRelease: $[startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')]
 stages:
   - stage: Snyk
     pool:
@@ -32,14 +38,14 @@ stages:
             displayName: 'pnpm install'
           - task: Bash@3
             displayName: 'Enable synk monitor mode'
-            condition: and(succeeded(), eq(variables.isMain, true))
+            condition: and(succeeded(), or(eq(variables.isMain, true), eq(variables.isRelease, true)))
             inputs:
               targetType: inline
               script: |
                 echo "##vso[task.setvariable variable=snyk_cmd]monitor"
           - task: Bash@3
             displayName: 'Enable synk test mode'
-            condition: and(succeeded(), eq(variables.isMain, false))
+            condition: and(succeeded(), eq(variables.isMain, false), eq(variables.isRelease, false))
             inputs:
               targetType: inline
               script: |
@@ -58,7 +64,7 @@ stages:
               SNYK_ORG_ID: $(SNYK_ORG_ID)
 
   - stage: Fortify
-    condition: and(succeeded(), eq(variables.isMain, true))
+    condition: and(succeeded(), or(eq(variables.isMain, true), eq(variables.isRelease, true)))
     jobs:
       - job: 'fortify_prepare'
         displayName: 'fortify prepare'
