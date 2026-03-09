@@ -63,7 +63,8 @@ npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tail
 4. After including the css file to enable brand + theme switching, ensure your root HTML element includes:
 
 NOTE: Be sure to pass the brand with data-brand as previously it was data-theme
-NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
+
+#### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
 
 ```html
 <html data-brand="wbc" data-theme="dark|light">
@@ -561,6 +562,7 @@ export type PictogramMode = 'base' | 'mono' | 'duo';
 
 ### Removed/Updated Logos and Symbols
 
+#### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
 We have taken the opportunity to remove and update all the symbols and logos exported from the library. For updates most symbols/logos will have a dark mode variant that turns on when switching to dark mode.
 If there is a circumstance where you want the dark mode variant in light mode look for the 'Inverse' symbols/logos. If your believe there is a symbol/logo that needs an inverse or was removed and you believe it shouldn't be please contact the GEL design team.
 

@@ -41,9 +41,10 @@ export function Header({ className, title, brand }: { brand: string; className?:
         {title}
       </h2>
 
-      <div className="fixed top-2.5 right-2">
+      {/* TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE */}
+      {/* <div className="fixed top-2.5 right-2">
         <ThemeDropDown className="!border-0" />
-      </div>
+      </div> */}
     </header>
   );
 }
