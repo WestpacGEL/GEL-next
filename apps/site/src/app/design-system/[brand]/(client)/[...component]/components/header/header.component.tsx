@@ -5,6 +5,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 
 import { useSidebar } from '@/app/design-system/components/sidebar/sidebar.context';
 import { BrandKey } from '@/app/types/brand.types';
+import { ThemeDropDown } from '@/components/theme-dropdown/theme-dropdown.component';
 
 import { styles as headerStyles } from './header.styles';
 
