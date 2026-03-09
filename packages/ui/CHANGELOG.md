@@ -563,6 +563,7 @@ export type PictogramMode = 'base' | 'mono' | 'duo';
 ### Removed/Updated Logos and Symbols
 
 #### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
+
 We have taken the opportunity to remove and update all the symbols and logos exported from the library. For updates most symbols/logos will have a dark mode variant that turns on when switching to dark mode.
 If there is a circumstance where you want the dark mode variant in light mode look for the 'Inverse' symbols/logos. If your believe there is a symbol/logo that needs an inverse or was removed and you believe it shouldn't be please contact the GEL design team.
 
