@@ -8,7 +8,7 @@ The GEL Style Config package is the central design system foundation for Westpac
 
 - **Design Tokens**: Complete set of W3C-compliant design tokens for colors, typography, spacing, and borders
 - **Multi-Brand Support**: Pre-configured themes for all Westpac Group brands
-- **Light/Dark Mode**: Built-in theme switching capabilities NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
+- **Light/Dark Mode**: Built-in theme switching capabilities
 - **Tailwind CSS v4 Integration**: Optimized for the latest Tailwind CSS with native CSS variable support
 
 This package serves as the single source of truth for design consistency across the Westpac Group ecosystem, ensuring brand compliance and accelerating development workflows.
@@ -70,7 +70,7 @@ Following example shows adding `wbc` brand. You can add other valid brand names 
 </html>
 ```
 
-#### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
+NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
 
 For theme modes (light/dark), use the `data-theme` attribute:
 

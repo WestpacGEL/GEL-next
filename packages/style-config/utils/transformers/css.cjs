@@ -2,11 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
 const BRANDS = require(path.resolve(__dirname, '../../src/constants/brands.json'));
-const tokenModes = [
-  'light-mode',
-  // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-  // 'dark-mode'
-];
 
 // --------------------------------------------------------------------------
 // Helpers
@@ -33,35 +28,35 @@ function refToVar(ref) {
     const [_, brand, color, shade] = match;
     return `var(--${brand.toLowerCase()}-${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
   }
-
+  
   // Handle border radius references: {Primitives.border.radius.value}
   match = ref.match(/\{Primitives\.border\.radius\.([^}]+)\}/i);
   if (match) {
     const [_, value] = match;
     return `var(--border-radius-${value.replace(/px$/, '').replace(/\s+/g, '-').toLowerCase()})`;
   }
-
+  
   // Handle old format: {color.brand.palette.shade}
   match = ref.match(/\{color\.([^.]+)\.([^.]+)\.([^.]+)\}/i);
   if (match) {
     const [_, brand, color, shade] = match;
     return `var(--${brand.toLowerCase()}-${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
   }
-
+  
   // Handle two-part color references: {color.palette.shade}
   match = ref.match(/\{color\.([^.]+)\.([^.]+)\}/i);
   if (match) {
     const [_, color, shade] = match;
     return `var(--${color.toLowerCase().replace(/\s+/g, '-')}-${shade})`;
   }
-
+  
   // Handle single color references: {color.value}
   match = ref.match(/\{color\.([^.]+)\}/i);
   if (match) {
     const [_, color] = match;
     return `var(--${color.toLowerCase().replace(/\s+/g, '-')})`;
   }
-
+  
   return ref;
 }
 
@@ -110,25 +105,24 @@ function getBorderPrimitives(tokens) {
 function extractTokens(tokens) {
   const tokensBlock = tokens.find(t => t.Tokens)?.Tokens?.modes;
   const tokensObj = {};
-
+  
   if (tokensBlock) {
     // Check if this is the new consolidated structure (brand names as keys)
     const brandNames = Object.keys(tokensBlock);
-    const isConsolidatedStructure = brandNames.some(name =>
-      ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name),
+    const isConsolidatedStructure = brandNames.some(name => 
+      ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name)
     );
-
+    
     if (isConsolidatedStructure) {
       // New consolidated structure: extract from first brand (Westpac) as reference
       const westpacTokens = tokensBlock['Westpac'];
-
       if (westpacTokens) {
-        tokenModes.forEach(modeKey => {
+        ['light-mode', 'dark-mode'].forEach(modeKey => {
           const modeColors = westpacTokens[modeKey]?.color;
           if (modeColors) {
             const colors = flattenColors(modeColors, '');
             const tokenObj = {};
-
+            
             function removeDuplicatePrefix(name) {
               const parts = name.split('-');
               const result = [parts[0]];
@@ -153,10 +147,7 @@ function extractTokens(tokens) {
                   const [_, aliasName] = aliasMatch;
                   value = `var(--${aliasName.toLowerCase().replace(/\s+/g, '-')})`;
                 }
-              } else if (
-                typeof value === 'string' &&
-                (value.startsWith('{color.') || value.startsWith('{Primitives.'))
-              ) {
+              } else if (typeof value === 'string' && (value.startsWith('{color.') || value.startsWith('{Primitives.'))) {
                 value = refToVar(value);
               }
               tokenObj[unprefixed] = value;
@@ -217,20 +208,20 @@ function extractTokens(tokens) {
 function getModeBorders(tokens) {
   const modes = tokens.find(t => t.Tokens)?.Tokens?.modes;
   if (!modes) return {};
-
+  
   const modeBorders = {};
-
+  
   // Check if this is the new consolidated structure
   const brandNames = Object.keys(modes);
-  const isConsolidatedStructure = brandNames.some(name =>
-    ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name),
+  const isConsolidatedStructure = brandNames.some(name => 
+    ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name)
   );
-
+  
   if (isConsolidatedStructure) {
     // New consolidated structure: extract from first brand (Westpac) as reference
     const westpacTokens = modes['Westpac'];
     if (westpacTokens) {
-      tokenModes.forEach(modeKey => {
+      ['light-mode', 'dark-mode'].forEach(modeKey => {
         const borderRadii = westpacTokens[modeKey]?.border?.radius;
         if (borderRadii) {
           const cssVars = {};
@@ -282,7 +273,7 @@ function getModeBorders(tokens) {
       }
     }
   }
-
+  
   return modeBorders;
 }
 
@@ -292,25 +283,26 @@ function getModeBorders(tokens) {
 function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
   const primitivesObj = extractPrimitives(tokens);
   const borderPrimitives = getBorderPrimitives(tokens);
-
+  
   // Check if this is the new consolidated structure
   const modes = tokens.find(t => t.Tokens)?.Tokens?.modes;
-  const isConsolidatedStructure =
-    modes && Object.keys(modes).some(name => ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name));
+  const isConsolidatedStructure = modes && Object.keys(modes).some(name => 
+    ['Westpac', 'StGeorge', 'Bank SA', 'Bank of Melbourne'].includes(name)
+  );
 
   BRANDS.forEach(({ primitiveName, themeName }) => {
     const brand = primitiveName.toLowerCase();
     const brandFile = path.resolve(outputDir, `theme-${brand}.css`);
-
+    
     // Merge brand-specific primitives with shared mono primitives
     const allPrimitives = {
       ...(primitivesObj.mono?.primitives || {}),
-      ...(primitivesObj[brand]?.primitives || {}),
+      ...(primitivesObj[brand]?.primitives || {})
     };
-
+    
     let brandLightSemanticTokens = {};
     let brandDarkSemanticTokens = {};
-
+    
     if (isConsolidatedStructure && modes) {
       // New consolidated structure: extract brand-specific tokens directly
       const brandTokens = modes[themeName];
@@ -331,7 +323,7 @@ function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
               if (result[0] === 'pictogram' && result[1] === 'surface' && result[2] === 'pictogram') result.shift();
               return result.join('-');
             }
-
+            
             let unprefixed = removeDuplicatePrefix(name);
             if (unprefixed.startsWith('alias-')) {
               unprefixed = unprefixed.replace(/^alias-/, '');
@@ -342,40 +334,39 @@ function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
             brandLightSemanticTokens[unprefixed] = value;
           });
         }
-
-        // TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE
-        // Extract dark mode semantic tokens
-        // if (brandTokens['dark-mode']?.color) {
-        //   const colors = flattenColors(brandTokens['dark-mode'].color, '');
-        //   Object.entries(colors).forEach(([name, value]) => {
-        //     function removeDuplicatePrefix(name) {
-        //       const parts = name.split('-');
-        //       const result = [parts[0]];
-        //       for (let i = 1; i < parts.length; i++) {
-        //         if (parts[i] !== parts[i - 1]) {
-        //           result.push(parts[i]);
-        //         }
-        //       }
-        //       if (result[0] === 'state') result.shift();
-        //       if (result[0] === 'pictogram' && result[1] === 'surface' && result[2] === 'pictogram') result.shift();
-        //       return result.join('-');
-        //     }
-
-        //     let unprefixed = removeDuplicatePrefix(name);
-        //     if (unprefixed.startsWith('alias-')) {
-        //       unprefixed = unprefixed.replace(/^alias-/, '');
-        //     }
-        //     if (typeof value === 'string' && (value.startsWith('{color.') || value.startsWith('{Primitives.'))) {
-        //       value = refToVar(value);
-        //     }
-        //     brandDarkSemanticTokens[unprefixed] = value;
-        //   });
-        // }
+        
+        // Extract dark mode semantic tokens  
+        if (brandTokens['dark-mode']?.color) {
+          const colors = flattenColors(brandTokens['dark-mode'].color, '');
+          Object.entries(colors).forEach(([name, value]) => {
+            function removeDuplicatePrefix(name) {
+              const parts = name.split('-');
+              const result = [parts[0]];
+              for (let i = 1; i < parts.length; i++) {
+                if (parts[i] !== parts[i - 1]) {
+                  result.push(parts[i]);
+                }
+              }
+              if (result[0] === 'state') result.shift();
+              if (result[0] === 'pictogram' && result[1] === 'surface' && result[2] === 'pictogram') result.shift();
+              return result.join('-');
+            }
+            
+            let unprefixed = removeDuplicatePrefix(name);
+            if (unprefixed.startsWith('alias-')) {
+              unprefixed = unprefixed.replace(/^alias-/, '');
+            }
+            if (typeof value === 'string' && (value.startsWith('{color.') || value.startsWith('{Primitives.'))) {
+              value = refToVar(value);
+            }
+            brandDarkSemanticTokens[unprefixed] = value;
+          });
+        }
       }
     } else {
       // Fallback to old behavior for non-consolidated structure
       const tokensObj = extractTokens(tokens);
-
+      
       // Process light mode tokens
       if (tokensObj.light) {
         Object.entries(tokensObj.light).forEach(([key, value]) => {
@@ -400,7 +391,7 @@ function writeBrandThemeCSS(tokens, brandFontMap, themeTemplate, outputDir) {
         });
       }
     }
-
+    
     fs.writeFileSync(
       brandFile,
       themeTemplate({

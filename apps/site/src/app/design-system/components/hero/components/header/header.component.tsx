@@ -54,8 +54,7 @@ export function Header({ brand }: { brand: BrandKey }) {
           <strong>GEL</strong> Design System
         </h1>
       </div>
-      {/* TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE */}
-      {/* <ThemeDropDown className="!border-0" /> */}
+      <ThemeDropDown className="!border-0" />
     </header>
   );
 }
