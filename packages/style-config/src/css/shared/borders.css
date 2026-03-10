@@ -30,17 +30,8 @@
     --rounded-5xl: var(--border-radius-24);
     --rounded-full: var(--border-radius-999);
 
+    /* TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE */
     @variant dark {
-      --rounded-none: var(--border-radius-0);
-      --rounded-sm: var(--border-radius-3);
-      --rounded-md: var(--border-radius-4);
-      --rounded-lg: var(--border-radius-5);
-      --rounded-xl: var(--border-radius-6);
-      --rounded-2xl: var(--border-radius-8);
-      --rounded-3xl: var(--border-radius-12);
-      --rounded-4xl: var(--border-radius-16);
-      --rounded-5xl: var(--border-radius-24);
-      --rounded-full: var(--border-radius-999);
     }
   }
 }
