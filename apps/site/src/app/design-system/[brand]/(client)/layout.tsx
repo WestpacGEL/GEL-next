@@ -3,17 +3,20 @@
 import { useDarkMode } from '@westpac/ui/hook';
 import { ReactNode, useEffect } from 'react';
 
-import { useThemeMode } from '@/hooks/theme-mode.hook';
+// TODO: DARK MODE TEMPORARILY DISABLED - REVERT TO THIS ONCE DARK MODE IS RE-IMPLEMENTED
+// import { useThemeMode } from '@/hooks/theme-mode.hook';
 
 // eslint-disable-next-line sonarjs/function-return-type
 export default function DesignSystemLayout({ children }: { children: ReactNode }) {
   const { setMode } = useDarkMode();
-  const { mode } = useThemeMode();
+  // TODO: DARK MODE TEMPORARILY DISABLED - REVERT TO THIS ONCE DARK MODE IS RE-IMPLEMENTED
+  // const { mode } = useThemeMode();
 
   useEffect(() => {
-    setMode(mode);
+    // TODO: DARK MODE TEMPORARILY DISABLED - change to mode when re-enabled
+    setMode('light');
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode]);
+  }, []);
 
   return children;
 }
