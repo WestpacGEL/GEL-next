@@ -1,7 +1,8 @@
 ### Previous Version
 
-If you are looking for information/source code for version 0.x you can find it [here](https://github.com/WestpacGEL/GEL-next/tree/version/0.x). It is recommened you upgrade to 1.0 at your earliest convenience. 
-- [Storybook](https://gel-next-storybook-git-version-0x-westpacgel.vercel.app/?path=/story/attention--attention). 
+If you are looking for information/source code for version 0.x you can find it [here](https://github.com/WestpacGEL/GEL-next/tree/version/0.x). It is recommened you upgrade to 1.0 at your earliest convenience.
+
+- [Storybook](https://gel-next-storybook-git-version-0x-westpacgel.vercel.app/?path=/story/attention--attention).
 - [Site](https://gel-next-site-git-version-0x-westpacgel.vercel.app/)
 
 ## Getting Started
