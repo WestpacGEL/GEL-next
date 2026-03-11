@@ -147,7 +147,7 @@ If you want to test the upgrade while waiting for your designers we recommened r
 
 To see all the new tokens you can check storybook [Storybook](https://gel-next-storybook-git-westpacgel.vercel.app/?path=/docs/foundation-colours--docs) or the [GEL website](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens)
 
-You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-next/blob/release/1.0.0/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs)
+You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-next/blob/develop/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs)
 
 ---
 
