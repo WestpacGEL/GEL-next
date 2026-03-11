@@ -11,19 +11,19 @@ export const styles = tv(
       size: {
         small: {
           input: 'max-h-5',
-          dateField: 'form-control-small h-5',
+          dateField: 'form-control-small h-5 w-[120px]',
         },
         medium: {
           input: 'max-h-6',
-          dateField: 'form-control-medium h-6',
+          dateField: 'form-control-medium h-6 w-[140px]',
         },
         large: {
           input: 'max-h-7',
-          dateField: 'form-control-large h-7',
+          dateField: 'form-control-large h-7 w-[145px]',
         },
         xlarge: {
           input: 'max-h-8',
-          dateField: 'form-control-xlarge h-8',
+          dateField: 'form-control-xlarge h-8 w-[165px]',
         },
       },
       block: {

@@ -1,5 +1,9 @@
 trigger:
-  - main
+  branches:
+    include:
+     - main
+    exclude:
+     - '*'
 variables:
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
 stages:
@@ -58,7 +62,7 @@ stages:
               SNYK_ORG_ID: $(SNYK_ORG_ID)
 
   - stage: Fortify
-    condition: and(succeeded(), eq(variables.isMain, true))
+    condition: false # Temporarily disable Fortify stage until v1
     jobs:
       - job: 'fortify_prepare'
         displayName: 'fortify prepare'
