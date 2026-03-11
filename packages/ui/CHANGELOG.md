@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 0.59.4
+
+### Patch Changes
+
+- 58817fd: - removed 12px font from input group hint
+  - set fixed width on DatePickerBeta
+
 ## 0.59.3
 
 ### Patch Changes
