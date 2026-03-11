@@ -602,6 +602,13 @@ Symbols:
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
 
+## 0.59.4
+
+### Patch Changes
+
+- 58817fd: - removed 12px font from input group hint
+  - set fixed width on DatePickerBeta
+
 ## 0.59.3
 
 ### Patch Changes
