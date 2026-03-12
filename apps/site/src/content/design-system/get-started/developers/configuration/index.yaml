@@ -1,0 +1,8 @@
+name: Configuration
+description: >-
+  We suggest using the following Westpac Group configurations.
+design:
+  - title:
+      name: ESLint Configuration
+      slug: eslint-configuration
+accessibility: []

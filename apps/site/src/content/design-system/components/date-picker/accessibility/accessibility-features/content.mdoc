@@ -1,17 +1,15 @@
-- Powered by [Duet Date Picker](https://github.com/duetds/date-picker), the open source version of Duet Design System’s accessible date picker
-- Inherits all the built-in accessibility features of Duet Date Picker plus additional optimisations made available through custom CSS theming
-- Date picker calendar dates are styled to clearly indicate state whether selected, active or disabled, and considers focus styling
-- The user interacts with the calendar button to toggle the popup panel – consistently whether using mouse, touch or keyboard. To hide the panel the user may toggle the button again, choose a date or press the ‘Esc’ key.
-- Focus moves to the popup panel when shown
-- Keyboard support includes calendar date navigation using keyboard arrow keys
-- When the popup panel closes, focus returns to the button that originally toggled the panel
-- An indicator outline appears around all buttons when focused
-- The text input, text, calendar button, popup panel, selects and date buttons are visible in Windows High Contrast Mode (WHCM). Calendar date focus styling is also visible in WHCM.
+- **Powered by React Aria** — built on top of [React Aria](https://react-spectrum.adobe.com/react-aria/index.html), providing robust, WAI-ARIA-compliant date picker components with accessible interaction patterns by default.
+- **Built-in Accessibility Compliance** — leverages React Aria’s first-class support for screen readers, keyboard navigation, and focus management without relying on custom CSS overrides for accessibility.
+- **Clear State Indications** — calendar dates are visually styled to clearly reflect their states (selected, focused, disabled, or active), including focus outlines and proper contrast ratios.
+- **Consistent Interactions** — users can toggle the calendar popup consistently using mouse, keyboard, or touch. The popup can be dismissed by selecting a date, toggling the button, or pressing the `Escape` key.
+- **Focus Management** — when the calendar popup opens, focus automatically moves to the calendar panel. On closing, focus returns to the toggle button.
+- **Keyboard Navigation** — full keyboard support including:
+  - Arrow keys to navigate dates within the calendar grid.
+  - `Enter` or `Space` to select a date.
+  - `Escape` to close the popup.
+- **High Contrast Mode Support** — all interactive elements (input field, calendar button, popup panel, and date buttons) remain visible and usable in **Windows High Contrast Mode (WHCM)**, with proper focus outlines and state indications.
 
-### Keyboard support
+## Accessibility in HTML
 
-Refer to [Duet Date Picker Keyboard support.](https://github.com/duetds/date-picker#keyboard-support)
-
-### Accessibility in the HTML
-
-Refer to [Duet Date Picker.](https://github.com/duetds/date-picker)
+- **ARIA Attributes** — all relevant ARIA roles and properties (e.g., `role="dialog"`, `aria-label`, `aria-selected`) are handled automatically by React Aria to ensure compliance with WCAG and assistive technologies.
+- **Keyboard Support Reference** — for a detailed explanation of supported keyboard interactions, refer to the [React Aria Date Picker documentation](https://react-spectrum.adobe.com/react-aria/useDatePicker.html).

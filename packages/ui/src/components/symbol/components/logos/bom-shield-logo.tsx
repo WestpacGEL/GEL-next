@@ -21,27 +21,33 @@ export function BOMShieldLogo({
       viewBoxHeight={viewBoxHeight}
       {...props}
     >
-      {' '}
-      <polygon points="0 0 0 13 6.5 6.5 " fill="#685AC0" />
-      <polygon points="13 0 0 0 6.5 6.5 " fill="#A094FC" />
-      <polygon points="13 13 13 0 6.5 6.5 " fill="#685AC0" />
-      <polygon points="0 13 13 13 6.5 6.5 " fill="#20024E" />
-      <polygon points="13 0 13 13 19.5 6.5 " fill="#C2BFEB" />
-      <polygon points="26 0 13 0 19.5 6.5 " fill="#685AC0" />
-      <polygon points="26 13 26 0 19.5 6.5 " fill="#20024E" />
-      <polygon points="13 13 26 13 19.5 6.5 " fill="#685AC0" />
-      <polygon points="13 13 13 26 19.5 19.5 " fill="#C2BFEB" />
-      <polygon points="26 13 13 13 19.5 19.5 " fill="#A094FC" />
-      <polygon points="26 26 26 13 19.5 19.5 " fill="#685AC0" />
-      <polygon points="13 26 26 26 19.5 19.5 " fill="#20024E" />
-      <polygon points="0 13 0 26 6.5 19.5 " fill="#685AC0" />
-      <polygon points="13 13 0 13 6.5 19.5 " fill="#C2BFEB" />
-      <polygon points="13 26 13 13 6.5 19.5 " fill="#20024E" />
-      <polygon points="0 26 13 26 6.5 19.5 " fill="#A094FC" />
-      <polygon points="13 26 13 39 19.5 32.5 " fill="#C2BFEB" />
-      <polygon points="26 26 13 26 19.5 32.5 " fill="#685AC0" />
-      <polygon points="13 26 0 26 6.5 32.5 " fill="#C2BFEB" />
-      <polygon points="13 39 13 26 6.5 32.5 " fill="#20024E" />
+      <g clipPath="url(#clip0_139_1431)">
+        <path d="M0 0V13L6.5 6.5L0 0Z" fill="#685AC0" />
+        <path d="M13 0H0L6.5 6.5L13 0Z" fill="#A094FC" />
+        <path d="M13 13V0L6.5 6.5L13 13Z" fill="#685AC0" />
+        <path d="M0 13H13L6.5 6.5L0 13Z" fill="#20024E" />
+        <path d="M13 0V13L19.5 6.5L13 0Z" fill="#C2BFEB" />
+        <path d="M26 0H13L19.5 6.5L26 0Z" fill="#685AC0" />
+        <path d="M26 13V0L19.5 6.5L26 13Z" fill="#20024E" />
+        <path d="M13 13H26L19.5 6.5L13 13Z" fill="#685AC0" />
+        <path d="M13 13V26L19.5 19.5L13 13Z" fill="#C2BFEB" />
+        <path d="M26 13H13L19.5 19.5L26 13Z" fill="#A094FC" />
+        <path d="M26 26V13L19.5 19.5L26 26Z" fill="#685AC0" />
+        <path d="M13 26H26L19.5 19.5L13 26Z" fill="#20024E" />
+        <path d="M0 13V26L6.5 19.5L0 13Z" fill="#685AC0" />
+        <path d="M13 13H0L6.5 19.5L13 13Z" fill="#C2BFEB" />
+        <path d="M13 26V13L6.5 19.5L13 26Z" fill="#20024E" />
+        <path d="M0 26H13L6.5 19.5L0 26Z" fill="#A094FC" />
+        <path d="M13 26V39L19.5 32.5L13 26Z" fill="#C2BFEB" />
+        <path d="M26 26H13L19.5 32.5L26 26Z" fill="#685AC0" />
+        <path d="M13 26H0L6.5 32.5L13 26Z" fill="#C2BFEB" />
+        <path d="M13 39V26L6.5 32.5L13 39Z" fill="#20024E" />
+      </g>
+      <defs>
+        <clipPath id="clip0_139_1431">
+          <rect width="26" height="39" fill="white" />
+        </clipPath>
+      </defs>
     </Symbol>
   );
 }

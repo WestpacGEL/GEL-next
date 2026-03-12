@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { BrandKey } from '../../tailwind/index.js';
+import { BrandKey } from '../../types/brand-types.js';
 
 import { Header } from './header.component.js';
 
@@ -11,7 +11,7 @@ describe('Header', () => {
   });
 
   it('should render correct brand logo', () => {
-    const brandList: Exclude<BrandKey, 'btfg'>[] = ['wbc', 'stg', 'bom', 'bsa', 'wbg', 'rams'];
+    const brandList: Exclude<BrandKey, 'btfg'>[] = ['wbc', 'stg', 'bom', 'bsa'];
     const brandNames = ['Westpac', 'St.George', 'Bank of Melbourne', 'Bank SA', 'Westpac Group', 'RAMS'];
     brandList.forEach((brand, index) => {
       const { container } = render(<Header brand={brand} />);

@@ -23,6 +23,7 @@ design:
     noDemo: false
 accessibility: []
 relatedComponents:
-  - title: Flexicell
-    slug: /components/flexi-cell
+  links:
+      - title: Flexicell
+        slug: /components/flexi-cell
 code: []

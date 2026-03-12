@@ -32,8 +32,9 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Modal
-    slug: /components/modal
+  links:
+      - title: Modal
+        slug: /components/modal
 code:
   - title:
       name: Development example

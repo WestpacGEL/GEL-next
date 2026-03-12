@@ -28,27 +28,57 @@ export const Symbols = () => {
 
   return (
     <div>
-      <div className="mb-4 bg-light p-4">
+      <div
+        className={`
+          mb-4 rounded-2xl border border-border-muted-soft
+          bg-background-white p-4
+        `}
+      >
         <Grid>
           <GridItem span={{ initial: 12, sm: 6 }}>
-            <div className="flex flex-col items-start sm:flex-row sm:items-center">
-              <label className="mb-2 mr-[1rem] sm:mb-0" htmlFor="filter-icons">
+            <div
+              className={`
+                flex flex-col items-start
+                sm:flex-row sm:items-center
+              `}
+            >
+              <label
+                className={`
+                  mr-[1rem] mb-2
+                  sm:mb-0
+                `}
+                htmlFor="filter-icons"
+              >
                 Filter by name
               </label>
-              <Input id="filter-icon" value={search} onChange={handleOnChange} className="w-full" />
+              <Input
+                id="filter-icon"
+                value={search}
+                onChange={handleOnChange}
+                className={`
+                w-full
+              `}
+              />
             </div>
           </GridItem>
         </Grid>
       </div>
       <Grid>
         <GridItem span={12}>
-          <p className="text-right italic text-muted">{foundText}</p>
+          <p className="text-right text-text-muted italic">{foundText}</p>
         </GridItem>
         {filteredSymbols.map(({ key, Logo }) => (
-          <GridItem key={key} span={{ initial: 12, sm: 6, md: 4, lg: 3 }} className="flex">
-            <div className="mb-2 flex grow flex-col items-center justify-center bg-white px-2 pb-3 pt-6 xsl:mb-4">
-              <Logo className="mb-6 grow" />
-              <span className="text-[0.6875rem] text-muted">{key}</span>
+          <GridItem key={key} span={{ initial: 12, sm: 6, md: 4, lg: 3 }} className={`flex`}>
+            <div
+              className={`
+                mb-2 flex w-full grow flex-col items-center justify-center
+                rounded-2xl border border-border-muted-soft
+                bg-background-white px-2 pt-6 pb-3
+                xsl:mb-4
+              `}
+            >
+              <Logo className="mb-6 max-w-full grow" />
+              <span className="text-[0.6875rem] text-text-muted">{key}</span>
             </div>
           </GridItem>
         ))}

@@ -51,10 +51,11 @@ accessibility:
       name: Notes on accessibility
       slug: notes-on-accessibility
 relatedComponents:
-  - title: Icons
-    slug: /foundation/icon
-  - title: Text input
-    slug: /components/input
+  links:
+      - title: Icons
+        slug: /foundation/icon
+      - title: Text input
+        slug: /components/input
 code:
   - title:
       name: Development examples

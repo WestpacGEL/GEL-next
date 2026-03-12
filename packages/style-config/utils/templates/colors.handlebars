@@ -1,0 +1,22 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer theme {
+  :root,
+  :host {
+    /* Reserved colors */
+    {{#each reserved}}
+    --{{@key}}: {{this}};
+    {{/each}}
+  }
+
+  /* Tailwind theme variables  */
+  @theme inline static {
+      {{#each tailwindTokens}}
+      --color-{{@key}}: var(--{{@key}});
+      {{/each}}
+    }
+}

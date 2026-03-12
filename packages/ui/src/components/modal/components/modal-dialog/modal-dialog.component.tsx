@@ -6,12 +6,10 @@ import { useDialog, useFocusRing } from 'react-aria';
 import { CloseIcon } from '../../../../components/icon/index.js';
 
 import { ModalDialogBody } from './components/modal-dialog-body/index.js';
-import { ModalDialogFooter } from './components/modal-dialog-footer/index.js';
 import { styles as dialogStyles } from './modal-dialog.styles.js';
 import { ModalDialogContextValue, type ModalDialogProps } from './modal-dialog.types.js';
 
 const ModalDialogContext = createContext<ModalDialogContextValue>({ size: 'md' });
-
 const SCROLL_BUFFER = 10;
 
 export const useModalDialogContext = () => useContext(ModalDialogContext);
@@ -22,14 +20,13 @@ export const useModalDialogContext = () => useContext(ModalDialogContext);
 export function ModalDialog({ className, body, onClose, size, compact, ...props }: ModalDialogProps) {
   const { children } = props;
   const { isFocusVisible, focusProps } = useFocusRing();
-  const [scrolled, setScrolled] = useState(false);
-  const [scrollAtBottom, setScrollAtBottom] = useState(false);
-  const styles = dialogStyles({ size, isFocusVisible, compact, scrolled });
   const [canScroll, setCanScroll] = useState(false);
   const [footerPresent, setFooterPresent] = useState<boolean>(false);
-
+  const [scrolled, setScrolled] = useState(false);
+  const [scrollAtBottom, setScrollAtBottom] = useState(false);
   const ref = useRef(null);
   const bodyRef = useRef<HTMLDivElement>(null);
+  const styles = dialogStyles({ size, isFocusVisible, compact, scrolled });
 
   const { dialogProps, titleProps } = useDialog(props, ref);
 
@@ -73,7 +70,7 @@ export function ModalDialog({ className, body, onClose, size, compact, ...props 
     <div {...dialogProps} ref={ref} className={styles.base({ className })}>
       {onClose && (
         <button className={styles.close()} onClick={onClose} aria-label="Close modal" {...focusProps}>
-          <CloseIcon className="block" size="small" />
+          <CloseIcon color="primary" className="block" size="small" />
         </button>
       )}
       {props.title && (
@@ -81,7 +78,6 @@ export function ModalDialog({ className, body, onClose, size, compact, ...props 
           {props.title}
         </h3>
       )}
-
       <ModalDialogContext.Provider
         value={{ size, scrollingRef: bodyRef, canScroll, compact, footerPresent, setFooterPresent, scrollAtBottom }}
       >
@@ -90,5 +86,3 @@ export function ModalDialog({ className, body, onClose, size, compact, ...props 
     </div>
   );
 }
-ModalDialog.Body = ModalDialogBody;
-ModalDialog.Footer = ModalDialogFooter;

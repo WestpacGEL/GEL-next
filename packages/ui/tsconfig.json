@@ -19,8 +19,9 @@
     "outDir": "dist",
     "rootDir": "src",
     "baseUrl": ".",
-    "types": ["vitest/globals", "@testing-library/jest-dom"]
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
+    "resolveJsonModule": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", "src/tailwind"]
 }

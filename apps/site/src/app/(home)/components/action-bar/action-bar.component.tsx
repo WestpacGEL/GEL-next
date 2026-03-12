@@ -1,5 +1,3 @@
-// disabling for deprecated react aria stuff that will be/is fixed in 1.0
-/* eslint-disable sonarjs/deprecation */
 'use client';
 import { GridContainer } from '@westpac/ui';
 import { ArrowRightIcon } from '@westpac/ui/icon';
@@ -17,19 +15,39 @@ import { logoMap, logoStyles } from '../utils';
 export function ActionBar() {
   return (
     <StickyHeader>
-      <GridContainer fixed className="px-4 lg:max-w-gel-lg-container lg:px-10">
-        <div className="hidden h-17 items-end bg-white pb-2 sm:flex">
-          <div className="mr-4 flex h-full flex-col justify-end border-r border-gel-border">
+      <GridContainer
+        fixed
+        className={`
+          px-4
+          lg:!max-w-gel-lg-container lg:px-10
+        `}
+      >
+        <div
+          className={`
+            hidden h-17 items-end pb-2
+            sm:flex
+          `}
+        >
+          <div
+            className={`
+              mr-4 flex h-full flex-col justify-end border-r border-gel-border
+            `}
+          >
             <GELLogo className="mb-2 block h-3 w-[45px] text-gel-text" />
             <p className="mb-1 flex items-end">
               Design System
-              <ArrowRightIcon className="ml-0 mr-2 md:ml-2 md:mr-[1rem]" />
+              <ArrowRightIcon
+                className={`
+                  mr-2 ml-0
+                  md:mr-[1rem] md:ml-2
+                `}
+              />
             </p>
           </div>
           <ul role="list" className="flex gap-2">
             {Object.entries(logoMap).map(([key, { logo: Logo, name }]) => (
               <li key={key}>
-                <Link href={`/design-system/${key}`} className="outline-offset-[3px] outline-focus">
+                <Link href={`/design-system/${key}`} className="outline-offset-[3px] focus-visible:outline-gel-focus">
                   <CircleLogo>
                     <Logo aria-label={`${name} Design System`} className={logoStyles({ brand: key as BrandKey })} />
                   </CircleLogo>
@@ -38,10 +56,15 @@ export function ActionBar() {
             ))}
           </ul>
         </div>
-        <div className="block bg-white sm:hidden">
+        <div
+          className={`
+            block bg-background-white
+            sm:hidden
+          `}
+        >
           <BrandSelect
-            selectedKey={undefined}
-            onSelectionChange={() => {
+            value={undefined}
+            onChange={() => {
               return;
             }}
             aria-label="Change brand"

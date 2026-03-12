@@ -25,8 +25,9 @@ design:
     noDemo: false
 accessibility: []
 relatedComponents:
-  - title: Alerts
-    slug: /components/alerts
-  - title: Colours
-    slug: /components/foundation/colours
+  links:
+      - title: Alerts
+        slug: /components/alerts
+      - title: Colours
+        slug: /components/foundation/colours
 code: []

@@ -10,7 +10,7 @@ import {
   TableHeaderRow,
   TableRow,
 } from '@westpac/ui';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import { useBrand } from '@/app/design-system/hooks/use-brand';
 import { ComponentTitle } from '@/components/document-renderer/component-title';
@@ -50,20 +50,6 @@ const FONTS_PER_BRAND = {
       className: FONT_BOLD,
     },
   ],
-  rams: [
-    {
-      fontWeight: 'Regular',
-      className: FONT_REGULAR,
-    },
-    {
-      fontWeight: 'Semi-bold', //600
-      className: 'font-semibold',
-    },
-    {
-      fontWeight: 'Bold', // 700 900
-      className: FONT_BOLD,
-    },
-  ],
   stg: [
     {
       fontWeight: 'Bold',
@@ -73,20 +59,6 @@ const FONTS_PER_BRAND = {
   wbc: [
     {
       fontWeight: 'Bold',
-      className: FONT_BOLD,
-    },
-  ],
-  wbg: [
-    {
-      fontWeight: 'Light', //100 - 300
-      className: FONT_LIGHT,
-    },
-    {
-      fontWeight: 'Regular', //400 - 600
-      className: FONT_REGULAR,
-    },
-    {
-      fontWeight: 'Bold', //700 - 900
       className: FONT_BOLD,
     },
   ],

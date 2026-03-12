@@ -1,0 +1,2219 @@
+{
+  "Primitives": {
+    "border": {
+      "radius": {
+        "0px": {
+          "$type": "float",
+          "$value": 0,
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        },
+        "3px": {
+          "$type": "float",
+          "$value": 3,
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        },
+        "4px": {
+          "$type": "float",
+          "$value": 4,
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        },
+        "5px": {
+          "$type": "float",
+          "$value": 5,
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        },
+        "6px": {
+          "$type": "float",
+          "$value": 6,
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        },
+        "8px": {
+          "$type": "float",
+          "$value": 8,
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        },
+        "12px": {
+          "$type": "float",
+          "$value": 12,
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        },
+        "16px": {
+          "$type": "float",
+          "$value": 16,
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        },
+        "24px": {
+          "$type": "float",
+          "$value": 24,
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        },
+        "999px": {
+          "$type": "float",
+          "$value": 999,
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        }
+      }
+    },
+    "color": {
+      "mono": {
+        "white": {
+          "$type": "color",
+          "$value": "#ffffff",
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        },
+        "black": {
+          "$type": "color",
+          "$value": "#000000",
+          "$scopes": [
+            "ALL_SCOPES"
+          ],
+          "$hiddenFromPublishing": true
+        }
+      },
+      "reserved": {
+        "success": {
+          "50": {
+            "$type": "color",
+            "$value": "#f2f9f2",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#d9ecd9",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#99cc99",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#47a447",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#249224",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#008000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#006d00",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#005a00",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#004600",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#003300",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#002000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        },
+        "info": {
+          "50": {
+            "$type": "color",
+            "$value": "#f2f8fc",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#d9eaf6",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#99c7e7",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#459ad4",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#2487cc",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#0074c4",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#0063a7",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#005189",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#00406c",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#002e4e",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#001d31",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        },
+        "warning": {
+          "50": {
+            "$type": "color",
+            "$value": "#fcf5f2",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#f3d8cc",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#e8b199",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#d7784f",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#ce5826",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#c53b00",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#a73200",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#8a2900",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#6c2000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#4f1800",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#310f00",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        },
+        "danger": {
+          "50": {
+            "$type": "color",
+            "$value": "#fcf2f2",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#f9e6e6",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#eaa6a6",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#db6363",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#d03333",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#c40000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#a70000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#890000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#6c0000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#4e0000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#310000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        },
+        "system": {
+          "50": {
+            "$type": "color",
+            "$value": "#fffff2",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#ffffe6",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#ffffbf",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#ffff80",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#ffff40",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#ffff00",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#d9d900",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#b3b300",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#8c8c00",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#666600",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#404000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        }
+      },
+      "STG": {
+        "muted": {
+          "50": {
+            "$type": "color",
+            "$value": "#f9f9f9",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#f5f5f4",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#e1e1e0",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#b2b2ae",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#8d8c81",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#727163",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#5e5d55",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#4c4c48",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#393937",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#1c1c1c",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#141414",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        },
+        "primary": {
+          "50": {
+            "$type": "color",
+            "$value": "#fff0f0",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#ffc7c7",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#f87272",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#f44848",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#f21818",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#e30000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#bc0000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#980000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#750000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#5b0000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#380000",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "opacity": {
+            "$type": "color",
+            "$value": "#e300004d",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        },
+        "hero": {
+          "50": {
+            "$type": "color",
+            "$value": "#ecf8f0",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#c2eace",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#6dcb89",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#2fa854",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#219d4b",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#008739",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#007334",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#005f32",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#004833",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#003323",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#002a1c",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "opacity": {
+            "$type": "color",
+            "$value": "#00873973",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        },
+        "pop": {
+          "50": {
+            "$type": "color",
+            "$value": "#f1fbe5",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#e5f7cf",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#c2ec8e",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#abe562",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#93d83b",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#78be20",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#619b18",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#4b7910",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#365909",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#223b04",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#132402",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "opacity": {
+            "$type": "color",
+            "$value": "#78be2073",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        },
+        "holler": {
+          "50": {
+            "$type": "color",
+            "$value": "#f5f2fb",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#e6dff5",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#bba3e2",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#9b73d2",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#814ec5",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#502d79",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#46276b",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#3e225f",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#341b50",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#2c1645",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#27133e",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "opacity": {
+            "$type": "color",
+            "$value": "#502d794d",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        },
+        "sing": {
+          "50": {
+            "$type": "color",
+            "$value": "#edf8fe",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#e1f4fe",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#b9e6fc",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#91dcfb",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#5ad2fa",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#3fc3eb",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#319cbd",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#23768f",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#155264",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#09303c",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#04212a",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "opacity": {
+            "$type": "color",
+            "$value": "#3fc3eb4d",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        },
+        "dance": {
+          "50": {
+            "$type": "color",
+            "$value": "#fff3eb",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#ffe7d6",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#ffcba8",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#ffb380",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#ff9752",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#ff7f29",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#cf6200",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#9d4800",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#6e3100",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#421a00",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#2c0f00",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "opacity": {
+            "$type": "color",
+            "$value": "#ff7f2966",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          }
+        }
+      }
+    }
+  },
+  "Tokens": {
+    "light-mode": {
+      "color": {
+        "background": {
+          "background-white": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "If you need a white background use this token"
+          },
+          "background-pale": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.100}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "If you need a grey background use this token. Note: this token replaces the current Background colour style."
+          },
+          "background-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background."
+          },
+          "background-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed"
+          },
+          "background-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed"
+          }
+        },
+        "surface": {
+          "surface-muted-vivid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.800}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for surfaces that need to be the same colour as body text (icons, arrows etc)."
+          },
+          "surface-muted": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Muted colour style."
+          },
+          "surface-muted-strong": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "surface-muted-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "surface-muted-soft": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "surface-muted-pale": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.100}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Background colour style. Tip: In light mode this colour is the same as background-pale however they behave differently in dark mode."
+          },
+          "surface-muted-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Light colour style. Tip: In light mode this colour is the same as background-faint however they each behave differently in dark mode."
+          },
+          "surface-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Primary colour style."
+          },
+          "surface-primary-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "surface-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Hero colour style."
+          },
+          "surface-hero-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "surface-pop": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Pop colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines."
+          },
+          "surface-pop-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Pop Light colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines."
+          },
+          "surface-holler": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands."
+          },
+          "surface-holler-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands."
+          },
+          "surface-success": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for success alert components, do not use for anything else."
+          },
+          "surface-success-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for success alert components, do not use for anything else. Note: this surface should always be used with border-success-mild as shown here."
+          },
+          "surface-info": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for info alert components, do not use for anything else."
+          },
+          "surface-info-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for info alert components, do not use for anything else. Note: this surface should always be used with border-info-mild as shown here."
+          },
+          "surface-warning": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for warning alert components, do not use for anything else."
+          },
+          "surface-warning-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for warning alert components, do not use for anything else. Note: this surface should always be used with border-warning-mild as shown here."
+          },
+          "surface-danger": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for danger alert components, do not use for anything else."
+          },
+          "surface-danger-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for danger alert components, do not use for anything else. Note: this surface should always be used with border-danger-mild as shown here."
+          },
+          "surface-system-error": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.system.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for system alert components, do not use for anything else."
+          },
+          "surface-system-error-dark": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.system.950}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only use for system alert components, do not use for anything else."
+          },
+          "surface-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode."
+          },
+          "surface-reversed": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode."
+          }
+        },
+        "text": {
+          "text-body": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.800}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for paragraph text and UI elements - labels, buttons, inputs etc"
+          },
+          "text-heading": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.600}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications."
+          },
+          "text-muted": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for text that requires less emphasis like hint text etc."
+          },
+          "text-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token."
+          },
+          "text-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.600}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for text that requires more emphasis, call outs, quotes etc."
+          },
+          "text-holler": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands."
+          },
+          "text-link": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands."
+          },
+          "text-success": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "text-info": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "text-warning": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for warning alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "text-danger": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for danger alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "text-system-error": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.system.950}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for system error alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "text-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Similar to surface-mono, text-mono is white in light mode and black in dark mode. It’s typically used for UI elements like buttons, tabs, panel heading etc."
+          },
+          "text-reversed": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Similar to surface-reversed, text-reversed is always white. Use with caution, in dark mode white creates too much contrast which defeats the object of reducing glare. Tip: Try using text-mono"
+          }
+        },
+        "border": {
+          "border-muted": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "For borders that require more emphasis. Use with caution and in accordance with the brand guidelines."
+          },
+          "border-muted-strong": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Border Dark colour style. Use for UI components that require accessible contrast ratios eg. Inputs, Selects etc"
+          },
+          "border-muted-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved do not use."
+          },
+          "border-muted-soft": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Replaces the current Border colour style. Use for UI components and page elements that don’t require accessible borders - Selectors, Flexi-cell, Tabs, section dividers etc"
+          },
+          "border-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "For borders that require more emphasis. Use with caution and in accordance with the brand guidelines."
+          },
+          "border-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "For borders that require more emphasis. Use with caution and in accordance with the brand guidelines."
+          },
+          "border-pop": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "For borders that require more emphasis. Use with caution and in accordance with the brand guidelines."
+          },
+          "border-holler": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "For borders that require more emphasis. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands."
+          },
+          "border-success": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-success-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.success.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-info": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-info-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.info.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for success info messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-warning": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for warning alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-warning-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.warning.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for warning alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-danger": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Must only be used for the Danger alert component."
+          },
+          "border-danger-mild": {
+            "$type": "color",
+            "$value": "{Primitives.color.reserved.danger.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Only for danger alert messages, do not use for anything else. Tip: Use the pre-built alert message components."
+          },
+          "border-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Similar to surface-mono, border-mono is white in light mode and black in dark mode."
+          },
+          "border-focus": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Only for use with focus state keyboard navigation."
+          }
+        },
+        "data": {
+          "data-a-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-a-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-a-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-b-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-b-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-b-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-c-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-c-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-c-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-d-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-d-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-d-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.holler.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-e-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.sing.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-e-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.sing.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-e-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.sing.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-f-solid": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.dance.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-f-tint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.dance.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          },
+          "data-f-opacity": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.dance.opacity}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "This is a reserved colour. It must only be used for data visualisation - graphs and charts."
+          }
+        },
+        "pictogram": {
+          "surface-pictogram-base": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.800}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Only for use on Pictograms."
+          },
+          "surface-pictogram-accent": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.pop.500}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$description": "Reserved. Only for use on Pictograms."
+          }
+        },
+        "state": {
+          "surface-hover-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-active-primary": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "surface-hover-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.400}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-active-hero": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-hover-primary-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-active-primary-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.primary.100}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-hover-hero-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.50}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "surface-active-hero-faint": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.hero.100}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true
+          },
+          "surface-hover-muted-pale": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.100}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-active-muted-pale": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.300}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-hover-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.mono.white}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          },
+          "surface-active-mono": {
+            "$type": "color",
+            "$value": "{Primitives.color.STG.muted.200}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$hiddenFromPublishing": true,
+            "$description": "This token is for hover states."
+          }
+        }
+      },
+      "border": {
+        "radius": {
+          "rounded-none": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.0px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-sm": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.3px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-md": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.4px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-lg": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.5px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-xl": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.6px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-2xl": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.8px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-3xl": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.12px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-4xl": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.16px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-5xl": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.24px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          },
+          "rounded-full": {
+            "$type": "dimension",
+            "$value": "{Primitives.border.radius.999px}",
+            "$collectionName": "Primitives",
+            "$scopes": [
+              "ALL_SCOPES"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

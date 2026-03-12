@@ -22,5 +22,6 @@ design:
     noTitle: false
     noDemo: true
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  links: []
 code: []

@@ -1,6 +1,13 @@
 import React, { HTMLAttributes } from 'react';
+import { VariantProps } from 'tailwind-variants';
 
-export type Look = 'info' | 'success' | 'warning' | 'danger' | 'system';
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
+import { IconProps } from '../icon/icon.types.js';
+
+import { styles } from './alert.styles.js';
+
+export type Variant = VariantProps<typeof styles>;
 
 export type AlertProps = {
   /**
@@ -31,17 +38,17 @@ export type AlertProps = {
    * The size of the alert icon.
    * @default undefined
    */
-  iconSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+  iconSize?: IconProps['size'];
   /**
    * Alert look style
    * @default info
    */
-  look?: Look;
+  look?: ResponsiveVariants<Variant['look']>;
   /**
    * Alert mode
    * @default box
    */
-  mode?: 'box' | 'text';
+  mode?: ResponsiveVariants<Variant['mode']>;
   /**
    * onClose function for dismissible mode
    */

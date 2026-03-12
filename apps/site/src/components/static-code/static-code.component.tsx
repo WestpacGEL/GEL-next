@@ -8,24 +8,30 @@ export const StaticCode = ({
   language = '', // By default render as plain text (ie. no language).
 }: StaticCodeProps) => {
   return (
-    <div className="relative overflow-hidden">
-      <Highlight code={code} language={language} theme={themes.oceanicNext}>
-        {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={[className, 'p-2'].join(' ')} style={style}>
-            <code className="font-monospace text-base leading-loose">
-              {tokens.map((line, lineKey) => (
-                <div key={lineKey} {...getLineProps({ line })}>
-                  {line.map((token, tokenKey) => (
-                    <span key={tokenKey} {...getTokenProps({ token })} />
-                  ))}
-                </div>
-              ))}
-            </code>
-          </pre>
-        )}
-      </Highlight>
+    <div className="relative flex flex-col overflow-hidden rounded-xl bg-[#282c34]">
+      <div className="flex-1 overflow-auto">
+        <Highlight code={code} language={language} theme={themes.oceanicNext}>
+          {({ className, style, tokens, getLineProps, getTokenProps }) => (
+            <pre className={[className, 'p-2'].join(' ')} style={style}>
+              <code className="font-mono text-base leading-loose">
+                {tokens.map((line, lineKey) => (
+                  <div key={lineKey} {...getLineProps({ line, key: lineKey })}>
+                    {line.map((token, tokenKey) => (
+                      <span key={tokenKey} {...getTokenProps({ token, key: tokenKey })} />
+                    ))}
+                  </div>
+                ))}
+              </code>
+            </pre>
+          )}
+        </Highlight>
+      </div>
       <button
-        className="typography-body-10 absolute right-0 top-0 p-1 pr-2 text-white opacity-50 transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:!outline-offset-[-2px] focus-visible:focus-outline"
+        className={`
+          absolute top-0 right-0 p-1 pr-2 typography-body-10 text-white opacity-50 transition-opacity hover:opacity-100
+          focus-visible:opacity-100 focus-visible:focus-outline
+          focus-visible:!outline-offset-[-2px]
+        `}
         onClick={() => {
           void copy(code);
         }}

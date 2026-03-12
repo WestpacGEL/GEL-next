@@ -101,32 +101,6 @@ export const ResponsiveTotalPages = (props: PaginationProps) => {
 };
 
 /**
- * > Responsive using pages
- */
-export const ResponsivePages = (props: PaginationProps) => {
-  const [current, setCurrent] = useState(1);
-  useEffect(() => {
-    setCurrent(1);
-  }, []);
-
-  return (
-    <>
-      <Pagination
-        {...props}
-        pages={Array.from({ length: 20 }, (_, i) => i + 1).map(page => ({ text: page }))}
-        siblingCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
-        boundaryCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
-        onChange={value => {
-          setCurrent(value);
-          action('onChange')(value);
-        }}
-        current={current}
-      />
-    </>
-  );
-};
-
-/**
  * > Button usage example
  */
 export const AsLinkOnTotalPages = () => {
@@ -226,65 +200,11 @@ export const AsLink: unknown = {
 };
 
 /**
- * > Using useState as example
- */
-export const State = () => {
-  const [page, setPage] = useState(1);
-
-  return (
-    <Pagination
-      current={page}
-      onChange={changedPage => {
-        setPage(changedPage);
-      }}
-      pages={Array.from({ length: 19 }, (_, i) => i + 1).map(page => ({ text: page }))}
-    />
-  );
-};
-
-/**
- * > Using useState as example
- */
-export const InfiniteState = () => {
-  const [page, setPage] = useState(1);
-
-  return (
-    <Pagination
-      current={page}
-      infinite
-      onChange={changedPage => {
-        setPage(changedPage);
-      }}
-      pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
-    />
-  );
-};
-
-/**
- * > Using custom back and next label
- */
-export const CustomBackAndNextLabel = () => {
-  const [page, setPage] = useState(1);
-
-  return (
-    <Pagination
-      current={page}
-      backLabel="Custom back"
-      nextLabel="Custom next"
-      onChange={changedPage => {
-        setPage(changedPage);
-      }}
-      pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
-    />
-  );
-};
-
-/**
  * > Using use pagination hook
  */
 export const UsePagination = () => {
-  const { pages, currentPage, setCurrentPage } = usePagination({
-    pages: [{ text: '1' }, { text: '2' }, { text: '3' }],
+  const { currentPage, setCurrentPage, totalPages } = usePagination({
+    totalPages: 3,
   });
 
   return (
@@ -296,7 +216,7 @@ export const UsePagination = () => {
       onChange={changedPage => {
         setCurrentPage(changedPage);
       }}
-      pages={pages}
+      totalPages={totalPages}
     />
   );
 };
@@ -305,15 +225,15 @@ export const UsePagination = () => {
  * > Using use pagination hook with other components
  */
 export const UsePaginationDifferentComponents = () => {
-  const { next, previous, selectedPage } = usePagination({
-    pages: [{ text: 'Page 1' }, { text: 'Page 2' }, { text: 'Page 3' }],
+  const { next, previous, currentPage } = usePagination({
+    totalPages: 3,
     infinite: true,
   });
 
   return (
     <div className="flex w-[15.625rem] items-center justify-between">
       <Button look="link" iconAfter={ArrowLeftIcon} onClick={previous} />
-      <h4>{selectedPage.text}</h4>
+      <h4>Page {currentPage}</h4>
       <Button look="link" iconAfter={ArrowRightIcon} onClick={next} />
     </div>
   );

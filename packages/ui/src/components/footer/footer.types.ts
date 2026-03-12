@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 
-import { BrandKey } from '../../tailwind/index.js';
+import { BrandKey } from '../../types/brand-types.js';
 
 export type FooterProps = {
   /**

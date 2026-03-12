@@ -49,8 +49,9 @@ accessibility:
       name: Notes on accessibility
       slug: notes-on-accessibility
 relatedComponents:
-  - title: Text styling
-    slug: foundation/text-styling
+  links:
+      - title: Text styling
+        slug: foundation/text-styling
 code:
   - title:
       name: Development notes

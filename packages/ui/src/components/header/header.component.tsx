@@ -1,8 +1,10 @@
 'use client';
 
 import throttle from 'lodash.throttle';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { ArrowLeftIcon, HamburgerMenuIcon } from '../icon/index.js';
 import { Button, SkipLink } from '../index.js';
 import {
@@ -10,21 +12,17 @@ import {
   BOMMultibrandSmallLogo,
   BSAMultibrandLargeLogo,
   BSAMultibrandSmallLogo,
-  RAMSMultibrandLargeLogo,
-  RAMSMultibrandSmallLogo,
   STGMultibrandLargeLogo,
   STGMultibrandSmallLogo,
   SymbolProps,
   WBCMultibrandLargeLogo,
   WBCMultibrandSmallLogo,
-  WBGMultibrandLargeLogo,
-  WBGMultibrandSmallLogo,
 } from '../symbol/index.js';
 
 import { styles as headerStyles } from './header.styles.js';
 import { type HeaderProps } from './header.types.js';
 
-const logoMap = {
+const LOGO_MAP = {
   wbc: {
     logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
     largeLogo: (props: SymbolProps) => <WBCMultibrandLargeLogo {...props} />,
@@ -41,15 +39,7 @@ const logoMap = {
     logo: (props: SymbolProps) => <BSAMultibrandSmallLogo {...props} />,
     largeLogo: (props: SymbolProps) => <BSAMultibrandLargeLogo {...props} />,
   },
-  wbg: {
-    logo: (props: SymbolProps) => <WBGMultibrandSmallLogo {...props} />,
-    largeLogo: (props: SymbolProps) => <WBGMultibrandLargeLogo {...props} />,
-  },
-  rams: {
-    logo: (props: SymbolProps) => <RAMSMultibrandSmallLogo {...props} />,
-    largeLogo: (props: SymbolProps) => <RAMSMultibrandLargeLogo {...props} />,
-  },
-};
+} as const;
 
 export function Header({
   anchorTarget,
@@ -91,12 +81,24 @@ export function Header({
 
   const logoAlignment = logoCenter ? 'center' : 'left';
 
-  const SmallLogo = logoMap[brand].logo;
-  const LargeLogo = logoMap[brand].largeLogo;
+  const finalBrand = useMemo(() => {
+    // Due to brands like 'wbc-light' and 'stg-light'
+    return brand.split('-')[0] as keyof typeof LOGO_MAP;
+  }, [brand]);
+
+  const SmallLogo = LOGO_MAP[finalBrand].logo;
+  const LargeLogo = LOGO_MAP[finalBrand].largeLogo;
 
   const ButtonIcon = leftIcon === 'arrow' ? ArrowLeftIcon : HamburgerMenuIcon;
 
-  const styles = headerStyles({ logoCenter, fixed, leftIcon, scrolled: isScrolled || scrolled });
+  const breakpoint = useBreakpoint();
+
+  const styles = headerStyles({
+    logoCenter: resolveResponsiveVariant(logoCenter, breakpoint),
+    fixed: resolveResponsiveVariant(fixed, breakpoint),
+    leftIcon: resolveResponsiveVariant(leftIcon, breakpoint),
+    scrolled: isScrolled || scrolled,
+  });
 
   const HeaderLogo = useCallback(
     () => (
@@ -124,7 +126,7 @@ export function Header({
               onClick={leftOnClick}
               aria-label={leftAssistiveText ?? defaultAssistiveText}
               className={styles.leftButton()}
-              iconColor="text"
+              iconColor="muted-vivid"
             />
           </div>
         )}

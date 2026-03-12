@@ -2,12 +2,10 @@
 
 The auto address pattern uses auto-complete functionality requiring less input effort (lower interaction cost) from users, while validating the address at the same time. This is available in our core forms development platform.
 
-*This pattern uses an auto-complete component that is currently being tested and amended to ensure up to date WCAG 2.1 AA accessibility compliance. This work should be completed in the new year, 2022. All other aspects of this pattern are compliant.*
+_This pattern uses an auto-complete component that is currently being tested and amended to ensure up to date WCAG 2.1 AA accessibility compliance. This work should be completed in the new year, 2022. All other aspects of this pattern are compliant._
 
 ```tsx
-<Form spacing="large">
-  <AutoAddressDemo />
-</Form>
+<AutoAddressDemo />
 ```
 
 ### Usage examples
@@ -21,22 +19,19 @@ To capture a different mailing address, use a text label with a button group to 
   const [hasDifferentMailingAddress, setHasDifferentMailingAddress] = useState('');
 
   return (
-    <Form spacing="large">
-      <FormGroup>
-        <Field label="Do you have a different mailing address?">
-          <ButtonGroup 
-            size="large" 
-            value={hasDifferentMailingAddress} 
-            onChange={value => setHasDifferentMailingAddress(value)}
-            buttons={[
-              { value: 'yes', label: "Yes" }, 
-              { value: 'no', label: "No" }
-            ]}
-          />
-        </Field>
-      </FormGroup>
-      <FormGroup>{hasDifferentMailingAddress === 'yes' && <AutoAddressDemo />}</FormGroup>
-    </Form>
+    <form spacing="large">
+      <Field label="Do you have a different mailing address?">
+        <ButtonGroup
+          size="large"
+          selectedKeys={hasDifferentMailingAddress}
+          onSelectionChange={value => setHasDifferentMailingAddress(value)}
+        >
+          <ButtonGroupButton id="yes">Yes</ButtonGroupButton>
+          <ButtonGroupButton id="no">No</ButtonGroupButton>
+        </ButtonGtoup>
+      </Field>
+      {hasDifferentMailingAddress === 'yes' && <div className="pt-4"><AutoAddressDemo /></div>}
+    </form>
   );
 };
 ```

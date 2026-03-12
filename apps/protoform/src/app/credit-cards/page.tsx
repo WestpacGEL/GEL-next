@@ -1,6 +1,6 @@
 'use client';
 
-import { Form, FormGroup, Input, InputGroup } from '@westpac/ui';
+import { Field, Input, InputGroup } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
@@ -59,15 +59,13 @@ export default function CreditCards() {
         Quick contact
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <Form id="credit-card" spacing="large" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <FormGroup>
-          <InputGroup
-            size="large"
-            instanceId="name"
-            label="Given name"
-            hint="To help us verify your identity online, please enter your name exactly as it appears on your ID."
-            errorMessage={errors.name?.message}
-          >
+      <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <Field
+          label="Given name"
+          hintMessage="To help us verify your identity online, please enter your name exactly as it appears on your ID."
+          errorMessage={errors.name?.message}
+        >
+          <InputGroup size="large" instanceId="name">
             <Input
               {...register('name', { required: defaultError })}
               id="name"
@@ -75,9 +73,9 @@ export default function CreditCards() {
               invalid={!!errors.name?.message}
             />
           </InputGroup>
-        </FormGroup>
-        <FormGroup>
-          <InputGroup size="large" instanceId="email" label="Email address" errorMessage={errors.email?.message}>
+        </Field>
+        <Field label="Email address" errorMessage={errors.email?.message}>
+          <InputGroup size="large" instanceId="email">
             <Input
               {...register('email', { required: defaultError })}
               id="email"
@@ -85,11 +83,11 @@ export default function CreditCards() {
               invalid={!!errors.email?.message}
             />
           </InputGroup>
-        </FormGroup>
+        </Field>
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
-      </Form>
+      </form>
     </div>
   );
 }

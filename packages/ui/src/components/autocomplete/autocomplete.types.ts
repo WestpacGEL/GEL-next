@@ -4,7 +4,8 @@ import { type ReactNode } from 'react';
 import { ComboBoxState } from 'react-stately';
 import { type VariantProps } from 'tailwind-variants';
 
-import { HintProps, InputProps } from '../index.js';
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
+import { HintProps } from '../index.js';
 
 import { styles } from './autocomplete.styles.js';
 import { AutocompletePopoverProps } from './components/index.js';
@@ -59,11 +60,11 @@ export type AutocompleteProps<T extends object> = {
   /**
    * Size of autocomplete
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
   /**
    * Width of autocomplete
    */
-  width?: InputProps['width'];
+  width?: ResponsiveVariants<Variants['width']>;
   /**
    * Pass through comboBox state from consuming component. If not specified,
    * will be handled internally.

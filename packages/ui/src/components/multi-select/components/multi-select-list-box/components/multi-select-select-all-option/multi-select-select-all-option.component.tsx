@@ -26,7 +26,6 @@ export function MultiSelectSelectAllOption() {
     if (!allItemsAreSelected) {
       // This is because selectAll send a string called 'all' when it is called.
       listState.selectionManager.setSelectedKeys(
-        // This makes it so that when filtered select all will add to the currently selected options rather than replacing
         new Set([...listState.selectionManager.selectedKeys, ...listState.selectionManager.collection.getKeys()]),
       );
       return;
@@ -34,7 +33,7 @@ export function MultiSelectSelectAllOption() {
     return listState.selectionManager.clearSelection();
   }, [allItemsAreSelected, listState.selectionManager]);
 
-  // Use React Aria's useOption hook
+  // Use useOption for accessibility and keyboard nav
   const { optionProps } = useOption(
     {
       key: 'select-all',

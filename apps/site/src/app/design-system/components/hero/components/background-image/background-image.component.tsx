@@ -1,4 +1,4 @@
-import { BrandKey } from '@westpac/ui/tailwind';
+import { BrandKey } from '@westpac/ui/types';
 import { clsx } from 'clsx';
 
 import { styles } from './background-image.styles';
@@ -15,12 +15,10 @@ export function BackgroundImage({
 }) {
   const imageMap = {
     wbc: WbcBackgroundSvg,
-    wbg: null,
     stg: StgBackgroundSvg,
     bsa: BsaBackgroundSvg,
     bom: null,
     btfg: null,
-    rams: null,
   };
 
   let BgImage = imageMap[brand];

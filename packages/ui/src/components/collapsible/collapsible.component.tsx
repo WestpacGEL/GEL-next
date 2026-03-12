@@ -23,8 +23,8 @@ export function Collapsible({
   const contentId = useId();
 
   const ButtonIcon = (props: IconProps) => {
-    if (!contentOpen) return <ExpandMoreIcon color="link" {...props} />;
-    return <ExpandLessIcon color="link" {...props} />;
+    if (!contentOpen) return <ExpandMoreIcon color="primary" {...props} />;
+    return <ExpandLessIcon color="primary" {...props} />;
   };
 
   const handleClick = useCallback(() => {

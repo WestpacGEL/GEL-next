@@ -1,4 +1,3 @@
-// This file has been automatically migrated to valid ESM format by Storybook.
 import { createRequire } from 'node:module';
 import { dirname, join } from 'node:path';
 
@@ -18,6 +17,8 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-docs'),
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-a11y'),
+    // TODO: TEMPORARILY DISABLED - DARK MODE TO BE INCLUDED IN FUTURE UPDATE
+    // getAbsolutePath('@vueless/storybook-dark-mode'),
     {
       name: '@storybook/addon-mcp',
       options: {
@@ -39,9 +40,6 @@ const config: StorybookConfig = {
 
   viteFinal(config) {
     return mergeConfig(config, {
-      optimizeDeps: {
-        exclude: ['@duetds/date-picker/dist/loader'],
-      },
       define: {
         'process.env': {},
       },

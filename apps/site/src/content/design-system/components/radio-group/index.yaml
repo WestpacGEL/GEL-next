@@ -62,12 +62,13 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
-  - title: Checkboxes
-    slug: components/checkbox-group
-  - title: Button groups
-    slug: components/button-group
-  - title: Switches
-    slug: components/switch
+  links:
+      - title: Checkboxes
+        slug: components/checkbox-group
+      - title: Button groups
+        slug: components/button-group
+      - title: Switches
+        slug: components/switch
 code:
   - title:
       name: Development examples

@@ -1,7 +1,7 @@
 'use client';
 
-import { Button, Header, HeaderProps } from '@westpac/ui';
-import { BREAKPOINTS } from '@westpac/ui/themes-constants';
+import { BREAKPOINTS } from '@westpac/style-config/constants';
+import { Button, Header, type HeaderProps } from '@westpac/ui';
 import { useEffect, useState } from 'react';
 
 export function CustomHeader({

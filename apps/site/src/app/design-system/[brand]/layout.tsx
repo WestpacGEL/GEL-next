@@ -28,16 +28,23 @@ export default async function DesignSystemLayout({
   const brand = (paramsBrand?.brand ?? 'wbc') as BrandKey; // double check this is the best way to do this.
 
   return (
-    <div data-theme={brand?.toLowerCase()}>
+    <div data-brand={brand?.toLowerCase()} className="bg-background-white">
       <SkipLink href="#content" className="z-[100]">
         Skip to content
       </SkipLink>
-      <div className="flex min-h-screen flex-col text-text active-theme-stg:text-heading">
+      <div className="flex min-h-screen flex-col text-text-body">
         <SidebarContextProvider>
           <Suspense>
             <Sidebar items={formattedItems} brand={brand} />
           </Suspense>
-          <div className="mb-8 flex flex-1 flex-col lg:ml-[18.75rem]">{children}</div>
+          <div
+            className={`
+              mb-8 flex flex-1 flex-col
+              lg:ml-[18.75rem]
+            `}
+          >
+            {children}
+          </div>
         </SidebarContextProvider>
       </div>
       <StickyFooter />

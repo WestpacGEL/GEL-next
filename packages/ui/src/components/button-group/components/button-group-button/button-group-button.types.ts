@@ -1,13 +1,6 @@
-import { ReactNode } from 'react';
-import { AriaRadioProps } from 'react-aria';
+import { ButtonProps } from '../../../../components/button/button.types.js';
 
-export type ButtonGroupButtonProps = {
-  /**
-   * `string` for overriding base style
-   */
-  className?: string;
-  /**
-   * Label to render
-   */
-  label: ReactNode;
-} & Omit<AriaRadioProps, 'children'>;
+import type { AriaToggleButtonGroupItemProps } from '@react-types/button';
+
+export type ButtonGroupButtonProps = AriaToggleButtonGroupItemProps &
+  Omit<ButtonProps, 'justify' | 'look' | 'size' | 'soft'>;

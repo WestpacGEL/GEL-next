@@ -59,12 +59,13 @@ accessibility:
       name: Notes on accessibility
       slug: notes-on-accessibility
 relatedComponents:
-  - title: Radios
-    slug: components/radio-group
-  - title: Buttons groups
-    slug: components/button-group
-  - title: Switches
-    slug: components/switch
+  links:
+      - title: Radios
+        slug: components/radio-group
+      - title: Buttons groups
+        slug: components/button-group
+      - title: Switches
+        slug: components/switch
 code:
   - title:
       name: Development examples

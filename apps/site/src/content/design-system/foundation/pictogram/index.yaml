@@ -40,12 +40,13 @@ accessibility:
       name: Notes on accessibility
       slug: notes-on-accessibility
 relatedComponents:
-  - title: Icons
-    slug: foundation/icon
-  - title: Symbols
-    slug: components/symbol
-  - title: Logos
-    slug: foundation/logo
+  links:
+      - title: Icons
+        slug: foundation/icon
+      - title: Symbols
+        slug: components/symbol
+      - title: Logos
+        slug: foundation/logo
 code:
   - title:
       name: Development examples

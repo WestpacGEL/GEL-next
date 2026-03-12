@@ -1,6 +1,6 @@
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { Grid, GridItem } from '@westpac/ui';
-import { ArrowRightIcon, CubeIcon, GenericFileIcon } from '@westpac/ui/icon';
+import { ArrowRightIcon, CubeIcon, GenericFileIcon, TagIcon } from '@westpac/ui/icon';
 import NextLink, { LinkProps } from 'next/link';
 import { useParams } from 'next/navigation';
 import { PropsWithChildren } from 'react';
@@ -15,27 +15,45 @@ import { Heading } from '../document-renderer';
 import { DOCUMENT_RENDERERS } from './articles-renderer';
 import { RelatedInfoProps } from './related-info.types';
 
-export function RelatedInfo({ relatedComponents = [], relatedArticles }: RelatedInfoProps) {
-  const relatedComponentsEmpty = relatedComponents?.length < 1;
+export function RelatedInfo({ relatedComponents, relatedArticles }: RelatedInfoProps) {
+  const relatedComponentsEmpty = relatedComponents?.links && relatedComponents.links.length < 1;
   const params = useParams();
   const brand = (params.brand ?? 'wbc') as BrandKey;
+  const relatedComponentsIcon = () => {
+    if (relatedComponents?.icon === 'tag') {
+      return <TagIcon look="outlined" color="hero" />;
+    }
+    return <CubeIcon color="hero" />;
+  };
   return (
-    <Section className="bg-white">
+    <Section className="bg-background-white">
       <Container className="">
-        <Heading level={2} className="mb-4 sm:mb-7">
+        <Heading
+          level={2}
+          className={`
+            mb-4
+            sm:mb-7
+          `}
+        >
           Related information
         </Heading>
         <Grid>
           {!relatedComponentsEmpty && (
             <GridItem span={{ initial: 12, xsl: 4 }}>
-              <h3 className="typography-body-8 flex items-center justify-between border-b border-neutral pb-3 font-bold">
-                Components
-                <CubeIcon color="muted" />
+              <h3
+                className={`
+                  flex items-center justify-between border-b
+                  border-border-muted-soft pb-3 typography-body-8 font-bold
+                  text-text-heading
+                `}
+              >
+                {relatedComponents?.heading || 'Components'}
+                {relatedComponentsIcon()}
               </h3>
               <ul>
-                {relatedComponents.map(({ title, slug }) => {
+                {relatedComponents?.links?.map(({ title, slug }) => {
                   return (
-                    <li key={title}>
+                    <li key={title} className="last:pb-6">
                       <Link href={`/design-system/${brand}/${slug}`}>{title}</Link>
                     </li>
                   );
@@ -45,9 +63,15 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
           )}
           {relatedArticles && (
             <GridItem span={12} start={{ initial: 1, xsl: relatedComponentsEmpty ? 1 : 6 }}>
-              <h3 className="typography-body-8 flex items-center justify-between border-b border-neutral pb-3 font-bold">
+              <h3
+                className={`
+                  flex items-center justify-between border-b
+                  border-border-muted-soft pb-3 typography-body-8 font-bold
+                  text-text-heading
+                `}
+              >
                 Articles
-                <GenericFileIcon color="muted" />
+                <GenericFileIcon look="outlined" color="hero" />
               </h3>
               <div className="mt-3">
                 <DocumentRenderer
@@ -67,7 +91,11 @@ export function RelatedInfo({ relatedComponents = [], relatedArticles }: Related
 function Link({ children, ...props }: PropsWithChildren<LinkProps>) {
   return (
     <NextLink
-      className="typography-body-10 flex min-h-[3.4375rem] items-center justify-between border-b border-border py-1 outline-offset-[3px] outline-focus hover:text-primary hover:underline"
+      className={`
+        flex min-h-[3.4375rem] items-center justify-between border-b
+        border-border-muted-soft py-1 typography-body-10 hover:text-text-primary
+        hover:underline focus-visible:focus-outline
+      `}
       {...props}
     >
       {children}

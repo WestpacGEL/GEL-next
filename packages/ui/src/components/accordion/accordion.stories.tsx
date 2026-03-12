@@ -5,7 +5,8 @@ import { useState } from 'react';
 import { AccountIcon, CreditCardsIcon, InvoiceIcon, ShareIosIcon } from '../icon/index.js';
 import { Badge, Button, Tabs, TabsPanel } from '../index.js';
 
-import { Accordion, AccordionItem } from './accordion.component.js';
+import { Accordion } from './accordion.component.js';
+import { AccordionItem } from './components/index.js';
 
 const meta: Meta<typeof Accordion> = {
   title: 'Components/Accordion',
@@ -42,7 +43,7 @@ export const Default: Story = {
       { key: 'shared', title: 'Shared with us' },
       { key: 'last', title: 'Last item' },
     ].map(({ key, title }) => (
-      <AccordionItem key={key} title={title}>
+      <AccordionItem key={key} id={key} title={title}>
         <h3>{title}</h3>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
@@ -110,7 +111,7 @@ export const WithIcons: Story = {
         ),
       },
     ].map(({ key, title }) => (
-      <AccordionItem key={key} title={title}>
+      <AccordionItem key={key} id={key} title={title}>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
           reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
@@ -136,7 +137,7 @@ export const LegoLook: Story = {
         { key: 'shared', title: 'my shared with you' },
         { key: 'last', title: 'Last item' },
       ].map(({ key, title }) => (
-        <AccordionItem key={key} title={title}>
+        <AccordionItem key={key} id={key} title={title}>
           <p>{title}</p>
           <Button>Test</Button>
         </AccordionItem>
@@ -164,7 +165,7 @@ export const Controlled = () => {
         { key: 'shared', title: 'Shared with you' },
         { key: 'last', title: 'Last item' },
       ].map(({ key, title }) => (
-        <AccordionItem key={key} title={title}>
+        <AccordionItem key={key} id={key} title={title}>
           <p>{title}</p>
           <Button>Test</Button>
         </AccordionItem>
@@ -190,14 +191,14 @@ export const Responsive: Story = {
       <>
         <Accordion {...props} className="sm:hidden">
           {data.map(({ key, title, content }) => (
-            <AccordionItem key={key} title={title}>
+            <AccordionItem key={key} id={key} title={title}>
               <p>{content}</p>
             </AccordionItem>
           ))}
         </Accordion>
         <Tabs className="max-sm:hidden">
           {data.map(({ key, title, content }) => (
-            <TabsPanel key={key} title={title}>
+            <TabsPanel key={key} id={key} title={title}>
               <p>{content}</p>
             </TabsPanel>
           ))}
@@ -213,12 +214,12 @@ export const Responsive: Story = {
 
 export const DefaultExpandedKeysStory = () => (
   <Accordion look="lego" rounded={false} defaultExpandedKeys={['first']}>
-    <AccordionItem key="first" title="hello first">
+    <AccordionItem key="first" id="first" title="hello first">
       <h3>First</h3>
       <p>I am by default opened upon load</p>
     </AccordionItem>
 
-    <AccordionItem key="sec" title="hello sec">
+    <AccordionItem key="sec" id="sec" title="hello sec">
       <h3>Second</h3>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
@@ -226,7 +227,7 @@ export const DefaultExpandedKeysStory = () => (
       </p>
     </AccordionItem>
 
-    <AccordionItem key="third" title="hello third">
+    <AccordionItem key="third" id="third" title="hello third">
       <h3>Third</h3>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam

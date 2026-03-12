@@ -2,7 +2,7 @@ import { Svg } from '@/components/svg';
 
 export function StgBackgroundSvg() {
   return (
-    <Svg viewBox="0 0 1202 1022" width={1202} height={1022} aria-hidden="true" className="block h-auto w-full">
+    <Svg viewBox="0 0 1202 1022" width={1202} height={1022} aria-hidden="true" className={`block h-auto w-full`}>
       <title>St.George background image</title>
       <g fill="none" fillRule="evenodd">
         <path

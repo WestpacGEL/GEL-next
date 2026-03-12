@@ -1,6 +1,8 @@
 import React, { useCallback, useContext, useEffect, useState, Key, KeyboardEvent } from 'react';
 import { mergeProps, useButton, useFocusRing } from 'react-aria';
 
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { Button } from '../../../button/button.component.js';
 import { DropDownIcon, ClearIcon } from '../../../icon/index.js';
 import { Tooltip } from '../../../tooltip/tooltip.component.js';
@@ -18,6 +20,7 @@ export function MultiSelectListBoxTrigger<T>({
 }: MultiSelectListBoxTriggerProps<T>) {
   const { size, overlayState, listState, buttonRef, inputRef } = useContext(MultiSelectContext);
   const selectionMode = listState.selectionManager.selectionMode;
+  const breakpoint = useBreakpoint();
   const { buttonProps } = useButton(triggerProps, buttonRef);
   const { focusProps, isFocusVisible } = useFocusRing();
   const [selectedValues, setSelectedValues] = useState<{ key: string; value: string | undefined }[]>([]);
@@ -25,7 +28,7 @@ export function MultiSelectListBoxTrigger<T>({
 
   const finalButtonProps = mergeProps(focusProps, buttonProps);
   const styles = triggerStyles({
-    size,
+    size: resolveResponsiveVariant(size, breakpoint),
     isFocusVisible,
   });
 
@@ -110,7 +113,7 @@ export function MultiSelectListBoxTrigger<T>({
 
             {/* dropdown toggle */}
             <div className={styles.button()}>
-              <DropDownIcon color="muted" size="medium" aria-hidden="true" />
+              <DropDownIcon color="muted-vivid" size="medium" aria-hidden="true" />
             </div>
           </button>
           {selectedValues.length > 0 && (

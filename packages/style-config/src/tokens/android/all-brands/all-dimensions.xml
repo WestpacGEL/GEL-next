@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <dimen name="westpacLightModeBorderRadiusRoundedNone">0</dimen>
+  <dimen name="westpacLightModeBorderRadiusRoundedSm">3</dimen>
+  <dimen name="westpacLightModeBorderRadiusRoundedMd">4</dimen>
+  <dimen name="westpacLightModeBorderRadiusRoundedLg">5</dimen>
+  <dimen name="westpacLightModeBorderRadiusRoundedXl">6</dimen>
+  <dimen name="westpacLightModeBorderRadiusRounded2xl">8</dimen>
+  <dimen name="westpacLightModeBorderRadiusRounded3xl">12</dimen>
+  <dimen name="westpacLightModeBorderRadiusRounded4xl">16</dimen>
+  <dimen name="westpacLightModeBorderRadiusRounded5xl">24</dimen>
+  <dimen name="westpacLightModeBorderRadiusRoundedFull">999</dimen>
+  <dimen name="stGeorgeLightModeBorderRadiusRoundedNone">0</dimen>
+  <dimen name="stGeorgeLightModeBorderRadiusRoundedSm">3</dimen>
+  <dimen name="stGeorgeLightModeBorderRadiusRoundedMd">4</dimen>
+  <dimen name="stGeorgeLightModeBorderRadiusRoundedLg">5</dimen>
+  <dimen name="stGeorgeLightModeBorderRadiusRoundedXl">6</dimen>
+  <dimen name="stGeorgeLightModeBorderRadiusRounded2xl">8</dimen>
+  <dimen name="stGeorgeLightModeBorderRadiusRounded3xl">12</dimen>
+  <dimen name="stGeorgeLightModeBorderRadiusRounded4xl">16</dimen>
+  <dimen name="stGeorgeLightModeBorderRadiusRounded5xl">24</dimen>
+  <dimen name="stGeorgeLightModeBorderRadiusRoundedFull">999</dimen>
+  <dimen name="bankSaLightModeBorderRadiusRoundedNone">0</dimen>
+  <dimen name="bankSaLightModeBorderRadiusRoundedSm">3</dimen>
+  <dimen name="bankSaLightModeBorderRadiusRoundedMd">4</dimen>
+  <dimen name="bankSaLightModeBorderRadiusRoundedLg">5</dimen>
+  <dimen name="bankSaLightModeBorderRadiusRoundedXl">6</dimen>
+  <dimen name="bankSaLightModeBorderRadiusRounded2xl">8</dimen>
+  <dimen name="bankSaLightModeBorderRadiusRounded3xl">12</dimen>
+  <dimen name="bankSaLightModeBorderRadiusRounded4xl">16</dimen>
+  <dimen name="bankSaLightModeBorderRadiusRounded5xl">24</dimen>
+  <dimen name="bankSaLightModeBorderRadiusRoundedFull">999</dimen>
+  <dimen name="bankOfMelbourneLightModeBorderRadiusRoundedNone">0</dimen>
+  <dimen name="bankOfMelbourneLightModeBorderRadiusRoundedSm">3</dimen>
+  <dimen name="bankOfMelbourneLightModeBorderRadiusRoundedMd">4</dimen>
+  <dimen name="bankOfMelbourneLightModeBorderRadiusRoundedLg">5</dimen>
+  <dimen name="bankOfMelbourneLightModeBorderRadiusRoundedXl">6</dimen>
+  <dimen name="bankOfMelbourneLightModeBorderRadiusRounded2xl">8</dimen>
+  <dimen name="bankOfMelbourneLightModeBorderRadiusRounded3xl">12</dimen>
+  <dimen name="bankOfMelbourneLightModeBorderRadiusRounded4xl">16</dimen>
+  <dimen name="bankOfMelbourneLightModeBorderRadiusRounded5xl">24</dimen>
+  <dimen name="bankOfMelbourneLightModeBorderRadiusRoundedFull">999</dimen>
+</resources>

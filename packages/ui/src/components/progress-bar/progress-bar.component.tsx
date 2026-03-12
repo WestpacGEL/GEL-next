@@ -3,6 +3,9 @@
 import React from 'react';
 import { mergeProps, useProgressBar } from 'react-aria';
 
+import { useBreakpoint } from '../..//hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../..//utils/breakpoint.util.js';
+
 import { styles as progressBarStyles } from './progress-bar.styles.js';
 import { type ProgressBarProps } from './progress-bar.types.js';
 
@@ -16,7 +19,8 @@ export function ProgressBar({ className, look = 'default', value = 0, noLabel = 
     ...props,
   });
 
-  const styles = progressBarStyles({ look });
+  const breakpoint = useBreakpoint();
+  const styles = progressBarStyles({ look: resolveResponsiveVariant(look, breakpoint) });
 
   return (
     <div

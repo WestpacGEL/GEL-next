@@ -1,65 +1,61 @@
 import { act, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { ChangeEvent, useState } from 'react';
+import { useCallback } from 'react';
+import { useForm } from 'react-hook-form';
 
-import { Form, FormGroup, FormHint, FormLabel } from '../form/index.js';
+import { CompactaProps, Field } from '../index.js';
 import { Input } from '../input/index.js';
 
 import { Compacta } from './compacta.component.js';
+import { CompactaItem } from './components/compacta-item/compacta-item.component.js';
+
+type Inputs = {
+  items: {
+    primary?: string;
+    secondary?: string;
+    tertiary?: string;
+  }[];
+};
 
 describe('Compacta', () => {
   const textToQuery = 'Primary title text';
-  const TestCompacta = () => {
-    const [inputs, setInputs] = useState({});
+  const TestCompacta = ({
+    items: itemsProps,
+    ...props
+  }: Partial<CompactaProps & { onRemove?: (index: number) => unknown; items?: Inputs['items'] }>) => {
+    const { register, watch, setValue } = useForm<Inputs>({ defaultValues: { items: itemsProps || [] } });
+    const items = watch('items');
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setInputs((prev: object) => ({ ...prev, [e.target.name]: e.target.value }));
-    };
+    const handleAdd = useCallback(() => {
+      setValue('items', [...items, { primary: '', secondary: '', tertiary: '' }]);
+    }, [items, setValue]);
+
+    const handleRemove = useCallback(
+      (index: number) => {
+        setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+      },
+      [items, setValue],
+    );
+
     return (
-      <Compacta>
-        {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
-          <Form>
-            <FormGroup>
-              <FormLabel htmlFor={`primary-${id}`}>Primary</FormLabel>
-              <FormHint>Primary title text</FormHint>
-              <Input
-                name={`primary-${id}`}
-                value={inputs[`primary-${id}` as keyof typeof inputs] || ''}
-                onChange={e => {
-                  handleChange(e);
-                  setPrimaryTitle(e.target.value);
-                }}
-                data-testid="input-one"
-              />
-            </FormGroup>
-            <FormGroup>
-              <FormLabel htmlFor={`secondary-${id}`}>Secondary</FormLabel>
-              <FormHint>Secondary title text</FormHint>
-              <Input
-                name={`secondary-${id}`}
-                value={inputs[`secondary-${id}` as keyof typeof inputs] || ''}
-                onChange={e => {
-                  handleChange(e);
-                  setSecondaryTitle(e.target.value);
-                }}
-                data-testid="input-two"
-              />
-            </FormGroup>
-            <FormGroup>
-              <FormLabel htmlFor={`tertiary-${id}`}>Tertiary</FormLabel>
-              <FormHint>Tertiary title text</FormHint>
-              <Input
-                name={`tertiary-${id}`}
-                value={inputs[`tertiary-${id}` as keyof typeof inputs] || ''}
-                onChange={e => {
-                  handleChange(e);
-                  setTertiaryTitle(e.target.value);
-                }}
-                data-testid="input-three"
-              />
-            </FormGroup>
-          </Form>
-        )}
+      <Compacta onAdd={handleAdd} {...props}>
+        {items.map((item, index) => (
+          <CompactaItem
+            key={index}
+            title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
+            onRemove={() => (props.onRemove ? props.onRemove(index) : handleRemove(index))}
+          >
+            <Field label="Primary" hintMessage="Primary title text">
+              <Input data-testid="input-one" {...register(`items.${index}.primary`)} />
+            </Field>
+            <Field label="Secondary" hintMessage="Secondary title text">
+              <Input data-testid="input-two" {...register(`items.${index}.secondary`)} />
+            </Field>
+            <Field label="Tertiary" hintMessage="Tertiary title text">
+              <Input data-testid="input-three" {...register(`items.${index}.tertiary`)} />
+            </Field>
+          </CompactaItem>
+        ))}
       </Compacta>
     );
   };
@@ -71,23 +67,27 @@ describe('Compacta', () => {
 
   it('should hide contents of compacta when button pressed', async () => {
     const user = userEvent.setup();
-    const { getByText, getByLabelText } = render(<TestCompacta />);
+    const { getByText, getByLabelText } = render(
+      <TestCompacta items={[{ primary: '', secondary: '', tertiary: '' }]} />,
+    );
 
     expect(getByText(textToQuery)).toBeInTheDocument();
-    user.click(getByLabelText('1.'));
-    await waitFor(() => expect(getByLabelText('1.')).toHaveAttribute('aria-expanded', 'false'));
+    user.click(getByLabelText('Collapse 1'));
+    await waitFor(() => expect(getByLabelText('Expand 1')).toHaveAttribute('aria-expanded', 'false'));
   });
 
   it('should display input values when collapsed', async () => {
     // This test inconsistently shows a warning, it is likely related to motion
     const user = userEvent.setup();
-    const { getByText, getByLabelText, queryByText, getByTestId } = render(<TestCompacta />);
+    const { getByText, getByLabelText, queryByText, getByTestId } = render(
+      <TestCompacta items={[{ primary: '', secondary: '', tertiary: '' }]} />,
+    );
 
     await act(() => user.type(getByTestId('input-one'), 'first'));
     await act(() => user.type(getByTestId('input-two'), 'second'));
     await act(() => user.type(getByTestId('input-three'), 'third'));
 
-    user.click(getByLabelText('1.'));
+    user.click(getByLabelText('Collapse 1'));
     await waitFor(
       () => {
         expect(queryByText(textToQuery)).not.toBeInTheDocument();
@@ -101,26 +101,25 @@ describe('Compacta', () => {
 
   it('should add another compacta when add button is pressed', async () => {
     const user = userEvent.setup();
-    const { getByRole, getByText } = render(<TestCompacta />);
+    const handleAdd = vi.fn();
+
+    const { getByRole } = render(<TestCompacta onAdd={handleAdd} />);
 
     user.click(getByRole('button', { name: 'Add another' }));
-
-    await waitFor(() => {
-      expect(getByText('2.')).toBeInTheDocument();
-    });
+    await waitFor(() => expect(handleAdd).toHaveBeenCalledTimes(1));
   });
 
   it('should remove most recent compacta when remove button is pressed', async () => {
     const user = userEvent.setup();
-    const { getByRole, getByText, queryByText } = render(<TestCompacta />);
+    const handleRemove = vi.fn();
+    const { getByRole } = render(
+      <TestCompacta
+        onRemove={handleRemove}
+        items={[{ primary: 'primary', secondary: 'secondary', tertiary: 'tertiary' }]}
+      />,
+    );
 
-    user.click(getByRole('button', { name: 'Add another' }));
-    await waitFor(() => {
-      expect(getByText('2.')).toBeInTheDocument();
-    });
-    user.click(getByRole('button', { name: 'remove item 2' }));
-    await waitFor(() => {
-      expect(queryByText('2.')).not.toBeInTheDocument();
-    });
+    user.click(getByRole('button', { name: 'Remove item 1' }));
+    await waitFor(() => expect(handleRemove).toHaveBeenCalledTimes(1));
   });
 });

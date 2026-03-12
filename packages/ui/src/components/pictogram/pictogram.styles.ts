@@ -1,19 +1,15 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv(
-  {
-    base: 'inline-block shrink-0 leading-none',
-    variants: {},
-  },
-  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
-);
+export const styles = tv({
+  base: 'inline-block shrink-0 leading-none',
+});
 
 export const fill = tv({
   base: '',
   variants: {
     mode: {
-      dark: 'fill-pictogram-dark',
-      light: 'fill-white',
+      base: 'fill-surface-pictogram-base',
+      mono: 'fill-surface-mono',
       duo: '',
     },
     highlight: {
@@ -27,12 +23,12 @@ export const fill = tv({
     {
       mode: 'duo',
       highlight: true,
-      className: 'fill-pictogram-duo-highlight',
+      className: 'fill-surface-pictogram-accent',
     },
     {
       mode: 'duo',
       outline: true,
-      className: 'fill-pictogram-duo-outline',
+      className: 'fill-surface-pictogram-base',
     },
   ],
 });

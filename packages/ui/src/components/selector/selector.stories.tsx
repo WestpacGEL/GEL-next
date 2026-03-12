@@ -146,7 +146,7 @@ export const CheckboxWithState = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>();
   return (
     <>
-      {selectedOptions?.join(',')}
+      {!!selectedOptions?.length && <p className="text-text-body">SELECTED: {selectedOptions?.join(',')}</p>}
       <Selector
         type="checkbox"
         value={selectedOptions}

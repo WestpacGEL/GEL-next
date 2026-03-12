@@ -30,7 +30,7 @@ export const Default = () => {
         it’s rather curious, you know, this sort of life! I do wonder what can have happened to me! When I used to read
         fairy-tales, I fancied that kind of thing never happened, and now here I am in the middle of one! There ought to
         be a book written about me, that there ought!’{' '}
-        <h3 id="skiptohere" className="typography-body-7 p-2 font-bold">
+        <h3 id="skiptohere" className="p-2 typography-body-7 font-bold">
           Will skip to here
         </h3>{' '}
         ‘It was much pleasanter at home’, thought poor Alice, ‘when one wasn’t always growing larger and smaller, and

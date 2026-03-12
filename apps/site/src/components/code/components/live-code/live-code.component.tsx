@@ -1,4 +1,5 @@
-import { AlertIcon, ArrowRightIcon, NewWindowIcon } from '@westpac/ui/icon';
+import { useBreakpoint } from '@westpac/ui/hook';
+import { AlertIcon, ArrowRightIcon } from '@westpac/ui/icon';
 import copy from 'clipboard-copy';
 import { themes } from 'prism-react-renderer';
 import { KeyboardEvent, useCallback, useContext, useId, useRef, useState } from 'react';
@@ -6,7 +7,7 @@ import { LiveContext, LiveEditor, LivePreview } from 'react-live';
 import { useOverlayTriggerState } from 'react-stately';
 import { VariantProps } from 'tailwind-variants';
 
-import { ResponsiveModal } from '@/app/design-system/[brand]/[...component]/components/content-tabs/components/responsive-modal-button';
+import { ResponsiveModal } from '@/app/design-system/[brand]/(client)/[...component]/components/content-tabs/components/responsive-modal-button';
 
 import { Button } from '../../code.inject-components';
 
@@ -21,6 +22,7 @@ export function LiveCode({
 }: LiveCodeProps) {
   const liveCodeToggleButton = useRef<HTMLButtonElement>(null);
   const live = useContext(LiveContext);
+  const breakpoint = useBreakpoint();
 
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const liveOnChange = live.onChange;
@@ -33,6 +35,7 @@ export function LiveCode({
     showResponsiveDemo,
     isCodeVisible,
     language: live.language as VariantProps<typeof liveCodeStyles>['language'],
+    size: breakpoint,
   });
 
   const copyLiveCode = useCallback(() => {
@@ -65,14 +68,14 @@ export function LiveCode({
       <div className={styles.displayWrapper({})}>
         {showResponsiveDemo && (
           <Button
-            className="absolute right-2 top-2 z-10"
+            className="absolute top-2 right-2 z-10"
             size="small"
             soft
             look="faint"
             onClick={() => responsiveModalState.open()}
           >
             <div className="flex items-center gap-1">
-              <span>Demo</span> <NewWindowIcon size="xsmall" />
+              <span>Demo</span>
             </div>
           </Button>
         )}
@@ -84,22 +87,28 @@ export function LiveCode({
         ) : (
           <LivePreview aria-label="Rendered code snippet example" />
         )}
-        {enableLiveCode && (
-          <div className={styles.buttonWrapper({})}>
-            <button
-              className="typography-body-10 flex items-center gap-1 border-l border-l-border p-3 transition-opacity hover:opacity-100 focus-visible:z-10 focus-visible:focus-outline"
-              ref={liveCodeToggleButton}
-              onClick={() => toggleIsCodeVisible(state => !state)}
-              aria-controls={codeId}
-            >
-              <>
-                {isCodeVisible ? 'Hide live code' : 'Show live code'}
-                <ArrowRightIcon color="primary" className={styles.arrowIcon({})} />
-              </>
-            </button>
-          </div>
-        )}
       </div>
+      {enableLiveCode && (
+        <div className={styles.buttonWrapper({})}>
+          <button
+            className={`
+                flex items-center gap-1 border-l border-l-border-muted-soft p-3
+                typography-body-10 !outline-offset-[-2px]
+                transition-opacity
+                hover:opacity-100
+                focus-visible:z-10 focus-visible:focus-outline
+              `}
+            ref={liveCodeToggleButton}
+            onClick={() => toggleIsCodeVisible(state => !state)}
+            aria-controls={codeId}
+          >
+            <>
+              {isCodeVisible ? 'Hide live code' : 'Show live code'}
+              <ArrowRightIcon color="primary" className={styles.arrowIcon({})} />
+            </>
+          </button>
+        </div>
+      )}
       {enableLiveCode && (
         <div id={codeId} className={styles.codeWrapper({})} onKeyDown={onLiveEditorContainerKeyDown}>
           <button onClick={copyLiveCode} className={styles.copyCodeButton({})}>

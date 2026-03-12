@@ -5,6 +5,7 @@ import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 import { Icon } from './icon.component.js';
 
 import * as AllIcons from './index.js';
+import { AlertIcon } from './index.js';
 
 const AllIconsExample = (props: AllIcons.IconProps) => {
   const [search, setSearch] = useState('');
@@ -33,7 +34,7 @@ const AllIconsExample = (props: AllIcons.IconProps) => {
   return (
     <div className="flex flex-col gap-2">
       <input
-        className="rounded-sm border border-border px-3 py-2"
+        className="rounded-sm border border-border-muted-soft px-3 py-2"
         onChange={handleOnChange}
         placeholder="e.g: Accessibiliy"
       />
@@ -41,11 +42,11 @@ const AllIconsExample = (props: AllIcons.IconProps) => {
         {filteredIcons.map(({ key, Icon }) => (
           <button
             onClick={() => void handleOnClick(key)}
-            className="flex h-15 w-23 flex-col items-center justify-center gap-2 border border-border"
+            className="flex h-15 w-23 flex-col items-center justify-center gap-2 border border-border-muted-soft"
             key={key}
           >
             <Icon {...props} />
-            <span className="whitespace-pre-wrap text-xs">{`<${key} />`}</span>
+            <span className="text-xs whitespace-pre-wrap">{`<${key} />`}</span>
           </button>
         ))}
       </div>
@@ -118,6 +119,56 @@ export const Default: Story = {
 export const Primary: Story = {
   args: {
     color: 'primary',
+  },
+};
+
+/**
+ * > With primary color example
+ */
+export const AllColorsExample: Story = {
+  args: {},
+  render: () => {
+    const ALL_COLORS = [
+      'muted',
+      'muted-vivid',
+      'muted-strong',
+      'muted-mild',
+      'muted-soft',
+      'muted-pale',
+      'muted-faint',
+      'white-pale',
+      'white-faint',
+      'mono',
+      'primary',
+      'primary-faint',
+      'hero',
+      'hero-faint',
+      'pop',
+      'pop-faint',
+      'holler',
+      'holler-faint',
+      'success',
+      'success-faint',
+      'info',
+      'info-faint',
+      'warning',
+      'warning-faint',
+      'danger',
+      'danger-faint',
+      'system-error',
+      'system-error-dark',
+    ] as const;
+
+    return (
+      <div className="flex flex-wrap gap-2">
+        {ALL_COLORS.map(color => (
+          <div key={color} className="flex flex-col items-center">
+            <AlertIcon key={color} color={color} />
+            <p>{color}</p>
+          </div>
+        ))}
+      </div>
+    );
   },
 };
 

@@ -1,0 +1,59 @@
+We introduced new token names to support a multi-brand + dual-theme system.
+
+#### Before
+
+```html
+<StaticCode
+  language="jsx"
+  code={`
+<div className="bg-white">
+  <div className="bg-primary rounded-full">
+    <AccountIcon color="white" />
+  </div>
+  <h2 className="text-text">
+    My title
+    <BankIcon color="link" className="ml-2" />
+  </h2>
+  <p className="text-text">Lorem ipsum dolor sit amet</p>
+</div>
+  `}
+/>
+```
+
+#### After
+
+```html
+<StaticCode
+  language="jsx"
+  code={`
+<div className="bg-background-white">
+  <div className="bg-surface-primary rounded-full">
+    <AccountIcon color="mono" />
+  </div>
+  <h2 className="text-text-body">
+    My title
+    <BankIcon color="primary" className="ml-2" />
+  </h2>
+  <p className="text-text-body">Lorem ipsum dolor sit amet</p>
+</div>
+  `}
+/>
+```
+
+To support migration, a codemod is available to automate this transition.
+
+```html
+<StaticCode language="js" code={`npx jscodeshift --parser=tsx -t node_modules/@westpac/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs <path>/**/*.tsx`} />
+```
+
+NOTE: The parser parameter might be different based on your project, if you see a lot of errors, try another parser (babel, flow, ts, tsx)
+
+This will apply the codemod to all specified files in your project. You may have to run this script more than once depending on your project structure and the files you store styles in.
+
+For classes we are unable to replace with the equivalent token the code will inject a `[REPLACE_TOKEN]` string where it will require working with your project designer to manually update it to the correct color token.
+
+If you want to test the upgrade while waiting for your designers we recommened replacing with a token that is close or the hex value i.e. text-black = text-[#000].
+
+To see all the new tokens you can check storybook [Storybook](https://gel-next-storybook-westpacgel.vercel.app/?path=/docs/foundation-colours--docs) or the [tokens page](/foundation/tokens/colour-tokens)
+
+You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-next/blob/develop/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs)

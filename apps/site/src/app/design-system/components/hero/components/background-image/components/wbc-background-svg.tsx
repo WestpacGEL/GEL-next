@@ -2,7 +2,7 @@ import { Svg } from '@/components/svg';
 
 export function WbcBackgroundSvg() {
   return (
-    <Svg viewBox="0 0 342 228" width={342} height={228} aria-hidden="true" className="block h-full w-auto">
+    <Svg viewBox="0 0 342 228" width={342} height={228} aria-hidden="true" className={`block h-full w-auto`}>
       <title>Westpac background image</title>
       <path
         fill="#FF3DDB"

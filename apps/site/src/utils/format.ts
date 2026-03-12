@@ -50,7 +50,7 @@ function orderMenu(menuItems: Item[], order: string[]) {
 
 // This had to be made as a separate function as adding some to formatNavItems too cognitively complex
 export function sortMenu(menuItems: Item[]) {
-  const topLevelMenuOrder = [
+  const TOPO_LEVEL_MENU_ORDER = [
     'home',
     'get-started',
     'foundation',
@@ -62,11 +62,32 @@ export function sortMenu(menuItems: Item[]) {
     'design tokens',
   ];
 
-  return orderMenu(menuItems, topLevelMenuOrder);
+  const FOUNDATION_MENU_ORDER = ['tokens', 'icons', 'logos', 'pictograms', 'layout', 'fonts', 'text styling'];
+  const TOKENS_MENU_ORDER = ['colour tokens', 'border tokens'];
+
+  const topLevelMenuOrdered = orderMenu(menuItems, TOPO_LEVEL_MENU_ORDER);
+  return topLevelMenuOrdered.map(item => {
+    if (item.label === 'foundation') {
+      const orderedFoundationMenu = orderMenu(item.children || [], FOUNDATION_MENU_ORDER);
+      return {
+        ...item,
+        children: orderedFoundationMenu.map(foundationMenuItem => {
+          if (foundationMenuItem.label === 'tokens') {
+            return {
+              ...foundationMenuItem,
+              children: orderMenu(foundationMenuItem.children || [], TOKENS_MENU_ORDER),
+            };
+          }
+          return foundationMenuItem;
+        }),
+      };
+    }
+    return item;
+  });
 }
 
 export function sortDeveloperMenu(menuItems: Item[]) {
-  const developersMenuOrder = ['set up', 'using components', 'using brands', 'eslint configuration', 'unit testing'];
+  const developersMenuOrder = ['installation', 'theming', 'components', 'configuration', 'unit testing', 'migration'];
 
   return orderMenu(menuItems, developersMenuOrder);
 }

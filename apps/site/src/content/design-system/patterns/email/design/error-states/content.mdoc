@@ -20,33 +20,30 @@ The error message should always sit above the input field to give context. The e
   const [confirmEmail, setConfirmEmail] = useState('gel@westpacc.com.au');
 
   return (
-    <Form spacing="large">
-      <FormGroup>
-        <Field label="Email address">
-          <Input
-            onChange={({ target: { value } }) => setEmail(value)}
-            value={email}
-            invalid
-            size="large"
-            className="w-6/12"
-          />
-        </Field>
-      </FormGroup>
-      <FormGroup>
-        <Field
-          label="Confirm email address"
-          errorMessage="Email addresses did not match. Please enter the same email address in both fields."
-        >
-          <Input
-            onChange={({ target: { value } }) => setConfirmEmail(value)}
-            value={confirmEmail}
-            invalid
-            size="large"
-            className="w-6/12"
-          />
-        </Field>
-      </FormGroup>
-    </Form>
+    <form className="flex flex-col gap-4">
+      <Field label="Email address">
+        <Input
+          onChange={({ target: { value } }) => setEmail(value)}
+          value={email}
+          invalid
+          size="large"
+          className="w-6/12"
+        />
+      </Field>
+
+      <Field
+        label="Confirm email address"
+        errorMessage="Email addresses did not match. Please enter the same email address in both fields."
+      >
+        <Input
+          onChange={({ target: { value } }) => setConfirmEmail(value)}
+          value={confirmEmail}
+          invalid
+          size="large"
+          className="w-6/12"
+        />
+      </Field>
+    </form>
   );
 };
 ```

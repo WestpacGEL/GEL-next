@@ -1,9 +1,2 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  body {
-    @apply typography-body-11;
-  }
-}
+@import 'tailwindcss';
+@reference '@westpac/style-config/tailwind';

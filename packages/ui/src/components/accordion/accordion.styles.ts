@@ -1,16 +1,14 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv(
-  {
-    base: 'flex flex-col border border-border text-text',
-    variants: {
-      rounded: {
-        true: 'rounded',
-      },
-      lego: {
-        true: 'border-0 border-b',
-      },
+export const styles = tv({
+  base: 'flex flex-col border border-border-muted-soft text-text-body',
+  variants: {
+    rounded: {
+      true: 'rounded-2xl',
+    },
+    look: {
+      lego: 'border-0 border-b',
+      soft: '',
     },
   },
-  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
-);
+});

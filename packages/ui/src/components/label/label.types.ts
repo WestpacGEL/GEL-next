@@ -1,6 +1,8 @@
 import { HTMLAttributes, ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
+
 import { styles } from './label.styles.js';
 
 type Variants = VariantProps<typeof styles>;
@@ -19,11 +21,11 @@ export type LabelProps = {
   /**
    * label size
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
   /**
    * Spacing
    */
-  spacing?: Variants['spacing'];
+  spacing?: ResponsiveVariants<Variants['spacing']>;
   /**
    * Enable ‘screen reader only’ mode
    */

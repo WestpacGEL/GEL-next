@@ -45,7 +45,7 @@ const meta: Meta<typeof FlexiCell> = {
   },
 };
 
-const imgString = 'https://res.cloudinary.com/westpac-gel/image/upload/v1721621971/house-demo-image_e1ycip.png';
+const imgString = 'https://www.westpac.com.au/content/dam/public/gel/images/house-demo-image.png';
 
 export default meta;
 
@@ -135,7 +135,15 @@ export const ImageBleedHorizontal = () => {
   return (
     <>
       {new Array(3).fill(null).map((_, index) => (
-        <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{ initial: 'default', md: 'large' }}>
+        <FlexiCell
+          body={false}
+          key={index}
+          tag="a"
+          href="#"
+          withBorder
+          size={{ initial: 'default', md: 'large' }}
+          className="overflow-hidden"
+        >
           <div className="flex gap-2">
             <img
               src={imgString}

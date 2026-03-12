@@ -7,15 +7,28 @@ import { VisuallyHidden } from '../index.js';
 import {
   BOMMultibrandSmallLogo,
   BSAMultibrandSmallLogo,
-  RAMSMultibrandSmallLogo,
   STGMultibrandSmallLogo,
   SymbolProps,
   WBCMultibrandSmallLogo,
-  WBGMultibrandSmallLogo,
 } from '../symbol/index.js';
 
 import { styles as footerStyles } from './footer.styles.js';
 import { type FooterProps } from './footer.types.js';
+
+const LOGO_MAP = {
+  wbc: {
+    logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
+  },
+  stg: {
+    logo: (props: SymbolProps) => <STGMultibrandSmallLogo {...props} />,
+  },
+  bom: {
+    logo: (props: SymbolProps) => <BOMMultibrandSmallLogo {...props} />,
+  },
+  bsa: {
+    logo: (props: SymbolProps) => <BSAMultibrandSmallLogo {...props} />,
+  },
+} as const;
 
 export function Footer({
   brand,
@@ -30,27 +43,9 @@ export function Footer({
 }: FooterProps) {
   const { isFocusVisible, focusProps } = useFocusRing();
   const styles = footerStyles({ offsetSidebar, isFocusVisible });
-  const logoMap = {
-    wbc: {
-      logo: (props: SymbolProps) => <WBCMultibrandSmallLogo {...props} />,
-    },
-    stg: {
-      logo: (props: SymbolProps) => <STGMultibrandSmallLogo {...props} />,
-    },
-    bom: {
-      logo: (props: SymbolProps) => <BOMMultibrandSmallLogo {...props} />,
-    },
-    bsa: {
-      logo: (props: SymbolProps) => <BSAMultibrandSmallLogo {...props} />,
-    },
-    wbg: {
-      logo: (props: SymbolProps) => <WBGMultibrandSmallLogo {...props} />,
-    },
-    rams: {
-      logo: (props: SymbolProps) => <RAMSMultibrandSmallLogo {...props} />,
-    },
-  };
-  const Logo = logoMap[brand].logo;
+
+  const Logo = LOGO_MAP[brand].logo;
+
   return (
     <footer className={styles.base({ className })} {...props}>
       <div className={styles.wrapper()}>

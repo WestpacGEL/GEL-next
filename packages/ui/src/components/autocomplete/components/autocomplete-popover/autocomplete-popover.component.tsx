@@ -23,7 +23,9 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
   const brandContainer = useMemo(() => {
     if (typeof window !== 'undefined') {
       return (
-        document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]') || document.body
+        document.querySelector('[data-theme]') ||
+        document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
+        document.body
       );
     }
   }, []);
@@ -35,12 +37,22 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
 
       <div
         {...popoverProps}
-        style={{ ...popoverProps.style, width: width ? `${width}px` : undefined }}
+        style={{
+          ...popoverProps.style,
+          width: width ? `${width}px` : undefined,
+          maxHeight:
+            popoverProps.style?.maxHeight && +popoverProps.style?.maxHeight <= 400
+              ? +popoverProps.style.maxHeight
+              : 400,
+        }}
         ref={popoverRef}
-        className={clsx('z-10 mt-1 max-h-[400px] rounded border border-border bg-white shadow-lg', className)}
+        className={clsx(
+          'z-10 my-1 flex flex-col rounded-xl border border-border-muted-soft shadow-[0_2px_12px_rgba(0,0,0,0.2)]',
+          className,
+        )}
       >
         {!isNonModal && <DismissButton onDismiss={() => state.close()} />}
-        {children}
+        <div className="min-h-0 flex-1 overflow-auto">{children}</div>
         <DismissButton onDismiss={() => state.close()} />
       </div>
     </Overlay>

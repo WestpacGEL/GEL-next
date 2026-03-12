@@ -1,0 +1,18 @@
+name: Installation
+description: >-
+  The GEL design system is built using React. Use it to easily build new React
+  applications, as well as add to existing ones.
+design:
+  - title:
+      name: Install Tailwind CSS
+      slug: install-tailwind-css
+  - title:
+      name: Install ui and style-config packages
+      slug: install-ui-style-config
+  - title:
+      name: Set up styles
+      slug: set-up-styles
+  - title:
+      name: Resources
+      slug: resources
+accessibility: []

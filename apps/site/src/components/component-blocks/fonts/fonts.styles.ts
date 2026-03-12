@@ -2,7 +2,13 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    default: 'flex flex-col gap-2 bg-white p-6',
-    table: 'mb-5 mt-4 max-w-5xl bg-white p-6',
+    default: `
+      flex flex-col gap-2 rounded-3xl border border-border-muted-soft
+      bg-background-white p-6
+    `,
+    table: `
+      mt-4 mb-5 max-w-5xl rounded-3xl border border-border-muted-soft
+      bg-background-white p-6
+    `,
   },
 });

@@ -57,14 +57,14 @@ describe('Filter', () => {
     const { getByRole } = render(<TestFilter />);
     const defaultSelectedButton = getByRole('button', { name: UNITED_STATES });
     const defaultNotSelectedButton = getByRole('button', { name: ALL_INTERNATIONAL });
-    expect(defaultSelectedButton).toHaveClass('bg-hero');
-    expect(defaultNotSelectedButton).not.toHaveClass('bg-hero');
+    expect(defaultSelectedButton).toHaveClass('bg-surface-hero');
+    expect(defaultNotSelectedButton).not.toHaveClass('bg-surface-hero');
 
     await act(() => user.click(defaultNotSelectedButton));
 
     expect(onClick).toBeCalled();
-    expect(defaultSelectedButton).not.toHaveClass('bg-hero');
-    expect(defaultNotSelectedButton).toHaveClass('bg-hero');
+    expect(defaultSelectedButton).not.toHaveClass('bg-surface-hero');
+    expect(defaultNotSelectedButton).toHaveClass('bg-surface-hero');
   });
 
   it('should call onChange when something is typed in the input', async () => {

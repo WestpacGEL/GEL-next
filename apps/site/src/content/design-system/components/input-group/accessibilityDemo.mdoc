@@ -3,7 +3,7 @@
   const [value, setValue] = useState(0);
 
   return (
-    <Fragment>
+    <div className="flex flex-col gap-4">
       <InputGroup width="10" name="example-text" label="Total amount (in whole dollars)" before="AUD" after=".00">
         <Input defaultValue="" />
       </InputGroup>
@@ -62,7 +62,7 @@
       >
         <Input value={value} onChange={event => setValue(event.target.value)} />
       </InputGroup>
-    </Fragment>
+    </div>
   );
 };
 ```

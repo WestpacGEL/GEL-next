@@ -1,7 +1,7 @@
 'use client';
 
+import { BREAKPOINTS } from '@westpac/style-config/constants';
 import { ArrowRightIcon } from '@westpac/ui/icon';
-import { BREAKPOINTS } from '@westpac/ui/themes-constants';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -25,7 +25,7 @@ export function ArticleTile({ article, slug, className, layout, index }: Article
     <Link href={`/articles/${slug}`} className={styles.base({ className })}>
       {article.thumbnail && (
         <div className={styles.imageWrapper({})}>
-          <Image fill sizes={SIZE_PROP} src={article.thumbnail.src} alt={article.name} className="object-cover" />
+          <Image fill sizes={SIZE_PROP} src={article.thumbnail.src} alt={article.name} className={`object-cover`} />
         </div>
       )}
       <div className={styles.contentWrapper({})}>

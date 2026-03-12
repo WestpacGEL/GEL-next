@@ -3,9 +3,9 @@
 This pattern simplifies address capture to the most basic elements, without the need for extra functionality. It can be used on it own or within other more complex patterns eg as the manual entry option for Auto-address.
 
 ```tsx
-<Form spacing="large" className="w-full lg:w-7/12">
+<form spacingclassName="w-full lg:w-7/12">
   <ManualAddress />
-</Form>
+</form>
 ```
 
 ### Usage examples
@@ -19,22 +19,24 @@ To capture a different mailing address, use a text label with a button group to 
   const [hasDifferentMailingAddress, setHasDifferentMailingAddress] = useState('');
 
   return (
-    <Form className="w-full lg:w-7/12" spacing="large">
-      <FormGroup>
-        <Field label="Do you have a different mailing address?">
-          <ButtonGroup
-            size="large"
-            value={hasDifferentMailingAddress}
-            onChange={value => setHasDifferentMailingAddress(value)}
-            buttons={[
-              { value: 'yes', label: "Yes" }, 
-              { value: 'no', label: "No" }
-            ]}
-          />
-        </Field>
-      </FormGroup>
-      <FormGroup>{hasDifferentMailingAddress === 'yes' && <ManualAddress />}</FormGroup>
-    </Form>
+    <form className="w-full lg:w-7/12" spacing="large">
+      <Field label="Do you have a different mailing address?">
+        <ButtonGroup
+          size="large"
+          value={hasDifferentMailingAddress}
+          onChange={value => setHasDifferentMailingAddress(value)}
+          buttons={[
+            { value: 'yes', label: 'Yes' },
+            { value: 'no', label: 'No' },
+          ]}
+        />
+      </Field>
+      {hasDifferentMailingAddress === 'yes' && (
+        <div className="pt-4">
+          <ManualAddress />
+        </div>
+      )}
+    </form>
   );
 };
 ```

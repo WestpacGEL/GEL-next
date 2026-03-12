@@ -54,12 +54,13 @@ accessibility:
       name: Notes on accessibility
       slug: notes-on-accessibility
 relatedComponents:
-  - title: Inputs
-    slug: components/input
-  - title: Input groups
-    slug: components/input-group
-  - title: Text areas
-    slug: components/textarea
+  links:
+      - title: Inputs
+        slug: components/input
+      - title: Input groups
+        slug: components/input-group
+      - title: Text areas
+        slug: components/textarea
 code:
   - title:
       name: Development examples

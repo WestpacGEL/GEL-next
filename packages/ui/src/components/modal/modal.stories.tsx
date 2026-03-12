@@ -93,9 +93,9 @@ export const Sizes = () => {
         <Fragment key={size}>
           <Modal isDismissable size={size} state={states[size]} title={`Modal ${getSizeTitle(size)}`}>
             <ModalBody>
-              {`
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
-    `}
+              {`   
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem corporis saepe sapiente officia inventore eligendi dolores delectus vitae veritatis repudiandae, unde alias, ipsa a consequatur assumenda perferendis, commodi rem voluptates?
+              `}
             </ModalBody>
             <ModalFooter
               primaryLabel="Label"

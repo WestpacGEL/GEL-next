@@ -40,10 +40,11 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Icons
-    slug: foundation/icon
-  - title: Symbols
-    slug: components/symbol
+  links:
+      - title: Icons
+        slug: foundation/icon
+      - title: Symbols
+        slug: components/symbol
 code:
   - title:
       name: Development examples

@@ -17,7 +17,7 @@ stages:
         steps:
           - task: UseNode@1
             inputs:
-              version: '20.x'
+              version: '22.x'
             displayName: 'Install Node.js'
           - task: Cache@2
             inputs:
@@ -56,13 +56,13 @@ stages:
                   --env SNYK_TOKEN \
                   --env DEBUG=1 \
                   -v $(Build.SourcesDirectory):/app \
-                  snyk/snyk:node-20 snyk ${SNYK_CMD} --severity-threshold=critical --all-projects --org=${SNYK_ORG_ID} --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
+                  snyk/snyk:node-22 snyk ${SNYK_CMD} --severity-threshold=critical --all-projects --org=${SNYK_ORG_ID} --remote-repo-url=GEL-next --project-tags=applicationid=A00C6A,componenttype=ui,buildnumber=0.0.$(Build.BuildId)
             env:
               SNYK_TOKEN: $(SNYK_TOKEN)
               SNYK_ORG_ID: $(SNYK_ORG_ID)
 
   - stage: Fortify
-    condition: false # Temporarily disable Fortify stage until v1
+    condition: and(succeeded(), or(eq(variables.isMain, true)))
     jobs:
       - job: 'fortify_prepare'
         displayName: 'fortify prepare'
