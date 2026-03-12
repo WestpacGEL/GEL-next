@@ -16,6 +16,7 @@ smallDescription: >-
 image:
   src: >-
     https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/radius-hero-picto.png
+  alt: Graphic to symbolise the border radius concept
   height: 1389
   width: 3240
 publishedAt: 2026-03-12T14:34:00.000Z
