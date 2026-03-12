@@ -24,9 +24,7 @@ GEL Docs provides a [full list of colour tokens](https://gel.westpacgroup.com.au
 
 Muted text is now slightly lighter while remaining accessible in all required scenarios.
 
-#### **Rationale:**
-
-Previously, muted text needed to be relatively dark in order to meet accessibility requirements against brand-defined backgrounds. As a result, the contrast difference between body text and muted (hint) text was minimal, making the text hierarchy difficult to perceive.
+**Rationale:** Previously, muted text needed to be relatively dark in order to meet accessibility requirements against brand-defined backgrounds. As a result, the contrast difference between body text and muted (hint) text was minimal, making the text hierarchy difficult to perceive.
 
 Now that we have dedicated surface and text tokens, we have greater flexibility. This change improves the visual hierarchy while maintaining accessibility compliance.
 
@@ -50,9 +48,7 @@ Now that we have dedicated surface and text tokens, we have greater flexibility.
 
 Icons in soft buttons now use the border colour rather than the text colour.
 
-#### Rationale:
-
-Previously, soft button icons inherited the text colour. With the introduction of surface tokens, icons are now coloured using surface tokens rather than text tokens. This change also provides the opportunity to introduce colour to these icons, improving visual clarity and consistency.
+**Rationale:** Previously, soft button icons inherited the text colour. With the introduction of surface tokens, icons are now coloured using surface tokens rather than text tokens. This change also provides the opportunity to introduce colour to these icons, improving visual clarity and consistency.
 
 **Note:** This is not a new variation for designers—it is simply an update to the existing soft button style.
 
@@ -76,12 +72,10 @@ Previously, soft button icons inherited the text colour. With the introduction o
 
 The style of soft badges was updated prior to the Dark Mode work. Instead of using a white background, badges now use their respective “faint” tint.
 
-#### Rationale:
+**Rationale:** This change serves two purposes:
 
-This change serves two purposes:
-
-1. It aligns messaging badges with the messaging design system.
-1. It visually differentiates badges from soft buttons.
+- It aligns messaging badges with the messaging design system.
+- It visually differentiates badges from soft buttons.
 
 For example, hero and primary badges were previously identical to hero and primary soft buttons, which caused confusion.Again, this is not a new variation but a refinement of the existing style.
 
@@ -107,9 +101,7 @@ For example, hero and primary badges were previously identical to hero and prima
 
 In components that do not require an accessible border (border-dark), the lighter border colour has been reinstated (border-muted-soft).
 
-#### Rationale:
-
-This now aligns with the mobile banking app who use the lighter border in all their components. This change has been reviewed and approved by Access and Inclusion and our external accessibility consultants.
+**Rationale:** This now aligns with the mobile banking app who use the lighter border in all their components. This change has been reviewed and approved by Access and Inclusion and our external accessibility consultants.
 
 {% layout layout=[5, 5] %}
 {% layout-area %}
@@ -131,9 +123,7 @@ This now aligns with the mobile banking app who use the lighter border in all th
 
 The colour of the switch component has been modified so it functions correctly in Dark Mode without the need for a bespoke component-specific token. The updated design now uses two colours instead of three, and the drop shadow has been removed.
 
-#### Rationale:
-
-The current white switch handle is not accessible, as it has no border and relies on a drop shadow for separation.
+**Rationale:** The current white switch handle is not accessible, as it has no border and relies on a drop shadow for separation.
 
 {% layout layout=[5, 5] %}
 {% layout-area %}
@@ -155,9 +145,7 @@ The current white switch handle is not accessible, as it has no border and relie
 
 There are currently inconsistencies with the close icons – some are muted, some are primary, some use a hover state and others do not. To resolve this the close icons used in Modals, Bottom Sheets, and Popovers are now red and no longer include hover states.
 
-#### Rationale:
-
-This provides better consistency and aligns with the mobile banking app.
+**Rationale:** This provides better consistency and aligns with the mobile banking app.
 
 {% layout layout=[5, 5] %}
 {% layout-area %}
@@ -179,9 +167,7 @@ This provides better consistency and aligns with the mobile banking app.
 
 The 3px active border on selectors has been removed.
 
-#### Rationale:
-
-The selected state is already indicated by the tick icon, making the border unnecessary. No other components in the library use this pattern. This change has been reviewed and approved by Access and Inclusion.
+**Rationale:** The selected state is already indicated by the tick icon, making the border unnecessary. No other components in the library use this pattern. This change has been reviewed and approved by Access and Inclusion.
 
 {% layout layout=[5, 5] %}
 {% layout-area %}
@@ -203,9 +189,7 @@ The selected state is already indicated by the tick icon, making the border unne
 
 The default faint button now uses surface-muted-pale as its background.
 
-#### Rationale:
-
-This increases the visual contrast between the default and soft variants of the button.
+**Rationale:** This increases the visual contrast between the default and soft variants of the button.
 
 {% layout layout=[5, 5] %}
 {% layout-area %}
