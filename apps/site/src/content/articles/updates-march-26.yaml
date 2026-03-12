@@ -4,7 +4,9 @@ description: >-
   The introduction of tokens and the need for closer alignment with online
   banking has required some updates to the design system. This article outlines
   these updates and explains the rationale behind them.
-thumbnail: {}
+thumbnail:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/articles/updates-march-26/folder-card.png
 smallDescription: This article is unlisted.
 image: {}
 publishedAt: 2026-03-12T17:43:00.000Z
