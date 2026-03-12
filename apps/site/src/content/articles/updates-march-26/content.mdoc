@@ -45,3 +45,29 @@ Now that we have dedicated surface and text tokens, we have greater flexibility.
    spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
+
+## Soft buttons
+
+Icons in soft buttons now use the border colour rather than the text colour.
+
+#### Rationale:
+
+Previously, soft button icons inherited the text colour. With the introduction of surface tokens, icons are now coloured using surface tokens rather than text tokens. This change also provides the opportunity to introduce colour to these icons, improving visual clarity and consistency.
+
+**Note:** This is not a new variation for designers—it is simply an update to the existing soft button style.
+
+{% layout layout=[5, 5] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/updates/update-soft-button-icon-current.png", height: 900, width: 1080}
+   caption="Current soft button icon"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/updates/update-soft-button-icon-new.png", height: 900, width: 1080}
+   caption="New soft button icon"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
