@@ -117,3 +117,43 @@ In light mode the grey box sits on a white background, this emphasis is maintain
    spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
+
+#### 3. White box on a pale grey background
+
+In light mode the white box sits on a pale grey background, this emphasis is maintained in dark mode where the box remains slightly lighter than the background.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-3a.png", height: 1692, width: 1128}
+   caption="Light mode"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-3b.png", height: 1692, width: 1128}
+   caption="Dark mode"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+#### 4. Faint grey box nested in a pale grey box
+
+In light mode the nested faint grey box provides a very subtle background when placed on the pale grey box. This emphasis is maintained in dark mode.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-4a.png", height: 1692, width: 1128}
+   caption="Light mode"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-4b.png", height: 1692, width: 1128}
+   caption="Dark mode"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
