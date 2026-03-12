@@ -174,3 +174,27 @@ This provides better consistency and aligns with the mobile banking app.
    spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
+
+## Selector border
+
+The 3px active border on selectors has been removed.
+
+#### Rationale:
+
+The selected state is already indicated by the tick icon, making the border unnecessary. No other components in the library use this pattern. This change has been reviewed and approved by Access and Inclusion.
+
+{% layout layout=[5, 5] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/updates/update-selector-border-current.png", height: 699, width: 1080}
+   caption="Current active border"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/updates/update-selector-border-new.png", height: 699, width: 1080}
+   caption="New active border"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
