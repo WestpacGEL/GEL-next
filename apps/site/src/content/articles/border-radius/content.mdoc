@@ -31,6 +31,29 @@ We also provide two additional utility tokens shown in Figure 2.
 - rounded-full – creates a pill or circular shape
 
 {% articleBodyImage
-   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-none.png", width: 3516, height: 1503}
-   title="Graphic showing the utility tokens"
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-none.png", alt: "Graphic showing the utility radius tokens", height: 1503, width: 3516}
+   title="Figure 2. Utility tokens"
    type="body" /%}
+
+## Nesting
+
+Nesting refers to placing one element inside another element, creating a parent–child relationship. Figures 3 and 4 illustrate this principle:
+
+- **Figure 3:** The nested element uses a larger radius than its parent container, creating an awkward visual disconnect.
+- **Figure 4:** The nested element uses a smaller radius than its parent container, creating a more harmonious relationship. This visual hierarchy helps communicate the structure of the content.
+
+{% layout layout=[5, 5] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-nesting-a.png", alt: "Graphic showing the wrong way to apply border radius", height: 1200, width: 1200}
+   caption=" Figure 3. Incorrect radius nesting"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-nesting-b.png", alt: "Graphic showing the correct way to nest border radius", height: 1200, width: 1200}
+   caption="Figure 4. Correct radius nesting"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
