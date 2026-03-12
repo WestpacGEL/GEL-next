@@ -5,7 +5,12 @@ description: >-
   both web and native platforms has significantly enhanced our global experience
   language. This article provides an overview of tokens, why they matter and how
   they will impact you.
-thumbnail: {}
+thumbnail:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/articles/tokens/tokens-card.png
+  alt: Graphic to illustrate tokens
+  height: 1212
+  width: 3168
 smallDescription: >-
   An introduction to tokens, what they are, why they matter, how to get started
   and where to find more information.
