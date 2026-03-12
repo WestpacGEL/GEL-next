@@ -102,3 +102,27 @@ For example, hero and primary badges were previously identical to hero and prima
    spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
+
+## Pale border
+
+In components that do not require an accessible border (border-dark), the lighter border colour has been reinstated (border-muted-soft).
+
+#### Rationale:
+
+This now aligns with the mobile banking app who use the lighter border in all their components. This change has been reviewed and approved by Access and Inclusion and our external accessibility consultants.
+
+{% layout layout=[5, 5] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/updates/update-pale-border-current.png", height: 573, width: 1080}
+   caption="Current border"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/updates/update-pale-border-new.png", height: 573, width: 1080}
+   caption="New border"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
