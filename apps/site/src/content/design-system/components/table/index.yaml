@@ -47,11 +47,6 @@ design:
       slug: dos-and-donts
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
@@ -60,9 +55,10 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
+  icon: cube
   links:
-      - title: Panels
-        slug: components/panel
+    - title: Panels
+      slug: components/panel
 code:
   - title:
       name: Development examples
