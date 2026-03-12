@@ -150,3 +150,27 @@ The current white switch handle is not accessible, as it has no border and relie
    spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
+
+## Close icons
+
+There are currently inconsistencies with the close icons – some are muted, some are primary, some use a hover state and others do not. To resolve this the close icons used in Modals, Bottom Sheets, and Popovers are now red and no longer include hover states.
+
+#### Rationale:
+
+This provides better consistency and aligns with the mobile banking app.
+
+{% layout layout=[5, 5] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/updates/update-close-icon-current.png", height: 816, width: 1080}
+   caption="Current close icons"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/updates/update-close-icon-new.png", height: 816, width: 1080}
+   caption="New close icons"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
