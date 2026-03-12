@@ -18,7 +18,7 @@ This package serves as the single source of truth for design consistency across 
 Install the GEL style config using your preferred package manager i.e. `npm`, `yarn` or `pnpm`.
 
 ```sh
-npm i @westpac/style-config@canary
+npm i @westpac/style-config
 ```
 
 If using tailwind also install the following:
@@ -93,7 +93,7 @@ import { ALL_BRANDS } from '@westpac/style-config/tokens';
 
 All brand tokens have been mapped to a color theme variable in the tailwind config and can be used in the relevant tailwind classname e.g. `bg-surface-mono text-text-body`
 
-All available color tokens can be viewed in the [GEL storybook](https://gel-next-storybook-git-release-100-westpacgel.vercel.app/?path=/docs/foundation-colours--docs).
+All available color tokens can be viewed in the [GEL storybook](https://gel-next-storybook-westpacgel.vercel.app/?path=/docs/foundation-colours--docs).
 
 #### Brand fonts
 
