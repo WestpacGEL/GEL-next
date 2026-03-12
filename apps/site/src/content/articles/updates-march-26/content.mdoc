@@ -126,3 +126,27 @@ This now aligns with the mobile banking app who use the lighter border in all th
    spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
+
+## Switch
+
+The colour of the switch component has been modified so it functions correctly in Dark Mode without the need for a bespoke component-specific token. The updated design now uses two colours instead of three, and the drop shadow has been removed.
+
+#### Rationale:
+
+The current white switch handle is not accessible, as it has no border and relies on a drop shadow for separation.
+
+{% layout layout=[5, 5] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/updates/update-switch-current.png", height: 702, width: 1080}
+   caption="Current switch"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/updates/update-switch-new.png", height: 702, width: 1080}
+   caption="New switch"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
