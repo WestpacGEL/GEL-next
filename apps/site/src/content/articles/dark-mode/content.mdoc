@@ -25,3 +25,49 @@ We currently don’t provide high contrast mode however the colour system is des
    spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
+
+## Working with dark mode
+
+If you’re using GEL colour tokens and components correctly, switching to dark mode is largely automated. However, you must always preview your work in dark mode to confirm everything behaves as expected.
+
+Any bespoke components or page furniture must also be tested in both light and dark modes to ensure they meet accessibility requirements.
+
+### Never design in dark mode
+
+Designing directly in dark mode can introduce inconsistencies and accessibility issues. Always design in light mode and test in dark mode.If you identify an issue while testing in dark mode:
+
+1. Return to light mode
+1. Fix the issue
+1. Test again in dark mode
+
+### Test as you go
+
+Don’t wait until your design is complete before testing in dark mode. Test early and often especially if you’re new to this system. If possible test in a low light environment and give your eyes time to adjust to the change. Switching between light and dark modes can become quite disorientating so take frequent breaks to give your eyes a rest.
+
+### Never use pure black backgrounds
+
+Pure black is typically used for high contrast mode as it maximises contrast. This contradicts the objective of dark mode where the aim is to lower contrast. Dark mode background tokens use a dark grey rather than #000000. This helps to reduce glare while maintaining accessibility.
+
+## Understanding backgrounds
+
+Establishing dark mode is fundamentally about managing emphasis. The goal is to preserve the same (or very similar) visual hierarchy between light and dark modes.
+
+Figure 1 illustrates this concept. In light mode the text on the pale grey background carries high emphasis and strong legibility, while the white container below appears more subtle. When switched to dark mode, this emphasis and hierarchy is preserved.
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-emphasis.png", alt: "Graphic to show how emphasis is maintained in both light and dark mode", height: 2880, width: 5760}
+   title="Fig 1. Creating the same emphasis in both light and dark mode"
+   type="bodyWide" /%}
+
+Backgrounds are the foundation of this hierarchy. We already have a flexible and accessible system for backgrounds which is used across all our touch points. Tokens allow us to replicate this behaviour consistently in dark mode.
+
+### Background tokens
+
+Background tokens are special. They don’t follow the same principles as surface tokens, which is why their naming differs. As the name suggests, background tokens are specifically intended for screen and component backgrounds. They’re designed to work together to maintain correct emphasis relationships in both light and dark modes.
+
+(Figure 2 shows the available background tokens.)
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-background-tokens.png", alt: "Graphic showing the background tokens for light and dark modes", height: 1152, width: 2688}
+   title="Fig 2. Background tokens in both light and dark mode"
+   type="bodyWide" /%}
