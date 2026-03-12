@@ -77,3 +77,23 @@ Background tokens are special. They don’t follow the same principles as surfac
 ## Background configurations
 
 The examples below demonstrate how background tokens combine to create our supported configurations and their dark mode equivalents. Every GEL component is designed to remain accessible on these background configurations in both light and dark mode.
+
+#### 1. White box on a white background
+
+In light mode the white box sits on a white background. There is no emphasis and this is replicated in dark mode.
+
+{% layout layout=[5, 5] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-1a.png", height: 1692, width: 1128}
+   caption="Light Mode"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-1b.png", height: 1692, width: 1128}
+   caption="Dark mode"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
