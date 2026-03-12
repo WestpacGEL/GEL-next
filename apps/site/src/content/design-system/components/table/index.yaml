@@ -28,11 +28,6 @@ design:
     noTitle: false
     noDemo: false
   - title:
-      name: Basic table with highlights
-      slug: basic-table-with-highlights
-    noTitle: false
-    noDemo: false
-  - title:
       name: User experience
       slug: user-experience
     noTitle: false
