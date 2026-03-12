@@ -32,23 +32,19 @@ design:
       slug: dos-and-donts
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
+  icon: cube
   links:
-      - title: Popovers
-        slug: components/popover
-      - title: Buttons
-        slug: components/button
-      - title: Icons
-        slug: foundation/icon
+    - title: Popovers
+      slug: components/popover
+    - title: Buttons
+      slug: components/button
+    - title: Icons
+      slug: foundation/icon
 code:
   - title:
       name: Development examples
