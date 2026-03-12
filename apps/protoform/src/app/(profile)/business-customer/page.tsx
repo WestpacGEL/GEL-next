@@ -28,10 +28,10 @@ export default function BusinessCustomerPage() {
       <CustomHeading
         beforeContent={
           <div className="mb-5 flex items-center gap-1">
-            <Circle className="bg-muted">
+            <Circle className="bg-surface-muted">
               <OfficeIcon color="white" size="xsmall" />
             </Circle>
-            <h3 className="typography-body-11 font-bold text-muted">Green thumbs gardens:</h3>
+            <h3 className="typography-body-11 font-bold text-text-muted">Green thumbs gardens:</h3>
             <span className="typography-body-11">1234567890</span>
           </div>
         }

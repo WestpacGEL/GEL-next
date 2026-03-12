@@ -1,8 +1,7 @@
+import { BREAKPOINTS } from '@westpac/style-config/constants';
 import { PanInfo, motion, useAnimation } from 'motion/react';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Overlay, useModalOverlay } from 'react-aria';
-
-import { BREAKPOINTS } from '../../../../tailwind/constants/index.js';
 
 import { styles as bottomSheetModalStyles } from './bottom-sheet-modal.styles.js';
 import { ModalProps } from './bottom-sheet-modal.types.js';
@@ -40,7 +39,9 @@ export function BottomSheetModal({
   const brandContainer = useMemo(() => {
     if (isBrowser) {
       return (
-        document.querySelector('[data-theme]') || document.querySelector('[className="data-theme"]') || document.body
+        document.querySelector('[data-theme]') ||
+        document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
+        document.body
       );
     }
   }, []);

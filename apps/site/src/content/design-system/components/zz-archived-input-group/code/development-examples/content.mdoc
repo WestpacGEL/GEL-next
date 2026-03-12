@@ -201,7 +201,7 @@
 ```jsx
  <Fragment>
   {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
-    <div key={size} className="border-b border-b-border py-3">
+    <div key={size} className="border-b border-b-border-muted-soft py-3">
       <h3 className="typography-body-7 mb-4 font-bold">Size: {size}</h3>
       <InputGroup
         size={size}

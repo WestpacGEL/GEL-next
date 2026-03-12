@@ -63,9 +63,9 @@ export const Controlled = () => {
   );
   return (
     <>
-      <h2 className="typography-body-9 mb-1 font-bold">Default</h2>
+      <h2 className="mb-1 typography-body-9 font-bold">Default</h2>
       <ProgressBar value={barValue} className="mb-2" />
-      <h2 className="typography-body-9 mb-1 font-bold">Skinny</h2>
+      <h2 className="mb-1 typography-body-9 font-bold">Skinny</h2>
       <ProgressBar look="skinny" value={barValue} className="mb-2" />
       <div className="flex items-center space-x-1">
         <Button

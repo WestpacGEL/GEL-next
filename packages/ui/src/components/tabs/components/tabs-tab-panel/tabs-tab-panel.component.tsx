@@ -5,7 +5,16 @@ import { mergeProps, useFocusRing, useTabPanel } from 'react-aria';
 import { styles } from './tabs-tab-panel.styles.js';
 import { type TabsTabPanelProps } from './tabs-tab-panel.types.js';
 
-export function TabsTabPanel({ className, state, look, id, keepMounted = false, ...props }: TabsTabPanelProps) {
+export function TabsTabPanel({
+  className,
+  state,
+  look,
+  id,
+  keepMounted = false,
+  justify,
+  orientation,
+  ...props
+}: TabsTabPanelProps) {
   const ref = useRef(null);
   const { isFocused, focusProps } = useFocusRing();
   const { tabPanelProps } = useTabPanel({ ...props }, state, ref);
@@ -20,7 +29,7 @@ export function TabsTabPanel({ className, state, look, id, keepMounted = false, 
     <div
       {...mergeProps(tabPanelProps, focusProps)}
       ref={ref}
-      className={styles({ className, look, isFocused })}
+      className={styles({ className, look, isFocused, justify, orientation })}
       hidden={!isSelected}
       aria-hidden={!isSelected}
     >

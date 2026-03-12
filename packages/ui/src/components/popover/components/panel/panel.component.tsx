@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { ButtonRef } from '../../../button/button.types.js';
 import { Button } from '../../../button/index.js';
 import { CloseIcon } from '../../../icon/index.js';
@@ -23,6 +25,7 @@ export function BasePanel({
 }: PanelProps) {
   const popoverRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
+  const breakpoint = useBreakpoint();
   const headingRef = useRef<HTMLHeadingElement>(null);
   const buttonRef = useRef<ButtonRef>(null);
   const { popoverPosition, arrowPosition, localPlacement } = usePanel({
@@ -32,7 +35,9 @@ export function BasePanel({
     portal,
     popoverRef,
   });
-  const styles = panelStyles({ placement: localPlacement });
+  const resolvedPlacement = resolveResponsiveVariant(localPlacement, breakpoint);
+
+  const styles = panelStyles({ placement: resolvedPlacement });
   useEffect(() => {
     if (state.isOpen && !open) {
       if (headingRef.current) {
@@ -65,7 +70,7 @@ export function BasePanel({
             state.close();
           }}
           className={styles.closeBtn()}
-          iconAfter={() => <CloseIcon color="muted" size="small" aria-hidden />}
+          iconAfter={() => <CloseIcon color="primary" size="small" aria-hidden />}
           aria-label="Close popover"
         />
       </div>

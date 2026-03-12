@@ -1,7 +1,14 @@
 import { Property } from 'csstype';
 import { HTMLAttributeAnchorTarget, HTMLAttributes } from 'react';
+import { VariantProps } from 'tailwind-variants';
 
-import { BrandKey } from '../../tailwind/index.js';
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
+
+import { BrandKey } from '../../types/brand-types.js';
+
+import { styles } from './header.styles.js';
+
+type Variant = VariantProps<typeof styles>;
 
 export type HeaderProps = {
   /**
@@ -20,7 +27,7 @@ export type HeaderProps = {
   /**
    * Enable fixed header
    */
-  fixed?: boolean;
+  fixed?: ResponsiveVariants<Variant['fixed']>;
   /**
    * Set max width for fixed header for certain layouts
    * NOTE: Using max-w in classname will work for non-fixed headers
@@ -38,7 +45,7 @@ export type HeaderProps = {
   /**
    * Icon type for left button either 'arrow' or 'hamburger'
    */
-  leftIcon?: 'arrow' | 'hamburger';
+  leftIcon?: ResponsiveVariants<Variant['leftIcon']>;
   /**
    * On click handler for left button
    */
@@ -50,7 +57,7 @@ export type HeaderProps = {
   /**
    * Center logo at xs breakpoint
    */
-  logoCenter?: boolean;
+  logoCenter?: ResponsiveVariants<Variant['logoCenter']>;
   /**
    * Link for logo, can be disabled with disableLogoLink
    * @default '#'

@@ -1,6 +1,7 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 import { type VariantProps } from 'tailwind-variants';
 
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 import { IconProps } from '../icon/index.js';
 
 import { styles } from './button.styles.js';
@@ -14,7 +15,7 @@ export type ButtonProps = {
    * Fit button width to its parent width.
    * @default false
    */
-  block?: Variants['block'];
+  block?: ResponsiveVariants<Variants['block']>;
   /**
    * Badge body content
    */
@@ -48,12 +49,12 @@ export type ButtonProps = {
    * When true, children will use flex justify-between
    * @default false
    */
-  justify?: Variants['justify'];
+  justify?: ResponsiveVariants<Variants['justify']>;
   /**
    * Button look
    * @default hero
    */
-  look?: Variants['look'];
+  look?: ResponsiveVariants<Variants['look']>;
   /**
    * Removes horizontal padding from the 'link' look button
    * @default false
@@ -63,11 +64,11 @@ export type ButtonProps = {
    * Size of the button
    * @default medium
    */
-  size?: Variants['size'];
+  size?: ResponsiveVariants<Variants['size']>;
   /**
    * Removes background colour and adjusts text colour.
    */
-  soft?: Variants['soft'];
+  soft?: ResponsiveVariants<Variants['soft']>;
   /**
    * Tag to render
    * @default button

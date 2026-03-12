@@ -1,5 +1,7 @@
 'use client';
 
+import { useBreakpoint } from '@westpac/ui/hook';
+
 import { styles as AvailabilityContentStyles } from './availability-content.styles';
 import { TableOfAvailability } from './components/table-of-availability';
 
@@ -13,7 +15,9 @@ export function AvailabilityContent({
   alternativeMesh,
   alternativeLegacyWdp,
 }: AvailabilityContentProps) {
-  const styles = AvailabilityContentStyles({});
+  const breakpoint = useBreakpoint();
+
+  const styles = AvailabilityContentStyles({ size: breakpoint });
   return (
     <div className={styles.contentContainer({})}>
       <div className={styles.tableContainer({})}>

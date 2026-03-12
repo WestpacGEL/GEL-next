@@ -35,11 +35,8 @@ describe('Pagination', () => {
     const { container } = render(
       <Pagination
         current={1}
-        pages={[
-          { href: '#page1', text: 'page-1' },
-          { href: '#page2', text: 'page-2' },
-          { href: '#page3', text: 'page-3' },
-        ]}
+        totalPages={3}
+        onPageItemProps={page => ({ href: `#page${page}`, text: `page-${page}` })}
       />,
     );
     expect(container).toBeInTheDocument();
@@ -47,7 +44,7 @@ describe('Pagination', () => {
   it('renders the component as data driven', () => {
     const fn = vitest.fn();
     const { container } = render(
-      <Pagination current={1} onChange={fn} pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]} />,
+      <Pagination totalPages={3} current={1} onChange={fn} onPageItemProps={page => ({ text: `page-${page}` })} />,
     );
     expect(container).toBeInTheDocument();
   });
@@ -64,7 +61,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     expect(getByRole('button', { current: 'page' })).toHaveTextContent('page-1');
@@ -75,10 +73,11 @@ describe('Pagination', () => {
     rerender(
       <Pagination
         current={result.current.current}
+        totalPages={3}
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     expect(getByRole('button', { current: 'page' })).toHaveTextContent('page-2');
@@ -96,7 +95,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     await act(async () => {
@@ -109,7 +109,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     expect(getByRole('button', { current: 'page' })).toHaveTextContent('page-2');
@@ -127,7 +128,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     expect(getByText('Next')).toBeDisabled();
@@ -142,7 +144,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     expect(getByRole('button', { current: 'page' })).toHaveTextContent('page-3');
@@ -160,7 +163,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     await act(async () => {
@@ -173,7 +177,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     expect(getByRole('button', { current: 'page' })).toHaveTextContent('page-1');
@@ -191,7 +196,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     expect(getByText('Back')).toBeDisabled();
@@ -206,7 +212,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     expect(getByRole('button', { current: 'page' })).toHaveTextContent('page-1');
@@ -225,7 +232,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
 
@@ -240,7 +248,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     expect(getByRole('button', { current: 'page' })).toHaveTextContent('page-1');
@@ -259,7 +268,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
 
@@ -274,7 +284,8 @@ describe('Pagination', () => {
         onChange={newPage => {
           result.current.setCurrent(newPage);
         }}
-        pages={[{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }]}
+        totalPages={3}
+        onPageItemProps={page => ({ text: `page-${page}` })}
       />,
     );
     expect(getByRole('button', { current: 'page' })).toHaveTextContent('page-3');
@@ -289,7 +300,8 @@ describe('Pagination', () => {
           boundaryCount={0}
           // eslint-disable-next-line @typescript-eslint/no-empty-function
           onChange={() => {}}
-          pages={TWENTY_PAGES_SAMPLE}
+          totalPages={20}
+          onPageItemProps={page => ({ text: `page-${page}` })}
         />,
       );
       expect(screen.getAllByRole('button').length).toBe(8);
@@ -303,7 +315,8 @@ describe('Pagination', () => {
           boundaryCount={0}
           // eslint-disable-next-line @typescript-eslint/no-empty-function
           onChange={() => {}}
-          pages={TWENTY_PAGES_SAMPLE}
+          totalPages={20}
+          onPageItemProps={page => ({ text: `page-${page}` })}
         />,
       );
       expect(screen.getAllByRole('button').length).toBe(7);
@@ -317,7 +330,8 @@ describe('Pagination', () => {
           boundaryCount={1}
           // eslint-disable-next-line @typescript-eslint/no-empty-function
           onChange={() => {}}
-          pages={TWENTY_PAGES_SAMPLE}
+          totalPages={20}
+          onPageItemProps={page => ({ text: `page-${page}` })}
         />,
       );
       expect(screen.getAllByRole('button').length).toBe(10);
@@ -331,7 +345,8 @@ describe('Pagination', () => {
           boundaryCount={1}
           // eslint-disable-next-line @typescript-eslint/no-empty-function
           onChange={() => {}}
-          pages={TWENTY_PAGES_SAMPLE}
+          totalPages={20}
+          onPageItemProps={page => ({ text: `page-${page}` })}
         />,
       );
       expect(screen.getAllByRole('button').length).toBe(9);
@@ -345,7 +360,8 @@ describe('Pagination', () => {
           boundaryCount={1}
           // eslint-disable-next-line @typescript-eslint/no-empty-function
           onChange={() => {}}
-          pages={TWENTY_PAGES_SAMPLE}
+          totalPages={20}
+          onPageItemProps={page => ({ text: `page-${page}` })}
         />,
       );
       expect(screen.getAllByRole('button').length).toBe(10);
@@ -359,7 +375,8 @@ describe('Pagination', () => {
           boundaryCount={2}
           // eslint-disable-next-line @typescript-eslint/no-empty-function
           onChange={() => {}}
-          pages={TWENTY_PAGES_SAMPLE}
+          totalPages={20}
+          onPageItemProps={page => ({ text: `page-${page}` })}
         />,
       );
       expect(screen.getAllByRole('button').length).toBe(12);
@@ -373,7 +390,8 @@ describe('Pagination', () => {
           boundaryCount={2}
           // eslint-disable-next-line @typescript-eslint/no-empty-function
           onChange={() => {}}
-          pages={TWENTY_PAGES_SAMPLE}
+          totalPages={20}
+          onPageItemProps={page => ({ text: `page-${page}` })}
         />,
       );
       expect(screen.getAllByRole('button').length).toBe(11);
@@ -384,7 +402,7 @@ describe('Pagination', () => {
     it('goes to next page', () => {
       const { result, rerender } = renderHook(() =>
         usePagination({
-          pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
+          totalPages: 3,
         }),
       );
       expect(result.current.currentPage).toBe(1);
@@ -405,7 +423,7 @@ describe('Pagination', () => {
     it('goes to the previous when previous is invoked', () => {
       const { result, rerender } = renderHook(() =>
         usePagination({
-          pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
+          totalPages: 3,
           defaultCurrent: 3,
         }),
       );
@@ -428,7 +446,7 @@ describe('Pagination', () => {
       it('goes to the first page when next() is invoked on the last page', () => {
         const { result, rerender } = renderHook(() =>
           usePagination({
-            pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
+            totalPages: 3,
             defaultCurrent: 3,
             infinite: true,
           }),
@@ -443,7 +461,7 @@ describe('Pagination', () => {
       it('goes to the last page when previous() is invoked on the first page', () => {
         const { result, rerender } = renderHook(() =>
           usePagination({
-            pages: [{ text: 'page-1' }, { text: 'page-2' }, { text: 'page-3' }],
+            totalPages: 3,
             defaultCurrent: 1,
             infinite: true,
           }),

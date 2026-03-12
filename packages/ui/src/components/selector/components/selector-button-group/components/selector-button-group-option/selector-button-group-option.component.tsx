@@ -44,7 +44,7 @@ function BaseSelectorButtonGroupOption(
       after={
         <div className="flex gap-2">
           {after}
-          <ArrowRightIcon aria-hidden="true" className={styles.icon({})} />
+          <ArrowRightIcon color="primary" aria-hidden="true" className={styles.icon({})} />
         </div>
       }
       before={before}

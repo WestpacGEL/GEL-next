@@ -20,15 +20,25 @@ export const LinkedInSymbol = ({
     viewBoxHeight={viewBoxHeight}
     {...props}
   >
-    <g fill="none" fillRule="evenodd">
-      <rect fill="#0D7FB7" width="32" height="32" rx="2" />
+    <g clipPath="url(#clip0_139_2066)">
       <path
-        d="M22.2 26.65V19c0-1.9-.6-3.1-2.3-3.1-1.115.04-2.117.694-2.6 1.7-.21.335-.345.71-.4 1.1v8H12v-15h4.9v2.8h.4c.955-1.643 2.7-2.667 4.6-2.7 3.1 0 5.1 2.4 5.1 6.7v8.1h-4.8v.05z"
-        fill="#FFF"
-        fillRule="nonzero"
+        d="M30 0H2C0.89543 0 0 0.89543 0 2V30C0 31.1046 0.89543 32 2 32H30C31.1046 32 32 31.1046 32 30V2C32 0.89543 31.1046 0 30 0Z"
+        fill="#2867B2"
       />
-      <path fill="#FFF" d="M5 11.75h4.9v14.9H5z" />
-      <circle fill="#FFF" cx="7.5" cy="7" r="2.5" />
+      <path
+        d="M22.2 26.65V19C22.2 17.1 21.6 15.9 19.9 15.9C18.785 15.94 17.783 16.594 17.3 17.6C17.09 17.935 16.955 18.31 16.9 18.7V26.7H12V11.7H16.9V14.5H17.3C18.255 12.857 20 11.833 21.9 11.8C25 11.8 27 14.2 27 18.5V26.6H22.2V26.65V26.65Z"
+        fill="white"
+      />
+      <path fillRule="evenodd" clipRule="evenodd" d="M5 11.75H9.9V26.65H5V11.75Z" fill="white" />
+      <path
+        d="M7.5 9.5C8.88071 9.5 10 8.38071 10 7C10 5.61929 8.88071 4.5 7.5 4.5C6.11929 4.5 5 5.61929 5 7C5 8.38071 6.11929 9.5 7.5 9.5Z"
+        fill="white"
+      />
     </g>
+    <defs>
+      <clipPath id="clip0_139_2066">
+        <rect width="32" height="32" fill="white" />
+      </clipPath>
+    </defs>
   </Symbol>
 );

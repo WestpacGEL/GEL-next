@@ -1,38 +1,47 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv(
-  {
-    slots: {
-      base: '',
-      button:
-        'pointer-events-none rounded-none hover:cursor-pointer group-first/buttons:rounded-l group-last/buttons:rounded-r group-[:not(:first-child)]/buttons:border-l-0 active-theme-rams:border-b-primary active-theme-rams:before:hidden',
+export const styles = tv({
+  slots: {
+    button: '',
+  },
+  variants: {
+    isDisabled: {
+      true: {
+        button: 'pointer-events-none touch-none opacity-50',
+      },
     },
-    variants: {
-      isDisabled: {
-        true: {
-          button: 'pointer-events-none opacity-50',
-        },
+    isFocusVisible: {
+      true: {
+        button: 'relative z-10 focus-outline',
       },
-      isFocusVisible: {
-        true: {
-          button: 'relative focus-outline',
-        },
+    },
+    block: {
+      true: {
+        button: 'flex-1',
       },
-      block: {
-        true: {
-          base: 'w-full',
-        },
-        false: { base: 'w-auto' },
+      false: {},
+    },
+    size: {
+      small: {
+        button: 'rounded-l-sm rounded-r-sm',
       },
-      hasTransition: {
-        true: {
-          button: 'pointer-events-auto',
-        },
-        false: {
-          button: 'pointer-events-none',
-        },
+      medium: {
+        button: 'rounded-l-md rounded-r-md',
+      },
+      large: {
+        button: 'rounded-l-lg rounded-r-lg',
+      },
+      xlarge: {
+        button: 'rounded-l-xl rounded-r-xl',
+      },
+    },
+    orientation: {
+      horizontal: {
+        button: 'not-first:rounded-l-none not-first:border-l-0 not-last:rounded-r-none',
+      },
+      vertical: {
+        button: 'not-first:rounded-t-none not-first:border-t-0 not-last:rounded-b-none',
       },
     },
   },
-  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
-);
+});

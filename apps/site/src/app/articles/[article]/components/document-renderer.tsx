@@ -16,7 +16,13 @@ export const DOCUMENT_RENDERERS: Required<DocumentRendererProps>['renderers'] = 
     heading: Heading,
     list: props => <List color="blue" fontFamily="graphik" {...props} />,
     blockquote: ({ children }) => (
-      <Blockquote type="graphik" className="mx-0 sm:-mx-20">
+      <Blockquote
+        type="graphik"
+        className={`
+          mx-0
+          sm:-mx-20
+        `}
+      >
         {children}
       </Blockquote>
     ),

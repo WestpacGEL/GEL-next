@@ -51,7 +51,7 @@ function BaseCheckbox(
         <input {...mergeProps(inputProps, focusProps)} ref={localRef} />
       </VisuallyHidden>
       <span className={styles.checkbox()}>
-        {isSelected && <CheckIcon className={styles.checkIcon()} size={size} color={isDisabled ? 'border' : 'hero'} />}
+        {isSelected && <CheckIcon className={styles.checkIcon()} size={size} color={isDisabled ? 'muted' : 'hero'} />}
       </span>
       <span className={styles.textWrapper()}>
         <span className={styles.labelText()}>{label}</span>

@@ -1,0 +1,46 @@
+name: Colour tokens
+description: >-
+  The GEL colour system is designed to meet AA accessibility contrast standards.
+  Our multi-brand colour tokens are organised around four key elements:
+  background, surface, text, and border. This structure ensures that all our
+  current colour pairings remain accessible in both light and dark modes. Before
+  using colour tokens, always refer to these usage guidelines.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Background colour tokens
+      slug: background-colour-tokens
+    noTitle: false
+    noDemo: true
+  - title:
+      name: Surface colour tokens
+      slug: surface-colour-tokens
+    noTitle: false
+    noDemo: true
+  - title:
+      name: Text colour tokens
+      slug: text-colour-tokens
+    noTitle: false
+    noDemo: true
+  - title:
+      name: Border colour tokens
+      slug: border-colour-tokens
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Chart colour tokens
+      slug: chart-colour-tokens
+    noTitle: false
+    noDemo: true
+accessibility: []
+relatedComponents:
+  heading: Tokens
+  icon: tag
+  links:
+    - title: Border tokens
+      slug: foundation/tokens/border-tokens
+    - title: Spacing tokens
+      slug: foundation/layout/spacing
+code: []

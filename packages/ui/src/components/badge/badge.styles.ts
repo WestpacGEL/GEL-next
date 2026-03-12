@@ -1,83 +1,74 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv(
-  {
-    base: 'inline-block w-fit whitespace-nowrap border text-center [&_:focus-visible]:focus-outline',
-    variants: {
-      color: {
-        danger: 'border-danger bg-danger text-white',
-        faint: 'border-border bg-border text-text',
-        hero: 'border-hero bg-hero text-white',
-        info: 'border-info bg-info text-white',
-        neutral: 'border-neutral bg-neutral text-white',
-        muted: 'border-muted bg-muted text-white',
-        primary: 'border-primary bg-primary text-white',
-        success: 'border-success bg-success text-white',
-        warning: 'border-warning bg-warning text-white',
-        'danger-inverted': 'border-none bg-white text-danger',
-        'faint-inverted': 'border-none bg-white text-muted',
-        'hero-inverted': 'border-none bg-white text-hero',
-        'info-inverted': 'border-none bg-white text-info',
-        'neutral-inverted': 'border-none bg-white text-neutral',
-        'primary-inverted': 'border-none bg-white text-primary',
-        'success-inverted': 'border-none bg-white text-success',
-        'warning-inverted': 'border-none bg-white text-warning',
-      },
-      type: {
-        pill: 'typography-body-10 inline-flex h-4 w-fit min-w-4 items-center justify-center rounded-xl px-[0.4375rem] font-medium leading-none',
-        default: 'h-[1.25rem] rounded-sm px-1 text-[0.75rem] leading-[1.125rem]',
-      },
-      soft: {
-        true: 'bg-white',
-      },
+export const styles = tv({
+  base: 'inline-block w-fit text-center whitespace-nowrap [&_:focus-visible]:focus-outline',
+  variants: {
+    color: {
+      danger: 'bg-surface-danger text-text-mono',
+      faint: 'bg-surface-muted-soft text-text-body',
+      hero: 'bg-surface-hero text-text-mono',
+      info: 'bg-surface-info text-text-mono',
+      muted: 'bg-surface-muted text-text-mono',
+      primary: 'bg-surface-primary text-text-mono',
+      success: 'bg-surface-success text-text-mono',
+      warning: 'bg-surface-warning text-text-mono',
+      'danger-inverted': 'border-none bg-surface-mono text-text-danger',
+      'faint-inverted': 'border-none bg-surface-mono text-text-muted',
+      'hero-inverted': 'border-none bg-surface-mono text-text-hero',
+      'info-inverted': 'border-none bg-surface-mono text-text-info',
+      'primary-inverted': 'border-none bg-surface-mono text-text-primary',
+      'success-inverted': 'border-none bg-surface-mono text-text-success',
+      'warning-inverted': 'border-none bg-surface-mono text-text-warning',
     },
-    compoundVariants: [
-      {
-        color: 'danger',
-        soft: true,
-        className: 'text-danger',
-      },
-      {
-        color: 'faint',
-        soft: true,
-        className: 'text-text',
-      },
-      {
-        color: 'hero',
-        soft: true,
-        className: 'text-hero',
-      },
-      {
-        color: 'info',
-        soft: true,
-        className: 'text-info',
-      },
-      {
-        color: 'neutral',
-        soft: true,
-        className: 'text-neutral',
-      },
-      {
-        color: 'muted',
-        soft: true,
-        className: 'text-muted',
-      },
-      {
-        color: 'primary',
-        soft: true,
-        className: 'text-primary',
-      },
-      {
-        color: 'success',
-        soft: true,
-        className: 'text-success',
-      },
-      {
-        color: 'warning',
-        soft: true,
-        className: 'text-warning',
-      },
-    ],
+    type: {
+      pill: 'inline-flex h-4 w-fit min-w-4 items-center justify-center rounded-full px-[0.4375rem] typography-body-10 leading-none font-medium',
+      default: 'h-[1.25rem] rounded-sm px-1 text-[0.75rem]',
+    },
+    soft: {
+      true: 'border leading-[1.125rem]',
+      false: 'leading-[1.25rem]',
+    },
   },
-  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
-);
+  compoundVariants: [
+    {
+      color: 'danger',
+      soft: true,
+      className: 'bg-surface-danger-faint text-text-danger',
+    },
+    {
+      color: 'faint',
+      soft: true,
+      className: 'border-border-muted-soft bg-surface-muted-faint text-text-muted',
+    },
+    {
+      color: 'hero',
+      soft: true,
+      className: 'bg-surface-hero-faint text-text-hero',
+    },
+    {
+      color: 'info',
+      soft: true,
+      className: 'bg-surface-info-faint text-text-info',
+    },
+    {
+      color: 'muted',
+      soft: true,
+      className: 'bg-surface-muted-pale text-text-muted',
+    },
+    {
+      color: 'primary',
+      soft: true,
+      className: 'bg-surface-primary-faint text-text-primary',
+    },
+    {
+      color: 'success',
+      soft: true,
+      className: 'bg-surface-success-faint text-text-success',
+    },
+    {
+      color: 'warning',
+      soft: true,
+      className: 'bg-surface-warning-faint text-text-warning',
+    },
+  ],
+});

@@ -1,57 +1,50 @@
-import { AriaRadioGroupProps } from 'react-aria';
-import { RadioGroupState } from 'react-stately';
+import { ButtonHTMLAttributes } from 'react';
+import { AriaToggleButtonGroupProps, Key } from 'react-aria';
 import { VariantProps } from 'tailwind-variants';
+
+import { ResponsiveVariants } from 'src/types/responsive-variants.types.js';
 
 import { type ButtonProps } from '../button/index.js';
 
 import { styles } from './components/button-group-button/button-group-button.styles.js';
-import { ButtonGroupButtonProps } from './components/button-group-button/button-group-button.types.js';
 
 type Variants = VariantProps<typeof styles>;
 
-export type ButtonGroupProps = {
-  /**
-   * Sets whether buttons fill the entire box they are located in
-   */
-  block?: Variants['block'];
-  /**
-   * The `Button` components to render in the form of an object
-   */
-  buttons: Omit<ButtonGroupButtonProps, 'className'>[];
-  /**
-   * String to override base style
-   */
-  className?: string;
-  /**
-   * error message
-   */
-  errorMessage?: string;
-  /**
-   * hint message
-   */
-  hintMessage?: string;
+type BaseButtonGroupProps = {
+  children: React.ReactNode;
   /**
    * Controls look of `Button` components, can't be applied directly to `Button`
    */
-  look?: 'hero' | 'primary';
-} & Omit<AriaRadioGroupProps, 'errorMessage' | 'description' | 'orientation' | 'children'> &
-  Pick<ButtonProps, 'size'>;
+  look?: ResponsiveVariants<'hero' | 'primary'>;
+  /**
+   * Sets whether buttons fill the entire box they are located in
+   */
+  block?: ResponsiveVariants<Variants['block']>;
+  /**
+   * size
+   */
+  size?: ButtonProps['size'];
+} & Omit<AriaToggleButtonGroupProps, 'selectionMode' | 'defaultSelectedKeys' | 'selectedKeys' | 'onSelectionChange'> &
+  ButtonHTMLAttributes<Element>;
 
-export type ButtonGroupContextState = {
-  /**
-   * Sets whether buttons fill the entire box they are located in
-   */
-  block?: Variants['block'];
-  /**
-   * Controls look of `Button` components, can't be applied directly to `Button`
-   */
-  look?: 'hero' | 'primary';
-  /**
-   * Controls look of `Button` components, can't be applied directly to `Button`
-   */
-  size: ButtonProps['size'];
-  /**
-   * Radio group state
-   */
-  state: RadioGroupState;
+type ButtonGroupPropsPerSelectionMode = {
+  single: BaseButtonGroupProps & {
+    selectionMode?: 'single';
+    selectedKeys?: Key;
+    defaultSelectedKeys?: Key;
+    /** Handler that is called when the selection changes. */
+    onSelectionChange?: (key: Key) => void;
+    batata?: string;
+  };
+  multiple: BaseButtonGroupProps & {
+    selectionMode: 'multiple';
+    selectedKeys?: Iterable<Key>;
+    defaultSelectedKeys?: Iterable<Key>;
+    /** Handler that is called when the selection changes. */
+    onSelectionChange?: (keys: Set<Key>) => void;
+  };
 };
+
+type SelectionModes = keyof ButtonGroupPropsPerSelectionMode;
+
+export type ButtonGroupProps<T extends SelectionModes = SelectionModes> = ButtonGroupPropsPerSelectionMode[T];

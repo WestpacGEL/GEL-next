@@ -47,7 +47,7 @@ function BaseSelectorCheckboxGroupOption(
       after={
         <div className="flex gap-2">
           {after}
-          <FinalIcon aria-hidden="true" className={styles.icon({})} />
+          <FinalIcon color="hero" aria-hidden="true" className={styles.icon({})} />
         </div>
       }
       before={before}

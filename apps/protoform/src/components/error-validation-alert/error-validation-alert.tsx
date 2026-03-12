@@ -18,7 +18,7 @@ export function ErrorValidationAlert<T extends string = string>({
           .filter(([_, value]) => value?.message)
           .map(([key]) => (
             <ListItem key={key}>
-              <Link type="inline" href={`#${key}`} className="text-danger">
+              <Link type="inline" href={`#${key}`} className="text-text-danger">
                 {(labels && labels[key as T]) || key}
               </Link>
             </ListItem>

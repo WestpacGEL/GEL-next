@@ -67,7 +67,7 @@ export type ModalDialogContextValue = {
    */
   size?: Variants['size'];
   /**
-   * Whether scroll is at bottom of the scrollable area
+   * Whether scroll is at the bottom of the scrollable area
    */
   scrollAtBottom?: boolean;
   /**

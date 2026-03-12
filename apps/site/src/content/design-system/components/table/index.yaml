@@ -60,8 +60,9 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
-  - title: Panels
-    slug: components/panel
+  links:
+      - title: Panels
+        slug: components/panel
 code:
   - title:
       name: Development examples

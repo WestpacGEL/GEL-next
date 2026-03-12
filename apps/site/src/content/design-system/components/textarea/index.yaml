@@ -49,12 +49,13 @@ accessibility:
       name: Notes on accessibility
       slug: notes-on-accessibility
 relatedComponents:
-  - title: Inputs
-    slug: components/input
-  - title: Input groups
-    slug: components/input-group
-  - title: Selects
-    slug: components/select
+  links:
+      - title: Inputs
+        slug: components/input
+      - title: Input groups
+        slug: components/input-group
+      - title: Selects
+        slug: components/select
 code:
   - title:
       name: Development examples

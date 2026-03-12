@@ -113,7 +113,7 @@ export const Sizes = () => {
     <div className="flex flex-col gap-2">
       {SIZES.map(size => (
         <div key={size}>
-          <p className="typography-body-10 mb-2 font-bold uppercase text-text">{size}</p>
+          <p className="mb-2 typography-body-10 font-bold text-text-body uppercase">{size}</p>
           <MultiSelect
             key={size}
             size={size}
@@ -161,7 +161,7 @@ export const SingleSelect = () => {
     <div className="flex flex-col gap-2">
       {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
         <div key={size}>
-          <p className="typography-body-10 mb-2 font-bold uppercase text-text">{size}</p>
+          <p className="mb-2 typography-body-10 font-bold text-text-body uppercase">{size}</p>
           <MultiSelect
             size={size}
             selectionMode="single"

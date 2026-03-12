@@ -1,121 +1,97 @@
 'use client';
 
-import React, { createContext } from 'react';
-import { useRadioGroup } from 'react-aria';
-import { useRadioGroupState } from 'react-stately';
-
-import { FUNCTION_NOT_IMPLEMENTED } from '../../constants/message.js';
-import { ButtonGroupButton, ErrorMessage, Hint, Label } from '../index.js';
+import React, { useCallback, useMemo } from 'react';
+import { useToggleButtonGroup } from 'react-aria';
+import { useToggleGroupState } from 'react-stately';
 
 import { styles as buttonGroupStyles } from './button-group.styles.js';
-import { ButtonGroupContextState, type ButtonGroupProps } from './button-group.types.js';
 
-export const ButtonGroupContext = createContext<ButtonGroupContextState>({
-  block: false,
-  look: 'hero',
-  size: 'medium',
-  state: {
-    // TODO: Remove deprecated name prop once React Aria removes it from RadioGroupState
-    name: '',
-    defaultSelectedValue: null,
-    isDisabled: false,
-    isReadOnly: false,
-    isRequired: false,
-    validationState: null,
-    selectedValue: null,
-    setSelectedValue: () => null,
-    lastFocusedValue: null,
-    setLastFocusedValue: () => null,
-    isInvalid: false,
-    realtimeValidation: {
-      isInvalid: false,
-      validationErrors: [],
-      validationDetails: {
-        badInput: false,
-        customError: false,
-        patternMismatch: false,
-        rangeOverflow: false,
-        rangeUnderflow: false,
-        stepMismatch: false,
-        tooLong: false,
-        tooShort: false,
-        typeMismatch: false,
-        valid: false,
-        valueMissing: false,
-      },
-    },
-    displayValidation: {
-      isInvalid: false,
-      validationErrors: [],
-      validationDetails: {
-        badInput: false,
-        customError: false,
-        patternMismatch: false,
-        rangeOverflow: false,
-        rangeUnderflow: false,
-        stepMismatch: false,
-        tooLong: false,
-        tooShort: false,
-        typeMismatch: false,
-        valid: false,
-        valueMissing: false,
-      },
-    },
-    updateValidation: function (): void {
-      throw new Error(FUNCTION_NOT_IMPLEMENTED);
-    },
-    resetValidation: function (): void {
-      throw new Error(FUNCTION_NOT_IMPLEMENTED);
-    },
-    commitValidation: function (): void {
-      throw new Error(FUNCTION_NOT_IMPLEMENTED);
-    },
-  },
-});
+import type { ButtonGroupProps } from './button-group.types.js';
+import type { Key, ToggleGroupState } from 'react-stately';
+
+export const ToggleButtonGroupContext = React.createContext<
+  | (ToggleGroupState & {
+      size: ButtonGroupProps['size'];
+      look: ButtonGroupProps['look'];
+      block: ButtonGroupProps['block'];
+      orientation: ButtonGroupProps['orientation'];
+    })
+  | null
+>(null);
 
 export function ButtonGroup({
+  size,
+  look,
+  block,
+  children,
+  onSelect,
+  orientation = 'horizontal',
+  selectionMode,
+  selectedKeys,
+  defaultSelectedKeys,
+  onSelectionChange,
   className,
-  buttons,
-  label,
-  look = 'hero',
-  size = 'medium',
-  block = false,
-  errorMessage,
-  hintMessage,
   ...props
 }: ButtonGroupProps) {
-  const state = useRadioGroupState({
+  /**
+   * Normalizes key sets depending on selection mode.
+   */
+  const normalizeKeys = useCallback(
+    (keys?: Key | Iterable<Key>) => {
+      if (keys === undefined) return undefined;
+      if (selectionMode === 'multiple') return new Set(keys as Iterable<Key>);
+      return new Set([keys as Key]);
+    },
+    [selectionMode],
+  );
+
+  const finalSelectedKeys = useMemo(() => normalizeKeys(selectedKeys), [normalizeKeys, selectedKeys]);
+  const finalDefaultSelectedKeys = useMemo(
+    () => normalizeKeys(defaultSelectedKeys),
+    [normalizeKeys, defaultSelectedKeys],
+  );
+
+  const handleSelectionChange = useCallback(
+    (value: Set<Key>) => {
+      if (selectionMode === 'single' || selectionMode === undefined) {
+        return onSelectionChange?.(value ? [...(value || [])][0] : value);
+      }
+      if (selectionMode === 'multiple') {
+        onSelectionChange?.(value);
+      }
+    },
+    [onSelectionChange, selectionMode],
+  );
+
+  const state = useToggleGroupState({
     ...props,
-    label,
-    // React Aria seems to not handle empty string values as expected, so we convert empty string to null to ensure accessibility focus behaves as expected
-    value: props.value === '' ? null : props.value,
-    defaultValue: props.defaultValue === '' ? null : props.defaultValue,
-    orientation: 'horizontal',
+    selectionMode,
+    onSelectionChange: handleSelectionChange,
+    defaultSelectedKeys: finalDefaultSelectedKeys,
+    selectedKeys: finalSelectedKeys,
   });
 
-  const { radioGroupProps, labelProps, errorMessageProps, descriptionProps } = useRadioGroup(
+  const ref = React.useRef<HTMLDivElement | null>(null);
+  const { groupProps } = useToggleButtonGroup(
     {
       ...props,
-      'aria-errormessage': Array.isArray(errorMessage) ? errorMessage.join(', ') : errorMessage,
-      label,
-      orientation: 'horizontal',
+      orientation,
+      selectionMode,
+      onSelectionChange: handleSelectionChange,
+      defaultSelectedKeys: finalDefaultSelectedKeys,
+      selectedKeys: finalSelectedKeys,
     },
     state,
+    ref,
   );
-  const styles = buttonGroupStyles({});
+
+  const styles = buttonGroupStyles({ orientation });
 
   return (
-    <div className={styles.base({ className })} {...radioGroupProps}>
-      {label && <Label {...labelProps}>{label}</Label>}
-      {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
-      {errorMessage && state.isInvalid && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
-      <div className={styles.buttonWrapper()}>
-        <ButtonGroupContext.Provider value={{ state, size, look, block }}>
-          {buttons.map((button, index) => (
-            <ButtonGroupButton key={index} className="group/buttons" {...button} />
-          ))}
-        </ButtonGroupContext.Provider>
-      </div>
+    <div {...props} {...groupProps} className={styles.base({ className: className })} ref={ref}>
+      <ToggleButtonGroupContext.Provider value={{ ...state, size, look, block, orientation }}>
+        {children}
+      </ToggleButtonGroupContext.Provider>
     </div>
   );
 }

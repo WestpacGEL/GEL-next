@@ -1,0 +1,12 @@
+GEL provides custom CSS variants that allow you to apply brand-specific styles using Tailwind's variant syntax. These variants are automatically generated for each brand and work alongside the `data-brand` attribute system.
+
+Syntax: `{brand}:{utility-class}`
+
+```html
+<StaticCode language="jsx" code={`
+// Apply different background colors per brand
+<div className="bg-surface-mono wbc:bg-surface-primary stg:bg-surface-hero">
+  Content styled differently for each brand
+</div>
+`} />
+```

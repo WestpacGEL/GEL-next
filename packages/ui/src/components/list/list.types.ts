@@ -20,7 +20,7 @@ export type ListProps = {
   /**
    * The look of the bullet, icon, tick and cross lists
    */
-  look?: 'primary' | 'hero' | 'neutral' | 'success' | 'danger' | 'link';
+  look?: 'primary' | 'hero' | 'success' | 'danger' | 'link';
   /**
    * The level of nesting
    */
@@ -43,7 +43,7 @@ export type ListContextState = {
   /**
    * The look of the bullet, icon, tick and cross lists
    */
-  look?: 'primary' | 'hero' | 'neutral' | 'success' | 'danger' | 'link';
+  look?: 'primary' | 'hero' | 'success' | 'danger' | 'link';
   /**
    * The level of nesting
    */
@@ -66,7 +66,7 @@ export type GetStateValuesProps = {
   /**
    * The look of the bullet, icon, tick and cross lists
    */
-  look?: 'primary' | 'hero' | 'neutral' | 'success' | 'danger' | 'link';
+  look?: 'primary' | 'hero' | 'success' | 'danger' | 'link';
   /**
    * The level of nesting
    */

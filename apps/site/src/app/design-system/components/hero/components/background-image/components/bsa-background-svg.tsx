@@ -2,7 +2,7 @@ import { Svg } from '@/components/svg';
 
 export function BsaBackgroundSvg() {
   return (
-    <Svg viewBox="0 0 1016 620" width={1016} height={620} aria-hidden="true" className="block h-auto w-full">
+    <Svg viewBox="0 0 1016 620" width={1016} height={620} aria-hidden="true" className={`block h-auto w-full`}>
       <title>BankSA background image</title>
       <g fillRule="evenodd" fillOpacity=".06">
         <path

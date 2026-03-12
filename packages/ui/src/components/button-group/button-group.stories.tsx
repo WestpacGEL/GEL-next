@@ -1,9 +1,11 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
+import { Key } from 'react-aria';
 
-import { Button } from '../button/button.component.js';
+import { Field } from '../field/field.component.js';
 
 import { ButtonGroup } from './button-group.component.js';
+import { ButtonGroupButton } from './components/button-group-button/button-group-button.component.js';
 
 const meta: Meta<typeof ButtonGroup> = {
   title: 'Components/ButtonGroup',
@@ -15,17 +17,12 @@ const meta: Meta<typeof ButtonGroup> = {
       description: 'Controls whether all radio options are disabled or not',
       type: { name: 'boolean' },
     },
-    label: {
-      description:
-        'Not part of original GEL component but added for compatability with React Aria and accessibility. Styling can be done by passing tag with className as value.',
-    },
     size: {
       description:
         'Controls size of buttons, can use any size the regular GEL Next Button components use or responsive sizing',
     },
   },
   args: {
-    label: 'Test Label',
     isDisabled: false,
   },
 };
@@ -35,27 +32,25 @@ type Story = StoryObj<typeof meta>;
 
 const LOOKS = ['primary', 'hero'] as const;
 const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
+const ITEMS = [
+  { text: 'Option 1', id: '1' },
+  { text: 'Option 2', id: '2' },
+  { text: 'Option 3', id: '3' },
+];
 
 /**
  * > Default usage example
  */
-export const Default: Story = {
-  args: {
-    buttons: [
-      {
-        value: 'Option 1',
-        label: 'Option 1',
-      },
-      {
-        value: 'Option 2',
-        label: 'Option 2',
-      },
-      {
-        value: 'Option 3',
-        label: 'Option 3',
-      },
-    ],
-  },
+export const Default = () => {
+  return (
+    <ButtonGroup>
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
 };
 
 /**
@@ -64,25 +59,13 @@ export const Default: Story = {
 export const Colors = () => (
   <div className="flex flex-col gap-2">
     {LOOKS.map(look => (
-      <ButtonGroup
-        key={look}
-        label={<h3 className="font-bold">{look}</h3>}
-        look={look}
-        buttons={[
-          {
-            value: 'Option 1',
-            label: 'Option 1',
-          },
-          {
-            value: 'Option 2',
-            label: 'Option 2',
-          },
-          {
-            value: 'Option 3',
-            label: 'Option 3',
-          },
-        ]}
-      />
+      <ButtonGroup key={look} look={look}>
+        {ITEMS.map(({ id, text }) => (
+          <ButtonGroupButton id={id} key={id}>
+            {text}
+          </ButtonGroupButton>
+        ))}
+      </ButtonGroup>
     ))}
   </div>
 );
@@ -93,25 +76,15 @@ export const Colors = () => (
 export const Sizes = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
-      <ButtonGroup
-        key={size}
-        label={<h3 className="font-bold">{size}</h3>}
-        size={size}
-        buttons={[
-          {
-            value: 'Option 1',
-            label: 'Option 1',
-          },
-          {
-            value: 'Option 2',
-            label: 'Option 2',
-          },
-          {
-            value: 'Option 3',
-            label: 'Option 3',
-          },
-        ]}
-      />
+      <Field key={size} label={<h3 className="font-bold">{size}</h3>}>
+        <ButtonGroup key={size} size={size}>
+          {ITEMS.map(({ id, text }) => (
+            <ButtonGroupButton id={id} key={id}>
+              {text}
+            </ButtonGroupButton>
+          ))}
+        </ButtonGroup>
+      </Field>
     ))}
   </div>
 );
@@ -119,28 +92,22 @@ export const Sizes = () => (
 /**
  * Button group responsive sizing
  */
-export const ResponsiveSize: Story = {
-  args: {
-    buttons: [
-      {
-        value: 'Option 1',
-        label: 'Option 1',
-      },
-      {
-        value: 'Option 2',
-        label: 'Option 2',
-      },
-      {
-        value: 'Option 3',
-        label: 'Option 3',
-      },
-    ],
-    size: {
-      initial: 'small',
-      md: 'large',
-      lg: 'xlarge',
-    },
-  },
+export const ResponsiveSize = () => {
+  return (
+    <ButtonGroup
+      size={{
+        initial: 'small',
+        md: 'large',
+        lg: 'xlarge',
+      }}
+    >
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
 };
 
 /**
@@ -149,26 +116,15 @@ export const ResponsiveSize: Story = {
 export const Block = () => (
   <div className="flex flex-col gap-2">
     {SIZES.map(size => (
-      <ButtonGroup
-        key={size}
-        block
-        label={<h3 className="font-bold">{size}</h3>}
-        size={size}
-        buttons={[
-          {
-            value: 'Option 1',
-            label: 'Option 1',
-          },
-          {
-            value: 'Option 2',
-            label: 'Option 2',
-          },
-          {
-            value: 'Option 3',
-            label: 'Option 3',
-          },
-        ]}
-      />
+      <Field key={size} label={<h3 className="font-bold">{size}</h3>}>
+        <ButtonGroup size={size} block>
+          {ITEMS.map(({ id, text }) => (
+            <ButtonGroupButton id={id} key={id}>
+              {text}
+            </ButtonGroupButton>
+          ))}
+        </ButtonGroup>
+      </Field>
     ))}
   </div>
 );
@@ -176,82 +132,46 @@ export const Block = () => (
 /**
  * Disabled button group
  */
-export const Disabled: Story = {
-  args: {
-    buttons: [
-      {
-        value: 'Option 1',
-        label: 'Option 1',
-      },
-      {
-        value: 'Option 2',
-        label: 'Option 2',
-      },
-      {
-        value: 'Option 3',
-        label: 'Option 3',
-      },
-    ],
-    isDisabled: true,
-  },
+export const Disabled = () => {
+  return (
+    <ButtonGroup isDisabled>
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
 };
 
 /**
- * Error message and label
+ * SingleSelectionState button group
  */
-export const ErrorMessageAndLabel: Story = {
-  args: {
-    label: 'Are you an existing customer?',
-    errorMessage: 'This is an inline error message',
-    validationState: 'invalid',
-    hintMessage: 'Hint: choose from one of the following options',
-    buttons: [
-      {
-        value: 'Option 1',
-        label: 'Option 1',
-      },
-      {
-        value: 'Option 2',
-        label: 'Option 2',
-      },
-      {
-        value: 'Option 3',
-        label: 'Option 3',
-      },
-    ],
-  },
+export const SingleSelectionState = () => {
+  const [selectedKey, setSelectedKey] = useState<Key>();
+  return (
+    <ButtonGroup onSelectionChange={value => setSelectedKey(value)} selectedKeys={selectedKey}>
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
+  );
 };
 
-export const Controlled = () => {
-  const [controlled, setControlled] = useState<string>('');
-
+/**
+ * Default selection SingleSelectionState button group
+ */
+export const DefaultSelectedSingleSelectionState = () => {
+  const [selectedKey, setSelectedKey] = useState<Key>('1');
   return (
-    <div className="grid gap-2">
-      <div className="flex gap-1">
-        <Button type="button" onClick={() => setControlled('yes')} size="small">
-          Set to "yes"
-        </Button>
-        <Button type="button" onClick={() => setControlled('maybe')} size="small">
-          Set to "maybe"
-        </Button>
-        <Button type="button" onClick={() => setControlled('no')} size="small">
-          Set to "no"
-        </Button>
-        <Button type="button" onClick={() => setControlled('')} size="small">
-          Reset
-        </Button>
-      </div>
-      <ButtonGroup
-        look="hero"
-        value={controlled}
-        buttons={[
-          { value: 'yes', label: 'Yes' },
-          { value: 'maybe', label: 'Maybe' },
-          { value: 'no', label: 'No' },
-        ]}
-        onChange={setControlled}
-      />
-      <p>Selected: {controlled}</p>
-    </div>
+    <ButtonGroup onSelectionChange={value => setSelectedKey(value)} selectedKeys={selectedKey}>
+      {ITEMS.map(({ id, text }) => (
+        <ButtonGroupButton id={id} key={id}>
+          {text}
+        </ButtonGroupButton>
+      ))}
+    </ButtonGroup>
   );
 };

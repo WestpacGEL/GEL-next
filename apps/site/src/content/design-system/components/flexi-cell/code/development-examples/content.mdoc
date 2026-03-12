@@ -22,11 +22,20 @@
 
 ```jsx
 () => {
-  return <>
-      {new Array(3).fill(null).map((_, index) => <FlexiCell key={index} tag="a" href="#" withBorder withArrow size={{
-      initial: 'default',
-      md: 'large'
-    }}>
+  return (
+    <>
+      {new Array(3).fill(null).map((_, index) => (
+        <FlexiCell
+          key={index}
+          tag="a"
+          href="#"
+          withBorder
+          withArrow
+          size={{
+            initial: 'default',
+            md: 'large',
+          }}
+        >
           <div className="flex flex-col gap-2 md:flex-row">
             <GiftIcon look="outlined" color="hero" />
             <div className="flex flex-col gap-1">
@@ -34,49 +43,71 @@
               <FlexiCellHint>Descriptive information</FlexiCellHint>
             </div>
           </div>
-        </FlexiCell>)}
-    </>;
-}
+        </FlexiCell>
+      ))}
+    </>
+  );
+};
 ```
 
 ### **Simple tile (Horizontal layout)**
 
 ```jsx
-
-      <Grid>
-        {new Array(3).fill(null).map((_, index) => <GridItem span={4} key={index}>
-            <FlexiCell className="min-h-[17.5rem]" tag="a" href="#" withBorder size={{
+<Grid>
+  {new Array(3).fill(null).map((_, index) => (
+    <GridItem span={4} key={index}>
+      <FlexiCell
+        className="min-h-[17.5rem]"
+        tag="a"
+        href="#"
+        withBorder
+        size={{
           initial: 'default',
-          md: 'large'
-        }}>
-              <div>
-                <div className="flex justify-start mb-2 md:mb-3">
-                  <GiftIcon look="outlined" color="hero" />
-                </div>
-                <div className="flex flex-col">
-                  <FlexiCellLabel tag="h3" className="mb-1">
-                    Title
-                  </FlexiCellLabel>
-                  <FlexiCellHint>Description</FlexiCellHint>
-                </div>
-              </div>
-            </FlexiCell>
-          </GridItem>)}
-      </Grid>
-
+          md: 'large',
+        }}
+      >
+        <div>
+          <div className="flex justify-start mb-2 md:mb-3">
+            <GiftIcon look="outlined" color="hero" />
+          </div>
+          <div className="flex flex-col">
+            <FlexiCellLabel tag="h3" className="mb-1">
+              Title
+            </FlexiCellLabel>
+            <FlexiCellHint>Description</FlexiCellHint>
+          </div>
+        </div>
+      </FlexiCell>
+    </GridItem>
+  ))}
+</Grid>
 ```
 
 ### **Image tile (Vertical stack)**
 
 ```jsx
 () => {
-  return <>
-      {new Array(3).fill(null).map((_, index) => <FlexiCell body={false} key={index} tag="a" href="#" withBorder size={{
-      initial: 'default',
-      md: 'large'
-    }}>
+  return (
+    <>
+      {new Array(3).fill(null).map((_, index) => (
+        <FlexiCell
+          body={false}
+          key={index}
+          tag="a"
+          href="#"
+          withBorder
+          size={{
+            initial: 'default',
+            md: 'large',
+          }}
+          className="overflow-hidden"
+        >
           <div className="flex gap-2">
-            <img src="https://www.westpac.com.au/content/dam/public/gel/images/house-demo-image.png" alt="background" className="-my-2 -ml-2 block w-[10rem] object-cover md:-my-3 md:-ml-3" />
+            <img
+              src="https://www.westpac.com.au/content/dam/public/gel/images/house-demo-image.png"
+              alt="background"
+              className="-my-2 -ml-2 block w-[10rem] object-cover md:-my-3 md:-ml-3"
+            />
             <FlexiCellBody>
               <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
               <FlexiCellHint>Description</FlexiCellHint>
@@ -88,38 +119,52 @@
               </div>
             </FlexiCellBody>
           </div>
-        </FlexiCell>)}
-    </>;
-}
+        </FlexiCell>
+      ))}
+    </>
+  );
+};
 ```
 
 ### **Image tile - Edge to edge (Horizontal layout)**
 
 ```jsx
-
-      <Grid>
-        {new Array(3).fill(null).map((_, index) => <GridItem key={index} span={4}>
-            <FlexiCell className="overflow-hidden" body={false} key={index} tag="a" href="#" withBorder size={{
+<Grid>
+  {new Array(3).fill(null).map((_, index) => (
+    <GridItem key={index} span={4}>
+      <FlexiCell
+        className="overflow-hidden"
+        body={false}
+        key={index}
+        tag="a"
+        href="#"
+        withBorder
+        size={{
           initial: 'default',
-          md: 'large'
-        }}>
-              <div className="flex flex-col gap-2">
-                <div className="-mx-2 -mt-2 md:-mx-3 md:-mt-3">
-                  <img src="https://www.westpac.com.au/content/dam/public/gel/images/house-demo-image.png" alt="background" className="block h-[8.75rem] w-full object-cover" />
-                </div>
-                <FlexiCellBody>
-                  <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
-                  <FlexiCellHint>Description</FlexiCellHint>
-                  <div className="mt-3 flex gap-1">
-                    <Badge color="hero">Label</Badge>
-                    <Badge color="faint" soft>
-                      Label
-                    </Badge>
-                  </div>
-                </FlexiCellBody>
-              </div>
-            </FlexiCell>
-          </GridItem>)}
-      </Grid>
-
+          md: 'large',
+        }}
+      >
+        <div className="flex flex-col gap-2">
+          <div className="-mx-2 -mt-2 md:-mx-3 md:-mt-3">
+            <img
+              src="https://www.westpac.com.au/content/dam/public/gel/images/house-demo-image.png"
+              alt="background"
+              className="block h-[8.75rem] w-full object-cover"
+            />
+          </div>
+          <FlexiCellBody>
+            <FlexiCellLabel tag="h3">Title</FlexiCellLabel>
+            <FlexiCellHint>Description</FlexiCellHint>
+            <div className="mt-3 flex gap-1">
+              <Badge color="hero">Label</Badge>
+              <Badge color="faint" soft>
+                Label
+              </Badge>
+            </div>
+          </FlexiCellBody>
+        </div>
+      </FlexiCell>
+    </GridItem>
+  ))}
+</Grid>
 ```

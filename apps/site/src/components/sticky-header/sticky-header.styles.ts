@@ -1,7 +1,10 @@
 import { tv } from 'tailwind-variants';
 
 export const styles = tv({
-  base: 'sticky top-0 z-[1000] transition-shadow delay-0 duration-200 ease-[ease]',
+  base: `
+    sticky top-0 z-[1000] bg-background-white transition-shadow delay-0
+    duration-200 ease-[ease]
+  `,
   variants: {
     shadow: {
       none: '',

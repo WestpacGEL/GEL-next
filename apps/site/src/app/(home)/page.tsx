@@ -25,7 +25,7 @@ export default async function Homepage() {
   );
 
   return (
-    <main className="pb-8 font-gel-sans text-gel-text">
+    <main className="pb-8 font-gel-sans text-gel-text" data-brand="wbc">
       <Hero />
       <ActionBar />
       <HomePageContent articleRows={articleRows} />

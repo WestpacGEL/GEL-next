@@ -78,7 +78,7 @@ export const NoHeading: Story = {
  */
 export const AsInlineLinkAppearance = () => (
   <>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
+    <h3 className="mb-2 typography-body-7 font-bold">Inside paragraph</h3>
     <p className="mb-4">
       {' '}
       This is an example of using a popover that looks like an inline link.{' '}
@@ -87,7 +87,7 @@ export const AsInlineLinkAppearance = () => (
       </Popover>{' '}
       To test popover.
     </p>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <h3 className="mb-2 typography-body-7 font-bold">Inside hint</h3>
     <Field
       label="Example with field."
       hintMessage={
@@ -110,7 +110,7 @@ export const AsInlineLinkAppearance = () => (
  */
 export const StackingOrderWithPortal = () => (
   <>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
+    <h3 className="mb-2 typography-body-7 font-bold">Inside paragraph</h3>
     <p className="mb-4 pb-[200px]">
       {' '}
       This is an example of using a popover that looks like an inline link.{' '}
@@ -119,7 +119,7 @@ export const StackingOrderWithPortal = () => (
       </Popover>{' '}
       To test popover.
     </p>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <h3 className="mb-2 typography-body-7 font-bold">Inside hint</h3>
     <Field
       label="Example with field."
       hintMessage={
@@ -206,7 +206,7 @@ export const PopoverPlacement = () => (
  */
 export const WhenThereIsALongScrollWithPortal = () => (
   <>
-    <h3 className="typography-body-7 mb-2 font-bold">Inside paragraph</h3>
+    <h3 className="mb-2 typography-body-7 font-bold">Inside paragraph</h3>
     <Popover portal linkStyling heading="Heading" placement="top" content={popoverContent} size="small">
       Click here portal top. {`(Will appear on bottom as there is no space)`}
     </Popover>{' '}
@@ -240,7 +240,7 @@ export const WhenThereIsALongScrollWithPortal = () => (
         laboriosam!
       </p>
     ))}
-    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <h3 className="mb-2 typography-body-7 font-bold">Inside hint</h3>
     <Field
       label="Example with field."
       hintMessage={
@@ -262,7 +262,7 @@ export const WhenThereIsALongScrollWithPortal = () => (
         laboriosam!
       </p>
     ))}
-    <h3 className="typography-body-7 mb-2 font-bold">Inside hint</h3>
+    <h3 className="mb-2 typography-body-7 font-bold">Inside hint</h3>
     <Field
       label="Example with field."
       hintMessage={

@@ -4,6 +4,9 @@ import React, { useId, useRef } from 'react';
 import { VisuallyHidden, mergeProps, useCheckbox, useFocusRing } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 import { styles as switchStyles } from './switch.styles.js';
 import { type SwitchProps } from './switch.types.js';
 
@@ -26,7 +29,14 @@ export function Switch({
     ref,
   );
   const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = switchStyles({ block, isFocusVisible, isSelected, isDisabled, size });
+  const breakpoint = useBreakpoint();
+  const styles = switchStyles({
+    block: resolveResponsiveVariant(block, breakpoint),
+    isFocusVisible,
+    isSelected,
+    isDisabled,
+    size: resolveResponsiveVariant(size, breakpoint),
+  });
 
   return (
     <label className={styles.base({ className })} {...labelProps}>

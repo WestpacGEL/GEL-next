@@ -243,18 +243,31 @@ export default config({
           links: true,
           label: 'Accessibility Demo',
         }),
-        relatedComponents: fields.array(
-          fields.object({
-            title: fields.text({
-              label: 'Related Components',
+        relatedComponents: fields.object(
+          {
+            heading: fields.text({ label: 'Related Components heading (defaults to Components)' }),
+            icon: fields.select({
+              label: 'Related Components icon (from @westpac/ui)',
+              defaultValue: 'cube',
+              options: [
+                { label: 'Cube', value: 'cube' },
+                { label: 'Tag', value: 'tag' },
+              ],
             }),
-            slug: fields.url({
-              label: 'Slug',
-            }),
-          }),
+            links: fields.array(
+              fields.object({
+                title: fields.text({
+                  label: 'Title',
+                }),
+                slug: fields.url({
+                  label: 'Slug',
+                }),
+              }),
+              { itemLabel: props => props.fields.title.value },
+            ),
+          },
           {
             label: 'Related Components',
-            itemLabel: props => props.fields.title.value || '',
           },
         ),
         relatedArticles: fields.document({

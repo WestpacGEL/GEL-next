@@ -18,6 +18,18 @@ module.exports = {
         port: '',
         pathname: '/content/dam/public/gel/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'westpac.com.au',
+        port: '',
+        pathname: '/content/dam/public/gel/images/gel-docs/light-mode/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'westpac.com.au',
+        port: '',
+        pathname: '/content/dam/public/gel/images/gel-docs/dark-mode/**',
+      },
     ],
     unoptimized: true,
   },

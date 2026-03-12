@@ -1,3 +1,6 @@
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
 import { fixupPluginRules } from '@eslint/compat';
 import eslintConfig from '@westpac/eslint-config/nextjs';
 import { defineConfig } from 'eslint/config';
@@ -55,6 +58,14 @@ export default defineConfig([
       '@typescript-eslint/no-unsafe-return': 'off',
       '@typescript-eslint/unbound-method': 'off',
       'sonarjs/no-nested-functions': 'off',
+    },
+  },
+  {
+    settings: {
+      'better-tailwindcss': {
+        // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
+        entryPoint: 'src/css/global.css',
+      },
     },
   },
 ]);

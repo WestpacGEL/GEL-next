@@ -51,12 +51,13 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Buttons
-    slug: components/button
-  - title: Checkboxes
-    slug: components/checkbox-group
-  - title: Switches
-    slug: components/switch
+  links:
+      - title: Buttons
+        slug: components/button
+      - title: Checkboxes
+        slug: components/checkbox-group
+      - title: Switches
+        slug: components/switch
 code:
   - title:
       name: Development examples

@@ -31,10 +31,11 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Accordions
-    slug: components/accordion
-  - title: Tabs
-    slug: components/tabs
+  links:
+      - title: Accordions
+        slug: components/accordion
+      - title: Tabs
+        slug: components/tabs
 code:
   - title:
       name: Development examples

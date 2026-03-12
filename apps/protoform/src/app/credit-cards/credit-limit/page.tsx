@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonGroup, Form, FormGroup, Input, InputGroup } from '@westpac/ui';
+import { ButtonGroup, ButtonGroupButton, Field, Input, InputGroup } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -69,41 +69,37 @@ Choose your credit card limit or have one allocated for you."
         Credit limit
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <Form id="credit-card" spacing="large" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <FormGroup>
-          <Controller
-            control={control}
-            name="creditLimitType"
-            rules={{ required: defaultError }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <ButtonGroup
-                label="What credit limit would you like?"
-                hintMessage="You can chose a limit between $500 and $4,000 for Westpac Lite Visa Card."
-                size="large"
-                onChange={onChange} // send value to hook form
-                onBlur={onBlur} // notify when input is touched/blur
-                value={value}
-                block={{ initial: true, md: false }}
-                errorMessage={errors.creditLimitType?.message}
-                defaultValue={data.creditLimitType}
-                buttons={[
-                  { value: 'Allocate', label: 'Allocate for me' },
-                  { value: 'Specify', label: 'Specify' },
-                ]}
-              />
-            )}
-          />
-        </FormGroup>
-        {creditLimitType === 'Specify' && (
-          <FormGroup>
-            <InputGroup
-              size="large"
+      <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <Controller
+          control={control}
+          name="creditLimitType"
+          rules={{ required: defaultError }}
+          render={({ field: { onChange, value } }) => (
+            <Field
               label="What credit limit would you like?"
-              hint="Enter a dollar value"
-              before="$"
-              errorMessage={errors.cardLimit?.message}
-              width={{ initial: 'full', md: 10 }}
+              hintMessage="You can chose a limit between $500 and $4,000 for Westpac Lite Visa Card."
+              errorMessage={errors.creditLimitType?.message}
             >
+              <ButtonGroup
+                size="large"
+                onSelectionChange={onChange} // send value to hook form
+                selectedKeys={value}
+                block={{ initial: true, md: false }}
+                defaultSelectedKeys={data.creditLimitType}
+              >
+                <ButtonGroupButton id="Allocate">Allocate for me</ButtonGroupButton>
+                <ButtonGroupButton id="Specify">Specify</ButtonGroupButton>
+              </ButtonGroup>
+            </Field>
+          )}
+        />
+        {creditLimitType === 'Specify' && (
+          <Field
+            label="What credit limit would you like?"
+            hintMessage="Enter a dollar value"
+            errorMessage={errors.cardLimit?.message}
+          >
+            <InputGroup size="large" before="$" width={{ initial: 'full', md: 10 }}>
               <Input
                 {...register('cardLimit', { required: defaultError })}
                 id="cardLimit"
@@ -111,13 +107,13 @@ Choose your credit card limit or have one allocated for you."
                 defaultValue={data.cardLimit}
               />
             </InputGroup>
-          </FormGroup>
+          </Field>
         )}
 
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
-      </Form>
+      </form>
     </div>
   );
 }

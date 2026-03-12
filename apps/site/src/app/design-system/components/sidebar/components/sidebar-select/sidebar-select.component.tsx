@@ -25,9 +25,11 @@ export function SidebarSelect(props: SidebarSelectProps) {
   const styles = sidebarSelectStyles({ isFocusVisible });
   return (
     <div className={styles.base()}>
-      <div {...labelProps} className={styles.label()}>
-        {props.label}
-      </div>
+      {props.label && (
+        <div {...labelProps} className={styles.label()}>
+          {props.label}
+        </div>
+      )}
 
       <HiddenSelect state={state} triggerRef={ref} label={props.label} name={props.name} />
 
@@ -42,7 +44,7 @@ export function SidebarSelect(props: SidebarSelectProps) {
         className={styles.button()}
       >
         <div className={styles.textWrapper()}>
-          <div className="typography-body-11 w-full text-left leading-normal" {...valueProps}>
+          <div className="w-full text-left typography-body-11 leading-normal" {...valueProps}>
             Change brand
           </div>
         </div>

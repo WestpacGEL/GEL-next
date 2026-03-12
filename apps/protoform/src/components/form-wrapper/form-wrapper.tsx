@@ -1,5 +1,3 @@
-import { Form } from '@westpac/ui';
-
 import { BackButton } from '../back-button/back-button';
 import { Cta } from '../cta/cta';
 import { CustomHeading } from '../custom-heading/custom-heading';
@@ -17,9 +15,9 @@ export function FormWrapper({
     <div>
       <BackButton>Back to something</BackButton>
       <CustomHeading>Quick Contact</CustomHeading>
-      <Form id={formId} spacing="large" className="p-0" onSubmit={handleSubmit}>
+      <form id={formId} onSubmit={handleSubmit}>
         {children}
-      </Form>
+      </form>
       <Cta secondary="Back" tertiary="Cancel">
         Next
       </Cta>

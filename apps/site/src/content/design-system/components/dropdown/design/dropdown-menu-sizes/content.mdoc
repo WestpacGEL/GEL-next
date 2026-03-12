@@ -1,0 +1,93 @@
+### Menu sizes
+
+The dropdown menus come in three sizes or widths. They are triggered by the dropdown button which comes in all the same styles and sizes as the [Button](/design-system/components/button) component.
+
+```jsx
+<div className="flex gap-1">
+  <Dropdown text="Small" dropdownSize="small" look="hero">
+    <DropdownHeading>Small menu</DropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
+    <DropdownHeading>Sub heading</DropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
+  </Dropdown>
+
+  <Dropdown text="Medium " dropdownSize="medium" look="hero">
+    <DropdownHeading>Medium menu</DropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
+    <DropdownHeading>Sub heading</DropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
+  </Dropdown>
+
+  <Dropdown text="Large dropdown" dropdownSize="large" look="hero">
+    <DropdownHeading>Large menu</DropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
+    <DropdownHeading>With headings</DropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
+  </Dropdown>
+</div>
+```
+
+### Usage examples
+
+```jsx
+<div className="flex gap-1">
+  <Dropdown text="Checkboxes" look="primary">
+    <DropdownHeading>Checkboxes</DropdownHeading>
+    <CheckboxGroup 
+      defaultValue={['Option 1']}
+      checkboxes={[
+        { value: "Option 1", label: "Option 1" },
+        { value: "Option 2", label: "Option 2" },
+        { value: "Option 3", label: "Option 3" },
+      ]}
+    />
+    <DropdownHeading>Options</DropdownHeading>
+    <CheckboxGroup 
+      defaultValue={['Option 1']}
+      checkboxes={[
+        { value: "Option 1", label: "Option 1" },
+        { value: "Option 2", label: "Option 2" },
+        { value: "Option 3", label: "Option 3" },
+      ]}
+    />
+  </Dropdown>
+
+  <Dropdown text="Switches" look="primary">
+    <div>
+      <Switch block label="Option 1" size="small" />
+    </div>
+    <div>
+      <Switch block label="Option 2" size="small" />
+    </div>
+    <div>
+      <Switch block label="Option 3" size="small" />
+    </div>
+  </Dropdown>
+
+  <Dropdown text="Links" dropdownSize="large" look="primary">
+    <DropdownHeading>Links</DropdownHeading>
+    <List type="link" spacing="large">
+      <ListItem href="#">List item</ListItem>
+      <ListItem href="#">List item</ListItem>
+    </List>
+  </Dropdown>
+</div>
+```

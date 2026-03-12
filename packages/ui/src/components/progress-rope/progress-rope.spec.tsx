@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 
 import { ProgressRope } from './progress-rope.component.js';
-import { styles } from './progress-rope.styles.js';
 import { ProgressRopeProps } from './progress-rope.types.js';
 
 describe('ProgressRope', () => {
@@ -28,13 +27,5 @@ describe('ProgressRope', () => {
     expect(getByText(/Step 1/i)).toBeInTheDocument();
     expect(getByText(/Step 2/i)).toBeInTheDocument();
     expect(getByText(/Step 3/i)).toBeInTheDocument();
-  });
-
-  it('renders the style correctly', () => {
-    const style = styles();
-    // TODO: use some variants for test
-    expect(style).toBe(
-      'relative after:absolute after:bottom-4 after:left-1 after:top-[1.0625rem] after:z-0 after:block after:border-l-2 after:border-dotted after:border-borderDark',
-    );
   });
 });

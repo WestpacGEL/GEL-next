@@ -1,0 +1,33 @@
+### Default dropdown
+
+```jsx
+<div>
+  <Dropdown text="Default dropdown" look="primary" soft>
+    <p className="text-text-body">Example dropdown content ...</p>
+  </Dropdown>
+  <br />
+  <br />
+  <Dropdown text="Dropdown with headings" look="primary" soft>
+    <DropdownHeading>Dropdown heading #1</DropdownHeading>
+    <p className="text-text-body">Example dropdown content...</p>
+    <DropdownHeading>Dropdown heading #2</DropdownHeading>
+    <p className="text-text-body">Example dropdown content...</p>
+  </Dropdown>
+</div>
+```
+
+### Dropdown sizes
+
+```jsx
+<div className="flex gap-1">
+  <Dropdown text="Small dropdown" dropdownSize="small" look="primary" soft>
+    <DropdownHeading>Small dropdown menu: 130px wide</DropdownHeading>
+  </Dropdown>
+  <Dropdown text="Medium dropdown" dropdownSize="medium" look="primary" soft>
+    <DropdownHeading>Medium (default) dropdown menu: 190px wide</DropdownHeading>
+  </Dropdown>
+  <Dropdown text="Large dropdown" dropdownSize="large" look="primary" soft>
+    <DropdownHeading>Large dropdown menu: 250px wide</DropdownHeading>
+  </Dropdown>
+</div>
+```

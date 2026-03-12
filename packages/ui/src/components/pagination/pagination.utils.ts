@@ -1,15 +1,10 @@
-import { BREAKPOINTS, Breakpoint } from '../../tailwind/constants/index.js';
+import { Breakpoint } from '@westpac/style-config/constants';
 
-const BREAKPOINTS_DECRESCENT = Object.keys(BREAKPOINTS).reverse();
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
+
 export function getSiblingOrBoundaryCount(
   count: Partial<Record<Breakpoint | 'initial', number>>,
   breakpoint: Breakpoint | 'initial',
 ) {
-  const currentBreakpointIndex = Object.keys(BREAKPOINTS)
-    .reverse()
-    .findIndex(bp => bp === breakpoint);
-  const finalBreakPoint = [breakpoint, ...BREAKPOINTS_DECRESCENT.slice(currentBreakpointIndex)].find(
-    currentBreakpoint => count[currentBreakpoint as Breakpoint | 'initial'] !== undefined,
-  ) as Breakpoint | 'initial';
-  return count[finalBreakPoint] || 0;
+  return resolveResponsiveVariant(count, breakpoint) || 0;
 }

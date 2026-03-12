@@ -1,4 +1,4 @@
-import { Field, Form, FormGroup, Selector, SelectorCheckbox, SelectorHint, SelectorLabel } from '@westpac/ui';
+import { Field, Selector, SelectorCheckbox, SelectorHint, SelectorLabel } from '@westpac/ui';
 import { Controller, useForm } from 'react-hook-form';
 
 import { Cta } from '../cta/cta';
@@ -49,32 +49,30 @@ export function AccountSelectionForm({
   } = useForm<AccountSelectionFormData>();
 
   return (
-    <Form id="credit-card" spacing="large" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-      <FormGroup>
-        <Field aria-label="Accounts" errorMessage={errors.accounts?.message} label="Select accounts">
-          <Controller
-            control={control}
-            name="accounts"
-            render={({ field: { onChange, onBlur, value } }) => (
-              <Selector type="checkbox" onChange={onChange} onBlur={onBlur} value={value} aria-label="Accounts">
-                {ACCOUNTS.map(({ accountName, accountNumber, balance }) => (
-                  <SelectorCheckbox
-                    key={accountNumber}
-                    value={accountNumber}
-                    after={<SelectorLabel>{formatter.format(balance).replace('A', '')}</SelectorLabel>}
-                  >
-                    <SelectorLabel>{accountName}</SelectorLabel>
-                    <SelectorHint>{accountNumber}</SelectorHint>
-                  </SelectorCheckbox>
-                ))}
-              </Selector>
-            )}
-          />
-        </Field>
-      </FormGroup>
+    <form id="credit-card" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <Field aria-label="Accounts" errorMessage={errors.accounts?.message} label="Select accounts">
+        <Controller
+          control={control}
+          name="accounts"
+          render={({ field: { onChange, onBlur, value } }) => (
+            <Selector type="checkbox" onChange={onChange} onBlur={onBlur} value={value} aria-label="Accounts">
+              {ACCOUNTS.map(({ accountName, accountNumber, balance }) => (
+                <SelectorCheckbox
+                  key={accountNumber}
+                  value={accountNumber}
+                  after={<SelectorLabel>{formatter.format(balance).replace('A', '')}</SelectorLabel>}
+                >
+                  <SelectorLabel>{accountName}</SelectorLabel>
+                  <SelectorHint>{accountNumber}</SelectorHint>
+                </SelectorCheckbox>
+              ))}
+            </Selector>
+          )}
+        />
+      </Field>
       <Cta primaryType="submit" tertiaryOnClick={onCancel} tertiary="Cancel">
         Continue
       </Cta>
-    </Form>
+    </form>
   );
 }

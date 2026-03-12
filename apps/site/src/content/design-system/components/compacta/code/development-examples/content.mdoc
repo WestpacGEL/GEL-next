@@ -2,70 +2,51 @@
 
 ```tsx
 () => {
-  const [inputs, setInputs] = useState({});
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ primary: '', accountNumber: '', amount: 0 }] },
+  });
+  const items = watch('items');
 
-  const handleChange = e => {
-    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { primary: '', accountNumber: '', amount: 0 }]);
+  }, [items, setValue]);
 
   return (
-    <Compacta>
-      {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
-        <Form spacing="large">
-          <FormGroup>
-            <Field label="Primary" hintMessage="Select your card insitution">
-              <Select
-                name={`input-primary-${id}`}
-                value={inputs[`input-primary-${id}`] || ''}
-                onChange={e => {
-                  handleChange(e);
-                  setPrimaryTitle(e.target.value);
-                }}
-                width={30}
-              >
-                <option>Select</option>
-                <option>AMP Bank</option>
-                <option>ANZ - Australia and New Zealand Banking Group</option>
-                <option>Bank of Queensland</option>
-                <option>Bendigo Bank</option>
-                <option>CBA - Commonwealth Bank</option>
-                <option>Macquarie Bank</option>
-                <option>NAB - National Australian Bank</option>
-                <option>Westpac Bank</option>
-              </Select>
-            </Field>
-          </FormGroup>
-          <FormGroup>
-            <Field label="Account number" hintMessage="Refer to a statement from the card’s financial institution">
-              <Input
-                name={`input-secondary-${id}`}
-                value={inputs[`input-secondary-${id}`] || ''}
-                onChange={e => {
-                  handleChange(e);
-                  setSecondaryTitle(e.target.value);
-                }}
-                width={30}
-              />
-            </Field>
-          </FormGroup>
-          <FormGroup>
-            <InputGroup
-              name={`input-tertiary-${id}`}
-              value={inputs[`input-tertiary-${id}`] || ''}
-              onChange={e => {
-                handleChange(e);
-                setTertiaryTitle(e.target.value);
-              }}
-              width={20}
-              before="$"
-              label="Amount to transfer"
-            >
-              <Input />
-            </InputGroup>
-          </FormGroup>
-        </Form>
-      )}
-    </Compacta>
+    <form>
+      <Compacta onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <CompactaItem
+            key={index}
+            title={{ primary: item.primary, secondary: item.accountNumber, tertiary: item.amount }}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <div className="flex flex-col gap-4">
+              <Field label="Primary" hintMessage="Select your card insitution">
+                <Select onChange={e => {}} width={30} {...register(`items.${index}.primary`)}>
+                  <option>Select</option>
+                  <option>AMP Bank</option>
+                  <option>ANZ - Australia and New Zealand Banking Group</option>
+                  <option>Bank of Queensland</option>
+                  <option>Bendigo Bank</option>
+                  <option>CBA - Commonwealth Bank</option>
+                  <option>Macquarie Bank</option>
+                  <option>NAB - National Australian Bank</option>
+                  <option>Westpac Bank</option>
+                </Select>
+              </Field>
+              <Field label="Account number" hintMessage="Refer to a statement from the card’s financial institution">
+                <Input onChange={e => {}} width={30} {...register(`items.${index}.accountNumber`)} />
+              </Field>
+              <InputGroup onChange={e => {}} width={20} before="$" label="Amount to transfer">
+                <Input {...register(`items.${index}.amount`, { valueAsNumber: true })} />
+              </InputGroup>
+            </div>
+          </CompactaItem>
+        ))}
+      </Compacta>
+    </form>
   );
 };
 ```
@@ -74,81 +55,49 @@
 
 ```tsx
 () => {
-  // Imagine this is saved data
-  const [inputs, setInputs] = useState({
-    'primary-1234': 'test',
+   const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: {
+      items: [
+        { primary: 'test', secondary: 'test 2', tertiary: 'test 3', fourth: 'test 4', defaultExpanded: true },
+        { primary: 'test', secondary: 'test 2', tertiary: 'test 3', fourth: 'test 4' },
+        { primary: '', secondary: '', tertiary: '', fourth: '' },
+      ],
+    },
   });
+  const items = watch('items');
 
-  const handleChange = (e) => {
-    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { primary: '', secondary: '', tertiary: '', fourth: '' }]);
+  }, [items, setValue]);
 
   return (
-    <>
-      <p className="font-bold">
-        All the initial compactas should have a unique id passed that is associated with a compacta if you want to
-        pre-fill information in inputs based on input IDs
-      </p>
-      <br />
-      <Compacta
-        initialCompactas={[
-          {
-            // Unique ID for the individual compacta, doesn't need to be the same as original. Could be saved from provided id from compacta
-            id: '1234',
-            title: { primary: inputs[`primary-1234`] },
-          },
-          // Represents a second compacta with no initial values, doesn't need an id if you don't want to pre-fill values
-          {},
-        ]}
-      >
-        {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
-          <Form>
-            <FormGroup>
-              <Field label="Primary" hintMessage="Primary title text" >
-                <Input
-                  aria-describedby={`primary-hint-${id}`}
-                  name={`primary-${id}`}
-                  id={`primary-${id}`}
-                  value={inputs[`primary-${id}`] || ''}
-                  onChange={e => {
-                    handleChange(e);
-                    setPrimaryTitle(e.target.value);
-                  }}
-                />
-              </Field>
-            </FormGroup>
-            <FormGroup>
-              <Field label="Secondary" hintMessage="Secondary title text">
-                <Input
-                  aria-describedby={`secondary-hint-${id}`}
-                  name={`secondary-${id}`}
-                  id={`secondary-${id}`}
-                  value={inputs[`secondary-${id}`] || ''}
-                  onChange={e => {
-                    handleChange(e);
-                    setSecondaryTitle(e.target.value);
-                  }}
-                />
-              </Field>
-            </FormGroup>
-            <FormGroup>
-              <Field label="Tertiary" hintMessage="Tertiary title text">
-                <Input
-                aria-describedby={`tertiary-hint-${id}`}
-                  name={`tertiary-${id}`}
-                  id={`tertiary-${id}`}
-                  value={inputs[`tertiary-${id}`] || ''}
-                  onChange={e => {
-                    handleChange(e);
-                    setTertiaryTitle(e.target.value);
-                  }}
-                />
-              </Field>
-            </FormGroup>
-          </Form>
-        )}
+    <form>
+      <Compacta onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <CompactaItem
+            key={index}
+            title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+            defaultExpanded={item.defaultExpanded}
+          >
+            <Field label="Primary" hintMessage="Primary title text">
+              <Input {...register(`items.${index}.primary`)} />
+            </Field>
+            <Field label="Secondary" hintMessage="Secondary title text">
+              <Input {...register(`items.${index}.secondary`)} />
+            </Field>
+            <Field label="Tertiary" hintMessage="Tertiary title text">
+              <Input {...register(`items.${index}.tertiary`)} />
+            </Field>
+            <Field label="Fourth" hintMessage="Fourth field">
+              <Input {...register(`items.${index}.fourth`)} />
+            </Field>
+          </CompactaItem>
+        ))}
       </Compacta>
-    </>
+    </form>
   );
 };
 ```

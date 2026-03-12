@@ -1,0 +1,30 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+@custom-variant {{brand}} (&:where([data-brand={{brand}}], [data-brand={{brand}}] *));
+
+@layer theme {
+    [data-brand="{{brand}}"] {
+      /* Primitive Colors */
+      {{#each primitiveColors}}
+      --{{@key}}: {{this}};
+      {{/each}}
+
+      /* Light Mode Semantic Tokens */
+      {{#each lightSemanticTokens}}
+      --{{@key}}: {{this}};
+      {{/each}}
+
+      /* Font Family */
+      --font-brand: {{fontFamily}};
+    }
+
+    /* TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE */
+    [data-brand="{{brand}}"][data-theme="dark"] {
+      /* Dark Mode Semantic Tokens */
+      {{#each darkSemanticTokens}}
+      --{{@key}}: {{this}};
+      {{/each}}
+    }
+}

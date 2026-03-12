@@ -10,7 +10,7 @@ import { InputGroupAddOnProps } from './input-group-add-ons.types.js';
 export const InputGroupAddOn = ({
   position,
   icon: Icon,
-  iconProps = {},
+  iconProps = { color: 'muted' },
   inset = false,
   children,
   size,

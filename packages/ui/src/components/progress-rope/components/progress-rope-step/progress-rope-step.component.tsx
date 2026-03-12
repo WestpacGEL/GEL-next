@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
 import { mergeProps, useFocusRing } from 'react-aria';
 
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
 import { Circle, VisuallyHidden } from '../../../index.js';
 
 import { styles as progressRopeStyles } from './progress-rope-step.styles.js';
@@ -42,11 +44,12 @@ export function ProgressRopeStep({
     return 'non-visited';
   }, [current, lastItemInRope, visited]);
   const { isFocusVisible, focusProps } = useFocusRing();
+  const breakpoint = useBreakpoint();
 
   const styles = progressRopeStyles({
     className,
     state,
-    size,
+    size: resolveResponsiveVariant(size, breakpoint),
     firstItem,
     lastItemInGroup,
     lastItemInRope: lastItemInRope && !previousStepGroup,

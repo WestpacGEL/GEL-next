@@ -25,7 +25,7 @@ describe('List', () => {
       </List>,
     );
     expect(getByTestId('bullet')).toHaveClass(
-      'absolute block border border-hero bg-hero after:border-hero left-[0.25rem] top-1 size-[0.5rem] rounded-full',
+      'absolute block border border-border-hero bg-surface-hero after:border-border-hero left-[0.25rem] top-1 size-[0.5rem] rounded-full',
     );
   });
 
@@ -36,7 +36,7 @@ describe('List', () => {
       </List>,
     );
     expect(getByTestId('link')).toHaveClass(
-      'absolute block border border-link after:border-link left-[0.125rem] top-1 size-[0.5rem] rotate-45 border-b-0 border-l-0 border-r-[0.125rem] border-t-[0.125rem] bg-[transparent]',
+      'absolute block border border-border-primary after:border-border-primary left-[0.125rem] top-1 size-[0.5rem] rotate-45 border-b-0 border-l-0 border-r-[0.125rem] border-t-[0.125rem] bg-[transparent]',
     );
   });
 
@@ -47,7 +47,7 @@ describe('List', () => {
       </List>,
     );
     expect(getByTestId('tick')).toHaveClass(
-      'absolute block border border-hero after:border-hero left-[0.125rem] top-[0.3125rem] h-1 w-2 rotate-[-44deg] border-b-[0.125rem] border-l-[0.125rem] border-r-0 border-t-0 bg-[transparent]',
+      'absolute block border border-border-hero after:border-border-hero left-[0.125rem] top-[0.3125rem] h-1 w-2 rotate-[-44deg] border-b-[0.125rem] border-l-[0.125rem] border-r-0 border-t-0 bg-[transparent]',
     );
   });
 
@@ -58,7 +58,7 @@ describe('List', () => {
       </List>,
     );
     expect(getByTestId('cross')).toHaveClass(
-      'absolute block border border-hero after:border-hero left-1 top-[0.25rem] h-2 w-0 -rotate-45 border-y-0 border-l-[0.125rem] border-r-0 bg-[transparent] after:absolute after:left-[-0.125rem] after:block after:h-2 after:w-0 after:rotate-90 after:border-y-0 after:border-l-[0.125rem] after:border-r-0',
+      'absolute block border border-border-hero after:border-border-hero left-1 top-[0.25rem] h-2 w-0 -rotate-45 border-y-0 border-l-[0.125rem] border-r-0 bg-[transparent] after:absolute after:left-[-0.125rem] after:block after:h-2 after:w-0 after:rotate-90 after:border-y-0 after:border-l-[0.125rem] after:border-r-0',
     );
   });
 

@@ -1,92 +1,94 @@
 import { tv } from 'tailwind-variants';
 
-export const styles = tv(
-  {
-    slots: {
-      base: 'group',
-      itemHeader: 'typography-body-9 flex w-full flex-1 items-center justify-between px-3 py-2 group-first:border-t-0',
-      headerTitleWrapper: 'flex-1 pr-2 text-left',
-      indicator: 'size-3 rotate-90',
-      content: 'bg-white [&_:focus-visible]:focus-outline',
-      motionContent: '',
-    },
-    variants: {
-      look: {
-        soft: {
-          itemHeader: 'border-t border-border bg-light',
-        },
-        lego: {
-          itemHeader:
-            'mb-[-1px] border-l-[0.375rem] border-r border-border bg-light shadow-[inset_0px_1px_0_0_var(--tw-shadow-color),inset_0_-1px_0_0_var(--tw-shadow-color)] !shadow-border transition-colors',
-        },
-      },
-      isOpenState: {
-        false: {
-          itemHeader: 'background-transition hover:bg-background',
-        },
-      },
-      isOpen: {
-        true: {
-          content: 'visible block border-border p-3',
-        },
-        false: {
-          content: 'hidden',
-        },
-      },
-      isClosed: {
-        true: {
-          motionContent: 'overflow-hidden',
-        },
-        false: {
-          motionContent: 'overflow-visible',
-        },
-      },
-      isDisabled: {
-        true: '',
-        false: '',
-      },
-      isFocusVisible: {
-        true: {
-          itemHeader: 'focus-outline',
-        },
-        false: {
-          itemHeader: 'outline-none',
-        },
-      },
-      rounded: { true: { itemHeader: 'group-first:rounded-t-sm group-last:rounded-b-sm' } },
-    },
-    compoundSlots: [
-      {
-        slots: ['indicator'],
-        isOpenState: true,
-        className: '-rotate-90',
-      },
-      {
-        slots: ['itemHeader'],
-        look: 'lego',
-        isOpenState: true,
-        className: 'border-l-hero',
-      },
-      {
-        slots: ['content'],
-        look: 'soft',
-        isOpen: true,
-        className: 'border-t',
-      },
-      {
-        slots: ['itemHeader'],
-        isOpen: true,
-        rounded: true,
-        className: 'group-last:rounded-none',
-      },
-      {
-        slots: ['content'],
-        isOpen: true,
-        rounded: true,
-        className: 'group-last:rounded-b',
-      },
-      { slots: ['content'], isOpen: true, look: 'lego', className: 'mt-[1px] border-l-[0.375rem] border-r' },
-    ],
+export const styles = tv({
+  slots: {
+    base: 'group',
+    itemHeader: `
+      flex w-full flex-1 cursor-pointer items-center justify-between px-3
+      py-2
+      typography-body-9 group-first:border-t-0
+    `,
+    headerTitleWrapper: 'flex-1 pr-2 text-left',
+    indicator: 'size-3 rotate-90',
+    panel: `
+      h-(--disclosure-panel-height) transition-[height] duration-300
+      ease-[cubic-bezier(0.25,0.1,0.25,1)]
+    `,
+    content: 'block border-border-muted-soft bg-background-white p-3 [&_:focus-visible]:focus-outline',
   },
-  { responsiveVariants: ['xsl', 'sm', 'md', 'lg', 'xl'] },
-);
+  variants: {
+    look: {
+      soft: {
+        itemHeader: 'border-t border-border-muted-soft bg-surface-muted-faint',
+        content: 'border-t',
+      },
+      lego: {
+        itemHeader: `
+          mb-[-1px] border-r border-l-[0.375rem] border-border-muted-soft
+          bg-surface-muted-faint
+          shadow-[inset_0px_1px_0_0_var(--border-muted-soft),inset_0_-1px_0_0_var(--border-muted-soft)]
+          !shadow-border-muted-soft transition-colors
+        `,
+        content: 'mt-[1px] border-t-0 border-r border-l-[0.375rem]',
+      },
+    },
+    isFirst: {
+      true: {
+        itemHeader: 'border-t-0 shadow-none',
+      },
+    },
+    isExpanded: {
+      false: {
+        itemHeader: `
+          background-transition
+          hover:bg-surface-hover-muted-pale
+        `,
+      },
+    },
+    isDisabled: {
+      true: '',
+      false: '',
+    },
+    isFocusVisible: {
+      true: {
+        itemHeader: 'focus-outline',
+      },
+      false: {
+        itemHeader: 'outline-none',
+      },
+    },
+    rounded: {
+      true: {
+        itemHeader: `
+          group-first:rounded-t-2xl
+          group-last:rounded-b-2xl
+        `,
+      },
+    },
+  },
+  compoundSlots: [
+    {
+      slots: ['indicator'],
+      isExpanded: true,
+      className: '-rotate-90',
+    },
+    {
+      slots: ['itemHeader'],
+      look: 'lego',
+      isExpanded: true,
+      className: 'border-l-border-hero',
+    },
+    {
+      slots: ['itemHeader'],
+      isExpanded: true,
+      rounded: true,
+      className: 'group-last:rounded-none',
+    },
+    {
+      slots: ['content'],
+      isExpanded: true,
+      rounded: true,
+      className: 'group-last:rounded-b-2xl',
+    },
+  ],
+});

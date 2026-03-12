@@ -34,7 +34,7 @@ describe('Bottom Sheet', () => {
       }),
     );
     const { findByRole } = render(
-      <BottomSheet state={result.current}>
+      <BottomSheet state={result.current} isDismissable>
         <h3>test</h3>
       </BottomSheet>,
       { container: document.body },

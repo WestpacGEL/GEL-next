@@ -21,8 +21,8 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {
   args: {
-    look: 'default',
-    color: undefined,
+    look: 'material',
+    color: 'primary',
     orientation: 'horizontal',
     'aria-label': 'History of Ancient Rome',
     children: [
@@ -60,9 +60,9 @@ export const Justify: Story = {
 };
 
 /**
- * > KeppTabPanelMounted usage example
+ * > KeepTabPanelMounted usage example
  */
-export const KeppTabPanelMounted: Story = {
+export const KeepTabPanelMounted: Story = {
   args: {
     justify: true,
     children: [

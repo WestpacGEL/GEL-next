@@ -35,10 +35,11 @@ export function Tooltip({ children, disabled, tooltip, id, className, position =
 
   useEffect(() => {
     setIsOpen(isFocusVisible && !disabled);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isFocusVisible]);
 
   useEffect(() => {
-    if (isHovered && !isOpen) startTimer();
+    if (isHovered && !isOpen && !disabled) startTimer();
     if (!isHovered) setIsOpen(false);
 
     return () => stopTimer();

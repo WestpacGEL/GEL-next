@@ -1,5 +1,610 @@
 # @westpac/ui
 
+## 1.0.0
+
+### 📦 Major Changes — @westpac/ui & @westpac/style-config
+
+We are introducing a new architecture separating UI (@westpac/ui) components from style configuration (@westpac/style-config):
+
+- @westpac/style-config now provides:
+  - Tailwind tokens
+  - Light/dark theming
+  - CSS + W3C design tokens
+
+---
+
+### 🚨 Migration Steps
+
+1. Remove your existing tailwind.config.js and Follow the update instruction at [Tailwind CSS Upgrade Guide.](https://tailwindcss.com/docs/upgrade-guide). If the update command they provide doesn't work scroll down to the manual update instructions and follow those.
+
+2. Install the updated dependencies:
+
+```bash
+npm i @westpac/ui @westpac/style-config tailwindcss@4 postcss tailwind-variants@~3.1.1
+```
+
+3. Import global styles in your main CSS file:
+
+```css
+@import 'tailwindcss';
+/* Tailwind setup */
+@import '@westpac/style-config/tailwind';
+/* Register GEL components source for Tailwind */
+@source "<relative_path>/node_modules/@westpac/ui/src";
+
+/* For brand theming, import the required brand stylesheets: */
+@import '@westpac/style-config/themes/wbc';
+@import '@westpac/style-config/themes/stg';
+@import '@westpac/style-config/themes/bom';
+@import '@westpac/style-config/themes/bsa';
+
+/* Also the fonts required for each theme: */
+/* WBC fonts */
+@font-face {
+  src:
+    url('/fonts/Westpac-Bold-v2.007.woff2') format('woff2'),
+    url('/fonts/Westpac-Bold-v2.007.woff') format('woff');
+  font-family: 'Westpac';
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* STG fonts */
+@font-face {
+  src:
+    url('/fonts/dragonbold-bold-webfont.woff2') format('woff2'),
+    url('/fonts/dragonbold-bold-webfont.woff') format('woff');
+  font-family: 'Dragon Bold';
+  font-weight: 100 900;
+  font-style: normal;
+}
+```
+
+4. After including the css file to enable brand + theme switching, ensure your root HTML element includes:
+
+NOTE: Be sure to pass the brand with data-brand as previously it was data-theme
+
+#### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
+
+```html
+<html data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</html>
+or
+<div data-brand="wbc" data-theme="dark|light">
+  <!-- Your app content -->
+</div>
+```
+
+5. Update your `eslint.config.mjs` file
+
+```mjs
+import eslintConfig from '@westpac/eslint-config/nextjs';
+import { defineConfig } from 'eslint/config';
+
+export default defineConfig([
+  ...eslintConfig,
+  {
+    settings: {
+      'better-tailwindcss': {
+        // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
+        entryPoint: 'src/globals.css',
+      },
+    },
+  },
+]);
+```
+
+### ✅ Token Updates
+
+We introduced new token names to support a multi-brand + dual-theme system.
+
+##### Before
+
+```tsx
+<div className="bg-white">
+  <div className="bg-primary rounded-full">
+    <AccountIcon color="white" />
+  </div>
+  <h2 className="text-text">
+    My title
+    <BankIcon color="link" className="ml-2" />
+  </h2>
+  <p className="text-text">Lorem ipsum dolor sit amet</p>
+</div>
+```
+
+##### After
+
+```tsx
+<div className="bg-background-white">
+  <div className="bg-surface-primary rounded-full">
+    <AccountIcon color="mono" />
+  </div>
+  <h2 className="text-text-body">
+    My title
+    <BankIcon color="primary" className="ml-2" />
+  </h2>
+  <p className="text-text-body">Lorem ipsum dolor sit amet</p>
+</div>
+```
+
+To support migration, a codemod is available to automate this transition.
+
+NOTE: For the path to your files you may not be able to do glob patterns based on system and may have to use something different than what is noted below
+
+```bash
+npx jscodeshift --parser=tsx -t node_modules/@westpac/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs <path>/**/*.tsx
+```
+
+NOTE: The parser parameter might be different based on your project, if you see a lot of errors, try another parser (babel, flow, ts, tsx)
+
+This will apply the codemod to all specified files in your project. You may have to run this script more than once depending on your project structure and the files you store styles in.
+
+For classes we are unable to replace with the equivalent token the code will inject a `[REPLACE_TOKEN]` string where it will require working with your project designer to manually update it to the correct color token.
+
+If you want to test the upgrade while waiting for your designers we recommened replacing with a token that is close or the hex value i.e. text-black = text-[#000].
+
+To see all the new tokens you can check storybook [Storybook](https://gel-next-storybook-git-westpacgel.vercel.app/?path=/docs/foundation-colours--docs) or the [GEL website](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens)
+
+You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-next/blob/develop/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs)
+
+---
+
+### 🆕 Additional Improvements
+
+#### Style Constants
+
+The constants `BREAKPOINTS` and `SPACING_UNIT` have been moved to `@westpac/style-config/constants`
+
+#### Before
+
+```js
+import { BREAKPOINTS, SPACING_UNIT } from '@westpac/ui/theme-constants';
+```
+
+#### After
+
+```js
+import { BREAKPOINTS, SPACING_UNIT } from '@westpac/style-config/constants';
+```
+
+#### Component Updates
+
+- Full support for TailwindCSS v4 and its [latest features](https://tailwindcss.com/blog/tailwindcss-v4)
+- Dark mode supported for BOM and BankSA logos
+
+#### Compacta usability update
+
+#### Before
+
+```tsx
+() => {
+  const [inputs, setInputs] = useState<Record<string, string>>({
+    'primary-1234': 'test',
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  return (
+      <Compacta
+        initialCompactas={[
+          {
+            id: '1234',
+            title: { primary: inputs[`primary-1234`] },
+          },
+          {},
+        ]}
+        onAdd={() => console.log('add')}
+        onRemove={() => console.log('remove')}
+      >
+        {({ id, setPrimaryTitle, setSecondaryTitle, setTertiaryTitle }) => (
+          <Form>
+            <FormGroup>
+              <Label htmlFor={`primary-${id}`}>Primary</Label>
+              <Hint id={`primary-hint-${id}`}>Primary title text</Hint>
+              <Input
+                aria-describedby={`primary-hint-${id}`}
+                name={`primary-${id}`}
+                id={`primary-${id}`}
+                value={inputs[`primary-${id}`] || ''}
+                onChange={e => {
+                  handleChange(e);
+                  setPrimaryTitle(e.target.value);
+                }}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor={`secondary-${id}`}>Secondary</Label>
+              <Hint id={`secondary-hint-${id}`}>Secondary title text</Hint>
+              <Input
+                aria-describedby={`secondary-hint-${id}`}
+                name={`secondary-${id}`}
+                id={`secondary-${id}`}
+                value={inputs[`secondary-${id}`] || ''}
+                onChange={e => {
+                  handleChange(e);
+                  setSecondaryTitle(e.target.value);
+                }}
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor={`tertiary-${id}`}>Tertiary</Label>
+              <Hint id={`tertiary-hint-${id}`}>Tertiary title text</Hint>
+              <Input
+                aria-describedby={`tertiary-hint-${id}`}
+                name={`tertiary-${id}`}
+                id={`tertiary-${id}`}
+                value={inputs[`tertiary-${id}`] || ''}
+                onChange={e => {
+                  handleChange(e);
+                  setTertiaryTitle(e.target.value);
+                }}
+              />
+            </FormGroup>
+          </Form>
+        )}
+      </Compacta>
+    </>
+  );
+};
+```
+
+#### After
+
+```tsx
+() => {
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ primary: 'test', secondary: '', tertiary: '', fourth: '' }] },
+  });
+  const items = watch('items');
+
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { primary: '', secondary: '', tertiary: '', fourth: '' }]);
+  }, [items, setValue]);
+
+  return (
+    <form>
+      <Compacta onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <CompactaItem
+            key={index}
+            title={{ primary: item.primary, secondary: item.secondary, tertiary: item.tertiary }}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <Field label="Primary" hintMessage="Primary title text">
+              <Input {...register(`items.${index}.primary`)} />
+            </Field>
+            <Field label="Secondary" hintMessage="Secondary title text">
+              <Input {...register(`items.${index}.secondary`)} />
+            </Field>
+            <Field label="Tertiary" hintMessage="Tertiary title text">
+              <Input {...register(`items.${index}.tertiary`)} />
+            </Field>
+            <Field label="Fourth" hintMessage="Fourth field">
+              <Input {...register(`items.${index}.fourth`)} />
+            </Field>
+          </CompactaItem>
+        ))}
+      </Compacta>
+    </form>
+  );
+};
+```
+
+#### Repeater aligned with Compacta specification
+
+#### Before
+
+```jsx
+<Repeater>
+  <FormGroup>
+    <div className="mb-4">
+      <FormLabel htmlFor={`input${groupOneId}`}>Label 1</FormLabel>
+      <Input
+        aria-describedby={`inputHint${groupOneId}`}
+        className="w-full"
+        id={`input${groupOneId}`}
+        name={`input${groupOneId}`}
+      />
+    </div>
+    <div>
+      <FormLabel htmlFor={`input${groupTwoId}`}>Label 2</FormLabel>
+      <Input
+        aria-describedby={`inputHint${groupTwoId}`}
+        className="w-full"
+        id={`input${groupTwoId}`}
+        name={`input${groupTwoId}`}
+      />
+    </div>
+  </FormGroup>
+</Repeater>
+```
+
+#### After
+
+```tsx
+() => {
+  const { register, watch, setValue } = useForm<Inputs>({
+    defaultValues: { items: [{ label: '' }] },
+  });
+  const items = watch('items');
+
+  const handleAdd = useCallback(() => {
+    setValue('items', [...items, { label: '' }]);
+  }, [items, setValue]);
+
+  return (
+    <form>
+      <Repeater onAdd={handleAdd}>
+        {items.map((item, index) => (
+          <RepeaterItem
+            key={index}
+            title={{
+              primary: item.primary,
+              secondary: item.secondary,
+              tertiary: item.tertiary,
+            }}
+            onRemove={() => {
+              setValue('items', [...items.slice(0, index), ...items.slice(index + 1)]);
+            }}
+          >
+            <Field label="Label">
+              <Input {...register(`items.${index}.label`)} />
+            </Field>
+          </RepeaterItem>
+        ))}
+      </Repeater>
+    </form>
+  );
+};
+```
+
+### Accordion now uses useDisclose from react-aria
+
+defaultExpandedKeys prop now works off the id value of the AccordionItem
+
+#### Before
+
+```jsx
+<Accordion defaultExpandedKeys={['keyValue']}>
+  <AccordionItem key="keyValue">Content</AccordionItem>
+</Accordion>
+```
+
+#### After
+
+```jsx
+<Accordion defaultExpandedKeys={['idValue']}>
+  <AccordionItem key="keyValue" id="idValue">
+    Content
+  </AccordionItem>
+</Accordion>
+```
+
+### ButtonGroup now uses useButtonGroupToggle from react-aria
+
+#### Before
+
+```jsx
+<ButtonGroup
+  value={value}
+  buttons={[
+    { value: 'Left', label: 'Left' },
+    { value: 'Middle', label: 'Middle' },
+    { value: 'Right', label: 'Right' },
+  ]}
+/>
+```
+
+#### After
+
+```jsx
+<ButtonGroup selectedKeys={value}>
+  <ButtonGroupButton id="Left">Left</ButtonGroupButton>
+  <ButtonGroupButton id="Middle">Middle</ButtonGroupButton>
+  <ButtonGroupButton id="Right">Right</ButtonGroupButton>
+</ButtonGroup>
+```
+
+### New Datepicker using react-aria hooks
+
+#### Before
+
+```jsx
+<DatePicker disableDates={['2023-10-10']} />
+```
+
+#### After
+
+```jsx
+() => {
+  const disableDates = ["2023-10-20"];
+  const isDateUnavailable = (date: DateValue) =>
+    disableDates.some(
+      (disableDate) => disableDate.toString() === date.toString()
+    );
+
+  return <DatePicker isDateUnavailable={isDateUnavailable} />;
+};
+```
+
+### Form, FormGroup, FormSection, FormChitchat deprecated
+
+The `Form` component has been deprecated. Its primary functionality was to manage vertical spacing between `FormGroup` elements using margin-bottom, which led to limitations and layout inconsistencies in more complex form structures.
+
+To ensure greater flexibility and maintainability, we are phasing out this component and its related abstractions. Spacing should now be applied directly using Tailwind CSS utility classes.
+
+#### Before
+
+```jsx
+() => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  return (
+    <Form id="credit-card" spacing="large" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <FormGroup>
+        <InputGroup size="large" label="Given name (Optional)" errorMessage={errors.givenName?.message}>
+          <Input {...register('givenName')} />
+        </InputGroup>
+      </FormGroup>
+      <FormGroup>
+        <InputGroup size="large" label="Family name (Optional)" errorMessage={errors.familyName?.message}>
+          <Input {...register('familyName')} />
+        </InputGroup>
+      </FormGroup>
+      <FormGroup>
+        <Field label="Your comments:" errorMessage={errors.comment?.message}>
+          <Textarea size="large" {...register('comment', { required: 'This field is required' })} />
+        </Field>
+      </FormGroup>
+      <div className="mt-5 flex flex-col gap-2 xsl:flex-row">
+        <Button type="submit" size="large" look="primary">
+          Send feedback
+        </Button>
+        <Button type="reset" size="large" look="link">
+          Cancel
+        </Button>
+      </div>
+    </Form>
+  );
+};
+```
+
+#### After
+
+```jsx
+() => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  return (
+    <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <Field label="Given name (Optional)" errorMessage={errors.givenName?.message}>
+        <InputGroup size="large">
+          <Input {...register('givenName')} />
+        </InputGroup>
+      </Field>
+      <Field label="Family name (Optional)" errorMessage={errors.familyName?.message}>
+        <InputGroup size="large">
+          <Input {...register('familyName')} />
+        </InputGroup>
+      </Field>
+      <Field label="Your comments:" errorMessage={errors.comment?.message}>
+        <Textarea size="large" {...register('comment', { required: 'This field is required' })} />
+      </Field>
+      <div className="mt-5 flex flex-col gap-2 xsl:flex-row">
+        <Button type="submit" size="large" look="primary">
+          Send feedback
+        </Button>
+        <Button type="reset" size="large" look="link">
+          Cancel
+        </Button>
+      </div>
+    </form>
+  );
+};
+```
+
+### Bottom Sheet isDismissable default to false
+
+When creating the `BottomSheet`, being able to hide the dismiss button (like the `Modal`) was missed and always showed the dismiss button.
+When this was fixed in a previous version however isDismissable had to default to true to avoid breaking changes. This is now fixed to align with the `Modal` component in this version.
+
+#### Before
+
+Below would display the dismiss 'x' button:
+
+```jsx
+<BottomSheet title="Title">Content</BottomSheet>
+```
+
+#### After
+
+Now you need to add a prop to display the dismiss 'x' button (matching `Modal` implementation):
+
+```jsx
+<BottomSheet title="Title" isDismissable>
+  Content
+</BottomSheet>
+```
+
+### Pictogram mode prop value change
+
+To avoid confusion with dark mode and light mode we have changed the possible values for the pictogram mode prop.
+
+#### Before
+
+```tsx
+export type PictogramMode = 'dark' | 'light' | 'duo';
+
+<Pictogram mode="dark" />;
+```
+
+#### After
+
+```tsx
+export type PictogramMode = 'base' | 'mono' | 'duo';
+
+<Pictogram mode="base" />;
+```
+
+### Removed/Updated Logos and Symbols
+
+#### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
+
+We have taken the opportunity to remove and update all the symbols and logos exported from the library. For updates most symbols/logos will have a dark mode variant that turns on when switching to dark mode.
+If there is a circumstance where you want the dark mode variant in light mode look for the 'Inverse' symbols/logos. If your believe there is a symbol/logo that needs an inverse or was removed and you believe it shouldn't be please contact the GEL design team.
+
+The list of removed symbols and logos is as follows
+Logos:
+
+- BTPanormaMultibrandLargeLogo
+- BTPanormaMultibrandSmallLogo
+- RedAvatarCircleLogo
+- RedAvatarCircleReverseLogo
+- RedAvatarLogo
+
+Symbols:
+
+- GooglePlusSymbol
+- MastercardAcceptedSymbol
+- MastercardHorizontalSymbol
+- MicrosoftStoreSymbol
+- PayToBlackSymbol
+- PayToDarkGreySymbol
+- PayToLightGreySymbol
+- PayToWhiteSymbol
+- PayToWordmarkBlackSymbol
+- PayToWordmarkDarkGreySymbol
+- PayToWordmarkLightGreySymbol
+- PayToWordmarkWhiteSymbol
+- SlackSymbol
+- TwitterSymbol
+- VisaSymbol
+- XMarkInverseSymbol
+- XMarkSymbol
+- YammerSymbol
+
+### 🗑️ Deprecated Components & APIs
+
+| Deprecated                                         | Replacement / Notes                                                  |
+| -------------------------------------------------- | -------------------------------------------------------------------- |
+| `ButtonDropdown`                                   | Replaced by `Dropdown`                                               |
+| `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
+| `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
+
 ## 0.59.4
 
 ### Patch Changes

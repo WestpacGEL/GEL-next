@@ -1,0 +1,35 @@
+With the update to GEL v1 there is an entirely new token system meaning previous color classnames e.g. `bg-primary` are incompatible with the new system. To assist with the migration, we have provided a codemod script to automate the process of updating your codebase where possible
+
+We use [jscodeshift](https://github.com/facebook/jscodeshift) to run codemods. To apply a codemod, install `jscodeshift` if you don’t already have it:
+
+```html
+<StaticCode language="js" code={`npm install -g jscodeshift`} />
+```
+
+Then run the codemod against your source files. For example:
+
+```html
+<StaticCode language="js" code={`npx jscodeshift -t ./codemods/update-date-picker.js src/`} />
+```
+
+`-t` points to the codemod file.
+
+`src/` is the folder you want to transform (adjust as needed).
+
+Example
+
+```html
+<StaticCode language="js" code={`npx jscodeshift --parser=tsx -t node_modules/@westpac/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs <path>/**/*.tsx`} />
+```
+
+NOTE: The parser parameter might be different based on your project, if you see a lot of errors, try another parser (babel, flow, ts, tsx)
+
+This will apply the codemod to all specified files in your project. You may have to run this script more than once depending on your project structure and the files you store styles in.
+
+For classes we are unable to replace with the equivalent token the code will inject a `[REPLACE_TOKEN]` string where it will require working with your project designer to manually update it to the correct color token.
+
+If you want to test the upgrade while waiting for your designers we recommened replacing with a token that is close or the hex value i.e. text-black = text-[#000].
+
+To see all the new tokens you can check storybook [Storybook](https://gel-next-storybook-westpacgel.vercel.app/?path=/docs/foundation-colours--docs) or the [tokens page](/foundation/tokens/colour-tokens)
+
+You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-next/blob/develop/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs)

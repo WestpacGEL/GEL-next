@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonGroup, Form, FormGroup, Input, InputGroup, Select } from '@westpac/ui';
+import { ButtonGroup, ButtonGroupButton, Field, Input, InputGroup, Select } from '@westpac/ui';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -73,12 +73,13 @@ export default function IncomeAndSavings() {
         Loans & cards
       </CustomHeading>
       {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
-      <Form id="credit-card" spacing="large" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <FormGroup>
+      <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+        <Field
+          label="Your loan repayments (if any)"
+          hintMessage="For example Home, Investment or Personal loans, overdrafts"
+          errorMessage={errors.repaymentFreq?.message || errors.repayments?.message}
+        >
           <InputGroup
-            label="Your loan repayments (if any)"
-            hint="For example Home, Investment or Personal loans, overdrafts"
-            errorMessage={errors.repaymentFreq?.message || errors.repayments?.message}
             before="$"
             width={{ initial: 'full', md: 10 }}
             after={
@@ -103,44 +104,40 @@ export default function IncomeAndSavings() {
               defaultValue={data.repayments}
             />
           </InputGroup>
-        </FormGroup>
+        </Field>
 
-        <FormGroup>
-          <Controller
-            control={control}
-            name="otherCards"
-            rules={{ required: defaultError }}
-            render={({ field: { onChange, onBlur, value } }) => (
+        <Controller
+          control={control}
+          name="otherCards"
+          rules={{ required: defaultError }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <Field
+              label="Do you have any non-Westpac credit cards?"
+              hintMessage="Including store and charge cards, lines of credit"
+              errorMessage={errors.otherCards?.message}
+            >
               <ButtonGroup
-                label="Do you have any non-Westpac credit cards?"
-                hintMessage="Including store and charge cards, lines of credit"
                 size="large"
                 block={{ initial: true, md: false }}
-                errorMessage={errors.otherCards?.message}
-                defaultValue={data.nonWestpacCards}
-                buttons={[
-                  { value: 'Yes', label: 'Yes' },
-                  { value: 'No', label: 'No' },
-                ]}
+                defaultSelectedKeys={data.nonWestpacCards}
                 id="otherCards"
-                onChange={onChange}
+                onSelectionChange={onChange}
+                selectedKeys={value}
                 onBlur={onBlur}
-                value={value}
-              />
-            )}
-          />
-        </FormGroup>
+              >
+                <ButtonGroupButton id="Yes">Yes</ButtonGroupButton>
+                <ButtonGroupButton id="No">No</ButtonGroupButton>
+              </ButtonGroup>
+            </Field>
+          )}
+        />
         {otherCards === 'Yes' && (
-          <FormGroup>
-            <InputGroup
-              instanceId="totalBal"
-              size="large"
-              label="Total balances of non-Westpac cards"
-              hint="Enter a dollar value"
-              errorMessage={errors.totalBal?.message}
-              before="$"
-              width={{ initial: 'full', md: 10 }}
-            >
+          <Field
+            label="Total balances of non-Westpac cards"
+            hintMessage="Enter a dollar value"
+            errorMessage={errors.totalBal?.message}
+          >
+            <InputGroup instanceId="totalBal" size="large" before="$" width={{ initial: 'full', md: 10 }}>
               <Input
                 invalid={!!errors.totalBal?.message}
                 {...register('totalBal', { required: defaultError })}
@@ -148,13 +145,13 @@ export default function IncomeAndSavings() {
                 defaultValue={data.totalBal}
               />
             </InputGroup>
-          </FormGroup>
+          </Field>
         )}
 
         <Cta primaryType="submit" tertiaryOnClick={() => router.push('/')} tertiary="Cancel">
           Next
         </Cta>
-      </Form>
+      </form>
     </div>
   );
 }

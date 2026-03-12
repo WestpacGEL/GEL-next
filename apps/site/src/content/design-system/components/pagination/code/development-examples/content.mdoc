@@ -1,168 +1,6 @@
-### Default
+### Pagination with totalPages
 
-```tsx
-() => {
-  const [current, setCurrent] = useState(1);
-
-  return (
-    <Pagination
-      totalPages={20}
-      onChange={value => {
-        setCurrent(value);
-        action('onChange')(value);
-      }}
-      current={current}
-    />
-  );
-};
-```
-
-### Responsive using totalPages
-
-```tsx
-() => {
-  const [current, setCurrent] = useState(1);
-
-  return (
-    <Pagination
-      totalPages={20}
-      siblingCount={{ initial: 0, sm: 2, md: 3 }}
-      boundaryCount={{ initial: 0, sm: 2, md: 3 }}
-      onChange={value => {
-        setCurrent(value);
-        action('onChange')(value);
-      }}
-      current={current}
-    />
-  );
-};
-```
-
-### Responsive using pages
-
-```tsx
-() => {
-  const [current, setCurrent] = useState(1);
-
-  return (
-    <>
-      <Pagination
-        pages={Array.from({ length: 20 }, (_, i) => i + 1).map(page => ({ text: page }))}
-        siblingCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
-        boundaryCount={{ initial: 0, xsl: 1, sm: 2, md: 3, lg: 4, xl: 5 }}
-        onChange={value => {
-          setCurrent(value);
-          action('onChange')(value);
-        }}
-        current={current}
-      />
-    </>
-  );
-};
-```
-
-### Button usage example
-
-```tsx
-() => {
-  return <Pagination totalPages={20} onPageItemProps={page => ({ text: page, href: `#page-${page}` })} current={20} />;
-};
-   
-```
-
-### Link usage example
-
-```tsx
-    
-<Pagination   
-    current={1}
-    pages={[
-      {
-        text: '1',
-        href: '#page-1',
-      },
-      {
-        text: '2',
-        href: '#page-2',
-      },
-      {
-        text: '3',
-        href: '#page-3',
-      },
-      {
-        text: '4',
-        href: '#page-4',
-      },
-      {
-        text: '5',
-        href: '#page-5',
-      },
-      {
-        text: '6',
-        href: '#page-6',
-      },
-      {
-        text: '7',
-        href: '#page-7',
-      },
-      {
-        text: '8',
-        href: '#page-8',
-      },
-      {
-        text: '9',
-        href: '#page-9',
-      },
-      {
-        text: '10',
-        href: '#page-10',
-      },
-      {
-        text: '21',
-        href: '#page-21',
-      },
-      {
-        text: '22',
-        href: '#page-22',
-      },
-      {
-        text: '23',
-        href: '#page-23',
-      },
-      {
-        text: '24',
-        href: '#page-24',
-      },
-      {
-        text: '25',
-        href: '#page-25',
-      },
-      {
-        text: '26',
-        href: '#page-26',
-      },
-      {
-        text: '27',
-        href: '#page-27',
-      },
-      {
-        text: '28',
-        href: '#page-28',
-      },
-      {
-        text: '29',
-        href: '#page-29',
-      },
-      {
-        text: '30',
-        href: '#page-30',
-      },
-    ]}
-  />
-   
-```
-
-### Using useState as example
+The recommended way to use the Pagination component is by providing the `totalPages` prop. This defines the total number of pages available for navigation.
 
 ```tsx
 () => {
@@ -174,13 +12,32 @@
       onChange={changedPage => {
         setPage(changedPage);
       }}
-      pages={Array.from({ length: 19 }, (_, i) => i + 1).map(page => ({ text: page }))}
+      totalPages={20}
     />
   );
 };
 ```
 
-### Using InfiniteState as example
+When using totalPages, you can enable URL-based pagination with the onPageItemProps callback:
+
+```tsx
+() => {
+  const page = useMemo(() => {
+    // In here you should be adding the logic to get the url parameter
+    return 1;
+  }, []);
+
+  return (
+    <Pagination current={page} totalPages={20} onPageItemProps={page => ({ text: page, href: `#page-${page}` })} />
+  );
+};
+```
+
+The `onPageItemProps` function receives the page number and should return an object with text and href, allowing you to generate links for each page.
+
+### Pagination with pages
+
+Alternatively, you can provide an explicit list of pages using the pages prop. This accepts an array of objects containing the page text.
 
 ```tsx
 () => {
@@ -189,13 +46,25 @@
   return (
     <Pagination
       current={page}
-      infinite
       onChange={changedPage => {
         setPage(changedPage);
       }}
-      pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
+      totalPages={3}
     />
   );
+};
+```
+
+You can also include an `href` for each page to support URL-based navigation:
+
+```tsx
+() => {
+  const page = useMemo(() => {
+    // In here you should be adding the logic to get the url parameter
+    return 1;
+  }, []);
+
+  return <Pagination current={page} totalPages={3} onPageItemProps={page => ({ href: `#page-${page}`, text: page })} />;
 };
 ```
 
@@ -213,8 +82,56 @@
       onChange={changedPage => {
         setPage(changedPage);
       }}
-      pages={[{ text: '1' }, { text: '2' }, { text: '3' }]}
+      totalPages={3}
     />
   );
 };
 ```
+
+### Using the `boundaryCount` and `siblingCount`
+
+#### boundaryCount
+
+- **Type:** `number | Partial<Record<Breakpoint | 'initial', number>>`
+- **Default:** `1`
+
+Defines the number of **always-visible page buttons** at the beginning and end of the pagination.
+
+For example, with `boundaryCount={1}`, the first and last page will always be shown. Increasing this value will show more page numbers at the boundaries.
+
+You can also provide a responsive configuration by passing an object keyed by breakpoints (or `'initial'` for the default).
+
+**Example:**
+
+```tsx
+<Pagination current={5} totalPages={20} boundaryCount={{ initial: 1, md: 2, lg: 3 }} />
+```
+
+In this example:
+
+- On small screens, 1 boundary page is shown (1 … 5 … 20).
+- On medium screens, 2 boundary pages are shown (1 2 … 5 … 19 20).
+- On large screens, 3 boundary pages are shown (1 2 3 … 5 … 18 19 20).
+
+#### siblingCount
+
+- **Type:** `number | Partial<Record<Breakpoint | 'initial', number>>`
+- **Default:** `2`
+
+Defines the number of page buttons displayed adjacent to the current page.
+
+For example, with siblingCount={1}, one page before and one page after the current page will be shown. Increasing this value will show more surrounding pages.
+
+Like boundaryCount, this prop also supports responsive configuration.
+
+**Example:**
+
+```tsx
+<Pagination current={5} totalPages={20} siblingCount={{ initial: 1, md: 2, lg: 3 }} />
+```
+
+In this example:
+
+- On small screens, pages 4 5 6 are shown.
+- On medium screens, pages 3 4 5 6 7 are shown.
+- On large screens, pages 2 3 4 5 6 7 8 are shown.

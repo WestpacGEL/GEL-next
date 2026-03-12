@@ -16,10 +16,21 @@ export type TabsTabPanelProps<T = object> = {
    * Look of tab panel
    */
   look?: Variants['look'];
+  /**
+   * Keep tab panel mounted in DOM on change
+   */
   keepMounted?: boolean;
   /**
    * Tab list state
    */
   state: TabListState<T>;
+  /**
+   * Stretch the tab to fill the whole content
+   */
+  justify?: boolean;
+  /**
+   * orientation of the tabs
+   */
+  orientation?: 'horizontal' | 'vertical';
 } & AriaTabPanelProps &
   HTMLAttributes<Element>;

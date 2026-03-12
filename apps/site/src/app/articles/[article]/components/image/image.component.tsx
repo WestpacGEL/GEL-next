@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { styles as imageStyles } from './image.style';
 import { type ImageProps } from './image.types';
 

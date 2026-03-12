@@ -4,7 +4,7 @@ export { clsx } from 'clsx';
 
 export { DesktopComputerPictogram, DriversLicencePictogram } from '@westpac/ui/pictogram';
 
-export { MastercardAcceptedSymbol, WBCLogo, GoogleStoreSymbol, AppleStoreSymbol } from '@westpac/ui/symbol';
+export { BPayLandSymbol, WBCLogo, GoogleStoreSymbol, AppleStoreSymbol } from '@westpac/ui/symbol';
 
 export { StaticCode } from '../static-code/index';
 
@@ -63,8 +63,8 @@ export {
   Panel,
   PanelBody,
   PanelFooter,
-  ButtonDropdown,
-  ButtonDropdownHeading,
+  Dropdown,
+  DropdownHeading,
   InputGroup,
   Modal,
   ModalBody,
@@ -75,14 +75,10 @@ export {
   Pagination,
   Popover,
   Repeater,
+  RepeaterItem,
   SkipLink,
   Compacta,
-  Form,
-  FormGroup,
-  FormLabel,
-  FormHint,
-  FormSection,
-  FormChitChat,
+  CompactaItem,
   Selector,
   SelectorAdornment,
   SelectorBody,
@@ -154,6 +150,7 @@ export const SPACING_SCALE = [
   { value: 20, className: 'pr-20' },
 ];
 export const VARIATION_MARGIN_PADDING = ['', 'x', 'y', 't', 'r', 'b', 'l'];
-export const SPACING_DEFAULT_CLASSES = 'h-3 w-0 bg-primary';
+export const SPACING_DEFAULT_CLASSES = 'h-3 w-0 bg-surface-info';
 
 export { useBrand } from '@/app/design-system/hooks/use-brand';
+export { useForm } from 'react-hook-form';

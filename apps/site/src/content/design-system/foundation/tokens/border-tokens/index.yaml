@@ -1,0 +1,25 @@
+name: Border tokens
+description: >-
+  Border tokens control two key style attributes—width and radius. Using them
+  consistently helps maintain a cohesive experience throughout the customer
+  journey. For information on border colours, please see the colour tokens
+  section.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Border radius tokens
+      slug: border-radius-tokens
+    noTitle: false
+    noDemo: true
+accessibility: []
+relatedComponents:
+  heading: Tokens
+  icon: tag
+  links:
+    - title: Colour tokens
+      slug: foundation/tokens/colour-tokens
+    - title: Spacing tokens
+      slug: foundation/layout/spacing
+code: []

@@ -1,0 +1,262 @@
+:root, :host {
+  --primitives-border-radius-0px: 0;
+  --primitives-border-radius-3px: 3;
+  --primitives-border-radius-4px: 4;
+  --primitives-border-radius-5px: 5;
+  --primitives-border-radius-6px: 6;
+  --primitives-border-radius-8px: 8;
+  --primitives-border-radius-12px: 12;
+  --primitives-border-radius-16px: 16;
+  --primitives-border-radius-24px: 24;
+  --primitives-border-radius-999px: 999;
+  --primitives-color-mono-white: #ffffff;
+  --primitives-color-mono-black: #000000;
+  --primitives-color-success-50: #f2f9f2;
+  --primitives-color-success-100: #d9ecd9;
+  --primitives-color-success-200: #99cc99;
+  --primitives-color-success-300: #47a447;
+  --primitives-color-success-400: #249224;
+  --primitives-color-success-500: #008000;
+  --primitives-color-success-600: #006d00;
+  --primitives-color-success-700: #005a00;
+  --primitives-color-success-800: #004600;
+  --primitives-color-success-900: #003300;
+  --primitives-color-success-950: #002000;
+  --primitives-color-info-50: #f2f8fc;
+  --primitives-color-info-100: #d9eaf6;
+  --primitives-color-info-200: #99c7e7;
+  --primitives-color-info-300: #459ad4;
+  --primitives-color-info-400: #2487cc;
+  --primitives-color-info-500: #0074c4;
+  --primitives-color-info-600: #0063a7;
+  --primitives-color-info-700: #005189;
+  --primitives-color-info-800: #00406c;
+  --primitives-color-info-900: #002e4e;
+  --primitives-color-info-950: #001d31;
+  --primitives-color-warning-50: #fcf5f2;
+  --primitives-color-warning-100: #f3d8cc;
+  --primitives-color-warning-200: #e8b199;
+  --primitives-color-warning-300: #d7784f;
+  --primitives-color-warning-400: #ce5826;
+  --primitives-color-warning-500: #c53b00;
+  --primitives-color-warning-600: #a73200;
+  --primitives-color-warning-700: #8a2900;
+  --primitives-color-warning-800: #6c2000;
+  --primitives-color-warning-900: #4f1800;
+  --primitives-color-warning-950: #310f00;
+  --primitives-color-danger-50: #fcf2f2;
+  --primitives-color-danger-100: #f9e6e6;
+  --primitives-color-danger-200: #eaa6a6;
+  --primitives-color-danger-300: #db6363;
+  --primitives-color-danger-400: #d03333;
+  --primitives-color-danger-500: #c40000;
+  --primitives-color-danger-600: #a70000;
+  --primitives-color-danger-700: #890000;
+  --primitives-color-danger-800: #6c0000;
+  --primitives-color-danger-900: #4e0000;
+  --primitives-color-danger-950: #310000;
+  --primitives-color-system-50: #fffff2;
+  --primitives-color-system-100: #ffffe6;
+  --primitives-color-system-200: #ffffbf;
+  --primitives-color-system-300: #ffff80;
+  --primitives-color-system-400: #ffff40;
+  --primitives-color-system-500: #ffff00;
+  --primitives-color-system-600: #d9d900;
+  --primitives-color-system-700: #b3b300;
+  --primitives-color-system-800: #8c8c00;
+  --primitives-color-system-900: #666600;
+  --primitives-color-system-950: #404000;
+  --primitives-color-wbc-muted-50: #f9f9fa;
+  --primitives-color-wbc-muted-100: #f5f5f6;
+  --primitives-color-wbc-muted-200: #dedee1;
+  --primitives-color-wbc-muted-300: #b6b6bc;
+  --primitives-color-wbc-muted-400: #8e8d98;
+  --primitives-color-wbc-muted-500: #706f7c;
+  --primitives-color-wbc-muted-600: #5b5b6a;
+  --primitives-color-wbc-muted-700: #464651;
+  --primitives-color-wbc-muted-800: #323238;
+  --primitives-color-wbc-muted-900: #1c1c1f;
+  --primitives-color-wbc-muted-950: #161619;
+  --primitives-color-wbc-primary-50: #fff0f0;
+  --primitives-color-wbc-primary-100: #facccb;
+  --primitives-color-wbc-primary-200: #f46e69;
+  --primitives-color-wbc-primary-300: #f1423c;
+  --primitives-color-wbc-primary-400: #ee221b;
+  --primitives-color-wbc-primary-500: #da1710;
+  --primitives-color-wbc-primary-600: #b9140e;
+  --primitives-color-wbc-primary-700: #99100b;
+  --primitives-color-wbc-primary-800: #780d09;
+  --primitives-color-wbc-primary-900: #570906;
+  --primitives-color-wbc-primary-950: #370604;
+  --primitives-color-wbc-primary-opacity: rgba(218, 23, 16, 0.5);
+  --primitives-color-wbc-hero-50: #f1f0fa;
+  --primitives-color-wbc-hero-100: #e2e1f4;
+  --primitives-color-wbc-hero-200: #a9a5df;
+  --primitives-color-wbc-hero-300: #6f69c9;
+  --primitives-color-wbc-hero-400: #423c97;
+  --primitives-color-wbc-hero-500: #1f1c4f;
+  --primitives-color-wbc-hero-600: #18144d;
+  --primitives-color-wbc-hero-700: #130f48;
+  --primitives-color-wbc-hero-800: #0d093e;
+  --primitives-color-wbc-hero-900: #090538;
+  --primitives-color-wbc-hero-950: #060236;
+  --primitives-color-wbc-hero-opacity: rgba(58, 52, 147, 0.6);
+  --primitives-color-wbc-pop-50: #fff5fd;
+  --primitives-color-wbc-pop-100: #ffecfb;
+  --primitives-color-wbc-pop-200: #ffcff6;
+  --primitives-color-wbc-pop-300: #ff9eed;
+  --primitives-color-wbc-pop-400: #ff6ee4;
+  --primitives-color-wbc-pop-500: #ff3ddb;
+  --primitives-color-wbc-pop-600: #d934ba;
+  --primitives-color-wbc-pop-700: #b32b99;
+  --primitives-color-wbc-pop-800: #8c2278;
+  --primitives-color-wbc-pop-900: #59154d;
+  --primitives-color-wbc-pop-950: #330c2c;
+  --primitives-color-wbc-pop-opacity: rgba(255, 61, 219, 0.45);
+  --primitives-color-wbc-holler-50: #faf1fd;
+  --primitives-color-wbc-holler-100: #ebcdf9;
+  --primitives-color-wbc-holler-200: #ce84f0;
+  --primitives-color-wbc-holler-300: #bc57eb;
+  --primitives-color-wbc-holler-400: #ad32e6;
+  --primitives-color-wbc-holler-500: #991ad6;
+  --primitives-color-wbc-holler-600: #8717ba;
+  --primitives-color-wbc-holler-700: #70139b;
+  --primitives-color-wbc-holler-800: #5c0f7f;
+  --primitives-color-wbc-holler-900: #450c5f;
+  --primitives-color-wbc-holler-950: #2e0840;
+  --primitives-color-wbc-holler-opacity: rgba(153, 26, 214, 0.5);
+  --primitives-color-wbc-sing-50: #faf2f2;
+  --primitives-color-wbc-sing-100: #f5d9d9;
+  --primitives-color-wbc-sing-200: #efa2a2;
+  --primitives-color-wbc-sing-300: #e76969;
+  --primitives-color-wbc-sing-400: #cf2c2c;
+  --primitives-color-wbc-sing-500: #990000;
+  --primitives-color-wbc-sing-600: #860000;
+  --primitives-color-wbc-sing-700: #710000;
+  --primitives-color-wbc-sing-800: #5d0000;
+  --primitives-color-wbc-sing-900: #4d0000;
+  --primitives-color-wbc-sing-950: #410000;
+  --primitives-color-wbc-sing-opacity: rgba(153, 0, 0, 0.5);
+  --primitives-color-wbc-dance-50: #fef4eb;
+  --primitives-color-wbc-dance-100: #fde7d3;
+  --primitives-color-wbc-dance-200: #fbcba2;
+  --primitives-color-wbc-dance-300: #f9b071;
+  --primitives-color-wbc-dance-400: #f79540;
+  --primitives-color-wbc-dance-500: #f57a0f;
+  --primitives-color-wbc-dance-600: #ce6409;
+  --primitives-color-wbc-dance-700: #9d4c07;
+  --primitives-color-wbc-dance-800: #713705;
+  --primitives-color-wbc-dance-900: #401f03;
+  --primitives-color-wbc-dance-950: #2c1502;
+  --primitives-color-wbc-dance-opacity: rgba(245, 122, 15, 0.45);
+}
+
+[data-brand="wbc"] {
+  --color-background-white: var(--primitives-color-mono-white); /* If you need a white background use this token */
+  --color-background-pale: var(--primitives-color-wbc-muted-100); /* If you need a grey background use this token. Note: this token replaces the current Background colour style. */
+  --color-background-faint: var(--primitives-color-wbc-muted-50); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */
+  --color-background-primary: var(--primitives-color-wbc-primary-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-background-hero: var(--primitives-color-wbc-hero-500); /* Use for embellishment eg. hero banners etc. Warning. Accessibility is not guaranteed */
+  --color-surface-muted-vivid: var(--primitives-color-wbc-muted-950); /* Use for surfaces that need to be the same colour as body text (icons, arrows etc). */
+  --color-surface-muted: var(--primitives-color-wbc-muted-500); /* Replaces the current Muted colour style. */
+  --color-surface-muted-strong: var(--primitives-color-wbc-muted-400); /* Reserved do not use. */
+  --color-surface-muted-mild: var(--primitives-color-wbc-muted-300); /* Reserved do not use. */
+  --color-surface-muted-soft: var(--primitives-color-wbc-muted-200); /* Reserved do not use. */
+  --color-surface-muted-pale: var(--primitives-color-wbc-muted-100); /* Replaces the current Background colour style. Tip: In light mode this colour is the same as background-pale however they behave differently in dark mode. */
+  --color-surface-muted-faint: var(--primitives-color-wbc-muted-50); /* Replaces the current Light colour style. Tip: In light mode this colour is the same as background-faint however they each behave differently in dark mode. */
+  --color-surface-primary: var(--primitives-color-wbc-primary-500); /* Replaces the current Primary colour style. */
+  --color-surface-primary-faint: var(--primitives-color-wbc-primary-50); /* Reserved do not use. */
+  --color-surface-hero: var(--primitives-color-wbc-hero-500); /* Replaces the current Hero colour style. */
+  --color-surface-hero-faint: var(--primitives-color-wbc-hero-50); /* Reserved do not use. */
+  --color-surface-pop: var(--primitives-color-wbc-pop-500); /* Replaces the current Pop colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
+  --color-surface-pop-faint: var(--primitives-color-wbc-pop-50); /* Replaces the current Pop Light colour style. Use for embellishment only as it may not be accessible in all brands. Always use sparingly and in accordance with the brand guidelines. */
+  --color-surface-holler: var(--primitives-color-wbc-holler-500); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-surface-holler-faint: var(--primitives-color-wbc-holler-50); /* Use with caution: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-surface-success: var(--primitives-color-success-500); /* Only use for success alert components, do not use for anything else. */
+  --color-surface-success-faint: var(--primitives-color-success-50); /* Only use for success alert components, do not use for anything else. Note: this surface should always be used with border-success-mild as shown here. */
+  --color-surface-info: var(--primitives-color-info-500); /* Only use for info alert components, do not use for anything else. */
+  --color-surface-info-faint: var(--primitives-color-info-50); /* Only use for info alert components, do not use for anything else. Note: this surface should always be used with border-info-mild as shown here. */
+  --color-surface-warning: var(--primitives-color-warning-500); /* Only use for warning alert components, do not use for anything else. */
+  --color-surface-warning-faint: var(--primitives-color-warning-50); /* Only use for warning alert components, do not use for anything else. Note: this surface should always be used with border-warning-mild as shown here. */
+  --color-surface-danger: var(--primitives-color-danger-500); /* Only use for danger alert components, do not use for anything else. */
+  --color-surface-danger-faint: var(--primitives-color-danger-50); /* Only use for danger alert components, do not use for anything else. Note: this surface should always be used with border-danger-mild as shown here. */
+  --color-surface-system-error: var(--primitives-color-system-500); /* Only use for system alert components, do not use for anything else. */
+  --color-surface-system-error-dark: var(--primitives-color-system-950); /* Only use for system alert components, do not use for anything else. */
+  --color-surface-mono: var(--primitives-color-mono-white); /* White in light mode and black in dark mode. Use with caution, black often creates too much contrast which defeats the object of reducing glare. Tip: Use background-white. This will provide the same results with less contrast in dark mode. */
+  --color-surface-reversed: var(--primitives-color-mono-white); /* Always white. Use with caution, in Dark Mode white often creates too much contrast which defeats the object of reducing glare. Tip: Use surface-mono or background-white as these tokens are designed to work in dark mode. */
+  --color-text-body: var(--primitives-color-wbc-muted-950); /* Use for paragraph text and UI elements - labels, buttons, inputs etc */
+  --color-text-heading: var(--primitives-color-wbc-hero-500); /* Use for headings only. Note: Using text-heading on anything other than headings may produce unexpected results in multi-brand applications. */
+  --color-text-muted: var(--primitives-color-wbc-muted-500); /* Use for text that requires less emphasis like hint text etc. */
+  --color-text-primary: var(--primitives-color-wbc-primary-500); /* Use with caution and in accordance with the brand guidelines. Tip: If your text is a link always use the text-link token. */
+  --color-text-hero: var(--primitives-color-wbc-hero-500); /* Use for text that requires more emphasis, call outs, quotes etc. */
+  --color-text-holler: var(--primitives-color-wbc-holler-500); /* Use for text that requires more emphasis, call outs, quotes etc. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-text-link: var(--primitives-color-wbc-primary-500); /* Use for text links only. Note: In Westpac this colour is exactly the same as text-primary however this may not be the case in other brands. */
+  --color-text-success: var(--primitives-color-success-500); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-text-info: var(--primitives-color-info-500); /* Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-text-warning: var(--primitives-color-warning-500); /* Only for warning alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-text-danger: var(--primitives-color-danger-500); /* Only for danger alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-text-system-error: var(--primitives-color-system-950); /* Only for system error alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-text-mono: var(--primitives-color-mono-white); /* Similar to surface-mono, text-mono is white in light mode and black in dark mode. It’s typically used for UI elements like buttons, tabs, panel heading etc. */
+  --color-text-reversed: var(--primitives-color-mono-white); /* Similar to surface-reversed, text-reversed is always white. Use with caution, in dark mode white creates too much contrast which defeats the object of reducing glare. Tip: Try using text-mono */
+  --color-border-muted: var(--primitives-color-wbc-muted-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-muted-strong: var(--primitives-color-wbc-muted-400); /* Replaces the current Border Dark colour style. Use for UI components that require accessible contrast ratios eg. Inputs, Selects etc */
+  --color-border-muted-mild: var(--primitives-color-wbc-muted-300); /* Reserved do not use. */
+  --color-border-muted-soft: var(--primitives-color-wbc-muted-200); /* Replaces the current Border colour style. Use for UI components and page elements that don’t require accessible borders - Selectors, Flexi-cell, Tabs, section dividers etc */
+  --color-border-hero: var(--primitives-color-wbc-hero-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-primary: var(--primitives-color-wbc-primary-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-pop: var(--primitives-color-wbc-pop-500); /* For borders that require more emphasis. Use with caution and in accordance with the brand guidelines. */
+  --color-border-holler: var(--primitives-color-wbc-holler-500); /* For borders that require more emphasis. Note: GEL cannot endorse the use of this colour token until it&#39;s approved and documented as part of the Master Brand. This applies to all our brands. */
+  --color-border-success: var(--primitives-color-success-500); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-border-success-mild: var(--primitives-color-success-300); /* Only for success alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-border-info: var(--primitives-color-info-500); /* Only for info alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-border-info-mild: var(--primitives-color-info-300); /* Only for success info messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-border-warning: var(--primitives-color-warning-500); /* Only for warning alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-border-warning-mild: var(--primitives-color-warning-300); /* Only for warning alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-border-danger: var(--primitives-color-danger-500); /* Reserved. Must only be used for the Danger alert component. */
+  --color-border-danger-mild: var(--primitives-color-danger-300); /* Only for danger alert messages, do not use for anything else. Tip: Use the pre-built alert message components. */
+  --color-border-mono: var(--primitives-color-mono-white); /* Similar to surface-mono, border-mono is white in light mode and black in dark mode. */
+  --color-border-focus: var(--primitives-color-wbc-holler-300); /* Reserved. Only for use with focus state keyboard navigation. */
+  --color-data-a-solid: var(--primitives-color-wbc-primary-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-tint: var(--primitives-color-wbc-primary-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-a-opacity: var(--primitives-color-wbc-primary-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-solid: var(--primitives-color-wbc-hero-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-tint: var(--primitives-color-wbc-hero-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-b-opacity: var(--primitives-color-wbc-hero-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-solid: var(--primitives-color-wbc-pop-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-tint: var(--primitives-color-wbc-pop-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-c-opacity: var(--primitives-color-wbc-pop-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-solid: var(--primitives-color-wbc-holler-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-tint: var(--primitives-color-wbc-holler-200); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-d-opacity: var(--primitives-color-wbc-holler-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-solid: var(--primitives-color-wbc-sing-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-tint: var(--primitives-color-wbc-sing-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-e-opacity: var(--primitives-color-wbc-sing-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-solid: var(--primitives-color-wbc-dance-500); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-tint: var(--primitives-color-wbc-dance-300); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-data-f-opacity: var(--primitives-color-wbc-dance-opacity); /* This is a reserved colour. It must only be used for data visualisation - graphs and charts. */
+  --color-surface-pictogram-base: var(--primitives-color-wbc-hero-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-pictogram-accent: var(--primitives-color-wbc-primary-500); /* Reserved. Only for use on Pictograms. */
+  --color-surface-hover-primary: var(--primitives-color-wbc-primary-400); /* This token is for hover states. */
+  --color-surface-active-primary: var(--primitives-color-wbc-primary-200);
+  --color-surface-hover-hero: var(--primitives-color-wbc-hero-400); /* This token is for hover states. */
+  --color-surface-active-hero: var(--primitives-color-wbc-hero-300); /* This token is for hover states. */
+  --color-surface-hover-primary-faint: var(--primitives-color-wbc-primary-50); /* This token is for hover states. */
+  --color-surface-active-primary-faint: var(--primitives-color-wbc-primary-100); /* This token is for hover states. */
+  --color-surface-hover-hero-faint: var(--primitives-color-wbc-hero-50);
+  --color-surface-active-hero-faint: var(--primitives-color-wbc-hero-100);
+  --color-surface-hover-muted-pale: var(--primitives-color-wbc-muted-100); /* This token is for hover states. */
+  --color-surface-active-muted-pale: var(--primitives-color-wbc-muted-300); /* This token is for hover states. */
+  --color-surface-hover-mono: var(--primitives-color-mono-white); /* This token is for hover states. */
+  --color-surface-active-mono: var(--primitives-color-wbc-muted-200); /* This token is for hover states. */
+  --border-rounded-none: var(--primitives-border-radius-0px);
+  --border-rounded-sm: var(--primitives-border-radius-3px);
+  --border-rounded-md: var(--primitives-border-radius-4px);
+  --border-rounded-lg: var(--primitives-border-radius-5px);
+  --border-rounded-xl: var(--primitives-border-radius-6px);
+  --border-rounded-2xl: var(--primitives-border-radius-8px);
+  --border-rounded-3xl: var(--primitives-border-radius-12px);
+  --border-rounded-4xl: var(--primitives-border-radius-16px);
+  --border-rounded-5xl: var(--primitives-border-radius-24px);
+  --border-rounded-full: var(--primitives-border-radius-999px);
+}
+

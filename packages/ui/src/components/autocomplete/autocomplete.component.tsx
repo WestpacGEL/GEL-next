@@ -5,6 +5,8 @@ import { ForwardedRef, forwardRef, useMemo } from 'react';
 import { mergeProps, useButton, useComboBox, useFilter, useFocusRing, useSearchField } from 'react-aria';
 import { useComboBoxState, useSearchFieldState } from 'react-stately';
 
+import { useBreakpoint } from '../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 import { ClearIcon, SearchIcon } from '../icon/index.js';
 import { ErrorMessage, Hint, Label, ProgressIndicator } from '../index.js';
 
@@ -67,12 +69,12 @@ function Autocomplete<T extends object>(
     },
     state,
   );
-
+  const breakpoint = useBreakpoint();
   const { clearButton: clearButtonStyle, ...styles } = autocompleteStyles({
-    width,
+    width: resolveResponsiveVariant(width, breakpoint),
     isDisabled,
     isInputFocusVisible,
-    size,
+    size: resolveResponsiveVariant(size, breakpoint),
     invalid,
     isFocusVisible,
   });
@@ -151,8 +153,12 @@ function Autocomplete<T extends object>(
           portalContainer={portalContainer}
           triggerRef={outerRef}
         >
-          <div className="px-3 py-2">{noOptionsMessage}</div>
-          {footer && <div className="border-t border-t-border px-3 py-2">{footer}</div>}
+          <div className="bg-background-white px-3 py-2 text-text-muted">{noOptionsMessage}</div>
+          {footer && (
+            <div className="rounded-b border-t border-t-border-muted-soft bg-background-white px-3 py-2 text-text-muted">
+              {footer}
+            </div>
+          )}
         </AutocompletePopover>
       )}
       {state.isOpen && (
@@ -170,7 +176,11 @@ function Autocomplete<T extends object>(
             listBoxRef={listBoxRef}
             state={state}
           />
-          {footer && <div className="border-t border-t-border px-3 py-2">{footer}</div>}
+          {footer && (
+            <div className="rounded-b border-t border-t-border-muted-soft bg-background-white px-3 py-2 text-text-muted">
+              {footer}
+            </div>
+          )}
         </AutocompletePopover>
       )}
     </div>

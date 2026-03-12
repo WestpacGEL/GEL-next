@@ -2,37 +2,47 @@
 
 import { mergeProps } from '@react-aria/utils';
 import React, { useContext, useRef } from 'react';
-import { VisuallyHidden, useFocusRing, useRadio } from 'react-aria';
+import { useFocusRing, useToggleButtonGroupItem } from 'react-aria';
 
-import { Button as GELButton } from '../../../button/index.js';
-import { ButtonGroupContext } from '../../button-group.component.js';
+import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
+import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
+import { Button } from '../../../button/button.component.js';
+import { ButtonRef } from '../../../button/button.types.js';
+import { ToggleButtonGroupContext } from '../../button-group.component.js';
 
-import { styles as buttonStyles } from './button-group-button.styles.js';
-import { type ButtonGroupButtonProps } from './button-group-button.types.js';
+import { styles as buttonGroupButtonStyles } from './button-group-button.styles.js';
 
-export function ButtonGroupButton({ className, label, ...props }: ButtonGroupButtonProps) {
-  const { state, size, look, block } = useContext(ButtonGroupContext);
-  const ref = useRef(null);
-  const { inputProps, isSelected, isDisabled } = useRadio({ ...props, children: label }, state, ref);
+import type { ButtonGroupButtonProps } from './button-group-button.types.js';
+
+export function ButtonGroupButton({ className, ...props }: ButtonGroupButtonProps) {
+  const ref = useRef<ButtonRef | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const { size, look, block, orientation, ...state } = useContext(ToggleButtonGroupContext)!;
+  const { buttonProps, isPressed, isSelected } = useToggleButtonGroupItem(props, state, ref);
+  const breakpoint = useBreakpoint();
   const { isFocusVisible, focusProps } = useFocusRing();
-  const styles = buttonStyles({ block, isDisabled, isFocusVisible });
+  const resolvedSize = resolveResponsiveVariant(size, breakpoint);
+  const resolvedBlock = resolveResponsiveVariant(block, breakpoint);
+
+  const styles = buttonGroupButtonStyles({
+    block: resolvedBlock,
+    isFocusVisible,
+    size: resolvedSize,
+    orientation,
+  });
 
   return (
-    <label className={styles.base({ className })}>
-      <VisuallyHidden>
-        <input {...mergeProps(inputProps, focusProps)} ref={ref} />
-      </VisuallyHidden>
-      <GELButton
-        tag="div"
-        block={block}
-        soft={!isSelected}
-        disabled={isDisabled}
-        look={look}
-        size={size}
-        className={styles.button({ hasTransition: !isSelected })}
-      >
-        {label}
-      </GELButton>
-    </label>
+    <Button
+      {...mergeProps(buttonProps, focusProps)}
+      className={styles.button({ className })}
+      soft={!isSelected}
+      data-pressed={isPressed}
+      data-selected={isSelected}
+      ref={ref}
+      look={look}
+      size={resolvedSize}
+    >
+      {props.children}
+    </Button>
   );
 }
