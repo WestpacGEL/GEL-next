@@ -37,8 +37,9 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
-  - title: Fonts
-    slug: foundation/font
+  links:
+      - title: Fonts
+        slug: foundation/font
 code:
   - title:
       name: Intro

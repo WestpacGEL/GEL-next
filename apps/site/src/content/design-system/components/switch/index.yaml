@@ -46,10 +46,11 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Checkboxes
-    slug: components/checkbox-group
-  - title: Button groups
-    slug: components/button-group
+  links:
+      - title: Checkboxes
+        slug: components/checkbox-group
+      - title: Button groups
+        slug: components/button-group
 code:
   - title:
       name: Development examples

@@ -8,7 +8,7 @@ The GEL Style Config package is the central design system foundation for Westpac
 
 - **Design Tokens**: Complete set of W3C-compliant design tokens for colors, typography, spacing, and borders
 - **Multi-Brand Support**: Pre-configured themes for all Westpac Group brands
-- **Light/Dark Mode**: Built-in theme switching capabilities
+- **Light/Dark Mode**: Built-in theme switching capabilities NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
 - **Tailwind CSS v4 Integration**: Optimized for the latest Tailwind CSS with native CSS variable support
 
 This package serves as the single source of truth for design consistency across the Westpac Group ecosystem, ensuring brand compliance and accelerating development workflows.
@@ -18,7 +18,7 @@ This package serves as the single source of truth for design consistency across 
 Install the GEL style config using your preferred package manager i.e. `npm`, `yarn` or `pnpm`.
 
 ```sh
-npm i @westpac/style-config@canary
+npm i @westpac/style-config
 ```
 
 If using tailwind also install the following:
@@ -70,6 +70,8 @@ Following example shows adding `wbc` brand. You can add other valid brand names 
 </html>
 ```
 
+#### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
+
 For theme modes (light/dark), use the `data-theme` attribute:
 
 ```html
@@ -91,7 +93,7 @@ import { ALL_BRANDS } from '@westpac/style-config/tokens';
 
 All brand tokens have been mapped to a color theme variable in the tailwind config and can be used in the relevant tailwind classname e.g. `bg-surface-mono text-text-body`
 
-All available color tokens can be viewed in the [GEL storybook](https://gel-next-storybook-git-release-100-westpacgel.vercel.app/?path=/docs/foundation-colours--docs).
+All available color tokens can be viewed in the [GEL storybook](https://gel-next-storybook-westpacgel.vercel.app/?path=/docs/foundation-colours--docs).
 
 #### Brand fonts
 

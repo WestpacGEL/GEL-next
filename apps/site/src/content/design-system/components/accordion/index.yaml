@@ -36,12 +36,13 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Tabs
-    slug: components/tabs
-  - title: Panels
-    slug: components/panel
-  - title: Wells
-    slug: components/well
+  links:
+      - title: Tabs
+        slug: components/tabs
+      - title: Panels
+        slug: components/panel
+      - title: Wells
+        slug: components/well
 code:
   - title:
       name: Development examples

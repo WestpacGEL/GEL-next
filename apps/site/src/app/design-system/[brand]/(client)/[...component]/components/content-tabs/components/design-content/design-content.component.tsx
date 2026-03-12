@@ -57,7 +57,7 @@ export function DesignContent({
           </Section>
         );
       })}
-      {(!!relatedComponents?.length || !!relatedArticles?.length) && (
+      {(!!relatedComponents?.links?.length || !!relatedArticles?.length) && (
         <RelatedInfo relatedComponents={relatedComponents} relatedArticles={relatedArticles} />
       )}
     </>

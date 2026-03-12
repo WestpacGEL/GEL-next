@@ -38,10 +38,11 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Logos
-    slug: foundation/logo
-  - title: Icons
-    slug: foundation/icon
+  links:
+      - title: Logos
+        slug: foundation/logo
+      - title: Icons
+        slug: foundation/icon
 code:
   - title:
       name: Development examples

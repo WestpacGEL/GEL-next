@@ -36,7 +36,7 @@ const main = () => {
   const pictogramFiles = glob.sync('assets/pictograms/**/**/*.*', { nodir: true });
 
   const logoSymbolZipRoot = 'GEL_Logos_Symbols';
-  const logoSymbolFiles = glob.sync('assets/logos-symbols/*.*', { nodir: true });
+  const logoSymbolFiles = glob.sync('assets/logos-symbols/**/*.*', { nodir: true });
 
   const zipStoragePath = '../../apps/site/public/assets';
 

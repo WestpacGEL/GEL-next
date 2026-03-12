@@ -1,3 +1,10 @@
+### Previous Version
+
+If you are looking for information/source code for version 0.x you can find it [here](https://github.com/WestpacGEL/GEL-next/tree/version/0.x). It is recommened you upgrade to 1.0 at your earliest convenience.
+
+- [Storybook](https://gel-next-storybook-git-version-0x-westpacgel.vercel.app/?path=/story/attention--attention).
+- [Site](https://gel-next-site-git-version-0x-westpacgel.vercel.app/)
+
 ## Getting Started
 
 This section describes how to get started with Westpac GEL.
@@ -29,7 +36,7 @@ The GEL is separated out into 2 packages.
 Install the GEL packages using preferred package manager (`npm`, `yarn` or `pnpm`):
 
 ```
-npm i @westpac/ui@canary @westpac/style-config@canary
+npm i @westpac/ui @westpac/style-config
 ```
 
 Create a `postcss.config.mjs` on the root of your application as follows.
@@ -71,6 +78,8 @@ To switch between brands, set the `data-brand` attribute on a parent element:
 </div>
 ```
 
+NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
+
 To toggle between light and dark mode, set the `data-theme` attribute:
 
 ```html
@@ -93,6 +102,8 @@ Following example shows adding `wbc` brand. You can add other valid brand names 
   ...
 </html>
 ```
+
+NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
 
 For theme modes (light/dark), use the `data-theme` attribute:
 
@@ -121,7 +132,7 @@ import { ALL_BRANDS } from '@westpac/style-config/tokens';
 
 All brand tokens have been mapped to a color theme variable in the tailwind config and can be used in the relevant tailwind classname e.g. `bg-surface-mono text-text-body`
 
-All available color tokens can be viewed in the [GEL storybook](https://gel-next-storybook-git-release-100-westpacgel.vercel.app/?path=/docs/foundation-colours--docs).
+All available color tokens can be viewed in the [GEL storybook](https://gel-next-storybook-westpacgel.vercel.app/?path=/docs/foundation-colours--docs).
 
 ### Brand fonts
 

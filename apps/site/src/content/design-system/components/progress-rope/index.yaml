@@ -40,7 +40,8 @@ accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
-relatedComponents: []
+relatedComponents:
+  links: []
 code:
   - title:
       name: Development examples

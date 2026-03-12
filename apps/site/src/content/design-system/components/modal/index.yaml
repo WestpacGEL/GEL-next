@@ -42,12 +42,13 @@ accessibility:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Popovers
-    slug: components/popover
-  - title: Buttons
-    slug: components/button
-  - title: Icons
-    slug: foundation/icon
+  links:
+      - title: Popovers
+        slug: components/popover
+      - title: Buttons
+        slug: components/button
+      - title: Icons
+        slug: foundation/icon
 code:
   - title:
       name: Development examples

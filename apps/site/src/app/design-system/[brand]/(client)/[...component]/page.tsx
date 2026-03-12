@@ -8,7 +8,7 @@ import json from '@westpac/ui/component-type.json';
 import { Metadata } from 'next';
 
 import { reader } from '@/app/reader';
-import { RelatedInfoLinks } from '@/components/related-info/related-info.types';
+import { RelatedInfoProps } from '@/components/related-info/related-info.types';
 import { BANK_OPTIONS } from '@/constants/bank-options';
 import { ShortCode } from '@/types/short-code.types';
 
@@ -18,12 +18,13 @@ import { CodeSectionProps } from './components/content-tabs/components/code-cont
 import { DesignSectionProps } from './components/content-tabs/components/design-content/design-content.types';
 
 type MetadataProps = {
-  params: { component: string[] };
+  params: Promise<{ component: string[] }>;
 };
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
-  const { component } = params;
-  const content = await reader().collections.designSystem.readOrThrow(component.join('/'));
+  const { component } = await params;
+  const readerInstance = await reader();
+  const content = await readerInstance.collections.designSystem.readOrThrow(component.join('/'));
 
   const title = `${content.name} | GEL Design System`;
   const description = content.description;
@@ -45,7 +46,8 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
 }
 
 export async function generateStaticParams() {
-  const components = await reader().collections.designSystem.all();
+  const readerInstance = await reader();
+  const components = await readerInstance.collections.designSystem.all();
   const params: { brand: string; component: string[] }[] = [];
   BANK_OPTIONS.forEach(bank => {
     components.forEach(component => params.push({ brand: bank.key, component: component.slug.split('/') }));
@@ -57,34 +59,34 @@ export default async function ComponentPage({
   params,
   searchParams,
 }: {
-  params: { component: string[] };
-  searchParams?: Record<string, string | undefined>;
+  params: Promise<{ component: string[] }>;
+  searchParams?: Promise<Record<string, string | undefined>>;
 }) {
-  const brand = searchParams?.brand || 'wbc';
-  const tab = searchParams?.tab || 'design';
-  const { component } = params;
+  const searchParamsAwaited = await searchParams;
+  const brand = searchParamsAwaited?.brand || 'wbc';
+  const tab = searchParamsAwaited?.tab || 'design';
+  const { component } = await params;
+  const readerInstance = await reader();
   const [content, westpacInfo, shortCodes] = await Promise.all([
-    reader().collections.designSystem.readOrThrow(component.join('/')),
-    reader().singletons.westpacUIInfo.readOrThrow(),
-    reader()
-      .collections.shortCodes.all()
-      .then(shortCodes =>
-        Promise.all(
-          shortCodes.map(
-            shortCode =>
-              new Promise<ShortCode>(resolve => {
-                // eslint-disable-next-line sonarjs/no-nested-functions
-                return shortCode.entry.content().then(content => {
-                  return resolve({
-                    ...shortCode.entry,
-                    slug: shortCode.slug,
-                    content,
-                  });
+    readerInstance.collections.designSystem.readOrThrow(component.join('/')),
+    readerInstance.singletons.westpacUIInfo.readOrThrow(),
+    readerInstance.collections.shortCodes.all().then(shortCodes =>
+      Promise.all(
+        shortCodes.map(
+          shortCode =>
+            new Promise<ShortCode>(resolve => {
+              // eslint-disable-next-line sonarjs/no-nested-functions
+              return shortCode.entry.content().then(content => {
+                return resolve({
+                  ...shortCode.entry,
+                  slug: shortCode.slug,
+                  content,
                 });
-              }),
-          ),
+              });
+            }),
         ),
       ),
+    ),
   ]);
 
   const componentName = component?.[1]
@@ -193,7 +195,7 @@ export default async function ComponentPage({
         description: content.description,
         designSections,
         relatedArticles: relatedArticlesIsEmpty ? undefined : relatedArticles,
-        relatedComponents: content.relatedComponents.filter(value => !!value) as RelatedInfoLinks[],
+        relatedComponents: content?.relatedComponents as RelatedInfoProps['relatedComponents'],
         componentProps,
         subComponentProps,
       }}

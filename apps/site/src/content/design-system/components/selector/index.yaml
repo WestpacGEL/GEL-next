@@ -49,16 +49,17 @@ accessibility:
       name: Notes on accessibility
       slug: notes-on-accessibility
 relatedComponents:
-  - title: Icons
-    slug: foundation/icon
-  - title: Checkboxes
-    slug: components/checkbox-group
-  - title: Colours
-    slug: foundation/colour
-  - title: Radios
-    slug: components/radio-group
-  - title: Pictograms
-    slug: foundation/pictogram
+  links:
+      - title: Icons
+        slug: foundation/icon
+      - title: Checkboxes
+        slug: components/checkbox-group
+      - title: Colours
+        slug: foundation/colour
+      - title: Radios
+        slug: components/radio-group
+      - title: Pictograms
+        slug: foundation/pictogram
 code:
   - title:
       name: Development examples

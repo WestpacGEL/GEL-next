@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - release/**
   workflow_dispatch:
 
 permissions:
@@ -33,7 +32,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9.1.2
+          version: 10.30.2
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
