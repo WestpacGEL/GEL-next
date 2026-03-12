@@ -157,3 +157,23 @@ In light mode the nested faint grey box provides a very subtle background when p
    spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
+
+#### 5. Faint grey box nested in a white box
+
+This example uses a combination of surface and background tokens to achieve the desired effect. In light mode this nested faint grey box provides a very subtle background. This emphasis is maintained in dark mode.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-5a.png", height: 1692, width: 1128}
+   caption="Light mode"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-5b.png", height: 1692, width: 1128}
+   caption="Dark mode"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
