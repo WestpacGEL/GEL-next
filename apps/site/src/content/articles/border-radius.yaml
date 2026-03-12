@@ -4,9 +4,18 @@ description: >-
   To align with Westpac’s updated design direction, we’ve introduced a set of
   border radius tokens. This article outlines the design principles, rationale,
   and usage guidelines behind the border radius system.
-thumbnail: {}
+thumbnail:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/radius-card.png
+  alt: Graphic to symbolise the border radius concept
+  height: 1212
+  width: 3168
 smallDescription: >-
   Design principles, rationale, and usage guidelines to help you understand the
   border radius system.
-image: {}
+image:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/radius-hero-picto.png
+  height: 1389
+  width: 3240
 publishedAt: 2026-03-12T14:34:00.000Z
