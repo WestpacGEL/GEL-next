@@ -5,13 +5,18 @@ articleRows:
       - value-of-a-design-system
   - layout: 1x1x1
     articles:
-      - patterns
-      - journey-management
-      - data-visualisation
+      - tokens
+      - border-radius
+      - dark-mode
   - layout: 2x1
     articles:
       - accessible-by-design
       - typography
+  - layout: 1x1x1
+    articles:
+      - patterns
+      - journey-management
+      - data-visualisation
   - layout: 1x1
     articles:
       - think-responsive
