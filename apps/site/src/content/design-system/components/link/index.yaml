@@ -28,11 +28,6 @@ design:
       slug: visual-design
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
@@ -44,13 +39,14 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
+  icon: cube
   links:
-      - title: Colours
-        slug: foundation/colour
-      - title: Lists
-        slug: components/list
-      - title: Icons
-        slug: foundation/icon
+    - title: Colours
+      slug: foundation/colour
+    - title: Lists
+      slug: components/list
+    - title: Icons
+      slug: foundation/icon
 code:
   - title:
       name: Development examples
