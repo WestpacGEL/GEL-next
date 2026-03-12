@@ -57,3 +57,42 @@ Nesting refers to placing one element inside another element, creating a parent�
    spacing="default" /%}
 {% /layout-area %}
 {% /layout %}
+
+**Put simply:** The border radius of a nested element (child) should never be larger than the border radius of its parent container.
+
+To ensure this design principle is maintained in the design system:
+
+- The **largest element** radius is capped at 6px
+- The **smallest container** radius starts at 8px
+
+This is illustrated in Figure 4. The tile component uses an 8px border radius, ensuring that any nested child elements will always have a smaller radius.
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-caps-tile.png", alt: "Graphic showing a group of elements that use different border radius values.", height: 1386, width: 2523}
+   title="Figure 4."
+   type="bodyWide" /%}
+
+Figure 5 shows the same tile being used as a nested child. As a result the parent container requires a larger 12px border radius.
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-caps-container.png", alt: "Graphic showing complex nesting.", height: 1386, width: 2523}
+   title="Figure 5"
+   type="body" /%}
+
+When applying border radius tokens in your designs, it’s important to consider how elements and components will be grouped. This ensures the nesting principles remain visually consistent.
+
+## Do and don’t
+
+Designing with tokens will be an adjustment, allow time to familiarise yourself with the system. If you have any questions please [contact the GEL team](mailto:gel@westpac.com.au).
+
+### Do follow the guides
+
+The GEL documentation includes a [comprehensive list of border radius tokens](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/border-tokens) and strict usage guidelines for each. We strongly recommend referencing this list while working.
+
+### Don’t change the values
+
+The GEL components use fixed border radius tokens. These are not responsive and must not be changed or overridden.
+
+### Don’t use responsive border radius
+
+Designing components with responsive border radius values will create inconsistencies and unnecessary complexity.
