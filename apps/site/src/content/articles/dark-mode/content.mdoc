@@ -1,0 +1,202 @@
+## Dark mode design principles
+
+The primary objective of dark mode is accessibility, particularly for people with light sensitivity (photophobia). Designed for use in low-light environments, we reduce the brightness, contrast, and vibrancy of the UI while maintaining accessible contrast ratios. This approach also helps minimise eye strain, visual fatigue, and headaches.
+
+\
+It’s important to note that dark mode is not the same as high contrast mode. Both have legitimate use cases:
+
+- **Dark mode** reduces contrast and brightness to lower glare.
+- **High contrast mode** increases contrast and vibrancy to maximise visibility.
+
+We currently don’t provide high contrast mode however the colour system is designed to accommodate this feature should it be required in the future.
+
+{% layout layout=[5, 5] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-low-contrast.png", alt: "Dark mode image", height: 930, width: 930}
+   caption="Dark mode"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-high-contrast.png", alt: "High contrast mode image", height: 930, width: 930}
+   caption="High contrast mode"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+## Working with dark mode
+
+If you’re using GEL colour tokens and components correctly, switching to dark mode is largely automated. However, you must always preview your work in dark mode to confirm everything behaves as expected.
+
+Any bespoke components or page furniture must also be tested in both light and dark modes to ensure they meet accessibility requirements.
+
+### Never design in dark mode
+
+Designing directly in dark mode can introduce inconsistencies and accessibility issues. Always design in light mode and test in dark mode.If you identify an issue while testing in dark mode:
+
+- Return to light mode
+- Fix the issue
+- Test again in dark mode
+
+### Test as you go
+
+Don’t wait until your design is complete before testing in dark mode. Test early and often especially if you’re new to this system. If possible test in a low light environment and give your eyes time to adjust to the change. Switching between light and dark modes can become quite disorientating so take frequent breaks to give your eyes a rest.
+
+### Never use pure black backgrounds
+
+Pure black is typically used for high contrast mode as it maximises contrast. This contradicts the objective of dark mode where the aim is to lower contrast. Dark mode background tokens use a dark grey rather than #000000. This helps to reduce glare while maintaining accessibility.
+
+## Understanding backgrounds
+
+Establishing dark mode is fundamentally about managing emphasis. The goal is to preserve the same (or very similar) visual hierarchy between light and dark modes.
+
+Figure 1 illustrates this concept. In light mode the text on the pale grey background carries high emphasis and strong legibility, while the white container below appears more subtle. When switched to dark mode, this emphasis and hierarchy is preserved.
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-emphasis.png", alt: "Graphic to show how emphasis is maintained in both light and dark mode", height: 2880, width: 5760}
+   title="Fig 1. Creating the same emphasis in both light and dark mode"
+   type="bodyWide" /%}
+
+Backgrounds are the foundation of this hierarchy. We already have a flexible and accessible system for backgrounds which is used across all our touch points. Tokens allow us to replicate this behaviour consistently in dark mode.
+
+### Background tokens
+
+Background tokens are special. They don’t follow the same principles as surface tokens, which is why their naming differs. As the name suggests, background tokens are specifically intended for screen and component backgrounds. They’re designed to work together to maintain correct emphasis relationships in both light and dark modes.
+
+(Figure 2 shows the available background tokens.)
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-background-tokens.png", alt: "Graphic showing the background tokens for light and dark modes", height: 1152, width: 2688}
+   title="Fig 2. Background tokens in both light and dark mode"
+   type="bodyWide" /%}
+
+**Tip:** Always design in light mode and focus on the descriptor in the token name. For example, if you want a white background, use the *background-white* token.
+
+## Background configurations
+
+The examples below demonstrate how background tokens combine to create our supported configurations and their dark mode equivalents. Every GEL component is designed to remain accessible on these background configurations in both light and dark mode.
+
+#### 1. White box on a white background
+
+In light mode the white box sits on a white background. There is no emphasis and this is replicated in dark mode.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-1a.png", height: 1692, width: 1128}
+   caption="Light mode"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-1b.png", height: 1692, width: 1128}
+   caption="Dark mode"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+#### 2. Pale grey box on a white background
+
+In light mode the grey box sits on a white background, this emphasis is maintained in dark mode where the box remains slightly darker than the background.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-2a.png", height: 1692, width: 1128}
+   caption="Light mode"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-2b.png", height: 1692, width: 1128}
+   caption="Dark mode"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+#### 3. White box on a pale grey background
+
+In light mode the white box sits on a pale grey background, this emphasis is maintained in dark mode where the box remains slightly lighter than the background.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-3a.png", height: 1692, width: 1128}
+   caption="Light mode"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-3b.png", height: 1692, width: 1128}
+   caption="Dark mode"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+#### 4. Faint grey box nested in a pale grey box
+
+In light mode the nested faint grey box provides a very subtle background when placed on the pale grey box. This emphasis is maintained in dark mode.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-4a.png", height: 1692, width: 1128}
+   caption="Light mode"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-4b.png", height: 1692, width: 1128}
+   caption="Dark mode"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+#### 5. Faint grey box nested in a white box
+
+This example uses a combination of surface and background tokens to achieve the desired effect. In light mode this nested faint grey box provides a very subtle background. This emphasis is maintained in dark mode.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-5a.png", height: 1692, width: 1128}
+   caption="Light mode"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-config-5b.png", height: 1692, width: 1128}
+   caption="Dark mode"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+## Do and don’t
+
+Designing with tokens will be an adjustment, allow time to familiarise yourself with the system.
+
+### Do use tokens
+
+When designing or building the UI only use GEL colour tokens. Bespoke colours will not respond to mode switching which may introduce accessibility issues and inconsistency. This also applies to multi-brand applications which will also not respond to brand switching if bespoke colours are used.
+
+### Do follow the guides
+
+The GEL Docs site includes a [comprehensive list of colour tokens](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens) with strict usage guidance. Refer to this list while working. In Figma, you can also hover over a token name to view its usage guidance.
+
+### Don’t re-design
+
+It’s critical that we maintain a consistent customer journey across all our touch-points. The GEL colour tokens are designed to replicate our current design direction. There are minor colour refinements, but these should be visually insignificant. If tokens are applied correctly, your designs should not change.
+
+## More information
+
+The links below provide detailed, design principles and usage guidelines. Allow time to familiarise yourself with the system and always refer to the usage guidelines when applying tokens. If you have any questions please [contact the GEL team](mailto:gel@westpac.com.au).
+
+{% linkList
+   links=[{label: "An introduction to tokens", url: "https://gel.westpacgroup.com.au/articles/tokens", type: "_blank"}, {label: "The colour system – design principles and guidelines", url: "https://gel.westpacgroup.com.au/articles/colour", type: "_blank"}, {label: "Colour tokens – full list and usage guidelines", url: "https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens", type: "_blank"}] /%}

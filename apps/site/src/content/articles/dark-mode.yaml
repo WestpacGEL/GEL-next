@@ -1,0 +1,26 @@
+name: Dark mode
+cardTitle: Dark Mode
+description: >-
+  The introduction of tokens to the Design System enables dark mode across all
+  our brands. Our colour system now supports two modes: light and dark. While
+  the switch to dark mode is largely automated, there’s still some additional
+  complexity for both design and development to consider. This article outlines
+  the design principles and guidelines to help you work safely and effectively
+  in this environment.
+thumbnail:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-card.png
+  alt: Graphic to describe dark mode
+  height: 1212
+  width: 3168
+smallDescription: >-
+  Design principles and guidelines to help you work safely and effectively in
+  the dark mode environment.
+image:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/articles/dark-mode/dark-mode-hero-picto.png
+  alt: Graphic to describe dark mode
+  height: 1389
+  width: 3240
+author: Justin Spencer
+publishedAt: 2026-03-12T15:02:00.000Z
