@@ -1,12 +1,16 @@
 import { flexRender, Header, SortDirection } from '@tanstack/react-table';
+import { useContext } from 'react';
 
 import { AddIcon, ExpandLessIcon, ExpandMoreIcon, RemoveIcon } from '../../../../icon/index.js';
+import { AdvancedTableContext } from '../../../advanced-table.component.js';
 import { MenuButton } from '../../advanced-table-menu/components/menu-button/menu-button.component.js';
 
 import { styles as HeadCellContentStyles } from './head-cell-content.styles.js';
 
 export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
-  const styles = HeadCellContentStyles();
+  const { cellPadding, bordered } = useContext(AdvancedTableContext);
+
+  const styles = HeadCellContentStyles({ cellPadding, bordered });
 
   const sortingIcon = (sorted: SortDirection | false, onClick: () => void) => {
     return (

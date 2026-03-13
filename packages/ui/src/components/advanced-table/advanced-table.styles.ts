@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     container: '',
-    table: 'border-separate border-spacing-0 overflow-hidden rounded-md border border-border-muted',
+    table: 'border-separate border-spacing-0 overflow-hidden rounded-md',
   },
   variants: {
     scrollableRows: {
@@ -16,6 +16,11 @@ export const styles = tv({
       true: {
         container: 'flex',
         table: 'block overflow-auto',
+      },
+    },
+    bordered: {
+      true: {
+        table: 'border border-border-muted-soft',
       },
     },
   },

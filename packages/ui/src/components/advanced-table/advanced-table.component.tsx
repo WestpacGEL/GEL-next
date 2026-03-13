@@ -38,6 +38,8 @@ export const AdvancedTableContext = createContext<{
   scrollableRows?: boolean;
   scrollableColumns?: boolean;
   columnOrder?: string[];
+  cellPadding?: 'small' | 'medium';
+  bordered?: boolean;
 }>({});
 
 export function AdvancedTable<T>({
@@ -58,12 +60,14 @@ export function AdvancedTable<T>({
   tableOptions,
   onDataChange,
   onTableReady,
+  cellPadding = 'small',
+  bordered = false,
 }: AdvancedTableProps<T>) {
   const [localData, setLocalData] = useState<T[]>(data);
   const [columnOrder, setColumnOrder] = useState<string[]>(['select-column', ...columns.map(c => c.key)]);
 
   const outerTableRef = useRef<HTMLTableElement>(null);
-  const styles = advancedTableStyles({ scrollableColumns, scrollableRows });
+  const styles = advancedTableStyles({ scrollableColumns, scrollableRows, bordered });
 
   const finalColumns = useMemo(() => columnGenerator({ columns, enableRowSelection }), [columns, enableRowSelection]);
 
@@ -160,6 +164,8 @@ export function AdvancedTable<T>({
         enableRowSelection,
         columnOrder,
         enableColumnReordering,
+        cellPadding,
+        bordered,
       }}
     >
       <DndContext

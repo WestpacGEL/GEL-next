@@ -43,6 +43,10 @@ export type TanstackTableOptions<T> = Omit<
 
 export type AdvancedTableProps<T> = {
   /**
+   * Displays border around table and between columns.
+   */
+  bordered?: boolean;
+  /**
    * The data to be displayed in the table should share type passed to table
    */
   data: T[];
@@ -100,6 +104,11 @@ export type AdvancedTableProps<T> = {
    * Modified tanstack table options.
    */
   tableOptions?: TanstackTableOptions<T>;
+  /**
+   * Sets the padding for the table cells/header. Small 12px, medium 18px.
+   * @default 'small'
+   */
+  cellPadding?: 'small' | 'medium';
   /**
    * Sets table to use virtualized scrollable columns
    */

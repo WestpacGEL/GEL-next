@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    td: 'border-b border-border-muted p-2 outline-offset-[-1px] focus:outline-border-focus',
+    td: 'border-b border-border-muted-soft outline-offset-[-1px] focus:outline-border-focus',
   },
   variants: {
     scrollableRows: {
@@ -18,6 +18,19 @@ export const styles = tv({
     isPinned: {
       true: {
         td: 'bg-background-white',
+      },
+    },
+    cellPadding: {
+      small: {
+        td: 'p-2',
+      },
+      medium: {
+        td: 'p-3',
+      },
+    },
+    bordered: {
+      true: {
+        td: 'border-r border-border-muted-soft group-last/row:border-b-0 last:border-r-0',
       },
     },
   },
