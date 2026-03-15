@@ -21,6 +21,10 @@ export type PassCodeProps = {
    */
   onComplete?: (passcode: string) => void;
   /**
+   * Callback when the passcode is completely pasted
+   */
+  onPasteComplete?: (passcode: string) => void;
+  /**
    * Type of passcode input
    */
   type?: 'numbers' | 'letters' | 'alphanumeric';

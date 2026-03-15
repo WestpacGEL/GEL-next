@@ -18,7 +18,10 @@ import { styles as passCodeStyles } from './pass-code.styles.js';
 import { PassCodeProps, PassCodeRef } from './pass-code.types.js';
 
 export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
-  ({ length, value, onChange, onComplete, className, type = 'alphanumeric', onBlur, ...props }, ref) => {
+  (
+    { length, value, onChange, onComplete, onPasteComplete, className, type = 'alphanumeric', onBlur, ...props },
+    ref,
+  ) => {
     const [internalPasscode, setInternalPasscode] = useState<string[]>(Array.from({ length }).map(() => ''));
     const passcode = value ? value : internalPasscode;
     const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
@@ -84,11 +87,15 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
         } else {
           setInternalPasscode(newPasscode);
         }
-        if (newPasscode.filter(passcode => !passcode).length === 0 && onComplete) {
-          onComplete(newPasscode.join(''));
+        if (newPasscode.filter(passcode => !passcode).length === 0) {
+          if (onPasteComplete) {
+            onPasteComplete(newPasscode.join(''));
+          } else if (onComplete) {
+            onComplete(newPasscode.join(''));
+          }
         }
       },
-      [passcode, length, onChange, onComplete, type],
+      [passcode, length, onChange, onComplete, onPasteComplete, type],
     );
 
     const handleKeyDown = useCallback(
