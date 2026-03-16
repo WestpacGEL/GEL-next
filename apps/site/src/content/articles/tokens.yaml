@@ -1,0 +1,24 @@
+name: Tokens
+cardTitle: Tokens
+description: >-
+  The introduction of variables to Figma and the ability to deploy tokens across
+  both web and native platforms has significantly enhanced our global experience
+  language. This article provides an overview of tokens, why they matter and how
+  they will impact you.
+thumbnail:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/articles/tokens/tokens-card.png
+  alt: Graphic to illustrate tokens
+  height: 1212
+  width: 3168
+smallDescription: >-
+  An introduction to tokens, what they are, why they matter, how to get started
+  and where to find more information.
+image:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/articles/tokens/tokens-hero-picto.png
+  alt: Graphic to illustrate tokens
+  height: 1389
+  width: 3240
+author: Marita Purins
+publishedAt: 2026-03-12T14:11:00.000Z

@@ -8,7 +8,7 @@ export const layoutMap: Record<number, { span: object; start: Record<number, obj
     },
     start: {
       0: {
-        inital: 1,
+        initial: 1,
         xsl: 2,
         md: 3,
       },
@@ -30,7 +30,7 @@ export const layoutMap: Record<number, { span: object; start: Record<number, obj
         xsl: 2,
       },
       1: {
-        intial: 1,
+        initial: 1,
         xsl: 7,
       },
     },

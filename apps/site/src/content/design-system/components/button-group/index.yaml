@@ -41,23 +41,19 @@ design:
       slug: dos-and-donts
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
+  icon: cube
   links:
-      - title: Buttons
-        slug: components/button
-      - title: Checkboxes
-        slug: components/checkbox-group
-      - title: Switches
-        slug: components/switch
+    - title: Buttons
+      slug: components/button
+    - title: Checkboxes
+      slug: components/checkbox-group
+    - title: Switches
+      slug: components/switch
 code:
   - title:
       name: Development examples

@@ -92,7 +92,7 @@ export function Tokens({ title, tokens }: TokensData) {
                 {circleToRender(token)}
                 <div className="flex flex-col gap-1 typography-body-10">
                   <strong className="mb-0.5">{token.tokenName}</strong>
-                  <p>{token.description}</p>
+                  <p className="text-text-muted">{token.description}</p>
                   {(token.restricted || token.new) && (
                     <div className="flex gap-2 pt-1">
                       {token.restricted && <Badge color="muted">Restricted</Badge>}
