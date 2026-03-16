@@ -51,7 +51,7 @@ export function Header({ brand }: { brand: BrandKey }) {
       </button>
       <div className={heading()}>
         <h1 className="typography-body-9 text-text-reversed" id="header" tabIndex={-1}>
-          <strong>GEL</strong> Design System
+          <strong>GEL</strong> Codebase
         </h1>
       </div>
       {/* TODO: TEMPORARILY DISABLED - DARK MODE TOKENS TO BE INCLUDED IN FUTURE UPDATE */}

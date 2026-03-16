@@ -3,12 +3,12 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     base: `
-      fixed inset-x-0 top-0 z-20 flex h-11 items-center overflow-hidden pr-2
+      fixed inset-x-0 top-0 z-20 flex h-11 items-center overflow-hidden
       text-text-mono
-      sm:static sm:px-2
-      lg:left-[18.75rem] lg:px-5
+      sm:static sm:pl-2
+      lg:left-[18.75rem] lg:pl-5
     `,
-    heading: 'z-10 flex grow items-center',
+    heading: 'z-10 flex h-full grow items-center sm:border-b sm:border-border-mono',
   },
   variants: {
     brand: {
