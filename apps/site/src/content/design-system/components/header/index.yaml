@@ -22,18 +22,14 @@ design:
       slug: visual-design
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility: []
 relatedComponents:
+  icon: cube
   links:
-      - title: Logos
-        slug: /components/foundation/logos
-      - title: Footer
-        slug: /components/footers
+    - title: Logos
+      slug: /components/foundation/logos
+    - title: Footer
+      slug: /components/footers
 code:
   - title:
       name: Development examples

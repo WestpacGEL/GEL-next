@@ -19,23 +19,19 @@ design:
       slug: visual-design
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
+  icon: cube
   links:
-      - title: Checkboxes
-        slug: components/checkbox-group
-      - title: Buttons
-        slug: components/button
-      - title: Switches
-        slug: components/switch
+    - title: Checkboxes
+      slug: components/checkbox-group
+    - title: Buttons
+      slug: components/button
+    - title: Switches
+      slug: components/switch
 code:
   - title:
       name: Development examples

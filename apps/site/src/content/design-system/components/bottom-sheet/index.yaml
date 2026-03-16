@@ -22,19 +22,15 @@ design:
       slug: visual-design
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
+  icon: cube
   links:
-      - title: Modal
-        slug: /components/modal
+    - title: Modal
+      slug: /components/modal
 code:
   - title:
       name: Development example

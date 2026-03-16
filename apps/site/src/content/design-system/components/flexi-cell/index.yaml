@@ -22,20 +22,16 @@ design:
       slug: user-experience
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility: []
 relatedComponents:
+  icon: cube
   links:
-      - title: Badges
-        slug: /components/badge
-      - title: Icons
-        slug: /components/foundation/icon
-      - title: Selector
-        slug: /components/selector
+    - title: Badges
+      slug: /components/badge
+    - title: Icons
+      slug: /components/foundation/icon
+    - title: Selector
+      slug: /components/selector
 code:
   - title:
       name: Development examples
