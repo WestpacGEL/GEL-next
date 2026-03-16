@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { AnimatePresence, LazyMotion, m } from 'motion/react';
 import { useLayoutEffect, useRef } from 'react';
-import { DismissButton, Overlay, useOverlayPosition } from 'react-aria';
+import { DismissButton, Overlay, useInteractOutside, useOverlayPosition } from 'react-aria';
 
 import { PopoverProps } from './popover.types';
 
@@ -43,6 +43,19 @@ export function Popover(props: PopoverProps) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.isOpen]);
+
+  // Close popover when interacting outside (but not on the trigger)
+  useInteractOutside({
+    ref: popoverRef,
+    onInteractOutside: e => {
+      // Don't close if clicking the trigger element
+      if (triggerRef.current?.contains(e.target as Node)) {
+        return;
+      }
+      state.close();
+    },
+    isDisabled: !state.isOpen,
+  });
 
   return (
     <Overlay portalContainer={portalContainer}>
