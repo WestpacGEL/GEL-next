@@ -3,7 +3,7 @@ articleRows:
     articles:
       - what-is-gel
       - value-of-a-design-system
-  - layout: 1x2
+  - layout: 1x1
     articles:
       - tokens
       - border-radius
