@@ -26,6 +26,10 @@ npm i -D tailwindcss @tailwindcss/postcss postcss
 
 GEL is using [Tailwind](https://tailwindcss.com/) for styling. Visit the [Tailwind docs](https://tailwindcss.com/docs/installation/framework-guides) and follow the relevant instructions for installation.
 
+### AI Skills
+
+We recommend using our skills files found [here](https://github.com/WestpacGEL/GEL-next/blob/develop/.agents/skills/consumer) in your projects to help your development process. You should always include at least the `using-westpac-ui` skill/references and use the `installing-westpac-ui` or `migrating-to-westpac-ui-v1` if needed. The `using-westpac-ui` skill can be a good way to find out if you need to raise an issue/feature request as you can ask what components should be capable of.
+
 ### Installation
 
 The GEL is separated out into 2 packages.
