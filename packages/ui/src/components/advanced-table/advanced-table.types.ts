@@ -83,6 +83,10 @@ export type AdvancedTableProps<T> = {
    */
   enableSorting?: boolean;
   /**
+   * Add extra spacing to table cells and header. Default is 12px, extra is 18px
+   */
+  extraCellPadding?: boolean;
+  /**
    * Used with scrollableRows. Sets fixed height for the table.
    * @default 500px
    */
@@ -104,11 +108,6 @@ export type AdvancedTableProps<T> = {
    * Modified tanstack table options.
    */
   tableOptions?: TanstackTableOptions<T>;
-  /**
-   * Sets the padding for the table cells/header. Small 12px, medium 18px.
-   * @default 'small'
-   */
-  cellPadding?: 'small' | 'medium';
   /**
    * Sets table to use virtualized scrollable columns
    */

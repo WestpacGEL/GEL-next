@@ -2,55 +2,19 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { Table } from '@tanstack/react-table';
 import { useState } from 'react';
 
-import { AdvancedPerson, makeColumns, makeDataFromCols, makePersonData } from './story-utils/fakerData.js';
+import { AdvancedPerson } from './story-utils/fakerData.js';
 import { columnsExample, dataExample } from './story-utils/otherData.js';
+import {
+  columnsSB,
+  dataForColsSB,
+  defaultDataSB,
+  editableColumnsSB,
+  expandableDataSB,
+  manyColsSB,
+  multiLevelColumnsSB,
+} from './story-utils/storyData.js';
 
-import { AdvancedColumnProps, AdvancedTable } from './index.js';
-
-const multiLevelColumns: AdvancedColumnProps<AdvancedPerson>[] = [
-  {
-    key: 'name',
-    title: 'Name',
-    columns: [
-      { key: 'firstName', title: 'First Name' },
-      { key: 'lastName', title: 'Last Name' },
-    ],
-  },
-  {
-    key: 'information',
-    title: 'Information',
-    columns: [
-      { key: 'age', title: 'Age' },
-      {
-        key: 'moreInfo',
-        title: 'More Info',
-        columns: [
-          { key: 'visits', title: 'Visits' },
-          { key: 'status', title: 'Status' },
-          { key: 'progress', title: 'Profile Progress' },
-        ],
-      },
-    ],
-  },
-];
-
-const columns: AdvancedColumnProps<AdvancedPerson>[] = [
-  { key: 'firstName', title: 'First Name' },
-  { key: 'lastName', title: 'Last Name' },
-  { key: 'age', title: 'Age' },
-  { key: 'visits', title: 'Visits' },
-  { key: 'status', title: 'Status' },
-  { key: 'progress', title: 'Profile Progress' },
-];
-
-const editableColumns: AdvancedColumnProps<AdvancedPerson>[] = [
-  { key: 'firstName', title: 'First Name', editable: true },
-  { key: 'lastName', title: 'Last Name', editable: true },
-  { key: 'age', title: 'Age', editable: true },
-  { key: 'visits', title: 'Visits', editable: true },
-  { key: 'status', title: 'Status', editable: true },
-  { key: 'progress', title: 'Profile Progress', editable: true },
-];
+import { AdvancedTable } from './index.js';
 
 const meta: Meta<typeof AdvancedTable> = {
   title: 'Components/Advanced Table',
@@ -59,46 +23,40 @@ const meta: Meta<typeof AdvancedTable> = {
   decorators: [(Story: StoryFn) => <Story />],
 };
 
-const defaultData = makePersonData(100);
-const expandableData = makePersonData(100, 10, 10);
-
-const manyCols = makeColumns(100);
-const dataForCols = makeDataFromCols(100, manyCols);
-
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const BasicTable: Story = {
-  render: () => <AdvancedTable data={defaultData} columns={columns} />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} />,
 };
 
 export const Resizeable: Story = {
-  render: () => <AdvancedTable data={defaultData} columns={columns} enableResizing />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing />,
 };
 
 export const Sortable: Story = {
-  render: () => <AdvancedTable data={defaultData} columns={columns} enableSorting />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting />,
 };
 
 export const SelectableRows: Story = {
-  render: () => <AdvancedTable data={defaultData} columns={columns} enableRowSelection />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowSelection />,
 };
 
 export const ExpandableRows: Story = {
-  render: () => <AdvancedTable data={expandableData} columns={columns} subRowKey="subRows" />,
+  render: () => <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" />,
 };
 
 export const EditableCells = () => {
-  const [localData, setLocalData] = useState(defaultData);
+  const [localData, setLocalData] = useState(defaultDataSB);
 
-  return <AdvancedTable data={localData} columns={editableColumns} onDataChange={setLocalData} />;
+  return <AdvancedTable data={localData} columns={editableColumnsSB} onDataChange={setLocalData} />;
 };
 
 export const ExpandableRowsNotPaginating: Story = {
   render: () => (
     <AdvancedTable
-      data={expandableData}
-      columns={columns}
+      data={expandableDataSB}
+      columns={columnsSB}
       subRowKey="subRows"
       tableOptions={{ paginateExpandedRows: false }}
     />
@@ -106,38 +64,38 @@ export const ExpandableRowsNotPaginating: Story = {
 };
 
 export const Grouping: Story = {
-  render: () => <AdvancedTable data={defaultData} columns={columns} enableGrouping />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableGrouping />,
 };
 
 export const MultiLevelColumnHeader: Story = {
-  render: () => <AdvancedTable data={defaultData} columns={multiLevelColumns} />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={multiLevelColumnsSB} />,
 };
 
 export const Filter: Story = {
-  render: () => <AdvancedTable data={defaultData} columns={columns} enableColumnFilter />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnFilter />,
 };
 
 export const ReorderColumns: Story = {
-  render: () => <AdvancedTable data={defaultData} columns={columns} enableColumnReordering />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering />,
 };
 
 export const ScrollableColumns: Story = {
-  render: () => <AdvancedTable data={dataForCols} columns={manyCols} scrollableColumns />,
+  render: () => <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns />,
 };
 
 export const ScrollableRows: Story = {
-  render: () => <AdvancedTable data={dataForCols} columns={manyCols} scrollableRows />,
+  render: () => <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableRows />,
 };
 
 export const ScrollableRowsAndColumns: Story = {
-  render: () => <AdvancedTable data={dataForCols} columns={manyCols} scrollableColumns scrollableRows />,
+  render: () => <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns scrollableRows />,
 };
 
 export const ScrollableRowsAndColumnsWithDifferentWidthAndHeight: Story = {
   render: () => (
     <AdvancedTable
-      data={dataForCols}
-      columns={manyCols}
+      data={dataForColsSB}
+      columns={manyColsSB}
       scrollableColumns
       scrollableRows
       fixedHeight="700px"
@@ -148,15 +106,15 @@ export const ScrollableRowsAndColumnsWithDifferentWidthAndHeight: Story = {
 
 export const PinnableColumns: Story = {
   render: () => (
-    <AdvancedTable data={dataForCols} columns={manyCols} scrollableColumns scrollableRows enableColumnPinning />
+    <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns scrollableRows enableColumnPinning />
   ),
 };
 
 export const KitchenSink: Story = {
   render: () => (
     <AdvancedTable
-      data={dataForCols}
-      columns={manyCols}
+      data={dataForColsSB}
+      columns={manyColsSB}
       enableRowSelection
       enableSorting
       enableResizing
@@ -173,7 +131,7 @@ export const KitchenSink: Story = {
 export const Controlled = () => {
   const [, setTable] = useState<Table<AdvancedPerson>>();
 
-  return <AdvancedTable data={defaultData} columns={columns} onTableReady={setTable} />;
+  return <AdvancedTable data={defaultDataSB} columns={columnsSB} onTableReady={setTable} />;
 };
 
 export const ExampleCopy: Story = {

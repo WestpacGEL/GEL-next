@@ -20,11 +20,11 @@ export const styles = tv({
         td: 'bg-background-white',
       },
     },
-    cellPadding: {
-      small: {
+    extraCellPadding: {
+      false: {
         td: 'p-2',
       },
-      medium: {
+      true: {
         td: 'p-3',
       },
     },

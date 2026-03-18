@@ -8,9 +8,9 @@ import { MenuButton } from '../../advanced-table-menu/components/menu-button/men
 import { styles as HeadCellContentStyles } from './head-cell-content.styles.js';
 
 export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
-  const { cellPadding, bordered } = useContext(AdvancedTableContext);
+  const { extraCellPadding, bordered } = useContext(AdvancedTableContext);
 
-  const styles = HeadCellContentStyles({ cellPadding, bordered });
+  const styles = HeadCellContentStyles({ extraCellPadding, bordered });
 
   const sortingIcon = (sorted: SortDirection | false, onClick: () => void) => {
     return (
@@ -57,9 +57,12 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
               onDoubleClick: () => header.column.resetSize(),
               onMouseDown: header.getResizeHandler(),
               onTouchStart: header.getResizeHandler(),
-              className: styles.resizeBar(),
+              className: 'cursor-col-resize',
             }}
-          />
+          >
+            <span className="absolute top-0 -right-1 h-full w-2" />
+            <span className={styles.resizeBar()} />
+          </div>
         )}
       </div>
       {!header.isPlaceholder && header.column.getCanPin() && header.column.id !== 'select-column' && (

@@ -23,9 +23,9 @@ export function AdvancedTableCell<T>({ cell, rowRef }: AdvancedTableCellProps<T>
     width: cell.column.getSize(),
     zIndex: isDragging ? 1 : 0,
   };
-  const { scrollableRows, cellPadding, bordered } = useContext(AdvancedTableContext);
+  const { scrollableRows, extraCellPadding, bordered } = useContext(AdvancedTableContext);
 
-  const styles = AdvancedTableCellStyles({ scrollableRows, isPinned, cellPadding, bordered });
+  const styles = AdvancedTableCellStyles({ scrollableRows, isPinned, extraCellPadding, bordered });
   return (
     <td
       className={styles.td()}

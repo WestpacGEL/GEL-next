@@ -38,7 +38,7 @@ export const AdvancedTableContext = createContext<{
   scrollableRows?: boolean;
   scrollableColumns?: boolean;
   columnOrder?: string[];
-  cellPadding?: 'small' | 'medium';
+  extraCellPadding?: boolean;
   bordered?: boolean;
 }>({});
 
@@ -60,7 +60,7 @@ export function AdvancedTable<T>({
   tableOptions,
   onDataChange,
   onTableReady,
-  cellPadding = 'small',
+  extraCellPadding = false,
   bordered = false,
 }: AdvancedTableProps<T>) {
   const [localData, setLocalData] = useState<T[]>(data);
@@ -164,7 +164,7 @@ export function AdvancedTable<T>({
         enableRowSelection,
         columnOrder,
         enableColumnReordering,
-        cellPadding,
+        extraCellPadding,
         bordered,
       }}
     >
