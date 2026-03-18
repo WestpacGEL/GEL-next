@@ -2,7 +2,6 @@
 
 Comprehensive design guidelines, dos/don'ts, user experience notes, and accessibility information for all @westpac/ui components.
 
-
 ## Accordions
 
 **Description:** Accordions are grouped sets of expanding and collapsing panels. Use them to group and simplify large amounts of content such as product information.
@@ -16,13 +15,29 @@ Comprehensive design guidelines, dos/don'ts, user experience notes, and accessib
 ```tsx
 <Accordion rounded>
   <AccordionItem title="Mole">
-The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his throat and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was moving in the air above and in the earth below and around him, penetrating even his dark and lowly little house with its spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush on the floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without even waiting to put on his coat.
+    The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with
+    dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his throat
+    and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was moving in
+    the air above and in the earth below and around him, penetrating even his dark and lowly little house with its
+    spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush on the
+    floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without even
+    waiting to put on his coat.
   </AccordionItem>
   <AccordionItem title="Rat">
-The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat which the Mole had not observed. It was painted blue outside and white within, and was just the size for two animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses. The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated in the stern of a real boat.
+    The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat
+    which the Mole had not observed. It was painted blue outside and white within, and was just the size for two
+    animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses.
+    The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean
+    on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated
+    in the stern of a real boat.
   </AccordionItem>
   <AccordionItem title="Toad">
-‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and took to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last year it was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He was going to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of it, and starts on something fresh.’
+    ‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals
+    looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and took
+    to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last year it
+    was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He was going
+    to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of it, and
+    starts on something fresh.’
   </AccordionItem>
 </Accordion>
 ```
@@ -32,13 +47,29 @@ The Rat said nothing, but stooped and unfastened a rope and hauled on it; then l
 ```tsx
 <Accordion look="lego" rounded={false}>
   <AccordionItem title="Mole">
-The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his throat and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was moving in the air above and in the earth below and around him, penetrating even his dark and lowly little house with its spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush on the floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without even waiting to put on his coat.
+    The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with
+    dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his throat
+    and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was moving in
+    the air above and in the earth below and around him, penetrating even his dark and lowly little house with its
+    spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush on the
+    floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without even
+    waiting to put on his coat.
   </AccordionItem>
   <AccordionItem title="Rat">
-The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat which the Mole had not observed. It was painted blue outside and white within, and was just the size for two animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses. The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated in the stern of a real boat.
+    The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat
+    which the Mole had not observed. It was painted blue outside and white within, and was just the size for two
+    animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses.
+    The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean
+    on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated
+    in the stern of a real boat.
   </AccordionItem>
   <AccordionItem title="Toad">
-‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and took to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last year it was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He was going to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of it, and starts on something fresh.’
+    ‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals
+    looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and took
+    to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last year it
+    was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He was going
+    to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of it, and
+    starts on something fresh.’
   </AccordionItem>
 </Accordion>
 ```
@@ -49,24 +80,56 @@ The Rat said nothing, but stooped and unfastened a rope and hauled on it; then l
 <>
   <Accordion className="sm:hidden">
     <AccordionItem title="Mole">
-The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his throat and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was moving in the air above and in the earth below and around him, penetrating even his dark and lowly little house with its spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush on the floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without even waiting to put on his coat.
+      The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with
+      dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his
+      throat and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was
+      moving in the air above and in the earth below and around him, penetrating even his dark and lowly little house
+      with its spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush
+      on the floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without
+      even waiting to put on his coat.
     </AccordionItem>
     <AccordionItem title="Rat">
-The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat which the Mole had not observed. It was painted blue outside and white within, and was just the size for two animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses. The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated in the stern of a real boat.
+      The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat
+      which the Mole had not observed. It was painted blue outside and white within, and was just the size for two
+      animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses.
+      The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean
+      on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated
+      in the stern of a real boat.
     </AccordionItem>
     <AccordionItem title="Toad">
-‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and took to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last year it was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He was going to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of it, and starts on something fresh.’
+      ‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals
+      looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and
+      took to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last
+      year it was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He
+      was going to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of
+      it, and starts on something fresh.’
     </AccordionItem>
   </Accordion>
   <Tabs className="max-sm:hidden">
     <TabsPanel title="Mole">
-The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his throat and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was moving in the air above and in the earth below and around him, penetrating even his dark and lowly little house with its spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush on the floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without even waiting to put on his coat.
+      The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with
+      dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his
+      throat and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was
+      moving in the air above and in the earth below and around him, penetrating even his dark and lowly little house
+      with its spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush
+      on the floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without
+      even waiting to put on his coat.
     </TabsPanel>
     <TabsPanel title="Rat">
-The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat which the Mole had not observed. It was painted blue outside and white within, and was just the size for two animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses. The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated in the stern of a real boat.
+      The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat
+      which the Mole had not observed. It was painted blue outside and white within, and was just the size for two
+      animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses.
+      The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean
+      on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated
+      in the stern of a real boat.
     </TabsPanel>
     <TabsPanel title="Toad">
-‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and took to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last year it was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He was going to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of it, and starts on something fresh.’
+      ‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals
+      looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and
+      took to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last
+      year it was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He
+      was going to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of
+      it, and starts on something fresh.’
     </TabsPanel>
   </Tabs>
 </>
@@ -92,7 +155,7 @@ This component is useful when trying to simplify and group content for users to 
 
 #### Visual Design
 
-Tabs and accordions, can have one of two styles applied to them *Default* and *Lego*:
+Tabs and accordions, can have one of two styles applied to them _Default_ and _Lego_:
 
 The **Default style** is designed to be subtle and understated while still providing a clear indication of which tab or accordion bar is selected, and its related content. To further reinforce this relationship a transition is used to display related content when a tab or accordion bar is selected. Generous padding provides a larger hit area and important breathing space to provide emphasis without adding noise.
 
@@ -117,7 +180,6 @@ The accordion uses the useAccordion and useAccordionItem hooks from React Aria t
 Keyboard users navigate the accordions toggles as a set of buttons. Keyboard interaction requires use of ‘tab’ and ‘enter’ (or ‘space’) keys to select, rather than arrow keys.
 
 ---
-
 
 ## Alerts
 
@@ -198,18 +260,18 @@ The icon that accompanies Alert text has three size options, Md-24px, Sm-18px an
 
 ```tsx
 <div>
-     <ComponentTitle>Medium</ComponentTitle>
-      <Alert look="info" iconSize="medium" mode="text">
-        This alert has a <strong>Medium</strong> icon.
-      </Alert>
-      <ComponentTitle>Small</ComponentTitle>
-      <Alert look="info" iconSize="small" mode="text">
-        This alert has a <strong>Small</strong> icon.
-      </Alert>
-      <ComponentTitle>Extra Small</ComponentTitle>
-      <Alert look="info" iconSize="xsmall" mode="text">
-       This alert has an <strong>Extra Small</strong> icon.
-      </Alert>
+  <ComponentTitle>Medium</ComponentTitle>
+  <Alert look="info" iconSize="medium" mode="text">
+    This alert has a <strong>Medium</strong> icon.
+  </Alert>
+  <ComponentTitle>Small</ComponentTitle>
+  <Alert look="info" iconSize="small" mode="text">
+    This alert has a <strong>Small</strong> icon.
+  </Alert>
+  <ComponentTitle>Extra Small</ComponentTitle>
+  <Alert look="info" iconSize="xsmall" mode="text">
+    This alert has an <strong>Extra Small</strong> icon.
+  </Alert>
 </div>
 ```
 
@@ -300,7 +362,6 @@ Read more about [understanding WCAG reading levels](#)
 
 ---
 
-
 ## Autocomplete
 
 **Description:** Autocomplete predicts and suggests possible inputs as users type, speeding up the input process and enhancing the user experience.
@@ -310,27 +371,22 @@ Read more about [understanding WCAG reading levels](#)
 #### Autocomplete
 
 ```tsx
-<Autocomplete width="30"
+<Autocomplete
+  width="30"
   hintMessage="Search for the appropriate colour"
   label="What colour is the sky?"
   noOptionsMessage="No options"
   size="large"
 >
-  <AutocompleteItem>
-    Green
-  </AutocompleteItem>
-  <AutocompleteItem>
-    Purple
-  </AutocompleteItem>
-  <AutocompleteItem>
-    Blue
-  </AutocompleteItem>
+  <AutocompleteItem>Green</AutocompleteItem>
+  <AutocompleteItem>Purple</AutocompleteItem>
+  <AutocompleteItem>Blue</AutocompleteItem>
 </Autocomplete>
 ```
 
 #### Dos And Don Ts
 
-- Do use the Autocomplete field in scenarios where the user will already know the option they need to search for and select, e.g., their address or a country, etc.  
+- Do use the Autocomplete field in scenarios where the user will already know the option they need to search for and select, e.g., their address or a country, etc.
 - Avoid using Autocomplete if the user needs to see the entire list of options before they can select, e.g., a list of Product specific options.
 
 #### Error State
@@ -338,7 +394,8 @@ Read more about [understanding WCAG reading levels](#)
 All form elements have associated error states, see [Error messages](/content/guidelines/error-message) in our content guidelines for more.
 
 ```tsx
-<Autocomplete width="30"
+<Autocomplete
+  width="30"
   errorMessage="If there is an error it can go here"
   hintMessage="Search for the appropriate colour"
   label="What colour is the sky?"
@@ -346,15 +403,9 @@ All form elements have associated error states, see [Error messages](/content/gu
   invalid
   size="large"
 >
-  <AutocompleteItem>
-    Green
-  </AutocompleteItem>
-  <AutocompleteItem>
-    Purple
-  </AutocompleteItem>
-  <AutocompleteItem>
-    Blue
-  </AutocompleteItem>
+  <AutocompleteItem>Green</AutocompleteItem>
+  <AutocompleteItem>Purple</AutocompleteItem>
+  <AutocompleteItem>Blue</AutocompleteItem>
 </Autocomplete>
 ```
 
@@ -363,79 +414,63 @@ All form elements have associated error states, see [Error messages](/content/gu
 Autocomplete fields come in four different sizes (heights), which align to the regular text inputs within the Design system. Ensure when you are designing forms that you alway use the same size across element types.
 
 ```tsx
- <div>
-    <Autocomplete width="30" className="mb-6"
-      hintMessage="This is a Small autocomplete"
-      label="Label"
-      noOptionsMessage="No options"
+<div>
+  <Autocomplete
+    width="30"
+    className="mb-6"
+    hintMessage="This is a Small autocomplete"
+    label="Label"
+    noOptionsMessage="No options"
     size="small"
-    >
-      <AutocompleteItem>
-        Green
-      </AutocompleteItem>
-      <AutocompleteItem>
-        Purple
-      </AutocompleteItem>
-      <AutocompleteItem>
-        Blue
-      </AutocompleteItem>
-    </Autocomplete>
-    <Autocomplete width="30" className="mb-6"
-      hintMessage="This is a Medium autocomplete"
-      label="Label"
-      noOptionsMessage="No options"
+  >
+    <AutocompleteItem>Green</AutocompleteItem>
+    <AutocompleteItem>Purple</AutocompleteItem>
+    <AutocompleteItem>Blue</AutocompleteItem>
+  </Autocomplete>
+  <Autocomplete
+    width="30"
+    className="mb-6"
+    hintMessage="This is a Medium autocomplete"
+    label="Label"
+    noOptionsMessage="No options"
     size="medium"
-    >
-      <AutocompleteItem>
-        Green
-      </AutocompleteItem>
-      <AutocompleteItem>
-        Purple
-      </AutocompleteItem>
-      <AutocompleteItem>
-        Blue
-      </AutocompleteItem>
-    </Autocomplete>
-    <Autocomplete width="30" className="mb-6"
-      hintMessage="This is a Large autocomplete"
-      label="Label"
-      noOptionsMessage="No options"
+  >
+    <AutocompleteItem>Green</AutocompleteItem>
+    <AutocompleteItem>Purple</AutocompleteItem>
+    <AutocompleteItem>Blue</AutocompleteItem>
+  </Autocomplete>
+  <Autocomplete
+    width="30"
+    className="mb-6"
+    hintMessage="This is a Large autocomplete"
+    label="Label"
+    noOptionsMessage="No options"
     size="large"
-    >
-      <AutocompleteItem>
-        Green
-      </AutocompleteItem>
-      <AutocompleteItem>
-        Purple
-      </AutocompleteItem>
-      <AutocompleteItem>
-        Blue
-      </AutocompleteItem>
-    </Autocomplete>
-    <Autocomplete width="30" className="mb-6"
-      hintMessage="This is a xLarge autocomplete"
-      label="Label"
-      noOptionsMessage="No options"
+  >
+    <AutocompleteItem>Green</AutocompleteItem>
+    <AutocompleteItem>Purple</AutocompleteItem>
+    <AutocompleteItem>Blue</AutocompleteItem>
+  </Autocomplete>
+  <Autocomplete
+    width="30"
+    className="mb-6"
+    hintMessage="This is a xLarge autocomplete"
+    label="Label"
+    noOptionsMessage="No options"
     size="xlarge"
-    >
-      <AutocompleteItem>
-        Green
-      </AutocompleteItem>
-      <AutocompleteItem>
-        Purple
-      </AutocompleteItem>
-      <AutocompleteItem>
-        Blue
-      </AutocompleteItem>
-    </Autocomplete>
-    </div>
+  >
+    <AutocompleteItem>Green</AutocompleteItem>
+    <AutocompleteItem>Purple</AutocompleteItem>
+    <AutocompleteItem>Blue</AutocompleteItem>
+  </Autocomplete>
+</div>
 ```
 
 #### User Experience
 
-Using an Autocomplete field can streamline and accelerate the process of inputting information. As the user starts typing, a filtered list of options appears, based on the characters they have entered. It can be very useful in scenarios where the list of possible options is very long, and the user already knows the answer they are looking for. When used correctly, this component helps make selections more efficiently, reduces typos and generally improves the user experience. 
+Using an Autocomplete field can streamline and accelerate the process of inputting information. As the user starts typing, a filtered list of options appears, based on the characters they have entered. It can be very useful in scenarios where the list of possible options is very long, and the user already knows the answer they are looking for. When used correctly, this component helps make selections more efficiently, reduces typos and generally improves the user experience.
 
-We suggest using the word *Search* somewhere in the hint text label, this, along with the Search icon, this sets the expectation of search-oriented functionality rather than a simple text input.
+We suggest using the word _Search_ somewhere in the hint text label, this, along with the Search icon, this sets the expectation of search-oriented functionality rather than a simple text input.
 
 #### Variants
 
@@ -534,18 +569,17 @@ All components comply with WCAG 2.1 AA guidelines and Success Criteria. These fa
 
 ###### Perceivable
 
-*Autocomplete field-* These input fields have been designed and tested to have the correct amount of contrast and line weight around the border. This is important so as to quickly recognise the field as an affordance and also greatly assists those with low vision, and those without extensive knowledge of web design trends.
+_Autocomplete field-_ These input fields have been designed and tested to have the correct amount of contrast and line weight around the border. This is important so as to quickly recognise the field as an affordance and also greatly assists those with low vision, and those without extensive knowledge of web design trends.
 
-*Input labels -* Input labels should be placed above the input field. This helps promote scanning, readability and faster progress.
+_Input labels -_ Input labels should be placed above the input field. This helps promote scanning, readability and faster progress.
 
-*Hint text -* Hint text should be placed directly under the input label for context. This also ensures on mobile the hint text is visible ‘on canvas’ and is not obscured by any select boxes or keypads when activated.
+_Hint text -_ Hint text should be placed directly under the input label for context. This also ensures on mobile the hint text is visible ‘on canvas’ and is not obscured by any select boxes or keypads when activated.
 
 ###### Robust
 
 A label and a form control should be associated with each other either implicitly or explicitly. Web browsers provide the label as a larger clickable area, for example, to select or activate the control. It also ensures that assistive technology can refer to the correct label when presenting a form control.
 
 ---
-
 
 ## Badges
 
@@ -568,14 +602,9 @@ Badges come in 2 different types:
     <em>Default</em>
   </p>
   <p className="my-2">
-<Badge color="primary">Primary</Badge>{' '} 
-<Badge color="hero">Hero</Badge>{' '}
-<Badge color="faint">Faint</Badge>{' '} 
-<Badge color="muted">Muted</Badge>{' '} 
-<Badge color="success">Success</Badge>{' '} 
-<Badge color="info">Info</Badge>{' '}
-<Badge color="warning">Warning</Badge>{' '} 
-<Badge color="danger">Danger</Badge>{' '}
+    <Badge color="primary">Primary</Badge> <Badge color="hero">Hero</Badge> <Badge color="faint">Faint</Badge>{' '}
+    <Badge color="muted">Muted</Badge> <Badge color="success">Success</Badge> <Badge color="info">Info</Badge>{' '}
+    <Badge color="warning">Warning</Badge> <Badge color="danger">Danger</Badge>{' '}
   </p>
   <p className="typography-body-10 text-text-muted">
     <em>Soft</em>
@@ -686,7 +715,7 @@ Badges come in 2 different types:
               Messages
             </Link>
             <Badge color="info" type="pill" className="ml-1">
-                12
+              12
             </Badge>
           </div>
         </div>
@@ -718,7 +747,7 @@ Badges come in 2 different types:
               Product feature
             </Link>
             <Badge color="info" className="ml-1">
-                NEW
+              NEW
             </Badge>
           </div>
         </div>
@@ -755,7 +784,6 @@ The Badge shape and text content is visible in Windows High Contrast Mode (WHCM)
 
 ---
 
-
 ## Bottom sheet
 
 **Description:** The responsive bottom sheet component is a modal-style element that slides up from the bottom of the screen in mobile views and appears as a modal in larger views.
@@ -773,7 +801,16 @@ View this component using the demo button to see how it responds across views.
   return (
     <>
       <Button onClick={state.open}> Open Bottom Sheet </Button>
-      <BottomSheet zIndex={1200} isDismissable title="Heading" primaryLabel="Label" secondaryLabel="Label" state={state} primaryOnClick={state.close} secondaryOnClick={state.close}>
+      <BottomSheet
+        zIndex={1200}
+        isDismissable
+        title="Heading"
+        primaryLabel="Label"
+        secondaryLabel="Label"
+        state={state}
+        primaryOnClick={state.close}
+        secondaryOnClick={state.close}
+      >
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a
           ad blanditiis laborum labore repellendus, vero nihil ducimus, aliquam culpa explicabo doloremque corporis.
@@ -821,7 +858,6 @@ The Bottom sheet is a generic component designed to work in as many scenarios as
 
 ---
 
-
 ## Breadcrumbs
 
 **Description:** Breadcrumbs are styled navigational links used to indicate the user’s location within your site. They are a simple, effective and proven method to aid orientation.
@@ -837,7 +873,9 @@ Breadcrumbs come in one style for navigational consistency across all touch-poin
 <div className="flex flex-col gap-4">
   <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1 mt-2">
     <NextLink href="#home" passHref legacyBehavior>
-      <BreadcrumbItem isCurrent tag="a">Home</BreadcrumbItem>
+      <BreadcrumbItem isCurrent tag="a">
+        Home
+      </BreadcrumbItem>
     </NextLink>
   </Breadcrumb>
   <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1">
@@ -845,7 +883,9 @@ Breadcrumbs come in one style for navigational consistency across all touch-poin
       <BreadcrumbItem tag="a">Home</BreadcrumbItem>
     </NextLink>
     <NextLink href="#personal" passHref legacyBehavior>
-      <BreadcrumbItem tag="a" isCurrent>Personal</BreadcrumbItem>
+      <BreadcrumbItem tag="a" isCurrent>
+        Personal
+      </BreadcrumbItem>
     </NextLink>
   </Breadcrumb>
   <Breadcrumb aria-label="Page transitions and the such" className="px-3 py-1 mb-2">
@@ -856,7 +896,9 @@ Breadcrumbs come in one style for navigational consistency across all touch-poin
       <BreadcrumbItem tag="a">Personal</BreadcrumbItem>
     </NextLink>
     <NextLink href="#credit-cards" passHref legacyBehavior>
-      <BreadcrumbItem tag="a" isCurrent>Credit cards</BreadcrumbItem>
+      <BreadcrumbItem tag="a" isCurrent>
+        Credit cards
+      </BreadcrumbItem>
     </NextLink>
   </Breadcrumb>
 </div>
@@ -909,7 +951,6 @@ All components comply with WCAG 2.1 AA guidelines and Success Criteria. These fa
 Using breadcrumbs in your site or application aids navigation and orientation, and is an essential part of an accessible experience. As well as helping users determine where they are, they also provide another way to locate and navigate to pages. Using breadcrumbs will help you to comply with the core Success Criterion of the 'Navigable' guideline from WCAG 2.1.
 
 ---
-
 
 ## Buttons
 
@@ -1029,13 +1070,11 @@ Buttons come in four different sizes, corresponding to the sizes of other form e
 - Avoid disabled buttons where possible - users may not know why a function is disabled as there is no feedback offered.
 - Avoid placing critical functions next to one another to avoid errors and loss of data or accidental processes.
 
-
 ```tsx
 <p className="typography-body-10">
   <span className="text-text-success font-bold">Do</span> - Prevent errors by keeping buttons a safe distance apart.
 </p>
 ```
-
 
 ```tsx
 <p className="typography-body-10">
@@ -1098,7 +1137,7 @@ The button system gives you the flexibility to choose from multiple styles, size
 ###### Accessibility in the HTML
 
 - `<button>` / `<a>`: Identifies the element as a button (or link) element. Accessible name for the button is defined by the element’s text content. [React component: refer to *tag* prop]
-- `<a href="{URL}">`: Links styled to look like buttons must include an *href*. [React component: refer to *tag prop* and *href* attribute]
+- `<a href="{URL}">`: Links styled to look like buttons must include an _href_. [React component: refer to *tag prop* and *href* attribute]
 - `<button aria-label="{BUTTON_LABEL}">` Optionally use aria-label attribute to set a custom label (if different to the button text). The overall meaning of the aria-label must be consistent with the visual button text to ensure an optimal experience for speech recognition software users (i.e. Dragon NaturallySpeaking)
 - `<svg aria-hidden="true">` Button icon elements have aria-hidden="true" to hide them from assistive technologies; they are visual embellishment. Generally the button text provides the button description, if this is not the case a custom label can be used which will be announced instead of the button text for screen reader users. [React component: refer to iconBefore and iconAfter props]
 
@@ -1115,7 +1154,6 @@ All components comply with WCAG 2.1 AA guidelines and Success Criteria. These fa
 Users with hand tremors or other motor skill challenges need large buttons. They also may make more mistakes than the average person and need help to ensure they reduce the amount of unintentional presses.
 
 ---
-
 
 ## Button groups
 
@@ -1248,7 +1286,6 @@ Button groups inherit styling from buttons, see [Buttons](/components/button) fo
 
 ---
 
-
 ## Checkboxes
 
 **Description:** Checkboxes are a proven and effective way to elicit a multiple choice from a user. They also require careful consideration to produce the best results.
@@ -1263,24 +1300,29 @@ Button groups inherit styling from buttons, see [Buttons](/components/button) fo
 - Avoid changing the text styling of the checkbox label (size, colour etc).
 - Do make sure the taxonomy of the options you are offering makes sense as any ambiguity will only slow down or confuse the user.
 
-
 ```tsx
-<p className="typography-body-10"><span className="text-text-success font-bold">Do</span> - Remain consistent with the control type used</p>
+<p className="typography-body-10">
+  <span className="text-text-success font-bold">Do</span> - Remain consistent with the control type used
+</p>
 ```
 
-
 ```tsx
-<p className="typography-body-10"><span className="text-text-danger font-bold">Avoid</span> - Mixing checkboxes and radios</p>
+<p className="typography-body-10">
+  <span className="text-text-danger font-bold">Avoid</span> - Mixing checkboxes and radios
+</p>
 ```
 
-
 ```tsx
-<p className="typography-body-10"><span className="text-text-success font-bold">Do</span> - Keep labels short, makes scanning easier.</p>
+<p className="typography-body-10">
+  <span className="text-text-success font-bold">Do</span> - Keep labels short, makes scanning easier.
+</p>
 ```
 
-
 ```tsx
-<p className="typography-body-10"><span className="text-text-danger font-bold">Avoid</span> - Having long descriptive labels, if you need more content you can try using the 'Hint' option.</p>
+<p className="typography-body-10">
+  <span className="text-text-danger font-bold">Avoid</span> - Having long descriptive labels, if you need more content
+  you can try using the 'Hint' option.
+</p>
 ```
 
 #### Error State
@@ -1288,19 +1330,19 @@ Button groups inherit styling from buttons, see [Buttons](/components/button) fo
 All form elements have associated error states, see [Error messages](/design-system/wbc/content/guidelines/error-message) in our content guidelines for more.
 
 ```tsx
-  <CheckboxGroup 
-errorMessage="If there is an error it can go here"    
-hintMessage="These are large sized checkboxes"
-    label="Select an option"
+<CheckboxGroup
+  errorMessage="If there is an error it can go here"
+  hintMessage="These are large sized checkboxes"
+  label="Select an option"
   validationState="invalid"
-      className="col-span-1" 
-      size="large"
-      checkboxes={[
-        { value: "Option 1", label: "Option 1" },
-        { value: "Option 2", label: "Option 2" },
-        { value: "Option 3", label: "Option 3" },
-      ]}
-    />
+  className="col-span-1"
+  size="large"
+  checkboxes={[
+    { value: 'Option 1', label: 'Option 1' },
+    { value: 'Option 2', label: 'Option 2' },
+    { value: 'Option 3', label: 'Option 3' },
+  ]}
+/>
 ```
 
 #### Hint Text
@@ -1308,18 +1350,17 @@ hintMessage="These are large sized checkboxes"
 This variation allows supporting text to be displayed below the selectable item. For use in scenarios where the options are complex and require further information for clarity, using the hint text prevents the labels becoming too long which can effect scanability. Hint text can be used with both Medium and Large sized checkboxes.
 
 ```tsx
-
-  <CheckboxGroup 
+<CheckboxGroup
   hintMessage="These are large sized checkboxes with hint text"
   label="Select an option"
-    className="col-span-1" 
-    size="large"
-    checkboxes={[
-      { value: "Option 1", label: "Option 1", hint: "This is hint text" },
-      { value: "Option 2", label: "Option 2", hint: "This is hint text" },
-      { value: "Option 3", label: "Option 3", hint: "This is hint text" },
-    ]}
-  />
+  className="col-span-1"
+  size="large"
+  checkboxes={[
+    { value: 'Option 1', label: 'Option 1', hint: 'This is hint text' },
+    { value: 'Option 2', label: 'Option 2', hint: 'This is hint text' },
+    { value: 'Option 3', label: 'Option 3', hint: 'This is hint text' },
+  ]}
+/>
 ```
 
 #### Horizontal Layout
@@ -1327,14 +1368,14 @@ This variation allows supporting text to be displayed below the selectable item.
 Use this option when you require an inline layout, it's only recommended in very specific circumstances and we suggest never having more than two checkboxes side-by-side.
 
 ```tsx
-<CheckboxGroup 
+<CheckboxGroup
   hintMessage="These are medium sized checkboxes in a horizontal layout"
   label="Select an option"
   orientation="horizontal"
-size="medium"
+  size="medium"
   checkboxes={[
-    { value: "Option 1", label: "Option 1" },
-    { value: "Option 2", label: "Option 2" },
+    { value: 'Option 1', label: 'Option 1' },
+    { value: 'Option 2', label: 'Option 2' },
   ]}
 />
 ```
@@ -1350,21 +1391,21 @@ When requirements dictate long lists of choices, and particularly as mobile scre
 - Reveal can be used with both Medium and Large sized checkboxes.
 
 ```tsx
-  <CheckboxGroup 
-    hintMessage="These are large sized checkboxes with more to reveal"
-    label="Select an option"
-      className="col-span-1" 
-      size="large"
-      showAmount={2}
-      checkboxes={[
-        { value: "Option 1", label: "Option 1" },
-        { value: "Option 2", label: "Option 2" },
-        { value: "Option 3", label: "Option 3" },
-        { value: "Option 4", label: "Option 4" },
-        { value: "Option 5", label: "Option 5" },
-        { value: "Option 6", label: "Option 6" },
-      ]}
-    />
+<CheckboxGroup
+  hintMessage="These are large sized checkboxes with more to reveal"
+  label="Select an option"
+  className="col-span-1"
+  size="large"
+  showAmount={2}
+  checkboxes={[
+    { value: 'Option 1', label: 'Option 1' },
+    { value: 'Option 2', label: 'Option 2' },
+    { value: 'Option 3', label: 'Option 3' },
+    { value: 'Option 4', label: 'Option 4' },
+    { value: 'Option 5', label: 'Option 5' },
+    { value: 'Option 6', label: 'Option 6' },
+  ]}
+/>
 ```
 
 #### Sizes
@@ -1373,31 +1414,35 @@ There are two checkbox sizes, make sure when laying out forms that your checkbox
 
 ```tsx
 <div className="grid grid-cols-2">
-<div><h4 className="typography-body-10 text-text-muted italic mb-3">Medium</h4>
-  <CheckboxGroup 
-  hintMessage="These are medium sized checkboxes"
-  label="Select an option"
-    className="col-span-1" 
-    size="medium"
-    checkboxes={[
-      { value: "Option 1", label: "Option 1" },
-      { value: "Option 2", label: "Option 2" },
-      { value: "Option 3", label: "Option 3" },
-    ]}
-  /></div>
-<div><h4 className="typography-body-10 text-text-muted italic mb-3">Large</h4>  
-<CheckboxGroup 
-  hintMessage="These are large sized checkboxes"
-  label="Select an option"
-    className="col-span-1" 
-    size="large"
-    checkboxes={[
-      { value: "Option 1", label: "Option 1" },
-      { value: "Option 2", label: "Option 2" },
-      { value: "Option 3", label: "Option 3" },
-    ]}
-  />
-</div></div>
+  <div>
+    <h4 className="typography-body-10 text-text-muted italic mb-3">Medium</h4>
+    <CheckboxGroup
+      hintMessage="These are medium sized checkboxes"
+      label="Select an option"
+      className="col-span-1"
+      size="medium"
+      checkboxes={[
+        { value: 'Option 1', label: 'Option 1' },
+        { value: 'Option 2', label: 'Option 2' },
+        { value: 'Option 3', label: 'Option 3' },
+      ]}
+    />
+  </div>
+  <div>
+    <h4 className="typography-body-10 text-text-muted italic mb-3">Large</h4>
+    <CheckboxGroup
+      hintMessage="These are large sized checkboxes"
+      label="Select an option"
+      className="col-span-1"
+      size="large"
+      checkboxes={[
+        { value: 'Option 1', label: 'Option 1' },
+        { value: 'Option 2', label: 'Option 2' },
+        { value: 'Option 3', label: 'Option 3' },
+      ]}
+    />
+  </div>
+</div>
 ```
 
 #### User Experience
@@ -1405,7 +1450,6 @@ There are two checkbox sizes, make sure when laying out forms that your checkbox
 If you are asking your user to select one or more options from a list, then Checkboxes are the way to go. A single checkbox can also be used in isolation usually to acknowledge consent, understanding or agreement e.g Terms and conditions.
 
 Keep elements close to each other for maximum performance as illustrated below:
-
 
 The closer the label to the input, the better.
 
@@ -1446,7 +1490,7 @@ These issues have been addressed with the styling of the checkbox groups while m
 
 ###### Keyboard support
 
-Navigation pattern is consistent with standard checkbox inputs; *tab* key navigates the checkbox options, *space* key toggles the selection.
+Navigation pattern is consistent with standard checkbox inputs; _tab_ key navigates the checkbox options, _space_ key toggles the selection.
 
 #### Notes On Accessibility
 
@@ -1458,12 +1502,11 @@ The Design System checkboxes have a large hit area to aid those with low vision 
 
 ###### Understandable
 
-*Checkbox with reveal:* With regards to the reveal, due to accessibility challenges around focus, announcing with context, and navigation, the toggle should disappear on click.
+_Checkbox with reveal:_ With regards to the reveal, due to accessibility challenges around focus, announcing with context, and navigation, the toggle should disappear on click.
 
 To soften the impact of showing a long list, users are “forewarned” how many items are about to be revealed within the toggle, eg Show 12 more items. This is an important accessibility consideration that needs to be considered during design and implementation.
 
 ---
-
 
 ## Collapsible
 
@@ -1568,21 +1611,20 @@ The Collapsible is based on a button link and leverages the same styling with th
 #### Accessibility Features
 
 - The user interacts with the button to toggle the collapsible content area – consistently whether using mouse, touch or keyboard. To hide the panel the user may toggle the button again.
-- As with similar components that hide/show content, this component follows a ‘user is in control’ approach. Rather than programmatically moving focus to the collapsible content when shown, the toggle button has an *aria-expanded* attribute; the assistive technology user can choose to ‘arrow down’ to announce the collapsible content if they wish.
+- As with similar components that hide/show content, this component follows a ‘user is in control’ approach. Rather than programmatically moving focus to the collapsible content when shown, the toggle button has an _aria-expanded_ attribute; the assistive technology user can choose to ‘arrow down’ to announce the collapsible content if they wish.
 - An indicator outline appears around the button toggle when focused
 - The toggle button shape, text, icon and collapsible content is visible in Windows High Contrast Mode
 
 ###### Accessibility in the HTML
 
-- `<button aria-expanded="false|true" aria-controls="{ID}">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The *aria-controls* attribute creates an association between toggle button and collapsible element.
-- `<div id="{ID}" aria-hidden="true|false">`: The collapsible element must have a unique *id* value. The toggle button *aria-controls* and collapsible element *id* attribute values must match. The collapsible element uses the *aria-hidden* attribute to hide from assistive technologies when no longer available.
+- `<button aria-expanded="false|true" aria-controls="{ID}">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The _aria-controls_ attribute creates an association between toggle button and collapsible element.
+- `<div id="{ID}" aria-hidden="true|false">`: The collapsible element must have a unique _id_ value. The toggle button _aria-controls_ and collapsible element _id_ attribute values must match. The collapsible element uses the _aria-hidden_ attribute to hide from assistive technologies when no longer available.
 
 ###### Keyboard support
 
 Keyboard users navigate the toggle button as they would with a standard button.
 
 ---
-
 
 ## Compacta
 
@@ -1760,7 +1802,6 @@ The left-aligned placement of the 'Add another' and 'Remove' buttons is also an 
 
 ---
 
-
 ## Date picker
 
 **Description:** Date pickers assist when dates are not known, set in the future, to schedule something, or assist in providing “day of the week” context.
@@ -1886,7 +1927,6 @@ The visual design of the calendar and the date indicators have been very careful
 
 ---
 
-
 ## Dropdowns
 
 **Description:** Use a dropdown to display a styled list of actions.
@@ -1948,21 +1988,21 @@ The dropdown menus come in three sizes or widths. They are triggered by the drop
 <div className="flex gap-1">
   <Dropdown text="Checkboxes" look="primary">
     <DropdownHeading>Checkboxes</DropdownHeading>
-    <CheckboxGroup 
+    <CheckboxGroup
       defaultValue={['Option 1']}
       checkboxes={[
-        { value: "Option 1", label: "Option 1" },
-        { value: "Option 2", label: "Option 2" },
-        { value: "Option 3", label: "Option 3" },
+        { value: 'Option 1', label: 'Option 1' },
+        { value: 'Option 2', label: 'Option 2' },
+        { value: 'Option 3', label: 'Option 3' },
       ]}
     />
     <DropdownHeading>Options</DropdownHeading>
-    <CheckboxGroup 
+    <CheckboxGroup
       defaultValue={['Option 1']}
       checkboxes={[
-        { value: "Option 1", label: "Option 1" },
-        { value: "Option 2", label: "Option 2" },
-        { value: "Option 3", label: "Option 3" },
+        { value: 'Option 1', label: 'Option 1' },
+        { value: 'Option 2', label: 'Option 2' },
+        { value: 'Option 3', label: 'Option 3' },
       ]}
     />
   </Dropdown>
@@ -2006,16 +2046,16 @@ The button used to trigger the dropdown menu can use any of the styles or sizes 
 #### Accessibility Features
 
 - The user interacts with the button to toggle the panel – consistently whether using mouse, touch or keyboard. To hide the panel the user may toggle the button again, perform a ‘blur’ event (focusing elsewhere via click or keyboard) or press the ‘Esc’ key.
-- As with similar components that hide/show content, this component follows a ‘user is in control’ approach. Rather than programmatically moving focus to the panel when shown, the toggle button has an *aria-expanded* attribute; the assistive technology user can choose to ‘arrow down’ to announce the panel content if they wish.
+- As with similar components that hide/show content, this component follows a ‘user is in control’ approach. Rather than programmatically moving focus to the panel when shown, the toggle button has an _aria-expanded_ attribute; the assistive technology user can choose to ‘arrow down’ to announce the panel content if they wish.
 - When the panel closes, focus returns to the button that originally toggled the panel
 - An indicator outline appears around the button toggle when focused
 - The button shape, text, icon content and panel is visible in Windows High Contrast Mode (WHCM). The button ‘look’ styling (colour) is not visible in WHCM.
 
 ###### Accessibility in the HTML
 
-- `<button aria-expanded="false|true" aria-controls="{PANEL_ID}">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The *aria-controls* attribute creates an association between toggle button and collapsible element (panel)
-- `<div id="{PANEL_ID}">`: The panel must have a unique *id* value. The toggle button *aria-controls* and panel *id* attribute values must match.
-- `<span aria-hidden="true">`: The toggle button’s dropdown icon element has *aria-hidden* to hide it from assistive technologies as it is decorative. The icon is a design convention to indicate a dropdown interface. Assistive technologies utilise the features listed above to provide users with an indication of this dropdown interface.
+- `<button aria-expanded="false|true" aria-controls="{PANEL_ID}">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The _aria-controls_ attribute creates an association between toggle button and collapsible element (panel)
+- `<div id="{PANEL_ID}">`: The panel must have a unique _id_ value. The toggle button _aria-controls_ and panel _id_ attribute values must match.
+- `<span aria-hidden="true">`: The toggle button’s dropdown icon element has _aria-hidden_ to hide it from assistive technologies as it is decorative. The icon is a design convention to indicate a dropdown interface. Assistive technologies utilise the features listed above to provide users with an indication of this dropdown interface.
 
 ###### Keyboard support
 
@@ -2023,7 +2063,6 @@ The button used to trigger the dropdown menu can use any of the styles or sizes 
 - ‘Esc’ key closes the currently active panel
 
 ---
-
 
 ## Flexi Cell
 
@@ -2249,7 +2288,6 @@ Try to keep the amount of content displayed in each tile consistent, tiles that 
 
 ---
 
-
 ## Footer
 
 **Description:** Having consistent and familiar footers throughout an experience is critical, it assists in providing our customers context and confidence in the experience they are in.
@@ -2262,22 +2300,13 @@ This is the basic footer component, the content should be project specific.
 
 ```tsx
 <>
-  <Footer
-    brand="wbc"
-    hideLogo
-  >
+  <Footer brand="wbc" hideLogo>
     <div className="relative">
       <div className="float-left flex-none">
-        <SecurityIcon
-          className="float-left shrink-0 mr-1 mt-0.5"
-          color="muted"
-          size="small"
-        />
+        <SecurityIcon className="float-left shrink-0 mr-1 mt-0.5" color="muted" size="small" />
       </div>
       <div className="flex">
-        <p className="text-text-muted relative flex-1">
-          Footer content goes here.
-        </p>
+        <p className="text-text-muted relative flex-1">Footer content goes here.</p>
       </div>
     </div>
   </Footer>
@@ -2301,7 +2330,6 @@ The footer component is a basic, configurable component used to hold global elem
 The footer component is designed to be responsive and multi-brand. This ensures that all branding etc will automatically be the correct size and position when the brand is switched.
 
 ---
-
 
 ## Header
 
@@ -2381,13 +2409,11 @@ The Header component is designed to be responsive and multi-brand. This ensures 
 
 ---
 
-
 ## Heading (Dev)
 
 **Description:** This is a developer-only package containing styling for heading elements supporting visual and semantic heading levels, uppercase and both body font and brand font options.
 
 ---
-
 
 ## Inputs
 
@@ -2400,14 +2426,12 @@ The Header component is designed to be responsive and multi-brand. This ensures 
 - Do use any of the predefined input sizes but make sure to use the corresponding button size if required.
 - Do keep labels in close proximity above the input field.
 
-
 ```tsx
 <p className="typography-body-10">
   <span className="text-text-success font-bold">Do</span> - Place labels in close proximity above the input field - this
   helps promote scanning, readability and faster progress.
 </p>
 ```
-
 
 ```tsx
 <p className="typography-body-10">
@@ -2421,9 +2445,9 @@ The Header component is designed to be responsive and multi-brand. This ensures 
 All form elements have associated error states, see [Error messages](/content/guidelines/error-message) in our content guidelines for more.
 
 ```tsx
-  <InputGroup width={20} label="Label" hint="Hint text"  errorMessage="If there is an error it can go here">
-          <Input invalid />
-        </InputGroup>
+<InputGroup width={20} label="Label" hint="Hint text" errorMessage="If there is an error it can go here">
+  <Input invalid />
+</InputGroup>
 ```
 
 #### Fixed Widths
@@ -2432,19 +2456,19 @@ Use fix width inputs to help indicate the length of the data required. For examp
 
 ```tsx
 <div className="flex flex-col gap-2">
-   <Input  placeholder="1"  size="medium" width="1"/>
-   <Input  placeholder="2"  size="medium" width="2"/>
-   <Input  placeholder="3"  size="medium" width="3"/>
-   <Input  placeholder="4"  size="medium" width="4"/>
-   <Input  placeholder="5"  size="medium" width="5"/>
-   <Input  placeholder="6"  size="medium" width="6"/>
-   <Input  placeholder="7"  size="medium" width="7"/>
-   <Input  placeholder="8"  size="medium" width="8"/>
-   <Input  placeholder="9"  size="medium" width="9"/>
-   <Input  placeholder="10"  size="medium" width="10"/>
-   <Input  placeholder="20"  size="medium" width="20"/>
-   <Input  placeholder="30"  size="medium" width="30"/>
-   <Input  placeholder="Full-width"  size="medium" width="full"/>
+  <Input placeholder="1" size="medium" width="1" />
+  <Input placeholder="2" size="medium" width="2" />
+  <Input placeholder="3" size="medium" width="3" />
+  <Input placeholder="4" size="medium" width="4" />
+  <Input placeholder="5" size="medium" width="5" />
+  <Input placeholder="6" size="medium" width="6" />
+  <Input placeholder="7" size="medium" width="7" />
+  <Input placeholder="8" size="medium" width="8" />
+  <Input placeholder="9" size="medium" width="9" />
+  <Input placeholder="10" size="medium" width="10" />
+  <Input placeholder="20" size="medium" width="20" />
+  <Input placeholder="30" size="medium" width="30" />
+  <Input placeholder="Full-width" size="medium" width="full" />
 </div>
 ```
 
@@ -2453,9 +2477,9 @@ Use fix width inputs to help indicate the length of the data required. For examp
 Use the [Input group](/components/input-group) component to accessibly define the labels used with Inputs, and [Text areas](/components/textareas). All inputs require labels for usability and accessibility.
 
 ```tsx
-  <InputGroup width={20} label="Label" hint="Hint text" >
-          <Input />
-        </InputGroup>
+<InputGroup width={20} label="Label" hint="Hint text">
+  <Input />
+</InputGroup>
 ```
 
 #### Sizes
@@ -2534,16 +2558,15 @@ All components comply with WCAG 2.1 AA guidelines and Success Criteria. These fa
 
 **Input fields** - These fields have been carefully designed and tested to achieve optimal contrast and border line weight. This is crucial for users to quickly identify the element as an input field, providing significant assistance to individuals with low vision and those less familiar with prevailing web design trends. The border colour was modified from the original "Border" colour to a darker version named "Border Dark," to ensure ongoing compliance with WCAG colour contrast guidelines.
 
-**Input labels** *-* Input labels should be placed above the input field. This helps promote scanning, readability and faster progress.
+**Input labels** _-_ Input labels should be placed above the input field. This helps promote scanning, readability and faster progress.
 
-**Hint text** *-* Hint text should be placed directly under the input label for context. This also ensures on mobile the hint text is visible ‘on canvas’ and is not obscured by any select boxes or keypads when activated.
+**Hint text** _-_ Hint text should be placed directly under the input label for context. This also ensures on mobile the hint text is visible ‘on canvas’ and is not obscured by any select boxes or keypads when activated.
 
 ###### Robust
 
 A label and a form control should be associated with each other either implicitly or explicitly. Web browsers provide the label as a larger clickable area, for example, to select or activate the control. It also ensures that assistive technology can refer to the correct label when presenting a form control.
 
 ---
-
 
 ## Input groups
 
@@ -2908,7 +2931,8 @@ Add-on elements can be used either before or after an input, they can provide cl
   const clearInput = useCallback(() => setInputValue(''), []);
 
   return (
-    <InputGroup width={20}
+    <InputGroup
+      width={20}
       label="Search"
       before={{
         icon: SearchIcon,
@@ -2930,7 +2954,8 @@ Add-on elements can be used either before or after an input, they can provide cl
   const toggleType = useCallback(() => setTypeInput(state => (state === 'password' ? 'text' : 'password')), []);
 
   return (
-    <InputGroup width={20}
+    <InputGroup
+      width={20}
       label="Show and hide input visibility"
       after={{
         inset: true,
@@ -2955,9 +2980,9 @@ Add-on elements can be used either before or after an input, they can provide cl
 Use the input group component to accessibly define the labels used with [Inputs,](/components/inputs) and [Text areas](/components/textarea). All inputs require labels for usability and accessibility.
 
 ```tsx
-  <InputGroup width={20} label="Label" hint="Hint text" >
-          <Input />
-        </InputGroup>
+<InputGroup width={20} label="Label" hint="Hint text">
+  <Input />
+</InputGroup>
 ```
 
 #### Supporting Text
@@ -3008,7 +3033,8 @@ Supporting text sits below the field, it can be a character count, or validated 
   }, [inputValue]);
 
   return (
-    <InputGroup width="20"
+    <InputGroup
+      width="20"
       label="Enter ABA routing number"
       hint="For a valid response use: 647453, all other numbers will show the invalid response"
       after={validating ? { icon: ProgressIndicator } : <Button onClick={validate}>Check</Button>}
@@ -3065,7 +3091,6 @@ One way to aid screen reader users is to use hint text to instruct. For example:
 
 ---
 
-
 ## Link
 
 **Description:** The Link component is a way for developers to quickly apply consistent web link styling while also providing global guidance for designers. There are two main styles of links for different use cases. This component is also called Anchor.
@@ -3079,31 +3104,37 @@ The inline option is mainly used for links that appear within a sentence or para
 ```tsx
 <div className="flex flex-col gap-5">
   <p className="typography-body-9">
-  <Heading size="9" className="font-bold">Inline link - no icon</Heading>
+    <Heading size="9" className="font-bold">
+      Inline link - no icon
+    </Heading>
     Lorem ipsum dolor sit amet consectetur,{' '}
     <Link href="#" type="inline">
       look, I'm an inline link
     </Link>{' '}
-    adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
-    doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
+    adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio doloribus magni repudiandae
+    vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
   </p>
   <p className="typography-body-9">
-  <Heading size="9" className="font-bold">Inline link - icon before</Heading>
+    <Heading size="9" className="font-bold">
+      Inline link - icon before
+    </Heading>
     Lorem ipsum dolor sit amet consectetur,{' '}
     <Link href="#" type="inline" iconBefore={PdfFileIcon}>
       look, I'm an inline link
     </Link>{' '}
-    adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
-    doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
+    adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio doloribus magni repudiandae
+    vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
   </p>
   <p className="typography-body-9">
-  <Heading size="9" className="font-bold">Inline link - icon after</Heading>
+    <Heading size="9" className="font-bold">
+      Inline link - icon after
+    </Heading>
     Lorem ipsum dolor sit amet consectetur,{' '}
     <Link href="#" iconSize="xsmall" type="inline" iconAfter={NewWindowIcon} size="small">
       look, I'm an inline link
     </Link>{' '}
-    adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio
-    doloribus magni repudiandae vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
+    adipisicing elit. Libero facilis odit voluptate reprehenderit laborum numquam ex optio doloribus magni repudiandae
+    vero fugiat iusto tempora debitis sunt laboriosam nobis, ut voluptatum?
   </p>
 </div>
 ```
@@ -3176,7 +3207,6 @@ Active or verb based copywriting alone is not a strong enough signifier of a lin
 
 ---
 
-
 ## Lists
 
 **Description:** Lists are compiled of an ordered set of items. They are highly legible, intuitive, simple and extremely effective at highlighting features, benefits, or legal copy for example.
@@ -3207,7 +3237,7 @@ Create simple and easily scannable lists with these list and nested list styles.
     </List>
     <ListItem>Styled bullet list</ListItem>
   </List>
-  <br/>
+  <br />
   <h1 className="typography-body-10 mb-2 italic text-text-muted">List colours</h1>
   <List type="bullet" className="mb-4">
     <ListItem look="primary">This is a primary list</ListItem>
@@ -3258,10 +3288,18 @@ Use link list styling when the list items are clickable. An un-styled list has n
   </List>
   <h1 className="typography-body-10 mb-2 italic text-text-muted">Icon list</h1>
   <List className="mb-4">
-    <ListItem type="icon" icon={GenericFileIcon} look="muted">This is an icon list</ListItem>
-    <ListItem type="icon" icon={GenericFileIcon} look="muted">This is an icon list</ListItem>
-    <ListItem type="icon" icon={GenericFileIcon} look="primary">This is an icon list</ListItem>
-    <ListItem type="icon" icon={GenericFileIcon} look="primary">This is an icon list</ListItem>
+    <ListItem type="icon" icon={GenericFileIcon} look="muted">
+      This is an icon list
+    </ListItem>
+    <ListItem type="icon" icon={GenericFileIcon} look="muted">
+      This is an icon list
+    </ListItem>
+    <ListItem type="icon" icon={GenericFileIcon} look="primary">
+      This is an icon list
+    </ListItem>
+    <ListItem type="icon" icon={GenericFileIcon} look="primary">
+      This is an icon list
+    </ListItem>
   </List>
 </>
 ```
@@ -3308,7 +3346,6 @@ The link list style uses a primary coloured chevron, rather than the link stylin
 
 ---
 
-
 ## Modals
 
 **Description:** Modals are components which interrupt a user flow by focusing on a defined area of the screen. They are typically reserved for critical junctions in a user journey.
@@ -3342,12 +3379,24 @@ Use the appropriate modal size to suit your content. A modal will always respons
 
   return (
     <div className="flex justify-center gap-4">
-      {[{ size: 'sm', label: 'Small'}, { size: 'md', label: 'Default'}, { size: 'lg', label: 'Large'}].map(({ size, label }: { size: string; label: string; }) => (
+      {[
+        { size: 'sm', label: 'Small' },
+        { size: 'md', label: 'Default' },
+        { size: 'lg', label: 'Large' },
+      ].map(({ size, label }: { size: string; label: string }) => (
         <Fragment key={size}>
-          <Modal zIndex={1020} isDismissable size={size} state={states[size as 'sm' | 'md' | 'lg']} title="Sudden and magnificent" portalContainer={portalContainer ?? undefined}>
+          <Modal
+            zIndex={1020}
+            isDismissable
+            size={size}
+            state={states[size as 'sm' | 'md' | 'lg']}
+            title="Sudden and magnificent"
+            portalContainer={portalContainer ?? undefined}
+          >
             <ModalBody>
               <p>
-                The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black against a silvery climbing phosphorescence that grew and grew.
+                The line of the horizon was clear and hard against the sky, and in one particular quarter it showed
+                black against a silvery climbing phosphorescence that grew and grew.
               </p>
             </ModalBody>
             <ModalFooter
@@ -3357,7 +3406,9 @@ Use the appropriate modal size to suit your content. A modal will always respons
               secondaryOnClick={states[size as 'sm' | 'md' | 'lg'].close}
             />
           </Modal>
-          <Button soft look="primary" onClick={states[size as 'sm' | 'md' | 'lg'].open}>{label} modal</Button>
+          <Button soft look="primary" onClick={states[size as 'sm' | 'md' | 'lg'].open}>
+            {label} modal
+          </Button>
         </Fragment>
       ))}
     </div>
@@ -3377,7 +3428,14 @@ Modals are configurable. Choose how they are dismissed, whether they have a foot
 
   return (
     <div className="flex justify-center gap-2">
-      <Modal zIndex={1020} state={noFooterState} title="Modal title" isDismissable onClose={noFooterState.close} portalContainer={portalContainer ?? undefined}>
+      <Modal
+        zIndex={1020}
+        state={noFooterState}
+        title="Modal title"
+        isDismissable
+        onClose={noFooterState.close}
+        portalContainer={portalContainer ?? undefined}
+      >
         <ModalBody>
           <p>
             The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
@@ -3388,7 +3446,13 @@ Modals are configurable. Choose how they are dismissed, whether they have a foot
       <Button soft look="primary" onClick={noFooterState.open}>
         No footer
       </Button>
-      <Modal zIndex={1020} isKeyboardDismissDisabled state={noDismissState} title="Modal title" portalContainer={portalContainer ?? undefined}>
+      <Modal
+        zIndex={1020}
+        isKeyboardDismissDisabled
+        state={noDismissState}
+        title="Modal title"
+        portalContainer={portalContainer ?? undefined}
+      >
         <ModalBody>
           <p>
             The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
@@ -3443,7 +3507,6 @@ The modal is a generic component designed to work in as many scenarios as possib
 
 ---
 
-
 ## Pagination
 
 **Description:** Pagination is a component capable of helping the user navigate and give access to multiple pages of content or data.
@@ -3496,8 +3559,8 @@ The pagination component extends the button styles and provides another opportun
 ###### Accessibility in the HTML
 
 - `<nav aria-label="Page number">`: Provides a label that describes the type of navigation
-- `<button aria-current="page">` / `<a aria-current="page">`: Currently selected navigation item is marked with *aria-current*. Depending on how routing is implemented (updating state vs linking to a new URL), an anchor (link) element may be better suited.
-- `<span role="status">`: A visually hidden *span* element with “status” *role* is updated with the current page number text to notify assistive technologies
+- `<button aria-current="page">` / `<a aria-current="page">`: Currently selected navigation item is marked with _aria-current_. Depending on how routing is implemented (updating state vs linking to a new URL), an anchor (link) element may be better suited.
+- `<span role="status">`: A visually hidden _span_ element with “status” _role_ is updated with the current page number text to notify assistive technologies
 
 ###### Keyboard support
 
@@ -3512,7 +3575,6 @@ All components comply with WCAG 2.1 AA guidelines and Success Criteria. These fa
 Using a disabled button for 'Back' and 'Next' is acceptable in this instance provided it is coded correctly. In essence it's a complimentary function to the numbered buttons, as the user is not locked into a 'mode' and has another means of achieving the same results.
 
 ---
-
 
 ## Panels
 
@@ -3623,7 +3685,6 @@ The default panel uses colour in the header to increase visibility and branding.
 
 ---
 
-
 ## Popovers
 
 **Description:** Popovers are small, floating UI elements containing un-styled text that appear above the main content. Use them to display additional information without navigating the user away from what they are doing.
@@ -3665,10 +3726,8 @@ These popovers can appear with or without a heading. For accessibility reasons o
         />
       </div>
     </div>
-  )
-}
-
-
+  );
+};
 ```
 
 ```tsx
@@ -3696,20 +3755,27 @@ These popovers can appear with or without a heading. For accessibility reasons o
         </Popover>
       </div>
     </div>
-  )
-}
+  );
+};
 ```
 
 ```tsx
-<div><h4 className="typography-body-10 text-muted italic mb-3">Link</h4>
- <p className="mb-4">    
-  The popover can also be triggered by an inline
-      <Popover linkStyling className="ml-1" heading="Heading" content="Small overlays of content for housing secondary information. These are often used to provide explanatory information
-    for complex ideas." size="small">
-        link
-      </Popover>
-      .
-    </p>
+<div>
+  <h4 className="typography-body-10 text-muted italic mb-3">Link</h4>
+  <p className="mb-4">
+    The popover can also be triggered by an inline
+    <Popover
+      linkStyling
+      className="ml-1"
+      heading="Heading"
+      content="Small overlays of content for housing secondary information. These are often used to provide explanatory information
+    for complex ideas."
+      size="small"
+    >
+      link
+    </Popover>
+    .
+  </p>
 </div>
 ```
 
@@ -3732,15 +3798,15 @@ Popovers are designed to be small overlays of content housing secondary informat
 #### Accessibility Features
 
 - The user interacts with the button to toggle the panel – consistently whether using mouse, touch or keyboard. To hide the panel the user may toggle the button again or press the ‘Esc’ key.
-- As with similar components that hide/show content, this component follows a ‘user is in control’ approach. Rather than programmatically moving focus to the panel when shown, the toggle button has an *aria-expanded* attribute; the assistive technology user can choose to ‘arrow down’ to announce the panel content if they wish.
+- As with similar components that hide/show content, this component follows a ‘user is in control’ approach. Rather than programmatically moving focus to the panel when shown, the toggle button has an _aria-expanded_ attribute; the assistive technology user can choose to ‘arrow down’ to announce the panel content if they wish.
 - When the panel closes, focus returns to the button that originally toggled the panel
 - An indicator outline appears around the button toggle when focused
 - The button shape, text, icon content and panel is visible in Windows High Contrast Mode (WHCM). The button ‘look’ styling (colour) is not visible in WHCM.
 
 ###### Accessibility in the HTML
 
-- `<button aria-expanded="false|true" aria-controls="{PANEL_ID}">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The *aria-controls* attribute creates an association between toggle button and collapsible element (panel).
-- `<div id="{PANEL_ID}">`: The panel must have a unique *id* value. The toggle button *aria-controls* and panel *id* attribute values must match.
+- `<button aria-expanded="false|true" aria-controls="{PANEL_ID}">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The _aria-controls_ attribute creates an association between toggle button and collapsible element (panel).
+- `<div id="{PANEL_ID}">`: The panel must have a unique _id_ value. The toggle button _aria-controls_ and panel _id_ attribute values must match.
 
 ###### Keyboard support
 
@@ -3756,7 +3822,6 @@ All components comply with WCAG 2.1 AA guidelines and Success Criteria. These fa
 Our popover is user dismissed, the user selects the button, the dialog pops up and stays in its active state until the user dismisses it via the cross hair or by selecting the button again. This functionality has been chosen for usability and accessibility reasons, the user may wish to reference the information in the popover while performing another function e.g filling out a form field - which is not possible in the case of an auto-dismissed popover.
 
 ---
-
 
 ## Progress bar
 
@@ -3791,17 +3856,45 @@ We have two progress bar styles. With or without the percentage of progress visi
       <h2 className="typography-body-9 mb-1 font-bold">Skinny</h2>
       <ProgressBar look="skinny" value={barValue} className="mb-2" />
       <div className="flex space-x-1 items-center">
-        <Button size="small" disabled={barValue === 0} iconBefore={RemoveIcon} look="faint" soft onClick={() => handleProgress(-10)}>
+        <Button
+          size="small"
+          disabled={barValue === 0}
+          iconBefore={RemoveIcon}
+          look="faint"
+          soft
+          onClick={() => handleProgress(-10)}
+        >
           10%
         </Button>
-        <Button size="small" disabled={barValue === 0} iconBefore={RemoveIcon} look="faint" soft onClick={() => handleProgress(-1)}>
+        <Button
+          size="small"
+          disabled={barValue === 0}
+          iconBefore={RemoveIcon}
+          look="faint"
+          soft
+          onClick={() => handleProgress(-1)}
+        >
           1%
         </Button>
         <p className="flex-1 text-center">Use the +/- buttons below to demonstrate how the progress bar moves.</p>
-        <Button size="small" disabled={barValue === 100} iconBefore={AddIcon} look="faint" soft onClick={() => handleProgress(+1)}>
+        <Button
+          size="small"
+          disabled={barValue === 100}
+          iconBefore={AddIcon}
+          look="faint"
+          soft
+          onClick={() => handleProgress(+1)}
+        >
           1%
         </Button>
-        <Button size="small" disabled={barValue === 100} iconBefore={AddIcon} look="faint" soft onClick={() => handleProgress(+10)}>
+        <Button
+          size="small"
+          disabled={barValue === 100}
+          iconBefore={AddIcon}
+          look="faint"
+          soft
+          onClick={() => handleProgress(+10)}
+        >
           10%
         </Button>
       </div>
@@ -3847,7 +3940,6 @@ For speed, flexibility and consistency the progress bar is designed to work on a
 
 ---
 
-
 ## Progress indicator
 
 **Description:** Progress indicators are used to show a state of loading.
@@ -3862,27 +3954,38 @@ Use this Large size Progress indicator for page loads, this size can also includ
 
 ```tsx
 () => {
-  return <div className="flex items-top justify-center gap-3">
+  return (
+    <div className="flex items-top justify-center gap-3">
       <ProgressIndicator size="large" />
       <ProgressIndicator size="large" label="Loading..." />
       <ProgressIndicator size="large" icon={PadlockTickIcon} />
       <ProgressIndicator size="large" label="Signing in" icon={FingerprintIcon} />
-    </div>;
-}
+    </div>
+  );
+};
 ```
 
-The smaller sizes are suitable for use in components ie buttons or fields.  See [Loading guide](/guides/loading#loading-within-components) for component patterns.
+The smaller sizes are suitable for use in components ie buttons or fields. See [Loading guide](/guides/loading#loading-within-components) for component patterns.
 
 ```tsx
 () => {
-  return <div className="flex items-top justify-left gap-1">
-
-  <Button size="xlarge" iconAfter={ProgressIndicator} iconColor="white">Xlarge</Button> 
-  <Button size="large" iconAfter={ProgressIndicator} iconColor="white">Large</Button>  
-  <Button size="medium" iconAfter={ProgressIndicator} iconColor="white">Medium</Button>
-  <Button size="small" iconAfter={ProgressIndicator} iconColor="white">Small</Button>
-    </div>;
-}
+  return (
+    <div className="flex items-top justify-left gap-1">
+      <Button size="xlarge" iconAfter={ProgressIndicator} iconColor="white">
+        Xlarge
+      </Button>
+      <Button size="large" iconAfter={ProgressIndicator} iconColor="white">
+        Large
+      </Button>
+      <Button size="medium" iconAfter={ProgressIndicator} iconColor="white">
+        Medium
+      </Button>
+      <Button size="small" iconAfter={ProgressIndicator} iconColor="white">
+        Small
+      </Button>
+    </div>
+  );
+};
 ```
 
 ###### Dark backgrounds
@@ -3891,13 +3994,15 @@ The indicator can appear white for use on dark backgrounds.
 
 ```tsx
 () => {
-  return <div className="p-5 bg-surface-hero rounded-md flex items-top justify-center gap-3">
+  return (
+    <div className="p-5 bg-surface-hero rounded-md flex items-top justify-center gap-3">
       <ProgressIndicator size="large" color="mono" />
       <ProgressIndicator size="large" color="mono" label="Loading..." />
       <ProgressIndicator size="large" color="mono" icon={PadlockTickIcon} />
       <ProgressIndicator size="large" color="mono" label="Signing in" icon={FingerprintIcon} />
-    </div>;
-}
+    </div>
+  );
+};
 ```
 
 #### User Experience
@@ -3932,7 +4037,6 @@ All Design System components have been coded so they can be clearly announced, u
 
 ---
 
-
 ## Progress rope
 
 **Description:** The progress rope is a tool for signposting completion on long forms or applications and is designed to be used with the GEL forms framework.
@@ -3966,8 +4070,24 @@ The default progress rope is used for simple processes with only a small number 
       <ProgressRope current={activeIndex} data={PROGRESS_ROPE_DATA} />
       <Well className="p-2 sm:p-2 flex items-center">
         <div className="mr-2 flex items-center space-x-1">
-          <Button iconBefore={ArrowLeftIcon} soft look="faint" size="small" onClick={() => setActiveIndex(state => --state)}>prev</Button>{' '}
-          <Button iconAfter={ArrowRightIcon} soft look="faint" size="small" onClick={() => setActiveIndex(state => ++state)}>next</Button>
+          <Button
+            iconBefore={ArrowLeftIcon}
+            soft
+            look="faint"
+            size="small"
+            onClick={() => setActiveIndex(state => --state)}
+          >
+            prev
+          </Button>{' '}
+          <Button
+            iconAfter={ArrowRightIcon}
+            soft
+            look="faint"
+            size="small"
+            onClick={() => setActiveIndex(state => ++state)}
+          >
+            next
+          </Button>
         </div>
         <code className="flex">Current: {activeIndex}</code>
       </Well>
@@ -4091,15 +4211,14 @@ The progress rope indicates the steps required to complete the form and how the 
 
 - `<nav role="navigation" aria-label="In this form">`: Provides a label that describes the type of navigation
 - `<button aria-current="page">`: Applied to the current step button to indicate that it represents the current page
-- `<button aria-expanded="true|false" aria-controls="{ID}">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The *aria-controls* attribute creates an association between toggle button and collapsible element.
-- `<ol role="list" id="{ID}" aria-hidden="true|false">`: The collapsible element must have a unique *id* value. The toggle button *aria-controls* and collapsible element *id* attribute values must match. The collapsible element uses the *aria-hidden* attribute to hide from assistive technologies when no longer available.
+- `<button aria-expanded="true|false" aria-controls="{ID}">`: Identifies a button element that toggles a content collapse and indicates the state of a collapsible element below. The _aria-controls_ attribute creates an association between toggle button and collapsible element.
+- `<ol role="list" id="{ID}" aria-hidden="true|false">`: The collapsible element must have a unique _id_ value. The toggle button _aria-controls_ and collapsible element _id_ attribute values must match. The collapsible element uses the _aria-hidden_ attribute to hide from assistive technologies when no longer available.
 
 ###### Keyboard support
 
 Keyboard users navigate the Progress rope steps and group toggles as they would with a standard list of buttons.
 
 ---
-
 
 ## Radios
 
@@ -4115,7 +4234,6 @@ Keyboard users navigate the Progress rope steps and group toggles as they would 
 - Avoid changing the text styling of the radio label (size, colour etc).
 - Do make sure the taxonomy of the options you are offering makes sense as any ambiguity will only slow down or confuse the user.
 
-
 ```tsx
 <p className="typography-body-10">
   <span className="text-text-success font-bold">Do</span> - List radios vertically, this makes scanning choices faster
@@ -4123,20 +4241,17 @@ Keyboard users navigate the Progress rope steps and group toggles as they would 
 </p>
 ```
 
-
 ```tsx
 <p className="typography-body-10">
   <span className="text-text-danger font-bold">Avoid</span> - Placing more than two radios horizontally, side-by-side.
 </p>
 ```
 
-
 ```tsx
 <p className="typography-body-10">
   <span className="text-text-success font-bold">Do</span> - Use a consistent taxonomy
 </p>
 ```
-
 
 ```tsx
 <p className="typography-body-10">
@@ -4149,19 +4264,19 @@ Keyboard users navigate the Progress rope steps and group toggles as they would 
 All form elements have associated error states, see [Error messages](/design-system/wbc/content/guidelines/error-message) in our content guidelines for more.
 
 ```tsx
-  <RadioGroup 
-errorMessage="If there is an error it can go here"    
-hintMessage="These are large sized radios"
-    label="Select an option"
+<RadioGroup
+  errorMessage="If there is an error it can go here"
+  hintMessage="These are large sized radios"
+  label="Select an option"
   validationState="invalid"
-      className="col-span-1" 
-      size="large"
-      radios={[
-        { value: "Option 1", label: "Option 1" },
-        { value: "Option 2", label: "Option 2" },
-        { value: "Option 3", label: "Option 3" },
-      ]}
-    />
+  className="col-span-1"
+  size="large"
+  radios={[
+    { value: 'Option 1', label: 'Option 1' },
+    { value: 'Option 2', label: 'Option 2' },
+    { value: 'Option 3', label: 'Option 3' },
+  ]}
+/>
 ```
 
 #### Hint Text
@@ -4169,18 +4284,17 @@ hintMessage="These are large sized radios"
 This variation allows supporting text to be displayed below the selectable item. For use in scenarios where the options are complex and require further information for clarity, using the hint text prevents the labels becoming too long which can effect scanability. Hint text can be used with both Medium and Large sized radios.
 
 ```tsx
-
-  <RadioGroup 
+<RadioGroup
   hintMessage="These are large sized radios with hint text"
   label="Select an option"
-    className="col-span-1" 
-    size="large"
-    radios={[
-      { value: "Option 1", label: "Option 1", hint: "This is hint text" },
-      { value: "Option 2", label: "Option 2", hint: "This is hint text" },
-      { value: "Option 3", label: "Option 3", hint: "This is hint text" },
-    ]}
-  />
+  className="col-span-1"
+  size="large"
+  radios={[
+    { value: 'Option 1', label: 'Option 1', hint: 'This is hint text' },
+    { value: 'Option 2', label: 'Option 2', hint: 'This is hint text' },
+    { value: 'Option 3', label: 'Option 3', hint: 'This is hint text' },
+  ]}
+/>
 ```
 
 #### Horizontal Layout
@@ -4188,14 +4302,14 @@ This variation allows supporting text to be displayed below the selectable item.
 Use this option when you require an inline layout, it's only recommended in very specific circumstances and we suggest never having more than two radio buttons side-by-side.
 
 ```tsx
-<RadioGroup 
+<RadioGroup
   hintMessage="These are medium sized radios in a horizontal layout"
   label="Select an option"
   orientation="horizontal"
-size="medium"
+  size="medium"
   radios={[
-    { value: "Option 1", label: "Option 1" },
-    { value: "Option 2", label: "Option 2" },
+    { value: 'Option 1', label: 'Option 1' },
+    { value: 'Option 2', label: 'Option 2' },
   ]}
 />
 ```
@@ -4211,21 +4325,21 @@ The radio component has the ability to hide a configurable portion of the option
 - Reveal can be used with both Medium and Large sized radios.
 
 ```tsx
-  <RadioGroup 
-    hintMessage="These are large sized radios with more to reveal"
-    label="Select an option"
-      className="col-span-1" 
-      size="large"
-      showAmount={2}
-      radios={[
-        { value: "Option 1", label: "Option 1" },
-        { value: "Option 2", label: "Option 2" },
-        { value: "Option 3", label: "Option 3" },
-        { value: "Option 4", label: "Option 4" },
-        { value: "Option 5", label: "Option 5" },
-        { value: "Option 6", label: "Option 6" },
-      ]}
-    />
+<RadioGroup
+  hintMessage="These are large sized radios with more to reveal"
+  label="Select an option"
+  className="col-span-1"
+  size="large"
+  showAmount={2}
+  radios={[
+    { value: 'Option 1', label: 'Option 1' },
+    { value: 'Option 2', label: 'Option 2' },
+    { value: 'Option 3', label: 'Option 3' },
+    { value: 'Option 4', label: 'Option 4' },
+    { value: 'Option 5', label: 'Option 5' },
+    { value: 'Option 6', label: 'Option 6' },
+  ]}
+/>
 ```
 
 #### Sizes
@@ -4234,31 +4348,35 @@ There are two radio sizes, make sure when laying out forms that your radio size 
 
 ```tsx
 <div className="grid grid-cols-2">
-<div><h4 className="typography-body-10 text-text-muted italic mb-3">Medium</h4>
-  <RadioGroup 
-  hintMessage="These are medium sized radios"
-  label="Select an option"
-    className="col-span-1" 
-    size="medium"
-    radios={[
-      { value: "Option 1", label: "Option 1" },
-      { value: "Option 2", label: "Option 2" },
-      { value: "Option 3", label: "Option 3" },
-    ]}
-  /></div>
-<div><h4 className="typography-body-10 text-text-muted italic mb-3">Large</h4>  
-<RadioGroup 
-  hintMessage="These are large sized radios"
-  label="Select an option"
-    className="col-span-1" 
-    size="large"
-    radios={[
-      { value: "Option 1", label: "Option 1" },
-      { value: "Option 2", label: "Option 2" },
-      { value: "Option 3", label: "Option 3" },
-    ]}
-  />
-</div></div>
+  <div>
+    <h4 className="typography-body-10 text-text-muted italic mb-3">Medium</h4>
+    <RadioGroup
+      hintMessage="These are medium sized radios"
+      label="Select an option"
+      className="col-span-1"
+      size="medium"
+      radios={[
+        { value: 'Option 1', label: 'Option 1' },
+        { value: 'Option 2', label: 'Option 2' },
+        { value: 'Option 3', label: 'Option 3' },
+      ]}
+    />
+  </div>
+  <div>
+    <h4 className="typography-body-10 text-text-muted italic mb-3">Large</h4>
+    <RadioGroup
+      hintMessage="These are large sized radios"
+      label="Select an option"
+      className="col-span-1"
+      size="large"
+      radios={[
+        { value: 'Option 1', label: 'Option 1' },
+        { value: 'Option 2', label: 'Option 2' },
+        { value: 'Option 3', label: 'Option 3' },
+      ]}
+    />
+  </div>
+</div>
 ```
 
 #### User Experience
@@ -4308,7 +4426,7 @@ These issues have been addressed with the styling of the radio groups while maki
 
 ###### Keyboard support
 
-Navigation pattern is consistent with standard radio inputs; *arrow* keys change the selection.
+Navigation pattern is consistent with standard radio inputs; _arrow_ keys change the selection.
 
 #### Notes On Accessibility
 
@@ -4320,12 +4438,11 @@ The Design System radios have a large hit area to aid those with low vision and 
 
 ###### Understandable
 
-*Radios with reveal:* With regards to the reveal, due to accessibility challenges around focus, announcing with context, and navigation, the toggle should disappear on click.
+_Radios with reveal:_ With regards to the reveal, due to accessibility challenges around focus, announcing with context, and navigation, the toggle should disappear on click.
 
 To soften the impact of showing a long list, users are “forewarned” how many items are about to be revealed within the toggle, eg Show 12 more items. This is an important accessibility consideration that needs to be considered during design and implementation.
 
 ---
-
 
 ## Repeater
 
@@ -4498,7 +4615,6 @@ The “Add another item” button must always be left aligned in order to maximi
 
 ---
 
-
 ## Selects
 
 **Description:** Use selects, also known as dropdown menus or dropdown lists, when users are required to choose one option from a list of predefined choices.
@@ -4515,14 +4631,18 @@ The “Add another item” button must always be left aligned in order to maximi
 All form elements have associated error states, see [Error messages](/content/guidelines/error-message) in our content guidelines for more.
 
 ```tsx
-<Field label="Select an option" hintMessage="This is a select with labels" errorMessage="If there is an error it can go here">
-        <Select invalid>
-          <option value="option-1">Option 1</option>
-          <option value="option-2">Option 2</option>
-          <option value="option-3">Option 3</option>
-          <option value="option-4">Option 4</option>
-        </Select>
-      </Field>
+<Field
+  label="Select an option"
+  hintMessage="This is a select with labels"
+  errorMessage="If there is an error it can go here"
+>
+  <Select invalid>
+    <option value="option-1">Option 1</option>
+    <option value="option-2">Option 2</option>
+    <option value="option-3">Option 3</option>
+    <option value="option-4">Option 4</option>
+  </Select>
+</Field>
 ```
 
 #### Fixed Widths
@@ -4531,112 +4651,83 @@ Use fix width selects to help indicate the length of the data required. For exam
 
 ```tsx
 <div className="flex flex-col gap-2">
+  <Select size="medium" width={1}>
+    <React.Fragment key=".0">
+      <option value="W">W</option>
+    </React.Fragment>
+  </Select>
 
-<Select size="medium" width={1}>
-  <React.Fragment key=".0">
-    <option value="W">
-      W
-    </option>
-  </React.Fragment>
-</Select>
+  <Select size="medium" width={2}>
+    <React.Fragment key=".0">
+      <option value="WW">WW</option>
+    </React.Fragment>
+  </Select>
 
-<Select size="medium" width={2}>
-  <React.Fragment key=".0">
-    <option value="WW">
-      WW
-    </option>
-  </React.Fragment>
-</Select>
+  <Select size="medium" width={3}>
+    <React.Fragment key=".0">
+      <option value="WWW">WWW</option>
+    </React.Fragment>
+  </Select>
 
-<Select size="medium" width={3}>
-  <React.Fragment key=".0">
-    <option value="WWW">
-      WWW
-    </option>
-  </React.Fragment>
-</Select>
+  <Select size="medium" width={4}>
+    <React.Fragment key=".0">
+      <option value="WWWW">WWWW</option>
+    </React.Fragment>
+  </Select>
 
-<Select size="medium" width={4}>
-  <React.Fragment key=".0">
-    <option value="WWWW">
-      WWWW
-    </option>
-  </React.Fragment>
-</Select>
+  <Select size="medium" width={5}>
+    <React.Fragment key=".0">
+      <option value="WWWWW">WWWWW</option>
+    </React.Fragment>
+  </Select>
 
-<Select size="medium" width={5}>
-  <React.Fragment key=".0">
-    <option value="WWWWW">
-      WWWWW
-    </option>
-  </React.Fragment>
-</Select>
+  <Select size="medium" width={6}>
+    <React.Fragment key=".0">
+      <option value="WWWWWW">WWWWWW</option>
+    </React.Fragment>
+  </Select>
 
-<Select size="medium" width={6}>
-  <React.Fragment key=".0">
-    <option value="WWWWWW">
-      WWWWWW
-    </option>
-  </React.Fragment>
-</Select>
+  <Select size="medium" width={7}>
+    <React.Fragment key=".0">
+      <option value="WWWWWWW">WWWWWWW</option>
+    </React.Fragment>
+  </Select>
 
-<Select size="medium" width={7}>
-  <React.Fragment key=".0">
-    <option value="WWWWWWW">
-      WWWWWWW
-    </option>
-  </React.Fragment>
-</Select>
+  <Select size="medium" width={8}>
+    <React.Fragment key=".0">
+      <option value="WWWWWWWW">WWWWWWWW</option>
+    </React.Fragment>
+  </Select>
 
-<Select size="medium" width={8}>
-  <React.Fragment key=".0">
-    <option value="WWWWWWWW">
-      WWWWWWWW
-    </option>
-  </React.Fragment>
-</Select>
+  <Select size="medium" width={9}>
+    <React.Fragment key=".0">
+      <option value="WWWWWWWWW">WWWWWWWWW</option>
+    </React.Fragment>
+  </Select>
 
-<Select size="medium" width={9}>
-  <React.Fragment key=".0">
-    <option value="WWWWWWWWW">
-      WWWWWWWWW
-    </option>
-  </React.Fragment>
-</Select>
+  <Select size="medium" width={10}>
+    <React.Fragment key=".0">
+      <option value="WWWWWWWWWW">WWWWWWWWWW</option>
+    </React.Fragment>
+  </Select>
 
-<Select size="medium" width={10}>
-  <React.Fragment key=".0">
-    <option value="WWWWWWWWWW">
-      WWWWWWWWWW
-    </option>
-  </React.Fragment>
-</Select>
+  <Select size="medium" width={20}>
+    <React.Fragment key=".0">
+      <option value="WWWWWWWWWWWWWWWWWWWW">WWWWWWWWWWWWWWWWWWWW</option>
+    </React.Fragment>
+  </Select>
 
-<Select size="medium" width={20}>
-  <React.Fragment key=".0">
-    <option value="WWWWWWWWWWWWWWWWWWWW">
-      WWWWWWWWWWWWWWWWWWWW
-    </option>
-  </React.Fragment>
-</Select>
+  <Select size="medium" width={30}>
+    <React.Fragment key=".0">
+      <option value="WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW">WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</option>
+    </React.Fragment>
+  </Select>
 
-
-<Select size="medium" width={30}>
-  <React.Fragment key=".0">
-    <option value="WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW">
-      WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-    </option>
-  </React.Fragment>
-</Select>
-
-<Select size="medium" width="full">
-  <React.Fragment key=".0">
-    <option value="WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW">
-      WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-    </option>
-  </React.Fragment>
-</Select>
-
+  <Select size="medium" width="full">
+    <React.Fragment key=".0">
+      <option value="WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW">WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW</option>
+    </React.Fragment>
+  </Select>
 </div>
 ```
 
@@ -4646,13 +4737,13 @@ All inputs require labels for usability and accessibility.
 
 ```tsx
 <Field label="Select an option" hintMessage="This is a select with labels">
-        <Select >
-          <option value="option-1">Option 1</option>
-          <option value="option-2">Option 2</option>
-          <option value="option-3">Option 3</option>
-          <option value="option-4">Option 4</option>
-        </Select>
-      </Field>
+  <Select>
+    <option value="option-1">Option 1</option>
+    <option value="option-2">Option 2</option>
+    <option value="option-3">Option 3</option>
+    <option value="option-4">Option 4</option>
+  </Select>
+</Field>
 ```
 
 #### Sizes
@@ -4739,16 +4830,15 @@ All components comply with WCAG 2.1 AA guidelines and Success Criteria. These fa
 
 **Selects** - These fields have been carefully designed and tested to achieve optimal contrast and border line weight. This is crucial for users to quickly identify the element as a Select, providing significant assistance to individuals with low vision and those less familiar with prevailing web design trends. The border colour was modified from the original "Border" colour to a darker version named "Border Dark," to ensure ongoing compliance with WCAG colour contrast guidelines.
 
-**Labels** *-* Input labels should be placed above the input field. This helps promote scanning, readability and faster progress.
+**Labels** _-_ Input labels should be placed above the input field. This helps promote scanning, readability and faster progress.
 
-**Hint text** *-* Hint text should be placed directly under the input label for context. This also ensures on mobile the hint text is visible ‘on canvas’ and is not obscured by any select boxes or keypads when activated.
+**Hint text** _-_ Hint text should be placed directly under the input label for context. This also ensures on mobile the hint text is visible ‘on canvas’ and is not obscured by any select boxes or keypads when activated.
 
 ###### Robust
 
 A label and a form control should be associated with each other either implicitly or explicitly. Web browsers provide the label as a larger clickable area, for example, to select or activate the control. It also ensures that assistive technology can refer to the correct label when presenting a form control.
 
 ---
-
 
 ## Selector
 
@@ -4806,7 +4896,7 @@ The minimum content requirement is a label.
             <SelectorLabel>Label</SelectorLabel>
           </Selector.Radio>
         </Selector>
-      </GridItem> 
+      </GridItem>
     </Grid>
   );
 };
@@ -4855,7 +4945,7 @@ Any combination of these elements may be used as long as they are used consisten
           <SelectorLabel className="max-sm:typography-body-9 sm:typography-body-8 font-normal">
             $10,000.00
           </SelectorLabel>
-        </div>        
+        </div>
         <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
       </Selector.Radio>
       <SelectorRadio
@@ -4952,15 +5042,21 @@ The multi-select variation mimics the functionality of checkboxes, allowing mult
         >
           <SelectorCheckbox key="1" value="1">
             <SelectorLabel>Multi-select</SelectorLabel>
-            <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
+            <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">
+              Some supporting hint text can go here
+            </SelectorHint>
           </SelectorCheckbox>
           <SelectorCheckbox key="2" value="2">
             <SelectorLabel>Multi-select</SelectorLabel>
-            <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
+            <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">
+              Some supporting hint text can go here
+            </SelectorHint>
           </SelectorCheckbox>
           <SelectorCheckbox key="3" value="3">
             <SelectorLabel>Multi-select</SelectorLabel>
-            <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">Some supporting hint text can go here</SelectorHint>
+            <SelectorHint className="max-sm:typography-body-10 sm:typography-body-9">
+              Some supporting hint text can go here
+            </SelectorHint>
           </SelectorCheckbox>
         </Selector>
       </GridItem>
@@ -5022,7 +5118,7 @@ When the selector is used with the chevron, on desktop devices it will produce a
 
 - An indicator outline appears around the Selector option when focused
 - Selector behaves as radio, checkbox, button or link depending on requirements; implementation of each has been considered to provide an optimal experience for assistive technology users
-- Optionally use visually hidden text within hint text (e.g. When announcing a bank account: “*Bank account:* 123-456 123456”)
+- Optionally use visually hidden text within hint text (e.g. When announcing a bank account: “_Bank account:_ 123-456 123456”)
 - The Selector option text, icons and pictograms are visible in Windows High Contrast Mode (WHCM). The Selector option tick is rendered using CSS borders to ensure visibility in WHCM.
 
 ###### Accessibility in the HTML
@@ -5037,10 +5133,10 @@ When the selector is used with the chevron, on desktop devices it will produce a
 ###### Keyboard support
 
 - Navigation pattern is consistent with standard checkbox, radio, button or link inputs (depending on Selector type)
-- Checkbox: *tab* key navigates the options, *space* key toggles the selection
-- Radio: *arrow* keys change the selection
-- Button: *tab* key navigates the options, *space* or *enter* key toggles the selection
-- Link: *tab* key navigates the options, *enter* key triggers the link
+- Checkbox: _tab_ key navigates the options, _space_ key toggles the selection
+- Radio: _arrow_ keys change the selection
+- Button: _tab_ key navigates the options, _space_ or _enter_ key toggles the selection
+- Link: _tab_ key navigates the options, _enter_ key triggers the link
 
 #### Notes On Accessibility
 
@@ -5051,7 +5147,6 @@ All components comply with WCAG 2.1 AA guidelines and Success Criteria. These fa
 Selector options have a large hit area to aid those with low vision and those challenged with motor skills.
 
 ---
-
 
 ## Switches
 
@@ -5076,14 +5171,17 @@ Use block-level switches in small break points to align the label and element to
 - Do use the corresponding size when using switches with form inputs etc.
 - Don't use switches to answer Yes/No questions - they should reflect On/Off.
 
-
 ```tsx
-<p className="typography-body-10"><span className="text-text-success font-bold">Do</span> - Use switches to reflect On or Off.</p>
+<p className="typography-body-10">
+  <span className="text-text-success font-bold">Do</span> - Use switches to reflect On or Off.
+</p>
 ```
 
-
 ```tsx
-<p className="typography-body-10"><span className="text-text-danger font-bold">Avoid</span> - Using switches to indicate a Yes or No answer to a question.</p>
+<p className="typography-body-10">
+  <span className="text-text-danger font-bold">Avoid</span> - Using switches to indicate a Yes or No answer to a
+  question.
+</p>
 ```
 
 #### Responsive Breakpoint Control
@@ -5104,7 +5202,11 @@ As well as determining if the switch is a Block switch, the switch's size can al
     Small size switch becomes medium at the SM breakpoint, large at the MD breakpoint and Extra large at the LG
     breakpoint
   </em>
-  <Switch block size={{ initial: 'small', sm: 'medium', md: 'large', lg: 'xlarge' }} label="Small → Medium → Large → Extra large" />
+  <Switch
+    block
+    size={{ initial: 'small', sm: 'medium', md: 'large', lg: 'xlarge' }}
+    label="Small → Medium → Large → Extra large"
+  />
 </div>
 ```
 
@@ -5139,15 +5241,14 @@ Toggle switches inherit many of the button styles, they are designed to be subtl
 
 ###### Accessibility in the HTML
 
-- `<input type="checkbox" id="{ID}">`: Switch is defined as a (hidden) checkbox *input* and must have a unique *id* value. [React component: *id* is auto-generated]
-- `<label for="{ID}">`: Checkbox *input* is wrapped with a *label* element and uses explicit association (connected to the input using a *for* attribute) for optimal support in assistive technologies. [React component: *for* is auto-generated]
+- `<input type="checkbox" id="{ID}">`: Switch is defined as a (hidden) checkbox _input_ and must have a unique _id_ value. [React component: *id* is auto-generated]
+- `<label for="{ID}">`: Checkbox _input_ is wrapped with a _label_ element and uses explicit association (connected to the input using a _for_ attribute) for optimal support in assistive technologies. [React component: *for* is auto-generated]
 
 ###### Keyboard support
 
-- Navigation pattern is consistent with standard checkbox inputs; *tab* key navigates, *space* key toggles the selection
+- Navigation pattern is consistent with standard checkbox inputs; _tab_ key navigates, _space_ key toggles the selection
 
 ---
-
 
 ## Symbols
 
@@ -5190,7 +5291,6 @@ These symbols are updated when the 3rd party refreshes their brand or adds more 
 - `<svg role="img" focusable="false">`: Prevents the Symbol SVG element from being traversed by browsers that map the SVG to the ‘group’ role and from unnecessarily receiving focus in Internet Explorer (IE)
 
 ---
-
 
 ## Tables
 
@@ -5452,7 +5552,6 @@ As with most of the UI elements Tables have been designed to be as unobtrusive a
 
 ---
 
-
 ## Tabs
 
 **Description:** Tabs are grouped sets of hide/show panels. Use them to group and simplify large amounts of content such as product information.
@@ -5506,24 +5605,56 @@ The Rat said nothing, but stooped and unfastened a rope and hauled on it; then l
 <>
   <Accordion className="sm:hidden">
     <AccordionItem title="Mole">
-The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his throat and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was moving in the air above and in the earth below and around him, penetrating even his dark and lowly little house with its spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush on the floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without even waiting to put on his coat.
+      The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with
+      dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his
+      throat and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was
+      moving in the air above and in the earth below and around him, penetrating even his dark and lowly little house
+      with its spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush
+      on the floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without
+      even waiting to put on his coat.
     </AccordionItem>
     <AccordionItem title="Rat">
-The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat which the Mole had not observed. It was painted blue outside and white within, and was just the size for two animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses. The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated in the stern of a real boat.
+      The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat
+      which the Mole had not observed. It was painted blue outside and white within, and was just the size for two
+      animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses.
+      The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean
+      on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated
+      in the stern of a real boat.
     </AccordionItem>
     <AccordionItem title="Toad">
-‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and took to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last year it was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He was going to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of it, and starts on something fresh.’
+      ‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals
+      looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and
+      took to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last
+      year it was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He
+      was going to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of
+      it, and starts on something fresh.’
     </AccordionItem>
   </Accordion>
   <Tabs className="max-sm:hidden">
     <TabsPanel title="Mole">
-The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his throat and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was moving in the air above and in the earth below and around him, penetrating even his dark and lowly little house with its spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush on the floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without even waiting to put on his coat.
+      The Mole had been working very hard all the morning, spring-cleaning his little home. First with brooms, then with
+      dusters; then on ladders and steps and chairs, with a brush and a pail of whitewash; till he had dust in his
+      throat and eyes, and splashes of whitewash all over his black fur, and an aching back and weary arms. Spring was
+      moving in the air above and in the earth below and around him, penetrating even his dark and lowly little house
+      with its spirit of divine discontent and longing. It was small wonder, then, that he suddenly flung down his brush
+      on the floor, said ‘Bother!’ and ‘O blow!’ and also ‘Hang spring-cleaning!’ and bolted out of the house without
+      even waiting to put on his coat.
     </TabsPanel>
     <TabsPanel title="Rat">
-The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat which the Mole had not observed. It was painted blue outside and white within, and was just the size for two animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses. The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated in the stern of a real boat.
+      The Rat said nothing, but stooped and unfastened a rope and hauled on it; then lightly stepped into a little boat
+      which the Mole had not observed. It was painted blue outside and white within, and was just the size for two
+      animals; and the Mole’s whole heart went out to it at once, even though he did not yet fully understand its uses.
+      The Rat sculled smartly across and made fast. Then he held up his forepaw as the Mole stepped gingerly down. ‘Lean
+      on that!’ he said. ‘Now then, step lively!’ and the Mole to his surprise and rapture found himself actually seated
+      in the stern of a real boat.
     </TabsPanel>
     <TabsPanel title="Toad">
-‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and took to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last year it was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He was going to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of it, and starts on something fresh.’
+      ‘Toad’s out, for one,’ replied the Otter. ‘In his brand-new wager-boat; new togs, new everything!’ The two animals
+      looked at each other and laughed. ‘Once, it was nothing but sailing,’ said the Rat, ‘Then he tired of that and
+      took to punting. Nothing would please him but to punt all day and every day, and a nice mess he made of it. Last
+      year it was house-boating, and we all had to go and stay with him in his house-boat, and pretend we liked it. He
+      was going to spend the rest of his life in a house-boat. It’s all the same, whatever he takes up; he gets tired of
+      it, and starts on something fresh.’
     </TabsPanel>
   </Tabs>
 </>
@@ -5542,7 +5673,7 @@ This component is useful when trying to simplify and group content for users to 
 
 #### Visual Design
 
-Tabs and Accordions can have one of two styles applied to them *Default* and *Lego*:
+Tabs and Accordions can have one of two styles applied to them _Default_ and _Lego_:
 
 The **Default style** is designed to be subtle and understated while still providing a clear indication of which tab or accordion bar is selected, and its related content. To further reinforce this relationship a transition is used to display related content when a tab or accordion bar is selected. Generous padding provides a larger hit area and important breathing space to provide emphasis without adding noise.
 
@@ -5568,7 +5699,6 @@ Keyboard users navigate the tabset as a set of buttons, rather than ‘tabs’. 
 
 ---
 
-
 ## Text areas
 
 **Description:** Use text areas when users are required to input and edit multiple lines of text.
@@ -5585,9 +5715,9 @@ Keyboard users navigate the tabset as a set of buttons, rather than ‘tabs’. 
 All form elements have associated error states, see [Error messages](/content/guidelines/error-message) in our content guidelines for more.
 
 ```tsx
-  <InputGroup label="Label" hint="Hint text"  errorMessage="If there is an error it can go here">
-          <Textarea invalid />
-        </InputGroup>
+<InputGroup label="Label" hint="Hint text" errorMessage="If there is an error it can go here">
+  <Textarea invalid />
+</InputGroup>
 ```
 
 #### Sizes
@@ -5615,9 +5745,9 @@ Text areas come in four sizes, they dictate the size of the displayed input text
 Use the [Input group](/components/input-group) component to accessibly define the labels used with Text areas and [Inputs](/components/input). All inputs require labels for usability and accessibility.
 
 ```tsx
-  <InputGroup label="Label" hint="Hint text" >
-          <Textarea />
-        </InputGroup>
+<InputGroup label="Label" hint="Hint text">
+  <Textarea />
+</InputGroup>
 ```
 
 #### User Experience
@@ -5676,16 +5806,15 @@ All components comply with WCAG 2.1 AA guidelines and Success Criteria. These fa
 
 **Text areas** - These fields have been carefully designed and tested to achieve optimal contrast and border line weight. This is crucial for users to quickly identify the element as a Select, providing significant assistance to individuals with low vision and those less familiar with prevailing web design trends. The border colour was modified from the original "Border" colour to a darker version named "Border Dark," to ensure ongoing compliance with WCAG colour contrast guidelines.
 
-**Labels** *-* Input labels should be placed above the input field. This helps promote scanning, readability and faster progress.
+**Labels** _-_ Input labels should be placed above the input field. This helps promote scanning, readability and faster progress.
 
-**Hint text** *-* Hint text should be placed directly under the input label for context. This also ensures on mobile the hint text is visible ‘on canvas’ and is not obscured by any select boxes or keypads when activated.
+**Hint text** _-_ Hint text should be placed directly under the input label for context. This also ensures on mobile the hint text is visible ‘on canvas’ and is not obscured by any select boxes or keypads when activated.
 
 ###### Robust
 
 A label and a form control should be associated with each other either implicitly or explicitly. Web browsers provide the label as a larger clickable area, for example, to select or activate the control. It also ensures that assistive technology can refer to the correct label when presenting a form control.
 
 ---
-
 
 ## Wells
 
@@ -5702,19 +5831,19 @@ Choose the colour of your well and the background it appears on to help your con
   <Well className="typography-body-10 mb-3">
     It was a bright morning in the early part of summer; the river had resumed its wonted banks and its accustomed pace,
     and a hot sun seemed to be pulling everything green and bushy and spiky up out of the earth towards him, as if by
-    strings. The Mole and the Water Rat had been up since dawn, very busy on matters connected with boats and the opening
-    of the boating season; painting and varnishing, mending paddles, repairing cushions, hunting for missing boat-hooks,
-    and so on; and were finishing breakfast in their little parlour and eagerly discussing their plans for the day, when a
-    heavy knock sounded at the door.
+    strings. The Mole and the Water Rat had been up since dawn, very busy on matters connected with boats and the
+    opening of the boating season; painting and varnishing, mending paddles, repairing cushions, hunting for missing
+    boat-hooks, and so on; and were finishing breakfast in their little parlour and eagerly discussing their plans for
+    the day, when a heavy knock sounded at the door.
   </Well>
 
   <Well color="white" className="typography-body-10 mb-3">
     It was a bright morning in the early part of summer; the river had resumed its wonted banks and its accustomed pace,
     and a hot sun seemed to be pulling everything green and bushy and spiky up out of the earth towards him, as if by
-    strings. The Mole and the Water Rat had been up since dawn, very busy on matters connected with boats and the opening
-    of the boating season; painting and varnishing, mending paddles, repairing cushions, hunting for missing boat-hooks,
-    and so on; and were finishing breakfast in their little parlour and eagerly discussing their plans for the day, when a
-    heavy knock sounded at the door.
+    strings. The Mole and the Water Rat had been up since dawn, very busy on matters connected with boats and the
+    opening of the boating season; painting and varnishing, mending paddles, repairing cushions, hunting for missing
+    boat-hooks, and so on; and were finishing breakfast in their little parlour and eagerly discussing their plans for
+    the day, when a heavy knock sounded at the door.
   </Well>
 </>
 ```

@@ -1,6 +1,6 @@
 ---
 name: installing-westpac-ui
-description: "Guides setup and installation of @westpac/ui and @westpac/style-config in a new project. Use when setting up GEL, installing the design system, configuring Tailwind CSS, theming, or brand fonts."
+description: 'Guides setup and installation of @westpac/ui and @westpac/style-config in a new project. Use when setting up GEL, installing the design system, configuring Tailwind CSS, theming, or brand fonts.'
 ---
 
 # Installing @westpac/ui
@@ -40,10 +40,10 @@ In your main CSS file, add these imports:
 
 ```css
 @import 'tailwindcss';
-@import '@westpac/style-config/tailwind';   /* GEL theme config (typography, spacing, etc.) */
-@import '@westpac/style-config/themes/wbc';  /* Brand color tokens — import each brand you need */
+@import '@westpac/style-config/tailwind'; /* GEL theme config (typography, spacing, etc.) */
+@import '@westpac/style-config/themes/wbc'; /* Brand color tokens — import each brand you need */
 
-@source "./node_modules/@westpac/ui/src";   /* Enable Tailwind to scan component class names */
+@source "./node_modules/@westpac/ui/src"; /* Enable Tailwind to scan component class names */
 ```
 
 ## 4. Enable Brand Theming
@@ -65,6 +65,7 @@ Or on any container element:
 ```
 
 Available brands:
+
 - `wbc` — Westpac Banking Corporation
 - `stg` — St.George Bank
 - `bom` — Bank of Melbourne
@@ -82,9 +83,7 @@ Import each brand's theme CSS that you need:
 For multi-brand applications, dynamically switch with the `data-brand` attribute:
 
 ```tsx
-<div data-brand={currentBrand}>
-  {/* Your app content */}
-</div>
+<div data-brand={currentBrand}>{/* Your app content */}</div>
 ```
 
 > **Note:** Dark mode (`data-theme="dark"`) is disabled in the current release.

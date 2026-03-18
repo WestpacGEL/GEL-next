@@ -1,6 +1,6 @@
 ---
 name: reviewing-gel-component
-description: "Reviews GEL design system components for convention compliance, accessibility, and best practices. Use when reviewing a component, checking component quality, or auditing GEL components."
+description: 'Reviews GEL design system components for convention compliance, accessibility, and best practices. Use when reviewing a component, checking component quality, or auditing GEL components.'
 ---
 
 # Reviewing a GEL Component
@@ -74,6 +74,7 @@ Reviews components in `packages/ui/src/components/` against the conventions defi
 ## Severity Levels
 
 ### Critical
+
 - Missing `'use client'` on components with hooks
 - Hardcoded colors instead of design tokens
 - Missing `forwardRef` on components rendering native elements
@@ -81,12 +82,14 @@ Reviews components in `packages/ui/src/components/` against the conventions defi
 - Missing `.js` extensions in imports
 
 ### Warnings
+
 - Missing JSDoc `@default` tags
 - No responsive variant support where beneficial
 - Minimal test coverage
 - Missing `aria-*` attributes on interactive elements
 
 ### Style
+
 - Using `React.FC` instead of function declarations
 - Inconsistent prop destructuring order
 - Styles not using `slots` for multi-element components

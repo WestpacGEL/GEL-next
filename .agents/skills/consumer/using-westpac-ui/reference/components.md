@@ -16,77 +16,77 @@ Components use `tailwind-variants` (`tv()`) for styling. The `className` you pas
 
 These components pass `className` through `styles({ className })` or `styles.base({ className })`. Your classes are intelligently merged with and can override the component's built-in Tailwind classes:
 
-| Component | Merge Target | What You Can Override |
-|-----------|-------------|----------------------|
-| **Accordion** | Root `div` | Border, rounded corners, flex layout |
-| **AccordionItem** | Root element | Item-level styles |
-| **Alert** | Root element (base slot) | Padding, border, background, text color |
-| **Autocomplete** | Root `div` (base slot) | Wrapper layout |
-| **Badge** | Root element | Padding, border-radius, font size, colors |
-| **Button** | Root element (base slot) | Height, padding, border-radius, colors, font. Cannot target inner `text` or `icon` slots |
-| **ButtonGroup** | Root `div` (base slot) | Flex layout, gap |
-| **CheckboxGroup** | Root `div` (base slot) | Layout, gap |
-| **Circle** | Root element | Size, background, colors |
-| **Collapsible** | Root element (base slot) | Wrapper styles |
-| **DatePicker** | Root `div` (base slot) | Wrapper layout |
-| **Dropdown** | Root element (base slot) | Button-level styles |
-| **ErrorMessage** | Root element (base slot) | Text, spacing |
-| **FlexiCell** | Root element (base slot) | Padding, border, layout |
-| **Footer** | Root `footer` (base slot) | Background, padding |
-| **Grid** | Root element | Layout, gap |
-| **Header** | Root `header` (base slot) | Background, positioning, z-index |
-| **Heading** | Root heading element | Font size, color, margin |
-| **Hint** | Root element | Text color, spacing |
-| **Icon** | Root `svg` | Size, color |
-| **Input** | Root `input` | Height, padding, border, background, font |
-| **InputGroup** | Root element (base slot) | Wrapper layout |
-| **Label** | Root `label`/`legend` | Font size, color, spacing |
-| **Link** | Root `a` (base slot) | Text color, decoration |
-| **List** | Root `ul`/`ol` (base slot) | Spacing, list style |
-| **ListItem** | Root `li` (base slot) | Item spacing |
-| **Modal** | Backdrop (base slot) | Backdrop color, z-index |
-| **ModalBody** | Root `div` (base slot) | Padding, overflow |
-| **ModalFooter** | Root `div` (base slot) | Padding, layout |
-| **Pagination** | Root element (base slot) | Layout, spacing |
-| **Panel** | Root `div` (base slot) | Border, background |
-| **PassCode** | Root `div` (base slot) | Layout |
-| **PassCodeView** | Root element (base slot) | Layout |
-| **Pictogram** | Root `span` | Size |
-| **Popover** | Root `div` (base slot) | Background, border, shadow |
-| **ProgressBar** | Root element (base slot) | Width, height |
-| **ProgressIndicator** | Root SVG (base slot) | Size |
-| **RadioGroup** | Root `div` (base slot) | Layout, gap |
-| **Select** | Passed to internal `StyledSelect` | Height, padding, border, background |
-| **SkipLink** | Root element | Positioning |
-| **Switch** | Root `label` (base slot) | Layout |
-| **Symbol** | Root `span` | Size |
-| **Table** | Root `table` (base slot) | Width, border |
-| **Tabs** | Root `div` (base slot) | Layout |
-| **Textarea** | Root `textarea` | Height, padding, border, background |
-| **VisuallyHidden** | Root element | Overriding defeats the purpose of this component |
-| **Well** | Root element | Padding, background, border-radius |
+| Component             | Merge Target                      | What You Can Override                                                                    |
+| --------------------- | --------------------------------- | ---------------------------------------------------------------------------------------- |
+| **Accordion**         | Root `div`                        | Border, rounded corners, flex layout                                                     |
+| **AccordionItem**     | Root element                      | Item-level styles                                                                        |
+| **Alert**             | Root element (base slot)          | Padding, border, background, text color                                                  |
+| **Autocomplete**      | Root `div` (base slot)            | Wrapper layout                                                                           |
+| **Badge**             | Root element                      | Padding, border-radius, font size, colors                                                |
+| **Button**            | Root element (base slot)          | Height, padding, border-radius, colors, font. Cannot target inner `text` or `icon` slots |
+| **ButtonGroup**       | Root `div` (base slot)            | Flex layout, gap                                                                         |
+| **CheckboxGroup**     | Root `div` (base slot)            | Layout, gap                                                                              |
+| **Circle**            | Root element                      | Size, background, colors                                                                 |
+| **Collapsible**       | Root element (base slot)          | Wrapper styles                                                                           |
+| **DatePicker**        | Root `div` (base slot)            | Wrapper layout                                                                           |
+| **Dropdown**          | Root element (base slot)          | Button-level styles                                                                      |
+| **ErrorMessage**      | Root element (base slot)          | Text, spacing                                                                            |
+| **FlexiCell**         | Root element (base slot)          | Padding, border, layout                                                                  |
+| **Footer**            | Root `footer` (base slot)         | Background, padding                                                                      |
+| **Grid**              | Root element                      | Layout, gap                                                                              |
+| **Header**            | Root `header` (base slot)         | Background, positioning, z-index                                                         |
+| **Heading**           | Root heading element              | Font size, color, margin                                                                 |
+| **Hint**              | Root element                      | Text color, spacing                                                                      |
+| **Icon**              | Root `svg`                        | Size, color                                                                              |
+| **Input**             | Root `input`                      | Height, padding, border, background, font                                                |
+| **InputGroup**        | Root element (base slot)          | Wrapper layout                                                                           |
+| **Label**             | Root `label`/`legend`             | Font size, color, spacing                                                                |
+| **Link**              | Root `a` (base slot)              | Text color, decoration                                                                   |
+| **List**              | Root `ul`/`ol` (base slot)        | Spacing, list style                                                                      |
+| **ListItem**          | Root `li` (base slot)             | Item spacing                                                                             |
+| **Modal**             | Backdrop (base slot)              | Backdrop color, z-index                                                                  |
+| **ModalBody**         | Root `div` (base slot)            | Padding, overflow                                                                        |
+| **ModalFooter**       | Root `div` (base slot)            | Padding, layout                                                                          |
+| **Pagination**        | Root element (base slot)          | Layout, spacing                                                                          |
+| **Panel**             | Root `div` (base slot)            | Border, background                                                                       |
+| **PassCode**          | Root `div` (base slot)            | Layout                                                                                   |
+| **PassCodeView**      | Root element (base slot)          | Layout                                                                                   |
+| **Pictogram**         | Root `span`                       | Size                                                                                     |
+| **Popover**           | Root `div` (base slot)            | Background, border, shadow                                                               |
+| **ProgressBar**       | Root element (base slot)          | Width, height                                                                            |
+| **ProgressIndicator** | Root SVG (base slot)              | Size                                                                                     |
+| **RadioGroup**        | Root `div` (base slot)            | Layout, gap                                                                              |
+| **Select**            | Passed to internal `StyledSelect` | Height, padding, border, background                                                      |
+| **SkipLink**          | Root element                      | Positioning                                                                              |
+| **Switch**            | Root `label` (base slot)          | Layout                                                                                   |
+| **Symbol**            | Root `span`                       | Size                                                                                     |
+| **Table**             | Root `table` (base slot)          | Width, border                                                                            |
+| **Tabs**              | Root `div` (base slot)            | Layout                                                                                   |
+| **Textarea**          | Root `textarea`                   | Height, padding, border, background                                                      |
+| **VisuallyHidden**    | Root element                      | Overriding defeats the purpose of this component                                         |
+| **Well**              | Root element                      | Padding, background, border-radius                                                       |
 
 ### Components with Direct className Pass-through
 
 These components pass `className` directly to an HTML element without tailwind-variants merging. Your classes are appended as-is (standard React className behaviour — last class wins only if specificity matches):
 
-| Component | Element | Notes |
-|-----------|---------|-------|
-| **Breadcrumb** | `<nav>` | Directly applied, no merging with built-in styles |
-| **Field** | Root `div` | Directly applied, no built-in root styles to conflict with |
-| **ProgressRope** | Root `nav` | Directly applied, internal `<ol>` has its own styles |
+| Component        | Element    | Notes                                                      |
+| ---------------- | ---------- | ---------------------------------------------------------- |
+| **Breadcrumb**   | `<nav>`    | Directly applied, no merging with built-in styles          |
+| **Field**        | Root `div` | Directly applied, no built-in root styles to conflict with |
+| **ProgressRope** | Root `nav` | Directly applied, internal `<ol>` has its own styles       |
 
 ### Components where className is Not Explicitly Handled
 
 These components do **not** destructure `className` — it may flow through via `...props` to an internal component, but behaviour is not guaranteed:
 
-| Component | Notes |
-|-----------|-------|
-| **BottomSheet** | Props spread to internal `BottomSheetModal` |
-| **Compacta** | Props spread to wrapper `div` |
+| Component       | Notes                                                |
+| --------------- | ---------------------------------------------------- |
+| **BottomSheet** | Props spread to internal `BottomSheetModal`          |
+| **Compacta**    | Props spread to wrapper `div`                        |
 | **MultiSelect** | Not destructured; internal structure handles styling |
-| **Repeater** | Props spread to wrapper `div` |
-| **Selector** | Delegates to internal sub-components |
+| **Repeater**    | Props spread to wrapper `div`                        |
+| **Selector**    | Delegates to internal sub-components                 |
 
 ### Usage Examples
 
@@ -121,18 +121,22 @@ These components do **not** destructure `className` — it may flow through via 
 
 Expandable content panels. Multiple panels can be open simultaneously.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `look` | `ResponsiveVariants<'soft' \| 'lego'>` | `soft` | Visual style |
-| `rounded` | `ResponsiveVariants<boolean>` | `true` | Rounded corners |
-| `justify` | `boolean` | `false` | Stretch tab to fill content |
+| Prop      | Type                                   | Default | Description                 |
+| --------- | -------------------------------------- | ------- | --------------------------- |
+| `look`    | `ResponsiveVariants<'soft' \| 'lego'>` | `soft`  | Visual style                |
+| `rounded` | `ResponsiveVariants<boolean>`          | `true`  | Rounded corners             |
+| `justify` | `boolean`                              | `false` | Stretch tab to fill content |
 
 **Compound:** Requires `AccordionItem` children with `id`, `title`, and `key` props.
 
 ```tsx
 <Accordion look="soft" rounded>
-  <AccordionItem key="1" id="1" title="Section 1">Content 1</AccordionItem>
-  <AccordionItem key="2" id="2" title="Section 2">Content 2</AccordionItem>
+  <AccordionItem key="1" id="1" title="Section 1">
+    Content 1
+  </AccordionItem>
+  <AccordionItem key="2" id="2" title="Section 2">
+    Content 2
+  </AccordionItem>
 </Accordion>
 ```
 
@@ -146,18 +150,18 @@ Expandable content panels. Multiple panels can be open simultaneously.
 
 Contextual feedback messages.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `look` | `ResponsiveVariants<'info' \| 'success' \| 'warning' \| 'danger' \| 'system'>` | `info` | Alert style |
-| `mode` | `ResponsiveVariants<'box' \| 'text'>` | `box` | Display mode |
-| `heading` | `string` | — | Alert heading |
-| `headingTag` | `'h1'-'h6'` | `h2` | Heading element |
-| `icon` | `React.ElementType` | auto | Custom icon (auto-selected by look) |
-| `iconSize` | `IconProps['size']` | — | Icon size |
-| `dismissible` | `boolean` | `false` | Allow dismissal |
-| `onClose` | `() => void` | — | Close callback |
-| `open` | `boolean` | — | Controlled open state |
-| `tag` | `keyof JSX.IntrinsicElements` | `div` | HTML element |
+| Prop          | Type                                                                           | Default | Description                         |
+| ------------- | ------------------------------------------------------------------------------ | ------- | ----------------------------------- |
+| `look`        | `ResponsiveVariants<'info' \| 'success' \| 'warning' \| 'danger' \| 'system'>` | `info`  | Alert style                         |
+| `mode`        | `ResponsiveVariants<'box' \| 'text'>`                                          | `box`   | Display mode                        |
+| `heading`     | `string`                                                                       | —       | Alert heading                       |
+| `headingTag`  | `'h1'-'h6'`                                                                    | `h2`    | Heading element                     |
+| `icon`        | `React.ElementType`                                                            | auto    | Custom icon (auto-selected by look) |
+| `iconSize`    | `IconProps['size']`                                                            | —       | Icon size                           |
+| `dismissible` | `boolean`                                                                      | `false` | Allow dismissal                     |
+| `onClose`     | `() => void`                                                                   | —       | Close callback                      |
+| `open`        | `boolean`                                                                      | —       | Controlled open state               |
+| `tag`         | `keyof JSX.IntrinsicElements`                                                  | `div`   | HTML element                        |
 
 ```tsx
 <Alert look="success" heading="Done!" dismissible onClose={() => {}}>
@@ -175,19 +179,19 @@ Contextual feedback messages.
 
 Searchable dropdown with filtering.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `ResponsiveVariants<'small' \| 'medium' \| 'large' \| 'xlarge'>` | — | Input size |
-| `width` | `ResponsiveVariants<...>` | — | Input width |
-| `invalid` | `boolean` | — | Invalid state |
-| `isDisabled` | `boolean` | — | Disabled state |
-| `errorMessage` | `string \| string[]` | — | Error messages |
-| `hintMessage` | `HintProps['children']` | — | Hint text |
-| `noOptionsMessage` | `ReactNode` | — | No results message |
-| `loadingState` | `boolean` | — | Show loading spinner |
-| `footer` | `ReactNode` | — | Footer element |
-| `name` | `string` | — | Form field name |
-| `portalContainer` | `Element` | — | Portal container |
+| Prop               | Type                                                             | Default | Description          |
+| ------------------ | ---------------------------------------------------------------- | ------- | -------------------- |
+| `size`             | `ResponsiveVariants<'small' \| 'medium' \| 'large' \| 'xlarge'>` | —       | Input size           |
+| `width`            | `ResponsiveVariants<...>`                                        | —       | Input width          |
+| `invalid`          | `boolean`                                                        | —       | Invalid state        |
+| `isDisabled`       | `boolean`                                                        | —       | Disabled state       |
+| `errorMessage`     | `string \| string[]`                                             | —       | Error messages       |
+| `hintMessage`      | `HintProps['children']`                                          | —       | Hint text            |
+| `noOptionsMessage` | `ReactNode`                                                      | —       | No results message   |
+| `loadingState`     | `boolean`                                                        | —       | Show loading spinner |
+| `footer`           | `ReactNode`                                                      | —       | Footer element       |
+| `name`             | `string`                                                         | —       | Form field name      |
+| `portalContainer`  | `Element`                                                        | —       | Portal container     |
 
 ```tsx
 <Autocomplete label="Search" onSelectionChange={key => console.log(key)}>
@@ -206,15 +210,17 @@ Searchable dropdown with filtering.
 
 Small status labels.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `color` | `ResponsiveVariants<'hero' \| 'neutral' \| 'faint' \| 'primary' \| 'info' \| 'success' \| 'warning' \| 'danger'>` | `hero` | Badge color |
-| `type` | `ResponsiveVariants<'default' \| 'pill'>` | `default` | Badge shape |
-| `soft` | `ResponsiveVariants<boolean>` | `false` | Soft/muted style |
-| `tag` | `keyof JSX.IntrinsicElements` | `div` | HTML element |
+| Prop    | Type                                                                                                              | Default   | Description      |
+| ------- | ----------------------------------------------------------------------------------------------------------------- | --------- | ---------------- |
+| `color` | `ResponsiveVariants<'hero' \| 'neutral' \| 'faint' \| 'primary' \| 'info' \| 'success' \| 'warning' \| 'danger'>` | `hero`    | Badge color      |
+| `type`  | `ResponsiveVariants<'default' \| 'pill'>`                                                                         | `default` | Badge shape      |
+| `soft`  | `ResponsiveVariants<boolean>`                                                                                     | `false`   | Soft/muted style |
+| `tag`   | `keyof JSX.IntrinsicElements`                                                                                     | `div`     | HTML element     |
 
 ```tsx
-<Badge color="success" type="pill">Active</Badge>
+<Badge color="success" type="pill">
+  Active
+</Badge>
 ```
 
 **Capabilities:** Responsive color/type/soft · Polymorphic tag · Pill or default shape
@@ -227,14 +233,14 @@ Small status labels.
 
 Mobile-friendly bottom drawer.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `state` | `OverlayTriggerState` | — | Controlled open/close (react-stately) |
-| `title` | `string` | — | Sheet title |
-| `primaryLabel` | `string` | — | Primary button text |
-| `primaryOnClick` | `() => void` | — | Primary button handler |
-| `secondaryLabel` | `string` | — | Secondary button text |
-| `secondaryOnClick` | `() => void` | — | Secondary button handler |
+| Prop               | Type                  | Default | Description                           |
+| ------------------ | --------------------- | ------- | ------------------------------------- |
+| `state`            | `OverlayTriggerState` | —       | Controlled open/close (react-stately) |
+| `title`            | `string`              | —       | Sheet title                           |
+| `primaryLabel`     | `string`              | —       | Primary button text                   |
+| `primaryOnClick`   | `() => void`          | —       | Primary button handler                |
+| `secondaryLabel`   | `string`              | —       | Secondary button text                 |
+| `secondaryOnClick` | `() => void`          | —       | Secondary button handler              |
 
 ```tsx
 import { useOverlayTriggerState } from 'react-stately';
@@ -275,20 +281,20 @@ Navigation breadcrumbs.
 
 Interactive button with multiple variants.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `look` | `ResponsiveVariants<'primary' \| 'hero' \| 'faint' \| 'link' \| 'unstyled'>` | `hero` | Visual style |
-| `size` | `ResponsiveVariants<'small' \| 'medium' \| 'large' \| 'xlarge'>` | `medium` | Button size |
-| `soft` | `ResponsiveVariants<boolean>` | — | Soft/outlined style |
-| `block` | `ResponsiveVariants<boolean>` | `false` | Full width |
-| `justify` | `ResponsiveVariants<boolean>` | `false` | Justify content with flex |
-| `iconBefore` | `(props: IconProps) => JSX.Element` | — | Icon before text |
-| `iconAfter` | `(props: IconProps) => JSX.Element` | — | Icon after text |
-| `iconColor` | `IconProps['color']` | auto | Icon color |
-| `iconLook` | `IconProps['look']` | `filled` | Icon look |
-| `iconSize` | `IconProps['size']` | auto | Icon size |
-| `tag` | `'a' \| 'span' \| 'button' \| 'div'` | `button` | HTML element |
-| `removeLinkPadding` | `boolean` | `false` | Remove padding on link look |
+| Prop                | Type                                                                         | Default  | Description                 |
+| ------------------- | ---------------------------------------------------------------------------- | -------- | --------------------------- |
+| `look`              | `ResponsiveVariants<'primary' \| 'hero' \| 'faint' \| 'link' \| 'unstyled'>` | `hero`   | Visual style                |
+| `size`              | `ResponsiveVariants<'small' \| 'medium' \| 'large' \| 'xlarge'>`             | `medium` | Button size                 |
+| `soft`              | `ResponsiveVariants<boolean>`                                                | —        | Soft/outlined style         |
+| `block`             | `ResponsiveVariants<boolean>`                                                | `false`  | Full width                  |
+| `justify`           | `ResponsiveVariants<boolean>`                                                | `false`  | Justify content with flex   |
+| `iconBefore`        | `(props: IconProps) => JSX.Element`                                          | —        | Icon before text            |
+| `iconAfter`         | `(props: IconProps) => JSX.Element`                                          | —        | Icon after text             |
+| `iconColor`         | `IconProps['color']`                                                         | auto     | Icon color                  |
+| `iconLook`          | `IconProps['look']`                                                          | `filled` | Icon look                   |
+| `iconSize`          | `IconProps['size']`                                                          | auto     | Icon size                   |
+| `tag`               | `'a' \| 'span' \| 'button' \| 'div'`                                         | `button` | HTML element                |
+| `removeLinkPadding` | `boolean`                                                                    | `false`  | Remove padding on link look |
 
 ```tsx
 import { ArrowRightIcon } from '@westpac/ui/icon';
@@ -310,15 +316,15 @@ import { ArrowRightIcon } from '@westpac/ui/icon';
 
 Toggle button group with single or multiple selection.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `look` | `ResponsiveVariants<'hero' \| 'primary'>` | — | Button look |
-| `size` | `ButtonProps['size']` | — | Button size |
-| `block` | `ResponsiveVariants<boolean>` | — | Full width |
-| `selectionMode` | `'single' \| 'multiple'` | — | Selection mode |
-| `selectedKeys` | `Key \| Iterable<Key>` | — | Controlled selection |
-| `defaultSelectedKeys` | `Key \| Iterable<Key>` | — | Default selection |
-| `onSelectionChange` | `(key) => void` | — | Selection handler |
+| Prop                  | Type                                      | Default | Description          |
+| --------------------- | ----------------------------------------- | ------- | -------------------- |
+| `look`                | `ResponsiveVariants<'hero' \| 'primary'>` | —       | Button look          |
+| `size`                | `ButtonProps['size']`                     | —       | Button size          |
+| `block`               | `ResponsiveVariants<boolean>`             | —       | Full width           |
+| `selectionMode`       | `'single' \| 'multiple'`                  | —       | Selection mode       |
+| `selectedKeys`        | `Key \| Iterable<Key>`                    | —       | Controlled selection |
+| `defaultSelectedKeys` | `Key \| Iterable<Key>`                    | —       | Default selection    |
+| `onSelectionChange`   | `(key) => void`                           | —       | Selection handler    |
 
 ```tsx
 <ButtonGroup selectionMode="single" defaultSelectedKeys="opt1" onSelectionChange={key => {}}>
@@ -337,14 +343,14 @@ Toggle button group with single or multiple selection.
 
 Group of checkboxes.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `ResponsiveVariants<'medium' \| 'large'>` | — | Checkbox size |
-| `orientation` | `ResponsiveVariants<'horizontal' \| 'vertical'>` | — | Layout direction |
-| `errorMessage` | `string \| string[]` | — | Error messages |
-| `hintMessage` | `HintProps['children']` | — | Hint text |
-| `showAmount` | `number` | — | Show N items then reveal button |
-| `checkboxes` | `CheckboxGroupCheckboxProps[]` | — | Data-driven alternative |
+| Prop           | Type                                             | Default | Description                     |
+| -------------- | ------------------------------------------------ | ------- | ------------------------------- |
+| `size`         | `ResponsiveVariants<'medium' \| 'large'>`        | —       | Checkbox size                   |
+| `orientation`  | `ResponsiveVariants<'horizontal' \| 'vertical'>` | —       | Layout direction                |
+| `errorMessage` | `string \| string[]`                             | —       | Error messages                  |
+| `hintMessage`  | `HintProps['children']`                          | —       | Hint text                       |
+| `showAmount`   | `number`                                         | —       | Show N items then reveal button |
+| `checkboxes`   | `CheckboxGroupCheckboxProps[]`                   | —       | Data-driven alternative         |
 
 ```tsx
 <CheckboxGroup label="Options" orientation="vertical">
@@ -363,9 +369,9 @@ Group of checkboxes.
 
 Circular container element.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `tag` | `keyof JSX.IntrinsicElements` | — | HTML element |
+| Prop  | Type                          | Default | Description  |
+| ----- | ----------------------------- | ------- | ------------ |
+| `tag` | `keyof JSX.IntrinsicElements` | —       | HTML element |
 
 ---
 
@@ -375,18 +381,18 @@ Circular container element.
 
 Toggle-able content section.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `text` | `string` | — | Toggle button text |
-| `open` | `boolean` | — | Open state |
-| `onClick` | `() => void` | — | Toggle handler |
-| `size` | `ButtonProps['size']` | — | Button size |
+| Prop      | Type                  | Default | Description        |
+| --------- | --------------------- | ------- | ------------------ |
+| `text`    | `string`              | —       | Toggle button text |
+| `open`    | `boolean`             | —       | Open state         |
+| `onClick` | `() => void`          | —       | Toggle handler     |
+| `size`    | `ButtonProps['size']` | —       | Button size        |
 
 ```tsx
 const [open, setOpen] = useState(false);
 <Collapsible text="Show more" open={open} onClick={() => setOpen(!open)}>
   Hidden content
-</Collapsible>
+</Collapsible>;
 ```
 
 **Capabilities:** Controlled open/close · Button size customization
@@ -399,10 +405,10 @@ const [open, setOpen] = useState(false);
 
 Compact list with add functionality.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `onAdd` | `() => unknown` | — | Add callback |
-| `addText` | `string` | — | Add button text |
+| Prop      | Type            | Default | Description     |
+| --------- | --------------- | ------- | --------------- |
+| `onAdd`   | `() => unknown` | —       | Add callback    |
+| `addText` | `string`        | —       | Add button text |
 
 **Capabilities:** Compound component with CompactaItem · Add button
 
@@ -414,16 +420,16 @@ Compact list with add functionality.
 
 Date selection with calendar popup.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `ResponsiveVariants<...>` | — | Input size |
-| `block` | `ResponsiveVariants<...>` | — | Full width |
-| `separator` | `string` | `"/"` | Date field separator |
-| `placement` | `'top left' \| 'top right' \| 'bottom left' \| 'bottom right'` | `bottom left` | Calendar placement |
-| `bottomSheetView` | `boolean \| Partial<Record<Breakpoint, boolean>>` | — | Bottom sheet on mobile |
-| `disableWeekends` | `boolean` | — | Disable weekends |
-| `disableDaysOfWeek` | `number[]` | — | Disable specific days |
-| `portalContainer` | `Element` | — | Portal container |
+| Prop                | Type                                                           | Default       | Description            |
+| ------------------- | -------------------------------------------------------------- | ------------- | ---------------------- |
+| `size`              | `ResponsiveVariants<...>`                                      | —             | Input size             |
+| `block`             | `ResponsiveVariants<...>`                                      | —             | Full width             |
+| `separator`         | `string`                                                       | `"/"`         | Date field separator   |
+| `placement`         | `'top left' \| 'top right' \| 'bottom left' \| 'bottom right'` | `bottom left` | Calendar placement     |
+| `bottomSheetView`   | `boolean \| Partial<Record<Breakpoint, boolean>>`              | —             | Bottom sheet on mobile |
+| `disableWeekends`   | `boolean`                                                      | —             | Disable weekends       |
+| `disableDaysOfWeek` | `number[]`                                                     | —             | Disable specific days  |
+| `portalContainer`   | `Element`                                                      | —             | Portal container       |
 
 ```tsx
 import { parseDate } from '@internationalized/date';
@@ -442,19 +448,19 @@ import { parseDate } from '@internationalized/date';
 
 Button with dropdown panel.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `text` | `ReactNode` | — | Button text |
-| `look` | `'primary' \| 'hero' \| 'faint' \| 'unstyled' \| 'link'` | — | Button look |
-| `soft` | `ButtonProps['soft']` | — | Soft button style |
-| `size` | `ButtonProps['size']` | — | Button size |
-| `block` | `ButtonProps['block']` | — | Full width |
-| `dropdownSize` | `ResponsiveVariants<...>` | — | Panel size |
-| `open` | `boolean` | — | Controlled open state |
-| `placement` | `Placement` | — | Popover placement |
-| `iconBefore` | `ButtonProps['iconBefore']` | — | Button icon |
-| `dropDownIcon` | `(props: IconProps) => ReactNode` | — | Custom dropdown icon |
-| `portalContainer` | `Element` | — | Portal container |
+| Prop              | Type                                                     | Default | Description           |
+| ----------------- | -------------------------------------------------------- | ------- | --------------------- |
+| `text`            | `ReactNode`                                              | —       | Button text           |
+| `look`            | `'primary' \| 'hero' \| 'faint' \| 'unstyled' \| 'link'` | —       | Button look           |
+| `soft`            | `ButtonProps['soft']`                                    | —       | Soft button style     |
+| `size`            | `ButtonProps['size']`                                    | —       | Button size           |
+| `block`           | `ButtonProps['block']`                                   | —       | Full width            |
+| `dropdownSize`    | `ResponsiveVariants<...>`                                | —       | Panel size            |
+| `open`            | `boolean`                                                | —       | Controlled open state |
+| `placement`       | `Placement`                                              | —       | Popover placement     |
+| `iconBefore`      | `ButtonProps['iconBefore']`                              | —       | Button icon           |
+| `dropDownIcon`    | `(props: IconProps) => ReactNode`                        | —       | Custom dropdown icon  |
+| `portalContainer` | `Element`                                                | —       | Portal container      |
 
 ```tsx
 <Dropdown text="Options" look="primary">
@@ -474,11 +480,11 @@ Button with dropdown panel.
 
 Form field error display.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `message` | `string \| string[]` | — | Error message(s) |
-| `icon` | `(...args) => JSX.Element` | — | Custom icon |
-| `tag` | `keyof JSX.IntrinsicElements` | — | HTML element |
+| Prop      | Type                          | Default | Description      |
+| --------- | ----------------------------- | ------- | ---------------- |
+| `message` | `string \| string[]`          | —       | Error message(s) |
+| `icon`    | `(...args) => JSX.Element`    | —       | Custom icon      |
+| `tag`     | `keyof JSX.IntrinsicElements` | —       | HTML element     |
 
 ---
 
@@ -488,13 +494,13 @@ Form field error display.
 
 Form field wrapper with label, hint, and error message.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `label` | `string` | — | Field label |
-| `errorMessage` | `string \| string[]` | — | Error messages |
-| `hintMessage` | `HintProps['children']` | — | Hint text |
-| `labelSize` | `LabelProps['size']` | — | Label size |
-| `tag` | `keyof JSX.IntrinsicElements` | — | HTML element |
+| Prop           | Type                          | Default | Description    |
+| -------------- | ----------------------------- | ------- | -------------- |
+| `label`        | `string`                      | —       | Field label    |
+| `errorMessage` | `string \| string[]`          | —       | Error messages |
+| `hintMessage`  | `HintProps['children']`       | —       | Hint text      |
+| `labelSize`    | `LabelProps['size']`          | —       | Label size     |
+| `tag`          | `keyof JSX.IntrinsicElements` | —       | HTML element   |
 
 ```tsx
 <Field label="Email" errorMessage="Email is required">
@@ -534,19 +540,19 @@ Filter bar with inputs and action buttons.
 
 Flexible content cell for lists and cards.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `before` | `ReactNode` | — | Left element |
-| `after` | `ReactNode` | — | Right element |
-| `body` | `boolean` | — | Wrap in FlexiCellBody |
-| `size` | `ResponsiveVariants<...>` | `default` | Padding/spacing |
-| `tag` | `keyof JSX.IntrinsicElements` | `div` | HTML element |
-| `href` | `string` | — | Link href |
-| `withArrow` | `boolean` | — | Arrow indicator |
-| `withBorder` | `ResponsiveVariants<boolean>` | `false` | Border and radius |
-| `topBadge` | `(props: BadgeProps) => JSX.Element` | — | Top-right badge |
-| `dualAction` | `boolean` | `false` | Dual action mode |
-| `disabled` | `boolean` | — | Disabled state |
+| Prop         | Type                                 | Default   | Description           |
+| ------------ | ------------------------------------ | --------- | --------------------- |
+| `before`     | `ReactNode`                          | —         | Left element          |
+| `after`      | `ReactNode`                          | —         | Right element         |
+| `body`       | `boolean`                            | —         | Wrap in FlexiCellBody |
+| `size`       | `ResponsiveVariants<...>`            | `default` | Padding/spacing       |
+| `tag`        | `keyof JSX.IntrinsicElements`        | `div`     | HTML element          |
+| `href`       | `string`                             | —         | Link href             |
+| `withArrow`  | `boolean`                            | —         | Arrow indicator       |
+| `withBorder` | `ResponsiveVariants<boolean>`        | `false`   | Border and radius     |
+| `topBadge`   | `(props: BadgeProps) => JSX.Element` | —         | Top-right badge       |
+| `dualAction` | `boolean`                            | `false`   | Dual action mode      |
+| `disabled`   | `boolean`                            | —         | Disabled state        |
 
 **Capabilities:** Rich compound component · Polymorphic tag · Link or button mode · Dual action · Responsive size/border · Before/after adornments · Top badge
 
@@ -558,13 +564,13 @@ Flexible content cell for lists and cards.
 
 Application footer with brand logo.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `brand` | `'bom' \| 'bsa' \| 'stg' \| 'wbc'` | — | Brand logo |
-| `hideLogo` | `boolean` | — | Hide logo |
-| `logoLink` | `string` | — | Logo link href |
-| `logoAssistiveText` | `string` | — | Logo aria-label |
-| `offsetSidebar` | `boolean` | — | Offset for sidebar layout |
+| Prop                | Type                               | Default | Description               |
+| ------------------- | ---------------------------------- | ------- | ------------------------- |
+| `brand`             | `'bom' \| 'bsa' \| 'stg' \| 'wbc'` | —       | Brand logo                |
+| `hideLogo`          | `boolean`                          | —       | Hide logo                 |
+| `logoLink`          | `string`                           | —       | Logo link href            |
+| `logoAssistiveText` | `string`                           | —       | Logo aria-label           |
+| `offsetSidebar`     | `boolean`                          | —       | Offset for sidebar layout |
 
 ---
 
@@ -593,17 +599,17 @@ Layout grid system.
 
 Application header with brand logo and navigation controls.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `brand` | `'bom' \| 'bsa' \| 'stg' \| 'wbc'` | — | Brand logo |
-| `fixed` | `ResponsiveVariants<boolean>` | — | Fixed position |
-| `fixedMaxWidth` | `CSS MaxWidth` | — | Max width when fixed |
-| `logoLink` | `string` | `#` | Logo link |
-| `logoCenter` | `ResponsiveVariants<boolean>` | — | Center logo |
-| `leftIcon` | `ResponsiveVariants<'arrow' \| 'burger'>` | — | Left button icon |
-| `leftOnClick` | `() => void` | — | Left button handler |
-| `isScrolled` | `boolean` | — | Show scroll shadow |
-| `skipToContentId` | `string` | — | Skip link target |
+| Prop              | Type                                      | Default | Description          |
+| ----------------- | ----------------------------------------- | ------- | -------------------- |
+| `brand`           | `'bom' \| 'bsa' \| 'stg' \| 'wbc'`        | —       | Brand logo           |
+| `fixed`           | `ResponsiveVariants<boolean>`             | —       | Fixed position       |
+| `fixedMaxWidth`   | `CSS MaxWidth`                            | —       | Max width when fixed |
+| `logoLink`        | `string`                                  | `#`     | Logo link            |
+| `logoCenter`      | `ResponsiveVariants<boolean>`             | —       | Center logo          |
+| `leftIcon`        | `ResponsiveVariants<'arrow' \| 'burger'>` | —       | Left button icon     |
+| `leftOnClick`     | `() => void`                              | —       | Left button handler  |
+| `isScrolled`      | `boolean`                                 | —       | Show scroll shadow   |
+| `skipToContentId` | `string`                                  | —       | Skip link target     |
 
 **Capabilities:** Responsive fixed/logoCenter/leftIcon · Brand-aware logo · Skip link support · Scroll shadow
 
@@ -615,12 +621,12 @@ Application header with brand logo and navigation controls.
 
 Semantic heading with GEL typography.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `ResponsiveVariants<1-10>` | — | Heading size (required) |
-| `tag` | `'h1'-'h6'` | auto | Semantic element (auto from size) |
-| `brandHeading` | `ResponsiveVariants<boolean>` | — | Brand heading style |
-| `uppercase` | `boolean` | — | Uppercase |
+| Prop           | Type                          | Default | Description                       |
+| -------------- | ----------------------------- | ------- | --------------------------------- |
+| `size`         | `ResponsiveVariants<1-10>`    | —       | Heading size (required)           |
+| `tag`          | `'h1'-'h6'`                   | auto    | Semantic element (auto from size) |
+| `brandHeading` | `ResponsiveVariants<boolean>` | —       | Brand heading style               |
+| `uppercase`    | `boolean`                     | —       | Uppercase                         |
 
 ```tsx
 <Heading size={3} tag="h1">Page Title</Heading>
@@ -637,10 +643,10 @@ Semantic heading with GEL typography.
 
 Form field hint text.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `spacing` | `ResponsiveVariants<...>` | — | Spacing |
-| `tag` | `keyof JSX.IntrinsicElements` | — | HTML element |
+| Prop      | Type                          | Default | Description  |
+| --------- | ----------------------------- | ------- | ------------ |
+| `spacing` | `ResponsiveVariants<...>`     | —       | Spacing      |
+| `tag`     | `keyof JSX.IntrinsicElements` | —       | HTML element |
 
 ---
 
@@ -652,17 +658,17 @@ Form field hint text.
 
 Over 260 SVG icons.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `look` | `'filled' \| 'outlined'` | `filled` | Icon variant |
-| `size` | `ResponsiveVariants<'xsmall' \| 'small' \| 'medium' \| 'large' \| 'xlarge'>` | — | Icon size |
-| `color` | `ResponsiveVariants<...>` | — | Icon color |
-| `copyrightYear` | `string` | — | SVG copyright |
+| Prop            | Type                                                                         | Default  | Description   |
+| --------------- | ---------------------------------------------------------------------------- | -------- | ------------- |
+| `look`          | `'filled' \| 'outlined'`                                                     | `filled` | Icon variant  |
+| `size`          | `ResponsiveVariants<'xsmall' \| 'small' \| 'medium' \| 'large' \| 'xlarge'>` | —        | Icon size     |
+| `color`         | `ResponsiveVariants<...>`                                                    | —        | Icon color    |
+| `copyrightYear` | `string`                                                                     | —        | SVG copyright |
 
 ```tsx
 import { ArrowRightIcon } from '@westpac/ui/icon';
 
-<ArrowRightIcon size="medium" look="outlined" color="primary" />
+<ArrowRightIcon size="medium" look="outlined" color="primary" />;
 ```
 
 **Capabilities:** Responsive size/color · Filled and outlined variants · Used as component references in Button/Link props
@@ -675,11 +681,11 @@ import { ArrowRightIcon } from '@westpac/ui/icon';
 
 Text input field.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `ResponsiveVariants<'small' \| 'medium' \| 'large' \| 'xlarge'>` | `medium` | Input size |
-| `width` | `ResponsiveVariants<'full' \| ...>` | `full` | Input width |
-| `invalid` | `boolean` | `false` | Invalid state |
+| Prop      | Type                                                             | Default  | Description   |
+| --------- | ---------------------------------------------------------------- | -------- | ------------- |
+| `size`    | `ResponsiveVariants<'small' \| 'medium' \| 'large' \| 'xlarge'>` | `medium` | Input size    |
+| `width`   | `ResponsiveVariants<'full' \| ...>`                              | `full`   | Input width   |
+| `invalid` | `boolean`                                                        | `false`  | Invalid state |
 
 ```tsx
 <Input size="large" placeholder="Enter text" />
@@ -696,16 +702,16 @@ Text input field.
 
 Input with label, hint, error, and before/after add-ons.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `label` | `string` | — | Label text |
-| `size` | `'small' \| 'medium' \| 'large' \| 'xlarge'` | — | Size |
-| `width` | `InputProps['width']` | — | Input width |
-| `before` | `ReactNode \| { element?, icon?, inset? }` | — | Before add-on |
-| `after` | `ReactNode \| { element?, icon?, inset? }` | — | After add-on |
-| `errorMessage` | `string \| string[]` | — | Error messages |
-| `hint` | `ReactNode` | — | Hint text |
-| `supportingText` | `ReactNode` | — | Supporting text |
+| Prop             | Type                                         | Default | Description     |
+| ---------------- | -------------------------------------------- | ------- | --------------- |
+| `label`          | `string`                                     | —       | Label text      |
+| `size`           | `'small' \| 'medium' \| 'large' \| 'xlarge'` | —       | Size            |
+| `width`          | `InputProps['width']`                        | —       | Input width     |
+| `before`         | `ReactNode \| { element?, icon?, inset? }`   | —       | Before add-on   |
+| `after`          | `ReactNode \| { element?, icon?, inset? }`   | —       | After add-on    |
+| `errorMessage`   | `string \| string[]`                         | —       | Error messages  |
+| `hint`           | `ReactNode`                                  | —       | Hint text       |
+| `supportingText` | `ReactNode`                                  | —       | Supporting text |
 
 ```tsx
 <InputGroup label="Amount" before={{ element: '$' }} after={{ element: '.00' }}>
@@ -723,13 +729,13 @@ Input with label, hint, error, and before/after add-ons.
 
 Form field label.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `ResponsiveVariants<...>` | — | Label size |
-| `spacing` | `ResponsiveVariants<...>` | — | Spacing |
-| `srOnly` | `boolean` | — | Screen reader only |
-| `tag` | `'label' \| 'legend'` | — | HTML element |
-| `htmlFor` | `string` | — | Associated input id |
+| Prop      | Type                      | Default | Description         |
+| --------- | ------------------------- | ------- | ------------------- |
+| `size`    | `ResponsiveVariants<...>` | —       | Label size          |
+| `spacing` | `ResponsiveVariants<...>` | —       | Spacing             |
+| `srOnly`  | `boolean`                 | —       | Screen reader only  |
+| `tag`     | `'label' \| 'legend'`     | —       | HTML element        |
+| `htmlFor` | `string`                  | —       | Associated input id |
 
 ---
 
@@ -739,16 +745,18 @@ Form field label.
 
 Styled anchor link.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `type` | `'inline' \| 'standalone'` | `standalone` | Link type |
-| `underline` | `boolean` | `true` | Show underline (inline) |
-| `iconBefore` | `(props: IconProps) => JSX.Element` | — | Icon before |
-| `iconAfter` | `(props: IconProps) => JSX.Element` | — | Icon after |
-| `iconSize` | `'xsmall'-'xlarge'` | `small` | Icon size |
+| Prop         | Type                                | Default      | Description             |
+| ------------ | ----------------------------------- | ------------ | ----------------------- |
+| `type`       | `'inline' \| 'standalone'`          | `standalone` | Link type               |
+| `underline`  | `boolean`                           | `true`       | Show underline (inline) |
+| `iconBefore` | `(props: IconProps) => JSX.Element` | —            | Icon before             |
+| `iconAfter`  | `(props: IconProps) => JSX.Element` | —            | Icon after              |
+| `iconSize`   | `'xsmall'-'xlarge'`                 | `small`      | Icon size               |
 
 ```tsx
-<Link href="/page" type="standalone" iconAfter={ArrowRightIcon}>Learn more</Link>
+<Link href="/page" type="standalone" iconAfter={ArrowRightIcon}>
+  Learn more
+</Link>
 ```
 
 **Capabilities:** Inline or standalone · Icons before/after · Built on react-aria link
@@ -761,13 +769,13 @@ Styled anchor link.
 
 Styled lists with various bullet types.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `type` | `'bullet' \| 'link' \| 'tick' \| 'cross' \| 'unstyled' \| 'icon' \| 'ordered'` | — | Bullet type |
-| `look` | `'primary' \| 'hero' \| 'success' \| 'danger' \| 'link'` | — | Color |
-| `icon` | `(props: IconProps) => JSX.Element` | — | Custom icon |
-| `spacing` | `'medium' \| 'large'` | — | Spacing |
-| `nested` | `number` | — | Nesting level |
+| Prop      | Type                                                                           | Default | Description   |
+| --------- | ------------------------------------------------------------------------------ | ------- | ------------- |
+| `type`    | `'bullet' \| 'link' \| 'tick' \| 'cross' \| 'unstyled' \| 'icon' \| 'ordered'` | —       | Bullet type   |
+| `look`    | `'primary' \| 'hero' \| 'success' \| 'danger' \| 'link'`                       | —       | Color         |
+| `icon`    | `(props: IconProps) => JSX.Element`                                            | —       | Custom icon   |
+| `spacing` | `'medium' \| 'large'`                                                          | —       | Spacing       |
+| `nested`  | `number`                                                                       | —       | Nesting level |
 
 ```tsx
 <List type="tick" look="success">
@@ -786,13 +794,13 @@ Styled lists with various bullet types.
 
 Dialog overlay.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `ResponsiveVariants<...>` | — | Modal size |
-| `fullscreen` | `boolean` | — | Fullscreen mode |
-| `backdropClassName` | `string` | — | Backdrop styles |
-| `open` (on backdrop) | via ModalBackdropProps | — | Open state |
-| `onClose` (on backdrop) | via ModalBackdropProps | — | Close handler |
+| Prop                    | Type                      | Default | Description     |
+| ----------------------- | ------------------------- | ------- | --------------- |
+| `size`                  | `ResponsiveVariants<...>` | —       | Modal size      |
+| `fullscreen`            | `boolean`                 | —       | Fullscreen mode |
+| `backdropClassName`     | `string`                  | —       | Backdrop styles |
+| `open` (on backdrop)    | via ModalBackdropProps    | —       | Open state      |
+| `onClose` (on backdrop) | via ModalBackdropProps    | —       | Close handler   |
 
 ```tsx
 const [open, setOpen] = useState(false);
@@ -921,12 +929,12 @@ Repeatable form sections with add/remove.
 
 Native `<select>` dropdown.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `ResponsiveVariants<...>` | `medium` | Select size |
-| `width` | `ResponsiveVariants<...>` | `auto` | Select width |
-| `invalid` | `boolean` | `false` | Invalid state |
-| `enableTooltip` | `boolean` | `false` | Title tooltip for truncation |
+| Prop            | Type                      | Default  | Description                  |
+| --------------- | ------------------------- | -------- | ---------------------------- |
+| `size`          | `ResponsiveVariants<...>` | `medium` | Select size                  |
+| `width`         | `ResponsiveVariants<...>` | `auto`   | Select width                 |
+| `invalid`       | `boolean`                 | `false`  | Invalid state                |
+| `enableTooltip` | `boolean`                 | `false`  | Title tooltip for truncation |
 
 ```tsx
 <Select size="large">
@@ -987,19 +995,23 @@ Data table component.
 
 Tabbed content panels.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `look` | `ResponsiveVariants<...>` | — | Tab style |
-| `orientation` | `ResponsiveVariants<'horizontal' \| 'vertical'>` | — | Layout |
-| `color` | `TabsTabProps['color']` | — | Tab color |
-| `justify` | `boolean` | — | Full width tabs |
-| `sticky` | `ResponsiveVariants<boolean>` | — | Sticky position |
-| `stickyOffset` | `{ top?, bottom?, left?, right? }` | — | Sticky offset |
+| Prop           | Type                                             | Default | Description     |
+| -------------- | ------------------------------------------------ | ------- | --------------- |
+| `look`         | `ResponsiveVariants<...>`                        | —       | Tab style       |
+| `orientation`  | `ResponsiveVariants<'horizontal' \| 'vertical'>` | —       | Layout          |
+| `color`        | `TabsTabProps['color']`                          | —       | Tab color       |
+| `justify`      | `boolean`                                        | —       | Full width tabs |
+| `sticky`       | `ResponsiveVariants<boolean>`                    | —       | Sticky position |
+| `stickyOffset` | `{ top?, bottom?, left?, right? }`               | —       | Sticky offset   |
 
 ```tsx
 <Tabs>
-  <TabsPanel key="1" title="Tab 1">Content 1</TabsPanel>
-  <TabsPanel key="2" title="Tab 2">Content 2</TabsPanel>
+  <TabsPanel key="1" title="Tab 1">
+    Content 1
+  </TabsPanel>
+  <TabsPanel key="2" title="Tab 2">
+    Content 2
+  </TabsPanel>
 </Tabs>
 ```
 

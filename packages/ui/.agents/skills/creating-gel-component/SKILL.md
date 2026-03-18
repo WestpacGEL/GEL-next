@@ -1,6 +1,6 @@
 ---
 name: creating-gel-component
-description: "Scaffolds a new GEL design system UI component following project conventions. Use when creating a new component, adding a component, or scaffolding a component in packages/ui."
+description: 'Scaffolds a new GEL design system UI component following project conventions. Use when creating a new component, adding a component, or scaffolding a component in packages/ui.'
 ---
 
 # Creating a GEL Component
@@ -148,5 +148,6 @@ export * from './{kebab-case-name}/index.js';
 ### 8. Verify
 
 Run these commands from `packages/ui/`:
+
 - `pnpm vitest run src/components/{kebab-case-name}` — Run tests
 - `pnpm build` — Verify build

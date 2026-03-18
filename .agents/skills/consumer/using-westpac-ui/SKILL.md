@@ -1,6 +1,6 @@
 ---
 name: using-westpac-ui
-description: "Guides consumers of the @westpac/ui component library on correct usage, capabilities, and patterns. Use when asking how to use a GEL component, whether a component supports a feature, or how to implement a UI pattern with @westpac/ui."
+description: 'Guides consumers of the @westpac/ui component library on correct usage, capabilities, and patterns. Use when asking how to use a GEL component, whether a component supports a feature, or how to implement a UI pattern with @westpac/ui.'
 ---
 
 # Using @westpac/ui
@@ -94,7 +94,7 @@ Components use `react-aria` for accessible focus management. Focus rings are sho
 
 ### Styling and Customization
 
-Some components support `className` for custom styles, but prefer using built-in props for consistent design. Colours shouldn't use arbitrary values and should always use the design system tokens. Styling should not be overwritten using element selectors or global CSS. 
+Some components support `className` for custom styles, but prefer using built-in props for consistent design. Colours shouldn't use arbitrary values and should always use the design system tokens. Styling should not be overwritten using element selectors or global CSS.
 
 ## How to Answer Component Questions
 
@@ -126,6 +126,7 @@ When a user asks "can component X do Y?", follow this process:
 ## Available Hooks
 
 ### `useBreakpoint()`
+
 Returns the current active breakpoint (`'initial' | 'xsl' | 'sm' | 'md' | 'lg' | 'xl'`). Uses `zustand` internally with `matchMedia` listeners.
 
 ```tsx
@@ -138,6 +139,7 @@ function MyComponent() {
 ```
 
 ### `useDarkMode()`
+
 Returns helpers for dark mode: `getMode()`, `setMode()`, `toggleDarkMode()`, `getBrand()`, `getSystemPreference()`.
 
 > **Note:** Dark mode is disabled in the current release.
@@ -154,6 +156,7 @@ When answering questions about **how** or **when** to use a component, consult t
 For the full list of components, their props, defaults, and capabilities, read `reference/components.md`.
 
 The catalog is organized alphabetically and includes:
+
 - All exported components and types
 - Every prop with its type, default value, and description
 - Whether the component supports responsive variants

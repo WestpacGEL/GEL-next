@@ -32,11 +32,13 @@ When making changes to any of the following, ensure related documentation and sk
 ## Available Project Skills
 
 ### For consumers of @westpac/ui:
+
 - **`using-westpac-ui`** — Component usage guidance, capabilities, and API reference
 - **`installing-westpac-ui`** — Setup guide for new projects (installation, CSS, theming, fonts)
 - **`migrating-to-westpac-ui-v1`** — Migration guide from pre-1.0 to v1.0 (breaking changes, token codemod)
 
 ### For GEL component developers (in `packages/ui/`):
+
 - **`creating-gel-component`** — Step-by-step scaffolding workflow for new components
 - **`reviewing-gel-component`** — Convention compliance checklist
 - **`writing-gel-tests`** — Vitest + React Testing Library test patterns and coverage targets

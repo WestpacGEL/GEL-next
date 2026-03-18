@@ -1,6 +1,6 @@
 ---
 name: writing-gel-tests
-description: "Writes Vitest + React Testing Library tests for GEL design system components. Use when writing tests, adding tests, or improving test coverage for components in packages/ui."
+description: 'Writes Vitest + React Testing Library tests for GEL design system components. Use when writing tests, adding tests, or improving test coverage for components in packages/ui.'
 ---
 
 # Writing GEL Component Tests
@@ -19,6 +19,7 @@ Guides writing tests for components in `packages/ui/src/components/`. Test conve
 ### Pre-mocked Globals
 
 Already mocked in `vitest.setup.ts` — do NOT re-mock:
+
 - `window.scrollTo`
 - `window.URL.createObjectURL` / `revokeObjectURL`
 - `window.matchMedia`
@@ -60,7 +61,11 @@ it('renders the component', () => {
 
 ```tsx
 it('renders as an anchor tag', () => {
-  render(<Button tag="a" href="#">Link</Button>);
+  render(
+    <Button tag="a" href="#">
+      Link
+    </Button>,
+  );
   expect(screen.getByRole('link', { name: 'Link' })).toBeInTheDocument();
 });
 ```
@@ -122,8 +127,7 @@ describe('ComponentName utils', () => {
   });
 
   it('handles responsive values', () => {
-    expect(utilFunction({ initial: 'small', md: 'large' }))
-      .toStrictEqual({ initial: 'xsmall', md: 'small' });
+    expect(utilFunction({ initial: 'small', md: 'large' })).toStrictEqual({ initial: 'xsmall', md: 'small' });
   });
 });
 ```
@@ -131,6 +135,7 @@ describe('ComponentName utils', () => {
 ## Querying Elements
 
 Prefer accessible queries:
+
 1. `screen.getByRole('button', { name: 'Text' })` — interactive elements
 2. `screen.getByText('Text')` — content assertions
 3. `screen.getByLabelText('Label')` — form elements

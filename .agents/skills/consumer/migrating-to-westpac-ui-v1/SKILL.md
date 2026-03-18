@@ -1,6 +1,6 @@
 ---
 name: migrating-to-westpac-ui-v1
-description: "Guides migration from pre-@westpac/ui 1.0 to v1.0. Use when upgrading GEL, migrating to v1, updating design tokens, running the token codemod, or fixing breaking changes from the v1 upgrade."
+description: 'Guides migration from pre-@westpac/ui 1.0 to v1.0. Use when upgrading GEL, migrating to v1, updating design tokens, running the token codemod, or fixing breaking changes from the v1 upgrade.'
 ---
 
 # Migrating to @westpac/ui v1.0
@@ -73,9 +73,9 @@ The brand attribute has changed from `data-theme` to `data-brand`:
 ```html
 <!-- Before -->
 <html data-theme="wbc">
-
-<!-- After -->
-<html data-brand="wbc" data-theme="light">
+  <!-- After -->
+  <html data-brand="wbc" data-theme="light"></html>
+</html>
 ```
 
 > **Note:** Dark mode (`data-theme="dark"`) is disabled in this release.
@@ -144,6 +144,7 @@ npx jscodeshift --parser=tsx -t node_modules/@westpac/ui/scripts/codemods/gel-to
 ```
 
 **Important notes:**
+
 - The `--parser` parameter may need to be `babel`, `flow`, `ts`, or `tsx` depending on your project
 - You may need to run the codemod multiple times depending on project structure
 - For classes that can't be automatically mapped, the codemod injects `[REPLACE_TOKEN]` — work with your designer to replace these with the correct token
@@ -208,16 +209,15 @@ import { BREAKPOINTS, SPACING_UNIT } from '@westpac/style-config/constants';
 
 ```tsx
 // Before
-<DatePicker disableDates={['2023-10-10']} />
+<DatePicker disableDates={['2023-10-10']} />;
 
 // After
 import { DateValue } from '@internationalized/date';
 
 const disableDates = ['2023-10-20'];
-const isDateUnavailable = (date: DateValue) =>
-  disableDates.some((d) => d.toString() === date.toString());
+const isDateUnavailable = (date: DateValue) => disableDates.some(d => d.toString() === date.toString());
 
-<DatePicker isDateUnavailable={isDateUnavailable} />
+<DatePicker isDateUnavailable={isDateUnavailable} />;
 ```
 
 ### Compacta — simplified API
@@ -299,20 +299,20 @@ Now aligns with Modal behaviour:
 ```tsx
 // Before
 type PictogramMode = 'dark' | 'light' | 'duo';
-<Pictogram mode="dark" />
+<Pictogram mode="dark" />;
 
 // After
 type PictogramMode = 'base' | 'mono' | 'duo';
-<Pictogram mode="base" />
+<Pictogram mode="base" />;
 ```
 
 ## Deprecated Components & APIs
 
-| Deprecated | Replacement / Notes |
-|---|---|
-| `ButtonDropdown` | Replaced by `Dropdown` |
+| Deprecated                                         | Replacement / Notes                                                                  |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `ButtonDropdown`                                   | Replaced by `Dropdown`                                                               |
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed — use `<form>` with `className="flex flex-col gap-4"` and `Field` components |
-| `Pagination pages={[]}` | Removed — use `totalPages={number}` instead |
+| `Pagination pages={[]}`                            | Removed — use `totalPages={number}` instead                                          |
 
 ### Form Migration Example
 

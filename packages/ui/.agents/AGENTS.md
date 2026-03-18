@@ -110,6 +110,7 @@ export * from './{kebab-case-name}/index.js';
 ## React Best Practices
 
 ### Component Design
+
 - **One component per file** — the main component in `*.component.tsx`, sub-components in their own files under `components/`
 - **Plain functions, not `React.FC`** — function declarations with explicit props typing: `function Button({ children }: ButtonProps)`
 - **Destructure props at the function signature** — not inside the body. Order: `className`, variant props, behavioural props, `children`, `...rest`
@@ -117,6 +118,7 @@ export * from './{kebab-case-name}/index.js';
 - **Keep components pure** — no side effects in render. Move side effects to `useEffect`
 
 ### Hooks
+
 - **`useMemo`** — for expensive computations or referentially stable objects/arrays passed to children. Don't over-use for primitive values
 - **`useCallback`** — for event handlers passed to memoized children or used in dependency arrays
 - **Custom hooks** — extract reusable logic into hooks in `src/hook/`. Prefix with `use`
@@ -124,22 +126,26 @@ export * from './{kebab-case-name}/index.js';
 - **`useEffect` cleanup** — always clean up subscriptions, event listeners, and timers
 
 ### Refs and DOM
+
 - **`forwardRef`** — use for components that render a single native element consumers might need to reference
 - **Type refs precisely** — `Ref<HTMLButtonElement>`, not `Ref<HTMLElement>` or `Ref<any>`
 - **Don't read refs during render** — access `.current` only in effects or event handlers
 
 ### State Management
+
 - **Lift state only when needed** — keep state as close to where it's used as possible
 - **React Context for compound components** — share state between parent and children (Accordion, List, Compacta)
 - **`react-stately` for complex state** — use Adobe's hooks (`useDisclosureGroupState`, `useOverlayTriggerState`, etc.) instead of hand-rolling state machines
 - **Controlled vs uncontrolled** — support both patterns where sensible. Use `defaultValue`/`value` naming convention
 
 ### Performance
+
 - **Don't prematurely optimise** — only add `memo()`, `useMemo`, `useCallback` when there's a measurable problem or the component is used in lists
 - **Avoid inline object/array literals in JSX** — these create new references every render. Extract to `useMemo` or module scope if they're static
 - **Key lists properly** — use stable, unique identifiers, never array index (unless the list is static and never reordered)
 
 ### Patterns to Avoid
+
 - **No `React.FC`** — doesn't support generics well and adds implicit `children`
 - **No `default export` for components** — use named exports for better refactoring support and tree-shaking
 - **No `// @ts-ignore` or `// @ts-expect-error`** — fix the type issue instead. If absolutely unavoidable, add a comment explaining why
