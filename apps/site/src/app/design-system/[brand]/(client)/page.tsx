@@ -3,18 +3,7 @@ import { GithubIcon } from '@westpac/ui/icon';
 import Link from 'next/link';
 
 import { BrandKey } from '@/app/types/brand.types';
-import {
-  AtlassianLogo,
-  FacebookLogo,
-  FigmaLogo,
-  GovLogo,
-  IBMLogo,
-  MicrosoftLogo,
-  MyobLogo,
-  ReactLogo,
-  ShopifyLogo,
-  TwitterLogo,
-} from '@/components/logos';
+import { FigmaLogo } from '@/components/logos';
 
 import { Hero, Section, SectionHeading, SectionItem } from '../../components';
 
@@ -32,72 +21,56 @@ export default async function DesignSystemHomePage({ params }: { params: Promise
     >
       <Hero brand={brand} />
       <Section>
-        <SectionHeading>Accessible by design</SectionHeading>
-        <Grid>
-          <SectionItem
-            className={`
-            flex flex-col gap-2 leading-[2] text-text-body
-          `}
-          >
-            <p>Accessibility and inclusive design is a strong part of the GEL Design System.</p>
+        <SectionHeading className="pb-4">GEL building blocks</SectionHeading>
+        <Grid className="gap-y-6">
+          <GridItem span={{ initial: 10, xsl: 6 }} start={{ initial: 2, md: 1, xsl: 'auto' }} className="text-left">
+            <h3
+              className={`
+                typography-body-8
+                font-bold
+              `}
+            >
+              Brand foundations & tokens
+            </h3>
+            <br />
+            <p className="font-bold">Shared styling that aligns customer and banker journeys</p>
+            <br />
+            <p>A single, token‑driven brand foundation that keeps experiences consistent across platforms.</p>
+            <br />
             <p>
-              The system supports teams to deliver to the Group accessibility commitment, to provide meaningful banking
-              experiences to all customers.
+              This enables faster, safer brand and accessibility updates - reducing duplication and cost of change in
+              design and code.
             </p>
+            <br />
+            <p className="font-bold">Every team can adopt GEL foundations to stay on‑brand and aligned.</p>
+          </GridItem>
+          <GridItem span={{ initial: 10, xsl: 6 }} start={{ initial: 2, xsl: 'auto' }} className="text-left">
+            <h3
+              className={`
+                typography-body-8
+                font-bold
+              `}
+            >
+              Components & patterns
+            </h3>
+            <br />
+            <p className="font-bold">Reusable design for all teams - faster builds for React 18+</p>
+            <br />
             <p>
-              Solutions have been thought about in detail and pressure tested against the latest WCAG recommendations,
-              delivering the most accessible components and patterns possible.
+              Accessible, approved components and patterns that improve consistency and design efficiency across
+              products and platforms.
             </p>
-            <p>The Design Quality team can then guide teams further along the path of accessibility.</p>
-          </SectionItem>
+            <br />
+            <p>
+              For React 18+ teams, coded components keep design and code aligned for additional build speed and
+              consistency.
+            </p>
+            <br />
+            <p className="font-bold">Use the component and pattern designs anywhere.</p>
+          </GridItem>
         </Grid>
       </Section>
       <Section background>
-        <ReactLogo className="mb-3" />
-        <SectionHeading>Built on React</SectionHeading>
-        <Grid>
-          <SectionItem>
-            <p
-              className={`
-                mb-5 leading-[2]
-                sm:mb-7
-              `}
-            >
-              The GEL Design System is now using React. You can still access HTML/CSS but with React at its core we can
-              showcase so much more and deliver even higher-quality, more accessible code.
-            </p>
-            <h3
-              className={`
-                mb-5 border-b border-b-border-hero pb-2 typography-body-8
-                font-bold text-text-heading
-              `}
-            >
-              Who else is using React?
-            </h3>
-            <Grid
-              tag="ul"
-              className={`
-                items-center gap-y-4
-                sm:gap-x-4 sm:gap-y-8
-              `}
-            >
-              {[GovLogo, MicrosoftLogo, MyobLogo, IBMLogo, AtlassianLogo, FacebookLogo, TwitterLogo, ShopifyLogo].map(
-                (Logo, i) => (
-                  <GridItem
-                    tag="li"
-                    key={i}
-                    span={{ initial: 12, xsl: 6, sm: 3 }}
-                    className="flex items-center justify-center"
-                  >
-                    <Logo />
-                  </GridItem>
-                ),
-              )}
-            </Grid>
-          </SectionItem>
-        </Grid>
-      </Section>
-      <Section>
         <SectionHeading>Downloads &amp; links</SectionHeading>
         <Grid
           className={`

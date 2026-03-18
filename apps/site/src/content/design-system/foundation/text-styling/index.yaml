@@ -21,11 +21,6 @@ design:
       slug: user-experience
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
@@ -37,9 +32,10 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
+  icon: cube
   links:
-      - title: Fonts
-        slug: foundation/font
+    - title: Fonts
+      slug: foundation/font
 code:
   - title:
       name: Intro

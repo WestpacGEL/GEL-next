@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.1.0
+
+### Minor Changes
+
+- bd3422f: add onPasteComplete handler to passcode
+
 ## 1.0.0
 
 ### 📦 Major Changes — @westpac/ui & @westpac/style-config
