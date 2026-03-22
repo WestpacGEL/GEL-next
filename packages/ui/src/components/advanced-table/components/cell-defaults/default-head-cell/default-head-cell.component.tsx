@@ -9,7 +9,12 @@ export function DefaultHeadCell<T>({ header, title }: { header: Header<T, unknow
   const { enableColumnReordering } = useContext(AdvancedTableContext);
 
   return (
-    <button {...attributes} {...listeners} disabled={!enableColumnReordering}>
+    <button
+      {...attributes}
+      {...listeners}
+      disabled={!enableColumnReordering}
+      style={{ cursor: enableColumnReordering ? 'move' : 'default' }}
+    >
       <h2 className="font-medium whitespace-nowrap">{title}</h2>
     </button>
   );

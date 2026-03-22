@@ -1,7 +1,14 @@
 import { flexRender, Header, SortDirection } from '@tanstack/react-table';
 import { useContext } from 'react';
 
-import { AddIcon, ExpandLessIcon, ExpandMoreIcon, RemoveIcon } from '../../../../icon/index.js';
+import {
+  AddIcon,
+  ArrowDownIcon,
+  ArrowUpIcon,
+  ExpandLessIcon,
+  ExpandMoreIcon,
+  RemoveIcon,
+} from '../../../../icon/index.js';
 import { AdvancedTableContext } from '../../../advanced-table.component.js';
 import { MenuButton } from '../../advanced-table-menu/components/menu-button/menu-button.component.js';
 
@@ -15,16 +22,14 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
   const sortingIcon = (sorted: SortDirection | false, onClick: () => void) => {
     return (
       <button onClick={onClick} className="flex cursor-pointer flex-col">
-        <ExpandLessIcon
-          size="xsmall"
-          className="mb-[-2px]"
-          style={{ visibility: sorted === 'desc' ? 'hidden' : undefined }}
-        />
-        <ExpandMoreIcon
-          size="xsmall"
-          className="mt-[-2px]"
-          style={{ visibility: sorted === 'asc' ? 'hidden' : undefined }}
-        />
+        {!sorted && (
+          <>
+            <ExpandLessIcon size="xsmall" className="mb-[-2px]" />
+            <ExpandMoreIcon size="xsmall" className="mt-[-2px]" />
+          </>
+        )}
+        {sorted === 'asc' && <ArrowUpIcon size="small" />}
+        {sorted === 'desc' && <ArrowDownIcon size="small" />}
       </button>
     );
   };
@@ -45,6 +50,7 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
         )}
         {header.column.getCanFilter() && !header.isPlaceholder && (
           <MenuButton
+            header={header}
             filterVal={header.column.getFilterValue() as string}
             onInputChange={header.column.setFilterValue}
             // eslint-disable-next-line no-console
