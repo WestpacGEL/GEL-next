@@ -1,6 +1,6 @@
 name: Multi-select
 description: >-
-  Use the multi-select component when users need to choose more than one option
+  Use the Multi-select component when users need to choose more than one option
   from a defined list within a single control. 
 namedExport:
   discriminant: false
