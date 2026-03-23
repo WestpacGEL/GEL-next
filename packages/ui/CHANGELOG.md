@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.1.2
+
+### Patch Changes
+
+- a55faea: set a default portalContainer for MultiSelect so styles render correctly in more situations without providing portalContainer
+
 ## 1.1.1
 
 ### Patch Changes

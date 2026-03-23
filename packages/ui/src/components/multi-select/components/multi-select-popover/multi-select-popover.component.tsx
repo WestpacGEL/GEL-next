@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { DismissButton, mergeProps, Overlay, usePopover } from 'react-aria';
 
 import { MultiSelectContext } from '../../multi-select.component.js';
@@ -27,11 +27,22 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
     overlayState,
   );
 
+  // This is required so branding applies correctly by default due to portal location, can be overridden with portalContainer prop
+  const brandContainer = useMemo(() => {
+    if (typeof window !== 'undefined') {
+      return (
+        document.querySelector('[data-theme]') ||
+        document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
+        document.body
+      );
+    }
+  }, []);
+
   const width = buttonRef.current?.getBoundingClientRect().width;
   const styles = popoverStyles();
 
   return (
-    <Overlay disableFocusManagement portalContainer={portalContainer}>
+    <Overlay disableFocusManagement portalContainer={portalContainer || brandContainer}>
       <div
         {...mergeProps(popoverProps, overlayProps)}
         ref={popoverRef}
