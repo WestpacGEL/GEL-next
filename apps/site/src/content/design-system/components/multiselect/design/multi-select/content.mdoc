@@ -4,6 +4,17 @@ The Multi‑select allows users to select multiple options from a single input. 
 
 ```tsx
 () => {
+const OPTIONS = [
+  { key: 1, textValue: 'Aerospace' },
+  { key: 2, textValue: 'Mechanical' },
+  { key: 3, textValue: 'Civil' },
+  { key: 4, textValue: 'Biomedical' },
+  { key: 5, textValue: 'Nuclear' },
+  { key: 6, textValue: 'Industrial' },
+  { key: 7, textValue: 'Chemical' },
+  { key: 8, textValue: 'Agricultural' },
+  { key: 9, textValue: 'Electrical' },
+];
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
   return <div className="flex flex-col gap-2">
       <MultiSelect items={OPTIONS} listBoxProps={{
