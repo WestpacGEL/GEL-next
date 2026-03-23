@@ -1,0 +1,28 @@
+name: Multiselect
+description: >-
+  Use the multi-select component when users need to choose more than one option
+  from a defined list within a single control. 
+namedExport:
+  discriminant: false
+excludeFromNavbar: true
+design:
+  - title:
+      name: Multi-select
+      slug: multi-select
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Single select
+      slug: single-select
+    noTitle: false
+    noDemo: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+    noDemo: false
+accessibility: []
+relatedComponents:
+  icon: cube
+  links: []
+code: []
