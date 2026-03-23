@@ -17,7 +17,7 @@ import { styles as HeadCellContentStyles } from './head-cell-content.styles.js';
 export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
   const { extraCellPadding, bordered } = useContext(AdvancedTableContext);
 
-  const styles = HeadCellContentStyles({ extraCellPadding, bordered });
+  const styles = HeadCellContentStyles({ extraCellPadding, bordered, resizeable: header.column.getCanResize() });
 
   const sortingIcon = (sorted: SortDirection | false, onClick: () => void) => {
     return (
