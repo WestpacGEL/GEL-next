@@ -1,29 +1,51 @@
 The Multi‑select allows users to select multiple options from a single input. It can also support bulk&nbsp;selection&nbsp;and filtering where needed.&nbsp;
 
-### Default
+### Basic
+
+This example shows the basic Multi-select component without additional functionality.
 
 ```tsx
-() => {
-const OPTIONS = [
-  { key: 1, textValue: 'Aerospace' },
-  { key: 2, textValue: 'Mechanical' },
-  { key: 3, textValue: 'Civil' },
-  { key: 4, textValue: 'Biomedical' },
-  { key: 5, textValue: 'Nuclear' },
-  { key: 6, textValue: 'Industrial' },
-  { key: 7, textValue: 'Chemical' },
-  { key: 8, textValue: 'Agricultural' },
-  { key: 9, textValue: 'Electrical' },
-];
-  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
-  return <div className="flex flex-col gap-2">
-      <MultiSelect portalContainer items={OPTIONS} listBoxProps={{
-      'aria-label': 'multiselect options'
-    }} selectedKeys={selectedKeys} onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}>
-        {option => <MultiSelectItem key={option.key} textValue={option.textValue} description="Supporting information or description">
-            {option.textValue}
-          </MultiSelectItem>}
-      </MultiSelect>
-    </div>;
-}
+demo here Multiselect, 
+NO description, filter, section title, select all
+YES nothing
+```
+
+### Select all
+
+This example shows the Multi-select component with select-all functionality.
+
+```tsx
+demo here Multiselect, 
+NO description, filter, section title
+YES select all
+```
+
+### Section titles
+
+This example shows the Multi-select component with section titles to categorise items into groups.
+
+```tsx
+demo here Multiselect, 
+NO description, filter, select all
+YES section title
+```
+
+### Filtering
+
+This example shows the Multi-select component with filtering functionality to narrow down the list of items to choose from.
+
+```tsx
+demo here Multiselect, 
+NO description, section title, select all
+YES filter
+```
+
+### All functions
+
+This example shows the Multi-select component with all functions displayed.
+
+```tsx
+demo here Multiselect, 
+NO nothing
+YES description, filter, section title, select all
 ```
