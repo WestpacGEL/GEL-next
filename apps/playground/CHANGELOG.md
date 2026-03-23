@@ -1,5 +1,12 @@
 # playground
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [2eebb35]
+  - @westpac/style-config@1.0.1
+
 ## 0.1.2
 
 ### Patch Changes

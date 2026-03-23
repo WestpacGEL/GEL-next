@@ -5,6 +5,7 @@
 @import '@westpac/style-config/themes/bom';
 @import '@westpac/style-config/themes/bsa';
 @import '../src/css/global.css';
+@import '../src/css/brand-fonts.css';
 
 @layer base {
   body {
