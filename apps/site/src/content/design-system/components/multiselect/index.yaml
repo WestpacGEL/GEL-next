@@ -21,8 +21,17 @@ design:
       slug: user-experience
     noTitle: false
     noDemo: false
+  - title:
+      name: Visual design
+      slug: visual-design
+    noTitle: false
+    noDemo: false
 accessibility: []
 relatedComponents:
   icon: cube
-  links: []
+  links:
+    - title: Select
+      slug: /components/select
+    - title: Checkboxes
+      slug: /components/checkboxes
 code: []
