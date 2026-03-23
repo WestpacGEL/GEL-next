@@ -21,8 +21,7 @@ export const styles = tv({
           sm:bg-background-primary sm:before:w-4
         `,
         heading: `
-          text-[3rem] uppercase
-          sm:text-[4.5rem]
+          uppercase
         `,
       },
       stg: {

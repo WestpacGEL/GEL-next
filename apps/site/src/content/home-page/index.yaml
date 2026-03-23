@@ -3,15 +3,19 @@ articleRows:
     articles:
       - what-is-gel
       - value-of-a-design-system
+  - layout: 1x1
+    articles:
+      - tokens
+      - border-radius
+  - layout: 2x1
+    articles:
+      - accessible-by-design
+      - typography
   - layout: 1x1x1
     articles:
       - patterns
       - journey-management
       - data-visualisation
-  - layout: 2x1
-    articles:
-      - accessible-by-design
-      - typography
   - layout: 1x1
     articles:
       - think-responsive

@@ -1,6 +1,19 @@
 # @westpac/ui
 
-## 1.0.0-canary.1
+## 1.1.1
+
+### Patch Changes
+
+- 2eebb35: - fix issue with font import in style config
+  - fix security issues
+
+## 1.1.0
+
+### Minor Changes
+
+- bd3422f: add onPasteComplete handler to passcode
+
+## 1.0.0
 
 ### 📦 Major Changes — @westpac/ui & @westpac/style-config
 
@@ -20,7 +33,7 @@ We are introducing a new architecture separating UI (@westpac/ui) components fro
 2. Install the updated dependencies:
 
 ```bash
-npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tailwind-variants@~3.1.1
+npm i @westpac/ui @westpac/style-config tailwindcss@4 postcss tailwind-variants@~3.1.1
 ```
 
 3. Import global styles in your main CSS file:
@@ -144,9 +157,9 @@ For classes we are unable to replace with the equivalent token the code will inj
 
 If you want to test the upgrade while waiting for your designers we recommened replacing with a token that is close or the hex value i.e. text-black = text-[#000].
 
-To see all the new tokens you can check the canary branch [Storybook](https://gel-next-storybook-git-release-100-westpacgel.vercel.app/?path=/docs/foundation-colours--docs)
+To see all the new tokens you can check storybook [Storybook](https://gel-next-storybook-git-westpacgel.vercel.app/?path=/docs/foundation-colours--docs) or the [GEL website](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens)
 
-You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-next/blob/release/1.0.0/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs)
+You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-next/blob/develop/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs)
 
 ---
 

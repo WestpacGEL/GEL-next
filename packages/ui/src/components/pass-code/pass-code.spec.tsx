@@ -42,6 +42,21 @@ describe('PassCode', () => {
     expect(onCompleteMock).toHaveBeenCalledWith('1234');
   });
 
+  it('triggers the onPasteComplete correctly', () => {
+    const onPasteCompleteMock = vi.fn();
+    render(<PassCode length={4} onPasteComplete={onPasteCompleteMock} />);
+
+    // Simulate pasting
+    fireEvent.paste(screen.getByLabelText(PASSCODE_DIGIT_1), {
+      clipboardData: {
+        getData: () => '1234',
+      },
+    });
+
+    // Ensure the onPasteComplete callback is called with the correct passcode
+    expect(onPasteCompleteMock).toHaveBeenCalledWith('1234');
+  });
+
   it('handles backspace correctly', async () => {
     const onCompleteMock = vi.fn();
     const { getByLabelText } = render(<PassCode length={4} onComplete={onCompleteMock} />);

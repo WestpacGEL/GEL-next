@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { AnimatePresence, LazyMotion, m } from 'motion/react';
-import { useRef } from 'react';
-import { DismissButton, Overlay, usePopover } from 'react-aria';
+import { useLayoutEffect, useRef } from 'react';
+import { DismissButton, Overlay, useInteractOutside, useOverlayPosition } from 'react-aria';
 
 import { PopoverProps } from './popover.types';
 
@@ -9,24 +9,63 @@ const loadAnimations = () => import('./popover.utils').then(res => res.default);
 
 export function Popover(props: PopoverProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const { popoverRef = ref, state, children, className, isNonModal, portalContainer } = props;
-  const { popoverProps, underlayProps } = usePopover(
-    {
-      ...props,
-      popoverRef,
-    },
+  const {
+    popoverRef = ref,
     state,
-  );
+    children,
+    className,
+    isNonModal,
+    portalContainer,
+    triggerRef,
+    placement,
+    offset,
+    shouldFlip,
+    containerPadding,
+  } = props;
+
+  const positionProps = useOverlayPosition({
+    targetRef: triggerRef,
+    overlayRef: popoverRef,
+    placement,
+    offset,
+    shouldFlip,
+    containerPadding,
+    isOpen: state.isOpen,
+  });
+
+  // Force position recalculation after content renders
+  useLayoutEffect(() => {
+    if (state.isOpen) {
+      // Use requestAnimationFrame to ensure content is rendered before recalculating
+      requestAnimationFrame(() => {
+        positionProps.updatePosition();
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.isOpen]);
+
+  // Close popover when interacting outside (but not on the trigger)
+  useInteractOutside({
+    ref: popoverRef,
+    onInteractOutside: e => {
+      // Don't close if clicking the trigger element
+      if (triggerRef.current?.contains(e.target as Node)) {
+        return;
+      }
+      state.close();
+    },
+    isDisabled: !state.isOpen,
+  });
 
   return (
     <Overlay portalContainer={portalContainer}>
-      {!isNonModal && <div {...underlayProps} className="fixed inset-0" />}
+      {!isNonModal && <div className="fixed inset-0" />}
       <div
-        {...popoverProps}
+        {...positionProps.overlayProps}
         ref={popoverRef}
         className={clsx(
           `
-            z-10 overflow-hidden bg-background-white
+            bg-background-white
             shadow-[rgba(0,0,0,0.24)_0_8px_8px]
           `,
           className,
