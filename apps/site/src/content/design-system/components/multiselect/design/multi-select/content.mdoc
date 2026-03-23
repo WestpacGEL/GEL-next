@@ -17,7 +17,7 @@ const OPTIONS = [
 ];
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
   return <div className="flex flex-col gap-2">
-      <MultiSelect items={OPTIONS} listBoxProps={{
+      <MultiSelect portalContainer items={OPTIONS} listBoxProps={{
       'aria-label': 'multiselect options'
     }} selectedKeys={selectedKeys} onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}>
         {option => <MultiSelectItem key={option.key} textValue={option.textValue} description="Supporting information or description">
