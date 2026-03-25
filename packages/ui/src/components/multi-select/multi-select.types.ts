@@ -3,6 +3,8 @@ import { Key, ReactNode, RefObject } from 'react';
 import { AriaListBoxOptions, AriaPopoverProps } from 'react-aria';
 import { ItemProps, ListProps, ListState, OverlayTriggerState } from 'react-stately';
 
+import { FIXED_WIDTHS } from '../../constants/input-widths.js';
+
 import { MultiSelectSize } from './components/multi-select-list-box-trigger/multi-select-list-box-trigger.types.js';
 
 export type MultiSelectContextProps<T extends object = object> = {
@@ -26,6 +28,11 @@ export type MultiSelectItemProps<T extends object = object> = { description?: st
 export type MultiSelectValue = { textValue?: string; content?: ReactNode; key: Key; description?: string };
 
 export type MultiSelectProps<T> = {
+  /**
+   * Whether to hide the filter input in the dropdown
+   * @default false
+   */
+  hideFilter?: boolean;
   /**
    * Props for the list box within the multi-select
    */
@@ -57,4 +64,9 @@ export type MultiSelectProps<T> = {
    * @default medium
    */
   size?: MultiSelectSize;
+  /**
+   * Width of the multi-select, can be a fixed width or full width
+   * @default full
+   */
+  width?: (typeof FIXED_WIDTHS)[number];
 } & ListProps<T>;

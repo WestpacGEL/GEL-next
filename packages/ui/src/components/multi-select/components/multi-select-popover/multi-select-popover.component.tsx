@@ -16,7 +16,7 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
   const { popoverProps } = usePopover(
     {
       ...props,
-      placement,
+      placement: placement || 'bottom left',
       popoverRef,
       triggerRef: buttonRef,
       isNonModal: true,
@@ -38,7 +38,6 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
     }
   }, []);
 
-  const width = buttonRef.current?.getBoundingClientRect().width;
   const styles = popoverStyles();
 
   return (
@@ -47,7 +46,6 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
         {...mergeProps(popoverProps, overlayProps)}
         ref={popoverRef}
         className={styles.overlay({ className })}
-        style={{ ...popoverProps.style, width: width ? `${width}px` : undefined }}
         onBlur={e => {
           const related = e.relatedTarget as Element | null;
           if (!popoverRef?.current) return;
