@@ -37,7 +37,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   onSelectionChange,
   placeholder = 'Select',
   showSingleSectionTitle = false,
-  placement,
+  placement = 'bottom left',
   portalContainer,
   id,
   hideFilter = false,

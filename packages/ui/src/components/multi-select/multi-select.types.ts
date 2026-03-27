@@ -47,7 +47,7 @@ export type MultiSelectProps<T> = {
   placeholder?: string;
   /**
    * Manual placement of the dropdown, will flip automatically if there is not enough space
-   * @default bottom
+   * @default 'bottom left'
    */
   placement?: AriaPopoverProps['placement'];
   /**
