@@ -1,6 +1,7 @@
 import { type Meta, StoryFn } from '@storybook/react-vite';
 import { useState } from 'react';
 
+import { FIXED_WIDTHS } from '../../constants/input-widths.js';
 import { Field } from '../index.js';
 
 import { MultiSelectValue } from './multi-select.types.js';
@@ -26,6 +27,17 @@ const OPTIONS: MultiSelectValue[] = [
   { key: 7, textValue: 'Chemical' },
   { key: 8, textValue: 'Agricultural' },
   { key: 9, textValue: 'Electrical' },
+];
+const LONG_OPTIONS = [
+  { key: 1, textValue: 'Aerospace Aerospace Aerospace Aerospace Aerospace Aerospace' },
+  { key: 2, textValue: 'Mechanical Mechanical Mechanical Mechanical Mechanical Mechanical' },
+  { key: 3, textValue: 'Civil Civil Civil Civil Civil Civil' },
+  { key: 4, textValue: 'Biomedical Biomedical Biomedical Biomedical Biomedical Biomedical' },
+  { key: 5, textValue: 'Nuclear Nuclear Nuclear Nuclear Nuclear Nuclear' },
+  { key: 6, textValue: 'Industrial Industrial Industrial Industrial Industrial Industrial' },
+  { key: 7, textValue: 'Chemical Chemical Chemical Chemical Chemical Chemical' },
+  { key: 8, textValue: 'Agricultural Agricultural Agricultural Agricultural Agricultural Agricultural' },
+  { key: 9, textValue: 'Electrical Electrical Electrical Electrical Electrical Electrical' },
 ];
 const OTHER_OPTIONS = [
   { key: 11, textValue: 'Other Aerospace' },
@@ -62,6 +74,91 @@ export const Default = () => {
           </MultiSelectItem>
         )}
       </MultiSelect>
+    </div>
+  );
+};
+
+/**
+ * > No filter example
+ */
+export const NoFilter = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+  return (
+    <div className="flex flex-col gap-2">
+      <MultiSelect
+        items={OPTIONS}
+        listBoxProps={{ 'aria-label': 'multiselect options' }}
+        selectedKeys={selectedKeys}
+        onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+        hideFilter
+      >
+        {option => (
+          <MultiSelectItem
+            key={option.key}
+            textValue={option.textValue}
+            description="Supporting information or description"
+          >
+            {option.textValue}
+          </MultiSelectItem>
+        )}
+      </MultiSelect>
+    </div>
+  );
+};
+
+/**
+ * > Multiselect Widths
+ */
+export const Widths = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+  return (
+    <div className="flex flex-col gap-2">
+      {FIXED_WIDTHS.map(width => (
+        <MultiSelect
+          key={width}
+          width={width}
+          selectedKeys={selectedKeys}
+          onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+          items={OPTIONS}
+        >
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+              description="Supporting information or description"
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelect>
+      ))}
+    </div>
+  );
+};
+
+export const WidthsWithLongOptions = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+  return (
+    <div className="flex flex-col gap-2">
+      {FIXED_WIDTHS.map(width => (
+        <MultiSelect
+          key={width}
+          width={width}
+          selectedKeys={selectedKeys}
+          onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+          items={LONG_OPTIONS}
+        >
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+              description="Supporting information or description"
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelect>
+      ))}
     </div>
   );
 };
@@ -159,40 +256,35 @@ export const SingleSelect = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      {(['small', 'medium', 'large', 'xlarge'] as const).map(size => (
-        <div key={size}>
-          <p className="mb-2 typography-body-10 font-bold text-text-body uppercase">{size}</p>
-          <MultiSelect
-            size={size}
-            selectionMode="single"
-            selectedKeys={selectedKeys}
-            onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
-          >
-            <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
-              {option => (
-                <MultiSelectItem
-                  key={option.key}
-                  textValue={option.textValue}
-                  description="Supporting information or description"
-                >
-                  {option.textValue}
-                </MultiSelectItem>
-              )}
-            </MultiSelectSection>
-            <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
-              {option => (
-                <MultiSelectItem
-                  key={option.key}
-                  textValue={option.textValue}
-                  description="Supporting information or description"
-                >
-                  {option.textValue}
-                </MultiSelectItem>
-              )}
-            </MultiSelectSection>
-          </MultiSelect>
-        </div>
-      ))}
+      <MultiSelect
+        size="medium"
+        selectionMode="single"
+        selectedKeys={selectedKeys}
+        onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+      >
+        <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+              description="Supporting information or description"
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelectSection>
+        <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+              description="Supporting information or description"
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelectSection>
+      </MultiSelect>
     </div>
   );
 };

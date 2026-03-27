@@ -37,9 +37,11 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   onSelectionChange,
   placeholder = 'Select',
   showSingleSectionTitle = false,
-  placement,
+  placement = 'bottom left',
   portalContainer,
   id,
+  hideFilter = false,
+  width = 'full',
   ...props
 }: MultiSelectProps<T>) {
   const [filterText, setFilterText] = useState('');
@@ -67,7 +69,14 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
     onOpenChange: isOpen => {
       if (isOpen) {
         requestAnimationFrame(() => {
-          inputRef.current?.focus();
+          if (!hideFilter) {
+            inputRef.current?.focus();
+          } else if (selectionMode === 'multiple') {
+            selectAllRef.current?.focus();
+          } else {
+            const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
+            firstItem?.focus();
+          }
         });
       }
       if (!isOpen) {
@@ -103,8 +112,11 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
           showSingleSectionTitle={showSingleSectionTitle}
           triggerProps={triggerProps}
           id={id}
+          width={width}
         />
-        {overlayState.isOpen && <MultiSelectDropdown setFilterText={setFilterText} {...listBoxProps} />}
+        {overlayState.isOpen && (
+          <MultiSelectDropdown setFilterText={setFilterText} hideFilter={hideFilter} {...listBoxProps} />
+        )}
       </div>
     </MultiSelectContext.Provider>
   );
