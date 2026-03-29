@@ -1,6 +1,6 @@
 # GEL-next Repository
 
-This is the GEL (Global Experience Language) design system monorepo for Westpac Group. It contains UI component packages, configuration packages, documentation site, and reference applications.
+This is the GEL (Global Experience Language) design system monorepo for Westpac Group. This document is only for local development and will not be useful outside of this repository.
 
 ## Documentation Sync Requirement
 
@@ -31,13 +31,11 @@ When making changes to any of the following, ensure related documentation and sk
 
 ## Available Project Skills
 
-### For consumers of @westpac/ui:
+### For projects in `/apps`:
 
 - **`using-westpac-ui`** — Component usage guidance, capabilities, and API reference
-- **`installing-westpac-ui`** — Setup guide for new projects (installation, CSS, theming, fonts)
-- **`migrating-to-westpac-ui-v1`** — Migration guide from pre-1.0 to v1.0 (breaking changes, token codemod)
 
-### For GEL component developers (in `packages/ui/`):
+### For `packages/ui`:
 
 - **`creating-gel-component`** — Step-by-step scaffolding workflow for new components
 - **`reviewing-gel-component`** — Convention compliance checklist
