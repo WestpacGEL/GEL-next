@@ -99,14 +99,14 @@ function Autocomplete<T extends object>(
   const isNoOptionPopOverOpen = useMemo(() => {
     return !!(
       noOptionsMessage &&
-      ((!state.isOpen && state.isFocused && searchProps.value.length > 0 && !state.selectedItem) ||
+      ((!state.isOpen && state.isFocused && searchProps.value.length > 0 && state.selectedItems.length === 0) ||
         (state.collection.size === 0 && searchProps.value.length > 0))
     );
   }, [
     noOptionsMessage,
     state.isOpen,
     state.isFocused,
-    state.selectedItem,
+    state.selectedItems,
     state.collection.size,
     searchProps.value.length,
   ]);
