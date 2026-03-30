@@ -7,6 +7,10 @@ description: 'Guides consumers of the @westpac/ui component library on correct u
 
 Provides guidance on using the GEL (Global Experience Language) design system component library for Westpac Group applications. This package may also be referred to as "GEL-Next", "GEL Next" or "GEL v1.0.0". Always check the version in `package.json` to confirm you're referencing the correct documentation as some consumers may have @westpac/ui v0.x installed which has different capabilities and patterns. Or have a completely different package also referred to as "GEL" installed.
 
+## When to Use
+
+Reference this skill when a user has @westpac/ui installed and is asking a question relating to the @westpac/ui or GEL. It should also be used when components from @westpac/ui are mentioned by name, or when the question is about a UI pattern that may be achievable with @westpac/ui components.
+
 ## Related Skills (optional)
 
 - **`installing-westpac-ui`** — Full setup guide for new projects (installation, CSS, theming, brand fonts, ESLint)
@@ -100,10 +104,10 @@ Some components support `className` for custom styles, but prefer using built-in
 
 When a user asks "can component X do Y?", follow this process:
 
-1. **Check the correct package is installed** — Confirm the user has @westpac/ui >= v1.0.0 installed, not an older version or a different package also referred to as "GEL".
+1. **Check the correct package is installed** — Confirm the user has @westpac/ui >= v1.0.0 installed, not an older version or a different package also referred to as "GEL". Also check if the version is outdated and recommend updating to the latest version if so, as newer versions may have fixed bugs or added features that could solve their problem.
 2. **If package is incorrect/not installed** — Clearly state that older versions are not supported and suggest installing the correct package or updating to the latest version. Provide installation/migration instructions if needed.
 3. **Check the component reference** — Read `reference/components.md` to find the component and its props
-4. **Check if a prop exists** for the requested feature
+4. **Check if a prop exists** - Look for a prop that directly supports the requested feature or pattern (e.g., `color`, `look`, `iconBefore`, `block`, `tag`, etc.)
 5. **If the prop exists** — show the correct usage with a code example
 6. **If no prop exists but it's achievable** — explain the pattern (e.g., using `className`, composition, `tag` prop)
 7. **If not supported functionally** — clearly state it's not supported and suggest posting in the internal Teams channel for feature requests.
@@ -113,15 +117,15 @@ When a user asks "can component X do Y?", follow this process:
 ### Common Capability Questions
 
 **"Can I change the color/look?"** → Check for `look`, `color`, or `soft` props
-**"Cane I use a custom color?"** → Notify that custom colors should not be used and to use design tokens instead. Suggest posting in the internal Teams channel if the needed token doesn't exist.
+**"Can I use a custom color?"** → Notify that custom colors should not be used and to use design tokens instead. Suggest posting in the internal Teams channel if the needed token doesn't exist.
 **"Can I make it responsive?"** → Check if the prop type includes `ResponsiveVariants`
 **"Can I render it as a different element?"** → Check for `tag` prop
 **"Can I add an icon?"** → Check for `iconBefore`, `iconAfter`, or `icon` props
 **"Can I make it full width?"** → Check for `block` prop
 **"Can I control open/close?"** → Check for `open`, `state`, or `defaultExpandedKeys` props
 **"Can I validate / show errors?"** → Check for `invalid`, `errorMessage` props
-**"Can I use it in a form?"** → Check if it extends HTML form element attributes and has `name` prop
-**"Can I customize the styles?"** → Check for `className` prop, but prefer built-in props for styling
+**"Can I use it in a form?"** → Check if it extends HTML form element attributes and has `name` prop or it is compatible with the Field component from `@westpac/ui/field`
+**"Can I customize the styles?"** → Check for `className` prop, but prefer built-in props for styling. Style should not be overwritten using element selectors or global CSS. Suggest posting in the internal Teams channel if the needed style option doesn't exist as this could be a design issue.
 
 ## Available Hooks
 
