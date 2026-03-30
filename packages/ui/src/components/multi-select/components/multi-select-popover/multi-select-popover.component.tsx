@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useLayoutEffect, useMemo } from 'react';
 import { DismissButton, mergeProps, Overlay, usePopover } from 'react-aria';
 
 import { MultiSelectContext } from '../../multi-select.component.js';
@@ -13,10 +13,21 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
   const { overlayState, overlayProps, popoverRef, buttonRef, placement, portalContainer } =
     useContext(MultiSelectContext);
 
+  const [isPopoverSmaller, setIsPopoverSmaller] = React.useState(false);
+
+  useLayoutEffect(() => {
+    if (buttonRef.current && popoverRef.current) {
+      const buttonWidth = buttonRef.current.getBoundingClientRect().width;
+      const popoverWidth = popoverRef.current.getBoundingClientRect().width;
+      setIsPopoverSmaller(popoverWidth < buttonWidth);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const { popoverProps } = usePopover(
     {
       ...props,
-      placement,
+      placement: placement,
       popoverRef,
       triggerRef: buttonRef,
       isNonModal: true,
@@ -38,7 +49,6 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
     }
   }, []);
 
-  const width = buttonRef.current?.getBoundingClientRect().width;
   const styles = popoverStyles();
 
   return (
@@ -47,7 +57,13 @@ export function MultiSelectPopover({ children, className, ...props }: MultiSelec
         {...mergeProps(popoverProps, overlayProps)}
         ref={popoverRef}
         className={styles.overlay({ className })}
-        style={{ ...popoverProps.style, width: width ? `${width}px` : undefined }}
+        style={{
+          ...popoverProps.style,
+          width: isPopoverSmaller ? buttonRef.current?.getBoundingClientRect().width : undefined,
+          maxWidth: brandContainer
+            ? brandContainer.getBoundingClientRect().width - (parseInt(popoverProps.style?.left as string) || 0)
+            : undefined,
+        }}
         onBlur={e => {
           const related = e.relatedTarget as Element | null;
           if (!popoverRef?.current) return;
