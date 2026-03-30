@@ -7,7 +7,11 @@ description: 'Guides migration from pre-@westpac/ui 1.0 to v1.0. Use when upgrad
 
 Guide for migrating existing applications from pre-1.0 `@westpac/ui` to v1.0. For fresh installations, use the `installing-westpac-ui` skill instead.
 
-## Major Changes
+## When to Use
+
+Reference this guide when a user is using and older version of `@westpac/ui` (check `package.json`) and wants to upgrade to v1.0. This includes understanding the major breaking changes, running the token codemod, updating Tailwind CSS configuration, and fixing component API changes.
+
+## Major Changes from v0.x
 
 v1.0 introduces a new architecture separating UI components from style configuration:
 
@@ -18,19 +22,19 @@ v1.0 introduces a new architecture separating UI components from style configura
 - Tailwind CSS upgraded from v3 to **v4**
 - All color tokens renamed to support multi-brand + dual-theme
 
-## Migration Steps
+## Steps
 
-### 1. Upgrade Tailwind CSS to v4
+1. Upgrade Tailwind CSS to v4
 
 Remove your existing `tailwind.config.js` and follow the [Tailwind CSS v4 Upgrade Guide](https://tailwindcss.com/docs/upgrade-guide). If the automated upgrade command doesn't work, follow the manual instructions on that page.
 
-### 2. Install Updated Dependencies
+2. Install Updated Dependencies
 
 ```bash
 npm i @westpac/ui @westpac/style-config tailwindcss@4 postcss tailwind-variants@~3.1.1
 ```
 
-### 3. Update CSS Imports
+3. Update CSS Imports
 
 Replace your existing Tailwind/GEL CSS setup with:
 
@@ -66,21 +70,25 @@ Replace your existing Tailwind/GEL CSS setup with:
 }
 ```
 
-### 4. Update Brand Attribute
+4. Update Brand Attribute
 
 The brand attribute has changed from `data-theme` to `data-brand`:
 
+##### Before
+
 ```html
-<!-- Before -->
-<html data-theme="wbc">
-  <!-- After -->
-  <html data-brand="wbc" data-theme="light"></html>
-</html>
+<html data-theme="wbc"></html>
+```
+
+##### After
+
+```html
+<html data-brand="wbc" data-theme="light"></html>
 ```
 
 > **Note:** Dark mode (`data-theme="dark"`) is disabled in this release.
 
-### 5. Update ESLint Config
+5. Update ESLint Config (Optional if using @westpac/eslint-config)
 
 ```js
 // eslint.config.mjs
@@ -99,14 +107,46 @@ export default defineConfig([
 ]);
 ```
 
-## Token Updates
+6. Run the Token Codemod
+
+```bash
+# Install jscodeshift if needed
+npm install -g jscodeshift
+
+# Run the codemod against your source files
+npx jscodeshift --parser=tsx -t node_modules/@westpac/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs <path>/**/*.tsx
+```
+
+## Change References
+
+1. Token Updates
+   - 1.1 Update Examples
+   - 1.2 Running the Token Codemod
+2. Import Path Changes
+   - 2.1 Style Constants
+3. Component API Changes
+   - 3.1 Accordion
+   - 3.2 ButtonGroup
+   - 3.3 DatePicker
+   - 3.4 Compacta
+   - 3.5 Repeater
+   - 3.6 BottomSheet
+   - 3.7 Pictogram
+4. Deprecated Components & APIs
+5. Form Migration Example
+6. Removed Symbols & Logos
+   - 6.1 Logos
+   - 6.2 Symbols
+
+### 1. Token Updates
 
 All color tokens have been renamed to support the multi-brand + dual-theme system. **This is the largest change and affects all custom Tailwind classes in your codebase.**
 
-### Before → After Examples
+#### 1.1 Update Examples
+
+##### Before
 
 ```tsx
-// Before
 <div className="bg-white">
   <div className="bg-primary rounded-full">
     <AccountIcon color="white" />
@@ -117,8 +157,11 @@ All color tokens have been renamed to support the multi-brand + dual-theme syste
   </h2>
   <p className="text-text">Lorem ipsum dolor sit amet</p>
 </div>
+```
 
-// After
+##### After
+
+```tsx
 <div className="bg-background-white">
   <div className="bg-surface-primary rounded-full">
     <AccountIcon color="mono" />
@@ -131,7 +174,7 @@ All color tokens have been renamed to support the multi-brand + dual-theme syste
 </div>
 ```
 
-### Running the Token Codemod
+#### 1.2 Running the Token Codemod
 
 A codemod is provided to automate the token migration:
 
@@ -152,40 +195,51 @@ npx jscodeshift --parser=tsx -t node_modules/@westpac/ui/scripts/codemods/gel-to
 
 The codemod script source: [gel-tokens-tailwind-v1.cjs](https://github.com/WestpacGEL/GEL-next/blob/develop/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs)
 
-## Import Path Changes
+### 2. Import Path Changes
 
-### Style Constants
+#### 2.1 Style Constants
+
+##### Before
 
 ```tsx
-// Before
 import { BREAKPOINTS, SPACING_UNIT } from '@westpac/ui/theme-constants';
+```
 
-// After
+##### After
+
+```tsx
 import { BREAKPOINTS, SPACING_UNIT } from '@westpac/style-config/constants';
 ```
 
-## Component API Changes
+### 3. Component API Changes
 
-### Accordion — uses react-aria useDisclose
+#### 3.1 Accordion — uses react-aria useDisclose
 
 `defaultExpandedKeys` now works off the `id` value of AccordionItem:
 
+##### Before
+
 ```tsx
-// Before
 <Accordion defaultExpandedKeys={['FoR']}>
   <AccordionItem title="Founding of Rome">Content</AccordionItem>
 </Accordion>
+```
 
-// After
+##### After
+
+```tsx
 <Accordion defaultExpandedKeys={['FoR']}>
-  <AccordionItem id="FoR" title="Founding of Rome">Content</AccordionItem>
+  <AccordionItem id="FoR" title="Founding of Rome">
+    Content
+  </AccordionItem>
 </Accordion>
 ```
 
-### ButtonGroup — compositional API
+#### 3.2 ButtonGroup — compositional API
+
+##### Before
 
 ```tsx
-// Before
 <ButtonGroup
   value={value}
   buttons={[
@@ -194,8 +248,11 @@ import { BREAKPOINTS, SPACING_UNIT } from '@westpac/style-config/constants';
     { value: 'Right', label: 'Right' },
   ]}
 />
+```
 
-// After
+##### After
+
+```tsx
 <ButtonGroup selectedKeys={value}>
   <ButtonGroupButton id="Left">Left</ButtonGroupButton>
   <ButtonGroupButton id="Middle">Middle</ButtonGroupButton>
@@ -203,15 +260,19 @@ import { BREAKPOINTS, SPACING_UNIT } from '@westpac/style-config/constants';
 </ButtonGroup>
 ```
 
-### DatePicker — react-aria based
+#### 3.3 DatePicker — react-aria based
 
 `disableDates` prop replaced with `isDateUnavailable` function:
 
-```tsx
-// Before
-<DatePicker disableDates={['2023-10-10']} />;
+##### Before
 
-// After
+```tsx
+<DatePicker disableDates={['2023-10-10']} />
+```
+
+##### After
+
+```tsx
 import { DateValue } from '@internationalized/date';
 
 const disableDates = ['2023-10-20'];
@@ -220,17 +281,14 @@ const isDateUnavailable = (date: DateValue) => disableDates.some(d => d.toString
 <DatePicker isDateUnavailable={isDateUnavailable} />;
 ```
 
-### Compacta — simplified API
+#### 3.4 Compacta — simplified API
 
 Moved from render-prop pattern to compositional children with `CompactaItem`:
 
+##### Before
+
 ```tsx
-// Before
-<Compacta
-  initialCompactas={[{ id: '1234', title: { primary: 'test' } }, {}]}
-  onAdd={() => {}}
-  onRemove={() => {}}
->
+<Compacta initialCompactas={[{ id: '1234', title: { primary: 'test' } }, {}]} onAdd={() => {}} onRemove={() => {}}>
   {({ id, setPrimaryTitle }) => (
     <Form>
       <FormGroup>
@@ -240,8 +298,11 @@ Moved from render-prop pattern to compositional children with `CompactaItem`:
     </Form>
   )}
 </Compacta>
+```
 
-// After
+##### After
+
+```tsx
 <Compacta onAdd={handleAdd}>
   {items.map((item, index) => (
     <CompactaItem
@@ -257,20 +318,24 @@ Moved from render-prop pattern to compositional children with `CompactaItem`:
 </Compacta>
 ```
 
-### Repeater — aligned with Compacta
+#### 3.5 Repeater — aligned with Compacta
 
 Same pattern change as Compacta — uses `RepeaterItem` children:
 
+##### Before
+
 ```tsx
-// Before
 <Repeater>
   <FormGroup>
     <FormLabel htmlFor={`input${id}`}>Label</FormLabel>
     <Input name={`input${id}`} />
   </FormGroup>
 </Repeater>
+```
 
-// After
+##### After
+
+```tsx
 <Repeater onAdd={handleAdd}>
   {items.map((item, index) => (
     <RepeaterItem key={index} title={{ primary: item.primary }} onRemove={() => removeItem(index)}>
@@ -282,31 +347,41 @@ Same pattern change as Compacta — uses `RepeaterItem` children:
 </Repeater>
 ```
 
-### BottomSheet — isDismissable defaults to false
+#### 3.6 BottomSheet — isDismissable defaults to false
 
 Now aligns with Modal behaviour:
 
-```tsx
-// Before — dismiss button always shown
-<BottomSheet title="Title">Content</BottomSheet>
+##### Before
 
-// After — explicitly opt in to dismiss button
-<BottomSheet title="Title" isDismissable>Content</BottomSheet>
+```tsx
+<BottomSheet title="Title">Content</BottomSheet>
 ```
 
-### Pictogram — mode prop values renamed
+##### After
 
 ```tsx
-// Before
+<BottomSheet title="Title" isDismissable>
+  Content
+</BottomSheet>
+```
+
+#### 3.7 Pictogram — mode prop values renamed
+
+##### Before
+
+```tsx
 type PictogramMode = 'dark' | 'light' | 'duo';
 <Pictogram mode="dark" />;
+```
 
-// After
+##### After
+
+```tsx
 type PictogramMode = 'base' | 'mono' | 'duo';
 <Pictogram mode="base" />;
 ```
 
-## Deprecated Components & APIs
+### 4. Deprecated Components & APIs
 
 | Deprecated                                         | Replacement / Notes                                                                  |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -314,10 +389,11 @@ type PictogramMode = 'base' | 'mono' | 'duo';
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed — use `<form>` with `className="flex flex-col gap-4"` and `Field` components |
 | `Pagination pages={[]}`                            | Removed — use `totalPages={number}` instead                                          |
 
-### Form Migration Example
+### 5. Form Migration Example
+
+##### Before
 
 ```tsx
-// Before
 <Form spacing="large" onSubmit={handleSubmit}>
   <FormGroup>
     <InputGroup size="large" label="Given name">
@@ -330,8 +406,11 @@ type PictogramMode = 'base' | 'mono' | 'duo';
     </Field>
   </FormGroup>
 </Form>
+```
 
-// After
+##### After
+
+```tsx
 <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
   <Field label="Given name">
     <InputGroup size="large">
@@ -344,12 +423,35 @@ type PictogramMode = 'base' | 'mono' | 'duo';
 </form>
 ```
 
-## Removed Symbols & Logos
+### 6. Removed Symbols & Logos
 
 The following have been removed. Contact the GEL design team if you believe a removal was incorrect.
 
-**Logos removed:** BTPanormaMultibrandLargeLogo, BTPanormaMultibrandSmallLogo, RedAvatarCircleLogo, RedAvatarCircleReverseLogo, RedAvatarLogo
+#### 6.1 Logos
 
-**Symbols removed:** GooglePlusSymbol, MastercardAcceptedSymbol, MastercardHorizontalSymbol, MicrosoftStoreSymbol, PayToBlackSymbol, PayToDarkGreySymbol, PayToLightGreySymbol, PayToWhiteSymbol, PayToWordmarkBlackSymbol, PayToWordmarkDarkGreySymbol, PayToWordmarkLightGreySymbol, PayToWordmarkWhiteSymbol, SlackSymbol, TwitterSymbol, VisaSymbol, XMarkInverseSymbol, XMarkSymbol, YammerSymbol
+- BTPanormaMultibrandLargeLogo
+- BTPanormaMultibrandSmallLogo
+- RedAvatarCircleLogo
+- RedAvatarCircleReverseLogo
+- RedAvatarLogo
 
-Most remaining symbols/logos now have dark mode variants. Use 'Inverse' variants if you need the dark mode appearance in light mode.
+#### 6.2 Symbols
+
+- GooglePlusSymbol
+- MastercardAcceptedSymbol
+- MastercardHorizontalSymbol
+- MicrosoftStoreSymbol
+- PayToBlackSymbol
+- PayToDarkGreySymbol
+- PayToLightGreySymbol
+- PayToWhiteSymbol
+- PayToWordmarkBlackSymbol
+- PayToWordmarkDarkGreySymbol
+- PayToWordmarkLightGreySymbol
+- PayToWordmarkWhiteSymbol
+- SlackSymbol
+- TwitterSymbol
+- VisaSymbol
+- XMarkInverseSymbol
+- XMarkSymbol
+- YammerSymbol

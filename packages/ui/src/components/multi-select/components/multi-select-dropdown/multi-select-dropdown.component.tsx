@@ -12,6 +12,7 @@ import { MultiSelectDropdownProps } from './multi-select-dropdown.types.js';
 
 export function MultiSelectDropdown<T extends object = object>({
   setFilterText,
+  hideFilter,
   ...props
 }: MultiSelectDropdownProps<T>) {
   const { filterText, listBoxRef } = useContext(MultiSelectContext);
@@ -19,7 +20,9 @@ export function MultiSelectDropdown<T extends object = object>({
 
   return (
     <MultiSelectPopover>
-      <MultiSelectSearchbar filterText={filterText} setFilterText={setFilterText} closeBtnRef={closeBtnRef} />
+      {!hideFilter && (
+        <MultiSelectSearchbar filterText={filterText} setFilterText={setFilterText} closeBtnRef={closeBtnRef} />
+      )}
       <MultiSelectListBox {...props} aria-label="multiselect list" escapeKeyBehavior="none" listBoxRef={listBoxRef} />
     </MultiSelectPopover>
   );

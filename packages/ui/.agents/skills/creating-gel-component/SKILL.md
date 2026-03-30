@@ -7,9 +7,13 @@ description: 'Scaffolds a new GEL design system UI component following project c
 
 Scaffolds a new React component in `packages/ui/src/components/`. All conventions (file naming, imports, patterns) are defined in the `packages/ui/.agents/AGENTS.md` — follow those automatically.
 
-## Step-by-Step Workflow
+## When to Use
 
-### 1. Create the types file (`{name}.types.ts`)
+Use this skill when you want to create a new GEL design system component. This includes scaffolding the necessary files (component, styles, types, tests, stories), following the established patterns for responsive variants and Tailwind styling, and registering the component in the main index.
+
+## Steps
+
+1. Create the types file (`{name}.types.ts`)
 
 ```tsx
 import { HTMLAttributes } from 'react';
@@ -30,7 +34,7 @@ export type {PascalName}Props = {
 } & HTMLAttributes<HTMLElement>;
 ```
 
-### 2. Create the styles file (`{name}.styles.ts`)
+2. Create the styles file (`{name}.styles.ts`)
 
 ```ts
 import { tv } from 'tailwind-variants';
@@ -41,7 +45,7 @@ export const styles = tv({
 });
 ```
 
-### 3. Create the component file (`{name}.component.tsx`)
+3. Create the component file (`{name}.component.tsx`)
 
 ```tsx
 'use client';
@@ -78,14 +82,14 @@ function Base{PascalName}(
 export const {PascalName} = forwardRef(Base{PascalName});
 ```
 
-### 4. Create the index file (`index.ts`)
+4. Create the index file (`index.ts`)
 
 ```ts
 export { {PascalName} } from './{kebab-case-name}.component.js';
 export { type {PascalName}Props } from './{kebab-case-name}.types.js';
 ```
 
-### 5. Create the test file (`{name}.spec.tsx`)
+5. Create the test file (`{name}.spec.tsx`)
 
 ```tsx
 import { render } from '@testing-library/react';
@@ -102,7 +106,7 @@ describe('{PascalName}', () => {
 
 See the `writing-gel-tests` skill for comprehensive testing guidance.
 
-### 6. Create the stories file (`{name}.stories.tsx`)
+6. Create the stories file (`{name}.stories.tsx`)
 
 ```tsx
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
@@ -137,7 +141,7 @@ export const Example = () => {
 };
 ```
 
-### 7. Register the component
+7. Register the component
 
 Add the export to `packages/ui/src/components/index.ts`:
 
@@ -145,7 +149,7 @@ Add the export to `packages/ui/src/components/index.ts`:
 export * from './{kebab-case-name}/index.js';
 ```
 
-### 8. Verify
+8. Verify
 
 Run these commands from `packages/ui/`:
 
