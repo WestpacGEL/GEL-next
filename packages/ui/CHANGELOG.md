@@ -1,5 +1,18 @@
 # @westpac/ui
 
+## 1.2.0
+
+### Minor Changes
+
+- ba74b1e: - added hideFilter prop to MultiSelect to hide the filter in dropdown
+  - added hideSelectAll prop to MultiSelect to hide the Select All option in dropdown
+  - added width prop to MultiSelect for fixed widths similar to the Input component
+
+### Patch Changes
+
+- 5aa6631: - fix security issues in style-config
+  - fix deprecated prop usage in autocomplete after package updates
+
 ## 1.1.2
 
 ### Patch Changes

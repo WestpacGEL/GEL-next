@@ -1,6 +1,6 @@
 {
   "name": "@westpac/style-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "exports": {
     ".": "./dist/tokens/index.js",
