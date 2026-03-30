@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "fs-extra": "~11.3.2",
-    "handlebars": "~4.7.8",
+    "handlebars": "~4.7.9",
     "postcss": "^8.5.3",
     "style-dictionary": "~5.0.4",
     "tailwindcss": "^4.1.12",
