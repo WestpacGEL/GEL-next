@@ -1,13 +1,19 @@
 ---
 name: installing-westpac-ui
-description: 'Guides setup and installation of @westpac/ui and @westpac/style-config in a new project. Use when setting up GEL, installing the design system, configuring Tailwind CSS, theming, or brand fonts.'
+description: Guides setup and installation of @westpac/ui and @westpac/style-config in a new project. Use when setting up GEL, installing the design system, configuring Tailwind CSS, theming, or brand fonts.
 ---
 
 # Installing @westpac/ui
 
 Step-by-step setup for new projects using the GEL design system.
 
-## 1. Install Packages
+## When to Use
+
+Reference this guide when a user wants to set up the GEL design system in a new project. This includes installing the necessary packages, configuring Tailwind CSS, setting up theming with brand tokens, and adding brand fonts.
+
+## Steps
+
+1. Install Packages
 
 GEL is split into two packages:
 
@@ -18,7 +24,7 @@ GEL is split into two packages:
 npm i @westpac/ui @westpac/style-config
 ```
 
-## 2. Install Tailwind CSS
+2. Install Tailwind CSS
 
 GEL components are styled with Tailwind CSS v4. Follow the [Tailwind CSS installation instructions](https://tailwindcss.com/docs/installation/using-postcss).
 
@@ -34,7 +40,7 @@ import { postcssConfig } from '@westpac/style-config/postcss';
 export default postcssConfig;
 ```
 
-## 3. Set Up Styles
+3. Set Up Styles
 
 In your main CSS file, add these imports:
 
@@ -46,7 +52,7 @@ In your main CSS file, add these imports:
 @source "./node_modules/@westpac/ui/src"; /* Enable Tailwind to scan component class names */
 ```
 
-## 4. Enable Brand Theming
+4. Enable Brand Theming
 
 Add the `data-brand` attribute to a parent element in your HTML:
 
@@ -88,7 +94,7 @@ For multi-brand applications, dynamically switch with the `data-brand` attribute
 
 > **Note:** Dark mode (`data-theme="dark"`) is disabled in the current release.
 
-## 5. Brand Fonts
+5. Brand Fonts
 
 Add the relevant `@font-face` declarations and update `src` paths to your font file locations:
 
@@ -158,7 +164,7 @@ Add the relevant `@font-face` declarations and update `src` paths to your font f
 }
 ```
 
-## 6. ESLint Configuration (Optional)
+6. ESLint Configuration (Ask user if they want to include this)
 
 For Next.js projects:
 
