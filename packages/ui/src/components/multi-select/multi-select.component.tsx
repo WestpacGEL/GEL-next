@@ -27,6 +27,7 @@ export const MultiSelectContext = createContext<MultiSelectContextProps>({
   inputRef: { current: null },
   filterText: '',
   overlayProps: {},
+  hideSelectAll: false,
 });
 
 export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
@@ -41,6 +42,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
   portalContainer,
   id,
   hideFilter = false,
+  hideSelectAll = false,
   width = 'full',
   ...props
 }: MultiSelectProps<T>) {
@@ -71,7 +73,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
         requestAnimationFrame(() => {
           if (!hideFilter) {
             inputRef.current?.focus();
-          } else if (selectionMode === 'multiple') {
+          } else if (selectionMode === 'multiple' && !hideSelectAll) {
             selectAllRef.current?.focus();
           } else {
             const firstItem = listBoxRef.current?.querySelector('[data-key]') as HTMLElement;
@@ -103,6 +105,7 @@ export function BaseMultiSelect<T extends MultiSelectValue = MultiSelectValue>({
         inputRef,
         overlayProps,
         portalContainer,
+        hideSelectAll,
       }}
     >
       <div className={styles.root()}>

@@ -107,6 +107,34 @@ export const NoFilter = () => {
 };
 
 /**
+ * > No Select All Example
+ */
+export const NoSelectAll = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+  return (
+    <div className="flex flex-col gap-2">
+      <MultiSelect
+        items={OPTIONS}
+        listBoxProps={{ 'aria-label': 'multiselect options' }}
+        selectedKeys={selectedKeys}
+        onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+        hideSelectAll
+      >
+        {option => (
+          <MultiSelectItem
+            key={option.key}
+            textValue={option.textValue}
+            description="Supporting information or description"
+          >
+            {option.textValue}
+          </MultiSelectItem>
+        )}
+      </MultiSelect>
+    </div>
+  );
+};
+
+/**
  * > Multiselect Widths
  */
 export const Widths = () => {

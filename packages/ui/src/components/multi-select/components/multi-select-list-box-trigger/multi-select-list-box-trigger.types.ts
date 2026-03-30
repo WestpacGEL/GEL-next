@@ -18,5 +18,5 @@ export type MultiSelectListBoxTriggerProps<T> = {
   selectedKeys?: ListProps<T>['selectedKeys'];
   showSingleSectionTitle?: MultiSelectProps<T>['showSingleSectionTitle'];
   triggerProps: AriaButtonProps<'button'>;
-  width?: MultiSelectProps<T>['width'];
+  width?: ResponsiveVariants<Variants['width']>;
 };

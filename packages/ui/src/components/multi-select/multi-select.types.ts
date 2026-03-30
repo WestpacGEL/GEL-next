@@ -2,10 +2,14 @@ import { DOMProps } from '@react-types/shared';
 import { Key, ReactNode, RefObject } from 'react';
 import { AriaListBoxOptions, AriaPopoverProps } from 'react-aria';
 import { ItemProps, ListProps, ListState, OverlayTriggerState } from 'react-stately';
+import { VariantProps } from 'tailwind-variants';
 
-import { FIXED_WIDTHS } from '../../constants/input-widths.js';
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 
+import { styles as triggerStyles } from './components/multi-select-list-box-trigger/multi-select-list-box-trigger.styles.js';
 import { MultiSelectSize } from './components/multi-select-list-box-trigger/multi-select-list-box-trigger.types.js';
+
+type Variants = VariantProps<typeof triggerStyles>;
 
 export type MultiSelectContextProps<T extends object = object> = {
   size?: MultiSelectSize;
@@ -20,6 +24,7 @@ export type MultiSelectContextProps<T extends object = object> = {
   overlayProps: DOMProps;
   placement?: AriaPopoverProps['placement'];
   portalContainer?: Element;
+  hideSelectAll?: boolean;
 };
 
 export type MultiSelectItemProps<T extends object = object> = { description?: string } & ItemProps<T>;
@@ -33,6 +38,11 @@ export type MultiSelectProps<T> = {
    * @default false
    */
   hideFilter?: boolean;
+  /**
+   * Whether to hide the "Select All" option in the dropdown for multiple selection multi-selects
+   * @default false
+   */
+  hideSelectAll?: boolean;
   /**
    * Props for the list box within the multi-select
    */
@@ -68,5 +78,5 @@ export type MultiSelectProps<T> = {
    * Width of the multi-select, can be a fixed width or full width
    * @default full
    */
-  width?: (typeof FIXED_WIDTHS)[number];
+  width?: ResponsiveVariants<Variants['width']>;
 } & ListProps<T>;

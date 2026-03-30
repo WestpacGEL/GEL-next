@@ -31,7 +31,7 @@ export function MultiSelectListBoxTrigger<T>({
   const styles = triggerStyles({
     size: resolveResponsiveVariant(size, breakpoint),
     isFocusVisible,
-    width,
+    width: resolveResponsiveVariant(width, breakpoint),
   });
 
   const getSectionTitle = useCallback(
