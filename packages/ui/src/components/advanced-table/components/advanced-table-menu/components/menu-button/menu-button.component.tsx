@@ -9,19 +9,19 @@ import { Input } from '../../../../../input/input.component.js';
 import { MenuList } from '../menu-list/menu-list.component.js';
 import { MenuPopover } from '../menu-popover/menu-popover.component.js';
 
-export function MenuButton<T extends object>({
+export function MenuButton<T>({
   onInputChange,
   filterVal,
   header,
   ...props
 }: MenuTriggerProps & { filterVal?: string; header: Header<T, unknown>; onInputChange: (val: string) => void } & Omit<
-    AriaMenuProps<T>,
+    AriaMenuProps<object>,
     'children'
   >) {
   const state = useMenuTriggerState(props);
 
   const btnRef = useRef(null);
-  const { menuTriggerProps, menuProps } = useMenuTrigger<T>({}, state, btnRef);
+  const { menuTriggerProps, menuProps } = useMenuTrigger<object>({}, state, btnRef);
   const { buttonProps } = useButton(menuTriggerProps, btnRef);
 
   return (
