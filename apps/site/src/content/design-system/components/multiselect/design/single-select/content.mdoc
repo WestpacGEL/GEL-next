@@ -5,9 +5,41 @@ The single&nbsp;select&nbsp;variant&nbsp;of the Multi-select&nbsp;component&nbsp
 This example shows the basic single-select variant without additional functionality.
 
 ```tsx
-demo here single-select, 
-NO description, filter, section title
-YES nothing
+() => {
+    const OPTIONS = [
+  { key: 1, textValue: 'Aerospace' },
+  { key: 2, textValue: 'Mechanical' },
+  { key: 3, textValue: 'Civil' },
+  { key: 4, textValue: 'Biomedical' },
+  { key: 5, textValue: 'Nuclear' },
+  { key: 6, textValue: 'Industrial' },
+  { key: 7, textValue: 'Chemical' },
+  { key: 8, textValue: 'Agricultural' },
+  { key: 9, textValue: 'Electrical' },
+];
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+  return (
+    <div className="flex flex-col gap-2">
+      <MultiSelect
+        items={OPTIONS}
+        listBoxProps={{ 'aria-label': 'multiselect options' }}
+        selectedKeys={selectedKeys}
+        onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+        selectionMode="single"
+        hideFilter
+      >
+        {option => (
+          <MultiSelectItem
+            key={option.key}
+            textValue={option.textValue}
+          >
+            {option.textValue}
+          </MultiSelectItem>
+        )}
+      </MultiSelect>
+    </div>
+  );
+}
 ```
 
 ### Section titles
@@ -15,9 +47,63 @@ YES nothing
 This example shows the single-select variant with section titles to categorise items into groups.
 
 ```tsx
-demo here single-select, 
-NO description, filter
-YES section title
+() => {
+    const OPTIONS = [
+  { key: 1, textValue: 'Aerospace' },
+  { key: 2, textValue: 'Mechanical' },
+  { key: 3, textValue: 'Civil' },
+  { key: 4, textValue: 'Biomedical' },
+  { key: 5, textValue: 'Nuclear' },
+  { key: 6, textValue: 'Industrial' },
+  { key: 7, textValue: 'Chemical' },
+  { key: 8, textValue: 'Agricultural' },
+  { key: 9, textValue: 'Electrical' },
+];
+const OTHER_OPTIONS = [
+  { key: 11, textValue: 'Other Aerospace' },
+  { key: 12, textValue: 'Other Mechanical' },
+  { key: 13, textValue: 'Other Civil' },
+  { key: 14, textValue: 'Other Biomedical' },
+  { key: 15, textValue: 'Other Nuclear' },
+  { key: 16, textValue: 'Other Industrial' },
+  { key: 17, textValue: 'Other Chemical' },
+  { key: 18, textValue: 'Other Agricultural' },
+  { key: 19, textValue: 'Other Electrical' },
+];
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+  return (
+    <div className="flex flex-col gap-2">
+      <MultiSelect
+        listBoxProps={{ 'aria-label': 'multiselect options' }}
+        selectedKeys={selectedKeys}
+        onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+        selectionMode="single"
+        hideFilter
+      >
+        <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelectSection>
+        <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelectSection>
+      </MultiSelect>
+    </div>
+  );
+}
 ```
 
 ### Filtering
@@ -25,9 +111,40 @@ YES section title
 This example shows the single-select variant with filtering functionality to narrow down the list of items to choose from.
 
 ```tsx
-demo here single-select, 
-NO description, section title
-YES filter
+() => {
+    const OPTIONS = [
+  { key: 1, textValue: 'Aerospace' },
+  { key: 2, textValue: 'Mechanical' },
+  { key: 3, textValue: 'Civil' },
+  { key: 4, textValue: 'Biomedical' },
+  { key: 5, textValue: 'Nuclear' },
+  { key: 6, textValue: 'Industrial' },
+  { key: 7, textValue: 'Chemical' },
+  { key: 8, textValue: 'Agricultural' },
+  { key: 9, textValue: 'Electrical' },
+];
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+  return (
+    <div className="flex flex-col gap-2">
+      <MultiSelect
+        items={OPTIONS}
+        listBoxProps={{ 'aria-label': 'multiselect options' }}
+        selectedKeys={selectedKeys}
+        onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+        selectionMode="single"
+      >
+        {option => (
+          <MultiSelectItem
+            key={option.key}
+            textValue={option.textValue}
+          >
+            {option.textValue}
+          </MultiSelectItem>
+        )}
+      </MultiSelect>
+    </div>
+  );
+}
 ```
 
 ### All functions
@@ -35,7 +152,62 @@ YES filter
 This example shows the single-select variant with all functions displayed.
 
 ```tsx
-demo here single-select, 
-NO nothing
-YES description, filter, section title
+() => {
+    const OPTIONS = [
+  { key: 1, textValue: 'Aerospace' },
+  { key: 2, textValue: 'Mechanical' },
+  { key: 3, textValue: 'Civil' },
+  { key: 4, textValue: 'Biomedical' },
+  { key: 5, textValue: 'Nuclear' },
+  { key: 6, textValue: 'Industrial' },
+  { key: 7, textValue: 'Chemical' },
+  { key: 8, textValue: 'Agricultural' },
+  { key: 9, textValue: 'Electrical' },
+];
+const OTHER_OPTIONS = [
+  { key: 11, textValue: 'Other Aerospace' },
+  { key: 12, textValue: 'Other Mechanical' },
+  { key: 13, textValue: 'Other Civil' },
+  { key: 14, textValue: 'Other Biomedical' },
+  { key: 15, textValue: 'Other Nuclear' },
+  { key: 16, textValue: 'Other Industrial' },
+  { key: 17, textValue: 'Other Chemical' },
+  { key: 18, textValue: 'Other Agricultural' },
+  { key: 19, textValue: 'Other Electrical' },
+];
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+  return (
+    <div className="flex flex-col gap-2">
+      <MultiSelect
+        listBoxProps={{ 'aria-label': 'multiselect options' }}
+        selectedKeys={selectedKeys}
+        onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+        selectionMode="single"
+      >
+        <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+              description="Supporting information or description"
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelectSection>
+        <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+              description="Supporting information or description"
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelectSection>
+      </MultiSelect>
+    </div>
+  );
+}
 ```
