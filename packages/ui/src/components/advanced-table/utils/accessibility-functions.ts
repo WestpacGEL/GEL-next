@@ -1,5 +1,5 @@
 import { Cell } from '@tanstack/react-table';
-
+// TODO: Potentially unneeded, check once accessibility design is done
 export function handleTableCellKeyDown<T>(
   event: React.KeyboardEvent<HTMLTableCellElement>,
   cell: Cell<T, unknown>,

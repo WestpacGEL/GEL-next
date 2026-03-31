@@ -10,7 +10,7 @@ import {
   RemoveIcon,
 } from '../../../../icon/index.js';
 import { AdvancedTableContext } from '../../../advanced-table.component.js';
-import { MenuButton } from '../../advanced-table-menu/components/menu-button/menu-button.component.js';
+import { AdvancedTableMenu } from '../../advanced-table-menu/advanced-table-menu.component.js';
 
 import { styles as HeadCellContentStyles } from './head-cell-content.styles.js';
 
@@ -49,7 +49,7 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
           </button>
         )}
         {header.column.getCanFilter() && !header.isPlaceholder && (
-          <MenuButton
+          <AdvancedTableMenu
             header={header}
             filterVal={header.column.getFilterValue() as string}
             onInputChange={header.column.setFilterValue}

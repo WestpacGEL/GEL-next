@@ -3,13 +3,14 @@ import { useRef } from 'react';
 import { AriaMenuProps, useButton, useMenuTrigger } from 'react-aria';
 import { Item, MenuTriggerProps, useMenuTriggerState } from 'react-stately';
 
-import { Button } from '../../../../../button/index.js';
-import { MoreVertIcon } from '../../../../../icon/index.js';
-import { Input } from '../../../../../input/input.component.js';
-import { MenuList } from '../menu-list/menu-list.component.js';
-import { MenuPopover } from '../menu-popover/menu-popover.component.js';
+import { Button } from '../../../button/index.js';
+import { MoreVertIcon } from '../../../icon/index.js';
+import { Input } from '../../../input/input.component.js';
 
-export function MenuButton<T>({
+import { MenuList } from './components/menu-list/menu-list.component.js';
+import { MenuPopover } from './components/menu-popover/menu-popover.component.js';
+
+export function AdvancedTableMenu<T>({
   onInputChange,
   filterVal,
   header,
