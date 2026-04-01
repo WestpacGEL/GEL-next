@@ -1,6 +1,6 @@
 import { flexRender, Header } from '@tanstack/react-table';
 import { useRef } from 'react';
-import { AriaMenuProps, useButton, useMenuTrigger } from 'react-aria';
+import { AriaMenuProps, Key, useButton, useMenuTrigger } from 'react-aria';
 import { Item, MenuTriggerProps, useMenuTriggerState } from 'react-stately';
 
 import { Button } from '../../../button/index.js';
@@ -25,6 +25,22 @@ export function AdvancedTableMenu<T>({
   const { menuTriggerProps, menuProps } = useMenuTrigger<object>({}, state, btnRef);
   const { buttonProps } = useButton(menuTriggerProps, btnRef);
 
+  const handleAction = (key: Key) => {
+    switch (key) {
+      case 'pin-left':
+        header.column.pin('left');
+        break;
+      case 'pin-right':
+        header.column.pin('right');
+        break;
+      case 'reset':
+        header.column.pin(false);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <>
       <Button
@@ -37,14 +53,12 @@ export function AdvancedTableMenu<T>({
       />
       {state.isOpen && (
         <MenuPopover state={state} triggerRef={btnRef} placement="bottom start">
-          <MenuList {...props} {...menuProps} rootMenuState={state}>
+          <MenuList {...props} {...menuProps} rootMenuState={state} onAction={handleAction}>
             <Item key="sort-asc">Group by {flexRender(header.column.columnDef.header, header.getContext())}</Item>
             {/* <Item key="sort-desc">Sort Descending</Item>
             <Item key="group">Group Column</Item> */}
-            <Item key="pin" title="Pin Column">
-              <Item key="pin-left">Pin Left</Item>
-              <Item key="pin-right">Pin Right</Item>
-            </Item>
+            <Item key="pin-left">Pin Left</Item>
+            <Item key="pin-right">Pin Right</Item>
             <Item key="filter" title="Filter" textValue="Filter" data-submenu-type="dialog">
               <Input
                 placeholder="filter"

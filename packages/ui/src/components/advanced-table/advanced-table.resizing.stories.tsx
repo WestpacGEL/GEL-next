@@ -5,7 +5,6 @@ import { columnsSB, defaultDataSB } from './story-utils/storyData.js';
 
 const meta: Meta<typeof AdvancedTable> = {
   title: 'Components/Advanced Table/Resizing',
-  component: AdvancedTable,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
 };
@@ -13,7 +12,7 @@ const meta: Meta<typeof AdvancedTable> = {
 export default meta;
 type Story = StoryObj<unknown>;
 
-export const DefaultStyle: Story = {
+export const ResizingColumns: Story = {
   render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing />,
 };
 
@@ -23,4 +22,8 @@ export const ExtraCellPadding: Story = {
 
 export const Bordered: Story = {
   render: () => <AdvancedTable bordered data={defaultDataSB} columns={columnsSB} enableResizing />,
+};
+
+export const BorderedExtraPadding: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} extraCellPadding bordered enableResizing />,
 };

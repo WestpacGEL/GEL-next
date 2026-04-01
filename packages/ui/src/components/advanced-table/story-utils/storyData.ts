@@ -48,7 +48,7 @@ export const editableColumnsSB: AdvancedColumnProps<AdvancedPerson>[] = [
 ];
 
 export const defaultDataSB = makePersonData(100);
-export const expandableDataSB = makePersonData(100, 10, 10);
+export const expandableDataSB = makePersonData(10, 10, 10, 10, 10);
 
 export const manyColsSB = makeColumns(100);
 export const dataForColsSB = makeDataFromCols(100, manyColsSB);

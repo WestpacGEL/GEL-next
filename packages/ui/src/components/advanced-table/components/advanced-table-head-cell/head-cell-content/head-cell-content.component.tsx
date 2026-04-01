@@ -48,7 +48,7 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
             {header.column.getIsGrouped() ? <RemoveIcon size="small" /> : <AddIcon size="small" />}
           </button>
         )}
-        {header.column.getCanFilter() && !header.isPlaceholder && (
+        {(header.column.getCanFilter() || header.column.getCanPin()) && !header.isPlaceholder && (
           <AdvancedTableMenu
             header={header}
             filterVal={header.column.getFilterValue() as string}
@@ -71,7 +71,7 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
           </div>
         )}
       </div>
-      {!header.isPlaceholder && header.column.getCanPin() && header.column.id !== 'select-column' && (
+      {/* {!header.isPlaceholder && header.column.getCanPin() && header.column.id !== 'select-column' && (
         <div className="flex justify-center gap-1">
           {header.column.getIsPinned() !== 'left' ? (
             <button
@@ -104,7 +104,7 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
             </button>
           ) : null}
         </div>
-      )}
+      )} */}
     </>
   );
 }

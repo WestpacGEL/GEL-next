@@ -5,7 +5,6 @@ import { columnsSB, defaultDataSB } from './story-utils/storyData.js';
 
 const meta: Meta<typeof AdvancedTable> = {
   title: 'Components/Advanced Table/Styles',
-  component: AdvancedTable,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
 };
@@ -23,4 +22,8 @@ export const ExtraCellPadding: Story = {
 
 export const Bordered: Story = {
   render: () => <AdvancedTable bordered data={defaultDataSB} columns={columnsSB} />,
+};
+
+export const BorderedExtraPadding: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} extraCellPadding bordered />,
 };
