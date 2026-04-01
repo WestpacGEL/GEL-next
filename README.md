@@ -26,9 +26,20 @@ npm i -D tailwindcss @tailwindcss/postcss postcss
 
 GEL is using [Tailwind](https://tailwindcss.com/) for styling. Visit the [Tailwind docs](https://tailwindcss.com/docs/installation/framework-guides) and follow the relevant instructions for installation.
 
-### AI Skills
+### Agent Skills
 
-We recommend using our skills files found [here](https://github.com/WestpacGEL/GEL-next/blob/develop/.agents/skills/consumer) in your projects to help your development process. You should always include at least the `using-westpac-ui` skill/references and use the `installing-westpac-ui` or `migrating-to-westpac-ui-v1` if needed. The `using-westpac-ui` skill can be a good way to find out if you need to raise an issue/feature request as you can ask what components should be capable of.
+We have some skills available to use with AI agents:
+
+- `using-westpac-ui` - **Highly recommended**: Provides general context for all components in the library, has reference material generated from the [docs site](https://gel.westpacgroup.com.au/design-system/wbc) content and usage examples of components.
+- `installing-westpac-ui` - **Optional**: Skill that provides context for installing GEL Next in a fresh project.
+- `migrating-to-westpac-ui-v1` - **Optional**: Skill that provides context for migrating from pre-1.0 GEL Next to >1.0 GEL Next
+
+#### Skill Installation
+
+The recommended way to install skills is to use the following command, from this you can select the skills you wish to install:
+`npx skills add https://github.com/WestpacGEL/GEL-next/tree/main/.agents/skills/consumer/`
+
+If you can't use the `skills` cli for any reason you can just retrieve the skills manually from the [GEL Next GitHub](https://github.com/WestpacGEL/GEL-next/tree/main/.agents/skills/consumer/)
 
 ### Installation
 

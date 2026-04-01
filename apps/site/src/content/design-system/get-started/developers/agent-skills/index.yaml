@@ -1,0 +1,16 @@
+name: Agent skills
+description: We provide a set of pre-built skills that you can use to quickly add context to your agents.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Adding skill files
+      slug: adding-skill-files
+    noTitle: false
+    noDemo: false
+accessibility: []
+relatedComponents:
+  icon: cube
+  links: []
+code: []
