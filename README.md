@@ -30,9 +30,9 @@ GEL is using [Tailwind](https://tailwindcss.com/) for styling. Visit the [Tailwi
 
 We have some skills available to use with AI agents:
 
-- `using-westpac-ui` - **_ Highly recommended _** Provides general context for all components in the library, has reference material generated from the [docs site](https://gel.westpacgroup.com.au/design-system/wbc) content and usage examples of components.
-- `installing-westpac-ui` - **_ Optional _** Skill that provides context for installing GEL Next in a fresh project.
-- `migrating-to-westpac-ui-v1` - **_ Optional _** Skill that provides context for migrating from pre-1.0 GEL Next to >1.0 GEL Next
+- `using-westpac-ui` - **Highly recommended**: Provides general context for all components in the library, has reference material generated from the [docs site](https://gel.westpacgroup.com.au/design-system/wbc) content and usage examples of components.
+- `installing-westpac-ui` - **Optional**: Skill that provides context for installing GEL Next in a fresh project.
+- `migrating-to-westpac-ui-v1` - **Optional**: Skill that provides context for migrating from pre-1.0 GEL Next to >1.0 GEL Next
 
 #### Skill Installation
 
