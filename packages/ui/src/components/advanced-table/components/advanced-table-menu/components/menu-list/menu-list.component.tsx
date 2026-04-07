@@ -1,52 +1,32 @@
 import { forwardRef, useRef } from 'react';
 import { AriaMenuProps, useMenu } from 'react-aria';
-import { RootMenuTriggerState, useTreeState } from 'react-stately';
+import { useTreeState } from 'react-stately';
 
-import { DialogSubmenuTriggerItem } from '../dialog-submenu-trigger-item/dialog-submenu-trigger-item.component.js';
 import { MenuItem } from '../menu-item/menu-item.component.js';
-import { SubmenuTriggerItem } from '../submenu-trigger-item/submenu-trigger-item.component.js';
+import { MenuSection } from '../menu-section/menu-section.component.js';
 
-type MenuListProps<T extends object> = Partial<Pick<AriaMenuProps<T>, 'children'>> &
-  Omit<AriaMenuProps<T>, 'children'> & {
-    rootMenuState?: RootMenuTriggerState;
-  };
+type MenuListProps<T extends object> = Partial<Pick<AriaMenuProps<T>, 'children'>> & Omit<AriaMenuProps<T>, 'children'>;
 
 export const MenuList = forwardRef(function MenuList<T extends object>(
   props: MenuListProps<T>,
   forwardedRef: React.ForwardedRef<HTMLUListElement>,
 ) {
-  const { rootMenuState, ...menuProps } = props;
-  const state = useTreeState(menuProps);
+  const state = useTreeState(props);
 
   const internalRef = useRef<HTMLUListElement>(null);
   const ref = (forwardedRef ?? internalRef) as React.RefObject<HTMLUListElement>;
-  const { menuProps: ariaMenuProps } = useMenu(menuProps, state, ref);
+  const { menuProps: ariaMenuProps } = useMenu(props, state, ref);
 
   return (
     <ul {...ariaMenuProps} ref={ref} className="flex flex-col gap-1">
       {[...state.collection].map(item => {
-        if (!rootMenuState) return <MenuItem key={item.key} item={item} state={state} />;
+        if (item.type === 'section') return <MenuSection key={item.key} section={item} state={state} />;
 
-        const submenuType = (item.props as Record<string, unknown>)?.['data-submenu-type'];
-        if (submenuType === 'dialog')
+        if (item.key === 'filter')
           return (
-            <DialogSubmenuTriggerItem
-              key={item.key}
-              item={item}
-              state={state}
-              rootMenuState={rootMenuState}
-              parentMenuRef={ref}
-            />
-          );
-        if (item.hasChildNodes)
-          return (
-            <SubmenuTriggerItem
-              key={item.key}
-              item={item}
-              state={state}
-              rootMenuState={rootMenuState}
-              parentMenuRef={ref}
-            />
+            <li key={item.key} className="p-2" role="none">
+              {item.rendered}
+            </li>
           );
 
         return <MenuItem key={item.key} item={item} state={state} />;

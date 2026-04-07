@@ -21,7 +21,7 @@ export const MenuPopover = ({ children, state, style, ...props }: PopoverProps) 
         {...popoverProps}
         ref={popoverRef}
         style={{ ...popoverProps.style, ...style }}
-        className="flex flex-col border border-border-muted-soft bg-background-white py-2"
+        className="flex flex-col border border-border-muted-soft bg-background-white"
       >
         <DismissButton onDismiss={() => state.close()} />
         {children}

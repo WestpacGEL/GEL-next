@@ -1,10 +1,10 @@
 import { flexRender, Header } from '@tanstack/react-table';
 import { useRef } from 'react';
 import { AriaMenuProps, Key, useButton, useMenuTrigger } from 'react-aria';
-import { Item, MenuTriggerProps, useMenuTriggerState } from 'react-stately';
+import { Item, MenuTriggerProps, Section, useMenuTriggerState } from 'react-stately';
 
 import { Button } from '../../../button/index.js';
-import { MoreVertIcon } from '../../../icon/index.js';
+import { MoreVertIcon, PinIcon, UnpinIcon } from '../../../icon/index.js';
 import { Input } from '../../../input/input.component.js';
 
 import { MenuList } from './components/menu-list/menu-list.component.js';
@@ -28,18 +28,34 @@ export function AdvancedTableMenu<T>({
   const handleAction = (key: Key) => {
     switch (key) {
       case 'pin-left':
-        header.column.pin('left');
+        if (header.column.getIsPinned() === 'left') {
+          header.column.pin(false);
+        } else {
+          header.column.pin('left');
+        }
         break;
       case 'pin-right':
-        header.column.pin('right');
-        break;
-      case 'reset':
-        header.column.pin(false);
+        if (header.column.getIsPinned() === 'right') {
+          header.column.pin(false);
+        } else {
+          header.column.pin('right');
+        }
         break;
       default:
         break;
     }
   };
+
+  const PinItem = ({ direction }: { direction: 'left' | 'right' }) => (
+    <div className="flex gap-2">
+      {header.column.getIsPinned() === direction ? (
+        <UnpinIcon size="small" look="outlined" />
+      ) : (
+        <PinIcon size="small" look="outlined" />
+      )}
+      {header.column.getIsPinned() === direction ? `Unpin ${direction}` : `Pin ${direction}`}
+    </div>
+  );
 
   return (
     <>
@@ -53,20 +69,31 @@ export function AdvancedTableMenu<T>({
       />
       {state.isOpen && (
         <MenuPopover state={state} triggerRef={btnRef} placement="bottom start">
-          <MenuList {...props} {...menuProps} rootMenuState={state} onAction={handleAction}>
-            <Item key="sort-asc">Group by {flexRender(header.column.columnDef.header, header.getContext())}</Item>
-            {/* <Item key="sort-desc">Sort Descending</Item>
-            <Item key="group">Group Column</Item> */}
-            <Item key="pin-left">Pin Left</Item>
-            <Item key="pin-right">Pin Right</Item>
-            <Item key="filter" title="Filter" textValue="Filter" data-submenu-type="dialog">
-              <Input
-                placeholder="filter"
-                value={filterVal ?? ''}
-                onChange={val => onInputChange(val.currentTarget.value)}
-              />
-            </Item>
-            <Item key="reset">Reset Columns</Item>
+          <MenuList {...props} {...menuProps} onAction={handleAction}>
+            {header.column.getCanGlobalFilter() || header.column.getCanFilter() ? (
+              <Section key="filter-section" title="Filter by:">
+                <Item key="filter">
+                  <Input value={filterVal ?? ''} onChange={val => onInputChange(val.currentTarget.value)} />
+                </Item>
+              </Section>
+            ) : null}
+            {header.column.getCanPin() || header.column.getCanGroup() ? (
+              <Section key="actions-section" title="Actions">
+                {header.column.getCanPin() ? (
+                  <>
+                    <Item key="pin-left">
+                      <PinItem direction="left" />
+                    </Item>
+                    <Item key="pin-right">
+                      <PinItem direction="right" />
+                    </Item>
+                  </>
+                ) : null}
+                {header.column.getCanGroup() ? (
+                  <Item key="sort-asc">Group by {flexRender(header.column.columnDef.header, header.getContext())}</Item>
+                ) : null}
+              </Section>
+            ) : null}
           </MenuList>
         </MenuPopover>
       )}
