@@ -153,7 +153,9 @@ function Autocomplete<T extends object>(
           portalContainer={portalContainer}
           triggerRef={outerRef}
         >
-          <div className="bg-background-white px-3 py-2 text-text-muted">{noOptionsMessage}</div>
+          <div className="bg-background-white px-3 py-2 text-text-muted first:rounded-t-xl only:rounded-xl">
+            {noOptionsMessage}
+          </div>
           {footer && (
             <div className="rounded-b border-t border-t-border-muted-soft bg-background-white px-3 py-2 text-text-muted">
               {footer}
