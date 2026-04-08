@@ -16,12 +16,11 @@ export function ErrorValidationAlert<T extends string = string>({
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           .filter(([_, value]) => value?.message)
           .map(([key]) => {
-            const message = errors[key as T]?.message;
-            const messageText = typeof message === 'string' ? message : JSON.stringify(message);
+            const message = errors[key as T]?.message as string;
             return (
               <ListItem key={key}>
                 <Link type="inline" href={`#${key}`} className="text-text-danger">
-                  {messageText}
+                  {message}
                 </Link>
               </ListItem>
             );
