@@ -3,26 +3,29 @@ import { FieldErrors } from 'react-hook-form';
 
 export function ErrorValidationAlert<T extends string = string>({
   errors,
-  labels,
 }: {
   errors: FieldErrors<Record<T, unknown>>;
-  labels?: Record<T, string>;
 }) {
   const errorAmount = Object.entries(errors).length;
+
   return (
     <Alert look="danger">
-      <strong>{`Please fix the ${errorAmount} errors listed below`}</strong>
+      <strong>{`Please fix the following ${errorAmount} errors:`}</strong>
       <List type="unstyled">
         {Object.entries(errors)
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           .filter(([_, value]) => value?.message)
-          .map(([key]) => (
-            <ListItem key={key}>
-              <Link type="inline" href={`#${key}`} className="text-text-danger">
-                {(labels && labels[key as T]) || key}
-              </Link>
-            </ListItem>
-          ))}
+          .map(([key]) => {
+            const message = errors[key as T]?.message;
+            const messageText = typeof message === 'string' ? message : JSON.stringify(message);
+            return (
+              <ListItem key={key}>
+                <Link type="inline" href={`#${key}`} className="text-text-danger">
+                  {messageText}
+                </Link>
+              </ListItem>
+            );
+          })}
       </List>
     </Alert>
   );
