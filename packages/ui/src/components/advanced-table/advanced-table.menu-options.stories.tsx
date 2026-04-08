@@ -27,7 +27,9 @@ export const FilterOnly: Story = {
 };
 
 export const PinningOnly: Story = {
-  render: () => (
-    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnPinning enableColumnFilter={false} />
-  ),
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnPinning />,
+};
+
+export const GroupingOnly: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableGrouping />,
 };
