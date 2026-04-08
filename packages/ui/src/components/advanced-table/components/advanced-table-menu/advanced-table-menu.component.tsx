@@ -41,6 +41,9 @@ export function AdvancedTableMenu<T>({
           header.column.pin('right');
         }
         break;
+      case 'group':
+        header.column.toggleGrouping();
+        break;
       default:
         break;
     }
@@ -90,7 +93,13 @@ export function AdvancedTableMenu<T>({
                   </>
                 ) : null}
                 {header.column.getCanGroup() ? (
-                  <Item key="sort-asc">Group by {flexRender(header.column.columnDef.header, header.getContext())}</Item>
+                  <Item key="group">
+                    {header.column.getIsGrouped() ? `Ungroup` : `Group`} by{' '}
+                    {/* need to overwrite the styles than get passed from the header when using flexRender */}
+                    <span className="**:inline **:[all:unset]">
+                      {flexRender(header.column.columnDef.header, header.getContext())}
+                    </span>
+                  </Item>
                 ) : null}
               </Section>
             ) : null}

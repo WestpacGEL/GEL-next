@@ -102,6 +102,7 @@ export function AdvancedTable<T>({
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
     getSubRows: subRowKey ? (row: any) => row[subRowKey] : undefined,
     enableColumnFilters: enableColumnFilter,
+    enableGlobalFilter: false,
     enableColumnPinning,
     enableSorting,
     enableGrouping,

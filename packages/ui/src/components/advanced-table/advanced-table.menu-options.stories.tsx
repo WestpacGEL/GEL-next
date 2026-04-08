@@ -8,7 +8,7 @@ import { AdvancedPerson } from './story-utils/fakerData.js';
 import { columnsSB, defaultDataSB } from './story-utils/storyData.js';
 
 const meta: Meta<typeof AdvancedTable> = {
-  title: 'Components/Advanced Table/Sub-menu Options',
+  title: 'Components/Advanced Table/Menu Options',
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
 };
@@ -16,6 +16,18 @@ const meta: Meta<typeof AdvancedTable> = {
 export default meta;
 type Story = StoryObj<unknown>;
 
-export const Sortable: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnPinning />,
+export const AllOptions: Story = {
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnPinning enableColumnFilter enableGrouping />
+  ),
+};
+
+export const FilterOnly: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnFilter />,
+};
+
+export const PinningOnly: Story = {
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnPinning enableColumnFilter={false} />
+  ),
 };

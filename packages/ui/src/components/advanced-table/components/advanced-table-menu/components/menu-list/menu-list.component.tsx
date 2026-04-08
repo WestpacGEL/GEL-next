@@ -18,7 +18,7 @@ export const MenuList = forwardRef(function MenuList<T extends object>(
   const { menuProps: ariaMenuProps } = useMenu(props, state, ref);
 
   return (
-    <ul {...ariaMenuProps} ref={ref} className="flex flex-col gap-1">
+    <ul {...ariaMenuProps} ref={ref} className="flex flex-col gap-1 outline-none">
       {[...state.collection].map(item => {
         if (item.type === 'section') return <MenuSection key={item.key} section={item} state={state} />;
 

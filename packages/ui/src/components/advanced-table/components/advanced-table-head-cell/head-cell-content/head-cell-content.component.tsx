@@ -43,20 +43,24 @@ export function HeadCellContent<T>({ header }: { header: Header<T, unknown> }) {
           sortingIcon(header.column.getIsSorted(), () => {
             header.column.toggleSorting(undefined, true);
           })}
-        {header.column.getCanGroup() && !header.isPlaceholder && (
+        {/* {header.column.getCanGroup() && !header.isPlaceholder && (
           <button onClick={header.column.getToggleGroupingHandler()}>
             {header.column.getIsGrouped() ? <RemoveIcon size="small" /> : <AddIcon size="small" />}
           </button>
-        )}
-        {(header.column.getCanFilter() || header.column.getCanPin()) && !header.isPlaceholder && (
-          <AdvancedTableMenu
-            header={header}
-            filterVal={header.column.getFilterValue() as string}
-            onInputChange={header.column.setFilterValue}
-            // eslint-disable-next-line no-console
-            onAction={action => console.log(action)}
-          />
-        )}
+        )} */}
+        {(header.column.getCanFilter() ||
+          header.column.getCanGlobalFilter() ||
+          header.column.getCanPin() ||
+          header.column.getCanGroup()) &&
+          !header.isPlaceholder && (
+            <AdvancedTableMenu
+              header={header}
+              filterVal={header.column.getFilterValue() as string}
+              onInputChange={header.column.setFilterValue}
+              // eslint-disable-next-line no-console
+              onAction={action => console.log(action)}
+            />
+          )}
         {header.column.getCanResize() && !header.isPlaceholder && (
           <div
             {...{
