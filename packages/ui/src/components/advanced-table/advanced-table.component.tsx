@@ -28,9 +28,6 @@ import { AdvancedTableProps } from './advanced-table.types.js';
 import { AdvancedTableBody, DefaultCell, EditableCell, AdvancedTableHead } from './components/index.js';
 import { columnGenerator, deleteRow, updateTableData, useVirtualizedColumns } from './utils/index.js';
 
-// TODO: Accessibility: Use tab to escape table
-// TODO: Accessibility: Fix using arrow keys on editable cells moving focus
-// TODO: Accessibility: Header keyboard navigation
 export const AdvancedTableContext = createContext<{
   tableRef?: React.RefObject<HTMLDivElement>;
   enableColumnReordering?: boolean;
@@ -185,7 +182,13 @@ export function AdvancedTable<T>({
           <table
             className={styles.table()}
             ref={outerTableRef}
-            style={{ ...columnSizeVars, width: table.getTotalSize() }}
+            style={{
+              ...columnSizeVars,
+              width:
+                table.getTotalSize() +
+                // below accounts for scrollbar size when scrollableRows enabled
+                ((outerTableRef.current?.offsetWidth ?? 0) - (outerTableRef.current?.clientWidth ?? 0)),
+            }}
           >
             <AdvancedTableHead
               table={table}
@@ -195,22 +198,16 @@ export function AdvancedTable<T>({
             />
             <AdvancedTableBody table={table} tableRef={outerTableRef} />
           </table>
-          {!scrollableRows && (
-            <Pagination
-              totalPages={table.getPageCount()}
-              id="pagination"
-              current={currentPage}
-              onChange={pageIndex => table.setPageIndex(pageIndex - 1)}
-              className="absolute pt-2"
-              style={{
-                top:
-                  scrollableColumns && !scrollableRows
-                    ? outerTableRef.current?.getBoundingClientRect().bottom
-                    : undefined,
-              }}
-            />
-          )}
         </div>
+        {!scrollableRows && (
+          <Pagination
+            totalPages={table.getPageCount()}
+            id="pagination"
+            current={currentPage}
+            onChange={pageIndex => table.setPageIndex(pageIndex - 1)}
+            className="items-start pt-2"
+          />
+        )}
       </DndContext>
     </AdvancedTableContext.Provider>
   );

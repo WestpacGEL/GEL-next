@@ -52,3 +52,6 @@ export const expandableDataSB = makePersonData(10, 10, 10, 10, 10);
 
 export const manyColsSB = makeColumns(100);
 export const dataForColsSB = makeDataFromCols(100, manyColsSB);
+
+export const manyRowsColsSB = makeColumns(5);
+export const dataForRowsColsSB = makeDataFromCols(1000, manyRowsColsSB);
