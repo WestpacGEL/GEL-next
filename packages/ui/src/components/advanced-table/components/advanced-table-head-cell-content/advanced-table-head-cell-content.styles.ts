@@ -4,6 +4,9 @@ export const styles = tv({
   slots: {
     headerContent: 'relative flex flex-row gap-1 p-2 select-none',
     resizeBar: '',
+    sortButton: 'flex cursor-pointer flex-col',
+    resizeHandle: 'cursor-col-resize',
+    resizeHitArea: 'absolute top-0 -right-1 h-full w-2',
   },
   variants: {
     extraCellPadding: {
@@ -24,10 +27,10 @@ export const styles = tv({
         resizeBar: 'absolute right-0 h-4 w-[1px] cursor-col-resize rounded bg-surface-muted-strong select-none',
       },
     },
-    resizeable: {
+    resizable: {
       true: '',
       false: '',
     },
   },
-  compoundSlots: [{ slots: ['headerContent'], bordered: true, resizeable: true, className: 'border-r-0' }],
+  compoundSlots: [{ slots: ['headerContent'], bordered: true, resizable: true, className: 'border-r-0' }],
 });

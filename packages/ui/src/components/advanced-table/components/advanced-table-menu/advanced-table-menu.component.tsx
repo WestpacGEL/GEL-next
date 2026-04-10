@@ -1,25 +1,17 @@
 import { flexRender, Header } from '@tanstack/react-table';
 import { ReactElement, useRef } from 'react';
-import { AriaMenuProps, Key, useButton, useMenuTrigger } from 'react-aria';
-import { Item, MenuTriggerProps, Section, useMenuTriggerState } from 'react-stately';
+import { Key, useButton, useMenuTrigger } from 'react-aria';
+import { Item, Section, useMenuTriggerState } from 'react-stately';
 
 import { Button } from '../../../button/index.js';
-import { MoreVertIcon, PinIcon, UnpinIcon } from '../../../icon/index.js';
+import { MoreVertIcon } from '../../../icon/index.js';
 import { Input } from '../../../input/input.component.js';
 
+import { styles as advancedTableMenuStyles } from './advanced-table-menu.styles.js';
+import { AdvancedTableMenuProps } from './advanced-table-menu.types.js';
 import { MenuList } from './components/menu-list/menu-list.component.js';
 import { MenuPopover } from './components/menu-popover/menu-popover.component.js';
-
-function PinItemContent({ isPinned, direction }: { isPinned: boolean; direction: 'left' | 'right' }) {
-  const Icon = isPinned ? UnpinIcon : PinIcon;
-  const label = isPinned ? `Unpin ${direction}` : `Pin ${direction}`;
-  return (
-    <div className="flex gap-2">
-      <Icon size="small" look="outlined" />
-      {label}
-    </div>
-  );
-}
+import { PinItemContent } from './components/pin-item-content/pin-item-content.component.js';
 
 function handlePinAction<T>(header: Header<T, unknown>, direction: 'left' | 'right') {
   if (header.column.getIsPinned() === direction) {
@@ -29,7 +21,10 @@ function handlePinAction<T>(header: Header<T, unknown>, direction: 'left' | 'rig
   }
 }
 
-function buildActionItems<T>(header: Header<T, unknown>): ReactElement[] {
+function buildActionItems<T>(
+  header: Header<T, unknown>,
+  styles: ReturnType<typeof advancedTableMenuStyles>,
+): ReactElement[] {
   const items: ReactElement[] = [];
 
   if (header.column.getCanPin()) {
@@ -47,8 +42,7 @@ function buildActionItems<T>(header: Header<T, unknown>): ReactElement[] {
     items.push(
       <Item key="group">
         {header.column.getIsGrouped() ? `Ungroup` : `Group`} by{' '}
-        {/* need to overwrite the styles than get passed from the header when using flexRender */}
-        <span className="**:inline **:[all:unset]">
+        <span className={styles.groupHeaderReset()}>
           {flexRender(header.column.columnDef.header, header.getContext())}
         </span>
       </Item>,
@@ -58,20 +52,13 @@ function buildActionItems<T>(header: Header<T, unknown>): ReactElement[] {
   return items;
 }
 
-export function AdvancedTableMenu<T>({
-  onInputChange,
-  filterVal,
-  header,
-  ...props
-}: MenuTriggerProps & { filterVal?: string; header: Header<T, unknown>; onInputChange: (val: string) => void } & Omit<
-    AriaMenuProps<object>,
-    'children'
-  >) {
+export function AdvancedTableMenu<T>({ onInputChange, filterVal, header, ...props }: AdvancedTableMenuProps<T>) {
   const state = useMenuTriggerState(props);
 
   const btnRef = useRef(null);
   const { menuTriggerProps, menuProps } = useMenuTrigger<object>({}, state, btnRef);
   const { buttonProps } = useButton(menuTriggerProps, btnRef);
+  const styles = advancedTableMenuStyles();
 
   const canFilter = header.column.getCanGlobalFilter() || header.column.getCanFilter();
   const hasActions = header.column.getCanPin() || header.column.getCanGroup();
@@ -92,7 +79,7 @@ export function AdvancedTableMenu<T>({
     }
   };
 
-  const actionItems = buildActionItems(header);
+  const actionItems = buildActionItems(header, styles);
 
   return (
     <>
@@ -101,7 +88,7 @@ export function AdvancedTableMenu<T>({
         look="unstyled"
         size="medium"
         iconBefore={() => <MoreVertIcon />}
-        className="h-fit"
+        className={styles.triggerButton()}
         ref={btnRef}
       />
       {state.isOpen && (

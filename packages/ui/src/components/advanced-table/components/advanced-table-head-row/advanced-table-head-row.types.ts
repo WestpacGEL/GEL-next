@@ -1,8 +1,6 @@
 import { HeaderGroup, Table } from '@tanstack/react-table';
 import { Virtualizer } from '@tanstack/react-virtual';
 
-import { AdvancedTableProps } from '../../advanced-table.types.js';
-
 export type AdvancedTableHeadRowProps<T> = {
   columnVirtualizer: Virtualizer<HTMLDivElement, HTMLTableCellElement>;
   /**
@@ -12,11 +10,7 @@ export type AdvancedTableHeadRowProps<T> = {
   /**
    * Sets table to use virtualized scrollable columns
    */
-  scrollableColumns?: AdvancedTableProps<T>['scrollableColumns'];
-  /**
-   * Sets table to use virtualized scrollable rows rather than pagination
-   */
-  scrollableRows?: AdvancedTableProps<T>['scrollableRows'];
+  scrollableColumns?: boolean;
   /**
    * Table instance
    */

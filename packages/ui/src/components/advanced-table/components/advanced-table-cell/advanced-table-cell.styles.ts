@@ -10,11 +10,6 @@ export const styles = tv({
         td: 'flex',
       },
     },
-    scrollableColumns: {
-      true: {
-        td: '',
-      },
-    },
     isPinned: {
       true: {
         td: 'bg-background-white',

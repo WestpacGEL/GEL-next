@@ -1,7 +1,7 @@
 import { SortableContext, horizontalListSortingStrategy } from '@dnd-kit/sortable';
 import { useContext } from 'react';
 
-import { AdvancedTableContext } from '../../advanced-table.component.js';
+import { AdvancedTableContext } from '../../advanced-table.context.js';
 import { AdvancedTableHeadCell } from '../advanced-table-head-cell/advanced-table-head-cell.component.js';
 
 import { styles as AdvancedTableHeadRowStyles } from './advanced-table-head-row.styles.js';
@@ -58,14 +58,7 @@ export function AdvancedTableHeadRow<T>({
 
         {virtualColumns.map(virtualColumn => {
           const header = headerGroup.headers[virtualColumn.index];
-          return (
-            <AdvancedTableHeadCell
-              key={header.id}
-              header={header}
-              table={table}
-              scrollableColumns={scrollableColumns}
-            />
-          );
+          return <AdvancedTableHeadCell key={header.id} header={header} scrollableColumns={scrollableColumns} />;
         })}
         {virtualPaddingRight ? (
           //fake empty column to the right for virtualization scroll padding
@@ -77,7 +70,7 @@ export function AdvancedTableHeadRow<T>({
     <tr key={headerGroup.id} className={styles.headerRow()}>
       <SortableContext items={columnOrder ?? []} strategy={horizontalListSortingStrategy}>
         {headerGroup.headers.map(header => (
-          <AdvancedTableHeadCell key={header.id} header={header} table={table} scrollableColumns={scrollableColumns} />
+          <AdvancedTableHeadCell key={header.id} header={header} scrollableColumns={scrollableColumns} />
         ))}
       </SortableContext>
     </tr>

@@ -1,19 +1,16 @@
-import { CellContext } from '@tanstack/react-table';
 import { useContext } from 'react';
 
 import { DropDownIcon, DropLeftIcon } from '../../../../icon/index.js';
-import { AdvancedTableContext } from '../../../advanced-table.component.js';
+import { AdvancedTableContext } from '../../../advanced-table.context.js';
 
-export function DefaultCell<T>({
-  row,
-  getValue,
-  column,
-  enableRowSelection,
-}: CellContext<T, unknown> & { enableRowSelection?: boolean }) {
+import { styles as defaultCellStyles } from './default-cell.styles.js';
+import { DefaultCellProps } from './default-cell.types.js';
+
+export function DefaultCell<T>({ row, getValue, column, enableRowSelection }: DefaultCellProps<T>) {
   const { extraCellPadding } = useContext(AdvancedTableContext);
   const firstColumnIndex = enableRowSelection ? 1 : 0;
+  const styles = defaultCellStyles();
 
-  // Style for expansion padding - only apply to first column and if row is nested
   const expansionStyle =
     column.getIndex() === firstColumnIndex && row.depth > 0
       ? {
@@ -22,7 +19,7 @@ export function DefaultCell<T>({
       : {};
 
   return (
-    <div style={expansionStyle} className="flex flex-row gap-1">
+    <div style={expansionStyle} className={styles.container()}>
       {(row.getCanExpand() || row.getIsGrouped()) && column.getIndex() === firstColumnIndex ? (
         <button onClick={row.getToggleExpandedHandler()}>
           {row.getIsExpanded() ? <DropDownIcon size="medium" /> : <DropLeftIcon size="medium" />}

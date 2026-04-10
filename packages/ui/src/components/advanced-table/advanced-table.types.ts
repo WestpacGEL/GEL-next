@@ -2,10 +2,14 @@ import { ColumnDef, RowData, Table, TableOptions } from '@tanstack/react-table';
 import { CSSProperties } from 'react';
 
 declare module '@tanstack/react-table' {
+  // using interface for below as required by Tanstack table
+  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface TableMeta<TData extends RowData> {
     updateData: (rowIndex: number, columnId: string, value: unknown) => void;
     deleteRow: (rowIndex: number) => void;
   }
+  // using interface for below as required by Tanstack table
+  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface ColumnMeta<TData extends RowData, TValue> {
     editable?: boolean;
   }

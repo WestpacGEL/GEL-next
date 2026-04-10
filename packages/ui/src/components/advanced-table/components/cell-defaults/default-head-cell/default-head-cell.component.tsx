@@ -1,21 +1,19 @@
 import { useSortable } from '@dnd-kit/sortable';
-import { Header } from '@tanstack/react-table';
 import { useContext } from 'react';
 
-import { AdvancedTableContext } from '../../../advanced-table.component.js';
+import { AdvancedTableContext } from '../../../advanced-table.context.js';
 
-export function DefaultHeadCell<T>({ header, title }: { header: Header<T, unknown>; title: string }) {
+import { styles as defaultHeadCellStyles } from './default-head-cell.styles.js';
+import { DefaultHeadCellProps } from './default-head-cell.types.js';
+
+export function DefaultHeadCell<T>({ header, title }: DefaultHeadCellProps<T>) {
   const { attributes, listeners } = useSortable({ id: header.column.id });
   const { enableColumnReordering } = useContext(AdvancedTableContext);
+  const styles = defaultHeadCellStyles({ isReorderEnabled: !!enableColumnReordering });
 
   return (
-    <button
-      {...attributes}
-      {...listeners}
-      disabled={!enableColumnReordering}
-      style={{ cursor: enableColumnReordering ? 'move' : 'default' }}
-    >
-      <h2 className="font-medium whitespace-nowrap">{title}</h2>
+    <button {...attributes} {...listeners} disabled={!enableColumnReordering} className={styles.button()}>
+      <h2 className={styles.title()}>{title}</h2>
     </button>
   );
 }

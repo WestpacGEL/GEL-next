@@ -1,6 +1,4 @@
-import { Header, Table } from '@tanstack/react-table';
-
-import { AdvancedTableProps } from '../../advanced-table.types.js';
+import { Header } from '@tanstack/react-table';
 
 export type AdvancedTableHeadCellProps<T> = {
   /**
@@ -10,13 +8,5 @@ export type AdvancedTableHeadCellProps<T> = {
   /**
    * Sets table to use virtualized scrollable columns
    */
-  scrollableColumns?: AdvancedTableProps<T>['scrollableColumns'];
-  /**
-   * Sets table to use virtualized scrollable rows rather than pagination
-   */
-  scrollableRows?: AdvancedTableProps<T>['scrollableRows'];
-  /**
-   * Table instance
-   */
-  table: Table<T>;
+  scrollableColumns?: boolean;
 };

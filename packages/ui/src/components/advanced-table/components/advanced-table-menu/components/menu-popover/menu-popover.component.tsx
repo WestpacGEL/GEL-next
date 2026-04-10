@@ -1,28 +1,22 @@
 import { useRef } from 'react';
-import { AriaPopoverProps, DismissButton, Overlay, usePopover } from 'react-aria';
-import { OverlayTriggerState } from 'react-stately';
+import { DismissButton, Overlay, usePopover } from 'react-aria';
 
-type PopoverProps = Omit<AriaPopoverProps, 'popoverRef'> & {
-  children: React.ReactNode;
-  state: OverlayTriggerState;
-  style?: React.CSSProperties;
-};
+import { styles as menuPopoverStyles } from './menu-popover.styles.js';
+import { MenuPopoverProps } from './menu-popover.types.js';
 
-export const MenuPopover = ({ children, state, style, ...props }: PopoverProps) => {
+export const MenuPopover = ({ children, state, style, ...props }: MenuPopoverProps) => {
   const popoverRef = useRef(null);
   const { popoverProps, underlayProps } = usePopover(
     { ...props, popoverRef, ...(props.isNonModal && { trigger: 'SubmenuTrigger' as const }) },
     state,
   );
+
+  const styles = menuPopoverStyles();
+
   return (
     <Overlay>
-      <div {...underlayProps} style={{ position: 'fixed', inset: 0 }} />
-      <div
-        {...popoverProps}
-        ref={popoverRef}
-        style={{ ...popoverProps.style, ...style }}
-        className="flex min-w-[200px] flex-col border border-border-muted-soft bg-background-white outline-none"
-      >
+      <div {...underlayProps} className={styles.underlay()} />
+      <div {...popoverProps} ref={popoverRef} style={{ ...popoverProps.style, ...style }} className={styles.popover()}>
         <DismissButton onDismiss={() => state.close()} />
         {children}
         <DismissButton onDismiss={() => state.close()} />

@@ -20,26 +20,15 @@ import {
   getFilteredRowModel,
   RowPinningState,
 } from '@tanstack/react-table';
-import { createContext, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Pagination } from '../pagination/pagination.component.js';
 
+import { AdvancedTableContext } from './advanced-table.context.js';
 import { styles as advancedTableStyles } from './advanced-table.styles.js';
 import { AdvancedTableProps } from './advanced-table.types.js';
 import { AdvancedTableBody, DefaultCell, EditableCell, AdvancedTableHead } from './components/index.js';
 import { columnGenerator, deleteRow, updateTableData, useVirtualizedColumns } from './utils/index.js';
-
-export const AdvancedTableContext = createContext<{
-  tableRef?: React.RefObject<HTMLDivElement>;
-  enableColumnReordering?: boolean;
-  enableRowPinning?: boolean;
-  enableRowSelection?: boolean;
-  scrollableRows?: boolean;
-  scrollableColumns?: boolean;
-  columnOrder?: string[];
-  extraCellPadding?: boolean;
-  bordered?: boolean;
-}>({});
 
 export function AdvancedTable<T>({
   data,

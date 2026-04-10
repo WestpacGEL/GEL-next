@@ -5,11 +5,6 @@ export const styles = tv({
     headerRow: '',
   },
   variants: {
-    scrollableRows: {
-      true: {
-        headerRow: '',
-      },
-    },
     scrollableColumns: {
       true: {
         headerRow: 'flex',

@@ -1,35 +1,12 @@
-import { Row } from '@tanstack/react-table';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { RefObject, useContext, useRef } from 'react';
+import { useContext, useRef } from 'react';
 
-import { AdvancedTableContext } from '../../advanced-table.component.js';
+import { AdvancedTableContext } from '../../advanced-table.context.js';
 import { AdvancedTableRow } from '../advanced-table-row/advanced-table-row.component.js';
+import { PinnedRows } from '../pinned-rows/pinned-rows.component.js';
 
 import { styles as AdvancedTableBodyStyles } from './advanced-table-body.styles.js';
 import { AdvancedTableBodyProps } from './advanced-table-body.types.js';
-
-function PinnedRows<T>({
-  rows,
-  scrollableRows,
-  theadRef,
-}: {
-  rows: Row<T>[];
-  scrollableRows?: boolean;
-  theadRef?: RefObject<HTMLTableSectionElement>;
-}) {
-  const styles = AdvancedTableBodyStyles({ pinnedBody: true });
-  if (rows.length === 0) return null;
-  return (
-    <tbody
-      className={styles.tableBody()}
-      style={scrollableRows ? { top: `${theadRef?.current?.offsetHeight ?? 0}px` } : undefined}
-    >
-      {rows.map(row => (
-        <AdvancedTableRow key={row.id} row={row} isPinned />
-      ))}
-    </tbody>
-  );
-}
 
 export function AdvancedTableBody<T>({ table, tableRef, theadRef }: AdvancedTableBodyProps<T>) {
   const { scrollableRows, scrollableColumns, enableRowPinning } = useContext(AdvancedTableContext);

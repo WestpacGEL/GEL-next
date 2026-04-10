@@ -1,7 +1,7 @@
 import { horizontalListSortingStrategy, SortableContext } from '@dnd-kit/sortable';
 import { useContext, useRef } from 'react';
 
-import { AdvancedTableContext } from '../../advanced-table.component.js';
+import { AdvancedTableContext } from '../../advanced-table.context.js';
 import { AdvancedTableCell } from '../advanced-table-cell/advanced-table-cell.component.js';
 
 import { styles as AdvancedTableRowStyles } from './advanced-table-row.styles.js';
@@ -36,9 +36,6 @@ export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer, isP
         transform: `translateY(${virtualRow?.start}px)`,
       }}
       id={`row-${virtualRow?.index}`}
-      // TODO: Potentially remove or uncomment once accessibility design is done
-      // tabIndex={0}
-      // onKeyDown={handleTableRowKeyDown}
     >
       {localVirtualRow?.getVisibleCells().map(cell => (
         <SortableContext key={cell.id} items={columnOrder ?? []} strategy={horizontalListSortingStrategy}>
@@ -47,14 +44,7 @@ export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer, isP
       ))}
     </tr>
   ) : (
-    <tr
-      className={styles.bodyRow()}
-      id={row?.id}
-      ref={rowRef}
-      // TODO: Potentially remove or uncomment once accessibility design is done
-      // tabIndex={0}
-      // onKeyDown={handleTableRowKeyDown}
-    >
+    <tr className={styles.bodyRow()} id={row?.id} ref={rowRef}>
       {row?.getVisibleCells().map(cell => (
         <SortableContext key={cell.id} items={columnOrder ?? []} strategy={horizontalListSortingStrategy}>
           <AdvancedTableCell key={cell.id} cell={cell} rowRef={rowRef} />
