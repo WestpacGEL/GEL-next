@@ -57,13 +57,7 @@ export const ExpandableRowsWithSelection: Story = {
 
 export const ExpandableRowsWithSortingAndSelection: Story = {
   render: () => (
-    <AdvancedTable
-      data={expandableDataSB}
-      columns={columnsSB}
-      subRowKey="subRows"
-      enableSorting
-      enableRowSelection
-    />
+    <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableSorting enableRowSelection />
   ),
 };
 

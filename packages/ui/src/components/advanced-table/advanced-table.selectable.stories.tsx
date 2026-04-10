@@ -45,7 +45,5 @@ export const SelectableRowsWithRowPinning: Story = {
 };
 
 export const SelectableRowsWithSortingBordered: Story = {
-  render: () => (
-    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowSelection enableSorting bordered />
-  ),
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowSelection enableSorting bordered />,
 };
