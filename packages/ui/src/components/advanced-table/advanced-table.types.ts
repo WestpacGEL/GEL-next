@@ -39,6 +39,8 @@ export type TanstackTableOptions<T> = Omit<
   | 'enableGrouping'
   | 'enableColumnResizing'
   | 'enableRowSelection'
+  | 'enableRowPinning'
+  | 'onRowPinningChange'
 >;
 
 export type AdvancedTableProps<T> = {
@@ -74,6 +76,15 @@ export type AdvancedTableProps<T> = {
    * Enables all columns to be resizable. Can also be done per-column in required columns array.
    */
   enableResizing?: boolean;
+  /**
+   * Enables row pinning. Adds a pin column to pin rows to the top of the table.
+   */
+  enableRowPinning?: boolean;
+  /**
+   * Row IDs to pin to the top on initial render. Requires enableRowPinning.
+   * Row IDs default to their index as a string (e.g. '0', '3').
+   */
+  initialPinnedRows?: string[];
   /**
    * Enables row selection.
    */

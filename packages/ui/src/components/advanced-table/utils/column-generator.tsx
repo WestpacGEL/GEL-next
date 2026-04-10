@@ -1,6 +1,6 @@
 import { ColumnDef } from '@tanstack/react-table';
 
-import { RemoveIcon, TickIcon } from '../../icon/index.js';
+import { PinIcon, RemoveIcon, TickIcon, UnpinIcon } from '../../icon/index.js';
 import { VisuallyHidden } from '../../visually-hidden/index.js';
 import { AdvancedColumnProps } from '../advanced-table.types.js';
 import { DefaultHeadCell } from '../components/cell-defaults/default-head-cell/default-head-cell.component.js';
@@ -8,9 +8,11 @@ import { DefaultHeadCell } from '../components/cell-defaults/default-head-cell/d
 export function columnGenerator<T>({
   columns,
   enableRowSelection,
+  enableRowPinning,
 }: {
   columns: AdvancedColumnProps<T>[];
   enableRowSelection?: boolean;
+  enableRowPinning?: boolean;
 }) {
   const columnUpdate = (obj: AdvancedColumnProps<T>): ColumnDef<T> => {
     return {
@@ -79,6 +81,43 @@ export function columnGenerator<T>({
     };
   };
 
-  const finalColumns = [selectableColumn(), ...generateLocalColumns(columns)];
-  return enableRowSelection ? finalColumns : generateLocalColumns(columns);
+  const pinnableColumn = (): ColumnDef<T> => {
+    return {
+      id: 'pin-column',
+      header: () => (
+        <span className="flex size-4 items-center">
+          <VisuallyHidden>Pin</VisuallyHidden>
+        </span>
+      ),
+      cell: ({ row }) => (
+        <button
+          className="flex cursor-pointer items-center rounded-sm focus-visible:focus-outline"
+          onClick={() => row.pin(row.getIsPinned() ? false : 'top')}
+          aria-label={row.getIsPinned() ? 'Unpin row' : 'Pin row to top'}
+        >
+          {row.getIsPinned() ? (
+            <UnpinIcon size="small" color="hero" />
+          ) : (
+            <PinIcon size="small" color="muted" look="outlined" />
+          )}
+        </button>
+      ),
+      enableResizing: false,
+      enableColumnFilter: false,
+      enableGlobalFilter: false,
+      enableSorting: false,
+      enableGrouping: false,
+      enableHiding: false,
+      enableMultiSort: false,
+      enablePinning: true,
+      size: 50,
+    };
+  };
+
+  const generatedColumns = generateLocalColumns(columns);
+  const prefixColumns: ColumnDef<T>[] = [];
+  if (enableRowSelection) prefixColumns.push(selectableColumn());
+  if (enableRowPinning) prefixColumns.push(pinnableColumn());
+
+  return [...prefixColumns, ...generatedColumns];
 }

@@ -8,11 +8,12 @@ export function AdvancedTableHead<T>({
   scrollableRows,
   table,
   columnVirtualizer,
+  theadRef,
 }: AdvancedTableHeadProps<T>) {
   const styles = advancedTableHeadStyles({ scrollableColumns, scrollableRows });
 
   return (
-    <thead className={styles.tableHeader()}>
+    <thead className={styles.tableHeader()} ref={theadRef}>
       {table.getHeaderGroups().map(headerGroup => (
         <AdvancedTableHeadRow
           columnVirtualizer={columnVirtualizer}

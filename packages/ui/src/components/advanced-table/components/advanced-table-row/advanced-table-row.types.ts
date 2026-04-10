@@ -9,4 +9,5 @@ export type AdvancedTableRowProps<T> = {
   row?: Row<T>;
   rowVirtualizer?: Virtualizer<HTMLDivElement, HTMLTableRowElement>;
   scrollableRows?: boolean;
+  isPinned?: boolean;
 };

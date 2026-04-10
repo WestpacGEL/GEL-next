@@ -13,7 +13,8 @@ export function AdvancedTableCell<T>({ cell, rowRef }: AdvancedTableCellProps<T>
   const { isDragging, setNodeRef, transform } = useSortable({
     id: cell.column.id,
   });
-  const isPinned = !!cell.column.getIsPinned();
+  const isColumnPinned = !!cell.column.getIsPinned();
+  const isRowPinned = !!cell.row.getIsPinned();
   const dndStyles: CSSProperties = {
     opacity: isDragging ? 0.8 : 1,
     position: 'relative',
@@ -24,7 +25,13 @@ export function AdvancedTableCell<T>({ cell, rowRef }: AdvancedTableCellProps<T>
   };
   const { scrollableRows, extraCellPadding, bordered } = useContext(AdvancedTableContext);
 
-  const styles = AdvancedTableCellStyles({ scrollableRows, isPinned, extraCellPadding, bordered });
+  const styles = AdvancedTableCellStyles({
+    scrollableRows,
+    isPinned: isColumnPinned,
+    isRowPinned,
+    extraCellPadding,
+    bordered,
+  });
   return (
     <td
       className={styles.td()}

@@ -20,6 +20,9 @@ export const styles = tv({
         td: 'bg-background-white',
       },
     },
+    isRowPinned: {
+      true: {},
+    },
     extraCellPadding: {
       false: {
         td: 'p-2',
@@ -34,4 +37,13 @@ export const styles = tv({
       },
     },
   },
+  compoundVariants: [
+    {
+      bordered: true,
+      isRowPinned: true,
+      className: {
+        td: 'group-last/row:border-b',
+      },
+    },
+  ],
 });

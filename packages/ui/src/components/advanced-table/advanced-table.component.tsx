@@ -18,6 +18,7 @@ import {
   getPaginationRowModel,
   getGroupedRowModel,
   getFilteredRowModel,
+  RowPinningState,
 } from '@tanstack/react-table';
 import { createContext, useEffect, useMemo, useRef, useState } from 'react';
 
@@ -31,6 +32,7 @@ import { columnGenerator, deleteRow, updateTableData, useVirtualizedColumns } fr
 export const AdvancedTableContext = createContext<{
   tableRef?: React.RefObject<HTMLDivElement>;
   enableColumnReordering?: boolean;
+  enableRowPinning?: boolean;
   enableRowSelection?: boolean;
   scrollableRows?: boolean;
   scrollableColumns?: boolean;
@@ -47,6 +49,8 @@ export function AdvancedTable<T>({
   enableColumnPinning = false,
   enableGrouping = false,
   enableResizing = false,
+  enableRowPinning = false,
+  initialPinnedRows,
   enableRowSelection = false,
   enableSorting = false,
   scrollableColumns,
@@ -61,12 +65,17 @@ export function AdvancedTable<T>({
   bordered = false,
 }: AdvancedTableProps<T>) {
   const [localData, setLocalData] = useState<T[]>(data);
-  const [columnOrder, setColumnOrder] = useState<string[]>(['select-column', ...columns.map(c => c.key)]);
+  const [rowPinning, setRowPinning] = useState<RowPinningState>({ top: initialPinnedRows ?? [], bottom: [] });
+  const [columnOrder, setColumnOrder] = useState<string[]>(['select-column', 'pin-column', ...columns.map(c => c.key)]);
 
   const outerTableRef = useRef<HTMLTableElement>(null);
+  const theadRef = useRef<HTMLTableSectionElement>(null);
   const styles = advancedTableStyles({ scrollableColumns, scrollableRows, bordered });
 
-  const finalColumns = useMemo(() => columnGenerator({ columns, enableRowSelection }), [columns, enableRowSelection]);
+  const finalColumns = useMemo(
+    () => columnGenerator({ columns, enableRowSelection, enableRowPinning }),
+    [columns, enableRowSelection, enableRowPinning],
+  );
 
   useEffect(() => {
     setLocalData(data);
@@ -79,7 +88,9 @@ export function AdvancedTable<T>({
     columnResizeDirection: 'ltr',
     initialState: {
       columnPinning: {
-        left: enableRowSelection && scrollableColumns ? ['select-column'] : [],
+        left: scrollableColumns
+          ? [...(enableRowSelection ? ['select-column'] : []), ...(enableRowPinning ? ['pin-column'] : [])]
+          : [],
       },
     },
     defaultColumn: {
@@ -93,8 +104,11 @@ export function AdvancedTable<T>({
     },
     state: {
       columnOrder,
+      rowPinning,
     },
     onColumnOrderChange: setColumnOrder,
+    onRowPinningChange: setRowPinning,
+    enableRowPinning,
     // issue with the library and typing of subrows not working well with custom subrow types https://github.com/TanStack/table/discussions/4484
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
     getSubRows: subRowKey ? (row: any) => row[subRowKey] : undefined,
@@ -159,6 +173,7 @@ export function AdvancedTable<T>({
         tableRef: outerTableRef,
         scrollableRows,
         scrollableColumns,
+        enableRowPinning,
         enableRowSelection,
         columnOrder,
         enableColumnReordering,
@@ -195,8 +210,9 @@ export function AdvancedTable<T>({
               scrollableColumns={scrollableColumns}
               scrollableRows={scrollableRows}
               columnVirtualizer={useVirtualizedColumns(table, outerTableRef)}
+              theadRef={theadRef}
             />
-            <AdvancedTableBody table={table} tableRef={outerTableRef} />
+            <AdvancedTableBody table={table} tableRef={outerTableRef} theadRef={theadRef} />
           </table>
         </div>
         {!scrollableRows && (

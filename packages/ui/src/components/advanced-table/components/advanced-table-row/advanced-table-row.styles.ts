@@ -7,7 +7,7 @@ export const styles = tv({
   variants: {
     scrollableRows: {
       true: {
-        bodyRow: 'absolute flex w-full',
+        bodyRow: 'flex w-full',
       },
     },
     scrollableColumns: {
@@ -15,5 +15,20 @@ export const styles = tv({
         bodyRow: 'flex',
       },
     },
+    isPinned: {
+      true: {
+        bodyRow: 'bg-background-white',
+      },
+      false: {},
+    },
   },
+  compoundVariants: [
+    {
+      scrollableRows: true,
+      isPinned: false,
+      className: {
+        bodyRow: 'absolute',
+      },
+    },
+  ],
 });

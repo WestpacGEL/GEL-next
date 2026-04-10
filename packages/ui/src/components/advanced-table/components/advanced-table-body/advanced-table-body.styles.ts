@@ -15,5 +15,10 @@ export const styles = tv({
         tableBody: 'relative table-fixed',
       },
     },
+    pinnedBody: {
+      true: {
+        tableBody: 'sticky z-[1] bg-background-white',
+      },
+    },
   },
 });

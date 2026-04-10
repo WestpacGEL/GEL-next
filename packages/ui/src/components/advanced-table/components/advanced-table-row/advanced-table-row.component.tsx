@@ -7,11 +7,23 @@ import { AdvancedTableCell } from '../advanced-table-cell/advanced-table-cell.co
 import { styles as AdvancedTableRowStyles } from './advanced-table-row.styles.js';
 import { AdvancedTableRowProps } from './advanced-table-row.types.js';
 
-export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer, tbodyRef }: AdvancedTableRowProps<T>) {
+export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer, isPinned }: AdvancedTableRowProps<T>) {
   const { scrollableRows, scrollableColumns, columnOrder } = useContext(AdvancedTableContext);
-  const styles = AdvancedTableRowStyles({ scrollableRows, scrollableColumns });
+  const styles = AdvancedTableRowStyles({ scrollableRows, scrollableColumns, isPinned });
   const localVirtualRow = rows && rows[virtualRow?.index ?? 0];
   const rowRef = useRef<HTMLTableRowElement>(null);
+
+  if (isPinned && row) {
+    return (
+      <tr className={styles.bodyRow()} id={`row-pinned-${row.id}`} ref={rowRef}>
+        {row.getVisibleCells().map(cell => (
+          <SortableContext key={cell.id} items={columnOrder ?? []} strategy={horizontalListSortingStrategy}>
+            <AdvancedTableCell key={cell.id} cell={cell} rowRef={rowRef} />
+          </SortableContext>
+        ))}
+      </tr>
+    );
+  }
 
   return scrollableRows ? (
     <tr
