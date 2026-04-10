@@ -27,3 +27,21 @@ export const Bordered: Story = {
 export const BorderedExtraPadding: Story = {
   render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} extraCellPadding bordered enableResizing />,
 };
+
+export const ResizingWithSorting: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing enableSorting />,
+};
+
+export const ResizingWithSelection: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing enableRowSelection />,
+};
+
+export const ResizingWithReordering: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing enableColumnReordering />,
+};
+
+export const ResizingWithSortingAndSelection: Story = {
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing enableSorting enableRowSelection />
+  ),
+};

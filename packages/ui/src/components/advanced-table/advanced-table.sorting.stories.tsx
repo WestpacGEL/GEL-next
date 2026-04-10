@@ -32,6 +32,24 @@ export const SortableBorderedExtraPadding: Story = {
   render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting extraCellPadding bordered />,
 };
 
+export const SortableWithSelection: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting enableRowSelection />,
+};
+
+export const SortableWithResizing: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting enableResizing />,
+};
+
+export const SortableWithReordering: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting enableColumnReordering />,
+};
+
+export const SortableWithSelectionAndResizing: Story = {
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting enableRowSelection enableResizing />
+  ),
+};
+
 export const SortingFunctionality: Story = {
   render: () => {
     const columnsSortingExample: AdvancedColumnProps<AdvancedPerson>[] = [

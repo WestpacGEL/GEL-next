@@ -29,3 +29,21 @@ export const ReorderingBorderedExtraPadding: Story = {
     <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering extraCellPadding bordered />
   ),
 };
+
+export const ReorderingWithSorting: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering enableSorting />,
+};
+
+export const ReorderingWithSelection: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering enableRowSelection />,
+};
+
+export const ReorderingWithResizing: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering enableResizing />,
+};
+
+export const ReorderingWithSortingAndSelection: Story = {
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering enableSorting enableRowSelection />
+  ),
+};

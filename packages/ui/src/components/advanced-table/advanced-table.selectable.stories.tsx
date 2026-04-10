@@ -27,3 +27,25 @@ export const SelectableRowsBordered: Story = {
 export const SelectableRowsBorderedExtraPadding: Story = {
   render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowSelection extraCellPadding bordered />,
 };
+
+export const SelectableRowsWithSorting: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowSelection enableSorting />,
+};
+
+export const SelectableRowsWithResizing: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowSelection enableResizing />,
+};
+
+export const SelectableRowsWithReordering: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowSelection enableColumnReordering />,
+};
+
+export const SelectableRowsWithRowPinning: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowSelection enableRowPinning />,
+};
+
+export const SelectableRowsWithSortingBordered: Story = {
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowSelection enableSorting bordered />
+  ),
+};

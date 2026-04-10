@@ -46,3 +46,27 @@ export const ExpandableRowsBorderedExtraPadding: Story = {
     <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" extraCellPadding bordered />
   ),
 };
+
+export const ExpandableRowsWithSorting: Story = {
+  render: () => <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableSorting />,
+};
+
+export const ExpandableRowsWithSelection: Story = {
+  render: () => <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableRowSelection />,
+};
+
+export const ExpandableRowsWithSortingAndSelection: Story = {
+  render: () => (
+    <AdvancedTable
+      data={expandableDataSB}
+      columns={columnsSB}
+      subRowKey="subRows"
+      enableSorting
+      enableRowSelection
+    />
+  ),
+};
+
+export const ExpandableRowsWithResizing: Story = {
+  render: () => <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableResizing />,
+};

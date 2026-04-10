@@ -1,10 +1,6 @@
 import { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 
-import { Link } from '../index.js';
-
 import { AdvancedTable } from './advanced-table.component.js';
-import { AdvancedColumnProps } from './advanced-table.types.js';
-import { AdvancedPerson } from './story-utils/fakerData.js';
 import { columnsSB, defaultDataSB } from './story-utils/storyData.js';
 
 const meta: Meta<typeof AdvancedTable> = {
@@ -32,4 +28,73 @@ export const PinningOnly: Story = {
 
 export const GroupingOnly: Story = {
   render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableGrouping />,
+};
+
+export const AllOptionsBordered: Story = {
+  render: () => (
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      enableColumnPinning
+      enableColumnFilter
+      enableGrouping
+      bordered
+    />
+  ),
+};
+
+export const AllOptionsExtraPadding: Story = {
+  render: () => (
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      enableColumnPinning
+      enableColumnFilter
+      enableGrouping
+      extraCellPadding
+    />
+  ),
+};
+
+export const AllOptionsWithSorting: Story = {
+  render: () => (
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      enableColumnPinning
+      enableColumnFilter
+      enableGrouping
+      enableSorting
+    />
+  ),
+};
+
+export const AllOptionsWithSelection: Story = {
+  render: () => (
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      enableColumnPinning
+      enableColumnFilter
+      enableGrouping
+      enableRowSelection
+    />
+  ),
+};
+
+export const AllOptionsWithRowPinning: Story = {
+  render: () => (
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      enableColumnPinning
+      enableColumnFilter
+      enableGrouping
+      enableRowPinning
+    />
+  ),
+};
+
+export const FilterWithSorting: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnFilter enableSorting />,
 };

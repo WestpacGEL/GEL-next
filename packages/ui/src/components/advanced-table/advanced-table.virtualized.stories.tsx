@@ -62,3 +62,43 @@ export const VirtualizedWithCustomHeightAndWidth: Story = {
     </>
   ),
 };
+
+export const VirtualizedRowsWithSorting: Story = {
+  render: () => (
+    <AdvancedTable
+      data={dataForRowsColsSB}
+      columns={manyRowsColsSB}
+      scrollableRows
+      fixedHeight="400px"
+      enableSorting
+    />
+  ),
+};
+
+export const VirtualizedRowsWithSelection: Story = {
+  render: () => (
+    <AdvancedTable
+      data={dataForRowsColsSB}
+      columns={manyRowsColsSB}
+      scrollableRows
+      fixedHeight="400px"
+      enableRowSelection
+    />
+  ),
+};
+
+export const VirtualizedRowsBordered: Story = {
+  render: () => (
+    <AdvancedTable data={dataForRowsColsSB} columns={manyRowsColsSB} scrollableRows fixedHeight="400px" bordered />
+  ),
+};
+
+export const VirtualizedColumnsWithSorting: Story = {
+  render: () => <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns enableSorting />,
+};
+
+export const VirtualizedRowsAndColumnsWithSorting: Story = {
+  render: () => (
+    <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableRows scrollableColumns enableSorting />
+  ),
+};
