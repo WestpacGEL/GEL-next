@@ -26,7 +26,7 @@ export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: Advanced
       style={{
         width: `calc(var(--header-${header.id}-size) * 1px)`,
         ...dndStyles,
-        ...(scrollableColumns ? getCommonPinningStyles(header.column) : undefined),
+        ...(scrollableColumns ? getCommonPinningStyles(header.column, scrollableColumns) : undefined),
       }}
       key={header.id}
       colSpan={header.colSpan}

@@ -65,13 +65,7 @@ export const VirtualizedWithCustomHeightAndWidth: Story = {
 
 export const VirtualizedRowsWithSorting: Story = {
   render: () => (
-    <AdvancedTable
-      data={dataForRowsColsSB}
-      columns={manyRowsColsSB}
-      scrollableRows
-      fixedHeight="400px"
-      enableSorting
-    />
+    <AdvancedTable data={dataForRowsColsSB} columns={manyRowsColsSB} scrollableRows fixedHeight="400px" enableSorting />
   ),
 };
 
@@ -100,5 +94,48 @@ export const VirtualizedColumnsWithSorting: Story = {
 export const VirtualizedRowsAndColumnsWithSorting: Story = {
   render: () => (
     <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableRows scrollableColumns enableSorting />
+  ),
+};
+
+export const VirtualizedColumnsWithPinning: Story = {
+  render: () => <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns enableColumnPinning />,
+};
+
+export const VirtualizedColumnsWithPinningAndSelection: Story = {
+  render: () => (
+    <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns enableColumnPinning enableRowSelection />
+  ),
+};
+
+export const VirtualizedColumnsWithPinningAndRowPinning: Story = {
+  render: () => (
+    <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns enableColumnPinning enableRowPinning />
+  ),
+};
+
+export const VirtualizedColumnsWithAllPinningOptions: Story = {
+  render: () => (
+    <AdvancedTable
+      data={dataForColsSB}
+      columns={manyColsSB}
+      scrollableColumns
+      enableColumnPinning
+      enableRowSelection
+      enableRowPinning
+    />
+  ),
+};
+
+export const VirtualizedRowsAndColumnsWithPinning: Story = {
+  render: () => (
+    <AdvancedTable
+      data={dataForColsSB}
+      columns={manyColsSB}
+      scrollableRows
+      scrollableColumns
+      enableColumnPinning
+      enableRowSelection
+      enableRowPinning
+    />
   ),
 };

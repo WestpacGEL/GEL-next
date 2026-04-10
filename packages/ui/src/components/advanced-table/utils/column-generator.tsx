@@ -5,6 +5,8 @@ import { VisuallyHidden } from '../../visually-hidden/index.js';
 import { AdvancedColumnProps } from '../advanced-table.types.js';
 import { DefaultHeadCell } from '../components/cell-defaults/default-head-cell/default-head-cell.component.js';
 
+import { PIN_COLUMN_ID, SELECT_COLUMN_ID } from './constants.js';
+
 export function columnGenerator<T>({
   columns,
   enableRowSelection,
@@ -41,7 +43,7 @@ export function columnGenerator<T>({
 
   const selectableColumn = (): ColumnDef<T> => {
     return {
-      id: 'select-column',
+      id: SELECT_COLUMN_ID,
       header: ({ table }) => (
         <label className="flex cursor-pointer items-center rounded-sm has-focus-visible:focus-outline">
           <VisuallyHidden>
@@ -83,7 +85,7 @@ export function columnGenerator<T>({
 
   const pinnableColumn = (): ColumnDef<T> => {
     return {
-      id: 'pin-column',
+      id: PIN_COLUMN_ID,
       header: () => (
         <span className="flex size-4 items-center">
           <VisuallyHidden>Pin</VisuallyHidden>

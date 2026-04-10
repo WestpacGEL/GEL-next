@@ -3,6 +3,7 @@ import { useContext } from 'react';
 
 import { ArrowDownIcon, ArrowUpIcon, ExpandLessIcon, ExpandMoreIcon } from '../../../icon/index.js';
 import { AdvancedTableContext } from '../../advanced-table.context.js';
+import { RESERVED_COLUMN_IDS } from '../../utils/constants.js';
 import { AdvancedTableMenu } from '../advanced-table-menu/advanced-table-menu.component.js';
 
 import { styles as headCellContentStyles } from './advanced-table-head-cell-content.styles.js';
@@ -40,7 +41,8 @@ export function AdvancedTableHeadCellContent<T>({ header }: AdvancedTableHeadCel
         header.column.getCanGlobalFilter() ||
         header.column.getCanPin() ||
         header.column.getCanGroup()) &&
-        !header.isPlaceholder && (
+        !header.isPlaceholder &&
+        !RESERVED_COLUMN_IDS.includes(header.column.id) && (
           <AdvancedTableMenu
             header={header}
             filterVal={header.column.getFilterValue() as string}

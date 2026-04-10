@@ -23,7 +23,7 @@ export function AdvancedTableCell<T>({ cell, rowRef }: AdvancedTableCellProps<T>
     width: cell.column.getSize(),
     zIndex: isDragging ? 1 : 0,
   };
-  const { scrollableRows, extraCellPadding, bordered } = useContext(AdvancedTableContext);
+  const { scrollableRows, scrollableColumns, extraCellPadding, bordered } = useContext(AdvancedTableContext);
 
   const styles = AdvancedTableCellStyles({
     scrollableRows,
@@ -35,7 +35,7 @@ export function AdvancedTableCell<T>({ cell, rowRef }: AdvancedTableCellProps<T>
   return (
     <td
       className={styles.td()}
-      style={{ ...dndStyles, ...getCommonPinningStyles(cell.column) }}
+      style={{ ...dndStyles, ...getCommonPinningStyles(cell.column, scrollableColumns) }}
       ref={setNodeRef}
       id={cell.id}
     >

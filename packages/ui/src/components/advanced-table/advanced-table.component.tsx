@@ -20,7 +20,7 @@ import {
   getFilteredRowModel,
   RowPinningState,
 } from '@tanstack/react-table';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { Pagination } from '../pagination/pagination.component.js';
 
@@ -28,7 +28,14 @@ import { AdvancedTableContext } from './advanced-table.context.js';
 import { styles as advancedTableStyles } from './advanced-table.styles.js';
 import { AdvancedTableProps } from './advanced-table.types.js';
 import { AdvancedTableBody, DefaultCell, EditableCell, AdvancedTableHead } from './components/index.js';
-import { columnGenerator, deleteRow, updateTableData, useVirtualizedColumns } from './utils/index.js';
+import {
+  columnGenerator,
+  deleteRow,
+  SELECT_COLUMN_ID,
+  PIN_COLUMN_ID,
+  updateTableData,
+  useVirtualizedColumns,
+} from './utils/index.js';
 
 export function AdvancedTable<T>({
   data,
@@ -55,7 +62,25 @@ export function AdvancedTable<T>({
 }: AdvancedTableProps<T>) {
   const [localData, setLocalData] = useState<T[]>(data);
   const [rowPinning, setRowPinning] = useState<RowPinningState>({ top: initialPinnedRows ?? [], bottom: [] });
-  const [columnOrder, setColumnOrder] = useState<string[]>(['select-column', 'pin-column', ...columns.map(c => c.key)]);
+  const reservedColumns = useMemo(
+    () =>
+      [enableRowSelection && SELECT_COLUMN_ID, enableRowPinning && PIN_COLUMN_ID].filter((id): id is string => !!id),
+    [enableRowSelection, enableRowPinning],
+  );
+
+  const [columnOrder, setColumnOrder] = useState<string[]>([...reservedColumns, ...columns.map(c => c.key)]);
+
+  const handleColumnOrderChange = useCallback(
+    (updater: string[] | ((prev: string[]) => string[])) => {
+      setColumnOrder(prev => {
+        const newOrder = typeof updater === 'function' ? updater(prev) : updater;
+        const reserved = newOrder.filter(id => reservedColumns.includes(id));
+        const rest = newOrder.filter(id => !reservedColumns.includes(id));
+        return [...reserved, ...rest];
+      });
+    },
+    [reservedColumns],
+  );
 
   const outerTableRef = useRef<HTMLTableElement>(null);
   const theadRef = useRef<HTMLTableSectionElement>(null);
@@ -77,9 +102,7 @@ export function AdvancedTable<T>({
     columnResizeDirection: 'ltr',
     initialState: {
       columnPinning: {
-        left: scrollableColumns
-          ? [...(enableRowSelection ? ['select-column'] : []), ...(enableRowPinning ? ['pin-column'] : [])]
-          : [],
+        left: scrollableColumns || enableColumnPinning ? reservedColumns : [],
       },
     },
     defaultColumn: {
@@ -95,7 +118,7 @@ export function AdvancedTable<T>({
       columnOrder,
       rowPinning,
     },
-    onColumnOrderChange: setColumnOrder,
+    onColumnOrderChange: handleColumnOrderChange,
     onRowPinningChange: setRowPinning,
     enableRowPinning,
     // issue with the library and typing of subrows not working well with custom subrow types https://github.com/TanStack/table/discussions/4484
@@ -146,7 +169,7 @@ export function AdvancedTable<T>({
   function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event;
     if (active && over && active.id !== over.id) {
-      setColumnOrder(columnOrder => {
+      handleColumnOrderChange(columnOrder => {
         const oldIndex = columnOrder.indexOf(active.id as string);
         const newIndex = columnOrder.indexOf(over.id as string);
         return arrayMove(columnOrder, oldIndex, newIndex);
