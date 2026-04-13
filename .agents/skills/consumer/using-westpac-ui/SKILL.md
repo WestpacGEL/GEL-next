@@ -146,8 +146,6 @@ function MyComponent() {
 
 Returns helpers for dark mode: `getMode()`, `setMode()`, `toggleDarkMode()`, `getBrand()`, `getSystemPreference()`.
 
-> **Note:** Dark mode is disabled in the current release.
-
 ## Reference Documentation
 
 When answering questions about **how** or **when** to use a component, consult these bundled references:
