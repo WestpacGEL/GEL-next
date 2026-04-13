@@ -7,6 +7,10 @@ description: 'Writes Vitest + React Testing Library tests for GEL design system 
 
 Guides writing tests for components in `packages/ui/src/components/`. Test conventions are also summarised in `packages/ui/.agents/AGENTS.md`.
 
+## When to Use
+
+Reference this when a maintainer asks to "write tests for my component", "add tests", "improve test coverage", or "ensure this is well tested". Tests should also be written/updated after functionality has been added or changed. This includes writing new tests, improving existing tests, and ensuring comprehensive coverage for any component in `packages/ui`.
+
 ## Test Environment
 
 - **Runner**: Vitest with `jsdom` environment
@@ -48,7 +52,7 @@ Import from `./component-name.component.js` (NOT from `index`), sub-components f
 
 ## Test Categories
 
-### 1. Render Tests (Required)
+1. Render Tests (Required)
 
 ```tsx
 it('renders the component', () => {
@@ -57,7 +61,7 @@ it('renders the component', () => {
 });
 ```
 
-### 2. Variant Rendering
+2. Variant Rendering
 
 ```tsx
 it('renders as an anchor tag', () => {
@@ -70,7 +74,7 @@ it('renders as an anchor tag', () => {
 });
 ```
 
-### 3. User Interactions
+3. User Interactions
 
 Always use `userEvent.setup()` (NOT `fireEvent`):
 
@@ -89,7 +93,7 @@ it('calls onClick when clicked', async () => {
 });
 ```
 
-### 4. Visibility / State
+4. Visibility / State
 
 ```tsx
 it('shows content when expanded', async () => {
@@ -109,7 +113,7 @@ it('shows content when expanded', async () => {
 });
 ```
 
-### 5. Icon Rendering
+5. Icon Rendering
 
 ```tsx
 it('renders an icon when passed', () => {
@@ -118,7 +122,7 @@ it('renders an icon when passed', () => {
 });
 ```
 
-### 6. Utility Functions
+6. Utility Functions
 
 ```tsx
 describe('ComponentName utils', () => {

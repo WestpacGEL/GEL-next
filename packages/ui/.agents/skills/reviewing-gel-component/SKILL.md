@@ -7,15 +7,25 @@ description: 'Reviews GEL design system components for convention compliance, ac
 
 Reviews components in `packages/ui/src/components/` against the conventions defined in `packages/ui/.agents/AGENTS.md`.
 
-## Review Checklist
+## When to Use
 
-### 1. File Structure
+Use this skill when a maintainer asks to "review my component", "check my code", "audit this component", or "ensure this follows GEL conventions". This includes checking file structure, types, styles, component implementation, accessibility, and index exports for any component in `packages/ui`.
+
+## Use vercel skills first
+
+Before continuing with this skill, check using `vercel-react-best-practices` and `web-design-guidelines` skills to catch common React and web development issues.
+
+## Project Review Checklist
+
+The below checklist is based on project specific conventions that may not be covered by general best practices. Use this to review the component for compliance with GEL design system standards.
+
+1. File Structure
 
 - [ ] All required files exist: `index.ts`, `*.component.tsx`, `*.styles.ts`, `*.types.ts`, `*.spec.tsx`, `*.stories.tsx`
 - [ ] File names use kebab-case matching the directory name
 - [ ] Component is exported from `packages/ui/src/components/index.ts`
 
-### 2. Types
+2. Types
 
 - [ ] `Variants` type alias derived from `VariantProps<typeof styles>`
 - [ ] Responsive props wrapped with `ResponsiveVariants<Variants['...']>`
@@ -24,7 +34,7 @@ Reviews components in `packages/ui/src/components/` against the conventions defi
 - [ ] Uses `Omit<>` for conflicting HTML attributes
 - [ ] `.js` extensions on relative imports
 
-### 3. Styles
+3. Styles
 
 - [ ] Uses tailwind styling except when animations/dynamic styles are required
 - [ ] Uses `tv()` from `tailwind-variants`, exported as `styles`
@@ -33,7 +43,7 @@ Reviews components in `packages/ui/src/components/` against the conventions defi
 - [ ] Uses `slots` for multi-element components
 - [ ] Uses `compoundSlots` for variant combinations
 
-### 4. Component
+4. Component
 
 - [ ] Has `'use client';` if using hooks or client-side rendering
 - [ ] Uses `forwardRef` pattern when appropriate
@@ -44,7 +54,7 @@ Reviews components in `packages/ui/src/components/` against the conventions defi
 - [ ] `.js` extensions on all relative imports
 - [ ] Plain function declarations (not `React.FC`)
 
-### 5. Accessibility
+5. Accessibility
 
 - [ ] Interactive elements use appropriate ARIA attributes
 - [ ] Decorative icons use `aria-hidden`
@@ -52,19 +62,19 @@ Reviews components in `packages/ui/src/components/` against the conventions defi
 - [ ] Semantic HTML elements used
 - [ ] `react-stately` hooks for state management where applicable
 
-### 6. Index
+6. Index
 
 - [ ] Exports component and props type only
 - [ ] Does NOT re-export styles
 - [ ] `.js` extensions
 
-### 7. Tests
+7. Tests
 
 - [ ] At minimum a "renders the component" test
 - [ ] Uses `userEvent.setup()` (not `fireEvent`) for interactions
 - [ ] Imports from `.component.js` (not index)
 
-### 8. Stories
+8. Stories
 
 - [ ] Imports from `@storybook/react-vite`
 - [ ] Has `tags: ['autodocs']` and standard decorator

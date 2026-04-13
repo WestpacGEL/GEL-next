@@ -15,7 +15,11 @@ export function AutocompleteListBox(props: AutocompleteListBoxProps) {
   const { listBoxProps } = useListBox(props, state, listBoxRef);
 
   return (
-    <ul {...listBoxProps} ref={listBoxRef} className="w-full overflow-hidden rounded-xl outline-none">
+    <ul
+      {...listBoxProps}
+      ref={listBoxRef}
+      className="w-full overflow-hidden outline-none first:rounded-t-xl only:rounded-xl"
+    >
       {[...state.collection].map(item =>
         item.type === 'section' ? (
           <AutocompleteListBoxSection key={item.key} section={item} state={state} />

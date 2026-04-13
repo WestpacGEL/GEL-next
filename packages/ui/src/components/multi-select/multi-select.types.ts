@@ -2,8 +2,14 @@ import { DOMProps } from '@react-types/shared';
 import { Key, ReactNode, RefObject } from 'react';
 import { AriaListBoxOptions, AriaPopoverProps } from 'react-aria';
 import { ItemProps, ListProps, ListState, OverlayTriggerState } from 'react-stately';
+import { VariantProps } from 'tailwind-variants';
 
+import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
+
+import { styles as triggerStyles } from './components/multi-select-list-box-trigger/multi-select-list-box-trigger.styles.js';
 import { MultiSelectSize } from './components/multi-select-list-box-trigger/multi-select-list-box-trigger.types.js';
+
+type Variants = VariantProps<typeof triggerStyles>;
 
 export type MultiSelectContextProps<T extends object = object> = {
   size?: MultiSelectSize;
@@ -18,6 +24,7 @@ export type MultiSelectContextProps<T extends object = object> = {
   overlayProps: DOMProps;
   placement?: AriaPopoverProps['placement'];
   portalContainer?: Element;
+  hideSelectAll?: boolean;
 };
 
 export type MultiSelectItemProps<T extends object = object> = { description?: string } & ItemProps<T>;
@@ -26,6 +33,16 @@ export type MultiSelectItemProps<T extends object = object> = { description?: st
 export type MultiSelectValue = { textValue?: string; content?: ReactNode; key: Key; description?: string };
 
 export type MultiSelectProps<T> = {
+  /**
+   * Whether to hide the filter input in the dropdown
+   * @default false
+   */
+  hideFilter?: boolean;
+  /**
+   * Whether to hide the "Select All" option in the dropdown for multiple selection multi-selects
+   * @default false
+   */
+  hideSelectAll?: boolean;
   /**
    * Props for the list box within the multi-select
    */
@@ -40,7 +57,7 @@ export type MultiSelectProps<T> = {
   placeholder?: string;
   /**
    * Manual placement of the dropdown, will flip automatically if there is not enough space
-   * @default bottom
+   * @default 'bottom left'
    */
   placement?: AriaPopoverProps['placement'];
   /**
@@ -57,4 +74,9 @@ export type MultiSelectProps<T> = {
    * @default medium
    */
   size?: MultiSelectSize;
+  /**
+   * Width of the multi-select, can be a fixed width or full width
+   * @default full
+   */
+  width?: ResponsiveVariants<Variants['width']>;
 } & ListProps<T>;

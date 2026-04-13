@@ -3,6 +3,9 @@ description: >-
   Migrating to v1 is key to ensuring that your applications will be compatible with new design tokens and receive all future updates. This guide will help you get started with migrating your applications.
 design:
   - title:
+      name: Migration agent skill
+      slug: migration-agent-skill
+  - title:
       name: 📦 Major Changes — @westpac/ui & @westpac/style-config
       slug: major-changes
   - title:
