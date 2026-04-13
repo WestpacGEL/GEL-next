@@ -41,20 +41,17 @@ design:
       slug: dos-and-don-ts
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Notes on accessibility
       slug: notes-on-accessibility
 relatedComponents:
-  - title: Icons
-    slug: /foundation/icon
-  - title: Text input
-    slug: /components/input
+  icon: cube
+  links:
+    - title: Icons
+      slug: /foundation/icon
+    - title: Text input
+      slug: /components/input
 code:
   - title:
       name: Development examples

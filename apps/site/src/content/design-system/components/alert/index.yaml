@@ -31,11 +31,6 @@ design:
       slug: dos-and-donts
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
@@ -47,10 +42,12 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
-  - title: Colours
-    slug: foundation/colour
-  - title: Icons
-    slug: foundation/icon
+  icon: cube
+  links:
+    - title: Colours
+      slug: foundation/colour
+    - title: Icons
+      slug: foundation/icon
 code:
   - title:
       name: Development examples

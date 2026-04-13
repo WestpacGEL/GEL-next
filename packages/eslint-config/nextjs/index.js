@@ -11,6 +11,6 @@ export default tseslint.config(
   eslintPluginReactHooks.configs['recommended-latest'],
   eslintPluginReact.configs.flat['jsx-runtime'],
   {
-    ignores: ['.next/**', '**/public/**/*.js'],
+    ignores: ['next-env.d.ts', '.next/**', '**/public/**/*.js'],
   },
 );

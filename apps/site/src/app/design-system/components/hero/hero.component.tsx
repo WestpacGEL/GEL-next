@@ -1,5 +1,5 @@
 import { Grid, GridItem } from '@westpac/ui';
-import { AccessibilityPictogram, StopwatchPictogram, TruckPictogram } from '@westpac/ui/pictogram';
+import { AccessibilityIcon, ArrowSplitIcon, PhoneIcon } from '@westpac/ui/icon';
 
 import { Container } from '@/app/design-system/components';
 import { type BrandKey } from '@/app/types/brand.types';
@@ -28,9 +28,7 @@ export function Hero({ brand }: { brand: BrandKey }) {
               xsl:mb-6
             `}
           >
-            <h2 className={heading()}>
-              Deliver quality user interfaces that scale – <em>fast!</em>
-            </h2>
+            <h2 className={heading()}>Designed to unify. Built to scale.</h2>
           </GridItem>
           <GridItem span={10} start={2}>
             <p
@@ -39,7 +37,8 @@ export function Hero({ brand }: { brand: BrandKey }) {
                 sm:text-text-reversed
               `}
             >
-              Simplify your projects with reusable components and patterns
+              GEL provides enterprise standards and tools that unify design and engineering so teams deliver consistent,
+              accessible, on‑brand experiences - faster and smarter.
             </p>
           </GridItem>
         </Grid>
@@ -53,20 +52,8 @@ export function Hero({ brand }: { brand: BrandKey }) {
         >
           <GridItem tag="li" span={{ initial: 12, xsl: 4 }} className={`flex flex-col items-center`}>
             <div className="mb-3">
-              <StopwatchPictogram
-                mode="reversed"
-                className={`
-                  hidden
-                  sm:inline-block
-                `}
-              />
-              <StopwatchPictogram
-                mode="duo"
-                className={`
-                  inline-block
-                  sm:hidden
-                `}
-              />
+              <PhoneIcon size="large" color="mono" className={`hidden sm:inline-block`} />
+              <PhoneIcon size="large" color="hero" className={`inline-block sm:hidden`} />
             </div>
             <p
               className={`
@@ -74,20 +61,22 @@ export function Hero({ brand }: { brand: BrandKey }) {
                 sm:text-text-reversed
               `}
             >
-              Go to market faster leveraging tools to get you up and running instantly
+              Responsive
             </p>
           </GridItem>
           <GridItem tag="li" span={{ initial: 12, xsl: 4 }} className={`flex flex-col items-center`}>
             <div className="mb-3">
-              <TruckPictogram
-                mode="reversed"
+              <AccessibilityIcon
+                size="large"
+                color="mono"
                 className={`
                   hidden
                   sm:inline-block
                 `}
               />
-              <TruckPictogram
-                mode="duo"
+              <AccessibilityIcon
+                size="large"
+                color="hero"
                 className={`
                   inline-block
                   sm:hidden
@@ -100,25 +89,13 @@ export function Hero({ brand }: { brand: BrandKey }) {
                 sm:text-text-reversed
               `}
             >
-              Design, build and ship consistent brand experiences
+              Accessible
             </p>
           </GridItem>
           <GridItem tag="li" span={{ initial: 12, xsl: 4 }} className={`flex flex-col items-center`}>
             <div className="mb-3">
-              <AccessibilityPictogram
-                mode="reversed"
-                className={`
-                  hidden
-                  sm:inline-block
-                `}
-              />
-              <AccessibilityPictogram
-                mode="duo"
-                className={`
-                  inline-block
-                  sm:hidden
-                `}
-              />
+              <ArrowSplitIcon size="large" color="mono" className={`hidden sm:inline-block`} />
+              <ArrowSplitIcon size="large" color="hero" className={`inline-block sm:hidden`} />
             </div>
             <p
               className={`
@@ -126,7 +103,7 @@ export function Hero({ brand }: { brand: BrandKey }) {
                 sm:text-text-reversed
               `}
             >
-              Create more accessible solutions that are inclusive of all customers
+              Multi-brand
             </p>
           </GridItem>
         </Grid>

@@ -30,20 +30,17 @@ design:
       slug: dos-and-donts
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Icons
-    slug: foundation/icon
-  - title: Symbols
-    slug: components/symbol
+  icon: cube
+  links:
+    - title: Icons
+      slug: foundation/icon
+    - title: Symbols
+      slug: components/symbol
 code:
   - title:
       name: Development examples

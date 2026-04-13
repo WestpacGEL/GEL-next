@@ -17,7 +17,8 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-docs'),
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-a11y'),
-    getAbsolutePath('@vueless/storybook-dark-mode'),
+    // TODO: TEMPORARILY DISABLED - DARK MODE TO BE INCLUDED IN FUTURE UPDATE
+    // getAbsolutePath('@vueless/storybook-dark-mode'),
     {
       name: '@storybook/addon-mcp',
       options: {

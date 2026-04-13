@@ -1,7 +1,5 @@
 import { Image } from '@/components/document-renderer';
 
-import { Colors } from './colors/colors.component';
-import { colors } from './colors/colors.preview';
 import { accessibilityDemo } from './components/accessibility-demo/accessibility-demo.preview';
 import { AvailabilityContent } from './components/availability-content/availability-content.component';
 import { availabilityContent } from './components/availability-content/availability-content.preview';
@@ -19,9 +17,12 @@ import { Pictograms } from './pictograms/pictograms.component';
 import { pictograms } from './pictograms/pictograms.preview';
 import { Symbols } from './symbols/symbols.component';
 import { symbols } from './symbols/symbols.preview';
+import { Tokens } from './tokens/tokens.component';
+import { tokens } from './tokens/tokens.preview';
+import { TokensData } from './tokens/tokens.utils';
 
 export const foundationBlocks = {
-  colors,
+  tokens,
   icons,
   logos,
   pictograms,
@@ -40,7 +41,7 @@ export const foundationBlocksComponents = {
   logos: () => <Logos />,
   pictograms: () => <Pictograms />,
   symbols: () => <Symbols />,
-  colors: (props: { palette: string }) => <Colors palette={props.palette} />,
+  tokens: (props: TokensData) => <Tokens {...props} />,
   linkList: LinkList,
   designSystemBodyImage: (props: any) => (
     <div className="mt-1 mb-5">

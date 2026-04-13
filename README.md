@@ -1,3 +1,10 @@
+### Previous Version
+
+If you are looking for information/source code for version 0.x you can find it [here](https://github.com/WestpacGEL/GEL-next/tree/version/0.x). It is recommened you upgrade to 1.0 at your earliest convenience.
+
+- [Storybook](https://gel-next-storybook-git-version-0x-westpacgel.vercel.app/?path=/story/attention--attention).
+- [Site](https://gel-next-site-git-version-0x-westpacgel.vercel.app/)
+
 ## Getting Started
 
 This section describes how to get started with Westpac GEL.
@@ -19,6 +26,21 @@ npm i -D tailwindcss @tailwindcss/postcss postcss
 
 GEL is using [Tailwind](https://tailwindcss.com/) for styling. Visit the [Tailwind docs](https://tailwindcss.com/docs/installation/framework-guides) and follow the relevant instructions for installation.
 
+### Agent Skills
+
+We have some skills available to use with AI agents:
+
+- `using-westpac-ui` - **Highly recommended**: Provides general context for all components in the library, has reference material generated from the [docs site](https://gel.westpacgroup.com.au/design-system/wbc) content and usage examples of components.
+- `installing-westpac-ui` - **Optional**: Skill that provides context for installing GEL Next in a fresh project.
+- `migrating-to-westpac-ui-v1` - **Optional**: Skill that provides context for migrating from pre-1.0 GEL Next to >1.0 GEL Next
+
+#### Skill Installation
+
+The recommended way to install skills is to use the following command, from this you can select the skills you wish to install:
+`npx skills add https://github.com/WestpacGEL/GEL-next/tree/main/.agents/skills/consumer/`
+
+If you can't use the `skills` cli for any reason you can just retrieve the skills manually from the [GEL Next GitHub](https://github.com/WestpacGEL/GEL-next/tree/main/.agents/skills/consumer/)
+
 ### Installation
 
 The GEL is separated out into 2 packages.
@@ -29,7 +51,7 @@ The GEL is separated out into 2 packages.
 Install the GEL packages using preferred package manager (`npm`, `yarn` or `pnpm`):
 
 ```
-npm i @westpac/ui@canary @westpac/style-config@canary
+npm i @westpac/ui @westpac/style-config
 ```
 
 Create a `postcss.config.mjs` on the root of your application as follows.
@@ -46,8 +68,6 @@ In your main CSS file, import the Tailwind directives and GEL styles:
 @import 'tailwindcss';
 /* Tailwind setup */
 @import '@westpac/style-config/tailwind';
-/* Other setups */
-@import '@westpac/style-config';
 /* Register GEL components source for tailwind */
 @source "<relative_path>/node_modules/@westpac/ui/src";
 ```
@@ -73,6 +93,8 @@ To switch between brands, set the `data-brand` attribute on a parent element:
 </div>
 ```
 
+NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
+
 To toggle between light and dark mode, set the `data-theme` attribute:
 
 ```html
@@ -95,6 +117,8 @@ Following example shows adding `wbc` brand. You can add other valid brand names 
   ...
 </html>
 ```
+
+NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
 
 For theme modes (light/dark), use the `data-theme` attribute:
 
@@ -123,7 +147,7 @@ import { ALL_BRANDS } from '@westpac/style-config/tokens';
 
 All brand tokens have been mapped to a color theme variable in the tailwind config and can be used in the relevant tailwind classname e.g. `bg-surface-mono text-text-body`
 
-All available color tokens can be viewed in the [GEL storybook](https://gel-next-storybook-git-release-100-westpacgel.vercel.app/?path=/docs/foundation-colours--docs).
+All available color tokens can be viewed in the [GEL storybook](https://gel-next-storybook-westpacgel.vercel.app/?path=/docs/foundation-colours--docs).
 
 ### Brand fonts
 

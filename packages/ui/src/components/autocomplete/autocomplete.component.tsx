@@ -99,14 +99,14 @@ function Autocomplete<T extends object>(
   const isNoOptionPopOverOpen = useMemo(() => {
     return !!(
       noOptionsMessage &&
-      ((!state.isOpen && state.isFocused && searchProps.value.length > 0 && !state.selectedItem) ||
+      ((!state.isOpen && state.isFocused && searchProps.value.length > 0 && state.selectedItems.length === 0) ||
         (state.collection.size === 0 && searchProps.value.length > 0))
     );
   }, [
     noOptionsMessage,
     state.isOpen,
     state.isFocused,
-    state.selectedItem,
+    state.selectedItems,
     state.collection.size,
     searchProps.value.length,
   ]);
@@ -153,7 +153,9 @@ function Autocomplete<T extends object>(
           portalContainer={portalContainer}
           triggerRef={outerRef}
         >
-          <div className="bg-background-white px-3 py-2 text-text-muted">{noOptionsMessage}</div>
+          <div className="bg-background-white px-3 py-2 text-text-muted first:rounded-t-xl only:rounded-xl">
+            {noOptionsMessage}
+          </div>
           {footer && (
             <div className="rounded-b border-t border-t-border-muted-soft bg-background-white px-3 py-2 text-text-muted">
               {footer}

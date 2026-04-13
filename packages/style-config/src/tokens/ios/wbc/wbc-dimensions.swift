@@ -16,18 +16,6 @@ public enum WBCLightDimensions {
 }
 
 
-public enum WBCDarkDimensions {
-  public static let BorderRoundedNone = 0
-  public static let BorderRoundedSm = 3
-  public static let BorderRoundedMd = 4
-  public static let BorderRoundedLg = 5
-  public static let BorderRoundedXl = 6
-  public static let BorderRounded2xl = 8
-  public static let BorderRounded3xl = 12
-  public static let BorderRounded4xl = 16
-  public static let BorderRounded5xl = 24
-  public static let BorderRoundedFull = 999
-}
 
 
 public enum WBCDimensions {

@@ -13,7 +13,7 @@ import { styles as listBoxStyles } from './multi-select-list-box.styles.js';
 import type { MultiSelectListBoxProps } from './multi-select-list-box.types.js';
 
 export function MultiSelectListBox<T extends object = object>({ listBoxRef, ...props }: MultiSelectListBoxProps<T>) {
-  const { listState } = useContext(MultiSelectContext);
+  const { listState, hideSelectAll } = useContext(MultiSelectContext);
   const selectionMode = listState.selectionManager.selectionMode;
   const { listBoxProps } = useListBox({ selectionMode, ...props }, listState, listBoxRef);
 
@@ -23,7 +23,7 @@ export function MultiSelectListBox<T extends object = object>({ listBoxRef, ...p
 
   return (
     <div className={styles.container()}>
-      {selectionMode === 'multiple' && stateCollection.length > 0 && <MultiSelectSelectAllOption />}
+      {selectionMode === 'multiple' && stateCollection.length > 0 && !hideSelectAll && <MultiSelectSelectAllOption />}
       <ul {...listBoxProps} ref={listBoxRef} className={styles.ul()}>
         {stateCollection.length > 0 ? (
           stateCollection.map(item =>

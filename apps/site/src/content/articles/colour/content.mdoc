@@ -1,0 +1,74 @@
+## Why we have a colour system
+
+Colour systems are now common practice; however, Westpac has a unique set of business requirements that shape how we design with colour.
+
+- **Multi-brand:** The Westpac Group consists of several brands. Rather than building separate applications for each brand, we create multiple themes that allow a single application to be re-branded. This approach enables automated multi-brand rollouts, significantly reducing design and development effort. The use of themes also ensures we maintain consistency, remain accessible and minimise the margin for error. The colour system is a key component of this framework.
+- **Dark mode (COMING SOON):** The primary objective of dark mode is accessibility. Designed for people with light sensitivity (photophobia) the colour system extends each theme to provide both light and dark modes for every brand. ***Dark mode will be enabled when advised by Digital LT to ensure we take a coordinated platform and journey approach.***
+- **Accessible:** All Westpac applications must comply with WCAG AA standards. The colour system provides a matrix of rigorously tested colour combinations that supports all bands in both light and dark mode.
+
+## How it works
+
+The Colour system is a curated collection of carefully considered variables and tokens designed to work in unison.
+
+### Core colours
+
+In consultation with each brand we define a unique set of core colour values. These colours are carefully selected to ensure brand alignment and to guarantee accessibility in all required scenarios. Figure 1 shows the core brand colours for each brand.
+
+**Note:** The last two colours (Sing and Dance) are strictly for [Data Visualisation](https://gel.westpacgroup.com.au/articles/data-visualisation) (charts and graphs). They must not be used for any other purpose.
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/colour/colour-core-colours.png", alt: "A grid showing all the core colours for each brand.", height: 2874, width: 5109}
+   title="Figure 1. Core brand colours"
+   type="bodyWide" /%}
+
+### Colour ramp
+
+When the core colours have been defined we create a colour ramp for each one. The main purpose of the ramp is to define corresponding values for dark mode.\
+The core colour sits at the centre (500), with carefully selected tints and shades applied to either side. These values are then mapped to tokens and rigorously tested to ensure accessible contrast ratios can be achieved in both light and dark modes.
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/colour/colour-ramp.png", alt: "Image showing each of the 11 tints and shades applied to each core colour.", height: 2190, width: 5109}
+   title="Figure 2. The colour ramp"
+   type="bodyWide" /%}
+
+### Colour tokens
+
+The colour system is a curated set of semantically named tokens (for example, `surface-primary`, `text-muted`). Each colour token supports two modes: light and dark. Designers and developers use these tokens to design and build applications.
+
+### Scope
+
+To simplify the design process, scope has been applied to each token. Scope restricts tokens to specific properties, allowing us to group them into three main categories:
+
+- **Surface** colour tokens are used to apply colour to shapes – buttons, icons, pictograms etc.
+- **Text** colour tokens are used to apply colour to text.
+- **Border** colour tokens are used to apply colour to borders.
+
+In figure 3 below, the text layer is selected so only the text colour tokens are available. Not only does this simplify the design process it also reduces margin for error and increases consistency.
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/colour/colour-scope.png", alt: "Image showing text being selected in the Figma application.", height: 2253, width: 3807}
+   title="Figure 3. Using a token to apply colour to text in Figma"
+   type="bodyWide" /%}
+
+## Do and don’t
+
+Designing with tokens will be an adjustment, allow time to familiarise yourself with the system.
+
+### Do use tokens
+
+When designing or building the UI only use GEL colour tokens. Bespoke colours will not respond to mode switching which may introduce accessibility issues and inconsistency. This also applies to multi-brand applications which will also not respond to brand switching if bespoke colours are used.
+
+### Don’t re-design
+
+It’s critical that we maintain a consistent customer journey across all our touch-points. The GEL colour tokens are designed to replicate our current design direction. There are minor colour refinements, but these should be visually insignificant. If tokens are applied correctly, your designs should not change.
+
+### Do follow the guides
+
+The GEL Docs site includes a [comprehensive list of colour tokens](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens) with strict usage guidance. Refer to this list while working. In Figma, you can also hover over a token name to view its usage guidance.
+
+## More information
+
+The links below provide detailed, design principles and usage guidelines. Allow time to familiarise yourself with the system and always refer to the usage guidelines when applying tokens. If you have any questions please [contact the GEL team](mailto:gel@westpac.com.au).
+
+{% linkList
+   links=[{label: "An introduction to tokens", url: "https://gel.westpacgroup.com.au/articles/tokens", type: "_blank"}, {label: "Colour tokens – full list and usage guidelines", url: "https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens", type: "_blank"}] /%}

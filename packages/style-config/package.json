@@ -1,6 +1,6 @@
 {
   "name": "@westpac/style-config",
-  "version": "0.1.0-canary.5",
+  "version": "1.0.2",
   "type": "module",
   "exports": {
     ".": "./dist/tokens/index.js",
@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "fs-extra": "~11.3.2",
-    "handlebars": "~4.7.8",
+    "handlebars": "~4.7.9",
     "postcss": "^8.5.3",
     "style-dictionary": "~5.0.4",
     "tailwindcss": "^4.1.12",

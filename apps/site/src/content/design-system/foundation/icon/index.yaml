@@ -37,11 +37,6 @@ design:
       slug: dos-and-donts
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
@@ -53,12 +48,14 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
-  - title: Logos
-    slug: foundation/logo
-  - title: Colours
-    slug: foundation/colour
-  - title: Pictograms
-    slug: foundation/pictogram
+  icon: cube
+  links:
+    - title: Logos
+      slug: foundation/logo
+    - title: Colours
+      slug: foundation/colour
+    - title: Pictograms
+      slug: foundation/pictogram
 code:
   - title:
       name: Development examples

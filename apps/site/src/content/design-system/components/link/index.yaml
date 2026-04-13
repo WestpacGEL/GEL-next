@@ -1,4 +1,4 @@
-name: Link (Anchor)
+name: Link
 description: >-
   The Link component is a way for developers to quickly apply consistent web
   link styling while also providing global guidance for designers. There are two
@@ -28,11 +28,6 @@ design:
       slug: visual-design
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
@@ -44,12 +39,14 @@ accessibility:
       name: Colour impairment demonstration
       slug: colour-impairment-demonstration
 relatedComponents:
-  - title: Colours
-    slug: foundation/colour
-  - title: Lists
-    slug: components/list
-  - title: Icons
-    slug: foundation/icon
+  icon: cube
+  links:
+    - title: Colours
+      slug: foundation/colour
+    - title: Lists
+      slug: components/list
+    - title: Icons
+      slug: foundation/icon
 code:
   - title:
       name: Development examples

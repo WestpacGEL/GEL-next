@@ -17,6 +17,7 @@ export function MultiSelectListBoxTrigger<T>({
   selectedKeys,
   triggerProps,
   id,
+  width,
 }: MultiSelectListBoxTriggerProps<T>) {
   const { size, overlayState, listState, buttonRef, inputRef } = useContext(MultiSelectContext);
   const selectionMode = listState.selectionManager.selectionMode;
@@ -30,6 +31,7 @@ export function MultiSelectListBoxTrigger<T>({
   const styles = triggerStyles({
     size: resolveResponsiveVariant(size, breakpoint),
     isFocusVisible,
+    width: resolveResponsiveVariant(width, breakpoint),
   });
 
   const getSectionTitle = useCallback(

@@ -12,8 +12,6 @@
 @import 'tailwindcss';
 /* Tailwind setup */
 @import '@westpac/style-config/tailwind';
-/* Other setups */
-@import '@westpac/style-config';
 
 /* For brand theming, import the required brand stylesheets: */
 @import '@westpac/style-config/themes/wbc';
@@ -45,6 +43,10 @@
 ```
 
 4. To enable brand + theme switching, ensure your root HTML element includes:
+
+NOTE: Be sure to pass the brand with data-brand as previously it was data-theme
+
+#### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
 
 ```html
 <StaticCode

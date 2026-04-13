@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/deprecation */
 'use client';
 
 import { Button, Link as LinkGELUI } from '@westpac/ui';

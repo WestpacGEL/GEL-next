@@ -1,3 +1,5 @@
+// TODO: Find solution for Link component that doesn't require legacyBehavior and passHref props, and remove eslint disable for sonarjs/deprecation when this is resolved
+/* eslint-disable sonarjs/deprecation */
 'use client';
 
 import { List, ListItem, Link as GELLink } from '@westpac/ui';

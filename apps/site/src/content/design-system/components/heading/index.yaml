@@ -7,7 +7,8 @@ namedExport:
   discriminant: false
 design: []
 accessibility: []
-relatedComponents: []
+relatedComponents:
+  links: []
 code:
   - title:
       name: Heading types

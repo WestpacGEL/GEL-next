@@ -40,7 +40,7 @@ export const styles = tv({
     },
     scrolled: {
       true: {
-        title: 'shadow-[0px_2px_5px_0px] shadow-black/30 dark:shadow-black/75',
+        title: 'shadow-[0px_2px_5px_0px] shadow-black/30',
       },
     },
   },

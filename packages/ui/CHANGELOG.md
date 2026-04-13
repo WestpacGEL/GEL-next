@@ -1,6 +1,44 @@
 # @westpac/ui
 
-## 1.0.0-canary.1
+## 1.2.1
+
+### Patch Changes
+
+- 11f023c: fixed style issue with autocomplete dropdown
+
+## 1.2.0
+
+### Minor Changes
+
+- ba74b1e: - added hideFilter prop to MultiSelect to hide the filter in dropdown
+  - added hideSelectAll prop to MultiSelect to hide the Select All option in dropdown
+  - added width prop to MultiSelect for fixed widths similar to the Input component
+
+### Patch Changes
+
+- 5aa6631: - fix security issues in style-config
+  - fix deprecated prop usage in autocomplete after package updates
+
+## 1.1.2
+
+### Patch Changes
+
+- a55faea: set a default portalContainer for MultiSelect so styles render correctly in more situations without providing portalContainer
+
+## 1.1.1
+
+### Patch Changes
+
+- 2eebb35: - fix issue with font import in style config
+  - fix security issues
+
+## 1.1.0
+
+### Minor Changes
+
+- bd3422f: add onPasteComplete handler to passcode
+
+## 1.0.0
 
 ### 📦 Major Changes — @westpac/ui & @westpac/style-config
 
@@ -20,7 +58,7 @@ We are introducing a new architecture separating UI (@westpac/ui) components fro
 2. Install the updated dependencies:
 
 ```bash
-npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tailwind-variants@~3.1.1
+npm i @westpac/ui @westpac/style-config tailwindcss@4 postcss tailwind-variants@~3.1.1
 ```
 
 3. Import global styles in your main CSS file:
@@ -29,8 +67,6 @@ npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tail
 @import 'tailwindcss';
 /* Tailwind setup */
 @import '@westpac/style-config/tailwind';
-/* Other setups */
-@import '@westpac/style-config';
 /* Register GEL components source for Tailwind */
 @source "<relative_path>/node_modules/@westpac/ui/src";
 
@@ -65,6 +101,8 @@ npm i @westpac/ui@canary @westpac/style-config@canary tailwindcss@4 postcss tail
 4. After including the css file to enable brand + theme switching, ensure your root HTML element includes:
 
 NOTE: Be sure to pass the brand with data-brand as previously it was data-theme
+
+#### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
 
 ```html
 <html data-brand="wbc" data-theme="dark|light">
@@ -145,9 +183,9 @@ For classes we are unable to replace with the equivalent token the code will inj
 
 If you want to test the upgrade while waiting for your designers we recommened replacing with a token that is close or the hex value i.e. text-black = text-[#000].
 
-To see all the new tokens you can check the canary branch [Storybook](https://gel-next-storybook-git-release-100-westpacgel.vercel.app/?path=/docs/foundation-colours--docs)
+To see all the new tokens you can check storybook [Storybook](https://gel-next-storybook-git-westpacgel.vercel.app/?path=/docs/foundation-colours--docs) or the [GEL website](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/colour-tokens)
 
-You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-next/blob/release/1.0.0/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs)
+You can also find the codemod script [here](https://github.com/WestpacGEL/GEL-next/blob/develop/packages/ui/scripts/codemods/gel-tokens-tailwind-v1.cjs)
 
 ---
 
@@ -540,6 +578,63 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 </BottomSheet>
 ```
 
+### Pictogram mode prop value change
+
+To avoid confusion with dark mode and light mode we have changed the possible values for the pictogram mode prop.
+
+#### Before
+
+```tsx
+export type PictogramMode = 'dark' | 'light' | 'duo';
+
+<Pictogram mode="dark" />;
+```
+
+#### After
+
+```tsx
+export type PictogramMode = 'base' | 'mono' | 'duo';
+
+<Pictogram mode="base" />;
+```
+
+### Removed/Updated Logos and Symbols
+
+#### NOTE: Dark Mode has been disabled for this release and switching to dark mode will not do anything.
+
+We have taken the opportunity to remove and update all the symbols and logos exported from the library. For updates most symbols/logos will have a dark mode variant that turns on when switching to dark mode.
+If there is a circumstance where you want the dark mode variant in light mode look for the 'Inverse' symbols/logos. If your believe there is a symbol/logo that needs an inverse or was removed and you believe it shouldn't be please contact the GEL design team.
+
+The list of removed symbols and logos is as follows
+Logos:
+
+- BTPanormaMultibrandLargeLogo
+- BTPanormaMultibrandSmallLogo
+- RedAvatarCircleLogo
+- RedAvatarCircleReverseLogo
+- RedAvatarLogo
+
+Symbols:
+
+- GooglePlusSymbol
+- MastercardAcceptedSymbol
+- MastercardHorizontalSymbol
+- MicrosoftStoreSymbol
+- PayToBlackSymbol
+- PayToDarkGreySymbol
+- PayToLightGreySymbol
+- PayToWhiteSymbol
+- PayToWordmarkBlackSymbol
+- PayToWordmarkDarkGreySymbol
+- PayToWordmarkLightGreySymbol
+- PayToWordmarkWhiteSymbol
+- SlackSymbol
+- TwitterSymbol
+- VisaSymbol
+- XMarkInverseSymbol
+- XMarkSymbol
+- YammerSymbol
+
 ### 🗑️ Deprecated Components & APIs
 
 | Deprecated                                         | Replacement / Notes                                                  |
@@ -547,6 +642,24 @@ Now you need to add a prop to display the dismiss 'x' button (matching `Modal` i
 | `ButtonDropdown`                                   | Replaced by `Dropdown`                                               |
 | `Form`, `FormGroup`, `FormChitChat`, `FormSection` | Removed                                                              |
 | `Pagination pages={[]}`                            | Removed due to performance concerns, now we used totalPages={number} |
+
+## 0.59.4
+
+### Patch Changes
+
+- 58817fd: - removed 12px font from input group hint
+  - set fixed width on DatePickerBeta
+
+## 0.59.3
+
+### Patch Changes
+
+- b47606f: - Made changes to popover to have better accessibility
+  - Fixed issue with radio and checkbox selector that caused hint to be read multiple times
+  - added min width and min height to icons so they don't shrink in certain cases
+  - fixed issue with Link component not wrapping correctly when content was too long
+  - made adjustments to Link to work better inline along with above changes
+  - added 4 new icons
 
 ## 0.59.2
 

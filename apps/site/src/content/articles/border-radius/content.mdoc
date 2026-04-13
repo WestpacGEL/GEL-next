@@ -1,0 +1,105 @@
+## The border radius system
+
+Our digital assets span a wide range of sizes, from small badges to full-width marketing promos and banners. The border radius system accommodates these different scales while maintaining a consistent and harmonious visual balance across the customer journey.
+
+\
+We’ve defined eight border radius values (see Figure 1).
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-tokens.png", alt: "Graphic showing the 8 border radius tokens that we provide", height: 1854, width: 4194}
+   title="Figure 1. Border radius values"
+   type="bodyWide" /%}
+
+- **Smaller values (3–6px)** are used for elements such as badges, buttons, and inputs.
+- **Medium values (8 and 12px)** are used for components and containers such as modals, tiles, and calendars.
+- **The largest values (16px and 24px)** are reserved for the public website for elements such as promotional tiles and banners.
+
+These values are assigned to border radius tokens for each of our brands:
+
+- `rounded-sm`
+- `rounded-md`
+- `rounded-lg`
+- `rounded-xl`
+- `rounded-2xl`
+- `rounded-3xl`
+- `rounded-4xl`
+- `rounded-5xl`
+
+We also provide two additional utility tokens shown in Figure 2.
+
+- `rounded-none` – removes the border radius when required
+- `rounded-full` – creates a pill or circular shape
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-none.png", alt: "Graphic showing the utility radius tokens", height: 1503, width: 3516}
+   title="Figure 2. Utility tokens"
+   type="body" /%}
+
+## Nesting
+
+Nesting refers to placing one element inside another element, creating a parent–child relationship. Figures 3 and 4 illustrate this principle:
+
+- **Figure 3:** The nested element uses a larger radius than its parent container, creating an awkward visual disconnect.
+- **Figure 4:** The nested element uses a smaller radius than its parent container, creating a more harmonious relationship. This visual hierarchy helps communicate the structure of the content.
+
+{% layout layout=[5, 5] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-nesting-a.png", alt: "Graphic showing the wrong way to apply border radius", height: 1200, width: 1200}
+   caption=" Figure 3. Incorrect radius nesting"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-nesting-b.png", alt: "Graphic showing the correct way to nest border radius", height: 1200, width: 1200}
+   caption="Figure 4. Correct radius nesting"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+**Put simply:** The border radius of a nested element (child) should never be larger than the border radius of its parent container.
+
+To ensure this design principle is maintained in the design system:
+
+- The **largest element** radius is capped at 6px
+- The **smallest container** radius starts at 8px
+
+This is illustrated in Figure 4. The tile component uses an 8px border radius, ensuring that any nested child elements will always have a smaller radius.
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-caps-tile.png", alt: "Graphic showing a group of elements that use different border radius values.", height: 1386, width: 2523}
+   title="Figure 4."
+   type="bodyWide" /%}
+
+Figure 5 shows the same tile being used as a nested child. As a result the parent container requires a larger 12px border radius.
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/articles/border-radius/border-radius-caps-container.png", alt: "Graphic showing complex nesting.", height: 1386, width: 2523}
+   title="Figure 5"
+   type="bodyWide" /%}
+
+When applying border radius tokens in your designs, it’s important to consider how elements and components will be grouped. This ensures the nesting principles remain visually consistent.
+
+## Do and don’t
+
+Designing with tokens will be an adjustment, allow time to familiarise yourself with the system.
+
+### Do follow the guides
+
+The GEL documentation includes a [comprehensive list of border radius tokens](https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/border-tokens) and strict usage guidelines for each. We strongly recommend referencing this list while working.
+
+### Don’t change the values
+
+The GEL components use fixed border radius tokens. These are not responsive and must not be changed or overridden.
+
+### Don’t use responsive border radius
+
+Designing components with responsive border radius values will create inconsistencies and unnecessary complexity.
+
+## More information
+
+The links below provide detailed, design principles and usage guidelines. Allow time to familiarise yourself with the system and always refer to the usage guidelines when applying tokens. If you have any questions please [contact the GEL team](mailto:gel@westpac.com.au).
+
+{% linkList
+   links=[{label: "An introduction to tokens", url: "https://gel.westpacgroup.com.au/articles/tokens", type: "_blank"}, {label: "Border tokens – full list and usage guidelines", url: "https://gel.westpacgroup.com.au/design-system/wbc/foundation/tokens/border-tokens", type: "_blank"}] /%}

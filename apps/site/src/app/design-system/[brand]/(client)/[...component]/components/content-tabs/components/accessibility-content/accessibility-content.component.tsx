@@ -3,7 +3,6 @@
 import { DocumentRenderer } from '@keystatic/core/renderer';
 
 import { Container } from '@/app/design-system/components';
-import { Colors } from '@/components/component-blocks/colors/colors.component';
 import { AccessibilityDemo } from '@/components/component-blocks/components/accessibility-demo';
 import { ShortCode } from '@/components/component-blocks/components/short-code';
 import { foundationBlocksComponents } from '@/components/component-blocks/foundation-blocks';
@@ -32,7 +31,6 @@ export function AccessibilityContent({
                 renderers={DOCUMENT_RENDERERS}
                 componentBlocks={{
                   ...foundationBlocksComponents,
-                  colors: (props: { palette: string }) => <Colors palette={props.palette} />,
                   accessibilityDemo: () => <AccessibilityDemo content={accessibilityDemo || []} />,
                   shortCode: props => {
                     return (

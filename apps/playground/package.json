@@ -1,6 +1,6 @@
 {
   "name": "playground",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@westpac/style-config": "workspace:*",
-    "next": "14.2.35",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "15.5.14",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "zustand": "~4.5.4"
   },
   "devDependencies": {
@@ -22,7 +22,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^9.32.0",
-    "eslint-config-next": "15.3.4",
+    "eslint-config-next": "15.5.14",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.12",
     "typescript": "^5"

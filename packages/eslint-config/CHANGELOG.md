@@ -1,5 +1,11 @@
 # @westpac/eslint-config
 
+## 1.0.2
+
+### Patch Changes
+
+- dcf0452: security update bump
+
 ## 1.0.1
 
 ### Patch Changes

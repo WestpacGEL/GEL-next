@@ -47,12 +47,12 @@ export function AutocompletePopover(props: AutocompletePopoverProps) {
         }}
         ref={popoverRef}
         className={clsx(
-          'z-10 my-1 rounded-xl border border-border-muted-soft shadow-[0_2px_12px_rgba(0,0,0,0.2)]',
+          'z-10 my-1 flex flex-col rounded-xl border border-border-muted-soft shadow-[0_2px_12px_rgba(0,0,0,0.2)]',
           className,
         )}
       >
         {!isNonModal && <DismissButton onDismiss={() => state.close()} />}
-        {children}
+        <div className="min-h-0 flex-1 overflow-auto">{children}</div>
         <DismissButton onDismiss={() => state.close()} />
       </div>
     </Overlay>

@@ -7,10 +7,10 @@ export const styles = tv({
       bg-background-white p-6 pb-0
     `,
     displayWrapper: `
-      relative -mx-6 -mt-6 overflow-auto border-border-muted-soft px-6
+      relative -mx-6 -mt-6 overflow-auto border-border-muted-soft
     `,
     error: 'flex gap-2 rounded-md bg-surface-danger-faint p-2 text-text-danger',
-    buttonWrapper: '-mx-6 -mb-6 flex items-center justify-end',
+    buttonWrapper: 'flex items-center justify-end',
     codeWrapper: `
       relative -mx-6 rounded-b-3xl border-t border-border-muted-soft
       bg-[#282c34] p-3.5 font-mono text-base leading-loose
@@ -33,11 +33,19 @@ export const styles = tv({
     },
     showResponsiveDemo: {
       true: {
-        displayWrapper: 'pt-9 pb-6',
+        displayWrapper: '!pt-8',
       },
       false: {
-        displayWrapper: 'py-6',
+        displayWrapper: '',
       },
+    },
+    size: {
+      xl: { displayWrapper: 'p-8' },
+      lg: { displayWrapper: 'p-7' },
+      md: { displayWrapper: 'p-6' },
+      sm: { displayWrapper: 'p-5' },
+      xsl: { displayWrapper: 'p-4' },
+      initial: { displayWrapper: 'p-3' },
     },
     isCodeVisible: {
       true: {

@@ -21,22 +21,19 @@ design:
       slug: visual-design
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: true
 accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
 relatedComponents:
-  - title: Panels
-    slug: components/panel
-  - title: Accordions
-    slug: components/accordion
-  - title: Tabs
-    slug: components/tabs
+  icon: cube
+  links:
+    - title: Panels
+      slug: components/panel
+    - title: Accordions
+      slug: components/accordion
+    - title: Tabs
+      slug: components/tabs
 code:
   - title:
       name: Development examples

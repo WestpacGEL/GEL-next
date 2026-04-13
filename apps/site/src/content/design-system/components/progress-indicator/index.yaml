@@ -19,16 +19,13 @@ design:
       slug: visual-design
     noTitle: false
     noDemo: false
-  - title:
-      name: Where is this available?
-      slug: where-is-this-available
-    noTitle: false
-    noDemo: false
 accessibility:
   - title:
       name: Notes on accessibility
       slug: notes-on-accessibility
-relatedComponents: []
+relatedComponents:
+  icon: cube
+  links: []
 code:
   - title:
       name: Development examples
