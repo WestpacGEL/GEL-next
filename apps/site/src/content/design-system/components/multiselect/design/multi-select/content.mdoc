@@ -120,6 +120,9 @@ const OTHER_OPTIONS = [
         listBoxProps={{ 'aria-label': 'multiselect options' }}
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+        hideSelectAll
+        hideFilter
+        hideSections        
         width="30"
       >
         <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
