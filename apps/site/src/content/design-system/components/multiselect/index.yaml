@@ -36,10 +36,7 @@ design:
       slug: visual-design
     noTitle: false
     noDemo: false
-accessibility: 
-  - title:
-      name: Accessibility features
-      slug: accessibility-features
+accessibility: []
 relatedComponents:
   icon: cube
   links:
