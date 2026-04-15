@@ -125,7 +125,6 @@ const OTHER_OPTIONS = [
         hideSections        
         width="30"
       >
-        <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
           {option => (
             <MultiSelectItem
               key={option.key}
@@ -146,7 +145,7 @@ const OTHER_OPTIONS = [
               {option.textValue}
             </MultiSelectItem>
           )}
-        </MultiSelectSection>
+
       </MultiSelect>
     </div>
   );
