@@ -17,6 +17,11 @@ design:
     noTitle: false
     noDemo: false
   - title:
+      name: Fixed widths
+      slug: fixed-widths
+    noTitle: false
+    noDemo: false
+  - title:
       name: User experience
       slug: user-experience
     noTitle: false

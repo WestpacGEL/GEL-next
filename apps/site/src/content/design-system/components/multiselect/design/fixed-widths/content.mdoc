@@ -1,0 +1,9 @@
+```tsx
+<div className="flex flex-col gap-2">
+      {FIXED_WIDTHS.map(width => <MultiSelect key={width} width={width} selectedKeys={selectedKeys} onSelectionChange={keys => setSelectedKeys(keys as Set<string>)} items={OPTIONS}>
+          {option => <MultiSelectItem key={option.key} textValue={option.textValue} description="Supporting information or description">
+              {option.textValue}
+            </MultiSelectItem>}
+        </MultiSelect>)}
+    </div>
+```
