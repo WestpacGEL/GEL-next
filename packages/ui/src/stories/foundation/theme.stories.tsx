@@ -12,7 +12,7 @@ const meta: Meta = {
 export default meta;
 
 /**
- * Providing brand theming is a matter of wrapping with HTML or div with data-brand="theme-name" and for light/dark mode with data-theme="light|dark" see code of story for example
+ * Providing brand theming is a matter of wrapping with HTML or div with data-brand="theme-name" and for light/dark mode with data-mode="light|dark" see code of story for example
  */
 export const Theme = () => (
   /**
@@ -27,7 +27,7 @@ export const Theme = () => (
    * - light
    * - dark
    */
-  <div data-brand="wbc" data-theme="light">
+  <div data-brand="wbc" data-mode="light">
     Click on show code
   </div>
 );

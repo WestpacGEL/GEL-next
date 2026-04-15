@@ -72,7 +72,7 @@ export function Dropdown({
   const brandContainer = useMemo(() => {
     if (typeof window !== 'undefined') {
       return (
-        document.querySelector('[data-theme]') ||
+        document.querySelector('[data-brand]') ||
         document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
         document.body
       );

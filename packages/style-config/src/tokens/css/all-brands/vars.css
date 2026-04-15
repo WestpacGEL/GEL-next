@@ -840,7 +840,7 @@
   --border-rounded-full: var(--primitives-border-radius-999px);
 }
 
-[data-brand="wbc"][data-theme="dark"] {
+[data-brand="wbc"][data-mode="dark"] {
   --color-background-white: var(--primitives-color-wbc-muted-900); /* If you need a white background use this token */
   --color-background-pale: var(--primitives-color-wbc-muted-950); /* If you need a grey background use this token. Note: this token replaces the current Background colour style. */
   --color-background-faint: var(--primitives-color-wbc-muted-900); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */
@@ -949,7 +949,7 @@
   --border-rounded-full: var(--primitives-border-radius-999px);
 }
 
-[data-brand="stg"][data-theme="dark"] {
+[data-brand="stg"][data-mode="dark"] {
   --color-background-white: var(--primitives-color-stg-muted-900); /* If you need a white background use this token */
   --color-background-pale: var(--primitives-color-stg-muted-950); /* If you need a grey background use this token. Note: this token replaces the current Background colour style. */
   --color-background-faint: var(--primitives-color-stg-muted-900); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */
@@ -1058,7 +1058,7 @@
   --border-rounded-full: var(--primitives-border-radius-999px);
 }
 
-[data-brand="bsa"][data-theme="dark"] {
+[data-brand="bsa"][data-mode="dark"] {
   --color-background-white: var(--primitives-color-bsa-muted-900); /* If you need a white background use this token */
   --color-background-pale: var(--primitives-color-bsa-muted-950); /* If you need a grey background use this token. Note: this token replaces the current Background colour style. */
   --color-background-faint: var(--primitives-color-bsa-muted-900); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */
@@ -1167,7 +1167,7 @@
   --border-rounded-full: var(--primitives-border-radius-999px);
 }
 
-[data-brand="bom"][data-theme="dark"] {
+[data-brand="bom"][data-mode="dark"] {
   --color-background-white: var(--primitives-color-bom-muted-900); /* If you need a white background use this token */
   --color-background-pale: var(--primitives-color-bom-muted-950); /* If you need a grey background use this token. Note: this token replaces the current Background colour style. */
   --color-background-faint: var(--primitives-color-bom-muted-900); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */

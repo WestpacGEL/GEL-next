@@ -195,7 +195,7 @@
       --font-brand: Aller;
     }
 
-    [data-brand="bsa"][data-theme="dark"] {
+    [data-brand="bsa"][data-mode="dark"] {
       /* Dark Mode Semantic Tokens */
       --background-white: var(--bsa-muted-900);
       --background-pale: var(--bsa-muted-950);

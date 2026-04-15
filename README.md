@@ -95,10 +95,10 @@ To switch between brands, set the `data-brand` attribute on a parent element:
 
 NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
 
-To toggle between light and dark mode, set the `data-theme` attribute:
+To toggle between light and dark mode, set the `data-mode` attribute:
 
 ```html
-<div data-brand="wbc" data-theme="dark">
+<div data-brand="wbc" data-mode="dark">
   <!-- Your app content -->
 </div>
 ```
@@ -120,11 +120,11 @@ Following example shows adding `wbc` brand. You can add other valid brand names 
 
 NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
 
-For theme modes (light/dark), use the `data-theme` attribute:
+For theme modes (light/dark), use the `data-mode` attribute:
 
 ```html
 <!doctype html>
-<html lang="en" data-brand="wbc" data-theme="light">
+<html lang="en" data-brand="wbc" data-mode="light">
   ...
 </html>
 ```

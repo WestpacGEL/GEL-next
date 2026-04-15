@@ -20,7 +20,7 @@ const withThemeProvider: Decorator = (Story, context) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      document.querySelector('html')?.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+      document.querySelector('html')?.setAttribute('data-mode', isDarkMode ? 'dark' : 'light');
     }
   }, [isDarkMode]);
 

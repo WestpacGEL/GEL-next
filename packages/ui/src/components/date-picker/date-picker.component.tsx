@@ -86,7 +86,7 @@ export function DatePicker({
 
   const brandContainer = useMemo(() => {
     return (
-      document.querySelector('[data-theme]') ||
+      document.querySelector('[data-brand]') ||
       document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
       undefined
     );

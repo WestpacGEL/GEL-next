@@ -2,7 +2,7 @@
  * Do not edit directly, this file was auto-generated.
  */
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where([data-mode=dark], [data-mode=dark] *));
 
 @layer theme {
   :root,

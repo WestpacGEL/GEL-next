@@ -260,7 +260,7 @@
   --border-rounded-full: var(--primitives-border-radius-999px);
 }
 
-[data-brand="wbc"][data-theme="dark"] {
+[data-brand="wbc"][data-mode="dark"] {
   --color-background-white: var(--primitives-color-wbc-muted-900); /* If you need a white background use this token */
   --color-background-pale: var(--primitives-color-wbc-muted-950); /* If you need a grey background use this token. Note: this token replaces the current Background colour style. */
   --color-background-faint: var(--primitives-color-wbc-muted-900); /* If you need a light grey background use this token. Note: this token replaces the current Light colour style. Do not use this token as a screen background. */

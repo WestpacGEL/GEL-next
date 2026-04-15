@@ -104,11 +104,11 @@ NOTE: Be sure to pass the brand with data-brand as previously it was data-theme
 NOTE: Do not include code to activate dark mode if it hasn't been approved for your team yet
 
 ```html
-<html data-brand="wbc" data-theme="dark|light">
+<html data-brand="wbc" data-mode="dark|light">
   <!-- Your app content -->
 </html>
 or
-<div data-brand="wbc" data-theme="dark|light">
+<div data-brand="wbc" data-mode="dark|light">
   <!-- Your app content -->
 </div>
 ```

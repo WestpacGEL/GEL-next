@@ -195,7 +195,7 @@
       --font-brand: Dragon Bold;
     }
 
-    [data-brand="stg"][data-theme="dark"] {
+    [data-brand="stg"][data-mode="dark"] {
       /* Dark Mode Semantic Tokens */
       --background-white: var(--stg-muted-900);
       --background-pale: var(--stg-muted-950);

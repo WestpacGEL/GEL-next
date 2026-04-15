@@ -6,7 +6,7 @@ export function useDarkMode() {
   }, []);
 
   const getMode = useCallback(() => {
-    return document.querySelector('[data-theme]')?.getAttribute('data-theme') || 'light';
+    return document.querySelector('[data-mode]')?.getAttribute('data-mode') || 'light';
   }, []);
 
   const getBrandContainer = useCallback(() => {
@@ -19,7 +19,7 @@ export function useDarkMode() {
 
   const setMode = useCallback(
     (mode: 'light' | 'dark') => {
-      getBrandContainer()?.setAttribute('data-theme', mode);
+      getBrandContainer()?.setAttribute('data-mode', mode);
     },
     [getBrandContainer],
   );

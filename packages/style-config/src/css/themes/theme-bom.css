@@ -195,7 +195,7 @@
       --font-brand: Brown Pro;
     }
 
-    [data-brand="bom"][data-theme="dark"] {
+    [data-brand="bom"][data-mode="dark"] {
       /* Dark Mode Semantic Tokens */
       --background-white: var(--bom-muted-900);
       --background-pale: var(--bom-muted-950);

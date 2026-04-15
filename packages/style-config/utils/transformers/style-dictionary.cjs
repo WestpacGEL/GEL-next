@@ -159,7 +159,7 @@ StyleDictionary.registerFormat({
     // Dark mode (wrapped in selector)
     if (Object.entries(darkTokensPerBrand).length) {
       Object.entries(darkTokensPerBrand).forEach(([brand, tokens]) => {
-        output += `[data-brand="${brand}"][data-theme="dark"] {\n`;
+        output += `[data-brand="${brand}"][data-mode="dark"] {\n`;
         tokens.forEach(token => {
           const description = token.original.$description;
           output += `  --${token.name}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;
@@ -241,7 +241,7 @@ StyleDictionary.registerFormat({
 
     // Dark mode (wrapped in selector)
     if (darkTokens.length) {
-      output += `[data-brand="${options.brand}"][data-theme="dark"] {\n`;
+      output += `[data-brand="${options.brand}"][data-mode="dark"] {\n`;
       darkTokens.forEach(token => {
         const description = token.original.$description;
         output += `  --${token.name.replace('dark-mode-', '')}: ${token.$value};${description ? ` /* ${description} */` : ''}\n`;

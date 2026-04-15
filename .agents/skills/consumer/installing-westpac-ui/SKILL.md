@@ -92,7 +92,7 @@ For multi-brand applications, dynamically switch with the `data-brand` attribute
 <div data-brand={currentBrand}>{/* Your app content */}</div>
 ```
 
-> **Note:** Dark mode (`data-theme="dark"`) is disabled in the current release.
+> **Note:** Dark mode (`data-mode="dark"`) is disabled in the current release.
 
 5. Brand Fonts
 

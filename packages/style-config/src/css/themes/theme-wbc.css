@@ -195,7 +195,7 @@
       --font-brand: Westpac;
     }
 
-    [data-brand="wbc"][data-theme="dark"] {
+    [data-brand="wbc"][data-mode="dark"] {
       /* Dark Mode Semantic Tokens */
       --background-white: var(--wbc-muted-900);
       --background-pale: var(--wbc-muted-950);

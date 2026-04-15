@@ -83,10 +83,10 @@ The brand attribute has changed from `data-theme` to `data-brand`:
 ##### After
 
 ```html
-<html data-brand="wbc" data-theme="light"></html>
+<html data-brand="wbc" data-mode="light"></html>
 ```
 
-> **Note:** Dark mode (`data-theme="dark"`) is disabled in this release.
+> **Note:** Dark mode (`data-mode="dark"`) is disabled in this release.
 
 5. Update ESLint Config (Optional if using @westpac/eslint-config)
 
