@@ -69,6 +69,7 @@ This example shows the Multi-select component with select-all functionality.
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
         hideFilter
+        width="30"
       >
         {option => (
           <MultiSelectItem
@@ -121,6 +122,7 @@ const OTHER_OPTIONS = [
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
         hideFilter
         hideSelectAll
+        width="30"
       >
         <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
           {option => (
@@ -174,6 +176,7 @@ This example shows the Multi-select component with filtering functionality to na
         selectedKeys={selectedKeys}
         onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
         hideSelectAll
+        width="30"
       >
         {option => (
           <MultiSelectItem
