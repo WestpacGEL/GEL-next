@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.2.1
+
+### Patch Changes
+
+- 11f023c: fixed style issue with autocomplete dropdown
+
 ## 1.2.0
 
 ### Minor Changes
