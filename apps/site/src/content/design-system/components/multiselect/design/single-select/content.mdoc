@@ -108,6 +108,74 @@ const OTHER_OPTIONS = [
 }
 ```
 
+### With descriptions
+
+This example shows the Single-select component with item descriptions.
+
+```tsx
+() => {
+    const OPTIONS = [
+  { key: 1, textValue: 'Aerospace' },
+  { key: 2, textValue: 'Mechanical' },
+  { key: 3, textValue: 'Civil' },
+  { key: 4, textValue: 'Biomedical' },
+  { key: 5, textValue: 'Nuclear' },
+  { key: 6, textValue: 'Industrial' },
+  { key: 7, textValue: 'Chemical' },
+  { key: 8, textValue: 'Agricultural' },
+  { key: 9, textValue: 'Electrical' },
+];
+const OTHER_OPTIONS = [
+  { key: 11, textValue: 'Other Aerospace' },
+  { key: 12, textValue: 'Other Mechanical' },
+  { key: 13, textValue: 'Other Civil' },
+  { key: 14, textValue: 'Other Biomedical' },
+  { key: 15, textValue: 'Other Nuclear' },
+  { key: 16, textValue: 'Other Industrial' },
+  { key: 17, textValue: 'Other Chemical' },
+  { key: 18, textValue: 'Other Agricultural' },
+  { key: 19, textValue: 'Other Electrical' },
+];
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+  return (
+    <div className="flex flex-col gap-2">
+      <MultiSelect
+        listBoxProps={{ 'aria-label': 'multiselect options' }}
+        selectedKeys={selectedKeys}
+        onSelectionChange={keys => setSelectedKeys(keys as Set<string>)}
+        selectionMode="single"
+        hideSelectAll
+        hideFilter
+        width="30"
+      >
+        <MultiSelectSection key={'section-1'} title="Transaction" items={OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+              description="Supporting information or description"
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelectSection>
+        <MultiSelectSection key={'section-2'} title="Savings" items={OTHER_OPTIONS}>
+          {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+              description="Supporting information or description"
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+        </MultiSelectSection>
+      </MultiSelect>
+    </div>
+  );
+}
+```
+
 ### Filtering
 
 This example shows the single-select variant with filtering functionality to narrow down the list of items to choose from.
