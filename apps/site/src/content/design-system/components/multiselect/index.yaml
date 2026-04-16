@@ -4,7 +4,7 @@ description: >-
   from a defined list within a single control. 
 namedExport:
   discriminant: false
-excludeFromNavbar: true
+excludeFromNavbar: false
 design:
   - title:
       name: Multi-select
@@ -36,7 +36,7 @@ design:
       slug: visual-design
     noTitle: false
     noDemo: false
-accessibility: 
+accessibility:
   - title:
       name: Accessibility features
       slug: accessibility-features
