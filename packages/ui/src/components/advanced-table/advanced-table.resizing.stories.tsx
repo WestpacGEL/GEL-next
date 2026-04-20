@@ -13,35 +13,50 @@ export default meta;
 type Story = StoryObj<unknown>;
 
 export const ResizingColumns: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing showPagination />,
 };
 
 export const ExtraCellPadding: Story = {
-  render: () => <AdvancedTable extraCellPadding data={defaultDataSB} columns={columnsSB} enableResizing />,
+  render: () => (
+    <AdvancedTable extraCellPadding data={defaultDataSB} columns={columnsSB} enableResizing showPagination />
+  ),
 };
 
 export const Bordered: Story = {
-  render: () => <AdvancedTable bordered data={defaultDataSB} columns={columnsSB} enableResizing />,
+  render: () => <AdvancedTable bordered data={defaultDataSB} columns={columnsSB} enableResizing showPagination />,
 };
 
 export const BorderedExtraPadding: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} extraCellPadding bordered enableResizing />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} extraCellPadding bordered enableResizing showPagination />
+  ),
 };
 
 export const ResizingWithSorting: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing enableSorting />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing enableSorting showPagination />,
 };
 
 export const ResizingWithSelection: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing enableRowSelection />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing enableRowSelection showPagination />
+  ),
 };
 
 export const ResizingWithReordering: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing enableColumnReordering />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing enableColumnReordering showPagination />
+  ),
 };
 
 export const ResizingWithSortingAndSelection: Story = {
   render: () => (
-    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableResizing enableSorting enableRowSelection />
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      enableResizing
+      enableSorting
+      enableRowSelection
+      showPagination
+    />
   ),
 };

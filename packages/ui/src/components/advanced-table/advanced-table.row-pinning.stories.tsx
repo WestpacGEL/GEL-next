@@ -13,15 +13,19 @@ export default meta;
 type Story = StoryObj<unknown>;
 
 export const RowPinning: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning showPagination />,
 };
 
 export const RowPinningWithSelection: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning enableRowSelection />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning enableRowSelection showPagination />
+  ),
 };
 
 export const RowPinningWithSorting: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning enableSorting />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning enableSorting showPagination />
+  ),
 };
 
 export const RowPinningWithScrollableRows: Story = {
@@ -50,15 +54,27 @@ export const RowPinningWithScrollableRowsAndSelection: Story = {
 };
 
 export const RowPinningBordered: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning bordered />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning bordered showPagination />,
 };
 
 export const RowPinningExtraPadding: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning extraCellPadding />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning extraCellPadding showPagination />
+  ),
 };
 
 export const RowPinningPrePinned: Story = {
   render: () => (
-    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning initialPinnedRows={['0', '3']} />
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      enableRowPinning
+      initialPinnedRows={['0', '3']}
+      showPagination
+    />
   ),
+};
+
+export const RowPinningStriped: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableRowPinning striped showPagination />,
 };

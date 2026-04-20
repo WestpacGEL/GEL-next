@@ -1,11 +1,12 @@
 import { flexRender, Header } from '@tanstack/react-table';
-import { ReactElement, useRef } from 'react';
+import { ReactElement, useCallback, useRef } from 'react';
 import { Key, useButton, useMenuTrigger } from 'react-aria';
 import { Item, Section, useMenuTriggerState } from 'react-stately';
 
 import { Button } from '../../../button/index.js';
-import { MoreVertIcon } from '../../../icon/index.js';
+import { ClearIcon, MoreVertIcon, SearchIcon } from '../../../icon/index.js';
 import { Input } from '../../../input/input.component.js';
+import { InputGroup } from '../../../input-group/input-group.component.js';
 
 import { styles as advancedTableMenuStyles } from './advanced-table-menu.styles.js';
 import { AdvancedTableMenuProps } from './advanced-table-menu.types.js';
@@ -62,6 +63,7 @@ export function AdvancedTableMenu<T>({ onInputChange, filterVal, header, ...prop
 
   const canFilter = header.column.getCanGlobalFilter() || header.column.getCanFilter();
   const hasActions = header.column.getCanPin() || header.column.getCanGroup();
+  const clearInput = useCallback(() => onInputChange(''), [onInputChange]);
 
   const handleAction = (key: Key) => {
     switch (key) {
@@ -86,8 +88,8 @@ export function AdvancedTableMenu<T>({ onInputChange, filterVal, header, ...prop
       <Button
         {...buttonProps}
         look="unstyled"
-        size="medium"
-        iconBefore={() => <MoreVertIcon />}
+        size="small"
+        iconBefore={() => <MoreVertIcon size="small" />}
         className={styles.triggerButton()}
         ref={btnRef}
       />
@@ -97,7 +99,19 @@ export function AdvancedTableMenu<T>({ onInputChange, filterVal, header, ...prop
             {canFilter ? (
               <Section key="filter-section" title="Filter by:">
                 <Item key="filter">
-                  <Input value={filterVal ?? ''} onChange={val => onInputChange(val.currentTarget.value)} />
+                  <InputGroup
+                    hideLabel
+                    label="Filter"
+                    before={{ icon: SearchIcon }}
+                    after={{
+                      inset: true,
+                      element: filterVal ? (
+                        <Button onClick={clearInput} look="link" iconAfter={ClearIcon} iconColor="muted" />
+                      ) : null,
+                    }}
+                  >
+                    <Input value={filterVal ?? ''} onChange={val => onInputChange(val.currentTarget.value)} />
+                  </InputGroup>
                 </Item>
               </Section>
             ) : null}

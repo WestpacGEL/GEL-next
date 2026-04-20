@@ -10,4 +10,5 @@ export const AdvancedTableContext = createContext<{
   columnOrder?: string[];
   extraCellPadding?: boolean;
   bordered?: boolean;
+  striped?: boolean;
 }>({});

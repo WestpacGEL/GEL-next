@@ -14,7 +14,7 @@ export function MenuSection<T extends object>({ section, state }: MenuSectionPro
   const styles = menuSectionStyles();
 
   return (
-    <li {...itemProps}>
+    <li {...itemProps} className={styles.section()}>
       {section.rendered && (
         <span {...headingProps} className={styles.heading()}>
           {section.rendered}

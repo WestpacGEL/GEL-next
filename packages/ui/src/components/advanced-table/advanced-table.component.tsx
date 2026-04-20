@@ -59,6 +59,8 @@ export function AdvancedTable<T>({
   onTableReady,
   extraCellPadding = false,
   bordered = false,
+  showPagination = false,
+  striped = false,
 }: AdvancedTableProps<T>) {
   const [localData, setLocalData] = useState<T[]>(data);
   const [rowPinning, setRowPinning] = useState<RowPinningState>({ top: initialPinnedRows ?? [], bottom: [] });
@@ -191,6 +193,7 @@ export function AdvancedTable<T>({
         enableColumnReordering,
         extraCellPadding,
         bordered,
+        striped,
       }}
     >
       <DndContext
@@ -227,13 +230,13 @@ export function AdvancedTable<T>({
             <AdvancedTableBody table={table} tableRef={outerTableRef} theadRef={theadRef} />
           </table>
         </div>
-        {!scrollableRows && (
+        {!scrollableRows && showPagination && (
           <Pagination
             totalPages={table.getPageCount()}
             id="pagination"
             current={currentPage}
             onChange={pageIndex => table.setPageIndex(pageIndex - 1)}
-            className="items-start pt-2"
+            className="items-start pt-5"
           />
         )}
       </DndContext>

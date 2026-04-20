@@ -13,7 +13,7 @@ export default meta;
 type Story = StoryObj<unknown>;
 
 export const ExpandableRows: Story = {
-  render: () => <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" />,
+  render: () => <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" showPagination />,
 };
 
 export const ExpandableRowsNotPaginating: Story = {
@@ -28,39 +28,64 @@ export const ExpandableRowsNotPaginating: Story = {
         columns={columnsSB}
         subRowKey="subRows"
         tableOptions={{ paginateExpandedRows: false }}
+        showPagination
       />
     </>
   ),
 };
 
 export const ExpandableRowsExtraPadding: Story = {
-  render: () => <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" extraCellPadding />,
+  render: () => (
+    <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" extraCellPadding showPagination />
+  ),
 };
 
 export const ExpandableRowsBordered: Story = {
-  render: () => <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" bordered />,
+  render: () => (
+    <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" bordered showPagination />
+  ),
 };
 
 export const ExpandableRowsBorderedExtraPadding: Story = {
   render: () => (
-    <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" extraCellPadding bordered />
+    <AdvancedTable
+      data={expandableDataSB}
+      columns={columnsSB}
+      subRowKey="subRows"
+      extraCellPadding
+      bordered
+      showPagination
+    />
   ),
 };
 
 export const ExpandableRowsWithSorting: Story = {
-  render: () => <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableSorting />,
+  render: () => (
+    <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableSorting showPagination />
+  ),
 };
 
 export const ExpandableRowsWithSelection: Story = {
-  render: () => <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableRowSelection />,
+  render: () => (
+    <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableRowSelection showPagination />
+  ),
 };
 
 export const ExpandableRowsWithSortingAndSelection: Story = {
   render: () => (
-    <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableSorting enableRowSelection />
+    <AdvancedTable
+      data={expandableDataSB}
+      columns={columnsSB}
+      subRowKey="subRows"
+      enableSorting
+      enableRowSelection
+      showPagination
+    />
   ),
 };
 
 export const ExpandableRowsWithResizing: Story = {
-  render: () => <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableResizing />,
+  render: () => (
+    <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableResizing showPagination />
+  ),
 };

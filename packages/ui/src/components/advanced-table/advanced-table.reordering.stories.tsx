@@ -13,37 +13,61 @@ export default meta;
 type Story = StoryObj<unknown>;
 
 export const Reordering: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering showPagination />,
 };
 
 export const ReorderingExtraCellPadding: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering extraCellPadding />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering extraCellPadding showPagination />
+  ),
 };
 
 export const ReorderingBordered: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering bordered />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering bordered showPagination />
+  ),
 };
 
 export const ReorderingBorderedExtraPadding: Story = {
   render: () => (
-    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering extraCellPadding bordered />
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      enableColumnReordering
+      extraCellPadding
+      bordered
+      showPagination
+    />
   ),
 };
 
 export const ReorderingWithSorting: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering enableSorting />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering enableSorting showPagination />
+  ),
 };
 
 export const ReorderingWithSelection: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering enableRowSelection />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering enableRowSelection showPagination />
+  ),
 };
 
 export const ReorderingWithResizing: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering enableResizing />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering enableResizing showPagination />
+  ),
 };
 
 export const ReorderingWithSortingAndSelection: Story = {
   render: () => (
-    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableColumnReordering enableSorting enableRowSelection />
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      enableColumnReordering
+      enableSorting
+      enableRowSelection
+      showPagination
+    />
   ),
 };

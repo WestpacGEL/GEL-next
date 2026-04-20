@@ -18,7 +18,7 @@ export const VirtualizedColumns: Story = {
       <p className="typography-body-9 font-bold">Total cells: {dataForColsSB.length * manyColsSB.length}</p>
       <p className="typography-body-9 font-bold">Total rows: {dataForColsSB.length}</p>
       <p className="typography-body-9 font-bold">Total columns: {manyColsSB.length}</p>
-      <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns />
+      <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns showPagination />
     </>
   ),
 };
@@ -88,7 +88,9 @@ export const VirtualizedRowsBordered: Story = {
 };
 
 export const VirtualizedColumnsWithSorting: Story = {
-  render: () => <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns enableSorting />,
+  render: () => (
+    <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns enableSorting showPagination />
+  ),
 };
 
 export const VirtualizedRowsAndColumnsWithSorting: Story = {
@@ -98,18 +100,34 @@ export const VirtualizedRowsAndColumnsWithSorting: Story = {
 };
 
 export const VirtualizedColumnsWithPinning: Story = {
-  render: () => <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns enableColumnPinning />,
+  render: () => (
+    <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns enableColumnPinning showPagination />
+  ),
 };
 
 export const VirtualizedColumnsWithPinningAndSelection: Story = {
   render: () => (
-    <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns enableColumnPinning enableRowSelection />
+    <AdvancedTable
+      data={dataForColsSB}
+      columns={manyColsSB}
+      scrollableColumns
+      enableColumnPinning
+      enableRowSelection
+      showPagination
+    />
   ),
 };
 
 export const VirtualizedColumnsWithPinningAndRowPinning: Story = {
   render: () => (
-    <AdvancedTable data={dataForColsSB} columns={manyColsSB} scrollableColumns enableColumnPinning enableRowPinning />
+    <AdvancedTable
+      data={dataForColsSB}
+      columns={manyColsSB}
+      scrollableColumns
+      enableColumnPinning
+      enableRowPinning
+      showPagination
+    />
   ),
 };
 
@@ -122,6 +140,7 @@ export const VirtualizedColumnsWithAllPinningOptions: Story = {
       enableColumnPinning
       enableRowSelection
       enableRowPinning
+      showPagination
     />
   ),
 };

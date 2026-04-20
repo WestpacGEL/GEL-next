@@ -15,5 +15,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const BasicTable: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} showPagination />,
 };

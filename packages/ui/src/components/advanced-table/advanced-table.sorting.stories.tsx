@@ -17,36 +17,55 @@ export default meta;
 type Story = StoryObj<unknown>;
 
 export const Sortable: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting showPagination />,
 };
 
 export const SortableExtraPadding: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting extraCellPadding />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting extraCellPadding showPagination />
+  ),
 };
 
 export const SortableBordered: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting bordered />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting bordered showPagination />,
 };
 
 export const SortableBorderedExtraPadding: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting extraCellPadding bordered />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting extraCellPadding bordered showPagination />
+  ),
+};
+
+export const SortableStriped: Story = {
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting striped showPagination />,
 };
 
 export const SortableWithSelection: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting enableRowSelection />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting enableRowSelection showPagination />
+  ),
 };
 
 export const SortableWithResizing: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting enableResizing />,
+  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting enableResizing showPagination />,
 };
 
 export const SortableWithReordering: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting enableColumnReordering />,
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting enableColumnReordering showPagination />
+  ),
 };
 
 export const SortableWithSelectionAndResizing: Story = {
   render: () => (
-    <AdvancedTable data={defaultDataSB} columns={columnsSB} enableSorting enableRowSelection enableResizing />
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      enableSorting
+      enableRowSelection
+      enableResizing
+      showPagination
+    />
   ),
 };
 
@@ -80,7 +99,7 @@ export const SortingFunctionality: Story = {
           </Link>
           .
         </p>
-        <AdvancedTable data={defaultDataSB} columns={columnsSortingExample} enableSorting />
+        <AdvancedTable data={defaultDataSB} columns={columnsSortingExample} enableSorting showPagination />
       </>
     );
   },

@@ -26,7 +26,7 @@ export const ControlledTableInstanceExample = () => {
         table. You can check what controls are available on the table instance in the console.
       </p>
       <p className="font-bold">NOTE: Not all controlswill work as they may not be implemented as part of our table.</p>
-      <AdvancedTable data={defaultDataSB} columns={columnsSB} onTableReady={setTable} />
+      <AdvancedTable data={defaultDataSB} columns={columnsSB} onTableReady={setTable} showPagination />
     </>
   );
 };

@@ -132,6 +132,14 @@ export type AdvancedTableProps<T> = {
    */
   scrollableRows?: boolean;
   /**
+   * Whether pagination is displayed or not
+   */
+  showPagination?: boolean;
+  /**
+   * Whether to show a striped variant of the table, which adds a background color to even rows for better readability.
+   */
+  striped?: boolean;
+  /**
    * If using expandable rows, this key will be used to identify the sub-rows
    */
   subRowKey?: string;

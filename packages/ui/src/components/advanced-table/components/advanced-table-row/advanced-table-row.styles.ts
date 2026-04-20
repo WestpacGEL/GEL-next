@@ -17,9 +17,17 @@ export const styles = tv({
     },
     isPinned: {
       true: {
-        bodyRow: 'bg-background-white',
+        bodyRow: 'bg-background-white shadow-md',
       },
       false: {},
+    },
+    striped: {
+      true: {
+        bodyRow: 'even:bg-surface-muted-faint',
+      },
+      false: {
+        bodyRow: 'hover:bg-surface-hover-muted-pale',
+      },
     },
   },
   compoundVariants: [

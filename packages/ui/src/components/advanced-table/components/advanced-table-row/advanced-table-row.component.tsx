@@ -8,8 +8,8 @@ import { styles as AdvancedTableRowStyles } from './advanced-table-row.styles.js
 import { AdvancedTableRowProps } from './advanced-table-row.types.js';
 
 export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer, isPinned }: AdvancedTableRowProps<T>) {
-  const { scrollableRows, scrollableColumns, columnOrder } = useContext(AdvancedTableContext);
-  const styles = AdvancedTableRowStyles({ scrollableRows, scrollableColumns, isPinned });
+  const { scrollableRows, scrollableColumns, columnOrder, striped } = useContext(AdvancedTableContext);
+  const styles = AdvancedTableRowStyles({ scrollableRows, scrollableColumns, isPinned, striped });
   const localVirtualRow = rows && rows[virtualRow?.index ?? 0];
   const rowRef = useRef<HTMLTableRowElement>(null);
 
