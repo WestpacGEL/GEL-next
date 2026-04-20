@@ -1,23 +1,21 @@
-'use client';
-
 import React from 'react';
 
-import { useBreakpoint } from '../../../../hook/breakpoints.hook.js';
-import { resolveResponsiveVariant } from '../../../../utils/breakpoint.util.js';
+import { responsiveClasses } from '../../../../utils/responsive-class.util.js';
 
-import { styles } from './grid-item.styles.js';
+import { SPAN_MAP, ROW_SPAN_MAP, START_MAP } from './grid-item.styles.js';
 import { type GridItemProps } from './grid-item.types.js';
 
 export function GridItem({ className, tag: Tag = 'div', span, rowSpan, start, children, ...props }: GridItemProps) {
-  const breakpoint = useBreakpoint();
   return (
     <Tag
-      className={styles({
-        span: resolveResponsiveVariant(span, breakpoint),
-        rowSpan: resolveResponsiveVariant(rowSpan, breakpoint),
-        start: resolveResponsiveVariant(start, breakpoint),
+      className={responsiveClasses(
+        [
+          [span, SPAN_MAP],
+          [rowSpan, ROW_SPAN_MAP],
+          [start, START_MAP],
+        ],
         className,
-      })}
+      )}
       {...props}
     >
       {children}
