@@ -30,7 +30,7 @@ export default async function DesignSystemHomePage({ params }: { params: Promise
                 font-bold
               `}
             >
-              Brand foundations & tokens
+              Brand foundations & tokens test
             </h3>
             <br />
             <p className="font-bold">Shared styling that aligns customer and banker journeys</p>
