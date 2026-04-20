@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 
-import { styles as itemStyles } from './components/grid-item/grid-item.styles.js';
 import { Grid } from './grid.component.js';
 
 import { GridContainer, GridItem } from './index.js';
@@ -22,7 +21,7 @@ describe('Grid', () => {
   });
 
   it('renders the Item style correctly', () => {
-    const style = itemStyles({ span: 2 });
-    expect(style).toBe('col-span-2');
+    const { container } = render(<GridItem span={2} />);
+    expect(container.firstChild).toHaveClass('col-span-2');
   });
 });
