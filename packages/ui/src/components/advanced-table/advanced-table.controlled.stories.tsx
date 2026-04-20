@@ -21,6 +21,7 @@ export const ControlledTableInstanceExample = () => {
   console.log('table instance:', table);
   return (
     <>
+      <p>TEST TEXT PLEASE REMOVE</p>
       <p className="typography-body-8">
         This is a way to access the Tanstack table instance to get access to various data from the table/control the
         table. You can check what controls are available on the table instance in the console.
