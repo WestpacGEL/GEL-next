@@ -1,5 +1,5 @@
-import { ColumnDef, RowData, Table, TableOptions } from '@tanstack/react-table';
-import { CSSProperties } from 'react';
+import { ColumnDef, Row, RowData, Table, TableOptions } from '@tanstack/react-table';
+import { CSSProperties, ReactNode } from 'react';
 
 declare module '@tanstack/react-table' {
   // using interface for below as required by Tanstack table
@@ -143,4 +143,16 @@ export type AdvancedTableProps<T> = {
    * If using expandable rows, this key will be used to identify the sub-rows
    */
   subRowKey?: string;
+  /**
+   * Renders a detail panel below a row when expanded, spanning the full table width.
+   * Use for displaying content unrelated to the table columns (e.g. additional information, forms).
+   * When provided, all rows are expandable by default unless `getRowCanExpand` is also provided.
+   */
+  renderDetailPanel?: (row: Row<T>) => ReactNode;
+  /**
+   * Controls which rows can be expanded to show a detail panel.
+   * Only used when `renderDetailPanel` is provided.
+   * Defaults to `() => true` (all rows expandable).
+   */
+  getRowCanExpand?: (row: Row<T>) => boolean;
 };

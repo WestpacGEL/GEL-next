@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef, Row } from '@tanstack/react-table';
 
 import { PinIcon, RemoveIcon, TickIcon, UnpinIcon } from '../../icon/index.js';
 import { VisuallyHidden } from '../../visually-hidden/index.js';
@@ -6,6 +6,11 @@ import { AdvancedColumnProps } from '../advanced-table.types.js';
 import { DefaultHeadCell } from '../components/cell-defaults/default-head-cell/default-head-cell.component.js';
 
 import { PIN_COLUMN_ID, SELECT_COLUMN_ID } from './constants.js';
+
+function pinRowWithSubRows<T>(row: Row<T>, position: 'top' | false): void {
+  row.pin(position);
+  row.subRows.forEach(sr => pinRowWithSubRows(sr, position));
+}
 
 export function columnGenerator<T>({
   columns,
@@ -94,7 +99,7 @@ export function columnGenerator<T>({
       cell: ({ row }) => (
         <button
           className="flex cursor-pointer items-center rounded-sm focus-visible:focus-outline"
-          onClick={() => row.pin(row.getIsPinned() ? false : 'top')}
+          onClick={() => pinRowWithSubRows(row, row.getIsPinned() ? false : 'top')}
           aria-label={row.getIsPinned() ? 'Unpin row' : 'Pin row to top'}
         >
           {row.getIsPinned() ? (

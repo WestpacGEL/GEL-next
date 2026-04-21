@@ -61,6 +61,8 @@ export function AdvancedTable<T>({
   bordered = false,
   showPagination = false,
   striped = false,
+  renderDetailPanel,
+  getRowCanExpand,
 }: AdvancedTableProps<T>) {
   const [localData, setLocalData] = useState<T[]>(data);
   const [rowPinning, setRowPinning] = useState<RowPinningState>({ top: initialPinnedRows ?? [], bottom: [] });
@@ -133,6 +135,7 @@ export function AdvancedTable<T>({
     enableGrouping,
     enableColumnResizing: enableResizing,
     enableRowSelection,
+    ...(renderDetailPanel ? { getRowCanExpand: getRowCanExpand ?? (() => true) } : {}),
     getGroupedRowModel: getGroupedRowModel(),
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -194,6 +197,7 @@ export function AdvancedTable<T>({
         extraCellPadding,
         bordered,
         striped,
+        renderDetailPanel,
       }}
     >
       <DndContext

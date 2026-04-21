@@ -71,6 +71,12 @@ export const ExpandableRowsWithSelection: Story = {
   ),
 };
 
+export const ExpandableRowsWithRowPinning: Story = {
+  render: () => (
+    <AdvancedTable data={expandableDataSB} columns={columnsSB} subRowKey="subRows" enableRowPinning showPagination />
+  ),
+};
+
 export const ExpandableRowsWithSortingAndSelection: Story = {
   render: () => (
     <AdvancedTable

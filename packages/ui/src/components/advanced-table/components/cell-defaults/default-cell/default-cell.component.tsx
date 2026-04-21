@@ -7,8 +7,8 @@ import { styles as defaultCellStyles } from './default-cell.styles.js';
 import { DefaultCellProps } from './default-cell.types.js';
 
 export function DefaultCell<T>({ row, getValue, column, enableRowSelection }: DefaultCellProps<T>) {
-  const { extraCellPadding } = useContext(AdvancedTableContext);
-  const firstColumnIndex = enableRowSelection ? 1 : 0;
+  const { extraCellPadding, enableRowPinning } = useContext(AdvancedTableContext);
+  const firstColumnIndex = (enableRowSelection ? 1 : 0) + (enableRowPinning ? 1 : 0);
   const styles = defaultCellStyles();
 
   const expansionStyle =

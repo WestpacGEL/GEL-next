@@ -6,22 +6,27 @@ import { AdvancedTableCell } from '../advanced-table-cell/advanced-table-cell.co
 
 import { styles as AdvancedTableRowStyles } from './advanced-table-row.styles.js';
 import { AdvancedTableRowProps } from './advanced-table-row.types.js';
+import { DetailPanelRow } from './components/detail-panel-row/detail-panel-row.component.js';
 
 export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer, isPinned }: AdvancedTableRowProps<T>) {
-  const { scrollableRows, scrollableColumns, columnOrder, striped } = useContext(AdvancedTableContext);
+  const { scrollableRows, scrollableColumns, columnOrder, striped, extraCellPadding, bordered, renderDetailPanel } =
+    useContext(AdvancedTableContext);
   const styles = AdvancedTableRowStyles({ scrollableRows, scrollableColumns, isPinned, striped });
   const localVirtualRow = rows && rows[virtualRow?.index ?? 0];
   const rowRef = useRef<HTMLTableRowElement>(null);
 
   if (isPinned && row) {
     return (
-      <tr className={styles.bodyRow()} id={`row-pinned-${row.id}`} ref={rowRef}>
-        {row.getVisibleCells().map(cell => (
-          <SortableContext key={cell.id} items={columnOrder ?? []} strategy={horizontalListSortingStrategy}>
-            <AdvancedTableCell key={cell.id} cell={cell} rowRef={rowRef} />
-          </SortableContext>
-        ))}
-      </tr>
+      <>
+        <tr className={styles.bodyRow()} id={`row-pinned-${row.id}`} ref={rowRef}>
+          {row.getVisibleCells().map(cell => (
+            <SortableContext key={cell.id} items={columnOrder ?? []} strategy={horizontalListSortingStrategy}>
+              <AdvancedTableCell key={cell.id} cell={cell} rowRef={rowRef} />
+            </SortableContext>
+          ))}
+        </tr>
+        {renderDetailPanel && <DetailPanelRow row={row} extraCellPadding={extraCellPadding} bordered={bordered} />}
+      </>
     );
   }
 
@@ -44,12 +49,15 @@ export function AdvancedTableRow<T>({ rows, row, virtualRow, rowVirtualizer, isP
       ))}
     </tr>
   ) : (
-    <tr className={styles.bodyRow()} id={row?.id} ref={rowRef}>
-      {row?.getVisibleCells().map(cell => (
-        <SortableContext key={cell.id} items={columnOrder ?? []} strategy={horizontalListSortingStrategy}>
-          <AdvancedTableCell key={cell.id} cell={cell} rowRef={rowRef} />
-        </SortableContext>
-      ))}
-    </tr>
+    <>
+      <tr className={styles.bodyRow()} id={row?.id} ref={rowRef}>
+        {row?.getVisibleCells().map(cell => (
+          <SortableContext key={cell.id} items={columnOrder ?? []} strategy={horizontalListSortingStrategy}>
+            <AdvancedTableCell key={cell.id} cell={cell} rowRef={rowRef} />
+          </SortableContext>
+        ))}
+      </tr>
+      {renderDetailPanel && row && <DetailPanelRow row={row} extraCellPadding={extraCellPadding} bordered={bordered} />}
+    </>
   );
 }
