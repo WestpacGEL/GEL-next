@@ -19,11 +19,6 @@ type FormData = {
   cardLimit: string;
 };
 
-const FIELDS_LABELS = {
-  creditLimitType: 'What credit limit would you like?',
-  cardLimit: 'What credit limit would you like?',
-};
-
 export default function CreditLimit() {
   const { setRopeStep } = useSidebar();
   const { data, setData } = useCreditCard();
@@ -68,7 +63,7 @@ Choose your credit card limit or have one allocated for you."
       >
         Credit limit
       </CustomHeading>
-      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
+      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} />}
       <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
         <Controller
           control={control}
@@ -79,6 +74,7 @@ Choose your credit card limit or have one allocated for you."
               label="What credit limit would you like?"
               hintMessage="You can chose a limit between $500 and $4,000 for Westpac Lite Visa Card."
               errorMessage={errors.creditLimitType?.message}
+              id="creditLimitType"
             >
               <ButtonGroup
                 size="large"
@@ -98,6 +94,7 @@ Choose your credit card limit or have one allocated for you."
             label="What credit limit would you like?"
             hintMessage="Enter a dollar value"
             errorMessage={errors.cardLimit?.message}
+            id="cardLimit"
           >
             <InputGroup size="large" before="$" width={{ initial: 'full', md: 10 }}>
               <Input

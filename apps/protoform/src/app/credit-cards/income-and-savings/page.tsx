@@ -20,12 +20,6 @@ type FormData = {
   totalBal: string;
 };
 
-const FIELDS_LABELS = {
-  incomeFreq: 'Income frequency',
-  income: 'Income, salary, pension (after tax)',
-  totalBal: 'Total balances in savings & investment accounts (if any)',
-};
-
 export default function IncomeAndSavings() {
   const { setRopeStep } = useSidebar();
   const { data, setData } = useCreditCard();
@@ -65,13 +59,14 @@ export default function IncomeAndSavings() {
       >
         Income & savings
       </CustomHeading>
-      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
+      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} />}
       <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
         <Repeater>
           <Field
             label="Income, salary, pension (after tax)"
             hintMessage="Enter a dollar value and choose a frequency"
             errorMessage={errors.income?.message || errors.incomeFreq?.message}
+            id="income"
           >
             <InputGroup
               instanceId="income"
@@ -105,6 +100,7 @@ export default function IncomeAndSavings() {
           label="Total balances in savings & investment accounts (if any)"
           hintMessage="Enter a dollar value"
           errorMessage={errors.totalBal?.message}
+          id="totalBal"
         >
           <InputGroup size="large" instanceId="totalBal" before="$" width={{ initial: 'full', md: 10 }}>
             <Input

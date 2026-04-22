@@ -21,13 +21,6 @@ type FormData = {
   otherCards: string;
 };
 
-const FIELDS_LABELS = {
-  repaymentFreq: 'Repayment frequency',
-  repayments: 'Your loan repayments (if any)',
-  totalBal: 'Total balances of non-Westpac cards',
-  otherCards: 'Do you have any non-Westpac credit cards?',
-};
-
 export default function IncomeAndSavings() {
   const { setRopeStep } = useSidebar();
   const { data, setData } = useCreditCard();
@@ -72,12 +65,13 @@ export default function IncomeAndSavings() {
       >
         Loans & cards
       </CustomHeading>
-      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
+      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} />}
       <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
         <Field
           label="Your loan repayments (if any)"
           hintMessage="For example Home, Investment or Personal loans, overdrafts"
           errorMessage={errors.repaymentFreq?.message || errors.repayments?.message}
+          id="repaymentFreq"
         >
           <InputGroup
             before="$"
@@ -115,6 +109,7 @@ export default function IncomeAndSavings() {
               label="Do you have any non-Westpac credit cards?"
               hintMessage="Including store and charge cards, lines of credit"
               errorMessage={errors.otherCards?.message}
+              id="otherCards"
             >
               <ButtonGroup
                 size="large"
@@ -136,6 +131,7 @@ export default function IncomeAndSavings() {
             label="Total balances of non-Westpac cards"
             hintMessage="Enter a dollar value"
             errorMessage={errors.totalBal?.message}
+            id="totalBal"
           >
             <InputGroup instanceId="totalBal" size="large" before="$" width={{ initial: 'full', md: 10 }}>
               <Input
