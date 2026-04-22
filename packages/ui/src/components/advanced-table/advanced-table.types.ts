@@ -152,7 +152,7 @@ export type AdvancedTableProps<T> = {
   /**
    * Controls which rows can be expanded to show a detail panel.
    * Only used when `renderDetailPanel` is provided.
-   * Defaults to `() => true` (all rows expandable).
+   * Defaults to `() => true` (all rows expandable)
    */
   getRowCanExpand?: (row: Row<T>) => boolean;
 };
