@@ -150,10 +150,11 @@ Returns helpers for dark mode: `getMode()`, `setMode()`, `toggleDarkMode()`, `ge
 
 ## Reference Documentation
 
-When answering questions about **how** or **when** to use a component, consult these bundled references:
+When answering questions about **how** or **when** to use a component, or when using a component in an integration, consult these bundled references:
 
 - **`reference/components.md`** — Full component catalog with props, types, defaults, and capabilities
 - **`reference/design-guidelines.md`** — Design guidelines, dos/don'ts, UX notes, accessibility, and code examples for every component
+- **`reference/integration-requirements.md`** — Integration requirements and best practices for consuming platforms to ensure consistent UI, maintainability, and alignment with future system updates.
 
 ## Component Catalog
 
