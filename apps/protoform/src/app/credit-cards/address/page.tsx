@@ -19,11 +19,6 @@ type FormData = {
   housingLength: number;
 };
 
-const FIELDS_LABELS = {
-  address: 'Hme address',
-  housingLength: 'How long have you lived there?',
-};
-
 export default function Address() {
   const { setRopeStep } = useSidebar();
   const { data, setData } = useCreditCard();
@@ -61,9 +56,9 @@ export default function Address() {
       >
         Address
       </CustomHeading>
-      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
+      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} />}
       <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <Field errorMessage={errors.address?.message}>
+        <Field errorMessage={errors.address?.message} id="address">
           <InputGroup size="large" instanceId="address">
             <Autocomplete
               noOptionsMessage="No options found"
@@ -78,7 +73,7 @@ export default function Address() {
           </InputGroup>
         </Field>
 
-        <Field label="How long have you lived there?" errorMessage={errors.housingLength?.message}>
+        <Field label="How long have you lived there?" errorMessage={errors.housingLength?.message} id="housingLength">
           <InputGroup size="large" width={{ initial: 'full', md: 5 }}>
             <Select
               defaultValue={data.housingLength}
