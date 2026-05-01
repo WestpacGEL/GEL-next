@@ -27,6 +27,7 @@ import { styles as advancedTableStyles } from './advanced-table.styles.js';
 import { AdvancedTableProps } from './advanced-table.types.js';
 import {
   AdvancedTableBody,
+  AdvancedTableEmptyState,
   DefaultCell,
   EditableCell,
   AdvancedTableHead,
@@ -69,6 +70,7 @@ export function AdvancedTable<T>({
   striped = false,
   renderDetailPanel,
   getRowCanExpand,
+  emptyState,
 }: AdvancedTableProps<T>) {
   const [localData, setLocalData] = useState<T[]>(data);
   const [rowPinning, setRowPinning] = useState<RowPinningState>({ top: initialPinnedRows ?? [], bottom: [] });
@@ -197,6 +199,9 @@ export function AdvancedTable<T>({
 
   const sensors = useSensors(useSensor(MouseSensor, {}), useSensor(TouchSensor, {}), useSensor(KeyboardSensor, {}));
 
+  // Empty when raw data is empty OR filtering produced zero rows.
+  const isEmpty = localData.length === 0 || table.getFilteredRowModel().rows.length === 0;
+
   return (
     <AdvancedTableContext.Provider
       value={{
@@ -244,8 +249,17 @@ export function AdvancedTable<T>({
               columnVirtualizer={useVirtualizedColumns(table, outerTableRef)}
               theadRef={theadRef}
             />
-            <AdvancedTableBody table={table} tableRef={outerTableRef} theadRef={theadRef} />
+            {!isEmpty && <AdvancedTableBody table={table} tableRef={outerTableRef} theadRef={theadRef} />}
           </table>
+          {isEmpty && (
+            <div style={{ width: table.getTotalSize() }}>
+              <AdvancedTableEmptyState
+                title={emptyState?.title}
+                description={emptyState?.description}
+                icon={emptyState?.icon}
+              />
+            </div>
+          )}
         </div>
         {!scrollableRows && showPagination && (
           <AdvancedTablePagination table={table} pageSizeOptions={pageSizeOptions} {...paginationProps} />

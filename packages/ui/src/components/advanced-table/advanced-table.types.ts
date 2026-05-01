@@ -1,6 +1,8 @@
 import { ColumnDef, Row, RowData, Table, TableOptions } from '@tanstack/react-table';
 import { CSSProperties, ReactNode } from 'react';
 
+import { AdvancedTableEmptyStateProps } from './components/advanced-table-empty-state/advanced-table-empty-state.types.js';
+
 declare module '@tanstack/react-table' {
   // using interface for below as required by Tanstack table
   // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
@@ -170,4 +172,9 @@ export type AdvancedTableProps<T> = {
    * Defaults to `() => true` (all rows expandable)
    */
   getRowCanExpand?: (row: Row<T>) => boolean;
+  /**
+   * Configures the empty state shown when `data` is empty.
+   * Provide at minimum a `title`. `description` and `icon` are optional.
+   */
+  emptyState?: AdvancedTableEmptyStateProps;
 };

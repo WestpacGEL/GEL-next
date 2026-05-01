@@ -1,5 +1,6 @@
 export { AdvancedTableBody } from './advanced-table-body/index.js';
 export { AdvancedTableCell } from './advanced-table-cell/index.js';
+export { AdvancedTableEmptyState } from './advanced-table-empty-state/index.js';
 export { AdvancedTableHead } from './advanced-table-head/index.js';
 export { AdvancedTableHeadCell } from './advanced-table-head-cell/index.js';
 export { AdvancedTableHeadCellContent } from './advanced-table-head-cell-content/index.js';
