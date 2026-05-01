@@ -23,7 +23,8 @@ export function AdvancedTableCell<T>({ cell, rowRef }: AdvancedTableCellProps<T>
     width: cell.column.getSize(),
     zIndex: isDragging ? 1 : 0,
   };
-  const { scrollableRows, scrollableColumns, extraCellPadding, bordered } = useContext(AdvancedTableContext);
+  const { scrollableRows, scrollableColumns, fillContainer, extraCellPadding, bordered } =
+    useContext(AdvancedTableContext);
 
   const styles = AdvancedTableCellStyles({
     scrollableRows,
@@ -35,7 +36,13 @@ export function AdvancedTableCell<T>({ cell, rowRef }: AdvancedTableCellProps<T>
   return (
     <td
       className={styles.td()}
-      style={{ ...dndStyles, ...getCommonPinningStyles(cell.column, scrollableColumns) }}
+      style={{
+        ...dndStyles,
+        ...getCommonPinningStyles(cell.column, scrollableColumns),
+        // When filling the container with virtualized rows, let cells grow to consume
+        // any trailing space inside the flex row (uses width as flex-basis).
+        ...(fillContainer && scrollableRows && !scrollableColumns ? { flex: '1 1 auto' } : {}),
+      }}
       ref={setNodeRef}
       id={cell.id}
     >

@@ -9,7 +9,7 @@ import { styles as AdvancedTableBodyStyles } from './advanced-table-body.styles.
 import { AdvancedTableBodyProps } from './advanced-table-body.types.js';
 
 export function AdvancedTableBody<T>({ table, tableRef, theadRef }: AdvancedTableBodyProps<T>) {
-  const { scrollableRows, scrollableColumns, enableRowPinning } = useContext(AdvancedTableContext);
+  const { scrollableRows, scrollableColumns, fillContainer, enableRowPinning } = useContext(AdvancedTableContext);
   const styles = AdvancedTableBodyStyles({ scrollableRows, scrollableColumns });
   const bodyRef = useRef(null);
 
@@ -33,7 +33,12 @@ export function AdvancedTableBody<T>({ table, tableRef, theadRef }: AdvancedTabl
       <PinnedRows rows={topRows} scrollableRows={scrollableRows} theadRef={theadRef} />
       <tbody
         className={styles.tableBody()}
-        style={{ width: table.getTotalSize(), height: rowVirtualizer.getTotalSize() }}
+        style={{
+          // When fillContainer is on (and not horizontally virtualized), let the tbody stretch
+          // to fill the table — otherwise the grid track collapses to the column-sum pixel width.
+          width: fillContainer && !scrollableColumns ? '100%' : table.getTotalSize(),
+          height: rowVirtualizer.getTotalSize(),
+        }}
         ref={bodyRef}
       >
         {rowVirtualizer.getVirtualItems().map(virtualRow => {

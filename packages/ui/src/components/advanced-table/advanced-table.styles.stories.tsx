@@ -41,3 +41,53 @@ export const StripedBorderedExtraPadding: Story = {
     <AdvancedTable data={defaultDataSB} columns={columnsSB} striped bordered extraCellPadding showPagination />
   ),
 };
+
+/**
+ * Default width: the table sizes itself to the sum of its column widths and
+ * sits within the parent without stretching.
+ */
+export const ColumnSumWidth: Story = {
+  render: () => (
+    <div style={{ width: 1200, border: '1px dashed #ccc', padding: 8 }}>
+      <AdvancedTable data={defaultDataSB} columns={columnsSB} fillContainer={false} showPagination />
+    </div>
+  ),
+};
+
+/**
+ * `fillContainer` makes the table stretch to 100% of its parent container
+ * (only when virtualization is off, the table itself goes 100%).
+ */
+export const FillContainer: Story = {
+  render: () => (
+    <div style={{ width: 1200, border: '1px dashed #ccc', padding: 8 }}>
+      <AdvancedTable data={defaultDataSB} columns={columnsSB} fillContainer showPagination />
+    </div>
+  ),
+};
+
+/**
+ * `fillContainer` with `scrollableRows`: the outer scroll container fills the
+ * parent, header/body cells flex to consume any trailing space, and rows are
+ * still virtualized vertically.
+ */
+export const FillContainerScrollableRows: Story = {
+  render: () => (
+    <div style={{ width: 1200, border: '1px dashed #ccc', padding: 8 }}>
+      <AdvancedTable data={defaultDataSB} columns={columnsSB} fillContainer scrollableRows fixedHeight="400px" />
+    </div>
+  ),
+};
+
+/**
+ * `fillContainer` with `scrollableColumns`: the outer scroll container fills
+ * the parent while the inner table keeps its pixel width to drive horizontal
+ * virtualization (so horizontal scrolling still works).
+ */
+export const FillContainerScrollableColumns: Story = {
+  render: () => (
+    <div style={{ width: 600, border: '1px dashed #ccc', padding: 8 }}>
+      <AdvancedTable data={defaultDataSB} columns={columnsSB} fillContainer scrollableColumns showPagination />
+    </div>
+  ),
+};

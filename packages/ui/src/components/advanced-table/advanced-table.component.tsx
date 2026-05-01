@@ -11,6 +11,7 @@ import {
 import { restrictToHorizontalAxis } from '@dnd-kit/modifiers';
 import { arrayMove } from '@dnd-kit/sortable';
 import {
+  ColumnDef,
   getCoreRowModel,
   getSortedRowModel,
   useReactTable,
@@ -20,7 +21,7 @@ import {
   getFilteredRowModel,
   RowPinningState,
 } from '@tanstack/react-table';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { AdvancedTableContext } from './advanced-table.context.js';
 import { styles as advancedTableStyles } from './advanced-table.styles.js';
@@ -41,6 +42,13 @@ import {
   updateTableData,
   useVirtualizedColumns,
 } from './utils/index.js';
+
+// Module-level width resolver — extracted to keep the component's cognitive complexity low.
+const resolveFillWidth = (
+  fillContainer: boolean,
+  scrollableColumns: boolean | undefined,
+  fallback: number,
+): string | number => (fillContainer && !scrollableColumns ? '100%' : fallback);
 
 export function AdvancedTable<T>({
   data,
@@ -71,6 +79,7 @@ export function AdvancedTable<T>({
   renderDetailPanel,
   getRowCanExpand,
   emptyState,
+  fillContainer = true,
 }: AdvancedTableProps<T>) {
   const [localData, setLocalData] = useState<T[]>(data);
   const [rowPinning, setRowPinning] = useState<RowPinningState>({ top: initialPinnedRows ?? [], bottom: [] });
@@ -111,25 +120,28 @@ export function AdvancedTable<T>({
     setLocalData(data);
   }, [data]);
 
+  // Pre-compute conditional table options to keep useReactTable() readable
+  // and to satisfy sonarjs/cognitive-complexity.
+  const initialColumnPinning = scrollableColumns || enableColumnPinning ? reservedColumns : [];
+  // issue with the library and typing of subrows not working well with custom subrow types https://github.com/TanStack/table/discussions/4484
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
+  const getSubRowsFn = subRowKey ? (row: any) => row[subRowKey] : undefined;
+  const detailPanelOptions = renderDetailPanel ? { getRowCanExpand: getRowCanExpand ?? (() => true) } : {};
+  const paginationRowModel = scrollableRows ? undefined : getPaginationRowModel();
+  const renderDefaultCell: ColumnDef<T>['cell'] = props => {
+    const Cell = props.column.columnDef.meta?.editable ? EditableCell : DefaultCell;
+    return <Cell {...props} enableRowSelection={enableRowSelection} />;
+  };
+
   const table = useReactTable({
     data: localData,
     columns: finalColumns,
     columnResizeMode: 'onChange',
     columnResizeDirection: 'ltr',
     initialState: {
-      columnPinning: {
-        left: scrollableColumns || enableColumnPinning ? reservedColumns : [],
-      },
+      columnPinning: { left: initialColumnPinning },
     },
-    defaultColumn: {
-      cell: props => {
-        if (props.column.columnDef.meta?.editable) {
-          return <EditableCell {...props} enableRowSelection={enableRowSelection} />;
-        } else {
-          return <DefaultCell {...props} enableRowSelection={enableRowSelection} />;
-        }
-      },
-    },
+    defaultColumn: { cell: renderDefaultCell },
     state: {
       columnOrder,
       rowPinning,
@@ -138,9 +150,7 @@ export function AdvancedTable<T>({
     onColumnOrderChange: handleColumnOrderChange,
     onRowPinningChange: setRowPinning,
     enableRowPinning,
-    // issue with the library and typing of subrows not working well with custom subrow types https://github.com/TanStack/table/discussions/4484
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
-    getSubRows: subRowKey ? (row: any) => row[subRowKey] : undefined,
+    getSubRows: getSubRowsFn,
     enableColumnFilters: enableColumnFilter,
     enableGlobalFilter: false,
     enableColumnPinning,
@@ -148,13 +158,13 @@ export function AdvancedTable<T>({
     enableGrouping,
     enableColumnResizing: enableResizing,
     enableRowSelection,
-    ...(renderDetailPanel ? { getRowCanExpand: getRowCanExpand ?? (() => true) } : {}),
+    ...detailPanelOptions,
     getGroupedRowModel: getGroupedRowModel(),
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getExpandedRowModel: getExpandedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: scrollableRows ? undefined : getPaginationRowModel(),
+    getPaginationRowModel: paginationRowModel,
     onPaginationChange: setPagination,
     // Prevent TanStack Table from auto-resetting pageIndex to 0 on initial mount /
     // when data updates, which was overriding the consumer-supplied paginationProps.pageIndex.
@@ -202,12 +212,23 @@ export function AdvancedTable<T>({
   // Empty when raw data is empty OR filtering produced zero rows.
   const isEmpty = localData.length === 0 || table.getFilteredRowModel().rows.length === 0;
 
+  // Width resolution for the outer scroll container, the <table>, and the empty-state wrapper.
+  // Extracted to keep nested ternaries out of JSX (sonarjs/no-nested-conditional).
+  let containerWidth: CSSProperties['width'];
+  if (fillContainer) containerWidth = '100%';
+  else if (scrollableColumns) containerWidth = fixedWidth;
+  // Accounts for scrollbar size when scrollableRows is enabled.
+  const scrollbarAdjustment = (outerTableRef.current?.offsetWidth ?? 0) - (outerTableRef.current?.clientWidth ?? 0);
+  const tableWidth = resolveFillWidth(fillContainer, scrollableColumns, table.getTotalSize() + scrollbarAdjustment);
+  const emptyStateWidth = resolveFillWidth(fillContainer, scrollableColumns, table.getTotalSize());
+
   return (
     <AdvancedTableContext.Provider
       value={{
         tableRef: outerTableRef,
         scrollableRows,
         scrollableColumns,
+        fillContainer,
         enableRowPinning,
         enableRowSelection,
         columnOrder,
@@ -228,20 +249,10 @@ export function AdvancedTable<T>({
           className={styles.container()}
           style={{
             height: scrollableRows ? fixedHeight : undefined,
-            width: scrollableColumns ? fixedWidth : undefined,
+            width: containerWidth,
           }}
         >
-          <table
-            className={styles.table()}
-            ref={outerTableRef}
-            style={{
-              ...columnSizeVars,
-              width:
-                table.getTotalSize() +
-                // below accounts for scrollbar size when scrollableRows enabled
-                ((outerTableRef.current?.offsetWidth ?? 0) - (outerTableRef.current?.clientWidth ?? 0)),
-            }}
-          >
+          <table className={styles.table()} ref={outerTableRef} style={{ ...columnSizeVars, width: tableWidth }}>
             <AdvancedTableHead
               table={table}
               scrollableColumns={scrollableColumns}
@@ -252,7 +263,7 @@ export function AdvancedTable<T>({
             {!isEmpty && <AdvancedTableBody table={table} tableRef={outerTableRef} theadRef={theadRef} />}
           </table>
           {isEmpty && (
-            <div style={{ width: table.getTotalSize() }}>
+            <div style={{ width: emptyStateWidth }}>
               <AdvancedTableEmptyState
                 title={emptyState?.title}
                 description={emptyState?.description}

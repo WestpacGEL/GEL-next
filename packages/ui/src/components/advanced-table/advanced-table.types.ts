@@ -177,4 +177,15 @@ export type AdvancedTableProps<T> = {
    * Provide at minimum a `title`. `description` and `icon` are optional.
    */
   emptyState?: AdvancedTableEmptyStateProps;
+  /**
+   * When `true`, the table stretches to fill its parent container (`width: 100%`).
+   * When `false`, the table uses its own width:
+   *   - the sum of column sizes when virtualization is off, or
+   *   - `fixedWidth` when `scrollableColumns` is enabled.
+   * For virtualized modes (`scrollableColumns`/`scrollableRows`), `fillContainer`
+   * applies to the outer scroll container — the inner table keeps its pixel
+   * width so horizontal scrolling still works.
+   * @default true
+   */
+  fillContainer?: boolean;
 };

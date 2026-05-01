@@ -8,6 +8,7 @@ export const AdvancedTableContext = createContext<{
   enableRowSelection?: boolean;
   scrollableRows?: boolean;
   scrollableColumns?: boolean;
+  fillContainer?: boolean;
   columnOrder?: string[];
   extraCellPadding?: boolean;
   bordered?: boolean;
