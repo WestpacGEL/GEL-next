@@ -188,4 +188,22 @@ export type AdvancedTableProps<T> = {
    * @default true
    */
   fillContainer?: boolean;
+  /**
+   * Called when virtualized rows are enabled and the user scrolls to (or near) the
+   * bottom of the table — typically used to fetch the next page of rows.
+   * Only fires when `scrollableRows` is enabled.
+   */
+  onLoadMore?: () => void;
+  /**
+   * Set to `true` while the consumer is fetching more rows. While truthy,
+   * `onLoadMore` will not be called again — preventing duplicate requests.
+   * @default false
+   */
+  isLoadingMore?: boolean;
+  /**
+   * How many rows from the bottom should trigger `onLoadMore`. A value of `0`
+   * means "fire when the very last row is rendered". Increase to fetch sooner.
+   * @default 0
+   */
+  loadMoreThreshold?: number;
 };

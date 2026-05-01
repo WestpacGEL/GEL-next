@@ -80,6 +80,9 @@ export function AdvancedTable<T>({
   getRowCanExpand,
   emptyState,
   fillContainer = true,
+  onLoadMore,
+  isLoadingMore = false,
+  loadMoreThreshold = 0,
 }: AdvancedTableProps<T>) {
   const [localData, setLocalData] = useState<T[]>(data);
   const [rowPinning, setRowPinning] = useState<RowPinningState>({ top: initialPinnedRows ?? [], bottom: [] });
@@ -260,7 +263,16 @@ export function AdvancedTable<T>({
               columnVirtualizer={useVirtualizedColumns(table, outerTableRef)}
               theadRef={theadRef}
             />
-            {!isEmpty && <AdvancedTableBody table={table} tableRef={outerTableRef} theadRef={theadRef} />}
+            {!isEmpty && (
+              <AdvancedTableBody
+                table={table}
+                tableRef={outerTableRef}
+                theadRef={theadRef}
+                onLoadMore={onLoadMore}
+                isLoadingMore={isLoadingMore}
+                loadMoreThreshold={loadMoreThreshold}
+              />
+            )}
           </table>
           {isEmpty && (
             <div style={{ width: emptyStateWidth }}>

@@ -11,4 +11,16 @@ export type AdvancedTableBodyProps<T> = {
    * Ref to the thead element for measuring header height
    */
   theadRef?: RefObject<HTMLTableSectionElement>;
+  /**
+   * Called when scrolled near the bottom (only with virtualized rows).
+   */
+  onLoadMore?: () => void;
+  /**
+   * While truthy, suppresses further `onLoadMore` calls.
+   */
+  isLoadingMore?: boolean;
+  /**
+   * Rows from the bottom that should trigger `onLoadMore`.
+   */
+  loadMoreThreshold?: number;
 };

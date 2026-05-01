@@ -1,5 +1,5 @@
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { useContext, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 
 import { AdvancedTableContext } from '../../advanced-table.context.js';
 import { AdvancedTableRow } from '../advanced-table-row/advanced-table-row.component.js';
@@ -8,7 +8,14 @@ import { PinnedRows } from '../pinned-rows/pinned-rows.component.js';
 import { styles as AdvancedTableBodyStyles } from './advanced-table-body.styles.js';
 import { AdvancedTableBodyProps } from './advanced-table-body.types.js';
 
-export function AdvancedTableBody<T>({ table, tableRef, theadRef }: AdvancedTableBodyProps<T>) {
+export function AdvancedTableBody<T>({
+  table,
+  tableRef,
+  theadRef,
+  onLoadMore,
+  isLoadingMore = false,
+  loadMoreThreshold = 0,
+}: AdvancedTableBodyProps<T>) {
   const { scrollableRows, scrollableColumns, fillContainer, enableRowPinning } = useContext(AdvancedTableContext);
   const styles = AdvancedTableBodyStyles({ scrollableRows, scrollableColumns });
   const bodyRef = useRef(null);
@@ -27,6 +34,18 @@ export function AdvancedTableBody<T>({ table, tableRef, theadRef }: AdvancedTabl
         : undefined,
     overscan: 5,
   });
+
+  // Fire onLoadMore when the last visible virtual row reaches the threshold from the bottom.
+  // Only relevant for virtualized rows; gated by isLoadingMore to prevent duplicate requests.
+  const virtualItems = rowVirtualizer.getVirtualItems();
+  const lastVisibleIndex = virtualItems.length ? virtualItems[virtualItems.length - 1].index : -1;
+  useEffect(() => {
+    if (!scrollableRows || !onLoadMore || isLoadingMore) return;
+    if (centerRows.length === 0) return;
+    if (lastVisibleIndex >= centerRows.length - 1 - loadMoreThreshold) {
+      onLoadMore();
+    }
+  }, [scrollableRows, onLoadMore, isLoadingMore, loadMoreThreshold, lastVisibleIndex, centerRows.length]);
 
   return scrollableRows ? (
     <>
