@@ -27,3 +27,20 @@ export const Default: Story = {
 export const WithPagination: Story = {
   render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} showPagination />,
 };
+
+export const WithPaginationAndCustomPageSizeOptions: Story = {
+  render: () => (
+    <AdvancedTable data={defaultDataSB} columns={columnsSB} showPagination pageSizeOptions={[5, 10, 20, 50, 100]} />
+  ),
+};
+
+export const WithPaginationAndCustomInitialProps: Story = {
+  render: () => (
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      showPagination
+      paginationProps={{ pageIndex: 2, pageSize: 5 }}
+    />
+  ),
+};

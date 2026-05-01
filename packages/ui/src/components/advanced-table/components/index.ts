@@ -5,6 +5,7 @@ export { AdvancedTableHeadCell } from './advanced-table-head-cell/index.js';
 export { AdvancedTableHeadCellContent } from './advanced-table-head-cell-content/index.js';
 export { AdvancedTableHeadRow } from './advanced-table-head-row/index.js';
 export { AdvancedTableMenu } from './advanced-table-menu/index.js';
+export { AdvancedTablePagination } from './advanced-table-pagination/index.js';
 export { AdvancedTableRow } from './advanced-table-row/index.js';
 export { DefaultCell, EditableCell, DefaultHeadCell } from './cell-defaults/index.js';
 export { PinnedRows } from './pinned-rows/index.js';

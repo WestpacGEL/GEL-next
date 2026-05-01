@@ -22,12 +22,16 @@ import {
 } from '@tanstack/react-table';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { Pagination } from '../pagination/pagination.component.js';
-
 import { AdvancedTableContext } from './advanced-table.context.js';
 import { styles as advancedTableStyles } from './advanced-table.styles.js';
 import { AdvancedTableProps } from './advanced-table.types.js';
-import { AdvancedTableBody, DefaultCell, EditableCell, AdvancedTableHead } from './components/index.js';
+import {
+  AdvancedTableBody,
+  DefaultCell,
+  EditableCell,
+  AdvancedTableHead,
+  AdvancedTablePagination,
+} from './components/index.js';
 import {
   columnGenerator,
   deleteRow,
@@ -60,12 +64,18 @@ export function AdvancedTable<T>({
   extraCellPadding = false,
   bordered = false,
   showPagination = false,
+  paginationProps,
+  pageSizeOptions = [5, 10, 20, 50],
   striped = false,
   renderDetailPanel,
   getRowCanExpand,
 }: AdvancedTableProps<T>) {
   const [localData, setLocalData] = useState<T[]>(data);
   const [rowPinning, setRowPinning] = useState<RowPinningState>({ top: initialPinnedRows ?? [], bottom: [] });
+  const [pagination, setPagination] = useState({
+    pageIndex: paginationProps?.pageIndex ?? 0,
+    pageSize: paginationProps?.pageSize ?? 10,
+  });
   const reservedColumns = useMemo(
     () =>
       [enableRowSelection && SELECT_COLUMN_ID, enableRowPinning && PIN_COLUMN_ID].filter((id): id is string => !!id),
@@ -121,6 +131,7 @@ export function AdvancedTable<T>({
     state: {
       columnOrder,
       rowPinning,
+      pagination,
     },
     onColumnOrderChange: handleColumnOrderChange,
     onRowPinningChange: setRowPinning,
@@ -142,6 +153,10 @@ export function AdvancedTable<T>({
     getExpandedRowModel: getExpandedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: scrollableRows ? undefined : getPaginationRowModel(),
+    onPaginationChange: setPagination,
+    // Prevent TanStack Table from auto-resetting pageIndex to 0 on initial mount /
+    // when data updates, which was overriding the consumer-supplied paginationProps.pageIndex.
+    autoResetPageIndex: false,
     meta: {
       updateData: (rowIndex: number, columnId: string, value: unknown) => {
         updateTableData(rowIndex, columnId, value, onDataChange ?? setLocalData, localData);
@@ -168,8 +183,6 @@ export function AdvancedTable<T>({
     return colSizes;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [table.getState().columnSizingInfo, table.getState().columnSizing]);
-
-  const currentPage = table.getState().pagination.pageIndex + 1;
 
   function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event;
@@ -235,13 +248,7 @@ export function AdvancedTable<T>({
           </table>
         </div>
         {!scrollableRows && showPagination && (
-          <Pagination
-            totalPages={table.getPageCount()}
-            id="pagination"
-            current={currentPage}
-            onChange={pageIndex => table.setPageIndex(pageIndex - 1)}
-            className="items-start pt-5"
-          />
+          <AdvancedTablePagination table={table} pageSizeOptions={pageSizeOptions} {...paginationProps} />
         )}
       </DndContext>
     </AdvancedTableContext.Provider>

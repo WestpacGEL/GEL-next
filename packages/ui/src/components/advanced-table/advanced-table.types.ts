@@ -120,6 +120,21 @@ export type AdvancedTableProps<T> = {
    */
   onTableReady?: (table: Table<T>) => void;
   /**
+   * Props to control pagination.
+   * @default { pageIndex: 0, pageSize: 10 }
+   */
+  paginationProps?: {
+    // Default page index (0-based)
+    pageIndex?: number;
+    // Default number of items per page
+    pageSize?: number;
+  };
+  /**
+   * Options for page size selection in pagination select.
+   * @default [5, 10, 20, 50]
+   */
+  pageSizeOptions?: number[];
+  /**
    * Modified tanstack table options.
    */
   tableOptions?: TanstackTableOptions<T>;
