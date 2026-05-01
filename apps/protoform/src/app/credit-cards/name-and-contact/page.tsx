@@ -25,18 +25,6 @@ type FormData = {
   dobYear: number;
   mobileNumber: string;
 };
-const FIELDS_LABELS = {
-  title: 'Title',
-  givenName: 'Given name',
-  middleName: 'Middle name(s) (if any)',
-  familyName: 'Family name',
-  dob: 'Date of birth',
-  dobDay: 'Day',
-  dobMonth: 'Month',
-  dobYear: 'Year',
-  mobileNumber: 'Mobile number',
-};
-
 export default function NameAndContact() {
   const { setRopeStep } = useSidebar();
   const { data, setData } = useCreditCard();
@@ -75,9 +63,9 @@ export default function NameAndContact() {
       >
         Name & contact
       </CustomHeading>
-      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
+      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} />}
       <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <Field label="Title" errorMessage={errors.title?.message}>
+        <Field label="Title" errorMessage={errors.title?.message} id="title">
           <InputGroup width={{ initial: 'full', md: 5 }} size="large">
             <Select
               {...register('title', { required: defaultError })}
@@ -93,8 +81,8 @@ export default function NameAndContact() {
           </InputGroup>
         </Field>
 
-        <Field>
-          <InputGroup size="large" label="Given name" errorMessage={errors.givenName?.message}>
+        <Field label="Given name" errorMessage={errors.givenName?.message} id="givenName">
+          <InputGroup size="large">
             <Input
               {...register('givenName', { required: defaultError })}
               id="givenName"
@@ -104,13 +92,13 @@ export default function NameAndContact() {
           </InputGroup>
         </Field>
 
-        <Field label="Middle name(s) (if any)">
+        <Field label="Middle name(s) (if any)" id="middleName">
           <InputGroup size="large">
             <Input {...register('middleName')} id="middleName" defaultValue={data.middleName} />
           </InputGroup>
         </Field>
 
-        <Field label="Family name" errorMessage={errors.familyName?.message}>
+        <Field label="Family name" errorMessage={errors.familyName?.message} id="familyName">
           <InputGroup size="large">
             <Input
               {...register('familyName', { required: defaultError })}
@@ -127,7 +115,7 @@ export default function NameAndContact() {
           errorMessage={errors.dobDay?.message || errors.dobMonth?.message || errors.dobYear?.message}
         >
           <div className="flex">
-            <Field className="mr-2" label="Day">
+            <Field className="mr-2" label="Day" id="dobDay">
               <Input
                 {...register('dobDay', { required: defaultError, valueAsNumber: true })}
                 id="dobDay"
@@ -137,7 +125,7 @@ export default function NameAndContact() {
                 invalid={!!errors.dobDay?.message}
               />
             </Field>
-            <Field className="mr-2" label="Month">
+            <Field className="mr-2" label="Month" id="dobMonth">
               <Input
                 {...register('dobMonth', { required: defaultError, valueAsNumber: true })}
                 id="dobMonth"
@@ -147,7 +135,7 @@ export default function NameAndContact() {
                 invalid={!!errors.dobMonth?.message}
               />
             </Field>
-            <Field label="Year">
+            <Field label="Year" id="dobYear">
               <Input
                 {...register('dobYear', { required: defaultError, valueAsNumber: true })}
                 id="dobYear"
@@ -164,6 +152,7 @@ export default function NameAndContact() {
           label="Mobile number"
           hintMessage="We’ll send a verification code to your divhone later, to create your account."
           errorMessage={errors.mobileNumber?.message}
+          id="mobileNumber"
         >
           <InputGroup size="large" before="AUS +61">
             <Input
