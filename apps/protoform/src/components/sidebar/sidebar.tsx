@@ -153,7 +153,7 @@ export function Sidebar({ children }: { children?: ReactNode }) {
           <div
             aria-hidden="true"
             className={clsx({
-              'h-auto before:fixed before:top-0 before:right-0 before:bottom-0 before:left-0 before:z-[59] max-md:before:bg-black/70 md:hidden':
+              'h-auto before:fixed before:top-0 before:right-0 before:bottom-0 before:left-0 before:z-[59] max-md:before:bg-black/65 md:hidden':
                 open,
             })}
           />
