@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 1.3.0
+
+### Minor Changes
+
+- d699475: - added sort icon
+  - updated backdrop overlays for modal type components to have less opacity
+
 ## 1.2.1
 
 ### Patch Changes
