@@ -13,8 +13,8 @@ articleRows:
       - typography
   - layout: 2x1
     articles:
-      - data-visualisation
       - patterns
+      - data-visualisation
   - layout: 1x1
     articles:
       - think-responsive
