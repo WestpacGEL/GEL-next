@@ -45,7 +45,7 @@
   ],
   "headers": [
     {
-      "source": "/((?!api|keystatic|_next/static|_next/image|favicon.ico).*)",
+      "source": "/((?!api|keystatic|_next/static|_next/image|favicon.ico|access-denied).*)",
       "headers": [
         {
           "key": "Content-Security-Policy",

@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'fixed inset-0 flex animate-fadeIn justify-center bg-black/50 px-4',
+    base: 'fixed inset-0 flex animate-fadeIn justify-center bg-black/65 px-4',
     modal: 'relative top-[5vh] z-10 size-fit max-w-full animate-fadeInDown',
   },
   variants: {
