@@ -158,7 +158,7 @@ export function Sidebar({ items, brand }: SidebarProps) {
       <div
         aria-hidden="true"
         className={clsx({
-          'z-[1009] before:fixed before:top-0 before:right-0 before:bottom-0 before:left-0 max-lg:before:bg-black/40':
+          'z-[1009] before:fixed before:top-0 before:right-0 before:bottom-0 before:left-0 max-lg:before:bg-black/65':
             open,
         })}
       />
