@@ -1,7 +1,7 @@
 import { flexRender, SortDirection } from '@tanstack/react-table';
 import { useContext } from 'react';
 
-import { ArrowDownIcon, ArrowUpIcon, ExpandLessIcon, ExpandMoreIcon } from '../../../icon/index.js';
+import { ArrowDownIcon, ArrowUpIcon, SortIcon } from '../../../icon/index.js';
 import { AdvancedTableContext } from '../../advanced-table.context.js';
 import { RESERVED_COLUMN_IDS } from '../../utils/constants.js';
 import { AdvancedTableMenu } from '../advanced-table-menu/advanced-table-menu.component.js';
@@ -17,12 +17,7 @@ export function AdvancedTableHeadCellContent<T>({ header }: AdvancedTableHeadCel
   const sortingIcon = (sorted: SortDirection | false, onClick: () => void) => {
     return (
       <button onClick={onClick} className={styles.sortButton()}>
-        {!sorted && (
-          <>
-            <ExpandLessIcon size="xsmall" className="mb-[-2px]" />
-            <ExpandMoreIcon size="xsmall" className="mt-[-2px]" />
-          </>
-        )}
+        {!sorted && <SortIcon size="small" />}
         {sorted === 'asc' && <ArrowUpIcon size="small" />}
         {sorted === 'desc' && <ArrowDownIcon size="small" />}
       </button>
