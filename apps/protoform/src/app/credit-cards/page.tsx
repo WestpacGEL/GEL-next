@@ -19,11 +19,6 @@ type FormData = {
   email: string;
 };
 
-const FIELDS_LABELS = {
-  name: 'Given name',
-  email: 'Email address',
-};
-
 export default function CreditCards() {
   const { setRopeStep } = useSidebar();
   const { data, setData } = useCreditCard();
@@ -58,12 +53,13 @@ export default function CreditCards() {
       <CustomHeading groupHeading={!isFlattenRope && 'Get started'} leadText="To begin, we just need a few details.">
         Quick contact
       </CustomHeading>
-      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
+      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} />}
       <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
         <Field
           label="Given name"
           hintMessage="To help us verify your identity online, please enter your name exactly as it appears on your ID."
           errorMessage={errors.name?.message}
+          id="name"
         >
           <InputGroup size="large" instanceId="name">
             <Input
@@ -74,7 +70,7 @@ export default function CreditCards() {
             />
           </InputGroup>
         </Field>
-        <Field label="Email address" errorMessage={errors.email?.message}>
+        <Field label="Email address" errorMessage={errors.email?.message} id="email">
           <InputGroup size="large" instanceId="email">
             <Input
               {...register('email', { required: defaultError })}

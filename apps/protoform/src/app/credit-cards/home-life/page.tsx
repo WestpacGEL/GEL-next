@@ -22,14 +22,6 @@ type FormData = {
   sharedExpenses: string;
 };
 
-const FIELDS_LABELS = {
-  dependants: 'How many dependants do you have?',
-  expenseFreq: 'Do you share household expenses?',
-  expenses: 'All other expenses',
-  housing: 'What is your current housing situation?',
-  sharedExpenses: 'Do you share household expenses?',
-};
-
 export default function HomeLife() {
   const { setRopeStep } = useSidebar();
   const { data, setData } = useCreditCard();
@@ -69,9 +61,9 @@ export default function HomeLife() {
       >
         Home life
       </CustomHeading>
-      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} labels={FIELDS_LABELS} />}
+      {!isValid && isSubmitted && <ErrorValidationAlert errors={errors} />}
       <form id="credit-card" className="flex flex-col gap-4" onSubmit={event => void handleSubmit(onSubmit)(event)}>
-        <Field label="What is your current housing situation?" errorMessage={errors.housing?.message}>
+        <Field label="What is your current housing situation?" errorMessage={errors.housing?.message} id="housing">
           <InputGroup instanceId="housing" size="large" width={{ initial: 'full', md: 9 }}>
             <Select
               {...register('housing', { required: defaultError })}
@@ -96,6 +88,7 @@ export default function HomeLife() {
               label="Do you share household expenses?"
               hintMessage="For example utility bills"
               errorMessage={errors.sharedExpenses?.message}
+              id="sharedExpenses"
             >
               <ButtonGroup
                 size="large"
@@ -114,6 +107,7 @@ export default function HomeLife() {
           label="How many dependants do you have?"
           hintMessage="Excluding spouse"
           errorMessage={errors.dependants?.message}
+          id="dependants"
         >
           <InputGroup instanceId="dependants" size="large" width={{ initial: 'full', md: 3 }}>
             <Select
@@ -135,6 +129,7 @@ export default function HomeLife() {
           label="All other expenses"
           hintMessage="For example Food, regular bills. transport, Insurance, Child support. Enter a dollar value and choose a frequency"
           errorMessage={errors.expenses?.message || errors.expenseFreq?.message}
+          id="expenses"
         >
           <InputGroup
             size="large"
