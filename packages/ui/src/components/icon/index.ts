@@ -210,6 +210,7 @@ export { ShoppingBasketIcon } from './components/shopping-basket-icon.js';
 export { SimCardIcon } from './components/sim-card-icon.js';
 export { SlackIcon } from './components/slack-icon.js';
 export { SmsIcon } from './components/sms-icon.js';
+export { SortIcon } from './components/sort-icon.js';
 export { SpaIcon } from './components/spa-icon.js';
 export { StarHalfIcon } from './components/star-half-icon.js';
 export { StarRateIcon } from './components/star-rate-icon.js';

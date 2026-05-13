@@ -11,7 +11,7 @@ export const styles = tv({
   variants: {
     showAsBottomSheet: {
       true: {
-        underlay: 'animate-fadeIn bg-black/20',
+        underlay: 'animate-fadeIn bg-black/65',
         popover:
           '!fixed inset-x-0 !top-auto !bottom-0 !left-0 animate-slideUp overflow-auto rounded-t-3xl px-[8%] pb-3',
         header: 'mx-[-8vw] flex items-center justify-between border-b border-b-border-muted-soft px-3.5 py-2',
