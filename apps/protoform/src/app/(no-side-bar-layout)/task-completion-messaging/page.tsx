@@ -12,7 +12,7 @@ export default function TaskCompletionMessagingPage() {
     <div>
       <CustomHeading
         beforeContent={
-          <span className="mb-3 block">
+          <span className="mb-3 block md:mb-4">
             <TickCircleIcon size="xlarge" color="success" />
           </span>
         }
