@@ -267,7 +267,7 @@
     "glob": "~10.5.0",
     "jsdom": "^22.1.0",
     "plop": "~4.0.5",
-    "postcss": "~8.5.6",
+    "postcss": "~8.5.10",
     "postcss-cli": "~10.1.0",
     "prettier": "^3.2.5",
     "prop-types": "^15.8.1",
