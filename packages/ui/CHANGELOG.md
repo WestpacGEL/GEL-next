@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.3.1
+
+### Patch Changes
+
+- 6bf4357: - updated padding on the panel of the popover component
+
 ## 1.3.0
 
 ### Minor Changes
