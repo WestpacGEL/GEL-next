@@ -11,10 +11,9 @@ articleRows:
     articles:
       - accessible-by-design
       - typography
-  - layout: 1x1x1
+  - layout: 1x2
     articles:
       - patterns
-      - journey-management
       - data-visualisation
   - layout: 1x1
     articles:

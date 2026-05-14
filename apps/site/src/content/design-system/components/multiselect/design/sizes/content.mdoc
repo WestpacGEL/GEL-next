@@ -1,0 +1,49 @@
+Multi-selects come in four different sizes (heights) with the default being Medium 36px. Ensure when you are designing forms that you alway use the same size across element types.
+
+```tsx
+() => {
+  const OPTIONS = [
+  { key: 1, textValue: 'Aerospace' },
+  { key: 2, textValue: 'Mechanical' },
+  { key: 3, textValue: 'Civil' },
+  { key: 4, textValue: 'Biomedical' },
+  { key: 5, textValue: 'Nuclear' },
+  { key: 6, textValue: 'Industrial' },
+  { key: 7, textValue: 'Chemical' },
+  { key: 8, textValue: 'Agricultural' },
+  { key: 9, textValue: 'Electrical' },
+];
+  const SIZES = ['small', 'medium', 'large', 'xlarge']
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+
+  return (
+    <div className="flex flex-col gap-2">
+      {SIZES.map(size => (
+        <div key={size}>
+          <p className="mb-2 typography-body-10 font-bold text-text-body uppercase">{size}</p>
+          <MultiSelect
+            key={size}
+            size={size}
+            selectedKeys={selectedKeys}
+            onSelectionChange={keys => {
+              setSelectedKeys(keys as Set<string>);
+            }}
+            items={OPTIONS}
+        width="30"
+          >
+            {option => (
+            <MultiSelectItem
+              key={option.key}
+              textValue={option.textValue}
+              description="Supporting information or description"
+            >
+              {option.textValue}
+            </MultiSelectItem>
+          )}
+          </MultiSelect>
+        </div>
+      ))}
+    </div>
+  );
+}
+```

@@ -88,6 +88,64 @@ You can also include an `href` for each page to support URL-based navigation:
 };
 ```
 
+### Page numbers with href
+
+```tsx
+() => {
+  return <Pagination totalPages={20} onPageItemProps={page => ({ text: page, href: `#page-${page}` })} current={20} />
+};
+```
+
+### Responsive total pages
+
+```tsx
+() => {
+  const [current, setCurrent] = useState(1);
+
+  return (
+    <Pagination
+      totalPages={20}
+      siblingCount={{ initial: 0, sm: 2, md: 3 }}
+      boundaryCount={{ initial: 0, sm: 2, md: 3 }}
+      onChange={value => {
+        setCurrent(value);
+        action('onChange')(value);
+      }}
+      current={current}
+    />
+  );
+    };
+```
+
+### Pagination with hook
+
+```tsx
+() => {
+  const { currentPage, setCurrentPage, totalPages } = usePagination({ totalPages: 5 });
+
+  return <Pagination current={currentPage} onChange={changedPage => setCurrentPage(changedPage)} totalPages={totalPages} />;
+};
+```
+
+### Hook with custom Pagination component
+
+```tsx
+() => {
+  const { next, previous, currentPage } = usePagination({
+    totalPages: 3,
+    infinite: true,
+  });
+
+  return (
+    <div className="flex w-[15.625rem] items-center justify-between">
+      <Button look="link" iconAfter={ArrowLeftIcon} onClick={previous} />
+      <h4>Page {currentPage}</h4>
+      <Button look="link" iconAfter={ArrowRightIcon} onClick={next} />
+    </div>
+  );
+};
+```
+
 ### Using the `boundaryCount` and `siblingCount`
 
 #### boundaryCount

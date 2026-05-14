@@ -7,7 +7,7 @@ export const styles = tv({
       bg-background-white p-6 pb-0
     `,
     displayWrapper: `
-      relative -mx-6 -mt-6 overflow-auto border-border-muted-soft
+      relative -mx-6 -mt-6 border-border-muted-soft
     `,
     error: 'flex gap-2 rounded-md bg-surface-danger-faint p-2 text-text-danger',
     buttonWrapper: 'flex items-center justify-end',
