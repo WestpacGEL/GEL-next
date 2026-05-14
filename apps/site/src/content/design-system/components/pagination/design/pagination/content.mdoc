@@ -1,5 +1,7 @@
 Use this responsive pagination component for navigation through multiple pages or content views.
 
+### Default
+
 ```tsx
 () => {
   const [page, setPage] = useState(1);
@@ -13,5 +15,36 @@ Use this responsive pagination component for navigation through multiple pages o
       totalPages={3}
     />
   );
+};
+```
+
+### Responsive total pages
+
+```tsx
+() => {
+  const [current, setCurrent] = useState(1);
+
+  return (
+    <Pagination
+      totalPages={20}
+      siblingCount={{ initial: 0, sm: 2, md: 3 }}
+      boundaryCount={{ initial: 0, sm: 2, md: 3 }}
+      onChange={value => {
+        setCurrent(value);
+        action('onChange')(value);
+      }}
+      current={current}
+    />
+  );
+    };
+```
+
+### Pagination with hook (usePagination)
+
+```tsx
+() => {
+  const { currentPage, setCurrentPage, totalPages } = usePagination({ totalPages: 5 });
+
+  return <Pagination current={currentPage} onChange={changedPage => setCurrentPage(changedPage)} totalPages={totalPages} />;
 };
 ```
