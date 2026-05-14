@@ -1,5 +1,18 @@
 # @westpac/ui
 
+## 1.3.2
+
+### Patch Changes
+
+- 7e97f6b: - export usePagination hook from component library
+  - updated components that were using a portalContainer to look for data-brand instead of data-theme
+
+## 1.3.1
+
+### Patch Changes
+
+- 6bf4357: - updated padding on the panel of the popover component
+
 ## 1.3.0
 
 ### Minor Changes

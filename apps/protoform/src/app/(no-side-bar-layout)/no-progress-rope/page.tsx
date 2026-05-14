@@ -37,7 +37,7 @@ export default function NoProgressRopePage() {
       <CustomHeading leadText="We’d love your feedback! Please take a moment to share your thoughts so we can keep improving and making things better for you.">
         Feedback
       </CustomHeading>
-      <form id="credit-card" className="p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
+      <form id="credit-card" className="flex flex-col gap-3 p-0" onSubmit={event => void handleSubmit(onSubmit)(event)}>
         <Field label="Given name (Optional)" errorMessage={errors.givenName?.message}>
           <InputGroup size="large">
             <Input {...register('givenName')} />

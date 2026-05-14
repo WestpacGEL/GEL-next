@@ -73,6 +73,7 @@ export {
   ProgressRope,
   VisuallyHidden,
   Pagination,
+  usePagination,
   Popover,
   Repeater,
   RepeaterItem,
