@@ -29,12 +29,12 @@ export default function ExtraCareCustomerPage() {
           <div className="mb-5 flex items-center gap-1">
             <Circle
               className={`
-                bg-surface-primary typography-body-11 font-bold text-white
+                size-4 bg-surface-primary typography-body-11 font-bold text-white
               `}
             >
               EC
             </Circle>
-            <h3 className="typography-body-11 font-bold text-text-muted">Phillip Minchin:</h3>
+            <h3 className="typography-body-11 font-semibold text-text-muted">Phillip Minchin:</h3>
             <span className="typography-body-11">1234567890</span>
           </div>
         }
