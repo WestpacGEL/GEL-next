@@ -38,54 +38,6 @@ export function FontPreloader() {
       <link
         fetchPriority="low"
         rel="preload"
-        href="/fonts/montserrat-v14-latin-300.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin=""
-      />
-      <link
-        fetchPriority="low"
-        rel="preload"
-        href="/fonts/montserrat-v14-latin-700.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin=""
-      />
-      <link
-        fetchPriority="low"
-        rel="preload"
-        href="/fonts/montserrat-v14-latin-regular.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin=""
-      />
-      <link
-        fetchPriority="low"
-        rel="preload"
-        href="/fonts/source-sans-pro-v14-latin-600.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin=""
-      />
-      <link
-        fetchPriority="low"
-        rel="preload"
-        href="/fonts/source-sans-pro-v14-latin-700.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin=""
-      />
-      <link
-        fetchPriority="low"
-        rel="preload"
-        href="/fonts/source-sans-pro-v14-latin-regular.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin=""
-      />
-      <link
-        fetchPriority="low"
-        rel="preload"
         href="/fonts/Westpac-Bold-v2.007.woff2"
         as="font"
         type="font/woff2"

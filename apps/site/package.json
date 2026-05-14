@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "version": "0.3.49",
+  "version": "0.3.50",
   "private": true,
   "scripts": {
     "prebuild": "npm run lint",
@@ -22,7 +22,7 @@
     "clsx": "^1.2.1",
     "lodash.throttle": "~4.1.1",
     "motion": "~12.23.12",
-    "next": "15.5.15",
+    "next": "15.5.18",
     "prism-react-renderer": "~2.0.6",
     "react": "^19.2.4",
     "react-aria": "~3.44.0",
@@ -47,9 +47,9 @@
     "@westpac/ts-config": "workspace:~",
     "autoprefixer": "~10.4.14",
     "eslint": "^9.32.0",
-    "eslint-config-next": "15.5.15",
+    "eslint-config-next": "15.5.18",
     "eslint-config-turbo": "^2.5.8",
-    "postcss": "~8.4.31",
+    "postcss": "^8.5.10",
     "tailwind-variants": "~3.1.1",
     "tailwindcss": "~4.1.12",
     "typescript": "^5.5.4"
