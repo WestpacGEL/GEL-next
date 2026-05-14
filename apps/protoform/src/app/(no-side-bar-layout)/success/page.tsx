@@ -13,7 +13,7 @@ export default function SuccessPage() {
       <CustomHeading
         leadText="Reference number: 1234 56789"
         beforeContent={
-          <span className="mb-3 block">
+          <span className="mb-3 block md:mb-4">
             <TickCircleIcon size="xlarge" color="success" />
           </span>
         }
