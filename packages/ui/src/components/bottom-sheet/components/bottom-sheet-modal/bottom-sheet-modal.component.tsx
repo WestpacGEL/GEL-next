@@ -39,7 +39,7 @@ export function BottomSheetModal({
   const brandContainer = useMemo(() => {
     if (isBrowser) {
       return (
-        document.querySelector('[data-theme]') ||
+        document.querySelector('[data-brand]') ||
         document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
         document.body
       );
