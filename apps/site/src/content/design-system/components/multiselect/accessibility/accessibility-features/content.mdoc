@@ -1,0 +1,19 @@
+- The dropdown will always be longer or the same size as the trigger so the options are easy to read.
+- When opened the first option is always focused, this will be either the search bar if enabled, then the select all option if enabled, then the first option in the list.
+- When the dropdown is open, it will close when focus goes outside of the dropdown.
+- The dropdown can be dismissed with the ‘Esc’ key, and focus will return to the dropdown toggle button.
+- When the dropdown is open, pressing the 'Tab' key will move focus to the focusable element outside of the dropdown and close it.
+- The dropdown can be opened with 'Enter', 'Space', 'ArrowDown' or 'ArrowUp' keys when the dropdown toggle button is focused, it will always focus the first option.
+
+### Accessibility in the HTML
+
+- `<div role="dialog" aria-modal="true" aria-label="Options list with filter">`: Dropdown is considered a dialog and announces itself as an 'Options list with filter' to assistive technologies.
+- `<input aria-label="Filter options">`: Search input is labeled as "Filter options" for assistive technologies.
+
+### Keyboard support
+
+- ‘Tab’ will move focus to the focusable element outside of the dropdown and close it.
+- ‘Esc’ will close the dropdown and return focus to the dropdown toggle button.
+- ‘Space’, ‘Enter’, ‘ArrowDown’, ‘ArrowUp’ opens the dropdown when focused on the trigger.
+- ‘ArrowUp’ and ‘ArrowDown’ keys navigate through the options when the dropdown is open.
+- ‘Space’ and ‘Enter’ can be used to select an option when it is focused.

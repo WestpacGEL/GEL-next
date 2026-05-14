@@ -20,7 +20,8 @@ design:
     noDemo: true
 accessibility: []
 relatedComponents:
+  icon: cube
   links:
-      - title: Progress Indicator
-        slug: /components/progress-indicator
+    - title: Progress Indicator
+      slug: /components/progress-indicator
 code: []

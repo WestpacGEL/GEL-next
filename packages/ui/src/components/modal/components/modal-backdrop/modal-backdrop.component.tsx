@@ -23,7 +23,7 @@ export function ModalBackdrop({ zIndex = 100, portalContainer, size, compact, ..
   const brandContainer = useMemo(() => {
     if (typeof window !== 'undefined') {
       return (
-        document.querySelector('[data-theme]') ||
+        document.querySelector('[data-brand]') ||
         document.querySelector('[class^="theme-"], [class*=" theme-"]') ||
         document.body
       );
