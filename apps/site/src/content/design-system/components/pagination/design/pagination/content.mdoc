@@ -38,13 +38,3 @@ Use this responsive pagination component for navigation through multiple pages o
   );
     };
 ```
-
-### Pagination with hook (usePagination)
-
-```tsx
-() => {
-  const { currentPage, setCurrentPage, totalPages } = usePagination({ totalPages: 5 });
-
-  return <Pagination current={currentPage} onChange={changedPage => setCurrentPage(changedPage)} totalPages={totalPages} />;
-};
-```
