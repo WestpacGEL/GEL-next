@@ -4,7 +4,6 @@ import { Icon } from '../icon.component.js';
 import { type IconProps } from '../icon.types.js';
 
 export function ArrowForwardIcon({
-  look = 'filled',
   'aria-label': ariaLabel = 'Arrow Forward',
   copyrightYear = '2025',
   ...props
