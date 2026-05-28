@@ -6,7 +6,7 @@ import { type IconProps } from '../icon.types.js';
 export function ClosedCaptionIcon({
   look = 'filled',
   'aria-label': ariaLabel = 'Closed Caption',
-  copyrightYear = '2025',
+  copyrightYear = '2026',
   ...props
 }: IconProps) {
   return (
