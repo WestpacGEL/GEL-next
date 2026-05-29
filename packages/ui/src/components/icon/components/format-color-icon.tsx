@@ -5,7 +5,7 @@ import { type IconProps } from '../icon.types.js';
 
 export function FormatColorIcon({
   'aria-label': ariaLabel = 'Format Color',
-  copyrightYear = '2025',
+  copyrightYear = '2026',
   ...props
 }: IconProps) {
   return (
