@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.4.0
+
+### Minor Changes
+
+- 8d68001: added bed, bath and passkey icons
+
 ## 1.3.2
 
 ### Patch Changes
