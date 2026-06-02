@@ -9,7 +9,7 @@
     {
       "source": "/:path*",
       "has": [{ "type": "query", "key": "branch" }],
-      "missing": [{ "type": "query", "key": "branch", "value": "^(main|develop|feature/.*)$" }],
+      "missing": [{ "type": "query", "key": "branch", "value": "^(main|develop|feature(/|%2F).*)$" }],
       "destination": "/:path*?branch=develop",
       "permanent": false
     }
