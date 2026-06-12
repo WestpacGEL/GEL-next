@@ -7,6 +7,10 @@ export type ErrorMessageProps = {
    */
   icon?: (...args: unknown[]) => JSX.Element;
   /**
+   * Title
+   */
+  errorTitle?: string;
+  /**
    * Message or messages
    */
   message?: AriaFieldProps['errorMessage'];

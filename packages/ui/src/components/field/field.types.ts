@@ -5,6 +5,10 @@ import { HintProps, LabelProps } from '../index.js';
 
 export type FieldProps = {
   /**
+   * error title
+   */
+  errorTitle?: string;
+  /**
    * error message
    */
   errorMessage?: string | string[];

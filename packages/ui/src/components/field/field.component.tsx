@@ -13,6 +13,7 @@ export function Field({
   tag: Tag = 'div',
   children,
   hintMessage,
+  errorTitle,
   errorMessage,
   labelElementType,
   labelSize,
@@ -42,7 +43,7 @@ export function Field({
         </Label>
       )}
       {hintMessage && <Hint {...descriptionProps}>{hintMessage}</Hint>}
-      {errorMessage && <ErrorMessage {...errorMessageProps} message={errorMessage} />}
+      {errorMessage && <ErrorMessage {...errorMessageProps} errorTitle={errorTitle} message={errorMessage} />}
       {renderChildren()}
     </Tag>
   );

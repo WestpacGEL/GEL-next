@@ -6,9 +6,32 @@ import { AlertIcon } from '../../components/icon/index.js';
 import { styles as errorMessageStyles } from './error-message.styles.js';
 import { type ErrorMessageProps } from './error-message.types.js';
 
-export function ErrorMessage({ className, tag: Tag = 'div', icon: Icon, message, ...props }: ErrorMessageProps) {
+export function ErrorMessage({
+  className,
+  tag: Tag = 'div',
+  icon: Icon,
+  errorTitle,
+  message,
+  ...props
+}: ErrorMessageProps) {
   const styles = errorMessageStyles({});
   const FinalIcon = Icon ?? AlertIcon;
+
+  if (errorTitle && Array.isArray(message)) {
+    return (
+      <div className={styles.titleWrapper({ className })} {...props}>
+        <span className={styles.title({})}>
+          <FinalIcon color="danger" copyrightYear="2023" className={styles.icon({})} size="xsmall" look="outlined" />
+          {errorTitle}
+        </span>
+        <ul className={styles.bulletList({})}>
+          {message.map((msg, index) => (
+            <li key={index}>{msg}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 
   return Array.isArray(message) ? (
     <ul className={styles.list({})} {...props}>
