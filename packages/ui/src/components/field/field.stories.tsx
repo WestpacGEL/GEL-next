@@ -36,6 +36,25 @@ export const DefaultStory: Story = {
 };
 
 /**
+ * > Error title with list of errors
+ */
+export const ErrorTitleStory: Story = {
+  args: {},
+  render: () => {
+    return (
+      <Field
+        label="Are you an existing customer?"
+        hintMessage="Hint: choose from one of the following options"
+        errorTitle="Please fix the following errors:"
+        errorMessage={['First name is required', 'Last name is required', 'Email is required']}
+      >
+        <Input />
+      </Field>
+    );
+  },
+};
+
+/**
  * > Select usage example
  */
 export const SelectStory: Story = {
