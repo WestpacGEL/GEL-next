@@ -110,6 +110,39 @@ export const Button = () => {
 };
 
 /**
+ * > Button with controlled state usage example — pass an empty string to `onChange` to clear selection
+ */
+export const ButtonWithState = () => {
+  const [selectedOption, setSelectedOption] = useState<string>('');
+  return (
+    <>
+      {selectedOption && <p className="text-text-body">Selected: {selectedOption}</p>}
+      <Selector
+        type="button"
+        value={selectedOption}
+        onChange={value => {
+          setSelectedOption(value);
+        }}
+      >
+        {[
+          { key: 'A', disabled: false },
+          { key: 'B', disabled: false },
+          { key: 'C', disabled: false },
+          { key: 'D', disabled: true },
+        ].map(({ key, disabled }) => (
+          <SelectorButtonOption key={key} id={key} isDisabled={disabled}>
+            <SelectorLabel>Something {key}</SelectorLabel>
+          </SelectorButtonOption>
+        ))}
+      </Selector>
+      <button className="mt-4 text-sm underline" onClick={() => setSelectedOption('')}>
+        Reset selection
+      </button>
+    </>
+  );
+};
+
+/**
  * > Radio with state usage example
  */
 export const RadioWithState = () => {

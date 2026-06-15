@@ -25,28 +25,35 @@ export function SelectorButtonGroup({
   errorMessage,
   description,
   value = '',
+  onChange,
   isDisabled,
   ...props
 }: SelectorButtonGroupProps) {
+  const isControlled = onChange !== undefined;
+  const onChangeCallback = onChange as ((value: string) => void) | undefined;
   const [selected, setSelected] = useState(value);
   const breakpoint = useBreakpoint();
   const resolvedOrientation = resolveResponsiveVariant(orientation, breakpoint);
 
   const handleChange = useCallback(
     (id: string) => {
-      setSelected(id);
+      if (onChangeCallback) {
+        onChangeCallback(id);
+      } else {
+        setSelected(id);
+      }
     },
-    [setSelected],
+    [onChangeCallback, setSelected],
   );
 
   const state: SelectorButtonGroupContextState = useMemo(
     () => ({
-      value: selected,
+      value: isControlled ? (value ?? '') : selected,
       onClick: (id: string) => handleChange(id),
       validationState: errorMessage ? 'invalid' : 'valid',
       isDisabled,
     }),
-    [errorMessage, handleChange, isDisabled, selected],
+    [errorMessage, handleChange, isControlled, isDisabled, selected, value],
   );
 
   const { labelProps, fieldProps, descriptionProps, errorMessageProps } = useField({

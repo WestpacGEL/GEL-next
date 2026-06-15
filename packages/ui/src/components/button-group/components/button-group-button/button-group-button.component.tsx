@@ -23,13 +23,14 @@ export function ButtonGroupButton({ className, ...props }: ButtonGroupButtonProp
   const { isFocusVisible, focusProps } = useFocusRing();
   const resolvedSize = resolveResponsiveVariant(size, breakpoint);
   const resolvedBlock = resolveResponsiveVariant(block, breakpoint);
-
   const styles = buttonGroupButtonStyles({
     block: resolvedBlock,
     isFocusVisible,
     size: resolvedSize,
     orientation,
   });
+  console.log('buttonProps', buttonProps);
+  console.log(mergeProps(buttonProps, focusProps));
 
   return (
     <Button
