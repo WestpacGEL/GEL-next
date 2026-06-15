@@ -99,10 +99,10 @@ function Autocomplete<T extends object>(
     const inputLength = searchProps.value?.length ?? 0;
     return !!(
       noOptionsMessage &&
-      ((!state.isOpen && state.isFocused && inputLength > 0 && !state.selectedKey) ||
+      ((!state.isOpen && state.isFocused && inputLength > 0 && !state.value) ||
         (state.collection.size === 0 && inputLength > 0))
     );
-  }, [noOptionsMessage, state.isOpen, state.isFocused, state.selectedKey, state.collection.size, searchProps.value]);
+  }, [noOptionsMessage, state.isOpen, state.isFocused, state.value, state.collection.size, searchProps.value]);
 
   return (
     <div className={styles.base({ className })}>
