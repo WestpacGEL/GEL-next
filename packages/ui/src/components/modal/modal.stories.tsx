@@ -1,5 +1,5 @@
 import { type Meta, StoryFn } from '@storybook/react-vite';
-import { Fragment, useMemo, useRef } from 'react';
+import { Fragment, useMemo } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 
 import { Button, ModalBody, ModalFooter, ModalProps } from '../index.js';

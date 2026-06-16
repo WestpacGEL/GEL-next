@@ -22,9 +22,14 @@ export type SelectorButtonGroupProps = {
    */
   tag?: keyof JSX.IntrinsicElements;
   /**
-   * Key to set as default value
+   * Key to set as default value (uncontrolled) or currently selected value (controlled)
    */
   value?: string;
+  /**
+   * Called when selection changes. Providing this prop makes the component controlled.
+   * Pass an empty string to clear the selection.
+   */
+  onChange?: (value: string) => void;
 } & AriaFieldProps &
   Omit<HTMLAttributes<Element>, 'onChange'>;
 
