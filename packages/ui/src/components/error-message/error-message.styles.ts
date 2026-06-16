@@ -8,6 +8,6 @@ export const styles = tv({
     icon: 'mt-[0.25rem] mr-[0.5em] flex-shrink-0 align-top',
     titleWrapper: 'mb-2 flex flex-col gap-1 text-text-danger',
     title: 'flex items-start typography-body-11',
-    bulletList: 'flex list-disc flex-col gap-1 pl-5 typography-body-11',
+    bulletList: 'flex flex-col gap-1 pl-3 typography-body-11 text-text-danger',
   },
 });

@@ -43,8 +43,8 @@ export const ErrorTitleStory: Story = {
   render: () => {
     return (
       <Field
-        label="Are you an existing customer?"
-        hintMessage="Hint: choose from one of the following options"
+        label="Contact Details"
+        hintMessage="Please enter your personal information below"
         errorTitle="Please fix the following errors:"
         errorMessage={['First name is required', 'Last name is required', 'Email is required']}
       >
