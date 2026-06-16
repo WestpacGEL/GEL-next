@@ -98,6 +98,7 @@ export { FilterIcon } from './components/filter-icon.js';
 export { FingerprintIcon } from './components/fingerprint-icon.js';
 export { FirstAidCaseIcon } from './components/first-aid-case-icon.js';
 export { FirstAidIcon } from './components/first-aid-icon.js';
+export { FlagIcon } from './components/flag-icon.js';
 export { FormatColorIcon } from './components/format-color-icon.js';
 export { FullscreenExitIcon } from './components/fullscreen-exit-icon.js';
 export { FullscreenIcon } from './components/fullscreen-icon.js';
