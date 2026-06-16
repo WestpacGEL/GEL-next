@@ -236,7 +236,6 @@ export const AsyncDynamicCollections = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [items, setItems] = useState<{ id: string; name: string }[]>([]);
 
-  // eslint-disable-next-line @typescript-eslint/unbound-method
   const { contains } = useFilter({ sensitivity: 'base' });
 
   const children = (item: { id: string; name: string }) => <AutocompleteItem>{item.name}</AutocompleteItem>;
