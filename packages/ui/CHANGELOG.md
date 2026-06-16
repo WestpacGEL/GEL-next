@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 1.5.0
+
+### Minor Changes
+
+- da43fc5: Add errorTitle prop to ErrorMessage and Field component. Additionally, new flag icon
+- c275be2: Add controlled mode support to `SelectorButtonGroup`. Passing an `onChange` callback opts the component into controlled mode, where the `value` prop drives selection. Pass an empty string to `value` to clear the selection. Uncontrolled behaviour (internal `useState`) is preserved when `onChange` is omitted.
+
 ## 1.4.0
 
 ### Minor Changes
