@@ -35,6 +35,10 @@ export type InputGroupProps = {
    */
   errorMessage?: string | string[];
   /**
+   * Error title
+   */
+  errorTitle?: string;
+  /**
    * Visually hide label
    */
   hideLabel?: boolean;
