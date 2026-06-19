@@ -55,6 +55,17 @@ describe('InputGroup', () => {
       );
       expect(screen.getByText('test-error-message')).toBeInTheDocument();
     });
+
+    test('then the error title and error list should be displayed when errorTitle is provided', () => {
+      render(
+        <InputGroup errorMessage={['error one', 'error two']} errorTitle="Your password must:">
+          <Input />
+        </InputGroup>,
+      );
+      expect(screen.getByText('Your password must:')).toBeInTheDocument();
+      expect(screen.getByText('error one')).toBeInTheDocument();
+      expect(screen.getByText('error two')).toBeInTheDocument();
+    });
   });
 
   describe('when the supportingText prop is defined', () => {
