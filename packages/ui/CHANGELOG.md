@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.6.0
+
+### Minor Changes
+
+- 5619187: Add errorTitle change to InputGroup component
+
 ## 1.5.0
 
 ### Minor Changes

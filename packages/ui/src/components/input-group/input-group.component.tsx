@@ -26,6 +26,7 @@ export function InputGroup({
   size = 'medium',
   hint,
   errorMessage,
+  errorTitle,
   supportingText,
   instanceId,
   after,
@@ -135,7 +136,7 @@ export function InputGroup({
         </Label>
       )}
       {hint && <Hint id={`${id}-hint`}>{hint}</Hint>}
-      {errorMessage && <ErrorMessage id={`${id}-error`} message={errorMessage} />}
+      {errorMessage && <ErrorMessage id={`${id}-error`} errorTitle={errorTitle} message={errorMessage} />}
       <div className={styles.input()}>
         {before && (
           <InputGroupAddOn position="before" size={resolvedSize} inset={beforeInset} icon={beforeIcon} id={id}>
