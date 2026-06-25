@@ -8,7 +8,7 @@
     "NEXT_PUBLIC_ANALYTICS_APP_MEASUREMENT",
     "NEXT_PUBLIC_ANALYTICS_SCRIPT_SRC"
   ],
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"],
