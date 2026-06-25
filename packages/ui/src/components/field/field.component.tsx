@@ -17,12 +17,14 @@ export function Field({
   errorMessage,
   labelElementType,
   labelSize,
+  id,
   ...props
 }: FieldProps) {
   const { labelProps, fieldProps, descriptionProps, errorMessageProps } = useField({
     ...props,
     description: hintMessage,
     errorMessage,
+    id,
     label,
     labelElementType,
   });

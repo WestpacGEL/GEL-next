@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.7.0
+
+### Minor Changes
+
+- b174067: remove id from field prop spread
+
 ## 1.6.0
 
 ### Minor Changes
