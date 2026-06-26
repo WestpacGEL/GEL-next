@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 1.8.0
+
+### Minor Changes
+
+- 987c581: add passport icons
+- eeb1ec4: Add oneTimeCode prop to enable autocomplete for passcode
+
 ## 1.7.0
 
 ### Minor Changes
