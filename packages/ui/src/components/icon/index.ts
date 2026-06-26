@@ -166,6 +166,7 @@ export { PadlockIcon } from './components/padlock-icon.js';
 export { PadlockOpenIcon } from './components/padlock-open-icon.js';
 export { PadlockTickIcon } from './components/padlock-tick-icon.js';
 export { PasskeyIcon } from './components/passkey-icon.js';
+export { PassportIcon } from './components/passport-icon.js';
 export { PauseCircleIcon } from './components/pause-circle-icon.js';
 export { PauseIcon } from './components/pause-icon.js';
 export { PawIcon } from './components/paw-icon.js';

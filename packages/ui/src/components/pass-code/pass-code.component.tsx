@@ -19,7 +19,18 @@ import { PassCodeProps, PassCodeRef } from './pass-code.types.js';
 
 export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
   (
-    { length, value, onChange, onComplete, onPasteComplete, className, type = 'alphanumeric', onBlur, ...props },
+    {
+      length,
+      value,
+      onChange,
+      onComplete,
+      onPasteComplete,
+      className,
+      type = 'alphanumeric',
+      onBlur,
+      oneTimeCode,
+      ...props
+    },
     ref,
   ) => {
     const [internalPasscode, setInternalPasscode] = useState<string[]>(Array.from({ length }).map(() => ''));
@@ -153,6 +164,7 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
             className={styles.input({})}
             aria-label={`Passcode digit ${index + 1}`}
             inputMode={type === 'numbers' ? 'numeric' : 'text'}
+            autoComplete={oneTimeCode ? 'one-time-code' : undefined}
           />
         ))}
       </div>
