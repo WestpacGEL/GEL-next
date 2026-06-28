@@ -29,6 +29,7 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
       type = 'alphanumeric',
       onBlur,
       oneTimeCode,
+      id,
       ...props
     },
     ref,
@@ -165,6 +166,7 @@ export const PassCode = forwardRef<PassCodeRef, PassCodeProps>(
             aria-label={`Passcode digit ${index + 1}`}
             inputMode={type === 'numbers' ? 'numeric' : 'text'}
             autoComplete={oneTimeCode ? 'one-time-code' : undefined}
+            id={id && `${id}-${index + 1}`}
           />
         ))}
       </div>
