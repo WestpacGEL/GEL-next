@@ -43,6 +43,18 @@ import type { BrandKey } from '@westpac/ui/types';
 
 Most component props support **responsive values** — you can pass a single value OR an object keyed by breakpoint:
 
+**Incorrect (invalid breakpoint keys and array syntax)**
+
+```tsx
+// Invalid breakpoint keys — use initial, xsl, sm, md, lg, xl
+<Button size={{ mobile: 'small', desktop: 'large' }} />
+
+// Responsive values are keyed objects, not arrays
+<Button size={['small', 'large']} />
+```
+
+**Correct**
+
 ```tsx
 // Single value
 <Button size="large" />
@@ -69,6 +81,15 @@ Props that support responsive values are typed as `ResponsiveVariants<T>`.
 ### Polymorphic `tag` Prop
 
 Many components accept a `tag` prop to change the rendered HTML element:
+
+**Incorrect (using `as` instead of `tag`, and an invalid element name)**
+
+```tsx
+<Button as="a" href="/page">Link styled as button</Button>
+<Badge tag="badge">Tag</Badge>
+```
+
+**Correct**
 
 ```tsx
 <Button tag="a" href="/page">Link styled as button</Button>
@@ -132,6 +153,23 @@ When a user asks "can component X do Y?", follow this process:
 ### `useBreakpoint()`
 
 Returns the current active breakpoint (`'initial' | 'xsl' | 'sm' | 'md' | 'lg' | 'xl'`). Uses `zustand` internally with `matchMedia` listeners.
+
+**Incorrect (conditional hook call and an invalid breakpoint value)**
+
+```tsx
+import { useBreakpoint } from '@westpac/ui/hook';
+
+function MyComponent({ enabled }: { enabled: boolean }) {
+  // Don't call hooks conditionally — breaks the Rules of Hooks
+  if (enabled) {
+    const breakpoint = useBreakpoint();
+  }
+  // 'mobile' isn't valid — values are initial | xsl | sm | md | lg | xl
+  const isMobile = useBreakpoint() === 'mobile';
+}
+```
+
+**Correct**
 
 ```tsx
 import { useBreakpoint } from '@westpac/ui/hook';
