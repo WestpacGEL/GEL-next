@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.9.0
+
+### Minor Changes
+
+- 8cf1528: add id to passcode inputs
+
 ## 1.8.0
 
 ### Minor Changes
