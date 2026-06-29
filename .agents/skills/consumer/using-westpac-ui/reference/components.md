@@ -129,6 +129,17 @@ Expandable content panels. Multiple panels can be open simultaneously.
 
 **Compound:** Requires `AccordionItem` children with `id`, `title`, and `key` props.
 
+**Incorrect (missing required `id`/`key` on items)**
+
+```tsx
+<Accordion look="soft" rounded>
+  <AccordionItem title="Section 1">Content 1</AccordionItem>
+  <AccordionItem title="Section 2">Content 2</AccordionItem>
+</Accordion>
+```
+
+**Correct**
+
 ```tsx
 <Accordion look="soft" rounded>
   <AccordionItem key="1" id="1" title="Section 1">
@@ -163,6 +174,16 @@ Contextual feedback messages.
 | `open`        | `boolean`                                                                      | —       | Controlled open state               |
 | `tag`         | `keyof JSX.IntrinsicElements`                                                  | `div`   | HTML element                        |
 
+**Incorrect (wrong prop names — `variant`/`title`/`closable`)**
+
+```tsx
+<Alert variant="success" title="Done!" closable onDismiss={() => {}}>
+  Your changes have been saved.
+</Alert>
+```
+
+**Correct**
+
 ```tsx
 <Alert look="success" heading="Done!" dismissible onClose={() => {}}>
   Your changes have been saved.
@@ -193,6 +214,17 @@ Searchable dropdown with filtering.
 | `name`             | `string`                                                         | —       | Form field name      |
 | `portalContainer`  | `Element`                                                        | —       | Portal container     |
 
+**Incorrect (native `<option>` children instead of `AutocompleteItem`)**
+
+```tsx
+<Autocomplete label="Search" onSelectionChange={key => console.log(key)}>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+</Autocomplete>
+```
+
+**Correct**
+
 ```tsx
 <Autocomplete label="Search" onSelectionChange={key => console.log(key)}>
   <AutocompleteItem key="1">Option 1</AutocompleteItem>
@@ -216,6 +248,16 @@ Small status labels.
 | `type`  | `ResponsiveVariants<'default' \| 'pill'>`                                                                         | `default` | Badge shape      |
 | `soft`  | `ResponsiveVariants<boolean>`                                                                                     | `false`   | Soft/muted style |
 | `tag`   | `keyof JSX.IntrinsicElements`                                                                                     | `div`     | HTML element     |
+
+**Incorrect (invalid `color`/`type` values)**
+
+```tsx
+<Badge color="green" type="rounded">
+  Active
+</Badge>
+```
+
+**Correct**
 
 ```tsx
 <Badge color="success" type="pill">
@@ -242,6 +284,19 @@ Mobile-friendly bottom drawer.
 | `secondaryLabel`   | `string`              | —       | Secondary button text                 |
 | `secondaryOnClick` | `() => void`          | —       | Secondary button handler              |
 
+**Incorrect (boolean `useState` instead of `OverlayTriggerState`)**
+
+```tsx
+const [open, setOpen] = useState(false);
+
+<Button onClick={() => setOpen(true)}>Open</Button>
+<BottomSheet open={open} title="Title" primaryLabel="Confirm" primaryOnClick={() => setOpen(false)}>
+  Content
+</BottomSheet>
+```
+
+**Correct**
+
 ```tsx
 import { useOverlayTriggerState } from 'react-stately';
 
@@ -262,6 +317,18 @@ const state = useOverlayTriggerState({});
 **Import:** `import { Breadcrumb, BreadcrumbItem } from '@westpac/ui/breadcrumb';`
 
 Navigation breadcrumbs.
+
+**Incorrect (raw anchors instead of `BreadcrumbItem`)**
+
+```tsx
+<Breadcrumb>
+  <a href="/">Home</a>
+  <a href="/products">Products</a>
+  <span>Current Page</span>
+</Breadcrumb>
+```
+
+**Correct**
 
 ```tsx
 <Breadcrumb>
@@ -296,6 +363,19 @@ Interactive button with multiple variants.
 | `tag`               | `'a' \| 'span' \| 'button' \| 'div'`                                         | `button` | HTML element                |
 | `removeLinkPadding` | `boolean`                                                                    | `false`  | Remove padding on link look |
 
+**Incorrect (wrong prop names and wrapping in an anchor)**
+
+```tsx
+import { ArrowRightIcon } from '@westpac/ui/icon';
+
+<Button variant="primary" buttonSize="large">Click me</Button>
+<Button look="hero" soft icon="arrow-right">Next</Button>
+<a href="/page"><Button look="link">Go to page</Button></a>
+<Button block="true">Full width</Button>
+```
+
+**Correct**
+
 ```tsx
 import { ArrowRightIcon } from '@westpac/ui/icon';
 
@@ -326,6 +406,17 @@ Toggle button group with single or multiple selection.
 | `defaultSelectedKeys` | `Key \| Iterable<Key>`                    | —       | Default selection    |
 | `onSelectionChange`   | `(key) => void`                           | —       | Selection handler    |
 
+**Incorrect (native buttons and `value`/`onChange` props)**
+
+```tsx
+<ButtonGroup value="opt1" onChange={key => {}}>
+  <button id="opt1">Option 1</button>
+  <button id="opt2">Option 2</button>
+</ButtonGroup>
+```
+
+**Correct**
+
 ```tsx
 <ButtonGroup selectionMode="single" defaultSelectedKeys="opt1" onSelectionChange={key => {}}>
   <ButtonGroupButton id="opt1">Option 1</ButtonGroupButton>
@@ -352,6 +443,21 @@ Group of checkboxes.
 | `showAmount`   | `number`                                         | —       | Show N items then reveal button |
 | `checkboxes`   | `CheckboxGroupCheckboxProps[]`                   | —       | Data-driven alternative         |
 
+**Incorrect (native checkbox inputs instead of `CheckboxGroupCheckbox`)**
+
+```tsx
+<CheckboxGroup label="Options" orientation="vertical">
+  <label>
+    <input type="checkbox" value="a" /> Option A
+  </label>
+  <label>
+    <input type="checkbox" value="b" /> Option B
+  </label>
+</CheckboxGroup>
+```
+
+**Correct**
+
 ```tsx
 <CheckboxGroup label="Options" orientation="vertical">
   <CheckboxGroupCheckbox value="a">Option A</CheckboxGroupCheckbox>
@@ -373,6 +479,18 @@ Circular container element.
 | ----- | ----------------------------- | ------- | ------------ |
 | `tag` | `keyof JSX.IntrinsicElements` | —       | HTML element |
 
+**Incorrect (invalid `tag` value)**
+
+```tsx
+<Circle tag="circle">42</Circle>
+```
+
+**Correct**
+
+```tsx
+<Circle tag="span">42</Circle>
+```
+
 ---
 
 ## Collapsible
@@ -387,6 +505,14 @@ Toggle-able content section.
 | `open`    | `boolean`             | —       | Open state         |
 | `onClick` | `() => void`          | —       | Toggle handler     |
 | `size`    | `ButtonProps['size']` | —       | Button size        |
+
+**Incorrect (wrong prop name `label` and no toggle handler)**
+
+```tsx
+<Collapsible label="Show more">Hidden content</Collapsible>
+```
+
+**Correct**
 
 ```tsx
 const [open, setOpen] = useState(false);
@@ -410,6 +536,30 @@ Compact list with add functionality.
 | `onAdd`   | `() => unknown` | —       | Add callback    |
 | `addText` | `string`        | —       | Add button text |
 
+**Incorrect (uses `Compacta.Item` dot-notation instead of the `CompactaItem` component)**
+
+```tsx
+<Compacta onAdd={handleAdd}>
+  <Compacta.Item title={{ primary: 'Home loan' }}>
+    <Field label="Amount">
+      <Input />
+    </Field>
+  </Compacta.Item>
+</Compacta>
+```
+
+**Correct**
+
+```tsx
+<Compacta onAdd={handleAdd} addText="Add item">
+  <CompactaItem title={{ primary: 'Home loan' }}>
+    <Field label="Amount">
+      <Input />
+    </Field>
+  </CompactaItem>
+</Compacta>
+```
+
 **Capabilities:** Compound component with CompactaItem · Add button
 
 ---
@@ -430,6 +580,15 @@ Date selection with calendar popup.
 | `disableWeekends`   | `boolean`                                                      | —             | Disable weekends       |
 | `disableDaysOfWeek` | `number[]`                                                     | —             | Disable specific days  |
 | `portalContainer`   | `Element`                                                      | —             | Portal container       |
+
+**Incorrect (raw JS `Date`/string instead of a parsed value)**
+
+```tsx
+<DatePicker label="Date" defaultValue={new Date('2024-01-15')} />
+<DatePicker label="Date" defaultValue="2024-01-15" />
+```
+
+**Correct**
 
 ```tsx
 import { parseDate } from '@internationalized/date';
@@ -462,6 +621,18 @@ Button with dropdown panel.
 | `dropDownIcon`    | `(props: IconProps) => ReactNode`                        | —       | Custom dropdown icon  |
 | `portalContainer` | `Element`                                                | —       | Portal container      |
 
+**Incorrect (wrong prop name `label` and raw heading element)**
+
+```tsx
+<Dropdown label="Options" look="primary">
+  <h3>Section</h3>
+  <a href="/option1">Option 1</a>
+  <a href="/option2">Option 2</a>
+</Dropdown>
+```
+
+**Correct**
+
 ```tsx
 <Dropdown text="Options" look="primary">
   <DropdownHeading>Section</DropdownHeading>
@@ -486,6 +657,18 @@ Form field error display.
 | `icon`    | `(...args) => JSX.Element`    | —       | Custom icon      |
 | `tag`     | `keyof JSX.IntrinsicElements` | —       | HTML element     |
 
+**Incorrect (wrong prop name `error` instead of `message`)**
+
+```tsx
+<ErrorMessage error="Enter your first name" />
+```
+
+**Correct**
+
+```tsx
+<ErrorMessage message="Enter your first name" />
+```
+
 ---
 
 ## Field
@@ -502,6 +685,16 @@ Form field wrapper with label, hint, and error message.
 | `labelSize`    | `LabelProps['size']`          | —       | Label size     |
 | `tag`          | `keyof JSX.IntrinsicElements` | —       | HTML element   |
 
+**Incorrect (wrong prop name `error` instead of `errorMessage`)**
+
+```tsx
+<Field label="Email" error="Email is required">
+  <Input invalid />
+</Field>
+```
+
+**Correct**
+
 ```tsx
 <Field label="Email" errorMessage="Email is required">
   <Input invalid />
@@ -517,6 +710,18 @@ Form field wrapper with label, hint, and error message.
 **Import:** `import { Filter, FilterButtons, FilterInput } from '@westpac/ui/filter';`
 
 Filter bar with inputs and action buttons.
+
+**Incorrect (missing `FilterInput`/`FilterButtons` wrappers)**
+
+```tsx
+<Filter>
+  <Input placeholder="Search..." />
+  <Button>Apply</Button>
+  <Button look="faint">Clear</Button>
+</Filter>
+```
+
+**Correct**
 
 ```tsx
 <Filter>
@@ -554,6 +759,23 @@ Flexible content cell for lists and cards.
 | `dualAction` | `boolean`                            | `false`   | Dual action mode      |
 | `disabled`   | `boolean`                            | —         | Disabled state        |
 
+**Incorrect (uses `href` without setting `tag="a"`)**
+
+```tsx
+<FlexiCell href="/accounts" withArrow>
+  <FlexiCellLabel>Accounts</FlexiCellLabel>
+</FlexiCell>
+```
+
+**Correct**
+
+```tsx
+<FlexiCell tag="a" href="/accounts" withArrow>
+  <FlexiCellLabel tag="h3">Accounts</FlexiCellLabel>
+  <FlexiCellHint>View your account balances</FlexiCellHint>
+</FlexiCell>
+```
+
 **Capabilities:** Rich compound component · Polymorphic tag · Link or button mode · Dual action · Responsive size/border · Before/after adornments · Top badge
 
 ---
@@ -572,6 +794,22 @@ Application footer with brand logo.
 | `logoAssistiveText` | `string`                           | —       | Logo aria-label           |
 | `offsetSidebar`     | `boolean`                          | —       | Offset for sidebar layout |
 
+**Incorrect (invalid `brand` value)**
+
+```tsx
+<Footer brand="westpac">
+  <p>© 2026 Westpac Banking Corporation</p>
+</Footer>
+```
+
+**Correct**
+
+```tsx
+<Footer brand="wbc" logoAssistiveText="Westpac">
+  <p>© 2026 Westpac Banking Corporation</p>
+</Footer>
+```
+
 ---
 
 ## Grid
@@ -579,6 +817,15 @@ Application footer with brand logo.
 **Import:** `import { Grid, GridContainer, GridItem } from '@westpac/ui/grid';`
 
 Layout grid system.
+
+**Incorrect (`GridItem` without `Grid`/`GridContainer` wrappers)**
+
+```tsx
+<GridItem span={6}>Half width</GridItem>
+<GridItem span={6}>Half width</GridItem>
+```
+
+**Correct**
 
 ```tsx
 <GridContainer>
@@ -611,6 +858,18 @@ Application header with brand logo and navigation controls.
 | `isScrolled`      | `boolean`                                 | —       | Show scroll shadow   |
 | `skipToContentId` | `string`                                  | —       | Skip link target     |
 
+**Incorrect (invalid `leftIcon` value)**
+
+```tsx
+<Header brand="wbc" leftIcon="back" />
+```
+
+**Correct**
+
+```tsx
+<Header brand="wbc" leftIcon="arrow" leftAssistiveText="Back" leftOnClick={() => {}} />
+```
+
 **Capabilities:** Responsive fixed/logoCenter/leftIcon · Brand-aware logo · Skip link support · Scroll shadow
 
 ---
@@ -627,6 +886,15 @@ Semantic heading with GEL typography.
 | `tag`          | `'h1'-'h6'`                   | auto    | Semantic element (auto from size) |
 | `brandHeading` | `ResponsiveVariants<boolean>` | —       | Brand heading style               |
 | `uppercase`    | `boolean`                     | —       | Uppercase                         |
+
+**Incorrect (missing required `size` prop, wrong `level` prop)**
+
+```tsx
+<Heading level={1}>Page Title</Heading>
+<Heading tag="h1">Responsive Heading</Heading>
+```
+
+**Correct**
 
 ```tsx
 <Heading size={3} tag="h1">Page Title</Heading>
@@ -648,6 +916,18 @@ Form field hint text.
 | `spacing` | `ResponsiveVariants<...>`     | —       | Spacing      |
 | `tag`     | `keyof JSX.IntrinsicElements` | —       | HTML element |
 
+**Incorrect (unsupported `spacing` value)**
+
+```tsx
+<Hint spacing="small">We'll never share your details.</Hint>
+```
+
+**Correct**
+
+```tsx
+<Hint spacing="large">We'll never share your details.</Hint>
+```
+
 ---
 
 ## Icon
@@ -664,6 +944,16 @@ Over 260 SVG icons.
 | `size`          | `ResponsiveVariants<'xsmall' \| 'small' \| 'medium' \| 'large' \| 'xlarge'>` | —        | Icon size     |
 | `color`         | `ResponsiveVariants<...>`                                                    | —        | Icon color    |
 | `copyrightYear` | `string`                                                                     | —        | SVG copyright |
+
+**Incorrect (importing from the main barrel instead of `/icon`)**
+
+```tsx
+import { ArrowRightIcon } from '@westpac/ui';
+
+<ArrowRightIcon size="medium" look="outlined" color="primary" />;
+```
+
+**Correct**
 
 ```tsx
 import { ArrowRightIcon } from '@westpac/ui/icon';
@@ -686,6 +976,15 @@ Text input field.
 | `size`    | `ResponsiveVariants<'small' \| 'medium' \| 'large' \| 'xlarge'>` | `medium` | Input size    |
 | `width`   | `ResponsiveVariants<'full' \| ...>`                              | `full`   | Input width   |
 | `invalid` | `boolean`                                                        | `false`  | Invalid state |
+
+**Incorrect (invalid `size` value, wrong `error` prop)**
+
+```tsx
+<Input size="big" placeholder="Enter text" />
+<Input error aria-invalid />
+```
+
+**Correct**
 
 ```tsx
 <Input size="large" placeholder="Enter text" />
@@ -713,6 +1012,16 @@ Input with label, hint, error, and before/after add-ons.
 | `hint`           | `ReactNode`                                  | —       | Hint text       |
 | `supportingText` | `ReactNode`                                  | —       | Supporting text |
 
+**Incorrect (wrong prop names `prefix`/`suffix`)**
+
+```tsx
+<InputGroup label="Amount" prefix="$" suffix=".00">
+  <Input />
+</InputGroup>
+```
+
+**Correct**
+
 ```tsx
 <InputGroup label="Amount" before={{ element: '$' }} after={{ element: '.00' }}>
   <Input />
@@ -737,6 +1046,20 @@ Form field label.
 | `tag`     | `'label' \| 'legend'`     | —       | HTML element        |
 | `htmlFor` | `string`                  | —       | Associated input id |
 
+**Incorrect (unsupported `as` prop instead of `tag`)**
+
+```tsx
+<Label as="legend">Account details</Label>
+```
+
+**Correct**
+
+```tsx
+<Label tag="legend" size="medium">
+  Account details
+</Label>
+```
+
 ---
 
 ## Link
@@ -752,6 +1075,16 @@ Styled anchor link.
 | `iconBefore` | `(props: IconProps) => JSX.Element` | —            | Icon before             |
 | `iconAfter`  | `(props: IconProps) => JSX.Element` | —            | Icon after              |
 | `iconSize`   | `'xsmall'-'xlarge'`                 | `small`      | Icon size               |
+
+**Incorrect (wrong prop name `variant` instead of `type`)**
+
+```tsx
+<Link href="/page" variant="standalone" iconAfter={ArrowRightIcon}>
+  Learn more
+</Link>
+```
+
+**Correct**
 
 ```tsx
 <Link href="/page" type="standalone" iconAfter={ArrowRightIcon}>
@@ -776,6 +1109,17 @@ Styled lists with various bullet types.
 | `icon`    | `(props: IconProps) => JSX.Element`                                            | —       | Custom icon   |
 | `spacing` | `'medium' \| 'large'`                                                          | —       | Spacing       |
 | `nested`  | `number`                                                                       | —       | Nesting level |
+
+**Incorrect (raw `<li>` instead of `ListItem`)**
+
+```tsx
+<List type="tick" look="success">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</List>
+```
+
+**Correct**
 
 ```tsx
 <List type="tick" look="success">
@@ -802,6 +1146,20 @@ Dialog overlay.
 | `open` (on backdrop)    | via ModalBackdropProps    | —       | Open state      |
 | `onClose` (on backdrop) | via ModalBackdropProps    | —       | Close handler   |
 
+**Incorrect (wrong `isOpen` prop and missing `ModalBody`/`ModalFooter`)**
+
+```tsx
+const [open, setOpen] = useState(false);
+
+<Button onClick={() => setOpen(true)}>Open</Button>
+<Modal isOpen={open} title="Modal Title" size="medium">
+  <div>Content</div>
+  <Button onClick={() => setOpen(false)}>Close</Button>
+</Modal>
+```
+
+**Correct**
+
 ```tsx
 const [open, setOpen] = useState(false);
 
@@ -824,6 +1182,32 @@ const [open, setOpen] = useState(false);
 
 Multiple selection dropdown.
 
+**Incorrect (native `option` children instead of the `items` prop with a render function)**
+
+```tsx
+<MultiSelect placeholder="Select option">
+  <option value="1">Aerospace</option>
+  <option value="2">Mechanical</option>
+</MultiSelect>
+```
+
+**Correct**
+
+```tsx
+const options = [
+  { key: 1, textValue: 'Aerospace' },
+  { key: 2, textValue: 'Mechanical' },
+];
+
+<MultiSelect items={options} selectedKeys={selectedKeys} onSelectionChange={setSelectedKeys}>
+  {option => (
+    <MultiSelectItem key={option.key} textValue={option.textValue}>
+      {option.textValue}
+    </MultiSelectItem>
+  )}
+</MultiSelect>;
+```
+
 **Capabilities:** Multiple item selection · Built on internal selection state
 
 ---
@@ -833,6 +1217,18 @@ Multiple selection dropdown.
 **Import:** `import { Pagination } from '@westpac/ui/pagination';`
 
 Page navigation controls.
+
+**Incorrect (unsupported `pages` prop)**
+
+```tsx
+<Pagination current={1} pages={10} onChange={setPage} />
+```
+
+**Correct**
+
+```tsx
+<Pagination current={1} totalPages={10} onChange={setPage} />
+```
 
 **Capabilities:** Page number display · Previous/next navigation · Custom hook available via `@westpac/ui/hook`
 
@@ -844,6 +1240,23 @@ Page navigation controls.
 
 Content panel with optional header.
 
+**Incorrect (invalid `look` value)**
+
+```tsx
+<Panel heading="Payment details" look="primary">
+  <PanelBody>Review your payment details.</PanelBody>
+</Panel>
+```
+
+**Correct**
+
+```tsx
+<Panel heading="Payment details" headingTag="h2" look="faint">
+  <PanelBody>Review your payment details.</PanelBody>
+  <PanelFooter>Last updated today</PanelFooter>
+</Panel>
+```
+
 **Capabilities:** Panel wrapper for content sections
 
 ---
@@ -854,6 +1267,30 @@ Content panel with optional header.
 **Import:** `import { PassCodeView } from '@westpac/ui/pass-code-view';`
 
 PIN/passcode entry components.
+
+**Incorrect (unsupported prop names and passcode `type`)**
+
+```tsx
+<>
+  <PassCode digits={6} type="numeric" onComplete={handleComplete} />
+  <PassCodeView codeLength={6} onSubmit={handleComplete} />
+</>
+```
+
+**Correct**
+
+```tsx
+<>
+  <PassCode length={6} type="numbers" oneTimeCode onComplete={handleComplete} />
+  <PassCodeView
+    header="Enter SMS code"
+    description="Sent to mobile ending 1234"
+    passCodeLength={6}
+    onComplete={handleComplete}
+    onResend={handleResend}
+  />
+</>
+```
 
 **Capabilities:** Secure code entry · Visual passcode display
 
@@ -867,6 +1304,22 @@ PIN/passcode entry components.
 
 Illustrative pictograms (larger than icons).
 
+**Incorrect (no generic `Pictogram` component — use the named export)**
+
+```tsx
+import { Pictogram } from '@westpac/ui/pictogram';
+
+<Pictogram name="padlock-locked" mode="colour" />;
+```
+
+**Correct**
+
+```tsx
+import { PadlockLockedPictogram } from '@westpac/ui/pictogram';
+
+<PadlockLockedPictogram mode="duo" aria-label="Secure" />;
+```
+
 ---
 
 ## Popover
@@ -874,6 +1327,22 @@ Illustrative pictograms (larger than icons).
 **Import:** `import { Popover } from '@westpac/ui/popover';`
 
 Floating content panel triggered by interaction.
+
+**Incorrect (invalid `placement` value)**
+
+```tsx
+<Popover heading="Help" content="This explains the field." placement="right">
+  More info
+</Popover>
+```
+
+**Correct**
+
+```tsx
+<Popover heading="Help" content="This explains the field." placement="bottom">
+  More info
+</Popover>
+```
 
 **Capabilities:** Positioned relative to trigger · Portal support
 
@@ -885,6 +1354,18 @@ Floating content panel triggered by interaction.
 
 Visual progress indicator bar.
 
+**Incorrect (wrong value prop name `percent`)**
+
+```tsx
+<ProgressBar percent={50} look="default" />
+```
+
+**Correct**
+
+```tsx
+<ProgressBar value={50} look="default" />
+```
+
 **Capabilities:** Value-based progress display
 
 ---
@@ -895,6 +1376,20 @@ Visual progress indicator bar.
 
 Step-based progress indicator.
 
+**Incorrect (wrong prop name `text` instead of `label`)**
+
+```tsx
+<ProgressIndicator size="large" text="Signing in..." />
+```
+
+**Correct**
+
+```tsx
+import { PadlockTickIcon } from '@westpac/ui/icon';
+
+<ProgressIndicator size="large" icon={PadlockTickIcon} label="Signing in..." />;
+```
+
 ---
 
 ## ProgressRope
@@ -903,6 +1398,21 @@ Step-based progress indicator.
 
 Vertical progress indicator with connected steps.
 
+**Incorrect (children instead of the `data` prop)**
+
+```tsx
+<ProgressRope current={1}>
+  <div>Step 1</div>
+  <div>Step 2</div>
+</ProgressRope>
+```
+
+**Correct**
+
+```tsx
+<ProgressRope current={1} data={[{ text: 'Step 1' }, { text: 'Step 2' }, { text: 'Review and submit' }]} />
+```
+
 ---
 
 ## RadioGroup
@@ -910,6 +1420,27 @@ Vertical progress indicator with connected steps.
 **Import:** `import { RadioGroup } from '@westpac/ui/radio-group';`
 
 Group of radio buttons.
+
+**Incorrect (`RadioGroupRadio` children instead of the `radios` prop)**
+
+```tsx
+<RadioGroup label="Choose an option">
+  <RadioGroupRadio value="one" label="Option 1" />
+  <RadioGroupRadio value="two" label="Option 2" />
+</RadioGroup>
+```
+
+**Correct**
+
+```tsx
+<RadioGroup
+  label="Choose an option"
+  radios={[
+    { value: 'one', label: 'Option 1' },
+    { value: 'two', label: 'Option 2' },
+  ]}
+/>
+```
 
 **Capabilities:** Responsive size/orientation · Error/hint messages · Built on react-aria · Similar API to CheckboxGroup
 
@@ -920,6 +1451,30 @@ Group of radio buttons.
 **Import:** `import { Repeater } from '@westpac/ui/repeater';`
 
 Repeatable form sections with add/remove.
+
+**Incorrect (plain `div` instead of `RepeaterItem`)**
+
+```tsx
+<Repeater onAdd={handleAdd}>
+  <div>
+    <Field label="Primary">
+      <Input name="item-0" />
+    </Field>
+  </div>
+</Repeater>
+```
+
+**Correct**
+
+```tsx
+<Repeater onAdd={handleAdd} addText="Add another">
+  <RepeaterItem onRemove={handleRemove}>
+    <Field label="Primary">
+      <Input name="item-0" />
+    </Field>
+  </RepeaterItem>
+</Repeater>
+```
 
 ---
 
@@ -935,6 +1490,17 @@ Native `<select>` dropdown.
 | `width`         | `ResponsiveVariants<...>` | `auto`   | Select width                 |
 | `invalid`       | `boolean`                 | `false`  | Invalid state                |
 | `enableTooltip` | `boolean`                 | `false`  | Title tooltip for truncation |
+
+**Incorrect (invalid `size` value)**
+
+```tsx
+<Select size="big">
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+</Select>
+```
+
+**Correct**
 
 ```tsx
 <Select size="large">
@@ -953,6 +1519,26 @@ Native `<select>` dropdown.
 
 Visual selection component (card-style radio/checkbox).
 
+**Incorrect (native inputs instead of Selector options)**
+
+```tsx
+<Selector type="checkbox">
+  <label>
+    <input type="checkbox" value="email" /> Email alerts
+  </label>
+</Selector>
+```
+
+**Correct**
+
+```tsx
+<Selector type="checkbox">
+  <SelectorCheckbox value="email">
+    <SelectorLabel>Email alerts</SelectorLabel>
+  </SelectorCheckbox>
+</Selector>
+```
+
 ---
 
 ## SkipLink
@@ -961,6 +1547,18 @@ Visual selection component (card-style radio/checkbox).
 
 Accessibility skip navigation link.
 
+**Incorrect (wrong `target` prop)**
+
+```tsx
+<SkipLink target="#main-content">Skip to main content</SkipLink>
+```
+
+**Correct**
+
+```tsx
+<SkipLink href="#main-content">Skip to main content</SkipLink>
+```
+
 ---
 
 ## Switch
@@ -968,6 +1566,18 @@ Accessibility skip navigation link.
 **Import:** `import { Switch } from '@westpac/ui/switch';`
 
 Toggle switch control.
+
+**Incorrect (children instead of the required `label` prop)**
+
+```tsx
+<Switch checked>eStatements</Switch>
+```
+
+**Correct**
+
+```tsx
+<Switch label="eStatements" checked />
+```
 
 ---
 
@@ -979,6 +1589,22 @@ Toggle switch control.
 
 Brand symbols and logos.
 
+**Incorrect (no generic `Symbol` component — use the named export)**
+
+```tsx
+import { Symbol } from '@westpac/ui/symbol';
+
+<Symbol name="WBCLogo" />;
+```
+
+**Correct**
+
+```tsx
+import { WBCLogo } from '@westpac/ui/symbol';
+
+<WBCLogo />;
+```
+
 ---
 
 ## Table
@@ -986,6 +1612,35 @@ Brand symbols and logos.
 **Import:** `import { Table } from '@westpac/ui/table';`
 
 Data table component.
+
+**Incorrect (native table elements instead of Table sub-components)**
+
+```tsx
+<Table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+</Table>
+```
+
+**Correct**
+
+```tsx
+<Table>
+  <TableHeader>
+    <TableHeaderRow>
+      <TableHeaderCell>Name</TableHeaderCell>
+    </TableHeaderRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Games</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
 
 ---
 
@@ -1003,6 +1658,17 @@ Tabbed content panels.
 | `justify`      | `boolean`                                        | —       | Full width tabs |
 | `sticky`       | `ResponsiveVariants<boolean>`                    | —       | Sticky position |
 | `stickyOffset` | `{ top?, bottom?, left?, right? }`               | —       | Sticky offset   |
+
+**Incorrect (wrong prop name `label` and missing `key`)**
+
+```tsx
+<Tabs>
+  <TabsPanel label="Tab 1">Content 1</TabsPanel>
+  <TabsPanel label="Tab 2">Content 2</TabsPanel>
+</Tabs>
+```
+
+**Correct**
 
 ```tsx
 <Tabs>
@@ -1025,6 +1691,18 @@ Tabbed content panels.
 
 Multi-line text input.
 
+**Incorrect (invalid `size` value)**
+
+```tsx
+<Textarea size="xl" placeholder="Tell us more" />
+```
+
+**Correct**
+
+```tsx
+<Textarea size="xlarge" placeholder="Tell us more" />
+```
+
 **Capabilities:** Similar API to Input · Responsive size/width · Invalid state
 
 ---
@@ -1034,6 +1712,14 @@ Multi-line text input.
 **Import:** `import { VisuallyHidden } from '@westpac/ui/visually-hidden';`
 
 Hides content visually but keeps it accessible to screen readers.
+
+**Incorrect (`display: none` hides content from screen readers too)**
+
+```tsx
+<span style={{ display: 'none' }}>Screen reader only text</span>
+```
+
+**Correct**
 
 ```tsx
 <VisuallyHidden>Screen reader only text</VisuallyHidden>
@@ -1046,5 +1732,20 @@ Hides content visually but keeps it accessible to screen readers.
 **Import:** `import { Well } from '@westpac/ui/well';`
 
 Inset content container.
+
+**Incorrect (invalid `color` value)**
+
+```tsx
+<Well color="grey">Look, I'm in a well</Well>
+```
+
+**Correct**
+
+```tsx
+<Well color="light" tag="aside">
+  Look, I'm in a well
+  <Well color="white">I am nested inside</Well>
+</Well>
+```
 
 **Capabilities:** Content grouping with visual inset
