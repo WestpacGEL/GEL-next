@@ -120,6 +120,9 @@ const preview: Preview = {
       current: 'light',
       stylePreview: true,
     },
+    docs: {
+      codePanel: true,
+    },
   },
   decorators: [withThemeProvider],
 };
