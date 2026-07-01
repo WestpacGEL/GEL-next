@@ -2,7 +2,7 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    base: 'relative mb-5 typography-body-10 flex',
+    base: 'relative mb-5 flex typography-body-10',
     icon: 'float-left flex-none',
     body: 'relative flex-1 xsl:top-[0.125rem] [&_:focus-visible]:focus-outline [&_a]:underline',
     heading: 'mb-1 typography-body-9 font-bold',
