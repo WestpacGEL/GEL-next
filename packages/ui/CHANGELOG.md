@@ -1,5 +1,11 @@
 # @westpac/ui
 
+## 1.10.0
+
+### Minor Changes
+
+- 6866a0c: Select component edited so when caret icon clicked the dropdown does open
+
 ## 1.9.1
 
 ### Patch Changes
