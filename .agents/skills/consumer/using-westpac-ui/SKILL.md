@@ -117,6 +117,57 @@ Icons support `look` (`'filled'` | `'outlined'`), `size`, and `color` props. Ove
 
 Components use `react-aria` for accessible focus management. Focus rings are shown only during keyboard navigation (not on click). This is handled automatically — no configuration needed.
 
+### Design Tokens
+
+Design tokens are the named design decisions (colours, typography, spacing, border radii) that come from `@westpac/style-config`. They are the single source of truth for the look and feel of every brand. In consuming applications you use them as **Tailwind utility classes** that are backed by CSS variables — you never reference raw values.
+
+Tokens are exposed as semantic, purpose-named classes. Common groups:
+
+| Group      | Example classes                                                              | Use for                         |
+| ---------- | ---------------------------------------------------------------------------- | ------------------------------- |
+| Surface    | `bg-surface-primary`, `bg-surface-muted`, `bg-surface-hero-faint`            | Component / element backgrounds |
+| Background | `bg-background-white`, `bg-background-pale`, `bg-background-hero`            | Page and section backgrounds    |
+| Text       | `text-text-body`, `text-text-heading`, `text-text-muted`, `text-text-danger` | Text colour                     |
+| Border     | `border-border-muted`, `border-border-focus`, `border-border-primary`        | Border colour                   |
+| Typography | `typography-body-8`, `typography-brand-4`                                    | Font size / line-height sets    |
+| Radius     | `rounded-md`, `rounded-lg`, `rounded-full`                                   | Border radius                   |
+
+Because tokens are semantic and brand-aware, the **same class name automatically resolves to the correct value** for whichever brand is active (`data-brand="wbc" | "stg" | "bom" | "bsa"`). This is exactly why hardcoded values must never be used — they break brand theming.
+
+> **Never invent your own tokens or hardcode values.** Only use existing style decisions exposed by `@westpac/style-config`. Do not use hex codes, RGB values, arbitrary Tailwind values (e.g. `bg-[#da1710]`), custom CSS variables, or your own utility classes for colour, typography, spacing, or radius. If a token you need doesn't appear to exist, do not create a workaround — this is likely a design decision.
+
+**Incorrect (hardcoded hex, arbitrary values, and invented tokens)**
+
+```tsx
+// Hardcoded hex — breaks brand theming and dark mode
+<div className="bg-[#da1710] text-[#ffffff]">...</div>
+
+// Arbitrary radius / spacing values instead of tokens
+<Card className="rounded-[7px]" />
+
+// Inline styles bypassing the token system
+<div style={{ backgroundColor: '#1f1c4f', color: 'white' }}>...</div>
+
+// Invented / custom token name that doesn't exist in the design system
+<p className="text-brand-red-500">...</p>
+```
+
+**Correct (semantic tokens only)**
+
+```tsx
+// Semantic surface + text tokens — resolve per active brand
+<div className="bg-surface-primary text-text-mono">...</div>
+
+// Token-backed radius
+<Card className="rounded-md" />
+
+// Semantic hero background with body text
+<section className="bg-surface-hero-faint text-text-body">...</section>
+
+// Status colours via reserved semantic tokens
+<p className="text-text-danger">Something went wrong</p>
+```
+
 ### Styling and Customization
 
 Some components support `className` for custom styles, but prefer using built-in props for consistent design. Colours shouldn't use arbitrary values and should always use the design system tokens. Styling should not be overwritten using element selectors or global CSS.
