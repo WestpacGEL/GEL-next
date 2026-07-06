@@ -12,7 +12,7 @@ import { type IconProps } from "../icon.types.js";
 export function ${name}Icon({
   ${sameSVG ? '' : 'look = "filled",'}
   "aria-label": ariaLabel = '${ariaLabel}',
-  copyrightYear = "2025",
+  copyrightYear = "2026",
   ...props
 }: IconProps) {
   return (

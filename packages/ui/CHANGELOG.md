@@ -1,5 +1,61 @@
 # @westpac/ui
 
+## 1.10.0
+
+### Minor Changes
+
+- 6866a0c: Select component edited so when caret icon clicked the dropdown does open
+
+## 1.9.1
+
+### Patch Changes
+
+- fe5dc2c: Fix Alert text wrapping below the `xsl` breakpoint
+
+  The Alert `base` slot only applied `flex` at the `xsl` breakpoint and above, so
+  on smaller viewports the icon and body were not laid out as flex items and the
+  text wrapped incorrectly. The `flex` layout is now applied at all breakpoints.
+
+  No consumer action is required. The fix is applied automatically on upgrade.
+
+## 1.9.0
+
+### Minor Changes
+
+- 8cf1528: add id to passcode inputs
+
+## 1.8.0
+
+### Minor Changes
+
+- 987c581: add passport icons
+- eeb1ec4: Add oneTimeCode prop to enable autocomplete for passcode
+
+## 1.7.0
+
+### Minor Changes
+
+- b174067: remove id from field prop spread
+
+## 1.6.0
+
+### Minor Changes
+
+- 5619187: Add errorTitle change to InputGroup component
+
+## 1.5.0
+
+### Minor Changes
+
+- da43fc5: Add errorTitle prop to ErrorMessage and Field component. Additionally, new flag icon
+- c275be2: Add controlled mode support to `SelectorButtonGroup`. Passing an `onChange` callback opts the component into controlled mode, where the `value` prop drives selection. Pass an empty string to `value` to clear the selection. Uncontrolled behaviour (internal `useState`) is preserved when `onChange` is omitted.
+
+## 1.4.0
+
+### Minor Changes
+
+- 8d68001: added bed, bath and passkey icons
+
 ## 1.3.2
 
 ### Patch Changes

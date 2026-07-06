@@ -1,5 +1,56 @@
 # site
 
+## 0.3.57
+
+### Patch Changes
+
+- Updated dependencies [6866a0c]
+  - @westpac/ui@1.10.0
+
+## 0.3.56
+
+### Patch Changes
+
+- Updated dependencies [8cf1528]
+  - @westpac/ui@1.9.0
+
+## 0.3.55
+
+### Patch Changes
+
+- Updated dependencies [987c581]
+- Updated dependencies [eeb1ec4]
+  - @westpac/ui@1.8.0
+
+## 0.3.54
+
+### Patch Changes
+
+- Updated dependencies [b174067]
+  - @westpac/ui@1.7.0
+
+## 0.3.53
+
+### Patch Changes
+
+- Updated dependencies [5619187]
+  - @westpac/ui@1.6.0
+
+## 0.3.52
+
+### Patch Changes
+
+- Updated dependencies [da43fc5]
+- Updated dependencies [c275be2]
+  - @westpac/ui@1.5.0
+
+## 0.3.51
+
+### Patch Changes
+
+- Updated dependencies [8d68001]
+  - @westpac/ui@1.4.0
+
 ## 0.3.50
 
 ### Patch Changes
