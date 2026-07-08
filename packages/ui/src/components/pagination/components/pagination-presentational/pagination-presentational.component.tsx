@@ -31,9 +31,30 @@ export function PaginationPresentational({
         </li>
         {pagesToRender.map((page, index) => {
           if (page === null) {
+            const previousPage = pagesToRender[index - 1];
+            const nextPage = pagesToRender[index + 1];
+            const from = previousPage ? previousPage.page + 1 : undefined;
+            const to = nextPage ? nextPage.page - 1 : undefined;
+
+            const label = (() => {
+              // Unknown case
+              if (from === undefined || to === undefined) {
+                return 'Some pages are hidden. Use the Previous and Next links to navigate';
+              }
+
+              // Single page hidden
+              if (from === to) {
+                return `Page ${from} is hidden. Use the Previous and Next links to navigate`;
+              }
+
+              // Page range
+              return `Pages ${from} to ${to} are hidden. Use the Previous and Next links to navigate`;
+            })();
+
             return (
               <li className={styles.emptyItem()} key={`index-${index}`}>
-                …
+                <span aria-hidden="true">…</span>
+                <span className="sr-only">{`… ${label}`}</span>
               </li>
             );
           }

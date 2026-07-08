@@ -15,26 +15,29 @@ type Story = StoryObj<unknown>;
 export const Default: Story = {
   render: () => (
     <>
-      <p className="typography-body-9 font-bold">
-        Showing the pagination component is disabled by default to give consumers more control over when to show it.
+      <p className="typography-body-9">
+        The pagination component is disabled by default. To enable pagination, pass the <code>showPagination</code> prop
+        into the <code>AdvancedTable</code> component.
       </p>
 
-      <AdvancedTable data={defaultDataSB} columns={columnsSB} />
+      <AdvancedTable data={defaultDataSB} columns={columnsSB} showPagination />
     </>
   ),
 };
 
-export const WithPagination: Story = {
-  render: () => <AdvancedTable data={defaultDataSB} columns={columnsSB} showPagination />,
-};
-
-export const WithPaginationAndCustomPageSizeOptions: Story = {
+export const CustomPageSizeOptions: Story = {
   render: () => (
-    <AdvancedTable data={defaultDataSB} columns={columnsSB} showPagination pageSizeOptions={[5, 10, 20, 50, 100]} />
+    <AdvancedTable
+      data={defaultDataSB}
+      columns={columnsSB}
+      showPagination
+      pageSizeOptions={[1, 15, 50, 100]}
+      paginationProps={{ pageSize: 15 }}
+    />
   ),
 };
 
-export const WithPaginationAndCustomInitialProps: Story = {
+export const InitialPaginationProps: Story = {
   render: () => (
     <AdvancedTable
       data={defaultDataSB}
