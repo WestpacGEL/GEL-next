@@ -1,14 +1,17 @@
 'use client';
 
-import React from 'react';
+import React, { forwardRef, Ref } from 'react';
 
 import { useBreakpoint } from '../../hook/breakpoints.hook.js';
 import { resolveResponsiveVariant } from '../../utils/breakpoint.util.js';
 
 import { styles } from './heading.styles.js';
-import { type HeadingProps } from './heading.types.js';
+import { HeadingRef, type HeadingProps } from './heading.types.js';
 
-export function Heading({ className, tag, brandHeading, size, children, uppercase, ...props }: HeadingProps) {
+function BaseHeading(
+  { className, tag, brandHeading, size, children, uppercase, ...props }: HeadingProps,
+  ref: Ref<HeadingRef>,
+) {
   const sizeToTag = {
     1: 'h1',
     2: 'h2',
@@ -32,9 +35,12 @@ export function Heading({ className, tag, brandHeading, size, children, uppercas
         size: resolveResponsiveVariant(size, breakpoint),
         uppercase,
       })}
+      ref={ref}
       {...props}
     >
       {children}
     </Tag>
   );
 }
+
+export const Heading = forwardRef(BaseHeading);
