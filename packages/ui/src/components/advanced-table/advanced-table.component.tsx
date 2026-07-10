@@ -21,7 +21,7 @@ import {
   getFilteredRowModel,
   RowPinningState,
 } from '@tanstack/react-table';
-import { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { CSSProperties, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 
 import { AdvancedTableContext } from './advanced-table.context.js';
 import { styles as advancedTableStyles } from './advanced-table.styles.js';
@@ -53,6 +53,7 @@ const resolveFillWidth = (
 export function AdvancedTable<T>({
   data,
   columns,
+  id,
   enableColumnReordering = false,
   enableColumnFilter = false,
   enableColumnPinning = false,
@@ -84,15 +85,23 @@ export function AdvancedTable<T>({
   isLoadingMore = false,
   loadMoreThreshold = 0,
 }: AdvancedTableProps<T>) {
+  const generatedId = useId();
+  const tableId = id ?? generatedId;
+
   const [localData, setLocalData] = useState<T[]>(data);
-  const [rowPinning, setRowPinning] = useState<RowPinningState>({ top: initialPinnedRows ?? [], bottom: [] });
+  const [rowPinning, setRowPinning] = useState<RowPinningState>({
+    top: (initialPinnedRows ?? []).map(rowId => `${tableId}-${rowId}`),
+    bottom: [],
+  });
   const [pagination, setPagination] = useState({
     pageIndex: paginationProps?.pageIndex ?? 0,
     pageSize: paginationProps?.pageSize ?? 10,
   });
   const reservedColumns = useMemo(
     () =>
-      [enableRowSelection && SELECT_COLUMN_ID, enableRowPinning && PIN_COLUMN_ID].filter((id): id is string => !!id),
+      [enableRowSelection && SELECT_COLUMN_ID, enableRowPinning && PIN_COLUMN_ID].filter(
+        (columnId): columnId is string => !!columnId,
+      ),
     [enableRowSelection, enableRowPinning],
   );
 
@@ -102,8 +111,8 @@ export function AdvancedTable<T>({
     (updater: string[] | ((prev: string[]) => string[])) => {
       setColumnOrder(prev => {
         const newOrder = typeof updater === 'function' ? updater(prev) : updater;
-        const reserved = newOrder.filter(id => reservedColumns.includes(id));
-        const rest = newOrder.filter(id => !reservedColumns.includes(id));
+        const reserved = newOrder.filter(columnId => reservedColumns.includes(columnId));
+        const rest = newOrder.filter(columnId => !reservedColumns.includes(columnId));
         return [...reserved, ...rest];
       });
     },
@@ -150,6 +159,7 @@ export function AdvancedTable<T>({
       rowPinning,
       pagination,
     },
+    getRowId: (_row, index, parent) => (parent ? `${parent.id}.${index}` : `${tableId}-${index}`),
     onColumnOrderChange: handleColumnOrderChange,
     onRowPinningChange: setRowPinning,
     enableRowPinning,
@@ -255,7 +265,12 @@ export function AdvancedTable<T>({
             width: containerWidth,
           }}
         >
-          <table className={styles.table()} ref={outerTableRef} style={{ ...columnSizeVars, width: tableWidth }}>
+          <table
+            className={styles.table()}
+            id={tableId}
+            ref={outerTableRef}
+            style={{ ...columnSizeVars, width: tableWidth }}
+          >
             <AdvancedTableHead
               table={table}
               scrollableColumns={scrollableColumns}

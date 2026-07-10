@@ -314,6 +314,41 @@ describe('AdvancedTable', () => {
       expect(screen.getByText('Parent')).toBeInTheDocument();
       expect(screen.getAllByRole('checkbox', { hidden: true }).length).toBeGreaterThan(0);
     });
+
+    it('labels the toggle button with its action and the row value, and toggles aria-expanded', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={expandableColumns} data={expandableData} />);
+
+      const expandButton = screen.getByRole('button', { name: 'Expand Parent' });
+      expect(expandButton).toHaveAttribute('aria-expanded', 'false');
+      expect(expandButton).toHaveAttribute('aria-controls');
+      expect(expandButton.getAttribute('aria-controls')).toBeTruthy();
+
+      await user.click(expandButton);
+
+      const collapseButton = screen.getByRole('button', { name: 'Collapse Parent' });
+      expect(collapseButton).toHaveAttribute('aria-expanded', 'true');
+    });
+
+    it('points aria-controls at the detail-panel row it reveals', async () => {
+      const user = userEvent.setup();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          renderDetailPanel={row => <div>Detail for {row.original.name}</div>}
+        />,
+      );
+
+      const expandButton = screen.getByRole('button', { name: 'Expand John' });
+      const controls = expandButton.getAttribute('aria-controls');
+      expect(controls).toBeTruthy();
+
+      await user.click(expandButton);
+
+      expect(screen.getByText('Detail for John')).toBeInTheDocument();
+      expect(document.getElementById(controls as string)).toBeInTheDocument();
+    });
   });
 
   describe('scrollable modes', () => {

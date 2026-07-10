@@ -25,8 +25,8 @@ export function AdvancedTablePagination<T>({ table, pageSizeOptions }: AdvancedT
         siblingCount={0}
         boundaryCount={1}
       />
-      {/* Pagination has an announcement on change, range will be announced after the page number */}
-      <p role="status">
+      {/* TODO: Pagination range should have an announcement on change but it is currently noisy */}
+      <p>
         {rangeFrom} – {rangeTo} of {table.getRowCount()}
       </p>
       <div className={styles.pageSize()}>

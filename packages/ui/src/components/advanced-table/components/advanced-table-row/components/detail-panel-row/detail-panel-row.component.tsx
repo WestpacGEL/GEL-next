@@ -15,7 +15,7 @@ export function DetailPanelRow<T>({ row, extraCellPadding, bordered }: DetailPan
   const styles = detailPanelRowStyles({ extraCellPadding, bordered });
 
   return (
-    <tr>
+    <tr id={`detail-panel-${row.id}`}>
       <td colSpan={row.getVisibleCells().length} className={styles.td()}>
         {content}
       </td>

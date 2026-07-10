@@ -63,6 +63,10 @@ export type AdvancedTableProps<T> = {
    */
   columns: AdvancedColumnProps<T>[];
   /**
+   * Optional identifier for the table. ID is also prepended to every row's id.
+   */
+  id?: string;
+  /**
    * Enables column reordering via drag and drop.
    */
   enableColumnReordering?: boolean;
