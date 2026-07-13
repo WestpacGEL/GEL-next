@@ -238,6 +238,7 @@ export function AdvancedTable<T>({
   return (
     <AdvancedTableContext.Provider
       value={{
+        tableId,
         tableRef: outerTableRef,
         scrollableRows,
         scrollableColumns,

@@ -23,8 +23,23 @@ export function AdvancedTableHeadCell<T>({ header, scrollableColumns }: Advanced
 
   const styles = advancedTableHeadCellStyles();
 
+  const ariaSort = (() => {
+    if (!header.column.getCanSort()) return undefined;
+
+    switch (header.column.getIsSorted()) {
+      case 'asc':
+        return 'ascending';
+      case 'desc':
+        return 'descending';
+      default:
+        return undefined;
+    }
+  })();
+
   return (
     <th
+      aria-sort={ariaSort}
+      scope="col"
       style={{
         width: `calc(var(--header-${header.id}-size) * 1px)`,
         ...dndStyles,

@@ -321,13 +321,14 @@ describe('AdvancedTable', () => {
 
       const expandButton = screen.getByRole('button', { name: 'Expand Parent' });
       expect(expandButton).toHaveAttribute('aria-expanded', 'false');
-      expect(expandButton).toHaveAttribute('aria-controls');
-      expect(expandButton.getAttribute('aria-controls')).toBeTruthy();
+      // Collapsed state should not referenced rows, not mounted yet
+      expect(expandButton).not.toHaveAttribute('aria-controls');
 
       await user.click(expandButton);
 
       const collapseButton = screen.getByRole('button', { name: 'Collapse Parent' });
       expect(collapseButton).toHaveAttribute('aria-expanded', 'true');
+      expect(collapseButton.getAttribute('aria-controls')).toBeTruthy();
     });
 
     it('points aria-controls at the detail-panel row it reveals', async () => {
@@ -341,12 +342,15 @@ describe('AdvancedTable', () => {
       );
 
       const expandButton = screen.getByRole('button', { name: 'Expand John' });
-      const controls = expandButton.getAttribute('aria-controls');
-      expect(controls).toBeTruthy();
+      // Collapsed state should not referenced rows, not mounted yet
+      expect(expandButton).not.toHaveAttribute('aria-controls');
 
       await user.click(expandButton);
 
       expect(screen.getByText('Detail for John')).toBeInTheDocument();
+      const collapseButton = screen.getByRole('button', { name: 'Collapse John' });
+      const controls = collapseButton.getAttribute('aria-controls');
+      expect(controls).toBeTruthy();
       expect(document.getElementById(controls as string)).toBeInTheDocument();
     });
   });

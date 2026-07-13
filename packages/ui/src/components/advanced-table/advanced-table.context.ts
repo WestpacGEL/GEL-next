@@ -2,6 +2,7 @@ import { Row } from '@tanstack/react-table';
 import { createContext, ReactNode, RefObject } from 'react';
 
 export const AdvancedTableContext = createContext<{
+  tableId?: string;
   tableRef?: RefObject<HTMLDivElement>;
   enableColumnReordering?: boolean;
   enableRowPinning?: boolean;
