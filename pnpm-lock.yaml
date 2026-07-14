@@ -235,7 +235,7 @@ importers:
         version: 4.1.8(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react-stately:
         specifier: ~3.42.0
-        version: 3.42.0(react@19.2.4)
+        version: 3.42.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       usehooks-ts:
         specifier: ~3.1.1
         version: 3.1.1(react@19.2.4)
@@ -428,6 +428,9 @@ importers:
       '@react-spectrum/utils':
         specifier: ~3.11.5
         version: 3.11.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/utils':
+        specifier: ~3.12.1
+        version: 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-table':
         specifier: ~8.21.3
         version: 8.21.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -448,7 +451,7 @@ importers:
         version: 3.44.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-stately:
         specifier: ~3.42.0
-        version: 3.42.0(react@18.3.1)
+        version: 3.42.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tailwind-merge:
         specifier: ~3.4.0
         version: 3.4.1
@@ -1371,8 +1374,14 @@ packages:
   '@internationalized/number@3.6.5':
     resolution: {integrity: sha512-6hY4Kl4HPBvtfS62asS/R22JzNNy8vi/Ssev7x6EobfCp+9QIB2hKvI2EtbdJ0VSQacxVNtqhE/NmF/NZ0gm6g==}
 
+  '@internationalized/number@3.6.7':
+    resolution: {integrity: sha512-3ji1fcrT+FPAK86UqEhB/psHixYo6niWPJtt7+qRaYFynt/BaJG8GhAPimtWUpEiVSTq8ZM8L5psMxGquiB/Vg==}
+
   '@internationalized/string@3.2.7':
     resolution: {integrity: sha512-D4OHBjrinH+PFZPvfCXvG28n2LSykWcJ7GIioQL+ok0LON15SdfoUssoHzzOUmVZLbRoREsQXVzA6r8JKsbP6A==}
+
+  '@internationalized/string@3.2.9':
+    resolution: {integrity: sha512-kzP/M/mbQxODlmOt4bIQZ2SBVUWUSqMLXooXixnX7noche8WHaQcA+nwFN1K2KCF/cp+LDUhcJsCicwkvhD1pg==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -1614,7 +1623,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   '@napi-rs/wasm-runtime@0.2.12':
-    resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==, tarball: https://artifactory.srv.westpac.com.au/artifactory/api/npm/a015c0-dbp-npm-dependencies/@napi-rs/wasm-runtime/-/wasm-runtime-0.2.12.tgz}
+    resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
   '@neoconfetti/react@1.0.0':
     resolution: {integrity: sha512-klcSooChXXOzIm+SE5IISIAn3bYzYfPjbX7D7HoqZL84oAfgREeSg5vSIaSFH+DaGzzvImTyWe1OyrJ67vik4A==}
@@ -2167,6 +2176,12 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
+  '@react-stately/utils@3.12.1':
+    resolution: {integrity: sha512-NqKfzrknpfwiewx7R2vk1P+CneClInPDsIhw15+jOcUYSEfej0nta4cJywuKQJ2gsPwqX/ojDNixedCve9FWGw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+
   '@react-stately/virtualizer@4.4.6':
     resolution: {integrity: sha512-9SfXgLFB61/8SXNLfg5ARx9jAK4m03Aw6/Cg8mdZN24SYarL4TKNRpfw8K/HHVU/bi6WHSJypk6Z/z19o/ztrg==}
     peerDependencies:
@@ -2305,6 +2320,11 @@ packages:
 
   '@react-types/shared@3.33.1':
     resolution: {integrity: sha512-oJHtjvLG43VjwemQDadlR5g/8VepK56B/xKO2XORPHt9zlW6IZs3tZrYlvH29BMvoqC7RtE7E5UjgbnbFtDGag==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+
+  '@react-types/shared@3.36.0':
+    resolution: {integrity: sha512-DkP/H0C2YjjS7gZWKNqOmU8a16qHPjQNdzMwmTq9SzplM6Iw0kVMTZ0OIoe6FOgGqa+FwMsE2QbPjh/n3g/jXQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
@@ -2955,7 +2975,7 @@ packages:
     os: [win32]
 
   '@tybys/wasm-util@0.10.1':
-    resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==, tarball: https://artifactory.srv.westpac.com.au/artifactory/api/npm/a015c0-dbp-npm-dependencies/@tybys/wasm-util/-/wasm-util-0.10.1.tgz}
+    resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
 
   '@types/adm-zip@0.5.8':
     resolution: {integrity: sha512-RVVH7QvZYbN+ihqZ4kX/dMiowf6o+Jk1fNwiSdx0NahBJLU787zkULhGhJM8mf/obmLGmgdMM0bXsQTmyfbR7Q==}
@@ -6179,6 +6199,11 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
+  react-stately@3.48.0:
+    resolution: {integrity: sha512-ImicSAG+lTotAe5izcs1fz49Zk48w7pDusqYg04WaPhCoej8BJ24soMu3iLXIrsi273s4P1gZrYGrqReMfgEEA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
@@ -6379,7 +6404,7 @@ packages:
     engines: {node: '>= 0.4'}
 
   sharp@0.34.5:
-    resolution: {integrity: sha512-Ou9I5Ft9WNcCbXrU9cMgPBcCK8LiwLqcbywW3t4oDV37n1pzpuNLsYiAV8eODnjbtQlSDwZ2cUEeQz4E54Hltg==, tarball: https://artifactory.srv.westpac.com.au/artifactory/api/npm/a015c0-dbp-npm-dependencies/sharp/-/sharp-0.34.5.tgz}
+    resolution: {integrity: sha512-Ou9I5Ft9WNcCbXrU9cMgPBcCK8LiwLqcbywW3t4oDV37n1pzpuNLsYiAV8eODnjbtQlSDwZ2cUEeQz4E54Hltg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
 
   shebang-command@2.0.0:
@@ -8031,7 +8056,15 @@ snapshots:
     dependencies:
       '@swc/helpers': 0.5.21
 
+  '@internationalized/number@3.6.7':
+    dependencies:
+      '@swc/helpers': 0.5.21
+
   '@internationalized/string@3.2.7':
+    dependencies:
+      '@swc/helpers': 0.5.21
+
+  '@internationalized/string@3.2.9':
     dependencies:
       '@swc/helpers': 0.5.21
 
@@ -8281,29 +8314,29 @@ snapshots:
       '@react-aria/utils': 3.29.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/virtualizer': 4.1.13(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/visually-hidden': 3.8.31(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/calendar': 3.9.3(react@19.2.4)
-      '@react-stately/checkbox': 3.7.5(react@19.2.4)
+      '@react-stately/calendar': 3.9.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/checkbox': 3.7.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/combobox': 3.13.0(react@19.2.4)
+      '@react-stately/combobox': 3.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/data': 3.15.2(react@19.2.4)
-      '@react-stately/datepicker': 3.16.1(react@19.2.4)
-      '@react-stately/dnd': 3.7.4(react@19.2.4)
+      '@react-stately/datepicker': 3.16.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/dnd': 3.7.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/form': 3.2.4(react@19.2.4)
       '@react-stately/layout': 4.6.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/list': 3.13.4(react@19.2.4)
-      '@react-stately/menu': 3.9.11(react@19.2.4)
-      '@react-stately/numberfield': 3.11.0(react@19.2.4)
-      '@react-stately/overlays': 3.6.23(react@19.2.4)
-      '@react-stately/radio': 3.11.5(react@19.2.4)
-      '@react-stately/searchfield': 3.5.19(react@19.2.4)
-      '@react-stately/select': 3.9.2(react@19.2.4)
-      '@react-stately/selection': 3.20.9(react@19.2.4)
-      '@react-stately/table': 3.15.4(react@19.2.4)
-      '@react-stately/tabs': 3.8.9(react@19.2.4)
+      '@react-stately/list': 3.13.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/menu': 3.9.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/numberfield': 3.11.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/overlays': 3.6.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/radio': 3.11.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/searchfield': 3.5.19(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/select': 3.9.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/selection': 3.20.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/table': 3.15.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/tabs': 3.8.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/toast': 3.1.0(react@19.2.4)
-      '@react-stately/toggle': 3.9.5(react@19.2.4)
-      '@react-stately/tooltip': 3.5.11(react@19.2.4)
-      '@react-stately/tree': 3.9.6(react@19.2.4)
+      '@react-stately/toggle': 3.9.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/tooltip': 3.5.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/tree': 3.9.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/utils': 3.11.0(react@19.2.4)
       '@react-stately/virtualizer': 4.4.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/actionbar': 3.1.21(react@19.2.4)
@@ -8351,8 +8384,8 @@ snapshots:
       '@react-aria/utils': 3.29.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/visually-hidden': 3.8.31(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/list': 3.13.4(react@19.2.4)
-      '@react-stately/overlays': 3.6.23(react@19.2.4)
+      '@react-stately/list': 3.13.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/overlays': 3.6.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/utils': 3.11.0(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@sindresorhus/slugify': 1.1.2
@@ -8538,7 +8571,7 @@ snapshots:
       '@react-aria/button': 3.14.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/selection': 3.27.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.29.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/tree': 3.9.6(react@18.3.1)
+      '@react-stately/tree': 3.9.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/accordion': 3.0.0-alpha.26(react@18.3.1)
       '@react-types/shared': 3.30.0(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -8551,7 +8584,7 @@ snapshots:
       '@react-aria/i18n': 3.12.16(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/interactions': 3.27.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/list': 3.13.4(react@19.2.4)
+      '@react-stately/list': 3.13.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/actiongroup': 3.4.23(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -8585,7 +8618,7 @@ snapshots:
       '@react-aria/interactions': 3.27.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/toolbar': 3.0.0-beta.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/toggle': 3.9.5(react@18.3.1)
+      '@react-stately/toggle': 3.9.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -8597,7 +8630,7 @@ snapshots:
       '@react-aria/interactions': 3.27.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/toolbar': 3.0.0-beta.24(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/toggle': 3.9.5(react@19.2.4)
+      '@react-stately/toggle': 3.9.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -8611,7 +8644,7 @@ snapshots:
       '@react-aria/interactions': 3.27.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/live-announcer': 3.4.4
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/calendar': 3.9.3(react@18.3.1)
+      '@react-stately/calendar': 3.9.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/calendar': 3.8.3(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
@@ -8626,7 +8659,7 @@ snapshots:
       '@react-aria/interactions': 3.27.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/live-announcer': 3.4.4
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/calendar': 3.9.3(react@19.2.4)
+      '@react-stately/calendar': 3.9.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/calendar': 3.8.3(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
@@ -8641,9 +8674,9 @@ snapshots:
       '@react-aria/label': 3.7.25(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/toggle': 3.12.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/checkbox': 3.7.5(react@18.3.1)
+      '@react-stately/checkbox': 3.7.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/form': 3.2.4(react@18.3.1)
-      '@react-stately/toggle': 3.9.5(react@18.3.1)
+      '@react-stately/toggle': 3.9.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/checkbox': 3.10.4(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -8657,9 +8690,9 @@ snapshots:
       '@react-aria/label': 3.7.25(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/toggle': 3.12.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/checkbox': 3.7.5(react@19.2.4)
+      '@react-stately/checkbox': 3.7.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/form': 3.2.4(react@19.2.4)
-      '@react-stately/toggle': 3.9.5(react@19.2.4)
+      '@react-stately/toggle': 3.9.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/checkbox': 3.10.4(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -8676,7 +8709,7 @@ snapshots:
       '@react-aria/textfield': 3.18.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/visually-hidden': 3.8.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/color': 3.9.5(react@18.3.1)
+      '@react-stately/color': 3.9.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/form': 3.2.4(react@18.3.1)
       '@react-types/color': 3.1.4(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
@@ -8694,7 +8727,7 @@ snapshots:
       '@react-aria/textfield': 3.18.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/visually-hidden': 3.8.31(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/color': 3.9.5(react@19.2.4)
+      '@react-stately/color': 3.9.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/form': 3.2.4(react@19.2.4)
       '@react-types/color': 3.1.4(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
@@ -8715,7 +8748,7 @@ snapshots:
       '@react-aria/textfield': 3.18.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/collections': 3.12.10(react@18.3.1)
-      '@react-stately/combobox': 3.13.0(react@18.3.1)
+      '@react-stately/combobox': 3.13.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/form': 3.2.4(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/combobox': 3.14.0(react@18.3.1)
@@ -8737,7 +8770,7 @@ snapshots:
       '@react-aria/textfield': 3.18.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/combobox': 3.13.0(react@19.2.4)
+      '@react-stately/combobox': 3.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/form': 3.2.4(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/combobox': 3.14.0(react@19.2.4)
@@ -8758,7 +8791,7 @@ snapshots:
       '@react-aria/label': 3.7.25(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/spinbutton': 3.7.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/datepicker': 3.16.1(react@18.3.1)
+      '@react-stately/datepicker': 3.16.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/form': 3.2.4(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/calendar': 3.8.3(react@18.3.1)
@@ -8781,7 +8814,7 @@ snapshots:
       '@react-aria/label': 3.7.25(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/spinbutton': 3.7.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/datepicker': 3.16.1(react@19.2.4)
+      '@react-stately/datepicker': 3.16.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/form': 3.2.4(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/calendar': 3.8.3(react@19.2.4)
@@ -8818,7 +8851,7 @@ snapshots:
     dependencies:
       '@react-aria/ssr': 3.9.10(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/disclosure': 3.0.11(react@18.3.1)
+      '@react-stately/disclosure': 3.0.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
@@ -8828,7 +8861,7 @@ snapshots:
     dependencies:
       '@react-aria/ssr': 3.9.10(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/disclosure': 3.0.11(react@19.2.4)
+      '@react-stately/disclosure': 3.0.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
@@ -8843,7 +8876,7 @@ snapshots:
       '@react-aria/overlays': 3.31.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/collections': 3.12.10(react@18.3.1)
-      '@react-stately/dnd': 3.7.4(react@18.3.1)
+      '@react-stately/dnd': 3.7.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -8859,7 +8892,7 @@ snapshots:
       '@react-aria/overlays': 3.31.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/dnd': 3.7.4(react@19.2.4)
+      '@react-stately/dnd': 3.7.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -8915,8 +8948,8 @@ snapshots:
       '@react-aria/selection': 3.27.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/collections': 3.12.10(react@18.3.1)
-      '@react-stately/grid': 3.11.9(react@18.3.1)
-      '@react-stately/selection': 3.20.9(react@18.3.1)
+      '@react-stately/grid': 3.11.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/selection': 3.20.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/checkbox': 3.10.4(react@18.3.1)
       '@react-types/grid': 3.3.8(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
@@ -8933,8 +8966,8 @@ snapshots:
       '@react-aria/selection': 3.27.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/grid': 3.11.9(react@19.2.4)
-      '@react-stately/selection': 3.20.9(react@19.2.4)
+      '@react-stately/grid': 3.11.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/selection': 3.20.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/checkbox': 3.10.4(react@19.2.4)
       '@react-types/grid': 3.3.8(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
@@ -8950,8 +8983,8 @@ snapshots:
       '@react-aria/interactions': 3.27.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/selection': 3.27.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/list': 3.13.4(react@18.3.1)
-      '@react-stately/tree': 3.9.6(react@18.3.1)
+      '@react-stately/list': 3.13.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/tree': 3.9.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
@@ -8965,8 +8998,8 @@ snapshots:
       '@react-aria/interactions': 3.27.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/selection': 3.27.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/list': 3.13.4(react@19.2.4)
-      '@react-stately/tree': 3.9.6(react@19.2.4)
+      '@react-stately/list': 3.13.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/tree': 3.9.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
@@ -9079,7 +9112,7 @@ snapshots:
       '@react-aria/selection': 3.27.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/collections': 3.12.10(react@18.3.1)
-      '@react-stately/list': 3.13.4(react@18.3.1)
+      '@react-stately/list': 3.13.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/listbox': 3.7.6(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -9093,7 +9126,7 @@ snapshots:
       '@react-aria/selection': 3.27.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/list': 3.13.4(react@19.2.4)
+      '@react-stately/list': 3.13.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/listbox': 3.7.6(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -9113,9 +9146,9 @@ snapshots:
       '@react-aria/selection': 3.27.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/collections': 3.12.10(react@18.3.1)
-      '@react-stately/menu': 3.9.11(react@18.3.1)
-      '@react-stately/selection': 3.20.9(react@18.3.1)
-      '@react-stately/tree': 3.9.6(react@18.3.1)
+      '@react-stately/menu': 3.9.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/selection': 3.20.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/tree': 3.9.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/menu': 3.10.7(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
@@ -9132,9 +9165,9 @@ snapshots:
       '@react-aria/selection': 3.27.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/menu': 3.9.11(react@19.2.4)
-      '@react-stately/selection': 3.20.9(react@19.2.4)
-      '@react-stately/tree': 3.9.6(react@19.2.4)
+      '@react-stately/menu': 3.9.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/selection': 3.20.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/tree': 3.9.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/menu': 3.10.7(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
@@ -9169,7 +9202,7 @@ snapshots:
       '@react-aria/textfield': 3.18.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/form': 3.2.4(react@18.3.1)
-      '@react-stately/numberfield': 3.11.0(react@18.3.1)
+      '@react-stately/numberfield': 3.11.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/numberfield': 3.8.18(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
@@ -9186,7 +9219,7 @@ snapshots:
       '@react-aria/textfield': 3.18.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/form': 3.2.4(react@19.2.4)
-      '@react-stately/numberfield': 3.11.0(react@19.2.4)
+      '@react-stately/numberfield': 3.11.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/numberfield': 3.8.18(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
@@ -9203,7 +9236,7 @@ snapshots:
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/visually-hidden': 3.8.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/flags': 3.1.2
-      '@react-stately/overlays': 3.6.23(react@18.3.1)
+      '@react-stately/overlays': 3.6.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/overlays': 3.9.4(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
@@ -9220,7 +9253,7 @@ snapshots:
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/visually-hidden': 3.8.31(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/flags': 3.1.2
-      '@react-stately/overlays': 3.6.23(react@19.2.4)
+      '@react-stately/overlays': 3.6.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/overlays': 3.9.4(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
@@ -9258,7 +9291,7 @@ snapshots:
       '@react-aria/interactions': 3.27.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/label': 3.7.25(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/radio': 3.11.5(react@18.3.1)
+      '@react-stately/radio': 3.11.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/radio': 3.9.4(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -9273,7 +9306,7 @@ snapshots:
       '@react-aria/interactions': 3.27.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/label': 3.7.25(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/radio': 3.11.5(react@19.2.4)
+      '@react-stately/radio': 3.11.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/radio': 3.9.4(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -9285,7 +9318,7 @@ snapshots:
       '@react-aria/i18n': 3.12.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/textfield': 3.18.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/searchfield': 3.5.19(react@18.3.1)
+      '@react-stately/searchfield': 3.5.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/searchfield': 3.6.8(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
@@ -9298,7 +9331,7 @@ snapshots:
       '@react-aria/i18n': 3.12.16(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/textfield': 3.18.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/searchfield': 3.5.19(react@19.2.4)
+      '@react-stately/searchfield': 3.5.19(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/searchfield': 3.6.8(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
@@ -9317,7 +9350,7 @@ snapshots:
       '@react-aria/selection': 3.27.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/visually-hidden': 3.8.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/select': 3.9.2(react@18.3.1)
+      '@react-stately/select': 3.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/select': 3.12.2(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
@@ -9336,7 +9369,7 @@ snapshots:
       '@react-aria/selection': 3.27.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/visually-hidden': 3.8.31(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/select': 3.9.2(react@19.2.4)
+      '@react-stately/select': 3.9.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/select': 3.12.2(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
@@ -9350,7 +9383,7 @@ snapshots:
       '@react-aria/i18n': 3.12.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/interactions': 3.27.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/selection': 3.20.9(react@18.3.1)
+      '@react-stately/selection': 3.20.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
@@ -9362,7 +9395,7 @@ snapshots:
       '@react-aria/i18n': 3.12.16(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/interactions': 3.27.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/selection': 3.20.9(react@19.2.4)
+      '@react-stately/selection': 3.20.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
@@ -9390,7 +9423,7 @@ snapshots:
       '@react-aria/interactions': 3.27.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/label': 3.7.25(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/slider': 3.7.5(react@18.3.1)
+      '@react-stately/slider': 3.7.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@react-types/slider': 3.8.4(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -9403,7 +9436,7 @@ snapshots:
       '@react-aria/interactions': 3.27.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/label': 3.7.25(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/slider': 3.7.5(react@19.2.4)
+      '@react-stately/slider': 3.7.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@react-types/slider': 3.8.4(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -9445,7 +9478,7 @@ snapshots:
   '@react-aria/switch@3.7.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-aria/toggle': 3.12.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/toggle': 3.9.5(react@18.3.1)
+      '@react-stately/toggle': 3.9.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@react-types/switch': 3.5.17(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -9455,7 +9488,7 @@ snapshots:
   '@react-aria/switch@3.7.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-aria/toggle': 3.12.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/toggle': 3.9.5(react@19.2.4)
+      '@react-stately/toggle': 3.9.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@react-types/switch': 3.5.17(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -9473,7 +9506,7 @@ snapshots:
       '@react-aria/visually-hidden': 3.8.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/collections': 3.12.10(react@18.3.1)
       '@react-stately/flags': 3.1.2
-      '@react-stately/table': 3.15.4(react@18.3.1)
+      '@react-stately/table': 3.15.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/checkbox': 3.10.4(react@18.3.1)
       '@react-types/grid': 3.3.8(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
@@ -9493,7 +9526,7 @@ snapshots:
       '@react-aria/visually-hidden': 3.8.31(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/collections': 3.12.10(react@19.2.4)
       '@react-stately/flags': 3.1.2
-      '@react-stately/table': 3.15.4(react@19.2.4)
+      '@react-stately/table': 3.15.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/checkbox': 3.10.4(react@19.2.4)
       '@react-types/grid': 3.3.8(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
@@ -9508,7 +9541,7 @@ snapshots:
       '@react-aria/i18n': 3.12.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/selection': 3.27.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/tabs': 3.8.9(react@18.3.1)
+      '@react-stately/tabs': 3.8.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@react-types/tabs': 3.3.22(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -9521,7 +9554,7 @@ snapshots:
       '@react-aria/i18n': 3.12.16(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/selection': 3.27.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/tabs': 3.8.9(react@19.2.4)
+      '@react-stately/tabs': 3.8.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@react-types/tabs': 3.3.22(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -9536,7 +9569,7 @@ snapshots:
       '@react-aria/label': 3.7.25(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/selection': 3.27.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/list': 3.13.4(react@18.3.1)
+      '@react-stately/list': 3.13.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -9551,7 +9584,7 @@ snapshots:
       '@react-aria/label': 3.7.25(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/selection': 3.27.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/list': 3.13.4(react@19.2.4)
+      '@react-stately/list': 3.13.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -9565,7 +9598,7 @@ snapshots:
       '@react-aria/label': 3.7.25(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/form': 3.2.4(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@react-types/textfield': 3.12.8(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -9579,7 +9612,7 @@ snapshots:
       '@react-aria/label': 3.7.25(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/form': 3.2.4(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@react-types/textfield': 3.12.8(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -9629,7 +9662,7 @@ snapshots:
     dependencies:
       '@react-aria/interactions': 3.27.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/toggle': 3.9.5(react@18.3.1)
+      '@react-stately/toggle': 3.9.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/checkbox': 3.10.4(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -9640,7 +9673,7 @@ snapshots:
     dependencies:
       '@react-aria/interactions': 3.27.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/toggle': 3.9.5(react@19.2.4)
+      '@react-stately/toggle': 3.9.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/checkbox': 3.10.4(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -9671,7 +9704,7 @@ snapshots:
     dependencies:
       '@react-aria/interactions': 3.27.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/tooltip': 3.5.11(react@18.3.1)
+      '@react-stately/tooltip': 3.5.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@react-types/tooltip': 3.5.2(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -9682,7 +9715,7 @@ snapshots:
     dependencies:
       '@react-aria/interactions': 3.27.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/tooltip': 3.5.11(react@19.2.4)
+      '@react-stately/tooltip': 3.5.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@react-types/tooltip': 3.5.2(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -9695,7 +9728,7 @@ snapshots:
       '@react-aria/i18n': 3.12.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/selection': 3.27.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.33.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@react-stately/tree': 3.9.6(react@18.3.1)
+      '@react-stately/tree': 3.9.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/button': 3.15.1(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
@@ -9708,7 +9741,7 @@ snapshots:
       '@react-aria/i18n': 3.12.16(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/selection': 3.27.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-aria/utils': 3.33.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@react-stately/tree': 3.9.6(react@19.2.4)
+      '@react-stately/tree': 3.9.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/button': 3.15.1(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
@@ -9719,7 +9752,7 @@ snapshots:
     dependencies:
       '@react-aria/ssr': 3.9.10(react@18.3.1)
       '@react-stately/flags': 3.1.2
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.30.0(react@18.3.1)
       '@swc/helpers': 0.5.21
       clsx: 2.1.1
@@ -9730,7 +9763,7 @@ snapshots:
     dependencies:
       '@react-aria/ssr': 3.9.10(react@19.2.4)
       '@react-stately/flags': 3.1.2
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.30.0(react@19.2.4)
       '@swc/helpers': 0.5.21
       clsx: 2.1.1
@@ -9741,7 +9774,7 @@ snapshots:
     dependencies:
       '@react-aria/ssr': 3.9.10(react@18.3.1)
       '@react-stately/flags': 3.1.2
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       clsx: 2.1.1
@@ -9752,7 +9785,7 @@ snapshots:
     dependencies:
       '@react-aria/ssr': 3.9.10(react@19.2.4)
       '@react-stately/flags': 3.1.2
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       clsx: 2.1.1
@@ -9800,41 +9833,49 @@ snapshots:
     transitivePeerDependencies:
       - react-dom
 
-  '@react-stately/calendar@3.9.3(react@18.3.1)':
+  '@react-stately/calendar@3.9.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@internationalized/date': 3.11.0
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/calendar': 3.8.3(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/calendar@3.9.3(react@19.2.4)':
+  '@react-stately/calendar@3.9.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@internationalized/date': 3.11.0
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/calendar': 3.8.3(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/checkbox@3.7.5(react@18.3.1)':
+  '@react-stately/checkbox@3.7.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-stately/form': 3.2.4(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/checkbox': 3.10.4(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/checkbox@3.7.5(react@19.2.4)':
+  '@react-stately/checkbox@3.7.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-stately/form': 3.2.4(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/checkbox': 3.10.4(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
   '@react-stately/collections@3.12.10(react@18.3.1)':
     dependencies:
@@ -9848,55 +9889,63 @@ snapshots:
       '@swc/helpers': 0.5.21
       react: 19.2.4
 
-  '@react-stately/color@3.9.5(react@18.3.1)':
+  '@react-stately/color@3.9.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@internationalized/number': 3.6.5
       '@internationalized/string': 3.2.7
       '@react-stately/form': 3.2.4(react@18.3.1)
-      '@react-stately/numberfield': 3.11.0(react@18.3.1)
-      '@react-stately/slider': 3.7.5(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/numberfield': 3.11.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/slider': 3.7.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/color': 3.1.4(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/color@3.9.5(react@19.2.4)':
+  '@react-stately/color@3.9.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@internationalized/number': 3.6.5
       '@internationalized/string': 3.2.7
       '@react-stately/form': 3.2.4(react@19.2.4)
-      '@react-stately/numberfield': 3.11.0(react@19.2.4)
-      '@react-stately/slider': 3.7.5(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/numberfield': 3.11.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/slider': 3.7.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/color': 3.1.4(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/combobox@3.13.0(react@18.3.1)':
+  '@react-stately/combobox@3.13.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@18.3.1)
       '@react-stately/form': 3.2.4(react@18.3.1)
-      '@react-stately/list': 3.13.4(react@18.3.1)
-      '@react-stately/overlays': 3.6.23(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/list': 3.13.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/overlays': 3.6.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/combobox': 3.14.0(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/combobox@3.13.0(react@19.2.4)':
+  '@react-stately/combobox@3.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@19.2.4)
       '@react-stately/form': 3.2.4(react@19.2.4)
-      '@react-stately/list': 3.13.4(react@19.2.4)
-      '@react-stately/overlays': 3.6.23(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/list': 3.13.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/overlays': 3.6.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/combobox': 3.14.0(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
   '@react-stately/data@3.15.2(react@18.3.1)':
     dependencies:
@@ -9910,59 +9959,71 @@ snapshots:
       '@swc/helpers': 0.5.21
       react: 19.2.4
 
-  '@react-stately/datepicker@3.16.1(react@18.3.1)':
+  '@react-stately/datepicker@3.16.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@internationalized/date': 3.11.0
       '@internationalized/number': 3.6.5
       '@internationalized/string': 3.2.7
       '@react-stately/form': 3.2.4(react@18.3.1)
-      '@react-stately/overlays': 3.6.23(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/overlays': 3.6.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/datepicker': 3.13.5(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/datepicker@3.16.1(react@19.2.4)':
+  '@react-stately/datepicker@3.16.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@internationalized/date': 3.11.0
       '@internationalized/number': 3.6.5
       '@internationalized/string': 3.2.7
       '@react-stately/form': 3.2.4(react@19.2.4)
-      '@react-stately/overlays': 3.6.23(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/overlays': 3.6.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/datepicker': 3.13.5(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/disclosure@3.0.11(react@18.3.1)':
+  '@react-stately/disclosure@3.0.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/disclosure@3.0.11(react@19.2.4)':
+  '@react-stately/disclosure@3.0.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/dnd@3.7.4(react@18.3.1)':
+  '@react-stately/dnd@3.7.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@react-stately/selection': 3.20.9(react@18.3.1)
+      '@react-stately/selection': 3.20.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/dnd@3.7.4(react@19.2.4)':
+  '@react-stately/dnd@3.7.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@react-stately/selection': 3.20.9(react@19.2.4)
+      '@react-stately/selection': 3.20.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
   '@react-stately/flags@3.1.2':
     dependencies:
@@ -9980,28 +10041,32 @@ snapshots:
       '@swc/helpers': 0.5.21
       react: 19.2.4
 
-  '@react-stately/grid@3.11.9(react@18.3.1)':
+  '@react-stately/grid@3.11.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@18.3.1)
-      '@react-stately/selection': 3.20.9(react@18.3.1)
+      '@react-stately/selection': 3.20.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/grid': 3.3.8(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/grid@3.11.9(react@19.2.4)':
+  '@react-stately/grid@3.11.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/selection': 3.20.9(react@19.2.4)
+      '@react-stately/selection': 3.20.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/grid': 3.3.8(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
   '@react-stately/layout@4.6.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/table': 3.15.4(react@19.2.4)
+      '@react-stately/table': 3.15.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/virtualizer': 4.4.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/grid': 3.3.8(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
@@ -10010,199 +10075,243 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
-  '@react-stately/list@3.13.4(react@18.3.1)':
+  '@react-stately/list@3.13.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@18.3.1)
-      '@react-stately/selection': 3.20.9(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/selection': 3.20.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/list@3.13.4(react@19.2.4)':
+  '@react-stately/list@3.13.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/selection': 3.20.9(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/selection': 3.20.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/menu@3.9.11(react@18.3.1)':
+  '@react-stately/menu@3.9.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@react-stately/overlays': 3.6.23(react@18.3.1)
+      '@react-stately/overlays': 3.6.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/menu': 3.10.7(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/menu@3.9.11(react@19.2.4)':
+  '@react-stately/menu@3.9.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@react-stately/overlays': 3.6.23(react@19.2.4)
+      '@react-stately/overlays': 3.6.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/menu': 3.10.7(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/numberfield@3.11.0(react@18.3.1)':
+  '@react-stately/numberfield@3.11.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@internationalized/number': 3.6.5
       '@react-stately/form': 3.2.4(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/numberfield': 3.8.18(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/numberfield@3.11.0(react@19.2.4)':
+  '@react-stately/numberfield@3.11.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@internationalized/number': 3.6.5
       '@react-stately/form': 3.2.4(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/numberfield': 3.8.18(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/overlays@3.6.23(react@18.3.1)':
+  '@react-stately/overlays@3.6.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/overlays': 3.9.4(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/overlays@3.6.23(react@19.2.4)':
+  '@react-stately/overlays@3.6.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/overlays': 3.9.4(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/radio@3.11.5(react@18.3.1)':
+  '@react-stately/radio@3.11.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-stately/form': 3.2.4(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/radio': 3.9.4(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/radio@3.11.5(react@19.2.4)':
+  '@react-stately/radio@3.11.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-stately/form': 3.2.4(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/radio': 3.9.4(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/searchfield@3.5.19(react@18.3.1)':
+  '@react-stately/searchfield@3.5.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/searchfield': 3.6.8(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/searchfield@3.5.19(react@19.2.4)':
+  '@react-stately/searchfield@3.5.19(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/searchfield': 3.6.8(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/select@3.9.2(react@18.3.1)':
+  '@react-stately/select@3.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-stately/form': 3.2.4(react@18.3.1)
-      '@react-stately/list': 3.13.4(react@18.3.1)
-      '@react-stately/overlays': 3.6.23(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/list': 3.13.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/overlays': 3.6.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/select': 3.12.2(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/select@3.9.2(react@19.2.4)':
+  '@react-stately/select@3.9.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-stately/form': 3.2.4(react@19.2.4)
-      '@react-stately/list': 3.13.4(react@19.2.4)
-      '@react-stately/overlays': 3.6.23(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/list': 3.13.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/overlays': 3.6.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/select': 3.12.2(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/selection@3.20.9(react@18.3.1)':
+  '@react-stately/selection@3.20.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/selection@3.20.9(react@19.2.4)':
+  '@react-stately/selection@3.20.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/slider@3.7.5(react@18.3.1)':
+  '@react-stately/slider@3.7.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@react-types/slider': 3.8.4(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/slider@3.7.5(react@19.2.4)':
+  '@react-stately/slider@3.7.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@react-types/slider': 3.8.4(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/table@3.15.4(react@18.3.1)':
+  '@react-stately/table@3.15.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@18.3.1)
       '@react-stately/flags': 3.1.2
-      '@react-stately/grid': 3.11.9(react@18.3.1)
-      '@react-stately/selection': 3.20.9(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/grid': 3.11.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/selection': 3.20.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/grid': 3.3.8(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@react-types/table': 3.13.6(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/table@3.15.4(react@19.2.4)':
+  '@react-stately/table@3.15.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@19.2.4)
       '@react-stately/flags': 3.1.2
-      '@react-stately/grid': 3.11.9(react@19.2.4)
-      '@react-stately/selection': 3.20.9(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/grid': 3.11.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/selection': 3.20.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/grid': 3.3.8(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@react-types/table': 3.13.6(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/tabs@3.8.9(react@18.3.1)':
+  '@react-stately/tabs@3.8.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@react-stately/list': 3.13.4(react@18.3.1)
+      '@react-stately/list': 3.13.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@react-types/tabs': 3.3.22(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/tabs@3.8.9(react@19.2.4)':
+  '@react-stately/tabs@3.8.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@react-stately/list': 3.13.4(react@19.2.4)
+      '@react-stately/list': 3.13.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@react-types/tabs': 3.3.22(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
   '@react-stately/toast@3.1.0(react@19.2.4)':
     dependencies:
@@ -10222,63 +10331,84 @@ snapshots:
       react: 19.2.4
       use-sync-external-store: 1.6.0(react@19.2.4)
 
-  '@react-stately/toggle@3.9.5(react@18.3.1)':
+  '@react-stately/toggle@3.9.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/checkbox': 3.10.4(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/toggle@3.9.5(react@19.2.4)':
+  '@react-stately/toggle@3.9.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/checkbox': 3.10.4(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/tooltip@3.5.11(react@18.3.1)':
+  '@react-stately/tooltip@3.5.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@react-stately/overlays': 3.6.23(react@18.3.1)
+      '@react-stately/overlays': 3.6.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/tooltip': 3.5.2(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/tooltip@3.5.11(react@19.2.4)':
+  '@react-stately/tooltip@3.5.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@react-stately/overlays': 3.6.23(react@19.2.4)
+      '@react-stately/overlays': 3.6.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/tooltip': 3.5.2(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/tree@3.9.6(react@18.3.1)':
+  '@react-stately/tree@3.9.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@18.3.1)
-      '@react-stately/selection': 3.20.9(react@18.3.1)
-      '@react-stately/utils': 3.11.0(react@18.3.1)
+      '@react-stately/selection': 3.20.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/utils': 3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       '@swc/helpers': 0.5.21
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  '@react-stately/tree@3.9.6(react@19.2.4)':
+  '@react-stately/tree@3.9.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/selection': 3.20.9(react@19.2.4)
-      '@react-stately/utils': 3.11.0(react@19.2.4)
+      '@react-stately/selection': 3.20.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/utils': 3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       '@swc/helpers': 0.5.21
       react: 19.2.4
-
-  '@react-stately/utils@3.11.0(react@18.3.1)':
-    dependencies:
-      '@swc/helpers': 0.5.21
-      react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
   '@react-stately/utils@3.11.0(react@19.2.4)':
     dependencies:
       '@swc/helpers': 0.5.21
       react: 19.2.4
+
+  '@react-stately/utils@3.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@swc/helpers': 0.5.21
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-stately: 3.48.0(react@18.3.1)
+
+  '@react-stately/utils@3.12.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@swc/helpers': 0.5.21
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+      react-stately: 3.48.0(react@19.2.4)
 
   '@react-stately/virtualizer@4.4.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
@@ -10548,6 +10678,14 @@ snapshots:
       react: 18.3.1
 
   '@react-types/shared@3.33.1(react@19.2.4)':
+    dependencies:
+      react: 19.2.4
+
+  '@react-types/shared@3.36.0(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+
+  '@react-types/shared@3.36.0(react@19.2.4)':
     dependencies:
       react: 19.2.4
 
@@ -12511,7 +12649,7 @@ snapshots:
       '@typescript-eslint/parser': 8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
       eslint: 9.39.4(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.10
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.4(jiti@2.6.1))
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1)))(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@9.39.4(jiti@2.6.1))
@@ -12548,7 +12686,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.4(jiti@2.6.1)):
+  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1)))(eslint@9.39.4(jiti@2.6.1)):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.3
@@ -12560,6 +12698,21 @@ snapshots:
       unrs-resolver: 1.11.1
     optionalDependencies:
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.4(jiti@2.6.1))
+    transitivePeerDependencies:
+      - supports-color
+
+  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.4(jiti@2.6.1)):
+    dependencies:
+      '@nolyfill/is-core-module': 1.0.39
+      debug: 4.4.3
+      eslint: 9.39.4(jiti@2.6.1)
+      get-tsconfig: 4.13.7
+      is-bun-module: 2.0.0
+      stable-hash: 0.0.5
+      tinyglobby: 0.2.16
+      unrs-resolver: 1.11.1
+    optionalDependencies:
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@4.4.4)(eslint@9.39.4(jiti@2.6.1))
     transitivePeerDependencies:
       - supports-color
 
@@ -15045,65 +15198,89 @@ snapshots:
       sucrase: 3.35.1
       use-editable: 2.3.3(react@19.2.4)
 
-  react-stately@3.42.0(react@18.3.1):
+  react-stately@3.42.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@react-stately/calendar': 3.9.3(react@18.3.1)
-      '@react-stately/checkbox': 3.7.5(react@18.3.1)
+      '@react-stately/calendar': 3.9.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/checkbox': 3.7.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/collections': 3.12.10(react@18.3.1)
-      '@react-stately/color': 3.9.5(react@18.3.1)
-      '@react-stately/combobox': 3.13.0(react@18.3.1)
+      '@react-stately/color': 3.9.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/combobox': 3.13.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/data': 3.15.2(react@18.3.1)
-      '@react-stately/datepicker': 3.16.1(react@18.3.1)
-      '@react-stately/disclosure': 3.0.11(react@18.3.1)
-      '@react-stately/dnd': 3.7.4(react@18.3.1)
+      '@react-stately/datepicker': 3.16.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/disclosure': 3.0.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/dnd': 3.7.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/form': 3.2.4(react@18.3.1)
-      '@react-stately/list': 3.13.4(react@18.3.1)
-      '@react-stately/menu': 3.9.11(react@18.3.1)
-      '@react-stately/numberfield': 3.11.0(react@18.3.1)
-      '@react-stately/overlays': 3.6.23(react@18.3.1)
-      '@react-stately/radio': 3.11.5(react@18.3.1)
-      '@react-stately/searchfield': 3.5.19(react@18.3.1)
-      '@react-stately/select': 3.9.2(react@18.3.1)
-      '@react-stately/selection': 3.20.9(react@18.3.1)
-      '@react-stately/slider': 3.7.5(react@18.3.1)
-      '@react-stately/table': 3.15.4(react@18.3.1)
-      '@react-stately/tabs': 3.8.9(react@18.3.1)
+      '@react-stately/list': 3.13.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/menu': 3.9.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/numberfield': 3.11.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/overlays': 3.6.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/radio': 3.11.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/searchfield': 3.5.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/select': 3.9.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/selection': 3.20.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/slider': 3.7.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/table': 3.15.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/tabs': 3.8.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-stately/toast': 3.1.3(react@18.3.1)
-      '@react-stately/toggle': 3.9.5(react@18.3.1)
-      '@react-stately/tooltip': 3.5.11(react@18.3.1)
-      '@react-stately/tree': 3.9.6(react@18.3.1)
+      '@react-stately/toggle': 3.9.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/tooltip': 3.5.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-stately/tree': 3.9.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-types/shared': 3.33.1(react@18.3.1)
       react: 18.3.1
+    transitivePeerDependencies:
+      - react-dom
 
-  react-stately@3.42.0(react@19.2.4):
+  react-stately@3.42.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
-      '@react-stately/calendar': 3.9.3(react@19.2.4)
-      '@react-stately/checkbox': 3.7.5(react@19.2.4)
+      '@react-stately/calendar': 3.9.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/checkbox': 3.7.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/collections': 3.12.10(react@19.2.4)
-      '@react-stately/color': 3.9.5(react@19.2.4)
-      '@react-stately/combobox': 3.13.0(react@19.2.4)
+      '@react-stately/color': 3.9.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/combobox': 3.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/data': 3.15.2(react@19.2.4)
-      '@react-stately/datepicker': 3.16.1(react@19.2.4)
-      '@react-stately/disclosure': 3.0.11(react@19.2.4)
-      '@react-stately/dnd': 3.7.4(react@19.2.4)
+      '@react-stately/datepicker': 3.16.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/disclosure': 3.0.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/dnd': 3.7.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/form': 3.2.4(react@19.2.4)
-      '@react-stately/list': 3.13.4(react@19.2.4)
-      '@react-stately/menu': 3.9.11(react@19.2.4)
-      '@react-stately/numberfield': 3.11.0(react@19.2.4)
-      '@react-stately/overlays': 3.6.23(react@19.2.4)
-      '@react-stately/radio': 3.11.5(react@19.2.4)
-      '@react-stately/searchfield': 3.5.19(react@19.2.4)
-      '@react-stately/select': 3.9.2(react@19.2.4)
-      '@react-stately/selection': 3.20.9(react@19.2.4)
-      '@react-stately/slider': 3.7.5(react@19.2.4)
-      '@react-stately/table': 3.15.4(react@19.2.4)
-      '@react-stately/tabs': 3.8.9(react@19.2.4)
+      '@react-stately/list': 3.13.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/menu': 3.9.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/numberfield': 3.11.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/overlays': 3.6.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/radio': 3.11.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/searchfield': 3.5.19(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/select': 3.9.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/selection': 3.20.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/slider': 3.7.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/table': 3.15.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/tabs': 3.8.9(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-stately/toast': 3.1.3(react@19.2.4)
-      '@react-stately/toggle': 3.9.5(react@19.2.4)
-      '@react-stately/tooltip': 3.5.11(react@19.2.4)
-      '@react-stately/tree': 3.9.6(react@19.2.4)
+      '@react-stately/toggle': 3.9.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/tooltip': 3.5.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@react-stately/tree': 3.9.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@react-types/shared': 3.33.1(react@19.2.4)
       react: 19.2.4
+    transitivePeerDependencies:
+      - react-dom
+
+  react-stately@3.48.0(react@18.3.1):
+    dependencies:
+      '@internationalized/date': 3.11.0
+      '@internationalized/number': 3.6.7
+      '@internationalized/string': 3.2.9
+      '@react-types/shared': 3.36.0(react@18.3.1)
+      '@swc/helpers': 0.5.21
+      react: 18.3.1
+      use-sync-external-store: 1.6.0(react@18.3.1)
+
+  react-stately@3.48.0(react@19.2.4):
+    dependencies:
+      '@internationalized/date': 3.11.0
+      '@internationalized/number': 3.6.7
+      '@internationalized/string': 3.2.9
+      '@react-types/shared': 3.36.0(react@19.2.4)
+      '@swc/helpers': 0.5.21
+      react: 19.2.4
+      use-sync-external-store: 1.6.0(react@19.2.4)
 
   react@18.3.1:
     dependencies:

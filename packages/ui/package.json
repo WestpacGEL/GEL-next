@@ -292,6 +292,7 @@
     "@react-aria/accordion": "3.0.0-alpha.37",
     "@react-aria/utils": "~3.29.1",
     "@react-spectrum/utils": "~3.11.5",
+    "@react-stately/utils": "~3.12.1",
     "@tanstack/react-table": "~8.21.3",
     "@tanstack/react-virtual": "~3.13.18",
     "clsx": "^1.2.1",

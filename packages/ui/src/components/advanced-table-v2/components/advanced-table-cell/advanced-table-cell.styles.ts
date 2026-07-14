@@ -1,0 +1,27 @@
+import { tv } from 'tailwind-variants';
+
+export const styles = tv({
+  slots: {
+    // TODO(tickets 05/11/14): focus outline carried over from the old component.
+    // Nothing makes a cell focusable yet — re-check it's still required once row
+    // selection / editing / the a11y hardening pass land.
+    td: 'border-b border-border-muted-soft typography-body-9 outline-offset-[-1px] focus:outline-border-focus',
+    // TODO(tickets 09/11): cell-content flex wrapper carried over from the old
+    // component (consistent vertical centering + icon/text gap). Re-check it's
+    // still required once expansion/editing wrap the first column's content.
+    cellContent: 'flex flex-row items-center gap-1',
+  },
+  variants: {
+    padding: {
+      default: { td: 'p-2' },
+      large: { td: 'p-3' },
+    },
+    bordered: {
+      // Drop the last row's bottom border so it doesn't double against the table's outer border
+      true: { td: 'border-r border-border-muted-soft group-last/row:border-b-0 last:border-r-0' },
+    },
+  },
+  defaultVariants: {
+    padding: 'default',
+  },
+});
