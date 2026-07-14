@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { AdvancedTableEmptyStateProps } from './components/index.js';
+
 /**
  * A leaf column that reads a value from the row via `key`.
  * Distributes over `keyof T` so `render` receives the exact type of the field
@@ -59,4 +61,27 @@ export type AdvancedTableProps<T> = {
   caption?: string;
   /** Optional id for the table. Also prefixes generated row/element ids. */
   id?: string;
+  /**
+   * Row-background treatment. `transparent` (default) applies a hover highlight
+   * only, `striped` alternates row backgrounds, `filled` fills every row with a
+   * single colour.
+   * @default 'transparent'
+   */
+  background?: 'transparent' | 'striped' | 'filled';
+  /**
+   * Cell padding density.
+   * @default 'default'
+   */
+  padding?: 'default' | 'large';
+  /** Draws additional borders around the table and between every column. */
+  bordered?: boolean;
+  /**
+   * When `true` (default) the table stretches to fill its parent.
+   * @default true
+   */
+  fillContainer?: boolean;
+  /**
+   * Configures the empty state shown when `data` is empty.
+   */
+  emptyState?: AdvancedTableEmptyStateProps;
 };

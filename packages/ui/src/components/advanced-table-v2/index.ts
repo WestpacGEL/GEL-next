@@ -5,3 +5,4 @@ export {
   type AdvancedTableLeafColumn,
   type AdvancedTableGroupColumn,
 } from './advanced-table.types.js';
+export { type AdvancedTableEmptyStateProps } from './components/index.js';

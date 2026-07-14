@@ -211,13 +211,101 @@ describe('AdvancedTable', () => {
   });
 
   describe('empty state', () => {
-    it.todo('renders default empty state when data is empty');
-    it.todo('renders custom icon, title, and description from the emptyState prop');
+    it('renders the default empty state when data is empty', () => {
+      render(<AdvancedTable columns={testColumns} data={[]} />);
+      // check header still render but cell does not
+      expect(screen.getByText('Name')).toBeInTheDocument();
+      expect(screen.queryByText('John')).not.toBeInTheDocument();
+      // default empty-state message inside a status region, in a valid table cell
+      const status = screen.getByRole('status');
+      expect(status).toHaveTextContent('No data to display');
+      expect(status.closest('td')).toBeInTheDocument();
+    });
+
+    it('spans the empty-state cell across all columns', () => {
+      render(<AdvancedTable columns={testColumns} data={[]} />);
+      expect(screen.getByRole('status').closest('td')).toHaveAttribute('colspan', String(testColumns.length));
+    });
+
+    it('renders a custom title and description from the emptyState prop', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={[]}
+          emptyState={{ title: 'Nothing here', description: 'Add a row to get started.' }}
+        />,
+      );
+      expect(screen.getByText('Nothing here')).toBeInTheDocument();
+      expect(screen.getByText('Add a row to get started.')).toBeInTheDocument();
+      expect(screen.queryByText('No data to display')).not.toBeInTheDocument();
+    });
+
+    it('renders a custom icon from the emptyState prop', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={[]}
+          emptyState={{ icon: <span data-testid="custom-empty-icon">icon</span> }}
+        />,
+      );
+      expect(screen.getByTestId('custom-empty-icon')).toBeInTheDocument();
+    });
   });
 
   describe('style variants', () => {
-    it.todo('striped, bordered, and extraCellPadding variants render');
-    it.todo('fillContainer=false renders intrinsic sum-of-columns width');
+    const getTable = () => screen.getByRole('table');
+
+    it('renders default (transparent) background with no data rows affected', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} />);
+      // body rows carry the hover-only treatment, not a striped/filled background
+      const bodyRow = screen.getByText('John').closest('tr') as HTMLElement;
+      expect(bodyRow.className).toContain('hover:bg-surface-hover-muted-pale');
+      expect(bodyRow.className).not.toContain('even:bg-surface-muted-faint');
+    });
+
+    it('renders the striped background variant (white odd, faint even rows)', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} background="striped" />);
+      const bodyRow = screen.getByText('John').closest('tr') as HTMLElement;
+      expect(bodyRow.className).toContain('odd:bg-background-white');
+      expect(bodyRow.className).toContain('even:bg-surface-muted-faint');
+    });
+
+    it('renders the filled background variant (white rows)', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} background="filled" />);
+      const bodyRow = screen.getByText('John').closest('tr') as HTMLElement;
+      expect(bodyRow.className).toContain('bg-background-white');
+      expect(bodyRow.className).not.toContain('even:');
+    });
+
+    it('renders the bordered variant', () => {
+      const { rerender } = render(<AdvancedTable columns={testColumns} data={testData} />);
+      // the outer table border is exclusive to the bordered variant
+      expect(getTable().className).not.toContain('border-border-muted-soft');
+
+      rerender(<AdvancedTable columns={testColumns} data={testData} bordered />);
+      expect(getTable().className).toContain('border-border-muted-soft');
+    });
+
+    it('renders the default padding variant (8px cells)', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} />);
+      const cell = screen.getByText('John').closest('td') as HTMLElement;
+      expect(cell.className).toContain('p-2');
+    });
+
+    it('renders the large padding variant (12px cells)', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} padding="large" />);
+      const cell = screen.getByText('John').closest('td') as HTMLElement;
+      expect(cell.className).toContain('p-3');
+    });
+
+    it('fillContainer defaults to filling the container and false renders intrinsic width', () => {
+      const { rerender } = render(<AdvancedTable columns={testColumns} data={testData} />);
+      expect(getTable().className).toContain('w-full');
+
+      rerender(<AdvancedTable columns={testColumns} data={testData} fillContainer={false} />);
+      expect(getTable().className).not.toContain('w-full');
+      expect(getTable().className).toContain('w-auto');
+    });
   });
 
   describe('accessibility', () => {

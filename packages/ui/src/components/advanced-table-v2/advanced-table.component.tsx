@@ -5,6 +5,7 @@ import { useId, useMemo } from 'react';
 
 import { styles as advancedTableStyles } from './advanced-table.styles.js';
 import { AdvancedTableProps } from './advanced-table.types.js';
+import { AdvancedTableEmptyState } from './components/index.js';
 import { columnGenerator, useControlledState } from './utils/index.js';
 
 /**
@@ -15,7 +16,19 @@ import { columnGenerator, useControlledState } from './utils/index.js';
  * sorting, pagination, selection, pinning, reordering, resizing, expansion,
  * editing — are added in later slices.
  */
-export function AdvancedTable<T>({ columns, data, defaultData, onDataChange, caption, id }: AdvancedTableProps<T>) {
+export function AdvancedTable<T>({
+  columns,
+  data,
+  defaultData,
+  onDataChange,
+  caption,
+  id,
+  background,
+  padding,
+  bordered,
+  fillContainer,
+  emptyState,
+}: AdvancedTableProps<T>) {
   const generatedId = useId();
   const tableId = id ?? generatedId;
 
@@ -32,7 +45,11 @@ export function AdvancedTable<T>({ columns, data, defaultData, onDataChange, cap
     getRowId: (_row, index, parent) => (parent ? `${parent.id}.${index}` : `${tableId}-${index}`),
   });
 
-  const styles = advancedTableStyles();
+  const styles = advancedTableStyles({ background, padding, bordered, fillContainer });
+
+  const isEmpty = tableData.length === 0;
+  // At least 1 so the empty-state cell never emits an invalid `colspan="0"`.
+  const leafColumnCount = Math.max(table.getVisibleLeafColumns().length, 1);
 
   return (
     <div className={styles.container()}>
@@ -50,15 +67,25 @@ export function AdvancedTable<T>({ columns, data, defaultData, onDataChange, cap
           ))}
         </thead>
         <tbody className={styles.tbody()}>
-          {table.getRowModel().rows.map(row => (
-            <tr key={row.id} className={styles.row()}>
-              {row.getVisibleCells().map(cell => (
-                <td key={cell.id} className={styles.td()}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
+          {isEmpty ? (
+            <tr>
+              <td colSpan={leafColumnCount} className={styles.emptyCell()}>
+                <AdvancedTableEmptyState {...emptyState} />
+              </td>
             </tr>
-          ))}
+          ) : (
+            table.getRowModel().rows.map(row => (
+              <tr key={row.id} className={styles.row()}>
+                {row.getVisibleCells().map(cell => (
+                  <td key={cell.id} className={styles.td()}>
+                    <div className={styles.cellContent()}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </div>
+                  </td>
+                ))}
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>

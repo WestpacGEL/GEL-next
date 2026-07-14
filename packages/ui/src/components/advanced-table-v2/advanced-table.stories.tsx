@@ -1,20 +1,12 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
-import { AdvancedPerson, makePersonData } from '../advanced-table/story-utils/fakerData.js';
-
 import { AdvancedTable } from './advanced-table.component.js';
 import { AdvancedTableColumn } from './advanced-table.types.js';
+import { AdvancedPerson, makePersonData, personColumns } from './story-utils/index.js';
 
 const data = makePersonData(10);
 
-const columns: AdvancedTableColumn<AdvancedPerson>[] = [
-  { key: 'firstName', title: 'First Name' },
-  { key: 'lastName', title: 'Last Name' },
-  { key: 'age', title: 'Age' },
-  { key: 'visits', title: 'Visits' },
-  { key: 'status', title: 'Status' },
-  { key: 'progress', title: 'Profile Progress' },
-];
+const columns = personColumns;
 
 const groupedColumns: AdvancedTableColumn<AdvancedPerson>[] = [
   {
