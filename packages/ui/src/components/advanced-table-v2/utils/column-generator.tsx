@@ -7,18 +7,27 @@ function isGroupColumn<T>(column: AdvancedTableColumn<T>): column is AdvancedTab
   return 'columns' in column && Array.isArray(column.columns);
 }
 
+/** Options resolving table-level feature flags down onto each generated column. */
+type ColumnGeneratorOptions = {
+  /** Table-level sorting flag; a column may opt out with its own `enableSorting: false`. */
+  enableSorting?: boolean;
+};
+
 /**
  * Maps the GEL-owned {@link AdvancedTableColumn} shape onto internal TanStack
  * `ColumnDef`s. This is the only place the two representations meet — TanStack
  * types never surface in the public API.
  */
-export function columnGenerator<T>(columns: AdvancedTableColumn<T>[]): ColumnDef<T>[] {
+export function columnGenerator<T>(
+  columns: AdvancedTableColumn<T>[],
+  options: ColumnGeneratorOptions = {},
+): ColumnDef<T>[] {
   return columns.map((column): ColumnDef<T> => {
     if (isGroupColumn(column)) {
       return {
         id: column.key,
         header: column.title,
-        columns: columnGenerator(column.columns),
+        columns: columnGenerator(column.columns, options),
       };
     }
 
@@ -31,6 +40,9 @@ export function columnGenerator<T>(columns: AdvancedTableColumn<T>[]): ColumnDef
       accessorKey: column.key as string,
       header: column.title,
       cell: info => (render ? render(info.getValue(), info.row.original) : (info.getValue() as ReactNode)),
+      // Sorting is enabled only at the table level; a column may opt out with `false`
+      // but cannot enable sorting on its own.
+      enableSorting: options.enableSorting ? (column.enableSorting ?? true) : false,
       ...(column.width !== undefined ? { size: column.width } : {}),
     };
   });

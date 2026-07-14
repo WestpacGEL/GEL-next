@@ -15,6 +15,11 @@ export type AdvancedTableLeafColumn<T> = {
     title: string;
     /** Custom cell renderer. Receives the typed cell value and the full row. */
     render?: (value: T[K], row: T) => ReactNode;
+    /**
+     * Opts this column out of sorting. Only meaningful when the table has
+     * `enableSorting`: set to `false` to remove this column's sort control.
+     */
+    enableSorting?: boolean;
     /** Marks the column editable. Consumed by the editable-cells feature (later ticket). */
     editable?: boolean;
     /** Default column width in pixels. Consumed by the resizing feature (later ticket). */
@@ -41,6 +46,20 @@ export type AdvancedTableGroupColumn<T> = {
  */
 export type AdvancedTableColumn<T> = AdvancedTableLeafColumn<T> | AdvancedTableGroupColumn<T>;
 
+/** A single column sort: the sorted column's `key` and its direction. */
+export type AdvancedTableColumnSort = {
+  /** The sorted column's `key`. */
+  id: string;
+  /** `true` for descending, `false` for ascending. */
+  desc: boolean;
+};
+
+/**
+ * The table's sort state: an ordered list of column sorts. A public, GEL-owned
+ * contract — the internal table engine is never exposed.
+ */
+export type AdvancedTableSortingState = AdvancedTableColumnSort[];
+
 export type AdvancedTableProps<T> = {
   /** Column definitions for the table. */
   columns: AdvancedTableColumn<T>[];
@@ -59,8 +78,41 @@ export type AdvancedTableProps<T> = {
    * for its name.
    */
   caption?: string;
+  /**
+   * Visually hides the `caption` while keeping it in the accessibility tree, so
+   * the table retains an accessible name for screen readers without showing it.
+   * @default false
+   */
+  hideCaption?: boolean;
   /** Optional id for the table. Also prefixes generated row/element ids. */
   id?: string;
+  /**
+   * Enables click-to-sort on every column. Individual columns can opt out with
+   * their own `enableSorting: false`.
+   * @default false
+   */
+  enableSorting?: boolean;
+  /**
+   * Current sort state (controlled). Pair with `onSortingChange` to own sorting.
+   * Use `defaultSorting` instead for uncontrolled usage.
+   */
+  sorting?: AdvancedTableSortingState;
+  /**
+   * Initial sort state when the table manages its own sorting (uncontrolled).
+   * Table will default to TanStack sorting defaults.
+   */
+  defaultSorting?: AdvancedTableSortingState;
+  /** Called with the next sort state whenever the user changes sorting. */
+  onSortingChange?: (sorting: AdvancedTableSortingState) => void;
+  /**
+   * TODO: determine if required
+   * Manual (server-side) sorting. When `true` the table does **not** reorder rows
+   * itself — it only tracks the sort state and emits `onSortingChange`; the
+   * consumer is responsible for supplying pre-sorted `data` (typically in response
+   * to that callback). Sort controls, `aria-sort`, and announcements still render.
+   * @default false
+   */
+  manualSorting?: boolean;
   /**
    * Row-background treatment. `transparent` (default) applies a hover highlight
    * only, `striped` alternates row backgrounds, `filled` fills every row with a

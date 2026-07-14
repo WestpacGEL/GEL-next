@@ -4,10 +4,14 @@ export const styles = tv({
   slots: {
     container: 'overflow-x-auto',
     table: 'border-separate border-spacing-0 overflow-hidden rounded-md',
-    caption: 'p-3 text-left typography-body-8',
     thead: '',
     headerRow: '',
     th: 'border-b-3 border-border-hero bg-background-white text-left typography-body-9 font-medium whitespace-nowrap',
+    // Flex wrapper laying out the header label alongside the sort control (and,
+    // in later tickets, the column menu / resize handle).
+    headerContent: 'flex flex-row items-center gap-1',
+    // Sort toggle. A real <button> so it is keyboard operable; visible focus ring.
+    sortButton: 'inline-flex shrink-0 cursor-pointer items-center rounded-sm focus-visible:focus-outline',
     tbody: '',
     // TODO(tickets 05/11/14): focus outline carried over from the old component.
     // Nothing makes a row focusable yet — re-check it's still required once row
@@ -21,6 +25,7 @@ export const styles = tv({
     // still required once expansion/editing wrap the first column's content.
     cellContent: 'flex flex-row items-center gap-1',
     emptyCell: 'border-b border-border-muted-soft',
+    srOnly: 'sr-only',
   },
   variants: {
     fillContainer: {

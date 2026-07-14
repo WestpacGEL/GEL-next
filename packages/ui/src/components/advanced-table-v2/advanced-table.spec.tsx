@@ -10,6 +10,7 @@
  * Convert each it.todo to a real test red-green as its feature ticket is built.
  */
 import { render, screen, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { AdvancedTable } from './advanced-table.component.js';
 import { AdvancedTableColumn } from './advanced-table.types.js';
@@ -118,15 +119,205 @@ describe('AdvancedTable', () => {
   });
 
   describe('sorting', () => {
-    it.todo('does not render sort controls when sorting is disabled');
-    it.todo('clicking a header cycles ascending, descending, then unsorted, reordering visible rows');
-    it.todo('exposes the current sort via aria-sort on the sorted column header');
-    it.todo('announces sort changes via a live region');
-    it.todo('sorting is operable with the keyboard alone');
-    it.todo(
-      'controlled sorting: renders order from the sorting prop and emits onSortingChange without reordering on its own',
-    );
-    it.todo('uncontrolled sorting: defaultSorting sets the initial order');
+    // Names in body order, read from the first cell of each tbody row.
+    const bodyOrder = () => {
+      const tbody = screen.getByRole('table').querySelector('tbody') as HTMLElement;
+      return within(tbody)
+        .getAllByRole('row')
+        .map(row => within(row).getAllByRole('cell')[0].textContent);
+    };
+    // The Age column is the second header; it holds a single sort button.
+    const ageSortButton = () => within(screen.getAllByRole('columnheader')[1]).getByRole('button');
+
+    it('does not render sort controls when sorting is disabled', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} />);
+      expect(screen.queryAllByRole('button')).toHaveLength(0);
+      expect(screen.getAllByRole('columnheader')[0]).not.toHaveAttribute('aria-sort');
+    });
+
+    it('a column cannot enable sorting on its own when the table flag is off', () => {
+      const columns: AdvancedTableColumn<TestData>[] = [
+        { key: 'name', title: 'Name' },
+        { key: 'age', title: 'Age', enableSorting: true },
+      ];
+      render(<AdvancedTable columns={columns} data={testData} />);
+      // No table-level enableSorting: the column's own flag must not activate sorting.
+      expect(screen.queryAllByRole('button')).toHaveLength(0);
+      expect(screen.getAllByRole('columnheader')[1]).not.toHaveAttribute('aria-sort');
+      // Order stays as provided.
+      expect(bodyOrder()).toEqual(['John', 'Jane', 'Bob']);
+    });
+
+    it('clicking a header cycles ascending, descending, then unsorted, reordering visible rows', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} enableSorting />);
+      expect(bodyOrder()).toEqual(['John', 'Jane', 'Bob']);
+
+      await user.click(ageSortButton()); // ascending: 25, 30, 40
+      expect(bodyOrder()).toEqual(['Jane', 'John', 'Bob']);
+
+      await user.click(ageSortButton()); // descending: 40, 30, 25
+      expect(bodyOrder()).toEqual(['Bob', 'John', 'Jane']);
+
+      await user.click(ageSortButton()); // cleared: original order
+      expect(bodyOrder()).toEqual(['John', 'Jane', 'Bob']);
+    });
+
+    it('exposes the current sort via aria-sort on the sorted column header', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} enableSorting />);
+      const ageHeader = () => screen.getAllByRole('columnheader')[1];
+      // Sortable but unsorted headers report "none".
+      expect(ageHeader()).toHaveAttribute('aria-sort', 'none');
+
+      await user.click(ageSortButton());
+      expect(ageHeader()).toHaveAttribute('aria-sort', 'ascending');
+
+      await user.click(ageSortButton());
+      expect(ageHeader()).toHaveAttribute('aria-sort', 'descending');
+    });
+
+    it('announces sort changes via a live region', async () => {
+      const user = userEvent.setup();
+      const { container } = render(<AdvancedTable columns={testColumns} data={testData} enableSorting />);
+      const liveRegion = container.querySelector('[aria-live="polite"]');
+      expect(liveRegion).toBeInTheDocument();
+
+      await user.click(ageSortButton());
+      expect(liveRegion).toHaveTextContent('Age sorted ascending');
+
+      await user.click(ageSortButton()); // descending
+      expect(liveRegion).toHaveTextContent('Age sorted descending');
+
+      await user.click(ageSortButton()); // cleared -> announced
+      expect(liveRegion).toHaveTextContent('Sorting cleared.');
+    });
+
+    it('announces the column title (not the raw key) when a grouped column is sorted', async () => {
+      const user = userEvent.setup();
+      const { container } = render(<AdvancedTable columns={groupedColumns} data={testData} enableSorting />);
+      const liveRegion = container.querySelector('[aria-live="polite"]');
+
+      // "Age" is a leaf nested under the "Group" header; its title must resolve.
+      await user.click(screen.getByRole('button', { name: /Age/ }));
+      expect(liveRegion).toHaveTextContent('Age sorted ascending');
+    });
+
+    it('does not expose aria-sort on placeholder header cells in grouped layouts', () => {
+      // Mixing a grouped column with an ungrouped leaf makes TanStack insert a
+      // placeholder cell for the leaf ("Age") in the group-header row.
+      const mixed: AdvancedTableColumn<TestData>[] = [
+        { key: 'grp', title: 'Group', columns: [{ key: 'name', title: 'Name' }] },
+        { key: 'age', title: 'Age' },
+      ];
+      render(<AdvancedTable columns={mixed} data={testData} enableSorting />);
+      const withAriaSort = screen.getAllByRole('columnheader').filter(th => th.hasAttribute('aria-sort'));
+      // Exactly the two real sortable leaf headers (Name, Age) — the placeholder Age
+      // cell in the group row must not also carry aria-sort.
+      expect(withAriaSort).toHaveLength(2);
+    });
+
+    it('sorting is operable with the keyboard alone', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} enableSorting />);
+
+      await user.tab(); // Name sort button
+      await user.tab(); // Age sort button
+      expect(ageSortButton()).toHaveFocus();
+
+      await user.keyboard('{Enter}'); // ascending
+      expect(bodyOrder()).toEqual(['Jane', 'John', 'Bob']);
+
+      await user.keyboard(' '); // Space -> descending
+      expect(bodyOrder()).toEqual(['Bob', 'John', 'Jane']);
+    });
+
+    it('sorts a single column only: shift-clicking another header replaces the sort rather than adding a key', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} enableSorting />);
+      const headers = () => screen.getAllByRole('columnheader');
+      const nameSortButton = () => within(headers()[0]).getByRole('button');
+
+      await user.click(ageSortButton()); // age ascending
+      expect(headers()[1]).toHaveAttribute('aria-sort', 'ascending');
+
+      // Shift+click a second column — single-sort replaces, it does not accumulate.
+      await user.keyboard('{Shift>}');
+      await user.click(nameSortButton());
+      await user.keyboard('{/Shift}');
+
+      expect(headers()[0]).toHaveAttribute('aria-sort', 'ascending'); // name now sorted
+      expect(headers()[1]).toHaveAttribute('aria-sort', 'none'); // age sort cleared
+      expect(bodyOrder()).toEqual(['Bob', 'Jane', 'John']); // ordered by name only
+    });
+
+    it('controlled sorting: renders order from the sorting prop and emits onSortingChange without reordering on its own', async () => {
+      const user = userEvent.setup();
+      const onSortingChange = vi.fn();
+      const { rerender } = render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableSorting
+          sorting={[{ id: 'age', desc: false }]}
+          onSortingChange={onSortingChange}
+        />,
+      );
+      // Reflects the controlled prop (age ascending).
+      expect(bodyOrder()).toEqual(['Jane', 'John', 'Bob']);
+
+      await user.click(ageSortButton());
+      // Emits the next state but does not reorder itself while controlled.
+      expect(onSortingChange).toHaveBeenCalledWith([{ id: 'age', desc: true }]);
+      expect(bodyOrder()).toEqual(['Jane', 'John', 'Bob']);
+
+      // Feeding the new state back updates the rendered order.
+      rerender(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableSorting
+          sorting={[{ id: 'age', desc: true }]}
+          onSortingChange={onSortingChange}
+        />,
+      );
+      expect(bodyOrder()).toEqual(['Bob', 'John', 'Jane']);
+    });
+
+    it('manual sorting: the table does not reorder rows itself, but still tracks and emits sort state', async () => {
+      const user = userEvent.setup();
+      const onSortingChange = vi.fn();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableSorting
+          manualSorting
+          sorting={[{ id: 'age', desc: false }]}
+          onSortingChange={onSortingChange}
+        />,
+      );
+      // The descriptor says age-ascending, but with manual sorting the table renders
+      // the data in the order given — the consumer owns the sort.
+      expect(bodyOrder()).toEqual(['John', 'Jane', 'Bob']);
+      // State is still reflected and changes are still emitted.
+      expect(screen.getAllByRole('columnheader')[1]).toHaveAttribute('aria-sort', 'ascending');
+      await user.click(ageSortButton());
+      expect(onSortingChange).toHaveBeenCalledWith([{ id: 'age', desc: true }]);
+      expect(bodyOrder()).toEqual(['John', 'Jane', 'Bob']);
+    });
+
+    it('uncontrolled sorting: defaultSorting sets the initial order', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableSorting
+          defaultSorting={[{ id: 'name', desc: false }]}
+        />,
+      );
+      expect(bodyOrder()).toEqual(['Bob', 'Jane', 'John']);
+    });
   });
 
   describe('column filtering', () => {
