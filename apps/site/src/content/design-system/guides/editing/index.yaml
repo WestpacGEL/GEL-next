@@ -21,7 +21,7 @@ design:
     noTitle: false
     noDemo: false
   - title:
-      name: The three editing models
+      name: The 3 editing models
       slug: the-three-editing-models
     noTitle: false
     noDemo: false
@@ -30,11 +30,6 @@ design:
       slug: choosing-the-right-model
     noTitle: false
     noDemo: true
-  - title:
-      name: Choosing a focused in context implementation
-      slug: choosing-a-focused-in-context-implementation
-    noTitle: false
-    noDemo: false
   - title:
       name: Guardrails
       slug: guardrails
