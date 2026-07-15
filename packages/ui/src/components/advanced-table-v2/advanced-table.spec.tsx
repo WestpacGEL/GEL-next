@@ -470,10 +470,91 @@ describe('AdvancedTable', () => {
   });
 
   describe('column pinning', () => {
-    it.todo('pins a column to the left via the column menu');
-    it.todo('pins a column to the right via the column menu');
-    it.todo('unpins a pinned column via the column menu');
-    it.todo('controlled pinning: renders from the columnPinning prop and emits onColumnPinningChange');
+    // Opens the named column's menu.
+    const openColumnMenu = async (user: ReturnType<typeof userEvent.setup>, columnName: string) => {
+      await user.click(screen.getByRole('button', { name: `${columnName} column menu` }));
+      await screen.findByRole('menu');
+    };
+    // Queried by the label text rather than positional index — pinning right (or
+    // left) reorders the column to sit at that edge, per TanStack's default
+    // leaf-column ordering (left-pinned, then center, then right-pinned).
+    const nameHeader = () => screen.getByText('Name').closest('th') as HTMLElement;
+
+    it('pins a column to the left via the column menu', async () => {
+      const user = userEvent.setup();
+      const { container } = render(<AdvancedTable columns={testColumns} data={testData} enableColumnPinning />);
+      const liveRegion = container.querySelector('[aria-live="polite"]');
+
+      await openColumnMenu(user, 'Name');
+      await user.click(screen.getByRole('menuitem', { name: 'Pin left' }));
+
+      // A pinned header cell renders sticky, positioned at its pinned offset.
+      expect(getComputedStyle(nameHeader()).position).toBe('sticky');
+      expect(liveRegion).toHaveTextContent('Name pinned left.');
+    });
+
+    it('pins a column to the right via the column menu', async () => {
+      const user = userEvent.setup();
+      const { container } = render(<AdvancedTable columns={testColumns} data={testData} enableColumnPinning />);
+      const liveRegion = container.querySelector('[aria-live="polite"]');
+
+      await openColumnMenu(user, 'Name');
+      await user.click(screen.getByRole('menuitem', { name: 'Pin right' }));
+
+      expect(getComputedStyle(nameHeader()).position).toBe('sticky');
+      expect(liveRegion).toHaveTextContent('Name pinned right.');
+    });
+
+    it('unpins a pinned column via the column menu', async () => {
+      const user = userEvent.setup();
+      const { container } = render(<AdvancedTable columns={testColumns} data={testData} enableColumnPinning />);
+      const liveRegion = container.querySelector('[aria-live="polite"]');
+
+      await openColumnMenu(user, 'Name');
+      await user.click(screen.getByRole('menuitem', { name: 'Pin left' }));
+      expect(getComputedStyle(nameHeader()).position).toBe('sticky');
+
+      await openColumnMenu(user, 'Name');
+      await user.click(screen.getByRole('menuitem', { name: 'Unpin left' }));
+
+      expect(getComputedStyle(nameHeader()).position).not.toBe('sticky');
+      expect(liveRegion).toHaveTextContent('Name unpinned.');
+    });
+
+    it('controlled pinning: renders from the columnPinning prop and emits onColumnPinningChange', async () => {
+      const user = userEvent.setup();
+      const onColumnPinningChange = vi.fn();
+      const { rerender } = render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableColumnPinning
+          columnPinning={{ left: ['name'] }}
+          onColumnPinningChange={onColumnPinningChange}
+        />,
+      );
+      // Reflects the controlled prop (name pinned left) without any interaction.
+      expect(getComputedStyle(nameHeader()).position).toBe('sticky');
+
+      await openColumnMenu(user, 'Name');
+      await user.click(screen.getByRole('menuitem', { name: 'Unpin left' }));
+
+      // Emits the next state but does not unpin itself while controlled.
+      expect(onColumnPinningChange).toHaveBeenCalledWith({ left: [], right: [] });
+      expect(getComputedStyle(nameHeader()).position).toBe('sticky');
+
+      // Feeding the new state back updates the rendered pin.
+      rerender(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableColumnPinning
+          columnPinning={{ left: [] }}
+          onColumnPinningChange={onColumnPinningChange}
+        />,
+      );
+      expect(getComputedStyle(nameHeader()).position).not.toBe('sticky');
+    });
   });
 
   describe('grouping', () => {
@@ -833,12 +914,17 @@ describe('AdvancedTable', () => {
     });
 
     it('fillContainer defaults to filling the container and false renders intrinsic width', () => {
+      // table-layout: fixed needs the table's own width to be an explicit pixel
+      // value (not a percentage) for columns to render at their configured
+      // size; fillContainer stretches via a separate min-w-full class so the
+      // CSS engine renders whichever of the two is larger.
       const { rerender } = render(<AdvancedTable columns={testColumns} data={testData} />);
-      expect(getTable().className).toContain('w-full');
+      expect(getTable().style.width).toBe('300px');
+      expect(getTable().className).toContain('min-w-full');
 
       rerender(<AdvancedTable columns={testColumns} data={testData} fillContainer={false} />);
-      expect(getTable().className).not.toContain('w-full');
-      expect(getTable().className).toContain('w-auto');
+      expect(getTable().style.width).toBe('300px');
+      expect(getTable().className).not.toContain('min-w-full');
     });
   });
 

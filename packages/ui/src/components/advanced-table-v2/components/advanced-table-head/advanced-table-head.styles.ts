@@ -20,6 +20,16 @@ export const styles = tv({
     bordered: {
       true: { th: 'border-r border-border-muted-soft last:border-r-0' },
     },
+    // A sticky cell needs an opaque background so non-pinned columns scrolling
+    // underneath don't show through.
+    isPinned: {
+      true: { th: 'sticky bg-background-white' },
+    },
+    // Shadow indicating the scroll boundary at a pinned column's outer edge.
+    pinnedEdge: {
+      left: { th: 'shadow-[inset_-4px_0_4px_-4px_var(--tw-shadow-color)] shadow-black/10' },
+      right: { th: 'shadow-[inset_4px_0_4px_-4px_var(--tw-shadow-color)] shadow-black/10' },
+    },
   },
   defaultVariants: {
     padding: 'default',

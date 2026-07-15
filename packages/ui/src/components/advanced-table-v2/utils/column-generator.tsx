@@ -13,6 +13,8 @@ type ColumnGeneratorOptions = {
   enableSorting?: boolean;
   /** Table-level filtering flag; a column may opt out with its own `enableColumnFilter: false`. */
   enableColumnFilter?: boolean;
+  /** Table-level pinning flag. Uniform across every leaf column — no per-column opt-out. */
+  enableColumnPinning?: boolean;
 };
 
 /**
@@ -30,6 +32,8 @@ export function columnGenerator<T>(
         id: column.key,
         header: column.title,
         columns: columnGenerator(column.columns, options),
+        enableGrouping: false,
+        enablePinning: false,
       };
     }
 
@@ -48,6 +52,8 @@ export function columnGenerator<T>(
       // Filtering is enabled only at the table level; a column may opt out with `false`
       // but cannot enable filtering on its own.
       enableColumnFilter: options.enableColumnFilter ? (column.enableColumnFilter ?? true) : false,
+      // No per-column opt-out for pinning — table-level `enableColumnPinning` applies uniformly.
+      enablePinning: Boolean(options.enableColumnPinning),
       ...(column.width !== undefined ? { size: column.width } : {}),
     };
   });

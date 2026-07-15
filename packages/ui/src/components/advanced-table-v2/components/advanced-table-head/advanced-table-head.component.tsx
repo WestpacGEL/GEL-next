@@ -20,7 +20,6 @@ function getAriaSort(canSort: boolean, direction: false | 'asc' | 'desc') {
 /** Renders a single header cell: the label plus (when sortable) the sort toggle. */
 function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>) {
   const { tableId, padding, bordered } = useAdvancedTableContext<T>();
-  const styles = advancedTableHeadStyles({ padding, bordered });
 
   const { column } = header;
   const canSort = column.getCanSort();
@@ -39,12 +38,29 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
     }
   })();
 
+  const isPinned = column.getIsPinned();
+  const isLastLeftPinned = isPinned === 'left' && column.getIsLastColumn('left');
+  const isFirstRightPinned = isPinned === 'right' && column.getIsFirstColumn('right');
+  let pinnedEdge: 'left' | 'right' | undefined;
+  if (isLastLeftPinned) pinnedEdge = 'left';
+  else if (isFirstRightPinned) pinnedEdge = 'right';
+  const styles = advancedTableHeadStyles({ padding, bordered, isPinned: Boolean(isPinned), pinnedEdge });
+
   return (
     <th
       scope="col"
       colSpan={header.colSpan}
       aria-sort={header.isPlaceholder ? undefined : ariaSort}
       className={styles.th()}
+      style={{
+        // Column width comes from the root <colgroup> (table-layout: fixed),
+        // which is what makes these sticky offsets (computed from the same
+        // `column.getSize()`) actually line up with a pinned column's real edge.
+        position: isPinned ? 'sticky' : undefined,
+        left: isPinned === 'left' ? column.getStart('left') : undefined,
+        right: isPinned === 'right' ? column.getAfter('right') : undefined,
+        zIndex: isPinned ? 1 : undefined,
+      }}
     >
       {header.isPlaceholder ? null : (
         <div className={styles.headerContent()}>
@@ -64,7 +80,7 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
               </VisuallyHidden>
             </button>
           )}
-          {column.getCanFilter() && !RESERVED_COLUMN_IDS.includes(column.id) && (
+          {(column.getCanFilter() || column.getCanPin()) && !RESERVED_COLUMN_IDS.includes(column.id) && (
             <AdvancedTableColumnMenu header={header} />
           )}
         </div>

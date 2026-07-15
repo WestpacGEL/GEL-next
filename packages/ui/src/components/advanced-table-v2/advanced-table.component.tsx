@@ -1,13 +1,20 @@
 'use client';
 
 import { useControlledState } from '@react-stately/utils';
-import { ColumnFiltersState, OnChangeFn, RowSelectionState, useReactTable } from '@tanstack/react-table';
-import { useId, useMemo } from 'react';
+import {
+  ColumnFiltersState,
+  ColumnPinningState,
+  OnChangeFn,
+  RowSelectionState,
+  useReactTable,
+} from '@tanstack/react-table';
+import { useId, useMemo, useState } from 'react';
 
 import { AdvancedTableProvider, AdvancedTableContextValue } from './advanced-table.context.js';
 import { styles as advancedTableStyles } from './advanced-table.styles.js';
 import {
   AdvancedTableColumnFiltersState,
+  AdvancedTableColumnPinningState,
   AdvancedTablePaginationState,
   AdvancedTableProps,
   AdvancedTableSortingState,
@@ -25,6 +32,7 @@ import {
   idsToSelectionState,
   resolveRowId,
   selectionStateToIds,
+  SELECT_COLUMN_ID,
 } from './utils/index.js';
 
 const EMPTY_DATA: never[] = [];
@@ -33,6 +41,7 @@ const DEFAULT_PAGINATION: AdvancedTablePaginationState = { pageIndex: 0, pageSiz
 const DEFAULT_PAGE_SIZE_OPTIONS = [5, 10, 20, 50];
 const EMPTY_SELECTED_ROW_IDS: never[] = [];
 const EMPTY_COLUMN_FILTERS: AdvancedTableColumnFiltersState = [];
+const EMPTY_COLUMN_PINNING: AdvancedTableColumnPinningState = {};
 
 /**
  * Data table built on TanStack Table (wired internally and fully hidden). Pass
@@ -68,6 +77,10 @@ export function AdvancedTable<T>({
   defaultColumnFilters: defaultColumnFiltersProp,
   onColumnFiltersChange: onColumnFiltersChangeProp,
   manualFiltering,
+  enableColumnPinning,
+  columnPinning: columnPinningProp,
+  defaultColumnPinning: defaultColumnPinningProp,
+  onColumnPinningChange: onColumnPinningChangeProp,
   background,
   padding,
   bordered,
@@ -107,10 +120,17 @@ export function AdvancedTable<T>({
     onColumnFiltersChangeProp,
   );
 
-  // Ids that actually match a current row — used to drop stale ids (e.g. a row
-  // removed from `data` while still present in a controlled `selectedRows`)
-  // before they reach TanStack, so they can't make the select-all checkbox read
-  // as indeterminate/checked when nothing currently visible is actually selected.
+  const [columnPinningState, setColumnPinningState] = useControlledState<AdvancedTableColumnPinningState>(
+    columnPinningProp,
+    defaultColumnPinningProp ?? EMPTY_COLUMN_PINNING,
+    onColumnPinningChangeProp,
+  );
+
+  const [pinAnnouncement, setPinAnnouncement] = useState('');
+
+  // Drops stale ids (e.g. a row removed from `data` but still in a controlled
+  // `selectedRows`) before they reach TanStack, so select-all can't read as
+  // indeterminate over rows that no longer exist.
   const validRowIds = useMemo(() => {
     if (!rowKey) return new Set<string>();
     return new Set(resolvedData.map(row => resolveRowId(rowKey, row)));
@@ -126,26 +146,40 @@ export function AdvancedTable<T>({
     setSelectedRowIds(selectionStateToIds(next));
   };
 
-  // TanStack's `ColumnFiltersState` types `value` as `unknown` (any filter fn's
-  // input); the public contract narrows it to `string` since filter inputs are
-  // always text (default comparators only), so the updater is resolved here
-  // rather than passed straight through like sorting's setter is.
+  // TanStack types filter `value` as `unknown`; the public contract narrows it
+  // to `string`, so the updater is resolved here rather than passed straight
+  // through like sorting's setter.
   const handleColumnFiltersChange: OnChangeFn<ColumnFiltersState> = updaterOrValue => {
     const current: ColumnFiltersState = columnFiltersState;
     const next = typeof updaterOrValue === 'function' ? updaterOrValue(current) : updaterOrValue;
     setColumnFiltersState(next.map(filter => ({ id: filter.id, value: String(filter.value) })));
   };
 
+  // Forces the reserved selection column into `left`; never leaks into the
+  // public columnPinning contract (stripped again in the change handler below).
+  const resolvedColumnPinningState = useMemo(() => {
+    const userLeft = (columnPinningState.left ?? []).filter(id => id !== SELECT_COLUMN_ID);
+    const left = enableRowSelection ? [SELECT_COLUMN_ID, ...userLeft] : userLeft;
+    const right = (columnPinningState.right ?? []).filter(id => id !== SELECT_COLUMN_ID);
+    return { left, right };
+  }, [columnPinningState, enableRowSelection]);
+
+  const handleColumnPinningChange: OnChangeFn<ColumnPinningState> = updaterOrValue => {
+    const next = typeof updaterOrValue === 'function' ? updaterOrValue(resolvedColumnPinningState) : updaterOrValue;
+    setColumnPinningState({
+      left: (next.left ?? []).filter(id => id !== SELECT_COLUMN_ID),
+      right: next.right ?? [],
+    });
+  };
+
   const tableColumns = useMemo(
     () => [
       ...buildReservedColumns<T>({ enableRowSelection }),
-      ...columnGenerator(columns, { enableSorting, enableColumnFilter }),
+      ...columnGenerator(columns, { enableSorting, enableColumnFilter, enableColumnPinning }),
     ],
-    [columns, enableSorting, enableRowSelection, enableColumnFilter],
+    [columns, enableSorting, enableRowSelection, enableColumnFilter, enableColumnPinning],
   );
 
-  // TanStack hands `onSortingChange` an updater; react-stately's setter accepts a
-  // `SetStateAction`, so the updater passes straight through with no unwrapping.
   const table = useReactTable<T>(
     buildTableOptions<T>({
       data: resolvedData,
@@ -166,14 +200,17 @@ export function AdvancedTable<T>({
       columnFiltersState,
       onColumnFiltersChange: handleColumnFiltersChange,
       manualFiltering,
+      enableColumnPinning,
+      columnPinningState: resolvedColumnPinningState,
+      onColumnPinningChange: handleColumnPinningChange,
+      hasReservedPinning: Boolean(enableRowSelection),
     }),
   );
 
   const sortAnnouncement = useMemo(() => {
     if (!enableSorting) return null;
-    // The empty state doubles as the "cleared" announcement — it is silent on
-    // initial mount (live regions don't announce initial content) but is read out
-    // when the user removes a sort, so clearing is announced like any other change.
+    // Doubles as the "cleared" announcement: silent on mount (live regions
+    // don't announce initial content), read out once a sort is removed.
     if (sortingState.length === 0) return 'Sorting cleared.';
     const s = sortingState[0];
     const label = s.desc ? 'sorted descending' : 'sorted ascending';
@@ -185,8 +222,7 @@ export function AdvancedTable<T>({
 
   const filterAnnouncement = useMemo(() => {
     if (!enableColumnFilter) return null;
-    // Mirrors the sorting announcement: the empty state doubles as the
-    // "cleared" message, silent on mount but read out once a filter is removed.
+    // Mirrors the sorting announcement above (silent on mount, read on clear).
     if (columnFiltersState.length === 0) return 'Filter cleared.';
     const matchCount = table.getFilteredRowModel().rows.length;
     return `${matchCount} matching row${matchCount === 1 ? '' : 's'}.`;
@@ -194,10 +230,25 @@ export function AdvancedTable<T>({
 
   const styles = advancedTableStyles({ bordered, fillContainer });
 
+  // table-layout: fixed needs an explicit pixel width, not a percentage, for
+  // columns to render at their configured size; `min-w-full` (fillContainer)
+  // stretches to fill a wider container without shrinking this nominal total.
+  const totalSize = table.getTotalSize();
+  const tableWidth = `${totalSize}px`;
+
   // Keyed using referenced `pageSizeOptions` so new array doesn't force re-renders
   const pageSizeOptionsKey = pageSizeOptions.join(',');
   const contextValue = useMemo<AdvancedTableContextValue<T>>(
-    () => ({ table, tableId, emptyState, pageSizeOptions, background, padding, bordered }),
+    () => ({
+      table,
+      tableId,
+      emptyState,
+      pageSizeOptions,
+      background,
+      padding,
+      bordered,
+      onPinAnnouncement: setPinAnnouncement,
+    }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [table, tableId, emptyState, pageSizeOptionsKey, background, padding, bordered],
   );
@@ -206,10 +257,15 @@ export function AdvancedTable<T>({
     <AdvancedTableProvider value={contextValue as AdvancedTableContextValue<unknown>}>
       <div className={styles.root()}>
         <div className={styles.container()}>
-          <table id={tableId} className={styles.table()}>
+          <table id={tableId} className={styles.table()} style={{ width: tableWidth }}>
             {caption ? (
               <AdvancedTableCaption title={caption} hideCaption={hideCaption} hasSorting={enableSorting} />
             ) : null}
+            <colgroup>
+              {table.getVisibleLeafColumns().map(column => (
+                <col key={column.id} style={{ width: column.getSize() }} />
+              ))}
+            </colgroup>
             <AdvancedTableHead />
             <AdvancedTableBody />
           </table>
@@ -223,6 +279,11 @@ export function AdvancedTable<T>({
         {enableColumnFilter && (
           <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
             {filterAnnouncement}
+          </div>
+        )}
+        {enableColumnPinning && (
+          <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
+            {pinAnnouncement}
           </div>
         )}
       </div>

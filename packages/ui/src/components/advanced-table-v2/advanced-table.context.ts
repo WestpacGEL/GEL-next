@@ -29,6 +29,8 @@ export type AdvancedTableContextValue<T> = {
   padding?: 'default' | 'large';
   /** Draws additional borders around the table and between columns. */
   bordered?: boolean;
+  /** Sets the text of the column-pinning live region. */
+  onPinAnnouncement?: (text: string) => void;
 };
 
 // The provider is typed to `unknown`; `useAdvancedTableContext<T>()` casts back to

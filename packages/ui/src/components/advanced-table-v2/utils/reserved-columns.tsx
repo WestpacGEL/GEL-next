@@ -36,6 +36,7 @@ function selectionColumn<T>(): ColumnDef<T> {
     enableResizing: false,
     enableColumnFilter: false,
     enableMultiSort: false,
+    enablePinning: false,
     size: 50,
   };
 }

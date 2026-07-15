@@ -1,6 +1,7 @@
 import {
   ColumnDef,
   ColumnFiltersState,
+  ColumnPinningState,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
@@ -51,6 +52,14 @@ export type BuildTableOptionsParams<T> = {
   onColumnFiltersChange: OnChangeFn<ColumnFiltersState>;
   /** Manual (server-side) filtering — the table tracks state but does not filter rows itself. */
   manualFiltering?: boolean;
+  /** Table-level column-pinning flag. Gates `column.getCanPin()`/`column.pin()`. */
+  enableColumnPinning?: boolean;
+  /** Current column-pinning state (already resolved, including any forced reserved column id). */
+  columnPinningState: ColumnPinningState;
+  /** Column-pinning setter (TanStack hands it an updater; the setter resolves it). */
+  onColumnPinningChange: OnChangeFn<ColumnPinningState>;
+  /** `true` when the reserved selection column must be force-pinned regardless of `enableColumnPinning`. */
+  hasReservedPinning?: boolean;
   /** Row-identity accessor. Drives `getRowId` whenever selection (or a later
    * reserved-column feature) is enabled; falls back to index-based ids otherwise. */
   rowKey?: AdvancedTableRowKey<T>;
@@ -86,6 +95,10 @@ export function buildTableOptions<T>({
   columnFiltersState,
   onColumnFiltersChange,
   manualFiltering,
+  enableColumnPinning,
+  columnPinningState,
+  onColumnPinningChange,
+  hasReservedPinning,
 }: BuildTableOptionsParams<T>): TableOptions<T> {
   return {
     data,
@@ -95,6 +108,7 @@ export function buildTableOptions<T>({
       ...(enablePagination && { pagination: paginationState }),
       ...(enableRowSelection && { rowSelection: rowSelectionState }),
       ...(enableColumnFilter && { columnFilters: columnFiltersState }),
+      ...((enableColumnPinning || hasReservedPinning) && { columnPinning: columnPinningState }),
     },
     ...(enableSorting
       ? {
@@ -124,6 +138,7 @@ export function buildTableOptions<T>({
     ...(enableColumnFilter
       ? { getFilteredRowModel: getFilteredRowModel(), onColumnFiltersChange, manualFiltering }
       : {}),
+    ...(enableColumnPinning ? { enableColumnPinning: true, onColumnPinningChange } : {}),
     getCoreRowModel: getCoreRowModel(),
     getRowId: rowKey
       ? (row, _index, parent) => {

@@ -20,6 +20,18 @@ export const styles = tv({
       // Drop the last row's bottom border so it doesn't double against the table's outer border
       true: { td: 'border-r border-border-muted-soft group-last/row:border-b-0 last:border-r-0' },
     },
+    // A sticky cell needs an opaque background so non-pinned columns scrolling
+    // underneath don't show through. This flattens row striping/fill to solid
+    // white for a pinned column while scrolled — a documented, pre-existing
+    // simplification carried over from the old component.
+    isPinned: {
+      true: { td: 'sticky bg-background-white' },
+    },
+    // Shadow indicating the scroll boundary at a pinned column's outer edge.
+    pinnedEdge: {
+      left: { td: 'shadow-[inset_-4px_0_4px_-4px_var(--tw-shadow-color)] shadow-black/10' },
+      right: { td: 'shadow-[inset_4px_0_4px_-4px_var(--tw-shadow-color)] shadow-black/10' },
+    },
   },
   defaultVariants: {
     padding: 'default',

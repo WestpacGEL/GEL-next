@@ -100,6 +100,17 @@ export type AdvancedTableColumnFilter = {
  */
 export type AdvancedTableColumnFiltersState = AdvancedTableColumnFilter[];
 
+/**
+ * The table's column-pinning state: the ids of columns pinned to each edge.
+ * A public, GEL-owned contract — the internal table engine is never exposed.
+ */
+export type AdvancedTableColumnPinningState = {
+  /** Ids of columns pinned to the left edge, in display order. */
+  left?: string[];
+  /** Ids of columns pinned to the right edge, in display order. */
+  right?: string[];
+};
+
 type AdvancedTableBaseProps<T> = {
   /** Column definitions for the table. */
   columns: AdvancedTableColumn<T>[];
@@ -201,6 +212,24 @@ type AdvancedTableBaseProps<T> = {
    * @default false
    */
   manualFiltering?: boolean;
+  /**
+   * Enables pin left / pin right / unpin actions in every column's menu. Applies
+   * uniformly to every non-reserved column — there is no per-column opt-out.
+   * @default false
+   */
+  enableColumnPinning?: boolean;
+  /**
+   * Current column-pinning state (controlled). Pair with `onColumnPinningChange`
+   * to own pinning. Use `defaultColumnPinning` instead for uncontrolled usage.
+   */
+  columnPinning?: AdvancedTableColumnPinningState;
+  /**
+   * Initial column-pinning state when the table manages its own pinning
+   * (uncontrolled).
+   */
+  defaultColumnPinning?: AdvancedTableColumnPinningState;
+  /** Called with the next column-pinning state whenever the user pins or unpins a column. */
+  onColumnPinningChange?: (pinning: AdvancedTableColumnPinningState) => void;
   /**
    * Row-background treatment. `transparent` (default) applies a hover highlight
    * only, `striped` alternates row backgrounds, `filled` fills every row with a
