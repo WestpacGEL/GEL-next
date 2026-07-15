@@ -1,7 +1,5 @@
 Start with **In context** and only move to a heavier model when necessary.
 
-Here is an example:
-
 ```tsx
 <Table bordered colspan={2}>
   <React.Fragment key=".0">
@@ -48,8 +46,75 @@ Here is an example:
 </Table>
 ```
 
-If the task...Recommended modelChanges a single low-risk value or settingIn contextNeeds focus, confirmation or a small amount of additional inputFocused in contextInvolves multiple steps, dependencies, significant validation or higher riskDedicated space
-
 ### Decision factors
 
-FactorIn contextFocused in contextDedicated spaceFieldsOne value or settingSmall related groupMultiple sectionsValidationMinimalModerateExtensiveRiskLowLow to moderateModerate to highGuidanceLittle or noneSome guidanceSignificant guidanceDependenciesNoneLimitedSignificantContext valueVery highHighLower
+Here is an example:
+
+```tsx
+<Table bordered colspan={4}>
+  <React.Fragment key=".0">
+    <TableHeader>
+      <TableHeaderRow>
+        <TableHeaderCell>
+          Factor
+        </TableHeaderCell>
+        <TableHeaderCell>
+          In context
+        </TableHeaderCell>
+        <TableHeaderCell>
+          Focused in context
+        </TableHeaderCell>
+        <TableHeaderCell>
+          Dedicated space
+        </TableHeaderCell>
+      </TableHeaderRow>
+    </TableHeader>
+
+    <TableBody>
+
+      <TableRow>
+        <TableCell>Fields</TableCell>
+        <TableCell>One value or setting</TableCell>
+        <TableCell>Small related group</TableCell>
+        <TableCell>Multiple sections</TableCell>
+      </TableRow>
+
+      <TableRow>
+        <TableCell>Validation</TableCell>
+        <TableCell>Minimal</TableCell>
+        <TableCell>Moderate</TableCell>
+        <TableCell>Extensive</TableCell>
+      </TableRow>
+
+      <TableRow>
+        <TableCell>Risk</TableCell>
+        <TableCell>Low</TableCell>
+        <TableCell>Low to moderate</TableCell>
+        <TableCell>Moderate to high</TableCell>
+      </TableRow>
+
+      <TableRow>
+        <TableCell>Guidance</TableCell>
+        <TableCell>Little or none</TableCell>
+        <TableCell>Some guidance</TableCell>
+        <TableCell>Significant guidance</TableCell>
+      </TableRow>
+
+      <TableRow>
+        <TableCell>Dependencies</TableCell>
+        <TableCell>None</TableCell>
+        <TableCell>Limited</TableCell>
+        <TableCell>Significant</TableCell>
+      </TableRow>
+
+      <TableRow>
+        <TableCell>Context value</TableCell>
+        <TableCell>Very high</TableCell>
+        <TableCell>High</TableCell>
+        <TableCell>Lower</TableCell>
+      </TableRow>
+
+    </TableBody>
+  </React.Fragment>
+</Table>
+```
