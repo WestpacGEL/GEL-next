@@ -1,115 +1,70 @@
-Start with **In context** and only move to a heavier model when necessary.
+Start with **In context** and only move to a heavier model when the task requires more focus, space, guidance, validation or risk control.
 
 ```tsx
-<Table bordered colspan={2}>
+<Table colspan={4}>
   <React.Fragment key=".0">
     <TableHeader>
       <TableHeaderRow>
         <TableHeaderCell>
-          If the task...
+          Editing model
         </TableHeaderCell>
         <TableHeaderCell>
-          Recommended model
+          Use when the task...
+        </TableHeaderCell>
+        <TableHeaderCell>
+          Typical characteristics
+        </TableHeaderCell>
+        <TableHeaderCell>
+          Best suited to
         </TableHeaderCell>
       </TableHeaderRow>
     </TableHeader>
 
     <TableBody>
+
       <TableRow>
         <TableCell>
-          Changes a single low-risk value or setting
+          In context
         </TableCell>
         <TableCell>
-          In context
+          Changes a single, low-risk value or setting
+        </TableCell>
+        <TableCell>
+          One field or setting, minimal validation, low risk, little or no guidance, no dependencies
+        </TableCell>
+        <TableCell>
+          Simple changes where staying in place makes the task faster and clearer
         </TableCell>
       </TableRow>
 
       <TableRow>
+        <TableCell>
+          Focused in context
+        </TableCell>
         <TableCell>
           Needs focus, confirmation or a small amount of additional input
         </TableCell>
         <TableCell>
-          Focused in context
+          Small related group of fields, low to moderate validation, some guidance, limited dependencies
+        </TableCell>
+        <TableCell>
+          Contained tasks where the customer should remain anchored to the original context
         </TableCell>
       </TableRow>
 
       <TableRow>
+        <TableCell>
+          Dedicated space
+        </TableCell>
         <TableCell>
           Involves multiple steps, dependencies, significant validation or higher risk
         </TableCell>
         <TableCell>
-          Dedicated space
+          Multiple fields or sections, moderate to high risk, substantial guidance, strong dependencies
         </TableCell>
-      </TableRow>
-    </TableBody>
-  </React.Fragment>
-</Table>
-```
-
-### Decision factors
-
-```tsx
-<Table bordered colspan={4}>
-  <React.Fragment key=".0">
-    <TableHeader>
-      <TableHeaderRow>
-        <TableHeaderCell>
-          Factor
-        </TableHeaderCell>
-        <TableHeaderCell>
-          In context
-        </TableHeaderCell>
-        <TableHeaderCell>
-          Focused in context
-        </TableHeaderCell>
-        <TableHeaderCell>
-          Dedicated space
-        </TableHeaderCell>
-      </TableHeaderRow>
-    </TableHeader>
-
-    <TableBody>
-
-      <TableRow>
-        <TableCell>Fields</TableCell>
-        <TableCell>One value or setting</TableCell>
-        <TableCell>Small related group</TableCell>
-        <TableCell>Multiple sections</TableCell>
-      </TableRow>
-
-      <TableRow>
-        <TableCell>Validation</TableCell>
-        <TableCell>Minimal</TableCell>
-        <TableCell>Moderate</TableCell>
-        <TableCell>Extensive</TableCell>
-      </TableRow>
-
-      <TableRow>
-        <TableCell>Risk</TableCell>
-        <TableCell>Low</TableCell>
-        <TableCell>Low to moderate</TableCell>
-        <TableCell>Moderate to high</TableCell>
-      </TableRow>
-
-      <TableRow>
-        <TableCell>Guidance</TableCell>
-        <TableCell>Little or none</TableCell>
-        <TableCell>Some guidance</TableCell>
-        <TableCell>Significant guidance</TableCell>
-      </TableRow>
-
-      <TableRow>
-        <TableCell>Dependencies</TableCell>
-        <TableCell>None</TableCell>
-        <TableCell>Limited</TableCell>
-        <TableCell>Significant</TableCell>
-      </TableRow>
-
-      <TableRow>
-        <TableCell>Context value</TableCell>
-        <TableCell>Very high</TableCell>
-        <TableCell>High</TableCell>
-        <TableCell>Lower</TableCell>
+        <TableCell>
+          Complex, regulated, high-risk or multi-step editing experiences
+        </TableCell>
       </TableRow>
 
     </TableBody>
