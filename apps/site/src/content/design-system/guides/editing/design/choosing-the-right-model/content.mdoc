@@ -3,48 +3,49 @@ Start with **In context** and only move to a heavier model when necessary.
 Here is an example:
 
 ```tsx
-import {
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-} from "@westpac/table";
-
-export const EditingModelTable = () => (
-  <Table>
-    <TableHead>
-      <TableRow>
-        <TableCell scope="col">If the task...</TableCell>
-        <TableCell scope="col">Recommended model</TableCell>
-      </TableRow>
-    </TableHead>
+<Table colspan={2}>
+  <React.Fragment key=".0">
+    <TableHeader>
+      <TableHeaderRow>
+        <TableHeaderCell>
+          If the task...
+        </TableHeaderCell>
+        <TableHeaderCell>
+          Recommended model
+        </TableHeaderCell>
+      </TableHeaderRow>
+    </TableHeader>
 
     <TableBody>
       <TableRow>
         <TableCell>
           Changes a single low-risk value or setting
         </TableCell>
-        <TableCell>In context</TableCell>
+        <TableCell>
+          In context
+        </TableCell>
       </TableRow>
 
       <TableRow>
         <TableCell>
           Needs focus, confirmation or a small amount of additional input
         </TableCell>
-        <TableCell>Focused in context</TableCell>
+        <TableCell>
+          Focused in context
+        </TableCell>
       </TableRow>
 
       <TableRow>
         <TableCell>
-          Involves multiple steps, dependencies, significant validation or
-          higher risk
+          Involves multiple steps, dependencies, significant validation or higher risk
         </TableCell>
-        <TableCell>Dedicated space</TableCell>
+        <TableCell>
+          Dedicated space
+        </TableCell>
       </TableRow>
     </TableBody>
-  </Table>
-);
+  </React.Fragment>
+</Table>
 ```
 
 If the task...Recommended modelChanges a single low-risk value or settingIn contextNeeds focus, confirmation or a small amount of additional inputFocused in contextInvolves multiple steps, dependencies, significant validation or higher riskDedicated space
