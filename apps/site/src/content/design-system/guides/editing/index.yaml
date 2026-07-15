@@ -1,0 +1,29 @@
+name: Editing
+description: >-
+  Editing is a common interaction across Westpac digital experiences. Customers
+  regularly update information, preferences, settings and account details.
+
+
+  Without a shared approach, similar customer problems can result in different
+  patterns, behaviours and implementation choices across products and platforms.
+  This guidance provides a common enterprise model for designing editing
+  experiences that are consistent, reusable and scalable across Westpac.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: What we mean by editing
+      slug: what-we-mean-by-editing
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Core principle
+      slug: core-principle
+    noTitle: false
+    noDemo: false
+accessibility: []
+relatedComponents:
+  icon: cube
+  links: []
+code: []
