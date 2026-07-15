@@ -29,7 +29,7 @@ design:
       name: Choosing the right model
       slug: choosing-the-right-model
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: Choosing a focused in context implementation
       slug: choosing-a-focused-in-context-implementation
