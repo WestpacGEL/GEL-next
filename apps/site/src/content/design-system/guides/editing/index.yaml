@@ -34,7 +34,7 @@ design:
       name: Guardrails
       slug: guardrails
     noTitle: false
-    noDemo: false
+    noDemo: true
   - title:
       name: What good looks like
       slug: what-good-looks-like
