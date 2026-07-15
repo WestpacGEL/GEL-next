@@ -6,7 +6,7 @@ import { AdvancedTableCaptionProps } from './advanced-table-caption.types.js';
 export function AdvancedTableCaption({ title, hideCaption, hasSorting, hasGrouping }: AdvancedTableCaptionProps) {
   const styles = advancedTableCaptionStyles({ hideCaption });
 
-  const hint = [hasSorting && 'Some columns are sortable.', hasGrouping && 'Some rows are grouped.']
+  const hint = [hasSorting && 'Some columns are sortable.', hasGrouping && 'Rows can be grouped.']
     .filter(Boolean)
     .join(' ');
 

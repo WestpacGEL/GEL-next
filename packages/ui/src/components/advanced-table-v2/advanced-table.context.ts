@@ -29,6 +29,13 @@ export type AdvancedTableContextValue<T> = {
   padding?: 'default' | 'large';
   /** Draws additional borders around the table and between columns. */
   bordered?: boolean;
+  /**
+   * Whether the consumer has opted into column pinning. The reserved selection
+   * column is always structurally sticky regardless of this flag, but the
+   * pinned-look styling (flattened background, edge shadow) on it only makes
+   * sense when the pinning feature is actually in play.
+   */
+  enableColumnPinning?: boolean;
   /** Sets the text of the column-pinning live region. */
   onPinAnnouncement?: (text: string) => void;
 };

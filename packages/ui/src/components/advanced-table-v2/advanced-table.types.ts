@@ -25,6 +25,16 @@ export type AdvancedTableLeafColumn<T> = {
      * `enableColumnFilter`: set to `false` to remove this column's filter menu.
      */
     enableColumnFilter?: boolean;
+    /**
+     * Opts this column out of pinning. Only meaningful when the table has
+     * `enableColumnPinning`: set to `false` to remove this column's pin menu items.
+     */
+    enablePinning?: boolean;
+    /**
+     * Opts this column out of grouping. Only meaningful when the table has
+     * `enableGrouping`: set to `false` to remove this column's group menu item.
+     */
+    enableGrouping?: boolean;
     /** Marks the column editable. Consumed by the editable-cells feature (later ticket). */
     editable?: boolean;
     /** Default column width in pixels. Consumed by the resizing feature (later ticket). */
@@ -110,6 +120,13 @@ export type AdvancedTableColumnPinningState = {
   /** Ids of columns pinned to the right edge, in display order. */
   right?: string[];
 };
+
+/**
+ * The table's grouping state: an ordered list of grouped column ids. Only ever
+ * holds 0 or 1 entries — this table supports grouping by a single column at a
+ * time. A public, GEL-owned contract — the internal table engine is never exposed.
+ */
+export type AdvancedTableGroupingState = string[];
 
 type AdvancedTableBaseProps<T> = {
   /** Column definitions for the table. */
@@ -213,8 +230,8 @@ type AdvancedTableBaseProps<T> = {
    */
   manualFiltering?: boolean;
   /**
-   * Enables pin left / pin right / unpin actions in every column's menu. Applies
-   * uniformly to every non-reserved column — there is no per-column opt-out.
+   * Enables pin left / pin right / unpin actions in every non-reserved column's
+   * menu. A column can opt out with its own `enablePinning: false`.
    * @default false
    */
   enableColumnPinning?: boolean;
@@ -230,6 +247,25 @@ type AdvancedTableBaseProps<T> = {
   defaultColumnPinning?: AdvancedTableColumnPinningState;
   /** Called with the next column-pinning state whenever the user pins or unpins a column. */
   onColumnPinningChange?: (pinning: AdvancedTableColumnPinningState) => void;
+  /**
+   * Enables group/ungroup actions in every column's menu. A column can opt out
+   * with its own `enableGrouping: false`. Only one column can be grouped at a
+   * time; grouping by a new column replaces the previous grouping.
+   * @default false
+   */
+  enableGrouping?: boolean;
+  /**
+   * Current grouping state (controlled). Pair with `onGroupingChange` to own
+   * grouping. Use `defaultGrouping` instead for uncontrolled usage.
+   */
+  grouping?: AdvancedTableGroupingState;
+  /**
+   * Initial grouping state when the table manages its own grouping
+   * (uncontrolled).
+   */
+  defaultGrouping?: AdvancedTableGroupingState;
+  /** Called with the next grouping state whenever the user groups or ungroups a column. */
+  onGroupingChange?: (grouping: AdvancedTableGroupingState) => void;
   /**
    * Row-background treatment. `transparent` (default) applies a hover highlight
    * only, `striped` alternates row backgrounds, `filled` fills every row with a

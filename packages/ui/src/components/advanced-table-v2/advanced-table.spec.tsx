@@ -521,6 +521,16 @@ describe('AdvancedTable', () => {
       expect(liveRegion).toHaveTextContent('Name unpinned.');
     });
 
+    it('a column opts out of pinning with its own enablePinning: false', () => {
+      const columns: AdvancedTableColumn<TestData>[] = [
+        { key: 'name', title: 'Name', enablePinning: false },
+        { key: 'age', title: 'Age' },
+      ];
+      render(<AdvancedTable columns={columns} data={testData} enableColumnPinning />);
+      expect(screen.queryByRole('button', { name: 'Name column menu' })).not.toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Age column menu' })).toBeInTheDocument();
+    });
+
     it('controlled pinning: renders from the columnPinning prop and emits onColumnPinningChange', async () => {
       const user = userEvent.setup();
       const onColumnPinningChange = vi.fn();
@@ -558,9 +568,93 @@ describe('AdvancedTable', () => {
   });
 
   describe('grouping', () => {
-    it.todo('groups rows by a column via the column menu');
-    it.todo('ungroups via the column menu');
-    it.todo('controlled grouping: renders from the grouping prop and emits onGroupingChange');
+    // Opens the named column's menu.
+    const openColumnMenu = async (user: ReturnType<typeof userEvent.setup>, columnName: string) => {
+      await user.click(screen.getByRole('button', { name: `${columnName} column menu` }));
+      await screen.findByRole('menu');
+    };
+
+    // Repeated `age` value (30) so a group actually contains more than one row.
+    const groupingTestData: TestData[] = [
+      { name: 'John', age: 30 },
+      { name: 'Jane', age: 30 },
+      { name: 'Bob', age: 25 },
+    ];
+
+    it('groups rows by a column via the column menu', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={groupingTestData} enableGrouping />);
+
+      await openColumnMenu(user, 'Age');
+      await user.click(screen.getByRole('menuitem', { name: 'Group by Age' }));
+      await user.keyboard('{Escape}');
+
+      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'td' })).toBeInTheDocument();
+      expect(screen.getByText(/Age: 25 \(1 row\)/, { selector: 'td' })).toBeInTheDocument();
+      expect(screen.getByText('John')).toBeInTheDocument();
+      expect(screen.getByText('Jane')).toBeInTheDocument();
+      expect(screen.getByText('Bob')).toBeInTheDocument();
+    });
+
+    it('ungroups via the column menu', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={groupingTestData} enableGrouping />);
+
+      await openColumnMenu(user, 'Age');
+      await user.click(screen.getByRole('menuitem', { name: 'Group by Age' }));
+      await user.keyboard('{Escape}');
+      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'td' })).toBeInTheDocument();
+
+      await openColumnMenu(user, 'Age');
+      await user.click(screen.getByRole('menuitem', { name: 'Ungroup' }));
+      await user.keyboard('{Escape}');
+
+      expect(screen.queryByText(/Age: 30/, { selector: 'td' })).not.toBeInTheDocument();
+      expect(within(screen.getByRole('table')).getAllByRole('row')).toHaveLength(4);
+    });
+
+    it('a column opts out of grouping with its own enableGrouping: false', () => {
+      const columns: AdvancedTableColumn<TestData>[] = [
+        { key: 'name', title: 'Name' },
+        { key: 'age', title: 'Age', enableGrouping: false },
+      ];
+      render(<AdvancedTable columns={columns} data={groupingTestData} enableGrouping />);
+      expect(screen.queryByRole('button', { name: 'Age column menu' })).not.toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Name column menu' })).toBeInTheDocument();
+    });
+
+    it('controlled grouping: renders from the grouping prop and emits onGroupingChange', async () => {
+      const user = userEvent.setup();
+      const onGroupingChange = vi.fn();
+      const { rerender } = render(
+        <AdvancedTable
+          columns={testColumns}
+          data={groupingTestData}
+          enableGrouping
+          grouping={[]}
+          onGroupingChange={onGroupingChange}
+        />,
+      );
+      expect(screen.queryByText(/Age: 30/, { selector: 'td' })).not.toBeInTheDocument();
+
+      await openColumnMenu(user, 'Age');
+      await user.click(screen.getByRole('menuitem', { name: 'Group by Age' }));
+
+      expect(onGroupingChange).toHaveBeenCalledWith(['age']);
+      // Controlled: doesn't group on its own until the prop is fed back.
+      expect(screen.queryByText(/Age: 30/, { selector: 'td' })).not.toBeInTheDocument();
+
+      rerender(
+        <AdvancedTable
+          columns={testColumns}
+          data={groupingTestData}
+          enableGrouping
+          grouping={['age']}
+          onGroupingChange={onGroupingChange}
+        />,
+      );
+      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'td' })).toBeInTheDocument();
+    });
   });
 
   describe('column resizing', () => {

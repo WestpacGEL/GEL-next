@@ -1,7 +1,7 @@
 'use client';
 
-import { flexRender } from '@tanstack/react-table';
-import { useCallback, useRef } from 'react';
+import { Column, flexRender } from '@tanstack/react-table';
+import { useCallback, useMemo, useRef } from 'react';
 import { Key, useButton, useMenuTrigger } from 'react-aria';
 import { Item, Section, useMenuTriggerState } from 'react-stately';
 
@@ -19,13 +19,35 @@ import { MenuList } from './components/menu-list/menu-list.component.js';
 import { MenuPopover } from './components/menu-popover/menu-popover.component.js';
 import { PinItemContent } from './components/pin-item-content/pin-item-content.component.js';
 
+/** The "Filter by:" section's contents — split out to keep the parent's cognitive complexity down. */
+function ColumnMenuFilterItem<T>({ column }: { column: Column<T, unknown> }) {
+  const filterVal = column.getFilterValue() as string | undefined;
+  const clearFilter = useCallback(() => column.setFilterValue(''), [column]);
+
+  return (
+    <InputGroup
+      hideLabel
+      label="Filter"
+      before={{ icon: SearchIcon }}
+      after={{
+        inset: true,
+        element: filterVal ? (
+          <Button onClick={clearFilter} look="link" iconAfter={ClearIcon} iconColor="muted" />
+        ) : null,
+      }}
+    >
+      <Input value={filterVal ?? ''} onChange={val => column.setFilterValue(val.currentTarget.value)} />
+    </InputGroup>
+  );
+}
+
 /**
- * Column menu trigger + popover. Filtering and pinning ship in this ticket;
- * grouping and move actions (tickets 08/12) add further `Section`s to the same
- * `MenuList`, in that order, without restructuring this component.
+ * Column menu trigger + popover. Filtering, pinning, and grouping share this
+ * `MenuList` as separate `Section`s in that order; move actions (ticket 12)
+ * add a further `Section` without restructuring this component.
  */
 export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuProps<T>) {
-  const { tableId, onPinAnnouncement } = useAdvancedTableContext<T>();
+  const { tableId, table, onPinAnnouncement } = useAdvancedTableContext<T>();
   const state = useMenuTriggerState({});
 
   const btnRef = useRef(null);
@@ -36,22 +58,34 @@ export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuPr
   const labelId = `${tableId}-${header.id}-label`;
   const menuActionId = `${tableId}-${header.id}-menu-action`;
 
-  const filterVal = header.column.getFilterValue() as string | undefined;
-  const clearFilter = useCallback(() => header.column.setFilterValue(''), [header.column]);
+  const canFilter = header.column.getCanFilter();
+  // `getCanPin()` checks a group/banding column's LEAF children, never the
+  // group column's own `enablePinning: false` — `accessorFn` is only present
+  // on real (leaf) data columns, so it's what actually excludes banding headers.
+  const canPin =
+    header.column.getCanPin() && Boolean(header.column.accessorFn) && !RESERVED_COLUMN_IDS.includes(header.column.id);
+  const canGroup = header.column.getCanGroup() && !RESERVED_COLUMN_IDS.includes(header.column.id);
+  const isGrouped = header.column.getIsGrouped();
 
-  const canPin = header.column.getCanPin() && !RESERVED_COLUMN_IDS.includes(header.column.id);
+  const columnName = useMemo(() => {
+    const title = flexRender(header.column.columnDef.header, header.getContext());
+    return typeof title === 'string' ? title : header.column.id;
+  }, [header]);
 
   const handleAction = (key: Key) => {
-    if (key !== 'pin-left' && key !== 'pin-right') return;
-    const direction = key === 'pin-left' ? 'left' : 'right';
-    const title = flexRender(header.column.columnDef.header, header.getContext());
-    const name = typeof title === 'string' ? title : header.column.id;
-    if (header.column.getIsPinned() === direction) {
-      header.column.pin(false);
-      onPinAnnouncement?.(`${name} unpinned.`);
-    } else {
-      header.column.pin(direction);
-      onPinAnnouncement?.(`${name} pinned ${direction}.`);
+    if (key === 'pin-left' || key === 'pin-right') {
+      const direction = key === 'pin-left' ? 'left' : 'right';
+      if (header.column.getIsPinned() === direction) {
+        header.column.pin(false);
+        onPinAnnouncement?.(`${columnName} unpinned.`);
+      } else {
+        header.column.pin(direction);
+        onPinAnnouncement?.(`${columnName} pinned ${direction}.`);
+      }
+      return;
+    }
+    if (key === 'group') {
+      table.setGrouping(isGrouped ? [] : [header.column.id]);
     }
   };
 
@@ -73,26 +107,13 @@ export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuPr
       {state.isOpen && (
         <MenuPopover state={state} triggerRef={btnRef} placement="bottom start">
           <MenuList {...menuProps} onAction={handleAction} aria-labelledby={`${labelId} ${menuActionId}`}>
-            <Section key="filter-section" title="Filter by:">
-              <Item key="filter" textValue="Filter">
-                <InputGroup
-                  hideLabel
-                  label="Filter"
-                  before={{ icon: SearchIcon }}
-                  after={{
-                    inset: true,
-                    element: filterVal ? (
-                      <Button onClick={clearFilter} look="link" iconAfter={ClearIcon} iconColor="muted" />
-                    ) : null,
-                  }}
-                >
-                  <Input
-                    value={filterVal ?? ''}
-                    onChange={val => header.column.setFilterValue(val.currentTarget.value)}
-                  />
-                </InputGroup>
-              </Item>
-            </Section>
+            {canFilter ? (
+              <Section key="filter-section" title="Filter by:">
+                <Item key="filter" textValue="Filter">
+                  <ColumnMenuFilterItem column={header.column} />
+                </Item>
+              </Section>
+            ) : null}
             {canPin ? (
               <Section key="pin-section" title="Pin">
                 <Item key="pin-left" textValue={header.column.getIsPinned() === 'left' ? 'Unpin left' : 'Pin left'}>
@@ -100,6 +121,13 @@ export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuPr
                 </Item>
                 <Item key="pin-right" textValue={header.column.getIsPinned() === 'right' ? 'Unpin right' : 'Pin right'}>
                   <PinItemContent isPinned={header.column.getIsPinned() === 'right'} direction="right" />
+                </Item>
+              </Section>
+            ) : null}
+            {canGroup ? (
+              <Section key="group-section" title="Group">
+                <Item key="group" textValue={isGrouped ? 'Ungroup' : `Group by ${columnName}`}>
+                  {isGrouped ? 'Ungroup' : `Group by ${columnName}`}
                 </Item>
               </Section>
             ) : null}

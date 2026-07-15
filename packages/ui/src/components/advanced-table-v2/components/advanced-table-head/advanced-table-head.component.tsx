@@ -3,7 +3,7 @@ import { flexRender } from '@tanstack/react-table';
 import { ArrowDownIcon, ArrowUpIcon, SortIcon } from '../../../icon/index.js';
 import { VisuallyHidden } from '../../../visually-hidden/index.js';
 import { useAdvancedTableContext } from '../../advanced-table.context.js';
-import { RESERVED_COLUMN_IDS } from '../../utils/index.js';
+import { getColumnPinningStyleInfo, RESERVED_COLUMN_IDS } from '../../utils/index.js';
 import { AdvancedTableColumnMenu } from '../advanced-table-column-menu/index.js';
 
 import { styles as advancedTableHeadStyles } from './advanced-table-head.styles.js';
@@ -19,7 +19,7 @@ function getAriaSort(canSort: boolean, direction: false | 'asc' | 'desc') {
 
 /** Renders a single header cell: the label plus (when sortable) the sort toggle. */
 function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>) {
-  const { tableId, padding, bordered } = useAdvancedTableContext<T>();
+  const { tableId, padding, bordered, enableColumnPinning } = useAdvancedTableContext<T>();
 
   const { column } = header;
   const canSort = column.getCanSort();
@@ -38,13 +38,24 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
     }
   })();
 
-  const isPinned = column.getIsPinned();
-  const isLastLeftPinned = isPinned === 'left' && column.getIsLastColumn('left');
-  const isFirstRightPinned = isPinned === 'right' && column.getIsFirstColumn('right');
-  let pinnedEdge: 'left' | 'right' | undefined;
-  if (isLastLeftPinned) pinnedEdge = 'left';
-  else if (isFirstRightPinned) pinnedEdge = 'right';
-  const styles = advancedTableHeadStyles({ padding, bordered, isPinned: Boolean(isPinned), pinnedEdge });
+  // `getCanPin()` checks a group/banding column's LEAF children, never the
+  // group column's own `enablePinning: false` — `accessorFn` is only present
+  // on real (leaf) data columns, so it's what actually excludes banding headers.
+  const isReserved = RESERVED_COLUMN_IDS.includes(column.id);
+  const canPin = column.getCanPin() && Boolean(column.accessorFn) && !isReserved;
+  const canGroup = column.getCanGroup() && !isReserved;
+  const { isPinned, pinnedEdge, style: pinningStyle } = getColumnPinningStyleInfo(column);
+  // The reserved selection column is always structurally sticky (see above),
+  // but only gets the pinned-look styling (flattened bg, edge shadow) when the
+  // pinning feature is actually enabled — otherwise it'd look pinned in every
+  // row-selection table, striped or not, even when pinning was never touched.
+  const showPinnedStyling = isPinned && (!isReserved || Boolean(enableColumnPinning));
+  const styles = advancedTableHeadStyles({
+    padding,
+    bordered,
+    isPinned: showPinnedStyling,
+    pinnedEdge: showPinnedStyling ? pinnedEdge : undefined,
+  });
 
   return (
     <th
@@ -52,15 +63,7 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
       colSpan={header.colSpan}
       aria-sort={header.isPlaceholder ? undefined : ariaSort}
       className={styles.th()}
-      style={{
-        // Column width comes from the root <colgroup> (table-layout: fixed),
-        // which is what makes these sticky offsets (computed from the same
-        // `column.getSize()`) actually line up with a pinned column's real edge.
-        position: isPinned ? 'sticky' : undefined,
-        left: isPinned === 'left' ? column.getStart('left') : undefined,
-        right: isPinned === 'right' ? column.getAfter('right') : undefined,
-        zIndex: isPinned ? 1 : undefined,
-      }}
+      style={pinningStyle}
     >
       {header.isPlaceholder ? null : (
         <div className={styles.headerContent()}>
@@ -80,9 +83,7 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
               </VisuallyHidden>
             </button>
           )}
-          {(column.getCanFilter() || column.getCanPin()) && !RESERVED_COLUMN_IDS.includes(column.id) && (
-            <AdvancedTableColumnMenu header={header} />
-          )}
+          {(column.getCanFilter() || canPin || canGroup) && !isReserved && <AdvancedTableColumnMenu header={header} />}
         </div>
       )}
     </th>

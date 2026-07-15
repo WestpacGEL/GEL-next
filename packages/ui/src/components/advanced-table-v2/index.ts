@@ -11,5 +11,6 @@ export {
   type AdvancedTableColumnFilter,
   type AdvancedTableColumnFiltersState,
   type AdvancedTableColumnPinningState,
+  type AdvancedTableGroupingState,
 } from './advanced-table.types.js';
 export { type AdvancedTableEmptyStateProps } from './components/index.js';

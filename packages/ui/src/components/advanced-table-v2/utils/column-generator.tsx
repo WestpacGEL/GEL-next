@@ -13,8 +13,10 @@ type ColumnGeneratorOptions = {
   enableSorting?: boolean;
   /** Table-level filtering flag; a column may opt out with its own `enableColumnFilter: false`. */
   enableColumnFilter?: boolean;
-  /** Table-level pinning flag. Uniform across every leaf column — no per-column opt-out. */
+  /** Table-level pinning flag; a column may opt out with its own `enablePinning: false`. */
   enableColumnPinning?: boolean;
+  /** Table-level grouping flag; a column may opt out with its own `enableGrouping: false`. */
+  enableGrouping?: boolean;
 };
 
 /**
@@ -52,8 +54,12 @@ export function columnGenerator<T>(
       // Filtering is enabled only at the table level; a column may opt out with `false`
       // but cannot enable filtering on its own.
       enableColumnFilter: options.enableColumnFilter ? (column.enableColumnFilter ?? true) : false,
-      // No per-column opt-out for pinning — table-level `enableColumnPinning` applies uniformly.
-      enablePinning: Boolean(options.enableColumnPinning),
+      // Pinning is enabled only at the table level; a column may opt out with `false`
+      // but cannot enable pinning on its own.
+      enablePinning: options.enableColumnPinning ? (column.enablePinning ?? true) : false,
+      // Grouping is enabled only at the table level; a column may opt out with `false`
+      // but cannot enable grouping on its own.
+      enableGrouping: options.enableGrouping ? (column.enableGrouping ?? true) : false,
       ...(column.width !== undefined ? { size: column.width } : {}),
     };
   });

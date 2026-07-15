@@ -15,6 +15,7 @@ import { styles as advancedTableStyles } from './advanced-table.styles.js';
 import {
   AdvancedTableColumnFiltersState,
   AdvancedTableColumnPinningState,
+  AdvancedTableGroupingState,
   AdvancedTablePaginationState,
   AdvancedTableProps,
   AdvancedTableSortingState,
@@ -31,6 +32,7 @@ import {
   columnGenerator,
   idsToSelectionState,
   resolveRowId,
+  RESERVED_COLUMN_IDS,
   selectionStateToIds,
   SELECT_COLUMN_ID,
 } from './utils/index.js';
@@ -42,6 +44,7 @@ const DEFAULT_PAGE_SIZE_OPTIONS = [5, 10, 20, 50];
 const EMPTY_SELECTED_ROW_IDS: never[] = [];
 const EMPTY_COLUMN_FILTERS: AdvancedTableColumnFiltersState = [];
 const EMPTY_COLUMN_PINNING: AdvancedTableColumnPinningState = {};
+const EMPTY_GROUPING: AdvancedTableGroupingState = [];
 
 /**
  * Data table built on TanStack Table (wired internally and fully hidden). Pass
@@ -81,6 +84,10 @@ export function AdvancedTable<T>({
   columnPinning: columnPinningProp,
   defaultColumnPinning: defaultColumnPinningProp,
   onColumnPinningChange: onColumnPinningChangeProp,
+  enableGrouping,
+  grouping: groupingProp,
+  defaultGrouping: defaultGroupingProp,
+  onGroupingChange: onGroupingChangeProp,
   background,
   padding,
   bordered,
@@ -126,6 +133,12 @@ export function AdvancedTable<T>({
     onColumnPinningChangeProp,
   );
 
+  const [groupingState, setGroupingState] = useControlledState<AdvancedTableGroupingState>(
+    groupingProp,
+    defaultGroupingProp ?? EMPTY_GROUPING,
+    onGroupingChangeProp,
+  );
+
   const [pinAnnouncement, setPinAnnouncement] = useState('');
 
   // Drops stale ids (e.g. a row removed from `data` but still in a controlled
@@ -156,28 +169,30 @@ export function AdvancedTable<T>({
   };
 
   // Forces the reserved selection column into `left`; never leaks into the
-  // public columnPinning contract (stripped again in the change handler below).
+  // public columnPinning contract (stripped again in the change handler below,
+  // via the same RESERVED_COLUMN_IDS list so a future reserved column can't
+  // slip through either side by accident).
   const resolvedColumnPinningState = useMemo(() => {
-    const userLeft = (columnPinningState.left ?? []).filter(id => id !== SELECT_COLUMN_ID);
+    const userLeft = (columnPinningState.left ?? []).filter(id => !RESERVED_COLUMN_IDS.includes(id));
     const left = enableRowSelection ? [SELECT_COLUMN_ID, ...userLeft] : userLeft;
-    const right = (columnPinningState.right ?? []).filter(id => id !== SELECT_COLUMN_ID);
+    const right = (columnPinningState.right ?? []).filter(id => !RESERVED_COLUMN_IDS.includes(id));
     return { left, right };
   }, [columnPinningState, enableRowSelection]);
 
   const handleColumnPinningChange: OnChangeFn<ColumnPinningState> = updaterOrValue => {
     const next = typeof updaterOrValue === 'function' ? updaterOrValue(resolvedColumnPinningState) : updaterOrValue;
     setColumnPinningState({
-      left: (next.left ?? []).filter(id => id !== SELECT_COLUMN_ID),
-      right: next.right ?? [],
+      left: (next.left ?? []).filter(id => !RESERVED_COLUMN_IDS.includes(id)),
+      right: (next.right ?? []).filter(id => !RESERVED_COLUMN_IDS.includes(id)),
     });
   };
 
   const tableColumns = useMemo(
     () => [
       ...buildReservedColumns<T>({ enableRowSelection }),
-      ...columnGenerator(columns, { enableSorting, enableColumnFilter, enableColumnPinning }),
+      ...columnGenerator(columns, { enableSorting, enableColumnFilter, enableColumnPinning, enableGrouping }),
     ],
-    [columns, enableSorting, enableRowSelection, enableColumnFilter, enableColumnPinning],
+    [columns, enableSorting, enableRowSelection, enableColumnFilter, enableColumnPinning, enableGrouping],
   );
 
   const table = useReactTable<T>(
@@ -204,6 +219,9 @@ export function AdvancedTable<T>({
       columnPinningState: resolvedColumnPinningState,
       onColumnPinningChange: handleColumnPinningChange,
       hasReservedPinning: Boolean(enableRowSelection),
+      enableGrouping,
+      groupingState,
+      onGroupingChange: setGroupingState,
     }),
   );
 
@@ -228,13 +246,31 @@ export function AdvancedTable<T>({
     return `${matchCount} matching row${matchCount === 1 ? '' : 's'}.`;
   }, [columnFiltersState, table, enableColumnFilter]);
 
+  const groupAnnouncement = useMemo(() => {
+    if (!enableGrouping) return null;
+    // Mirrors the sorting/filter announcements above (silent on mount, read on clear).
+    if (groupingState.length === 0) return 'Grouping cleared.';
+    const columnId = groupingState[0];
+    const header = table.getColumn(columnId)?.columnDef.header;
+    const name = typeof header === 'string' ? header : columnId;
+    return `Grouped by ${name}.`;
+  }, [groupingState, table, enableGrouping]);
+
   const styles = advancedTableStyles({ bordered, fillContainer });
 
-  // table-layout: fixed needs an explicit pixel width, not a percentage, for
-  // columns to render at their configured size; `min-w-full` (fillContainer)
-  // stretches to fill a wider container without shrinking this nominal total.
-  const totalSize = table.getTotalSize();
+  // `getVisibleLeafColumns()` is TanStack-memoized (stable reference until the
+  // column set/order/pinning actually changes), so deriving from it keeps the
+  // <colgroup> and total width from being rebuilt on every unrelated re-render.
+  const visibleLeafColumns = table.getVisibleLeafColumns();
+  const totalSize = useMemo(
+    () => visibleLeafColumns.reduce((sum, column) => sum + column.getSize(), 0),
+    [visibleLeafColumns],
+  );
   const tableWidth = `${totalSize}px`;
+  const colgroupColumns = useMemo(
+    () => visibleLeafColumns.map(column => <col key={column.id} style={{ width: column.getSize() }} />),
+    [visibleLeafColumns],
+  );
 
   // Keyed using referenced `pageSizeOptions` so new array doesn't force re-renders
   const pageSizeOptionsKey = pageSizeOptions.join(',');
@@ -247,10 +283,11 @@ export function AdvancedTable<T>({
       background,
       padding,
       bordered,
+      enableColumnPinning,
       onPinAnnouncement: setPinAnnouncement,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [table, tableId, emptyState, pageSizeOptionsKey, background, padding, bordered],
+    [table, tableId, emptyState, pageSizeOptionsKey, background, padding, bordered, enableColumnPinning],
   );
 
   return (
@@ -259,13 +296,14 @@ export function AdvancedTable<T>({
         <div className={styles.container()}>
           <table id={tableId} className={styles.table()} style={{ width: tableWidth }}>
             {caption ? (
-              <AdvancedTableCaption title={caption} hideCaption={hideCaption} hasSorting={enableSorting} />
+              <AdvancedTableCaption
+                title={caption}
+                hideCaption={hideCaption}
+                hasSorting={enableSorting}
+                hasGrouping={Boolean(enableGrouping)}
+              />
             ) : null}
-            <colgroup>
-              {table.getVisibleLeafColumns().map(column => (
-                <col key={column.id} style={{ width: column.getSize() }} />
-              ))}
-            </colgroup>
+            <colgroup>{colgroupColumns}</colgroup>
             <AdvancedTableHead />
             <AdvancedTableBody />
           </table>
@@ -284,6 +322,11 @@ export function AdvancedTable<T>({
         {enableColumnPinning && (
           <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
             {pinAnnouncement}
+          </div>
+        )}
+        {enableGrouping && (
+          <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
+            {groupAnnouncement}
           </div>
         )}
       </div>

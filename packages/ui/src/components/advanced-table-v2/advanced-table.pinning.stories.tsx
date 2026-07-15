@@ -46,6 +46,32 @@ export const Default: Story = {
 };
 
 /**
+ * Per-column opt-out. Pinning is enabled at the table level, but one column
+ * sets `enablePinning: false` to remove its pin menu items while the rest
+ * stay pinnable.
+ */
+export const PerColumnOptOut: Story = {
+  render: () => {
+    const perColumn: AdvancedTableColumn<AdvancedPerson>[] = [
+      { key: 'firstName', title: 'First Name', width: 200 },
+      { key: 'lastName', title: 'Last Name', width: 200 },
+      { key: 'age', title: 'Age', width: 200, enablePinning: false },
+      { key: 'visits', title: 'Visits', width: 200, enablePinning: false },
+      { key: 'status', title: 'Status', width: 200, enablePinning: false },
+      { key: 'progress', title: 'Profile Progress', width: 200, enablePinning: false },
+    ];
+    return (
+      <AdvancedTable
+        data={data}
+        columns={perColumn}
+        caption="Pinning on, Profile Progress opted out"
+        enableColumnPinning
+      />
+    );
+  },
+};
+
+/**
  * Pinning alongside row selection: the reserved selection checkbox column is
  * always force-pinned left (and never appears in the pin menu itself).
  */

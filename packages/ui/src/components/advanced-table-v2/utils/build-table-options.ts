@@ -3,9 +3,12 @@ import {
   ColumnFiltersState,
   ColumnPinningState,
   getCoreRowModel,
+  getExpandedRowModel,
   getFilteredRowModel,
+  getGroupedRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  GroupingState,
   OnChangeFn,
   PaginationState,
   RowSelectionState,
@@ -60,6 +63,12 @@ export type BuildTableOptionsParams<T> = {
   onColumnPinningChange: OnChangeFn<ColumnPinningState>;
   /** `true` when the reserved selection column must be force-pinned regardless of `enableColumnPinning`. */
   hasReservedPinning?: boolean;
+  /** Table-level grouping flag. Gates `column.getCanGroup()`. */
+  enableGrouping?: boolean;
+  /** Current grouping state (0 or 1 column ids — single-column grouping only). */
+  groupingState: GroupingState;
+  /** Grouping setter (TanStack hands it an updater; the setter resolves it). */
+  onGroupingChange: OnChangeFn<GroupingState>;
   /** Row-identity accessor. Drives `getRowId` whenever selection (or a later
    * reserved-column feature) is enabled; falls back to index-based ids otherwise. */
   rowKey?: AdvancedTableRowKey<T>;
@@ -99,6 +108,9 @@ export function buildTableOptions<T>({
   columnPinningState,
   onColumnPinningChange,
   hasReservedPinning,
+  enableGrouping,
+  groupingState,
+  onGroupingChange,
 }: BuildTableOptionsParams<T>): TableOptions<T> {
   return {
     data,
@@ -109,6 +121,7 @@ export function buildTableOptions<T>({
       ...(enableRowSelection && { rowSelection: rowSelectionState }),
       ...(enableColumnFilter && { columnFilters: columnFiltersState }),
       ...((enableColumnPinning || hasReservedPinning) && { columnPinning: columnPinningState }),
+      ...(enableGrouping && { grouping: groupingState, expanded: true }),
     },
     ...(enableSorting
       ? {
@@ -134,11 +147,26 @@ export function buildTableOptions<T>({
           autoResetPageIndex: false,
         }
       : {}),
-    ...(enableRowSelection ? { enableRowSelection: true, onRowSelectionChange } : {}),
+    // A function (not `true`) so synthetic group-header rows — which render no
+    // checkbox at all — can never end up selected via select-all and leak a
+    // non-`rowKey` id into the public `onSelectionChange` contract.
+    ...(enableRowSelection ? { enableRowSelection: row => !row.getIsGrouped(), onRowSelectionChange } : {}),
     ...(enableColumnFilter
       ? { getFilteredRowModel: getFilteredRowModel(), onColumnFiltersChange, manualFiltering }
       : {}),
     ...(enableColumnPinning ? { enableColumnPinning: true, onColumnPinningChange } : {}),
+    ...(enableGrouping
+      ? {
+          enableGrouping: true,
+          getGroupedRowModel: getGroupedRowModel(),
+          getExpandedRowModel: getExpandedRowModel(),
+          groupedColumnMode: false as const,
+          onGroupingChange,
+          // Keep a group's members together on one page rather than splitting
+          // them across a pagination boundary, orphaned from their header.
+          paginateExpandedRows: false,
+        }
+      : {}),
     getCoreRowModel: getCoreRowModel(),
     getRowId: rowKey
       ? (row, _index, parent) => {

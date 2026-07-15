@@ -22,18 +22,16 @@ export const MenuList = forwardRef(function MenuList<T extends object>(
 
   return (
     <ul {...ariaMenuProps} ref={ref} className={styles.list()}>
-      {[...state.collection].map(item => {
-        if (item.type === 'section') return <MenuSection key={item.key} section={item} state={state} />;
-
-        if (item.key === 'filter')
-          return (
-            <li key={item.key} className={styles.filterItem()} role="none">
-              {item.rendered}
-            </li>
-          );
-
-        return <MenuItem key={item.key} item={item} state={state} />;
-      })}
+      {/* Every top-level item in this menu is wrapped in a Section (see
+          advanced-table-column-menu.component.tsx) — the raw-item filter
+          special-case lives in MenuSection, which is where it's reachable. */}
+      {[...state.collection].map(item =>
+        item.type === 'section' ? (
+          <MenuSection key={item.key} section={item} state={state} />
+        ) : (
+          <MenuItem key={item.key} item={item} state={state} />
+        ),
+      )}
     </ul>
   );
 }) as <T extends object>(props: MenuListProps<T> & { ref?: React.Ref<HTMLUListElement> }) => React.ReactElement;

@@ -1,5 +1,6 @@
 import { useAdvancedTableContext } from '../../advanced-table.context.js';
 import { AdvancedTableEmptyState } from '../advanced-table-empty-state/index.js';
+import { AdvancedTableGroupRow } from '../advanced-table-group-row/index.js';
 import { AdvancedTableRow } from '../advanced-table-row/index.js';
 
 import { styles as advancedTableBodyStyles } from './advanced-table-body.styles.js';
@@ -32,7 +33,13 @@ export function AdvancedTableBody<T>() {
           </td>
         </tr>
       ) : (
-        rows.map(row => <AdvancedTableRow key={row.id} row={row} />)
+        rows.map(row =>
+          row.getIsGrouped() ? (
+            <AdvancedTableGroupRow key={row.id} row={row} />
+          ) : (
+            <AdvancedTableRow key={row.id} row={row} />
+          ),
+        )
       )}
     </tbody>
   );
