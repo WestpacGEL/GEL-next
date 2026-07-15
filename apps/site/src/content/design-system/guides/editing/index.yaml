@@ -1,13 +1,11 @@
 name: Editing
 description: >-
-  Editing is a common interaction across Westpac digital experiences. Customers
-  regularly update information, preferences, settings and account details.
+  Editing is a common interaction across Westpac digital experiences, from
+  updating preferences to managing account information.
 
-
-  Without a shared approach, similar customer problems can result in different
-  patterns, behaviours and implementation choices across products and platforms.
-  This guidance provides a common enterprise model for designing editing
-  experiences that are consistent, reusable and scalable across Westpac.
+  This guidance provides a shared enterprise approach to editing experiences,
+  helping teams create consistent, reusable and scalable solutions across
+  products and platforms.
 namedExport:
   discriminant: false
 excludeFromNavbar: false
