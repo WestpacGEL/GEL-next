@@ -10,6 +10,12 @@ const meta: Meta<typeof Alert> = {
   component: Alert,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
+  argTypes: {
+    className: {
+      description: 'String to override base style',
+      type: { name: 'string' },
+    },
+  },
 };
 
 export default meta;
