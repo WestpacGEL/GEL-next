@@ -6,5 +6,7 @@ export {
   type AdvancedTableGroupColumn,
   type AdvancedTableColumnSort,
   type AdvancedTableSortingState,
+  type AdvancedTablePaginationState,
+  type AdvancedTableRowKey,
 } from './advanced-table.types.js';
 export { type AdvancedTableEmptyStateProps } from './components/index.js';

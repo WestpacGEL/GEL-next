@@ -13,7 +13,7 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { AdvancedTable } from './advanced-table.component.js';
-import { AdvancedTableColumn } from './advanced-table.types.js';
+import { AdvancedTableColumn, AdvancedTableProps } from './advanced-table.types.js';
 
 type TestData = { name: string; age: number };
 
@@ -131,7 +131,8 @@ describe('AdvancedTable', () => {
 
     it('does not render sort controls when sorting is disabled', () => {
       render(<AdvancedTable columns={testColumns} data={testData} />);
-      expect(screen.queryAllByRole('button')).toHaveLength(0);
+      // Scope to the table: pagination (on by default) renders its own controls.
+      expect(within(screen.getByRole('table')).queryAllByRole('button')).toHaveLength(0);
       expect(screen.getAllByRole('columnheader')[0]).not.toHaveAttribute('aria-sort');
     });
 
@@ -142,7 +143,8 @@ describe('AdvancedTable', () => {
       ];
       render(<AdvancedTable columns={columns} data={testData} />);
       // No table-level enableSorting: the column's own flag must not activate sorting.
-      expect(screen.queryAllByRole('button')).toHaveLength(0);
+      // Scope to the table: pagination (on by default) renders its own controls.
+      expect(within(screen.getByRole('table')).queryAllByRole('button')).toHaveLength(0);
       expect(screen.getAllByRole('columnheader')[1]).not.toHaveAttribute('aria-sort');
       // Order stays as provided.
       expect(bodyOrder()).toEqual(['John', 'Jane', 'Bob']);
@@ -358,11 +360,120 @@ describe('AdvancedTable', () => {
   });
 
   describe('row selection', () => {
-    it.todo('renders a named checkbox per row and a select-all checkbox in the header');
-    it.todo('selecting rows updates checkbox states and emits onSelectionChange with stable row IDs');
-    it.todo('select-all shows an indeterminate state when some rows are selected');
+    it('renders a named checkbox per row and a select-all checkbox in the header', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} enableRowSelection rowKey="name" />);
+      expect(screen.getAllByRole('checkbox')).toHaveLength(testData.length + 1);
+      expect(screen.getByRole('checkbox', { name: 'Select all rows' })).toBeInTheDocument();
+      expect(screen.getByRole('checkbox', { name: 'Select row 1' })).toBeInTheDocument();
+      expect(screen.getByRole('checkbox', { name: 'Select row 2' })).toBeInTheDocument();
+      expect(screen.getByRole('checkbox', { name: 'Select row 3' })).toBeInTheDocument();
+    });
+
+    it('selecting rows updates checkbox states and emits onSelectionChange with stable row IDs', async () => {
+      const user = userEvent.setup();
+      const onSelectionChange = vi.fn();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableRowSelection
+          rowKey="name"
+          onSelectionChange={onSelectionChange}
+        />,
+      );
+
+      const johnCheckbox = screen.getByRole('checkbox', { name: 'Select row 1' });
+      await user.click(johnCheckbox);
+      expect(johnCheckbox).toBeChecked();
+      expect(onSelectionChange).toHaveBeenCalledWith(['John']);
+    });
+
+    it('select-all shows an indeterminate state when some rows are selected', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} enableRowSelection rowKey="name" />);
+      const selectAll = screen.getByRole<HTMLInputElement>('checkbox', { name: 'Select all rows' });
+
+      await user.click(screen.getByRole('checkbox', { name: 'Select row 1' }));
+      // react-aria's useCheckbox sets the native `indeterminate` DOM property only
+      // (never `aria-checked="mixed"`), so assert it directly rather than via role.
+      expect(selectAll.indeterminate).toBe(true);
+
+      await user.click(selectAll);
+      expect(selectAll.indeterminate).toBe(false);
+      expect(selectAll).toBeChecked();
+      testData.forEach((_, i) => expect(screen.getByRole('checkbox', { name: `Select row ${i + 1}` })).toBeChecked());
+
+      await user.click(selectAll);
+      expect(selectAll).not.toBeChecked();
+      testData.forEach((_, i) =>
+        expect(screen.getByRole('checkbox', { name: `Select row ${i + 1}` })).not.toBeChecked(),
+      );
+    });
+
     it.todo('selection keyed by rowKey survives sorting, filtering, and page changes');
-    it.todo('controlled selection: renders from the selectedRows prop without internal toggling');
+
+    it('select-all only affects rows on the current page, not the whole dataset', async () => {
+      const user = userEvent.setup();
+      const manyRows: TestData[] = Array.from({ length: 12 }, (_, i) => ({ name: `Person ${i}`, age: 20 + i }));
+      const onSelectionChange = vi.fn();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={manyRows}
+          enableRowSelection
+          rowKey="name"
+          onSelectionChange={onSelectionChange}
+        />,
+      );
+
+      await user.click(screen.getByRole('checkbox', { name: 'Select all rows' }));
+      // Default page size is 10: only the first 10 rows should be selected, not
+      // all 12 — select-all must be scoped to the visible page.
+      expect(onSelectionChange).toHaveBeenCalledWith(Array.from({ length: 10 }, (_, i) => `Person ${i}`));
+
+      await user.click(screen.getByRole('button', { name: 'Go to page 2' }));
+      // Page 2's rows (labeled by absolute position, so "Select row 11" here)
+      // were not swept up by the page-1 select-all.
+      expect(screen.getByRole('checkbox', { name: 'Select row 11' })).not.toBeChecked();
+      expect(screen.getByRole('checkbox', { name: 'Select all rows' })).not.toBeChecked();
+    });
+
+    it('a stale id in a controlled selectedRows does not make select-all read as checked/indeterminate', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableRowSelection
+          rowKey="name"
+          selectedRows={['does-not-exist']}
+        />,
+      );
+      const selectAll = screen.getByRole<HTMLInputElement>('checkbox', { name: 'Select all rows' });
+      expect(selectAll).not.toBeChecked();
+      expect(selectAll.indeterminate).toBe(false);
+      testData.forEach((_, i) =>
+        expect(screen.getByRole('checkbox', { name: `Select row ${i + 1}` })).not.toBeChecked(),
+      );
+    });
+
+    it('controlled selection: renders from the selectedRows prop without internal toggling', async () => {
+      const user = userEvent.setup();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableRowSelection
+          rowKey="name"
+          selectedRows={['John']}
+        />,
+      );
+      expect(screen.getByRole('checkbox', { name: 'Select row 1' })).toBeChecked();
+
+      await user.click(screen.getByRole('checkbox', { name: 'Select row 2' }));
+      // No onSelectionChange handler: the table must not toggle its own state.
+      expect(screen.getByRole('checkbox', { name: 'Select row 1' })).toBeChecked();
+      expect(screen.getByRole('checkbox', { name: 'Select row 2' })).not.toBeChecked();
+    });
   });
 
   describe('row pinning', () => {
@@ -392,13 +503,101 @@ describe('AdvancedTable', () => {
   });
 
   describe('pagination', () => {
-    it.todo('renders pagination controls and only the current page of rows');
-    it.todo('changing page updates the visible rows');
-    it.todo('changing page size updates the visible row count');
-    it.todo(
-      'controlled pagination: renders from the pagination prop ({ pageIndex, pageSize }) and emits onPaginationChange',
-    );
-    it.todo('uncontrolled pagination: defaultPagination sets the initial page and size');
+    // 12 distinct rows so the default 10-per-page splits into two pages.
+    const manyRows: TestData[] = Array.from({ length: 12 }, (_, i) => ({ name: `Person ${i}`, age: 20 + i }));
+    // Body rows only (excludes the header row).
+    const bodyRows = () => within(screen.getByRole('table').querySelector('tbody') as HTMLElement).getAllByRole('row');
+
+    it('renders pagination controls and only the current page of rows', () => {
+      render(<AdvancedTable columns={testColumns} data={manyRows} />);
+      // Pagination navigation is present and named.
+      expect(screen.getByRole('navigation', { name: 'Pagination' })).toBeInTheDocument();
+      // Only the first page (default size 10) of the 12 rows is rendered.
+      expect(bodyRows()).toHaveLength(10);
+      expect(screen.getByText('Person 0')).toBeInTheDocument();
+      expect(screen.queryByText('Person 11')).not.toBeInTheDocument();
+    });
+
+    it('changing page updates the visible rows', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={manyRows} />);
+      expect(screen.getByText('Person 0')).toBeInTheDocument();
+
+      await user.click(screen.getByRole('button', { name: 'Go to page 2' }));
+      // Page 2 shows the remaining two rows and drops the first page.
+      expect(bodyRows()).toHaveLength(2);
+      expect(screen.getByText('Person 11')).toBeInTheDocument();
+      expect(screen.queryByText('Person 0')).not.toBeInTheDocument();
+    });
+
+    it('changing page size updates the visible row count', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={manyRows} />);
+      expect(bodyRows()).toHaveLength(10);
+
+      await user.selectOptions(screen.getByLabelText('Items per page'), '5');
+      expect(bodyRows()).toHaveLength(5);
+    });
+
+    it('page-size options are configurable', () => {
+      render(<AdvancedTable columns={testColumns} data={manyRows} pageSizeOptions={[3, 6]} />);
+      const options = within(screen.getByLabelText('Items per page')).getAllByRole('option');
+      expect(options.map(option => option.textContent)).toEqual(['3', '6']);
+    });
+
+    it('defaults to a page size that is actually one of pageSizeOptions when the hardcoded default is not offered', () => {
+      render(<AdvancedTable columns={testColumns} data={manyRows} pageSizeOptions={[8, 16, 24]} />);
+      // The hardcoded default (10) isn't in pageSizeOptions, so the initial page
+      // size must fall back to the first offered option instead of silently
+      // paginating at a size the <Select> can't display.
+      expect(screen.getByLabelText<HTMLSelectElement>('Items per page').value).toBe('8');
+      expect(bodyRows()).toHaveLength(8);
+    });
+
+    it('an out-of-range controlled pageIndex does not render the empty state when data exists', () => {
+      render(<AdvancedTable columns={testColumns} data={manyRows} pagination={{ pageIndex: 5, pageSize: 10 }} />);
+      // 12 rows at pageSize 10 only has 2 pages (index 0-1); index 5 is out of
+      // range and autoResetPageIndex is off, so the current page renders no
+      // rows — but that must not be conflated with "no data at all".
+      expect(screen.queryByText('No data to display')).not.toBeInTheDocument();
+    });
+
+    it('controlled pagination: renders from the pagination prop ({ pageIndex, pageSize }) and emits onPaginationChange', async () => {
+      const user = userEvent.setup();
+      const onPaginationChange = vi.fn();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={manyRows}
+          pagination={{ pageIndex: 1, pageSize: 5 }}
+          onPaginationChange={onPaginationChange}
+        />,
+      );
+      // Reflects the controlled prop: page 2 of size 5 shows rows 5–9.
+      expect(bodyRows()).toHaveLength(5);
+      expect(screen.getByText('Person 5')).toBeInTheDocument();
+      expect(screen.queryByText('Person 0')).not.toBeInTheDocument();
+
+      await user.click(screen.getByRole('button', { name: 'Go to page 1' }));
+      // Emits the next state but does not change the rendered page on its own.
+      expect(onPaginationChange).toHaveBeenCalledWith({ pageIndex: 0, pageSize: 5 });
+      expect(screen.getByText('Person 5')).toBeInTheDocument();
+      expect(screen.queryByText('Person 0')).not.toBeInTheDocument();
+    });
+
+    it('uncontrolled pagination: defaultPagination sets the initial page and size', () => {
+      render(<AdvancedTable columns={testColumns} data={manyRows} defaultPagination={{ pageIndex: 1, pageSize: 5 }} />);
+      // Page 2 of size 5 shows rows 5–9.
+      expect(bodyRows()).toHaveLength(5);
+      expect(screen.getByText('Person 5')).toBeInTheDocument();
+      expect(screen.queryByText('Person 0')).not.toBeInTheDocument();
+    });
+
+    it('can be disabled with enablePagination={false}, rendering every row at once', () => {
+      render(<AdvancedTable columns={testColumns} data={manyRows} enablePagination={false} />);
+      expect(bodyRows()).toHaveLength(12);
+      expect(screen.queryByRole('navigation', { name: 'Pagination' })).not.toBeInTheDocument();
+    });
   });
 
   describe('empty state', () => {
@@ -407,15 +606,19 @@ describe('AdvancedTable', () => {
       // check header still render but cell does not
       expect(screen.getByText('Name')).toBeInTheDocument();
       expect(screen.queryByText('John')).not.toBeInTheDocument();
-      // default empty-state message inside a status region, in a valid table cell
-      const status = screen.getByRole('status');
+      // default empty-state message inside a status region, in a valid table cell.
+      // Scope to the table: pagination (on by default) renders its own status region.
+      const status = within(screen.getByRole('table')).getByRole('status');
       expect(status).toHaveTextContent('No data to display');
       expect(status.closest('td')).toBeInTheDocument();
     });
 
     it('spans the empty-state cell across all columns', () => {
       render(<AdvancedTable columns={testColumns} data={[]} />);
-      expect(screen.getByRole('status').closest('td')).toHaveAttribute('colspan', String(testColumns.length));
+      expect(within(screen.getByRole('table')).getByRole('status').closest('td')).toHaveAttribute(
+        'colspan',
+        String(testColumns.length),
+      );
     });
 
     it('renders a custom title and description from the emptyState prop', () => {
@@ -513,7 +716,12 @@ describe('AdvancedTable', () => {
       expect(badColumn).toBeDefined();
     });
 
-    it.todo('enabling selection, pinning, expansion, or editing without rowKey is a type error');
+    it('enabling selection without rowKey is a type error', () => {
+      // @ts-expect-error rowKey is required when enableRowSelection is set
+      const badProps: AdvancedTableProps<TestData> = { columns: testColumns, data: testData, enableRowSelection: true };
+      expect(badProps).toBeDefined();
+    });
+    it.todo('enabling pinning, expansion, or editing without rowKey is a type error');
     it.todo('AdvancedTable and its types are exported from the package root');
   });
 });

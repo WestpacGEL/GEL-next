@@ -21,6 +21,8 @@ export type AdvancedTableContextValue<T> = {
   tableId: string;
   /** Empty-state configuration rendered when there are no rows. */
   emptyState?: AdvancedTableEmptyStateProps;
+  /** Selectable page sizes for the pagination page-size selector. */
+  pageSizeOptions?: number[];
   /** Row-background treatment. */
   background?: 'transparent' | 'striped' | 'filled';
   /** Cell padding density. */

@@ -2,9 +2,9 @@ import { tv } from 'tailwind-variants';
 
 export const styles = tv({
   slots: {
-    // TODO(tickets 05/11/14): focus outline carried over from the old component.
-    // Nothing makes a cell focusable yet — re-check it's still required once row
-    // selection / editing / the a11y hardening pass land.
+    // TODO(tickets 11/14): focus outline carried over from the old component.
+    // Nothing makes a cell focusable yet — re-check it's still required once
+    // editing / the a11y hardening pass land.
     td: 'border-b border-border-muted-soft typography-body-9 outline-offset-[-1px] focus:outline-border-focus',
     // TODO(tickets 09/11): cell-content flex wrapper carried over from the old
     // component (consistent vertical centering + icon/text gap). Re-check it's

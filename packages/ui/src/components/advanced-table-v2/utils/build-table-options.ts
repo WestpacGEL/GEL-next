@@ -1,13 +1,22 @@
 import {
   ColumnDef,
   getCoreRowModel,
+  getPaginationRowModel,
   getSortedRowModel,
   OnChangeFn,
+  PaginationState,
+  RowSelectionState,
   SortingState,
   TableOptions,
 } from '@tanstack/react-table';
 
-import { AdvancedTableSortingState } from '../advanced-table.types.js';
+import {
+  AdvancedTablePaginationState,
+  AdvancedTableRowKey,
+  AdvancedTableSortingState,
+} from '../advanced-table.types.js';
+
+import { resolveRowId } from './row-id.js';
 
 /** Inputs the component derives (state, ids, resolved flags) for `useReactTable`. */
 export type BuildTableOptionsParams<T> = {
@@ -25,6 +34,21 @@ export type BuildTableOptionsParams<T> = {
   onSortingChange: OnChangeFn<SortingState>;
   /** Manual (server-side) sorting — the table tracks state but does not reorder. */
   manualSorting?: boolean;
+  /** Table-level pagination flag. */
+  enablePagination?: boolean;
+  /** Current pagination state. */
+  paginationState: AdvancedTablePaginationState;
+  /** Pagination-state setter (TanStack hands it an updater; the setter resolves it). */
+  onPaginationChange: OnChangeFn<PaginationState>;
+  /** Row-identity accessor. Drives `getRowId` whenever selection (or a later
+   * reserved-column feature) is enabled; falls back to index-based ids otherwise. */
+  rowKey?: AdvancedTableRowKey<T>;
+  /** Table-level row-selection flag. */
+  enableRowSelection?: boolean;
+  /** Current row-selection state, keyed by the id `getRowId` produces. */
+  rowSelectionState: RowSelectionState;
+  /** Row-selection setter (TanStack hands it an updater; the setter resolves it). */
+  onRowSelectionChange: OnChangeFn<RowSelectionState>;
 };
 
 /**
@@ -40,12 +64,21 @@ export function buildTableOptions<T>({
   sortingState,
   onSortingChange,
   manualSorting,
+  enablePagination,
+  paginationState,
+  onPaginationChange,
+  rowKey,
+  enableRowSelection,
+  rowSelectionState,
+  onRowSelectionChange,
 }: BuildTableOptionsParams<T>): TableOptions<T> {
   return {
     data,
     columns,
     state: {
       ...(enableSorting && { sorting: sortingState }),
+      ...(enablePagination && { pagination: paginationState }),
+      ...(enableRowSelection && { rowSelection: rowSelectionState }),
     },
     ...(enableSorting
       ? {
@@ -60,7 +93,24 @@ export function buildTableOptions<T>({
           manualSorting,
         }
       : {}),
+    ...(enablePagination
+      ? {
+          getPaginationRowModel: getPaginationRowModel(),
+          onPaginationChange,
+          // The pagination triple owns the page index, so opt out of TanStack's
+          // automatic reset: a controlled or seeded `pageIndex` must not be
+          // clobbered when `data` updates. (Resolves the reconciled-spec TODO.)
+          // TODO: Verify this is the intended design (should be an option?)
+          autoResetPageIndex: false,
+        }
+      : {}),
+    ...(enableRowSelection ? { enableRowSelection: true, onRowSelectionChange } : {}),
     getCoreRowModel: getCoreRowModel(),
-    getRowId: (_row, index, parent) => (parent ? `${parent.id}.${index}` : `${tableId}-${index}`),
+    getRowId: rowKey
+      ? (row, _index, parent) => {
+          const id = resolveRowId(rowKey, row);
+          return parent ? `${parent.id}.${id}` : id;
+        }
+      : (_row, index, parent) => (parent ? `${parent.id}.${index}` : `${tableId}-${index}`),
   };
 }

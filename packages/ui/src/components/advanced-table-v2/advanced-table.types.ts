@@ -46,6 +46,17 @@ export type AdvancedTableGroupColumn<T> = {
  */
 export type AdvancedTableColumn<T> = AdvancedTableLeafColumn<T> | AdvancedTableGroupColumn<T>;
 
+/**
+ * A stable-identity accessor for a row: a key of `T` whose value is used as the
+ * row's id, or a function computing an id string from the row. Required whenever
+ * row selection (and, in later tickets, pinning or expansion) is enabled, so row
+ * state is always keyed by a stable id, never array index.
+ *
+ * The resolved id must be unique per row — the table does not validate this.
+ * Two rows resolving to the same id will share selection (and other row) state.
+ */
+export type AdvancedTableRowKey<T> = keyof T | ((row: T) => string);
+
 /** A single column sort: the sorted column's `key` and its direction. */
 export type AdvancedTableColumnSort = {
   /** The sorted column's `key`. */
@@ -60,7 +71,17 @@ export type AdvancedTableColumnSort = {
  */
 export type AdvancedTableSortingState = AdvancedTableColumnSort[];
 
-export type AdvancedTableProps<T> = {
+/**
+ * The table's pagination state.
+ */
+export type AdvancedTablePaginationState = {
+  /** Zero-based index of the current page. */
+  pageIndex: number;
+  /** Number of rows shown per page. */
+  pageSize: number;
+};
+
+type AdvancedTableBaseProps<T> = {
   /** Column definitions for the table. */
   columns: AdvancedTableColumn<T>[];
   /**
@@ -114,6 +135,29 @@ export type AdvancedTableProps<T> = {
    */
   manualSorting?: boolean;
   /**
+   * Enables client-side pagination, on by default. Set to `false` to render
+   * every row at once.
+   * @default true
+   */
+  enablePagination?: boolean;
+  /**
+   * Current pagination state (controlled). Pair with `onPaginationChange` to control
+   * paging. Use `defaultPagination` instead for uncontrolled usage.
+   */
+  pagination?: AdvancedTablePaginationState;
+  /**
+   * Initial pagination state when the table manages its own paging (uncontrolled).
+   * @default { pageIndex: 0, pageSize: 10 }
+   */
+  defaultPagination?: AdvancedTablePaginationState;
+  /** Called with the next pagination state whenever the page or page size changes. */
+  onPaginationChange?: (pagination: AdvancedTablePaginationState) => void;
+  /**
+   * Selectable page sizes offered in the page-size selector.
+   * @default [5, 10, 20, 50]
+   */
+  pageSizeOptions?: number[];
+  /**
    * Row-background treatment. `transparent` (default) applies a hover highlight
    * only, `striped` alternates row backgrounds, `filled` fills every row with a
    * single colour.
@@ -137,3 +181,44 @@ export type AdvancedTableProps<T> = {
    */
   emptyState?: AdvancedTableEmptyStateProps;
 };
+
+/**
+ * No reserved-column feature is enabled: `rowKey` stays optional since there is
+ * no row state that needs a stable id yet.
+ */
+type AdvancedTableNoRowIdentityProps<T> = AdvancedTableBaseProps<T> & {
+  /** @default false */
+  enableRowSelection?: false;
+  /** Row-identity accessor. Optional here — no feature requires it yet. */
+  rowKey?: AdvancedTableRowKey<T>;
+  selectedRows?: never;
+  defaultSelectedRows?: never;
+  onSelectionChange?: never;
+};
+
+/**
+ * Row selection (or, in later tickets, row pinning/expansion) is enabled:
+ * `rowKey` becomes required so selection is keyed by a stable id.
+ */
+type AdvancedTableRowIdentityProps<T> = AdvancedTableBaseProps<T> & {
+  /**
+   * Renders a checkbox per row and a select-all checkbox in the header.
+   * Requires `rowKey`.
+   * @default false
+   */
+  enableRowSelection?: boolean;
+  /** Row-identity accessor, required once `enableRowSelection` is set. */
+  rowKey: AdvancedTableRowKey<T>;
+  /**
+   * Currently selected rows, as stable ids derived from `rowKey` (controlled).
+   * Pair with `onSelectionChange` to own selection. Use `defaultSelectedRows`
+   * instead for uncontrolled usage.
+   */
+  selectedRows?: string[];
+  /** Initial selected row ids when the table manages its own selection (uncontrolled). */
+  defaultSelectedRows?: string[];
+  /** Called with the next selected row ids whenever the user changes selection. */
+  onSelectionChange?: (rowIds: string[]) => void;
+};
+
+export type AdvancedTableProps<T> = AdvancedTableNoRowIdentityProps<T> | AdvancedTableRowIdentityProps<T>;

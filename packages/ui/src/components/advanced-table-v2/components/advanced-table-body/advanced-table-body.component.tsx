@@ -9,7 +9,10 @@ export function AdvancedTableBody<T>() {
   const styles = advancedTableBodyStyles();
 
   const rows = table.getRowModel().rows;
-  const isEmpty = rows.length === 0;
+  // Pre-pagination row count: `rows` above is page-scoped when pagination is
+  // enabled, so an out-of-range page (e.g. data shrank while on a later page)
+  // would otherwise be misreported as "no data" even though rows exist.
+  const isEmpty = table.getPrePaginationRowModel().rows.length === 0;
   // At least 1 so the empty-state cell never emits an invalid `colspan="0"`.
   const leafColumnCount = Math.max(table.getVisibleLeafColumns().length, 1);
 

@@ -3,6 +3,7 @@ import { faker } from '@faker-js/faker';
 import { AdvancedTableColumn } from '../advanced-table.types.js';
 
 export type AdvancedPerson = {
+  id: string;
   firstName: string;
   lastName?: string;
   age?: number;
@@ -20,7 +21,7 @@ const range = (len: number) => {
   return arr;
 };
 
-const newPerson = (): AdvancedPerson => ({
+const newPerson = (): Omit<AdvancedPerson, 'id'> => ({
   firstName: faker.person.firstName(),
   lastName: faker.person.lastName(),
   age: faker.number.int(40),
@@ -30,14 +31,18 @@ const newPerson = (): AdvancedPerson => ({
 });
 
 export function makePersonData(...lens: number[]) {
-  const makeDataLevel = (depth = 0): AdvancedPerson[] => {
+  // Deterministic ids (not faker) so story output — and any `rowKey` demo —
+  // stays stable across reloads.
+  const makeDataLevel = (depth = 0, parentId = ''): AdvancedPerson[] => {
     const len = lens[depth];
-    return range(len).map(
-      (): AdvancedPerson => ({
+    return range(len).map((_, index): AdvancedPerson => {
+      const id = parentId ? `${parentId}-${index}` : `${index}`;
+      return {
         ...newPerson(),
-        subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,
-      }),
-    );
+        id,
+        subRows: lens[depth + 1] ? makeDataLevel(depth + 1, id) : undefined,
+      };
+    });
   };
 
   return makeDataLevel();

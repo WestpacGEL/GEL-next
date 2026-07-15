@@ -1,17 +1,32 @@
 'use client';
 
 import { useControlledState } from '@react-stately/utils';
-import { useReactTable } from '@tanstack/react-table';
+import { OnChangeFn, RowSelectionState, useReactTable } from '@tanstack/react-table';
 import { useId, useMemo } from 'react';
 
 import { AdvancedTableProvider, AdvancedTableContextValue } from './advanced-table.context.js';
 import { styles as advancedTableStyles } from './advanced-table.styles.js';
-import { AdvancedTableProps, AdvancedTableSortingState } from './advanced-table.types.js';
-import { AdvancedTableBody, AdvancedTableCaption, AdvancedTableHead } from './components/index.js';
-import { buildTableOptions, columnGenerator } from './utils/index.js';
+import { AdvancedTablePaginationState, AdvancedTableProps, AdvancedTableSortingState } from './advanced-table.types.js';
+import {
+  AdvancedTableBody,
+  AdvancedTableCaption,
+  AdvancedTableHead,
+  AdvancedTablePagination,
+} from './components/index.js';
+import {
+  buildReservedColumns,
+  buildTableOptions,
+  columnGenerator,
+  idsToSelectionState,
+  resolveRowId,
+  selectionStateToIds,
+} from './utils/index.js';
 
 const EMPTY_DATA: never[] = [];
 const EMPTY_SORTING: AdvancedTableSortingState = [];
+const DEFAULT_PAGINATION: AdvancedTablePaginationState = { pageIndex: 0, pageSize: 10 };
+const DEFAULT_PAGE_SIZE_OPTIONS = [5, 10, 20, 50];
+const EMPTY_SELECTED_ROW_IDS: never[] = [];
 
 /**
  * Data table built on TanStack Table (wired internally and fully hidden). Pass
@@ -32,6 +47,16 @@ export function AdvancedTable<T>({
   defaultSorting: defaultSortingProp,
   onSortingChange: onSortingChangeProp,
   manualSorting,
+  enablePagination = true,
+  pagination: paginationProp,
+  defaultPagination: defaultPaginationProp,
+  onPaginationChange: onPaginationChangeProp,
+  pageSizeOptions = DEFAULT_PAGE_SIZE_OPTIONS,
+  enableRowSelection,
+  rowKey,
+  selectedRows: selectedRowsProp,
+  defaultSelectedRows: defaultSelectedRowsProp,
+  onSelectionChange: onSelectionChangeProp,
   background,
   padding,
   bordered,
@@ -48,7 +73,46 @@ export function AdvancedTable<T>({
     onSortingChangeProp,
   );
 
-  const tableColumns = useMemo(() => columnGenerator(columns, { enableSorting }), [columns, enableSorting]);
+  const [paginationState, setPaginationState] = useControlledState<AdvancedTablePaginationState>(
+    paginationProp,
+    defaultPaginationProp ?? {
+      pageIndex: 0,
+      pageSize: pageSizeOptions.includes(DEFAULT_PAGINATION.pageSize)
+        ? DEFAULT_PAGINATION.pageSize
+        : pageSizeOptions[0],
+    },
+    onPaginationChangeProp,
+  );
+
+  const [selectedRowIds, setSelectedRowIds] = useControlledState<string[]>(
+    selectedRowsProp,
+    defaultSelectedRowsProp ?? EMPTY_SELECTED_ROW_IDS,
+    onSelectionChangeProp,
+  );
+
+  // Ids that actually match a current row — used to drop stale ids (e.g. a row
+  // removed from `data` while still present in a controlled `selectedRows`)
+  // before they reach TanStack, so they can't make the select-all checkbox read
+  // as indeterminate/checked when nothing currently visible is actually selected.
+  const validRowIds = useMemo(() => {
+    if (!rowKey) return new Set<string>();
+    return new Set(resolvedData.map(row => resolveRowId(rowKey, row)));
+  }, [resolvedData, rowKey]);
+
+  const rowSelectionState = useMemo(
+    () => idsToSelectionState(selectedRowIds, validRowIds),
+    [selectedRowIds, validRowIds],
+  );
+
+  const handleRowSelectionChange: OnChangeFn<RowSelectionState> = updaterOrValue => {
+    const next = typeof updaterOrValue === 'function' ? updaterOrValue(rowSelectionState) : updaterOrValue;
+    setSelectedRowIds(selectionStateToIds(next));
+  };
+
+  const tableColumns = useMemo(
+    () => [...buildReservedColumns<T>({ enableRowSelection }), ...columnGenerator(columns, { enableSorting })],
+    [columns, enableSorting, enableRowSelection],
+  );
 
   // TanStack hands `onSortingChange` an updater; react-stately's setter accepts a
   // `SetStateAction`, so the updater passes straight through with no unwrapping.
@@ -61,6 +125,13 @@ export function AdvancedTable<T>({
       sortingState,
       onSortingChange: setSortingState,
       manualSorting,
+      enablePagination,
+      paginationState,
+      onPaginationChange: setPaginationState,
+      rowKey,
+      enableRowSelection,
+      rowSelectionState,
+      onRowSelectionChange: handleRowSelectionChange,
     }),
   );
 
@@ -80,21 +151,27 @@ export function AdvancedTable<T>({
 
   const styles = advancedTableStyles({ bordered, fillContainer });
 
+  // Keyed using referenced `pageSizeOptions` so new array doesn't force re-renders
+  const pageSizeOptionsKey = pageSizeOptions.join(',');
   const contextValue = useMemo<AdvancedTableContextValue<T>>(
-    () => ({ table, tableId, emptyState, background, padding, bordered }),
-    [table, tableId, emptyState, background, padding, bordered],
+    () => ({ table, tableId, emptyState, pageSizeOptions, background, padding, bordered }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [table, tableId, emptyState, pageSizeOptionsKey, background, padding, bordered],
   );
 
   return (
     <AdvancedTableProvider value={contextValue as AdvancedTableContextValue<unknown>}>
-      <div className={styles.container()}>
-        <table id={tableId} className={styles.table()}>
-          {caption ? (
-            <AdvancedTableCaption title={caption} hideCaption={hideCaption} hasSorting={enableSorting} />
-          ) : null}
-          <AdvancedTableHead />
-          <AdvancedTableBody />
-        </table>
+      <div className={styles.root()}>
+        <div className={styles.container()}>
+          <table id={tableId} className={styles.table()}>
+            {caption ? (
+              <AdvancedTableCaption title={caption} hideCaption={hideCaption} hasSorting={enableSorting} />
+            ) : null}
+            <AdvancedTableHead />
+            <AdvancedTableBody />
+          </table>
+        </div>
+        {enablePagination && <AdvancedTablePagination />}
         {enableSorting && (
           <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
             {sortAnnouncement}

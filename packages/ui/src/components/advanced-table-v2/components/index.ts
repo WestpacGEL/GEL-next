@@ -10,4 +10,6 @@ export { AdvancedTableCell } from './advanced-table-cell/index.js';
 export { AdvancedTableEmptyState } from './advanced-table-empty-state/index.js';
 export type { AdvancedTableEmptyStateProps } from './advanced-table-empty-state/index.js';
 export { AdvancedTableHead } from './advanced-table-head/index.js';
+export { AdvancedTablePagination } from './advanced-table-pagination/index.js';
 export { AdvancedTableRow } from './advanced-table-row/index.js';
+export { AdvancedTableRowCheckbox, AdvancedTableSelectAllCheckbox } from './advanced-table-selection-checkbox/index.js';
