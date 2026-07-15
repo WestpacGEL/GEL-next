@@ -15,13 +15,20 @@ export function AdvancedTableBody<T>() {
   const isEmpty = table.getPrePaginationRowModel().rows.length === 0;
   // At least 1 so the empty-state cell never emits an invalid `colspan="0"`.
   const leafColumnCount = Math.max(table.getVisibleLeafColumns().length, 1);
+  // Zero rows caused by an active filter gets different default copy than
+  // truly empty `data` — a consumer-supplied `emptyState` still wins, since it
+  // spreads last.
+  const isFilteredEmpty = isEmpty && table.getState().columnFilters.length > 0;
+  const filteredEmptyDefaults = isFilteredEmpty
+    ? { title: 'No matching results', description: 'Try adjusting or clearing your filter.' }
+    : {};
 
   return (
     <tbody className={styles.tableBody()}>
       {isEmpty ? (
         <tr>
           <td colSpan={leafColumnCount} className={styles.emptyCell()}>
-            <AdvancedTableEmptyState {...emptyState} />
+            <AdvancedTableEmptyState {...filteredEmptyDefaults} {...emptyState} />
           </td>
         </tr>
       ) : (

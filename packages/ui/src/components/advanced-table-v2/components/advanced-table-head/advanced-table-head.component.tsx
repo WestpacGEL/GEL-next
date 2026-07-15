@@ -3,6 +3,8 @@ import { flexRender } from '@tanstack/react-table';
 import { ArrowDownIcon, ArrowUpIcon, SortIcon } from '../../../icon/index.js';
 import { VisuallyHidden } from '../../../visually-hidden/index.js';
 import { useAdvancedTableContext } from '../../advanced-table.context.js';
+import { RESERVED_COLUMN_IDS } from '../../utils/index.js';
+import { AdvancedTableColumnMenu } from '../advanced-table-column-menu/index.js';
 
 import { styles as advancedTableHeadStyles } from './advanced-table-head.styles.js';
 import { AdvancedTableHeaderCellProps } from './advanced-table-head.types.js';
@@ -61,6 +63,9 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
                 {nextSortLabel}
               </VisuallyHidden>
             </button>
+          )}
+          {column.getCanFilter() && !RESERVED_COLUMN_IDS.includes(column.id) && (
+            <AdvancedTableColumnMenu header={header} />
           )}
         </div>
       )}

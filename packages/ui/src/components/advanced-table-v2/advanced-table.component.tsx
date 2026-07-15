@@ -1,12 +1,17 @@
 'use client';
 
 import { useControlledState } from '@react-stately/utils';
-import { OnChangeFn, RowSelectionState, useReactTable } from '@tanstack/react-table';
+import { ColumnFiltersState, OnChangeFn, RowSelectionState, useReactTable } from '@tanstack/react-table';
 import { useId, useMemo } from 'react';
 
 import { AdvancedTableProvider, AdvancedTableContextValue } from './advanced-table.context.js';
 import { styles as advancedTableStyles } from './advanced-table.styles.js';
-import { AdvancedTablePaginationState, AdvancedTableProps, AdvancedTableSortingState } from './advanced-table.types.js';
+import {
+  AdvancedTableColumnFiltersState,
+  AdvancedTablePaginationState,
+  AdvancedTableProps,
+  AdvancedTableSortingState,
+} from './advanced-table.types.js';
 import {
   AdvancedTableBody,
   AdvancedTableCaption,
@@ -27,6 +32,7 @@ const EMPTY_SORTING: AdvancedTableSortingState = [];
 const DEFAULT_PAGINATION: AdvancedTablePaginationState = { pageIndex: 0, pageSize: 10 };
 const DEFAULT_PAGE_SIZE_OPTIONS = [5, 10, 20, 50];
 const EMPTY_SELECTED_ROW_IDS: never[] = [];
+const EMPTY_COLUMN_FILTERS: AdvancedTableColumnFiltersState = [];
 
 /**
  * Data table built on TanStack Table (wired internally and fully hidden). Pass
@@ -57,6 +63,11 @@ export function AdvancedTable<T>({
   selectedRows: selectedRowsProp,
   defaultSelectedRows: defaultSelectedRowsProp,
   onSelectionChange: onSelectionChangeProp,
+  enableColumnFilter,
+  columnFilters: columnFiltersProp,
+  defaultColumnFilters: defaultColumnFiltersProp,
+  onColumnFiltersChange: onColumnFiltersChangeProp,
+  manualFiltering,
   background,
   padding,
   bordered,
@@ -90,6 +101,12 @@ export function AdvancedTable<T>({
     onSelectionChangeProp,
   );
 
+  const [columnFiltersState, setColumnFiltersState] = useControlledState<AdvancedTableColumnFiltersState>(
+    columnFiltersProp,
+    defaultColumnFiltersProp ?? EMPTY_COLUMN_FILTERS,
+    onColumnFiltersChangeProp,
+  );
+
   // Ids that actually match a current row — used to drop stale ids (e.g. a row
   // removed from `data` while still present in a controlled `selectedRows`)
   // before they reach TanStack, so they can't make the select-all checkbox read
@@ -109,9 +126,22 @@ export function AdvancedTable<T>({
     setSelectedRowIds(selectionStateToIds(next));
   };
 
+  // TanStack's `ColumnFiltersState` types `value` as `unknown` (any filter fn's
+  // input); the public contract narrows it to `string` since filter inputs are
+  // always text (default comparators only), so the updater is resolved here
+  // rather than passed straight through like sorting's setter is.
+  const handleColumnFiltersChange: OnChangeFn<ColumnFiltersState> = updaterOrValue => {
+    const current: ColumnFiltersState = columnFiltersState;
+    const next = typeof updaterOrValue === 'function' ? updaterOrValue(current) : updaterOrValue;
+    setColumnFiltersState(next.map(filter => ({ id: filter.id, value: String(filter.value) })));
+  };
+
   const tableColumns = useMemo(
-    () => [...buildReservedColumns<T>({ enableRowSelection }), ...columnGenerator(columns, { enableSorting })],
-    [columns, enableSorting, enableRowSelection],
+    () => [
+      ...buildReservedColumns<T>({ enableRowSelection }),
+      ...columnGenerator(columns, { enableSorting, enableColumnFilter }),
+    ],
+    [columns, enableSorting, enableRowSelection, enableColumnFilter],
   );
 
   // TanStack hands `onSortingChange` an updater; react-stately's setter accepts a
@@ -132,6 +162,10 @@ export function AdvancedTable<T>({
       enableRowSelection,
       rowSelectionState,
       onRowSelectionChange: handleRowSelectionChange,
+      enableColumnFilter,
+      columnFiltersState,
+      onColumnFiltersChange: handleColumnFiltersChange,
+      manualFiltering,
     }),
   );
 
@@ -148,6 +182,15 @@ export function AdvancedTable<T>({
     const name = typeof header === 'string' ? header : s.id;
     return `${name} ${label}`;
   }, [sortingState, table, enableSorting]);
+
+  const filterAnnouncement = useMemo(() => {
+    if (!enableColumnFilter) return null;
+    // Mirrors the sorting announcement: the empty state doubles as the
+    // "cleared" message, silent on mount but read out once a filter is removed.
+    if (columnFiltersState.length === 0) return 'Filter cleared.';
+    const matchCount = table.getFilteredRowModel().rows.length;
+    return `${matchCount} matching row${matchCount === 1 ? '' : 's'}.`;
+  }, [columnFiltersState, table, enableColumnFilter]);
 
   const styles = advancedTableStyles({ bordered, fillContainer });
 
@@ -175,6 +218,11 @@ export function AdvancedTable<T>({
         {enableSorting && (
           <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
             {sortAnnouncement}
+          </div>
+        )}
+        {enableColumnFilter && (
+          <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
+            {filterAnnouncement}
           </div>
         )}
       </div>

@@ -1,6 +1,8 @@
 import {
   ColumnDef,
+  ColumnFiltersState,
   getCoreRowModel,
+  getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
   OnChangeFn,
@@ -11,6 +13,7 @@ import {
 } from '@tanstack/react-table';
 
 import {
+  AdvancedTableColumnFiltersState,
   AdvancedTablePaginationState,
   AdvancedTableRowKey,
   AdvancedTableSortingState,
@@ -40,6 +43,14 @@ export type BuildTableOptionsParams<T> = {
   paginationState: AdvancedTablePaginationState;
   /** Pagination-state setter (TanStack hands it an updater; the setter resolves it). */
   onPaginationChange: OnChangeFn<PaginationState>;
+  /** Table-level column-filter flag. */
+  enableColumnFilter?: boolean;
+  /** Current column-filter state. */
+  columnFiltersState: AdvancedTableColumnFiltersState;
+  /** Column-filter setter (TanStack hands it an updater; the setter resolves it). */
+  onColumnFiltersChange: OnChangeFn<ColumnFiltersState>;
+  /** Manual (server-side) filtering — the table tracks state but does not filter rows itself. */
+  manualFiltering?: boolean;
   /** Row-identity accessor. Drives `getRowId` whenever selection (or a later
    * reserved-column feature) is enabled; falls back to index-based ids otherwise. */
   rowKey?: AdvancedTableRowKey<T>;
@@ -71,6 +82,10 @@ export function buildTableOptions<T>({
   enableRowSelection,
   rowSelectionState,
   onRowSelectionChange,
+  enableColumnFilter,
+  columnFiltersState,
+  onColumnFiltersChange,
+  manualFiltering,
 }: BuildTableOptionsParams<T>): TableOptions<T> {
   return {
     data,
@@ -79,6 +94,7 @@ export function buildTableOptions<T>({
       ...(enableSorting && { sorting: sortingState }),
       ...(enablePagination && { pagination: paginationState }),
       ...(enableRowSelection && { rowSelection: rowSelectionState }),
+      ...(enableColumnFilter && { columnFilters: columnFiltersState }),
     },
     ...(enableSorting
       ? {
@@ -105,6 +121,9 @@ export function buildTableOptions<T>({
         }
       : {}),
     ...(enableRowSelection ? { enableRowSelection: true, onRowSelectionChange } : {}),
+    ...(enableColumnFilter
+      ? { getFilteredRowModel: getFilteredRowModel(), onColumnFiltersChange, manualFiltering }
+      : {}),
     getCoreRowModel: getCoreRowModel(),
     getRowId: rowKey
       ? (row, _index, parent) => {

@@ -20,6 +20,11 @@ export type AdvancedTableLeafColumn<T> = {
      * `enableSorting`: set to `false` to remove this column's sort control.
      */
     enableSorting?: boolean;
+    /**
+     * Opts this column out of filtering. Only meaningful when the table has
+     * `enableColumnFilter`: set to `false` to remove this column's filter menu.
+     */
+    enableColumnFilter?: boolean;
     /** Marks the column editable. Consumed by the editable-cells feature (later ticket). */
     editable?: boolean;
     /** Default column width in pixels. Consumed by the resizing feature (later ticket). */
@@ -80,6 +85,20 @@ export type AdvancedTablePaginationState = {
   /** Number of rows shown per page. */
   pageSize: number;
 };
+
+/** A single column's filter value, set via its column menu's filter input. */
+export type AdvancedTableColumnFilter = {
+  /** The filtered column's `key`. */
+  id: string;
+  /** The filter text. */
+  value: string;
+};
+
+/**
+ * The table's column-filter state: an ordered list of per-column filters. A
+ * public, GEL-owned contract — the internal table engine is never exposed.
+ */
+export type AdvancedTableColumnFiltersState = AdvancedTableColumnFilter[];
 
 type AdvancedTableBaseProps<T> = {
   /** Column definitions for the table. */
@@ -157,6 +176,31 @@ type AdvancedTableBaseProps<T> = {
    * @default [5, 10, 20, 50]
    */
   pageSizeOptions?: number[];
+  /**
+   * Enables the per-column filter input in each column's menu. Individual
+   * columns can opt out with their own `enableColumnFilter: false`.
+   * @default false
+   */
+  enableColumnFilter?: boolean;
+  /**
+   * Current column-filter state (controlled). Pair with `onColumnFiltersChange`
+   * to own filtering. Use `defaultColumnFilters` instead for uncontrolled usage.
+   */
+  columnFilters?: AdvancedTableColumnFiltersState;
+  /**
+   * Initial column-filter state when the table manages its own filtering
+   * (uncontrolled).
+   */
+  defaultColumnFilters?: AdvancedTableColumnFiltersState;
+  /** Called with the next column-filter state whenever the user changes a filter. */
+  onColumnFiltersChange?: (columnFilters: AdvancedTableColumnFiltersState) => void;
+  /**
+   * If set to `true`, the consumer is responsible for supplying
+   * pre-filtered `data` (typically in response to `onColumnFiltersChange`). Filter
+   * controls and announcements still render. Useful for API query filtering.
+   * @default false
+   */
+  manualFiltering?: boolean;
   /**
    * Row-background treatment. `transparent` (default) applies a hover highlight
    * only, `striped` alternates row backgrounds, `filled` fills every row with a

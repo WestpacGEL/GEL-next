@@ -8,5 +8,7 @@ export {
   type AdvancedTableSortingState,
   type AdvancedTablePaginationState,
   type AdvancedTableRowKey,
+  type AdvancedTableColumnFilter,
+  type AdvancedTableColumnFiltersState,
 } from './advanced-table.types.js';
 export { type AdvancedTableEmptyStateProps } from './components/index.js';

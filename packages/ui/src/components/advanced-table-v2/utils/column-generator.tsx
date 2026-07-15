@@ -11,6 +11,8 @@ function isGroupColumn<T>(column: AdvancedTableColumn<T>): column is AdvancedTab
 type ColumnGeneratorOptions = {
   /** Table-level sorting flag; a column may opt out with its own `enableSorting: false`. */
   enableSorting?: boolean;
+  /** Table-level filtering flag; a column may opt out with its own `enableColumnFilter: false`. */
+  enableColumnFilter?: boolean;
 };
 
 /**
@@ -43,6 +45,9 @@ export function columnGenerator<T>(
       // Sorting is enabled only at the table level; a column may opt out with `false`
       // but cannot enable sorting on its own.
       enableSorting: options.enableSorting ? (column.enableSorting ?? true) : false,
+      // Filtering is enabled only at the table level; a column may opt out with `false`
+      // but cannot enable filtering on its own.
+      enableColumnFilter: options.enableColumnFilter ? (column.enableColumnFilter ?? true) : false,
       ...(column.width !== undefined ? { size: column.width } : {}),
     };
   });

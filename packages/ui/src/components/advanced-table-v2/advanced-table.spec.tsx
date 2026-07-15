@@ -9,7 +9,7 @@
  *
  * Convert each it.todo to a real test red-green as its feature ticket is built.
  */
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { AdvancedTable } from './advanced-table.component.js';
@@ -323,10 +323,150 @@ describe('AdvancedTable', () => {
   });
 
   describe('column filtering', () => {
-    it.todo('filters visible rows as the user types in a column menu filter input');
-    it.todo('announces the filter result count via a live region');
-    it.todo('shows the empty state when a filter matches no rows');
-    it.todo('controlled filters: emits onColumnFiltersChange and renders from the columnFilters prop');
+    // Opens the named column's menu and returns its filter textbox. Queried by role
+    // alone, not name — `Label`'s `srOnly` path drops the `htmlFor` association, a
+    // pre-existing gap in the shared component, not this ticket.
+    const openColumnMenu = async (user: ReturnType<typeof userEvent.setup>, columnName: string) => {
+      await user.click(screen.getByRole('button', { name: `${columnName} column menu` }));
+      return screen.findByRole('textbox');
+    };
+
+    it('does not render a column menu when filtering is disabled', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} />);
+      expect(screen.queryByRole('button', { name: /column menu/i })).not.toBeInTheDocument();
+    });
+
+    it('a column cannot enable filtering on its own when the table flag is off', () => {
+      const columns: AdvancedTableColumn<TestData>[] = [
+        { key: 'name', title: 'Name' },
+        { key: 'age', title: 'Age', enableColumnFilter: true },
+      ];
+      render(<AdvancedTable columns={columns} data={testData} />);
+      // No table-level enableColumnFilter: the column's own flag must not activate it.
+      expect(screen.queryByRole('button', { name: /column menu/i })).not.toBeInTheDocument();
+    });
+
+    it('a column opts out of filtering with its own enableColumnFilter: false', () => {
+      const columns: AdvancedTableColumn<TestData>[] = [
+        { key: 'name', title: 'Name', enableColumnFilter: false },
+        { key: 'age', title: 'Age' },
+      ];
+      render(<AdvancedTable columns={columns} data={testData} enableColumnFilter />);
+      expect(screen.queryByRole('button', { name: 'Name column menu' })).not.toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Age column menu' })).toBeInTheDocument();
+    });
+
+    it('filters visible rows as the user types in a column menu filter input', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter />);
+
+      const filterInput = await openColumnMenu(user, 'Name');
+      await user.type(filterInput, 'Jane');
+
+      expect(screen.getByText('Jane')).toBeInTheDocument();
+      expect(screen.queryByText('John')).not.toBeInTheDocument();
+      expect(screen.queryByText('Bob')).not.toBeInTheDocument();
+    });
+
+    it('announces the filter result count via a live region', async () => {
+      const user = userEvent.setup();
+      const { container } = render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter />);
+      const liveRegion = container.querySelector('[aria-live="polite"]');
+      expect(liveRegion).toBeInTheDocument();
+
+      const filterInput = await openColumnMenu(user, 'Name');
+      await user.type(filterInput, 'Jane');
+      expect(liveRegion).toHaveTextContent('1 matching row.');
+
+      await user.clear(filterInput);
+      expect(liveRegion).toHaveTextContent('Filter cleared.');
+    });
+
+    it('shows the empty state when a filter matches no rows', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter />);
+
+      const filterInput = await openColumnMenu(user, 'Name');
+      await user.type(filterInput, 'nonexistent');
+      // While the menu popover is open, react-aria marks the rest of the page
+      // (including the table) aria-hidden — close it first, as a real
+      // screen-reader user would need to, before the table is queryable again.
+      await user.keyboard('{Escape}');
+
+      // Scope to the table: pagination (on by default) renders its own status region.
+      const status = within(screen.getByRole('table')).getByRole('status');
+      expect(status).toHaveTextContent('No matching results');
+      expect(status).toHaveTextContent('Try adjusting or clearing your filter.');
+    });
+
+    it('controlled filters: emits onColumnFiltersChange and renders from the columnFilters prop', async () => {
+      const onColumnFiltersChange = vi.fn();
+      const { rerender } = render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableColumnFilter
+          columnFilters={[]}
+          onColumnFiltersChange={onColumnFiltersChange}
+        />,
+      );
+
+      const filterInput = await openColumnMenu(userEvent.setup(), 'Name');
+      fireEvent.change(filterInput, { target: { value: 'Jane' } });
+
+      expect(onColumnFiltersChange).toHaveBeenCalledWith([{ id: 'name', value: 'Jane' }]);
+      // Controlled: doesn't filter on its own until the prop is fed back.
+      expect(screen.getByText('John')).toBeInTheDocument();
+      expect(screen.getByText('Bob')).toBeInTheDocument();
+
+      rerender(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableColumnFilter
+          columnFilters={[{ id: 'name', value: 'Jane' }]}
+          onColumnFiltersChange={onColumnFiltersChange}
+        />,
+      );
+      expect(screen.queryByText('John')).not.toBeInTheDocument();
+      expect(screen.getByText('Jane')).toBeInTheDocument();
+    });
+
+    it('manual filtering: the table does not filter rows itself, but still tracks and emits filter state', async () => {
+      const onColumnFiltersChange = vi.fn();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableColumnFilter
+          manualFiltering
+          columnFilters={[{ id: 'name', value: 'Jane' }]}
+          onColumnFiltersChange={onColumnFiltersChange}
+        />,
+      );
+      // The filter state says "name=Jane", but with manual filtering the table
+      // renders all of `data` as given — the consumer owns the actual filtering.
+      expect(screen.getByText('John')).toBeInTheDocument();
+      expect(screen.getByText('Bob')).toBeInTheDocument();
+
+      const filterInput = await openColumnMenu(userEvent.setup(), 'Name');
+      fireEvent.change(filterInput, { target: { value: 'Bob' } });
+      expect(onColumnFiltersChange).toHaveBeenCalledWith([{ id: 'name', value: 'Bob' }]);
+    });
+
+    it('uncontrolled: defaultColumnFilters sets the initial filter', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableColumnFilter
+          defaultColumnFilters={[{ id: 'name', value: 'Jane' }]}
+        />,
+      );
+      expect(screen.getByText('Jane')).toBeInTheDocument();
+      expect(screen.queryByText('John')).not.toBeInTheDocument();
+      expect(screen.queryByText('Bob')).not.toBeInTheDocument();
+    });
   });
 
   describe('column pinning', () => {
@@ -363,7 +503,7 @@ describe('AdvancedTable', () => {
     it('renders a named checkbox per row and a select-all checkbox in the header', () => {
       render(<AdvancedTable columns={testColumns} data={testData} enableRowSelection rowKey="name" />);
       expect(screen.getAllByRole('checkbox')).toHaveLength(testData.length + 1);
-      expect(screen.getByRole('checkbox', { name: 'Select all rows' })).toBeInTheDocument();
+      expect(screen.getByRole('checkbox', { name: 'Select all rows in current page' })).toBeInTheDocument();
       expect(screen.getByRole('checkbox', { name: 'Select row 1' })).toBeInTheDocument();
       expect(screen.getByRole('checkbox', { name: 'Select row 2' })).toBeInTheDocument();
       expect(screen.getByRole('checkbox', { name: 'Select row 3' })).toBeInTheDocument();
@@ -391,7 +531,7 @@ describe('AdvancedTable', () => {
     it('select-all shows an indeterminate state when some rows are selected', async () => {
       const user = userEvent.setup();
       render(<AdvancedTable columns={testColumns} data={testData} enableRowSelection rowKey="name" />);
-      const selectAll = screen.getByRole<HTMLInputElement>('checkbox', { name: 'Select all rows' });
+      const selectAll = screen.getByRole<HTMLInputElement>('checkbox', { name: 'Select all rows in current page' });
 
       await user.click(screen.getByRole('checkbox', { name: 'Select row 1' }));
       // react-aria's useCheckbox sets the native `indeterminate` DOM property only
@@ -426,7 +566,7 @@ describe('AdvancedTable', () => {
         />,
       );
 
-      await user.click(screen.getByRole('checkbox', { name: 'Select all rows' }));
+      await user.click(screen.getByRole('checkbox', { name: 'Select all rows in current page' }));
       // Default page size is 10: only the first 10 rows should be selected, not
       // all 12 — select-all must be scoped to the visible page.
       expect(onSelectionChange).toHaveBeenCalledWith(Array.from({ length: 10 }, (_, i) => `Person ${i}`));
@@ -435,7 +575,7 @@ describe('AdvancedTable', () => {
       // Page 2's rows (labeled by absolute position, so "Select row 11" here)
       // were not swept up by the page-1 select-all.
       expect(screen.getByRole('checkbox', { name: 'Select row 11' })).not.toBeChecked();
-      expect(screen.getByRole('checkbox', { name: 'Select all rows' })).not.toBeChecked();
+      expect(screen.getByRole('checkbox', { name: 'Select all rows in current page' })).not.toBeChecked();
     });
 
     it('a stale id in a controlled selectedRows does not make select-all read as checked/indeterminate', () => {
@@ -448,7 +588,7 @@ describe('AdvancedTable', () => {
           selectedRows={['does-not-exist']}
         />,
       );
-      const selectAll = screen.getByRole<HTMLInputElement>('checkbox', { name: 'Select all rows' });
+      const selectAll = screen.getByRole<HTMLInputElement>('checkbox', { name: 'Select all rows in current page' });
       expect(selectAll).not.toBeChecked();
       expect(selectAll.indeterminate).toBe(false);
       testData.forEach((_, i) =>
@@ -706,7 +846,22 @@ describe('AdvancedTable', () => {
     it.todo('every interactive element is reachable by keyboard in a logical order');
     it.todo('all interactive targets meet the 24x24px minimum size (WCAG 2.5.8)');
     it.todo('interactive icon controls have accurate accessible names');
-    it.todo('column menu is fully keyboard operable');
+    it('column menu is fully keyboard operable', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter />);
+
+      const trigger = screen.getByRole('button', { name: 'Name column menu' });
+      trigger.focus();
+      await user.keyboard('{Enter}');
+
+      const filterInput = await screen.findByRole('textbox');
+      await user.type(filterInput, 'Jane');
+      expect(screen.queryByText('John')).not.toBeInTheDocument();
+
+      await user.keyboard('{Escape}');
+      expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
+      await waitFor(() => expect(trigger).toHaveFocus());
+    });
   });
 
   describe('types and public API', () => {
