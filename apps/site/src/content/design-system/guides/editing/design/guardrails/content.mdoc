@@ -15,20 +15,39 @@ Teams should not:
 Exceptions should be documented and discussed with GEL.
 
 ```jsx
-<>  
-<h1 className="typography-body-10 mb-2">Teams should:</h1>
-  <List type="tick" typography-body-11 className="mb-4">
-    <ListItem>Start by identifying the editing model, not the component</ListItem>
-    <ListItem>Use one of the three enterprise editing models wherever possible</ListItem>
-    <ListItem>Match the weight of the experience to the complexity and risk of the task</ListItem>
-    <ListItem>Keep platform implementations aligned to the same underlying model</ListItem>
+<>
+  <h2 className="typography-body-9 mb-2">Teams should:</h2>
+
+  <List type="tick" className="typography-body-9 mb-4 text-text-success">
+    <ListItem className="typography-body-9">
+      Start by identifying the editing model, not the component
+    </ListItem>
+    <ListItem className="typography-body-9">
+      Use one of the three enterprise editing models wherever possible
+    </ListItem>
+    <ListItem className="typography-body-9">
+      Match the weight of the experience to the complexity and risk of the task
+    </ListItem>
+    <ListItem className="typography-body-9">
+      Keep platform implementations aligned to the same underlying model
+    </ListItem>
   </List>
-  <h1 className="typography-body-10 mb-2">Teams should not:</h1>
-  <List type="cross" className="mb-4">
-    <ListItem>Create new editing models without a compelling reason</ListItem>
-    <ListItem>Use in-context editing for high-risk or highly dependent tasks</ListItem>
-    <ListItem>Use focused-in-context patterns as a substitute for journeys that should be dedicated screens</ListItem>
-    <ListItem>Diverge solely because of platform convention</ListItem>
+
+  <h2 className="typography-body-9 mb-2">Teams should not:</h2>
+
+  <List type="cross" className="typography-body-9 mb-4 text-text-danger">
+    <ListItem className="typography-body-9">
+      Create new editing models without a compelling reason
+    </ListItem>
+    <ListItem className="typography-body-9">
+      Use in-context editing for high-risk or highly dependent tasks
+    </ListItem>
+    <ListItem className="typography-body-9">
+      Use focused-in-context patterns as a substitute for journeys that should be dedicated screens
+    </ListItem>
+    <ListItem className="typography-body-9">
+      Diverge solely because of platform convention
+    </ListItem>
   </List>
 </>
 ```
