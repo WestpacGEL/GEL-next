@@ -13,7 +13,7 @@ import { styles as advancedTablePaginationStyles } from './advanced-table-pagina
  * which round-trip through the component's `pagination` state triple.
  */
 export function AdvancedTablePagination() {
-  const { table, pageSizeOptions } = useAdvancedTableContext();
+  const { table, pageSizeOptions, loading } = useAdvancedTableContext();
   const styles = advancedTablePaginationStyles();
   const selectPageSizeId = useId();
 
@@ -28,32 +28,35 @@ export function AdvancedTablePagination() {
 
   return (
     <div className={styles.container()}>
-      <Pagination
-        aria-label="Pagination"
-        totalPages={table.getPageCount()}
-        current={pageIndex + 1}
-        onChange={page => table.setPageIndex(page - 1)}
-        className={styles.pagination()}
-        siblingCount={0}
-        boundaryCount={1}
-      />
-      <p>
-        {rangeFrom} – {rangeTo} of {rowCount}
-      </p>
-      <div className={styles.pageSize()}>
-        <label htmlFor={selectPageSizeId}>Items per page</label>
-        <Select
-          id={selectPageSizeId}
-          value={pageSize}
-          onChange={event => table.setPageSize(Number(event.currentTarget.value))}
-        >
-          {pageSizeOptions?.map(size => (
-            <option key={size} value={size}>
-              {size}
-            </option>
-          ))}
-        </Select>
-      </div>
+      {/* `fieldset` will natively disable each input if the page is loading. */}
+      <fieldset disabled={loading} className="contents">
+        <Pagination
+          aria-label="Pagination"
+          totalPages={table.getPageCount()}
+          current={pageIndex + 1}
+          onChange={page => table.setPageIndex(page - 1)}
+          className={styles.pagination()}
+          siblingCount={0}
+          boundaryCount={1}
+        />
+        <p>
+          {rangeFrom} – {rangeTo} of {rowCount}
+        </p>
+        <div className={styles.pageSize()}>
+          <label htmlFor={selectPageSizeId}>Items per page</label>
+          <Select
+            id={selectPageSizeId}
+            value={pageSize}
+            onChange={event => table.setPageSize(Number(event.currentTarget.value))}
+          >
+            {pageSizeOptions?.map(size => (
+              <option key={size} value={size}>
+                {size}
+              </option>
+            ))}
+          </Select>
+        </div>
+      </fieldset>
     </div>
   );
 }

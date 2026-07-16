@@ -18,8 +18,8 @@ import { AdvancedTableColumn, AdvancedTableProps } from './advanced-table.types.
 type TestData = { name: string; age: number };
 
 const testColumns: AdvancedTableColumn<TestData>[] = [
-  { key: 'name', title: 'Name' },
-  { key: 'age', title: 'Age' },
+  { key: 'name', title: 'Name', enableColumnFilter: true, enablePinning: true, enableGrouping: true },
+  { key: 'age', title: 'Age', enableColumnFilter: true, enablePinning: true, enableGrouping: true },
 ];
 
 const testData: TestData[] = [
@@ -346,14 +346,14 @@ describe('AdvancedTable', () => {
       expect(screen.queryByRole('button', { name: /column menu/i })).not.toBeInTheDocument();
     });
 
-    it('a column opts out of filtering with its own enableColumnFilter: false', () => {
+    it('a column opts in to filtering with its own enableColumnFilter: true', () => {
       const columns: AdvancedTableColumn<TestData>[] = [
-        { key: 'name', title: 'Name', enableColumnFilter: false },
+        { key: 'name', title: 'Name', enableColumnFilter: true },
         { key: 'age', title: 'Age' },
       ];
       render(<AdvancedTable columns={columns} data={testData} enableColumnFilter />);
-      expect(screen.queryByRole('button', { name: 'Name column menu' })).not.toBeInTheDocument();
-      expect(screen.getByRole('button', { name: 'Age column menu' })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Name column menu' })).toBeInTheDocument();
+      expect(screen.queryByRole('button', { name: 'Age column menu' })).not.toBeInTheDocument();
     });
 
     it('filters visible rows as the user types in a column menu filter input', async () => {
@@ -521,14 +521,14 @@ describe('AdvancedTable', () => {
       expect(liveRegion).toHaveTextContent('Name unpinned.');
     });
 
-    it('a column opts out of pinning with its own enablePinning: false', () => {
+    it('a column opts in to pinning with its own enablePinning: true', () => {
       const columns: AdvancedTableColumn<TestData>[] = [
-        { key: 'name', title: 'Name', enablePinning: false },
+        { key: 'name', title: 'Name', enablePinning: true },
         { key: 'age', title: 'Age' },
       ];
       render(<AdvancedTable columns={columns} data={testData} enableColumnPinning />);
-      expect(screen.queryByRole('button', { name: 'Name column menu' })).not.toBeInTheDocument();
-      expect(screen.getByRole('button', { name: 'Age column menu' })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Name column menu' })).toBeInTheDocument();
+      expect(screen.queryByRole('button', { name: 'Age column menu' })).not.toBeInTheDocument();
     });
 
     it('controlled pinning: renders from the columnPinning prop and emits onColumnPinningChange', async () => {
@@ -613,14 +613,14 @@ describe('AdvancedTable', () => {
       expect(within(screen.getByRole('table')).getAllByRole('row')).toHaveLength(4);
     });
 
-    it('a column opts out of grouping with its own enableGrouping: false', () => {
+    it('a column opts in to grouping with its own enableGrouping: true', () => {
       const columns: AdvancedTableColumn<TestData>[] = [
         { key: 'name', title: 'Name' },
-        { key: 'age', title: 'Age', enableGrouping: false },
+        { key: 'age', title: 'Age', enableGrouping: true },
       ];
       render(<AdvancedTable columns={columns} data={groupingTestData} enableGrouping />);
-      expect(screen.queryByRole('button', { name: 'Age column menu' })).not.toBeInTheDocument();
-      expect(screen.getByRole('button', { name: 'Name column menu' })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Age column menu' })).toBeInTheDocument();
+      expect(screen.queryByRole('button', { name: 'Name column menu' })).not.toBeInTheDocument();
     });
 
     it('controlled grouping: renders from the grouping prop and emits onGroupingChange', async () => {
@@ -841,12 +841,161 @@ describe('AdvancedTable', () => {
   });
 
   describe('row pinning', () => {
-    it.todo('pin toggle moves a row into the pinned section above the body');
-    it.todo('unpinning returns the row to its natural position');
-    it.todo('pinning a row pins its sub-rows with it');
-    it.todo('pinned rows remain visible across sorting and pagination');
-    it.todo('pinned section preserves valid table semantics for assistive technology');
-    it.todo('controlled pinning: renders from the pinnedRows prop and emits onPinnedRowsChange');
+    type TreeData = TestData & { subRows?: TreeData[] };
+    const treeData: TreeData[] = [
+      {
+        name: 'John',
+        age: 30,
+        subRows: [
+          { name: 'Johnny', age: 5 },
+          { name: 'Janet', age: 8 },
+        ],
+      },
+      { name: 'Bob', age: 40 },
+    ];
+
+    // Names in body order, read from the second cell (first cell is the pin
+    // toggle) of each tbody row, across every tbody (pinned + main).
+    const allBodyOrder = () => {
+      const tbodies = screen.getByRole('table').querySelectorAll('tbody');
+      return Array.from(tbodies).flatMap(tbody =>
+        within(tbody)
+          .getAllByRole('row')
+          .map(row => within(row).getAllByRole('cell')[1]?.textContent),
+      );
+    };
+
+    it('pin toggle moves a row into the pinned section above the body', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowPinning />);
+      expect(allBodyOrder()).toEqual(['John', 'Jane', 'Bob']);
+
+      await user.click(screen.getByRole('button', { name: 'Pin row 3' }));
+      // Bob (row 3) is lifted above the other, unpinned rows.
+      expect(allBodyOrder()).toEqual(['Bob', 'John', 'Jane']);
+    });
+
+    it('unpinning returns the row to its natural position', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowPinning />);
+
+      await user.click(screen.getByRole('button', { name: 'Pin row 3' }));
+      expect(allBodyOrder()).toEqual(['Bob', 'John', 'Jane']);
+
+      await user.click(screen.getByRole('button', { name: 'Unpin row 3' }));
+      expect(allBodyOrder()).toEqual(['John', 'Jane', 'Bob']);
+    });
+
+    it('pinning a row pins its sub-rows with it', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={treeData} rowKey="name" enableRowPinning />);
+
+      await user.click(screen.getByRole('button', { name: 'Expand John' }));
+      expect(screen.getByText('Johnny')).toBeInTheDocument();
+
+      await user.click(screen.getByRole('button', { name: 'Pin row 1' }));
+      // John and its sub-rows all render in the leading (pinned) tbody.
+      const pinnedBody = screen.getByRole('table').querySelectorAll('tbody')[0];
+      expect(within(pinnedBody).getByText('John')).toBeInTheDocument();
+      expect(within(pinnedBody).getByText('Johnny')).toBeInTheDocument();
+      expect(within(pinnedBody).getByText('Janet')).toBeInTheDocument();
+    });
+
+    it('pinned rows remain visible across sorting and pagination', async () => {
+      const user = userEvent.setup();
+      const manyRows: TestData[] = Array.from({ length: 12 }, (_, i) => ({ name: `Person ${i}`, age: 20 + i }));
+      render(<AdvancedTable columns={testColumns} data={manyRows} rowKey="name" enableRowPinning enableSorting />);
+
+      await user.click(screen.getByRole('button', { name: 'Pin row 1' }));
+      expect(screen.getByText('Person 0')).toBeInTheDocument();
+
+      // Sorting the (unpinned) rows still leaves the pinned row visible.
+      await user.click(within(screen.getAllByRole('columnheader')[1]).getByRole('button'));
+      expect(screen.getByText('Person 0')).toBeInTheDocument();
+
+      // Paginating away from the pinned row's "natural" page still shows it.
+      await user.click(screen.getByRole('button', { name: 'Go to page 2' }));
+      expect(screen.getByText('Person 0')).toBeInTheDocument();
+    });
+
+    it('pinned section preserves valid table semantics for assistive technology', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowPinning />);
+
+      await user.click(screen.getByRole('button', { name: 'Pin row 1' }));
+      const table = screen.getByRole('table');
+      // The pinned row still shows up as a real `row` in the table's a11y tree.
+      const rows = within(table).getAllByRole('row');
+      const pinnedRow = screen.getByText('John').closest('tr');
+      expect(rows).toContain(pinnedRow);
+    });
+
+    it('controlled pinning: renders from the pinnedRows prop and emits onPinnedRowsChange', async () => {
+      const user = userEvent.setup();
+      const onPinnedRowsChange = vi.fn();
+      const { rerender } = render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          rowKey="name"
+          enableRowPinning
+          pinnedRows={[]}
+          onPinnedRowsChange={onPinnedRowsChange}
+        />,
+      );
+      expect(allBodyOrder()).toEqual(['John', 'Jane', 'Bob']);
+
+      await user.click(screen.getByRole('button', { name: 'Pin row 3' }));
+      expect(onPinnedRowsChange).toHaveBeenCalledWith(['Bob']);
+      // Controlled: doesn't pin on its own until the prop is fed back.
+      expect(allBodyOrder()).toEqual(['John', 'Jane', 'Bob']);
+
+      rerender(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          rowKey="name"
+          enableRowPinning
+          pinnedRows={['Bob']}
+          onPinnedRowsChange={onPinnedRowsChange}
+        />,
+      );
+      expect(allBodyOrder()).toEqual(['Bob', 'John', 'Jane']);
+    });
+
+    it('a pinned row stays visible when it no longer matches an active column filter', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowPinning enableColumnFilter />);
+
+      await user.click(screen.getByRole('button', { name: 'Pin row 1' }));
+      expect(screen.getByText('John')).toBeInTheDocument();
+
+      // Filter the Name column for a value John doesn't match.
+      await user.click(screen.getByRole('button', { name: 'Name column menu' }));
+      const filterInput = await screen.findByRole('textbox');
+      await user.type(filterInput, 'Jane');
+
+      // John no longer matches the filter, but stays visible since it's pinned.
+      expect(screen.getByText('John')).toBeInTheDocument();
+    });
+
+    it('a pinned row filtered out of the center rows still gets a sane accessible name on its toggle', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowPinning enableColumnFilter />);
+
+      await user.click(screen.getByRole('button', { name: 'Pin row 1' }));
+
+      await user.click(screen.getByRole('button', { name: 'Name column menu' }));
+      const filterInput = await screen.findByRole('textbox');
+      await user.type(filterInput, 'Jane');
+      // While the menu popover is open, react-aria marks the rest of the page
+      // (including the table) aria-hidden — close it first, as a real
+      // screen-reader user would need to, before the table is queryable again.
+      await user.keyboard('{Escape}');
+
+      // John's own toggle still has a real, non-broken accessible name (not "Pin row 0").
+      expect(screen.getByRole('button', { name: 'Unpin row 1' })).toBeInTheDocument();
+    });
   });
 
   describe('expanding and detail panel', () => {
@@ -940,11 +1089,11 @@ describe('AdvancedTable', () => {
     });
 
     it('expand control renders in the correct column when selection and pin columns are present', () => {
-      render(<AdvancedTable columns={testColumns} data={treeData} rowKey="name" enableRowSelection />);
+      render(<AdvancedTable columns={testColumns} data={treeData} rowKey="name" enableRowSelection enableRowPinning />);
 
-      // The reserved selection column is first, but the expand control still
-      // targets the consumer's own first column (Name) rather than drifting
-      // into (or being blocked by) the reserved leading column.
+      // The reserved selection and pin columns are first, but the expand
+      // control still targets the consumer's own first column (Name) rather
+      // than drifting into (or being blocked by) either reserved leading column.
       const nameCell = screen.getByText('John').closest('td');
       const expandButton = screen.getByRole('button', { name: 'Expand John' });
       expect(nameCell).toContainElement(expandButton);
@@ -952,6 +1101,10 @@ describe('AdvancedTable', () => {
       const checkboxCell = screen.getByRole('checkbox', { name: 'Select row 1' }).closest('td');
       expect(checkboxCell).not.toContainElement(expandButton);
       expect(checkboxCell).not.toBe(nameCell);
+
+      const pinCell = screen.getByRole('button', { name: 'Pin row 1' }).closest('td');
+      expect(pinCell).not.toContainElement(expandButton);
+      expect(pinCell).not.toBe(nameCell);
     });
 
     it('controlled expansion: renders from the expanded prop and emits onExpandedChange', async () => {
@@ -1138,6 +1291,119 @@ describe('AdvancedTable', () => {
     });
   });
 
+  describe('loading', () => {
+    it('shows a loading row instead of the empty state when there is no data yet', () => {
+      render(<AdvancedTable columns={testColumns} data={[]} loading />);
+      const status = within(screen.getByRole('table')).getByRole('status');
+      expect(status).toHaveTextContent('Loading data…');
+      expect(status.closest('td')).toBeInTheDocument();
+      expect(screen.queryByText('No data to display')).not.toBeInTheDocument();
+    });
+
+    it('renders a custom title, description, and icon from the loadingStateProps prop', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={[]}
+          loading
+          loadingStateProps={{
+            title: 'Fetching rows',
+            description: 'This should only take a moment.',
+            icon: <span data-testid="custom-loading-icon">icon</span>,
+          }}
+        />,
+      );
+      expect(screen.getByText('Fetching rows')).toBeInTheDocument();
+      expect(screen.getByText('This should only take a moment.')).toBeInTheDocument();
+      expect(screen.getByTestId('custom-loading-icon')).toBeInTheDocument();
+      expect(screen.queryByText('Loading data…', { selector: 'p' })).not.toBeInTheDocument();
+    });
+
+    it('dims existing rows with an overlay instead of replacing them when data is already present', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} loading />);
+      // Existing rows stay in the document underneath the overlay.
+      expect(screen.getByText('John')).toBeInTheDocument();
+      const status = within(screen.getByRole('table').parentElement as HTMLElement).getByRole('status');
+      expect(status).toHaveTextContent('Loading data…');
+      // The overlay isn't the empty-state's <td> wrapper — it sits alongside the table.
+      expect(status.closest('td')).not.toBeInTheDocument();
+    });
+
+    it('does not show a loading row or overlay when loading is false', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} loading={false} />);
+      expect(screen.queryByText('Loading data…')).not.toBeInTheDocument();
+    });
+
+    it('marks the table aria-busy while loading', () => {
+      const { rerender } = render(<AdvancedTable columns={testColumns} data={testData} loading />);
+      expect(screen.getByRole('table')).toHaveAttribute('aria-busy', 'true');
+
+      rerender(<AdvancedTable columns={testColumns} data={testData} loading={false} />);
+      expect(screen.getByRole('table')).toHaveAttribute('aria-busy', 'false');
+    });
+
+    it('disables the sort button while loading', () => {
+      const ageSortButton = () => within(screen.getAllByRole('columnheader')[1]).getByRole('button');
+      const { rerender } = render(<AdvancedTable columns={testColumns} data={testData} enableSorting loading />);
+      expect(ageSortButton()).toBeDisabled();
+
+      rerender(<AdvancedTable columns={testColumns} data={testData} enableSorting loading={false} />);
+      expect(ageSortButton()).not.toBeDisabled();
+    });
+
+    it('disables the column menu trigger while loading', () => {
+      const { rerender } = render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter loading />);
+      expect(screen.getByRole('button', { name: 'Name column menu' })).toBeDisabled();
+
+      rerender(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter loading={false} />);
+      expect(screen.getByRole('button', { name: 'Name column menu' })).not.toBeDisabled();
+    });
+
+    it('disables pagination controls while loading', () => {
+      // 3 pages of 5; seeded on the middle page so Back/Next are both
+      // genuinely enabled absent loading (page 1 disables Back structurally,
+      // independent of the fieldset this test is exercising).
+      const manyRows: TestData[] = Array.from({ length: 15 }, (_, i) => ({ name: `Person ${i}`, age: 20 + i }));
+      const pagination = { pageIndex: 1, pageSize: 5 };
+      const { rerender } = render(
+        <AdvancedTable columns={testColumns} data={manyRows} pagination={pagination} loading />,
+      );
+      const nav = screen.getByRole('navigation', { name: 'Pagination' });
+      within(nav)
+        .getAllByRole('button')
+        .forEach(button => expect(button).toBeDisabled());
+      expect(screen.getByLabelText('Items per page')).toBeDisabled();
+
+      rerender(<AdvancedTable columns={testColumns} data={manyRows} pagination={pagination} loading={false} />);
+      within(nav)
+        .getAllByRole('button')
+        .forEach(button => expect(button).not.toBeDisabled());
+      expect(screen.getByLabelText('Items per page')).not.toBeDisabled();
+    });
+
+    it('does not disable row-level controls (e.g. selection checkboxes) while loading', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowSelection loading />);
+      const checkbox = screen.getAllByRole('checkbox', { name: /Select row/ })[0];
+      expect(checkbox).not.toBeDisabled();
+      await user.click(checkbox);
+      expect(checkbox).toBeChecked();
+    });
+
+    it('announces loading transitions via a live region, silently on initial mount', () => {
+      const { container, rerender } = render(<AdvancedTable columns={testColumns} data={[]} loading />);
+      const liveRegions = container.querySelectorAll('[aria-live="polite"]');
+      const loadingRegion = liveRegions[liveRegions.length - 1];
+      // Content is present at mount, but live regions don't announce content
+      // that's already there when they're first painted — nothing to assert
+      // about actual SR output here, just that a subsequent change is caught.
+      expect(loadingRegion).toHaveTextContent('Loading data…');
+
+      rerender(<AdvancedTable columns={testColumns} data={[]} loading={false} />);
+      expect(loadingRegion).toHaveTextContent('Data loaded.');
+    });
+  });
+
   describe('style variants', () => {
     const getTable = () => screen.getByRole('table');
 
@@ -1233,7 +1499,12 @@ describe('AdvancedTable', () => {
       const badProps: AdvancedTableProps<TestData> = { columns: testColumns, data: testData, enableRowSelection: true };
       expect(badProps).toBeDefined();
     });
-    it.todo('enabling pinning, expansion, or editing without rowKey is a type error');
+    it('enabling row pinning without rowKey is a type error', () => {
+      // @ts-expect-error rowKey is required when enableRowPinning is set
+      const badProps: AdvancedTableProps<TestData> = { columns: testColumns, data: testData, enableRowPinning: true };
+      expect(badProps).toBeDefined();
+    });
+    it.todo('enabling editing without rowKey is a type error');
     it.todo('AdvancedTable and its types are exported from the package root');
   });
 });

@@ -19,7 +19,7 @@ function getAriaSort(canSort: boolean, direction: false | 'asc' | 'desc') {
 
 /** Renders a single header cell: the label plus (when sortable) the sort toggle. */
 function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>) {
-  const { tableId, padding, bordered, enableColumnPinning } = useAdvancedTableContext<T>();
+  const { tableId, padding, bordered, enableColumnPinning, loading } = useAdvancedTableContext<T>();
 
   const { column } = header;
   const canSort = column.getCanSort();
@@ -71,6 +71,7 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
           {canSort && (
             <button
               type="button"
+              disabled={loading}
               className={styles.sortButton()}
               aria-labelledby={`${labelId} ${sortActionId}`}
               onClick={column.getToggleSortingHandler()}

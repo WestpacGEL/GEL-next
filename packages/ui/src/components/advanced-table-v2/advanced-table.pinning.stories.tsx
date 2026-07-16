@@ -10,12 +10,12 @@ const data = makePersonData(25);
 // Generous fixed widths so the row overflows any reasonable viewport, giving
 // the pinned columns' scroll-edge affordance something to demonstrate.
 const columns: AdvancedTableColumn<AdvancedPerson>[] = [
-  { key: 'firstName', title: 'First Name', width: 200 },
-  { key: 'lastName', title: 'Last Name', width: 200 },
-  { key: 'age', title: 'Age', width: 200 },
-  { key: 'visits', title: 'Visits', width: 200 },
-  { key: 'status', title: 'Status', width: 200 },
-  { key: 'progress', title: 'Profile Progress', width: 200 },
+  { key: 'firstName', title: 'First Name', width: 200, enablePinning: true, enableColumnFilter: true },
+  { key: 'lastName', title: 'Last Name', width: 200, enablePinning: true, enableColumnFilter: true },
+  { key: 'age', title: 'Age', width: 200, enablePinning: true, enableColumnFilter: true },
+  { key: 'visits', title: 'Visits', width: 200, enablePinning: true, enableColumnFilter: true },
+  { key: 'status', title: 'Status', width: 200, enablePinning: true, enableColumnFilter: true },
+  { key: 'progress', title: 'Profile Progress', width: 200, enablePinning: true, enableColumnFilter: true },
 ];
 
 const meta: Meta<typeof AdvancedTable> = {
@@ -46,25 +46,25 @@ export const Default: Story = {
 };
 
 /**
- * Per-column opt-out. Pinning is enabled at the table level, but one column
- * sets `enablePinning: false` to remove its pin menu items while the rest
- * stay pinnable.
+ * Per-column opt-in. Pinning is enabled at the table level, but only columns
+ * that also set `enablePinning: true` get pin menu items — it's not enough
+ * for the table alone to turn the feature on.
  */
-export const PerColumnOptOut: Story = {
+export const PerColumnOptIn: Story = {
   render: () => {
     const perColumn: AdvancedTableColumn<AdvancedPerson>[] = [
-      { key: 'firstName', title: 'First Name', width: 200 },
-      { key: 'lastName', title: 'Last Name', width: 200 },
-      { key: 'age', title: 'Age', width: 200, enablePinning: false },
-      { key: 'visits', title: 'Visits', width: 200, enablePinning: false },
-      { key: 'status', title: 'Status', width: 200, enablePinning: false },
-      { key: 'progress', title: 'Profile Progress', width: 200, enablePinning: false },
+      { key: 'firstName', title: 'First Name', width: 200, enablePinning: true },
+      { key: 'lastName', title: 'Last Name', width: 200, enablePinning: true },
+      { key: 'age', title: 'Age', width: 200 },
+      { key: 'visits', title: 'Visits', width: 200 },
+      { key: 'status', title: 'Status', width: 200 },
+      { key: 'progress', title: 'Profile Progress', width: 200 },
     ];
     return (
       <AdvancedTable
         data={data}
         columns={perColumn}
-        caption="Pinning on, Profile Progress opted out"
+        caption="Pinning on, only First Name and Last Name opted in"
         enableColumnPinning
       />
     );

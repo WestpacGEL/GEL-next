@@ -1,39 +1,11 @@
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { AdvancedTable } from './advanced-table.component.js';
-import { AdvancedTableColumn } from './advanced-table.types.js';
-import { AdvancedPerson, makePersonData, personColumns } from './story-utils/index.js';
+import { makePersonData, personColumns } from './story-utils/index.js';
 
 const data = makePersonData(10);
 
 const columns = personColumns;
-
-const groupedColumns: AdvancedTableColumn<AdvancedPerson>[] = [
-  {
-    key: 'name',
-    title: 'Name',
-    columns: [
-      { key: 'firstName', title: 'First Name' },
-      { key: 'lastName', title: 'Last Name' },
-    ],
-  },
-  {
-    key: 'information',
-    title: 'Information',
-    columns: [
-      { key: 'age', title: 'Age' },
-      {
-        key: 'moreInfo',
-        title: 'More Info',
-        columns: [
-          { key: 'visits', title: 'Visits' },
-          { key: 'status', title: 'Status' },
-          { key: 'progress', title: 'Profile Progress' },
-        ],
-      },
-    ],
-  },
-];
 
 // Distinct title so it does not collide with the existing (legacy) Advanced Table stories.
 const meta: Meta<typeof AdvancedTable> = {
@@ -63,10 +35,6 @@ export const CustomCellRender: Story = {
       ]}
     />
   ),
-};
-
-export const GroupedHeaders: Story = {
-  render: () => <AdvancedTable data={data} columns={groupedColumns} caption="Grouped headers" />,
 };
 
 export const Uncontrolled: Story = {

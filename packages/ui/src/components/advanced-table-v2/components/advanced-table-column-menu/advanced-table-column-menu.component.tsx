@@ -47,12 +47,12 @@ function ColumnMenuFilterItem<T>({ column }: { column: Column<T, unknown> }) {
  * add a further `Section` without restructuring this component.
  */
 export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuProps<T>) {
-  const { tableId, table, onPinAnnouncement } = useAdvancedTableContext<T>();
+  const { tableId, table, onPinAnnouncement, loading } = useAdvancedTableContext<T>();
   const state = useMenuTriggerState({});
 
   const btnRef = useRef(null);
   const { menuTriggerProps, menuProps } = useMenuTrigger<object>({}, state, btnRef);
-  const { buttonProps } = useButton(menuTriggerProps, btnRef);
+  const { buttonProps } = useButton({ ...menuTriggerProps, isDisabled: loading }, btnRef);
   const styles = advancedTableColumnMenuStyles();
 
   const labelId = `${tableId}-${header.id}-label`;

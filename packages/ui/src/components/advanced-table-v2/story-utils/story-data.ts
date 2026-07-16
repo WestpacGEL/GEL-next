@@ -48,12 +48,15 @@ export function makePersonData(...lens: number[]) {
   return makeDataLevel();
 }
 
+// Filter/pin/group are table opt-in AND column opt-in.
+const optIn = { enableColumnFilter: true, enablePinning: true, enableGrouping: true } as const;
+
 /** Shared column set used across the v2 stories. */
 export const personColumns: AdvancedTableColumn<AdvancedPerson>[] = [
-  { key: 'firstName', title: 'First Name' },
-  { key: 'lastName', title: 'Last Name' },
-  { key: 'age', title: 'Age' },
-  { key: 'visits', title: 'Visits' },
-  { key: 'status', title: 'Status' },
-  { key: 'progress', title: 'Profile Progress' },
+  { key: 'firstName', title: 'First Name', ...optIn },
+  { key: 'lastName', title: 'Last Name', ...optIn },
+  { key: 'age', title: 'Age', ...optIn },
+  { key: 'visits', title: 'Visits', ...optIn },
+  { key: 'status', title: 'Status', ...optIn },
+  { key: 'progress', title: 'Profile Progress', ...optIn },
 ];

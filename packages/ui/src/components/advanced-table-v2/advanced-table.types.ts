@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { AdvancedTableEmptyStateProps } from './components/index.js';
+import { AdvancedTableEmptyStateProps, AdvancedTableLoadingStateProps } from './components/index.js';
 
 /**
  * A leaf column that reads a value from the row via `key`.
@@ -21,18 +21,18 @@ export type AdvancedTableLeafColumn<T> = {
      */
     enableSorting?: boolean;
     /**
-     * Opts this column out of filtering. Only meaningful when the table has
-     * `enableColumnFilter`: set to `false` to remove this column's filter menu.
+     * Opts this column into filtering. Only takes effect when the table also has
+     * `enableColumnFilter`: set to `true` to add this column's filter menu.
      */
     enableColumnFilter?: boolean;
     /**
-     * Opts this column out of pinning. Only meaningful when the table has
-     * `enableColumnPinning`: set to `false` to remove this column's pin menu items.
+     * Opts this column into pinning. Only takes effect when the table also has
+     * `enableColumnPinning`: set to `true` to add this column's pin menu items.
      */
     enablePinning?: boolean;
     /**
-     * Opts this column out of grouping. Only meaningful when the table has
-     * `enableGrouping`: set to `false` to remove this column's group menu item.
+     * Opts this column into grouping. Only takes effect when the table also has
+     * `enableGrouping`: set to `true` to add this column's group menu item.
      */
     enableGrouping?: boolean;
     /** Marks the column editable. Consumed by the editable-cells feature (later ticket). */
@@ -135,6 +135,16 @@ export type AdvancedTableGroupingState = string[];
  */
 export type AdvancedTableExpandedState = string[] | true;
 
+/**
+ * The table's row-pinning state: ids (derived from `rowKey`) of top-level rows
+ * currently pinned to the top of the table. Only ever holds top-level ids —
+ * pinning a row pins its sub-rows too, but they're never listed here
+ * individually (see utils/pinned-rows.ts). A public, GEL-owned contract — the
+ * internal table engine is never exposed. Top only: there is no bottom-pinning
+ * concept in this table.
+ */
+export type AdvancedTablePinnedRowsState = string[];
+
 type AdvancedTableBaseProps<T> = {
   /** Column definitions for the table. */
   columns: AdvancedTableColumn<T>[];
@@ -213,7 +223,8 @@ type AdvancedTableBaseProps<T> = {
   pageSizeOptions?: number[];
   /**
    * Enables the per-column filter input in each column's menu. Individual
-   * columns can opt out with their own `enableColumnFilter: false`.
+   * columns must opt in with their own `enableColumnFilter: true` — this flag
+   * alone does not make any column filterable.
    * @default false
    */
   enableColumnFilter?: boolean;
@@ -237,8 +248,9 @@ type AdvancedTableBaseProps<T> = {
    */
   manualFiltering?: boolean;
   /**
-   * Enables pin left / pin right / unpin actions in every non-reserved column's
-   * menu. A column can opt out with its own `enablePinning: false`.
+   * Enables pin left / pin right / unpin actions in non-reserved column menus.
+   * A column must opt in with its own `enablePinning: true` — this flag alone
+   * does not make any column pinnable.
    * @default false
    */
   enableColumnPinning?: boolean;
@@ -255,9 +267,10 @@ type AdvancedTableBaseProps<T> = {
   /** Called with the next column-pinning state whenever the user pins or unpins a column. */
   onColumnPinningChange?: (pinning: AdvancedTableColumnPinningState) => void;
   /**
-   * Enables group/ungroup actions in every column's menu. A column can opt out
-   * with its own `enableGrouping: false`. Only one column can be grouped at a
-   * time; grouping by a new column replaces the previous grouping.
+   * Enables group/ungroup actions in column menus. A column must opt in with
+   * its own `enableGrouping: true` — this flag alone does not make any column
+   * groupable. Only one column can be grouped at a time; grouping by a new
+   * column replaces the previous grouping.
    * @default false
    */
   enableGrouping?: boolean;
@@ -296,6 +309,18 @@ type AdvancedTableBaseProps<T> = {
    * Configures the empty state shown when `data` is empty.
    */
   emptyState?: AdvancedTableEmptyStateProps;
+  /**
+   * Shows a loading treatment: a centered indicator replacing the rows when
+   * there's no data yet, or a dimmed overlay across the whole table when rows
+   * are already present (e.g. a background refetch). Table-level controls
+   * (sorting, column menu, pagination) are disabled while `true`.
+   * @default false
+   */
+  loading?: boolean;
+  /**
+   * Configures the loading state shown while `loading` is `true`.
+   */
+  loadingStateProps?: AdvancedTableLoadingStateProps;
 };
 
 /**
@@ -315,6 +340,11 @@ type AdvancedTableNoRowIdentityProps<T> = AdvancedTableBaseProps<T> & {
   onExpandedChange?: never;
   renderDetailPanel?: never;
   getRowCanExpand?: never;
+  /** @default false */
+  enableRowPinning?: false;
+  pinnedRows?: never;
+  defaultPinnedRows?: never;
+  onPinnedRowsChange?: never;
 };
 
 /**
@@ -370,6 +400,24 @@ type AdvancedTableRowIdentityProps<T> = AdvancedTableBaseProps<T> & {
    * is set — every row (so a detail panel isn't silently blocked on leaf rows).
    */
   getRowCanExpand?: (row: T, info: { depth: number }) => boolean;
+  /**
+   * Renders a pin toggle in the reserved leading column, letting a user lift a
+   * row (and its sub-rows) into a pinned section above the body. Requires
+   * `rowKey`.
+   * @default false
+   */
+  enableRowPinning?: boolean;
+  /**
+   * Currently pinned rows, as stable top-level ids derived from `rowKey`
+   * (controlled) — pinning a row pins its sub-rows too, but only the parent id
+   * needs to be listed. Pair with `onPinnedRowsChange` to own pinning. Use
+   * `defaultPinnedRows` instead for uncontrolled usage.
+   */
+  pinnedRows?: AdvancedTablePinnedRowsState;
+  /** Initial pinned row ids when the table manages its own pinning (uncontrolled). */
+  defaultPinnedRows?: AdvancedTablePinnedRowsState;
+  /** Called with the next pinned row ids whenever the user pins or unpins a row. */
+  onPinnedRowsChange?: (rowIds: AdvancedTablePinnedRowsState) => void;
 };
 
 export type AdvancedTableProps<T> = AdvancedTableNoRowIdentityProps<T> | AdvancedTableRowIdentityProps<T>;

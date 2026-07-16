@@ -13,6 +13,7 @@ import {
   OnChangeFn,
   PaginationState,
   Row,
+  RowPinningState,
   RowSelectionState,
   SortingState,
   TableOptions,
@@ -91,58 +92,82 @@ export type BuildTableOptionsParams<T> = {
    * `subRows`-based default apply.
    */
   getRowCanExpand?: (row: Row<T>) => boolean;
+  /** Table-level row-pinning flag. */
+  enableRowPinning?: boolean;
+  /** Current row-pinning state — already expanded to include cascaded sub-row ids. Top only; `bottom` is always `[]`. */
+  rowPinningState: RowPinningState;
+  /** Row-pinning setter (TanStack hands it an updater; the setter resolves it). */
+  onRowPinningChange: OnChangeFn<RowPinningState>;
 };
+
+// Builds the `state` slice of the `useReactTable` options object.
+function buildTableState<T>({
+  enableSorting,
+  sortingState,
+  enablePagination,
+  paginationState,
+  enableRowSelection,
+  rowSelectionState,
+  enableColumnFilter,
+  columnFiltersState,
+  enableColumnPinning,
+  columnPinningState,
+  hasReservedPinning,
+  enableGrouping,
+  groupingState,
+  enableRowPinning,
+  rowPinningState,
+  expandedState,
+}: BuildTableOptionsParams<T>): TableOptions<T>['state'] {
+  return {
+    ...(enableSorting && { sorting: sortingState }),
+    ...(enablePagination && { pagination: paginationState }),
+    ...(enableRowSelection && { rowSelection: rowSelectionState }),
+    ...(enableColumnFilter && { columnFilters: columnFiltersState }),
+    ...((enableColumnPinning || hasReservedPinning) && { columnPinning: columnPinningState }),
+    ...(enableGrouping && { grouping: groupingState }),
+    ...(enableRowPinning && { rowPinning: rowPinningState }),
+    // Unconditional — no `enableExpanding` flag exists; the expand control on a
+    // row is gated per-row by `getCanExpand()`/`getIsGrouped()`, not by a table
+    // switch (see AdvancedTableExpandedState's doc).
+    expanded: expandedState,
+  };
+}
 
 /**
  * Builds the option object for `useReactTable`. Kept as a pure function (no hooks)
  * so the component call site reads `useReactTable(buildTableOptions({ ... }))` and
  * all the sorting/row-model wiring lives in one place.
  */
-export function buildTableOptions<T>({
-  data,
-  columns,
-  tableId,
-  enableSorting,
-  sortingState,
-  onSortingChange,
-  manualSorting,
-  enablePagination,
-  paginationState,
-  onPaginationChange,
-  rowKey,
-  enableRowSelection,
-  rowSelectionState,
-  onRowSelectionChange,
-  expandedState,
-  onExpandedChange,
-  getRowCanExpand,
-  enableColumnFilter,
-  columnFiltersState,
-  onColumnFiltersChange,
-  manualFiltering,
-  enableColumnPinning,
-  columnPinningState,
-  onColumnPinningChange,
-  hasReservedPinning,
-  enableGrouping,
-  groupingState,
-  onGroupingChange,
-}: BuildTableOptionsParams<T>): TableOptions<T> {
+export function buildTableOptions<T>(params: BuildTableOptionsParams<T>): TableOptions<T> {
+  const {
+    data,
+    columns,
+    tableId,
+    enableSorting,
+    onSortingChange,
+    manualSorting,
+    enablePagination,
+    onPaginationChange,
+    rowKey,
+    enableRowSelection,
+    onRowSelectionChange,
+    onExpandedChange,
+    getRowCanExpand,
+    enableColumnFilter,
+    onColumnFiltersChange,
+    manualFiltering,
+    enableColumnPinning,
+    onColumnPinningChange,
+    enableGrouping,
+    onGroupingChange,
+    enableRowPinning,
+    onRowPinningChange,
+  } = params;
   return {
     data,
     columns,
-    state: {
-      ...(enableSorting && { sorting: sortingState }),
-      ...(enablePagination && { pagination: paginationState }),
-      ...(enableRowSelection && { rowSelection: rowSelectionState }),
-      ...(enableColumnFilter && { columnFilters: columnFiltersState }),
-      ...((enableColumnPinning || hasReservedPinning) && { columnPinning: columnPinningState }),
-      ...(enableGrouping && { grouping: groupingState }),
-      // Unconditional — no `enableExpanding` flag exists; the expand control on a
-      // row is gated per-row by `getCanExpand()`/`getIsGrouped()`, not by a table
-      // switch (see AdvancedTableExpandedState's doc).
-      expanded: expandedState,
-    },
+    state: buildTableState(params),
     ...(enableSorting
       ? {
           enableMultiSort: false,
@@ -170,6 +195,15 @@ export function buildTableOptions<T>({
     // checkbox at all — can never end up selected via select-all and leak a
     // non-`rowKey` id into the public `onSelectionChange` contract.
     ...(enableRowSelection ? { enableRowSelection: row => !row.getIsGrouped(), onRowSelectionChange } : {}),
+    ...(enableRowPinning
+      ? {
+          // A function (not `true`): group-header rows render as a single
+          // full-width banner with no pin-toggle control, so this blocks them
+          // from being pinned via any other code path too.
+          enableRowPinning: row => !row.getIsGrouped(),
+          onRowPinningChange,
+        }
+      : {}),
     ...(enableColumnFilter
       ? { getFilteredRowModel: getFilteredRowModel(), onColumnFiltersChange, manualFiltering }
       : {}),

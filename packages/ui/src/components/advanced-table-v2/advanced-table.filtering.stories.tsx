@@ -28,25 +28,25 @@ export const Default: Story = {
 };
 
 /**
- * Per-column opt-out. Filtering is enabled at the table level, but one column
- * sets `enableColumnFilter: false` to remove its filter menu while the rest
- * stay filterable.
+ * Per-column opt-in. Filtering is enabled at the table level, but only
+ * columns that also set `enableColumnFilter: true` get a filter menu — it's
+ * not enough for the table alone to turn the feature on.
  */
-export const PerColumnOptOut: Story = {
+export const PerColumnOptIn: Story = {
   render: () => {
     const perColumn: AdvancedTableColumn<AdvancedPerson>[] = [
-      { key: 'firstName', title: 'First Name' },
-      { key: 'lastName', title: 'Last Name' },
-      { key: 'age', title: 'Age', enableColumnFilter: false },
-      { key: 'visits', title: 'Visits', enableColumnFilter: false },
-      { key: 'status', title: 'Status', enableColumnFilter: false },
-      { key: 'progress', title: 'Profile Progress', enableColumnFilter: false },
+      { key: 'firstName', title: 'First Name', enableColumnFilter: true },
+      { key: 'lastName', title: 'Last Name', enableColumnFilter: true },
+      { key: 'age', title: 'Age' },
+      { key: 'visits', title: 'Visits' },
+      { key: 'status', title: 'Status' },
+      { key: 'progress', title: 'Profile Progress' },
     ];
     return (
       <AdvancedTable
         data={data}
         columns={perColumn}
-        caption="Filtering on, Profile Progress opted out"
+        caption="Filtering on, only First Name and Last Name opted in"
         enableColumnFilter
       />
     );

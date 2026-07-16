@@ -13,6 +13,12 @@ export const styles = tv({
       striped: { row: 'odd:bg-background-white even:bg-surface-muted-faint' },
       filled: { row: 'bg-background-white' },
     },
+    // Ported from the old `advanced-table`'s PinnedRows/isPinned treatment. Pinned rows get
+    // a flat white background + shadow regardless of the table's background variant
+    // (transparent/striped/filled), since a pinned row is visually its own section.
+    isPinned: {
+      true: { row: 'bg-background-white shadow-md' },
+    },
   },
   defaultVariants: {
     background: 'transparent',

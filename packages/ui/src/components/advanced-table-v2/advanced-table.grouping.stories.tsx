@@ -32,21 +32,21 @@ export const Default: Story = {
 };
 
 /**
- * Per-column opt-out. Grouping is enabled at the table level, but one column
- * sets `enableGrouping: false` to remove its group menu item while the rest
- * stay groupable.
+ * Per-column opt-in. Grouping is enabled at the table level, but only columns
+ * that also set `enableGrouping: true` get a group menu item — it's not
+ * enough for the table alone to turn the feature on.
  */
-export const PerColumnOptOut: Story = {
+export const PerColumnOptIn: Story = {
   render: () => {
     const perColumn: AdvancedTableColumn<AdvancedPerson>[] = [
-      { key: 'firstName', title: 'First Name', enableGrouping: false },
-      { key: 'lastName', title: 'Last Name', enableGrouping: false },
-      { key: 'age', title: 'Age', enableGrouping: false },
+      { key: 'firstName', title: 'First Name' },
+      { key: 'lastName', title: 'Last Name' },
+      { key: 'age', title: 'Age' },
       { key: 'visits', title: 'Visits' },
-      { key: 'status', title: 'Status' },
-      { key: 'progress', title: 'Profile Progress', enableGrouping: false },
+      { key: 'status', title: 'Status', enableGrouping: true },
+      { key: 'progress', title: 'Profile Progress' },
     ];
-    return <AdvancedTable data={data} columns={perColumn} caption="Grouping on, Status opted out" enableGrouping />;
+    return <AdvancedTable data={data} columns={perColumn} caption="Grouping on, only Status opted in" enableGrouping />;
   },
 };
 

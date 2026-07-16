@@ -38,11 +38,11 @@ function findFirstLeafColumn<T>(columns: AdvancedTableColumn<T>[]): AdvancedTabl
 type ColumnGeneratorOptions<T> = {
   /** Table-level sorting flag; a column may opt out with its own `enableSorting: false`. */
   enableSorting?: boolean;
-  /** Table-level filtering flag; a column may opt out with its own `enableColumnFilter: false`. */
+  /** Table-level filtering flag; a column must opt in with its own `enableColumnFilter: true`. */
   enableColumnFilter?: boolean;
-  /** Table-level pinning flag; a column may opt out with its own `enablePinning: false`. */
+  /** Table-level pinning flag; a column must opt in with its own `enablePinning: true`. */
   enableColumnPinning?: boolean;
-  /** Table-level grouping flag; a column may opt out with its own `enableGrouping: false`. */
+  /** Table-level grouping flag; a column must opt in with its own `enableGrouping: true`. */
   enableGrouping?: boolean;
   /** Whether a `renderDetailPanel` is configured — passed through to the expand
    * button's accessible label so it can reference the detail panel it controls. */
@@ -117,15 +117,15 @@ export function columnGenerator<T>(
       // Sorting is enabled only at the table level; a column may opt out with `false`
       // but cannot enable sorting on its own.
       enableSorting: options.enableSorting ? (column.enableSorting ?? true) : false,
-      // Filtering is enabled only at the table level; a column may opt out with `false`
-      // but cannot enable filtering on its own.
-      enableColumnFilter: options.enableColumnFilter ? (column.enableColumnFilter ?? true) : false,
-      // Pinning is enabled only at the table level; a column may opt out with `false`
-      // but cannot enable pinning on its own.
-      enablePinning: options.enableColumnPinning ? (column.enablePinning ?? true) : false,
-      // Grouping is enabled only at the table level; a column may opt out with `false`
-      // but cannot enable grouping on its own.
-      enableGrouping: options.enableGrouping ? (column.enableGrouping ?? true) : false,
+      // Filtering requires both the table-level flag AND the column's own
+      // `enableColumnFilter: true` — neither one alone is enough.
+      enableColumnFilter: Boolean(options.enableColumnFilter && column.enableColumnFilter),
+      // Pinning requires both the table-level flag AND the column's own
+      // `enablePinning: true` — neither one alone is enough.
+      enablePinning: Boolean(options.enableColumnPinning && column.enablePinning),
+      // Grouping requires both the table-level flag AND the column's own
+      // `enableGrouping: true` — neither one alone is enough.
+      enableGrouping: Boolean(options.enableGrouping && column.enableGrouping),
       ...(column.width !== undefined ? { size: column.width } : {}),
     };
   });

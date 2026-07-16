@@ -7,6 +7,7 @@ import {
   ExpandedState,
   OnChangeFn,
   Row,
+  RowPinningState,
   RowSelectionState,
   useReactTable,
 } from '@tanstack/react-table';
@@ -20,6 +21,7 @@ import {
   AdvancedTableExpandedState,
   AdvancedTableGroupingState,
   AdvancedTablePaginationState,
+  AdvancedTablePinnedRowsState,
   AdvancedTableProps,
   AdvancedTableSortingState,
 } from './advanced-table.types.js';
@@ -27,15 +29,19 @@ import {
   AdvancedTableBody,
   AdvancedTableCaption,
   AdvancedTableHead,
+  AdvancedTableLoadingState,
   AdvancedTablePagination,
 } from './components/index.js';
 import {
   buildReservedColumns,
   buildTableOptions,
+  collapsePinnedRowIds,
   columnGenerator,
   expandedStateToIds,
+  expandPinnedRowIds,
   idsToExpandedState,
   idsToSelectionState,
+  PIN_COLUMN_ID,
   resolveRowId,
   RESERVED_COLUMN_IDS,
   selectionStateToIds,
@@ -51,6 +57,7 @@ const EMPTY_COLUMN_FILTERS: AdvancedTableColumnFiltersState = [];
 const EMPTY_COLUMN_PINNING: AdvancedTableColumnPinningState = {};
 const EMPTY_GROUPING: AdvancedTableGroupingState = [];
 const EMPTY_EXPANDED: AdvancedTableExpandedState = [];
+const EMPTY_PINNED_ROWS: AdvancedTablePinnedRowsState = [];
 
 /**
  * Data table built on TanStack Table (wired internally and fully hidden). Pass
@@ -99,11 +106,17 @@ export function AdvancedTable<T>({
   onExpandedChange: onExpandedChangeProp,
   renderDetailPanel,
   getRowCanExpand,
+  enableRowPinning,
+  pinnedRows: pinnedRowsProp,
+  defaultPinnedRows: defaultPinnedRowsProp,
+  onPinnedRowsChange: onPinnedRowsChangeProp,
   background,
   padding,
   bordered,
   fillContainer,
   emptyState,
+  loading = false,
+  loadingStateProps,
 }: AdvancedTableProps<T>) {
   const generatedId = useId();
   const tableId = id ?? generatedId;
@@ -164,7 +177,11 @@ export function AdvancedTable<T>({
     onExpandedChangeProp,
   );
 
-  const [pinAnnouncement, setPinAnnouncement] = useState('');
+  const [pinnedRowIds, setPinnedRowIds] = useControlledState<AdvancedTablePinnedRowsState>(
+    pinnedRowsProp,
+    defaultPinnedRowsProp ?? EMPTY_PINNED_ROWS,
+    onPinnedRowsChangeProp,
+  );
 
   // Drops stale ids (e.g. a row removed from `data` but still in a controlled
   // `selectedRows`) before they reach TanStack, so select-all can't read as
@@ -184,6 +201,14 @@ export function AdvancedTable<T>({
   // validRowIds wouldn't recognize. See idsToExpandedState (utils/row-id.ts).
   const resolvedExpandedState = useMemo(() => idsToExpandedState(expandedState), [expandedState]);
 
+  // Expands the public, parent-only pinned ids into TanStack's fully-cascaded
+  // set (parent + every descendant) by walking `data` directly — see
+  // utils/pinned-rows.ts for why this can't go through the `table` instance.
+  const resolvedRowPinningState = useMemo<RowPinningState>(
+    () => ({ top: expandPinnedRowIds(pinnedRowIds, resolvedData, rowKey), bottom: [] }),
+    [pinnedRowIds, resolvedData, rowKey],
+  );
+
   const handleRowSelectionChange: OnChangeFn<RowSelectionState> = updaterOrValue => {
     const next = typeof updaterOrValue === 'function' ? updaterOrValue(rowSelectionState) : updaterOrValue;
     setSelectedRowIds(selectionStateToIds(next));
@@ -192,6 +217,11 @@ export function AdvancedTable<T>({
   const handleExpandedChange: OnChangeFn<ExpandedState> = updaterOrValue => {
     const next = typeof updaterOrValue === 'function' ? updaterOrValue(resolvedExpandedState) : updaterOrValue;
     setExpandedState(expandedStateToIds(next));
+  };
+
+  const handleRowPinningChange: OnChangeFn<RowPinningState> = updaterOrValue => {
+    const next = typeof updaterOrValue === 'function' ? updaterOrValue(resolvedRowPinningState) : updaterOrValue;
+    setPinnedRowIds(collapsePinnedRowIds(next.top ?? [], resolvedData, rowKey));
   };
 
   // TanStack's own default `getRowCanExpand` only returns true for rows with
@@ -212,16 +242,20 @@ export function AdvancedTable<T>({
     setColumnFiltersState(next.map(filter => ({ id: filter.id, value: String(filter.value) })));
   };
 
-  // Forces the reserved selection column into `left`; never leaks into the
-  // public columnPinning contract (stripped again in the change handler below,
-  // via the same RESERVED_COLUMN_IDS list so a future reserved column can't
-  // slip through either side by accident).
+  // Forces the reserved selection/pin columns into `left`, in RESERVED_COLUMN_IDS
+  // order; never leaks into the public columnPinning contract (stripped again
+  // in the change handler below, via the same RESERVED_COLUMN_IDS list so a
+  // future reserved column can't slip through either side by accident).
   const resolvedColumnPinningState = useMemo(() => {
     const userLeft = (columnPinningState.left ?? []).filter(id => !RESERVED_COLUMN_IDS.includes(id));
-    const left = enableRowSelection ? [SELECT_COLUMN_ID, ...userLeft] : userLeft;
+    const reservedLeft = [
+      ...(enableRowSelection ? [SELECT_COLUMN_ID] : []),
+      ...(enableRowPinning ? [PIN_COLUMN_ID] : []),
+    ];
+    const left = [...reservedLeft, ...userLeft];
     const right = (columnPinningState.right ?? []).filter(id => !RESERVED_COLUMN_IDS.includes(id));
     return { left, right };
-  }, [columnPinningState, enableRowSelection]);
+  }, [columnPinningState, enableRowSelection, enableRowPinning]);
 
   const handleColumnPinningChange: OnChangeFn<ColumnPinningState> = updaterOrValue => {
     const next = typeof updaterOrValue === 'function' ? updaterOrValue(resolvedColumnPinningState) : updaterOrValue;
@@ -234,7 +268,7 @@ export function AdvancedTable<T>({
   const hasDetailPanel = Boolean(renderDetailPanel);
   const tableColumns = useMemo(
     () => [
-      ...buildReservedColumns<T>({ enableRowSelection }),
+      ...buildReservedColumns<T>({ enableRowSelection, enableRowPinning }),
       ...columnGenerator(columns, {
         enableSorting,
         enableColumnFilter,
@@ -248,6 +282,7 @@ export function AdvancedTable<T>({
       columns,
       enableSorting,
       enableRowSelection,
+      enableRowPinning,
       enableColumnFilter,
       enableColumnPinning,
       enableGrouping,
@@ -279,15 +314,21 @@ export function AdvancedTable<T>({
       enableColumnPinning,
       columnPinningState: resolvedColumnPinningState,
       onColumnPinningChange: handleColumnPinningChange,
-      hasReservedPinning: Boolean(enableRowSelection),
+      hasReservedPinning: Boolean(enableRowSelection || enableRowPinning),
       enableGrouping,
       groupingState,
       onGroupingChange: setGroupingState,
       expandedState: resolvedExpandedState,
       onExpandedChange: handleExpandedChange,
       getRowCanExpand: resolvedGetRowCanExpand,
+      enableRowPinning,
+      rowPinningState: resolvedRowPinningState,
+      onRowPinningChange: handleRowPinningChange,
     }),
   );
+
+  const [pinAnnouncement, setPinAnnouncement] = useState('');
+  const [rowPinAnnouncement, setRowPinAnnouncement] = useState('');
 
   const sortAnnouncement = useMemo(() => {
     if (!enableSorting) return null;
@@ -320,6 +361,11 @@ export function AdvancedTable<T>({
     return `Grouped by ${name}.`;
   }, [groupingState, table, enableGrouping]);
 
+  const loadingAnnouncement = loading ? 'Loading data…' : 'Data loaded.';
+
+  // Check if any data exists before pagination
+  const hasRowData = table.getPrePaginationRowModel().rows.length > 0;
+
   const styles = advancedTableStyles({ bordered, fillContainer });
 
   // `getVisibleLeafColumns()` is TanStack-memoized (stable reference until the
@@ -347,8 +393,11 @@ export function AdvancedTable<T>({
       background,
       padding,
       bordered,
+      loading,
+      loadingStateProps,
       enableColumnPinning,
       onPinAnnouncement: setPinAnnouncement,
+      onRowPinAnnouncement: setRowPinAnnouncement,
       renderDetailPanel,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -360,6 +409,8 @@ export function AdvancedTable<T>({
       background,
       padding,
       bordered,
+      loading,
+      loadingStateProps,
       enableColumnPinning,
       renderDetailPanel,
     ],
@@ -369,7 +420,7 @@ export function AdvancedTable<T>({
     <AdvancedTableProvider value={contextValue as AdvancedTableContextValue<unknown>}>
       <div className={styles.root()}>
         <div className={styles.container()}>
-          <table id={tableId} className={styles.table()} style={{ width: tableWidth }}>
+          <table id={tableId} className={styles.table()} style={{ width: tableWidth }} aria-busy={loading}>
             {caption ? (
               <AdvancedTableCaption
                 title={caption}
@@ -382,6 +433,11 @@ export function AdvancedTable<T>({
             <AdvancedTableHead />
             <AdvancedTableBody />
           </table>
+          {loading && hasRowData && (
+            <div className={styles.overlay()}>
+              <AdvancedTableLoadingState {...loadingStateProps} />
+            </div>
+          )}
         </div>
         {enablePagination && <AdvancedTablePagination />}
         {enableSorting && (
@@ -399,11 +455,19 @@ export function AdvancedTable<T>({
             {pinAnnouncement}
           </div>
         )}
+        {enableRowPinning && (
+          <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
+            {rowPinAnnouncement}
+          </div>
+        )}
         {enableGrouping && (
           <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
             {groupAnnouncement}
           </div>
         )}
+        <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
+          {loadingAnnouncement}
+        </div>
       </div>
     </AdvancedTableProvider>
   );

@@ -5,6 +5,7 @@ import { createContext, ReactNode, useContext } from 'react';
 // barrel re-exports the sub-components, which import this file back — going through
 // it would form a module import cycle.
 import { AdvancedTableEmptyStateProps } from './components/advanced-table-empty-state/index.js';
+import { AdvancedTableLoadingStateProps } from './components/advanced-table-loading-state/index.js';
 
 /**
  * Shared state passed down to the table's sub-components (head, body, row, cell).
@@ -29,6 +30,10 @@ export type AdvancedTableContextValue<T> = {
   padding?: 'default' | 'large';
   /** Draws additional borders around the table and between columns. */
   bordered?: boolean;
+  /** Whether the table is in its loading state. */
+  loading?: boolean;
+  /** Loading-state configuration rendered when `loading` is true and there are no rows yet. */
+  loadingStateProps?: AdvancedTableLoadingStateProps;
   /**
    * Whether the consumer has opted into column pinning. The reserved selection
    * column is always structurally sticky regardless of this flag, but the
@@ -38,6 +43,8 @@ export type AdvancedTableContextValue<T> = {
   enableColumnPinning?: boolean;
   /** Sets the text of the column-pinning live region. */
   onPinAnnouncement?: (text: string) => void;
+  /** Sets the text of the row-pinning live region (separate from column pinning's). */
+  onRowPinAnnouncement?: (text: string) => void;
   /**
    * Renders arbitrary content beneath an expanded row. A rendering concern only
    * (never a TanStack table option) — read by the detail-panel-row sub-component.

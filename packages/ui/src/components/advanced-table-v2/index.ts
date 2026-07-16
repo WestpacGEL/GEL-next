@@ -12,5 +12,7 @@ export {
   type AdvancedTableColumnFiltersState,
   type AdvancedTableColumnPinningState,
   type AdvancedTableGroupingState,
+  type AdvancedTablePinnedRowsState,
 } from './advanced-table.types.js';
 export { type AdvancedTableEmptyStateProps } from './components/index.js';
+export { type AdvancedTableLoadingStateProps } from './components/index.js';
