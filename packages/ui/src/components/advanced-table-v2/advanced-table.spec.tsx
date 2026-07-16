@@ -655,6 +655,55 @@ describe('AdvancedTable', () => {
       );
       expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'td' })).toBeInTheDocument();
     });
+
+    // Regression coverage for ticket 09's interaction with grouping (ticket 08):
+    // grouping's implicit "start fully expanded" default must still hold, but
+    // group rows now also get a real, working collapse/expand toggle — ticket 08
+    // shipped that banner with no toggle at all.
+    it('a newly-grouped column keeps its children visible by default, and the group row exposes a working collapse/expand toggle', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={groupingTestData} enableGrouping />);
+
+      await openColumnMenu(user, 'Age');
+      await user.click(screen.getByRole('menuitem', { name: 'Group by Age' }));
+      await user.keyboard('{Escape}');
+
+      // Ticket 08's default-expanded behavior still holds: children visible immediately.
+      expect(screen.getByText('John')).toBeInTheDocument();
+      expect(screen.getByText('Jane')).toBeInTheDocument();
+
+      // New in this ticket: the group banner has a working toggle.
+      const groupToggle = screen.getByRole('button', { name: 'Collapse Age: 30' });
+      await user.click(groupToggle);
+      expect(screen.queryByText('John')).not.toBeInTheDocument();
+      expect(screen.queryByText('Jane')).not.toBeInTheDocument();
+      // Bob's group (Age: 25) is unaffected by collapsing the Age: 30 group.
+      expect(screen.getByText('Bob')).toBeInTheDocument();
+
+      await user.click(screen.getByRole('button', { name: 'Expand Age: 30' }));
+      expect(screen.getByText('John')).toBeInTheDocument();
+      expect(screen.getByText('Jane')).toBeInTheDocument();
+    });
+
+    it('an explicit defaultExpanded overrides grouping\'s implicit "start expanded" default', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={groupingTestData}
+          rowKey="name"
+          enableGrouping
+          defaultGrouping={['age']}
+          defaultExpanded={[]}
+        />,
+      );
+
+      // Group banners still render...
+      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'td' })).toBeInTheDocument();
+      // ...but an explicit (empty) defaultExpanded wins over grouping's own
+      // implicit default, so children start hidden rather than force-expanded.
+      expect(screen.queryByText('John')).not.toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Expand Age: 30' })).toBeInTheDocument();
+    });
   });
 
   describe('column resizing', () => {
@@ -801,12 +850,140 @@ describe('AdvancedTable', () => {
   });
 
   describe('expanding and detail panel', () => {
-    it.todo('expand control reveals nested sub-rows');
-    it.todo('collapse hides sub-rows again');
-    it.todo('renderDetailPanel renders panel content beneath the expanded row as valid table semantics');
-    it.todo('rows excluded by getRowCanExpand render no expand control');
-    it.todo('expand control renders in the correct column when selection and pin columns are present');
-    it.todo('controlled expansion: renders from the expanded prop and emits onExpandedChange');
+    type TreeData = TestData & { subRows?: TreeData[] };
+    const treeData: TreeData[] = [
+      {
+        name: 'John',
+        age: 30,
+        subRows: [
+          { name: 'Johnny', age: 5 },
+          { name: 'Janet', age: 8 },
+        ],
+      },
+      { name: 'Bob', age: 40 },
+    ];
+
+    it('expand control reveals nested sub-rows', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={treeData} rowKey="name" />);
+
+      // Sub-rows aren't in the DOM at all until expanded (aria-controls in the
+      // a11y test below relies on this — TanStack never mounts collapsed rows).
+      expect(screen.queryByText('Johnny')).not.toBeInTheDocument();
+      expect(screen.queryByText('Janet')).not.toBeInTheDocument();
+      // A leaf row (no subRows) offers no expand control at all.
+      expect(screen.queryByRole('button', { name: /Bob/ })).not.toBeInTheDocument();
+
+      await user.click(screen.getByRole('button', { name: 'Expand John' }));
+      expect(screen.getByText('Johnny')).toBeInTheDocument();
+      expect(screen.getByText('Janet')).toBeInTheDocument();
+    });
+
+    it('collapse hides sub-rows again', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={treeData} rowKey="name" defaultExpanded={['John']} />);
+      expect(screen.getByText('Johnny')).toBeInTheDocument();
+
+      await user.click(screen.getByRole('button', { name: 'Collapse John' }));
+      expect(screen.queryByText('Johnny')).not.toBeInTheDocument();
+      expect(screen.queryByText('Janet')).not.toBeInTheDocument();
+      // The row itself, and its unrelated sibling, are unaffected.
+      expect(screen.getByText('John')).toBeInTheDocument();
+      expect(screen.getByText('Bob')).toBeInTheDocument();
+    });
+
+    it('renderDetailPanel renders panel content beneath the expanded row as valid table semantics', async () => {
+      const user = userEvent.setup();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          rowKey="name"
+          renderDetailPanel={row => <p>Details for {row.name}</p>}
+        />,
+      );
+      expect(screen.queryByText('Details for John')).not.toBeInTheDocument();
+
+      await user.click(screen.getByRole('button', { name: 'Expand John' }));
+      const panelContent = screen.getByText('Details for John');
+      expect(panelContent).toBeInTheDocument();
+
+      // Valid table semantics: a real full-width <td> inside its own <tr>, not
+      // an arbitrary element dropped in beside the row.
+      const panelCell = panelContent.closest('td');
+      expect(panelCell).toHaveAttribute('colspan', String(testColumns.length));
+      const panelRow = panelCell?.closest('tr');
+      expect(panelRow).toBeInTheDocument();
+      expect(within(screen.getByRole('table')).getAllByRole('row')).toContain(panelRow);
+
+      // Collapsing removes it again.
+      await user.click(screen.getByRole('button', { name: 'Collapse John' }));
+      expect(screen.queryByText('Details for John')).not.toBeInTheDocument();
+    });
+
+    it('rows excluded by getRowCanExpand render no expand control', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          rowKey="name"
+          renderDetailPanel={row => <p>Details for {row.name}</p>}
+          getRowCanExpand={row => row.name !== 'Jane'}
+        />,
+      );
+
+      expect(screen.getByRole('button', { name: 'Expand John' })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Expand Bob' })).toBeInTheDocument();
+      // Jane is excluded by getRowCanExpand, even though renderDetailPanel is
+      // configured and would otherwise make every row expandable.
+      expect(screen.queryByRole('button', { name: 'Expand Jane' })).not.toBeInTheDocument();
+    });
+
+    it('expand control renders in the correct column when selection and pin columns are present', () => {
+      render(<AdvancedTable columns={testColumns} data={treeData} rowKey="name" enableRowSelection />);
+
+      // The reserved selection column is first, but the expand control still
+      // targets the consumer's own first column (Name) rather than drifting
+      // into (or being blocked by) the reserved leading column.
+      const nameCell = screen.getByText('John').closest('td');
+      const expandButton = screen.getByRole('button', { name: 'Expand John' });
+      expect(nameCell).toContainElement(expandButton);
+
+      const checkboxCell = screen.getByRole('checkbox', { name: 'Select row 1' }).closest('td');
+      expect(checkboxCell).not.toContainElement(expandButton);
+      expect(checkboxCell).not.toBe(nameCell);
+    });
+
+    it('controlled expansion: renders from the expanded prop and emits onExpandedChange', async () => {
+      const user = userEvent.setup();
+      const onExpandedChange = vi.fn();
+      const { rerender } = render(
+        <AdvancedTable
+          columns={testColumns}
+          data={treeData}
+          rowKey="name"
+          expanded={[]}
+          onExpandedChange={onExpandedChange}
+        />,
+      );
+      expect(screen.queryByText('Johnny')).not.toBeInTheDocument();
+
+      await user.click(screen.getByRole('button', { name: 'Expand John' }));
+      expect(onExpandedChange).toHaveBeenCalledWith(['John']);
+      // Controlled: doesn't expand on its own until the prop is fed back.
+      expect(screen.queryByText('Johnny')).not.toBeInTheDocument();
+
+      rerender(
+        <AdvancedTable
+          columns={testColumns}
+          data={treeData}
+          rowKey="name"
+          expanded={['John']}
+          onExpandedChange={onExpandedChange}
+        />,
+      );
+      expect(screen.getByText('Johnny')).toBeInTheDocument();
+    });
   });
 
   describe('editable cells', () => {

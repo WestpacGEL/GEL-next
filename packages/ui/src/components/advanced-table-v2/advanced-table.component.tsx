@@ -4,7 +4,9 @@ import { useControlledState } from '@react-stately/utils';
 import {
   ColumnFiltersState,
   ColumnPinningState,
+  ExpandedState,
   OnChangeFn,
+  Row,
   RowSelectionState,
   useReactTable,
 } from '@tanstack/react-table';
@@ -15,6 +17,7 @@ import { styles as advancedTableStyles } from './advanced-table.styles.js';
 import {
   AdvancedTableColumnFiltersState,
   AdvancedTableColumnPinningState,
+  AdvancedTableExpandedState,
   AdvancedTableGroupingState,
   AdvancedTablePaginationState,
   AdvancedTableProps,
@@ -30,6 +33,8 @@ import {
   buildReservedColumns,
   buildTableOptions,
   columnGenerator,
+  expandedStateToIds,
+  idsToExpandedState,
   idsToSelectionState,
   resolveRowId,
   RESERVED_COLUMN_IDS,
@@ -45,6 +50,7 @@ const EMPTY_SELECTED_ROW_IDS: never[] = [];
 const EMPTY_COLUMN_FILTERS: AdvancedTableColumnFiltersState = [];
 const EMPTY_COLUMN_PINNING: AdvancedTableColumnPinningState = {};
 const EMPTY_GROUPING: AdvancedTableGroupingState = [];
+const EMPTY_EXPANDED: AdvancedTableExpandedState = [];
 
 /**
  * Data table built on TanStack Table (wired internally and fully hidden). Pass
@@ -88,6 +94,11 @@ export function AdvancedTable<T>({
   grouping: groupingProp,
   defaultGrouping: defaultGroupingProp,
   onGroupingChange: onGroupingChangeProp,
+  expanded: expandedProp,
+  defaultExpanded: defaultExpandedProp,
+  onExpandedChange: onExpandedChangeProp,
+  renderDetailPanel,
+  getRowCanExpand,
   background,
   padding,
   bordered,
@@ -139,6 +150,20 @@ export function AdvancedTable<T>({
     onGroupingChangeProp,
   );
 
+  // Grouping's rows start fully expanded by default (so a newly-grouped
+  // column's children are visible immediately) — no other special-casing:
+  // `true` flows through the same converters/handler as any other expansion
+  // state below. NOTE: `true` expands the *entire* table, not just group
+  // rows — if `enableGrouping` is combined with unrelated tree/subRows data
+  // on the same table, that data starts expanded too. Known, accepted
+  // limitation for this rare cross-feature combo (same deferred-combo
+  // precedent as grouping x pinning, ticket 14).
+  const [expandedState, setExpandedState] = useControlledState<AdvancedTableExpandedState>(
+    expandedProp,
+    defaultExpandedProp ?? (enableGrouping ? true : EMPTY_EXPANDED),
+    onExpandedChangeProp,
+  );
+
   const [pinAnnouncement, setPinAnnouncement] = useState('');
 
   // Drops stale ids (e.g. a row removed from `data` but still in a controlled
@@ -154,10 +179,29 @@ export function AdvancedTable<T>({
     [selectedRowIds, validRowIds],
   );
 
+  // Not filtered against `validRowIds()` like selection is above — expansion ids
+  // can include ids TanStack makes up itself (e.g. for grouped rows), which
+  // validRowIds wouldn't recognize. See idsToExpandedState (utils/row-id.ts).
+  const resolvedExpandedState = useMemo(() => idsToExpandedState(expandedState), [expandedState]);
+
   const handleRowSelectionChange: OnChangeFn<RowSelectionState> = updaterOrValue => {
     const next = typeof updaterOrValue === 'function' ? updaterOrValue(rowSelectionState) : updaterOrValue;
     setSelectedRowIds(selectionStateToIds(next));
   };
+
+  const handleExpandedChange: OnChangeFn<ExpandedState> = updaterOrValue => {
+    const next = typeof updaterOrValue === 'function' ? updaterOrValue(resolvedExpandedState) : updaterOrValue;
+    setExpandedState(expandedStateToIds(next));
+  };
+
+  // TanStack's own default `getRowCanExpand` only returns true for rows with
+  // `subRows` — which would silently block `renderDetailPanel` from ever
+  // opening on a leaf row.
+  const resolvedGetRowCanExpand = useMemo<((row: Row<T>) => boolean) | undefined>(() => {
+    if (getRowCanExpand) return row => getRowCanExpand(row.original, { depth: row.depth });
+    if (renderDetailPanel) return () => true;
+    return undefined;
+  }, [getRowCanExpand, renderDetailPanel]);
 
   // TanStack types filter `value` as `unknown`; the public contract narrows it
   // to `string`, so the updater is resolved here rather than passed straight
@@ -187,12 +231,29 @@ export function AdvancedTable<T>({
     });
   };
 
+  const hasDetailPanel = Boolean(renderDetailPanel);
   const tableColumns = useMemo(
     () => [
       ...buildReservedColumns<T>({ enableRowSelection }),
-      ...columnGenerator(columns, { enableSorting, enableColumnFilter, enableColumnPinning, enableGrouping }),
+      ...columnGenerator(columns, {
+        enableSorting,
+        enableColumnFilter,
+        enableColumnPinning,
+        enableGrouping,
+        hasDetailPanel,
+        tableId,
+      }),
     ],
-    [columns, enableSorting, enableRowSelection, enableColumnFilter, enableColumnPinning, enableGrouping],
+    [
+      columns,
+      enableSorting,
+      enableRowSelection,
+      enableColumnFilter,
+      enableColumnPinning,
+      enableGrouping,
+      hasDetailPanel,
+      tableId,
+    ],
   );
 
   const table = useReactTable<T>(
@@ -222,6 +283,9 @@ export function AdvancedTable<T>({
       enableGrouping,
       groupingState,
       onGroupingChange: setGroupingState,
+      expandedState: resolvedExpandedState,
+      onExpandedChange: handleExpandedChange,
+      getRowCanExpand: resolvedGetRowCanExpand,
     }),
   );
 
@@ -285,9 +349,20 @@ export function AdvancedTable<T>({
       bordered,
       enableColumnPinning,
       onPinAnnouncement: setPinAnnouncement,
+      renderDetailPanel,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [table, tableId, emptyState, pageSizeOptionsKey, background, padding, bordered, enableColumnPinning],
+    [
+      table,
+      tableId,
+      emptyState,
+      pageSizeOptionsKey,
+      background,
+      padding,
+      bordered,
+      enableColumnPinning,
+      renderDetailPanel,
+    ],
   );
 
   return (

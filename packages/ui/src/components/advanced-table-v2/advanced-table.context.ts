@@ -1,5 +1,5 @@
 import { Table } from '@tanstack/react-table';
-import { createContext, useContext } from 'react';
+import { createContext, ReactNode, useContext } from 'react';
 
 // Import the type from the leaf module rather than the `./components` barrel: the
 // barrel re-exports the sub-components, which import this file back — going through
@@ -38,6 +38,11 @@ export type AdvancedTableContextValue<T> = {
   enableColumnPinning?: boolean;
   /** Sets the text of the column-pinning live region. */
   onPinAnnouncement?: (text: string) => void;
+  /**
+   * Renders arbitrary content beneath an expanded row. A rendering concern only
+   * (never a TanStack table option) — read by the detail-panel-row sub-component.
+   */
+  renderDetailPanel?: (row: T, info: { depth: number }) => ReactNode;
 };
 
 // The provider is typed to `unknown`; `useAdvancedTableContext<T>()` casts back to

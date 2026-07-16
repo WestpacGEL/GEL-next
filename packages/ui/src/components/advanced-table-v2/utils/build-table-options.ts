@@ -2,6 +2,7 @@ import {
   ColumnDef,
   ColumnFiltersState,
   ColumnPinningState,
+  ExpandedState,
   getCoreRowModel,
   getExpandedRowModel,
   getFilteredRowModel,
@@ -11,6 +12,7 @@ import {
   GroupingState,
   OnChangeFn,
   PaginationState,
+  Row,
   RowSelectionState,
   SortingState,
   TableOptions,
@@ -78,6 +80,17 @@ export type BuildTableOptionsParams<T> = {
   rowSelectionState: RowSelectionState;
   /** Row-selection setter (TanStack hands it an updater; the setter resolves it). */
   onRowSelectionChange: OnChangeFn<RowSelectionState>;
+  /** Current expansion state. Always wired (no `enableExpanding` flag — see
+   * advanced-table.types.ts's `AdvancedTableExpandedState` doc). */
+  expandedState: ExpandedState;
+  /** Expansion setter (TanStack hands it an updater; the setter resolves it). */
+  onExpandedChange: OnChangeFn<ExpandedState>;
+  /**
+   * Overrides which rows can expand. Resolved by the component from the public
+   * `getRowCanExpand`/`renderDetailPanel` props — `undefined` lets TanStack's own
+   * `subRows`-based default apply.
+   */
+  getRowCanExpand?: (row: Row<T>) => boolean;
 };
 
 /**
@@ -100,6 +113,9 @@ export function buildTableOptions<T>({
   enableRowSelection,
   rowSelectionState,
   onRowSelectionChange,
+  expandedState,
+  onExpandedChange,
+  getRowCanExpand,
   enableColumnFilter,
   columnFiltersState,
   onColumnFiltersChange,
@@ -121,14 +137,17 @@ export function buildTableOptions<T>({
       ...(enableRowSelection && { rowSelection: rowSelectionState }),
       ...(enableColumnFilter && { columnFilters: columnFiltersState }),
       ...((enableColumnPinning || hasReservedPinning) && { columnPinning: columnPinningState }),
-      ...(enableGrouping && { grouping: groupingState, expanded: true }),
+      ...(enableGrouping && { grouping: groupingState }),
+      // Unconditional — no `enableExpanding` flag exists; the expand control on a
+      // row is gated per-row by `getCanExpand()`/`getIsGrouped()`, not by a table
+      // switch (see AdvancedTableExpandedState's doc).
+      expanded: expandedState,
     },
     ...(enableSorting
       ? {
           enableMultiSort: false,
           enableSortingRemoval: true,
-          // Always cycle ascending -> descending -> unsorted, regardless of column
-          // type (TanStack defaults number columns to descending-first).
+          // Always cycle ascending -> descending -> unsorted (TanStack defaults number columns to descending-first).
           sortDescFirst: false,
           enableSorting: true,
           getSortedRowModel: getSortedRowModel(),
@@ -159,14 +178,23 @@ export function buildTableOptions<T>({
       ? {
           enableGrouping: true,
           getGroupedRowModel: getGroupedRowModel(),
-          getExpandedRowModel: getExpandedRowModel(),
           groupedColumnMode: false as const,
           onGroupingChange,
-          // Keep a group's members together on one page rather than splitting
-          // them across a pagination boundary, orphaned from their header.
-          paginateExpandedRows: false,
         }
       : {}),
+    // `subRows` is a fixed field-name convention, not a configurable prop. TanStack's
+    // `getSubRows` doesn't type well with custom types: https://github.com/TanStack/table/discussions/4484
+    getSubRows: row => (row as { subRows?: T[] }).subRows,
+    getExpandedRowModel: getExpandedRowModel(),
+    onExpandedChange,
+    ...(getRowCanExpand ? { getRowCanExpand } : {}),
+    // Without this, TanStack resets `expanded` to `{}` on its own the moment a
+    // row model recomputes (e.g. right after grouping) — same fix as
+    // `autoResetPageIndex` above, this time for the expansion triple's state.
+    autoResetExpanded: false,
+    // Keep a row's (or group's) expanded children together on one page rather
+    // than splitting them across a pagination boundary.
+    paginateExpandedRows: false,
     getCoreRowModel: getCoreRowModel(),
     getRowId: rowKey
       ? (row, _index, parent) => {

@@ -128,6 +128,13 @@ export type AdvancedTableColumnPinningState = {
  */
 export type AdvancedTableGroupingState = string[];
 
+/**
+ * The table's expansion state: ids of currently-expanded rows, or the literal
+ * `true` sentinel meaning every row starts expanded (used e.g. as grouping's
+ * implicit default so group headers open with their children visible).
+ */
+export type AdvancedTableExpandedState = string[] | true;
+
 type AdvancedTableBaseProps<T> = {
   /** Column definitions for the table. */
   columns: AdvancedTableColumn<T>[];
@@ -303,6 +310,11 @@ type AdvancedTableNoRowIdentityProps<T> = AdvancedTableBaseProps<T> & {
   selectedRows?: never;
   defaultSelectedRows?: never;
   onSelectionChange?: never;
+  expanded?: never;
+  defaultExpanded?: never;
+  onExpandedChange?: never;
+  renderDetailPanel?: never;
+  getRowCanExpand?: never;
 };
 
 /**
@@ -328,6 +340,36 @@ type AdvancedTableRowIdentityProps<T> = AdvancedTableBaseProps<T> & {
   defaultSelectedRows?: string[];
   /** Called with the next selected row ids whenever the user changes selection. */
   onSelectionChange?: (rowIds: string[]) => void;
+  /**
+   * Passing `expanded` enables you to manage the expanded state (controlled).
+   * Pair with `onExpandedChange` to own expansion. Use `defaultExpanded`
+   * instead for uncontrolled usage.
+   *
+   * Row expansion is always available — no `enableExpanding` flag exists. Any
+   * row whose data includes a `subRows: T[]` array can expand to reveal them,
+   * and `getRowCanExpand` / `renderDetailPanel` extend or restrict this further.
+   */
+  expanded?: AdvancedTableExpandedState;
+  /**
+   * Initial expansion state when the table manages its own expansion
+   * (uncontrolled). Defaults to `true` (every row expanded) when `enableGrouping`
+   * is set, so a newly-grouped column's rows start visible; otherwise defaults
+   * to none expanded.
+   */
+  defaultExpanded?: AdvancedTableExpandedState;
+  /** Called with the next expansion state whenever the user expands or collapses a row. */
+  onExpandedChange?: (expanded: AdvancedTableExpandedState) => void;
+  /**
+   * Renders custom content beneath an expanded row, as a full-width cell
+   * inside a valid table row. Receives the row's data and its nesting depth.
+   */
+  renderDetailPanel?: (row: T, info: { depth: number }) => ReactNode;
+  /**
+   * Controls which rows offer expansion. Receives the row's data and its
+   * nesting depth. Defaults to rows with `subRows`, or — when `renderDetailPanel`
+   * is set — every row (so a detail panel isn't silently blocked on leaf rows).
+   */
+  getRowCanExpand?: (row: T, info: { depth: number }) => boolean;
 };
 
 export type AdvancedTableProps<T> = AdvancedTableNoRowIdentityProps<T> | AdvancedTableRowIdentityProps<T>;

@@ -1,6 +1,10 @@
 // Sub-component prop types (cell/row/header) are internal — they carry TanStack
 // types and are consumed only within their own folder, so they are intentionally
 // not re-exported through this barrel (as with the caption props type below).
+// The same goes for `advanced-table-row`'s nested `components/detail-panel-row`
+// — only the top-level feature component is exported here. `expand-cell-content`
+// lives as its own top-level entry (not nested under `advanced-table-cell`)
+// since its actual consumer is `utils/column-generator.tsx`, not the cell component.
 export { AdvancedTableBody } from './advanced-table-body/index.js';
 // Caption is internal-only: consumers configure it via the `caption`/`hideCaption`
 // props on AdvancedTable, never by passing an AdvancedTableCaptionProps object, so
