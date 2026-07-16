@@ -165,6 +165,8 @@ export { PackageDeliveryIcon } from './components/package-delivery-icon.js';
 export { PadlockIcon } from './components/padlock-icon.js';
 export { PadlockOpenIcon } from './components/padlock-open-icon.js';
 export { PadlockTickIcon } from './components/padlock-tick-icon.js';
+export { PanelLeftIcon } from './components/panel-left-icon.js';
+export { PanelRightIcon } from './components/panel-right-icon.js';
 export { PasskeyIcon } from './components/passkey-icon.js';
 export { PassportIcon } from './components/passport-icon.js';
 export { PauseCircleIcon } from './components/pause-circle-icon.js';
