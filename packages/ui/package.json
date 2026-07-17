@@ -73,6 +73,9 @@
     "./date-picker": {
       "default": "./dist/components/date-picker/index.js"
     },
+    "./dropdown": {
+      "default": "./dist/components/dropdown/index.js"
+    },
     "./error-message": {
       "default": "./dist/components/error-message/index.js"
     },
