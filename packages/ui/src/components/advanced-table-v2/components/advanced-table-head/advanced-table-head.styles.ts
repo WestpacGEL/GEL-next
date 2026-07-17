@@ -8,8 +8,9 @@ export const styles = tv({
     th: 'border-b-3 border-border-hero bg-background-white text-left typography-body-9 font-medium whitespace-nowrap transition-transform duration-200 ease-in-out motion-reduce:transition-none',
     // `relative` anchors the resize handle's `absolute` position here, not on the `<th>`.
     headerContent: 'relative flex flex-row items-center gap-1',
-    sortButton: 'inline-flex shrink-0 cursor-pointer items-center rounded-sm focus-visible:focus-outline',
-    dragHandle: 'inline-flex cursor-move items-center rounded-sm focus-visible:focus-outline',
+    sortButton:
+      'inline-flex size-4 shrink-0 cursor-pointer items-center justify-center rounded-sm focus-visible:focus-outline',
+    dragHandle: 'inline-flex min-h-4 cursor-move items-center rounded-sm focus-visible:focus-outline',
   },
   variants: {
     padding: {

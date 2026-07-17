@@ -11,6 +11,7 @@ export {
 } from './column-order.js';
 export { getColumnPinningStyleInfo } from './column-pinning-styles.js';
 export { getExpandButtonA11yProps } from './expand-button-a11y.js';
+export { hasExpandableRows } from './expandable-rows.js';
 export { collapsePinnedRowIds, expandPinnedRowIds } from './pinned-rows.js';
 export {
   buildReservedColumns,

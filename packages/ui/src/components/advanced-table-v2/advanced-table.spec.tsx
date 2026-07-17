@@ -97,6 +97,26 @@ describe('AdvancedTable', () => {
       expect(screen.getByRole('table', { name: 'People' })).toBeInTheDocument();
     });
 
+    it('hides the caption visually by default while keeping it accessible', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} caption="People" />);
+      expect(screen.getByText('People').closest('caption')).toHaveClass('sr-only');
+    });
+
+    it('shows the caption visually when showCaption is true', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} caption="People" showCaption />);
+      expect(screen.getByText('People').closest('caption')).not.toHaveClass('sr-only');
+    });
+
+    it('labels the table via aria-labelledby when provided, without a caption', () => {
+      render(
+        <>
+          <h2 id="people-heading">People</h2>
+          <AdvancedTable columns={testColumns} data={testData} aria-labelledby="people-heading" />
+        </>,
+      );
+      expect(screen.getByRole('table', { name: 'People' })).toBeInTheDocument();
+    });
+
     it('renders two tables on one page without duplicate DOM ids', () => {
       const { container } = render(
         <>
@@ -727,6 +747,63 @@ describe('AdvancedTable', () => {
       // implicit default, so children start hidden rather than force-expanded.
       expect(screen.queryByText('John')).not.toBeInTheDocument();
       expect(screen.getByRole('button', { name: 'Expand Age: 30' })).toBeInTheDocument();
+    });
+
+    it('pinning a row that is currently clustered under a group banner removes it from that cluster and shows it only in the pinned section', async () => {
+      const user = userEvent.setup();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={groupingTestData}
+          rowKey="name"
+          enableGrouping
+          enableRowPinning
+          defaultGrouping={['age']}
+        />,
+      );
+      // Both John and Jane start clustered under the "Age: 30" banner.
+      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'td' })).toBeInTheDocument();
+
+      const johnRow = screen.getByText('John').closest('tr') as HTMLElement;
+      await user.click(within(johnRow).getByRole('button', { name: /Pin row/ }));
+
+      // John renders exactly once, in the leading (pinned) tbody
+      const tbodies = screen.getByRole('table').querySelectorAll('tbody');
+      const pinnedBody = tbodies[0];
+      const centerBody = tbodies[1];
+      expect(screen.getAllByText('John')).toHaveLength(1);
+      expect(within(pinnedBody).getByText('John')).toBeInTheDocument();
+      // It is gone from the "Age: 30" cluster in the center rows, while Jane remains there unpinned.
+      expect(within(centerBody).queryByText('John')).not.toBeInTheDocument();
+      expect(within(centerBody).getByText('Jane')).toBeInTheDocument();
+
+      expect(screen.getByText(/Age: 30 \(1 row\)/, { selector: 'td' })).toBeInTheDocument();
+    });
+
+    it('a group whose every member is pinned away renders no banner at all', async () => {
+      const user = userEvent.setup();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={groupingTestData}
+          rowKey="name"
+          enableGrouping
+          enableRowPinning
+          defaultGrouping={['age']}
+        />,
+      );
+
+      await user.click(
+        within(screen.getByText('John').closest('tr') as HTMLElement).getByRole('button', { name: /Pin row/ }),
+      );
+      await user.click(
+        within(screen.getByText('Jane').closest('tr') as HTMLElement).getByRole('button', { name: /Pin row/ }),
+      );
+
+      // Both members of the "Age: 30" group are now pinned — the banner has
+      // nothing left to show and disappears, rather than reading "(0 rows)".
+      expect(screen.queryByText(/Age: 30/)).not.toBeInTheDocument();
+      expect(screen.getByText(/Age: 25 \(1 row\)/, { selector: 'td' })).toBeInTheDocument();
     });
   });
 
@@ -1795,6 +1872,58 @@ describe('AdvancedTable', () => {
       expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
       await waitFor(() => expect(trigger).toHaveFocus());
     });
+
+    it('two fully-featured tables on one page produce no DOM id collisions, each correctly self-associated', () => {
+      const fullFeatureProps = {
+        columns: testColumns,
+        data: fullFeatureData,
+        rowKey: 'name' as const,
+        enableRowSelection: true,
+        enableSorting: true,
+        enableColumnFilter: true,
+        enableColumnPinning: true,
+        enableGrouping: true,
+        enableRowPinning: true,
+        enableColumnReordering: true,
+        enableColumnResizing: true,
+        defaultExpanded: ['John'],
+      };
+
+      const { container } = render(
+        <>
+          <AdvancedTable {...fullFeatureProps} />
+          <AdvancedTable {...fullFeatureProps} />
+        </>,
+      );
+
+      const tables = container.querySelectorAll('table');
+      expect(tables).toHaveLength(2);
+      expect(tables[0].id).toBeTruthy();
+      expect(tables[1].id).not.toBe(tables[0].id);
+
+      // Every element with an `id`, across both tables, is unique.
+      const ids = Array.from(container.querySelectorAll('[id]')).map(el => el.id);
+      expect(new Set(ids).size).toBe(ids.length);
+
+      // Each top-level child of `container` is one whole <AdvancedTable> instance
+      const tableRoots = Array.from(container.children) as HTMLElement[];
+      expect(tableRoots).toHaveLength(2);
+
+      // Check each table for their correct attributes
+      const referenceAttrs = ['aria-controls', 'aria-describedby', 'aria-labelledby', 'aria-owns'];
+      tableRoots.forEach(root => {
+        referenceAttrs.forEach(attr => {
+          root.querySelectorAll(`[${attr}]`).forEach(el => {
+            const referencedIds = (el.getAttribute(attr) ?? '').split(/\s+/).filter(Boolean);
+            referencedIds.forEach(id => {
+              const referenced = document.getElementById(id);
+              expect(referenced).not.toBeNull();
+              expect(root.contains(referenced)).toBe(true);
+            });
+          });
+        });
+      });
+    });
   });
 
   describe('types and public API', () => {
@@ -1802,6 +1931,17 @@ describe('AdvancedTable', () => {
       // @ts-expect-error 'nope' is not a key of TestData
       const badColumn: AdvancedTableColumn<TestData> = { key: 'nope', title: 'Nope' };
       expect(badColumn).toBeDefined();
+    });
+
+    it('passing both caption and aria-labelledby is a type error', () => {
+      // @ts-expect-error aria-labelledby can't be combined with caption
+      const badProps: AdvancedTableProps<TestData> = {
+        columns: testColumns,
+        data: testData,
+        caption: 'People',
+        'aria-labelledby': 'people-heading',
+      };
+      expect(badProps).toBeDefined();
     });
 
     it('enabling selection without rowKey is a type error', () => {

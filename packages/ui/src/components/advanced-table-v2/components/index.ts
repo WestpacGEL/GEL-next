@@ -6,7 +6,7 @@
 // lives as its own top-level entry (not nested under `advanced-table-cell`)
 // since its actual consumer is `utils/column-generator.tsx`, not the cell component.
 export { AdvancedTableBody } from './advanced-table-body/index.js';
-// Caption is internal-only: consumers configure it via the `caption`/`hideCaption`
+// Caption is internal-only: consumers configure it via the `caption`/`showCaption`
 // props on AdvancedTable, never by passing an AdvancedTableCaptionProps object, so
 // its props type is intentionally not re-exported here.
 export { AdvancedTableCaption } from './advanced-table-caption/index.js';

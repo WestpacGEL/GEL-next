@@ -10,10 +10,15 @@ export function AdvancedTableGroupRow<T>({ row }: AdvancedTableGroupRowProps<T>)
   const { table, tableId } = useAdvancedTableContext<T>();
   const styles = advancedTableGroupRowStyles();
   const leafColumnCount = Math.max(table.getVisibleLeafColumns().length, 1);
+
   const header = table.getColumn(row.groupingColumnId ?? '')?.columnDef.header;
   const columnName = typeof header === 'string' ? header : row.groupingColumnId;
   // No single column value here, so the a11y label is the group text itself.
   const groupLabel = `${columnName}: ${String(row.groupingValue)}`;
+  // Remove pinned rows out of the count toward the displayed total
+  const visibleMemberCount = row.subRows.filter(subRow => !subRow.getIsPinned()).length;
+  // A group whose every member is pinned away can have nothing left to show.
+  if (visibleMemberCount === 0) return null;
 
   return (
     <tr className={styles.row()}>
@@ -32,7 +37,7 @@ export function AdvancedTableGroupRow<T>({ row }: AdvancedTableGroupRowProps<T>)
             )}
           </button>
         </span>
-        {columnName}: {String(row.groupingValue)} ({row.subRows.length} {row.subRows.length === 1 ? 'row' : 'rows'})
+        {columnName}: {String(row.groupingValue)} ({visibleMemberCount} {visibleMemberCount === 1 ? 'row' : 'rows'})
       </td>
     </tr>
   );

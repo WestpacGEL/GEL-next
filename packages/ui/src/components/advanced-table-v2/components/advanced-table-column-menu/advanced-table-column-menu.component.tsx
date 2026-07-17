@@ -170,7 +170,7 @@ export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuPr
       <Button
         {...buttonProps}
         look="unstyled"
-        size="small"
+        size="medium"
         iconBefore={() => <MoreVertIcon size="small" />}
         className={styles.triggerButton()}
         aria-labelledby={`${labelId} ${menuActionId}`}

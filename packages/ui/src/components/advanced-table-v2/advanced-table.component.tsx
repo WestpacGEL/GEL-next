@@ -57,6 +57,7 @@ import {
   expandPinnedRowIds,
   getActiveReservedColumnIds,
   getReorderInfo,
+  hasExpandableRows,
   idsToExpandedState,
   idsToSelectionState,
   moveColumnTo,
@@ -90,7 +91,8 @@ export function AdvancedTable<T>({
   data,
   defaultData,
   caption,
-  hideCaption,
+  showCaption,
+  'aria-labelledby': ariaLabelledBy,
   id,
   enableSorting,
   sorting: sortingProp,
@@ -272,6 +274,12 @@ export function AdvancedTable<T>({
     return undefined;
   }, [getRowCanExpand, renderDetailPanel]);
 
+  // Gates whether the first column reserves space for the expand toggle button.
+  const tableHasExpandableRows = useMemo(
+    () => hasExpandableRows(resolvedData, getRowCanExpand, Boolean(renderDetailPanel)),
+    [resolvedData, getRowCanExpand, renderDetailPanel],
+  );
+
   // TanStack types filter `value` as `unknown`; the public contract narrows it
   // to `string`, so the updater is resolved here rather than passed straight
   // through like sorting's setter.
@@ -324,6 +332,7 @@ export function AdvancedTable<T>({
         enableGrouping,
         enableColumnResizing,
         hasDetailPanel,
+        hasExpandableRows: tableHasExpandableRows,
         tableId,
       }),
     ],
@@ -337,6 +346,7 @@ export function AdvancedTable<T>({
       enableGrouping,
       enableColumnResizing,
       hasDetailPanel,
+      tableHasExpandableRows,
       tableId,
     ],
   );
@@ -505,13 +515,19 @@ export function AdvancedTable<T>({
   const styles = advancedTableStyles({ bordered, fillContainer });
 
   const tableElement = (
-    <table id={tableId} className={styles.table()} style={{ width: tableWidth }} aria-busy={loading}>
+    <table
+      aria-busy={loading}
+      aria-labelledby={ariaLabelledBy}
+      className={styles.table()}
+      id={tableId}
+      style={{ width: tableWidth }}
+    >
       {caption ? (
         <AdvancedTableCaption
-          title={caption}
-          hideCaption={hideCaption}
-          hasSorting={enableSorting}
           hasGrouping={Boolean(enableGrouping)}
+          hasSorting={enableSorting}
+          showCaption={showCaption}
+          title={caption}
         />
       ) : null}
       <colgroup>{colgroupColumns}</colgroup>

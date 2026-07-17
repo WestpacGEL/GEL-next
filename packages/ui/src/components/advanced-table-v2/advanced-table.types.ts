@@ -183,18 +183,6 @@ type AdvancedTableBaseProps<T> = {
   defaultData?: T[];
   /** Called with the next data when the table mutates rows (e.g. edits, deletions). */
   onDataChange?: (data: T[]) => void;
-  /**
-   * Accessible name for the table, rendered as a `<caption>`. Optional — when
-   * omitted no caption is rendered and the table relies on surrounding context
-   * for its name.
-   */
-  caption?: string;
-  /**
-   * Visually hides the `caption` while keeping it in the accessibility tree, so
-   * the table retains an accessible name for screen readers without showing it.
-   * @default false
-   */
-  hideCaption?: boolean;
   /** Optional id for the table. Also prefixes generated row/element ids. */
   id?: string;
   /**
@@ -485,4 +473,29 @@ type AdvancedTableRowIdentityProps<T> = AdvancedTableBaseProps<T> & {
   onPinnedRowsChange?: (rowIds: AdvancedTablePinnedRowsState) => void;
 };
 
-export type AdvancedTableProps<T> = AdvancedTableNoRowIdentityProps<T> | AdvancedTableRowIdentityProps<T>;
+/**
+ * The table's accessible name comes from exactly one source: a `caption`, an `aria-labelledby`
+ * or neither. Passing both `caption` and `aria-labelledby` should be a compile error.
+ */
+type AdvancedTableCaptionProps =
+  | {
+      /** Accessible name for the table, rendered as a `<caption>`. */
+      caption?: string;
+      /**
+       * Visually shows the `caption`. When `false` (the default), the caption is
+       * still rendered — so the table has an accessible name for screen readers —
+       * but is visually hidden.
+       * @default false
+       */
+      showCaption?: boolean;
+      'aria-labelledby'?: never;
+    }
+  | {
+      caption?: never;
+      showCaption?: never;
+      /** Points to the id of an element elsewhere on the page to use as the table's accessible name, instead of `caption`. */
+      'aria-labelledby'?: string;
+    };
+
+export type AdvancedTableProps<T> = (AdvancedTableNoRowIdentityProps<T> | AdvancedTableRowIdentityProps<T>) &
+  AdvancedTableCaptionProps;

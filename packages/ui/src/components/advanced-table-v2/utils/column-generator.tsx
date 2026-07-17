@@ -52,6 +52,9 @@ type ColumnGeneratorOptions<T> = {
   /** Whether a `renderDetailPanel` is configured — passed through to the expand
    * button's accessible label so it can reference the detail panel it controls. */
   hasDetailPanel?: boolean;
+  /** Whether any row in the table can expand at all — gates whether the first
+   * leaf column is wrapped in `ExpandCellContent`. */
+  hasExpandableRows?: boolean;
   /** Resolved table id; threaded down to the expand button's `aria-controls`
    * so generated element ids stay unique across multiple table instances. */
   tableId?: string;
@@ -69,12 +72,10 @@ export function columnGenerator<T>(
   columns: AdvancedTableColumn<T>[],
   options: ColumnGeneratorOptions<T> = {},
 ): ColumnDef<T>[] {
-  // Computed once at the outermost call (over the full top-level tree) then
-  // threaded through recursive calls below, so a nested group's own subset of
-  // columns never re-derives a wrong, group-local "first leaf".
   const firstLeafColumn = options.firstLeafColumn ?? findFirstLeafColumn(columns);
 
   return columns.map((column): ColumnDef<T> => {
+    // If the column is nested, run the column generation on the child columns
     if (isGroupColumn(column)) {
       return {
         id: column.key,
@@ -89,11 +90,9 @@ export function columnGenerator<T>(
     // The leaf column is a distributive union over `keyof T`; widen `render` for the
     // internal call site (the public type still infers the value from `key`).
     const render = column.render as ((value: unknown, row: T) => ReactNode) | undefined;
-    // Compared by object identity, not stringified key — two columns can
-    // legitimately share the same `key` (the same field rendered twice under
-    // different titles), and only the actual first-encountered column (found
-    // depth-first above) should ever be wrapped with the expand control.
-    const isExpandColumn = column === firstLeafColumn;
+
+    // First column has an expand button (if expand is enabled)
+    const isExpandColumn = column === firstLeafColumn && Boolean(options.hasExpandableRows);
 
     return {
       id: String(column.key),
@@ -108,9 +107,7 @@ export function columnGenerator<T>(
         return (
           <ExpandCellContent
             depth={row.depth}
-            // Group rows never reach this cell — they're routed to
-            // AdvancedTableGroupRow instead (see advanced-table-body), so
-            // `row.getIsGrouped()` would always be false here.
+            // Group rows never reach this cell — they're routed to AdvancedTableGroupRow instead
             showExpandControl={row.getCanExpand()}
             isExpanded={row.getIsExpanded()}
             onToggleExpanded={row.getToggleExpandedHandler()}

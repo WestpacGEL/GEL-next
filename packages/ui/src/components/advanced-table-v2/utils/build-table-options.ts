@@ -221,10 +221,14 @@ export function buildTableOptions<T>(params: BuildTableOptionsParams<T>): TableO
     ...(enableRowSelection ? { enableRowSelection: row => !row.getIsGrouped(), onRowSelectionChange } : {}),
     ...(enableRowPinning
       ? {
-          // A function (not `true`): group-header rows render as a single
-          // full-width banner with no pin-toggle control, so this blocks them
-          // from being pinned via any other code path too.
-          enableRowPinning: row => !row.getIsGrouped(),
+          // Pin eligibility (row.getCanPin(), read by reserved-columns.tsx's pin cell): only root rows and leaves
+          // directly under a group banner qualify — deeper sub-rows cascade from their ancestor (pinned-rows.ts).
+          // To let a user pin any row: TanStack must stop dropping a pin when its ancestor collapses, and
+          // `AdvancedTablePinnedRowsState` (types.ts) must track more than just top-level ids.
+          enableRowPinning: row => {
+            const parent = row.getParentRow();
+            return !row.getIsGrouped() && (!parent || parent.getIsGrouped());
+          },
           onRowPinningChange,
         }
       : {}),
