@@ -16,8 +16,8 @@ export type AdvancedTableLeafColumn<T> = {
     /** Custom cell renderer. Receives the typed cell value and the full row. */
     render?: (value: T[K], row: T) => ReactNode;
     /**
-     * Opts this column out of sorting. Only meaningful when the table has
-     * `enableSorting`: set to `false` to remove this column's sort control.
+     * Opts this column into sorting. Only takes effect when the table also has
+     * `enableSorting`: set to `true` to add this column's sort control.
      */
     enableSorting?: boolean;
     /**
@@ -35,10 +35,17 @@ export type AdvancedTableLeafColumn<T> = {
      * `enableGrouping`: set to `true` to add this column's group menu item.
      */
     enableGrouping?: boolean;
+    /**
+     * Opts this column out of resizing. Only meaningful when the table has
+     * `enableColumnResizing`: set to `false` to remove this column's resize handle.
+     */
+    enableResizing?: boolean;
     /** Marks the column editable. Consumed by the editable-cells feature (later ticket). */
     editable?: boolean;
-    /** Default column width in pixels. Consumed by the resizing feature (later ticket). */
+    /** Default column width in pixels, and the width `resetSize()` restores. */
     width?: number;
+    /** Minimum width in pixels a user can resize this column to. Falls back to a small table-wide default when unset. */
+    minWidth?: number;
   };
 }[keyof T];
 
@@ -129,6 +136,25 @@ export type AdvancedTableColumnPinningState = {
 export type AdvancedTableGroupingState = string[];
 
 /**
+ * The table's column-sizing state: current widths in pixels, keyed by leaf
+ * column id. Only columns a user has actually resized need an entry — any
+ * column missing from the map renders at its configured `width` (or TanStack's
+ * own default). A public, GEL-owned contract — the internal table engine is
+ * never exposed.
+ */
+export type AdvancedTableColumnSizingState = Record<string, number>;
+
+/**
+ * The table's column-order state: every non-reserved leaf column's `key`, in
+ * display order. Reordering a banded group column moves its nested leaves
+ * together as one contiguous block, but each leaf's own id still appears here
+ * individually (there is no separate entry for the group itself). The
+ * reserved selection/pin columns are never included; they always render first.
+ * A public, GEL-owned contract — the internal table engine is never exposed.
+ */
+export type AdvancedTableColumnOrderState = string[];
+
+/**
  * The table's expansion state: ids of currently-expanded rows, or the literal
  * `true` sentinel meaning every row starts expanded (used e.g. as grouping's
  * implicit default so group headers open with their children visible).
@@ -172,8 +198,8 @@ type AdvancedTableBaseProps<T> = {
   /** Optional id for the table. Also prefixes generated row/element ids. */
   id?: string;
   /**
-   * Enables click-to-sort on every column. Individual columns can opt out with
-   * their own `enableSorting: false`.
+   * Enables click-to-sort. Individual columns must opt in with their own
+   * `enableSorting: true`.
    * @default false
    */
   enableSorting?: boolean;
@@ -286,6 +312,45 @@ type AdvancedTableBaseProps<T> = {
   defaultGrouping?: AdvancedTableGroupingState;
   /** Called with the next grouping state whenever the user groups or ungroups a column. */
   onGroupingChange?: (grouping: AdvancedTableGroupingState) => void;
+  /**
+   * Enables reordering columns by dragging a header, via the keyboard, or via
+   * "Move left" / "Move right" actions in the column menu. The reserved
+   * selection/pin columns always stay first and are never reorderable.
+   * @default false
+   */
+  enableColumnReordering?: boolean;
+  /**
+   * Current column-order state (controlled). Pair with `onColumnOrderChange`
+   * to own column order. Use `defaultColumnOrder` instead for uncontrolled
+   * usage.
+   */
+  columnOrder?: AdvancedTableColumnOrderState;
+  /**
+   * Initial column-order state when the table manages its own order
+   * (uncontrolled). Defaults to the order columns are defined in.
+   */
+  defaultColumnOrder?: AdvancedTableColumnOrderState;
+  /** Called with the next column order whenever the user reorders a column. */
+  onColumnOrderChange?: (columnOrder: AdvancedTableColumnOrderState) => void;
+  /**
+   * Enables resizing all columns by dragging the handle at a head cell's edge, or via
+   * the keyboard once the handle is focused. Individual columns can opt out with their own `enableResizing: false`.
+   * @default false
+   */
+  enableColumnResizing?: boolean;
+  /**
+   * Current column-sizing state (controlled). Pair with `onColumnSizingChange`
+   * to own column widths. Use `defaultColumnSizing` instead for uncontrolled
+   * usage.
+   */
+  columnSizing?: AdvancedTableColumnSizingState;
+  /**
+   * Initial column-sizing state when the table manages its own widths
+   * (uncontrolled). Defaults to each column's configured `width`.
+   */
+  defaultColumnSizing?: AdvancedTableColumnSizingState;
+  /** Called with the next column-sizing state whenever the user resizes a column. */
+  onColumnSizingChange?: (columnSizing: AdvancedTableColumnSizingState) => void;
   /**
    * Row-background treatment. `transparent` (default) applies a hover highlight
    * only, `striped` alternates row backgrounds, `filled` fills every row with a

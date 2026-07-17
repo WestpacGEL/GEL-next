@@ -1,8 +1,21 @@
 'use client';
 
+import {
+  closestCenter,
+  DndContext,
+  DragEndEvent,
+  KeyboardSensor,
+  MouseSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
+import { restrictToHorizontalAxis } from '@dnd-kit/modifiers';
+import { horizontalListSortingStrategy, SortableContext } from '@dnd-kit/sortable';
 import { useControlledState } from '@react-stately/utils';
 import {
   ColumnFiltersState,
+  ColumnOrderState,
   ColumnPinningState,
   ExpandedState,
   OnChangeFn,
@@ -17,7 +30,9 @@ import { AdvancedTableProvider, AdvancedTableContextValue } from './advanced-tab
 import { styles as advancedTableStyles } from './advanced-table.styles.js';
 import {
   AdvancedTableColumnFiltersState,
+  AdvancedTableColumnOrderState,
   AdvancedTableColumnPinningState,
+  AdvancedTableColumnSizingState,
   AdvancedTableExpandedState,
   AdvancedTableGroupingState,
   AdvancedTablePaginationState,
@@ -33,19 +48,21 @@ import {
   AdvancedTablePagination,
 } from './components/index.js';
 import {
+  buildReorderAnnouncements,
   buildReservedColumns,
   buildTableOptions,
   collapsePinnedRowIds,
   columnGenerator,
   expandedStateToIds,
   expandPinnedRowIds,
+  getActiveReservedColumnIds,
+  getReorderInfo,
   idsToExpandedState,
   idsToSelectionState,
-  PIN_COLUMN_ID,
+  moveColumnTo,
   resolveRowId,
   RESERVED_COLUMN_IDS,
   selectionStateToIds,
-  SELECT_COLUMN_ID,
 } from './utils/index.js';
 
 const EMPTY_DATA: never[] = [];
@@ -54,6 +71,8 @@ const DEFAULT_PAGINATION: AdvancedTablePaginationState = { pageIndex: 0, pageSiz
 const DEFAULT_PAGE_SIZE_OPTIONS = [5, 10, 20, 50];
 const EMPTY_SELECTED_ROW_IDS: never[] = [];
 const EMPTY_COLUMN_FILTERS: AdvancedTableColumnFiltersState = [];
+const EMPTY_COLUMN_ORDER: AdvancedTableColumnOrderState = [];
+const EMPTY_COLUMN_SIZING: AdvancedTableColumnSizingState = {};
 const EMPTY_COLUMN_PINNING: AdvancedTableColumnPinningState = {};
 const EMPTY_GROUPING: AdvancedTableGroupingState = [];
 const EMPTY_EXPANDED: AdvancedTableExpandedState = [];
@@ -64,7 +83,7 @@ const EMPTY_PINNED_ROWS: AdvancedTablePinnedRowsState = [];
  * `data` and `columns`; state follows the controlled/uncontrolled prop pattern.
  *
  * This is the rebuilt component. Interactive features — pagination, selection,
- * pinning, reordering, resizing, expansion, editing — are added in later slices.
+ * pinning, resizing, expansion, editing — are added in later slices.
  */
 export function AdvancedTable<T>({
   columns,
@@ -93,6 +112,14 @@ export function AdvancedTable<T>({
   defaultColumnFilters: defaultColumnFiltersProp,
   onColumnFiltersChange: onColumnFiltersChangeProp,
   manualFiltering,
+  enableColumnReordering,
+  columnOrder: columnOrderProp,
+  defaultColumnOrder: defaultColumnOrderProp,
+  onColumnOrderChange: onColumnOrderChangeProp,
+  enableColumnResizing,
+  columnSizing: columnSizingProp,
+  defaultColumnSizing: defaultColumnSizingProp,
+  onColumnSizingChange: onColumnSizingChangeProp,
   enableColumnPinning,
   columnPinning: columnPinningProp,
   defaultColumnPinning: defaultColumnPinningProp,
@@ -149,6 +176,18 @@ export function AdvancedTable<T>({
     columnFiltersProp,
     defaultColumnFiltersProp ?? EMPTY_COLUMN_FILTERS,
     onColumnFiltersChangeProp,
+  );
+
+  const [columnOrderState, setColumnOrderState] = useControlledState<AdvancedTableColumnOrderState>(
+    columnOrderProp,
+    defaultColumnOrderProp ?? EMPTY_COLUMN_ORDER,
+    onColumnOrderChangeProp,
+  );
+
+  const [columnSizingState, setColumnSizingState] = useControlledState<AdvancedTableColumnSizingState>(
+    columnSizingProp,
+    defaultColumnSizingProp ?? EMPTY_COLUMN_SIZING,
+    onColumnSizingChangeProp,
   );
 
   const [columnPinningState, setColumnPinningState] = useControlledState<AdvancedTableColumnPinningState>(
@@ -242,16 +281,25 @@ export function AdvancedTable<T>({
     setColumnFiltersState(next.map(filter => ({ id: filter.id, value: String(filter.value) })));
   };
 
+  // Forces the reserved selection/pin columns to the front so a controlled `columnOrder` can never smuggle them out of place.
+  const resolvedColumnOrderState = useMemo(() => {
+    const reserved = getActiveReservedColumnIds({ enableRowSelection, enableRowPinning });
+    const userOrder = columnOrderState.filter(id => !RESERVED_COLUMN_IDS.includes(id));
+    return [...reserved, ...userOrder];
+  }, [columnOrderState, enableRowSelection, enableRowPinning]);
+
+  const handleColumnOrderChange: OnChangeFn<ColumnOrderState> = updaterOrValue => {
+    const next = typeof updaterOrValue === 'function' ? updaterOrValue(resolvedColumnOrderState) : updaterOrValue;
+    setColumnOrderState(next.filter(id => !RESERVED_COLUMN_IDS.includes(id)));
+  };
+
   // Forces the reserved selection/pin columns into `left`, in RESERVED_COLUMN_IDS
   // order; never leaks into the public columnPinning contract (stripped again
   // in the change handler below, via the same RESERVED_COLUMN_IDS list so a
   // future reserved column can't slip through either side by accident).
   const resolvedColumnPinningState = useMemo(() => {
     const userLeft = (columnPinningState.left ?? []).filter(id => !RESERVED_COLUMN_IDS.includes(id));
-    const reservedLeft = [
-      ...(enableRowSelection ? [SELECT_COLUMN_ID] : []),
-      ...(enableRowPinning ? [PIN_COLUMN_ID] : []),
-    ];
+    const reservedLeft = getActiveReservedColumnIds({ enableRowSelection, enableRowPinning });
     const left = [...reservedLeft, ...userLeft];
     const right = (columnPinningState.right ?? []).filter(id => !RESERVED_COLUMN_IDS.includes(id));
     return { left, right };
@@ -274,6 +322,7 @@ export function AdvancedTable<T>({
         enableColumnFilter,
         enableColumnPinning,
         enableGrouping,
+        enableColumnResizing,
         hasDetailPanel,
         tableId,
       }),
@@ -286,6 +335,7 @@ export function AdvancedTable<T>({
       enableColumnFilter,
       enableColumnPinning,
       enableGrouping,
+      enableColumnResizing,
       hasDetailPanel,
       tableId,
     ],
@@ -311,6 +361,12 @@ export function AdvancedTable<T>({
       columnFiltersState,
       onColumnFiltersChange: handleColumnFiltersChange,
       manualFiltering,
+      enableColumnReordering,
+      columnOrderState: resolvedColumnOrderState,
+      onColumnOrderChange: handleColumnOrderChange,
+      enableColumnResizing,
+      columnSizingState,
+      onColumnSizingChange: setColumnSizingState,
       enableColumnPinning,
       columnPinningState: resolvedColumnPinningState,
       onColumnPinningChange: handleColumnPinningChange,
@@ -329,31 +385,34 @@ export function AdvancedTable<T>({
 
   const [pinAnnouncement, setPinAnnouncement] = useState('');
   const [rowPinAnnouncement, setRowPinAnnouncement] = useState('');
+  const [reorderAnnouncement, setReorderAnnouncement] = useState('');
+  const [resizeAnnouncement, setResizeAnnouncement] = useState('');
 
   const sortAnnouncement = useMemo(() => {
     if (!enableSorting) return null;
     // Doubles as the "cleared" announcement: silent on mount (live regions
     // don't announce initial content), read out once a sort is removed.
     if (sortingState.length === 0) return 'Sorting cleared.';
-    const s = sortingState[0];
-    const label = s.desc ? 'sorted descending' : 'sorted ascending';
+    const sort = sortingState[0];
+    const label = sort.desc ? 'sorted descending' : 'sorted ascending';
     // `columnDef.header` is set to the column's title (a string) by columnGenerator.
-    const header = table.getColumn(s.id)?.columnDef.header;
-    const name = typeof header === 'string' ? header : s.id;
+    const header = table.getColumn(sort.id)?.columnDef.header;
+    const name = typeof header === 'string' ? header : sort.id;
     return `${name} ${label}`;
   }, [sortingState, table, enableSorting]);
 
   const filterAnnouncement = useMemo(() => {
     if (!enableColumnFilter) return null;
-    // Mirrors the sorting announcement above (silent on mount, read on clear).
+    // Silent on mount, read on clear (like in `sortAnnouncement`)
     if (columnFiltersState.length === 0) return 'Filter cleared.';
     const matchCount = table.getFilteredRowModel().rows.length;
     return `${matchCount} matching row${matchCount === 1 ? '' : 's'}.`;
-  }, [columnFiltersState, table, enableColumnFilter]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- resolvedData isn't read directly, but getFilteredRowModel() reads live off it
+  }, [columnFiltersState, table, enableColumnFilter, resolvedData]);
 
   const groupAnnouncement = useMemo(() => {
     if (!enableGrouping) return null;
-    // Mirrors the sorting/filter announcements above (silent on mount, read on clear).
+    // Silent on mount, read on clear (like in `sortAnnouncement`)
     if (groupingState.length === 0) return 'Grouping cleared.';
     const columnId = groupingState[0];
     const header = table.getColumn(columnId)?.columnDef.header;
@@ -363,23 +422,44 @@ export function AdvancedTable<T>({
 
   const loadingAnnouncement = loading ? 'Loading data…' : 'Data loaded.';
 
+  const sensors = useSensors(useSensor(MouseSensor, {}), useSensor(TouchSensor, {}), useSensor(KeyboardSensor, {}));
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+    if (!over || active.id === over.id) return;
+    const nextOrder = moveColumnTo(table, String(active.id), String(over.id));
+    if (nextOrder) table.setColumnOrder(nextOrder);
+  };
+
   // Check if any data exists before pagination
   const hasRowData = table.getPrePaginationRowModel().rows.length > 0;
-
-  const styles = advancedTableStyles({ bordered, fillContainer });
 
   // `getVisibleLeafColumns()` is TanStack-memoized (stable reference until the
   // column set/order/pinning actually changes), so deriving from it keeps the
   // <colgroup> and total width from being rebuilt on every unrelated re-render.
+  // That memo isn't keyed on sizing, though — `column.getSize()`'s return value
+  // can change (drag, keyboard, or a controlled columnSizing prop) with no
+  // change in the columns array itself, so columnSizingState is added below
+  // purely to force a recompute when a resize actually happens.
   const visibleLeafColumns = table.getVisibleLeafColumns();
   const totalSize = useMemo(
     () => visibleLeafColumns.reduce((sum, column) => sum + column.getSize(), 0),
-    [visibleLeafColumns],
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- columnSizingState isn't read directly, but column.getSize() reads live off it.
+    [visibleLeafColumns, columnSizingState],
   );
   const tableWidth = `${totalSize}px`;
+
+  // `column.getSize()` is a live lookup against the table's sizing state (these columns), otherwise states could be different in different calls.
   const colgroupColumns = useMemo(
     () => visibleLeafColumns.map(column => <col key={column.id} style={{ width: column.getSize() }} />),
-    [visibleLeafColumns],
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- columnSizingState isn't read directly, but column.getSize() reads live off it.
+    [visibleLeafColumns, columnSizingState],
+  );
+
+  // Computed once per render and stored instead of per per header cell/menu instance
+  const reorderInfo = useMemo(
+    () => getReorderInfo(table),
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- resolvedColumnPinningState isn't read directly, but getIsPinned() reads live off it.
+    [table, resolvedColumnPinningState, enableRowSelection, enableRowPinning],
   );
 
   // Keyed using referenced `pageSizeOptions` so new array doesn't force re-renders
@@ -398,6 +478,10 @@ export function AdvancedTable<T>({
       enableColumnPinning,
       onPinAnnouncement: setPinAnnouncement,
       onRowPinAnnouncement: setRowPinAnnouncement,
+      enableColumnReordering,
+      onReorderAnnouncement: setReorderAnnouncement,
+      reorderInfo,
+      onResizeAnnouncement: setResizeAnnouncement,
       renderDetailPanel,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -412,27 +496,52 @@ export function AdvancedTable<T>({
       loading,
       loadingStateProps,
       enableColumnPinning,
+      enableColumnReordering,
+      reorderInfo,
       renderDetailPanel,
     ],
+  );
+
+  const styles = advancedTableStyles({ bordered, fillContainer });
+
+  const tableElement = (
+    <table id={tableId} className={styles.table()} style={{ width: tableWidth }} aria-busy={loading}>
+      {caption ? (
+        <AdvancedTableCaption
+          title={caption}
+          hideCaption={hideCaption}
+          hasSorting={enableSorting}
+          hasGrouping={Boolean(enableGrouping)}
+        />
+      ) : null}
+      <colgroup>{colgroupColumns}</colgroup>
+      <AdvancedTableHead />
+      <AdvancedTableBody />
+    </table>
+  );
+
+  // We need to conditionally render DnD or the buttons will still have accessibility attributes
+  const resolvedTableElement = enableColumnReordering ? (
+    <DndContext
+      sensors={sensors}
+      collisionDetection={closestCenter}
+      modifiers={[restrictToHorizontalAxis]}
+      onDragEnd={handleDragEnd}
+      accessibility={{ announcements: buildReorderAnnouncements(table, text => setReorderAnnouncement(text)) }}
+    >
+      <SortableContext items={reorderInfo.ids} strategy={horizontalListSortingStrategy}>
+        {tableElement}
+      </SortableContext>
+    </DndContext>
+  ) : (
+    tableElement
   );
 
   return (
     <AdvancedTableProvider value={contextValue as AdvancedTableContextValue<unknown>}>
       <div className={styles.root()}>
         <div className={styles.container()}>
-          <table id={tableId} className={styles.table()} style={{ width: tableWidth }} aria-busy={loading}>
-            {caption ? (
-              <AdvancedTableCaption
-                title={caption}
-                hideCaption={hideCaption}
-                hasSorting={enableSorting}
-                hasGrouping={Boolean(enableGrouping)}
-              />
-            ) : null}
-            <colgroup>{colgroupColumns}</colgroup>
-            <AdvancedTableHead />
-            <AdvancedTableBody />
-          </table>
+          {resolvedTableElement}
           {loading && hasRowData && (
             <div className={styles.overlay()}>
               <AdvancedTableLoadingState {...loadingStateProps} />
@@ -463,6 +572,16 @@ export function AdvancedTable<T>({
         {enableGrouping && (
           <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
             {groupAnnouncement}
+          </div>
+        )}
+        {enableColumnReordering && (
+          <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
+            {reorderAnnouncement}
+          </div>
+        )}
+        {enableColumnResizing && (
+          <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>
+            {resizeAnnouncement}
           </div>
         )}
         <div aria-atomic="true" aria-live="polite" className={styles.srOnly()}>

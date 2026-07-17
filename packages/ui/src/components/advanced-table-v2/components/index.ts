@@ -18,6 +18,7 @@ export { AdvancedTableHead } from './advanced-table-head/index.js';
 export { AdvancedTableLoadingState } from './advanced-table-loading-state/index.js';
 export type { AdvancedTableLoadingStateProps } from './advanced-table-loading-state/index.js';
 export { AdvancedTablePagination } from './advanced-table-pagination/index.js';
+export { AdvancedTableResizeHandle } from './advanced-table-resize-handle/index.js';
 export { AdvancedTableRow } from './advanced-table-row/index.js';
 export { AdvancedTableRowPinToggle } from './advanced-table-row-pin-toggle/index.js';
 export { AdvancedTableRowCheckbox, AdvancedTableSelectAllCheckbox } from './advanced-table-selection-checkbox/index.js';

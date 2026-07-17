@@ -18,8 +18,22 @@ import { AdvancedTableColumn, AdvancedTableProps } from './advanced-table.types.
 type TestData = { name: string; age: number };
 
 const testColumns: AdvancedTableColumn<TestData>[] = [
-  { key: 'name', title: 'Name', enableColumnFilter: true, enablePinning: true, enableGrouping: true },
-  { key: 'age', title: 'Age', enableColumnFilter: true, enablePinning: true, enableGrouping: true },
+  {
+    key: 'name',
+    title: 'Name',
+    enableSorting: true,
+    enableColumnFilter: true,
+    enablePinning: true,
+    enableGrouping: true,
+  },
+  {
+    key: 'age',
+    title: 'Age',
+    enableSorting: true,
+    enableColumnFilter: true,
+    enablePinning: true,
+    enableGrouping: true,
+  },
 ];
 
 const testData: TestData[] = [
@@ -33,8 +47,8 @@ const groupedColumns: AdvancedTableColumn<TestData>[] = [
     key: 'group',
     title: 'Group',
     columns: [
-      { key: 'name', title: 'Name' },
-      { key: 'age', title: 'Age' },
+      { key: 'name', title: 'Name', enableSorting: true },
+      { key: 'age', title: 'Age', enableSorting: true },
     ],
   },
 ];
@@ -150,6 +164,16 @@ describe('AdvancedTable', () => {
       expect(bodyOrder()).toEqual(['John', 'Jane', 'Bob']);
     });
 
+    it('a column opts in to sorting with its own enableSorting: true', () => {
+      const columns: AdvancedTableColumn<TestData>[] = [
+        { key: 'name', title: 'Name', enableSorting: true },
+        { key: 'age', title: 'Age' },
+      ];
+      render(<AdvancedTable columns={columns} data={testData} enableSorting />);
+      expect(within(screen.getAllByRole('columnheader')[0]).getByRole('button')).toBeInTheDocument();
+      expect(screen.getAllByRole('columnheader')[1]).not.toHaveAttribute('aria-sort');
+    });
+
     it('clicking a header cycles ascending, descending, then unsorted, reordering visible rows', async () => {
       const user = userEvent.setup();
       render(<AdvancedTable columns={testColumns} data={testData} enableSorting />);
@@ -209,8 +233,8 @@ describe('AdvancedTable', () => {
       // Mixing a grouped column with an ungrouped leaf makes TanStack insert a
       // placeholder cell for the leaf ("Age") in the group-header row.
       const mixed: AdvancedTableColumn<TestData>[] = [
-        { key: 'grp', title: 'Group', columns: [{ key: 'name', title: 'Name' }] },
-        { key: 'age', title: 'Age' },
+        { key: 'grp', title: 'Group', columns: [{ key: 'name', title: 'Name', enableSorting: true }] },
+        { key: 'age', title: 'Age', enableSorting: true },
       ];
       render(<AdvancedTable columns={mixed} data={testData} enableSorting />);
       const withAriaSort = screen.getAllByRole('columnheader').filter(th => th.hasAttribute('aria-sort'));
@@ -707,20 +731,306 @@ describe('AdvancedTable', () => {
   });
 
   describe('column resizing', () => {
-    it.todo('resizes a column by dragging its handle');
-    it.todo('offers a single-pointer non-drag resize alternative (WCAG 2.5.7)');
-    it.todo('double-clicking the handle resets the column to its default width');
-    it.todo('resize handles meet the 24x24px minimum target size');
-    it.todo('controlled sizing: renders widths from the columnSizing prop and emits onColumnSizingChange');
+    it('resizes a column by dragging its handle', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnResizing />);
+
+      const handle = screen.getByRole('slider', { name: 'Resize Name column' });
+      fireEvent.mouseDown(handle, { clientX: 100 });
+      fireEvent.mouseMove(document, { clientX: 150 });
+      fireEvent.mouseUp(document);
+
+      expect(handle).toHaveAttribute('aria-valuenow', '200');
+    });
+
+    it('applies the resized width to the rendered column, not just the handle state', () => {
+      const { container } = render(<AdvancedTable columns={testColumns} data={testData} enableColumnResizing />);
+
+      const handle = screen.getByRole('slider', { name: 'Resize Name column' });
+      fireEvent.mouseDown(handle, { clientX: 100 });
+      fireEvent.mouseMove(document, { clientX: 150 });
+      fireEvent.mouseUp(document);
+
+      const cols = container.querySelectorAll('col');
+      expect(cols[0]).toHaveStyle({ width: '200px' });
+    });
+
+    it('offers a single-pointer non-drag resize alternative', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnResizing />);
+
+      const handle = screen.getByRole('slider', { name: 'Resize Name column' });
+      handle.focus();
+      fireEvent.keyDown(handle, { key: 'ArrowRight' });
+      fireEvent.keyDown(handle, { key: 'ArrowRight' });
+
+      // 150 (tanstack's default column size) + 2 * 10 (STEP set in advanced-table-resize-handle.component.tsx)
+      expect(handle).toHaveAttribute('aria-valuenow', '170');
+    });
+
+    it('double-clicking the handle resets the column to its default width', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnResizing />);
+
+      const handle = screen.getByRole('slider', { name: 'Resize Name column' });
+      const defaultWidth = handle.getAttribute('aria-valuenow');
+      fireEvent.keyDown(handle, { key: 'ArrowRight' });
+      fireEvent.keyDown(handle, { key: 'ArrowRight' });
+      expect(handle).not.toHaveAttribute('aria-valuenow', defaultWidth ?? undefined);
+
+      fireEvent.doubleClick(handle);
+      expect(handle).toHaveAttribute('aria-valuenow', defaultWidth ?? '');
+    });
+
+    it('resets to default width via Enter/Space while the handle is focused', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnResizing />);
+
+      const handle = screen.getByRole('slider', { name: 'Resize Name column' });
+      const defaultWidth = handle.getAttribute('aria-valuenow');
+      handle.focus();
+      fireEvent.keyDown(handle, { key: 'ArrowRight' });
+      expect(handle).not.toHaveAttribute('aria-valuenow', defaultWidth ?? undefined);
+
+      fireEvent.keyDown(handle, { key: 'Enter' });
+      expect(handle).toHaveAttribute('aria-valuenow', defaultWidth ?? '');
+    });
+
+    it('controlled sizing: renders widths from the columnSizing prop and emits onColumnSizingChange', () => {
+      const onColumnSizingChange = vi.fn();
+      const { rerender } = render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableColumnResizing
+          columnSizing={{ name: 300 }}
+          onColumnSizingChange={onColumnSizingChange}
+        />,
+      );
+
+      const handle = screen.getByRole('slider', { name: 'Resize Name column' });
+      expect(handle).toHaveAttribute('aria-valuenow', '300');
+
+      handle.focus();
+      fireEvent.keyDown(handle, { key: 'ArrowRight' });
+      expect(onColumnSizingChange).toHaveBeenCalledWith({ name: 310 });
+      // Controlled: doesn't resize on its own until the prop is fed back.
+      expect(handle).toHaveAttribute('aria-valuenow', '300');
+
+      rerender(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableColumnResizing
+          columnSizing={{ name: 310 }}
+          onColumnSizingChange={onColumnSizingChange}
+        />,
+      );
+      expect(handle).toHaveAttribute('aria-valuenow', '310');
+    });
+
+    it('reserved selection and pin columns are excluded from resizing', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          rowKey="name"
+          enableRowSelection
+          enableRowPinning
+          enableColumnResizing
+        />,
+      );
+
+      expect(screen.getByRole('checkbox', { name: 'Select all rows in current page' })).toBeInTheDocument();
+      // Only the two real data columns get a handle — none for either reserved column.
+      expect(screen.getAllByRole('slider')).toHaveLength(2);
+    });
+
+    it('a pinned column is excluded from resizing', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnPinning enableColumnResizing />);
+
+      expect(screen.getByRole('slider', { name: 'Resize Name column' })).toBeInTheDocument();
+
+      await user.click(screen.getByRole('button', { name: 'Name column menu' }));
+      await screen.findByRole('menu');
+      await user.click(screen.getByRole('menuitem', { name: 'Pin left' }));
+
+      expect(screen.queryByRole('slider', { name: 'Resize Name column' })).not.toBeInTheDocument();
+    });
+
+    it('respects a column-specific minWidth override over the table default', () => {
+      const columns: AdvancedTableColumn<TestData>[] = [
+        { key: 'name', title: 'Name', minWidth: 100 },
+        { key: 'age', title: 'Age' },
+      ];
+      render(<AdvancedTable columns={columns} data={testData} enableColumnResizing />);
+
+      const handle = screen.getByRole('slider', { name: 'Resize Name column' });
+
+      // Attempt to shrink below minWidth via keyboard (10px per ArrowLeft press).
+      handle.focus();
+      for (let i = 0; i < 20; i++) {
+        fireEvent.keyDown(handle, { key: 'ArrowLeft' });
+      }
+
+      // Width should not drop below the column's minWidth (100).
+      const finalWidth = parseInt(handle.getAttribute('aria-valuenow') ?? '0', 10);
+      expect(finalWidth).toBeGreaterThanOrEqual(100);
+    });
   });
 
   describe('column reordering', () => {
-    it.todo('reorders columns via drag and drop');
-    it.todo('reorders columns with the keyboard (pick up, move, drop)');
-    it.todo('announces pick-up, movement, and drop to assistive technology');
-    it.todo('offers move left / move right actions in the column menu (WCAG 2.5.7)');
-    it.todo('reserved selection and pin columns stay first and cannot be reordered');
-    it.todo('controlled order: renders from the columnOrder prop and emits onColumnOrderChange');
+    // dnd-kit's collision detection needs real, distinct geometry to compare
+    // against — jsdom lays every element out at 0x0, so each header cell is
+    // given an evenly-spaced rect matching its position among its siblings.
+    const mockHeaderRects = () => {
+      vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function (this: HTMLElement) {
+        if (this.tagName === 'TH') {
+          const row = this.parentElement;
+          const index = row ? Array.from(row.children).indexOf(this) : 0;
+          return {
+            width: 100,
+            height: 40,
+            top: 0,
+            bottom: 40,
+            left: index * 100,
+            right: index * 100 + 100,
+            x: index * 100,
+            y: 0,
+            toJSON: () => ({}),
+          } as DOMRect;
+        }
+        return { width: 0, height: 0, top: 0, bottom: 0, left: 0, right: 0, x: 0, y: 0, toJSON: () => ({}) } as DOMRect;
+      });
+    };
+
+    // Reads just the title label span's text, skipping decorative icon markup
+    // (e.g. copyright `<title>`s) and hidden menu-trigger text also inside the cell.
+    const columnHeaderNames = () =>
+      within(screen.getByRole('table'))
+        .getAllByRole('columnheader')
+        .map(th => th.querySelector('[id$="-label"]')?.textContent);
+
+    it('reorders columns via drag and drop', () => {
+      mockHeaderRects();
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnReordering />);
+
+      const nameHandle = screen.getByRole('button', { name: 'Name' });
+      fireEvent.mouseDown(nameHandle, { clientX: 50, clientY: 20 });
+      fireEvent.mouseMove(document, { clientX: 120, clientY: 20 });
+      fireEvent.mouseMove(document, { clientX: 220, clientY: 20 });
+      fireEvent.mouseUp(document);
+
+      expect(columnHeaderNames()).toEqual(['Age', 'Name']);
+    });
+
+    it('reorders columns with the keyboard (pick up, move, drop)', async () => {
+      mockHeaderRects();
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnReordering />);
+
+      const nameHandle = screen.getByRole('button', { name: 'Name' });
+      nameHandle.focus();
+      fireEvent.keyDown(nameHandle, { code: 'Space' });
+      // dnd-kit's keyboard sensor attaches its move listener a tick after
+      // pick-up (a `setTimeout(0)` internally) — wait for it before moving.
+      await new Promise(resolve => setTimeout(resolve, 0));
+      fireEvent.keyDown(nameHandle, { code: 'ArrowRight' });
+      fireEvent.keyDown(nameHandle, { code: 'ArrowRight' });
+      fireEvent.keyDown(nameHandle, { code: 'ArrowRight' });
+      fireEvent.keyDown(nameHandle, { code: 'Space' });
+
+      expect(columnHeaderNames()).toEqual(['Age', 'Name']);
+    });
+
+    it('announces pick-up, movement, and drop to assistive technology', async () => {
+      mockHeaderRects();
+      const { container } = render(<AdvancedTable columns={testColumns} data={testData} enableColumnReordering />);
+      const liveRegion = container.querySelectorAll('[aria-live="polite"]')[0];
+
+      const nameHandle = screen.getByRole('button', { name: 'Name' });
+      nameHandle.focus();
+
+      fireEvent.keyDown(nameHandle, { code: 'Space' });
+      expect(liveRegion).toHaveTextContent(/Picked up Name/);
+
+      // See the previous test's comment — the sensor's move listener attaches a tick late.
+      await new Promise(resolve => setTimeout(resolve, 0));
+      fireEvent.keyDown(nameHandle, { code: 'ArrowRight' });
+      fireEvent.keyDown(nameHandle, { code: 'ArrowRight' });
+      fireEvent.keyDown(nameHandle, { code: 'ArrowRight' });
+      expect(liveRegion).toHaveTextContent(/Name was moved/);
+
+      fireEvent.keyDown(nameHandle, { code: 'Space' });
+      expect(liveRegion).toHaveTextContent(/Name dropped/);
+    });
+
+    it('offers move left / move right actions in the column menu (WCAG 2.5.7)', async () => {
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnReordering />);
+
+      await user.click(screen.getByRole('button', { name: 'Name column menu' }));
+      await screen.findByRole('menu');
+      expect(screen.getByRole('menuitem', { name: 'Move left' })).toHaveAttribute('aria-disabled', 'true');
+      await user.keyboard('{Escape}');
+
+      await user.click(screen.getByRole('button', { name: 'Age column menu' }));
+      await screen.findByRole('menu');
+      expect(screen.getByRole('menuitem', { name: 'Move right' })).toHaveAttribute('aria-disabled', 'true');
+      await user.click(screen.getByRole('menuitem', { name: 'Move left' }));
+
+      expect(columnHeaderNames()).toEqual(['Age', 'Name']);
+    });
+
+    it('reserved selection and pin columns stay first and cannot be reordered', async () => {
+      const user = userEvent.setup();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          rowKey="name"
+          enableRowSelection
+          enableRowPinning
+          enableColumnReordering
+        />,
+      );
+
+      expect(screen.getByRole('checkbox', { name: 'Select all rows in current page' })).toBeInTheDocument();
+      await user.click(screen.getByRole('button', { name: 'Name column menu' }));
+      await screen.findByRole('menu');
+      expect(screen.getByRole('menuitem', { name: 'Move left' })).toHaveAttribute('aria-disabled', 'true');
+    });
+
+    it('controlled order: renders from the columnOrder prop and emits onColumnOrderChange', async () => {
+      const user = userEvent.setup();
+      const onColumnOrderChange = vi.fn();
+      const { rerender } = render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableColumnReordering
+          columnOrder={['age', 'name']}
+          onColumnOrderChange={onColumnOrderChange}
+        />,
+      );
+
+      expect(columnHeaderNames()).toEqual(['Age', 'Name']);
+
+      await user.click(screen.getByRole('button', { name: 'Age column menu' }));
+      await screen.findByRole('menu');
+      await user.click(screen.getByRole('menuitem', { name: 'Move right' }));
+
+      expect(onColumnOrderChange).toHaveBeenCalledWith(['name', 'age']);
+      // Controlled: doesn't reorder on its own until the prop is fed back.
+      expect(columnHeaderNames()).toEqual(['Age', 'Name']);
+
+      rerender(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableColumnReordering
+          columnOrder={['name', 'age']}
+          onColumnOrderChange={onColumnOrderChange}
+        />,
+      );
+      expect(columnHeaderNames()).toEqual(['Name', 'Age']);
+    });
   });
 
   describe('row selection', () => {
@@ -1502,6 +1812,15 @@ describe('AdvancedTable', () => {
     it('enabling row pinning without rowKey is a type error', () => {
       // @ts-expect-error rowKey is required when enableRowPinning is set
       const badProps: AdvancedTableProps<TestData> = { columns: testColumns, data: testData, enableRowPinning: true };
+      expect(badProps).toBeDefined();
+    });
+    it('enabling expansion without rowKey is a type error', () => {
+      // @ts-expect-error rowKey is required when onExpandedChange is set
+      const badProps: AdvancedTableProps<TestData> = {
+        columns: testColumns,
+        data: testData,
+        onExpandedChange: vi.fn(),
+      };
       expect(badProps).toBeDefined();
     });
     it.todo('enabling editing without rowKey is a type error');

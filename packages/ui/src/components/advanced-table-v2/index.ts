@@ -10,7 +10,9 @@ export {
   type AdvancedTableRowKey,
   type AdvancedTableColumnFilter,
   type AdvancedTableColumnFiltersState,
+  type AdvancedTableColumnOrderState,
   type AdvancedTableColumnPinningState,
+  type AdvancedTableColumnSizingState,
   type AdvancedTableGroupingState,
   type AdvancedTablePinnedRowsState,
 } from './advanced-table.types.js';

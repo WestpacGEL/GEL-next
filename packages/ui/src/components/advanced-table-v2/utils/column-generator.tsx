@@ -6,6 +6,9 @@ import { ExpandCellContent } from '../components/expand-cell-content/index.js';
 
 import { getExpandButtonA11yProps } from './expand-button-a11y.js';
 
+/** Floor every leaf column's resize can shrink to, regardless of `enableColumnResizing`. */
+export const MIN_COLUMN_SIZE = 40;
+
 function isGroupColumn<T>(column: AdvancedTableColumn<T>): column is AdvancedTableGroupColumn<T> {
   return 'columns' in column && Array.isArray(column.columns);
 }
@@ -36,7 +39,7 @@ function findFirstLeafColumn<T>(columns: AdvancedTableColumn<T>[]): AdvancedTabl
 
 /** Options resolving table-level feature flags down onto each generated column. */
 type ColumnGeneratorOptions<T> = {
-  /** Table-level sorting flag; a column may opt out with its own `enableSorting: false`. */
+  /** Table-level sorting flag; a column must opt in with its own `enableSorting: true`. */
   enableSorting?: boolean;
   /** Table-level filtering flag; a column must opt in with its own `enableColumnFilter: true`. */
   enableColumnFilter?: boolean;
@@ -44,6 +47,8 @@ type ColumnGeneratorOptions<T> = {
   enableColumnPinning?: boolean;
   /** Table-level grouping flag; a column must opt in with its own `enableGrouping: true`. */
   enableGrouping?: boolean;
+  /** Table-level resizing flag; a column may opt out with its own `enableResizing: false`. */
+  enableColumnResizing?: boolean;
   /** Whether a `renderDetailPanel` is configured — passed through to the expand
    * button's accessible label so it can reference the detail panel it controls. */
   hasDetailPanel?: boolean;
@@ -77,6 +82,7 @@ export function columnGenerator<T>(
         columns: columnGenerator(column.columns, { ...options, firstLeafColumn }),
         enableGrouping: false,
         enablePinning: false,
+        enableResizing: false,
       };
     }
 
@@ -114,18 +120,14 @@ export function columnGenerator<T>(
           </ExpandCellContent>
         );
       },
-      // Sorting is enabled only at the table level; a column may opt out with `false`
-      // but cannot enable sorting on its own.
-      enableSorting: options.enableSorting ? (column.enableSorting ?? true) : false,
-      // Filtering requires both the table-level flag AND the column's own
-      // `enableColumnFilter: true` — neither one alone is enough.
+      // Sorting, filtering, pinning and grouping are Table enabled but require column opt-in
+      enableSorting: Boolean(options.enableSorting && column.enableSorting),
       enableColumnFilter: Boolean(options.enableColumnFilter && column.enableColumnFilter),
-      // Pinning requires both the table-level flag AND the column's own
-      // `enablePinning: true` — neither one alone is enough.
       enablePinning: Boolean(options.enableColumnPinning && column.enablePinning),
-      // Grouping requires both the table-level flag AND the column's own
-      // `enableGrouping: true` — neither one alone is enough.
       enableGrouping: Boolean(options.enableGrouping && column.enableGrouping),
+      // Resizing is enabled only at the table level; a column may opt out with `false`
+      enableResizing: options.enableColumnResizing ? (column.enableResizing ?? true) : false,
+      minSize: column.minWidth ?? MIN_COLUMN_SIZE,
       ...(column.width !== undefined ? { size: column.width } : {}),
     };
   });

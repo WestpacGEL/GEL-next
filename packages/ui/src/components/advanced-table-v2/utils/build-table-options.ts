@@ -1,7 +1,9 @@
 import {
   ColumnDef,
   ColumnFiltersState,
+  ColumnOrderState,
   ColumnPinningState,
+  ColumnSizingState,
   ExpandedState,
   getCoreRowModel,
   getExpandedRowModel,
@@ -58,6 +60,18 @@ export type BuildTableOptionsParams<T> = {
   onColumnFiltersChange: OnChangeFn<ColumnFiltersState>;
   /** Manual (server-side) filtering — the table tracks state but does not filter rows itself. */
   manualFiltering?: boolean;
+  /** Table-level column-reordering flag. Gates whether `columnOrder` is fed to the engine at all. */
+  enableColumnReordering?: boolean;
+  /** Current column-order state (already resolved to include any forced reserved column ids). */
+  columnOrderState: ColumnOrderState;
+  /** Column-order setter (TanStack hands it an updater; the setter resolves it). */
+  onColumnOrderChange: OnChangeFn<ColumnOrderState>;
+  /** Table-level column-resizing flag. Gates `column.getCanResize()`/`columnResizeMode`. */
+  enableColumnResizing?: boolean;
+  /** Current column-sizing state. */
+  columnSizingState: ColumnSizingState;
+  /** Column-sizing setter (TanStack hands it an updater; passed straight through — no reserved-id merging needed). */
+  onColumnSizingChange: OnChangeFn<ColumnSizingState>;
   /** Table-level column-pinning flag. Gates `column.getCanPin()`/`column.pin()`. */
   enableColumnPinning?: boolean;
   /** Current column-pinning state (already resolved, including any forced reserved column id). */
@@ -110,6 +124,10 @@ function buildTableState<T>({
   rowSelectionState,
   enableColumnFilter,
   columnFiltersState,
+  enableColumnReordering,
+  columnOrderState,
+  enableColumnResizing,
+  columnSizingState,
   enableColumnPinning,
   columnPinningState,
   hasReservedPinning,
@@ -124,6 +142,8 @@ function buildTableState<T>({
     ...(enablePagination && { pagination: paginationState }),
     ...(enableRowSelection && { rowSelection: rowSelectionState }),
     ...(enableColumnFilter && { columnFilters: columnFiltersState }),
+    ...(enableColumnReordering && { columnOrder: columnOrderState }),
+    ...(enableColumnResizing && { columnSizing: columnSizingState }),
     ...((enableColumnPinning || hasReservedPinning) && { columnPinning: columnPinningState }),
     ...(enableGrouping && { grouping: groupingState }),
     ...(enableRowPinning && { rowPinning: rowPinningState }),
@@ -157,6 +177,10 @@ export function buildTableOptions<T>(params: BuildTableOptionsParams<T>): TableO
     enableColumnFilter,
     onColumnFiltersChange,
     manualFiltering,
+    enableColumnReordering,
+    onColumnOrderChange,
+    enableColumnResizing,
+    onColumnSizingChange,
     enableColumnPinning,
     onColumnPinningChange,
     enableGrouping,
@@ -206,6 +230,10 @@ export function buildTableOptions<T>(params: BuildTableOptionsParams<T>): TableO
       : {}),
     ...(enableColumnFilter
       ? { getFilteredRowModel: getFilteredRowModel(), onColumnFiltersChange, manualFiltering }
+      : {}),
+    ...(enableColumnReordering ? { onColumnOrderChange } : {}),
+    ...(enableColumnResizing
+      ? { enableColumnResizing: true, columnResizeMode: 'onChange' as const, onColumnSizingChange }
       : {}),
     ...(enableColumnPinning ? { enableColumnPinning: true, onColumnPinningChange } : {}),
     ...(enableGrouping

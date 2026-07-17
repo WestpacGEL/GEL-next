@@ -25,14 +25,21 @@ export type ReservedColumnsOptions = {
 
 /**
  * Builds the reserved leading columns (row selection, row pinning) to prepend
- * before the consumer's own generated columns. Returns `[]` when no reserved
- * feature is enabled.
+ * before the consumer's own generated columns.
  */
 export function buildReservedColumns<T>(options: ReservedColumnsOptions): ColumnDef<T>[] {
   const reserved: ColumnDef<T>[] = [];
   if (options.enableRowSelection) reserved.push(selectionColumn<T>());
   if (options.enableRowPinning) reserved.push(pinColumn<T>());
   return reserved;
+}
+
+/** The active reserved column ids, in RESERVED_COLUMN_IDS order. */
+export function getActiveReservedColumnIds(options: ReservedColumnsOptions): string[] {
+  return [
+    ...(options.enableRowSelection ? [SELECT_COLUMN_ID] : []),
+    ...(options.enableRowPinning ? [PIN_COLUMN_ID] : []),
+  ];
 }
 
 function selectionColumn<T>(): ColumnDef<T> {

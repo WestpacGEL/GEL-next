@@ -7,6 +7,16 @@ import { createContext, ReactNode, useContext } from 'react';
 import { AdvancedTableEmptyStateProps } from './components/advanced-table-empty-state/index.js';
 import { AdvancedTableLoadingStateProps } from './components/advanced-table-loading-state/index.js';
 
+// Which top-level columns can currently be reordered, and their move-left/move-right availability.
+export type ColumnReorderInfo = {
+  /** Reorderable column ids, in current display order (feeds `SortableContext`'s `items`). */
+  ids: string[];
+  /** Same ids as `ids`, for O(1) "can this column be reordered" checks. */
+  idSet: Set<string>;
+  /** Move-left/move-right availability per reorderable column id. */
+  moveBoundaries: Map<string, { canMoveLeft: boolean; canMoveRight: boolean }>;
+};
+
 /**
  * Shared state passed down to the table's sub-components (head, body, row, cell).
  *
@@ -36,15 +46,21 @@ export type AdvancedTableContextValue<T> = {
   loadingStateProps?: AdvancedTableLoadingStateProps;
   /**
    * Whether the consumer has opted into column pinning. The reserved selection
-   * column is always structurally sticky regardless of this flag, but the
-   * pinned-look styling (flattened background, edge shadow) on it only makes
-   * sense when the pinning feature is actually in play.
+   * column is always structurally sticky regardless of this flag.
    */
   enableColumnPinning?: boolean;
   /** Sets the text of the column-pinning live region. */
   onPinAnnouncement?: (text: string) => void;
   /** Sets the text of the row-pinning live region (separate from column pinning's). */
   onRowPinAnnouncement?: (text: string) => void;
+  /** Whether the consumer has opted into column reordering (drag, keyboard, and column-menu move actions). */
+  enableColumnReordering?: boolean;
+  /** Sets the text of the column-reordering live region (pick-up, movement, and drop). */
+  onReorderAnnouncement?: (text: string) => void;
+  /** Reorderable-column ids and their move boundaries. */
+  reorderInfo: ColumnReorderInfo;
+  /** Sets the text of the column-resizing live region (drag end, keyboard step, and reset). */
+  onResizeAnnouncement?: (text: string) => void;
   /**
    * Renders arbitrary content beneath an expanded row. A rendering concern only
    * (never a TanStack table option) — read by the detail-panel-row sub-component.

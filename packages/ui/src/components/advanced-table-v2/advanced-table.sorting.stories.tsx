@@ -19,27 +19,36 @@ const meta: Meta<typeof AdvancedTable> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-/** `enableSorting` makes every column sortable. Click a header to cycle ascending, descending, unsorted. */
+/**
+ * `enableSorting` makes columns that also opt in (`enableSorting: true` on
+ * the column) sortable. Click a header to cycle ascending, descending, unsorted.
+ */
 export const Sortable: Story = {
   render: () => <AdvancedTable data={data} columns={columns} caption="Sortable" enableSorting />,
 };
 
 /**
- * Per-column opt-out. Sorting is enabled at the table level, but one column sets
- * `enableSorting: false` to remove its sort control while the rest stay sortable.
+ * Per-column opt-in. Sorting is enabled at the table level, but only columns
+ * that also set `enableSorting: true` get a sort control — it's not enough
+ * for the table alone to turn the feature on.
  */
-export const PerColumnOptOut: Story = {
+export const PerColumnOptIn: Story = {
   render: () => {
     const perColumn: AdvancedTableColumn<AdvancedPerson>[] = [
-      { key: 'firstName', title: 'First Name' },
-      { key: 'lastName', title: 'Last Name' },
+      { key: 'firstName', title: 'First Name', enableSorting: true },
+      { key: 'lastName', title: 'Last Name', enableSorting: true },
       { key: 'age', title: 'Age' },
       { key: 'visits', title: 'Visits' },
       { key: 'status', title: 'Status' },
-      { key: 'progress', title: 'Profile Progress', enableSorting: false },
+      { key: 'progress', title: 'Profile Progress' },
     ];
     return (
-      <AdvancedTable data={data} columns={perColumn} caption="Sorting on, Profile Progress opted out" enableSorting />
+      <AdvancedTable
+        data={data}
+        columns={perColumn}
+        caption="Sorting on, only First Name and Last Name opted in"
+        enableSorting
+      />
     );
   },
 };
