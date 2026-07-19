@@ -60,6 +60,7 @@ export { MoneyInPictogram } from './components/money-in-pictogram.js';
 export { MoneyOutPictogram } from './components/money-out-pictogram.js';
 export { MovieTicketsPictogram } from './components/movie-tickets-pictogram.js';
 export { NestEggPictogram } from './components/nest-egg-pictogram.js';
+export { NotificationPictogram } from './components/notification-pictogram.js';
 export { NoodlesPictogram } from './components/noodles-pictogram.js';
 export { Number1Pictogram } from './components/number-1-pictogram.js';
 export { Number2Pictogram } from './components/number-2-pictogram.js';
