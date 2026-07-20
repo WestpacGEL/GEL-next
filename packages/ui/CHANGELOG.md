@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 1.12.0
+
+### Minor Changes
+
+- 6d3c3b0: Added map pin, notification and tablet pictograms, updated mobile device pictogram, and updated phone and tablet icons.
+- aa3e2c1: add panel icons
+
 ## 1.11.0
 
 ### Minor Changes
