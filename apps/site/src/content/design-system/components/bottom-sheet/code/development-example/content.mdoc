@@ -1,3 +1,5 @@
+### Bottom sheet
+
 ```jsx
 () => {
   const state = useOverlayTriggerState({});
@@ -5,7 +7,61 @@
   return (
     <>
       <Button onClick={() => state.open()}> Open Bottom Sheet </Button>
-      <BottomSheet title="Heading" isDismissable primaryLabel="Label" secondaryLabel="Label" state={state} primaryOnClick={state.close} secondaryOnClick={state.close}>
+      <BottomSheet
+        title="Heading"
+        isDismissable
+        primaryLabel="Label"
+        secondaryLabel="Label"
+        state={state}
+        primaryOnClick={state.close}
+        secondaryOnClick={state.close}
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a
+          ad blanditiis laborum labore repellendus, vero nihil ducimus, aliquam culpa explicabo doloremque corporis.
+        </p>
+      </BottomSheet>
+    </>
+  );
+};
+```
+
+### Non-dismissible bottom sheet
+
+```jsx
+() => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Button onClick={() => state.open()}> Open Bottom Sheet </Button>
+      <BottomSheet
+        title="Heading"
+        isDismissable={false}
+        primaryLabel="Label"
+        state={state}
+        primaryOnClick={state.close}
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a
+          ad blanditiis laborum labore repellendus, vero nihil ducimus, aliquam culpa explicabo doloremque corporis.
+        </p>
+      </BottomSheet>
+    </>
+  );
+};
+```
+
+### Bottom sheet without footer
+
+```jsx
+() => {
+  const state = useOverlayTriggerState({});
+
+  return (
+    <>
+      <Button onClick={() => state.open()}> Open Bottom Sheet </Button>
+      <BottomSheet title="Heading" isDismissable state={state}>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam ullam atque dignissimos ab quaerat nobis rem a
           ad blanditiis laborum labore repellendus, vero nihil ducimus, aliquam culpa explicabo doloremque corporis.
