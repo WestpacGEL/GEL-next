@@ -1,12 +1,12 @@
 import { readFileSync } from 'fs';
 
+// Load the latest GEL brand colours when the script runs.
 const allBrands: unknown = JSON.parse(readFileSync('../style-config/src/tokens/w3c/all-brands.json', 'utf8'));
 
 export const pictogramBrands = ['WBC', 'BOM', 'BSA', 'STG'] as const;
-
 export type PictogramBrand = (typeof pictogramBrands)[number];
 
-export type PictogramColours = {
+export type PictogramColors = {
   base: string;
   accent: string;
   mono: string;
@@ -17,6 +17,7 @@ type TokenObject = {
   [key: string]: unknown;
 };
 
+// Match each asset folder name to the brand name used in the GEL colour file.
 const brandTokenNames: Record<PictogramBrand, string> = {
   WBC: 'Westpac',
   BOM: 'Bank of Melbourne',
@@ -24,6 +25,8 @@ const brandTokenNames: Record<PictogramBrand, string> = {
   STG: 'StGeorge',
 };
 
+// Some colours point to other GEL colours instead of a hex value.
+// Follow the references until final colour is found.
 const resolveToken = (tokenPath: string): string => {
   const token = tokenPath.split('.').reduce<unknown>((currentValue, key) => {
     if (!currentValue || typeof currentValue !== 'object' || !(key in currentValue)) {
@@ -41,7 +44,9 @@ const resolveToken = (tokenPath: string): string => {
   const reference = /^\{(.+)\}$/.exec(value);
   return reference ? resolveToken(reference[1]) : value;
 };
-export const getPictogramColors = (brand: PictogramBrand): PictogramColours => {
+
+// Get the base, accent and mono colours used to build a brands SVG files.
+export const getPictogramColors = (brand: PictogramBrand): PictogramColors => {
   const tokenPath = `Tokens.${brandTokenNames[brand]}.light-mode.color`;
 
   return {

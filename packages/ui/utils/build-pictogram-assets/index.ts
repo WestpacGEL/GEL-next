@@ -1,5 +1,4 @@
-// This scripts purpose is to generate multiple brand pictogram assets using one existing component that already builds pictograms.
-// Essentially turning the existing pictogram component into an instruction manual to make static svg asset files for all brands.
+// Generates static SVG assets for each brand from an existing pictogram component.
 
 import { writeFile } from 'fs/promises';
 
@@ -8,12 +7,12 @@ import { renderToStaticMarkup } from 'react-dom/server';
 
 import { type PictogramProps } from '../../src/components/pictogram/pictogram.types.js';
 
-import { getPictogramColors, pictogramBrands, type PictogramColours } from './pictogram-colors.js';
+import { getPictogramColors, pictogramBrands, type PictogramColors } from './pictogram-colors.js';
 
 type PictogramComponent = ComponentType<PictogramProps>;
 
-// to create the svg assets we use the existing pictogram component to render the base img first, then convert to save as svg
-const renderPictogram = (component: PictogramComponent, mode: 'base' | 'duo' | 'mono', colours: PictogramColours) => {
+// Render the component as SVG markup.
+const renderPictogram = (component: PictogramComponent, mode: 'base' | 'duo' | 'mono', colours: PictogramColors) => {
   let svg = renderToStaticMarkup(
     createElement(component, {
       mode,
@@ -24,7 +23,7 @@ const renderPictogram = (component: PictogramComponent, mode: 'base' | 'duo' | '
     }),
   );
 
-  // replace component fill with set brand colours as when running the script the code will not know brand context
+  // Replace theme-dependent colour fill classes with static brand colouring.
   svg = svg
     .replace(/ class="fill-surface-pictogram-base"/g, ` fill="${colours.base}"`)
     .replace(/ class="fill-surface-pictogram-accent"/g, ` fill="${colours.accent}"`)
@@ -34,13 +33,13 @@ const renderPictogram = (component: PictogramComponent, mode: 'base' | 'duo' | '
     throw new Error('Generated SVG contains an unresolved fill class.');
   }
 
-  // remove unnecessary props svg will not need
+  // Remove unnecessary props svg will not need
   svg = svg.replace(/\s(?:class|role|focusable|aria-label)="[^"]*"/g, '');
 
   return `${svg}\n`;
 };
 
-// create svg file in correct location
+// Write the SVG to its brand and colouring folder.
 const writePictogram = async (folder: string, name: string, svg: string) => {
   const file = `assets/pictograms/${folder}/${name}.svg`;
   await writeFile(file, svg);
