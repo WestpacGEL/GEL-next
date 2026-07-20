@@ -52,6 +52,10 @@ export type BuildTableOptionsParams<T> = {
   paginationState: AdvancedTablePaginationState;
   /** Pagination-state setter (TanStack hands it an updater; the setter resolves it). */
   onPaginationChange: OnChangeFn<PaginationState>;
+  /** Manual (server-side) pagination — the table renders `data` as-is instead of slicing it, and only tracks pagination state. */
+  manualPagination?: boolean;
+  /** Total row count across all pages; drives page count, the row-range summary, and Next/Prev when `manualPagination` is set. */
+  rowCount?: number;
   /** Table-level column-filter flag. */
   enableColumnFilter?: boolean;
   /** Current column-filter state. */
@@ -169,6 +173,8 @@ export function buildTableOptions<T>(params: BuildTableOptionsParams<T>): TableO
     manualSorting,
     enablePagination,
     onPaginationChange,
+    manualPagination,
+    rowCount,
     rowKey,
     enableRowSelection,
     onRowSelectionChange,
@@ -208,9 +214,8 @@ export function buildTableOptions<T>(params: BuildTableOptionsParams<T>): TableO
       ? {
           getPaginationRowModel: getPaginationRowModel(),
           onPaginationChange,
-          // The pagination triple owns the page index, so opt out of TanStack's
-          // automatic reset: a controlled or seeded `pageIndex` must not be
-          // clobbered when `data` updates. (Resolves the reconciled-spec TODO.)
+          manualPagination,
+          rowCount,
           // TODO: Verify this is the intended design (should be an option?)
           autoResetPageIndex: false,
         }

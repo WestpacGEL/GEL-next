@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
@@ -24,7 +25,7 @@ type Story = StoryObj<typeof meta>;
  * `loading` with no data yet shows a centered indicator in place of the empty state.
  */
 export const Loading: Story = {
-  render: () => <AdvancedTable data={[]} columns={columns} caption="People" loading />,
+  render: () => <AdvancedTable caption="People" columns={columns} data={[]} loading />,
 };
 
 /**
@@ -32,7 +33,7 @@ export const Loading: Story = {
  * table with an overlay while the existing rows stay visible underneath.
  */
 export const LoadingWithData: Story = {
-  render: () => <AdvancedTable data={data} columns={columns} caption="People" loading />,
+  render: () => <AdvancedTable caption="People" columns={columns} data={data} loading />,
 };
 
 /**
@@ -42,42 +43,40 @@ export const LoadingWithData: Story = {
 export const CustomLoadingState: Story = {
   render: () => (
     <AdvancedTable
-      data={[]}
-      columns={columns}
       caption="People"
+      columns={columns}
+      data={[]}
       loading
       loadingStateProps={{ title: 'Fetching people…', description: 'This should only take a moment.' }}
     />
   ),
 };
 
-function ControlledLoadingExample() {
-  const [loading, setLoading] = useState(false);
-  const [rows, setRows] = useState<typeof data>([]);
-
-  const refetch = () => {
-    setLoading(true);
-    setRows([]);
-    setTimeout(() => {
-      setRows(data);
-      setLoading(false);
-    }, 1500);
-  };
-
-  return (
-    <>
-      <Button onClick={refetch} className="mb-4">
-        {rows.length ? 'Refetch' : 'Load people'}
-      </Button>
-      <AdvancedTable data={rows} columns={columns} caption="People" loading={loading} />
-    </>
-  );
-}
-
 /**
  * The consumer owns `loading` entirely: a button simulates fetching, showing the
  * no-data loading row on first load and the dimmed overlay on every refetch after.
  */
 export const Controlled: Story = {
-  render: () => <ControlledLoadingExample />,
+  render: () => {
+    const [loading, setLoading] = useState(false);
+    const [rows, setRows] = useState<typeof data>([]);
+
+    const refetch = () => {
+      setLoading(true);
+      setRows([]);
+      setTimeout(() => {
+        setRows(data);
+        setLoading(false);
+      }, 1500);
+    };
+
+    return (
+      <>
+        <Button className="mb-4" onClick={refetch}>
+          {rows.length ? 'Refetch' : 'Load people'}
+        </Button>
+        <AdvancedTable caption="People" columns={columns} data={rows} loading={loading} />
+      </>
+    );
+  },
 };

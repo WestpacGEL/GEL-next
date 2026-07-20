@@ -2,7 +2,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { useMemo, useState } from 'react';
 
 import { AdvancedTable } from './advanced-table.component.js';
-import { type AdvancedTableColumn, type AdvancedTableColumnFiltersState } from './advanced-table.types.js';
+import { type AdvancedTableColumnFiltersState } from './advanced-table.types.js';
 import { type AdvancedPerson, makePersonData, personColumns } from './story-utils/index.js';
 
 const data = makePersonData(25);
@@ -10,7 +10,7 @@ const data = makePersonData(25);
 const columns = personColumns;
 
 const meta: Meta<typeof AdvancedTable> = {
-  title: 'WIP/Advanced Table v2/Column Filtering',
+  title: 'WIP/Advanced Table v2/Column Menu/Filtering',
   component: AdvancedTable,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
@@ -24,33 +24,7 @@ type Story = StoryObj<typeof meta>;
  * that narrows visible rows as you type.
  */
 export const Default: Story = {
-  render: () => <AdvancedTable data={data} columns={columns} caption="People" enableColumnFilter />,
-};
-
-/**
- * Per-column opt-in. Filtering is enabled at the table level, but only
- * columns that also set `enableColumnFilter: true` get a filter menu — it's
- * not enough for the table alone to turn the feature on.
- */
-export const PerColumnOptIn: Story = {
-  render: () => {
-    const perColumn: AdvancedTableColumn<AdvancedPerson>[] = [
-      { key: 'firstName', title: 'First Name', enableColumnFilter: true },
-      { key: 'lastName', title: 'Last Name', enableColumnFilter: true },
-      { key: 'age', title: 'Age' },
-      { key: 'visits', title: 'Visits' },
-      { key: 'status', title: 'Status' },
-      { key: 'progress', title: 'Profile Progress' },
-    ];
-    return (
-      <AdvancedTable
-        data={data}
-        columns={perColumn}
-        caption="Filtering on, only First Name and Last Name opted in"
-        enableColumnFilter
-      />
-    );
-  },
+  render: () => <AdvancedTable caption="People" columns={columns} data={data} enableColumnFilter />,
 };
 
 /** Applies each active column filter as a case-insensitive substring match — the same
@@ -68,31 +42,6 @@ function applyColumnFilters(rows: AdvancedPerson[], filters: AdvancedTableColumn
   }, rows);
 }
 
-function ControlledFilteringExample() {
-  const [columnFilters, setColumnFilters] = useState<AdvancedTableColumnFiltersState>([]);
-  // The parent filters its own data — `manualFiltering` tells the table not to
-  // also filter internally, since `data` here is already the filtered result.
-  const filteredData = useMemo(() => applyColumnFilters(data, columnFilters), [columnFilters]);
-
-  return (
-    <>
-      <p className="pb-2 typography-body-8">
-        Parent owns filtering — {filteredData.length} of {data.length} rows shown. Active filters:{' '}
-        {columnFilters.length ? columnFilters.map(f => `${f.id}="${f.value}"`).join(', ') : 'none'}
-      </p>
-      <AdvancedTable
-        data={filteredData}
-        columns={columns}
-        caption="Controlled filtering (filtered in the parent)"
-        enableColumnFilter
-        manualFiltering
-        columnFilters={columnFilters}
-        onColumnFiltersChange={setColumnFilters}
-      />
-    </>
-  );
-}
-
 /**
  * Controlled + manual: the parent owns filter state via the `columnFilters` /
  * `onColumnFiltersChange` triple AND performs the actual filtering itself
@@ -100,5 +49,28 @@ function ControlledFilteringExample() {
  * filtering needs custom logic or happens server-side.
  */
 export const Controlled: Story = {
-  render: () => <ControlledFilteringExample />,
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [columnFilters, setColumnFilters] = useState<AdvancedTableColumnFiltersState>([]);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const filteredData = useMemo(() => applyColumnFilters(data, columnFilters), [columnFilters]);
+
+    return (
+      <>
+        <p className="pb-2 typography-body-8">
+          Parent owns filtering — {filteredData.length} of {data.length} rows shown. Active filters:{' '}
+          {columnFilters.length ? columnFilters.map(f => `${f.id}="${f.value}"`).join(', ') : 'none'}
+        </p>
+        <AdvancedTable
+          caption="Controlled filtering (filtered in the parent)"
+          columnFilters={columnFilters}
+          columns={columns}
+          data={filteredData}
+          enableColumnFilter
+          manualFiltering
+          onColumnFiltersChange={setColumnFilters}
+        />
+      </>
+    );
+  },
 };

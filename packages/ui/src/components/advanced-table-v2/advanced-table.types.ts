@@ -231,6 +231,18 @@ type AdvancedTableBaseProps<T> = {
   /** Called with the next pagination state whenever the page or page size changes. */
   onPaginationChange?: (pagination: AdvancedTablePaginationState) => void;
   /**
+   * When `true` the table does **not** slice `data` itself — it renders exactly the rows it's given and only tracks
+   * `pagination` state, emitting `onPaginationChange`. Pair with `rowCount` so page count, the row-range summary,
+   * and Next/Prev availability stay accurate.
+   * @default false
+   */
+  manualPagination?: boolean;
+  /**
+   * Total row count across all pages. Only meaningful with `manualPagination`. Controls the row-range summary
+   * ("21–30 of 214"), and Next/Prev availability.
+   */
+  rowCount?: number;
+  /**
    * Selectable page sizes offered in the page-size selector.
    * @default [5, 10, 20, 50]
    */

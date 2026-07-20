@@ -3,7 +3,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 import { AdvancedTable } from './advanced-table.component.js';
 import { makePersonData, personColumns } from './story-utils/index.js';
 
-const data = makePersonData(10);
+const data = makePersonData(30);
 
 const columns = personColumns;
 
@@ -17,39 +17,36 @@ const meta: Meta<typeof AdvancedTable> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// No accessible name at all — fine when surrounding context (e.g. a page
-// heading right above the table) already identifies it for every user.
+/**
+ * By default, the table does not render a caption. The table will still announce assign the caption to
+ * screen reader users.
+ */
 export const NoCaption: Story = {
   name: 'No caption (relies on surrounding context)',
-  render: () => <AdvancedTable data={data} columns={columns} />,
+  render: () => <AdvancedTable caption="Employee dashboard" columns={columns} data={data} />,
 };
 
-// `caption` renders a real <caption> inside the table, giving it an accessible
-// name — but by default it's visually hidden (sr-only), so it only reaches
-// screen reader users.
-export const CaptionHiddenByDefault: Story = {
-  name: 'caption (hidden visually by default)',
-  render: () => <AdvancedTable data={data} columns={columns} caption="People" />,
-};
-
-// Add `showCaption` to also show that same text visibly above the table.
+/**
+ * Add the `showCaption` to also show that same text visibly above the table.
+ */
 export const CaptionVisible: Story = {
   name: 'caption + showCaption',
-  render: () => <AdvancedTable data={data} columns={columns} caption="People" showCaption />,
+  render: () => <AdvancedTable caption="People" columns={columns} data={data} showCaption />,
 };
 
-// `aria-labelledby` points at an element elsewhere on the page instead —
-// useful when a heading you're already rendering (and want visible either
-// way) should double as the table's accessible name, so it isn't duplicated
-// inside the table via `caption`.
+/**
+ * If you are using a heading or block content to address the table, we can use the `aria-labelledby` prop to
+ * target the labeling element. Tables should always be labeled with a caption (either with surrounding
+ * context or by a heading).
+ */
 export const LabelledByExternalHeading: Story = {
   name: 'aria-labelledby (no caption)',
   render: () => (
     <div>
-      <h2 id="caption-story-heading" className="mb-2 typography-body-7 font-bold">
+      <h2 className="mb-2 typography-body-7 font-bold" id="caption-story-heading">
         People
       </h2>
-      <AdvancedTable data={data} columns={columns} aria-labelledby="caption-story-heading" />
+      <AdvancedTable aria-labelledby="caption-story-heading" columns={columns} data={data} />
     </div>
   ),
 };

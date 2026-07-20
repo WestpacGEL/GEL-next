@@ -18,15 +18,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => <AdvancedTable data={[]} columns={columns} caption="Empty state (default)" />,
+  render: () => <AdvancedTable caption="Empty state (default)" columns={columns} data={[]} />,
 };
 
 export const Custom: Story = {
   render: () => (
     <AdvancedTable
-      data={[]}
-      columns={columns}
       caption="Empty state (custom)"
+      columns={columns}
+      data={[]}
       emptyState={{
         title: 'No people found',
         description: 'Try adjusting your filters or add a new person.',

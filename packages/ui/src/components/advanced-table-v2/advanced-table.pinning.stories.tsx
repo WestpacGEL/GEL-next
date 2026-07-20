@@ -19,7 +19,7 @@ const columns: AdvancedTableColumn<AdvancedPerson>[] = [
 ];
 
 const meta: Meta<typeof AdvancedTable> = {
-  title: 'WIP/Advanced Table v2/Column Pinning',
+  title: 'WIP/Advanced Table v2/Column Menu/Pinning',
   component: AdvancedTable,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
@@ -36,39 +36,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <AdvancedTable
-      data={data}
-      columns={columns}
       caption="People"
-      enableColumnPinning
+      columns={columns}
+      data={data}
       defaultColumnPinning={{ left: ['firstName'] }}
+      enableColumnPinning
     />
   ),
-};
-
-/**
- * Per-column opt-in. Pinning is enabled at the table level, but only columns
- * that also set `enablePinning: true` get pin menu items — it's not enough
- * for the table alone to turn the feature on.
- */
-export const PerColumnOptIn: Story = {
-  render: () => {
-    const perColumn: AdvancedTableColumn<AdvancedPerson>[] = [
-      { key: 'firstName', title: 'First Name', width: 200, enablePinning: true },
-      { key: 'lastName', title: 'Last Name', width: 200, enablePinning: true },
-      { key: 'age', title: 'Age', width: 200 },
-      { key: 'visits', title: 'Visits', width: 200 },
-      { key: 'status', title: 'Status', width: 200 },
-      { key: 'progress', title: 'Profile Progress', width: 200 },
-    ];
-    return (
-      <AdvancedTable
-        data={data}
-        columns={perColumn}
-        caption="Pinning on, only First Name and Last Name opted in"
-        enableColumnPinning
-      />
-    );
-  },
 };
 
 /**
@@ -78,13 +52,13 @@ export const PerColumnOptIn: Story = {
 export const WithRowSelection: Story = {
   render: () => (
     <AdvancedTable
-      data={data}
-      columns={columns}
       caption="People"
+      columns={columns}
+      data={data}
+      defaultColumnPinning={{ left: ['firstName'] }}
+      enableColumnPinning
       enableRowSelection
       rowKey="id"
-      enableColumnPinning
-      defaultColumnPinning={{ left: ['firstName'] }}
     />
   ),
 };
@@ -97,31 +71,30 @@ export const WithColumnFiltering: Story = {
   render: () => <AdvancedTable data={data} columns={columns} caption="People" enableColumnPinning enableColumnFilter />,
 };
 
-function ControlledPinningExample() {
-  const [columnPinning, setColumnPinning] = useState<AdvancedTableColumnPinningState>({ left: ['firstName'] });
-
-  return (
-    <>
-      <p className="pb-2 typography-body-8">
-        Parent owns pinning — left: {columnPinning.left?.join(', ') || 'none'}, right:{' '}
-        {columnPinning.right?.join(', ') || 'none'}
-      </p>
-      <AdvancedTable
-        data={data}
-        columns={columns}
-        caption="Controlled pinning"
-        enableColumnPinning
-        columnPinning={columnPinning}
-        onColumnPinningChange={setColumnPinning}
-      />
-    </>
-  );
-}
-
 /**
  * Controlled: the parent owns pin state via the `columnPinning` /
  * `onColumnPinningChange` pair.
  */
 export const Controlled: Story = {
-  render: () => <ControlledPinningExample />,
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [columnPinning, setColumnPinning] = useState<AdvancedTableColumnPinningState>({ left: ['firstName'] });
+
+    return (
+      <>
+        <p className="pb-2 typography-body-8">
+          Parent owns pinning — left: {columnPinning.left?.join(', ') || 'none'}, right:{' '}
+          {columnPinning.right?.join(', ') || 'none'}
+        </p>
+        <AdvancedTable
+          caption="Controlled pinning"
+          columnPinning={columnPinning}
+          columns={columns}
+          data={data}
+          enableColumnPinning
+          onColumnPinningChange={setColumnPinning}
+        />
+      </>
+    );
+  },
 };

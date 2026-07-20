@@ -23,21 +23,23 @@ export function AdvancedTableGroupRow<T>({ row }: AdvancedTableGroupRowProps<T>)
   return (
     <tr className={styles.row()}>
       <td colSpan={leafColumnCount} className={styles.cell()}>
-        <span className={styles.expandButton()}>
-          <button
-            className={styles.expandButtonInner()}
-            onClick={row.getToggleExpandedHandler()}
-            type="button"
-            {...getExpandButtonA11yProps(tableId, row, groupLabel, false)}
-          >
-            {row.getIsExpanded() ? (
-              <DropDownIcon aria-hidden size="small" />
-            ) : (
-              <DropLeftIcon aria-hidden size="small" />
-            )}
-          </button>
-        </span>
-        {columnName}: {String(row.groupingValue)} ({visibleMemberCount} {visibleMemberCount === 1 ? 'row' : 'rows'})
+        <div className={styles.cellContent()}>
+          <span className={styles.expandButton()}>
+            <button
+              className={styles.expandButtonInner()}
+              onClick={row.getToggleExpandedHandler()}
+              type="button"
+              {...getExpandButtonA11yProps(tableId, row, groupLabel, false)}
+            >
+              {row.getIsExpanded() ? (
+                <DropDownIcon aria-hidden size="small" />
+              ) : (
+                <DropLeftIcon aria-hidden size="small" />
+              )}
+            </button>
+          </span>
+          {columnName}: {String(row.groupingValue)} ({visibleMemberCount} {visibleMemberCount === 1 ? 'row' : 'rows'})
+        </div>
       </td>
     </tr>
   );
