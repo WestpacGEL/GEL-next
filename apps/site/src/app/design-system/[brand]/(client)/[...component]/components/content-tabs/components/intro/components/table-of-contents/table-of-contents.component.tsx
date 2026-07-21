@@ -48,6 +48,7 @@ function NavLink({ href, children }: { children?: ReactNode; href: string }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const query = searchParams.toString();
+  const queryString = query ? `?${query}` : '';
 
   return (
     <Link
@@ -56,7 +57,7 @@ function NavLink({ href, children }: { children?: ReactNode; href: string }) {
         hover:underline
         focus-visible:focus-outline
       `}
-      href={`${pathname}${query ? `?${query}` : ''}${href}`}
+      href={`${pathname}${queryString}${href}`}
       replace
       scroll
     >
