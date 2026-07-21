@@ -37,8 +37,8 @@ export const LoadingWithData: Story = {
 };
 
 /**
- * `loadingStateProps` customizes the icon, title, and description shown while loading,
- * mirroring `emptyState`'s customization shape.
+ * `loadingStateProps` is a thin wrapper around `ProgressIndicator` component. It accepts
+ * that component's own props `label`, `icon`, `color`, and `size`.
  */
 export const CustomLoadingState: Story = {
   render: () => (
@@ -47,7 +47,7 @@ export const CustomLoadingState: Story = {
       columns={columns}
       data={[]}
       loading
-      loadingStateProps={{ title: 'Fetching people…', description: 'This should only take a moment.' }}
+      loadingStateProps={{ label: 'Fetching people…' }}
     />
   ),
 };

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { AdvancedTable } from './advanced-table.component.js';
 import { makePersonData, personColumns } from './story-utils/index.js';
 
-const data = makePersonData(10);
+const data = makePersonData(30);
 
 const columns = personColumns;
 

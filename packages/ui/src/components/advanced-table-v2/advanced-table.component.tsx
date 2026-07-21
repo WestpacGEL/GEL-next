@@ -66,6 +66,7 @@ import {
   selectionStateToIds,
 } from './utils/index.js';
 
+// Create constants for defaults to prevent creating Objects every re-render
 const EMPTY_DATA: never[] = [];
 const EMPTY_SORTING: AdvancedTableSortingState = [];
 const DEFAULT_PAGINATION: AdvancedTablePaginationState = { pageIndex: 0, pageSize: 10 };
@@ -78,6 +79,8 @@ const EMPTY_COLUMN_PINNING: AdvancedTableColumnPinningState = {};
 const EMPTY_GROUPING: AdvancedTableGroupingState = [];
 const EMPTY_EXPANDED: AdvancedTableExpandedState = [];
 const EMPTY_PINNED_ROWS: AdvancedTablePinnedRowsState = [];
+const EMPTY_SENSOR_OPTIONS = {};
+const DND_MODIFIERS = [restrictToHorizontalAxis];
 
 /**
  * Data table built on TanStack Table (wired internally and fully hidden). Pass
@@ -437,13 +440,21 @@ export function AdvancedTable<T>({
 
   const loadingAnnouncement = loading ? 'Loading data…' : 'Data loaded.';
 
-  const sensors = useSensors(useSensor(MouseSensor, {}), useSensor(TouchSensor, {}), useSensor(KeyboardSensor, {}));
+  const sensors = useSensors(
+    useSensor(MouseSensor, EMPTY_SENSOR_OPTIONS),
+    useSensor(TouchSensor, EMPTY_SENSOR_OPTIONS),
+    useSensor(KeyboardSensor, EMPTY_SENSOR_OPTIONS),
+  );
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
     if (!over || active.id === over.id) return;
     const nextOrder = moveColumnTo(table, String(active.id), String(over.id));
     if (nextOrder) table.setColumnOrder(nextOrder);
   };
+  const dndAccessibility = useMemo(
+    () => ({ announcements: buildReorderAnnouncements(table, text => setReorderAnnouncement(text)) }),
+    [table],
+  );
 
   // Check if any data exists before pagination
   const hasRowData = table.getPrePaginationRowModel().rows.length > 0;
@@ -473,8 +484,8 @@ export function AdvancedTable<T>({
   // Computed once per render and stored instead of per per header cell/menu instance
   const reorderInfo = useMemo(
     () => getReorderInfo(table),
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- resolvedColumnPinningState isn't read directly, but getIsPinned() reads live off it.
-    [table, resolvedColumnPinningState, enableRowSelection, enableRowPinning],
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- resolvedColumnPinningState/resolvedColumnOrderState aren't read directly, but getIsPinned()/getHeaderGroups() read live off them.
+    [table, resolvedColumnPinningState, resolvedColumnOrderState, enableRowSelection, enableRowPinning],
   );
 
   // Keyed using referenced `pageSizeOptions` so new array doesn't force re-renders
@@ -546,9 +557,9 @@ export function AdvancedTable<T>({
     <DndContext
       sensors={sensors}
       collisionDetection={closestCenter}
-      modifiers={[restrictToHorizontalAxis]}
+      modifiers={DND_MODIFIERS}
       onDragEnd={handleDragEnd}
-      accessibility={{ announcements: buildReorderAnnouncements(table, text => setReorderAnnouncement(text)) }}
+      accessibility={dndAccessibility}
     >
       <SortableContext items={reorderInfo.ids} strategy={horizontalListSortingStrategy}>
         {tableElement}

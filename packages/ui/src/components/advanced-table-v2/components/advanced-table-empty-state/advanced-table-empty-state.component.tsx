@@ -4,9 +4,10 @@ import { styles as advancedTableEmptyStateStyles } from './advanced-table-empty-
 import { AdvancedTableEmptyStateProps } from './advanced-table-empty-state.types.js';
 
 export function AdvancedTableEmptyState({
-  title = 'No data to display',
+  children,
   description,
   icon,
+  title = 'No data to display',
 }: AdvancedTableEmptyStateProps) {
   const styles = advancedTableEmptyStateStyles();
 
@@ -15,6 +16,7 @@ export function AdvancedTableEmptyState({
       <div className={styles.icon()}>{icon ?? <SearchIcon aria-hidden size="large" />}</div>
       <p className={styles.title()}>{title}</p>
       {description && <p className={styles.description()}>{description}</p>}
+      {children}
     </div>
   );
 }

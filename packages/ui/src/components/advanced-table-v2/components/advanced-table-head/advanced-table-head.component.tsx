@@ -28,9 +28,7 @@ function getAriaSort(canSort: boolean, direction: false | 'asc' | 'desc') {
 }
 
 /**
- * Resolves which per-column controls this header cell shows. Split out from
- * the component to keep its cognitive complexity down — each capability has
- * its own reserved/leaf/pinned exclusions (see each line's comment below).
+ * Resolves which per-column controls this header cell shows.
  */
 function getColumnCapabilities<T>(
   header: Header<T, unknown>,
@@ -42,8 +40,8 @@ function getColumnCapabilities<T>(
   const canPin = canPinColumn(column);
   const canGroup = canGroupColumn(column);
   const canResize = canResizeColumn(column);
-  // Only the top header row's real cells are reorderable — nested leaves under
-  // a group move with their group as one unit, never independently.
+
+  // Only the top header row's real cells are reorderable (if users are using nested table columns)
   const isTopRow = header.headerGroup.depth === 0;
   const canReorder =
     Boolean(enableColumnReordering) && isTopRow && !header.isPlaceholder && reorderInfo.idSet.has(column.id);
@@ -79,8 +77,8 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
     enableColumnReordering,
   );
   const { isPinned, pinnedEdge, style: pinningStyle } = getColumnPinningStyleInfo(column);
-  // The reserved selection column is always structurally sticky but only gets the pinned-look
-  // styling when the pinning feature is actually enabled
+
+  // The reserved selection column is always structurally sticky but only gets the pinned-look styling when the pinning feature is actually enabled
   const showPinnedStyling = isPinned && (!isReserved || Boolean(enableColumnPinning));
   const styles = advancedTableHeadStyles({
     padding,
@@ -89,13 +87,20 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
     pinnedEdge: showPinnedStyling ? pinnedEdge : undefined,
   });
 
-  const { attributes, listeners, setNodeRef, transform, isDragging } = useSortable({
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: column.id,
     disabled: !canReorder,
   });
 
+  // dnd-kit computes `transition` itself, we don't use Tailwind animation classes or they will clash.
+  const prefersReducedMotion =
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const dragStyle: CSSProperties = canReorder
-    ? { transform: CSS.Translate.toString(transform), zIndex: isDragging ? 2 : pinningStyle.zIndex }
+    ? {
+        transform: CSS.Translate.toString(transform),
+        transition: prefersReducedMotion ? undefined : transition,
+        zIndex: isDragging ? 2 : pinningStyle.zIndex,
+      }
     : {};
 
   return (
@@ -118,10 +123,11 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
           )}
           {canSort && (
             <button
+              // using `aria-disabled` over `disabled` to not loose remove
+              aria-disabled={loading || undefined}
               aria-labelledby={`${labelId} ${sortActionId}`}
               className={styles.sortButton()}
-              disabled={loading}
-              onClick={column.getToggleSortingHandler()}
+              onClick={loading ? undefined : column.getToggleSortingHandler()}
               type="button"
             >
               {!sortDirection && <SortIcon aria-hidden size="small" />}

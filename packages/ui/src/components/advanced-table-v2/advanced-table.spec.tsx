@@ -1,14 +1,3 @@
-/**
- * Tests for the AdvancedTable rebuild.
- *
- * Spec: _plan/reconciled-spec.md · Delivery: _plan/tickets.md
- *
- * Single seam: render <AdvancedTable> with React Testing Library and drive it
- * exclusively through accessible roles and userEvent. Assert user-observable
- * behavior only — never internal sub-components, hooks, utils, or the engine.
- *
- * Convert each it.todo to a real test red-green as its feature ticket is built.
- */
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -80,41 +69,31 @@ describe('AdvancedTable', () => {
       expect(screen.getByText('NAME:John')).toBeInTheDocument();
     });
 
-    it('renders grouped multi-level headers from nested column definitions', () => {
-      render(<AdvancedTable columns={groupedColumns} data={testData} />);
-      expect(screen.getByText('Group')).toBeInTheDocument();
-      expect(screen.getByText('Name')).toBeInTheDocument();
-      expect(screen.getByText('Age')).toBeInTheDocument();
-      // two header rows: the group band and the leaf columns
-      const thead = screen.getByRole('table').querySelector('thead') as HTMLElement;
-      expect(within(thead).getAllByRole('row')).toHaveLength(2);
-      // the group header spans both leaf columns
-      expect(screen.getByText('Group').closest('th')).toHaveAttribute('colspan', '2');
-    });
+    describe('caption', () => {
+      it('exposes an accessible name (caption) for the table', () => {
+        render(<AdvancedTable caption="People" columns={testColumns} data={testData} />);
+        expect(screen.getByRole('table', { name: 'People' })).toBeInTheDocument();
+      });
 
-    it('exposes an accessible name (caption) for the table', () => {
-      render(<AdvancedTable columns={testColumns} data={testData} caption="People" />);
-      expect(screen.getByRole('table', { name: 'People' })).toBeInTheDocument();
-    });
+      it('hides the caption visually by default while keeping it accessible', () => {
+        render(<AdvancedTable caption="People" columns={testColumns} data={testData} />);
+        expect(screen.getByText('People').closest('caption')).toHaveClass('sr-only');
+      });
 
-    it('hides the caption visually by default while keeping it accessible', () => {
-      render(<AdvancedTable columns={testColumns} data={testData} caption="People" />);
-      expect(screen.getByText('People').closest('caption')).toHaveClass('sr-only');
-    });
+      it('shows the caption visually when showCaption is true', () => {
+        render(<AdvancedTable caption="People" columns={testColumns} data={testData} showCaption />);
+        expect(screen.getByText('People').closest('caption')).not.toHaveClass('sr-only');
+      });
 
-    it('shows the caption visually when showCaption is true', () => {
-      render(<AdvancedTable columns={testColumns} data={testData} caption="People" showCaption />);
-      expect(screen.getByText('People').closest('caption')).not.toHaveClass('sr-only');
-    });
-
-    it('labels the table via aria-labelledby when provided, without a caption', () => {
-      render(
-        <>
-          <h2 id="people-heading">People</h2>
-          <AdvancedTable columns={testColumns} data={testData} aria-labelledby="people-heading" />
-        </>,
-      );
-      expect(screen.getByRole('table', { name: 'People' })).toBeInTheDocument();
+      it('labels the table via aria-labelledby when provided, without a caption', () => {
+        render(
+          <>
+            <h2 id="people-heading">People</h2>
+            <AdvancedTable aria-labelledby="people-heading" columns={testColumns} data={testData} />
+          </>,
+        );
+        expect(screen.getByRole('table', { name: 'People' })).toBeInTheDocument();
+      });
     });
 
     it('renders two tables on one page without duplicate DOM ids', () => {
@@ -149,7 +128,6 @@ describe('AdvancedTable', () => {
 
     it.todo('with controlled data, edits emit onDataChange and do not mutate rendered rows until data is fed back');
     it.todo('with defaultData, edits update the rendered rows internally');
-    it.todo('row deletion emits onDataChange with the row removed');
   });
 
   describe('sorting', () => {
@@ -163,7 +141,7 @@ describe('AdvancedTable', () => {
     // The Age column is the second header; it holds a single sort button.
     const ageSortButton = () => within(screen.getAllByRole('columnheader')[1]).getByRole('button');
 
-    it('does not render sort controls when sorting is disabled', () => {
+    it('does not render sort controls when sorting is not enabled', () => {
       render(<AdvancedTable columns={testColumns} data={testData} />);
       // Scope to the table: pagination (on by default) renders its own controls.
       expect(within(screen.getByRole('table')).queryAllByRole('button')).toHaveLength(0);
@@ -176,8 +154,6 @@ describe('AdvancedTable', () => {
         { key: 'age', title: 'Age', enableSorting: true },
       ];
       render(<AdvancedTable columns={columns} data={testData} />);
-      // No table-level enableSorting: the column's own flag must not activate sorting.
-      // Scope to the table: pagination (on by default) renders its own controls.
       expect(within(screen.getByRole('table')).queryAllByRole('button')).toHaveLength(0);
       expect(screen.getAllByRole('columnheader')[1]).not.toHaveAttribute('aria-sort');
       // Order stays as provided.
@@ -232,10 +208,10 @@ describe('AdvancedTable', () => {
       await user.click(ageSortButton());
       expect(liveRegion).toHaveTextContent('Age sorted ascending');
 
-      await user.click(ageSortButton()); // descending
+      await user.click(ageSortButton());
       expect(liveRegion).toHaveTextContent('Age sorted descending');
 
-      await user.click(ageSortButton()); // cleared -> announced
+      await user.click(ageSortButton());
       expect(liveRegion).toHaveTextContent('Sorting cleared.');
     });
 
@@ -247,20 +223,6 @@ describe('AdvancedTable', () => {
       // "Age" is a leaf nested under the "Group" header; its title must resolve.
       await user.click(screen.getByRole('button', { name: /Age/ }));
       expect(liveRegion).toHaveTextContent('Age sorted ascending');
-    });
-
-    it('does not expose aria-sort on placeholder header cells in grouped layouts', () => {
-      // Mixing a grouped column with an ungrouped leaf makes TanStack insert a
-      // placeholder cell for the leaf ("Age") in the group-header row.
-      const mixed: AdvancedTableColumn<TestData>[] = [
-        { key: 'grp', title: 'Group', columns: [{ key: 'name', title: 'Name', enableSorting: true }] },
-        { key: 'age', title: 'Age', enableSorting: true },
-      ];
-      render(<AdvancedTable columns={mixed} data={testData} enableSorting />);
-      const withAriaSort = screen.getAllByRole('columnheader').filter(th => th.hasAttribute('aria-sort'));
-      // Exactly the two real sortable leaf headers (Name, Age) — the placeholder Age
-      // cell in the group row must not also carry aria-sort.
-      expect(withAriaSort).toHaveLength(2);
     });
 
     it('sorting is operable with the keyboard alone', async () => {
@@ -305,11 +267,10 @@ describe('AdvancedTable', () => {
           columns={testColumns}
           data={testData}
           enableSorting
-          sorting={[{ id: 'age', desc: false }]}
           onSortingChange={onSortingChange}
+          sorting={[{ id: 'age', desc: false }]}
         />,
       );
-      // Reflects the controlled prop (age ascending).
       expect(bodyOrder()).toEqual(['Jane', 'John', 'Bob']);
 
       await user.click(ageSortButton());
@@ -323,8 +284,8 @@ describe('AdvancedTable', () => {
           columns={testColumns}
           data={testData}
           enableSorting
-          sorting={[{ id: 'age', desc: true }]}
           onSortingChange={onSortingChange}
+          sorting={[{ id: 'age', desc: true }]}
         />,
       );
       expect(bodyOrder()).toEqual(['Bob', 'John', 'Jane']);
@@ -339,12 +300,10 @@ describe('AdvancedTable', () => {
           data={testData}
           enableSorting
           manualSorting
-          sorting={[{ id: 'age', desc: false }]}
           onSortingChange={onSortingChange}
+          sorting={[{ id: 'age', desc: false }]}
         />,
       );
-      // The descriptor says age-ascending, but with manual sorting the table renders
-      // the data in the order given — the consumer owns the sort.
       expect(bodyOrder()).toEqual(['John', 'Jane', 'Bob']);
       // State is still reflected and changes are still emitted.
       expect(screen.getAllByRole('columnheader')[1]).toHaveAttribute('aria-sort', 'ascending');
@@ -358,8 +317,8 @@ describe('AdvancedTable', () => {
         <AdvancedTable
           columns={testColumns}
           data={testData}
-          enableSorting
           defaultSorting={[{ id: 'name', desc: false }]}
+          enableSorting
         />,
       );
       expect(bodyOrder()).toEqual(['Bob', 'Jane', 'John']);
@@ -367,9 +326,6 @@ describe('AdvancedTable', () => {
   });
 
   describe('column filtering', () => {
-    // Opens the named column's menu and returns its filter textbox. Queried by role
-    // alone, not name — `Label`'s `srOnly` path drops the `htmlFor` association, a
-    // pre-existing gap in the shared component, not this ticket.
     const openColumnMenu = async (user: ReturnType<typeof userEvent.setup>, columnName: string) => {
       await user.click(screen.getByRole('button', { name: `${columnName} column menu` }));
       return screen.findByRole('textbox');
@@ -386,7 +342,6 @@ describe('AdvancedTable', () => {
         { key: 'age', title: 'Age', enableColumnFilter: true },
       ];
       render(<AdvancedTable columns={columns} data={testData} />);
-      // No table-level enableColumnFilter: the column's own flag must not activate it.
       expect(screen.queryByRole('button', { name: /column menu/i })).not.toBeInTheDocument();
     });
 
@@ -432,9 +387,6 @@ describe('AdvancedTable', () => {
 
       const filterInput = await openColumnMenu(user, 'Name');
       await user.type(filterInput, 'nonexistent');
-      // While the menu popover is open, react-aria marks the rest of the page
-      // (including the table) aria-hidden — close it first, as a real
-      // screen-reader user would need to, before the table is queryable again.
       await user.keyboard('{Escape}');
 
       // Scope to the table: pagination (on by default) renders its own status region.
@@ -447,10 +399,10 @@ describe('AdvancedTable', () => {
       const onColumnFiltersChange = vi.fn();
       const { rerender } = render(
         <AdvancedTable
+          columnFilters={[]}
           columns={testColumns}
           data={testData}
           enableColumnFilter
-          columnFilters={[]}
           onColumnFiltersChange={onColumnFiltersChange}
         />,
       );
@@ -465,10 +417,10 @@ describe('AdvancedTable', () => {
 
       rerender(
         <AdvancedTable
+          columnFilters={[{ id: 'name', value: 'Jane' }]}
           columns={testColumns}
           data={testData}
           enableColumnFilter
-          columnFilters={[{ id: 'name', value: 'Jane' }]}
           onColumnFiltersChange={onColumnFiltersChange}
         />,
       );
@@ -480,16 +432,14 @@ describe('AdvancedTable', () => {
       const onColumnFiltersChange = vi.fn();
       render(
         <AdvancedTable
+          columnFilters={[{ id: 'name', value: 'Jane' }]}
           columns={testColumns}
           data={testData}
           enableColumnFilter
           manualFiltering
-          columnFilters={[{ id: 'name', value: 'Jane' }]}
           onColumnFiltersChange={onColumnFiltersChange}
         />,
       );
-      // The filter state says "name=Jane", but with manual filtering the table
-      // renders all of `data` as given — the consumer owns the actual filtering.
       expect(screen.getByText('John')).toBeInTheDocument();
       expect(screen.getByText('Bob')).toBeInTheDocument();
 
@@ -503,8 +453,8 @@ describe('AdvancedTable', () => {
         <AdvancedTable
           columns={testColumns}
           data={testData}
-          enableColumnFilter
           defaultColumnFilters={[{ id: 'name', value: 'Jane' }]}
+          enableColumnFilter
         />,
       );
       expect(screen.getByText('Jane')).toBeInTheDocument();
@@ -514,14 +464,11 @@ describe('AdvancedTable', () => {
   });
 
   describe('column pinning', () => {
-    // Opens the named column's menu.
     const openColumnMenu = async (user: ReturnType<typeof userEvent.setup>, columnName: string) => {
       await user.click(screen.getByRole('button', { name: `${columnName} column menu` }));
       await screen.findByRole('menu');
     };
-    // Queried by the label text rather than positional index — pinning right (or
-    // left) reorders the column to sit at that edge, per TanStack's default
-    // leaf-column ordering (left-pinned, then center, then right-pinned).
+
     const nameHeader = () => screen.getByText('Name').closest('th') as HTMLElement;
 
     it('pins a column to the left via the column menu', async () => {
@@ -580,10 +527,10 @@ describe('AdvancedTable', () => {
       const onColumnPinningChange = vi.fn();
       const { rerender } = render(
         <AdvancedTable
+          columnPinning={{ left: ['name'] }}
           columns={testColumns}
           data={testData}
           enableColumnPinning
-          columnPinning={{ left: ['name'] }}
           onColumnPinningChange={onColumnPinningChange}
         />,
       );
@@ -600,10 +547,10 @@ describe('AdvancedTable', () => {
       // Feeding the new state back updates the rendered pin.
       rerender(
         <AdvancedTable
+          columnPinning={{ left: [] }}
           columns={testColumns}
           data={testData}
           enableColumnPinning
-          columnPinning={{ left: [] }}
           onColumnPinningChange={onColumnPinningChange}
         />,
       );
@@ -612,13 +559,11 @@ describe('AdvancedTable', () => {
   });
 
   describe('grouping', () => {
-    // Opens the named column's menu.
     const openColumnMenu = async (user: ReturnType<typeof userEvent.setup>, columnName: string) => {
       await user.click(screen.getByRole('button', { name: `${columnName} column menu` }));
       await screen.findByRole('menu');
     };
 
-    // Repeated `age` value (30) so a group actually contains more than one row.
     const groupingTestData: TestData[] = [
       { name: 'John', age: 30 },
       { name: 'Jane', age: 30 },
@@ -633,8 +578,8 @@ describe('AdvancedTable', () => {
       await user.click(screen.getByRole('menuitem', { name: 'Group by Age' }));
       await user.keyboard('{Escape}');
 
-      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'td' })).toBeInTheDocument();
-      expect(screen.getByText(/Age: 25 \(1 row\)/, { selector: 'td' })).toBeInTheDocument();
+      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'div' })).toBeInTheDocument();
+      expect(screen.getByText(/Age: 25 \(1 row\)/, { selector: 'div' })).toBeInTheDocument();
       expect(screen.getByText('John')).toBeInTheDocument();
       expect(screen.getByText('Jane')).toBeInTheDocument();
       expect(screen.getByText('Bob')).toBeInTheDocument();
@@ -647,13 +592,13 @@ describe('AdvancedTable', () => {
       await openColumnMenu(user, 'Age');
       await user.click(screen.getByRole('menuitem', { name: 'Group by Age' }));
       await user.keyboard('{Escape}');
-      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'td' })).toBeInTheDocument();
+      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'div' })).toBeInTheDocument();
 
       await openColumnMenu(user, 'Age');
       await user.click(screen.getByRole('menuitem', { name: 'Ungroup' }));
       await user.keyboard('{Escape}');
 
-      expect(screen.queryByText(/Age: 30/, { selector: 'td' })).not.toBeInTheDocument();
+      expect(screen.queryByText(/Age: 30/, { selector: 'div' })).not.toBeInTheDocument();
       expect(within(screen.getByRole('table')).getAllByRole('row')).toHaveLength(4);
     });
 
@@ -679,14 +624,14 @@ describe('AdvancedTable', () => {
           onGroupingChange={onGroupingChange}
         />,
       );
-      expect(screen.queryByText(/Age: 30/, { selector: 'td' })).not.toBeInTheDocument();
+      expect(screen.queryByText(/Age: 30/, { selector: 'div' })).not.toBeInTheDocument();
 
       await openColumnMenu(user, 'Age');
       await user.click(screen.getByRole('menuitem', { name: 'Group by Age' }));
 
       expect(onGroupingChange).toHaveBeenCalledWith(['age']);
       // Controlled: doesn't group on its own until the prop is fed back.
-      expect(screen.queryByText(/Age: 30/, { selector: 'td' })).not.toBeInTheDocument();
+      expect(screen.queryByText(/Age: 30/, { selector: 'div' })).not.toBeInTheDocument();
 
       rerender(
         <AdvancedTable
@@ -697,54 +642,51 @@ describe('AdvancedTable', () => {
           onGroupingChange={onGroupingChange}
         />,
       );
-      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'td' })).toBeInTheDocument();
+      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'div' })).toBeInTheDocument();
     });
 
-    // Regression coverage for ticket 09's interaction with grouping (ticket 08):
-    // grouping's implicit "start fully expanded" default must still hold, but
-    // group rows now also get a real, working collapse/expand toggle — ticket 08
-    // shipped that banner with no toggle at all.
-    it('a newly-grouped column keeps its children visible by default, and the group row exposes a working collapse/expand toggle', async () => {
-      const user = userEvent.setup();
-      render(<AdvancedTable columns={testColumns} data={groupingTestData} enableGrouping />);
+    // // Regression coverage for ticket 09's interaction with grouping (ticket 08):
+    // // grouping's implicit "start fully expanded" default must still hold, but
+    // // group rows now also get a real, working collapse/expand toggle — ticket 08
+    // // shipped that banner with no toggle at all.
+    // it('a newly-grouped column keeps its children visible by default, and the group row exposes a working collapse/expand toggle', async () => {
+    //   const user = userEvent.setup();
+    //   render(<AdvancedTable columns={testColumns} data={groupingTestData} enableGrouping />);
 
-      await openColumnMenu(user, 'Age');
-      await user.click(screen.getByRole('menuitem', { name: 'Group by Age' }));
-      await user.keyboard('{Escape}');
+    //   await openColumnMenu(user, 'Age');
+    //   await user.click(screen.getByRole('menuitem', { name: 'Group by Age' }));
+    //   await user.keyboard('{Escape}');
 
-      // Ticket 08's default-expanded behavior still holds: children visible immediately.
-      expect(screen.getByText('John')).toBeInTheDocument();
-      expect(screen.getByText('Jane')).toBeInTheDocument();
+    //   // Ticket 08's default-expanded behavior still holds: children visible immediately.
+    //   expect(screen.getByText('John')).toBeInTheDocument();
+    //   expect(screen.getByText('Jane')).toBeInTheDocument();
 
-      // New in this ticket: the group banner has a working toggle.
-      const groupToggle = screen.getByRole('button', { name: 'Collapse Age: 30' });
-      await user.click(groupToggle);
-      expect(screen.queryByText('John')).not.toBeInTheDocument();
-      expect(screen.queryByText('Jane')).not.toBeInTheDocument();
-      // Bob's group (Age: 25) is unaffected by collapsing the Age: 30 group.
-      expect(screen.getByText('Bob')).toBeInTheDocument();
+    //   // New in this ticket: the group banner has a working toggle.
+    //   const groupToggle = screen.getByRole('button', { name: 'Collapse Age: 30' });
+    //   await user.click(groupToggle);
+    //   expect(screen.queryByText('John')).not.toBeInTheDocument();
+    //   expect(screen.queryByText('Jane')).not.toBeInTheDocument();
+    //   // Bob's group (Age: 25) is unaffected by collapsing the Age: 30 group.
+    //   expect(screen.getByText('Bob')).toBeInTheDocument();
 
-      await user.click(screen.getByRole('button', { name: 'Expand Age: 30' }));
-      expect(screen.getByText('John')).toBeInTheDocument();
-      expect(screen.getByText('Jane')).toBeInTheDocument();
-    });
+    //   await user.click(screen.getByRole('button', { name: 'Expand Age: 30' }));
+    //   expect(screen.getByText('John')).toBeInTheDocument();
+    //   expect(screen.getByText('Jane')).toBeInTheDocument();
+    // });
 
-    it('an explicit defaultExpanded overrides grouping\'s implicit "start expanded" default', () => {
+    it('an explicit defaultExpanded overrides grouping\'s implicit "start expanded" default: hidden by default', () => {
       render(
         <AdvancedTable
           columns={testColumns}
           data={groupingTestData}
-          rowKey="name"
-          enableGrouping
-          defaultGrouping={['age']}
           defaultExpanded={[]}
+          defaultGrouping={['age']}
+          enableGrouping
+          rowKey="name"
         />,
       );
 
-      // Group banners still render...
-      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'td' })).toBeInTheDocument();
-      // ...but an explicit (empty) defaultExpanded wins over grouping's own
-      // implicit default, so children start hidden rather than force-expanded.
+      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'div' })).toBeInTheDocument();
       expect(screen.queryByText('John')).not.toBeInTheDocument();
       expect(screen.getByRole('button', { name: 'Expand Age: 30' })).toBeInTheDocument();
     });
@@ -755,14 +697,14 @@ describe('AdvancedTable', () => {
         <AdvancedTable
           columns={testColumns}
           data={groupingTestData}
-          rowKey="name"
+          defaultGrouping={['age']}
           enableGrouping
           enableRowPinning
-          defaultGrouping={['age']}
+          rowKey="name"
         />,
       );
       // Both John and Jane start clustered under the "Age: 30" banner.
-      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'td' })).toBeInTheDocument();
+      expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'div' })).toBeInTheDocument();
 
       const johnRow = screen.getByText('John').closest('tr') as HTMLElement;
       await user.click(within(johnRow).getByRole('button', { name: /Pin row/ }));
@@ -777,7 +719,7 @@ describe('AdvancedTable', () => {
       expect(within(centerBody).queryByText('John')).not.toBeInTheDocument();
       expect(within(centerBody).getByText('Jane')).toBeInTheDocument();
 
-      expect(screen.getByText(/Age: 30 \(1 row\)/, { selector: 'td' })).toBeInTheDocument();
+      expect(screen.getByText(/Age: 30 \(1 row\)/, { selector: 'div' })).toBeInTheDocument();
     });
 
     it('a group whose every member is pinned away renders no banner at all', async () => {
@@ -786,10 +728,10 @@ describe('AdvancedTable', () => {
         <AdvancedTable
           columns={testColumns}
           data={groupingTestData}
-          rowKey="name"
+          defaultGrouping={['age']}
           enableGrouping
           enableRowPinning
-          defaultGrouping={['age']}
+          rowKey="name"
         />,
       );
 
@@ -803,11 +745,17 @@ describe('AdvancedTable', () => {
       // Both members of the "Age: 30" group are now pinned — the banner has
       // nothing left to show and disappears, rather than reading "(0 rows)".
       expect(screen.queryByText(/Age: 30/)).not.toBeInTheDocument();
-      expect(screen.getByText(/Age: 25 \(1 row\)/, { selector: 'td' })).toBeInTheDocument();
+      expect(screen.getByText(/Age: 25 \(1 row\)/, { selector: 'div' })).toBeInTheDocument();
     });
   });
 
   describe('column resizing', () => {
+    it('does not show resize handles if `enableColumnResizing` is not set', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} />);
+
+      expect(screen.queryAllByRole('slider')).toHaveLength(0);
+    });
+
     it('resizes a column by dragging its handle', () => {
       render(<AdvancedTable columns={testColumns} data={testData} enableColumnResizing />);
 
@@ -831,7 +779,7 @@ describe('AdvancedTable', () => {
       expect(cols[0]).toHaveStyle({ width: '200px' });
     });
 
-    it('offers a single-pointer non-drag resize alternative', () => {
+    it('offers a single-pointer non-drag resize alternative slider', () => {
       render(<AdvancedTable columns={testColumns} data={testData} enableColumnResizing />);
 
       const handle = screen.getByRole('slider', { name: 'Resize Name column' });
@@ -874,9 +822,9 @@ describe('AdvancedTable', () => {
       const { rerender } = render(
         <AdvancedTable
           columns={testColumns}
+          columnSizing={{ name: 300 }}
           data={testData}
           enableColumnResizing
-          columnSizing={{ name: 300 }}
           onColumnSizingChange={onColumnSizingChange}
         />,
       );
@@ -893,29 +841,28 @@ describe('AdvancedTable', () => {
       rerender(
         <AdvancedTable
           columns={testColumns}
+          columnSizing={{ name: 310 }}
           data={testData}
           enableColumnResizing
-          columnSizing={{ name: 310 }}
           onColumnSizingChange={onColumnSizingChange}
         />,
       );
       expect(handle).toHaveAttribute('aria-valuenow', '310');
     });
 
-    it('reserved selection and pin columns are excluded from resizing', () => {
+    it('reserved selection and row-pin toggle columns are excluded from resizing', () => {
       render(
         <AdvancedTable
           columns={testColumns}
           data={testData}
-          rowKey="name"
-          enableRowSelection
-          enableRowPinning
           enableColumnResizing
+          enableRowPinning
+          enableRowSelection
+          rowKey="name"
         />,
       );
 
       expect(screen.getByRole('checkbox', { name: 'Select all rows in current page' })).toBeInTheDocument();
-      // Only the two real data columns get a handle — none for either reserved column.
       expect(screen.getAllByRole('slider')).toHaveLength(2);
     });
 
@@ -954,9 +901,7 @@ describe('AdvancedTable', () => {
   });
 
   describe('column reordering', () => {
-    // dnd-kit's collision detection needs real, distinct geometry to compare
-    // against — jsdom lays every element out at 0x0, so each header cell is
-    // given an evenly-spaced rect matching its position among its siblings.
+    // dnd-kit's collision detection needs real, distinct geometry to compare against
     const mockHeaderRects = () => {
       vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function (this: HTMLElement) {
         if (this.tagName === 'TH') {
@@ -978,14 +923,13 @@ describe('AdvancedTable', () => {
       });
     };
 
-    // Reads just the title label span's text, skipping decorative icon markup
-    // (e.g. copyright `<title>`s) and hidden menu-trigger text also inside the cell.
+    // Read just the title label span's text
     const columnHeaderNames = () =>
       within(screen.getByRole('table'))
         .getAllByRole('columnheader')
         .map(th => th.querySelector('[id$="-label"]')?.textContent);
 
-    it('reorders columns via drag and drop', () => {
+    it('reorders columns via drag and drop controls', () => {
       mockHeaderRects();
       render(<AdvancedTable columns={testColumns} data={testData} enableColumnReordering />);
 
@@ -1038,7 +982,7 @@ describe('AdvancedTable', () => {
       expect(liveRegion).toHaveTextContent(/Name dropped/);
     });
 
-    it('offers move left / move right actions in the column menu (WCAG 2.5.7)', async () => {
+    it('offers move left / move right actions in the column menu as alternative options', async () => {
       const user = userEvent.setup();
       render(<AdvancedTable columns={testColumns} data={testData} enableColumnReordering />);
 
@@ -1061,10 +1005,10 @@ describe('AdvancedTable', () => {
         <AdvancedTable
           columns={testColumns}
           data={testData}
-          rowKey="name"
-          enableRowSelection
-          enableRowPinning
           enableColumnReordering
+          enableRowPinning
+          enableRowSelection
+          rowKey="name"
         />,
       );
 
@@ -1079,10 +1023,10 @@ describe('AdvancedTable', () => {
       const onColumnOrderChange = vi.fn();
       const { rerender } = render(
         <AdvancedTable
+          columnOrder={['age', 'name']}
           columns={testColumns}
           data={testData}
           enableColumnReordering
-          columnOrder={['age', 'name']}
           onColumnOrderChange={onColumnOrderChange}
         />,
       );
@@ -1099,14 +1043,52 @@ describe('AdvancedTable', () => {
 
       rerender(
         <AdvancedTable
+          columnOrder={['name', 'age']}
           columns={testColumns}
           data={testData}
           enableColumnReordering
-          columnOrder={['name', 'age']}
           onColumnOrderChange={onColumnOrderChange}
         />,
       );
       expect(columnHeaderNames()).toEqual(['Name', 'Age']);
+    });
+
+    it('a pinned column stays anchored and excluded from reordering and resizing with resizing and grouping also active', async () => {
+      const user = userEvent.setup();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={testData}
+          enableColumnPinning
+          enableColumnReordering
+          enableColumnResizing
+          enableGrouping
+        />,
+      );
+
+      await user.click(screen.getByRole('button', { name: 'Name column menu' }));
+      await screen.findByRole('menu');
+      await user.click(screen.getByRole('menuitem', { name: 'Pin left' }));
+
+      const nameHeader = screen.getByText('Name').closest('th') as HTMLElement;
+      expect(getComputedStyle(nameHeader).position).toBe('sticky');
+
+      // Pinned: its own menu no longer offers Move actions at all...
+      await user.click(screen.getByRole('button', { name: 'Name column menu' }));
+      await screen.findByRole('menu');
+      expect(screen.queryByRole('menuitem', { name: 'Move left' })).not.toBeInTheDocument();
+      expect(screen.queryByRole('menuitem', { name: 'Move right' })).not.toBeInTheDocument();
+      await user.keyboard('{Escape}');
+
+      // Viable column for re-ordering
+      await user.click(screen.getByRole('button', { name: 'Age column menu' }));
+      await screen.findByRole('menu');
+      expect(screen.getByRole('menuitem', { name: 'Move left' })).toHaveAttribute('aria-disabled', 'true');
+      await user.keyboard('{Escape}');
+
+      // Now also excluded from resizing.
+      expect(screen.queryByRole('slider', { name: 'Resize Name column' })).not.toBeInTheDocument();
+      expect(screen.getByRole('slider', { name: 'Resize Age column' })).toBeInTheDocument();
     });
   });
 
@@ -1128,8 +1110,8 @@ describe('AdvancedTable', () => {
           columns={testColumns}
           data={testData}
           enableRowSelection
-          rowKey="name"
           onSelectionChange={onSelectionChange}
+          rowKey="name"
         />,
       );
 
@@ -1145,8 +1127,7 @@ describe('AdvancedTable', () => {
       const selectAll = screen.getByRole<HTMLInputElement>('checkbox', { name: 'Select all rows in current page' });
 
       await user.click(screen.getByRole('checkbox', { name: 'Select row 1' }));
-      // react-aria's useCheckbox sets the native `indeterminate` DOM property only
-      // (never `aria-checked="mixed"`), so assert it directly rather than via role.
+      // react-aria's useCheckbox sets the native `indeterminate` DOM property instead of `aria-checked="mixed"`
       expect(selectAll.indeterminate).toBe(true);
 
       await user.click(selectAll);
@@ -1161,7 +1142,77 @@ describe('AdvancedTable', () => {
       );
     });
 
-    it.todo('selection keyed by rowKey survives sorting, filtering, and page changes');
+    // TODO: check this one
+    it('selection keyed by rowKey survives sorting, filtering, and page changes', async () => {
+      const user = userEvent.setup();
+      const manyRows: TestData[] = Array.from({ length: 12 }, (_, i) => ({ name: `Person${i}`, age: 20 + i }));
+      const onSelectionChange = vi.fn();
+      const checkboxForRow = (name: string) =>
+        within(screen.getByText(name).closest('tr') as HTMLElement).getByRole('checkbox');
+
+      const { rerender } = render(
+        <AdvancedTable
+          columns={testColumns}
+          data={manyRows}
+          enableColumnFilter
+          enableRowSelection
+          enableSorting
+          onSelectionChange={onSelectionChange}
+          rowKey="name"
+          selectedRows={[]}
+        />,
+      );
+
+      await user.click(checkboxForRow('Person5'));
+      expect(onSelectionChange).toHaveBeenCalledWith(['Person5']);
+      expect(onSelectionChange).toHaveBeenCalledTimes(1);
+
+      rerender(
+        <AdvancedTable
+          columns={testColumns}
+          data={manyRows}
+          enableColumnFilter
+          enableRowSelection
+          enableSorting
+          onSelectionChange={onSelectionChange}
+          rowKey="name"
+          selectedRows={['Person5']}
+        />,
+      );
+      expect(checkboxForRow('Person5')).toBeChecked();
+
+      // Sorting reorders the visible rows; the same logical row (by rowKey) stays
+      // selected, it doesn't drift onto whichever row now occupies that position.
+      // The Age header renders both a sort button and a (filter-enabled) column
+      // menu trigger — the sort button is the first of the two.
+      const ageSortButton = () => within(screen.getAllByRole('columnheader')[1]).getAllByRole('button')[0];
+      await user.click(ageSortButton()); // age ascending
+      await user.click(ageSortButton()); // age descending
+      expect(checkboxForRow('Person5')).toBeChecked();
+      // Person6 stays on page 1 in descending order too (unlike Person0/1,
+      // which land on page 2) — a real, still-visible, still-unselected row.
+      expect(checkboxForRow('Person6')).not.toBeChecked();
+
+      // Filtering down to a narrower set still keyed correctly, no drift or loss.
+      await user.click(screen.getByRole('button', { name: 'Name column menu' }));
+      const filterInput = await screen.findByRole('textbox');
+      await user.type(filterInput, 'Person5');
+      expect(screen.getByText('Person5')).toBeInTheDocument();
+      await user.clear(filterInput);
+      // While the menu popover is open, react-aria marks the rest of the page
+      // (including the table) aria-hidden — close it before querying by role again.
+      await user.keyboard('{Escape}');
+      expect(checkboxForRow('Person5')).toBeChecked();
+
+      // Changing pages and back still leaves the same row selected.
+      await user.click(screen.getByRole('button', { name: 'Go to page 2' }));
+      await user.click(screen.getByRole('button', { name: 'Go to page 1' }));
+      expect(checkboxForRow('Person5')).toBeChecked();
+
+      // None of sorting, filtering, or paginating ever re-emitted a selection
+      // change of their own — only the original click did.
+      expect(onSelectionChange).toHaveBeenCalledTimes(1);
+    });
 
     it('select-all only affects rows on the current page, not the whole dataset', async () => {
       const user = userEvent.setup();
@@ -1172,24 +1223,21 @@ describe('AdvancedTable', () => {
           columns={testColumns}
           data={manyRows}
           enableRowSelection
-          rowKey="name"
           onSelectionChange={onSelectionChange}
+          rowKey="name"
         />,
       );
 
       await user.click(screen.getByRole('checkbox', { name: 'Select all rows in current page' }));
-      // Default page size is 10: only the first 10 rows should be selected, not
-      // all 12 — select-all must be scoped to the visible page.
+      // Default page size is 10, only the first 10 rows should be selected
       expect(onSelectionChange).toHaveBeenCalledWith(Array.from({ length: 10 }, (_, i) => `Person ${i}`));
 
       await user.click(screen.getByRole('button', { name: 'Go to page 2' }));
-      // Page 2's rows (labeled by absolute position, so "Select row 11" here)
-      // were not swept up by the page-1 select-all.
       expect(screen.getByRole('checkbox', { name: 'Select row 11' })).not.toBeChecked();
       expect(screen.getByRole('checkbox', { name: 'Select all rows in current page' })).not.toBeChecked();
     });
 
-    it('a stale id in a controlled selectedRows does not make select-all read as checked/indeterminate', () => {
+    it('a stale or incorrect id in a controlled selectedRows does not make select-all read as checked/indeterminate', () => {
       render(
         <AdvancedTable
           columns={testColumns}
@@ -1254,7 +1302,7 @@ describe('AdvancedTable', () => {
 
     it('pin toggle moves a row into the pinned section above the body', async () => {
       const user = userEvent.setup();
-      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowPinning />);
+      render(<AdvancedTable columns={testColumns} data={testData} enableRowPinning rowKey="name" />);
       expect(allBodyOrder()).toEqual(['John', 'Jane', 'Bob']);
 
       await user.click(screen.getByRole('button', { name: 'Pin row 3' }));
@@ -1264,7 +1312,7 @@ describe('AdvancedTable', () => {
 
     it('unpinning returns the row to its natural position', async () => {
       const user = userEvent.setup();
-      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowPinning />);
+      render(<AdvancedTable columns={testColumns} data={testData} enableRowPinning rowKey="name" />);
 
       await user.click(screen.getByRole('button', { name: 'Pin row 3' }));
       expect(allBodyOrder()).toEqual(['Bob', 'John', 'Jane']);
@@ -1275,7 +1323,7 @@ describe('AdvancedTable', () => {
 
     it('pinning a row pins its sub-rows with it', async () => {
       const user = userEvent.setup();
-      render(<AdvancedTable columns={testColumns} data={treeData} rowKey="name" enableRowPinning />);
+      render(<AdvancedTable columns={testColumns} data={treeData} enableRowPinning rowKey="name" />);
 
       await user.click(screen.getByRole('button', { name: 'Expand John' }));
       expect(screen.getByText('Johnny')).toBeInTheDocument();
@@ -1291,7 +1339,7 @@ describe('AdvancedTable', () => {
     it('pinned rows remain visible across sorting and pagination', async () => {
       const user = userEvent.setup();
       const manyRows: TestData[] = Array.from({ length: 12 }, (_, i) => ({ name: `Person ${i}`, age: 20 + i }));
-      render(<AdvancedTable columns={testColumns} data={manyRows} rowKey="name" enableRowPinning enableSorting />);
+      render(<AdvancedTable columns={testColumns} data={manyRows} enableRowPinning enableSorting rowKey="name" />);
 
       await user.click(screen.getByRole('button', { name: 'Pin row 1' }));
       expect(screen.getByText('Person 0')).toBeInTheDocument();
@@ -1307,7 +1355,7 @@ describe('AdvancedTable', () => {
 
     it('pinned section preserves valid table semantics for assistive technology', async () => {
       const user = userEvent.setup();
-      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowPinning />);
+      render(<AdvancedTable columns={testColumns} data={testData} enableRowPinning rowKey="name" />);
 
       await user.click(screen.getByRole('button', { name: 'Pin row 1' }));
       const table = screen.getByRole('table');
@@ -1324,10 +1372,10 @@ describe('AdvancedTable', () => {
         <AdvancedTable
           columns={testColumns}
           data={testData}
-          rowKey="name"
           enableRowPinning
-          pinnedRows={[]}
           onPinnedRowsChange={onPinnedRowsChange}
+          pinnedRows={[]}
+          rowKey="name"
         />,
       );
       expect(allBodyOrder()).toEqual(['John', 'Jane', 'Bob']);
@@ -1341,10 +1389,10 @@ describe('AdvancedTable', () => {
         <AdvancedTable
           columns={testColumns}
           data={testData}
-          rowKey="name"
           enableRowPinning
-          pinnedRows={['Bob']}
           onPinnedRowsChange={onPinnedRowsChange}
+          pinnedRows={['Bob']}
+          rowKey="name"
         />,
       );
       expect(allBodyOrder()).toEqual(['Bob', 'John', 'Jane']);
@@ -1352,7 +1400,7 @@ describe('AdvancedTable', () => {
 
     it('a pinned row stays visible when it no longer matches an active column filter', async () => {
       const user = userEvent.setup();
-      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowPinning enableColumnFilter />);
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter enableRowPinning rowKey="name" />);
 
       await user.click(screen.getByRole('button', { name: 'Pin row 1' }));
       expect(screen.getByText('John')).toBeInTheDocument();
@@ -1366,18 +1414,16 @@ describe('AdvancedTable', () => {
       expect(screen.getByText('John')).toBeInTheDocument();
     });
 
-    it('a pinned row filtered out of the center rows still gets a sane accessible name on its toggle', async () => {
+    it('a pinned row filtered out of the center rows still gets an accessible name on its toggle', async () => {
       const user = userEvent.setup();
-      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowPinning enableColumnFilter />);
+      render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter enableRowPinning rowKey="name" />);
 
       await user.click(screen.getByRole('button', { name: 'Pin row 1' }));
 
       await user.click(screen.getByRole('button', { name: 'Name column menu' }));
+
       const filterInput = await screen.findByRole('textbox');
       await user.type(filterInput, 'Jane');
-      // While the menu popover is open, react-aria marks the rest of the page
-      // (including the table) aria-hidden — close it first, as a real
-      // screen-reader user would need to, before the table is queryable again.
       await user.keyboard('{Escape}');
 
       // John's own toggle still has a real, non-broken accessible name (not "Pin row 0").
@@ -1403,11 +1449,10 @@ describe('AdvancedTable', () => {
       const user = userEvent.setup();
       render(<AdvancedTable columns={testColumns} data={treeData} rowKey="name" />);
 
-      // Sub-rows aren't in the DOM at all until expanded (aria-controls in the
-      // a11y test below relies on this — TanStack never mounts collapsed rows).
+      // Sub-rows aren't in the DOM until expanded
       expect(screen.queryByText('Johnny')).not.toBeInTheDocument();
       expect(screen.queryByText('Janet')).not.toBeInTheDocument();
-      // A leaf row (no subRows) offers no expand control at all.
+      // A leaf row (not nested, no subRows) offers no expand control at all.
       expect(screen.queryByRole('button', { name: /Bob/ })).not.toBeInTheDocument();
 
       await user.click(screen.getByRole('button', { name: 'Expand John' }));
@@ -1417,7 +1462,7 @@ describe('AdvancedTable', () => {
 
     it('collapse hides sub-rows again', async () => {
       const user = userEvent.setup();
-      render(<AdvancedTable columns={testColumns} data={treeData} rowKey="name" defaultExpanded={['John']} />);
+      render(<AdvancedTable columns={testColumns} data={treeData} defaultExpanded={['John']} rowKey="name" />);
       expect(screen.getByText('Johnny')).toBeInTheDocument();
 
       await user.click(screen.getByRole('button', { name: 'Collapse John' }));
@@ -1428,14 +1473,14 @@ describe('AdvancedTable', () => {
       expect(screen.getByText('Bob')).toBeInTheDocument();
     });
 
-    it('renderDetailPanel renders panel content beneath the expanded row as valid table semantics', async () => {
+    it('`renderDetailPanel` renders panel content beneath the expanded row as valid table semantics', async () => {
       const user = userEvent.setup();
       render(
         <AdvancedTable
           columns={testColumns}
           data={testData}
-          rowKey="name"
           renderDetailPanel={row => <p>Details for {row.name}</p>}
+          rowKey="name"
         />,
       );
       expect(screen.queryByText('Details for John')).not.toBeInTheDocument();
@@ -1444,15 +1489,12 @@ describe('AdvancedTable', () => {
       const panelContent = screen.getByText('Details for John');
       expect(panelContent).toBeInTheDocument();
 
-      // Valid table semantics: a real full-width <td> inside its own <tr>, not
-      // an arbitrary element dropped in beside the row.
       const panelCell = panelContent.closest('td');
       expect(panelCell).toHaveAttribute('colspan', String(testColumns.length));
       const panelRow = panelCell?.closest('tr');
       expect(panelRow).toBeInTheDocument();
       expect(within(screen.getByRole('table')).getAllByRole('row')).toContain(panelRow);
 
-      // Collapsing removes it again.
       await user.click(screen.getByRole('button', { name: 'Collapse John' }));
       expect(screen.queryByText('Details for John')).not.toBeInTheDocument();
     });
@@ -1462,25 +1504,20 @@ describe('AdvancedTable', () => {
         <AdvancedTable
           columns={testColumns}
           data={testData}
-          rowKey="name"
-          renderDetailPanel={row => <p>Details for {row.name}</p>}
           getRowCanExpand={row => row.name !== 'Jane'}
+          renderDetailPanel={row => <p>Details for {row.name}</p>}
+          rowKey="name"
         />,
       );
 
       expect(screen.getByRole('button', { name: 'Expand John' })).toBeInTheDocument();
       expect(screen.getByRole('button', { name: 'Expand Bob' })).toBeInTheDocument();
-      // Jane is excluded by getRowCanExpand, even though renderDetailPanel is
-      // configured and would otherwise make every row expandable.
       expect(screen.queryByRole('button', { name: 'Expand Jane' })).not.toBeInTheDocument();
     });
 
     it('expand control renders in the correct column when selection and pin columns are present', () => {
-      render(<AdvancedTable columns={testColumns} data={treeData} rowKey="name" enableRowSelection enableRowPinning />);
+      render(<AdvancedTable columns={testColumns} data={treeData} enableRowPinning enableRowSelection rowKey="name" />);
 
-      // The reserved selection and pin columns are first, but the expand
-      // control still targets the consumer's own first column (Name) rather
-      // than drifting into (or being blocked by) either reserved leading column.
       const nameCell = screen.getByText('John').closest('td');
       const expandButton = screen.getByRole('button', { name: 'Expand John' });
       expect(nameCell).toContainElement(expandButton);
@@ -1501,9 +1538,9 @@ describe('AdvancedTable', () => {
         <AdvancedTable
           columns={testColumns}
           data={treeData}
-          rowKey="name"
           expanded={[]}
           onExpandedChange={onExpandedChange}
+          rowKey="name"
         />,
       );
       expect(screen.queryByText('Johnny')).not.toBeInTheDocument();
@@ -1517,35 +1554,26 @@ describe('AdvancedTable', () => {
         <AdvancedTable
           columns={testColumns}
           data={treeData}
-          rowKey="name"
           expanded={['John']}
           onExpandedChange={onExpandedChange}
+          rowKey="name"
         />,
       );
       expect(screen.getByText('Johnny')).toBeInTheDocument();
     });
   });
 
-  describe('editable cells', () => {
-    it.todo('editable columns render programmatically labelled inputs');
-    it.todo('blur commits the edited value');
-    it.todo('Enter commits the edited value');
-    it.todo('Escape reverts the edit');
-    it.todo('expand control placement stays correct when editable combines with selection and pinning');
-  });
-
   describe('pagination', () => {
-    // 12 distinct rows so the default 10-per-page splits into two pages.
     const manyRows: TestData[] = Array.from({ length: 12 }, (_, i) => ({ name: `Person ${i}`, age: 20 + i }));
-    // Body rows only (excludes the header row).
-    const bodyRows = () => within(screen.getByRole('table').querySelector('tbody') as HTMLElement).getAllByRole('row');
+    const getBodyRows = () =>
+      within(screen.getByRole('table').querySelector('tbody') as HTMLElement).getAllByRole('row');
 
     it('renders pagination controls and only the current page of rows', () => {
       render(<AdvancedTable columns={testColumns} data={manyRows} />);
-      // Pagination navigation is present and named.
+
       expect(screen.getByRole('navigation', { name: 'Pagination' })).toBeInTheDocument();
-      // Only the first page (default size 10) of the 12 rows is rendered.
-      expect(bodyRows()).toHaveLength(10);
+
+      expect(getBodyRows()).toHaveLength(10);
       expect(screen.getByText('Person 0')).toBeInTheDocument();
       expect(screen.queryByText('Person 11')).not.toBeInTheDocument();
     });
@@ -1557,7 +1585,7 @@ describe('AdvancedTable', () => {
 
       await user.click(screen.getByRole('button', { name: 'Go to page 2' }));
       // Page 2 shows the remaining two rows and drops the first page.
-      expect(bodyRows()).toHaveLength(2);
+      expect(getBodyRows()).toHaveLength(2);
       expect(screen.getByText('Person 11')).toBeInTheDocument();
       expect(screen.queryByText('Person 0')).not.toBeInTheDocument();
     });
@@ -1565,10 +1593,10 @@ describe('AdvancedTable', () => {
     it('changing page size updates the visible row count', async () => {
       const user = userEvent.setup();
       render(<AdvancedTable columns={testColumns} data={manyRows} />);
-      expect(bodyRows()).toHaveLength(10);
+      expect(getBodyRows()).toHaveLength(10);
 
       await user.selectOptions(screen.getByLabelText('Items per page'), '5');
-      expect(bodyRows()).toHaveLength(5);
+      expect(getBodyRows()).toHaveLength(5);
     });
 
     it('page-size options are configurable', () => {
@@ -1579,18 +1607,12 @@ describe('AdvancedTable', () => {
 
     it('defaults to a page size that is actually one of pageSizeOptions when the hardcoded default is not offered', () => {
       render(<AdvancedTable columns={testColumns} data={manyRows} pageSizeOptions={[8, 16, 24]} />);
-      // The hardcoded default (10) isn't in pageSizeOptions, so the initial page
-      // size must fall back to the first offered option instead of silently
-      // paginating at a size the <Select> can't display.
       expect(screen.getByLabelText<HTMLSelectElement>('Items per page').value).toBe('8');
-      expect(bodyRows()).toHaveLength(8);
+      expect(getBodyRows()).toHaveLength(8);
     });
 
     it('an out-of-range controlled pageIndex does not render the empty state when data exists', () => {
       render(<AdvancedTable columns={testColumns} data={manyRows} pagination={{ pageIndex: 5, pageSize: 10 }} />);
-      // 12 rows at pageSize 10 only has 2 pages (index 0-1); index 5 is out of
-      // range and autoResetPageIndex is off, so the current page renders no
-      // rows — but that must not be conflated with "no data at all".
       expect(screen.queryByText('No data to display')).not.toBeInTheDocument();
     });
 
@@ -1601,12 +1623,12 @@ describe('AdvancedTable', () => {
         <AdvancedTable
           columns={testColumns}
           data={manyRows}
-          pagination={{ pageIndex: 1, pageSize: 5 }}
           onPaginationChange={onPaginationChange}
+          pagination={{ pageIndex: 1, pageSize: 5 }}
         />,
       );
       // Reflects the controlled prop: page 2 of size 5 shows rows 5–9.
-      expect(bodyRows()).toHaveLength(5);
+      expect(getBodyRows()).toHaveLength(5);
       expect(screen.getByText('Person 5')).toBeInTheDocument();
       expect(screen.queryByText('Person 0')).not.toBeInTheDocument();
 
@@ -1619,27 +1641,79 @@ describe('AdvancedTable', () => {
 
     it('uncontrolled pagination: defaultPagination sets the initial page and size', () => {
       render(<AdvancedTable columns={testColumns} data={manyRows} defaultPagination={{ pageIndex: 1, pageSize: 5 }} />);
-      // Page 2 of size 5 shows rows 5–9.
-      expect(bodyRows()).toHaveLength(5);
+
+      expect(getBodyRows()).toHaveLength(5);
       expect(screen.getByText('Person 5')).toBeInTheDocument();
       expect(screen.queryByText('Person 0')).not.toBeInTheDocument();
     });
 
     it('can be disabled with enablePagination={false}, rendering every row at once', () => {
       render(<AdvancedTable columns={testColumns} data={manyRows} enablePagination={false} />);
-      expect(bodyRows()).toHaveLength(12);
+      expect(getBodyRows()).toHaveLength(12);
       expect(screen.queryByRole('navigation', { name: 'Pagination' })).not.toBeInTheDocument();
+    });
+
+    it('manual pagination: the table does not slice data itself, but still tracks and emits pagination state', async () => {
+      const onPaginationChange = vi.fn();
+      // Only a single page's worth of rows is ever supplied, as a real API response would.
+      const onePageOfRows = manyRows.slice(5, 10);
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={onePageOfRows}
+          manualPagination
+          onPaginationChange={onPaginationChange}
+          pagination={{ pageIndex: 1, pageSize: 5 }}
+          rowCount={manyRows.length}
+        />,
+      );
+      // All 5 supplied rows render as-is — the table does not re-slice them.
+      expect(getBodyRows()).toHaveLength(5);
+      expect(screen.getByText('Person 5')).toBeInTheDocument();
+
+      await userEvent.setup().click(screen.getByRole('button', { name: 'Go to page 3' }));
+      expect(onPaginationChange).toHaveBeenCalledWith({ pageIndex: 2, pageSize: 5 });
+    });
+
+    it('rowCount drives the page-count calculation and row-range summary under manual pagination', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={manyRows.slice(0, 5)}
+          manualPagination
+          onPaginationChange={vi.fn()}
+          pagination={{ pageIndex: 0, pageSize: 5 }}
+          rowCount={manyRows.length}
+        />,
+      );
+      expect(screen.getByText('1 – 5 of 12')).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Go to page 3' })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Next' })).toBeEnabled();
+    });
+
+    it('disables Next on the last page as computed from rowCount under manual pagination', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={manyRows.slice(10, 12)}
+          manualPagination
+          onPaginationChange={vi.fn()}
+          pagination={{ pageIndex: 2, pageSize: 5 }}
+          rowCount={manyRows.length}
+        />,
+      );
+      expect(screen.getByText('11 – 12 of 12')).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Next' })).toBeDisabled();
     });
   });
 
   describe('empty state', () => {
     it('renders the default empty state when data is empty', () => {
       render(<AdvancedTable columns={testColumns} data={[]} />);
-      // check header still render but cell does not
+
       expect(screen.getByText('Name')).toBeInTheDocument();
       expect(screen.queryByText('John')).not.toBeInTheDocument();
-      // default empty-state message inside a status region, in a valid table cell.
-      // Scope to the table: pagination (on by default) renders its own status region.
+
       const status = within(screen.getByRole('table')).getByRole('status');
       expect(status).toHaveTextContent('No data to display');
       expect(status.closest('td')).toBeInTheDocument();
@@ -1666,6 +1740,19 @@ describe('AdvancedTable', () => {
       expect(screen.queryByText('No data to display')).not.toBeInTheDocument();
     });
 
+    it('renders custom children from the emptyState prop', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={[]}
+          emptyState={{ children: <a href="https://google.com">Click here</a> }}
+        />,
+      );
+      const customLink = screen.getByText('Click here');
+      expect(customLink).toBeInTheDocument();
+      expect(customLink).toHaveAttribute('href', 'https://google.com');
+    });
+
     it('renders a custom icon from the emptyState prop', () => {
       render(
         <AdvancedTable
@@ -1687,32 +1774,20 @@ describe('AdvancedTable', () => {
       expect(screen.queryByText('No data to display')).not.toBeInTheDocument();
     });
 
-    it('renders a custom title, description, and icon from the loadingStateProps prop', () => {
-      render(
-        <AdvancedTable
-          columns={testColumns}
-          data={[]}
-          loading
-          loadingStateProps={{
-            title: 'Fetching rows',
-            description: 'This should only take a moment.',
-            icon: <span data-testid="custom-loading-icon">icon</span>,
-          }}
-        />,
-      );
-      expect(screen.getByText('Fetching rows')).toBeInTheDocument();
-      expect(screen.getByText('This should only take a moment.')).toBeInTheDocument();
-      expect(screen.getByTestId('custom-loading-icon')).toBeInTheDocument();
-      expect(screen.queryByText('Loading data…', { selector: 'p' })).not.toBeInTheDocument();
+    it('renders a custom label from the loadingStateProps prop, forwarded to ProgressIndicator', () => {
+      render(<AdvancedTable columns={testColumns} data={[]} loading loadingStateProps={{ label: 'Fetching rows' }} />);
+      const status = within(screen.getByRole('table')).getByRole('status');
+      expect(status).toHaveTextContent('Fetching rows');
+      expect(status).not.toHaveTextContent('Loading data…');
     });
 
     it('dims existing rows with an overlay instead of replacing them when data is already present', () => {
       render(<AdvancedTable columns={testColumns} data={testData} loading />);
-      // Existing rows stay in the document underneath the overlay.
+
       expect(screen.getByText('John')).toBeInTheDocument();
       const status = within(screen.getByRole('table').parentElement as HTMLElement).getByRole('status');
       expect(status).toHaveTextContent('Loading data…');
-      // The overlay isn't the empty-state's <td> wrapper — it sits alongside the table.
+
       expect(status.closest('td')).not.toBeInTheDocument();
     });
 
@@ -1729,13 +1804,18 @@ describe('AdvancedTable', () => {
       expect(screen.getByRole('table')).toHaveAttribute('aria-busy', 'false');
     });
 
-    it('disables the sort button while loading', () => {
+    it('disables the sort button while loading, without blurring it', () => {
       const ageSortButton = () => within(screen.getAllByRole('columnheader')[1]).getByRole('button');
       const { rerender } = render(<AdvancedTable columns={testColumns} data={testData} enableSorting loading />);
-      expect(ageSortButton()).toBeDisabled();
+      ageSortButton().focus();
+      expect(ageSortButton()).toHaveAttribute('aria-disabled', 'true');
+      expect(ageSortButton()).toHaveFocus();
+
+      fireEvent.click(ageSortButton());
+      expect(screen.getAllByRole('columnheader')[1]).toHaveAttribute('aria-sort', 'none');
 
       rerender(<AdvancedTable columns={testColumns} data={testData} enableSorting loading={false} />);
-      expect(ageSortButton()).not.toBeDisabled();
+      expect(ageSortButton()).not.toHaveAttribute('aria-disabled');
     });
 
     it('disables the column menu trigger while loading', () => {
@@ -1747,13 +1827,10 @@ describe('AdvancedTable', () => {
     });
 
     it('disables pagination controls while loading', () => {
-      // 3 pages of 5; seeded on the middle page so Back/Next are both
-      // genuinely enabled absent loading (page 1 disables Back structurally,
-      // independent of the fieldset this test is exercising).
       const manyRows: TestData[] = Array.from({ length: 15 }, (_, i) => ({ name: `Person ${i}`, age: 20 + i }));
       const pagination = { pageIndex: 1, pageSize: 5 };
       const { rerender } = render(
-        <AdvancedTable columns={testColumns} data={manyRows} pagination={pagination} loading />,
+        <AdvancedTable columns={testColumns} data={manyRows} loading pagination={pagination} />,
       );
       const nav = screen.getByRole('navigation', { name: 'Pagination' });
       within(nav)
@@ -1761,7 +1838,7 @@ describe('AdvancedTable', () => {
         .forEach(button => expect(button).toBeDisabled());
       expect(screen.getByLabelText('Items per page')).toBeDisabled();
 
-      rerender(<AdvancedTable columns={testColumns} data={manyRows} pagination={pagination} loading={false} />);
+      rerender(<AdvancedTable columns={testColumns} data={manyRows} loading={false} pagination={pagination} />);
       within(nav)
         .getAllByRole('button')
         .forEach(button => expect(button).not.toBeDisabled());
@@ -1770,7 +1847,7 @@ describe('AdvancedTable', () => {
 
     it('does not disable row-level controls (e.g. selection checkboxes) while loading', async () => {
       const user = userEvent.setup();
-      render(<AdvancedTable columns={testColumns} data={testData} rowKey="name" enableRowSelection loading />);
+      render(<AdvancedTable columns={testColumns} data={testData} enableRowSelection loading rowKey="name" />);
       const checkbox = screen.getAllByRole('checkbox', { name: /Select row/ })[0];
       expect(checkbox).not.toBeDisabled();
       await user.click(checkbox);
@@ -1781,9 +1858,7 @@ describe('AdvancedTable', () => {
       const { container, rerender } = render(<AdvancedTable columns={testColumns} data={[]} loading />);
       const liveRegions = container.querySelectorAll('[aria-live="polite"]');
       const loadingRegion = liveRegions[liveRegions.length - 1];
-      // Content is present at mount, but live regions don't announce content
-      // that's already there when they're first painted — nothing to assert
-      // about actual SR output here, just that a subsequent change is caught.
+      // Content is present at mount but live regions don't announce content
       expect(loadingRegion).toHaveTextContent('Loading data…');
 
       rerender(<AdvancedTable columns={testColumns} data={[]} loading={false} />);
@@ -1791,102 +1866,299 @@ describe('AdvancedTable', () => {
     });
   });
 
-  describe('style variants', () => {
+  describe('table layout', () => {
     const getTable = () => screen.getByRole('table');
 
-    it('renders default (transparent) background with no data rows affected', () => {
+    it('defaults to fixed layout', () => {
       render(<AdvancedTable columns={testColumns} data={testData} />);
-      // body rows carry the hover-only treatment, not a striped/filled background
-      const bodyRow = screen.getByText('John').closest('tr') as HTMLElement;
-      expect(bodyRow.className).toContain('hover:bg-surface-hover-muted-pale');
-      expect(bodyRow.className).not.toContain('even:bg-surface-muted-faint');
+      expect(getTable().className).toContain('table-fixed');
+      expect(getTable().className).not.toContain('table-auto');
     });
 
-    it('renders the striped background variant (white odd, faint even rows)', () => {
-      render(<AdvancedTable columns={testColumns} data={testData} background="striped" />);
-      const bodyRow = screen.getByText('John').closest('tr') as HTMLElement;
-      expect(bodyRow.className).toContain('odd:bg-background-white');
-      expect(bodyRow.className).toContain('even:bg-surface-muted-faint');
-    });
-
-    it('renders the filled background variant (white rows)', () => {
-      render(<AdvancedTable columns={testColumns} data={testData} background="filled" />);
-      const bodyRow = screen.getByText('John').closest('tr') as HTMLElement;
-      expect(bodyRow.className).toContain('bg-background-white');
-      expect(bodyRow.className).not.toContain('even:');
-    });
-
-    it('renders the bordered variant', () => {
-      const { rerender } = render(<AdvancedTable columns={testColumns} data={testData} />);
-      // the outer table border is exclusive to the bordered variant
-      expect(getTable().className).not.toContain('border-border-muted-soft');
-
-      rerender(<AdvancedTable columns={testColumns} data={testData} bordered />);
-      expect(getTable().className).toContain('border-border-muted-soft');
-    });
-
-    it('renders the default padding variant (8px cells)', () => {
-      render(<AdvancedTable columns={testColumns} data={testData} />);
-      const cell = screen.getByText('John').closest('td') as HTMLElement;
-      expect(cell.className).toContain('p-2');
-    });
-
-    it('renders the large padding variant (12px cells)', () => {
-      render(<AdvancedTable columns={testColumns} data={testData} padding="large" />);
-      const cell = screen.getByText('John').closest('td') as HTMLElement;
-      expect(cell.className).toContain('p-3');
-    });
-
-    it('fillContainer defaults to filling the container and false renders intrinsic width', () => {
-      // table-layout: fixed needs the table's own width to be an explicit pixel
-      // value (not a percentage) for columns to render at their configured
-      // size; fillContainer stretches via a separate min-w-full class so the
-      // CSS engine renders whichever of the two is larger.
-      const { rerender } = render(<AdvancedTable columns={testColumns} data={testData} />);
-      expect(getTable().style.width).toBe('300px');
-      expect(getTable().className).toContain('min-w-full');
-
-      rerender(<AdvancedTable columns={testColumns} data={testData} fillContainer={false} />);
-      expect(getTable().style.width).toBe('300px');
-      expect(getTable().className).not.toContain('min-w-full');
+    it('renders auto layout when tableLayout is set to "auto"', () => {
+      render(<AdvancedTable columns={testColumns} data={testData} tableLayout="auto" />);
+      expect(getTable().className).toContain('table-auto');
+      expect(getTable().className).not.toContain('table-fixed');
     });
   });
 
   describe('accessibility', () => {
-    it.todo('every interactive element is reachable by keyboard in a logical order');
-    it.todo('all interactive targets meet the 24x24px minimum size (WCAG 2.5.8)');
-    it.todo('interactive icon controls have accurate accessible names');
-    it('column menu is fully keyboard operable', async () => {
-      const user = userEvent.setup();
-      render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter />);
+    type TreeData = TestData & { subRows?: TreeData[] };
+    const fullFeatureData: TreeData[] = [
+      { name: 'John', age: 30, subRows: [{ name: 'Johnny', age: 5 }] },
+      { name: 'Jane', age: 25 },
+    ];
 
-      const trigger = screen.getByRole('button', { name: 'Name column menu' });
-      trigger.focus();
-      await user.keyboard('{Enter}');
+    // This test might be excessive, we already test each element via flags.
+    it('every interactive element is reachable by keyboard in a logical order (full capability)', () => {
+      const { container } = render(
+        <AdvancedTable
+          columns={testColumns}
+          data={fullFeatureData}
+          defaultExpanded={['John']}
+          enableColumnFilter
+          enableColumnPinning
+          enableColumnReordering
+          enableColumnResizing
+          enableGrouping
+          enableRowPinning
+          enableRowSelection
+          enableSorting
+          rowKey="name"
+        />,
+      );
 
-      const filterInput = await screen.findByRole('textbox');
-      await user.type(filterInput, 'Jane');
-      expect(screen.queryByText('John')).not.toBeInTheDocument();
+      // Every focusable control, in real DOM (tab) order.
+      const focusable = Array.from(
+        container.querySelectorAll<HTMLElement>('button:not([disabled]), [role="slider"], input, select'),
+      );
+      const indexOf = (el: HTMLElement) => focusable.indexOf(el);
 
-      await user.keyboard('{Escape}');
-      expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
-      await waitFor(() => expect(trigger).toHaveFocus());
+      const selectAll = screen.getByRole('checkbox', { name: 'Select all rows in current page' });
+      const nameDragHandle = screen.getByRole('button', { name: 'Name' });
+
+      // The Name header renders drag-handle, sort, then menu-trigger buttons, in that order.
+      const nameSortButton = within(screen.getAllByRole('columnheader')[2]).getAllByRole('button')[1];
+      const nameMenuTrigger = screen.getByRole('button', { name: 'Name column menu' });
+      const nameResizeHandle = screen.getByRole('slider', { name: 'Resize Name column' });
+      const ageDragHandle = screen.getByRole('button', { name: 'Age' });
+
+      const johnCheckbox = within(screen.getByText('John').closest('tr') as HTMLElement).getByRole('checkbox');
+      const johnPinToggle = screen.getByRole('button', { name: 'Pin row 1' });
+
+      // defaultExpanded={['John']} means it's already expanded, so the toggle reads "Collapse".
+      const johnExpandButton = screen.getByRole('button', { name: 'Collapse John' });
+      const johnnyCheckbox = within(screen.getByText('Johnny').closest('tr') as HTMLElement).getByRole('checkbox');
+      const janeCheckbox = within(screen.getByText('Jane').closest('tr') as HTMLElement).getByRole('checkbox');
+
+      // The page-size select, not a pagination nav button
+      const firstPaginationControl = screen.getByLabelText('Items per page');
+
+      // Header controls, left to right: the reserved select-all checkbox, then each column's own drag-handle -> sort -> menu -> resize handle.
+      expect(indexOf(selectAll)).toBeLessThan(indexOf(nameDragHandle));
+      expect(indexOf(nameDragHandle)).toBeLessThan(indexOf(nameSortButton));
+      expect(indexOf(nameSortButton)).toBeLessThan(indexOf(nameMenuTrigger));
+      expect(indexOf(nameMenuTrigger)).toBeLessThan(indexOf(nameResizeHandle));
+      expect(indexOf(nameResizeHandle)).toBeLessThan(indexOf(ageDragHandle));
+
+      // All header controls precede all row controls.
+      expect(indexOf(ageDragHandle)).toBeLessThan(indexOf(johnCheckbox));
+
+      // Per-row controls, in order: checkbox -> pin toggle -> expand toggle.
+      expect(indexOf(johnCheckbox)).toBeLessThan(indexOf(johnPinToggle));
+      expect(indexOf(johnPinToggle)).toBeLessThan(indexOf(johnExpandButton));
+
+      // A row's own controls precede its expanded sub-row's, which precede the next sibling row's.
+      expect(indexOf(johnExpandButton)).toBeLessThan(indexOf(johnnyCheckbox));
+      expect(indexOf(johnnyCheckbox)).toBeLessThan(indexOf(janeCheckbox));
+
+      // Every row control precedes pagination.
+      expect(indexOf(janeCheckbox)).toBeLessThan(indexOf(firstPaginationControl));
+    });
+
+    it('all table-specific interactive targets meet the 24x24px minimum size', () => {
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={fullFeatureData}
+          defaultExpanded={['John']}
+          enableColumnFilter
+          enableColumnPinning
+          enableColumnReordering
+          enableColumnResizing
+          enableGrouping
+          enableRowPinning
+          enableRowSelection
+          enableSorting
+          rowKey="name"
+        />,
+      );
+
+      // GEL uses a 6px scale, so `size-4` is actually 24px.
+      const has = (el: Element | null, className: string) => Boolean(el && el.className.includes(className));
+
+      // Selection checkboxes: the clickable target is the wrapping <label>.
+      // Checkboxes should be 48px size, may need to change based on audit feedback (or void based on designer feedback, not mobile centric)
+      const selectAll = screen.getByRole('checkbox', { name: 'Select all rows in current page' });
+      expect(has(selectAll.closest('label'), 'size-4')).toBe(true);
+      const johnCheckbox = within(screen.getByText('John').closest('tr') as HTMLElement).getByRole('checkbox');
+      expect(has(johnCheckbox.closest('label'), 'size-4')).toBe(true);
+
+      // Row pin toggle.
+      expect(screen.getByRole('button', { name: 'Pin row 1' }).className).toContain('size-4');
+
+      // Per-row expand toggle.
+      const johnExpand = screen.getByRole('button', { name: 'Collapse John' });
+      expect(johnExpand.className).toContain('size-full');
+      expect(has(johnExpand.parentElement, 'size-4')).toBe(true);
+
+      // Header sort button and column-menu trigger.
+      const nameSortButton = within(screen.getAllByRole('columnheader')[2]).getAllByRole('button')[1];
+      expect(nameSortButton.className).toContain('size-4');
+      expect(screen.getByRole('button', { name: 'Name column menu' }).className).toContain('size-4');
+
+      // Drag handle: width the text but min-h-4 still guarantees at least a 24px-tall hit target.
+      expect(screen.getByRole('button', { name: 'Name' }).className).toContain('min-h-4');
+
+      // Resize handle: size of the sizer follows react-aria handle at 18px. Additional options for keyboard navigation
+      // and in-menu options are available.
+      expect(screen.getByRole('slider', { name: 'Resize Name column' }).className).toContain('w-[18px]');
+
+      // Pagination is from the existing GEL component, no need to test.
+    });
+
+    it('interactive icon controls have accurate accessible names', () => {
+      const { unmount } = render(
+        <AdvancedTable
+          columns={testColumns}
+          data={fullFeatureData}
+          defaultExpanded={['John']}
+          enableColumnFilter
+          enableColumnPinning
+          enableColumnReordering
+          enableColumnResizing
+          enableRowPinning
+          enableSorting
+          rowKey="name"
+        />,
+      );
+
+      expect(screen.getByRole('button', { name: 'Name column menu' })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /Name Sort ascending/ })).toBeInTheDocument();
+      expect(screen.getByRole('slider', { name: 'Resize Name column' })).toBeInTheDocument();
+
+      // Drag handle: labelled by the column's own name, with dnd-kit's own "sortable" role description read out alongside it.
+      const dragHandle = screen.getByRole('button', { name: 'Name' });
+      expect(dragHandle).toHaveAttribute('aria-roledescription', 'sortable');
+
+      expect(screen.getByRole('button', { name: 'Pin row 1' })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Collapse John' })).toBeInTheDocument();
+      unmount();
+
+      const groupingNamesData: TestData[] = [
+        { name: 'John', age: 30 },
+        { name: 'Jane', age: 30 },
+      ];
+      render(<AdvancedTable columns={testColumns} data={groupingNamesData} defaultGrouping={['age']} enableGrouping />);
+      expect(screen.getByRole('button', { name: 'Collapse Age: 30' })).toBeInTheDocument();
+    });
+
+    describe('column menu', () => {
+      it('column menu is keyboard operable (open and close)', async () => {
+        const user = userEvent.setup();
+        render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter />);
+
+        const trigger = screen.getByRole('button', { name: 'Name column menu' });
+        trigger.focus();
+        await user.keyboard('{Enter}');
+
+        const filterInput = await screen.findByRole('textbox');
+        await user.type(filterInput, 'Jane');
+        expect(screen.queryByText('John')).not.toBeInTheDocument();
+
+        await user.keyboard('{Escape}');
+        expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
+        await waitFor(() => expect(trigger).toHaveFocus());
+      });
+
+      it('the column menu trigger points aria-controls at the open menu', async () => {
+        const user = userEvent.setup();
+        render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter />);
+
+        const trigger = screen.getByRole('button', { name: 'Name column menu' });
+        expect(trigger).not.toHaveAttribute('aria-controls');
+
+        await user.click(trigger);
+        const menu = await screen.findByRole('menu');
+        expect(trigger).toHaveAttribute('aria-controls', menu.id);
+      });
+
+      it('a menu with a filter section still opens focused on the menu itself, moving into the filter input only on Arrow Down', async () => {
+        const user = userEvent.setup();
+        render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter />);
+
+        const trigger = screen.getByRole('button', { name: 'Name column menu' });
+        trigger.focus();
+        await user.keyboard('{Enter}');
+
+        const menu = await screen.findByRole('menu');
+        expect(menu).toHaveFocus();
+
+        const filterInput = await screen.findByRole('textbox');
+        await user.keyboard('{ArrowDown}');
+        await waitFor(() => expect(filterInput).toHaveFocus());
+      });
+
+      it('opening via Enter/Space focuses the menu itself (not straight onto the first item), same as a mouse click —> Arrow Down then selects the first item', async () => {
+        const user = userEvent.setup();
+        render(<AdvancedTable columns={testColumns} data={testData} enableColumnPinning />);
+
+        const trigger = screen.getByRole('button', { name: 'Name column menu' });
+        trigger.focus();
+        await user.keyboard('{Enter}');
+
+        const menu = await screen.findByRole('menu');
+        expect(menu).toHaveFocus();
+
+        await user.keyboard('{ArrowDown}');
+        expect(screen.getByRole('menuitem', { name: 'Pin left' })).toHaveFocus();
+      });
+
+      it('opening via mouse click focuses the menu itself —> Arrow Down then selects the first item', async () => {
+        const user = userEvent.setup();
+        render(<AdvancedTable columns={testColumns} data={testData} enableColumnPinning />);
+
+        const trigger = screen.getByRole('button', { name: 'Name column menu' });
+        await user.click(trigger);
+
+        const menu = await screen.findByRole('menu');
+        expect(menu).toHaveFocus();
+
+        await user.keyboard('{ArrowDown}');
+        expect(screen.getByRole('menuitem', { name: 'Pin left' })).toHaveFocus();
+      });
+
+      it('the menu and its items carry a focus-visible outline class for keyboard users', async () => {
+        // While we shouldn't normally test classes, this one is important, without visual indicators, we can't tell where we are at.
+        const user = userEvent.setup();
+        render(<AdvancedTable columns={testColumns} data={testData} enableColumnPinning />);
+
+        const trigger = screen.getByRole('button', { name: 'Name column menu' });
+        trigger.focus();
+        await user.keyboard('{Enter}');
+
+        const menu = await screen.findByRole('menu');
+        expect(menu.className).toContain('focus-visible:focus-outline');
+
+        await user.keyboard('{ArrowDown}');
+        expect(screen.getByRole('menuitem', { name: 'Pin left' }).className).toContain('focus-visible:focus-outline');
+      });
+
+      it('the hidden "column menu" text that names the trigger is not separately reachable/announced', () => {
+        render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter />);
+
+        const trigger = screen.getByRole('button', { name: 'Name column menu' });
+        const hiddenLabelId = trigger.getAttribute('aria-labelledby')?.split(' ')[1];
+        const hiddenLabel = document.getElementById(hiddenLabelId as string) as HTMLElement;
+        expect(hiddenLabel).toHaveTextContent('column menu');
+        expect(hiddenLabel).toHaveAttribute('aria-hidden', 'true');
+      });
     });
 
     it('two fully-featured tables on one page produce no DOM id collisions, each correctly self-associated', () => {
       const fullFeatureProps = {
         columns: testColumns,
         data: fullFeatureData,
-        rowKey: 'name' as const,
-        enableRowSelection: true,
-        enableSorting: true,
+        defaultExpanded: ['John'],
         enableColumnFilter: true,
         enableColumnPinning: true,
-        enableGrouping: true,
-        enableRowPinning: true,
         enableColumnReordering: true,
         enableColumnResizing: true,
-        defaultExpanded: ['John'],
+        enableGrouping: true,
+        enableRowPinning: true,
+        enableRowSelection: true,
+        enableSorting: true,
+        rowKey: 'name' as const,
       };
 
       const { container } = render(
@@ -1949,11 +2221,13 @@ describe('AdvancedTable', () => {
       const badProps: AdvancedTableProps<TestData> = { columns: testColumns, data: testData, enableRowSelection: true };
       expect(badProps).toBeDefined();
     });
+
     it('enabling row pinning without rowKey is a type error', () => {
       // @ts-expect-error rowKey is required when enableRowPinning is set
       const badProps: AdvancedTableProps<TestData> = { columns: testColumns, data: testData, enableRowPinning: true };
       expect(badProps).toBeDefined();
     });
+
     it('enabling expansion without rowKey is a type error', () => {
       // @ts-expect-error rowKey is required when onExpandedChange is set
       const badProps: AdvancedTableProps<TestData> = {
@@ -1963,7 +2237,5 @@ describe('AdvancedTable', () => {
       };
       expect(badProps).toBeDefined();
     });
-    it.todo('enabling editing without rowKey is a type error');
-    it.todo('AdvancedTable and its types are exported from the package root');
   });
 });

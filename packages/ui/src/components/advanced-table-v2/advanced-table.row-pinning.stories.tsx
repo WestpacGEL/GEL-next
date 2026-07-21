@@ -6,7 +6,7 @@ import { type AdvancedTablePinnedRowsState } from './advanced-table.types.js';
 import { makePersonData, personColumns } from './story-utils/index.js';
 
 // Two levels of subRows so pinning-cascades-to-sub-rows has something to demonstrate.
-const data = makePersonData(5, 2);
+const data = makePersonData(20, 2);
 
 const columns = personColumns;
 

@@ -4,8 +4,7 @@ export const styles = tv({
   slots: {
     thead: '',
     headerRow: '',
-    // transition-transform is static (not dnd-kit's own dynamic value)
-    th: 'border-b-3 border-border-hero bg-background-white text-left typography-body-9 font-medium whitespace-nowrap transition-transform duration-200 ease-in-out motion-reduce:transition-none',
+    th: 'border-b-3 border-border-hero bg-background-white text-left typography-body-9 font-medium whitespace-nowrap',
     // `relative` anchors the resize handle's `absolute` position here, not on the `<th>`.
     headerContent: 'relative flex flex-row items-center gap-1',
     sortButton:
@@ -25,11 +24,11 @@ export const styles = tv({
       true: { th: 'sticky bg-background-white' },
     },
     pinnedEdge: {
-      left: { th: 'shadow-[inset_-4px_0_4px_-4px_var(--tw-shadow-color)] shadow-black/10' },
-      right: { th: 'shadow-[inset_4px_0_4px_-4px_var(--tw-shadow-color)] shadow-black/10' },
+      left: { th: 'shadow-md' },
+      right: { th: 'shadow-md' },
     },
     isDragging: {
-      true: { th: 'relative opacity-80 transition-none' },
+      true: { th: 'relative opacity-80' },
     },
   },
   defaultVariants: {

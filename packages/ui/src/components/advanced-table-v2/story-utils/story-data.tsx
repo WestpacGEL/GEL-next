@@ -91,7 +91,7 @@ export const personColumns: AdvancedTableColumn<AdvancedPerson>[] = [
     ...optIn,
     render: value =>
       value ? (
-        <Badge type="pill" soft color={STATUS_COLOR[value]}>
+        <Badge soft color={STATUS_COLOR[value]}>
           {STATUS_LABEL[value]}
         </Badge>
       ) : null,

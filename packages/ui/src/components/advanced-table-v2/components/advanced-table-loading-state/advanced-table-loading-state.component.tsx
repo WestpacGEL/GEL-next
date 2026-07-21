@@ -4,17 +4,15 @@ import { styles as advancedTableLoadingStateStyles } from './advanced-table-load
 import { AdvancedTableLoadingStateProps } from './advanced-table-loading-state.types.js';
 
 export function AdvancedTableLoadingState({
-  title = 'Loading data…',
-  description,
-  icon,
+  label = 'Loading data…',
+  size = 'large',
+  ...props
 }: AdvancedTableLoadingStateProps) {
   const styles = advancedTableLoadingStateStyles();
 
   return (
     <div className={styles.container()} role="status">
-      <div className={styles.icon()}>{icon ?? <ProgressIndicator size="large" />}</div>
-      <p className={styles.title()}>{title}</p>
-      {description && <p className={styles.description()}>{description}</p>}
+      <ProgressIndicator size={size} label={label} {...props} />
     </div>
   );
 }

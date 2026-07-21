@@ -29,8 +29,8 @@ export const styles = tv({
     },
     // Shadow indicating the scroll boundary at a pinned column's outer edge.
     pinnedEdge: {
-      left: { td: 'shadow-[inset_-4px_0_4px_-4px_var(--tw-shadow-color)] shadow-black/10' },
-      right: { td: 'shadow-[inset_4px_0_4px_-4px_var(--tw-shadow-color)] shadow-black/10' },
+      left: { td: 'shadow-md' },
+      right: { td: 'shadow-md' },
     },
   },
   defaultVariants: {
