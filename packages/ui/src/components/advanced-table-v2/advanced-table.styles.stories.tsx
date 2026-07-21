@@ -2,6 +2,7 @@ import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
 
 import { AdvancedTable } from './advanced-table.component.js';
 import { makePersonData, personColumns } from './story-utils/index.js';
+import { AdvancedTableColumn } from './advanced-table.types.js';
 
 const data = makePersonData(10);
 
@@ -105,5 +106,42 @@ export const FillContainer: Story = {
     >
       <AdvancedTable caption="Fill container" columns={columns} data={data} fillContainer />
     </div>
+  ),
+};
+
+type Row = { id: string; name: string; note: string };
+
+const tableLayoutData: Row[] = [
+  { id: '1', name: 'Ava Chen', note: 'Short note.' },
+  { id: '2', name: 'Marcus Webb', note: 'Anunbreakablesinglewordvaluewithnospacesorhyphensanywhereinit' },
+  { id: '3', name: 'Priya Patel', note: 'Another short one.' },
+];
+
+const tableLayoutColumns: AdvancedTableColumn<Row>[] = [
+  { key: 'name', title: 'Name', width: 150 },
+  { key: 'note', title: 'Note', width: 150 },
+];
+
+/**
+ * The default `tableLayout: 'fixed'` enforces every column's configured
+ * width exactly — the second row's unbreakable "Note" value overflows the
+ * column rather than growing it.
+ */
+export const FixedLayout: Story = {
+  render: () => (
+    <AdvancedTable caption="Fixed layout" columns={tableLayoutColumns} data={tableLayoutData} tableLayout="fixed" />
+  ),
+};
+
+/**
+ * `tableLayout: 'auto'` lets the browser expand the "Note" column past its
+ * configured width to fit the unbreakable value in the second row —
+ * content-driven sizing with no measurement logic required.
+ *
+ * Column pinning is unavailable in this mode.
+ */
+export const AutoLayout: Story = {
+  render: () => (
+    <AdvancedTable caption="Auto layout" columns={tableLayoutColumns} data={tableLayoutData} tableLayout="auto" />
   ),
 };

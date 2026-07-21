@@ -371,6 +371,13 @@ type AdvancedTableBaseProps<T> = {
    */
   fillContainer?: boolean;
   /**
+   * `'fixed'` (the default) gives every column an enforced, exact width via `table-layout: fixed` and
+   *  a `<colgroup>` — required for column pinning. `'auto'` letting the browser expand a column past its
+   * configured width for content that can't shrink. Combining `'auto'` with `enableColumnPinning` is unsupported.
+   * @default 'fixed'
+   */
+  tableLayout?: 'fixed' | 'auto';
+  /**
    * Configures the empty state shown when `data` is empty.
    */
   emptyState?: AdvancedTableEmptyStateProps;

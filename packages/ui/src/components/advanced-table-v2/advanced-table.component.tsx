@@ -145,6 +145,7 @@ export function AdvancedTable<T>({
   padding,
   bordered,
   fillContainer,
+  tableLayout = 'fixed',
   emptyState,
   loading = false,
   loadingStateProps,
@@ -516,7 +517,7 @@ export function AdvancedTable<T>({
     ],
   );
 
-  const styles = advancedTableStyles({ bordered, fillContainer });
+  const styles = advancedTableStyles({ bordered, fillContainer, tableLayout });
 
   const tableElement = (
     <table
