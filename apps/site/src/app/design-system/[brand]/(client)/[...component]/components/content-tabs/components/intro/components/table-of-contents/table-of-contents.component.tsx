@@ -1,7 +1,7 @@
 'use client';
 import { List, ListItem } from '@westpac/ui';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { ReactNode } from 'react';
 
 import { ArrowDownRightIcon } from '@/components/icons';
@@ -46,6 +46,8 @@ export function TableOfContents({ contents = [] }: TableOfContentsProps) {
 
 function NavLink({ href, children }: { children?: ReactNode; href: string }) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const query = searchParams.toString();
 
   return (
     <Link
@@ -54,7 +56,7 @@ function NavLink({ href, children }: { children?: ReactNode; href: string }) {
         hover:underline
         focus-visible:focus-outline
       `}
-      href={`${pathname}${href}`}
+      href={`${pathname}${query ? `?${query}` : ''}${href}`}
       replace
       scroll
     >
