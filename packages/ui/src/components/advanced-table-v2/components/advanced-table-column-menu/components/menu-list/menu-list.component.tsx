@@ -10,21 +10,18 @@ import { MenuListProps } from './menu-list.types.js';
 
 export const MenuList = forwardRef(function MenuList<T extends object>(
   props: MenuListProps<T>,
-  forwardedRef: React.ForwardedRef<HTMLUListElement>,
+  forwardedRef: React.ForwardedRef<HTMLDivElement>,
 ) {
   const state = useTreeState(props);
 
-  const internalRef = useRef<HTMLUListElement>(null);
-  const ref = (forwardedRef ?? internalRef) as React.RefObject<HTMLUListElement>;
+  const internalRef = useRef<HTMLDivElement>(null);
+  const ref = (forwardedRef ?? internalRef) as React.RefObject<HTMLDivElement>;
   const { menuProps: ariaMenuProps } = useMenu(props, state, ref);
 
   const styles = menuListStyles();
 
   return (
-    <ul {...ariaMenuProps} ref={ref} className={styles.list()}>
-      {/* Every top-level item in this menu is wrapped in a Section (see
-          advanced-table-column-menu.component.tsx) — the raw-item filter
-          special-case lives in MenuSection, which is where it's reachable. */}
+    <div {...ariaMenuProps} ref={ref} className={styles.list()}>
       {[...state.collection].map(item =>
         item.type === 'section' ? (
           <MenuSection key={item.key} section={item} state={state} />
@@ -32,6 +29,6 @@ export const MenuList = forwardRef(function MenuList<T extends object>(
           <MenuItem key={item.key} item={item} state={state} />
         ),
       )}
-    </ul>
+    </div>
   );
-}) as <T extends object>(props: MenuListProps<T> & { ref?: React.Ref<HTMLUListElement> }) => React.ReactElement;
+}) as <T extends object>(props: MenuListProps<T> & { ref?: React.Ref<HTMLDivElement> }) => React.ReactElement;

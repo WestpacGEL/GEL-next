@@ -129,7 +129,14 @@ export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuPr
 
   const btnRef = useRef(null);
   const { menuTriggerProps, menuProps } = useMenuTrigger<object>({}, state, btnRef);
-  const { buttonProps } = useButton({ ...menuTriggerProps, isDisabled: loading }, btnRef);
+
+  const { buttonProps } = useButton(
+    {
+      ...menuTriggerProps,
+      isDisabled: loading,
+    },
+    btnRef,
+  );
   const styles = advancedTableColumnMenuStyles();
 
   const labelId = `${tableId}-${header.id}-label`;
@@ -176,8 +183,7 @@ export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuPr
         aria-labelledby={`${labelId} ${menuActionId}`}
         ref={btnRef}
       />
-      {/* TODO: this column menu is announced twice*/}
-      <VisuallyHidden id={menuActionId} tag="span">
+      <VisuallyHidden id={menuActionId} tag="span" aria-hidden>
         column menu
       </VisuallyHidden>
       {state.isOpen && (
