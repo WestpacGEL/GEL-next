@@ -6,6 +6,7 @@ import { ResponsiveVariants } from '../../types/responsive-variants.types.js';
 import { styles } from './heading.styles.js';
 
 type Variants = VariantProps<typeof styles>;
+export type HeadingRef = HTMLHeadingElement;
 
 export type HeadingProps = {
   /**
