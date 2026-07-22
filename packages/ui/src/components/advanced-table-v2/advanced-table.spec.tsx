@@ -125,9 +125,6 @@ describe('AdvancedTable', () => {
       expect(screen.getByText('John')).toBeInTheDocument();
       expect(screen.getByText('Jane')).toBeInTheDocument();
     });
-
-    it.todo('with controlled data, edits emit onDataChange and do not mutate rendered rows until data is fed back');
-    it.todo('with defaultData, edits update the rendered rows internally');
   });
 
   describe('sorting', () => {
@@ -684,35 +681,6 @@ describe('AdvancedTable', () => {
       expect(screen.getByText(/Age: 30 \(2 rows\)/, { selector: 'div' })).toBeInTheDocument();
     });
 
-    // // Regression coverage for ticket 09's interaction with grouping (ticket 08):
-    // // grouping's implicit "start fully expanded" default must still hold, but
-    // // group rows now also get a real, working collapse/expand toggle — ticket 08
-    // // shipped that banner with no toggle at all.
-    // it('a newly-grouped column keeps its children visible by default, and the group row exposes a working collapse/expand toggle', async () => {
-    //   const user = userEvent.setup();
-    //   render(<AdvancedTable columns={testColumns} data={groupingTestData} enableGrouping />);
-
-    //   await openColumnMenu(user, 'Age');
-    //   await user.click(screen.getByRole('menuitem', { name: 'Group by Age' }));
-    //   await user.keyboard('{Escape}');
-
-    //   // Ticket 08's default-expanded behavior still holds: children visible immediately.
-    //   expect(screen.getByText('John')).toBeInTheDocument();
-    //   expect(screen.getByText('Jane')).toBeInTheDocument();
-
-    //   // New in this ticket: the group banner has a working toggle.
-    //   const groupToggle = screen.getByRole('button', { name: 'Collapse Age: 30' });
-    //   await user.click(groupToggle);
-    //   expect(screen.queryByText('John')).not.toBeInTheDocument();
-    //   expect(screen.queryByText('Jane')).not.toBeInTheDocument();
-    //   // Bob's group (Age: 25) is unaffected by collapsing the Age: 30 group.
-    //   expect(screen.getByText('Bob')).toBeInTheDocument();
-
-    //   await user.click(screen.getByRole('button', { name: 'Expand Age: 30' }));
-    //   expect(screen.getByText('John')).toBeInTheDocument();
-    //   expect(screen.getByText('Jane')).toBeInTheDocument();
-    // });
-
     it('an explicit defaultExpanded overrides grouping\'s implicit "start expanded" default: hidden by default', () => {
       render(
         <AdvancedTable
@@ -1182,7 +1150,6 @@ describe('AdvancedTable', () => {
       );
     });
 
-    // TODO: check this one
     it('selection keyed by rowKey survives sorting, filtering, and page changes', async () => {
       const user = userEvent.setup();
       const manyRows: TestData[] = Array.from({ length: 12 }, (_, i) => ({ name: `Person${i}`, age: 20 + i }));
@@ -1499,9 +1466,7 @@ describe('AdvancedTable', () => {
       expect(johnCheckbox).toBeChecked();
       expect(johnnyCheckbox).toBeChecked();
       expect(janetCheckbox).toBeChecked();
-      expect(onSelectionChange).toHaveBeenLastCalledWith(
-        expect.arrayContaining(['John', 'John.Johnny', 'John.Janet']),
-      );
+      expect(onSelectionChange).toHaveBeenLastCalledWith(expect.arrayContaining(['John', 'John.Johnny', 'John.Janet']));
     });
 
     it('select-all agrees with the per-row checkboxes once every child of a parent is selected individually', async () => {

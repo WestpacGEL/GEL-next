@@ -93,68 +93,68 @@ const DND_MODIFIERS = [restrictToHorizontalAxis];
  * pinning, resizing, expansion, editing — are added in later slices.
  */
 export function AdvancedTable<T>({
-  columns,
-  data,
-  defaultData,
-  caption,
-  showCaption,
   'aria-labelledby': ariaLabelledBy,
-  id,
-  enableSorting,
-  sorting: sortingProp,
-  defaultSorting: defaultSortingProp,
-  onSortingChange: onSortingChangeProp,
-  manualSorting,
-  enablePagination = true,
-  pagination: paginationProp,
-  defaultPagination: defaultPaginationProp,
-  onPaginationChange: onPaginationChangeProp,
-  manualPagination,
-  rowCount,
-  pageSizeOptions = DEFAULT_PAGE_SIZE_OPTIONS,
-  enableRowSelection,
-  rowKey,
-  selectedRows: selectedRowsProp,
-  defaultSelectedRows: defaultSelectedRowsProp,
-  onSelectionChange: onSelectionChangeProp,
-  enableColumnFilter,
-  columnFilters: columnFiltersProp,
-  defaultColumnFilters: defaultColumnFiltersProp,
-  onColumnFiltersChange: onColumnFiltersChangeProp,
-  manualFiltering,
-  enableColumnReordering,
-  columnOrder: columnOrderProp,
-  defaultColumnOrder: defaultColumnOrderProp,
-  onColumnOrderChange: onColumnOrderChangeProp,
-  enableColumnResizing,
-  columnSizing: columnSizingProp,
-  defaultColumnSizing: defaultColumnSizingProp,
-  onColumnSizingChange: onColumnSizingChangeProp,
-  enableColumnPinning,
-  columnPinning: columnPinningProp,
-  defaultColumnPinning: defaultColumnPinningProp,
-  onColumnPinningChange: onColumnPinningChangeProp,
-  enableGrouping,
-  grouping: groupingProp,
-  defaultGrouping: defaultGroupingProp,
-  onGroupingChange: onGroupingChangeProp,
-  expanded: expandedProp,
-  defaultExpanded: defaultExpandedProp,
-  onExpandedChange: onExpandedChangeProp,
-  renderDetailPanel,
-  getRowCanExpand,
-  enableRowPinning,
-  pinnedRows: pinnedRowsProp,
-  defaultPinnedRows: defaultPinnedRowsProp,
-  onPinnedRowsChange: onPinnedRowsChangeProp,
   background,
-  padding,
   bordered,
-  fillContainer,
-  tableLayout = 'fixed',
+  caption,
+  columnFilters: columnFiltersProp,
+  columnOrder: columnOrderProp,
+  columnPinning: columnPinningProp,
+  columns,
+  columnSizing: columnSizingProp,
+  data,
+  defaultColumnFilters: defaultColumnFiltersProp,
+  defaultColumnOrder: defaultColumnOrderProp,
+  defaultColumnPinning: defaultColumnPinningProp,
+  defaultColumnSizing: defaultColumnSizingProp,
+  defaultData,
+  defaultExpanded: defaultExpandedProp,
+  defaultGrouping: defaultGroupingProp,
+  defaultPagination: defaultPaginationProp,
+  defaultPinnedRows: defaultPinnedRowsProp,
+  defaultSelectedRows: defaultSelectedRowsProp,
+  defaultSorting: defaultSortingProp,
   emptyState,
+  enableColumnFilter,
+  enableColumnPinning,
+  enableColumnReordering,
+  enableColumnResizing,
+  enableGrouping,
+  enablePagination = true,
+  enableRowPinning,
+  enableRowSelection,
+  enableSorting,
+  expanded: expandedProp,
+  fillContainer,
+  getRowCanExpand,
+  grouping: groupingProp,
+  id,
   loading = false,
   loadingStateProps,
+  manualFiltering,
+  manualPagination,
+  manualSorting,
+  onColumnFiltersChange: onColumnFiltersChangeProp,
+  onColumnOrderChange: onColumnOrderChangeProp,
+  onColumnPinningChange: onColumnPinningChangeProp,
+  onColumnSizingChange: onColumnSizingChangeProp,
+  onExpandedChange: onExpandedChangeProp,
+  onGroupingChange: onGroupingChangeProp,
+  onPaginationChange: onPaginationChangeProp,
+  onPinnedRowsChange: onPinnedRowsChangeProp,
+  onSelectionChange: onSelectionChangeProp,
+  onSortingChange: onSortingChangeProp,
+  padding,
+  pageSizeOptions = DEFAULT_PAGE_SIZE_OPTIONS,
+  pagination: paginationProp,
+  pinnedRows: pinnedRowsProp,
+  renderDetailPanel,
+  rowCount,
+  rowKey,
+  selectedRows: selectedRowsProp,
+  showCaption,
+  sorting: sortingProp,
+  tableLayout = 'fixed',
 }: AdvancedTableProps<T>) {
   const generatedId = useId();
   const tableId = id ?? generatedId;
@@ -213,16 +213,9 @@ export function AdvancedTable<T>({
     onGroupingChangeProp,
   );
 
-  // Grouping's rows start fully expanded by default (so a newly-grouped
-  // column's children are visible immediately) — no other special-casing:
-  // `true` flows through the same converters/handler as any other expansion
-  // state below. NOTE: `true` expands the *entire* table, not just group
-  // rows — if `enableGrouping` is combined with unrelated tree/subRows data
-  // on the same table, that data starts expanded too. Known, accepted
-  // limitation for this rare cross-feature combo (same deferred-combo
-  // precedent as grouping x pinning, ticket 14).
   const [expandedState, setExpandedState] = useControlledState<AdvancedTableExpandedState>(
     expandedProp,
+    // If there are already grouped states, they are expanded by default
     defaultExpandedProp ?? (enableGrouping ? true : EMPTY_EXPANDED),
     onExpandedChangeProp,
   );
@@ -247,7 +240,7 @@ export function AdvancedTable<T>({
 
   // Not filtered against `validRowIds()` like selection is above — expansion ids
   // can include ids TanStack makes up itself (e.g. for grouped rows), which
-  // validRowIds wouldn't recognize. See idsToExpandedState (utils/row-id.ts).
+  // validRowIds wouldn't recognize. See `idsToExpandedState`.
   const resolvedExpandedState = useMemo(() => idsToExpandedState(expandedState), [expandedState]);
 
   // Controlled -> TanStack: Expands the public, parent-only pinned ids into TanStack's fully-cascaded
@@ -273,9 +266,22 @@ export function AdvancedTable<T>({
     setPinnedRowIds(collapsePinnedRowIds(next.top ?? [], resolvedData, rowKey));
   };
 
-  // TanStack's own default `getRowCanExpand` only returns true for rows with
-  // `subRows` — which would silently block `renderDetailPanel` from ever
-  // opening on a leaf row.
+  // TanStack types filter `value` as `unknown`; the public contract narrows it
+  // to `string`, so the updater is resolved here rather than passed straight
+  // through like sorting's setter.
+  const handleColumnFiltersChange: OnChangeFn<ColumnFiltersState> = updaterOrValue => {
+    const current: ColumnFiltersState = columnFiltersState;
+    const next = typeof updaterOrValue === 'function' ? updaterOrValue(current) : updaterOrValue;
+    setColumnFiltersState(next.map(filter => ({ id: filter.id, value: String(filter.value) })));
+  };
+
+  const handleColumnOrderChange: OnChangeFn<ColumnOrderState> = updaterOrValue => {
+    const next = typeof updaterOrValue === 'function' ? updaterOrValue(resolvedColumnOrderState) : updaterOrValue;
+    setColumnOrderState(next.filter(id => !RESERVED_COLUMN_IDS.includes(id)));
+  };
+
+  // Overwrite: TanStack's own default `getRowCanExpand` only returns true for rows with
+  // `subRows` which would block `renderDetailPanel` from ever opening the panel.
   const resolvedGetRowCanExpand = useMemo<((row: Row<T>) => boolean) | undefined>(() => {
     if (getRowCanExpand) return row => getRowCanExpand(row.original, { depth: row.depth });
     if (renderDetailPanel) return () => true;
@@ -288,31 +294,14 @@ export function AdvancedTable<T>({
     [resolvedData, getRowCanExpand, renderDetailPanel],
   );
 
-  // TanStack types filter `value` as `unknown`; the public contract narrows it
-  // to `string`, so the updater is resolved here rather than passed straight
-  // through like sorting's setter.
-  const handleColumnFiltersChange: OnChangeFn<ColumnFiltersState> = updaterOrValue => {
-    const current: ColumnFiltersState = columnFiltersState;
-    const next = typeof updaterOrValue === 'function' ? updaterOrValue(current) : updaterOrValue;
-    setColumnFiltersState(next.map(filter => ({ id: filter.id, value: String(filter.value) })));
-  };
-
-  // Forces the reserved selection/pin columns to the front so a controlled `columnOrder` can never smuggle them out of place.
+  // Forces the reserved selection/pin columns to the front so a controlled `columnOrder` can never set them out of place.
   const resolvedColumnOrderState = useMemo(() => {
     const reserved = getActiveReservedColumnIds({ enableRowSelection, enableRowPinning });
     const userOrder = columnOrderState.filter(id => !RESERVED_COLUMN_IDS.includes(id));
     return [...reserved, ...userOrder];
   }, [columnOrderState, enableRowSelection, enableRowPinning]);
 
-  const handleColumnOrderChange: OnChangeFn<ColumnOrderState> = updaterOrValue => {
-    const next = typeof updaterOrValue === 'function' ? updaterOrValue(resolvedColumnOrderState) : updaterOrValue;
-    setColumnOrderState(next.filter(id => !RESERVED_COLUMN_IDS.includes(id)));
-  };
-
-  // Forces the reserved selection/pin columns into `left`, in RESERVED_COLUMN_IDS
-  // order; never leaks into the public columnPinning contract (stripped again
-  // in the change handler below, via the same RESERVED_COLUMN_IDS list so a
-  // future reserved column can't slip through either side by accident).
+  // Forces the reserved selection/pin columns into `left`
   const resolvedColumnPinningState = useMemo(() => {
     const userLeft = (columnPinningState.left ?? []).filter(id => !RESERVED_COLUMN_IDS.includes(id));
     const reservedLeft = getActiveReservedColumnIds({ enableRowSelection, enableRowPinning });
@@ -334,11 +323,11 @@ export function AdvancedTable<T>({
     () => [
       ...buildReservedColumns<T>({ enableRowSelection, enableRowPinning }),
       ...columnGenerator(columns, {
-        enableSorting,
         enableColumnFilter,
         enableColumnPinning,
-        enableGrouping,
         enableColumnResizing,
+        enableGrouping,
+        enableSorting,
         hasDetailPanel,
         hasExpandableRows: tableHasExpandableRows,
         tableId,
@@ -346,13 +335,13 @@ export function AdvancedTable<T>({
     ],
     [
       columns,
-      enableSorting,
-      enableRowSelection,
-      enableRowPinning,
       enableColumnFilter,
       enableColumnPinning,
-      enableGrouping,
       enableColumnResizing,
+      enableGrouping,
+      enableRowPinning,
+      enableRowSelection,
+      enableSorting,
       hasDetailPanel,
       tableHasExpandableRows,
       tableId,
@@ -361,45 +350,45 @@ export function AdvancedTable<T>({
 
   const table = useReactTable<T>(
     buildTableOptions<T>({
-      data: resolvedData,
+      columnFiltersState,
+      columnOrderState: resolvedColumnOrderState,
+      columnPinningState: resolvedColumnPinningState,
       columns: tableColumns,
-      tableId,
-      enableSorting,
-      sortingState,
-      onSortingChange: setSortingState,
-      manualSorting,
+      columnSizingState,
+      data: resolvedData,
+      enableColumnFilter,
+      enableColumnPinning,
+      enableColumnReordering,
+      enableColumnResizing,
+      enableGrouping,
       enablePagination,
-      paginationState,
-      onPaginationChange: setPaginationState,
+      enableRowPinning,
+      enableRowSelection,
+      enableSorting,
+      expandedState: resolvedExpandedState,
+      getRowCanExpand: resolvedGetRowCanExpand,
+      groupingState,
+      hasReservedPinning: Boolean(enableRowSelection || enableRowPinning),
+      manualFiltering,
       manualPagination,
+      manualSorting,
+      onColumnFiltersChange: handleColumnFiltersChange,
+      onColumnOrderChange: handleColumnOrderChange,
+      onColumnPinningChange: handleColumnPinningChange,
+      onColumnSizingChange: setColumnSizingState,
+      onExpandedChange: handleExpandedChange,
+      onGroupingChange: setGroupingState,
+      onPaginationChange: setPaginationState,
+      onRowPinningChange: handleRowPinningChange,
+      onRowSelectionChange: handleRowSelectionChange,
+      onSortingChange: setSortingState,
+      paginationState,
       rowCount,
       rowKey,
-      enableRowSelection,
-      rowSelectionState,
-      onRowSelectionChange: handleRowSelectionChange,
-      enableColumnFilter,
-      columnFiltersState,
-      onColumnFiltersChange: handleColumnFiltersChange,
-      manualFiltering,
-      enableColumnReordering,
-      columnOrderState: resolvedColumnOrderState,
-      onColumnOrderChange: handleColumnOrderChange,
-      enableColumnResizing,
-      columnSizingState,
-      onColumnSizingChange: setColumnSizingState,
-      enableColumnPinning,
-      columnPinningState: resolvedColumnPinningState,
-      onColumnPinningChange: handleColumnPinningChange,
-      hasReservedPinning: Boolean(enableRowSelection || enableRowPinning),
-      enableGrouping,
-      groupingState,
-      onGroupingChange: setGroupingState,
-      expandedState: resolvedExpandedState,
-      onExpandedChange: handleExpandedChange,
-      getRowCanExpand: resolvedGetRowCanExpand,
-      enableRowPinning,
       rowPinningState: resolvedRowPinningState,
-      onRowPinningChange: handleRowPinningChange,
+      rowSelectionState,
+      sortingState,
+      tableId,
     }),
   );
 
@@ -458,16 +447,9 @@ export function AdvancedTable<T>({
     [table],
   );
 
-  // Check if any data exists before pagination
+  // Check if any data exists before pagination, provided for context
   const hasRowData = table.getPrePaginationRowModel().rows.length > 0;
 
-  // `getVisibleLeafColumns()` is TanStack-memoized (stable reference until the
-  // column set/order/pinning actually changes), so deriving from it keeps the
-  // <colgroup> and total width from being rebuilt on every unrelated re-render.
-  // That memo isn't keyed on sizing, though — `column.getSize()`'s return value
-  // can change (drag, keyboard, or a controlled columnSizing prop) with no
-  // change in the columns array itself, so columnSizingState is added below
-  // purely to force a recompute when a resize actually happens.
   const visibleLeafColumns = table.getVisibleLeafColumns();
   // A percentage-width column (`meta.width` is a string) never enters TanStack's
   // numeric sizing state, so it contributes nothing to the pixel sum below —
@@ -500,39 +482,39 @@ export function AdvancedTable<T>({
   const pageSizeOptionsKey = pageSizeOptions.join(',');
   const contextValue = useMemo<AdvancedTableContextValue<T>>(
     () => ({
-      table,
-      tableId,
-      emptyState,
-      pageSizeOptions,
       background,
-      padding,
       bordered,
+      emptyState,
+      enableColumnPinning,
+      enableColumnReordering,
       loading,
       loadingStateProps,
-      enableColumnPinning,
       onPinAnnouncement: setPinAnnouncement,
-      onRowPinAnnouncement: setRowPinAnnouncement,
-      enableColumnReordering,
       onReorderAnnouncement: setReorderAnnouncement,
-      reorderInfo,
       onResizeAnnouncement: setResizeAnnouncement,
+      onRowPinAnnouncement: setRowPinAnnouncement,
+      padding,
+      pageSizeOptions,
       renderDetailPanel,
+      reorderInfo,
+      table,
+      tableId,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [
-      table,
-      tableId,
-      emptyState,
-      pageSizeOptionsKey,
       background,
-      padding,
       bordered,
-      loading,
-      loadingStateProps,
+      emptyState,
       enableColumnPinning,
       enableColumnReordering,
-      reorderInfo,
+      loading,
+      loadingStateProps,
+      padding,
+      pageSizeOptionsKey,
       renderDetailPanel,
+      reorderInfo,
+      table,
+      tableId,
     ],
   );
 
@@ -560,14 +542,14 @@ export function AdvancedTable<T>({
     </table>
   );
 
-  // We need to conditionally render DnD or the buttons will still have accessibility attributes
+  // We need to conditionally render DnD or the text cells will still have accessibility attributes
   const resolvedTableElement = enableColumnReordering ? (
     <DndContext
-      sensors={sensors}
+      accessibility={dndAccessibility}
       collisionDetection={closestCenter}
       modifiers={DND_MODIFIERS}
       onDragEnd={handleDragEnd}
-      accessibility={dndAccessibility}
+      sensors={sensors}
     >
       <SortableContext items={reorderInfo.ids} strategy={horizontalListSortingStrategy}>
         {tableElement}
