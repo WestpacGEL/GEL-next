@@ -9,6 +9,11 @@ export type PassCodeProps = {
    */
   length: number;
   /**
+   * Enables mobile OS one-time-code (OTP) autofill by setting
+   * `autoComplete="one-time-code"` on each input. Use for SMS passcode flows.
+   */
+  oneTimeCode?: boolean;
+  /**
    * Callback when the input is blurred
    */
   onBlur?: (index: number, event: FocusEvent<HTMLInputElement>) => void;

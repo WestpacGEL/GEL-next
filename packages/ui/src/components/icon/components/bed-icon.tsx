@@ -1,0 +1,47 @@
+import React, { Fragment } from 'react';
+
+import { Icon } from '../icon.component.js';
+import { type IconProps } from '../icon.types.js';
+
+export function BedIcon({
+  look = 'filled',
+  'aria-label': ariaLabel = 'Bed',
+  copyrightYear = '2026',
+  ...props
+}: IconProps) {
+  return (
+    <Icon aria-label={ariaLabel} copyrightYear={copyrightYear} {...props}>
+      {look === 'filled' ? (
+        <Fragment>
+          <path
+            d="M18 8C20.2091 8 22 9.79086 22 12V22H20V18H4V22H2V12C2 9.79086 3.79086 8 6 8H18Z"
+            fill="currentColor"
+          />
+          <path
+            d="M10 2C10.5523 2 11 2.44772 11 3V5C11 5.55228 10.5523 6 10 6H5C4.44772 6 4 5.55228 4 5V3C4 2.44772 4.44772 2 5 2H10Z"
+            fill="currentColor"
+          />
+          <path
+            d="M19 2C19.5523 2 20 2.44772 20 3V5C20 5.55228 19.5523 6 19 6H14C13.4477 6 13 5.55228 13 5V3C13 2.44772 13.4477 2 14 2H19Z"
+            fill="currentColor"
+          />
+        </Fragment>
+      ) : (
+        <Fragment>
+          <path
+            d="M4 3C4 2.44772 4.44772 2 5 2H10C10.5523 2 11 2.44772 11 3V5C11 5.55228 10.5523 6 10 6H5C4.44772 6 4 5.55228 4 5V3Z"
+            fill="currentColor"
+          />
+          <path
+            d="M13 3C13 2.44772 13.4477 2 14 2H19C19.5523 2 20 2.44772 20 3V5C20 5.55228 19.5523 6 19 6H14C13.4477 6 13 5.55228 13 5V3Z"
+            fill="currentColor"
+          />
+          <path
+            d="M20 12C20 10.8954 19.1046 10 18 10V8C20.2091 8 22 9.79086 22 12V22H20V18H4V22H2V12C2 9.79086 3.79086 8 6 8V10C4.89543 10 4 10.8954 4 12V16H20V12ZM18 8V10H6V8H18Z"
+            fill="currentColor"
+          />
+        </Fragment>
+      )}
+    </Icon>
+  );
+}

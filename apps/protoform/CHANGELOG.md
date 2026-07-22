@@ -1,5 +1,71 @@
 # protoform
 
+## 0.2.59
+
+### Patch Changes
+
+- Updated dependencies [6d3c3b0]
+- Updated dependencies [aa3e2c1]
+  - @westpac/ui@1.12.0
+
+## 0.2.58
+
+### Patch Changes
+
+- Updated dependencies [c819708]
+  - @westpac/ui@1.11.0
+
+## 0.2.57
+
+### Patch Changes
+
+- Updated dependencies [6866a0c]
+  - @westpac/ui@1.10.0
+
+## 0.2.56
+
+### Patch Changes
+
+- Updated dependencies [8cf1528]
+  - @westpac/ui@1.9.0
+
+## 0.2.55
+
+### Patch Changes
+
+- Updated dependencies [987c581]
+- Updated dependencies [eeb1ec4]
+  - @westpac/ui@1.8.0
+
+## 0.2.54
+
+### Patch Changes
+
+- Updated dependencies [b174067]
+  - @westpac/ui@1.7.0
+
+## 0.2.53
+
+### Patch Changes
+
+- Updated dependencies [5619187]
+  - @westpac/ui@1.6.0
+
+## 0.2.52
+
+### Patch Changes
+
+- Updated dependencies [da43fc5]
+- Updated dependencies [c275be2]
+  - @westpac/ui@1.5.0
+
+## 0.2.51
+
+### Patch Changes
+
+- Updated dependencies [8d68001]
+  - @westpac/ui@1.4.0
+
 ## 0.2.50
 
 ### Patch Changes
