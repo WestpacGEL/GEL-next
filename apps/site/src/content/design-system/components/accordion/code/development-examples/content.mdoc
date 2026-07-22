@@ -1,7 +1,5 @@
 ### Default accordion
 
-See Visual design for the usage recommendations for the default style.
-
 ```jsx
 <Accordion>
   {[
@@ -22,8 +20,6 @@ See Visual design for the usage recommendations for the default style.
 
 ### Lego accordion
 
-See Visual design for the usage recommendations for the lego style.
-
 ```jsx
 <Accordion look="lego" rounded={false}>
   {[
@@ -42,7 +38,44 @@ See Visual design for the usage recommendations for the lego style.
 </Accordion>
 ```
 
+### Icon accordion
+
+```jsx
+<Accordion rounded>
+  <AccordionItem
+    id="Accounts"
+    title={
+      <div className="flex flex-1 items-center justify-between">
+        <div className="flex items-center gap-2">
+          <AccountIcon look="outlined" size="small" />
+          <p className="typography-body-9">Accounts</p>
+        </div>
+      </div>
+    }
+  >
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
+    reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
+  </AccordionItem>
+  <AccordionItem
+    id="Credit cards"
+    title={
+      <div className="flex flex-1 items-center justify-between">
+        <div className="flex items-center gap-2">
+          <CreditCardsIcon look="outlined" size="small" />
+          <p className="typography-body-9">Credit cards</p>
+        </div>
+      </div>
+    }
+  >
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat in, nobis itaque iste sequi, pariatur, nam
+    reiciendis quasi illum nulla aliquid mollitia corrupti nostrum incidunt? At minima error nobis ullam!
+  </AccordionItem>
+</Accordion>
+```
+
 ### Controlled example
+
+Example showing how to manually control the expanded/collapsed state, rather than it being managed internally by the Accordion.
 
 ```jsx
 () => {
