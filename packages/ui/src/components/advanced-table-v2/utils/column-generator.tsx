@@ -19,6 +19,11 @@ declare module '@tanstack/react-table' {
      * Only one row should have this flag enabled.
      */
     isRowHeader?: boolean;
+    /**
+     * A percentage-width column's configured width is applied via CSS and is part of this type
+     * as the numeric size is pass into the column config.
+     */
+    width?: `${number}%`;
   }
 }
 
@@ -118,6 +123,8 @@ export function columnGenerator<T>(
         align: column.align,
         overflow: column.overflow,
         isRowHeader: Boolean(column.isRowHeader),
+        // Widths are applied in TanStack, strings (or %) are applied to the column in styles
+        ...(typeof column.width === 'string' ? { width: column.width } : {}),
       },
       // eslint-disable-next-line sonarjs/function-return-type -- both branches are ReactNode (the explicit annotation).
       cell: (info): ReactNode => {
@@ -146,7 +153,7 @@ export function columnGenerator<T>(
       // Resizing is enabled only at the table level; a column may opt out with `false`
       enableResizing: options.enableColumnResizing ? (column.enableResizing ?? true) : false,
       minSize: column.minWidth ?? MIN_COLUMN_SIZE,
-      ...(column.width !== undefined ? { size: column.width } : {}),
+      ...(typeof column.width === 'number' ? { size: column.width } : {}),
     };
   });
 }

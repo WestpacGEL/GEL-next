@@ -5,6 +5,7 @@ export {
   canReorderColumn,
   canResizeColumn,
   getColumnMeta,
+  isPercentWidthColumn,
 } from './column-capabilities.js';
 export { columnGenerator } from './column-generator.js';
 export {

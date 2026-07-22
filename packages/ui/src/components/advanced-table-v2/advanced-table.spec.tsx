@@ -2558,5 +2558,11 @@ describe('AdvancedTable', () => {
       };
       expect(badProps).toBeDefined();
     });
+
+    it('combining a percentage width with minWidth is a type error', () => {
+      // @ts-expect-error minWidth can't be combined with a percentage width
+      const badColumn: AdvancedTableColumn<TestData> = { key: 'name', title: 'Name', width: '20%', minWidth: 40 };
+      expect(badColumn).toBeDefined();
+    });
   });
 });

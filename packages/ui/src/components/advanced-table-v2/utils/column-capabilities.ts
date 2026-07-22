@@ -28,17 +28,27 @@ export function canReorderColumn<T>(
   );
 }
 
-/** Pinned columns are excluded too: resizing a pinned column isn't supported yet. */
+/** Reserved columns (select/expand) never go through `columnGenerator`, so `meta` is undefined for them. */
+export function getColumnMeta<T>(column: Column<T, unknown>) {
+  return column.columnDef.meta ?? {};
+}
+
+/** True when this column's configured width is a percentage string, not a pixel number. It is stored in the meta (not in TanStack). */
+export function isPercentWidthColumn<T>(column: Column<T, unknown>): boolean {
+  return Boolean(getColumnMeta(column).width);
+}
+
+/**
+ * Pinned columns are excluded too: resizing a pinned column isn't supported.
+ * Percentage-width columns are excluded: their width never enters TanStack's resizable
+ * sizing state, so a resize handle would render but have no visible effect.
+ * */
 export function canResizeColumn<T>(column: Column<T, unknown>): boolean {
   return (
     column.getCanResize() &&
     Boolean(column.accessorFn) &&
     !RESERVED_COLUMN_IDS.includes(column.id) &&
-    !column.getIsPinned()
+    !column.getIsPinned() &&
+    !isPercentWidthColumn(column)
   );
-}
-
-/** Reserved columns (select/expand) never go through `columnGenerator`, so `meta` is undefined for them. */
-export function getColumnMeta<T>(column: Column<T, unknown>) {
-  return column.columnDef.meta ?? {};
 }

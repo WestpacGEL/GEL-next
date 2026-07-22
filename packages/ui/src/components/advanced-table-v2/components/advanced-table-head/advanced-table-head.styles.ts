@@ -3,12 +3,12 @@ import { tv } from 'tailwind-variants';
 export const styles = tv({
   slots: {
     dragHandle: 'inline-flex min-h-4 cursor-move items-center rounded-sm focus-visible:focus-outline',
-    // `relative` anchors the resize handle's `absolute` position here, not on the `<th>`.
-    headerContent: 'relative flex flex-row items-center gap-1',
+    headerContent: 'flex flex-row items-center gap-1',
     headerRow: '',
     sortButton:
       'inline-flex size-4 shrink-0 cursor-pointer items-center justify-center rounded-sm focus-visible:focus-outline',
-    th: 'border-b-3 border-border-hero bg-background-white typography-body-9 font-medium whitespace-nowrap',
+    // `relative` anchors the resize handle's `absolute right-0` to the cell's own border, not the padded content box.
+    th: 'relative border-b-3 border-border-hero bg-background-white typography-body-9 font-medium whitespace-nowrap',
   },
   variants: {
     align: {
@@ -20,7 +20,7 @@ export const styles = tv({
       true: { th: 'border-r border-border-muted-soft last:border-r-0' },
     },
     isDragging: {
-      true: { th: 'relative opacity-80' },
+      true: { th: 'opacity-80' },
     },
     // A sticky cell needs an opaque background so non-pinned columns scrolling underneath don't show through.
     isPinned: {

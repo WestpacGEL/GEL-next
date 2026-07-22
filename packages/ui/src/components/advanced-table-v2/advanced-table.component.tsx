@@ -57,10 +57,12 @@ import {
   expandedStateToIds,
   expandPinnedRowIds,
   getActiveReservedColumnIds,
+  getColumnMeta,
   getReorderInfo,
   hasExpandableRows,
   idsToExpandedState,
   idsToSelectionState,
+  isPercentWidthColumn,
   moveColumnTo,
   normalizeRowSelection,
   RESERVED_COLUMN_IDS,
@@ -467,8 +469,11 @@ export function AdvancedTable<T>({
   // change in the columns array itself, so columnSizingState is added below
   // purely to force a recompute when a resize actually happens.
   const visibleLeafColumns = table.getVisibleLeafColumns();
+  // A percentage-width column (`meta.width` is a string) never enters TanStack's
+  // numeric sizing state, so it contributes nothing to the pixel sum below —
+  // the table's own width relies on `fillContainer` to resolve the rest.
   const totalSize = useMemo(
-    () => visibleLeafColumns.reduce((sum, column) => sum + column.getSize(), 0),
+    () => visibleLeafColumns.reduce((sum, column) => sum + (isPercentWidthColumn(column) ? 0 : column.getSize()), 0),
     // eslint-disable-next-line react-hooks/exhaustive-deps -- columnSizingState isn't read directly, but column.getSize() reads live off it.
     [visibleLeafColumns, columnSizingState],
   );
@@ -476,7 +481,10 @@ export function AdvancedTable<T>({
 
   // `column.getSize()` is a live lookup against the table's sizing state (these columns), otherwise states could be different in different calls.
   const colgroupColumns = useMemo(
-    () => visibleLeafColumns.map(column => <col key={column.id} style={{ width: column.getSize() }} />),
+    () =>
+      visibleLeafColumns.map(column => (
+        <col key={column.id} style={{ width: getColumnMeta(column).width ?? column.getSize() }} />
+      )),
     // eslint-disable-next-line react-hooks/exhaustive-deps -- columnSizingState isn't read directly, but column.getSize() reads live off it.
     [visibleLeafColumns, columnSizingState],
   );

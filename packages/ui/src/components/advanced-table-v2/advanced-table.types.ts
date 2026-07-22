@@ -7,69 +7,108 @@ import { AdvancedTableEmptyStateProps, AdvancedTableLoadingStateProps } from './
  * Distributes over `keyof T` so `render` receives the exact type of the field
  * `key` accesses, keys autocomplete, and a `key` not in `T` is a compile error.
  */
+/** Fields shared by both the pixel-width and percentage-width shapes of a leaf column. */
+type AdvancedTableLeafColumnCommon<T, K extends keyof T> = {
+  /** Accessor into the row. Must be a key of `T`. */
+  key: K;
+  /** Visible column heading. */
+  title: string;
+  /** Custom cell renderer. Receives the typed cell value and the full row. */
+  render?: (value: T[K], row: T) => ReactNode;
+  /**
+   * Opts this column into sorting. Only takes effect when the table also has
+   * `enableSorting`: set to `true` to add this column's sort control.
+   */
+  enableSorting?: boolean;
+  /**
+   * Opts this column into filtering. Only takes effect when the table also has
+   * `enableColumnFilter`: set to `true` to add this column's filter menu.
+   */
+  enableColumnFilter?: boolean;
+  /**
+   * Opts this column into pinning. Only takes effect when the table also has
+   * `enableColumnPinning`: set to `true` to add this column's pin menu items.
+   */
+  enablePinning?: boolean;
+  /**
+   * Opts this column into grouping. Only takes effect when the table also has
+   * `enableGrouping`: set to `true` to add this column's group menu item.
+   */
+  enableGrouping?: boolean;
+  /**
+   * Opts this column out of resizing. Only meaningful when the table has
+   * `enableColumnResizing`: set to `false` to remove this column's resize handle.
+   *
+   * Has no effect on a percentage-width column — its width isn't backed by
+   * TanStack's resizable sizing state, so the table never renders a resize
+   * handle for one regardless of this flag.
+   */
+  enableResizing?: boolean;
+  /** Marks the column editable. Consumed by the editable-cells feature (later ticket). */
+  editable?: boolean;
+  /**
+   * Cell content alignment applied to both this column's header cell and every body cell.
+   * @default 'left'
+   */
+  align?: 'left' | 'center' | 'right';
+  /**
+   * Text-overflow treatment for this column's body cells.
+   *
+   * `'wrap'` allows content to wrap onto multiple lines, breaking even an
+   * unbreakable token (e.g. a long URL) rather than overflowing the column.
+   *
+   * `'truncate'` clips the default (non-`render`) cell content to a single
+   * ellipsised line instead.
+   *
+   * `'none'` removes any overflow stylings. Useful for custom render content.
+   * @default 'wrap'
+   */
+  overflow?: 'none' | 'truncate' | 'wrap';
+  /**
+   * Renders every body cell in this column as `<th scope="row">`, a secondary row header for the table's most important column.
+   * Only set a maximum of one column to use `isRowheader` or table readability issues will occur.
+   */
+  isRowHeader?: boolean;
+};
+
 export type AdvancedTableLeafColumn<T> = {
-  [K in keyof T]: {
-    /** Accessor into the row. Must be a key of `T`. */
-    key: K;
-    /** Visible column heading. */
-    title: string;
-    /** Custom cell renderer. Receives the typed cell value and the full row. */
-    render?: (value: T[K], row: T) => ReactNode;
-    /**
-     * Opts this column into sorting. Only takes effect when the table also has
-     * `enableSorting`: set to `true` to add this column's sort control.
-     */
-    enableSorting?: boolean;
-    /**
-     * Opts this column into filtering. Only takes effect when the table also has
-     * `enableColumnFilter`: set to `true` to add this column's filter menu.
-     */
-    enableColumnFilter?: boolean;
-    /**
-     * Opts this column into pinning. Only takes effect when the table also has
-     * `enableColumnPinning`: set to `true` to add this column's pin menu items.
-     */
-    enablePinning?: boolean;
-    /**
-     * Opts this column into grouping. Only takes effect when the table also has
-     * `enableGrouping`: set to `true` to add this column's group menu item.
-     */
-    enableGrouping?: boolean;
-    /**
-     * Opts this column out of resizing. Only meaningful when the table has
-     * `enableColumnResizing`: set to `false` to remove this column's resize handle.
-     */
-    enableResizing?: boolean;
-    /** Marks the column editable. Consumed by the editable-cells feature (later ticket). */
-    editable?: boolean;
-    /** Default column width in pixels, and the width `resetSize()` restores. */
-    width?: number;
-    /** Minimum width in pixels a user can resize this column to. Falls back to a small table-wide default when unset. */
-    minWidth?: number;
-    /**
-     * Cell content alignment applied to both this column's header cell and every body cell.
-     * @default 'left'
-     */
-    align?: 'left' | 'center' | 'right';
-    /**
-     * Text-overflow treatment for this column's body cells.
-     *
-     * `'wrap'` allows content to wrap onto multiple lines, breaking even an
-     * unbreakable token (e.g. a long URL) rather than overflowing the column.
-     *
-     * `'truncate'` clips the default (non-`render`) cell content to a single
-     * ellipsised line instead.
-     *
-     * `'none'` removes any overflow stylings. Useful for custom render content.
-     * @default 'wrap'
-     */
-    overflow?: 'none' | 'truncate' | 'wrap';
-    /**
-     * Renders every body cell in this column as `<th scope="row">`, a secondary row header for the table's most important column.
-     * Only set a maximum of one column to use `isRowheader` or table readability issues will occur.
-     */
-    isRowHeader?: boolean;
-  };
+  [K in keyof T]:
+    | (AdvancedTableLeafColumnCommon<T, K> & {
+        /** Default column width in pixels, and the width `resetSize()` restores. */
+        width?: number;
+        /** Minimum width in pixels a user can resize this column to. Falls back to a small table-wide default when unset. */
+        minWidth?: number;
+      })
+    | (AdvancedTableLeafColumnCommon<T, K> & {
+        /**
+         * A percentage of the table's own width (e.g. `'20%'`), rendered as a
+         * literal `<col style={{ width }}>` rather than through TanStack's
+         * numeric sizing — works under either `tableLayout` mode. Only the
+         * string's shape is checked at compile time (rejects `'20'`/`'20px'`);
+         * whether the number is sensible, and whether every column's declared
+         * width (percentages plus every pixel column's implied share of the
+         * container) sums to something coherent, is left to the consumer —
+         * undetected and undocumented-if-violated, same as this component's
+         * other consumer-responsibility invariants.
+         *
+         * Freely mixable with pixel-width columns in the same table, but the
+         * mix is only pixel-perfect when every declared width sums to exactly
+         * 100% of the container — `tableLayout: 'fixed'` is recommended for
+         * predictable exact widths when mixing (it resolves each column's
+         * width independently rather than proportionally redistributing the
+         * whole row on a mismatch); reach for `tableLayout: 'auto'` instead
+         * when content-driven expansion (ticket 19) is what's wanted.
+         *
+         * Unsupported in combination with column pinning: a pinned column's
+         * sticky offset is computed by summing preceding/following columns'
+         * TanStack-configured size, which a percentage-width column never has
+         * (same root cause as `tableLayout: 'auto'` + pinning's exclusivity).
+         * Undetected — the offset is just silently wrong.
+         */
+        width: `${number}%`;
+        /** Not meaningful for a percentage-width column — it never enters TanStack's resizable sizing state. */
+        minWidth?: never;
+      });
 }[keyof T];
 
 /**

@@ -23,6 +23,8 @@ type Story = StoryObj<typeof meta>;
  * `enableColumnResizing` adds a handle at each header's right edge. Drag it,
  * or focus it and use the arrow keys (Shift for a larger step). Double-click,
  * or Enter/Space while focused, resets the column to its default width.
+ *
+ * Please not that column resizing and `%` widths do not work together, you must use no or numeric values.
  */
 export const Default: Story = {
   render: () => <AdvancedTable data={data} columns={columns} caption="People" enableColumnResizing />,
