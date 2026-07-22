@@ -21,7 +21,7 @@ export const MenuList = forwardRef(function MenuList<T extends object>(
   const styles = menuListStyles();
 
   return (
-    <div {...ariaMenuProps} ref={ref} className={styles.list()}>
+    <div {...ariaMenuProps} className={styles.list()} ref={ref}>
       {[...state.collection].map(item =>
         item.type === 'section' ? (
           <MenuSection key={item.key} section={item} state={state} />

@@ -1,15 +1,17 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { flexRender, Header } from '@tanstack/react-table';
+import { flexRender, Header, type SortDirection } from '@tanstack/react-table';
 import { CSSProperties } from 'react';
 
 import { ArrowDownIcon, ArrowUpIcon, SortIcon } from '../../../icon/index.js';
 import { VisuallyHidden } from '../../../visually-hidden/index.js';
 import { ColumnReorderInfo, useAdvancedTableContext } from '../../advanced-table.context.js';
+import { getPrefersReducedMotion } from '../../utils/column-order.js';
 import {
   canGroupColumn,
   canPinColumn,
   canResizeColumn,
+  getColumnMeta,
   getColumnPinningStyleInfo,
   RESERVED_COLUMN_IDS,
 } from '../../utils/index.js';
@@ -19,17 +21,27 @@ import { AdvancedTableResizeHandle } from '../advanced-table-resize-handle/index
 import { styles as advancedTableHeadStyles } from './advanced-table-head.styles.js';
 import { AdvancedTableHeaderCellProps } from './advanced-table-head.types.js';
 
-/** Maps a column's sortability + current direction to the `aria-sort` value. */
-function getAriaSort(canSort: boolean, direction: false | 'asc' | 'desc') {
+type SortingDirections = SortDirection | false;
+
+function getAriaSort(canSort: boolean, direction: SortingDirections) {
   if (!canSort) return undefined;
   if (direction === 'asc') return 'ascending';
   if (direction === 'desc') return 'descending';
   return 'none';
 }
 
-/**
- * Resolves which per-column controls this header cell shows.
- */
+function getNextSortLabel(direction: SortingDirections) {
+  switch (direction) {
+    case 'asc':
+      return 'Sort ascending';
+    case 'desc':
+      return 'Sort descending';
+    default:
+      return 'Clear sort';
+  }
+}
+
+/** Resolves which per-column controls this header cell shows. */
 function getColumnCapabilities<T>(
   header: Header<T, unknown>,
   reorderInfo: ColumnReorderInfo,
@@ -41,37 +53,29 @@ function getColumnCapabilities<T>(
   const canGroup = canGroupColumn(column);
   const canResize = canResizeColumn(column);
 
-  // Only the top header row's real cells are reorderable (if users are using nested table columns)
+  // Only the top header row's real cells are re-orderable (if users are using nested table columns)
   const isTopRow = header.headerGroup.depth === 0;
   const canReorder =
     Boolean(enableColumnReordering) && isTopRow && !header.isPlaceholder && reorderInfo.idSet.has(column.id);
+
   return { isReserved, canPin, canGroup, canResize, canReorder };
 }
 
 /** Renders a single header cell: the label plus (when sortable) the sort toggle. */
 function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>) {
-  const { tableId, padding, bordered, enableColumnPinning, enableColumnReordering, reorderInfo, loading } =
+  const { bordered, enableColumnPinning, enableColumnReordering, loading, padding, reorderInfo, tableId } =
     useAdvancedTableContext<T>();
 
   const { column } = header;
   const canSort = column.getCanSort();
   const sortDirection = column.getIsSorted();
-
   const ariaSort = getAriaSort(canSort, sortDirection);
+
   const labelId = `${tableId}-${header.id}-label`;
   const sortActionId = `${tableId}-${header.id}-sort-action`;
-  const nextSortLabel = (() => {
-    switch (column.getNextSortingOrder()) {
-      case 'asc':
-        return 'Sort ascending';
-      case 'desc':
-        return 'Sort descending';
-      default:
-        return 'Clear sort';
-    }
-  })();
+  const nextSortLabel = getNextSortLabel(column.getNextSortingOrder());
 
-  const { isReserved, canPin, canGroup, canResize, canReorder } = getColumnCapabilities(
+  const { canGroup, canPin, canReorder, canResize, isReserved } = getColumnCapabilities(
     header,
     reorderInfo,
     enableColumnReordering,
@@ -80,28 +84,30 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
 
   // The reserved selection column is always structurally sticky but only gets the pinned-look styling when the pinning feature is actually enabled
   const showPinnedStyling = isPinned && (!isReserved || Boolean(enableColumnPinning));
+  const { align } = getColumnMeta(column);
   const styles = advancedTableHeadStyles({
-    padding,
+    align,
     bordered,
     isPinned: showPinnedStyling,
+    padding,
     pinnedEdge: showPinnedStyling ? pinnedEdge : undefined,
   });
 
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+  const { attributes, isDragging, listeners, setNodeRef, transform, transition } = useSortable({
     id: column.id,
     disabled: !canReorder,
   });
 
   // dnd-kit computes `transition` itself, we don't use Tailwind animation classes or they will clash.
-  const prefersReducedMotion =
-    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const dragStyle: CSSProperties = canReorder
     ? {
         transform: CSS.Translate.toString(transform),
-        transition: prefersReducedMotion ? undefined : transition,
+        transition: getPrefersReducedMotion() ? undefined : transition,
         zIndex: isDragging ? 2 : pinningStyle.zIndex,
       }
     : {};
+
+  const showColumnMenu = (column.getCanFilter() || canPin || canGroup || canReorder) && !isReserved;
 
   return (
     <th
@@ -115,7 +121,7 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
       {header.isPlaceholder ? null : (
         <div className={styles.headerContent()}>
           {canReorder ? (
-            <button type="button" disabled={loading} className={styles.dragHandle()} {...attributes} {...listeners}>
+            <button className={styles.dragHandle()} disabled={loading} type="button" {...attributes} {...listeners}>
               <span id={labelId}>{flexRender(column.columnDef.header, header.getContext())}</span>
             </button>
           ) : (
@@ -138,9 +144,7 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
               </VisuallyHidden>
             </button>
           )}
-          {(column.getCanFilter() || canPin || canGroup || canReorder) && !isReserved && (
-            <AdvancedTableColumnMenu header={header} />
-          )}
+          {showColumnMenu && <AdvancedTableColumnMenu header={header} />}
           {canResize && !header.isPlaceholder && <AdvancedTableResizeHandle header={header} />}
         </div>
       )}
@@ -153,11 +157,11 @@ export function AdvancedTableHead<T>() {
   const styles = advancedTableHeadStyles();
 
   return (
-    <thead className={styles.thead()}>
+    <thead>
       {table.getHeaderGroups().map(headerGroup => (
-        <tr key={headerGroup.id} className={styles.headerRow()}>
+        <tr className={styles.headerRow()} key={headerGroup.id}>
           {headerGroup.headers.map(header => (
-            <AdvancedTableHeaderCell key={header.id} header={header} />
+            <AdvancedTableHeaderCell header={header} key={header.id} />
           ))}
         </tr>
       ))}

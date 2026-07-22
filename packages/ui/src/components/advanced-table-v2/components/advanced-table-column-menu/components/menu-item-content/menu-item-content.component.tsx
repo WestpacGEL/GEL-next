@@ -5,7 +5,7 @@ export function MenuItemContent({ icon: Icon, label }: MenuItemContentProps) {
   const styles = menuItemContentStyles();
   return (
     <div className={styles.container()}>
-      <Icon aria-hidden size="small" look="outlined" />
+      <Icon aria-hidden look="outlined" size="small" />
       {label}
     </div>
   );

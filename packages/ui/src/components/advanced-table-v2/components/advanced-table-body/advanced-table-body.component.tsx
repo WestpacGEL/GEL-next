@@ -15,9 +15,8 @@ export function AdvancedTableBody<T>() {
   const isEmptyDataset = table.getPrePaginationRowModel().rows.length === 0;
   // At least 1 so the empty-state cell never emits an invalid `colspan="0"`.
   const leafColumnCount = Math.max(table.getVisibleLeafColumns().length, 1);
-  // Zero rows caused by an active filter gets different default copy than
-  // truly empty `data` — a consumer-supplied `emptyState` still wins, since it
-  // spreads last.
+
+  // Check if empty state is caused by a filter
   const isFilteredEmpty = isEmptyDataset && table.getState().columnFilters.length > 0;
   const filteredEmptyDefaults = isFilteredEmpty
     ? { title: 'No matching results', description: 'Try adjusting or clearing your filter.' }
@@ -33,14 +32,14 @@ export function AdvancedTableBody<T>() {
     row.getIsGrouped() ? (
       <AdvancedTableGroupRow key={row.id} row={row} />
     ) : (
-      <AdvancedTableRow key={row.id} row={row} isPinned={isPinned} />
+      <AdvancedTableRow isPinned={isPinned} key={row.id} row={row} />
     );
 
   let bodyContent;
   if (isLoadingEmpty) {
     bodyContent = (
       <tr>
-        <td colSpan={leafColumnCount} className={styles.emptyCell()}>
+        <td className={styles.emptyCell()} colSpan={leafColumnCount}>
           <AdvancedTableLoadingState {...loadingStateProps} />
         </td>
       </tr>
@@ -48,7 +47,7 @@ export function AdvancedTableBody<T>() {
   } else if (isEmptyDataset) {
     bodyContent = (
       <tr>
-        <td colSpan={leafColumnCount} className={styles.emptyCell()}>
+        <td className={styles.emptyCell()} colSpan={leafColumnCount}>
           <AdvancedTableEmptyState {...filteredEmptyDefaults} {...emptyState} />
         </td>
       </tr>

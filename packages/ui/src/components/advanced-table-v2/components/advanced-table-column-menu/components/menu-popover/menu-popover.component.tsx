@@ -16,8 +16,7 @@ export const MenuPopover = ({ children, state, style, ...props }: MenuPopoverPro
   return (
     <Overlay>
       <div {...underlayProps} className={styles.underlay()} />
-      <div {...popoverProps} ref={popoverRef} style={{ ...popoverProps.style, ...style }} className={styles.popover()}>
-        <DismissButton onDismiss={() => state.close()} />
+      <div {...popoverProps} className={styles.popover()} ref={popoverRef} style={{ ...popoverProps.style, ...style }}>
         {children}
         <DismissButton onDismiss={() => state.close()} />
       </div>

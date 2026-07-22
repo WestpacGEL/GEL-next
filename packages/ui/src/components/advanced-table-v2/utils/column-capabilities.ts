@@ -25,3 +25,8 @@ export function canResizeColumn<T>(column: Column<T, unknown>): boolean {
     !column.getIsPinned()
   );
 }
+
+/** Reserved columns (select/expand) never go through `columnGenerator`, so `meta` is undefined for them. */
+export function getColumnMeta<T>(column: Column<T, unknown>) {
+  return column.columnDef.meta ?? {};
+}

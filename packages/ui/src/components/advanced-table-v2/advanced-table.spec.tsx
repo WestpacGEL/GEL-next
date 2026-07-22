@@ -1234,7 +1234,66 @@ describe('AdvancedTable', () => {
 
       await user.click(screen.getByRole('button', { name: 'Go to page 2' }));
       expect(screen.getByRole('checkbox', { name: 'Select row 11' })).not.toBeChecked();
-      expect(screen.getByRole('checkbox', { name: 'Select all rows in current page' })).not.toBeChecked();
+      const page2SelectAll = screen.getByRole<HTMLInputElement>('checkbox', {
+        name: 'Select all rows in current page',
+      });
+      expect(page2SelectAll).not.toBeChecked();
+      expect(page2SelectAll.indeterminate).toBe(true);
+    });
+
+    it('select-all reads indeterminate across pages: a page with zero of its own rows selected still signals selection elsewhere', async () => {
+      const user = userEvent.setup();
+      const manyRows: TestData[] = Array.from({ length: 12 }, (_, i) => ({ name: `Person ${i}`, age: 20 + i }));
+      render(<AdvancedTable columns={testColumns} data={manyRows} enableRowSelection rowKey="name" />);
+
+      await user.click(screen.getByRole('checkbox', { name: 'Select row 1' }));
+      await user.click(screen.getByRole('button', { name: 'Go to page 2' }));
+
+      const selectAll = screen.getByRole<HTMLInputElement>('checkbox', { name: 'Select all rows in current page' });
+      expect(selectAll).not.toBeChecked();
+      expect(selectAll.indeterminate).toBe(true);
+
+      // Deselecting the only selected row (back on page 1) clears the cross-page signal too.
+      await user.click(screen.getByRole('button', { name: 'Go to page 1' }));
+      await user.click(screen.getByRole('checkbox', { name: 'Select row 1' }));
+      await user.click(screen.getByRole('button', { name: 'Go to page 2' }));
+      const selectAllAfterClear = screen.getByRole<HTMLInputElement>('checkbox', {
+        name: 'Select all rows in current page',
+      });
+      expect(selectAllAfterClear.indeterminate).toBe(false);
+    });
+
+    it('select-all accounts for a pinned row rendered on this page but positioned on another', async () => {
+      const user = userEvent.setup();
+      const manyRows: TestData[] = Array.from({ length: 12 }, (_, i) => ({ name: `Person${i}`, age: 20 + i }));
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={manyRows}
+          enableRowPinning
+          enableRowSelection
+          rowKey="name"
+          // Person11 naturally belongs to page 2 (default page size 10), but pinning renders it on page 1.
+          defaultPinnedRows={['Person11']}
+        />,
+      );
+
+      const checkboxForRow = (name: string) =>
+        within(screen.getByText(name).closest('tr') as HTMLElement).getByRole('checkbox');
+      const selectAll = screen.getByRole<HTMLInputElement>('checkbox', { name: 'Select all rows in current page' });
+
+      await user.click(checkboxForRow('Person11'));
+      expect(selectAll.indeterminate).toBe(true);
+      expect(selectAll).not.toBeChecked();
+
+      // Selecting all should also pick up the pinned row that's actually visible on page 1.
+      await user.click(selectAll);
+      expect(selectAll).toBeChecked();
+      expect(checkboxForRow('Person11')).toBeChecked();
+
+      await user.click(selectAll);
+      expect(selectAll).not.toBeChecked();
+      expect(checkboxForRow('Person11')).not.toBeChecked();
     });
 
     it('a stale or incorrect id in a controlled selectedRows does not make select-all read as checked/indeterminate', () => {
@@ -1879,6 +1938,34 @@ describe('AdvancedTable', () => {
       render(<AdvancedTable columns={testColumns} data={testData} tableLayout="auto" />);
       expect(getTable().className).toContain('table-auto');
       expect(getTable().className).not.toContain('table-fixed');
+    });
+  });
+
+  describe('row header column', () => {
+    type RowHeaderData = { name: string; amount: number };
+    const rowHeaderColumns: AdvancedTableColumn<RowHeaderData>[] = [
+      { key: 'name', title: 'Name', isRowHeader: true },
+      { key: 'amount', title: 'Amount' },
+    ];
+    const rowHeaderData: RowHeaderData[] = [
+      { name: 'Ava', amount: 100 },
+      { name: 'Marcus', amount: 200 },
+    ];
+
+    it('renders the designated column’s body cells as <th scope="row">', () => {
+      render(<AdvancedTable columns={rowHeaderColumns} data={rowHeaderData} />);
+      const rowHeaders = screen.getAllByRole('rowheader');
+      expect(rowHeaders.map(cell => cell.textContent)).toEqual(['Ava', 'Marcus']);
+    });
+
+    it('leaves the designated column’s own header cell as scope="col"', () => {
+      render(<AdvancedTable columns={rowHeaderColumns} data={rowHeaderData} />);
+      expect(screen.getByRole('columnheader', { name: 'Name' })).toHaveAttribute('scope', 'col');
+    });
+
+    it('renders every other column as plain <td> cells', () => {
+      render(<AdvancedTable columns={rowHeaderColumns} data={rowHeaderData} />);
+      expect(screen.getAllByRole('cell')).toHaveLength(rowHeaderData.length);
     });
   });
 

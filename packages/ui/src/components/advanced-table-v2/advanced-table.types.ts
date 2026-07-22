@@ -46,6 +46,29 @@ export type AdvancedTableLeafColumn<T> = {
     width?: number;
     /** Minimum width in pixels a user can resize this column to. Falls back to a small table-wide default when unset. */
     minWidth?: number;
+    /**
+     * Cell content alignment applied to both this column's header cell and every body cell.
+     * @default 'left'
+     */
+    align?: 'left' | 'center' | 'right';
+    /**
+     * Text-overflow treatment for this column's body cells.
+     *
+     * `'wrap'` allows content to wrap onto multiple lines, breaking even an
+     * unbreakable token (e.g. a long URL) rather than overflowing the column.
+     *
+     * `'truncate'` clips the default (non-`render`) cell content to a single
+     * ellipsised line instead.
+     *
+     * `'none'` removes any overflow stylings. Useful for custom render content.
+     * @default 'wrap'
+     */
+    overflow?: 'none' | 'truncate' | 'wrap';
+    /**
+     * Renders every body cell in this column as `<th scope="row">`, a secondary row header for the table's most important column.
+     * Only set a maximum of one column to use `isRowheader` or table readability issues will occur.
+     */
+    isRowHeader?: boolean;
   };
 }[keyof T];
 

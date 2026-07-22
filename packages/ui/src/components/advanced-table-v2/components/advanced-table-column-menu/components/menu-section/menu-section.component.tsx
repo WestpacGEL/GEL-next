@@ -9,8 +9,8 @@ import { MenuSectionProps } from './menu-section.types.js';
 export function MenuSection<T extends object>({ section, state }: MenuSectionProps<T>) {
   const groupId = useId();
   const { headingProps } = useMenuSection({
-    heading: section.rendered,
     'aria-label': section['aria-label'],
+    heading: section.rendered,
   });
 
   const styles = menuSectionStyles();
@@ -18,7 +18,7 @@ export function MenuSection<T extends object>({ section, state }: MenuSectionPro
   const filterRef = useRef<HTMLDivElement>(null);
   const { focusedKey } = state.selectionManager;
 
-  // The filter row is a raw <input>, not a MenuItem, focus on the input instead when navigating
+  // The filter row is a raw <input> not a MenuItem, focus on the actual input instead when navigating the menu
   useEffect(() => {
     if (focusedKey === 'filter') {
       filterRef.current?.querySelector('input')?.focus();
@@ -33,7 +33,7 @@ export function MenuSection<T extends object>({ section, state }: MenuSectionPro
       role="group"
     >
       {section.rendered && (
-        <span {...headingProps} id={groupId} className={styles.heading()}>
+        <span {...headingProps} className={styles.heading()} id={groupId}>
           {section.rendered}
         </span>
       )}
@@ -41,7 +41,7 @@ export function MenuSection<T extends object>({ section, state }: MenuSectionPro
       {[...section.childNodes].map(item => {
         if (item.key === 'filter')
           return (
-            <div key={item.key} ref={filterRef} className={styles.filterItem()} role="none">
+            <div className={styles.filterItem()} key={item.key} ref={filterRef} role="none">
               {item.rendered}
             </div>
           );

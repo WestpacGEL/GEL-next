@@ -1,5 +1,5 @@
 export { buildTableOptions } from './build-table-options.js';
-export { canGroupColumn, canPinColumn, canResizeColumn } from './column-capabilities.js';
+export { canGroupColumn, canPinColumn, canResizeColumn, getColumnMeta } from './column-capabilities.js';
 export { columnGenerator } from './column-generator.js';
 export {
   buildReorderAnnouncements,

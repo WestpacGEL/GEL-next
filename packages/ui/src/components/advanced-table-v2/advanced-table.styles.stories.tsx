@@ -1,8 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { type Meta, StoryFn, type StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
+
+import { RadioGroup } from '../radio-group/index.js';
 
 import { AdvancedTable } from './advanced-table.component.js';
-import { makePersonData, personColumns } from './story-utils/index.js';
 import { AdvancedTableColumn } from './advanced-table.types.js';
+import { makePersonData, personColumns } from './story-utils/index.js';
 
 const data = makePersonData(10);
 
@@ -119,7 +123,7 @@ const tableLayoutData: Row[] = [
 
 const tableLayoutColumns: AdvancedTableColumn<Row>[] = [
   { key: 'name', title: 'Name', width: 150 },
-  { key: 'note', title: 'Note', width: 150 },
+  { key: 'note', title: 'Note', width: 150, overflow: 'none' },
 ];
 
 /**
@@ -144,4 +148,57 @@ export const AutoLayout: Story = {
   render: () => (
     <AdvancedTable caption="Auto layout" columns={tableLayoutColumns} data={tableLayoutData} tableLayout="auto" />
   ),
+};
+
+type Align = 'left' | 'center' | 'right';
+type Overflow = 'none' | 'truncate' | 'wrap';
+
+/**
+ * `align` and `overflow` are per-column cell-styling options. Toggle them
+ * live with the radios above the table.
+ */
+export const CellStyling: Story = {
+  render: () => {
+    const [align, setAlign] = useState<Align>('left');
+    const [overflow, setOverflow] = useState<Overflow>('wrap');
+
+    return (
+      <>
+        <div className="flex gap-8 pb-4">
+          <RadioGroup
+            label="Align"
+            orientation="horizontal"
+            value={align}
+            onChange={value => setAlign(value as Align)}
+            radios={[
+              { value: 'left', label: 'Left' },
+              { value: 'center', label: 'Center' },
+              { value: 'right', label: 'Right' },
+            ]}
+          />
+          <RadioGroup
+            label="Overflow"
+            orientation="horizontal"
+            value={overflow}
+            onChange={value => setOverflow(value as Overflow)}
+            radios={[
+              { value: 'none', label: 'None' },
+              { value: 'truncate', label: 'Truncate' },
+              { value: 'wrap', label: 'Wrap' },
+            ]}
+          />
+        </div>
+        <AdvancedTable
+          caption="Cell styling"
+          columns={
+            [
+              { key: 'name', title: 'Name', align },
+              { key: 'note', title: 'Note', align, overflow, width: 150 },
+            ] satisfies AdvancedTableColumn<Row>[]
+          }
+          data={tableLayoutData}
+        />
+      </>
+    );
+  },
 };

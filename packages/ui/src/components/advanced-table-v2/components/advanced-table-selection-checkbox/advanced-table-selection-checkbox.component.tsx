@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { mergeProps, useCheckbox, useFocusRing } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
@@ -60,17 +60,41 @@ export function AdvancedTableRowCheckbox<T>({ row, table }: AdvancedTableRowChec
   );
 }
 
-/** Header select-all checkbox rendered in the reserved select column. */
+/** Header "select-all in current page" checkbox rendered in the reserved select column. */
 export function AdvancedTableSelectAllCheckbox<T>({ table }: AdvancedTableSelectAllCheckboxProps<T>) {
-  const isAllSelected = table.getIsAllPageRowsSelected();
-  const isSomeSelected = table.getIsSomePageRowsSelected();
+  const { columnFilters, expanded, pagination, rowSelection } = table.getState();
+
+  // `getRowModel().flatRows` is TanStack's own memoized "this page, including
+  // sub-rows" set — recomputed only when a dependency below actually changes,
+  // not on every render (e.g. an unrelated sort or column-resize).
+  const { isIndeterminate, isSelected, visibleRowIds } = useMemo(() => {
+    const visibleRows = table.getRowModel().flatRows.filter(row => row.getCanSelect());
+    const isPageAllSelected = visibleRows.length > 0 && visibleRows.every(row => row.getIsSelected());
+    // Whether rows are selected outside this page/filter — used to show indeterminate state.
+    const hasSelectionElsewhere = table.getIsSomeRowsSelected() || table.getIsAllRowsSelected();
+
+    return {
+      isIndeterminate: !isPageAllSelected && hasSelectionElsewhere,
+      isSelected: isPageAllSelected,
+      visibleRowIds: visibleRows.map(row => row.id),
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- state slices are the real dependencies; `table`'s own reference is stable.
+  }, [table, columnFilters, expanded, pagination, rowSelection]);
 
   return (
     <BaseCheckbox
-      isSelected={isAllSelected}
-      isIndeterminate={isSomeSelected && !isAllSelected}
-      onChange={value => table.toggleAllPageRowsSelected(value)}
       aria-label="Select all rows in current page"
+      isIndeterminate={isIndeterminate}
+      isSelected={isSelected}
+      onChange={value =>
+        table.setRowSelection(old => {
+          const next = { ...old };
+          visibleRowIds.forEach(id => {
+            next[id] = value;
+          });
+          return next;
+        })
+      }
     />
   );
 }

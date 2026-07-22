@@ -1,10 +1,26 @@
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef, RowData } from '@tanstack/react-table';
 import { ReactNode } from 'react';
 
 import { AdvancedTableColumn, AdvancedTableGroupColumn } from '../advanced-table.types.js';
 import { ExpandCellContent } from '../components/expand-cell-content/index.js';
 
 import { getExpandButtonA11yProps } from './expand-button-a11y.js';
+
+declare module '@tanstack/react-table' {
+  // using interface for below as required by Tanstack table
+  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+  interface ColumnMeta<TData extends RowData, TValue> {
+    /** Per-column text alignment; read by AdvancedTableCell/AdvancedTableHeaderCell. */
+    align?: 'left' | 'center' | 'right';
+    /** Per-column text-overflow treatment; read by AdvancedTableCell. */
+    overflow?: 'none' | 'truncate' | 'wrap';
+    /**
+     * True when this leaf column renders as `<th scope="row">` (its `isRowHeader`).
+     * Only one row should have this flag enabled.
+     */
+    isRowHeader?: boolean;
+  }
+}
 
 /** Floor every leaf column's resize can shrink to, regardless of `enableColumnResizing`. */
 export const MIN_COLUMN_SIZE = 40;
@@ -98,6 +114,11 @@ export function columnGenerator<T>(
       id: String(column.key),
       accessorKey: column.key as string,
       header: column.title,
+      meta: {
+        align: column.align,
+        overflow: column.overflow,
+        isRowHeader: Boolean(column.isRowHeader),
+      },
       // eslint-disable-next-line sonarjs/function-return-type -- both branches are ReactNode (the explicit annotation).
       cell: (info): ReactNode => {
         const value = render ? render(info.getValue(), info.row.original) : (info.getValue() as ReactNode);

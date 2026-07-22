@@ -13,8 +13,9 @@ export function AdvancedTableGroupRow<T>({ row }: AdvancedTableGroupRowProps<T>)
 
   const header = table.getColumn(row.groupingColumnId ?? '')?.columnDef.header;
   const columnName = typeof header === 'string' ? header : row.groupingColumnId;
-  // No single column value here, so the a11y label is the group text itself.
+  // Grouped rows don't have a column to reference, the a11y label is the group text itself.
   const groupLabel = `${columnName}: ${String(row.groupingValue)}`;
+
   // Remove pinned rows out of the count toward the displayed total
   const visibleMemberCount = row.subRows.filter(subRow => !subRow.getIsPinned()).length;
   // A group whose every member is pinned away can have nothing left to show.
@@ -22,7 +23,7 @@ export function AdvancedTableGroupRow<T>({ row }: AdvancedTableGroupRowProps<T>)
 
   return (
     <tr className={styles.row()}>
-      <td colSpan={leafColumnCount} className={styles.cell()}>
+      <td className={styles.cell()} colSpan={leafColumnCount}>
         <div className={styles.cellContent()}>
           <span className={styles.expandButton()}>
             <button

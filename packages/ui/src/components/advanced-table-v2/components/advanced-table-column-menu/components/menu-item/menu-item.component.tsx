@@ -9,7 +9,7 @@ export function MenuItem<T>({ item, state }: MenuItemProps<T>) {
   const { menuItemProps } = useMenuItem({ key: item.key }, state, ref);
   const styles = menuItemStyles();
   return (
-    <div {...menuItemProps} ref={ref} className={styles.item()}>
+    <div {...menuItemProps} className={styles.item()} ref={ref}>
       {item.rendered}
     </div>
   );

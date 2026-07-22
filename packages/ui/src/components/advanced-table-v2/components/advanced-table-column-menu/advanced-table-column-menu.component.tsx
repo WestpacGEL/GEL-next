@@ -34,17 +34,17 @@ function ColumnMenuFilterItem<T>({ column }: { column: Column<T, unknown> }) {
 
   return (
     <InputGroup
-      hideLabel
-      label="Filter"
-      before={{ icon: SearchIcon }}
       after={{
-        inset: true,
         element: filterVal ? (
           <Button onClick={clearFilter} look="link" iconAfter={ClearIcon} iconColor="muted" />
         ) : null,
+        inset: true,
       }}
+      before={{ icon: SearchIcon }}
+      hideLabel
+      label="Filter"
     >
-      <Input value={filterVal ?? ''} onChange={val => column.setFilterValue(val.currentTarget.value)} />
+      <Input onChange={val => column.setFilterValue(val.currentTarget.value)} value={filterVal ?? ''} />
     </InputGroup>
   );
 }
@@ -87,7 +87,7 @@ function resolveMoveMenuItem(direction: 'left' | 'right') {
   };
 }
 
-/** Pins or unpins the column, toggling off if it's already pinned in that direction. */
+/** Handles pins or unpins the column and sets announcement. */
 function handlePinAction<T>(
   column: Column<T, unknown>,
   direction: 'left' | 'right',
@@ -103,7 +103,7 @@ function handlePinAction<T>(
   }
 }
 
-/** Moves the column one position left or right, announcing the result if the move was possible. */
+/** Moves the column reorder position to left or right and sets announcement. */
 function handleMoveAction<T>(
   table: Table<T>,
   columnId: string,
@@ -119,35 +119,34 @@ function handleMoveAction<T>(
 }
 
 /**
- * Column menu trigger and popover. Filtering, pinning, and grouping share this
+ * Column menu trigger and popover. Filtering, pinning, grouping and re-ordering share this
  * `MenuList` as separate `Section`s in that order.
  */
 export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuProps<T>) {
-  const { tableId, table, onPinAnnouncement, onReorderAnnouncement, enableColumnReordering, reorderInfo, loading } =
+  const { enableColumnReordering, loading, onPinAnnouncement, onReorderAnnouncement, reorderInfo, table, tableId } =
     useAdvancedTableContext<T>();
   const state = useMenuTriggerState({});
 
-  const btnRef = useRef(null);
-  const { menuTriggerProps, menuProps } = useMenuTrigger<object>({}, state, btnRef);
+  const buttonRef = useRef(null);
+  const { menuTriggerProps, menuProps } = useMenuTrigger<object>({}, state, buttonRef);
 
   const { buttonProps } = useButton(
     {
       ...menuTriggerProps,
       isDisabled: loading,
     },
-    btnRef,
+    buttonRef,
   );
   const styles = advancedTableColumnMenuStyles();
 
   const labelId = `${tableId}-${header.id}-label`;
   const menuActionId = `${tableId}-${header.id}-menu-action`;
 
+  // Check permissions and actions enabled
   const canFilter = header.column.getCanFilter();
   const canPin = canPinColumn(header.column);
-
   const canGroup = canGroupColumn(header.column);
   const isGrouped = header.column.getIsGrouped();
-
   const canReorder = Boolean(enableColumnReordering) && reorderInfo.idSet.has(header.column.id);
   const { canMoveLeft, canMoveRight } = resolveMoveBoundaries(canReorder, header.column.id, reorderInfo);
   const disabledMenuKeys = [...(canMoveLeft ? [] : ['move-left']), ...(canMoveRight ? [] : ['move-right'])];
@@ -162,10 +161,12 @@ export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuPr
     return typeof title === 'string' ? title : header.column.id;
   }, [header]);
 
-  const handleAction = (key: Key) => {
+  const handleMenuAction = (key: Key) => {
     if (key === 'pin-left') return handlePinAction(header.column, 'left', columnName, onPinAnnouncement);
     if (key === 'pin-right') return handlePinAction(header.column, 'right', columnName, onPinAnnouncement);
+
     if (key === 'group') return table.setGrouping(isGrouped ? [] : [header.column.id]);
+
     if (key === 'move-left')
       return handleMoveAction(table, header.column.id, 'left', columnName, onReorderAnnouncement);
     if (key === 'move-right')
@@ -176,23 +177,23 @@ export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuPr
     <>
       <Button
         {...buttonProps}
-        look="unstyled"
-        size="medium"
-        iconBefore={() => <MoreVertIcon size="small" />}
-        className={styles.triggerButton()}
         aria-labelledby={`${labelId} ${menuActionId}`}
-        ref={btnRef}
+        className={styles.triggerButton()}
+        iconBefore={() => <MoreVertIcon size="small" />}
+        look="unstyled"
+        ref={buttonRef}
+        size="medium"
       />
-      <VisuallyHidden id={menuActionId} tag="span" aria-hidden>
+      <VisuallyHidden aria-hidden id={menuActionId} tag="span">
         column menu
       </VisuallyHidden>
       {state.isOpen && (
-        <MenuPopover state={state} triggerRef={btnRef} placement="bottom start">
+        <MenuPopover placement="bottom start" state={state} triggerRef={buttonRef}>
           <MenuList
             {...menuProps}
-            onAction={handleAction}
             aria-labelledby={`${labelId} ${menuActionId}`}
             disabledKeys={disabledMenuKeys}
+            onAction={handleMenuAction}
           >
             {canFilter ? (
               <Section key="filter-section" title="Filter by:">

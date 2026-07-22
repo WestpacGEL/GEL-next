@@ -126,3 +126,7 @@ export function buildReorderAnnouncements<T>(table: Table<T>, announce: (text: s
     },
   };
 }
+
+export function getPrefersReducedMotion() {
+  return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
