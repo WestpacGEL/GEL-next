@@ -1,82 +1,40 @@
-### Badge looks
-
-```tsx
-() => {
-  const COLORS = ['danger', 'faint', 'hero', 'info', 'muted', 'primary', 'success', 'warning'] as const;
-  const INVERTED_COLORS = [
-    'danger-inverted',
-    'faint-inverted',
-    'hero-inverted',
-    'info-inverted',
-    'primary-inverted',
-    'success-inverted',
-    'warning-inverted',
-  ] as const;
-
-  return (
-    <Fragment>
-      <div className="flex flex-col gap-2">
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
-            <h3 className="typography-body-10 text-text-muted">Default</h3>
-            <div className="flex gap-2">
-              {COLORS.map(color => (
-                <Badge key={color} color={color}>
-                  {color}
-                </Badge>
-              ))}
-            </div>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h3 className="typography-body-10 text-text-muted">Soft</h3>
-            <div className="flex gap-2">
-              {COLORS.map(color => (
-                <Badge soft key={color} color={color}>
-                  {color}
-                </Badge>
-              ))}
-            </div>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h3 className="typography-body-10 text-text-muted">Inverted</h3>
-            <div className="flex gap-2">
-              {INVERTED_COLORS.map(color => (
-                <Badge key={color} color={color}>
-                  {color}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </Fragment>
-  );
-};
-```
-
 ### Default Badge
 
 ```tsx
 <Badge color="info">
-    New
-  </Badge>
+  New
+</Badge>
 ```
 
 ### Pill Badge
 
 ```tsx
-<Badge color="muted" type="pill">
+<Badge color="muted" type="pill" soft>
   123
 </Badge>
 ```
 
-### Usage Example
+### Usage Examples
 
 ```tsx
-<Link type="inline" href="#">
-  Messages
-  <Badge color="info" type="pill" className="ml-1">
-    12
-  </Badge>
-</Link>
+<div className="w-fit flex flex-col gap-2">
+  <Link type="inline" href="#">
+    Messages
+    <Badge color="info" type="pill" className="ml-1">
+      12
+    </Badge>
+  </Link>
+  <Button size="medium" type="inline" href="#">
+    Messages
+    <Badge color="primary-inverted" className="ml-1">
+      12
+    </Badge>
+  </Button>
+  <Button size="medium" type="inline" href="#">
+    Messages
+    <Badge color="success" soft className="ml-1">
+      12
+    </Badge>
+  </Button>
+</div>
 ```
