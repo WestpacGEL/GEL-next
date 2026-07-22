@@ -1,8 +1,6 @@
 type RowWithSubRows<T> = T & { subRows?: RowWithSubRows<T>[] };
 
-/**
- * Whether any row in `data` could ever expand using the table data.
- */
+/** Returns whether any row in `data` could ever expand using the table data. */
 export function hasExpandableRows<T>(
   data: T[],
   getRowCanExpand: ((row: T, info: { depth: number }) => boolean) | undefined,

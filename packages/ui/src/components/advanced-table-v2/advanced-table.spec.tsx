@@ -362,9 +362,11 @@ describe('AdvancedTable', () => {
       const filterInput = await openColumnMenu(user, 'Name');
       await user.type(filterInput, 'Jane');
 
-      expect(screen.getByText('Jane')).toBeInTheDocument();
-      expect(screen.queryByText('John')).not.toBeInTheDocument();
-      expect(screen.queryByText('Bob')).not.toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText('Jane')).toBeInTheDocument();
+        expect(screen.queryByText('John')).not.toBeInTheDocument();
+        expect(screen.queryByText('Bob')).not.toBeInTheDocument();
+      });
     });
 
     it('announces the filter result count via a live region', async () => {
@@ -375,10 +377,10 @@ describe('AdvancedTable', () => {
 
       const filterInput = await openColumnMenu(user, 'Name');
       await user.type(filterInput, 'Jane');
-      expect(liveRegion).toHaveTextContent('1 matching row.');
+      await waitFor(() => expect(liveRegion).toHaveTextContent('1 matching row.'));
 
       await user.clear(filterInput);
-      expect(liveRegion).toHaveTextContent('Filter cleared.');
+      await waitFor(() => expect(liveRegion).toHaveTextContent('Filter cleared.'));
     });
 
     it('shows the empty state when a filter matches no rows', async () => {
@@ -390,9 +392,11 @@ describe('AdvancedTable', () => {
       await user.keyboard('{Escape}');
 
       // Scope to the table: pagination (on by default) renders its own status region.
-      const status = within(screen.getByRole('table')).getByRole('status');
-      expect(status).toHaveTextContent('No matching results');
-      expect(status).toHaveTextContent('Try adjusting or clearing your filter.');
+      await waitFor(() => {
+        const status = within(screen.getByRole('table')).getByRole('status');
+        expect(status).toHaveTextContent('No matching results');
+        expect(status).toHaveTextContent('Try adjusting or clearing your filter.');
+      });
     });
 
     it('controlled filters: emits onColumnFiltersChange and renders from the columnFilters prop', async () => {
@@ -410,7 +414,7 @@ describe('AdvancedTable', () => {
       const filterInput = await openColumnMenu(userEvent.setup(), 'Name');
       fireEvent.change(filterInput, { target: { value: 'Jane' } });
 
-      expect(onColumnFiltersChange).toHaveBeenCalledWith([{ id: 'name', value: 'Jane' }]);
+      await waitFor(() => expect(onColumnFiltersChange).toHaveBeenCalledWith([{ id: 'name', value: 'Jane' }]));
       // Controlled: doesn't filter on its own until the prop is fed back.
       expect(screen.getByText('John')).toBeInTheDocument();
       expect(screen.getByText('Bob')).toBeInTheDocument();
@@ -426,6 +430,41 @@ describe('AdvancedTable', () => {
       );
       expect(screen.queryByText('John')).not.toBeInTheDocument();
       expect(screen.getByText('Jane')).toBeInTheDocument();
+    });
+
+    it('an external filter reset cancels a still-pending debounced commit, rather than re-applying the stale value', async () => {
+      const onColumnFiltersChange = vi.fn();
+      const { rerender } = render(
+        <AdvancedTable
+          columnFilters={[{ id: 'name', value: 'Existing' }]}
+          columns={testColumns}
+          data={testData}
+          enableColumnFilter
+          onColumnFiltersChange={onColumnFiltersChange}
+        />,
+      );
+
+      const filterInput = await openColumnMenu(userEvent.setup(), 'Name');
+      // Types over the existing filter — this commit is debounced and hasn't fired yet.
+      fireEvent.change(filterInput, { target: { value: 'Jane' } });
+
+      // Well within the debounce window, the app resets filters from elsewhere (e.g. a "Clear
+      // all filters" action), feeding the new columnFilters prop back in.
+      await new Promise(resolve => setTimeout(resolve, 100));
+      rerender(
+        <AdvancedTable
+          columnFilters={[]}
+          columns={testColumns}
+          data={testData}
+          enableColumnFilter
+          onColumnFiltersChange={onColumnFiltersChange}
+        />,
+      );
+
+      // Wait past the original debounce window: the pending "Jane" commit must not fire and
+      // silently undo the external reset.
+      await new Promise(resolve => setTimeout(resolve, 400));
+      expect(onColumnFiltersChange).not.toHaveBeenCalled();
     });
 
     it('manual filtering: the table does not filter rows itself, but still tracks and emits filter state', async () => {
@@ -445,7 +484,7 @@ describe('AdvancedTable', () => {
 
       const filterInput = await openColumnMenu(userEvent.setup(), 'Name');
       fireEvent.change(filterInput, { target: { value: 'Bob' } });
-      expect(onColumnFiltersChange).toHaveBeenCalledWith([{ id: 'name', value: 'Bob' }]);
+      await waitFor(() => expect(onColumnFiltersChange).toHaveBeenCalledWith([{ id: 'name', value: 'Bob' }]));
     });
 
     it('uncontrolled: defaultColumnFilters sets the initial filter', () => {
@@ -988,12 +1027,12 @@ describe('AdvancedTable', () => {
 
       await user.click(screen.getByRole('button', { name: 'Name column menu' }));
       await screen.findByRole('menu');
-      expect(screen.getByRole('menuitem', { name: 'Move left' })).toHaveAttribute('aria-disabled', 'true');
+      expect(screen.queryByRole('menuitem', { name: 'Move left' })).not.toBeInTheDocument();
       await user.keyboard('{Escape}');
 
       await user.click(screen.getByRole('button', { name: 'Age column menu' }));
       await screen.findByRole('menu');
-      expect(screen.getByRole('menuitem', { name: 'Move right' })).toHaveAttribute('aria-disabled', 'true');
+      expect(screen.queryByRole('menuitem', { name: 'Move right' })).not.toBeInTheDocument();
       await user.click(screen.getByRole('menuitem', { name: 'Move left' }));
 
       expect(columnHeaderNames()).toEqual(['Age', 'Name']);
@@ -1015,7 +1054,7 @@ describe('AdvancedTable', () => {
       expect(screen.getByRole('checkbox', { name: 'Select all rows in current page' })).toBeInTheDocument();
       await user.click(screen.getByRole('button', { name: 'Name column menu' }));
       await screen.findByRole('menu');
-      expect(screen.getByRole('menuitem', { name: 'Move left' })).toHaveAttribute('aria-disabled', 'true');
+      expect(screen.queryByRole('menuitem', { name: 'Move left' })).not.toBeInTheDocument();
     });
 
     it('controlled order: renders from the columnOrder prop and emits onColumnOrderChange', async () => {
@@ -1080,10 +1119,11 @@ describe('AdvancedTable', () => {
       expect(screen.queryByRole('menuitem', { name: 'Move right' })).not.toBeInTheDocument();
       await user.keyboard('{Escape}');
 
-      // Viable column for re-ordering
+      // The only reorderable column left, with nowhere to move: no Move section at all.
       await user.click(screen.getByRole('button', { name: 'Age column menu' }));
       await screen.findByRole('menu');
-      expect(screen.getByRole('menuitem', { name: 'Move left' })).toHaveAttribute('aria-disabled', 'true');
+      expect(screen.queryByRole('menuitem', { name: 'Move left' })).not.toBeInTheDocument();
+      expect(screen.queryByRole('menuitem', { name: 'Move right' })).not.toBeInTheDocument();
       await user.keyboard('{Escape}');
 
       // Now also excluded from resizing.
@@ -1331,6 +1371,204 @@ describe('AdvancedTable', () => {
       // No onSelectionChange handler: the table must not toggle its own state.
       expect(screen.getByRole('checkbox', { name: 'Select row 1' })).toBeChecked();
       expect(screen.getByRole('checkbox', { name: 'Select row 2' })).not.toBeChecked();
+    });
+
+    it('selecting a nested tree-data (subRows) child row is not immediately dropped as stale', async () => {
+      type TreeData = TestData & { subRows?: TreeData[] };
+      const treeData: TreeData[] = [{ name: 'John', age: 30, subRows: [{ name: 'Johnny', age: 5 }] }];
+      const user = userEvent.setup();
+      const onSelectionChange = vi.fn();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={treeData}
+          enableRowSelection
+          onSelectionChange={onSelectionChange}
+          rowKey="name"
+        />,
+      );
+
+      await user.click(screen.getByRole('button', { name: 'Expand John' }));
+      const johnnyCheckbox = within(screen.getByText('Johnny').closest('tr') as HTMLElement).getByRole('checkbox');
+      await user.click(johnnyCheckbox);
+
+      expect(johnnyCheckbox).toBeChecked();
+      expect(onSelectionChange).toHaveBeenLastCalledWith(['John.Johnny']);
+    });
+
+    it('labels a collapsed parent row as selecting its collapsed children too, and numbers nested rows correctly once expanded', async () => {
+      type TreeData = TestData & { subRows?: TreeData[] };
+      const treeData: TreeData[] = [
+        { name: 'John', age: 30, subRows: [{ name: 'Johnny', age: 5 }] },
+        { name: 'Bob', age: 40 },
+      ];
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={treeData} enableRowSelection rowKey="name" />);
+
+      // Collapsed: John's checkbox warns it also toggles the (currently hidden) child.
+      // Bob is already "row 3" even while Johnny is hidden — numbering comes from
+      // the full flattened list so it never shifts as rows expand/collapse.
+      expect(screen.getByRole('checkbox', { name: 'Select row 1 and collapsed rows' })).toBeInTheDocument();
+      expect(screen.getByRole('checkbox', { name: 'Select row 3' })).toBeInTheDocument(); // Bob
+
+      await user.click(screen.getByRole('button', { name: 'Expand John' }));
+
+      // Expanded: no longer "collapsed", and Johnny is now visible at its stable number.
+      expect(screen.getByRole('checkbox', { name: 'Select row 1' })).toBeInTheDocument(); // John
+      expect(screen.getByRole('checkbox', { name: 'Select row 2' })).toBeInTheDocument(); // Johnny
+      expect(screen.getByRole('checkbox', { name: 'Select row 3' })).toBeInTheDocument(); // Bob
+    });
+
+    it('a parent shows checked once every child is individually selected, and indeterminate again if one is cleared', async () => {
+      type TreeData = TestData & { subRows?: TreeData[] };
+      const treeData: TreeData[] = [
+        {
+          name: 'John',
+          age: 30,
+          subRows: [
+            { name: 'Johnny', age: 5 },
+            { name: 'Janet', age: 8 },
+          ],
+        },
+      ];
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={treeData} enableRowSelection rowKey="name" />);
+      await user.click(screen.getByRole('button', { name: 'Expand John' }));
+
+      const johnCheckbox = screen.getByRole<HTMLInputElement>('checkbox', { name: /Select row 1/ });
+      const johnnyCheckbox = within(screen.getByText('Johnny').closest('tr') as HTMLElement).getByRole('checkbox');
+      const janetCheckbox = within(screen.getByText('Janet').closest('tr') as HTMLElement).getByRole('checkbox');
+
+      await user.click(johnnyCheckbox);
+      expect(johnCheckbox.indeterminate).toBe(true);
+      expect(johnCheckbox).not.toBeChecked();
+
+      await user.click(janetCheckbox);
+      // Every child selected individually — John was never toggled directly,
+      // but should read as fully checked, not cleared.
+      expect(johnCheckbox.indeterminate).toBe(false);
+      expect(johnCheckbox).toBeChecked();
+
+      await user.click(janetCheckbox);
+      expect(johnCheckbox.indeterminate).toBe(true);
+      expect(johnCheckbox).not.toBeChecked();
+    });
+
+    it('clicking a parent while indeterminate selects the rest, rather than clearing what is already checked', async () => {
+      type TreeData = TestData & { subRows?: TreeData[] };
+      const treeData: TreeData[] = [
+        {
+          name: 'John',
+          age: 30,
+          subRows: [
+            { name: 'Johnny', age: 5 },
+            { name: 'Janet', age: 8 },
+          ],
+        },
+      ];
+      const user = userEvent.setup();
+      const onSelectionChange = vi.fn();
+      render(
+        <AdvancedTable
+          columns={testColumns}
+          data={treeData}
+          enableRowSelection
+          onSelectionChange={onSelectionChange}
+          rowKey="name"
+        />,
+      );
+      await user.click(screen.getByRole('button', { name: 'Expand John' }));
+
+      const johnCheckbox = screen.getByRole<HTMLInputElement>('checkbox', { name: /Select row 1/ });
+      const johnnyCheckbox = within(screen.getByText('Johnny').closest('tr') as HTMLElement).getByRole('checkbox');
+      const janetCheckbox = within(screen.getByText('Janet').closest('tr') as HTMLElement).getByRole('checkbox');
+
+      // Select all via the parent, then individually clear one child — John's own
+      // selection entry is now stale (still "selected" from the cascade) even though
+      // the row reads as indeterminate.
+      await user.click(johnCheckbox);
+      await user.click(johnnyCheckbox);
+      expect(johnCheckbox.indeterminate).toBe(true);
+      expect(johnnyCheckbox).not.toBeChecked();
+      expect(janetCheckbox).toBeChecked();
+
+      // Clicking John while indeterminate must select the rest (Johnny), not clear
+      // the sibling that's still checked (Janet).
+      await user.click(johnCheckbox);
+      expect(johnCheckbox.indeterminate).toBe(false);
+      expect(johnCheckbox).toBeChecked();
+      expect(johnnyCheckbox).toBeChecked();
+      expect(janetCheckbox).toBeChecked();
+      expect(onSelectionChange).toHaveBeenLastCalledWith(
+        expect.arrayContaining(['John', 'John.Johnny', 'John.Janet']),
+      );
+    });
+
+    it('select-all agrees with the per-row checkboxes once every child of a parent is selected individually', async () => {
+      type TreeData = TestData & { subRows?: TreeData[] };
+      const treeData: TreeData[] = [
+        {
+          name: 'John',
+          age: 30,
+          subRows: [
+            { name: 'Johnny', age: 5 },
+            { name: 'Janet', age: 8 },
+          ],
+        },
+      ];
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={treeData} enableRowSelection rowKey="name" />);
+      await user.click(screen.getByRole('button', { name: 'Expand John' }));
+
+      const selectAll = screen.getByRole<HTMLInputElement>('checkbox', { name: 'Select all rows in current page' });
+      const johnnyCheckbox = within(screen.getByText('Johnny').closest('tr') as HTMLElement).getByRole('checkbox');
+      const janetCheckbox = within(screen.getByText('Janet').closest('tr') as HTMLElement).getByRole('checkbox');
+
+      // John (the parent) is never toggled directly — only its two children are.
+      await user.click(johnnyCheckbox);
+      await user.click(janetCheckbox);
+
+      // Every row's own checkbox reads as checked (including John's, via the subrows-selected
+      // fallback), so select-all must agree rather than still showing indeterminate/unchecked.
+      expect(screen.getByRole<HTMLInputElement>('checkbox', { name: /Select row 1/ })).toBeChecked();
+      expect(selectAll.indeterminate).toBe(false);
+      expect(selectAll).toBeChecked();
+    });
+
+    it('a parent that reads as checked only via its children (never toggled directly itself) can still be unchecked', async () => {
+      type TreeData = TestData & { subRows?: TreeData[] };
+      const treeData: TreeData[] = [
+        {
+          name: 'John',
+          age: 30,
+          subRows: [
+            { name: 'Johnny', age: 5 },
+            { name: 'Janet', age: 8 },
+          ],
+        },
+      ];
+      const user = userEvent.setup();
+      render(<AdvancedTable columns={testColumns} data={treeData} enableRowSelection rowKey="name" />);
+      await user.click(screen.getByRole('button', { name: 'Expand John' }));
+
+      const johnCheckbox = screen.getByRole<HTMLInputElement>('checkbox', { name: /Select row 1/ });
+      const johnnyCheckbox = within(screen.getByText('Johnny').closest('tr') as HTMLElement).getByRole('checkbox');
+      const janetCheckbox = within(screen.getByText('Janet').closest('tr') as HTMLElement).getByRole('checkbox');
+
+      // John (the parent) is never toggled directly — only its two children are — so its own raw
+      // selection id is never set, even though it now reads as fully checked via aggregation.
+      await user.click(johnnyCheckbox);
+      await user.click(janetCheckbox);
+      expect(johnCheckbox).toBeChecked();
+
+      // Clicking a checkbox that reads as checked only through its children must still take
+      // effect, clearing every descendant — not silently no-op because the parent's own raw id
+      // was already "unselected".
+      await user.click(johnCheckbox);
+      expect(johnCheckbox).not.toBeChecked();
+      expect(johnCheckbox.indeterminate).toBe(false);
+      expect(johnnyCheckbox).not.toBeChecked();
+      expect(janetCheckbox).not.toBeChecked();
     });
   });
 
@@ -1581,7 +1819,7 @@ describe('AdvancedTable', () => {
       const expandButton = screen.getByRole('button', { name: 'Expand John' });
       expect(nameCell).toContainElement(expandButton);
 
-      const checkboxCell = screen.getByRole('checkbox', { name: 'Select row 1' }).closest('td');
+      const checkboxCell = screen.getByRole('checkbox', { name: 'Select row 1 and collapsed rows' }).closest('td');
       expect(checkboxCell).not.toContainElement(expandButton);
       expect(checkboxCell).not.toBe(nameCell);
 
@@ -2111,7 +2349,7 @@ describe('AdvancedTable', () => {
       );
 
       expect(screen.getByRole('button', { name: 'Name column menu' })).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /Name Sort ascending/ })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Name sort' })).toBeInTheDocument();
       expect(screen.getByRole('slider', { name: 'Resize Name column' })).toBeInTheDocument();
 
       // Drag handle: labelled by the column's own name, with dnd-kit's own "sortable" role description read out alongside it.
@@ -2141,7 +2379,7 @@ describe('AdvancedTable', () => {
 
         const filterInput = await screen.findByRole('textbox');
         await user.type(filterInput, 'Jane');
-        expect(screen.queryByText('John')).not.toBeInTheDocument();
+        await waitFor(() => expect(screen.queryByText('John')).not.toBeInTheDocument());
 
         await user.keyboard('{Escape}');
         expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
@@ -2160,7 +2398,7 @@ describe('AdvancedTable', () => {
         expect(trigger).toHaveAttribute('aria-controls', menu.id);
       });
 
-      it('a menu with a filter section still opens focused on the menu itself, moving into the filter input only on Arrow Down', async () => {
+      it('a menu with a filter section opens focused directly on the filter input', async () => {
         const user = userEvent.setup();
         render(<AdvancedTable columns={testColumns} data={testData} enableColumnFilter />);
 
@@ -2168,15 +2406,11 @@ describe('AdvancedTable', () => {
         trigger.focus();
         await user.keyboard('{Enter}');
 
-        const menu = await screen.findByRole('menu');
-        expect(menu).toHaveFocus();
-
         const filterInput = await screen.findByRole('textbox');
-        await user.keyboard('{ArrowDown}');
         await waitFor(() => expect(filterInput).toHaveFocus());
       });
 
-      it('opening via Enter/Space focuses the menu itself (not straight onto the first item), same as a mouse click —> Arrow Down then selects the first item', async () => {
+      it('opening via Enter/Space focuses the first item directly, unlike a mouse click which focuses the menu itself', async () => {
         const user = userEvent.setup();
         render(<AdvancedTable columns={testColumns} data={testData} enableColumnPinning />);
 
@@ -2184,11 +2418,10 @@ describe('AdvancedTable', () => {
         trigger.focus();
         await user.keyboard('{Enter}');
 
-        const menu = await screen.findByRole('menu');
-        expect(menu).toHaveFocus();
+        expect(screen.getByRole('menuitem', { name: 'Pin left' })).toHaveFocus();
 
         await user.keyboard('{ArrowDown}');
-        expect(screen.getByRole('menuitem', { name: 'Pin left' })).toHaveFocus();
+        expect(screen.getByRole('menuitem', { name: 'Pin right' })).toHaveFocus();
       });
 
       it('opening via mouse click focuses the menu itself —> Arrow Down then selects the first item', async () => {
@@ -2205,7 +2438,7 @@ describe('AdvancedTable', () => {
         expect(screen.getByRole('menuitem', { name: 'Pin left' })).toHaveFocus();
       });
 
-      it('the menu and its items carry a focus-visible outline class for keyboard users', async () => {
+      it('the focused menu item carries a focus-visible outline class for keyboard users', async () => {
         // While we shouldn't normally test classes, this one is important, without visual indicators, we can't tell where we are at.
         const user = userEvent.setup();
         render(<AdvancedTable columns={testColumns} data={testData} enableColumnPinning />);
@@ -2214,11 +2447,12 @@ describe('AdvancedTable', () => {
         trigger.focus();
         await user.keyboard('{Enter}');
 
-        const menu = await screen.findByRole('menu');
-        expect(menu.className).toContain('focus-visible:focus-outline');
+        const firstItem = screen.getByRole('menuitem', { name: 'Pin left' });
+        expect(firstItem).toHaveFocus();
+        expect(firstItem.className).toContain('focus-visible:focus-outline');
 
         await user.keyboard('{ArrowDown}');
-        expect(screen.getByRole('menuitem', { name: 'Pin left' }).className).toContain('focus-visible:focus-outline');
+        expect(screen.getByRole('menuitem', { name: 'Pin right' }).className).toContain('focus-visible:focus-outline');
       });
 
       it('the hidden "column menu" text that names the trigger is not separately reachable/announced', () => {

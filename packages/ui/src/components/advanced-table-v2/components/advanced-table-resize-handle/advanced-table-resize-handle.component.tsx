@@ -8,7 +8,7 @@ import { useAdvancedTableContext } from '../../advanced-table.context.js';
 import { styles as resizeHandleStyles } from './advanced-table-resize-handle.styles.js';
 import { AdvancedTableResizeHandleProps } from './advanced-table-resize-handle.types.js';
 
-// Steps with keyboard move in px
+// Steps with keyboard resize move in px
 const STEP = 10;
 const SHIFT_STEP = 50;
 

@@ -10,6 +10,7 @@ import { getPrefersReducedMotion } from '../../utils/column-order.js';
 import {
   canGroupColumn,
   canPinColumn,
+  canReorderColumn,
   canResizeColumn,
   getColumnMeta,
   getColumnPinningStyleInfo,
@@ -30,17 +31,6 @@ function getAriaSort(canSort: boolean, direction: SortingDirections) {
   return 'none';
 }
 
-function getNextSortLabel(direction: SortingDirections) {
-  switch (direction) {
-    case 'asc':
-      return 'Sort ascending';
-    case 'desc':
-      return 'Sort descending';
-    default:
-      return 'Clear sort';
-  }
-}
-
 /** Resolves which per-column controls this header cell shows. */
 function getColumnCapabilities<T>(
   header: Header<T, unknown>,
@@ -52,11 +42,7 @@ function getColumnCapabilities<T>(
   const canPin = canPinColumn(column);
   const canGroup = canGroupColumn(column);
   const canResize = canResizeColumn(column);
-
-  // Only the top header row's real cells are re-orderable (if users are using nested table columns)
-  const isTopRow = header.headerGroup.depth === 0;
-  const canReorder =
-    Boolean(enableColumnReordering) && isTopRow && !header.isPlaceholder && reorderInfo.idSet.has(column.id);
+  const canReorder = canReorderColumn(header, reorderInfo, enableColumnReordering);
 
   return { isReserved, canPin, canGroup, canResize, canReorder };
 }
@@ -73,7 +59,6 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
 
   const labelId = `${tableId}-${header.id}-label`;
   const sortActionId = `${tableId}-${header.id}-sort-action`;
-  const nextSortLabel = getNextSortLabel(column.getNextSortingOrder());
 
   const { canGroup, canPin, canReorder, canResize, isReserved } = getColumnCapabilities(
     header,
@@ -140,7 +125,10 @@ function AdvancedTableHeaderCell<T>({ header }: AdvancedTableHeaderCellProps<T>)
               {sortDirection === 'asc' && <ArrowUpIcon aria-hidden size="small" />}
               {sortDirection === 'desc' && <ArrowDownIcon aria-hidden size="small" />}
               <VisuallyHidden id={sortActionId} tag="span">
-                {nextSortLabel}
+                {/* We are using a static "sort" label here, so it doesn't re-announce on every change, 
+                the column already has `aria-sort`, and this button's label doesn't clash with the
+                change announcements. */}
+                sort
               </VisuallyHidden>
             </button>
           )}

@@ -2,7 +2,7 @@ import { ColumnDef, RowData } from '@tanstack/react-table';
 import { ReactNode } from 'react';
 
 import { AdvancedTableColumn, AdvancedTableGroupColumn } from '../advanced-table.types.js';
-import { ExpandCellContent } from '../components/expand-cell-content/index.js';
+import { AdvancedTableExpandCellContent } from '../components/advanced-table-expand-cell-content/index.js';
 
 import { getExpandButtonA11yProps } from './expand-button-a11y.js';
 
@@ -69,7 +69,7 @@ type ColumnGeneratorOptions<T> = {
    * button's accessible label so it can reference the detail panel it controls. */
   hasDetailPanel?: boolean;
   /** Whether any row in the table can expand at all — gates whether the first
-   * leaf column is wrapped in `ExpandCellContent`. */
+   * leaf column is wrapped in `AdvancedTableExpandCellContent`. */
   hasExpandableRows?: boolean;
   /** Resolved table id; threaded down to the expand button's `aria-controls`
    * so generated element ids stay unique across multiple table instances. */
@@ -126,7 +126,7 @@ export function columnGenerator<T>(
 
         const { row } = info;
         return (
-          <ExpandCellContent
+          <AdvancedTableExpandCellContent
             depth={row.depth}
             // Group rows never reach this cell — they're routed to AdvancedTableGroupRow instead
             showExpandControl={row.getCanExpand()}
@@ -135,7 +135,7 @@ export function columnGenerator<T>(
             {...getExpandButtonA11yProps(options.tableId ?? '', row, info.getValue(), Boolean(options.hasDetailPanel))}
           >
             {value}
-          </ExpandCellContent>
+          </AdvancedTableExpandCellContent>
         );
       },
       // Sorting, filtering, pinning and grouping are Table enabled but require column opt-in

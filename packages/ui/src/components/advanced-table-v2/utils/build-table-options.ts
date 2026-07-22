@@ -32,125 +32,120 @@ import { resolveRowId } from './row-id.js';
 
 /** Inputs the component derives (state, ids, resolved flags) for `useReactTable`. */
 export type BuildTableOptionsParams<T> = {
-  /** Row data (already resolved from the controlled/uncontrolled pattern). */
-  data: T[];
-  /** Internal TanStack columns produced by `columnGenerator`. */
-  columns: ColumnDef<T>[];
-  /** Resolved table id; used to namespace generated row ids. */
-  tableId: string;
-  /** Table-level sorting flag. */
-  enableSorting?: boolean;
-  /** Current sort state. */
-  sortingState: AdvancedTableSortingState;
-  /** Sort-state setter (TanStack hands it an updater; the setter resolves it). */
-  onSortingChange: OnChangeFn<SortingState>;
-  /** Manual (server-side) sorting — the table tracks state but does not reorder. */
-  manualSorting?: boolean;
-  /** Table-level pagination flag. */
-  enablePagination?: boolean;
-  /** Current pagination state. */
-  paginationState: AdvancedTablePaginationState;
-  /** Pagination-state setter (TanStack hands it an updater; the setter resolves it). */
-  onPaginationChange: OnChangeFn<PaginationState>;
-  /** Manual (server-side) pagination — the table renders `data` as-is instead of slicing it, and only tracks pagination state. */
-  manualPagination?: boolean;
-  /** Total row count across all pages; drives page count, the row-range summary, and Next/Prev when `manualPagination` is set. */
-  rowCount?: number;
-  /** Table-level column-filter flag. */
-  enableColumnFilter?: boolean;
   /** Current column-filter state. */
   columnFiltersState: AdvancedTableColumnFiltersState;
-  /** Column-filter setter (TanStack hands it an updater; the setter resolves it). */
-  onColumnFiltersChange: OnChangeFn<ColumnFiltersState>;
-  /** Manual (server-side) filtering — the table tracks state but does not filter rows itself. */
-  manualFiltering?: boolean;
-  /** Table-level column-reordering flag. Gates whether `columnOrder` is fed to the engine at all. */
-  enableColumnReordering?: boolean;
   /** Current column-order state (already resolved to include any forced reserved column ids). */
   columnOrderState: ColumnOrderState;
-  /** Column-order setter (TanStack hands it an updater; the setter resolves it). */
-  onColumnOrderChange: OnChangeFn<ColumnOrderState>;
-  /** Table-level column-resizing flag. Gates `column.getCanResize()`/`columnResizeMode`. */
-  enableColumnResizing?: boolean;
-  /** Current column-sizing state. */
-  columnSizingState: ColumnSizingState;
-  /** Column-sizing setter (TanStack hands it an updater; passed straight through — no reserved-id merging needed). */
-  onColumnSizingChange: OnChangeFn<ColumnSizingState>;
-  /** Table-level column-pinning flag. Gates `column.getCanPin()`/`column.pin()`. */
-  enableColumnPinning?: boolean;
   /** Current column-pinning state (already resolved, including any forced reserved column id). */
   columnPinningState: ColumnPinningState;
-  /** Column-pinning setter (TanStack hands it an updater; the setter resolves it). */
-  onColumnPinningChange: OnChangeFn<ColumnPinningState>;
-  /** `true` when the reserved selection column must be force-pinned regardless of `enableColumnPinning`. */
-  hasReservedPinning?: boolean;
-  /** Table-level grouping flag. Gates `column.getCanGroup()`. */
+  /** Current column-sizing state. */
+  columnSizingState: ColumnSizingState;
+  /** Internal TanStack columns produced by `columnGenerator`. */
+  columns: ColumnDef<T>[];
+  /** Row data (already resolved from the controlled/uncontrolled pattern). */
+  data: T[];
+  /** Table-level column-filter flag. */
+  enableColumnFilter?: boolean;
+  /** Table-level column-pinning flag. */
+  enableColumnPinning?: boolean;
+  /** Table-level column-reordering flag. */
+  enableColumnReordering?: boolean;
+  /** Table-level column-resizing flag. */
+  enableColumnResizing?: boolean;
+  /** Table-level grouping flag. */
   enableGrouping?: boolean;
+  /** Table-level pagination flag. */
+  enablePagination?: boolean;
+  /** Table-level row-pinning flag. */
+  enableRowPinning?: boolean;
+  /** Table-level row-selection flag. */
+  enableRowSelection?: boolean;
+  /** Table-level sorting flag. */
+  enableSorting?: boolean;
+  /** Current expansion state. Always wired. */
+  expandedState: ExpandedState;
+  /** Optional overrides which rows can expand conditionally. */
+  getRowCanExpand?: (row: Row<T>) => boolean;
   /** Current grouping state (0 or 1 column ids — single-column grouping only). */
   groupingState: GroupingState;
+  /** `true` when the reserved selection column must be force-pinned regardless of `enableColumnPinning`. */
+  hasReservedPinning?: boolean;
+  /** Manual filtering (controlled) — the table tracks state but does not filter rows itself. */
+  manualFiltering?: boolean;
+  /** Manual pagination (controlled) — the table renders `data` as-is instead of slicing it, and only tracks pagination state. */
+  manualPagination?: boolean;
+  /** Manual sorting (controlled) — the table tracks state but does not reorder. */
+  manualSorting?: boolean;
+  /** Column-filter setter (TanStack hands it an updater; the setter resolves it). */
+  onColumnFiltersChange: OnChangeFn<ColumnFiltersState>;
+  /** Column-order setter (TanStack hands it an updater; the setter resolves it). */
+  onColumnOrderChange: OnChangeFn<ColumnOrderState>;
+  /** Column-pinning setter (TanStack hands it an updater; the setter resolves it). */
+  onColumnPinningChange: OnChangeFn<ColumnPinningState>;
+  /** Column-sizing setter (TanStack hands it an updater; passed straight through — no reserved-id merging needed). */
+  onColumnSizingChange: OnChangeFn<ColumnSizingState>;
+  /** Expansion setter (TanStack hands it an updater; the setter resolves it). */
+  onExpandedChange: OnChangeFn<ExpandedState>;
   /** Grouping setter (TanStack hands it an updater; the setter resolves it). */
   onGroupingChange: OnChangeFn<GroupingState>;
+  /** Pagination-state setter (TanStack hands it an updater; the setter resolves it). */
+  onPaginationChange: OnChangeFn<PaginationState>;
+  /** Row-pinning setter (TanStack hands it an updater; the setter resolves it). */
+  onRowPinningChange: OnChangeFn<RowPinningState>;
+  /** Row-selection setter (TanStack hands it an updater; the setter resolves it). */
+  onRowSelectionChange: OnChangeFn<RowSelectionState>;
+  /** Sort-state setter (TanStack hands it an updater; the setter resolves it). */
+  onSortingChange: OnChangeFn<SortingState>;
+  /** Current pagination state. */
+  paginationState: AdvancedTablePaginationState;
+  /** Total row count across all pages; drives page count, the row-range summary, and Next/Prev when `manualPagination` is set. */
+  rowCount?: number;
   /** Row-identity accessor. Drives `getRowId` whenever selection (or a later
    * reserved-column feature) is enabled; falls back to index-based ids otherwise. */
   rowKey?: AdvancedTableRowKey<T>;
-  /** Table-level row-selection flag. */
-  enableRowSelection?: boolean;
+  /** Current row-pinning state — already expanded to include cascaded sub-row ids. Top pin only, bottom is not enabled. */
+  rowPinningState: RowPinningState;
   /** Current row-selection state, keyed by the id `getRowId` produces. */
   rowSelectionState: RowSelectionState;
-  /** Row-selection setter (TanStack hands it an updater; the setter resolves it). */
-  onRowSelectionChange: OnChangeFn<RowSelectionState>;
-  /** Current expansion state. Always wired (no `enableExpanding` flag — see
-   * advanced-table.types.ts's `AdvancedTableExpandedState` doc). */
-  expandedState: ExpandedState;
-  /** Expansion setter (TanStack hands it an updater; the setter resolves it). */
-  onExpandedChange: OnChangeFn<ExpandedState>;
-  /**
-   * Overrides which rows can expand. Resolved by the component from the public
-   * `getRowCanExpand`/`renderDetailPanel` props — `undefined` lets TanStack's own
-   * `subRows`-based default apply.
-   */
-  getRowCanExpand?: (row: Row<T>) => boolean;
-  /** Table-level row-pinning flag. */
-  enableRowPinning?: boolean;
-  /** Current row-pinning state — already expanded to include cascaded sub-row ids. Top only; `bottom` is always `[]`. */
-  rowPinningState: RowPinningState;
-  /** Row-pinning setter (TanStack hands it an updater; the setter resolves it). */
-  onRowPinningChange: OnChangeFn<RowPinningState>;
+  /** Current sort state. */
+  sortingState: AdvancedTableSortingState;
+  /** Resolved table id; used to namespace generated row ids. */
+  tableId: string;
 };
 
 // Builds the `state` slice of the `useReactTable` options object.
 function buildTableState<T>({
-  enableSorting,
-  sortingState,
-  enablePagination,
-  paginationState,
-  enableRowSelection,
-  rowSelectionState,
-  enableColumnFilter,
   columnFiltersState,
-  enableColumnReordering,
   columnOrderState,
-  enableColumnResizing,
-  columnSizingState,
-  enableColumnPinning,
   columnPinningState,
-  hasReservedPinning,
+  columnSizingState,
+  enableColumnFilter,
+  enableColumnPinning,
+  enableColumnReordering,
+  enableColumnResizing,
   enableGrouping,
-  groupingState,
+  enablePagination,
   enableRowPinning,
-  rowPinningState,
+  enableRowSelection,
+  enableSorting,
   expandedState,
+  groupingState,
+  hasReservedPinning,
+  paginationState,
+  rowPinningState,
+  rowSelectionState,
+  sortingState,
 }: BuildTableOptionsParams<T>): TableOptions<T>['state'] {
   return {
-    ...(enableSorting && { sorting: sortingState }),
-    ...(enablePagination && { pagination: paginationState }),
-    ...(enableRowSelection && { rowSelection: rowSelectionState }),
+    ...((enableColumnPinning || hasReservedPinning) && { columnPinning: columnPinningState }),
     ...(enableColumnFilter && { columnFilters: columnFiltersState }),
     ...(enableColumnReordering && { columnOrder: columnOrderState }),
     ...(enableColumnResizing && { columnSizing: columnSizingState }),
-    ...((enableColumnPinning || hasReservedPinning) && { columnPinning: columnPinningState }),
     ...(enableGrouping && { grouping: groupingState }),
+    ...(enablePagination && { pagination: paginationState }),
     ...(enableRowPinning && { rowPinning: rowPinningState }),
+    ...(enableRowSelection && { rowSelection: rowSelectionState }),
+    ...(enableSorting && { sorting: sortingState }),
     // Unconditional — no `enableExpanding` flag exists; the expand control on a
     // row is gated per-row by `getCanExpand()`/`getIsGrouped()`, not by a table
     // switch (see AdvancedTableExpandedState's doc).
@@ -165,71 +160,76 @@ function buildTableState<T>({
  */
 export function buildTableOptions<T>(params: BuildTableOptionsParams<T>): TableOptions<T> {
   const {
-    data,
     columns,
-    tableId,
-    enableSorting,
-    onSortingChange,
-    manualSorting,
+    data,
+    enableColumnFilter,
+    enableColumnPinning,
+    enableColumnReordering,
+    enableColumnResizing,
+    enableGrouping,
     enablePagination,
-    onPaginationChange,
+    enableRowPinning,
+    enableRowSelection,
+    enableSorting,
+    getRowCanExpand,
+    manualFiltering,
     manualPagination,
+    manualSorting,
+    onColumnFiltersChange,
+    onColumnOrderChange,
+    onColumnPinningChange,
+    onColumnSizingChange,
+    onExpandedChange,
+    onGroupingChange,
+    onPaginationChange,
+    onRowPinningChange,
+    onRowSelectionChange,
+    onSortingChange,
     rowCount,
     rowKey,
-    enableRowSelection,
-    onRowSelectionChange,
-    onExpandedChange,
-    getRowCanExpand,
-    enableColumnFilter,
-    onColumnFiltersChange,
-    manualFiltering,
-    enableColumnReordering,
-    onColumnOrderChange,
-    enableColumnResizing,
-    onColumnSizingChange,
-    enableColumnPinning,
-    onColumnPinningChange,
-    enableGrouping,
-    onGroupingChange,
-    enableRowPinning,
-    onRowPinningChange,
+    tableId,
   } = params;
+
   return {
-    data,
+    // Without this, TanStack resets `expanded` to `{}` on its own the moment a
+    // row model recomputes (e.g. right after grouping) — same fix as
+    // `autoResetPageIndex`, this time for the expansion triple's state.
+    autoResetExpanded: false,
     columns,
-    state: buildTableState(params),
+    data,
     ...(enableSorting
       ? {
           enableMultiSort: false,
-          enableSortingRemoval: true,
-          // Always cycle ascending -> descending -> unsorted (TanStack defaults number columns to descending-first).
-          sortDescFirst: false,
           enableSorting: true,
+          enableSortingRemoval: true,
           getSortedRowModel: getSortedRowModel(),
-          onSortingChange,
           manualSorting,
+          onSortingChange,
+          // GEL styling choice: always cycle ascending -> descending -> unsorted (TanStack defaults number columns to descending-first).
+          sortDescFirst: false,
         }
       : {}),
     ...(enablePagination
       ? {
-          getPaginationRowModel: getPaginationRowModel(),
-          onPaginationChange,
-          manualPagination,
-          rowCount,
-          // TODO: Verify this is the intended design (should be an option?)
+          // This is a design decision, to be determined if behavior is kept
           autoResetPageIndex: false,
+          getPaginationRowModel: getPaginationRowModel(),
+          manualPagination,
+          onPaginationChange,
+          rowCount,
         }
       : {}),
-    // A function (not `true`) so synthetic group-header rows — which render no
-    // checkbox at all — can never end up selected via select-all and leak a
-    // non-`rowKey` id into the public `onSelectionChange` contract.
-    ...(enableRowSelection ? { enableRowSelection: row => !row.getIsGrouped(), onRowSelectionChange } : {}),
+    ...(enableRowSelection
+      ? {
+          enableRowSelection: row => !row.getIsGrouped(),
+          onRowSelectionChange,
+        }
+      : {}),
     ...(enableRowPinning
       ? {
-          // Pin eligibility (row.getCanPin(), read by reserved-columns.tsx's pin cell): only root rows and leaves
-          // directly under a group banner qualify — deeper sub-rows cascade from their ancestor (pinned-rows.ts).
-          // To let a user pin any row: TanStack must stop dropping a pin when its ancestor collapses, and
-          // `AdvancedTablePinnedRowsState` (types.ts) must track more than just top-level ids.
+          // Only root rows and leaves directly under a group banner can pin; deeper sub-rows cascade
+          // from their ancestor (pinned-rows.ts). Pinning any row would need TanStack to keep a pin
+          // when its ancestor collapses, plus AdvancedTablePinnedRowsState to track non-top-level ids.
           enableRowPinning: row => {
             const parent = row.getParentRow();
             return !row.getIsGrouped() && (!parent || parent.getIsGrouped());
@@ -238,13 +238,30 @@ export function buildTableOptions<T>(params: BuildTableOptionsParams<T>): TableO
         }
       : {}),
     ...(enableColumnFilter
-      ? { getFilteredRowModel: getFilteredRowModel(), onColumnFiltersChange, manualFiltering }
+      ? {
+          getFilteredRowModel: getFilteredRowModel(),
+          manualFiltering,
+          onColumnFiltersChange,
+        }
       : {}),
-    ...(enableColumnReordering ? { onColumnOrderChange } : {}),
+    ...(enableColumnReordering
+      ? {
+          onColumnOrderChange,
+        }
+      : {}),
     ...(enableColumnResizing
-      ? { enableColumnResizing: true, columnResizeMode: 'onChange' as const, onColumnSizingChange }
+      ? {
+          columnResizeMode: 'onChange' as const,
+          enableColumnResizing: true,
+          onColumnSizingChange,
+        }
       : {}),
-    ...(enableColumnPinning ? { enableColumnPinning: true, onColumnPinningChange } : {}),
+    ...(enableColumnPinning
+      ? {
+          enableColumnPinning: true,
+          onColumnPinningChange,
+        }
+      : {}),
     ...(enableGrouping
       ? {
           enableGrouping: true,
@@ -253,25 +270,21 @@ export function buildTableOptions<T>(params: BuildTableOptionsParams<T>): TableO
           onGroupingChange,
         }
       : {}),
-    // `subRows` is a fixed field-name convention, not a configurable prop. TanStack's
-    // `getSubRows` doesn't type well with custom types: https://github.com/TanStack/table/discussions/4484
-    getSubRows: row => (row as { subRows?: T[] }).subRows,
-    getExpandedRowModel: getExpandedRowModel(),
-    onExpandedChange,
-    ...(getRowCanExpand ? { getRowCanExpand } : {}),
-    // Without this, TanStack resets `expanded` to `{}` on its own the moment a
-    // row model recomputes (e.g. right after grouping) — same fix as
-    // `autoResetPageIndex` above, this time for the expansion triple's state.
-    autoResetExpanded: false,
-    // Keep a row's (or group's) expanded children together on one page rather
-    // than splitting them across a pagination boundary.
-    paginateExpandedRows: false,
     getCoreRowModel: getCoreRowModel(),
+    getExpandedRowModel: getExpandedRowModel(),
     getRowId: rowKey
       ? (row, _index, parent) => {
           const id = resolveRowId(rowKey, row);
           return parent ? `${parent.id}.${id}` : id;
         }
       : (_row, index, parent) => (parent ? `${parent.id}.${index}` : `${tableId}-${index}`),
+    // `subRows` is a fixed field-name convention, not a configurable prop. TanStack's
+    // `getSubRows` doesn't type well with custom types: https://github.com/TanStack/table/discussions/4484
+    getSubRows: row => (row as { subRows?: T[] }).subRows,
+    onExpandedChange,
+    ...(getRowCanExpand ? { getRowCanExpand } : {}),
+    // Keep a row's (or group's) expanded children together on one page rather than splitting them across a pagination boundary.
+    paginateExpandedRows: false,
+    state: buildTableState(params),
   };
 }

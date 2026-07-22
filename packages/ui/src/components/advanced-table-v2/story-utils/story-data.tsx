@@ -7,16 +7,16 @@ import { Link } from '../../link/index.js';
 import { AdvancedTableColumn } from '../advanced-table.types.js';
 
 export type AdvancedPerson = {
-  id: string;
-  firstName: string;
-  lastName?: string;
+  age?: number;
   dateOfBirth: string;
   email: string;
-  age?: number;
-  visits?: number;
-  status?: 'active' | 'inactive' | 'deactivated';
+  firstName: string;
+  id: string;
+  lastName?: string;
   progress?: number;
+  status?: 'active' | 'inactive' | 'deactivated';
   subRows?: AdvancedPerson[];
+  visits?: number;
 };
 
 const range = (len: number) => {
@@ -31,14 +31,14 @@ const newPerson = (): Omit<AdvancedPerson, 'id'> => {
   const firstName = faker.person.firstName();
   const lastName = faker.person.lastName();
   return {
-    firstName,
-    lastName,
+    age: faker.number.int(40),
     dateOfBirth: faker.date.birthdate({ min: 18, max: 65, mode: 'age' }).toISOString().slice(0, 10),
     email: faker.internet.email({ firstName, lastName }).toLowerCase(),
-    age: faker.number.int(40),
-    visits: faker.number.int(1000),
+    firstName,
+    lastName,
     progress: faker.number.int(100),
     status: faker.helpers.shuffle<AdvancedPerson['status']>(['active', 'inactive', 'deactivated'])[0],
+    visits: faker.number.int(1000),
   };
 };
 
@@ -46,7 +46,9 @@ export function makePersonData(...lens: number[]) {
   const makeDataLevel = (depth = 0, parentId = ''): AdvancedPerson[] => {
     const len = lens[depth];
     return range(len).map((_, index): AdvancedPerson => {
-      const id = parentId ? `${parentId}-${index}` : `${index}`;
+      const id = parentId
+        ? `${parentId}-${String(index + 1).padStart(2, '0')}`
+        : `employee-${String(index + 1).padStart(2, '0')}`;
       return {
         ...newPerson(),
         id,
@@ -60,14 +62,14 @@ export function makePersonData(...lens: number[]) {
 
 const STATUS_LABEL: Record<NonNullable<AdvancedPerson['status']>, string> = {
   active: 'Active',
-  inactive: 'Inactive',
   deactivated: 'Deactivated',
+  inactive: 'Inactive',
 };
 
-const STATUS_COLOR: Record<NonNullable<AdvancedPerson['status']>, 'muted' | 'warning' | 'info'> = {
+const STATUS_COLOR: Record<NonNullable<AdvancedPerson['status']>, 'info' | 'muted' | 'warning'> = {
   active: 'info',
-  inactive: 'warning',
   deactivated: 'muted',
+  inactive: 'warning',
 };
 
 function formatDateOfBirth(value: string) {
@@ -75,7 +77,12 @@ function formatDateOfBirth(value: string) {
 }
 
 // Sorting/filter/pin/group are all table opt-in AND column opt-in.
-const optIn = { enableSorting: true, enableColumnFilter: true, enablePinning: true, enableGrouping: true } as const;
+const optIn = {
+  enableColumnFilter: true,
+  enableGrouping: true,
+  enablePinning: true,
+  enableSorting: true,
+} as const;
 
 export const personColumns: AdvancedTableColumn<AdvancedPerson>[] = [
   {

@@ -1,12 +1,11 @@
-import { Column } from '@tanstack/react-table';
+import { Column, Header } from '@tanstack/react-table';
+
+import { ColumnReorderInfo } from '../advanced-table.context.js';
 
 import { RESERVED_COLUMN_IDS } from './reserved-columns.js';
 
-// `getCanPin()`/`getCanGroup()`/`getCanResize()` all check a group/banding
-// column's LEAF children, never the group column's own `enableX: false` —
-// `accessorFn` is only present on real (leaf) data columns, so it's what
-// actually excludes banding headers from pin/resize (grouping needs no such
-// check since a group header is never itself groupable).
+// Pin, group and resize columns all check if the column is in the reserved list (pin and collapse) to
+// exclude adding action menu items (non-data elements).
 
 export function canPinColumn<T>(column: Column<T, unknown>): boolean {
   return column.getCanPin() && Boolean(column.accessorFn) && !RESERVED_COLUMN_IDS.includes(column.id);
@@ -14,6 +13,19 @@ export function canPinColumn<T>(column: Column<T, unknown>): boolean {
 
 export function canGroupColumn<T>(column: Column<T, unknown>): boolean {
   return column.getCanGroup() && !RESERVED_COLUMN_IDS.includes(column.id);
+}
+
+/** Only the top header row's real (non-placeholder) cells are re-orderable — a nested/grouped
+ * leaf header is never itself a reorderable unit (its group is, via `reorderInfo`). */
+export function canReorderColumn<T>(
+  header: Header<T, unknown>,
+  reorderInfo: ColumnReorderInfo,
+  enableColumnReordering: boolean | undefined,
+): boolean {
+  const isTopRow = header.headerGroup.depth === 0;
+  return (
+    Boolean(enableColumnReordering) && isTopRow && !header.isPlaceholder && reorderInfo.idSet.has(header.column.id)
+  );
 }
 
 /** Pinned columns are excluded too: resizing a pinned column isn't supported yet. */

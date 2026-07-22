@@ -52,6 +52,7 @@ import {
   buildReservedColumns,
   buildTableOptions,
   collapsePinnedRowIds,
+  collectRowIds,
   columnGenerator,
   expandedStateToIds,
   expandPinnedRowIds,
@@ -61,7 +62,7 @@ import {
   idsToExpandedState,
   idsToSelectionState,
   moveColumnTo,
-  resolveRowId,
+  normalizeRowSelection,
   RESERVED_COLUMN_IDS,
   selectionStateToIds,
 } from './utils/index.js';
@@ -230,12 +231,11 @@ export function AdvancedTable<T>({
     onPinnedRowsChangeProp,
   );
 
-  // Drops stale ids (e.g. a row removed from `data` but still in a controlled
-  // `selectedRows`) before they reach TanStack, so select-all can't read as
-  // indeterminate over rows that no longer exist.
+  // Removes invalid (stale or dropped) row via IDs, so select-all can't read as
+  // indeterminate over rows that no longer exist. For row selection and nested rows.
   const validRowIds = useMemo(() => {
     if (!rowKey) return new Set<string>();
-    return new Set(resolvedData.map(row => resolveRowId(rowKey, row)));
+    return collectRowIds(resolvedData, rowKey);
   }, [resolvedData, rowKey]);
 
   const rowSelectionState = useMemo(
@@ -248,9 +248,8 @@ export function AdvancedTable<T>({
   // validRowIds wouldn't recognize. See idsToExpandedState (utils/row-id.ts).
   const resolvedExpandedState = useMemo(() => idsToExpandedState(expandedState), [expandedState]);
 
-  // Expands the public, parent-only pinned ids into TanStack's fully-cascaded
-  // set (parent + every descendant) by walking `data` directly — see
-  // utils/pinned-rows.ts for why this can't go through the `table` instance.
+  // Controlled -> TanStack: Expands the public, parent-only pinned ids into TanStack's fully-cascaded
+  // set (parent + every descendant) by walking `data` directly — see utils/pinned-rows.ts.
   const resolvedRowPinningState = useMemo<RowPinningState>(
     () => ({ top: expandPinnedRowIds(pinnedRowIds, resolvedData, rowKey), bottom: [] }),
     [pinnedRowIds, resolvedData, rowKey],
@@ -258,7 +257,8 @@ export function AdvancedTable<T>({
 
   const handleRowSelectionChange: OnChangeFn<RowSelectionState> = updaterOrValue => {
     const next = typeof updaterOrValue === 'function' ? updaterOrValue(rowSelectionState) : updaterOrValue;
-    setSelectedRowIds(selectionStateToIds(next));
+    const ids = selectionStateToIds(next);
+    setSelectedRowIds(rowKey ? normalizeRowSelection(ids, resolvedData, rowKey) : ids);
   };
 
   const handleExpandedChange: OnChangeFn<ExpandedState> = updaterOrValue => {
@@ -280,7 +280,7 @@ export function AdvancedTable<T>({
     return undefined;
   }, [getRowCanExpand, renderDetailPanel]);
 
-  // Gates whether the first column reserves space for the expand toggle button.
+  // Flag for whether the first data column needs to reserves space for the expand toggle button.
   const tableHasExpandableRows = useMemo(
     () => hasExpandableRows(resolvedData, getRowCanExpand, Boolean(renderDetailPanel)),
     [resolvedData, getRowCanExpand, renderDetailPanel],

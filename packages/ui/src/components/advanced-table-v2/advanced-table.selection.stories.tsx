@@ -5,6 +5,7 @@ import { AdvancedTable } from './advanced-table.component.js';
 import { makePersonData, personColumns } from './story-utils/index.js';
 
 const data = makePersonData(30);
+const treeData = makePersonData(6, 2);
 
 const columns = personColumns;
 
@@ -66,4 +67,34 @@ export const DefaultSelectedRows: Story = {
  */
 export const Uncontrolled: Story = {
   render: () => <AdvancedTable data={data} columns={columns} caption="People" enableRowSelection rowKey="id" />,
+};
+
+/**
+ * Rows with `subRows` (tree data) are selectable at any depth. Checking a
+ * collapsed parent (labelled "…and collapsed rows") still selects its hidden
+ * children; checking every child individually also checks the parent, and
+ * clearing one child again shows the parent as indeterminate.
+ */
+export const ControlledWithNestedRows: Story = {
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [selectedRows, setSelectedRows] = useState<string[]>([]);
+
+    return (
+      <>
+        <p className="pb-2 typography-body-8">
+          Parent owns selection. Selected ids: {selectedRows.join(', ') || 'none'}
+        </p>
+        <AdvancedTable
+          data={treeData}
+          columns={columns}
+          caption="Controlled selection with nested rows"
+          enableRowSelection
+          rowKey="id"
+          selectedRows={selectedRows}
+          onSelectionChange={setSelectedRows}
+        />
+      </>
+    );
+  },
 };

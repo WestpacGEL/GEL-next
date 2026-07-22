@@ -8,25 +8,26 @@ import { AdvancedTableRowPinToggleProps } from './advanced-table-row-pin-toggle.
 export function AdvancedTableRowPinToggle<T>({ row, table }: AdvancedTableRowPinToggleProps<T>) {
   const { onRowPinAnnouncement } = useAdvancedTableContext<T>();
   const isPinned = row.getIsPinned() === 'top';
-  // Use overall position, not page-relative, so the label stays stable across pages.
+  // Use overall position (not page-relative) so the label stays stable across pages.
   // Announcement falls back to row.index if the row's been filtered out of the row model entirely.
   const visibleIndex = table.getPrePaginationRowModel().rows.indexOf(row);
   const displayIndex = visibleIndex === -1 ? row.index : visibleIndex;
   const label = `${isPinned ? 'Unpin' : 'Pin'} row ${displayIndex + 1}`;
+
   const styles = rowPinToggleStyles();
   const Icon = isPinned ? UnpinIcon : PinIcon;
 
   return (
     <button
-      type="button"
+      aria-label={label}
       className={styles.button()}
       onClick={() => {
         row.pin(isPinned ? false : 'top', true);
         onRowPinAnnouncement?.(`Row ${displayIndex + 1} ${isPinned ? 'unpinned' : 'pinned'}.`);
       }}
-      aria-label={label}
+      type="button"
     >
-      <Icon aria-hidden size="small" look="outlined" />
+      <Icon aria-hidden look="outlined" size="small" />
     </button>
   );
 }

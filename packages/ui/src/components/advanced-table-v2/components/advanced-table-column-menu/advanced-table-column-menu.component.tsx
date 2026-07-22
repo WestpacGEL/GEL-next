@@ -1,7 +1,7 @@
 'use client';
 
 import { Column, Table, flexRender } from '@tanstack/react-table';
-import { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Key, useButton, useMenuTrigger } from 'react-aria';
 import { Item, Section, useMenuTriggerState } from 'react-stately';
 
@@ -19,7 +19,7 @@ import { Input } from '../../../input/input.component.js';
 import { InputGroup } from '../../../input-group/input-group.component.js';
 import { VisuallyHidden } from '../../../visually-hidden/index.js';
 import { ColumnReorderInfo, useAdvancedTableContext } from '../../advanced-table.context.js';
-import { canGroupColumn, canPinColumn, moveColumnLeft, moveColumnRight } from '../../utils/index.js';
+import { canGroupColumn, canPinColumn, canReorderColumn, moveColumnLeft, moveColumnRight } from '../../utils/index.js';
 
 import { styles as advancedTableColumnMenuStyles } from './advanced-table-column-menu.styles.js';
 import { AdvancedTableColumnMenuProps } from './advanced-table-column-menu.types.js';
@@ -27,24 +27,64 @@ import { MenuItemContent } from './components/menu-item-content/menu-item-conten
 import { MenuList } from './components/menu-list/menu-list.component.js';
 import { MenuPopover } from './components/menu-popover/menu-popover.component.js';
 
+const FILTER_DEBOUNCE_MS = 300;
+
 /** The "Filter by:" section's contents. */
 function ColumnMenuFilterItem<T>({ column }: { column: Column<T, unknown> }) {
   const filterVal = column.getFilterValue() as string | undefined;
-  const clearFilter = useCallback(() => column.setFilterValue(''), [column]);
+  const [inputVal, setInputVal] = useState(filterVal ?? '');
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>();
+  const pendingValRef = useRef<string>();
+
+  // An external filterVal change in-flight debounce, a still-pending keystroke can't re-apply a value
+  useEffect(() => {
+    clearTimeout(debounceRef.current);
+    pendingValRef.current = undefined;
+    setInputVal(filterVal ?? '');
+  }, [filterVal]);
+
+  // Flush rather than discard, the popover (and this input) unmounts on close, e.g. Escape
+  useEffect(
+    () => () => {
+      clearTimeout(debounceRef.current);
+      if (pendingValRef.current !== undefined) column.setFilterValue(pendingValRef.current);
+    },
+    [column],
+  );
+
+  const handleChange = useCallback(
+    (val: string) => {
+      setInputVal(val);
+      pendingValRef.current = val;
+      clearTimeout(debounceRef.current);
+
+      debounceRef.current = setTimeout(() => {
+        pendingValRef.current = undefined;
+        column.setFilterValue(val);
+      }, FILTER_DEBOUNCE_MS);
+    },
+    [column],
+  );
+
+  const clearFilter = useCallback(() => {
+    clearTimeout(debounceRef.current);
+
+    pendingValRef.current = undefined;
+    setInputVal('');
+    column.setFilterValue('');
+  }, [column]);
 
   return (
     <InputGroup
       after={{
-        element: filterVal ? (
-          <Button onClick={clearFilter} look="link" iconAfter={ClearIcon} iconColor="muted" />
-        ) : null,
+        element: inputVal ? <Button onClick={clearFilter} look="link" iconAfter={ClearIcon} iconColor="muted" /> : null,
         inset: true,
       }}
       before={{ icon: SearchIcon }}
       hideLabel
       label="Filter"
     >
-      <Input onChange={val => column.setFilterValue(val.currentTarget.value)} value={filterVal ?? ''} />
+      <Input onChange={val => handleChange(val.currentTarget.value)} value={inputVal} />
     </InputGroup>
   );
 }
@@ -147,9 +187,9 @@ export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuPr
   const canPin = canPinColumn(header.column);
   const canGroup = canGroupColumn(header.column);
   const isGrouped = header.column.getIsGrouped();
-  const canReorder = Boolean(enableColumnReordering) && reorderInfo.idSet.has(header.column.id);
+  const canReorder = canReorderColumn(header, reorderInfo, enableColumnReordering);
   const { canMoveLeft, canMoveRight } = resolveMoveBoundaries(canReorder, header.column.id, reorderInfo);
-  const disabledMenuKeys = [...(canMoveLeft ? [] : ['move-left']), ...(canMoveRight ? [] : ['move-right'])];
+  const showMoveSection = canMoveLeft || canMoveRight;
 
   const pinLeftItem = resolvePinMenuItem(header.column, 'left');
   const pinRightItem = resolvePinMenuItem(header.column, 'right');
@@ -189,12 +229,7 @@ export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuPr
       </VisuallyHidden>
       {state.isOpen && (
         <MenuPopover placement="bottom start" state={state} triggerRef={buttonRef}>
-          <MenuList
-            {...menuProps}
-            aria-labelledby={`${labelId} ${menuActionId}`}
-            disabledKeys={disabledMenuKeys}
-            onAction={handleMenuAction}
-          >
+          <MenuList {...menuProps} aria-labelledby={`${labelId} ${menuActionId}`} onAction={handleMenuAction}>
             {canFilter ? (
               <Section key="filter-section" title="Filter by:">
                 <Item key="filter" textValue="Filter">
@@ -219,14 +254,18 @@ export function AdvancedTableColumnMenu<T>({ header }: AdvancedTableColumnMenuPr
                 </Item>
               </Section>
             ) : null}
-            {canReorder ? (
+            {canReorder && showMoveSection ? (
               <Section key="move-section" title="Move">
-                <Item key="move-left" textValue={moveLeftItem.label}>
-                  <MenuItemContent {...moveLeftItem} />
-                </Item>
-                <Item key="move-right" textValue={moveRightItem.label}>
-                  <MenuItemContent {...moveRightItem} />
-                </Item>
+                {canMoveLeft ? (
+                  <Item key="move-left" textValue={moveLeftItem.label}>
+                    <MenuItemContent {...moveLeftItem} />
+                  </Item>
+                ) : null}
+                {canMoveRight ? (
+                  <Item key="move-right" textValue={moveRightItem.label}>
+                    <MenuItemContent {...moveRightItem} />
+                  </Item>
+                ) : null}
               </Section>
             ) : null}
           </MenuList>

@@ -6,12 +6,7 @@ import { useAdvancedTableContext } from '../../advanced-table.context.js';
 
 import { styles as advancedTablePaginationStyles } from './advanced-table-pagination.styles.js';
 
-/**
- * Pagination controls for the table: the GEL `Pagination` component, a row-range
- * summary, and a page-size `Select`. Reads the table instance and page-size
- * options from context and drives paging through the engine's public setters,
- * which round-trip through the component's `pagination` state triple.
- */
+/** Pagination control wrapper for the table based on the GEL `Pagination` component. */
 export function AdvancedTablePagination() {
   const { table, pageSizeOptions, loading } = useAdvancedTableContext();
   const styles = advancedTablePaginationStyles();
@@ -19,10 +14,8 @@ export function AdvancedTablePagination() {
 
   const { pageIndex, pageSize } = table.getState().pagination;
   const rowCount = table.getRowCount();
-  // Clamped: `autoResetPageIndex: false` means an out-of-range pageIndex (data
-  // shrank while on a later page, or a controlled/seeded index starts out of
-  // range) is never auto-corrected, so this guards against a nonsensical range
-  // like "21 – 20 of 5".
+  // Clamped: `autoResetPageIndex: false` means an out-of-range pageIndex (data filter/changes that shrink set)
+  // is not auto-corrected. This guard helps prevent incorrect ranges like "21 – 20 of 5".
   const rangeFrom = rowCount === 0 ? 0 : Math.min(pageIndex * pageSize + 1, rowCount);
   const rangeTo = Math.min((pageIndex + 1) * pageSize, rowCount);
 
@@ -32,12 +25,12 @@ export function AdvancedTablePagination() {
       <fieldset disabled={loading} className="contents">
         <Pagination
           aria-label="Pagination"
-          totalPages={table.getPageCount()}
+          boundaryCount={1}
+          className={styles.pagination()}
           current={pageIndex + 1}
           onChange={page => table.setPageIndex(page - 1)}
-          className={styles.pagination()}
           siblingCount={0}
-          boundaryCount={1}
+          totalPages={table.getPageCount()}
         />
         <p>
           {rangeFrom} – {rangeTo} of {rowCount}
@@ -46,8 +39,8 @@ export function AdvancedTablePagination() {
           <label htmlFor={selectPageSizeId}>Items per page</label>
           <Select
             id={selectPageSizeId}
-            value={pageSize}
             onChange={event => table.setPageSize(Number(event.currentTarget.value))}
+            value={pageSize}
           >
             {pageSizeOptions?.map(size => (
               <option key={size} value={size}>

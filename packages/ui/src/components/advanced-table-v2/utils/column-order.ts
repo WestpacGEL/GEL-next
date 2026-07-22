@@ -6,7 +6,7 @@ import { ColumnReorderInfo } from '../advanced-table.context.js';
 
 import { RESERVED_COLUMN_IDS } from './reserved-columns.js';
 
-/** Top-level reorderable unit */
+/** Top-level re-orderable unit */
 type ColumnOrderBlock = {
   /** The block's id: the leaf column's id, or the group column's id. */
   id: string;
@@ -14,7 +14,7 @@ type ColumnOrderBlock = {
   leafIds: string[];
 };
 
-/** Returns the top row's non-placeholder header cells */
+/** Returns the top row's non-placeholder header cells. */
 function getTopLevelBlocks<T>(table: Table<T>): ColumnOrderBlock[] {
   const topRow = table.getHeaderGroups()[0];
   if (!topRow) return [];
@@ -23,7 +23,7 @@ function getTopLevelBlocks<T>(table: Table<T>): ColumnOrderBlock[] {
     .map(header => ({ id: header.column.id, leafIds: header.column.getLeafColumns().map(leaf => leaf.id) }));
 }
 
-// Checks if the column is re-orderable: reserved and pinned
+/** Checks if the column is re-orderable: reserved and pinned. */
 function isBlockReorderable<T>(table: Table<T>, block: ColumnOrderBlock): boolean {
   if (RESERVED_COLUMN_IDS.includes(block.id)) return false;
   return block.leafIds.every(leafId => !table.getColumn(leafId)?.getIsPinned());
@@ -57,36 +57,40 @@ function reorderBlocks<T>(
   resolveTargetIndex: (reorderable: ColumnOrderBlock[], activeIndex: number) => number,
 ): string[] | null {
   const blocks = getTopLevelBlocks(table);
+  // Create array of check column is re-orderable (used as flag to update below)
   const mask = blocks.map(block => isBlockReorderable(table, block));
   const reorderable = blocks.filter((_, index) => mask[index]);
   const activeIndex = reorderable.findIndex(block => block.id === activeId);
+
+  // Did not find active header, error
   if (activeIndex === -1) return null;
 
   const targetIndex = resolveTargetIndex(reorderable, activeIndex);
+  // Could not find targeted re-arrange header or is invalid (outside array)
   if (targetIndex === -1 || targetIndex === activeIndex || targetIndex >= reorderable.length) return null;
 
-  const nextReorderable = arrayMove(reorderable, activeIndex, targetIndex);
+  const updatedOrder = arrayMove(reorderable, activeIndex, targetIndex);
   let cursor = 0;
-  const nextBlocks = blocks.map((block, index) => (mask[index] ? nextReorderable[cursor++] : block));
+  // Only set re-orderable blocks, use original where not valid. Cursor is for the filtered results.
+  const nextBlocks = blocks.map((block, index) => (mask[index] ? updatedOrder[cursor++] : block));
   return nextBlocks.flatMap(block => block.leafIds);
 }
 
-/** New flat leaf order moving `columnId` one position left, or `null` at the boundary. */
+/** Order moving `columnId` one position left, or `null` at the boundary. */
 export function moveColumnLeft<T>(table: Table<T>, columnId: string): string[] | null {
   return reorderBlocks(table, columnId, (_, activeIndex) => activeIndex - 1);
 }
 
-/** New flat leaf order moving `columnId` one position right, or `null` at the boundary. */
+/** Order moving `columnId` one position right, or `null` at the boundary. */
 export function moveColumnRight<T>(table: Table<T>, columnId: string): string[] | null {
   return reorderBlocks(table, columnId, (_, activeIndex) => activeIndex + 1);
 }
 
-/** New flat leaf order moving `activeId`'s block to sit where `overId`'s block currently is — drag-and-drop's and keyboard reordering's shared drop logic. */
+/** Order moving `activeId`'s block to sit where `overId`'s block currently is — drag-and-drop's and keyboard reordering's shared drop logic. */
 export function moveColumnTo<T>(table: Table<T>, activeId: string, overId: string): string[] | null {
   return reorderBlocks(table, activeId, reorderable => reorderable.findIndex(block => block.id === overId));
 }
 
-/** A reorderable block's display name — used for reordering's live-region announcements. */
 export function getColumnDisplayName<T>(table: Table<T>, columnId: string): string {
   const header = table.getColumn(columnId)?.columnDef.header;
   return typeof header === 'string' ? header : columnId;
@@ -100,7 +104,7 @@ export function getColumnDisplayName<T>(table: Table<T>, columnId: string): stri
 export function buildReorderAnnouncements<T>(table: Table<T>, announce: (text: string) => void): Announcements {
   return {
     onDragStart({ active }) {
-      const message = `Picked up ${getColumnDisplayName(table, String(active.id))}. Use the arrow keys to move, space bar to drop.`;
+      const message = `Picked up ${getColumnDisplayName(table, String(active.id))}. Use the arrow keys to move, space bar to place column.`;
       announce(message);
       return message;
     },

@@ -8,14 +8,14 @@ import { DetailPanelRow } from './components/detail-panel-row/index.js';
 
 export function AdvancedTableRow<T>({ row, isPinned }: AdvancedTableRowProps<T>) {
   const { background, tableId } = useAdvancedTableContext<T>();
-  const bgValue: 'transparent' | 'striped' | 'filled' | undefined = isPinned ? undefined : background;
+  const bgValue: 'filled' | 'striped' | 'transparent' | undefined = isPinned ? undefined : background;
   const styles = advancedTableRowStyles({ background: bgValue, isPinned });
 
   return (
     <>
-      <tr id={rowElementId(tableId, row.id)} className={styles.row()}>
+      <tr className={styles.row()} id={rowElementId(tableId, row.id)}>
         {row.getVisibleCells().map(cell => (
-          <AdvancedTableCell key={cell.id} cell={cell} />
+          <AdvancedTableCell cell={cell} key={cell.id} />
         ))}
       </tr>
       <DetailPanelRow row={row} />

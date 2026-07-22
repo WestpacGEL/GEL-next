@@ -1,5 +1,11 @@
 export { buildTableOptions } from './build-table-options.js';
-export { canGroupColumn, canPinColumn, canResizeColumn, getColumnMeta } from './column-capabilities.js';
+export {
+  canGroupColumn,
+  canPinColumn,
+  canReorderColumn,
+  canResizeColumn,
+  getColumnMeta,
+} from './column-capabilities.js';
 export { columnGenerator } from './column-generator.js';
 export {
   buildReorderAnnouncements,
@@ -21,9 +27,11 @@ export {
   SELECT_COLUMN_ID,
 } from './reserved-columns.js';
 export {
+  collectRowIds,
   expandedStateToIds,
   idsToExpandedState,
   idsToSelectionState,
+  normalizeRowSelection,
   resolveRowId,
   rowElementId,
   selectionStateToIds,

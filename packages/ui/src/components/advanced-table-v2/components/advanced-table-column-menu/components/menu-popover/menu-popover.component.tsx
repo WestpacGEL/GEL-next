@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { DismissButton, Overlay, usePopover } from 'react-aria';
+import { DismissButton, FocusScope, Overlay, usePopover } from 'react-aria';
 
 import { styles as menuPopoverStyles } from './menu-popover.styles.js';
 import { MenuPopoverProps } from './menu-popover.types.js';
@@ -16,10 +16,12 @@ export const MenuPopover = ({ children, state, style, ...props }: MenuPopoverPro
   return (
     <Overlay>
       <div {...underlayProps} className={styles.underlay()} />
-      <div {...popoverProps} className={styles.popover()} ref={popoverRef} style={{ ...popoverProps.style, ...style }}>
-        {children}
-        <DismissButton onDismiss={() => state.close()} />
-      </div>
+      <FocusScope restoreFocus>
+        <div {...popoverProps} className={styles.popover()} ref={popoverRef} style={{ ...popoverProps.style, ...style }}>
+          {children}
+          <DismissButton onDismiss={() => state.close()} />
+        </div>
+      </FocusScope>
     </Overlay>
   );
 };

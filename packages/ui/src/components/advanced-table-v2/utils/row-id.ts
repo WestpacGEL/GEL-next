@@ -8,16 +8,61 @@ export function resolveRowId<T>(rowKey: AdvancedTableRowKey<T>, row: T): string 
   return typeof rowKey === 'function' ? rowKey(row) : String(row[rowKey]);
 }
 
-// Builds rowID referenced to table to avoid duplicate IDs with multiple instances
+type RowWithSubRows<T> = T & { subRows?: RowWithSubRows<T>[] };
+
+/** Create rowId using the parentId prefixed to the ID. This is required or IDs will clashed with collapsed rows. */
+export function compositeRowId<T>(rowKey: AdvancedTableRowKey<T>, row: T, parentId: string | undefined): string {
+  const ownId = resolveRowId(rowKey, row);
+  return parentId ? `${parentId}.${ownId}` : ownId;
+}
+
+/** Returns every row ID in the data set including nested rows. */
+export function collectRowIds<T>(data: T[], rowKey: AdvancedTableRowKey<T>): Set<string> {
+  const ids = new Set<string>();
+
+  const walk = (rows: RowWithSubRows<T>[], parentId: string | undefined) => {
+    for (const row of rows) {
+      const id = compositeRowId(rowKey, row, parentId);
+      ids.add(id);
+      if (row.subRows) walk(row.subRows, id);
+    }
+  };
+
+  walk(data as RowWithSubRows<T>[], undefined);
+  return ids;
+}
+
+/**
+ * Clears a parent row's own selection id once it no longer matches every one
+ * of its children being selected. TanStack's `row.toggleSelected` cascades a
+ * selection change down to descendants but never back up to ancestors, so
+ * clearing one child leaves a parent's own id stale.
+ * TODO: Verify if this is intended behaviour.
+ */
+export function normalizeRowSelection<T>(ids: string[], data: T[], rowKey: AdvancedTableRowKey<T>): string[] {
+  const selected = new Set(ids);
+
+  const walk = (rows: RowWithSubRows<T>[], parentId: string | undefined): boolean =>
+    rows.reduce((allSelected, row) => {
+      const id = compositeRowId(rowKey, row, parentId);
+      const allChildrenSelected = row.subRows?.length ? walk(row.subRows, id) : selected.has(id);
+      if (!allChildrenSelected) selected.delete(id);
+      return allSelected && allChildrenSelected;
+    }, true);
+
+  walk(data as RowWithSubRows<T>[], undefined);
+  return [...selected];
+}
+
+/** Builds rowID referenced to table to avoid duplicate IDs with multiple instances */
 export function rowElementId(tableId: string, rowId: string): string {
   return `${tableId}-row-${rowId}`;
 }
 
 /** Converts the public `string[]` of selected row ids into the `RowSelectionState`
  * record (`Record<id, true>`) TanStack's row-selection engine expects. Ids not in
- * `validIds` (e.g. stale ids left over from a row that was since removed from
- * `data`) are dropped, so a stale id can't make the select-all checkbox read as
- * indeterminate/checked when no current row is actually selected. */
+ * `validIds` (ids no longer in `data`) are dropped, so a stale id can't make the
+ * select-all checkbox read as indeterminate/checked when no current row is actually selected. */
 export function idsToSelectionState(ids: string[], validIds: Set<string>): RowSelectionState {
   const selection: RowSelectionState = {};
   for (const id of ids) {

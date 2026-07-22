@@ -12,7 +12,7 @@ export function AdvancedTableLoadingState({
 
   return (
     <div className={styles.container()} role="status">
-      <ProgressIndicator size={size} label={label} {...props} />
+      <ProgressIndicator label={label} size={size} {...props} />
     </div>
   );
 }

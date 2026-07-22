@@ -5,8 +5,9 @@ import { DetailPanelRowProps } from './detail-panel-row.types.js';
 
 /** Renders `renderDetailPanel`'s content beneath an expanded row as a single full-width cell. */
 export function DetailPanelRow<T>({ row }: DetailPanelRowProps<T>) {
-  const { renderDetailPanel, padding, bordered, tableId } = useAdvancedTableContext<T>();
-  // No renderer, not expandable, not expanded, or has real sub-rows (tree children win).
+  const { bordered, padding, renderDetailPanel, tableId } = useAdvancedTableContext<T>();
+
+  // No renderer, not expandable, not expanded, or has real sub-rows (sub-rows take priority over expandable detail section).
   if (!renderDetailPanel || !row.getCanExpand() || !row.getIsExpanded() || row.subRows.length > 0) return null;
 
   const content = renderDetailPanel(row.original, { depth: row.depth });
@@ -17,7 +18,7 @@ export function DetailPanelRow<T>({ row }: DetailPanelRowProps<T>) {
 
   return (
     <tr id={`${tableId}-detail-panel-${row.id}`}>
-      <td colSpan={row.getVisibleCells().length} className={styles.td()}>
+      <td className={styles.td()} colSpan={row.getVisibleCells().length}>
         {content}
       </td>
     </tr>
