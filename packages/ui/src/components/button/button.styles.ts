@@ -9,7 +9,7 @@ export const styles = tv({
     iconBefore: '',
     iconAfter: '',
     dropdown: 'ml-[0.4em]',
-    text: 'overflow-hidden text-ellipsis',
+    text: 'overflow-hidden py-0.5 text-ellipsis',
   },
   variants: {
     hasIcon: {
