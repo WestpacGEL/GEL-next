@@ -43,6 +43,18 @@ import type { BrandKey } from '@westpac/ui/types';
 
 Most component props support **responsive values** — you can pass a single value OR an object keyed by breakpoint:
 
+**Incorrect (invalid breakpoint keys and array syntax)**
+
+```tsx
+// Invalid breakpoint keys — use initial, xsl, sm, md, lg, xl
+<Button size={{ mobile: 'small', desktop: 'large' }} />
+
+// Responsive values are keyed objects, not arrays
+<Button size={['small', 'large']} />
+```
+
+**Correct**
+
 ```tsx
 // Single value
 <Button size="large" />
@@ -70,6 +82,15 @@ Props that support responsive values are typed as `ResponsiveVariants<T>`.
 
 Many components accept a `tag` prop to change the rendered HTML element:
 
+**Incorrect (using `as` instead of `tag`, and an invalid element name)**
+
+```tsx
+<Button as="a" href="/page">Link styled as button</Button>
+<Badge tag="badge">Tag</Badge>
+```
+
+**Correct**
+
 ```tsx
 <Button tag="a" href="/page">Link styled as button</Button>
 <Button tag="span">Span styled as button</Button>
@@ -96,6 +117,57 @@ Icons support `look` (`'filled'` | `'outlined'`), `size`, and `color` props. Ove
 
 Components use `react-aria` for accessible focus management. Focus rings are shown only during keyboard navigation (not on click). This is handled automatically — no configuration needed.
 
+### Design Tokens
+
+Design tokens are the named design decisions (colours, typography, spacing, border radii) that come from `@westpac/style-config`. They are the single source of truth for the look and feel of every brand. In consuming applications you use them as **Tailwind utility classes** that are backed by CSS variables — you never reference raw values.
+
+Tokens are exposed as semantic, purpose-named classes. Common groups:
+
+| Group      | Example classes                                                              | Use for                         |
+| ---------- | ---------------------------------------------------------------------------- | ------------------------------- |
+| Surface    | `bg-surface-primary`, `bg-surface-muted`, `bg-surface-hero-faint`            | Component / element backgrounds |
+| Background | `bg-background-white`, `bg-background-pale`, `bg-background-hero`            | Page and section backgrounds    |
+| Text       | `text-text-body`, `text-text-heading`, `text-text-muted`, `text-text-danger` | Text colour                     |
+| Border     | `border-border-muted`, `border-border-focus`, `border-border-primary`        | Border colour                   |
+| Typography | `typography-body-8`, `typography-brand-4`                                    | Font size / line-height sets    |
+| Radius     | `rounded-md`, `rounded-lg`, `rounded-full`                                   | Border radius                   |
+
+Because tokens are semantic and brand-aware, the **same class name automatically resolves to the correct value** for whichever brand is active (`data-brand="wbc" | "stg" | "bom" | "bsa"`). This is exactly why hardcoded values must never be used — they break brand theming.
+
+> **Never invent your own tokens or hardcode values.** Only use existing style decisions exposed by `@westpac/style-config`. Do not use hex codes, RGB values, arbitrary Tailwind values (e.g. `bg-[#da1710]`), custom CSS variables, or your own utility classes for colour, typography, spacing, or radius. If a token you need doesn't appear to exist, do not create a workaround — this is likely a design decision.
+
+**Incorrect (hardcoded hex, arbitrary values, and invented tokens)**
+
+```tsx
+// Hardcoded hex — breaks brand theming and dark mode
+<div className="bg-[#da1710] text-[#ffffff]">...</div>
+
+// Arbitrary radius / spacing values instead of tokens
+<Card className="rounded-[7px]" />
+
+// Inline styles bypassing the token system
+<div style={{ backgroundColor: '#1f1c4f', color: 'white' }}>...</div>
+
+// Invented / custom token name that doesn't exist in the design system
+<p className="text-brand-red-500">...</p>
+```
+
+**Correct (semantic tokens only)**
+
+```tsx
+// Semantic surface + text tokens — resolve per active brand
+<div className="bg-surface-primary text-text-mono">...</div>
+
+// Token-backed radius
+<Card className="rounded-md" />
+
+// Semantic hero background with body text
+<section className="bg-surface-hero-faint text-text-body">...</section>
+
+// Status colours via reserved semantic tokens
+<p className="text-text-danger">Something went wrong</p>
+```
+
 ### Styling and Customization
 
 Some components support `className` for custom styles, but prefer using built-in props for consistent design. Colours shouldn't use arbitrary values and should always use the design system tokens. Styling should not be overwritten using element selectors or global CSS.
@@ -106,7 +178,7 @@ When a user asks "can component X do Y?", follow this process:
 
 1. **Check the correct package is installed** — Confirm the user has @westpac/ui >= v1.0.0 installed, not an older version or a different package also referred to as "GEL". Also check if the version is outdated and recommend updating to the latest version if so, as newer versions may have fixed bugs or added features that could solve their problem.
 2. **If package is incorrect/not installed** — Clearly state that older versions are not supported and suggest installing the correct package or updating to the latest version. Provide installation/migration instructions if needed.
-3. **Check the component reference** — Read `reference/components.md` to find the component and its props
+3. **Check the component reference** — Read the relevant file in `reference/components/` (for example, `reference/components/button.md`) to find the component and its props. Read `reference/components.md` for className support and customization guidance.
 4. **Check if a prop exists** - Look for a prop that directly supports the requested feature or pattern (e.g., `color`, `look`, `iconBefore`, `block`, `tag`, etc.)
 5. **If the prop exists** — show the correct usage with a code example
 6. **If no prop exists but it's achievable** — explain the pattern (e.g., using `className`, composition, `tag` prop)
@@ -133,6 +205,23 @@ When a user asks "can component X do Y?", follow this process:
 
 Returns the current active breakpoint (`'initial' | 'xsl' | 'sm' | 'md' | 'lg' | 'xl'`). Uses `zustand` internally with `matchMedia` listeners.
 
+**Incorrect (conditional hook call and an invalid breakpoint value)**
+
+```tsx
+import { useBreakpoint } from '@westpac/ui/hook';
+
+function MyComponent({ enabled }: { enabled: boolean }) {
+  // Don't call hooks conditionally — breaks the Rules of Hooks
+  if (enabled) {
+    const breakpoint = useBreakpoint();
+  }
+  // 'mobile' isn't valid — values are initial | xsl | sm | md | lg | xl
+  const isMobile = useBreakpoint() === 'mobile';
+}
+```
+
+**Correct**
+
 ```tsx
 import { useBreakpoint } from '@westpac/ui/hook';
 
@@ -152,13 +241,14 @@ Returns helpers for dark mode: `getMode()`, `setMode()`, `toggleDarkMode()`, `ge
 
 When answering questions about **how** or **when** to use a component, or when using a component in an integration, consult these bundled references:
 
-- **`reference/components.md`** — Full component catalog with props, types, defaults, and capabilities
+- **`reference/components.md`** — Component overview and className support/customization guidance
+- **`reference/components/`** — Per-component reference files with props, types, defaults, capabilities, and usage examples
 - **`reference/design-guidelines.md`** — Design guidelines, dos/don'ts, UX notes, accessibility, and code examples for every component
 - **`reference/integration-requirements.md`** — Integration requirements and best practices for consuming platforms to ensure consistent UI, maintainability, and alignment with future system updates.
 
 ## Component Catalog
 
-For the full list of components, their props, defaults, and capabilities, read `reference/components.md`.
+For component props, defaults, and capabilities, read the relevant component file in `reference/components/`.
 
 The catalog is organized alphabetically and includes:
 

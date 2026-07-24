@@ -10,6 +10,24 @@ const meta: Meta<typeof SkipLink> = {
   component: SkipLink,
   tags: ['autodocs'],
   decorators: [(Story: StoryFn) => <Story />],
+  argTypes: {
+    href: {
+      description: 'href (rendered as an `a` tag)',
+      type: { name: 'string' },
+    },
+    tag: {
+      description: 'Tag to render (`a` when `href` is provided, otherwise any non-anchor element)',
+      type: { name: 'string' },
+    },
+    children: {
+      description: 'Content of the skip link',
+      type: { name: 'string' },
+    },
+    className: {
+      description: 'String to override base style',
+      type: { name: 'string' },
+    },
+  },
 };
 
 export default meta;

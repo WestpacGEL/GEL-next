@@ -8,10 +8,10 @@ When making changes to any of the following, ensure related documentation and sk
 
 ### After modifying `packages/ui/` components:
 
-1. Check if `.agents/skills/consumer/using-westpac-ui/reference/components.md` needs updating:
+1. Check if `.agents/skills/consumer/using-westpac-ui/reference/components.md` or the relevant file in `.agents/skills/consumer/using-westpac-ui/reference/components/` needs updating:
    - New/changed props must be reflected in the component's props table
-   - New components must have a `## ComponentName` section added
-   - Removed components must have their section removed
+   - New components must have a component reference file added
+   - Removed components must have their reference file removed
    - The className Support table must reflect any changes to className handling
    - Import paths must match what's exported from `packages/ui/src/components/index.ts` and `packages/ui/package.json` exports
 
