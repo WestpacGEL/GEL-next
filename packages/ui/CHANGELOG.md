@@ -1,5 +1,12 @@
 # @westpac/ui
 
+## 1.13.0
+
+### Minor Changes
+
+- a885e5a: - Prevent button text from clipping vertically
+  - Add dropdown subpath export
+
 ## 1.12.0
 
 ### Minor Changes
